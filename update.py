@@ -71,7 +71,8 @@ def sphinx_make(site):
             continue
         if not site==None and not site==wiki:
             continue
-        print('make: %s' % wiki)
+        print('make and clean: %s' % wiki)
+        subprocess.check_call(["make", "-C", wiki ,"clean"])
         subprocess.check_call(["make", "-C", wiki ,"html"])
             
 
@@ -93,40 +94,29 @@ def copy_build(site):
             subprocess.check_call(['mkdir', olddir])
         except:
             pass
-        print('DEBUG: mv %s %s' % (targetdir,olddir) )
+        #print('DEBUG: mv %s %s' % (targetdir,olddir) )
         try:
             subprocess.check_call(['mv', targetdir, olddir])
-            print("Yes - moved to olddir")
-
+            #print("DEBUG: Yes - moved to olddir")
         except:
-            print("No move to olddir")
+            #print("DEBUG: No move to olddir")
+            pass
 
         # copy new dir to targetdir
-        print("targetdir: %s" % targetdir)
+        #print("DEBUG: targetdir: %s" % targetdir)
         #sourcedir='./%s/build/html/*' % wiki
         sourcedir='./%s/build/html/' % wiki
-        print("sourcedir: %s" % sourcedir)
-        
-        print('DEBUG: mv %s %s' % (sourcedir, COPY_TARGET_DIR_BASE) )
-        #try:
-        #    subprocess.check_call(['mkdir', targetdir])
-        #    print("Yes - made target dir")
-        #except:
-        #    print("No - couldn't make targetdir")
-        #    pass
+        #print("DEBUG: sourcedir: %s" % sourcedir)
+        #print('DEBUG: mv %s %s' % (sourcedir, COPY_TARGET_DIR_BASE) )
+
         html_moved_dir = COPY_TARGET_DIR_BASE+'html'
         try:
             subprocess.check_call(['mv', sourcedir, html_moved_dir])
-            print("Yes - moved to copied to good output location")
-        except:
-            print("no copy of new build")
-
-        try: #Rename move!
+            #Rename move! (single move to html/* failed)
             subprocess.check_call(['mv', html_moved_dir ,targetdir])
             print("Yes - moved to copied to good output location")
         except:
             print("no copy of new build")
-
 
 
     # delete the old directory
@@ -145,14 +135,12 @@ def generate_copy_dict(start_dir=COMMON_DIR):
     
     #Clean existing common topics (easiest way to guarantee old ones are removed)
     #Cost is that these will have to be rebuilt even if not changed
-
     import glob
     for wiki in ALL_WIKIS:
         files = glob.glob('%s/source/docs/common-*.rst' % wiki)
         for f in files:
             print('remove: %s' % f)
             os.remove(f)
-            
 
     #Create destination folders that might be needed (if don't exist)
     for wiki in ALL_WIKIS:

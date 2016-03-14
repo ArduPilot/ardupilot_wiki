@@ -12,7 +12,7 @@ disable_non_local_image_warnings=True
 #intersphinx_base_url=wiki_base_url+'/%s/build/html/'
 
 wiki_base_url='http://new.ardupilot.org/wiki/'
-intersphinx_base_url=wiki_base_url+'/%s/'
+intersphinx_base_url=wiki_base_url+'%s/'
 
 
 # Where to point the base of the build for the main site menu
