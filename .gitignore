@@ -16,3 +16,4 @@
 
 # Build outputs
 *.html
+*.pyc
