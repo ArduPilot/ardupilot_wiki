@@ -34,7 +34,7 @@ import subprocess
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
 ALL_WIKIS =['copter', 'plane', 'rover','antennatracker','dev','planner','planner2']
 COMMON_DIR='common'
-COPY_TARGET_DIR_BASE='/var/sites/new/wiki/'
+COPY_TARGET_DIR_BASE='/var/sites/new/web/wiki/'
 
 #GIT_REPO = ''
 
@@ -85,15 +85,57 @@ def copy_build(site):
             continue
         if not site==None and not site==wiki:
             continue
-        print('make: %s' % wiki)
+        print('copy: %s' % wiki)
         targetdir=COPY_TARGET_DIR_BASE+wiki
-        sourcedir='%s/build/html/*' % wiki
-        print("targetdir: %s" % targetdir)
-        print("sourcedir: %s" % sourcedir)
-        #rsync -raz sourcedir targetdir
-        #subprocess.check_call(["sudo","rsync", "-razv", sourcedir ,targetdir])
+        # copy target directory to "old" folder
+        olddir=COPY_TARGET_DIR_BASE+'old'
+        try:
+            subprocess.check_call(['mkdir', olddir])
+        except:
+            pass
+        print('DEBUG: mv %s %s' % (targetdir,olddir) )
+        try:
+            subprocess.check_call(['mv', targetdir, olddir])
+            print("Yes - moved to olddir")
 
-            
+        except:
+            print("No move to olddir")
+
+        # copy new dir to targetdir
+        print("targetdir: %s" % targetdir)
+        #sourcedir='./%s/build/html/*' % wiki
+        sourcedir='./%s/build/html/' % wiki
+        print("sourcedir: %s" % sourcedir)
+        
+        print('DEBUG: mv %s %s' % (sourcedir, COPY_TARGET_DIR_BASE) )
+        #try:
+        #    subprocess.check_call(['mkdir', targetdir])
+        #    print("Yes - made target dir")
+        #except:
+        #    print("No - couldn't make targetdir")
+        #    pass
+        html_moved_dir = COPY_TARGET_DIR_BASE+'html'
+        try:
+            subprocess.check_call(['mv', sourcedir, html_moved_dir])
+            print("Yes - moved to copied to good output location")
+        except:
+            print("no copy of new build")
+
+        try: #Rename move!
+            subprocess.check_call(['mv', html_moved_dir ,targetdir])
+            print("Yes - moved to copied to good output location")
+        except:
+            print("no copy of new build")
+
+
+
+    # delete the old directory
+    print('DEBUG: rm -fi %s' % olddir )
+    try:
+        subprocess.check_call(["rm", "-rf", olddir])
+        print("Yes - deleted olddir")
+    except:
+        print("no delete of olddir")
             
             
 def generate_copy_dict(start_dir=COMMON_DIR):
