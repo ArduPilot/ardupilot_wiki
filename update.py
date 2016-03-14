@@ -32,7 +32,7 @@ import subprocess
 
 
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
-ALL_WIKIS =['copter', 'plane', 'rover','antennatracker','dev','planner','planner2']
+ALL_WIKIS =['copter', 'plane', 'rover','antennatracker','dev','planner','planner2','ardupilot']
 COMMON_DIR='common'
 COPY_TARGET_DIR_BASE='/var/sites/new/web/wiki/'
 
@@ -114,18 +114,20 @@ def copy_build(site):
             subprocess.check_call(['mv', sourcedir, html_moved_dir])
             #Rename move! (single move to html/* failed)
             subprocess.check_call(['mv', html_moved_dir ,targetdir])
-            print("Yes - moved to copied to good output location")
+            print("DEBUG: moved to copied to good output location")
         except:
-            print("no copy of new build")
+            print("DEBUG: FAIL moving output to website location")
+            pass
 
 
     # delete the old directory
     print('DEBUG: rm -fi %s' % olddir )
     try:
         subprocess.check_call(["rm", "-rf", olddir])
-        print("Yes - deleted olddir")
+        print("Deleted olddir")
     except:
-        print("no delete of olddir")
+        #print("no delete of olddir")
+        pss
             
             
 def generate_copy_dict(start_dir=COMMON_DIR):
@@ -185,8 +187,6 @@ def get_copy_targets(content):
     m = p.search(content)
     targetset=set()
     if m:
-        #print(m.group(0))
-        #print(m.group(1))
         targets=m.group(1).split(',')
         for item in targets:
           targetset.add(item.strip())
