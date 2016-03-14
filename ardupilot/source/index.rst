@@ -161,13 +161,11 @@ Features:
 .. toctree::
    :hidden:
 
-   Copter <https://dl.dropboxusercontent.com/u/3067678/share2/wiki/copter/build/html/index.html>
-   Plane <https://dl.dropboxusercontent.com/u/3067678/share2/wiki/plane/build/html/index.html>
-   Rover <https://dl.dropboxusercontent.com/u/3067678/share2/wiki/rover/build/html/index.html>
-   Mission Planner <https://dl.dropboxusercontent.com/u/3067678/share2/wiki/planner/build/html/index.html>
-   APM Planner 2 <https://dl.dropboxusercontent.com/u/3067678/share2/wiki/planner2/build/html/index.html>
-   AntennaTracker <https://dl.dropboxusercontent.com/u/3067678/share2/wiki/antennatracker/build/html/index.html>
-   Developers <https://dl.dropboxusercontent.com/u/3067678/share2/wiki/dev/build/html/index.html>
-   
-   
-   
+   Copter <http://new.ardupilot.org/wiki/copter/index.html>
+   Plane <http://new.ardupilot.org/wiki/plane/index.html>
+   Rover <http://new.ardupilot.org/wiki/rover/index.html>
+   Mission Planner <http://new.ardupilot.org/wiki/planner/index.html>
+   APM Planner 2 <http://new.ardupilot.org/wiki/planner2/index.html>
+   AntennaTracker <http://new.ardupilot.org/wiki/antennatracker/index.html>
+   Developers <http://new.ardupilot.org/wiki/dev/index.html>
+
