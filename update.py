@@ -275,7 +275,7 @@ def logmatch_code(matchobj, prefix):
 
 
 
-refresh_from_git(clean=args.clean)
+#refresh_from_git(clean=args.clean)
 generate_copy_dict()
 sphinx_make(args.site)
 copy_build(args.site)
