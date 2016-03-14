@@ -48,18 +48,7 @@ args = parser.parse_args()
 #print(args.clean)
 
 
-def refresh_from_git(clean):
-    """
-    Refreshes wiki sources from git
-    """
-    subprocess.check_call(["git", "fetch"])
-    if not clean=='True':
-        print("Git pull from master ...")
-        subprocess.check_call(["git", "pull", "origin", "master"])
-    else:
-        print("Git hard reset from master ...")
-        #subprocess.check_call(["git", "reset", "--hard", "HEAD")
-        pass
+
         
 def sphinx_make(site):
     """
@@ -114,7 +103,7 @@ def copy_build(site):
             subprocess.check_call(['mv', sourcedir, html_moved_dir])
             #Rename move! (single move to html/* failed)
             subprocess.check_call(['mv', html_moved_dir ,targetdir])
-            print("DEBUG: moved to copied to good output location")
+            print("DEBUG: Copied to good output location")
         except:
             print("DEBUG: FAIL moving output to website location")
             pass
@@ -275,7 +264,6 @@ def logmatch_code(matchobj, prefix):
 
 
 
-#refresh_from_git(clean=args.clean)
 generate_copy_dict()
 sphinx_make(args.site)
 copy_build(args.site)
