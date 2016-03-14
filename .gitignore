@@ -11,5 +11,8 @@
 # Any build directory
 */build/*
 
+# Logs
+*.log
+
 # Build outputs
 *.html
