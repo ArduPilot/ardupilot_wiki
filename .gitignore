@@ -1,0 +1,15 @@
+# Common files except under Common
+/ardupilot/source/docs/common-*
+/copter/source/docs/common-*
+/plane/source/docs/common-*
+/rover/source/docs/common-*
+/planner/source/docs/common-*
+/planner2/source/docs/common-*
+/antennatracker/source/docs/common-*
+/dev/source/docs/common-*
+
+# Any build directory
+*/build/*
+
+# Build outputs
+*.html
