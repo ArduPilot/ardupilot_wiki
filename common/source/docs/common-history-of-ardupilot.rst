@@ -181,4 +181,4 @@ Sep 2015 - `First major news event involving a misbehaving pilot of an ardupilot
    for a more complete list of contributors to the project.
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
