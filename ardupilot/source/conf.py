@@ -162,8 +162,8 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # "<project> v<release> documentation".
 #html_title = None
 
-# A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
+# DO NOT CHANGE. This is used by theme in "Edit on Github" links
+html_short_title = 'ardupilot'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -209,7 +209,7 @@ html_static_path = ['_static']
 #html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
-#html_show_sourcelink = True
+html_show_sourcelink = False
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 #html_show_sphinx = True
