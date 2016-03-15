@@ -8,7 +8,6 @@ History of Ardupilot
     :target: ../_images/APM-history.jpg
 
 
-
 May 2007 - Chris Anderson starts
 `DIYDrones.com <http://diydrones.com/>`__ while building his `Lego mindstorm base UAV <https://www.youtube.com/watch?v=GC2qs0WpL7w>`__.
 
@@ -170,7 +169,6 @@ June 2015 - `Parrot Bebop port's first successful flights <http://diydrones.com/
 Aug 2015 - Michael Clement & Michael Day fly `50 arduplanes in a multi-vehicle environment <http://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__
 
 Sep 2015 - `First major news event involving a misbehaving pilot of an ardupilot vehicle (a Solo) <http://edition.cnn.com/2015/09/04/us/us-open-tennis-drone-arrest/>`__
-
 
 .. note::
 
