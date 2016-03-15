@@ -7,12 +7,10 @@ Plane Home
 .. tip::
 
    The ArduPilot Developer Ecosystem is Evolving! 
-   `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__.
+   `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
-
-.. image:: ../../images/plane_home_page_hero_image.jpg
-    :target: _images/plane_home_page_hero_image.jpg
-
+.. image:: ../../images/home_plane.jpg
+    :target: _images/home_plane.jpg
 
 --------------
 

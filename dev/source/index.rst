@@ -6,13 +6,15 @@ Welcome to the ArduPilot Development Site
 
 .. tip::
 
-   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
+    The ArduPilot Developer Ecosystem is Evolving! 
+    `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
 
 :ref:`ArduPilot/APM <ardupilot:ardupilot.com>` is a open source autopilot
 system supporting multi-copters, traditional helicopters, fixed wing
-aircraft and rovers. The source code is developed by a `large community of enthusiasts <http://diydrones.com>`__. New developers are always
-welcome! The best way to start is by joining the `Developer Mailing List <https://groups.google.com/forum/#!forum/drones-discuss>`__, which
+aircraft and rovers. The source code is developed by a `large community of enthusiasts <http://diydrones.com>`__. 
+New developers are always welcome! The best way to start is by joining the 
+`Developer Mailing List <https://groups.google.com/forum/#!forum/drones-discuss>`__, which
 is open to all and chock-full of daily development goodness. Lurk for a
 while to get a feel for it, then participate!
 

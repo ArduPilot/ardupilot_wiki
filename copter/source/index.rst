@@ -9,8 +9,8 @@ Copter Home
    The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
 
-.. image:: ../../images/copter_home_001.jpg
-    :target: _images/copter_home_001.jpg
+.. image:: ../../images/home_copter.jpg
+    :target: _images/home_copter.jpg
 
 ..  raw:: html
 
@@ -43,7 +43,8 @@ Copter Home
     <tr>
     <td width="48%">
 
-|MP_waypoints|
+.. image:: ../../images/mission_planner_spline_waypoint.jpg
+    :target: _images/mission_planner_spline_waypoint.jpg
 
 ..  raw:: html
 
@@ -52,7 +53,8 @@ Copter Home
     </td>
     <td width="48%">
 
-|MP_main|    
+.. image:: ../../images/mission_planner_flight_data.jpg
+   :target: _images/mission_planner_flight_data.jpg    
 
 ..  raw:: html
 
@@ -92,7 +94,8 @@ Rotor Craft types
     <tr>
     <td width="48%">
 
-|trex450|
+.. image:: ../../images/helicopter_trex450.jpg
+   :target: _images/helicopter_trex450.jpg 
 
 ..  raw:: html
 
@@ -101,7 +104,9 @@ Rotor Craft types
     </td>
     <td width="48%">
 
-|3DR-ArduCopter-Hexa-B-Frame|    
+.. image:: ../../images/3DR_arducopter_hexa_b_frame.jpg
+   :target: _images/3DR_arducopter_hexa_b_frame.jpg
+  
 
 ..  raw:: html
 
@@ -110,7 +115,7 @@ Rotor Craft types
     </table>
 
 
-`Multicopters <http://copter.ardupilot.com/wiki/what-is-a-multicopter-and-how-does-it-work/>`__:
+:ref:`Multicopters <what-is-a-multicopter-and-how-does-it-work>`:
 
 -  Utilize differential thrust management of independent motor-prop
    units to provide lift and directional control
@@ -120,7 +125,7 @@ Rotor Craft types
 -  Varied form factor allows convenient options for payload mounting.
 
 
-`Helicopters <wiki/traditional-helicopters/>`__:
+:ref:`Helicopters <traditional-helicopters>`:
 
 -  Typically use a single lifting rotor with two or more blades
 -  Maintain directional control by varying blade pitch via
@@ -139,8 +144,8 @@ with :ref:`Plane <plane:home>`,
 of robotic vehicles that can be controlled through very similar
 interfaces to accomplish a wide variety of tasks.
 
-.. image:: ../../images/MissionPlannerFirmware.jpg
-    :target: _images/MissionPlannerFirmware.jpg
+.. image:: ../../images/firmware_types.jpg
+    :target: _images/firmware_types.jpg
 
 
 --------------
@@ -155,8 +160,6 @@ Getting more info
    to ask support questions and advice.
 -  Read or join the `drones-discuss email list <https://groups.google.com/forum/#!forum/drones-discuss>`__ once
    you're ready to get involved with the development of the software platform.
-
-
 
 
 
@@ -194,23 +197,5 @@ Getting more info
    complex missions which can be programmed through one of 4 elegant and well-developed 
    software ground stations. The entire package is designed to be safe, feature rich, 
    open-ended for custom applications and increasingly easy to use even for novice users.
-
-.. |MP_waypoints| image:: ../../images/MP_waypoints.jpg
-   :target: _images/MP_waypoints.jpg
-   
-.. |MP_main| image:: ../../images/MP_main.jpg
-   :target: _images/MP_main.jpg  
-   
-.. |trex450| image:: ../../images/trex450.jpg
-   :target: _images/trex450.jpg 
-  
-   
-.. |3DR-ArduCopter-Hexa-B-Frame| image:: ../../images/3DR-ArduCopter-Hexa-B-Frame.jpg
-   :target: _images/3DR-ArduCopter-Hexa-B-Frame.jpg
-   
-
-   
-
-   
 
 

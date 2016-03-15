@@ -1,5 +1,3 @@
-.. _manual:
-
 .. _home:
 
 ===================
@@ -8,7 +6,8 @@ AntennaTracker Home
 
 .. tip::
 
-   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`_\
+    The ArduPilot Developer Ecosystem is Evolving! 
+    `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`_
 
 The *AntennaTracker* Project delivers firmware which allows you to use a
 supported flight controller board (Pixhawk, APM2, etc.) as the
@@ -19,18 +18,14 @@ GPS position and GPS telemetry from a vehicle running Copter, Rover or
 Plane. It then uses this information to aim a directional antenna at
 the vehicle.
 
-
 Using a correctly aligned directional antenna *significantly improves* 
 the range over which signals can be both sent and received from
 a ground station.
 
-
-.. image:: ../../images/AntennaTracker_introImage.jpg
-    :target: _images/AntennaTracker_introImage.jpg
-
+.. image:: ../../images/home_antennatracker.jpg
+    :target: _images/home_antennatracker.jpg
 
 This manual will guide you through setup and configuration process.
-
 
 .. toctree::
     :hidden:

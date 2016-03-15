@@ -8,13 +8,8 @@ Rover Home
 
    The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
-
-.. image:: ../../images/rover_home_hero_image.jpg
-    :target: _images/rover_home_hero_image.jpg
-
-
-Rover Overview
-==============
+.. image:: ../../images/home_rover.jpg
+    :target: _images/home_rover.jpg
 
 Rover is an advanced :ref:`open source <dev:license-gplv3>` autopilot for
 guiding **ground vehicles** and **boats**. It can run fully autonomous
@@ -29,15 +24,6 @@ This is the platform that won the `2013 and 2014 Sparkfun Autonomous Vehicle Com
 far more than just a toy - it is already being used in numerous
 applications (you can see a few examples including agricultural
 automation in our :ref:`Video Demos <rover-video-demonstration>`).
-
-
-.. figure:: ../../images/APMrover_WPL.jpg
-   :target: _images/APMrover_WPL.jpg
-
-   Rover navigates waypoints autonomously with APM autopilot and Mission Planner software.
-
-
-
 
 
 Table of Contents

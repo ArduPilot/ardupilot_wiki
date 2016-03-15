@@ -9,8 +9,8 @@ Mission Planner Home
    The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
 
-.. image:: ../../images/MP-FP-Screen.jpg
-    :target: _images/MP-FP-Screen.jpg
+.. image:: ../../images/mission_planner_screen_flight_plan.jpg
+    :target: _images/mission_planner_screen_flight_plan.jpg
 
 
 --------
@@ -27,7 +27,7 @@ name. Here are some of the features:
    hardware-in-the-loop UAV simulator.
 -  See the output from APM's serial terminal
 
-Please use the menus above for instructions and more information.
+Please use the sidebar menus for instructions and more information.
 
 
 

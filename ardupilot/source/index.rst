@@ -1,28 +1,24 @@
 .. _home:
 
-====
-Home
-====
-
-.. tip::
-
-   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
-
-
-[meteor_slideshow]
-
 ..  raw:: html
 
     <h1 style="text-align:center;">ArduPilot Autopilot Suite</h1>
 
     <p style="text-align:center;">Hardware -- Firmware -- Software -- Community</p>
 
+.. tip::
+
+   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
+   
+.. image:: ../../images/home_ardupilot.jpg
+    :target: _images/home_ardupilot.jpg
 
 ..  raw:: html
 
     <table>
     <tr>
     <td width="27%">
+
 
 `Hardware <https://store.3dr.com>`__- The embedded systems and
 peripheral sensors that 3DRobotics designs, manufactures, and sells.
@@ -32,8 +28,8 @@ Think of hardware as the brain, eyes, ears, etc.
 Almost any mobile machine can be transformed into a robot, by simply
 integrating a small hardware package into it.
 
-.. image:: ../../images/PixhawkSmall.jpg
-    :target: _images/PixhawkSmall.jpg
+.. image:: ../../images/pixhawk_small.jpg
+    :target: _images/pixhawk_small.jpg
 
 ..  raw:: html
 
@@ -51,8 +47,8 @@ mission: :ref:`Plane <plane:home>`, :ref:`Copter <copter:home>`,
 The choice is yours -- one autopilot for any mission. An easy firmware
 update is all it takes to repurpose your hardware into a different role.
 
-.. image:: ../../images/FirmwareTypes.jpg
-    :target: _images/FirmwareTypes.jpg
+.. image:: ../../images/firmware_types.jpg
+    :target: _images/firmware_types.jpg
 
 ..  raw:: html
 
@@ -71,8 +67,8 @@ Point-and-click intuitive interaction with your hardware, or advanced
 custom scripting for niche mission profiles. Options are everything with
 ArduPilot.
 
-.. image:: ../../images/MissionList_SplineWaypoint.jpg
-    :target: _images/MissionList_SplineWaypoint.jpg
+.. image:: ../../images/mission_planner_spline_waypoint.jpg
+    :target: _images/mission_planner_spline_waypoint.jpg
 
 ..  raw:: html
 
