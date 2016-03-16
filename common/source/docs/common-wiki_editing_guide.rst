@@ -63,21 +63,27 @@ The typical process for working with Git on the command line is:
 
        git clone https://github.com/YOURID/ardupilot_wiki.git
        
-#. Make any changes needed and :ref:`test them locally `<common_wiki_editing_guide_building_docs>`.
+#. Create a branch for your changes
+   
+   .. code-block:: bash
 
-#. Add and commit your changes, then push them to your fork:
+       git checkout -b hgw_my_well_named_branch
+       
+#. Make any changes needed and :ref:`test them locally <common_wiki_editing_guide_building_docs>`.
+
+#. Add and commit your changes:
 
    .. code-block:: bash
    
-       # Do git commands to rebase your fork to the latest version of master
-       git fetch upstream master
-       git reset --hard upstream/master
-       # Create a branch for your changes
-       git checkout -b hgw_my_well_named_branch
-       # Add changes
        git add the_name_of_file_you_changed.rst
        git commit -m "A short explanation of the change"
-       # Push changes to your fork
+       
+#. Rebase your fork to the latest version of master
+
+   .. code-block:: bash
+   
+       git fetch upstream master
+       git rebase upstream/master
        git push origin hgw_my_well_named_branch
        
 #. Go to Github and create a Pull Request from your repo to the master. If you do this shortly after 
