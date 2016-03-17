@@ -53,6 +53,20 @@ Tools
 =====
 
 
+
+Odroid Ubuntu 14.04 hostapd
+---------------------------
+
+* `hostapd_OdroidU3_Ubuntu1404.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/hostapd_OdroidU3_Ubuntu1404.zip>`__
+
+VERSION	dev
+DATE POSTED	January 20, 2015
+
+This replaces the hostapd distributed with the Odroid U3 board’s Ubuntu 14.04. This newer version resolves issues creating a wifi access point.
+
+
+
+
 Arduino code to test an airspeed sensor
 ---------------------------------------
 

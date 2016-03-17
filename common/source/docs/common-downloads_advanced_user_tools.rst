@@ -52,6 +52,15 @@ Tools
 =====
 
 
+Tarot Gimbal firmware
+----------------------
+
+Tarot Gimbal firmware and configuration UI for Windows.
+
+* `ZYX-BMGC-EN_V1.5.zip <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__ (v1.5)
+* `ZYX-BMGC-EN_V1.4.zip <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.4.zip>`__ (v1.4)
+
+
 Copter Firmware
 ---------------
 
@@ -187,6 +196,62 @@ DATE POSTED	April 26, 2013
 
 Manual for the standalone PPM Encoder by 3DR.
 This manual covers firmware version 2.3.16.
+
+
+ArduPPM v2.3.16 ATMega32U2 firmware for APM 2.x (recommended APM2.x)
+---------------------------------------------------------------------
+
+* `ArduPPM_v2.3.16_ATMega32U2.hex_.zip <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega32U2.hex_.zip>`__
+
+.. tip:: Recommended for all APM 2.x users
+
+DATE POSTED	April 29, 2013
+
+
+
+– New interrupt system that handles certain Futaba receivers better
+(simultaneous changes on groups of R/C channels in fast intervals)
+– Adapted behaviour in case of channel loss:
+
+  - ch1, roll: set to center (1500us)
+  - ch2, pitch: set to center (1500us)
+  - ch3, throttle: set to low (900us)
+  - ch4, yaw: set to center (1500us)
+  - ch5-ch8: retain last value
+
+
+APM 2.x LED STATUS:
+++++++++++++++++++++
+
+* - RX – OFF = No input signal detected
+* - RX – SLOW TOGGLE = Input signal OK
+* - RX – FAST TOGGLE = Invalid input signal(s) detected
+* - RX – ON = Input signal(s) lost during flight and fail-safe activated
+* - TX – OFF= PPM output disabled
+* - TX – FAST TOGGLE = PPM output enabled
+* - TX – SLOW TOGGLE = PPM pass-trough mode
+
+SERVO INPUT (PWM) MODE:
++++++++++++++++++++++++
+
+* – PPM output will not be enabled unless a input signal has been detected and verified
+* – Verified inputs are lost during operation (lose servo wire or receiver malfunction):
+* + The last known value of the lost input channel is kept for ~1 second
+* + If the lost input channel is not restored within ~1 second, it will be set to the default fail-safe value (for channel 1-4) or kept at the last value (for channel 5-8)
+* – Lost channel signal is restored:
+* + Normal channel operation is restored using the valid input signal
+
+PPM PASS-THROUGH MODE (signal pin 2&3 shorted):
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+* – PPM output will not be enabled unless a input signal has been detected
+* – Active signal on input channel 1 has been detected:
+* + Any input level changes will be passed directly to the PPM output (PPM pass-trough)
+* + If no input level changes are detected withing 250ms:
+* + PPM output is enabled and default fail-safe values for all eight channels transmitted
+* + Input level change detected again, PPM fail-safe output is terminated and normal PPM pass-through operation is restored
+
+
 
 
 ArduPPM v2.3.16 ATMega328p firmware for APM1.x Copter and standalone PPM encoder. 
