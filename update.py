@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This program updates and rebuilds wiki sources from Github. 
+This program updates and rebuilds wiki sources from Github and from parameters on the test server. 
 
 It is intended to be run on the main wiki server or
 locally within the project's Vagrant environment.
@@ -21,6 +21,7 @@ Build notes:
   * Copied topics are stripped of any content not marked for the target wiki using the "site" shortcode:
     [site wiki="plane,rover"]conditional content[/site]
 
+Parameters files are fetched from autotest using a Wget
 """
 from __future__ import print_function, unicode_literals
 
@@ -47,6 +48,34 @@ args = parser.parse_args()
 #print(args.site)
 #print(args.clean)
 
+
+
+def fetchparameters(site=args.site):
+    """
+    Fetches the parameters for all the sites from the test server and 
+    copies them to the correct location.
+    
+    This is always run as part of a build (i.e. no checking to see if parameters have changed.)
+    """
+    PARAMETER_SITE={'rover':'APMrover2', 'copter':'ArduCopter','plane':'ArduPlane','antennatracker':'AntennaTracker' }
+    # remove any parameters files in root
+    try:
+        subprocess.check_call(["rm", 'Parameters.rst'])
+    except:
+        pass
+        
+    for key, value in PARAMETER_SITE.items():
+        fetchurl='http://autotest.diydrones.com/Parameters/%s/Parameters.rst' % value
+        targetfile='./%s/source/docs/parameters.rst' % key
+        if site==key or site==None:
+            subprocess.check_call(["wget", fetchurl])
+            try: #Remove target file if it exists
+                subprocess.check_call(["rm", targetfile])
+            except:
+                pass
+            #copy in new file
+            subprocess.check_call(["mv", 'Parameters.rst', targetfile]) 
+            
 
 
         
@@ -263,7 +292,7 @@ def logmatch_code(matchobj, prefix):
         print("%s: except m8" % prefix)
 
 
-
+fetchparameters(args.site)
 generate_copy_dict()
 sphinx_make(args.site)
 copy_build(args.site)
