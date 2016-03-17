@@ -4,12 +4,16 @@
 DOWNLOADS: Firmware
 ===================
 
-The latest vehicle firmware is available from the `firmware server <http://firmware.ardupilot.org/>`:
+The latest firmware for all of the vehicles is available from the `firmware server <http://firmware.ardupilot.org/>`__.
+This includes:
 
 * `Copter <http://firmware.ardupilot.org/Copter>`__ 
 * `Plane <http://firmware.ardupilot.org/Plane>`__ 
 * `Rover <http://firmware.ardupilot.org/Rover>`__ 
 * `AntennaTracker <http://firmware.ardupilot.org/AntennaTracker>`__ 
+
+This page provides additional links to a number of specific builds that are considered "significant" - for example, the last builds of 
+Copter to fit on the APM2.x board.
 
 .. tip::
 
@@ -22,9 +26,26 @@ The latest vehicle firmware is available from the `firmware server <http://firmw
     * `Build and Development Tools <http://firmware.ardupilot.org/Tools>`__ 
     * `Companion Computers and associated example code <http://github.com/diydrones/companion>`__ 
 
-This page provides additional links to a number of specific builds that are considered "significant" - for example, the last builds of 
-Copter to fit on the APM2.x board.
 
+Firmware
+========
+
+The following firmware is "special" in that it represents some significant milestone - e.g. "the last version of a build for a particular autopilot".
+
+ArduCopter APM 2.x Firmware
+---------------------------
+
+ArduCopter v3.2.1 firmware for APM 2.x. This is the **last build** of ArduCopter that still fits on the **APM 2.x** boards.
+
+* `ArduCopter_APM_2.0_Firmware_3.2.1.zip <http://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
+
+
+ArduCopter APM 1.0 Firmware
+---------------------------
+
+ArduCopter v3.2.1 firmware for APM 1.0. This is the last build of ArduCopter that still fits on the **APM 1.0** boards.
+
+* `ArduCopter_APM_1.0_Firmware_3.2.1.zip <http://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
 
 
 License
@@ -60,27 +81,6 @@ Since we want you to have a great experience, please make sure that you do all o
 * Never use the software or hardware for manned vehicles. 
   The software and hardware we provide is only for use in unmanned vehicles.
 
-
-Special Firmware
-================
-
-The following firmware is "special" in that it represents some significant milestone - e.g. "the last version of a build for a particular autopilot".
-
-ArduCopter APM 2.x Firmware
----------------------------
-
-ArduCopter v3.2.1 firmware for APM 2.x. This is the **last build** of ArduCopter that still fits on the **APM 2.x** boards.
-
-* `ArduCopter_APM_2.0_Firmware_3.2.1.zip <http://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
-
-
-
-ArduCopter APM 1.0 Firmware
----------------------------
-
-ArduCopter v3.2.1 firmware for APM 1.0. This is the last build of ArduCopter that still fits on the **APM 1.0** boards.
-
-* `ArduCopter_APM_1.0_Firmware_3.2.1.zip <http://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
 
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
