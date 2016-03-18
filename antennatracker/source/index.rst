@@ -34,6 +34,8 @@ This manual will guide you through setup and configuration process.
     Frame Assembly <docs/frame-assembly>
     Loading the Firmware <docs/loading-the-firmware>
     Configuration <docs/configuration>
+    docs/parameters
     Connecting with GCS <docs/connecting-with-gcs>
     How to Operate <docs/how-to-operate>
+    docs/common-appendix
     docs/common-table-of-contents

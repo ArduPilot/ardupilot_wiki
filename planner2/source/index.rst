@@ -143,7 +143,6 @@ Full Table of Contents
 .. toctree::
    :titlesonly:
    
-
     Home/QuickStart <self>
     Installation <docs/installing-apm-planner-2>
     Flight Data Screen <docs/flght-map>
@@ -151,5 +150,6 @@ Full Table of Contents
     Autopilot Setup <docs/autopilot-setup>
     Full Table of Contents  (delete this one) <docs/table-of-contents>
     Credits and Contributors <docs/credits-and-contributors>
-    Full Table of COntents <docs/common-table-of-contents>
+    Appendix <docs/common-appendix>
+    Full Table of Contents <docs/common-table-of-contents>
 

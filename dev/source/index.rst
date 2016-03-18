@@ -217,5 +217,5 @@ Full Table of Contents
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
     Companion Computers <docs/companion-computers>
     Mission Planner Terminal <docs/mission-planner-terminal>
-    Appendix <docs/appendix>
+    Appendix <docs/common-appendix>
     Full Table of Contents <docs/table-of-contents>

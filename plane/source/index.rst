@@ -44,7 +44,7 @@ System components:
    version of `Plane firmware <http://firmware.diydrones.com/>`__
 -  :ref:`Ground Control Station <common-choosing-a-ground-station>`
    software gives you an easy point-and-click setup/configuration, along
-   with a full-featured ground control interface.[/column]
+   with a full-featured ground control interface.
 -  A suitable airframe for your mission.
 -  Support tools and hardware for operating and maintaining your
    aircraft.
