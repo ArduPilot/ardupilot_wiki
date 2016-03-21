@@ -227,9 +227,9 @@ ArduPPM v2.3.16 ATMega328p firmware for APM1.x Copter and standalone PPM encoder
 
 .. warning::
 
-    ******Do not use with APM 2.x
+    **Do not use with APM 2.x**
     
-DATE POSTED	April 29, 2013
+    DATE POSTED	April 29, 2013
 
 
 This version is dedicated to ArduCopter (CH8 radio passthrough mode disabled).

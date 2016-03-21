@@ -11,10 +11,14 @@ History of Ardupilot
 May 2007 - Chris Anderson starts
 `DIYDrones.com <http://diydrones.com/>`__ while building his `Lego mindstorm base UAV <https://www.youtube.com/watch?v=GC2qs0WpL7w>`__.
 
-Sep 2008 - Jordi builds `traditional helicopter
-UAV <http://dev.ardupilot.com/wp-content/uploads/sites/6/2014/05/HistoryOfArdupilot_JordiFirstTradheli2008-e1420498675709.jpg>`__
-able to `fly autonomously <https://www.youtube.com/watch?v=20Z9VSvAAug&list=UU0sMZYj_oTmZmXMfBzqDyjg>`__
+Sep 2008 - Jordi builds traditional helicopter UAV able to `fly autonomously <https://www.youtube.com/watch?v=20Z9VSvAAug&list=UU0sMZYj_oTmZmXMfBzqDyjg>`__
 and `wins the first Sparkfun AVC competition <https://avc.sparkfun.com/2009>`__.
+
+.. figure:: ../../../images/history_of_ardupilot_jordi_first_tradheli_2008.jpg
+    :target: ../_images/history_of_ardupilot_jordi_first_tradheli_2008.jpg
+    :width: 100px
+    
+    Jordi's traditional helicopter
 
 2009 - Chris Anderson & Jordi Munoz found 3D Robotics
 

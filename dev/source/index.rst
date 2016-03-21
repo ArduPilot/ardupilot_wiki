@@ -34,13 +34,6 @@ prefix (APM:Copter, Plane, Rover, etc), which signifies the
 cross-platform nature of the current code. A timeline history of
 ardupilot can be found :ref:`here <history-of-ardupilot>`.
 
-.. raw:: html
-
-   <div id="supported_autopilot_boards">
-
-.. raw:: html
-
-   </div>
 
 Supported boards
 ================
@@ -52,7 +45,7 @@ and key links for all the supported controller boards, including
 `NAVIO+ <http://www.emlid.com/>`__ etc.
 
 The ArduPilot/APM source code is written on top of
-the \ `AP-HAL <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL>`__
+the `AP-HAL <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL>`__
 hardware abstraction layer, making it possible to port the code to a
 wide range of autopilot boards. See this `blog post <http://diydrones.com/profiles/blogs/lots-of-changes-to-apm-development>`__
 for more information on the move to AP-HAL.
@@ -188,9 +181,6 @@ If you think of something that should be added to this site, please
 post a comment on the
 `drones-discuss <https://groups.google.com/forum/#!forum/drones-discuss>`__
 mailing list.
-
-
-
 
 
 

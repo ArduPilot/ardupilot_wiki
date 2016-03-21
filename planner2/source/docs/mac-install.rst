@@ -34,8 +34,8 @@ found on the Apple site.
 
 \*Control-Click is the same as 'right mouse button click'
 
-.. image:: ../../../images/apm_planner2_ftdi_installer_dmg_image.png
-    :target: ../_images/apm_planner2_ftdi_installer_dmg_image.png
+.. image:: ../../../images/apm_planner2_ftdi_installer_dmg_image.jpg
+    :target: ../_images/apm_planner2_ftdi_installer_dmg_image.jpg
 
 Open the **FTDI USB .dmg** file to view the two packages inside. Open
 the package labeled "**10_4\_10_5\_10_6\_10_7**\ " by

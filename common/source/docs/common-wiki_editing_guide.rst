@@ -421,7 +421,7 @@ syntax marked:
 
     .. code-block:: python
     
-        This is format for a code block. ::
+        This is format for a code block (in python)
     
         Some code
 
@@ -451,9 +451,13 @@ underscore and trailing colon are important):
 
     .. _a_named_link:
     
-.. note::
+.. tip::
 
-    We recommend placing an anchor at the top of every page, named using the article filename.
+    * We recommend placing an anchor at the top of every page, named using the article filename.
+    * Anchors need to be unique, so use the page anchor as a prefix for heading anchors
+    * We've created a bunch of useful anchors for you; for example, to link to a parameter, you
+      just specify that parameter as the target.
+    
 
 You can link to the anchor from the same wiki using either of the two approaches below:
 
@@ -591,7 +595,7 @@ This is done by:
 
            This topic is archived.
 
-# Move the topic under "Archived Topics" in the menu (you will need to edit the toctree
+#. Move the topic under "Archived Topics" in the menu (you will need to edit the toctree
   directive in :ref:`common-archived-topics`).
 
 

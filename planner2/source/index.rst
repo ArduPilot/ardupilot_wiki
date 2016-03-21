@@ -97,8 +97,8 @@ Connect a 3DR Radio to view live data and initiate commands in flight.
     </td>
     <td width="27%">
 
-.. image:: ../../images/planner2_flight_data_live.jpg
-    :target: _images/planner2_flight_data_live.jpg
+.. image:: ../../images/apm_planner2_flight-data-live.jpg
+    :target: _images/apm_planner2_flight-data-live.jpg
 
 ..  raw:: html
 
