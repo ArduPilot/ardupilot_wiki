@@ -383,7 +383,7 @@ The abort behaviour depends on the trigger method, your mission, and
 other factors.
 
 User-defined abort sequence
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++
 
 If an abort is triggered using the ``CMD_DO_GO_AROUND`` command, the
 mission will increment to the command after the LAND command, and
@@ -404,7 +404,7 @@ command, and then continue the mission when it reaches the desired
 altitude.  Otherwise Plane will follow the default abort sequence below.
 
 Fallback/default abort sequence
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++
 
 If an abort is triggered by changing modes (toggle out of AUTO to FBWA
 and then back to AUTO) or increasing throttle to >90% and
@@ -459,8 +459,23 @@ the ones :ref:`listed in section 1.1 <automatic-landing_key_parameters>` are:
 -  :ref:`RC3_TRIM <RC3_TRIM>`
 -  :ref:`THR_MIN <THR_MIN>`
 
-ESC setup
----------
+
+
+ESC (Electronic Speed Controller)
+---------------------------------
+
+Hardware selection and programming
+++++++++++++++++++++++++++++++++++
+
+Most ESCs can operate in forwards and reverse, however that is usually not a stock feature 
+and may need to be reprogrammed to do it. Any SimonK and BLHeli compatible ESC can be 
+flashed to support reverse thrust. 
+
+`Here's info about BLHeli compatible ones <https://blhelisuite.wordpress.com/>`__.
+
+
+Hardware configuration
+++++++++++++++++++++++
 
 .. note::
 
@@ -540,7 +555,7 @@ Other benefits of reverse-thrust landings
 -----------------------------------------
 
 LiDAR baro bump is handled better
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++
 
 On a long duration flight the baro drift will cause an altitude offset
 that is not detectable until the LiDAR detects the ground (at which
@@ -551,7 +566,7 @@ the TECS controller automatically changes the throttle demand to
 maintain the desired airspeed.
 
 Determining actual stall speed of your aircraft
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++++++++++++
 
 Unless you really know what you're doing, stall speed can be hard to
 estimate. To be sure of the value you normally need to slowly decrease

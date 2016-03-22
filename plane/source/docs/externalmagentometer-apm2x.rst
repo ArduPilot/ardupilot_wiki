@@ -4,6 +4,13 @@
 Using an External Compass with APM 2.x
 ======================================
 
+.. warning::
+
+    **ARCHIVED**
+
+    The APM2.x is end of life for use with ArduPilot.
+    This article is made available for existing users.
+
 If you're having trouble with magnetic noise affecting your compass
 onboard the APM 2.5 board, you may want to switch to an external compass
 that you can mount further away from noise sources such as motors. This
@@ -21,7 +28,7 @@ Step-by-step instructions
    board because it is shipped from 3DR with the 5 volt jumper set, as
    shown below.
 
-   .. |image1| image:: ../../../images/Mag_HMC5843_jumper1.jpg
+   .. image:: ../../../images/Mag_HMC5843_jumper1.jpg
        :target: ../_images/Mag_HMC5843_jumper1.jpg
     
 #. Looking at the below picture, cut the jumper trace in the middle of
@@ -65,7 +72,7 @@ Step-by-step instructions
    to complete this step. In “APM_Config.h”, you will find a commented
    out statement like:
 
-   ::
+   .. code-block:: cpp
 
         //#define MAG_ORIENTATION     AP_COMPASS_COMPOENTS_DOWN_PINS_FORWARD
 
@@ -73,7 +80,7 @@ Step-by-step instructions
    would add the following statement just below the commented out
    statement above as follows:
 
-   ::
+   .. code-block:: cpp
 
         #define MAG_ORIENTATION     AP_COMPASS_COMPONENTS_UP_PINS_FORWARD 
 
@@ -85,9 +92,9 @@ Step-by-step instructions
 #. If this is the first time loading software from the IDE, make sure
    the following statement is uncommented:
 
-   ::
+   .. code-block:: cpp
 
-       #define CONFIG_APM_HARDWARE    APM_HARDWARE_APM2
+        #define CONFIG_APM_HARDWARE    APM_HARDWARE_APM2
 
 #. Save, Compile and Upload the modified software
 #. Test the compass board and have fun flying with a now stable compass!

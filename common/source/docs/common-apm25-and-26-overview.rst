@@ -13,7 +13,6 @@ APM 2.5
 =======
 
 [site wiki="copter" heading="off"]
-
 .. warning::
 
    The APM2.6 board is no longer supported for Copter. From Copter
@@ -27,7 +26,6 @@ APM 2.5
 
    The APM2.6 board is no longer supported for Plane. The last
    firmware build that fits on the APM is Plane 3.3.0.
-
 [/site]
 
 The APM 2.5 board requires no assembly, and is ready for firmware. You
@@ -189,6 +187,7 @@ multiple sonars and not have them interfere with each other.
 
 [site wiki="plane"]
     APM2.x Wiring QuickStart <archived-apm2x-wiring-quickstart>
+    externalmagentometer-apm2x
 [/site]
     
     Powering the APM2 <common-powering-the-apm2>

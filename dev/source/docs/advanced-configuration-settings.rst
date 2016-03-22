@@ -36,7 +36,7 @@ This is a copy of the APM_Config.h.reference file for reference - note
 that the version in your Sketchbook may have been updated since this
 copy was taken.
 
-::
+.. code-block:: cpp
 
     //
     // Example and reference ArduPilot Mega configuration file
