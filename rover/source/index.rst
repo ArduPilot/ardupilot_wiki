@@ -23,7 +23,7 @@ number of other :ref:`supported autopilot boards <common-autopilots>`.
 This is the platform that won the `2013 and 2014 Sparkfun Autonomous Vehicle Competition <https://avc.sparkfun.com/>`__! That said, Rover is
 far more than just a toy - it is already being used in numerous
 applications (you can see a few examples including agricultural
-automation in our :ref:`Video Demos <rover-video-demonstration>`).
+automation in our :ref:`Video Demos <rover-video-demonstrations>`).
 
 
 Table of Contents
@@ -43,7 +43,6 @@ Table of Contents
     Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>
     Appendix <docs/common-appendix>
-    XXX <docs/test>
     Full Table of Contents <docs/common-table-of-contents>
 
 

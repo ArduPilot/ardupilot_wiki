@@ -148,7 +148,6 @@ Full Table of Contents
     Flight Data Screen <docs/flght-map>
     Preferences: Display Options <docs/display-options>
     Autopilot Setup <docs/autopilot-setup>
-    Full Table of Contents  (delete this one) <docs/table-of-contents>
     Credits and Contributors <docs/credits-and-contributors>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>

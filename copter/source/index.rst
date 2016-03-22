@@ -71,7 +71,7 @@ System components
 
 -  A `Pixhawk <https://store.3drobotics.com/t/pixhawk>`__ or :ref:`other autopilot <common-autopilots>` 
    loaded with the latest version of
-   the :ref:`Copter firmware <ardupilot:downloads>`
+   the `Copter firmware <http://firmware.ardupilot.org/>`__.
 -  :ref:`Mission Planner software <planner:home>` -- gives
    you an easy point-and-click setup/configuration, and a full-featured
    ground control interface.

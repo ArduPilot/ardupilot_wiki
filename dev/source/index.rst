@@ -10,7 +10,7 @@ Welcome to the ArduPilot Development Site
     `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
 
-:ref:`ArduPilot/APM <ardupilot:ardupilot.com>` is a open source autopilot
+:ref:`ArduPilot/APM <ardupilot:home>` is a open source autopilot
 system supporting multi-copters, traditional helicopters, fixed wing
 aircraft and rovers. The source code is developed by a `large community of enthusiasts <http://diydrones.com>`__. 
 New developers are always welcome! The best way to start is by joining the 
@@ -80,8 +80,7 @@ ArduPilot dev team.
    (`wiki <http://www.qgroundcontrol.org/mavlink/mavproxy_startpage>`__)
    - command line oriented and scriptable ground station (mostly used by
    developers)
--  MinimOSD
-   (`wiki <http://code.google.com/p/arducam-osd/wiki/minimosd>`__,
+-  MinimOSD (`wiki <http://code.google.com/p/arducam-osd/wiki/minimosd>`__,
    `code <http://code.google.com/p/arducam-osd/source/browse/#svn%2Ftrunk%2FArduCAM_OSD>`__)
    - on-screen display of flight data
 -  AndroPilot (`user
@@ -208,4 +207,4 @@ Full Table of Contents
     Companion Computers <docs/companion-computers>
     Mission Planner Terminal <docs/mission-planner-terminal>
     Appendix <docs/common-appendix>
-    Full Table of Contents <docs/table-of-contents>
+    Full Table of Contents <docs/common-table-of-contents>
