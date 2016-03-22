@@ -22,9 +22,6 @@ the wiki.
     Developer tools (downloads) <common-downloads_developer_tools>
     Firmware (downloads) <common-downloads_firmware>
 
-[site wiki="dev"]
-    ArduPilot Instructional Graphics Resources <graphics-resource-page>
-[/site]
     
 [site wiki="planner"]
     Mission Planner – Proposed Table Of Contents (TOC) <mission-planner-toc-planning>
@@ -34,15 +31,21 @@ the wiki.
     PDF Guides <pdf-guides>
     Troubleshooting <troubleshooting>
     Copter Project News <project-news>
+    common-training-centers
 [/site]
 
 [site wiki="plane"]
     Common Airframe Builds <common-common-airframe-builds>
     Troubleshooting Guide (Plane) <apmplane-troubleshooting-guide>
     Plane News <project-news>
+    common-training-centers
 [/site]
 
-[site wiki="copter,plane,rover,planner,planner2,dev"]
+[site wiki="antennatracker"]
+    project-news
+[/site]
+
+[site wiki="copter,plane,rover,dev"]
     Archived Topics <common-archived-topics>
 [/site]
 

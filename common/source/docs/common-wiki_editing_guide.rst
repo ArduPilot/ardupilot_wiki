@@ -596,7 +596,7 @@ This is done by:
            This topic is archived.
 
 #. Move the topic under "Archived Topics" in the menu (you will need to edit the toctree
-  directive in :ref:`common-archived-topics`).
+   directive in :ref:`common-archived-topics`).
 
 
 Deleting wiki pages
