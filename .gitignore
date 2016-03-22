@@ -17,3 +17,12 @@
 # Build outputs
 *.html
 *.pyc
+
+# Vagrant
+/.vagrant
+
+# Parameters files
+/copter/source/docs/parameters.rst
+/plane/source/docs/parameters.rst
+/rover/source/docs/parameters.rst
+/antennatracker/source/docs/parameters.rst
