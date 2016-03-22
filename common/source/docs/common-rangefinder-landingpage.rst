@@ -33,19 +33,22 @@ based upon your set-up.
     :target: ../_images/RangeFinder_LandingPageImage_4.jpg
 
 
-[site wiki="rover"]
-
 .. toctree::
     :maxdepth: 1
+    
+[site wiki="rover"]
+    Sonar Sensors <sonar-sensors>
+[/site]
 
     LIDAR-Lite <common-rangefinder-lidarlite>
     Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
     Lightware SF02 <common-rangefinder-sf02>
     LightWare SF10 Lidar <common-lightware-sf10-lidar>
-    Sonar Sensors <sonar-sensors>
     TeraRanger One Rangefinder <common-teraranger-one-rangefinder>
 
+
+    
 [site wiki="copter"]
     Analog Sonar (AC3.1) <sonar>
 [/site]

@@ -15,7 +15,7 @@ This section contains topics about tuning Rover parameters:
     MAVLink Parameters <parameters>
 
 
-All Rover parameters are :ref:`listed here <parameters>`. The
+All Rover parameters are :doc:`listed here <parameters>`. The
 parameters can be adjusted in *Mission Planner* in the specific screens
 described in each topic or in the **Advanced Parameter List**.
 

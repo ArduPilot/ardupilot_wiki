@@ -48,7 +48,8 @@ Failsafe output values:
    In Copter and Plane a fail-safe action can be triggered by the
    throttle low signal.
 
-   This should be carefully configured as explained in the wiki for :ref:`APM Copter <copter:throttle-failsafe>` and
+   This should be carefully configured as explained in the wiki for 
+   :ref:`APM Copter <copter:radio-failsafe>` and
    :ref:`APM Plane <plane:apms-failsafe-function>`
 
    Also note that this has nothing to do with losing the radio

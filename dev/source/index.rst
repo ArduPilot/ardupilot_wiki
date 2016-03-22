@@ -148,10 +148,8 @@ How the team works
    `here <http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A703309>`__.
 -  Bug tracking and open issues are tracked using the `github issues system <https://github.com/diydrones/ardupilot/issues>`__
 -  Vehicle onboard parameter documentation for
-   :ref:`copter <copter:arducopter-parameters>`,
-   :ref:`plane <plane:arduplane-parameters>` and
-   :ref:`rover <rover:apmrover2-parameters>` is
-   auto-generated from the source code
+   :ref:`copter <copter:parameters>`, :ref:`plane <plane:parameters>` and
+   :ref:`rover <rover:parameters>` is auto-generated from the source code
 -  :ref:`Release Procedures for Copter <release-procedures>`
 -  :ref:`Current and Past Dev Team members <planner:common-team>`
 
