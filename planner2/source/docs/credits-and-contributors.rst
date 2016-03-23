@@ -20,16 +20,14 @@ Mac, and Linux.
 
 APM Planner is currently lead by:
 
--  `Michael Carpenter <http://diydrones.com/profile/MichaelCarpenter>`__
-   (Windows)
--  `Bill Bonney <http://diydrones.com/profile/BillBonney>`__ (Mac OS)
--  `Stephen Dade <http://diydrones.com/profile/StephenDade>`__ (Linux)
+-  Bill Bonney  (`GitHub <https://github.com/billbonney>`__  `DiyDrones <http://diydrones.com/profile/BillBonney>`__)
 
 with contributions from:
 
--  `Kelly Schrock <http://diydrones.com/profile/KellySchrock>`__ (data
-   logging), and
--  `others <https://github.com/diydrones/apm_planner/graphs/contributors>`__
+- `Michael Carpenter <http://diydrones.com/profile/MichaelCarpenter>`__
+- `Stephen Dade <http://diydrones.com/profile/StephenDade>`__
+- `Kelly Schrock <http://diydrones.com/profile/KellySchrock>`__
+- `others <https://github.com/diydrones/apm_planner/graphs/contributors>`__
 
 
 **APM Planner**
