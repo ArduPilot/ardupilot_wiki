@@ -207,7 +207,7 @@ For Non-PC users
 MacOS, Linux or Windows users - there is a free cross-platform
 alternative to X-CTU, called moltosenso Network Manager. 
 Download the software 
-`here <http://www.moltosenso.com/#/pc=/client/fe/download.php`__.
+`here <http://www.moltosenso.com/#/pc=/client/fe/download.php>`__.
 The moltosenso Team collaborated with us writing a 
 `special tutorial <http://forum.moltosenso.com/viewtopic.php?f16&t=8>`__
 on the setup of Xbee radios for ArduPilot and Copter Telemetry using
