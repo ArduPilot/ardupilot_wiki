@@ -97,7 +97,7 @@ Full Table of Contents
 ----------------------
 
 .. toctree::
-   :titlesonly:
+   :maxdepth: 4
    
     Introduction <docs/introduction>
     First Time Setup <docs/arduplane-setup>
