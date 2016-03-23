@@ -14,111 +14,86 @@ easier-to-use design. See the `product overview <https://store.3drobotics.com/pr
 (store) and :ref:`Pixhawk Overview <copter:common-pixhawk-overview>` (wiki)
 for more information.
 
-+--------------------------------------+--------------------------------------+
-| **Purchase**                         | `store.3drobotics.com <https://store |
-|                                      | .3drobotics.com/products/3dr-pixhawk |
-|                                      | >`__                                 |
-+--------------------------------------+--------------------------------------+
-| **`Specifications <https://store.3dr | **OS:**                              |
-| obotics.com/products/3dr-pixhawk#pro |                                      |
-| duct-description>`__**               |                                      |
-|                                      |                                      |
-|                                      |                                      |
-|                                      | NuttX                                |
-|                                      |                                      |
-|                                      | **CPU:**                             |
-|                                      |                                      |
-|                                      | 32-bit STM32F427 Cortex M4 core with |
-|                                      | FPU                                  |
-|                                      |                                      |
-|                                      | 32 bit STM32F103 failsafe            |
-|                                      | co-processor                         |
-|                                      |                                      |
-|                                      | **Memory:**                          |
-|                                      |                                      |
-|                                      | 168 MHz/256 KB RAM/2 MB Flash        |
-|                                      |                                      |
-|                                      | **Sensors:**                         |
-|                                      |                                      |
-|                                      | ST Micro L3GD20 3-axis 16-bit        |
-|                                      | gyroscope                            |
-|                                      |                                      |
-|                                      | ST Micro LSM303D 3-axis 14-bit       |
-|                                      | accelerometer / compass              |
-|                                      | (magnetometer)                       |
-|                                      |                                      |
-|                                      | Invensense MPU 6000 3-axis           |
-|                                      | accelerometer/gyroscope              |
-|                                      |                                      |
-|                                      | MEAS MS5611 barometer                |
-|                                      |                                      |
-|                                      | **Interfaces:**                      |
-|                                      |                                      |
-|                                      | 5x UART (serial ports), one          |
-|                                      | high-power capable, 2x with HW flow  |
-|                                      | control                              |
-|                                      |                                      |
-|                                      | 2x CAN                               |
-|                                      |                                      |
-|                                      | Spektrum DSM / DSM2 / DSM-X®         |
-|                                      | Satellite compatible input up to DX8 |
-|                                      | (DX9 and above not supported)        |
-|                                      |                                      |
-|                                      | Futaba S.BUS® compatible input and   |
-|                                      | output                               |
-|                                      |                                      |
-|                                      | PPM sum signal                       |
-|                                      |                                      |
-|                                      | RSSI (PWM or voltage) input          |
-|                                      |                                      |
-|                                      | I2C®                                 |
-|                                      |                                      |
-|                                      | SPI                                  |
-|                                      |                                      |
-|                                      | 3.3 and 6.6V ADC inputs              |
-|                                      |                                      |
-|                                      | External microUSB port               |
-|                                      |                                      |
-|                                      | **Power System:**                    |
-|                                      |                                      |
-|                                      | Ideal diode controller with          |
-|                                      | automatic failover                   |
-|                                      |                                      |
-|                                      | Servo rail high-power (7 V) and      |
-|                                      | high-current ready                   |
-|                                      |                                      |
-|                                      | All peripheral outputs over-current  |
-|                                      | protected, all inputs ESD protected  |
-|                                      |                                      |
-|                                      | **Weight and Dimensions:**           |
-|                                      |                                      |
-|                                      | Weight: 38g (1.31oz)                 |
-|                                      |                                      |
-|                                      | Width: 50mm (1.96")                  |
-|                                      |                                      |
-|                                      | Thickness: 15.5mm (.613")            |
-|                                      |                                      |
-|                                      | Length: 81.5mm (3.21")               |
-+--------------------------------------+--------------------------------------+
-| **Setup**                            | `Pixhawk                             |
-|                                      | Overview <http://copter.ardupilot.co |
-|                                      | m/common-pixhawk-overview/#specifica |
-|                                      | tions>`__,                           |
-|                                      | `Powering <http://copter.ardupilot.c |
-|                                      | om/wiki/common-powering-the-pixhawk/ |
-|                                      | >`__                                 |
-+--------------------------------------+--------------------------------------+
-| **Design files**                     | `Schematic <http://3drobotics.com/wp |
-|                                      | -content/uploads/2014/02/px4fmuv2.4. |
-|                                      | 3_schematic.pdf?_ga=1.192952366.2094 |
-|                                      | 807383.1416709590>`__                |
-|                                      |                                      |
-|                                      |                                      |
-|                                      | `Layout <http://3drobotics.com/wp-co |
-|                                      | ntent/uploads/2014/02/Pixhawk-Open-H |
-|                                      | ardware.zip?_ga=1.192952366.20948073 |
-|                                      | 83.1416709590>`__                    |
-+--------------------------------------+--------------------------------------+
++--------------------------------------+----------------------------------------------------------------------------------------------------+
+| **Purchase**                         | `store.3drobotics.com <https://store.3drobotics.com/products/3dr-pixhawk>`__                       |
++--------------------------------------+----------------------------------------------------------------------------------------------------+
+| **Specifications**                   | `Product Description <https://store.3drobotics.com/products/3dr-pixhawk#product-description>`__    |
+|                                      |                                                                                                    |
+|                                      | **OS:**                                                                                            |
+|                                      |                                                                                                    |
+|                                      | NuttX                                                                                              |
+|                                      |                                                                                                    |
+|                                      | **CPU:**                                                                                           |
+|                                      |                                                                                                    |
+|                                      | 32-bit STM32F427 Cortex M4 core with FPU                                                           |
+|                                      |                                                                                                    |
+|                                      | 32 bit STM32F103 failsafe co-processor                                                             |
+|                                      |                                                                                                    |
+|                                      | **Memory:**                                                                                        |
+|                                      |                                                                                                    |
+|                                      | 168 MHz/256 KB RAM/2 MB Flash                                                                      |
+|                                      |                                                                                                    |
+|                                      | **Sensors:**                                                                                       |
+|                                      |                                                                                                    |
+|                                      | ST Micro L3GD20 3-axis 16-bit gyroscope                                                            |
+|                                      |                                                                                                    |
+|                                      | ST Micro LSM303D 3-axis 14-bit accelerometer / compass (magnetometer)                              |
+|                                      |                                                                                                    |
+|                                      | Invensense MPU 6000 3-axis                                                                         |
+|                                      | accelerometer/gyroscope                                                                            |
+|                                      |                                                                                                    |
+|                                      | MEAS MS5611 barometer                                                                              |
+|                                      |                                                                                                    |
+|                                      | **Interfaces:**                                                                                    |
+|                                      |                                                                                                    |
+|                                      | 5x UART (serial ports), one high-power capable, 2x with HW flow control                            |
+|                                      |                                                                                                    |
+|                                      | 2x CAN                                                                                             |
+|                                      |                                                                                                    |
+|                                      | Spektrum DSM / DSM2 / DSM-X®                                                                       |
+|                                      | Satellite compatible input up to DX8 (DX9 and above not supported)                                 |
+|                                      |                                                                                                    |
+|                                      | Futaba S.BUS® compatible input and output                                                          |
+|                                      |                                                                                                    |
+|                                      | PPM sum signal                                                                                     |
+|                                      |                                                                                                    |
+|                                      | RSSI (PWM or voltage) input                                                                        |
+|                                      |                                                                                                    |
+|                                      | I2C®                                                                                               |
+|                                      |                                                                                                    |
+|                                      | SPI                                                                                                |
+|                                      |                                                                                                    |
+|                                      | 3.3 and 6.6V ADC inputs                                                                            |
+|                                      |                                                                                                    |
+|                                      | External microUSB port                                                                             |
+|                                      |                                                                                                    |
+|                                      | **Power System:**                                                                                  |
+|                                      |                                                                                                    |
+|                                      | Ideal diode controller with                                                                        |
+|                                      | automatic failover                                                                                 |
+|                                      |                                                                                                    |
+|                                      | Servo rail high-power (7 V) and high-current ready                                                 |
+|                                      |                                                                                                    |
+|                                      | All peripheral outputs over-current                                                                |
+|                                      | protected, all inputs ESD protected                                                                |
+|                                      |                                                                                                    |
+|                                      | **Weight and Dimensions:**                                                                         |
+|                                      |                                                                                                    |    
+|                                      | Weight: 38g (1.31oz)                                                                               |
+|                                      |                                                                                                    |
+|                                      | Width: 50mm (1.96")                                                                                |
+|                                      |                                                                                                    |
+|                                      | Thickness: 15.5mm (.613")                                                                          |
+|                                      |                                                                                                    |
+|                                      | Length: 81.5mm (3.21")                                                                             |
++--------------------------------------+----------------------------------------------------------------------------------------------------+
+| **Setup**                            | `Pixhawk Overview <http://copter.ardupilot.com/common-pixhawk-overview/#specifications>`__,        |
+|                                      | `Powering <http://copter.ardupilot.com/wiki/common-powering-the-pixhawk/>`__                       |
++--------------------------------------+----------------------------------------------------------------------------------------------------+
+| **Design files**                     | `Schematic <http://firmware.diydrones.com/downloads/wiki/pdf_guides/px4fmuv2.4.3_schematic.pdf>`__ |
+|                                      |                                                                                                    |
+|                                      | `Layout <http://firmware.diydrones.com/downloads/wiki/pdf_guides/Pixhawk-Open-Hardware.zip>`__     |
++--------------------------------------+----------------------------------------------------------------------------------------------------+
 
 APM2.x
 ======
@@ -133,66 +108,53 @@ is a popular AVR2560 8-bit autopilot.
    Rover have full support for APM 2.6 in all existing releases. This board
    is not recommended for any new users.
 
-+--------------------------------------+--------------------------------------+
-| **Purchase**                         | `store.jdrones.com <http://store.jdr |
-|                                      | ones.com/ArduPilot_MEGA_2_5_p/fcapm2 |
-|                                      | 5side.htm>`__                        |
-+--------------------------------------+--------------------------------------+
-| **Specifications**                   | **OS:**                              |
-|                                      |                                      |
-|                                      | None                                 |
-|                                      |                                      |
-|                                      | **CPU:**                             |
-|                                      |                                      |
-|                                      | AtMega 2560                          |
-|                                      |                                      |
-|                                      | **Memory:Sensors:**                  |
-|                                      |                                      |
-|                                      | 3-axis gyro, accelerometer           |
-|                                      |                                      |
-|                                      | High-performance Barometric pressure |
-|                                      | sensor                               |
-|                                      |                                      |
-|                                      | MS5611-01BA03                        |
-|                                      |                                      |
-|                                      | **Interfaces:**                      |
-|                                      |                                      |
-|                                      | **Power System:**                    |
-|                                      |                                      |
-|                                      | `APM 2.5 and 2.6                     |
-|                                      | Overview <http://copter.ardupilot.co |
-|                                      | m/wiki/common-apm25-and-26-overview/ |
-|                                      | >`__                                 |
-|                                      | (wiki)                               |
-|                                      |                                      |
-|                                      | **Weight and Dimensions:**           |
-|                                      |                                      |
-|                                      | Weight:                              |
-|                                      |                                      |
-|                                      | Width: 40.7 mm                       |
-|                                      |                                      |
-|                                      | Thickness:                           |
-|                                      |                                      |
-|                                      | Length: 66.5mm                       |
-+--------------------------------------+--------------------------------------+
-| **Setup**                            | `APM 2.5 and 2.6                     |
-|                                      | Overview <http://copter.ardupilot.co |
-|                                      | m/wiki/common-apm25-and-26-overview/ |
-|                                      | >`__                                 |
-|                                      | (wiki)                               |
-+--------------------------------------+--------------------------------------+
-| **Design files**                     | `APM schematic diagram               |
-|                                      | <http://firmware.diydrones.com/downl |
-|                                      | oads/wiki/pdf_guides/APM_v25_schemat |
-|                                      | ic.pdf`__                            |
-|                                      |                                      |
-|                                      |                                      |
-|                                      | `APM board layout                    |
-|                                      | <http://firmware.diydrones.com/downl |
-|                                      | oads/wiki/pdf_guides/APM_v252_RELEAS |
-|                                      | E.zip>`__                            |
-|                                      |                                      |
-+--------------------------------------+--------------------------------------+
++--------------------------------------+--------------------------------------------+
+| **Purchase**                         | |jdrones_amp2.x|                           |
++--------------------------------------+--------------------------------------------+
+| **Specifications**                   | **OS:**                                    |
+|                                      |                                            |
+|                                      | None                                       |
+|                                      |                                            |
+|                                      | **CPU:**                                   |
+|                                      |                                            |
+|                                      | AtMega 2560                                |
+|                                      |                                            |
+|                                      | **Memory:Sensors:**                        |
+|                                      |                                            |
+|                                      | 3-axis gyro, accelerometer                 |
+|                                      |                                            |
+|                                      | High-performance Barometric pressure       |
+|                                      | sensor                                     |
+|                                      |                                            |
+|                                      | MS5611-01BA03                              |
+|                                      |                                            |
+|                                      | **Interfaces:**                            |
+|                                      |                                            |
+|                                      | **Power System:**                          |
+|                                      |                                            |
+|                                      | :ref:`copter:common-apm25-and-26-overview` |
+|                                      |                                            |
+|                                      | **Weight and Dimensions:**                 |
+|                                      |                                            |
+|                                      | Weight:                                    |
+|                                      |                                            |
+|                                      | Width: 40.7 mm                             |
+|                                      |                                            |
+|                                      | Thickness:                                 |
+|                                      |                                            |
+|                                      | Length: 66.5mm                             |
++--------------------------------------+--------------------------------------------+
+| **Setup**                            | :ref:`copter:common-apm25-and-26-overview` |
++--------------------------------------+--------------------------------------------+
+| **Design files**                     | |APM_v25_schematic.pdf|                    |
+|                                      |                                            |
+|                                      | |APM_v252_RELEASE.zip|                     |
+|                                      |                                            |
++--------------------------------------+--------------------------------------------+
+
+.. |APM_v252_RELEASE.zip| replace:: `APM board layout <http://firmware.diydrones.com/downloads/wiki/pdf_guides/APM_v252_RELEASE.zip>`__
+.. |APM_v25_schematic.pdf| replace:: `APM schematic diagram <http://firmware.diydrones.com/downloads/wiki/pdf_guides/APM_v25_schematic.pdf>`__
+.. |jdrones_amp2.x| replace:: `store.jdrones.com <http://store.jdrones.com/ArduPilot_MEGA_2_5_p/fcapm25side.htm>`__  
 
 PX4
 ===
@@ -243,31 +205,27 @@ A 32 bit ARM based autopilot with many advanced features, using the
 |                                      |                                      |
 |                                      | Length:                              |
 +--------------------------------------+--------------------------------------+
-| **Setup**                            | `PX4                                 |
-|                                      | Overview <http://copter.ardupilot.co |
-|                                      | m/wiki/common-px4fmu-overview/>`__   |
+| **Setup**                            | :ref:`copter:common-px4fmu-overview` |
 +--------------------------------------+--------------------------------------+
-| **Design files**                     | `Module home                         |
-|                                      | page <https://pixhawk.ethz.ch/px4/mo |
-|                                      | dules/px4fmu>`__                     |
+| **Design files**                     | |PX4_home_page|                      |
 |                                      |                                      |
-|                                      | `Manual <https://pixhawk.ethz.ch/px4 |
-|                                      | /_media/modules/px4fmu-manual-v1.6.p |
-|                                      | df>`__                               |
+|                                      | |PX4_manual|                         |
 |                                      |                                      |
-|                                      | `Schematics                          |
-|                                      | download <https://pixhawk.ethz.ch/px |
-|                                      | 4/_media/modules/px4fmu-schematic-v1 |
-|                                      | .6.pdf>`__                           |
+|                                      | |PX4_schematic|                      |
 |                                      |                                      |
-|                                      | `Eagle files for version 1.6         |
-|                                      | download <http://stuff.storediydrone |
-|                                      | s.com/PX4FMUv1.6.zip>`__             |
+|                                      | |PX4_eagle_1_6|                      |
 |                                      |                                      |
-|                                      | `Eagle files for version 1.7         |
-|                                      | download <http://stuff.storediydrone |
-|                                      | s.com/PX4FMUv1.7.zip>`__             |
+|                                      | |PX4_eagle_1_7|                      |
 +--------------------------------------+--------------------------------------+
+
+
+.. |PX4_home_page| replace:: `Module homepage <https://pixhawk.ethz.ch/px4/modules/px4fmu>`__
+.. |PX4_manual| replace:: `Manual <https://pixhawk.ethz.ch/px4/_media/modules/px4fmu-manual-v1.6.pdf>`__
+.. |PX4_schematic| replace:: `Schematics download <https://pixhawk.ethz.ch/px4/_media/modules/px4fmu-schematic-v1.6.pdf>`__
+.. |PX4_eagle_1_6| replace:: `Eagle files for version 1.6 download <http://stuff.storediydrones.com/PX4FMUv1.6.zip>`__
+.. |PX4_eagle_1_7| replace:: `Eagle files for version 1.7 download <http://stuff.storediydrones.com/PX4FMUv1.7.zip>`__    
+
+
 
 Arsov AUAV-X2
 =============
@@ -359,7 +317,7 @@ V2 or PixHawk autopilots. It is 100% compatible with the PX4 firmware.
 FlyMaple
 ========
 
-The FlyMaple <http://www.dfrobot.com/wiki/index.php?title=Flymaple_V1.1(SKU:DFR0188)>`__
+The `FlyMaple <http://www.dfrobot.com/wiki/index.php?title=Flymaple_V1.1(SKU:DFR0188)>`__
 is a flight controller based on the Maple Project.
 
 +--------------------------------------+--------------------------------------------------------------------------------------------------------+
@@ -422,7 +380,7 @@ is a flight controller based on the Maple Project.
 |                                      |                                                                                                        |
 |                                      | Length: 50 mm                                                                                          |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------+
-| **Setup**                            | :ref:`Building ArduPilot for Flymaple on Linux <building-apm-for-flymaple>`__ (Wiki)                   |
+| **Setup**                            | :ref:`building-apm-for-flymaple`                                                                       |
 |                                      |                                                                                                        |
 |                                      | `FlymapleArdupilotHowTo.pdf <http://uav.tridgell.net/Flymaple/FlymapleArdupilotHowTo.pdf>`__ (Rover)   |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------+
@@ -458,8 +416,7 @@ the first app store for drones and robots.
    a complete embedded Linux board.
 
 +--------------------------------------+--------------------------------------+
-| **Purchase**                         | https://erlerobotics.com/blog/produc |
-|                                      | t/erle-brain-v2/                     |
+| **Purchase**                         | |erlebrain_2_purchase|               |
 +--------------------------------------+--------------------------------------+
 | **Specifications**                   | **OS:**                              |
 |                                      |                                      |
@@ -505,6 +462,10 @@ the first app store for drones and robots.
 | **Setup**                            | `Documentation <http://erlerobotics. |
 |                                      | com/docs/>`__                        |
 +--------------------------------------+--------------------------------------+
+
+
+.. |erlebrain_2_purchase| replace:: `Erle-Brain2 (store) <https://erlerobotics.com/blog/product/erle-brain-v2/>`__
+
 
 
 .. _supported-autopilot-controller-boards_erle-brain_autopilot:
@@ -632,8 +593,7 @@ computer is a fully functional autopilot (one example is the :ref:`Erle-Brain au
 |                                      |                                      |
 |                                      | Length: 85 cm                        |
 +--------------------------------------+--------------------------------------+
-| **Setup**                            | http://erlerobotics.com/blog/updatin |
-|                                      | g-the-software/                      |
+| **Setup**                            | |erlebrain_updating|                 |
 |                                      |                                      |
 |                                      |                                      |
 |                                      | :ref:`BeaglePilot                    |
@@ -647,6 +607,8 @@ computer is a fully functional autopilot (one example is the :ref:`Erle-Brain au
 +--------------------------------------+--------------------------------------+
 | **Design files**                     | http://github.com/diydrones/PXF      |
 +--------------------------------------+--------------------------------------+
+
+.. |erlebrain_updating| replace:: `Updating the software <http://erlerobotics.com/blog/updating-the-software/>`__
 
 PixHawk Fire Mini Cape (PXFmini)
 ================================
@@ -841,9 +803,7 @@ NavIO+
 from Emlid. Under rapid development.
 
 +--------------------------------------+--------------------------------------+
-| **Purchase**                         | `www.emlid.com/shop/navio-plus <http |
-|                                      | ://www.emlid.com/shop/navio-plus/>`_ |
-|                                      | _                                    |
+| **Purchase**                         | |navio_plus_shop|                    |
 +--------------------------------------+--------------------------------------+
 | **Specifications**                   | **OS:**                              |
 |                                      |                                      |
@@ -905,6 +865,9 @@ from Emlid. Under rapid development.
 +--------------------------------------+--------------------------------------+
 | **Design files**                     | ?                                    |
 +--------------------------------------+--------------------------------------+
+
+.. |navio_plus_shop| replace:: `www.emlid.com/shop/navio-plus <http://www.emlid.com/shop/navio-plus/>`__   
+
 
 VRBrain
 -------
@@ -1116,3 +1079,4 @@ Information about using this board with ArduPilot can be found here:
 +--------------------------------------+--------------------------------------+
 | **Design files**                     | ?                                    |
 +--------------------------------------+--------------------------------------+
+
