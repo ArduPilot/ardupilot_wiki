@@ -37,8 +37,8 @@ aircraft motor controller (ESC), which typically does not have a reverse
 function, you can put the throttle on the left stick as would normally
 be the case for an aircraft.
 
-.. image:: ../../../images/rcsetup.jpg
-    :target: ../_images/rcsetup.jpg
+.. image:: ../../../images/RCsetup.jpg
+    :target: ../_images/RCsetup.jpg
 
 Powering Rover
 ==============

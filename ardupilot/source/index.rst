@@ -38,7 +38,7 @@ integrating a small hardware package into it.
     </td>
     <td width="27%">
 
-:ref:`Firmware <downloads>`- The "skill set" code
+:ref:`Firmware <common-downloads_firmware>`- The "skill set" code
 running on the hardware, which configures it for the kind of vehicle
 you've put it in. You choose the firmware and vehicle that match your
 mission: :ref:`Plane <plane:home>`, :ref:`Copter <copter:home>`,
