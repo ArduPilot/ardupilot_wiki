@@ -159,11 +159,11 @@ Features:
 .. toctree::
    :hidden:
 
-   Copter <http://new.ardupilot.org/copter/index.html>
-   Plane <http://new.ardupilot.org/plane/index.html>
-   Rover <http://new.ardupilot.org/rover/index.html>
-   Mission Planner <http://new.ardupilot.org/planner/index.html>
-   APM Planner 2 <http://new.ardupilot.org/planner2/index.html>
-   AntennaTracker <http://new.ardupilot.org/antennatracker/index.html>
-   Developers <http://new.ardupilot.org/dev/index.html>
+   Copter <http://ardupilot.org/copter/index.html>
+   Plane <http://ardupilot.org/plane/index.html>
+   Rover <http://ardupilot.org/rover/index.html>
+   Mission Planner <http://ardupilot.org/planner/index.html>
+   APM Planner 2 <http://ardupilot.org/planner2/index.html>
+   AntennaTracker <http://ardupilot.org/antennatracker/index.html>
+   Developers <http://ardupilot.org/dev/index.html>
 
