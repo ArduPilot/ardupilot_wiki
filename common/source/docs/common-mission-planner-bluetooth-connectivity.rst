@@ -4,8 +4,8 @@
 Mission Planner Bluetooth Connectivity
 ======================================
 
-The `3DR Bluetooth Data Link <http://store.3drobotics.com/products/bluetooth-data-link>`__ can
-be used to connect your APM2 or Pixhawk to your Bluetooth enabled PC or
+A `Bluetooth Data Link <http://store.jdrones.com/Bluetooth_telemetry_modem_p/tlmbt01.htm>`__ can
+be used to connect your Pixhawk (or other controller) to your Bluetooth enabled PC or
 Android Ground station at distances up to 50m.
 
 .. image:: ../../../images/Bluetooth.jpg
@@ -14,7 +14,7 @@ Android Ground station at distances up to 50m.
 Connecting to the Pixhawk or APM2.x
 ===================================
 
-The 3DR Bluetooth data link comes with both a DF13 6 pin and 6-to-5 pin
+The Bluetooth data link comes with both a DF13 6 pin and 6-to-5 pin
 connector which make it easy to connect to the Pixhawk Telem1 or
 APM2.x's Telem ports.  Note that for the Pixhawk, although Telem1 is the
 recommendation, Telem2 or even Serial 4/5 will work.
@@ -52,7 +52,7 @@ Bluetooth and in the com port properties set the baud rate to 57600
 .. image:: ../../../images/mp.jpg
     :target: ../_images/mp.jpg
 
-The default Baud Rate for the 3DR Bluetooth Module is 57600 (most other
+The default Baud Rate for the Bluetooth Module is 57600 (most other
 modules are 9600) Be sure when you connect it is at 57600 and for the
 new Com Port you saw in Device Manager.
 
@@ -78,7 +78,7 @@ Detailed connecting with Mission Planner
 
 Many PCs and Laptops have bluetooth adapters built in but if not then
 you can use a generic USB Bluetooth dongle (pic above) or use an
-additional `3DR Bluetooth Data Link <http://store.3drobotics.com/products/bluetooth-data-link>`__
+additional Bluetooth data link
 connected via an `FTDI Cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__.
 
 After first making sure your Pixhawk/APM2 is powered on, and your PC's
