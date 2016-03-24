@@ -93,8 +93,8 @@ A comprehensive list of features that are continually born from the
 needs of the community.
 
 
-.. image:: http://api.ning.com/files/wxCEbQY1djqEhmvOxCAETzw3fdL9NkDeLotJNIir9tlvmnDW5dqRzNKoz9P-x52GwlqLlR8HxU181Io5B6p1uq42h22pEJAL/diydrones.jpg
-    :target: ../_images/diydrones.jpg
+.. image:: ../../images/diydrones.jpg
+    :target: http://diydrones.com
 
 
 --------------
@@ -147,8 +147,8 @@ Features:
 --------------
 
 
-.. image:: https://www.dronecode.org/sites/all/themes/dronecode/logo.png
-    :target:  https://www.dronecode.org/
+.. image:: ../../images/dronecode-logo.jpg
+    :target:  http://www.dronecode.org/
 
 
 .. note::
