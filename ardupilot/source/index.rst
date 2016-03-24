@@ -28,6 +28,7 @@ integrating a small hardware package into it.
 
 .. image:: ../../images/pixhawk_small.jpg
     :target: _images/pixhawk_small.jpg
+    :width: 211px
 
 ..  raw:: html
 
@@ -47,6 +48,7 @@ update is all it takes to repurpose your hardware into a different role.
 
 .. image:: ../../images/firmware_types.jpg
     :target: _images/firmware_types.jpg
+    :width: 211px
 
 ..  raw:: html
 
@@ -67,6 +69,7 @@ ArduPilot.
 
 .. image:: ../../images/mission_planner_spline_waypoint.jpg
     :target: _images/mission_planner_spline_waypoint.jpg
+    :width: 211px
 
 ..  raw:: html
 
