@@ -170,9 +170,16 @@ copter with built in companion computer
 
 June 2015 - `Parrot Bebop port's first successful flights <http://diydrones.com/profiles/blogs/parrot-bebop-running-apm>`__
 
-Aug 2015 - Michael Clement & Michael Day fly `50 arduplanes in a multi-vehicle environment <http://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__
+Aug 2015 - Michael Clement & Michael Day fly 
+`50 arduplanes in a multi-vehicle environment <http://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__
 
 Sep 2015 - `First major news event involving a misbehaving pilot of an ardupilot vehicle (a Solo) <http://edition.cnn.com/2015/09/04/us/us-open-tennis-drone-arrest/>`__
+
+March 2016 - 3DR ceases direct funding of ArduPilot community.
+
+
+March 2016 - Formation of the `ardupilot.org non profit organisation <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__ and new website.
+
 
 .. note::
 
