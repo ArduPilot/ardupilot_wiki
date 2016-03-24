@@ -20,10 +20,8 @@
     <td width="27%">
 
 
-`Hardware <https://store.3dr.com>`__- The embedded systems and
-peripheral sensors that 3DRobotics designs, manufactures, and sells.
-
-Think of hardware as the brain, eyes, ears, etc.
+:ref:`Hardware <stores>` - The embedded systems and
+peripheral sensors that act as the vehicle's brain, eyes, ears, etc.
 
 Almost any mobile machine can be transformed into a robot, by simply
 integrating a small hardware package into it.
