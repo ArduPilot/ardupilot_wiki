@@ -5,7 +5,7 @@ QuadPlane Support
 =================
 
 This article explains how to set up and use a combined fixed wing and
-quadcopter aircraft, also known as a "QuadPlane".
+multicopter aircraft, also known as a "QuadPlane".
 
 .. image:: ../../../images/quadplane_senior_telemaster.jpg
     :target: ../_images/quadplane_senior_telemaster.jpg
@@ -13,16 +13,16 @@ quadcopter aircraft, also known as a "QuadPlane".
 Overview
 ========
 
-A QuadPlane is a combined fixed wing and QuadCopter aircraft. This sort
+A QuadPlane is a combined fixed wing and MultiCopter aircraft. This sort
 of aircraft brings the benefit of vertical takeoff and landing,
 significantly greater speed and range of travel, and the ability to
 hover and perform copter-like tasks at the destination (limited by
 available power).
 
-QuadPlane is built upon Plane, but adds control over 4 horizontal rotors
-(as shown in the preceding diagram). Additional modes and commands allow
-QuadPlane to be take off, land and fly like a copter, and to smoothly
-transition between the Plane and Copter-like modes in both automatic and
+QuadPlane is built upon Plane, but adds control over between 4 and 8
+horizontal rotors. Additional modes and commands allow a QuadPlane to
+take off, land and fly like a copter, and to smoothly transition
+between the Plane and Copter-like modes in both automatic and
 autopilot-assisted modes. The additional rotors can also provide lift
 and stability in normal Plane modes.
 
@@ -31,12 +31,8 @@ Support for QuadPlane simulation is available in SITL.
 Getting the code
 ================
 
-QuadPlane support is in `ArduPilot master <https://github.com/diydrones/ardupilot>`__, in the ArduPlane
-directory. It is included in the 3.5.0beta series of releases. The
-normal instructions for building Plane apply.
-
-Prebuilt binaries for Pixhawk and other platforms are in the 'latest' or
-'beta' releases of ArduPlane on http://firmware.diydrones.com
+QuadPlane support is in APM:Plane releases from 3.5.0 onwards. The
+normal instructions for installing the Plane firmware apply.
 
 Flight modes
 ============
@@ -47,12 +43,13 @@ extra modes:
 -  mode 17: QSTABILIZE (like :ref:`Copter STABILIZE <copter:stabilize-mode>`)
 -  mode 18: QHOVER (like :ref:`Copter ALT_HOLD <copter:altholdmode>`)
 -  mode 19: QLOITER (like :ref:`Copter LOITER <copter:loiter-mode>`)
+-  mode 20: QLAND (like :ref:`Copter LAND <copter:land-mode>`)
 
 .. tip::
 
-   You will probably need to set the ``FLTMODE*`` parameters for these
-   extra modes as numeric values as your GCS won't understand these values
-   yet.
+   You may probably need to set the ``FLTMODE*`` parameters for these
+   extra modes as numeric values if your GCS doesn't understand these
+   values yet.
 
 If you are familiar with the equivalent Copter flight modes then you
 should be comfortable flying a QuadPlane. The only real difference comes
@@ -97,8 +94,15 @@ airspeed.
 Frame setup
 ===========
 
-The code defaults to a Quad-X frame for the quad part of the aircraft,
-with the motors on outputs 5 to 8. The arrangement is:
+The code supports several frame arrangements of quadcopter,
+hexacopter, octacopter and octaquad multicopter frames.
+
+Thr motor order and output channel is the same as for copter (see
+:ref:`Copter motor layout <copter:connect-escs-and-motors`) except
+that the output channel numbers start at 5 instead of 1.
+
+For example, with the default Quad-X frame the motors are on outputs
+5 to 8. The arrangement is:
 
 -  **Channel 5:** Front right motor
 -  **Channel 6:** Rear left motor
@@ -112,6 +116,22 @@ to 14 in any way you like, just as with the normal Plane code.
 You can optionally move the quad motors to be on any other channel above
 4, using the procedure outlined below.
 
+To use a different frame type you can set Q_FRAME_CLASS and
+Q_FRAME_TYPE. Q_FRAME_CLASS can be:
+
+-  0 for quad
+-  1 for hexa
+-  2 for octa
+-  3 for octaquad
+
+Within each of these frame classes the Q_FRAME_TYPE chooses the motor
+layout
+
+-  0 for plus frame
+-  1 for X frame
+-  2 for V frame
+-  3 for H frame
+
 Using different channel mappings
 --------------------------------
 
@@ -124,6 +144,10 @@ The output function numbers are:
 -  34: motor2
 -  35: motor3
 -  36: motor4
+-  37: motor5
+-  38: motor6
+-  39: motor7
+-  40: motor8
 
 So to put your quad motors on outputs 9 to 12 (the auxillary channels on
 a Pixhawk) you would use these settings in the advanced parameter list:
@@ -455,6 +479,8 @@ Building a QuadPlane
 Putting together a QuadPlane can be a daunting task. To help with ideas,
 here are some links to some build logs that provide useful hints:
 
+-  Porter OctaQuadPlane build:
+   http://diydrones.com/profiles/blogs/building-flying-and-not-crashing-a-large-octaquadplane
 -  Porter QuadPlane build:
    http://diydrones.com/profiles/blogs/building-flying-and-crashing-a-large-quadplane
 -  QuadRanger build: http://px4.io/docs/quadranger-vtol/
