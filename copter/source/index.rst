@@ -45,7 +45,8 @@ Copter Home
 
 .. image:: ../../images/mission_planner_spline_waypoint.jpg
     :target: _images/mission_planner_spline_waypoint.jpg
-
+    :width: 350px
+           
 ..  raw:: html
 
     </td>
@@ -55,6 +56,7 @@ Copter Home
 
 .. image:: ../../images/mission_planner_flight_data.jpg
    :target: _images/mission_planner_flight_data.jpg    
+   :width: 350px
 
 ..  raw:: html
 
@@ -96,6 +98,7 @@ Rotor Craft types
 
 .. image:: ../../images/helicopter_trex450.jpg
    :target: _images/helicopter_trex450.jpg 
+   :width: 211px
 
 ..  raw:: html
 
@@ -106,7 +109,7 @@ Rotor Craft types
 
 .. image:: ../../images/3DR_arducopter_hexa_b_frame.jpg
    :target: _images/3DR_arducopter_hexa_b_frame.jpg
-  
+   :width: 211px
 
 ..  raw:: html
 
