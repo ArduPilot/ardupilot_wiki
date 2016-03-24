@@ -128,7 +128,7 @@ Install the DroneAPI example code
 ::
 
     kevinh@kevin-think:~/development/drone/edison/new/ubilinux-edison-ww44.5$ ssh edison@192.168.1.37
-     edison@ubilinux:~$ git clone http://github.com/dronekit/dronekit-python.git
+     edison@ubilinux:~$ git clone https://github.com/dronekit/dronekit-python.git
      Cloning into 'droneapi-python'...
      remote: Counting objects: 460, done.
      remote: Total 460 (delta 0), reused 0 (delta 0)

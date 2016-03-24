@@ -10,7 +10,7 @@ Hold.
 Overview
 ========
 
--  It was designed to be useful for flying FPV and filming `dolly shots <http://en.wikipedia.org/wiki/Dolly_shot>`__ or fly bys because
+-  It was designed to be useful for flying FPV and filming `dolly shots <https://en.wikipedia.org/wiki/Dolly_shot>`__ or fly bys because
    you can set the vehicle at a particular angle and it will maintain
    that angle.
 -  The pilot's roll, pitch and yaw sticks control the rate of rotation

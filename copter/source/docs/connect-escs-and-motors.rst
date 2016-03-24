@@ -63,8 +63,8 @@ pin.
 
 .. note::
 
-   Information on assembling PDB is found `here for Quad <http://3drobotics.com/wp-content/uploads/2013/06/PDB-Assembly-Instructions-Quad.pdf>`__\ and
-   `here for Hexa <http://3drobotics.com/wp-content/uploads/2013/06/PDB-Assembly-Instructions-Hexa.pdf>`__.
+   Information on assembling PDB is found `here for Quad <https://3dr.com/wp-content/uploads/2013/06/PDB-Assembly-Instructions-Quad.pdf>`__\ and
+   `here for Hexa <https://3dr.com/wp-content/uploads/2013/06/PDB-Assembly-Instructions-Hexa.pdf>`__.
 
 .. image:: ../../../images/3dr_power_distribution_board.jpg
     :target: ../_images/3dr_power_distribution_board.jpg

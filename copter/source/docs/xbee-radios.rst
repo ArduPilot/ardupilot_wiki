@@ -122,7 +122,7 @@ manual to see how other people have done it. In particular, we do not
 recommend the DIY Drones XtreamBee adapter for those modules. Instead,
 try the
 
-`Sparkfun <http://www.sparkfun.com/categories/111>`__ adapters. Please
+`Sparkfun <https://www.sparkfun.com/categories/111>`__ adapters. Please
 note that the DIY Drones team will only support the recommended 900Mhz
 Xbee modules, so if you use something else please turn the community for
 help, not the DIY Drones developers.

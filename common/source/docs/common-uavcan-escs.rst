@@ -78,4 +78,4 @@ Additional information
 
 `Pixhawk ESC configuration wiki page <https://pixhawk.org/firmware/px4esc>`__
 
-`Pixhawk ESC firmware on github <https://github.com/PX4/px4esc>`__
+`Pixhawk ESC firmware on github <https://github.com/PX4/sapog>`__

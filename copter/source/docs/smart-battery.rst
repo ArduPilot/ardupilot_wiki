@@ -5,7 +5,7 @@ Smart Battery
 =============
 
 Copter supports "smart batteries" that communicate using
-`SMBus <http://en.wikipedia.org/wiki/System_Management_Bus>`__ `like those found on the Solo <https://store.3drobotics.com/products/solo-smart-battery>`__. 
+`SMBus <https://en.wikipedia.org/wiki/System_Management_Bus>`__ `like those found on the Solo <https://store.3dr.com/products/solo-smart-battery>`__. 
 This allows easier setup than available when using a traditional power
 module.
 

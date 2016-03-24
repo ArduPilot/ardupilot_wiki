@@ -218,7 +218,7 @@ Alternatively you can use a more advanced script to set up the camera
 focus, exposure or other settings before taking the picture. A good
 starting point is the open source `KAP UAV Exposure Control Script <http://chdk.wikia.com/wiki/KAP_UAV_Exposure_Control_Script>`__
 (v3.1). This was used as the basis for the `3DR Aero Plane <https://3dr.com/kb/aero-m/>`__ *3DR EAI (Exposure-Aperture-ISO)*
-script described in the `Aero-M Operation Manual <http://3drobotics.com/kb/aero-m/>`__.
+script described in the `Aero-M Operation Manual <https://3dr.com/kb/aero-m/>`__.
 
 The `CHDK Wiki <http://chdk.wikia.com/wiki/CHDK>`__ explains how you set
 up CHDK and install and activate scripts for your particular camera.

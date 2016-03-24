@@ -27,9 +27,9 @@ Videos:
 ..  youtube:: a4ve9e0ZVlI
     :width: 100%
 
-`Altitude Hold Testing <http://www.youtube.com/watch?v=PSqa7OJvCXU>`__
+`Altitude Hold Testing <https://www.youtube.com/watch?v=PSqa7OJvCXU>`__
 
-`Fast Forward Flight <http://www.youtube.com/watch?v=zYpq8fXuaGI>`__
+`Fast Forward Flight <https://www.youtube.com/watch?v=zYpq8fXuaGI>`__
 
 .. toctree::
     :maxdepth: 1

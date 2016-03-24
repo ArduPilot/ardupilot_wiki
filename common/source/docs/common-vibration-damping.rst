@@ -70,7 +70,7 @@ the flight controller as described on the :ref:`Mounting the Flight Controller w
 HobbyKing Orange Foam
 ---------------------
 
-#. `foam <http://hobbyking.com/hobbyking/store/__26457__anti_vibration_foam_orange_latex_190mm_x_140mm_x_6mm.html>`__
+#. `foam <http://www.hobbyking.com/hobbyking/store/__26457__anti_vibration_foam_orange_latex_190mm_x_140mm_x_6mm.html>`__
    should be cut into small 1cm ~ 2cm cubes
 #. attach to the edges of the flight controller using double sided or
    "carpet fixing tape"
@@ -81,7 +81,7 @@ Gel pads
 #. Put off-the-shelf vibration damping gel pads of 1/2" ~ 1" (1cm ~ 2cm)
    on each corner of the flight control board.  Possible gels include:
 
-   -  `Kyosho Zeal Gel Tape <http://www.amainhobbies.com/product_info.php/cPath/61_179/products_id/19713/n/Kyosho-Zeal-Vibration-Absorption-Gyro-Reciever-Mounting-Gel-1-Sheet>`__ Probably
+   -  `Kyosho Zeal Gel Tape <http://www.amainhobbies.com/rc-cars-trucks/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__ Probably
       the single best solution, now in stock at Amazon, E-Bay and A-Main
       Hobbies.
    -  `United States Silicone Gel Tape and Pads (V10Z62MGT5 tape recommended) <http://www.vibrationmounts.com/RFQ/VM08010.htm>`__
@@ -226,7 +226,7 @@ Bulb Damper + Ear Plug .05G Ultra Low Vibration Mount
        :target: ../_images/vibration_flamewheel_clone_closeup.jpg
        
 #. The APM flight controller is also mounted on anti-vibration grommets
-   available from `McMaster Carr <http://www.mcmaster.com/#vibration-damping-grommets/=on00os>`__ package
+   available from `McMaster Carr <http://www.mcmaster.com/#vibration-damping-grommets/>`__ package
    of 25 each part #9311K64 recommended.
 #. This was successful at damping a FlameWheel clone with flexible arms
    and over size 12" propellers into the .05 G range.
@@ -319,13 +319,13 @@ performance, the tricopter is impressively stable in loiter mode. I
 won't know if it's an issue or not until more people try Forrest's tool
 out, so I have more data to compare my results to (you can find the
 forum
-thread \ `(Here!) <http://www.diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9?xg_source=activity&id=705844%3ATopic%3A1102762&page=21#comments>`__
+thread \ `(Here!) <http://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9?xg_source=activity&id=705844%3ATopic%3A1102762&page=21#comments>`__
 
 If you have access to a 3D printer, you can download the STL files
 here: \ `Omnimac APM Mount v1.5.stl <https://www.dropbox.com/s/69zrbzy1lz53xnc/Omnimac%20APM%20Mount%20v1.5.stl>`__
 
 Alternatively, I've uploaded the design to
-`Shapeways <https://www.shapeways.com/model/1388904/omnimac-apm-mount-v1-5.html?li=aeTabs>`__.
+`Shapeways <http://www.shapeways.com/product/45H92T5RS/omnimac-apm-mount-v1-5?li=aeTabs>`__.
 
 You can purchase it starting from $22.92 depending on material:
 

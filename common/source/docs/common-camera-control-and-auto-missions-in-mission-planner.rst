@@ -147,9 +147,9 @@ Creating composite images
 There are a number of good free and paid tools for creating composite
 images:
 
--  `Pix4Dmapper <https://pix4d.com/products/>`__ - The free "discovery"
+-  `Pix4Dmapper <https://www.pix4d.com/>`__ - The free "discovery"
    version supports image merging.
--  `Microsoft Image Composite Editor (ICE) <http://research.microsoft.com/en-us/um/redmond/groups/ivm/ice/>`__
+-  `Microsoft Image Composite Editor (ICE) <http://research.microsoft.com/en-us/um/redmond/projects/ice/>`__
 
 .. |surveyexample2| image:: ../../../images/surveyexample2.jpg
     :target: ../_images/surveyexample2.jpg

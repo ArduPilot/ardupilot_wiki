@@ -102,7 +102,7 @@ Common Problems
 As mentioned above, Loiter mode incorporates the altitude controller
 from AltHold mode.  Alt hold issues are on the :ref:`AltHold wiki page <altholdmode_common_problems>`.
 
-#. The vehicle `circles (aka "toiletbowls") <http://www.youtube.com/watch?v=a-3G9ZvXHhk>`__.  This
+#. The vehicle `circles (aka "toiletbowls") <https://www.youtube.com/watch?v=a-3G9ZvXHhk>`__.  This
    is normally caused by a compass problem the most likely being
    :ref:`magnetic interference <common-diagnosing-problems-using-logs_compass_interference>`
    from the power cables under the flight controller.  Running

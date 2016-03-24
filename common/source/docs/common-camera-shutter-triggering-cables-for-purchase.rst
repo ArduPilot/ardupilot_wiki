@@ -20,12 +20,12 @@ boards that can be used for this purpose.
 
 .. tip::
 
-   Please add new boards/cables you discover to this page (or `request the addition <https://github.com/diydrones/ardupilot-wiki-issue-tracker/issues/new>`__).
+   Please add new boards/cables you discover to this page (or `request the addition <https://github.com/ArduPilot/ardupilot_wiki/issues/new>`__).
 
 Seagull #MAP
 ============
 
-`Seagull #MAP <http://seagulluav.com/product/seagull-map/>`__ provides
+`Seagull #MAP <http://www.seagulluav.com/product/seagull-map2/>`__ provides
 everything needed to connect a Pixhawk to a supported Sony MultiPort™
 equipped camera in order to automate camera shutter triggering. The
 current list of compatible cameras :ref:`can be found here <common-camera-shutter-triggering-for-sony-multiport-connectors-using-seagull-map_compatible_cameras>`.

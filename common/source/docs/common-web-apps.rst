@@ -25,7 +25,7 @@ you share your flight data (open source from 3DRobotics)
 `dronetrack.org <http://www.dronetrack.org/>`__ - Real-Time tracking and
 sharing of flight paths
 
-`EXmaps.com <http://www.exmaps.com>`__ - online flight logbook made for
+`EXmaps.com <https://www.exmaps.com/>`__ - online flight logbook made for
 the ArduPilot system. Just drag and drop log files for post flight
 analysis and cumulative flight time
 

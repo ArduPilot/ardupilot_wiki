@@ -278,7 +278,7 @@ Please follow these instructions:
    fine, some are not).  If it is higher than 60% you should try moving
    your APM/PX further up and away from the sources of interference or
    consider purchasing an external compass (or 
-   `GPS+compass module <http://store.3drobotics.com/products/3dr-gps-ublox-with-compass>`__).
+   `GPS+compass module <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__).
 
 Here is a video of the procedure based on AC3.1.5:
 
@@ -294,7 +294,7 @@ vehicle first achieves GPS lock. This method is accurate to within 1
 degree (which should be sufficient) but if you wish to use the
 uncompressed declination:
 
--  Open the `Declination Website <http://magnetic-declination.com/>`__.
+-  Open the `Declination Website <http://www.magnetic-declination.com/>`__.
 -  It should automatically figure out your location based on you IP
    address or you can enter your location
 
@@ -339,7 +339,7 @@ transmitter by following these steps:
    known as "toilet bowling").
 #. If you find it's impossible to tune away the circling then it's
    likely your compass interference is will require an external compass
-   or `GPS+compass module. <http://store.3drobotics.com/products/3dr-gps-ublox-with-compass>`__
+   or `GPS+compass module. <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__
 
 Compass error messages
 ======================

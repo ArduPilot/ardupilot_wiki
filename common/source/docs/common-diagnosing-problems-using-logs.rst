@@ -168,7 +168,7 @@ can cause Copter to think that it's suddenly in the wrong position and
 lead to aggressive flying to correct the perceived error.  These
 "glitches" show up in both the tlogs and dataflash logs as an decrease
 in the number of satellites visible and an increase in the
-`hdop <http://en.wikipedia.org/wiki/Dilution_of_precision_%28GPS%29>`__.
+`hdop <https://en.wikipedia.org/wiki/Dilution_of_precision_%28GPS%29>`__.
 
 If using tlogs graph the the you can do this by graphing the
 GPS_RAW_IT group's "eph" and "satellites_visible" values.  An hdop

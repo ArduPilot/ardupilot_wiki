@@ -4,7 +4,7 @@
 Tarot Gimbal
 ============
 
-The `Tarot 2-Axis Gimbal <http://store.3drobotics.com/products/tarot-t-2d-brushless-gimbal-kit>`__
+The `Tarot 2-Axis Gimbal <https://store.3dr.com/products/tarot-t-2d-brushless-gimbal-kit>`__
 is the recommended gimbal for the :ref:`Pixhawk <common-pixhawk-overview>`
 and :ref:`APM2 <common-apm25-and-26-overview>` due to its low cost and good
 performance.
@@ -93,7 +93,7 @@ change the configuration you should:
    this and press **Write Settings To Flash**.  Alternatively to load
    all the 3DR recommended configuration:
 
-   #. First right-click on `this link to the 3DR_Tarot.bgsc file <https://raw.github.com/diydrones/ardupilot/master/Tools/Frame_params/3DR_Tarot.bgsc>`__
+   #. First right-click on `this link to the 3DR_Tarot.bgsc file <https://raw.githubusercontent.com/diydrones/ardupilot/master/Tools/Frame_params/3DR_Tarot.bgsc>`__
       and save to somewhere on your computer.
    #. Press the **Load Config** button on the configuration UI and
       select the *3DR_Tarot.bgsc file* downloaded above.

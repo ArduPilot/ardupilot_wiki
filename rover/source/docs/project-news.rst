@@ -586,5 +586,5 @@ Previous Releases
    with the latest Plane code and current APM and Mission Planner
    features.
    Details \ `here <http://diydrones.com/group/ardurover-user-group/forum/topics/apmrover2-2-40-released>`__
--  June 16, 2012: Rover successfully finishes the \ `Sparkfun Autonomous Vehicle Competition <http://www.sparkfun.com/news/767>`__
+-  June 16, 2012: Rover successfully finishes the \ `Sparkfun Autonomous Vehicle Competition <https://www.sparkfun.com/news/767>`__
 -  May 2, 2012: Jean-Louis Naudin ports APM code to rovers

@@ -31,7 +31,7 @@ Support for QuadPlane simulation is available in SITL.
 Getting the code
 ================
 
-QuadPlane support is in `ArduPilot master <http://github.com/diydrones/ardupilot>`__, in the ArduPlane
+QuadPlane support is in `ArduPilot master <https://github.com/diydrones/ardupilot>`__, in the ArduPlane
 directory. It is included in the 3.5.0beta series of releases. The
 normal instructions for building Plane apply.
 

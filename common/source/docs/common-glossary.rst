@@ -23,7 +23,7 @@ equipment when you are using 2.4 Ghz onboard video transmitters, or use
 code to interpret the output from its sensors to establish a plane's XYZ
 and heading orientation.
 
-**APM**: `ArduPilotMega <http://www.sparkfun.com/commerce/product_info.php?products_id=9710>`__.
+**APM**: `ArduPilotMega <https://www.sparkfun.com/products/retired/9710>`__.
 
 **AMA**: Academy of Model Aeronautics. The main US model aircraft
 association. The AMA works closely with the Federal Aviation
@@ -126,10 +126,10 @@ simulator, too.
 
 **I2C**: A serial bus that allows multiple low speed peripherals, such
 as sensors, to be connected to a microprocessor.
-See \ `this <http://en.wikipedia.org/wiki/I%C2%B2C>`__ for more.
+See \ `this <https://en.wikipedia.org/wiki/I%C2%B2C>`__ for more.
 
 **IDE**: An integrated development environment, such as
-the \ `Arduino <http://arduino.cc/en/Main/Software>`__ editor/downloader/serial
+the \ `Arduino <https://www.arduino.cc/en/Main/Software>`__ editor/downloader/serial
 monitor software. Often includes a debugger.
 
 **IMU**: An inertial measurement unit such as the ArduPilot
@@ -179,7 +179,7 @@ See \ `here <http://qgroundcontrol.org/mavlink/start>`__ for more info
 on MAVLink.
 
 **MAV**: Micro Air Vehicle. A small UAV.
-More \ `here <http://en.wikipedia.org/wiki/Micro_air_vehicle>`__.
+More \ `here <https://en.wikipedia.org/wiki/Micro_air_vehicle>`__.
 
 **NMEA**: National Marine Electronics Association standard for GPS
 information. When we refer to "NMEA sentences", we're talking about
@@ -218,12 +218,12 @@ with the PIC processor series by Microchip)
 **PID**: Proportional/Integral/Derivative control method. A machine
 control algorithm that allows for more accurate sensor-motion control
 loops and less overcontrol.
-See \ `this <http://en.wikipedia.org/wiki/PID_controller>`__ for more.
+See \ `this <https://en.wikipedia.org/wiki/PID_controller>`__ for more.
 
 **POI**: Point of Interest. Designates a spot that a UAV should keep a
 camera pointed towards.
 
-**PPM**: `Pulse Position Modulation <http://en.wikipedia.org/wiki/Pulse-position_modulation>`__.
+**PPM**: `Pulse Position Modulation <https://en.wikipedia.org/wiki/Pulse-position_modulation>`__.
 The square-wave pulse train used to transmit multiple channels of
 information between some RC transmitters and receivers. Some RC
 receivers provide a PPM output (sometimes referred to as the PPM Sum)
@@ -280,14 +280,14 @@ visual aids (aside from glasses). Required by FAA regs.
 **WAAS**: Wide Area Augmentation System. A system of satellites and
 ground stations that provide GPS signal corrections, giving up to five
 times better position accuracy than uncorrected GPS.
-See \ `this <http://en.wikipedia.org/wiki/Wide_Area_Augmentation_System>`__ for
+See \ `this <https://en.wikipedia.org/wiki/Wide_Area_Augmentation_System>`__ for
 more.
 
 **Xbee**: The commercial name of the recommend ZigBee-compatible radio
 modems commonly used by amateur UAVs. They can be found at
-`sparkfun <http://www.sparkfun.com/commerce/product_info.php?products_id=8876>`__ although
+`sparkfun <https://www.sparkfun.com/products/10421>`__ although
 remember you also need a board to mount it on like this one
-from \ `sparkfun <http://www.sparkfun.com/commerce/product_info.php?products_id=8687>`__.
+from \ `sparkfun <https://www.sparkfun.com/products/11812>`__.
 
 **ZigBee**: A wireless communications standard, which has longer range
 than Bluetooth but lower power consumption than WiFi.

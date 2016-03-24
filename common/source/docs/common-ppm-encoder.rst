@@ -104,7 +104,7 @@ Re-Programming instructions for Windows
 =======================================
 
 Download and install the latest
-`WinAVR <http://sourceforge.net/projects/winavr/>`__.
+`WinAVR <https://sourceforge.net/projects/winavr/>`__.
 
 Plug in the AVRISP mkII and Install the drivers for AVRISP mkII as
 follows:

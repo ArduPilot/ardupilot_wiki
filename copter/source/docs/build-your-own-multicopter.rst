@@ -163,7 +163,7 @@ other alternatives and customization has to be added on.
 #. If you are not already well qualified at Do It Yourself projects, A good
 all inclusive kit is definitely the best place to start.
 
-#. The innovative `Iris QuadCopter <http://store.3drobotics.com/products/iris>`__ is
+#. The innovative `Iris QuadCopter <https://store.3dr.com/products/IRIS>`__ is
 actually \ **Ready To Fly** and comes with the top of the line
 **Pixhawk** flight controller.
 
@@ -229,7 +229,7 @@ Almost Ready to Fly
 #. If you want to keep initial cost to a bare minimum, start with
    a `Simple Flight Controller <http://www.hobbyking.com/hobbyking/store/__24723__Hobbyking_KK2_0_Multi_rotor_LCD_Flight_Control_Board.html>`__ then
    graduate to a
-   `Pixhawk <http://store.3drobotics.com/products/3dr-pixhawk>`__ when
+   `Pixhawk <https://store.3dr.com/products/3dr-pixhawk>`__ when
    you are ready
 #. The F450 can also serve as a competent Gopro and Gimbal carrying
    photo and video copter or as an FPV platform.

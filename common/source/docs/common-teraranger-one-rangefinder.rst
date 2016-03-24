@@ -4,7 +4,7 @@
 TeraRanger One Rangefinder
 ==========================
 
-The `TeraRanger One <http://teraranger.com/>`__ rangefinder is a
+The `TeraRanger One <http://www.teraranger.com/>`__ rangefinder is a
 lightweight, high-performance distance measurement sensor based on
 infrared Time-of-Flight (ToF) technology. It is much faster than
 ultrasound and far smaller and lighter than laser-based systems. Its

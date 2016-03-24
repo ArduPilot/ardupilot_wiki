@@ -54,7 +54,7 @@ a pull request to submit your changes.
 There are a number of way of using Git/Github - including a number of different GUI and command line tools. 
 The typical process for working with Git on the command line is:
 
-#. `Fork the docs repo <https://github.com/hamishwillee/ardupilot_wiki#fork-destination-box>`__ 
+#. `Fork the docs repo <https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box>`__ 
    (if you haven't already done so).
 
 #. Clone your fork of the repository to your local machine: 
@@ -88,7 +88,7 @@ The typical process for working with Git on the command line is:
        
 #. Go to Github and create a Pull Request from your repo to the master. If you do this shortly after 
    pushing your change, there will normally be a banner link prompting you on the 
-   `main repo <https://github.com/hamishwillee/ardupilot_wiki>`__.
+   `main repo <https://github.com/ArduPilot/ardupilot_wiki>`__.
    
    
 Creating a new wiki page
@@ -145,7 +145,7 @@ We provide a Vagrantfile in the root of the repo which can be used to set up a b
 
 You will need to install the correct versions of `Vagrant <https://www.vagrantup.com/downloads.html>`__ and 
 `Oracle VirtualBox <https://www.virtualbox.org/wiki/Downloads>`__ for your computer. You will also need
-to `fork <https://github.com/hamishwillee/ardupilot_wiki#fork-destination-box>`__ and clone the repository 
+to `fork <https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box>`__ and clone the repository 
 (if you haven't already done so).
 
 The main steps for building the docs are:
@@ -196,7 +196,7 @@ Wiki Infrastructure
 
 The wiki is built using the static site generator `Sphinx <http://www.sphinx-doc.org/en/stable/>`__ 
 from source written in `reStructured Text markup <http://www.sphinx-doc.org/en/stable/rest.html>`__ 
-and hosted on `Github here <https://github.com/hamishwillee/ardupilot_wiki>`__. 
+and hosted on `Github here <https://github.com/ArduPilot/ardupilot_wiki>`__. 
 
 Each wiki has a separate folder in the repository (e.g. '/copter', '/plane') containing it's own source 
 and configuration files (**conf.py**). Common files that are shared between the wikis are named with the 
@@ -211,7 +211,7 @@ The **Vagrantfile** can be used by Vagrant to set up a local build environment i
 This allows you to edit the source in your host computer but manage the build inside Vagrant. You can also
 manually set up a build environment (just inspect the Vagrantfile for dependencies).
 
-The wikis use a `common theme <https://github.com/hamishwillee/sphinx_rtd_theme#read-the-docs-sphinx-theme>`__
+The wikis use a `common theme <https://github.com/ArduPilot/sphinx_rtd_theme#read-the-docs-sphinx-theme>`__
 that provides the top menu bar. 
 
 
@@ -528,7 +528,7 @@ How to put links in the top menu
 --------------------------------
 
 Top menu links are hard coded in the 
-`site theme <https://github.com/hamishwillee/sphinx_rtd_theme#read-the-docs-sphinx-theme>`__.
+`site theme <https://github.com/ArduPilot/sphinx_rtd_theme#read-the-docs-sphinx-theme>`__.
 
 
 Using images in your wiki pages

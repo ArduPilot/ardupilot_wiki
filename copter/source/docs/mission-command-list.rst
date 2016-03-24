@@ -72,7 +72,7 @@ Spline Waypoint
     :target: ../_images/MissionList_SplineWaypoint.jpg
 
 From AC3.2 (and higher),
-`Spline <http://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__
+`Spline <https://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__
 waypoints are supported.  The Spline commands take all the same
 arguments are regular waypoints (lat, lon, alt, delay) but when executed
 the vehicle will fly smooth paths (both vertically and horizontally)

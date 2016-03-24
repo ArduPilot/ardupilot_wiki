@@ -14,7 +14,8 @@ Overview
 Pixhawk is compatible with PPM RC receivers, Futaba S.Bus receivers, and
 Spektrum DSM,DSM2, and DSM-X Satellite receivers.
 
-For traditional single-wire-per-channel (PWM) receivers a `PPM encoder <https://store.3drobotics.com/products/ppm-encoder>`__ can be
+For traditional single-wire-per-channel (PWM) receivers a 
+`PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be
 used to convert the receiver outputs to PPM-SUM.
 
 Connecting the receiver
@@ -65,7 +66,7 @@ wide variety of high quality FrSky PPM-Sum compatible receivers.
 FRSky Delta 8 MultiProtocol PPM-Sum Receiver
 --------------------------------------------
 
--  This PPM-Sum compatible \ `FRSky Delta 8 Receiver <http://www.valuehobby.com/frysky-delta-8.html>`__ is
+-  This PPM-Sum compatible `FRSky Delta 8 Receiver <http://www.valuehobby.com/frysky-delta-8.html>`__ is
    multi-platform capable including Hitec Aurora 9 and Futaba RC
    transmitters.
 -  For an Aurora 9, install a jumper between receiver signal pins 6 and
@@ -77,8 +78,8 @@ FRSky Delta 8 MultiProtocol PPM-Sum Receiver
       will need the Hitec HPP-22 programmer module in order to upgrade
       it.
    -  Upgrade both the AFHSS 2.4ghz module and the transmitter itself to
-      the latest versions following\ ` **HP-22 online
-      instructions** <http://hitecrcd.co.kr/tester/hpp_22.htm>`__.
+      the latest versions following `HP-22 online
+      instructions <http://hitecrcd.co.kr/tester/hpp_22.htm>`__.
    -  If the transmitter's AFHSS module's blue LED will not illuminate
       during binding you will need to perform this firmware upgrade.
 
@@ -127,7 +128,7 @@ combination with a PX4IO board) is given below:
 -  Futaba / Robbe `R7008SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7675>`__ S.BUS 2 Receiver
 -  Futaba / Robbe `R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__ S.BUS Receiver
 -  FrSky TFR4 SB 3/16ch 2.4Ghz S.BUS Receiver FASST Compatible
-   (`HobbyKing <http://hobbyking.com/hobbyking/store/__27176__FrSky_TFR4_SB_3_16ch_2_4Ghz_S_BUS_Receiver_FASST_Compatible.html>`__)
+   (`HobbyKing <http://www.hobbyking.com/hobbyking/store/__27176__FrSky_TFR4_SB_3_16ch_2_4Ghz_S_BUS_Receiver_FASST_Compatible.html>`__)
 -  Futaba FASST S.BUS `2.4 GHz Receiver R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__
    (tested by PX4 core team, very lightweight, only 7g)
 -  FrSky FASST compatible S.BUS compatible TFR8 SB 8ch 2.4Ghz Receiver
@@ -193,12 +194,12 @@ Spektrum Satellite Receivers Operate on PPM-Sum
 .. image:: ../../../images/PX4SpektrumSatellite1.jpg
     :target: ../_images/PX4SpektrumSatellite1.jpg
 
-3DR PPM encoder and 3DR telemetry radio
-=======================================
+PPM encoder and telemetry radio
+===============================
 
-The `3DR PPM Encoder <https://store.3drobotics.com/products/ppm-encoder>`__ will
+A `PPM Encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ will
 allow you to use any Conventional RC receiver. Both the new and previous
-versions of the `3DR PPM-Sum encoder <http://store.3drobotics.com/products/ppm-encoder>`__ are shown
+versions of the *3DR PPM-Sum encoder* (the linked encoder is compatible) are shown
 below:
 
 .. figure:: ../../../images/PPM_cables_-_Copy.jpg
@@ -213,12 +214,10 @@ below:
 
 There are some downsides of using this encoder:
 
--  The 3DR PPM Encoder does require quite a bit of additional wiring to
-   the receiver.
+-  The PPM Encoder does require quite a bit of additional wiring to the receiver.
 -  It uses quite a bit of power making it likely you will need to plug
-   in your battery while doing radio setup with USB cable in Mission
-   Planner.
--  The 3DR encoder also costs as much or more than several of the
+   in your battery while doing radio setup with USB cable in Mission Planner.
+-  The encoder also costs as much or more than several of the
    available PPM-Sum receivers including the FRSky Delta 8 below.
 
 There is addition information :ref:`about connecting and configuring the encoder here <common-ppm-encoder>`.
@@ -227,7 +226,7 @@ Using the 3DR PPM Sum encoder in a system
 -----------------------------------------
 
 The diagram below shows how to use the original 3DR PPM-Sum encoder. The
-new encoder is used in the same way.
+linked encoder is used in the same way.
 
 .. image:: ../../../images/PX4FMU_PX4IO_Wire_3DRradio2.jpg
     :target: ../_images/PX4FMU_PX4IO_Wire_3DRradio2.jpg
@@ -235,12 +234,11 @@ new encoder is used in the same way.
 Using a Standard RC Radio Receiver with 3DR PPM Encoder
 -------------------------------------------------------
 
-
 -  **You can use a standard radio receiver with an 8 channel PPM Encoder
    in place of the PPM-SUM receiver.**
 
-   -  An 8 Channel PPM Encoder is available from 3DRobotics
-      `Here! <https://store.3drobotics.com/products/ppm-encoder>`__
+   -  An 8 Channel PPM Encoder is available from 
+      `jDrones here <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__.
    -  Solder a 3x8 Right angle connector from the top into one end of
       the 8 Channel PPM Encoder board.
    -  With the 3x8 connector up and facing away from you, solder a 3x1
@@ -256,7 +254,7 @@ Using a Standard RC Radio Receiver with 3DR PPM Encoder
 
 .. note::
 
-   If you are using a 3DR PPM Encoder it is important to know that
+   If you are using this PPM Encoder with PX4 it is important to know that
    when you are calibrating your transmitter you will quite likely need
    to hook up your flight battery to the PX4IO because the USB port
    alone can't supply enough power.

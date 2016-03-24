@@ -36,8 +36,8 @@ or goggles.
    proven to work.  Note that some models come with a built in
    transmitter & receiver that would replace the 3DR video kits 5.8 Ghz
    transmitter/receiver pair mentioned above.
--  Low cost 320x240 resolution goggles (`example video <http://www.youtube.com/watch?v=tG-4JNpE2fc>`__) are not
-   recommended because the higher resolution 640x480 (`example video <http://www.youtube.com/watch?v=ywqacXyjcNw>`__) or SVGA
+-  Low cost 320x240 resolution goggles (`example video <https://www.youtube.com/watch?v=tG-4JNpE2fc>`__) are not
+   recommended because the higher resolution 640x480 (`example video <https://www.youtube.com/watch?v=ywqacXyjcNw>`__) or SVGA
    goggles provide a much better flying experience.
 
 In addition you may wish to set-up a separate :ref:`camera gimbal <common-cameras-and-gimbals>`\ (perhaps with Go-Pro
@@ -78,7 +78,7 @@ his Plane running on VrBrain including MinimOSD.
 Robert Mcintosh's in `Lone Pine California <http://diydrones.com/profiles/blogs/the-best-place-to-fly>`__
 FPV Flight with HD video footage from GoPro camera
 
-http://vimeo.com/70365435
+https://vimeo.com/70365435
 
 Euan Ramsey's APM2 powered `**TBS
 Discovery** <http://diydrones.com/profiles/blogs/tbs-disco-apm-mounting-suggestion>`__. 

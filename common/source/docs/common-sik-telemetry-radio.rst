@@ -27,7 +27,7 @@ A `SiK Telemetry Radio <https://github.com/Dronecode/SiK>`__ is a small,
 light and inexpensive open source radio platform that typically allows
 ranges of better than 300m "out of the box" (the range can be extended
 to several kilometres with the use of a patch antenna on the ground).
-The radio uses `open source firmware <https://github.com/tridge/SiK>`__
+The radio uses `open source firmware <https://github.com/Dronecode/SiK>`__
 which has been specially designed to work well with MAVLink packets and
 to be integrated with the Mission Planner, Copter, Rover and Plane.
 

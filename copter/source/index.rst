@@ -69,7 +69,7 @@ System components
 ~~~~~~~~~~~~~~~~~
 
 
--  A `Pixhawk <https://store.3drobotics.com/t/pixhawk>`__ or :ref:`other autopilot <common-autopilots>` 
+-  A `Pixhawk <https://store.3dr.com/t/pixhawk>`__ or :ref:`other autopilot <common-autopilots>` 
    loaded with the latest version of
    the `Copter firmware <http://firmware.ardupilot.org/>`__.
 -  :ref:`Mission Planner software <planner:home>` -- gives

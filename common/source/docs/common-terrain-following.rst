@@ -98,7 +98,7 @@ around 2 minutes to load all the terrain data for a mission. Once it is
 loaded it is saved permanently on the microSD card.
 
 Both MissionPlanner and MAVProxy support the global
-`SRTM <http://en.wikipedia.org/wiki/SRTM>`__ database for terrain data.
+`SRTM <https://en.wikipedia.org/wiki/SRTM>`__ database for terrain data.
 That database has a global grid spacing of 3 arc-seconds (around 100
 meters), but has a smaller grid spacing in some parts of the world
 (around 30 meters in the US). Support for other terrain databases can be

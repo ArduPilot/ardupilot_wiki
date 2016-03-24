@@ -31,7 +31,7 @@ GPS and many more features.
 Specifications
 ==============
 
-Detailed specifications are available on `www.intrinsyc.com here <https://www.intrinsyc.com/snapdragon-embedded-development-kits/qualcomm-snapdragon-flight/>`__
+Detailed specifications are available on `www.intrinsyc.com here <https://www.intrinsyc.com/vertical-development-platforms/qualcomm-snapdragon-flight/>`__
 (behind a short survey).
 
 -  **System on Chip**: Snapdragon 801

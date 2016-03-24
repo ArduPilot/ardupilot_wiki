@@ -56,7 +56,7 @@ features like follow-me, “dronies” (i.e. “selfies” but taken with a
 drone) and special missions for 3D mapping.
 
 -  **Platform**: Android Phones and Tablets
--  **Licence**: `Open source <https://github.com/DroidPlanner/droidplanner/blob/develop/LICENSE.md>`__
+-  **Licence**: `Open source <https://github.com/DroidPlanner/Tower/blob/develop/LICENSE.md>`__
    (GPLv3)
 
 .. image:: ../../../images/tower_droid_planner3_structure_scan.jpg
@@ -66,9 +66,9 @@ drone) and special missions for 3D mapping.
    (and `3DR Services <https://play.google.com/store/apps/details?id=org.droidplanner.services.android>`__)
    from Google Play.
 -  `Android compatible hardware list <https://github.com/arthurbenemann/droidplanner/wiki/Compatible-Devices>`__
--  `Wiki <https://github.com/DroidPlanner/droidplanner/wiki>`__
+-  `Wiki <https://github.com/DroidPlanner/Tower/wiki>`__
 -  `Support Forum <http://ardupilot.com/forum/viewforum.php?f=15>`__
--  `Issues List <https://github.com/DroidPlanner/droidplanner/issues>`__
+-  `Issues List <https://github.com/DroidPlanner/Tower/issues>`__
 -  `Source Code <https://github.com/DroidPlanner/droidplanner>`__
 
 .. note::
@@ -168,7 +168,7 @@ See website for how-to on how connect it to your autopilot
 -  `Release announcement Blog & Discussion <http://diydrones.com/profiles/blogs/mav-pilot-v1-0-for-iphone-is-available-in-the-app-store>`__
 -  `Support Blog <http://www.communistech.com/support/>`__
 -  `Support Forum <http://www.communistech.com/forums/>`__
--  `iTunes Store link <http://appstore.com/communistech>`__
+-  `iTunes Store link <https://itunes.apple.com/ca/developer/communis-tech/id649232032>`__
 
 Fighting Walrus iDroneCtrl
 --------------------------
@@ -186,7 +186,7 @@ iPad to talk to your APM-powered UAV.
 The $99 iDroneLink can be purchased from
 `fightingwalrus.com <http://fightingwalrus.com/>`__.
 
--  `Downloads (Apple Store) <https://itunes.apple.com/us/app/idronectrl/id948077202?mt=8&uo=4>`__
+-  `Downloads (Apple Store) <https://itunes.apple.com/us/app/idronectrl/id948077202?mt=8&ign-mpt=uo%3D4>`__
 -  `Issues List/Support <https://github.com/fightingwalrus/iGCS/issues>`__
 
 QGroundControl

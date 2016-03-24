@@ -145,7 +145,7 @@ systems:
 -  `Futaba T8J <http://www.diydrones.com/profiles/blogs/pixhawk-futaba-t8j-6-modes-configuration-with-2-switches-c-d>`__
 -  `Futaba T7CP <http://diydrones.com/profiles/blogs/configure-6-flight-modes-for>`__
 -  `Futaba T6EX <http://diydrones.com/profiles/blogs/four-modes-switch-for-futaba>`__
--  `Futaba 12fg <http://diydrones.com/profiles/blog/show?id/>`__
+-  `Futaba 12fg <http://diydrones.com/profiles/blog/list>`__
 -  `Futaba 9ZAP/ZHP <http://diydrones.com/profiles/blogs/flight-mode-switching-on-a>`__
 -  `Futaba T10CAG <http://www.diydrones.com/profiles/blogs/getting-six-fly-modes-on-futaba-t10cag-transmitter>`__
 -  `Futaba T14 <http://diydrones.com/profiles/blogs/futaba-t14-mz-mode-configuration-for-all-6-modes>`__

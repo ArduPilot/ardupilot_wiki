@@ -20,7 +20,8 @@ On Pixhawk you can plug a potentiometer into ADC 6.6v (pin 15) or ADC
 3.3v (pin 11). Assuming you have an `I2C airspeed sensor <http://store.jdrones.com/digital_airspeed_sensor_p/senair02kit.htm>`__
 plugged in to the `I2C splitter <http://store.jdrones.com/Pixhawk_I2C_splitter_p/dstpx4i2c01.htm>`__
 and set to Pin 65, you can also plug in a simple potentiometer into the
-":ref:`ADC 6.6v <common-pixhawk-overview_pixhawk_analog_input_pins>`\ "
+:ref:`ADC 6.6v <common-pixhawk-overview_pixhawk_analog_input_pins>`.
+
 Pin 15 as shown below.
 
 .. image:: ../../../images/Pixhawk_Pins2.jpg
@@ -37,9 +38,8 @@ Required parts
 
 You will need this `DF-13 cable <http://store.jdrones.com/cable_df13_3pin_25cm_p/cbldf13p3c25.htm>`__,
 and a simple `potentiometer like this <https://www.sparkfun.com/products/9939>`__ or
-`this <http://hobbyking.com/hobbyking/store/__39510__Potentiameter_Round_Pot_Turnigy_9XR_Transmitter_3set_.htmlhttp://>`__.
-Either a B10K and B5K potentiometer can be used to set speed from 0 to
-as much as 90 m/s.
+`this <http://hobbyking.com/hobbyking/store/__39510__Potentiameter_Round_Pot_Turnigy_9XR_Transmitter_3set_.html>`__.
+Either a B10K and B5K potentiometer can be used to set speed from 0 to as much as 90 m/s.
 
 Pixhawk Configuration and Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -47,7 +47,7 @@ Pixhawk Configuration and Settings
 Once the DF 13 cable is connected to the potentiometer, plug it into the
 :ref:`ADC 6.6v port <common-pixhawk-overview_pixhawk_analog_input_pins>`.
 Open your Ground Control Station (GCS) of choice, and change the
-“\ **ARSPD_PIN**\ ” parameter to Pin "**15"** as shown below.
+``ARSPD_PIN`` parameter to Pin "**15"** as shown below.
 
 .. image:: ../../../images/AirspeedMP.png
     :target: ../_images/AirspeedMP.png

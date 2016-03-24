@@ -40,6 +40,6 @@ The smart battery is for Solo only:
 -  :ref:`Smart Battery <copter:smart-battery>`
 
 .. image:: ../../../images/SmartBattery_Solo.jpg
-    :target:  https://store.3drobotics.com/products/solo-smart-battery
+    :target:  https://store.3dr.com/products/solo-smart-battery
 [/site]
 

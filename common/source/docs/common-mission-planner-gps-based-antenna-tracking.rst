@@ -53,9 +53,9 @@ Body
 You will need a body that can support the tremendous weight of your
 antennas. 4 lbs is a "tremendous" amount of weight to throw around
 depending on what torque and what materials your servos are sporting.
-`This is the one I chose to use for this guide. <http://readymaderc.com/store/index.php?main_page=product_info&cPath=11_27&products_id=96>`__
+`This is the one I chose to use for this guide. <http://www.readymaderc.com/store/index.php?main_page=product_info&cPath=11_27&products_id=96>`__
 It currently is holding two patch antennas each weighing about 12oz. You
-can design your own body, but you should have a `CNC machine <http://en.wikipedia.org/wiki/Numerical_control>`__ as part of
+can design your own body, but you should have a `CNC machine <https://en.wikipedia.org/wiki/Numerical_control>`__ as part of
 the solution as any inaccuracies could make it not track correctly and
 there goes your aircraft. All wood construction is fine for two antennas
 while metal bodies could be used to make minimal structures or to
@@ -101,7 +101,7 @@ looking at. For this guide I choose 1280Mhz (aka 1.2 or 1.3 Ghz) and
 You might be thinking "what about frequency hopping"? Your radio MIGHT
 try to go outside the "effective" bandwidth (frequency spread your
 antenna can use well) but if it does it notes the signal drop (aka
-`RSSI <http://en.wikipedia.org/wiki/Received_signal_strength_indication>`__,
+`RSSI <https://en.wikipedia.org/wiki/Received_signal_strength_indication>`__,
 Recieved Signal Strength Indicator) and will compensate for it. Don't
 worry about this, just make sure your antenna is within the correct
 frequency range you will be using.
@@ -115,7 +115,7 @@ the whole AT or just the antennas depending on how you have yours
 designed. Servos are actually complicated little devices. I'll try to be
 precise as you can use the internet to find more details on servos if
 you wish. You want a servo that can do at least 110 oz-in of torque for
-two patch antennas, I'd recommend at least the `karbonite materials <http://en.wikipedia.org/wiki/Karbonite_gears>`__ to ensure it
+two patch antennas, I'd recommend at least the `karbonite materials <https://en.wikipedia.org/wiki/Karbonite_gears>`__ to ensure it
 never strips out, but you can get by on the nylon versions.
 
 For the tilt servo get a servo that does 90deg of rotation TOTAL.
@@ -132,7 +132,7 @@ servo will. The reason for this overall beefiness is that when your
 panning range is at the limit of travel your AT will rapidly spin itself
 around 360deg in order to keep the antennas on target `(1:50 second mark
 as an
-example). <http://www.youtube.com/watch?feature=endscreen&v=_lxUd96-1tw&NR=1>`__
+example). <https://www.youtube.com/watch?feature=endscreen&v=_lxUd96-1tw&NR=1>`__
 The faster it does this the less time you are out of communication with
 your aircraft. You can not avoid this behavior if you use the APM
 Mission Planner as the behavior is embedded in the software. Building an
@@ -151,8 +151,8 @@ You will need something to take the information from your computer
 (again this build used the APM Mission Planner to drive the AT) and turn
 those into a signal (numbers really) that your servo can use. The APM MP
 has two options currently, one for
-`Maestro <http://www.pololu.com/catalog/product/1350>`__ and one for
-`ArduPilot <http://www.sparkfun.com/products/8785>`__. The Maestro link
+`Maestro <https://www.pololu.com/product/1350>`__ and one for
+`ArduPilot <https://www.sparkfun.com/products/retired/8785>`__. The Maestro link
 is to a SERVO CONTROLLER card and the ArduPilot is both a servo
 controller and a stripped down autopilot (it is actually the original
 APM being used as a servo controller card). To be more clear, in some

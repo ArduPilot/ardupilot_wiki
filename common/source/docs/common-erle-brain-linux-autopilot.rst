@@ -39,7 +39,7 @@ services for robotic application development.
 
 Some *Erle-Brain 2* features include:
 
--  Linux File Systems (`Debian and Ubuntu Snappy Core <http://erlerobotics.gitbooks.io/erle-robotics-erle-brain-a-linux-brain-for-drones/content/en/software/update.html>`__)
+-  Linux File Systems (`Debian and Ubuntu Snappy Core <https://erlerobotics.gitbooks.io/erle-robotics-erle-brain-a-linux-brain-for-drones/content/en/software/update.html>`__)
 -  WiFi-enabled
 -  ROS focus (Indigo available)
 -  `ROS packages <https://github.com/erlerobot?utf8=%E2%9C%93&query=ros>`__
@@ -119,7 +119,7 @@ on Erle-Brain 2:
 
 ::
 
-    $ git clone http://github.com/erlerobot/ardupilot
+    $ git clone https://github.com/erlerobot/ardupilot
 
 ::
 
@@ -199,7 +199,7 @@ robotic application development.
 
 Some *Erle-Brain* features include:
 
--  Linux File Systems (`Debian and Ubuntu Snappy Core <http://erlerobotics.gitbooks.io/erle-robotics-erle-brain-a-linux-brain-for-drones/content/en/software/update.html>`__)
+-  Linux File Systems (`Debian and Ubuntu Snappy Core <https://erlerobotics.gitbooks.io/erle-robotics-erle-brain-a-linux-brain-for-drones/content/en/software/update.html>`__)
 -  WiFi-enabled
 -  ROS focus (Hydromedusa and Indigo available)
 -  `ROS packages <https://github.com/erlerobot?utf8=%E2%9C%93&query=ros>`__
@@ -275,7 +275,7 @@ on Erle-Brain:
 
 ::
 
-    $ git clone http://github.com/erlerobot/ardupilot
+    $ git clone https://github.com/erlerobot/ardupilot
 
 ::
 
@@ -292,7 +292,7 @@ on Erle-Brain:
 Snappy Ubuntu Core store
 ========================
 
-Erle-Brain comes with full support for `Snappy Ubuntu Core <http://www.ubuntu.com/things>`__. Just fetch one of the `available images <http://erlerobotics.com/docs/Artificial_Brains_and_Autopilots/Operating_System_images/Ubuntu.html>`__
+Erle-Brain comes with full support for `Snappy Ubuntu Core <http://www.ubuntu.com/internet-of-things>`__. Just fetch one of the `available images <http://erlerobotics.com/docs/Artificial_Brains_and_Autopilots/Operating_System_images/Ubuntu.html>`__
 (for the microSD card) and start developing *snaps*.
 
 .. note::
@@ -322,7 +322,7 @@ World" app using *Snappy*:
     Hello World!
 
 Additional information about Snappy Ubuntu Core can be found
-`here <http://erlerobotics.gitbooks.io/erle-robotics-erle-brain-a-linux-brain-for-drones/content/en/store/appinstall.html>`__.
+`here <https://erlerobotics.gitbooks.io/erle-robotics-erle-brain-a-linux-brain-for-drones/content/en/store/appinstall.html>`__.
 
 DroneKit
 --------
@@ -348,7 +348,7 @@ DroneKit "hello world" example
 ::
 
     # fetch the code
-    $ git clone http://github.com/diydrones/droneapi-python.git
+    $ git clone https://github.com/diydrones/droneapi-python.git
 
     $ cd droneapi-python/example
 

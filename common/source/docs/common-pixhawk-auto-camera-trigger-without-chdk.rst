@@ -145,7 +145,7 @@ port.
 
 The IR device configuration is explained in this video:
 
-http://player.vimeo.com/video/67660032
+https://player.vimeo.com/video/67660032
 
 Testing and mission planning
 ============================

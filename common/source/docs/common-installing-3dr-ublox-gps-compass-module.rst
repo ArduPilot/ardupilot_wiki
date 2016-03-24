@@ -4,7 +4,7 @@
 3DR UBlox GPS + Compass Module
 ==============================
 
-This page covers the installation of the `3DR UBlox GPS + Compass module <http://store.3drobotics.com/products/3dr-gps-ublox-with-compass>`__.
+This page covers the installation of the `3DR UBlox GPS + Compass module <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__.
 
 Overview
 ========
@@ -88,7 +88,7 @@ the APM I\ :sup:`2`\ C port using the included 4-position cable.
 
 APM 2.5 and APM 2.0 have an internal compass (unlike APM 2.6) which must
 be disabled by cutting a trace before you can connect the *3DR UBlox GPS
-+ Compass module* (the `video here <http://www.youtube.com/watch?v=niqvBmXeNjU>`__ shows how).
++ Compass module* (the `video here <https://www.youtube.com/watch?v=niqvBmXeNjU>`__ shows how).
 
 Other than disabling the internal compass, connecting the UBlox is the
 same for APM2.0/APM2.5 as for APM2.6.

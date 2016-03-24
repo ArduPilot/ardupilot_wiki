@@ -11,14 +11,14 @@ Archived: Quick Start Guide for Ready-to-Fly Vehicles
    The article is out of date (3DR replaced APM2.x with Pixhawk
    and the kits come with everything configured out of the box). In
    addition, 3DR provides its own detailed usage instructions for all RTF
-   vehicles in the `Support page <http://3drobotics.com/support/>`__ (e.g.
-   `Iris+ <http://3drobotics.com/kb/iris/>`__,
-   `Solo <http://3drobotics.com/solo-drone/>`__,
-   `X8 <http://3drobotics.com/kb/x8/>`__,
-   `Aero-M <http://3drobotics.com/kb/aero-m/>`__).
+   vehicles in the `Support page <https://3dr.com/support/>`__ (e.g.
+   `Iris+ <https://3dr.com/kb/iris/>`__,
+   `Solo <https://3dr.com/solo-drone/>`__,
+   `X8 <https://3dr.com/kb/x8/>`__,
+   `Aero-M <https://3dr.com/kb/aero-m/>`__).
 
 This page is a quick start guide for users who have purchased a
-`3DRobotics Ready-to-Fly (RTF) multicopter <https://store.3drobotics.com/t/hobbyist-mapping>`__
+`3DRobotics Ready-to-Fly (RTF) multicopter <https://store.3dr.com/t/hobby-and-mapping>`__
 including a Pixhawk preloaded with the latest Copter firmware.  All
 other users should skip to the \ :ref:`First Time Setup <initial-setup>` section which
 includes the full flight controller set-up and calibration instructions.

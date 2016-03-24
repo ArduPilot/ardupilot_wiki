@@ -539,7 +539,7 @@ As of 2.9 we've enabled a feature that uses GPS velocities/accelerations
 to compensate for centifugal forces. It should not cause you any issues
 in flight but you can disable it by setting the AHRS_GPS_GAIN to 0
 through the Mission Planner's Advanced Parameters List if it makes you
-uncomfortable. \ `Here is a video <http://www.youtube.com/watch?v=SXppOmZ3Rpg&feature=player_detailpage>`__ demonstrating
+uncomfortable. \ `Here is a video <https://www.youtube.com/watch?v=SXppOmZ3Rpg&feature=player_detailpage>`__ demonstrating
 the problem and the explanation as to why it happens.
 
 My copter's is moving a lot on the Mission Planner map even though it's sitting still in my house

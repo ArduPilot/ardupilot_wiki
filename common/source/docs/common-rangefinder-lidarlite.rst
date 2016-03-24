@@ -137,7 +137,7 @@ BEC as shown in the diagram below.
 
    The low pass filter shown in the diagram is required for first
    generation hardware (for hardware with manufacture dates prior to
-   February 2015) - a `schematic and PCB design are provided here <http://123d.circuits.io/circuits/514802-lidar-lite>`__. These
+   February 2015) - a `schematic and PCB design are provided here <https://123d.circuits.io/circuits/514802-lidar-lite>`__. These
    should not be required in later versions of the LIDAR Lite (at which
    point the diagram will change as shown below:
    

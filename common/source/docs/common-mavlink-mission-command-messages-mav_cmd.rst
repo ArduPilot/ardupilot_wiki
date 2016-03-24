@@ -90,7 +90,7 @@ Many of the commands (in particular the :ref:`NAV\_ commands <common-mavlink-mis
 information. The information is provided relative to a particular "frame
 of reference", which is specified in the message's :ref:`common-mavlink-mission-command-messages-mav_cmd_navigation_commands_frames` field. Copter and Rover Mission use :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>` command to set the
 "home position" in the global coordinate frame (MAV_FRAME_GLOBAL),
-`WGS84 coordinate system <http://en.wikipedia.org/wiki/World_Geodetic_System>`__, where
+`WGS84 coordinate system <https://en.wikipedia.org/wiki/World_Geodetic_System>`__, where
 altitude is relative to mean sea level. All other commands use the
 MAV_FRAME_GLOBAL_RELATIVE_ALT frame, which uses the same latitude
 and longitude, but sets altitude as relative to the *home position*
@@ -1840,7 +1840,7 @@ Navigate to the target location using a spline path.
 Copter
 ~~~~~~
 
-Fly to the target location using a `Spline path <http://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__, then
+Fly to the target location using a `Spline path <https://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__, then
 wait (hover) for specified time before proceeding to the next command.
 
 The Spline commands take all the same arguments are regular waypoints

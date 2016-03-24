@@ -139,7 +139,7 @@ How the team works
    `DroneCon <http://www.dronecon.org/>`__. See previous years speeches
    and content `here <http://www.dronecon.org/>`__.
 -  The source code for ArduPilot/APM is managed using git on
-   http://github.com/diydrones/ardupilot
+   https://github.com/diydrones/ardupilot
 -  Pre-compiled firmware for supported autopilot boards is available
    from http://firmware.diydrones.com
 -  User support is available on the `APM forums <http://ardupilot.com/forum/viewforum.php?f=25>`__.

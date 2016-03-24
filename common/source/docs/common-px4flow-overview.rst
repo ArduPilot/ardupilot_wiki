@@ -4,7 +4,7 @@
 PX4FLOW Optical Flow Camera Board Overview
 ==========================================
 
-This article describes the `PX4FLOW (Optical Flow) Sensor <http://store.3drobotics.com/products/px4flow>`__.
+This article describes the `PX4FLOW (Optical Flow) Sensor <https://store.3dr.com/products/px4flow>`__.
 
 .. warning::
 
@@ -14,7 +14,7 @@ This article describes the `PX4FLOW (Optical Flow) Sensor <http://store.3droboti
 Overview
 ========
 
-The `PX4FLOW (Optical Flow) Sensor <http://store.3drobotics.com/products/px4flow>`__ is a
+The `PX4FLOW (Optical Flow) Sensor <https://store.3dr.com/products/px4flow>`__ is a
 specialized high resolution downward pointing camera module that uses
 the ground texture and visible features and a rangefinder to determine
 aircraft ground velocity. Although the sensor has plus a built-in

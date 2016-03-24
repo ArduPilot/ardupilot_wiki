@@ -34,7 +34,7 @@ releases/milestones.
 
 -  November 07, 2014 Copter (AC) **3.2** released. Numerous enhancements
    and bug fixes. Details
-   `here <https://github.com/diydrones/ardupilot/blob/ArduCopter-3.2/ArduCopter/ReleaseNotes.txt">`__
+   `here <https://github.com/diydrones/ardupilot/blob/ArduCopter-3.2/ArduCopter/ReleaseNotes.txt>`__
 
 -  May 27, 2014: Copter (AC) **3.1.5** released. Enhancements and bug
    fixes. Details
@@ -93,7 +93,7 @@ releases/milestones.
 -  March 24, 2012: Copter 2.5.3 released. Maintenance release with some
    bug fixes, including changing to a more appropriate throttle setting
    for most people in Alt Hold and re-enabling the Ch 7 auto-trim.
-   `Details here. <http://diydrones.com/xn/detail/705844:Comment:816307?xg_sourceactivity>`__
+   `Details here. <http://diydrones.com/forum/topics/arducopter-2-5-released?commentId=705844%3AComment%3A816307>`__
 
 -  March 17, 2012: Copter 2.5 released. First code optimized for the APM
    2 board, which will now outperform APM 1. Significant improvements in
@@ -108,7 +108,7 @@ releases/milestones.
 -  Jan 31, 2012: Copter 2.3 released. This is the feature complete
    release of 2.x, and is recommended for all users. More details in the
    release post
-   `here <http://diydrones.com/xn/detail/705844%3ATopic%3A773109>`__ .
+   `here <http://diydrones.com/forum/topics/arducopter-2-3-released>`__ .
 
 -  Jan 14, 2012: Copter 2.2 released. Mostly performance enhancement,
    bug fixes and improved APM 2 compatibility. Autoland now much

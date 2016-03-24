@@ -90,15 +90,15 @@ Adding a script to the SD card
 
 CHDK allows you to automate your camera's functionality by running
 scripts off an SD card. CHDK scripts can be written in
-both \ `UBASIC <http://en.wikipedia.org/wiki/UBASIC>`__\ and \ `Lua <http://en.wikipedia.org/wiki/Lua_(programming_language)>`__:
+both \ `UBASIC <https://en.wikipedia.org/wiki/UBASIC>`__\ and \ `Lua <https://en.wikipedia.org/wiki/Lua_(programming_language)>`__:
 simple, easy-to-use programming languages. For this tutorial, we'll use
 UBASIC scripts with file extension **.bas**. *UBASIC script files must
 carry the extension \ **.bas** to function.*
 
 One of the easiest and most useful ways to apply CHDK to your mission is
 to take pictures automatically at intervals during flight. We'll do this
-by adding an `intervalometer <http://en.wikipedia.org/wiki/Intervalometer>`__ script
-to the SD card. Our friends at `Drone Mapper <http://dronemapper.com/>`__ have created a great CHDK
+by adding an `intervalometer <https://en.wikipedia.org/wiki/Intervalometer>`__ script
+to the SD card. Our friends at `Drone Mapper <https://dronemapper.com/>`__ have created a great CHDK
 intervalometer script that can be found in Drone Mapper's \ `CHDK documentation <https://s3.amazonaws.com/DroneMapper_US/documentation/DroneMapper_CHDK.pdf>`__
 or `viewed by clicking here <http://firmware.ardupilot.org/downloads/wiki/other_files/DM-Intervalometer.txt>`__. Copy
 the intervalometer script into a text editor and save the file as **DM_interval.bas**.
@@ -451,7 +451,7 @@ together to create a map of the selected polygon.
 Stitching images
 ----------------
 
-`Microsoft Image Composite Editor (ICE) <http://research.microsoft.com/en-us/um/redmond/groups/ivm/ice/>`__
+`Microsoft Image Composite Editor (ICE) <http://research.microsoft.com/en-us/um/redmond/projects/ice/>`__
 is a great, free tool for automatically stitching images together into a
 composite. Just upload your images, and ICE will stitch them together.
 Here's an example of one of our composites:

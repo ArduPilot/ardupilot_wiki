@@ -8,8 +8,8 @@ Electronics including flight controller
 =======================================
 
 -  `APM2.6 (side pins) <http://store.jdrones.com/ArduPilot_MEGA_2_6_p/fcapm26side.htm>`__
-   or `Pixhawk <http://store.3drobotics.com/products/3dr-pixhawk>`__
-   with `GPS and external compass <http://store.3drobotics.com/products/3dr-gps-ublox-with-compass>`__.
+   or `Pixhawk <https://store.3dr.com/products/3dr-pixhawk>`__
+   with `GPS and external compass <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__.
 -  Extra long GPS cable (APM uses `5 to 6 position cable <http://store.jdrones.com/cable_df13_5pin_15cm_p/cbldf13p5c15.htm>`__,
    Pixhawk uses\ `6 position cable <http://store.3drobotics.com/products/df13-6-position-connector-45-cm>`__).
 -  Extra long compass (i2c) cable (both APM and Pixhawk use `4 position cables <http://store.jdrones.com/cable_df13_4pin_15cm_p/cbldf13p4c15.htm>`__).

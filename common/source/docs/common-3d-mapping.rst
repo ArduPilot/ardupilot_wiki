@@ -11,7 +11,7 @@ This page introduces how Copter/Plane along with the right equipment can
 be used to create 3d maps.
 
 .. image:: ../../../images/3d_mapping_the_fallen_blockhouse.jpg
-    :target:  https://sketchfab.com/show/ca785239f99643499fab7c62e1944f95
+    :target:  https://sketchfab.com/models/ca785239f99643499fab7c62e1944f95
 
 The image above is
 `Sylvain <http://www.diydrones.com/profile/Sylvain793>`__'s `"the fallen
@@ -102,17 +102,17 @@ Recommended Desktop 3d mapping software
 =======================================
 
 MicMac based toolchain together with
-(`ImageJ/Fiji <http://fiji.sc/Fiji>`__, `QGIS <http://qgis.org/>`__,
-`SAGA GIS <http://sourceforge.net/projects/saga-gis/>`__): open source
+(`ImageJ/Fiji <http://fiji.sc/>`__, `QGIS <http://qgis.org/en/site/>`__,
+`SAGA GIS <https://sourceforge.net/projects/saga-gis/>`__): open source
 and free!
 
 `VisualSFM <http://ccwu.me/vsfm/>`__ : free for non-commercial use
 
-`Photscan <http://www.agisoft.ru/products/photoscan>`__ : $179 for the
+`Agisoft Photscan <http://www.agisoft.com/>`__ : $179 for the
 standard edition, $3,499 for the pro edition including georeferencing,
 orthopotos, etc
 
-`Pix4d <http://pix4d.com>`__ : 6500 euros or 260 euros per month
+`Pix4d <https://www.pix4d.com/>`__ : 6500 euros or 260 euros per month
 
 `OpenDroneMap <http://opendronemap.github.io/odm/>`__ : open source and
 free! (`user intro video <https://www.youtube.com/watch?v=e2qp3o8caPs>`__)
@@ -135,12 +135,12 @@ see an example.
 `Three.js <http://threejs.org/>`__ allows you to provide 3D models on
 your own webpage.
 
-`Blender <http://www.blender.org/>`__ can be used to create video files
+`Blender <https://www.blender.org/>`__ can be used to create video files
 of virtual fly throughs of the 3d model which can then be posted to
 YouTube.  Here is an example by
 `Richard <http://www.diydrones.com/profile/Richard721>`__.
 
-`Dronemapper <http://dronemapper.com/>`__ allows uploading and managing
+`Dronemapper <https://dronemapper.com/>`__ allows uploading and managing
 raw images.
 
 ..  youtube:: MlON0X_nxBw

@@ -13,7 +13,7 @@ another computer.  This is primarily aimed at allowing access to images,
 videos and log files on the Odroid.  The procedure makes use of
 `hostapd <http://wireless.kernel.org/en/users/Documentation/hostapd>`__,
 `Samba <https://www.samba.org/>`__ and
-`dhcp <http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`__.
+`dhcp <https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol>`__.
 
 To accomplish this you will need:
 

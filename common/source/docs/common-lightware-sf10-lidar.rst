@@ -4,14 +4,14 @@
 LightWare SF10 Lidar
 ====================
 
-The `Lightware SF10 <http://www.lightware.co.za/>`__ series of laser
+The `Lightware SF10 <http://www.lightware.co.za/shop/en/>`__ series of laser
 rangefinders are particularly lightweight, and provide fast and accurate
 distance measurements. The series includes a number of models:
-`SF10/A <http://www.lightware.co.za/shop/en/rangefinders-and-altimeters/33-sf10a.html>`__
+`SF10/A <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/33-sf10a.html>`__
 (25m),
-`SF10/B <http://www.lightware.co.za/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__
+`SF10/B <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__
 (50m) and
-`SF10/C <http://www.lightware.co.za/shop/en/rangefinders-and-altimeters/34-sf10c.html>`__
+`SF10/C <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/34-sf10c.html>`__
 (100m).
 
 \ |SF10-B|
@@ -20,7 +20,7 @@ Connecting to the Pixhawk
 =========================
 
 The diagram below shows the SF10 output pins and a conveniently
-colour-coded cable (which `you can purchase here <http://www.lightware.co.za/shop/en/rangefinder-components/37-main-cable-type-1-35-cm.html>`__).
+colour-coded cable (which `you can purchase here <http://www.lightware.co.za/shop/en/shop/en/rangefinder-components/37-main-cable-type-1-35-cm.html>`__).
 You can connect the SF10 series of laser rangerfinders using analog,
 serial or I2C connections, as discussed in the following sections.
 
@@ -70,7 +70,7 @@ following parameters (this is done in the *Mission Planner*
 The ``RNGFND_MAX_CM`` is the distance in centimeters that rangefinder
 can reliably read. The value of this setting depends on the model of
 Lidar (50 meters is the nominal maximum range for the
-`SF10/B <http://www.lightware.co.za/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__).
+`SF10/B <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__).
 
 If you instead were using the Telem2 port on the Pixhawk then you would
 use the ``SERIAL2_PROTOCOL`` and ``SERIAL2_BAUD`` parameters.
@@ -111,7 +111,7 @@ List** page):
 The ``RNGFND_MAX_CM`` is the distance in centimeters that rangefinder
 can reliably read. The value of this setting depends on the model of
 Lidar (50 meters is the nominal maximum range for the
-`SF10/B <http://www.lightware.co.za/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__).
+`SF10/B <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__).
 
 ``RNGFND_GNDCLEAR`` is the distance in centimetres from the range finder
 to the ground when the vehicle is landed (the parameter value will
@@ -149,7 +149,7 @@ List** page):
 The ``RNGFND_MAX_CM`` is the distance in centimeters that rangefinder
 can reliably read. The value of this setting depends on the model of
 Lidar (50 meters is the nominal reliable range for the
-`SF10/B <http://www.lightware.co.za/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__).
+`SF10/B <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__).
 
 ``RNGFND_GNDCLEAR`` is the distance in centimetres from the range finder
 to the ground when the vehicle is landed (the parameter value will
@@ -159,7 +159,7 @@ The ``RNGFND_SCALING`` value depends on the voltage on the rangefinders
 output pin at the maximum range. By default the SF10/B will output 2.56V
 at 50m, so the scaling factor is 50m / 2.56v ≈ 19.53 (the analog
 distance range for each of the rangefinder variants can be found in the
-`SF10 Manual <http://www.lightware.co.za/shop/en/index.php?controller=attachment&id_attachment=9>`__).
+`SF10 Manual <http://www.lightware.co.za/shop/en/shop/en/index.php?controller=attachment&id_attachment=9>`__).
 The manual explains how you can confirm and change the maximum output
 range/voltage.
 

@@ -36,7 +36,7 @@ Accelerometer calibration
 
 Before you attach your APM to the heli I would recommend you do an
 accelerometer calibration which is well
-described \ `here <http://vimeo.com/56224615>`__. It’s easier to do if
+described `here <https://vimeo.com/56224615>`__. It’s easier to do if
 the APM is not mounted in the heli and it’s essential when running
 firmware 2.9 or higher.
 
@@ -69,7 +69,7 @@ Capturing the Swash Plate Range
 .. image:: https://awsive-images.googlecode.com/git-history/master/Swash%20Setup%20Slide%202%20v1-2.JPG
     :target: ../_images/Swash%20Setup%20Slide%202%20v1-2.JPG
 
-4. Push the \ **Manual** button. This will momentarily allow the servos
+4. Push the **Manual** button. This will momentarily allow the servos
 to move freely and input from the radio will directly control the
 servos.
 
@@ -78,13 +78,13 @@ upper and lower limits. If you accidentally move the swash too far so
 the servos bind, manually set the Top and Bottom of the range in the
 field provided.
 
-Push the \ **Zero** button after making sure your main blade's pitch is
+Push the **Zero** button after making sure your main blade's pitch is
 zero. If you want to tune your heli even better, set the pitch at hover
 pitch, say 3 or 4 degrees, and your heli won't climb when you switch
 modes but this is a refinement that you may want to come back to after
 your initial set-up.
 
-Push the \ **Save** button.
+Push the **Save** button.
 
 If you want to re-do this step, close the setup window and re-open it.
 
@@ -92,10 +92,12 @@ If you want to re-do this step, close the setup window and re-open it.
 a number of degrees. Default is 45 degrees which is what most people
 use.
 
-**Note: Avoid reversing the collective pitch channel (RC_3) in Mission
-Planner because it will affect the way the arming system works. Instead,
-reverse your \ *servos* in Mission Planner OR reverse the \ *channel* in
-your radio.**
+.. note:: 
+
+    Avoid reversing the collective pitch channel (RC_3) in Mission
+    Planner because it will affect the way the arming system works. Instead,
+    reverse your *servos* in Mission Planner OR reverse the *channel* in
+    your radio.
 
 Configuring the Rudder
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -108,16 +110,16 @@ direction. Again, its not atypical to have to reverse this function.
 Remember, stick to the right, heli should rotate clockwise, Stick to the
 left, heli should rotate anti-clockwise (when viewed from above).
 
-7. Push the \ **Manual** button and move the rudder channel on your
+7. Push the **Manual** button and move the rudder channel on your
 radio to it's full range to capture the min and max rudder range while
 avoiding any binding.
 
-Push the \ **Save** button.
+Push the **Save** button.
 
 As with the collective pitch you can update the Min and Max manually if
 necessary.
 
-8. If you have an external gyro, click the Gyro \ **Enable** button.
+8. If you have an external gyro, click the Gyro **Enable** button.
 Enter the Gain manually. This is a value from 1000~2000. this servo
 value is simply output on Channel 7 which should be connected to your
 external gyro's gain channel (thus freeing up a radio channel for other
@@ -167,7 +169,7 @@ the Ch8(in) so you can pass through a variable throttle signal if you
 want.
 
 All H_RSC_RAMP does is, after arming, when you first engage the
-throttle in Mode 1 \ **or** 2, it ramps up the output slowly. It's like
+throttle in Mode 1 **or** 2, it ramps up the output slowly. It's like
 a super-soft-start.
 
 RSC_Ramp set to 1000 = 10 seconds.
@@ -276,8 +278,7 @@ and see the difference in the swash plate movement.
 We do recommend setting up the swash with lots of negative pitch and
 then set the H_STAB_COL_MIN for whatever negative pitch you are
 comfortable with. Even if you never use negative pitch, this still
-allows the
-Alt_Hold\ `? <https://code.google.com/p/arducopter/w/edit/Alt_Hold>`__ controller
+allows the Alt_Hold controller
 to have access to full negative pitch will sometimes be needed.
 
 Set H_COL_MID to be hover point rather than 0° pitch to avoid having
@@ -287,9 +288,7 @@ covers the swash plate setup.
 Flybar Mode
 ~~~~~~~~~~~
 
-So here's what
-H_Flybar_Mode\ `? <https://code.google.com/p/arducopter/w/edit/Flybar_Mode>`__
-= 1 does.
+So here's what Flybar_Mode does.
 
 First, in Acro mode, it skips ALL stabilization/rate controllers. Your
 stick inputs go DIRECTLY to the servos. The only thing the APM does is
@@ -301,9 +300,7 @@ linkages, or using radio trim. Using radio trim is not good, because
 then that will mess up all your other modes because the APM will think
 you are holding the sticks.
 
-So the second big thing
-Flybar_Mode\ `? <https://code.google.com/p/arducopter/w/edit/Flybar_Mode>`__
-does is that it makes the Rate I term only "active" near zero rate
+So the second big thing Flybar_Mode does is that it makes the Rate I term only "active" near zero rate
 command. It won't move whenever you're asking the heli to move. It will
 only move the Integrator, basically in a hover. So it's sort of like an
 auto-trim for hover. Whenever you are moving the sticks, it's frozen.

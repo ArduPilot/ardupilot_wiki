@@ -522,9 +522,9 @@ Pixhawk system features
 Comparison of PX4-FMU-IO and Pixhawk
 ====================================
 
-The new PX4 \ `Pixhawk module <https://pixhawk.ethz.ch/px4/modules/pixhawk>`__ is an evolution
+The new PX4 \ `Pixhawk module <http://pixhawk.org/modules/pixhawk>`__ is an evolution
 of the
-existing \ `FMU <https://pixhawk.ethz.ch/px4/modules/px4fmu>`__ and `IO <https://pixhawk.ethz.ch/px4/modules/px4io>`__ modules
+existing \ `FMU <http://pixhawk.org/modules/px4fmu>`__ and `IO <http://pixhawk.org/modules/px4io>`__ modules
 and is completely compatible.
 
 -  The PX4 FMU and IO stack is very small (the size of an 8 ch RC

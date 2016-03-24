@@ -15,7 +15,7 @@ The ATMEGA 328P 8 channel STANDALONE PPM encoder allows to encode up to
 8 PWM (pulse width modulated) signals into one PPM (pulse position
 modulation) signal. This allows you to use any R/C receiver and a
 microcontroller that supports PPM (e.g. the
-`PX4FMU <http://pixhawk.ethz.ch/px4/modules/px4fmu>`__). The design is
+`PX4FMU <http://pixhawk.org/modules/px4fmu>`__). The design is
 based on the Atmega328P using and an external 16Mhz resonator.   The 3DR
 PPM Encoder (v2) now uses the ArduPPM firmware, replacing the previously
 used Paparazzi PPM Encoder firmware. The new ArduPPM firmware has been
@@ -73,7 +73,7 @@ Re-Programming instructions for Windows
 ---------------------------------------
 
 Download and install the
-latest \ `WinAVR <http://sourceforge.net/projects/winavr/>`__. Plug in
+latest \ `WinAVR <https://sourceforge.net/projects/winavr/>`__. Plug in
 the AVRISP mkII and Install the drivers for AVRISP mkII as follows: Open
 the device manager and select the AVRISP mkII, choose "Update Driver
 Software..."

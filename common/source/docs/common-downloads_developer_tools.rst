@@ -45,7 +45,7 @@ Arduino code to test an airspeed sensor
 Arduino 1.0.3 with modifications required for ArduPilot (Mac OS X)
 ------------------------------------------------------------------
 
-* `‘ArduPilot-Arduino-1.0.3-Mac.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/‘ArduPilot-Arduino-1.0.3-Mac.zip>`__
+* `‘ArduPilot-Arduino-1.0.3-Mac.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/ArduPilot-Arduino-1.0.3-Mac.zip>`__
 
 DATE POSTED	May 1, 2013
 
@@ -65,7 +65,7 @@ Arduino 1.0.3 with modifications required for ArduPilot
 CrossTrack demo (flash version)
 -------------------------------
 
-* `CrossTrack.swf <http://firmware.ardupilot.org/downloads/wiki/developer_tools/‘CrossTrack.swf>`__
+* `CrossTrack.swf <http://firmware.ardupilot.org/downloads/wiki/developer_tools/CrossTrack.swf>`__
 
 DATE POSTED	April 29, 2013
 

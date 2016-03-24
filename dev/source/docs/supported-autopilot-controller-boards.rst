@@ -537,7 +537,7 @@ store for drones and robots.
 |                                      | Linux <building-for-beaglebone-black-on-linux/>`__  (wiki)                  |
 |                                      |                                                                             |
 +--------------------------------------+-----------------------------------------------------------------------------+
-| **Design files**                     | `Design files <http://github.com/diydrones/PXF>`__                          |
+| **Design files**                     | `Design files <https://github.com/diydrones/PXF>`__                          |
 |                                      |                                                                             |
 |                                      |                                                                             |
 |                                      | :ref:`copter:common-erle-brain-linux-autopilot`                             |
@@ -605,7 +605,7 @@ computer is a fully functional autopilot (one example is the :ref:`Erle-Brain au
 |                                      | -on-linux/>`__                       |
 |                                      | (wiki)                               |
 +--------------------------------------+--------------------------------------+
-| **Design files**                     | http://github.com/diydrones/PXF      |
+| **Design files**                     | https://github.com/diydrones/PXF      |
 +--------------------------------------+--------------------------------------+
 
 .. |erlebrain_updating| replace:: `Updating the software <http://erlerobotics.com/blog/updating-the-software/>`__

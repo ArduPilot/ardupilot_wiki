@@ -558,7 +558,7 @@ you have ``NUM_CHANNELS`` set to more than 1.
 Upgrading radio firmware
 ========================
 
-The firmware for the radios is `open source <https://github.com/tridge/SiK>`__, and new features are
+The firmware for the radios is `open source <https://github.com/Dronecode/SiK>`__, and new features are
 regularly added. You should check for new releases regularly to get the
 most from your radios.
 

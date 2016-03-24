@@ -521,7 +521,7 @@ but the most common are:
    <td>The number of satellites current being used</td>
    </tr>
    <tr>
-   <td>`HDop <http://en.wikipedia.org/wiki/Dilution_of_precision_%28GPS%29>`__:</td>
+   <td>`HDop <https://en.wikipedia.org/wiki/Dilution_of_precision_%28GPS%29>`__:</td>
    <td>A measure of gps precision (1.5 is good, >2.0 is not so good)</td>
    </tr>
    <tr>

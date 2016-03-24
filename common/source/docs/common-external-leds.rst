@@ -10,7 +10,7 @@ External LED for Pixhawk
 ========================
 
 An external Pixhawk LED can be added by connecting it to the Pixhawk's
-I2C port. Because most users use an `Ublox GPS and Compass module <http://store.3drobotics.com/products/3dr-gps-ublox-with-compass>`__,
+I2C port. Because most users use an `Ublox GPS and Compass module <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__,
 an `I2C splitter <http://store.jdrones.com/Pixhawk_I2C_splitter_p/dstpx4i2c01.htm>`__
 is recommended.  Once connected the similar LED on the center of the
 Pixhawk will no longer light up.
@@ -26,7 +26,7 @@ Two External LED solutions for APM2 (Copter only)
 There are two recommended solutions for adding LEDs.
 
 -  the `JDrones I/O board <http://store.jdrones.com/jD_IOBoard_p/jdioboard11.htm>`__
-   (`video here <http://www.youtube.com/watch?feature=player_embedded&v=Q2oT808mJnQ>`__)
+   (`video here <https://www.youtube.com/watch?feature=player_embedded&v=Q2oT808mJnQ>`__)
    and `LED strips <http://store.jdrones.com/Night_Flying_LED_Drivers_s/94.htm>`__
    listens to the mavlink messages on the APM/PX4's telemetry port (much
    like the :ref:`minimOSD <common-minim-osd-quick-installation-guide>`) 

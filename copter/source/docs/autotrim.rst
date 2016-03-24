@@ -14,7 +14,7 @@ Save Trim
 ~~~~~~~~~
 
 Save trim is the simpler method and involves essentially transferring
-your radio transmitter's trims to the APM (`video demo here <http://www.youtube.com/watch?v=ayA0uYOqKX4>`__).
+your radio transmitter's trims to the APM (`video demo here <https://www.youtube.com/watch?v=ayA0uYOqKX4>`__).
 
 1. Check that your CH7 switch goes above 1800 on the MissionPlanner's
 Hardware > Mandatory Hardware > Radio Calibration screen.

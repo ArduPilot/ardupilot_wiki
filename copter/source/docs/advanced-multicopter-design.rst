@@ -143,7 +143,7 @@ There are several popular frame layouts for MultiCopters
    performance.
 
    -  Variable pitch multicopters have some interesting potential uses
-      as well like the `Curtis Youngblood Stingray 500 <http://curtisyoungblood.com/V2/content/stingray-500>`__ shown
+      as well like the `Curtis Youngblood Stingray 500 <http://curtisyoungblood.com/V2/products/quadcopters/stingray-500>`__ shown
       below.
    -  Servo control of the props (rotors) produces roll, pitch and yaw
       so they are often powered by a single motor with shaft or belt
@@ -158,7 +158,7 @@ There are several popular frame layouts for MultiCopters
 
 -  And copters with more than 8 motor/propeller units may be useful for
    specialized, extreme `(or
-   insane) <http://www.youtube.com/watch?v=L75ESD9PBOw>`__ applications.
+   insane) <https://www.youtube.com/watch?v=L75ESD9PBOw>`__ applications.
 
 .. image:: ../../../images/evolo2.jpg
     :target: ../_images/evolo2.jpg
@@ -348,7 +348,7 @@ Professional Grade Power System for Medium Quadcopters (16" Propellers)
 .. image:: ../../../images/Tmotor16Prop.jpg
     :target: ../_images/Tmotor16Prop.jpg
 
--  This is a very superior ($120.00) `KDE 4014XF-380KV Motor <http://www.kdedirect.com/KDE4014XF380.html>`__ with 3 large
+-  This is a very superior ($120.00) `KDE 4014XF-380KV Motor <https://www.kdedirect.com/products/kde4014xf-380>`__ with 3 large
    replaceable ABEC bearings rated at about 200 hours.
 
    -  This motor is capable of using 13" to 18" propellers and operating

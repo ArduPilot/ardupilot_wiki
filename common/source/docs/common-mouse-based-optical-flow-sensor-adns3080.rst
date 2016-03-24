@@ -64,7 +64,7 @@ Testing the sensor
       and then upload to your APM2 using the Mission Planner's **INITIAL
       SETUP \| Install Firmware \| Load custom firmware** link
    -  If using an APM1 you must open the
-      `AP_OpticalFlow_test.pde <https://raw.github.com/diydrones/ardupilot/860f4b260552297253a28b83a7f108302b84b97e/libraries/AP_OpticalFlow/examples/AP_OpticalFlow_test/AP_OpticalFlow_test.pde>`__\ sketch
+      `AP_OpticalFlow_test.pde <https://raw.githubusercontent.com/diydrones/ardupilot/860f4b260552297253a28b83a7f108302b84b97e/libraries/AP_OpticalFlow/examples/AP_OpticalFlow_test/AP_OpticalFlow_test.pde>`__\ sketch
       in the arduino IDE, compile and upload to your APM1
 
 -  Connect to your APM with the Serial Monitor or AP Mission Planner
@@ -91,11 +91,10 @@ viewer written in Python.
 #. Install Python 2.7 (or later version) from the `official python site <https://www.python.org/downloads/>`__\ 
 
    (For windows users, for compatibility with pyserial, you should
-   install the `32bit version <http://www.python.org/ftp/python/2.7.2/python-2.7.2.msi>`__\ even
+   install the `32bit version <https://www.python.org/ftp/python/2.7.2/python-2.7.2.msi>`__\ even
    if you are running 64bit windows)
-#. Install `PySerial 2.5 <http://pyserial.sourceforge.net/>`__. The
-   Windows package is
-   `(Here!) <http://pypi.python.org/packages/any/p/pyserial/pyserial-2.5.win32.exe#md5ea4579b9ad39a4f0171c3ec3da0a8212>`__
+#. Install `PySerial 2.5 <http://pyserial.sourceforge.net/>`__. The Windows package 
+   `can be downloaded from here <http://pypi.python.org/packages/any/p/pyserial/pyserial-2.5.win32.exe>`__.
 #. Start the Python IDLE editor
 #. File, Open,
    .../arduino-0022/libraries/AP_OpticalFlow/examples/ADNS3080ImageGrabber/ADNS3080ImageGrabber.py
@@ -173,7 +172,7 @@ Known issues
 Acknowledgements:
 =================
 
-#. `Marko Klein Berkenbusch's <http://www.diydrones.com/profile/MarkoKleineBerkenbusch>`__
+#. `Marko Klein Berkenbusch's <http://diydrones.com/profile/MarkoKleineBerkenbusch>`__
    position hold with mouse sensor
 
 #. research paper re `optical flow for position hold <http://www.araa.asn.au/acra/acra2007/papers/paper181final.pdf>`__

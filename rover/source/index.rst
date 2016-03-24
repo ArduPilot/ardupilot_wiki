@@ -17,7 +17,7 @@ missions that are defined using mission planning software or
 pre-recorded by the driver during a manual run.
 
 Rover runs on the
-`Pixhawk <http://store.3drobotics.com/products/3dr-pixhawk>`__ and a
+`Pixhawk <https://store.3dr.com/products/3dr-pixhawk>`__ and a
 number of other :ref:`supported autopilot boards <common-autopilots>`.
 
 This is the platform that won the `2013 and 2014 Sparkfun Autonomous Vehicle Competition <https://avc.sparkfun.com/>`__! That said, Rover is

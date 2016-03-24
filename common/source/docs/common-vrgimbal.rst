@@ -14,18 +14,18 @@ Brushless Gimbal Controller for use with ArduPilot.
 Overview
 ========
 
-The `VRGimbal <http://vrgimbal.wordpress.com/>`__
+The `VRGimbal <https://vrgimbal.wordpress.com/>`__
 (`2-axis <http://www.virtualrobotix.it/index.php/en/shop/gimbal-control-board/vrgimbal-2-axis-detail>`__
 and
 `3-axis <http://www.virtualrobotix.it/index.php/en/shop/gimbal-control-board/vrgimbal-3-axis-detail>`__
-available) began as a fork of the open source `Martinez 2-axis brushless gimbal controller <http://sourceforge.net/projects/brushless-gimbal-brugi/>`__
+available) began as a fork of the open source `Martinez 2-axis brushless gimbal controller <https://sourceforge.net/projects/brushless-gimbal-brugi/>`__
 to support the more powerful STM32 CPUs but since then has been mostly
 rewritten and includes significant enhancements including 3-axis support
 and Mavlink for serial communication with the flight controller or
 ground station.
 
--  `Official quick start guide can be found here <http://vrgimbal.wordpress.com/quick-start-guide/>`__
--  `Code can be found here <https://code.google.com/p/vrgimbal/source/browse/>`__
+-  `Official quick start guide can be found here <https://vrgimbal.wordpress.com/quick-start-guide/>`__
+-  `Code can be found here <https://code.google.com/archive/p/vrgimbal/source>`__
 -  Hardware schematics coming soon
 
 ..  youtube:: KIqWXnAuKPo#t=25
@@ -103,8 +103,8 @@ fail (see "BAD" device driver screen shot below).
        :target: ../_images/VRGimbal_DeviceManager.png
    
 #. Download and run the latest VRGimbal UI installation .msi file by
-   going to the `VRGimbal wordpress site and select the top item from the Downloads menu <http://vrgimbal.wordpress.com/download/>`__.  At
-   the time this wiki page was written it was `version 1.13 <http://vrgimbal.wordpress.com/download/vrgimbal-1-13-2/>`__. 
+   going to the `VRGimbal wordpress site and select the top item from the Downloads menu <https://vrgimbal.wordpress.com/download/>`__.  At
+   the time this wiki page was written it was `version 1.13 <https://vrgimbal.wordpress.com/download/vrgimbal-1-13-2/>`__. 
    After installation the "VRGimbal GUI" should appear in your start
    menu.
 #. Start the VRGimbal GUI from the start menu.
@@ -137,14 +137,14 @@ angle of the gimbal by:
 Updating the gimbal software
 ============================
 
-Please see the `VRGimbal firmware upgrade wordpress site <http://vrgimbal.wordpress.com/quick-start-guide/firmware-upgrade/>`__
+Please see the `VRGimbal firmware upgrade wordpress site <https://vrgimbal.wordpress.com/quick-start-guide/firmware-upgrade/>`__
 for details.
 
 Common Problems
 ===============
 
 -  Camera is not level.  Perform the accelerometer calibration as
-   described at the bottom of `this page <http://vrgimbal.wordpress.com/quick-start-guide/configuration-and-calibration/>`__.
+   described at the bottom of `this page <https://vrgimbal.wordpress.com/quick-start-guide/configuration-and-calibration/>`__.
 -  Small gimbal motors emit a high pitches squeal.  Connect with the
    VRGimbalGui, Go to the Advanced tab and set the "PWM frequency" to
    High.  Press **Send Config** and **Save to Flash** buttons.
@@ -152,9 +152,9 @@ Common Problems
 Other Open Source Alternatives
 ==============================
 
-`Martinez 2-axis gimbal controllers <http://sourceforge.net/projects/brushless-gimbal-brugi/>`__
+`Martinez 2-axis gimbal controllers <https://sourceforge.net/projects/brushless-gimbal-brugi/>`__
 using the original AVR328 chip can be found at retailers including
-`hobbyking <https://www.hobbyking.com/hobbyking/store/__41386__2_Axis_Brushless_Camera_Gimbal_Stabilization_Control_Board_w_IMU.html>`__.
+`hobbyking <http://www.hobbyking.com/hobbyking/store/__41386__2_Axis_Brushless_Camera_Gimbal_Stabilization_Control_Board_w_IMU.html>`__.
 
 `OlliW's STorM3 BGC 3-Axis STM32 based brushless gimbal controller <http://www.olliw.eu/2013/storm32bgc/?en>`__ is open source
 hardware, closed source (but free) gimbal firmware and open source

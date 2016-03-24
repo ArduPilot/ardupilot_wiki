@@ -121,7 +121,7 @@ Email: \ bill@communistech.com
 
 DIYDrones: \ http://diydrones.com/profile/BillBonney
 
-web: http://communistech.com
+web: http://www.communistech.com/
 
 Capabilities:
 
@@ -248,7 +248,7 @@ Email: \ info@virtualrobotix.com
 Phone: +390363968520
 
 Website and shop:
-`www.virtualrobotix.it <http://www.virtualrobotix.it>`__
+`www.virtualrobotix.it <http://www.virtualrobotix.it/index.php/it-IT/>`__
 
 Community: `www.virtualrobotix.com <http://www.virtualrobotix.com>`__
 

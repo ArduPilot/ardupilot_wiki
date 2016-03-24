@@ -39,7 +39,7 @@ copters on the market, there is likely little cost advantage to building
 your own, especially for the smaller copters and if you factor in some
 missteps along the way (like buying the wrong parts).
 
-`Complete Kits like these from 3DR <https://store.3drobotics.com/t/diyparts>`__ are an intermediate
+`Complete Kits like these from 3DR <https://store.3dr.com/t/diyparts>`__ are an intermediate
 step.  They ensure you have all the parts you need, the final result
 will be very close to the RTF but they are slightly cheaper because you
 perform the frame assembly and flight controller configuration yourself.

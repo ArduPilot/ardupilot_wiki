@@ -24,7 +24,7 @@ Copter to fit on the APM2.x board.
     * `RadioSiK <http://firmware.ardupilot.org/SiK>`__ 
     * `Developer Builds <http://firmware.ardupilot.org/devbuild>`__ 
     * `Build and Development Tools <http://firmware.ardupilot.org/Tools>`__ 
-    * `Companion Computers and associated example code <http://github.com/diydrones/companion>`__ 
+    * `Companion Computers and associated example code <https://github.com/diydrones/companion>`__ 
 
 
 Firmware

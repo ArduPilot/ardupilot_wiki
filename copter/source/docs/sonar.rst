@@ -46,7 +46,7 @@ make a special cable which requires:
 -  `100uF capacitor <https://www.sparkfun.com/products/96>`__
 -  `10ohm resistor <https://www.sparkfun.com/products/10969>`__
 -  3-wire shielded cable
--  `0.1" crimp connector housing <http://www.pololu.com/catalog/product/1901>`__ and `crimp pins <http://www.pololu.com/catalog/product/1930>`__
+-  `0.1" crimp connector housing <https://www.pololu.com/product/1901>`__ and `crimp pins <https://www.pololu.com/product/1930>`__
 
 ..  youtube:: Rba1ZdL0vyE
     :width: 100%
@@ -175,7 +175,7 @@ function for about 10 minutes after an extreme drop in temperature (i.e.
 a drop from a warm 27C/80F house to the chilly 10C/50F outdoors) because
 of condensation building up on the sensor.
 
-`This post <http://www.diydrones.com/forum/topics/arducopter-2-0-48?xg_source=activity&id=705844%3ATopic%3A676942&page=31#comments>`__ includes
+`This post <http://diydrones.com/forum/topics/arducopter-2-0-48?xg_source=activity&id=705844%3ATopic%3A676942&page=31#comments>`__ includes
 one member's (`Geir Engebakken <http://www.diydrones.com/forum/topic/listForContributor?user=3a28calx54gma>`__)
 solution (initially suggested by the developer Olivier ADLER) involving
 attaching 4x10Ohm resistors to the base of the sonar powered from a 5V

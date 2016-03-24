@@ -4,7 +4,7 @@
 UBlox GPS Configuration
 =======================
 
-`3DR uBlox <http://store.3drobotics.com/products/3dr-gps-ublox-with-compass>`__
+`3DR uBlox <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__
 modules are shipped with a `custom configuration <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_GPS/config>`__
 that is compatible with Copter, Rover and Plane.  This article explains
 how you can reprogram the custom configuration if needed (this is not

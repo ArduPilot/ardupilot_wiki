@@ -50,13 +50,13 @@ What to get
        :target: ../_images/3281_dimg2.jpg
    
 #. `Two tabbed center sections <hhttp://www.hoverthings.com/flip4tabblack>`__ and `eight 7/8" standoffs <http://www.hoverthings.com/spcr0875qty8>`__.
-#. Four DJI motors for Flamewheel from `Amain Hobby <http://www.amainhobbies.com/product_info.php/cPath/2_375_3081_3083/products_id/235238/n/DJI-Innovations-Multi-Rotor-Replacement-Brushless-Motor>`__
+#. Four DJI motors for Flamewheel from `Amain Hobby <http://www.amainhobbies.com/rc-drones/dji-multirotor-replacement-brushless-motor-dji-motor01/p235238>`__
    for $24.00 each.
-#. A 20 or 25 Amp four in one ESC from `Off the Grid Water <http://mymobilemms.com/OFFTHEGRIDWATER.CA/index.php?main_page=product_info&cPath=2_4&products_id=190>`__
+#. A 20 or 25 Amp four in one ESC from `Off the Grid Water <http://mymobilemms.com/OFFTHEGRIDWATER.CA/ESC/4-in-1-Speed-Control-Quad-HOBBYWING-Quattro-Skywalker-25A-X-41?cPath=2_4>`__
    for $40.00.
-#. A `Pixhawk <http://store.3drobotics.com/products/3dr-pixhawk>`__
+#. A `Pixhawk <https://store.3dr.com/products/3dr-pixhawk>`__
    Flight controller from 3DR.
-#. Also from 3DR a `UBlox GPS and Compass <http://store.3drobotics.com/products/3dr-gps-ublox-with-compass>`__
+#. Also from 3DR a `UBlox GPS and Compass <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__
    module.
 #. Two
    `normal <http://www.rcdude.com/servlet/the-2600/GemFan-DJI-Hub-/Detail>`__
@@ -71,7 +71,7 @@ What to get
    `FRSky <http://www.valuehobby.com/radio-systems-servos/receivers/frsky-receiver-telemetry.html>`__\ `(Delta
    8) <http://www.valuehobby.com/frysky-delta-8.html>`__, Futaba SBus or
    Spektrum satellite recommended.
-#. For a PX4 system: A `Pad of Kyousho Zeal Antivibration gel <http://www.amainhobbies.com/product_info.php/cPath/61_179/products_id/19713/n/Kyosho-Zeal-Vibration-Absorption-Gyro-Reciever-Mounting-Gel-1-Sheet>`__
+#. For a PX4 system: A `Pad of Kyousho Zeal Antivibration gel <http://www.amainhobbies.com/rc-cars-trucks/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__
    and four nylon or aluminum 1 1/2" threaded standoffs.
 
 .. image:: ../../../images/FlipTop.jpg

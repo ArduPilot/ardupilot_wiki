@@ -113,7 +113,7 @@ within the package source, to get those examples
 
 ::
 
-    git clone http://github.com/dronekit/dronekit-python.git
+    git clone https://github.com/dronekit/dronekit-python.git
 
 Let's start by just running one of those, the first step is to change
 your current directory:

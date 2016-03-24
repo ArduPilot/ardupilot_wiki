@@ -62,7 +62,7 @@ LiPo batteries and charger
 
 Copter requires a rechargeable lithium polymer (LiPo) battery. 
 A good rule of thumb is to use 1,000 mAH (milliamp hours) per
-motor. For a Quad copter, a `4,000 mAH LiPo like this one <http://hobbyking.com/hobbyking/store/__9185__Turnigy_4000mAh_3S_20C_Lipo_Pack.html>`__
+motor. For a Quad copter, a `4,000 mAH LiPo like this one <http://www.hobbyking.com/hobbyking/store/__9185__Turnigy_4000mAh_3S_20C_Lipo_Pack.html>`__
 would work well. While your copter can use only one battery at a time,
 we recommend having at least two batteries in stock; more batteries
 means more flight time. You'll also need a `charging station for your batteries such as this one <http://hobbyking.com/hobbyking/store/__24289__Turnigy_2S_3S_Balance_Charger_Direct_110_240v_Input_USA_Warehouse_.html>`__.

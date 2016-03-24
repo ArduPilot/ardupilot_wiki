@@ -22,7 +22,7 @@ discussion. Information on how to set-up your compass can be found on
 (also known as "toiletbowling") in Loiter, RTL, AUTO flight
 modes.[/site]
 
-See also `Magnetic Declination <http://en.wikipedia.org/wiki/Magnetic_declination>`__
+See also `Magnetic Declination <https://en.wikipedia.org/wiki/Magnetic_declination>`__
 (wikipedia)
 
 Hardware changes to reduce magnetic interference on the compass

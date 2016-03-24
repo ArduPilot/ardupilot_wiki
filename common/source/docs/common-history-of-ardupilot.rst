@@ -78,7 +78,7 @@ Mission scripting, failsafe, takeoff, landing, etc.
 Aug 2010 - `the Mission Planner <http://diydrones.com/profiles/blogs/ardupilot-mega-mission-planner>`__
 is released by Michael Oborne
 
-Aug 2010 - `TradHeli support <http://vimeo.com/14135066>`__\ added by
+Aug 2010 - `TradHeli support <https://vimeo.com/14135066>`__\ added by
 Randy
 
 Dec 2010 - first successful fork of ardupilot code as `MegaPirates group extends original CopterNG code <http://diydrones.com/profiles/blogs/arducopter-ng-taken-over-by>`__
