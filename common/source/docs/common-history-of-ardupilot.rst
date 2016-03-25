@@ -165,6 +165,8 @@ formed
 Oct 2014 - first report of Plane being successfully used in search &
 rescue including finding a missing light plane in Florida.
 
+Feb 2015 - `Erle Robotics <http://erlerobotics.com>`__ launches DIY kits for Linux drones based on APM.
+
 May 2015 - first documented multi-vehicle flight using only a single
 ground station (`first
 three <http://diydrones.com/profiles/blogs/multi-vehicle-testing-with-apm-copter-tracker-and-mission-planner>`__,
