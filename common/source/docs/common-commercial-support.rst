@@ -198,7 +198,7 @@ software and subsequently analysing logs.
 
 --------------
 
-Erle Robotics LLC
+Erle Robotics
 -----------------
 
 .. image:: ../../../images/PXFmini2.jpg
