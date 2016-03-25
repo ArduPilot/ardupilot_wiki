@@ -200,8 +200,9 @@ and hosted on `Github here <https://github.com/ArduPilot/ardupilot_wiki>`__.
 
 Each wiki has a separate folder in the repository (e.g. '/copter', '/plane') containing it's own source 
 and configuration files (**conf.py**). Common files that are shared between the wikis are named with the 
-prefix **common-** and stored in the **/common/source/docs/** directory. Images are shared between all
-wikis and are stored in the **/images** directory.
+prefix **common-** and stored in the **/common/source/docs/** directory. Images that are specific to a 
+particular wiki are stroed in an /images/ subfolder for the wiki (e.g. **copter/images/**) while 
+images are shared between all wikis and are stored in the "root" **/images** directory.
 Common configuration information for the Wiki Sphinx build is stored in **/common_conf.py**.
 
 The **update.py** build script copies the common topics into specified (in source) target wikis directories 
@@ -536,12 +537,15 @@ Using images in your wiki pages
 
 Our general advice for images is:
 
-- Keep images as small as possible and store them in the **/images** directory.
+- Keep images as small as possible.
 
   .. tip::
 
       Images are stored on Github, so we need to keep the overall size low. Crop images to the relevant 
       information and reduce image quality where possible.
+
+- Images in common pages or useful across wikis should be in the root **/images** directory.
+- Images specific to the wiki can be stored in its **/images** sub directory.
       
 - Use captions ("figure directive") where possible
 - Link to the image if it is larger than can be displayed on the page.
@@ -549,7 +553,7 @@ Our general advice for images is:
 - Name the file "descriptively" so it is easy to find, and possibly re-use. 
   A name like **planner2_flight_screen.jpg** is much more useful than **image1.jpg**.
     
-Display an image with a caption and target as shown below. Note the paths to the files are relative
+Display an image in a "common" article with a caption and target as shown below. Note the paths to the files are relative
 to the current directory (hence the relative link back to **images** in the project root).
 
 .. code-block:: rst
@@ -560,11 +564,12 @@ to the current directory (hence the relative link back to **images** in the proj
        Text for your caption
 
 
-Display an image without a caption (and without a target link) as shown below
+Display a wiki-specific image without a caption (or target link) as shown below. 
+Note that the path is absolute, and relative to the source directory for the wiki.
 
 .. code-block:: rst
 
-    .. image:: ../../../images/image_file_name.jpg
+    .. image:: /images/image_file_name.jpg
 
 
 
