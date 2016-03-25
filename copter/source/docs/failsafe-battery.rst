@@ -59,7 +59,7 @@ Setting up the battery failsafe
       placement of the drop-down is confusing but this will be corrected
       in a future version of the mission planner)
 
-.. image:: ../../../images/Failsafe_Battery_Setup.png
+.. image:: ../images/Failsafe_Battery_Setup.png
     :target: ../_images/Failsafe_Battery_Setup.png
 
 Low Battery warning (even with failsafe disabled)

@@ -7,7 +7,7 @@ Swarming
 Swarming/Formation-Flying Interface (Beta)
 ==========================================
 
-.. image:: ../../../images/radiohub.jpg
+.. image:: ../images/radiohub.jpg
     :target: ../_images/radiohub.jpg
 
 Mission Planner supports limited "swarming", or formation-flying with
@@ -34,7 +34,7 @@ but the key ones are marked below: identifying the serial port of the
 window, with a grid showing the relative position offset of the other
 UAVs.
 
-.. figure:: ../../../images/mp_screen_with_swarming_button.png
+.. figure:: ../images/mp_screen_with_swarming_button.png
    :target: ../_images/mp_screen_with_swarming_button.png
 
    Mission Planner: Screen with SwarmButton

@@ -8,7 +8,7 @@ Rover Home
 
    The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
-.. image:: ../../images/home_rover.jpg
+.. image:: /images/home_rover.jpg
     :target: _images/home_rover.jpg
 
 Rover is an advanced :ref:`open source <dev:license-gplv3>` autopilot for

@@ -34,7 +34,7 @@ detection range of **15 meters**. `Beacon (V1.1) <http://irlock.com/collections/
 cost-effective option which can be reliably detected in **most lighting
 conditions**.
 
-.. figure:: ../../../images/sensorandMarkers01.jpg
+.. figure:: ../images/sensorandMarkers01.jpg
    :target: ../_images/sensorandMarkers01.jpg
 
    IR-LOCK Sensor and IR Beacons
@@ -48,7 +48,7 @@ More detailed instructions are included in the `irlock.com Documentation <https:
 also be `connected via USB to a Linux system <https://irlock.readme.io/docs/interfacing-sensor-w-linux-and-python>`__,
 and sensor output can be retrieved in Python.
 
-.. figure:: ../../../images/precision_landing_connect_irlock_to_pixhawk.jpg
+.. figure:: ../images/precision_landing_connect_irlock_to_pixhawk.jpg
    :target: ../_images/precision_landing_connect_irlock_to_pixhawk.jpg
 
    IRLock sensor/Pixhawk Wiring
@@ -82,7 +82,7 @@ IRIS+. It is probably best to mount the sensor as close as possible to
 the Pixhawk, but successful tests have also been performed with
 various mounting locations.
 
-.. figure:: ../../../images/IRISbracket03.jpg
+.. figure:: ../images/IRISbracket03.jpg
    :target: ../_images/IRISbracket03.jpg
 
    IR-LOCK Sensor Mounted onBottom of Iris+

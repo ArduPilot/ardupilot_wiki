@@ -193,5 +193,5 @@ start.
    wish the new flight mode to appear in the Mission Planner's HUD and
    Flight Mode set-up.
 
-   .. image:: ../../../images/FlightMode.jpg
+   .. image:: ../images/FlightMode.jpg
        :target: ../_images/FlightMode.jpg

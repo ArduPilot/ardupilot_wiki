@@ -22,7 +22,7 @@ features using the *Mission Planner*'s **Config/Tuning \| Extended
 Tuning** screen or by setting the ``CH7_OPT`` (or ``CH8_OPT``) parameter
 directly.
 
-.. image:: ../../../images/MPchan7options.jpg
+.. image:: ../images/MPchan7options.jpg
     :target: ../_images/MPchan7options.jpg
 
 Here are the options:
@@ -214,5 +214,5 @@ Your channel 7 and/or channel 8 pwm value must reach at least 1800 PWM
 or the auxiliary function will not be activated. You can check that it
 surpasses this threshold using the Mission Planner's radio config page.
 
-.. image:: ../../../images/MPCH7checkPWMrange.jpg
+.. image:: ../images/MPCH7checkPWMrange.jpg
     :target: ../_images/MPCH7checkPWMrange.jpg

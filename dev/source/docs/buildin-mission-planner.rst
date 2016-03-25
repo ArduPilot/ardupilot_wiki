@@ -79,7 +79,7 @@ the ardupilot repository.
 Open the Mission Planner solution in Visual Studio
 ==================================================
 
-.. image:: ../../../images/MPBuild_OpenSolution.png
+.. image:: ../images/MPBuild_OpenSolution.png
     :target: ../_images/MPBuild_OpenSolution.png
 
 -  Start Visual Studio
@@ -97,7 +97,7 @@ Open the Mission Planner solution in Visual Studio
    Planner and select Properties, Signing and uncheck "Sign the
    ClickOnce manifests"
 
-.. image:: ../../../images/MPBuild_UncheckSigning.png
+.. image:: ../images/MPBuild_UncheckSigning.png
     :target: ../_images/MPBuild_UncheckSigning.png
 
 -  Mission Planner is made up of several projects, you can see these by
@@ -129,7 +129,7 @@ Before you attempt to build (compile) Mission Planner you must also have
 the official version installed on your PC.  This is because there are
 some .dll files that are not included in the Git repository.
 
-.. image:: ../../../images/MPBuild_BatchBuild.png
+.. image:: ../images/MPBuild_BatchBuild.png
     :target: ../_images/MPBuild_BatchBuild.png
 
 -  Select Build >> Batch Build..., "Select All" (to check all
@@ -181,7 +181,7 @@ Some optional help in resolving build errors:
 Building the SimpleExample
 ==========================
 
-.. image:: ../../../images/MPBuild_SimpleExampleRun.png
+.. image:: ../images/MPBuild_SimpleExampleRun.png
     :target: ../_images/MPBuild_SimpleExampleRun.png
 
 The "SimpleExample" solution is available as a near minimal application

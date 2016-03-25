@@ -22,13 +22,13 @@ vehicle can be made accessible to a GCS:
 -  Connect a :ref:`companion computer <dev:companion-computers>` and
    set-up a WiFi access point
 
-.. image:: ../../../images/AntennaTracker_Connect_To_GCS.jpg
+.. image:: ../images/AntennaTracker_Connect_To_GCS.jpg
     :target: ../_images/AntennaTracker_Connect_To_GCS.jpg
 
 Connect with a USB cable
 ========================
 
-.. image:: ../../../images/AntennaTracker_ConnectToGCS_USBCable.jpg
+.. image:: ../images/AntennaTracker_ConnectToGCS_USBCable.jpg
     :target: ../_images/AntennaTracker_ConnectToGCS_USBCable.jpg
 
 If the antenna controller is a Pixhawk you can simply connect your
@@ -43,7 +43,7 @@ are on the right side of the APM2 as shown on \ :ref:`this wiki page <copter:com
 Connect a 2nd pair of radios
 ============================
 
-.. image:: ../../../images/AntennaTracker_ConnectToGCS_Radio.jpg
+.. image:: ../images/AntennaTracker_ConnectToGCS_Radio.jpg
     :target: ../_images/AntennaTracker_ConnectToGCS_Radio.jpg
 
 A second pair of radios (or even a :ref:`bluetooth data link <copter:common-mission-planner-bluetooth-connectivity>`)

@@ -38,7 +38,7 @@ The HDOP value can be made clearly visible through the mission planner's
 Quick screen by double clicking and then selecting "gpshdop" from the
 large grid of checkboxes.
 
-.. image:: ../../../images/Loiter_DisplayHDOP.jpg
+.. image:: ../images/Loiter_DisplayHDOP.jpg
     :target: ../_images/Loiter_DisplayHDOP.jpg
 
 .. _loiter-mode_tuning:
@@ -46,7 +46,7 @@ large grid of checkboxes.
 Tuning
 ======
 
-.. image:: ../../../images/Loiter_Tuning.png
+.. image:: ../images/Loiter_Tuning.png
     :target: ../_images/Loiter_Tuning.png
 
 Loiter mode incorporates the altitude controller from AltHold mode. 
@@ -89,7 +89,7 @@ performing copter the acxtual velocities will track the desired
 velocities as shown below.  X = latitude (so positive = moving North,
 negative = South), Y = longitude (positive = East, negative = West).
 
-.. image:: ../../../images/Loiter_TuningCheck.png
+.. image:: ../images/Loiter_TuningCheck.png
     :target: ../_images/Loiter_TuningCheck.png
 
 Checking altitude hold performance is the same as for

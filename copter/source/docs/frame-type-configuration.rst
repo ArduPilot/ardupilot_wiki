@@ -10,7 +10,7 @@ configuration is **X**. If you want one of the arms to serve as the
 exclusive front-facing direction, select the **Plus** configuration. For
 Tricopters, Traditional Helis and Y6s, the frame type is ignored.
 
-.. figure:: ../../../images/MissionPlanner_Select_Frame-Type.jpg
+.. figure:: ../images/MissionPlanner_Select_Frame-Type.jpg
    :target: ../_images/MissionPlanner_Select_Frame-Type.jpg
 
    Mission Planner:Select Frame Type

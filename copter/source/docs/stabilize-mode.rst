@@ -108,7 +108,7 @@ angle) vs Roll (actual roll) and Pitch-In or DesPitch (desired pitch
 angle) vs Pitch (actual pitch angle). These two should track well as
 shown below.
 
-.. image:: ../../../images/Tuning_StabilizeCheck.png
+.. image:: ../images/Tuning_StabilizeCheck.png
     :target: ../_images/Tuning_StabilizeCheck.png
 
 Common Problems

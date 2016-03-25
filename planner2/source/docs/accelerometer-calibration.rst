@@ -25,7 +25,7 @@ wizard. Select **Calibrate Accelerometer** to begin. Follow the prompts
 and select **Continue** after each step. It is important not to move the
 copter immediately after pressing the key for each step.
 
-.. image:: ../../../images/apm_planner2_calibrate-accelerometer.png
+.. image:: ../images/ap2_calibrate-accelerometer.png
     :target: ../_images/apm_planner2_calibrate-accelerometer.png
 
 `Check out this video <https://vimeo.com/56224615>`__ for an example of

@@ -17,10 +17,10 @@ This article provides an overview of the :ref:`PX4FMU <common-px4fmu-overview>` 
 PX4FMU plus PX4IO Wiring Diagram for Plane
 ==========================================
 
-.. image:: ../../../images/ArduPlanePX4Wiring.jpg
+.. image:: ../images/ArduPlanePX4Wiring.jpg
     :target: ../_images/ArduPlanePX4Wiring.jpg
 
-.. image:: ../../../images/PX4IOWiringPlane3.jpg
+.. image:: ../images/PX4IOWiringPlane3.jpg
     :target: ../_images/PX4IOWiringPlane3.jpg
 
 Assembly

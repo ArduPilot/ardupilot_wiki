@@ -49,7 +49,7 @@ The *MAVProxy Command Prompt*, *Console* and *Map* should be arranged
 conveniently so you can observe the status and send commands at the same
 time.
 
-.. image:: ../../../images/mavproxy_sitl_console_and_map.jpg
+.. image:: ../images/mavproxy_sitl_console_and_map.jpg
     :target: ../_images/mavproxy_sitl_console_and_map.jpg
 
 Taking off
@@ -97,7 +97,7 @@ During takeoff you can watch the altitude increase on the console in the
 Developers may find it useful to **graph** the takeoff by first entering
 the ``gtakeoff`` command.
 
-.. figure:: ../../../images/MAVProxyGraphPlane_gtakeoff_40.png
+.. figure:: ../images/MAVProxyGraphPlane_gtakeoff_40.png
    :target: ../_images/MAVProxyGraphPlane_gtakeoff_40.png
 
    MAVProxy: PlaneTakeoff Graph (gtakeoff)
@@ -156,7 +156,7 @@ the map:
 
 #. Right-click on the map and then select **Mission \| Draw**.
 
-   .. figure:: ../../../images/MAVProxyCopter_Mission_Draw.jpg
+   .. figure:: ../images/MAVProxyCopter_Mission_Draw.jpg
       :target: ../_images/MAVProxyCopter_Mission_Draw.jpg
 
       MAVProxy: Draw Mission Menu
@@ -216,7 +216,7 @@ First change the mode:
 The easiest way to set a target point is to right-click on the map where
 you want to go, select **Fly to**, and then enter the target altitude.
 
-.. figure:: ../../../images/MAVProxyCopter_flyto.jpg
+.. figure:: ../images/MAVProxyCopter_flyto.jpg
    :target: ../_images/MAVProxyCopter_flyto.jpg
 
    MAVProxy: Fly toLocation
@@ -266,7 +266,7 @@ Creating the fence is very similar to creating a waypoint mission:
 
 #. Right-click on the map and then select **Fence \| Draw**.
 
-   .. figure:: ../../../images/mavproxy_plane_select_draw_fence.jpg
+   .. figure:: ../images/mavproxy_plane_select_draw_fence.jpg
       :target: ../_images/mavproxy_plane_select_draw_fence.jpg
 
       MAVProxy: Draw Fence Menu
@@ -282,7 +282,7 @@ Creating the fence is very similar to creating a waypoint mission:
 #. When you're done, you can loop the fence by right-clicking on the
    map.
 
-   .. figure:: ../../../images/mavproxy_plane_draw_geofence_points.jpg
+   .. figure:: ../images/mavproxy_plane_draw_geofence_points.jpg
       :target: ../_images/mavproxy_plane_draw_geofence_points.jpg
 
       MAVProxy: Draw Fence Points
@@ -305,7 +305,7 @@ Creating the fence is very similar to creating a waypoint mission:
    fence region and then circle. The console shows that the breach has
    occurred.
 
-   .. figure:: ../../../images/MAVProxyPlane_Fence_Breach.jpg
+   .. figure:: ../images/MAVProxyPlane_Fence_Breach.jpg
       :target: ../_images/MAVProxyPlane_Fence_Breach.jpg
 
       MAVProxy: Fence Breach shown on Console and Map

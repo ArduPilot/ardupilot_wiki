@@ -313,7 +313,7 @@ Recovery
 #. The UART port is located under the Bebop's neck on the right side
    (facing the front camera)
 
-   .. image:: ../../../images/bebop_uart_port.jpg
+   .. image:: ../images/bebop_uart_port.jpg
        :target: ../_images/bebop_uart_port.jpg
        
 #. You will have to pull back the polystyrene a bit but it shouldn't
@@ -323,7 +323,7 @@ Recovery
 #. Get headers like `these ones <https://www.aimagin.com/2-54-mm-straight-male-single-pin-header-connectors.html>`__ and
    plug them into the cable like this:
 
-   .. image:: ../../../images/bebop_straight_male_single_pin_header_connectors.jpg
+   .. image:: ../images/bebop_straight_male_single_pin_header_connectors.jpg
        :target: ../_images/bebop_straight_male_single_pin_header_connectors.jpg
 
    .. note::
@@ -336,7 +336,7 @@ Recovery
 
 #. Plug the cable into the Bebop like this:
 
-   .. image:: ../../../images/bebop_connections.jpg
+   .. image:: ../images/bebop_connections.jpg
        :target: ../_images/bebop_connections.jpg
 
    .. note::

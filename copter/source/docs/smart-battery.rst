@@ -26,7 +26,7 @@ assignment on :ref:`this page <common-pixhawk-overview_pixhawk_connector_pin_ass
 Setup through Mission Planner
 =============================
 
-.. image:: ../../../images/SmartBattery_SetupMP.png
+.. image:: ../images/SmartBattery_SetupMP.png
     :target: ../_images/SmartBattery_SetupMP.png
 
 Simply set the :ref:`BATT_MONITOR <BATT_MONITOR>`

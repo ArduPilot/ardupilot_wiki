@@ -34,7 +34,7 @@ Serial 4/5. To do this you will need an `FTDI 3.3V cable <http://store.jdrones.c
 and then modify a `DF13 6 Position cable <http://store.jdrones.com/cable_df13_6pin_15cm_p/cbldf13p6c15.htm>`__
 so that it can be connected to the FTDI cable.
 
-.. image:: ../../../images/Pixhawk_FTDICable_NSH.jpg
+.. image:: ../images/Pixhawk_FTDICable_NSH.jpg
     :target: ../_images/Pixhawk_FTDICable_NSH.jpg
 
 You should then be able to plug the FTDI cable into your computer and
@@ -42,7 +42,7 @@ connect with any Serial program including the Mission Planner's Terminal
 screen. Ensure to select the FTDI cable's COM port and set the Baud rate
 to 57600. You will need to press return for the "nsh>" prompt to appear.
 
-.. image:: ../../../images/Pixhawk_NSH_MP.png
+.. image:: ../images/Pixhawk_NSH_MP.png
     :target: ../_images/Pixhawk_NSH_MP.png
 
 Remote NSH over MAVLink
@@ -66,7 +66,7 @@ MAVLink).
 Instructions to use with Mission Planner:
 -----------------------------------------
 
-.. image:: ../../../images/NSH_MPTerminal.png
+.. image:: ../images/NSH_MPTerminal.png
     :target: ../_images/NSH_MPTerminal.png
 
 -  Connect Pixhawk to PC using a USB cable

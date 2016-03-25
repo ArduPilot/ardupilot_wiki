@@ -18,7 +18,7 @@ bring up the Terminal window, and it should automatically take you to
 the APM CLI menu (if not, click in the window and hit "Enter" three
 times): 
 
-.. image:: ../../../images/mpterminalAPM1.jpg
+.. image:: ../images/mpterminalAPM1.jpg
     :target: ../_images/mpterminalAPM1.jpg
     
 You can now enter commands by typing them at the
@@ -28,7 +28,7 @@ the Arduino Serial Monitor). You can use any terminal you want, but the
 Mission Planner terminal is the most straightforward. Here I'm typing
 "help" to see a list of available commands:
 
-.. image:: ../../../images/mp_cli_help.png
+.. image:: ../images/mp_cli_help.png
     :target: ../_images/mp_cli_help.png
 
 
@@ -88,7 +88,7 @@ but what's important is that you hit all four corners for each stick.
 Hold the stick in each corner for a second. Here's a screenshot of a
 typical Radio setup process:
 
-.. image:: ../../../images/setup2.png
+.. image:: ../images/setup2.png
     :target: ../_images/setup2.png
 
 **Note**: As shown above, the RC readings for the channels you have
@@ -117,7 +117,7 @@ Just move the stick to the right or left and the mode will increment.
 Hitting Enter will exit the mode and save your changes. See this
 example:
 
-.. image:: ../../../images/modes.png
+.. image:: ../images/modes.png
     :target: ../_images/modes.png
 
 **Here's a video tutorial:**

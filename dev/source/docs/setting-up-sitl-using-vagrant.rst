@@ -112,7 +112,7 @@ If you want to use rsync you need to:
    -  `Download the latest Mingw installer <http://sourceforge.net/projects/mingw/files/Installer/>`__
    -  In the installer, select and install the *mingw-developer-toolkit*
 
-      .. figure:: ../../../images/MinGW-InstallationManager.png
+      .. figure:: ../images/MinGW-InstallationManager.png
          :target: ../_images/MinGW-InstallationManager.png
 
          MinGW Installation Manager

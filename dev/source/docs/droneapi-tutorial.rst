@@ -83,7 +83,7 @@ interpreter for your machine:
 Open the folder where you installed WinPython, run "**WinPython Control
 Panel**\ " and choose "**Advanced/Register Distribution**\ ".
 
-.. image:: ../../../images/dronekit_winpython_command_prompt.png
+.. image:: ../images/dronekit_winpython_command_prompt.png
     :target: ../_images/dronekit_winpython_command_prompt.png
 
 Screenshot of this step (click for larger version)

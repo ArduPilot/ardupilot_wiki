@@ -10,7 +10,7 @@ and before your first flight.
 Summary Checklist
 =================
 
-.. image:: ../../../images/Copter-Checklist-1.jpg
+.. image:: ../images/Copter-Checklist-1.jpg
     :target: ../_images/Copter-Checklist-1.jpg
 
 Configuration

@@ -25,12 +25,12 @@ The parameters that are relevant to the rangefinder(s) are :ref:`listed here <RN
 The parameters are set in the *Mission Planner* **CONFIG/TUNING\| Basic
 Tuning** or **CONFIG/TUNING \| Standard Params** pages):
 
-.. figure:: ../../../images/MP_rover_parameter.jpg
+.. figure:: ../images/MP_rover_parameter.jpg
    :target: ../_images/MP_rover_parameter.jpg
 
    Mission Planner: Rover SonarParameters
 
-.. figure:: ../../../images/MissionPlanner_Rover_Basic_Tuning.png
+.. figure:: ../images/MissionPlanner_Rover_Basic_Tuning.png
    :target: ../_images/MissionPlanner_Rover_Basic_Tuning.png
 
    Mission Planner: Rover BasicTuning

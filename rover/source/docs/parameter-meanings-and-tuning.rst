@@ -19,7 +19,7 @@ All Rover parameters are :doc:`listed here <parameters>`. The
 parameters can be adjusted in *Mission Planner* in the specific screens
 described in each topic or in the **Advanced Parameter List**.
 
-.. figure:: ../../../images/MP_rover_adv-param-list.jpg
+.. figure:: ../images/MP_rover_adv-param-list.jpg
    :target: ../_images/MP_rover_adv-param-list.jpg
 
    Mission Planner: Rover AdvancedParameters List

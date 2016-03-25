@@ -50,7 +50,7 @@ the connected board as soon as you press "write params", many affect the
 current flight (if any) immediately, and are written to EEPROM so they
 survive power cycling.
 
-.. figure:: ../../../images/missPlannTuningTECS.png
+.. figure:: ../images/missPlannTuningTECS.png
    :target: ../_images/missPlannTuningTECS.png
 
    Mission Planner: CONFIG/TUNINGPlane Pids Screen

@@ -18,7 +18,7 @@ behaviour of the code without hardware.
 SITL runs natively on Linux and Windows. See the separate :ref:`windows installation page <sitl-native-on-windows>`
 for a windows install.
 
-.. image:: ../../../images/SITL_Linux.jpg
+.. image:: ../images/SITL_Linux.jpg
     :target: ../_images/SITL_Linux.jpg
 
 Install steps
@@ -193,7 +193,7 @@ displays provided by *MAVProxy* and *Mission Planner*.
    should appear in the *next* versions of the vehicle codelines (not
    present on current versions: Copter 3.3, Plane 3.4, Rover 2.5).
 
-.. figure:: ../../../images/flightgear_copter_windows.jpg
+.. figure:: ../images/flightgear_copter_windows.jpg
    :target: ../_images/flightgear_copter_windows.jpg
 
    FlightGear:Simulated Copter at KSFO (click for larger view).

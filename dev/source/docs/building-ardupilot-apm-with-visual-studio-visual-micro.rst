@@ -15,7 +15,7 @@ Studio 6.2 or Microsoft Visual Studio with the \ `Visual Micro <http://www.visua
 upload the APM code using these tools. The builds and uploads are the
 same as with the ArduPilot Ardunio builds.
 
-.. image:: ../../../images/Atmel-Studio-+-Visual-Micro.jpg
+.. image:: ../images/Atmel-Studio-+-Visual-Micro.jpg
     :target: ../_images/Atmel-Studio-+-Visual-Micro.jpg
 
 Click the image to enlarge
@@ -109,7 +109,7 @@ the key steps required:
       located your Arduino folder (in this case C:\\ArduPilot-Arduino-1.0.3-windows) should look like
       this:
       
-      .. image:: ../../../images/VisualMicroHardware.jpg
+      .. image:: ../images/VisualMicroHardware.jpg
           :target: ../_images/VisualMicroHardware.jpg
     
    -  Run Atmel Studio or Visual Studio and set up for APM as follows:
@@ -134,7 +134,7 @@ the key steps required:
             Here is how the setup should look for this
             tutorial:
             
-            .. image:: ../../../images/VisualMicroSetup.jpg
+            .. image:: ../images/VisualMicroSetup.jpg
                 :target: ../_images/VisualMicroSetup.jpg
 
 

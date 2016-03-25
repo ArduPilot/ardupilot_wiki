@@ -24,13 +24,13 @@ and set to Pin 65, you can also plug in a simple potentiometer into the
 
 Pin 15 as shown below.
 
-.. image:: ../../../images/Pixhawk_Pins2.jpg
+.. image:: ../images/Pixhawk_Pins2.jpg
     :target: ../_images/Pixhawk_Pins2.jpg
 
-.. image:: ../../../images/Pixhawk-Pins-3.png
+.. image:: ../images/Pixhawk-Pins-3.png
     :target: ../_images/Pixhawk-Pins-3.png
 
-.. image:: ../../../images/Pixhawk_Airspeed_pot.jpg
+.. image:: ../images/Pixhawk_Airspeed_pot.jpg
     :target: ../_images/Pixhawk_Airspeed_pot.jpg
 
 Required parts
@@ -49,7 +49,7 @@ Once the DF 13 cable is connected to the potentiometer, plug it into the
 Open your Ground Control Station (GCS) of choice, and change the
 ``ARSPD_PIN`` parameter to Pin "**15"** as shown below.
 
-.. image:: ../../../images/AirspeedMP.png
+.. image:: ../images/AirspeedMP.png
     :target: ../_images/AirspeedMP.png
 
 If your Pixhawk was powered on with the I2C Airspeed sensor and Pin 65

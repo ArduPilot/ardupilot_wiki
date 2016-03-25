@@ -20,7 +20,7 @@ on the type of transmitter used).
 The options are set in the *Mission Planner* **CONFIG/TUNING \| Standard
 Params** page:
 
-.. figure:: ../../../images/MP_rover_parameter.jpg
+.. figure:: ../images/MP_rover_parameter.jpg
    :target: ../_images/MP_rover_parameter.jpg
 
    Mission Planner: Rover Skid-SteerParameters

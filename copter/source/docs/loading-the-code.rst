@@ -12,7 +12,7 @@ You can get the latest Mission Planner by following the topic
 The only difference being that after you click on the "Firmware" button,
 you click on the helicopter icon.
 
-.. image:: ../../../images/TradHeli_MissionPlanner_HeliIcon.jpg
+.. image:: ../images/TradHeli_MissionPlanner_HeliIcon.jpg
     :target: ../_images/TradHeli_MissionPlanner_HeliIcon.jpg
 
 Developers may also want to build the code and upload their own

@@ -32,7 +32,7 @@ Do this for all four channels shown. **Just because it's right in
 RC/Manual doesn't mean it will be right under Autopilot control. Check
 it in both modes!**
 
-.. image:: ../../../images/mpreverse.png
+.. image:: ../images/mpreverse.png
     :target: ../_images/mpreverse.png
 
 Getting the rudder direction right
@@ -145,7 +145,7 @@ checkboxes at the bottom:
 
 Roll to the right illustrated below.
 
-.. image:: ../../../images/mavelevon1.png
+.. image:: ../images/mavelevon1.png
     :target: ../_images/mavelevon1.png
 
 It takes a little trial-and-error to set up elevons on any particular
@@ -232,7 +232,7 @@ vtail mixer would operate. To set it up follow these steps:
 
 Here's a V-Tail movement diagram courtesy of \ *Miami Mike*:
 
-.. image:: ../../../images/v-tail-300x200.gif
+.. image:: ../images/v-tail-300x200.gif
     :target: ../_images/v-tail-300x200.gif
 
 Please make sure that you do careful ground testing after setting these

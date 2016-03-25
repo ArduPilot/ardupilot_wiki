@@ -14,7 +14,7 @@ images.
 Connecting the Pixhawk and RPi
 ==============================
 
-.. image:: ../../../images/RaspberryPi_Pixhawk_wiring1.jpg
+.. image:: ../images/RaspberryPi_Pixhawk_wiring1.jpg
     :target: ../_images/RaspberryPi_Pixhawk_wiring1.jpg
 
 Connect the Pixhawk's TELEM2 port to the RPi's Ground, TX and RX pins as
@@ -61,7 +61,7 @@ Connecting to RPi with an SSH/Telnet client
       then in the sharing tab, select "Allow other networks to connect
       through this computer's Internet connection"
 
-      .. image:: ../../../images/RaspberryPi_EthernetBridge.png
+      .. image:: ../images/RaspberryPi_EthernetBridge.png
           :target: ../_images/RaspberryPi_EthernetBridge.png
 
 #. Determine the RPi's IP address:
@@ -74,7 +74,7 @@ Connecting to RPi with an SSH/Telnet client
 
 #. Connect with `Putty <http://www.putty.org/>`__:
 
-   .. image:: ../../../images/RaspberryPi_Putty.png
+   .. image:: ../images/RaspberryPi_Putty.png
        :target: ../_images/RaspberryPi_Putty.png
 
    If all goes well you should be presented with the regular login
@@ -109,7 +109,7 @@ later updating this file you may wish to run the
 ``chattr -i /etc/resolv.conf``). That sets the "immutable" bit on
 resolv.conf to prevent other software from updating it.
 
-.. image:: ../../../images/RaspberryPi_DNS.png
+.. image:: ../images/RaspberryPi_DNS.png
     :target: ../_images/RaspberryPi_DNS.png
 
 After the internet connection is confirmed to be working install these
@@ -140,14 +140,14 @@ Type:
 
 And in the utility, select "Advanced Options":
 
-.. figure:: ../../../images/dev_RasPi_Config_Utility_SerialSetting_AdvancedOptions.png
+.. figure:: ../images/dev_RasPi_Config_Utility_SerialSetting_AdvancedOptions.png
    :target: ../_images/dev_RasPi_Config_Utility_SerialSetting_AdvancedOptions.png
 
    RasPiConfiguration Utility: Serial Settings: Advanced Options
 
 And then "Serial" to disable OS use of the serial connection:
 
-.. image:: ../../../images/dev_RasPi_Config_Utility_SerialSetting_Capture2-300x78.png
+.. image:: ../images/dev_RasPi_Config_Utility_SerialSetting_Capture2-300x78.png
     :target: ../_images/dev_RasPi_Config_Utility_SerialSetting_Capture2-300x78.png
 
 Reboot the Raspberry Pi when you are done.
@@ -173,7 +173,7 @@ command to display the ``ARMING_CHECK`` parameters value
     param set ARMING_CHECK 0
     arm throttle
 
-.. image:: ../../../images/RaspberryPi_ArmTestThroughPutty.png
+.. image:: ../images/RaspberryPi_ArmTestThroughPutty.png
     :target: ../_images/RaspberryPi_ArmTestThroughPutty.png
 
 .. note::
@@ -296,7 +296,7 @@ the MAVProxy command became:
 
 Connecting with the mission planner is shown below:
 
-.. image:: ../../../images/RaspberryPi_MissionPlanner.jpg
+.. image:: ../images/RaspberryPi_MissionPlanner.jpg
     :target: ../_images/RaspberryPi_MissionPlanner.jpg
 
 Example projects

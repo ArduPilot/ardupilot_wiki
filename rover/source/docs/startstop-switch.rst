@@ -8,7 +8,7 @@ For some robotics competitions, RC control is not allowed and the rover
 must be started in autonomous mode with an onboard switch. This article
 explains how to set up such a switch.
 
-.. image:: ../../../images/rover_start_stop_switch.jpg
+.. image:: ../images/rover_start_stop_switch.jpg
     :target: ../_images/rover_start_stop_switch.jpg
 
 .. note::
@@ -37,7 +37,7 @@ servo cable and the other to the black wire as shown below. This way,
 when the switch is in the "on" position it connects the ground and
 signal pins.
 
-.. image:: ../../../images/rover_start_stop_switch_2.jpg
+.. image:: ../images/rover_start_stop_switch_2.jpg
     :target: ../_images/rover_start_stop_switch_2.jpg
 
 Plug that connector into any spare APM port, from A0-A8 (the ports above
@@ -53,7 +53,7 @@ the number of the APM port you've connected the switch to in the
 parameter. In the example below, we've entered 4 because the switch is
 plugged into port A4.
 
-.. image:: ../../../images/autostart.png
+.. image:: ../images/autostart.png
     :target: ../_images/autostart.png
 
 If you're not using RC at all and can't switch modes manually, you may
@@ -62,7 +62,7 @@ auto-start function only works in Auto mode). You can do that by setting
 :ref:`INITIAL_MODE <INITIAL_MODE>`
 to 10 (see parameter for other options).
 
-.. image:: ../../../images/initialmode.png
+.. image:: ../images/initialmode.png
     :target: ../_images/initialmode.png
 
 Once this is set up, all you need to do at robotics competitions is

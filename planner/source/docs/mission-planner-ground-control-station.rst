@@ -11,12 +11,12 @@ The screenshot below shows the main "Heads-up Display (HUD)" view of the
 Mission Planner Ground Station. Once you have connected to a vehicle
 this screen will display the telemetry sent by ArduPilot.
 
-.. image:: ../../../images/mp_hud_full.jpg
+.. image:: ../images/mp_hud_full.jpg
     :target: ../_images/mp_hud_full.jpg
 
 A more detailed view of the HUD (with legend) is given below.
 
-.. image:: ../../../images/mp_hud_detail.jpg
+.. image:: ../images/mp_hud_detail.jpg
     :target: ../_images/mp_hud_detail.jpg
 
 #. Air speed ( Ground speed if no airspeed sensor is fitted )
@@ -75,7 +75,7 @@ Tips for using the Flight Data screen
 Guided Mode
 ===========
 
-.. image:: ../../../images/mp_menu_fly_to_here.jpg
+.. image:: ../images/mp_menu_fly_to_here.jpg
     :target: ../_images/mp_menu_fly_to_here.jpg
 
 One of the most commonly-used features in pro UAVs is point-and-click

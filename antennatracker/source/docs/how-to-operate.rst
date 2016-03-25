@@ -25,5 +25,5 @@ There are five modes that you can place the antenna tracker in:
 The operator can set the current mode from the Mission Planner's Flight
 Data screen's Actions tab's Set Mode button.
 
-.. image:: ../../../images/AntennaTracker_Operation_SetMode.jpg
+.. image:: ../images/AntennaTracker_Operation_SetMode.jpg
     :target: ../_images/AntennaTracker_Operation_SetMode.jpg

@@ -56,7 +56,7 @@ Create the project:
    Copter directory
 -  Set the Toolchain to be *Cross GCC*" and press **Finish**
 
-.. image:: ../../../images/EditingTheCode_Eclipse2.png
+.. image:: ../images/EditingTheCode_Eclipse2.png
     :target: ../_images/EditingTheCode_Eclipse2.png
 
 Use spaces instead of tabs
@@ -68,14 +68,14 @@ be set to the default in Eclipse by changing two settings:
 -  Select **Window \| Preferences \| General \| Editors \| Text Editors
    \| Insert spaces for tabs**.
 
-   .. image:: ../../../images/EditingTheCode_Eclipse_spaces1.png
+   .. image:: ../images/EditingTheCode_Eclipse_spaces1.png
        :target: ../_images/EditingTheCode_Eclipse_spaces1.png
    
 -  Select **Windows \| Preferences \| C/C++ \| Code Style \| Formatter**
    and creating a new Profile (i.e. "K&R Tab") which has the
    "Indentation" set to "Spaces only"
 
-   .. image:: ../../../images/EditingTheCode_Eclipse_spaces2.png
+   .. image:: ../images/EditingTheCode_Eclipse_spaces2.png
        :target: ../_images/EditingTheCode_Eclipse_spaces2.png
 
 Specify build location
@@ -85,7 +85,7 @@ In the *Project Explorer* right-mouse-click on the ardupilot folder and
 select **Properties**. Then under C/C++ Build set the "Build location"
 to the Copter or Plane directory as shown below.
 
-.. image:: ../../../images/EditingTheCode_Eclipse6.png
+.. image:: ../images/EditingTheCode_Eclipse6.png
     :target: ../_images/EditingTheCode_Eclipse6.png
 
 Specify make target
@@ -94,7 +94,7 @@ Specify make target
 In the Make window on the right create, specify an ``apm2`` make target
 as shown:
 
-.. figure:: ../../../images/Eclipse_SetAPM2BuildTarget.png
+.. figure:: ../images/Eclipse_SetAPM2BuildTarget.png
    :target: ../_images/Eclipse_SetAPM2BuildTarget.png
 
    Eclipse: Setting the apm2 maketarget
@@ -105,7 +105,7 @@ Building from Eclipse
 The make target can be built by pushing the green circle + hammer icon. 
 The build progress will appear in the Console window.
 
-.. figure:: ../../../images/Eclipse_BuildPM2.png
+.. figure:: ../images/Eclipse_BuildPM2.png
    :target: ../_images/Eclipse_BuildPM2.png
 
    Eclipse: Building APM2

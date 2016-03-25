@@ -47,7 +47,7 @@ If you would like to donate to the ongoing development of Mission
 Planner, please select the Donate button on the Mission Planner
 interface.
 
-.. image:: ../../../images/mp_donate_button.jpg
+.. image:: ../images/mp_donate_button.jpg
     :target: ../_images/mp_donate_button.jpg
 
 .. _mission-planner-overview_support:

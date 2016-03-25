@@ -12,13 +12,13 @@ features:
    at the speed held in the WPNAV_SPEED_DN parameter which can be
    modified on the Mission Planner's Config/Tuning > Copter Pids screen.
 
-   .. image:: ../../../images/Land_DescentSpeed1.png
+   .. image:: ../images/Land_DescentSpeed1.png
        :target: ../_images/Land_DescentSpeed1.png
 
 -  below 10m the copter should descend at the rate specified in the
    LAND_SPEED parameter which defaults to 50cm/s.
 
-   .. image:: ../../../images/Land_DescentSpeed2.png
+   .. image:: ../images/Land_DescentSpeed2.png
        :target: ../_images/Land_DescentSpeed2.png
 
 -  Upon reaching the ground the copter will automatically shut-down the

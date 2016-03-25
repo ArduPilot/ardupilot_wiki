@@ -38,13 +38,13 @@ Solder the servo cable wires to the sensor's GND (black wire), V+ (red
 wire) and "3" (white wire) holes as shown below. *Click on images to
 enlarge.*
 
-.. image:: ../../../images/sonar_servo_cable_soldering.jpg
+.. image:: ../images/sonar_servo_cable_soldering.jpg
     :target: ../_images/sonar_servo_cable_soldering.jpg
 
 Then plug the servo connector into APM 2's A0 pins as shown in the
 picture below. If you're using a second sonar sensor, plug it into A1.
 
-.. image:: ../../../images/sonarapm25.jpg
+.. image:: ../images/sonarapm25.jpg
     :target: ../_images/sonarapm25.jpg
 
 Next, mount your sonar sensor on the front of your rover. To avoid
@@ -53,7 +53,7 @@ ground and/or tilted slightly upwards. Below is an example, on a very
 small rover. The sonar sensor is on the front, nearest to us. The sensor
 on the other side is an IR sensor, used to compare results.
 
-.. image:: ../../../images/rover_apm2.x_setup.jpg
+.. image:: ../images/rover_apm2.x_setup.jpg
     :target: ../_images/rover_apm2.x_setup.jpg
 
 **PX4 Sonar Pins:** Sonar is now supported for Rover on the PX4. You
@@ -99,14 +99,14 @@ First, connect to Rover via USB or 3DR radio with the Mission Planner.
 Remember, select 115200 as the baud rate for USB or 57600 for the 3DR
 wireless radios.
 
-.. image:: ../../../images/MP_firmware_COM.png
+.. image:: ../images/MP_firmware_COM.png
     :target: ../_images/MP_firmware_COM.png
 
 Once you've done that, go to the Configuration tab and select the
 Advanced Params option. Set "Sonar enabled" to enabled. (If you're using
 a second sonar sensor, we'll set that up in the next step.)
 
-.. image:: ../../../images/sonar1.png
+.. image:: ../images/sonar1.png
     :target: ../_images/sonar1.png
 
 At this point, you should be able to see the sonar data in the Flight
@@ -117,7 +117,7 @@ fields to display. Unselect everything but "sonarrange" and
 "sonarvoltage". At this point it should start displaying the real-time
 data from your primary sonar sensor, as shown below:
 
-.. image:: ../../../images/sonar3.png
+.. image:: ../images/sonar3.png
     :target: ../_images/sonar3.png
 
 Enabling a second sonar sensor
@@ -141,7 +141,7 @@ If you're going to use aluminium mounts as shown below, make sure you
 have double-sided foam tape on the back of the sensors so they don't
 ground out on the metal mounts.
 
-.. figure:: ../../../images/Rover_Mount_Sonar_Sensor.jpg
+.. figure:: ../images/Rover_Mount_Sonar_Sensor.jpg
    :target: ../_images/Rover_Mount_Sonar_Sensor.jpg
 
    Mount Sonar to Rover
@@ -150,7 +150,7 @@ The picture below shows twin sonar sensors mounted to Tom Coyle's Slash
 Rover (winner of the AVC 2013 Peloton Class). The shielded signal cable
 and capacitor (see section on power filtering) can be seen on the rover.
 
-.. image:: ../../../images/Sonar-Mount-1.jpg
+.. image:: ../images/Sonar-Mount-1.jpg
     :target: ../_images/Sonar-Mount-1.jpg
 
 **Electrical connections:**
@@ -167,7 +167,7 @@ To do this, solder a wire from each sensor's pin #4 to a cable with a
 connector on the end that you can plug into APM, as shown below. We use
 standard `jumper cables <http://adafruit.com/products/266>`__ for this.
 
-.. image:: ../../../images/sonar_sensor_connect_to_apm2.jpg
+.. image:: ../images/sonar_sensor_connect_to_apm2.jpg
     :target: ../_images/sonar_sensor_connect_to_apm2.jpg
 
 **Software setup:**
@@ -204,7 +204,7 @@ to review and set as appropriate for your setup:
 All of these parameters, along with the others not documented here, are
 fully described in :doc:`the Parameters List here <parameters>`.
 
-.. image:: ../../../images/sonar22.png
+.. image:: ../images/sonar22.png
     :target: ../_images/sonar22.png
 
 Testing your sonar setup
@@ -223,7 +223,7 @@ or select it via the Mission Planner over the wireless telemetry link by
 using the Actions box on the Mission Planner Flight Data screen as shown
 below.
 
-.. image:: ../../../images/steering.png
+.. image:: ../images/steering.png
     :target: ../_images/steering.png
 
 When you're in this mode, approach obstacles and ensure that the rover
@@ -251,11 +251,11 @@ techniques to reduce noise and improve sensor performance. Maxbotics
 sells the necessary components
 `here <http://www.maxbotix.com/Ultrasonic_Sensors/MB7961.htm>`__.
 
-.. image:: ../../../images/XL-Filter.jpg
+.. image:: ../images/XL-Filter.jpg
     :target:  http://www.maxbotix.com/articles/035.htm
 
 This image shows Slash Rover's twin sonars and shielded cables as part
 of a power filtering setup.
 
-.. image:: ../../../images/Slash-APM2_5-with-sonar-top-view.jpg
+.. image:: ../images/Slash-APM2_5-with-sonar-top-view.jpg
     :target: ../_images/Slash-APM2_5-with-sonar-top-view.jpg

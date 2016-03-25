@@ -13,10 +13,10 @@ The following sections explain how to wire sensors to the flight
 controller. After you install an airspeed sensor don't forget to
 :ref:`calibrate it <calibrating-an-airspeed-sensor>`!
 
-.. image:: ../../../images/BR-0004-03-2T1.jpg
+.. image:: ../images/BR-0004-03-2T1.jpg
     :target: ../_images/BR-0004-03-2T1.jpg
 
-.. image:: ../../../images/full-assembly.jpg
+.. image:: ../images/full-assembly.jpg
     :target: ../_images/full-assembly.jpg
 
 Pixhawk Digital Airspeed Pin
@@ -30,7 +30,7 @@ sensor board (off the off-white, square section protruding off the top
 of the board), and connect the shorter extension on the pitot tube to
 the cone protruding from the base of the board.
 
-.. image:: ../../../images/full-assembly.jpg
+.. image:: ../images/full-assembly.jpg
     :target: ../_images/full-assembly.jpg
 
 To enable the digital airspeed sensor, connect Pixhawk to Mission
@@ -109,7 +109,7 @@ APM 2
 
 Plug it into the pins on the "A0" port, as shown:
 
-.. image:: ../../../images/analog_airspeed_sensor_to_apm2x_connection.jpg
+.. image:: ../images/analog_airspeed_sensor_to_apm2x_connection.jpg
     :target: ../_images/analog_airspeed_sensor_to_apm2x_connection.jpg
 
 Software configuration
@@ -136,7 +136,7 @@ Once you have the airspeed sensor connected, you can use it to control
 aircraft speed in auto modes. Change the "Cruise" setting in the Tuning
 screen of either APM Planner (shown) or Mission Planner:
 
-.. image:: ../../../images/APM_Planner_v2_0_9__chriss-air-3__192_168_1_24_.png
+.. image:: ../images/APM_Planner_v2_0_9__chriss-air-3__192_168_1_24_.png
     :target: ../_images/APM_Planner_v2_0_9__chriss-air-3__192_168_1_24_.png
 
 Installing the Pitot Tubes
@@ -154,7 +154,7 @@ exiting at an angle should connect to the bottom port on the airspeed
 sensor. Drill or cut a small hole in the foam and push it through to the
 front.
 
-.. image:: ../../../images/pitotinstalled1.jpg
+.. image:: ../images/pitotinstalled1.jpg
     :target: ../_images/pitotinstalled1.jpg
 
 If you are using Plane in an aircraft with the propeller in the nose,

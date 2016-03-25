@@ -21,7 +21,7 @@ APM Mission Planner 2 (copter-only). For other calibration tasks, see
 Select **Mandatory Hardware**, **Frame Type** and choose the correct
 diagram to **select your vehicle configuration**.
 
-.. image:: ../../../images/amp_planner_2_calibrate-frame-type.jpg
+.. image:: ../images/amp_planner_2_calibrate-frame-type.jpg
     :target: ../_images/amp_planner_2_calibrate-frame-type.jpg
 
 3 X and plus

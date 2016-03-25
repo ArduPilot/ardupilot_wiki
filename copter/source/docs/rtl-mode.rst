@@ -19,7 +19,7 @@ before returning home or maintain the current altitude if the current
 altitude is higher than ``RTL_ALT``.  The default value for ``RTL_ALT``
 is 15m.
 
-.. image:: ../../../images/RTL.jpg
+.. image:: ../images/RTL.jpg
     :target: ../_images/RTL.jpg
 
 RTL is a GPS-dependent move, so it is essential that GPS lock is

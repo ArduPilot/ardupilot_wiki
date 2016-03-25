@@ -168,7 +168,7 @@ Preparing the Fuselage
 #. I don't like to take chances, so, I removed some of the foam below
    the top inside of the fuselage to get the APM level:
 
-.. image:: ../../../images/APMcut_zps150b55d7.jpg
+.. image:: ../images/APMcut_zps150b55d7.jpg
     :target: ../_images/APMcut_zps150b55d7.jpg
 
 Component Placement
@@ -177,7 +177,7 @@ Component Placement
 #. Here is the APM set in place with some of the components.
 #. At this point you should mark where your access panel will be.
 
-.. image:: ../../../images/B137BD6E-0007-4519-A3B4-FA1D15830A1E_zpslonqajyc.jpg
+.. image:: ../images/B137BD6E-0007-4519-A3B4-FA1D15830A1E_zpslonqajyc.jpg
     :target: ../_images/B137BD6E-0007-4519-A3B4-FA1D15830A1E_zpslonqajyc.jpg
 
 Trimming the Fuselage
@@ -191,14 +191,14 @@ Trimming the Fuselage
    well as the USB port and other pins.
 -  Cut straight through the foam so that the panel will open easily.
 
-.. image:: ../../../images/Smallpanel_zps67fcb0d3.jpg
+.. image:: ../images/Smallpanel_zps67fcb0d3.jpg
     :target: ../_images/Smallpanel_zps67fcb0d3.jpg
 
 -  Now match up the two halves to mark the cuts for the right side.
 -  Cut a larger access panel out of the other (right) half of the
    fuselage so you can access the USB port on the APM.
 
-.. image:: ../../../images/plane_bixler_build_cut_out_access.jpg
+.. image:: ../images/plane_bixler_build_cut_out_access.jpg
     :target: ../_images/plane_bixler_build_cut_out_access.jpg
 
 -  Cut a bevel along the long axis of the large panel we already cut
@@ -208,7 +208,7 @@ Trimming the Fuselage
 -  This is not the edge where the two halves of the fuselage join, but
    the cut near the wing.
 
-.. image:: ../../../images/plane_bixler_cut_near_wing.jpg
+.. image:: ../images/plane_bixler_cut_near_wing.jpg
     :target: ../_images/plane_bixler_cut_near_wing.jpg
 
 -  Now, make a Welder's glue hinge where the bevel (that we just cut)
@@ -224,7 +224,7 @@ Trimming the Fuselage
 
 -  The panel should look like this when the Welder's hinge is complete:
 
-.. image:: ../../../images/F00F7556-92C3-4270-A4E1-412098A35B86_zpsl7qmp921.jpg
+.. image:: ../images/F00F7556-92C3-4270-A4E1-412098A35B86_zpsl7qmp921.jpg
     :target: ../_images/F00F7556-92C3-4270-A4E1-412098A35B86_zpsl7qmp921.jpg
 
 Assemble the Fuselage
@@ -251,7 +251,7 @@ COMPONENT Installation Details
 -  Notice that I glued a 3mm carbon fiber rod across the access hatch
    for added rigidity.
 
-.. image:: ../../../images/Componentlayout_zpsf49f6f82.jpg
+.. image:: ../images/Componentlayout_zpsf49f6f82.jpg
     :target: ../_images/Componentlayout_zpsf49f6f82.jpg
 
 -  At this point, space is becoming a concern.
@@ -263,7 +263,7 @@ COMPONENT Installation Details
 -  To make space for batteries, I mounted the airspeed sensor board and
    receiver to the bottom of the canopy hatch:
 
-.. image:: ../../../images/plane_bixler_airspeed_sensor_mounting.jpg
+.. image:: ../images/plane_bixler_airspeed_sensor_mounting.jpg
     :target: ../_images/plane_bixler_airspeed_sensor_mounting.jpg
 
 Complete The Construction
@@ -282,5 +282,5 @@ Complete The Construction
    get it away from the fuselage and all of the current-carrying
    electronics.
 
-.. image:: ../../../images/plane_bixler_compass_on_wing.jpg
+.. image:: ../images/plane_bixler_compass_on_wing.jpg
     :target: ../_images/plane_bixler_compass_on_wing.jpg

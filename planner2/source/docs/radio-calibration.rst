@@ -40,7 +40,7 @@ Select Radio Calibration to teach your autopilot to work with your RC
 transmitter and receiver. Select **Start Calibration** to begin. Read
 the instructions in the following prompt and select **OK**.
 
-.. figure:: ../../../images/APM_Planner2_Radio_Calibration_Screen.png
+.. figure:: ../images/APM_Planner2_Radio_Calibration_Screen.png
    :target: ../_images/APM_Planner2_Radio_Calibration_Screen.png
 
    APM Planner2: Radio CalibrationScreen

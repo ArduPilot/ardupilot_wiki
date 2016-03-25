@@ -16,7 +16,7 @@ runs on Linux/Ubuntu and only using dataflash logs from a high speed CPU
 such as the PX4/Pixhawk running a version of Copter/Plane/Rover from May
 2014 or later (i.e. AC3.2-dev or higher).
 
-.. image:: ../../../images/Replay_EKFVsINAV.png
+.. image:: ../images/Replay_EKFVsINAV.png
     :target: ../_images/Replay_EKFVsINAV.png
 
 Dataflash log messages required for Replay
@@ -63,7 +63,7 @@ Look at the raw data to see which values are available to be plotted:
 ``less plot.dat`` (you can replace ``plot.dat`` with any of the other
 six files produced)
 
-.. image:: ../../../images/Replay_PlotDatColumns.png
+.. image:: ../images/Replay_PlotDatColumns.png
     :target: ../_images/Replay_PlotDatColumns.png
 
 Use the simple plotit.sh script to graph some data. Below is the command
@@ -72,7 +72,7 @@ calculated altitude and the flight's actual altitude.
 
 ``./plotit.sh EKF.Alt INAV.Alt FLIGHT.Alt``
 
-.. image:: ../../../images/Replay_EKFInavFlightAlt.png
+.. image:: ../images/Replay_EKFInavFlightAlt.png
     :target: ../_images/Replay_EKFInavFlightAlt.png
 
 Use the more complex mavgraph.py to graph the data

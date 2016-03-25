@@ -34,7 +34,7 @@ found on the Apple site.
 
 \*Control-Click is the same as 'right mouse button click'
 
-.. image:: ../../../images/apm_planner2_ftdi_installer_dmg_image.jpg
+.. image:: ../images/ap2_ftdi_installer_dmg_image.jpg
     :target: ../_images/apm_planner2_ftdi_installer_dmg_image.jpg
 
 Open the **FTDI USB .dmg** file to view the two packages inside. Open
@@ -48,21 +48,21 @@ package.
    The driver says 10_7 and it's the correct one for OSX 10.8, 10.9
    & 10.10
 
-.. image:: ../../../images/apm_mission_planner_2_ftdi_usb_serial_driver_select_icon.jpg
+.. image:: ../images/apm_mission_planner_2_ftdi_usb_serial_driver_select_icon.jpg
     :target: ../_images/apm_mission_planner_2_ftdi_usb_serial_driver_select_icon.jpg
 
-.. image:: ../../../images/apm_mission_planner_2_ftdi_usb_serial_driver_open_installer.jpg
+.. image:: ../images/apm_mission_planner_2_ftdi_usb_serial_driver_open_installer.jpg
     :target: ../_images/apm_mission_planner_2_ftdi_usb_serial_driver_open_installer.jpg
 
 Once open, follow the installation instructions to install the package.
 
-.. image:: ../../../images/apm_mission_planner2_ftdi_usb_serial_driver_installer_1.jpg
+.. image:: ../images/ap2_ftdi_usb_serial_driver_installer_1.jpg
     :target: ../_images/apm_mission_planner2_ftdi_usb_serial_driver_installer_1.jpg
 
-.. image:: ../../../images/apm_mission_planner2_ftdi_usb_serial_driver_installer_2.jpg
+.. image:: ../images/ap2_ftdi_usb_serial_driver_installer_2.jpg
     :target: ../_images/apm_mission_planner2_ftdi_usb_serial_driver_installer_2.jpg
 
-.. image:: ../../../images/apm_mission_planner2_ftdi_usb_serial_driver_installer_3.jpg
+.. image:: ../images/ap2_ftdi_usb_serial_driver_installer_3.jpg
     :target: ../_images/apm_mission_planner2_ftdi_usb_serial_driver_installer_3.jpg
 
 Install Application
@@ -70,15 +70,15 @@ Install Application
 
 Drag the AP icon into the applications folder.
 
-.. image:: ../../../images/apm_planner2_drag_ap_into_app_folder.jpg
+.. image:: ../images/ap2_drag_ap_into_app_folder.jpg
     :target: ../_images/apm_planner2_drag_ap_into_app_folder.jpg
 
 Open the applications folder, and open APM Planner.
 
-.. image:: ../../../images/apm_planner_2_application_in_shell.jpg
+.. image:: ../images/apm_planner_2_application_in_shell.jpg
     :target: ../_images/apm_planner_2_application_in_shell.jpg
 
-.. image:: ../../../images/apm_planner_2_open_application_confirmation.png
+.. image:: ../images/apm_planner_2_open_application_confirmation.png
     :target: ../_images/apm_planner_2_open_application_confirmation.png
 
 Select **Open** to run APM Planner. Your installation is now complete.

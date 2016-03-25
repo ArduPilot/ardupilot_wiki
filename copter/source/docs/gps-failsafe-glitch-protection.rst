@@ -43,7 +43,7 @@ of fly-aways.  Glitches are detected by comparing the each new position
 update received from the GPS with a position projected out from the
 previous update's position and velocity.
 
-.. image:: ../../../images/GPSGlitchDetection.jpg
+.. image:: ../images/GPSGlitchDetection.jpg
     :target: ../_images/GPSGlitchDetection.jpg
 
 The new position is accepted as "good" if:

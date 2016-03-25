@@ -17,13 +17,13 @@ Overview
 The Simulation tab is visible on the top icon row when “Advanced View”
 is checked in the Config tab.
 
-.. image:: ../../../images/Capture__2_.png
+.. image:: ../images/Capture__2_.png
     :target: ../_images/Capture__2_.png
 
 How to set up a full hardware-in-the-loop simulation with X-Plane
 =================================================================
 
-.. image:: ../../../images/Xplane1.jpg
+.. image:: ../images/Xplane1.jpg
     :target: ../_images/Xplane1.jpg
 
 It's easy to create a powerful "hardware in the loop" simulator with
@@ -33,7 +33,7 @@ accordingly.
 
 The overall setup looks like this:
 
-.. image:: ../../../images/X-Plain-Sim1.jpg
+.. image:: ../images/X-Plain-Sim1.jpg
     :target: ../_images/X-Plain-Sim1.jpg
 
 Setup
@@ -51,7 +51,7 @@ Setup
    instructions on the "Reset", "Radio Input" and "Mode" tabs of the
    dialog. Then you're ready to sim!
 
-.. image:: ../../../images/missionplannerHIL1.jpg
+.. image:: ../images/missionplannerHIL1.jpg
     :target: ../_images/missionplannerHIL1.jpg
 
 Connecting APM and X-Plane
@@ -78,10 +78,10 @@ our purposes is the PT-60 RC airplane. These are the screen shots that
 show the necessary settings you need to set in the Settings Menu – Data
 Input and Output:
 
-.. image:: ../../../images/Xplane_menu1.jpg
+.. image:: ../images/Xplane_menu1.jpg
     :target: ../_images/Xplane_menu1.jpg
 
-.. image:: ../../../images/mavlinkhil1.jpg
+.. image:: ../images/mavlinkhil1.jpg
     :target: ../_images/mavlinkhil1.jpg
 
 You may also want to turn on the Frame Rate to display on the screen.
@@ -91,7 +91,7 @@ below. (The Mission Planner also has an advanced IP setting dialog, but
 leave it at the default of 49000. 49005 is the UDP port coming in from
 Xplane, 49000 is the UDP port going out from the Mission Planner.)
 
-.. image:: ../../../images/xplane2.jpg
+.. image:: ../images/xplane2.jpg
     :target: ../_images/xplane2.jpg
 
 If you are running X-plane on the same computer as APM Mission Planner,
@@ -106,13 +106,13 @@ Now you're ready to run the simulation. Start the Mission Planner,
 selecting the COM port APM is assigned to and 115200 baud as the speed.
 Click on the Simulation tab and you will be taken to this screen:
 
-.. image:: ../../../images/missionplannersim.jpg
+.. image:: ../images/missionplannersim.jpg
     :target: ../_images/missionplannersim.jpg
 
 If you are using X-Plane 10.x, you must check the "XPlane 10" checkbox
 shown here:
 
-.. image:: ../../../images/xplane10.png
+.. image:: ../images/xplane10.png
     :target: ../_images/xplane10.png
 
 If you are running APM Mission Planner on the same computer as X-Plane,

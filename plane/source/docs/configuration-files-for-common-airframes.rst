@@ -81,7 +81,7 @@ HobbyKing Bixler v1 or v2
 
 Bixler v2 has a slightly bigger wing and sturdier fuselage.
 
-.. figure:: ../../../images/BIXLERMODE21654232.jpg
+.. figure:: ../images/BIXLERMODE21654232.jpg
    :target: ../_images/BIXLERMODE21654232.jpg
 
    HobbyKing Bixler
@@ -131,7 +131,7 @@ for how to fit an APM to a Bixler2. Also see :ref:`High Quality Bixler 1.1 Build
 Skywalker
 =========
 
-.. figure:: ../../../images/SKYWALKER2.jpg
+.. figure:: ../images/SKYWALKER2.jpg
    :target: ../_images/SKYWALKER2.jpg
 
    Skywalker
@@ -151,7 +151,7 @@ parameters will be a good starting point for most users:
 HobbyKing Skyfun
 ================
 
-.. figure:: ../../../images/skyfun2.jpg
+.. figure:: ../images/skyfun2.jpg
    :target: ../_images/skyfun2.jpg
 
    Skyfun
@@ -169,7 +169,7 @@ should be a good starting point:
 Multiplex EasyStar
 ==================
 
-.. figure:: ../../../images/easystar2.jpg
+.. figure:: ../images/easystar2.jpg
    :target: ../_images/easystar2.jpg
 
    Easystar
@@ -191,7 +191,7 @@ KFF_RDDRMIX, along with the other key parameters. For example:
 Borojet Maja
 ============
 
-.. figure:: ../../../images/maja2.jpg
+.. figure:: ../images/maja2.jpg
    :target: ../_images/maja2.jpg
 
    Borojet Maja
@@ -207,7 +207,7 @@ The following parameters should be a good starting point:
 TELINK Toro900 flying wing
 ==========================
 
-.. image:: ../../../images/toto9002.jpg
+.. image:: ../images/toto9002.jpg
     :target: ../_images/toto9002.jpg
 
 Available \ `here <http://www.telink.eu/en/epp-letadla-telink/3509-toro-900-pro-stridavy-pohon.html>`__
@@ -221,7 +221,7 @@ The following values should be a good starting point:
 SkyWalker X8
 ============
 
-.. image:: ../../../images/X8.jpg
+.. image:: ../images/X8.jpg
     :target: ../_images/X8.jpg
 
 The X8 varies a lot in how people set it up, but you usually need
@@ -268,7 +268,7 @@ following parameters:
 Boomerang 60
 ============
 
-.. image:: ../../../images/Boomerang60.jpg
+.. image:: ../images/Boomerang60.jpg
     :target: ../_images/Boomerang60.jpg
 
 The Boomerang is a classic high wing trainer aircraft, and like the
@@ -319,7 +319,7 @@ following parameters will be a good start:
 RipMax AcroWot
 ==============
 
-.. image:: ../../../images/AcroWot.jpg
+.. image:: ../images/AcroWot.jpg
     :target: ../_images/AcroWot.jpg
 
 The AcroWot is an intermediate nitro sports plane, and a lot of fun to
@@ -333,7 +333,7 @@ fly! With an OS55AX motor it flies well with the following parameters:
 TechPod
 =======
 
-.. image:: ../../../images/techpod.jpg
+.. image:: ../images/techpod.jpg
     :target: ../_images/techpod.jpg
 
 The TechPod is a long endurance electric glider, ideal for longer

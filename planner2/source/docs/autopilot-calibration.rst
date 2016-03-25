@@ -23,7 +23,7 @@ Before preforming setup, ensure that:
 Select **Initial Setup** and **Mandatory Setup** to view the menu of
 calibration wizards.
 
-.. image:: ../../../images/apm_planner2_calibration-select-mandatory-setup.png
+.. image:: ../images/ap2_calibration-select-mandatory-setup.png
     :target: ../_images/apm_planner2_calibration-select-mandatory-setup.png
 
 3 Complete the Calibration Wizards

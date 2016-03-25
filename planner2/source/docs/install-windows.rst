@@ -28,10 +28,10 @@ Open the .exe file to run the installation wizard. Read the open-source
 license agreement, and select Accept. Select a destination folder for
 the installation (the default option is fine if you aren't sure).
 
-.. image:: ../../../images/apm_planner_license-agreement.png
+.. image:: ../images/apm_planner_license-agreement.png
     :target: ../_images/apm_planner_license-agreement.png
 
-.. image:: ../../../images/apm_planner2_installation-folder.png
+.. image:: ../images/ap2_installation-folder.png
     :target: ../_images/apm_planner2_installation-folder.png
 
 Select options
@@ -41,7 +41,7 @@ Choose your installation options. Select **APM Planner 2 files** and
 **Qt components**. Select **Create Start Menu Shortcuts** to make APM
 Planner easy to access from the start menu. Select **Install**.
 
-.. image:: ../../../images/apm_planner2_installation-options.png
+.. image:: ../images/ap2_installation-options.png
     :target: ../_images/apm_planner2_installation-options.png
 
 Close wizard to complete installation
@@ -50,5 +50,5 @@ Close wizard to complete installation
 Select **Close** to exist the wizard. Your installation is now complete.
 Open APM Planner to run the application.
 
-.. image:: ../../../images/apm_planner2_install-complete.png
+.. image:: ../images/ap2_install-complete.png
     :target: ../_images/apm_planner2_install-complete.png

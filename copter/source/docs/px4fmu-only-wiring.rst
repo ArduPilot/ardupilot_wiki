@@ -60,7 +60,7 @@ QuadCopter.**
 PX4-FMU Only Wiring Diagram for QuadCopters using a PPM-SUM receiver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../../../images/PX4FMUwire11.jpg
+.. image:: ../images/PX4FMUwire11.jpg
     :target: ../_images/PX4FMUwire11.jpg
 
 Wiring the PX4FMU Board to Your QuadCopter
@@ -138,13 +138,13 @@ Wiring the PX4FMU Board to Your QuadCopter
 PX4-FMU Only Wiring Schematic for QuadCopters using a PPM-SUM receiver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../../../images/PX4FMUWiring1PPMSUMrec1.jpg
+.. image:: ../images/PX4FMUWiring1PPMSUMrec1.jpg
     :target: ../_images/PX4FMUWiring1PPMSUMrec1.jpg
 
 Wiring your Motors for X or + mode configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../../../images/FRAMES_QUAD_PX4.jpg
+.. image:: ../images/FRAMES_QUAD_PX4.jpg
     :target: ../_images/FRAMES_QUAD_PX4.jpg
 
 Using a Standard RC Radio Receiver with an 8 channel PPM Encoder
@@ -183,7 +183,7 @@ Using a Standard RC Radio Receiver with an 8 channel PPM Encoder
 There are Several Radio systems that support PPM-Sum or S-Bus directly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../../../images/FRSkySystem.jpg
+.. image:: ../images/FRSkySystem.jpg
     :target: ../_images/FRSkySystem.jpg
 
 FRSky transmitter adapter module and PPM-Sum receiver

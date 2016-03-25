@@ -169,7 +169,7 @@ then please include the dataflash log.
 
 Here is a typical log file from an autotune session:
 
-.. image:: ../../../images/autotune.jpg
+.. image:: ../images/autotune.jpg
     :target: ../_images/autotune.jpg
 
 The ATRP message has a "Type" field that shows what type of autotune is

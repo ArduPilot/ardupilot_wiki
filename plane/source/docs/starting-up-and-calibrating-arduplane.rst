@@ -139,7 +139,7 @@ transmitter sticks centred, these should both be zero as shown in this
 screenshot. If they are not, you need to repeat your RC calibration or
 adjust your transmitter trims and repeat the FBWA flight test
 
-.. image:: ../../../images/CheckFBWADemands.jpg
+.. image:: ../images/CheckFBWADemands.jpg
     :target: ../_images/CheckFBWADemands.jpg
 
 If they are zero, then you need to adjust the ``AHRS_TRIM_X`` (roll) and
@@ -148,7 +148,7 @@ autopilot board and your planes attitude when flying straight and level.
 You can change these by going to **CONFIG/TUNING \| Full Parameter
 List** and adjusting the parameters as shown in the screenshot below.
 
-.. image:: ../../../images/AdjustRollPitchTrims.png
+.. image:: ../images/AdjustRollPitchTrims.png
     :target: ../_images/AdjustRollPitchTrims.png
 
 .. warning::

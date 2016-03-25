@@ -98,7 +98,7 @@ Classes Exposed by Mission Planner to Python
 
 Mission Planner exposes classes using the following code:
 
-.. figure:: ../../../images/mission_planner_scripts.jpg
+.. figure:: ../images/mission_planner_scripts.jpg
    :target: ../_images/mission_planner_scripts.jpg
 
    Linking classes into python

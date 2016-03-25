@@ -17,7 +17,7 @@ A full list of supported commands can be found on the :ref:`Mission Command List
 Overview
 ========
 
-.. image:: ../../../images/auto.jpg
+.. image:: ../images/auto.jpg
     :target: ../_images/auto.jpg
 
 AUTO mode incorporates the altitude control from :ref:`AltHold mode <altholdmode>` and position
@@ -80,7 +80,7 @@ motors if it also believes that it has landed.
 Tuning
 ======
 
-.. image:: ../../../images/Auto_Tuning.png
+.. image:: ../images/Auto_Tuning.png
     :target: ../_images/Auto_Tuning.png
 
 AUTO mode incorporates the altitude control from :ref:`AltHold mode <altholdmode>` and position

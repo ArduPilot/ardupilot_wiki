@@ -130,22 +130,22 @@ For recovery, you can use the same cable as the one used on Bebop, see
 
 #. Remove the two screws using a torx T6 screwdriver 
 
-   .. image:: ../../../images/bebop_remove_screws.jpg
+   .. image:: ../images/bebop_remove_screws.jpg
       :target: ../_images/bebop_remove_screws.jpg
    
 #. Remove the neck by pulling it towards the front of the Bebop
 
-   .. image:: ../../../images/bebop_recovery_remove_neck.jpg
+   .. image:: ../images/bebop_recovery_remove_neck.jpg
        :target: ../_images/bebop_recovery_remove_neck.jpg
    
 #. The UART connector is located on the right side
    
-   .. image:: ../../../images/bebop_uart_connection.jpg
+   .. image:: ../images/bebop_uart_connection.jpg
        :target: ../_images/bebop_uart_connection.jpg
    
 #. Plug the cable with the black wire at the front
    
-   .. image:: ../../../images/bebop_connections3.jpg
+   .. image:: ../images/bebop_connections3.jpg
        :target: ../_images/bebop_connections3.jpg
    
 #. Connect to the bebop with the UART port using any terminal emulator

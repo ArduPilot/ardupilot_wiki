@@ -43,13 +43,13 @@ Instructions for Mission Planner
 #. In the Mission Planner, enter Control-F, which will open the
    following window. Click on "Follow Me"
 
-.. image:: ../../../images/followme1.jpg
+.. image:: ../images/followme1.jpg
     :target: ../_images/followme1.jpg
 
 -  This will bring up this window. Select the serial port that is
    assigned to your GPS device and whatever baud rate it uses.
 
-.. image:: ../../../images/followme2.png
+.. image:: ../images/followme2.png
     :target: ../_images/followme2.png
 
 -  Once you click "Connect", the Mission Planner will read the GPS data

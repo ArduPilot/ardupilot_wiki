@@ -15,7 +15,7 @@ Mission Planner Terminal
 The Terminal tab is visible on the top icon row when "Advanced View" is
 checked in the Config tab.
 
-.. image:: ../../../images/Capture__2_.png
+.. image:: ../images/Capture__2_.png
     :target: ../_images/Capture__2_.png
 
 This section of Mission Planner, invoked by the Menu item Terminal at
@@ -32,7 +32,7 @@ to prevent loss of control in case you are in a mission or your vehicle
 is armed and in operation.  You must click the Connect APM or Connect
 PX4 button to use the features in this screen.
 
-.. image:: ../../../images/mpterminalAPM.jpg
+.. image:: ../images/mpterminalAPM.jpg
     :target: ../_images/mpterminalAPM.jpg
 
 Screen Actions:  There are several buttons in this screen.  Here is the

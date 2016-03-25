@@ -29,7 +29,7 @@ to show the Declination of your location.
 Using a compass
 ===============
 
-.. image:: ../../../images/BR-HMC5843-01-2.jpg
+.. image:: ../images/BR-HMC5843-01-2.jpg
     :target: ../_images/BR-HMC5843-01-2.jpg
 
 In order to correct for yaw gyro drift and to allow GPS position hold to
@@ -53,5 +53,5 @@ screws would be an excellent choice.
 The best place to mount the compass is on the tail boom close to the
 body with components down and pins forward.
 
-.. image:: ../../../images/TradHeli_Compass.jpg
+.. image:: ../images/TradHeli_Compass.jpg
     :target: ../_images/TradHeli_Compass.jpg

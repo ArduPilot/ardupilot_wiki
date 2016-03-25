@@ -23,7 +23,7 @@ location is reached, the copter will hover at that location, waiting for
 the next target. Follow Me mode also uses Guided Mode to make the copter
 follow the pilot around the field.
 
-.. image:: ../../../images/guided.jpg
+.. image:: ../images/guided.jpg
     :target: ../_images/guided.jpg
 
 What you'll need
@@ -48,13 +48,13 @@ Instructions
 -  You will be asked for a guided mode altitude. Enter an above home
    altitude in meters.
 
-.. image:: ../../../images/FlightModes_Guide_FlyToHere.jpg
+.. image:: ../images/FlightModes_Guide_FlyToHere.jpg
     :target: ../_images/FlightModes_Guide_FlyToHere.jpg
 
 -  A "Guided" target should appear on the map and the orange line (which
    indicates the target heading) should point to this guided target.
 
-.. image:: ../../../images/FlightModes_Guide_TargetEstablished.jpg
+.. image:: ../images/FlightModes_Guide_TargetEstablished.jpg
     :target: ../_images/FlightModes_Guide_TargetEstablished.jpg
 
 -  The vehicle should fly to the target location and wait there until

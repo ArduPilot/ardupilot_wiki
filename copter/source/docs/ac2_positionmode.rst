@@ -13,7 +13,7 @@ the throttle manually.
 
    This mode is not available in AC3.2 and higher.
 
-.. image:: ../../../images/position.jpg
+.. image:: ../images/position.jpg
     :target: ../_images/position.jpg
 
 Position mode is GPS dependent, so it is important to ensure that GPS is

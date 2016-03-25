@@ -45,7 +45,7 @@ The HDOP value can be made clearly visible through the mission planner's
 Quick screen by double clicking and then selecting "gpshdop" from the
 large grid of checkboxes.
 
-.. image:: ../../../images/Loiter_DisplayHDOP.jpg
+.. image:: ../images/Loiter_DisplayHDOP.jpg
     :target: ../_images/Loiter_DisplayHDOP.jpg
 
 -  The maximum brake-angle can be set with the PHLD_BRAKE_ANGLE

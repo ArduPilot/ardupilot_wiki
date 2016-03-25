@@ -49,7 +49,7 @@ Differences compared to the Multirotor set-up are:
 Connect up your Radio and ArduPilot Mega generally as shown in the
 diagram below for a Futaba radio system.
 
-.. image:: ../../../images/RX-to-AMP-Connection.jpg
+.. image:: ../images/RX-to-AMP-Connection.jpg
     :target: ../_images/RX-to-AMP-Connection.jpg
 
 Note the \ **very important** cross-overs: Rx Channel 6 is connected to
@@ -95,7 +95,7 @@ The diagram below might be useful in trying to understand how to connect
 your particular receiver to the APM. It has generic names for the inputs
 which might help you relate them to your system.
 
-.. image:: ../../../images/APM_2_5_PINOUT-Revised.jpg
+.. image:: ../images/APM_2_5_PINOUT-Revised.jpg
     :target: ../_images/APM_2_5_PINOUT-Revised.jpg
 
 If you can, it’s best to use an 8 channel receiver because the APM2.5

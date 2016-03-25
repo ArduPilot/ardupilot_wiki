@@ -58,7 +58,7 @@ Example Wiring Diagram
 
 Example Wiring Diagram for a Bixler plane with APM
 
-.. figure:: ../../../images/bixler2_wiring_v2-1200px.jpg
+.. figure:: ../images/bixler2_wiring_v2-1200px.jpg
    :target: ../_images/bixler2_wiring_v2-1200px.jpg
 
    Example Wiring Diagram for aBixler plane with APM
@@ -66,7 +66,7 @@ Example Wiring Diagram for a Bixler plane with APM
 Inputs
 ======
 
-.. image:: ../../../images/FRAMES_input_PLANE1.jpg
+.. image:: ../images/FRAMES_input_PLANE1.jpg
     :target: ../_images/FRAMES_input_PLANE1.jpg
 
 Connect your RC receiver to APM2's Inputs with female-to-female cables
@@ -85,10 +85,10 @@ The ground (black) side of each connector should be on the outside,
 closest to the edge of the board, as shown here with either straight or
 right-angle connectors:
 
-.. image:: ../../../images/straight_connector_APM21.jpg
+.. image:: ../images/straight_connector_APM21.jpg
     :target: ../_images/straight_connector_APM21.jpg
 
-.. image:: ../../../images/right-angle_connector_APM21.jpg
+.. image:: ../images/right-angle_connector_APM21.jpg
     :target: ../_images/right-angle_connector_APM21.jpg
 
 See also :ref:`Connecting the Radio Receiver <common-connecting-the-radio-receiver-apm2>`.
@@ -134,7 +134,7 @@ Outputs
 Plug your servos and other devices you want APM to control into the
 matching Output connectors as shown below.
 
-.. image:: ../../../images/APM_2_5_PLANE_4CH_enc.jpg
+.. image:: ../images/APM_2_5_PLANE_4CH_enc.jpg
     :target: ../_images/APM_2_5_PLANE_4CH_enc.jpg
 
 Four channel setup:
@@ -144,7 +144,7 @@ Four channel setup:
 #. Throttle
 #. Rudder
 
-.. image:: ../../../images/APM_2_5_PLANE_V_ELEVONS_enc.jpg
+.. image:: ../images/APM_2_5_PLANE_V_ELEVONS_enc.jpg
     :target: ../_images/APM_2_5_PLANE_V_ELEVONS_enc.jpg
 
 Elevon setup.  At this stage its not critical which channel is plugged
@@ -211,7 +211,7 @@ shield at the top. Like this (note: there's a little arrow on the bottom
 of the shield that point to the front, too, in case you need a reminder
 at the field):
 
-.. image:: ../../../images/APM2_FWD1.jpg
+.. image:: ../images/APM2_FWD1.jpg
     :target: ../_images/APM2_FWD1.jpg
 
 When putting APM in your plane, it's important to ensure that it's
@@ -279,10 +279,10 @@ the `HobbyKing Bixler <http://www.hobbyking.com/hobbyking/store/__16544__Hobbyki
 
 **Chassis:**
 
-.. image:: ../../../images/EasyStarwithChassis1.jpg
+.. image:: ../images/EasyStarwithChassis1.jpg
     :target: ../_images/EasyStarwithChassis1.jpg
 
 **With equipment mounted:**
 
-.. image:: ../../../images/plane_bixler_mounting_apm_in_easystar.jpg
+.. image:: ../images/plane_bixler_mounting_apm_in_easystar.jpg
     :target: ../_images/plane_bixler_mounting_apm_in_easystar.jpg

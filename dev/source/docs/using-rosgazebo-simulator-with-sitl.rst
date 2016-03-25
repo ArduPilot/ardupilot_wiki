@@ -38,7 +38,7 @@ Control System).
 An architectural overview of how ROS/Gazebo integrate with SITL is shown
 below:
 
-.. figure:: ../../../images/arducopter_sitl_ros.png
+.. figure:: ../images/arducopter_sitl_ros.png
    :target: ../_images/arducopter_sitl_ros.png
 
    Architecture Diagram: Using SITL with ROS and Gazebo
@@ -161,7 +161,7 @@ Enter the ArduCopter directory and start the SITL simulation:
 If everything works properly you will see a *Gazebo* window similar to
 the one the below:
 
-.. figure:: ../../../images/GazeboWithTerminal.jpg
+.. figure:: ../images/GazeboWithTerminal.jpg
    :target: ../_images/GazeboWithTerminal.jpg
 
    Gazebo Window with Terminal
@@ -169,7 +169,7 @@ the one the below:
 To check that all ROS nodes work properly you can run *rqt* utility with
 *Nodes Graph* plugin. The node graph must look like the one below:
 
-.. figure:: ../../../images/ROSNodeGraph.png
+.. figure:: ../images/ROSNodeGraph.png
    :target: ../_images/ROSNodeGraph.png
 
    ROS Node Graph
@@ -177,7 +177,7 @@ To check that all ROS nodes work properly you can run *rqt* utility with
 You can find ROS topics using the *Topic monitor* plugin in RQT (see
 image below):
 
-.. figure:: ../../../images/RosTopics.jpg
+.. figure:: ../images/RosTopics.jpg
    :target: ../_images/RosTopics.jpg
 
    ROS Topic Monitor

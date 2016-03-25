@@ -47,7 +47,7 @@ After first ensuring the wifi dongle is plugged into the Odroid,
 Find the name of your wifi dongle by typing ``ifconfig`` (normally it
 will be "**wlan0**\ " or "**wlan2**\ ")
 
-.. image:: ../../../images/Odroid_FindWifiDongle.png
+.. image:: ../images/Odroid_FindWifiDongle.png
     :target: ../_images/Odroid_FindWifiDongle.png
 
 Check the wifi dongle supports "AP" mode:
@@ -218,13 +218,13 @@ clock and then click on "MyDrone", "Connect" and after 30seconds or so
 it should connect with a message "The connection is limited" because the
 Odroid likely does not have access to the internet (this is ok).
 
-.. image:: ../../../images/OdroidAP_ConnectFromWindows1.jpg
+.. image:: ../images/OdroidAP_ConnectFromWindows1.jpg
     :target: ../_images/OdroidAP_ConnectFromWindows1.jpg
 
 Open a File Explorer and type \\\\mydrone into the address bar and the
 contents of the Odroid images directory should appear.
 
-.. image:: ../../../images/OdroidAP_ConnectFromWindows2.png
+.. image:: ../images/OdroidAP_ConnectFromWindows2.png
     :target: ../_images/OdroidAP_ConnectFromWindows2.png
 
 References

@@ -7,7 +7,7 @@ Introduction to Rover
 This article describes the main components of a Rover system, including
 the ground vehicle, autopilot hardware, and the software/firmware.
 
-.. image:: ../../../images/APMrover7.jpg
+.. image:: ../images/APMrover7.jpg
     :target: ../_images/APMrover7.jpg
 
 Rover Components
@@ -27,7 +27,7 @@ such good platform is `this RC off-roader from HobbyKing <http://hobbyking.com/h
 which is just $72 (don't worry, we won't use the goofy plastic body
 shell):
 
-.. image:: ../../../images/rover_4wd_monster_beatle.jpg
+.. image:: ../images/rover_4wd_monster_beatle.jpg
     :target: ../_images/rover_4wd_monster_beatle.jpg
 
 Autopilot Hardware
@@ -113,7 +113,7 @@ Ready to Use Rovers
 At time of writing, the only Ready-to-Run (RTR) Rover is
 `Erle-Rover <https://erlerobotics.com/blog/product/erle-rover/>`__.
 
-.. figure:: ../../../images/Erle-Rover_IMG_6946.jpg
+.. figure:: ../images/Erle-Rover_IMG_6946.jpg
    :target: ../_images/Erle-Rover_IMG_6946.jpg
 
    Erle-Rover: Ready to Use Rover from Erle-Robotics

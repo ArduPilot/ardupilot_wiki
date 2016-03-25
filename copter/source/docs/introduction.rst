@@ -27,7 +27,7 @@ new flight styles. It is already a preferred platform for numerous
 commercially available ready-to-fly vehicles, and can easily be added to
 enhance your own DIY multirotor craft.
 
-.. image:: ../../../images/copter-introduction-diagram.jpg
+.. image:: ../images/copter-introduction-diagram.jpg
     :target: ../_images/copter-introduction-diagram.jpg
 
 Key features

@@ -28,7 +28,7 @@ The two parameters are listed below:
 The parameters are set in the *Mission Planner* **CONFIG/TUNING \| Basic
 Tuning** page:
 
-.. figure:: ../../../images/MissionPlanner_Rover_Basic_Tuning.png
+.. figure:: ../images/MissionPlanner_Rover_Basic_Tuning.png
    :target: ../_images/MissionPlanner_Rover_Basic_Tuning.png
 
    Mission Planner: Rover BasicTuning

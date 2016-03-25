@@ -19,7 +19,7 @@ your radio transmitter's trims to the APM (`video demo here <https://www.youtube
 1. Check that your CH7 switch goes above 1800 on the MissionPlanner's
 Hardware > Mandatory Hardware > Radio Calibration screen.
 
-.. image:: ../../../images/MP_SaveTrim_Ch7PWMCheck.png
+.. image:: ../images/MP_SaveTrim_Ch7PWMCheck.png
     :target: ../_images/MP_SaveTrim_Ch7PWMCheck.png
 
 2. Set the CH7 Option to Save Trim on the Software > Copter Pids screen
@@ -65,7 +65,7 @@ ground with your battery disconnected. Connect your APM to the mission
 planner and observing the Flight Data screen as you simulate completing
 the steps above.
 
-.. image:: ../../../images/MP_SaveTrim_FlightDataScreen.jpg
+.. image:: ../images/MP_SaveTrim_FlightDataScreen.jpg
     :target: ../_images/MP_SaveTrim_FlightDataScreen.jpg
 
 Note2: you can manuual set the trim through the mission planner's Adv
@@ -93,7 +93,7 @@ the Mission Planner (or perhaps other ground stations) and selecting
 Initial Setup, Mandatory Hardware, Accel Calibration and pushing the
 lower "Calibrate Level" button.
 
-.. image:: ../../../images/AccelCalibration_MP.png
+.. image:: ../images/AccelCalibration_MP.png
     :target: ../_images/AccelCalibration_MP.png
 
 Please note though that making the HUD level while the vehicle is on the
@@ -102,5 +102,5 @@ flying because of other small frame issues including the flight
 controller not being perfectly level on the frame and slightly tilted
 motors.
 
-.. |MP_SaveTrim_Ch7| image:: ../../../images/MP_SaveTrim_Ch7.png
+.. |MP_SaveTrim_Ch7| image:: ../images/MP_SaveTrim_Ch7.png
     :target: ../_images/MP_SaveTrim_Ch7.png

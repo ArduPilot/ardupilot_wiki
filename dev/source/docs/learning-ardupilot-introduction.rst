@@ -28,7 +28,7 @@ contributing a wiki page on how to use it.
 Basic structure
 ===============
 
-.. image:: ../../../images/ArduPilot_HighLevelArchecture.png
+.. image:: ../images/ArduPilot_HighLevelArchecture.png
     :target: ../_images/ArduPilot_HighLevelArchecture.png
 
 The basic structure of ArduPilot is broken up into 5 main parts:

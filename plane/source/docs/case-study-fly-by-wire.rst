@@ -29,7 +29,7 @@ Tridge was able to provide the following insight.
 
 "Let's look at the 2nd auto mission first:
 
-.. image:: ../../../images/auto2.jpg
+.. image:: ../images/auto2.jpg
     :target: ../_images/auto2.jpg
 
 It clearly could do with some improvement. Let's see if we can find out
@@ -37,13 +37,13 @@ what's wrong.
 
 First off, let's graph the demanded roll versus the actual roll:
 
-.. image:: ../../../images/rolldemand.jpg
+.. image:: ../images/rolldemand.jpg
     :target: ../_images/rolldemand.jpg
 
 That looks good! The plane is achieving the desired roll quickly and
 accurately. Now let's check the pitch:
 
-.. image:: ../../../images/pitchdemand.jpg
+.. image:: ../images/pitchdemand.jpg
     :target: ../_images/pitchdemand.jpg
 
 That's not as good, though its only off by a few degrees. The
@@ -84,7 +84,7 @@ bit faster turns.
 
 Finally let's look at your altitude handling:
 
-.. image:: ../../../images/alt.png
+.. image:: ../images/alt.png
     :target: ../_images/alt.png
 
 The most noticeable thing is that you started the mission well above the
@@ -104,7 +104,7 @@ elevons is somewhat tricky.
 
 First we should grab the demanded and achieved roll when in FBW-B:
 
-.. image:: ../../../images/fbwbdemroll.jpg
+.. image:: ../images/fbwbdemroll.jpg
     :target: ../_images/fbwbdemroll.jpg
 
 You can see that the X8 is achieving the roll that is being asked for
@@ -115,7 +115,7 @@ what is being asked of it.
 Now let's look at what your RC input was against the demanded roll. The
 demanded roll is in blue, and your RC inputs are in green and red.
 
-.. image:: ../../../images/rcin.jpg
+.. image:: ../images/rcin.jpg
     :target: ../_images/rcin.jpg
 
 The RC limits you had set were:
@@ -133,7 +133,7 @@ was around 1420 for each channel. That is important.
 Let's zoom in a bit on the part of the FBWB flight where you were trying
 to turn hard right:
 
-.. image:: ../../../images/rczoom.png
+.. image:: ../images/rczoom.png
     :target: ../_images/rczoom.png
 
 You can see that your transmitter was not outputting values anywhere

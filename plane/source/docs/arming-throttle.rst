@@ -116,7 +116,7 @@ To arm throttle in Mission Planner, use the Flight Data screen, then
 select the Actions tab. This provides an "Arm/Disarm" button that can be
 used to arm and disarm the throttle.
 
-.. figure:: ../../../images/armingButtonMissPlan.jpg
+.. figure:: ../images/armingButtonMissPlan.jpg
    :target: ../_images/armingButtonMissPlan.jpg
 
    Location of the Arm/Disarm buttonin Mission Planner (button circled in red near the bottom of theimage).
@@ -127,7 +127,7 @@ result in a message from your ground control software stating that
 throttle arming was successful. Mission planner displays a message in
 the artificial horizon on the Flight Data screen:
 
-.. figure:: ../../../images/armingArmedMissPlan.jpg
+.. figure:: ../images/armingArmedMissPlan.jpg
    :target: ../_images/armingArmedMissPlan.jpg
 
    Message on the artificial horizon inMission Planner stating that arming was successful.

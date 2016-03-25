@@ -11,10 +11,10 @@ The `3DRobotics store <https://store.3dr.com/t/diyparts>`__
 offers 2 DIY Kits (quad and Y6) .   Select a model below to jump to the
 detailed assembly instructions.
 
-.. image:: ../../../images/3DRKits_Quad.jpg
+.. image:: ../images/3DRKits_Quad.jpg
     :target:  https://3dr.com/kb/diy-quad-kit/
 
-.. image:: ../../../images/3DRKits_Y6.jpg
+.. image:: ../images/3DRKits_Y6.jpg
     :target:  https://3dr.com/support/
 
 Best Practices

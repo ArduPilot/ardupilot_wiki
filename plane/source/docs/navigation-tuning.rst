@@ -106,8 +106,8 @@ following changes:
    fly through the waypoint and then turn, or turn early and smoothly
    intercept the next track.
 
-.. image:: ../../../images/L1_loiter.png
+.. image:: ../images/L1_loiter.png
     :target: ../_images/L1_loiter.png
 
-.. image:: ../../../images/L1_WP_following.png
+.. image:: ../images/L1_WP_following.png
     :target: ../_images/L1_WP_following.png

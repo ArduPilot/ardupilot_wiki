@@ -95,7 +95,7 @@ repository, follow these directions:
    client, this screenshot shows what your commit/sync screen could look
    like:
 
-   .. image:: ../../../images/PullRequest_CommitChanges.png
+   .. image:: ../images/PullRequest_CommitChanges.png
        :target: ../_images/PullRequest_CommitChanges.png
 
 #. Open your clone's repository on the GitHub web page and `Create a pull request on GitHub <https://help.github.com/articles/using-pull-requests>`__.
@@ -105,13 +105,13 @@ repository, follow these directions:
    one one of your commits and click the "github" (view this commit on
    github.com) button:
 
-   .. image:: ../../../images/PullRequest_OpenCloneOnGitHubWebPage.png
+   .. image:: ../images/PullRequest_OpenCloneOnGitHubWebPage.png
        :target: ../_images/PullRequest_OpenCloneOnGitHubWebPage.png
    
 #. On the right side of the web page select "Pull Request", and then
    select the green "New pull request" button:
 
-   .. image:: ../../../images/PullRequest_InitiatePullRequest1.png
+   .. image:: ../images/PullRequest_InitiatePullRequest1.png
        :target: ../_images/PullRequest_InitiatePullRequest1.png
 
 #. The comparison should between diydrones:master and the the new branch
@@ -119,7 +119,7 @@ repository, follow these directions:
    clone's master branch so click the "Edit" button and change it to the
    correct branch:
 
-   .. image:: ../../../images/PullRequest_InitiatePullRequest2.png
+   .. image:: ../images/PullRequest_InitiatePullRequest2.png
        :target: ../_images/PullRequest_InitiatePullRequest2.png
    
 #. Check the list of change at the bottom of the page only includes your

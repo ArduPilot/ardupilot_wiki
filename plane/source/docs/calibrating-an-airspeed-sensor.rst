@@ -27,7 +27,7 @@ Calibration". You need to loosely cover your airspeed sensor to stop
 wind from affecting the result, then press the button. The calibration
 will take a couple of seconds.
 
-.. image:: ../../../images/preflight.jpg
+.. image:: ../images/preflight.jpg
     :target: ../_images/preflight.jpg
 
 Choosing that action will re-calibrate both your ground barometric
@@ -122,7 +122,7 @@ Ask your ground station software to graph the airspeed and ground speed
 values for your flight, zooming in on the part of your flight where you
 were circling. You will get a graph like this:
 
-.. image:: ../../../images/ratio-low.png
+.. image:: ../images/ratio-low.png
     :target: ../_images/ratio-low.png
 
 In this case you can see that while circling the ground speed varied

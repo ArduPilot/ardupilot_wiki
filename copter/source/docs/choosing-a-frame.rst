@@ -10,7 +10,7 @@ above are three options from
 other choices.  This page will hopefully give some guidance on the
 choices available.
 
-.. image:: ../../../images/ChoseAFrame_Image.jpg
+.. image:: ../images/ChoseAFrame_Image.jpg
     :target: ../_images/ChoseAFrame_Image.jpg
 
 .. note::

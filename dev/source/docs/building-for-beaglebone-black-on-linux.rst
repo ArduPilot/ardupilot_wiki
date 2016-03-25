@@ -7,7 +7,7 @@ Building ArduPilot for BeagleBone Black on Linux
 Get your BeagleBone running Debian
 ==================================
 
-.. figure:: ../../../images/BBB_layout.jpg
+.. figure:: ../images/BBB_layout.jpg
    :target: ../_images/BBB_layout.jpg
 
    BBB title picture
@@ -330,7 +330,7 @@ Hooking up the sensors
 When hooking up your Sensor board it connects as follows (using SHORT
 wires)
 
-.. figure:: ../../../images/BBB_I2C.jpg
+.. figure:: ../images/BBB_I2C.jpg
    :target: ../_images/BBB_I2C.jpg
 
    i2c connection
@@ -344,7 +344,7 @@ To detect if the i2c is working, you can use the following command
 
          i2cdetect -r 1
 
-.. figure:: ../../../images/BBB_I2C_check.jpg
+.. figure:: ../images/BBB_I2C_check.jpg
    :target: ../_images/BBB_I2C_check.jpg
 
    i2c check
@@ -417,7 +417,7 @@ Adjusting the BBB clock
 
 ``cpufreq-info`` shows your current frequency
 
-.. figure:: ../../../images/BBB_clock_check.jpg
+.. figure:: ../images/BBB_clock_check.jpg
    :target: ../_images/BBB_clock_check.jpg
 
    clock check

@@ -21,7 +21,7 @@ Yaw (orange), :ref:`Altitude hold <altholdmode>` (green),
 :ref:`Waypoint navigation <auto-mode>`
 (blue).
 
-.. image:: ../../../images/Tuning_CommonThingsToChange.png
+.. image:: ../images/Tuning_CommonThingsToChange.png
     :target: ../_images/Tuning_CommonThingsToChange.png
 
 The most important parameter to get right is the Rate Roll P (and by

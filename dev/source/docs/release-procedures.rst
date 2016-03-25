@@ -88,7 +88,7 @@ Open the Mission Planner's Initial Setup > Install Firmware page and
 click the "Beta firmwares" link and ensure that the version displayed
 below each multicopter icon has updated.
 
-.. image:: ../../../images/ReleaseProcedures_MPBetaFirmwares.jpg
+.. image:: ../images/ReleaseProcedures_MPBetaFirmwares.jpg
     :target: ../_images/ReleaseProcedures_MPBetaFirmwares.jpg
 
 **Communicating the new release candidate**

@@ -14,7 +14,7 @@ similar to the :ref:`Raspberry Pi <raspberry-pi-via-mavlink>` except
 that the ODroid has a much faster CPU (performance is roughly 10x faster
 than the RPi).
 
-.. image:: ../../../images/ODroidU3.jpg
+.. image:: ../images/ODroidU3.jpg
     :target: ../_images/ODroidU3.jpg
 
 Recommended parts
@@ -127,28 +127,28 @@ Common Setup with known IP Address
 Connecting the Pixhawk and ODroid
 =================================
 
-.. image:: ../../../images/Odroid-wiring.jpg
+.. image:: ../images/Odroid-wiring.jpg
     :target: ../_images/Odroid-wiring.jpg
 
 If using an FTDI cable, connect as shown in the picture below, DO NOT
 connect the power wire.
 
-.. image:: ../../../images/ODROID-FTDI.jpg
+.. image:: ../images/ODROID-FTDI.jpg
     :target: ../_images/ODROID-FTDI.jpg
 
-.. figure:: ../../../images/odroid_fdti_cable.jpg
+.. figure:: ../images/odroid_fdti_cable.jpg
    :target: ../_images/odroid_fdti_cable.jpg
 
    Odroid FTDI/USB cable (detailview)
 
 If using a USB to Serial interface, connect as shown below.
 
-.. image:: ../../../images/ODroid_Pixhawk_Wiring.jpg
+.. image:: ../images/ODroid_Pixhawk_Wiring.jpg
     :target: ../_images/ODroid_Pixhawk_Wiring.jpg
 
 Power connections are shown below:
 
-.. figure:: ../../../images/odroidpower.jpg
+.. figure:: ../images/odroidpower.jpg
    :target: ../_images/odroidpower.jpg
 
    Odroid Power Connections
@@ -175,7 +175,7 @@ mission planner with the USB cable.
 
 Set SERIAL2_BAUD (telemetry 2 baud rate) to 1500 (1.5Mbit)
 
-.. image:: ../../../images/ChangeBaud.jpg
+.. image:: ../images/ChangeBaud.jpg
     :target: ../_images/ChangeBaud.jpg
 
 To test the ODroid and Pixhawk are able to communicate with each other
@@ -190,7 +190,7 @@ commands to arm and then disarm the copter.
 
 disarm
 
-.. image:: ../../../images/ODroid_ArmTestThroughPutty.png
+.. image:: ../images/ODroid_ArmTestThroughPutty.png
     :target: ../_images/ODroid_ArmTestThroughPutty.png
 
 Configure mavproxy to always run

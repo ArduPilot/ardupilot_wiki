@@ -11,7 +11,7 @@ failsafe" was previously called "Throttle failsafe" because of the way
 in which some receivers use the throttle channel to signal the loss of
 contact.
 
-.. image:: ../../../images/RadioFailsafe_Intro.jpg
+.. image:: ../images/RadioFailsafe_Intro.jpg
     :target: ../_images/RadioFailsafe_Intro.jpg
 
 .. note::
@@ -116,7 +116,7 @@ Set the "FS Pwm" value to be:
 
 -  *above 910*
 
-.. image:: ../../../images/RadioFailsafe_MPSetup.png
+.. image:: ../images/RadioFailsafe_MPSetup.png
     :target: ../_images/RadioFailsafe_MPSetup.png
 
 Set-up for No-Signal method
@@ -170,7 +170,7 @@ channel drops with loss of radio contact**
    at least 10 below the FS PWM field value (as in the second
    illustration below) below
 
-.. image:: ../../../images/MPFailsafeSetup1.jpg
+.. image:: ../images/MPFailsafeSetup1.jpg
     :target: ../_images/MPFailsafeSetup1.jpg
 
 Test #2 : ensuring motors disarm if in stabilize or acro with throttle

@@ -52,13 +52,13 @@ all cases. If you do need to change them, then see :ref:`RCMAP Input Channel Map
 PX4 Normal One Motor Servo Steering Wiring Diagram
 --------------------------------------------------
 
-.. image:: ../../../images/PX4IOWiringRover2.jpg
+.. image:: ../images/PX4IOWiringRover2.jpg
     :target: ../_images/PX4IOWiringRover2.jpg
 
 PX4 Two Motor Skid Steering Wiring Diagram
 ------------------------------------------
 
-.. image:: ../../../images/PX4IOWiringRoverSkid1.jpg
+.. image:: ../images/PX4IOWiringRoverSkid1.jpg
     :target: ../_images/PX4IOWiringRoverSkid1.jpg
 
 Check out the Basic Operating Modes of the Rover2 Firmware
@@ -106,7 +106,7 @@ safety lock (LED solid on)), and when a 3D lock has been obtained
 Test AUTO mode
 --------------
 
-.. image:: ../../../images/MP_rover_write_WPs.jpg
+.. image:: ../images/MP_rover_write_WPs.jpg
     :target: ../_images/MP_rover_write_WPs.jpg
 
 To test the Auto mode at least one waypoint that is either to the right

@@ -10,7 +10,7 @@ The antenna tracker firmware can be loaded from the Mission Planner's
 Use Mission Planner's Install Firmware screen to load the firmware
 ==================================================================
 
-.. image:: ../../../images/AntennaTracker_MP_LoadFirmware.jpg
+.. image:: ../images/AntennaTracker_MP_LoadFirmware.jpg
     :target: ../_images/AntennaTracker_MP_LoadFirmware.jpg
 
 -  Connect the flight control board to the computer using the mini USB cable

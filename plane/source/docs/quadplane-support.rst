@@ -7,7 +7,7 @@ QuadPlane Support
 This article explains how to set up and use a combined fixed wing and
 multicopter aircraft, also known as a "QuadPlane".
 
-.. image:: ../../../images/quadplane_senior_telemaster.jpg
+.. image:: ../images/quadplane_senior_telemaster.jpg
     :target: ../_images/quadplane_senior_telemaster.jpg
 
 Overview

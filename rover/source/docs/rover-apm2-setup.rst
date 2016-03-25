@@ -115,7 +115,7 @@ them up are :ref:`here) <sonar-sensors>`. Note a few elements:
    off-road), and it is mounted on velcro under the APM platform so it
    doesn't shift.
 
-.. image:: ../../../images/rover_apm2.x_setup.jpg
+.. image:: ../images/rover_apm2.x_setup.jpg
     :target: ../_images/rover_apm2.x_setup.jpg
 
 Depending on the car frame you're using, you may wish to set up your
@@ -125,7 +125,7 @@ image below shows a top view of Tom Coyle's Slash Rover (winner of the
 Peloton Class at AVC 2013) with a Spektrum receiver, GPS, and external
 compass.
 
-.. image:: ../../../images/Slash-with-Spektrum-Receiver.jpg
+.. image:: ../images/Slash-with-Spektrum-Receiver.jpg
     :target: ../_images/Slash-with-Spektrum-Receiver.jpg
 
 3DR GPS uBlox with Onboard Compass
@@ -156,7 +156,7 @@ using the 4-position cable.
 Slash Rover's GPS with external compass mount:
 ==============================================
 
-.. image:: ../../../images/Slash-with-combo-GPS_compass-front-view.jpg
+.. image:: ../images/Slash-with-combo-GPS_compass-front-view.jpg
     :target: ../_images/Slash-with-combo-GPS_compass-front-view.jpg
 
 3DR GPS uBlox without Onboard Compass

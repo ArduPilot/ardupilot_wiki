@@ -48,7 +48,7 @@ using the ``--map`` and ``--console`` options:
 Arrange the *MAVProxy Command Prompt*, *Console* and *Map* conveniently
 so you can observe the status and send commands at the same time.
 
-.. image:: ../../../images/mavproxy_sitl_console_and_map.jpg
+.. image:: ../images/mavproxy_sitl_console_and_map.jpg
     :target: ../_images/mavproxy_sitl_console_and_map.jpg
 
 .. note::
@@ -71,7 +71,7 @@ to**, and enter an altitude (which is ignored). Rover will change to
 ``GUIDED`` mode, drive to the location, and then pause (still in GUIDED
 mode).
 
-.. figure:: ../../../images/MAVProxyRover_Guided_Menu.jpg
+.. figure:: ../images/MAVProxyRover_Guided_Menu.jpg
    :target: ../_images/MAVProxyRover_Guided_Menu.jpg
 
    MAVProxy: Rover go tolocation
@@ -152,7 +152,7 @@ the map:
 
 #. Right-click on the map and then select **Mission \| Draw**.
 
-   .. figure:: ../../../images/MAVProxyCopter_Mission_Draw.jpg
+   .. figure:: ../images/MAVProxyCopter_Mission_Draw.jpg
       :target: ../_images/MAVProxyCopter_Mission_Draw.jpg
 
       MAVProxy: Draw Mission Menu (This image is for Copter, but the behaviour is the same).

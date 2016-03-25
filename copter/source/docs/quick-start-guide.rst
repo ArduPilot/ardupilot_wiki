@@ -43,7 +43,7 @@ update your DirectX plug-in from the `DirectX Download Center <http://www.micros
 If you receive the warning pictured here, select **Install this driver
 software anyway** to continue.
 
-.. image:: ../../../images/directx_driver_install_warning.png
+.. image:: ../images/directx_driver_install_warning.png
     :target: ../_images/directx_driver_install_warning.png
 
 Once installation is complete, open Mission Planner. Mission Planner
@@ -62,7 +62,7 @@ pins using connectors to attach channel 1 to the APM signal pin labeled
 to the receiver by connecting a three-wire cable between the receiver
 and the APM for one of the channels.
 
-.. image:: ../../../images/PWM-wiring.jpg
+.. image:: ../images/PWM-wiring.jpg
     :target: ../_images/PWM-wiring.jpg
 
 For **PPM** (all channels over one wire), use PPM jumper connectors to
@@ -72,7 +72,7 @@ pins for channel 1 on the receiver to the three pins labeled 1 on APM.
 The specific pins used for the receiver may vary by model, so consult
 the documentation on your receiver for PPM configuration.
 
-.. image:: ../../../images/PPM-wiring.jpg
+.. image:: ../images/PPM-wiring.jpg
     :target: ../_images/PPM-wiring.jpg
 
 Once you've downloaded Mission Planner onto your ground station
@@ -99,14 +99,14 @@ Select \ **Connect** (upper-right corner of the screen) to load MavLink
 parameters to APM. Mission Planner will display a window showing the
 progress of the MavLink download.
 
-.. image:: ../../../images/con-mavlink.png
+.. image:: ../images/con-mavlink.png
     :target: ../_images/con-mavlink.png
 
 When the window displays **Done** and Mission Planner shows the
 **Disconnect** option in place of Connect, your APM firmware has been
 downloaded successfully.
 
-.. image:: ../../../images/condiscon.png
+.. image:: ../images/condiscon.png
     :target: ../_images/condiscon.png
 
 Turn on transmitter. Verify that the transmitter is in Airplane mode
@@ -128,7 +128,7 @@ lower right of the window. Mission Planner will call a dialog window to
 ensure radio control equipment is on, battery is not connected, and
 propellers are not attached.
 
-.. image:: ../../../images/calibrate-radio.jpg
+.. image:: ../images/calibrate-radio.jpg
     :target: ../_images/calibrate-radio.jpg
 
 Select OK; move the control sticks and toggle switches on your
@@ -148,7 +148,7 @@ Channel 3: low = throttle down (off), high = throttle up.
 
 Channel 4: low = yaw left, high = yaw right.
 
-.. image:: ../../../images/radio-calib-click-when-done.png
+.. image:: ../images/radio-calib-click-when-done.png
     :target: ../_images/radio-calib-click-when-done.png
 
 When the red bars for roll, pitch, throttle, yaw, and radio 5 (and
@@ -175,13 +175,13 @@ in the images below. Use pusher propellers for motors marked clockwise
 and normal propellers marked counterclockwise. Pusher propellers are
 usually marked "P" or "SFP" on the propeller.
 
-.. image:: ../../../images/FRAMES_X8.jpg
+.. image:: ../images/FRAMES_X8.jpg
     :target: ../_images/FRAMES_X8.jpg
 
-.. image:: ../../../images/FRAMES_X8.jpg
+.. image:: ../images/FRAMES_X8.jpg
     :target: ../_images/FRAMES_X8.jpg
 
-.. image:: ../../../images/FRAMES_X8.jpg
+.. image:: ../images/FRAMES_X8.jpg
     :target: ../_images/FRAMES_X8.jpg
 
 Pre-flight information
@@ -200,7 +200,7 @@ you. Connect fully charged LiPo battery to the power module connector
 when you're ready to power on your copter. Follow the safe arming and
 disarming procedure described on the :ref:`Maiden Flight <flying-arducopter>` page.
 
-.. image:: ../../../images/Connect-Battery.jpg
+.. image:: ../images/Connect-Battery.jpg
     :target: ../_images/Connect-Battery.jpg
 
 Next steps

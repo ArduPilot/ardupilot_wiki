@@ -24,7 +24,7 @@ This can be useful to protect the battery from damage.
 To enable the feature, set the MOT_CURR_MAX parameter to the desired
 limit in amps (or "0" to disable this feature).
 
-.. image:: ../../../images/CurrentLimiting_MPSetup.png
+.. image:: ../images/CurrentLimiting_MPSetup.png
     :target: ../_images/CurrentLimiting_MPSetup.png
 
 If the measured current exceeds this limit the maximum throttle will be
@@ -50,5 +50,5 @@ normally experience.  The gains will not be scaled up any more as the
 voltage falls below this level.  Setting this to the :ref:`battery failsafe voltage <failsafe-battery>` is a
 good start.
 
-.. image:: ../../../images/VoltageScaling_MPSetup.png
+.. image:: ../images/VoltageScaling_MPSetup.png
     :target: ../_images/VoltageScaling_MPSetup.png

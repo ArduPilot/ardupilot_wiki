@@ -14,7 +14,7 @@ to run ardupilot are
 
    Copter support was added in Copter-3.3.
 
-.. image:: ../../../images/bebop-drone.jpg
+.. image:: ../images/bebop-drone.jpg
     :target: ../_images/bebop-drone.jpg
 
 Specifications

@@ -8,7 +8,7 @@ This page outlines the special settings required to get a TriCopter
 flying.  The more :ref:`general instructions for setting up a multicopter <initial-setup>` should
 be used for all other aspects of the setup.
 
-.. image:: ../../../images/APM_2_5_MOTORS_TRI.jpg
+.. image:: ../images/APM_2_5_MOTORS_TRI.jpg
     :target: ../_images/APM_2_5_MOTORS_TRI.jpg
 
 Copter 3.3 (and higher)

@@ -35,7 +35,7 @@ Now open the Arduino serial monitor, setting baud rate to 115200 baud
 and ensuring that "Carriage Returns" are enabled. You should see a
 command line on the monitor:
 
-.. image:: ../../../images/QuadCLI.png
+.. image:: ../images/QuadCLI.png
     :target: ../_images/QuadCLI.png
 
 Available commands
@@ -188,14 +188,14 @@ Planner Terminal screen.
 When you open it, it will look like this (with a more recent version
 number of the software displayed):
 
-.. image:: ../../../images/AC2_CLI.png
+.. image:: ../images/AC2_CLI.png
     :target: ../_images/AC2_CLI.png
 
 If you're not using Windows, you can also use the Serial Monitor built
 into Arduino (remember to select the right baud rate and enable CRs as
 shown here):
 
-.. image:: ../../../images/arduinoserialmon.png
+.. image:: ../images/arduinoserialmon.png
     :target: ../_images/arduinoserialmon.png
 
 Once you are in the CLI, you can type "help" at any menu and get a full
@@ -203,7 +203,7 @@ list of available commands.
 
 There are three top-level menus: Setup, Test and Logs.
 
-.. image:: ../../../images/CLI1.png
+.. image:: ../images/CLI1.png
     :target: ../_images/CLI1.png
 
 Each has sub-menus, whose command can also be seen by typing "help" when
@@ -212,7 +212,7 @@ you are in that section.
 Setup Menu
 ----------
 
-.. image:: ../../../images/CLI2.png
+.. image:: ../images/CLI2.png
     :target: ../_images/CLI2.png
 
 CLI interactive setup - You must go through each item and set the values
@@ -253,7 +253,7 @@ to match your hardware
 Test Menu
 ---------
 
-.. image:: ../../../images/CLI3.png
+.. image:: ../images/CLI3.png
     :target: ../_images/CLI3.png
 
 "test" menu commands:
@@ -291,7 +291,7 @@ Test Menu
 Logs Menu
 ---------
 
-.. image:: ../../../images/CLI4.png
+.. image:: ../images/CLI4.png
     :target: ../_images/CLI4.png
 
 "logs" menu commands:

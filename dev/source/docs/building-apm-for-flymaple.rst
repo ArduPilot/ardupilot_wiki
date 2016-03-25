@@ -14,10 +14,10 @@ About Flymaple
 -  It includes 10DOF sensors (accelerometer, gyroscope, magnetometer and
    barometer).
 
-.. image:: ../../../images/flymaple_v1.1.jpg
+.. image:: ../images/flymaple_v1.1.jpg
     :target: ../_images/flymaple_v1.1.jpg
 
-.. image:: ../../../images/FlyMaple_PinOut.jpg
+.. image:: ../images/FlyMaple_PinOut.jpg
     :target: ../_images/FlyMaple_PinOut.jpg
 
 How to build APM for Flymaple on Linux.

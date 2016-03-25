@@ -46,10 +46,10 @@ Repeat your flight to determine if the change was beneficial. Repeat the
 process until you are satisfied with the way your copter responds to
 roll and pitch.
 
-.. image:: ../../../images/apm-planner-basic-tuning2.png
+.. image:: ../images/apm-planner-basic-tuning2.png
     :target: ../_images/apm-planner-basic-tuning2.png
 
-.. image:: ../../../images/mission-planner-basic-tuning.png
+.. image:: ../images/mission-planner-basic-tuning.png
     :target: ../_images/mission-planner-basic-tuning.png
 
 Throttle tuning

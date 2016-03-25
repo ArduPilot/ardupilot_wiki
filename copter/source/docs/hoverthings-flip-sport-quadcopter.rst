@@ -9,7 +9,7 @@ remarkably sturdy and very high performance little quadcopter. The FLIP
 Sport is well suited to FPV and GoPro photography and videography and
 can even incorporate a brushless gimbal.
 
-.. image:: ../../../images/FlipFront.jpg
+.. image:: ../images/FlipFront.jpg
     :target: ../_images/FlipFront.jpg
 
 Why a FLIP Sport?
@@ -38,7 +38,7 @@ Why a FLIP Sport?
 -  This is a small 380 size frame and will accommodate 10" propellers
    (Right between the Flamewheel F330 and F450.)
 
-.. image:: ../../../images/FlipLeg1.jpg
+.. image:: ../images/FlipLeg1.jpg
     :target: ../_images/FlipLeg1.jpg
 
 What to get
@@ -74,7 +74,7 @@ What to get
 #. For a PX4 system: A `Pad of Kyousho Zeal Antivibration gel <http://www.amainhobbies.com/rc-cars-trucks/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__
    and four nylon or aluminum 1 1/2" threaded standoffs.
 
-.. image:: ../../../images/FlipTop.jpg
+.. image:: ../images/FlipTop.jpg
     :target: ../_images/FlipTop.jpg
 
 Assembling the frame
@@ -112,7 +112,7 @@ Assembling the frame
 #. Thread the motor wires through the top frame arm opening and connect
    to the ESC wires (tuck excess lead into frame).
 
-.. image:: ../../../images/FlipSportMotProp.jpg
+.. image:: ../images/FlipSportMotProp.jpg
     :target: ../_images/FlipSportMotProp.jpg
 
 Installing the Pixhawk flight controller
@@ -221,10 +221,10 @@ Installing the Px4 FMU / PX4IO flight controller
    #. Note my setup uses an older style UBlox standalone GPS which I
       have mounted directly to the PX4 stack.
 
-.. image:: ../../../images/hoverthings_assembly_gps_etc.jpg
+.. image:: ../images/hoverthings_assembly_gps_etc.jpg
     :target: ../_images/hoverthings_assembly_gps_etc.jpg
 
-.. image:: ../../../images/hoverthings_assembly_2.jpg
+.. image:: ../images/hoverthings_assembly_2.jpg
     :target: ../_images/hoverthings_assembly_2.jpg
 
 
@@ -238,7 +238,7 @@ Final assembly
 #. Ensure that the battery cable is secure but accessible to be plugged
    in when needed.
 
-.. image:: ../../../images/FlipPX41.jpg
+.. image:: ../images/FlipPX41.jpg
     :target: ../_images/FlipPX41.jpg
 
 

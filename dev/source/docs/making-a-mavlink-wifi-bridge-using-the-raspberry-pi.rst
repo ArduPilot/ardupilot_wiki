@@ -16,7 +16,7 @@ to a 3DR Telemetry Radio. This will allow you to connect a computer or
 tablet via WiFi to the Raspberry Pi, and the Raspberry Pi will in turn
 forward the communication to a drone through a telemetry link.
 
-.. image:: ../../../images/Mavlink_Wifi_Bridge.jpg
+.. image:: ../images/Mavlink_Wifi_Bridge.jpg
     :target: ../_images/Mavlink_Wifi_Bridge.jpg
 
 To accomplish this tutorial you will need the following items:
@@ -585,7 +585,7 @@ needs to be wired to the RXD on the 3DR Radio.
 You can find more information on the pin out for the Raspberry Pi
 `HERE <http://www.raspberrypi.org/pinout-for-gpio-connectors/>`__
 
-.. figure:: ../../../images/connecting_rapi_to_sik_radio_reduced.jpg
+.. figure:: ../images/connecting_rapi_to_sik_radio_reduced.jpg
     :target: ../_images/connecting_rapi_to_sik_radio_reduced.jpg
     
     Connecting Telemetry Radio to RaPi
@@ -694,18 +694,18 @@ Using the latest beta version (1.3.17.1 build 1.1.5478.13250) you can
 now initiate a UDP connection. To do this select **UDPCI** from the
 connection type menu:
 
-.. image:: ../../../images/mp_udpci_connection.jpg
+.. image:: ../images/mp_udpci_connection.jpg
     :target: ../_images/mp_udpci_connection.jpg
 
 After that click connect, you will be presented with a screen to enter
 the IP Address of the RPi:
 
-.. image:: ../../../images/mp_connect_remote_host_ip.png
+.. image:: ../images/mp_connect_remote_host_ip.png
     :target: ../_images/mp_connect_remote_host_ip.png
 
 And enter the UDP Port on the next screen:
 
-.. image:: ../../../images/mp_connecting_enter_remote_port.png
+.. image:: ../images/mp_connecting_enter_remote_port.png
     :target: ../_images/mp_connecting_enter_remote_port.png
 
 Using APM Planner -- TBD

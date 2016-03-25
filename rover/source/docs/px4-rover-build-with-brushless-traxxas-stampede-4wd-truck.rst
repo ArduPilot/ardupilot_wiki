@@ -22,7 +22,7 @@ Wiring diagram
 The wiring diagram below illustrates a method for directly powering the
 steering servo from the Stampede's ESC.
 
-.. image:: ../../../images/PX4IOWiringRoverEscBec.jpg
+.. image:: ../images/PX4IOWiringRoverEscBec.jpg
     :target: ../_images/PX4IOWiringRoverEscBec.jpg
 
 No solder connection of ESC and steering servo power
@@ -31,7 +31,7 @@ No solder connection of ESC and steering servo power
 The photograph below illustrates a no solder method for connecting the
 ESC and steering servo power wire:
 
-.. image:: ../../../images/RoverPX4ServoPower1.jpg
+.. image:: ../images/RoverPX4ServoPower1.jpg
     :target: ../_images/RoverPX4ServoPower1.jpg
 
 -  Remove the power pin sockets from the end of the connectors that plug
@@ -49,7 +49,7 @@ compatible with Hitec and Futaba RC transmitters. The Delta 8 provides
 the required PPM-Sum communication with the PX4 using our own Futaba or
 Hitec transmitter.
 
-.. image:: ../../../images/RoverPX4Stampede2.jpg
+.. image:: ../images/RoverPX4Stampede2.jpg
     :target: ../_images/RoverPX4Stampede2.jpg
 
 
@@ -69,7 +69,7 @@ on the suspension) but functions well.
 Cutouts for safety button access and the buzzer can be seen in the
 truck's body below.
 
-.. image:: ../../../images/rover_stampede_px4.jpg
+.. image:: ../images/rover_stampede_px4.jpg
     :target: ../_images/rover_stampede_px4.jpg
 
 This truck has reverse and it transitions at mid throttle PWM so some

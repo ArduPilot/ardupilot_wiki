@@ -16,7 +16,7 @@ onboard the APM 2.5 board, you may want to switch to an external compass
 that you can mount further away from noise sources such as motors. This
 article explains how.
 
-.. image:: ../../../images/BR-HMC5843-01-21.jpg
+.. image:: ../images/BR-HMC5843-01-21.jpg
     :target: ../_images/BR-HMC5843-01-21.jpg
 
 Step-by-step instructions
@@ -28,14 +28,14 @@ Step-by-step instructions
    board because it is shipped from 3DR with the 5 volt jumper set, as
    shown below.
 
-   .. image:: ../../../images/Mag_HMC5843_jumper1.jpg
+   .. image:: ../images/Mag_HMC5843_jumper1.jpg
        :target: ../_images/Mag_HMC5843_jumper1.jpg
     
 #. Looking at the below picture, cut the jumper trace in the middle of
    the APM 2.5 board. This disables the SDA line to the board’s internal
    compass, rendering it inert.
 
-   .. image:: ../../../images/APMCompassModification1.jpg
+   .. image:: ../images/APMCompassModification1.jpg
        :target: ../_images/APMCompassModification1.jpg
    
 #. The APM 2.5 I2C connector needs a 4 pin DF13 connector (like `this one <http://store.jdrones.com/cable_df13_4pin_15cm_p/cbldf13p4c15.htm>`__).
@@ -64,7 +64,7 @@ Step-by-step instructions
    need to modify the software with this orientation, as explained in
    the next step.
 
-   .. image:: ../../../images/Quad_Top_View1.jpg
+   .. image:: ../images/Quad_Top_View1.jpg
        :target: ../_images/Quad_Top_View1.jpg
    
 #. Modify, compile and load the software for your compass board

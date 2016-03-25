@@ -13,7 +13,7 @@ by initiating an RTL.  The maximum circular distance and altitude and
 the vehicle behaviour when the fence is reached can be configured using
 Mission Planner.
 
-.. image:: ../../../images/copter_simple_tincan_geofence.jpg
+.. image:: ../images/copter_simple_tincan_geofence.jpg
     :target: ../_images/copter_simple_tincan_geofence.jpg
 
 If the vehicle strays outside these borders it will switch into RTL or
@@ -35,7 +35,7 @@ home.
 Enabling the Fence in Mission Planner
 =====================================
 
-.. image:: ../../../images/Fence_MPSetup.png
+.. image:: ../images/Fence_MPSetup.png
     :target: ../_images/Fence_MPSetup.png
 
 The Fence can be set-up by doing the following:
@@ -63,7 +63,7 @@ steps:
 -  holding the switch high (i.e. PWM > 1800) will enable the fence, low
    (under 1800) will disable the fence.
 
-.. image:: ../../../images/Fence_MPCh78.png
+.. image:: ../images/Fence_MPCh78.png
     :target: ../_images/Fence_MPCh78.png
 
 Warnings:

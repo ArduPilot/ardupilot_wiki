@@ -25,7 +25,7 @@ Pixhawk/PX4, APM 2.5 and earlier, or APM 2.6 with 3DR GPS+Compass.
 Ensure that the option to **Enable the compass** and **allow Auto
 Declination** are selected as shown below.
 
-.. image:: ../../../images/apm_planner2_calibrate-compass.jpg
+.. image:: ../images/ap2_calibrate-compass.jpg
     :target: ../_images/apm_planner2_calibrate-compass.jpg
 
 To perform **manual declination**, follow the link to the **Declination

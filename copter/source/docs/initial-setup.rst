@@ -4,7 +4,7 @@
 First Time Setup
 ================
 
-.. image:: ../../../images/Quad_Color6.jpg
+.. image:: ../images/Quad_Color6.jpg
     :target: ../_images/Quad_Color6.jpg
 
 First-time setup of the autopilot includes downloading and installing

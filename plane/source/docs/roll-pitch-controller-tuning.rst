@@ -374,18 +374,18 @@ Controller Overview
 Roll Controller
 ---------------
 
-.. image:: ../../../images/rollAP.jpg
+.. image:: ../images/rollAP.jpg
     :target: ../_images/rollAP.jpg
 
 Pitch Controller
 ----------------
 
-.. image:: ../../../images/PitchAP.jpg
+.. image:: ../images/PitchAP.jpg
     :target: ../_images/PitchAP.jpg
 
 Yaw Controller
 --------------
 
-.. image:: ../../../images/latAP.jpg
+.. image:: ../images/latAP.jpg
     :target: ../_images/latAP.jpg
 

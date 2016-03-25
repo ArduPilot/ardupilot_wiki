@@ -11,7 +11,7 @@ Archived:Using Xbee radios for telemetry with APM
    The correct topic to use is
    :ref:`Telemetry-XBee <common-telemetry-xbee>`
 
-.. image:: ../../../images/KT-Telemetry-Xbee-2new.jpg
+.. image:: ../images/KT-Telemetry-Xbee-2new.jpg
     :target: ../_images/KT-Telemetry-Xbee-2new.jpg
 
 Hooking up your Xbee wireless modules
@@ -42,10 +42,10 @@ Wiring it up
 APM 2.0
 ~~~~~~~
 
-.. image:: ../../../images/telemtry.jpg
+.. image:: ../images/telemtry.jpg
     :target: ../_images/telemtry.jpg
 
-.. image:: ../../../images/xbee_amp2_connection.jpg
+.. image:: ../images/xbee_amp2_connection.jpg
     :target: ../_images/xbee_amp2_connection.jpg
 
 Connect the XtremeBee adapter (with the Xbee plugged in) to APM 2 as
@@ -63,7 +63,7 @@ APM 2.5
 On APM 2.5, use the dedicated telemetry port and supplied cable, as
 shown:
 
-.. image:: ../../../images/xbee_amp2.5_telemetry_port_connection.jpg
+.. image:: ../images/xbee_amp2.5_telemetry_port_connection.jpg
     :target: ../_images/xbee_amp2.5_telemetry_port_connection.jpg
 
 On the ground side
@@ -88,7 +88,7 @@ which one has been assigned to the Xbee in the Windows Control Panel
 device manager) and a baud rate of 57k in the Mission Planner or other
 GCS when you're connecting.
 
-.. image:: ../../../images/xbeebaud.png
+.. image:: ../images/xbeebaud.png
     :target: ../_images/xbeebaud.png
 
 (Optional) Changing your telemetry to use UART2 (aka Serial3)
@@ -165,7 +165,7 @@ This is what the setting should look like when you click "Read" in Modem
 Configuration tab of X-CTU (we're using 999 as the VID here as an
 example, and I've highlighted the correct baud rate):
 
-.. image:: ../../../images/Xbeescreenshot.png
+.. image:: ../images/Xbeescreenshot.png
     :target: ../_images/Xbeescreenshot.png
 
 Note: If you bought your Xbee modules from Sparkfun, rather than the
@@ -255,7 +255,7 @@ the Telecom pins is Serial3.
    setting the baud rate to 115200. You should see "Port 0" repeated as
    follows, showing the output from the APM's USB port:
 
-   .. image:: ../../../images/xbeetest2.png
+   .. image:: ../images/xbeetest2.png
        :target: ../_images/xbeetest2.png
 
 #. Now switch the serial port to the one your Xbee is assigned to and

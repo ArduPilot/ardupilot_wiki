@@ -20,7 +20,7 @@ APM Wiring Diagram
 The diagram below is an overview of how an APM2 can be connected to a
 receiver, ESC, GPS and even a camera gimbal.
 
-.. image:: ../../../images/QuadHookUp800B.jpg
+.. image:: ../images/QuadHookUp800B.jpg
     :target: ../_images/QuadHookUp800B.jpg
 
 Powering the flight controller
@@ -36,7 +36,7 @@ cable to APM Output Signal pins with the M1 wire connecting to the
 signal pin labeled 1, M6 and signal pin 6, etc. See the above link for
 additional detail.
 
-.. image:: ../../../images/power-wiring.jpg
+.. image:: ../images/power-wiring.jpg
     :target: ../_images/power-wiring.jpg
 
 The Power Module will not power servos and other peripherals. For more
@@ -52,7 +52,7 @@ setup for each frame.
 You will need to connect motor cables to electronic speed controller
 (ESC) bullet connectors (each motor must connect to only one ESC).
 
-.. image:: ../../../images/esc-motor-connect.jpg
+.. image:: ../images/esc-motor-connect.jpg
     :target: ../_images/esc-motor-connect.jpg
 
 Connect ESC Deans connectors to Power Distribution Board (PDB) Deans
@@ -61,7 +61,7 @@ pins according to motor number (see link above to find the motor number
 configuration for your frame). Connect the ESC for motor 1 to the PDB
 pins marked M1, motor 6's ESC to the pins marked M6, etc.
 
-.. image:: ../../../images/pdb-esc-connect.jpg
+.. image:: ../images/pdb-esc-connect.jpg
     :target: ../_images/pdb-esc-connect.jpg
 
 

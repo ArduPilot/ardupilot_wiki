@@ -60,7 +60,7 @@ made less sensitive by increasing this parameter from 0.8 to 0.9 or
 flyaway caused by a bad compass or GPS glitching, the vehicle will fly
 further away before the vehicle is automatically switched to LAND mode.
 
-.. image:: ../../../images/ekfcheck_setupThroughMP.png
+.. image:: ../images/ekfcheck_setupThroughMP.png
     :target: ../_images/ekfcheck_setupThroughMP.png
 
 Video

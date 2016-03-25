@@ -11,7 +11,7 @@ motor/propeller units.
 Overview
 ========
 
-.. image:: ../../../images/3DR-quad-motors-top.jpg
+.. image:: ../images/3DR-quad-motors-top.jpg
     :target: ../_images/3DR-quad-motors-top.jpg
 
 MultiCopters are aerodynamically unstable and absolutely require an

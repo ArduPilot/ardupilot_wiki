@@ -109,7 +109,7 @@ recommended.
 Note: the GPS HDOP can be readily viewed through the Mission Planner's
 Quick tab as shown below.
 
-.. image:: ../../../images/MP_QuicHDOP.jpg
+.. image:: ../images/MP_QuicHDOP.jpg
     :target: ../_images/MP_QuicHDOP.jpg
 
 INS checks (i.e. Acclerometer and Gyro checks):
@@ -174,7 +174,7 @@ input.
 Disabling the Pre-arm Safety Check
 ==================================
 
-.. image:: ../../../images/MP_PreArmCheckDisable.png
+.. image:: ../images/MP_PreArmCheckDisable.png
     :target: ../_images/MP_PreArmCheckDisable.png
 
 If you are confident that the pre-arm check failure is not a real

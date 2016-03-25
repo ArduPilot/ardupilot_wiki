@@ -31,7 +31,7 @@ There are several popular frame layouts for MultiCopters
    -  Because this is primarily an outdated design we will not expand
       further on it in this article.
 
-.. image:: ../../../images/tricopter.jpg
+.. image:: ../images/tricopter.jpg
     :target: ../_images/tricopter.jpg
 
 -  The very popular Quadcopter has 4 motor/propeller units and is
@@ -81,7 +81,7 @@ There are several popular frame layouts for MultiCopters
    -  A humming bird sized `Estes Proto X <http://www.estesrockets.com/helis-quads/quadcopters/004606-proto-x>`__
       is shown below.
 
-.. image:: ../../../images/leste4606__92098.1384842703.1020.1020.jpg
+.. image:: ../images/leste4606__92098.1384842703.1020.1020.jpg
     :target: ../_images/leste4606__92098.1384842703.1020.1020.jpg
 
 
@@ -89,7 +89,7 @@ There are several popular frame layouts for MultiCopters
    propellers, 8KG lifting capability and claimed 60 minute flight
    times.
 
-.. image:: ../../../images/SteadiDroneQ4DX.jpg
+.. image:: ../images/SteadiDroneQ4DX.jpg
     :target: ../_images/SteadiDroneQ4DX.jpg
 
 -  For professional use, HexaCopters and OctoCopters with 6 and 8
@@ -106,7 +106,7 @@ There are several popular frame layouts for MultiCopters
    -  However it also results in some reduction in flight efficiency and
       endurance all other things being equal.
 
-.. image:: ../../../images/hexacopter.jpg
+.. image:: ../images/hexacopter.jpg
     :target: ../_images/hexacopter.jpg
 
 -  Hex Y6 and Octo X8 designs with pairs of coaxial motor/propeller
@@ -130,13 +130,13 @@ There are several popular frame layouts for MultiCopters
    -  The Singlecopter features a single motor/propeller unit with 4
       servo controlled vanes to direct roll, pitch and yaw.
 
-.. image:: ../../../images/vtolcustom2.jpg
+.. image:: ../images/vtolcustom2.jpg
     :target: ../_images/vtolcustom2.jpg
 
 -  The Coaxcopter has dual motor/propeller units for thrust and yaw
    control and 2 servo controlled vanes for roll and  pitch.
 
-.. image:: ../../../images/mav_electric.jpg
+.. image:: ../images/mav_electric.jpg
     :target: ../_images/mav_electric.jpg
 
 -  There are also variable pitch Multicopters for incredible acrobatic
@@ -153,14 +153,14 @@ There are several popular frame layouts for MultiCopters
    -  These are very high performance and can even fly inverted, they
       are also mechanically more complex but can be built robustly.
 
-.. image:: ../../../images/StingrayCY1.jpg
+.. image:: ../images/StingrayCY1.jpg
     :target: ../_images/StingrayCY1.jpg
 
 -  And copters with more than 8 motor/propeller units may be useful for
    specialized, extreme `(or
    insane) <https://www.youtube.com/watch?v=L75ESD9PBOw>`__ applications.
 
-.. image:: ../../../images/evolo2.jpg
+.. image:: ../images/evolo2.jpg
     :target: ../_images/evolo2.jpg
 
 Motors, propellers and ESCs
@@ -295,18 +295,18 @@ Professional Grade Power System for large Quadcopters (28" Propellers)
    -  It features Environmentally protected, closed construction and
       easily replaceable bearings.
 
-.. image:: ../../../images/TmotorU8Pro1.jpg
+.. image:: ../images/TmotorU8Pro1.jpg
     :target: ../_images/TmotorU8Pro1.jpg
 
 -  They have very high quality two piece 27, 28 and 29" carbon fiber
    propellers for them as well
 
-.. image:: ../../../images/TMotor29Prop.jpg
+.. image:: ../images/TMotor29Prop.jpg
     :target: ../_images/TMotor29Prop.jpg
 
 -  And a top quality 70 AMP ESC (speed controller) to go with it.
 
-.. image:: ../../../images/thumb_345_220_20131219042814912.jpg
+.. image:: ../images/thumb_345_220_20131219042814912.jpg
     :target: ../_images/thumb_345_220_20131219042814912.jpg
 
 -  U8 Pro T-Motor $300.00, 28" CF Props $370.00 a pair, 70 Amp Pro ESC
@@ -342,10 +342,10 @@ Professional Grade Power System for Medium Quadcopters (16" Propellers)
    -  With a proper setup you could reasonably expect to achieve
       practical 30 minute plus flight times with full camera equipment.
 
-.. image:: ../../../images/product_thumb1.jpg
+.. image:: ../images/product_thumb1.jpg
     :target: ../_images/product_thumb1.jpg
 
-.. image:: ../../../images/Tmotor16Prop.jpg
+.. image:: ../images/Tmotor16Prop.jpg
     :target: ../_images/Tmotor16Prop.jpg
 
 -  This is a very superior ($120.00) `KDE 4014XF-380KV Motor <https://www.kdedirect.com/products/kde4014xf-380>`__ with 3 large
@@ -374,19 +374,19 @@ Professional Grade Power System for Medium Quadcopters (16" Propellers)
    -  This is the motor I will be using in my next Quadcopter and I will
       allow for up to 18" propellers.
 
-.. image:: ../../../images/KDE_4014XF-380KV_Motor_1.jpg
+.. image:: ../images/KDE_4014XF-380KV_Motor_1.jpg
     :target: ../_images/KDE_4014XF-380KV_Motor_1.jpg
 
-.. image:: ../../../images/KDE_4014XF-380KV_Motor_2.jpg
+.. image:: ../images/KDE_4014XF-380KV_Motor_2.jpg
     :target: ../_images/KDE_4014XF-380KV_Motor_2.jpg
 
 A Hyper Efficient Medium Small Professional Grade Motor For Long Endurance
 --------------------------------------------------------------------------
 
-.. image:: ../../../images/thumb_345_220_20130910031425330.jpg
+.. image:: ../images/thumb_345_220_20130910031425330.jpg
     :target: ../_images/thumb_345_220_20130910031425330.jpg
 
-.. image:: ../../../images/TMotor14x4.8Props.jpg
+.. image:: ../images/TMotor14x4.8Props.jpg
     :target: ../_images/TMotor14x4.8Props.jpg
 
 -  The $70.00 \ `T-Motor MN3508 380KV Navigator series motor <http://www.rctigermotor.com/html/2013/Navigator_0910/36.html>`__
@@ -425,10 +425,10 @@ Professional Grade Power System for Small Quadcopters (10" - 14" Propellers)
    -  This would still be a very capable and rugged Quadcopter capable
       of professional results and reliability.
 
-.. image:: ../../../images/product_thumb1.jpg
+.. image:: ../images/product_thumb1.jpg
     :target: ../_images/product_thumb1.jpg
 
-.. image:: ../../../images/TMotor14x4.8Props.jpg
+.. image:: ../images/TMotor14x4.8Props.jpg
     :target: ../_images/TMotor14x4.8Props.jpg
 
 -  The above Motor / Propeller / ESC setups are all as close to
@@ -446,10 +446,10 @@ Consumer Grade Power System for Medium Quadcopters (15" - 16" Propellers)
    -  Which will work well with an easy to install and low EMF $40.00
       Hobbywing four in one ESC.
 
-.. image:: ../../../images/sunnysky_390KV_X4112S_motor.jpg
+.. image:: ../images/sunnysky_390KV_X4112S_motor.jpg
     :target: ../_images/sunnysky_390KV_X4112S_motor.jpg
 
-.. image:: ../../../images/sunsky_motor_575.jpg
+.. image:: ../images/sunsky_motor_575.jpg
     :target: ../_images/sunsky_motor_575.jpg
 
 .. image:: ../../../images/3281_dimg2.jpg
@@ -458,7 +458,7 @@ Consumer Grade Power System for Medium Quadcopters (15" - 16" Propellers)
 -  And they both work well with RCTimer 15x5.5" (4 for $28.00) or
    16x5.5" (4 for $35.00) CF propellers.
 
-.. image:: ../../../images/propellors_841.jpg
+.. image:: ../images/propellors_841.jpg
     :target: ../_images/propellors_841.jpg
 
 -  The Sunnysky Combo will cost about $260.00 and work very efficiently
@@ -488,7 +488,7 @@ Consumer Grade Power System for Small Quadcopters (8" - 12" Propellers)
       well balanced, efficient and
       rugged.\ |dji-motor01| 
       
-      .. image:: ../../../images/DJI-PROP-1038-2.jpg
+      .. image:: ../images/DJI-PROP-1038-2.jpg
           :target: ../_images/DJI-PROP-1038-2.jpg|DJI-PROP-1038-2|
 
 
@@ -509,7 +509,7 @@ on Quadcopters lifting up to 10 pounds.
 -  It is well regarded, efficient and durable and is suitable for use
    with 14" or 15" propellers and 4 cell to 6 cell LiPo batteries.
 
-.. image:: ../../../images/sunnysky_x4108S-11_motor.jpg
+.. image:: ../images/sunnysky_x4108S-11_motor.jpg
     :target: ../_images/sunnysky_x4108S-11_motor.jpg
 
 -  Clearly these are not the only alternatives.
@@ -646,7 +646,7 @@ it is strong and light and easily manufactured.
    -  Some people have said the quality of construction is not as good
       as it could be but for $125.00 it is an amazing bargain.
 
-.. image:: ../../../images/T2eC16hwFIZrQuFnzBSVOZPjKoQ60_3.jpg
+.. image:: ../images/T2eC16hwFIZrQuFnzBSVOZPjKoQ60_3.jpg
     :target: ../_images/T2eC16hwFIZrQuFnzBSVOZPjKoQ60_3.jpg
 
 -  Fabrication requirements and techniques for fiberglass and carbon
@@ -750,16 +750,16 @@ Using manufactured Plastic and Fiberglass Components in Your Own Frames.
    Hoverthings Quadcopters:
 
 
-.. image:: ../../../images/copter_fibreglass_frame_arms.jpg
+.. image:: ../images/copter_fibreglass_frame_arms.jpg
     :target: ../_images/copter_fibreglass_frame_arms.jpg
 
-.. image:: ../../../images/fliparmblack.jpg
+.. image:: ../images/fliparmblack.jpg
     :target: ../_images/fliparmblack.jpg
 
 -  DJI injection molded frame arms from their Flamewheel copters are
    used in the `TBS Discovery FPV frame. <http://team-blacksheep.com/products/product:98>`__
 
-.. image:: ../../../images/Team-Blacksheep-TBS-Discovery-1.jpg
+.. image:: ../images/Team-Blacksheep-TBS-Discovery-1.jpg
     :target: ../_images/Team-Blacksheep-TBS-Discovery-1.jpg
 
 -  Clearly using manufactured parts will require research as to
@@ -774,7 +774,7 @@ Homemade waterproof frame using a hinged electrical box
 An absolutely excellent, very clean, rugged and waterproof design using
 carbon fiber arms and plastic electrical and plumbing parts.
 
-.. image:: ../../../images/wavecopterimprovements4.jpg
+.. image:: ../images/wavecopterimprovements4.jpg
     :target: ../_images/wavecopterimprovements4.jpg
 
 -  Here is a link to `Alec Short's construction article in Makezine <http://makezine.com/projects/wavecopter-a-waterproof-quadcopter/>`__
@@ -805,20 +805,20 @@ Vacuum Formed Frames and Components.
    -  The no longer in production Safe Flight Copters SFC4410-1 vacuum
       formed propeller protected H Quad Frame.
 
-.. image:: ../../../images/SFC4410_ASSEMBLED.jpg
+.. image:: ../images/SFC4410_ASSEMBLED.jpg
     :target: ../_images/SFC4410_ASSEMBLED.jpg
 
 -  And the inexpensive ($120.00) and extra tough, water proof
    `Aquacopter frame <http://www.aquacopters.com/>`__
 
-.. image:: ../../../images/aquacopter_frame.jpg
+.. image:: ../images/aquacopter_frame.jpg
     :target: ../_images/aquacopter_frame.jpg
 
 
 -  A fully functional vacuum forming system can actually be constructed
    with a shop vacuum and an electric grill.
 
-.. image:: ../../../images/proto-form-vacuum-drawing.gif
+.. image:: ../images/proto-form-vacuum-drawing.gif
     :target: ../_images/proto-form-vacuum-drawing.gif
 
 -  Vacuum forming can also be used to make central shells for copters
@@ -884,7 +884,7 @@ Specific Building Examples and Techinques
    -  If you really are determined to build your own frame, this is a
       really good place to start.
 
-.. image:: ../../../images/Quad18X12.jpg
+.. image:: ../images/Quad18X12.jpg
     :target: ../_images/Quad18X12.jpg
 
 -  The above design is a very capable pro-grade Quadcopter with an
@@ -916,7 +916,7 @@ A Small Quadcopter Optimised to Use High Efficiency Lithium Batteries
    show that a hover time of 60 minutes might be possible with a
    realistic fly around time of about 30 minutes.
 
-.. image:: ../../../images/Quad10X1.jpg
+.. image:: ../images/Quad10X1.jpg
     :target: ../_images/Quad10X1.jpg
 
 This is an easy to build example of a practical and rugged design with
@@ -928,7 +928,7 @@ Links To Specific MultiCopter Builds
 -  Here is a link to Forrest Franz's build of a very simple, very light
    weight, very strong \ `carbon fiber Quadcopter frame <http://diydrones.com/forum/topics/build-your-own-copter-part-iii?xg_source=activity>`__
 
-.. image:: ../../../images/QuadMartyFitTest.jpg
+.. image:: ../images/QuadMartyFitTest.jpg
     :target: ../_images/QuadMartyFitTest.jpg
 
 -  And some links to some of Forrests extremely ambitious copter
@@ -942,12 +942,12 @@ Links To Specific MultiCopter Builds
 -  And here is a link to Luke Cook's very serious, very well thought out
    and meticulously executed \ `OctoCopter Build <http://diydrones.com/profiles/blogs/octocopter-scratch-build>`__
 
-   .. image:: ../../../images/octocopter_luke_cook.jpg
+   .. image:: ../images/octocopter_luke_cook.jpg
        :target: ../_images/octocopter_luke_cook.jpg
 
 -  A link to Stuart Dodin's really nice X8 heavy lifter Octocopter
 
-   .. image:: ../../../images/x8_octocopter_stuart_dodin.jpg
+   .. image:: ../images/x8_octocopter_stuart_dodin.jpg
        :target: ../_images/x8_octocopter_stuart_dodin.jpg
 
 A Commercial MultiCopter Exhibiting Advanced Design Concepts
@@ -956,7 +956,7 @@ A Commercial MultiCopter Exhibiting Advanced Design Concepts
 Here is an example of an excellent QuadCopter design: the Aeryon
 SkyRanger for high end UAV applications.
 
-.. image:: ../../../images/Aeryon_SkyRanger2.jpg
+.. image:: ../images/Aeryon_SkyRanger2.jpg
     :target: ../_images/Aeryon_SkyRanger2.jpg
 
 This copter has a lot of things right and is really a study in good
@@ -986,7 +986,7 @@ design and quality construction.
 #. A simple spring loaded landing gear provides for uneven landing sites
    and minimal interference with the prop wash.
 
-.. image:: ../../../images/Skyranger.jpg
+.. image:: ../images/Skyranger.jpg
     :target: ../_images/Skyranger.jpg
 
 This QuadCopter incorporates several excellent design concepts and shows
@@ -1047,5 +1047,5 @@ Conclusion and Additional Design Considerations
 
 
 
-.. |dji-motor01| image:: ../../../images/dji-motor01.jpg
+.. |dji-motor01| image:: ../images/dji-motor01.jpg
     :target: ../_images/dji-motor01.jpg

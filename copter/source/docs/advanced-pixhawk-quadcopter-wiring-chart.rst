@@ -9,7 +9,7 @@ Quadcopter for us.
 
 (Control Scroll wheel will let you zoom in on the image below!)
 
-.. image:: ../../../images/Pixhawk-Inforgraphic2.jpg
+.. image:: ../images/Pixhawk-Inforgraphic2.jpg
     :target: ../_images/Pixhawk-Inforgraphic2.jpg
 
 This chart Illustrates a quadcopter with a variety of options.
@@ -20,7 +20,7 @@ This chart Illustrates a quadcopter with a variety of options.
 -  Actual Motor number to Quadcopter frame location is shown below and
    will require appropriate signal and motor wire routing.
 
-.. image:: ../../../images/APM_2_5_MOTORS_QUAD_enc1.jpg
+.. image:: ../images/APM_2_5_MOTORS_QUAD_enc1.jpg
     :target: ../_images/APM_2_5_MOTORS_QUAD_enc1.jpg
 
 -  A 3DR PPM-Sum encoder with conventional receiver is illustrated, A

@@ -15,5 +15,5 @@ Prerequisites
 Data
 ----
 
-.. image:: ../../../images/apm_planner_2_hud.jpg
+.. image:: ../images/apm_planner_2_hud.jpg
     :target: ../_images/apm_planner_2_hud.jpg

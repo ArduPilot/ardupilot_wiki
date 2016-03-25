@@ -7,7 +7,7 @@ MAVProxy on Windows 7
 This guide shows how to set up MAVProxy to allow forwarding of messages
 via network interfaces.
 
-.. image:: ../../../images/Mavproxy_usage.jpg
+.. image:: ../images/Mavproxy_usage.jpg
     :target: ../_images/Mavproxy_usage.jpg
 
 Overview
@@ -70,7 +70,7 @@ flight data such as mode and current waypoint appear. Occasionally some
 data does seem to result in glitching and odd characters appearing
 onscreen but this does not seem to affect reliability or performance.
 
-.. image:: ../../../images/mavproxy_running.png
+.. image:: ../images/mavproxy_running.png
     :target: ../_images/mavproxy_running.png
 
 Enter a command such as mode FBWA and press enter. You should see

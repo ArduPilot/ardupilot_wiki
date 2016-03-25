@@ -14,7 +14,7 @@ hardware-in-the-loop simulator with Plane (only).
    been verified by the official dev team. Questions and requests for help
    should be made in the DIY Drones forums.
 
-.. figure:: ../../../images/flightgear1.jpg
+.. figure:: ../images/flightgear1.jpg
    :target: ../_images/flightgear1.jpg
 
    Flightgear screenshot

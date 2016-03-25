@@ -42,7 +42,7 @@ a PWM (i.e. Servo) but because of `an issue with the Relay pins being pulled hig
 recommend using PWM, in particular any of the Pixhawk's AUX OUT 1 to 4
 pins.
 
-.. image:: ../../../images/Parachute_Pixhawk.jpg
+.. image:: ../images/Parachute_Pixhawk.jpg
     :target: ../_images/Parachute_Pixhawk.jpg
 
 Setup through the mission planner
@@ -61,16 +61,16 @@ set the following parameters.
 -  RC9_FUNCTION = "27".  RC9 refers to the Pixhawk's AUX OUT 1.  To use
    AUX OUT2 instead set RC10_FUNCTION to 27, etc.
 
-.. image:: ../../../images/Parachute_MPSetup1.png
+.. image:: ../images/Parachute_MPSetup1.png
     :target: ../_images/Parachute_MPSetup1.png
 
-.. image:: ../../../images/Parachute_MPSetup2.png
+.. image:: ../images/Parachute_MPSetup2.png
     :target: ../_images/Parachute_MPSetup2.png
 
 Setup Ch7 to manually deploy the parachute from the Mission Planner's
 Extended Tuning page.
 
-.. image:: ../../../images/Parachute_MPSetup_Ch7.png
+.. image:: ../images/Parachute_MPSetup_Ch7.png
     :target: ../_images/Parachute_MPSetup_Ch7.png
 
 When will the parachute deploy?

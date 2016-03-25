@@ -52,7 +52,7 @@ In Mission Planner's Advanced Parameter List, set the
 -  2 to RTL unless in AUTO mode in which case we should continue with
    the mission
 
-.. image:: ../../../images/FailsafeAdvPar801.jpg
+.. image:: ../images/FailsafeAdvPar801.jpg
     :target: ../_images/FailsafeAdvPar801.jpg
 
 .. note::

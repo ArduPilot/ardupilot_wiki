@@ -7,7 +7,7 @@ Attitude Control (Copter Code Overview)
 Between AC3.1.5 and AC 3.2 the attitude control logic was restructured
 as part of "the onion" project.  The new structure is shown below.
 
-.. image:: ../../../images/AC_CodeOverview_ManualFlightMode.png
+.. image:: ../images/AC_CodeOverview_ManualFlightMode.png
     :target: ../_images/AC_CodeOverview_ManualFlightMode.png
 
 On every update (i.e. 400hz on Pixhawk, 100hz on APM2.x) the following

@@ -339,7 +339,7 @@ it is possible for your motors to momentarily stop leading to a twitch.
 Try increasing this parameter to 150. You should be careful not to set
 this parameter too high (i.e. >150 especially on a high powered copter).
 
-.. image:: ../../../images/THR_MIN_too_low1-300x97.jpg
+.. image:: ../images/THR_MIN_too_low1-300x97.jpg
     :target: ../_images/THR_MIN_too_low1-300x97.jpg
 
 One of my motors started shaking and then burned out!
@@ -369,7 +369,7 @@ If for some reason, connecting power to the RC rail does not power your
 board, check to see if that jumper is soldered. If it isn't, as shown
 below, just solder a blob of solder over the two pads to connect them.
 
-.. image:: ../../../images/amonet-31.jpg
+.. image:: ../images/amonet-31.jpg
     :target: ../_images/amonet-31.jpg
 
 In the "raw sensor view" of the Mission Planner, the Z accelerometer reading is always 1000, not 0, when it's on the bench
@@ -549,7 +549,7 @@ a GPS will rarely give an accurate position while indoors or near walls
 due to multipath-ing. If you go outside you should see that it settles
 down.
 
-.. image:: ../../../images/GPSMultiPath1.png
+.. image:: ../images/GPSMultiPath1.png
     :target: ../_images/GPSMultiPath1.png
 
 In Alt-Hold or loiter my copter is very bouncy or takes off into the sky
@@ -588,7 +588,7 @@ extremely badly vibrating copter (top) and a nearly perfectly smooth
 copter (bottom). The Z-axis vibrations should not move up and down more
 than -5 to -15 or alt hold will not function correctly.
 
-.. image:: ../../../images/BadVibrations1.png
+.. image:: ../images/BadVibrations1.png
     :target: ../_images/BadVibrations1.png
 
 There is a good
@@ -642,5 +642,5 @@ the bizarre altitude display in the mission planner. Note: you will
 likely have seen "Calibration failed (????)" after you attempted to
 calibrate the accelerometers values.
 
-.. image:: ../../../images/AltCrazy1.jpg
+.. image:: ../images/AltCrazy1.jpg
     :target: ../_images/AltCrazy1.jpg

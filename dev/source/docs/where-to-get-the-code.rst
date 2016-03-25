@@ -93,7 +93,7 @@ To fork the main repository:
 -  Log into Github and go to https://github.com/diydrones/ardupilot.
 -  At the upper right is a button, "Fork":
 
-   .. image:: ../../../images/APM-Git-Github-Fork-300x64.jpg
+   .. image:: ../images/APM-Git-Github-Fork-300x64.jpg
        :target: ../_images/APM-Git-Github-Fork-300x64.jpg
 
    Click the **Fork** button and follow the directions.
@@ -115,7 +115,7 @@ repository.
 The information/tools you need for cloning the project are on the right
 side of the screen on each Github repository home page.
 
-.. figure:: ../../../images/APM-Git-Github-Clone.jpg
+.. figure:: ../images/APM-Git-Github-Clone.jpg
    :target: ../_images/APM-Git-Github-Clone.jpg
 
    Github section for cloning a repo
@@ -143,7 +143,7 @@ side of the screen on each Github repository home page.
    repository in your favorite web browser
 -  Click on the "Clone in Desktop" button on the bottom right
 
-.. image:: ../../../images/CloningTheRepository_Windows1.png
+.. image:: ../images/CloningTheRepository_Windows1.png
     :target: ../_images/CloningTheRepository_Windows1.png
 
 -  If you have not installed GitHub before:
@@ -152,7 +152,7 @@ side of the screen on each Github repository home page.
       button on the top
       right\ 
       
-      .. image:: ../../../images/CloningTheRepository_Windows_DownloadGithub.png
+      .. image:: ../images/CloningTheRepository_Windows_DownloadGithub.png
           :target: ../_images/CloningTheRepository_Windows_DownloadGithub.png
       
    -  Save the **GitHubSetup.exe** somewhere on your machine and then
@@ -162,7 +162,7 @@ side of the screen on each Github repository home page.
    recent commits or right-mouse-button click on the diydrones/ardupilot
    repository and "open in explorer".
 
-   .. image:: ../../../images/CloningTheRepository_Windows_OpenGithub.png
+   .. image:: ../images/CloningTheRepository_Windows_OpenGithub.png
        :target: ../_images/CloningTheRepository_Windows_OpenGithub.png
    
 -  You can now also open the file in your favourite editor such as
@@ -249,13 +249,13 @@ branch and commit it.
 #. Create a branch. In the GitHub for Windows application, click on the
    'master' button in the upper right corner of the window.
 
-   .. image:: ../../../images/APM-Git-Github-Windows-Branch.jpg
+   .. image:: ../images/APM-Git-Github-Windows-Branch.jpg
        :target: ../_images/APM-Git-Github-Windows-Branch.jpg
 
    Enter 'apm_git_tutorial' and click the "+ create branch:
    apm_git_tutorial" dropdown.
 
-   .. figure:: ../../../images/GitHubForWindowsClient_CreateBranch.png
+   .. figure:: ../images/GitHubForWindowsClient_CreateBranch.png
       :target: ../_images/GitHubForWindowsClient_CreateBranch.png
 
       Create a new branch in Github for Windows
@@ -268,7 +268,7 @@ branch and commit it.
    purpose of this tutorial, you can just use a single line stating:
    "Added name to GIT_Success.txt"
 
-   .. figure:: ../../../images/GitHubForWindowsClient_CommitingChange.png
+   .. figure:: ../images/GitHubForWindowsClient_CommitingChange.png
       :target: ../_images/GitHubForWindowsClient_CommitingChange.png
 
       Github for windows: Commit Change
@@ -287,7 +287,7 @@ branch and commit it.
    back to the official releases). In the client you can do this by
    pressing the **Publish** link:
 
-   .. figure:: ../../../images/GitHubForWindowsClient_Publish_Push.png
+   .. figure:: ../images/GitHubForWindowsClient_Publish_Push.png
       :target: ../_images/GitHubForWindowsClient_Publish_Push.png
 
       GitHub for Windows Client: Pushing changes

@@ -56,7 +56,7 @@ Components required in addition to the Flamewheel ARF kit
 -  You will also need an adjustable soldering iron, rosin cored solder,
    blue thread locker and some small Metric Allen wrenches.
 
-.. image:: ../../../images/Flamewheel330Start800.jpg
+.. image:: ../images/Flamewheel330Start800.jpg
     :target: ../_images/Flamewheel330Start800.jpg
 
 Frame and Motor Assembly
@@ -108,7 +108,7 @@ Frame and Motor Assembly
 
    -  Or you can run them around the frame member if you prefer.
 
-.. image:: ../../../images/QuadHookUp800B.jpg
+.. image:: ../images/QuadHookUp800B.jpg
     :target: ../_images/QuadHookUp800B.jpg
 
 ESC Installation and Soldering the Power Distribution Board
@@ -151,7 +151,7 @@ ESC Installation and Soldering the Power Distribution Board
    -  DJI ESCs are digital, optically isolated, are completely
       pre-balanced at the factory and work fine out of the box.
 
-.. image:: ../../../images/FlameWheel330Oring800.jpg
+.. image:: ../images/FlameWheel330Oring800.jpg
     :target: ../_images/FlameWheel330Oring800.jpg
 
 Reduced Vibration Installation of the Flight Control Board
@@ -185,7 +185,7 @@ Reduced Vibration Installation of the Flight Control Board
 -  Correct wiring of The Flight Control Board board and configuration
    for flight are covered extensively elsewhere in the Wiki.
 
-.. image:: ../../../images/FlameWheel330OringMountEnd800.jpg
+.. image:: ../images/FlameWheel330OringMountEnd800.jpg
     :target: ../_images/FlameWheel330OringMountEnd800.jpg
 
 .. note::

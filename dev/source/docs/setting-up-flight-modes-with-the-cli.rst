@@ -22,5 +22,5 @@ Setting up flight modes with the CLI
 Below is an example output when setting the flight mode switch's 2nd and
 3rd position to Alt Hold and Auto respectively
 
-.. image:: ../../../images/ac2modes.png
+.. image:: ../images/ac2modes.png
     :target: ../_images/ac2modes.png

@@ -22,7 +22,7 @@ point, and loiter there ready for you to take over again. You then use a
 switch on your transmitter or use commands in your Ground Control
 Station (GCS) to take back control.
 
-.. image:: ../../../images/geofence1.jpg
+.. image:: ../images/geofence1.jpg
     :target: ../_images/geofence1.jpg
 
 Use for R/C training
@@ -202,7 +202,7 @@ Mission Planner
 Mission Planner follows a very similar process.  Start by right-clicking
 where you want to begin the geo-fence boundary.
 
-.. figure:: ../../../images/MPRightClickDrawPolygon.jpg
+.. figure:: ../images/MPRightClickDrawPolygon.jpg
    :target: ../_images/MPRightClickDrawPolygon.jpg
 
    Add Polygon Point
@@ -212,14 +212,14 @@ the polygon will appear.  You can drag any points you want to adjust.
 Then right click on the map where you want the plane to return to when a
 geo-fence breach occurs.
 
-.. figure:: ../../../images/MPRightClickGeofenceSetRTL.jpg
+.. figure:: ../images/MPRightClickGeofenceSetRTL.jpg
    :target: ../_images/MPRightClickGeofenceSetRTL.jpg
 
    Geo-Fence Set ReturnLocation
 
 Finally upload the geo-fence.
 
-.. figure:: ../../../images/MPRightClickGeofenceUpload.jpg
+.. figure:: ../images/MPRightClickGeofenceUpload.jpg
    :target: ../_images/MPRightClickGeofenceUpload.jpg
 
    Geo-Fence Upload
@@ -317,7 +317,7 @@ north, west and south. There were also numerous altitude breaches, as I
 was using this flight to try to improve my inverted flight skills in
 MANUAL mode. The plane would not have survived without the geo-fence!
 
-.. image:: ../../../images/geofence-CMAC1.jpg
+.. image:: ../images/geofence-CMAC1.jpg
     :target: ../_images/geofence-CMAC1.jpg
 
 Notice that the geo-fence in this example runs along the middle of the

@@ -121,5 +121,5 @@ written to the dataflash logs. Some details of the contents of those
 messages can be found on the :ref:`Downloading and Analyzing Data Logs in Mission Planner <common-downloading-and-analyzing-data-logs-in-mission-planner_message_details_copter_specific>`
 wiki page.
 
-.. |AutoTuneCh7Switch| image:: ../../../images/AutoTuneCh7Switch.png
+.. |AutoTuneCh7Switch| image:: ../images/AutoTuneCh7Switch.png
     :target: ../_images/AutoTuneCh7Switch.png

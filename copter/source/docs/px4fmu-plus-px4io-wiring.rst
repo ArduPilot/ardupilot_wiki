@@ -17,7 +17,7 @@ This article provides an overview of the :ref:`PX4FMU <common-px4fmu-overview>` 
 PX4FMU plus PX4IO Wiring Diagrams
 =================================
 
-.. image:: ../../../images/PX4IOWiring1PPMSUMrec.jpg
+.. image:: ../images/PX4IOWiring1PPMSUMrec.jpg
     :target: ../_images/PX4IOWiring1PPMSUMrec.jpg
 
 .. figure:: ../../../images/PX4FMU_PX4IO_Wire_3DRradio2.jpg

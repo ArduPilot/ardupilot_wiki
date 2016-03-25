@@ -50,7 +50,7 @@ for more information.
 SITL Architecture
 =================
 
-.. image:: ../../../images/ArdupilotSoftwareintheLoopSITL.jpg
+.. image:: ../images/ArdupilotSoftwareintheLoopSITL.jpg
     :target: ../_images/ArdupilotSoftwareintheLoopSITL.jpg
 
 .. toctree::

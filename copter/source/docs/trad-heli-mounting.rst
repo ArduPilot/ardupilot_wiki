@@ -17,5 +17,5 @@ gear as show in the image below.
    dampening foam (see :ref:`Vibration Dampening wiki page <common-vibration-damping>` for ideas on mounting methods to
    isolate the flight controller from vibrations)
 
-.. image:: ../../../images/TradHeli_Mount3D.jpg
+.. image:: ../images/TradHeli_Mount3D.jpg
     :target: ../_images/TradHeli_Mount3D.jpg

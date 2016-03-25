@@ -359,7 +359,7 @@ of zero will stop the camera shutter from being triggered**
 Do-Set-Relay
 ~~~~~~~~~~~~
 
-.. image:: ../../../images/MissionList_DoSetRelay.png
+.. image:: ../images/MissionList_DoSetRelay.png
     :target: ../_images/MissionList_DoSetRelay.png
 
 Set a :ref:`Relay <common-relay>` pin's voltage high or low.  The

@@ -59,8 +59,8 @@ Adjust corresponding \ ``RC_REV`` until the behavior is correct.
    it is most likely that the servo orientations are different or rotation
    is reversed through programming on some digital servos
 
-.. |4surfLeftYaw| image:: ../../../images/4surfLeftYaw.jpg
+.. |4surfLeftYaw| image:: ../images/4surfLeftYaw.jpg
     :target: ../_images/4surfLeftYaw.jpg
 
-.. |4surfRightYaw| image:: ../../../images/4surfRightYaw.jpg
+.. |4surfRightYaw| image:: ../images/4surfRightYaw.jpg
     :target: ../_images/4surfRightYaw.jpg

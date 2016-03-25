@@ -9,7 +9,7 @@ Copter Home
    The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
 
-.. image:: ../../images/home_copter.jpg
+.. image:: /images/home_copter.jpg
     :target: _images/home_copter.jpg
 
 ..  raw:: html
@@ -96,7 +96,7 @@ Rotor Craft types
     <tr>
     <td width="48%">
 
-.. image:: ../../images/helicopter_trex450.jpg
+.. image:: /images/helicopter_trex450.jpg
    :target: _images/helicopter_trex450.jpg 
    :width: 211px
 
@@ -107,7 +107,7 @@ Rotor Craft types
     </td>
     <td width="48%">
 
-.. image:: ../../images/3DR_arducopter_hexa_b_frame.jpg
+.. image:: /images/3DR_arducopter_hexa_b_frame.jpg
    :target: _images/3DR_arducopter_hexa_b_frame.jpg
    :width: 211px
 

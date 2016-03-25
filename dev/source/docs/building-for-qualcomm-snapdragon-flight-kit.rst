@@ -72,7 +72,7 @@ a Windows PC.
 #. Click the **Download** button and if all goes well the OS will be
    flashed to the board
 
-.. image:: ../../../images/Load_prog_emmc_firehose1.png
+.. image:: ../images/Load_prog_emmc_firehose1.png
     :target: ../_images/Load_prog_emmc_firehose1.png
 
 Connecting to the board using the FTDI cable

@@ -113,13 +113,13 @@ Inexpensive, Ready To Fly Nano, Micro or Small QuadCopter
    a Hubsan H111 which flies remarkably well (Middle and right images
    below).
 
-.. image:: ../../../images/6208-Stinger-3qtr-blue_o.jpg
+.. image:: ../images/6208-Stinger-3qtr-blue_o.jpg
     :target: ../_images/6208-Stinger-3qtr-blue_o.jpg
 
-.. image:: ../../../images/ProtoX1.jpg
+.. image:: ../images/ProtoX1.jpg
     :target: ../_images/ProtoX1.jpg
 
-.. image:: ../../../images/ProtoX.jpg
+.. image:: ../images/ProtoX.jpg
     :target: ../_images/ProtoX.jpg
 
 -  Below left is a larger, but very durable copter, the $88.00 UDI U818A
@@ -129,10 +129,10 @@ Inexpensive, Ready To Fly Nano, Micro or Small QuadCopter
 -  The Blade Nano QX at $90.00 below right is also highly recommended,
    is very light and easy to fly and incredibly durable.
 
-.. image:: ../../../images/SKU074490.14.jpg
+.. image:: ../images/SKU074490.14.jpg
     :target: ../_images/SKU074490.14.jpg
 
-.. image:: ../../../images/blh7600.jpg
+.. image:: ../images/blh7600.jpg
     :target: ../_images/blh7600.jpg
 
 -  If you are just starting out: Get one of these inexpensive, small,
@@ -174,7 +174,7 @@ actually \ **Ready To Fly** and comes with the top of the line
        support a GoPro camera or even FPV (First Person View) when you are
        ready.
 
-       .. image:: ../../../images/AeduCopterAndIris.jpg
+       .. image:: ../images/AeduCopterAndIris.jpg
            :target: ../_images/AeduCopterAndIris.jpg
 
 #. Erle Robotics also offers a DIY kit (named `Erle-Copter Drone Kit <https://erlerobotics.com/blog/product/erle-copter-diy-ubuntu-drone-kit/>`__,
@@ -187,7 +187,7 @@ purchase the kit assembled.
        charger. If you wish to make autonomous missions, you need to acquire
        a GPS.
 
-       .. image:: ../../../images/ErleCopter1.jpg
+       .. image:: ../images/ErleCopter1.jpg
            :target: ../_images/ErleCopter1.jpg
 
 Almost Ready to Fly
@@ -236,7 +236,7 @@ Almost Ready to Fly
 #. The **DJI F550 ARF Hexacopter** is a good choice for more advanced
    uses, but it is not ideal as a first MultiCopter.
 
-.. image:: ../../../images/FlamewheelF450FrameMotorsEscs.jpg
+.. image:: ../images/FlamewheelF450FrameMotorsEscs.jpg
     :target: ../_images/FlamewheelF450FrameMotorsEscs.jpg
 
 Frame Kit
@@ -279,7 +279,7 @@ Frame Kit
    #. Here is a link to the :ref:`Hoverthings Flip Sport Quadcopter Wiki Build Page <hoverthings-flip-sport-quadcopter>` using a Pixhawk
       or PX4 flight controller.
 
-      .. image:: ../../../images/FlipPX41.jpg
+      .. image:: ../images/FlipPX41.jpg
           :target: ../_images/FlipPX41.jpg
 
 #. The `Tarot 650 <http://www.ebay.com/itm/Tarot-Iron-Man-650-Foldable-3K-carbon-fiber-Quad-copter-Quadcopter-Frame-TL65B02-/151050276421>`__ is
@@ -320,16 +320,16 @@ Frame Kit
    for various multicopters and
    components: `eCalc <http://www.ecalc.ch/indexcalc.htm>`__
 
-.. image:: ../../../images/copter_tarot_frame.jpg
+.. image:: ../images/copter_tarot_frame.jpg
     :target: ../_images/copter_tarot_frame.jpg
 
 **Or Perhaps a really tiny little `250 sized $10.00 frame <http://www.hobbyking.com/hobbyking/store/__47075__HobbyKing_FPV250_Quad_Copter_A_Mini_Sized_FPV_Multi_Rotor_kit_.html>`__
 with FPV capability you can fly indoors or out.**
 
-.. image:: ../../../images/fpv250_mini_quad_copter_frame.jpg
+.. image:: ../images/fpv250_mini_quad_copter_frame.jpg
     :target: ../_images/fpv250_mini_quad_copter_frame.jpg
 
-.. image:: ../../../images/fpv250_mini_quad_copter.jpg
+.. image:: ../images/fpv250_mini_quad_copter.jpg
     :target: ../_images/fpv250_mini_quad_copter.jpg
 
 Scratch Built

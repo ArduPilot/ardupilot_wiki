@@ -32,7 +32,7 @@ for an automatic mode, but this is not enabled for AC3.3.
 
    Support for landing gear was introduced in AC 3.3
 
-.. image:: ../../../images/LandingGear_HobbyKing.jpg
+.. image:: ../images/LandingGear_HobbyKing.jpg
     :target: ../_images/LandingGear_HobbyKing.jpg
 
 Connecting to the Pixhawk
@@ -42,7 +42,7 @@ Most retractable landing gear will require just a single PWM cable to
 connected to one of the AUX outputs on the back of the Pixhawk (AUX1 ~
 AUX4).
 
-.. image:: ../../../images/LandingGear_Pixhawk.jpg
+.. image:: ../images/LandingGear_Pixhawk.jpg
     :target: ../_images/LandingGear_Pixhawk.jpg
 
 .. note::
@@ -65,7 +65,7 @@ following parameters:
 -  :ref:`LGR_SERVO_RTRACT <LGR_SERVO_RTRACT>`
    — servo PWM value required to retract the landing gear.
 
-.. figure:: ../../../images/LandingGear_PixhawkSetup1.png
+.. figure:: ../images/LandingGear_PixhawkSetup1.png
    :target: ../_images/LandingGear_PixhawkSetup1.png
 
    MissionPlanner: Landing Gear Configuration
@@ -76,7 +76,7 @@ When the switch is in the "low" position the gear will be deployed,
 not change state (will be used for automatic operation on a future
 release).
 
-.. figure:: ../../../images/LandingGear_PixhawkSetup2.png
+.. figure:: ../images/LandingGear_PixhawkSetup2.png
    :target: ../_images/LandingGear_PixhawkSetup2.png
 
    Mission Planner: Setting Manual Landing Gear Control

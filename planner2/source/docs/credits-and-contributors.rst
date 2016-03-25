@@ -32,7 +32,7 @@ with contributions from:
 
 **APM Planner**
 
-.. image:: ../../../images/apm_planner2_flight-data-live.jpg
+.. image:: ../images/ap2_flight-data-live.jpg
     :target: ../_images/apm_planner2_flight-data-live.jpg
 
 
@@ -43,11 +43,11 @@ with contributions from:
 
 **QGround Control**
 
-.. image:: ../../../images/qground-control_flight.jpg
+.. image:: ../images/qground-control_flight.jpg
     :target: ../_images/qground-control_flight.jpg
 
 
 
-.. image:: ../../../images/apm_planner_logo.png
+.. image:: ../images/apm_planner_logo.png
     :target: ../_images/apm_planner_logo.png
 

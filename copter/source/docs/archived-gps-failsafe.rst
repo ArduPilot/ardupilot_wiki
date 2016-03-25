@@ -26,7 +26,7 @@ mode that requires the GPS (Auto, Guided, Loiter, RTL, Circle, Position
 or Drift) mode it will initiate a Land (or AltHold if FS_GPS_ENABLE is
 set to 2).
 
-.. image:: ../../../images/GPSFailsafeAltHold2.png
+.. image:: ../images/GPSFailsafeAltHold2.png
     :target: ../_images/GPSFailsafeAltHold2.png
 
 Additional information on the GPS failsafe and Glitch protection can be

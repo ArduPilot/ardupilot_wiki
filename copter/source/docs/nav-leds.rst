@@ -28,7 +28,7 @@ Connect the buzzer as follows:
    pin
 -  buzzer's black wire should be connected to the outer ground pin
 
-.. image:: ../../../images/Buzzer_ConnectionDiagram.jpg
+.. image:: ../images/Buzzer_ConnectionDiagram.jpg
     :target: ../_images/Buzzer_ConnectionDiagram.jpg
 
 The buzzer will beep in these situations:
@@ -51,7 +51,7 @@ Enabling a buzzer in Mission Planner
    be enabled/disabled through the Mission Planner's CONFIG/TUNING >
    Standard Params > Copter LED Mode drop down.
 
-.. image:: ../../../images/Buzzer_MPSetup.png
+.. image:: ../images/Buzzer_MPSetup.png
     :target: ../_images/Buzzer_MPSetup.png
 
 Video demonstration of connecting the buzzer is below.

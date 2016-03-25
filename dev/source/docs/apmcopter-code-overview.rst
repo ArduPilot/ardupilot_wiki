@@ -12,10 +12,10 @@ are shared with Plane and Rover.
 Click on the images below to see a high level view of flight-mode to
 motor output code:
 
-.. image:: ../../../images/AC_CodeOverview_ManualFlightMode.png
+.. image:: ../images/AC_CodeOverview_ManualFlightMode.png
     :target: ../_images/AC_CodeOverview_ManualFlightMode.png
 
-.. image:: ../../../images/AC_CodeOverview_AutoFlightModes.png
+.. image:: ../images/AC_CodeOverview_AutoFlightModes.png
     :target: ../_images/AC_CodeOverview_AutoFlightModes.png
 
 Sections:

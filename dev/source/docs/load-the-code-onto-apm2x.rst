@@ -46,7 +46,7 @@ Settings/Advanced, ensure that the "Set RTS On Close" box is checked, as
 shown below. Once you've made this change once, you won't have to do it
 again.*
 
-.. image:: ../../../images/eighteen.jpg
+.. image:: ../images/eighteen.jpg
     :target: ../_images/eighteen.jpg
 
 Connecting the cable
@@ -60,13 +60,13 @@ of the APM servo outputs).
 
 If you're using a USB cable, connect it here:
 
-.. image:: ../../../images/amp2x_load_firmware_usb_connection.jpg
+.. image:: ../images/amp2x_load_firmware_usb_connection.jpg
     :target: ../_images/amp2x_load_firmware_usb_connection.jpg
 
 If you're using an FTDI cable, connect it here, noting the marking for
 the black and green sides of the cable:
 
-.. image:: ../../../images/amp2x_load_firmware_ftdi_connection.jpg
+.. image:: ../images/amp2x_load_firmware_ftdi_connection.jpg
     :target: ../_images/amp2x_load_firmware_ftdi_connection.jpg
 
 Setting the Sketchbook folder
@@ -82,7 +82,7 @@ and open the \ **Preferences** dialog. Set the sketchbook location to
 the\ ``Sketchbook`` folder you created or are using. Here's where I have
 mine:
 
-.. image:: ../../../images/sketchfile.png
+.. image:: ../images/sketchfile.png
     :target: ../_images/sketchfile.png
 
 Once you've changed that directory, you must close Arduino and restart
@@ -108,9 +108,9 @@ menu which allows you to select the board type.
    You will need to restart your Arduino IDE after changing the
    above.
 
-.. image:: ../../../images/ArduinoIDEmodified.png
+.. image:: ../images/ArduinoIDEmodified.png
     :target: ../_images/ArduinoIDEmodified.png
 
-.. image:: ../../../images/ArduinoAPMConfig.png
+.. image:: ../images/ArduinoAPMConfig.png
     :target: ../_images/ArduinoAPMConfig.png
 

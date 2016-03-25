@@ -24,7 +24,7 @@ In-flight tuning
 Rate Roll P and Rate Pitch P can be tuned in flight using your
 transmitter's channel 6 tuning knob by following these instructions:
 
-.. image:: ../../../images/RollPitchTuning.png
+.. image:: ../images/RollPitchTuning.png
     :target: ../_images/RollPitchTuning.png
 
 #. Connect your APM/Pixhawk/PX4 to the Mission Planner

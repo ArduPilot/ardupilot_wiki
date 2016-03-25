@@ -33,7 +33,7 @@ Safety First: Remove your quad's props, the motors will be live during the simul
 
 1. Upload the quad hil firmware
 
-.. image:: ../../../images/ac2hilfirmware.jpg
+.. image:: ../images/ac2hilfirmware.jpg
     :target: ../_images/ac2hilfirmware.jpg
 
 2. Copy quadhil.xml (included with planner) to your FlightGear directory
@@ -52,7 +52,7 @@ eg
 
 ``C:Program Files (x86)FlightGearAircraft``
 
-.. image:: ../../../images/ac2fgmodel.jpg
+.. image:: ../images/ac2fgmodel.jpg
     :target: ../_images/ac2fgmodel.jpg
 
 4. Start the Mission Planner
@@ -61,14 +61,14 @@ eg
 
 6. Setup the radio/modes as required. Setup frame to +.
 
-.. image:: ../../../images/ac2setup.jpg
+.. image:: ../images/ac2setup.jpg
     :target: ../_images/ac2setup.jpg
 
 7. Goto simulation.
 
 8. Check Quad, and FlightGear.
 
-.. image:: ../../../images/ac2simulator.jpg
+.. image:: ../images/ac2simulator.jpg
     :target: ../_images/ac2simulator.jpg
 
 9. Click start fg quad and wait for FlightGear to start.

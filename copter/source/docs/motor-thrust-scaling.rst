@@ -27,7 +27,7 @@ The curve is controlled by two parameters:
    pictures below).  The default is "0.65" (the image below incorrectly
    states the default is 0.5).
 
-.. image:: ../../../images/MotThstExpo_graphs2.png
+.. image:: ../images/MotThstExpo_graphs2.png
     :target: ../_images/MotThstExpo_graphs2.png
 
 -  **MOT_THST_MAX** controls the point at which the thrust flattens

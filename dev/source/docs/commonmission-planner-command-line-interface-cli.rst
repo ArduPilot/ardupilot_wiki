@@ -18,7 +18,7 @@ Using the Mission Planner serial terminal
 The Terminal tab is visible on the top icon row when “Advanced View” is
 checked in the Config tab.
 
-.. image:: ../../../images/Capture__2_.png
+.. image:: ../images/Capture__2_.png
     :target: ../_images/Capture__2_.png
 
 The Mission Planner serial terminal is the best a way to see text data
@@ -26,5 +26,5 @@ coming from APM via its USB port and to type commands into the CLI. You
 can can also run tests and download and analyze log files from this
 screen.
 
-.. image:: ../../../images/mpterminalAPM.jpg
+.. image:: ../images/mpterminalAPM.jpg
     :target: ../_images/mpterminalAPM.jpg

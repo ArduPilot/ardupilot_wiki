@@ -260,17 +260,17 @@ Use the **Zoom fit** button |zoom_fit|.
 
 The result should look like this:
 
-.. image:: ../../../images/after_zoom_fit.png
+.. image:: ../images/after_zoom_fit.png
     :target: ../_images/after_zoom_fit.png
 
 You can then zoom in or out and see the exact execution sequence, with
 the associated timings
 
-.. image:: ../../../images/timings.png
+.. image:: ../images/timings.png
     :target: ../_images/timings.png
 
 You can therefore measure the duration of an event with the cursors (use
 the mouse middle button to set the first cursor)
 
-.. |zoom_fit| image:: ../../../images/zoom_fit.png
+.. |zoom_fit| image:: ../images/zoom_fit.png
     :target: ../_images/zoom_fit.png

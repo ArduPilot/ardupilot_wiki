@@ -37,7 +37,7 @@ Upload the Copter firmware using the Mission Planner.
 On the AP Mission Planner you can find the Heli button on the bottom
 left of the firmware upload screen.
 
-.. image:: ../../../images/TradHeli_MissonPlanner_HILUpload.jpg
+.. image:: ../images/TradHeli_MissonPlanner_HILUpload.jpg
     :target: ../_images/TradHeli_MissonPlanner_HILUpload.jpg
 
 If you use Arduino be sure to set the following definitions in
@@ -63,7 +63,7 @@ APM_Config.h:\*
    push the Connect button
 -  push SimLink Start/Stop button, you should see "Sim Link Started"
 
-.. image:: ../../../images/TradHeli_APMissionPlannerSIMSetup.jpg
+.. image:: ../images/TradHeli_APMissionPlannerSIMSetup.jpg
     :target: ../_images/TradHeli_APMissionPlannerSIMSetup.jpg
 
 3. Start AeroSIM-RC and perform the following setup
@@ -74,5 +74,5 @@ APM_Config.h:\*
    and that you are able to control the RC heli much like the real
    helicopter
 
-.. image:: ../../../images/TradHeli_AeroSimSetup.jpg
+.. image:: ../images/TradHeli_AeroSimSetup.jpg
     :target: ../_images/TradHeli_AeroSimSetup.jpg

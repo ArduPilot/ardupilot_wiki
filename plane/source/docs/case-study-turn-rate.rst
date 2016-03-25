@@ -32,7 +32,7 @@ authority over the turn rate.
 
 This is what your flight looked like:
 
-.. image:: ../../../images/flight-path-image.jpg
+.. image:: ../images/flight-path-image.jpg
     :target: ../_images/flight-path-image.jpg
 
 You can see it did make the first waypoint, but then was turning much
@@ -42,7 +42,7 @@ Let's look at a graph of the nav_roll (the roll the plane wants to
 achieve) and the actual roll. The red line represents the mission
 sequence number.
 
-.. image:: ../../../images/nav-output-and-roll-attitude.png
+.. image:: ../images/nav-output-and-roll-attitude.png
     :target: ../_images/nav-output-and-roll-attitude.png
 
 In the takeoff nav_roll is small, as its flight is straight ahead. It
@@ -63,14 +63,14 @@ You have specified zero I term and a quite small P term for an aircraft
 like the X8. Let's have a look at the servo values that APM ended up
 using with those settings:
 
-.. image:: ../../../images/controller-outputs-v-servo-outputs.png
+.. image:: ../images/controller-outputs-v-servo-outputs.png
     :target: ../_images/controller-outputs-v-servo-outputs.png
 
 You can see that the APM was moving the first elevon only a small
 amount, and the second elevon by about 150. Now let's compare that to
 what happened when you switched to manual flight:
 
-.. image:: ../../../images/roll-attitude-v-servo-outputs.jpg
+.. image:: ../images/roll-attitude-v-servo-outputs.jpg
     :target: ../_images/roll-attitude-v-servo-outputs.jpg
 
 When you took manual control you rolled the plane left by 65 degrees.
@@ -98,7 +98,7 @@ To fix it you need to make the following changes:
 
 Your airspeed also doesn't look well calibrated:
 
-.. image:: ../../../images/airspeed.jpg
+.. image:: ../images/airspeed.jpg
     :target: ../_images/airspeed.jpg
 
 Have you checked your sensor for leaks? It is aligned correctly and

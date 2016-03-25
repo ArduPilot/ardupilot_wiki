@@ -33,7 +33,7 @@ SingleCopter
 
 **An innovative and quite successful hobbyist SingleCopter**
 
-.. image:: ../../../images/P1060929.jpg
+.. image:: ../images/P1060929.jpg
     :target: ../_images/P1060929.jpg
 
 Connecting the Flight Controller to the SingleCopter:
@@ -47,7 +47,7 @@ Connecting the Flight Controller to the SingleCopter:
 -  Looking down on the APM from above as in the attached diagram.
    "servo1" would be attached to the APM's output channel #1, etc.
 
-.. image:: ../../../images/SingleCopterBothView1.jpg
+.. image:: ../images/SingleCopterBothView1.jpg
     :target: ../_images/SingleCopterBothView1.jpg
 
 Load the Firmware
@@ -86,10 +86,10 @@ CoaxCopter
       the other beneath with appropriate support struts.
    -  Both variations are illustrated below.
 
-.. image:: ../../../images/vtol.jpg
+.. image:: ../images/vtol.jpg
     :target: ../_images/vtol.jpg
 
-.. image:: ../../../images/mav_electric.jpg
+.. image:: ../images/mav_electric.jpg
     :target: ../_images/mav_electric.jpg
 
 Connecting the Flight Controller to the CoaxCopter:
@@ -106,7 +106,7 @@ Connecting the Flight Controller to the CoaxCopter:
 -  Below is an illustration looking down on an APM/Pixhawk mounted on
    the frame.  Note the warning re Servo3 and Servo4 being mislabelled.
 
-.. image:: ../../../images/CoaxCopterTopView1.jpg
+.. image:: ../images/CoaxCopterTopView1.jpg
     :target: ../_images/CoaxCopterTopView1.jpg
 
 Load the Firmware
@@ -125,5 +125,5 @@ And a Video of a Research SingleCopter in action:
 ..  youtube:: FFiPbyigxVI#t=40
     :width: 100%
 
-.. |vtolcustom2| image:: ../../../images/vtolcustom2.jpg
+.. |vtolcustom2| image:: ../images/vtolcustom2.jpg
     :target: ../_images/vtolcustom2.jpg

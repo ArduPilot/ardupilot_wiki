@@ -530,7 +530,7 @@ stabilise about new values as the sensor warms up and reaches its
 operating temperature. The cheap MEMS inertial sensors used by our
 controllers can have significant bias variation with temperature.
 
-.. image:: ../../../images/GXYZ.jpg
+.. image:: ../images/GXYZ.jpg
     :target: ../_images/GXYZ.jpg
 
 EKF2
@@ -543,7 +543,7 @@ the blending of IMU1 and IMU2 data. If two IMU's are available with your
 hardware (eg Pixhawk), then this will normally fluctuate rapidly in the
 50% region as seen here.
 
-.. image:: ../../../images/normalAX.jpg
+.. image:: ../images/normalAX.jpg
     :target: ../_images/normalAX.jpg
 
 If it swings close to 100 or 0 % for parts of the flight, then this
@@ -564,7 +564,7 @@ units). If you are flying quickly, or are at low speed with
 ``EKF_MAG_CAL`` enabled, these will slowly change during flight as the
 filter 'learns' the earth's magnetic field.
 
-.. image:: ../../../images/MagNED.jpg
+.. image:: ../images/MagNED.jpg
     :target: ../_images/MagNED.jpg
 
 **MX,MY,MZ** - X, Y, Z body magnetic field biases (sensor units). If you
@@ -575,7 +575,7 @@ offsets, but are the opposite sign (eg in the following figure MX
 stabilises at a value of +35, indicating that a ``COMPASS_OFS_X`` value
 of -35 should be used.
 
-.. image:: ../../../images/MagXYZ.jpg
+.. image:: ../images/MagXYZ.jpg
     :target: ../_images/MagXYZ.jpg
 
 EKF3
@@ -593,7 +593,7 @@ measurements (m/s). These are an important measure of health for the
 navigation filter. If you have god quality IMU and GPS data they will be
 small and around zero as shown in the following figure:
 
-.. image:: ../../../images/VelInnov.jpg
+.. image:: ../images/VelInnov.jpg
     :target: ../_images/VelInnov.jpg
 
 The noise level on these innovations when the vehicle is not maneuvering
@@ -608,7 +608,7 @@ be 0.3 m/s.
 (m). Similarly to the velocity innovations, they should be small and
 centred on zero as in the following example:
 
-.. image:: ../../../images/PosInnov.jpg
+.. image:: ../images/PosInnov.jpg
     :target: ../_images/PosInnov.jpg
 
 The noise levels on these innovations can be used to set the value of
@@ -622,7 +622,7 @@ although transients of around 2m are common when sudden height changes
 or manoeuvres are performed due to IMU errors, sensor lag and the effect
 of changes in airflow on he barometer reading.
 
-.. image:: ../../../images/PosDInnov.jpg
+.. image:: ../images/PosDInnov.jpg
     :target: ../_images/PosDInnov.jpg
 
 In the above figure it can be seen that there is a small 1m negative
@@ -640,7 +640,7 @@ value to smooth out the height response
 These should be centered around zero and not exceed +- 50 during
 manoeuvres as shown in the following figure:
 
-.. image:: ../../../images/MagInnov.jpg
+.. image:: ../images/MagInnov.jpg
     :target: ../_images/MagInnov.jpg
 
 In the above example ``EKF_MAG_CAL`` was set to 1, so the copter quickly
@@ -658,7 +658,7 @@ The following figure is taken from a slow speed copter flight with a bad
 magnetometer calibration and ``EKF_MAG_CAL`` = 0. The innovations vary
 noticeably as the vehicle changes its orientation.
 
-.. image:: ../../../images/BadMagInnov1.jpg
+.. image:: ../images/BadMagInnov1.jpg
     :target: ../_images/BadMagInnov1.jpg
 
 **IVT** - Innovation for the true airspeed measurement (m/s). This will
@@ -669,7 +669,7 @@ gusty the flight conditions are. the following is an example from a
 flight with a well calibrated airspeed sensor in moderate wind
 conditions of around 7m/s in low turbulence:
 
-.. image:: ../../../images/ekf_innovation_for_true_airspeed.jpg
+.. image:: ../images/ekf_innovation_for_true_airspeed.jpg
     :target: ../_images/ekf_innovation_for_true_airspeed.jpg
 
 A constant offset of 1m/s from zero would indicate a steady 1m/s
@@ -711,7 +711,7 @@ conditions, using the default parameters. If this line is too high and
 goes above 1 with good GPS, then the ``EKF_VEL_GATE`` parameter should
 be increased.
 
-.. image:: ../../../images/normalised-gps-velocity-error.jpg
+.. image:: ../images/normalised-gps-velocity-error.jpg
     :target: ../_images/normalised-gps-velocity-error.jpg
 
 **SP** - ratio of the GPS total position inconsistency to the limit set
@@ -725,7 +725,7 @@ using the default parameters. If this line is too high and goes above 1
 with good GPS, then the ``EKF_POS_GATE`` parameter should be
 increased.
 
-.. image:: ../../../images/normalised-gps-position-error.jpg
+.. image:: ../images/normalised-gps-position-error.jpg
     :target: ../_images/normalised-gps-position-error.jpg
 
 **SH** - ratio of the barometer height inconsistency to the limit set by
@@ -740,7 +740,7 @@ Factors that can cause this to be high include airflow past the
 autopilot affecting the barometer reading and accelerometer errors due
 to sensor drift or aliasing.
 
-.. image:: ../../../images/normalised-baro-alt-error.jpg
+.. image:: ../images/normalised-baro-alt-error.jpg
     :target: ../_images/normalised-baro-alt-error.jpg
 
 **SMX,SMY,SMZ** - ratio of the magnetometer X,Y and Z measurement
@@ -756,13 +756,13 @@ or installation. It is recommended that the reasons for the compass
 errors be investigated first before resorting to increasing
 the ``EKF_MAG_GATE`` parameter.
 
-.. image:: ../../../images/normalised-magnetometer-errors.jpg
+.. image:: ../images/normalised-magnetometer-errors.jpg
     :target: ../_images/normalised-magnetometer-errors.jpg
 
 The next figure shows **SMX**, **SMY** and **SMZ** taken from a rover
 log, with the throttle demand **ThrOutR** also plotted.
 
-.. image:: ../../../images/roverMagSpikes.jpg
+.. image:: ../images/roverMagSpikes.jpg
     :target: ../_images/roverMagSpikes.jpg
 
 The large spikes above 1 every time the throttle steps up, and the large
@@ -780,5 +780,5 @@ turbulence, and rapid changes in wind speed. It is normal for this to be
 higher at the start of the flight before the filter has estimated the
 wind velocity.
 
-.. image:: ../../../images/SVT.png
+.. image:: ../images/SVT.png
     :target: ../_images/SVT.png

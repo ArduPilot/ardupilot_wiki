@@ -36,7 +36,7 @@ Alternative instructions for the set-up can be found on the PX4 wiki
 Connecting the probe to the Pixhawk
 ===================================
 
-.. image:: ../../../images/DebuggingWithGDB_PixhawkBlackMagicProbe.jpg
+.. image:: ../images/DebuggingWithGDB_PixhawkBlackMagicProbe.jpg
     :target: ../_images/DebuggingWithGDB_PixhawkBlackMagicProbe.jpg
 
 The BlackMagic probe should be connected to the Pixhawk's JTAG connector
@@ -86,7 +86,7 @@ change to your PX4Firmware directory and type the following:
 
 ``/usr/local/bin/arm-none-eabi-gdb Build/px4fmu-v2_APM.build/firmware.elf``
 
-.. image:: ../../../images/DebuggingWithGDB-startGBD.png
+.. image:: ../images/DebuggingWithGDB-startGBD.png
     :target: ../_images/DebuggingWithGDB-startGBD.png
 
 Some useful commands:
@@ -112,5 +112,5 @@ from show interrupted-thread)
 
 ``exit`` -- exits from the GDB
 
-.. image:: ../../../images/GDB_commands2.jpg
+.. image:: ../images/GDB_commands2.jpg
     :target: ../_images/GDB_commands2.jpg

@@ -14,7 +14,7 @@ APM Mission Planner 2 Home
     <tr>
     <td width="27%">
 
-.. image:: ../../images/logo_apm_planner2.png
+.. image:: /images/logo_apm_planner2.png
     :target: _images/logo_apm_planner2.png
 
 ..  raw:: html
@@ -76,7 +76,7 @@ Connect a 3DR Radio to view live data and initiate commands in flight.
     <tr>
     <td width="27%">
 
-.. image:: ../../images/planner2_install_firmware_large.jpg
+.. image:: /images/ap2_install_firmware_large.jpg
     :target: _images/planner2_install_firmware_large.jpg
 
 
@@ -87,7 +87,7 @@ Connect a 3DR Radio to view live data and initiate commands in flight.
     </td>
     <td width="26%">
 
-.. image:: ../../images/planner2_flight_plan_example.jpg
+.. image:: /images/ap2_flight_plan_example.jpg
     :target: _images/planner2_flight_plan_example.jpg 
     
 ..  raw:: html
@@ -97,7 +97,7 @@ Connect a 3DR Radio to view live data and initiate commands in flight.
     </td>
     <td width="27%">
 
-.. image:: ../../images/apm_planner2_flight-data-live.jpg
+.. image:: /images/ap2_flight-data-live.jpg
     :target: _images/apm_planner2_flight-data-live.jpg
 
 ..  raw:: html

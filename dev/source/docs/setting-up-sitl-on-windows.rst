@@ -28,7 +28,7 @@ hosted in a VMware virtual machine.
    The instructions were tested on Windows 8 with VMware ver 7.1.0
    build-2496824 and Ubuntu 14.10. 
 
-.. image:: ../../../images/Ubuntu_SITL_running_Copter.jpg
+.. image:: ../images/Ubuntu_SITL_running_Copter.jpg
     :target: ../_images/Ubuntu_SITL_running_Copter.jpg
 
 Preconditions
@@ -61,7 +61,7 @@ Step #1 - Install VMWare and create an Ubuntu Virtual Machine
 -  On the Hardware tab set Memory: 3GB,Processors: 4,Hard Disk:
    20GB,Network Adapter: NAT
 
-.. image:: ../../../images/Ubuntu_VMSettings_Hardware.png
+.. image:: ../images/Ubuntu_VMSettings_Hardware.png
     :target: ../_images/Ubuntu_VMSettings_Hardware.png
 
 Step #2 - Start the VM for the first time
@@ -76,7 +76,7 @@ Step #2 - Start the VM for the first time
 #. Open firefox and make sure it can access some web page like
    www.diydrones.com
 
-   .. |Ubuntu_TestNetworkWithFirefox| image:: ../../../images/ubuntu_test_network_with_firefox.jpg
+   .. |Ubuntu_TestNetworkWithFirefox| image:: ../images/ubuntu_test_network_with_firefox.jpg
        :target: ../_images/ubuntu_test_network_with_firefox.jpg
    
 #. Set the clock by double clicking on the top right corner, select your
@@ -97,7 +97,7 @@ Step #3 - Setting up shared partition with Windows & Ubuntu Virtual Machine
 drop-down beside the green play button and select "Power Off" if it's
 not greyed
 
-.. image:: ../../../images/Ubuntu_PowerOff.jpg
+.. image:: ../images/Ubuntu_PowerOff.jpg
     :target: ../_images/Ubuntu_PowerOff.jpg
 
 2.On VMware Player select Player > Manage > Virtual Machine Settings...
@@ -108,7 +108,7 @@ not greyed
    ardupilot software
 -  check "Enable this share"
 
-.. image:: ../../../images/Ubuntu_VMSettings_SetupSharedFolder.png
+.. image:: ../images/Ubuntu_VMSettings_SetupSharedFolder.png
     :target: ../_images/Ubuntu_VMSettings_SetupSharedFolder.png
 
 3. Power on the VM, enter your login information
@@ -173,7 +173,7 @@ prompt.
    You will likely see many more than one IP address listed so you
    may need to try a few different addresses to find one that works.
 
-.. image:: ../../../images/SITL_ipconfig.png
+.. image:: ../images/SITL_ipconfig.png
     :target: ../_images/SITL_ipconfig.png
 
 So for this example the following would then be entered into the
@@ -186,7 +186,7 @@ terminal on the Ubuntu VM:
 Next connect with the mission planner after first setting the "COM Port"
 to "UDP".
 
-.. image:: ../../../images/SITL_connectWithMP.jpg
+.. image:: ../images/SITL_connectWithMP.jpg
     :target: ../_images/SITL_connectWithMP.jpg
 
 Dataflash logs
@@ -210,8 +210,8 @@ other than Mission Planner and MAVProxy.
 
 
 
-.. |Ubuntu_TerminalShortcut| image:: ../../../images/Ubuntu_TerminalShortcut.jpg
+.. |Ubuntu_TerminalShortcut| image:: ../images/Ubuntu_TerminalShortcut.jpg
     :target: ../_images/Ubuntu_TerminalShortcut.jpg
 
-.. |Ubuntu_setTimezone| image:: ../../../images/Ubuntu_setTimezone.jpg
+.. |Ubuntu_setTimezone| image:: ../images/Ubuntu_setTimezone.jpg
     :target: ../_images/Ubuntu_setTimezone.jpg

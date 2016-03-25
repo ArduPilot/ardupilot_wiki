@@ -14,7 +14,7 @@ Connect the power (+), ground (-), and signal (s) wires for each ESC to
 the controller main output pins by motor number. Find your frame type
 below to determine the assigned order of the motors.
 
-.. figure:: ../../../images/Pixhwak_outputs.jpg
+.. figure:: ../images/Pixhwak_outputs.jpg
    :target: ../_images/Pixhwak_outputs.jpg
 
    Pixhawk Outputpins (numbered). First 4 pins are colour-coded for connecting a Quadframe
@@ -27,7 +27,7 @@ When connecting the ESCs directly to autopilot board, connect the power
 main output pins by motor number. Find your frame type below to
 determine the assigned order of the motors.
 
-.. image:: ../../../images/3dr_power_distribution_board.jpg
+.. image:: ../images/3dr_power_distribution_board.jpg
     :target: ../_images/3dr_power_distribution_board.jpg
 
 .. note::
@@ -66,7 +66,7 @@ pin.
    Information on assembling PDB is found `here for Quad <https://3dr.com/wp-content/uploads/2013/06/PDB-Assembly-Instructions-Quad.pdf>`__\ and
    `here for Hexa <https://3dr.com/wp-content/uploads/2013/06/PDB-Assembly-Instructions-Hexa.pdf>`__.
 
-.. image:: ../../../images/3dr_power_distribution_board.jpg
+.. image:: ../images/3dr_power_distribution_board.jpg
     :target: ../_images/3dr_power_distribution_board.jpg
 
 When connecting the ESCs directly to autopilot board, connect the power
@@ -74,7 +74,7 @@ When connecting the ESCs directly to autopilot board, connect the power
 main output pins by motor number. Find your frame type below to
 determine the assigned order of the motors.
 
-.. figure:: ../../../images/APM_outputs.jpg
+.. figure:: ../images/APM_outputs.jpg
    :target: ../_images/APM_outputs.jpg
 
    APM Output Pins (numbered)
@@ -90,7 +90,7 @@ puller propellers.
 
 Use the diagram for your frame type, and wire the motors as shown.
 
-.. figure:: ../../../images/MOTORS_CW_CCWLegend.jpg
+.. figure:: ../images/MOTORS_CW_CCWLegend.jpg
    :target: ../_images/MOTORS_CW_CCWLegend.jpg
 
    Legend for motor-order diagrams
@@ -98,16 +98,16 @@ Use the diagram for your frame type, and wire the motors as shown.
 Quad
 ----
 
-.. image:: ../../../images/MOTORS_QuadX_QuadPlus.jpg
+.. image:: ../images/MOTORS_QuadX_QuadPlus.jpg
     :target: ../_images/MOTORS_QuadX_QuadPlus.jpg
 
-.. image:: ../../../images/MOTORS_Quad_Hb.jpg
+.. image:: ../images/MOTORS_Quad_Hb.jpg
     :target: ../_images/MOTORS_Quad_Hb.jpg
 
 Hexa, Octo, Y6
 --------------
 
-.. image:: ../../../images/MOTORS_Hexa-octo-y6.jpg
+.. image:: ../images/MOTORS_Hexa-octo-y6.jpg
     :target: ../_images/MOTORS_Hexa-octo-y6.jpg
 
 .. note::
@@ -117,13 +117,13 @@ Hexa, Octo, Y6
 X8
 --
 
-.. image:: ../../../images/MOTORS_X8.jpg
+.. image:: ../images/MOTORS_X8.jpg
     :target: ../_images/MOTORS_X8.jpg
 
 Tricopter
 ---------
 
-.. image:: ../../../images/MOTORS_Tri.jpg
+.. image:: ../images/MOTORS_Tri.jpg
     :target: ../_images/MOTORS_Tri.jpg
 
 .. note::
@@ -146,7 +146,7 @@ as shown. For copters, attach propellers with the writing facing towards
 the sky. For more information on recognizing the different types of
 propellers, see the next section.
 
-.. image:: ../../../images/APM_2_5_MOTORS_HEXA_OCTA.jpg
+.. image:: ../images/APM_2_5_MOTORS_HEXA_OCTA.jpg
     :target: ../_images/APM_2_5_MOTORS_HEXA_OCTA.jpg
 
 Recognizing clockwise and counterclockwise propellers
@@ -212,7 +212,7 @@ An alternative way to check that the motors have been hooked up
 correctly is to use the "Motors" test in the Mission Planner Initial
 Setup menu.
 
-.. figure:: ../../../images/MissionPlanner_MotorTest.png
+.. figure:: ../images/MissionPlanner_MotorTest.png
    :target: ../_images/MissionPlanner_MotorTest.png
 
    Mission Planner: Motor Test
@@ -231,7 +231,7 @@ case of + configuration, or the first motor to the right of straight
 forward in the case of X configuration. The motor test will then proceed
 in a clockwise rotation.
 
-.. image:: ../../../images/APM_2_5_MOTORS_QUAD_enc.jpg
+.. image:: ../images/APM_2_5_MOTORS_QUAD_enc.jpg
     :target: ../_images/APM_2_5_MOTORS_QUAD_enc.jpg
 
 In the case of X8, it will spin the top front-right motor first, then
@@ -252,7 +252,7 @@ It is strongly recommended that you use a BEC to power the rail rather
 than a jumper. Do not add servos or other devices to the servo rail as
 the power module is not intended to supply power to them.
 
-.. image:: ../../../images/Pixhawk-Correction-to-KDE-Optoisolated-ESC.jpg
+.. image:: ../images/Pixhawk-Correction-to-KDE-Optoisolated-ESC.jpg
     :target: ../_images/Pixhawk-Correction-to-KDE-Optoisolated-ESC.jpg
 
 The KDE ESCs have fixed PWM ranges so you must manually set the output
@@ -277,5 +277,5 @@ signal and the signal ground in order to make the ESC work.
 For more information `see this page <https://pixhawk.org/users/actuators/pwm_escs_and_servos>`__ and
 the `video here <https://youtu.be/6C1YG1e2aTo>`__.
 
-.. |prop_direction| image:: ../../../images/prop_direction.jpg
+.. |prop_direction| image:: ../images/prop_direction.jpg
     :target: ../_images/prop_direction.jpg

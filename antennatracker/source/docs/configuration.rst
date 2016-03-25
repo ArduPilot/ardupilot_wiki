@@ -18,7 +18,7 @@ direction aligned with the antenna (as mentioned on the :ref:`Assembling a frame
 be set from the Mission Planner's Config/Tuning >> Advanced Params
 screen.
 
-.. image:: ../../../images/AntennaTracker_Config_AHRSORIENTATION.jpg
+.. image:: ../images/AntennaTracker_Config_AHRSORIENTATION.jpg
     :target: ../_images/AntennaTracker_Config_AHRSORIENTATION.jpg
 
 Some commonly used values include:
@@ -47,7 +47,7 @@ If an external GPS+compass module is being used but the arrow on the
 case could not be aligned so as to point in the same direction as the
 antenna, the COMPASS_ORIENTATION parameter should be set.
 
-.. image:: ../../../images/AntennaTracker_Config_CompassOrientation.jpg
+.. image:: ../images/AntennaTracker_Config_CompassOrientation.jpg
     :target: ../_images/AntennaTracker_Config_CompassOrientation.jpg
 
 Some more commonly used values include:
@@ -75,7 +75,7 @@ For this section it is best to plug in the battery so that the servos
 are powered and push the "arming switch" if present.  Connect with the
 Mission Planner, go to the CONFIG/TUNING >> Extended Tuning page.
 
-.. image:: ../../../images/AT_MPExtendedTuning.jpg
+.. image:: ../images/AT_MPExtendedTuning.jpg
     :target: ../_images/AT_MPExtendedTuning.jpg
 
 Setting the Yaw servo's min and max pwm values

@@ -476,7 +476,7 @@ In *Mission Planner* listen to the specific UDP port by selecting
 (the default port number of 14550 should be correct if SITL is running
 on the same computer).
 
-.. figure:: ../../../images/MissionPlanner_Connect_UDP.jpg
+.. figure:: ../images/MissionPlanner_Connect_UDP.jpg
    :target: ../_images/MissionPlanner_Connect_UDP.jpg
 
    Mission Planner: Connecting to a UDPPort
@@ -497,7 +497,7 @@ used just as before.
    click through the \ *remote host* and *remote Port* prompts as these
    default to the correct values.
 
-.. figure:: ../../../images/MissionPlanner_ConnectTCP.jpg
+.. figure:: ../images/MissionPlanner_ConnectTCP.jpg
    :target: ../_images/MissionPlanner_ConnectTCP.jpg
 
    Mission Planner: Connecting toSITL using TCP

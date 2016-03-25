@@ -57,7 +57,7 @@ includes an a compass. You can check out :ref:`other GPS solutions here <common-
 LiPo batteries and charger
 ==========================
 
-.. image:: ../../../images/lipo_battery.jpg
+.. image:: ../images/lipo_battery.jpg
     :target: ../_images/lipo_battery.jpg
 
 Copter requires a rechargeable lithium polymer (LiPo) battery. 

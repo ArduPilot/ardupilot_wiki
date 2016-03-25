@@ -25,7 +25,7 @@ These systems also likely work:
 Mounting the flight controller board
 ====================================
 
-.. image:: ../../../images/AntennaTracker_Mounting.jpg
+.. image:: ../images/AntennaTracker_Mounting.jpg
     :target: ../_images/AntennaTracker_Mounting.jpg
 
 The flight controller board (i.e. Pixhawk, APM2, etc) should be mounted
@@ -44,7 +44,7 @@ changed to account for the difference.  :ref:`See the configuration page for mor
 Connecting the servos
 =====================
 
-.. image:: ../../../images/AntennaTracker_ServoBecConnection.jpg
+.. image:: ../images/AntennaTracker_ServoBecConnection.jpg
     :target: ../_images/AntennaTracker_ServoBecConnection.jpg
 
 The Pan servo (controls the tracker's heading or yaw) should be
@@ -55,7 +55,7 @@ RC outputs as shown to provide power for the servos.
 Connecting the radio and antenna
 ================================
 
-.. image:: ../../../images/AntennaTracker_Radio.jpg
+.. image:: ../images/AntennaTracker_Radio.jpg
     :target: ../_images/AntennaTracker_Radio.jpg
 
 The Antenna should be attached to the radio after first removing the

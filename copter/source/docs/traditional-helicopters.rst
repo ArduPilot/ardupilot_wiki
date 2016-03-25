@@ -4,7 +4,7 @@
 Traditional Helicopters
 =======================
 
-.. image:: ../../../images/trex450.jpg
+.. image:: ../images/trex450.jpg
     :target: ../_images/trex450.jpg
 
 Copter supports conventional electric helicopters including all the same

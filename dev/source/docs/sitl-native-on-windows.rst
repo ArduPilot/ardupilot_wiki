@@ -23,7 +23,7 @@ These instructions explain how to build SITL *natively* on Windows, and
 how to interact with the simulator using
 `MAVProxy <http://tridge.github.io/MAVProxy/>`__ and/or :ref:`Mission Planner <planner:home>`.
 
-.. figure:: ../../../images/MAVProxy_Map_GuidedCopter.jpg
+.. figure:: ../images/MAVProxy_Map_GuidedCopter.jpg
    :target: ../_images/MAVProxy_Map_GuidedCopter.jpg
 
    MAVProxy Map: Guiding a SimulatedCopter
@@ -62,7 +62,7 @@ that allow us to rebuild ArduPilot on Windows.
    name. When you've found a needed package click on the **Skip** button
    to select it for download:
 
-   .. figure:: ../../../images/Cygwin-select-install-gpp.png
+   .. figure:: ../images/Cygwin-select-install-gpp.png
       :target: ../_images/Cygwin-select-install-gpp.png
 
       Cygwin Installer: Select Package Dialog
@@ -198,7 +198,7 @@ displays provided by *MAVProxy* and *Mission Planner*.
    should appear in the *next* versions of the vehicle codelines (not
    present on current versions: Copter 3.3, Plane 3.4, Rover 2.5).
 
-.. figure:: ../../../images/flightgear_copter_windows.jpg
+.. figure:: ../images/flightgear_copter_windows.jpg
    :target: ../_images/flightgear_copter_windows.jpg
 
    FlightGear:Simulated Copter at KSFO (click for larger view).
@@ -291,7 +291,7 @@ build and start SITL for a 4-core CPU and then launch a *MAVProxy map*:
    -  A map that shows the current position of the vehicle and can be
       used (via right-click) to control vehicle movement and missions.
 
-   .. image:: ../../../images/mavproxy_sitl_console_and_map.jpg
+   .. image:: ../images/mavproxy_sitl_console_and_map.jpg
        :target: ../_images/mavproxy_sitl_console_and_map.jpg
 
    .. tip::
@@ -362,7 +362,7 @@ determine where *MAVProxy* is sending packets:
 This tells us that we can connect *Mission Planner* to either UDP port
 14550 or 14551, as shown on the dialog below.
 
-.. figure:: ../../../images/MissionPlanner_Connect_UDP.jpg
+.. figure:: ../images/MissionPlanner_Connect_UDP.jpg
    :target: ../_images/MissionPlanner_Connect_UDP.jpg
 
    Mission Planner: Connecting to a UDPPort
@@ -386,7 +386,7 @@ the previous "takeoff-circle-land" example as shown below:
       bottom left. This is where we can change the mode and set
       commands.
 
-      .. figure:: ../../../images/MissionPlanner_Actions_GuidedModeArm.png
+      .. figure:: ../images/MissionPlanner_Actions_GuidedModeArm.png
          :target: ../_images/MissionPlanner_Actions_GuidedModeArm.png
 
          Mission Planner: Actions Tab (Set Mode, Arm/Disarm)
@@ -397,7 +397,7 @@ the previous "takeoff-circle-land" example as shown below:
    -  Right-click on the map and select Takeoff. Then enter the desired
       takeoff altitude
 
-      .. figure:: ../../../images/MissionPlanner_Map_takeoff.jpg
+      .. figure:: ../images/MissionPlanner_Map_takeoff.jpg
          :target: ../_images/MissionPlanner_Map_takeoff.jpg
 
          Mission Planner Map: Takeoff Command
@@ -442,7 +442,7 @@ In *Mission Planner* we first change the link type to TCP and then press
 the **Connect** button. Click through the \ *remote host* and *remote
 Port* prompts as these default to the correct values.
 
-.. figure:: ../../../images/MissionPlanner_ConnectTCP.jpg
+.. figure:: ../images/MissionPlanner_ConnectTCP.jpg
    :target: ../_images/MissionPlanner_ConnectTCP.jpg
 
    Mission Planner: Connecting toSITL using TCP

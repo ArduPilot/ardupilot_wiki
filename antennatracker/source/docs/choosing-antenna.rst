@@ -11,7 +11,7 @@ Your choice of directional antenna will most likely be based upon:
 -  radio frequency (the antenna should be designed for the radio's frequency)
 -  cost
 
-.. figure:: ../../../images/antennatracker_choosing.jpg
+.. figure:: ../images/antennatracker_choosing.jpg
     :target: ../_images/antennatracker_choosing.jpg
 
     Images courtesy of `moonblink.com <http://www.moonblink.com/store/cat-900-mhz-wireless-networking-antennas.cfm>`__

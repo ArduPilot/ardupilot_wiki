@@ -22,7 +22,7 @@ Using a correctly aligned directional antenna *significantly improves*
 the range over which signals can be both sent and received from
 a ground station.
 
-.. image:: ../../images/home_antennatracker.jpg
+.. image:: /images/home_antennatracker.jpg
     :target: _images/home_antennatracker.jpg
 
 This manual will guide you through setup and configuration process.

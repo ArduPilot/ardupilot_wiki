@@ -17,7 +17,7 @@ Remote Control (RC) overrides based on Joystick/Gamepad input.
 Other GCSs may also support "RC overrides" but they are not covered in
 this article.
 
-.. figure:: ../../../images/Joystick_LogitechF310.jpg
+.. figure:: ../images/Joystick_LogitechF310.jpg
    :target: ../_images/Joystick_LogitechF310.jpg
 
    Logitech F310 Joystick
@@ -47,7 +47,7 @@ Setup with the Mission Planner
 -  Open the *Mission Planner Flight Data* screen. On the **Actions** tab
    push the **Joystick** button
 
-   .. image:: ../../../images/Joystick_MPSetup.png
+   .. image:: ../images/Joystick_MPSetup.png
        :target: ../_images/Joystick_MPSetup.png
    
 -  Ensure the Logitech joystick appears in the drop-down
@@ -140,7 +140,7 @@ no failover to regular transmitter):
 #. Repeat the above test but at step #5 actually disconnect the joystick
    from the computer.  The results should be the same.
 
-.. image:: ../../../images/Joystick_FailsafeTesting1.jpg
+.. image:: ../images/Joystick_FailsafeTesting1.jpg
     :target: ../_images/Joystick_FailsafeTesting1.jpg
 
 **Simulate failing over to the regular transmitter/receiver**
@@ -182,7 +182,7 @@ transmitter but lag can be reduced by:
 -  Reducing the rate of other telemetry data being sent between the
    vehicle and GCS from the MP's **Config/Tuning \| Planner** page
 
-   .. image:: ../../../images/Joystick_ReduceLag_MPRates.png
+   .. image:: ../images/Joystick_ReduceLag_MPRates.png
        :target: ../_images/Joystick_ReduceLag_MPRates.png
    
 -  If using a SiK Radio or RFD900 Radio these can be put into 

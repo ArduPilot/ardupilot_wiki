@@ -26,7 +26,7 @@ that your copter hovers at 50% throttle:
    (more details on working with dataflash logs can be found
    :ref:`here <common-downloading-and-analyzing-data-logs-in-mission-planner>`)
 
-.. image:: ../../../images/Vibration_DownloadLogs.png
+.. image:: ../images/Vibration_DownloadLogs.png
     :target: ../_images/Vibration_DownloadLogs.png
 
 -  After the download has completed, close the “Log” window and push the
@@ -34,14 +34,14 @@ that your copter hovers at 50% throttle:
    (it’s last digit will be the Log number you downloaded so in the
    example above we downloaded Log #1 so the filename will end in 1.log)
 
-.. image:: ../../../images/Vibration_BrowseLogs.png
+.. image:: ../images/Vibration_BrowseLogs.png
     :target: ../_images/Vibration_BrowseLogs.png
 
 -  When the Log Browser appears, scroll down until you find any CTUN
    message.  Click on the row's "ThrOut" column and push "Graph this
    data Left" button.
 
-.. image:: ../../../images/ThrMid_DataFlash_ThrOut1.png
+.. image:: ../images/ThrMid_DataFlash_ThrOut1.png
     :target: ../_images/ThrMid_DataFlash_ThrOut1.png
 
 -  While referring to the scale on the left of the graph, estimate
@@ -65,7 +65,7 @@ the Throttle Mid Position (THR_MID) to the value estimated above
 
 Push the Write Params button
 
-.. image:: ../../../images/MP_SaveThrMid.png
+.. image:: ../images/MP_SaveThrMid.png
     :target: ../_images/MP_SaveThrMid.png
 
 -  On your next flight you should find the throttle is closer to mid

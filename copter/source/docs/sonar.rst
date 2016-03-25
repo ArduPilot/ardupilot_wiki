@@ -12,7 +12,7 @@ The sonar is also used during
 will slow it's descent to 50cm/s (configurable with LAND_SPEED
 parameter) when the sonar detects something below the vehicle.
 
-.. image:: ../../../images/XLMaxsonarEZ4.jpg
+.. image:: ../images/XLMaxsonarEZ4.jpg
     :target: ../_images/XLMaxsonarEZ4.jpg
 
 Supported Sonars
@@ -57,7 +57,7 @@ Connecting the Sonar Sensor on APM 2.x
 The sensor's GND, V+ and "AN" or "3" pins should be connected to APM 2's
 A0 pins as shown in the diagram below:
 
-.. image:: ../../../images/APM2_Sonar.jpg
+.. image:: ../images/APM2_Sonar.jpg
     :target: ../_images/APM2_Sonar.jpg
 
 Connecting the Sonar Sensor on PX4
@@ -98,7 +98,7 @@ other interference. One good way is to use a 3DR Sonar mount for
 `hexacopter <http://store.3drobotics.com/products/3dr-hexa-b-sonar-mount>`__
 (or a quad, if you can find one!)
 
-.. image:: ../../../images/Sonar_3DR_QuadSonarMount.jpg
+.. image:: ../images/Sonar_3DR_QuadSonarMount.jpg
     :target: ../_images/Sonar_3DR_QuadSonarMount.jpg
 
 Enabling the Sonar through Mission Planner
@@ -111,7 +111,7 @@ then:
 -  Check the "Enable" checkbox
 -  Select the sonar model from the drop down list
 
-.. image:: ../../../images/Sonar_Setup.png
+.. image:: ../images/Sonar_Setup.png
     :target: ../_images/Sonar_Setup.png
 
 Testing the sonar
@@ -187,7 +187,7 @@ Other Potential Causes of Sonar Noise
 If you are having problems with excessive noise on your sonar as shown
 in the dataflash log below (sonar is in red, baro is in green)
 
-.. image:: ../../../images/Sonar_Spikes.png
+.. image:: ../images/Sonar_Spikes.png
     :target: ../_images/Sonar_Spikes.png
 
 There are a number of possible causes which should be investigated:

@@ -16,7 +16,7 @@ simulation engine (instead of *JSBSim*).
    updates and changes in its architecture. Up-to-date documentation on
    *last_letter* is always found at its Github page.
 
-.. image:: ../../../images/cover_init.jpg
+.. image:: ../images/cover_init.jpg
     :target: ../_images/cover_init.jpg
 
 Overview

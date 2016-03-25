@@ -98,7 +98,7 @@ Build the firmware by entering one of the following commands:
 The firmware will be created in the **ArduCopter** directory with the
 **.px4** file extension.
 
-.. image:: ../../../images/PX4_ArduCopter_Build.png
+.. image:: ../images/PX4_ArduCopter_Build.png
     :target: ../_images/PX4_ArduCopter_Build.png
 
 

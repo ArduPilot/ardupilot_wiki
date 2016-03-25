@@ -7,7 +7,7 @@
 This page provides instructions for developers working with the 3DR Solo
 Ready-to-fly copter.  The comprehensive `3DR solo dev guide can be found here <http://dev.3dr.com/>`__.
 
-.. image:: ../../../images/SoloControllerVehiclePC2.jpg
+.. image:: ../images/SoloControllerVehiclePC2.jpg
     :target: ../_images/SoloControllerVehiclePC2.jpg
 
 Uploading custom firmware to the Pixhawk2

@@ -35,7 +35,7 @@ away that it's heading is not apparent.
 Normal Mode
 ===========
 
-.. image:: ../../../images/NormalControls.jpg
+.. image:: ../images/NormalControls.jpg
     :target: ../_images/NormalControls.jpg
 
 Without Simple or Super Simple enabled, the pilot's transmitter stick
@@ -54,7 +54,7 @@ move to the left from the pilot's point of view.
 Simple Mode
 ===========
 
-.. image:: ../../../images/SimpleModeControls.jpg
+.. image:: ../images/SimpleModeControls.jpg
     :target: ../_images/SimpleModeControls.jpg
 
 Similar to the "care free" mode on other systems, this mode allows you
@@ -80,7 +80,7 @@ to determine it's heading.
 Super Simple Mode
 =================
 
-.. image:: ../../../images/SuperSimpleControls.jpg
+.. image:: ../images/SuperSimpleControls.jpg
     :target: ../_images/SuperSimpleControls.jpg
 
 Super Simple mode is the same as simple mode except that it uses the
@@ -116,7 +116,7 @@ Only one auxiliary channel should be set for these modes, and this
 channel will override the simple/super-simple options selected on the
 Flight Modes screen.
 
-.. figure:: ../../../images/MissionPlanner_MPchan7options_Simple_SuperSimple_Modes.jpg
+.. figure:: ../images/MissionPlanner_MPchan7options_Simple_SuperSimple_Modes.jpg
    :target: ../_images/MissionPlanner_MPchan7options_Simple_SuperSimple_Modes.jpg
 
    Mission Planner: Channel 7 options for Simple andSuperSimple modes

@@ -44,31 +44,31 @@ All at once calibration
    it and that the APM is NOT CONNECTED to your computer via USB and the
    Lipo battery is disconnected.
 
-   .. image:: ../../../images/copter_disconnect_props_banner.png
+   .. image:: ../images/copter_disconnect_props_banner.png
        :target: ../_images/copter_disconnect_props_banner.png
 
-   .. image:: ../../../images/MicroUSB1__57056_zoom.jpg
+   .. image:: ../images/MicroUSB1__57056_zoom.jpg
        :target: ../_images/MicroUSB1__57056_zoom.jpg
 
 #. Turn on your transmitter and put the throttle stick at maximum.
 
-   .. image:: ../../../images/transmitter-throttle-max.jpg
+   .. image:: ../images/transmitter-throttle-max.jpg
        :target: ../_images/transmitter-throttle-max.jpg
     
 #. Connect the Lipo battery.  The autopilot's red, blue and yellow LEDs
    will light up in a cyclical pattern. This means the it's ready to go
    into ESC calibration mode the next time you plug it in.
 
-   .. image:: ../../../images/Connect-Battery.jpg
+   .. image:: ../images/Connect-Battery.jpg
        :target: ../_images/Connect-Battery.jpg
    
 #. With the transmitter throttle stick still high, disconnect and
    reconnect the battery.
 
-   .. image:: ../../../images/Disconnect-Battery.jpg
+   .. image:: ../images/Disconnect-Battery.jpg
        :target: ../_images/Disconnect-Battery.jpg
 
-   .. image:: ../../../images/Connect-Battery.jpg
+   .. image:: ../images/Connect-Battery.jpg
     :target: ../_images/Connect-Battery.jpg
     
 #. For **PX4 or Pixhawk,** press and hold the safety button until it
@@ -82,7 +82,7 @@ All at once calibration
    throttle has been captured.
 #. Pull the transmitter's throttle stick down to its minimum position.
 
-   .. image:: ../../../images/transmitter-throttle-min.jpg
+   .. image:: ../images/transmitter-throttle-min.jpg
        :target: ../_images/transmitter-throttle-min.jpg
     
 #. The ESCs should then emit a long tone indicating that the minimum
@@ -114,10 +114,10 @@ Manual ESC-by-ESC Calibration
    Before calibrating ESCs, please ensure that your copter has NO PROPS on
    it and that the APM is NOT CONNECTED to your computer via USB.
 
-   .. image:: ../../../images/copter_disconnect_props_banner.png
+   .. image:: ../images/copter_disconnect_props_banner.png
     :target: ../_images/copter_disconnect_props_banner.png
    
-   .. image:: ../../../images/MicroUSB1__57056_zoom.jpg
+   .. image:: ../images/MicroUSB1__57056_zoom.jpg
        :target: ../_images/MicroUSB1__57056_zoom.jpg
 
 Calibrating ESCs individually (Currently Untested on PX4)

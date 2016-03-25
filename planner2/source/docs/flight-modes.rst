@@ -27,7 +27,7 @@ mode will apply to each position. The currently selected position is
 shown highlighted in green. Select a flight mode for each available
 switch position. Some sample modes for copters are shown below.
 
-.. image:: ../../../images/apm_planner2_calibrate-flight-modes.png
+.. image:: ../images/ap2_calibrate-flight-modes.png
     :target: ../_images/apm_planner2_calibrate-flight-modes.png
 
 Select Save to save the flight modes to the autopilot.

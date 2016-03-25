@@ -63,7 +63,7 @@ landed before you are able to disarm.
 Tuning
 ======
 
-.. image:: ../../../images/Tuning_AltHold.png
+.. image:: ../images/Tuning_AltHold.png
     :target: ../_images/Tuning_AltHold.png
 
 The Altitude Hold P is used to convert the altitude error (the
@@ -82,7 +82,7 @@ of P) should be maintained if you modify these parameters.  These values
 should never be increased but for very powerful copters you may get
 better response by reducing both by 50% (i.e P to 0.5, I to 1.0).
 
-.. image:: ../../../images/Alt-Hold-PID-version-3.0.1.jpg
+.. image:: ../images/Alt-Hold-PID-version-3.0.1.jpg
     :target: ../_images/Alt-Hold-PID-version-3.0.1.jpg
 
 .. _altholdmode_verifying_althold_performance_with_dataflash_logs:
@@ -104,7 +104,7 @@ alt), DAlt (desired alt) and Alt (inertial nav alt estimate)
 
 The three should track well as shown below.
 
-.. image:: ../../../images/Tuning_AltHoldCheck.png
+.. image:: ../images/Tuning_AltHoldCheck.png
     :target: ../_images/Tuning_AltHoldCheck.png
 
 .. _altholdmode_common_problems:

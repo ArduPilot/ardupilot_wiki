@@ -14,7 +14,7 @@ Connect the autopilot to your computer using a USB cable or a 3DR Radio.
 A 3DR Radio allows you to communicate with your vehicle in flight and
 provides more mobility during calibration.
 
-.. figure:: ../../../images/apm-to-usb.jpg
+.. figure:: ../images/apm-to-usb.jpg
    :target: ../_images/apm-to-usb.jpg
 
    USB Connection to APM Autopilot
@@ -29,19 +29,19 @@ provides more mobility during calibration.
 
 Select the **connect box** to select a port.
 
-.. image:: ../../../images/apm_planner2_connect-autopilot-select-com-blank.png
+.. image:: ../images/ap2_connect-autopilot-select-com-blank.png
     :target: ../_images/apm_planner2_connect-autopilot-select-com-blank.png
 
 Set the rate to **115200** for USB and **57600** for a 3DR Radio. Select
 **Connect**.
 
-.. image:: ../../../images/apm_planner2_connect-autopilot-select-com.png
+.. image:: ../images/ap2_connect-autopilot-select-com.png
     :target: ../_images/apm_planner2_connect-autopilot-select-com.png
 
 When connected, AP2 will display the green connected icon as shown
 below.
 
-.. image:: ../../../images/apm_planner2_connect-autopilot-connected-firmware-warning.png
+.. image:: ../images/ap2_connect-autopilot-connected-firmware-warning.png
     :target: ../_images/apm_planner2_connect-autopilot-connected-firmware-warning.png
 
 3 Disconnect when installing firmware

@@ -67,7 +67,7 @@ the top position (i.e. PWM > 1800) will enable option #2 (leveling and
 lean angle limited). With a 2 position switch only options #0 (disabled)
 and option #2 (leveling & limited) are possible.
 
-.. image:: ../../../images/MP_Ch7_AcroTrainer.png
+.. image:: ../images/MP_Ch7_AcroTrainer.png
     :target: ../_images/MP_Ch7_AcroTrainer.png
 
 Tuning Parameters

@@ -53,7 +53,7 @@ Simplicity
    -  Labeled everything.
    -  Here is the controller:
 
-.. image:: ../../../images/lights.jpg
+.. image:: ../images/lights.jpg
     :target: ../_images/lights.jpg
 
 Reduce weight
@@ -64,7 +64,7 @@ Reduce weight
 -  Also in picture: an FPV camera switcher and the Telemetry junction
    box.
 
-.. image:: ../../../images/minimOSD.jpg
+.. image:: ../images/minimOSD.jpg
     :target: ../_images/minimOSD.jpg
 
 - LED circuits dumped
@@ -122,7 +122,7 @@ Receiver with 2 Satellites
 -  It's not perfect, but better than before. Radio now much more
    reliable regardless of orientation. No more scary moments...
 
-.. image:: ../../../images/diversity.jpg
+.. image:: ../images/diversity.jpg
     :target: ../_images/diversity.jpg
 
 FPV Transmitter Improvements:
@@ -140,7 +140,7 @@ FPV Transmitter Improvements:
 
    -  How bad is it? It cuts out before the video does...
 
-.. image:: ../../../images/videotx.jpg
+.. image:: ../images/videotx.jpg
     :target: ../_images/videotx.jpg
 
 Camera Gimbal Mount
@@ -155,7 +155,7 @@ Camera Gimbal Mount
 -  I still get a tiny bit of jitter in pitch, but I might need to look
    at my rx feed into the martinez; it might be noisy.
 
-.. image:: ../../../images/balls.jpg
+.. image:: ../images/balls.jpg
     :target: ../_images/balls.jpg
 
 FPV Camera Improvements
@@ -168,7 +168,7 @@ FPV Camera Improvements
 -  Just a pity I can't get minimOSD to overlay on the feed for some
    reason; works ok on the Gopro feed!
 
-.. image:: ../../../images/camera.jpg
+.. image:: ../images/camera.jpg
     :target: ../_images/camera.jpg
 
 Summary:
