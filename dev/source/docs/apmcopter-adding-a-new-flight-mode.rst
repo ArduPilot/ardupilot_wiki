@@ -13,7 +13,7 @@ may need to do to create your ideal flight mode but hopefully it's a
 start.
 
 #. Create the #define for the new flight mode in
-   `defines.h <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L88>`__.
+   `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L88>`__.
    and increase the NUM_MODES by 1.
 
    ::
@@ -40,9 +40,9 @@ start.
 
 #. Create a new control_<new flight mode> sketch based on a similar
    flight mode such as
-   `control_stabilize.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_stabilize.cpp>`__
+   `control_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_stabilize.cpp>`__
    or
-   `control_loiter.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_loiter.cpp>`__. 
+   `control_loiter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_loiter.cpp>`__. 
    This new file should have an ``_init()`` function and ``_run()``
    function.
 
@@ -91,7 +91,7 @@ start.
        }
 
 #. Add declarations in
-   `Copter.h <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Copter.h>`__
+   `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h>`__
    for the new ``_init()`` function and ``_run()`` functions:
 
    ::
@@ -99,7 +99,7 @@ start.
        bool newflightmode_init(bool ignore_checks);
        void newflightmode_run();
 
-#. Add a case for the new mode to the ``set_mode()`` function in `flight_mode.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L14>`__
+#. Add a case for the new mode to the ``set_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L14>`__
    to call the ``above _init()`` function.
 
    ::
@@ -131,7 +131,7 @@ start.
            }
        }
 
-#. Add a case for the new mode to the ``update_flight_mode()`` function in `flight_mode.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L132>`__
+#. Add a case for the new mode to the ``update_flight_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L132>`__
    to call the above ``_run()`` function.
 
    ::
@@ -155,7 +155,7 @@ start.
        }
 
 #. Add the string to print out the flight mode to the
-   ``print_flight_mode()`` function in `flight_mode.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L312>`__.
+   ``print_flight_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L312>`__.
 
    ::
 
@@ -171,7 +171,7 @@ start.
                break;
 
 #. Add the new flight mode to the list of valid ``@Values`` for the
-   ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.cpp#L300>`__.
+   ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L300>`__.
 
    ::
 
@@ -189,7 +189,7 @@ start.
            // @User: Standard
            GSCALAR(flight_mode2, "FLTMODE2",               FLIGHT_MODE_2),
 
-#. Raise a request in the `Mission Planner's Issue List <https://github.com/diydrones/MissionPlanner/issues>`__ if you
+#. Raise a request in the `Mission Planner's Issue List <https://github.com/ArduPilot/MissionPlanner/issues>`__ if you
    wish the new flight mode to appear in the Mission Planner's HUD and
    Flight Mode set-up.
 

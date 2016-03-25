@@ -42,7 +42,7 @@ Limitations
    slave address 0x0B (7 bit address).
 -  Start-up scripts for ArduPilot only search for the battery on the
    "internal" I2C bus which is not easily accessible on the Pixhawk
-   board.  This can be changed in `the startup scripts <https://github.com/diydrones/ardupilot/blob/master/mk/PX4/ROMFS/init.d/rc.APM#L465>`__
+   board.  This can be changed in `the startup scripts <https://github.com/ArduPilot/ardupilot/blob/master/mk/PX4/ROMFS/init.d/rc.APM#L465>`__
    (see line below) to tell the **batt_smbus** driver to searching on
    bus "1" instead of "2":
 
@@ -56,4 +56,4 @@ Additional information
 
 `SMBus specifications (see ver 1.1, ver 2.0) <http://smbus.org/specs/>`__
 
-`Software driver for ArduPilot/PX4 <https://github.com/diydrones/PX4Firmware/blob/master/src/drivers/batt_smbus/batt_smbus.cpp>`__
+`Software driver for ArduPilot/PX4 <https://github.com/ArduPilot/PX4Firmware/blob/master/src/drivers/batt_smbus/batt_smbus.cpp>`__

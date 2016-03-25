@@ -6,7 +6,7 @@ The ArduPilot Autotest Framework
 
 ArduPilot has an automatic testing framework based on SITL. The autotest
 framework is what produces the web pages at
-http://autotest.diydrones.com
+http://autotest.ardupilot.org
 
 You can also manually run the autotester from the command line. That is
 useful when you want to add features to the autotest or want to test

@@ -208,7 +208,7 @@ have the vehicle follow you as you walk around a field.
    by switching the flight mode switch on your RC radio, this is especially
    true because there is currently a `bug in the APM code which makes
    follow-me very 'twitchy/unstable' for some
-   configurations <https://github.com/diydrones/ardupilot/issues/879>`__.
+   configurations <https://github.com/ArduPilot/ardupilot/issues/879>`__.
 
 In practice, you don't really want to use this follow-me implementation,
 rather you can use this example as a starting point to build your own

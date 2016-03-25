@@ -118,13 +118,13 @@ extremely likely that it is not supported on ArduPilot.
 The reason for this is that the information was predominantly inferred
 by inspecting the command handlers for messages:
 
--  The `switch statement in `AP_Mission::mavlink_to_mission_cmd <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_Mission/AP_Mission.cpp#L466>`__
+-  The `switch statement in `AP_Mission::mavlink_to_mission_cmd <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Mission/AP_Mission.cpp#L466>`__
    was inspected to determine which commands are handled by *all*
    vehicle platforms, and which parameters from the message are stored.
 -  The command handler switch for each vehicle type
-   (`Plane <https://github.com/diydrones/ardupilot/blob/master/ArduPlane/commands_logic.cpp#L33>`__,
-   `Copter <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/commands_logic.cpp#L49>`__,
-   `Rover <https://github.com/diydrones/ardupilot/blob/master/APMrover2/commands_logic.cpp#L25>`__)
+   (`Plane <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/commands_logic.cpp#L33>`__,
+   `Copter <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/commands_logic.cpp#L49>`__,
+   `Rover <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/commands_logic.cpp#L25>`__)
    tells us which commands are likely to be supported in each vehicle
    and which parameters are passed to the handler.
 
@@ -170,7 +170,7 @@ Commands supported by Copter
 ============================
 
 This list of commands was inferred from the command handler in
-`/ArduCopter/commands_logic.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/commands_logic.cpp#L49>`__. 
+`/ArduCopter/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/commands_logic.cpp#L49>`__. 
 
 :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
 
@@ -246,7 +246,7 @@ Commands supported by Plane
 ===========================
 
 This list of commands was inferred from the command handler in
-`/ArduPlane/commands_logic.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduPlane/commands_logic.cpp#L33>`__. 
+`/ArduPlane/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/commands_logic.cpp#L33>`__. 
 
 :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 
@@ -322,7 +322,7 @@ Commands supported by Rover
 ===========================
 
 This list of commands was inferred from the command handler in
-`/APMrover2/commands_logic.cpp <https://github.com/diydrones/ardupilot/blob/master/APMrover2/commands_logic.cpp#L25>`__. 
+`/APMrover2/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/commands_logic.cpp#L25>`__. 
 
 :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 
@@ -2859,7 +2859,7 @@ specified in the command.
 
 .. warning::
 
-   This command should not be used in AC3.2 `due to this issue <https://github.com/diydrones/ardupilot/issues/1677>`__.  Instead
+   This command should not be used in AC3.2 `due to this issue <https://github.com/ArduPilot/ardupilot/issues/1677>`__.  Instead
    :ref:`Rally Points <common-rally-points>` can be used to control the
    position used for RETURN_TO_LAUNCH ("Home" is also used internally as
    the "origin" for all navigation calculations). The command is fixed in

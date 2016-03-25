@@ -18,7 +18,7 @@ This page and the pages linked below are designed to be used as a
 tutorial. You should work through each page step by step, trying things
 for yourself as you go. We will also be adding more pages over time. If
 you think some important information is missing or could be improved
-then please `open an issue <https://github.com/diydrones/ardupilot/issues>`__ on the
+then please `open an issue <https://github.com/ArduPilot/ardupilot/issues>`__ on the
 ArduPilot github and we'll try to get to it when we can.
 
 Tutorial steps

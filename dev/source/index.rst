@@ -45,7 +45,7 @@ and key links for all the supported controller boards, including
 `NAVIO+ <http://www.emlid.com/>`__ etc.
 
 The ArduPilot/APM source code is written on top of
-the `AP-HAL <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL>`__
+the `AP-HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__
 hardware abstraction layer, making it possible to port the code to a
 wide range of autopilot boards. See this `blog post <http://diydrones.com/profiles/blogs/lots-of-changes-to-apm-development>`__
 for more information on the move to AP-HAL.
@@ -61,20 +61,20 @@ ArduPilot dev team.
 -  DroneKit (`site <http://dronekit.io/>`__) - APM SDK for apps running
    on vehicles, mobile devices and/or in the cloud.
 -  Plane (`wiki <http://plane.ardupilot.com/>`__,
-   `code <https://github.com/diydrones/ardupilot>`__) - autopilot for
+   `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
    planes
 -  Copter (`wiki <http://copter.ardupilot.com/>`__,
-   `code <https://github.com/diydrones/ardupilot>`__) - autopilot for
+   `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
    multicopters and traditional helicopters
 -  Rover (`wiki <http://rover.ardupilot.com/>`__,
-   `code <https://github.com/diydrones/ardupilot>`__) - autopilot for
+   `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
    ground vehicles
 -  Mission Planner (`wiki <http://planner.ardupilot.com/>`__,
-   `code <https://github.com/diydrones/MissionPlanner>`__) - the most
+   `code <https://github.com/ArduPilot/MissionPlanner>`__) - the most
    commonly used ground station written in C# for windows but also runs
    on Linux and MacOS via mono
 -  APM Planner 2.0 (`wiki <http://planner2.ardupilot.com/>`__,
-   `code <https://github.com/diydrones/apm_planner>`__) is a ground
+   `code <https://github.com/ArduPilot/apm_planner>`__) is a ground
    station specifically for APM written in C++ using the Qt libraries
 -  MAVProxy
    (`wiki <http://www.qgroundcontrol.org/mavlink/mavproxy_startpage>`__)
@@ -116,7 +116,7 @@ and companion computer code are listed in the sidebar.
 For topics related to Ground Control Station development see:
 
 -  :ref:`Building Mission Planner (C#, Windows) <buildin-mission-planner>`
--  `Building APM Planner 2.0 (Qt, C++, Linux, Mac OSX, Windows) <https://github.com/diydrones/apm_planner/blob/master/README.md>`__
+-  `Building APM Planner 2.0 (Qt, C++, Linux, Mac OSX, Windows) <https://github.com/ArduPilot/apm_planner/blob/master/README.md>`__
 
 RTF vehicles
 ============
@@ -139,14 +139,14 @@ How the team works
    `DroneCon <http://www.dronecon.org/>`__. See previous years speeches
    and content `here <http://www.dronecon.org/>`__.
 -  The source code for ArduPilot/APM is managed using git on
-   https://github.com/diydrones/ardupilot
+   https://github.com/ArduPilot/ardupilot
 -  Pre-compiled firmware for supported autopilot boards is available
-   from http://firmware.diydrones.com
+   from http://firmware.ardupilot.org
 -  User support is available on the `APM forums <http://ardupilot.com/forum/viewforum.php?f=25>`__.
--  The ArduPilot/APM \ `automatic test system <http://autotest.diydrones.com/>`__ shows the test status of
+-  The ArduPilot/APM \ `automatic test system <http://autotest.ardupilot.org/>`__ shows the test status of
    each commit. It's described
    `here <http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A703309>`__.
--  Bug tracking and open issues are tracked using the `github issues system <https://github.com/diydrones/ardupilot/issues>`__
+-  Bug tracking and open issues are tracked using the `github issues system <https://github.com/ArduPilot/ardupilot/issues>`__
 -  Vehicle onboard parameter documentation for
    :ref:`copter <copter:parameters>`, :ref:`plane <plane:parameters>` and
    :ref:`rover <rover:parameters>` is auto-generated from the source code
@@ -167,14 +167,14 @@ License
 =======
 
 ArduPilot (including Copter, Plane, Rover and MissionPlanner) is
-released as free software under the `GNU General Public License <https://github.com/diydrones/ardupilot/blob/master/COPYING.txt>`__
+released as free software under the `GNU General Public License <https://github.com/ArduPilot/ardupilot/blob/master/COPYING.txt>`__
 version 3 or later.  See :ref:`License overview wiki page here. <license-gplv3>`
 
 Didn't find what you are looking for?
 =====================================
 
 If you think of something that should be added to this site, please
-`open an issue <https://github.com/diydrones/ardupilot/issues>`__ or
+`open an issue <https://github.com/ArduPilot/ardupilot/issues>`__ or
 post a comment on the
 `drones-discuss <https://groups.google.com/forum/#!forum/drones-discuss>`__
 mailing list.

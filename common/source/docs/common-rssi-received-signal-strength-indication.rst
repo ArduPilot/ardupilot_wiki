@@ -17,7 +17,7 @@ Provide RSSI from FrSky receiver to APM.
 -  However some of receivers such as FrSky D8R-XP output 0 - 3.3 V.
 -  For that reason I've added new parameter: **RSSI_RANGE**.
 -  This was also a requested issue
-   previously: **https://github.com/diydrones/ardupilot/issues/648**
+   previously: **https://github.com/ArduPilot/ardupilot/issues/648**
 -  When the RSSI_RANGE parameter is set to your radio's maximum RSSI
    voltage the RSSI **rxrssi** is shown in the range 0-100.
 -  The ability to set the RSSI_RANGE  parameter has been added to

@@ -326,7 +326,7 @@ Do-Set-Home
     :target: ../_images/MissionList_DoSetHome.png
 
 This command should not be used because of 
-`an issue found in AC3.2 <https://github.com/diydrones/ardupilot/issues/1677>`__. 
+`an issue found in AC3.2 <https://github.com/ArduPilot/ardupilot/issues/1677>`__. 
 Instead :ref:`Rally Points <common-rally-points>` can be used to
 control the position used for Return-To-Launch ("Home" is also used
 internally as the "origin" for all navigation calculations).

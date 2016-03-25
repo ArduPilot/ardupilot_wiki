@@ -90,9 +90,9 @@ for more information.
 | **Setup**                            | `Pixhawk Overview <http://copter.ardupilot.com/common-pixhawk-overview/#specifications>`__,        |
 |                                      | `Powering <http://copter.ardupilot.com/wiki/common-powering-the-pixhawk/>`__                       |
 +--------------------------------------+----------------------------------------------------------------------------------------------------+
-| **Design files**                     | `Schematic <http://firmware.diydrones.com/downloads/wiki/pdf_guides/px4fmuv2.4.3_schematic.pdf>`__ |
+| **Design files**                     | `Schematic <http://firmware.ardupilot.org/downloads/wiki/pdf_guides/px4fmuv2.4.3_schematic.pdf>`__ |
 |                                      |                                                                                                    |
-|                                      | `Layout <http://firmware.diydrones.com/downloads/wiki/pdf_guides/Pixhawk-Open-Hardware.zip>`__     |
+|                                      | `Layout <http://firmware.ardupilot.org/downloads/wiki/pdf_guides/Pixhawk-Open-Hardware.zip>`__     |
 +--------------------------------------+----------------------------------------------------------------------------------------------------+
 
 APM2.x
@@ -152,8 +152,8 @@ is a popular AVR2560 8-bit autopilot.
 |                                      |                                            |
 +--------------------------------------+--------------------------------------------+
 
-.. |APM_v252_RELEASE.zip| replace:: `APM board layout <http://firmware.diydrones.com/downloads/wiki/pdf_guides/APM_v252_RELEASE.zip>`__
-.. |APM_v25_schematic.pdf| replace:: `APM schematic diagram <http://firmware.diydrones.com/downloads/wiki/pdf_guides/APM_v25_schematic.pdf>`__
+.. |APM_v252_RELEASE.zip| replace:: `APM board layout <http://firmware.ardupilot.org/downloads/wiki/pdf_guides/APM_v252_RELEASE.zip>`__
+.. |APM_v25_schematic.pdf| replace:: `APM schematic diagram <http://firmware.ardupilot.org/downloads/wiki/pdf_guides/APM_v25_schematic.pdf>`__
 .. |jdrones_amp2.x| replace:: `store.jdrones.com <http://store.jdrones.com/ArduPilot_MEGA_2_5_p/fcapm25side.htm>`__  
 
 PX4
@@ -537,7 +537,7 @@ store for drones and robots.
 |                                      | Linux <building-for-beaglebone-black-on-linux/>`__  (wiki)                  |
 |                                      |                                                                             |
 +--------------------------------------+-----------------------------------------------------------------------------+
-| **Design files**                     | `Design files <https://github.com/diydrones/PXF>`__                         |
+| **Design files**                     | `Design files <https://github.com/ArduPilot/PXF>`__                         |
 |                                      |                                                                             |
 |                                      |                                                                             |
 |                                      | :ref:`copter:common-erle-brain-linux-autopilot`                             |
@@ -605,7 +605,7 @@ computer is a fully functional autopilot (one example is the :ref:`Erle-Brain au
 |                                      | -on-linux/>`__                       |
 |                                      | (wiki)                               |
 +--------------------------------------+--------------------------------------+
-| **Design files**                     | https://github.com/diydrones/PXF     |
+| **Design files**                     | https://github.com/ArduPilot/PXF     |
 +--------------------------------------+--------------------------------------+
 
 .. |erlebrain_updating| replace:: `Updating the software <http://erlerobotics.com/blog/updating-the-software/>`__
@@ -959,8 +959,8 @@ In addition it includes Wi-Fi, Bluetooth connectivity, automotive-grade
 GPS and many more features.
 
 Information about using this board with ArduPilot can be found here:
-:ref:`Building for Qualcomm Snapdragon Flight Kit <building-for-qualcomm-snapdragon-flight-kit>`, `QURT Port <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL_QURT/README.md>`__
-(Github) and `QFlight Port <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_Linux/qflight>`__
+:ref:`Building for Qualcomm Snapdragon Flight Kit <building-for-qualcomm-snapdragon-flight-kit>`, `QURT Port <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_QURT/README.md>`__
+(Github) and `QFlight Port <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_Linux/qflight>`__
 (Github).
 
 .. warning::

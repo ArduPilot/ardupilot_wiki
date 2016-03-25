@@ -50,7 +50,7 @@ Understanding the example sketch code
 =====================================
 
 When you are reading the example sketch code (such as the
-`GPS_AUTO_test <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_GPS/examples/GPS_AUTO_test/GPS_AUTO_test.cpp>`__
+`GPS_AUTO_test <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_GPS/examples/GPS_AUTO_test/GPS_AUTO_test.cpp>`__
 code) you will notice a few things that may seem strange at first:
 
 -  it declares a 'hal' variable as a reference

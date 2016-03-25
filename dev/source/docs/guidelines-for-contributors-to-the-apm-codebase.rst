@@ -10,7 +10,7 @@ but to avoid disrupting existing work or destabilizing code, we have
 processes that bring people in gradually.  In general the process is:
 
 -  Find a specific bug you'd like to fix or a specific feature you'd
-   like to add (check out the `issues list <https://github.com/diydrones/ardupilot/issues?state=open>`__ if
+   like to add (check out the `issues list <https://github.com/ArduPilot/ardupilot/issues?state=open>`__ if
    to get some ideas).
 -  Fix the bug in your own clone and test that it's working
 -  Submit the change to the main code base :ref:`via a pull request <submitting-patches-back-to-master>`.

@@ -141,7 +141,7 @@ Download and compile ArduCopter
 
    ::
 
-       git clone https://github.com/diydrones/ardupilot.git
+       git clone https://github.com/ArduPilot/ardupilot.git
 
 #. Building the flight control firmware is nearly identical for
    :ref:`building for the Pixhawk <building-px4-for-linux-with-make>`
@@ -382,7 +382,7 @@ Controlling the Bebop via RC over UDP on Linux
 ==============================================
 
 #. In order to control the arducopter for Bebop via RC over UDP, you can
-   either write an application using `this protocol <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL_Linux/RCInput_UDP_Protocol.h>`__ and
+   either write an application using `this protocol <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_Linux/RCInput_UDP_Protocol.h>`__ and
    sending a packet every 10ms
 #. Or use
    `joystick_remote <https://github.com/jberaud/joystick_remote>`__
@@ -437,7 +437,7 @@ Basic configuration and frame parameters
 
 #. Thanks to Leonard Hall, we have a very good set of tuning parameters
    that you can find
-   `here <https://github.com/diydrones/ardupilot/blob/master/Tools/Frame_params/Parrot_Bebop.param>`__
+   `here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Parrot_Bebop.param>`__
 
 Known limitations
 =================

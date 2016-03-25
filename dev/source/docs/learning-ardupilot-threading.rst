@@ -194,7 +194,7 @@ not started by the AP_HAL_PX4 Scheduler code. Specifically they are:
 -  uavcan - handle the uavcan CANBUS protocol
 
 The startup of all of these tasks is controled by the PX4 specific
-`rc.APM script <https://github.com/diydrones/ardupilot/blob/master/mk/PX4/ROMFS/init.d/rc.APM>`__.
+`rc.APM script <https://github.com/ArduPilot/ardupilot/blob/master/mk/PX4/ROMFS/init.d/rc.APM>`__.
 That script is run when the PX4 boots, and is responsible for detecting
 what sort of PX4 board we are using then loading the right tasks and
 drivers for that board. It is a "nsh" script, which is similar to a
@@ -206,7 +206,7 @@ console while the board is booting. Your echo commands should show up on
 the console.
 
 Another very useful way of exploring the startup of the PX4 is to boot
-without a microSD card in the slot. The `rcS script <https://github.com/diydrones/ardupilot/blob/master/mk/PX4/ROMFS/init.d/rcS>`__,
+without a microSD card in the slot. The `rcS script <https://github.com/ArduPilot/ardupilot/blob/master/mk/PX4/ROMFS/init.d/rcS>`__,
 which runs just before rc.APM, detects if a microSD is inserted and
 gives you a bare nsh console on the USB port if it isn't. You can then
 manually run all the steps of rc.APM yourself on the USB console to
@@ -228,7 +228,7 @@ card and connecting to the USB console:
 
 Try playing with the other drivers. Have a look in /bin to see what is
 available. The source code for most of these commands is in
-`PX4Firmware/src/drivers <https://github.com/diydrones/PX4Firmware/tree/master/src/drivers>`__.
+`PX4Firmware/src/drivers <https://github.com/ArduPilot/PX4Firmware/tree/master/src/drivers>`__.
 Have a look through the mpu6000 driver to get an idea of what is
 involved.
 
@@ -283,7 +283,7 @@ implementation contains some code that does this:
 
 It is a table driven scheduler, and each vehicle type has a
 AP_Scheduler::Task table. To learn how it works have a look at the
-`AP_Scheduler/examples/Scheduler_test.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_Scheduler/examples/Scheduler_test/Scheduler_test.cpp>`__
+`AP_Scheduler/examples/Scheduler_test.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scheduler/examples/Scheduler_test/Scheduler_test.cpp>`__
 sketch.
 
 If you look inside that file you will see a small table with a set of 3
@@ -390,7 +390,7 @@ publish/subscribe model that is safe in a multi-threaded environment.
 
 The ORB provides a nice mechanism for declaring structures which will be
 shared in this way (all defined in
-`PX4Firmware/src/modules/uORB/topics <https://github.com/diydrones/PX4Firmware/tree/master/src/modules/uORB/topics>`__).
+`PX4Firmware/src/modules/uORB/topics <https://github.com/ArduPilot/PX4Firmware/tree/master/src/modules/uORB/topics>`__).
 Code can then "publish" data to one of these topics, which is picked up
 by other pieces of code.
 
@@ -399,7 +399,7 @@ be used on Pixhawk. Have a look at the \_publish_actuators() function
 in AP_HAL_PX4/RCOutput.cpp. You will see that it advertises a
 "actuator_direct" topic, which contains the speed desired for each ESC.
 The uavcan code these watches for changes to this topic in
-`PX4Firmware/src/modules/uavcan/uavcan_main.cpp <https://github.com/diydrones/PX4Firmware/blob/master/src/modules/uavcan/uavcan_main.cpp>`__\ and
+`PX4Firmware/src/modules/uavcan/uavcan_main.cpp <https://github.com/ArduPilot/PX4Firmware/blob/master/src/modules/uavcan/uavcan_main.cpp>`__\ and
 outputs the new values to the uavcan ESCs.
 
 Two other common mechanisms for communicating with PX4 drivers are:

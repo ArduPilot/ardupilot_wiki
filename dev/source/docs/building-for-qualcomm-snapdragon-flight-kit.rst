@@ -20,11 +20,11 @@ Overview
 
 There are two ports of ArduPilot to this board:
 
--  `QFLIGHT <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_HAL_Linux/qflight>`__
+-  `QFLIGHT <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_Linux/qflight>`__
    runs mostly on the ARM cores, with just sensor and UARTs on the DSPs.
    This port is much easier to debug and you can use all of the normal
    Linux development tools.
--  `HAL_QURT <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL_QURT/README.md>`__
+-  `HAL_QURT <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_QURT/README.md>`__
    runs primarily on the DSPs, with just a small shim on the ARM cores.
    This port has better performance due to its extremely accurate
    realtime scheduling, and is also more robust as it can keep flying if
@@ -257,7 +257,7 @@ First clone the source:
 
 ::
 
-    git clone https://github.com/diydrones/ardupilot.git
+    git clone https://github.com/ArduPilot/ardupilot.git
 
 Get additional tools/libraries
 ------------------------------

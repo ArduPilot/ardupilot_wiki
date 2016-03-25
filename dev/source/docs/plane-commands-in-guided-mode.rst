@@ -12,7 +12,7 @@ most of these can also be called in other modes too.
 .. note::
 
    The list is inferred from Plane's
-   `GCS_Mavlink.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduPlane/GCS_Mavlink.cpp>`__
+   `GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/GCS_Mavlink.cpp>`__
 
 Movement commands
 =================

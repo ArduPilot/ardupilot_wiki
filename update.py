@@ -65,7 +65,7 @@ def fetchparameters(site=args.site):
         pass
         
     for key, value in PARAMETER_SITE.items():
-        fetchurl='http://autotest.diydrones.com/Parameters/%s/Parameters.rst' % value
+        fetchurl='http://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
         targetfile='./%s/source/docs/parameters.rst' % key
         if site==key or site==None:
             subprocess.check_call(["wget", fetchurl])

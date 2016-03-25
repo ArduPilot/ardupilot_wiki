@@ -17,7 +17,7 @@ Public License for more details.
 For more specific details see
 `http://www.gnu.org/licenses, <http://www.gnu.org/licenses/>`__ the
 `Quick Guide to GPLv3. <http://www.gnu.org/licenses/quick-guide-gplv3.html>`__ and the
-`copying.txt <https://github.com/diydrones/ardupilot/blob/master/COPYING.txt>`__
+`copying.txt <https://github.com/ArduPilot/ardupilot/blob/master/COPYING.txt>`__
 in the codebase.
 
 The GNU operating system which is under the same license has an

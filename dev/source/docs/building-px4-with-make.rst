@@ -31,7 +31,7 @@ Build instructions
 #. Clone the ardupilot repository onto your machine:
 
    -  Go to the
-      `GitHub/diydrones/ardupilot <https://github.com/diydrones/ardupilot>`__
+      `GitHub/diydrones/ardupilot <https://github.com/ArduPilot/ardupilot>`__
       web page and click the **Clone in Desktop** button
    -  Warning: be careful that the directory path is less than about 50
       characters.  For example
@@ -50,7 +50,7 @@ Initialise and update submodules
 
 
 Download and install the *PX4 toolchain* by running the
-`px4_toolchain_installer_v14_win.exe <http://firmware.diydrones.com/Tools/PX4-tools/px4_toolchain_installer_v14_win.exe>`__
+`px4_toolchain_installer_v14_win.exe <http://firmware.ardupilot.org/Tools/PX4-tools/px4_toolchain_installer_v14_win.exe>`__
 
 Open the *PX4Console* and navigate to the target vehicle directory:
 
@@ -108,9 +108,9 @@ The firmware will be created in the **ArduCopter** directory with the
 .. note::
 
    ArduPilot imports addition projects
-   (`PX4Firmware <https://github.com/diydrones/PX4Firmware>`__,
-   `PX4NuttX <https://github.com/diydrones/PX4NuttX>`__,
-   `uavcan <https://github.com/diydrones/uavcan>`__) as *git submodules*
+   (`PX4Firmware <https://github.com/ArduPilot/PX4Firmware>`__,
+   `PX4NuttX <https://github.com/ArduPilot/PX4NuttX>`__,
+   `uavcan <https://github.com/ArduPilot/uavcan>`__) as *git submodules*
    when you build the project. If you built the project before the change
    to submodules you may get errors. See :ref:`Git Submodules <git-submodules>` for troubleshooting information.
 

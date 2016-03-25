@@ -7,7 +7,7 @@ Submitting Patches Back to Master
 Once you have a bug fix or new feature you would like to have included
 in the APM projects, you should submit a `Pull Request <https://help.github.com/articles/using-pull-requests>`__.
 
-The main developers will see your changes in the `Pulls list, <https://github.com/diydrones/ardupilot/pulls>`__ 
+The main developers will see your changes in the `Pulls list, <https://github.com/ArduPilot/ardupilot/pulls>`__ 
 review them and if all goes well they will be merged into master.
 
 Preparing commits

@@ -109,7 +109,7 @@ Specify make targets
 
 In the Make window on the right create any of these make targets (the
 full list of possible targets can be found in
-`px4_targets.mk <https://github.com/diydrones/ardupilot/blob/master/mk/px4_targets.mk>`__):
+`px4_targets.mk <https://github.com/ArduPilot/ardupilot/blob/master/mk/px4_targets.mk>`__):
 
 +--------------------------------------+--------------------------------------+
 | ``make px4``                         | Build both PX4 and PixHawk firmware  |

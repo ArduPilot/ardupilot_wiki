@@ -4,9 +4,9 @@
 Code Overview (Copter)
 ======================
 
-The `code <https://github.com/diydrones/ardupilot>`__ is made up
-of `the main Copter code <https://github.com/diydrones/ardupilot/tree/master/ArduCopter>`__ which
-resides in it's own directory, and `the libraries <https://github.com/diydrones/ardupilot/tree/master/libraries>`__ which
+The `code <https://github.com/ArduPilot/ardupilot>`__ is made up
+of `the main Copter code <https://github.com/ArduPilot/ardupilot/tree/master/ArduCopter>`__ which
+resides in it's own directory, and `the libraries <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__ which
 are shared with Plane and Rover.
 
 Click on the images below to see a high level view of flight-mode to

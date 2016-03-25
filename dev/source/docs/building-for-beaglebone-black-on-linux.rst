@@ -454,7 +454,7 @@ install git, make, gawk, g++, arduino-core on your BBB
 ::
 
     apt-get install git make gawk g++ arduino-core
-    git clone git://github.com/diydrones/ardupilot.git
+    git clone git://github.com/ArduPilot/ardupilot.git
 
 then open
 

@@ -40,7 +40,7 @@ values currently being received on the board. The returned values are
 PWM values in microseconds.
 
 Go and have a look at the
-`libraries/AP_HAL/examples/RCInput/RCInput.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL/examples/RCInput/RCInput.cpp>`__
+`libraries/AP_HAL/examples/RCInput/RCInput.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/examples/RCInput/RCInput.cpp>`__
 sketch and try it on your board. Try moving the sticks on your
 transmitter and check that the values change correctly in the output.
 
@@ -54,7 +54,7 @@ peripheral, or output via a co-processor (such as the PX4IO
 microcontroller).
 
 Go and have a look at the
-`libraries/AP_HAL/examples/RCOutput/RCOutput.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL/examples/RCOutput/RCOutput.cpp>`__
+`libraries/AP_HAL/examples/RCOutput/RCOutput.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/examples/RCOutput/RCOutput.cpp>`__
 example sketch. You'll see that it just sets up all the channels to wave
 the servos from minimum to maximum over a few second period. Hook up
 some servos to your board and then test to make sure it works for you.
@@ -70,7 +70,7 @@ support for auxillary channel function, scaling of inputs and outputs
 and many other features.
 
 Go and have a look at
-`libraries/RC_Channel/examples/RC_Channel/RC_Channel.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/RC_Channel/examples/RC_Channel/RC_Channel.cpp>`__.
+`libraries/RC_Channel/examples/RC_Channel/RC_Channel.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/RC_Channel/examples/RC_Channel/RC_Channel.cpp>`__.
 That example shows how to setup RC channels, read input and copy input
 to output values. Run that on your board and check that transmitter
 input is passed through to a servo. Try changing it to reverse a

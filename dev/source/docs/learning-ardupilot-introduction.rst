@@ -7,7 +7,7 @@ Learning ArduPilot — Introduction
 This page introduces the basic structure of ArduPilot. Before you get
 started you should work out what code exploring system you will use. You
 could just use a web browser and look at
-https://github.com/diydrones/ardupilot/ but you will probably get a lot
+https://github.com/ArduPilot/ardupilot/ but you will probably get a lot
 more out of it if you use a good programmers IDE that allows you to find
 function, structure and class definitions and shows the code in a
 structured manner.
@@ -69,7 +69,7 @@ Tools directories
 
 The tools directories are miscellaneous support directories. For
 examples, tools/autotest provides the autotest infrastructure behind the
-`autotest.diydrones.com <http://autotest.diydrones.com/>`__ site and
+`autotest.ardupilot.org <http://autotest.ardupilot.org/>`__ site and
 tools/Replay provides our log replay utility.
 
 External support code
@@ -78,11 +78,11 @@ External support code
 On some platforms we need external support code to provide additional
 features or board support. Currently the external trees are:
 
--  `PX4NuttX <https://github.com/diydrones/PX4NuttX>`__ - the core NuttX
+-  `PX4NuttX <https://github.com/ArduPilot/PX4NuttX>`__ - the core NuttX
    RTOS used on PX4 boards
--  `PX4Firmware <https://github.com/diydrones/PX4Firmware>`__ - the base
+-  `PX4Firmware <https://github.com/ArduPilot/PX4Firmware>`__ - the base
    PX4 middleware and drivers used on PX4 boards
--  `uavcan <https://github.com/diydrones/uavcan>`__ - the uavcan CANBUS
+-  `uavcan <https://github.com/ArduPilot/uavcan>`__ - the uavcan CANBUS
    implementation used in ArduPilot
 -  `mavlink <https://github.com/mavlink/mavlink>`__ - the mavlink
    protocol and code generator
@@ -96,7 +96,7 @@ Build system
 ============
 
 The build system is based around make, but also supports the old arduino
-IDE for AVR builds. The makefiles are in the `mk/ directory <https://github.com/diydrones/ardupilot/tree/master/mk>`__,
+IDE for AVR builds. The makefiles are in the `mk/ directory <https://github.com/ArduPilot/ardupilot/tree/master/mk>`__,
 and define build rules for each type of supported board
 
 To build a vehicle or other 'sketch' for a particular board target you

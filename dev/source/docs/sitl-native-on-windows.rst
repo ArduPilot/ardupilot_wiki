@@ -37,11 +37,11 @@ Install MAVProxy
 *MAVProxy* is a fully-functioning but minimalist console-based GCS that
 is commonly used for testing and developing ArduPilot:
 
--  `Download MAVProxy for Windows <http://firmware.diydrones.com/Tools/MAVProxy/MAVProxySetup-latest.exe>`__ (latest build)
+-  `Download MAVProxy for Windows <http://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe>`__ (latest build)
 -  Install the executable, accepting the license and all other default settings.
 
 Older builds can be obtained from
-http://firmware.diydrones.com/Tools/MAVProxy/.
+http://firmware.ardupilot.org/Tools/MAVProxy/.
 
 Install Cygwin
 --------------
@@ -133,11 +133,11 @@ The file will be loaded next time you open the *Cygwin terminal*.
 Download and make ArduPilot
 ---------------------------
 
-Open (reopen) *Cygwin Terminal* and clone the Github `ArduPilot repository: <https://github.com/diydrones/ardupilot>`__
+Open (reopen) *Cygwin Terminal* and clone the Github `ArduPilot repository: <https://github.com/ArduPilot/ardupilot>`__
 
 ::
 
-    git clone git://github.com/diydrones/ardupilot.git
+    git clone git://github.com/ArduPilot/ardupilot.git
 
 In the terminal navigate to the *ArduCopter* directory and run **make**
 as shown:
@@ -215,13 +215,13 @@ The main steps are:
    .. warning::
 
       At time
-         of writing `version 3.4.0 is required on Windows <https://github.com/diydrones/ardupilot/issues/3422>`__.
+         of writing `version 3.4.0 is required on Windows <https://github.com/ArduPilot/ardupilot/issues/3422>`__.
 
 #. Open a new command prompt and run the appropriate batch file for your
    vehicle in **/ardupilot/Tools/autotest/**:
-   `fg_plane_view.bat <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/fg_plane_view.bat>`__
+   `fg_plane_view.bat <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/fg_plane_view.bat>`__
    (Plane) and
-   `fg_quad_view.bat <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/fg_quad_view.bat>`__
+   `fg_quad_view.bat <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/fg_quad_view.bat>`__
    (Copter).
 
    This will start FlightGear.
@@ -254,7 +254,7 @@ Troubleshooting
 ---------------
 
 A very small number of users have reported build errors related to
-Windows not setting paths correctly. For more information see `this issue <https://github.com/diydrones/ardupilot-wiki-issue-tracker/issues/156>`__.
+Windows not setting paths correctly. For more information see `this issue <https://github.com/ArduPilot/ardupilot-wiki-issue-tracker/issues/156>`__.
 
 
 .. _sitl-native-on-windows_running_sitl_andmavproxy:
@@ -278,7 +278,7 @@ build and start SITL for a 4-core CPU and then launch a *MAVProxy map*:
 
    .. tip::
 
-      `sim_vehicle.sh <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
+      `sim_vehicle.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
       has many useful build options, ranging from setting the simulation
       speed through to choosing the initial vehicle location. These can be
       listed by calling it with the ``-h`` flag (and some are demonstrated
@@ -478,7 +478,7 @@ Updating MAVProxy
    must first delete the old directory: C\ **:\\Program Files
    (x86)\\MAVProxy\\**.
 
-Simply `Download and Install MAVProxy for Windows <http://firmware.diydrones.com/Tools/MAVProxy/MAVProxySetup-latest.exe>`__ (this
+Simply `Download and Install MAVProxy for Windows <http://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe>`__ (this
 link always points to the latest version!)
 
 

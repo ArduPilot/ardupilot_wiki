@@ -27,7 +27,7 @@ with contributions from:
 - `Michael Carpenter <http://diydrones.com/profile/MichaelCarpenter>`__
 - `Stephen Dade <http://diydrones.com/profile/StephenDade>`__
 - `Kelly Schrock <http://diydrones.com/profile/KellySchrock>`__
-- `others <https://github.com/diydrones/apm_planner/graphs/contributors>`__
+- `others <https://github.com/ArduPilot/apm_planner/graphs/contributors>`__
 
 
 **APM Planner**

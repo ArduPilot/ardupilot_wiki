@@ -48,7 +48,7 @@ How to build APM for Flymaple on Linux.
 ::
 
     cd ~
-    git clone https://github.com/diydrones/ardupilot.git
+    git clone https://github.com/ArduPilot/ardupilot.git
     cd ardupilot
 
 -  Now edit config.mk to be something like this:

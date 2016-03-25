@@ -20,7 +20,7 @@ Uploading custom firmware to the Pixhawk2
    -  The source code can be found here:
       `ardupilot <https://github.com/3drobotics/ardupilot-solo/>`__,
       `PX4Firmware <https://github.com/3drobotics/PX4Firmware-solo>`__,
-      `NuttX <https://github.com/diydrones/PX4NuttX>`__.
+      `NuttX <https://github.com/ArduPilot/PX4NuttX>`__.
 
 -  :ref:`Compile instructions are the same as for master ardupilot for a Pixhawk <building-the-code>` with the exception that the
    modified repos should be used.

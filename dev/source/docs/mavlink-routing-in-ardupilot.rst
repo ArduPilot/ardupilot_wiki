@@ -46,7 +46,7 @@ Detailed theory of MAVLink routing
 
 This information below is reproduced from the routing code in-source
 comments
-(`/libraries/GCS_MAVLink/MAVLink_routing.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/GCS_MAVLink/MAVLink_routing.cpp>`__)
+(`/libraries/GCS_MAVLink/MAVLink_routing.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/MAVLink_routing.cpp>`__)
 
 #. When a flight controller receives a message it should process it
    locally if any of these conditions hold:

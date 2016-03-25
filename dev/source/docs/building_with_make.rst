@@ -76,11 +76,11 @@ Preparing
 =========
 
 Locally clone the APM repository from
-https://github.com/diydrones/ardupilot
+https://github.com/ArduPilot/ardupilot
 
 ::
 
-    git clone https://github.com/diydrones/ardupilot.git
+    git clone https://github.com/ArduPilot/ardupilot.git
 
 Building
 ========

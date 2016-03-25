@@ -69,7 +69,7 @@ This will build the firmware for a quadcopter.  If you wish to build for
 another frame type (such as hexacopter) append "-hexa" onto the end of
 the make command (i.e. make -j4 pxf-hexa).  The full list of available
 frames can be found in the
-`targets.mk <https://github.com/diydrones/ardupilot/blob/master/mk/targets.mk#L75>`__
+`targets.mk <https://github.com/ArduPilot/ardupilot/blob/master/mk/targets.mk#L75>`__
 file.
 
 .. note::

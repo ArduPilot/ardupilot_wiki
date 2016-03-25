@@ -17,7 +17,7 @@ Building ArduPilot for APM2.x on MacOS with Arduino
 To build the ardupilot source code on MacOS for AVR targets (such as the
 APM1 or APM2) you have two choices. The first option is to build using a
 modified version of the Arduino build environment. You can get it from
-http://firmware.diydrones.com/ under the Tools directory.
+http://firmware.ardupilot.org/ under the Tools directory.
 
 The second choice is to build using the 'make' tool on the command line.
 If using the Arduino tool, then after installing it, you need to do the

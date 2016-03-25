@@ -86,9 +86,9 @@ the key steps required:
       in C:\\Users\\Public\\Documents\\ardupilot-Copter-3.1.3.
 
       Get the latest released code zip files "Plane x.x.x"
-      `here <http://firmware.diydrones.com/>`__ or use :ref:`Git Hub <where-to-get-the-code>` to
+      `here <http://firmware.ardupilot.org/>`__ or use :ref:`Git Hub <where-to-get-the-code>` to
       create a clone of the current code. If you want a specific release
-      version go to the `diydrones/ardupilot <https://github.com/diydrones/ardupilot>`__ repository,
+      version go to the `diydrones/ardupilot <https://github.com/ArduPilot/ardupilot>`__ repository,
       select the desired ardupilot branch, then click download zip.
 
 -  Download and install Visual Micro from the \ `Visual Micro <http://www.visualmicro.com/>`__ website and compete the
@@ -276,7 +276,7 @@ You just need to do the following:
    Applications and Arduino locations to reference the ArduPilot Arduino
    that supports the 2.x.x revisions, and to the folder containing the
    2.x.x source code. You can get the 2.9.1b code
-   at the `diydrones/ardupilot <https://github.com/diydrones/ardupilot>`__ repository,
+   at the `diydrones/ardupilot <https://github.com/ArduPilot/ardupilot>`__ repository,
    select the desired ardupilot branch, then click download zip.
 -  Set Tools>>Visual Micro>>Boards to APM Arduino Mega 2560.
 

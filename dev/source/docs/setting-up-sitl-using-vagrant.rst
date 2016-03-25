@@ -7,7 +7,7 @@ Setting up SITL using Vagrant
 .. warning::
 
    At time of writing there is
-   `issue <https://github.com/diydrones/ardupilot/issues/3249>`__ with
+   `issue <https://github.com/ArduPilot/ardupilot/issues/3249>`__ with
    staring SITL. Instead of the original instructions, you will have to log
    into vagrant specify the path to **sim_vehicle.sh** as shown.
 
@@ -96,7 +96,7 @@ different approaches (on a 3Ghz i5 Haswell / 16 Gb) are shown below:
 
 If you want to use rsync you need to:
 
--  Uncomment the `appropriate line <https://github.com/diydrones/ardupilot/blob/master/Vagrantfile#L37>`__
+-  Uncomment the `appropriate line <https://github.com/ArduPilot/ardupilot/blob/master/Vagrantfile#L37>`__
    in the Vagrantfile:
 
    ::
@@ -133,17 +133,17 @@ Set up the Vagrant and the virtual machine
 #. `Download and install VirtualBox <https://www.virtualbox.org/wiki/Downloads>`__.
 #. `Download and install Vagrant <https://www.vagrantup.com/downloads.html>`__ for your
    platform. Windows, OS-X and Linux are supported.
-#. Clone the `ArduPilot <https://github.com/diydrones/ardupilot>`__
+#. Clone the `ArduPilot <https://github.com/ArduPilot/ardupilot>`__
    Github repository anywhere on your PC:
 
    ::
 
-       git clone https://github.com/diydrones/ardupilot.git
+       git clone https://github.com/ArduPilot/ardupilot.git
 
 #. Start a vagrant instance
 
    -  Open a command prompt and navigate to any directory in the
-      `/diydrones/ardupilot/Tools/vagrant/ <https://github.com/diydrones/ardupilot/blob/master/Tools/vagrant/>`__
+      `/diydrones/ardupilot/Tools/vagrant/ <https://github.com/ArduPilot/ardupilot/blob/master/Tools/vagrant/>`__
       source tree.
    -  Run the command:
 
@@ -193,7 +193,7 @@ the plane or rover using the ``-v`` option:
 
 .. tip::
 
-   `sim_vehicle.sh <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
+   `sim_vehicle.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
    has many useful build options, ranging from setting the simulation speed
    through to choosing the initial vehicle location. These can be listed by
    calling it with the ``-h`` flag (and some are demonstrated in :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>`).

@@ -72,7 +72,7 @@ The L1 controller concept is based on the following technical paper:
     Control Conference, Aug 2004. AIAA-2004-4900.
 
 This was the basis for Brandon Jones’ original pull request:
-https://github.com/diydrones/ardupilot/pull/101
+https://github.com/ArduPilot/ardupilot/pull/101
 
 These algorithms were subsequently modified by Paul Riseborough with the
 following changes:

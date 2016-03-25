@@ -38,9 +38,9 @@ the vehicle to the ground station.  Perhaps similar to the
 message.
 
 **Step #3:** Add the new message definition to the
-`common.xml <https://github.com/diydrones/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/common.xml>`__
+`common.xml <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/common.xml>`__
 or
-`ardupilotmega.xml <https://github.com/diydrones/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/ardupilotmega.xml>`__
+`ardupilotmega.xml <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/ardupilotmega.xml>`__
 file
 
 If this command will hopefully be added to the MAVLink protocol then it
@@ -72,21 +72,21 @@ but the ardupilotmega.h should have your new message defined.
 receiving the command to/from the ground station.
 
 The top level of this code will most likely be in the vehicle's
-`GCS_MAVLink.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp>`__
+`GCS_MAVLink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp>`__
 file or in the
-`../libraries/GCS_MAVLink/GCS <https://github.com/diydrones/ardupilot/blob/master/libraries/GCS_MAVLink/GCS.h>`__
+`../libraries/GCS_MAVLink/GCS <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/GCS.h>`__
 class.
 
 In the first example where we want to add support for a new navigation
 command (i.e. a trick) the following would be required:
 
 -  Extend the
-   `AP_Mission <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Mission>`__
+   `AP_Mission <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Mission>`__
    library's ``mission_cmd_to_mavlink()`` and
    ``mavlink_to_mission_cmd()`` functions to convert the MAVProxy
    command into an AP_Mission::Mission_Command structure.
 -  Add a new case to the vehicle's
-   `commands_logic.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/commands_logic.cpp>`__'s
+   `commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/commands_logic.cpp>`__'s
    ``start_command()`` and ``verify_command()`` functions to check for
    the arrival of the new ``MAV_CMD_NAV_TRICK``. These should call two
    new functions that you create called ``do_trick()`` and
@@ -94,7 +94,7 @@ command (i.e. a trick) the following would be required:
 -  Create these two new functions,  do_trick() and verify_trick(),
    that somehow command the vehicle *to perform the trick* (perhaps by
    calling another function in
-   `control_auto.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/control_auto.cpp>`__
+   `control_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_auto.cpp>`__
    that sets the auto_mode variable and then calls a new
    ``auto_trick_start()`` function).  The ``do_trick()`` function will
    be called when the command is first invoked.  The ``verify_trick()``

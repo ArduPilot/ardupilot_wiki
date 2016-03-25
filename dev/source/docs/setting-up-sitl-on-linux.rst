@@ -34,7 +34,7 @@ terminal and run:
 
 ::
 
-    git clone git://github.com/diydrones/ardupilot.git
+    git clone git://github.com/ArduPilot/ardupilot.git
 
 JSBSim (Plane only)
 -------------------
@@ -123,7 +123,7 @@ normally:
 
 .. tip::
 
-   `sim_vehicle.sh <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
+   `sim_vehicle.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
    has many useful build options, ranging from setting the simulation speed
    through to choosing the initial vehicle location. These can be listed by
    calling it with the ``-h`` flag (and some are demonstrated in :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>`).
@@ -213,9 +213,9 @@ The main steps (tested on Ubuntu Linux 14.04 LTS) are:
 
 #. Open a new command prompt and run the appropriate shell file for your
    vehicle in **/ardupilot/Tools/autotest/**:
-   `fg_plane_view.sh <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/fg_plane_view.sh>`__
+   `fg_plane_view.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/fg_plane_view.sh>`__
    (Plane) and
-   `fg_quad_view.sh <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/fg_quad_view.sh>`__
+   `fg_quad_view.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/fg_quad_view.sh>`__
    (Copter).
 
    This will start *FlightGear*.

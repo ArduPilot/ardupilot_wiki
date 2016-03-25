@@ -64,7 +64,7 @@ Failsafe output values:
 Setup Manual
 ============
 
-The `PPM Encoder 3DR Manual <http://firmware.diydrones.com/downloads/wiki/pdf_guides/PPM-Encoder-V3-Manual.pdf>`__
+The `PPM Encoder 3DR Manual <http://firmware.ardupilot.org/downloads/wiki/pdf_guides/PPM-Encoder-V3-Manual.pdf>`__
 shows how to solder and wire the PPM Encoder and explains the different
 failsafe modes.
 
@@ -88,7 +88,7 @@ been designed from scratch with reliability as a top priority. The
 official release of the encoder firmware is in the Downloads section as
 ArduPPM_Vx.x.xx_ATMega328p.hex. The official source code is in the Git
 repository:
-https://github.com/diydrones/ardupilot/tree/master/Tools/ArduPPM. The
+https://github.com/ArduPilot/ardupilot/tree/master/Tools/ArduPPM. The
 standalone PPM Encoder needs the ATMega328p version.
 
 To flash, connect the PPM Encoder to an AVR programmer such as the

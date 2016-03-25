@@ -58,7 +58,7 @@ Load the Firmware
 -  Add this line to the APM_Config.h: \ **#define FRAME_CONFIG
    SINGLE_FRAME**
 -  In the near future this will be added as a downloadable binary
-   to \ **firmware.diydrones.com** and likely as a Mission Planner
+   to \ **firmware.ardupilot.org** and likely as a Mission Planner
    loadable icon.
 
 Configuration
@@ -117,7 +117,7 @@ Load the Firmware
 -  Add this line to the APM_Config.h: \ **#define FRAME_CONFIG
    COAX_FRAME**
 -  In the near future this will be added as a downloadable binary
-   to \ **firmware.diydrones.com** and likely as a Mission Planner
+   to \ **firmware.ardupilot.org** and likely as a Mission Planner
    loadable icon.
 
 And a Video of a Research SingleCopter in action:

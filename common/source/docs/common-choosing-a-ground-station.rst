@@ -84,7 +84,7 @@ Full featured and widely used GCS. Intended for both developers and
 enthusiasts.
 
 -  **Platform**: Windows, Mac OS X (Using Mono)
--  **Licence**: `Open source <https://github.com/diydrones/MissionPlanner/blob/master/COPYING.txt>`__
+-  **Licence**: `Open source <https://github.com/ArduPilot/MissionPlanner/blob/master/COPYING.txt>`__
    (GPLv3)
 
 .. image:: ../../../images/MP-FP-Screen.jpg
@@ -92,8 +92,8 @@ enthusiasts.
 
 -  :ref:`Wiki <planner:home>`
 -  `Support Forum <http://ardupilot.com/forum/viewforum.php?f=12>`__
--  `Issues List <https://github.com/diydrones/MissionPlanner/issues>`__
--  `Source Code <https://github.com/diydrones/MissionPlanner>`__
+-  `Issues List <https://github.com/ArduPilot/MissionPlanner/issues>`__
+-  `Source Code <https://github.com/ArduPilot/MissionPlanner>`__
 
 APM Planner 2
 -------------
@@ -103,7 +103,7 @@ user base and reduced feature set when compared with Mission Planner.
 Intended for developers and enthusiasts.
 
 -  **Platform**: Windows, Mac OS X, Linux
--  **Licence**: `Open source <https://github.com/diydrones/apm_planner/blob/master/license.txt>`__
+-  **Licence**: `Open source <https://github.com/ArduPilot/apm_planner/blob/master/license.txt>`__
    (GPLv3)
 
 .. image:: ../../../images/planner2_choose_agcs.jpg
@@ -111,8 +111,8 @@ Intended for developers and enthusiasts.
 
 -  :ref:`Wiki <planner2:home>`
 -  `Support Forum <http://ardupilot.com/forum/viewforum.php?f=82>`__
--  `Issues List <https://github.com/diydrones/apm_planner/issues>`__
--  `Source Code <https://github.com/diydrones/apm_planner>`__
+-  `Issues List <https://github.com/ArduPilot/apm_planner/issues>`__
+-  `Source Code <https://github.com/ArduPilot/apm_planner>`__
 
 MAVProxy
 --------

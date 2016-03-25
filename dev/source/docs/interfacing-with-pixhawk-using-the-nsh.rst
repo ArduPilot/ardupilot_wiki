@@ -87,7 +87,7 @@ Setup instructions to access using MAVProxy:
 
           sudo pip install mavproxy
 
-   -  If on Windows `grab it here <http://firmware.diydrones.com/Tools/MAVProxy/>`__.
+   -  If on Windows `grab it here <http://firmware.ardupilot.org/Tools/MAVProxy/>`__.
 
       .. note::
 

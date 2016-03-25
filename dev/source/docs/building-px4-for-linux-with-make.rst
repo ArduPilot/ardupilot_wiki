@@ -32,7 +32,7 @@ Clone the source:
 
 ::
 
-    git clone https://github.com/diydrones/ardupilot.git
+    git clone https://github.com/ArduPilot/ardupilot.git
 
 Run the install-prereqs-ubuntu.sh script:
 
@@ -99,9 +99,9 @@ To build for a Pixhawk2/Pixhawk/PX4 target on Linux you need the
 following tools and git repositories:
 
 -  The gcc-arm cross-compiler from
-   `here <http://firmware.diydrones.com/Tools/PX4-tools/>`__
+   `here <http://firmware.ardupilot.org/Tools/PX4-tools/>`__
 -  The ardupilot git repository from
-   `github.com/diydrones/ardupilot <https://github.com/diydrones/ardupilot>`__
+   `github.com/ArduPilot/ardupilot <https://github.com/ArduPilot/ardupilot>`__
 -  gnu make, gawk and associated standard Linux build tools
 -  On Ubuntu you will need to install the genromfs package.
 

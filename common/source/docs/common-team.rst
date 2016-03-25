@@ -9,8 +9,8 @@ The ArduPilot Dev Team
 ======================
 
 Please check out our list of
-`contributors <https://github.com/diydrones/ardupilot/graphs/contributors>`__
-and `maintainers <https://github.com/diydrones/ardupilot#maintainers>`__
+`contributors <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
+and `maintainers <https://github.com/ArduPilot/ardupilot#maintainers>`__
 on GitHub.
 
 .. note::

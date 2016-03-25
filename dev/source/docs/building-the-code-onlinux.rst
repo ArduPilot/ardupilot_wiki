@@ -23,7 +23,7 @@ Clone the source:
 
 ::
 
-    git clone https://github.com/diydrones/ardupilot.git
+    git clone https://github.com/ArduPilot/ardupilot.git
 
 Run the install-prereqs-ubuntu.sh script:
 

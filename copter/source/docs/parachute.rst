@@ -38,7 +38,7 @@ Connecting to the Pixhawk
 =========================
 
 The parachute release mechanism can be triggered from either a Relay or
-a PWM (i.e. Servo) but because of `an issue with the Relay pins being pulled high at start-up <https://github.com/diydrones/ardupilot/issues/1239>`__, we
+a PWM (i.e. Servo) but because of `an issue with the Relay pins being pulled high at start-up <https://github.com/ArduPilot/ardupilot/issues/1239>`__, we
 recommend using PWM, in particular any of the Pixhawk's AUX OUT 1 to 4
 pins.
 

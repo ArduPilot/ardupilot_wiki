@@ -252,7 +252,7 @@ filter the 1st column by "ERR".
 The Subsys (aka Sub-system) gives the area that generated the error and
 the ECode (aka Error Code) tells you what the error was specifically. 
 The very limited number of subsystems and error codes can be found at
-the bottom of the Copter `defines.h file <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L339>`__.
+the bottom of the Copter `defines.h file <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L339>`__.
 
 Sub Systems / Error Codes
 

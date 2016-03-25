@@ -5,7 +5,7 @@ UBlox GPS Configuration
 =======================
 
 `3DR uBlox <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__
-modules are shipped with a `custom configuration <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_GPS/config>`__
+modules are shipped with a `custom configuration <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_GPS/config>`__
 that is compatible with Copter, Rover and Plane.  This article explains
 how you can reprogram the custom configuration if needed (this is not
 expected to be necessary for normal users).
@@ -62,7 +62,7 @@ Installing and Uploading the config using U-Center
 -  Download and install \ `uBlox's u-center software <http://www.u-blox.com/en/evaluation-tools-a-software/u-center/u-center.html>`__
      Note that this is Windows only.
 -  Get the 3DR-Ublox.txt configuration file for Ublox6 or 7
-   `here <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_GPS/config>`__. 
+   `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_GPS/config>`__. 
    For M8N the file is
    `here <https://raw.githubusercontent.com/diydrones/ardupilot/master/libraries/AP_GPS/config/Marco-Ublox_M8N.txt>`__.
 -  Run u-center and connect your uBlox to your computer.

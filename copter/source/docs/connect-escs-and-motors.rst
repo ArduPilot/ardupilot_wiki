@@ -266,7 +266,7 @@ Pixhawk ESC issues
 Some ESCs have been reported as not working with Pixhawk.
 
 The Pixhawk should work with every ESC that works with a normal RC
-receiver (because it sends the same type of signal) but there is `one known exception, the EMAX ESC <https://github.com/diydrones/ardupilot/issues/2094>`__.
+receiver (because it sends the same type of signal) but there is `one known exception, the EMAX ESC <https://github.com/ArduPilot/ardupilot/issues/2094>`__.
 
 In most cases problems are due to incorrect wiring. Always connect
 signal and ground. Check your ESC type to decide how to connect the +5V

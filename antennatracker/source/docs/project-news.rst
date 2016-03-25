@@ -5,7 +5,7 @@ Project News
 ============
 
 Full release notes for AntennaTracker are here:
-https://github.com/diydrones/ardupilot/blob/master/AntennaTracker/ReleaseNotes.txt.
+https://github.com/ArduPilot/ardupilot/blob/master/AntennaTracker/ReleaseNotes.txt.
 
 AntennaTracker 0.x.x
 ====================

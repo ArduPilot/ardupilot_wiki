@@ -340,7 +340,7 @@ or unsigned 32bit integers):**
    <td>Identification number for the variable.  There are only two possible values:
    <ul>
    <li>7 = bit mask of internal state.  The meaning of individual bits can
-   be found in `Copter.cpps’s definition of the ap structure <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L361>`__./
+   be found in `Copter.cpps’s definition of the ap structure <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L361>`__./
    <li>9 = simple mode's initial heading in centi-degrees</li>
    </ul>
    </td>
@@ -460,7 +460,7 @@ SubSystem and Error codes listed below
    </table>
 
 **EV: (an event number)**. The full list of possible events can be found
-in `defines.h <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/defines.h#L291>`__
+in `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L291>`__
 but the most common are:
 
 .. raw:: html

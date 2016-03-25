@@ -364,7 +364,7 @@ Hardware solutions
 This section contains hardware-only MAVLink to FrSky converter
 solutions.
 
-Please feel free to add your own solutions (`or ask us to <https://github.com/diydrones/ardupilot/issues/new>`__).
+Please feel free to add your own solutions (`or ask us to <https://github.com/ArduPilot/ardupilot/issues/new>`__).
 
 
 .. _common-frsky-telemetry_apm_mavlink_to_frsky_smartport_converter_airborne_projects:

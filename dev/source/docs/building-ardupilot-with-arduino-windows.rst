@@ -92,7 +92,7 @@ Download source
 
    ::
 
-       git clone git://github.com/diydrones/ardupilot.git
+       git clone git://github.com/ArduPilot/ardupilot.git
 
    .. image:: ../images/git_bash_clone_ardupilot.jpg
        :target: ../_images/git_bash_clone_ardupilot.jpg
@@ -107,7 +107,7 @@ Install MHV_AVR_Tools to its default location
 =============================================
 
 #. Download and install the MHV_AVR Tools:
-   `http://firmware.diydrones.com/Tools/Arduino/MHV_AVR_Tools_20121007.exe <http://firmware.diydrones.com/Tools/Arduino/MHV_AVR_Tools_20131101.exe>`__
+   `http://firmware.ardupilot.org/Tools/Arduino/MHV_AVR_Tools_20121007.exe <http://firmware.ardupilot.org/Tools/Arduino/MHV_AVR_Tools_20131101.exe>`__
 
    .. image:: ../images/mhv_avr_tools_installer_welcome.jpg
        :target: ../_images/mhv_avr_tools_installer_welcome.jpg
@@ -137,7 +137,7 @@ Install ArduPilot-Arduino
 =========================
 
 Download and unzip the ArduPilot Arduino package:
-http://firmware.diydrones.com/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip
+http://firmware.ardupilot.org/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip
 
 This can be unzipped directly to the **C:** drive or **C:\\Program
 Files\\**

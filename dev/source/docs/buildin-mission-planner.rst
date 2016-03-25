@@ -73,7 +73,7 @@ Getting the source code from Github into your computer
 
 The Mission Planner source code is stored in GitHub.  In general you can
 follow the instructions :ref:`for the ardupilot flight code <where-to-get-the-code>` except that you should use the
-**https://github.com/diydrones/MissionPlanner** repository in place of
+**https://github.com/ArduPilot/MissionPlanner** repository in place of
 the ardupilot repository.
 
 Open the Mission Planner solution in Visual Studio
@@ -328,7 +328,7 @@ here is a very short summary of the steps:
 
 -  Sign up a member of `Git hub <https://github.com/>`__
 -  Create a personal Fork of the Mission Planner by going to
-   https://github.com/diydrones/MissionPlanner and click on Fork  (Upper
+   https://github.com/ArduPilot/MissionPlanner and click on Fork  (Upper
    right corner area)  This creates a copy (fork) of Mission Planner
    files in your Git Hub account.
 -  Clone your personal repo (created with the Fork above) to your PC

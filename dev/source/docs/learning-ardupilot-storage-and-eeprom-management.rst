@@ -44,7 +44,7 @@ delving into hal.storage when doing bringup of a new board, or when
 debugging.
 
 The size of storage available is set inside
-`AP_HAL/AP_HAL_Boards.h <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL/AP_HAL_Boards.h>`__
+`AP_HAL/AP_HAL_Boards.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/AP_HAL_Boards.h>`__
 in the macro HAL_STORAGE_SIZE. This means we don't yet support
 dynamically determining the size of storage available for this
 interface. If you want dynamically sized storage you need to use Posix
@@ -78,7 +78,7 @@ available storage into areas that provide:
 -  rally points
 
 Go and have a read of
-`libraries/StorageManager/StorageManager.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/StorageManager/StorageManager.cpp>`__.
+`libraries/StorageManager/StorageManager.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/StorageManager/StorageManager.cpp>`__.
 In particular look at the tables at the top. Notice how multiple areas
 of each type are defined for systems with have larger amounts of
 storage. This ability to combine multiple non-contiguous areas of
@@ -99,7 +99,7 @@ and writing variables like integers. This is the API that libraries like
 AP_Mission use to save and restore waypoints.
 
 Now go and have a look at
-`libraries/StorageManager/examples/StorageTest.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/StorageManager/examples/StorageTest/StorageTest.cpp>`__.
+`libraries/StorageManager/examples/StorageTest.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/StorageManager/examples/StorageTest/StorageTest.cpp>`__.
 This is a stress test for the StoageManager layer, and as a result is
 also a stress test for the AP_HAL::Storage object. It does random IO at
 random offsets of random lengths. That means it does IOs that cross
@@ -162,7 +162,7 @@ set of FMT messages which have a well known format and which describe
 the format of the messages that follow.
 
 Go and have a look at
-`libraries/DataFlash/examples/DataFlash_test/DataFlash_test.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/DataFlash/examples/DataFlash_test/DataFlash_test.cpp>`__.
+`libraries/DataFlash/examples/DataFlash_test/DataFlash_test.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/DataFlash/examples/DataFlash_test/DataFlash_test.cpp>`__.
 You'll see a little table at the top that defines the log messages we
 will be writing, in this case a 'TEST' message which contains 4 unsigned
 16 bit integers and two signed 32 bit integers (that is what "HHHHii"
@@ -217,7 +217,7 @@ implementing using Posix IO.
 
 The way we use Posix IO is that you first check if the board has Posix
 IO support by checking the HAVE_OS_POSIX_IO macro from
-`AP_HAL_Boards.h <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL/AP_HAL_Boards.h>`__.
+`AP_HAL_Boards.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/AP_HAL_Boards.h>`__.
 Then to know where on the filesystem you should store the data you add a
 data specific macro in AP_HAL_Boards.h which gives the directory path
 where that sort of data should be placed. For example, the macro
@@ -250,7 +250,7 @@ certain can only be called when the vehicle is starting up or is
 disarmed. A bit of delay at that time is fine.
 
 Now go and have a read of
-`libraries/AP_Terrain/TerrainIO.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_Terrain/TerrainIO.cpp>`__
+`libraries/AP_Terrain/TerrainIO.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Terrain/TerrainIO.cpp>`__
 and look at how it uses Posix IO. Notice the little state machine it
 uses to handle all the IO, which is all called from the
 ``AP_Terrain::io_timer`` function. See if you can spot any bugs, and

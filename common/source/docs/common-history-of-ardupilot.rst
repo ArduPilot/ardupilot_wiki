@@ -88,7 +88,7 @@ April 2011 – First fully autonomous Copter mission flown by Jason at
 
 2011 - APM2 released by 3D Robotics
 
-Nov 2011 - `AutoTester <http://autotest.diydrones.com/>`__ is created by
+Nov 2011 - `AutoTester <http://autotest.ardupilot.org/>`__ is created by
 Tridge
 
 2012 - APM2.5/2.6 released by 3D Robotics
@@ -117,7 +117,7 @@ Randy and Leonard
 (`AC2.9 <http://diydrones.com/forum/topics/arducopter-2-9-released>`__).
 
 Jan 2013 - ardupilot code moved from `google code <http://code.google.com/p/ardupilot/>`__ to
-`github <https://github.com/diydrones/ardupilot>`__
+`github <https://github.com/ArduPilot/ardupilot>`__
 
 Jan/Feb 2013 - Android GCSs appear (`DroidPlanner from
 Arthur <http://diydrones.com/profiles/blogs/droidplanner-ground-control-station-for-android-devices>`__,
@@ -185,8 +185,8 @@ March 2016 - Formation of the `ardupilot.org non profit organisation <http://diy
 
    The above list includes many of the major milestones for the
    project.  Please see the
-   `ArduCopter.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ArduCopter.cpp>`__
-   or the `GitHub contributors graph <https://github.com/diydrones/ardupilot/graphs/contributors>`__
+   `ArduCopter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp>`__
+   or the `GitHub contributors graph <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
    for a more complete list of contributors to the project.
 
 

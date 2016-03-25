@@ -58,7 +58,7 @@ to high vibrations.
     :target: ../_images/mp_measuring_vibration_bad_vibes.png
 
 The algorithm for calculating the vibration levels can be seen in the
-`AP_InertialSensor.cpp's calc_vibration_and_clipping() <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_InertialSensor/AP_InertialSensor.cpp#L1435>`__
+`AP_InertialSensor.cpp's calc_vibration_and_clipping() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_InertialSensor/AP_InertialSensor.cpp#L1435>`__
 method but in short it involves calculating the standard deviation of
 the accelerometer readings like this:
 

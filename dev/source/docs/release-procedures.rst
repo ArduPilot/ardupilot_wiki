@@ -10,7 +10,7 @@ release. Listed mostly as a reference so that we don't forget the steps.
 Alpha Testing
 =============
 
-The `AutoTester <http://autotest.diydrones.com/>`__ that runs after each
+The `AutoTester <http://autotest.ardupilot.org/>`__ that runs after each
 commit and highlights issues that it's been setup to test.
 
 Developers and some Alpha testers perform intermittent tests of master
@@ -21,7 +21,7 @@ Beta Testing Release Candidates
 
 Release candidates are made available to beta testers through the
 mission planner's Beta Firmware's link.  The Mission Planner Beta
-Firmware link pulls the version from the `Copter/beta directory of firmware.diydrones.com. <http://firmware.diydrones.com/Copter/beta/>`__
+Firmware link pulls the version from the `Copter/beta directory of firmware.ardupilot.org. <http://firmware.ardupilot.org/Copter/beta/>`__
 
 Someone with ardupilot GitHub commit access (normally Randy) makes the
 new firmware available through the following steps:
@@ -79,7 +79,7 @@ j) ``git tag ArduCopter-beta-apm2 HEAD``
 
 k) ``git push origin ArduCopter-beta-apm1``
 
-l) ``git push origin ArduCopter-beta-apm2`` Commit a small change (`like this one <https://github.com/diydrones/ardupilot/commit/a38e00c048d705085782912442a9a019db4304d0>`__)
+l) ``git push origin ArduCopter-beta-apm2`` Commit a small change (`like this one <https://github.com/ArduPilot/ardupilot/commit/a38e00c048d705085782912442a9a019db4304d0>`__)
 to the ardupilot directory which will cause the firmware to be rebuilt.
 
 **Check the versions are available**
@@ -110,7 +110,7 @@ arducoptertesters email list are tracked by the lead Tester (Marco) and
 developer (Randy) perhaps using a google spreadsheet (`like this one <https://docs.google.com/spreadsheets/d/1yrYKJ-Txf5DBbEI7x4sk1p0Gts-5gjXCoiIdAyfnL7M/edit#gid=0>`__).
 They are then investigated by one of the developers (usually Randy,
 Leonard, Jonathan or Rob) and if it's determined to be an issue it's
-added to the regular `Issues List <https://github.com/diydrones/ardupilot/issues?labels=ArduCopter&state=open>`__.
+added to the regular `Issues List <https://github.com/ArduPilot/ardupilot/issues?labels=ArduCopter&state=open>`__.
 Sometimes beta testers directly log an issue into the issues list and
 this is ok but it risks the issues list becoming a support forum so it's
 better that it is investigated before being added to the issues list. 
@@ -242,7 +242,7 @@ Didn't find what you are looking for?
 =====================================
 
 If you think of something that should be added to this site, please
-`open an issue <https://github.com/diydrones/ardupilot/issues>`__ or
+`open an issue <https://github.com/ArduPilot/ardupilot/issues>`__ or
 post a comment on the
 `drones-discuss <https://groups.google.com/forum/#!forum/drones-discuss>`__
 mailing list.

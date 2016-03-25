@@ -9,36 +9,36 @@ releases/milestones.
 
 .. tip::
 
-   `The latest cumulative release notes for Copter can always be found on Github here <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/ReleaseNotes.txt>`__.
+   `The latest cumulative release notes for Copter can always be found on Github here <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ReleaseNotes.txt>`__.
    This includes point releases which may not be included on this
    page.
 
 -  Nov 4, 2015 Copter (AC) **3.3.2** released. Enhancements and bug
    fixes. Helicopter improvements. Details
-   `here <https://github.com/diydrones/ardupilot/blob/Copter-3.3/ArduCopter/ReleaseNotes.txt>`__.
+   `here <https://github.com/ArduPilot/ardupilot/blob/Copter-3.3/ArduCopter/ReleaseNotes.txt>`__.
 
 -  Oct 26, 2015 Copter (AC) **3.3.1** released. Bug fixes, Compiler
    upgrade. Details
-   `here <https://github.com/diydrones/ardupilot/blob/Copter-3.3/ArduCopter/ReleaseNotes.txt>`__.
+   `here <https://github.com/ArduPilot/ardupilot/blob/Copter-3.3/ArduCopter/ReleaseNotes.txt>`__.
 
 -  Sep 29, 2015 Copter (AC) **3.3** released. Enhancements and bug
    fixes. Details
-   `here <https://github.com/diydrones/ardupilot/blob/Copter-3.3/ArduCopter/ReleaseNotes.txt>`__.
+   `here <https://github.com/ArduPilot/ardupilot/blob/Copter-3.3/ArduCopter/ReleaseNotes.txt>`__.
    Release announcement: `Copter-3.3 released! <http://diydrones.com/profiles/blogs/copter-3-3-released>`__.
 
 -  Feb 11, 2015 Copter (AC) **3.2.1** released. Enhancements and bug
    fixes. Details
-   `here <https://github.com/diydrones/ardupilot/blob/ArduCopter-3.2.1/ArduCopter/ReleaseNotes.txt>`__.
+   `here <https://github.com/ArduPilot/ardupilot/blob/ArduCopter-3.2.1/ArduCopter/ReleaseNotes.txt>`__.
    Release announcement:
    `here <http://diydrones.com/profiles/blogs/arducopter-3-2-1-released>`__.
 
 -  November 07, 2014 Copter (AC) **3.2** released. Numerous enhancements
    and bug fixes. Details
-   `here <https://github.com/diydrones/ardupilot/blob/ArduCopter-3.2/ArduCopter/ReleaseNotes.txt>`__
+   `here <https://github.com/ArduPilot/ardupilot/blob/ArduCopter-3.2/ArduCopter/ReleaseNotes.txt>`__
 
 -  May 27, 2014: Copter (AC) **3.1.5** released. Enhancements and bug
    fixes. Details
-   `here <https://github.com/diydrones/ardupilot/blob/ArduCopter-3.1.2/ArduCopter/ReleaseNotes.txt>`__
+   `here <https://github.com/ArduPilot/ardupilot/blob/ArduCopter-3.1.2/ArduCopter/ReleaseNotes.txt>`__
 
 -  January 25, 2014: Copter **3.1.1** released. Mostly enhancements and
    bug fixes for Pixhawk. `Details here <http://diydrones.com/forum/topics/arducopter-3-1-released?commentId=705844%3AComment%3A1540849&xg_source=activity>`__.

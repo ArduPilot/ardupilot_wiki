@@ -10,7 +10,7 @@ Adding a parameter to the main code
 ===================================
 
 **Step #1:** Find a spare slot in the Parameters class's enum in
-`Parameters.h <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.h>`__
+`Parameters.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.h>`__
 and add your new parameter as shown below in red.  Some things to be
 careful of:
 
@@ -97,7 +97,7 @@ but with the "k_param\_" prefix removed.
         AP_Int16        my_new_parameter;                  // my new parameter's description goes here
 
 **Step #3:** Add the variable declaration to the var_info table in
-`Parameters.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__
+`Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__
 
 ::
 
@@ -116,7 +116,7 @@ The parameter name (i.e. "MY_NEW_PARAMETER") is limited to 16
 characters.
 
 **Step #4:** Add the parameters default to
-`config.h <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/config.h>`__
+`config.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/config.h>`__
 
 ::
 
@@ -131,11 +131,11 @@ Adding a parameter to a library
 ===============================
 
 Parameters can also be added to libraries by following these steps which
-use the `AP_Compass <https://github.com/diydrones/ardupilot/tree/master/libraries/AP_Compass>`__
+use the `AP_Compass <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Compass>`__
 library as an example.
 
 **Step #1:** Add the new class variable to the top level .h file (i.e.
-`Compass.h <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_Compass/Compass.h>`__). 
+`Compass.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/Compass.h>`__). 
 Possible types include AP_Int8, AP_Int16, AP_Float, AP_Int32 and
 AP_Vector3f.  Also add the default value you'd like for the parameter
 (we will use this in step #2)
@@ -168,7 +168,7 @@ AP_Vector3f.  Also add the default value you'd like for the parameter
     };
 
 **Step #2:**\ Add the variable to the var_info table in the .cpp file
-(i.e. `Compass.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_Compass/Compass.cpp>`__)
+(i.e. `Compass.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/Compass.cpp>`__)
 including @Param ~ @Increment comments to allow the GCS to display the
 description to the user and to control the min and max values set from
 the ground station.  When adding the new parameter be careful that:
@@ -217,7 +217,7 @@ then it would have been accessible to the main code as well as
 **Step #3:** If the class is a completely new addition to the code (as
 opposed to an existing class like AP_Compass), it should be added to
 the main vehicle's var_info table in the
-`Parameters.cpp <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__
+`Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__
 file (it's order in the var_info table is not important).  Below in red
 where the Compass class appears.
 

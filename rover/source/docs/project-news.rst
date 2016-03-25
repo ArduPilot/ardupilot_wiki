@@ -60,7 +60,7 @@ version 2.49 of Rover.
 
 In case anyone needs to manually download the beta release its here:
 
-http://firmware.diydrones.com/Rover/stable/
+http://firmware.ardupilot.org/Rover/stable/
 
 This release is a bug fix release with two important bugs found by Marco
 Walther - Thanks Marco!
@@ -80,7 +80,7 @@ version 2.48 of Rover.
 
 In case anyone needs to manually download the beta release its here:
 
-http://firmware.diydrones.com/Rover/stable/
+http://firmware.ardupilot.org/Rover/stable/
 
 The ardupilot development team has released version 2.48 of Rover. This
 release is a bug fix release with some important bugs found by the users

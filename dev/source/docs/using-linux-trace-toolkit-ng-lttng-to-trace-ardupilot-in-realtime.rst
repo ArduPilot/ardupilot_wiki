@@ -30,10 +30,10 @@ on inside the kernel, provided the kernel has tracepoints enabled (in
 its config).
 
 *LTTng* has been integrated using the
-`Perf_Lttng <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL_Linux/Perf_Lttng.cpp>`__
+`Perf_Lttng <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_Linux/Perf_Lttng.cpp>`__
 class, which handles 3 operations: ``Begin``, ``End``, ``Count``. You
 add tracing to your code by calling the performance utility methods in
-`Perf.cpp <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL_Linux/Perf.cpp>`__.
+`Perf.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_Linux/Perf.cpp>`__.
 
 .. note::
 
@@ -46,7 +46,7 @@ Monitoring APM with LTTng
 
 In order to monitor APM with *LTTng*, the first thing to do is to enable
 support for *LTTng* in ArduPilot builds. Using the regular make build
-system, you do this by modifying `mk/board_native.mk line 30 <https://github.com/diydrones/ardupilot/blob/master/mk/board_native.mk#L30>`__:
+system, you do this by modifying `mk/board_native.mk line 30 <https://github.com/ArduPilot/ardupilot/blob/master/mk/board_native.mk#L30>`__:
 
 ::
 

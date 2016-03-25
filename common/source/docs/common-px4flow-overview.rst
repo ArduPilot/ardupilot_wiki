@@ -110,7 +110,7 @@ Testing the sensor
 ==================
 
 The raw data from the sensor will eventually be visible on the Mission
-Planner's Flight Data screen's Status tab (`issue raised here <https://github.com/diydrones/MissionPlanner/issues/745>`__). 
+Planner's Flight Data screen's Status tab (`issue raised here <https://github.com/ArduPilot/MissionPlanner/issues/745>`__). 
 Until then you can perform the following test in a well lit room. Note
 that some artificial lighting has strobing that can reduce the sensor
 performance. Natural light or a high power incandescent light source is

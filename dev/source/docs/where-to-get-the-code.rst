@@ -21,16 +21,16 @@ cloning and building the "master" repository.
 
 The ArduPilot project source code for Plane, Copter, Rover and Antenna
 Tracker are available on `GitHub <https://github.com/>`__ in the
-https://github.com/diydrones/ardupilot repository. Several additional
+https://github.com/ArduPilot/ardupilot repository. Several additional
 projects are used for PX4 based platforms (ie. PX4v1 and Pixhawk):
-`PX4Firmware <https://github.com/diydrones/PX4Firmware>`__,
-`PX4NuttX <https://github.com/diydrones/PX4NuttX>`__,
-`uavcan <https://github.com/diydrones/uavcan>`__ — these are imported as
+`PX4Firmware <https://github.com/ArduPilot/PX4Firmware>`__,
+`PX4NuttX <https://github.com/ArduPilot/PX4NuttX>`__,
+`uavcan <https://github.com/ArduPilot/uavcan>`__ — these are imported as
 :ref:`Git Submodules <git-submodules>` when
 you build the project.
 
 MissionPlanner is in the
-`diydrones/MissionPlanner <https://github.com/diydrones/MissionPlanner>`__
+`diydrones/MissionPlanner <https://github.com/ArduPilot/MissionPlanner>`__
 repository.
 
 .. note::
@@ -90,7 +90,7 @@ first create your own fork of the main ArduPilot repository.
 
 To fork the main repository:
 
--  Log into Github and go to https://github.com/diydrones/ardupilot.
+-  Log into Github and go to https://github.com/ArduPilot/ardupilot.
 -  At the upper right is a button, "Fork":
 
    .. image:: ../images/APM-Git-Github-Fork-300x64.jpg
@@ -134,12 +134,12 @@ side of the screen on each Github repository home page.
 
    ::
 
-       git clone https://github.com/diydrones/ardupilot
+       git clone https://github.com/ArduPilot/ardupilot
 
 **Windows (GitHub GUI):**
 
 -  Open the
-   `diydrones/ardupilot <https://github.com/diydrones/ardupilot>`__
+   `diydrones/ardupilot <https://github.com/ArduPilot/ardupilot>`__
    repository in your favorite web browser
 -  Click on the "Clone in Desktop" button on the bottom right
 
@@ -329,7 +329,7 @@ application.
 
    ::
 
-       git remote add upstream https://github.com/diydrones/ardupilot.git
+       git remote add upstream https://github.com/ArduPilot/ardupilot.git
 
 #. Fetch changes from the upstream master.
 
@@ -361,9 +361,9 @@ Working with git submodules
 ArduPilot development for PX4 based platforms (ie. PX4v1 and Pixhawk)
 uses three additional repositories:
 
--  `PX4Firmware <https://github.com/diydrones/PX4Firmware>`__
--  `PX4NuttX <https://github.com/diydrones/PX4NuttX>`__
--  `uavcan <https://github.com/diydrones/uavcan>`__
+-  `PX4Firmware <https://github.com/ArduPilot/PX4Firmware>`__
+-  `PX4NuttX <https://github.com/ArduPilot/PX4NuttX>`__
+-  `uavcan <https://github.com/ArduPilot/uavcan>`__
 
 These are *Git submodules* of the ArduPilot project, and are
 automatically fetched as part of a build when needed. For more

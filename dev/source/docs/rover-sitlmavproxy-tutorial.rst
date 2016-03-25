@@ -53,7 +53,7 @@ so you can observe the status and send commands at the same time.
 
 .. note::
 
-   As part of the setup you may have loaded some `standard/test parameters <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/Rover.parm>`__
+   As part of the setup you may have loaded some `standard/test parameters <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/Rover.parm>`__
    into the *MAVProxy Command Prompt*:
 
    ::

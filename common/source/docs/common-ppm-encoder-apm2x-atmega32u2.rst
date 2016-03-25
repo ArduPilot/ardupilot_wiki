@@ -37,7 +37,7 @@ What you need
    click \ `**here**. <http://www.atmel.com/tools/FLIP.aspx>`__ - The firmware (HEX file) you want to load can be `downloaded here <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega32U2.hex_.zip>`__.
 -  *(The source code, while not necessary if using the compiled code,
    `**can be found
-   here** <https://github.com/diydrones/ardupilot/blob/master/Tools/ArduPPM/Libraries/PPM_Encoder.h>`__.)*
+   here** <https://github.com/ArduPilot/ardupilot/blob/master/Tools/ArduPPM/Libraries/PPM_Encoder.h>`__.)*
 
 Putting the Atmega32U2 into programming (DFU) mode
 ==================================================

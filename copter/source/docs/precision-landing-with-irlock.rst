@@ -60,7 +60,7 @@ Since precision landing is not yet a default feature, you must use a
 `pre-compiled firmware <https://irlock.readme.io/docs/ac33-precision-landing-firmware>`__
 provided by IR-LOCK, or the :ref:`firmware must be re-built <dev:building-the-code>` with the
 precision landing feature enabled. If you are re-building, make sure
-that \ `this line <https://github.com/diydrones/ardupilot/blob/master/ArduCopter/APM_Config.h#L41>`__
+that \ `this line <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/APM_Config.h#L41>`__
 in APM_Config.h is uncommented to look like below.
 
 ``#define PRECISION_LANDING ENABLED``

@@ -31,7 +31,7 @@ SERIAL2_PROTOCOL changes uartD from being used for MAVLink versus being
 used for Frsky telemetry.
 
 Go and have a look at the
-`libraries/AP_HAL/examples/UART_test <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL/examples/UART_test/UART_test.cpp>`__
+`libraries/AP_HAL/examples/UART_test <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/examples/UART_test/UART_test.cpp>`__
 example sketch. It prints a hello message to all 5 UARTs. Try it on your
 board and see if you can get all the outputs displaying using a USB
 serial adapter. Try changing the baudrate in the sketch.
@@ -52,7 +52,7 @@ this:
 
 If you have a board that does have HAVE_OS_POSIX_IO set (check that
 in
-`AP_HAL/AP_HAL_Boards.h <https://github.com/diydrones/ardupilot/blob/master/libraries/AP_HAL/AP_HAL_Boards.h>`__)
+`AP_HAL/AP_HAL_Boards.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/AP_HAL_Boards.h>`__)
 then try adding some ::printf() and other stdio functions to the
 UART_test sketch.
 

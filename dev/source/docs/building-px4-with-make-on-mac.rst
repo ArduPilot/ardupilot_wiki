@@ -41,13 +41,13 @@ on Mac OS X (ver 10.6 onwards) with *Make*.
 
        mkdir -p px4
        cd px4
-       git clone https://github.com/diydrones/ardupilot.git
+       git clone https://github.com/ArduPilot/ardupilot.git
 
    .. note::
 
-      `PX4Firmware <https://github.com/diydrones/PX4Firmware>`__,
-         `PX4NuttX <https://github.com/diydrones/PX4NuttX>`__ and
-         `uavcan <https://github.com/diydrones/uavcan>`__ are automatically
+      `PX4Firmware <https://github.com/ArduPilot/PX4Firmware>`__,
+         `PX4NuttX <https://github.com/ArduPilot/PX4NuttX>`__ and
+         `uavcan <https://github.com/ArduPilot/uavcan>`__ are automatically
          imported as :ref:`Git Submodules <git-submodules>` when
          you build a vehicle.
 

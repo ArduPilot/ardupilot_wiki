@@ -172,7 +172,7 @@ Basic configuration and frame parameters
 ========================================
 
 #. The set of tuning parameters can be found
-   `here <https://github.com/diydrones/ardupilot/blob/master/Tools/Frame_params/Parrot_Bebop2.param>`__.
+   `here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Parrot_Bebop2.param>`__.
    These are not yet fully tuned for Bebop 2
 #. In order to do the basic configuration and calibration, you can use
    any of the GCSs and perform:

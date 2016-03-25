@@ -348,7 +348,7 @@ DroneKit "hello world" example
 ::
 
     # fetch the code
-    $ git clone https://github.com/diydrones/droneapi-python.git
+    $ git clone https://github.com/ArduPilot/droneapi-python.git
 
     $ cd droneapi-python/example
 

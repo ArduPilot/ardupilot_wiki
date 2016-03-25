@@ -21,9 +21,9 @@ PPM Encoder (v2) now uses the ArduPPM firmware, replacing the previously
 used Paparazzi PPM Encoder firmware. The new ArduPPM firmware has been
 designed from scratch to enhance performance and robustness, and to
 better accommodate our product needs now and in the future. Firmware for
-Plane (and Rover) can be `downloaded here <http://firmware.diydrones.com/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega328p_for_ArduPlane.hex_.zip>`__.
-Firmware for Copter can be `downloaded here <http://firmware.diydrones.com/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega328p_for_ArduCopter.hex_.zip>`__.
-(The source code, while not necessary if using the compiled code, \ `can be found here <https://github.com/diydrones/ardupilot/blob/master/Tools/ArduPPM/Libraries/PPM_Encoder.h>`__.)
+Plane (and Rover) can be `downloaded here <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega328p_for_ArduPlane.hex_.zip>`__.
+Firmware for Copter can be `downloaded here <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega328p_for_ArduCopter.hex_.zip>`__.
+(The source code, while not necessary if using the compiled code, \ `can be found here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/ArduPPM/Libraries/PPM_Encoder.h>`__.)
 
 Setup Manual
 ============
@@ -59,7 +59,7 @@ them.   ArduPPM is the official name for the newer generation firmwares.
 It has been designed from scratch with reliability as a top priority.
 The official release of the encoder firmware is in the Downloads section
 as ArduPPM_Vx.x.xx_ATMega328p.hex. The official source code is in the
-`Git repository here <https://github.com/diydrones/ardupilot/tree/master/Tools/ArduPPM>`__.
+`Git repository here <https://github.com/ArduPilot/ardupilot/tree/master/Tools/ArduPPM>`__.
 The standalone PPM Encoder needs the ATMega328p version.   To flash,
 connect the PPM Encoder to an AVR programmer such as the AVRISP mkII:
 

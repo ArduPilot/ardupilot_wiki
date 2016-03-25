@@ -57,7 +57,7 @@ Setting vehicle start location
 You can start the simulator with the vehicle at a particular location by
 calling **sim_vehicle.sh** with the ``-L`` parameter and a named
 location in the
-`ardupilot/Tools/autotest/locations.txt <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/locations.txt>`__
+`ardupilot/Tools/autotest/locations.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/locations.txt>`__
 file.
 
 For example, to start Copter in *Ballarat* (a named location in
@@ -84,10 +84,10 @@ When starting SITL the first time, the device may be configured with
 "unforgiving" parameters. Typically you will want to replace these with
 values that simulate more realistic vehicle and environment conditions.
 Useful parameter sets are provided in the autotest source for
-`Copter <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/copter_params.parm>`__,
-`Plane <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/ArduPlane.parm>`__
+`Copter <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/copter_params.parm>`__,
+`Plane <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/ArduPlane.parm>`__
 and
-`Rover <https://github.com/diydrones/ardupilot/blob/master/Tools/autotest/Rover.parm>`__.
+`Rover <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/Rover.parm>`__.
 
 .. tip::
 
