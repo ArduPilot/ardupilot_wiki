@@ -86,6 +86,9 @@ simply loading the :ref:`Copter <copter:home>` code.
 Announcements
 -------------
 
+-  Mar 26, 2016: `Plane 3.5.2 released <http://diydrones.com/profiles/blogs/apm-plane-3-5-2-released>`__.
+-  Mar 21, 2016: `Plane 3.5.1 released <http://diydrones.com/profiles/blogs/apm-plane-3-5-1-released>`__.
+-  Feb 02, 2016: `Plane 3.5.0 released <http://diydrones.com/profiles/blogs/apm-plane-3-5-0-released>`__.
 -  Feb 02, 2016: `Plane 3.5.0 released <http://diydrones.com/profiles/blogs/apm-plane-3-5-0-released>`__.
 -  Sept 24, 2015: `Plane 3.4.0 released <http://diydrones.com/profiles/blogs/apm-plane-3-4-0-released>`__.
 -  May 20th 2015 - `Plane 3.3.0 released <http://ardupilot.com/forum/viewtopic.php?f=110&t=12425>`__
