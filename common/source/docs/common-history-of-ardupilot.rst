@@ -139,6 +139,8 @@ support by Mike McCauley, Tridge
 Nov 2013 - `Pixhawk released <http://diydrones.com/profiles/blogs/px4-and-3d-robotics-present-pixhawk-an-advanced-user-friendly>`__
 by `ETH (Lorenz Meier,MikeS) <https://pixhawk.org/>`__/ 3D Robotics
 
+Dec 2013 - `BeaglePilot project <https://github.com/BeaglePilot/beaglepilot>`__ created by Víctor Mayoral Vilches and Siddharth Bharat Purohit to port APM codebase to Linux. The project was by Andrew Tridgell, Philip Rowse and others and funded by 3DR, Google (through the Google Summer of Code) and BeagleBoard.
+
 Jan 2014 - Extended Kalman Filter added for more reliable attitude and
 position information by Paul Riseborough, Tridge
 
@@ -147,11 +149,14 @@ Mar 2014 -
 support added by Emile Castelnuovo and Tridge
 
 Aug 2014 - `First Plane flight on Linux <http://diydrones.com/profiles/blogs/first-flight-of-ardupilot-on-linux>`__
-board (PixhawkFire)
+board (Pixhawk Fire cape)
 
 Sep 2014 - `Tridge & Canberra UAV win the Outback Challenge <http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A1790005>`__
 with an ArduPilot based UAV plane (`Tridge's
 debrief <http://diydrones.com/profiles/blogs/canberrauav-outback-challenge-2014-debrief>`__).
+
+Sep 2014 - `First Copter flight on Linux <http://diydrones.com/profiles/blogs/apm4-0-first-copter-flight>`__
+board (Pixhawk Fire cape)
 
 Oct 2014 - `DroneCode foundation <https://www.dronecode.org/>`__ is
 formed
@@ -159,6 +164,8 @@ formed
 
 Oct 2014 - first report of Plane being successfully used in search &
 rescue including finding a missing light plane in Florida.
+
+Feb 2015 - `Erle Robotics <http://erlerobotics.com>`__ launches DIY kits for Linux drones based on APM.
 
 May 2015 - first documented multi-vehicle flight using only a single
 ground station (`first

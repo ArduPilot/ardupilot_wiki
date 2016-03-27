@@ -12,6 +12,7 @@ recommended for use with ArduPilot.
 * `AUAV <http://www.auav.co/>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
 * `3DR <https://store.3dr.com/>`__ (Solo parts and accessories)
+* `Erle Robotics <https://erlerobotics.com/>`__ 
 
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
