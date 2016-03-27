@@ -84,14 +84,17 @@ ArduPilot.
 Community:
 ==========
 
-`Community <http://diydrones.com/>`__- This is what really sets
-ArduPilot apart from the closed-source offerings in the market.
+`Community <http://discuss.ardupilot.org/>`__- This is what really sets
+ArduPilot apart from the closed-source offerings in the market. An area for 
+open discourse on the ArduPilot projects direction between developers 
+and its customers.
+
+`DIYDRONES <http://diydrones.com/>`__- ArduPilot previous community home.
 
 A constantly evolving repository of knowledge and innovation. The DIY
-Drones community provides the life-source and inspiration for ArduPilot.
+Drones community provided a home and now still provides inspiration for ArduPilot.
 A comprehensive list of features that are continually born from the
 needs of the community.
-
 
 .. image:: ../../images/diydrones.jpg
     :target: http://diydrones.com
