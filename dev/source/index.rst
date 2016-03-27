@@ -12,9 +12,9 @@ Welcome to the ArduPilot Development Site
 
 :ref:`ArduPilot/APM <ardupilot:home>` is a open source autopilot
 system supporting multi-copters, traditional helicopters, fixed wing
-aircraft and rovers. The source code is developed by a `large community of enthusiasts <http://diydrones.com>`__. 
+aircraft and rovers. The source code is developed by a `large community of enthusiasts <http://ardupilot.org>`__. 
 New developers are always welcome! The best way to start is by joining the 
-`Developer Mailing List <https://groups.google.com/forum/#!forum/drones-discuss>`__, which
+`Developer Team Forum <http://discuss.ardupilot.org/c/developer-teams>`__, which
 is open to all and chock-full of daily development goodness. Lurk for a
 while to get a feel for it, then participate!
 
@@ -27,12 +27,8 @@ APM1 autopilot board was based around the
 since outgrown the Arduino environment and no longer use the Arduino
 runtime libraries, although we do still support building the ArduPilot
 for the AVR based APM1 and APM2 boards using a slightly modified version
-of the Arduino integrated development environment. Because we now
-support more than just Arduino-compatible hardware (such as PX4) we are
-moving from "Ardu" prefix names for the software projects to the "APM"
-prefix (APM:Copter, Plane, Rover, etc), which signifies the
-cross-platform nature of the current code. A timeline history of
-ardupilot can be found :ref:`here <history-of-ardupilot>`.
+of the Arduino integrated development environment. A timeline history of
+ArduPilot can be found :ref:`here <history-of-ardupilot>`.
 
 
 Supported boards
@@ -53,7 +49,7 @@ for more information on the move to AP-HAL.
 Project List
 ============
 
-The ArduPilot (APM) system is made up of (or relies upon) several
+The ArduPilot system is made up of (or relies upon) several
 different projects which are listed below.  Those marked with an asterix
 (\*) are peer projects that have their own owners outside the core
 ArduPilot dev team.
