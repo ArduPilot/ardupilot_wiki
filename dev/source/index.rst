@@ -14,7 +14,7 @@ Welcome to the ArduPilot Development Site
 system supporting multi-copters, traditional helicopters, fixed wing
 aircraft and rovers. The source code is developed by a `large community of enthusiasts <http://ardupilot.org>`__. 
 New developers are always welcome! The best way to start is by joining the 
-`Developer Team Forum <http://discuss.ardupilot.org/c/developer-teams>`__, which
+`Developer Team Forum <http://discuss.ardupilot.org/c/developer-team>`__, which
 is open to all and chock-full of daily development goodness. Lurk for a
 while to get a feel for it, then participate!
 
