@@ -86,8 +86,7 @@ Community:
 
 `Community <http://discuss.ardupilot.org/>`__- This is what really sets
 ArduPilot apart from the closed-source offerings in the market. An area for 
-open discourse on the projects direction with developers and customers work
-closely together.
+open discourse on the projects direction between developers and customers.
 
 `DIYDRONES <http://diydrones.com/>`__- ArduPilot previous community home.
 
