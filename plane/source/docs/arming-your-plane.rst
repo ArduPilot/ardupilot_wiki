@@ -42,9 +42,11 @@ There are three parameters which control how arming works:
    before arming is allowed. The default is 1, meaning all checks are
    done. Most users should leave it at 1, as the arming checks are
    important to ensure the autopilot is ready.
--  **ARMING_DIS_RUD**: This parameters allows you to disable rudder
-   based arming. If you set this to 1 then you will only be able to arm
-   via a ground station.
+-  **ARMING_RUDDER**: This parameter allows you to configure rudder 
+   based arming/disarming. The default is 1, meaning you are able to 
+   arm with right rudder. If you set this to 2 you can also disarm 
+   with left rudder. If you set this to 0 then you will only be able 
+   to arm/disarm via a ground station.
 
 How to Arm
 ==========
@@ -59,12 +61,21 @@ two ways:
 How to Disarm
 =============
 
-Unlike APM:Copter, plane does not have a way of disarming using the
-transmitter. The reason for this is that the copter method of disarming
-(left rudder and minimum throttle) is sometimes used by pilots while
-flying. There is too great a risk of an accidental disarm while flying.
+Since APM:Plane 3.4.0 it is possible to disarm using the transmitter. 
+This is done holding throttle at minimum and rudder to the left for 2 
+seconds. In ArduPlane this condition could be accidentally triggered by 
+pilots while flying so there are additional requirements prior to disarm:
 
-To disarm you need to use one of the following methods:
+-  You need to allow rudder disarming by changing **ARMING_RUDDER** 
+   parameter to 2 (ArmOrDisarm).
+-  The flight controller needs to make sure that you are not actually 
+   flying. There is an algorithm for this that uses the **airspeed sensor** 
+   readings. So you need this source available and giving values lower 
+   enough (in a windy day you might not be able to disarm even landed 
+   if the plane thinks you are still flying)
+
+You can also disarm without using the transmitter with one of the 
+following methods:
 
 -  use a ground station to issue a disarm command
 -  use the safety switch on your aircraft (on Pixhawk)
