@@ -35,6 +35,10 @@ the changes, and open a pull request.
 For more information see the Github Help topic: 
 `Editing files in another user's repository <https://help.github.com/articles/editing-files-in-another-user-s-repository/>`__
 
+.. note::
+
+    Wiki home pages (named "index.html") do not have the **Edit on GitHub** link. You can still edit them
+    by manually navigating to the desired page on Github.
 
 .. _common_wiki_editing_guide_big_edit:
 
