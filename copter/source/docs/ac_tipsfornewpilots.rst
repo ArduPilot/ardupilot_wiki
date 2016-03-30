@@ -14,15 +14,23 @@ Place the copter on level ground and connect the battery — do not move
 the copter until gyroscope calibration is completed (LED's flashing red
 and blue). Ensure that your RC mode toggle switch is in Stabilize mode.
 Slowly raise the throttle until the copter just lifts off the ground.
+    
+If it seems like it's going to flip or otherwise isn't lifting straight up
+it is possible that you've set the wrong +/x orientation, hooked up your motors
+in the wrong order or have the prop direction or pusher/puller order wrong.
 
-If it seems like it's going to flip or otherwise isn't lifting
-relatively straight up, drop the throttle and land it. Hold the copter
-firmly in your hand and level in the air and **with the props clear of
-your body**, advance the throttle a bit to get a feel for what's going
-on. When you move the stick forward, back, right and left, does the
-copter tilt that way? (If not, you've set the wrong +/x orientation,
-hooked up your motors in the wrong order or have the prop direction or
-pusher/puller order wrong).
+.. warning::
+
+    If you have a (small) vehicle that you can **hold firmly and safely** 
+    in the hand you can test this. This is potentially dangerous and should be performed 
+    with extreme care.
+    
+    After landing the copter, hold it firmly in your hand and level in the air
+    and **with the props clear of your body**. 
+    
+    Advance the throttle a bit to get a feel for what's going on.
+    When you move the stick forward, back, right and left, the
+    copter should tilt to follow the stick.
 
 If any of the controls are reversed (pitch or roll are backwards,
 meaning the copter moves in the opposite direction as your stick),
