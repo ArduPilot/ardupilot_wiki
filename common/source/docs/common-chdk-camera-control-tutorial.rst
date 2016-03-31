@@ -100,7 +100,7 @@ to take pictures automatically at intervals during flight. We'll do this
 by adding an `intervalometer <https://en.wikipedia.org/wiki/Intervalometer>`__ script
 to the SD card. Our friends at `Drone Mapper <https://dronemapper.com/>`__ have created a great CHDK
 intervalometer script that can be found in Drone Mapper's \ `CHDK documentation <https://s3.amazonaws.com/DroneMapper_US/documentation/DroneMapper_CHDK.pdf>`__
-or `viewed by clicking here <http://firmware.ardupilot.org/downloads/wiki/other_files/DM-Intervalometer.txt>`__. Copy
+or `viewed by clicking here <http://download.ardupilot.org/downloads/wiki/other_files/DM-Intervalometer.txt>`__. Copy
 the intervalometer script into a text editor and save the file as **DM_interval.bas**.
 
 This script will measure time intervals for five minutes and trigger the
@@ -321,7 +321,7 @@ When channel 7 is set to the mid position, CHDK will set zoom to 30
 When channel 7 is set to the down position, CHDK will set zoom to 100
 (extended position).
 
-`Click here to view the above script <http://firmware.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__,
+`Click here to view the above script <http://download.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__,
 copy into a text editor, and save as \ **3DR_Shoot.bas**. Now that
 you're familiar with how the script works, you can easily change the
 commands of each function. For example, you can add a **shoot** command
