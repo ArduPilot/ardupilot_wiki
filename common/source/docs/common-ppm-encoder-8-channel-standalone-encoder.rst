@@ -44,7 +44,7 @@ instructions, `view the manual here <http://download.ardupilot.org/downloads/wik
     :target: ../_images/ppm_encoder_wiring.jpg
 
 .. image:: ../../../images/ppm_encoder_manual_v3.jpg
-    :target:  http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/PPM-Encoder-V3-Manual.pdf
+    :target:  http://download.ardupilot.org/downloads/wiki/advanced_user_tools/PPM-Encoder-V3-Manual.pdf
 
 Re-Programming the Atmega328p PPM encoder
 =========================================

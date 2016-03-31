@@ -404,7 +404,7 @@ Creating a composite image
 One of our favorite applications of CHDK is creating a map of an area by
 stitching automatically-captured pictures into a composite image. We'll
 use the same
-`3DR_Shoot.bas <http://firmware.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__\ script
+`3DR_Shoot.bas <http://download.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__\ script
 that we used in the previous section.The process is similar to setting
 shutter triggers at waypoints, only to make sure we capture the entire
 area, we need more frequent, more regular waypoints. We’ll do this
@@ -573,7 +573,7 @@ the rightmost column.
 
 To verify that your transmitter behaves similarly, you may want to
 perform a test to ensure that a valid USB power value is returned for
-each switch position. View the `3DR CHDK Tester script here <http://firmware.ardupilot.org/downloads/wiki/other_files/3DRCHDKTester.txt>`__.
+each switch position. View the `3DR CHDK Tester script here <http://download.ardupilot.org/downloads/wiki/other_files/3DRCHDKTester.txt>`__.
 Copy the contents into a text editor and save as **3DRCHDKTester.bas**.
 Load into your (unlocked) SD card by copying the file into the
 **Scripts** folder (in the **CHDK** folder).
