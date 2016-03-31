@@ -163,7 +163,7 @@ enable/disable Super Simple mode only).
    <td><strong>Lost Copter Alarm</strong></td>
    <td>
 
-Plays the `lost copter alarm <http://firmware.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__
+Plays the `lost copter alarm <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__
 though the buzzer (AC3.3 only)
 
 .. raw:: html
