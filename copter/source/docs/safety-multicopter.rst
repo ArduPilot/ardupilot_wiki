@@ -247,7 +247,7 @@ MultiCopter Safety
 .. note::
 
    Get a Printable PDF Safety
-   Sheet: \ `MultiCopter_Safety <http://firmware.ardupilot.org/downloads/wiki/pdf_guides/MultiCopter_Safety.pdf>`__\ 
+   Sheet: \ `MultiCopter_Safety <http://download.ardupilot.org/downloads/wiki/pdf_guides/MultiCopter_Safety.pdf>`__\ 
 
 The \ `Copter Forum <http://ardupilot.com/forum/viewforum.php?f=3>`__ permits the
 developers to respond to your questions and enables you to research
