@@ -4,7 +4,7 @@
 DOWNLOADS: Developer Tools
 ==========================
 
-The developer tools `can be downloaded from here <http://firmware.ardupilot.org/downloads/wiki/developer_tools/>`__.
+The developer tools `can be downloaded from here <http://download.ardupilot.org/downloads/wiki/developer_tools/>`__.
 
 .. note::
 
@@ -21,7 +21,7 @@ Tools
 Odroid Ubuntu 14.04 hostapd
 ---------------------------
 
-* `hostapd_OdroidU3_Ubuntu1404.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/hostapd_OdroidU3_Ubuntu1404.zip>`__
+* `hostapd_OdroidU3_Ubuntu1404.zip <http://download.ardupilot.org/downloads/wiki/developer_tools/hostapd_OdroidU3_Ubuntu1404.zip>`__
 
 VERSION	dev
 DATE POSTED	January 20, 2015
@@ -34,8 +34,8 @@ This replaces the hostapd distributed with the Odroid U3 board’s Ubuntu 14.04.
 Arduino code to test an airspeed sensor
 ---------------------------------------
 
-* `Airspeed_test.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/Airspeed_test.zip>`__
-* `Airspeed_test1.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/Airspeed_test1.zip>`__
+* `Airspeed_test.zip <http://download.ardupilot.org/downloads/wiki/developer_tools/Airspeed_test.zip>`__
+* `Airspeed_test1.zip <http://download.ardupilot.org/downloads/wiki/developer_tools/Airspeed_test1.zip>`__
 
 DATE POSTED	April 25, 2013
 
@@ -53,7 +53,7 @@ DATE POSTED	May 1, 2013
 ArduPilot-Arduino-1.0.3-windows.zip
 -----------------------------------
 
-* `ArduPilot-Arduino-1.0.3-windows.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/ArduPilot-Arduino-1.0.3-windows.zip>`__
+* `ArduPilot-Arduino-1.0.3-windows.zip <http://download.ardupilot.org/downloads/wiki/developer_tools/ArduPilot-Arduino-1.0.3-windows.zip>`__
 
 VERSION	1.0.3
 DATE POSTED	May 1, 2013
@@ -65,7 +65,7 @@ Arduino 1.0.3 with modifications required for ArduPilot
 CrossTrack demo (flash version)
 -------------------------------
 
-* `CrossTrack.swf <http://firmware.ardupilot.org/downloads/wiki/developer_tools/CrossTrack.swf>`__
+* `CrossTrack.swf <http://download.ardupilot.org/downloads/wiki/developer_tools/CrossTrack.swf>`__
 
 DATE POSTED	April 29, 2013
 
@@ -74,7 +74,7 @@ DATE POSTED	April 29, 2013
 Data dump of three attitude solutions
 -------------------------------------
 
-* `AttitudesThree.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/AttitudesThree.zip>`__
+* `AttitudesThree.zip <http://download.ardupilot.org/downloads/wiki/developer_tools/AttitudesThree.zip>`__
 
 DATE POSTED	April 29, 2013
 
@@ -89,7 +89,7 @@ Data dump of 3 attitude solutions running in parallel. Includes README file.
 Declination Lookup - Test EMM
 -----------------------------
 
-* `DeclinationLookup_CompressedEMM-1.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/DeclinationLookup_CompressedEMM-1.zip>`__
+* `DeclinationLookup_CompressedEMM-1.zip <http://download.ardupilot.org/downloads/wiki/developer_tools/DeclinationLookup_CompressedEMM-1.zip>`__
 
 DATE POSTED	April 29, 2013
 
@@ -101,7 +101,7 @@ I wrote except that the lookup tables were generated using the EMM (Enhanced) in
 mavproxybeta1.msi
 -----------------
 
-* `mavproxybeta1.msi <http://firmware.ardupilot.org/downloads/wiki/developer_tools/mavproxybeta1.msi>`__
+* `mavproxybeta1.msi <http://download.ardupilot.org/downloads/wiki/developer_tools/mavproxybeta1.msi>`__
 
 DATE POSTED	May 1, 2013
 
@@ -110,7 +110,7 @@ DATE POSTED	May 1, 2013
 mavproxyBetaNoNeworkTest.msi
 ----------------------------
 
-* `mavproxyBetaNoNeworkTest.msi <http://firmware.ardupilot.org/downloads/wiki/developer_tools/mavproxyBetaNoNeworkTest.msi>`__
+* `mavproxyBetaNoNeworkTest.msi <http://download.ardupilot.org/downloads/wiki/developer_tools/mavproxyBetaNoNeworkTest.msi>`__
 
 DATE POSTED	May 1, 2013
 
@@ -118,7 +118,7 @@ DATE POSTED	May 1, 2013
 Serial port test program
 ------------------------
 
-* `MultiSerialMega.zip <http://firmware.ardupilot.org/downloads/wiki/developer_tools/MultiSerialMega.zip>`__
+* `MultiSerialMega.zip <http://download.ardupilot.org/downloads/wiki/developer_tools/MultiSerialMega.zip>`__
 
 DATE POSTED	April 29, 2013
 

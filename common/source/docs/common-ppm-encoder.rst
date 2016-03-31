@@ -64,7 +64,7 @@ Failsafe output values:
 Setup Manual
 ============
 
-The `PPM Encoder 3DR Manual <http://firmware.ardupilot.org/downloads/wiki/pdf_guides/PPM-Encoder-V3-Manual.pdf>`__
+The `PPM Encoder 3DR Manual <http://download.ardupilot.org/downloads/wiki/pdf_guides/PPM-Encoder-V3-Manual.pdf>`__
 shows how to solder and wire the PPM Encoder and explains the different
 failsafe modes.
 

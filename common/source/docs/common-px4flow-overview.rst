@@ -45,7 +45,7 @@ Upgrade the PX4Flow sensor's firmware
 
 The PX4Flow firmware must be updated prior to connecting to the Pixhawk:
 
-#. Download and unzip the `PX4Flow-KLT firmware <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
+#. Download and unzip the `PX4Flow-KLT firmware <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
    (`source code here <https://github.com/priseborough/px4flow/tree/klt_flow>`__)
 #. `Download, install and start QGround Control <http://qgroundcontrol.org/downloads>`__
 #. Select *PX4 Autopilot* from the splash screen
@@ -131,7 +131,7 @@ best.
    have enough voltage to work properly.
 
 #. Remove the lens cap from the sensor
-#. We recommend you upgrade to \ `this modified PX4FLOW sensor firmware <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__.
+#. We recommend you upgrade to \ `this modified PX4FLOW sensor firmware <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__.
    using QGroundControl. This modified firmware uses a different method
    to determine the optical flow and provides readings over a wider
    range of light and distance, but has a smaller maximum flow

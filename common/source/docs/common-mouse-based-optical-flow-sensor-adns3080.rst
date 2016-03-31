@@ -60,7 +60,7 @@ Testing the sensor
 
 -  Upload the test sketch to the APM:
 
-   -  If using an APM2, you can `download the hex file from here <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/AP_OpticalFlow_test.hex>`__
+   -  If using an APM2, you can `download the hex file from here <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/AP_OpticalFlow_test.hex>`__
       and then upload to your APM2 using the Mission Planner's **INITIAL
       SETUP \| Install Firmware \| Load custom firmware** link
    -  If using an APM1 you must open the

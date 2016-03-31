@@ -48,7 +48,7 @@ the `Virtual COM port driver <http://www.ftdichip.com/Drivers/VCP.htm>`__.
 Connection Option #3 - using the APM2 as a passthrough
 ======================================================
 
--  Download the `APM / UBlox passthrough <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/GPS_UBLOX_passthrough_APM2.hex>`__
+-  Download the `APM / UBlox passthrough <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/GPS_UBLOX_passthrough_APM2.hex>`__
    binary to your computer
 -  Load the binary onto your APM2 using the **Mission Planner's Initial
    Setup \| Install Firmware \| Load custom firmware link**
