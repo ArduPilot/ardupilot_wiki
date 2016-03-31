@@ -21,7 +21,7 @@ Gimbal Assembly instructions
 
 Paper instructions are normally provided with the gimbal and a short
 user manual can also be found in the "User Manual" directory of the
-`Tarot Gimbal Firmware v1.5 zip <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
+`Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
 file.
 
 Connecting the gimbal to the Pixhawk
@@ -74,11 +74,11 @@ change the configuration you should:
    "Prolific USB-to-Serial Comm Port" should appear in the Device
    Manager as shown below.  If drivers cannot be found you may be able
    to install Windows 7 or Windows XP drivers using one of the .exe
-   files found in the "driver" directory of the `Tarot Gimbal Firmware v1.5 zip <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
+   files found in the "driver" directory of the `Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
    file.
 
    |Gimbal_Tarot_DeviceManager2|
-#. Download and unzip the `Tarot Gimbal Firmware v1.5 zip <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
+#. Download and unzip the `Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
    file to a convenient place on your computer.
 #. Double click on the **ZYX-BMGC-EN_V1.5.exe** file (found in the
    above zip) and the configuration UI shown below should appear
@@ -176,7 +176,7 @@ instructions below to update both the controller and motor firmwares.
    Leave the gimbal unpowered for now.
 #. Start the "ZYX-BMGC-EN_V1.5" configuration application
 #. Select **Open Firmware** and select the ***../Firmware_V1.5/Gimbal
-   Controller Firmware V1.5.bgsf*** file from the `Tarot Gimbal Firmware v1.5 zip. <http://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
+   Controller Firmware V1.5.bgsf*** file from the `Tarot Gimbal Firmware v1.5 zip. <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
 #. Select the COM Port that has been assigned to the gimbal, then select
    "Open COM Port."
 #. Select **Start Upgrade**.
