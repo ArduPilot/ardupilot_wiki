@@ -5,10 +5,10 @@ Throttle Arming in Plane
 ========================
 
 A software safety feature that requires the throttle to be explicitly
-armed by a pilot is available for Plane (first introduced in version
-2.77). This is especially applicable to electric planes. The idea is to
-prevent an unexpected throttle up when someone's hand is near a
-propeller.
+armed by a pilot is available for Plane. It was first introduced in version
+2.77 and since 3.3.0 it is enabled by default. This is especially applicable 
+to electric planes. The idea is to prevent an unexpected throttle up when 
+someone's hand is near a propeller.
 
 .. warning::
 
@@ -22,15 +22,10 @@ propeller.
    finger or hand!
 
 Parameters governing throttle arming are introduced in the
-:ref:`ARMING <ARMING_CHECK>` section of the
+:ref:`ARMING <parameters_ARMING_>` section of the
 parameters wiki page. This page discusses throttle arming in greater
 detail and walks through the typical procedures for using this safety
-feature. This page makes the assumption that you begin will all the
-ARMING\_ parameters set to 0. Modifying parameters is outside the scope
-of this page and varies depending which ground control software you are
-using. In Mission Planner, it is easiest to find the ARMING\_ parameters
-by using the Config/Tuning screen and selecting the "Full Parameter
-List" menu item.
+feature.
 
 A Safety Note About Arming
 ==========================
@@ -90,7 +85,8 @@ Simplest Solution: Use Only ARMING_REQUIRE
 
 The simplest way to use the throttle arming feature is to require the
 user to request the throttle to arm. ARMING_REQUIRE has three possible
-values, 0, 1 and 2. They have the following effect:
+values, 0, 1 and 2 (the default value is 1, enabled). They have the 
+following effect:
 
 -  ARMING_REQUIRE=0: No effect. Throttle arming safety is not employed.
 -  ARMING_REQUIRE=1: Before the user arms throttle, send minimum PWM to
@@ -102,8 +98,8 @@ values, 0, 1 and 2. They have the following effect:
    prefer this setting as it ensures no signal is sent to the ESC when
    disarmed.
 
-When the ARMING_REQUIRE parameter is set to 1 or 2 (and ARMING_CHECK
-and ARMING_DIS_RUD are set to 0), all that is required to arm the
+When the ARMING_REQUIRE parameter is set to 1 or 2 (enabled) and 
+ARMING_RUDDER is not to 0 (disabled), all that is required to arm the
 throttle is to either:
 
 #. Arm the throttle via the ground control software.
@@ -135,10 +131,10 @@ the artificial horizon on the Flight Data screen:
 Increased Safety: Perform System Checks Before Arming Throttle
 ==============================================================
 
-If desired, the ARMING_CHECK parameter can also be set to 1 in order to
-perform system health checks before arming throttle when a user attempts
-to arm. See wiki documentation on the :ref:`ARMING_CHECK parameter <ARMING_CHECK>`
-to see what is checked.
+By default the ARMING_CHECK parameter is set to 1 so the flight controller
+performs system health checks before arming throttle when a user attempts
+to arm. You can enable/disable any check with a bitmask. See wiki documentation on 
+the :ref:`ARMING_CHECK parameter <ARMING_CHECK>` for more information.
 
 One thing to be aware of if you typically do not fly with a ground
 control station: **it will be difficult to determine why your autopilot
@@ -182,5 +178,5 @@ Disabling Rudder Arming
 
 Some pilots will not want to use the rudder arming capability. To only
 allow throttle arming via the ground control software set the
-ARMING_DIS_RUD parameter to 1. The autopilot will no longer arm
+ARMING_RUDDER parameter to 0. The autopilot will no longer arm
 throttle when full right rudder is applied on the RC transmitter.
