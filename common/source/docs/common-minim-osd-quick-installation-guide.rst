@@ -63,7 +63,22 @@ safe by this way:
     :target: ../_images/DiagramaMinimOSD.jpg
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     Firmware available for MinimOSD
+    ===============================
     
     After some time with a stalled development of the firmware for the MinimOSD boards due to reaching the limit of the code size, a new developer (https://github.com/night-ghost) picked up the project and through some clever development effort managed to bring the project to life.
     
@@ -90,16 +105,20 @@ safe by this way:
 
 pre-compiled binaries and HEX files are in the Released folder with the CT GUI.
 
-If you are willing to compile your version from the GitHub repo, the following mini guide is quite usefull.
+If you are willing to compile your version from the GitHub repo, the following mini guide is quite useful.
 
 To compile on windows:
 
-1. Download the latest Arduino Version (currently 1.6.8)
-2. Download the version of MinimOSD-Extra-DV you like, via git or zip (github lets you click on a commit and view its files, so downloading that zip gives you the version you want)
-3. If using git clone, also do a git submodule init and git submodule update. If downloading the zip from github, you also need SingleSerial because github does not include submodules into the download zip, so download it also: https://github.com/night-ghost/SingleSerial
-4. Copy all the libraries from MiniumOSD to the Arduino libraries folder (+ SingleSerial if you downloaded the zip for it)
-5. If not using UAVTalk or MultiWii disable them in Config.h:
-//#define USE_UAVTALK 1
-//#define USE_MWII 1
-6. Sketch -> Export Compiled Binary (it will save the hex file in the MinimOSD folder of the source, one file with the bootloader and one without)
+   1. Download the latest Arduino Version (currently 1.6.8)
+   2. Download the version of MinimOSD-Extra-DV you like, via git or zip (github lets you click on a commit and view its files, so downloading that zip gives you the version you want)
+   3. If using git clone, also do a git submodule init and git submodule update. If downloading the zip from github, you also need SingleSerial because github does not include submodules into the download zip, so download it also: https://github.com/night-ghost/SingleSerial
+   4. Copy all the libraries from MiniumOSD to the Arduino libraries folder (+ SingleSerial if you downloaded the zip for it)
+   5. If not using UAVTalk or MultiWii disable them in Config.h:
+      //#define USE_UAVTALK 1
+      //#define USE_MWII 1
+   6. Sketch -> Export Compiled Binary (it will save the hex file in the MinimOSD folder of the source, one file with the bootloader and one without)
+
+The developer also provides a convenient ready to use package that includes all the required files in their latest version here:
+
+`OSD latest <https://github.com/night-ghost/minimosd-extra/blob/c3d21869a06f4917b2841cf2405f59b0aab668bc/osd_latest.zip?raw=true>`__.
     
