@@ -198,16 +198,25 @@ software and subsequently analysing logs.
 
 --------------
 
-Erle Robotics LLC
+Erle Robotics
 -----------------
+
+.. image:: ../../../images/PXFmini2.jpg
+    :target: http://erlerobotics.com/blog/pxfmini/
+
+
+- Website: `erlerobotics.com <http://erlerobotics.com>`__
+- Email: contact@erlerobot.com
+- Documentation: `Erle Robotics docs <http://erlerobotics.com/docs>`__
+- Phone: +34 945 30 68 20
 
 \ **Bilbao Offices, Spain**
 
 Calle Uribitarte 6 2a planta
 
-Bilbao 48001
+Bilbao 48001 
 
-Vizcaya, Spain
+Vizcaya, Spain 
 
 **Vitoria Offices, Spain**
 
@@ -216,12 +225,6 @@ Calle Venta de la Estrella, 6 Pab. 130
 Vitoria-Gasteiz 01006
 
 Álava, Spain
-
-Tel. 0034 945 30 68 20
-
-Tel.: 0034 945 30 68 20
-
-Email: contact@erlerobot.com
 
 **Capabilities:**
 
@@ -234,7 +237,12 @@ Email: contact@erlerobot.com
 -  Vehicle design, integration and setup
 -  Troubleshooting and support (log review, vehicle support)
 -  New vehicle creation and support
--  Robot Operating System (ROS) integration and support
+-  Robot Operating System (ROS) commercial support
+-  Robot Operating System 2 (ROS 2) commercial support
+-  Robot and drone simulation services using Gazebo
+
+.. image:: ../../../images/Banner_ErleRover_EN.jpg
+    :target: http://erlerobotics.com/blog/erle-rover/
 
 --------------
 
