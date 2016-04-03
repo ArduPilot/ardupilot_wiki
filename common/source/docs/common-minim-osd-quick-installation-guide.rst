@@ -123,3 +123,6 @@ The developer also provides a convenient ready to use package that includes all 
 
 Lately a new style of Board, the "Micro MinimOSD w/ KV Team mod", has appeared on sale at various locations.
 This board is only 15mm x 15mm and functionally does the same as the described MinimOSD but adds some changes by the KV Team, such as 4 external analog input pins (2 of which can be output or digital inputs). All functions refered on this firmware related to additional pins are for this board.
+
+.. |MinimOSD_Micro| image:: ../../../images/MinimOSD_Micro.jpg
+    :target: ../_images/MinimOSD_Micro.jpg
