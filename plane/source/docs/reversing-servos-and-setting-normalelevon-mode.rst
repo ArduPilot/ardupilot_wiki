@@ -1,7 +1,7 @@
 .. _reversing-servos-and-setting-normalelevon-mode:
 
 ===============================================
-Normal/Elevon/VTail Mode &amp; Reversing Servos
+Normal/Elevon/VTail Mode & Reversing Servos
 ===============================================
 
 Every aircraft is different, and as people familiar with RC know, you've
@@ -13,52 +13,39 @@ through this process.
 Overview
 ========
 
+For a traditional aileron+elevator+rudder aircraft you need to follow
+the procedure outlined below to ensure the control surfaces move in
+the right direction. Note that you must get the channel reversals
+right both in your transmitter and in the ArduPilot parameters.
+
 **First**, make sure your control surfaces are going the right way in
-Manual Mode.  In this mode, the RC controls are sent straight through to
-the servos, without going through the autopilot (this is the
-safety/failsafe mode that allows you to regain control even in the case
-of autopilot failure). If any control surface is going in the wrong
-direction when you move your RC sticks, use your transmitter's channel
-reverse function to reverse it.
+Manual Mode.  In this mode, the RC controls are sent straight through
+to the servos (possibly with elevon or vtail mixing). If any control
+surface is going in the wrong direction when you move your RC sticks,
+use your transmitter's channel reverse function to reverse it.
 
-**Second**, switch into FBWA mode and do the same thing, while connected
-to the Mission Planner. You're under autopilot control now, and you need
-to configure it for your particular setup. As you move the RC sticks
-again, watch the control surfaces. If any is going in the wrong
-direction, click the Reverse checkbox in the RC setup screen shown
-below.
+**Second**, switch into FBWA mode and check that when the aircraft is
+rolled or pitched that the control surfaces move the right way to
+correct the attitude error. This means you need to check that
 
-Do this for all four channels shown. **Just because it's right in
-RC/Manual doesn't mean it will be right under Autopilot control. Check
-it in both modes!**
+-  When you roll the aircraft to the right that the right aileron goes
+   down and the left aileron goes up.
+-  When you roll the aircraft to the left that the right aileron goes
+   up and the left aileron goes down.
+-  When you pitch the aircraft up that the elevator goes down
+-  When you pitch the aircraft down that the elevator goes up
+
+If any of these are incorrect then you should change the reversal for
+that channel. See the table below. Also note that if you have changed
+your RCMAP settings then the reversals will be on different
+channels. See :ref:`RCMAP Input Channel Mapping <plane:common-rcmap>`.
+
+If you are using MissionPlanner or a similar modern ground station
+than you can conveniently see the channel reversal setup and change
+the settings from one screen
 
 .. image:: ../images/mpreverse.png
     :target: ../_images/mpreverse.png
-
-Getting the rudder direction right
-==================================
-
-A very common mistake is to have the rudder reversal set incorrectly. If
-you have it set incorrectly then your plane can fly very badly, and may
-not be able to navigate at all.
-
-To check your rudder reversal you need to do the following:
-
-Ensure the KFF_RDDRMIX parameter is set to a non-zero value. For this
-test you should set it to a high value (such as 0.8) to ensure the
-rudder movement is large. Remember to reset it back to a lower value
-afterwards.
-
--  put the plane into FBWA mode
--  with no stick input (hands off the transmitter) roll the aircraft to
-   the right. The rudder should turn towards the left as it tries to
-   correct the roll.
--  Now roll the aircraft to the left. The rudder should turn to the
-   right as it tries to correct the roll.
-
-If the rudder moves in the wrong direction you should change the
-RC4_REV parameter. A value of 1 means no reversal. A value of -1 means
-to reverse the rudder.
 
 Standard (non-elevon) reversal setup
 ====================================
@@ -78,6 +65,35 @@ The 4 parameters are:
 +------------+---------------------+--------------------------+---------------------------------------+
 | RC4_REV    | rudder reversal     | set to -1 for reversal   | defaults to 1 (meaning no reversal)   |
 +------------+---------------------+--------------------------+---------------------------------------+
+
+Getting the rudder direction right
+==================================
+
+A very common mistake is to have the rudder reversal set incorrectly. If
+you have it set incorrectly then your plane can fly very badly, and may
+not be able to navigate at all.
+
+To check your rudder reversal you need to do the following:
+
+Ensure the KFF_RDDRMIX parameter is set to a non-zero value. For this
+test you should set it to a high value (such as 0.8) to ensure the
+rudder movement is large. Remember to reset it back to a lower value
+afterwards.
+
+You also need to disable ground steering if you have it enabled. Check
+the GROUND_STEER_ALT parameter. You can re-enable ground steering
+after getting the rudder direction right.
+
+-  put the plane into FBWA mode
+-  with no stick input (hands off the transmitter) roll the aircraft to
+   the right. The rudder should turn towards the left as it tries to
+   correct the roll.
+-  Now roll the aircraft to the left. The rudder should turn to the
+   right as it tries to correct the roll.
+
+If the rudder moves in the wrong direction you should change the
+RC4_REV parameter. A value of 1 means no reversal. A value of -1 means
+to reverse the rudder.
 
 New style Elevon mixing setup (ELEVON_OUTPUT option)
 =====================================================
