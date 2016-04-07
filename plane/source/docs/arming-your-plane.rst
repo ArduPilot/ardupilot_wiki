@@ -223,3 +223,12 @@ autopilot can refuse to arm are:
    to make sure they are in a reasonable range. The checks are
    "LIM_ROLL_CD too small", "LIM_PITCH_MAX too small",
    "LIM_PITCH_MIN too large", "invalid THR_FS_VALUE".
+-  **GPS n has not been fully configured**. This happens with a uBlox
+   GPS where the GPS driver is unable to fully configure the GPS for
+   the settings that are being requested. This can be caused by a bad
+   wire between the autopilot and GPS, or by a bad response from the
+   GPS. If the message is about "GPS 0" then it is the first GPS. If
+   it is "GPS 1" then it is the 2nd GPS. If you get a failure for the
+   2nd GPS and don't have two GPS modules installed then set GPS_TYPE2
+   to zero to disable the 2nd GPS
+
