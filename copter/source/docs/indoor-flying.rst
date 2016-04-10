@@ -18,7 +18,7 @@ Overview
 
 The main point note when flying indoors is that Global Positioning
 Systems will not work. Even if you see that you have the correct number
-of satellites and a low HDOP, this will due to multipathing of the
+of satellites and a low HDOP, this is due to multipathing of the
 signals from the satellites. This means the single is being reflected to
 the antenna via walls, windows and other surfaces from outside. If you
 look at the position on a map you will see that the location will not

@@ -96,9 +96,9 @@ AutoTuning notes
 
 -  AutoTune can r\ **equest very large and fast changes in output**\ s
    to the motors which can cause ESC sync issues especially when using
-   SimonK firmware and/or low KV motors (under 500KV). See this video
-   showing a test which recreates a sync
-   problem.https://www.youtube.com/watch?v=hBUBbeyLe0Q
+   SimonK firmware and/or low KV motors (under 500KV). See this
+   `video showing a test <https://www.youtube.com/watch?v=hBUBbeyLe0Q>`_
+   which recreates a sync problem.
 -  AutoTune is sometimes unable to find a good tune for frames with very
    soft dampening on the APM or very flexible arms.
 -  For best results the copter shouldn't be allowed to build up too much
