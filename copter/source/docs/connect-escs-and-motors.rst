@@ -172,6 +172,9 @@ Propellers come in many varieties and are suited to different needs.
 
    Have experience choosing propellers? Help us by editing this
    section!
+   
+   
+.. _connect-escs-and-motors_testing_motor_spin_directions:
 
 Testing motor spin directions
 =============================
