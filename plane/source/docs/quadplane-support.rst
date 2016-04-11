@@ -137,6 +137,10 @@ Using different channel mappings
 You can remap what output channels the quad motors are on by setting
 values for RCn_FUNCTION. This follows the same approach as :ref:`other output functions <channel-output-functions>`.
 
+Note that you do not need to set any of the RCn_FUNCTION values unless
+you have a non-standard motor ordering. It is highly recommended that
+you use the standard ordering.
+
 The output function numbers are:
 
 -  33: motor1
