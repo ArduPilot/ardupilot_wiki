@@ -17,13 +17,24 @@ Download
 Download the latest deb file for your machine (from
 `firmware.ardupilot.org <http://firmware.ardupilot.org/Tools/APMPlanner/>`__):
 
+Debian (outdated)
++++++++++
 -  `apm_planner2_latest_debian.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_debian.deb>`__
 -  `apm_planner2_latest_debian64.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_debian64.deb>`__
--  `apm_planner2_latest_osx.dmg <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_osx.dmg>`__
--  `apm_planner2_latest_ubuntu.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu.deb>`__
--  `apm_planner2_latest_ubuntu64.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu64.deb>`__
+
+Ubuntu Trusty (14.04)
++++++++++
 -  `apm_planner2_latest_ubuntu_trusty.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu_trusty.deb>`__
 -  `apm_planner2_latest_ubuntu_trusty64.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu_trusty64.deb>`__
+
+Ubuntu Wily (15.10)
++++++++++
+-  `apm_planner2_latest_ubuntu_wily64.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu_wily64.deb>`__
+
+Ubuntu Lastest (outdated)
++++++++++
+-  `apm_planner2_latest_ubuntu.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu.deb>`__
+-  `apm_planner2_latest_ubuntu64.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu64.deb>`__
 
 Install Packages
 ================
