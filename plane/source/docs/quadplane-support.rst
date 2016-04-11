@@ -122,7 +122,7 @@ Another common setup is an octa-quad, which uses the following ordering
 -  **Channel 11:** Rear right bottom motor, counter-clockwise
 -  **Channel 12:** Rear left bottom motor, clockwise
 
-You can remember for clockwise/counter-clockwise rule for an octa-quad
+You can remember the clockwise/counter-clockwise rule for an octa-quad
 by "top motors turn in towards the fuselage, bottom motors turn out
 away from the fuselage".
    
@@ -156,9 +156,13 @@ Using different channel mappings
 You can remap what output channels the quad motors are on by setting
 values for RCn_FUNCTION. This follows the same approach as :ref:`other output functions <channel-output-functions>`.
 
-Note that you do not need to set any of the RCn_FUNCTION values unless
-you have a non-standard motor ordering. It is highly recommended that
-you use the standard ordering.
+.. note::
+
+   Note that you do not need to set any of the RCn_FUNCTION values unless
+   you have a non-standard motor ordering. It is highly recommended that
+   you use the standard ordering and do not set the RCn_FUNCTION
+   parameters, leaving them at zero. They will be automatically set to
+   the right values for your frame on boot.
 
 The output function numbers are:
 
