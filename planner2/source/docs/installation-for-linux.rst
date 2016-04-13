@@ -14,16 +14,14 @@ System Requirements
 Download
 --------
 
-Download the latest deb file for your machine (from
-`firmware.ardupilot.org <http://firmware.ardupilot.org/Tools/APMPlanner/>`__):
+Download the latest deb file for your machine from either
 
--  `apm_planner2_latest_debian.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_debian.deb>`__
--  `apm_planner2_latest_debian64.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_debian64.deb>`__
--  `apm_planner2_latest_osx.dmg <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_osx.dmg>`__
--  `apm_planner2_latest_ubuntu.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu.deb>`__
--  `apm_planner2_latest_ubuntu64.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu64.deb>`__
--  `apm_planner2_latest_ubuntu_trusty.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu_trusty.deb>`__
--  `apm_planner2_latest_ubuntu_trusty64.deb <http://firmware.ardupilot.org/Tools/APMPlanner/apm_planner2_latest_ubuntu_trusty64.deb>`__
+`<http://discuss.ardupilot.org/t/download-latest-apm-planner-2-0-20-and-other-releases>`__
+
+OR from
+
+`firmware.ardupilot.org/Tools/APMPlanner <http://firmware.ardupilot.org/Tools/APMPlanner/>`__
+
 
 Install Packages
 ================
