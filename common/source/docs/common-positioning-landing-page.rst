@@ -23,5 +23,6 @@ positioning technologies:
 
     3DR UBlox GPS + Compass <common-installing-3dr-ublox-gps-compass-module>
     Zubax GNSS: GPS, Compass, Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
+    Emlid Reach RTK Receiver <common-reach-rtk-receiver>
     GPS – How it Works <common-gps-how-it-works>
 

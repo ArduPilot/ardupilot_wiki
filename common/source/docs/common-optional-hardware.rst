@@ -33,7 +33,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     PPM Encoder <common-ppm-encoder>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     External LEDs <common-external-leds>
-    
+
 [site wiki="copter"]
     Parachute <parachute>
     Joystick or Gamepad <flying-with-a-joystickgamepad-instead-of-rc-controller>
