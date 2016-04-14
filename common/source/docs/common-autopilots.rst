@@ -30,6 +30,7 @@ Current boards
     Pixhawk <common-pixhawk-overview>
     Pixracer <common-pixracer-overview>
     NAVIO+ <common-navio-overview>
+    NAVIO2 <common-navio2-overview>
     Erle-Brain Linux Autopilot <common-erle-brain-linux-autopilot>
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
 
