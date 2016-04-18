@@ -20,21 +20,6 @@ sys.path.insert(0,'../..')
 import common_conf
 
 
-############ PATCH REMOVE NON-LOCAL IMAGE WARNINGS
-### From:
-##  http://stackoverflow.com/questions/12772927/specifying-an-online-image-in-sphinx-restructuredtext-format
-
-if common_conf.disable_non_local_image_warnings:
-    import sphinx.environment
-    from docutils.utils import get_source_line
-
-    def _warn_node(self, msg, node):
-        if not msg.startswith('nonlocal image URI found:'):
-            self._warnfunc(msg, '%s:%s' % get_source_line(node))
-
-    sphinx.environment.BuildEnvironment.warn_node = _warn_node
-############ ENDPATH
-
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
