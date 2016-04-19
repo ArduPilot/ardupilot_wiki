@@ -796,10 +796,10 @@ a Bebop to run ardupilot are
    Some of this information was taken from the `Paparazzi UAV wiki
    page on the Bebop <http://wiki.paparazziuav.org/wiki/Bebop>`__.
 
-NavIO+
+NAVIO+
 ------
 
-`NavIO+ <http://www.emlid.com/>`__ is a sensor cape for the RaspberryPi2
+`NAVIO+ <http://www.emlid.com/>`__ is a sensor cape for the RaspberryPi2
 from Emlid. Under rapid development.
 
 +--------------------------------------+--------------------------------------+
@@ -866,7 +866,78 @@ from Emlid. Under rapid development.
 | **Design files**                     | ?                                    |
 +--------------------------------------+--------------------------------------+
 
-.. |navio_plus_shop| replace:: `www.emlid.com/shop/navio-plus <http://www.emlid.com/shop/navio-plus/>`__   
+.. |navio_plus_shop| replace:: `www.emlid.com/shop/navio-plus <http://www.emlid.com/shop/navio-plus/>`__   
+
+
+NAVIO2
+-------
+
+`NAVIO2 <http://www.emlid.com/>`__ is a new sensor cape for the RaspberryPi 3
+from Emlid.
+
++--------------------------------------+--------------------------------------+
+| **Purchase**                         | |navio2_shop|                        |
++--------------------------------------+--------------------------------------+
+| **Specifications**                   | **OS:**                              |
+|                                      |                                      |
+|                                      | Linux Debian                         |
+|                                      |                                      |
+|                                      | **CPU:**                             |
+|                                      |                                      |
+|                                      | ?                                    |
+|                                      |                                      |
+|                                      | **Memory:**                          |
+|                                      |                                      |
+|                                      | ?                                    |
+|                                      |                                      |
+|                                      | **Sensors:**                         |
+|                                      |                                      |
+|                                      | MPU9250 9DOF IMU                     |
+|                                      |                                      |
+|                                      | LSM9DS1 9DOF IMU                     |
+|                                      |                                      |
+|                                      | MS5611 Barometer                     |
+|                                      |                                      |
+|                                      | U-blox M8N Glonass/GPS/Beidou        |
+|                                      |                                      |
+|                                      | RC I/O co-processor                  |
+|                                      |                                      |
+|                                      | HAT EEPROM                           |
+|                                      |                                      |
+|                                      | RGB LED                              |
+|                                      |                                      |
+|                                      | **Interfaces:**                      |
+|                                      |                                      |
+|                                      | 14 PWM servo outputs                 |
+|                                      |                                      |
+|                                      | PPM/S.Bus input                      |
+|                                      |                                      |
+|                                      | UART, I2C, ADC for extensions        |
+|                                      |                                      |
+|                                      | **Power System:**                    |
+|                                      |                                      |
+|                                      | Triple redundant power supply        |
+|                                      |                                      |
+|                                      | Power module connector               |
+|                                      |                                      |
+|                                      | **Weight and Dimensions:**           |
+|                                      |                                      |
+|                                      | Weight: 23g                          |
+|                                      |                                      |
+|                                      | Width: 55mm                          |
+|                                      |                                      |
+|                                      | Thickness: ?                         |
+|                                      |                                      |
+|                                      | Length: 65mm                         |
++--------------------------------------+--------------------------------------+
+| **Setup**                            | `Emlid Documentation                 |
+|                                      | site <http://docs.emlid.com/navio2/  |
+|                                      | Navio-APM/hardware-setup/>`__        |
++--------------------------------------+--------------------------------------+
+| **Design files**                     | ?                                    |
++--------------------------------------+--------------------------------------+
+
+.. |navio2_shop| replace:: `www.emlid.com/shop/navio2 <http://www.emlid.com/shop/navio2/>`__   
 
 
 VRBrain
