@@ -4,13 +4,13 @@
 NAVIO+ Overview
 ===============
 
-.. image:: ../../../images/Navio-B-3D-1-small.jpg
-    :target: ../_images/Navio-B-3D-1-small.jpg
+.. image:: ../../../images/Navio-plus.png
+    :target: ../_images/Navio-plus.png
 
 Specifications
 ==============
 
--  **Processor (`Raspberry PI 2 <https://www.raspberrypi.org/products/raspberry-pi-2-model-b/>`__)**
+-  **Processor** (`Raspberry PI 2 <https://www.raspberrypi.org/products/raspberry-pi-2-model-b/>`__)
 
    -  900Mhz quad-core ARM Cortext-A7 CPU
    -  1GB RAM
