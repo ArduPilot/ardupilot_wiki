@@ -8,7 +8,7 @@ Overview
 ========
 
 These instructions clarify how to build ArduPilot for the NAVIO+ board
-on the NAVIO+'s RPi2 board itself.  These instructions assume the RPi2
+on the NAVIO+'s RPi2 board itself using Waf build system.  These instructions assume the RPi2
 has already been setup according to the manufacturer's (i.e. Emlid's)
 instructions
 `here <http://docs.emlid.com/Navio-APM/configuring-raspberry-pi/>`__.
@@ -23,74 +23,44 @@ Setup
 Use an ssh terminal program such as `Putty <http://www.putty.org/>`__ to
 log into the NAVIO+ board's RPI2.
 
-Install the gcc-4.8 compiler using `these instructions <https://somewideopenspace.wordpress.com/2014/02/28/gcc-4-8-on-raspberry-pi-wheezy/>`__.
-
-.. tip::
-
-   When creating
-
-   ::
-
-       /etc/apt/preferences
-
-   Type this instead:
-
-   ::
-
-       Package: *
-       Pin: release n=wheezy
-       Pin-Priority: 900
-       Package: *
-       Pin: release n=jessie
-       Pin-Priority: 300
-       Package: *
-       Pin: release o=Raspbian
-       Pin-Priority: 200
-
 Clone the source:
 
 ::
 
-    cd /home/pi
-    git clone https://github.com/ArduPilot/ardupilot.git
+    git clone https://github.com/diydrones/ardupilot.git
+    cd ardupilot
+    git submodule update --init
+
+.. note::
+
+    Waf should always be called from the ardupilot's root directory.
+
+To keep access to Waf convenient, use the following alias from the root ardupilot directory:
+
+::
+
+    alias waf="$PWD/modules/waf/waf-light"
+
+Choose the board to be used:
+
+::
+
+    waf configure --board=navio
 
 Build
 -----
 
-Build for Copter:
+Now you can build arducopter. For quadcopter use the following command:
 
 ::
 
-    cd /home/pi/ardupilot/ArduCopter
-    make -j4 navio
+    waf --targets bin/arducopter-quad
 
-This will build the firmware for a quadcopter.  If you wish to build for
-another frame type (such as hexacopter) append "-hexa" onto the end of
-the make command (i.e. make -j4 navio-hexa).  The full list of available
-frames can be found in the
-`targets.mk <https://github.com/ArduPilot/ardupilot/blob/master/mk/targets.mk#L75>`__
-file.
-
-.. note::
-
-   If building for Plane, Rover or Antenna Tracker replace the above
-   "ArduCopter" with "ArduPlane", "APMrover2" or "AntennaTracker".
-
-Move firmware to the executable directory
------------------------------------------
-
-Move the executable to the directory from where it is normally started:
+To build for other frame types replace quad with one of the following options:
 
 ::
 
-    sudo cp ArduCopter.elf /opt/apm/bin/ArduCopter-quad
+    coax heli hexa octa octa-quad single tri y6
 
-.. tip::
+In the end of compilation binary file with the name arducopter-quad will be placed in ``ardupilot/build/navio/bin/ directory``.
 
-   If you are unable to copy the executable it may be because the
-   destination file is locked because it is already running.  Use the
-   following command to kill the running executable
-
-   ::
-
-       sudo killall ArduCopter-quad
