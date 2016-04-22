@@ -48,6 +48,21 @@ ArduCopter v3.2.1 firmware for APM 1.0. This is the last build of ArduCopter tha
 * `ArduCopter_APM_1.0_Firmware_3.2.1.zip <http://download.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
 
 
+Bootloader
+==========
+
+Bootloaders for various electronics created by ArduPilot Group
+
+APM2.x Autopilot
+================
+
+Bootloader for APM2.x autopilot series
+
+* Bootloader for: `32u2 MCU <http://download.ardupilot.org/downloads/bootloader/Arduino-usbdfu.hex>`__
+* Bootloader for: `2560 MCU <http://download.ardupilot.org/downloads/bootloader/stk500boot_v2_mega2560.hex>`__
+
+
+
 License
 =======
 
