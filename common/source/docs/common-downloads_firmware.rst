@@ -61,6 +61,7 @@ Bootloader for APM2.x autopilot series
 * Bootloader for: `32u2 MCU <http://download.ardupilot.org/downloads/bootloader/Arduino-usbdfu.hex>`__
 * Bootloader for: `2560 MCU <http://download.ardupilot.org/downloads/bootloader/stk500boot_v2_mega2560.hex>`__
 
+You need AVR programmer with ISP connector to burn these boot loaders. 
 
 
 License
