@@ -21,7 +21,7 @@ This article shows the **experimental** integration of an `Automatic Dependent S
    
    Germany: UAV Store (http://www.uav-store.de/ads-b-receiver/#cc-m-product-10156920693)
    
-   Asia: jDrones (http://store.jdrones.com/default.asp)
+   Asia: `jDrones pingRX <http://store.jdrones.com/ping_ads_b_receiver_p/adsbping01.htm>`__
 
    We're posting it here to encourage further discussion and
    contribution
