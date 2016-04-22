@@ -30,6 +30,7 @@ Plane, Copter, Rover
 -  :ref:`Beaglebone Black with Make <building-for-beaglebone-black-on-linux>`
 -  :ref:`Building for Flymaple on Linux <building-apm-for-flymaple>`
 -  :ref:`Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>`
+-  :ref:`Building for NAVIO2 on RPi3 <building-for-navio2-on-rpi3>`
 -  :ref:`Building for Erle-Brain <building-for-erle-brain>`
 -  :ref:`Building for Erle-Brain 2 <building-for-erle-brain-2>`
 -  :ref:`Building for Bebop on Linux <building-for-bebop-on-linux>`
@@ -60,6 +61,7 @@ Mission Planner
     Building for APM2.x on Mac with Arduino <building-the-code-on-mac>
     Building APM with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>
     Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>
+    Building for NAVIO2 on RPi3 <building-for-navio2-on-rpi3>
     Building Mission Planner with Visual Studio <buildin-mission-planner>
     Building for Erle-Brain 2 <building-for-erle-brain-2>
     Building for Erle-Brain <building-for-erle-brain>
