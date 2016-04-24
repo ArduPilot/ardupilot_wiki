@@ -38,7 +38,6 @@ Plane, Copter, Rover
 **IDE/Cross platform**
 
 -  :ref:`Building With Make (Win, Mac, Linux) <building_with_make>`
--  :ref:`Building ArduPilot with Eclipse <building-apm2-with-eclipse-on-windows>`
 
 **Related information**
 
@@ -59,7 +58,6 @@ Mission Planner
     Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>
     Building ArduPilot for APM2.x on Windows with Arduino <building-ardupilot-with-arduino-windows>
     Building for APM2.x on Mac with Arduino <building-the-code-on-mac>
-    Building ArduPilot for APM2.x with Eclipse on Windows <building-apm2-with-eclipse-on-windows>
     Building APM with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>
     Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>
     Building Mission Planner with Visual Studio <buildin-mission-planner>
