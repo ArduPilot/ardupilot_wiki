@@ -470,8 +470,8 @@ the first app store for drones and robots.
 
 .. _supported-autopilot-controller-boards_erle-brain_autopilot:
 
-Erle-Brain autopilot
-====================
+Erle-Brain autopilot (discontinued)
+===================================
 
 :ref:`Erle-Brain <copter:common-erle-brain-linux-autopilot>` An
 autopilot for making drones powered by Ubuntu and with official support
