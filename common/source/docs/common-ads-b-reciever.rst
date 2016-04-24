@@ -38,6 +38,8 @@ ADS-B receiver by `uAvionix <http://www.uavionix.com/>`__\ called
 PING™. Please visit their website for technical specs including RF
 characteristics and connector pinout.
 
+Specific PING™ products can be found here http://www.uavionix.com/products/
+
 .. image:: ../../../images/uAvionix.png
     :target: ../_images/uAvionix.png
 
@@ -47,8 +49,10 @@ characteristics and connector pinout.
 .. image:: ../../../images/ADS-B_Receiver_Pixhawk_Connection.jpg
     :target: ../_images/ADS-B_Receiver_Pixhawk_Connection.jpg
 
-This first implementation only supports Plane. Object avoidance is only
+This first implementation of sense and avoid supports Plane and Copter. Object avoidance is only
 active in AUTO mode.
+
+PING™ products can be found here http://www.uavionix.com/products/
 
 Connection to flight controller
 ===============================
