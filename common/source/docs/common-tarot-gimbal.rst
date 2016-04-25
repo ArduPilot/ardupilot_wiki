@@ -75,7 +75,7 @@ change the configuration you should:
    Manager as shown below.  If drivers cannot be found you may be able
    to install Windows 7 or Windows XP drivers using one of the .exe
    files found in the "driver" directory of the `Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
-   file.
+   file.  Note: Windows 8 and 10 users may find issues with the Prolific USB-to-Serial driver not starting.  This issue can apparently be resolved according by `following instructions on this web page. <http://leftbraintinkering.blogspot.jp/2013/05/usb-to-serial-prolific-2303-device.html>`__
 
    |Gimbal_Tarot_DeviceManager2|
 #. Download and unzip the `Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
