@@ -32,6 +32,7 @@ Current boards
     NAVIO+ <common-navio-overview>
     NAVIO2 <common-navio2-overview>
     Erle-Brain Linux Autopilot <common-erle-brain-linux-autopilot>
+    PXFmini Autopilot Shield <common-pxfmini-autopilot-shield> 
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
 
 [site wiki="copter"]
