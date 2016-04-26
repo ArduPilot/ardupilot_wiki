@@ -147,7 +147,9 @@ WiFi dongle
 
 Use a (regular or high gain) WiFi dongle to create a hotspot that can,
 for example, be used for sending telemetry data and commands to a Ground
-Station.  :ref: The images cooked`Connect ESCs and Motors <http://erlerobotics.com/docs/Artificial_Brains_and_Autopilots/Operating_System_images/Debian.html>` by  Erle-Robotics automatically generates a WiFi hotspot when the dongle is connected.
+Station.  If you use the `images <http://erlerobotics.com/docs/Artificial_Brains_and_Autopilots/Operating_System_images/Debian.html>`__ provided 
+by Erle Robotics, they automatically generate a WiFi hotspot.
+
 
 .. figure:: ../../../images/PXFmini_wifi.jpg
    :target: ../_images/PXFmini_wifi.jpg
