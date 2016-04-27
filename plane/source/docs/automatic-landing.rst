@@ -341,93 +341,48 @@ to use. The ``DO_LAND_START`` closest to the current location is used.
 This can be useful if you have multiple landing sequences for different
 wind conditions or different areas.
 
-How to manually abort an auto-landing
+How to abort an auto-landing
 =====================================
-
-A landing-abort mechanism is provided to allow you to abort a landing
-sequence in a safe, controlled, and expected way. Custom abort behaviour
-can be pre-programmed as part of the mission or you can use the default
-abort recovery mechanism. To enable, set param LAND_ABORT_THR=1.
+A landing-abort mechanism is provided to allow you to abort a landing sequence in a safe, controlled, and expected way. Custom abort behaviour can be pre-programmed as part of the mission or you can use the default abort mechanism. To enable this feature set param LAND_ABORT_THR=1.
+ 
+There are three steps to this feature:
+#. Trigger an abort
+#. The behavior during the abort
+#. The mission state after the abort completes.
 
 .. note::
 
    This section describes the abort behavior introduced in Plane
    3.4.
 
-Abort triggers
+   
+Step 1) Abort land triggers
 --------------
+The are three ways to trigger an auto-landing abort. All of them will only work while in AUTO mode and currently executing a ``LAND`` waypoint mission item:
 
-The are a number of ways trigger an auto-landing abort (all of them will
-only work while currently executing a ``LAND`` waypoint mission item):
+-  *Send the ``MAV_CMD_DO_GO_AROUND`` command using a GCS.* Mission Planner has a button labeled "Abort Landing" on the FlightData Actions tab.
+-  *RC input Throttle > 90%*. This will trigger an abort while staying in AUTO mode. The throttle only needs to be high briefly to trigger it. Don't forget to lower it!
+-  *Mode change*. For human piloted landing abort you can switch out of AUTO mode into, for example MANUAL/STABILIZE/FBWA, and navigate the aircraft safely however you'd like. Using this method will skip abort behavior step 2 because it is being done manually. When switching back to AUTO the mission will resume as described in step 3 below.
 
--  *Send the ``MAV_CMD_DO_GO_AROUND`` command (using a GCS).* This will
-   increment the mission index to the next command (the one after LAND)
-   where you can customize any navigation behavior you want.
--  *Mode change*. When switching out of AUTO mode while landing (for
-   example to MANUAL/STABILIZE/FBWA) your mission index will
-   automatically change depending on which abort flight behavior you
-   have configured (see below). If you were to switch out of and back
-   into AUTO quickly, then you would immediately start executing your
-   alternate mission behavior.This is useful for cases where you want to
-   manually abort and then continue the planned landing when you're
-   ready. For example, you might switch to MANUAL/STABILIZE/FBWA in
-   order to avoid an object on the runway and then go back into AUTO to
-   restart the landing.
--  *Throttle briefly > 90%*. This will trigger one of the three abort
-   flight behaviors while staying in AUTO mode.
 
-Abort land flight behavior options
+Step 2) Abort land flight behavior
 ----------------------------------
+The abort behaviour has a default configuration and does not require a pre-planned mission. The default abort behavior is to simulate an auto-takeoff: pitch up at least 10 degrees and set throttle to TKOFF_THR_MAX and hold the heading until it reaches a target altitude of 30m. It is possible to override the pitch and altitude to allow for a customized behavior.
 
-The abort behaviour depends on the trigger method, your mission, and
-other factors.
+- Pitch minimum. If there was a NAV_TAKEOFF ever executed on this mission then the same pitch will be re-used here.
+- Target altitude. If NAV_LAND param1 is >0 then it is used as a target altitude in meters. Else If a NAV_TAKEOFF was ever executed on this mission then the same altitude will be re-used here.
+  
+This step is skipped if the abort trigger is via mode change because it is assumed the pilot manually took over and flew the aircraft to a safe altitude at the pitch and throttle of their choosing.
 
-User-defined abort sequence
-+++++++++++++++++++++++++++
 
-If an abort is triggered using the ``CMD_DO_GO_AROUND`` command, the
-mission will increment to the command after the LAND command, and
-continue as normal. As the command sequence after LAND is arbitrary,
-this approach allows a fully customized abort sequence.
+Step 3) Mission state after an aborted landing completes
+----------------------------------
+Once an abort land has completed, by either reaching the target altitude or switching back to AUTO, the mission index will have changed and you will no longer be executing a NAV_LAND command. The mission index will change to be one of these three options and checked for in this order:
 
-.. tip::
+- If the NAV_LAND mission item is followed by mission item :ref:`CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>` with param1 = 0 or 1 then the mission index will increment once to that command and execute it like normal. This can be followed by further post-abort mission planning for any custom planned mission behavior.
+- Else If there is a :ref:`DO_LAND_START <mav_cmd_do_land_start>` in the mission then it jumps to that index.
+- Else the mission index decrements once to be the index before the NAV_LAND. This will ensure the same landing approach is repeated.
 
-   A useful mission item to put directly after LAND is the
-   :ref:`CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>`
-   mission item with the first param either 0 or 1. This will cause the
-   aircraft to climb to the desired altitude.
-
-If an abort is triggered by changing modes or increasing throttle to
->90%, Plane will check if the command after LAND is
-``CONTINUE_AND_CHANGE_ALT``. If it is, then Plane will execute that
-command, and then continue the mission when it reaches the desired
-altitude.  Otherwise Plane will follow the default abort sequence below.
-
-Fallback/default abort sequence
-+++++++++++++++++++++++++++++++
-
-If an abort is triggered by changing modes (toggle out of AUTO to FBWA
-and then back to AUTO) or increasing throttle to >90% and
-``CONTINUE_AND_CHANGE_ALT`` is **not found** after the LAND command,
-then Plane will attempt to auto-climb to a safe altitude using
-best-available information.
-
-Plane uses :ref:`TKOFF_THR_MAX <TKOFF_THR_MAX>`
-for the throttle value. The target altitude and pitch used are the first
-values out of the following that are found/defined:
-
-#. ``LAND`` command abort altitude (``param 1``).
-#. ``TAKEOFF`` command altitude and pitch value.
-#. Default altitude of 30m and 10 degree pitch (used if the ``LAND``
-   abort altitude not defined and the mission has no ``TAKEOFF``
-   command).
-
-The climb-out procedure is complete when the abort altitude is reached.
-Plane will then change the mission index to allow for a predictable
-landing approach:
-
--  Jump to a ``DO_LAND_START`` command if there is one in the mission.
--  Otherwise decrement the mission index to restart the glide slope.
 
 Reverse-Thrust Landing
 ======================
