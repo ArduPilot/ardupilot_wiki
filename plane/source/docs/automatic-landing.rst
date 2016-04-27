@@ -346,9 +346,9 @@ How to abort an auto-landing
 A landing-abort mechanism is provided to allow you to abort a landing sequence in a safe, controlled, and expected way. Custom abort behaviour can be pre-programmed as part of the mission or you can use the default abort mechanism. To enable this feature set param LAND_ABORT_THR=1.
  
 There are three steps to this feature:
-Step 1) Trigger an abort
-Step 2) The behavior during the abort
-Step 3) The mission state after the abort completes.
+#. Trigger an abort
+#. The behavior during the abort
+#. The mission state after the abort completes.
 
 .. note::
 
@@ -367,7 +367,7 @@ The are three ways to trigger an auto-landing abort. All of them will only work 
 
 Step 2) Abort land flight behavior
 ----------------------------------
-The abort behaviour has a default configuration and does not require a pre-planned mission or special configuring. The default abort behavior is to simulate an auto-takeoff: pitch up at least 10 degrees and set throttle to TKOFF_THR_MAX and hold the heading until it reaches a target altitude of 30m. It is possible to override the pitch and altitude to allow for a customized behavior.
+The abort behaviour has a default configuration and does not require a pre-planned mission. The default abort behavior is to simulate an auto-takeoff: pitch up at least 10 degrees and set throttle to TKOFF_THR_MAX and hold the heading until it reaches a target altitude of 30m. It is possible to override the pitch and altitude to allow for a customized behavior.
 
 - Pitch minimum. If there was a NAV_TAKEOFF ever executed on this mission then the same pitch will be re-used here.
 - Target altitude. If NAV_LAND param1 is >0 then it is used as a target altitude in meters. Else If a NAV_TAKEOFF was ever executed on this mission then the same altitude will be re-used here.
