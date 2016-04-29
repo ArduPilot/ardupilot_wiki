@@ -24,7 +24,7 @@ available if you're still working on those platforms:
 Current boards
 ==============
 
-Open solutions
+Open hardware 
 --------------
 
 .. toctree::
@@ -35,7 +35,7 @@ Open solutions
     Erle-Brain Linux Autopilot <common-erle-brain-linux-autopilot>
     PXFmini Autopilot Shield <common-pxfmini>
 
-Closed solutions
+Closed hardware
 -----------------
 
 .. toctree::
