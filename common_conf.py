@@ -37,3 +37,22 @@ intersphinx_mapping = {'copter': (intersphinx_base_url % 'copter',
                        'ardupilot': (intersphinx_base_url % 'ardupilot',
                                   None),
                                   }
+
+############ PATCH REMOVE NON-LOCAL IMAGE WARNINGS
+### From:
+##  http://stackoverflow.com/questions/12772927/specifying-an-online-image-in-sphinx-restructuredtext-format
+##  And https://github.com/sphinx-doc/sphinx/issues/2429
+
+#Set False to re-enable warnings for non-local images.
+disable_non_local_image_warnings=True
+
+if disable_non_local_image_warnings:
+    import sphinx.environment
+    from docutils.utils import get_source_line
+
+    def _warn_node(self, msg, node, **kwargs):
+        if not msg.startswith('nonlocal image URI found:'):
+            self._warnfunc(msg, '%s:%s' % get_source_line(node),**kwargs)
+
+    sphinx.environment.BuildEnvironment.warn_node = _warn_node
+############ ENDPATH

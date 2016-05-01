@@ -7,7 +7,7 @@ FBWA Mode (FLY BY WIRE_A)
 This is the most popular mode for assisted flying in Plane, and is the
 best mode for inexperienced flyers. In this mode Plane will hold the
 roll and pitch specified by the control sticks. So if you hold the
-aileron stick hard right then the plane will hold it's pitch level and
+aileron stick hard right then the plane will hold its pitch level and
 will bank right by the angle specified in the ``LIM_ROLL_CD`` option (in
 centidegrees). It is not possible to roll the plane past the roll limit
 specified in ``LIM_ROLL_CD``, and it is not possible to pitch the plane

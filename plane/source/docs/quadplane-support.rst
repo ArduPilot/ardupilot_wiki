@@ -103,14 +103,33 @@ except that the output channel numbers start at 5 instead of 1.
 For example, with the default Quad-X frame the motors are on outputs
 5 to 8. The arrangement is:
 
--  **Channel 5:** Front right motor
--  **Channel 6:** Rear left motor
--  **Channel 7:** Front left motor
--  **Channel 8:** Rear right motor
+-  **Channel 5:** Front right motor, counter-clockwise
+-  **Channel 6:** Rear left motor, counter-clockwise
+-  **Channel 7:** Front left motor, clockwise
+-  **Channel 8:** Rear right motor, clockwise
 
+You can remember the clockwise/counter-clockwise rule by "motors turn
+in towards the fuselage".
+   
+Another common setup is an octa-quad, which uses the following ordering
+
+-  **Channel 5:** Front right top motor, counter-clockwise
+-  **Channel 6:** Front left top motor, clockwise
+-  **Channel 7:** Rear left top motor, counter-clockwise
+-  **Channel 8:** Rear right top motor, clockwise
+-  **Channel 9:** Front left bottom motor, counter-clockwise
+-  **Channel 10:** Front right bottom motor, clockwise
+-  **Channel 11:** Rear right bottom motor, counter-clockwise
+-  **Channel 12:** Rear left bottom motor, clockwise
+
+You can remember the clockwise/counter-clockwise rule for an octa-quad
+by "top motors turn in towards the fuselage, bottom motors turn out
+away from the fuselage".
+   
 The normal plane outputs are assumed to be on 1 to 4 as usual. Only
-outputs 5 to 8 run at high PWM rate (400Hz). You can also use channels 9
-to 14 in any way you like, just as with the normal Plane code.
+vertical lift outputs (5 to 8 on a quad setup) run at high PWM rate
+(400Hz). In a quad setup you can also use channels 9 to 14 in any way
+you like, just as with the normal Plane code.
 
 You can optionally move the quad motors to be on any other channel above
 4, using the procedure outlined below.
@@ -136,6 +155,14 @@ Using different channel mappings
 
 You can remap what output channels the quad motors are on by setting
 values for RCn_FUNCTION. This follows the same approach as :ref:`other output functions <channel-output-functions>`.
+
+.. note::
+
+   Note that you do not need to set any of the RCn_FUNCTION values unless
+   you have a non-standard motor ordering. It is highly recommended that
+   you use the standard ordering and do not set the RCn_FUNCTION
+   parameters, leaving them at zero. They will be automatically set to
+   the right values for your frame on boot.
 
 The output function numbers are:
 

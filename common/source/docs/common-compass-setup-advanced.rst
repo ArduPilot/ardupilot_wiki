@@ -338,7 +338,7 @@ transmitter by following these steps:
    that after a fast forward flight you do not see any circling (also
    known as "toilet bowling").
 #. If you find it's impossible to tune away the circling then it's
-   likely your compass interference is will require an external compass
+   likely you will require an external compass
    or `GPS+compass module. <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__
 
 Compass error messages

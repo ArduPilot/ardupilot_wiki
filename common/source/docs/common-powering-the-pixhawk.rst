@@ -64,10 +64,7 @@ ratings* section below for more information on powering Pixhawk.
 
 .. warning::
 
-   At any voltage above 5.7V the servo rail cannot be used to
-   power the Pixhawk and the Zener diode **must not be used**. The servo
-   rail can supply servos requiring up to 10.5V (but not also power the
-   Pixhawk).
+   The servo rail can supply servos requiring up to 10.5V (but not also power the Pixhawk). Voltages above 5V cannot be used to power the Pixhawk via the servo rail. In this case the Zener diode **must not be used**. 
 
 
 .. _common-powering-the-pixhawk_pixhawk_poweresc_wiring_overview:

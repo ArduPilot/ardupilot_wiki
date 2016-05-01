@@ -20,20 +20,31 @@ available if you're still working on those platforms:
 -  :ref:`PX4FMU <common-px4fmu-overview>` and
    (:ref:`PX4IO <common-px4io-overview>`)
    
-   
+
 Current boards
 ==============
+
+Open hardware 
+--------------
 
 .. toctree::
     :maxdepth: 1
 
     Pixhawk <common-pixhawk-overview>
     Pixracer <common-pixracer-overview>
-    NAVIO+ <common-navio-overview>
     Erle-Brain Linux Autopilot <common-erle-brain-linux-autopilot>
+    PXFmini Autopilot Shield <common-pxfmini>
+
+Closed hardware
+-----------------
+
+.. toctree::
+    :maxdepth: 1
+
+    NAVIO+ <common-navio-overview>
+    NAVIO2 <common-navio2-overview>
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
 
 [site wiki="copter"]
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
-

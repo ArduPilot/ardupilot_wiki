@@ -30,5 +30,12 @@ value to users with old hardware.
     GPS Failsafe <archived-gps-failsafe>
 [/site]
 
+[site wiki="dev"]
+.. toctree::
+    :maxdepth: 1
+
+    Building ArduPilot for APM2.x with Eclipse on Windows <building-apm2-with-eclipse-on-windows>
+[/site]
+
 
 [copywiki destination="copter,plane,rover,dev"]

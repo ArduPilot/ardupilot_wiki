@@ -11,8 +11,17 @@ This article shows the **experimental** integration of an `Automatic Dependent S
 
 .. warning::
 
-   The current implementation is not ready for object avoidance
-   nor is the hardware available yet but coming soon!
+   The current implementation is under development for advanced sense and avoid behavior for both plane and copter.
+   
+   Ping ADS-B Receiver hardware available at uAvionix partnershops.
+
+   USA: Mid-Atlantic Multirotor (http://www.midatlanticmultirotor.com/product/ping/)
+   
+   U.K.: Unmanned Tech (http://www.unmannedtech.co.uk/)
+   
+   Germany: UAV Store (http://www.uav-store.de/ads-b-receiver/#cc-m-product-10156920693)
+   
+   Asia: `jDrones pingRX <http://store.jdrones.com/ping_ads_b_receiver_p/adsbping01.htm>`__
 
    We're posting it here to encourage further discussion and
    contribution
@@ -29,17 +38,21 @@ ADS-B receiver by `uAvionix <http://www.uavionix.com/>`__\ called
 PING™. Please visit their website for technical specs including RF
 characteristics and connector pinout.
 
+Specific PING™ products can be found here http://www.uavionix.com/products/
+
 .. image:: ../../../images/uAvionix.png
     :target: ../_images/uAvionix.png
 
-.. image:: ../../../images/ADS-B_PING.jpg
-    :target: ../_images/ADS-B_PING.jpg
+.. image:: ../../../images/Penny.png
+    :target: ../_images/Penny.png
 
 .. image:: ../../../images/ADS-B_Receiver_Pixhawk_Connection.jpg
     :target: ../_images/ADS-B_Receiver_Pixhawk_Connection.jpg
 
-This first implementation only supports Plane. Object avoidance is only
+This first implementation of sense and avoid supports Plane and Copter. Object avoidance is only
 active in AUTO mode.
+
+PING™ products can be found here http://www.uavionix.com/products/
 
 Connection to flight controller
 ===============================

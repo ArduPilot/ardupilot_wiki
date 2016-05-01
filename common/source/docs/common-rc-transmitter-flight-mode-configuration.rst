@@ -141,6 +141,7 @@ systems:
 -  `JR XG8 DMSS <http://www.diydrones.com/forum/topics/how-to-set-up-6-apm-flight-modes-on-1-channel-of-jr-xg8-rc>`__
 -  `JR9303 <http://diydrones.com/profiles/blogs/how-to-program-6-flight-modes>`__
 -  `JR X2720 <http://diydrones.com/forum/topics/six-flight-modes-can-be-done>`__
+-  `FlySky FS-I6 <http://diydrones.com/profiles/blogs/flysky-fs-i6-flight-modes>`__
 -  `Futaba T8FG <http://diydrones.com/profiles/blogs/acmapm-futaba-t8fg-super-mode>`__
 -  `Futaba T8J <http://www.diydrones.com/profiles/blogs/pixhawk-futaba-t8j-6-modes-configuration-with-2-switches-c-d>`__
 -  `Futaba T7CP <http://diydrones.com/profiles/blogs/configure-6-flight-modes-for>`__
@@ -155,6 +156,7 @@ systems:
    an even easier way)
    `(Here!) <http://www.diydrones.com/profiles/blogs/another-way-to-set-modes-on-turnigy-9x>`__ - `Turnigy 9x with ER9x firmware <http://diydrones.com/profiles/blogs/mode-switch-setup-for-turnigy>`__
 -  `Turnigy 9XR <http://diydrones.com/profiles/blogs/change-between-6-modes-with-turnigy-9xr-using-mixing>`__
+-  `Turnigy TGY-I6 <http://diydrones.com/profiles/blogs/flysky-fs-i6-flight-modes>`__
 -  `Hitech Aurora 9 <http://www.diydrones.com/forum/topics/quad-goes-to-full-throttle?commentId>`__
 -  `Spektrum DX8 <http://diydrones.com/profiles/blogs/spectrum-dx8-2-switches-1-tx-channel-6-flight-modes?>`__ 
    (alternate method below)
