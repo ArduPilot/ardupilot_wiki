@@ -70,7 +70,8 @@ For example, to start Copter in *Ballarat* (a named location in
 
 .. note::
 
-   You can add your own locations to the file. If you need to use a
+   You can add your own locations to the file. The order is Lat,Lng,Alt,Heading where alt is MSL and in meters, and heading is degrees.
+If you need to use a
    location regularly then consider adding it to the project via a pull
    request.
 
