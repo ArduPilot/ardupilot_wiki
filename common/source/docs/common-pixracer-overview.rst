@@ -13,6 +13,8 @@ than the original Pixhawk.
    :target: ../_images/pixracer_top.jpg
 .. figure:: ../../../images/pixracer_bottom.jpg
    :target: ../_images/pixracer_bottom.jpg
+.. figure:: ../../../images/pixracer_top_wifi.jpg
+   :target: ../_images/pixracer_top_wifi.jpg
 
    Pixracer V1
 
