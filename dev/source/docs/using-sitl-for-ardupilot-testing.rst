@@ -379,6 +379,16 @@ GPS for the 2nd UART.
 
 Any of the 5 UARTs can be configured in this way, using uartA to uartE.
 
+Similar to this if you were running a vehicle in SITL via cygwin on
+Microsoft Windows and you wanted to send the mavlink output through a
+connected radio on COM16 to AntennaTracker you can use a command like
+this - note under cygwin comm ports are ttyS and they start at 0 so 15
+is equivalent to COM16:
+
+::
+
+    sim_vehicle.sh -A "--uartC=uart:/dev/ttyS15" --console --map
+
 .. _using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations:
 
 Connecting other/additional ground stations
