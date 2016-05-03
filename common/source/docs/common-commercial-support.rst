@@ -402,6 +402,31 @@ Web: <coming soon>
 
 --------------
 
+Autonomous Systems Cooperative (ASC///)
+------------
+
+Contact: Bill Bonney, Rob Lefebvre or Patrick Krekelberg
+
+Email: \ info@autosystems.io 
+
+Location: North America
+
+Website: `http://autosystems.io <http://autosystems.io>`__
+
+ASC is founded by two core developers from the ArduPilot ecosystem and has close connections with ArduPilot developers around the world.
+
+ASC offer more than just consulting on Ardupilot code, but complete end-to-end solutions. R&D, vehicle design, rapid prototyping micro-manufacturing, program management, autopilot code, payload integration, user interfaces.  ASC also offer assistance with operations, flight training, etc.  As little or as much as required to get customer’s ideas off the ground, or along it!  Companies can focus on integrating mobile robotics into their business and developing new revenue streams, instead of having to undertake the long and difficult process of developing UAS expertise and technology in-house.
+
+**Capabilities:**
+
+-  Autopilot/Airframe/Electronics design and manufacturing
+-  Mechanical engineering/consulting
+-  Systems engineering/consulting
+-  Software engineering for flight controllers
+-  Application development (Qt, iOS, Android, Windows)
+
+--------------
+
 .. note::
 
    To be added to this page we require that the applicant has made a
