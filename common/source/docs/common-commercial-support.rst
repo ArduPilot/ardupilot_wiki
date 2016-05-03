@@ -403,7 +403,10 @@ Web: <coming soon>
 --------------
 
 Autonomous Systems Cooperative (ASC///)
-------------
+---------------------------------------
+
+.. image:: ../../../images/asc-logo-small.png
+    :target: ../_images/asc-logo-small.png
 
 Contact: Bill Bonney, Rob Lefebvre or Patrick Krekelberg
 
