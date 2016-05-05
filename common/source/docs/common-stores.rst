@@ -8,6 +8,7 @@ The following stores are known to stock quality versions of the controllers, tel
 recommended for use with ArduPilot (in alphabetical order).
 
 * `AUAV <http://www.auav.co/>`__
+* `Emlid <https://emlid.com/shop/>`__
 * `EnRoute <http://www.enroute.co.jp/>`__
 * `Erle Robotics <https://erlerobotics.com/>`__ 
 * `JapanDrones <http://japandrones.com/>`__
