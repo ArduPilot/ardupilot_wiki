@@ -104,6 +104,7 @@ following tools and git repositories:
    `github.com/ArduPilot/ardupilot <https://github.com/ArduPilot/ardupilot>`__
 -  gnu make, gawk and associated standard Linux build tools
 -  On Ubuntu you will need to install the genromfs package.
+-  On a 64 bit system you will also need to have installed libc6-i386
 
 Permissions
 -----------
