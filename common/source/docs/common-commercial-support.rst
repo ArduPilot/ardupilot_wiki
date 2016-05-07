@@ -13,7 +13,7 @@ you get the most out of the ArduPilot project.
 
    This is for commercial support, not first tier technical support,
    please don't expect responses to enquiries that can be answered on the
-   `forums <http://ardupilot.com/forum/>`__ 
+   `forums <http://discuss.ardupilot.org/>`__ 
 
 How to get added to this list
 =============================

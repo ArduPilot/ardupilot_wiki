@@ -81,7 +81,7 @@ community forums are the place to go. There you will find may friendly
 users, developers and often, even Michael will chime in.  There are two
 primary forums. The diydrones.com forum
 `here <http://diydrones.com/forum>`__ and the APM forum
-`here <http://ardupilot.com/forum/>`__. The diydrones forum has existed
+`here <http://discuss.ardupilot.org/>`__. The diydrones forum has existed
 for years and has a very large community and numerous general topics.
 The APM forum is new and is more specific to the ardupilot and
 ardu-vehicles.
