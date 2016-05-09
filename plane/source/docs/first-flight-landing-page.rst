@@ -21,3 +21,4 @@ its first flight, and includes an explanation of the main :ref:`Flight Modes <fl
     Flight Modes <flight-modes>
     Tuning <common-tuning>
     Measuring Vibration <common-measuring-vibration>
+    Transmitter based tuning <common-transmitter-tuning>
