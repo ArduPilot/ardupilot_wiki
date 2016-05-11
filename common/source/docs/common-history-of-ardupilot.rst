@@ -148,6 +148,8 @@ Mar 2014 -
 `VRBrain <http://www.virtualrobotix.com/page/vr-brain-v4-0>`__ boards
 support added by Emile Castelnuovo and Tridge
 
+Mar 2014 - `Emlid presented Navio <http://diydrones.com/profiles/blogs/navio-raspberry-pi-autopilot>`__, first Raspberry Pi autopilot shield that allows to run ArduPilot directly on Raspberry Pi.
+
 Aug 2014 - `First Plane flight on Linux <http://diydrones.com/profiles/blogs/first-flight-of-ardupilot-on-linux>`__
 board (Pixhawk Fire cape)
 
@@ -183,7 +185,6 @@ Aug 2015 - Michael Clement & Michael Day fly
 Sep 2015 - `First major news event involving a misbehaving pilot of an ardupilot vehicle (a Solo) <http://edition.cnn.com/2015/09/04/us/us-open-tennis-drone-arrest/>`__
 
 March 2016 - 3DR ceases direct funding of ArduPilot community.
-
 
 March 2016 - Formation of the `ardupilot.org non profit organisation <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__ and new website.
 
