@@ -4,13 +4,17 @@
 Pixracer Overview
 =================
 
-The `Pixracer <https://pixhawk.org/modules/pixracer>`__ is the first
+The `Pixracer <http://www.auav.co/product-p/xr-v1.htm>`__ is the first
 autopilot of the new FMUv4 Pixhawk generation. It comes with a small
 Wifi extension board, upgraded sensors, more flash and better connectors
 than the original Pixhawk.
 
-.. figure:: ../../../images/pixracer_xracer_autopilot.jpg
-   :target: ../_images/pixracer_xracer_autopilot.jpg
+.. figure:: ../../../images/pixracer_top.jpg
+   :target: ../_images/pixracer_top.jpg
+.. figure:: ../../../images/pixracer_bottom.jpg
+   :target: ../_images/pixracer_bottom.jpg
+.. figure:: ../../../images/pixracer_top_wifi.jpg
+   :target: ../_images/pixracer_top_wifi.jpg
 
    Pixracer V1
 
