@@ -151,13 +151,13 @@ The typical process for working with Git on the command line is:
    github.com) button:
 
    .. image:: ../../../images/PullRequest_OpenWikiCloneOnGitHubWebPage.png
-       :target: dev/_images/PullRequest_OpenWikiCloneOnGitHubWebPage.png
+       :target: ../_images/PullRequest_OpenWikiCloneOnGitHubWebPage.png
    
 #. On top of the web page select the "Pull Request" tab page, and then
    select the green "New pull request" button:
 
    .. image:: ../../../images/PullRequest_InitiateWikiPullRequest.png
-       :target: dev/_images/PullRequest_InitiateWikiPullRequest.png
+       :target: ../_images/PullRequest_InitiateWikiPullRequest.png
 
 #. The comparison should be between ardupilot_wiki:master and the new branch
    you created for the feature. The website probably has defaulted to your
@@ -165,7 +165,7 @@ The typical process for working with Git on the command line is:
    correct branch:
 
    .. image:: ../../../images/PullRequest_InitiateWikiPullRequest2.png
-       :target: dev/_images/PullRequest_InitiateWikiPullRequest2.png
+       :target: ../_images/PullRequest_InitiateWikiPullRequest2.png
    
 #. Check the list of change at the bottom of the page only includes your
    intended changes, then press "Create pull request".
