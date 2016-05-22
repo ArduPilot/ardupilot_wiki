@@ -72,3 +72,9 @@ left bottom windows where quick values are displayed. Then choose
    :target: ../_images/TeraRangerOne_MissionPlannerEnableFlightData.jpg
 
    Mission Planner: Setting to display rangefinder data on the Flight Datascreen
+
+.. warning::
+
+    When the Pixhawk boots, the TeraRanger One needs to already be powered on, or at 
+    least be powered on at the same time as the Pixhawk. If you power the TeraRanger One 
+    after the Pixhawk has booted, it will not be recognised!
