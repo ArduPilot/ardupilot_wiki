@@ -186,7 +186,45 @@ just one wiki by passing the site name, e.g.: ``python update.py --site copter``
 
 You can check out the built html for each wiki in it's build/html directory (e.g. **/copter/build/html/**).
 
+RST rendering on Windows
+------------------------
 
+Some tools can aid you with the modification of the Wiki's RST files (without the need to build the HTML outputs 
+first on a Vagrant machine) and see how they will get rendered to HTML. This saves you the time to build the Sphinx 
+pages each time.
+  	
+* `Notepad++ plugin for RST files <https://github.com/steenhulthin/reStructuredText_NPP>`__
+* `restview (on-the-fly renderer for RST files) <https://mg.pov.lt/restview/>`__
+
+The Notepad++ plugin helps you with code completion and syntax highlighting during modification.
+Restview renders RST files on-the-fly, i.e. each modification on the RST file can be immediately
+visualized in your web browser. 
+
+The installation of the Notepad++ plugin is clearly explained on the plugin's website (see above)
+
+Restview can be installed with:
+
+	.. code-block:: bat
+	
+		python -m pip install restview
+		
+The restview executable will be installed in the **Scripts** folder of the Python main folder.
+Restview will start the on-the-fly HTML rendering and open a tab page in your preferred web browser.
+
+Example:
+
+	.. code-block:: bat
+	
+		start restview ..\arduwiki\common\source\docs\common-wiki_editing_guide.rst	
+	
+RST rendering on Linux
+----------------------
+
+`ReText <https://github.com/retext-project/retext>`__ is a good tool under Linux that provides
+syntax highlighting and basic on-the-fly rendering in a single application.
+
+Although the tool is Python based, don't try it on Windows as it very prone to crashes (which is 
+also stated by the website)
 
 Wiki Infrastructure
 ===================
