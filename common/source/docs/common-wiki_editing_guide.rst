@@ -150,26 +150,25 @@ The typical process for working with Git on the command line is:
    one one of your commits and click the "github" (view this commit on
    github.com) button:
 
-   .. image:: ../../../dev/source/images/PullRequest_OpenCloneOnGitHubWebPage.png
-       :target: ../../../dev/source/images/PullRequest_OpenCloneOnGitHubWebPage.png
+   .. image:: ../../../images/PullRequest_OpenWikiCloneOnGitHubWebPage.png
+       :target: ../../../images/PullRequest_OpenWikiCloneOnGitHubWebPage.png
    
-#. On the right side of the web page select "Pull Request", and then
+#. On top of the web page select the "Pull Request" tab page, and then
    select the green "New pull request" button:
 
-   .. image:: ../../../dev/source/images/PullRequest_InitiatePullRequest1.png
-       :target: ../../../dev/source/images//PullRequest_InitiatePullRequest1.png
+   .. image:: ../../../images/PullRequest_InitiateWikiPullRequest.png
+       :target: ../../../images/PullRequest_InitiateWikiPullRequest.png
 
-#. The comparison should between ardupilot_wiki:master and the the new branch
-   you created for the feature but it has probably defaulted to your
-   clone's master branch so click the "Edit" button and change it to the
+#. The comparison should be between ardupilot_wiki:master and the new branch
+   you created for the feature. The website probably has defaulted to your
+   clone's master branch so click the "compare" combo box and change it to the
    correct branch:
 
-   .. image:: ../../../dev/source/images/PullRequest_InitiatePullRequest2.png
-       :target: ../../../dev/source/images/PullRequest_InitiatePullRequest2.png
+   .. image:: ../../../images/PullRequest_InitiateWikiPullRequest2.png
+       :target: ../../../images/PullRequest_InitiateWikiPullRequest2.png
    
 #. Check the list of change at the bottom of the page only includes your
-   intended changes, then press "Click to create pull request for this
-   comparison".
+   intended changes, then press "Create pull request".
    
    
 Creating a new wiki page
