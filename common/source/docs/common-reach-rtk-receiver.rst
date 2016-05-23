@@ -14,16 +14,16 @@ What is Reach and what is it for?
 
 Reach is an RTK GNSS receiver for applications when your standard GPS with several meters accuracy just won't cut it. It relies on RTK (real-time kinematics) technology to deliver centimeter level accuracy.
 
-RTK was here for a long time, used mostly by surveyors and unaffordable to hobbyists and makers. If you needed centimeter precise positioning you had to spend thousands of dollars on an RTK system. Reach changed that.
+RTK has historically been used primarily by surveyors and others who required centimeter precise positioning, and were able to spend thousands of dollars on an RTK system. Reach makes this same functionality affordable to hobbyists and makers. 
 
 Reach runs open-source RTK processing software called RTKLIB written by Tomoji Takasu. Previously a computer was required to run RTKLIB, but now all RTKLIB features are available directly on Reach.
 
-For further information read `Reach documentation <http://docs.emlid.com/reach/introduction/>`__.
+For further information see `Reach documentation <http://docs.emlid.com/reach/introduction/>`__.
 
-Ardupilot integration
+ArduPilot integration
 =====================
 
-Reach supports RTK-enhanced coordinates output to Ardupilot based autopilots. To make this possible, it uses a custom gps protocol called ERB (Emlid Reach Binary protocol).
+Reach supports RTK-enhanced coordinates output to ArduPilot based autopilots. To make this possible, it uses a custom GPS protocol called ERB (Emlid Reach Binary protocol).
 
 Here is a demo video of Pixhawk and Reach working together:
  
@@ -33,7 +33,7 @@ Here is a demo video of Pixhawk and Reach working together:
 
 **Pixhawk binaries**
 
-Although ERB support has already been added to Ardupilot master, there was no release yet to include it. You can get stable binaries with ERB support for all the Ardupilot supported vehicles.
+Although ERB support has already been added to ArduPilot master, there was no release yet to include it. You can get stable binaries with ERB support for all the ArduPilot supported vehicles.
 
 * `Pixhawk firmware compatible with ERB <http://files.emlid.com/apm/px4-reach.zip>`__
 
