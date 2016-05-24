@@ -1,12 +1,11 @@
 .. _home:
 
 ===========
-Copter Home
+直升机首页
 ===========
 
 .. tip::
-
-   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
+   ArduPilot 开发者社区生态体系正在建设中！`更多信息点击这里... <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
 
 .. image:: /images/home_copter.jpg
