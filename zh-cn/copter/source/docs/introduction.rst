@@ -1,125 +1,74 @@
 .. _introduction:
 
 ==================
-Introducing Copter
+直升机简介
 ==================
 
-Copter is an advanced open-source autopilot system for multicopters,
-helicopters, and other rotor vehicles.
+本手册所指的直升机是适用于多轴直升机、传统直升机以及其他机动车辆的高级开源自动驾驶系统。
 
-Overview
+概览
 ========
 
-Copter is complete open-source autopilot solution for multi-rotor
-vehicles, offering both enhanced remote control flight (via a number of
-intelligent flight modes) and execution of fully autonomous missions.
+该直升机系统是针对多轮驱动交通工具的完全开源的自动驾驶解决方案，它(通过一系列智能飞行模式)提供了增强型遥控飞行，可以完全自主地执行任务。
 
-As part of the `DroneCode Software Platform <https://www.dronecode.org/dronecode-software-platform>`__ it
-works seamlessly with Ground Control Station software that can monitor
-vehicle telemetry and perform powerful mission planning activities. It
-also benefits from other parts of the DroneCode platform, including
-simulators, log analysis tools, and higher level APIs for vehicle
-management and control.
+作为 `DroneCode 软件平台 <https://www.dronecode.org/dronecode-software-platform>`__ 的一部分，它可以通过与地面控制站的无缝合作，监视和执行强大的任务规划活动。它还可以从DroneCode平台的拥有的其他部分得到好处，包括模拟器，日志分析工具和交通工具管理控制的高级接口等。
 
-Copter is on the cutting edge of aerial robotics and intended for those
-people who want to try advanced technology, leading edge techniques and
-new flight styles. It is already a preferred platform for numerous
-commercially available ready-to-fly vehicles, and can easily be added to
-enhance your own DIY multirotor craft.
+该直升机系统处于空中机器人的前沿，针对希望尝试先进技术的人群，引领前沿技术和新的飞行风格。它已经成为现售众多飞行交通工具的首选平台，并且可以轻松添加到你的定制飞行器中，来增强其功能。
+
 
 .. image:: ../images/copter-introduction-diagram.jpg
     :target: ../_images/copter-introduction-diagram.jpg
 
-Key features
+主要特征
 ============
 
-Key features include:
+主要特征包括
 
--  *High quality auto-level and auto-altitude control*: Fly level and
-   straight or use the awesome "simple flight" mode, which makes Copter
-   one of the easiest multicopters to fly.
+-  *高质量的自动水平、自动高度控制*: 水平和垂直飞行，或者使用超级棒的“简单飞行”模式，该直升机系统是最易飞的多轴直升机之一。
 
-   Don't worry about keeping an eye on your multicopter's orientation -
-   just push the stick the way you want to go, and the autopilot figures
-   out what that means for whatever orientation the copter is in, using
-   its onboard compass. "Front", "back" ... who cares!
--  *Automatic takeoff and landing*: Flick a switch and watch Copter
-   execute its mission completely autonomously, returning home and
-   landing by itself when it's done.
--  *"Loiter" mode.*: Copter will hold its position using its GPS and
-   altitude sensors.
--  *Return to launch*: Flip a switch to have Copter fly back to the
-   launch location automatically.
--  *Fail safety:* Automatically detect when the vehicle loses
-   transmitter contact (or is outside a defined geofence) and return to
-   the launch point. Will also attempt to land safely if hardware
-   failures are detected.
--  *No programming required*: Use the desktop *Mission Planner* software
-   to load the autopilot (with just one click) and set up Copter. The
-   Mission Planner (and other compatible ground stations) deliver visual
-   displays for vehicle state, settings and telemetry, including a
-   point-and-click mission planning interface.
--  *Missions with hundreds of GPS waypoints*: Just point and click
-   waypoints in a Mission Planner, and Copter will fly itself to them.
-   You cautomate entire missions, including camera control! The only
-   distance limits are those of your vehicle power supply.
--  *Mission planning while in flight*: Using a two-way wireless
-   connection, waypoints, mode changing, even changing the gains of
-   every control parameter can be done from your laptop or mobile device
-   - even while Copter is in the air!
+   不需要眼睛一直关注着你的多轴直升机方向-不管多轴直升机向着哪个方向，只需往你想要飞行的方向推动摇杆，自动驾驶仪就会通过板载罗盘计算出你的意图。哪边是前，哪边是后，管它呢！
+-  *自动起飞自动降落*: 拨动开关，看着直升机完全自主地执行完其使命，回到出发地点并自动降落，无需人工干涉。
+-  *"悬停" 模式*: 直升机通过其高度传感器和GPS模块，保持在同一位置。
+-  *返回出发点*: 拨动遥控器开关就可以使直升机自动飞回到出发点。
+-  *故障安全:* 当直升机你控制器失去联系（或者超出了预先定义的地理围栏范围）时会自动识别状态，返回到出发点。如果检测到硬件故障，它还会尝试安全降落。
+-  *无需编程*: 使用桌面版的 *Mission Planner* 软件就可以加载自动驾驶设备（一键操作），并可以对其进行设置。Mission Planner（或者其它兼容的地面站）有可以鼠标操作的任务规划界面，可以通过可视化的方式显示直升机的状态、设置和传感器数据。
+-  *执行数百个GPS航点的任务*: 通过在Mission Planner中点击创建航点，直升机就可以自动飞过它们。你可以自动化包括摄像头控制的整个飞行任务！唯一的距离限制就是你直升机的电池续航能力。
+-  *飞行中进行任务规划*: 使用无线双向连接器，设置航点、改变飞行模式、调节所有控制参数的增益，都可以通过你的笔记本或者移动设备实施完成-即便你的直升机还在飞行中！
 
-Getting started
+入门
 ===============
 
-If you're using Copter on a ready-to-fly vehicle then it is likely that
-it will be already setup, configured and tuned, ready for your first
-flight. We recommend you *read your manufacturer's instructions*,
-particularly those related to safely, before flying.
+如果你在一个成品的直升机上使用该系统，已经准备安装、配置和调试，准备试飞。我们建议你*仔细阅读你的飞机厂商提供的说明书*，尤其是关系到安全方面的信息。
 
-Once you're familiar with your vehicle's default setup you may want to
-configure your RC transmitter/vehicle to use more challenging :ref:`flight modes <flight-modes>`, or :ref:`choose a ground station <common-choosing-a-ground-station>` and start flying automated
-missions.
+一旦你熟悉了你的直升机的默认设置，你或许会想要配置你的遥控器或者直升机来尝试更多挑战性的  :ref:`飞行模式 <flight-modes>`, 或者 :ref:`选择一个地面站 <common-choosing-a-ground-station>` 开始自动飞行任务。
 
 .. tip::
 
-   Whether using an RTF or DIY vehicle, autonomous vehicles are
-   potentially dangerous! Always follow :ref:`best safety practices <safety-multicopter>` and pay close attention to all safety
-   warnings.
+   无论你使用的是成品的交通设备，还是自己组装的，这些自主的交通工具都是有潜在的危险的！始终遵循 :ref:`最佳安全实践 <safety-multicopter>` 并密切关注一切安全警告信息。
 
-If you're working on a DIY project, this wiki has everything you need!
-You should start by reading this section in order to understand what a
-multicopter can do, and how to select a frame, flight controller board,
-and other essential components. You can then proceed to :ref:`First Time Setup <initial-setup>` to learn how to assemble your Copter and then
-:ref:`First Flight <flying-arducopter>` to learn how to configure and tune
-it.
+如果你正在为一个DIY的项目工作，本手册正是你需要的！你应该通过阅读该部分的内容了解多轴直升机可以做些什么，怎么选择一个机架，怎么选择飞控板和其他必要组件。然后你可以继续阅读 :ref:`首次安装 <initial-setup>` 学习怎么组装你的直升机，然后浏览 :ref:`首飞 <flying-arducopter>` 学习怎么配置和调校你的直升机。
 
-The development team
+开发团队
 ====================
 
-Copter is developed and maintained by a dedicated group of volunteers
-from the open source community. Follow their continuing efforts and read
-about new project developments at
-`DIYDrones.com <http://diydrones.com>`__.
+该直升机系统是由一个来自开源社区的自愿者组成的专门小组负责开发和维护。访问 `DIYDrones.com <http://diydrones.com>`__了解他们最新动向。
 
-*All of us involved with this project care a great deal about the
-privacy and safety of those whom we share this planet with. Please be a
-good steward of this technology. It is the product of many evenings and
-weekends, we make it available for benevolent use.*
+*我们参与到该项目的所有人，都非常关心跟我们分享这个星球的所有人的隐私和安全。请让自己成为该技术的好管家。它是很多个晚上和周末辛勤工作的产物，我们要确保它用于正途。*
 
-Learn more about Copter
+了解更多
 =======================
 
-To find out more about Copter and your main configuration decisions,
-please see the topics below:
+了解更多关于直升机的信息，或者决定你的直升机的主要配置，请阅读以下话题：
+
 
 
 .. toctree::
     :maxdepth: 1
 
-    How Multicopters Work <what-is-a-multicopter-and-how-does-it-work>
-    What You’ll Need <what-you-need>
-    MultiCopter Safety <safety-multicopter>
-    Choosing a MultiCopter Frame <choosing-a-frame>
-    Choosing a Flight Controller <common-choosing-a-flight-controller>
-    Choosing a Ground Station <common-choosing-a-ground-station>
-    Use-Case Overview <copter-use-case-overview>
+    多轴直升机是怎么工作的 <what-is-a-multicopter-and-how-does-it-work>
+    你都需要哪些组件 <what-you-need>
+    多轴直升机安全 <safety-multicopter>
+    选择一个多轴直升机机架 <choosing-a-frame>
+    选择一个飞控 <common-choosing-a-flight-controller>
+    选择一个地面站 <common-choosing-a-ground-station>
+    用例概述 <copter-use-case-overview>
