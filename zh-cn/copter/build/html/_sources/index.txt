@@ -66,27 +66,21 @@
 
 --------------
 
-System components
+系统组件
 ~~~~~~~~~~~~~~~~~
 
 
--  A `Pixhawk <https://store.3dr.com/t/pixhawk>`__ or :ref:`other autopilot <common-autopilots>` 
-   loaded with the latest version of
-   the `Copter firmware <http://firmware.ardupilot.org/>`__.
--  :ref:`Mission Planner software <planner:home>` -- gives
-   you an easy point-and-click setup/configuration, and a full-featured
-   ground control interface.
--  This Copter Wiki provides all the information you need to set up and
-   operate a multicopter or traditional helicopter. 
--  A suitable
-   :ref:`MultiCopter <build-your-own-multicopter>` or
-   :ref:`Helicopter <traditional-helicopters>` for your mission.
--  Plus many other useful options: e.g. data radios, which allow two-way
-   wireless telemetry and control between the vehicle and your computer.
+-  写入最新版 :ref:`直升机固件 <http://firmware.ardupilot.org/>` 的 :ref:`Pixhawk <https://store.3dr.com/t/pixhawk>` 或者 :ref:`其他自动驾驶仪 <common-autopilots>` 
+-  :ref:`任务规划软件 <planner:home>` -- 为你提供易于操作的可视化配置的全功能的地面控制界面。
+-  本直升机手册，它可以为你提供关于多轴直升机或传统直升机设置、操作方面的一切信息。 
+-  一个合适的
+   :ref:`多轴直升机 <build-your-own-multicopter>` 或
+   :ref:`传统直升机 <traditional-helicopters>` 。
+-  还有许多有用的可选组件：例如无线传输设备，可以允许你在无人机和你的电脑之间通过双向无线进行遥测和控制。
 
 --------------
 
-Rotor Craft types
+旋翼航空器类型
 ~~~~~~~~~~~~~~~~~
 
 ..  raw:: html
@@ -117,34 +111,24 @@ Rotor Craft types
     </table>
 
 
-:ref:`Multicopters <what-is-a-multicopter-and-how-does-it-work>`:
+:ref:`多轴直升机 <what-is-a-multicopter-and-how-does-it-work>`:
 
--  Utilize differential thrust management of independent motor-prop
-   units to provide lift and directional control
--  Benefit from mechanical simplicity and design flexibility
--  A capable payload lifter that's functional in strong wind conditions
--  Redundant lift sources can give increased margin of safety
--  Varied form factor allows convenient options for payload mounting.
+-  利用电机-螺旋桨单元的推力差管理为直升机提供升力和方向控制
+-  从机械的简单性和设计灵活性中受益
+-  在强风条件下依然保持高有效载荷，非常实用
+-  冗余电机配置可以提升安全边界
+-  多变的外形使其可以有多种方式携带有效载荷。
 
 
-:ref:`Helicopters <traditional-helicopters>`:
+:ref:`传统直升机 <traditional-helicopters>`:
 
--  Typically use a single lifting rotor with two or more blades
--  Maintain directional control by varying blade pitch via
-   servo-actuated mechanical linkage (many versions of these craft exist
-   and it is beyond the scope of this manual to cover them all -- the
-   mechanical systems used in helicopters warrant special study and
-   consideration)
--  Strong, fast and efficient -- a proven-worker suitable to many missions.
+-  通常实用携带两片或多片桨叶的单电机提供升力
+-  通过伺服电机的机械联动来改变桨叶间距从而控制方向(存在多种不同版本的机械控制工艺，但关于这些工艺的讨论超出了本手册的范围-- 传统直升机中的机械系统有必要进行特殊的研究和思考) 
+-  健壮、快速、高效--是一个适合执行多种任务的熟练工
 
 
 
-Because of its open design, Copter also supports more unusual frame
-types including the :ref:`Single and Coax-Copters <singlecopter-and-coaxcopter>`.  Put this together
-with :ref:`Plane <plane:home>`,
-:ref:`Rover <rover:home>` and :ref:`Antenna Tracker <antennatracker:home>` and you have a system
-of robotic vehicles that can be controlled through very similar
-interfaces to accomplish a wide variety of tasks.
+由于它的开放式设计，直升机还只是更多不常用的架构类型，包括 :ref:`单轴或同轴直升机 <singlecopter-and-coaxcopter>` 。把这些和 :ref:`飞机 <plane:home>` , :ref:`滑翔机 <rover:home>` 和 :ref:`天线追踪 <antennatracker:home>` 放在一起，还有包括机器人系统，可以通过相似的界面操作完成各种任务的车辆。
 
 .. image:: ../../images/firmware_types.jpg
     :target: _images/firmware_types.jpg
@@ -152,52 +136,44 @@ interfaces to accomplish a wide variety of tasks.
 
 --------------
 
-Getting more info
+更多信息
 ~~~~~~~~~~~~~~~~~
 
--  Continue to the :ref:`Introduction section of this wiki. <introduction>`
--  Visit `DIYDrones.com <http://diydrones.com/>`__ a large community of
-   UAV enthusiast largely clustered around the ArduPilot family of autopilots.
--  Use the `APM Forums <http://ardupilot.com/forum/viewforum.php?f=3>`__
-   to ask support questions and advice.
--  Read or join the `drones-discuss email list <https://groups.google.com/forum/#!forum/drones-discuss>`__ once
-   you're ready to get involved with the development of the software platform.
+-  继续浏览 :ref:`本手册的前言部分。 <introduction>`
+-  访问 `DIYDrones.com <http://diydrones.com/>`__ 这是一个大的无人机爱好者社区，主要关于ArduPilot家族的自动驾驶仪。
+-  通过 `APM 论坛 <http://ardupilot.com/forum/viewforum.php?f=3>`__ 提问或者给出建议。
+-  如果你已经做好准备参与软件平台的开发，欢迎订阅或者加入 `drones-discuss 邮件列表 <https://groups.google.com/forum/#!forum/drones-discuss>`__ 
 
 
 
 .. toctree::
    :hidden:
    
-   Introducing Copter <docs/introduction>
-   First Time Setup <docs/initial-setup>
-   First Flight <docs/flying-arducopter>
-   Advanced Configuration <docs/common-advanced-configuration>
-   Mission Planning <docs/common-mission-planning>
-   Mission Analysis <docs/common-mission-analysis>
-   Optional Hardware <docs/common-optional-hardware>
-   Traditional Helicopters <docs/traditional-helicopters>
-   Tricopter <docs/tricopter>
-   SingleCopter and CoaxCopter <docs/singlecopter-and-coaxcopter>
-   AutoPilot Hardware Options <docs/common-autopilots>
-   Use-Cases and Applications <docs/common-use-cases-and-applications>
-   Antenna Tracking <docs/common-antenna-tracking>
-   Simulation <docs/common-simulation>
-   Appendix <docs/common-appendix>
-   Full Table of Contents <docs/common-table-of-contents>
+   直升机简介 <docs/introduction>
+   基本设置 <docs/initial-setup>
+   试飞 <docs/flying-arducopter>
+   高级配置 <docs/common-advanced-configuration>
+   任务规划 <docs/common-mission-planning>
+   任务分析 <docs/common-mission-analysis>
+   可选硬件 <docs/common-optional-hardware>
+   传统直升机 <docs/traditional-helicopters>
+   三轴直升机 <docs/tricopter>
+   单轴或同轴直升机 <docs/singlecopter-and-coaxcopter>
+   自动驾驶设备 <docs/common-autopilots>
+   应用和用例 <docs/common-use-cases-and-applications>
+   天线追踪 <docs/common-antenna-tracking>
+   模拟 <docs/common-simulation>
+   附录 <docs/common-appendix>
+   目录 <docs/common-table-of-contents>
 
 
 
-.. |TOP_COL_LEFT| replace:: This is the full-featured, :ref:`open-source <dev:license-gplv3>` 
-   multicopter UAV controller that won the   
-   `Sparkfun 2013 and 2014 Autonomous Vehicle Competition <https://avc.sparkfun.com/>`__ 
-   (dominating with the top five spots). A team of developers 
-   from around the globe are constantly improving and refining 
-   the performance and capabilities of Copter.
+.. |TOP_COL_LEFT| replace:: 这是一个全功能的 :ref:`开源 <dev:license-gplv3>` 多轴无人机控制系统，在2013和2014年度的 :ref:`Sparkfun自主交通工具竞赛 <https://avc.sparkfun.com/>` 中斩获大奖(称霸五大热点)。系统的开发团队来自全球各地，持续地对无人机的功能和性能进行改善和提升。    
    
-.. |TOP_COL_RIGHT| replace:: Copter is capable of the full range of flight requirements 
-   from fast paced FPV racing to smooth aerial photography to fully autonomous 
-   complex missions which can be programmed through one of 4 elegant and well-developed 
-   software ground stations. The entire package is designed to be safe, feature rich, 
-   open-ended for custom applications and increasingly easy to use even for novice users.
+.. |TOP_COL_RIGHT| replace:: 从快节奏的第一视角竞赛，到平滑的空中图像拍摄，
+   再到全自主的高复杂度导航，直升机可以满足全方位的飞行需求。
+   它可以通过优雅的、易于开发的、四位一体的软件地面站进行编程开发。
+   整个软件包基于高安全性、多功能性、开放式设计，
+   易于开发定制化应用，甚至初学者也非常容易上手。   
 
 

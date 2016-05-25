@@ -70,7 +70,7 @@
 ~~~~~~~~~~~~~~~~~
 
 
--  写入最新版`直升机固件 <http://firmware.ardupilot.org/>`__的`Pixhawk <https://store.3dr.com/t/pixhawk>`__ 或者 :ref:`其他自动驾驶仪 <common-autopilots>` 
+-  写入最新版 :ref:`直升机固件 <http://firmware.ardupilot.org/>` 的 :ref:`Pixhawk <https://store.3dr.com/t/pixhawk>` 或者 :ref:`其他自动驾驶仪 <common-autopilots>` 
 -  :ref:`任务规划软件 <planner:home>` -- 为你提供易于操作的可视化配置的全功能的地面控制界面。
 -  本直升机手册，它可以为你提供关于多轴直升机或传统直升机设置、操作方面的一切信息。 
 -  一个合适的
@@ -128,8 +128,7 @@
 
 
 
-由于它的开放式设计，直升机还只是更多不常用的架构类型，包括：ref:`单轴或同轴直升机 <singlecopter-and-coaxcopter>`。把这些和:ref:`飞机 <plane:home>`,
-:ref:`滑翔机 <rover:home>` 和 :ref:`天线追踪 <antennatracker:home>` 放在一起，还有包括机器人系统，可以通过相似的界面操作完成各种任务的车辆。
+由于它的开放式设计，直升机还只是更多不常用的架构类型，包括 :ref:`单轴或同轴直升机 <singlecopter-and-coaxcopter>` 。把这些和 :ref:`飞机 <plane:home>` , :ref:`滑翔机 <rover:home>` 和 :ref:`天线追踪 <antennatracker:home>` 放在一起，还有包括机器人系统，可以通过相似的界面操作完成各种任务的车辆。
 
 .. image:: ../../images/firmware_types.jpg
     :target: _images/firmware_types.jpg
@@ -140,10 +139,9 @@
 更多信息
 ~~~~~~~~~~~~~~~~~
 
--  继续浏览 :ref:`本手册的前言部分。 <introduction>`
+-  继续浏览 :ref:`本手册的简介部分。 <introduction>`
 -  访问 `DIYDrones.com <http://diydrones.com/>`__ 这是一个大的无人机爱好者社区，主要关于ArduPilot家族的自动驾驶仪。
--  通过 `APM 论坛 <http://ardupilot.com/forum/viewforum.php?f=3>`__
-   提问或者给出建议。
+-  通过 `APM 论坛 <http://ardupilot.com/forum/viewforum.php?f=3>`__ 提问或者给出建议。
 -  如果你已经做好准备参与软件平台的开发，欢迎订阅或者加入 `drones-discuss 邮件列表 <https://groups.google.com/forum/#!forum/drones-discuss>`__ 
 
 
@@ -170,10 +168,9 @@
 
 
 
-.. |TOP_COL_LEFT| replace:: 这是一个全功能的 :ref:`开源 <dev:license-gplv3>` 
-   多轴无人机控制系统，在2013和2014年度的
-   `Sparkfun自主交通工具竞赛 <https://avc.sparkfun.com/>`__中斩获大奖(称霸五大热点).
-    系统的开发团队来自全球各地，持续地对无人机的功能和性能进行改善和提升。    
+.. |TOP_COL_LEFT| replace:: 这是一个全功能的 :ref:`开源 <dev:license-gplv3>`__
+   多轴无人机控制系统，在2013和2014年度的 :ref:`Sparkfun自主交通工具竞赛 <https://avc.sparkfun.com/>`__
+    中斩获大奖(称霸五大热点)。系统的开发团队来自全球各地，持续地对无人机的功能和性能进行改善和提升。    
    
 .. |TOP_COL_RIGHT| replace:: 从快节奏的第一视角竞赛，到平滑的空中图像拍摄，
    再到全自主的高复杂度导航，直升机可以满足全方位的飞行需求。
