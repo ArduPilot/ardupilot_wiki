@@ -17,6 +17,10 @@ positioning technologies:
 
    Zubax GNSS: GPS, Compass andBarometer
 
+.. figure:: ../../../images/Reach.jpg
+   :target: ../_images/Reach.jpg
+
+   Reach RTK Receiver
 
 .. toctree::
     :maxdepth: 1
