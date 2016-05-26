@@ -1,87 +1,50 @@
 .. _what-is-a-multicopter-and-how-does-it-work:
 
 ===========================================
-What is a MultiCopter and How Does it Work?
+多旋翼直升机及其工作原理
 ===========================================
+多旋翼直升机是由多个或快或慢产生向下推力的电机/螺旋桨单元控制运动形态的，机械结构简单的飞行器。
 
-A multicopter is a mechanically simple aerial vehicle whose motion is
-controlled by speeding or slowing multiple downward thrusting
-motor/propeller units.
-
-Overview
+概述
 ========
 
 .. image:: ../images/3DR-quad-motors-top.jpg
     :target: ../_images/3DR-quad-motors-top.jpg
 
-MultiCopters are aerodynamically unstable and absolutely require an
-on-board computer (aka flight controller) for stable flight.  As a
-result, they are "Fly by Wire" systems and if the computer isn't
-working, you aren't flying.  The flight controller combines data from
-small on-board MEMs gyroscopes, accelerometers (the same as those found
-in smart phones) to maintain an accurate estimate of it's orientation
-and position.
+多旋翼直升机从空气动力学方面来说是不稳定的，必须有一个机载电脑（又叫做飞行控制器）来保证飞行的稳定性。因此，多旋翼直升机是一个“电传飞行控制”系统。如果机载电脑不工作，它就无法起飞。飞行控制器融合从板载的微电子陀螺仪、加速度仪（与你手机上的传感器相同）的数据，实现对其方向和位置的精确判断。
+上面所示的四轴直升机是最简单的多旋翼直升机，它的每一个电机与相邻的两个电机是朝着相对的方向旋转的（斜对角的两个电机的运行方向是一致的）。
+四轴直升机可以通过控制一边的两个电机加速，另一边的两个电机减速实现俯仰（pitch）和翻滚(roll)操作。举个例子，如果想让四轴直升机向左翻滚，那就需要使右边的两个电机加速，同时左边的两个电机减速。同理，如果想实现俯冲，就需要使四轴直升机后面的两个电机加速，同时前面的两个电机减速。
 
-The quadcopter shown above is the simplest type of multicopter, with
-each motor/propeller spinning in the opposite direction from the two
-motors on either side of it (i.e. motors on opposite corners of the
-frame spin in the same direction).
+四轴的向左或者向右转向(yaw)则通过对一个对角线上的两个电机加速，对另一个对角线的两个电机减速来实现。
 
-A quad copter can control it's roll and pitch rotation by speeding up
-two motors on one side and slowing down the other two.  So for example
-if the quad copter wanted to roll left it would speed up motors on the
-right side of the frame and slow down the two on the left.  Similarly if
-it wants to rotate forward it speeds up the back two motors and slows
-down the front two.
+水平运动是通过对某些电机加速另一些电机减速（具体哪些电机加减速视水平运行方向而定）使得载具运行的方向有一定程度的倾斜，然后对所有电机加速实现向前运动。倾斜的度数越高，飞行的速度越快。
 
-The copter turns (aka "yaw") left or right by speeding up two motors
-that are diagonally across from each other, and slowing down the other
-two.
+高度的控制是通过对所有电机同时加速或者减速实现的。
 
-Horizontal motion is accomplished by temporarily speeding up/slowing
-down some motors so that the vehicle is leaning in the direction of
-desired travel and increasing the overall thrust of all motors so the
-vehicle shoots forward.  Generally the more the vehicle leans, the
-faster it travels.
 
-Altitude is controlled by speeding up or slowing down all motors at the
-same time.
-
-What is the difference between a MultiCopter and a UAV/Drone?
+多旋翼直升机与无人机的区别
 =============================================================
 
-A multicopter becomes a UAV or Drone when it is capable of autonomous
-flight.  Normally this means taking the accelerometer and gyro
-information and combining it with barometer and GPS data so the flight
-controller understands not only it's orientation but also it's position.
+如果多旋翼直升机实现了自助飞行，它就是无人机。通常来说，这就意味着它需要携带加速度和陀螺仪信息，再加上气压计和GPS的相关数据，使得飞行控制器不但知道自己的方向，还要清楚自己的位置。
 
-MultiCopter Demo illustrating Manual and Automatic Control
+多旋翼直升机演示及自动控制
 ==========================================================
 
 ..  youtube:: GyPqHeg2v0Y
     :width: 100%
 
-The demo begins in :ref:`Stabilize Mode <stabilize-mode>` which
-provides inertial stabilization and permits manual flight control.
+该演示从 :ref:`稳定模式 <stabilize-mode>` 开始，该模式提高惯性姿态稳定系统，允许手动飞行控制。
 
-In :ref:`Loiter Mode <loiter-mode>` the
-Copter automatically maintains position and altitude but permits manual
-override.
+在 :ref:`悬停模式 <loiter-mode>` 中，直升机自动控制位置和高度，但允许手动调整。
 
-:ref:`Simple Mode <simpleandsuper-simple-modes>`
-enables the copter to be flown without regard to the copters orientation
-(the direction it is facing).
+:ref:`简单模式 <simpleandsuper-simple-modes>`使直升机不需要考虑方向（直升机的机头朝向）进行飞行。
 
-"Auto Land" causes the copter to descend and disarm it's motors when it
-has landed.
+"自动降落" 可以控制下落。并在落地后释放电机控制(disarm)。
 
-High wind demonstration
+大风环境下飞行示范
 =======================
 
 ..  youtube:: f8nAF6s-dwY
     :width: 100%
 
-A video by Robert Lefebvre showing how well our firmware can allow a
-multicopter to operate even in 60 to 90 kmh gusting winds.  This video
-illustrates operation under conditions near the physical limits of the
-copter and should not be attempted by non-experts.
+该视频由罗伯特*勒费布尔提供，表明我们的固件即便在60到90千米/时的强风下，仍然可以使多旋翼直升机正常飞行。该视频演示是直升机接近物理极限的操作，在你成为专家前请勿尝试。
