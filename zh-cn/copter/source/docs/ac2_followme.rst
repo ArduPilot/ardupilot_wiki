@@ -1,7 +1,7 @@
 .. _ac2_followme:
 
 ============================
-Follow Me Mode (GSC Enabled)
+跟随模式 (GSC 开启)
 ============================
 
 Follow Me mode makes it possible for you to have your copter follow you
