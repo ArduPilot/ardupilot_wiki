@@ -1,7 +1,7 @@
 .. _ac2_guidedmode:
 
 ===========
-Guided Mode
+导航模式
 ===========
 
 Guided mode is a capability of Copter to dynamically guide the copter to
