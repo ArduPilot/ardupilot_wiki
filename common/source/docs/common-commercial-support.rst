@@ -430,6 +430,34 @@ ASC offer more than just consulting on Ardupilot code, but complete end-to-end s
 
 --------------
 
+AerialRobotics Australia Ptd Ltd
+--------------------------------
+
+.. image:: ../../../images/aerialrobotics.jpg
+   :target: ../_images/aerialrobotics.jpg
+
+Contact: Andrew Tridgell
+
+Email: andrew@aerialrobotics.com.au
+
+Location: Canberra, Australia
+
+Website: http://aerialrobotics.com.au
+
+AerialRobotics Australia can help your business make the most of
+ArduPilot. From custom feature development to log analysis and tuning,
+Andrew has the experience and expertise to maximise the benefit you
+get from the ArduPilot platform.
+
+Andrew is a lead developer of fixed wing support for ArduPilot, along
+with the lead developer for all QuadPlane variants and the systems
+lead for ArduPilot sensors, hardware drivers and platform
+support. Aerialrobotics Australia is experienced at working with
+international clients to provide top quality support anywhere in the
+world.
+
+--------------            
+
 .. note::
 
    To be added to this page we require that the applicant has made a
