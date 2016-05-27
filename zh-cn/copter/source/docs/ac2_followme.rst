@@ -4,42 +4,28 @@
 跟随模式 (GSC 开启)
 ============================
 
-Follow Me mode makes it possible for you to have your copter follow you
-as you move, using a telemetry radio and a ground station.
+使用遥感无线电和地面站，跟随模式可以让你的直升机跟着你移动成为可能
 
 .. note::
 
-   Unlike "proper" autopilot modes, this feature is implemented in
-   the Ground Station. The ground station controls the movement by reading
-   the vehicle position using MAVLink Telemetry and sending GUIDED mode
-   instructions to move the vehicle appropriately. Currently this sort of
-   functionality is supported by *Mission Planner* for Windows laptops, APM
-   Planner for OS X laptops, and DroidPlanner for Android devices.
+   不像 "特有的"自动驾驶模式，这个功能的实现在于地面站。地面站使用微型飞行器链接遥测技术读取载具位置来控制其移动，发送引导模式指令来适当的移动载具。目前这项功能由Windows笔记本电脑的*任务规划* 、OS X笔记本电脑的APM规划和Android设备的机器人规划来支持。
 
-What you'll need
+你需要什么
 ================
 
-#. An Copter with telemetry
-#. A laptop
-#. A GPS USB dongle `like this <http://www.amazon.com/ND-100S-GlobalSat-USB-GPS-Receiver/dp/B004K39QTY/refsr_1_9?ieUTF8&qid1329773762&sr=8-9>`__
-   or Bluetooth GPS module `like this <http://www.amazon.com/GlobalSat-BT-368i-Bluetooth-GPS-Receiver/dp/B0018YZ836/refsr_1_2?selectronics&ieUTF8&qid1329773963&sr1-2>`__.
+#. 带有遥测技术的直升机
+#. 一台笔记本电脑
+#. 一个GPS USB适配器 `像这种 <http://www.amazon.com/ND-100S-GlobalSat-USB-GPS-Receiver/dp/B004K39QTY/refsr_1_9?ieUTF8&qid1329773762&sr=8-9>`__
+   或者一个蓝牙GPS组件 `像这种 <http://www.amazon.com/GlobalSat-BT-368i-Bluetooth-GPS-Receiver/dp/B0018YZ836/refsr_1_2?selectronics&ieUTF8&qid1329773963&sr1-2>`__.
 
-Instructions for Mission Planner
+任务规划指令
 ================================
 
-#. Set one of your flight modes to "Loiter"
-#. Set up your Copter at the field and establish a MAVLink connection
-   over wireless telemetry
-#. Ensure that your GPS USB dongle or Bluetooth device is plugged into
-   to your laptop and showing up as a serial port. Using the software
-   that came with the module, make sure that it's working and that you
-   have GPS lock.
-#. Take off, and once in the air switch to Loiter. (Sufficient altitude
-   to ensure that while it is following you it isn't attacking you might
-   be a good idea).
-#. In the Mission Planner Flight Data screen try right-clicking on a
-   nearby spot and select "Fly to Here". If this works, you're ready to
-   try Follow Me mode.
+#. 飞行模式设置成 "悬停"
+#. 找一块空地设置你的直升机，通过无线遥测建立微型飞行器连接
+#. 确保GPS USB适配器或者蓝牙组件已插入笔记本电脑并显示串行端口。使用组件自带的软件，确保它能正常工作并已经GPS锁定。
+#. 起飞，一旦飞到空中，切换到悬停。 (要有足够的高度以确保直升机在跟随你的时候不攻击你，这是个不错的主意).
+#. 在任务规划飞行数据屏上，试着右键点击附件的点选择 "飞到这里". 如果它能正常工作，你可以准备尝试跟随模式。
 #. In the Mission Planner, enter Control-F, which will open the
    following window. Click on "Follow Me"
 
