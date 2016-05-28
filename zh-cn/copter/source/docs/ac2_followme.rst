@@ -26,35 +26,23 @@
 #. 确保GPS USB适配器或者蓝牙组件已插入笔记本电脑并显示串行端口。使用组件自带的软件，确保它能正常工作并已经GPS锁定。
 #. 起飞，一旦飞到空中，切换到悬停。 (要有足够的高度以确保直升机在跟随你的时候不攻击你，这是个不错的主意).
 #. 在任务规划飞行数据屏上，试着右键点击附件的点选择 "飞到这里". 如果它能正常工作，你可以准备尝试跟随模式。
-#. In the Mission Planner, enter Control-F, which will open the
-   following window. Click on "Follow Me"
+#. 在Mission Planner中输入 Control-F，会出现以下对话框， 点击 "Follow Me"
 
 .. image:: ../images/followme1.jpg
     :target: ../_images/followme1.jpg
 
--  This will bring up this window. Select the serial port that is
-   assigned to your GPS device and whatever baud rate it uses.
+-  接着会出现这个对话框，选择分配给你GPS设备的串行口，不管它所使用的波特率是多少。
 
 .. image:: ../images/followme2.png
     :target: ../_images/followme2.png
 
--  Once you click "Connect", the Mission Planner will read the GPS data
-   from your device and send it to your Copter as "fly to here" commands
-   every two seconds.
+-  一旦点击 "Connect",  Mission Planner将通过你的设备读取GPS数据，每隔2移就会给直升机发送"飞到这里" 的指令。
 
--  Now pick up your laptop and start walking around.
--  The Copter should follow you!
+-  现在拿起你的笔记本电脑，开始四处走走。
+-  直升机应该会跟随着你！
 
-   -  If you have set the altitude to 5 feet it might be a good idea to
-      see if you can out run it.
-   -  As mentioned before, sufficient altitude to prevent injury is
-      useful.
-   -  Seriously this is a great capability, but safety is really
-      important when using Follow Me mode especially with an open bladed
-      Multicopter.
+   -  如果你把高度设置到5英尺，这是个不错的主意，看看你能否运行它。
+   -  如前所言，足够的高度对避免受伤是有用的。
+   -  这是一个很棒的功能，在使用跟随模式特别是旋翼打开的多通道直升机的时候，一定要注意安全。 
 
--  **Warning:** Like all other modes in which the autopilot is
-   responsible for altitude hold (Loiter, AltHold), the barometer is
-   used in the altitude calculation meaning that it can drift over time
-   and the copter will follow the air pressure change rather than actual
-   altitude above ground.
+-  **警告:** 像自动驾驶其它模式对高度保持负责一样（悬停，高度保持），气压计用于高度计算，就是说随着时间的流逝，直升机会根据气压发生位移而不是实际距地面的高度。
