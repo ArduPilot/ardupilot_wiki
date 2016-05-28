@@ -1,102 +1,84 @@
 .. _what-you-need:
 
 ====================================
-What You Need to Build a MultiCopter
+做一个多旋翼直升机，你需要哪些东西
 ====================================
 
-This article provides an overview of the main components you will need
-when building a Copter-based multicopter.
+本文概要论述做一个多旋翼直升机，你需要的主要组件。
 
-Multicopter frame including motors, ESCs and propellers
+
+机架（包括电机、电调、和螺旋桨）
 =======================================================
 
-There are numerous frames, ESCs and motors available. Some components
-you might consider are discussed in 
-:ref:`Choosing a Multicopter Frame <choosing-a-frame>` and the 
-:ref:`Detailed Vehicle Builds <common-common-airframe-builds>`.
+当下有多种多样的机架、电调和电机可供选择。在选择的时候哪些是你需要考虑的，可以参照
+:ref:`多旋翼直升机机架选择 <choosing-a-frame>` 和 
+:ref:`载具组件细节 <common-common-airframe-builds>`中的相关讨论。
 
-Many other designs and configurations including Traditional Helicopters
-are also supported.
+还有许多其他的设计和配置，包括传统直升机，我们的软件也是支持的。
 
-6+ channel RC transmitter and receiver
+至少支持6通道的遥控发射器和接收器
 ======================================
 
-You'll need a radio control transmitter to manually control your Copter
-and to activate its flight modes. You can use any RC
-transmitter/receiver system with at least six channels. Some of the
-options are discussed in the topic :ref:`Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`.
+你需要用遥控发射器对直升机进行手动控制或者切换飞行模式。你可以选择任何遥控发射接收系统，唯一的要求是它最少支持6通道。相关的可选项在
+ :ref:`兼容的遥控发射接收系统 (Pixhawk/PX4) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`中找到。
 
 .. image:: ../../../images/spektrum-dx8.jpg
     :target: ../_images/spektrum-dx8.jpg
 
-Flight Controller board (Autopilot hardware)
+飞行控制板 (Autopilot兼容硬件)
 ============================================
 
-Copter's autopilot board determines its capabilities for autonomous
-flight. At time of writing (December 2015)
-:ref:`Pixhawk <common-pixhawk-overview>` is highly recommended for general
-use.
+本系统支持的自动驾驶板是支持自主飞行的。在本手册编写时(2015年12月)，强烈推荐大家使用
+:ref:`Pixhawk <common-pixhawk-overview>` 
 
-Developers creating UAV vision applications should consider using a
-separate Companion Computer, or a Linux based autopilot board (e.g.
-:ref:`NAVIO+ <common-navio-overview>` or
-:ref:`Erle-Brain <common-erle-brain-linux-autopilot>`) which is capable of
-running both Copter and the image processing code.
+对于进行无人机视觉应用开发的工程师们，可以考虑使用独立的系统进行视频控制，也可以选择基于Linux系统的自动驾驶控制板（例如：
+:ref:`NAVIO+ <common-navio-overview>` 或者
+:ref:`Erle-Brain <common-erle-brain-linux-autopilot>`) 它们都可以运行Copter系统的同时进行图像处理。
 
-For more options, see the topic :ref:`Choosing a Flight Controller <common-choosing-a-flight-controller>`.
+更多选择，请参照 :ref:`飞行控制器选择 <common-choosing-a-flight-controller>`.
 
-GPS module
+GPS 模块
 ==========
 
-Your Copter will *require* a GPS module. The recommended module is :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` which also
-includes an a compass. You can check out :ref:`other GPS solutions here <common-positioning-landing-page>`.
+你的直升机*需要*一个GPS模块，推荐使用
+:ref:`3DR UBlox GPS + 罗盘模块 <common-installing-3dr-ublox-gps-compass-module>` 它包含一个罗盘模块。你可以可以从这里
+:ref:`其它GPS解决方案 <common-positioning-landing-page>` 选择其他模块
 
 .. image:: ../../../images/GPS_TopAndSide.jpg
     :target: ../_images/GPS_TopAndSide.jpg
 
-LiPo batteries and charger
+锂电池以及充电器
 ==========================
 
 .. image:: ../images/lipo_battery.jpg
     :target: ../_images/lipo_battery.jpg
 
-Copter requires a rechargeable lithium polymer (LiPo) battery. 
-A good rule of thumb is to use 1,000 mAH (milliamp hours) per
-motor. For a Quad copter, a `4,000 mAH LiPo like this one <http://www.hobbyking.com/hobbyking/store/__9185__Turnigy_4000mAh_3S_20C_Lipo_Pack.html>`__
-would work well. While your copter can use only one battery at a time,
-we recommend having at least two batteries in stock; more batteries
-means more flight time. You'll also need a `charging station for your batteries such as this one <http://hobbyking.com/hobbyking/store/__24289__Turnigy_2S_3S_Balance_Charger_Direct_110_240v_Input_USA_Warehouse_.html>`__.
+直升机还需要可以充电的锂电池，选择锂电池的经验做法是一个电机1,000mAH(毫安时)。对于四轴而言，
+ `像这样的4,000mAH锂电池 <http://www.hobbyking.com/hobbyking/store/__9185__Turnigy_4000mAh_3S_20C_Lipo_Pack.html>`__
+是比较好的选择。你的直升机飞行中使用一块电池，我们建议你至少备两块。电池越多飞的时间越长。你还需要一个
+ `像这样的为你的电池充电的充电站 <http://hobbyking.com/hobbyking/store/__24289__Turnigy_2S_3S_Balance_Charger_Direct_110_240v_Input_USA_Warehouse_.html>`__.
 
-Ground Control Station
+地面控制站
 ======================
 
-The (free and open source) :ref:`Mission Planner <planner:home>` is required if you're going
-to be loading new versions of Copter onto the flight controller, and for
-first-flight tuning and calibration. It runs on a PC and can also be
-used for planning missions.
+当你给你的直升机更新固件版本，做首飞的调试和校准时，免费有开源的 :ref:`Mission Planner <planner:home>`
+是你需要的。它装载电脑上，也可以用来做任务规划。
 
 .. image:: ../../../images/groundstation-with-MP.jpg
     :target: ../_images/groundstation-with-MP.jpg
 
-Once your Copter is configured, you may find it more convenient to
-choose a different ground station - running on the tablet, phone or
-computer of your choice. The main options are discussed in the topic
-:ref:`Choosing a Ground Station <common-choosing-a-ground-station>`.
+你的直升机配置好以后，你可能尝试不同的地面站，看看哪个更适合自己-运行在平板上、手机上还是电脑上。常见的可选地面站可以在话题
+:ref:`地面站的选择 <common-choosing-a-ground-station>` 中找到。
 
-Telemetry Radio
+无线电遥测
 ===============
 
-A telemetry radio allows your Copter to communicate with your ground
-station from the air using the MAVLink protocol. This allows you to
-interact with your missions in real time and receive streaming data from
-your copter's cameras and other components. This adds considerable
-convenience to your missions!
+无线电遥测可以帮助你的直升机与你的地面站通信。可以实时地更新任务，接收你直升机上的摄像头或者其它组件的数据流。为你的飞行任务提供了极大的便利。
 
-We recommend the telemetry radio solutions linked from the 
-:ref:`Telemetry Landing Page <common-telemetry-landingpage>`. Remember that if using
-the :ref:`SIK Radio <common-sik-telemetry-radio>` you will need the version
-at the permitted frequency for your country - 915 MHz (Americas) and 433
-MHz (Europe).
+你可以从
+:ref:`遥测登录页 <common-telemetry-landingpage>` 找到我们建议的无线电遥测解决方案。 切记，如果使用
+:ref:`SIK Radio <common-sik-telemetry-radio>` ，你需要选择你的国家许可的频率的版本 - 915 MHz (美国)， 433
+MHz (欧洲).
 
 .. image:: ../../../images/Telemetry_store.jpg
     :target: ../_images/Telemetry_store.jpg
