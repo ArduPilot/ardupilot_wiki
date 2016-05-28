@@ -1,25 +1,20 @@
 .. _ac2_positionmode:
 
 =============
-Position Mode
+位置模式
 =============
 
-**Position mode** is the same as loiter mode, but with manual throttle
-control. This means that, in position mode, the copter maintains a
-consistent location and heading, while allowing the operator to control
-the throttle manually.
+**位置模式** 和悬停模式一样，但是带有手动油门控制装置。 这就是说在位置模式下，直升机保持一致的位置和航向，同时允许操作员手动控制油门。
 
 .. warning::
 
-   This mode is not available in AC3.2 and higher.
+ 此模式不适用于AC3.2和更高版本。
 
 .. image:: ../images/position.jpg
     :target: ../_images/position.jpg
 
-Position mode is GPS dependent, so it is important to ensure that GPS is
-locked before arming the copter when using this mode. GPS lock is
-indicated by the following LED states:
+位置模式依赖于GPS，所以在使用这种模式时预位直升机之前要确保GPS已锁定，这点非常重要。GPS锁定由以下LED状态指示 ：
 
--  Blue LED on APM is solid.
--  Blue LED on GPS module is solid.
--  Blue LED on GPS+Compass module is blinking.
+-  APM上的蓝光LED是常亮的。
+-  GPS组件上的蓝光LED是常亮的。
+-  GPS+Compass组件上的蓝光LED是闪烁的。
