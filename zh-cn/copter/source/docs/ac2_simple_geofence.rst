@@ -1,98 +1,62 @@
 .. _ac2_simple_geofence:
 
 ===============
-Simple GeoFence
+简单电子栅栏
 ===============
 
-Overview
+ 概述
 ========
 
-AC 3.0.1 (and higher) includes a simple "tin can" shaped fence centered
-on home that will attempt to stop your copter from flying too far away
-by initiating an RTL.  The maximum circular distance and altitude and
-the vehicle behaviour when the fence is reached can be configured using
-Mission Planner.
+AC 3.0.1 (和更高版本)以起点为中心有一个简单的 "锡罐" 形状栅栏，通过启动RTL来试图阻止直升机飞太远。使用Mission Planner可设置圆形距离和高度的最大值以及当接近栅栏边缘时载具的行为。
 
 .. image:: ../images/copter_simple_tincan_geofence.jpg
     :target: ../_images/copter_simple_tincan_geofence.jpg
 
-If the vehicle strays outside these borders it will switch into RTL or
-LAND.  At the moment the fence is breached a backup fence is erected 20m
-further out (or up).  If the copter breaches this backup fence (for
-example if the the vehicle is not set up correctly or the operator takes
-control but is unable to bring the copter back towards home) the copter
-will be switched into RTL again (and another backup fence an additional
-20m further out will be created).
+如果载具飞出这些边缘它将切换到RTL或者LAND。此时栅栏被冲破，会建立一个向外（或向上）延伸20M的备用栅栏。如果直升机突破这个备用栅栏（例如：如果载具没有正确设置或操作者采取控制却不能恢复直升机朝起始点飞行）直升机将被重新切换到RTL（将会建立另一个向外多增加20M的备用栅栏）
 
-If the copter eventually flies 100m outside the configured fence
-distance, the vehicle will switch into LAND mode.  The idea being that
-it's clearly impossible to get the copter home so best to just bring it
-down.  The pilot can still retake control of course with the flight mode
-switches.  Like with the earlier fences, another fence is erected 20m
-out which will again switch the copter to LAND if it continues away from
-home.
+如果直升机最后飞出配置栅栏100M以外，载具将会切换到LADN模式。他们认为让直升机回到起始点显然是不可能的，最好的办法是让它降落。驾驶员用飞行模式开关可以重新控制飞行路线。像前面的栅栏，再建立一个向外20M的栅栏，如果它突破这个栅栏继续远离起始点，直升机将更次切换到LAND模式。
 
-Enabling the Fence in Mission Planner
+使用Mission Planner激活栅栏
 =====================================
 
 .. image:: ../images/Fence_MPSetup.png
     :target: ../_images/Fence_MPSetup.png
 
-The Fence can be set-up by doing the following:
+采取以下步骤可启用栅栏：
 
--  Connect your APM/PX4 to the Mission Planner
--  Go to the **Software \| GeoFence** screen
--  Click the **Enable** button
--  Leave the "Type" as "Altitude and Circle" (unless you want only an
-   Altitude limit or only a Circular fence in which case you can select
-   "Altitude" or "Circle")
--  Leave the Action as "RTL or Land"
--  Set "Max Alt" to the altitude limit you want (in meters)
--  Set "Max Radius" to the maximum distance from home you want (in
-   meters).  This should normally be at least 50m
+-  连接 APM/PX4 至Mission Planner
+-  进到入 **Software \| GeoFence** 界面
+-  点击 **Enable** 按钮
+-  在 "Type"下选 "Altitude and Circle" (除非你只需一个高度限制或者一个圆形栅栏，这种情况下选择 
+   "Altitude" 或 "Circle")
+-  在Action下选 "RTL or Land"
+-  在 "Max Alt" 下设置你的高度界限(单位米)
+-  在 "Max Radius"下设置离起始点的最远距离(单位米)。一般至少50M 
 
-Enabling the fence with Channel 7 or 8
+使用通道7或8可启用栅栏
 ======================================
 
-It is not necessary to set-up a switch to enable or disable the fence
-but if you wish to control the fence with a switch please follow these
-steps:
+没必要安装一个开关启用或禁用栅栏，但如果你想使用开关来控制栅栏，请根据以下步骤安装：
 
--  Go to the Mission Planner's Software > Copter Pids screen and set
-   either "Ch7 Opt" OR "Ch8 Opt" to Fence.
--  holding the switch high (i.e. PWM > 1800) will enable the fence, low
-   (under 1800) will disable the fence.
+-  打开Mission Planner软件 > 进入Copter Pids界面，然后把"Ch7 Opt"或"Ch8 Opt"设置成Fence。
+-  保持交换器高（如PWM > 1800）启用栅栏，低（1800以下）禁用栅栏。
 
 .. image:: ../images/Fence_MPCh78.png
     :target: ../_images/Fence_MPCh78.png
 
-Warnings:
+警告:
 =========
 
--  The minimum recommended fence radius is 30m
--  The fence requires the GPS to be functioning well so do not disable
-   the :ref:`GPS arming check <prearm_safety_check>` nor the :ref:`EKF failsafe <ekf-inav-failsafe>` while the fence is enabled. 
-   Conversely if you disable either of these checks, disable the Fence.
--  For the best results, ensure RTL is working on your vehicle.
--  With the Fence enabled, the pre-arm checks will require you have GPS
-   lock before arming the vehicle.
--  If GPS failsafe is not enabled and the Fence is enabled and you loose
-   GPS lock while flying the fence will be disabled.
--  If GPS failsafe is enabled and the Fence is enabled and you lose GPS
-   lock while flying the vehicle will switch to LAND because we no
-   longer know the vehicle position and we want to ensure the copter
-   never travels far outside the fence.  This beahviour will occur
-   regardless of the flight mode.  If a LAND sequence is not desired,
-   the pilot can retake control by moving the flight mode switch.
--  The backup fences are created 20m out from the previous breached
-   fence not 20m out from the vehicle's position.  This means if you
-   choose to override the fence you may have less than 20m to regain
-   vehicle control before the fence switches the copter to RTL (or LAND)
-   again.  If you really want to override the fence, you should be ready
-   to switch the flight mode twice or alternatively set-up the
-   enable/disable fence switch.
+-  栅栏半径最小值推荐为30M。
+-  栅栏需要GPS运行良好，当启用栅栏时不要禁用:ref:`GPS arming check <prearm_safety_check>` 和 :ref:`EKF failsafe <ekf-inav-failsafe>`。 
+   反之，如果你禁用其中一个，就会禁用栅栏。
+-  为了达到最佳效果，请确保载具上的RTL正常工作。
+-  随着栅栏启用，预解锁检查要求在解锁载具之前GPS锁定。
+-  如果在启用栅栏时GPS故障保护没有启用，在飞行时GPS锁定松动，栅栏将会禁用。
+-  如果在启用栅栏时GPS故障保护已启用，在飞行时GPS锁定松动，因为我们不再知道载具的位置，要确保直升机不会飞离栅栏太远，载具会切换到LAND模式。不管飞行模式是哪咱这种运行情况都会出现。如果不期望LAND模式的续发事件，飞行员可以通过活动飞行开关来重新控制。
+-  备用栅栏是基于前一个被突破的栅栏向外20M而建立的，而不是从载具位置向外20M建立。这意味着如果你选择越过栅栏，在栅栏重新切换直升机到RTL(或LAND)前，恢复载具控制距离少于20M。如果真的要越过栅栏，你应该准备好切换飞行模式两次或者选择建立启用/禁用栅栏开关。
 
-Video overview of the Fence setup and Operation
+栅栏设置和操作视频概述
 ===============================================
 
 ..  youtube:: HDnGdo54o-4
