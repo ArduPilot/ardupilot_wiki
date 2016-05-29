@@ -1,158 +1,97 @@
 .. _safety-multicopter:
 
 ==================
-MultiCopter Safety
+多旋翼直升机安全
 ==================
 
 .. warning::
 
-   Your first priority must be the safety of people!
+   你的首要任务是保证人的安全！
 
-#. **Crashes can happen, because of pilot error or hardware or software
-   malfunction.**
-#. **If you are flying anywhere near other people, you are putting them
-   at risk!**
+#. **由于软硬件故障，或者导航信息出现错误，炸机是随时可能发生的。**
+#. **如果你在别人附近飞行，那你就是置别人与危险之中！**
 
-   #. Be sure to maintain safe distances between yourself, and
-      spectators and your copter.
-   #. Circumstances will require that you will need to make your own
-      determination of what is a "safe distance" from people and
-      property.
-   #. At a minimum, consider: at least 10ft (3m) but not further than
-      30ft (10m) from you.
-   #. Keep all other people, property and obstacles considerably further
-      away from your copter.
-   #. Ensure that no one gets between you and your copter.
-   #. Spectators should always be a safe distance behind the pilot.
-   #. If people intrude beyond what you have determined to be the "safe"
-      area, land immediately and do not take off until they are clear.
-   #. At full power, an average sized multi-copter can exceed 20 mph (32
-      km/h), can ascend to hundreds of feet and easily travel more than
-      a mile in distance before running out of battery.
+   #. 确保你的直升机与你自己和周边观众保持足够的安全距离。
+   #. 距离人和财产多远才算是“安全距离”，需要你根据具体情况自己做出判断。
+   #. 至少，可以考虑：距离你自己不少于10ft(3米)，同时也不要大于30ft(10米)。
+   #. 保持你的直升机尽可能远离其他人、财产和障碍物。
+   #. 确保没有人出现在你和你的直升机之间。
+   #. 观众应该始终处于驾驶员后的安全距离之外。
+   #. 如果有人进入了你认为的“安全”区域以内，请立即降落，待人离开后再起飞。
+   #. 在满电状态下，普通大小的多旋翼直升机速度可以超过20 mph（32千米/时），可以爬升到上百米，在电量耗尽前可以轻松飞行几公里远。
 
-#. **If you are flying too high or near airports you are putting manned
-   aircraft and the people on them at risk!**
+#. **如果你飞的太高或者太靠近机场，你就会置载人飞行器和他人与危险之中！**
 
-   #. Get to know where your nearest airports are and do not fly
-      anywhere near them
+   #. 了解离你最近的机场的位置，不要在其附近飞行。
 
-#. **Always ensure the battery cable is NOT connected to the power
-   distribution board or harness until you are ready to fly.**
+#. **在你准备飞行之前，始终确保电源线与配电板或者配电线束之间处于断开状态。**
 
-   #. Always Turn on the transmitter and ensure the throttle stick is
-      all the way down **BEFORE** connecting the battery.
-   #. After landing the first thing you should do is disconnect your
-      battery cable.
-   #. Do not turn off the transmitter until after you have disconnected
-      the battery.
-   #. Always remove your props while you are testing motors, your hands,
-      arms and face and those of your friends will thank you.
-   #. When the battery is connected, always assume the motors are armed;
-      You can check with a short throttle pulse.
-   #. Don't pick up the model and the radio at the same time, you may
-      bump the throttle.
-   #. Do not attempt to fly longer than your batteries safe capacity, it
-      is very bad for the battery and can cause a crash.
+   #. 始终在连接电源线**之前**,记得打开遥控器并把油门拉到最低。
+   #. 降落之后，你所要做的第一件事是断开电源线。
+   #. 确保断开电源之后再关闭遥控器。
+   #. 在做电机测试之前，始终记得去掉螺旋桨。你和你小伙伴们的手和脸都会感激你的。
+   #. 当电源线连接以后，始终假定电机处于解锁（arm）状态，你可以轻推油门加以验证。
+   #. 不要同时拿起航模和遥控器，你有可能会碰到油门。
+   #. 不要尝试飞行时间超过你的电池安全承载能力，这对你的电池伤害极大，还有可能导致炸机。
 
-#. **The APM and PX4 flight controllers we use incorporate a motor
-   arming safety feature.**
+#. **我们在APM和PX4的飞行控制器中集成了一个电机解锁安全功能，**
 
-   #. Immediately prior to flight after the battery has been connected,
-      the RC transmitters throttle stick needs to be held down and to
-      the right for several seconds to arm the motors.
-   #. After landing your first response should be to hold the throttle
-      down and to the left for several seconds to "Disarm" the motors.
-      \* Disarm condition can be tested by moving the throttle stick up,
-      if the motors do not move it is disarmed.
-   #. Even when disarmed, the throttle stick should always be kept in
-      the full down position except when flying.
+   #. 在电池连接之后，即将起飞之前，需要把无线遥控器的油门摇杆拉到右下角保持几秒来解锁电机。
+   #. 降落之后，你的第一个动作应该是吧油门摇杆拉到左下角并保持几秒来“锁定”电机。
+      \* 可以通过向上轻推油门测试锁定状态。如果电机不转，说明处于锁定状态。
+   #. 除了飞行过程中，即使处于锁定状态，也要始终保持油门摇杆处于最低位置。
 
-#. **Get used to switching back to Stabilize mode from other modes and
-   reassuming full manual control.**
+#. **要习惯于从其他模式切换回稳定模式，进而假定会切换到全手动控制。**
 
-   #. This is the single most important recovery technique (practice
-      it).
-   #. Stabilize mode can have Simple mode added to it, but if you do you
-      should then practice with it till you are proficient.
-   #. Do not start using any other modes than Stabilize or Stabilize
-      plus Simple until you are VERY comfortable flying your copter.
+   #. 这是最重要的，也是唯一的恢复技巧（多多练习）。
+   #. 稳定模式上可以叠加简单模式，但如果你想这样做你应该练习到你熟悉以后再尝试。
+   #. 在你非常适应你的直升机之前，请不要尝试稳定模式和稳定+简单模式外的任何模式。
 
-#. **It is very important to have excess power available.**
+#. ** 预留冗余推力非常重要。**
 
-   #. If you have insufficient power, the automatic controls can require
-      more throttle than is available and destabilization may result.
-   #. Ideally your copter should be able to hover at about 50% throttle
-      (mid stick).
+   #. 如果推力不足，当自动控制的需求超过油门极值，就可能会导致不稳定。
+   #. 理想状态下，当加到50%油门（摇杆中点），你的直升机应该可以悬停。
 
-#. **Especially while you are learning, it is recommended that you avoid
-   expensive, stiff, ultra-sharp carbon fiber props.**
+#. **建议你不要用贵的、坚硬的、极其锋利的碳纤维桨，尤其当你还在学习中。**
 
-   #. Get cheaper, more flexible and more breakable plastic propellers.
-   #. Some of the super carbon fiber ones can cut better than a Ginsu
-      and while they are almost indestructible - You are not.
+   #. 建议使用便宜的、更灵活更易碎的塑料桨。
+   #. 一些超级碳纤维桨比武士刀还锋利，几乎是无坚不摧的 - 你不是。
 
-#. **Important primary response to a crash, inadequate landing or
-   unknown flight controller state.**
+#. **炸机、未完全降落或者未知的飞行控制情形下的重要应对措施。**
 
-   #. The first thing to do is throw a towel over your copters
-      propellers (Propellers may start spinning unexpectedly).
-   #. Then immediately disconnect the battery.
-   #. A large towel is your most important piece of safety equipment
-      followed by a fire extinguisher and a first aid kit.
-   #. Generally better to use the first one than the last one.
+   #. 要做的第一件事情是扔条毛巾到你的直升机螺旋桨上（螺旋桨可能会出乎预料的乱转）。
+   #. 然后立即断开电池连接。
+   #. 除了灭火器和急救箱，一个大的毛巾是你非常重要的安全装备。
+   #. 通常，首先使用毛巾好过另两种选择。
 
-#. **When testing or flying any of the (waypoint) navigation modes
-   (using GPS):**
+#. **在测试或者飞行任何导航模式时（使用GPS）：**
 
-   #. Ensure that your GPS has "Lock" before arming and takeoff.
-   #. Check that your home position on the Mission Planner is in fact
-      correct.
-   #. If the GPS does not accurately report your home position, reboot
-      and wait for 8 or more satellites (not just 3D lock) and check
-      again.
+   #. 在解锁起飞之前，确保你的GPS已经“定位”。
+   #. 检查你的起始位置和任务计划确实准确无误。
+   #. 如果GPS没有精确报告你的起始位置，重启然后等待搜到8颗星以上（不仅仅是3D定位）再次检查。
 
-#. **Always follow the law:**
+#. **始终遵纪守法**
 
-   #. Our personal use of MultiCopters (models in general) is
-      continually under attack by those who fear 'drones' and invasion
-      of privacy.  If you break the law, or invade someone's privacy, or
-      put them in harm's way, you threaten the future of our personal
-      use of models. Please, understand the law and the rights of others
-      - and fly accordingly.
-   #. Most countries have a prominent model aircraft organization. In
-      the USA that is the\ `AMA <http://www.modelaircraft.org/>`__.
-      Review the AMA `safety code <http://www.modelaircraft.org/files/105.pdf>`__. Working with
-      the FAA and other government organizations, the AMA has
-      established (and continues to update) `rules for UAV's and for FPV flight <http://www.modelaircraft.org/documents.aspx#FPV>`__. If
-      you are in the USA (or not), read these documents! The AMA has a
-      strong lobbying group that will help protect our rights. Get
-      involved and support your country's model aircraft organizations -
-      and help protect our right to fly.
+   #. 我们对于多旋翼直升机（一般的航模）的个人使用持续受到害怕‘无人机’和隐私保护人士的攻击。如果你违反法律，或者侵犯别人隐私，或者可能对他人造成伤害，你就威胁到了我们未来为航模的个人使用。所以，请了解相关法律并了解别人的相关权利 - 然后有依据的飞行。
+   #. 很多国家都有知名的航模组织。在美国就是\ `AMA <http://www.modelaircraft.org/>`__.
+      阅读AMA的 `安全准则 <http://www.modelaircraft.org/files/105.pdf>`__. 通过与FAA和其他政府组织的合作，AMA已经完成了（持续更新中） `无人机和第一视角飞行条例 <http://www.modelaircraft.org/documents.aspx#FPV>`__. 如果你在美国（或者不在），请阅读该文档！AMA是一个强大的游说集团，可以帮助我们保护我们的权利。加入或者支持你们国家的航模组织 - 保护我们飞行的权利.
 
 .. warning::
 
-   Most important: Keep a safe distance between your Copter and
-   People!
+   重要提示: 让你的直升机与人们保持安全距离！
 
 .. tip::
 
-   These tips can also help protect your multicopter from
-   damage.
+   这些提示也可以帮助保护你的多旋翼直升机远离损毁。
 
-#. **Avoid sudden or extreme transmitter control stick deflections.**
+#. **避免突然或者遥控器控制摇杆变位**
 
-   #. Move the control sticks in small measured increments and don't
-      "yank" on them.
-   #. If the copter is properly calibrated and balanced it should
-      require only small stick inputs to control altitude, direction and
-      speed.
+   #. 小刻度的移动控制摇杆，不要“猛拉”。
+   #. 如果直升机已经适合的校正平衡过，那么它只需要很小的摇杆输入就可以控制高度、方向和速度了。
 
-#. **Your copter should be more or less stable on the horizontal plane
-   without any control inputs.**
+#. **你的直升机在没有控制输入时，应该或多或少的稳定在同一个水平线上。**
 
-   #. If you are "fighting" the copter, land and fix it - something is
-      not right - Hardware adjustment or software calibration may be
-      required.
+   #. 如果你正在和你的直升机“搏斗”，那么请降落并把问题解决掉 - 一定有某些地方不对 - 需要硬件调校或者是软件校准
 
 #. **Be especially careful of large throttle inputs, as a copter can
    gain (or lose) altitude very rapidly.**
