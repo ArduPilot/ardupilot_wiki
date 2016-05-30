@@ -47,7 +47,7 @@
    #. 稳定模式上可以叠加简单模式，但如果你想这样做你应该练习到你熟悉以后再尝试。
    #. 在你非常适应你的直升机之前，请不要尝试稳定模式和稳定+简单模式外的任何模式。
 
-#. ** 预留冗余推力非常重要。**
+#. **预留冗余推力非常重要。**
 
    #. 如果推力不足，当自动控制的需求超过油门极值，就可能会导致不稳定。
    #. 理想状态下，当加到50%油门（摇杆中点），你的直升机应该可以悬停。
@@ -93,102 +93,65 @@
 
    #. 如果你正在和你的直升机“搏斗”，那么请降落并把问题解决掉 - 一定有某些地方不对 - 需要硬件调校或者是软件校准
 
-#. **Be especially careful of large throttle inputs, as a copter can
-   gain (or lose) altitude very rapidly.**
-#. **Because MultiCopters are symmetrical it is especially easy to lose
-   Visual Orientation.**
+#. **在大油门输入的时候要非常小心，直升机可能会快速的爬升（或者下降）。**
+#. **由于多旋翼都是对称的，所以飞行容易失去视觉定向。**
 
-   #. For manual flight modes, maintaining a clear vision of the Copters
-      Orientation (direction it is facing) is the most critical part of
-      successful flight.
-   #. Especially while learning it is very important to keep your copter
-      appropriately close to you to aid in maintaining visual
-      orientation.
-   #. Generally: more than 10ft (3m) but not further than 30ft (10m)
-      from you.
-   #. If the copter gets further than about 100ft (30m) it starts
-      getting difficult to be able to maintain **orientation** and can
-      easily crash.
-   #. If you lose Yaw orientation while flying in Stabilize mode, try
-      only flying forward and using yaw to steer like a car.
-   #. It is much better to simply descend and land rather than have an
-      **orientation-induced** crash or worse still - a **fly away**.
-   #. Fly-Aways often happen when the copter is commanded to tilt back
-      towards the pilot but has rotated in the meantime and is so far
-      away that orientation is lost.
-   #. Result: the copter flies further away and crashes or is lost.
+   #. 在手动模式飞行时，清晰的判断直升机的定向（正面的方向）是成功飞行的重要因素。
+   #. 让你的直升机与你保持适当的距离是非常重要的，尤其是学习阶段，有助于你维护视觉定向。
+   #. 通常，不少于10ft（3米）但不要超过30ft(10米)是合适的距离。
+   #. 当直升机距离你超过100ft（30米）以后，维护其**方向**就会非常困难，非常容易炸机。
+   #. 当你使用稳定模式飞行时迷失了方向，你可以尝试直着向前飞，然后使用偏航（Yaw）进行驾驶，就像在地面上驾驶汽车一样。
+   #. 当无法确定方向时，相对于**定向导致**的炸机或者更坏的情形 - **飞丢**，更好的选择是简单的下降然后降落。
+   #. 当驾驶员指挥直升机飞回来的时候发生了旋转，由于离得太远迷失了方向，这种情况下经常会飞丢。
+   #. 后果：直升机飞得太远，导致炸机或者飞丢。
 
-#. **Always have Stabilize mode as the (Go To) one of your mode switch
-   options.**
-#. **High or unexpected winds or gusts can make flight considerably more
-   difficult.**
+#. **始终设置稳定模式为快速切换模式中的一个。**
+#. **意想不到的风或者大风，或者不速之客会使得飞行非常困难**
 
-   #. High winds can prevent forward progress or spin the copter around
-      causing you to become disoriented.
-   #. The higher you are, the more likely high winds will be a problem.
-   #. Switching to Stabilize mode and landing before you reach your
-      skill limits can help you save your copter.
-   #. Avoid flying at high speed or high altitude until you have gained
-      considerable confidence in both manual and automatic modes.
-   #. When flying around trees or buildings it is very easy to lose
-      visual orientation or even to lose sight of the copter completely.
-   #. Gusting winds around objects can also worsen the problem.
-   #. Radio signal loss can also occur.
-   #. If your copter is approaching a potentially interfering object,
-      immediately switch to stabilize mode and land or retrieve the
-      copter to your location.
+   #. 大风会阻碍向前飞行，导致直升机旋转，从而使你分不清方向。
+   #. 飞得越高，大风的影响会越大。
+   #. 在达到你能力极限之前切换到稳定模式然后降落，可以帮助你保护你的直升机。
+   #. 在你获得相当大的自信心之前，避免飞行太快或者太高，不管是手动模式还是自动模式。
+   #. 在树或者建筑物附件飞行的时候，非常容易迷失视觉定向，甚至完全看不到你的直升机了。
+   #. 大型物体周五的强风也是非常糟糕的问题。
+   #. 也可能会发生遥控器信号丢失。
+   #. 如果你的直升机靠近某个潜在的干扰对象，立即切换到稳定模式然后降落，或者迅速让你的直升机返回。
 
-#. **ArduPilot specific safety modes: RTL, FailSafe and GeoFence.**
+#. **ArduPilot 特定的安全模式: 回到出发点（RTL）, 故障安全（FailSafe）和地理围栏（GeoFence）。**
 
-   #. RTL can provide a safe **Return to Launch** if it starts to get
-      away from you.
-   #. Set up a\ ** FailSafe** on Radio Fail with an RTL or Descend
-      response to save your Copter and prevent Injury.
-   #. **GeoFence** establishes an automatic flying perimeter that will
-      force your copter to stay in a safe proximity.
-   #. Do not rely solely on the above safety modes, always be ready to
-      take back control in stabilize and set the copter down.
-   #. Especially do not rely on the above safety modes to perform
-      maneuvers or training that you would otherwise consider dangerous.
-   #. These modes are a supplement to, not a replacement for sound
-      safety practices.
+   #. RTL 在其远离你的时候，提供了一种安全的**回到出发点**的方式。
+   #. 设置为当无线遥控故障时回到出发点或者下降的**故障安全**可以使你的直升机避免伤害。
+   #. **地理围栏** 建立一个自动飞行边界，保持你的直升机待在安全范围之内。
+   #. 请不要完全依赖上述的安全模式，时刻准备着切换回稳定模式并让你的直升机降落。
+   #. 尤其不要依赖上述安全模式进行演习或者训练，否则你就要考虑风险。
+   #. 这些模式都只是补充，不是良好的安全实践的代替。
 
-#. **On your first takeoff after tuning or hardware setup:**
+#. **在你硬件设置或者调校之后开始首飞时：**
 
-   #. In stabilize mode advance the throttle very slowly until the
-      copter is almost hovering.
-   #. If the copter is trying to flip over turn it off and correct the
-      problem.
-   #. A motor could be turning the wrong direction.
-   #. Or a wrong direction prop could be installed.
-   #. If it tries to rotate on it's axis or fly off in some direction.
-   #. The transmitter or RC setup in Mission Planner may be incorrect.
-   #. A motor or ESC may not be performing properly.
-   #. The wrong props may be on the wrong motors.
-   #. When all problems are fixed it should be fairly easy to get the
-      copter to hover a foot or 2 above the ground.
-   #. If a stable and stationary hover a foot or 2 above the ground
-      cannot be achieved, land and fix the problem until it can.
+   #. 切换到稳定模式，慢慢的推油门，直到直升机处于悬停状态。
+   #. 如果直升机发生旋转，那么把它关掉并解决这个问题。
+   #. 电机有可能会被设置为错误的旋转方向。
+   #. 或者螺旋桨有可能会被装反。
+   #. 看它是否会在某个轴向上旋转或者总是往某个方向飞。
+   #. Mission Planner里面对遥控器的设置可能是错误的。
+   #. 某个电机或者电调可能完全没有工作。
+   #. 错误的桨可能装在了错误的电机上。
+   #. 如果所有的问题都解决了，那么该直升机应该可以轻易的悬停在离地1到2英尺的高度上。
+   #. 如果不能到达稳定的甚至静止的悬停在1到2英尺的高度上，那就降落，找问题并解决掉，直到它可以。
 
-#. **When flying FPV "First Person View" (with a video camera), Have
-   your modes set to: STABILIZE, SIMPLE, and RTL.**
+#. **当以FPV "第一人称视角" (通过摄像头)飞行时，你把你的模式设置为：稳定（STABILIZE），简单（SIMPLE）或者回到出发点（RTL）了吗。**
 
-   #. Ensure RTL is working properly before using FPV.
-   #. Use Stabilize mode to fly FPV.
-   #. If you lose your FPV video, you can switch to Simple or RTL to get
-      back.
+   #. 在使用第一人称视角模式之前，确保回到出发点模式是可以正常工作的。
+   #. 用第一人称视角时请用稳定模式飞行。
+   #. 如果你的第一人称视角画面丢失，你可以切换到简单模式或者是回到出发点模式返回。
 
-#. **Make sure your battery can't fall out.**
+#. **保证你的电池不会掉下来。**
 
-   #. Use a Velcro Strap to hold it in place.
-   #. You can also use adhesive backed velcro under the battery.
+   #. 用尼龙扎带把它固定好。
+   #. 你也可以使用有粘合剂的魔术贴固定。
 
 .. note::
 
-   Get a Printable PDF Safety
-   Sheet: \ `MultiCopter_Safety <http://download.ardupilot.org/downloads/wiki/pdf_guides/MultiCopter_Safety.pdf>`__\ 
+   获取可打印的PDF版安全手册\ `多旋翼直升机安全 <http://download.ardupilot.org/downloads/wiki/pdf_guides/MultiCopter_Safety.pdf>`__\ 
 
-The \ `Copter Forum <http://ardupilot.com/forum/viewforum.php?f=3>`__ permits the
-developers to respond to your questions and enables you to research
-similar issues, Please choose the sub-forum that is most appropriate to
-the wiki page and issues you are having.
+`Copter 论坛 <http://ardupilot.com/forum/viewforum.php?f=3>`__ 有开发人员相应你的问题，你也可以搜索相似的问题。请选择与文档或者你的问题相关的分论坛进行提问。
