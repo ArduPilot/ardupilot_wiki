@@ -26,7 +26,7 @@ ground station to command a mode change.
    continue to supply lift and stability until you have reached the
    :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>` airspeed (or airspeed estimate if no airspeed sensor).
 -  Once that airspeed is reached the quad motors will slowly drop in
-   power over Q_TRANSITION_MS milliseconds (default is 5000, so 5
+   power over :ref:`Q_TRANSITION_MS <Q_TRANSITION_MS>` milliseconds (default is 5000, so 5
    seconds) and will switch off after that
 
 If you transition from a fixed wing mode to a QuadPlane mode then the
@@ -35,9 +35,9 @@ continue to provide stability while the plane slows down. This allows
 for transitions to QuadPlane modes while flying at high speed.
 
 The one exception to the forward motor stopping in QuadPlane VTOL
-modes is if you have the Q\_VFWD_GAIN parameter set to a non-zero
+modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non-zero
 value. In that case the forward motor will be used to hold the
-aircraft level in a wind. See the description of Q\_VFWD_GAIN in
+aircraft level in a wind. See the description of :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` in
 :ref:`QuadPlane Parameters <quadplane-parameters>` for more detail.
 
 .. note::
@@ -56,18 +56,19 @@ Assisted fixed-wing flight
 
 The QuadPlane code can also be configured to provide assistance to the
 fixed wing code in any flight mode except :ref:`MANUAL <manual-mode>`. To
-enable quad assistance you should set Q_ASSIST_SPEED parameter to the
+enable quad assistance you should set :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` parameter to the
 airspeed below which you want assistance.
 
-When Q_ASSIST_SPEED is non-zero then the quad motors will assist with
+When :ref:`Q_ASSIST_SPEED < is non-zero then the quad motors will assist with
 both stability and lift whenever the airspeed drops below that
 threshold. This can be used to allow flying at very low speeds in
 :ref:`FBWA <fbwa-mode>` mode for example, or for assisted automatic fixed
 wing takeoffs.
 
-It is suggested that you do initial flights with ``Q_ASSIST_SPEED=0``
+It is suggested that you do initial flights with
+:ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` set to zero
 just to test the basic functionality and tune the airframe. Then try
-with Q_ASSIST_SPEED above plane stall speed if you want that
+with :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` above plane stall speed if you want that
 functionality.
 
 What assistance the quad motors provides depends on the fixed wing
@@ -96,7 +97,7 @@ The specific handling is:
 -  In :ref:`AUTOTUNE <autotune-mode>` mode the quad will provide the same
    assistance as in :ref:`FBWA <fbwa-mode>`, but it is not a good idea to
    use :ref:`AUTOTUNE <autotune-mode>` mode with a high value of
-   Q_ASSIST_SPEED as the quad assistance will interfere with the
+   :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` as the quad assistance will interfere with the
    learning of the fixed wing gains.
 -  In :ref:`MANUAL <manual-mode>`, :ref:`ACRO <acro-mode>` and
    :ref:`TRAINING <training-mode>` modes the quad motors will completely
@@ -105,6 +106,81 @@ The specific handling is:
 -  In :ref:`STABILIZE <stabilize-mode>` mode the quad motors will try to
    provide lift if assistance is turned on.
 
+Return to Launch (RTL)
+======================
+
+When flying a quadplane you have a choice of several methods of
+handling return to launch. The choices are:
+
+- circle about the return point as a fixed wing
+- fly as a VTOL aircraft to the return point then land vertically
+- fly as a fixed wing aircraft until close to the return point then switch to
+  VTOL and land vertically
+
+In each case a key concept is the return point. This is defined as the
+closest rally point, or if a rally point is not defined then the home
+location. See the :ref:`Rally Points <common-rally-points>` page for
+more information on rally points.
+
+Fixed Wing RTL
+--------------
+
+The default behaviour of the RTL mode is the same as for fixed
+wing. It will fly to the nearest rally point (or home if not rally
+point is defined) and circle as a fixed wing aircraft about that
+point. The VTOL motors will not be used unless the aircraft drops below
+the airspeed defined in :ref:`Q_ASSIST_SPEED. <Q_ASSIST_SPEED.>` The altitude the aircraft
+will circle at will be the altitude in the rally point, or the
+ALT_HOLD_RTL altitude if a rally point is not being used.
+
+VTOL RTL (QRTL)
+---------------
+
+If you prefer to do return to launch as a VTOL aircraft (like a
+multirotor would do) then you can use the QRTL flight mode. That
+flight mode will transition to VTOL flight and then fly at the
+:ref:`Q_WP_SPEED <Q_WP_SPEED>` speed towards the return point, at an altitude of
+:ref:`Q_RTL_ALT <Q_RTL_ALT>`.
+
+Once the return point is reached the aircraft will start a vertical
+descent towards the ground for landing. The initial descent rate is
+set by :ref:`Q_WP_SPEED_DN. <Q_WP_SPEED_DN.>` Once the aircraft reached an altitude of
+:ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>` then the descent rate will
+slow to :ref:`Q_LAND_SPEED <Q_LAND_SPEED>` for
+the final landing phase.
+
+In the final landing phase the aircraft will detect landing by looking
+for when the VTOL motor throttle drops below a minimum threshold for 5
+seconds. When that happens the aircraft will disarm and the VTOL
+motors will stop.
+
+Hybrid RTL
+----------
+
+The final option for RTL in a QuadPlane is to fly as a fixed wing
+aircraft until it is close to the return point at which time it
+switches to a VTOL RTL as described above. To enable this type of
+hybrid RTL mode you need to set the :ref:`Q_RTL_MODE <Q_RTL_MODE>` parameter to 1.
+
+The initial altitude that will be aimed for in the fixed wing portion
+of the hybrid RTL is the same as for a fixed wing RTL. You should set
+your rally point altitude and ALT\_HOLD_RTL options appropriately to
+ensure that the aircraft arrives at a reasonable altitude for a
+vertical landing. A landing approach altitude of about 15 meters is
+good for many QuadPlanes. This should be greater than or equal to the
+:ref:`Q_RTL_ALT <Q_RTL_ALT>` values.
+
+The distance from the return point at which the aircraft switches from
+fixed wing to VTOL flight is set using the RTL_RADIUS parameter, or
+if that is not set then the WP_LOITER_RAD parameter is used. The
+aircraft will then slow down as it approaches the return point, aiming
+for an altitude set by :ref:`Q_RTL_ALT <Q_RTL_ALT>`.
+
+Once the return point is reached the aircraft begins to descend and
+land, exactly as described in the VTOL RTL mode above.
+
+
+   
 Autonomous flight
 =================
 
@@ -118,7 +194,7 @@ parameter 1 equal to 4 to switch back to fixed wing flight.
 
 The smooth transition rules apply to transitions in :ref:`AUTO <auto-mode>`
 mode as they do for other modes, plus quad assistance applies in auto
-fixed-wing mode if Q_ASSIST_SPEED is enabled.
+fixed-wing mode if :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` is enabled.
 
 In addition to DO_VTOL_TRANSITION the QuadPlane code supports two new
 mission commands:
@@ -160,7 +236,7 @@ It will also cause the aircraft to yaw to the right (as the QuadPlane
 code interprets right aileron in fixed wing mode as a commanded turn).
 
 Once the aircraft reaches an airspeed of :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>`
-(or Q_ASSIST_SPEED if that is set and is greater than :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>`)
+(or :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` if that is set and is greater than :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>`)
 the amount of assistance the quad motors provide will decrease over 5
 seconds. After that time the aircraft will be flying purely as a fixed wing.
 
