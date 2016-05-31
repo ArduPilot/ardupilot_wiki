@@ -19,5 +19,6 @@ multicopter aircraft, also known as a "QuadPlane".
     Parameter Setup <quadplane-parameters>
     Flight Modes <quadplane-flight-modes>
     Flying a QuadPlane <quadplane-flying>
+    AUTO Missions <quadplane-auto-mode>
     Simulation <quadplane-simulation>
     
