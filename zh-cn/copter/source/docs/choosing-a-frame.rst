@@ -1,56 +1,52 @@
 .. _choosing-a-frame:
 
 ============================
-Choosing a MultiCopter Frame
+选择多旋翼直升机机架
 ============================
 
-One of the first steps in using Copter is to decide on the frame.  Shown
-above are three options from
-`3DRobotics <http://store.3drobotics.com/>`__ but there are hundreds of
-other choices.  This page will hopefully give some guidance on the
-choices available.
+使用直升机的第一步就是决定使用哪个机架。下面是来自
+`3DRobotics <http://store.3drobotics.com/>`__ 的三个可选项。
+还有数以百计的其它选择。本页希望在可用的选择上给出一些指导。 
 
 .. image:: ../images/ChoseAFrame_Image.jpg
     :target: ../_images/ChoseAFrame_Image.jpg
 
 .. note::
 
-   This section of the wiki is a work-in-progress.
+   本手册的这段内容正在编写中。
 
-Decide what you want it for
+决定你要用它来做什么
 ===========================
 
-Some common uses of multi-copters include:
+一些通用的多旋翼直升机包括:
 
--  Taking :ref:`aerial videos <common-cameras-and-gimbals>`
--  :ref:`FPV (first person view) <common-fpv-first-person-view>`
--  Sport & Social (racing, aerobatics, impressing your friends)
--  More professional uses such as :ref:`3D mapping <common-3d-mapping>`,
-   package delivery, agriculture
--  For research or personal robotics :ref:`development <dev:home>`
+-  拍摄 :ref:`航拍视频 <common-cameras-and-gimbals>`
+-  :ref:`FPV (第一人称视角) <common-fpv-first-person-view>`
+-  体育或者社交 (比赛，特技飞行，拍摄你的朋友)
+-  更多专业的应用，比如： :ref:`三维地图 <common-3d-mapping>`，
+   包裹投递，农业等。
+-  用于研究或者作为个人机器人 :ref:`开发 <dev:home>`
 
-Ready-To-Fly, Kits or Build your Own
+到手即飞（RTF），套件还是自己做
 ====================================
 
-The choice of Ready-to-fly (RTF) vs Build-your-Own mostly comes down to
-how much time you are happy to spend building up your copter and how
-personalised you wish it to be.  With the growing number of low-cost RTF
-copters on the market, there is likely little cost advantage to building
-your own, especially for the smaller copters and if you factor in some
-missteps along the way (like buying the wrong parts).
+选择到手即飞还是自己还是自己做关键看你乐意在搭建你的直升机上花费多少时
+间，还有你想你的直升机多么的定制化。市场上越来越多的低价的到手即飞直升
+机，比起自己做有那么一点点成本优势，尤其是小型直升机以及在搭建中你自己
+的因素导致一些失误（比如买了错误的零件等）。
 
-`Complete Kits like these from 3DR <https://store.3dr.com/t/diyparts>`__ are an intermediate
-step.  They ensure you have all the parts you need, the final result
-will be very close to the RTF but they are slightly cheaper because you
-perform the frame assembly and flight controller configuration yourself.
+`像这些来自于3DR的完整的套件 <https://store.3dr.com/t/diyparts>`__ 是
+可选的中间项。它们可以保证你获得你所需要的所有组件，最终结果会非常接近
+于到手即飞的直升机，但它们要略微便宜一些。因为硬件的组装和飞行控制的配
+置都是由你自己完成的。  
 
-Continued Reading
+继续阅读
 =================
 
-Below are more work-in-progress pages with general information that may
-be useful when selecting or building a frame.
+下面是一些正在编辑中的页面，其中的信息对你选择或者自己搭建机架都是有帮
+助的。
 
--  :ref:`3DR Kits and Best Practices <3dr-kits-and-best-practices>`
--  :ref:`Build your own multicopter <build-your-own-multicopter>`
--  :ref:`Improving the capabilities of your multicopter <improving-the-capabilities-of-your-multicopter>`
--  :ref:`Advanced multicopter design <advanced-multicopter-design>`
+-  :ref:`3DR套件和最佳实践 <3dr-kits-and-best-practices>`
+-  :ref:`搭建你自己的多旋翼直升机 <build-your-own-multicopter>`
+-  :ref:`增强你的直升机功能 <improving-the-capabilities-of-your-multicopter>`
+-  :ref:`先进的多旋翼直升机设计 <advanced-multicopter-design>`
