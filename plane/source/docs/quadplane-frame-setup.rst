@@ -91,3 +91,37 @@ a Pixhawk) you would use these settings in the advanced parameter list:
 -  RC10_FUNCTION = 34
 -  RC11_FUNCTION = 35
 -  RC12_FUNCTION = 36
+
+ESC calibration
+===============
+
+Most models of PWM based ESC need to be calibrated to ensure that all
+the ESCs respond to the same input with the same speed. To calibrate
+them they need to receive maximum PWM input when initially powered on,
+then receive minimum PWM input when they have beeped to indicate that
+the maximum has registered.
+
+The quadplane code doesn't have a dedicated ESC calibration feature yet,
+but you can use the following procedure to calibrate until that is
+available:
+
+#. remove your propellers for safety
+#. power up just the flight board and not your motors. If you don't have
+   the ability to isolate power to the ESCs when on battery power then
+   power up your flight board on USB power
+#. set both the parameters Q_M\_SPIN_ARMED and Q_THR_MID to 1000.
+   This sets the PWM output when armed at zero throttle to full power
+#. set the safety switch off to activate the outputs
+#. arm your aircraft. The PWM output on all quad motors will now climb
+   to maximum.
+#. add power to your ESCs by connecting the battery
+#. wait for the ESCs to beep to indicate they have registered the
+   maximum PWM
+#. disarm your aircraft. The ESCs should beep again indicating they have
+   registered minimum PWM
+
+Now set the Q_M\_SPIN_ARMED and Q_THR_MID parameters back to the
+correct values. A value of 50 for Q_M\_SPIN_ARMED is a reasonable
+starting point. For Q_THR_MID a value of between 500 and 600 is good
+depending on the power of your motors
+
