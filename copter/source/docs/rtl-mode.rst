@@ -89,6 +89,18 @@ Options (User Adjustable Parameters)
    of the RTL.  By default this value is zero.  (only Copter-3.3 and
    above)
 
+-  :ref:`RTL_SPEED <RTL_SPEED>`:
+   The horizontal speed (in cm/s) at which the vehicle will return to
+   home.  By default this value is zero meaning it will use
+   :ref:`WPNAV_SPEED <WPNAV_SPEED>`. (only Copter-3.4 and higher)
+
+-  :ref:`RTL_CONE_SLOPE <RTL_CONE_SLOPE>`:
+   Defines the slope of an inverted cone above home which is used
+   to limit the amount the vehicle climbs when RTL-ing from close
+   to home. Low values lead to a wide cone meaning the vehicle
+   will climb less, High values will lead to the vehicle climbing more.
+   (supported in Copter-3.4 and higher)
+
 Notes
 =====
 
