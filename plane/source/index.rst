@@ -107,7 +107,7 @@ Full Table of Contents
     First Flight <docs/first-flight-landing-page>
     Flight Features <docs/flight-features>
     Advanced Configuration <docs/common-advanced-configuration>
-    QuadPlane Support <docs/quadplane-landing-page>
+    QuadPlane Support <docs/quadplane-support>
     Mission Planning <docs/common-mission-planning>
     Mission Analysis <docs/common-mission-analysis>
     Optional Hardware <docs/common-optional-hardware>
