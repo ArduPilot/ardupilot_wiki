@@ -262,17 +262,14 @@ just one wiki by passing the site name, e.g.: ``python update.py --site copter``
 
 You can check out the built html for each wiki in it's build/html directory (e.g. **/copter/build/html/**).
 
-RST rendering
-=============
+RST editing/previewing
+======================
+
+The tools described in this section can make it easier to edit RST files and reduce the time required to preview changes.
 
 .. note:: 
-
-	The tools discussed in the next section can aid you with the modification of the Wiki's RST files 
-	and see how they will get rendered to HTML. This saves you the time to build the Sphinx pages each 
-	time to check each small modification. It needs to be mentioned though that the rendering is not perfect 
-	(i.e. it does not fully match the end result) as these tools are not aware of Sphinx extensions 
-	(e.g. ``:ref:``). It is advised to build the docs locally (explained in the previous section) 
-	before you make a pull request, to test if your modified document is rendered well by Sphinx.
+    
+    The RST rendering tools can be useful for rapidly previewing small changes in the documentation. Rendering will not be perfect because the tools are designed for generic reStructuredText (they and are not "Sphinx-aware). We therefore recommend that you build with Sphinx to do a final review before you make a documentation pull request. 
 
 RST rendering on Windows
 ------------------------
@@ -311,7 +308,9 @@ RST rendering on Linux
 `ReText <https://github.com/retext-project/retext>`__ is a Linux tool that provides
 syntax highlighting and basic on-the-fly rendering in a single application.
 
-Although the tool is Python based, don't try it on Windows as it very prone to crashes (which is 
+.. note:: 
+
+    Although the tool is Python based, don't try it on Windows as it very prone to crashes (this is 
 also stated by the website).
 
 Wiki Infrastructure
