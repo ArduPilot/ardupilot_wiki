@@ -38,38 +38,22 @@ the vehicle to the ground station.  Perhaps similar to the
 message.
 
 **Step #3:** Add the new message definition to the
-`common.xml <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/common.xml>`__
+`common.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml>`__
 or
-`ardupilotmega.xml <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/message_definitions/ardupilotmega.xml>`__
-file
+`ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml>`__
+file in the mavlink submodule.
 
 If this command will hopefully be added to the MAVLink protocol then it
 should be added to the
-../ardupilot/libraries/GCS_MAVLink/message_definitions/common.xml
+../modules/mavlink/message_definitions/v1.0/common.xml
 file. If it is only for your personal use or only for use with Copter,
 Plane, Rover then it should be added to the ardupilotmega.xml file.
 
-**Step #4:** Regenerate the include files that will allow the new
-message to be recognised in the main code.
-
-First cd to the ardupilot directory and then run this command:
+**Step #4:** Starting in Jan 2016 the source code is automatically generated when you compile the project but before that date you would cd to the ardupilot directory and then run this command to manually generate it.
 
 ``./libraries/GCS_MAVLink/generate.sh``
 
-If the generate completes successfully you should see that some of the
-following files have been updated.
-
-::
-
-    ../libraries/GCS_MAVLink/include/mavlink/v1.0/ardupilotmega/ardupilotmega.h
-    ../libraries/GCS_MAVLink/include/mavlink/v1.0/ardupilotmega/version.h
-    ../libraries/GCS_MAVLink/include/mavlink/v1.0/common/version.h
-
-The version.h files should simply have a date & time updated in the file
-but the ardupilotmega.h should have your new message defined.
-
-**Step #5:** Add functions to the main vehicle code to handle sending or
-receiving the command to/from the ground station.
+**Step #5:** Add functions to the main vehicle code to handle sending or receiving the command to/from the ground station. A compile will be needed (ie. make px4-v2) to generate the mavlink packet code so make sure to do that after editing the xml file. The mavlink generation happens first so it doesn't matter if the project compilation is successful or notdue to other source code changes.
 
 The top level of this code will most likely be in the vehicle's
 `GCS_MAVLink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp>`__
@@ -106,6 +90,5 @@ command (i.e. a trick) the following would be required:
 Email the `drones-discuss email list <https://groups.google.com/forum/#!forum/drones-discuss>`__ and/or
 :ref:`raise a pull request <submitting-patches-back-to-master>`. If
 you raise a pull request it is best to separate the change into at least
-three separate commits. One commit for the changes to the .xml files
-(i.e Step #3), another for the generated files (i.e. Step #4) and then
-one or more commits for the changes to the vehicle code.
+two separate commits. One commit for the changes to the .xml files
+(i.e Step #3) and another for the changes to the vehicle code.
