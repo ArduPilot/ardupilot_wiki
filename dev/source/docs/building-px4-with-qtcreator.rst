@@ -1,19 +1,11 @@
-.. _building-px4-with-make:
+.. _building-px4-with-qtcreator:
 
-============================================================
-Building ArduPilot for Pixhawk/PX4 on Windows with QtCreator
-============================================================
+=====================================================================
+Building ArduPilot for Pixhawk/PX4 on Windows or Linux with QtCreator
+=====================================================================
 
 This article shows how you can set up Qt Creator for editing ArduPilot code
 and building for Pixhawk/PX4 targets on Windows and Linux.
-
-Preconditions for Windows
-=========================
-
-Follow the instructions in :ref:`Building for Pixhawk/PX4 on Windows with Make <building-px4-with-make>` 
-to download the required source code (*ardupilot*, *PX4Firmware* and *PX4NuttX*) and toolchain.
-
-Make sure you have no Cygwin installed, as this can get in the way of the PX4 toolchain.
 
 Preconditions for Linux
 =======================
@@ -21,6 +13,15 @@ Preconditions for Linux
 Follow the instructions in :ref:`Building for Pixhawk/PX4 on Linux with Make 
 <building-px4-for-linux-with-make>` to download the required source code 
 (*ardupilot*, *PX4Firmware* and *PX4NuttX*) and toolchain.
+
+Preconditions for Windows
+=========================
+
+Follow the instructions in :ref:`Pixhawk/PX4 on Windows with Make <building-px4-with-make>` 
+to download the required source code (*ardupilot*, *PX4Firmware* and *PX4NuttX*) and toolchain.
+
+Make sure you have no Cygwin installed (or have it at least out of the environment variables), 
+as this can get in the way of the PX4 toolchain.
 
 Install Qt Creator
 ==================
@@ -69,17 +70,17 @@ Create a project
 
 #. Choose the "Import Project" template and from these templates "Import Existing Project". Then press "Next"
 
-.. image:: ../images/QtCreator_ImportProject.png
+   .. image:: ../images/QtCreator_ImportProject.png
     :target: ../_images/QtCreator_ImportProject.png
 
 #. Enter a project name and choose the location of the ArduPilot Git repository. Then press "Next".
 
-.. image:: ../images/QtCreator_SelectProjectFolder.png
-    :target: ../_images/QtCreator_SelectProjectFolder.png
+   .. image:: ../images/QtCreator_SelectProjectFolder.png
+	:target: ../_images/QtCreator_SelectProjectFolder.png
 	
 #. Qt Creator shows you the files that will be imported into the project. Just press "next" (we will worry about this a bit later)
 
-.. image:: ../images/QtCreator_SelectProjectFiles.png
+   .. image:: ../images/QtCreator_SelectProjectFiles.png
     :target: ../_images/QtCreator_SelectProjectFiles.png
 
 #. The summary of the project settings is shown in the next screen.	It is interesting to see which files are generated:
@@ -88,7 +89,7 @@ Create a project
    
    #. the ".includes" file contains all directories containing header files that might be useful to consult during development   
 
-.. image:: ../images/QtCreator_ProjectMgmt.png
+   .. image:: ../images/QtCreator_ProjectMgmt.png
     :target: ../_images/QtCreator_ProjectMgmt.png
 
 Update the project with Git hooks
@@ -105,44 +106,44 @@ Windows script
 --------------
 Create a file called **generate_ardupilot_project.bat**
 
-	.. code-block:: bash
-   
-		@echo off
-		cd ArduCopter
-		dir *.cpp *.hpp *.ipp *.c *.h /b /s > ..\ArduPilot.files
-		cd ..
-		cd AntennaTracker
-		dir *.cpp *.hpp *.ipp *.c *.h /b /s >> ..\ArduPilot.files
-		cd ..
-		cd ArduPlane
-		dir *.cpp *.hpp *.ipp *.c *.h /b /s >> ..\ArduPilot.files
-		cd ..
-		cd APMRover2
-		dir *.cpp *.hpp *.ipp *.c *.h /b /s >> ..\ArduPilot.files
-		cd ..
-		dir *include* /A:D /s /b > ArduPilot.includes
-		dir *libraries /A:D /s /b >> ArduPilot.includes
+.. code-block:: bash
+
+	@echo off
+	cd ArduCopter
+	dir *.cpp *.hpp *.ipp *.c *.h /b /s > ..\ArduPilot.files
+	cd ..
+	cd AntennaTracker
+	dir *.cpp *.hpp *.ipp *.c *.h /b /s >> ..\ArduPilot.files
+	cd ..
+	cd ArduPlane
+	dir *.cpp *.hpp *.ipp *.c *.h /b /s >> ..\ArduPilot.files
+	cd ..
+	cd APMRover2
+	dir *.cpp *.hpp *.ipp *.c *.h /b /s >> ..\ArduPilot.files
+	cd ..
+	dir *include* /A:D /s /b > ArduPilot.includes
+	dir *libraries /A:D /s /b >> ArduPilot.includes
 		
 Linux script
 ------------
 Create a file called **generate_ardupilot_project.sh**
 
-	.. code-block:: bash
-		
-		cd ArduCopter
-		find . \( -name "*.cpp" -o -name "*.hpp" -o -name "*.ipp" -o -name "*.c" -o -name "*.h" \) > ../ArduPilot.files
-		cd ..
-		cd AntennaTracker
-		find . \( -name "*.cpp" -o -name "*.hpp" -o -name "*.ipp" -o -name "*.c" -o -name "*.h" \) >> ../ArduPilot.files
-		cd ..
-		cd ArduPlane
-		find . \( -name "*.cpp" -o -name "*.hpp" -o -name "*.ipp" -o -name "*.c" -o -name "*.h" \) >> ../ArduPilot.files
-		cd ..
-		cd APMRover2
-		find . \( -name "*.cpp" -o -name "*.hpp" -o -name "*.ipp" -o -name "*.c" -o -name "*.h" \) >> ../ArduPilot.files
-		cd ..
-		find . -type d -name 'include' > ArduPilot.includes
-		find . -type d -name 'libraries' >> ArduPilot.includes
+.. code-block:: bash
+	
+	cd ArduCopter
+	find . \( -name "*.cpp" -o -name "*.hpp" -o -name "*.ipp" -o -name "*.c" -o -name "*.h" \) > ../ArduPilot.files
+	cd ..
+	cd AntennaTracker
+	find . \( -name "*.cpp" -o -name "*.hpp" -o -name "*.ipp" -o -name "*.c" -o -name "*.h" \) >> ../ArduPilot.files
+	cd ..
+	cd ArduPlane
+	find . \( -name "*.cpp" -o -name "*.hpp" -o -name "*.ipp" -o -name "*.c" -o -name "*.h" \) >> ../ArduPilot.files
+	cd ..
+	cd APMRover2
+	find . \( -name "*.cpp" -o -name "*.hpp" -o -name "*.ipp" -o -name "*.c" -o -name "*.h" \) >> ../ArduPilot.files
+	cd ..
+	find . -type d -name 'include' > ArduPilot.includes
+	find . -type d -name 'libraries' >> ArduPilot.includes
 		
 Git hooks
 ---------
@@ -150,46 +151,83 @@ Open a command line interface and browse to the .git/hooks subfolder in the proj
 
 Change the "post-merge" and "post-checkout" files so that they become:
 
-	.. code-block:: bash
-	
-		#!/bin/sh
-		./generate_qt_creator_files.bat
-		exit 0
+.. code-block:: bash
+
+	#!/bin/sh
+	./generate_qt_creator_files.bat
+	exit 0
 	
 Another option is to make symbolic links in between the Git hook files and the generation script. 
 In Linux for example, that is achieved by:
 
-	.. code-block:: bash
+.. code-block:: bash
 
-		ln -s ./generate_ardupilot_project.sh ./.git/hooks/post-merge
-		ln -s ./generate_ardupilot_project.sh ./.git/hooks/post-checkout 	
+	ln -s ./generate_ardupilot_project.sh ./.git/hooks/post-merge
+	ln -s ./generate_ardupilot_project.sh ./.git/hooks/post-checkout 	
 
 Build the project
 =================
 This section discusses how to build the code in Qt Creator.
 
-#. Qt Creator has a ``Projects`` tab at the left, click it
-    Remove all existing Build Steps and Clean Steps
-    Click Add build step, select Custom process step
-        Command: /home/<user>/Projects/ampli_pp/amplibuild.sh
-        Arguments: debug test-debug
-    Click Add clean step, select Custom process step
-        Command: /home/<user>/Projects/ampli_pp/amplibuild.sh
-        Arguments: -c all
-    At the top, at Edit build configuration, select Add, and Clone Selected
-        you can now for example add a build configuration to only build ampli_s3
-        At the build step, modify the Arguments: mod-ampli_s3-test-debug
-        At the top, at Desktop, select Run, and at Run:
-            Executable: test/debug/bin/ampli_s3_unittest
-        You can add multiple run configurations by clicking Add -> Custom executable
+#. Click on ``Projects`` on the left pane and make sure that you are in the 
+   ``Build & Run`` tab page. 	
+
+#. Click ``Manage Kits`` in the topleft corner.
+
+#. First click on the ``Compilers`` tab page and then "Add" on the right hand side of the compilers list.
+   Choose an easily recognisable name for your compiler and make sure the Compiler and Make path are 
+   referring to the executables of the PX4 toolchain (Windows) or the downloaded gcc-arm cross-compiler
+   (Linux). Also choose "GCC" as the Error parser.
+   
+   .. image:: ../images/QtCreator_ManageCompilers.png
+	 :target: ../_images/QtCreator_ManageCompilers.png     
+
+#. Then click on the ``Kits`` tab page. Click ``Add`` on the right hand side.
+
+   Choose an easily recognisable name for your build kit and make sure you fill in the
+   proper compiler (the one you just added) and the debugger inside the PX4 toolchain.
+
+   .. image:: ../images/QtCreator_ManageKits.png
+	  :target: ../_images/QtCreator_ManageKits.png   
+
+#. Click apply.
+
+#. Back on the ``Projects`` page, click ``Add Kit`` and choose the Build Kit you just added.
+
+#. Now you have one "Build Configuration" called "Default". You can make as many Build Configurations
+   as you want, but we'll take the ArduCopter build as an example for now. 
+   Next to ``Edit build configuration``, click on ``Add`` and choose ``Clone Selected`` in the 
+   drop down menu. Pick a name (e.g. "Copter").
+   
+#. Click on the ``Details`` of the ``Build Steps`` and type "px4-v2 -j2" as ``Make arguments``. 
+   Deselect the ``Targets``.
+
+#. Click on the ``Details`` of the ``Clean Steps`` and type "px4-clean" as ``Make arguments``.
+   Deselect the ``Targets``.
+
+   .. image:: ../images/QtCreator_Target_Project_Settings.png
+      :target: ../_images/QtCreator_Target_Project_Settings.png   	
+	
+#. You can make other build configurations for e.g. ArduPlane in the same way. You can quickly switch
+   between "Build Configurations" by clicking the logo just above the ``Run`` icon (the green arrow) on 
+   the left pane. 	
+	
+#. You can now remove the MSVC or standard GCC build kit (click on the down arrow on the kit itself and 
+   choose ``Remove Kit``)
+   
+#. You're now ready to build the code. Click on ``Edit`` in the left pane to edit the code and browse
+   through the project. Click ``Build project-name`` in the ``Build`` menu (or Ctrl+B) to build the code.    
 
 Qt Creator editor settings
 ==========================		
+#. It is handy to set the tab and indentation sizes to be used while editing. Click on the ``Tools`` menu
+   and choose ``Options``. Subsequently, pick the ``Text Editor`` view and then the ``Behaviour`` tab page.
+   You can set the tab policy (e.g. spaces only), the size of a tab and indentations.
 
+#. Other interesting settings can be found in the ``C++`` view in the same ``Options`` dialog. You can define
+   how specific parts of your code will be aligned (e.g. assignments, switch/cases, etc.)
 
-    Tools -> Options -> Text Editor, Behavior tab:
-        Tab policy: Spaces Only
-        Tab size: 8
-        Indent size: 4
-        Align continuation lines: With Spaces
-    If you do not want tooltip balloons on mouseover, you can change the settings in Tools -> Options -> Text Editor, Mouse and Keyboard -> Show help tooltips
+Doxygen
+=======
+You can generate Doxygen documentation templates for classes, (member) functions, etc. by typing ``/**``
+just before their definition.   
