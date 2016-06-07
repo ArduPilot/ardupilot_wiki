@@ -56,7 +56,7 @@ Using the Forward Motor
 In addition to active weathervaning, the QuadPlane code supports using
 the forward motor to hold the pitch level in VTOL flight modes. To
 enable use of the forward motor for position hold you need to set the
-Q_VFWD_GAIN parameter to a non-zero value.
+:ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter to a non-zero value.
 
 The way it works is to look at two factors:
 
