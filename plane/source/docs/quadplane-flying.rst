@@ -37,8 +37,7 @@ for transitions to QuadPlane modes while flying at high speed.
 The one exception to the forward motor stopping in QuadPlane VTOL
 modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non-zero
 value. In that case the forward motor will be used to hold the
-aircraft level in a wind. See the description of :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` in
-:ref:`QuadPlane Parameters <quadplane-parameters>` for more detail.
+aircraft level in a wind. See the description of :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>`.
 
 .. note::
 
@@ -109,7 +108,7 @@ The specific handling is:
 Return to Launch (RTL)
 ======================
 
-When flying a quadplane you have a choice of several methods of
+When flying a QuadPlane you have a choice of several methods of
 handling return to launch. The choices are:
 
 - circle about the return point as a fixed wing
@@ -126,7 +125,7 @@ Fixed Wing RTL
 --------------
 
 The default behaviour of the RTL mode is the same as for fixed
-wing. It will fly to the nearest rally point (or home if not rally
+wing. It will fly to the nearest rally point (or home if no rally
 point is defined) and circle as a fixed wing aircraft about that
 point. The VTOL motors will not be used unless the aircraft drops below
 the airspeed defined in :ref:`Q_ASSIST_SPEED. <Q_ASSIST_SPEED.>` The altitude the aircraft
@@ -144,9 +143,9 @@ flight mode will transition to VTOL flight and then fly at the
 
 Once the return point is reached the aircraft will start a vertical
 descent towards the ground for landing. The initial descent rate is
-set by :ref:`Q_WP_SPEED_DN. <Q_WP_SPEED_DN.>` Once the aircraft reached an altitude of
+set by :ref:`Q_WP_SPEED_DN. <Q_WP_SPEED_DN.>` Once the aircraft reaches an altitude of
 :ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>` then the descent rate will
-slow to :ref:`Q_LAND_SPEED <Q_LAND_SPEED>` for
+change to :ref:`Q_LAND_SPEED <Q_LAND_SPEED>` for
 the final landing phase.
 
 In the final landing phase the aircraft will detect landing by looking
@@ -193,7 +192,7 @@ take your hands off the sticks at zero throttle the aircraft will
 continue to hold the current height and hold itself level. It will drift
 with the wind as it is not doing position hold.
 
-If you advance the throttle stick then the forward motor will start and
+If you advance the throttle stick then the forward motor will throttle-up and
 the aircraft will start to move forward. The quad motors will continue
 to provide both lift and stability while the aircraft is moving slowly.
 You can control the attitude of the aircraft with roll and pitch stick

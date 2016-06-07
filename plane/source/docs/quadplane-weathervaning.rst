@@ -23,7 +23,7 @@ Active Weathervaning
 --------------------
 
 Active weathervaning acts to turn the nose of the aircraft into the
-wind when flying in position controlled VTOL modes. You can enable
+wind when flying in position-controlled VTOL modes. You can enable
 active weathervaning by setting the :ref:`Q_WVANE_GAIN <Q_WVANE_GAIN>`
 parameter to a non-zero value. The default is not to use active
 weathervaning.
