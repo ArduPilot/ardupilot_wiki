@@ -249,23 +249,25 @@ Your GCS must :ref:`provide terrain data <common-terrain-following>` for this to
 Setup in Mission Planner
 ========================
 
-To configure Copter, Plane or Rover to use the LIDAR-Lite, please first
-connect with the Mission Planner and then open the **Config/Tuning \|
-Full Parameter List** page and set: ``RNGFND_TYPE`` to “3" if using an
-APM2, or "4" if using a PX4 or Pixhawk.
+To configure Copter, Plane or Rover to use the LIDAR-Lite:
 
-Set the ``RNGFND_MAX_CM`` parameter to 4000 (40m). This parameter
-represents the maximum distance in centimeters that the LiDAR is
-reliable over — when ignoring “0” distance readings in the driver, a
-value of 4000 should work well in almost all conditions.
+#. Connect with the Mission Planner and open the **Config/Tuning \| Full Parameter List** page. 
 
-``RNGFND_MIN_CM`` should be set to 20cm. Below that distance you will
-still get readings, but they may be inaccurate (the optics can start to
-introduce parallax error if the sensor picks up signal from specular
-reflections rather than directly from a return signal).
+   .. image:: ../../../images/RangeFinder_LIDARLite_MPSetup.png
+       :target: ../_images/RangeFinder_LIDARLite_MPSetup.png
 
-.. image:: ../../../images/RangeFinder_LIDARLite_MPSetup.png
-    :target: ../_images/RangeFinder_LIDARLite_MPSetup.png
+#. Set the ``RNGFND_TYPE`` value based on the flight controller and connection method (PWM or I2C): 
+
+   * ``RNGFND_TYPE=5``: Pixhawk via PWM 
+   * ``RNGFND_TYPE=4``: Pixhawk/PX4 via I2C
+   * ``RNGFND_TYPE=3``: APM2 via I2C
+
+#. Set the ``RNGFND_MAX_CM`` to 4000 (40m). This parameter represents the maximum distance in centimeters that the LiDAR is
+reliable over — when ignoring “0” distance readings in the driver, a value of 4000 should work well in almost all conditions.
+
+#. Set ``RNGFND_MIN_CM`` to 20cm. Below that distance you will still get readings, but they may be inaccurate (the optics can start to
+introduce parallax error if the sensor picks up signal from specular reflections rather than directly from a return signal).
+
 
 Testing the sensor
 ==================
