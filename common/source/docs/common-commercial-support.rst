@@ -420,6 +420,22 @@ support. Aerialrobotics Australia is experienced at working with
 international clients to provide top quality support anywhere in the
 world.
 
+--------------
+
+ArduPilot Initiative
+--------------------------------
+.. image:: ../../../images/AI_logo_small.jpg
+    :target: http://www.ardupilotinitiative.com/
+Email: info@ardupilotinitiative.com
+
+Location: Colorado USA, Australia, Japan
+
+Website: http://www.ardupilotinitiative.com/
+
+The ArduPilot Initiative provides tailored services to professional and commercial users of ArduPilot.  Services cover anything ArduPilot related from troubleshooting logs, adding new features, integrating new sensors/payloads, developing hardware to work with ArduPilot, and tuning assistance.  The ArduPilot Initiative has a deep bench of lead and core developers available to field the right team for your custom needs.
+
+In addition to supporting ArduPilot developers through customer based tasks, ArduPilot Initiative makes a contribution from every task to the ArduPilot.org non-profit.  This provides two ways to keep ArduPilot going strong and improve the community! 
+
 --------------            
 
 .. note::
