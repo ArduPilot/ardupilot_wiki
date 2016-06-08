@@ -31,14 +31,7 @@ Support Providers
 
 Droidika S.A. de C.V.
 ---------------------
-
-Circunvalacion Ote #689
-
-Col. Ciudad Granja
-
-Zapopan, Jal. 45030
-
-Mexico
+Address: Circunvalacion Ote #689, Col. Ciudad Granja, Zapopan, Jal. 45030, Mexico
 
 Contact: Jaime Machuca
 
@@ -59,12 +52,7 @@ Email: jaime@droidika.com
 
 ProfiCNC
 --------
-
-424 Nicholson Street
-
-Black Hill  VIC  3350
-
-Australia
+Address: 424 Nicholson Street, Black Hill  VIC  3350, Australia
 
 Contact: Philip Rowse
 
@@ -211,20 +199,10 @@ Erle Robotics
 - Phone: +34 945 30 68 20
 
 \ **Bilbao Offices, Spain**
-
-Calle Uribitarte 6 2a planta
-
-Bilbao 48001 
-
-Vizcaya, Spain 
+Calle Uribitarte 6 2a planta, Bilbao 48001, Vizcaya, Spain 
 
 **Vitoria Offices, Spain**
-
-Calle Venta de la Estrella, 6 Pab. 130
-
-Vitoria-Gasteiz 01006
-
-Álava, Spain
+Calle Venta de la Estrella, 6 Pab. 130, Vitoria-Gasteiz 01006, Álava, Spain
 
 **Capabilities:**
 
@@ -262,13 +240,7 @@ Community: `www.virtualrobotix.com <http://www.virtualrobotix.com>`__
 
 Skype: virtualrobotix
 
-*Address:*
-
-Via Matteotti,34
-
-Calcio (BG) - 24054 -
-
-Italy
+Address: Via Matteotti,34, Calcio (BG), 24054, Italy
 
 **Capabilities:**
 
@@ -365,19 +337,11 @@ consultant and test pilot.
 David "Buzz" Bussenschutt
 -------------------------
 
-**Contact:**
-
-10 Seidler St
-
-Yeronga QLD 4104
-
-Australia
+Address: 10 Seidler St, Yeronga QLD 4104, Australia
 
 Contact: David "Buzz"
 
 Email: davidbuzz@gmail.com
-
-Web: <coming soon>
 
 **Capabilities:**
 
