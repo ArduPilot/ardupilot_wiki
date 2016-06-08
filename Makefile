@@ -9,9 +9,13 @@ all: $(ALL_HTML)
 
 clean: $(ALL_CLEAN)
 
+%_common: %
+	echo "Copying common files to $</source/docs"
+	rsync -av common/source/docs/common-*rst $</source/docs/
+
 %_clean: %
 	$(MAKE) -C $< clean
 
-%_html: %
+%_html: % %_common
 	$(MAKE) -C $< html
 
