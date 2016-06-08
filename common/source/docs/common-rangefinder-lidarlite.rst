@@ -262,11 +262,9 @@ To configure Copter, Plane or Rover to use the LIDAR-Lite:
    * ``RNGFND_TYPE=4``: Pixhawk/PX4 via I2C
    * ``RNGFND_TYPE=3``: APM2 via I2C
 
-#. Set the ``RNGFND_MAX_CM`` to 4000 (40m). This parameter represents the maximum distance in centimeters that the LiDAR is
-reliable over — when ignoring “0” distance readings in the driver, a value of 4000 should work well in almost all conditions.
+#. Set the ``RNGFND_MAX_CM`` to 4000 (40m). This parameter represents the maximum distance in centimeters that the LiDAR is reliable over — when ignoring “0” distance readings in the driver, a value of 4000 should work well in almost all conditions.
 
-#. Set ``RNGFND_MIN_CM`` to 20cm. Below that distance you will still get readings, but they may be inaccurate (the optics can start to
-introduce parallax error if the sensor picks up signal from specular reflections rather than directly from a return signal).
+#. Set ``RNGFND_MIN_CM`` to 20cm. Below that distance you will still get readings, but they may be inaccurate (the optics can start to introduce parallax error if the sensor picks up signal from specular reflections rather than directly from a return signal).
 
 
 Testing the sensor
