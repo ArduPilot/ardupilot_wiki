@@ -1,7 +1,7 @@
-.. _common-ads-b-reciever:
+.. _common-ads-b-receiver:
 
 ==============
-ADS-B Reciever
+ADS-B Receiver
 ==============
 
 This article shows the **experimental** integration of an `Automatic Dependent Surveillance Broadcast <https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_%E2%80%93_broadcast>`__
