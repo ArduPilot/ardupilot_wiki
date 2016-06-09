@@ -40,12 +40,12 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Buzzer <nav-leds>
     Landing Gear <landing-gear>
     Precision Landing (IRLock) <precision-landing-with-irlock>
-    ADS-B Receiver <common-ads-b-reciever>
+    ADS-B Receiver <common-ads-b-receiver>
 [/site]
 
 [site wiki="plane"]
     Airspeed Sensor <airspeed>
-    ADS-B Receiver <common-ads-b-reciever>
+    ADS-B Receiver <common-ads-b-receiver>
     eCalc Motor and Prop Efficiency Guide <ecalc-motor-and-prop-efficiency-guide>
 [/site]
 
