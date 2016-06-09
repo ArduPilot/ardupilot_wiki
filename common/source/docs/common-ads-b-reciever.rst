@@ -34,7 +34,7 @@ be accurately tracked by air traffic controllers and other pilots
 without the need for conventional radar.
 
 This article explains how to attach and configure a MAVLink based
-ADS-B receiver by `uAvionix <http://www.uavionix.com/>`__\ called
+ADS-B receiver by `uAvionix <http://www.uavionix.com/>`__\  called
 PING™. Please visit their website for technical specs including RF
 characteristics and connector pinout.
 
