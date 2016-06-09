@@ -34,10 +34,13 @@ be accurately tracked by air traffic controllers and other pilots
 without the need for conventional radar.
 
 This article explains how to attach and configure a MAVLink based
-ADS-B receiver by `uAvionix <http://www.uavionix.com/>`__\ called
+ADS-B receiver by `uAvionix <http://www.uavionix.com/>`__\  called
 PING™. Please visit their website for technical specs including RF
 characteristics and connector pinout.
 
+PingRX setup video:
+   https://www.youtube.com/watch?v=v1R23fp5PDI
+   
 Specific PING™ products can be found here http://www.uavionix.com/products/
 
 .. image:: ../../../images/uAvionix.png
@@ -46,13 +49,9 @@ Specific PING™ products can be found here http://www.uavionix.com/products/
 .. image:: ../../../images/Penny.png
     :target: ../_images/Penny.png
 
-.. image:: ../../../images/ADS-B_Receiver_Pixhawk_Connection.jpg
-    :target: ../_images/ADS-B_Receiver_Pixhawk_Connection.jpg
 
 This first implementation of sense and avoid supports Plane and Copter. Object avoidance is only
 active in AUTO mode.
-
-PING™ products can be found here http://www.uavionix.com/products/
 
 Connection to flight controller
 ===============================
