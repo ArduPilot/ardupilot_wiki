@@ -26,7 +26,7 @@ The ArduPilot dev team is also fortunate to benefit from collaboration
 with some related projects, including:
 
 -  The `PX4 dev team <http://pixhawk.org/en/start>`__
--  The `MatrixPilot team <https://code.google.com/hosting/moved?project=gentlenav>`__
+-  The `MatrixPilot team <https://github.com/MatrixPilot/MatrixPilot/wiki>`__
 
 
 [copywiki destination="ardupilot,copter,plane,rover,planner,planner2,antennatracker,dev"]
