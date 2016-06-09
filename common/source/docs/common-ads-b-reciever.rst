@@ -39,7 +39,8 @@ PING™. Please visit their website for technical specs including RF
 characteristics and connector pinout.
 
 PingRX setup video:
-   https://www.youtube.com/watch?v=v1R23fp5PDI
+   ..  youtube:: boe-25OI4bM
+    :width: 100%
    
 Specific PING™ products can be found here http://www.uavionix.com/products/
 
