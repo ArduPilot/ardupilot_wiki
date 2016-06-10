@@ -43,6 +43,8 @@ is \ `here <http://www.arduino.cc/en/>`__.
 stabilized flight, position maintenance and automated mission (waypoint)
 path following.
 
+**ATC**: Air Traffic Control. Usually located at an airport control tower but can also be an app or service such as \ `AirMap <http://www.airmap.com>`__ or \ `Altitude Angel <http://www.altitudeangel.com>`__.
+
 **Copter**: Rotary-wing autopilot software variant of the ArduPilot
 project.
 
