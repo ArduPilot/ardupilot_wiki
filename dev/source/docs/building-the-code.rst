@@ -15,7 +15,7 @@ Plane, Copter, Rover
 **Windows users:**
 
 -  :ref:`Building ArduPilot with Arduino for Windows <building-ardupilot-with-arduino-windows>`
--  :ref:`Pixhawk/PX4 on Windows with Make <building-px4-with-make>`
+-  :ref:`Pixhawk/PX4 on Windows with Make <building-px4-with-make>` 
 -  :ref:`Editing & Building with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>`
 
 **MacOS users:**
@@ -56,6 +56,7 @@ Mission Planner
     Building for Pixhawk/PX4 on Windows with Make <building-px4-with-make>
     Building for Pixhawk/PX4 on Mac with Make <building-px4-with-make-on-mac>
     Building for Pixhawk/PX4 using Eclipse on Windows <editing-the-code-with-eclipse>
+	Building for Pixhawk/PX4 on Windows or Linux with QtCreator <building-px4-with-qtcreator>
     Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>
     Building ArduPilot for APM2.x on Windows with Arduino <building-ardupilot-with-arduino-windows>
     Building for APM2.x on Mac with Arduino <building-the-code-on-mac>
