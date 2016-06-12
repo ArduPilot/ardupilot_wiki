@@ -13,4 +13,4 @@ are commonly used with the ArduPilot project.
     NotePad++ <editing-the-code>
     Atmel Studio or MS Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>
     Eclipse <eclipse-ide>
-	Qt Creator <building-px4-with-qtcreator>
+    Qt Creator <building-px4-with-qtcreator>
