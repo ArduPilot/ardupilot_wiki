@@ -14,7 +14,6 @@ The developer tools `can be downloaded from here <http://download.ardupilot.org/
 
 The rest of the article provides an overview of some of the files and the tool licensing.
 
-
 Tools
 =====
 
@@ -27,7 +26,6 @@ VERSION	dev
 DATE POSTED	January 20, 2015
 
 This replaces the hostapd distributed with the Odroid U3 board’s Ubuntu 14.04. This newer version resolves issues creating a wifi access point.
-
 
 
 
