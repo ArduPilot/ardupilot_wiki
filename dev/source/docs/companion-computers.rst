@@ -24,4 +24,5 @@ Related topics on this wiki include:
     Communicating with ODroid via MAVLink <odroid-via-mavlink>
     BeaglePilot Project <beaglepilot>
     Edison as a Companion Computer <edison-for-drones>
+    NVidia TX1 as a Companion Computer <companion-computer-nvidia-tx1>
     Turnkey Companion Computer Solutions <turnkey-companion-computer-solutions>
