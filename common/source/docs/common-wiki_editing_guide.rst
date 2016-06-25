@@ -330,7 +330,7 @@ and hosted on `Github here <https://github.com/ArduPilot/ardupilot_wiki>`__.
 Each wiki has a separate folder in the repository (e.g. '/copter', '/plane') containing it's own source 
 and configuration files (**conf.py**). Common files that are shared between the wikis are named with the 
 prefix **common-** and stored in the **/common/source/docs/** directory. Images that are specific to a 
-particular wiki are stroed in an /images/ subfolder for the wiki (e.g. **copter/images/**) while 
+particular wiki are stored in an /images/ subfolder for the wiki (e.g. **copter/images/**) while 
 images are shared between all wikis and are stored in the "root" **/images** directory.
 Common configuration information for the Wiki Sphinx build is stored in **/common_conf.py**.
 
