@@ -12,7 +12,7 @@ things:
    auto-mode response, such as returning to home. Some RC equipment can
    do this, and some can't (see below for details on how to use it if
    yours supports this function).
-#. Detect loss of telemetry for more than 20 sec and switch to return to
+#. Detect loss of telemetry for more than FS_LONG_TIMEOUT sec and switch to return to
    launch (RTL) mode (GCS Failsafe).
 #. Detect loss of GPS for more than 20 seconds and switch into Dead
    Reckoning mode until GPS signal is regained.
@@ -61,20 +61,16 @@ Meaning that when flying, our throttle values will range between 1100 -
    failsafe mode.
 -  First the autopilot will go into short failsafe (FS_SHORT_ACTN,
    0=Disabled, 1=Enabled) when it detects loss of signal for more than
-   1.5 sec. The default setting for short failsafe is Circle mode.
+   FS_SHORT_TIMEOUT sec. The default setting for short failsafe is Circle mode.
 -  If the RC signal is regained during the short failsafe, the flight
    will return to auto mode.
--  If the loss of signal is longer than 20 sec the autopilot will go
+-  If the loss of signal is longer than FS_LONG_TIMEOUT sec the autopilot will go
    into long failsafe (FS_LONG_ACTN, 0=Disabled, 1=Enabled).
 -  The default setting for long failsafe is RTL (Return to Launch).
 -  Once the long failsafe (RTL mode) has been entered at the conclusion
    of the short failsafe the RTL mode will continue even if your RC
    signal is reacquired.
--  **Warning: In firmware releases prior to 2.75 there is a bug where
-   the short failsafe goes to RTL mode instead of circle mode
-   potentially resulting in a repeating loop mode failure.**
--  **This will be fixed and short failsafe will correctly go to circle
-   mode as of version 2.75 of Plane firmware.**
+
 
 ::
 
@@ -111,8 +107,8 @@ Meaning that when flying, our throttle values will range between 1100 -
 #. Connect on the mission planner with your RC transmitter on. Verify on
    the bottom right corner of the HUD that you are “flying” in a non
    auto mode (Manual, Stabilize, FBW are ok).
-#. Turn off your transmitter. After 1.5 sec the flight mode should
-   switch to Circle. After 20 sec the flight mode should switch to RTL.
+#. Turn off your transmitter. After S_SHORT_TIMEOUT sec the flight mode should
+   switch to Circle. After FS_LONG_TIMEOUT sec the flight mode should switch to RTL.
    If you observe this behavior, your failsafe function has been set up
    correctly.
 
@@ -126,7 +122,7 @@ GCS Failsafe
 **How it works.** When flying while using telemetry on the GCS, the
 autopilot can be programmed to trigger into failsafe mode if it loses
 telemetry. In the event that the autopilot stops receiving MAVlink
-(telemetry protocol) heartbeat messages for more than 20 sec, the GCS
+(telemetry protocol) heartbeat messages for more than FS_LONG_TIMEOUT sec, the GCS
 failsafe (FS_GCS_ENABL, 0=Disabled, 1=Enabled) will trigger the
 autopilot to go into long failsafe and change the flight mode to RTL.
 
@@ -138,9 +134,9 @@ autopilot to go into long failsafe and change the flight mode to RTL.
    (Manual, Stabilize, FBW are ok).
 #. Unplug one of the telemetry radios. After a few minutes power off
    your autopilot. (Remember the autopilot will not go into failsafe
-   until 20 seconds of MAVlink inactivity have passed).
+   until FS_LONG_TIMEOUT seconds of MAVlink inactivity have passed).
 #. Connect your autopilot to the mission planner and pull the logs.
-   Verify on the log that the autopilot went into RTL after 20 sec of
+   Verify on the log that the autopilot went into RTL after FS_LONG_TIMEOUT sec of
    MAVlink inactivity.
 
 Failsafe Parameters and their meanings
@@ -149,13 +145,13 @@ Failsafe Parameters and their meanings
 Short failsafe action (Plane:FS_SHORT_ACTN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The action to take on a short (1.5 seconds) failsafe event in AUTO,
+The action to take on a short (FS_SHORT_TIMEOUT seconds) failsafe event in AUTO,
 GUIDED or LOITER modes. A short failsafe event in stabilization modes
 will always cause a change to CIRCLE mode. In AUTO mode you can choose
 whether it will RTL (ReturnToLaunch) or continue with the mission. If
 FS_SHORT_ACTN is 0 then it will continue with the mission, if it is 1
 then it will enter CIRCLE mode, and then enter RTL if the failsafe
-condition persists for 20 seconds.
+condition persists for FS_LONG_TIMEOUT seconds.
 
 .. raw:: html
 
@@ -179,14 +175,14 @@ condition persists for 20 seconds.
 Long failsafe action (Plane:FS_LONG_ACTN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The action to take on a long (20 second) failsafe event in AUTO, GUIDED
+The action to take on a long (FS_LONG_TIMEOUT second) failsafe event in AUTO, GUIDED
 or LOITER modes. A long failsafe event in stabilization modes will
 always cause an RTL (ReturnToLaunch). In AUTO modes you can choose
 whether it will RTL or continue with the mission. If FS_LONG_ACTN is 0
 then it will continue with the mission, if it is 1 then it will enter
 RTL mode. Note that if FS_SHORT_ACTN is 1, then the aircraft will
-enter CIRCLE mode after 1.5 seconds of failsafe, and will always enter
-RTL after 20 seconds of failsafe, regardless of the FS_LONG_ACTN
+enter CIRCLE mode after FS_SHORT_TIMEOUT seconds of failsafe, and will always enter
+RTL after FS_LONG_TIMEOUT seconds of failsafe, regardless of the FS_LONG_ACTN
 setting.
 
 .. raw:: html
@@ -230,7 +226,7 @@ GCS failsafe enable (Plane:FS_GCS_ENABL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable ground control station telemetry failsafe. Failsafe will trigger
-after 20 seconds of no MAVLink heartbeat messages. WARNING: Enabling
+after FS_SHORT_TIMEOUT and / or FS_LONG_TIMEOUT seconds of no MAVLink heartbeat messages. WARNING: Enabling
 this option opens up the possibility of your plane going into failsafe
 mode and running the motor on the ground it it loses contact with your
 ground station. If this option is enabled on an electric plane then
