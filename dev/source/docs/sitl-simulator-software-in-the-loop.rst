@@ -65,3 +65,5 @@ SITL Architecture
     Using Last_letter Simulator with SITL <using-last_letter-as-an-external-sitl-simulator>
     Using the CRRCSim simulator <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
     SITL on Windows in a VM <setting-up-sitl-on-windows>
+    Using X-Plane 10 with SITL <sitl-with-xplane>
+    
