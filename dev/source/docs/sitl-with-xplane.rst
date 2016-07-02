@@ -66,7 +66,7 @@ what you are wanting to do.
 
   - running SITL from within MissionPlanner on Windows
   - building SITL yourself and connecting from your favourite GCS
-  - buidling and running SITL using sim_vehicle.py and MAVProxy
+  - building and running SITL using sim_vehicle.py and MAVProxy
 
 The first approach is good if you just want to test ArduPilot with
 SITL but you don't want to make changes to the code. MissionPlanner
@@ -94,11 +94,11 @@ Then go the SIMULATION tab:
 .. figure:: ../images/xplane-missionplanner1.jpg
    :target: ../_images/xplane-missionplanner1.jpg
 
-in the SIMULATION tab select X-plane and Xplane 10. Then select
+In the SIMULATION tab select X-plane and Xplane 10. Then select
 Advanced IP Settings an click through the IP addresses, set them 
 to 127.0.0.1, with the default network ports.
 
-The press "Start SITL"
+Press "Start SITL"
 
 .. figure:: ../images/xplane-missionplanner2.jpg
    :target: ../_images/xplane-missionplanner2.jpg
