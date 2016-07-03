@@ -114,7 +114,7 @@ We will also need to get a gazebo model of a quadcopter.
     cd ~
     hg clone https://bitbucket.org/osrf/gazebo_models
     cd gazebo_models
-    checkout aero_testing_john
+    hg checkout aero_testing_john
     echo 'export GAZEBO_MODEL_PATH=~/gazebo_models' >> ~/.bashrc
     source ~/.bashrc
 
@@ -129,7 +129,7 @@ Set up PATH to build tools
 
 If you have not already done so, you need to set up the PATH to the build tools
 (located in **/ardupilot/Tools/autotest**) so that the build system can find
-**sim_vehicle.sh**.
+**sim_vehicle.py**.
 
 Navigate the file system to the home directory and open the **.bashrc**
 file. Add the following line to the end of **.bashrc**:
@@ -150,7 +150,13 @@ In one terminal, enter the ArduCopter directory and start the SITL simulation:
 ::
 
     cd ~/ardupilot/ArduCopter
-    sim_vehicle.sh -f gazebo
+    sim_vehicle.py -f gazebo
+
+Load default parameters in MAVProxy with:
+
+::
+
+    param load ../Tools/autotest/copter_params.parm
 
 In another terminal start Gazebo:
 
