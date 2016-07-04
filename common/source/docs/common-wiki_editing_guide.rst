@@ -228,6 +228,10 @@ You will need to install the correct versions of `Vagrant <https://www.vagrantup
 to `fork <https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box>`__ and clone the repository 
 (if you haven't already done so).
 
+For Windows users, it is adviced to install SSH client on the computer before starting vagrant. Vagrant needs 
+SSH client program to access development container. We have had great success with OpenSSH packer from MLS-Software
+`here <http://ww.mls-software.com/opensshd.html>`__
+
 The main steps for building the docs are:
 
 #. Open a command prompt in the root of the ardupilot_wiki repo, and start Vagrant:
