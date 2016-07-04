@@ -5,8 +5,9 @@ PPM Encoder AT328P 8 Channel Standalone Encoder
 ===============================================
 
 This article describes the standalone PPM Encoder that can be purchased
-from 3DRobotics. It is provided for use in the (very unlikely) event
-that the encoder needs to be reprogrammed.
+from `jDrones <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__. 
+It is provided for use in the (very unlikely) event that the encoder needs 
+to be reprogrammed.
 
 Overview
 ========
