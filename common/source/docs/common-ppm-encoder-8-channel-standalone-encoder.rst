@@ -41,11 +41,12 @@ DF13 connector ports. To set up, connect the three-wire cable to the
 autopilot and the 10-wire cable to a PWM receiver. For more
 instructions, `view the manual here <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/PPM-Encoder-V3-Manual.pdf>`__.
 
-.. image:: ../../../images/ppm_encoder_wiring.jpg
-    :target: ../_images/ppm_encoder_wiring.jpg
+.. image:: ../../../images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
+    :target: ../_images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
+	
+- Numbers 1-8, connects to your RC-Receiver
+- Cable marked with P, connects to Pixhawk PPM/RC Input 	
 
-.. image:: ../../../images/ppm_encoder_manual_v3.jpg
-    :target:  http://download.ardupilot.org/downloads/wiki/advanced_user_tools/PPM-Encoder-V3-Manual.pdf
 
 Re-Programming the Atmega328p PPM encoder
 =========================================

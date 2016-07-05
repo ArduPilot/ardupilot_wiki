@@ -7,12 +7,12 @@ PPM Encoder
 The PPM encoder allows to encode up to 8 PWM (pulse width modulated)
 signals into one PPM (pulse position modulation) signal.
 
-.. figure:: ../../../images/PPM_cables_-_Copy.jpg
-   :target: ../_images/PPM_cables_-_Copy.jpg
+.. figure:: ../../../images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
+   :target: ../_images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
 
-   Newest 3DR PPM-Sum encoder
+   Newest jDrones PPM-Sum encoder, `here <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__
 
-The 3DR PPM Encoder (v2) now uses the ArduPPM firmware, replacing the
+The jD-PPM Encoder (v2.1) uses the ArduPPM firmware, replacing the
 previously used Paparazzi PPM Encoder firmware. The new ArduPPM firmware
 has been designed from scratch to enhance performance and robustness,
 and to better accommodate our product needs now and in the future.
@@ -64,7 +64,7 @@ Failsafe output values:
 Setup Manual
 ============
 
-The `PPM Encoder 3DR Manual <http://download.ardupilot.org/downloads/wiki/pdf_guides/PPM-Encoder-V3-Manual.pdf>`__
+The `PPM Encoder Manual <http://download.ardupilot.org/downloads/wiki/pdf_guides/PPM-Encoder-V3-Manual.pdf>`__
 shows how to solder and wire the PPM Encoder and explains the different
 failsafe modes.
 
@@ -99,6 +99,18 @@ AVRISP mkII:
 
 When flashing, make sure the PPM Encoder is powered using any of the 5V
 and Ground pins.
+
+
+Fuse setting for internal MCU
+=============================
+All ATMEGA 328P based PPM Encoders have strict fuse settings.
+
+Following fuse settings should be used when programming with AVR Studio:
+
+- LOW: 0xFF
+- High: 0xDA
+- Ext: 0xFD
+
 
 Re-Programming instructions for Windows
 =======================================
