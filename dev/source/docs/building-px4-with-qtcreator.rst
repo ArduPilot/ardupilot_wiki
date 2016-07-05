@@ -42,7 +42,7 @@ that are needed to build an ArduPilot project.
 	  cd /path-to-your-qt-creator-dir/bin
 	  qtcreator.exe
  
-#. Go to the *toolchain\msys\1.0* subdirectory of the PX4 toolchain directory and
+#. Go to the *toolchain\\msys\\1.0* subdirectory of the PX4 toolchain directory and
    make a copy of the file **px4_console.bat** , called **px4_qt_creator.bat**.
    Change this file in *:startsh* section, so that it becomes:
 
