@@ -311,22 +311,36 @@ Alternative Commercial Hardware Solutions
 DROTAG - Airborne Projects
 --------------------------
 
-The `DROTAG <https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/>`_ (airborneprojects.com) is a small board (55x27mm at 21g) that connects to an APM compatible Flight Controller (like Pixhawk) through the one of the any available TELEMETRY port and through a MicroUSB cable to the camera. That's it. Nothing more is needed. 
+With the appropriate mission from Mission Planner(or similar),
+`DROTAG <https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/>`_ (airborneprojects.com) enables APM compatible Flight Controllers (like Pixhawk)
+to *Configure, Trigger and Geo-Tag* your Digital Camera pictures in
+the air. It works through one of the available TELEMETRY ports and
+through a microUSB cable to the camera. That's it.
 
-With the appropriate mission planning you will have your taken pictures automatically geotagged by DROTAG in the MicroSD card at the time you land, with no need for any post-processing. DROTAG also has a way to configure most of your camera settings. This is specially important if you use your aerial camera for other earthly uses.
+You will have your taken pictures automatically Geo-Tagged by DROTAG in
+the microSD card at the time you land, with no need for any post-processing.
+DROTAG also has a way to configure most of your camera settings. This is
+specially important if you often change your camera settings manually for
+other uses.
 
-Airborne Project's also offers a comprehensive `DROTAG manual <https://www.airborneprojects.com/wp-content/uploads/2016/06/Manual.Gstreamer.Arietta.pdf>`_ (airborneprojects.com) with before flight checklists detailed explanations for diagnosis and other tips.
+Airborne Project's also provides a comprehensive
+`DROTAG manual <https://www.airborneprojects.com/wp-content/uploads/2016/06/Manual.Gstreamer.Arietta.pdf>`_ (airborneprojects.com)
+with before flight checklists, detailed explanations for diagnosis and
+other tips.
 
 
- .. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/text_image_1-1200x548.jpg
+.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/text_image_1-1200x548.jpg
     :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
     :width: 100%
- .. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/3.jpg
+    :align: left
+.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/3.jpg
     :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
     :width: 50%
- .. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/2.jpg
+    :align: left
+.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/2.jpg
     :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
     :width: 49%
+    :align: left
 
 
 Acknowledgements
