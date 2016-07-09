@@ -305,6 +305,44 @@ working with specific cameras:
 -  `Geotag GoPro Images with a Pixhawk Log File <http://tuffwing.com/support/geotag_gopro_images_with_pixhawk_log.html>`__
    (tuffwing.com)
 
+Alternative Commercial Hardware Solutions
+=========================================
+
+DROTAG - Airborne Projects
+--------------------------
+
+With the appropriate mission from Mission Planner(or similar),
+`DROTAG <https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/>`_ (airborneprojects.com) enables APM compatible Flight Controllers (like Pixhawk)
+to *Configure, Trigger and Geo-Tag* your Digital Camera pictures in
+the air. It works through one of the available TELEMETRY ports and
+through a microUSB cable to the camera. That's it.
+
+You will have your taken pictures automatically Geo-Tagged by DROTAG in
+the microSD card at the time you land, with no need for any post-processing.
+DROTAG also has a way to configure most of your camera settings. This is
+specially important if you often change your camera settings manually for
+other uses.
+
+Airborne Project's also provides a comprehensive
+`DROTAG manual <https://www.airborneprojects.com/wp-content/uploads/2016/06/Manual.Gstreamer.Arietta.pdf>`_ (airborneprojects.com)
+with before flight checklists, detailed explanations for diagnosis and
+other tips.
+
+
+.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/text_image_1-1200x548.jpg
+    :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
+    :width: 100%
+    :align: left
+.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/3.jpg
+    :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
+    :width: 50%
+    :align: left
+.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/2.jpg
+    :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
+    :width: 49%
+    :align: left
+
+
 Acknowledgements
 ================
 
@@ -313,3 +351,4 @@ from Sandro Benigno and Guto Santaella updated by Jesus Alvarez.
 
 
 [copywiki destination="copter,plane,rover,planner"]
+
