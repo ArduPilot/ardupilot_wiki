@@ -13,6 +13,7 @@ recommended for use with ArduPilot (in alphabetical order).
 * `Erle Robotics <https://erlerobotics.com/>`__ 
 * `JapanDrones <http://japandrones.com/>`__
 * `jDrones <http://store.jdrones.com/>`__
+* `Northox <https://northox.myshopify.com/>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
 * `VirtualRobotix <http://www.virtualrobotix.it/index.php/en/shop>`__
 * `3DR <https://store.3dr.com/>`__ (Solo parts and accessories)
