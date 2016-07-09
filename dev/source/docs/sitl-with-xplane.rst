@@ -10,6 +10,9 @@ Using SITL with X-Plane 10
 This article describes how to use X-Plane 10 as a simulation backend for
 ArduPilot :ref:`SITL <sitl-simulator-software-in-the-loop>`.
 
+.. youtube:: llRii8hmG1M
+    :width: 100%
+       
 Overview
 ========
 
