@@ -107,8 +107,9 @@ Press "Start SITL"
    :target: ../_images/xplane-missionplanner2.jpg
 
 In the SITL screen you need to select Model "xplane" and then select
-"Plane". At the moment we only support fixed wing aircraft in X-Plane
-with SITL. In the future we may support other aircraft types.
+"Plane". At the moment we only support fixed wing and helicopter
+aircraft in X-Plane with SITL. In the future we may support other
+aircraft types. See below for more information on flying a helicopter.
 
 When you select "Plane" MissionPlanner will download a nightly build
 of ArduPilot SITL and will then launch SITL.
@@ -175,3 +176,55 @@ create a PT60 directory::
  $ cd PT60
  $ sim_vehicle.py -j4 -D -f xplane --console --map
 
+
+Flying a Helicopter
+-------------------
+
+It is also possible to fly a helicopter with XPlane-10. The setup is
+similar to a plane, with two additional requirements:
+
+  - you need to setup your XPlane joystick to map the collective stick
+    to flaps
+  - you need to map a key or joystick button to turn on and off the
+    "generator1" electrical system
+
+These strange requirements are because of limitations in the remote
+control of helicopters in X-Plane 10. The flaps input is something
+that ArduPilot SITL is able to read remotely while not interfering
+with flight of the helicopter. The "generator1 on/off" is used to
+simulate the interlock switch (channel 8) in ArduPilot helicopter
+support.
+
+Note that for "generator on/off" you do need to map two separate
+events, one for on and one for off. If using a two position switch
+then map one to the switch on position and the other to the switch off
+position.
+
+See this example for typical joystick setup
+
+.. figure:: ../images/xplane-heli-joystick1.jpg
+   :target: ../_images/xplane-heli-joystick1.jpg
+
+and this one for mapping the generator on/off switch to a joystick
+switch
+
+.. figure:: ../images/xplane-heli-joystick2.jpg
+   :target: ../_images/xplane-heli-joystick2.jpg
+
+A full set of parameters for the Bell JetRanger Helicopter in X-Plane
+10 are available here http://uav.tridgell.net/XPlane/
+
+You also need to start SITL with the model set to "xplane-heli"
+instead of "xplane" to activate Helicopter controls.
+
+The startup procedure for a helicopter is:
+
+  - set interlock on (so RC input channel 8 is low)
+  - set zero collective (so RC input channel 3 is low)
+  - arm the helicopter
+  - set interlock off (so RC input channel 8 is high)
+  - wait for the head to reach full speed
+  - takeoff
+
+.. youtube:: JNNSoMrAFn4
+    :width: 100%
