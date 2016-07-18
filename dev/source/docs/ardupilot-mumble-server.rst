@@ -33,8 +33,7 @@ have any spaces.
 Weekly dev calls
 ----------------
 
-We have a weekly development call at 00:00 UTC on Mondays. See the
-drones-discuss mailing list for agenda and minutes. The call is held in
+We have a weekly development call.  Please see https://www.google.com/calendar/embed?src=umliaon4e095pmct59kbae9v7c%40group.calendar.google.com for the time and drones-discuss mailing list for agenda and minutes. The call is held in
 the "Weekly Dev Call" channel on mumble.
 
 We don't record the calls, and we would ask you not to record them
