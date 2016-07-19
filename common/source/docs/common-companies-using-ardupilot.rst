@@ -19,3 +19,4 @@ Company list
 | jDrones                    | plane, multi, vtol, rover    | Thailand                  |
 +----------------------------+------------------------------+---------------------------+
 
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
