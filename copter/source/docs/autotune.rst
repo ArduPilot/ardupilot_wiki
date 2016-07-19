@@ -72,7 +72,7 @@ Copter 3.3 adds some additional features:
    AutoTune flight mode responds in the same way as raising or lowering
    a ch7/ch8 aux switch high assigned the AutoTune function.
 -  Yaw axis is also autotuned
--  AUTOTUNE_BITMASK allows control of which axis are to be tuned
+-  AUTOTUNE_AXES allows control of which axis are to be tuned
    (useful if the vehicle's battery life is not long enough to complete
    all 3-axis).  "1" = tune roll, "2" = tune pitch, "4" = tune yaw.  Add
    these numbers together to tune multiple axis in a single session
