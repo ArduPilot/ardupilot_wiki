@@ -72,12 +72,12 @@ Copter 3.3 adds some additional features:
    AutoTune flight mode responds in the same way as raising or lowering
    a ch7/ch8 aux switch high assigned the AutoTune function.
 -  Yaw axis is also autotuned
--  AUTOTUNE_AXES allows control of which axis are to be tuned
+-   :ref:`AUTOTUNE_AXES <AUTOTUNE_AXES>` allows control of which axis are to be tuned
    (useful if the vehicle's battery life is not long enough to complete
    all 3-axis).  "1" = tune roll, "2" = tune pitch, "4" = tune yaw.  Add
    these numbers together to tune multiple axis in a single session
    (i.e. "7" = tune all axis)
--  AUTOTUNE_AGGR : Should be in the range of 0.05 to 0.10. Controls the
+-   :ref:`AUTOTUNE_AGGR <AUTOTUNE_AGGR>` : Should be in the range of 0.05 to 0.10. Controls the
    threshold for D-term bounce back and P-term overshoot. This affects
    the tuning noise immunity (a higher value is more tolerant to flex in
    the frame or other disturbances that could trick the tuning
@@ -87,7 +87,7 @@ Copter 3.3 adds some additional features:
 -  Upon a succesful tune these additional values are saved:
 
    -  roll and pitch axis rate feed-forward is enabled
-      (ATC_RATE_FF_ENABLE)
+      (:ref:`ATC_RATE_FF_ENABLE <ATC_RATE_FF_ENABLE>`)
    -  roll, pitch and yaw acceleration limits are saved (ACCEL_R\_MAX,
       ACCEL_P\_MAX, ACCEL_Y\_MAX)
 
@@ -118,8 +118,7 @@ Dataflash logging
 
 ATUN (auto tune overview) and ATDE (auto tune details) messages are
 written to the dataflash logs. Some details of the contents of those
-messages can be found on the :ref:`Downloading and Analyzing Data Logs in Mission Planner <common-downloading-and-analyzing-data-logs-in-mission-planner_message_details_copter_specific>`
-wiki page.
+messages can be found on the :ref:`Downloading and Analyzing Data Logs in Mission Planner <common-downloading-and-analyzing-data-logs-in-mission-planner_message_details_copter_specific>` wiki page.
 
 .. |AutoTuneCh7Switch| image:: ../images/AutoTuneCh7Switch.png
     :target: ../_images/AutoTuneCh7Switch.png
