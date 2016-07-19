@@ -64,7 +64,7 @@ Companies that use ArduPilot in Products
 	 - Plane
 	 - 
 	 - Y
-   * - 'Bask Aerospace <http://baskaerospace.com.au/`__
+   * - `Bask Aerospace <http://baskaerospace.com.au/`__
      - Copter
 	 - Australia
 	 -
@@ -144,5 +144,4 @@ Companies that use ArduPilot in Products
      - Thailand
 	 - Y
      - Y
-
-
+	 
