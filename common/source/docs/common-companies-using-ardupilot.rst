@@ -17,62 +17,62 @@ Companies that use ArduPilot in Products
    * - Company
      - Platforms
      - Country
-	 - DroneCode
+     - DroneCode
      - Contributor?
    * - `3DR <https://3dr.com/>`__
      - Copter, Plane
      - USA
-	 - Y
+     - Y
      - Y
    * - Accueye
-	 - Plane
-	 - Canada
-	 -
-	 - 
+     - Plane
+     - Canada
+     -
+     - 
    * - AeroMao
      - Plane
      - Canada
-	 -
+     -
      - N 
    * - AgEagle
      - Plane
      - USA
-	 -
+     -
      - 
    * - Agribotix
      - Plane
      - USA
-	 -
+     -
      - 
    * - Air Tractor
      - Copter
      - USA
-	 -
+     -
      - 
    * - Airphrame
      - Plane
      - USA
-	 -
+     -
      - Y
    * - Attitude Angel
      - Plane
-	 - USA
-	 - 
-	 - Y
+     - USA
+     - 
+     - Y
    * - BAD-UAV
      - Australia
-	 - Plane
-	 - 
-	 - Y
+     - Plane
+     - 
+     - Y
    * - `Bask Aerospace <http://baskaerospace.com.au/>`__
      - Copter
-	 - Australia
-	 -
-	 - 
+     - Australia
+     -
+     - 
    * - BirdsEyeView
      - Plane
      - USA
-	 -
+     -
      - 
    * - Blue Robotics
      - ArduSub
@@ -82,66 +82,66 @@ Companies that use ArduPilot in Products
    * - Cheerson
      - Copter
      - USA
-	 -
+     -
      -  
    * - CUAV
      - Copter, Plane
      - China	 
-	 - Y
-	 - 
+     - Y
+     - 
    * - CyPhy Works
      - Copter
-	 - USA
-	 -
-	 -
+     - USA
+     -
+     -
    * - Deveron UAS
      - Plane
-	 - Canada
-	 - 
-	 - 
+     - Canada
+     - 
+     - 
    * - Droidika
      - Copter, Plane
-	 - Mexico
-	 - Y
-	 - Y
+     - Mexico
+     - Y
+     - Y
    * - Drone Aviation Corp (DAC)
      - Copter
-	 - USA
-	 - 
-	 - 
+     - USA
+     - 
+     - 
    * - Drone Deploy
      - 
-	 - USA
-	 - Y
-	 - 
+     - USA
+     - Y
+     - 
    * - Drone Japan
      - Copter
-	 - Japan
-	 - Y
-	 - Y
+     - Japan
+     - Y
+     - Y
    * - Droneworks
      - Copter
-	 - 
-	 - Y
-	 - 
+     - 
+     - Y
+     - 
    * - Emlid
      - Copter
-	 - 
-	 - Y
-	 -
+     - 
+     - Y
+     -
    * - Event38
      - Plane
      - USA
-	 - Y
+     - Y
      - Y  
    * - Falcon Unmanned 
      - Plane
      - USA
-	 -
+     -
      - Y  
    * - `jDrones <http://jdrones.com/>`__
      - Plane, Copter, VTOL, Rover 
      - Thailand
-	 - Y
+     - Y
      - Y
 	 
