@@ -60,8 +60,8 @@ Companies that use ArduPilot in Products
      - 
      - Y
    * - BAD-UAV
-     - Australia
      - Plane
+     - Australia
      - 
      - Y
    * - `Bask Aerospace <http://baskaerospace.com.au/>`__
