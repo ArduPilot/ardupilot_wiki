@@ -1,45 +1,66 @@
 .. _common-companies-using-ardupilot:
 
-===========================================
-Companies using ArduPilot on their products
-===========================================
+========================================
+Companies that use ArduPilot in Products
+========================================
 
-If your company is one of those who are using our famous ArduPilot
-autopilot system on your systems. Please let us know and we are happy
-to add your company to here too.
+.. tip::
 
-
-Company list
-============
-
-+----------------------------+------------------------------+-------------------+----------------+
-| Company name               | What system                  | Country           | Contributor    |
-|                            | (copter/plane/rover)         |                   | to the project |
-+----------------------------+------------------------------+-------------------+----------------+
-| 3DR                        | copter/plane                 | USA               | Y              |
-+----------------------------+------------------------------+-------------------+----------------+
-| AeroMao                    | plane                        | Canada            |                |
-+----------------------------+------------------------------+-------------------+----------------+
-| AgEagle                    | plane                        | USA               |                | 
-+----------------------------+------------------------------+-------------------+----------------+
-| Agribotix                  | plane                        | USA               |                |
-+----------------------------+------------------------------+-------------------+----------------+
-| Air Tractor                | plane                        | USA               |                |
-+----------------------------+------------------------------+-------------------+----------------+
-| Airphrame                  | plane                        | USA               | Y              |
-+----------------------------+------------------------------+-------------------+----------------+
-| BirdsEyeView               | plane                        | USA               |                |
-+----------------------------+------------------------------+-------------------+----------------+
-| Cheerson                   | copter                       | USA               |                |
-+----------------------------+------------------------------+-------------------+----------------+
-| Event38                    | plane                        | USA               |                |
-+----------------------------+------------------------------+-------------------+----------------+
-| Falcon Unmanned            | plane                        | USA               | Y              |
-+----------------------------+------------------------------+-------------------+----------------+
-| jDrones                    | plane, multi, vtol, rover    | Thailand          | Y              |
-+----------------------------+------------------------------+-------------------+----------------+
+   If you use ArduPilot in your products and your company name doesn't appear here, `let us know <https://github.com/ArduPilot/ardupilot_wiki/issues/new>`__.
 
 
 
+.. list-table:: 
+   :widths: 10 30 10 5
+   :header-rows: 1
+   
+   * - Company
+     - Platforms
+     - Country
+     - Contributor?
+   * - `3DR <https://3dr.com/>`__
+     - Copter, Plane
+     - USA
+     - Y
+   * - AeroMao
+     - Plane
+     - Canada
+     - 
+   * - AgEagle
+     - Plane
+     - USA
+     - 
+   * - Agribotix
+     - Plane
+     - USA
+     - 
+   * - Air Tractor
+     - Plane
+     - USA
+     - 
+   * - Airphrame
+     - Plane
+     - USA
+     - Y
+   * - BirdsEyeView
+     - Plane
+     - USA
+     -      
+   * - Cheerson
+     - Copter
+     - USA
+     -    
+   * - Event38
+     - Plane
+     - USA
+     -    
+   * - Falcon Unmanned 
+     - Plane
+     - USA
+     - Y  
+   * - `jDrones <http://jdrones.com/>`__
+     - Plane, Copter, VTOL, Rover 
+     - Thailand
+     - Y
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
+
