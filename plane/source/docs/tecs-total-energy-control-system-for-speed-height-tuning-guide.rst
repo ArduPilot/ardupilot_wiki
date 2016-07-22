@@ -131,20 +131,20 @@ Flight Testing
       limit ``LIM_PITCH_MAX`` needs to be increased or the maximum
       climb rate ``TECS_CLMB_MAX`` needs to be reduced.
 
-Verify ``LIM_PITCH_MIN`` and TECS_CLMB_MIN are set correctly. The
-setting of these parameters can be checked by commanding a negative
-altitude change of no less than 50m in loiter, RTL or guided mode. The
-objective is to set these parameters such that the throttle is on
-``THR_MIN``, the airspeed is below ``ARSPD_FBW_MAX`` (or visually
-confirm that model is not gaining too much speed if an airspeed sensor
-is not being used), and the demanded pitch angle is about 5 degrees
-above ``LIM_PITCH_MIN``.
+#. Verify ``LIM_PITCH_MIN`` and TECS_CLMB_MIN are set correctly. The
+   setting of these parameters can be checked by commanding a negative
+   altitude change of no less than 50m in loiter, RTL or guided mode. The
+   objective is to set these parameters such that the throttle is on
+   ``THR_MIN``, the airspeed is below ``ARSPD_FBW_MAX`` (or visually
+   confirm that model is not gaining too much speed if an airspeed sensor
+   is not being used), and the demanded pitch angle is about 5 degrees
+   above ``LIM_PITCH_MIN``.
 
-#. If the speed is too high, then ``TECS_SINK_MAX`` should be reduced .
-#. If the demanded pitch angle is constantly at the limit set
-   by ``LIM_PITCH_MIN``, then either the pitch angle
-   limit ``LIM_PITCH_MIN`` needs to be reduced (become more negative)
-   or the maximum sink rate ``TECS_SINK_MAX`` needs to be reduced.
+   #. If the speed is too high, then ``TECS_SINK_MAX`` should be reduced.
+   #. If the demanded pitch angle is constantly at the limit set
+      by ``LIM_PITCH_MIN``, then either the pitch angle
+      limit ``LIM_PITCH_MIN`` needs to be reduced (become more negative)
+      or the maximum sink rate ``TECS_SINK_MAX`` needs to be reduced.
 
 If the height response oscillates you can try increasing the value of
 `TECS_PTCH_DAMP <#TECS_PTCH_DAMP>`__ in increments of 0.1 (don't go

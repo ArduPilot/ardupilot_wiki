@@ -30,25 +30,19 @@ the air.
    piloting and rules of the air, weather and location considerations,
    pre-flight checks, emergency procedures, operation examples
 
-**Warnings and Notices:**
+.. warning::
 
-[column grid="2" span="1"]
+   **The topic of safety should be foremost on your mind.**
 
-**The topic of safety should be foremost on your mind.**
+   **Autonomous robots, flying machines, high-energy power systems driving
+   rotating blades -- you are in charge of these potential hazards.**
 
-**Autonomous robots, flying machines, high-energy power systems driving
-rotating blades -- you are in charge of these potential hazards.**
+.. note::
 
-[/column]
-
-[column grid="2" span="1"]
-
-*APM is designed to easily integrate with most standard RC aircraft,
-from simple high-wing trainers to high-speed swept wing fighters and
-flying wings. If you have something out of the ordinary please assume
-that a bit more tuning will be required to get things dialed in.*
-
-[/column]
+   *APM is designed to easily integrate with most standard RC aircraft,
+   from simple high-wing trainers to high-speed swept wing fighters and
+   flying wings. If you have something out of the ordinary please assume
+   that a bit more tuning will be required to get things dialed in.*
 
 All of us involved with this project care a great deal about the privacy
 and safety of those whom we share this planet with. Please be a good
