@@ -37,8 +37,8 @@ research use.
 
 --------------
 
-System components:
-~~~~~~~~~~~~~~~~~~
+System components
+~~~~~~~~~~~~~~~~~
 
 -  APM :ref:`autopilot <common-autopilots>` loaded with the latest
    version of `Plane firmware <http://firmware.ardupilot.org/>`__
