@@ -23,7 +23,7 @@ Planner commands you can use:
 
 .. code-block:: python
 
-    cs.???? = currentstate
+    cs.VARIABLENAME = currentstate
     
     
 
@@ -31,7 +31,7 @@ Any variable on the status tab in the planner can be used.
 
 .. code-block:: python
 
-    Script.????
+    Script.METHODNAME(...)
 
 options are
 
