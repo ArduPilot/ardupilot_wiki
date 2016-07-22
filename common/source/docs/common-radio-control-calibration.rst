@@ -137,14 +137,10 @@ sticks.
 
    MissionPlanner: Radio Calibration Screen (Copter)
 
-[/site]
-
 .. figure:: ../../../images/mp_radio_calibration_plane.jpg
    :target: ../_images/mp_radio_calibration_plane.jpg
 
    Mission Planner: Radio Calibration Screen(Plane)
-
-[/site]
 
 .. tip::
 

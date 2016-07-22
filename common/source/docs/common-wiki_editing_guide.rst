@@ -315,7 +315,7 @@ syntax highlighting and basic on-the-fly rendering in a single application.
 .. note:: 
 
     Although the tool is Python based, don't try it on Windows as it very prone to crashes (this is 
-also stated by the website).
+    also stated by the website).
 
 Wiki Infrastructure
 ===================
