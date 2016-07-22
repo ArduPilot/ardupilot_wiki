@@ -58,7 +58,7 @@ fixed wing code in any flight mode except :ref:`MANUAL <manual-mode>`. To
 enable quad assistance you should set :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` parameter to the
 airspeed below which you want assistance.
 
-When :ref:`Q_ASSIST_SPEED < is non-zero then the quad motors will assist with
+When :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` is non-zero then the quad motors will assist with
 both stability and lift whenever the airspeed drops below that
 threshold. This can be used to allow flying at very low speeds in
 :ref:`FBWA <fbwa-mode>` mode for example, or for assisted automatic fixed

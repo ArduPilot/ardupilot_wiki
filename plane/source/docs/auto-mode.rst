@@ -4,8 +4,8 @@
 AUTO Mode
 =========
 
-In AUTO mode the follow a mission (a set of GPS waypoints and other
-commands) set by your ground station configuration. When entering AUTO
+In AUTO mode Plane will follow a mission (a set of GPS waypoints and other
+commands) set by your ground station. When entering AUTO
 mode Plane will continue from whatever mission item it was last doing,
 unless you have reset the mission.
 

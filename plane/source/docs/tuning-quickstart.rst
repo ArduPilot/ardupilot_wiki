@@ -90,9 +90,9 @@ combination of the effects of three gain values:
    the control loop as it is always playing 'catchup'.
 -  *Derivative gain (D)* adds damping because it feeds back the rate of
    change of the angle. It can also be thought of as attempting to
-   anticipate a future changes in angle. The disadvantage of the "D"
+   anticipate future changes in angle. The disadvantage of the "D"
    gain is that it increases the amount of noise driving the servo and
-   if turned up too high will cause a rapid pitch or roll oscillation
+   if turned up too high will cause rapid pitch or roll oscillation
    that can in some cases damage the aircraft.
 
 Tuning P, PI or PID values can improve how quickly an observed error

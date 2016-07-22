@@ -42,6 +42,6 @@ PX4/Pixhawk. See the :ref:`terrain following documentation <common-terrain-follo
 
 .. warning::
 
-   Make sure you only fly FPV if it is allowed by your countries
-   flight and airspace control rules. Many countries do not allow non line
-   of sight flight without a special operating license.
+   Make sure you only fly FPV if it is allowed by your country's
+   flight and airspace control rules. Many countries do not allow
+   non-line-of-sight flight without a special operating license.

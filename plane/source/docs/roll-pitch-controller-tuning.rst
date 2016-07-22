@@ -84,7 +84,7 @@ Initial Assessment
 #. With the plane flying away from you switch to FBW-A. It
    should continue to fly wings level and at a fairly constant height
    (it may climb or descend slowly). If it wants to roll or pitch
-   more than a small amount then there is a problem with the models
+   more than a small amount then there is a problem with the model's
    trim, autopilot level or radio calibration and you need to solve that
    first before proceeding further.
 #. If the model starts to wag its wings, then the

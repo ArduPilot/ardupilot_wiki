@@ -9,7 +9,7 @@ users. It should be easy to run through, but there is also a nice path
 for a leisurely walk.
 
 Please do not be tempted to skip over steps and rush into flight. This
-is robotics and aviation combined--both of which are quite complex on
+is robotics and aviation combined -- both of which are quite complex on
 their own. Take some time to become familiar with this user manual.
 Follow the steps patiently, and you will have your robot safely up in
 the air.

@@ -114,7 +114,8 @@ Flight Testing
    more than 10 to reduce the oscillation in height, then this normally
    indicates a problem with the pitch to servo loop tuning or the
    settings of the pitch angle and climb rate limits.
-#. Verify that the ``THR_MAX``, ``LIM_PITCH_MAX`` and ``TECS_CLMB_MAX``,
+
+#. Verify that ``THR_MAX``, ``LIM_PITCH_MAX`` and ``TECS_CLMB_MAX``
    are set correctly. The setting of these parameters can be checked by
    commanding a positive altitude change of no less than 50m in loiter,
    RTL or guided mode. The objective is to set these parameters such
