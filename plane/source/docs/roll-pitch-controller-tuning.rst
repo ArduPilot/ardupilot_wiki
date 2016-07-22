@@ -84,7 +84,7 @@ Initial Assessment
 #. With the plane flying away from you switch to FBW-A. It
    should continue to fly wings level and at a fairly constant height
    (it may climb or descend slowly). If it wants to roll or pitch
-   more than a small amount then there is a problem with the models
+   more than a small amount then there is a problem with the model's
    trim, autopilot level or radio calibration and you need to solve that
    first before proceeding further.
 #. If the model starts to wag its wings, then the
@@ -179,7 +179,7 @@ Tuning tips
    value is reduced too far, then the roll controller is unable to keep
    up with demands from the navigation controller which leads to
    overshoot and weaving in the aircraft's trajectory.
--  The time constant parameter ``RLL2SRV_T_CONST`` can also be used to
+-  The time constant parameter ``RLL2SRV_TCONST`` can also be used to
    adjust how rapidly the bank angle reaches the demanded value. The
    effect of this parameter will be seen mostly in the response to small
    step changes in demanded roll. For larger roll demands, the roll rate
@@ -288,7 +288,7 @@ Tuning tips
    limit ``PTCH2SRV_RMAX_DN`` and ``PTCH2SRV_RMAX_UP`` parameters to
    non-zero values. Setting these values to 560 divided by the airspeed
    (in metres/second) gives a limit equivalent to approximately +- 1g.
--  The time constant parameter ``PTCH2SRV_T_CONST`` can also be used to
+-  The time constant parameter ``PTCH2SRV_TCONST`` can also be used to
    adjust how rapidly the pitch angle reaches the demanded value. The
    effect of this parameter will be seen mostly in the response to small
    step changes in demanded pitch. For larger pitch demands, the

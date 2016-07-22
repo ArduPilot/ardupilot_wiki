@@ -79,14 +79,14 @@ Tuning
 
 -  Go to failsafe setup in *APM Planner 2* or *Mission Planner*, and
    make sure the max/min values match ``RC5_MIN``/``RC5_MAX`` (or adjust
-   them) so that your flaps move all the way (`:ref:`RC1_TRIM`` should also be set to 1500). - Setting the `FLAP_SLEWRATE <FLAP_SLEWRATE>`
+   them) so that your flaps move all the way (`:ref:`RC1_TRIM`` should also be set to 1500). - Setting the :ref:`FLAP_SLEWRATE <FLAP_SLEWRATE>`
    to 100 allows moving flaps from 0 to 100% in one second.  Lower this
    to make your flaps move more slowly.
--  Adjust `:ref:`FLAP_x_PERCNT|SPEED`` as desired for auto modes - see `Automatic Flaps <automatic-flaps>`. Note you can ignore the
+-  Adjust `FLAP_x_PERCNT|SPEED` as desired for auto modes - see `Automatic Flaps <automatic-flaps>`. Note you can ignore the
    comment on that page saying "parameter for the channel function for
    the channel you are using for flaps to a value of 3".
-   `:ref:`FLAP_IN_CHANNEL`` is already set for this. - Have a look at `TKOFF_FLAP_PCNT <TKOFF_FLAP_PCNT>`
-   and LAND_FLAP_PERCNT if they are relevant to you.
+   :ref:`FLAP_IN_CHANNEL <FLAP_IN_CHANNEL>` is already set for this. - Have a look at :ref:`TKOFF_FLAP_PCNT <TKOFF_FLAP_PCNT>`
+   and :ref:`LAND_FLAP_PERCNT <LAND_FLAP_PERCNT>` if they are relevant to you.
 -  When you are flying in manual mode, it can be helpful to setup an
    elevator down mix on your TX when you set flaps i.e. the more flaps
    you send, the more elevator down you should send to correct pitch up

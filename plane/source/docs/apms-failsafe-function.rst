@@ -95,7 +95,7 @@ Meaning that when flying, our throttle values will range between 1100 -
    throttle to the original range.
 #. Do the radio calibration using the Mission Planner.
 #. Once the radio calibration is completed, drop the throttle on your
-   transmitter and read what PWM value is being outputted to the mission
+   transmitter and read what PWM value is being output to the mission
    planner on that channel.
 #. Turn off the transmitter. You should see the value drop
    significantly. This will be the PWM value relayed to the autopilot in

@@ -58,7 +58,7 @@ fixed wing code in any flight mode except :ref:`MANUAL <manual-mode>`. To
 enable quad assistance you should set :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` parameter to the
 airspeed below which you want assistance.
 
-When :ref:`Q_ASSIST_SPEED < is non-zero then the quad motors will assist with
+When :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` is non-zero then the quad motors will assist with
 both stability and lift whenever the airspeed drops below that
 threshold. This can be used to allow flying at very low speeds in
 :ref:`FBWA <fbwa-mode>` mode for example, or for assisted automatic fixed
@@ -128,7 +128,7 @@ The default behaviour of the RTL mode is the same as for fixed
 wing. It will fly to the nearest rally point (or home if no rally
 point is defined) and circle as a fixed wing aircraft about that
 point. The VTOL motors will not be used unless the aircraft drops below
-the airspeed defined in :ref:`Q_ASSIST_SPEED. <Q_ASSIST_SPEED.>` The altitude the aircraft
+the airspeed defined in :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>`. The altitude the aircraft
 will circle at will be the altitude in the rally point, or the
 ALT_HOLD_RTL altitude if a rally point is not being used.
 

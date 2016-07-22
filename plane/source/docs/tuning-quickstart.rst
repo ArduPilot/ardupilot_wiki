@@ -47,7 +47,7 @@ links to the full parameter set. The screen on the right lists some (but
 not all) of the more commonly modified parameters. You can use either
 side to make the same parameter change. Parameter updates are sent to
 the connected board as soon as you press "write params", many affect the
-current flight (if any) immediately, and are written to EEPROM so they
+current flight (if any) immediately, and are written to permanent storage so they
 survive power cycling.
 
 .. figure:: ../images/missPlannTuningTECS.png
@@ -90,9 +90,9 @@ combination of the effects of three gain values:
    the control loop as it is always playing 'catchup'.
 -  *Derivative gain (D)* adds damping because it feeds back the rate of
    change of the angle. It can also be thought of as attempting to
-   anticipate a future changes in angle. The disadvantage of the "D"
+   anticipate future changes in angle. The disadvantage of the "D"
    gain is that it increases the amount of noise driving the servo and
-   if turned up too high will cause a rapid pitch or roll oscillation
+   if turned up too high will cause rapid pitch or roll oscillation
    that can in some cases damage the aircraft.
 
 Tuning P, PI or PID values can improve how quickly an observed error
