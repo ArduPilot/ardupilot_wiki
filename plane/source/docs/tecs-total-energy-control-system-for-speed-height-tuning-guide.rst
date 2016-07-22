@@ -47,8 +47,8 @@ measurements, whilst the plane is being flown at the speed set by :ref:`TRIM_ARS
 which represents the speed that you are most likely going to be flying
 at. Flying these tests at ``TRIM_ARSPD_CM`` is impractical unless you
 have an assistant calling out airspeed, so where these instructions ask
-for the plane to be flown at `:ref:`TRIM_ARSPD_CM``, fly at a speed in the middle zone between your `ARSPD_FBW_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_arspd_fbw_min>` and
-:ref:`ARSPD_FBW_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_arspd_fbw_max>` and that will be good enough for
+for the plane to be flown at :ref:`TRIM_ARSPD_CM <TRIM_ARSPD_CM>`, fly at a speed in the middle zone between your :ref:`ARSPD_FBW_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_min>` and
+:ref:`ARSPD_FBW_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_max>` and that will be good enough for
 most applications. Those users wanting to extract maximum performance
 can dial the numbers in over a number of flights, using the log data.
 
@@ -60,7 +60,7 @@ can dial the numbers in over a number of flights, using the log data.
    increase it to 100%, high powered models (capable of vertical climbs)
    will need to reduce it.
 #. Set the throttle percentage required to fly level at
-   `:ref:`TRIM_ARSPD_CM`` by adjusting the `TRIM_THROTTLE <tecs-total-energy-control-system-for-speed-height-tuning-guide_trim_throttle>` parameter. This can be determined
+   ``TRIM_ARSPD_CM`` by adjusting the :ref:`TRIM_THROTTLE <tecs-total-energy-control-system-for-speed-height-tuning-guide_trim_throttle>` parameter. This can be determined
    initially by testing different throttle settings in FBWA mode.
 #. Set the maximum and minimum airspeed limits (in metres/second) using
    the ``ARSPD_FBW_MAX`` and ``ARSPD_FBW_MIN`` parameters.
@@ -90,8 +90,8 @@ can dial the numbers in over a number of flights, using the log data.
    ``TRIM_ARSPD_CM``. For electric aircraft make sure this number can be
    achieved towards the end of flight when the battery voltage has
    reduced. This can be measured in FBWA mode by performing climbs to
-   height with the throttle set to `:ref:`THR_MAX``. 
-#. Set the minimum sink rate `TECS_SINK_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_sink_min>` (in
+   height with the throttle set to :ref:`THR_MAX <THR_MAX>`.
+#. Set the minimum sink rate :ref:`TECS_SINK_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_sink_min>` (in
    metres/second). This is the sink rate of the aircraft with the
    throttle set to ``THR_MIN`` and flown at ``TRIM_ARSPD_CM``. This can
    be measured by closing the throttle in FBWA and gliding the aircraft
@@ -289,6 +289,8 @@ aerodynamic drag from a turning prop to improve the descent rate.
 
 :ref:`THR_SLEWRATE <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_slewrate>` (definition above)
 
+.. _tecs-total-energy-control-system-for-speed-height-tuning-guide_trim_throttle:
+
 :ref:`TRIM_THROTTLE <TRIM_THROTTLE>`:
 This is the throttle % required for level flight at the normal cruise
 speed.
@@ -329,6 +331,8 @@ the throttle demand required to climb and maintain speed is noticeably
 less than ``THR_MAX``, then either `:ref:`TECS_CLMB_MAX`` should be increased or ``THR_MAX`` reduced. 
 
 
+
+.. _tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_sink_min:
 
 :ref:`TECS_SINK_MIN <TECS_SINK_MIN>`: 
 This is the sink rate of the aircraft (in metres/second) with the throttle

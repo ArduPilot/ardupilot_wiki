@@ -128,7 +128,7 @@ The default behaviour of the RTL mode is the same as for fixed
 wing. It will fly to the nearest rally point (or home if no rally
 point is defined) and circle as a fixed wing aircraft about that
 point. The VTOL motors will not be used unless the aircraft drops below
-the airspeed defined in :ref:`Q_ASSIST_SPEED. <Q_ASSIST_SPEED.>` The altitude the aircraft
+the airspeed defined in :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>`. The altitude the aircraft
 will circle at will be the altitude in the rally point, or the
 ALT_HOLD_RTL altitude if a rally point is not being used.
 
