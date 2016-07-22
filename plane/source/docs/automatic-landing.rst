@@ -357,7 +357,7 @@ There are three steps to this feature:
 
    
 Step 1) Abort land triggers
---------------
+---------------------------
 The are three ways to trigger an auto-landing abort. All of them will only work while in AUTO mode and currently executing a ``LAND`` waypoint mission item:
 
 -  *Send the ``MAV_CMD_DO_GO_AROUND`` command using a GCS.* Mission Planner has a button labeled "Abort Landing" on the FlightData Actions tab.
@@ -376,7 +376,7 @@ This step is skipped if the abort trigger is via mode change because it is assum
 
 
 Step 3) Mission state after an aborted landing completes
-----------------------------------
+--------------------------------------------------------
 Once an abort land has completed, by either reaching the target altitude or switching back to AUTO, the mission index will have changed and you will no longer be executing a NAV_LAND command. The mission index will change to be one of these three options and checked for in this order:
 
 - If the NAV_LAND mission item is followed by mission item :ref:`CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>` with param1 = 0 or 1 then the mission index will increment once to that command and execute it like normal. This can be followed by further post-abort mission planning for any custom planned mission behavior.
