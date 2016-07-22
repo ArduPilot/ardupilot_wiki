@@ -19,10 +19,12 @@ enabled.
 
    #. It is very important to acquire GPS lock before arming in order for
       RTL, Loiter, Auto or any GPS dependent mode to work properly.
-   #. For Plane the home position is the postion of the Plane when you
-      first get GPS lock whether it was armed or not.
+   #. For Plane the home position is initially established at the time the
+      plane acquires its GPS lock. It is then continuously updated as long as
+      the autopilot is disarmed.
 
-      -  This means if you execute an RTL in Plane, it will return to the
-         location where it was when it first acquired GPS lock.
-      -  For Plane: Plug in the battery and let it acquire GPS lock where
-         you want it to return to: (Not the Pits).
+      - This means if you execute an RTL in Plane, it will return to the
+	location where it was when it was armed - assuming it had
+	acquired GPS lock.
+      - Consider the use of :ref:`Rally Points <common-rally-points>` to
+	avoid returning directly to your arming point on RTL
