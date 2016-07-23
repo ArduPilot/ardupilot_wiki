@@ -57,6 +57,16 @@ parameters:
    (i.e. 10m / 5v) if using EZL0
 -  RNGFND_TYPE = “1" (Analog)
 
+.. note::
+
+   The Maxbotix analogue rangefinders according to their data sheets
+   output Vcc/1024 volts per centimetre, or 0.488 v/m when supplied
+   with 5v (which the ADC 3.3v port supplies), which translates into
+   2.04meters per volt. The range is 7.6m according to the datasheet,
+   but analog output is limited to 7m. As we can only read up to 3.3v
+   then that means 6.75m is the furthest it can really measure.
+
+
 .. image:: ../../../images/RangeFinder_MaxbotixAnalog_Pixhawk_MPSetup.png
     :target: ../_images/RangeFinder_MaxbotixAnalog_Pixhawk_MPSetup.png
 
