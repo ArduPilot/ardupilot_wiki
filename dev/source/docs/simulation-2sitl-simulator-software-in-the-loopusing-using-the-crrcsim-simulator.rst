@@ -45,7 +45,7 @@ One crrcsim is installed you can launch it by running:
     crrcsim -i APM
 
 that starts CRRCSim with the APM protocol interface. You can then press
-ESCAPE to bring up the menu and choose and aircraft to simulate. Many of
+ESCAPE to bring up the menu and choose an aircraft to simulate. Many of
 the aircraft will work with SITL, but for ones without motors (the
 gliders) you will need to choose a launch location on a slope.
 
