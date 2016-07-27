@@ -29,7 +29,7 @@ toolchain*. The link can be accessed from either:
 -  The Windows Start menu (**Start \| All Programs \| PX4 Toolchain \|
    PX4 Eclipse**), or
 -  You can directly run the file
-   **C:\\px4\\toolchain\\msys\\1.0\\px4_eclipse.bat**
+   **C:\\Pixhawk_Toolchain\\toolchain\\msys\\1.0\\px4_eclipse.bat**
 
 Creating the Project
 ====================
