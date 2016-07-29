@@ -82,9 +82,6 @@ After about 5 seconds the RED CAN LED on the EPM will start blinking. Indicating
     
 All done, The EPM can be controlled via channal 7 or auto Mission or MAVLink command   
 
-***auto Mission not tested
-
-***MAVLink command not tested
 
 Connecting to a Pixhawk via PWM header
 ======================================
@@ -99,7 +96,6 @@ Connect the EPM to the Pixhawk the same as a :ref:`servo <common-servo>`.
 Parameter setup 
 ===============
 
-***(not tested)
 
 Set CH7_OPT: Channel 7 option = 19 (EPM) (Channel 7 - 12 maybe used) 
 
