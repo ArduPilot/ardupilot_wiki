@@ -31,7 +31,7 @@ Usefull links
 =============
 `Documenation <https://docs.zubax.com/opengrab_epm_v3>`__
 
-`PCB / Schematic <https://upverter.com/ctech4285/b9557d6903c36f55/OpenGrab-EPM-V3R4B/  ***Revision is printed on PCB>`__
+`PCB / Schematic <https://upverter.com/ctech4285/b9557d6903c36f55/OpenGrab-EPM-V3R4B/>`__  ***Revision is printed on PCB
 
 `Source code <https://github.com/Zubax/opengrab_epm_v3>`__
 
