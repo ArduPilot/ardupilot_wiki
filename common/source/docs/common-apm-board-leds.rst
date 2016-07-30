@@ -1,7 +1,7 @@
 .. _common-apm-board-leds:
 
 =======================
-Archived:LEDs (AMP 2.x)
+Archived:LEDs (APM 2.x)
 =======================
 
 .. warning::
