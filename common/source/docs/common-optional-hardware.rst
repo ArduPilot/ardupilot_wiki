@@ -30,7 +30,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Relay Switch <common-relay>   
     UAVCAN ESCs <common-uavcan-escs>
     EPM Gripper (EPM688) <common-electro-permanent-magnet-gripper>
-    EPM V3 Gripper <common-electro-permanent-magnet-V3>
+    EPM Gripper (OpenGrab V3) <common-electro-permanent-magnet-V3>
     PPM Encoder <common-ppm-encoder>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     External LEDs <common-external-leds>
