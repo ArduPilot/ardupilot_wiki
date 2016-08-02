@@ -58,29 +58,28 @@ Notes:
 Firmware setup
 ==============
 
-#.       Download APM firmware `here: <https://files.zubax.com/3rdparty/APM/uavcan_epm/>`__
-#.       Upload custom firmware via Mission Planner or QGC
+#.   Download APM firmware `here: <https://files.zubax.com/3rdparty/APM/uavcan_epm/>`__
+#.   Upload custom firmware via Mission Planner or QGC
  
 ***A pull request has been issued to include the changes in the next APM release. This documentation will be update when the request has been accepted. If this annoys you please write a comment `here <https://github.com/ArduPilot/ardupilot/pull/4361>`__
 
 Parameter setup
 ===============
 
-1.       Set BRD_CAN_ENABLE = 2 ( Enabled support for dynamic node ID allocation and firmware update.)
+#. Set BRD_CAN_ENABLE = 2 ( Enabled support for dynamic node ID allocation and firmware update.)
+   Save and restart the board. 
+   After about 5 seconds the RED CAN LED on the EPM will start blinking. Indicating that CAN frames are being received
 
-Save and restart the board. 
-After about 5 seconds the RED CAN LED on the EPM will start blinking. Indicating that CAN frames are being received
-
-.. image:: ../../../images/OpenGrabEPMV3_3.jpg
-    :target: ../_images/OpenGrabEPMV3_3.jpg
+   .. image:: ../../../images/OpenGrabEPMV3_3.jpg
+       :target: ../_images/OpenGrabEPMV3_3.jpg
     
-2.       set CH7_OPT: Channel 7 option = 19 (EPM) (Channel 7 - 12 maybe used) 
+#. set CH7_OPT: Channel 7 option = 19 (EPM) (Channel 7 - 12 maybe used) 
 
 
-.. image:: ../../../images/OpenGrabEPMV3_4.jpg
-    :target: ../_images/OpenGrabEPMV3_4.jpg
+   .. image:: ../../../images/OpenGrabEPMV3_4.jpg
+       :target: ../_images/OpenGrabEPMV3_4.jpg
     
-All done, The EPM can be controlled via channal 7 or auto Mission or MAVLink command   
+All done, The EPM can be controlled via channal 7 or auto Mission or MAVLink command.   
 
 
 Connecting to a Pixhawk via PWM header
@@ -108,7 +107,7 @@ All done, The EPM can be controlled via channal 7 or auto Mission or MAVLink com
 
 
 
-Auto Mission
+Auto mission
 ============
 
     Add a Do Gripper comamnd in your mission
