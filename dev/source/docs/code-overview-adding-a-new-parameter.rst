@@ -127,8 +127,8 @@ characters.
 You're done!  The new parameter can be access from the main code (not
 the libraries) as g.my_new_parameter.
 
-Adding a parameter to a library
-===============================
+Adding a parameter to an existing library
+=========================================
 
 Parameters can also be added to libraries by following these steps which
 use the `AP_Compass <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Compass>`__
@@ -167,7 +167,7 @@ AP_Vector3f.  Also add the default value you'd like for the parameter
         AP_Int16 _my_new_lib_parameter;              /// description of my new parameter
     };
 
-**Step #2:**\ Add the variable to the var_info table in the .cpp file
+**Step #2:** Add the variable to the var_info table in the .cpp file
 (i.e. `Compass.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/Compass.cpp>`__)
 including @Param ~ @Increment comments to allow the GCS to display the
 description to the user and to control the min and max values set from
@@ -209,36 +209,167 @@ the ground station.  When adding the new parameter be careful that:
     };
 
 The parameter can be accessed from within the library as
-\_my_new_lib_parameter.  Note that we made the parameter "protected"
+\_my_new_lib_parameter. Note that we made the parameter "protected"
 so it cannot be access from outside the class.  If we'd made it public
 then it would have been accessible to the main code as well as
 "compass._my_new_lib_parameter".
+    
+Adding parameters to a newly created library
+============================================
 
-**Step #3:** If the class is a completely new addition to the code (as
-opposed to an existing class like AP_Compass), it should be added to
-the main vehicle's var_info table in the
-`Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__
-file (it's order in the var_info table is not important).  Below in red
-where the Compass class appears.
+Parameters can also be added to your own, home-brewed library, e.g. "AP_MyOwnLib". There
+is a restriction though, the class must be member of the Copter class. The following steps are 
+required, some of which mirror steps described in the above.
+
+Read carefully and respect the comments given in the above for similar steps!.
+
+**Step #1:** `Parameters.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.h>`__:
+Find a spare slot in the Parameters class's enum and add your new parameter's toplevel index.
+
+::
+
+        enum {
+            <snip>
+            
+            k_param_arming_check_enabled,
+            k_param_sprayer,
+            k_param_angle_max,
+            k_param_gps_hdop_good,          // 35
+            
+            k_param_my_own_lib,       // 36
+
+            <snip>
+
+**Step #2:** `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__:
+Since the class is a completely new addition to the code, it needs to be added to
+the main vehicle's var_info table. It's order in the var_info table is not important, it is added here to
+the end. Below in red where the AP_MyOwnLib class appears.
 
 ::
 
     const AP_Param::Info var_info[] PROGMEM = {
-        // @Param: SYSID_SW_MREV
-        // @DisplayName: Eeprom format version number
-        // @Description: This value is incremented when changes are made to the eeprom format
-        // @User: Advanced
-        GSCALAR(format_version, "SYSID_SW_MREV",   0),
-    <snip>
+        <snip>
 
-        // @Group: COMPASS_
-        // @Path: ../libraries/AP_Compass/Compass.cpp
-        GOBJECT(compass,        "COMPASS_", Compass),
+        // @Param: TERRAIN_FOLLOW
+        // @DisplayName: Terrain Following use control
+        // @Description: This enables terrain following for RTL and LAND flight modes. To use this option TERRAIN_ENABLE must be 1 and the GCS must  support sending terrain data to the aircraft.  In RTL the RTL_ALT will be considered a height above the terrain.  In LAND mode the vehicle will slow to LAND_SPEED 10m above terrain (instead of 10m above home).  This parameter does not affect AUTO and Guided which use a per-command flag to determine if the height is above-home, absolute or above-terrain.
+        // @Values: 0:Do Not Use in RTL and Land 1:Use in RTL and Land
+        // @User: Standard
+        GSCALAR(terrain_follow, "TERRAIN_FOLLOW", 0),
 
-    <snip>
-        // @Group: INS_
-        // @Path: ../libraries/AP_InertialSensor/AP_InertialSensor.cpp
-        GOBJECT(ins,            "INS_", AP_InertialSensor),
+        // @Group: MOLB_
+        // @Path: ../libraries/AP_MyOwnLib/AP_MyOwnLib.cpp
+        GOBJECT(myownlib, "MOLB_", AP_MyOwnLib),
 
         AP_VAREND
     };
+   
+    
+**Step #3:** `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h>`__:
+Add your class to the main vehicle class.
+    
+::
+
+    class Copter : public AP_HAL::HAL::Callbacks {
+    public:
+        friend class GCS_MAVLINK;
+        friend class Parameters;
+
+        Copter(void);
+
+        // HAL::Callbacks implementation.
+        void setup() override;
+        void loop() override;
+
+    private:
+        <snip>
+            
+        AP_MyOwnLib myownlib;    
+        
+        <snip>
+    
+**Step #4:** `Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp>`__:
+Add the constructor of your class to the main vehicle constructor.
+    
+::
+
+    /*
+      constructor for main Copter class
+    */
+    Copter::Copter(void) :
+        DataFlash{FIRMWARE_STRING},
+        flight_modes(&g.flight_mode1),
+        <snip>
+            
+        myownlib(),
+  
+        <snip>
+
+    
+**Step #5:** AP_MyNewLib.h: Add the new variables as well as the parameter var_info table in the library .h file. 
+Possible parameter types include AP_Int8, AP_Int16, AP_Float, AP_Int32 and
+AP_Vector3f. The paramtrers can be in any section, public, private, or protected.
+Also add the default value you'd like for the parameter.
+
+::
+
+    #define MY_NEW_PARAM1_DEFAULT         123
+    #define MY_NEW_PARAM2_DEFAULT         420
+
+    class AP_MyOwnLib
+    {
+    public:
+        /// Constructor
+        AP_MyOwnLib();
+
+        <snip>
+
+        // parameter var table
+        static const struct AP_Param::GroupInfo var_info[];
+
+    private:
+        <snip>
+
+    protected:
+
+        AP_Int8 _my_new_parameter1;
+        AP_Int8 _my_new_parameter2;
+
+    }; //end of class AP_MyOwnLib
+
+**Step #6:** AP_MyNewLib.cpp: Add the new variables to the var_info table in the library .cpp file.
+In addition AP_Param::setup_object_defaults(this, var_info) needs to be called in the constructor. 
+
+::
+
+    #include <AP_Param/AP_Param.h>
+    
+    const AP_Param::GroupInfo AP_MyOwnLib::var_info[] = {
+        // @Param: _PARAM1
+        // @DisplayName: 
+        // @Description: 
+        // @Values: 0:None,1:coolnewfunction
+        // @User: Standard
+        AP_GROUPINFO("_PARAM1", 0, AP_MyOwnLib, _my_new_parameter1, MY_NEW_PARAM1_DEFAULT),
+
+        // @Param: _PARAM2
+        // @DisplayName: 
+        // @Description: 
+        // @Range: -1 1
+        // @Increment: 1
+        // @User: Advanced
+        AP_GROUPINFO("_PARAM2", 1, AP_MyOwnLib, _my_new_parameter2, MY_NEW_PARAM2_DEFAULT),
+
+        AP_GROUPEND
+    };
+    
+    /// Constructor
+    AP_MyOwnLib::AP_MyOwnLib()
+    {
+        AP_Param::setup_object_defaults(this, var_info);
+
+        <snip>
+    }
+
+This concludes the procedure. The parameter can now be accessed from within the library or
+the main code like any other class variable. 
