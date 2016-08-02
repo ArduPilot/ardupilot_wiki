@@ -1,4 +1,4 @@
-.. _common-electro-permanent-magnet-gripper:
+.. _common-electro-permanent-magnet-V3:
 
 ==================================================
 Electro Permanent Magnet Gripper (OpenGrab EPM v3)
