@@ -1,21 +1,21 @@
 .. _common-electro-permanent-magnet-gripper:
 
-=========================================
+==================================================
 Electro Permanent Magnet Gripper (OpenGrab EPM v3)
-=========================================
+==================================================
 
 This article shows how to use the `Electro Permanent Magnet Gripper (OpenGrab EPM v3) <http://nicadrone.com/index.php?id_product=66&controller=product>`__
 with ArduPilot.
 
-`Problems issues feedback <mailto:Andreas@NicaDrone.com?Subject=Problems%20issues%20feedback>`__
+`Problems/issues <mailto:Andreas@NicaDrone.com?Subject=Problems/issues>`__
 
 
 Overview
 ========
 
 The *OpenGrab EPM v3* (from NicaDrone.com) is a small (less than 4cm x 4cm x 2cm)
-Electro Permanent Magnet gripper capable of 20kg of force meaning it can
-hold about 15kg of cargo.  The gripping and releasing of the cargo if
+Electro Permanent Magnet gripper capable of 200N of force meaning it can
+hold about 15kg of cargo securely.  The gripping and releasing of the cargo is
 accomplished by delivering a short pulse to an electromagnet which
 reverses it's field.  Objects that it grips onto should be metal or have
 the included `thin steel target square <http://nicadrone.com/index.php?id_product=15&controller=product>`__
@@ -27,7 +27,7 @@ second when it first grips or releases the cargo.
 
 `See demo **Video** of the product here <https://youtu.be/ggvm-GQxwaY>`__!
 
-Usefull links
+Useful links
 =============
 `Documenation <https://docs.zubax.com/opengrab_epm_v3>`__
 
@@ -58,8 +58,8 @@ Notes:
 Firmware setup
 ==============
 
-1.       Download APM firmware `here: <https://files.zubax.com/3rdparty/APM/uavcan_epm/>`__
-2.       Upload custom firmware via Mission Planner or QGC
+#.       Download APM firmware `here: <https://files.zubax.com/3rdparty/APM/uavcan_epm/>`__
+#.       Upload custom firmware via Mission Planner or QGC
  
 ***A pull request has been issued to include the changes in the next APM release. This documentation will be update when the request has been accepted. If this annoys you please write a comment `here <https://github.com/ArduPilot/ardupilot/pull/4361>`__
 
