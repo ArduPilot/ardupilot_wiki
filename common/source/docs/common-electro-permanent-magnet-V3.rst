@@ -57,7 +57,7 @@ Firmware setup
  
 .. note::
 
-    The firmware update is in maser and do, to be released with Copter-3.4A.
+    The firmware update is in master and is to be released with Copter-3.4A.
 
 Parameter setup
 ===============
