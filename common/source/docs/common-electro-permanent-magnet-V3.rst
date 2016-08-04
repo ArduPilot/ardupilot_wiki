@@ -17,7 +17,7 @@ Objects that it grips onto should be metal or have the included `thin steel targ
 attached to them.
 
 The device accepts a standard PWM servo input or UAVCAN and uses a 5V power supply.  
-Significant amounts of power is only required for about 1 second when it first grips or releases the cargo.
+A Significant amount of power is only required for about 1 second when it first grips or releases the cargo.
 
 .. youtube:: ggvm-GQxwaY
     :width: 100%
