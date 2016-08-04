@@ -19,8 +19,8 @@ you were flying a real plane. A GCS can also be used to control a UAV in
 flight, uploading new mission commands and setting parameters. It is
 often also use to monitor the live video stream from a UAV’s cameras.
 
-There are at least eight different ground control stations (*Mission
-Planner*, *APM Planner 2*, *MAVProxy*, *Tower* (DroidPlanner 3),
+There are at least nine different ground control stations (*Mission
+Planner*, *APM Planner 2*, *MAVProxy*, *UgCS*, *Tower* (DroidPlanner 3),
 *AndroPilot*, *MAVPilot*, *iDroneCtrl* and *QGroundControl*) that can be
 used to communicate with ArduPilot (i.e.
 :ref:`Copter <copter:home>`,
@@ -76,6 +76,32 @@ drone) and special missions for 3D mapping.
    Legacy versions (`DroidPlanner 2 <https://play.google.com/store/apps/details?id=org.droidplanner>`__
    and `Droid Planner 1 <https://play.google.com/store/apps/details?id=com.droidplanner>`__)
    can also be downloaded from Google Play.
+   
+UgCS - Universal Ground Control Station
+---------------------------------------
+
+Universal and easy to use ground control station with a 3D interface. Supports APM, Pixhawk as well as drones from other manufacturers such as DJI, Mikrokopter and more.
+Intended for enthusiasts as well as professional users.
+
+It is capable of communicating with and controlling multiple drones simultaneously. 
+
+UgCS supports multiple map layers as well as different map providers. Some of the features of UgCS include - DEM Import, ADS-B transponder and receiver support, Click & Go mode, Joystick mode, image geotagging and video recording. UgCS also comes with a telemetry player, allowing the replay of all flights. 
+
+UgCS comes with in-built no-fly zones around all major airports as well as the ability to create custom no-fly zones.
+
+Supports multi-node installation, meaning that it is possible to connect multiple pilots with UgCS laptops in the field to a central ground control server.
+
+-  **Platform**: Windows, Mac OS X, Ubuntu
+-  **Licence**: Proprietary with a free licence available as well (UgCS Open)
+
+.. image:: https://www.ugcs.com/files/2016-04/1459769168_elevation-profile.jpeg
+    :target:  https://www.ugcs.com/files/2016-04/1459769168_elevation-profile.jpeg
+
+
+
+-  `UgCS Website <http://www.ugcs.com>`__
+-  `DIY Drones Group for UgCS Users <http://diydrones.com/group/ugcs>`__
+-  `UgCS Github Repository <https://github.com/ugcs>`__
 
 Mission Planner
 ---------------
