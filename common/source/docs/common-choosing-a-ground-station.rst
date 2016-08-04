@@ -78,12 +78,12 @@ drone) and special missions for 3D mapping.
    can also be downloaded from Google Play.
    
 UgCS - Universal Ground Control Station
----------------
+---------------------------------------
 
 Universal and easy to use ground control station with a 3D interface. Supports APM, Pixhawk as well as drones from other manufacturers such as DJI, Mikrokopter and more.
 Intended for enthusiasts as well as professional users.
 
-Is capable of communicating with and controlling multiple drones simultaneously. 
+It is capable of communicating with and controlling multiple drones simultaneously. 
 
 UgCS supports multiple map layers as well as different map providers. Some of the features of UgCS include - DEM Import, ADS-B transponder and receiver support, Click & Go mode, Joystick mode, image geotagging and video recording. UgCS also comes with a telemetry player, allowing the replay of all flights. 
 
