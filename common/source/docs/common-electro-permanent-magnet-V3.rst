@@ -17,7 +17,7 @@ Objects that it grips onto should be metal or have the included `thin steel targ
 attached to them.
 
 The device accepts a standard PWM servo input or UAVCAN and uses a 5V power supply.  
-Significant amounts of power are only required for about about 1 second when it first grips or releases the cargo.
+A Significant amount of power is only required for about 1 second when it first grips or releases the cargo.
 
 .. youtube:: ggvm-GQxwaY
     :width: 100%
@@ -57,7 +57,7 @@ Firmware setup
  
 .. note::
 
-    A pull request has been issued to include the changes in the next APM release. This documentation will be update when the request has been accepted. If this annoys you please write a comment `here <https://github.com/ArduPilot/ardupilot/pull/4361>`__
+    The firmware update is in master and is to be released with Copter-3.4A.
 
 Parameter setup
 ===============
