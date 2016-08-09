@@ -685,6 +685,7 @@ Our general advice for images is:
 - Name the file using all lower case, and underscores between words.
 - Name the file "descriptively" so it is easy to find, and possibly re-use. 
   A name like **planner2_flight_screen.jpg** is much more useful than **image1.jpg**.
+- To change an image, simply replace the file in the source tree and commit the change.
     
 Display an image in a "common" article with a caption and target as shown below. Note the paths to the files are relative
 to the current directory (hence the relative link back to **images** in the project root).
