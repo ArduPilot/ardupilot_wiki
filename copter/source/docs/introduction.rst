@@ -61,7 +61,7 @@ Key features include:
    point-and-click mission planning interface.
 -  *Missions with hundreds of GPS waypoints*: Just point and click
    waypoints in a Mission Planner, and Copter will fly itself to them.
-   You cautomate entire missions, including camera control! The only
+   You can automate entire missions, including camera control! The only
    distance limits are those of your vehicle power supply.
 -  *Mission planning while in flight*: Using a two-way wireless
    connection, waypoints, mode changing, even changing the gains of

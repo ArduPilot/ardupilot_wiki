@@ -115,6 +115,7 @@ ROS packages:
     git clone https://github.com/alexbuyval/rotors_simulator.git 
     git clone https://github.com/ethz-asl/glog_catkin.git
     git clone https://github.com/catkin/catkin_simple.git
+    git clone https://github.com/ethz-asl/gflags_catkin.git
     cd rotors_simulator
     git checkout sonar_plugin
     cd ../..
