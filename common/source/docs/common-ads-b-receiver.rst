@@ -168,6 +168,8 @@ to set the ``SERIAL3_`` parameters:
    SERIAL3_PROTOCOL 1
    SERIAL3_BAUD 57600
 
+At the SITL console set the quantity of simulated aircraft to 5 with the command ``param set SIM_ADSB_COUNT 5``. Values 0 - 100 are available. You can also set the altitude ``SIM_ADSB_ALT`` and radius ``SIM_ADSB_RADIUS`` of the simulated aircraft
+
 TODO
 ====
 
