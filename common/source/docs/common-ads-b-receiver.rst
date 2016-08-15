@@ -142,23 +142,31 @@ ADSB_BEHAVIOR options:
 Simulation
 ==========
 
-This includes a new ADS-B simulation component in SITL where you can
-have aircraft flying at you. Joy! To enable this you must have pymavlink
-v1.1.70. If you have an older version, use:
+Ardupilot's SITL includes the simulation of ADS-B enabled aircraft.
+To enable this you must have pymavlink v1.1.70 or greater. If you have
+an older version, use:
 
 ::
 
     sudo pip install --upgrade pymavlink MAVProxy
 
-When starting SITL use the following command:
+Set the number of aircraft to simulate using the ``SIM_ADSB_COUNT`` parameter.  Other simulation options for ADS-B are present, all starting with ``SIM_ADSB_``.
+
+Plugging in a hardware ADS-B receiver to your
+computer using a USB-to-Serial converter will allow you to overlay real ADS-B
+traffic into the simulation.  You might invoke SITL in this way to achieve this effect:
 
 ::
 
-    sim_vehicle.sh -A --adsb --console --map
+   sim_vehicle.py -v ArduCopter -A "--uartC uart:$SERIAL_DEVICE:57600"
 
-This also supports plugging in a hardware ADS-B receiver to your
-computer using a USB-to-Serial converter which will overlay real ADS-B
-traffic into the simulation.
+Where SERIAL_DEVICE might be /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A4008ZND-if00-port0 on a Linux system.  Once SITL has started it may be necessary
+to set the ``SERIAL3_`` parameters:
+
+::
+
+   SERIAL3_PROTOCOL 1
+   SERIAL3_BAUD 57600
 
 TODO
 ====
