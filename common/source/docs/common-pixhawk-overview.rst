@@ -377,7 +377,7 @@ connector.**
 
 The system's serial console runs on the port labeled SERIAL4/5. The
 pinout is standard serial pinout, to connect to a standard FTDI cable
-(3.3V, but its 5V tolerant).
+(3.3V, but it's 5V tolerant).
 
 
 .. raw:: html
@@ -446,10 +446,10 @@ Pixhawk system features
    capacity. Pixhawk allows current APM and PX4 operators to seamlessly
    transition to this system and lowers the barriers to entry for new
    users.
--  The NuttX real-time operating system, features high performance,
+-  The NuttX real-time operating system features high performance,
    flexibility, and reliability for controlling any autonomous vehicle.
--  A Unix/Linux-like programming environment, Integrated
-   multithreading and autopilot functions such as Lua scripting of
+-  A Unix/Linux-like programming environment, integrated
+   multithreading and autopilot functions such as scripting of
    missions and flight behavior provide powerful development
    capabilities.
 -  A custom PX4 driver layer ensures tight timing across all processes.
@@ -478,7 +478,7 @@ Pixhawk system features
    -  MEAS MS5611 barometric pressure sensor for determining altitude.
    -  Built in voltage and current sensing for battery condition
       determination.
-   -  Connection for an externally mountable UBLOX LEA GPS for
+   -  Connections for externally-mountable GPS units for
       determining absolute position.
 
 -  **Extensive I/O interfaces with dedicated connectors**
@@ -534,7 +534,7 @@ and is completely compatible.
    wired through the backup processor, and an auxiliary group of 6
    outputs directly wired to the main processor.
 -  The port labeled "RC" can take normal PPM sum or Futaba S.Bus inputs
-   and the port labeled "SB" can read RSSI our output S.Bus to servos.
+   and the port labeled "SB" can read RSSI or output S.Bus to servos.
 -  A Spektrum satellite compatible port is on top (labeled SPKT/DSM).
 -  The basic operation is the same, and the software is shared.
 -  Inside Pixhawk a FMUv2 and an IOv2 do their duties on a single board
@@ -602,7 +602,7 @@ provide the HWSTATUS.Vcc reading that ground stations use to display 5V
 status
 
 **Virtual Pin 13 and ADC 3.3V connector Pin 4**: This takes a max of
-3.3V. May be used for sonar or other analog sensor.
+3.3V. May be used for sonar or other analog sensors.
 
 **Virtual Pin 14 and ADC 3.3V connector Pin 2**: This takes a max of
 3.3V. May be used for second sonar or other analog sensor.

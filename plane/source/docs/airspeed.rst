@@ -5,7 +5,7 @@ Using an Airspeed Sensor
 ========================
 
 Plane supports the use of an airspeed sensor, which can help in windy
-condition, slow flight and autonomous landings. It is not recommended
+conditions, slow flight and autonomous landings. It is not recommended
 for most new users, however, as it does require additional tuning and
 adds one more layer of control to set up.
 
@@ -63,14 +63,14 @@ from tube with intakes on the side).
 Connect the active sensor port using silicon tube to the straight tube
 exiting from the rear of the pitot tube. The angled tube is the static
 part connecting to the static port of the sensor (the port on the sensor
-closest to the PCB breakout board)
+closest to the PCB)
 
 PX4/Pixhawk Analog Airspeed Pin and Wiring
 ------------------------------------------
 
 For the PX4
 
--  Hardware PIN 11 is available on the PX4 for Air Speed use.
+-  Hardware PIN 11 is available on the PX4 for airspeed use.
 -  The "airspeed" pin 11 is located on a 3 pin DF13 connector on the
    PX4IO board but is directly connected to the ADC on the PX4FMU.
 -  This pin can take voltages up to 6.6V (it has an internal voltage
@@ -78,11 +78,11 @@ For the PX4
 -  The FMU-Pres (air pressure) 3 pin connector is on the end of the
    PX4IO board opposite the power in connector.
 
-   -  Wire the air speed sensor's signal wire to pin 2 (the center pin)
+   -  Wire the airspeed sensor's signal wire to pin 2 (the center pin)
       of the FMU-PRES connector.
    -  Wire pin 1 (towards the center of the board) to the sensors VCC (5
       volts) input.
-   -  Wire pin 3 (nearest the edge of the board) to the air speed
+   -  Wire pin 3 (nearest the edge of the board) to the airspeed
       sensors ground.
 
 -  Assign the airspeed sensor to an appropriate "PIN" in Mission Planner
@@ -97,15 +97,15 @@ For the Pixhawk
    Pixhawk board.
 -  This pin can take voltages up to 6.6V (it has an internal voltage
    divider).
--  The air pressure connector (labeled ADC 6.6V) is a 3 pin connector is
+-  The air pressure connector (labeled ADC 6.6V) is a 3 pin connector
    on the top right of the Pixhawk.
 
-   -  Wire the air speed sensor's signal wire to pin 2 (the center pin)
-      of the FMU-PRES connector.
-   -  Wire pin 1 (towards the center of the board) to the sensors VCC (5
+   -  Wire the airspeed sensor's signal wire to pin 2 (the center pin)
+      of the connector.
+   -  Wire pin 1 (towards the center of the board) to the sensor's VCC (5
       volts) input.
-   -  Wire pin 3 (nearest the edge of the board) to the air speed
-      sensors ground.
+   -  Wire pin 3 (nearest the edge of the board) to the airspeed
+      sensor's ground.
 
 -  Assign the airspeed sensor to an appropriate "PIN" in Mission Planner
    - Configuration - Advanced Params - Adv Parameter List.
@@ -192,7 +192,7 @@ a loose fitting cover over the pitot tube that shields the front hole
 and the four small side holes from the wind. This cover should be fitted
 prior to power on and removed before flight. If you forget to do this,
 you can always place the cover and repeat the airspeed auto-zero using
-the Mission Planners PREFLIGHT_CALIBRATE => Do Action.
+the Mission Planner's PREFLIGHT_CALIBRATE => Do Action.
 
 The airspeed reading scale factor is adjusted using the ARSPD_RATIO
 parameter. Plane has an automatic calibration function that will adjust

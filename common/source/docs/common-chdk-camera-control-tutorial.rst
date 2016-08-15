@@ -405,9 +405,9 @@ One of our favorite applications of CHDK is creating a map of an area by
 stitching automatically-captured pictures into a composite image. We'll
 use the same
 `3DR_Shoot.bas <http://download.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__\ script
-that we used in the previous section.The process is similar to setting
+that we used in the previous section. The process is similar to setting
 shutter triggers at waypoints, only to make sure we capture the entire
-area, we need more frequent, more regular waypoints. We’ll do this
+area we need more frequent, more regular waypoints. We’ll do this
 automatically using Mission Planner’s **Grid V2** automatic waypoint
 function.
 

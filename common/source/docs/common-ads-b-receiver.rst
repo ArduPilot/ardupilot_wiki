@@ -89,11 +89,11 @@ receive the forwarded packets automatically.
 Serial Setup
 ------------
 
-If you are using one of the UARTs on your board which default to MAVLink
+If you are using one of the UARTs on your board which defaults to MAVLink
 then the default settings will work fine for the Ping. Alternatively you
 can connect the Ping to one of the other UARTs, such as the GPS UART (if
 it is unused) or the serial4/5 UART. In that case you will need to
-configure the uart as MAVLink at a baudrate of 57600.
+configure the UART as MAVLink at a baudrate of 57600.
 
 For example, if you wanted to use the port marked "serial4/5" on a
 Pixhawk you would set:

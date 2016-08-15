@@ -15,7 +15,7 @@ Overview
 ========
 
 Companion Computers travel on the vehicle and communicate with (and
-control) the flight controller. The companion computer gets all the
+control) the flight controller. The Companion Computer gets all the
 MAVLink data produced by the autopilot (including GPS data) and can use
 it to make intelligent decisions during flight. This enables a broad
 range of functionality, from computer mediated flight paths, though to
@@ -29,7 +29,7 @@ very CPU intensive functionality such as vision processing.
    communicating with the autopilot over a fast link using MAVLink
    messages.
 
-   Using a companion computer is an alternative to using a fully integrated
+   Using a Companion Computer is an alternative to using a fully integrated
    Linux autopilot.
 
 This page is for plug and play solutions that require little
