@@ -92,8 +92,11 @@ CHDK allows you to automate your camera's functionality by running
 scripts off an SD card. CHDK scripts can be written in
 both \ `UBASIC <https://en.wikipedia.org/wiki/UBASIC>`__\ and \ `Lua <https://en.wikipedia.org/wiki/Lua_(programming_language)>`__:
 simple, easy-to-use programming languages. For this tutorial, we'll use
-UBASIC scripts with file extension **.bas**. *UBASIC script files must
-carry the extension \ **.bas** to function.*
+UBASIC scripts with file extension **.bas**.
+
+.. note::
+
+   UBASIC script files must carry the extension **.bas** to function.
 
 One of the easiest and most useful ways to apply CHDK to your mission is
 to take pictures automatically at intervals during flight. We'll do this
@@ -136,7 +139,7 @@ Prior to launching your plane, it is necessary to activate the
 intervalometer script on the camera. Make sure the SD card is locked and
 loaded into the camera and the camera is turned on. When you're ready to
 launch your plane, enter ALT mode by pressing the **Print** or **Play**
-button on the camera (for more information consult the\ `CHDK wiki <http://chdk.wikia.com/wiki/CHDK>`__). Press the **Menu** button to
+button on the camera (for more information consult the `CHDK wiki <http://chdk.wikia.com/wiki/CHDK>`__). Press the **Menu** button to
 access the main CHDK menu. Select **Load Script from File**;
 select \ **DM_interval.bas**. Press the **shutter** button to run the
 script. (You can also use the shutter button to stop the script.) Once
@@ -206,9 +209,11 @@ down to find the **Servo out function** parameters for each channel.
 Find the parameter that corresponds to your camera control channel. For
 us, it's **Servo out function (RC7_FUNCTION)**.
 
-*Set this parameter to **Manual** whenever you want to control your
-camera using your RC transmitter; set to **Disabled** when you want the
-APM to control the camera automatically.*
+.. note::
+
+   Set this parameter to **Manual** whenever you want to control your
+   camera using your RC transmitter; set to **Disabled** when you want the
+   APM to control the camera automatically.
 
 Since we're using the RC transmitter to test the CHDK cable, set **Servo
 out function** to **Manual**. Select **Write Params** before

@@ -46,7 +46,7 @@ Key features include:
 -  *Automatic takeoff and landing*: Flick a switch and watch Copter
    execute its mission completely autonomously, returning home and
    landing by itself when it's done.
--  *"Loiter" mode.*: Copter will hold its position using its GPS and
+-  *"Loiter" mode*: Copter will hold its position using its GPS and
    altitude sensors.
 -  *Return to launch*: Flip a switch to have Copter fly back to the
    launch location automatically.

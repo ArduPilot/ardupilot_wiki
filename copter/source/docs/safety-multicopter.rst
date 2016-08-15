@@ -62,8 +62,8 @@ MultiCopter Safety
       the right for several seconds to arm the motors.
    #. After landing your first response should be to hold the throttle
       down and to the left for several seconds to "Disarm" the motors.
-      \* Disarm condition can be tested by moving the throttle stick up,
-      if the motors do not move it is disarmed.
+      Disarm condition can be tested by moving the throttle stick up,
+      if the motors do not move it is probably disarmed.
    #. Even when disarmed, the throttle stick should always be kept in
       the full down position except when flying.
 
@@ -120,7 +120,7 @@ MultiCopter Safety
       use of models. Please, understand the law and the rights of others
       - and fly accordingly.
    #. Most countries have a prominent model aircraft organization. In
-      the USA that is the\ `AMA <http://www.modelaircraft.org/>`__.
+      the USA that is the `AMA <http://www.modelaircraft.org/>`__.
       Review the AMA `safety code <http://www.modelaircraft.org/files/105.pdf>`__. Working with
       the FAA and other government organizations, the AMA has
       established (and continues to update) `rules for UAV's and for FPV flight <http://www.modelaircraft.org/documents.aspx#FPV>`__. If
@@ -203,7 +203,7 @@ MultiCopter Safety
 
    #. RTL can provide a safe **Return to Launch** if it starts to get
       away from you.
-   #. Set up a\ ** FailSafe** on Radio Fail with an RTL or Descend
+   #. Set up a **FailSafe** on Radio Fail with an RTL or Descend
       response to save your Copter and prevent Injury.
    #. **GeoFence** establishes an automatic flying perimeter that will
       force your copter to stay in a safe proximity.

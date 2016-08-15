@@ -17,7 +17,7 @@ Video Overview
 LED Meanings
 ============
 
-**Flashing red and blue**: Initializing gyroscopes. !! Hold the vehicle
+**Flashing red and blue**: Initializing gyroscopes. Hold the vehicle
 still and level while it initializes the sensors.
 
 **Flashing blue**: Disarmed, no GPS lock found. Autopilot, loiter and
