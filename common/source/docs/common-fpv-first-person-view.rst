@@ -97,6 +97,6 @@ Safety Warnings Relating Specifically to FPV Flight
    systems limits or interference from structures between you and the
    vehicle.
 -  Know and recognise the FPV signal loss warning signs and be ready to
-   shed the FPV equipment and retake manual control at all times.
+   shed the FPV equipment and retake line-of-sight control at all times.
 -  FPV equipment can interfere with the vehicle's radio or GPS if placed
    too close
