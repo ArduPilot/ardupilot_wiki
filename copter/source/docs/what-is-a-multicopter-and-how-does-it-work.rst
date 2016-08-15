@@ -27,14 +27,14 @@ each motor/propeller spinning in the opposite direction from the two
 motors on either side of it (i.e. motors on opposite corners of the
 frame spin in the same direction).
 
-A quad copter can control its roll and pitch rotation by speeding up
+A quadcopter can control its roll and pitch rotation by speeding up
 two motors on one side and slowing down the other two.  So for example
-if the quad copter wanted to roll left it would speed up motors on the
+if the quadcopter wanted to roll left it would speed up motors on the
 right side of the frame and slow down the two on the left.  Similarly if
 it wants to rotate forward it speeds up the back two motors and slows
 down the front two.
 
-The copter turns (aka "yaw") left or right by speeding up two motors
+The copter can turn (aka "yaw") left or right by speeding up two motors
 that are diagonally across from each other, and slowing down the other
 two.
 

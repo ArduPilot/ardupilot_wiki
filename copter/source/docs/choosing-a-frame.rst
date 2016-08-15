@@ -5,7 +5,7 @@ Choosing a MultiCopter Frame
 ============================
 
 One of the first steps in using Copter is to decide on the frame.  Shown
-above are three options from
+below are three options from
 `3DRobotics <http://store.3drobotics.com/>`__ but there are hundreds of
 other choices.  This page will hopefully give some guidance on the
 choices available.
@@ -39,18 +39,12 @@ copters on the market, there is likely little cost advantage to building
 your own, especially for the smaller copters and if you factor in some
 missteps along the way (like buying the wrong parts).
 
-`Complete Kits like these from 3DR <https://store.3dr.com/t/diyparts>`__ are an intermediate
-step.  They ensure you have all the parts you need, the final result
-will be very close to the RTF but they are slightly cheaper because you
-perform the frame assembly and flight controller configuration yourself.
-
 Continued Reading
 =================
 
 Below are more work-in-progress pages with general information that may
 be useful when selecting or building a frame.
 
--  :ref:`3DR Kits and Best Practices <3dr-kits-and-best-practices>`
 -  :ref:`Build your own multicopter <build-your-own-multicopter>`
 -  :ref:`Improving the capabilities of your multicopter <improving-the-capabilities-of-your-multicopter>`
 -  :ref:`Advanced multicopter design <advanced-multicopter-design>`

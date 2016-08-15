@@ -24,19 +24,19 @@ Specifications
 
    -  Ideal diode controller with automatic failover
    -  Servo rail high-power (7 V) and high-current ready
-   -  All peripheral outputs over-current protected, all inputs ESC
+   -  All peripheral outputs over-current protected, all inputs ESD
       protected
 
 -  **Interfaces**
 
-   -  5x UART serial ports, 1 high-power capable, 2x with HW flow
+   -  5x UART serial ports, 1 high-power capable, 2 with HW flow
       control
    -  Spektrum DSM/DSM2/DSM-X Satellite input
    -  Futaba S.BUS input (output not yet implemented)
    -  PPM sum signal
    -  RSSI (PWM or voltage) input
    -  I2C, SPI, 2x CAN, USB
-   -  3.3 and 6.6 ADC inputs
+   -  3.3V and 6.6V ADC inputs
 
 -  **Dimensions**
 
@@ -377,7 +377,7 @@ connector.**
 
 The system's serial console runs on the port labeled SERIAL4/5. The
 pinout is standard serial pinout, to connect to a standard FTDI cable
-(3.3V, but its 5V tolerant).
+(3.3V, but it's 5V tolerant).
 
 
 .. raw:: html
@@ -446,17 +446,17 @@ Pixhawk system features
    capacity. Pixhawk allows current APM and PX4 operators to seamlessly
    transition to this system and lowers the barriers to entry for new
    users.
--  The NuttX real-time operating system, features high performance,
+-  The NuttX real-time operating system features high performance,
    flexibility, and reliability for controlling any autonomous vehicle.
--  A Unix/Linux-like programming environment, Integrated
-   multithreading and autopilot functions such as Lua scripting of
+-  A Unix/Linux-like programming environment, integrated
+   multithreading and autopilot functions such as scripting of
    missions and flight behavior provide powerful development
    capabilities.
 -  A custom PX4 driver layer ensures tight timing across all processes.
--  New peripheral options will include a digital airspeed sensor,
-   support for an external multi-color LED indicator and an external
-   compass.
--  All peripherals are automatically detected and configured.
+-  Peripheral options include digital airspeed sensors,
+   external multi-color LED indicators and external
+   compasses.
+-  Most peripherals are automatically detected and configured.
 -  **A very powerful 32-bit processor with an additional failsafe backup
    controller and extensive memory.**
 
@@ -478,13 +478,13 @@ Pixhawk system features
    -  MEAS MS5611 barometric pressure sensor for determining altitude.
    -  Built in voltage and current sensing for battery condition
       determination.
-   -  Connection for an externally mountable UBLOX LEA GPS for
+   -  Connections for externally-mountable GPS units for
       determining absolute position.
 
 -  **Extensive I/O interfaces with dedicated connectors**
 
    -  Fourteen PWM servo or ESC speed control outputs.
-   -  Five UART (serial ports), one high-power capable, 2x with HW flow
+   -  Five UARTs (serial ports), one high-power capable, 2 with HW flow
       control.
    -  Two CAN I/O ports (one with internal 3.3V transceiver, one on
       expansion connector)
@@ -496,7 +496,6 @@ Pixhawk system features
    -  I2C and SPI serial ports.
    -  Two 3.3 volt and one 6.6 volt Analog inputs.
    -  Internal microUSB port and external microUSB port extension.
-   -  Contains its own on board microcontroller and stacks with the FMU.
 
 -  **Comprehensive power system with redundancy and extensive
    protection.**
@@ -514,8 +513,8 @@ Pixhawk system features
       multicolored LED to indicate flight status.
    -  High-power, multi-tone piezo audio indicator also informs of
       current flight status.
-   -  Available high performance UBLOX GPS plus external compass in
-      protective case.
+   -  High performance UBLOX GPS plus external compass in
+      protective case available.
    -  Weight: 38g (1.31oz), Width: 50mm (1.96"), Thickness: 15.5mm
       (.613"), Length: 81.5mm (3.21")
 
@@ -534,7 +533,7 @@ and is completely compatible.
    wired through the backup processor, and an auxiliary group of 6
    outputs directly wired to the main processor.
 -  The port labeled "RC" can take normal PPM sum or Futaba S.Bus inputs
-   and the port labeled "SB" can read RSSI our output S.Bus to servos.
+   and the port labeled "SB" can read RSSI or output S.Bus to servos.
 -  A Spektrum satellite compatible port is on top (labeled SPKT/DSM).
 -  The basic operation is the same, and the software is shared.
 -  Inside Pixhawk a FMUv2 and an IOv2 do their duties on a single board
@@ -561,8 +560,7 @@ and is completely compatible.
    work in v1, but also software-supported)
 -  No more solid state relays on v2 (was not really used)
 -  Connectors easier to disconnect in case, as the surrounding plastic
-   helps to place the fingers correctly (more on this in a separate
-   post)
+   helps to place the fingers correctly
 -  Case prevents one-off failure operation of servo connectors
 -  The new unit is consirably larger, has the same height, but offers in
    general more handling convenience.
@@ -580,6 +578,9 @@ Connecting and disconnecting DF13 connectors
 ..  youtube:: Kfu8M8t2fWY
     :width: 100%
 
+..  youtube:: TverfQwSdzU
+    :width: 100%
+	    
 .. _common-pixhawk-overview_pixhawk_analog_input_pins:
 
 Pixhawk analog input pins
@@ -588,7 +589,7 @@ Pixhawk analog input pins
 This section lists the analog pins available on the Pixhawk. These are
 virtual pins, defined in the firmware.
 
-**Virtual Pin 2 and Power connector Pin 4 and Virtual Pin 2**: power
+**Virtual Pin 2 and Power connector Pin 4**: power
 management connector voltage pin, accepts up to 3.3V, usually attached
 to 3DR power brick with 10.1:1 scaling
 
@@ -602,7 +603,7 @@ provide the HWSTATUS.Vcc reading that ground stations use to display 5V
 status
 
 **Virtual Pin 13 and ADC 3.3V connector Pin 4**: This takes a max of
-3.3V. May be used for sonar or other analog sensor.
+3.3V. May be used for sonar or other analog sensors.
 
 **Virtual Pin 14 and ADC 3.3V connector Pin 2**: This takes a max of
 3.3V. May be used for second sonar or other analog sensor.
@@ -625,8 +626,8 @@ RSSI input pin on the SBUS-out connector (the bottom pin of the 2nd last
 servo connector on the 14 connector servo rail).
 
 This can alternatively serve as SBus out by setting the
-``BRD_CAN_ENABLE`` parameter ( :ref:`Copter <copter:BRD_CAN_ENABLE>`,
-:ref:`Plane <plane:BRD_CAN_ENABLE>`, :ref:`Rover <rover:BRD_CAN_ENABLE>`).
+``BRD_SBUS_OUT`` parameter ( :ref:`Copter <copter:BRD_SBUS_OUT>`,
+:ref:`Plane <plane:BRD_SBUS_OUT>`, :ref:`Rover <rover:BRD_SBUS_OUT>`).
 
 .. image:: ../../../images/pixhawk2.jpg
     :target: ../_images/pixhawk2.jpg

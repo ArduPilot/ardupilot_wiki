@@ -17,12 +17,8 @@ to ground test them on your aircraft by sending Pixhawk a specific
 airspeed.
 
 On Pixhawk you can plug a potentiometer into ADC 6.6v (pin 15) or ADC
-3.3v (pin 11). Assuming you have an `I2C airspeed sensor <http://store.jdrones.com/digital_airspeed_sensor_p/senair02kit.htm>`__
-plugged in to the `I2C splitter <http://store.jdrones.com/Pixhawk_I2C_splitter_p/dstpx4i2c01.htm>`__
-and set to Pin 65, you can also plug in a simple potentiometer into the
-:ref:`ADC 6.6v <common-pixhawk-overview_pixhawk_analog_input_pins>`.
-
-Pin 15 as shown below.
+3.3v (pin 11). If you are using an I2C :ref:`airpseed <airspeed>` sensor
+you will temporarily configure your autopilot to use the analogue port.
 
 .. image:: ../images/Pixhawk_Pins2.jpg
     :target: ../_images/Pixhawk_Pins2.jpg
@@ -52,16 +48,14 @@ Open your Ground Control Station (GCS) of choice, and change the
 .. image:: ../images/AirspeedMP.png
     :target: ../_images/AirspeedMP.png
 
-If your Pixhawk was powered on with the I2C Airspeed sensor and Pin 65
-selected, your speed will probably display something >12 m/s. If you
-need to set the speed to something specific between 0 and 12 m/s, just
-power down and power up the Pixhawk with Pin 15 set before you power
-down. Airspeed will reset to 1-3 m/s after the restart and
+Reboot your Pixhawk to allow this parameter change to have an effect.
+Airspeed will reset to 1-3 m/s after the restart and
 initialization is complete. Adjust the pot to set your desired speed.
 
 .. note::
 
-   *Remember to re-enable the airspeed sensor!* Set the “ARSPD_PIN”
-   pin to 65, and cycle the Pixhawk power to ensure the I2C airspeed
+   If you are using an I2C airspeed sensor - *remember to re-enable it!*
+   Set the ``ARSPD_PIN``
+   parameter to 65, and cycle the Pixhawk power to ensure the I2C airspeed
    properly initializes. Check you get the normal 1-3 m/s noise on the
    airspeed display.

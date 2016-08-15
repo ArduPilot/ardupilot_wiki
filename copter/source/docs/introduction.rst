@@ -10,7 +10,7 @@ helicopters, and other rotor vehicles.
 Overview
 ========
 
-Copter is complete open-source autopilot solution for multi-rotor
+Copter is a complete open-source autopilot solution for multi-rotor
 vehicles, offering both enhanced remote control flight (via a number of
 intelligent flight modes) and execution of fully autonomous missions.
 
@@ -46,7 +46,7 @@ Key features include:
 -  *Automatic takeoff and landing*: Flick a switch and watch Copter
    execute its mission completely autonomously, returning home and
    landing by itself when it's done.
--  *"Loiter" mode.*: Copter will hold its position using its GPS and
+-  *"Loiter" mode*: Copter will hold its position using its GPS and
    altitude sensors.
 -  *Return to launch*: Flip a switch to have Copter fly back to the
    launch location automatically.
@@ -61,10 +61,10 @@ Key features include:
    point-and-click mission planning interface.
 -  *Missions with hundreds of GPS waypoints*: Just point and click
    waypoints in a Mission Planner, and Copter will fly itself to them.
-   You cautomate entire missions, including camera control! The only
+   You automate entire missions, including camera control! The only
    distance limits are those of your vehicle power supply.
 -  *Mission planning while in flight*: Using a two-way wireless
-   connection, waypoints, mode changing, even changing the gains of
+   connection, waypoints, mode changing, even changing the values of
    every control parameter can be done from your laptop or mobile device
    - even while Copter is in the air!
 
@@ -74,7 +74,7 @@ Getting started
 If you're using Copter on a ready-to-fly vehicle then it is likely that
 it will be already setup, configured and tuned, ready for your first
 flight. We recommend you *read your manufacturer's instructions*,
-particularly those related to safely, before flying.
+particularly those related to safety, before flying.
 
 Once you're familiar with your vehicle's default setup you may want to
 configure your RC transmitter/vehicle to use more challenging :ref:`flight modes <flight-modes>`, or :ref:`choose a ground station <common-choosing-a-ground-station>` and start flying automated
