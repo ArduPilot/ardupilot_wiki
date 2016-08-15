@@ -64,7 +64,7 @@ Key features include:
    You automate entire missions, including camera control! The only
    distance limits are those of your vehicle power supply.
 -  *Mission planning while in flight*: Using a two-way wireless
-   connection, waypoints, mode changing, even changing the gains of
+   connection, waypoints, mode changing, even changing the values of
    every control parameter can be done from your laptop or mobile device
    - even while Copter is in the air!
 
