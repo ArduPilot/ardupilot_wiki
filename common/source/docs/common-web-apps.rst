@@ -18,10 +18,6 @@ maps, and point clouds with just a few clicks.  Long distance missions
 without the equipment.  Fast connections to your drone with LTE for
 untethered control over 80% of the US.
 
-`Droneshare.com <http://www.droneshare.com/>`__ - Flight viewing and
-sharing application that works with ground control applications to let
-you share your flight data (open source from 3DRobotics)
-
 `dronetrack.org <http://www.dronetrack.org/>`__ - Real-Time tracking and
 sharing of flight paths
 
