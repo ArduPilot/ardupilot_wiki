@@ -626,8 +626,8 @@ RSSI input pin on the SBUS-out connector (the bottom pin of the 2nd last
 servo connector on the 14 connector servo rail).
 
 This can alternatively serve as SBus out by setting the
-``BRD_CAN_ENABLE`` parameter ( :ref:`Copter <copter:BRD_CAN_ENABLE>`,
-:ref:`Plane <plane:BRD_CAN_ENABLE>`, :ref:`Rover <rover:BRD_CAN_ENABLE>`).
+``BRD_SBUS_OUT`` parameter ( :ref:`Copter <copter:BRD_SBUS_OUT>`,
+:ref:`Plane <plane:BRD_SBUS_OUT>`, :ref:`Rover <rover:BRD_SBUS_OUT>`).
 
 .. image:: ../../../images/pixhawk2.jpg
     :target: ../_images/pixhawk2.jpg
