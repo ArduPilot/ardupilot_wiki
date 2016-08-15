@@ -24,19 +24,19 @@ Specifications
 
    -  Ideal diode controller with automatic failover
    -  Servo rail high-power (7 V) and high-current ready
-   -  All peripheral outputs over-current protected, all inputs ESC
+   -  All peripheral outputs over-current protected, all inputs ESD
       protected
 
 -  **Interfaces**
 
-   -  5x UART serial ports, 1 high-power capable, 2x with HW flow
+   -  5x UART serial ports, 1 high-power capable, 2 with HW flow
       control
    -  Spektrum DSM/DSM2/DSM-X Satellite input
    -  Futaba S.BUS input (output not yet implemented)
    -  PPM sum signal
    -  RSSI (PWM or voltage) input
    -  I2C, SPI, 2x CAN, USB
-   -  3.3 and 6.6 ADC inputs
+   -  3.3V and 6.6V ADC inputs
 
 -  **Dimensions**
 
@@ -453,10 +453,10 @@ Pixhawk system features
    missions and flight behavior provide powerful development
    capabilities.
 -  A custom PX4 driver layer ensures tight timing across all processes.
--  New peripheral options will include a digital airspeed sensor,
-   support for an external multi-color LED indicator and an external
-   compass.
--  All peripherals are automatically detected and configured.
+-  Peripheral options include digital airspeed sensors,
+   external multi-color LED indicators and external
+   compasses.
+-  Most peripherals are automatically detected and configured.
 -  **A very powerful 32-bit processor with an additional failsafe backup
    controller and extensive memory.**
 
@@ -484,7 +484,7 @@ Pixhawk system features
 -  **Extensive I/O interfaces with dedicated connectors**
 
    -  Fourteen PWM servo or ESC speed control outputs.
-   -  Five UART (serial ports), one high-power capable, 2x with HW flow
+   -  Five UARTs (serial ports), one high-power capable, 2 with HW flow
       control.
    -  Two CAN I/O ports (one with internal 3.3V transceiver, one on
       expansion connector)
@@ -496,7 +496,6 @@ Pixhawk system features
    -  I2C and SPI serial ports.
    -  Two 3.3 volt and one 6.6 volt Analog inputs.
    -  Internal microUSB port and external microUSB port extension.
-   -  Contains its own on board microcontroller and stacks with the FMU.
 
 -  **Comprehensive power system with redundancy and extensive
    protection.**
@@ -514,8 +513,8 @@ Pixhawk system features
       multicolored LED to indicate flight status.
    -  High-power, multi-tone piezo audio indicator also informs of
       current flight status.
-   -  Available high performance UBLOX GPS plus external compass in
-      protective case.
+   -  High performance UBLOX GPS plus external compass in
+      protective case available.
    -  Weight: 38g (1.31oz), Width: 50mm (1.96"), Thickness: 15.5mm
       (.613"), Length: 81.5mm (3.21")
 
@@ -561,8 +560,7 @@ and is completely compatible.
    work in v1, but also software-supported)
 -  No more solid state relays on v2 (was not really used)
 -  Connectors easier to disconnect in case, as the surrounding plastic
-   helps to place the fingers correctly (more on this in a separate
-   post)
+   helps to place the fingers correctly
 -  Case prevents one-off failure operation of servo connectors
 -  The new unit is consirably larger, has the same height, but offers in
    general more handling convenience.
@@ -591,7 +589,7 @@ Pixhawk analog input pins
 This section lists the analog pins available on the Pixhawk. These are
 virtual pins, defined in the firmware.
 
-**Virtual Pin 2 and Power connector Pin 4 and Virtual Pin 2**: power
+**Virtual Pin 2 and Power connector Pin 4**: power
 management connector voltage pin, accepts up to 3.3V, usually attached
 to 3DR power brick with 10.1:1 scaling
 
