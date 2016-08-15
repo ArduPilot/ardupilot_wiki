@@ -34,10 +34,9 @@ the cone protruding from the base of the board.
     :target: ../_images/airspeed_full_assembly_800px.jpg
 
 Pixhawk can also use this `digital airspeed sensor with compass <http://store.jdrones.com/digital_airspeed_sensor_with_compass_p/senairmag03kit.htm>`__ 
-module. If your airplane have a lot of EMI (Electro Magnetic Interference) 
-or you think that you might have a lot of EMI due many high-power cables close 
-to your autopulot. This module is great as you can move external compass far 
-away from high EMI areas and minimize risk of EMI problems on your compass. 
+module.  This may allow you to incorporate an external compass well
+away from sources of ElectroMagnmetic Interference (EMI) without
+additional cabling.
 
 .. image:: ../images/jDrones_AirSpeed_Compass_Full_Assembly_800px.jpg
     :target: ../_images/jDrones_AirSpeed_Compass_Full_Assembly_800px.jpg
@@ -155,13 +154,13 @@ When you place the airspeed sensor in your aircraft, use the pitot tube
 set in the kit (the kit comes with a single tube to measure both static
 and total pressure). In the case of the *EasyStar*, you'll need to push
 it through the foam in the cockpit so it points straight into the
-airstream. Make sure the holes in the side of the tube are not covered.
+airstream (drill or cut a small hole in the foam first).
+Make sure the holes in the side of the tube are not covered.
 They should be at least 1 centimeter out past the nose. First connect
 the two tubes coming out the back to the airspeed sensor. The tube
 coming straight out the back should go into the top port and the tube
 exiting at an angle should connect to the bottom port on the airspeed
-sensor. Drill or cut a small hole in the foam and push it through to the
-front.
+sensor.
 
 .. image:: ../images/pitotinstalled1.jpg
     :target: ../_images/pitotinstalled1.jpg
@@ -202,26 +201,26 @@ or loiter will achieve the required direction changes, cross-country
 flying will not. To enable automatic airspeed sensor calibration, set
 the value of ARSPD_AUTOCAL to 1.
 
-The user can assign the connection pin for the Air Speed Sensor
-===============================================================
+Using a different pin for the airspeed sensor
+==============================================
 
--  To assign the Airspeed Sensor to a specific pin, hook up your flight
+-  To assign the airspeed sensor to a specific pin, hook up your flight
    controller to your PC via USB. Start Mission Planner and select the
    **Connect** button on the upper right of the page.
 -  Select the *Configuration* tab then **Advanced Params** and then the
-   **Adv Parameter List**. Scroll down the List to the ``ARSPD_PIN``
+   **Adv Parameter List**. Scroll down the list to the ``ARSPD_PIN``
    parameter and select the pin you wish to use.
--  The analog pin number that the airspeed sensor is connected to:
 
    -  Set this to 0..9 for the APM2 analog pins.
    -  Set to 64 on an APM1 for the dedicated airspeed port on the end of
       the board.
    -  Set to 11 on PX4 for the analog airspeed port.
-   -  Set to 65 on the PX4 for an EagleTree I2C airspeed sensor. After
-      you have selected the pin, select the "Update Parameters" tab and
+   -  Set to 65 on the PX4 for an I2C airspeed sensor.
+
+- After you have selected the pin, select the "Update Parameters" tab and
       close *Mission Planner*.
 
--  Additional information on setting the Airspeed sensor pin can be
+-  Additional information on setting the airspeed sensor pin can be
    :ref:`found here <ARSPD_PIN>`.
 
 .. toctree::
