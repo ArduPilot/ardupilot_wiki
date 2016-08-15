@@ -166,21 +166,21 @@ corresponding to a channel switch position (ex: channel 1 middle). The
 table below shows the corresponding values between the switch position
 on the RC transmitter, the APM's PWM output, and the camera's USB power.
 
-+-------------------+------------+------------------+
-| Switch position   | PWM (ms)   | USB power (ms)   |
-+-------------------+------------+------------------+
-| Channel 1 up      | 1,900 ms   | <50              |
-+-------------------+------------+------------------+
-| Channel 1 mid     | 1,500 ms   | >40 and <80      |
-+-------------------+------------+------------------+
-| Channel 1 down    | 1,100 ms   | >70 and <110     |
-+-------------------+------------+------------------+
-| Channel 2 up      | 1,900 ms   | >100 and <140    |
-+-------------------+------------+------------------+
-| Channel 2 mid     | 1,500 ms   | >130 and <170    |
-+-------------------+------------+------------------+
-| Channel 2 down    | 1,100 ms   | >160 and <120    |
-+-------------------+------------+------------------+
++-------------------+-----------+------------------+
+| Switch position   | PWM (µs)  | USB power (ms)   |
++-------------------+-----------+------------------+
+| Channel 1 up      | 1,900     | <50              |
++-------------------+-----------+------------------+
+| Channel 1 mid     | 1,500     | >40 and <80      |
++-------------------+-----------+------------------+
+| Channel 1 down    | 1,100     | >70 and <110     |
++-------------------+-----------+------------------+
+| Channel 2 up      | 1,900     | >100 and <140    |
++-------------------+-----------+------------------+
+| Channel 2 mid     | 1,500     | >130 and <170    |
++-------------------+-----------+------------------+
+| Channel 2 down    | 1,100     | >160 and <120    |
++-------------------+-----------+------------------+
 
 Each switch position can be assigned to a script function. This means
 that you can script up to six different camera controls such as
@@ -378,7 +378,7 @@ tells the APM that this command means output to a servo.) Set **Ser
 No**\ (servo number) to the number of your camera control channel
 (ex:**7**). (This tells the APM where to output: for us, servo channel 7
 is the CHDK cable.) And set **PWM** to **1900**. (This value tells the
-APM what to output: 1,900 milliseconds of pulse width modulation
+APM what to output: 1,900 microseconds of pulse width modulation
 corresponds to the high position under which the shoot command is
 located). Repeat this process for each waypoint at which you would like
 to take a picture. The screen below shows a shutter command correctly
@@ -560,21 +560,21 @@ position on the RC transmitter, the APM's PWM output, and the camera's
 USB power. In practice, our Spektrum DX 8 outputs the values shown in
 the rightmost column.
 
-+-------------------+------------+------------------+----------------------------------------+
-| Switch position   | PWM (ms)   | USB power (ms)   | Spektrum DX8 USB power readings (ms)   |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 1 up      | 1,100 ms   | <50              | 30                                     |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 1 mid     | 1,500 ms   | >40 and <80      | 50 or 60                               |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 1 down    | 1,900 ms   | >70 and <110     | 90                                     |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 2 up      | 1,100 ms   | >100 and <140    | 130                                    |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 2 mid     | 1,500 ms   | >130 and <170    | 150 or 160                             |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 2 down    | 1,900 ms   | >160 and <120    | 190                                    |
-+-------------------+------------+------------------+----------------------------------------+
++-------------------+-----------+------------------+----------------------------------------+
+| Switch position   | PWM (µs)  | USB power (ms)   | Spektrum DX8 USB power readings (ms)   |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 1 up      | 1,100     | <50              | 30                                     |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 1 mid     | 1,500     | >40 and <80      | 50 or 60                               |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 1 down    | 1,900     | >70 and <110     | 90                                     |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 2 up      | 1,100     | >100 and <140    | 130                                    |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 2 mid     | 1,500     | >130 and <170    | 150 or 160                             |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 2 down    | 1,900     | >160 and <120    | 190                                    |
++-------------------+-----------+------------------+----------------------------------------+
 
 To verify that your transmitter behaves similarly, you may want to
 perform a test to ensure that a valid USB power value is returned for
