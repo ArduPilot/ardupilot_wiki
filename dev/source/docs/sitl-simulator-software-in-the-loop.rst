@@ -61,7 +61,7 @@ SITL Architecture
     SITL using Vagrant <setting-up-sitl-using-vagrant>
     Copter SITL/MAVProxy Tutorial <copter-sitl-mavproxy-tutorial>
     ArduPilot Testing using SITL <using-sitl-for-ardupilot-testing>
-    Using ROS/Gazebo Simulator with SITL <using-rosgazebo-simulator-with-sitl>
+    Using Gazebo Simulator with SITL <using-gazebo-simulator-with-sitl>
     Using Last_letter Simulator with SITL <using-last_letter-as-an-external-sitl-simulator>
     Using the CRRCSim simulator <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
     SITL on Windows in a VM <setting-up-sitl-on-windows>
