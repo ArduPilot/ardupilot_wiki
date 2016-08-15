@@ -580,6 +580,9 @@ Connecting and disconnecting DF13 connectors
 ..  youtube:: Kfu8M8t2fWY
     :width: 100%
 
+..  youtube:: TverfQwSdzU
+    :width: 100%
+	    
 .. _common-pixhawk-overview_pixhawk_analog_input_pins:
 
 Pixhawk analog input pins
