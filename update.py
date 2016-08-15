@@ -44,6 +44,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Copy Common Files as needed, stripping out non-relevant wiki content')
 parser.add_argument('--site', help="If you just want to copy to one site, you can do this. Otherwise will be copied.")
 parser.add_argument('--clean', default='False', help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).")
+parser.add_argument('--cached-parameter-files', default=False, help="Do not re-download parameter files", type=bool)
 args = parser.parse_args()
 #print(args.site)
 #print(args.clean)
@@ -67,6 +68,10 @@ def fetchparameters(site=args.site):
     for key, value in PARAMETER_SITE.items():
         fetchurl='http://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
         targetfile='./%s/source/docs/parameters.rst' % key
+        if args.cached_parameter_files:
+            if not os.path.exists(targetfile):
+                raise(Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,)))
+            continue
         if site==key or site==None:
             subprocess.check_call(["wget", fetchurl])
             try: #Remove target file if it exists
