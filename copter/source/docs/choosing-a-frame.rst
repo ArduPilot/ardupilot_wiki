@@ -5,7 +5,7 @@ Choosing a MultiCopter Frame
 ============================
 
 One of the first steps in using Copter is to decide on the frame.  Shown
-above are three options from
+below are three options from
 `3DRobotics <http://store.3drobotics.com/>`__ but there are hundreds of
 other choices.  This page will hopefully give some guidance on the
 choices available.
