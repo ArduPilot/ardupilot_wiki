@@ -35,6 +35,9 @@ terminal and run:
 ::
 
     git clone git://github.com/ArduPilot/ardupilot.git
+    cd ardupilot
+    git submodule init
+    git submodule update
 
 JSBSim (Plane only)
 -------------------

@@ -42,6 +42,9 @@ on Mac OS X (ver 10.6 onwards) with *Make*.
        mkdir -p px4
        cd px4
        git clone https://github.com/ArduPilot/ardupilot.git
+       cd ardupilot
+       git submodule init
+       git submodule update
 
    .. note::
 

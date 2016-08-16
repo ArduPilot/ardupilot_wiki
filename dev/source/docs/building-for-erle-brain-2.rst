@@ -37,6 +37,9 @@ Clone the source:
     cd ~/
     #Clone the repository in home
     git clone https://github.com/erlerobot/ardupilot.git
+    cd ardupilot
+    git submodule init
+    git submodule update
 
 Build
 -----
