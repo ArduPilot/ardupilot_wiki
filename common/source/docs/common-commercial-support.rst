@@ -426,6 +426,7 @@ ArduPilot Initiative
 --------------------------------
 .. image:: ../../../images/AI_logo_small.jpg
     :target: http://www.ardupilotinitiative.com/
+
 Email: info@ardupilotinitiative.com
 
 Location: Colorado USA, Australia, Japan

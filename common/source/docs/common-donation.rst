@@ -36,7 +36,7 @@ All profits from merchandise items will be used directly at ArduPilot organizati
 Here is a list of currently available merchandise products (at end of Jun 2016). 
 
 .. image:: ../../../images/jDrones_ArduPilot_merchandize-keyring_Front_500px.jpg
-    :target: ../_images/jDrones_ArduPilot_merchandize-keyring_Front_500px.jpg
+    :target: ../../_images/jDrones_ArduPilot_merchandize-keyring_Front_500px.jpg
 
 - ArduPilot keyring: "Remove Pilot..." `buy here <http://store.jdrones.com/product_p/merc-apkey01.htm>`__
 
