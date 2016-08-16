@@ -47,7 +47,7 @@ to use the JSBSim flight simulator. JSBSim is a sophisticated flight
 simulator that is used as the core flight dynamics system for several
 well known flight simulation systems.
 
-In the same directory (your home directory) run this commands:
+In the same directory (your home directory) run these commands:
 
 ::
 
@@ -144,7 +144,7 @@ Let's also load a test mission.  From within MAVProxy type:
 
     wp load ../Tools/autotest/ArduPlane-Missions/CMAC-toff-loop.txt
 
-that is a mission which flies in a loop around my local flying field.
+CMAC-toff-loop.txt contains a mission which flies in a loop around my local flying field.
 Now let's takeoff!
 
 Run the command "arm throttle" followed by "mode auto"
