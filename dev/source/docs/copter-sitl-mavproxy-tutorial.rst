@@ -36,7 +36,7 @@ using the ``--map`` and ``--console`` options:
 ::
 
     cd ~/ardupilot/ArduCopter
-    sim_vehicle.sh -j4 --map --console
+    sim_vehicle.py -j4 --map --console
 
 As part of the setup you should have loaded some standard/test
 parameters into the *MAVProxy Command Prompt*:

@@ -284,7 +284,7 @@ testing you would use:
 
 ::
 
-    sim_vehicle.sh -L Kingaroy --console --map
+    sim_vehicle.py -L Kingaroy --console --map
 
 The key parameters for failsafe testing in SITL are:
 

@@ -126,9 +126,9 @@ The file will be loaded next time you open the *Cygwin terminal*.
 
 .. tip::
 
-   Cygwin will not be able to find **sim_vehicle.sh** if you omit
+   Cygwin will not be able to find **sim_vehicle.py** if you omit
    this step. This will be reported as a "command not found" error when you
-   try and build: ``sim_vehicle.sh -j4 --map``\ 
+   try and build: ``sim_vehicle.py -j4 --map``
 
 Download and make ArduPilot
 ---------------------------
@@ -185,7 +185,7 @@ same way as described for Copter in the next section (:ref:`Running SITL and MAV
 ::
 
     cd ~/ardupilot/ArduPlane
-    sim_vehicle.sh -j4 --map
+    sim_vehicle.py -j4 --map
 
 FlightGear 3D View (Optional)
 -----------------------------
@@ -234,7 +234,7 @@ The main steps are:
 
    ::
 
-       sim_vehicle.sh -j4 -L KSFO 
+       sim_vehicle.py -j4 -L KSFO
 
    .. note::
 
@@ -269,19 +269,19 @@ Running SITL and MAVProxy
 build and start SITL for a 4-core CPU and then launch a *MAVProxy map*:
 
 #. Navigate to the target vehicle directory (in this case Copter) in the
-   *Cygwin Terminal* and call ``sim_vehicle.sh`` to start SITL:
+   *Cygwin Terminal* and call ``sim_vehicle.py`` to start SITL:
 
    ::
 
        cd ~/ardupilot/ArduCopter
-       sim_vehicle.sh -j4 --map
+       sim_vehicle.py -j4 --map
 
    If you get a windows security alert for the the firewall, allow the
    connection.
 
    .. tip::
 
-      `sim_vehicle.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
+      `sim_vehicle.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.py>`__
       has many useful build options, ranging from setting the simulation
       speed through to choosing the initial vehicle location. These can be
       listed by calling it with the ``-h`` flag (and some are demonstrated

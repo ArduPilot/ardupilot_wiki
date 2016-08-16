@@ -55,7 +55,7 @@ Setting vehicle start location
 ==============================
 
 You can start the simulator with the vehicle at a particular location by
-calling **sim_vehicle.sh** with the ``-L`` parameter and a named
+calling **sim_vehicle.py** with the ``-L`` parameter and a named
 location in the
 `ardupilot/Tools/autotest/locations.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/locations.txt>`__
 file.
@@ -66,7 +66,7 @@ For example, to start Copter in *Ballarat* (a named location in
 ::
 
     cd ArduCopter 
-    sim_vehicle.sh -j4 -L Ballarat --console --map
+    sim_vehicle.py -j4 -L Ballarat --console --map
 
 .. note::
 
@@ -112,7 +112,7 @@ The MAVProxy commands to load the parameters for Copter, Rover and Plane
     param load ..\Tools\autotest\Rover.parm
 
 You can re-load the parameters later if you choose, or revert to the
-default parameters by starting SITL (**sim_vehicle.sh**) with the
+default parameters by starting SITL (**sim_vehicle.py**) with the
 ``-w`` flag.
 
 Parameters can also be saved. For example, to save the parameters into
@@ -240,7 +240,7 @@ Then stop and re-launch SITL with the ``-M`` flag:
 
 ::
 
-    sim_vehicle.sh -M
+    sim_vehicle.py -M
 
 Adding a virtual rangefinder
 ============================
@@ -371,7 +371,7 @@ To use a real serial device you can use a command like this:
 
 ::
 
-    sim_vehicle.sh -A "--uartB=uart:/dev/ttyUSB0" --console --map
+    sim_vehicle.py -A "--uartB=uart:/dev/ttyUSB0" --console --map
 
 what that does it pass the --uartB argument to the ardupilot code,
 telling it to use /dev/ttyUSB0 instead of the normal internal simulated
@@ -387,7 +387,7 @@ is equivalent to COM16:
 
 ::
 
-    sim_vehicle.sh -A "--uartC=uart:/dev/ttyS15" --console --map
+    sim_vehicle.py -A "--uartC=uart:/dev/ttyS15" --console --map
 
 .. _using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations:
 
