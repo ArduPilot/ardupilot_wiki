@@ -41,5 +41,8 @@ Terrain Accuracy
 
 The accuracy of the SRTM database varies over the surface of the earth.  Typical accuracy is around 10 to 20 meters, but some developers have noticed inaccuracies of 35m.  This makes terrain following suitable for aircraft that are flying at altitudes of 60 meters or more.  For very accurate terrain following at lower altitudes it is recommended to use a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>`.
 
+Example mission at 2m using Lidar
+---------------------------------
 
-
+..  youtube:: r4RBP0_LQ5Y
+    :width: 100%
