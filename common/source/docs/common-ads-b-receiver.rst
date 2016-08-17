@@ -15,7 +15,7 @@ ADS-B (aka `Automatic Dependent Surveillance Broadcast <https://en.wikipedia.org
 
 .. note::
 
-   uAvionix ADS-B Ping support was introduced in Copter-3.4 and the latest stable version of Plane
+   uAvionix ADS-B Ping support was introduced in Plane-3.5 and Copter-3.4. Simple avoidance was added to Plane-3.5 and a more advanced avoidance was added to Plane-3.7 and Copter-3.4.
 
 .. warning::
 
@@ -32,8 +32,6 @@ The uAvionix Ping sensor can be purchased directly from `uAvionix <http://www.ua
    -  Asia: `jDrones pingRX <http://store.jdrones.com/ping_ads_b_receiver_p/adsbping01.htm>`__
    -  Japan: `Japan Drones <http://japandrones.com/shopdetail/000000000124/004/X/page1/order/>`__
 
-This first implementation of sense and avoid supports Plane and Copter. Object avoidance is only
-active in AUTO mode.
 
 Connecting to the flight controller
 ===================================
@@ -51,7 +49,7 @@ Setup through the ground station
 
 Set the :ref:`ADSB_ENABLE <ADSB_ENABLE>` parameter to "1" to enable receiving data from the ADSB sensor
 
-If you are using one of the UARTs on your board which defaults to MAVLink (i.e. Telem1, Telem2 on a Pixhawk) then the default settings will work fine for the Ping. Alternatively you
+If you are using one of the UARTs on your board which defaults to MAVLink (i.e. Telem1, Telem2 on a Pixhawk) then the default settings will work fine for the PingRx. Alternatively you
 can connect the Ping to one of the other UARTs, such as the GPS UART (if it is unused) or the serial4/5 UART. In that case you will need to configure the UART as MAVLink at a baudrate of 57600.
 
 For example, if you plugged the Ping into "serial4/5" on a
@@ -59,6 +57,11 @@ Pixhawk you would set:
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` to 1 (meaning MAVLink)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` 57 (meaning 57600)
+
+
+For the Ping2020 you'll need to set the _PROTOCOL value to 2. For example, when connected to Telem2 you would set:
+
+-  :ref:`SERIAL2_PROTOCOL <SERIAL4_PROTOCOL>` to 2 (meaning MAVLink v2.0)
 
 You will need to reboot your board after making those changes.
 
@@ -77,7 +80,7 @@ Enabling Manned Vehicle Avoidance
 Copter-3.4 (and higher) and very recent versions of Plane include a new flight mode AVOID_ADSB that attempts to avoid manned vehicles based on the ADS-B sensor's output.
 To enable this feature connect with a Ground Station and set the following parameters:
 
--  :ref:`AVD_ENABLE <AVD_ENABLE>` : set to "1" to enable ADS-B based avoidance
+-  :ref:`AVD_ENABLE <AVD_ENABLE>` : set to "1" to enable ADS-B based avoidance (param refresh may be necessary after setting this)
 -  :ref:`AVD_F_DIST_XY <AVD_F_DIST_XY>` : the horizontal distance in meters that should be considered a near-miss
 -  :ref:`AVD_F_DIST_Z <AVD_F_DIST_Z>` : the vertical distance in meters above or below the vehicle that should be considered a near-miss
 -  :ref:`AVD_F_TIME <AVD_F_TIME>` : how many seconds in advance of a projected near-miss (based on the vehicle's current position and velocity) the vehicle should begin the :ref:`AVD_F_ACTION <AVD_F_ACTION>`
@@ -93,7 +96,7 @@ Note: there are equivalent "Warn" parameters (i.e. AVD_W_DIST_XY) that can be us
    ..  youtube:: quomxCIPP74
     :width: 100%
    
-Older version of ADS-B based avoidance
+Older version of ADS-B based avoidance in Plane-3.5
 ======================================
 
 Plane's earlier version of ADS-B based avoidance used these different parameters:
@@ -110,8 +113,9 @@ it. The behavior persists until no vehicles are within 400m.
 Vehicle Database
 ================
 
-When enabled, the ADS-B library will store information for up to 25
-vehicles detected by the ADS-B receiver. Due to some experimental work
+When enabled, the ADS-B library will store information for up to 50 vehicles
+detected by the ADS-B receiver but can be further limited using the
+:ref:`ADSB_LIST_SIZE <ADSB_LIST_SIZE>` parameter. Due to some experimental work
 in other features, such as EKF2, available RAM may be limited. It is
 important to note that when ADS-B is disabled (ADSB_ENABLE=0) then the
 memory is released, effectively freeing up about 1KB of RAM. When
@@ -121,9 +125,10 @@ potential conflicts.
 Developer information including Simulation
 ==========================================
 The data is transmitted via the `ADSB_VEHICLE message <http://mavlink.org/messages/common#ADSB_VEHICLE>`__. When
-received by ArduPilot, it is forwarded on to all MAVLink serial ports
-meaning that if you have a GCS or companion computer connected it will
-receive the forwarded packets automatically.
+received by ArduPilot, it is streamed out using the SRx_ADSB value where x is the telemetry port number and the
+value is how many vehicles per second to be streamed. The list will not repeat any faster than 1 second. This
+flexibility is useful to conserve bandwidth on data links but also allow maximum update rate for high-speed links
+such as an on-board companion computer.
 
 Ardupilot's SITL includes the simulation of ADS-B enabled aircraft.
 To enable this you must have pymavlink v1.1.70 or greater. If you have
@@ -133,18 +138,18 @@ an older version, use:
 
     sudo pip install --upgrade pymavlink MAVProxy
 
-Set the number of aircraft to simulate using the ``SIM_ADSB_COUNT`` parameter.  Other simulation options for ADS-B are present, all starting with ``SIM_ADSB_``.
+Set the number of aircraft to simulate using the ``SIM_ADSB_COUNT`` parameter. Ping2020 simulation support
+can be enabled by setting parameter ``SIM_ADSB_TX``. Other simulation options for ADS-B are present, all
+starting with ``SIM_ADSB_``.
 
-Plugging in a hardware ADS-B receiver to your
-computer using a USB-to-Serial converter will allow you to overlay real ADS-B
+Plugging in a hardware ADS-B receiver to your computer using a USB-to-Serial converter, or using the PingUSB, will allow you to overlay real ADS-B
 traffic into the simulation.  You might invoke SITL in this way to achieve this effect:
 
 ::
 
    sim_vehicle.py -v ArduCopter -A "--uartC uart:$SERIAL_DEVICE:57600"
 
-Where SERIAL_DEVICE might be /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A4008ZND-if00-port0 on a Linux system (find a list of valid serial devices with the command ``ls /dev/serial/by-id/*``).  Once SITL has started it may be necessary
-to set the ``SERIAL3_`` parameters:
+Where SERIAL_DEVICE might be /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A4008ZND-if00-port0 on a Linux system (find a list of valid serial devices with the command ``ls /dev/serial/by-id/*`` or ``ls /dev/ttyS*`` for a COM port on Cygwin).  Once SITL has started it may be necessary to set the ``SERIAL3_`` parameters:
 
 ::
 
