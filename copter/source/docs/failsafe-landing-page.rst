@@ -17,3 +17,4 @@ The main failsafe topics are listed below.
     EKF / DCM failsafe <ekf-inav-failsafe>
     Simple GeoFence <ac2_simple_geofence>
     Polygon Fence <polygon_fence>
+    ADSB Avoidance of manned aircraft <common-ads-b-receiver>
