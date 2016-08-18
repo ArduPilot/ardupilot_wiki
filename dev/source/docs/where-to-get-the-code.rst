@@ -129,12 +129,18 @@ side of the screen on each Github repository home page.
    ::
 
        git clone https://github.com/your-github-account-name/ardupilot
+       cd ardupilot
+       git submodule init
+       git submodule update
 
    or the main project:
 
    ::
 
        git clone https://github.com/ArduPilot/ardupilot
+       cd ardupilot
+       git submodule init
+       git submodule update
 
 **Windows (GitHub GUI):**
 

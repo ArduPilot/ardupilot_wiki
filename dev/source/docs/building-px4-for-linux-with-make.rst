@@ -33,29 +33,21 @@ Clone the source:
 ::
 
     git clone https://github.com/ArduPilot/ardupilot.git
+    cd ardupilot
+    git submodule init
+    git submodule update
 
 Run the install-prereqs-ubuntu.sh script:
 
 ::
 
-    ardupilot/Tools/scripts/install-prereqs-ubuntu.sh -y
+    Tools/scripts/install-prereqs-ubuntu.sh -y
 
 Reload the path (log-out and log-in to make permanent):
 
 ::
 
     . ~/.profile
-
-.. note::
-
-   The build should correctly initialise submodules. If the build
-   fails you can try doing this manually by entering the following commands
-   from the **ardupilot** directory:
-
-   ::
-
-       git submodule init
-       git submodule update
 
 Build
 -----
@@ -68,28 +60,28 @@ Build for Copter:
 
 ::
 
-    cd ardupilot/ArduCopter
+    cd ArduCopter
     make px4-v2
 
 Build for Plane:
 
 ::
 
-    cd ardupilot/ArduPlane
+    cd ArduPlane
     make px4-v2
 
 Build for Rover:
 
 ::
 
-    cd ardupilot/APMrover2
+    cd APMrover2
     make px4-v2
 
 Build for Antenna Tracker:
 
 ::
 
-    cd ardupilot/AntennaTracker
+    cd AntennaTracker
     make px4-v2
 
 Advanced
@@ -167,7 +159,7 @@ vehicle directory. For example, if building Plane then do this:
 
 ::
 
-    cd ardupilot/ArduPlane
+    cd ArduPlane
     make px4
 
 That will build two files **ArduPlane-v1.px4** and **ArduPlane-v2.px4**.

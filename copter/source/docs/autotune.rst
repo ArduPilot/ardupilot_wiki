@@ -96,6 +96,33 @@ Additional Notes
 -   AutoTune is sometimes unable to find a good tune for frames with very soft vibration dampening of the flight controller or very flexible arms.
 -   For best results the copter shouldn't be allowed to build up too much horizontal speed. This can be prevented by applying a quick correction between tests (twitches) to stop the vehicle from flying too fast.
 -   Be advised that AutoTune will engage in Stabilize, so don't accidentally flip your AutoTune switch until you are in AltHold and ready to begin the procedure.
+=======
+Copter 3.3 adds some additional features:
+
+-  AutoTune can be setup as a flight-mode.  Switching into or out of the
+   AutoTune flight mode responds in the same way as raising or lowering
+   a ch7/ch8 aux switch high assigned the AutoTune function.
+-  Yaw axis is also autotuned
+-  :ref:`AUTOTUNE_AXES <AUTOTUNE_AXES>` allows control of which axis are to be tuned
+   (useful if the vehicle's battery life is not long enough to complete
+   all 3-axis).  "1" = tune roll, "2" = tune pitch, "4" = tune yaw.  Add
+   these numbers together to tune multiple axis in a single session
+   (i.e. "7" = tune all axis)
+-  :ref:`AUTOTUNE_AGGR <AUTOTUNE_AGGR>` : Should be in the range of 0.05 to 0.10. Controls the
+   threshold for D-term bounce back and P-term overshoot. This affects
+   the tuning noise immunity (a higher value is more tolerant to flex in
+   the frame or other disturbances that could trick the tuning
+   algorithm).  High values also leads to a tune that rejects external
+   disturbances better.  Lower values result in a tune that is more
+   responsive to pilot input.
+-  Upon a succesful tune these additional values are saved:
+
+   -  roll and pitch axis rate feed-forward is enabled
+      (:ref:`ATC_RATE_FF_ENABLE <ATC_RATE_FF_ENABLE>`)
+   -  roll, pitch and yaw acceleration limits are saved (ACCEL_R\_MAX,
+      ACCEL_P\_MAX, ACCEL_Y\_MAX)
+
+AutoTuning notes
 
 .. tip::
 
@@ -110,3 +137,4 @@ messages can be found on the :ref:`Downloading and Analyzing Data Logs in Missio
 
 .. |AutoTuneCh7Switch| image:: ../images/AutoTuneCh7Switch.png
     :target: ../_images/AutoTuneCh7Switch.png
+

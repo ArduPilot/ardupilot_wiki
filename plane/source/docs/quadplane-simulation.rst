@@ -10,7 +10,7 @@ You can start it like this:
 
 ::
 
-    sim_vehicle.sh -j4 -f quadplane --console --map
+    sim_vehicle.py -j4 -f quadplane --console --map
 
 To visualise the aircraft you can use FlightGear in view-only mode. The
 simulation will output FlightGear compatible state on UDP port 5503.
@@ -22,7 +22,7 @@ airport. I tend to test at San Francisco airport, like this:
 
 ::
 
-    sim_vehicle.sh -L KSFO -f quadplane --console --map
+    sim_vehicle.py -L KSFO -f quadplane --console --map
 
 Using the joystick module with a USB adapter for your transmitter gives
 a convenient way to get used to the QuadPlane controls before flying.

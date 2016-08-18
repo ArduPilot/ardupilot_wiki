@@ -139,6 +139,9 @@ Set up the Vagrant and the virtual machine
    ::
 
        git clone https://github.com/ArduPilot/ardupilot.git
+       cd ardupilot
+       git submodule init
+       git submodule update
 
 #. Start a vagrant instance
 
@@ -170,7 +173,7 @@ then run the simulator:
 
 ::
 
-    vagrant ssh -c "sim_vehicle.sh -j 2"
+    vagrant ssh -c "sim_vehicle.py -j 2"
 
 Once the simulation is running, you will start getting information from
 the MAVLink prompt about vehicle state. For example:
@@ -188,12 +191,12 @@ the plane or rover using the ``-v`` option:
 
 ::
 
-    vagrant ssh -c "sim_vehicle.sh -j 2 -v Plane"
-    vagrant ssh -c "sim_vehicle.sh -j 2 -v APMrover2"
+    vagrant ssh -c "sim_vehicle.py -j 2 -v ArduPlane"
+    vagrant ssh -c "sim_vehicle.py -j 2 -v APMrover2"
 
 .. tip::
 
-   `sim_vehicle.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
+   `sim_vehicle.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.py>`__
    has many useful build options, ranging from setting the simulation speed
    through to choosing the initial vehicle location. These can be listed by
    calling it with the ``-h`` flag (and some are demonstrated in :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>`).
@@ -232,7 +235,7 @@ simulator as shown:
 ::
 
     vagrant up
-    vagrant ssh -c "sim_vehicle.sh -j 2"
+    vagrant ssh -c "sim_vehicle.py -j 2"
 
 .. note::
 
