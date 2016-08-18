@@ -5,7 +5,7 @@ Setting up SITL on Linux
 ========================
 
 This page describes how to setup the :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` on Linux. The specific
-commands were tested on Ubuntu 12.10, 13.04 and 14.10.
+commands were tested on Ubuntu 12.10, 13.04, 14.10 and 16.04.
 
 Overview
 ========
@@ -50,6 +50,11 @@ In the same directory (your home directory) run this commands:
 
     git clone git://github.com/tridge/jsbsim.git
     sudo apt-get install libtool automake autoconf libexpat1-dev
+    
+If your are on Ubuntu 16.04
+
+::
+    sudo apt-get install libtool-bin
 
 If you are getting an error message saying you need a newer version of
 JSBSim then you can update it like this:
@@ -68,11 +73,25 @@ If you are on a debian based system (such as Ubuntu or Mint) then run
 this:
 
 ::
+    sudo apt-get install gawk make git arduino-core curl
+    sudo apt-get install g++ python-pip python-setuptools python-matplotlib python-serial python-scipy python-opencv python-numpy python-pyparsing ccache realpath
+    sudo apt-get install python-pexpect python-lxml
 
-    sudo apt-get install python-matplotlib python-serial python-wxgtk2.8 python-lxml
-    sudo apt-get install python-scipy python-opencv ccache gawk git python-pip python-pexpect
+If your are on Ubuntu 16.04
+
+::
+    sudo apt-get install python-wxgtk3.0
+    
+else
+
+::
+    sudo apt-get install python-wxgtk2.8
+        
+And then
+
+::
     sudo pip install pymavlink MAVProxy
-
+    
 Or if you are on a RPM based system (such as Fedora) run this:
 
 ::
@@ -92,7 +111,7 @@ before autotest in case you're running a virtual machine.
 
     export PATH=$PATH:$HOME/jsbsim/src
     export PATH=$PATH:$HOME/ardupilot/Tools/autotest 
-    export PATH=/usr/lib/ccache:$PATH
+    export PATH=$PATH:/usr/lib/ccache
 
 Then reload your PATH by using the "dot" command in a terminal
 
@@ -106,24 +125,24 @@ Start SITL simulator
 To start the simulator first change directory to the vehicle directory.
 For example, for the fixed-wing code change to **ardupilot/ArduPlane**.
 
-Then start the simulator using **sim_vehicle.sh**. The first time you
+Then start the simulator using **sim_vehicle.py**. The first time you
 run it you should use the -w option to wipe the virtual EEPROM and load
 the right default parameters for your vehicle.
 
 ::
 
-    sim_vehicle.sh -w
+    sim_vehicle.py -w
 
 After the default parameters are loaded you can start the simulator
 normally:
 
 ::
 
-    sim_vehicle.sh --console --map --aircraft test
+    sim_vehicle.py --console --map -m "--aircraft test"
 
 .. tip::
 
-   `sim_vehicle.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
+   `sim_vehicle.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.py>`__
    has many useful build options, ranging from setting the simulation speed
    through to choosing the initial vehicle location. These can be listed by
    calling it with the ``-h`` flag (and some are demonstrated in :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>`).
@@ -153,7 +172,7 @@ Learn MAVProxy
 --------------
 
 To get the most out of SITL you really need to learn to use MAVProxy.
-Have a read of the `MAVProxy documentation <http://tridge.github.io/MAVProxy/>`__. Enjoy flying!
+Have a read of the `MAVProxy documentation <https://dronecode.github.io/MAVProxy/html/index.html>`__. Enjoy flying!
 
 Updating MAVProxy and pymavlink
 -------------------------------
@@ -171,11 +190,11 @@ Using a different JSBSim model
 
 If using the JSBSim plane simulator you can specify a different JSBSim
 model than the default Rascal110 by specifying the model name using the
--f parameter to sim_vehicle.sh, like this:
+-f parameter to sim_vehicle.py, like this:
 
 ::
 
-    sim_vehicle.sh -f jsbsim:MyModel --console --map
+    sim_vehicle.py -f jsbsim:MyModel --console --map
 
 the model should be in the **Tools/autotest/aircraft/** directory.
 
@@ -226,7 +245,7 @@ The main steps (tested on Ubuntu Linux 14.04 LTS) are:
 
    ::
 
-       sim_vehicle.sh -j4 -L KSFO 
+       sim_vehicle.py -j4 -L KSFO 
 
    .. note::
 
