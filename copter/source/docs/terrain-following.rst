@@ -14,6 +14,7 @@ Setting up a Mission to use Terrain data
 -  If relying on a :ref:`downward facing LIDAR ensure it is setup as described here <common-rangefinder-landingpage>`
 -  If using GCS provided terrain data set the :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` parameter to 1
 -  Using a recent version of Mission Planner (or other GCS that supports terrain following) on the Flight Plan screen, set the altitude type to "Terrain".  Once set all mission commands that include an "Alt" fields will be interpreted as altitudes-above-terrain.
+-  Upload the mission to the vehicle and execute the mission as you normally would in :ref:`AUTO <auto-mode>`
 
    .. image:: ../images/terrain_mission.png
        :target: ../_images/terrain_mission.png
