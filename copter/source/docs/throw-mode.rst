@@ -39,3 +39,11 @@ Settings
 
 ..  youtube:: ZnEFcJx1qko
     :width: 100%
+
+Log Analysis
+============
+During the throw, THRO messages are written to the :ref:`dataflash log <common-downloading-and-analyzing-data-logs-in-mission-planner>`.  These can be useful in diagnosing problems in case the motors failed to start as part of a throw.  The graph below shows a successful throw in which the overall velocity climbs above 5m/s and the vertical velocity is over 0.5m/s.
+
+   .. image:: ../images/throw_log.png
+       :target: ../_images/throw_log.png
+       :width: 500px
