@@ -36,15 +36,18 @@ for more details):
 Additional flight modes:
 
 -  :ref:`Acro <acro-mode>`
--  :ref:`Sport <sport-mode>`
+-  :ref:`AutoTune <autotune>`
+-  :ref:`Brake <brake-mode>`
+-  :ref:`Circle <circle-mode>`
 -  :ref:`Drift <drift-mode>`
 -  :ref:`Guided <ac2_guidedmode>`
--  :ref:`Circle <circle-mode>`
--  :ref:`PosHold <poshold-mode>`
 -  :ref:`Land <land-mode>`
--  :ref:`Brake <brake-mode>`
+-  :ref:`PosHold <poshold-mode>`
+-  :ref:`Sport <sport-mode>`
+-  :ref:`Throw <throw-mode>`
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Simple and Super Simple <simpleandsuper-simple-modes>`
+-  :ref:`Avoid_ADSB <common-ads-b-receiver>` for ADS-B based avoidance of manned aircraft.  Should not be set-up as a pilot selectable flight mode.
 
 Most transmitters provide a 3 position switch but you can find
 instructions :ref:`here for setting up a 6-position flight mode switch <common-rc-transmitter-flight-mode-configuration>`.
