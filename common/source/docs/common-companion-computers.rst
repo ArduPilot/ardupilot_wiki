@@ -6,11 +6,6 @@ Companion Computers
 
 This article lists turnkey "all in one" Companion Computer solutions.
 
-.. figure:: ../../../images/Volta4GmetryIII.jpg
-   :target: ../_images/Volta4GmetryIII.jpg
-
-   Volta 4Gmetry III CompanionComputer
-
 Overview
 ========
 
@@ -39,17 +34,4 @@ wiki) for developer-focused options).
 List
 ====
 
-Volta 4Gmetry III
------------------
-
-The `Volta 4Gmetry III <http://4gmetry.voltarobots.com/shop/4gmetry-iii/>`__ brings a huge
-amount of power to Pixhawk-based drones. It's designed to compete with
-the DJI Manifold at a lower price, and it's open source. OpenCV-based
-computer vision, streaming HD video, 4G wireless and a 30-second
-installation with Pixhawk.
-
-For more information see:
-
--  `Purchase page <http://4gmetry.voltarobots.com/shop/4gmetry-iii/>`__
--  `New Volta companion computer for Pixhawk brings computer vision, more <http://diydrones.com/profiles/blogs/new-volta-companion-computer-for-pixhawk-brings-computer-vision-m>`__
-   (DIY Drones Blog article.
+To Be Updated
