@@ -150,16 +150,6 @@ Features:
 --------------
 
 
-.. image:: ../../images/dronecode-logo.jpg
-    :target:  http://www.dronecode.org/
-
-
-.. note::
-
-    ArduPilot, :ref:`Mission Planner <planner:home>`, :ref:`APM Planner <planner2:home>` are all
-    `Dronecode <https://www.dronecode.org/>`__ -supported projects.
-
-
 .. toctree::
    :hidden:
 

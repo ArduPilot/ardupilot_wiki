@@ -14,7 +14,7 @@ Copter is a complete open-source autopilot solution for multi-rotor
 vehicles, offering both enhanced remote control flight (via a number of
 intelligent flight modes) and execution of fully autonomous missions.
 
-As part of the `DroneCode Software Platform <https://www.dronecode.org/dronecode-software-platform>`__ it
+As part of the wider ArduPilot software platform it
 works seamlessly with Ground Control Station software that can monitor
 vehicle telemetry and perform powerful mission planning activities. It
 also benefits from other parts of the DroneCode platform, including
