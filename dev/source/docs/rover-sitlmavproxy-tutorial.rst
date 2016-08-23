@@ -143,7 +143,7 @@ skip to the second waypoint, and *loop* the mission:
    Rover will only run :ref:`commands it supports <rover:common-mavlink-mission-command-messages-mav_cmd_commands_supported_by_rover>`
    (others are ignored). 
 
-The `MAVProxy Waypoints documentation <http://dronecode.github.io/MAVProxy/html/uav_configuration/waypoints.html>`__
+The `MAVProxy Waypoints documentation <http://ardupilot.github.io/MAVProxy/html/uav_configuration/waypoints.html>`__
 lists the full set of available commands (or you can get them using
 auto-completion by typing "wp" on the command line).
 

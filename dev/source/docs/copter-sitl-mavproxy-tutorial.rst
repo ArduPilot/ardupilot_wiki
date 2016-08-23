@@ -197,7 +197,7 @@ In addition to ``takeoff``, you can send the following commands in
    `SET_POSITION_TARGET_LOCAL_NED <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__.
 
    At time of writing, the other :ref:`Copter Commands <copter-commands-in-guided-mode>`
-   are not supported (`MAVProxy #150 <https://github.com/Dronecode/MAVProxy/issues/150>`__)
+   are not supported (`MAVProxy #150 <https://github.com/ArduPilot/MAVProxy/issues/150>`__)
 
 Flying a mission
 ================
@@ -216,7 +216,7 @@ skip to the second waypoint, and *loop* the mission:
     wp set 2
     wp loop
 
-The `MAVProxy Waypoints documentation <http://dronecode.github.io/MAVProxy/html/uav_configuration/waypoints.html>`__
+The `MAVProxy Waypoints documentation <http://ardupilot.github.io/MAVProxy/html/uav_configuration/waypoints.html>`__
 lists the full set of available commands (or you can get them using
 auto-completion by typing "wp" on the command line).
 
