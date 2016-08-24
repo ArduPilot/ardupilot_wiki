@@ -230,7 +230,7 @@ to `fork <https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box>`__ a
 
 For Windows users, it is adviced to install SSH client on the computer before starting vagrant. Vagrant needs 
 SSH client program to access development container. We have had great success with OpenSSH packer from MLS-Software
-`here <http://ww.mls-software.com/opensshd.html>`__
+`here <http://www.mls-software.com/opensshd.html>`__
 
 The main steps for building the docs are:
 
