@@ -89,6 +89,10 @@ ArduPilot apart from the closed-source offerings in the market. An area for
 open discourse on the ArduPilot projects direction between developers 
 and its customers.
 
+.. image:: ../../images/ArduPilotDiscuss.png
+    :target: http://discuss.ardupilot.org/
+    :width: 640px
+
 `DIYDRONES <http://diydrones.com/>`__- ArduPilot previous community home.
 
 A constantly evolving repository of knowledge and innovation. The DIY
