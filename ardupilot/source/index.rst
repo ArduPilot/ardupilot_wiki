@@ -102,6 +102,7 @@ needs of the community.
 
 .. image:: ../../images/diydrones.jpg
     :target: http://diydrones.com
+    :width: 360px
 
 
 --------------
