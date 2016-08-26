@@ -17,9 +17,7 @@ The target speed can be commanded by changing the value of cruise_speed
 in the parameter interface, by using the Do_Set_Speed command in a
 mission, or by the throttle stick position in FBW-B.
 
-To use flaps they must be configured on channel 5, 6, 7 or 8. If you
-wish to have manual control of the flaps then they must be on 5, 6, or
-7.
+Flaps can be configured on any channel (in older versions flaps could only be configured on channel 5, 6, 7 or 8 with 8 not available for manual control).
 
 Software configuration
 ~~~~~~~~~~~~~~~~~~~~~~
