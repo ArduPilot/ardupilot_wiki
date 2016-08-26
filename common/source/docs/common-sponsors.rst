@@ -11,14 +11,9 @@ Corporate Sponsors
 ==================
 
 .. image:: ../../../images/supporters/supporters_logo_EnRoute.png
-    :width: 250px:
     :target:  http://www.enroute.co.jp/home/
 
-.. raw:: html
-   <p>
-
 .. image:: ../../../images/supporters/supporters_logo_jDrones.png
-    :width: 250px:
     :target:  http://www.jDrones.com/home/
 
 
