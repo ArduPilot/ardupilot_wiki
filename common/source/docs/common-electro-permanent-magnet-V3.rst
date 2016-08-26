@@ -49,15 +49,19 @@ Notes:
 - UAVCAN requires termination, terminator included in UAVCAN cable set.
 
 
-Firmware setup
+Firmware setup 
 ==============
+
+.. note::
+
+    Auto mission using PWM works with current Copter release, this step may be skiped. 
+    UAVCAN support requires Copter-3.4A or later.
+
+At the moment Copter 3.4A is not released. It can be `build from the master <http://ardupilot.org/dev/docs/building-the-code.html/>`__.  or: 
 
 #. Download APM firmware `here: <https://files.zubax.com/3rdparty/APM/uavcan_epm/>`__.
 #. Upload custom firmware via Mission Planner or QGC.
- 
-.. note::
 
-    The firmware update is in master and is to be released with Copter-3.4A.
 
 Parameter setup
 ===============
