@@ -49,7 +49,7 @@ Notes:
 - UAVCAN requires termination, terminator included in UAVCAN cable set.
 
 
-Firmware setup 
+Firmware setup
 ==============
 
 .. note::
