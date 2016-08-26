@@ -104,7 +104,7 @@ is a popular AVR2560 8-bit autopilot.
 .. note::
 
    APM 2.6 is compatible with Copter 3.2 and earlier only (to use
-   APM:Copter version 3.3 and later, please purchase a Pixhaw)k. Plane and
+   APM:Copter version 3.3 and later, please purchase a Pixhawk). Plane and
    Rover have full support for APM 2.6 in all existing releases. This board
    is not recommended for any new users.
 

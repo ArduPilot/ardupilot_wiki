@@ -35,6 +35,9 @@ terminal and run:
 ::
 
     git clone git://github.com/ArduPilot/ardupilot.git
+    cd ardupilot
+    git submodule init
+    git submodule update
 
 JSBSim (Plane only)
 -------------------
@@ -44,7 +47,7 @@ to use the JSBSim flight simulator. JSBSim is a sophisticated flight
 simulator that is used as the core flight dynamics system for several
 well known flight simulation systems.
 
-In the same directory (your home directory) run this commands:
+In the same directory (your home directory) run these commands:
 
 ::
 
@@ -104,27 +107,31 @@ Start SITL simulator
 --------------------
 
 To start the simulator first change directory to the vehicle directory.
-For example, for the fixed-wing code change to **ardupilot/ArduPlane**.
+For example, for the fixed-wing code change to **ardupilot/ArduPlane**:
 
-Then start the simulator using **sim_vehicle.sh**. The first time you
+::
+
+   cd ardupilot/ArduPlane
+
+Then start the simulator using **sim_vehicle.py**. The first time you
 run it you should use the -w option to wipe the virtual EEPROM and load
 the right default parameters for your vehicle.
 
 ::
 
-    sim_vehicle.sh -w
+    sim_vehicle.py -w
 
 After the default parameters are loaded you can start the simulator
-normally:
+normally.  First kill the sim_vehicle.py you are running using Ctrl-C.  Then:
 
 ::
 
-    sim_vehicle.sh --console --map --aircraft test
+    sim_vehicle.py --console --map --aircraft test
 
 .. tip::
 
-   `sim_vehicle.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
-   has many useful build options, ranging from setting the simulation speed
+   `sim_vehicle.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.py>`__
+   has many useful options, ranging from setting the simulation speed
    through to choosing the initial vehicle location. These can be listed by
    calling it with the ``-h`` flag (and some are demonstrated in :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>`).
 
@@ -137,7 +144,7 @@ Let's also load a test mission.  From within MAVProxy type:
 
     wp load ../Tools/autotest/ArduPlane-Missions/CMAC-toff-loop.txt
 
-that is a mission which flies in a loop around my local flying field.
+CMAC-toff-loop.txt contains a mission which flies in a loop around my local flying field.
 Now let's takeoff!
 
 Run the command "arm throttle" followed by "mode auto"
@@ -171,11 +178,11 @@ Using a different JSBSim model
 
 If using the JSBSim plane simulator you can specify a different JSBSim
 model than the default Rascal110 by specifying the model name using the
--f parameter to sim_vehicle.sh, like this:
+-f parameter to sim_vehicle.py, like this:
 
 ::
 
-    sim_vehicle.sh -f jsbsim:MyModel --console --map
+    sim_vehicle.py -f jsbsim:MyModel --console --map
 
 the model should be in the **Tools/autotest/aircraft/** directory.
 
@@ -226,7 +233,7 @@ The main steps (tested on Ubuntu Linux 14.04 LTS) are:
 
    ::
 
-       sim_vehicle.sh -j4 -L KSFO 
+       sim_vehicle.py -j4 -L KSFO 
 
    .. note::
 

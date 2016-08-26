@@ -36,7 +36,7 @@ using the ``--map`` and ``--console`` options:
 ::
 
     cd ~/ardupilot/ArduPlane
-    sim_vehicle.sh -j4 --map --console
+    sim_vehicle.py -j4 --map --console
 
 As part of the setup you should have loaded some standard/test
 parameters into the *MAVProxy Command Prompt*:
@@ -147,7 +147,7 @@ skip to the second waypoint using ``wp set n``, and *loop* the mission:
     wp set 2
     wp loop
 
-The `MAVProxy Waypoints documentation <http://dronecode.github.io/MAVProxy/html/uav_configuration/waypoints.html>`__
+The `MAVProxy Waypoints documentation <http://ardupilot.github.io/MAVProxy/html/uav_configuration/waypoints.html>`__
 lists the full set of available commands (or you can get them using
 auto-completion by typing "wp" on the command line).
 

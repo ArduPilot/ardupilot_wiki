@@ -102,6 +102,13 @@ Download source
    .. image:: ../images/git_bash_clone_ardupilot_complete.jpg
        :target: ../_images/git_bash_clone_ardupilot_complete.jpg
 
+#. A little more initialisation is required for the source code.  Initialise referenced dependencies like this:
+
+   ::
+
+      cd ardupilot
+      git submodule init
+      git submodule update
 
 Install MHV_AVR_Tools to its default location
 =============================================

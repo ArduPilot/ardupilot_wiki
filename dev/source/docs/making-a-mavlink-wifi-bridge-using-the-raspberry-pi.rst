@@ -514,12 +514,12 @@ Installing and configuring MavProxy
 
 With the RPi now working as an access point, we now need to configure it
 to connect to a drone. To accomplish this we will install
-`MavProxy <http://dronecode.github.io/MAVProxy/html/index.html>`__, a
+`MavProxy <http://ardupilot.github.io/MAVProxy/html/index.html>`__, a
 minimalist but full featured ground control station.
 
 .. tip::
 
-   The official instructions to `install MAVProxy on Linux are here <http://dronecode.github.io/MAVProxy/html/getting_started/download_and_installation.html#linux>`__.
+   The official instructions to `install MAVProxy on Linux are here <http://ardupilot.github.io/MAVProxy/html/getting_started/download_and_installation.html#linux>`__.
 
 First install some other modules that are needed. Type the following
 commands:

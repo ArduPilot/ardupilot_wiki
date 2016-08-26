@@ -148,13 +148,13 @@ talking to your vehicle:
     mavproxy.py --master=com3:
 
 **For other connection options see the MAVProxy
-`documentation <http://dronecode.github.io/MAVProxy/html/getting_started/starting.html>`__.**
+`documentation <http://ardupilot.github.io/MAVProxy/html/getting_started/starting.html>`__.**
 
 Loading the API
 ---------------
 
 The API includes a mavproxy
-`module <http://dronecode.github.io/MAVProxy/html/modules/index.html>`__ to
+`module <http://ardupilot.github.io/MAVProxy/html/modules/index.html>`__ to
 allow you to load (and reload) your custom application into mavproxy.
 
 To load the API module run:
@@ -165,7 +165,7 @@ To load the API module run:
     DroneAPI loaded
     MANUAL>
 
-We recommend adding this line to the mavproxy `startup script in **~/.mavinit.scr** <http://dronecode.github.io/MAVProxy/html/getting_started/mavinit.html>`__.
+We recommend adding this line to the mavproxy `startup script in **~/.mavinit.scr** <http://ardupilot.github.io/MAVProxy/html/getting_started/mavinit.html>`__.
 
 ::
 

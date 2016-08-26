@@ -19,8 +19,9 @@ tuning options for the vehicle.
     Vibration Damping <common-vibration-damping>
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
     RCMAP <common-rcmap>
-    Sensor Testing <common-sensor-testing>
+    Terrain Following <terrain-following>
     Telemetry Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
+    Sensor Testing <common-sensor-testing>
     Magnetic Interference <common-magnetic-interference>
     Full Parameter List <parameters>
 [/site]

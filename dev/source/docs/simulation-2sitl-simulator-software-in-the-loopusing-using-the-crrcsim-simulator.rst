@@ -55,12 +55,12 @@ aircraft. That simulates a small nitro sport aircraft.
 For helicopter testing choose the "Heli-APM" model.
 
 After you have launched CRRCSim you need to start SITL. For fixed wing
-testing use the "-f CRRCSim" option to sim_vehicle.sh:
+testing use the "-f CRRCSim" option to sim_vehicle.py:
 
 ::
 
     cd ArduPlane
-    sim_vehicle.sh -f CRRCSim --console --map
+    sim_vehicle.py -f CRRCSim --console --map
 
 Simulating a helicopter
 -----------------------
@@ -70,6 +70,6 @@ For helicopter testing with CRRCSim use "-f CRRCSim-heli"
 ::
 
     cd ArduCopter
-    sim_vehicle.sh -f CRRCSim-heli --console --map
+    sim_vehicle.py -f CRRCSim-heli --console --map
 
 The helicopter will have the RSC speed on channel 8.

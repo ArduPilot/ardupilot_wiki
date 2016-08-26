@@ -89,6 +89,10 @@ ArduPilot apart from the closed-source offerings in the market. An area for
 open discourse on the ArduPilot projects direction between developers 
 and its customers.
 
+.. image:: ../../images/ArduPilotDiscuss.png
+    :target: http://discuss.ardupilot.org/
+    :width: 640px
+
 `DIYDRONES <http://diydrones.com/>`__- ArduPilot previous community home.
 
 A constantly evolving repository of knowledge and innovation. The DIY
@@ -98,6 +102,7 @@ needs of the community.
 
 .. image:: ../../images/diydrones.jpg
     :target: http://diydrones.com
+    :width: 360px
 
 
 --------------
@@ -148,16 +153,6 @@ Features:
 
 
 --------------
-
-
-.. image:: ../../images/dronecode-logo.jpg
-    :target:  http://www.dronecode.org/
-
-
-.. note::
-
-    ArduPilot, :ref:`Mission Planner <planner:home>`, :ref:`APM Planner <planner2:home>` are all
-    `Dronecode <https://www.dronecode.org/>`__ -supported projects.
 
 
 .. toctree::
