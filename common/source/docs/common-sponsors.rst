@@ -9,14 +9,19 @@ The project is the result of an immense amount of effort from software and hardw
 
 Corporate Sponsors
 ==================
+
 .. image:: ../../../images/supporters/supporters_logo_EnRoute.png
-    :target: http://www.enroute.co.jp/home/
+    :width: 250px:
+    :target:  http://www.enroute.co.jp/home/
 
-	
+.. raw:: html
+   <p>
+
 .. image:: ../../../images/supporters/supporters_logo_jDrones.png
-    :target: http://www.jDrones.com/home/
+    :width: 250px:
+    :target:  http://www.jDrones.com/home/
 
-	
+
 How does my company become a corporate sponsor?
 ===============================================
 We ask you donate `$1000 US through PayPal <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BBF28AFAD58B2>`__ to provide a year's sponsorship.  Then please email sponsor@ardupilot.org to express your desire to become a sponsor and include your company logo if you would like it to appear on this page.  We will send you a reminder in a year and if all goes well, you may choose to extend your sponsorship for another year.
