@@ -4,8 +4,7 @@
 Electro Permanent Magnet Gripper (OpenGrab EPM v3)
 ==================================================
 
-This article shows how to use the `Electro Permanent Magnet Gripper (OpenGrab EPM v3) <http://nicadrone.com/index.php?id_product=66&controller=product>`__
-with ArduPilot.
+This article shows how to use the `Electro Permanent Magnet Gripper (OpenGrab EPM v3) <http://nicadrone.com/index.php?id_product=66&controller=product>`__ with ArduPilot.
 
 
 Overview
@@ -13,11 +12,10 @@ Overview
 
 The *OpenGrab EPM v3* (from NicaDrone.com) is a small (less than 4cm x 4cm x 2cm) Electro Permanent Magnet gripper capable of 200N of force meaning it can hold about 15kg of cargo securely.  
 The gripping and releasing of the cargo is accomplished by delivering a short pulse to an electromagnet which reverses it's field. 
-Objects that it grips onto should be metal or have the included `thin steel target square <http://nicadrone.com/index.php?id_product=15&controller=product>`__
-attached to them.
+Objects that it grips onto should be metal or have the included `thin steel target square <http://nicadrone.com/index.php?id_product=15&controller=product>`__ attached to them.
 
 The device accepts a standard PWM servo input or UAVCAN and uses a 5V power supply.  
-A Significant amount of power is only required for about 1 second when it first grips or releases the cargo.
+A significant amount of power is only required for about 1 second when it first grips or releases the cargo.
 
 .. youtube:: ggvm-GQxwaY
     :width: 100%
@@ -54,7 +52,7 @@ Firmware setup
 
 .. note::
 
-    Auto mission using PWM works with current Copter release, this step may be skiped. 
+    Auto mission using PWM works with current Copter release, this step may be skipped. 
     UAVCAN support requires Copter-3.4A or later.
 
 At the moment Copter 3.4A is not released. It can be `build from the master <http://ardupilot.org/dev/docs/building-the-code.html/>`__.  or: 
