@@ -70,11 +70,20 @@ just to test the basic functionality and tune the airframe. Then try
 with :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` above plane stall speed if you want that
 functionality.
 
+From the 3.7.0 release an additional assistance type is available
+based on attitude error. If :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` is
+non-zero then this parameter gives an attitude error in degrees above
+which assistance will be enabled even if the airspeed is above
+Q_ASSIST_SPEED. The attitude assistance will only be used if
+Q_ASSIST_SPEED greater than zero.
+
 What assistance the quad motors provides depends on the fixed wing
-flight mode. If you are flying in an autonomous or semi-autonomous mode
-then the quad motors will try to assist with whatever climb rate and
-turn rate the autonomous flight mode wants. In a manually navigated mode
-the quad will try to provide assistance that fits with the pilot inputs.
+flight mode. If you are flying in an autonomous or semi-autonomous
+mode then the quad motors will try to assist with whatever climb rate
+and turn rate the autonomous flight mode wants when assistance is
+enabled (ie. airspeed is below Q_ASSIST_SPEED or attitude error is
+above Q_ASSIST_ANGLE). In a manually navigated mode the quad will try
+to provide assistance that fits with the pilot inputs.
 
 The specific handling is:
 
