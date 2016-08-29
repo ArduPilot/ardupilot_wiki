@@ -13,11 +13,7 @@ Overview
 ========
 
 When RTL mode is selected, the copter will return to the home location.
-The copter will first rise to
-:ref:`RTL_ALT <RTL_ALT>`
-before returning home or maintain the current altitude if the current
-altitude is higher than ``RTL_ALT``.  The default value for ``RTL_ALT``
-is 15m.
+The copter will first rise to :ref:`RTL_ALT <RTL_ALT>` before returning home or maintain the current altitude if the current altitude is higher than :ref:`RTL_ALT <RTL_ALT>`.  The default value for :ref:`RTL_ALT <RTL_ALT>` is 15m.
 
 .. image:: ../images/RTL.jpg
     :target: ../_images/RTL.jpg
