@@ -107,9 +107,14 @@ The typical process for working with Git on the command line is:
      .. code-block:: bash
    
 	   git remote add upstream https://github.com/ArduPilot/ardupilot_wiki.git
-	   git remove -v
 	   
-   - The "upstream" repository is now tracked as well.  
+   - Verify that the "upstream" repository is now tracked as well.
+   
+     .. code-block:: bash
+     
+	   git remote -v
+	   
+   - The "upstream" repository should now be part of the remote repository list:  
      
      .. code-block:: bash
 
