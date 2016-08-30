@@ -145,6 +145,16 @@ geo-fencing behaviour:
    that the loiter altitude of the Rally Point is used as the return
    altitude.
 
+.. note::
+
+   A Rally Point can be outside of the geofence but this is NOT
+   recommended.  If you have a rally point outside the geofence you
+   will need to disable the geofence using FENCE_CHANNEL before you
+   can control the plane again otherwise the plane will stay in GUIDED
+   mode FOREVER circling the rally point.  Once the geofence is disabled
+   you should fly the plane back inside the geofence and then re-enable
+   it.
+
 One additional parameter may be useful to get the most out of
 geo-fencing. When you breach the fence, the plane will switch to GUIDED
 mode and fly back to the return point (or the nearest Rally Point, if
