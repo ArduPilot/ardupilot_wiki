@@ -16,6 +16,9 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_jDrones.png
     :target:  http://www.jDrones.com/home/
 
+.. image:: ../../../images/supporters/supporters_logo_auav.png
+    :target:  http://www.auav.co/
+
 
 How does my company become a partner?
 ===============================================
