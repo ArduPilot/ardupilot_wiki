@@ -4,68 +4,60 @@
 PX4FLOW Optical Flow Camera Board Overview
 ==========================================
 
-This article describes the `PX4FLOW (Optical Flow) Sensor <https://store.3dr.com/products/px4flow>`__.
-
-.. warning::
-
-   The PX4FLOW is supported as an experimental feature starting
-   from Copter 3.3. It is not supported in Plane or Rover.
-
-Overview
-========
-
-The `PX4FLOW (Optical Flow) Sensor <https://store.3dr.com/products/px4flow>`__ is a
-specialized high resolution downward pointing camera module that uses
-the ground texture and visible features and a rangefinder to determine
-aircraft ground velocity. Although the sensor has plus a built-in
-Maxbotix LZ-EZ4 sonar to measure height, this has not been reliable
-enough over a range of surfaces in testing, so its readings are not used
-and instead a separate :ref:`Range Finder <common-rangefinder-landingpage>`
-such as the :ref:`Lidar Lite <common-rangefinder-lidarlite>`
-should also be attached to the vehicle.
-
-The built-in 3 axis gyro enables automatic compensation for vehicle tilt
-and heading relative to the ground.  The PX4-FLOW incorporates the same
-powerful Cortex M4F Microcontroller as is used in the PX4-FMU.
-
-More information on this sensor including how to upgrade the sensor's
-firmware using QGroundControl can be found on the `ETH's PX4FLOW wiki page <http://pixhawk.org/modules/px4flow>`__.
-
-.. warning::
-
-   To use this flow sensor to perform optical flow loiter as seen
-   in the following video, you will need to purchase a separate range
-   finder. Our testing has been performed using the `Pulsed Light unit <http://pulsedlight3d.com/>`__ 
+This article describes how to setup the `PX4FLOW (Optical Flow) Sensor <https://northox.myshopify.com/collections/frontpage/products/px4flow>`__ which can be used in place of a GPS.
 
 ..  youtube:: LP8kl4hGfMw
     :width: 100%
 
+.. warning::
+
+   The PX4FLOW is supported as an experimental feature starting from Copter 3.3. It is not supported in Plane or Rover.
+
+Overview
+========
+
+The `PX4FLOW (Optical Flow) Sensor <https://northox.myshopify.com/collections/frontpage/products/px4flow>`__ is a
+specialized high resolution downward pointing camera module and a 3-axis gyro that uses
+the ground texture and visible features and a separate rangefinder to determine
+aircraft ground velocity. Although the sensor has plus a built-in
+Maxbotix LZ-EZ4 sonar to measure height, this has not been reliable
+enough over a range of surfaces in testing, so its readings are not used
+and instead a separate :ref:`Range Finder <common-rangefinder-landingpage>`
+such as the :ref:`LightWare SF10b <common-lightware-sf10-lidar>`
+must also be attached to the vehicle.
+
+More information on this sensor can be found on the `ETH's PX4FLOW wiki page <http://pixhawk.org/modules/px4flow>`__.
+
+.. warning::
+
+   To use this flow sensor you will need to purchase a separate range
+   finder like the :ref:`LightWare SF10b <common-lightware-sf10-lidar>`
+
 Upgrade the PX4Flow sensor's firmware
 =====================================
 
-The PX4Flow firmware must be updated prior to connecting to the Pixhawk:
+The PX4Flow firmware must be updated prior to connecting to the Pixhawk.  This can be accomplished with `QGround Control <http://qgroundcontrol.com/>`__ or Mission Planner but the instructions below only cover the method using Mission Planner.
 
 #. Download and unzip the `PX4Flow-KLT firmware <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
    (`source code here <https://github.com/priseborough/px4flow/tree/klt_flow>`__)
-#. `Download, install and start QGround Control <http://qgroundcontrol.org/downloads>`__
-#. Select *PX4 Autopilot* from the splash screen
+#. Connect the PX4Flow sensor to your computer using a micro USB cable.  On a Windows machine a "PX4Flow" device should appear in Connection drop-down of the Mission Planner (and the Windows Device Manager).  If it does not you may need to download, unzip and manually install the `px4flow windows driver <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow_win_driver.zip>`__ which may in turn require allowing installing unsigned drivers.
+#. Open the Initial Setup, Install Firmware screen, select the COM port and click the "Load custom firmware" link.  Select the px4flow-klt-06dec2014.px4 binary you downloaded in Step 1.  You may need to unplug and plug back in the sensor to start the upload.
 
-   .. image:: ../../../images/PX4Flow_FirmUpgrade1.png
-       :target: ../_images/PX4Flow_FirmUpgrade1.png
-       
-#. Press the **Config** button to open the *Firmware Upgrade* screen
+   .. image:: ../../../images/PX4Flow_FirmUpgrade1_MP.png
+       :target: ../_images/PX4Flow_FirmUpgrade1_MP.png
 
-   .. figure:: ../../../images/PX4Flow_FirmUpgrade2.png
-      :target: ../_images/PX4Flow_FirmUpgrade2.png
+Focusing the lens
+=================
 
-      QGroundControl: Firmware Upgrade Screen
+Normally sensors are shipped without being focused.
 
-#. Click **Advanced**, then set Port to "<Automatic>", Board to "PX4FLOW
-   v1.1"
-#. Push the **Select File** button and find the **.px4** file downloaded
-   from step #1
-#. Push the "Flash" firmware and then push the small reset button on the
-   edge of the px4flow sensor near the sonar.
+#. Connect the flow sensor to your PC with a micro USB cable
+#. Open the Mission Planner and select the appropriate COM port and press Connect
+#. Open the Initial Setup > Optional Hardware > PX4Flow screen
+#. Remove the lens cap and point the camera at a high contrast object at least 3m away.  Remove the small screw that stops the lens from turning and adjust the focus until the image appears clearly
+
+   .. image:: ../../../images/PX4Flow_Focus_MP.png
+       :target: ../_images/PX4Flow_Focus_MP.png
 
 Connect to the Pixhawk
 ======================
@@ -76,15 +68,16 @@ Connect to the Pixhawk
 The sensor should be connected to the Pixhawk's the 4-pin I2C port.  In
 most cases an `I2C splitter <http://store.jdrones.com/Pixhawk_I2C_splitter_p/dstpx4i2c01.htm>`__
 should be used to allow other I2C devices (like the external RGB LED and
-GPS/Compass module's compass) to the same port.
+GPS/Compass module's compass) to share the same port.
 
 Mounting to the Frame
 =====================
 
-Mount the flow sensor pointing straight down with the X axis forwards
-and the Y axis to the right. The :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>`
-parameter can be used to account for other yaw orientations. It is
-important that the flow sensor be mounted where it does not experience
+The default mounting of the flow sensor is for it to be pointing straight down with the micro USB port pointing towards the front of the vehicle.
+On the back of the sensor you should see the axis printed, the X axis should point forwards and the Y axis to the right.
+The :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` parameter can be used to account for other yaw orientations.
+
+It is important that the flow sensor be mounted where it does not experience
 angular angular vibration that could blur the image.
 
 .. note::
@@ -92,78 +85,36 @@ angular angular vibration that could blur the image.
    The default mounting orientation is different to that shown on
    the \ `ETH PX4FLOW wiki <http://pixhawk.org/modules/px4flow>`__. If you
    mount the board as shown in the \ `ETH PX4FLOW wiki <http://pixhawk.org/modules/px4flow>`__, you will need to set
-   ``FLOW_ORIENT_YAW`` to -9000.
+   :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` to -9000.
 
-Setup through the Mission Planner
-=================================
+Enabling the sensor
+===================
 
 .. image:: ../../../images/OptFlow_MPSetup.png
     :target: ../_images/OptFlow_MPSetup.png
 
-The sensor can be enabled by connecting with the Mission Planner and
+The sensor can be enabled by connecting to the flight controller with the Mission Planner and
 then on the **Initial Setup \| Optional Hardware \| Optical Flow** page
-check the **Enable** checkbox.  Alternatively the ``FLOW_ENABLE``
+check the **Enable** checkbox.  Alternatively the :ref:`FLOW_ENABLE <copter:FLOW_ENABLE>`
 parameter should be set to "1" through the full parameters list.  The
 sensor will be initialised once the Pixhawk board is rebooted.
 
 Testing the sensor
 ==================
 
-The raw data from the sensor will eventually be visible on the Mission
-Planner's Flight Data screen's Status tab (`issue raised here <https://github.com/ArduPilot/MissionPlanner/issues/745>`__). 
-Until then you can perform the following test in a well lit room. Note
-that some artificial lighting has strobing that can reduce the sensor
-performance. Natural light or a high power incandescent light source is
-best.
+With the sensor connected to the flight controller's I2C port, connect to the flight controller with the Mission Planner and open the Flight Data screen's Status tab.  If the sensor is operating you should see non-zero opt_m_x, opt_m_y and an opt_qua values.
 
-.. warning::
+.. image:: ../../../images/PX4Flow_CheckForData_MP.png
+    :target: ../_images/PX4Flow_CheckForData_MP.png
 
-   Follow the instructions on the \ `ETH PX4FLOW wiki page <http://pixhawk.org/modules/px4flow>`__ on how to use
-   QGroundControl to check and adjust the focus of your sensor. Do not
-   assume it was in focus as shipped. You should be pointing it at a high
-   contrast object about 3m away when you check the focus.
-
-.. warning::
-
-   Disconnect the sensor I2C connection from your flight
-   computer before you connect it to via USB to your computer, Otherwise
-   the sensor will be trying to power the flight computer and it may not
-   have enough voltage to work properly.
-
-#. Remove the lens cap from the sensor
-#. We recommend you upgrade to \ `this modified PX4FLOW sensor firmware <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__.
-   using QGroundControl. This modified firmware uses a different method
-   to determine the optical flow and provides readings over a wider
-   range of light and distance, but has a smaller maximum flow
-   speed compared to the standard firmware.
-#. Reconnect the I2C connection your flight computer  and change the
-   following parameters: \ ``FLOW_ENABLE = 1`` turns on use of the
-   sensor and \ ``LOG_BITMASK = 131071`` turns on pre-arm logging and
-   will help diagnose problems
-#. Power up the vehicle (you can power up via the flight computer USB)
-   to start logging and rotate the vehicle with the sensor pointing at
-   the floor.
-#. Download the dataflash logs and graph the OF message's data including
-   "Qual", flowX, flowY, bodyX and bodyY values. The quality reading
-   should be greater than 0, and you should see the flow and body rates
-   changing.
-#. Power up the vehicle using the battery and repeat steps 4. and 5. If
-   you get no data, but works when the Pixhawk is powered via USB, then
-   it is likely you have encountered a start-up problem with the
-   PX4-Flow sensor and the APM+Pixhawk combination that is known to
-   affect some sensors. Currently there is no solution to this other
-   than to always power up via USB first before connecting the battery.
-   Please notify the APM developers and PX4Flow supplier if this occurs.
-
-Flow Sensor Calibration
-=======================
-
-#. Find a location with a textured surface and good lighting (natural 
-   light or strong incandescent)
+Calibrating the sensor
+======================
+#. Connect to your flight controller and ensure that logging while disarmed is enabled (In Copter-3.3 set :ref:`LOG_BITMASK <copter:LOG_BITMASK>` to 131071, In Copter-3.4 :ref:`LOG_DISARMED <copter:LOG_DISARMED>` to 1)
+#. Find a location with a textured surface and good lighting (natural light or strong incandescent)
 #. Remove Propellers (safety first)
 #. Power on the vehicle and hold level away from your body and at eye level
 #. Rotate about the vehicle in roll through a range from -15 to +15
-   degrees in about a second and then back again. Repeat this 10
+   degrees in about a second and then back again. Repeat this 5 to 10
    times. By closing one eye you will be able to keep the centre of the
    sensor stationary against the background while you do the rotation.
 #. Repeat  about the vehicle pitch axis.
@@ -176,7 +127,7 @@ Flow Sensor Calibration
 #. If ``OF.flowX`` is larger or smaller than ``OF.bodyX``, then it can
    be adjusted by changing the ``FLOW_FXSCALER`` parameter
 #. IF ``OF.bodyX`` is uncorrelated or opposite sign to ``IMU.GyrX``,
-   the ``FLOW_ORIENT_YAW`` parameter is probably set incorrectly or
+   the :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` parameter is probably set incorrectly or
    you do not have the flow sensor pointing downwards
 #. Plot the ``OF.flowY``, ``OF.bodyYband``, ``IMU.GyrY`` data. It should
    look something like this:
@@ -187,7 +138,7 @@ Flow Sensor Calibration
 #. If ``OF.flowY`` is larger or smaller than ``OF.bodyY``, then it can
    be adjusted by changing the ``FLOW_FYSCALER`` parameter
 #. IF ``OF.bodyY`` is uncorrelated or opposite sign to ``IMU.GyrY``,
-   the ``FLOW_ORIENT_YAW`` parameter is probably set incorrectly or
+   the :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` parameter is probably set incorrectly or
    you do not have the flow sensor pointing downwards
 
 Range Sensor Check
@@ -227,47 +178,27 @@ check.
 First Flight (Copter Only)
 ==========================
 
-#. Perform a short test flight  hovering in stabilise at small tilt
-   angles at heights ranging from 50cm to 3m with ``EKF_GPS_TYPE = 0``
-   (we don't want the optical flow being used by the EKF at this stage)
+#. Set ``EKF_GPS_TYPE = 0`` (we don't want the optical flow being used by the EKF at this stage)
+#. Perform a short test flight hovering in stabilise or AltHold at small lean angles at heights ranging from 50cm to 3m with 
 #. Download the flash log and plot the following in mission planner
 #. EKF5.meaRng should correlate with the change in vehicle height
 #. ``OF.flowX`` and ``OF.flowY`` should be varying
-#. ``OF.bodyX`` and ``OF.bodyY`` should be consistent with IMU.GyrX and
-   IMU.GyrY
+#. ``OF.bodyX`` and ``OF.bodyY`` should be consistent with IMU.GyrX and IMU.GyrY
 
 Second Flight (Copter only)
 ===========================
 
 .. warning::
 
-   You will need at least 15m of clear space around the vehicle to
-   do this flight safely.
+   You will need at least 15m of clear space around the vehicle to do this flight safely.
+   If the optical flow velocity estimates are bad, you will have little warning and the copter may lean to it's maximum lean angle very quickly.
 
-#. Set the EKF_GPS_TYPE parameter to 3 make the EKF ignore GPS and use
-
-   .. warning::
-
-      Do not switch from any non-gps mode, eg
-         STABILIZE, ALT_HOLD or ACRO  to a GPS mode, eg LOITER when flying
-         with EKF_GPS_TYPE set to 3. If the optical flow velocity estimates
-         are bad, you will have no warning and the copter could go to maximum
-         roll or pitch when you make the switch. This vulnerability will be
-         fixed in subsequent SW releases.
-
-#. Ensure you have LOITER mode and STABILIZE mode available on
-   you transmitter.
+#. Set the EKF_GPS_TYPE parameter to 3 to make the EKF ignore GPS and use the flow sensor
+#. Ensure you have Loiter and either AltHold or Stabilize mode available on you transmitter.
 #. Take-off in loiter and bring the copter to about 1m height
-
-   .. warning::
-
-      Do not take-off in STABILIZE and switch
-         to LOITER
-
-#. If it starts to accelerate away or there is erratic pitch or roll
-   movement, then switch to stabilise and land. You will need to
-   download the log file and share it on the forum to understand why.
+#. If the vehicle starts to accelerate away or there is erratic pitch or roll
+   movement, then switch to Stabilise or AltHold and land. You will need to
+   download the log file and share it on `the forums <http://discuss.ardupilot.org/c/arducopter>`__ to understand why.
 #. If it holds location then congratulations, you have succeeded and can
    now start experimenting with height changes and moving it around in
    LOITER
-
