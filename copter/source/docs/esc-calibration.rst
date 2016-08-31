@@ -24,17 +24,9 @@ specific information (such as tones).  "All at once" calibration works
 well for most ESCs, so it is good idea to attempt it first and if that
 fails try the "Manual ESC-by-ESC" method.
 
--  For 3DR ESCs can use the "All at once" method.
--  DJI Opto ESCs do not require and do not support calibration, so skip
-   this page completely
--  Some brands of ESC do not allow calibration and will not arm unless
-   you adjust your radio's throttle end-points so that the minimum
-   throttle is around 1000 PWM.  Note that if you change the end-points
-   on your TX you must re-do the :ref:`Radio Calibration <common-radio-control-calibration>`.
+-  Some ESCs like the DJI Opto ESCs do not require and do not support calibration, so skip this page completely
+-  Some brands of ESC do not allow calibration and will not arm unless you adjust your radio's throttle end-points so that the minimum throttle is around 1000 PWM and maximum is around 2000.  Note that if you change the end-points on your TX you must re-do the :ref:`Radio Calibration <common-radio-control-calibration>`.  Alternatively with Copter-3.4 (and higher) you may manually set the :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` to 1000 and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` to 2000.
 -  Begin this procedure only after you have completed the :ref:`radio control calibration <common-radio-control-calibration>` and :ref:`Connect ESCs and motors <connect-escs-and-motors>` part of the :ref:`Assembly Instructions <assembly-instructions>`.  Next follow these steps:
-
-All at once calibration
-=======================
 
 .. warning::
 
@@ -46,14 +38,20 @@ All at once calibration
 
    .. image:: ../images/copter_disconnect_props_banner.png
        :target: ../_images/copter_disconnect_props_banner.png
+       :width: 400px
 
    .. image:: ../images/MicroUSB1__57056_zoom.jpg
        :target: ../_images/MicroUSB1__57056_zoom.jpg
+       :width: 400px
+
+All at once calibration
+=======================
 
 #. Turn on your transmitter and put the throttle stick at maximum.
 
    .. image:: ../images/transmitter-throttle-max.jpg
        :target: ../_images/transmitter-throttle-max.jpg
+       :width: 400px
     
 #. Connect the Lipo battery.  The autopilot's red, blue and yellow LEDs
    will light up in a cyclical pattern. This means the it's ready to go
@@ -61,15 +59,18 @@ All at once calibration
 
    .. image:: ../images/Connect-Battery.jpg
        :target: ../_images/Connect-Battery.jpg
+       :width: 400px
    
 #. With the transmitter throttle stick still high, disconnect and
    reconnect the battery.
 
    .. image:: ../images/Disconnect-Battery.jpg
        :target: ../_images/Disconnect-Battery.jpg
+       :width: 400px
 
    .. image:: ../images/Connect-Battery.jpg
     :target: ../_images/Connect-Battery.jpg
+    :width: 400px
     
 #. For **PX4 or Pixhawk,** press and hold the safety button until it
    displays solid red.
@@ -84,6 +85,7 @@ All at once calibration
 
    .. image:: ../images/transmitter-throttle-min.jpg
        :target: ../_images/transmitter-throttle-min.jpg
+       :width: 400px
     
 #. The ESCs should then emit a long tone indicating that the minimum
    throttle has been captured and the calibration is complete.
@@ -107,22 +109,6 @@ All at once calibration
 Manual ESC-by-ESC Calibration
 =============================
 
-.. warning::
-
-   **Safety Check!**
-
-   Before calibrating ESCs, please ensure that your copter has NO PROPS on
-   it and that the APM is NOT CONNECTED to your computer via USB.
-
-   .. image:: ../images/copter_disconnect_props_banner.png
-    :target: ../_images/copter_disconnect_props_banner.png
-   
-   .. image:: ../images/MicroUSB1__57056_zoom.jpg
-       :target: ../_images/MicroUSB1__57056_zoom.jpg
-
-Calibrating ESCs individually (Currently Untested on PX4)
----------------------------------------------------------
-
 #. Plug one of your ESC three-wire cables into the throttle channel of
    the RC receiver. (This is usually channel 3.)
 #. Turn on the transmitter and set throttle stick to maximum (full up).
@@ -140,6 +126,18 @@ Calibrating ESCs individually (Currently Untested on PX4)
    trim 50%.
 #. You can also try powering your APM board via the USB first to boot it
    up before plugging in the LiPo.
+
+Semi Automatic ESC-by-ESC Calibration
+=====================================
+
+#. Connect to the flight controller from a ground station such as the Mission Planner and set the :ref:`ESC_CALIBRATION <ESC_CALIBRATION>` parameter to 3
+#. Disconnect the battery and USB cable so the flight controller powers down
+#. Connect the battery
+#. The arming tone will be played (if the vehicle has a buzzer attached)
+#. If using a flight controller with a safety button (like the Pixhawk) press it until it displays solid red
+#. You will hear a musical tone then two beeps
+#. A few seconds later you should hear a number of beeps (one for each battery cell you're using) and finally a single long beep indicating the end points have been set and the ESC is calibrated
+#. Disconnect the battery and power up again normally and test as described below
 
 Testing
 =======
@@ -190,11 +188,3 @@ Recommended ESC settings as follows:
 #. CutOff Threshold: Low
 #. Start Mode: Normal (Default)
 #. Timing: MEDIUM
-
-
-
-
-
-
-
-
