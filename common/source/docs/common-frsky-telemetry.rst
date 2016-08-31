@@ -144,25 +144,45 @@ You can make your own cable using the following components:
 FrSky Telemetry setup in Mission Planner
 ----------------------------------------
 
-To enable the FrSky Telemetry output on the Pixhawk's *Telem2* port,
+
+You can connect the telemetry cable to the TELEM1, TELEM2, GPS or SERIAL 4/5 ports.
+
+To enable the FrSky Telemetry output on one of the serial ports,
 please connect with the **Mission Planner** and then open the
-**Config/Tuning \| Full Parameter List** page and set the
-``SERIAL2_PROTOCOL`` parameter to "3" for D-Receiver and "4" for
-X-Receiver.
+**Config/Tuning \| Full Parameter List** page and set the corresponding
+``SERIALX_PROTOCOL`` parameter to the desired value depending on the port that the cable is plugged in:
+
+- Standard D telemetry: **3** (2 for AC3.2 or prior versions)
+- Standard SPort telemetry: **4** (3 for AC3.2 or prior versions)
+- Ardupilot SPort telemetry: **10** (AC 3.4 Latest only)
+
++--------------------------+-------------------+
+| Port used                | Parameter         |
++==========================+===================+
+| TELEM1                   | SERIAL1_PROTOCOL  |
++--------------------------+-------------------+
+| TELEM2                   | SERIAL2_PROTOCOL  |
++--------------------------+-------------------+
+| GPS                      | SERIAL3_PROTOCOL  |
++--------------------------+-------------------+
+| SERIAL 4/5 (recommended) | SERIAL4_PROTOCOL  |
++--------------------------+-------------------+
 
 .. note::
-
-   The information above is for ArduCopter 3.3. Prior to AC3.2 the
-   values are 2 for D-Receiver and 3 for X-Receiver.
-
-.. tip::
-
-   ``SERIAL2_BAUD`` and ``SERIAL1_BAUD`` are not necessary for FrSky
-   telemetry - it is a static value for D-Port (9600) and S-port
+   ``SERIALX_BAUD`` is not necessary for FrSky
+   telemetry - it is a static value for D telemetry (9600) and SPort
    (57600).
 
-.. image:: ../../../images/MP-Serial2_protocol.png
-    :target: ../_images/MP-Serial2_protocol.png
+.. image:: ../../../images/MP_SERIAL2_FrSky10.png
+    :target: ../_images/MP_SERIAL2_FrSky10.png
+
+.. warning::
+   Make sure to set only one SERIAL#_PROTOCOL parameter to 10 and the other SERIAL#_PROTOCOL parameters to their default values or at least to something other than 3, 4, or 10, as only one port can be used for FrSky telemetry at a time!
+
+Connect the telemetry cable to either the TELEM1, TELEM2, GPS, or SERIAL 4/5 port of your Pixhawk and the other end to the Smart Port of your X-series receiver (X4R, X4RSB, X6R, X8R, or XSR) or FLVSS/MLVSS sensor.
+
+.. warning::
+   DO NOT PLUG THE TELEMETRY CABLE TO THE PIXHAWK WHILE THE PIXHAWK IS ON! IT MAY CAUSE THE CABLE TO OVERHEAT WHICH COULD RESULT IN SERIOUS BURNS AND DAMAGE TO THE CABLE!
 
 Transmitter set-up
 ------------------
