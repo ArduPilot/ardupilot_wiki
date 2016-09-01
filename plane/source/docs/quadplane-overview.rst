@@ -3,6 +3,9 @@
 QuadPlane Overview
 ==================
 
+   .. image:: ../images/quadplane_PorterOctaQuad.png
+       :target: ../_images/quadplane_PorterOctaQuad.png
+
 A QuadPlane is a combined fixed wing and MultiCopter aircraft. This sort
 of aircraft brings the benefit of vertical takeoff and landing,
 significantly greater speed and range of travel, and the ability to
