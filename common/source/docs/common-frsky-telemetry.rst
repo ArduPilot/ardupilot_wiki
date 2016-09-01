@@ -378,9 +378,13 @@ Missing:
    </tbody>
    </table>
 
+==============
+OpenTX Scripts
+==============
+This section covers how to enable and runs scripts on the Taranis with OpenTX
 
 Enabling Scripts on OpenTX
-==========================
+--------------------------
 
 The version installed on your Taranis may not have the option to run scripts. If this is the case, you will need to install a new version via OpenTX Companion. This can be done in a few easy steps.
 
@@ -419,7 +423,48 @@ The version installed on your Taranis may not have the option to run scripts. If
 .. image:: ../../../images/opentx_flashwindow.png
     :target: ../_images/opentx_flashwindow.png 
 
+Copying Scripts and Sounds to the Taranis
+-----------------------------------------
 
+Scripts and sounds are stored on the Taranis SD Card. To copy a script or sounds to the Taranis, copy them to the SCRIPTS or SOUNDS folder on the Taranis SD. This can be done with an SD card reader or directly with the Taranis.
+
+With the Taranis still in bootloader mode and connected to the computer via USB, the SD card should appear as a computer drive that contains multiple folders, including SCRIPTS and SOUNDS. Scripts and sounds should be copied to these folders.
+
+Running Telemetry Scripts
+-------------------------
+
+Telemetry scripts require sensors to be “discovered” before the scripts can use the telemetry data. This section describes how to the discover the telemetry sensors (similar to using telemetry without scripts) and how to assign a display script to a screen and how to access the screen showing the script display or activate a non-display script (e.g. sound script).
+
+Discovering Sensors
+^^^^^^^^^^^^^^^^^^^
+
+OpenTX 2.1.x requires “discovering” the telemetry messages from the Pixhawk. To discover them, unplug the USB cable, turn off the Taranis, then turn it back on (not in bootloader mode). Repeat the following steps for each model with which you want to use FrSky telemetry:
+
+1. Press the MENU button, then long press the PAGE button to get to the TELEMETRY page. Press the - button until “Discover new sensors” is highlighted and press ENTER. The Taranis LCD screen should display “Stop discovery.”
+
+ .. image:: ../../../images/OpenTX_Discover.png
+    :target: ../_images/OpenTX_Discover.png 
+
+2. Power on the Pixhawk and FrSky receiver. Wait for 15 seconds. The Taranis should discover the emulated sensors based on the data from the Pixhawk. The sensors must all be properly discovered for the scripts to run. The Taranis should show at least discover the following sensors (order not important):
+
+ .. image:: ../../../images/OpenTX_sensors.png
+    :target: ../_images/OpenTX_sensors.png
+
+Assigning a Display Script to a Screen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If a scripts has a display, it needs to be assigned to telemetry screens. Once the script has been assigned to a screen, the script is accessed by doing a long press on the main OpenTX screen. Each long press will switch screens. Multiple scripts can be assigned to multliple screens.
+
+On the TELEMETRY page, scroll down using the - button, and highlight the “None” entry next to “Screen 1.” Once “None” is highlighted, press ENT, then navigate the choices with the +/- buttons until “Script” appears. Press ENT to validate, then press - to move to the right (highlighting “- - -“). Press ENT and select “screens” using the +/- buttons, then press ENT to validate. The “screens” script handles the display capabilities. The Taranis LCD display should then look like this:
+
+.. image:: ../../../images/OpenTX_assign_script_to_screen.png
+    :target: ../_images/OpenTX_assign_script_to_screen.png 
+
+Activating a Custom Script (no display function)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Scripts that do not display anything (e.g. data parsing, sounds) are activated on the CUSTOM script page.
+Press EXIT once, long press PAGE to get to the CUSTOM SCRIPT page, then press ENT to edit LUA1. On the LUA1 page, press ENT and select the script using the +/- buttons, then press ENT to validate.
 
 Hardware solutions
 ==================
