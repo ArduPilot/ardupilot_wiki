@@ -13,6 +13,18 @@ releases/milestones.
    This includes point releases which may not be included on this
    page.
 
+-  Sep 01, 2016 Copter (AC) **3.4.0-rc3** released for beta testing. Minor Enhancements and bug fixes.
+   `Release Notes <https://github.com/ArduPilot/ardupilot/blob/Copter-3.4/ArduCopter/ReleaseNotes.txt>`__.
+
+-  Aug 08, 2016 Copter (AC) **3.4.0-rc2** released for beta testing.  Major Enhancements.
+   `Release Notes <https://github.com/ArduPilot/ardupilot/blob/Copter-3.4/ArduCopter/ReleaseNotes.txt>`__.
+
+-  May 28, 2016 Copter (AC) **3.4.0-rc1** released for beta testing. Major Enhancements.
+   `Release Notes <https://github.com/ArduPilot/ardupilot/blob/Copter-3.4/ArduCopter/ReleaseNotes.txt>`__.
+
+-  Feb 24, 2016 Copter (AC) **3.3.3** released. Minor bug fixes.
+   `Release Notes <https://github.com/ArduPilot/ardupilot/blob/Copter-3.3/ArduCopter/ReleaseNotes.txt>`__.
+
 -  Nov 4, 2015 Copter (AC) **3.3.2** released. Enhancements and bug
    fixes. Helicopter improvements. Details
    `here <https://github.com/ArduPilot/ardupilot/blob/Copter-3.3/ArduCopter/ReleaseNotes.txt>`__.
