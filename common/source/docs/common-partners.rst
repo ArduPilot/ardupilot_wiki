@@ -19,6 +19,8 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_auav.png
     :target:  http://www.auav.co/
 
+.. image:: ../../../images/supporters/supporters_logo_emlid.png
+    :target:  http://www.emlid.com/
 
 How does my company become a partner?
 ===============================================
