@@ -378,6 +378,49 @@ Missing:
    </tbody>
    </table>
 
+
+Enabling Scripts on OpenTX
+==========================
+
+The version installed on your Taranis may not have the option to run scripts. If this is the case, you will need to install a new version via OpenTX Companion. This can be done in a few easy steps.
+
+1. Download and install the latest version of OpenTX Companion from www.open-tx.org/downloads.html. Open the OpenTX Companion program, then go to Settings >> Settings
+
+.. image:: ../../../images/opentx_settingstab.png
+    :target: ../_images/opentx_settingstab.png
+
+2. Select your “Radio Type” (Taranis, Taranis Plus, or Taranis X9E), make sure the “lua” build option is checked, then press OK.
+
+.. image:: ../../../images/opentx_luacheck.png
+    :target: ../_images/opentx_luacheck.png
+
+3. Click on File >> Download...
+
+.. image:: ../../../images/opentx_filetab.png
+    :target: ../_images/opentx_filetab.png
+
+4. Click on the “Download FW” button and save the resulting .bin file. Once the firmware is downloaded, press OK.
+
+.. image:: ../../../images/opentx_dlwindow.png
+    :target: ../_images/opentx_dlwindow.png
+ 
+5. Enter bootloader mode on the Taranis by sliding both horizontal trims, each under the main sticks, towards the center and then turning the Taranis on. The top of the Taranis LCD screen should now display “Taranis Bootloader.”
+
+.. image:: ../../../images/taranis_bootloadermode.png
+    :target: ../_images/taranis_bootloadermode.png
+
+6. Connect a USB cable between the Taranis and the computer. “USB Connected” should appear in the center of the Taranis LCD screen. Click on Read/Write >> Write Firmware to Radio.
+
+.. image:: ../../../images/opentx_RWtab.png
+    :target: ../_images/opentx_RWtab.png 
+
+7. Locate/load the firmware (.bin) which was downloaded earlier, then click on the “Write to TX” button. A popup window should display a progress bar which will eventually reach 100%. Once flashing is done, click on the “Close” button to close the popup window.
+
+.. image:: ../../../images/opentx_flashwindow.png
+    :target: ../_images/opentx_flashwindow.png 
+
+
+
 Hardware solutions
 ==================
 
