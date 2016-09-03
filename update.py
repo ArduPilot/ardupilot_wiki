@@ -35,7 +35,7 @@ import subprocess
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
 ALL_WIKIS =['copter', 'plane', 'rover','antennatracker','dev','planner','planner2','ardupilot']
 COMMON_DIR='common'
-COPY_TARGET_DIR_BASE='/var/sites/new/web/wiki/'
+COPY_TARGET_DIR_BASE='/var/sites/wiki/web/'
 
 #GIT_REPO = ''
 
