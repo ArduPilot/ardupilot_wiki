@@ -113,7 +113,12 @@ The firmware will be created in the **ArduCopter** directory with the
    `uavcan <https://github.com/ArduPilot/uavcan>`__) as *git submodules*
    when you build the project. If you built the project before the change
    to submodules you may get errors. See :ref:`Git Submodules <git-submodules>` for troubleshooting information.
+   
+   
+.. note::
 
+   You can ignore any mesages regarding PX4Firmware and PX4Nuttx hashes. Those are useful labels for developers but optional and sometimes the build system can't find them on your system. As long as it says "Firmware is in.." followed by a .px4 file then you have a successful build which you can safely load onto your aircraft.
+   
 Hints for speeding up compile time
 ==================================
 
