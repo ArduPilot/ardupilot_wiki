@@ -385,3 +385,10 @@ epub_exclude_files = ['search.html']
 
 #Intersphinx mapping config (done globally)
 intersphinx_mapping = common_conf.intersphinx_mapping
+
+#Responsive table override
+html_context = {
+    'css_files': [
+        '_static/theme_overrides.css',  # override wide tables in RTD theme
+        ],
+     }
