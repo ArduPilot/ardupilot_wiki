@@ -41,7 +41,7 @@ Notes:
 
 - When Vin of the EPM drops below 5V the EPM will go into low power mode. Slowing down switching to prevent crashing the power rail.
 - When Vin drops below 4.5V the green status LED will blink fast indicating an error condition.
-- The Pixhawk power rail voltage is < 5V.
+- The Pixhawk UAVCAN connector power rail voltage is < 5V.
 - External powering of the EPM is recommended (see image above).
 - EPM UAVCAN cable set is required. `Clickmate -> DF13 <http://nicadrone.com/index.php?id_product=69&controller=product>`__.
 - UAVCAN requires termination, terminator included in UAVCAN cable set.
