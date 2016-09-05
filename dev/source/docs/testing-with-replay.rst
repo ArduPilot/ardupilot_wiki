@@ -33,9 +33,10 @@ On your Linux or Ubuntu machine:
 
 ``cd ../ardupilot/Tools/Replay``
 
-make linux
+``make`` 
+NOTE: You may need to install `sudo apt-get install pkg-config`
 
-This should create a file called ``/tmp/Replay.build/Replay.elf``
+This will create a file called ``Replay.elf``
 
 Using Replay
 ============
@@ -45,11 +46,11 @@ Put the dataflash log file you wish to analyse into the
 
 Display the Replay help instructions:
 
-``/tmp/Replay.build/Replay.elf -- -h``
+``Replay.elf --h``
 
 Run a log through Replay to generate the plot and EKF data files:
 
-``/tmp/Replay.build/Replay.elf -- -r400 MyLogFile.BIN``
+``Replay.elf -- -r400 MyLogFile.BIN``
 
 Note: the -r400 means the main loop is running at 400hz which is correct
 for Copter. For Plane and Rover this can be omitted or replaced with
@@ -96,4 +97,4 @@ For example, to change the EKF velocity delay parameter from 220ms to
 
 ::
 
-    /tmp/Replay.build/Replay.elf -- -pEKF_VEL_DELAY=400 MyLogFile.Bin
+``Replay.elf -- -pEKF_VEL_DELAY=400 MyLogFile.Bin``
