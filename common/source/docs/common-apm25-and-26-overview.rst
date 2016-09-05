@@ -57,7 +57,7 @@ APM 2.6
 -  APM 2.6 requires a GPS unit with an on board compass for full
    autonomy.
 -  For information on installing a 3DR GPS uBlox LEA-6 with Compass,
-   visit .
+   visit :ref:`3DR Power Module <common-installing-3dr-ublox-gps-compass-module>`.
 
 .. image:: ../../../images/apm25.3.jpg
     :target: ../_images/apm25.3.jpg
