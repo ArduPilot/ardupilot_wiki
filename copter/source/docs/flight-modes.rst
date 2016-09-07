@@ -40,7 +40,7 @@ Additional flight modes:
 -  :ref:`Brake <brake-mode>`
 -  :ref:`Circle <circle-mode>`
 -  :ref:`Drift <drift-mode>`
--  :ref:`Guided <ac2_guidedmode>`
+-  :ref:`Guided <ac2_guidedmode>` (and :ref:`Guided_NoGPS <guided_nogps>`)
 -  :ref:`Land <land-mode>`
 -  :ref:`PosHold <poshold-mode>`
 -  :ref:`Sport <sport-mode>`
