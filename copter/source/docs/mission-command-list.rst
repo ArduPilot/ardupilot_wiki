@@ -176,6 +176,23 @@ provided.  This is the mission equivalent of the :ref:`LAND flight mode <land-mo
 **Lat, Lon** - the latitude and longitude targets. If left as zero it
 will land at the current location.
 
+Delay
+~~~~~
+
+.. image:: ../../../images/MissionList_NavDelay.png
+    :target: ../_images/MissionList_NavDelay.png
+
+Support for the Delay command was added in Copter-3.4.
+
+Vehicle will remain at it's current location until the specified number of seconds has passed or the absolute time is reached.
+The first column ("Seconds") holds the number of seconds to delay.  Set to -1 if this field should be ignored.
+The "hour UTC", "minute UTC" and "second UTC" fields can be used to specify an absolute time (`UTC <https://en.wikipedia.org/wiki/Coordinated_Universal_Time>`__).  The example above will cause the vehicle to take-off at 1:30pm UTC.  Note that the hour and/or minute field can also be ignored by setting them to -1.
+
+This is a video made during the development of this feature.  Note in the video CONDITION_DELAY command is used but in it's final version this DELAY command should be used.
+
+..  youtube:: 9VK3yjIyCSo
+    :width: 100%
+
 .. _mission-command-list_do-set-roi:
 
 Do-Set-ROI
@@ -206,7 +223,7 @@ all zero for Lat, Lon and Alt.
 
 ..  youtube:: W8NCFHrEjfU
     :width: 100%
-
+    
 Condition-Delay
 ~~~~~~~~~~~~~~~
 
