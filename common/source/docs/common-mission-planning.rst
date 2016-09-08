@@ -38,8 +38,11 @@ automated missions that will run when the ArduPilot is set to
     Rally Points <common-rally-points>
     Geotagging Images with Mission Planner <common-geotagging-images-with-mission-planner>
 
-[site wiki="copter,plane"]
+[site wiki="plane"]
     Terrain Following <common-terrain-following>
+[/site]
+[site wiki="copter"]
+    Terrain Following <terrain-following>
 [/site]
 
 
