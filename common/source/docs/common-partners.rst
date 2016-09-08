@@ -25,7 +25,7 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_cuav.jpg
     :target:  http://www.cuav.net/
 
-.. image:: ../../../images/supporters/supporter_logo_falconunmanned.gif
+.. image:: ../../../images/supporters/supporters_logo_falconunmanned.gif
     :target:  http://www.falconunmanned.com/
 
 How does my company become a partner?
