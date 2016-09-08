@@ -6,7 +6,7 @@ Setting Motor Range
 
 Most ESCs have a dead zone at the bottom of their range.  This page outlines how to test the size of the range and then set the spin-when-armed and min throttle values appropriately.
 
-Although not required, advanced users you may wish to take the next step by measuring and adjusting the :ref:`motor thrust curve <motor-thrust-scaling>`.
+Although not required, advanced users may wish to take the next step by measuring and adjusting the :ref:`motor thrust curve <motor-thrust-scaling>`.
 
 .. note::
 
