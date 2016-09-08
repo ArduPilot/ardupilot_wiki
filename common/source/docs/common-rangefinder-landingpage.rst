@@ -22,8 +22,7 @@ Maxbotix Sonar and Pulsed Light LED range finders.
    Lidar's are used in flight modes which have height control, such
    as Altitude Hold, Loiter and PosHold Mode.  The data from the sensor
    will be used until you exceed RNGFND_MAX_CM, after that it switches to
-   the barometer.  Currently Lidar is not supported in Auto
-   Mode.
+   the barometer.  Copter-3.4 includes support for :ref:`Terrain Following <terrain-following>` in Auto mode.
 [/site]
 
 Follow the links below (or in sidebar) for configuration information
@@ -40,14 +39,12 @@ based upon your set-up.
     Sonar Sensors <sonar-sensors>
 [/site]
 
-    LIDAR-Lite <common-rangefinder-lidarlite>
-    Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
-    Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
     Lightware SF02 <common-rangefinder-sf02>
     LightWare SF10 Lidar <common-lightware-sf10-lidar>
+    Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
+    Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
     TeraRanger One Rangefinder <common-teraranger-one-rangefinder>
-
-
+    LIDAR-Lite <common-rangefinder-lidarlite>
     
 [site wiki="copter"]
     Analog Sonar (AC3.1) <sonar>
