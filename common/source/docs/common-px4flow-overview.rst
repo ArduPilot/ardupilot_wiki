@@ -202,3 +202,9 @@ Second Flight (Copter only)
 #. If it holds location then congratulations, you have succeeded and can
    now start experimenting with height changes and moving it around in
    LOITER
+
+Example Video (Copter-3.4)
+==========================
+
+..  youtube:: Bzgey8iR69Q
+    :width: 100%
