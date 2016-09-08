@@ -84,16 +84,21 @@ ArduPilot.
 Community:
 ==========
 
-`Community <http://discuss.ardupilot.org/>`__- This is what really sets
-ArduPilot apart from the closed-source offerings in the market. An area for 
-open discourse on the ArduPilot projects direction between developers 
-and its customers.
+Community is what really sets ArduPilot apart from the closed-source offerings in the market. An area for open discourse on the ArduPilot projects direction between developers and its customers.  Here are some of the places you can find ardupilot users and developers:
+
+`Support forums: <http://discuss.ardupilot.org/>`__
 
 .. image:: ../../images/ArduPilotDiscuss.png
     :target: http://discuss.ardupilot.org/
-    :width: 640px
+    :width: 300px
 
-`DIYDRONES <http://diydrones.com/>`__- ArduPilot previous community home.
+`Facebook ArduPilot group <https://www.facebook.com/groups/ArduPilot.org/>`__
+
+`Developer chat (Gitter) <https://gitter.im/ArduPilot/ardupilot/>`__
+
+`Developer Email Group (drones-discuss) <https://groups.google.com/forum/#!forum/drones-discuss>`__
+
+`Developer weekly meeting (mumble) <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__
 
 A constantly evolving repository of knowledge and innovation. The DIY
 Drones community provided a home and now still provides inspiration for ArduPilot.
