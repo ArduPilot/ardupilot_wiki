@@ -1,43 +1,40 @@
 .. _common-lightware-sf10-lidar:
 
-====================
-LightWare SF10 Lidar
-====================
+=============================
+LightWare SF10 and SF11 Lidar
+=============================
 
-The `Lightware SF10 <http://www.lightware.co.za/shop/en/>`__ series of laser
-rangefinders are particularly lightweight, and provide fast and accurate
-distance measurements. The series includes a number of models:
-`SF10/A <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/33-sf10a.html>`__
-(25m),
-`SF10/B <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__
-(50m) and
-`SF10/C <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/34-sf10c.html>`__
-(100m).
+The `Lightware SF10 and SF11 <http://www.lightware.co.za/shop/en/>`__ series of laser rangefinders are particularly lightweight, and provide fast and accurate distance measurements.
+Although slightly more expensive than other rangefinders, members of the dev team have had good success with them.
+The series includes a number of models:
+`SF10/A <http://www.lightware.co.za/shop/en/drone-altimeters/33-sf10a.html>`__ (25m),
+`SF10/B <http://www.lightware.co.za/shop/en/drone-altimeters/32-sf10b.html>`__ (50m),
+`SF10/C <http://www.lightware.co.za/shop/en/drone-altimeters/34-sf10c.html>`__ (100m) and 
+`SF11/C <http://www.lightware.co.za/shop/en/drone-altimeters/51-sf11c-120-m.html>`__ (120m)
 
 \ |SF10-B|
 
 Connecting to the Pixhawk
 =========================
 
-The diagram below shows the SF10 output pins and a conveniently
-colour-coded cable (which `you can purchase here <http://www.lightware.co.za/shop/en/shop/en/rangefinder-components/37-main-cable-type-1-35-cm.html>`__).
-You can connect the SF10 series of laser rangerfinders using analog,
-serial or I2C connections, as discussed in the following sections.
+The diagram below shows the sensor output pins and a conveniently colour-coded cable (normally included or `you can purchase here <http://www.lightware.co.za/shop/en/accessories/37-main-cable-type-1-35-cm.html>`__) which is used to connect to the flight controller. :ref:`Serial <sf10-serial-connection>`, :ref:`I2C <sf10-i2c-connection>` and :ref:`Analog <sf10-analog-connection>` connections are possible but we recommended using :ref:`Serial <sf10-serial-connection>` if possible (`see issue here <https://github.com/ArduPilot/ardupilot/issues/4803>`__).
 
 .. tip::
 
    The serial connection is recommended when using longer
-   cables.
+   cables or when using Copter (`see issue here <https://github.com/ArduPilot/ardupilot/issues/4803>`__)
 
 .. figure:: ../../../images/RangeFinder_SF10_Output_Pins.png
-   :target: ../_images/RangeFinder_SF10_Output_Pins.png
+   :target: http://www.lightware.co.za/shop/en/drone-altimeters/32-sf10b.html
 
    SF10 Rangefinder: Output Pins
 
 .. figure:: ../../../images/SF10_Rangefinder_main-cable-type-1-35-cm.jpg
-   :target: ../_images/SF10_Rangefinder_main-cable-type-1-35-cm.jpg
+   :target: http://www.lightware.co.za/shop/en/accessories/37-main-cable-type-1-35-cm.html
 
    Main cable for SF10 Rangefinder
+
+.. _sf10-serial-connection:
 
 Serial connection
 -----------------
@@ -59,38 +56,26 @@ you have used the SERIAL4/5 port on the Pixhawk then you would set the
 following parameters (this is done in the *Mission Planner*
 **Config/Tuning \| Full Parameter List** page):
 
--  ``SERIAL4_PROTOCOL=9``
--  ``SERIAL4_BAUD=19200``
--  ``RNGFND_TYPE=8`` (LightWareSerial)
--  ``RNGFND_SCALING=1``
--  ``RNGFND_MIN_CM=5``
--  ``RNGFND_MAX_CM=5000``
--  ``RNGFND_GNDCLEAR=`` *Your offset to ground*
+-  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
+-  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 19200
+-  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 8 (LightWareSerial)
+-  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
+-  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
+-  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **2500** (for SF10A), **5000** (for SF10B), **10000** (for SF10C) or **12000** (for SF11C).  *This is the distance in centimeters that the rangefinder can reliably read. The value depends on the model of the lidar.*
+-  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
-The ``RNGFND_MAX_CM`` is the distance in centimeters that rangefinder
-can reliably read. The value of this setting depends on the model of
-Lidar (50 meters is the nominal maximum range for the
-`SF10/B <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__).
+If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 19200
 
-If you instead were using the Telem2 port on the Pixhawk then you would
-use the ``SERIAL2_PROTOCOL`` and ``SERIAL2_BAUD`` parameters.
-
-``RNGFND_GNDCLEAR`` is the distance in centimetres from the range finder
-to the ground when the vehicle is landed (the parameter value will
-depend on how you have mounted the rangefinder).
+.. _sf10-i2c-connection:
 
 I2C connection
 --------------
 
 .. warning::
 
-   I2C support for this rangefinder is not present in Copter 3.3
-   or Rover 2.50 (planned for Copter 3.4). Support is present in Plane in
-   the current stable release (Plane 3.4).
+   I2C support is present in Plane 3.4 (and higher) and Rover 2.50 (and higher) but should not be used for Copter (`see issue here <https://github.com/ArduPilot/ardupilot/issues/4803>`__).
 
-Connect the SDA line of the Lidar to the SDA line of the I2C port on the
-Pixhawk, and the SCL line of the Lidar to the SCL line of the I2C port.
-Also connect the GND and 5V lines.
+Connect the SDA line of the Lidar to the SDA line of the I2C port on the Pixhawk, and the SCL line of the Lidar to the SCL line of the I2C port. Also connect the GND and 5V lines.
 
 .. figure:: ../../../images/Pixhawk_Rangefinder_SF10_I2C.jpg
    :target: ../_images/Pixhawk_Rangefinder_SF10_I2C.jpg
@@ -101,26 +86,14 @@ You then need to configure the rangefinder parameters as shown below
 (this is done in the *Mission Planner* **Config/Tuning \| Full Parameter
 List** page):
 
--  ``RNGFND_TYPE=7`` (LightWareI2C)
--  ``RNGFND_SCALING=1``
--  ``RNGFND_MIN_CM=5``
--  ``RNGFND_MAX_CM=5000``
--  ``RNGFND_GNDCLEAR=`` *Your offset to ground*
--  ``RNGFND_ADDR=85`` (I2C Address of lidar in decimal)
+-  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 7 (LightWareI2C)
+-  :ref:`RNGFND_ADDR <RNGFND_ADDR>` = 85 (I2C Address of lidar in decimal).  *Please note that this setting is in decimal and not hexadecimal as shown in the lidar settings screen. The default address is 0x55 which is 85 in decimal.*
+-  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
+-  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
+-  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **2500** (for SF10A), **5000** (for SF10B), **10000** (for SF10C) or **12000** (for SF11C).  *This is the distance in centimeters that the rangefinder can reliably read. The value depends on the model of the lidar.*
+-  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
-The ``RNGFND_MAX_CM`` is the distance in centimeters that rangefinder
-can reliably read. The value of this setting depends on the model of
-Lidar (50 meters is the nominal maximum range for the
-`SF10/B <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__).
-
-``RNGFND_GNDCLEAR`` is the distance in centimetres from the range finder
-to the ground when the vehicle is landed (the parameter value will
-depend on how you have mounted the rangefinder).
-
-``RNGFND_ADDR`` is the I2C address as specified in the settings of the
-lidar. Please note that this setting is in decimal and not hexadecimal
-as shown in the lidar settings screen. The default address for LightWare
-devices is 0x55 (Which is 85 in decimal).
+.. _sf10-analog-connection:
 
 Analog connection
 -----------------
@@ -139,29 +112,16 @@ You then need to setup the ADC and rangefinder parameters as shown below
 (this is done in the *Mission Planner* **Config/Tuning \| Full Parameter
 List** page):
 
--  ``RNGFND_TYPE = 1`` (Analog)
--  ``RNGFND_SCALING = 19.531``
--  ``RNGFND_MIN_CM = 5``
--  ``RNGFND_MAX_CM = 5000``
--  ``RNGFND_PIN = 14`` (2nd pin of 3.3V ADC connector)
--  ``RNGFND_GNDCLEAR =`` *Your offset to ground*
+-  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 1 (Analog)
+-  :ref:`RNGFND_PIN <RNGFND_PIN>` = 14 (2nd pin of 3.3V ADC connector)
+-  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = **9.76** (for SF10A), **19.531** (for SF10B), **39.06** (for SF10C), **46.87** (for SF11C)
+-  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
+-  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **2000** (for SF10A), **4500** (for SF10B), **9500** (for SF10C) or **11500** (for SF11C).  *This is the distance in centimeters that the rangefinder can reliably read. The value depends on the model of the lidar.  Note the range is 5m less than using Serial or I2C protocols so that out-of-range can be reliably detected*
+-  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
-The ``RNGFND_MAX_CM`` is the distance in centimeters that rangefinder
-can reliably read. The value of this setting depends on the model of
-Lidar (50 meters is the nominal reliable range for the
-`SF10/B <http://www.lightware.co.za/shop/en/shop/en/rangefinders-and-altimeters/32-sf10b.html>`__).
-
-``RNGFND_GNDCLEAR`` is the distance in centimetres from the range finder
-to the ground when the vehicle is landed (the parameter value will
-depend on how you have mounted the rangefinder).
-
-The ``RNGFND_SCALING`` value depends on the voltage on the rangefinders
-output pin at the maximum range. By default the SF10/B will output 2.56V
-at 50m, so the scaling factor is 50m / 2.56v ≈ 19.53 (the analog
-distance range for each of the rangefinder variants can be found in the
-`SF10 Manual <http://www.lightware.co.za/shop/en/shop/en/index.php?controller=attachment&id_attachment=9>`__).
-The manual explains how you can confirm and change the maximum output
-range/voltage.
+The :ref:`RNGFND_SCALING <RNGFND_SCALING>` value depends on the voltage on the rangefinders output pin at the maximum range. By default the SF10/B will output 2.56V at 50m, so the scaling factor is 50m / 2.56v ≈ 19.53 (the analog
+distance range for each of the rangefinder variants can be found in the `SF10 Manual <http://www.lightware.co.za/shop/en/shop/en/index.php?controller=attachment&id_attachment=9>`__).
+The manual explains how you can confirm and change the maximum output range/voltage.
 
 .. tip::
 
