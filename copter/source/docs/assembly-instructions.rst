@@ -18,4 +18,6 @@ instructions for adding other hardware are covered in
     PXFmini Wiring Quick Start <common-pxfmini-wiring-quick-start>
     Connect ESCs and Motors <connect-escs-and-motors>
     Installing GPS+Compass Module <common-installing-3dr-ublox-gps-compass-module>
+    Vibration Damping <common-vibration-damping>
+    Magnetic Interference <common-magnetic-interference>
     Detailed Vehicle Builds <common-common-airframe-builds>

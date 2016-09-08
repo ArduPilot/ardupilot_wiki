@@ -16,13 +16,11 @@ tuning options for the vehicle.
     UBlox GPS Configuration <common-ublox-gps>
     Parameter Reset <common-parameter-reset>
     Auxiliary Function Switches <channel-7-and-8-options>
-    Vibration Damping <common-vibration-damping>
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
     RCMAP <common-rcmap>
     Terrain Following <terrain-following>
     Telemetry Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
     Sensor Testing <common-sensor-testing>
-    Magnetic Interference <common-magnetic-interference>
     Full Parameter List <parameters>
 [/site]
 
