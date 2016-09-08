@@ -15,9 +15,8 @@ parameters. The following topics shown you how.
 
     AutoTune <autotune>
     Roll and Pitch Tuning <ac_rollpitchtuning>
-    EKF Overview/Tuning <common-apm-navigation-extended-kalman-filter-overview>
-    Motor Thrust Scaling <motor-thrust-scaling>
     Advanced Tuning <tuning>
+    EKF Overview/Tuning <common-apm-navigation-extended-kalman-filter-overview>
 [/site]
 
 [site wiki="plane"]
