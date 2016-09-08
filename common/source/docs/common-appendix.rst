@@ -15,6 +15,7 @@ the wiki.
     common-glossary
     common-acknowledgments
     common-donation
+    common_sponsors
     Commercial Support <common-commercial-support>
     Development Team <common-team>
     History of ArduPilot <common-history-of-ardupilot>
