@@ -106,7 +106,7 @@ List** page):
 -  ``RNGFND_MIN_CM=5``
 -  ``RNGFND_MAX_CM=5000``
 -  ``RNGFND_GNDCLEAR=`` *Your offset to ground*
--  ``RNGFND_ADDR=85`` (I2C Address of lidar in decimal)
+-  ``RNGFND_ADDR=102`` (I2C Address of lidar in decimal)
 
 The ``RNGFND_MAX_CM`` is the distance in centimeters that rangefinder
 can reliably read. The value of this setting depends on the model of
@@ -120,7 +120,14 @@ depend on how you have mounted the rangefinder).
 ``RNGFND_ADDR`` is the I2C address as specified in the settings of the
 lidar. Please note that this setting is in decimal and not hexadecimal
 as shown in the lidar settings screen. The default address for LightWare
-devices is 0x55 (Which is 85 in decimal).
+devices is 0x66 (Which is 102 in decimal).
+
+.. warning::
+
+   The default I2C address was 0x55 on older LightWare rangefinders.
+   This was changed to prevent conflict with another device on ArduPilot.
+   Please check your rangefinder system settings to determine what
+   your I2C address is.
 
 Analog connection
 -----------------
