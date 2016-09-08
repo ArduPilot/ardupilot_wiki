@@ -71,6 +71,7 @@ Requires GPS lock prior to takeoff:
 -  :ref:`PosHold <poshold-mode>`
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Circle <circle-mode>`
+-  :ref:`Throw <throw-mode>`
 
 Do not require GPS lock:
 
@@ -99,3 +100,4 @@ Do not require GPS lock:
     Simple and Super Simple Modes <simpleandsuper-simple-modes>
     Sport Mode <sport-mode>
     Stabilize Mode <stabilize-mode>
+    Throw Mode <throw-mode>
