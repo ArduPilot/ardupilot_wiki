@@ -8,7 +8,7 @@
 
 .. tip::
 
-   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
+   ArduPilot organization is Evolving! `Find out more here … <http://discuss.ardupilot.org/t/ardupilot-and-dronecode/11295>`__
    
 .. image:: ../../images/home_ardupilot.jpg
     :target: _images/home_ardupilot.jpg
