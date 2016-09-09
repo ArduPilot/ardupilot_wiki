@@ -4,18 +4,6 @@
 Setting up SITL using Vagrant
 =============================
 
-.. warning::
-
-   At time of writing there is
-   `issue <https://github.com/ArduPilot/ardupilot/issues/3249>`__ with
-   staring SITL. Instead of the original instructions, you will have to log
-   into vagrant specify the path to **sim_vehicle.sh** as shown.
-
-   ::
-
-       vagrant ssh
-       sudo /vagrant/Tools/autotest/sim_vehicle.sh
-
 This article explains how to set up the :ref:`SITL ArduPilot Simulator <sitl-simulator-software-in-the-loop>` in a virtual machine
 environment using `Vagrant <https://www.vagrantup.com/>`__, and connect
 it to a Ground Control Station running on the host computer. This
