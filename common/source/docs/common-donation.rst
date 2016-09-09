@@ -9,6 +9,7 @@ cause, there are several ways of doing that:
 
 - Direct PayPal donation
 - Buying supporting merchandise from official stores
+- `Partner Donations <http://ardupilot.org/copter/docs/common-partners.html>`__ (e.g. for Corporations)
  
 PayPal Donations 
 ================
