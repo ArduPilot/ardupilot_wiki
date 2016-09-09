@@ -228,7 +228,7 @@ automatically started you can log into the RPi and type:
 
     sudo screen -x
 
-To learn more about using MAVProxy please read the `MAVProxy documentation <http://tridge.github.io/MAVProxy/>`__.
+To learn more about using MAVProxy please read the `MAVProxy documentation <http://ardupilot.github.io/MAVProxy/>`__.
 
 It is also worth noting that MAVProxy can do a lot more than just
 provide access to your Pixhawk. By writing python extension modules for

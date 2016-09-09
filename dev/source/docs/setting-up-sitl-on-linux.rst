@@ -160,7 +160,7 @@ Learn MAVProxy
 --------------
 
 To get the most out of SITL you really need to learn to use MAVProxy.
-Have a read of the `MAVProxy documentation <http://tridge.github.io/MAVProxy/>`__. Enjoy flying!
+Have a read of the `MAVProxy documentation <http://ardupilot.github.io/MAVProxy/>`__. Enjoy flying!
 
 Updating MAVProxy and pymavlink
 -------------------------------

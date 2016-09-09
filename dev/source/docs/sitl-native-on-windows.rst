@@ -21,7 +21,7 @@ a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux.
 
 These instructions explain how to build SITL *natively* on Windows, and
 how to interact with the simulator using
-`MAVProxy <http://tridge.github.io/MAVProxy/>`__ and/or :ref:`Mission Planner <planner:home>`.
+`MAVProxy <http://ardupilot.github.io/MAVProxy/>`__ and/or :ref:`Mission Planner <planner:home>`.
 
 .. figure:: ../images/MAVProxy_Map_GuidedCopter.jpg
    :target: ../_images/MAVProxy_Map_GuidedCopter.jpg
@@ -494,7 +494,7 @@ SITL and MAVProxy can do a whole lot more than shown here, including
 manually guiding the vehicle, and creating and running missions. To find
 out more:
 
--  Read the `MAVProxy documentation <http://tridge.github.io/MAVProxy/>`__.
+-  Read the `MAVProxy documentation <http://ardupilot.github.io/MAVProxy/>`__.
 -  See :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` for guidance on flying
    and testing with SITL.
 

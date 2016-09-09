@@ -242,7 +242,7 @@ the source tree (or pull a new version from Github).
 Next steps
 ==========
 
-To get the most out of SITL we recommend you `Learn MavProxy <http://tridge.github.io/MAVProxy/>`__.
+To get the most out of SITL we recommend you `Learn MavProxy <http://ardupilot.github.io/MAVProxy/>`__.
 
 The topic :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` explains how to use the
 simulator, and covers topics like how to use SITL with Ground Stations

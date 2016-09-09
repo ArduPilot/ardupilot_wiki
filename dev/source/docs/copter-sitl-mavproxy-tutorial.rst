@@ -6,7 +6,7 @@ Copter SITL/MAVProxy Tutorial
 
 This tutorial provides a basic walk-through of how to use
 :ref:`SITL <sitl-simulator-software-in-the-loop>` and
-`MAVProxy <http://tridge.github.io/MAVProxy/>`__ for *Copter* testing.
+`MAVProxy <http://ardupilot.github.io/MAVProxy/>`__ for *Copter* testing.
 
 Overview
 ========
