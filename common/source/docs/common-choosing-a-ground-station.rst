@@ -196,24 +196,6 @@ See website for how-to on how connect it to your autopilot
 -  `Support Forum <http://www.communistech.com/forums/>`__
 -  `iTunes Store link <https://itunes.apple.com/ca/developer/communis-tech/id649232032>`__
 
-Fighting Walrus iDroneCtrl
---------------------------
-
-iDroneCtrl is a free iOS app from Fighting Walrus, LLC. It uses Fighting
-Walrus' iDroneLink radio (915 MHz or 433 MHz) along with an iPhone or
-iPad to talk to your APM-powered UAV.
-
--  **Platform**: iPhone, iPad
--  **Licence**: Proprietary, Free (previously `open source <https://github.com/fightingwalrus/iGCS>`__).
-
-.. image:: ../../../images/iDroneLinkOnPhone.jpg
-    :target: ../_images/iDroneLinkOnPhone.jpg
-
-The $99 iDroneLink can be purchased from
-`fightingwalrus.com <http://fightingwalrus.com/>`__.
-
--  `Downloads (Apple Store) <https://itunes.apple.com/us/app/idronectrl/id948077202?mt=8&ign-mpt=uo%3D4>`__
--  `Issues List/Support <https://github.com/fightingwalrus/iGCS/issues>`__
 
 QGroundControl
 --------------
@@ -276,13 +258,3 @@ For Desktop devices you will need:
    :ref:`similar <common-telemetry-landingpage>` (915 Mhz for US, 433 for
    Europe) which includes the bidirectional ground and air telemetry
    units.
-
-iPhone/iPad
------------
-
-The Fighting Walrus iDroneCtrl requires the iDroneLink radio
-transmitter. This can be purchased from
-`fightingwalrus.com <http://fightingwalrus.com/>`__.
-
-.. |AndroidGCS_USB_dongle| image:: ../../../images/AndroidGCS_USB_dongle.jpg
-    :target: ../_images/AndroidGCS_USB_dongle.jpg
