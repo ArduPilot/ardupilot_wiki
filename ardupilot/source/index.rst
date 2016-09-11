@@ -102,7 +102,7 @@ Developer Community:
 
 `Developers Portal <http://ardupilot.org/dev/index.html>`__
 
-All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the developer portal. ie. `meeting times <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__, 'Gitter Chat<https://gitter.im/ArduPilot/ardupilot/>`__ and `email groups <https://groups.google.com/forum/#!forum/drones-discuss>`__
+All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the developer portal. ie. `meeting times <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__, `Gitter Chat <https://gitter.im/ArduPilot/ardupilot/>`__ and `email groups <https://groups.google.com/forum/#!forum/drones-discuss>`__
 
 
 History:
