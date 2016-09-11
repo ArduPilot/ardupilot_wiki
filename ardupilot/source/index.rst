@@ -86,20 +86,24 @@ Community:
 
 Community is what really sets ArduPilot apart from the closed-source offerings in the market. An area for open discourse on the ArduPilot projects direction between developers and its customers.  Here are some of the places you can find ardupilot users and developers:
 
-`Support forums: <http://discuss.ardupilot.org/>`__
+`Discussion Forums: <http://discuss.ardupilot.org/>`__
 
 .. image:: ../../images/ArduPilotDiscuss.png
     :target: http://discuss.ardupilot.org/
-    :width: 300px
+    :width: 640px
 
 `Facebook ArduPilot group <https://www.facebook.com/groups/ArduPilot.org/>`__
 
-`Developer chat (Gitter) <https://gitter.im/ArduPilot/ardupilot/>`__
+Developer Community:
+====================
 
-`Developer Email Group (drones-discuss) <https://groups.google.com/forum/#!forum/drones-discuss>`__
+`Developers Portal <http://ardupilot.org/dev/index.html>`__
 
-`Developer weekly meeting (mumble) <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__
+All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the developer portal. ie. `meeting times <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__, 'Gitter Chat<https://gitter.im/ArduPilot/ardupilot/>`__ and `email groups <https://groups.google.com/forum/#!forum/drones-discuss>`__
 
+
+History:
+========
 A constantly evolving repository of knowledge and innovation. The DIY
 Drones community provided a home and now still provides inspiration for ArduPilot.
 A comprehensive list of features that are continually born from the
@@ -108,7 +112,6 @@ needs of the community.
 .. image:: ../../images/diydrones.jpg
     :target: http://diydrones.com
     :width: 360px
-
 
 --------------
 
@@ -163,6 +166,8 @@ Features:
 .. toctree::
    :hidden:
 
+   News <http://www.ardupilot.org>
+   Community <http://discuss.ardupilot.org>
    Copter <http://ardupilot.org/copter/index.html>
    Plane <http://ardupilot.org/plane/index.html>
    Rover <http://ardupilot.org/rover/index.html>
