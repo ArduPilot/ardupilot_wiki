@@ -94,6 +94,9 @@ Community is what really sets ArduPilot apart from the closed-source offerings i
 
 `Facebook ArduPilot group <https://www.facebook.com/groups/ArduPilot.org/>`__
 
+.. image:: ../../images/main/FaceBookArduPilot.png
+    :target: https://www.facebook.com/groups/ArduPilot.org/
+
 Developer Community:
 ====================
 
