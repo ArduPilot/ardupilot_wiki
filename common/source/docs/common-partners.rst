@@ -35,7 +35,7 @@ Corporate Partners
     :target:  http://www.proficnc.com/stores
 
 .. image:: ../../../images/supporters/supporters_logo_LaserNavigation.png
-    :target:  http://www.virtualrobotix.it/
+    :target:  http://www.lasernavigation.it/
 
 How does my company become a partner?
 ===============================================
