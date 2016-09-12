@@ -371,7 +371,127 @@ connector.**
    </tbody>
    </table>
 
+**SPI**
 
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>SPI_SCK</td>
+   <td>3.3V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>SPI_MISO</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>SPI_MOSI</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>5 (blk)</td>
+   <td>!SPI_NSS</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>6 (blk)</td>
+   <td>!GPIO</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>7 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+**POWER**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>CURRENT</td>
+   <td>up to +3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>VOLTAGE</td>
+   <td>up to +3.3V</td>
+   </tr>
+   <td>5 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   <td>6 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+**SWITCH**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>!IO_LED_SAFETY</td>
+   <td>GND</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>SAFETY</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
 
 **Console Port**
 
