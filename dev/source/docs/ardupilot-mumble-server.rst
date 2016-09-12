@@ -34,7 +34,10 @@ If it's your first time dialing into the call, on the mumble application's confi
 Weekly dev calls
 ----------------
 
-The weekly development call is held on the mumble server in the "Weekly Dev Call" channel.  Time of the meeting is:
+The weekly development call is held on the mumble server in the "Weekly Dev Call" channel.
+A calendar with the meeting can be found at https://calendar.google.com/calendar/embed?src=rgdbom27tb1vlo62kjjnmt8va4%40group.calendar.google.com
+
+Time of the meeting is:
 
 - San Fran: Mon 4pm PDT
 - New York: Mon 7pm EDT
