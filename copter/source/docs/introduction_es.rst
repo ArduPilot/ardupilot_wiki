@@ -7,7 +7,7 @@ Introducción Copter
 Copter es un sistema avanzado de autopiloto avanzado para multirotores,
 helicopteros, y otros vehiculos con rotores.
 
-Overview
+Información General
 ========
 
 Copter es una solución open-source de auto-piloto para vehiculos
