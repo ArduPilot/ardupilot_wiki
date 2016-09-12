@@ -32,7 +32,7 @@ Corporate Partners
     :target:  http://craftandtheoryllc.com
 
 .. image:: ../../../images/supporters/suporters_logo_proficnc.png
-    :target:  http://www.proficnc.com/
+    :target:  http://www.proficnc.com/stores
 
 .. image:: ../../../images/supporters/supporters_logo_LaserNavigation.png
     :target:  http://www.virtualrobotix.it/
