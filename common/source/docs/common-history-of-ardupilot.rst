@@ -86,10 +86,14 @@ Dec 2010 - first successful fork of ardupilot code as `MegaPirates group extends
 April 2011 – First fully autonomous Copter mission flown by Jason at
 `Sparkfun AVC <http://diydrones.com/profiles/blogs/acm-at-the-avc>`__
 
+April 2011 - Laser Navigation we made the first piece of 32 bit hardware capable of running the Arducopter software with a power of calculation 22 times higher than Arduino. The cpu of the first Multipilot 32 was a STM32F1 of 72 Mhz.
+
 2011 - APM2 released by 3D Robotics
 
 Nov 2011 - `AutoTester <http://autotest.ardupilot.org/>`__ is created by
 Tridge
+
+December 2011 - Another important step, which would have led us to the modern flight control VR Brain, was the Multipilot32F4, very similar to the previous one, but with two important novelties. The first consisted in the new processor STM32F4 with Floating point processor and 168 Mhz of clock second is the new barometer  MEAS MS5611 with 10 cm resolution . 
 
 2012 - APM2.5/2.6 released by 3D Robotics
 
@@ -98,6 +102,8 @@ Copter, Doug goes off to get his PhD and Tridge takes over Plane
 
 Feb 2012 - `Marco Robustini <https://www.youtube.com/user/erarius>`__
 joins as lead Copter tester
+
+July 2012 - First VR Brain 4.0 available for the user with STM32F4 , MPU6000 , MEAS MS5611 as barometer and Arducopter rev 2.7 available. This revision of arducopter work on 32 bit STM32F4 cpu without operating systems.
 
 July 2012 - `PX4 released <http://diydrones.com/profiles/blogs/introducing-the-px4-autopilot-system>`__
 by \ `ETH (Lorenz Meier,MikeS) <https://pixhawk.org/>`__ / 3D Robotics
@@ -146,7 +152,7 @@ position information by Paul Riseborough, Tridge
 
 Mar 2014 -
 `VRBrain <http://www.virtualrobotix.com/page/vr-brain-v4-0>`__ boards
-support added by Emile Castelnuovo and Tridge
+support in master branch based on Nuttx OS and SD Card added by Emile Castelnuovo and Tridge.
 
 Mar 2014 - `Emlid presented Navio <http://diydrones.com/profiles/blogs/navio-raspberry-pi-autopilot>`__, first Raspberry Pi autopilot shield that allows to run ArduPilot directly on Raspberry Pi.
 
