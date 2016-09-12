@@ -34,6 +34,9 @@ Corporate Partners
 .. image:: ../../../images/supporters/suporters_logo_proficnc.png
     :target:  http://www.proficnc.com/
 
+.. image:: ../../../images/supporters/supporters_logo_LaserNavigation.png
+    :target:  http://www.virtualrobotix.it/
+
 How does my company become a partner?
 ===============================================
 We ask for a donation of `$1000 US through PayPal <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BBF28AFAD58B2>`__ per year.  If this is your first time, please email partners@ardupilot.org to express your desire to become a partner and include your company logo if you would like it to appear on this page.  We will send you a reminder in a year and if all goes well, you may choose to extend for another year.
