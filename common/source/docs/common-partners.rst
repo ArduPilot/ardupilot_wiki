@@ -41,6 +41,8 @@ How does my company become a partner?
 ===============================================
 We ask for a donation of `$1000 US through PayPal <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BBF28AFAD58B2>`__ per year.  If this is your first time, please email partners@ardupilot.org to express your desire to become a partner and include your company logo if you would like it to appear on this page.  We will send you a reminder in a year and if all goes well, you may choose to extend for another year.
 
+In some countries it is not possible to donate through PayPal in which case you can donate by Credit Card using `ClickAndPledge <https://co.clickandpledge.com/advanced/default.aspx?wid=34115>`__.  Be sure to enter the amount in the ArduPilot section, other sections are for other `SPI projects <http://www.spi-inc.org/>`__.  Other methods can be found on the `SPI donations page <http://www.spi-inc.org/donations/>`__.
+
 What do I get for becoming an ArduPilot partner?
 ================================================
 Beyond a warm feeling in your heart for helping a worthy project, your company can send a representative to the "ArduPilot Advisory Board" meeting.  This is a meeting held on the first Wednesday or Thursday (depending upon your timezone) of each month.  It is attended by the core devs and presents an opportunity to get high-level updates on the project and influence how funds are spent (the formal voting procedure is still to be finalised).  You may also find like-minded companies with whom you can cooperate in various ways.
