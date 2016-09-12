@@ -214,7 +214,7 @@ a mission):**
 
 .. raw:: html
 
-   <table>
+   <table border="1" class="docutils">
    <tbody>
    <tr>
    <th>Field</th>
