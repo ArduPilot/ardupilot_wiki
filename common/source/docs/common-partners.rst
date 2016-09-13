@@ -28,10 +28,10 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_falconunmanned.gif
     :target:  http://www.falconunmanned.com/
 
-.. image:: ../../../images/supporters/suporters_logo_craftandtheory.png
+.. image:: ../../../images/supporters/supporters_logo_craftandtheory.png
     :target:  http://craftandtheoryllc.com
 
-.. image:: ../../../images/supporters/suporters_logo_proficnc.png
+.. image:: ../../../images/supporters/supporters_logo_proficnc.png
     :target:  http://www.proficnc.com/stores
 
 .. image:: ../../../images/supporters/supporters_logo_LaserNavigation.png
