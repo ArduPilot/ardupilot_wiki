@@ -13,7 +13,7 @@ Copter 3.4 (and higher) include support for a crop sprayer.  This feature allows
 ..  youtube:: O8ZnxkXMv6A
     :width: 100%
 
-Slightly out-of-date video showing a copter using the Sprayer feature
+Slightly out-of-date video showing a copter using the Sprayer feature (jump to 2:25 to see the sprayer in action).
 
 Required Hardware
 =================
@@ -31,7 +31,7 @@ Enabling the Sprayer
 ====================
 
 -  Connect your Flight controller to the ground station (i.e. Mission Planner)
--  Set the :ref:`SPRAY_ENABLE <SPRAY_ENABLE>` parameter to 1 and refresh parameters (the sprayer is not a commonly used feature so it's other parameter are initially hidden)
+-  Set the :ref:`SPRAY_ENABLE <SPRAY_ENABLE>` parameter to 1 and refresh parameters (the sprayer is not a commonly used feature so its other parameters are initially hidden)
 -  Connect the pump to one of the flight controller's auxiliary PWM outputs (like Pixhawk AUX1) and set the appropriate RC*_FUNCTION to 22 (where "*" is the RC output number, i.e. if the pump is connected to a Pixhawk's AUX1, set :ref:`RC9_FUNCTION <RC9_FUNCTION>` to 22).
 -  Connect the optional spinner to another auxiliary output port and set RC*_FUNCTION to 23 (i.e. if using a Pixhawk's AUX2, set :ref:`RC10_FUNCTION <RC10_FUNCTION>` to 23)
 -  To allow the pilot to turn on/off the sprayer set an auxiliary switch (i.e. :ref:`CH7_OPT <CH7_OPT>`) to "15"
