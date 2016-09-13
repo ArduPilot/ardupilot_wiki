@@ -42,6 +42,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Landing Gear <landing-gear>
     Precision Landing (IRLock) <precision-landing-with-irlock>
     ADS-B Receiver <common-ads-b-receiver>
+    Crop Sprayer <sprayer>
 [/site]
 
 [site wiki="plane"]
