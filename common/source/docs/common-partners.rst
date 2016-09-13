@@ -28,6 +28,9 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_falconunmanned.gif
     :target:  http://www.falconunmanned.com/
 
+.. image:: ../../../images/supporters/supporters_logo_livelink.png
+    :target:  http://www.livelinktechnology.net/
+
 .. image:: ../../../images/supporters/supporters_logo_craftandtheory.png
     :target:  http://craftandtheoryllc.com
 
