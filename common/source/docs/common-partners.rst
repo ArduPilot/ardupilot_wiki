@@ -40,7 +40,7 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_LaserNavigation.png
     :target:  http://www.lasernavigation.it/
 
-.. image:: ../../../images/supporters/supporters_logo_lightware.jpg
+.. image:: ../../../images/supporters/supporters_logo_lightware.png
     :target:  http://www.lightware.co.za
 
 How does my company become a partner?
