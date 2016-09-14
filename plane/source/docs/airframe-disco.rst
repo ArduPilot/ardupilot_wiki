@@ -226,6 +226,50 @@ You can see a "shake to start" example here:
     :width: 100%
 
 
+Flight Modes
+============
+
+For general stabilised flight FBWA mode is recommended. This is also
+good for takeoffs and landings.
+
+For longer distance FPV flying CRUISE mode is recommended as it will
+hold airspeed, height above ground and ground course.
+
+You should also setup your transmitter for easy access to RTL mode to
+bring the plane home if you need to.
+            
+Manual Landing
+==============
+
+To land manually FBWA mode is recommended. Just point the plane in the
+direction you want to land and drop the throttle. To come in more
+steeply push the pitch stick away. To perform a nice flare pull back a
+small amount on the pitch stick just before touchdown.
+
+APM:Plane will automatically put the nose down a couple of degrees
+when at zero throttle to keep the airspeed up. You can set how much
+nose down it uses at zero throttle with the STAB_PITCH_DOWN
+parameter.
+
+Make sure you land with zero throttle or you risk breaking the
+propeller.
+
+AUTO Landing
+============
+
+When using an AUTO mission you can place a NAV_LAND waypoint where you
+want to land, with a target altitude of zero meters. You also need to
+place an approach waypoint about 200 meters before the NAV_LAND point,
+about 30 meters above the ground. The Disco will automatically flare
+and cut the motor as it approaches the landing point.
+
+Note that the Sonar used on the Disco for landing flare detection does
+have a tendency to sometimes produce false positives. That can cause
+the Disco to flare early in the landing as it thinks it is close to
+the ground. Because the Disco has such good glide characteristics this
+doesn't result in a crash, but it does cause it to land well short of
+the target position.
+            
 Log Files
 =========
 
