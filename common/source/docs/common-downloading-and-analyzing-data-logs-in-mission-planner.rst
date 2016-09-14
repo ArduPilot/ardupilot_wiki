@@ -31,11 +31,8 @@ This method is available in AC3.2 (or higher).
 -  On the bottom left, select the "DataFlash Logs" tab and push the
    "Download DataFlash Log Via Mavlink" button
 
-.. image:: ../../../images/Capture3.png
-    :target: ../_images/Capture3.png
-
-.. image:: ../../../images/Capture3.png
-    :target: ../_images/Capture3.png
+.. image:: ../../../images/mission_planner_download_logs.png
+    :target: ../_images/mission_planner_download_logs.png
 
 Then, select the log you want to download. This will save that log to
 your MissionPlanner/logs directory, in a folder named after the vehicle
