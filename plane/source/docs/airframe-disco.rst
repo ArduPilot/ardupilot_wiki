@@ -21,6 +21,18 @@ for Disco is:
 this will give you a file build/disco/bin/arduplane that needs to be
 installed on your Disco.
 
+Networking
+==========
+
+The Disco has a builtin WiFi access point, which will show up on your
+network as "DISCO-xxxxxx" where xxxxxx is a device specific serial
+number. The WiFi has no password by default.
+
+You can also use USB networking if your operating system supports
+it. Just plug a USB cable into the left most USB port on the back of
+the CHUCK module and connect with your operating systems network
+manager.
+
 Installation
 ============
 
@@ -105,6 +117,17 @@ stick then you need:
 * ELEVON_OUTPUT 6
 * RC2_REV 1
 
+.. warning::
+
+   The telemetry output option of many R/C receivers can interfere
+   badly with the Disco WiFi. Make sure you do a R/C range check
+   before flying and also check that your WiFi telemetry has
+   sufficient range for your needs. Many R/C receivers with a telemetry
+   option can disable the telemetry when binding. Please refer to your
+   receiver documentation for details. It is recommended that you
+   disable receiver telemetry if you find your WiFi telemetry link
+   from the Disco is affected by your receiver.
+  
 Loading Parameters
 ==================
 
@@ -201,3 +224,16 @@ You can see a "shake to start" example here:
 
 ..  youtube:: d2kEPkCueYY
     :width: 100%
+
+
+Log Files
+=========
+
+There are two types of log files for the Disco with ArduPilot. The
+first is a "tlog" which is stored by your GCS software on your ground
+station. The second is a "DF" log, which is stored on board the Disco.
+
+The log directory is /data/ftp/internal_000/APM/logs and can be
+accessed by ftp. Just enter a URL like ftp://192.168.42.1/ in Windows
+Explorer if using Windows to view the storage on the Disco and access
+log files. These files have a ".bin" extension (for binary log file).
