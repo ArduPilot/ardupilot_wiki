@@ -46,11 +46,15 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_spektreworks.png
     :target:  http://www.spektreworks.com/
 
-.. image:: ../../../images/supporters/supporters_logo_dronebility.png
-    :target:  http://www.dronebility.com/
+.. image:: ../../../images/supporters/supporters_logo_uavionix.png
+    :target:  http://www.uavionix.com/
 
 .. image:: ../../../images/supporters/supporters_logo_hex.png
     :target:  http://www.hex.aero/
+
+.. image:: ../../../images/supporters/supporters_logo_dronebility.png
+    :target:  http://www.dronebility.com/
+
 
 How does my company become a partner?
 ===============================================
