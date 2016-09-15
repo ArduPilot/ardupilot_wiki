@@ -43,6 +43,9 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_lightware.png
     :target:  http://www.lightware.co.za
 
+.. image:: ../../../images/supporters/supporters_logo_spektreworks.png
+    :target:  http://www.spektreworks.com/
+
 .. image:: ../../../images/supporters/supporters_logo_dronebility.png
     :target:  http://www.dronebility.com/
 
