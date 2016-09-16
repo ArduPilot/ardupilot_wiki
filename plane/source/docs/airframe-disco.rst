@@ -4,6 +4,9 @@
 Setup Guide for Parrot Disco
 ============================
 
+.. image:: ../images/disco-flying.jpg
+    :target: ../_images/disco-flying.jpg
+
 The Parrot Disco is a lightweight delta-wing with built-in camera and
 good flight characteristics. This page will help you get setup with
 ArduPilot running on your Disco.
