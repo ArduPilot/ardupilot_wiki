@@ -39,8 +39,8 @@ based upon your set-up.
     Sonar Sensors <sonar-sensors>
 [/site]
 
-    Lightware SF02 <common-rangefinder-sf02>
     LightWare SF10 Lidar <common-lightware-sf10-lidar>
+    Lightware SF02 <common-rangefinder-sf02>
     Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
     TeraRanger One Rangefinder <common-teraranger-one-rangefinder>
