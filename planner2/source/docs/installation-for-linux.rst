@@ -7,7 +7,7 @@ Installing APM Planner for Linux
 System Requirements
 ===================
 
--  Ubuntu 14.04 or equivalent
+-  Ubuntu 16.04 LTS or equivalent (Compatible with 14.04 LTS with correct updated dependencies)
 -  300 MB free space
 -  Internet connection to use maps
 
