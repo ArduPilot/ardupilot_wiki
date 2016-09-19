@@ -40,10 +40,11 @@ based upon your set-up.
 [/site]
 
     LightWare SF10 Lidar <common-lightware-sf10-lidar>
-    Lightware SF02 <common-rangefinder-sf02>
+    Lightware SF02 Lidar <common-rangefinder-sf02>
     Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
     TeraRanger One Rangefinder <common-teraranger-one-rangefinder>
+    Leddar One Lidar <common-leddar-one-lidar>
     LIDAR-Lite <common-rangefinder-lidarlite>
     
 [site wiki="copter"]
