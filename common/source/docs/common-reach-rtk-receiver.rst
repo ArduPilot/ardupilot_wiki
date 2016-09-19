@@ -1,13 +1,17 @@
 .. _common-reach-rtk-receiver:
 
-========================
-Emlid Reach RTK Receiver
-========================
+============================
+Emlid Reach RTK GPS Receiver
+============================
 
-This article provides a brief overview of Reach RTK receiver. 
+This article provides a brief overview of Reach RTK GPS receiver. 
 
 .. image:: ../../../images/Reach.jpg
 	:target: ../_images/Reach.jpg
+
+.. note::
+
+     Reach RTK GPS is supported in Copter-3.4 (and higher), Plane 3.7.0 (and higher) and Rover 3.0.1 (and higher)
 
 What is Reach and what is it for?
 =================================
@@ -30,17 +34,10 @@ Here is a demo video of Pixhawk and Reach working together:
 ..  youtube:: oq9H19ikAdM
     :width: 100%
 
-
-**Pixhawk binaries**
-
-Although ERB support has already been added to ArduPilot master, there was no release yet to include it. You can get stable binaries with ERB support for all the ArduPilot supported vehicles.
-
-* `Pixhawk firmware compatible with ERB <http://files.emlid.com/apm/px4-reach.zip>`__
-
 Connecting Reach to Pixhawk
 ===========================
 
-A drone-mounted Reach unit can receive base corrections over telemetry radio, thus not requiring a separate correction link to the drone. Coordinate output is implemented via a serial port.
+A Reach unit mounted on the vehicle can receive base corrections over telemetry radio, thus not requiring a separate correction link to the drone. Coordinate output is implemented via a serial port.
 
 .. image:: ../../../images/Reach_pixhawk_radio.jpg
 	:target: ../_images/Reach_pixhawk_radio.jpg
