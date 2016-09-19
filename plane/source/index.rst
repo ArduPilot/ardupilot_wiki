@@ -108,7 +108,7 @@ Full Table of Contents
     Advanced Configuration <docs/common-advanced-configuration>
     QuadPlane Support <docs/quadplane-support>
     Mission Planning <docs/common-mission-planning>
-    Mission Analysis <docs/common-mission-analysis>
+    Logs <docs/common-logs>
     Optional Hardware <docs/common-optional-hardware>
     AutoPilot Hardware <docs/common-autopilots>
     Use-Cases and Applications <docs/common-use-cases-and-applications>

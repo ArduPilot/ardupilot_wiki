@@ -174,7 +174,7 @@ Getting more info
    First Flight <docs/flying-arducopter>
    Advanced Configuration <docs/common-advanced-configuration>
    Mission Planning <docs/common-mission-planning>
-   Mission Analysis <docs/common-mission-analysis>
+   Logs <docs/common-logs>
    Optional Hardware <docs/common-optional-hardware>
    Traditional Helicopters <docs/traditional-helicopters>
    Tricopter <docs/tricopter>

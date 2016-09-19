@@ -1,8 +1,8 @@
-.. _common-mission-analysis:
+.. _common-logs:
 
-================
-Mission Analysis
-================
+====
+Logs
+====
 
 This section contains topics related to mission logging and analysis.
 
