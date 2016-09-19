@@ -30,11 +30,12 @@ Closed hardware
 
     NAVIO+ <common-navio-overview>
     NAVIO2 <common-navio2-overview>
-    Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
 
 [site wiki="copter"]
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
+    Intel Aero <common-intel-aero-overview>
+    Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
 
 Discontinued boards
 ===================
