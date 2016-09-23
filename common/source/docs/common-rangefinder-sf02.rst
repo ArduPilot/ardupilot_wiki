@@ -36,11 +36,11 @@ Parmeter List page and set:
 
 -  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = "3700" (i.e. 40m max range - 3m buffer.  This buffer is required so the flight code can detect when there is nothing in range)
 -  :ref:`RNGFND_PIN <RNGFND_PIN>` = "14" (2nd pin of 3.3V ADC connector)
--  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = "12.12" (ie. 40m / 3.3v = 12.12)
+-  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = "12.12" (ie. 40m / 3.3v = 12.12) **
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = “1" (Analog)
 -  :ref:`RNGFND_RMETRIC <RNGFND_RMETRIC>` = "0" (non-ratiometric, shown incorrectly in the
    diagram below)
-
+** The default range for an SF02 is 33m / 3.3V = 10 m/V 
 .. image:: ../../../images/RangeFinder_SF02_MPSetup.png
     :target: ../_images/RangeFinder_SF02_MPSetup.png
 
