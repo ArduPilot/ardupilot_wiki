@@ -40,7 +40,8 @@ Parmeter List page and set:
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = “1" (Analog)
 -  :ref:`RNGFND_RMETRIC <RNGFND_RMETRIC>` = "0" (non-ratiometric, shown incorrectly in the
    diagram below)
-** The default range for an SF02 is 33m / 3.3V = 10 m/V 
+** The default range for an SF02 is 33m / 3.3V = 10 m/V
+
 .. image:: ../../../images/RangeFinder_SF02_MPSetup.png
     :target: ../_images/RangeFinder_SF02_MPSetup.png
 
