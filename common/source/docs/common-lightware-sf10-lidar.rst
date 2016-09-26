@@ -87,11 +87,17 @@ You then need to configure the rangefinder parameters as shown below
 List** page):
 
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 7 (LightWareI2C)
--  :ref:`RNGFND_ADDR <RNGFND_ADDR>` = 85 (I2C Address of lidar in decimal).  *Please note that this setting is in decimal and not hexadecimal as shown in the lidar settings screen. The default address is 0x55 which is 85 in decimal.*
+-  :ref:`RNGFND_ADDR <RNGFND_ADDR>` = 102 (I2C Address of lidar in decimal).  *Please note that this setting is in decimal and not hexadecimal as shown in the lidar settings screen. The default address is 0x66 which is 102 in decimal.*
 -  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
 -  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **2500** (for SF10A), **5000** (for SF10B), **10000** (for SF10C) or **12000** (for SF11C).  *This is the distance in centimeters that the rangefinder can reliably read. The value depends on the model of the lidar.*
 -  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+
+.. warning::
+
+    The default I2C address was 0x55 on older LightWare rangefinders.
+    This was changed to prevent conflict with another device on ArduPilot.
+    Please check your rangefinder system settings to determine what your I2C address is.
 
 .. _sf10-analog-connection:
 
