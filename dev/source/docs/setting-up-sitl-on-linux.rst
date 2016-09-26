@@ -72,7 +72,7 @@ this:
 
 ::
 
-    sudo apt-get install python-matplotlib python-serial python-wxgtk2.8 python-lxml
+    sudo apt-get install python-matplotlib python-serial python-wxgtk2.8 python-wxtools python-lxml
     sudo apt-get install python-scipy python-opencv ccache gawk git python-pip python-pexpect
     sudo pip install pymavlink MAVProxy
 
