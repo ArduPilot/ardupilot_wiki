@@ -55,6 +55,8 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_dronebility.png
     :target:  http://www.dronebility.com/
 
+.. image:: ../../../images/supporters/supporters_logo_mrobotics.png
+    :target:  http://mrobotics.io/
 
 How does my company become a partner?
 ===============================================
