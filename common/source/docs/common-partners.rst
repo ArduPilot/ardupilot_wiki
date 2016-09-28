@@ -59,7 +59,7 @@ Corporate Partners
     :target:  http://mrobotics.io/
 
 .. image:: ../../../images/supporters/supporters_logo_apub.jpg
-    :target:  https://www.facebook.com/groups/ArduPilot.org
+
 
 How does my company become a partner?
 ===============================================
