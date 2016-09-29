@@ -15,7 +15,7 @@ pre-fligth mission planner, in-flight monitoring and post flight log
 file analysis.
 
 This page provides instructions on how you can build the Mission Planner
-software on your own machine using MS Visual Studio 2013 which may be
+software on your own machine using MS Visual Studio 2015 which may be
 useful if you wish to make changes for your own use or improvements for
 the community.  Building the mission planner may also help as a guide in
 case you plan to build your own custom ground station development.
@@ -43,27 +43,25 @@ System Requirements
 
 Here is what you will need.
 
--  Windows XP, Vista, 7, 8
+-  Windows XP, Vista, 7, 8, 10
 -  Sufficient disk space, memory, processor power to comfortably run
    Visual Studio (details below)
 -  An Internet connection.
--  Visual Studio 2013 community edition
+-  Visual Studio 2015 community edition
 
 Install Visual Studio and DirectX and Python
 ============================================
 
-The first step is to get `Microsoft Visual Studio 2013 <http://www.visualstudio.com/>`__\ installed and working in your
+The first step is to get `Microsoft Visual Studio 2015 <http://www.visualstudio.com/>`__\ installed and working in your
 Windows system.
 
--  Download and install MS Visual Studio 2013 Community Edition which
+-  Download and install MS Visual Studio 2015 Community Edition which
    can be found `here <http://www.visualstudio.com/>`__.
 -  Reboot your PC
 -  Start Visual Studio from the Start Menu
 -  After your installation is complete and before attempting to work
    with Mission Planner test your installation on a simple "Hello World"
    application.
-
-Install Direct X by downloading and running the `DirectX End-User Runtime Web Installer <http://www.microsoft.com/en-us/download/confirmation.aspx?id=35>`__.
 
 Install Python 2.7 (if not already installed) by downloading it
 `here <https://www.python.org/downloads/>`__.
@@ -85,7 +83,7 @@ Open the Mission Planner solution in Visual Studio
 -  Start Visual Studio
 -  Click File >> Open >> Project / Solution
 -  Navigate to where the Mission Planner source was downloaded to and
-   open ArduPilotMega.sln.
+   open MissionPlanner.sln.
 -  Visual Studio should open the "solution" which includes the Mission
    Planner and a few other related applications (i.e. "3DR Radio",
    "Updater", etc) which can all be see in the Solution Explorer
@@ -236,7 +234,7 @@ is a simple debugging example to get you started.
 -  Close MP. (Or, select menu DEBUG, Stop Debugging in VS).
 -  Next you can try setting a break point.
 
-   -  Expand the ArduPilotMega project in the VS Solution Explorer so
+   -  Expand the MissionPlanner project in the VS Solution Explorer so
       you see the objects included.
    -  Scroll down to MainV2.cs, right click that object and select View
       Code.
