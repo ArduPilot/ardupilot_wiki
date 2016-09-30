@@ -59,6 +59,7 @@ Corporate Partners
     :target:  http://mrobotics.io/
 
 .. image:: ../../../images/supporters/supporters_logo_apub.jpg
+    :target:  http://www.unmannedairlines.com/a_pub/
 
 
 How does my company become a partner?
