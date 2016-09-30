@@ -12,6 +12,12 @@ on Mac OS X (ver 10.6 onwards) with *Make*.
    The commands for building Pixhawk 2 and Pixhawk are identical
    (``make px4-v2``). To build for PX4 replace ``make px4-v2`` with ``make px4-v1`` in the instructions below. #. Install `Homebrew <http://brew.sh>`__\ for Mac OS X
 
+#. Install xcode and say YES to install Command Line Tools
+
+   ::
+   
+       xcode-select --install
+       
 #. Install the following packages using brew
 
    ::
