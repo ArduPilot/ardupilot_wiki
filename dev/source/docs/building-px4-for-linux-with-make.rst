@@ -42,7 +42,13 @@ Run the install-prereqs-ubuntu.sh script:
 ::
 
     Tools/scripts/install-prereqs-ubuntu.sh -y
+    
+Install gcc-arm-none-eabi
 
+::
+
+    sudo apt-get install gcc-arm-none-eabi
+    
 Reload the path (log-out and log-in to make permanent):
 
 ::
