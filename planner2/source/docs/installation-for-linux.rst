@@ -20,7 +20,7 @@ Download the latest deb file for your machine from
 
 And also check the discussion forum for lastest info
 
-`<hhttp://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
+`<http://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
 
 
 Install Packages
