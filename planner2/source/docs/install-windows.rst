@@ -19,13 +19,13 @@ Internet connection to use maps
 Download
 ========
 
-Download the insatller file for your machine from
+Download the insatller (XXX_win.exe) file for your machine from
 
 `firmware.ardupilot.org/Tools/APMPlanner <http://firmware.ardupilot.org/Tools/APMPlanner/>`__
 
 And also check the discussion forum for lastest info
 
-`<hhttp://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
+`<http://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
 
 
 
