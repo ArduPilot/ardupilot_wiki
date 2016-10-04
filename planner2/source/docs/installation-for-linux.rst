@@ -14,13 +14,13 @@ System Requirements
 Download
 --------
 
-Download the latest deb file for your machine from either
-
-`<http://discuss.ardupilot.org/t/download-latest-apm-planner-2-0-20-and-other-releases>`__
-
-OR from
+Download the latest deb file for your machine from 
 
 `firmware.ardupilot.org/Tools/APMPlanner <http://firmware.ardupilot.org/Tools/APMPlanner/>`__
+
+And also check the discussion forum for lastest info
+
+`<hhttp://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
 
 
 Install Packages
