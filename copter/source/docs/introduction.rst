@@ -17,7 +17,7 @@ intelligent flight modes) and execution of fully autonomous missions.
 As part of the wider ArduPilot software platform it
 works seamlessly with Ground Control Station software that can monitor
 vehicle telemetry and perform powerful mission planning activities. It
-also benefits from other parts of the DroneCode platform, including
+also benefits from other parts of the Ardupilot ecosystem, including
 simulators, log analysis tools, and higher level APIs for vehicle
 management and control.
 
@@ -36,7 +36,7 @@ Key features
 Key features include:
 
 -  *High quality auto-level and auto-altitude control*: Fly level and
-   straight or use the awesome "simple flight" mode, which makes Copter
+   straight or use the awesome "simple" or "super simple" flight modes, which make ArduCopter
    one of the easiest multicopters to fly.
 
    Don't worry about keeping an eye on your multicopter's orientation -
@@ -61,8 +61,8 @@ Key features include:
    point-and-click mission planning interface.
 -  *Missions with hundreds of GPS waypoints*: Just point and click
    waypoints in a Mission Planner, and Copter will fly itself to them.
-   You automate entire missions, including camera control! The only
-   distance limits are those of your vehicle power supply.
+   You can automate entire missions, including camera control! The only
+   endurance limits are those of your vehicle power supply.
 -  *Mission planning while in flight*: Using a two-way wireless
    connection, waypoints, mode changing, even changing the values of
    every control parameter can be done from your laptop or mobile device
@@ -76,7 +76,7 @@ it will be already setup, configured and tuned, ready for your first
 flight. We recommend you *read your manufacturer's instructions*,
 particularly those related to safety, before flying.
 
-Once you're familiar with your vehicle's default setup you may want to
+Once you're familiar with the default setup of your vehicle you may want to
 configure your RC transmitter/vehicle to use more challenging :ref:`flight modes <flight-modes>`, or :ref:`choose a ground station <common-choosing-a-ground-station>` and start flying automated
 missions.
 
@@ -98,8 +98,8 @@ The development team
 
 Copter is developed and maintained by a dedicated group of volunteers
 from the open source community. Follow their continuing efforts and read
-about new project developments at
-`DIYDrones.com <http://diydrones.com>`__.
+about new project developments here at 
+`ardupilot.orgm <http://ardupilot.org>`__.
 
 *All of us involved with this project care a great deal about the
 privacy and safety of those whom we share this planet with. Please be a
