@@ -61,6 +61,8 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_apub.jpg
     :target:  http://www.unmannedairlines.com/a_pub/
 
+.. image:: ../../../images/supporters/supporters_logo_dronejapan.png
+    :target:  http://www.drone-j.com/
 
 How does my company become a partner?
 ===============================================
