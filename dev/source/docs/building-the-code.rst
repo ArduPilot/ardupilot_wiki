@@ -8,7 +8,7 @@ Building the code
 
    Code building has changed for newer releases to use **waf** build tools, replacing make.
    
-   In most cases the build dependecies described in the **make** are the same, the only set theat changes is the issue of the **waf** build commmand. 
+   In most cases the build dependecies described for **make** are the same, the only part of the instructions changes is the issue of the **waf** build commmand. 
  
    see https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md
 
