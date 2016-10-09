@@ -4,6 +4,14 @@
 Building the code
 =================
 
+.. note:: 
+
+   Code building has changed for newer releases to use **waf** build tools, replacing make.
+   
+   In most cases the build dependecies described in the **make** are the same, the only set theat changes is the issue of the **waf** build commmand. 
+ 
+   see https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md
+
 The linked articles below explain how to build ArduPilot for different
 target hardware on the supported development environments (Linux,
 Windows, Mac OSX). The included links also cover building the code for
