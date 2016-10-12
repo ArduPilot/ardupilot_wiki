@@ -334,7 +334,33 @@ closest to the first 'C' in 'C.H.U.C.K' on the case.
 * channel 6 : servo rail pin 3
 * channel 7 : servo rail pin 4
 
+Note that this pin ordering means you will need some extra parameter
+settings if you are not using the I2C ESC motor controller for
+throttle output. To take the simple example of a 4 channel fixed wing
+plane (aileron, elevator, throttle, rudder) you could configure and
+wire it like this:
+
+* servo rail pin1 : ailerons (on Y-lead if need be for 2 servos)
+* servo rail pin6 : elevator
+* servo rail pin5 : throttle
+* servo rail pin2 : rudder
+* set RC5_FUNCTION=70 to make channel 5 output throttle
+* set RC5_MIN, RC5_MAX and RC5_TRIM for the throttle range of your motor
+  
 Apart from that pin mapping, setting up a C.H.U.C.K with another
 airframe is the same as with any aircraft with ArduPilot. It could be
 used with any vehicle type supported by ArduPilot, including gliders,
 quadplanes, petrol planes, multicopters or rovers.
+
+For R/C input there is a 3-pin servo lead connector on the left side
+of the C.H.U.C.K which accepts the following widely used R/C
+protocols:
+
+* SBUS
+* DSM/Skektrum
+* SUMD (Graupner)
+* ST24 (Yuneec)
+
+The use of the airspeed sensor and sonar will be dependent on the
+physical shape of the airframe and whether the positioning of these
+sensors is suitable for the layout of the C.H.U.C.K.
