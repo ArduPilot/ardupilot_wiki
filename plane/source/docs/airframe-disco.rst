@@ -305,3 +305,36 @@ The log directory is /data/ftp/internal_000/APM/logs and can be
 accessed by ftp. Just enter a URL like ftp://192.168.42.1/ in Windows
 Explorer if using Windows to view the storage on the Disco and access
 log files. These files have a ".bin" extension (for binary log file).
+
+The C.H.U.C.K Autopilot
+=======================
+
+The heart of the Disco is the C.H.U.C.K autopilot, an orange box
+which is a general purpose autopilot. It is perfectly possible to use
+the C.H.U.C.K in a different airframe.
+
+If you want to play around with the C.H.U.C.K the first thing you will
+notice is it has 7 servo/motor outputs available. There are 6 PWM
+3-pin servo connectors, and one connector from the I2C ESC that can be
+used to drive a brushless motor (it drives the motor on the Disco).
+
+The mapping between ArduPilot output channel numbers and the 7 outputs
+was chosen with ease of integration with the Disco in mind, which
+resulted in a fairly strange pin ordering.
+
+Servo rail pin numbers in the list below are from left to right when
+looking at the C.H.U.C.K from the back, so pin1 on the servo rail is
+closest to the first 'C' in 'C.H.U.C.K' on the case.
+
+* channel 1 : servo rail pin 1
+* channel 2 : servo rail pin 6
+* channel 3 : I2C ESC motor output
+* channel 4 : servo rail pin 2
+* channel 5 : servo rail pin 5
+* channel 6 : servo rail pin 3
+* channel 7 : servo rail pin 4
+
+Apart from that pin mapping, setting up a C.H.U.C.K with another
+airframe is the same as with any aircraft with ArduPilot. It could be
+used with any vehicle type supported by ArduPilot, including gliders,
+quadplanes, petrol planes, multicopters or rovers.
