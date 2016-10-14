@@ -70,29 +70,35 @@ that allow us to rebuild ArduPilot on Windows.
 #. Select the packages listed below (search using the text in the "Name"
    field):
 
-   +------------+----------------------------------------------------------------------------------+
-   | Name       | Category / Name / Description                                                    |
-   +============+==================================================================================+
-   | autoconf   | Devel \| autoconf: Wrapper scripts for autoconf commands                         |
-   +------------+----------------------------------------------------------------------------------+
-   | automake   | Devel \| automake: Wrapper scripts for automake and aclocal                      |
-   +------------+----------------------------------------------------------------------------------+
-   | ccache     | Devel \| ccache: A C compiler cache for improving recompilation                  |
-   +------------+----------------------------------------------------------------------------------+
-   | g++        | Devel \| gcc-g++ GNU Compiler Collection (C++)                                   |
-   +------------+----------------------------------------------------------------------------------+
-   | git        | Devel \| git: Distributed version control system                                 |
-   +------------+----------------------------------------------------------------------------------+
-   | libtool    | Devel \| libtool: Generic library support script                                 |
-   +------------+----------------------------------------------------------------------------------+
-   | make       | Devel \| make: The GNU version of the 'make' utility                             |
-   +------------+----------------------------------------------------------------------------------+
-   | gawk       | Interpreters \| gawk: GNU awk, a pattern scanning and processing language        |
-   +------------+----------------------------------------------------------------------------------+
-   | libexpat   | Libs \| libexpat-devel: Expat XML parswer library (development files)            |
-   +------------+----------------------------------------------------------------------------------+
-   | procps     | System \| procps: System and process monitoring utilities (required for pkill)   |
-   +------------+----------------------------------------------------------------------------------+
+   +----------------+----------------------------------------------------------------------------------+
+   | Name           | Category / Name / Description                                                    |
+   +================+==================================================================================+
+   | autoconf       | Devel \| autoconf: Wrapper scripts for autoconf commands                         |
+   +----------------+----------------------------------------------------------------------------------+
+   | automake       | Devel \| automake: Wrapper scripts for automake and aclocal                      |
+   +----------------+----------------------------------------------------------------------------------+
+   | ccache         | Devel \| ccache: A C compiler cache for improving recompilation                  |
+   +----------------+----------------------------------------------------------------------------------+
+   | g++            | Devel \| gcc-g++ GNU Compiler Collection (C++)                                   |
+   +----------------+----------------------------------------------------------------------------------+
+   | git            | Devel \| git: Distributed version control system                                 |
+   +----------------+----------------------------------------------------------------------------------+
+   | libtool        | Devel \| libtool: Generic library support script                                 |
+   +----------------+----------------------------------------------------------------------------------+
+   | make           | Devel \| make: The GNU version of the 'make' utility                             |
+   +----------------+----------------------------------------------------------------------------------+
+   | gawk           | Interpreters \| gawk: GNU awk, a pattern scanning and processing language        |
+   +----------------+----------------------------------------------------------------------------------+
+   | libexpat       | Libs \| libexpat-devel: Expat XML parser library (development files)             |
+   +----------------+----------------------------------------------------------------------------------+
+   | libxml2-devel  | Libs \| libxml2-devel: Gnome XML library (development)                           |
+   +----------------+----------------------------------------------------------------------------------+
+   | libxslt-devel  | Libs \| libxslt-devel: XML template library (development files)                  |
+   +----------------+----------------------------------------------------------------------------------+
+   | python-devel   | Python \| python-devel: Ptyhon language interpreter                              |
+   +----------------+----------------------------------------------------------------------------------+
+   | procps         | System \| procps: System and process monitoring utilities (required for pkill)   |
+   +----------------+----------------------------------------------------------------------------------+
 
 #. When all the packages are selected, click through the rest of the
    prompts and accept all other default options (including
@@ -129,6 +135,16 @@ The file will be loaded next time you open the *Cygwin terminal*.
    Cygwin will not be able to find **sim_vehicle.py** if you omit
    this step. This will be reported as a "command not found" error when you
    try and build: ``sim_vehicle.py -j4 --map``
+
+Install required Python packages
+--------------------------------
+
+::
+
+   python -m ensurepip --user
+   python -m pip install --user future
+   python -m pip install --user lxml
+
 
 Download and make ArduPilot
 ---------------------------
