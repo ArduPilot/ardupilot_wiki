@@ -4,7 +4,7 @@
 Using Gazebo Simulator with SITL
 ================================
 
-This article explains how to use Gazebo <http://gazebosim.org/>`__
+This article explains how to use Gazebo <http://gazebosim.org/>
 as an external simulator for Copter.
 
 Overview
@@ -13,44 +13,56 @@ Overview
 Gazebo is a well-known and respected robotics simulator. We will be compiling 
 Gazebo from source, because no current release has built-in support for ArduCopter.
 
+.. warning::
+   Gazebo support is still under work on October 2016. The following instructions may be outdated or thing could be broken. In those case, open an issue on ardupilot github or discuss.
+
 .. tip::
 
    Gazebo is particularly useful for defining autonomous
-   indoor flights.
+   indoor flights or swarms.
 
 
 Preconditions
 =============
 
-We recommend Ubuntu 14.04.2 as this is the platform used for testing
+We recommend Ubuntu starting from 14.04.2 as this is the platform used for testing
 this approach and is also known to be compatible with SITL.
 
 Compiling and installing Gazebo
 ===============================
 
-We will be using a standard version of ArduPilot, but a custom fork of Gazebo.
+We will be using a standard version of ArduPilot, but a custom fork of Gazebo until gazebo plugin get merge into Gazebo build.
 
-These instructions are derived from <http://gazebosim.org/tutorials?tut=install_from_source>`__.
+These instructions are derived from <http://gazebosim.org/tutorials?tut=install_from_source>.
 
+Remove old Gazebo versions
 ::
-    # Remove old Gazebo versions
+
     sudo apt-get remove '.*gazebo.*' '.*sdformat.*' '.*ignition-math.*'
 
-    # Install dependencies
+Install dependencies
+::
+
     wget https://bitbucket.org/osrf/release-tools/raw/default/jenkins-scripts/lib/dependencies_archive.sh -O /tmp/dependencies.sh
     ROS_DISTRO=dummy . /tmp/dependencies.sh
     sudo apt-get install $(sed 's:\\ ::g' <<< $GAZEBO_BASE_DEPENDENCIES) $(sed 's:\\ ::g' <<< $BASE_DEPENDENCIES)
 
-    # Skip this part if using Ubuntu version 14.10 or newer
+Skip this part if using Ubuntu version 14.10 or newer
+::
+
     sudo apt-add-repository ppa:libccd-debs
     sudo apt-add-repository ppa:fcl-debs
 
-    # Install more dependencies
+Install more dependencies
+::
+
     sudo apt-add-repository ppa:dartsim
     sudo apt-get update
     sudo apt-get install libdart-core5-dev
 
-    # Build and install Ignition
+Build and install Ignition
+::
+
     hg clone https://bitbucket.org/ignitionrobotics/ign-math /tmp/ign-math
     cd /tmp/ign-math
     mkdir build
@@ -59,7 +71,9 @@ These instructions are derived from <http://gazebosim.org/tutorials?tut=install_
     make -j4
     sudo make install
 
-    # Build and install SDFormat
+Build and install SDFormat
+::
+
     hg clone https://bitbucket.org/osrf/sdformat /tmp/sdformat
     cd /tmp/sdformat
     mkdir build
@@ -68,18 +82,22 @@ These instructions are derived from <http://gazebosim.org/tutorials?tut=install_
     make -j4
     sudo make install
 
-    # Build and install Gazebo
+Build and install Gazebo
+::
+
     cd ~
     hg clone https://bitbucket.org/osrf/gazebo
     cd gazebo
-    hg checkout aero_default
+    hg checkout ardupilot
     mkdir build
     cd build
     cmake ../
     make -j4 # NOTE: This will take a long time!
     sudo make install
 
-    # Add some things to your path
+Add some things to your path
+::
+
     echo "export LD_LIBRARY_PATH=<install_path>/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc
     echo "export PATH=<install_path>/local/bin:$PATH" >> ~/.bashrc
     echo "export PKG_CONFIG_PATH=<install_path>/local/lib/pkgconfig:$PKG_CONFIG_PATH" >> ~/.bashrc
@@ -101,7 +119,7 @@ Then find the file libgazebo_common.so.1, probably under `/usr/local/lib` or `/u
 .. note::
 
     Compiling Gazebo from source will not be necessary once this pull request gets merged:
-    <https://bitbucket.org/osrf/gazebo/pull-requests/2264/aerodynamic-updates/diff>`__
+    <https://bitbucket.org/osrf/gazebo/pull-requests/2450/ardupilot-refactor-and-minor-improvements/diff>
 
 
 Installing Custom Gazebo Models
@@ -114,14 +132,14 @@ We will also need to get a gazebo model of a quadcopter.
     cd ~
     hg clone https://bitbucket.org/osrf/gazebo_models
     cd gazebo_models
-    hg checkout aero_testing_john
+    hg checkout zephyr_demos
     echo 'export GAZEBO_MODEL_PATH=~/gazebo_models' >> ~/.bashrc
     source ~/.bashrc
 
 .. note::
 
     This step will not be necessary once this pull request gets merged:
-    <https://bitbucket.org/osrf/gazebo_models/pull-requests/177/aerodynamics-models/diff>`__
+    <https://bitbucket.org/osrf/gazebo_models/pull-requests/221/zephyr_demos/diff>
 
 
 Set up PATH to build tools
@@ -150,13 +168,7 @@ In one terminal, enter the ArduCopter directory and start the SITL simulation:
 ::
 
     cd ~/ardupilot/ArduCopter
-    sim_vehicle.py -f gazebo
-
-Load default parameters in MAVProxy with:
-
-::
-
-    param load ../Tools/autotest/copter_params.parm
+    sim_vehicle.py -f gazebo-iris
 
 In another terminal start Gazebo:
 
