@@ -128,7 +128,7 @@ How the team works
    and is open to anyone to join
 -  The development team is also using `gitter <https://gitter.im/>`__
    for APM development discussions -
-   https://gitter.im/diydrones/ardupilot#
+   https://gitter.im/ArduPilot/ardupilot
 -  We have a :ref:`mumble server <ardupilot-mumble-server>`
    for real-time voice discussions
 -  Our annual developers conference is

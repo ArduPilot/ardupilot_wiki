@@ -14,7 +14,7 @@ Preparing commits
 -----------------
 
 Commits should be made to your fork/clone of the project in a new branch
-(i.e. not "master") that is up-to-date with the diydrones/ardupilot
+(i.e. not "master") that is up-to-date with the ardupilot/ardupilot
 master branch does and not include any other changes. See :ref:`Working with the ArduPilot Project Code <where-to-get-the-code>` for
 instructions on how to correctly update your working branch.
 
@@ -114,7 +114,7 @@ repository, follow these directions:
    .. image:: ../images/PullRequest_InitiatePullRequest1.png
        :target: ../_images/PullRequest_InitiatePullRequest1.png
 
-#. The comparison should between diydrones:master and the the new branch
+#. The comparison should between ardupilot:master and the the new branch
    you created for the feature but it has probably defaulted to your
    clone's master branch so click the "Edit" button and change it to the
    correct branch:

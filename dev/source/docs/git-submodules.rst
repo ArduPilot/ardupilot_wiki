@@ -13,8 +13,8 @@ Background
 
 *Git submodules* allow us to automatically bring in dependent git trees
 in the ArduPilot build. It replaces our old mechanism of having to
-separately clone the **diydrones/PX4Firmware** and
-**diydrones/PX4NuttX** tree when developers want to build for PX4
+separately clone the **ArduPilot/PX4Firmware** and
+**ArduPilot/PX4NuttX** tree when developers want to build for PX4
 targets.
 
 .. note::
@@ -44,7 +44,7 @@ You may also note that the URLs used for the submodules use the old
 accidental commits on the master repositories while developers are
 getting used to *git submodules* (as the ``git://`` protocol is
 read-only). Developers with commit access to the submodules should add a
-new diydrones remote with a writeable protocol as needed.
+new ardupilot remote with a writeable protocol as needed.
 
 Common errors
 =============
@@ -94,7 +94,7 @@ If you need to manually update submodules you should run the command
     git submodule update
 
 from the root of the ardupilot tree. That will check all submodules for
-updates in the diydrones repository and will pull in changes as needed.
+updates in the ardupilot repository and will pull in changes as needed.
 
 Disaster recovery
 -----------------
