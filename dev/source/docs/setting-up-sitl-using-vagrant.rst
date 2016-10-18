@@ -28,6 +28,13 @@ environments running in virtual machines. While it is possible to
 (or Mac OSX), it is **much easier** (and more reproducible) to use
 Vagrant to do this work for you.
 
+.. note::
+
+   Due to the way submodules are currently handled in the build
+   system, it is not possible to have a repository which can be built
+   on both the host and virtual machines.  A dedicated repository
+   should be used for running the Vagrant virtual machine.
+
 Preconditions
 =============
 
@@ -128,13 +135,11 @@ Set up the Vagrant and the virtual machine
 
        git clone https://github.com/ArduPilot/ardupilot.git
        cd ardupilot
-       git submodule init
-       git submodule update
 
 #. Start a vagrant instance
 
    -  Open a command prompt and navigate to any directory in the
-      `/diydrones/ardupilot/Tools/vagrant/ <https://github.com/ArduPilot/ardupilot/blob/master/Tools/vagrant/>`__
+      `/ArduPilot/ardupilot/Tools/vagrant/ <https://github.com/ArduPilot/ardupilot/blob/master/Tools/vagrant/>`__
       source tree.
    -  Run the command:
 
@@ -142,15 +147,27 @@ Set up the Vagrant and the virtual machine
 
           vagrant up
 
-This starts running a VM, based on a *Vagrant configuration file* in the
-source tree. All the files in this directory tree will "magically"
-appear inside the running instance at */vagrant*.
+    This starts running a VM, based on a *Vagrant configuration file*
+    in the source tree. All the files in this directory tree will
+    "magically" appear inside the running instance at */vagrant*.
 
-.. note::
+    .. note::
 
-   The first time you run the vagrant up command it will take some
-   time complete. The command needs to fetch a Vagrant base VM and
-   configure it with the development environment.
+       The first time you run the vagrant up command it will take some
+       time complete. The command needs to fetch a Vagrant base VM and
+       configure it with the development environment.
+
+#. Initialise git submodules
+
+   - The ArduPilot source tree references other repositories as
+     *submodules*.  These must be initialised by working on the
+     virtual machine:
+
+      ::
+
+	 vagrant ssh
+	 git submodule update --init --recursive
+	 exit
 
 Start running SITL
 ==================
