@@ -31,7 +31,7 @@ Build instructions
 #. Clone the ardupilot repository onto your machine:
 
    -  Go to the
-      `GitHub/diydrones/ardupilot <https://github.com/ArduPilot/ardupilot>`__
+      `GitHub/ArduPilot/ardupilot <https://github.com/ArduPilot/ardupilot>`__
       web page and click the **Clone in Desktop** button
    -  Warning: be careful that the directory path is less than about 50
       characters.  For example
