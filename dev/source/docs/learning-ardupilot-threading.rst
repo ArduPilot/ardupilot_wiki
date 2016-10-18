@@ -352,9 +352,9 @@ available on the specific platform, and provide a simple mechanism for
 mutual exclusion. For example, I2C drivers can ask for the I2C bus
 semaphore to ensure that only one I2C device is used at a time.
 
-Go and have a look at the hmc5883 driver in
-libraries/AP_Compass/AP_Compass_HMC5883.cpp and look for the
-\_i2c_sem variable. Look at all the places it is used, and see if you
+Go and have a look at the hmc5843 driver in
+libraries/AP_Compass/AP_Compass_HMC5843.cpp and look for the
+\get_semaphore() call. Look at all the places it is used, and see if you
 can work out why it is needed.
 
 Lockless Data Structures

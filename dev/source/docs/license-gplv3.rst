@@ -4,10 +4,7 @@
 License (GPLv3)
 ===============
 
-Copter (aka APM:Copter), Plane (aka Plane), Rover (aka Rover) and the
-Mission Planner are free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License version 3 as
-published by the `Free Software Foundation <http://www.fsf.org/>`__.
+ArduPilot (including Copter, Plane, Rover and AntennaTracker) and the Mission Planner are free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3 as published by the `Free Software Foundation <http://www.fsf.org/>`__.
 
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -41,9 +38,12 @@ incorporate this software into their products for sale.  A significant
 number have already done this.  There are some things that the license
 requires however that we need to point out:
 
--  Inform your customers that the software is open source and provide
-   the actual source code in the product or provide a link to where the
-   source code can be found.
+-  Inform your customers that the flight code software is open source and provide the actual source code in the product or provide a link to where the    source code can be found (see sample below).
+
+.. image:: ../images/license-sample-web-page.png
+    :target: ../_images/license-sample-web-page.png
+    :width: 400px
+
 -  As with the contributions of individual developers, we would like it
    if you could keep us informed of the products that incorporate the
    software by emailing drones-discuss@googlegroups.com.  Also for those
@@ -55,3 +55,23 @@ To both individual developers and companies we also ask that when making
 derivative works, the original credits listing all the individuals that
 contributed to getting the software to it's current form are left in
 place.
+
+Why did we pick this license over others?
+=========================================
+
+- the requirement to contribute back bug fixes and enhancements to the project (or at least provide those fixes to the end customer) increases cooperation amongst the contributors.  Without this requirement participants are tempted to keep even small improvements to themselves in order to gain an advantage over other contributors.  There is evidence that this quickly leads to many incompatible forks of the project to the detriment of all.
+Linus Torvalds (inventor of Linux) agrees.
+
+.. image:: ../images/license-linus-quote.png
+    :target: http://www.cio.com/article/3112582/linux/linus-torvalds-says-gpl-was-defining-factor-in-linuxs-success.html
+    :width: 400px
+
+- the "v3" portion of the license ensures that the customer who purchased the vehicle has the right to upgrade or replace the version of ArduPilot on the flight controller.  The license doesn't require that it actually work but just that the upgrade is possible.  This ensures that even if a manufacturer stops supporting the product (which can happen for very valid reasons) the product can continue to be useful if the owner or a community of developers decides to pick up support.  Examples of this have already happened with ArduPilot.
+
+Can I integrate Closed source (i.e. Proprietary) and Open Source?
+=================================================================
+
+Ardupilot is open source (GPLv3) but you can use a companion computer to run closed source code to ease integrating ArduPilot into your corporate systems or to add higher level features to differentiate yourself from your rivals.  You build on the reliability of the free low-level flight code so you can instead invest in the higher level features.  We believe ArduPilot is as reliable as the leading closed system and you are not beholden to a particular manufacturer.  Below is an image of how one manufacturer accomplished this.
+
+.. image:: ../images/license-integrating-open-and-closed.png
+    :target: ../_images/license-integrating-open-and-closed.png

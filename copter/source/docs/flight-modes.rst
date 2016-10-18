@@ -36,15 +36,18 @@ for more details):
 Additional flight modes:
 
 -  :ref:`Acro <acro-mode>`
--  :ref:`Sport <sport-mode>`
--  :ref:`Drift <drift-mode>`
--  :ref:`Guided <ac2_guidedmode>`
--  :ref:`Circle <circle-mode>`
--  :ref:`PosHold <poshold-mode>`
--  :ref:`Land <land-mode>`
+-  :ref:`AutoTune <autotune>`
 -  :ref:`Brake <brake-mode>`
+-  :ref:`Circle <circle-mode>`
+-  :ref:`Drift <drift-mode>`
+-  :ref:`Guided <ac2_guidedmode>` (and :ref:`Guided_NoGPS <guided_nogps>`)
+-  :ref:`Land <land-mode>`
+-  :ref:`PosHold <poshold-mode>`
+-  :ref:`Sport <sport-mode>`
+-  :ref:`Throw <throw-mode>`
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Simple and Super Simple <simpleandsuper-simple-modes>`
+-  :ref:`Avoid_ADSB <common-ads-b-receiver>` for ADS-B based avoidance of manned aircraft.  Should not be set-up as a pilot selectable flight mode.
 
 Most transmitters provide a 3 position switch but you can find
 instructions :ref:`here for setting up a 6-position flight mode switch <common-rc-transmitter-flight-mode-configuration>`.
@@ -68,6 +71,7 @@ Requires GPS lock prior to takeoff:
 -  :ref:`PosHold <poshold-mode>`
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Circle <circle-mode>`
+-  :ref:`Throw <throw-mode>`
 
 Do not require GPS lock:
 
@@ -96,3 +100,4 @@ Do not require GPS lock:
     Simple and Super Simple Modes <simpleandsuper-simple-modes>
     Sport Mode <sport-mode>
     Stabilize Mode <stabilize-mode>
+    Throw Mode <throw-mode>

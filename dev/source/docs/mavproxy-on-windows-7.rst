@@ -13,7 +13,7 @@ via network interfaces.
 Overview
 ========
 
-`MAVProxy <http://tridge.github.io/MAVProxy/>`__ is a powerful
+`MAVProxy <http://ardupilot.github.io/MAVProxy/>`__ is a powerful
 command-line based "developer" ground station software that complements
 your favorite GUI ground station, such as Mission Planner, APM Planner
 etc.
@@ -30,7 +30,7 @@ flight and determine where to look to find the aircraft in flight.
 
 This guide shows how to set up MAVProxy to allow forwarding via network
 interfaces and usage via command line. There may be other ways to get
-this running and you may need other packages as per the `official MAVProxy documentation <http://tridge.github.io/MAVProxy/>`__ in order
+this running and you may need other packages as per the `official MAVProxy documentation <http://ardupilot.github.io/MAVProxy/>`__ in order
 to use more advanced functions. No warranty responsibility for damage
 etc.
 
@@ -78,7 +78,7 @@ MAVLink report the mode change and notice your aircraft change behaviour
 into that mode.
 
 The full list of MAVLink commands can be found at
-http://tridge.github.io/MAVProxy/\ if you want to experiment further
+http://ardupilot.github.io/MAVProxy/\ if you want to experiment further
 with the command line.
 
 To exit MAVLink press Control+C together.

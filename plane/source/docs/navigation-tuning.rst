@@ -43,8 +43,8 @@ Steps to tuning the L1 controller
    turn then increase NAVL1_PERIOD by 1 or 2
 -  If you are tuning for maximum performance, once you have completed
    the tuning of NAVL1_PERIOD you can increment NAVL1_PERIOD by 1 and
-   then increase NAVL1_DAMPING in increments of 0.05 to get the
-   response you want. Do not decrease NAVL1_PERIOD too much - it is
+   then modify NAVL1_DAMPING in steps of 0.05 to get the
+   response you want. Do not decrease NAVL1_DAMPING too much - it is
    unlikely you will need a value below 0.6.
 
 Tuning waypoint transition behaviour

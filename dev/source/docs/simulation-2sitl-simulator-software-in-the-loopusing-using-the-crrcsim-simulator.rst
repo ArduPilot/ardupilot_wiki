@@ -45,7 +45,7 @@ One crrcsim is installed you can launch it by running:
     crrcsim -i APM
 
 that starts CRRCSim with the APM protocol interface. You can then press
-ESCAPE to bring up the menu and choose and aircraft to simulate. Many of
+ESCAPE to bring up the menu and choose an aircraft to simulate. Many of
 the aircraft will work with SITL, but for ones without motors (the
 gliders) you will need to choose a launch location on a slope.
 
@@ -55,12 +55,12 @@ aircraft. That simulates a small nitro sport aircraft.
 For helicopter testing choose the "Heli-APM" model.
 
 After you have launched CRRCSim you need to start SITL. For fixed wing
-testing use the "-f CRRCSim" option to sim_vehicle.sh:
+testing use the "-f CRRCSim" option to sim_vehicle.py:
 
 ::
 
     cd ArduPlane
-    sim_vehicle.sh -f CRRCSim --console --map
+    sim_vehicle.py -f CRRCSim --console --map
 
 Simulating a helicopter
 -----------------------
@@ -70,6 +70,6 @@ For helicopter testing with CRRCSim use "-f CRRCSim-heli"
 ::
 
     cd ArduCopter
-    sim_vehicle.sh -f CRRCSim-heli --console --map
+    sim_vehicle.py -f CRRCSim-heli --console --map
 
 The helicopter will have the RSC speed on channel 8.

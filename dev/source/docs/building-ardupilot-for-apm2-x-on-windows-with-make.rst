@@ -59,13 +59,15 @@ Build instructions
       ::
 
           git clone https://github.com/ArduPilot/ardupilot.git
+          cd ardupilot
+          git submodule init
+          git submodule update
 
    -  Checkout the branch you want to build (the last branch you can use
       for Copter is shown below):
 
       ::
 
-          cd ardupilot
           git checkout ArduCopter-3.2.1
 
 #. Install the special ArduPilot Arduino package. This contains gcc

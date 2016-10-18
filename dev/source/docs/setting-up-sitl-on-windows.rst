@@ -74,7 +74,7 @@ Step #2 - Start the VM for the first time
 #. Enter your password when the login screen appears
 #. Say "no" to any options to upgrade versions
 #. Open firefox and make sure it can access some web page like
-   www.diydrones.com
+   www.ardupilot.org
 
    .. |Ubuntu_TestNetworkWithFirefox| image:: ../images/ubuntu_test_network_with_firefox.jpg
        :target: ../_images/ubuntu_test_network_with_firefox.jpg
@@ -202,7 +202,7 @@ file extension to ".log" before opening in Mission Planner.
 Next steps
 ==========
 
-To get the most out of SITL we recommend you `Learn MavProxy <http://tridge.github.io/MAVProxy/>`__.
+To get the most out of SITL we recommend you `Learn MavProxy <http://ardupilot.github.io/MAVProxy/>`__.
 
 The topic :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` explains how to use the
 simulator, and covers topics like how to use SITL with Ground Stations

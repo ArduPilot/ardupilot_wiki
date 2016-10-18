@@ -92,8 +92,11 @@ CHDK allows you to automate your camera's functionality by running
 scripts off an SD card. CHDK scripts can be written in
 both \ `UBASIC <https://en.wikipedia.org/wiki/UBASIC>`__\ and \ `Lua <https://en.wikipedia.org/wiki/Lua_(programming_language)>`__:
 simple, easy-to-use programming languages. For this tutorial, we'll use
-UBASIC scripts with file extension **.bas**. *UBASIC script files must
-carry the extension \ **.bas** to function.*
+UBASIC scripts with file extension **.bas**.
+
+.. note::
+
+   UBASIC script files must carry the extension **.bas** to function.
 
 One of the easiest and most useful ways to apply CHDK to your mission is
 to take pictures automatically at intervals during flight. We'll do this
@@ -136,7 +139,7 @@ Prior to launching your plane, it is necessary to activate the
 intervalometer script on the camera. Make sure the SD card is locked and
 loaded into the camera and the camera is turned on. When you're ready to
 launch your plane, enter ALT mode by pressing the **Print** or **Play**
-button on the camera (for more information consult the\ `CHDK wiki <http://chdk.wikia.com/wiki/CHDK>`__). Press the **Menu** button to
+button on the camera (for more information consult the `CHDK wiki <http://chdk.wikia.com/wiki/CHDK>`__). Press the **Menu** button to
 access the main CHDK menu. Select **Load Script from File**;
 select \ **DM_interval.bas**. Press the **shutter** button to run the
 script. (You can also use the shutter button to stop the script.) Once
@@ -163,21 +166,21 @@ corresponding to a channel switch position (ex: channel 1 middle). The
 table below shows the corresponding values between the switch position
 on the RC transmitter, the APM's PWM output, and the camera's USB power.
 
-+-------------------+------------+------------------+
-| Switch position   | PWM (ms)   | USB power (ms)   |
-+-------------------+------------+------------------+
-| Channel 1 up      | 1,900 ms   | <50              |
-+-------------------+------------+------------------+
-| Channel 1 mid     | 1,500 ms   | >40 and <80      |
-+-------------------+------------+------------------+
-| Channel 1 down    | 1,100 ms   | >70 and <110     |
-+-------------------+------------+------------------+
-| Channel 2 up      | 1,900 ms   | >100 and <140    |
-+-------------------+------------+------------------+
-| Channel 2 mid     | 1,500 ms   | >130 and <170    |
-+-------------------+------------+------------------+
-| Channel 2 down    | 1,100 ms   | >160 and <120    |
-+-------------------+------------+------------------+
++-------------------+-----------+------------------+
+| Switch position   | PWM (µs)  | USB power (ms)   |
++-------------------+-----------+------------------+
+| Channel 1 up      | 1,900     | <50              |
++-------------------+-----------+------------------+
+| Channel 1 mid     | 1,500     | >40 and <80      |
++-------------------+-----------+------------------+
+| Channel 1 down    | 1,100     | >70 and <110     |
++-------------------+-----------+------------------+
+| Channel 2 up      | 1,900     | >100 and <140    |
++-------------------+-----------+------------------+
+| Channel 2 mid     | 1,500     | >130 and <170    |
++-------------------+-----------+------------------+
+| Channel 2 down    | 1,100     | >160 and <120    |
++-------------------+-----------+------------------+
 
 Each switch position can be assigned to a script function. This means
 that you can script up to six different camera controls such as
@@ -206,9 +209,11 @@ down to find the **Servo out function** parameters for each channel.
 Find the parameter that corresponds to your camera control channel. For
 us, it's **Servo out function (RC7_FUNCTION)**.
 
-*Set this parameter to **Manual** whenever you want to control your
-camera using your RC transmitter; set to **Disabled** when you want the
-APM to control the camera automatically.*
+.. note::
+
+   Set this parameter to **Manual** whenever you want to control your
+   camera using your RC transmitter; set to **Disabled** when you want the
+   APM to control the camera automatically.
 
 Since we're using the RC transmitter to test the CHDK cable, set **Servo
 out function** to **Manual**. Select **Write Params** before
@@ -373,7 +378,7 @@ tells the APM that this command means output to a servo.) Set **Ser
 No**\ (servo number) to the number of your camera control channel
 (ex:**7**). (This tells the APM where to output: for us, servo channel 7
 is the CHDK cable.) And set **PWM** to **1900**. (This value tells the
-APM what to output: 1,900 milliseconds of pulse width modulation
+APM what to output: 1,900 microseconds of pulse width modulation
 corresponds to the high position under which the shoot command is
 located). Repeat this process for each waypoint at which you would like
 to take a picture. The screen below shows a shutter command correctly
@@ -405,9 +410,9 @@ One of our favorite applications of CHDK is creating a map of an area by
 stitching automatically-captured pictures into a composite image. We'll
 use the same
 `3DR_Shoot.bas <http://download.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__\ script
-that we used in the previous section.The process is similar to setting
+that we used in the previous section. The process is similar to setting
 shutter triggers at waypoints, only to make sure we capture the entire
-area, we need more frequent, more regular waypoints. We’ll do this
+area we need more frequent, more regular waypoints. We’ll do this
 automatically using Mission Planner’s **Grid V2** automatic waypoint
 function.
 
@@ -555,21 +560,21 @@ position on the RC transmitter, the APM's PWM output, and the camera's
 USB power. In practice, our Spektrum DX 8 outputs the values shown in
 the rightmost column.
 
-+-------------------+------------+------------------+----------------------------------------+
-| Switch position   | PWM (ms)   | USB power (ms)   | Spektrum DX8 USB power readings (ms)   |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 1 up      | 1,100 ms   | <50              | 30                                     |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 1 mid     | 1,500 ms   | >40 and <80      | 50 or 60                               |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 1 down    | 1,900 ms   | >70 and <110     | 90                                     |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 2 up      | 1,100 ms   | >100 and <140    | 130                                    |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 2 mid     | 1,500 ms   | >130 and <170    | 150 or 160                             |
-+-------------------+------------+------------------+----------------------------------------+
-| Channel 2 down    | 1,900 ms   | >160 and <120    | 190                                    |
-+-------------------+------------+------------------+----------------------------------------+
++-------------------+-----------+------------------+----------------------------------------+
+| Switch position   | PWM (µs)  | USB power (ms)   | Spektrum DX8 USB power readings (ms)   |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 1 up      | 1,100     | <50              | 30                                     |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 1 mid     | 1,500     | >40 and <80      | 50 or 60                               |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 1 down    | 1,900     | >70 and <110     | 90                                     |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 2 up      | 1,100     | >100 and <140    | 130                                    |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 2 mid     | 1,500     | >130 and <170    | 150 or 160                             |
++-------------------+-----------+------------------+----------------------------------------+
+| Channel 2 down    | 1,900     | >160 and <120    | 190                                    |
++-------------------+-----------+------------------+----------------------------------------+
 
 To verify that your transmitter behaves similarly, you may want to
 perform a test to ensure that a valid USB power value is returned for

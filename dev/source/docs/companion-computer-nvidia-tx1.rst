@@ -38,7 +38,6 @@ The easiest way to setup the TX1 is to flash one of the existing binaries from `
     - connect a USB cable from the Ubuntu machine to the TX1 development board
     - power on the TX1 development board
     - put the TX1 into bootloader mode (Hold and keep pressed the "Force-Recovery" button, press and release the "Reset" button, release the "Force-Recovery" button).  You can check the TX1 is in bootloader mode by typing "lsusb" on the Ubuntu machine and look for "NVidia".
-    - on the Ubuntu machine, from the ../JetPack/TX1/Linux_for_Tegra_tx1/bootloader directory run a command like below where "IMAGE.img" is replaced with the name of the image file downloaded above.
-``sudo ./tegraflash.py --bl cboot.bin --applet nvtboot_recovery.bin --chip 0x21 --cmd "write APP IMAGE.img"``
+    - on the Ubuntu machine, from the ../JetPack/TX1/Linux_for_Tegra_tx1/bootloader directory run a command like below where "IMAGE.img" is replaced with the name of the image file downloaded above: ``sudo ./tegraflash.py --bl cboot.bin --applet nvtboot_recovery.bin --chip 0x21 --cmd "write APP IMAGE.img"``
 
 Note: instructions on how the firmware.ardupilot.org image was created can be found `here <https://github.com/yankailab/OpenKAI/blob/master/setup/setup_TX1.txt>`__.

@@ -28,6 +28,7 @@ come with foam cubes made by `3M <http://www.3m.com/>`__).
 
 .. image:: ../../../images/pixhawk-back-4-corners-foam.jpg
     :target: ../_images/pixhawk-back-4-corners-foam.jpg
+    :width: 300px
 
 .. tip::
 

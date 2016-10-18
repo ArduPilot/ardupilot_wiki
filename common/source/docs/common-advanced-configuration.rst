@@ -12,17 +12,18 @@ tuning options for the vehicle.
 
 [site wiki="copter"]
     Tuning <common-tuning>
-    Compass Setup (Advanced) <common-compass-setup-advanced>
-    UBlox GPS Configuration <common-ublox-gps>
-    Parameter Reset <common-parameter-reset>
     Auxiliary Function Switches <channel-7-and-8-options>
-    Vibration Damping <common-vibration-damping>
+    Compass Setup (Advanced) <common-compass-setup-advanced>
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
-    RCMAP <common-rcmap>
-    Sensor Testing <common-sensor-testing>
+    Motor Thrust Scaling <motor-thrust-scaling>
+    Ground Effect Compensation <ground-effect-compensation>
     Telemetry Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
-    Magnetic Interference <common-magnetic-interference>
+    RCMAP <common-rcmap>
     Full Parameter List <parameters>
+    Parameter Reset <common-parameter-reset>    
+
+    UBlox GPS Configuration <common-ublox-gps>
+    Sensor Testing <common-sensor-testing>
 [/site]
 
 [site wiki="plane"]

@@ -4,7 +4,7 @@
 Lightware SF02 Rangefinder
 ==========================
 
-The `Lightware SF02 <http://www.lightware.co.za/shop/en/shop/en/lrf-modules/7-sf02f.html>`__ is
+The `Lightware SF02 <http://www.lightware.co.za/shop/en/drone-altimeters/7-sf02f.html>`__ is
 lightweight laser rangefinder module that provides fast and accurate
 distance measurements up to 40 meters (130 feet). 
 In `tests by the development team <http://diydrones.com/profiles/blogs/testing-laser-rangefinders-with-arduplane>`__
@@ -34,12 +34,13 @@ To configure Copter, Plane or Rover to use the LIDAR-Lite, please first
 connect with the Mission Planner and then open the Config/Tuning >> Full
 Parmeter List page and set:
 
--  RNGFND_MAX_CM = "4000" (i.e. 40m max range)
--  RNGFND_PIN = "14" (2nd pin of 3.3V ADC connector)
--  RNGFND_SCALING = "12.12" (ie. 40m / 3.3v = 12.12)
--  RNGFND_TYPE = “1" (Analog)
--  RNGFND_RMETRIC = "0" (non-ratiometric, shown incorrectly in the
+-  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = "3700" (i.e. 40m max range - 3m buffer.  This buffer is required so the flight code can detect when there is nothing in range)
+-  :ref:`RNGFND_PIN <RNGFND_PIN>` = "14" (2nd pin of 3.3V ADC connector)
+-  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = "12.12" (ie. 40m / 3.3v = 12.12) **
+-  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = “1" (Analog)
+-  :ref:`RNGFND_RMETRIC <RNGFND_RMETRIC>` = "0" (non-ratiometric, shown incorrectly in the
    diagram below)
+** The default range for an SF02 is 33m / 3.3V = 10 m/V
 
 .. image:: ../../../images/RangeFinder_SF02_MPSetup.png
     :target: ../_images/RangeFinder_SF02_MPSetup.png

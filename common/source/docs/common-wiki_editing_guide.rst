@@ -107,9 +107,14 @@ The typical process for working with Git on the command line is:
      .. code-block:: bash
    
 	   git remote add upstream https://github.com/ArduPilot/ardupilot_wiki.git
-	   git remove -v
 	   
-   - The "upstream" repository is now tracked as well.  
+   - Verify that the "upstream" repository is now tracked as well.
+   
+     .. code-block:: bash
+     
+	   git remote -v
+	   
+   - The "upstream" repository should now be part of the remote repository list:  
      
      .. code-block:: bash
 
@@ -230,7 +235,7 @@ to `fork <https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box>`__ a
 
 For Windows users, it is adviced to install SSH client on the computer before starting vagrant. Vagrant needs 
 SSH client program to access development container. We have had great success with OpenSSH packer from MLS-Software
-`here <http://ww.mls-software.com/opensshd.html>`__
+`here <http://www.mls-software.com/opensshd.html>`__
 
 The main steps for building the docs are:
 
@@ -315,7 +320,7 @@ syntax highlighting and basic on-the-fly rendering in a single application.
 .. note:: 
 
     Although the tool is Python based, don't try it on Windows as it very prone to crashes (this is 
-also stated by the website).
+    also stated by the website).
 
 Wiki Infrastructure
 ===================
@@ -685,6 +690,7 @@ Our general advice for images is:
 - Name the file using all lower case, and underscores between words.
 - Name the file "descriptively" so it is easy to find, and possibly re-use. 
   A name like **planner2_flight_screen.jpg** is much more useful than **image1.jpg**.
+- To change an image, simply replace the file in the source tree and commit the change.
     
 Display an image in a "common" article with a caption and target as shown below. Note the paths to the files are relative
 to the current directory (hence the relative link back to **images** in the project root).

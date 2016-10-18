@@ -184,15 +184,19 @@ Aug 2015 - Michael Clement & Michael Day fly
 
 Sep 2015 - `First major news event involving a misbehaving pilot of an ardupilot vehicle (a Solo) <http://edition.cnn.com/2015/09/04/us/us-open-tennis-drone-arrest/>`__
 
-March 2016 - 3DR ceases direct funding of ArduPilot community.
+March 2016 - 3DR ceases direct funding of ArduPilot community as it `cuts jobs <http://www.marketwatch.com/story/drone-maker-3d-robotics-reboots-by-cutting-jobs-refocusing-on-corporate-market-2016-03-23>`__.
 
 March 2016 - Formation of the `ardupilot.org non profit organisation <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__ and new website.
 
+May 2016 - `Flirtey delivery drone (using ardupilot) is entered into Smithsonian Air and Space Museum <http://www.smithsonianmag.com/smart-news/first-delivery-drone-united-states-lands-spot-smithsonian-180958964/?no-ist>`__.
+
+Sep 2016 - Relationship with 3DR, Chris Anderson and PX4 team lead sours as DroneCode Platinum board members outvote Silver board members to remove GPLv3 projects including ArduPilot from DroneCode.
+
+Sep 2016 - ArduPilot begins :ref:`ArduPilot Partners <common_sponsors>` group. 
 
 .. note::
 
-   The above list includes many of the major milestones for the
-   project.  Please see the
+   The above list includes many of the major milestones for the project.  Please see the
    `ArduCopter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp>`__
    or the `GitHub contributors graph <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
    for a more complete list of contributors to the project.

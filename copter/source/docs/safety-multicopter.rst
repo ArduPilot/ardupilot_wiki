@@ -48,22 +48,22 @@ MultiCopter Safety
    #. Always remove your props while you are testing motors, your hands,
       arms and face and those of your friends will thank you.
    #. When the battery is connected, always assume the motors are armed;
-      You can check with a short throttle pulse.
+      you can check with a short throttle pulse.
    #. Don't pick up the model and the radio at the same time, you may
       bump the throttle.
-   #. Do not attempt to fly longer than your batteries safe capacity, it
+   #. Do not attempt to fly longer than your battery's safe capacity, it
       is very bad for the battery and can cause a crash.
 
 #. **The APM and PX4 flight controllers we use incorporate a motor
    arming safety feature.**
 
    #. Immediately prior to flight after the battery has been connected,
-      the RC transmitters throttle stick needs to be held down and to
+      the RC transmitter's throttle stick needs to be held down and to
       the right for several seconds to arm the motors.
    #. After landing your first response should be to hold the throttle
       down and to the left for several seconds to "Disarm" the motors.
-      \* Disarm condition can be tested by moving the throttle stick up,
-      if the motors do not move it is disarmed.
+      Disarm condition can be tested by moving the throttle stick up,
+      if the motors do not move it is probably disarmed.
    #. Even when disarmed, the throttle stick should always be kept in
       the full down position except when flying.
 
@@ -89,7 +89,7 @@ MultiCopter Safety
 
    #. Get cheaper, more flexible and more breakable plastic propellers.
    #. Some of the super carbon fiber ones can cut better than a Ginsu
-      and while they are almost indestructible - You are not.
+      and while they are almost indestructible - you are not.
 
 #. **Important primary response to a crash, inadequate landing or
    unknown flight controller state.**
@@ -120,7 +120,7 @@ MultiCopter Safety
       use of models. Please, understand the law and the rights of others
       - and fly accordingly.
    #. Most countries have a prominent model aircraft organization. In
-      the USA that is the\ `AMA <http://www.modelaircraft.org/>`__.
+      the USA that is the `AMA <http://www.modelaircraft.org/>`__.
       Review the AMA `safety code <http://www.modelaircraft.org/files/105.pdf>`__. Working with
       the FAA and other government organizations, the AMA has
       established (and continues to update) `rules for UAV's and for FPV flight <http://www.modelaircraft.org/documents.aspx#FPV>`__. If
@@ -196,19 +196,19 @@ MultiCopter Safety
    #. Gusting winds around objects can also worsen the problem.
    #. Radio signal loss can also occur.
    #. If your copter is approaching a potentially interfering object,
-      immediately switch to stabilize mode and land or retrieve the
+      immediately switch to Stabilize mode and land or retrieve the
       copter to your location.
 
 #. **ArduPilot specific safety modes: RTL, FailSafe and GeoFence.**
 
    #. RTL can provide a safe **Return to Launch** if it starts to get
       away from you.
-   #. Set up a\ ** FailSafe** on Radio Fail with an RTL or Descend
+   #. Set up a **FailSafe** on Radio Fail with an RTL or Descend
       response to save your Copter and prevent Injury.
    #. **GeoFence** establishes an automatic flying perimeter that will
       force your copter to stay in a safe proximity.
    #. Do not rely solely on the above safety modes, always be ready to
-      take back control in stabilize and set the copter down.
+      take back control in Stabilize and set the copter down.
    #. Especially do not rely on the above safety modes to perform
       maneuvers or training that you would otherwise consider dangerous.
    #. These modes are a supplement to, not a replacement for sound
@@ -216,7 +216,7 @@ MultiCopter Safety
 
 #. **On your first takeoff after tuning or hardware setup:**
 
-   #. In stabilize mode advance the throttle very slowly until the
+   #. In Stabilize mode advance the throttle very slowly until the
       copter is almost hovering.
    #. If the copter is trying to flip over turn it off and correct the
       problem.

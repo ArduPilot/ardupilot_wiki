@@ -4,18 +4,6 @@
 Setting up SITL using Vagrant
 =============================
 
-.. warning::
-
-   At time of writing there is
-   `issue <https://github.com/ArduPilot/ardupilot/issues/3249>`__ with
-   staring SITL. Instead of the original instructions, you will have to log
-   into vagrant specify the path to **sim_vehicle.sh** as shown.
-
-   ::
-
-       vagrant ssh
-       sudo /vagrant/Tools/autotest/sim_vehicle.sh
-
 This article explains how to set up the :ref:`SITL ArduPilot Simulator <sitl-simulator-software-in-the-loop>` in a virtual machine
 environment using `Vagrant <https://www.vagrantup.com/>`__, and connect
 it to a Ground Control Station running on the host computer. This
@@ -39,6 +27,13 @@ environments running in virtual machines. While it is possible to
 :ref:`manually set up SITL to run in a VM on Windows <setting-up-sitl-on-windows>`
 (or Mac OSX), it is **much easier** (and more reproducible) to use
 Vagrant to do this work for you.
+
+.. note::
+
+   Due to the way submodules are currently handled in the build
+   system, it is not possible to have a repository which can be built
+   on both the host and virtual machines.  A dedicated repository
+   should be used for running the Vagrant virtual machine.
 
 Preconditions
 =============
@@ -139,11 +134,12 @@ Set up the Vagrant and the virtual machine
    ::
 
        git clone https://github.com/ArduPilot/ardupilot.git
+       cd ardupilot
 
 #. Start a vagrant instance
 
    -  Open a command prompt and navigate to any directory in the
-      `/diydrones/ardupilot/Tools/vagrant/ <https://github.com/ArduPilot/ardupilot/blob/master/Tools/vagrant/>`__
+      `/ArduPilot/ardupilot/Tools/vagrant/ <https://github.com/ArduPilot/ardupilot/blob/master/Tools/vagrant/>`__
       source tree.
    -  Run the command:
 
@@ -151,15 +147,27 @@ Set up the Vagrant and the virtual machine
 
           vagrant up
 
-This starts running a VM, based on a *Vagrant configuration file* in the
-source tree. All the files in this directory tree will "magically"
-appear inside the running instance at */vagrant*.
+    This starts running a VM, based on a *Vagrant configuration file*
+    in the source tree. All the files in this directory tree will
+    "magically" appear inside the running instance at */vagrant*.
 
-.. note::
+    .. note::
 
-   The first time you run the vagrant up command it will take some
-   time complete. The command needs to fetch a Vagrant base VM and
-   configure it with the development environment.
+       The first time you run the vagrant up command it will take some
+       time complete. The command needs to fetch a Vagrant base VM and
+       configure it with the development environment.
+
+#. Initialise git submodules
+
+   - The ArduPilot source tree references other repositories as
+     *submodules*.  These must be initialised by working on the
+     virtual machine:
+
+      ::
+
+	 vagrant ssh
+	 git submodule update --init --recursive
+	 exit
 
 Start running SITL
 ==================
@@ -170,7 +178,7 @@ then run the simulator:
 
 ::
 
-    vagrant ssh -c "sim_vehicle.sh -j 2"
+    vagrant ssh -c "sim_vehicle.py -j 2"
 
 Once the simulation is running, you will start getting information from
 the MAVLink prompt about vehicle state. For example:
@@ -188,12 +196,12 @@ the plane or rover using the ``-v`` option:
 
 ::
 
-    vagrant ssh -c "sim_vehicle.sh -j 2 -v Plane"
-    vagrant ssh -c "sim_vehicle.sh -j 2 -v APMrover2"
+    vagrant ssh -c "sim_vehicle.py -j 2 -v ArduPlane"
+    vagrant ssh -c "sim_vehicle.py -j 2 -v APMrover2"
 
 .. tip::
 
-   `sim_vehicle.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
+   `sim_vehicle.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.py>`__
    has many useful build options, ranging from setting the simulation speed
    through to choosing the initial vehicle location. These can be listed by
    calling it with the ``-h`` flag (and some are demonstrated in :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>`).
@@ -232,7 +240,7 @@ simulator as shown:
 ::
 
     vagrant up
-    vagrant ssh -c "sim_vehicle.sh -j 2"
+    vagrant ssh -c "sim_vehicle.py -j 2"
 
 .. note::
 
@@ -251,7 +259,7 @@ the source tree (or pull a new version from Github).
 Next steps
 ==========
 
-To get the most out of SITL we recommend you `Learn MavProxy <http://tridge.github.io/MAVProxy/>`__.
+To get the most out of SITL we recommend you `Learn MavProxy <http://ardupilot.github.io/MAVProxy/>`__.
 
 The topic :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` explains how to use the
 simulator, and covers topics like how to use SITL with Ground Stations

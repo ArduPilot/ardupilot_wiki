@@ -30,6 +30,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Relay Switch <common-relay>   
     UAVCAN ESCs <common-uavcan-escs>
     EPM Gripper (EPM688) <common-electro-permanent-magnet-gripper>
+    EPM Gripper (OpenGrab V3) <common-electro-permanent-magnet-V3>
     PPM Encoder <common-ppm-encoder>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     External LEDs <common-external-leds>
@@ -41,6 +42,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Landing Gear <landing-gear>
     Precision Landing (IRLock) <precision-landing-with-irlock>
     ADS-B Receiver <common-ads-b-receiver>
+    Crop Sprayer <sprayer>
 [/site]
 
 [site wiki="plane"]

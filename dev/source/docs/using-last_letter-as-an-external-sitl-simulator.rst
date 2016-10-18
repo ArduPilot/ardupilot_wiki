@@ -173,7 +173,7 @@ simulation:
 ::
 
     cd ~/ardupilot/ArduPlane
-    sim_vehicle.sh -f last_letter --console --map
+    sim_vehicle.py -f last_letter --console --map
 
 This will run SITL, Plane, MAVProxy and *last_letter* along with *RViz*
 all in one go (the *RViz* visualizer may take several seconds to start).
@@ -183,7 +183,7 @@ nodes between *last_letter* and Plane are raised. If *last_letter*
 communicates with Plane correctly, the MAVProxy console should display
 3D satellite fix and track 10 satellites.
 
-When you start sim_vehicle.sh an xterm will be created which launches
+When you start sim_vehicle.py an xterm will be created which launches
 ArduPilot and last_letter. If you have troubles running the simulator
 then finding this (minimised) xterm and looking at the debug output
 there can be very helpful.

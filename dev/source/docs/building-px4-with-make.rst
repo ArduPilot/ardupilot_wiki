@@ -31,7 +31,7 @@ Build instructions
 #. Clone the ardupilot repository onto your machine:
 
    -  Go to the
-      `GitHub/diydrones/ardupilot <https://github.com/ArduPilot/ardupilot>`__
+      `GitHub/ArduPilot/ardupilot <https://github.com/ArduPilot/ardupilot>`__
       web page and click the **Clone in Desktop** button
    -  Warning: be careful that the directory path is less than about 50
       characters.  For example
@@ -50,7 +50,7 @@ Initialise and update submodules
 
 
 Download and install the *PX4 toolchain* by running the
-`px4_toolchain_installer_v14_win.exe <http://firmware.ardupilot.org/Tools/PX4-tools/px4_toolchain_installer_v14_win.exe>`__
+`pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/PX4-tools/pixhawk_toolchain_installer_latest.exe>`__
 
 Open the *PX4Console* and navigate to the target vehicle directory:
 
@@ -113,7 +113,12 @@ The firmware will be created in the **ArduCopter** directory with the
    `uavcan <https://github.com/ArduPilot/uavcan>`__) as *git submodules*
    when you build the project. If you built the project before the change
    to submodules you may get errors. See :ref:`Git Submodules <git-submodules>` for troubleshooting information.
+   
+   
+.. note::
 
+   You can ignore any mesages regarding PX4Firmware and PX4Nuttx hashes. Those are useful labels for developers but optional and sometimes the build system can't find them on your system. As long as it says "Firmware is in.." followed by a .px4 file then you have a successful build which you can safely load onto your aircraft.
+   
 Hints for speeding up compile time
 ==================================
 

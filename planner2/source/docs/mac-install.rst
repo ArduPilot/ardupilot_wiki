@@ -14,7 +14,15 @@ System Requirements
 Download
 ========
 
-`Download the latest MAC installer file <http://firmware.ardupilot.org/Tools/APMPlanner/latest/apm_planner2_osx.dmg>`__ for your machine (from `firmware.ardupilot.org <http://firmware.ardupilot.org/Tools/APMPlanner/>`__):
+Download the installer .dmg file for your macOS (OSX) machine from 
+
+`firmware.ardupilot.org/Tools/APMPlanner <http://firmware.ardupilot.org/Tools/APMPlanner/>`__
+
+And also check the discussion forum for lastest info
+
+`<http://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
+
+
 
 Install Packages
 ----------------

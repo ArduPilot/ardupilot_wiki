@@ -11,8 +11,7 @@ motor health.
 
 .. note::
 
-   UAVCAN ESCs are not yet readily available for purchase but should
-   appear in 2015
+   UAVCAN ESCs are not yet readily available for purchase but should appear in late 2016
 
 ..  youtube:: https://youtu.be/LnUmYgAINBc
     :width: 100%

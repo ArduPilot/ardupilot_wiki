@@ -135,7 +135,7 @@ Set up PATH to build tools
 
 You need to set up the PATH to the build tools (located in
 **/ardupilot/Tools/autotest**) so that the build system can find
-**sim_vehicle.sh**.
+**sim_vehicle.py**.
 
 Navigate the file system to the home directory and open the **.bashrc**
 file. Add the following line to the end of **.bashrc**:
@@ -156,7 +156,7 @@ Enter the ArduCopter directory and start the SITL simulation:
 ::
 
     cd ~/ardupilot/ArduCopter
-    sim_vehicle.sh -f arducopter_sitl_ros --console
+    sim_vehicle.py -f arducopter_sitl_ros --console
 
 If everything works properly you will see a *Gazebo* window similar to
 the one the below:

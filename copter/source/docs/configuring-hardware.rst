@@ -23,3 +23,4 @@ camera gimbal, antenna tracker etc.
     Accelerometer Calibration <common-accelerometer-calibration>
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
     ESC Calibration <esc-calibration>
+    Configure Motor Range (optional) <set-motor-range>

@@ -8,10 +8,14 @@ Team
 The ArduPilot Dev Team
 ======================
 
-Please check out our list of
+Please check out our lists for **ArduPilot**
 `contributors <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
 and `maintainers <https://github.com/ArduPilot/ardupilot#maintainers>`__
 on GitHub.
+
+**Mission Planner GCS** `contributors <https://github.com/ArduPilot/MissionPlanner/graphs/contributors>`__
+
+**APM Planner 2.0 GCS** `contributors <https://github.com/ArduPilot/apm_planner/graphs/contributors>`__ 
 
 .. note::
 

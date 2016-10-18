@@ -22,6 +22,11 @@ Using a correctly aligned directional antenna *significantly improves*
 the range over which signals can be both sent and received from
 a ground station.
 
+..  youtube:: 8GCqYTDYZaM
+    :width: 100%
+
+Below is `Canberra UAV's tracker used during the 2014 OutBack Challenge <http://www.suasnews.com/outback-challenge-2014/>`__.
+
 .. image:: /images/home_antennatracker.jpg
     :target: _images/home_antennatracker.jpg
 

@@ -21,7 +21,7 @@ a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux.
 
 These instructions explain how to build SITL *natively* on Windows, and
 how to interact with the simulator using
-`MAVProxy <http://tridge.github.io/MAVProxy/>`__ and/or :ref:`Mission Planner <planner:home>`.
+`MAVProxy <http://ardupilot.github.io/MAVProxy/>`__ and/or :ref:`Mission Planner <planner:home>`.
 
 .. figure:: ../images/MAVProxy_Map_GuidedCopter.jpg
    :target: ../_images/MAVProxy_Map_GuidedCopter.jpg
@@ -70,29 +70,35 @@ that allow us to rebuild ArduPilot on Windows.
 #. Select the packages listed below (search using the text in the "Name"
    field):
 
-   +------------+----------------------------------------------------------------------------------+
-   | Name       | Category / Name / Description                                                    |
-   +============+==================================================================================+
-   | autoconf   | Devel \| autoconf: Wrapper scripts for autoconf commands                         |
-   +------------+----------------------------------------------------------------------------------+
-   | automake   | Devel \| automake: Wrapper scripts for automake and aclocal                      |
-   +------------+----------------------------------------------------------------------------------+
-   | ccache     | Devel \| ccache: A C compiler cache for improving recompilation                  |
-   +------------+----------------------------------------------------------------------------------+
-   | g++        | Devel \| gcc-g++ GNU Compiler Collection (C++)                                   |
-   +------------+----------------------------------------------------------------------------------+
-   | git        | Devel \| git: Distributed version control system                                 |
-   +------------+----------------------------------------------------------------------------------+
-   | libtool    | Devel \| libtool: Generic library support script                                 |
-   +------------+----------------------------------------------------------------------------------+
-   | make       | Devel \| make: The GNU version of the 'make' utility                             |
-   +------------+----------------------------------------------------------------------------------+
-   | gawk       | Interpreters \| gawk: GNU awk, a pattern scanning and processing language        |
-   +------------+----------------------------------------------------------------------------------+
-   | libexpat   | Libs \| libexpat-devel: Expat XML parswer library (development files)            |
-   +------------+----------------------------------------------------------------------------------+
-   | procps     | System \| procps: System and process monitoring utilities (required for pkill)   |
-   +------------+----------------------------------------------------------------------------------+
+   +----------------+----------------------------------------------------------------------------------+
+   | Name           | Category / Name / Description                                                    |
+   +================+==================================================================================+
+   | autoconf       | Devel \| autoconf: Wrapper scripts for autoconf commands                         |
+   +----------------+----------------------------------------------------------------------------------+
+   | automake       | Devel \| automake: Wrapper scripts for automake and aclocal                      |
+   +----------------+----------------------------------------------------------------------------------+
+   | ccache         | Devel \| ccache: A C compiler cache for improving recompilation                  |
+   +----------------+----------------------------------------------------------------------------------+
+   | g++            | Devel \| gcc-g++ GNU Compiler Collection (C++)                                   |
+   +----------------+----------------------------------------------------------------------------------+
+   | git            | Devel \| git: Distributed version control system                                 |
+   +----------------+----------------------------------------------------------------------------------+
+   | libtool        | Devel \| libtool: Generic library support script                                 |
+   +----------------+----------------------------------------------------------------------------------+
+   | make           | Devel \| make: The GNU version of the 'make' utility                             |
+   +----------------+----------------------------------------------------------------------------------+
+   | gawk           | Interpreters \| gawk: GNU awk, a pattern scanning and processing language        |
+   +----------------+----------------------------------------------------------------------------------+
+   | libexpat       | Libs \| libexpat-devel: Expat XML parser library (development files)             |
+   +----------------+----------------------------------------------------------------------------------+
+   | libxml2-devel  | Libs \| libxml2-devel: Gnome XML library (development)                           |
+   +----------------+----------------------------------------------------------------------------------+
+   | libxslt-devel  | Libs \| libxslt-devel: XML template library (development files)                  |
+   +----------------+----------------------------------------------------------------------------------+
+   | python-devel   | Python \| python-devel: Ptyhon language interpreter                              |
+   +----------------+----------------------------------------------------------------------------------+
+   | procps         | System \| procps: System and process monitoring utilities (required for pkill)   |
+   +----------------+----------------------------------------------------------------------------------+
 
 #. When all the packages are selected, click through the rest of the
    prompts and accept all other default options (including
@@ -126,9 +132,19 @@ The file will be loaded next time you open the *Cygwin terminal*.
 
 .. tip::
 
-   Cygwin will not be able to find **sim_vehicle.sh** if you omit
+   Cygwin will not be able to find **sim_vehicle.py** if you omit
    this step. This will be reported as a "command not found" error when you
-   try and build: ``sim_vehicle.sh -j4 --map``\ 
+   try and build: ``sim_vehicle.py -j4 --map``
+
+Install required Python packages
+--------------------------------
+
+::
+
+   python -m ensurepip --user
+   python -m pip install --user future
+   python -m pip install --user lxml
+
 
 Download and make ArduPilot
 ---------------------------
@@ -138,6 +154,9 @@ Open (reopen) *Cygwin Terminal* and clone the Github `ArduPilot repository: <htt
 ::
 
     git clone git://github.com/ArduPilot/ardupilot.git
+    cd ardupilot
+    git submodule init
+    git submodule update
 
 In the terminal navigate to the *ArduCopter* directory and run **make**
 as shown:
@@ -182,7 +201,7 @@ same way as described for Copter in the next section (:ref:`Running SITL and MAV
 ::
 
     cd ~/ardupilot/ArduPlane
-    sim_vehicle.sh -j4 --map
+    sim_vehicle.py -j4 --map
 
 FlightGear 3D View (Optional)
 -----------------------------
@@ -231,7 +250,7 @@ The main steps are:
 
    ::
 
-       sim_vehicle.sh -j4 -L KSFO 
+       sim_vehicle.py -j4 -L KSFO
 
    .. note::
 
@@ -266,19 +285,19 @@ Running SITL and MAVProxy
 build and start SITL for a 4-core CPU and then launch a *MAVProxy map*:
 
 #. Navigate to the target vehicle directory (in this case Copter) in the
-   *Cygwin Terminal* and call ``sim_vehicle.sh`` to start SITL:
+   *Cygwin Terminal* and call ``sim_vehicle.py`` to start SITL:
 
    ::
 
        cd ~/ardupilot/ArduCopter
-       sim_vehicle.sh -j4 --map
+       sim_vehicle.py -j4 --map
 
    If you get a windows security alert for the the firewall, allow the
    connection.
 
    .. tip::
 
-      `sim_vehicle.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.sh>`__
+      `sim_vehicle.py <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/sim_vehicle.py>`__
       has many useful build options, ranging from setting the simulation
       speed through to choosing the initial vehicle location. These can be
       listed by calling it with the ``-h`` flag (and some are demonstrated
@@ -491,7 +510,7 @@ SITL and MAVProxy can do a whole lot more than shown here, including
 manually guiding the vehicle, and creating and running missions. To find
 out more:
 
--  Read the `MAVProxy documentation <http://tridge.github.io/MAVProxy/>`__.
+-  Read the `MAVProxy documentation <http://ardupilot.github.io/MAVProxy/>`__.
 -  See :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` for guidance on flying
    and testing with SITL.
 

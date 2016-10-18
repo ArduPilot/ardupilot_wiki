@@ -7,19 +7,17 @@ eCalc Motor and Prop Efficiency Guide
 A really nice guide from user Dave Smith on how to use eCalc to help you
 get the best motor, prop and battery combination for your use.
 
-Go to this ECalc site here:
-**`PropCalc <http://www.ecalc.ch/motorcalc.php?ecalc>`__**
+Go to the eCalc site here:
+`PropCalc <http://www.ecalc.ch/motorcalc.php?ecalc>`__
 
-*|image0|*
-
-*Disclaimer: I have been at the drone business about two months (since
+*Disclaimer: I have been in the drone business about two months (since
 Christmas). I have noticed that there is a lack of How-To's, unlike
 other RC forums. How-To guides are nice when you want to do a simple
-search and get results with having to weed through pages and pages of
+search and get results without having to weed through pages and pages of
 discussions. I hope to keep blogging my progress to help other noobs.*
 
 Setting up my first drone, I did a search for "motor and prop
-efficiency" and came up with a couple references
+efficiency" and came up with a couple of references
 to \ `eCalc <http://www.ecalc.ch/>`__. It is an online calculator that
 calculates flight times for all sorts of flying drones. I will use the
 example of my latest build, a Bixler 1.1. eCalc can be pretty
@@ -29,7 +27,7 @@ Weight, Field Elevation and ESC Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, you need to plug in your motor cooling, field elevation, and
-ambient temperature. Notice that when you put int the ESC, you need to
+ambient temperature. Notice that when you put in the ESC, you need to
 put in the \ **surge or burst** rating:
 
 .. image:: http://api.ning.com/files/gWhc*8EYmk*056RibQYQMXEviNvqyB5ZGnpR0Z1zmqYcI0BmrTMtZCi527vap*sDBt6sPcmcGH2DTQk5k2eHLOfSgKr4T16A/eCalc1.png

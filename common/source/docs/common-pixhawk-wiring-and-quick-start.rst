@@ -9,9 +9,9 @@ and connect its most important peripherals.
 
 .. warning::
 
-   Do not connect any servos to the direct PWM outputs of your
+   Do not connect any servos or other devices to the PWM outputs of your
    receiver. The RCIN port on the Pixhawk is designed for low power devices
-   only, and a servo may draw a lot of current when moving rapidly. If you
+   only, and a servo or relay may draw a lot of current from the receiver. If you
    connect a servo directly onto your receiver while the receiver is
    powered from the RCIN port of your Pixhawk you may damage your
    Pixhawk.

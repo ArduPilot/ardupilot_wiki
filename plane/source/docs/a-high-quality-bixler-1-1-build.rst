@@ -12,7 +12,7 @@ This article describes a well planned Bixler Build (by Dave Smith).
 .. tip::
 
    This wiki page is a work in progress and will be completed as the
-   information becomes available (Ed:)
+   information becomes available.
 
 Overview
 ========

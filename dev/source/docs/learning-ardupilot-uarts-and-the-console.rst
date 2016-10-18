@@ -41,16 +41,16 @@ Debug console
 
 In addition to these 5 UARTs there is an additional debug console
 available on some platforms. You can tell if the platform you are on has
-a debug console by checking for the HAVE_OS_POSIX_IO macro, like
+a debug console by checking for the HAL_OS_POSIX_IO macro, like
 this:
 
 ::
 
-    #if HAVE_OS_POSIX_IO
+    #if HAL_OS_POSIX_IO
       ::printf("hello console\n");
     #endif
 
-If you have a board that does have HAVE_OS_POSIX_IO set (check that
+If you have a board that does have HAL_OS_POSIX_IO set (check that
 in
 `AP_HAL/AP_HAL_Boards.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/AP_HAL_Boards.h>`__)
 then try adding some ::printf() and other stdio functions to the

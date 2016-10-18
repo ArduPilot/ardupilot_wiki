@@ -7,18 +7,8 @@ GPS/Compass (landing page)
 Copter/Plane/Rover support integration with GPS, Compass and other
 positioning technologies:
 
-.. figure:: ../../../images/GPS_TopAndSide.jpg
-   :target: ../_images/GPS_TopAndSide.jpg
-
-   3DR UBlox GPS + Compass Module
-
-.. figure:: ../../../images/Zubax-gnss-top-bottom.jpg
-   :target: ../_images/Zubax-gnss-top-bottom.jpg
-
-   Zubax GNSS: GPS, Compass andBarometer
-
-.. figure:: ../../../images/Reach.jpg
-   :target: ../_images/Reach.jpg
+.. figure:: ../../../images/gps-landing-page.jpg
+   :target: ../_images/gps-landing-page.jpg
 
    Reach RTK Receiver
 
@@ -28,5 +18,7 @@ positioning technologies:
     3DR UBlox GPS + Compass <common-installing-3dr-ublox-gps-compass-module>
     Zubax GNSS: GPS, Compass, Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
+    Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
+    Trimble BD930 <common-gps-trimble>
     GPS – How it Works <common-gps-how-it-works>
 

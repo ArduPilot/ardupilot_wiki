@@ -142,13 +142,16 @@ Download and compile ArduCopter
    ::
 
        git clone https://github.com/ArduPilot/ardupilot.git
+       cd ardupilot
+       git submodule init
+       git submodule update
 
 #. Building the flight control firmware is nearly identical for
    :ref:`building for the Pixhawk <building-px4-for-linux-with-make>`
    except the ``make`` command is:
 #. ::
 
-       cd ardupilot/ArduCopter
+       cd ArduCopter
        make bebop
 
 #. Strip the binary to reduce the memory footprint:

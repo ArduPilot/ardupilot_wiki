@@ -285,8 +285,8 @@ will be a good starting point:
 Mugin
 =====
 
-.. image:: http://photos.tridgell.net/d/55220-2/PHOTO_20130309_212952.jpg
-    :target:  http://photos.tridgell.net/d/55220-2/PHOTO_20130309_212952.jpg
+.. image:: https://c5.staticflickr.com/9/8036/7930561924_7392ff0913_z.jpg
+    :target:  https://c5.staticflickr.com/9/8036/7930561924_7392ff0913_z.jpg
 
 The Mugin is a large, fast aircraft. Make sure you have a long enough
 runway for landing!

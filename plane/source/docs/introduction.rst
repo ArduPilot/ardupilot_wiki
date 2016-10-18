@@ -9,7 +9,7 @@ users. It should be easy to run through, but there is also a nice path
 for a leisurely walk.
 
 Please do not be tempted to skip over steps and rush into flight. This
-is robotics and aviation combined--both of which are quite complex on
+is robotics and aviation combined -- both of which are quite complex on
 their own. Take some time to become familiar with this user manual.
 Follow the steps patiently, and you will have your robot safely up in
 the air.
@@ -30,25 +30,19 @@ the air.
    piloting and rules of the air, weather and location considerations,
    pre-flight checks, emergency procedures, operation examples
 
-**Warnings and Notices:**
+.. warning::
 
-[column grid="2" span="1"]
+   **The topic of safety should be foremost on your mind.**
 
-**The topic of safety should be foremost on your mind.**
+   **Autonomous robots, flying machines, high-energy power systems driving
+   rotating blades -- you are in charge of these potential hazards.**
 
-**Autonomous robots, flying machines, high-energy power systems driving
-rotating blades -- you are in charge of these potential hazards.**
+.. note::
 
-[/column]
-
-[column grid="2" span="1"]
-
-*APM is designed to easily integrate with most standard RC aircraft,
-from simple high-wing trainers to high-speed swept wing fighters and
-flying wings. If you have something out of the ordinary please assume
-that a bit more tuning will be required to get things dialed in.*
-
-[/column]
+   *APM is designed to easily integrate with most standard RC aircraft,
+   from simple high-wing trainers to high-speed swept wing fighters and
+   flying wings. If you have something out of the ordinary please assume
+   that a bit more tuning will be required to get things dialed in.*
 
 All of us involved with this project care a great deal about the privacy
 and safety of those whom we share this planet with. Please be a good

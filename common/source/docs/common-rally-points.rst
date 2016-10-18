@@ -60,8 +60,8 @@ The following steps are for specifying Rally Points in Mission Planner:
 The following should be considered when using Rally Points:
 
 #. If using a :ref:`geofence <plane:geofencing>`:
-   ensure the Rally Points you intend to use at your event are inside
-   the geofence.
+   its HIGHLY recommended the Rally Points you intend to use at your event
+   are inside the geofence.
 #. Make sure Rally Point altitudes are high enough to clear terrain and
    buildings.
 #. Because of the limited flash memory size on the APM hardware the

@@ -4,29 +4,23 @@
 LIDAR-Lite Rangefinder
 ======================
 
-The `PulsedLight LIDAR-Lite <http://pulsedlight3d.com/>`__ rangefinder
+The `Garmin / PulsedLight LIDAR-Lite <https://support.garmin.com/support/manuals/manuals.htm?partNo=010-01722-00>`__ rangefinder
 is a low-cost optical distance measurement solution with a 40m range
 under most operating conditions, low power consumption, and small form
-factor.  This sensor can be purchased from `these distributors <http://pulsedlight3d.com/pages/distributors.html>`__ and
-then technical info can be found
-`here <http://pulsedlight3d.com/products/lidar-lite-v2-blue-label.html>`__.
+factor.  This sensor can be purchased from `Sparkfun <https://www.sparkfun.com/products/14032>`__ and `these distributors <http://pulsedlight3d.com/pages/distributors.html>`__ and
+then technical info can be found `here <https://support.garmin.com/support/manuals/manuals.htm?partNo=010-01722-00>`__.
 
 .. note::
 
-   This rangefinder is only supported on the Pixhawk and for the
-   following vehicle platform versions (or later): Copter 3.3, Plane 3.3,
-   and Rover 2.49. ArduPilot transparently supports both LIDAR-Lite v1 and
-   v2.
+   This rangefinder is only supported on the following vehicle platform versions (or later): Copter 3.3, Plane 3.3, and Rover 2.49. ArduPilot transparently supports both LIDAR-Lite v1 and v2.
 
 ..  youtube:: 3I06AOwIQVY
     :width: 100%
 
-Problems with the Lidar-Lite
-============================
+Problems with the Lidar-Lite v2
+===============================
 
-A number of problems have been found with the Lidar-Lite. Attempts to
-resolve these issues with the developers of the product have not been
-entirely successful. These notes serve as a warning to potential users.
+A number of problems have been found with the Lidar-Lite v2. Attempts to resolve these issues with the developers of the product have not been entirely successful. These notes serve as a warning to potential users.  It is not yet clear if these issues have been resolved in v3.
 
 The problems are:
 

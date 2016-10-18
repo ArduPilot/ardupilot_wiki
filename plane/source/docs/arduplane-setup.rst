@@ -16,3 +16,4 @@ give you a taste:
     Loading Firmware <common-loading-firmware-onto-pixhawk>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuration <plane-configuration-landing-page>
+    Airframe Setup Guides <airframe-guides>

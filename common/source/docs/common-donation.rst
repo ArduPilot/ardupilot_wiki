@@ -7,8 +7,10 @@ Donating to ArduPilot project
 Donating to our operation is made easy. If you are using ArduPilot system and want to donate for the good
 cause, there are several ways of doing that:
 
-- Direct PayPal donation
-- Buying supporting merchandise from official stores
+- Direct `PayPal Donation <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BBF28AFAD58B2>`__
+- By Credit Card using `ClickAndPledge <https://co.clickandpledge.com/advanced/default.aspx?wid=34115>`__.  Be sure to enter the amount in the ArduPilot section, other sections are for other `SPI projects <http://www.spi-inc.org/>`__.  Other methods can be found on the `SPI donations page <http://www.spi-inc.org/donations/>`__.
+- Buying supporting merchandise from :ref:`official stores <stores>`
+- :ref:`Partner Donations <common_sponsors>` (for Companies)
  
 PayPal Donations 
 ================
@@ -35,8 +37,8 @@ All profits from merchandise items will be used directly at ArduPilot organizati
 
 Here is a list of currently available merchandise products (at end of Jun 2016). 
 
-.. image:: ../images/jDrones_ArduPilot_merchandize-keyring_Front_500px.jpg
-    :target: ../_images/jDrones_ArduPilot_merchandize-keyring_Front_500px.jpg
+.. image:: ../../../images/jDrones_ArduPilot_merchandize-keyring_Front_500px.jpg
+    :target: ../../_images/jDrones_ArduPilot_merchandize-keyring_Front_500px.jpg
 
 - ArduPilot keyring: "Remove Pilot..." `buy here <http://store.jdrones.com/product_p/merc-apkey01.htm>`__
 

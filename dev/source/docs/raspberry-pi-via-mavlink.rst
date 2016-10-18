@@ -163,6 +163,11 @@ RPi type:
 
     sudo -s
     mavproxy.py --master=/dev/ttyAMA0 --baudrate 57600 --aircraft MyCopter
+    
+.. note::
+
+    On newer versions of Raspberry Pi 3 the uart serial connection may be disable by default. In order to enable serial
+    connection on the Raspberry Pi edit **/boot/config.txt** and ``set enable_uart=1``.
 
 Once MAVProxy has started you should be able to type in the following
 command to display the ``ARMING_CHECK`` parameters value
@@ -228,7 +233,7 @@ automatically started you can log into the RPi and type:
 
     sudo screen -x
 
-To learn more about using MAVProxy please read the `MAVProxy documentation <http://tridge.github.io/MAVProxy/>`__.
+To learn more about using MAVProxy please read the `MAVProxy documentation <http://ardupilot.github.io/MAVProxy/>`__.
 
 It is also worth noting that MAVProxy can do a lot more than just
 provide access to your Pixhawk. By writing python extension modules for

@@ -8,7 +8,7 @@
 
 .. tip::
 
-   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
+   ArduPilot organization is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
    
 .. image:: ../../images/home_ardupilot.jpg
     :target: _images/home_ardupilot.jpg
@@ -84,13 +84,29 @@ ArduPilot.
 Community:
 ==========
 
-`Community <http://discuss.ardupilot.org/>`__- This is what really sets
-ArduPilot apart from the closed-source offerings in the market. An area for 
-open discourse on the ArduPilot projects direction between developers 
-and its customers.
+Community is what really sets ArduPilot apart from the closed-source offerings in the market. An area for open discourse on the ArduPilot projects direction between developers and its customers.  Here are some of the places you can find ardupilot users and developers:
 
-`DIYDRONES <http://diydrones.com/>`__- ArduPilot previous community home.
+`Discussion Forums: <http://discuss.ardupilot.org/>`__
 
+.. image:: ../../images/ArduPilotDiscuss.png
+    :target: http://discuss.ardupilot.org/
+    :width: 640px
+
+`Facebook ArduPilot group <https://www.facebook.com/groups/ArduPilot.org/>`__
+
+.. image:: ../../images/main/FaceBookArduPilot.png
+    :target: https://www.facebook.com/groups/ArduPilot.org/
+
+Developer Community:
+====================
+
+`Developers Portal <http://ardupilot.org/dev/index.html>`__
+
+All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the developer portal. ie. `meeting times <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__, `Gitter Chat <https://gitter.im/ArduPilot/ardupilot/>`__ and `email groups <https://groups.google.com/forum/#!forum/drones-discuss>`__
+
+
+History:
+========
 A constantly evolving repository of knowledge and innovation. The DIY
 Drones community provided a home and now still provides inspiration for ArduPilot.
 A comprehensive list of features that are continually born from the
@@ -98,7 +114,7 @@ needs of the community.
 
 .. image:: ../../images/diydrones.jpg
     :target: http://diydrones.com
-
+    :width: 360px
 
 --------------
 
@@ -150,22 +166,15 @@ Features:
 --------------
 
 
-.. image:: ../../images/dronecode-logo.jpg
-    :target:  http://www.dronecode.org/
-
-
-.. note::
-
-    ArduPilot, :ref:`Mission Planner <planner:home>`, :ref:`APM Planner <planner2:home>` are all
-    `Dronecode <https://www.dronecode.org/>`__ -supported projects.
-
-
 .. toctree::
    :hidden:
 
+   News <http://www.ardupilot.org>
+   Community <http://discuss.ardupilot.org>
    Copter <http://ardupilot.org/copter/index.html>
    Plane <http://ardupilot.org/plane/index.html>
    Rover <http://ardupilot.org/rover/index.html>
+   Sub <http://ardusub.com/>
    Mission Planner <http://ardupilot.org/planner/index.html>
    APM Planner 2 <http://ardupilot.org/planner2/index.html>
    AntennaTracker <http://ardupilot.org/antennatracker/index.html>

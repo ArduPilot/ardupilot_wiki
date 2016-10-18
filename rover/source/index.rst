@@ -35,7 +35,7 @@ Table of Contents
     Introduction <docs/gettit>
     First Time Setup <docs/apmrover-setup>
     Mission Planning <docs/common-mission-planning>
-    Mission Analysis <docs/common-mission-analysis>
+    Logs <docs/common-logs>
     Advanced Configuration <docs/common-advanced-configuration>
     Optional Hardware <docs/common-optional-hardware>
     Autopilot Hardware Options <docs/common-autopilots>

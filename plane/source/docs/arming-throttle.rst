@@ -13,8 +13,8 @@ someone's hand is near a propeller.
 .. warning::
 
    This feature in no way removes the need to respect the
-   prop! When the plane is powered, ALWAYS avoid placing hands into the
-   same plane that the propeller spins, even when the throttle is
+   prop! When the plane is powered, ALWAYS avoid placing hands in
+   the vicinity of the propellor, even when the throttle is
    disarmed. If all is not well with the autopilot electronics or software
    there is always a slight possibility that signal could unintentionally
    reach the motor. Even though this is unlikely (and made even less likely

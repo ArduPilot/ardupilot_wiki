@@ -157,9 +157,7 @@ Getting more info
 ~~~~~~~~~~~~~~~~~
 
 -  Continue to the :ref:`Introduction section of this wiki. <introduction>`
--  Visit `DIYDrones.com <http://diydrones.com/>`__ a large community of
-   UAV enthusiast largely clustered around the ArduPilot family of autopilots.
--  Use the `APM Forums <http://ardupilot.com/forum/viewforum.php?f=3>`__
+-  Use the `ArduPilot Discuss Server Forums <http://discuss.ardupilot.com/c/arducopter>`__
    to ask support questions and advice.
 -  Read or join the `drones-discuss email list <https://groups.google.com/forum/#!forum/drones-discuss>`__ once
    you're ready to get involved with the development of the software platform.
@@ -174,7 +172,7 @@ Getting more info
    First Flight <docs/flying-arducopter>
    Advanced Configuration <docs/common-advanced-configuration>
    Mission Planning <docs/common-mission-planning>
-   Mission Analysis <docs/common-mission-analysis>
+   Logs <docs/common-logs>
    Optional Hardware <docs/common-optional-hardware>
    Traditional Helicopters <docs/traditional-helicopters>
    Tricopter <docs/tricopter>

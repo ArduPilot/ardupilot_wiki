@@ -5,7 +5,7 @@ Antenna Tracking
 ================
 
 *Antenna Trackers* are systems that track your vehicle's location, and
-use this information to correctly align a direction antenna. This
+use this information to correctly align a directional antenna. This
 approach significantly improves the range over which signals can be both
 sent and received from the ground station.
 
@@ -17,7 +17,7 @@ of any particular GCS.
 
 :ref:`AntennaTracker <antennatracker:home>`
 
--  The AntennaTracker firmware turns a ArduPilot-supported board
+-  The AntennaTracker firmware turns an ArduPilot-supported board
    (Pixhawk, APM2, etc) into the controller for an antenna tracker.
 -  The board calculates the required antenna direction and can drive the
    antenna's servos directly.

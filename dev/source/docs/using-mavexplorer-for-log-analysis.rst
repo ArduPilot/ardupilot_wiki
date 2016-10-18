@@ -219,7 +219,7 @@ favourite text editor.
 
 You can see an example of the XML format here:
 
-https://raw.githubusercontent.com/Dronecode/MAVProxy/master/MAVProxy/tools/graphs/mavgraphs.xml
+https://raw.githubusercontent.com/ArduPilot/MAVProxy/master/MAVProxy/tools/graphs/mavgraphs.xml
 
 Create an XML graph file
 
@@ -275,8 +275,8 @@ One of the main reasons for the XML files in MAVExplorer is to allow
 community members to contribute new graphs that are useful in log
 analysis. If you create a set of useful graphs please send them by email
 to andrew-mavexplorer@tridgell.net or open a pull request against the
-`MAVProxy git repository <https://github.com/Dronecode/MAVProxy>`__.
+`MAVProxy git repository <https://github.com/ArduPilot/MAVProxy>`__.
 
 For a pull request with graphs, please add the graphs to the
-`MAVProxy/tools/graphs <https://github.com/Dronecode/MAVProxy/tree/master/MAVProxy/tools/graphs>`__
+`MAVProxy/tools/graphs <https://github.com/ArduPilot/MAVProxy/tree/master/MAVProxy/tools/graphs>`__
 directory

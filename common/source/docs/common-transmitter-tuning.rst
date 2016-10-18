@@ -227,7 +227,7 @@ should follow this process:
   selector switch, then move it to the mid-point to activate it, and
   then lower the tuning knob all the way down. That will move the
   tuning value to half of the value that just stopped the
-  oscillation. Moving to half of that value will give you enough
+  oscillation (assuming a TUNE_RANGE of 2). Moving to half of that value will give you enough
   margin in your tune to ensure your vehicle can handle a wide range
   of flight conditions.
 

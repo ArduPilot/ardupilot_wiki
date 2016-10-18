@@ -1,8 +1,8 @@
 .. _home:
 
-==========================
-APM Mission Planner 2 Home
-==========================
+==================
+APM Planner 2 Home
+==================
 
 .. tip::
 
@@ -131,8 +131,8 @@ Quick Start Guide
 
 #. Plan a mission with APM Planner.
 
-**Need further help?** Visit the `APM Planner 2.0 <http://ardupilot.com/forum/viewforum.php?f=82>`__ forums on
-`ardupilot.com <http://ardupilot.com/forum/>`__
+**Need further help?** Visit the `APM Planner 2.0 <http://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__ APM Planner 2.0 forums on
+`discuss.ardupilot.org <http://discuss.ardupilot.org>`__
 
 
 
