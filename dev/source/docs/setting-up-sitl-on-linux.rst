@@ -36,8 +36,7 @@ terminal and run:
 
     git clone git://github.com/ArduPilot/ardupilot.git
     cd ardupilot
-    git submodule init
-    git submodule update
+    git submodule update --init --recursive
 
 JSBSim (Plane only)
 -------------------
@@ -74,7 +73,7 @@ this:
 
     sudo apt-get install python-matplotlib python-serial python-wxgtk2.8 python-wxtools python-lxml
     sudo apt-get install python-scipy python-opencv ccache gawk git python-pip python-pexpect
-    sudo pip install pymavlink MAVProxy
+    sudo pip install future pymavlink MAVProxy
 
 Or if you are on a RPM based system (such as Fedora) run this:
 
