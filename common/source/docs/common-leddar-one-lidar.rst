@@ -11,7 +11,7 @@ The `Leddar One Lidar <http://leddartech.com/modules/leddarone/>`__ is a light w
 
 .. note::
 
-   Support for LeddarOne has not yet been released officially for Plane, Rover or Copter.  It should appear in Copter-3.5 (or higher).
+   Support for LeddarOne is available in Copter-3.4 (or higher), Plane-3.8 (or higher), Rover-3.1 (or higher).
 
 Connecting to the Pixhawk
 =========================
