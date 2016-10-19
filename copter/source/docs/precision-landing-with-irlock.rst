@@ -4,19 +4,14 @@
 Precision Landing with IR-LOCK
 ==============================
 
-This article shows how to enable precision landing on Copter using the
-IR-LOCK sensor.
-
-.. note::
-
-   This feature is (will be) supported from Copter 3.4
-
 Overview
 ========
 
-Copter 3.4 (not yet released) supports precision landing using the
-IR-LOCK sensor. Using this system, it is possible to land within 30cm of
-an IR beacon that is moving at less than 1m/s.
+Copter 3.4 supports precision landing using the IR-LOCK sensor. Using this system, it is possible to land within 30cm of an IR beacon that is moving at less than 1m/s.
+
+.. note::
+
+   This feature is supported in Copter 3.4 (and higher).  As of Oct 2016, Copter-3.4 can be loaded using the Mission Planner's Install Firmware screen's "Beta firmwares" link.
 
 ..  youtube:: rGFO73ZxADY
     :width: 100%
@@ -52,18 +47,6 @@ and sensor output can be retrieved in Python.
    :target: ../_images/precision_landing_connect_irlock_to_pixhawk.jpg
 
    IRLock sensor/Pixhawk Wiring
-
-Building the firmware
-=====================
-
-Since precision landing is not yet a default feature, you must use a
-`pre-compiled firmware <https://irlock.readme.io/docs/ac33-precision-landing-firmware>`__
-provided by IR-LOCK, or the :ref:`firmware must be re-built <dev:building-the-code>` with the
-precision landing feature enabled. If you are re-building, make sure
-that \ `this line <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/APM_Config.h#L41>`__
-in APM_Config.h is uncommented to look like below.
-
-``#define PRECISION_LANDING ENABLED``
 
 Mounting to the frame
 =====================
