@@ -22,6 +22,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Telemetry <common-telemetry-landingpage>
     Power Modules <common-powermodule-landingpage>
     Rangefinders <common-rangefinder-landingpage>
+[site wiki="copter"]
+    360 Lidar for Object Avoidance <common-lightware-sf40c-objectavoidance>
+[/site]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
     Cameras & Gimbals <common-cameras-and-gimbals>
     OSD for FPV <common-osd-boards-on-screen-display>
