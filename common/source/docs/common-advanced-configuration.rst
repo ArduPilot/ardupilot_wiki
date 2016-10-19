@@ -17,6 +17,7 @@ tuning options for the vehicle.
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
     Motor Thrust Scaling <motor-thrust-scaling>
     Ground Effect Compensation <ground-effect-compensation>
+    Boat mode <boat-mode>
     Telemetry Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
     RCMAP <common-rcmap>
     Full Parameter List <parameters>
