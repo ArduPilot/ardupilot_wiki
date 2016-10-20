@@ -36,7 +36,8 @@ Closed hardware
 [/site]
     Intel Aero <common-intel-aero-overview>
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
-
+    Parrot C.H.U.C.K <common-CHUCK-overview>
+    
 Discontinued boards
 ===================
 
