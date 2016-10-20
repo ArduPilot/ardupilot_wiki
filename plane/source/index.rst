@@ -30,8 +30,10 @@ research use.
 .. note::
 
     This is the platform that won the prestigious 
-    `Outback Challenge UAV competition <http://diydrones.com/profiles/blogs/canberrauav-arduplane-wins-outback-challenge>`__ 
-    in both 2012 and 2014 as well as the \
+    `Outback Challenge UAV competition <http://uavchallenge.org>`__ 
+    in `2012 <http://diydrones.com/profiles/blogs/canberrauav-outback-challenge-2012-debrief>`__,
+    `2014 <http://diydrones.com/profiles/blogs/canberrauav-outback-challenge-2014-debrief>`__
+    and `2016 <http://discuss.ardupilot.org/t/canberrauav-outback-challenge-2016-debrief>`__ as well as the \
     `2014 Sparkfun Autonomous Vehicle Competition <https://avc.sparkfun.com/2014/scores#Aerial:Fixed>`__.
 
 
