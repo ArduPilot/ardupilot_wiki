@@ -391,6 +391,36 @@ is equivalent to COM16:
 
 .. _using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations:
 
+
+Changing the speed of the simulation
+====================================
+
+Most of the simulator backends support changing the speed while
+running. Just set the SIM_SPEEDUP parameter as needed. A value of 1
+means normal wall-clock time. A value of 5 means 5x realtime. A value
+of 0.1 means 1/10th of real time.
+
+Testing Compass Calibration
+===========================
+
+A quick way to test compass calibration in SITL is with the
+"calibration" vehicle model. To use this with plane do this:
+
+   sim_vehicle.py -j4 -D -f plane --model calibration --console --map
+
+then do:
+
+   servo set 5 1250
+
+This will start the vehicle moving through a "compass dance". You can
+start a compass calibration to test changes to the calibrator
+code. Using this in combination with the SIM_SPEEDUP parameter can be useful.
+
+The calibration vehicle module has a lot of other features too. See
+`http://guludo.me/posts/2016/05/27/compass-calibration-progress-with-geodesic-sections-in-ardupilot/
+<http://guludo.me/posts/2016/05/27/compass-calibration-progress-with-geodesic-sections-in-ardupilot/>`__
+for details.
+
 Connecting other/additional ground stations
 ===========================================
 
