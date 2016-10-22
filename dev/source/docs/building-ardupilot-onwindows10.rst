@@ -1,14 +1,13 @@
 .. _building-ardupilot-onwindows10:
 
-==============================================================
-Building ArduPilot on Windows10 with Bash on Ubuntu on Windows
-==============================================================
+=======================================
+Building ArduPilot on Windows with Bash
+=======================================
 
-   .. image:: ../images/Windows10_Ubuntu_0.jpg
-       :target: ../_images/Windows10_Ubuntu_0.jpg
+.. image:: ../images/Windows10_Ubuntu_0.jpg
+    :target: ../_images/Windows10_Ubuntu_0.jpg
 
-This article shows how to build ArduPilot on Windows10,
-using the new "Bash on Ubuntu on Windows".
+This article shows how to build ArduPilot on Windows10, using the new "Bash on Ubuntu on Windows".
 
 Since Windows 10 has Ubuntu as his new partner, it is possible to compile Ardupilot (apm1/apm2, Pixhawk/PX4, SITL...) in Windows without adding any strange thing: just install "Bash on Ubuntu on Windows" and follow next tutorial.
    
@@ -33,110 +32,176 @@ Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
 ===============
 
 #. First, you have to insert your local host to the /etc/hosts file:
-   sudo nano /etc/hosts
+
+   .. code-block:: python
+   
+       sudo nano /etc/hosts
 
 #. Insert this below first line:
-   127.0.0.1 "hostname"
-         (where "hostname" is your PC name)
+
+   .. code-block:: python
+   
+       127.0.0.1 "hostname"
+         
+   (where "hostname" is your PC name)
 
 #. Then, take root control over the bash:
-   sudo passwd root
-   su root
+
+   .. code-block:: python
+   
+       sudo passwd root
+       su root
 
 #. Back to main directory:
-   cd
+
+   .. code-block:: python
+   
+       cd
 
 #. Install git:
-   sudo apt-get install git
+
+   .. code-block:: python
+   
+       sudo apt-get install git
 
 #. Install Arduino Core (for APM1/APM2 support):
-   sudo apt-get install make gawk arduino-core
+
+   .. code-block:: python
+   
+       sudo apt-get install make gawk arduino-core
 
 #. Make a new folder for future reference:
-   mkdir GitHub
-   cd GitHub
+
+   .. code-block:: python
+   
+       mkdir GitHub
+       cd GitHub
 
 #. Clone ardupilot git:
-   git clone https://github.com/ArduPilot/ardupilot.git
+
+   .. code-block:: python
+   
+       git clone https://github.com/ArduPilot/ardupilot.git
 
 #. Run the install-prereqs-ubuntu.sh script:
-   ./ardupilot/Tools/scripts/install-prereqs-ubuntu.sh
+
+   .. code-block:: python
+   
+       ./ardupilot/Tools/scripts/install-prereqs-ubuntu.sh
 
    .. image:: ../images/Windows10_Ubuntu_1.jpg
        :target: ../_images/Windows10_Ubuntu_1.jpg
        
 #. At this point, we need to install some extra tools, because for now, Ubuntu bash on Windows only supports native x64 programs:
-   cd
 
-   sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
-   sudo apt-get update
-   sudo apt-get install cmake
+   .. code-block:: python
    
-   sudo add-apt-repository ppa:ubuntu-toolchain-r/test 
-   sudo apt-get update
-   sudo apt-get install g++-4.9
-   
-   sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
-   sudo apt-get update
-   sudo apt-get install gcc-arm-none-eabi=4.9.3.2015q3-1trusty1
-   
-   sudo apt-get update
-   sudo apt-get upgrade
+       cd
+       
+       sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
+       sudo apt-get update
+       sudo apt-get install cmake
+       
+       sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+       sudo apt-get update
+       sudo apt-get install g++-4.9
+       
+       sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
+       sudo apt-get update
+       sudo apt-get install gcc-arm-none-eabi=4.9.3.2015q3-1trusty1
+       
+       sudo apt-get update
+       sudo apt-get upgrade
 
-#. Now you have a nice compiler under Windows 10 thanks to Ubuntu.
-   Next step is to prove it!
+#. Now you have a nice compiler under Windows 10 thanks to Ubuntu.Next step is to prove it!
 
 Compile ArduPilot Code
 ======================
 
 #. For apm1/apm2 support is necesary to make a "config.mk" file (for compile ArduCopter 3.2.1), so navigate to main ardupilot git folder:
-   cd
-   cd GitHub/ardupilot
 
-#. Is necesary to select correct branch (last supported release branch) :
-   git checkout ArduCopter-3.2.1
-   cd ArduCopter
-   make configure
+   .. code-block:: python
+   
+       cd
+       cd GitHub/ardupilot
+
+#. Is necesary to select correct branch (last supported release branch):
+
+   .. code-block:: python
+   
+       git checkout ArduCopter-3.2.1
+       cd ArduCopter
+       make configure
 
 #. If everything is ok, compile the code:
-   cd ArduCopter
-   make apm1
+
+   .. code-block:: python
+   
+       cd ArduCopter
+       make apm1
 
 #. Or:
-   make apm2
+
+   .. code-block:: python
+   
+       make apm2
 
 #. Otherwise, if you want to compile last ArduPlane compatible code whith apm1/2 (ArduPlane 3.4), you need to preserve above commented "config.mk" file and change your git branch:
-   cd
-   cd GitHub/ardupilot
-   git checkout ArduPlane-release-AVR
+
+   .. code-block:: python
+   
+       cd
+       cd GitHub/ardupilot
+       git checkout ArduPlane-release-AVR
 
 #. If everything is ok, compile the code:
-   cd ArduPlane
-   make apm1
+
+   .. code-block:: python
+   
+       cd ArduPlane
+       make apm1
 
 #. Or:
-   make apm2
+
+   .. code-block:: python
+   
+       make apm2
 
 ======================
 
 #. If you want to compile Pixhawk/PX4 code, "config.mk" file is not necesary. So if you have compiled apm1/apm2 code, you have to remove it:
-   cd
-   cd GitHub/ardupilot
-   rm config.mk
+
+   .. code-block:: python
+   
+       cd
+       cd GitHub/ardupilot
+       rm config.mk
 
 #. Now, select correct branch (for example, master branch):
-   cd
-   cd GitHub/ardupilot
-   git checkout master
 
-#. Navigate to your desired Ardupilot vehicule folder, in this case (complete path):
-   cd
-   cd GitHub/ardupilot/vehicule
-         (where "vehicule" can be ArduCopter, ArduPlane, ArduRover,...)
+   .. code-block:: python
+   
+       cd
+       cd GitHub/ardupilot
+       git checkout master
+
+#. Navigate to your desired Ardupilot vehicle folder, in this case (complete path):
+
+   .. code-block:: python
+   
+       cd
+       cd GitHub/ardupilot/vehicle
+       
+   (where "vehicle" can be ArduCopter, ArduPlane, ArduRover,...)
          
-#. In your vehicule folder, type "make" and press enter for see supported targets for compile. Just type "make" and your target for compile it, in this case:
-   make board
-         (where "board" can be px4-v2, navio, pxf,... Must see supported targets as mentioned above)
+#. In your vehicle folder, type "make" and press enter for see supported targets for compile. Just type "make" and your target for compile it, in this case:
+
+   .. code-block:: python
+   
+       vehicle
+       make board
+       
+   (where "board" can be px4-v2, navio, pxf,... Must see supported targets as mentioned above)
          
 #. If everything is ok, you will see a message like this (depends of your target): PX4 ArduCopter Firmware is in ArduCopter-v2.px4
 
@@ -146,22 +211,36 @@ Compile ArduPilot Code
 ======================
 
 #. The new method of compilation "Waf" is also supported. Go to git ardupilot software:
-   cd
-   cd GitHub/ardupilot/
+
+   .. code-block:: python
+   
+       cd
+       cd GitHub/ardupilot/
 
 #. It's possible to get a list of supported boards on ArduPilot with the command below:
-   ./waf list_boards
+
+   .. code-block:: python
+   
+       ./waf list_boards
    
 #. Configure your board:
-   ./waf configure --board target
-         (where "target" can be px4-v2, navio, pxf,... Must see supported boards as mentioned above)
+
+   .. code-block:: python
+   
+       ./waf configure --board target
+       
+   (where "target" can be px4-v2, navio, pxf,... Must see supported boards as mentioned above)
 
    .. image:: ../images/Windows10_Ubuntu_3.jpg
        :target: ../_images/Windows10_Ubuntu_3.jpg
    
 #. Compile for your target:
-   ./waf vehicule
-         (where "vehicule" can be copter, plane, rover,...)
+
+   .. code-block:: python
+   
+       ./waf vehicule
+   
+   (where "vehicle" can be copter, plane, rover,...)
 
    .. image:: ../images/Windows10_Ubuntu_4.jpg
        :target: ../_images/Windows10_Ubuntu_4.jpg
@@ -171,8 +250,11 @@ Compile ArduPilot Code
 .. tip::
 
    if you want to unhide Ubuntu system folder on Windwos, open a command prompt as administrator,
-   navigate to Ubuntu system path (C:\Users\username\AppData\Local) and change the folder attributes. So:
-   cd C:\Users\username\AppData\Local
-            (where "username" is your user name) 
-   attrib -s -h lxss
+   navigate to Ubuntu system path (C:\Users\username\AppData\Local) and change the folder attributes. So (where "username" is your user name):
+   
+   .. code-block:: python
+   
+       cd C:\Users\username\AppData\Local
+       attrib -s -h lxss
+       
    You can make a direct access to "lxss" folder on your desktop for a quick navigation.
