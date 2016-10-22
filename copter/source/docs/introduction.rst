@@ -36,7 +36,7 @@ Key features
 Key features include:
 
 -  *High quality auto-level and auto-altitude control*: Fly level and
-   straight or use the awesome "simple" or "super simple" flight modes, which make ArduCopter
+   straight or use the awesome "simple" or "super simple" flight modes, which make Copter
    one of the easiest multicopters to fly.
 
    Don't worry about keeping an eye on your multicopter's orientation -
