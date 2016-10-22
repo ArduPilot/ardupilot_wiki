@@ -99,7 +99,7 @@ The development team
 Copter is developed and maintained by a dedicated group of volunteers
 from the open source community. Follow their continuing efforts and read
 about new project developments here at 
-`ardupilot.orgm <http://ardupilot.org>`__.
+`ardupilot.org <http://ardupilot.org>`__.
 
 *All of us involved with this project care a great deal about the
 privacy and safety of those whom we share this planet with. Please be a
