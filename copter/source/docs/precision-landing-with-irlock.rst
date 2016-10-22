@@ -7,7 +7,7 @@ Precision Landing with IR-LOCK
 Overview
 ========
 
-Copter 3.4 supports precision landing using the IR-LOCK sensor. Using this system, it is possible to land within 30cm of an IR beacon that is moving at less than 1m/s.
+Copter 3.4 supports precision landing using the IR-LOCK sensor and a :ref:`sonar or lidar <common-rangefinder-landingpage>`. Using this system, it is possible to land within 30cm of an IR beacon that is moving at less than 1m/s.
 
 .. note::
 
@@ -96,7 +96,7 @@ operates in LAND mode).
 Place the IR beacon on the ground and take-off to approximately 10m
 above the target.  Switch the vehicle to LAND.  If everything is working
 properly, the copter should move toward the IR beacon.  A successful
-demo is shown below (using an older APM firmware).
+demo is shown below (using an older firmware).
 
 .. tip::
 
@@ -106,11 +106,11 @@ demo is shown below (using an older APM firmware).
 If the vehicle does behave appropriately, download the dataflash logs
 and examine the PL messages.
 
--  If the "Heal" field is not "1" then there may be a communication
-   issue between the Pixhawk and IR-LOCK sensor
--  If the eX/eY values do not appear 'smooth' then the sensor may be
-   picking up false targets.  Refer to the IR-LOCK `wiki page <https://irlock.readme.io/docs/interpreting-pl-logs>`__ for more
-   trouble-shooting information.
+-  If the "Heal" (meaining health) field is not "1" then there may be a communication issue between the Pixhawk and IR-LOCK sensor.
+-  If the "TAcq" (meaning Target Acquired) field is not "1" then the sensor is not seeing the target.
+-  The pX, pY values show the horizontal distance to the target from the vehicle.
+-  The vX, vY values show the estimated velocity of the target relative to the vehicle.
+Refer to the IR-LOCK `wiki page <https://irlock.readme.io/docs/interpreting-pl-logs>`__ for more trouble-shooting information.
 
 ..  youtube:: IRfo5GcHniU
     :width: 100%
