@@ -22,6 +22,7 @@ Plane, Copter, Rover
 
 **Windows users:**
 
+-  :ref:`Building ArduPilot on Windows10 with Bash on Ubuntu on Windows <building-ardupilot-onwindows10>`
 -  :ref:`Building ArduPilot with Arduino for Windows <building-ardupilot-with-arduino-windows>`
 -  :ref:`Pixhawk/PX4 on Windows with Make <building-px4-with-make>` 
 -  :ref:`Editing & Building with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>`
