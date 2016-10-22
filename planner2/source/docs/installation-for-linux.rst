@@ -7,9 +7,13 @@ Installing APM Planner for Linux
 System Requirements
 ===================
 
--  Ubuntu 14.04 or equivalent
+-  Ubuntu 16.04 LTS (Xenial Xerus) or equivalent
 -  300 MB free space
 -  Internet connection to use maps
+
+.. Note::
+
+    Check the `downloads <http://firmware.ardupilot.org/Tools/APMPlanner/>`__ link for other pre-built binaires for other distros and versions. If not available APM Planner 2.0 can be easily `built from source <https://github.com/ArduPilot/apm_planner>`__ for many platforms, for example Arch Linux
 
 Download
 --------
