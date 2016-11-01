@@ -1,8 +1,11 @@
+
 .. _building-ardupilot-onwindows10:
 
 =======================================
 Building ArduPilot on Windows with Bash
 =======================================
+.. warning::
+    This build method is EXPERIMENTAL for windows, although it can work well for some users, you may prefer to look at the more tested/proven windows build process here:  http://ardupilot.org/dev/docs/building-px4-with-make.html
 
 .. image:: ../images/Windows10_Ubuntu_0.jpg
     :target: ../_images/Windows10_Ubuntu_0.jpg
