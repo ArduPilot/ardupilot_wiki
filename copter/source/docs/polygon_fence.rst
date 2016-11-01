@@ -19,7 +19,7 @@ Copter 3.4 (and higher) include support for a polygon fence with up to 84 points
 Enabling the Fence in Mission Planner
 =====================================
 
-..  youtube:: kHbuA63YHf0
+..  youtube:: SEm4nVfbg00
     :width: 100%
 
 -  Connect your Flight controller to the Mission Planner
