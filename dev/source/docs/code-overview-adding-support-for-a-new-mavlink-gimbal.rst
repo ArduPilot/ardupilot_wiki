@@ -15,7 +15,7 @@ Messages the gimbal should support
 ==================================
 
 #. The gimbal should listen on the serial port for a
-   `HEARBEAT <http://mavlink.org/messages/common#HEARTBEAT>`__ message
+   `HEARTBEAT <http://mavlink.org/messages/common#HEARTBEAT>`__ message
    from the vehicle. It can generally assume that the first heart beat
    it receives will be from the vehicle but to be certain you can check
    the "type" field to be sure it's something sensible (i.e. MAV_TYPE =
