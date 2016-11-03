@@ -107,8 +107,7 @@ Download source
    ::
 
       cd ardupilot
-      git submodule init
-      git submodule update
+      git submodule update --init --recursive
 
 Install MHV_AVR_Tools to its default location
 =============================================

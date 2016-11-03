@@ -121,8 +121,7 @@ on Erle-Brain 2:
 
     $ git clone https://github.com/erlerobot/ardupilot
     $ cd ardupilot
-    $ git submodule init
-    $ git submodule update
+    $ git submodule update --init --recursive
 
 ::
 
@@ -249,8 +248,7 @@ on Erle-Brain:
 
     $ git clone https://github.com/erlerobot/ardupilot
     $ cd ardupilot
-    $ git submodule init
-    $ git submodule update
+    $ git submodule update --init --recursive
 
 ::
 

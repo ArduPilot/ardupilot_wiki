@@ -34,8 +34,7 @@ Clone the source:
 
     git clone https://github.com/ArduPilot/ardupilot.git
     cd ardupilot
-    git submodule init
-    git submodule update
+    git submodule update --init --recursive
 
 Run the install-prereqs-ubuntu.sh script:
 

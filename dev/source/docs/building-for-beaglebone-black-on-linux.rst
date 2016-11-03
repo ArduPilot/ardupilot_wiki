@@ -456,8 +456,7 @@ install git, make, gawk, g++, arduino-core on your BBB
     apt-get install git make gawk g++ arduino-core
     git clone git://github.com/ArduPilot/ardupilot.git
     cd ardupilot
-    git submodule init
-    git submodule update
+    git submodule update --init --recursive
 
 then open
 

@@ -259,8 +259,7 @@ First clone the source:
 
     git clone https://github.com/ArduPilot/ardupilot.git
     cd ardupilot
-    git submodule init
-    git submodule update
+    git submodule update --init --recursive
 
 Get additional tools/libraries
 ------------------------------

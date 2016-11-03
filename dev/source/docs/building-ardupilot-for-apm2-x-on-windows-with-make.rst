@@ -60,8 +60,7 @@ Build instructions
 
           git clone https://github.com/ArduPilot/ardupilot.git
           cd ardupilot
-          git submodule init
-          git submodule update
+          git submodule update --init --recursive
 
    -  Checkout the branch you want to build (the last branch you can use
       for Copter is shown below):

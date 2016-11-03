@@ -130,8 +130,7 @@ side of the screen on each Github repository home page.
 
        git clone https://github.com/your-github-account-name/ardupilot
        cd ardupilot
-       git submodule init
-       git submodule update
+       git submodule update --init --recursive
 
    or the main project:
 
@@ -139,8 +138,7 @@ side of the screen on each Github repository home page.
 
        git clone https://github.com/ArduPilot/ardupilot
        cd ardupilot
-       git submodule init
-       git submodule update
+       git submodule update --init --recursive
 
 **Windows (GitHub GUI):**
 

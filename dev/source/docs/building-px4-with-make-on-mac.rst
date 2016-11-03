@@ -49,8 +49,7 @@ on Mac OS X (ver 10.6 onwards) with *Make*.
        cd px4
        git clone https://github.com/ArduPilot/ardupilot.git
        cd ardupilot
-       git submodule init
-       git submodule update
+       git submodule update --init --recursive
 
    .. note::
 
