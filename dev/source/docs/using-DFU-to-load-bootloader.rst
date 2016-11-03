@@ -38,7 +38,7 @@ machines with apt you can do that with:
 
  sudo apt-get install dfu-util
 
-On other systems please see `http://dfu-util.sourceforge.net/ <http://dfu-util.sourceforge.net/`__.
+On other systems please see `http://dfu-util.sourceforge.net/ <http://dfu-util.sourceforge.net/>`__.
 
 Listing DFU Devices
 ===================
