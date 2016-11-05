@@ -265,6 +265,17 @@ For Android devices, you will need:
    `Amazon <http://www.amazon.com/T-Flash-Adapter-Samsung-GT-i9100-GT-N7000/dp/B005FUNYSA/ref=sr_1_5?ie=UTF8&qid=1376262351&sr=8-5&keywords=android+otg+cable>`__).
 
    |AndroidGCS_USB_dongle|
+   
+iOS
+-------
+
+ForiOS devices, you will need:
+
+-  iOS Based device such as an iPad or iPhone. If running iPad, the cellular version is recommended for better GPS support.
+-  :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or
+   similar (915 Mhz for US, 433 for Europe) which includes the
+   bidirectional ground and air telemetry units.
+-  Serial to either Bluetooth or WiFI adapter. This enables the iOS Device to connect to the Telemetry radio. Bluetooth Repeater can be purchased from the `SidePilot Store <http://sidepilot.net/store/index.php?route=product/product&product_id=50>`__ and WiFi Bridge can be purchased from `3DR Directly <https://store.3dr.com/products/wifi-telemetry-radio>`__. There are many other options but these two are easy to use and avaliable.
 
 Desktop PCs (Windows/Mac/Linux
 ------------------------------
