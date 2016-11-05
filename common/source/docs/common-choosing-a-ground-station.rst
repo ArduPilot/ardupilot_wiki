@@ -21,7 +21,7 @@ often also use to monitor the live video stream from a UAV’s cameras.
 
 There are at least nine different ground control stations (*Mission
 Planner*, *APM Planner 2*, *MAVProxy*, *UgCS*, *Tower* (DroidPlanner 3),
-*AndroPilot*, *MAVPilot*, *iDroneCtrl* and *QGroundControl*) that can be
+*AndroPilot*, *MAVPilot*, *SidePilot* and *QGroundControl*) that can be
 used to communicate with ArduPilot (i.e.
 :ref:`Copter <copter:home>`,
 :ref:`Plane <plane:home>`,
@@ -196,6 +196,23 @@ See website for how-to on how connect it to your autopilot
 -  `Support Forum <http://www.communistech.com/forums/>`__
 -  `iTunes Store link <https://itunes.apple.com/ca/developer/communis-tech/id649232032>`__
 
+SidePilot
+---------
+
+ArduPilot compatible GCS that runs on iPhone/iPad. Also supports PX4 and 3DR Solo.
+
+See website for how-to on how connect it to your autopilot
+
+-  **Platform**: iPhone, iPad
+-  **Licence**: Proprietary
+
+.. image:: ../../../images/sidepilot.jpg
+    :target: ../_images/sidepilot.jpg
+
+-  `Release announcement Blog & Discussion <http://diydrones.com/profiles/blogs/sidepilot-app-version-1-1-formerly-imavlink>`__
+-  `Website <http://sidepilot.net>`__
+-  `Support Forum <http://sidepilot.net/forum>`__
+-  `iTunes Store link <https://itunes.apple.com/us/app/sidepilot/id1138193193?ls=1&mt=8>`__
 
 QGroundControl
 --------------
