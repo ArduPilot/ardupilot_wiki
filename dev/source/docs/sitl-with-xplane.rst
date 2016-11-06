@@ -39,7 +39,9 @@ is running X-Plane (in which case you should use an IP address of
 Go to the Settings -> Net Connections menu in X-Plane and then to the
 Data tab. Set the right IP address, and set the destination port
 number as 49001. Make sure that the receive port is 49000 (the
-default).
+default). If using loopback (ie. 127.0.0.1) then you also need to make
+sure the "port that we send from" is not 49001. In the example below
+49002 is used.
 
 .. figure:: ../images/xplane-network-data.jpg
    :target: ../_images/xplane-network-data.jpg
