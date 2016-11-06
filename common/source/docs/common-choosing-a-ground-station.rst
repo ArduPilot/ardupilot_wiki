@@ -21,7 +21,7 @@ often also use to monitor the live video stream from a UAV’s cameras.
 
 There are at least nine different ground control stations (*Mission
 Planner*, *APM Planner 2*, *MAVProxy*, *UgCS*, *Tower* (DroidPlanner 3),
-*AndroPilot*, *MAVPilot*, *iDroneCtrl* and *QGroundControl*) that can be
+*AndroPilot*, *MAVPilot*, *SidePilot* and *QGroundControl*) that can be
 used to communicate with ArduPilot (i.e.
 :ref:`Copter <copter:home>`,
 :ref:`Plane <plane:home>`,
@@ -196,6 +196,23 @@ See website for how-to on how connect it to your autopilot
 -  `Support Forum <http://www.communistech.com/forums/>`__
 -  `iTunes Store link <https://itunes.apple.com/ca/developer/communis-tech/id649232032>`__
 
+SidePilot
+---------
+
+ArduPilot compatible GCS that runs on iPhone/iPad. Also supports PX4 and 3DR Solo.
+
+See website for how-to on how connect it to your autopilot
+
+-  **Platform**: iPhone, iPad
+-  **Licence**: Proprietary
+
+.. image:: ../../../images/sidepilot.jpg
+    :target: ../_images/sidepilot.jpg
+
+-  `Release announcement Blog & Discussion <http://diydrones.com/profiles/blogs/sidepilot-app-version-1-1-formerly-imavlink>`__
+-  `Website <http://sidepilot.net>`__
+-  `Support Forum <http://sidepilot.net/forum>`__
+-  `iTunes Store link <https://itunes.apple.com/us/app/sidepilot/id1138193193?ls=1&mt=8>`__
 
 QGroundControl
 --------------
@@ -248,6 +265,17 @@ For Android devices, you will need:
    `Amazon <http://www.amazon.com/T-Flash-Adapter-Samsung-GT-i9100-GT-N7000/dp/B005FUNYSA/ref=sr_1_5?ie=UTF8&qid=1376262351&sr=8-5&keywords=android+otg+cable>`__).
 
    |AndroidGCS_USB_dongle|
+   
+iOS
+-------
+
+ForiOS devices, you will need:
+
+-  iOS Based device such as an iPad or iPhone. If running iPad, the cellular version is recommended for better GPS support.
+-  :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or
+   similar (915 Mhz for US, 433 for Europe) which includes the
+   bidirectional ground and air telemetry units.
+-  Serial to either Bluetooth or WiFI adapter. This enables the iOS Device to connect to the Telemetry radio. Bluetooth Repeater can be purchased from the `SidePilot Store <http://sidepilot.net/store/index.php?route=product/product&product_id=50>`__ and WiFi Bridge can be purchased from `3DR Directly <https://store.3dr.com/products/wifi-telemetry-radio>`__. There are many other options but these two are easy to use and avaliable.
 
 Desktop PCs (Windows/Mac/Linux
 ------------------------------
