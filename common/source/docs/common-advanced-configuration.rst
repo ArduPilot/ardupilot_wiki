@@ -22,6 +22,7 @@ tuning options for the vehicle.
     RCMAP <common-rcmap>
     Full Parameter List <parameters>
     Parameter Reset <common-parameter-reset>    
+    Flight Time Recorder <common-flight-time-recorder>    
 
     UBlox GPS Configuration <common-ublox-gps>
     Sensor Testing <common-sensor-testing>
@@ -38,6 +39,7 @@ tuning options for the vehicle.
     Magnetic Interference <common-magnetic-interference>
     Fly-By-Wire Low Altitude Limit <fly-by-wire-low-altitude-limit>
     Plane Parameters <parameters>
+    Flight Time Recorder <common-flight-time-recorder>    
 [/site]
 
 [site wiki="rover"]
@@ -51,6 +53,7 @@ tuning options for the vehicle.
     Magnetic Interference <common-magnetic-interference>
     Start/Stop Switch <startstop-switch>
     Rover Parameters <parameters>
+    Flight Time Recorder <common-flight-time-recorder>    
 [/site]
 
 [site wiki="planner"]
