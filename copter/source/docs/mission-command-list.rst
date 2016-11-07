@@ -458,3 +458,12 @@ Do-Mount-Control
 From AC3.3 This command allows you to specify a roll, pitch and yaw
 angle which will be sent to the :ref:`camera gimbal <common-cameras-and-gimbals>`. This can be used to point the
 camera in specific directions at various times in the mission.
+
+Do-Gripper
+~~~~~~~~~~
+
+.. image:: ../../../images/MissionList_DoGripper.png
+    :target: ../_images/MissionList_DoGripper.png
+
+This command allows opening and closing a :ref:`servo gripper <common-gripper-servo>` or :ref:`EPM gripper <common-cameras-and-gimbals>`.
+Set the "drop/grab" column to 0 to close the gripper, 1 to open the gripper.  The first column, "Gripper No" is ignored because we currently only support a single gripper per vehicle.
