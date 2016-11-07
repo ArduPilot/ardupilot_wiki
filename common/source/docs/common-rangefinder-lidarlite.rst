@@ -200,6 +200,10 @@ You then need the following parameters set to enable the PWM driver:
 -  ``RNGFND_SCALING`` = 1
 -  ``RNGFND_OFFSET`` = 0
 
+
+**Note**: For RNGFND_SCALING your mileage may vary. Some units work better using RNGFND_SCALING=0.8.
+
+
 The use of pin 55 as the stop pin is just a suggestion, not a
 requirement. It connects to the enable pin on the Lidar, and allows the
 driver to reset the Lidar if it stops providing readings.
