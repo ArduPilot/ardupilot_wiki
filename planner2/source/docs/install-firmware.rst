@@ -46,5 +46,8 @@ installation is complete.
 If you are an experienced tester looking to download a beta version of
 developing firmware, select beta to view the available beta firmwares.
 
+.. note::
+    You may need to put APM Planner 2.0 in Advanced Mode by selecting File -> Advanced in the menu to show the extra options
+
 .. image:: ../images/ap2_install-firmware-beta.png
     :target: ../_images/ap2_install-firmware-beta.png
