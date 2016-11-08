@@ -35,18 +35,10 @@ Weekly dev calls
 ----------------
 
 The weekly development call is held on the mumble server in the "Weekly Dev Call" channel.
-A calendar with the meeting can be found at https://calendar.google.com/calendar/embed?src=rgdbom27tb1vlo62kjjnmt8va4%40group.calendar.google.com
+Time of the meeting is: 2300 UTC
+A calendar with the meeting can be found at https://calendar.google.com/calendar/embed?src=rgdbom27tb1vlo62kjjnmt8va4%40group.calendar.google.com which will show the correct time for you timezone.
 
-Time of the meeting is:
-
-- San Fran: Mon 4pm PDT
-- New York: Mon 7pm EDT
-- Brazil: Mon 8pm, BRT
-- Italy: Tue 1am EST
-- Australia: Tue 9am AEST
-- Japan: Tue 8am JST
-
-The agenda and minutes are normally sent to drones-discuss@googlegroups.com.
+The agenda and minutes are normally sent to discuss.ardupilot.org.
 
 Prefer Typing?
 --------------
