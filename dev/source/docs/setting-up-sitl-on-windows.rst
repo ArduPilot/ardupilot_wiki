@@ -181,7 +181,7 @@ terminal on the Ubuntu VM:
 
 ::
 
-    ./Tools/autotest/autotest.py build.Copter fly.Copter logs.Copter --map --viewerip=192.168.184.1
+    ./Tools/autotest/autotest.py build.ArduCopter fly.ArduCopter --map --viewerip=192.168.184.1
 
 Next connect with the mission planner after first setting the "COM Port"
 to "UDP".
