@@ -85,10 +85,10 @@ When starting SITL the first time, the device may be configured with
 "unforgiving" parameters. Typically you will want to replace these with
 values that simulate more realistic vehicle and environment conditions.
 Useful parameter sets are provided in the autotest source for
-`Copter <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/copter_params.parm>`__,
-`Plane <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/ArduPlane.parm>`__
+`Copter <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/default_params/copter.parm>`__,
+`Plane <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/default_params/plane.parm>`__,
 and
-`Rover <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/Rover.parm>`__.
+`Rover <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/default_params/rover.parm>`__.
 
 .. tip::
 
@@ -101,15 +101,15 @@ The MAVProxy commands to load the parameters for Copter, Rover and Plane
 
 ::
 
-    param load ..\Tools\autotest\copter_params.parm
+    param load ..\Tools\autotest\default_params\copter.parm
 
 ::
 
-    param load ..\Tools\autotest\ArduPlane.parm
+    param load ..\Tools\autotest\default_params\plane.parm
 
 ::
 
-    param load ..\Tools\autotest\Rover.parm
+    param load ..\Tools\autotest\default_params\rover.parm
 
 You can re-load the parameters later if you choose, or revert to the
 default parameters by starting SITL (**sim_vehicle.py**) with the
