@@ -8,7 +8,7 @@ This page explains how to set up the
 `MAUCH <http://www.mauch-electronic.com/#webs-bin-563c137b7add4cb229080f55>`__
 power modules HS-050-xx\* (50A), HS-100-xx (100A) and HS-200-xx\* (200A)
 to measure battery voltage and current consumption.  These can be
-purchased `here <http://www.mauch-electronic.com/apps/webstore/>`__.
+purchased `here <http://www.mauch-electronic.com/apps/webstore/>`__. Mauch Power Modules are now also `available for purchase in the USA<http://www.craftandtheoryllc.com/product-category/mauch-power-modules-pixhawk-hall-sensor-lipo-voltage-current/>`__.
 
 .. tip::
 
