@@ -8,6 +8,7 @@ The following stores are known to stock quality versions of the controllers, tel
 recommended for use with ArduPilot (in alphabetical order).
 
 * `AUAV <http://www.auav.co/>`__
+* `Bask Aerospace <http://www.baskaerospace.com.au/>`__
 * `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__
 * `CUAV <http://www.cuav.net>`__
 * `Emlid <https://emlid.com/shop/>`__
