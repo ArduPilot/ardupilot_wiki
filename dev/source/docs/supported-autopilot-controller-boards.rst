@@ -314,89 +314,6 @@ V2 or PixHawk autopilots. It is 100% compatible with the PX4 firmware.
 |                                      | wnloads/AUAV_Micro_IMU_V2.zip>`__    |
 +--------------------------------------+--------------------------------------+
 
-FlyMaple
-========
-
-The `FlyMaple <http://www.dfrobot.com/wiki/index.php?title=Flymaple_V1.1(SKU:DFR0188)>`__
-is a flight controller based on the Maple Project.
-
-+--------------------------------------+--------------------------------------------------------------------------------------------------------+
-| **Purchase**                         | `Amazon <http://www.amazon.com/Flymaple-A-flight-controller-DOF-IMU/dp/B00B0ROZ2Q>`__                  |
-|                                      | (and web search)                                                                                       |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------+
-| **Specifications**                   | **OS:CPU:**                                                                                            |
-|                                      |                                                                                                        |
-|                                      | 72MHz STM32F103RET6 ARM Cotex-M3 microcontroller (Based on Maple RET6)                                 |
-|                                      |                                                                                                        |
-|                                      | **Memory:**                                                                                            |
-|                                      |                                                                                                        |
-|                                      | 64KB SRAM                                                                                              |
-|                                      |                                                                                                        |
-|                                      | 512KB FLASH ROM                                                                                        |
-|                                      |                                                                                                        |
-|                                      | **Sensors:**                                                                                           |
-|                                      |                                                                                                        |
-|                                      | ITG3205 3-Axis gyroscope                                                                               |
-|                                      |                                                                                                        |
-|                                      | ADXL345 3-Axis accelerometer                                                                           |
-|                                      |                                                                                                        |
-|                                      | HMC5883 3-Axis compass                                                                                 |
-|                                      |                                                                                                        |
-|                                      | BMP085 Barometer                                                                                       |
-|                                      |                                                                                                        |
-|                                      | **Interfaces:**                                                                                        |
-|                                      |                                                                                                        |
-|                                      | 3x 6-Channel GPIO, used to control                                                                     |
-|                                      | 6-channel ESC/Servo                                                                                    |
-|                                      |                                                                                                        |
-|                                      | 3x 8-Channel GPIO, used to capture                                                                     |
-|                                      | RC receiver output                                                                                     |
-|                                      |                                                                                                        |
-|                                      | 2x USART (serial) ports ready for                                                                      |
-|                                      | XBee and GPS devices                                                                                   |
-|                                      |                                                                                                        |
-|                                      | 2x I2C interfaces ready for                                                                            |
-|                                      | ultrasonic sensor altimeters                                                                           |
-|                                      |                                                                                                        |
-|                                      | Arduino Shield compatible female head interface (AREF, GND)                                            |
-|                                      |                                                                                                        |
-|                                      | SWD/JTAG debugger compatible                                                                           |
-|                                      |                                                                                                        |
-|                                      | **Power System:**                                                                                      |
-|                                      |                                                                                                        |
-|                                      | 7 - 12v External Power supply from                                                                     |
-|                                      | the 2p JST connector                                                                                   |
-|                                      |                                                                                                        |
-|                                      | Output Voltage: 3.3v/5v or External                                                                    |
-|                                      | input power                                                                                            |
-|                                      |                                                                                                        |
-|                                      | **Weight and Dimensions:**                                                                             |
-|                                      |                                                                                                        |
-|                                      | Weight: 15g                                                                                            |
-|                                      |                                                                                                        |
-|                                      | Width: 50 mm                                                                                           |
-|                                      |                                                                                                        |
-|                                      | Thickness: 12 mm                                                                                       |
-|                                      |                                                                                                        |
-|                                      | Length: 50 mm                                                                                          |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------+
-| **Setup**                            | :ref:`building-apm-for-flymaple`                                                                       |
-|                                      |                                                                                                        |
-|                                      | `FlymapleArdupilotHowTo.pdf <http://uav.tridgell.net/Flymaple/FlymapleArdupilotHowTo.pdf>`__ (Rover)   |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------+
-| **Design files**                     | `Wiki Doc <http://www.dfrobot.com/wiki/index.php?title=Flymaple_V1.1(SKU:DFR0188)>`__                  |
-|                                      |                                                                                                        |
-|                                      | `Maple Sample sketch <http://www.dfrobot.com/image/data/DFR0188/FlyMaple1_0%20sample%20code.zip>`__    |
-|                                      |                                                                                                        |
-|                                      | `Schematic <http://www.dfrobot.com/image/data/DFR0188/FlyMapleV1.1%20sch.pdf>`__                       |
-|                                      |                                                                                                        |
-|                                      | `Sensor datasheet zip <http://www.dfrobot.com/image/data/DFR0188/Sensor%20Datasheet.zip>`__            |
-|                                      |                                                                                                        |
-|                                      | `Layout drawing <http://www.dfrobot.com/image/data/DFR0188/Top%20Assembly%20Drawing.pdf>`__            |
-|                                      |                                                                                                        |
-|                                      | `Maple homepage <http://leaflabs.com/>`__                                                              |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------+
-
 
 .. _supported-autopilot-controller-boards_erle-brain2_autopilot:
 
@@ -866,7 +783,8 @@ from Emlid. Under rapid development.
 | **Design files**                     | ?                                    |
 +--------------------------------------+--------------------------------------+
 
-.. |navio_plus_shop| replace:: `www.emlid.com/shop/navio-plus <http://www.emlid.com/shop/navio-plus/>`__   
+.. |navio_plus_shop| replace:: `www.emlid.com/shop/navio-plus <http://www.emlid.com/shop/navio-plus/>`__  
+ 
 
 
 NAVIO2
@@ -937,7 +855,8 @@ from Emlid.
 | **Design files**                     | ?                                    |
 +--------------------------------------+--------------------------------------+
 
-.. |navio2_shop| replace:: `www.emlid.com/shop/navio2 <http://www.emlid.com/shop/navio2/>`__   
+.. |navio2_shop| replace:: `www.emlid.com/shop/navio2 <http://www.emlid.com/shop/navio2/>`__  
+ 
 
 
 VRBrain
