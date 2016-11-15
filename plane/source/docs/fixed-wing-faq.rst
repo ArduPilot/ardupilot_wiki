@@ -27,6 +27,9 @@ manual throttle control for idling while on the ground, and manual
 throttle control in stabilisation modes (such as FBWA and STABILIZE) for
 shutting down the motor when you need to.
 
+THR_SLEWRATE can also aid in prevention of a nitro engine stalling in
+flight by slowing the throttle advance from going wide open to quickly.
+
 How do you prevent the servo demo and have faster startups?
 -----------------------------------------------------------
 
