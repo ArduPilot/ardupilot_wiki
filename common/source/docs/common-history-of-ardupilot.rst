@@ -190,6 +190,8 @@ March 2016 - Formation of the `ardupilot.org non profit organisation <http://diy
 
 May 2016 - `Flirtey delivery drone (using ardupilot) is entered into Smithsonian Air and Space Museum <http://www.smithsonianmag.com/smart-news/first-delivery-drone-united-states-lands-spot-smithsonian-180958964/?no-ist>`__.
 
+Sep 2016 - Flymaple board support removed ( not actively tested or used , also lacks a maintainer see PR #4191 ).
+
 Sep 2016 - Relationship with 3DR, Chris Anderson and PX4 team lead sours as DroneCode Platinum board members outvote Silver board members to remove GPLv3 projects including ArduPilot from DroneCode.
 
 Sep 2016 - ArduPilot begins :ref:`ArduPilot Partners <common_sponsors>` group. 
