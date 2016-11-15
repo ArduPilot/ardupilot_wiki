@@ -50,6 +50,11 @@ for more information.
 SITL Architecture
 =================
 
+Note in the image below the port numbers are indicative only and can
+vary.  For instance the ports between ArduPilot and the simulator
+on the image are 5501/5502 but they can vary to be 5504/5505 or other
+port numbers depending on your environment.
+
 .. image:: ../images/ArdupilotSoftwareintheLoopSITL.jpg
     :target: ../_images/ArdupilotSoftwareintheLoopSITL.jpg
 
