@@ -142,7 +142,7 @@ Supports multi-node installation, meaning that it is possible to connect multipl
 -  `DIY Drones Group for UgCS Users <http://diydrones.com/group/ugcs>`__
 -  `UgCS Github Repository <https://github.com/ugcs>`__
 
-Comaparison Mobile
+Comparison Mobile
 ==================
 
 Tower
