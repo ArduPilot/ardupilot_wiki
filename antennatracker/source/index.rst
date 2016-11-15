@@ -22,6 +22,14 @@ Using a correctly aligned directional antenna *significantly improves*
 the range over which signals can be both sent and received from
 a ground station.
 
+If your a developer wanting to work on AntennaTracker please join the
+ArduPilot gitter chat channel which can be found in the Community menu
+above.
+
+If your a user looking for support on the AntennaTracker please go to
+the support forums which can be found under the Community menu above.
+
+
 ..  youtube:: 8GCqYTDYZaM
     :width: 100%
 
