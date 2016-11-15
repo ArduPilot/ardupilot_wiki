@@ -175,10 +175,10 @@ drone) and special missions for 3D mapping.
    and `Droid Planner 1 <https://play.google.com/store/apps/details?id=com.droidplanner>`__)
    can also be downloaded from Google Play.
 
-MAV Pilot
----------
+MAV Pilot 1.4
+-------------
 
-A GCS in your pocket that supports prdeominatly ArduPilot autoiplot on iPhone/iPad. Support for Plane, Copter & Rover.
+A GCS in your pocket that supports predominantly ArduPilot autopilot on iPhone/iPad. Supports for Plane, Copter & Rover vehicle types.
 Also supports ArDrone2.0 with Flight Recorder and PX4 Flight Stack.
 
 See website for how-to on how connect it to your autopilot
@@ -189,7 +189,7 @@ See website for how-to on how connect it to your autopilot
 .. image:: ../../../images/MAVPilot_1.4.png
     :target: ../_images/MAVPilot_1.4.png
 
--  `Release announcement Blog & Discussion <http://diydrones.com/profiles/blogs/mav-pilot-v1-0-for-iphone-is-available-in-the-app-store>`__
+-  `Release announcement Blog & Discussion <http://diydrones.com/profiles/blogs/mav-pilot-1-4-for-iphone-released>`__
 -  `Support Blog <http://www.communistech.com/support/>`__
 -  `Support Forum <http://www.communistech.com/forums/>`__
 -  `iTunes Store link <https://itunes.apple.com/ca/developer/communis-tech/id649232032>`__
