@@ -103,12 +103,11 @@ Python, and extensible via python modules.
 QGroundControl
 --------------
 
-Developed for our sister autopilot system, the "Native PX4 stack"
-*QGroundControl* can connect and display attitude information and
-parameter lists but is not customised to work with the ArduPilot
-firmware as much as the other ground stations listed above.
+QGroundControl work with MAVLink capable autopilots. It's main focus orginally has been PX4 Flight Stack,
+but it now also comes with complete support for ArduPilot based autopilots. It's unique among the GCS offerings
+as it runs on all platforms desktop and mobile.
 
--  **Platform**: Windows, Mac OS X, Linux, Android
+-  **Platform**: Windows, Mac OS X, Linux, Android and iOS
 -  **Licence**: `Open Source <http://www.qgroundcontrol.org/license>`__
    (GPLv3)
 
