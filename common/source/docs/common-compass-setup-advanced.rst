@@ -51,12 +51,9 @@ table below:
 +-------------------------------------------+--------------+-----------------+
 
 Most users will only need to select their autopilot/compass
-configuration and perform the :ref:`Live Calibration <common-compass-setup-advanced_live_calibration_of_offsets>` but details are also given
-on the less-used 
-[site wiki="copter"]
-:ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>` and
-[/site] 
-Manual Declination.  Most of this configuration can be
+configuration and perform the :ref:`Live Calibration <common-compass-setup-advanced_live_calibration_of_offsets>` but details are also given on the less-used  :ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>` and
+Manual Declination.  
+Most of this configuration can be
 performed from the *Mission Planner*'s **Initial Setup \| Mandatory
 Hardware \| Compass** screen.  Other ground stations may have similar
 features.
