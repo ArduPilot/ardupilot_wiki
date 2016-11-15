@@ -22,34 +22,26 @@ boards that can be used for this purpose.
 
    Please add new boards/cables you discover to this page (or `request the addition <https://github.com/ArduPilot/ardupilot_wiki/issues/new>`__).
 
-Seagull #MAP
+Seagull #REC
 ============
 
-`Seagull #MAP <http://www.seagulluav.com/product/seagull-map2/>`__ provides
+`Seagull #REC <http://www.seagulluav.com/product/seagull-rec/>`__ provides
 everything needed to connect a Pixhawk to a supported Sony MultiPort™
 equipped camera in order to automate camera shutter triggering. The
 current list of compatible cameras :ref:`can be found here <common-camera-shutter-triggering-for-sony-multiport-connectors-using-seagull-map_compatible_cameras>`.
 
-.. figure:: ../../../images/SMAP-1000_4_forums.png
-   :target: ../_images/SMAP-1000_4_forums.png
-
-   #Map Camera Board from Seagull
+   #REC Camera Board from Seagull
 
 The board supports two trigger modes: AF-T (Autofocus-Trigger, 1 sec
 pre-AF then trigger) and IS-T (Instant-Trigger, instant trigger as soon
 as camera locks focus). On Sony "Multi" cameras it also supports turning
 the camera On/Off.
 
-It is supplied with (one of) the following cables:
+:ref:`Camera Shutter Triggering for Sony MultiPort Connectors using Seagull #REC <common-camera-shutter-triggering-for-sony-multiport-connectors-using-seagull-map>`
+provides a brief overview of how to set up the MAP board. ( the RECs predecessor ) 
+More detailed instructions are provided in the `Seagull #REC Manual <http://www.seagulluav.com/manuals/Seagull_REC-Manual.pdf>`__.
 
--  Canon: 2.5mm, N3
--  Sony: Minolta, Multi-angled, Multi-straight
--  Nikon: MC-36, MC-DC1, MC-DC1
--  Olympus CB1, E-system
-
-:ref:`Camera Shutter Triggering for Sony MultiPort Connectors using Seagull #MAP <common-camera-shutter-triggering-for-sony-multiport-connectors-using-seagull-map>`
-provides a brief overview of how to set up the board. More detailed
-instructions are provided in the `Seagull #MAP Manual <http://seagulluav.com/wp-content/uploads/2015/08/Seagull-MAP-Manual.pdf>`__.
+TIP:   the #REC superceeds the #MAP and #MAP2 which were it's predecessors.  
 
 SkySight MONO
 =============
