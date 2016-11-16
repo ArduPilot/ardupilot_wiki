@@ -18,6 +18,7 @@ recommended for use with ArduPilot (in alphabetical order).
 * `JapanDrones <http://japandrones.com/>`__
 * `jDrones <http://store.jdrones.com/>`__
 * `Lightware <http://www.lightware.co.za>`__
+* `mRobotics <http://mrobotics.io/>`__
 * `Northox <https://northox.myshopify.com/>`__
 * `ProfiCNC <http://www.proficnc.com/stores>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
