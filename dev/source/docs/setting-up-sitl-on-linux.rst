@@ -24,7 +24,12 @@ for a windows install.
 Install steps
 =============
 
-Please follow each of the steps below.
+Please follow each of the steps described below.
+
+There is also a linked video below showing how to do the setup.
+
+.. youtube:: pJGFkZmGV6o
+    :width: 100%
 
 Download ardupilot
 ------------------
