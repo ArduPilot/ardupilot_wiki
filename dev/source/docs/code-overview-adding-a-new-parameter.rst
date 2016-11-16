@@ -181,7 +181,7 @@ the ground station.  When adding the new parameter be careful that:
 
 ::
 
-    const AP_Param::GroupInfo Compass::var_info[] PROGMEM = {
+    const AP_Param::GroupInfo Compass::var_info[] = {
         // index 0 was used for the old orientation matrix
 
         // @Param: OFS_X
@@ -214,7 +214,13 @@ so it cannot be access from outside the class.  If we'd made it public
 then it would have been accessible to the main code as well as
 "compass._my_new_lib_parameter".
 
-**Step #3:** If the class is a completely new addition to the code (as
+**Step #3:** Add a declaration for var_info to the public section of the .h file of new library class in addition to the definition in the .cpp file:
+
+::
+
+    static const struct AP_Param::GroupInfo var_info[];
+
+**Step #4:** If the class is a completely new addition to the code (as
 opposed to an existing class like AP_Compass), it should be added to
 the main vehicle's var_info table in the
 `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__
@@ -223,7 +229,7 @@ where the Compass class appears.
 
 ::
 
-    const AP_Param::Info var_info[] PROGMEM = {
+    const AP_Param::Info var_info[] = {
         // @Param: SYSID_SW_MREV
         // @DisplayName: Eeprom format version number
         // @Description: This value is incremented when changes are made to the eeprom format
@@ -242,3 +248,6 @@ where the Compass class appears.
 
         AP_VAREND
     };
+ 
+**Step #5:**
+If the class is a completely new addition to the code, also add k_param_my_new_lib to the enum in `Parameters.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.h>`, where my_new_lib is the first argument to the GOBJECT declaration in Parameters.cpp. Read the comments above the enum to understand where to place the new value, as order is important here.
