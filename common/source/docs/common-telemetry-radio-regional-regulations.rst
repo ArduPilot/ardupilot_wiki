@@ -78,25 +78,27 @@ applicable to you.
    </tr>
    <tr>
    <td>Australia</td>
-   <td>LIPD-2000 item 52, LIPD-2000 item 17</td>
+   <td>LIPD-2015 item 54</td>
    <td><strong>SikRadio 900MHz</strong>
 
-   MIN_FREQ: 915000
+   MIN_FREQ: 915001
 
    MAX_FREQ: 928000
 
-   NUM_CHANNELS>=20
+   TXPOWER <= 1W EIRP
+
+   NUM_CHANNELS >=20
 
 
-   <strong>Standard</strong>: LIPD-2000 item 52
+   <strong>Standard</strong>: LIPD-2015 item 19
    </td>
    <td><strong>SikRadio 433MHz</strong>
 
-   MIN_FREQ: 433050
+   MIN_FREQ: 433051
  
    MAX_FREQ: 434790
 
-   TXPOWER<=14
+   TXPOWER <=25mW EIRP
 
    <strong>Standard</strong>: LIPD-2000 item 17
    </td>
