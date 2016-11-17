@@ -24,7 +24,7 @@ Required Hardware
 Placing the anchors
 ===================
 
-The anchors should be placed in a rectangular shape.  The anchor with the lowest ID (IDs are printed in hexidecimal on each device) will act as the "origin" and should be placed at the lower-left corner of the rectangle.  Each of the remaining three anchors should be placed in a corner so that the anchor IDs increase as you travel clockwise around the rectangle.  The configuration is slightly simpler if the line from the origin anchor to the 2nd anchor is due North but it is not required as the :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>` parameter can be used to account this difference.
+The anchors should be placed in a rectangular shape.  The anchor with the lowest ID (IDs are printed in hexidecimal on each device) will act as the "origin" and should be placed at the lower-left corner of the rectangle.  Each of the remaining three anchors should be placed in a corner so that the anchor IDs increase as you travel an "N" pattern within the rectangle.  The configuration is slightly simpler if the line from the origin anchor to the 2nd anchor is due North but it is not required as the :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>` parameter can be used to account this difference.
 
 .. image:: ../../../images/pozyx-anchor-layout.png
     :target: ../_images/pozyx-anchor-layout.png
