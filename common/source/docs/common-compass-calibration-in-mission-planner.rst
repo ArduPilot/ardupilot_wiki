@@ -1,8 +1,8 @@
 .. _common-compass-calibration-in-mission-planner:
 
-======================================
-Compass Calibration in Mission Planner
-======================================
+===================
+Compass Calibration
+===================
 
 This article explains how to perform basic compass calibration.
 
