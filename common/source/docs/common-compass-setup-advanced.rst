@@ -205,13 +205,6 @@ distortions.
          3.2.1 the recommendation was that the absolute value of each offset
          be less than 150 (i.e. *-150 < offset < 150*).
 
-.. tip::
-
-   Some users recommend performing the calibration outdoors away from
-   metal objects using wireless telemetry (primarily so you don't get
-   tangled in the cable) although no tests have been performed to confirm
-   this is necessary.
-
 The video below is from earlier versions of the calibration routine but
 may still produce good offsets.
 
