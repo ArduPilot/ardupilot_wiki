@@ -252,11 +252,10 @@ the opto-isolator and while the Pixhawk can be powered from the servo
 rail, it does not provide +5V to the servo rail. The ESCs must be
 powered by a BEC or with a jumper from an unused connector on the board.
 It is strongly recommended that you use a BEC to power the rail rather
-than a jumper. Do not add servos or other devices to the servo rail as
-the power module is not intended to supply power to them.
+than a jumper.
 
-.. image:: ../images/Pixhawk-Correction-to-KDE-Optoisolated-ESC.jpg
-    :target: ../_images/Pixhawk-Correction-to-KDE-Optoisolated-ESC.jpg
+.. image:: ../images/Pixhawk-Correction-to-KDE-ESC2.png
+    :target: ../_images/Pixhawk-Correction-to-KDE-ESC2.png
 
 The KDE ESCs have fixed PWM ranges so you must manually set the output
 range of each PWM signal so that RCx_MIN is 1100 and RCx_MAX is 1900us
