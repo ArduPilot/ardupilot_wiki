@@ -15,7 +15,7 @@ and re-validating older articles, through to fixing broken links and
 spelling/grammatical errors.
 
 We've made that very easy - all you need for access is a 
-`Github account <https://github.com/join>`__. 
+GitHub account [__Join HERE__](https://github.com/join)
 
 This link provides everything you need to help the wiki grow!
 
