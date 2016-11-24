@@ -65,12 +65,6 @@ Calibration steps
 
       Mission Planner: Calibration Successful
 
-.. warning::
-
-   Do not perform the press the **Calibrate Level** button. This
-   function will overwrite your calibration values.
-
-[site wiki="copter" heading="off"]
 
 Video demonstration (Copter)
 ============================
