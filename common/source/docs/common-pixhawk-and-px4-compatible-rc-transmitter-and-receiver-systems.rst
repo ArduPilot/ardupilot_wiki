@@ -11,8 +11,12 @@ how they are connected.
 Overview
 ========
 
-Pixhawk is compatible with PPM RC receivers, Futaba S.Bus receivers, and
-Spektrum DSM,DSM2, and DSM-X Satellite receivers.
+Pixhawk is compatible with 
+    #. PPM RC receivers
+    #. Futaba S.Bus receivers 
+    #. Spektrum DSM and DSM2 receivers
+    #. Spectrum DSM-X Satellite receivers
+    #. MULTIPLEX SRXL version 1 and version 2 receivers
 
 For traditional single-wire-per-channel (PWM) receivers a 
 `PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be
@@ -34,6 +38,19 @@ connect to the **SPKT/DSM** port.
 
 .. image:: ../../../images/pixhawk_spektrum_connection.jpg
     :target: ../_images/pixhawk_spektrum_connection.jpg
+
+For a **MULTIPLEX SRXL** receiver, connect the **SPKT/DSM** port of the pixhawk to the **B/D** port of the MULTIPLEX SRXL receiver, without using the +3,3V voltage supplied at the **SPKT/DSM** port of the pixhawk and power the MULTIPLEX SRXL receiver separately.
+
+.. image:: ../../../images/multiplex_srxl_B_D_port_to_pixhawk_spkt_dsm_pinout.jpg
+    :target: ../_images/multiplex_srxl_B_D_port_to_pixhawk_spkt_dsm_pinout.jpg
+
+These **MULTIPLEX SRXL** receivers have been tested and are known to work:
+    #. RX-4/9 FLEXX #55837, Firmware 1.31 --> 4 servo sockets, 9 of 16 channels active on SRXL v2 datastream
+    #. RX-4/16 FLEXX #55838, Firmware 1.31 --> 4 servo sockets, 16 of 16 channels active on SRXL v2 datastream
+    #. RX-5 #55817, Firmware 1.26 --> 5 servo sockets, 5 of 12 channels active on SRXL v1 datastream
+    #. RX-9-DR #55812, Firmware 1.26 --> 9 servo sockets, 9 of 12 channels active on SRXL v1 datastream
+    #. RX-9-DR SRXL16 #55840, Firmware 1.35 --> 9 servo sockets, 16 of 16 channels active on SRXL v2 datastream
+    #. RX-16-DR pro #55815, Firmware 1.35 --> 16 servo sockets, 16 of 16 channels active on SRXL v2 datastream
 
 Radio systems that support PPM-Sum or S-Bus directly
 ====================================================
