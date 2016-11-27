@@ -195,6 +195,7 @@ Full Table of Contents
     Debugging <docs/debugging>
     Contributing <docs/contributing>
     MAVLink Commands <docs/mavlink-commands>
+    ROS <docs/ros>
     Advanced Configuration Settings <docs/advanced-configuration-settings>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
