@@ -167,7 +167,8 @@ RPi type:
 .. note::
 
     On newer versions of Raspberry Pi 3 the uart serial connection may be disable by default. In order to enable serial
-    connection on the Raspberry Pi edit **/boot/config.txt** and ``set enable_uart=1``.
+    connection on the Raspberry Pi edit **/boot/config.txt** and ``set enable_uart=1``.
+    the build-in serial port is ``/dev/ttyS0``.
 
 Once MAVProxy has started you should be able to type in the following
 command to display the ``ARMING_CHECK`` parameters value
