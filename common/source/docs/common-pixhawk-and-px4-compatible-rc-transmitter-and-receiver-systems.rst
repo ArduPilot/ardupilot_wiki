@@ -44,6 +44,8 @@ For a **MULTIPLEX SRXL** receiver, connect the **SPKT/DSM** port of the pixhawk 
 .. image:: ../../../images/multiplex_srxl_B_D_port_to_pixhawk_spkt_dsm_pinout.jpg
     :target: ../_images/multiplex_srxl_B_D_port_to_pixhawk_spkt_dsm_pinout.jpg
 
+Details of how to enable the SRXL signal on MULTIPLEX receivers can be found in the topic :ref:`SRXL R/C Receivers <common-srxl-receivers-how-to-use-multiplex-srxl-receivers>`
+
 These **MULTIPLEX SRXL** receivers have been tested and are known to work:
     #. RX-4/9 FLEXX #55837, Firmware 1.31 --> 4 servo sockets, 9 of 16 channels active on SRXL v2 datastream
     #. RX-4/16 FLEXX #55838, Firmware 1.31 --> 4 servo sockets, 16 of 16 channels active on SRXL v2 datastream
