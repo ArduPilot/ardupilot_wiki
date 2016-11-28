@@ -35,6 +35,10 @@ value to users with old hardware.
     :maxdepth: 1
 
     Building ArduPilot for APM2.x with Eclipse on Windows <building-apm2-with-eclipse-on-windows>
+    Loading the code onto APM2.x <load-the-code-onto-apm2x>
+    Advanced Configuration Settings <advanced-configuration-settings>
+    Updating the APM2.x BootLoader <updating-the-apm2-bootloade>
+    Mission Planner Terminal <mission-planner-terminal>
 [/site]
 
 

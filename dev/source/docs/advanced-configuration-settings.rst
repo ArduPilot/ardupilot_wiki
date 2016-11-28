@@ -970,6 +970,5 @@ copy was taken.
 
     Extended Kalman Filter Tuning <extended-kalman-filter>
     EKF2 Navigation System <ekf2-navigation-system>
-    Flashing the APM2.x Bootloader <updating-the-apm2-x-bootloade>
     How to sign a Pixhawk with your Certificate of Authenticity <how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity>
     Troubleshooting Pixhawk/PX4 Boot <troubleshooting-pixhawkpx4-boot>

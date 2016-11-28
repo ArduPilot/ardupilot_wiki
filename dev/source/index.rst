@@ -189,17 +189,16 @@ Full Table of Contents
     Learning the ArduPilot Codebase <docs/learning-the-ardupilot-codebase>
     Code Overview (Copter) <docs/apmcopter-code-overview>
     Building the code <docs/building-the-code>
-    Loading the code onto APM2.x <docs/load-the-code-onto-apm2x>
     Code Editors & IDEs <docs/code-editing-tools-and-ides>
     Simulation & Testing <docs/simulation-2>
     Debugging <docs/debugging>
     Contributing <docs/contributing>
     MAVLink Commands <docs/mavlink-commands>
+    Companion Computers <docs/companion-computers>
+    EKF <docs/ekf>
     ROS <docs/ros>
-    Advanced Configuration Settings <docs/advanced-configuration-settings>
+    Pixhawk Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
-    Companion Computers <docs/companion-computers>
-    Mission Planner Terminal <docs/mission-planner-terminal>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
