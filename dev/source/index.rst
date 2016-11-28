@@ -6,8 +6,7 @@ Welcome to the ArduPilot Development Site
 
 .. tip::
 
-    The ArduPilot Developer Ecosystem is Evolving! 
-    `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
+    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
 
 
 :ref:`ArduPilot/APM <ardupilot:home>` is a open source autopilot
