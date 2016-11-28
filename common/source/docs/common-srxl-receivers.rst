@@ -94,13 +94,3 @@ To do the configuration follow the following steps:
    
 .. image:: ../../../images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.jpg
     :target: ../_images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.jpg
-    
-
-
-
-
-
-
-
-
-
