@@ -41,12 +41,19 @@ module. Information about powering the Pixhawk can be found in the topic
 Connect remote control inputs
 =============================
 
-Pixhawk is compatible with PPM remote control (RC) receivers, Futaba
-S.Bus receivers, and Spektrum DSM,DSM2, and DSM-X Satellite receivers.
+Pixhawk is compatible with 
+   #. PPM remote control (R/C) receivers
+   #. Futaba S.Bus receivers
+   #. Spektrum DSM and DSM2 receivers
+   #. Spektrum DSM-X Satellite receivers
+   #. MULTIPLEX SRXL version 1 and version 2 receivers.
+
 For traditional single-wire-per-channel (PWM) receivers a PPM encoder
-can be used to convert the receiver outputs to PPM-SUM.  Information
-about compatible receivers and how they are connected can be found in
-:ref:`Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`.
+can be used to convert the receiver outputs to PPM-SUM. 
+
+.. tip::
+
+   Information about compatible receivers and how they are connected can be found in :ref:`Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`.
 
 .. figure:: ../../../images/FRSkyTaranis.jpg
    :target: ../_images/FRSkyTaranis.jpg
