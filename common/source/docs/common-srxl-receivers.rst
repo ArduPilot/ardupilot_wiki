@@ -14,10 +14,12 @@ SRXL is a serial protocol which transfers control data of a R/C receiver to a fl
 
    The following SRXL variants are supported by ArduPilot
    
-     #. **MULTIPLEX** SRXL version 1 "12-channel"
-     #. **MULTIPLEX** SRXL version 2 "16-channel"
-     #. **JR propo** X.BUS Mode B
-     #. **SPEKTRUM** SRXL
+     #. `MULTIPLEX SRXL version 1 "12-channel" <http://www.multiplex-rc.de/Downloads/Multiplex/Schnittstellenbeschreibungen/srxl-multiplex-v2.pdf>`__
+     #. `MULTIPLEX SRXL version 2 "16-channel" <http://www.multiplex-rc.de/Downloads/Multiplex/Schnittstellenbeschreibungen/srxl-multiplex-v2.pdf>`__
+     #. JR propo X.BUS Mode B
+     #. `SPEKTRUM SRXL <http://www.spektrumrc.com/ProdInfo/Files/SPM4649T_Bi-Directional_SRXL_specifications.pdf>`__
+
+.. _common-srxl-receivers-how-to-use-multiplex-srxl-receivers:
 
 How to use **MULTIPLEX** SRXL Receivers
 =======================================
@@ -87,7 +89,7 @@ To do the configuration follow the following steps:
 - To complete the SRXL activation on B/D port click “Close” in the “RX Options”-Window and “Close” in the “RX Options”-Window.
 - To reboot the receiver, disconnect PC-cable and power supply from the receiver.
 - Receiver is now configured for SRXL output.
-- Connect receivers to the PIXHAWK as described here.
+- Connect receivers to the PIXHAWK as described :ref:`here <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems-multiplex-srxl>`
 - Test and adjust servo channel assignments in Mission planner if required. MULTIPLEX radios without free servo assignment (e.g. Cockpit SX) have the following standard servo assignment:
    
 .. image:: ../../../images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.jpg
