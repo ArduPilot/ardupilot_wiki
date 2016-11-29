@@ -75,10 +75,11 @@ Build the firmware by entering one of the following commands:
 |                                      | hexacopter.                          |
 |                                      |                                      |
 |                                      | # Other supported suffixes include   |
-|                                      | "octa", "tri" and "heli".            |
+|                                      | "octa", "octa-quad, "tri"            |
+|                                      |  and "heli".                         |
 |                                      |                                      |
 |                                      | # More can be found in               |
-|                                      | "mk/tagets.mk" under FRAMES          |
+|                                      | "mk/targets.mk" under FRAMES         |
 +--------------------------------------+--------------------------------------+
 | ``make px4``                         | Build both PX4 and PixHawk firmware  |
 |                                      | for a quadcopter                     |
