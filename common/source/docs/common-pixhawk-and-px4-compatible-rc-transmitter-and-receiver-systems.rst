@@ -63,16 +63,16 @@ This section list radio systems that support PPM-Sum or S-Bus directly.
 
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems_frsky_taranis_ppm-sum_compatible_transmitter:
 
-FRSKY Taranis PPM-Sum Compatible Transmitter
+FrSky Taranis PPM-Sum Compatible Transmitter
 --------------------------------------------
 
 .. tip::
 
    This solution is **highly recommended** for all RC uses
 
-The `FrSKY Taranis RC Transmitter <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__ is a
+The `FrSky Taranis RC Transmitter <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__ is a
 high quality open source RC Transmitter that is compatible with a
-wide variety of high quality FrSKY PPM-Sum compatible receivers.
+wide variety of high quality FrSky PPM-Sum compatible receivers.
 
 .. image:: ../../../images/FRSkyTaranis.jpg
     :target: ../_images/FRSkyTaranis.jpg
@@ -81,10 +81,10 @@ wide variety of high quality FrSKY PPM-Sum compatible receivers.
 
    This transmitter is a real bargain. You can buy it from different locations e.g. `Range Video <http://www.rangevideo.com/en/radios-and-receivers/96-frsky-taranis-24ghz-rc-system.html>`__ , `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ or `HobbyKing <https://hobbyking.com/en_us/catalogsearch/result/?q=X9D>`__ .
 
-FrSKY Delta 8 MultiProtocol PPM-Sum Receiver
+FrSky Delta 8 MultiProtocol PPM-Sum Receiver
 --------------------------------------------
 
--  This PPM-Sum compatible `FrSKY Delta 8 Receiver <http://www.frsky-rc.com/product/pro.php?pro_id=110>`__ is
+-  This PPM-Sum compatible `FrSky Delta 8 Receiver <http://www.frsky-rc.com/product/pro.php?pro_id=110>`__ is
    multi-platform capable including Hitec Aurora 9 and Futaba RC
    transmitters.
 -  For an Aurora 9, install a jumper between receiver signal pins 6 and
@@ -104,20 +104,20 @@ FrSKY Delta 8 MultiProtocol PPM-Sum Receiver
 .. image:: ../../../images/receiver_delta8.jpg
     :target: ../_images/receiver_delta8.jpg
 
-Turnigy Transmitter Compatible With FrSKY Transmitter Module
+Turnigy Transmitter Compatible With FrSky Transmitter Module
 ------------------------------------------------------------
 
 .. image:: ../../../images/Turnigy9XR.jpg
     :target: ../_images/Turnigy9XR.jpg
 
-FrSKY Transmitter Adapter Module and PPM-Sum Receiver
+FrSky Transmitter Adapter Module and PPM-Sum Receiver
 -----------------------------------------------------
 
-The FrSKY PPM Sum Receiver and conversion module below will work with
+The FrSky PPM Sum Receiver and conversion module below will work with
 Turnigy 9x, 9XR (above) and other RC transmitters.
 
 FrSKY makes several receivers, some are compatible with PPM-Sum, some
-are not, check at `FrSKY's web site <http://www.frsky-rc.com/product/product.php?cate_id=12&cate_name=Receivers>`__.
+are not, check at `FrSky's web site <http://www.frsky-rc.com/product/product.php?cate_id=12&cate_name=Receivers>`__.
 
 The receiver shown is PPM-Sum compatible and is recommended (4 channel
 receivers still do 8 channel PPM-Sum)
@@ -142,11 +142,11 @@ combination with a PX4IO board) is given below:
 
 -  Futaba / Ripmax `R7008SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7675>`__ S.BUS 2 Receiver
 -  Futaba / Ripmax `R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__ S.BUS Receiver
--  FrSKY TFR4 SB 3/16ch 2.4Ghz S.BUS Receiver FASST Compatible
+-  FrSky TFR4 SB 3/16ch 2.4Ghz S.BUS Receiver FASST Compatible
    (`HobbyKing <http://www.hobbyking.com/hobbyking/store/__27176__FrSky_TFR4_SB_3_16ch_2_4Ghz_S_BUS_Receiver_FASST_Compatible.html>`__)
 -  Futaba FASST S.BUS `2.4 GHz Receiver R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__
    (tested by PX4 core team, very lightweight, only 7g)
--  FrSKY FASST compatible S.BUS compatible TFR8 SB 8ch 2.4Ghz Receiver
+-  FrSky FASST compatible S.BUS compatible TFR8 SB 8ch 2.4Ghz Receiver
    (`HobbyKing <http://www.hobbyking.com/hobbyking/store/__24785__FrSky_TFR8_SB_8ch_2_4Ghz_S_BUS_Receiver_FASST_Compatible.html>`__)
 
 .. note::
@@ -166,8 +166,8 @@ on drones-discuss mailing list).
 
 These include:
 
--  FrSKY X4, X6 and X8 Receivers on SBUS.
--  Delta 8 FrSKY receiver
+-  FrSky X4, X6 and X8 Receivers on SBUS.
+-  Delta 8 FrSky receiver
 -  X8R receivers (non-EU versions) with OpenTX -Taranis X9D, via the
    receiver SBUS out on the receiver to RCIN on the PixHawk.
 -  OrangeRX R800 receiver that also has SBUS output, with both a
@@ -233,7 +233,7 @@ There are some downsides of using this encoder:
 -  It uses quite a bit of power making it likely you will need to plug
    in your battery while doing radio setup with USB cable in Mission Planner.
 -  The encoder also costs as much or more than several of the
-   available PPM-Sum receivers including the FRSky Delta 8 below.
+   available PPM-Sum receivers including the FrSky Delta 8 below.
 
 There is addition information :ref:`about connecting and configuring the encoder here <common-ppm-encoder>`.
 
