@@ -1,38 +1,114 @@
-.. _edison-for-drones:
+.. _intel-edison:
 
-==============================
-Edison as a Companion Computer
-==============================
+====================================
+Intel Edison as a Companion Computer
+====================================
 
-This page explains how to use an `Intel Edison <http://www.intel.com/content/www/us/en/do-it-yourself/edison.html>`__
-as a companion computer.
+This page explains how to setup and use the `Intel Edison <http://www.intel.com/content/www/us/en/do-it-yourself/edison.html>`__ as a companion computer primarily for use with the `Pixhawk2 <http://www.proficnc.com/system-kits/31-pixhawk2-suite.html>`__.
 
-Overview
-========
+   .. image:: ../images/intel-edison-in-pixhawk2.jpg
+       :width: 100%
 
-The Intel® Edison is an ultra small computing platform which is useful
-for many embedded applications, including as a companion computer.
+The Intel® Edison can provide features including:
 
-There are many good reasons to use Edison as a companion computer:
-
--  Wifi enabled autopilot
+-  Wifi telemetry to the autopilot
 -  Easy scripting/vehicle control via DroneKit
--  Edison is cheap
--  Edison tiny & light
--  MAVProxy can automatically bridge MAVLink packets to your wifi
-   network.
+-  Faster download of log files (coming soon)
 
-The Edison can be `purchased from Sparkfun here <https://www.sparkfun.com/products/13024>`__. You may also wish to
-purchase some (or all) of the following related products:
+Where to buy
+============
 
--  `SparkFun Block for Intel® Edison - microSD <https://www.sparkfun.com/products/13041>`__: adds mass
-   storage.
--  `SparkFun Block for Intel® Edison - Base <https://www.sparkfun.com/products/13045>`__: adds USB for
-   peripheral support (e.g. keyboard, mouse, thumb drive etc.
--  `SparkFun Block for Intel® Edison - UART <https://www.sparkfun.com/products/13040>`__: Power supply.
+The Edison can be `purchased from Sparkfun here <https://www.sparkfun.com/products/13024>`__.
 
-Setting up Edison
-=================
+The Pixhawk2 with carrier board can be purchased from one of these `retailers <http://www.proficnc.com/stores>`__.  Be sure to purchase a Pixhawk2 with the Intel Edison compatible carrier board.
+
+Installing the Edison in the Pixhawk2
+=====================================
+
+To install the Edison into the Pixhawk 2 Carrier board:
+
+-   Remove the four side screews from the Pixhawk2
+
+   .. image:: ../images/intel-edison-pixhawk2-remove-screws.png
+       :width: 50%
+
+- Remove the four hex screws on the bottom of the carrier board and lift the bottom cover to reveal the socket for the edison. 
+
+   .. image:: ../images/intel-edison-pixhawk2-remove-screws2.png
+       :width: 45%
+
+- Remove the philips screws that will later hold the Edison in place. Place the Intel Edison into its socket and use the screws to hold it in place.  It should now look like the top-most image on this page (see above)
+- Replace the bottom cover in the reverse order to the instructions above
+
+Setting up the Edison
+=====================
+
+.. note::
+
+   Some information here was borrowed from `the Intel Developer Zone <https://software.intel.com/en-us/flashing-firmware-on-your-intel-edison-board-windows>`__.
+
+The easiest way to get started is to flash the Edison with image recommended by the ArduPilot team:
+
+-  Download the `latest image from firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/intel_edison_image_latest>`__
+-  Extract/Unzip the image (a "toFlash" directory should appear):
+
+   - Windows users can use `7-zip <http://www.7-zip.org/>`__
+   - Ubuntu users can right-mouse-button-click and select "Extract Here" or type "tar -xzvf ArduPilotCompanionEdisonImage0.1.1.tar.gz"
+
+-  Install dfu:
+
+   - On Windows:
+
+      - Download and extract `dfu-util-0.9.win64.zip <http://dfu-util.sourceforge.net/releases/dfu-util-0.9-win64.zip>`__ from `dfu-util.sourceforget.net/releases <http://dfu-util.sourceforge.net/releases/>`__
+      - Copy the "dfu-util.exe" and "libusb-1.0.dll" files into the "toFlash" directory created when extracing the image (see above)
+   - On Ubuntu install with "sudo apt-get install dfu-util"
+
+-  Connect your PC to the Pixhawk2 using a USB cable as shown below.  This provides power and enables flashing the image
+
+   .. image:: ../images/intel-edison-pixhawk2-usb-connectors.jpg
+       :width: 50%
+
+- Flash the image:
+
+   - On Windows double click on the "flashall.bat" script found in the "toFlash" directory
+   - On Ubuntu cd into the "toFlash" directory and enter, "./flashall.sh"
+- Wait 1 to 2 min before cutting power to the Edison
+
+After flashing has completed the root file system must be expanded manually from 1.5GB to 2.2GB:
+
+- Connect two USB cables from your PC to the Pixhawk2
+- Open a serial connection to the Edison (which uses the 2nd USB connection) at 115200 baud with username and password "edison"
+
+   - On windows you may use `Putty <https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe>`__
+   - On Linux/Ubuntu or OSX you can use screen, "screen /dev/tty.usbserial-A703ZB19 115200"
+
+- use the post-flash.sh script to expand the file system:
+
+::
+
+	edison@edison ~ $ post-flash.sh 
+	Running post install chores
+	[sudo] password for edison: 
+	resize2fs 1.42.12 (29-Aug-2014)
+	Filesystem at /dev/mmcblk0p8 is mounted on /; on-line resizing required
+	old_desc_blocks = 1, new_desc_blocks = 1
+	The filesystem on /dev/mmcblk0p8 is now 589824 (4k) blocks long.
+
+Finally edit these files with your Wi-Fi network credentials:
+
+::
+
+	/etc/interfaces/interfaces.home
+	/etc/interfaces/interfaces.work
+
+Then you can log into the Edison and type "homenet.sh" or "worknet.sh" to switch between network configurations
+
+------------------------
+
+Archived Instructions
+=====================
+
+The following instructions were written before the standard image was created and are not useful for most users.
 
 `Download <https://communities.intel.com/docs/DOC-23242?_ga=1.100203546.523605939.1416692974>`__
 the Edison SDK appropriate for your platform and install it:
