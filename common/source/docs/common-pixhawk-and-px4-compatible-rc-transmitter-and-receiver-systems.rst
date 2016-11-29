@@ -39,12 +39,14 @@ connect to the **SPKT/DSM** port.
 .. image:: ../../../images/pixhawk_spektrum_connection.jpg
     :target: ../_images/pixhawk_spektrum_connection.jpg
 
+.. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems-multiplex-srxl:
+
 For a **MULTIPLEX SRXL** receiver, connect the **SPKT/DSM** port of the pixhawk to the **B/D** port of the MULTIPLEX SRXL receiver, without using the +3,3V voltage supplied at the **SPKT/DSM** port of the pixhawk and power the MULTIPLEX SRXL receiver separately.
 
 .. image:: ../../../images/multiplex_srxl_B_D_port_to_pixhawk_spkt_dsm_pinout.jpg
     :target: ../_images/multiplex_srxl_B_D_port_to_pixhawk_spkt_dsm_pinout.jpg
 
-Details of how to enable the SRXL signal on MULTIPLEX receivers can be found in the topic :ref:`SRXL R/C Receivers <common-srxl-receivers-how-to-use-multiplex-srxl-receivers>`
+Details how to enable the SRXL signal on MULTIPLEX receivers can be found in :ref:`SRXL R/C Receivers <common-srxl-receivers>`
 
 These **MULTIPLEX SRXL** receivers have been tested and are known to work:
     #. RX-4/9 FLEXX #55837, Firmware 1.31 --> 4 servo sockets, 9 of 16 channels active on SRXL v2 datastream
@@ -61,15 +63,15 @@ This section list radio systems that support PPM-Sum or S-Bus directly.
 
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems_frsky_taranis_ppm-sum_compatible_transmitter:
 
-FRSKY Taranis PPM-Sum Compatible Transmitter
+FrSky Taranis PPM-Sum Compatible Transmitter
 --------------------------------------------
 
 .. tip::
 
-   This solution is **very highly recommended** for all RC uses
+   This solution is **highly recommended** for all RC uses
 
-The `FRSky Taranis RC Transmitter <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__ is a
-very high quality open source RC Transmitter that is compatible with a
+The `FrSky Taranis RC Transmitter <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__ is a
+high quality open source RC Transmitter that is compatible with a
 wide variety of high quality FrSky PPM-Sum compatible receivers.
 
 .. image:: ../../../images/FRSkyTaranis.jpg
@@ -77,30 +79,24 @@ wide variety of high quality FrSky PPM-Sum compatible receivers.
 
 .. note::
 
-   This transmitter is a real bargain. At time of writing they are in
-   short supply and hard to find. Currently in the US **`Range Video <http://www.rangevideo.com/en/radios-and-receivers/96-frsky-taranis-24ghz-rc-system.html>`__**
-   has them in stock and **Aloft Hobbies** should be getting them in stock
-   also.
+   This transmitter is a real bargain. You can buy it from different locations e.g. `Range Video <http://www.rangevideo.com/en/radios-and-receivers/96-frsky-taranis-24ghz-rc-system.html>`__ , `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ or `HobbyKing <https://hobbyking.com/en_us/catalogsearch/result/?q=X9D>`__ .
 
-FRSky Delta 8 MultiProtocol PPM-Sum Receiver
+FrSky Delta 8 MultiProtocol PPM-Sum Receiver
 --------------------------------------------
 
--  This PPM-Sum compatible `FRSky Delta 8 Receiver <http://www.valuehobby.com/frysky-delta-8.html>`__ is
+-  This PPM-Sum compatible `FrSky Delta 8 Receiver <http://www.frsky-rc.com/product/pro.php?pro_id=110>`__ is
    multi-platform capable including Hitec Aurora 9 and Futaba RC
    transmitters.
 -  For an Aurora 9, install a jumper between receiver signal pins 6 and
    7 (Hitec AFHSS) and pins 3 and 4 (CPPM mode) in order to bind.
--  **Note:** For a Hitec Aurora 9 system you need to have version 3.01
-   or later of the firmware in the transmitter's AFHSS 2.4ghz module.
 
-   -  If your module does not have version 3.01 or later firmware you
-      will need the Hitec HPP-22 programmer module in order to upgrade
-      it.
-   -  Upgrade both the AFHSS 2.4ghz module and the transmitter itself to
-      the latest versions following `HP-22 online
+.. note::
+ 
+   For a Hitec Aurora 9 system you need to have version 3.01 or later of the firmware in the transmitter's AFHSS 2.4 GHz module.
+    - If your module does not have version 3.01 or later firmware you will need the Hitec HPP-22 programmer module in order to upgrade it.
+    - Upgrade both the AFHSS 2.4 GHz module and the transmitter itself to the latest versions following `HP-22 online
       instructions <http://hitecrcd.co.kr/tester/hpp_22.htm>`__.
-   -  If the transmitter's AFHSS module's blue LED will not illuminate
-      during binding you will need to perform this firmware upgrade.
+    - If the transmitter's AFHSS module's blue LED will not illuminate during binding you will need to perform this firmware upgrade.
 
 -  I am using the Delta 8 successfully with a PX4 and an Aurora 9, I had
    to complete the firmware upgrade procedure before I could bind.
@@ -108,20 +104,20 @@ FRSky Delta 8 MultiProtocol PPM-Sum Receiver
 .. image:: ../../../images/receiver_delta8.jpg
     :target: ../_images/receiver_delta8.jpg
 
-Turnigy Transmitter Compatible With FRSky Transmitter Module
+Turnigy Transmitter Compatible With FrSky Transmitter Module
 ------------------------------------------------------------
 
 .. image:: ../../../images/Turnigy9XR.jpg
     :target: ../_images/Turnigy9XR.jpg
 
-FRSky Transmitter Adapter Module and PPM-Sum Receiver
+FrSky Transmitter Adapter Module and PPM-Sum Receiver
 -----------------------------------------------------
 
-The FR-Sky PPM Sum Receiver and conversion module below will work with
+The FrSky PPM Sum Receiver and conversion module below will work with
 Turnigy 9x, 9XR (above) and other RC transmitters.
 
-FRSky makes several receivers, some are compatible with PPM-Sum, some
-are not, check at **`FRSky's web site <http://www.frsky-rc.com/product/product.php?cate_id=12&cate_name=Receivers>`__**.
+FrSKY makes several receivers, some are compatible with PPM-Sum, some
+are not, check at `FrSky's web site <http://www.frsky-rc.com/product/product.php?cate_id=12&cate_name=Receivers>`__.
 
 The receiver shown is PPM-Sum compatible and is recommended (4 channel
 receivers still do 8 channel PPM-Sum)
@@ -144,8 +140,8 @@ receiver must be connected to the PPM input, not the adjacent SBUS output.
 The list of supported receivers for the Pixhawk (or a PX4FMU in
 combination with a PX4IO board) is given below:
 
--  Futaba / Robbe `R7008SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7675>`__ S.BUS 2 Receiver
--  Futaba / Robbe `R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__ S.BUS Receiver
+-  Futaba / Ripmax `R7008SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7675>`__ S.BUS 2 Receiver
+-  Futaba / Ripmax `R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__ S.BUS Receiver
 -  FrSky TFR4 SB 3/16ch 2.4Ghz S.BUS Receiver FASST Compatible
    (`HobbyKing <http://www.hobbyking.com/hobbyking/store/__27176__FrSky_TFR4_SB_3_16ch_2_4Ghz_S_BUS_Receiver_FASST_Compatible.html>`__)
 -  Futaba FASST S.BUS `2.4 GHz Receiver R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__
@@ -171,7 +167,7 @@ on drones-discuss mailing list).
 These include:
 
 -  FrSky X4, X6 and X8 Receivers on SBUS.
--  Delta 8 FRSky receiver
+-  Delta 8 FrSky receiver
 -  X8R receivers (non-EU versions) with OpenTX -Taranis X9D, via the
    receiver SBUS out on the receiver to RCIN on the PixHawk.
 -  OrangeRX R800 receiver that also has SBUS output, with both a
@@ -189,7 +185,7 @@ Spektrum Satellite Receivers Operate on PPM-Sum
 
 -  Although Spektrum main receivers do not communicate by PPM-Sum their
    range extending "satellite" receivers do.
--  So it is feasible to use a single **`Spektrum Satellite Receiver <http://www.amainhobbies.com/product_info.php/cPath/61_435/products_id/199408/n/Spektrum-DSMX-Remote-Receiver>`__**
+-  So it is feasible to use a single `Spektrum Satellite Receiver <http://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM9645>`__
    to act as a PPM-Sum receiver with PX4 and Pixhawk.
 
    -  Simply pre-bind the Spektrum Satellite to your transmitter using a
@@ -237,7 +233,7 @@ There are some downsides of using this encoder:
 -  It uses quite a bit of power making it likely you will need to plug
    in your battery while doing radio setup with USB cable in Mission Planner.
 -  The encoder also costs as much or more than several of the
-   available PPM-Sum receivers including the FRSky Delta 8 below.
+   available PPM-Sum receivers including the FrSky Delta 8 below.
 
 There is addition information :ref:`about connecting and configuring the encoder here <common-ppm-encoder>`.
 
@@ -277,4 +273,3 @@ Using a Standard RC Radio Receiver with 3DR PPM Encoder
    when you are calibrating your transmitter you will quite likely need
    to hook up your flight battery to the PX4IO because the USB port
    alone can't supply enough power.
-
