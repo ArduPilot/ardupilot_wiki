@@ -499,7 +499,8 @@ waypoint).
 **Command parameters**
 
 .. raw:: html
-   <table border="1" class="docutils">
+
+   <table border="1" class="docutils">
    <tbody>
    <tr>
    <th>Command Field</th>
@@ -509,7 +510,8 @@ waypoint).
    <tr>
    <td><strong>param1</strong></td>
    <td></td>
-   <td>1 to arm, 0 to disarm. This only works when the vehicle is on the ground.   </td>
+   <td>1 to arm, 0 to disarm. This only works when the vehicle is on the ground.
+   </td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
@@ -580,7 +582,8 @@ and then proceed to the next waypoint.
 **Command parameters**
 
 .. raw:: html
-   <table border="1" class="docutils">
+
+   <table border="1" class="docutils">
    <tbody>
    <tr>
    <th>Command Field</th>
@@ -590,13 +593,15 @@ and then proceed to the next waypoint.
    <tr>
    <td><strong>param1</strong></td>
    <td>Delay</td>
-   <td>Hold time at mission waypoint in decimal seconds - MAX 65535 seconds. (Copter/Rover only)   </td>
+   <td>Hold time at mission waypoint in decimal seconds - MAX 65535 seconds. (Copter/Rover only)
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td>
    </td>
-   <td>Acceptance radius in meters (when plain inside the sphere of this radius, the waypoint is considered reached) (Plane only).   </td>
+   <td>Acceptance radius in meters (when plain inside the sphere of this radius, the waypoint is considered reached) (Plane only).
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
@@ -604,7 +609,8 @@ and then proceed to the next waypoint.
    </td>
    <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
    Positive value for clockwise orbit, negative value for counter-clockwise
-   orbit. Allows trajectory control.   </td>
+   orbit. Allows trajectory control.
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
@@ -672,7 +678,8 @@ These parameters are not support by Copter.
 **Command parameters**
 
 .. raw:: html
-   <table border="1" class="docutils">
+
+   <table border="1" class="docutils">
    <tbody>
    <tr>
    <th>Command Field</th>
@@ -731,7 +738,8 @@ Change the target horizontal speed and/or the vehicle's throttle.
 **Command parameters**
 
 .. raw:: html
-   <table border="1" class="docutils">
+
+   <table border="1" class="docutils">
    <tbody>
    <tr>
    <th>Command Field</th>
@@ -753,7 +761,8 @@ Change the target horizontal speed and/or the vehicle's throttle.
    <td></td>
    <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
    Positive value for clockwise orbit, negative value for counter-clockwise
-   orbit. Allows trajectory control.   </td>
+   orbit. Allows trajectory control.
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
@@ -803,7 +812,8 @@ and the mission will move onto the next command immediately.
 
 .. raw:: html
 
-   <table border="1" class="docutils">   <table>
+   <table border="1" class="docutils">
+   <table>
    <tbody>
    
    <tr>
@@ -1027,7 +1037,8 @@ set to resume, by switching back to AUTO mode (otherwise the mission
 will restart).
 
 **Command parameters**
-.. raw:: html
+
+.. raw:: html
 
    <table border="1" class="docutils">
    <tbody>
@@ -1788,7 +1799,8 @@ Move to the next command when the desired altitude is reached.
    <td>Climb or Descend (0 = Neutral, command completes when within 5m of this
    command's altitude, 1 = Climbing, command completes when at or above
    this command's altitude, 2 = Descending, command completes when at or
-   below this command's altitude. Introduced in Plane 3.4.   </td>
+   below this command's altitude. Introduced in Plane 3.4.
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
@@ -2194,7 +2206,8 @@ mission, or it can be repeated indefinitely.
    <td>Number of times that the DO_JUMP command will execute before moving to
    the next sequential command. If the value is zero the next command will
    execute immediately. A value of -1 will cause the command to repeat
-   indefinitely.   </td>
+   indefinitely.
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
@@ -2492,9 +2505,6 @@ subtracted from the current heading (note that the vehicle will always
 turn in direction that most quickly gets it to the new target heading
 regardless of the ``param3`` value).
 
-We don't support controlling the yaw rate, so the ``param2`` value (Sec)
-is ignored.
-
 **Command parameters**
 
 .. raw:: html
@@ -2512,9 +2522,10 @@ is ignored.
    <td>
    If <code>param4=0</code> (absolute): Target heading in degrees [0-360] (0 is North).
 
-   If <code>param4=1</code> (relative): The change in heading (in degrees).   </td>
+   If <code>param4=1</code> (relative): The change in heading (in degrees).
+   </td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param2</strong></td>
    <td>Sec</td>
    <td>Speed during yaw change:[deg per second].</td>
@@ -2524,7 +2535,8 @@ is ignored.
    <td>Dir 1=CW</td>
    <td>If <code>param4=1</code> (relative) only: [-1 = CCW, +1 = CW]. This denotes
    whether the flight controller should add (CW) or subtract (CCW) the
-   degrees (``param1``) from the current heading to calculate the target heading.   </td>
+   degrees (``param1``) from the current heading to calculate the target heading.
+   </td>
    </tr>
    <tr>
    <td><strong>param4</strong></td>
@@ -2964,7 +2976,8 @@ turn an off relay on and vice versa"
 
    1: Set relay high/on (3.3V on Pixhawk, 5V on APM).
 
-   0: Set relay low/off (0v)   </td>
+   0: Set relay low/off (0v)
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
@@ -3510,7 +3523,8 @@ command with all zero for ``param5``-``param7`` (Lat, Lon and Alt).
    <td><strong>param1</strong></td>
    <td></td>
    <td>Region of interest mode. (see MAV_ROI enum) // 0 = no roi, 1 = next
-   waypoint, 2 = waypoint number, 3 = fixed location, 4 = given target (not supported)   </td>
+   waypoint, 2 = waypoint number, 3 = fixed location, 4 = given target (not supported)
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
@@ -3574,7 +3588,8 @@ if one is present.
    <tr>
    <td><strong>param1</strong></td>
    <td>Mode</td>
-   <td>Set camera mode:   1: ProgramAuto
+   <td>Set camera mode:
+   1: ProgramAuto
 
    2: Aperture Priority
 
@@ -3584,13 +3599,15 @@ if one is present.
 
    5: IntelligentAuto
 
-   6: SuperiorAuto   </td>
+   6: SuperiorAuto
+   </td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
    <td>Shutter Speed</td>
    <td>Shutter speed (seconds divisor). So if the speed is 1/60 seconds, the
-   value entered would be 60. Slowest shutter trigger supported is 1 second.   </td>
+   value entered would be 60. Slowest shutter trigger supported is 1 second.
+   </td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
@@ -3654,7 +3671,8 @@ ignored prior to AC3.3.
    
    0: Turn off the camera / hide the lens
 
-   1: Turn on the camera /Show the lens   </td>
+   1: Turn on the camera /Show the lens
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
@@ -3674,7 +3692,8 @@ ignored prior to AC3.3.
 
    1: Unlock
 
-   2: Lock   </td>
+   2: Lock
+   </td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -4027,7 +4046,8 @@ Change between normal and :ref:`inverted flight <plane:inverted-flight>`.
    <td>Set flight type:
 
    0: normal
-   1: inverted   </td>
+   1: inverted
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
@@ -4105,9 +4125,11 @@ Mission command to operate EPM gripper.
    <tr>
    <td><strong>param2</strong></td>
    <td>drop(0)/grab(1)</td>
-   <td>Gripper action:
+   <td>Gripper action:
+
    0:Release
-   1:Grab   </td>
+   1:Grab
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
@@ -4174,21 +4196,24 @@ to zero will remove the associated limit.
    <td><strong>param1</strong></td>
    <td>timeout S</td>
    <td>Maximum time (in seconds) that the external controller is allowed to
-   control vehicle. Use 0 to remove time limits (unlimited time allowed).   </td>
+   control vehicle. Use 0 to remove time limits (unlimited time allowed).
+   </td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
    <td>min alt</td>
    <td>Minimum allowed absolute altitude (in meters, AMSL), below which the
    command will be aborted and the mission will continue. Use 0 to indicate
-   that there is no minimum altitude limit.   </td>
+   that there is no minimum altitude limit.
+   </td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
    <td>max alt</td>
    <td>Maximum allowed absolute altitude (in meters, AMSL), above which the
    command will be aborted and the mission will continue. Use 0 to indicate
-   that there is no maximum altitude limit.   </td>
+   that there is no maximum altitude limit.
+   </td>
    </tr>
    <tr>
    <td><strong>param4</strong></td>
@@ -4196,7 +4221,8 @@ to zero will remove the associated limit.
    <td>Horizontal move limit (in meters, AMSL). If vehicle moves more than this
    distance from its location at the moment the command was executed, the
    command will be aborted and the mission will continue. Use 0 to indicate
-   that there is no horizontal limit.   </td>
+   that there is no horizontal limit.
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param5</td>
