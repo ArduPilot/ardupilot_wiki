@@ -76,7 +76,7 @@ To do the configuration follow the following steps:
 .. image:: ../../../images/Multiplex_Launcher_02.jpg
     :target: ../_images/Multiplex_Launcher_02.jpg
 
-- In the “RX-Options” Window scroll down to “More Settings”. In the “More Settings” section double-click “*Options…” to open the “More setting”-Window and select “Serial servodata SRXL” as data output at B/D port. Close the “More setting”-Windows by clicking “Accept”.
+- In the “RX-Options” Window scroll down to “More Settings”. In the “More Settings” section double-click “* Options…” to open the “More setting”-Window and select “Serial servodata SRXL” as data output at B/D port. Close the “More setting”-Windows by clicking “Accept”.
 
 .. image:: ../../../images/Multiplex_Launcher_03.jpg
     :target: ../_images/Multiplex_Launcher_03.jpg
@@ -86,10 +86,10 @@ To do the configuration follow the following steps:
 .. note:: 
       There will be no active feedback of the receiver to show you that data are stored successfully. But no worries – they will be stored reliably.
 
-- To complete the SRXL activation on B/D port click “Close” in the “RX Options”-Window and “Close” in the “RX Options”-Window.
+- To complete the SRXL activation on B/D port click “Close” in the “RX Options”-Window and “Close” in the “RX/RF DataManager”-Window.
 - To reboot the receiver, disconnect PC-cable and power supply from the receiver.
 - Receiver is now configured for SRXL output.
-- Connect receivers to the PIXHAWK as described :ref:`here <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems-multiplex-srxl>`
+- Connect receivers to the PIXHAWK as described :ref:`here <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems-multiplex-srxl>`.
 - Test and adjust servo channel assignments in Mission planner if required. MULTIPLEX radios without free servo assignment (e.g. Cockpit SX) have the following standard servo assignment:
    
 .. image:: ../../../images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.jpg
