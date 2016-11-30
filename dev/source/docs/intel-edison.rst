@@ -70,13 +70,13 @@ The easiest way to get started is to flash the Edison with image recommended by 
 
 -  Connect your PC to the Pixhawk2 using the USB cables as shown below.  This provides power and enables flashing the image
 
-   .. image:: ../images/PH2_Edison_reflash_connections.png
+   .. image:: ../images/intel-edison-pixhawk2-reflash-connections.png
        :width: 50%
        :align: center
        
 - The ports on the carrier board connect to the Edison, one is the serial console port and the other is the OTG port. See the image below to identify each one:
 
-   .. image:: ../images/PH2_Carrier_EdisonPorts.png
+   .. image:: ../images/intel-edison-pixhawk2-carrier-usbports.png
        :width: 50%
        :align: center
               
