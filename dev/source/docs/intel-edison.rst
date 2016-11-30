@@ -53,36 +53,57 @@ The easiest way to get started is to flash the Edison with image recommended by 
 -  Extract/Unzip the image (a "toFlash" directory should appear):
 
    - Windows users can use `7-zip <http://www.7-zip.org/>`__
-   - Ubuntu users can right-mouse-button-click and select "Extract Here" or type "tar -xzvf ArduPilotCompanionEdisonImage0.1.1.tar.gz"
+   - Ubuntu users can right-mouse-button-click and select "Extract Here" or type ``tar -xzvf ArduPilotCompanionEdisonImage0.1.1.tar.gz``
 
 -  Install dfu:
 
    - On Windows:
 
       - Download and extract `dfu-util-0.9.win64.zip <http://dfu-util.sourceforge.net/releases/dfu-util-0.9-win64.zip>`__ from `dfu-util.sourceforget.net/releases <http://dfu-util.sourceforge.net/releases/>`__
-      - Copy the "dfu-util.exe" and "libusb-1.0.dll" files into the "toFlash" directory created when extracing the image (see above)
-   - On Ubuntu install with "sudo apt-get install dfu-util"
+      - Copy the ``dfu-util.exe`` and ``libusb-1.0.dll`` files into the ``toFlash`` directory created when extracing the image (see above)
+   - On Ubuntu install with ``sudo apt-get install dfu-util``
 
--  Connect your PC to the Pixhawk2 using a USB cable as shown below.  This provides power and enables flashing the image
+   - On OS X:
+   
+      - Follow the instructions on the `Homebrew web page <http://brew.sh>`__. 
+      - Install dfu-util  ``brew install dfu-util``		
 
-   .. image:: ../images/intel-edison-pixhawk2-usb-connectors.jpg
+-  Connect your PC to the Pixhawk2 using the USB cables as shown below.  This provides power and enables flashing the image
+
+   .. image:: ../images/PH2_Edison_reflash_connections.png
        :width: 50%
+       :align: center
+       
+- The ports on the carrier board connect to the Edison, one is the serial console port and the other is the OTG port. See the image below to identify each one:
 
+   .. image:: ../images/PH2_Carrier_EdisonPorts.png
+       :width: 50%
+       :align: center
+              
 - Flash the image:
 
-   - On Windows double click on the "flashall.bat" script found in the "toFlash" directory
-   - On Ubuntu cd into the "toFlash" directory and enter, "./flashall.sh"
-- Wait 1 to 2 min before cutting power to the Edison
+   - On Windows double click on the ``flashall.bat`` script found in the ``toFlash`` directory or Open a command prompt window navigate to the ``toFlash`` folder and run ``flashall.bat`` to see the output
+   - On Ubuntu and OS X cd into the ``toFlash`` directory and enter, ``./flashall.sh``
+   
+   - During the flashing process, the script will ask you to un plug the Edison. For this you must cut power to the Cube by removing only the USB cable connected to the cube itself.
+   
+- After flashing is done, wait 1 to 2 min before cutting power to the Edison
+
+- This video shows how to do this process on a OS X machine, but the process should be very similar in Linux and Windows.
+
+  .. youtube:: FEflrTHf5zQ
+       :width: 100%
+
 
 After flashing has completed the root file system must be expanded manually from 1.5GB to 2.2GB:
 
-- Connect two USB cables from your PC to the Pixhawk2
+- Connect two USB cables from your PC to the Pixhawk2, one to the cube, the other one to the console port.
 - Open a serial connection to the Edison (which uses the 2nd USB connection) at 115200 baud with username and password "edison"
 
    - On windows you may use `Putty <https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe>`__
-   - On Linux/Ubuntu or OSX you can use screen, "screen /dev/tty.usbserial-A703ZB19 115200"
+   - On Linux/Ubuntu or OSX you can use screen, ``screen /dev/tty.usbserial-Axxxxxxxx 115200`` ("xxxxxxxx" value is specific to each board)
 
-- use the post-flash.sh script to expand the file system:
+- use the ``post-flash.sh`` script to expand the file system:
 
 ::
 
@@ -101,7 +122,69 @@ Finally edit these files with your Wi-Fi network credentials:
 	/etc/interfaces/interfaces.home
 	/etc/interfaces/interfaces.work
 
-Then you can log into the Edison and type "homenet.sh" or "worknet.sh" to switch between network configurations
+Then you can log into the Edison and type ``homenet.sh`` or ``worknet.sh`` to switch between network configurations
+
+------------------------
+
+Troubleshooting bricked Edison
+==============================
+
+In some cases the Edison may stop responding to the flashing script. If this happens you might want to try to recover the Edison by doing the following.
+It is important to note this will only work under Linux Ubuntu 14.04
+
+Download the latest version of xFSTK onto your Ubuntu 14.04 32-bit system from `here <https://communities.intel.com/external-link.jspa?url=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fxfstk%2Ffiles%2F>`__. and extract.
+
+	1. Unzip the downloaded file with 
+	::
+		tar xvfz xfstk-dldr-linux-source-1.7.2.tar.gz
+		
+	2. Navigate to the source folder 
+	::	
+		cd xfstk-build/linux-source-package
+		
+	3. Install the required packages
+	::
+		sudo apt-get install g++ qtcreator build-essential devscripts libxml2-dev alien doxygen graphviz libusb-dev libboost-all-dev  
+	 	sudo apt-get install libqt4-dev qt4-qmake  
+	 	sudo apt-get install libusb-1.0-0-dev
+	 	
+	4. Create the following Symlink  
+	::
+		ln -s /usr/lib/x86_64-linux-gnu/libusb-1.0.a /usr/lib/libusb.a
+		
+	5. Configure the build parameters
+	::
+		export DISTRIBUTION_NAME=ubuntu14.04  
+		export BUILD_VERSION=0.0.0
+		
+	6. Build the xFSTK tools 
+	::
+		make --version -j 6
+		
+	7. Run cmake
+	::
+		mkdir build
+		cd build
+		cmake ..
+		
+	8. Build the package 
+	::
+		make package
+		
+	9. Install the package you just built 
+	::
+		dpkg -i [built package]
+		
+	10. May need to install:
+	::
+		sudo apt-get install libboost-program-options1.55.0
+		sudo apt-get install dfu-util
+
+now you should be able to run ``./flashall.sh —recovery`` to recover the Edison.
+
+
+
+
 
 ------------------------
 
