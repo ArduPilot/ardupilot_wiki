@@ -62,7 +62,7 @@ Ensure that Copter-3.5 (or higher) is loaded onto the flight controller and conn
 - set :ref:`GPS_TYPE <GPS_TYPE>` to 0 to disable the GPS
 - set :ref:`ARMING_CHECK <ARMING_CHECK>` to -9 to disable the GPS arming check
 - set :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` to 115 to set telemetry1's baud rate to 115200 (if using Telem2 set :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` instead)
-- set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` to 12 to enable reading the IndoorLoiter2 protocol (If using Telem2 set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` instead)
+- set :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` to 13 to enable reading the IndoorLoiter2 protocol (If using Telem2 set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` instead)
 - set :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` to 0 to ensure telem1 does not use flow control (If using Telem2 set :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` instead, not required if using Serial4/5)
 
 Ground Testing
