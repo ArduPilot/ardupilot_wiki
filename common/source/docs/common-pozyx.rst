@@ -35,7 +35,7 @@ Preparing the tag
 .. image:: ../../../images/pozy-pixhawk-uno.png
     :target: ../_images/pozy-pixhawk-uno.png
 
-- connect one of the Pixhawk's telemetry connections to the UNO.  Telem1 is shown abive but Telem2 or Serial4/5 will work equally well.
+- connect one of the Pixhawk's telemetry connections to the UNO.  Telem1 is shown above but Telem2 or Serial4/5 will work equally well.
 - Pixhawk's GND should be connecdted to one of the UNO's GND pins.
 - Pixhawk's TX should be connected to the UNO's pin 10.
 - Pixhawk's RX should be connected to the UNO's pin 11.
