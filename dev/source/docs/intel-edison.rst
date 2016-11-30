@@ -103,11 +103,11 @@ After flashing has completed the root file system must be expanded manually from
    - On windows you may use `Putty <https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe>`__
    - On Linux/Ubuntu or OSX you can use screen, ``screen /dev/tty.usbserial-Axxxxxxxx 115200`` ("xxxxxxxx" value is specific to each board)
 
-- use the ``post-flash.sh`` script to expand the file system:
+- use the ``post-install.sh`` script to expand the file system:
 
 ::
 
-	edison@edison ~ $ post-flash.sh 
+	edison@edison ~ $ post-install.sh 
 	Running post install chores
 	[sudo] password for edison: 
 	resize2fs 1.42.12 (29-Aug-2014)
@@ -119,8 +119,8 @@ Finally edit these files with your Wi-Fi network credentials:
 
 ::
 
-	/etc/interfaces/interfaces.home
-	/etc/interfaces/interfaces.work
+	/etc/network/interfaces.home
+	/etc/network/interfaces.work
 
 Then you can log into the Edison and type ``homenet.sh`` or ``worknet.sh`` to switch between network configurations
 
