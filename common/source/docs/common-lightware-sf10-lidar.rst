@@ -57,7 +57,7 @@ following parameters (this is done in the *Mission Planner*
 **Config/Tuning \| Full Parameter List** page):
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
--  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 19200
+-  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 19 (19200 baud)
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 8 (LightWareSerial)
 -  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
