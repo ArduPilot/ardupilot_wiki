@@ -18,7 +18,7 @@ For example, with the default Quad-X frame the motors are on outputs
 -  **Channel 8:** Rear right motor, clockwise
 
 You can remember the clockwise/counter-clockwise rule by "motors turn
-in towards the fuselage".
+in towards the fuselage", except for the H configuration, there all directions are inverted!
    
 Another common setup is an octa-quad, which uses the following ordering
 
