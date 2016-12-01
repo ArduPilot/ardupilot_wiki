@@ -41,7 +41,7 @@ Preparing the tag
 - Pixhawk's RX should be connected to the UNO's pin 11.
 - Pixhawk's VCC may be connected to the UNO's 5V connector to provide power to the Uno/Pozyx from the Pixhawk.
 
-The Arduino IDE should be used to load `IndoorLoiter2 sketch <https://github.com/rmackay9/IndoorLoiter/blob/indoor-loiter2/IndoorLoiter2/IndoorLoiter2.ino>`__ onto the Uno after first changing the anchor tags `found here <https://github.com/rmackay9/IndoorLoiter/blob/indoor-loiter2/IndoorLoiter2/IndoorLoiter2.ino#L12>`__ to match the IDs of the tags in your setup.
+The Arduino IDE should be used to load `IndoorLoiter sketch <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Pozyx/IndoorLoiter/IndoorLoiter.ino>`__ onto the Uno after first changing the anchor tags `found here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Pozyx/IndoorLoiter/IndoorLoiter.ino#L12>`__ to match the IDs of the tags in your setup.
 
 At this point you may wish to test the tag's ability to communicate with the tags by:
 
