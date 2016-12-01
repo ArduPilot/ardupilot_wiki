@@ -53,9 +53,9 @@ Safe Indoor Flying Dos
 
 -  Disable GPS in non-auto\*\* modes - set AHRS_GPS_USE to 0
 -  Disable GPS_FAILSAFE
--  Enable Battery_failsafe to LAND only or disable
--  Enable Throttle Failsafe to LAND only or disable
--  Disable FENCE
+-  Enable Battery_failsafe to LAND only or disable - set FS_BATT_ENABLE
+-  Enable Throttle Failsafe to LAND only or disable - set FS_THR_ENABLE
+-  Disable FENCE - set FENCE_ENABLE
 -  Use Sonar (if available)
 
 Safe Indoor Flying Don'ts
