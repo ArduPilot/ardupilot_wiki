@@ -45,6 +45,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Precision Landing (IRLock) <precision-landing-with-irlock>
     ADS-B Receiver <common-ads-b-receiver>
     Crop Sprayer <sprayer>
+    Pozyx for Non-GPS navigation <common-pozyx>
 [/site]
 
 [site wiki="plane"]
