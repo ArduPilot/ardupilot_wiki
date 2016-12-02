@@ -53,7 +53,7 @@ The easiest way to get started is to flash the Edison with image recommended by 
 -  Extract/Unzip the image (a "toFlash" directory should appear):
 
    - Windows users can use `7-zip <http://www.7-zip.org/>`__
-   - Ubuntu users can right-mouse-button-click and select "Extract Here" or type ``tar -xzvf ArduPilotCompanionEdisonImage0.1.1.tar.gz``
+   - Ubuntu users can right-mouse-button-click and select "Extract Here" or type ``tar -xzvf intel_edison_image_v0.1.1.tar.gz``
 
 -  Install dfu:
 
@@ -61,6 +61,7 @@ The easiest way to get started is to flash the Edison with image recommended by 
 
       - Download and extract `dfu-util-0.9.win64.zip <http://dfu-util.sourceforge.net/releases/dfu-util-0.9-win64.zip>`__ from `dfu-util.sourceforget.net/releases <http://dfu-util.sourceforge.net/releases/>`__
       - Copy the ``dfu-util.exe`` and ``libusb-1.0.dll`` files into the ``toFlash`` directory created when extracing the image (see above)
+      - Download and install the latest `drivers from Intel <https://software.intel.com/edison-config/win/latest>`__.
    - On Ubuntu install with ``sudo apt-get install dfu-util``
 
    - On OS X:
