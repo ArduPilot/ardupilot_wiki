@@ -49,11 +49,11 @@ Setting up the Edison
 
 The easiest way to get started is to flash the Edison with image recommended by the ArduPilot team:
 
--  Download the `latest image from firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/intel_edison_image_latest>`__
+-  Download the `latest image from firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/ 	intel_edison_image_latest.tar.gz>`__
 -  Extract/Unzip the image (a "toFlash" directory should appear):
 
    - Windows users can use `7-zip <http://www.7-zip.org/>`__
-   - Ubuntu users can right-mouse-button-click and select "Extract Here" or type ``tar -xzvf intel_edison_image_v0.1.1.tar.gz``
+   - Ubuntu users can right-mouse-button-click and select "Extract Here" or type ``tar -xzvf intel_edison_image_latest.tar.gz``
 
 -  Install dfu:
 
