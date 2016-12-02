@@ -120,8 +120,8 @@ Finally edit these files with your Wi-Fi network credentials:
 
 ::
 
-	/etc/interfaces/interfaces.home
-	/etc/interfaces/interfaces.work
+	/etc/network/interfaces.home
+	/etc/network/interfaces.work
 
 Then you can log into the Edison and type ``homenet.sh`` or ``worknet.sh`` to switch between network configurations
 
