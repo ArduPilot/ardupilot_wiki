@@ -104,11 +104,11 @@ After flashing has completed the root file system must be expanded manually from
    - On windows you may use `Putty <https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe>`__
    - On Linux/Ubuntu or OSX you can use screen, ``screen /dev/tty.usbserial-Axxxxxxxx 115200`` ("xxxxxxxx" value is specific to each board)
 
-- use the ``post-flash.sh`` script to expand the file system:
+- use the ``.local/bin/post-flash.sh`` script to expand the file system:
 
 ::
 
-	edison@edison ~ $ post-flash.sh 
+	edison@edison ~ $ .local/bin/post-flash.sh 
 	Running post install chores
 	[sudo] password for edison: 
 	resize2fs 1.42.12 (29-Aug-2014)
