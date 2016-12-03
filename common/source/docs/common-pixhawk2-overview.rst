@@ -49,4 +49,4 @@ Specifications
 More Information
 ================
 
-see  `www.pixhawk2.com  <http://www.pixhawk2.com >`__
+see  `www.pixhawk2.com  <http://www.pixhawk2.com>`__
