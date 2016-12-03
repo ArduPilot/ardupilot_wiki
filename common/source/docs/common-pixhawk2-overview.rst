@@ -60,3 +60,10 @@ More Information
 ================
 
 see  `www.pixhawk2.com  <http://www.pixhawk2.com>`__
+
+More Images
+===========
+
+.. image:: ../../../images/thecube/connect-to-com-port.jpg
+    :target: ../_images/thecube/connect-to-com-port.jpg
+    :size: 30%
