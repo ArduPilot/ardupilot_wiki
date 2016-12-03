@@ -4,6 +4,9 @@
 Pixhawk 2 (TheCube) Overview (DRAFT)
 ============================
 
+.. image:: ../../../images/thecube/pixhawk2-overhead-small.jpg
+    :target: ../_images/thecube/pixhawk2-overhead-small.jpg
+
 Specifications
 ==============
 
