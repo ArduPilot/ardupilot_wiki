@@ -1,7 +1,7 @@
 .. _common-pixhawk2-overview:
 
 ============================
-Pixhawk 2 (TheCube) Overview (DRAFT)
+Pixhawk 2 (TheCube) Overview (Work In Progress)
 ============================
 
 .. image:: ../../../images/thecube/pixhawk2-overhead-small.jpg
@@ -48,6 +48,13 @@ Specifications
    -  Width XX mm (X.X”)
    -  Height XX.5 mm (.X”)
    -  Length XX.5 mm (X.X”)
+   
+Quick Start
+===========
+
+Use the Pixhawk 1 Quick start as a guide. PH2 update coming soon
+
+see :ref:`Pixhawk 1 Wiring QuickStart <common-pixhawk-wiring-and-quick-start>`.
 
 More Information
 ================
