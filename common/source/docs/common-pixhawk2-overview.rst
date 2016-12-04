@@ -4,8 +4,9 @@
 Pixhawk 2 (TheCube) Overview (Work In Progress)
 ============================
 
-.. image:: ../../../images/thecube/pixhawk2-overhead-small.jpg
-    :target: ../_images/thecube/pixhawk2-overhead-small.jpg
+.. image:: ../../../images/thecube/pixhawk2-overhead.jpg
+    :target: ../images/thecube/pixhawk2-overhead.jpg
+    :width: 360px
 
 Specifications
 ==============
@@ -65,5 +66,5 @@ More Images
 ===========
 
 .. image:: ../../../images/thecube/connect-to-com-port.jpg
-    :target: ../_images/thecube/connect-to-com-port.jpg
+    :target: ../images/thecube/connect-to-com-port.jpg
     :width: 360px
