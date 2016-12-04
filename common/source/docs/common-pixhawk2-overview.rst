@@ -66,4 +66,4 @@ More Images
 
 .. image:: ../../../images/thecube/connect-to-com-port.jpg
     :target: ../_images/thecube/connect-to-com-port.jpg
-    :size: 30%
+    :width: 360px
