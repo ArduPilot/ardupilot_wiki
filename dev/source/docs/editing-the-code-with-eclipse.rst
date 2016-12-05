@@ -9,7 +9,7 @@ and building for Pixhawk/PX4 targets.
 
 .. note::
 
-   These instructions are partially based on the `PX4 Windows Toolchain Installation wiki <https://pixhawk.ethz.ch/px4/dev/toolchain_installation_win>`__.
+   Ensure that you have Java installed before Eclipse can run.  If not, Java can be installed from: <https://www.java.com/en/>`__.
 
 Preconditions
 =============
