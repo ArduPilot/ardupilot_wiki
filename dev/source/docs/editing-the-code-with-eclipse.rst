@@ -7,10 +7,6 @@ Building for Pixhawk/PX4 using Eclipse on Windows
 This article shows how you can set up Eclipse for editing ArduPilot code
 and building for Pixhawk/PX4 targets.
 
-.. note::
-
-   These instructions are partially based on the `PX4 Windows Toolchain Installation wiki <https://pixhawk.ethz.ch/px4/dev/toolchain_installation_win>`__.
-
 Preconditions
 =============
 
