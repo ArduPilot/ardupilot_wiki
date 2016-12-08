@@ -38,13 +38,6 @@ using the ``--map`` and ``--console`` options:
     cd ~/ardupilot/ArduCopter
     sim_vehicle.py -j4 --map --console
 
-As part of the setup you should have loaded some standard/test
-parameters into the *MAVProxy Command Prompt*:
-
-::
-
-    param load ..\Tools\autotest\copter_params.parm
-
 The *MAVProxy Command Prompt*, *Console* and *Map* should be arranged
 conveniently so you can observe the status and send commands at the same
 time.
