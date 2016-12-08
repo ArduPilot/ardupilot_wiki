@@ -4,7 +4,7 @@
 NVidia TX1 as a Companion Computer
 ===========================================
 
-This page explains how to connect and configure an `NVidia TX1 <http://www.nvidia.com/object/jetson-tx1-dev-kit.html>`__ using `AuVidea.eu's J120 carrier board <http://auvidea.eu/index.php/2015-11-08-08-01-27/2016-02-03-12-30-02/j120-super-mini-computer-with-tx1>`__ so that it is able to communicate with a Pixhawk flight controller using the MAVLink protocol over a serial connection.
+This page explains how to connect and configure an `NVidia TX1 <http://www.nvidia.com/object/jetson-tx1-dev-kit.html>`__ using `AuVidea.eu's J120 carrier board <http://auvidea.eu/index.php/2016-08-06-11-12-04/2016-02-03-12-30-02/j120-super-mini-computer-with-tx1>`__ so that it is able to communicate with a Pixhawk flight controller using the MAVLink protocol over a serial connection.
 
 Connecting the Pixhawk and TX1
 ==============================
@@ -20,14 +20,13 @@ Setup the Pixhawk
 
 Connect to the Pixhawk with a ground station (i.e. Mission Planner) and set the following parameters:
 
--  :ref:`TELEM_DELAY <TELEM_DELAY>` = 30.  This delays the pixhawk from using the telemetry ports for 30 seconds.  This is required to avoid interrupting the TX1's bootloader.  Note this only works if the TX1 and Pixhawk are powered up at the same time (or the TX1 is powered up first).
-
--  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 921.  The Pixhawk and TX1 can commnicate at 921600 baud.
+-  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 1 (the default) to enable MAVLink on the serial port.
+-  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 921 so the Pixhawk can communicate with the TX1 at 921600 baud.
  
 Setup the TX1
 =============
 
-The easiest way to setup the TX1 is to flash one of the existing binaries from `firmware.ardupilot.org <http://firmware.ardupilot.org/Companion>`__ (look for images starting with "tx1").  Note that the J120 boards do not allow flashing so instead an `NVidia TX1 development board <http://www.nvidia.com/object/jetson-tx1-dev-kit.html>`__ must be used.
+The easiest way to setup the TX1 is to flash one of the existing binaries from `firmware.ardupilot.org <http://firmware.ardupilot.org/Companion>`__ (look for images starting with "tx1") or you can create your own image by following the instructions found `here in the ardupilot companion repo <https://github.com/ArduPilot/companion/tree/master/Nvidia_JTX1/Ubuntu>`__.
 
 -  mount the TX1 back on the NVidia development board
 -  download and unzip the latest image starting with "tx1" from `firmware.ardupilot.org <http://firmware.ardupilot.org/Companion>`__
