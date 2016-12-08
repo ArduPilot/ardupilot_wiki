@@ -9,6 +9,16 @@ of `the main Copter code <https://github.com/ArduPilot/ardupilot/tree/master/Ard
 resides in it's own directory, and `the libraries <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__ which
 are shared with Plane and Rover.
 
+Below is a highlevel view of the ardupilot architecture.
+
+.. image:: ../images/ArduPilot_HighLevelArchecture.png
+    :target: ../_images/ArduPilot_HighLevelArchecture.png
+
+Below is a more zoomed in view (as compared to the above diagram) of the architecture.
+
+.. image:: ../images/copter-code-overview-architecture2.png
+    :target: ../_images/copter-code-overview-architecture2.png
+
 Click on the images below to see a high level view of flight-mode to
 motor output code:
 
