@@ -4,8 +4,14 @@
 Attitude Control (Copter Code Overview)
 =======================================
 
-Between AC3.1.5 and AC 3.2 the attitude control logic was restructured
-as part of "the onion" project.  The new structure is shown below.
+Below is a high level diagram showing how the attitude control is done for each axis.
+The control is done using a P controller to convert the angle error (the difference between the target angle and actual angle) into a desired rotation rate followed by a PID controller to convert the rotate rate error into a high level motor command. 
+The "square root controller" portion of the diagram shows the curved used with the angle control's P controller.
+
+.. image:: ../images/Copter_CodeOverview_AttitudeControlPID.png
+    :target: ../_images/Copter_CodeOverview_AttitudeControlPID.png
+
+The diagram below shows the code path followed from pilot input down to pwm output.
 
 .. image:: ../images/AC_CodeOverview_ManualFlightMode.png
     :target: ../_images/AC_CodeOverview_ManualFlightMode.png
@@ -65,10 +71,9 @@ is called.  This converts the output from the methods listed above into
 roll, pitch and yaw inputs which are sent to the
 `AP_Motors <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Motors>`__
 library via it's `set_roll, set_pitch, set_yaw and set_throttle <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_Motors_Class.h#L99>`__
-methods. .
+methods.
 
--  The
-   `AC_PosControl <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_PosControl.h>`__
+-  The `AC_PosControl <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AC_AttitudeControl/AC_PosControl.h>`__
    library allows 3D position control of the vehicle.  Normally only the
    simpler Z-axis (i.e. altitude control) methods are used because more
    complicated 3D position flight modes (i.e.
@@ -109,22 +114,6 @@ must be called.
    -  set_throttle() : accepts an absolute throttle value in the range
       of 0 ~ 1000.  0 = motors off, 1000 = full throttle.
 
-There are different classes for each frame type (quad, Y6, traditional
-helicopter) but in each there is an
-"`output_armed <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_MotorsMatrix.cpp#L123>`__\ "
-function which is responsible for implementing the conversion of these
-roll, pitch, yaw and throttle values into pwm outputs.  This conversion
-often includes implementing a "stability patch" which handles
-prioritising one axis of control over another when the input requests
-are outside the physical limits of the frame (i.e. max throttle and max
-roll is not possible with a quad because some motors must be less than
-others to cause a roll).  At the bottom of the "output_armed" function
-there is a call to the hal.rcout->write() which passes the desired pwm
-values to the AP_HAL layer.
+-  There are different classes for each frame type (quad, Y6, traditional helicopter) but in each there is an "`output_armed <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_MotorsMatrix.cpp#L123>`__\ " function which is responsible for implementing the conversion of these roll, pitch, yaw and throttle values into pwm outputs.  This conversion often includes implementing a "stability patch" which handles prioritising one axis of control over another when the input requests are outside the physical limits of the frame (i.e. max throttle and max roll is not possible with a quad because some motors must be less than others to cause a roll).  At the bottom of the "output_armed" function there is a call to the hal.rcout->write() which passes the desired pwm values to the AP_HAL layer.
 
--  The
-   `AP_HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__
-   libraries (hardware abstraction layer) provides a consistent
-   interface for all boards.  In particular the hal.rc_out_write()
-   function will cause the specified PWM received from the AP_Motors
-   class to appear on the appropriate pwm pin out for the board.
+-  The `AP_HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__ libraries (hardware abstraction layer) provides a consistent interface for all boards.  In particular the hal.rc_out_write() function will cause the specified PWM received from the AP_Motors class to appear on the appropriate pwm pin out for the board.
