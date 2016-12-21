@@ -12,7 +12,7 @@ Once your equipment is connected and ArduPilot is configured, follow the instruc
 Transmitter set-up
 ------------------
 
-Please refer to the `OpenTX manual <https://docs.google.com/document/d/1qlh09LzxtpPt7j_aqG8yiOu2yoYMzP9XA-PJA81rDJQ/edit#heading=h.36trni4byo5x>`__
+Please refer to the `OpenTX manual <https://www.gitbook.com/book/opentx/opentx-taranis-manual/details>`__
 for how to display values from the FrSky telemetry feed on the RC transmitter's screen.
 
 .. note::
