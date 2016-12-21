@@ -13,12 +13,7 @@ Compared to regular FrSky telemetry, passthrough telemetry contains ArduPilot sp
 
 ArduPilot's Passthrough FrSky telemetry protocol is an open protocol that is free to use. `FlightDeck <http://www.craftandtheoryllc.com/product/flightdeck-taranis-app-for-ArduPilot-apmcopter/>`__ is an OpenTX app that uses passthrough telemetry.
 
-The ArduPilot passthrough telemetry specification including data packets and message rates is available as a spreadsheet on `Google Sheets <https://docs.google.com/spreadsheets/d/1HIfioe-EGTOtH5rOdexGlAz2E5HnCvZLm0EG6rfjNSI/edit?usp=sharing>`__.
-
-.. raw:: html
-
-  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzfjhsUvByPERTC9vqK9v8WouYvKwZh1cQNF_KjAQLfZZiQ03nryHOn5NBwbxT3WvFw--eKEn71mz3/pubhtml?gid=1792154932&amp;single=true&amp;widget=true&amp;headers=false" width="600" height="800"></iframe>
-
+The ArduPilot passthrough telemetry specification including data packets and message rates is available as a `spreadsheet <../../../images/FrSky_Passthrough protocol.xlsx>`__.
 
 Required/Compatible Hardware
 ============================
