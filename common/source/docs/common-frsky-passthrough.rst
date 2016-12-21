@@ -35,7 +35,7 @@ Required/Compatible Hardware
 	- Pixhawk 2.1
 	- PixRacer
 	- Pixhack
-	- (Linux Boards and APM2.6 are not supported at this time)
+	- (Linux Boards have not been tested and APM2.6 is not supported)
 
 * A Taranis X9D, X9D Plus or X9E
 
