@@ -9,7 +9,7 @@ recommended for use with ArduPilot (in alphabetical order).
 
 * `AUAV <http://www.auav.co/>`__
 * `Bask Aerospace <http://www.baskaerospace.com.au/>`__
-* `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__
+* `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules) 
 * `CUAV <http://www.cuav.net>`__
 * `Emlid <https://emlid.com/shop/>`__
 * `EnRoute <http://www.enroute.co.jp/>`__
