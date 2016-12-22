@@ -144,25 +144,45 @@ You can make your own cable using the following components:
 FrSky Telemetry setup in Mission Planner
 ----------------------------------------
 
-To enable the FrSky Telemetry output on the Pixhawk's *Telem2* port,
+
+You can connect the telemetry cable to the TELEM1, TELEM2, GPS or SERIAL 4/5 ports.
+
+To enable the FrSky Telemetry output on one of the serial ports,
 please connect with the **Mission Planner** and then open the
-**Config/Tuning \| Full Parameter List** page and set the
-``SERIAL2_PROTOCOL`` parameter to "3" for D-Receiver and "4" for
-X-Receiver.
+**Config/Tuning \| Full Parameter List** page and set the corresponding
+``SERIALX_PROTOCOL`` parameter to the desired value depending on the port that the cable is plugged in:
+
+- Standard D telemetry: **3** (2 for AC3.2 or prior versions)
+- Standard SPort telemetry: **4** (3 for AC3.2 or prior versions)
+- Ardupilot SPort telemetry: **10** (AC 3.4 Latest only)
+
++--------------------------+-------------------+
+| Port used                | Parameter         |
++==========================+===================+
+| TELEM1                   | SERIAL1_PROTOCOL  |
++--------------------------+-------------------+
+| TELEM2                   | SERIAL2_PROTOCOL  |
++--------------------------+-------------------+
+| GPS                      | SERIAL3_PROTOCOL  |
++--------------------------+-------------------+
+| SERIAL 4/5 (recommended) | SERIAL4_PROTOCOL  |
++--------------------------+-------------------+
 
 .. note::
-
-   The information above is for ArduCopter 3.3. Prior to AC3.2 the
-   values are 2 for D-Receiver and 3 for X-Receiver.
-
-.. tip::
-
-   ``SERIAL2_BAUD`` and ``SERIAL1_BAUD`` are not necessary for FrSky
-   telemetry - it is a static value for D-Port (9600) and S-port
+   ``SERIALX_BAUD`` is not necessary for FrSky
+   telemetry - it is a static value for D telemetry (9600) and SPort
    (57600).
 
-.. image:: ../../../images/MP-Serial2_protocol.png
-    :target: ../_images/MP-Serial2_protocol.png
+.. image:: ../../../images/MP_SERIAL2_FrSky10.png
+    :target: ../_images/MP_SERIAL2_FrSky10.png
+
+.. warning::
+   Make sure to set only one SERIAL#_PROTOCOL parameter to 10 and the other SERIAL#_PROTOCOL parameters to their default values or at least to something other than 3, 4, or 10, as only one port can be used for FrSky telemetry at a time!
+
+Connect the telemetry cable to either the TELEM1, TELEM2, GPS, or SERIAL 4/5 port of your Pixhawk and the other end to the Smart Port of your X-series receiver (X4R, X4RSB, X6R, X8R, or XSR) or FLVSS/MLVSS sensor.
+
+.. warning::
+   DO NOT PLUG THE TELEMETRY CABLE TO THE PIXHAWK WHILE THE PIXHAWK IS ON! IT MAY CAUSE THE CABLE TO OVERHEAT WHICH COULD RESULT IN SERIOUS BURNS AND DAMAGE TO THE CABLE!
 
 Transmitter set-up
 ------------------
@@ -193,170 +213,150 @@ link, and how they are encoded.
    The list below is produced by code observation, and is not fully
    complete.
 
-.. raw:: html
-
-   <table>
-   <tbody>
-   <tr>
-   <th>Taranis telemetry screen identifier</th>
-   <th>FRSKY_ID\_</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td>T1</td>
-   <td>TEMP1</td>
-   <td>send control_mode as Temperature 1 (TEMP1)</td>
-   </tr>
-   <tr>
-   <td>T2</td>
-   <td>TEMP2</td>
-   <td>send number of GPS satellites and GPS status. For example: 73 means 7 satellite and 3D lock</td>
-   </tr>
-   <tr>
-   <td>FUEL</td>
-   <td>FUEL</td>
-   <td>Send battery remaining</td>
-   </tr>
-   <tr>
-   <td>Vfas</td>
-   <td>VFAS</td>
-   <td>Send battery voltage</td>
-   </tr>
-   <tr>
-   <td>CURR</td>
-   <td>CURRENT</td>
-   <td>Send current consumption</td>
-   </tr>
-   <tr>
-   <td>Hdg</td>
-   <td>GPS_COURS_BP</td>
-   <td>Send heading in degrees based on AHRS and not GPS</td>
-   </tr>
-   <tr>
-   <td>GPS lat/long</td>
-   <td>?</td>
-   <td>Is transmitted normally</td>
-   </tr>
-   <tr>
-   <td>Spd</td>
-   <td>GPS_SPEED_BP/AP</td>
-   <td>GPS speed</td>
-   </tr>
-   <tr>
-   <td>Alt</td>
-   <td>FRSKY_ID_BARO_ALT_BP/AP</td>
-   <td>Barometer altitude</td>
-   </tr>
-   <tr>
-   <td>GAlt</td>
-   <td>FRSKY_ID_GPS_ALT_BP/AP</td>
-   <td>GPS altitude</td>
-   </tr>
-   </tbody>
-   </table>
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| Taranis telemetry screen identifier | FRSKY_ID\_                  | Description                                                                                 |
++=====================================+=============================+=============================================================================================+
+| T1                                  | TEMP1                       | send control_mode as Temperature 1 (TEMP1)                                                  |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| T2                                  | TEMP2                       | send number of GPS satellites and GPS status. For example: 73 means 7 satellite and 3D lock |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| FUEL                                | FUEL                        | Send battery remaining                                                                      |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| Vfas                                | VFAS                        | Send battery voltage                                                                        |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| CURR                                | CURRENT                     | Send current consumption                                                                    |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| Hdg                                 | GPS_COURS_BP                | Send heading in degrees based on AHRS and not GPS                                           |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| GPS lat/long                        | ?                           | Is transmitted normally                                                                     |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| Spd                                 | GPS_SPEED_BP/AP             | GPS speed                                                                                   |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| Alt                                 | FRSKY_ID_BARO_ALT_BP/AP     | Barometer altitude                                                                          |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
+| GAlt                                | FRSKY_ID_GPS_ALT_BP/AP      | GPS altitude                                                                                |
++-------------------------------------+-----------------------------+---------------------------------------------------------------------------------------------+
 
 Other available values:
 
-.. raw:: html
++-------------------------------------+-----------------------+-----------------------------------------------------------------+
+| Taranis telemetry screen identifier | FRSKY_ID\_            | Description                                                     |
++=====================================+=======================+=================================================================+
+| RSSI                                |                       | Transmitter data                                                |
++-------------------------------------+-----------------------+-----------------------------------------------------------------+
+| Batt, time                          |                       | Consumption (maybe mAh used?)                                   |
++-------------------------------------+-----------------------+-----------------------------------------------------------------+
+| CONS                                |                       |                                                                 |
++-------------------------------------+-----------------------+-----------------------------------------------------------------+
+| SWR                                 |                       |                                                                 |
++-------------------------------------+-----------------------+-----------------------------------------------------------------+
+| A1                                  |                       | Receiver voltage (not very useful since is always around 4-5V). |
++-------------------------------------+-----------------------+-----------------------------------------------------------------+
 
-   <table>
-   <tbody>
-   <tr>
-   <th>Taranis telemetry screen identifier</th>
-   <th>FRSKY_ID\_</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td>RSSI</td>
-   <td>
-   </td>
-   <td>Transmitter data</td>
-   </tr>
-   <tr>
-   <td>Batt, time</td>
-   <td>
-   </td>
-   <td>Consumption (maybe mAh used?)</td>
-   </tr>
-   <tr>
-   <td>CONS</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>SWR</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>A1</td>
-   <td>
-   </td>
-   <td>Receiver voltage (not very useful since is always around 4-5V).</td>
-   </tr>
-   </tbody>
-   </table>
-   
 Missing:
 
-.. raw:: html
++-------------------------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Taranis telemetry screen identifier | FRSKY_ID\_            | Description                                                                                                                                                   |
++=====================================+=======================+===============================================================================================================================================================+
+| GPS date&time                       |                       | Note: These were logged as some fixed date&time in the year 2000 on my Taranis SD card. Reviewing if this is a logging issue or a telemetry     issue.        |
++-------------------------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AccelX,Y,Z                          |                       |                                                                                                                                                               |
++-------------------------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CELLS                               |                       |                                                                                                                                                               |
++-------------------------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| RPM                                 |                       |                                                                                                                                                               |
++-------------------------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Air speed                           |                       |                                                                                                                                                               |
++-------------------------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Vertical speed                      |                       |                                                                                                                                                               |
++-------------------------------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-   <table>
-   <tbody>
-   <tr>
-   <th>Taranis telemetry screen identifier</th>
-   <th>FRSKY_ID\_</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td>GPS date&time</td>
-   <td>
-   </td>
-   <td>Note: These were logged as some fixed date&time in the year 2000 on my
-    Taranis SD card. Reviewing if this is a logging issue or a telemetry
-    issue.</td>
-   </tr>
-   <tr>
-   <td>AccelX,Y,Z</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>CELLS</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>RPM</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>Air speed</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>Vertical speed</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   </tbody>
-   </table>
+OpenTX Scripts
+==============
+This section covers how to enable and runs scripts on the Taranis with OpenTX
+
+Enabling Scripts on OpenTX
+--------------------------
+
+The version installed on your Taranis may not have the option to run scripts. If this is the case, you will need to install a new version via OpenTX Companion. This can be done in a few easy steps.
+
+1. Download and install the latest version of OpenTX Companion from www.open-tx.org/downloads.html. Open the OpenTX Companion program, then go to Settings >> Settings
+
+.. image:: ../../../images/opentx_settingstab.png
+    :target: ../_images/opentx_settingstab.png
+
+2. Select your “Radio Type” (Taranis, Taranis Plus, or Taranis X9E), make sure the “lua” build option is checked, then press OK.
+
+.. image:: ../../../images/opentx_luacheck.png
+    :target: ../_images/opentx_luacheck.png
+
+3. Click on File >> Download...
+
+.. image:: ../../../images/opentx_filetab.png
+    :target: ../_images/opentx_filetab.png
+
+4. Click on the “Download FW” button and save the resulting .bin file. Once the firmware is downloaded, press OK.
+
+.. image:: ../../../images/opentx_dlwindow.png
+    :target: ../_images/opentx_dlwindow.png
+ 
+5. Enter bootloader mode on the Taranis by sliding both horizontal trims, each under the main sticks, towards the center and then turning the Taranis on. The top of the Taranis LCD screen should now display “Taranis Bootloader.”
+
+.. image:: ../../../images/taranis_bootloadermode.png
+    :target: ../_images/taranis_bootloadermode.png
+
+6. Connect a USB cable between the Taranis and the computer. “USB Connected” should appear in the center of the Taranis LCD screen. Click on Read/Write >> Write Firmware to Radio.
+
+.. image:: ../../../images/opentx_RWtab.png
+    :target: ../_images/opentx_RWtab.png 
+
+7. Locate/load the firmware (.bin) which was downloaded earlier, then click on the “Write to TX” button. A popup window should display a progress bar which will eventually reach 100%. Once flashing is done, click on the “Close” button to close the popup window.
+
+.. image:: ../../../images/opentx_flashwindow.png
+    :target: ../_images/opentx_flashwindow.png 
+
+Copying Scripts and Sounds to the Taranis
+-----------------------------------------
+
+Scripts and sounds are stored on the Taranis SD Card. To copy a script or sounds to the Taranis, copy them to the SCRIPTS or SOUNDS folder on the Taranis SD. This can be done with an SD card reader or directly with the Taranis.
+
+With the Taranis still in bootloader mode and connected to the computer via USB, the SD card should appear as a computer drive that contains multiple folders, including SCRIPTS and SOUNDS. Scripts and sounds should be copied to these folders.
+
+Running Telemetry Scripts
+-------------------------
+
+Telemetry scripts require sensors to be “discovered” before the scripts can use the telemetry data. This section describes how to the discover the telemetry sensors (similar to using telemetry without scripts) and how to assign a display script to a screen and how to access the screen showing the script display or activate a non-display script (e.g. sound script).
+
+Discovering Sensors
+^^^^^^^^^^^^^^^^^^^
+
+OpenTX 2.1.x requires “discovering” the telemetry messages from the Pixhawk. To discover them, unplug the USB cable, turn off the Taranis, then turn it back on (not in bootloader mode). Repeat the following steps for each model with which you want to use FrSky telemetry:
+
+1. Press the MENU button, then long press the PAGE button to get to the TELEMETRY page. Press the - button until “Discover new sensors” is highlighted and press ENTER. The Taranis LCD screen should display “Stop discovery.”
+
+ .. image:: ../../../images/OpenTX_Discover.png
+    :target: ../_images/OpenTX_Discover.png 
+
+2. Power on the Pixhawk and FrSky receiver. Wait for 15 seconds. The Taranis should discover the emulated sensors based on the data from the Pixhawk. The sensors must all be properly discovered for the scripts to run. The Taranis should show at least discover the following sensors (order not important):
+
+ .. image:: ../../../images/OpenTX_sensors.png
+    :target: ../_images/OpenTX_sensors.png
+
+Assigning a Display Script to a Screen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If a scripts has a display, it needs to be assigned to telemetry screens. Once the script has been assigned to a screen, the script is accessed by doing a long press on the main OpenTX screen. Each long press will switch screens. Multiple scripts can be assigned to multliple screens.
+
+On the TELEMETRY page, scroll down using the - button, and highlight the “None” entry next to “Screen 1.” Once “None” is highlighted, press ENT, then navigate the choices with the +/- buttons until “Script” appears. Press ENT to validate, then press - to move to the right (highlighting “- - -“). Press ENT and select “screens” using the +/- buttons, then press ENT to validate. The “screens” script handles the display capabilities. The Taranis LCD display should then look like this:
+
+.. image:: ../../../images/OpenTX_assign_script_to_screen.png
+    :target: ../_images/OpenTX_assign_script_to_screen.png 
+
+Activating a Custom Script (no display function)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Scripts that do not display anything (e.g. data parsing, sounds) are activated on the CUSTOM script page.
+Press EXIT once, long press PAGE to get to the CUSTOM SCRIPT page, then press ENT to edit LUA1. On the LUA1 page, press ENT and select the script using the +/- buttons, then press ENT to validate.
 
 Hardware solutions
 ==================
