@@ -322,7 +322,7 @@ build and start SITL for a 4-core CPU and then launch a *MAVProxy map*:
 
    ::
 
-       param load ..\Tools\autotest\copter_params.parm
+       param load ..\Tools\autotest\default_params\copter.parm
 
 #. You can send commands to SITL from the command prompt and observe the
    results on the map.
