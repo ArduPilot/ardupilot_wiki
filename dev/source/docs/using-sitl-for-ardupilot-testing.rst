@@ -60,12 +60,12 @@ location in the
 `ardupilot/Tools/autotest/locations.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/locations.txt>`__
 file.
 
-For example, to start Copter in *Ballarat* (a named location in
+For example, to start the simulator in *Ballarat* (a named location in
 **locations.txt**) call:
 
 ::
 
-    cd ArduCopter 
+    cd ardupilot/Tools/autotest/
     sim_vehicle.py -j4 -L Ballarat --console --map
 
 .. note::
