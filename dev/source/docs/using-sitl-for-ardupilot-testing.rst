@@ -383,11 +383,11 @@ Similar to this if you were running a vehicle in SITL via cygwin on
 Microsoft Windows and you wanted to send the mavlink output through a
 connected radio on COM16 to AntennaTracker you can use a command like
 this - note under cygwin comm ports are ttyS and they start at 0 so 15
-is equivalent to COM16:
+is equivalent to COM16:
 
-::
+::
 
-    sim_vehicle.py -A "--uartC=uart:/dev/ttyS15" --console --map
+    sim_vehicle.py -A "--uartC=uart:/dev/ttyS15" --console --map
 
 .. _using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations:
 
