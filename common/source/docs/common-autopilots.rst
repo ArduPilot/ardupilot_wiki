@@ -18,6 +18,7 @@ Open hardware
     :maxdepth: 1
 
     Pixhawk <common-pixhawk-overview>
+	Pixhawk2 <common-pixhawk2-overview>
     Pixracer <common-pixracer-overview>
     Erle-Brain Linux Autopilot <common-erle-brain-linux-autopilot>
     PXFmini Autopilot Shield <common-pxfmini>
