@@ -1,11 +1,11 @@
 .. _common-pixhawk2-overview:
 
 ============================
-Pixhawk 2 (TheCube) Overview (Work In Progress)
+Pixhawk 2 (TheCube) Overview
 ============================
 
-.. image:: ../../../images/thecube/pixhawk2-overhead.jpg
-    :target: ../images/thecube/pixhawk2-overhead.jpg
+.. image:: ../../../images/thecube/connect-to-com-port.jpg
+    :target: ../images/thecube/connect-to-com-port.jpg
     :width: 360px
 
 Specifications
@@ -19,43 +19,45 @@ Specifications
 
 -  **Sensors**
 
-   -  Triple Redundancy IMU
-   -  MPU6000 as main accel and gyro
+   -  Three redundant IMUs (accels + gyros)
+   -  MPU9250 as main accel and gyro
+   -  L3GD20 gyro, LSM303D accelerometer
    -  ST Micro 16-bit gyroscope
    -  ST Micro 14-bit accelerometer/compass (magnetometer)
-   -  MEAS barometer
+   -  Two redundant MS5611 barometers
 
 -  **Power**
 
-   -  Ideal diode controller with automatic failover
+   -  Redundant power supply with automatic failover
    -  Servo rail high-power (7 V) and high-current ready
    -  All peripheral outputs over-current protected, all inputs ESD
       protected
 
 -  **Interfaces**
 
-   -  5x UART serial ports, 1 high-power capable, 2 with HW flow
-      control
-   -  Spektrum DSM/DSM2/DSM-X Satellite input
-   -  Futaba S.BUS input (output not yet implemented)
-   -  PPM sum signal
-   -  RSSI (PWM or voltage) input
-   -  I2C, SPI, 2x CAN, USB
-   -  3.3V and 6.6V ADC inputs
+   -  14x PWM servo outputs (8 from IO, 6 from FMU)
+   -  S.Bus servo output
+   -  R/C inputs for CPPM, Spektrum / DSM and S.Bus
+   -  Analogue / PWM RSSI input
+   -  5x general purpose serial ports, 2 with full flow control
+   -  2x I2C ports
+   -  SPI port (un-buffered, for short cables only not recommended for use)
+   -  2x CAN Bus interface
+   -  3x Analogue inputs (3.3V and 6.6V)
+   -  High-powered piezo buzzer driver (on expansion board)
+   -  High-power RGB LED (I2C driver compatible connected externally only)
+   -  Safety switch / LED
+   -  Optional carrier board for Intel Edison
 
--  **Dimensions**
+Where to Buy
+============
 
-   -  Weight XX g (X.X oz)
-   -  Width XX mm (X.X”)
-   -  Height XX.5 mm (.X”)
-   -  Length XX.5 mm (X.X”)
-   
+Official retailers are listed `here  <http://www.proficnc.com/stores>`__.
+
 Quick Start
 ===========
 
-Use the Pixhawk 1 Quick start as a guide. PH2 update coming soon
-
-see :ref:`Pixhawk 1 Wiring QuickStart <common-pixhawk-wiring-and-quick-start>`.
+Use the :ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>` as a guide. PH2 update coming soon
 
 More Information
 ================
@@ -65,6 +67,6 @@ see  `www.pixhawk2.com  <http://www.pixhawk2.com>`__
 More Images
 ===========
 
-.. image:: ../../../images/thecube/connect-to-com-port.jpg
-    :target: ../images/thecube/connect-to-com-port.jpg
+.. image:: ../../../images/thecube/pixhawk2-overhead.jpg
+    :target: ../images/thecube/pixhawk2-overhead.jpg
     :width: 360px
