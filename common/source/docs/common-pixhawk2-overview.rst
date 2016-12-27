@@ -21,6 +21,7 @@ Specifications
 
    -  Three redundant IMUs (accels + gyros)
    -  MPU9250 as main accel and gyro
+   -  ICM20608 as backup accel, gyro and compass
    -  L3GD20 gyro, LSM303D accelerometer
    -  ST Micro 16-bit gyroscope
    -  ST Micro 14-bit accelerometer/compass (magnetometer)
