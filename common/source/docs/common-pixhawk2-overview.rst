@@ -19,11 +19,9 @@ Specifications
 
 -  **Sensors**
 
-   -  Three redundant IMUs (accels + gyros)
-   -  MPU9250, ICM20948 and/or ICM20648 as first and third IMU (accel and gyro)
-   -  L3GD20+LSM303D or ICM2076xx as backup IMU (accel and gyro)
-   -  ST Micro 16-bit gyroscope
-   -  ST Micro 14-bit accelerometer/compass (magnetometer)
+   -  Three redundant IMUs (accels, gyros and compass)
+   -  InvenSense MPU9250, ICM20948 and/or ICM20648 as first and third IMU (accel and gyro)
+   -  ST Micro L3GD20+LSM303D or InvenSense ICM2076xx as backup IMU (accel and gyro)
    -  Two redundant MS5611 barometers
 
 -  **Power**
