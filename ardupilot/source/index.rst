@@ -8,7 +8,7 @@
 
 .. tip::
 
-   ArduPilot organization is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
+   Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
    
 .. image:: ../../images/home_ardupilot.jpg
     :target: _images/home_ardupilot.jpg
