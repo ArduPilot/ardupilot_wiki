@@ -4,13 +4,12 @@
 Mouse-based Optical Flow Sensor (ADNS3080)
 ==========================================
 
-To improve position hold accuracy in GPS denied environments
-Copter-3.2.1 for APM2.x boards supports the mouse sensor based `Optical Flow sensor <http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2047675.m570.l1313.TR0.TRC0.H0.Xoptical+flow.TRS0&_nkw=optical+flow&_sacat=0>`__
-in a special OF_Loiter flight mode.
+Copter-3.2.1 on APM2.x boards included limited support for the mouse sensor based `Optical Flow sensor <http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2047675.m570.l1313.TR0.TRC0.H0.Xoptical+flow.TRS0&_nkw=optical+flow&_sacat=0>`__
+using the OF_Loiter flight mode.
 
 .. warning::
 
-   For other boards and firmware versions please see the :ref:`PX4Flow wiki page <common-px4flow-overview>`.
+   This sensor is not supported in recent versions of the firmware.  Instead please use the :ref:`PX4Flow sensor <common-px4flow-overview>`.
 
 .. image:: ../../../images/BR-0016-01-2T.jpg
     :target: ../_images/BR-0016-01-2T.jpg
