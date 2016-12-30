@@ -8,13 +8,7 @@ Copter and Plane support *Optical Flow Sensors* (camera modules that use
 ground texture and visible features to determine aircraft ground
 velocity).
 
-[site wiki="copter"]
-Copter supports the mouse based optical flow sensor
-in a special ``OF_Loiter`` mode.
-[/site]
-
 Select the links below for information on the available sensors.
-
 
 .. toctree::
     :maxdepth: 1
