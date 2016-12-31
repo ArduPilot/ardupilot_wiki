@@ -34,6 +34,13 @@ The instructions are exactly the same as :ref:`the one used for Bebop <building-
 Uploading the Firmware
 ======================
 
+Mission Planner can now upload stable and custom versions of ardupilot to the Bebop2.
+
+..  youtube:: Ir0DyvlbTM0
+    :width: 100%
+
+Instructions below are for the manual method of uploading
+
 #. Install adb (android debug tool):
 
    ::
