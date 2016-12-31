@@ -69,7 +69,7 @@ ArduPilot dev team.
    - command line oriented and scriptable ground station (mostly used by developers)
 -  `DroneKit <http://dronekit.io/>`__ - APM SDK for apps running on vehicles, mobile devices and/or in the cloud.
 -  MinimOSD (`wiki <http://code.google.com/p/arducam-osd/wiki/minimosd>`__,
-   `code <https://code.google.com/archive/p/arducam-osd/source/default/source>`__)
+   `code <https://github.com/diydrones/MinimOSD-Extra>`__)
    - on-screen display of flight data
 -  Tower (`wiki <https://github.com/DroidPlanner/Tower/wiki>`__,
    `code <https://github.com/DroidPlanner/Tower>`__, `google play <https://play.google.com/store/apps/details?id=org.droidplanner.android>`__)
