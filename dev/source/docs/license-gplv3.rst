@@ -24,10 +24,9 @@ Note to developers
 ==================
 
 We very much appreciate you using our code to do fun and interesting
-things with. We hope that while doing this you may find and fix bugs or
+things. We hope that while doing this you may find and fix bugs or
 make enhancements that could be useful for the greater community and
-will makes the developers aware of them by emailing
-drones-discuss@googlegroups.com and/or :ref:`contribute them back using a pull request <submitting-patches-back-to-master>`
+will makes the developers aware of them by creating an issue in the `issues list <https://github.com/ArduPilot/ardupilot/issues>`__ and/or :ref:`contribute a fix using a pull request <submitting-patches-back-to-master>`
 so they can be considered to be added to the original code base.
 
 Note to  businesses or individuals including this software in products
