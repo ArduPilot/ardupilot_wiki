@@ -9,7 +9,7 @@ and building for Pixhawk/PX4 targets.
 
 .. note::
 
-   Ensure that you have Java installed before Eclipse can run.  If not, Java can be installed from: <https://www.java.com/en/>`__.
+   Ensure that you have Java installed before Eclipse can run.  If not, Java can be installed from `here <https://www.java.com/en/>`__.
 
 Preconditions
 =============
