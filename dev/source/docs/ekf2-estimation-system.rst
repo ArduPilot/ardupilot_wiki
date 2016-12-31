@@ -1,18 +1,10 @@
 .. _ekf2-navigation-system:
 
 ======================
-EKF2 Navigation System
+EKF2 Estimation System
 ======================
 
-.. warning::
-
-   EKF2 is currently in master only. This topic is provided for
-   advanced users only.
-
-Overview
-========
-
-**What is the EKF2 Navigation System?**
+**What is the EKF2 Estimation System?**
 ---------------------------------------
 
 It is a 24 state extended Kalman filter in the AP_NavEKF2 library that
