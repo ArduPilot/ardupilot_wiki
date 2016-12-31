@@ -25,8 +25,6 @@ a few noticeable changes, not the least being a much better quality GPS
    That said, it is almost always possible to recover a drone and members
    of the ardupilot dev team can likely help people hacking or recovering
    their Bebop on `this google group <https://groups.google.com/forum/#!forum/bebop-ardupilot>`__.
-   Prepare to spend some time, patience and develop some hardware/software
-   skills. 
 
 Building ArduCopter for Bebop 2
 ===============================
