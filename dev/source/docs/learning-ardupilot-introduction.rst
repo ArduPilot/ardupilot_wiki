@@ -6,24 +6,8 @@ Learning ArduPilot — Introduction
 
 This page introduces the basic structure of ArduPilot. Before you get
 started you should work out what code exploring system you will use. You
-could just use a web browser and look at
-https://github.com/ArduPilot/ardupilot/ but you will probably get a lot
-more out of it if you use a good programmers IDE that allows you to find
-function, structure and class definitions and shows the code in a
-structured manner.
-
-Some suggestions are:
-
--  Eclipse on Windows, Linux or MacOS
--  Emacs on Linux, Windows or MacOS, with etags for finding code
-   elements
--  Vim on emacs with ctags
-
-There are a lot of other IDEs available, and many of them are
-sufficiently customisable that they can handle something like ArduPilot
-nicely. If you have a favourite and have worked out how to make
-ArduPilot development a great experience then please consider
-contributing a wiki page on how to use it.
+could just use a web browser and look at https://github.com/ArduPilot/ardupilot/ but you will probably get a lot
+more out of it if you use a good programmers IDE like the ones recommended :ref:`here <code-editing-tools-and-ides>`.
 
 Basic structure
 ===============
