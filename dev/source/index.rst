@@ -143,7 +143,6 @@ Full Table of Contents
     License (GPLv3) <docs/license-gplv3>
     Supported Controller Boards <docs/supported-autopilot-controller-boards>
     Learning the ArduPilot Codebase <docs/learning-the-ardupilot-codebase>
-    Code Overview (Copter) <docs/apmcopter-code-overview>
     Building the code <docs/building-the-code>
     Code Editors & IDEs <docs/code-editing-tools-and-ides>
     Simulation & Testing <docs/simulation-2>
@@ -151,7 +150,6 @@ Full Table of Contents
     Contributing <docs/contributing>
     MAVLink Commands <docs/mavlink-commands>
     Companion Computers <docs/companion-computers>
-    EKF <docs/ekf>
     ROS <docs/ros>
     Pixhawk Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
