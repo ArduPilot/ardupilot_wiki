@@ -1,8 +1,8 @@
 .. _learning-ardupilot-uarts-and-the-console:
 
-==========================================
-Learning ArduPilot - UARTs and the Console
-==========================================
+=====================
+UARTs and the Console
+=====================
 
 A lot of components in ArduPilot rely on UARTs. They are used for debug
 output, telemetry, GPS modules and more. Understanding how to talk to

@@ -1,8 +1,8 @@
 .. _learning-ardupilot-rc-input-output:
 
-========================================
-Learning ArduPilot — RC Input and Output
-========================================
+===================
+RC Input and Output
+===================
 
 RC input is a key part of any autopilot, giving the pilot control of the
 airframe, allowing them to change modes and also giving them control of

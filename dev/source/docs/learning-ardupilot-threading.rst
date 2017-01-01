@@ -1,8 +1,8 @@
 .. _learning-ardupilot-threading:
 
-==============================
-Learning ArduPilot - Threading
-==============================
+=========
+Threading
+=========
 
 Understanding ArduPilot threading
 ---------------------------------
