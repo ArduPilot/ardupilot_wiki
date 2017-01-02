@@ -9,9 +9,7 @@ on Windows with *Make*.
 
 .. note::
 
-   The commands for building Pixhawk 2 and Pixhawk are identical
-   (``make px4-v2``). Building for PX4 is the same except that
-   ``make px4-v1`` is used. 
+   The commands for building Pixhawk and Pixhawk2 are identical (``make px4-v2``). Building for Pixracer is the same except ``make px4-v4`` is used.  For the older (obsolete) PX4 use ``make px4-v1``. 
 
 Build instructions
 ==================
@@ -68,21 +66,23 @@ Open the *PX4Console* and navigate to the target vehicle directory:
 Build the firmware by entering one of the following commands:
 
 +--------------------------------------+--------------------------------------+
-| ``make px4-v2``                      | Build the Pixhawk2/Pixhawk firmware  |
+| ``make px4-v2``                      | Build the Pixhawk/Pixhawk2 firmware  |
 |                                      | (identical) for a quad               |
++--------------------------------------+--------------------------------------+
+| ``make px4-v4``                      | Build the PixRacer firmware for quad |
 +--------------------------------------+--------------------------------------+
 | ``make px4-v2-hexa``                 | Build the Pixhawk firmware for a     |
 |                                      | hexacopter.                          |
 |                                      |                                      |
 |                                      | # Other supported suffixes include   |
-|                                      | "octa", "octa-quad, "tri"            |
-|                                      |  and "heli".                         |
+|                                      | "octa", "octa-quad, "tri", "single"  |
+|                                      | and "heli".                          |
 |                                      |                                      |
 |                                      | # More can be found in               |
 |                                      | "mk/targets.mk" under FRAMES         |
 +--------------------------------------+--------------------------------------+
-| ``make px4``                         | Build both PX4 and PixHawk firmware  |
-|                                      | for a quadcopter                     |
+| ``make px4``                         | Build both PX4 (obsolete) and PixHawk|
+|                                      | firmware for a quadcopter            |
 +--------------------------------------+--------------------------------------+
 | ``make clean``                       | "clean" the ardupilot directory      |
 +--------------------------------------+--------------------------------------+
@@ -90,9 +90,14 @@ Build the firmware by entering one of the following commands:
 |                                      | directories so the next build will   |
 |                                      | completely rebuild them              |
 +--------------------------------------+--------------------------------------+
+| ``make px4-cleandep``                | "clean" .d and .o files from the     |
+|                                      | PX4Firmware and PX4NuttX directories.|
+|                                      | faster but less complete rebuild     |
+|                                      | compared to "px4-clean"              |
++--------------------------------------+--------------------------------------+
 | ``make px4-v2-upload``               | Build and upload the Pixhawk         |
 |                                      | firmware for a quad (i.e. no need to |
-|                                      | do step #7 below)                    |
+|                                      | upload using a ground station)       |
 +--------------------------------------+--------------------------------------+
 
 

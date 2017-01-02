@@ -73,57 +73,5 @@ features or board support. Currently the external trees are:
 
 .. note::
 
-   Most of these are imported as :ref:`Git Submodules <git-submodules>` when you
-   build ArduPilot for PX4/Pixhawk.
+   Most of these are imported as :ref:`Git Submodules <git-submodules>` when you :ref:`build ArduPilot <building-the-code>`.
 
-Build system
-============
-
-The build system is based around make, but also supports the old arduino
-IDE for AVR builds. The makefiles are in the `mk/ directory <https://github.com/ArduPilot/ardupilot/tree/master/mk>`__,
-and define build rules for each type of supported board
-
-To build a vehicle or other 'sketch' for a particular board target you
-would type "make TARGET", where TARGET is the board type. The following
-board types are currently available:
-
--  make apm1 - the APM1 board
--  make apm2 - the APM2 board
--  make px4-v1 - the PX4v1
--  make px4-v2 - the Pixhawk (and `Arsov AUAV-X2 <http://www.auav.co/product-p/auavx2.htm>`__)
--  make pxf - the BBB+PXF cape combination
--  make navio - the RaspberryPi+NavIO cape combination
--  make linux - a generic Linux build
--  make flymaple - the FlyMaple board
--  make vrbain - the VRBrain boards
--  make sitl - the SITL software in the loop simulation
-
-More ports are being added all the time, so check "make help" file for
-new targets.
-
-For each of these builds you can add additional qualifiers, and on some
-you can do a parallel build to speed things up. For example, in the
-Copter directory you could do:
-
-::
-
-    make apm2-octa -j8
-
-meaning do a build for OctaCopter on apm2 with an 8 way parallel build.
-You should also look into enabling `ccache <http://ccache.samba.org>`__
-for faster builds.
-
-Some boards also support upload of firmware directly from make. For
-example:
-
-::
-
-    make px4-v2-upload
-
-will build and upload a sketch on a Pixhawk.
-
-There are also helper make targets for specific boards, such as:
-
--  make clean - clean the build for non-px4 targets
--  make px4-clean - completely clean the build for PX4 targets
--  make px4-cleandep - cleanup just dependencies for PX4 targets

@@ -4,14 +4,11 @@
 Building ArduPilot for Pixhawk/PX4 on Linux with Make
 =====================================================
 
-This article shows how to build ArduPilot for Pixhawk 2, Pixhawk and PX4
-on Linux with *Make*.
+This article shows how to build ArduPilot for Pixhawk, Pixhawk2, PixRacer and the original PX4 (obsolete) on Linux with *Make*.
 
 .. note::
 
-   The commands for building Pixhawk 2 and Pixhawk are identical
-   (``make px4-v2``). Building for PX4 is the same except that
-   ``make px4-v1`` is used. 
+   The commands for building Pixhawk and Pixhawk2 are identical (``make px4-v2``). Building for Pixracer is the same except ``make px4-v4`` is used.  For the older (obsolete) PX4 use ``make px4-v1``.
 
 Quick start
 ===========
@@ -51,9 +48,9 @@ Reload the path (log-out and log-in to make permanent):
 Build
 -----
 
-The commands below show how to build for Pixhawk2/Pixhawk on the
-different platforms. To build for PX4 replace ``make px4-v2`` with
-``make px4-v1``.
+The commands below show how to build for Pixhawk/Pixhawk2 on the
+different platforms. To build for Pixracer replace ``make px4-v2`` with
+``make px4-v4``.  For the original (obsolete) PX4 use ``make px4-v1``.
 
 Build for Copter:
 
