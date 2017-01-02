@@ -25,6 +25,7 @@ Tutorial steps
     Introduction <learning-ardupilot-introduction>
     Library Description <apmcopter-programming-libraries>
     Library Example Sketches <learning-ardupilot-the-example-sketches>
+    Sensor Drivers <code-overview-sensor-drivers>
     Threading <learning-ardupilot-threading>
     UARTs and the Console <learning-ardupilot-uarts-and-the-console>
     RC Input and Output <learning-ardupilot-rc-input-output>
