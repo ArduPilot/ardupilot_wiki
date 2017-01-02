@@ -1,8 +1,8 @@
 .. _apmcopter-programming-libraries:
 
-===============================
-ArduPilot Programming Libraries
-===============================
+===================
+ArduPilot Libraries
+===================
 
 The \ `the libraries <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__ are
 shared with Copter, Plane and Rover. Below is a high level list of

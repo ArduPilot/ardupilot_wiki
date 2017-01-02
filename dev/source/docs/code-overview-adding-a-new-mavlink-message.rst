@@ -1,8 +1,8 @@
 .. _code-overview-adding-a-new-mavlink-message:
 
-============================================
-Adding a new MAVLink Message (Code Overview)
-============================================
+============================
+Adding a new MAVLink Message
+============================
 
 Data and commands are passed between the ground station (i.e mission
 planner, Droid Planner, etc) using the `MAVLink protocol <https://en.wikipedia.org/wiki/MAVLink>`__ over a serial

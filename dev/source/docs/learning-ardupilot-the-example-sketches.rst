@@ -1,8 +1,8 @@
 .. _learning-ardupilot-the-example-sketches:
 
-================
-Example Sketches
-================
+========================
+Library Example Sketches
+========================
 
 The first step in exploring the code for yourself is to use the example
 sketches for the libraries. Following the arduino tradition we have

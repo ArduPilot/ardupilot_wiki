@@ -1,8 +1,8 @@
 .. _apmcopter-adding-a-new-flight-mode:
 
-===============================================
-Adding a New Flight Mode (Copter Code Overview)
-===============================================
+==================================
+Adding a New Flight Mode to Copter
+==================================
 
 This section covers the basics of how to create a new high level flight
 mode (i.e. equivalent of Stabilize, Loiter, etc) which is the top level

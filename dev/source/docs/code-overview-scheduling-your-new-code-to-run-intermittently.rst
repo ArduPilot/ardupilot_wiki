@@ -1,8 +1,8 @@
 .. _code-overview-scheduling-your-new-code-to-run-intermittently:
 
-=====================================================
-Scheduling Code to Run Intermittently (Code Overview)
-=====================================================
+=====================================
+Scheduling Code to Run Intermittently
+=====================================
 
 This page describes how you can schedule some new piece of code you have
 written to run intermittently.

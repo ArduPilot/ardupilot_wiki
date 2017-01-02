@@ -1,8 +1,8 @@
 .. _code-overview-adding-a-new-parameter:
 
-======================================
-Adding a New Parameter (Code Overview)
-======================================
+================================
+Adding a New Parameter to Copter
+================================
 
 Parameters can either be part of the main code or part of a library.
 

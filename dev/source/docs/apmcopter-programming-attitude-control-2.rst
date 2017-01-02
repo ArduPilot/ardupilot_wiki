@@ -1,8 +1,8 @@
 .. _apmcopter-programming-attitude-control-2:
 
-=======================================
-Attitude Control (Copter Code Overview)
-=======================================
+=======================
+Copter Attitude Control
+=======================
 
 Below is a high level diagram showing how the attitude control is done for each axis.
 The control is done using a P controller to convert the angle error (the difference between the target angle and actual angle) into a desired rotation rate followed by a PID controller to convert the rotate rate error into a high level motor command. 
