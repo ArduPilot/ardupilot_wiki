@@ -4105,7 +4105,7 @@ Mission command to operate EPM gripper.
    <tr>
    <td><strong>param2</strong></td>
    <td>drop(0)/grab(1)</td>
-   <td>Gripper action:
+   <td>Gripper action:
    0:Release
    1:Grab   </td>
    </tr>
