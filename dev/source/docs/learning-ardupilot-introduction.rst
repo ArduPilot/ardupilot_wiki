@@ -7,7 +7,7 @@ Learning ArduPilot — Introduction
 This page introduces the basic structure of ArduPilot. Before you get
 started you should work out what code exploring system you will use. You
 could just use a web browser and look at https://github.com/ArduPilot/ardupilot/ but you will probably get a lot
-more out of it if you use a good programmers IDE like the ones recommended :ref:`here <code-editing-tools-and-ides>`.
+more out of it if you have :ref:`cloned all of the git repositories <where-to-get-the-code>` and use a good programmer's IDE like the ones recommended :ref:`here <code-editing-tools-and-ides>`.
 
 Basic structure
 ===============
@@ -17,25 +17,29 @@ Basic structure
 
 The basic structure of ArduPilot is broken up into 5 main parts:
 
--  vehicle directories
--  AP_HAL
--  libraries
+-  vehicle code
+-  shared libraries
+-  hardware abstraction layer (AP_HAL)
 -  tools directories
--  external support code
+-  external support code (i.e. mavlink, dronekit)
 
-These will be described in detail below, but before moving on make sure
-you have :ref:`cloned all of the git repositories <where-to-get-the-code>` you will need.
-
-Vehicle Directories
--------------------
+Vehicle Code
+------------
 
 The vehicle directories are the top level directories that define the
-firmware for each vehicle type. Currently there are 4 vehicle types -
-Plane, Copter, APMrover2 and AntennaTracker.
+firmware for each vehicle type.  Currently there are 4 vehicle types: Plane, Copter, APMrover2 and AntennaTracker.
+Although There are a lot of common elements between different vehicle types, they are each different. For now we only have a :ref:`detailed description of the code structure for the Copter code <apmcopter-code-overview>`.
 
 Along with the \*.cpp files, each vehicle directory contains a make.inc
 file which lists library dependencies. The Makefiles read this to create
 the -I and -L flags for the build.
+
+Libraries
+---------
+
+The `libraries <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__ are
+shared amongst the four vehicle types Copter, Plane, Rover and AntennaTracker.  These libraries include sensor drivers, attitude and position estimation (aka :ref:`EKF <ekf>`) and control code (i.e. PID controllers).
+See the :ref:`Library Description <apmcopter-programming-libraries>` and :ref:`Library Example Sketches <learning-ardupilot-the-example-sketches>` pages for more details.
 
 AP_HAL
 -------
