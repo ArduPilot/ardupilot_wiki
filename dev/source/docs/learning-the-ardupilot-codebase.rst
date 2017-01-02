@@ -23,13 +23,15 @@ Tutorial steps
     :maxdepth: 1
 
     Introduction <learning-ardupilot-introduction>
-    Example Sketches <learning-ardupilot-the-example-sketches>
+    Library Description <apmcopter-programming-libraries>
+    Library Example Sketches <learning-ardupilot-the-example-sketches>
     Threading <learning-ardupilot-threading>
     UARTs and the Console <learning-ardupilot-uarts-and-the-console>
     RC Input and Output <learning-ardupilot-rc-input-output>
     Storage and EEPROM management <learning-ardupilot-storage-and-eeprom-management>
     EKF <ekf>
     Vehicle Code (Copter) <apmcopter-code-overview>
+    Adding a new MAVLink Gimbal <code-overview-adding-support-for-a-new-mavlink-gimbal>
 
 .. note::
 
