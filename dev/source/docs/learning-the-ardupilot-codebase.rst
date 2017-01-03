@@ -37,3 +37,10 @@ Tutorial steps
 .. note::
 
    There are currently 4 vehicles in ArduPilot (Copter, Plane, Rover, Antenna Tracker) and while there are a lot of common elements between different vehicle types, they are each different. For now we only have a detailed description of the code structure for the Copter code.
+
+Other Tutorials
+---------------
+
+Although not strictly part of ArduPilot this tutorial may also be useful
+
+- `DroneKit <http://python.dronekit.io/>`__
