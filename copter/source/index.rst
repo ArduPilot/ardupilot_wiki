@@ -71,7 +71,7 @@ System components
 ~~~~~~~~~~~~~~~~~
 
 
--  A `Pixhawk <https://store.3dr.com/t/pixhawk>`__ or :ref:`other autopilot <common-autopilots>` 
+-  A Pixhawk or :ref:`other autopilot <common-autopilots>` 
    loaded with the latest version of
    the `Copter firmware <http://firmware.ardupilot.org/>`__.
 -  :ref:`Mission Planner software <planner:home>` -- gives
@@ -159,8 +159,7 @@ Getting more info
 -  Continue to the :ref:`Introduction section of this wiki. <introduction>`
 -  Use the `ArduPilot Discuss Server Forums <http://discuss.ardupilot.com/c/arducopter>`__
    to ask support questions and advice.
--  Read or join the `drones-discuss email list <https://groups.google.com/forum/#!forum/drones-discuss>`__ once
-   you're ready to get involved with the development of the software platform.
+-  To get involved with the development of the software platform, visit the  `ArduPilot development guide  <http://ardupilot.org/dev/index.html>'___.
 
 
 
@@ -191,12 +190,12 @@ Getting more info
    `Sparkfun 2013 and 2014 Autonomous Vehicle Competition <https://avc.sparkfun.com/>`__ 
    (dominating with the top five spots). A team of developers 
    from around the globe are constantly improving and refining 
-   the performance and capabilities of Copter.
+   the performance and capabilities of ArduCopter.
    
 .. |TOP_COL_RIGHT| replace:: Copter is capable of the full range of flight requirements 
-   from fast paced FPV racing to smooth aerial photography to fully autonomous 
-   complex missions which can be programmed through one of 4 elegant and well-developed 
+   from fast paced FPV racing to smooth aerial photography, and fully autonomous 
+   complex missions which can be programmed through a number of compatible 
    software ground stations. The entire package is designed to be safe, feature rich, 
-   open-ended for custom applications and increasingly easy to use even for novice users.
+   open-ended for custom applications, and is increasingly easy to use even for the novice.
 
 
