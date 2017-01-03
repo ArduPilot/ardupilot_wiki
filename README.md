@@ -19,4 +19,4 @@ GitHub account [__Join HERE__](https://github.com/join)
 
 This link provides everything you need to help the wiki grow!
 
-See the [Wiki Edting Guide](http://ardupilot.org/ardupilot/docs/common-wiki_editing_guide.html)
+See the [Wiki Editing Guide](http://ardupilot.org/ardupilot/docs/common-wiki_editing_guide.html)
