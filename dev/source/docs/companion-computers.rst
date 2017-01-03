@@ -11,8 +11,6 @@ autopilot (including GPS data) and can use it to make intelligent
 decisions during flight. For example, "take a photo when the vehicle is
 at these GPS co-ordinates".
 
-The possibilities of companion computers are really only limited by your imagination.
-
 Related topics on this wiki include:
 
 .. toctree::
