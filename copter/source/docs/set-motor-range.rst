@@ -18,6 +18,11 @@ Measuring the deadzone
 -  Remove the propellers from the vehicle
 -  Connect the lipo battery
 -  Connect the flight controller to the Mission Planner using a USB cable or telemetry
+
+Warning
+Connecting USB when you have input voltages at the high end of the range (near Abs Max) can damage the board. 
+Please refer to WiKi --- http://ardupilot.org/copter/docs/common-powering-the-apm2.html#power-supply-rails-not-connected-requirements-jp1-not-installed section:Power supply rails not connected requirements (JP1 Not Installed)
+
 -  Open the Mission Planner's Initial Setup >> Optional Hardware >> Motor Test page
 
    .. image:: ../images/MissionPlanner_MotorTest.png
