@@ -67,6 +67,15 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_robsense.png
     :target:  http://www.robsense.com/
 
+.. image:: ../../../images/supporters/supporters_logo_bluerobotics.png
+    :target:  http://www.bluerobotics.com/
+
+.. image:: ../../../images/supporters/supporters_logo_drotek.png
+    :target:  http://www.drotek.com/
+
+.. image:: ../../../images/supporters/supporters_logo_dslrpros.jpg
+    :target:  http://www.dslrpros.com/
+
 How does my company become a partner?
 ===============================================
 We ask for a donation of `$1000 US through PayPal <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BBF28AFAD58B2>`__ per year.  If this is your first time, please email partners@ardupilot.org to express your desire to become a partner and include your company logo if you would like it to appear on this page.  We will send you a reminder in a year and if all goes well, you may choose to extend for another year.
