@@ -14,4 +14,4 @@ Select the links below for information on the available sensors.
     :maxdepth: 1
 
     PX4FLOW <common-px4flow-overview>
-    ADNS3080 Mouse Sensor <common-mouse-based-optical-flow-sensor-adns3080> (no longer supported)
+    ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
