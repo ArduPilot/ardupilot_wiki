@@ -56,7 +56,7 @@ In the same directory (your home directory) run these commands:
 ::
 
     git clone git://github.com/tridge/jsbsim.git
-    sudo apt-get install libtool automake autoconf libexpat1-dev
+    sudo apt-get install libtool libtool-bin automake autoconf libexpat1-dev
 
 If you are getting an error message saying you need a newer version of
 JSBSim then you can update it like this:
