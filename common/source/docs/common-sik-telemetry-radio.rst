@@ -38,10 +38,9 @@ As the platform is open source, implementation can be purchased from
 many different sources, including:
 
 -  `jD-SiK Telemetry Set <http://store.jdrones.com/jD_SiK_Radio_Telemetry_radio_p/rfsik20set.htm>`__ (jDrones)
+-  `mRo SiK Telemetry Radio https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-sikv2`__ (mRobotics)
 -  `HKPilot Transceiver Telemetry Radio Set V2 (915Mhz) <http://www.hobbyking.com/hobbyking/store/__55560__HKPilot_Transceiver_Telemetry_Radio_Set_V2_915Mhz_.html>`__
    (Hobby King)
--  [STRIKEOUT:3DR Telemetry Radio (version 2) (3DRobotics)] - 3DR has
-   stopped manufacturing this product.
 
 .. tip::
 
