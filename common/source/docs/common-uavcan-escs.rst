@@ -9,9 +9,7 @@ Copter, Plane and Rover support UAVCAN Electronic Speed Controllers
 enabling potentially easier setup and in-flight monitoring of ESC and
 motor health.
 
-.. note::
-
-   UAVCAN ESCs are not yet readily available for purchase but should appear in late 2016
+A list of known UAVCAN/canbus ESCs is :ref:`here <common-uavcan-escs-list>`.
 
 ..  youtube:: https://youtu.be/LnUmYgAINBc
     :width: 100%
