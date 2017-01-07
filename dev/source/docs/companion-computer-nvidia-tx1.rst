@@ -41,5 +41,3 @@ The easiest way to setup the TX1 is to flash one of the existing binaries from `
 
 -  alternatively you may use the setup instructions found in the `ardupilot/companion repo <https://github.com/ArduPilot/companion/tree/master/Nvidia_JTX1/Ubuntu>`__.
 -  the J120's UART2 appears on the TX1 as /dev/ttyTHS1
-
-Note: instructions on how the firmware.ardupilot.org image was created can be found `here <https://github.com/yankailab/OpenKAI/blob/master/setup/setup_TX1.txt>`__.
