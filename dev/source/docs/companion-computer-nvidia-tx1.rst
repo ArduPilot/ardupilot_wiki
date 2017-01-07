@@ -11,7 +11,7 @@ Connecting the Pixhawk and TX1
 
 .. image:: ../images/NVidiaTX1_AuvideaJ120_Pixhawk.png
 
-Connect the Pixhawk's TELEM2 port to the J120's UART0 port's Ground, TX and RX pins as shown in the image above.
+Connect the Pixhawk's TELEM2 port to the J120's UART2 port's Ground, TX and RX pins as shown in the image above.
 
 The Pixhawk and TX1 should be powered separately (the J120/TX1 through it's 12V power input port, the Pixhawk through it's POWER port).  They should be powered on at about the same time or the TX1 powered on first to avoid the Pixhawk interrupting the TX1's bootloader.
 
@@ -38,5 +38,8 @@ The easiest way to setup the TX1 is to flash one of the existing binaries from `
     - power on the TX1 development board
     - put the TX1 into bootloader mode (Hold and keep pressed the "Force-Recovery" button, press and release the "Reset" button, release the "Force-Recovery" button).  You can check the TX1 is in bootloader mode by typing "lsusb" on the Ubuntu machine and look for "NVidia".
     - on the Ubuntu machine, from the ../JetPack/TX1/Linux_for_Tegra_tx1/bootloader directory run a command like below where "IMAGE.img" is replaced with the name of the image file downloaded above: ``sudo ./tegraflash.py --bl cboot.bin --applet nvtboot_recovery.bin --chip 0x21 --cmd "write APP IMAGE.img"``
+
+-  alternatively you may use the setup instructions found in the `ardupilot/companion repo <https://github.com/ArduPilot/companion/tree/master/Nvidia_JTX1/Ubuntu>`__.
+-  the J120's UART2 appears on the TX1 as /dev/ttyTHS1
 
 Note: instructions on how the firmware.ardupilot.org image was created can be found `here <https://github.com/yankailab/OpenKAI/blob/master/setup/setup_TX1.txt>`__.
