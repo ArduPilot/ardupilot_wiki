@@ -9,8 +9,8 @@ Copter Home
     Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
 
 
-.. image:: /images/home_copter.jpg
-    :target: _images/home_copter.jpg
+.. image:: /images/copter_home_001.jpg
+    :target: _images/copter_home_001.jpg
 
 ..  raw:: html
 
