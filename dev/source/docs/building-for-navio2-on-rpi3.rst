@@ -36,7 +36,7 @@ Clone the source:
     Waf should always be called from the ardupilot's root directory.
 
 
-To keep access to Waf convenient, use the following alias from the root ardupilot directory: 
+To keep access to Waf convenient, use the following alias from the root ardupilot directory:
 
 ::
     
