@@ -92,8 +92,4 @@ The steps required are:
 Additional information
 ======================
 
-`Pixhawk ESC wiki page <https://pixhawk.org/modules/pixhawk_esc>`__
-
-`Pixhawk ESC configuration wiki page <https://pixhawk.org/firmware/px4esc>`__
-
-`Pixhawk ESC firmware on github <https://github.com/PX4/sapog>`__
+`Zubax Sapog wiki page <https://docs.zubax.com/sapog/using_with_ardupilot>`__ and `ESC firmware <https://github.com/PX4/sapog>`__.
