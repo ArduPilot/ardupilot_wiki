@@ -97,7 +97,7 @@ that allow us to rebuild ArduPilot on Windows.
    +----------------+----------------------------------------------------------------------------------+
    | python-devel   | Python \| python-devel: Ptyhon language interpreter                              |
    +----------------+----------------------------------------------------------------------------------+
-   | procps         | System \| procps: System and process monitoring utilities (required for pkill)   |
+   | procps         | System \| procps-ng: System and process monitoring utilities (required for pkill)|
    +----------------+----------------------------------------------------------------------------------+
 
 #. When all the packages are selected, click through the rest of the
