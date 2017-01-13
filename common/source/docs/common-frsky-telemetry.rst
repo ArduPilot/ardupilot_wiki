@@ -4,127 +4,141 @@
 FrSky Telemetry
 ===============
 
-This article describes how to transmit vehicle information from the
-autopilot and display it on an FrSky transmitter ("FrSky Telemetry").
+FrSky telemetry allows you to display ArduPilot information such as flight modes, battery level, and error messages, as well as information from additional FrSky sensors on the FrSky Taranis and other FrSky compatible RC transmitters.
 
-Overview
-========
+It is particularly useful:
+ * for flying without a ground control station (no need for MAVLink telemetry radio),
+ * as a backup in case the ground station fails (e.g., loss of MAVLink radio link),
+ * when a separate person operates the ground control station,
+ * for instantaneous situational awareness by the pilot.
 
-This article explains a number of approaches for getting information
-from the autopilot to an FrSky transmitter (including the Taranis).
+Compared to a MAVLink radio link, the FrSky telemetry link has practically no delay. 
 
-.. image:: ../../../images/FRSkyTaranis.jpg
-    :target: ../_images/FRSkyTaranis.jpg
+Moreover, some RC transmitters such as the Taranis can be configured to play sounds, vibrate or perform automatic RC actions based on telemetry information through the highly configurable OpenTX firmware.
+   
+.. figure:: ../../../images/frsky_requiredhardware_flightdeck.png
+    :target: ../_images/frsky_requiredhardware_flightdeck.png
+    :align: center
 
-Native FrSky Telemetry Support
-==============================
-
-ArduPilot provides a driver that can directly output the FrSky protocol.
-This section explains how you can connect and configure a Pixhawk to
-communicate with a D-Receiver or X-Receiver.
+    Common FrSky Telemetry Setup with Taranis RC transmitter running :ref:`FlightDeck <common-frsky-flightdeck>`.
 
 .. note::
 
-   -  This feature is only officially supported on the Pixhawk (running
-      AC3.2 or higher) but there is a `DIY solution for the APM2.x here <http://diydrones.com/forum/topics/amp-to-frsky-x8r-sport-converter>`__.
-   -  These instructions are largely based upon information from the
-      `Pixhawk website <http://pixhawk.org/peripherals/telemetry/frsky>`__.
-   -  These instructions were written and tested for OpenTX 2.0.x. They
-      have been re-validated against OpenTx 2.1.3 and AC 3.3.2.
+    FrSky telemetry packages including Taranis, X-receiver, LiPo cell voltage sensor and flight controller specific telemetry cable for the Pixhawk, Pixhawk 2.1, PixRacer and Pixhack are available from `Craft and Theory <http://www.craftandtheoryllc.com/store/>`__.
 
-D-Receiver setup
-----------------
+.. toctree::
+    :maxdepth: 1
 
-.. image:: http://www.craftandtheoryllc.com/wp-content/uploads/2015/12/D4R-cable-connected.jpg
-    :target: ../_images/D4R-cable-connected.jpg
+    Passthrough FrSky Telemetry <common-frsky-passthrough>
+    FlightDeck <common-frsky-flightdeck>
+    Repurposed FrSky Telemetry <common-frsky-repurposed>
+    MavLink to FrSky Telemetry Converters <common-frsky-mavlink>
 
-For the D-Receiver setup you will need:
+Protocol Information
+====================
 
--  **A FrSky D telemetry capable transmitter**, such as such as the
-   `Taranis <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__
-   which runs the `OpenTX open source transmitter software <https://github.com/opentx/opentx>`__.
--  **A FrSky D telemetry capable receiver**, such as such as the `FrSky D4R-II <http://www.hobbyking.com/hobbyking/store/__24788__FrSky_D4R_II_4ch_2_4Ghz_ACCST_Receiver_w_telemetry_.html>`__
-   (HobbyKing)
--  **A cable** to connect the Pixhawk to the D telemetry capable
-   receiver (:ref:`cable options are listed below <common-frsky-telemetry_d-receiver_cables>`).
+ArduPilot has FrSky telemetry drivers to natively output flight controller information through the serial ports. It comes in two flavors: 
 
-   
-.. _common-frsky-telemetry_d-receiver_cables:
+a) :ref:`Repurposed FrSky telemetry <common-frsky-repurposed>` (D and SmartPort) (available since AC3.2), which reuses FrSky data IDs to transmit basic flight control information to the RC transmitter (e.g. T2 temperature message reused to transmit the number of GPS satelites and GPS status); and
 
-D-Receiver cables
-~~~~~~~~~~~~~~~~~
+b) :ref:`Passthrough telemetry <common-frsky-passthrough>` (SmartPort) (available since AC3.4), which leverages the new passthrough FrSky data IDs to send an extensive amount of flight controller specific information to the RC transmitter.
 
-Craft and Theory Pixhawk to FrSky Telemetry Cable (D4R-II receiver)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FrSky telemetry is also possible through the use of a :ref:`MAVLink to FrSky converter <common-frsky-mavlink>`.
 
-The `Pixhawk to FrSky Telemetry Cable (D4R-II receiver) <http://www.craftandtheoryllc.com/product/pixhawk-to-frsky-telemetry-cable-d4r-ii-receiver/>`__
-from *Craft and Theory* is a cost effective "turnkey" cable solution.
+The following table summarizes the information available using each protocol:
 
-.. figure:: http://www.craftandtheoryllc.com/wp-content/uploads/2015/12/D4RPixhawkcable.jpg
-   :target:  http://www.craftandtheoryllc.com/product/pixhawk-to-frsky-telemetry-cable-d4r-ii-receiver/
+.. raw:: html
 
-   Craft andTheory: Pixhawk to FrSky D4R-II receiver cable
-
-DIY Cable for D receivers
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can make your own cable using the following components:
-
-.. image:: ../../../images/Telemetry_FrSky_Pixhawk.jpg
-    :target: ../_images/Telemetry_FrSky_Pixhawk.jpg
-
--  TTL-to-RS232 converter such as the `FrSky FUL-1 <http://www.frsky-rc.com/product/pro.php?pro_id=34>`__ which is
-   sold by many retailers `including these on ebay <http://www.ebay.com/sch/i.html?_trksid=p2050601.m570.l1313.TR11.TRC1.A0.H0.Xfrsky+ful-1.TRS0&_nkw=frsky+ful-1&_sacat=0&_from=R40>`__.
--  `DF13 6 position connector <http://www.unmannedtechshop.co.uk/df13-6-position-connector-30cm/>`__
-   which will be cut and soldered to the TTL-to-RS232 converter
--  `Molex Picoblade <http://www.molex.com/molex/products/family?key=picoblade&channel=products&chanName=family&pageTitle=Introduction&parentKey=wire_to_board_connectors>`__
-   4 position telemetry wire which will be cut and soldered to the
-   TTL-to-RS232 converter (should be included with the receiver)
-
-X-Receiver setup
-----------------
-
-.. image:: http://www.craftandtheoryllc.com/wp-content/uploads/2015/12/X4R-cable-connected.jpg
-    :target: ../_images/X4R-cable-connected.jpg
-
-For the X-Receiver setup you will need:
-
--  **A FrSky X telemetry capable transmitter**, such as the
-   `Taranis <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__
-   which runs the `OpenTX open source transmitter software <https://github.com/opentx/opentx>`__.
--  **A FrSky X telemetry capable receiver**, such as the FrSky X4R,
-   X4RSB, X6R or
-   `X8R <http://www.hobbyking.com/hobbyking/store/__41608__FrSky_X8R_8_16Ch_S_BUS_ACCST_Telemetry_Receiver_W_Smart_Port.html>`__
-   (HobbyKing)
--  **An X-receiver telemetry cable** (:ref:`cable options are listed below <common-frsky-telemetry_x-receiver_cables>`).
+    <iframe src="https://docs.google.com/spreadsheets/d/1xJXxYg_ELxhQLFbvXi-6wlFX7taoSlwNPxKEiqR8NT4/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="700" height="1200"></iframe>
 
 
-.. _common-frsky-telemetry_x-receiver_cables:
+
+Hardware Selection Guide
+========================
+
+The following equipment is required to enable FrSky telemetry on an ArduPilot-compatible flight controller:
+
+* A FrSky telemetry capable RC transmitter.
+  Possible options include:
+
+  - FrSky Taranis X9D
+  - FrSky Taranis X9D Plus (recommended)
+  - FrSky Taranis X9E
+  - FrSky Horus X12S
+  - A number of DIY solutions are also available (e.g., for Turnigy 9X and 9XR)
+
+
+* :ref:`A FrSky telemetry capable receiver <frsky_receivers>`.
+  There are receivers available for two types of FrSky telemetry systems, which are not compatible with each other:
+
+  - D telemetry
+      
+      D telemetry is a deprecated protocol for D receivers. It uses 16 bit data frames, only supports one way communication and requires a hub to connect other D telemetry sensors. Only repurposed FrSky telemetry is available over the D telemetry system.
+
+  - SmartPort telemetry (recommended)
+      
+      SmartPort telemetry is available on X-series receivers. It uses 32 bit data frames, supports two-way communication; and enables other SmartPort sensors to be connected without a hub.
+
+* :ref:`A telemetry cable <frsky_cables>` to connect your flight controller to your FrSky receiver.
+  
+In addition to the required hardware, a selection of :ref:`FrSky sensors <frsky_sensors>` can be added. (see below)
+
+.. tip::
+
+    The use of an FLVSS or MLVSS LiPo cell voltage  (see below) sensor is recommended as ArduPilot is not capable of measuring and reporting the voltage of individual cells in a battery pack.
+
+.. _frsky_receivers:
+
+Telemetry capable FrSky receivers
+---------------------------------
+
++------------------------+------------+-------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+|        Receiver        |   Range    | Target frame type |                                    Outputs                                     |                                                   Notes                                                   |
++========================+============+===================+================================================================================+===========================================================================================================+
+| X4R/X4R-SB             | Good       | Small to mid size | X4R: CPPM and 3 extra PWM channels X4R-SB: SBUS, CPPM and 2 extra PWM channels |                                                                                                           |
++------------------------+------------+-------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| XSR (recommended)      | Better     | Mini and racing   | SBUS and CPPM                                                                  | Smallest telemetry capable FrSky receiver.                                                                |
++------------------------+------------+-------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| X6R, X8R (recommended) | Best       | Mid to large size | SBUS or PWM                                                                    | The X8R is the **most common** and versatile FrSky receiver as it is often sold bundled with the Taranis. |
++------------------------+------------+-------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| D4R-II                 | Not tested | All               | PWM                                                                            | Deprecated receiver. It is recommended to upgrade to an X-series (SmartPort) receiver.                    |
++------------------------+------------+-------------------+--------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+
+.. tip::
+
+  SBUS signal output is highly recommended as it features 16 RC channels and can be directly plugged into the flight controller (e.g., RCIN on Pixhawk)
+
+.. _frsky_cables:
 
 X-Receiver cables
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Craft and Theory Pixhawk to FrSky Telemetry Cables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Craft and Theory supply cost-effective all-in-one X-receiver cables with
-different connectors for the various X-receivers:
+`Craft and Theory <http://www.craftandtheoryllc.com/product-category/frsky-smartport-telemetry-cables/>`__ supplies cost-effective all-in-one X-receiver cables with connectors for the various FrSky receivers.
 
--  `Pixhawk to FrSky Telemetry Cable (X4R, X4RSB) <http://www.craftandtheoryllc.com/product/frsky-x4r-x4rsb-telemetry-cable-for-pixhawk/>`__
+.. figure:: ../../../images/frsky_cables300x300.png
+    :target: http://www.craftandtheoryllc.com/product-category/frsky-smartport-telemetry-cables/
+    :align: center
 
-   .. figure:: http://www.craftandtheoryllc.com/wp-content/uploads/2015/12/X4R-Pixhawk-cable1.jpg
-      :target:  http://www.craftandtheoryllc.com/product/frsky-x4r-x4rsb-telemetry-cable-for-pixhawk/
+-  `Servo telemetry Cable (X6R/X8R, SmartPort sensors) for Pixhawk 2.1 <http://www.craftandtheoryllc.com/product/frsky-servo-x6r-x8r-flvss-mlvss-smartport-telemetry-cable-for-pixhawk-2-1-jst-gh-taranis-ardupilot/>`__:
 
-      Craft and Theory: Pixhawk to FrSky X4R/X4RSB receiver cable
+   .. figure:: http://www.craftandtheoryllc.com/wp-content/uploads/2016/09/pxwk2_x8r_cable.jpg
+      :target:  http://www.craftandtheoryllc.com/product/frsky-servo-x6r-x8r-flvss-mlvss-smartport-telemetry-cable-for-pixhawk-2-1-jst-gh-taranis-ardupilot/
+      
+      Craft and Theory Pixhawk 2.1 to FrSky X6R and X8R receiver cable
 
 -  `Pixhawk to FrSky Telemetry Cable (X6R, X8R, FLVSS) <http://www.craftandtheoryllc.com/product/frsky-x6r-x8r-flvss-telemetry-cable-for-pixhawk/>`__:
 
    .. figure:: http://www.craftandtheoryllc.com/wp-content/uploads/2015/12/X8R-Pixhawk-cable.jpg
       :target:  http://www.craftandtheoryllc.com/product/frsky-x6r-x8r-flvss-telemetry-cable-for-pixhawk/
 
-      Craft and Theory: Pixhawk to FrSky X6R and X8R receiver cable
+      Craft and Theory Pixhawk to FrSky X6R and X8R receiver cable
 
-DIY Cable for X receivers
+
+
+DIY cable for X-receivers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can make your own cable using the following components:
@@ -141,272 +155,275 @@ You can make your own cable using the following components:
    4 position telemetry wire which will be cut and soldered to the
    TTL-to-RS232 converter (should be included with the receiver)
 
-FrSky Telemetry setup in Mission Planner
-----------------------------------------
+.. warning ::
 
-To enable the FrSky Telemetry output on the Pixhawk's *Telem2* port,
-please connect with the **Mission Planner** and then open the
-**Config/Tuning \| Full Parameter List** page and set the
-``SERIAL2_PROTOCOL`` parameter to "3" for D-Receiver and "4" for
-X-Receiver.
+  DO NOT PLUG THE TELEMETRY CABLE TO THE AUTOPILOT WHILE IT IS ON!
+
+.. _frsky_sensors:
+
+FrSky Sensors
+-------------
+
+The following SmartPort sensors are available from FrSky:
+
+.. |ass-100| image:: ../../../images/frsky_ASS-100.png
+    :width: 200pt
+    :height: 200pt
+
+.. |fas40s| image:: ../../../images/frsky_FAS40s.png
+    :width: 200pt
+    :height: 200pt
+
+.. |flvss| image:: ../../../images/frsky_flvss.png
+    :width: 200pt
+    :height: 200pt
+
+.. |gps| image:: ../../../images/frsky_gps.png
+    :width: 200pt
+    :height: 200pt
+
+.. |mlvss| image:: ../../../images/frsky_mlvss.png
+    :width: 200pt
+    :height: 200pt
+
+.. |rpm| image:: ../../../images/frsky_rpm.png
+    :width: 200pt
+    :height: 200pt
+
+.. |vari| image:: ../../../images/frsky_vari.png
+    :width: 200pt
+    :height: 200pt
+
++-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| Image           |  Sensor Name   |                     Description                     |                                        Useful with Ardupilot?                                       |
++=================+================+=====================================================+=====================================================================================================+
+| |flvss|         | FLVSS          | LiPo cell voltage sensor with OLED screen           | Yes, as individual cell voltages are not available in ArduPilot.                                    |
++-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| |mlvss|         | MLVSS          | Provides cell voltage (smaller than FLVSS)          | Yes, as individual cell voltages are not available in ArduPilot.                                    |
++-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| |rpm|           | RPM            | RPM sensors                                         | Yes, for traditional heli                                                                           |
++-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| |fas40s|        | FAS40S/FAS150s | 40A/150A current sensor                             | Mostly no. Information already provided by ArduPilot if equipped with a power module                |
++-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| |gps|           | GPS            | GPS receiver                                        | No. Information already provided by ArduPilot.                                                      |
++-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| |vari|          | Vari-H/Vari-N  | Variometer (high or normal precision)               | No. Information already provided by ArduPilot.                                                      |
++-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| |ass-100|       | ASS-70/100     | Normal/High precision Air Speed Sensor (pitot tube) | Mostly no. Information already provided by ArduPilot on Planes if equipped with an airspeed sensor. |
++-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+
+.. _common-frsky-equipment:
+Connecting Equipment to the SmartPort Bus
+=========================================
+
+All FrSky sensors have two SmartPort connections that are hardwired in parallel such that all sensors and the receiver communicate on the same bus wire. In practice, the devices are **daisychained** as illustrated below.
+
+   .. image:: ../../../images/FrSky_cablesbus.png
+    :target: ../_images/FrSky_cablesbus.png
+
+Connect the telemetry cable to one of the serial ports available on your autopilot and the other end to the Smart Port of your X-series receiver (X4R, X4RSB, X6R, X8R, or XSR) or a Smart Port sensor (e.g., FLVSS/MLVSS).
+
+
+Adding a FrSky FLVSS or MLVSS LiPo sensor to measure individual cell voltages
+-----------------------------------------------------------------------------
+
+While battery pack voltage is usually a good indicator of remaining flight time, **flight time is actually limited by the lowest cell voltage**. Once the voltage of a cell drops below a certain level, that cell’s voltage will continue to drop dramatically. This in turn causes the battery pack voltage to drop and may irreparably damage the battery pack.
+
+By using a FrSky FLVSS or MLVSS LiPo voltage sensor, the lowest cell voltage (which is not available on a ground station using radio telemetry) can be displayed on your transmitter.
+
+To install, connect the telemetry cable between the autopilot and the FLVSS/MLVSS sensor, then use the cable supplied with your receiver or supplied with the FLVSS/MLVSS sensor to connect the FLVSS/MLVSS sensor to the Smart Port connector of your X-series receiver:
+  
+.. figure:: ../../../images/FrSky_FLVSS_X8R.png
+   :scale: 50 %
+   :alt: Setup with X8R
+
+   Setup with X8R
+
+.. figure:: ../../../images/FrSky_FLVSS_X4R.png
+   :scale: 50 %
+   :alt: Setup with X4R
+
+   Setup with X4R
+
 
 .. note::
 
-   The information above is for ArduCopter 3.3. Prior to AC3.2 the
-   values are 2 for D-Receiver and 3 for X-Receiver.
+   For both receivers, the same servo telemetry cable is used. This is because in both cases the autopilot is directly connected to the LiPo sensor instead of the receiver.
 
-.. tip::
+.. _common-frsky-configMP:
 
-   ``SERIAL2_BAUD`` and ``SERIAL1_BAUD`` are not necessary for FrSky
-   telemetry - it is a static value for D-Port (9600) and S-port
-   (57600).
+FrSky Telemetry Configuration in Mission Planner
+================================================
 
-.. image:: ../../../images/MP-Serial2_protocol.png
-    :target: ../_images/MP-Serial2_protocol.png
+To enable FrSky Telemetry on one of the serial ports, connect with **Mission Planner** and set the corresponding ``SERIAL#_PROTOCOL`` parameter to the desired value depending on the flight controller and the port that the cable is plugged in:
 
-Transmitter set-up
-------------------
+- Standard D telemetry: **3**
+- Standard SmartPort telemetry: **4**
+- Ardupilot SmartPort telemetry: **10**
 
-Please refer to the `OpenTX manual <https://docs.google.com/document/d/1qlh09LzxtpPt7j_aqG8yiOu2yoYMzP9XA-PJA81rDJQ/edit#heading=h.36trni4byo5x>`__
-for how to control which values from the telemetry feed will be
-displayed on the transmitter's screen.
-
-.. note::
-
-   If upgrading to OpenTx 2.1 you will need to replace your OpenTx
-   2.0 configuration and "discover" your sensors. There are other minor
-   "oddities" - for example T1 (flight mode) and Tt2 (number of sats) are
-   both called TEMP (switching mode helps you identify which is
-   which).
-
-.. image:: ../../../images/Telemetry_FrSky_TXSetup.png
-    :target: ../_images/Telemetry_FrSky_TXSetup.png
-
-Protocol information
---------------------
-
-This section outlines what values are being sent over the telemetry
-link, and how they are encoded.
-
-.. note::
-
-   The list below is produced by code observation, and is not fully
-   complete.
-
-.. raw:: html
-
-   <table>
-   <tbody>
-   <tr>
-   <th>Taranis telemetry screen identifier</th>
-   <th>FRSKY_ID\_</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td>T1</td>
-   <td>TEMP1</td>
-   <td>send control_mode as Temperature 1 (TEMP1)</td>
-   </tr>
-   <tr>
-   <td>T2</td>
-   <td>TEMP2</td>
-   <td>send number of GPS satellites and GPS status. For example: 73 means 7 satellite and 3D lock</td>
-   </tr>
-   <tr>
-   <td>FUEL</td>
-   <td>FUEL</td>
-   <td>Send battery remaining</td>
-   </tr>
-   <tr>
-   <td>Vfas</td>
-   <td>VFAS</td>
-   <td>Send battery voltage</td>
-   </tr>
-   <tr>
-   <td>CURR</td>
-   <td>CURRENT</td>
-   <td>Send current consumption</td>
-   </tr>
-   <tr>
-   <td>Hdg</td>
-   <td>GPS_COURS_BP</td>
-   <td>Send heading in degrees based on AHRS and not GPS</td>
-   </tr>
-   <tr>
-   <td>GPS lat/long</td>
-   <td>?</td>
-   <td>Is transmitted normally</td>
-   </tr>
-   <tr>
-   <td>Spd</td>
-   <td>GPS_SPEED_BP/AP</td>
-   <td>GPS speed</td>
-   </tr>
-   <tr>
-   <td>Alt</td>
-   <td>FRSKY_ID_BARO_ALT_BP/AP</td>
-   <td>Barometer altitude</td>
-   </tr>
-   <tr>
-   <td>GAlt</td>
-   <td>FRSKY_ID_GPS_ALT_BP/AP</td>
-   <td>GPS altitude</td>
-   </tr>
-   </tbody>
-   </table>
-
-Other available values:
-
-.. raw:: html
-
-   <table>
-   <tbody>
-   <tr>
-   <th>Taranis telemetry screen identifier</th>
-   <th>FRSKY_ID\_</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td>RSSI</td>
-   <td>
-   </td>
-   <td>Transmitter data</td>
-   </tr>
-   <tr>
-   <td>Batt, time</td>
-   <td>
-   </td>
-   <td>Consumption (maybe mAh used?)</td>
-   </tr>
-   <tr>
-   <td>CONS</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>SWR</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>A1</td>
-   <td>
-   </td>
-   <td>Receiver voltage (not very useful since is always around 4-5V).</td>
-   </tr>
-   </tbody>
-   </table>
-   
-Missing:
-
-.. raw:: html
-
-   <table>
-   <tbody>
-   <tr>
-   <th>Taranis telemetry screen identifier</th>
-   <th>FRSKY_ID\_</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td>GPS date&time</td>
-   <td>
-   </td>
-   <td>Note: These were logged as some fixed date&time in the year 2000 on my
-    Taranis SD card. Reviewing if this is a logging issue or a telemetry
-    issue.</td>
-   </tr>
-   <tr>
-   <td>AccelX,Y,Z</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>CELLS</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>RPM</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>Air speed</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   <tr>
-   <td>Vertical speed</td>
-   <td>
-   </td>
-   <td>
-   </td>
-   </tr>
-   </tbody>
-   </table>
-
-Hardware solutions
-==================
-
-This section contains hardware-only MAVLink to FrSky converter
-solutions.
-
-Please feel free to add your own solutions (`or ask us to <https://github.com/ArduPilot/ardupilot/issues/new>`__).
-
-
-.. _common-frsky-telemetry_apm_mavlink_to_frsky_smartport_converter_airborne_projects:
-
-APM MavLink to FrSky SmartPort Converter (Airborne Projects)
-------------------------------------------------------------
-
-Airborne Project's `APM MavLink to FrSky SmartPort Converter <https://www.airborneprojects.com/product/apm-mavlink-to-frsky-smartport-converter/>`__
-converts MAVLink messages to FrSkySmartPort format. It can directly be
-connected to the Taranis Radio. You only have to load the Taranis
-telemetry modules and configure in Mission Planner. No soldering
-required!
-
-.. figure:: https://www.airborneprojects.com/wp-content/uploads/2015/08/converter_1-500x500.jpg
-   :target:  https://www.airborneprojects.com/product/apm-mavlink-to-frsky-smartport-converter/
-
-   AirborneProjects: APM MavLink to FrSky SmartPort Converter
-
-The converter includes all needed cables. It features a hardware
-modified version of the Arduino Nano and be powered directly from the
-Taranis receiver.
-
-For more information see the `QuickStart Guide <https://www.airborneprojects.com/wp-content/uploads/2016/02/Quick-Start-Guide.pdf>`__
-(www.airborneprojects.com).
-
-APM MavLink to FrSky SmartPort Converter (MavLink_FrSkySPort)
---------------------------------------------------------------
-
-The open source
-`MavLink_FrSkySPort <https://github.com/Clooney82/MavLink_FrSkySPort/wiki>`__
-project uses the Teensy USB Development board to convert MAVLink
-messages to FrSkySmartPort format so that ArduPilot telemetry can be
-displayed on an FrSky transmitter.
-
-.. image:: https://raw.githubusercontent.com/Clooney82/MavLink_FrSkySPort/s-c-l-v-rc-opentx2.1/images/Basic%20Wiring%20-%20Teensy3.jpg
-    :target:  https://raw.githubusercontent.com/Clooney82/MavLink_FrSkySPort/s-c-l-v-rc-opentx2.1/images/Basic%20Wiring%20-%20Teensy3.jpg
++-------------------------------------------------------------+--------------------------------+------------------------+
+|                      Flight Controller                      |           Port used            |     Parameter name     |
++=============================================================+================================+========================+
+| Pixhawk 2.1                                                 | TELEM1                         | SERIAL1_PROTOCOL       |
+|                                                             +--------------------------------+------------------------+ 
+|                                                             | TELEM2                         | SERIAL2_PROTOCOL       |
+|                                                             +--------------------------------+------------------------+
+|                                                             | GPS 1                          | SERIAL3_PROTOCOL       |
+|                                                             +--------------------------------+------------------------+
+|                                                             | GPS 2                          | SERIAL4_PROTOCOL       |
++-------------------------------------------------------------+--------------------------------+------------------------+
+| Pixhawk and Pixhawk clones                                  | TELEM1                         | SERIAL1_PROTOCOL       |
+|                                                             +--------------------------------+------------------------+
+|                                                             | TELEM2                         | SERIAL2_PROTOCOL       |
+|                                                             +--------------------------------+------------------------+
+|                                                             | GPS                            | SERIAL3_PROTOCOL       |
+|                                                             +--------------------------------+------------------------+
+|                                                             | SERIAL 4/5 (recommended)       | SERIAL4_PROTOCOL       |
++-------------------------------------------------------------+--------------------------------+------------------------+
+|  Pixhawk Mini                                               | TELEM                          | SERIAL1_PROTOCOL       |
++-------------------------------------------------------------+--------------------------------+------------------------+
+|  PixRacer                                                   | FRS                            | SERIAL4_PROTOCOL       |
++-------------------------------------------------------------+--------------------------------+------------------------+
+|  Pixhack                                                    | SERIAL 4/5                     | SERIAL4_PROTOCOL       |
++-------------------------------------------------------------+--------------------------------+------------------------+
 
 .. note::
+   Configuring ``SERIAL#_BAUD`` for FrSky telemetry has no effect - it is always a hardcoded value in ArduPilot: 9,600bps for D telemetry and 57,600bps for SmartPort telemetry.
 
-   This solution is one of the most versatile solutions available,
-   and is the inspiration of many similar solutions 
-   (including :ref:`Airborne's above <common-frsky-telemetry_apm_mavlink_to_frsky_smartport_converter_airborne_projects>`).
-   It is however not a "commercial" solution and does require some soldering.
+.. image:: ../../../images/MP_SERIAL2_FrSky10.png
+    :target: ../_images/MP_SERIAL2_FrSky10.png
 
-Information about the circuit and software can be found on the `project wiki <https://github.com/Clooney82/MavLink_FrSkySPort/wiki>`__.
+.. warning::
+   Only one ``SERIAL#_PROTOCOL`` parameter should be set for FrSky telemetry. Keep the other ``SERIAL#_PROTOCOL`` parameters to their default values or at least to something other than 3, 4, or 10, as only one serial port can be used for FrSky telemetry at a time!
+
+Additional configuration in Mission Planner
+-------------------------------------------
+
+For FrSky telemetry to transmit the correct battery information to the RC transmitter, ArduPilot must be configured for the power module and battery pack used.
+
+Configuring the Power Module via Mission Planner
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../../../images/MP_FrSky_PowerModuleConfig.png
+   :target: ../_images/MP_FrSky_PowerModuleConfig.png
+
+Perform the steps in the following tutorial if you've never configured or must reconfigure your power module: :ref:`power module configuration in mission planner <common-power-module-configuration-in-mission-planner>`
+
+.. warning::
+
+  It is highly recommended to configure the power module (both voltage and current), otherwise the voltage, current, battery consumption (Ah) and battery percentage reported in Mission Planner and via FrSky telemetry will not be accurate!!! 
+
+Battery Capacity Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set your battery pack capacity.
+
+.. image:: ../../../images/MP_FrSky_BattCapacity.png
+   :target: ../_images/MP_FrSky_BattCapacity.png
+
+Battery Failsafe Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**This feature is only available with passthrough telemetry.**
+
+Battery failsafes are transmitted when using Passthrough FrSky telemetry. The battery failsafes are configured in the “Mandatory Hardware” tab. Click on “Failsafe” and set the “Low Battery” voltage and the “Reserved mAh” capacity.
+
+.. image:: ../../../images/MP_FrSky_BattFailsafe.png
+   :target: ../_images/MP_FrSky_BattFailsafe.png
+
+OpenTX Scripts
+==============
+
+This section covers how to enable and runs scripts on the Taranis with OpenTX:
+
+Enabling Scripts on OpenTX
+--------------------------
+
+   The version installed on your Taranis may not have the option to run scripts. If this is the case, you will need to install a new version via OpenTX Companion. This can be done in a few easy steps.
+
+   1. Download and install the latest version of OpenTX Companion from `OpenTX <www.open-tx.org/downloads.html>`__. Open the OpenTX Companion program, then go to Settings >> Settings
+
+   .. image:: ../../../images/opentx_settingstab.png
+       :target: ../_images/opentx_settingstab.png
+
+   2. Select your “Radio Type” (Taranis, Taranis Plus, or Taranis X9E), make sure the “lua” build option is checked, then press OK.
+
+   .. image:: ../../../images/opentx_luacheck.png
+       :target: ../_images/opentx_luacheck.png
+
+   3. Click on File >> Download...
+
+   .. image:: ../../../images/opentx_filetab.png
+       :target: ../_images/opentx_filetab.png
+
+   4. Click on the “Download FW” button and save the resulting .bin file. Once the firmware is downloaded, press OK.
+
+   .. image:: ../../../images/opentx_dlwindow.png
+       :target: ../_images/opentx_dlwindow.png
+    
+   5. Enter bootloader mode on the Taranis by sliding both horizontal trims, each under the main sticks, towards the center and then turning the Taranis on. The top of the Taranis LCD screen should now display “Taranis Bootloader.”
+
+   .. image:: ../../../images/frsky_taranis_bootloadermode.png
+       :target: ../_images/frsky_taranis_bootloadermode.png
+
+   6. Connect a USB cable between the Taranis and the computer. “USB Connected” should appear in the center of the Taranis LCD screen. Click on Read/Write >> Write Firmware to Radio.
+
+   .. image:: ../../../images/opentx_RWtab.png
+       :target: ../_images/opentx_RWtab.png 
+
+   7. Locate/load the firmware (.bin) which was downloaded earlier, then click on the “Write to TX” button. A popup window should display a progress bar which will eventually reach 100%. Once flashing is done, click on the “Close” button to close the popup window.
+
+   .. image:: ../../../images/opentx_flashwindow.png
+       :target: ../_images/opentx_flashwindow.png 
+
+Copying Scripts and Sounds to the Taranis
+-----------------------------------------
+
+Scripts and sounds are stored on the Taranis SD Card. To copy a script or sounds to the Taranis, copy them to the SCRIPTS or SOUNDS folder on the Taranis SD. This can be done with an SD card reader or directly with the Taranis.
+
+With the Taranis still in bootloader mode and connected to the computer via USB, the SD card should appear as a computer drive that contains multiple folders, including SCRIPTS and SOUNDS. Scripts and sounds should be copied to these folders.
+
+Running Telemetry Scripts
+-------------------------
+
+This section describes how to the discover the telemetry sensors (similar to using telemetry without scripts), how to assign a display script to a screen and how to access the screen showing the script display or activate a non-display script (e.g. sound script).
+
+Discovering Sensors
+^^^^^^^^^^^^^^^^^^^
+
+OpenTX 2.1.x requires “discovering” the telemetry messages from the Pixhawk that are not passthrough messages. To discover them, unplug the USB cable, turn off the Taranis, then turn it back on (not in bootloader mode). Repeat the following steps for each model for which you want to use FrSky telemetry:
+
+1. Press the MENU button, then long press the PAGE button to get to the TELEMETRY page. Press the - button until “Discover new sensors” is highlighted and press ENTER. The Taranis LCD screen should display “Stop discovery.”
+
+ .. image:: ../../../images/OpenTX_Discover.png
+    :target: ../_images/OpenTX_Discover.png 
+
+2. Power on the Pixhawk and FrSky receiver. Wait for 15 seconds. The Taranis should discover the emulated sensors based on the data from the Pixhawk. The sensors must all be properly discovered for the scripts to run. For example:
+
+ .. image:: ../../../images/OpenTX_sensors.png
+    :target: ../_images/OpenTX_sensors.png
+
+Assigning a Display Script to a Screen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If a scripts has a display, it needs to be assigned to telemetry screens. Once the script has been assigned to a screen, the script is accessed by doing a long press on the main OpenTX screen. Each long press will switch screens. Multiple scripts can be assigned to multliple screens.
+
+On the TELEMETRY page, scroll down using the - button, and highlight the “None” entry next to “Screen 1.” Once “None” is highlighted, press ENT, then navigate the choices with the +/- buttons until “Script” appears. Press ENT to validate, then press - to move to the right (highlighting “- - -“). Press ENT and select your script (e.g. “screens”) using the +/- buttons, then press ENT to validate. The “screens” script handles the display capabilities. The Taranis LCD display should then look like this:
+
+.. image:: ../../../images/OpenTX_assign_script_to_screen.png
+    :target: ../_images/OpenTX_assign_script_to_screen.png 
+
+Activating a Custom Script (no display function)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Scripts that do not display anything (e.g. data parsing, sounds) are activated on the CUSTOM script page.
+Press EXIT once, long press PAGE to get to the CUSTOM SCRIPT page, then press ENT to edit LUA1. On the LUA1 page, press ENT and select the script using the +/- buttons, then press ENT to validate.
+
+
+.. toctree::
+    :maxdepth: 1
+
+    Passthrough FrSky Telemetry <common-frsky-passthrough>
+    FlightDeck <common-frsky-flightdeck>
+    Repurposed FrSky Telemetry <common-frsky-repurposed>
+    MavLink to FrSky Telemetry Converters <common-frsky-mavlink>
