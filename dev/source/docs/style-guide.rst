@@ -79,12 +79,12 @@ statement is indented.
 ::
 
     switch (condition) {
-    case foo_cond:
-        foo();
-        break;
-    case bar_cond:
-        bar();
-        break;
+        case foo_cond:
+            foo();
+            break;
+        case bar_cond:
+            bar();
+            break;
     }
 
 **Wrong:**
@@ -92,12 +92,12 @@ statement is indented.
 ::
 
     switch (condition) {
-        case foo_cond:
-            foo();
-            break;
-        case bar_cond:
-            bar();
-            break;
+    case foo_cond:
+        foo();
+        break;
+    case bar_cond:
+        bar();
+        break;
     }
 
 Spacing
