@@ -65,7 +65,7 @@ The easiest way to get started is to flash the Edison with image recommended by 
    - On Ubuntu install with ``sudo apt-get install dfu-util``
 
    - On OS X:
-   
+
       - Follow the instructions on the `Homebrew web page <http://brew.sh>`__. 
       - Install dfu-util  ``brew install dfu-util``		
 
@@ -74,27 +74,26 @@ The easiest way to get started is to flash the Edison with image recommended by 
    .. image:: ../images/intel-edison-pixhawk2-reflash-connections.png
        :width: 50%
        :align: center
-       
+
 - The ports on the carrier board connect to the Edison, one is the serial console port and the other is the OTG port. See the image below to identify each one:
 
    .. image:: ../images/intel-edison-pixhawk2-carrier-usbports.png
        :width: 50%
        :align: center
-              
+
 - Flash the image:
 
    - On Windows double click on the ``flashall.bat`` script found in the ``toFlash`` directory or Open a command prompt window navigate to the ``toFlash`` folder and run ``flashall.bat`` to see the output
    - On Ubuntu and OS X cd into the ``toFlash`` directory and enter, ``./flashall.sh``
-   
+   - 
    - During the flashing process, the script will ask you to un plug the Edison. For this you must cut power to the Cube by removing only the USB cable connected to the cube itself.
-   
+
 - After flashing is done, wait 1 to 2 min before cutting power to the Edison
 
 - This video shows how to do this process on a OS X machine, but the process should be very similar in Linux and Windows.
 
   .. youtube:: FEflrTHf5zQ
        :width: 100%
-
 
 After flashing has completed the root file system must be expanded manually from 1.5GB to 2.2GB:
 
