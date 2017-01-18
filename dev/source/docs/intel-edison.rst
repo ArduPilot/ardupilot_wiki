@@ -69,13 +69,11 @@ The easiest way to get started is to flash the Edison with image recommended by 
       - Follow the instructions on the `Homebrew web page <http://brew.sh>`__. 
       - Install dfu-util  ``brew install dfu-util``		
 
--  Connect your PC to the Pixhawk2 using the USB cables as shown below.  This provides power and enables flashing the image
+-  Connect your PC to the Pixhawk2 using the USB cables as shown below.  The USB cable connected to the Cube (the black cable shown below) provides power.  The two USB cables connected to the carrier board (shown as white cables) enable flashing the image to the edison.  If possible connect the "OTG port Flashing" using the flat USB cable that comes with the Pixhawk2 because it provides the most reliable connection.
 
    .. image:: ../images/intel-edison-pixhawk2-reflash-connections.png
        :width: 50%
        :align: center
-
-- The ports on the carrier board connect to the Edison, one is the serial console port and the other is the OTG port. See the image below to identify each one:
 
    .. image:: ../images/intel-edison-pixhawk2-carrier-usbports.png
        :width: 50%
