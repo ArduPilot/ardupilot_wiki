@@ -81,12 +81,20 @@ The easiest way to get started is to flash the Edison with image recommended by 
        :width: 50%
        :align: center
 
+- On a Windows machine, the Intel Edison should show up in the Device Manager as shown in the image below
+
+   .. image:: ../images/intel-edison-windows-device-manager.png
+       :width: 50%
+       :align: center
+
 - Flash the image:
 
    - On Windows double click on the ``flashall.bat`` script found in the ``toFlash`` directory or Open a command prompt window navigate to the ``toFlash`` folder and run ``flashall.bat`` to see the output
    - On Ubuntu and OS X cd into the ``toFlash`` directory and enter, ``./flashall.sh``
-   - 
-   - During the flashing process, the script will ask you to un plug the Edison. For this you must cut power to the Cube by removing only the USB cable connected to the cube itself.
+   - If/when you see a prompt, "Now waiting for dfu device 8087:0a99, Please plug and reboot the board", unplug and then plug back in the USB cable connected to the Cube (i.e. the one providing power)
+
+   .. image:: ../images/intel-edison-flashall-progress.png
+       :align: center
 
 - After flashing is done, wait 1 to 2 min before cutting power to the Edison
 
