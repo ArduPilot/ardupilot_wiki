@@ -125,12 +125,12 @@ unpack it:
 
 ::
 
-    tar -xjvf gcc-arm-none-eabi-4_6-2012q2-20120614.tar.bz2
+    tar -xjvf gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
 
 and then add the bin directory from the tarball to your $PATH by editing
 the $HOME/.bashrc file and adding a line like this to the end:
 
-``export PATH=$PATH:/home/your_username/bin/gcc-arm-none-eabi-4_6-2012q2/bin``
+``export PATH=$PATH:/home/your_username/bin/gcc-arm-none-eabi-4_9-2015q3/bin``
 
 ccache for faster builds
 ------------------------
