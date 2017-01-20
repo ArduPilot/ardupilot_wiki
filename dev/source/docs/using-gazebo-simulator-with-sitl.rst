@@ -28,8 +28,8 @@ Preconditions
 We recommend Ubuntu starting from 14.04.2 (it is working on 16.04 but untest on 16.10) as this is the platform used for testing
 this approach and is also known to be compatible with SITL.
 
-Compiling and installing Gazebo
-===============================
+Compiling and installing Gazebo From Source
+===========================================
 
 We will be using a standard version of ArduPilot but a custom fork of Gazebo, until the gazebo plugin gets merge into Gazebo-master.
 
@@ -136,7 +136,24 @@ Then find the file libgazebo_common.so.1, probably under `/usr/local/lib` or `/u
     Compiling Gazebo from source will not be necessary once this pull request gets merged:
     https://bitbucket.org/osrf/gazebo/pull-requests/2450/ardupilot-refactor-and-minor-improvements/diff
 
+Installing gazebo pre-built packages
+====================================
 
+Instead of building gazebo yourself you can instead install a prebuilt
+set of packages if you are running a suitable distro of Linux.
+
+Instructions for installing the "SASC" version of gazebo that works
+with ArduPilot SITL are here:
+
+  https://github.com/osrf/uctf/tree/master/doc/install_binary
+
+That will install gazebo in /opt/sasc, so you need to also do:
+
+::
+   export PATH=/opt/sasc/bin:$PATH
+
+and install the custom gazebo models using the instructions below.
+  
 Installing Custom Gazebo Models
 -------------------------------
 
@@ -147,7 +164,7 @@ We will also need to get a gazebo model of a quadcopter.
     hg clone https://bitbucket.org/osrf/gazebo_models ~/gazebo_ws/gazebo_models
     cd ~/gazebo_ws/gazebo_models
     hg checkout zephyr_demos
-    echo 'export GAZEBO_MODEL_PATH=~/gazebo_models' >> ~/.bashrc
+    echo 'export GAZEBO_MODEL_PATH=~/gazebo_ws/gazebo_models' >> ~/.bashrc
     source ~/.bashrc
 
 .. note::
@@ -182,14 +199,14 @@ In one terminal, enter the ArduCopter directory and start the SITL simulation:
 ::
 
     cd ~/ardupilot/ArduCopter
-    sim_vehicle.py -f gazebo-iris
+    sim_vehicle.py -f gazebo-iris -D --console --map
 
 In another terminal start Gazebo:
 
 ::
 
     cd ~/gazebo
-    gazebo --verbose worlds/iris_standoff_demo.world
+    gazebo --verbose worlds/iris_arducopter_demo.world
 
 If all works well, you should see this:
 
