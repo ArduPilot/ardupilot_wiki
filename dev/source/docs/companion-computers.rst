@@ -16,6 +16,7 @@ Related topics on this wiki include:
 .. toctree::
     :maxdepth: 1
 
+    APSync <apsync-intro>
     DroneKit Tutorial <droneapi-tutorial>
     Raspberry Pi <raspberry-pi-via-mavlink>
     ODroid <odroid-via-mavlink>
