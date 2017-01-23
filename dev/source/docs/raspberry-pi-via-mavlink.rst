@@ -32,6 +32,20 @@ hooked up to the USB power).
    the input is regulated. If powering via USB, do not also connect the +5V
    pin as shown (still connect common ground).
 
+.. _raspberry-pi-via-mavlink_setup_the_rpi:
+
+Setup the RPi
+=============
+
+The easiest way to setup the RPi is to flash one of the existing images:
+
+- purchase a formatted 8GB or 16GB SD card (16GB is better because some 8GB cards will not be quite large enough to fit the image) and insert into your laptop/desktop computer's SD card slot
+- download the latest `image from firmware.ardupilot.org <http://firmware.ardupilot.org/Companion>`__.  Look for the file starting with "rpi".
+- extract the image.  On Windows you may use `7-zip <http://www.7-zip.org/>`__.
+- For Windows download and install Win32DiskImager and follow the `instructions here <https://www.raspberrypi.org/documentation/installation/installing-images/windows.md>`__.
+- For `Linux follow these instructions <https://www.raspberrypi.org/documentation/installation/installing-images/linux.md>`__.
+- For `Mac follow these instructions <https://www.raspberrypi.org/documentation/installation/installing-images/mac.md>`__.
+
 .. _raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client:
 
 Connecting to RPi with an SSH/Telnet client
