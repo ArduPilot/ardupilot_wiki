@@ -47,9 +47,9 @@ Setting up the Edison
 
    Some information here was borrowed from `the Intel Developer Zone <https://software.intel.com/en-us/flashing-firmware-on-your-intel-edison-board-windows>`__.
 
-The easiest way to get started is to flash the Edison with image recommended by the ArduPilot team:
+The easiest way to get started is to flash the Edison with the :ref:`APSync <apsync-intro>` image recommended by the ArduPilot team:
 
--  Download the `latest image from firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/ 	intel_edison_image_latest.tar.gz>`__
+-  Download the `latest image from firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__. Look for the file starting with "apsync-edison".
 -  Extract/Unzip the image (a "toFlash" directory should appear):
 
    - Windows users can use `7-zip <http://www.7-zip.org/>`__
@@ -96,41 +96,14 @@ The easiest way to get started is to flash the Edison with image recommended by 
 
 - After flashing is done, wait 1 to 2 min before cutting power to the Edison
 
-- This video shows how to do this process on a OS X machine, but the process should be very similar in Linux and Windows.
+Setting up the Pixhawk
+======================
 
-  .. youtube:: FEflrTHf5zQ
-       :width: 100%
+Connect to the Pixhawk with a ground station (i.e. Mission Planner) and set the following parameters:
 
-After flashing has completed the root file system must be expanded manually from 1.5GB to 2.2GB:
-
-- Connect two USB cables from your PC to the Pixhawk2, one to the cube, the other one to the console port.
-- Open a serial connection to the Edison (which uses the 2nd USB connection) at 115200 baud with username and password "edison"
-
-   - On windows you may use `Putty <https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe>`__
-   - On Linux/Ubuntu or OSX you can use screen, ``screen /dev/tty.usbserial-Axxxxxxxx 115200`` ("xxxxxxxx" value is specific to each board)
-
-- use the ``.local/bin/post-flash.sh`` script to expand the file system:
-
-::
-
-	edison@edison ~ $ .local/bin/post-flash.sh 
-	Running post install chores
-	[sudo] password for edison: 
-	resize2fs 1.42.12 (29-Aug-2014)
-	Filesystem at /dev/mmcblk0p8 is mounted on /; on-line resizing required
-	old_desc_blocks = 1, new_desc_blocks = 1
-	The filesystem on /dev/mmcblk0p8 is now 589824 (4k) blocks long.
-
-Finally edit these files with your Wi-Fi network credentials:
-
-::
-
-	/etc/network/interfaces.home
-	/etc/network/interfaces.work
-
-Then you can log into the Edison and type ``homenet.sh`` or ``worknet.sh`` to switch between network configurations
-
-------------------------
+-  :ref:`SERIAL2_PROTOCOL <copter:SERIAL2_PROTOCOL>` = 1 (the default) to enable MAVLink on the serial port.
+-  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the Pixhawk can communicate with the Edison at 921600 baud.
+-  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the Edison
 
 Troubleshooting bricked Edison
 ==============================
