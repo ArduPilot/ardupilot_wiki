@@ -20,16 +20,17 @@ Setup the Pixhawk
 
 Connect to the Pixhawk with a ground station (i.e. Mission Planner) and set the following parameters:
 
--  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 1 (the default) to enable MAVLink on the serial port.
--  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 921 so the Pixhawk can communicate with the TX1 at 921600 baud.
- 
+-  :ref:`SERIAL2_PROTOCOL <copter:SERIAL2_PROTOCOL>` = 1 (the default) to enable MAVLink on the serial port.
+-  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the Pixhawk can communicate with the TX1 at 921600 baud.
+-  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the TX1
+
 Setup the TX1
 =============
 
-The easiest way to setup the TX1 is to flash one of the existing binaries from `firmware.ardupilot.org <http://firmware.ardupilot.org/Companion>`__ (look for images starting with "tx1") or you can create your own image by following the instructions found `here in the ardupilot companion repo <https://github.com/ArduPilot/companion/tree/master/Nvidia_JTX1/Ubuntu>`__.
+The easiest way to setup the TX1 is to flash one of the existing :ref:`APSync <apsync-intro>` images from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__ (look for images starting with "tx1") or you can create your own image by following the instructions found `here in the ardupilot companion repo <https://github.com/ArduPilot/companion/tree/master/Nvidia_JTX1/Ubuntu>`__.
 
 -  mount the TX1 back on the NVidia development board
--  download and unzip the latest image starting with "tx1" from `firmware.ardupilot.org <http://firmware.ardupilot.org/Companion>`__
+-  download and unzip the latest image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__.  Look for the file starting with "apsync-tx1".
 -  official instructions on flashing images can be found `here <https://devtalk.nvidia.com/default/topic/898999/jetson-tx1/tx1-r23-1-new-flash-structure-how-to-clone-/post/4784149/#4784149>`__ but in short:
 
     - install the TX1 on an NVidia TX1 development board
