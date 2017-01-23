@@ -37,14 +37,23 @@ hooked up to the USB power).
 Setup the RPi
 =============
 
-The easiest way to setup the RPi is to flash one of the existing images:
+The easiest way to setup the RPi is to flash one of the existing :ref:`APSync <apsync-intro>` images:
 
 - purchase a formatted 8GB or 16GB SD card (16GB is better because some 8GB cards will not be quite large enough to fit the image) and insert into your laptop/desktop computer's SD card slot
-- download the latest `image from firmware.ardupilot.org <http://firmware.ardupilot.org/Companion>`__.  Look for the file starting with "rpi".
+- download the latest `image from firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync>`__.  Look for the file starting with "apsync-rpi".
 - extract the image.  On Windows you may use `7-zip <http://www.7-zip.org/>`__.
 - For Windows download and install Win32DiskImager and follow the `instructions here <https://www.raspberrypi.org/documentation/installation/installing-images/windows.md>`__.
 - For `Linux follow these instructions <https://www.raspberrypi.org/documentation/installation/installing-images/linux.md>`__.
 - For `Mac follow these instructions <https://www.raspberrypi.org/documentation/installation/installing-images/mac.md>`__.
+
+Setting up the Pixhawk
+======================
+
+Connect to the Pixhawk with a ground station (i.e. Mission Planner) and set the following parameters:
+
+-  :ref:`SERIAL2_PROTOCOL <copter:SERIAL2_PROTOCOL>` = 1 (the default) to enable MAVLink on the serial port.
+-  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the Pixhawk can communicate with the RPi at 921600 baud.
+-  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the RPi
 
 .. _raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client:
 
@@ -53,8 +62,7 @@ Connecting to RPi with an SSH/Telnet client
 
 .. note::
 
-   These steps assume that you have already `set-up your RPi <http://www.raspberrypi.org/downloads>`__ so that it is running
-   Raspbian.
+   These steps assume that you have `set-up your RPi <http://www.raspberrypi.org/downloads>`__ so that it is running Raspbian.  These instructions are not required if you are using APSync as described above.
 
    To avoid the requirement to plug a keyboard, mouse and HDMI screen into
    your RPi it is convenient to be able to connect from your Desktop/Laptop
