@@ -4,7 +4,7 @@
 APSync
 ======
 
-APSync is a project sponsored by `EnRoute <http://enroute.co.jp/>`__ which aims to simplify the setup of companion computer so that they can be used to provide additional functionality to ArduPilot and also to ease integration of UAVs with internet services.
+APSync is a project sponsored by `EnRoute <http://enroute.co.jp/>`__ which simplifies the setup of companion computers so that they can be used to provide additional functionality to ArduPilot and also to ease integration with internet services.
 
 The first beta has started with support the first section listed below (Wifi Access Point & DataFlash logging) for the :ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>` and :ref:`Intel Edison <intel-edison>`.
 
@@ -13,7 +13,7 @@ The first beta has started with support the first section listed below (Wifi Acc
 .. warning::
 
    The APSync project is still in beta.  Only the first stage (Wifi Access Point & DataFlash logging) is complete.
-   Please get involved by reporting issues in the `ArduPilot Forums <http://discuss.ardupilot.org/>`__ and/or help improve APSync by contacting the developers on `Gitter's ArduPilot/companion chat room <https://gitter.im/ArduPilot/companion>`__!
+   Please get involved by reporting issues in the `ArduPilot Forums <http://discuss.ardupilot.org/c/development-team>`__.  Deveopers can help improve APSync by submitting PRs to `ArduPilot/companion <https://github.com/ArduPilot/companion>`__ and/or discuss with others developers in `Gitter's ArduPilot/companion chat room <https://gitter.im/ArduPilot/companion>`__!
 
 Wifi Access Point & DataFlash logging
 =====================================
@@ -26,7 +26,7 @@ On start-up an access point is created with name "ardupilot" and password "enRou
 The user can connect to this access point and then easily connect to ardupilot running on the flight controller by setting their ground station (including Mission Planner) to connect using "UDP".
 
 Dataflash logs are streamed to the companion computer via mavlink and stored on the companion computer's filesystem (as well as on the pixhawk's dataflash).
-Dataflash log files can then be quickly downloaded (over wifi) using a script (Windows users may use `apsync-download-logs <http://firmware.ardupilot.org/Companion/apsync-download-logs-latest.zip>`__) or you may pull the SD card out of the companion computer.
+Dataflash log files can then be quickly downloaded (over wifi) using a script (Windows users may use `apsync-download-logs <http://firmware.ardupilot.org/Companion/apsync/apsync-download-logs-latest.zip>`__) or you may pull the SD card out of the companion computer.
 
 Data Syncronisation with Web server or Corporate server
 =======================================================
@@ -76,7 +76,7 @@ This allows more reliable and flexible streaming as the ground station can disco
 Installing APSync
 =================
 
-Images for the supported boards can be found in `firmware.ardupilot.org <http://firmware.ardupilot.org/Companion>`__.
+Images for the supported boards can be found in `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync>`__.
 
 Please follow the instructions for installing these images on the wiki page for each board (:ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>` and :ref:`Intel Edison <intel-edison>`).
 
