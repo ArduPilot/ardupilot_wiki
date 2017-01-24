@@ -75,7 +75,7 @@ It is likely this will be changed in future releases especially if the "stop" be
 .. image:: ../images/code-overview-object-avoidance3.png
     :target: ../_images/code-overview-object-avoidance3.png
 
-These two videos shows a ZED 3D camera connected to a TX1 running OpenKai and providing forward facing distance measurements to ArduPilot using the method described above.
+These two videos shows a `ZED 3D camera <https://www.stereolabs.com/>`__ connected to an :ref:`NVidia TX1 <companion-computer-nvidia-tx1>` running `OpenKai <https://github.com/yankailab/OpenKAI>`__ and providing forward facing distance measurements to ArduPilot using the method described above.
 
 ..  youtube:: qk_hEtRASqg
     :width: 100%
