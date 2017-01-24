@@ -49,7 +49,7 @@ portable to lots of different platforms. There is a top level AP_HAL in
 libraries/AP_HAL that defines the interface that the rest of the code
 has to specific board features, then there is a AP_HAL_XXX
 subdirectory for each board type, for example AP_HAL_AVR for AVR based
-boards, AP_HAL_PX4 for PX4 boards and AP_HAL_Linux for Linux based
+boards, AP_HAL_PX4 for Pixhawk boards and AP_HAL_Linux for Linux based
 boards.
 
 Tools directories
@@ -67,9 +67,9 @@ On some platforms we need external support code to provide additional
 features or board support. Currently the external trees are:
 
 -  `PX4NuttX <https://github.com/ArduPilot/PX4NuttX>`__ - the core NuttX
-   RTOS used on PX4 boards
+   RTOS used on Pixhawk boards
 -  `PX4Firmware <https://github.com/ArduPilot/PX4Firmware>`__ - the base
-   PX4 middleware and drivers used on PX4 boards
+   PX4 middleware and drivers used on Pixhawk boards
 -  `uavcan <https://github.com/ArduPilot/uavcan>`__ - the uavcan CANBUS
    implementation used in ArduPilot
 -  `mavlink <https://github.com/mavlink/mavlink>`__ - the mavlink
