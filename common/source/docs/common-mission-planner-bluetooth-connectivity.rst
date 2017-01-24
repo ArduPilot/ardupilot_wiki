@@ -60,7 +60,7 @@ When you power up the PixHawk or APM with the Bluetooth the module will
 flash at 1hz the red LED when not connected. When Paring it will flash
 at .5 Hz and when connected it will be steady on.
 
-And your done! You can now use your Bluetooth telemetry for up to about
+And you're done! You can now use your Bluetooth telemetry for up to about
 50m range. (your range may vary depending on back ground noise and
 conditions in your area)
 
