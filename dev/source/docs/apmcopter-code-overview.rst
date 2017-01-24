@@ -27,14 +27,3 @@ motor output code:
 
 .. image:: ../images/AC_CodeOverview_AutoFlightModes.png
     :target: ../_images/AC_CodeOverview_AutoFlightModes.png
-
-Sections:
-
-.. toctree::
-    :maxdepth: 1
-
-    Attitude Control <apmcopter-programming-attitude-control-2>
-    Adding Parameters <code-overview-adding-a-new-parameter>
-    Adding a new flight mode <apmcopter-adding-a-new-flight-mode>
-    Scheduling your new code to run intermittently <code-overview-scheduling-your-new-code-to-run-intermittently>
-    Adding a new MAVLink message <code-overview-adding-a-new-mavlink-message>

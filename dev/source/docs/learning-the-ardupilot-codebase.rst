@@ -31,7 +31,12 @@ Tutorial steps
     RC Input and Output <learning-ardupilot-rc-input-output>
     Storage and EEPROM management <learning-ardupilot-storage-and-eeprom-management>
     EKF <ekf>
-    Vehicle Code (Copter) <apmcopter-code-overview>
+    Copter - Vehicle Code introduction <apmcopter-code-overview>
+    Copter - Attitude Control <apmcopter-programming-attitude-control-2>
+    Copter - Adding Parameters <code-overview-adding-a-new-parameter>
+    Copter - Adding a new flight mode <apmcopter-adding-a-new-flight-mode>
+    Copter - Scheduling your new code to run intermittently <code-overview-scheduling-your-new-code-to-run-intermittently>
+    Adding a new MAVLink message <code-overview-adding-a-new-mavlink-message>
     Adding a new MAVLink Gimbal <code-overview-adding-support-for-a-new-mavlink-gimbal>
 
 .. note::
