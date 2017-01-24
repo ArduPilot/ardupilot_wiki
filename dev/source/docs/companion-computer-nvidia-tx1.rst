@@ -4,7 +4,7 @@
 NVidia TX1 as a Companion Computer
 ===========================================
 
-This page explains how to connect and configure an `NVidia TX1 <http://www.nvidia.com/object/jetson-tx1-dev-kit.html>`__ using `AuVidea.eu's J120 carrier board <http://auvidea.eu/index.php/2016-08-06-11-12-04/2016-02-03-12-30-02/j120-super-mini-computer-with-tx1>`__ so that it is able to communicate with a Pixhawk flight controller using the MAVLink protocol over a serial connection.
+This page explains how to connect and configure an `NVidia TX1 <http://www.nvidia.com/object/jetson-tx1-dev-kit.html>`__ using `AuVidea.eu's J120 carrier board <http://auvidea.com/j120/>`__ so that it is able to communicate with a Pixhawk flight controller using the MAVLink protocol over a serial connection.
 
 Connecting the Pixhawk and TX1
 ==============================
