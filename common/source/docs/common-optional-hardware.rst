@@ -30,7 +30,8 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     OSD for FPV <common-osd-boards-on-screen-display>
     Servo <common-servo>
     GPS/Compass <common-positioning-landing-page>
-    Relay Switch <common-relay>   
+    Relay Switch <common-relay>
+    Display (Onboard) <common-display-onboard>
     UAVCAN ESCs <common-uavcan-escs>
     Grippers <common-gripper-landingpage>
     PPM Encoder <common-ppm-encoder>
