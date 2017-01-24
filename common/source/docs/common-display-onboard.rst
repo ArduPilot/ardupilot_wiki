@@ -4,7 +4,13 @@
 Onboard Display
 ===============
 
-This article explains how to connect a small onboard display to a flight controller which can be useful for displaying a small amount of vehicle information before takeoff.  This information includes:
+This article explains how to connect a small onboard display to a flight controller which can be useful for displaying a small amount of vehicle information before takeoff.
+
+.. image:: ../../../images/common-display-pixhawk.png
+    :target: ../_images/common-display-pixhawk.png
+    :width: 300px
+
+This information includes:
 
 - arming failure messages
 - flight mode
@@ -12,10 +18,6 @@ This article explains how to connect a small onboard display to a flight control
 - GPS Lock and satellite count
 - Pre-arm passed/failed
 - EKF status
-
-.. image:: ../../../images/common-display-pixhawk.png
-    :target: ../_images/common-display-pixhawk.png
-    :width: 300px
 
 .. note::
 
