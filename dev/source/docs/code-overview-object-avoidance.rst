@@ -23,6 +23,10 @@ These raw distance measurements are consolidated so that only the closest distan
 Each sector is 45 degrees wide with sector 0 pointing forward of the vehicle, sector 1 is forward-right, etc.
 From these distances and angles a fence (an array of 2D Vectors) is built up around the vehicle.  The fence points fall on the lines between sectors at a conservative distance.
 
+.. note::
+
+   The default is to divide the area around the vehicle into 8 sectors but each proximity sensor driver can override this and use a different number of sectors.
+
 .. image:: ../images/code-overview-object-avoidance1.png
     :target: ../_images/code-overview-object-avoidance1.png
 
@@ -54,10 +58,26 @@ This is quite different from Loiter mode in which the pilot cannot force the veh
    The vehicle will also stop before hitting barriers above it there is an upward facing range finder.
    Currently this range finder's distance must be sent to ardupilot using the `DISTANCE_SENSOR <http://mavlink.org/messages/common#DISTANCE_SENSOR>`__ message with the orientation field set to 24 (upwards).
 
+Reporting to the Ground Station
+===============================
+
+The Mission Planner (and hopefully other ground stations in the future) support displaying the distance to nearby objects.
+
+.. image:: ../images/code-overview-object-avoidance4.png
+    :target: ../_images/code-overview-object-avoidance4.png
+
+This is accomplished by the vehicle sending DISTANCE_SENSOR messages to the ground station at regular intervals.
+The method that does this can be seen in the vehicle code's `GCS_Mavlink.cpp file <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp#L224>`__ (search for "send_proximity").
+Note that this means that it is possible that DISTANCE_SENSOR messages can be used both to send distances into the vehicle code, and then similar DISTANCE_SENSOR messages might be sent out from the vehicle to the ground station.
+These are separate messages though and are likely transferred at a different rate.
+
 Providing Distance Sensor messages to ArduPilot
 ===============================================
 
 For developers of new "proximity" sensors (i.e. sensors that can somehow provide the distance to nearby objects) the easiest method to get your distance measurements into ardupilot is to send `DISTANCE_SENSOR <http://mavlink.org/messages/common#DISTANCE_SENSOR>`__ message for each direction the sensor is capable of.
+The system id of the message should match the system id of the vehicle (default is "1" but can be changed using the SYSID_THISMAV parameter).
+The component id can be anything but MAV_COMP_ID_PATHPLANNER (195) or MAV_COMP_ID_PERIPHERAL (158) are probably good choices.
+
 These messages should be sent at between 10hz and 50hz (the faster the better).  The fields should be filled in as shown below:
 
 - time_boost_ms : 0 (ignored)
