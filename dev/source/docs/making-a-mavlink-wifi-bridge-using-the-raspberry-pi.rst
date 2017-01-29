@@ -416,22 +416,41 @@ Update hostapd
 --------------
 
 The hostapd version installed by apt-get does not fully support the WiFi
-dongle we are using so we need to update it to a later version. Lets get
-the new version of hostapd by typing the follwing command:
+dongle we are using so we need to update it to a later version. 
+
+To get the new version of hostapd for the Adafruit Dongle type the following command:
 
 ::
 
     wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
+    
+To get the new version of hostapd for the Edimax 7811 Dongle type the following command:
+
+::
+
+    wget http://www.daveconroy.com/wp3/wp-content/uploads/2013/07/hostapd.zip
+
 
 Now lets unzip the files, swap them with the old version, and fix the
-permissions so we are able to run the software:
+permissions so we are able to run the software.
 
+For the Adafruit dongle type: 
 ::
 
     unzip adafruit_hostapd_14128.zip
     sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.ORIG
     sudo mv hostapd /usr/sbin
     sudo chmod 755 /usr/sbin/hostapd
+    
+For the Edimax 7811 dongle type: 
+::
+
+   unzip hostapd.zip 
+   sudo mv /usr/sbin/hostapd /usr/sbin/hostapd.bak
+   sudo mv hostapd /usr/sbin/hostapd.edimax 
+   sudo ln -sf /usr/sbin/hostapd.edimax /usr/sbin/hostapd 
+   sudo chown root.root /usr/sbin/hostapd 
+   sudo chmod 755 /usr/sbin/hostapd
 
 Setting up a daemon
 -------------------
