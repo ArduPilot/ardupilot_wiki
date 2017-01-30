@@ -10,6 +10,9 @@ The first beta has started with support the first section listed below (Wifi Acc
 
 :ref:`Installation instructions <apsync-intro-installing-apsync>` are at the bottom of this page.
 
+..  youtube:: 3bVFEF4MPdU
+    :width: 100%
+
 .. warning::
 
    The APSync project is still in beta.  Only the first stage (Wifi Access Point & DataFlash logging) is complete.
@@ -85,3 +88,8 @@ The flight controller (i.e. Pixhawk or similar) should be configured to communic
 - :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` 921
 - :ref:`SERIAL2_PROTOCOL <copter:SERIAL2_PROTOCOL>` 1
 - :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` 3
+
+Connecting with SSH
+===================
+
+You can connect to the companion computer with a terminal emulator such as `Putty <http://www.putty.org/>`__ by connecting to the board's wifi access point and then ssh to 10.0.1.128 username: apsync, password: apsync
