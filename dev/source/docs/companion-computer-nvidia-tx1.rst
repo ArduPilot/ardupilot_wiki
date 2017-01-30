@@ -29,12 +29,17 @@ Setup the TX1
 
 The easiest way to setup the TX1 is to flash one of the existing :ref:`APSync <apsync-intro>` images from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__ (look for images starting with "tx1") or you can create your own image by following the instructions found `here in the ardupilot companion repo <https://github.com/ArduPilot/companion/tree/master/Nvidia_JTX1/Ubuntu>`__.
 
+.. note::
+
+   Images can only be uploaded to the TX1 if the existing image, and new image are from the same jetpack version.
+   :ref:`APSync <apsync-intro>` images for TX1 are built with JetPack-2.3.1 so if your TX1 has another version on it currently (or has never been flashed) you should first follow `"Step1 : install NVidia image onto the TX1" from here <https://github.com/ArduPilot/companion/blob/master/Nvidia_JTX1/Ubuntu/1_create_base_image.txt>`__ before attempting to upload the latest apsync image.
+
 -  mount the TX1 back on the NVidia development board
 -  download and unzip the latest image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__.  Look for the file starting with "apsync-tx1".
 -  official instructions on flashing images can be found `here <https://devtalk.nvidia.com/default/topic/898999/jetson-tx1/tx1-r23-1-new-flash-structure-how-to-clone-/post/4784149/#4784149>`__ but in short:
 
-    - install the TX1 on an NVidia TX1 development board
-    - install JetPack on an Ubuntu machine
+    - install the TX1 on an NVidia TX1 development board or the auvidea.com J120 board
+    - install JetPack-2.3.1 on an Ubuntu machine
     - connect a USB cable from the Ubuntu machine to the TX1 development board
     - power on the TX1 development board
     - put the TX1 into bootloader mode (Hold and keep pressed the "Force-Recovery" button, press and release the "Reset" button, release the "Force-Recovery" button).  You can check the TX1 is in bootloader mode by typing "lsusb" on the Ubuntu machine and look for "NVidia".
