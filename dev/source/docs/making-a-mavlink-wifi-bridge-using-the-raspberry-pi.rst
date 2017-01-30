@@ -418,13 +418,13 @@ Update hostapd
 The hostapd version installed by apt-get does not fully support the WiFi
 dongle we are using so we need to update it to a later version. 
 
-To get the new version of hostapd for the Adafruit Dongle type the following command:
+To get the later version of hostapd for the Adafruit Dongle type the following command:
 
 ::
 
     wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
     
-To get the new version of hostapd for the Edimax 7811 Dongle type the following command:
+To get the later version of hostapd for the Edimax 7811 Dongle type the following command:
 
 ::
 
