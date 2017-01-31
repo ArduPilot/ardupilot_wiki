@@ -46,6 +46,10 @@ The easiest way to setup the RPi is to flash one of the existing :ref:`APSync <a
 - For `Linux follow these instructions <https://www.raspberrypi.org/documentation/installation/installing-images/linux.md>`__.
 - For `Mac follow these instructions <https://www.raspberrypi.org/documentation/installation/installing-images/mac.md>`__.
 
+.. note::
+
+   When extracting the contents of the compressed file on Mac you may get into an infinite loop of extraction (.xz to .cpgz and vice versa) using the default Archiver. In order to correctly extract the .img file you will need to use the Unarchiver (http://unarchiver.c3.cx/unarchiver).
+
 Setting up the Pixhawk
 ======================
 
