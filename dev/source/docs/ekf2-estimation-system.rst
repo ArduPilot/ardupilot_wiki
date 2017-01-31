@@ -20,21 +20,15 @@ estimates the following states
 -  Body magnetic field (X,Y,Z)
 -  Wind Velocity (North,East)
 
-It is based on the filter equations derived
-here: https://github.com/priseborough/InertialNav/blob/master/derivations/RotationVectorAttitudeParameterisation/GenerateNavFilterEquations.m
+It is based on the filter equations derived `here https://github.com/priseborough/InertialNav/blob/master/derivations/RotationVectorAttitudeParameterisation/GenerateNavFilterEquations.m`__.
 
-**EKF2 Advantages**
--------------------
+EKF2 Advantages
+---------------
 
--  It can run a separate EKF2 for each IMU making recovery from an IMU
-   fault much more likely
+-  It can run a separate EKF2 for each IMU making recovery from an IMU fault much more likely
 -  It can switch between magnetometers if there is fault
--  It can estimate gyro scale factors which can improve accuracy during
-   high rate manoeuvres
--  It can simultaneously estimate both gyro offsets and orientation on
-   startup whilst moving and doesn't rely on the DCM algorithm for its
-   initial orientation. This makes it ideal for flying from moving
-   platforms when the gyro has not been calibrated.
+-  It can estimate gyro scale factors which can improve accuracy during high rate manoeuvres.
+-  It can simultaneously estimate both gyro offsets and orientation on startup whilst moving and doesn't rely on the DCM algorithm for its initial orientation. This makes it ideal for flying from moving platforms when the gyro has not been calibrated.
 -  It can handle larger gyro bias changes in flight
 -  It is able to recover faster from bad sensor data
 -  It provides a slightly smoother output.
@@ -43,8 +37,8 @@ here: https://github.com/priseborough/InertialNav/blob/master/derivations/Rotati
 -  It starts using GPS when checks pass rather than waiting for the
    vehicle motors to arm.
 
-**How does it achieve this ?**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How does it achieve this?
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Instead of trying to estimate the quaternion orientation directly, it
    estimates an error rotation vector and applies the correction to the
@@ -85,8 +79,8 @@ here: https://github.com/priseborough/InertialNav/blob/master/derivations/Rotati
    prevents use of the more accurate 3-axis 6-state magnetometer fusion
    technique.
 
-**Using EKF2**
-==============
+Using EKF2
+==========
 
 #. Enable the new EKF by setting EK2_ENABLE = 1.  EKF2 will now be
    running in parallel and logging, etc but it will not be used by the
@@ -102,8 +96,8 @@ here: https://github.com/priseborough/InertialNav/blob/master/derivations/Rotati
 
 #. After setting the parameters you will need to reboot.
 
-**EKF2 Log Data**
-=================
+EKF2 Log Data
+=============
 
 The data for EKF2 can be found in the NKF1 to NKF9 log packets.
 
@@ -127,8 +121,8 @@ parameter changes followed by a reboot:
 
 ***Note: Plots can be viewed in full size by left clicking them***
 
-**Filter State Estimates**
---------------------------
+Filter State Estimates
+----------------------
 
 **NKF1** (and **NKF6** if a second IMU is being used) contain the
 outputs used by the flight control system
@@ -170,8 +164,9 @@ additional state information
 
 -  GSX,GSY,GSZ - X,Y,Z rate gyro scale factor (%)
 
-   Eg, a log value of 0.5 would be equivalent to a scale factor of 1.005
-   for that sensor\ |EKF2 - gyro rate scale factor|
+   Eg, a log value of 0.5 would be equivalent to a scale factor of 1.005 for that sensor
+
+   |EKF2 - gyro rate scale factor|
 
 -  VWN,VWE - Wind velocity North,East (m/s)
 
@@ -185,8 +180,8 @@ additional state information
 
 -  MI - Index of the magnetometer being used by EKF2
 
-**Filter Innovations**
-----------------------
+Filter Innovations
+------------------
 
 **NKF3** (and **NKF8** if a second IMU is being used) contain
 information on the filter innovations. An innovation is the difference
@@ -223,8 +218,8 @@ large innovations for all measurements.
 
 -  IVT - True airspeed innovation (m/s)
 
-**Filter Health and Status**
-----------------------------
+Filter Health and Status
+------------------------
 
 **NKF4** (and **NKF9** if a second IMU is being used) contain
 information on the innovation variance test ratios. A value of less than
@@ -237,7 +232,6 @@ flight are typical for a setup with good quality sensor data.
 They also contain other information relevant to filter health
 
 -  TimeUS - time stamp (uSec)
-
 -  SV - GPS velocity test ratio
 -  SP - GPS position test ratio
 -  SH - Barometer test ratio
@@ -296,8 +290,8 @@ instance bing used for flight control
 
    |EKF2 - offset uncertainty|
 
-**Tuning Parameters**
-=====================
+Tuning Parameters
+=================
 
 The EKF2 parameters have been tuned to provide a compromise between
 accuracy and robustness to sensor errors. i tis likely that further
@@ -547,7 +541,7 @@ This controls how much the process noise on the wind states is increased
 when gaining or losing altitude to take into account changes in wind
 speed and direction with altitude. Increasing this parameter increases
 how rapidly the wind states adapt when changing altitude, but does make
-wind velocity estimates noiser.
+wind velocity estimates noisier.
 
 **EK2_GPS_CHECK**
 
@@ -616,71 +610,71 @@ fail to start and the following message will be sent to the GCS console.
 If terrain data is not being used, some additional memory can be
 released by setting TERRAIN_ENABLE=0 and rebooting.
 
-.. |EKF2 - velocity NE| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-velocity-NE-1024x269.png
-    :target: ../_images/EKF2-velocity-NE-1024x269.png
+.. |EKF2 - velocity NE| image:: ../images/EKF2-velocity-NE.png
+    :target: ../_images/EKF2-velocity-NE.png
 
-.. |EKF2 - yaw| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-yaw-300x79.png
-    :target: ../_images/EKF2-yaw-300x79.png
+.. |EKF2 - yaw| image:: ../images/EKF2-yaw.png
+    :target: ../_images/EKF2-yaw.png
 
-.. |EKF2 - earth magnetic field NED| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-earth-magnetic-field-NED-1024x269.png
-    :target: ../_images/EKF2-earth-magnetic-field-NED-1024x269.png
+.. |EKF2 - earth magnetic field NED| image:: ../images/EKF2-earth-magnetic-field-NED.png
+    :target: ../_images/EKF2-earth-magnetic-field-NED.png
 
-.. |EKF2 - accel Z bias| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-accel-Z-bias-1024x269.png
-    :target: ../_images/EKF2-accel-Z-bias-1024x269.png
+.. |EKF2 - accel Z bias| image:: ../images/EKF2-accel-Z-bias.png
+    :target: ../_images/EKF2-accel-Z-bias.png
 
-.. |EKF2 - optical flow rate innovations| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-optical-flow-rate-innovations-1024x331.png
-    :target: ../_images/EKF2-optical-flow-rate-innovations-1024x331.png
+.. |EKF2 - optical flow rate innovations| image:: ../images/EKF2-optical-flow-rate-innovations.png
+    :target: ../_images/EKF2-optical-flow-rate-innovations.png
 
-.. |EKF2 - compass yaw innovation| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-compass-yaw-innovation-1024x269.png
-    :target: ../_images/EKF2-compass-yaw-innovation-1024x269.png
+.. |EKF2 - compass yaw innovation| image:: ../images/EKF2-compass-yaw-innovation.png
+    :target: ../_images/EKF2-compass-yaw-innovation.png
 
-.. |EKF2 - velocity innovation D| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-velocity-innovation-D-1024x269.png
-    :target: ../_images/EKF2-velocity-innovation-D-1024x269.png
+.. |EKF2 - velocity innovation D| image:: ../images/EKF2-velocity-innovation-D.png
+    :target: ../_images/EKF2-velocity-innovation-D.png
 
-.. |EKF2 - gyro rate scale factor| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-gyro-rate-scale-factor-1024x269.png
-    :target: ../_images/EKF2-gyro-rate-scale-factor-1024x269.png
+.. |EKF2 - gyro rate scale factor| image:: ../images/EKF2-gyro-rate-scale-factor.png
+    :target: ../_images/EKF2-gyro-rate-scale-factor.png
 
-.. |EKF2 - range finder innovations| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-range-finder-innovations-1024x331.png
-    :target: ../_images/EKF2-range-finder-innovations-1024x331.png
+.. |EKF2 - range finder innovations| image:: ../images/EKF2-range-finder-innovations.png
+    :target: ../_images/EKF2-range-finder-innovations.png
 
-.. |EKF2 - position NED| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-position-NED-1024x269.png
-    :target: ../_images/EKF2-position-NED-1024x269.png
+.. |EKF2 - position NED| image:: ../images/EKF2-position-NED.png
+    :target: ../_images/EKF2-position-NED.png
 
-.. |EKF2 - offset| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-offset-1024x331.png
-    :target: ../_images/EKF2-offset-1024x331.png
+.. |EKF2 - offset| image:: ../images/EKF2-offset.png
+    :target: ../_images/EKF2-offset.png
 
-.. |EKF2 - velocity innovation NE| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-velocity-innovation-NE-1024x269.png
-    :target: ../_images/EKF2-velocity-innovation-NE-1024x269.png
+.. |EKF2 - velocity innovation NE| image:: ../images/EKF2-velocity-innovation-NE.png
+    :target: ../_images/EKF2-velocity-innovation-NE.png
 
-.. |EKF2 - position innovation D| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-position-innovation-D-1024x269.png
-    :target: ../_images/EKF2-position-innovation-D-1024x269.png
+.. |EKF2 - position innovation D| image:: ../images/EKF2-position-innovation-D.png
+    :target: ../_images/EKF2-position-innovation-D.png
 
-.. |EKF2 - roll pitch| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-roll-pitch-300x79.png
-    :target: ../_images/EKF2-roll-pitch-300x79.png
+.. |EKF2 - roll pitch| image:: ../images/EKF2-roll-pitch.png
+    :target: ../_images/EKF2-roll-pitch.png
 
-.. |EKF2 - gyro rate bias| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-gyro-rate-bias-1024x269.png
-    :target: ../_images/EKF2-gyro-rate-bias-1024x269.png
+.. |EKF2 - gyro rate bias| image:: ../images/EKF2-gyro-rate-bias.png
+    :target: ../_images/EKF2-gyro-rate-bias.png
 
-.. |EKF2 - position innovation NE| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-position-innovation-NE-1024x269.png
-    :target: ../_images/EKF2-position-innovation-NE-1024x269.png
+.. |EKF2 - position innovation NE| image:: ../images/EKF2-position-innovation-NE.png
+    :target: ../_images/EKF2-position-innovation-NE.png
 
-.. |EKF2 - body magnetic field XYZ| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-body-magnetic-field-XYZ-1024x269.png
-    :target: ../_images/EKF2-body-magnetic-field-XYZ-1024x269.png
+.. |EKF2 - body magnetic field XYZ| image:: ../images/EKF2-body-magnetic-field-XYZ.png
+    :target: ../_images/EKF2-body-magnetic-field-XYZ.png
 
-.. |EKF2 - variance test ratios| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-variance-test-ratios-1024x269.png
-    :target: ../_images/EKF2-variance-test-ratios-1024x269.png
+.. |EKF2 - variance test ratios| image:: ../images/EKF2-variance-test-ratios.png
+    :target: ../_images/EKF2-variance-test-ratios.png
 
-.. |EKF2 - error roll pitch| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-error-roll-pitch-1024x269.png
-    :target: ../_images/EKF2-error-roll-pitch-1024x269.png
+.. |EKF2 - error roll pitch| image:: ../images/EKF2-error-roll-pitch.png
+    :target: ../_images/EKF2-error-roll-pitch.png
 
-.. |EKF2 - magnetometer innovation XYZ| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-magnetometer-innovation-XYZ-1024x269.png
-    :target: ../_images/EKF2-magnetometer-innovation-XYZ-1024x269.png
+.. |EKF2 - magnetometer innovation XYZ| image:: ../images/EKF2-magnetometer-innovation-XYZ.png
+    :target: ../_images/EKF2-magnetometer-innovation-XYZ.png
 
-.. |EKF2 - velocity D| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-velocity-D-1024x269.png
-    :target: ../_images/EKF2-velocity-D-1024x269.png
+.. |EKF2 - velocity D| image:: ../images/EKF2-velocity-D.png
+    :target: ../_images/EKF2-velocity-D.png
 
-.. |EKF2 - hagl and range| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-hagl-and-range-1024x331.png
-    :target: ../_images/EKF2-hagl-and-range-1024x331.png
+.. |EKF2 - hagl and range| image:: ../images/EKF2-hagl-and-range.png
+    :target: ../_images/EKF2-hagl-and-range.png
 
-.. |EKF2 - offset uncertainty| image:: http://ardupilot.com/wp-content/uploads/2015/11/EKF2-offset-uncertainty-1024x331.png
-    :target: ../_images/EKF2-offset-uncertainty-1024x331.png
+.. |EKF2 - offset uncertainty| image:: ../images/EKF2-offset-uncertainty.png
+    :target: ../_images/EKF2-offset-uncertainty.png
