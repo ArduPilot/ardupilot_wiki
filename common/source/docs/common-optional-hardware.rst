@@ -23,7 +23,8 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Power Modules <common-powermodule-landingpage>
     Rangefinders <common-rangefinder-landingpage>
 [site wiki="copter"]
-    360 Lidar for Object Avoidance <common-lightware-sf40c-objectavoidance>
+    Object Avoidance with Lightware SF40C <common-lightware-sf40c-objectavoidance>
+    Object Avoidance with TeraRanger Tower <common-teraranger-tower-objectavoidance>
 [/site]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
     Cameras & Gimbals <common-cameras-and-gimbals>
