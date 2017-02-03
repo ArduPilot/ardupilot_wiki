@@ -30,6 +30,7 @@ These boards have been confirmed to work:
 
 - `SSD1306 module from AliExpress <https://www.aliexpress.com/item/Wholesale-0-96-inch-4pin-White-OLED-Module-SSD1306-Drive-IC-128-64-I2C-IIC-Communication/32658908775.html>`__
 - `SSD1306 module from SunFounder on Amazon Spain <https://www.amazon.es/gp/product/B014KUB1SA/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1>`__
+- `CRIUS display from rctimer <http://rctimer.com/product-797.html>`__
 
 
 Connecting to a Flight Controller
