@@ -57,10 +57,10 @@ flight control board is so small.
 The following sections describe a number of alternatives that have been
 tested and shown to perform better:
 
-3M foam sold by 3DRobotics
---------------------------
+3M foam
+-------
 
-This foam comes is sticky on both sides and comes pre-cut so that
+This `foam sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ comes is sticky on both sides and comes pre-cut so that
 individual cubes can be easily attached to each of the four corners of
 the flight controller as described on the :ref:`Mounting the Flight Controller wiki page <common-mounting-the-flight-controller>`.
 
