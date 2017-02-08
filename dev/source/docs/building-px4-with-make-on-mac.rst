@@ -60,6 +60,12 @@ on Mac OS X (ver 10.6 onwards) with *Make*.
          imported as :ref:`Git Submodules <git-submodules>` when
          you build a vehicle.
 
+#. Choose a firmware type to build by entering a subdirectory; e.g.:
+
+   ::
+   
+       cd ArduCopter
+
 #. Build the firmware by entering one of the following commands:
 
    +--------------------------------------+--------------------------------------+
