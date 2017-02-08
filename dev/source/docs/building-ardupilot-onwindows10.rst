@@ -241,7 +241,7 @@ Compile ArduPilot Code
 
    .. code-block:: python
    
-       ./waf vehicule
+       ./waf vehicle
    
    (where "vehicle" can be copter, plane, rover,...)
 
