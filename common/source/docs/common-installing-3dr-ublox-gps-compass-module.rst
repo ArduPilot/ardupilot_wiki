@@ -4,7 +4,11 @@
 3DR UBlox GPS + Compass Module
 ==============================
 
-This page covers the installation of the `3DR UBlox GPS + Compass module <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__.
+This page covers the installation of the `3DR UBlox GPS + Compass module <https://3dr.com/support/articles/207681053/3dr_ublox_gps_with_compass_kit/>`__.
+
+.. note::
+
+    The 3DR UBlox GPS + Compass module is no longer produced or sold by 3DR, but it is still available from a few vendors. In addition, this page is still relevant to the installation of most gps modules. A number of alternatives can be found :ref:`here <common-positioning-landing-page>`.
 
 Overview
 ========
