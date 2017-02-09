@@ -71,8 +71,8 @@ Indent using 4 spaces everywhere. Do not use tabs.
 Case statements
 ---------------
 
-A case label should line up with its switch statement. The case
-statement is indented.
+The case label indentation is acceptable either 
+when lined up with the switch or indented once.
 
 **Right:**
 
@@ -87,7 +87,7 @@ statement is indented.
             break;
     }
 
-**Wrong:**
+**Right:**
 
 ::
 
@@ -98,6 +98,19 @@ statement is indented.
     case bar_cond:
         bar();
         break;
+    }
+
+**Wrong:**
+
+::
+
+    switch (condition) {
+    case foo_cond:
+        foo();
+    break;
+    case bar_cond:
+        bar();
+    break;
     }
 
 Spacing
