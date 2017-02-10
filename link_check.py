@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import requests
 
 #Get current directory
 cwd = os.getcwd()
@@ -38,13 +39,39 @@ for src_dir in directories:
 						if len(check_link) > 1:
 							check_http = pos_link[0].split(':')
 							if check_http[0] == "http" or check_http[0] == "https": #get rid of false positives
-								outputfile.write("\tLink: %s\n" % (pos_link[0]))
+								
+								try:
+									r = requests.head(pos_link[0])
+									status_code = r.status_code
+									print status_code
+
+								except:
+									print "Excepted"
+									status_code = 611
+
+								if status_code == 404:
+									outputfile.write("\tLink: %s\n" % (pos_link[0]))
+									outputfile.write("\tLinkStatus: Bad, 404\n")
+									print "Bad Link"
+								elif status_code == 601:
+									outputfile.write("\tLink: %s\n" % (pos_link[0]))
+									outputfile.write("\tLinkStatus: Excpeted\n")
+									print "Bad Link"
+
+								else:
+									pass
+									#outputfile.write("LinkStatus: Good\n")
+									#outputfile.write("Not 404, status: %d\n" % (status_code))
+									#print "Good Link"
 							else:
+								pass
 								print "not a website"
 						else:
+							pass
 							print "No good, moving on"
 					else:
-						print "No link, moving on."
+						pass
+						#print "No link, moving on."
 
 					#TODO check for non <> formatted links
 					#newline2 = line.split(':')
@@ -58,3 +85,4 @@ outputfile.close()
 
 
 #http://www.codepool.biz/python-check-broken-links-404.html
+#http://stackoverflow.com/questions/1140661/what-s-the-best-way-to-get-an-http-response-code-from-a-url#1140822
