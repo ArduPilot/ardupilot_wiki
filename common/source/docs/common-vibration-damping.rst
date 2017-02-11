@@ -258,7 +258,7 @@ An Excellent 3D Printed Anti-Vibration Platform
 -----------------------------------------------
 
 By \ `GuyMcCaldin <http://diydrones.com/profile/GuyMcCaldin>`__ (original
-Blog article: \ `3D Printed Anti Vibration Mount <http://diydrones.com/profiles/blogs/3d-printed-anti-vibration-mount>`__).
+Blog article: 3D Printed Anti Vibration Mount (no longer available)).
 
 .. image:: http://i.imgur.com/minON7K.jpg
     :target:  http://i.imgur.com/minON7K.jpg

@@ -561,7 +561,7 @@ values to become very noisy and throw off the altitude estimates. The
 solution is to reduce sources of vibration from your frame (bent prop
 adapters and motor shafts, replace EPP props with APC) and remove hard
 connections between the frame and APM by using vibration dampening
-products such as \ `DuBro foam <http://shop.dubro.com/p/1-2-r-c-protective-foam-rubber-qty-pkg-1>`__.
+products such as \ `DuBro foam <https://dubro.com/products/r-c-protective-foam-rubber>`__.
 
 As of version 2.9 of Copter, inertial navigation is used to maintain
 altitude and in 2.9.2 horizontal position as well so vibration truly

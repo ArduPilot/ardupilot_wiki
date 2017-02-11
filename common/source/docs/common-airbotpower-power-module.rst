@@ -4,7 +4,7 @@
 AirbotPower Power Module
 ========================
 
-This page explains how to set up the `AirbotPower Power Module <http://www.airbotservices.com/airbotpower-pre-ordering-send-us-email>`__
+This page explains how to set up the `AirbotPower Power Module <http://www.airbotservices.com/airbotpower.html>`__
 and *AirbotPDB* stackable companion power distribution board.
 
 .. tip::

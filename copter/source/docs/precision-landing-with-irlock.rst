@@ -23,7 +23,7 @@ The `IR-LOCK sensor <http://irlock.com/collections/frontpage/products/ir-lock-se
 can be purchased from `irlock.com <http://irlock.com/>`__.  The IR-LOCK
 sensor is a modified version of the `Pixy camera <http://charmedlabs.com/default/pixy-cmucam5/>`__, which comes
 pre-configured to work as an IR beacon detector. There are multiple IR
-beacons which are compatible with the sensor. The `MarkOne Beacon <http://irlock.com/collections/shop/products/markone-beacon>`__
+beacons which are compatible with the sensor. The `MarkOne Beacon <http://irlock.com/collections/markone>`__
 can be reliably detected in **all** **lighting conditions**, with a
 detection range of **15 meters**. `Beacon (V1.1) <http://irlock.com/collections/shop/products/beacon>`__ is a more
 cost-effective option which can be reliably detected in **most lighting

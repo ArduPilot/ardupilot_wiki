@@ -390,7 +390,7 @@ publish/subscribe model that is safe in a multi-threaded environment.
 
 The ORB provides a nice mechanism for declaring structures which will be
 shared in this way (all defined in
-`PX4Firmware/src/modules/uORB/topics <https://github.com/ArduPilot/PX4Firmware/tree/master/src/modules/uORB/topics>`__).
+`PX4Firmware/src/modules/uORB/ <https://github.com/ArduPilot/PX4Firmware/tree/master/src/modules/uORB>`__).
 Code can then "publish" data to one of these topics, which is picked up
 by other pieces of code.
 

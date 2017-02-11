@@ -10,7 +10,7 @@ External LED for Pixhawk
 ========================
 
 An external Pixhawk LED can be added by connecting it to the Pixhawk's
-I2C port. Because most users use an `Ublox GPS and Compass module <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__,
+I2C port. Because most users use an `Ublox GPS and Compass module <https://3dr.com/support/articles/207681053/3dr_ublox_gps_with_compass_kit/>`__,
 an `I2C splitter <http://store.jdrones.com/Pixhawk_I2C_splitter_p/dstpx4i2c01.htm>`__
 is recommended.  Once connected the similar LED on the center of the
 Pixhawk will no longer light up.

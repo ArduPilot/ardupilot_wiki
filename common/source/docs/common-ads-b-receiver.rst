@@ -26,11 +26,14 @@ Required Hardware
 
 The uAvionix Ping sensor can be purchased directly from `uAvionix <http://www.uavionix.com/products/>`__ or from the following vendors:
 
-   -  USA: `Mid-Atlantic Multirotor <http://www.midatlanticmultirotor.com/product/ping/>`__
+   -  USA: `Unmanned Systems Source <https://www.unmannedsystemssource.com/shop/atc-devices/pingusb/>`__
+           `R Cubed Engineering <http://www.rcubedengineering.com/ecommerce/>`__
    -  U.K.: `Unmanned Tech <http://www.unmannedtech.co.uk/>`__
    -  Germany: `UAV Store <http://www.uav-store.de/ads-b-receivers/>`__
    -  Asia: `jDrones pingRX <http://store.jdrones.com/ping_ads_b_receiver_p/adsbping01.htm>`__
    -  Japan: `Japan Drones <http://japandrones.com/shopdetail/000000000124/004/X/page1/order/>`__
+
+The full reseller list can be found at `uAvionix <http://www.uavionix.com/resellers/>`__
 
 
 Connecting to the flight controller

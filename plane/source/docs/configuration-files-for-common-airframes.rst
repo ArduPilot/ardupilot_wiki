@@ -210,8 +210,6 @@ TELINK Toro900 flying wing
 .. image:: ../images/toto9002.jpg
     :target: ../_images/toto9002.jpg
 
-Available \ `here <http://www.telink.eu/en/epp-letadla-telink/3509-toro-900-pro-stridavy-pohon.html>`__
-
 The following values should be a good starting point:
 
 -  RLL2SRV_P: 1.2

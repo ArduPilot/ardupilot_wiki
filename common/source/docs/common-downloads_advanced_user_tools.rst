@@ -62,42 +62,13 @@ DATE POSTED	January 29, 2014
 User manual for the third version of the 3DR PPM Encoder module
 
 
-Mediatek 1.9 firmware
----------------------
-
-`Mediatek_1.9_firmware-AXN1.51_2776_3329_384.1151100.5_v19.bin_.zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/Mediatek_1.9_firmware-AXN1.51_2776_3329_384.1151100.5_v19.bin_.zip>`__
-
-DATE POSTED	April 29, 2013
-
-The is an update to the Mediatek firmware to improve the precision of the GPS. Requires arducopter 2.9 or higher.
-
-You will need: 
-
-* AP_GPS_MTK19.cpp
-* AP_GPS_MTK19.h
-* AP_GPS.h
-* AP_GPS_Auto.cpp
-
-
-USB Driver for PX4 FMU & FLOW
+USB Driver for PX4 Boards
 -----------------------------
 
-`USB_Driver_for_PX4_FMU_and_FLOW-PX4_Windows_Driver_2.0.0.4.zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/USB_Driver_for_PX4_FMU_and_FLOW-PX4_Windows_Driver_2.0.0.4.zip>`__
+`px4_win_drivers.zip <http://firmware.us.ardupilot.org/Tools/PX4_Windows_Driver/px4_win_drivers.zip>`__
 
-VERSION	2.0.0.4
-DATE POSTED	May 15, 2013
-
-Drivers for Pixhawk, PX4 FMU, and FLOW Boards
-
-
-3DR Radio Configuration Tool
-----------------------------
-
-`3drradioconfig.zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/3drradioconfig.zip>`__
-
-DATE POSTED	December 5, 2014
-
-This program allows you to download firmware and configure the 3DR radios. This is a permanent link to the latest file.
+Drivers for PX4 Boards
+Date Posted: May 15, 2013
 
 
 3DR-uBlox configuration file
@@ -419,22 +390,6 @@ USB Driver for APM 2
 DATE POSTED	April 25, 2013
 
 Arduino USB driver for the Atmega32u2 USB interface chip on APM 2
-
-
-Windows parameter file for Flightgear HIL Simulator
----------------------------------------------------
-
-`windows_parameter_file_for_flightgear_HIL_simulator_system.fgfsrc.zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/windows_parameter_file_for_flightgear_HIL_simulator_system.fgfsrc.zip>`__
-
-DATE POSTED	April 29, 2013
-
-* Loads the Rascal RC plane
-* Sets screen resolution
-* Sets time of day
-* Sets effects
-* Gives infinite fuel
-* Sets units to meters
-* Turns off 3D clouds
 
 
 License
