@@ -185,7 +185,7 @@ capacitor size .
 Reduced magnetic interference allows mounting within 5cm of a compass
 (please test it with your application)
 
-`Paper by Ara Nerses Knaian <http://opengrab.googlecode.com/files/Electropermanent_Magnets_Knaian.pdf>`__
+`Paper by Ara Nerses Knaian <http://www.hizook.com/files/users/3/Electropermanent_Magnets_Knaian.pdf>`__
 
 `Datasheet <http://nicadrone.com/img/Datasheet%20EPM688-V2.0.pdf>`__
 

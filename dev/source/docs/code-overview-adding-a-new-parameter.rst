@@ -135,7 +135,7 @@ use the `AP_Compass <https://github.com/ArduPilot/ardupilot/tree/master/librarie
 library as an example.
 
 **Step #1:** Add the new class variable to the top level .h file (i.e.
-`Compass.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/Compass.h>`__). 
+`Compass.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/AP_Compass.h>`__). 
 Possible types include AP_Int8, AP_Int16, AP_Float, AP_Int32 and
 AP_Vector3f.  Also add the default value you'd like for the parameter
 (we will use this in step #2)
@@ -168,7 +168,7 @@ AP_Vector3f.  Also add the default value you'd like for the parameter
     };
 
 **Step #2:**\ Add the variable to the var_info table in the .cpp file
-(i.e. `Compass.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/Compass.cpp>`__)
+(i.e. `Compass.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/AP_Compass.cpp>`__)
 including @Param ~ @Increment comments to allow the GCS to display the
 description to the user and to control the min and max values set from
 the ground station.  When adding the new parameter be careful that:

@@ -11,8 +11,7 @@ Overview
 ========
 
 The default `PID gains <https://en.wikipedia.org/wiki/PID_controller>`__ are meant for
-the `3DR quad copter <https://store.3dr.com/products/IRIS>`__
-although they work on a wide variety of frames.  Still to get optimal
+the 3DR IRIS although they work on a wide variety of frames.  Still, to get optimal
 performance you may need to adjust them which can be done through the
 *Mission Planner*'s **Config/Tuning \| Copter Pids** screen.  The screen
 shot below shows the most important parameters for Roll/Pitch (yellow),

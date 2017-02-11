@@ -61,7 +61,7 @@ For more information see :ref:`Compatible RC Transmitter and Receiver Systems (E
 GPS+Compass
 ===========
 
-The `uBlox GPS + Compass Module <https://erlerobotics.com/blog/product/erle-gps-erle-ublox-gps-compass-kit/>`__
+The `uBlox GPS + Compass Module <https://erlerobotics.com/blog/product/gpscompass-ublox-neo-m8n-gps-with-compass-kit/>`__
 is the recommended GPS for Erle-Brain2. The GPS port is connected with
 the six-position DF13 cable, and the Compass port is connected to the
 I2C port with the four-position DF13 cable, as shown in the 
@@ -70,8 +70,8 @@ I2C port with the four-position DF13 cable, as shown in the
 Connect Motors
 ==============
 
-.. image:: http://erlerobotics.com/docs/img/Artificial_Brains/Erle_Brain2/Hardware/Erle-Brain_DongleWifi.jpg
-    :target:  http://erlerobotics.com/docs/img/Artificial_Brains/Erle_Brain2/Hardware/Erle-Brain_DongleWifi.jpg
+.. image:: http://docs.erlerobotics.com/brains/erle-brain-3/hardware/power/ErleBrain3_Power_ESC.jpg
+    :target:  http://docs.erlerobotics.com/brains/erle-brain-3/hardware/power/ErleBrain3_Power_ESC.jpg
 
 .. note::
 

@@ -37,7 +37,7 @@ model which is :ref:`appropriate for your country/region <common-telemetry-radio
 As the platform is open source, implementation can be purchased from
 many different sources, including:
 
--  `jD-SiK Telemetry Set <http://store.jdrones.com/jD_SiK_Radio_Telemetry_radio_p/rfsik20set.htm>`__ (jDrones)
+-  `jD-SiK Telemetry Set <http://store.jdrones.com/jD_SiK_Radio_Telemetry_radio_p/rfsik20set900.htm>`__ (jDrones)
 -  `mRo SiK Telemetry Radio <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-sikv2>`__ (mRobotics)
 -  `HKPilot Transceiver Telemetry Radio Set V2 (915Mhz) <http://www.hobbyking.com/hobbyking/store/__55560__HKPilot_Transceiver_Telemetry_Radio_Set_V2_915Mhz_.html>`__
    (Hobby King)
@@ -202,7 +202,6 @@ Improving the range
 The range can be improved by:
 
 -  Using a small "patch antenna" on the ground like `this flat patch antenna <http://www.readymaderc.com/store/index.php?main_page=product_info&cPath=11_45_47&products_id=51>`__
-   or this `Yagi antenna <http://www.readymaderc.com/store/index.php?main_page=product_info&cPath=11_45_47&products_id=296>`__
    perhaps mounted on an :ref:`Antenna Tracker <antennatracker:home>`
 -  Replace at least one of the two radios with a higher powered
    :ref:`RFD900 <common-rfd900>`

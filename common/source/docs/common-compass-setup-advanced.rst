@@ -268,7 +268,7 @@ Please follow these instructions:
    fine, some are not).  If it is higher than 60% you should try moving
    your APM/PX further up and away from the sources of interference or
    consider purchasing an external compass (or 
-   `GPS+compass module <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__).
+   :ref:`GPS+compass module<common-positioning-landing-page>` (some of these)).
 
 Here is a video of the procedure based on AC3.1.5:
 
@@ -329,7 +329,7 @@ transmitter by following these steps:
    known as "toilet bowling").
 #. If you find it's impossible to tune away the circling then it's
    likely you will require an external compass
-   or `GPS+compass module. <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__
+   or :ref:`GPS+compass module<common-positioning-landing-page>` (some of these)
 
 Compass error messages
 ======================
