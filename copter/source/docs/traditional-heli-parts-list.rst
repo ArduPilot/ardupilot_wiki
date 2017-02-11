@@ -7,15 +7,11 @@ Traditional Helicopter – Suggested Parts List
 Electronics including flight controller
 =======================================
 
--  `APM2.6 (side pins) <http://store.jdrones.com/ArduPilot_MEGA_2_6_p/fcapm26side.htm>`__
-   or `Pixhawk <https://store.3dr.com/products/3dr-pixhawk>`__
-   with `GPS and external compass <https://store.3dr.com/products/3dr-gps-ublox-with-compass>`__.
--  Extra long GPS cable (APM uses `5 to 6 position cable <http://store.jdrones.com/cable_df13_5pin_15cm_p/cbldf13p5c15.htm>`__,
-   Pixhawk uses\ `6 position cable <http://store.3drobotics.com/products/df13-6-position-connector-45-cm>`__).
--  Extra long compass (i2c) cable (both APM and Pixhawk use `4 position cables <http://store.jdrones.com/cable_df13_4pin_15cm_p/cbldf13p4c15.htm>`__).
--  `1mm carbon fibre sheets <http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idProduct=9781>`__
-   and 3 or 4cm stand-offs to build your own mounting plate or order a
-   pre-made board from `Japan Drones <http://www.japandrones.com/shopdetail/002005000003/002/X/page2/order/>`__
+-  :ref:`Pixhawk2 <common-pixhawk2-overview>`
+   with :ref:`GPS and external compass <common-positioning-landing-page>`.
+-  Extra long GPS cable
+-  Extra long compass (i2c) cable
+-  Flight controller mounting plate
 
 Flybarless electric RC helicopter frame
 =======================================
