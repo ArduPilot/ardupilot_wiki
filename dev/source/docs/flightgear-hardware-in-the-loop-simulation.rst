@@ -28,8 +28,8 @@ Things you need
    (Windows)
 #. ArduPilot HIL on your APM (via APM Planner, currently (April 2013)
    only v2.68 HIL works, see below)
-#. `Mavlink.xml <https://ardupilot-mega.googlecode.com/svn/Tools/trunk/FlightGear/MAVLink.xml>`__ data
-   format file for flightgear (Right Click and Save as)
+#. `Mavlink.xml <https://github.com/dronekit/ardupilot-releases/blob/master/Tools/FlightGear/MAVLink.xml`__ data
+   format file for flightgear
 #. Recommended for Windows OS: the
    file: \ `system.fgfsrc <https://code.google.com/p/ardupilot-mega/downloads/detail?name=system.fgfsrc>`__ placed
    into the "C:\\Program Files (x86)\\FlightGear\\data" folder. This
