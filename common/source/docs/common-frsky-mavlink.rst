@@ -35,9 +35,9 @@ For more information see the `QuickStart Guide <https://www.airborneprojects.com
 APM MavLink to FrSky SmartPort Converter (MavLink_FrSkySPort)
 --------------------------------------------------------------
 
-The open source
+There are several open source projects such as 
 `MavLink_FrSkySPort <https://github.com/Clooney82/MavLink_FrSkySPort/wiki>`__
-project uses the Teensy USB Development board to convert MAVLink
+project, the `Scottflys <http://openbrainiacs.com/tiki-index.php?page=Teensy+Telemetry+Project>`__ or the `Athertop <https://github.com/athertop/MavLink_FrSkySPort>`__ project, that use the Teensy USB Development board to convert MAVLink
 messages to FrSkySmartPort format so that ArduPilot telemetry can be
 displayed on an FrSky transmitter.
 
@@ -49,6 +49,6 @@ displayed on an FrSky transmitter.
    This solution is one of the most versatile solutions available,
    and is the inspiration of many similar solutions 
    (including :ref:`Airborne's above <common-frsky-telemetry_apm_mavlink_to_frsky_smartport_converter_airborne_projects>`).
-   It is however not a "commercial" solution and does require some soldering.
+   It is however not a "commercial" solution and does require some soldering, but can be extended even to connect RGB Led strips like `Scottflys LED Extension <http://openbrainiacs.com/tiki-index.php?page=Teensy%20Telemetry%20LED%20Extension>`__.
 
-Information about the circuit and software can be found on the `project wiki <https://github.com/Clooney82/MavLink_FrSkySPort/wiki>`__.
+Information about the circuits and software can be found on the each project link above.
