@@ -21,6 +21,10 @@ Planner* is already :ref:`installed <common-install-mission-planner>` and
    -  Reduce **Target cruise speed in auto** from 5.00 to **2.50**.
    -  Reduce **Base throttle percentage** from 50 to **30**.
 
+.. warning::
+
+   This step is important as all the navigation in auto modes is based on the cruise speed and throttle configuration. See :ref:`Rover Tuning <tuning-steering-and-navigation-for-a-rover>`
+
 #. Set a failsafe to turn your vehicle off (put it in HOLD mode) if you
    lose RC reception for 5 seconds.
 
