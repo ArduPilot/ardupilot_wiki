@@ -51,18 +51,6 @@ so you can observe the status and send commands at the same time.
 .. image:: ../images/mavproxy_sitl_console_and_map.jpg
     :target: ../_images/mavproxy_sitl_console_and_map.jpg
 
-.. note::
-
-   As part of the setup you may have loaded some `standard/test parameters <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/default_params>`__
-   into the *MAVProxy Command Prompt*:
-
-   ::
-
-       param load ..\Tools\autotest\Rover.parm
-
-   Unlike for Copter and Plane, this is not strictly necessary. Rover is a
-   forgiving platform!
-
 Starting
 ========
 
