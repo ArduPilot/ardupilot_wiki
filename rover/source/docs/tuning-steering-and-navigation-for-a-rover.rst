@@ -32,7 +32,7 @@ The key parameters
    AUTO.
 -  ``CRUISE_THROTTLE``: This sets the initial guess at what throttle is
    needed to achieve CRUISE_SPEED when driving straight ahead. This
-   needs to be right for the rover to achieve good speed control.
+   needs to be **RIGHT** for the rover to achieve good speed control.
 
 Step 1: Setting initial parameters
 ==================================
