@@ -939,7 +939,7 @@ using an airspeed sensor.
 MAV_CMD_NAV_LOITER_UNLIM
 ----------------------------
 
-Supported by: Copter, Plane (not Rover).
+Supported by: Copter, Plane, Rover.
 
 Loiter at the specified location for an unlimited amount of time.
 
@@ -1241,7 +1241,7 @@ location value for the parameter will be used.
 MAV_CMD_NAV_LOITER_TIME
 -----------------------
 
-Supported by: Copter, Plane (not Rover).
+Supported by: Copter, Plane, Rover.
 
 Loiter at the specified location for a set time (in seconds).
 
