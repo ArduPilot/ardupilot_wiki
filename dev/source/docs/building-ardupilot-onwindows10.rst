@@ -34,44 +34,11 @@ Since Windows 10 has Ubuntu as his new partner, it is possible to compile Ardupi
 Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
 ===============
 
-#. First, you have to insert your local host to the /etc/hosts file:
-
-   .. code-block:: python
-   
-       sudo nano /etc/hosts
-
-#. Insert this below first line:
-
-   .. code-block:: python
-   
-       127.0.0.1 "hostname"
-         
-   (where "hostname" is your PC name)
-
-#. Then, take root control over the bash:
-
-   .. code-block:: python
-   
-       sudo passwd root
-       su root
-
-#. Back to main directory:
-
-   .. code-block:: python
-   
-       cd
-
 #. Install git:
 
    .. code-block:: python
    
        sudo apt-get install git
-
-#. Install Arduino Core (for APM1/APM2 support):
-
-   .. code-block:: python
-   
-       sudo apt-get install make gawk arduino-core
 
 #. Make a new folder for future reference:
 
@@ -95,28 +62,14 @@ Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
    .. image:: ../images/Windows10_Ubuntu_1.jpg
        :target: ../_images/Windows10_Ubuntu_1.jpg
        
-#. At this point, we need to install some extra tools, because for now, Ubuntu bash on Windows only supports native x64 programs:
+#. Now you have a compiler under Windows 10 thanks to Ubuntu.Next step is to prove it!
 
-   .. code-block:: python
-   
-       cd
-       
-       sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
-       sudo apt-get update
-       sudo apt-get install cmake
-       
-       sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-       sudo apt-get update
-       sudo apt-get install g++-4.9
-       
-       sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
-       sudo apt-get update
-       sudo apt-get install gcc-arm-none-eabi=4.9.3.2015q3-1trusty1
-       
-       sudo apt-get update
-       sudo apt-get upgrade
+Set up and run Software in the Loop simulation (optional)
+===========================
 
-#. Now you have a nice compiler under Windows 10 thanks to Ubuntu.Next step is to prove it!
+#. Even if you are not going to do active development, Software in the Loop (SITL) is a good way to familiarise yourself with the software required for Ardupilot. Following the instructions at http://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html will leave you with a compilation and test environment.
+
+#. If you wish to use a Windows only CGS with SITL, it will be able to pick up the SITL environment on localhost.
 
 Compile ArduPilot Code
 ======================
@@ -261,3 +214,5 @@ Compile ArduPilot Code
        attrib -s -h lxss
        
    You can make a direct access to "lxss" folder on your desktop for a quick navigation.
+   
+   .. warning: Windows does not always work well with its Linux files, so you can read them but do not write to Linux files with Windows. It is safer to copy files from /mnt/C/... to your home directory to work on them.
