@@ -237,5 +237,5 @@ settings, see
 ==========================
 
 The best place to get involved with the development or tuning of these
-radios is the `SiK Radios forum <http://ardupilot.com/forum/viewforum.php?f=22>`__. Join in on the
+radios is the `SiK Radios forum <http://discuss.ardupilot.org/c/hardware-discussion/radios-hardware>`__. Join in on the
 forum to help make these radios even better!
