@@ -74,6 +74,10 @@ The current bootloaders suitable for ArduPilot on STM32 are here:
 download the px4fmuv2_bl.bin and run this:
 
   dfu-util -a 0 --dfuse-address 0x08000000 -D px4fmuv2_bl.bin
+  
+with some versions of dfu-util you may need this instead:
+
+  dfu-util -a 0 -s 0x08000000 --dfuse-address 0x08000000 -D px4fmuv2_bl.bin
 
 it should say "Downloading" and show a progress bar. On completion the board is ready to test the bootloader.
 
