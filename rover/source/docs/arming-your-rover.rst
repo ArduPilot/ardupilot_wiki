@@ -71,6 +71,12 @@ following methods:
 -  use a ground station to issue a disarm command
 -  use the safety switch on your rover (on Pixhawk)
 
+.. note::
+
+   If you have a skid steering rover you will not be able to disarm
+   via the transmitter stick as the rover would just turn around and
+   around in circles on the spot whilst you were trying to disarm
+
 Visual and Audible signals
 ==========================
 
