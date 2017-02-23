@@ -20,12 +20,21 @@ and possibly some other hardware. Most importantly you will need to
 obtain an RC Transmitter that has spare channels needed for autopilot
 mode control and learning.
 
-We like cheap 4-wheel-drive off-road vehicles with brushless motors and
-no RC (the RC units that come with most ready-to-run RC cars don't have
-the spare channel needed for autopilot mode control and learning). One
-such good platform is `this RC off-roader from HobbyKing <http://hobbyking.com/hobbyking/store/uh_viewItem.asp?idProduct=17791>`__,
-which is just $72 (don't worry, we won't use the goofy plastic body
-shell):
+If you want a slow skid steering rover the `WildThumper <https://www.robotgear.com.au/Product.aspx/Details/1978-Wild-Thumper-6WD-Chassis-Black-34-1-gear-ratio?gclid=CjwKEAiAirXFBRCQyvL279Tnx1ESJAB-G-QvE-d_2uQTEsca9RdetzCZYwnFaIpzZ9MFClF0L_BxBhoCEmfw_wcB>`__ varieties are
+very popular.  If you want a standard car then any 1/10 scale RC car is
+fine.  We prefer 1/10 scale as its large enough to easily work on and
+fit any gear like companion computers etc.  The 1/16 or `1/18 
+<https://hobbyking.com/en_us/1-18-brushless-4wd-stadium-truck-w-18amp-system.html>`__
+scale vehicles you have to squeeze everything on but as you
+can see from the photos in this wiki its certainly do-able.  We tend
+towards `2WD <https://hobbyking.com/en_us/basher-bsr-bz-222-1-10-2wd-racing-buggy-arr.html>`__ instead of `4WD
+<https://hobbyking.com/en_us/turnigy-trooper-sct-4x4-1-10-brushless-short-course-truck-arr.html>`__
+as well just because we get slightly longer
+battery life (fewer mechanical losses) and the car is less
+complicated.  But if your looking to go on the dirt fast and corner hard then 4WD is the go.
+We also prefer vehicles with brushless motors and no RC - the RC units
+that come with most ready-to-run RC cars don't have the spare channel
+needed for autopilot mode control and learning.
 
 .. image:: ../images/rover_4wd_monster_beatle.jpg
     :target: ../_images/rover_4wd_monster_beatle.jpg
