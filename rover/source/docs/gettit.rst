@@ -89,10 +89,11 @@ includes a compass. You can check out :ref:`other GPS solutions here <common-pos
 LiPo batteries and charger
 --------------------------
 
-You'll also need batteries and a charger. Almost any 2S (7.2v) LiPo
-under 2600 mAh will do, but the recommend one for the above buggy is
-`this one <http://hobbyking.com/hobbyking/store/__16589__Turnigy_1700mAh_2S_20C_Lipo_Pack_Suits_1_16th_Monster_Beatle_SCT_Buggy_USA_Warehouse_.html>`__.
-A simple LiPo charger like `this one <http://hobbyking.com/hobbyking/store/__24289__Turnigy_2S_3S_Balance_Charger_Direct_110_240v_Input_USA_Warehouse_.html>`__
+You'll also need batteries and a charger. For a 1/16 or 1/18 scale almost any 2S (7.2v) LiPo
+under 2600 mAh will do - for example `this one
+<http://hobbyking.com/hobbyking/store/__16589__Turnigy_1700mAh_2S_20C_Lipo_Pack_Suits_1_16th_Monster_Beatle_SCT_Buggy_USA_Warehouse_.html>`__.
+For larger 1/10th scale `this is a good size choice <https://hobbyking.com/en_us/zippy-5000mah-2s1p-30c-hardcase-pack.html>`__
+A simple LiPo charger like `this one <https://hobbyking.com/en_us/imax-b6-ac-v2-charger-discharger-1-6-cells-genuine-au-plug.html>`__
 will work fine.
 
 Optional hardware
