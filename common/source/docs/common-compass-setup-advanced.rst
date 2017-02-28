@@ -96,6 +96,21 @@ controller, not the airframe!
 Most users will then only need to press the **Live Calibration** button
 and perform a :ref:`Live Calibration <common-compass-setup-advanced_live_calibration_of_offsets>`.
 
+Checking Compass Orientation
+----------------------------
+-  Ensure your AHRS_ORIENT parameter is correct.  This will ensure that your internal compass' orientation will be correct
+-  When rotating your aircraft through all axes each of the compasses should move in the same direction, and should be of approximately the same values
+
+- Northern Hemisphere:
+  - Z-component should be *positive*
+  - when pitching the vehicle down, the X component should *increase* in value
+  - when rolling the vehicle right, the Y component should *increase* in value
+
+- Southern Hemisphere:
+  - Z-component should be *negative*
+  - when pitching the vehicle down, the X component should *decrease* in value
+  - when rolling the vehicle right, the Y component should *decrease* in value
+
 General settings
 ----------------
 
