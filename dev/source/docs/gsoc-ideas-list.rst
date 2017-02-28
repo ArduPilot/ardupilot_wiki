@@ -68,4 +68,10 @@ As the companion computers usually run Linux already, the port of ArduPilot to t
 - control the bi-directional data between the two CPUs
 This project could be developed using a wide variety of hwardware. A simple setup would be a RaspberryPi with a pixhawk. Another very nice setup would be a Pixhawk2 with an Edison embedded.
 
+Improve fixed-wing 3D aerobatics support in ArduPilot
+-----------------------------------------------------
+
+With the addition of prop-hang in ArduPilot (see http://discuss.ardupilot.org/t/ardupilot-flying-3d-aircraft-including-hovering/14837) we now have the beginnings of a nice 3D aerobatics for fixed wing.
+This project involves taking that to the next level to add support for "trick" mode. In trick mode the user will have access to a a variety of common 3D maneuvers, including knife-edge, loops, harrier and rolling loops. Implementing this will involve some careful use of quaternion controllers, but a good UI design so the stick inputs to control these tricks are easy to learn.
+Testing can be done in the FlightAxis simulator (as in the above video), allowing for development without risking real aircraft.
 
