@@ -40,3 +40,32 @@ Helicopter auto-rotation support
 
 When the engine fails on a helicopter a good pilot can land the helicopter safely using auto-rotation. We would like ArduPilot to support doing this automatically. We already have a very nice simulation system for helicopters using the RealFlight FlightAxis backend, which gives the ideal test environment for developing this feature. The project would involve using the rotor RPM and motor RPM sensors in the simulator to produce a reliable auto-rotation from a variety of heights and flight speeds. If simulator testing goes well then it could be tested on a number of real helicopters.
 
+Support for AirSim simulator
+----------------------------
+
+Microsoft recently released support for their AirSim drone simulator based on the Unreal 3D gaming engine. It looks like a very nice simulation framework, and we would like to add support for using it for ArduPilot development. The project would involve adding interface code between AirSim and ArduPilot, working with the AirSim developers if needed to enhance their APIs (such as adding lock-step scheduling). Please note that this project will require you to have a fast enough PC to run AirSim (good graphics card and lots of memory).
+
+JavaScript Log Viewer
+---------------------
+
+We would like to be able to offer a browser-based log analysis and graphing tool for ArduPilot users. This will involve writing a JavaScript parser for the ArduPilot DataFlash log format and adding a nice graphing interface for browsers based on the parsed data. The user interaction model we are looking for is similar to the python based MAVExplorer (see http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html), where arbitrary graph expressions can be used, along with selecting from a menu of common graphs.
+Ideally the tool would also support MAVLink telemetry logs, using the pymaylink JavaScript code generator.
+This tool will be combined with a log upload website to offer good log analysis for all ArduPilot users.
+
+FreeRTOS port of ArduPilot
+--------------------------
+
+ArduPilot is based around a HAL (hardware abstraction layer). The HAL supports a number of operating systems, including NuttX, Linux and QURT. A number of people have done ports of ArduPilot to FreeRTOS, and while those ports have worked they need some more work to get them to the point of merging into master for general use. The project would involve working on the ports to address the remaining issues and get something that can be accepted into ArduPilot master.
+
+Sensor-head Port of ArduPilot
+-----------------------------
+
+Quite a number of drones now have powerful "companion computers", along with microcontrollers (such as the STM32F4) for flight control. To allow for more advanced control and estimation code in ArduPilot it would be nice to support a new mode of operation where most of the flight code runs on the companion computer, and the microcontroller just acts as a "sensor head". 
+As the companion computers usually run Linux already, the port of ArduPilot to that side is easy. The real work involves adding a UART based protocol between the companion computer and the microcontroller that would do the following:
+- gather sensor data from all sensors
+- get RC inputs from uarts and pins
+- send outputs to motors and servos
+- control the bi-directional data between the two CPUs
+This project could be developed using a wide variety of hwardware. A simple setup would be a RaspberryPi with a pixhawk. Another very nice setup would be a Pixhawk2 with an Edison embedded.
+
+
