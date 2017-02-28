@@ -18,7 +18,7 @@ Enable 2nd Telemetry Port on Pixhawk
 On a Pixhawk there are two 6 pin DF13 serial ports marked as "telemetry"
 (TELEM 1 and TELEM 2). Both ports will be active for communication.
 
-Use **TELEM 1** for higher power devices (up to 1A), such as the :ref:`3DR RFD900 telemetry radio <common-rfd900>`.
+Use **TELEM 1** for higher power devices (up to 1A), such as the :ref:`RFD900 telemetry radio <common-rfd900>`.
 
 .. image:: ../../../images/PixhawkTelem.jpg
     :target: ../_images/PixhawkTelem.jpg
