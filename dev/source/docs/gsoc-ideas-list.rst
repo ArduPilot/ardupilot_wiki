@@ -9,5 +9,11 @@ List of Possible Projects for GSoC 2017
 - Improved IoT integration using `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ to allow live viewing of drone location on web page
 - Safe Return-To-Launch which will involve storing vehicle's current location and maintaining the shortest possible safe path back home
 - Improve flight control for `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ to bring it to the same level of performance of other multicopters
-- Improve simulator to include a 3D viewer and objects
+- Improve SITL simulator to include a 3D viewer and objects
 - Helicopter autorotation support
+- Add support for the AirSim drone simulator to ArduPilot SITL (see https://github.com/Microsoft/AirSim/)
+- Build a JavaScript DataFlash log parser and a system for graphing user logs with similar capabilities to MAVExplorer, but hosted in users browsers
+- work on the FreeRTOS port of ArduPilot
+- improve UAVCAN integration with ArduPilot
+- work on 3D aerobatic support for fixed wing aircraft
+
