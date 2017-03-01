@@ -1,8 +1,11 @@
 .. _gsoc-ideas-list:
 
-=======================================
-List of Possible Projects for GSoC 2017
-=======================================
+========================================
+List of Suggested Projects for GSoC 2017
+========================================
+
+This is a list of projects suggested by ArduPilot developers for GSoC 2017. These are only suggestions, and if you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see http://discuss.ardupilot.org/c/google-summer-of-code). 
+We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2017. We're looking for enthusiastic students who can really get stuck into their project and make a substantial contribution to the ArduPilot project.
 
 - `Improved Object Avoidance for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid
 - Improved live video for `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ including video stream discover and publishing
