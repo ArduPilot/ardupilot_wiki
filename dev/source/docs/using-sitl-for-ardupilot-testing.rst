@@ -542,3 +542,52 @@ used just as before.
    :target: ../_images/MissionPlanner_ConnectTCP.jpg
 
    Mission Planner: Connecting toSITL using TCP
+
+
+Testing Precision Landing
+-------------------------
+
+.. note::
+
+   These instructions are written assuming ArduCopter
+
+Enable Precision Landing, and set the precision landing backend type to SITL:
+
+::
+
+   param set PLND_ENABLED 1
+   param fetch
+   param set PLND_TYPE 4
+
+A rangefinder is currently required for precision landing.  Enable a simulated rangefinder:
+
+::
+
+   param set RNGFND_TYPE 1
+   param set RNGFND_MIN_CM 0
+   param set RNGFND_MAX_CM 4000
+   param set RNGFND_PIN 0
+   param set RNGFND_SCALING 12.12
+
+Restart the simulation.
+   
+Takeoff and fly a bit, then switch into land:
+
+::
+
+   arm throttle
+   rc 3 1800
+   mode land
+   rc 3 1500
+
+Check the logs for precision landing messages:
+
+::
+
+   ls -lt logs
+
+Choose the yougest, then:
+
+::
+
+   mavlogdump --type PL logs/<youngest>
