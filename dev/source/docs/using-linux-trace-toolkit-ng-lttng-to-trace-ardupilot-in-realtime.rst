@@ -40,11 +40,11 @@ Monitoring APM with LTTng
 
 In order to monitor APM with *LTTng*, the first thing to do is to enable
 support for *LTTng* in ArduPilot builds. Using the regular make build
-system, you do this by modifying `mk/board_native.mk line 30 <https://github.com/ArduPilot/ardupilot/blob/master/mk/board_native.mk#L30>`__:
+system, you do this by modifying `mk/board_native.mk line 38 <https://github.com/ArduPilot/ardupilot/blob/master/mk/board_native.mk#L38>`__:
 
 ::
 
-    HAVE_LTTNG=1
+    HAVE_LTTNG_UST=1
 
 Then clean and rebuild ArduPilot.
 
