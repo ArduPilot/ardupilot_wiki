@@ -20,6 +20,7 @@ We have a lot of talented developers in the ArduPilot dev team who would love to
 - improve UAVCAN integration with ArduPilot
 - work on 3D aerobatic support for fixed wing aircraft
 - add support for "sensor head" operation of ArduPilot, split between two CPUs
+- Create a cloud based GCS for persistent control of a fleet of drones. Here is a Search and Rescue use case example: http://www.surtsey.org/projects/cloud-control-station/ 
 
 More Details
 ============
