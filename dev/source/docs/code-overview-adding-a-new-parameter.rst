@@ -250,4 +250,4 @@ where the Compass class appears.
     };
  
 **Step #5:**
-If the class is a completely new addition to the code, also add k_param_my_new_lib to the enum in `Parameters.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.h>`, where my_new_lib is the first argument to the GOBJECT declaration in Parameters.cpp. Read the comments above the enum to understand where to place the new value, as order is important here.
+If the class is a completely new addition to the code, also add k_param_my_new_lib to the enum in `Parameters.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.h>`__, where my_new_lib is the first argument to the GOBJECT declaration in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__. Read the comments above the enum to understand where to place the new value, as order is important here.
