@@ -7,12 +7,6 @@ Using Linux Trace Toolkit ng (LTTng) to Create Realtime ArduPilot Traces
 This article explains how to use `LTTng <https://lttng.org>`__ for
 creating runtime traces for ArduPilot running on Linux boards (only).
 
-.. note::
-
-   This support in the master branch (Jan 2016) but is not yet in the
-   released vehicle branches (e.g. not in Copter 3.2, Plane 3.4 or Rover
-   2.5) 
-
 Overview
 ========
 
