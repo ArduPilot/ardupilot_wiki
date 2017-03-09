@@ -70,6 +70,16 @@ As the companion computers usually run Linux already, the port of ArduPilot to t
 - send outputs to motors and servos
 - control the bi-directional data between the two CPUs
 This project could be developed using a wide variety of hwardware. A simple setup would be a RaspberryPi with a pixhawk. Another very nice setup would be a Pixhawk2 with an Edison embedded.
+One possible development approach would be as follows:
+Run sensor drivers, PWM out and RC input on the STM32 which means we'd need to create a libraries/AP_SensorHead library that implements the sensorhead protocol.
+steps would be:
+- draft the protocol
+- implement basic design of AP_SensorHead
+- add a libraries/AP_SensorHead/examples/SensorTest test prog, to test the protocol
+- implement the protocol within STM32. I'd start by implementing it as an alternative serial output type within ArduPilot firmware (see SerialManager library). Later we may do a more bare metal fw for lower end STM32
+- implement SensorHead backends for each of the key sensor libs. So for example libraries/AP_Baro/AP_Baro_SensorHead.cpp
+same for AP_InertialSensor, AP_Compass, AP_GPS
+these will be very thin wrappers around calls inside libraries/AP_SensorHead/
 
 Improve fixed-wing 3D aerobatics support in ArduPilot
 -----------------------------------------------------
