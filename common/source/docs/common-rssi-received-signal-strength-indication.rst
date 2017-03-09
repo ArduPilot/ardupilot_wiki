@@ -57,7 +57,7 @@ Set up your UHF system to embed the RSSI into the desired channel and then chang
 
 - RSSI_ANA_PIN : 103
 - RSSI_TYPE    : 2 
-- RSSI_CHANNEL : You selected channel from above.
+- RSSI_CHANNEL : Your selected channel from above.
 
 
 
