@@ -58,7 +58,8 @@ This tool will be combined with a log upload website to offer good log analysis 
 FreeRTOS port of ArduPilot
 --------------------------
 
-ArduPilot is based around a HAL (hardware abstraction layer). The HAL supports a number of operating systems, including NuttX, Linux and QURT. A number of people have done ports of ArduPilot to FreeRTOS, and while those ports have worked they need some more work to get them to the point of merging into master for general use. The project would involve working on the ports to address the remaining issues and get something that can be accepted into ArduPilot master.
+ArduPilot is based around a HAL (hardware abstraction layer). The HAL supports a number of operating systems, including NuttX, Linux and QURT. Adding FreeRTOS to the officially supported list of ports would be very nice. There is a FreeRTOS HAL port done by kwikius (see https://github.com/kwikius/ardupilot/tree/quantracker_master) that is flying on an adapted OSD board already (see http://discuss.ardupilot.org/t/aerflite-flight-controller-osd-new-years-eve-maiden-flight-running-arduplane/13840). That port would be a really good starting point for a fully supported ArduPilot FreeRTOS HAL. Two other people have attempted FreeRTOS ports with less success. The project would involve working on the ports to address the remaining issues and get something that can be accepted into ArduPilot master.
+One interesting approach would be to get FreeRTOS running on a Pixhawk, allowing for a direct comparison between ArduPilot on NuttX and FreeRTOS on the same hardware.
 
 Sensor-head Port of ArduPilot
 -----------------------------
