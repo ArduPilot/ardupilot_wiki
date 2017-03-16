@@ -17,12 +17,13 @@ libraries and their function.
 -  `AP_Math <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Math>`__ -
    various math functions especially useful for vector manipulation
 -  `AC_PID <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_PID>`__ -
-   PID controller library
+   PID(Proportional-Integral-Derivative) controller library
 -  `AP_InertialNav <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_InertialNav>`__ -
    inertial navigation library for blending accelerometer inputs with
    gps and baro data
--  `AC_AttitudeControl <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_AttitudeControl>`__
-   -
+-  `AC_AttitudeControl <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_AttitudeControl>`__ -
+   ArduCopter's control library includes various functions of attitude, position control based on PID control.
+   
 -  `AP_WPNav <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_InertialNav>`__
    - waypoint navigation library
 -  `AP_Motors <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Motors>`__
