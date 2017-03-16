@@ -42,6 +42,8 @@ The top window is the "console" and has your menus and the status
 messages. The bottom window is your terminal, and has the "MAV>" prompt
 for typing commands.
 
+Note: be careful with spaces in log filenames. Use quotes around the filename if needed.
+
 Using pre-defined graphs
 ------------------------
 
