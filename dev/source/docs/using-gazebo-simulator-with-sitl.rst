@@ -25,11 +25,15 @@ Gazebo from source, because no current release has built-in support for ArduCopt
 Preconditions
 =============
 
-We recommend Ubuntu starting from 14.04.2 (it is working on 16.04 but untest on 16.10) as this is the platform used for testing
+We recommend Ubuntu starting from 16.04.2LTS (it is untested on 16.10) as this is the platform used for testing
 this approach and is also known to be compatible with SITL.
 
 Compiling and installing Gazebo From Source
 ===========================================
+
+.. warning::
+   For now, following Installing gazebo pre-built packages guides below is recommended.
+   This guide is outdated, you will be able to compile Ignition Maths, Msgs, Tools. But Installing SDFormat and Gazebo requires some fix.
 
 We will be using a standard version of ArduPilot but a custom fork of Gazebo, until the gazebo plugin gets merge into Gazebo-master.
 
@@ -75,7 +79,7 @@ Build and install Ignition Maths
 
 Build and install Ignition Msgs
 ::
-
+    sudo apt-get install libprotobuf-dev protobuf-compiler libprotoc-dev libignition-math3-dev
     hg clone https://bitbucket.org/ignitionrobotics/ign-msgs ~/gazebo_ws/ign-msgs
     cd ~/gazebo_ws/ign-msgs
     mkdir build
