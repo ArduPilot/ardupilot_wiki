@@ -18,6 +18,7 @@ positioning technologies:
     JDrones GPS Options <http://store.jdrones.com/GPS_s/193.htm>
     Zubax GNSS: GPS, Compass, Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
+    Here+ RTK Receiver <common-here-plus-gps>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
     Trimble BD930 <common-gps-trimble>
     GPS – How it Works <common-gps-how-it-works>
