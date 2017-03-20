@@ -5,15 +5,15 @@ Here+ RTK GPS
 =============
 
 This article provides a brief overview of how to setup a Here+ RTK GPS receiver which is based on the Ublox M8N.
-RTK GPSs in general provide much more accurate position estimates than regular GPSs but normally require the use of a 2nd GPS connected to the ground station.
-The instructions focus on the use with Mission Planner on Windows but in the future other ground stations (i.e. QGroundControl) will also support this GPS.
+Like other RTK GPSs, the Here+ can provide much more accurate position estimates than regular GPSs but normally requires the use of a 2nd GPS connected to the ground station.
+These instructions focus on the setup using Mission Planner on Windows but in the future other ground stations (i.e. QGroundControl) will also support this GPS.
 
 .. image:: ../../../images/here-plus-gps.png
 	:target: ../_images/here-plus-gps.png
 
 .. note::
 
-     Reach RTK GPS is supported in Copter-3.5 (and higher), Plane 3.8.0 (and higher)
+     Here+ RTK GPS is supported in Copter-3.5 (and higher), Plane 3.8.0 (and higher)
 
 Where to buy
 ============
