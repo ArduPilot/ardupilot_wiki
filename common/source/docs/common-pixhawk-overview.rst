@@ -849,4 +849,5 @@ See also
     Powering the Pixhawk <common-powering-the-pixhawk>
     Mounting the Flight Controller <common-mounting-the-flight-controller>
     Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>
+    Pixhawk Serial Names <pixhawk-serial-names>
 [/site]
