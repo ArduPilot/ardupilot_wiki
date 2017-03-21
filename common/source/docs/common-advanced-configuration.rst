@@ -45,7 +45,7 @@ tuning options for the vehicle.
 [/site]
 
 [site wiki="rover"]
-    Advanced Compass Setup <common-compass-setup-advanced>
+    Compass Setup (Advanced) <common-compass-setup-advanced>
     UBlox GPS Configuration <common-ublox-gps>
     Extended Kalman Filter (EKF) <common-apm-navigation-extended-kalman-filter-overview>
     RCMAP <common-rcmap>
@@ -60,7 +60,7 @@ tuning options for the vehicle.
 [/site]
 
 [site wiki="planner"]
-    Advanced Compass Setup <common-compass-setup-advanced>
+    Compass Setup (Advanced) <common-compass-setup-advanced>
     UBlox GPS Configuration <common-ublox-gps>
     Extended Kalman Filter (EKF) <common-apm-navigation-extended-kalman-filter-overview>
     Sensor Testing <common-sensor-testing>
