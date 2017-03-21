@@ -20,6 +20,7 @@ Open hardware
     Pixhawk <common-pixhawk-overview>
 	Pixhawk2 <common-pixhawk2-overview>
     Pixracer <common-pixracer-overview>
+    Beagle Bone Blue <common-beagle-bone-blue>
     Erle-Brain Linux Autopilot <common-erle-brain-linux-autopilot>
     PXFmini Autopilot Shield <common-pxfmini>
 
