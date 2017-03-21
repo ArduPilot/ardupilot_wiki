@@ -1,8 +1,8 @@
 .. _common-CHUCK-overview:
 
-=======================
-The C.H.U.C.K Autopilot
-=======================
+======================================
+C.H.U.C.K Autopilot (for Parrot Disco)
+======================================
 
 The heart of the Parrot Disco is the C.H.U.C.K autopilot, an orange
 box which is a general purpose autopilot. It is perfectly possible to

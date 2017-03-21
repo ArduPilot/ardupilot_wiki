@@ -34,7 +34,7 @@ Closed hardware
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
     Intel Aero <common-intel-aero-overview>
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
-    Parrot C.H.U.C.K <common-CHUCK-overview>
+    Parrot C.H.U.C.K (for the Parrot Disco) <common-CHUCK-overview>
     
 Discontinued boards
 ===================
