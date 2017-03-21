@@ -4,7 +4,7 @@
 Beagle Bone Blue
 ================
 
-The `Beagle Bone Blue <https://beagleboard.org/blue>`__ is a complete, Linux-eanbled robotics computer.
+The `Beagle Bone Blue <https://beagleboard.org/blue>`__ is a complete, Linux-enabled robotics computer.
 Community-supported and fully open-source, the real-time performance, flexible networking and rich set of robotics-oriented peripherals make building mobile robots quick and affordable.
 
 .. note::
@@ -19,7 +19,7 @@ Specifications
 
 -  **Processor**
 
-   -  1Ghz ARM Cortex-A8
+   -  1GHz ARM Cortex-A8
    -  2×32-bit 200-MHz programmable real-time units (PRUs)
    -  512MB DDR3 RAM integrated
    -  4GB 8-bit eMMC flash
