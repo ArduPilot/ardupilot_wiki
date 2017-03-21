@@ -13,10 +13,7 @@ about these modules and other alternatives.
 .. toctree::
     :maxdepth: 1
 
-[site wiki="copter"]
-    Smart Battery <smart-battery>
-[/site]
-
+    Smart Batteries <common-smart-battery>
     AttoPilot Current Sensor <common-using-a-current-sensor>
     Mauch Power Modules <common-mauch-power-modules>
     AirbotPower Power Module <common-airbotpower-power-module>
