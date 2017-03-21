@@ -20,6 +20,7 @@ tuning options for the vehicle.
     Boat mode <boat-mode>
     Telemetry Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
     RCMAP <common-rcmap>
+    Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Full Parameter List <parameters>
     Parameter Reset <common-parameter-reset>    
     Flight Time Recorder <common-flight-time-recorder>    
@@ -29,10 +30,11 @@ tuning options for the vehicle.
 [/site]
 
 [site wiki="plane"]
-    Advanced Compass Setup <common-compass-setup-advanced>
+    Compass Setup (Advanced) <common-compass-setup-advanced>
     UBlox GPS Configuration <common-ublox-gps>
     Extended Kalman Filter (EKF) <common-apm-navigation-extended-kalman-filter-overview>
     RCMAP <common-rcmap>
+    Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Parameter Reset <common-parameter-reset>
     Telemetry Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
     Vibration Damping <common-vibration-damping>
@@ -47,6 +49,7 @@ tuning options for the vehicle.
     UBlox GPS Configuration <common-ublox-gps>
     Extended Kalman Filter (EKF) <common-apm-navigation-extended-kalman-filter-overview>
     RCMAP <common-rcmap>
+    Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Parameter Reset <common-parameter-reset>
     Telemetry Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
     Vibration Damping <common-vibration-damping>
