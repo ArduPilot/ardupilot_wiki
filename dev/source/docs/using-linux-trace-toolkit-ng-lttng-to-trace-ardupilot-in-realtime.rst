@@ -29,12 +29,6 @@ class, which handles 3 operations: ``Begin``, ``End``, ``Count``. You
 add tracing to your code by calling the performance utility methods in
 `Perf.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_Linux/Perf.cpp>`__.
 
-.. note::
-
-   The only modules that currently include calls to the Perf API are
-   EKF and EKF2 but it is possible to use it to monitor other
-   modules.
-
 Monitoring APM with LTTng
 =========================
 
