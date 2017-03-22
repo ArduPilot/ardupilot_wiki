@@ -61,13 +61,12 @@ Make a gazebo workspace
     
 Compiling and installing Gazebo From Source
 ===========================================
-
-Build and install Ignition Maths
-
 .. warning::
    Following Installing gazebo pre-built packages guides below is recommended.
    This guide is outdated, you will be able to compile Ignition Maths, Msgs, Tools. 
    But, installing SDFormat and Gazebo requires some fix at the moment.
+   
+Build and install Ignition Maths
    
 ::
 
