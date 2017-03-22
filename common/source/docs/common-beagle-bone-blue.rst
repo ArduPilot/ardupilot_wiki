@@ -4,7 +4,7 @@
 Beagle Bone Blue
 ================
 
-The `Beagle Bone Blue <https://beagleboard.org/blue>`__ is a complete, Linux-enabled robotics computer.
+`BeagleBone Blue <https://beagleboard.org/blue>`__ is a complete, Linux-enabled robotics computer.
 Community-supported and fully open-source, the real-time performance, flexible networking and rich set of robotics-oriented peripherals make building mobile robots quick and affordable.
 
 .. note::
@@ -48,7 +48,7 @@ Specifications
 Uploading firmware
 ==================
 
-Please follow `Mirkix's instructions on loading Copter to the Beagle Bone Blue <https://github.com/mirkix/ardupilotblue>`__.
+Please follow `Mirkix's instructions on loading Copter to BeagleBone Blue <https://github.com/mirkix/ardupilotblue>`__.
 
 Video of BeagleBone Blue flying Copter-3.5
 ==========================================
@@ -63,4 +63,4 @@ More Links
 ==========
 
 - `Blog post announcing support <http://discuss.ardupilot.org/t/beaglebone-blue-released-linux-enabled-autopilot-for-80>`__
-- `Beagle Bone recommended accessories page <https://github.com/beagleboard/beaglebone-blue/wiki/Accessories>`__
+- `BeagleBone recommended accessories page <https://github.com/beagleboard/beaglebone-blue/wiki/Accessories>`__
