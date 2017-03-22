@@ -156,6 +156,7 @@ with ArduPilot SITL are here:
 That will install gazebo in /opt/sasc, so you need to also do:
 
 ::
+
    export PATH=/opt/sasc/bin:$PATH
 
 and install the custom gazebo models using the instructions below.
