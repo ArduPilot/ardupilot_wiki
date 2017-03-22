@@ -28,21 +28,19 @@ Preconditions
 We recommend Ubuntu starting from 16.04.2LTS (it is untested on 16.10) as this is the platform used for testing
 this approach and is also known to be compatible with SITL.
 
-Compiling and installing Gazebo From Source
-===========================================
-
-.. warning::
-   For now, following Installing gazebo pre-built packages guides below is recommended.
-   This guide is outdated, you will be able to compile Ignition Maths, Msgs, Tools. But Installing SDFormat and Gazebo requires some fix.
-
 We will be using a standard version of ArduPilot but a custom fork of Gazebo, until the gazebo plugin gets merge into Gazebo-master.
 
 These instructions are derived from http://gazebosim.org/tutorials?tut=install_from_source
 
 Setup your computer to accept software from packages.osrfoundation.org.
 
-::
 
+.. warning::
+   Following Installing gazebo pre-built packages guides below is recommended.
+   This guide is outdated, you will be able to compile Ignition Maths, Msgs, Tools. 
+   But, installing SDFormat and Gazebo requires some fix at the moment.
+
+::
     sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
     wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
     sudo apt-get update
@@ -65,6 +63,9 @@ Make a gazebo workspace
 
     mkdir ~/gazebo_ws
     cd gazebo_ws/
+    
+Compiling and installing Gazebo From Source
+===========================================
 
 Build and install Ignition Maths
 ::
