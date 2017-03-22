@@ -110,6 +110,7 @@ and examine the PL messages.
 -  If the "TAcq" (meaning Target Acquired) field is not "1" then the sensor is not seeing the target.
 -  The pX, pY values show the horizontal distance to the target from the vehicle.
 -  The vX, vY values show the estimated velocity of the target relative to the vehicle.
+
 Refer to the IR-LOCK `wiki page <https://irlock.readme.io/docs/interpreting-pl-logs>`__ for more trouble-shooting information.
 
 ..  youtube:: IRfo5GcHniU

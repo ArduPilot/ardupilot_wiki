@@ -1,8 +1,8 @@
 .. _polygon_fence:
 
-===============
+=============
 Polygon Fence
-===============
+=============
 
 Overview
 ========
@@ -52,7 +52,7 @@ Enabling the Fence in Mission Planner
        :width: 500px
 
 Combining with the Circular and Altitude fences
-===========================================
+===============================================
 
 The polygon fence can be used in combination with the :ref:`circular and altitude fences <ac2_simple_geofence>` and the failsafe behaviour (i.e. stop at the fence or RTL) will trigger at whichever barrier the vehicle reaches first (i.e. the green line shown below)
 

@@ -100,7 +100,7 @@ Note: there are equivalent "Warn" parameters (i.e. AVD_W_DIST_XY) that can be us
     :width: 100%
    
 Older version of ADS-B based avoidance in Plane-3.5
-======================================
+===================================================
 
 Plane's earlier version of ADS-B based avoidance used these different parameters:
 
