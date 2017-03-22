@@ -34,12 +34,6 @@ These instructions are derived from http://gazebosim.org/tutorials?tut=install_f
 
 Setup your computer to accept software from packages.osrfoundation.org.
 
-
-.. warning::
-   Following Installing gazebo pre-built packages guides below is recommended.
-   This guide is outdated, you will be able to compile Ignition Maths, Msgs, Tools. 
-   But, installing SDFormat and Gazebo requires some fix at the moment.
-
 ::
 
     sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
@@ -69,6 +63,12 @@ Compiling and installing Gazebo From Source
 ===========================================
 
 Build and install Ignition Maths
+
+.. warning::
+   Following Installing gazebo pre-built packages guides below is recommended.
+   This guide is outdated, you will be able to compile Ignition Maths, Msgs, Tools. 
+   But, installing SDFormat and Gazebo requires some fix at the moment.
+   
 ::
 
     hg clone https://bitbucket.org/ignitionrobotics/ign-math ~/gazebo_ws/ign-math
