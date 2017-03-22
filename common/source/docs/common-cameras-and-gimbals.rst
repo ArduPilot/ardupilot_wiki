@@ -6,9 +6,8 @@ Cameras and Gimbals
 
 Copter, Plane and Rover support up to 3-axis gimbals, including advance
 features like automated aiming of the camera at a Region of Interest
-(ROI), and automatic triggering of a camera shutter.  This article
-explains how to configure gimbals and shutter triggering based on your
-hardware setup.
+(ROI), and automatic triggering of a camera shutter.  Follow the links below
+to explanations of how to configure gimbals and shutter triggering.
 
 .. image:: ../../../images/Cameras_Gimbals.jpg
     :target: ../_images/Cameras_Gimbals.jpg
@@ -16,23 +15,14 @@ hardware setup.
 Gimbals and gimbal controllers
 ==============================
 
-UAVs use gimbals to provide an independently controlled and stable
-platform for photography. ArduPilot supports both brushless direct drive
-gimbals (Tarot, SToRM32) that have a separate controller (providing
-self-stabilisation), and the increasingly-less-common servo-driven
-gimbals where both control and gimbal stabilisation are provided by
-ArduPilot.
+ArduPilot supports both brushless direct drive gimbals (Tarot, SimpleBGC, SToRM32)
+that have their own self-stabilization controllers and the simpler servo-driven
+gimbals in which ArduPilot controls the stabilisation.
 
--  :ref:`Tarot Gimbal <common-tarot-gimbal>` — a popular 2-axis gimbal
-   controller and gimbal kit that is controlled using PWM signals.
--  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an
-   inexpensive 3-axis *brushless gimbal controller* that can be used
-   with a number of gimbals (available separately). It is controlled
-   with MAVLink commands over a serial interface; a richer format than
-   PWM.
--  :ref:`Camera Gimbal with Servos <common-camera-gimbal>` — older-style
-   servo-driven gimbal where ArduPilot provides both positioning and
-   stabilisation.
+-  :ref:`Tarot Gimbal <common-tarot-gimbal>` — an inexpensive 2-axis brushless gimbal controller that is controlled using PWM signals.
+-  :ref:`SimpleBGC (aka AlexMos) Gimbal <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface.
+-  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface.
+-  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation.
 
 .. _common-cameras-and-gimbals_camera_shutter_triggering:
 
