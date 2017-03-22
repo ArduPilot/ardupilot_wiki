@@ -7,12 +7,6 @@ Using Linux Trace Toolkit ng (LTTng) to Create Realtime ArduPilot Traces
 This article explains how to use `LTTng <https://lttng.org>`__ for
 creating runtime traces for ArduPilot running on Linux boards (only).
 
-.. note::
-
-   This support in the master branch (Jan 2016) but is not yet in the
-   released vehicle branches (e.g. not in Copter 3.2, Plane 3.4 or Rover
-   2.5) 
-
 Overview
 ========
 
@@ -46,11 +40,11 @@ Monitoring APM with LTTng
 
 In order to monitor APM with *LTTng*, the first thing to do is to enable
 support for *LTTng* in ArduPilot builds. Using the regular make build
-system, you do this by modifying `mk/board_native.mk line 30 <https://github.com/ArduPilot/ardupilot/blob/master/mk/board_native.mk#L30>`__:
+system, you do this by modifying `mk/board_native.mk line 38 <https://github.com/ArduPilot/ardupilot/blob/master/mk/board_native.mk#L38>`__:
 
 ::
 
-    HAVE_LTTNG=1
+    HAVE_LTTNG_UST=1
 
 Then clean and rebuild ArduPilot.
 
