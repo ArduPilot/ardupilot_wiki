@@ -79,12 +79,12 @@ when lined up with the switch or indented once.
 ::
 
     switch (condition) {
-        case foo_cond:
-            foo();
-            break;
-        case bar_cond:
-            bar();
-            break;
+    case foo_cond:
+        foo();
+        break;
+    case bar_cond:
+        bar();
+        break;
     }
 
 **Right:**
@@ -92,12 +92,12 @@ when lined up with the switch or indented once.
 ::
 
     switch (condition) {
-    case foo_cond:
-        foo();
-        break;
-    case bar_cond:
-        bar();
-        break;
+        case foo_cond:
+            foo();
+            break;
+        case bar_cond:
+            bar();
+            break;
     }
 
 **Wrong:**
