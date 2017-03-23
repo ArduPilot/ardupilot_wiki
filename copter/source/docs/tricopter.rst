@@ -11,7 +11,26 @@ be used for all other aspects of the setup.
 .. image:: ../images/APM_2_5_MOTORS_TRI.jpg
     :target: ../_images/APM_2_5_MOTORS_TRI.jpg
 
-Copter 3.4 (and higher)
+Copter 3.5 (and higher)
+=======================
+
+As of Copter-3.5.x all of the multicopter firmware (quad, hexa, octa, octaquad, y6, tri, single, coax) including tricopter have been consolidated into a single firmware.  This means after loading the firmware please set:
+
+- :ref:`FRAME_CLASS <FRAME_CLASS>` to 7 ("Tri")
+
+Better separation of RC input and output parameters has also lead to some changes compared to earlier versions.  Here is a full list of tricopter specific parameters:
+
+- :ref:`MOT_YAW_SV_ANGLE <MOT_YAW_SV_ANGLE>` : yaw servo's maximum lean angle in degrees.  This allows for the rear motor's thrust to be adjusted appropriately depending upon the lean angle of the rear motor.  The default is 30 degrees.  "0" would mean the rear servo can only point directly up (which would not allow the vehicle to fly), "90" means the rear servo can point horizontally.
+- :ref:`SERVO7_MIN <SERVO7_MIN>`: yaw servo's lowest PWM value before binding occurs.
+- :ref:`SERVO7_MAX <SERVO7_MAX>`: yaw servo's highest PWM value before binding occurs.
+- :ref:`SERVO7_TRIM <SERVO7_TRIM>`: yaw servo's PWM value close to what is required to keep the tail from spinning.
+- :ref:`SERVO7_REVERSED <SERVO7_REVERSED>`: yaw servo's reverse setting.  0 = servo moves in default direction, 1 to reverse direction of movement.
+
+The RC output channel used for the tail servo can be changed from it's default (channel 7) by setting the appropriate SERVOX_FUNCTION to 39.
+For example the :ref:`Pixracer <common-pixracer-overview>` only has 6 output channels so the tail servo can be moved to output channel 5 by setting :ref:`SERVO5_FUNCTION <SERVO5_FUNCTION>` to 39.
+Note that if the output channel is changed, the SERVOX_MIN, SERVOX_MAX, SERVOX_TRIM and SERVOX_REVERSED must be set appropriately for the new output channel.
+
+Copter 3.4.x
 =======================
 
 - :ref:`MOT_YAW_SV_ANGLE <MOT_YAW_SV_ANGLE>` : yaw servo's maximum lean angle in degrees.  This allows for the rear motor's thrust to be adjusted appropriately depending upon the lean angle.  The default is 30 degrees.  "0" would mean the rear servo can only point directly up (which would not allow the vehicle to fly), "90" means the rear servo can point horizontally.
@@ -20,7 +39,7 @@ The channel used for the tail servo can be changed from it's default (channel 7)
 
 See Copter 3.3 section below for more parameters that can be adjusted.
 
-Copter 3.3 (and higher)
+Copter 3.3.x
 =======================
 
 -  :ref:`MOT_YAW_SV_MIN <MOT_YAW_SV_MIN>`: yaw servo's lowest PWM value before binding occurs.
