@@ -220,10 +220,12 @@ If all works well, you should see this:
     :width: 100%
 
 .. note::
-If you get error from gazebo [Server.cc:376] Could not open file [wolrds/iris_arducopter_demo.world]
-you can download it here
-https://bitbucket.org/osrf/gazebo/pull-requests/2450/ardupilot-refactor-and-minor-improvements/diff
-and copy it to /usr/share/gazebo-7/worlds
+
+
+   If you get error from gazebo [Server.cc:376] Could not open file [wolrds/iris_arducopter_demo.world]
+   you can download it here
+   https://bitbucket.org/osrf/gazebo/pull-requests/2450/ardupilot-refactor-and-minor-improvements/diff
+   and copy it to /usr/share/gazebo-7/worlds
 
 .. note::
 
