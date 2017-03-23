@@ -80,8 +80,7 @@ Testing the flap movement
 Video of the first ArduPilot powered SingleCopter
 =================================================
 
-..  vimeo:: 77850133
-    :width: 100%
+https://vimeo.com/77850133
 
 Below are non-ArduPilot single copters and coax copters to provide inspiration:
 
