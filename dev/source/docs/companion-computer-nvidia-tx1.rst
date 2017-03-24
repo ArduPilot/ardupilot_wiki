@@ -24,6 +24,9 @@ Connect to the Pixhawk with a ground station (i.e. Mission Planner) and set the 
 -  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the Pixhawk can communicate with the TX1 at 921600 baud.
 -  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the TX1
 
+You may need to manually disable flow control on Telem2 although this is not normally required:
+-  :ref:`BRD_SER2_RTSCTS <copter:BRD_SER2_RTSCTS>` = 0
+
 Setup the TX1
 =============
 
