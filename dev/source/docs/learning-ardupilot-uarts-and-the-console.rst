@@ -54,7 +54,9 @@ If you have a board that does have HAL_OS_POSIX_IO set (check that
 in
 `AP_HAL/AP_HAL_Boards.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/AP_HAL_Boards.h>`__)
 then try adding some ::printf() and other stdio functions to the
-UART_test sketch.
+UART_test sketch. 
+
+If ::printf doesn't work for you, it may be that your particular file ( eg a library ) does not have "#include <stdio.h>" at the top of it, just add it. :-) 
 
 Note that on some boards (eg. the Pixhawk) hal.console->printf() goes to
 a different place to ::printf(). On the Pixhawk a hal.console->printf()
