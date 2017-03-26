@@ -44,6 +44,17 @@ Serial / UART
 - relatively fast at 57Kbps ~ 1.5Mbps
 - at least 4 pins required (VCC, GND, TX, RX), plus 2 optional pins (Clear-To-Send, Clear-To-Receive)
 
+CAN bus with UAVCAN
+-------------------
+
+- multimaster bus, any node can initiate transmittion of data when they need to
+- packet based protocol for very long distances
+- high speed, typically 1 Mb (however only 50% of the bus bitrate can really be used without major collisions)
+- at least 3 pins required (GND, CAN HI, CAN LO). Optionally VCC can be used to power nodes
+- point-to-point topology. Star or stubs topolgy is not advised
+- termination is required at each end of the bus
+.. image:: ../images/code-overview-can-bus.png
+
 FrontEnd / BackEnd Split
 ========================
 
