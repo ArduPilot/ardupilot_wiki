@@ -4,7 +4,7 @@
 ArduPilot Libraries
 ===================
 
-The \ `the libraries <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__ are
+The \ `libraries <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__ are
 shared with Copter, Plane and Rover. Below is a high level list of
 libraries and their function.
 
