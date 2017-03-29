@@ -35,7 +35,7 @@ Key parameters are:
 .. note::
 
    The QuadPlane code requires GPS lock for proper operation. This is
-   inherited from the plane code, which disables intertial estimation of
+   inherited from the plane code, which disables inertial estimation of
    attitude and position if GPS lock is not available. Do not try to fly a
    QuadPlane indoors. It will not fly well
 
