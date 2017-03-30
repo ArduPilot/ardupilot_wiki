@@ -26,7 +26,7 @@ on Mac OS X (ver 10.6 onwards) with *Make*.
        brew tap PX4/homebrew-px4
        brew update
        brew install genromfs
-       brew install gcc-arm-none-eabi
+       brew install gcc-arm-none-eabi-49
 
 #. Install the latest version of awk using brew (make sure
    **/usr/local/bin** takes precedence in your path):
