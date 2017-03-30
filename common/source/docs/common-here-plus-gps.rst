@@ -24,9 +24,14 @@ Connecting the vehicle and base station GPSs
 ============================================
 
 The Here+ GPS kit comes with a larger round GPS (also knows as the "Rover") that should be mounted on the vehicle so that the round button is on the top and the faint arrow is pointing forwards.
-This GPS is connected to the flight controller using the supplied 8-pin clickmate connector (if using a Pixhawk2) or an optional 4pin+6pin DF13 connector.
+This GPS is connected to the flight controller using the supplied 8-pin clickmate connector (if using a Pixhawk2) or an optional 4pin+6pin DF13 connector (if using Pixhawk1).
 
 A smaller GPS (also known as the "base station") labelled "here+" is also included along with it's external antenna.  This GPS is connected to the ground station PC using the supplied USB cable.
+
+Below is a diagram showing how to connect the Here+ to a Pixhawk1.
+
+.. image:: ../../../images/here-plus-pixhawk.png
+	:target: ../_images/here-plus-pixhawk.png
 
 Installing the Drivers
 ======================
