@@ -27,6 +27,7 @@ Development
 - `ArduPilot Gitter MAVProxy chat <https://gitter.im/ArduPilot/MAVProxy>`__ discussion related to the MAVProxy ground station
 - `ArduPilot Gitter MQTT protocol chat <https://gitter.im/ArduPilot/MQTT>`__
 - `ArduPilot Gitter pymavlink chat <https://gitter.im/ArduPilot/pymavlink>`__
+- `ArduPilot Gitter Research chat <https://gitter.im/ArduPilot/Research>`__ discussion of academic and industry research using ArduPilot
 - `ArduPilot Gitter Vision Projects <https://gitter.im/ArduPilot/ardupilot/VisionProjects>`__ for ROS, OpenCV and other image processing related development
 - `ArduPilot Gitter Wiki chat <https://gitter.im/ArduPilot/ardupilot_wiki>`__ for discussion of wiki enhancements
 
