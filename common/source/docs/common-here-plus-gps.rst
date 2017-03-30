@@ -36,10 +36,20 @@ Below is a diagram showing how to connect the Here+ to a Pixhawk1.
 Installing the Drivers
 ======================
 
-Windows 10 users (and perhaps others) will need to download and install the `u-blox GNSS VCP Device Driver for Windows <https://www.u-blox.com/sites/default/files/ubloxGnss_vcpDeviceDriver_windows_3264_v3.01.exe>`__.
+Windows 10 users (and perhaps others) will need to download and install the `u-blox GNSS Standard Driver for Windows, v1.2.0.8 <https://www.u-blox.com/sites/default/files/products/tools/UBX-GNSS-CDC-ACM-windows_Driver_%28UBX-drv-v1.2.0.8%29.exe.zip>`__.
+
 If this link is broken you may find a newer version is available under the "Driver" section of `this ublox page <https://www.u-blox.com/en/product-resources?f[0]=property_file_product_filter%3A2779>`__.
 
-If installed correctly, when plugged in, the GPS should appear in the Device Manager as "u-blox Virtual COM Port".
+When first installed, the device may show up in the "sensors" catagory in device manager.  If this happens, please right click on it and "update driver" 
+select 
+"Browse my computer for driver software"
+then select 
+"Let me pick from a list of devices"
+the next screen will show a list of possible drivers.  Select..
+"USB Serial Device"
+Select next and finish.
+
+If installed correctly, when plugged in, the GPS should appear in the Device Manager as "USB Serial Device".
 
 .. image:: ../../../images/here-plus-gps-windows-device.png
 	:target: ../_images/here-plus-gps-windows-device.png
