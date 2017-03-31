@@ -45,11 +45,46 @@ Enabling RTK GPS through Mission Planner
 - Connect the "here+" base station to the ground station PC
 - Connect to the vehicle's flight controller (i.e. Pixhawk, Pixhawk2, etc) using Mission Planner
 - Open the Initial Setup >> Optional Hardware >> RTK GPS Inject screen
+- Place the vehicle and base stations so that their GPS antennas have a clear view of the sky (i.e. this will not work indoors!).
+- For first time setup in a new location, click the Enter Base Position button, make sure the dialogue box shows empty location information, as shown below:
+.. image:: ../../../images/Here_Plus_MP1.png
+	:target: ../_images/Here_Plus_MP1.png
+	
+- In the SurveyIn Acc input box, key in the absolute accuracy of base station you wish to achieve, in the unit of meters (for example, 0.50 means 50cm accuracy). In the Time(s) input box, key in a reference time in seconds. Depending on your desired accuracy, the base station may take more than your input time to achieve the desired accuracy. 
+
+.. image:: ../../../images/Here_Plus_MP2.png
+	:target: ../_images/Here_Plus_MP2.png
+	
 - Select the COM port for the base station and press Connect (the baud rate drop-down normally does not need to be set because it is automatically detected)
 - "M8P autoconfig" should be checked
-- Place the vehicle and base stations so that their GPS antennas have a clear view of the sky (i.e. this will not work indoors!).
-- After approximately 5min the base station's position should have "Surveyed In", press "Save Current Position"
-- on the Flight Data screen, the GPS message should show "RTK Fix"
-
 .. image:: ../../../images/here-plus-gps-mission-planner.png
 	:target: ../_images/here-plus-gps-mission-planner.png
+	
+- The satellite information will be visualized as green bars as shown in the screen shot below.
+
+.. image:: ../../../images/Here_Plus_MP3.png
+	:target: ../_images/Here_Plus_MP3.png		
+A line of text will indicate the current status of the surveying:
+SurveyIn indicates whether the survey has achieved the desired accuracy of base station, it will show ‘true’ when the survey has been completed.
+
+InProgress shows whether the survey is still ongoing. A completed survey of the current base position is indicated by the status messages SurveyIn Valid: True, and InProgress: false.
+
+Duration: the duration of the survey in seconds
+
+Obs: number of observations used for the survey
+
+Acc: current accuracy in meters
+
+- When the survey is completed as indicated by the SurveyIn: True message, you may click the ‘Save current pos’ button and enter a name for the saved position.
+- The RTK messages from base station is sent to vehicle by Mavlink message. In the main HUD of Mission Planer, the GPS status should display RTK Fix or RTK Float
+
+.. image:: ../../../images/Here_Plus_MP4.png
+	:target: ../_images/Here_Plus_MP4.png		
+	
+- The information of the saved position will be displayed in the table as shown in the screen shot below. 
+
+.. image:: ../../../images/Here_Plus_MP5.png
+	:target: ../_images/Here_Plus_MP5.png	
+	
+- The saved position can be used the next time you set up the base station in the exact same location. However, if you change to another location for surveying, please ensure you clear the position information in the dialogue box that pops up when you click ‘Enter Base Position’. Otherwise, the previously saved point will be taken every time you connect to the base module.
+
