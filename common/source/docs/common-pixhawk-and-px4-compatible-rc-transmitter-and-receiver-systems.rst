@@ -195,11 +195,13 @@ Spektrum Satellite Receivers Operate on PPM-Sum
 
 -  Currently satellites only work with the Spektrum DX7 and DX8
    transmitters, Transmitters with more channels are (in progress).
--  Please note that you can use a Spektrum Satellite receiver with
-   Pixhawk or PX4 if you bind it to the transmitter using a main
-   Spektrum receiver module. It is not currently supported to bind the
-   Satellite receiver directly to the transmitter while the receiver is
-   connected to the Pixhawk or PX4.
+-  The sattelite reciever can be bound to transmitter with Mission Planner.
+   This functionality is located in Radio Claibration screen on
+   Initial Setup.
+
+.. image:: ../../../images/dsm_bind.png
+    :target: ../_images/dsm_bind.png
+
 -  Being a satellite, range is limited with this configuration and the
    preceding receivers and methods will provide greater range.
 
