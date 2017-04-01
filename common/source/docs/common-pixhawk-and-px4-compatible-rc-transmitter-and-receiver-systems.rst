@@ -195,8 +195,8 @@ Spektrum Satellite Receivers Operate on PPM-Sum
 
 -  Currently satellites only work with the Spektrum DX7 and DX8
    transmitters, Transmitters with more channels are (in progress).
--  The sattelite reciever can be bound to transmitter with Mission Planner.
-   This functionality is located in Radio Claibration screen on
+-  The satellite receiver can be bound to transmitter with Mission Planner.
+   This functionality is located in Radio Calibration screen on
    Initial Setup.
 
 .. image:: ../../../images/dsm_bind.png
