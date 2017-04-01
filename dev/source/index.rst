@@ -81,6 +81,10 @@ ArduPilot dev team.
    controller and some periphers including the OSD. A "Dummy's Guide" to
    working with MAVLink is
    `here <http://diydrones.com/group/arducopterusergroup/forum/topics/mavlink-tutorial-for-absolute-dummies-part-i?xg_source=activity>`__.
+-  `UAVCAN* <http://uavcan.org>`__ -
+   Lightweight protocol designed for reliable communication in aerospace and robotic 
+   applications via CAN bus. Ardupilot is using the `Libuavcan <http://uavcan.org/Implementations/Libuavcan/>`__,
+   which is a portable, cross-platform library written in C++ with minimal dependency on the C++ standard library.
 
 Getting Started with ArduPilot Development
 ==========================================
@@ -149,6 +153,7 @@ Full Table of Contents
     Debugging <docs/debugging>
     Contributing <docs/contributing>
     MAVLink Commands <docs/mavlink-commands>
+    CAN and UAVCAN <docs/can-bus>
     Companion Computers <docs/companion-computers>
     ROS <docs/ros>
     Pixhawk Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
