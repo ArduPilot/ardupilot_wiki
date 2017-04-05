@@ -88,10 +88,10 @@ select the button corresponding to your autopilot controller:
 -  For APM 2.6, select **APM with External Compass**.
 -  For APM 2.5, select **APM (Internal Compass)**.
 
-If your external compass is in a non-standard orientation, you must
-manually select the orientation in the combo box (change from
-``ROTATION_NONE``). Compass orientations are relative to the flight
-controller, not the airframe!
+If your external compass is in a non-standard orientation, you must manually 
+select the orientation in the combo box (change from ``ROTATION_NONE``). 
+When externally connected the COMPASS_ORIENT option operates independently 
+of the AHRS_ORIENTATION board orientation option.
 
 Most users will then only need to press the **Live Calibration** button
 and perform a :ref:`Live Calibration <common-compass-setup-advanced_live_calibration_of_offsets>`.
