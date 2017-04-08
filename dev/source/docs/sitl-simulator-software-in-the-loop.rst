@@ -71,4 +71,5 @@ port numbers depending on your environment.
     Using the CRRCSim simulator <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
     SITL on Windows in a VM <setting-up-sitl-on-windows>
     Using X-Plane 10 with SITL <sitl-with-xplane>
+    Soaring SITL with X-Plane <soaring-sitl-with-xplane>
     
