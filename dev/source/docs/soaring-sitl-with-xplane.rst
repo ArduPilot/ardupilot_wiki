@@ -9,7 +9,7 @@
 Soaring SITL with X-Plane
 =========================
 
-As of April 2017, ArduPlane has a :ref:`soaring capability <soaring>` that allows many fixed-wing aircraft to stay in the air without motor power by exploiting rising air currents called *thermals*. These instructions are intended for people who would like to try out ArduPlane's soaring controller in a :ref:`software-in-the-loop (SITL) simulation <sitl-simulator-software-in-the-loop>` with X-Plane, a popular commercial flight simulator. 
+As of March 2017, ArduPlane has a :ref:`soaring capability <soaring>` that allows many fixed-wing aircraft to stay in the air without motor power by exploiting rising air currents called *thermals*. These instructions are intended for people who would like to try out ArduPlane's soaring controller in a :ref:`software-in-the-loop (SITL) simulation <sitl-simulator-software-in-the-loop>` with X-Plane, a popular commercial flight simulator. 
 
 |br|
 
@@ -25,9 +25,9 @@ The instructions have been tested on Windows 8.1 and 10.
 Setting up X-Plane
 ==================
 
-#. **Download the** `X-Plane 10 demo <http://www.x-plane.com/update/installers10/X-Plane10InstallerWindows.zip>`_ **or buy the full version.**
+#. **Download the** `X-Plane 10 demo <http://www.x-plane.com/desktop/try-it/older/>`_ **or buy the full version.**
 
-   X-Plane 11 may also work, but hasn't been tested with with the soaring SITL.
+   X-Plane 11 also works, but the instructions below assume X-Plane 10's UI.
 
    .. warning::
       The demo version will prevent you from controlling the plane manually after 15 minutes of flying or so, but flying in ArduPlane modes that don’t require manual input, e.g., Auto, and switching modes from a ground control station such as :ref:`Mission Planner <mission-planner-overview>` will work even after that.
@@ -46,7 +46,7 @@ Setting up X-Plane
    b)	Calibrate it (this needs to be done only the first time you use it as your joystick). You can do so in Windows (on Windows 10: *Start menu -> Settings -> Devices -> Printers and Scanners -> Devices and Printers*) or in X-Plane (start X-Plane, hover near the top of the X-Plane window, and in the toolbar at that appears at the top of the window go to *Settings -> Joystick & Equipment*). For more info on joystick calibration in X-Plane, please refer to the `Setup of X-Plane 10 <http://ardupilot.org/dev/docs/sitl-with-xplane.html#setup-of-x-plane-10>`_. 
    
    .. note::   
-      This setup allows you to control throttle, yaw, pitch, and roll. Other commands, such as switching modes, will have to be issued via a ground control station or some other means.
+      This setup allows you to control throttle, yaw, pitch, and roll. Other commands, such as switching modes, will have to be issued via Mission Planner or some other means.
 
    |br|
    
@@ -64,7 +64,7 @@ Setting up X-Plane
 
    Unfortunately, the X-Plane 10 demo doesn’t provide airfoils for most of the above models, and refuses to load these models without them. Fortunately, someone has created and published the airfoils too!
    
-   `Download the airfoils from here <http://forums.x-plane.org/index.php?/files/file/6953-several-naca-64-series-airfoils/>`_. In general, `this X-Plane forum thread <http://forums.x-plane.org/index.php?/files/category/3-airfoils/>`_ has more.
+   `Download the airfoils from here <http://forums.x-plane.org/index.php?/files/file/6953-several-naca-64-series-airfoils/>`_. As an aside, `this X-Plane forum thread <http://forums.x-plane.org/index.php?/files/category/3-airfoils/>`_ has more.
    
    To install them, extract the .afl files from the downloaded archive into *%XPlane-install-dir%\\Airfoils*.  This will enable you to fly, at the very least, Vee-gull 005 and Houston Hawk.
 
@@ -97,13 +97,13 @@ Setting up ArduPlane SITL
 
 #. **Install** `Mission Planner <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`_. 
 
-   Mission Planner is the ground control station we will use to monitor the simulation's flight parameters, control the virtual aircraft's flight modes, load flight routes/missions, etc. More info on it is available `here <http://ardupilot.org/planner/docs/mission-planner-overview.html>`_. 
+   Mission Planner is the ground control station we will use to monitor the simulation, control the virtual aircraft's flight modes, load flight routes/missions, etc. More info on it is available `here <http://ardupilot.org/planner/docs/mission-planner-overview.html>`_. 
 
    |br|
 
 #. **Install and configure Cygwin.**
 
-   The process is described in `a section of Setting Up SITL on Windows wiki <http://ardupilot.org/dev/docs/sitl-native-on-windows.html#install-cygwin>`_. For the purposes of the soaring SITL, you don’t need to perform the steps in the *Set up directories/paths in Cygwin* and *Install Required Python Packages* sections of that wiki, but doing them won’t hurt.
+   The process is described in `a section of the Setting Up SITL on Windows wiki <http://ardupilot.org/dev/docs/sitl-native-on-windows.html#install-cygwin>`_. For the purposes of the soaring SITL, you don’t need to perform the steps in the *Set up directories/paths in Cygwin* and *Install Required Python Packages* sections of that wiki, but doing them won’t hurt.
 
    |br|
 
@@ -131,7 +131,7 @@ Setting up ArduPlane SITL
 
        .. tip::
 
-           Run *waf-light distclean* and erase the ArduPilot\Logs directory every time you make a build that you actually intend to use (as opposed to building just for the sake of checking whether your new code compiles and links without errors). Building the ArduPlane binaries with waf-light from scratch, as above, takes only a few minutes. Not doing full cleanup beforehand occasionally results in extremely bizarre behavior of the produced binaries that can take much more time to investigate.
+           Run *waf-light distclean* and erase the *ArduPilot\\Logs* directory every time you make a build that you actually intend to use (as opposed to building just for the sake of checking whether your new code compiles and links without errors). Building the ArduPlane binaries with waf-light from scratch, as above, takes only a few minutes. Not doing full cleanup beforehand occasionally results in extremely bizarre behavior of the produced binaries that can take much more time to investigate.
 
     |br|
            
@@ -185,7 +185,7 @@ Running soaring SITL with X-Plane
       :target: ../_images/Loading_SITL_params_via_MP.jpg
       
    .. warning::
-      ArduPilot's parameters largely determine how an aircraft behaves, and setting them correctly is very important. This is especially true for :ref:`soaring-specific <soaring>` parameters. Failure to choose appropriate values for them can cause a sailplane to miss all thermals or try to catch a thermal where there is none. Refer to `the instructions for calculating these parameters <http://ardupilot.org/plane/docs/soaring.html#tune-the-tecs>`_ for your sailplane model.    
+      ArduPilot's parameters largely determine how an aircraft behaves, and setting them correctly is very important. This is especially true for :ref:`soaring-specific <soaring>` parameters. Failure to choose appropriate values for them can cause a sailplane to miss all thermals or repeatedly try to catch a thermal where there is none. Refer to `the instructions for calculating these parameters <http://ardupilot.org/plane/docs/soaring.html#tune-the-tecs>`_ for your sailplane model.    
   
    
    If everything has worked correctly so far, you should see the Cygwin window where you launched SITL start getting filled with notifications of the kind ``Data rate: 19.9 FPS  Frame rate:466.9 FPS``, like so: 
@@ -202,7 +202,7 @@ Running soaring SITL with X-Plane
    .. figure:: ../images/X-Plane_weather_menu.jpg
       :target: ../_images/X-Plane_weather_menu.jpg
    
-   To enable thermals, set *thermal coverage* to something higher than 0 and possibly change *thermal climb-rate*. It should be higher than you sailplane's `SOAR_VSPEED <http://ardupilot.org/plane/docs/soaring.html#set-up-the-soaring-parameters>`_ parameter. To make the mission a bit more challenging, you can also set wind speed, gust, shear, and turbulence above 0, but don't overdo it --- setting turbulence higher than 1 will make an RC sailplane-sized aircraft extremely difficult to control.
+   To enable thermals, set *thermal coverage* to something higher than 0 and possibly change *thermal climb-rate*. It should be higher than you sailplane's `SOAR_VSPEED <http://ardupilot.org/plane/docs/soaring.html#set-up-the-soaring-parameters>`_ parameter. To make the mission a bit more challenging, you can also set wind speed, gust, shear, and turbulence above 0, but don't overdo it --- setting turbulence higher than 1 will make an RC sailplane-sized aircraft very difficult to control.
 
    The settings in the screenshot below are an example. The only changes from the defaults are in the thermal settings and low-altitude wind layer: 
    
@@ -213,7 +213,7 @@ Running soaring SITL with X-Plane
       You must re-activate thermals and any other weather settings every time you restart the simulation in X-Plane, e.g., by crashing your plane!
       
    .. tip::   
-      If your aircraft does not seem to be detecting any thermals, the first thing to check is whether thermals are enabled in the simulation.
+      If your aircraft does not seem to be detecting any thermals, the first thing to check is whether thermals are enabled in X-Plane.
  
    |br|
 
@@ -242,7 +242,7 @@ Running soaring SITL with X-Plane
       .. figure:: ../images/X-Plane_aircraft_situations.jpg
          :target: ../_images/X-Plane_aircraft_situations.jpg
       
-      On the screen that appears, click **Glider-Winch**. Now, release the brakes and, when the aircraft takes off and stops gaining altitude, release the winch. At the same time, set the mode to *Auto* in Mission Planner.    
+      On the screen that appears, click **Glider-Winch**. Now, release the brakes and, when the aircraft takes off and stops gaining altitude, release the winch. Simultaneously, set the mode to *Auto* in Mission Planner.    
    
 Happy soaring!
       
