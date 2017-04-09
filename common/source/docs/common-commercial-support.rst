@@ -334,6 +334,28 @@ consultant and test pilot.
 
 --------------
 
+Aerotech LLC
+--------------------------------
+.. image:: ../../../images/Aerotech_logo_small.jpg
+    :target: http://www.avia-technologies.com/
+
+Email: info@avia-technologies.com
+
+Location: Dnipro, Ukraine
+
+Website: http://www.avia-technologies.com/
+
+**Capabilities:**
+
+-  Consultation Services
+-  Customizations of Ardupilot code
+-  Airframe, custom electronics and mechanical design and manufacturing
+-  Vehicle Setup - Plane
+-  Training and testing services
+-  Groundstation systems design and manufacturing
+
+--------------            
+
 David "Buzz" Bussenschutt
 -------------------------
 
