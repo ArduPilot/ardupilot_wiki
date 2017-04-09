@@ -336,7 +336,7 @@ consultant and test pilot.
 
 Aerotech LLC
 --------------------------------
-.. image:: ../../../images/Aerotech_logo_small.jpg
+.. image:: ../../../images/Aerotech_logo_small.png
     :target: http://www.avia-technologies.com/
 
 Email: info@avia-technologies.com
