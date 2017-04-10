@@ -64,7 +64,7 @@ Setting up X-Plane
 
    Unfortunately, the X-Plane 10 demo doesn’t provide airfoils for most of the above models, and refuses to load these models without them. Fortunately, someone has created and published the airfoils too!
    
-   `Download the airfoils from here <http://forums.x-plane.org/index.php?/files/file/6953-several-naca-64-series-airfoils/>`_. As an aside, `this X-Plane forum thread <http://forums.x-plane.org/index.php?/files/category/3-airfoils/>`_ has more.
+   The airfoils are in `NACA_64_xxx_Airfoils_from_TR824.zip in the ArduPilot repo <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/XPlane>`_. Originally, this archive comes from `here <http://forums.x-plane.org/index.php?/files/file/6953-several-naca-64-series-airfoils/>`_, and `this X-Plane forum thread <http://forums.x-plane.org/index.php?/files/category/3-airfoils/>`_ is a good place to look for more airfoils.
    
    To install them, extract the .afl files from the downloaded archive into *%XPlane-install-dir%\\Airfoils*.  This will enable you to fly, at the very least, Vee-gull 005 and Houston Hawk.
 
@@ -163,7 +163,7 @@ Running soaring SITL with X-Plane
 
 #. **Launch Mission Planner and connect it to SITL.**
 
-   Mission Planner and SITL will talk via the TCP protocol. To establish the connection, choose “TCP” on the *Connect* drop-down menu in the top left corner of the Mission Planner menu and specify port 5760:
+   Mission Planner and SITL will talk via the TCP protocol. To establish the connection, choose “TCP” from the drop-down menu near the *Connect* button in the top right corner of the Mission Planner window, hit the *Connect* button, and specify port 5760:
  
    .. figure:: ../images/MissionPlanner_ConnectTCP.jpg
       :target: ../_images/MissionPlanner_ConnectTCP.jpg
@@ -184,6 +184,8 @@ Running soaring SITL with X-Plane
    .. figure:: ../images/Loading_SITL_params_via_MP.jpg
       :target: ../_images/Loading_SITL_params_via_MP.jpg
       
+   When you load and set parameters from a file for the first time after (re-)building ArduPlane, Mission Planner may display a message such as "Parameter refresh required --- press F5", and the simulation may even crash -- you will see "ERROR: Floating point exception - aborting" in the Cygwin window where you started the simulation. This is not unusual. Just restart the simulation by running ``build/sitl/bin/arduplane --model xplane`` in Cygwin, reconnect to it by pressing *Connect* in Mission Planner, and repeat the above process for loading parameters from a file. This time everything will work smoothly.
+ 
    .. warning::
       ArduPilot's parameters largely determine how an aircraft behaves, and setting them correctly is very important. This is especially true for :ref:`soaring-specific <soaring>` parameters. Failure to choose appropriate values for them can cause a sailplane to miss all thermals or repeatedly try to catch a thermal where there is none. Refer to `the instructions for calculating these parameters <http://ardupilot.org/plane/docs/soaring.html#tune-the-tecs>`_ for your sailplane model.    
   
@@ -224,7 +226,7 @@ Running soaring SITL with X-Plane
    .. figure:: ../images/X-Plane_mission_selection.jpg
       :target: ../_images/X-Plane_mission_selection.jpg
    
-   An example `Soaring in Seattle.waypoints <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/X-Plane>`_ mission file is available in *ArduPlane\\Tools\\autotest\\X-Plane*.
+   An example `Soaring in Seattle.waypoints <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/XPlane>`_ mission file is available in *ArduPlane\\Tools\\autotest\\X-Plane*.
    
    To fly a mission, have your RC sailplane take off in X-Plane, and then in Mission Planner set the mode to *Auto*:
    
