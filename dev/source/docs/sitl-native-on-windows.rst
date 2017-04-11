@@ -31,6 +31,10 @@ how to interact with the simulator using
 Installation steps
 ==================
 
+   .. tip::
+
+      An automatic download and installation script for MAVProxy, Cygwin, JSBSim and ArduPilot can be found `here <https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/autotest/win_sitl/InstallCygwinAPM.ps1>`__. After downloading the file, right click -> Run in Powershell.
+      
 Install MAVProxy
 ----------------
 
@@ -283,6 +287,10 @@ Windows not setting paths correctly. For more information see `this issue <https
 Running SITL and MAVProxy
 =========================
 
+   .. tip::
+
+      Use batch files to simplify the running of SITL down to a single double-click. See `here <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/win_sitl>`__ for some examples.
+      
 *MAVProxy* is commonly used by developers to communicate with SITL. To
 build and start SITL for a 4-core CPU and then launch a *MAVProxy map*:
 
