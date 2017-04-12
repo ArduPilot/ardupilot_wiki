@@ -4,11 +4,8 @@
 Circle Mode
 ===========
 
-Circle will orbit a point of interest with the nose of the vehicle
-pointed towards the center.
-
-The radius of the circle can be controlled by modifying the
-CIRCLE_RADIUS parameter.
+Circle will orbit a point located CIRCLE_RADIUS centimeters in front
+of the vehicle with the nose of the vehicle pointed at the center.
 
 .. note::
 
