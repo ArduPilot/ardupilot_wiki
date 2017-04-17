@@ -58,12 +58,10 @@ Connecting and configuring with a ground station
 
 - regular :ref:`compass <common-compass-calibration-in-mission-planner>`, :ref:`Radio <common-radio-control-calibration>`, :ref:`accelerometer calibration <common-accelerometer-calibration>` is required (:ref:`ESC calibration <esc-calibration>` is not required)
 
-<common-compass-calibration-in-mission-planner>
-
 Known Issues with the Transmitter
 =================================
 
-- the transmitter should always be powered on before the vehicle.  If powered on after the vehicle it may lose it's binding to the receiver.  They can be re-bound by turning off the transmitter and then turning it back on again with the "BIND/PANIC/TRAINER" button pressed.
+- the transmitter should always be powered on before the vehicle.  If powered on after the vehicle it may lose its binding to the receiver.  They can be re-bound by turning off the transmitter and then turning it back on again with the "BIND/PANIC/TRAINER" button pressed.
 - the "MOTOR/THROW" switch on the back-right of the transmitter should always be left in the "ARM" position or the throttle value sent to the vehicle will be too low
 - the "FLAP" switch is connected to Ch7 so it can be used as an auxiliary switch but position "0" is actually On, "2" is off.
 - "AUX" and "RATE" switches are not configured to have any effect
