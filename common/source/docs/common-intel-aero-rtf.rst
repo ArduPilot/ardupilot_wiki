@@ -49,7 +49,7 @@ Connecting and configuring with a ground station
 
 - Connect a Lipo battery to the vehicle
 - Turn on the vehicle by pushing the "Power" button found between the two rear arms
-- From your PC, connect to the vehicle's wifi access point (normally starts with "Aero-"), the default password is "123456789"
+- From your PC, connect to the vehicle's wifi access point (normally starts with "Aero-"), the default password is "1234567890"
 - Start the ground station (i.e. mission planner), select "UDP" from the connection type and press "Connect"
 - The default parameter file can be uploaded from the Mission Planner's Full Parameter Tree screen (raw parameter file is `here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/intel-aero-rtf.param>`__)
 
