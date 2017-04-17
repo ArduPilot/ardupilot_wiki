@@ -34,6 +34,7 @@ Closed hardware
     NAVIO2 <common-navio2-overview>
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
     Intel Aero <common-intel-aero-overview>
+    Intel Aero RTF vehicle <common-intel-aero-rtf>
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
     Parrot C.H.U.C.K (for the Parrot Disco) <common-CHUCK-overview>
     
