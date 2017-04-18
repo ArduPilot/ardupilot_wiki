@@ -1861,13 +1861,6 @@ paths (both vertically and horizontally) instead of straight lines.
 Spline waypoints can be mixed with regular straight line waypoints as
 shown in the screenshot below.
 
-.. note::
-
-   Spline waypoints were introduced in AC3.2. As of AC3.2-rc4, there
-   is a slight twitch as the vehicle passes through each spline waypoint. 
-   This is a technical issue that we hope to resolve in an upcoming
-   release.
-
 **Command parameters**
 
 .. raw:: html
@@ -1916,8 +1909,6 @@ shown in the screenshot below.
    </tr>
    </tbody>
    </table>
-
-**Mission planner screenshots**
 
 .. figure:: ../../../images/MissionList_SplineWaypoint.jpg
    :target: ../_images/MissionList_SplineWaypoint.jpg
