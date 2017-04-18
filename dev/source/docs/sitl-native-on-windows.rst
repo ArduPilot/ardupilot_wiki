@@ -53,12 +53,8 @@ Install Cygwin
 `Cygwin <http://www.cygwin.com/>`__ provides the tools and libraries
 that allow us to rebuild ArduPilot on Windows.
 
-#. Download and run the `Cygwin 32-bit installer <https://cygwin.com/setup-x86.exe>`__.
+#. Download and run the `Cygwin 32-bit installer <https://cygwin.com/setup-x86.exe>`__ or the `Cygwin 64-bit installer <https://cygwin.com/setup-x86_64.exe`__.
 
-   .. tip::
-
-      The 32 bit version is preferred over the 64-bit version, which
-      is missing one of our dependencies (procps)
 
 #. Accept the all the prompts (including default file locations) until
    you reach the *Select Packages* dialog.There are thousands of
@@ -99,7 +95,7 @@ that allow us to rebuild ArduPilot on Windows.
    +----------------+----------------------------------------------------------------------------------+
    | libxslt-devel  | Libs \| libxslt-devel: XML template library (development files)                  |
    +----------------+----------------------------------------------------------------------------------+
-   | python-devel   | Python \| python-devel: Ptyhon language interpreter                              |
+   | python-devel   | Python \| python-devel: Ptyhon 2 language interpreter                            |
    +----------------+----------------------------------------------------------------------------------+
    | procps         | System \| procps-ng: System and process monitoring utilities (required for pkill)|
    +----------------+----------------------------------------------------------------------------------+
