@@ -86,3 +86,8 @@ Improving the vehicle's center of gravity
 
 In the default configuration the vehicle is tail heavy but its center of gravity can be improved by shifting the battery forward.
 Either attach the battery to the underside of the vehicle (instead of between the upper and lower platforms) or remove one of the blue pillars as shown above.
+
+More flight videos
+==================
+..  youtube:: 3lu9xq8Cm1E
+    :width: 100%
