@@ -77,3 +77,12 @@ Known Issues with the Transmitter
 - "AUX" and "RATE" switches are not configured to have any effect
 
 The last three issues mentioned above could be resolved by reprogramming the transmitter using a `Spektrum TX/RX USB Programming Cable <https://www.spektrumrc.com/Products/Default.aspx?ProdID=SPMA3065>`__
+
+Improving the vehicle's center of gravity
+=========================================
+
+.. image:: ../../../images/intel-aero-battery-placement.jpg
+    :target: ../_images/intel-aero-battery-placement.jpg
+
+In the default configuration the vehicle is tail heavy but its center of gravity can be improved by shifting the battery forward.
+Either attach the battery to the underside of the vehicle (instead of between the upper and lower platforms) or remove one of the blue pillars as shown above.
