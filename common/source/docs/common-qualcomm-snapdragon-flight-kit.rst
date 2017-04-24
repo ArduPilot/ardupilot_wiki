@@ -357,8 +357,7 @@ board.
 
 .. note::
 
-   This is an interim solution until Qualcomm/Intrinsyc release an
-   ESC add-on control board for the Qualcomm Flight.
+   `Qualcomm/Intrinsyc have released a ESC <https://shop.intrinsyc.com/collections/dragonboard-accessories/products/qualcomm-electronic-speed-control-board>`__ for use with this board but it has not been tested for use with ArduPilot.
 
 Logging
 =======
