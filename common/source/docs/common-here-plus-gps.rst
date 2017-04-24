@@ -4,7 +4,7 @@
 Here+ RTK GPS
 =============
 
-This article provides a brief overview of how to setup a Here+ RTK GPS receiver which is based on the Ublox M8N.
+This article provides a brief overview of how to setup a Here+ RTK GPS receiver which is based on the Ublox M8P.
 Like other RTK GPSs, the Here+ can provide much more accurate position estimates than regular GPSs but normally requires the use of a 2nd GPS connected to the ground station.
 These instructions focus on the setup using Mission Planner on Windows but in the future other ground stations (i.e. QGroundControl) will also support this GPS.
 
