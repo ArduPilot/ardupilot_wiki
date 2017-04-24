@@ -334,28 +334,6 @@ consultant and test pilot.
 
 --------------
 
-Aerotech LLC
---------------------------------
-.. image:: ../../../images/Aerotech_logo_small.png
-    :target: http://www.avia-technologies.com/
-
-Email: info@avia-technologies.com
-
-Location: Dnipro, Ukraine
-
-Website: http://www.avia-technologies.com/
-
-**Capabilities:**
-
--  Consultation Services
--  Customizations of Ardupilot code
--  Airframe, custom electronics and mechanical design and manufacturing
--  Vehicle Setup - Plane
--  Training and testing services
--  Groundstation systems design and manufacturing
-
---------------            
-
 David "Buzz" Bussenschutt
 -------------------------
 
@@ -458,6 +436,28 @@ Website: http://www.ardupilotinitiative.com/
 The ArduPilot Initiative provides tailored services to professional and commercial users of ArduPilot.  Services cover anything ArduPilot related from troubleshooting logs, adding new features, integrating new sensors/payloads, developing hardware to work with ArduPilot, and tuning assistance.  The ArduPilot Initiative has a deep bench of lead and core developers available to field the right team for your custom needs.
 
 In addition to supporting ArduPilot developers through customer based tasks, ArduPilot Initiative makes a contribution from every task to the ArduPilot.org non-profit.  This provides two ways to keep ArduPilot going strong and improve the community! 
+
+--------------       
+
+Aerotech LLC
+--------------------------------
+.. image:: ../../../images/Aerotech_logo_small.png
+    :target: http://www.avia-technologies.com/
+
+Email: info@avia-technologies.com
+
+Location: Dnipro, Ukraine
+
+Website: http://www.avia-technologies.com/
+
+**Capabilities:**
+
+-  Consultation Services
+-  Customizations of Ardupilot code
+-  Airframe, custom electronics and mechanical design and manufacturing
+-  Vehicle Setup - Plane
+-  Training and testing services
+-  Groundstation systems design and manufacturing
 
 --------------            
 
