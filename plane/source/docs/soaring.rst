@@ -68,15 +68,17 @@ Tune the TECS
 
 The TECS needs to be set up to fly the aircraft at a consistent airspeed when 
 gliding. To achieve this, set TECS_SPDWEIGHT to 2.0, set SOAR_ENABLE to 1 and set
-SOAR_THML_VSPEED to a large number, say 50.0. This means that the aircraft will 
+SOAR_VSPEED to a large number, say 50.0. This means that the aircraft will 
 glide but will never begin thermalling. Set SOAR_ALT_CUTOFF to an altitude you
 feel comfortable with. It should be high enough to allow a good length of time to
 be spent gliding. 
 Launch the aircraft and put it in AUTO mode. It should climb to SOAR_ALT_CUTOFF 
 and then begin a gliding descent.
 Watch the telemetry graphs or look at the Dataflash logs. Is the aircraft maintaining
-the demanded airspeed? You will probably need to increase PTCH2SRC_IMAX and
-TECS_INTEG_GAIN.
+the demanded airspeed? The demanded airspeed can be seen in the Dataflash log as 
+TECS.spdem, and via telemetry you can use NAV_CONTROLLER_OUTPUT.aspd_error. You will 
+probably need to increase PTCH2SRV_IMAX and TECS_INTEG_GAIN to achieve good airspeed
+tracking in gliding flight.
 
 Estimate Aircraft Drag
 ===================
