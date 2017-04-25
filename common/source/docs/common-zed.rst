@@ -24,7 +24,7 @@ Setup
 =====
 
 - connect the flight controller and TX1 as shown on the `NVidia TX1 as a Companion Computer <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html>`__ wiki page
-- flash the TX1 as described in the `Setup the TX1 <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-tx1>`__ section of the above wiki page but use the apsync-tx1-with-openkai image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/beta/>`__
+- flash the TX1 as described in the `Setup the TX1 <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-tx1>`__ section of the above wiki page but use the apsync-tx1-openkai image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/beta/>`__
 - mount the ZED camera upside-down and using vibration dampeners to the front of the vehicle.  It can be mounted right-side-up after `connecting with ssh <http://ardupilot.org/dev/docs/apsync-intro.html#connecting-with-ssh>`__ and then modify `~/src/OpenKAI/kiss/apmCopter.kiss <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss#L60>`__ so "bFlip" is 1
 
 .. image:: ../../../images/zed-enrouteex700.jpg
@@ -42,6 +42,11 @@ Ensure that Copter-3.6 (or higher) is loaded onto the flight controller and conn
 - set :ref:`GPS_TYPE <GPS_TYPE>` to 0 (disable the GPS)
 - set :ref:`VISO_TYPE <VISO_TYPE>` to 1 (enable visual odometry)
 - optionally set :ref:`PRX_TYPE <PRX_TYPE>` to 2 (enable using ZED's depth map for object avoidance)
+
+Optionally you may also:
+
+- set the :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y  <VISO_POS_Y>` and :ref:`VISO_POS_Z  <VISO_POS_Z>` to account for the camera's offset from the IMU or vehicle's center-of-gravity (:ref:`more details here <common-sensor-offset-compensation>`)
+- mount the camera in other orientations and change the :ref:`VISO_ORIENT <VISO_ORIENT>` parameter.  Note: if you are using the ZED's depth sensing you will also need to modify `OpenKai's configuration <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss>`__  (not documented)
 
 Ground Testing
 ==============
@@ -64,9 +69,7 @@ Flight testing
 DataFlash logging
 =================
 
-The ZED's visual odometry information will appear in the VISO dataflash log messages.
-
-Distance to objects ahead of the vehicle will appear in the PRX messages.
-
-EKF's visual odometry information will appear in XKFD messages
+- The ZED's visual odometry information will appear in the VISO dataflash log messages.
+- Distance to objects ahead of the vehicle will appear in the PRX messages.
+- EKF's visual odometry information will appear in XKFD messages
 
