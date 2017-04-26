@@ -26,6 +26,7 @@ Setup
 - connect the flight controller and TX1 as shown on the `NVidia TX1 as a Companion Computer <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html>`__ wiki page
 - flash the TX1 as described in the `Setup the TX1 <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-tx1>`__ section of the above wiki page but use the apsync-tx1-openkai image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/beta/>`__
 - mount the ZED camera upside-down and using vibration dampeners to the front of the vehicle.  It can be mounted right-side-up after `connecting with ssh <http://ardupilot.org/dev/docs/apsync-intro.html#connecting-with-ssh>`__ and then modify `~/src/OpenKAI/kiss/apmCopter.kiss <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss#L60>`__ so "bFlip" is 1
+- in order to download the ZED camera's calibration parameters from stereolabs.com, connect the TX1 to the internet with an ethernet cable during powerup (this procedure is only required once)
 
 .. image:: ../../../images/zed-enrouteex700.jpg
     :target: ../_images/zed-enrouteex700.jpg
