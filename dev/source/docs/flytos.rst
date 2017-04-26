@@ -16,6 +16,7 @@ FlytOS is based on Linux and ROS (Robot Operating System), making it an ideal pl
 
 This makes it easy to build high-level applications using computer-vision, machine-learning, cloud-connectivity and enables developers to create their custom user-interfaces on web/mobile devices of their choice. FlytOS also has modules to manage payloads, security and updates. The modular design of FlytOS allows for integration with external ROS/Linux libraries and custom data plumbing between onboard and offboard apps. FlytOS aims to provide a standard language for the drone application developers to talk to their drones.
 
+
 .. youtube:: CZFVWDN5Gcc
         :width: 100%
 
