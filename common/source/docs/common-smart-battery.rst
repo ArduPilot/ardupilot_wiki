@@ -56,6 +56,8 @@ Limitations
 Additional information
 ======================
 
-`SMBus specifications (see ver 1.1, ver 2.0) <http://smbus.org/specs/>`__
+- `SMBus specifications (see ver 1.1, ver 2.0) <http://smbus.org/specs/>`__
+- `Maxell battery announcement (Japanese only) <https://prtimes.jp/main/html/rd/p/000000006.000019742.html>`__
 
-`Maxell battery announcement (Japanese only) <https://prtimes.jp/main/html/rd/p/000000006.000019742.html>`__
+..  youtube:: eIiOLvGYcDs
+    :width: 100%
