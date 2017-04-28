@@ -148,6 +148,7 @@ Install required Python packages
    python -m ensurepip --user
    python -m pip install --user future
    python -m pip install --user lxml
+   python -m pip install --user uavcan
 
 
 Download and make ArduPilot
