@@ -15,7 +15,8 @@ recommended for use with ArduPilot (in alphabetical order).
 * `Drotek <https://drotek.com/>`__
 * `Emlid <https://emlid.com/shop/>`__
 * `EnRoute <http://www.enroute.co.jp/>`__
-* `Erle Robotics <https://erlerobotics.com/>`__ 
+* `Erle Robotics <https://erlerobotics.com/>`__
+* `Harris Aerial <https://www.harrisaerial.com/shop/>`__
 * `Hex <http://www.hex.aero/shop/>`__ 
 * `JapanDrones <http://japandrones.com/>`__
 * `jDrones <http://store.jdrones.com/>`__
