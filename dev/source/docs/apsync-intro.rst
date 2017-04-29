@@ -24,7 +24,7 @@ Wifi Access Point & DataFlash logging
 .. image:: ../images/apsync-wifiap-dflogger.png
     :target: ../_images/apsync-wifiap-dflogger.png
 
-On start-up an access point is created with name "ardupilot" and password "enRouteArduPilot".
+On start-up an access point is created with name "ardupilot" and password "ardupilot".
 
 The user can connect to this access point and then easily connect to ardupilot running on the flight controller by setting their ground station (including Mission Planner) to connect using "UDP".
 
