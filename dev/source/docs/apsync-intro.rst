@@ -51,7 +51,8 @@ Simple Configuration Web page
 .. image:: ../images/apsync-configurator.png
     :target: ../_images/apsync-configurator.png
 
-A light weight webserver will run on the companion computer (perhaps using CherryPy).  The user will be able to connect to the drone using a known URL and change configuration information including:
+A light weight webserver runs on the companion computer (using CherryPy).
+The user can connect to the drone using a known URL (`http://10.0.1.128:8000 <http://10.0.1.128:8000`__) and change configuration information including:
 
 - wifi access point name and password
 - list of trusted wifi access points
@@ -59,7 +60,7 @@ A light weight webserver will run on the companion computer (perhaps using Cherr
 
 .. warning::
 
-   The APSync project is still in beta.  This Simple Configuration portion is not implemented (yet).
+   The APSync project is still in beta.  This Simple Configuration portion is only partially implemented and currently only allows starting and stopping the simple video stream.
 
 Flexible Video
 ==============
@@ -72,7 +73,7 @@ This allows more reliable and flexible streaming as the ground station can disco
 
 .. warning::
 
-   The APSync project is still in beta.  This Flexible Video portion is not implemented (yet).
+   The APSync project is still in beta.  This Flexible Video portion is not implemented yet.  Currently a video stream is sent to the IP address of the first ground station that requests telemetry data.
 
 .. _apsync-intro-installing-apsync:
 
