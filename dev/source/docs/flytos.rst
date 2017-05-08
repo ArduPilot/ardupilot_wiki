@@ -65,12 +65,16 @@ FlytOS comes bundled with Vision-based Object-Tracking and Following module. To 
 .. youtube:: bom1VEcxwEA
         :width: 100%
 
+|br|
+
 SONAR based obstacle detection
 ------------------------------
 
-One could enable his/her drone with a minimalistic obstacle detection by using SONAR, capturing its data, integrating it with FlytOS and eventually maneuvering the drone through an obstacle course. We have provided a `sample implementation <>`, of using Arduino to trigger SONAR and then transmit the captured data to a companion computer. Using this data, one could write a simple onboard ROS/cpp/python app navigating the drone using FlytAPIs.
+One could enable his/her drone with a minimalistic obstacle detection by using SONAR, capturing its data, integrating it with FlytOS and eventually maneuvering the drone through an obstacle course. We have provided a `sample implementation <https://github.com/flytbase/flytsamples/tree/master/Sample-Projects/sonar_obstacle_sensor>`_, of using Arduino to trigger SONAR and then transmit the captured data to a companion computer. Using this data, one could write a simple onboard ROS/cpp/python app navigating the drone using FlytAPIs.
 
-|br|
+
+Important Links
+---------------
 
 `Download FlytOS <https://my.flytbase.com/downloads/>`_ now, and get started with Companion Computer of your choice. Follow `FlytOS installation instructions <http://docs.flytbase.com/docs/FlytOS/GettingStarted/FlytOSInstallationGuide.html>`_ and post your queries/issues on FlytOS `forum <http://forums.flytbase.com/>`_. Use the detailed `API reference <http://api.flytbase.com/>`_ to develop drone apps using your preferred language (Python, C++, ROS, RESTful, Websocket, etc.). A rich set of `sample applications <https://github.com/flytbase/flytsamples>`_ are available for the developers to get started quickly.
 
