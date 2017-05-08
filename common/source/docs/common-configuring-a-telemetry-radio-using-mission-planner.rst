@@ -103,3 +103,8 @@ Other parameters you may choose to update:
    Note that in many regions you need to implement LBT in conjunction
    with AFA (Adaptive Frequency Agility). The radio implements AFA as
    long as you have ``NUM_CHANNELS`` set to more than 1.
+-  **RTS CTS** hardware flow control. If you are using a ArduPilot
+   firmware version released after mid 2016 and you have connected your
+   radio to Pixhawk Telem1 Telem2 or other RTS/CTS supporting telemetry
+   port then you can activate this, or set it to auto to improve
+   performance.
