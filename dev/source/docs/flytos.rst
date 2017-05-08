@@ -28,6 +28,22 @@ FlytOS provides several developer tools, such as FlytSDK and FlytSIM, to further
 
 `FlytSIM <http://docs.flytbase.com/docs/FlytOS/Developers/Flytsim.html>`_ is a ROS/Gazebo based simulator to test applications built using FlytAPIs. This allows developers to build and test drone applications, safely and efficiently, minimising the requirement for flight-tests.
 
+Supported Companion Computers
+=============================
+
+* Raspberry Pi3 `[installation instructions] <http://docs.flytbase.com/docs/FlytOS/GettingStarted/RaspiGuide.html>`_
+* Odroid-XU4 `[installation instructions] <http://docs.flytbase.com/docs/FlytOS/GettingStarted/OdroidGuide.html>`_
+* Nvidia-TX1 `[installation instructions] <http://docs.flytbase.com/docs/FlytOS/GettingStarted/TX1Guide.html>`_
+* FlytPOD `[installation instructions] <http://docs.flytbase.com/docs/FlytOS/GettingStarted/FlytPODGuide.html>`_
+* Intel Edison `[installation instructions] <http://docs.flytbase.com/docs/FlytOS/GettingStarted/EdisonGuide.html>`_
+* Intel Aero `[installation instructions] <http://docs.flytbase.com/docs/FlytOS/GettingStarted/AeroGuide.html>`_
+* Intel Joule (*launching soon*)
+* Qualcomm Snapdragon Flight (*launching soon*)
+* Nvidia-TX2 (*launching soon*)
+
+Supported Languages
+===================
+
 
 Vision-based Object-Tracking and Following
 ==========================================
