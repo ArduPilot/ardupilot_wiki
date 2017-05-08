@@ -10,8 +10,8 @@ The project is the result of an immense amount of effort from software and hardw
 Corporate Partners
 ==================
 
-.. image:: ../../../images/supporters/supporters_logo_EnRoute.png
-    :target:  http://www.enroute.co.jp/home/
+.. image:: ../../../images/supporters/supporters_logo_elab.png
+    :target:  http://elab.co.jp/
 
 .. image:: ../../../images/supporters/supporters_logo_jDrones.png
     :target:  http://www.jDrones.com/home/
