@@ -26,7 +26,7 @@ FlytOS provides several developer tools, such as FlytSDK and FlytSIM, to further
 
 `FlytSDK <http://docs.flytbase.com/docs/FlytOS/Developers/BuildingCustomApps.html#remote-apps>`_ is the software development kit for web and android developers, to help them get started quickly with FlytOS. A number of `sample applications <https://github.com/flytbase/flytsamples>`_ are available on github, that can be used as templates/reference to build custom applications.
 
-`FlytSIM <http://docs.flytbase.com/docs/FlytOS/Developers/Flytsim.html>`_ is a ROS/Gazebo based simulator to test applications built using FlytAPIs. This allows developers to build and test drone applications, safely and efficiently, minimising the requirement for flight-tests.
+`FlytSIM <http://docs.flytbase.com/docs/FlytOS/Developers/Flytsim.html>`_ is a ROS/Gazebo based simulator to test applications built using FlytAPIs. This allows developers to build and test drone applications, safely and efficiently, minimizing the requirement for flight-tests.
 
 Supported Companion Computers
 =============================
@@ -41,17 +41,34 @@ Supported Companion Computers
 * Qualcomm Snapdragon Flight (*launching soon*)
 * Nvidia-TX2 (*launching soon*)
 
+.. _supported_languages:
+
 Supported Languages
 ===================
 
 
-Vision-based Object-Tracking and Following
-==========================================
+Sample Applications
+===================
 
-FlytOS comes bundled with Vision-based Object-Tracking and Following module. To learn more about it, chekout `this blog <http://blogs.flytbase.com/computer-vision-for-drones-part-2/>`_.
+Our `FlytSamples github repository <https://github.com/flytbase/flytsamples>`_ is full of sample applications written on all the above :ref:`supported languages <supported_languages>`. Web/android developers could begin with a simple `Joystick App <https://github.com/flytbase/flytsamples/tree/master/Mobile-Apps/Java-Apps/Joystick>`_. A couple of easy-to-understand `CPP/Python/ROS based apps <https://github.com/flytbase/flytsamples/tree/master/CPP-Python-ROS-Apps>`_ are also available.
+
+GPS based Object Following
+--------------------------
+
+This android app would enable you to control your drone to follow you wherever you go based on your device's GPS location. Take a look at the `GPS Follow Me code <https://github.com/flytbase/flytsamples/tree/master/Mobile-Apps/Java-Apps/Follow_me>`_, install it in your mobile and see FlytOS in action.
+
+Vision-based Object-Tracking and Following
+------------------------------------------
+
+FlytOS comes bundled with Vision-based Object-Tracking and Following module. To learn more about it, checkout `this blog <http://blogs.flytbase.com/computer-vision-for-drones-part-2/>`_.
 
 .. youtube:: bom1VEcxwEA
         :width: 100%
+
+SONAR based obstacle detection
+------------------------------
+
+One could enable his/her drone with a minimalistic obstacle detection by using SONAR, capturing its data, integrating it with FlytOS and eventually maneuvering the drone through an obstacle course. We have provided a `sample implementation <>`, of using Arduino to trigger SONAR and then transmit the captured data to a companion computer. Using this data, one could write a simple onboard ROS/cpp/python app navigating the drone using FlytAPIs.
 
 |br|
 
