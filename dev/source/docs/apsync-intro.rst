@@ -24,7 +24,7 @@ Wifi Access Point & DataFlash logging
 .. image:: ../images/apsync-wifiap-dflogger.png
     :target: ../_images/apsync-wifiap-dflogger.png
 
-On start-up an access point is created with name "ardupilot" and password "ardupilot".
+On start-up an access point is created with name "ardupilot".  The password is "ardupilot" on TX1 and RPi, "enRouteArduPilot" on the Intel Edison.
 
 The user can connect to this access point and then easily connect to ardupilot running on the flight controller by setting their ground station (including Mission Planner) to connect using "UDP", port 14550.
 
@@ -52,7 +52,7 @@ Simple Configuration Web page
     :target: ../_images/apsync-configurator.png
 
 A light weight webserver runs on the companion computer (using CherryPy).
-The user can connect to the drone using a known URL (`http://10.0.1.128:8000 <http://10.0.1.128:8000`__) and change configuration information including:
+The user can connect to the drone using a known URL (`http://10.0.1.128:8000 <http://10.0.1.128:8000>`__) and change configuration information including:
 
 - wifi access point name and password
 - list of trusted wifi access points
