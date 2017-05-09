@@ -51,19 +51,20 @@ Choose the board to be used:
 Build
 -----
 
-Now you can build arducopter. For quadcopter use the following command:
+Now you can build arducopter. For copter use the following command:
 
 ::
 
-    waf --targets bin/arducopter-quad
+    waf --targets bin/arducopter
 
 
-To build for other frame types replace quad with one of the following options:
+To build a helicopter, specify "arducopter-heli".
+The following frame types are specified in the "Frame Type" item of the Mission Planner menu "INITIAL SETUP".
 
 ::
 
-    coax heli hexa octa octa-quad single tri y6
+    Quad Hexa Octa Octa-Quad Y6  Heli Tri
 
-In the end of compilation binary file with the name arducopter-quad will be placed in ``ardupilot/build/navio2/bin/ directory``.
+In the end of compilation binary file with the name arducopter will be placed in ``ardupilot/build/navio2/bin/ directory``.
 
 
