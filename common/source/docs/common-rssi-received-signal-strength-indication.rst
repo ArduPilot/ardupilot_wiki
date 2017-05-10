@@ -48,7 +48,7 @@ RSSI Connections
     :target: ../_images/rssi_connections_3.jpg
 
 RSSI embedded in PWM from UHF systems (Pixhawk)
-=====================================
+===============================================
 
 Both EZ-UHF and OpenLRS have the option of embedding RSSI into a PWM channel, saving you from having to add filters, etc.
 You can use any channel from channel 5 and up, but keeping the on channel 9 or above will keep your regular servo channels free.

@@ -1,8 +1,8 @@
 .. _common-teraranger-tower-objectavoidance:
 
-====================================
+=====================================
 TeraRanger Tower for Object Avoidance
-====================================
+=====================================
 
 The `TeraRanger Tower <http://www.teraranger.com/teraranger-tower/>`__ can be used for Object Avoidance in Copter-3.5 and higher in Loiter and AltHold modes.  The sensor has a maximum useable range of about 4.5 meters.
 
@@ -19,7 +19,7 @@ Mounting the Sensor
 The TeraRanger Tower should be mounted on the top of the vehicle so that sensors scans horizontally and its view is not obstructed by any portion of the vehicle including GPS mast, vehicle legs etc.
 
 Connecting to the Pixhawk
-=====================
+=========================
 
   .. image:: ../../../images/teraranger-tower-serial.png
       :target: ../_images/teraranger-tower-serial.png
@@ -47,7 +47,7 @@ The AC3.4 implementation has the following limitations.  Future versions will li
 Please report issues found in the `support forums <http://discuss.ardupilot.org/c/arducopter/copter-3-5>`__ and we will try to address them.
 
 Distance reporting
-=================
+==================
 
 The distance to the nearest object in 8 quadrants around the vehicle is recorded in the DataFlash log's PRX messages.
 Real-time distances can be seen in the Mission Planner's proximity viewer which appears automatically once distances are detected by the sensor.

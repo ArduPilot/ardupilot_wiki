@@ -279,6 +279,7 @@ or unsigned 32bit integers):**
 +---------+----------------------------------------------------------------------------------------------------+
 |         | *   9 = simple mode's initial heading in centi-degrees                                             |
 +---------+----------------------------------------------------------------------------------------------------+
+
 **EKF (Extended Kalman Filter**):
 
 :ref:`Log information here <dev:extended-kalman-filter_interpreting_log_data>`

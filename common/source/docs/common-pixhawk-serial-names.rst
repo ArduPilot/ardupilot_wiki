@@ -1,8 +1,8 @@
 .. _common-pixhawk-serial-mapping:
 
-============================
+==========================================
 Pixhawk FMUv2 / Cube FMU v3 Serial Mapping
-============================
+==========================================
 
 Many different names are given to the serial hardware on Pixhawk and
 Cube where ArduPilot is concerned.  This document attempts to supply a
