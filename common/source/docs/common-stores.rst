@@ -7,7 +7,7 @@ Stores
 The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc. 
 recommended for use with ArduPilot (in alphabetical order).
 
-* `Altigator <http://www.altigator.com/>`__
+* `AltiGator <http://www.altigator.com/>`__
 * `AUAV <http://www.auav.co/>`__
 * `Bask Aerospace <http://www.baskaerospace.com.au/>`__
 * `BlueRobotics <https://www.bluerobotics.com/store/>`__
