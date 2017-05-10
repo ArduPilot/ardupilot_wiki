@@ -1,21 +1,21 @@
 .. _common-piksi-multi-rtk-receiver:
 
 ============================
-Swift Navigaton's Piksi Multi RTK GPS Receiver
+Swift Navigation's Piksi Multi RTK GPS Receiver
 ============================
 
-This article provides a brief overview of Piksi Multi multi-band multi-constellation RTK GPS receiver. 
+This article provides a brief overview of Piksi Multi multi-band multi-constellation RTK GPS receiver, available from `Swift Navigation <http://swiftnav.com/>`__.
 
 .. image:: ../../../images/PiksiMulti.jpg
 	:target: ../_images/PiksiMulti.jpg
 
 .. note::
 
-     Piksi Multi RTK GPS is supported in Copter-3.5 (and higher), Plane 3.8.0 (and higher) and Rover 3.0.1 (and higher)
+     Piksi Multi RTK GPS is supported in Copter-3.5 (and higher), Plane 3.8.0 (and higher) and Rover 3.1 (and higher)
 
 .. note::
 
-     The previous offering from Swift Navigation, Piksi v2, is still supported by ArduPilot. That being said, Swift has announced the end-of-life of that receiver, and new units are no longer available. `Deprecated integration documentation for Piksi v2 is available here <http://docs.swiftnav.com/wiki/Integrating_Piksi_with_the_Pixhawk_platform>`__.
+     The previous offering from Swift Navigation, Piksi v2, is still supported by ArduPilot. That being said, Swift has announced Piksi v2's end-of-life, and new units are no longer available. Deprecated integration documentation for Piksi v2 is `available here <http://docs.swiftnav.com/wiki/Integrating_Piksi_with_the_Pixhawk_platform>`__.
 
 What is Piksi Multi?
 ====================
@@ -29,7 +29,7 @@ Real-time Kinematic GPS is a signal processing technique that improves the accur
 
 However, RTK GPS can only calculate centimeter-accurate positions once an integer ambiguity is resolved. For single-frequency receivers, ambiguity resolution algorithms have runtimes on the order of minutes. Multi-frequency receivers can additionally exploit information contained in the difference between the two frequencies. This insight allows Piksi Multi and other multi-frequency receivers to achieve RTK fixes in seconds.
 
-ArduPilot integration
+ArduPilot Integration
 =====================
 
 See the `ArduPilot Integration Guide for Piksi Multi <https://support.swiftnav.com/customer/portal/articles/2803651-piksi-multi-ardupilot-integration-guide>`__ supplied by Swift Navigation.
