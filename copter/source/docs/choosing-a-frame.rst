@@ -10,6 +10,8 @@ below are three options from
 other choices.  This page will hopefully give some guidance on the
 choices available.
 
+ArduPilot is capable of controlling :ref:`many different vehicles <common-all-vehicle-types>`.
+
 .. image:: ../images/ChoseAFrame_Image.jpg
     :target: ../_images/ChoseAFrame_Image.jpg
 
