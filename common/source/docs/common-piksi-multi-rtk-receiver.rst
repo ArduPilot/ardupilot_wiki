@@ -1,10 +1,10 @@
 .. _common-piksi-multi-rtk-receiver:
 
 ============================
-Swift Navigaton's Piksi Multi RTK GPS Receiver
+Swift Navigation's Piksi Multi RTK GPS Receiver
 ============================
 
-This article provides a brief overview of Piksi Multi multi-band multi-constellation RTK GPS receiver. 
+This article provides a brief overview of Piksi Multi multi-band multi-constellation RTK GPS receiver, available from `Swift Navigation <http://swiftnav.com/>`__.
 
 .. image:: ../../../images/PiksiMulti.jpg
 	:target: ../_images/PiksiMulti.jpg
