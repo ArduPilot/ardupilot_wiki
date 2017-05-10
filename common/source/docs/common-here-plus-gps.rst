@@ -62,6 +62,7 @@ Enabling RTK GPS through Mission Planner
 - Open the Initial Setup >> Optional Hardware >> RTK GPS Inject screen
 - Place the vehicle and base stations so that their GPS antennas have a clear view of the sky (i.e. this will not work indoors!).
 - For first time setup in a new location, click the Enter Base Position button, make sure the dialogue box shows empty location information, as shown below:
+
 .. image:: ../../../images/Here_Plus_MP1.png
 	:target: ../_images/Here_Plus_MP1.png
 	
@@ -72,6 +73,7 @@ Enabling RTK GPS through Mission Planner
 	
 - Select the COM port for the base station and press Connect (the baud rate drop-down normally does not need to be set because it is automatically detected)
 - "M8P autoconfig" should be checked
+
 .. image:: ../../../images/here-plus-gps-mission-planner.png
 	:target: ../_images/here-plus-gps-mission-planner.png
 	
@@ -79,6 +81,7 @@ Enabling RTK GPS through Mission Planner
 
 .. image:: ../../../images/Here_Plus_MP3.png
 	:target: ../_images/Here_Plus_MP3.png		
+
 A line of text will indicate the current status of the surveying:
 SurveyIn indicates whether the survey has achieved the desired accuracy of base station, it will show ‘true’ when the survey has been completed.
 

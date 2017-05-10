@@ -1,15 +1,15 @@
 .. _common-navio2-wiring-and-quick-start:
 
-==============================
+======================================
 NAVIO2 Assembly and Wiring Quick Start
-==============================
+======================================
 
 This article provides information about attaching :ref:`NAVIO2 <common-navio2-overview>` to a Raspberry Pi,  powering and connecting its most important peripherals.
 
 .. _common-navio2-wiring-and-quick-start_attaching_navio2:
 
 Attaching NAVIO2 to a Raspberry Pi
-=================
+==================================
 
 ArduPilot on Navio2 is working on:
 
@@ -35,7 +35,7 @@ To mount NAVIO2:
 
 
 Powering NAVIO2
-=================
+===============
 
 Navio2 has three power sources, all of them can be used simultaneously as they are protected by ideal diodes.
 
@@ -85,7 +85,7 @@ For FASST (Futaba & some FrSky trasmitters):
 .. _common-navio2-wiring-quick-start_gnss_navio2:
 
 GNSS Antenna
-===========
+============
 
 GNSS antenna is plugged into the MCX port on top of NAVIO2.
 
@@ -117,7 +117,7 @@ Depending on your hardware there may be any number of other peripherals attached
 
 
 Telemetry
------------
+---------
 Radio modems can be connected either over UART or over USB.
 
 - UART radio
@@ -136,7 +136,7 @@ Use /dev/ttyUSB0 virtual serial port for USB.
 
 
 Servos
------------
+------
 
 Servos are connected to RC outputs labeled from 1 to 14 on a 2.54mm header.
 

@@ -53,6 +53,7 @@ CAN bus with UAVCAN
 - at least 3 pins required (GND, CAN HI, CAN LO). Optionally VCC can be used to power nodes
 - point-to-point topology. Star or stubs topolgy is not advised
 - termination is required at each end of the bus
+
 .. image:: ../images/code-overview-can-bus.png
 
 FrontEnd / BackEnd Split

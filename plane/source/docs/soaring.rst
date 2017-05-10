@@ -1,8 +1,8 @@
 .. _soaring:
 
-====================
+=======
 Soaring
-====================
+=======
 
 The Autonomous Soaring functionality in ardupilot allows the plane to respond to 
 rising air current (thermals) in order to extend endurance and gain altitude with 
@@ -37,7 +37,7 @@ functionality:
 
 
 Setting up soaring
-====================
+==================
 
 To use your plane for soaring, it should ideally be a glider type aircraft with 
 a good lift to drag ratio and be equipped with an airspeed sensor. There are a 
@@ -49,7 +49,7 @@ few steps involved in setting a plane up for soaring:
 #. Set up the soaring parameters.
 
 Mission Setup
-====================
+=============
 
 The main requirement for a mission is that it take the aircraft above SOAR_ALT_CUTOFF
 so that gliding flight is initiated. To achieve this, set the waypoint altitude 
@@ -64,7 +64,7 @@ above SOAR_ALT_CUTOFF.
 
 
 Tune the TECS
-====================
+=============
 
 The TECS needs to be set up to fly the aircraft at a consistent airspeed when 
 gliding. To achieve this, set TECS_SPDWEIGHT to 2.0, set SOAR_ENABLE to 1 and set
@@ -81,7 +81,7 @@ probably need to increase PTCH2SRV_IMAX and TECS_INTEG_GAIN to achieve good airs
 tracking in gliding flight.
 
 Estimate Aircraft Drag
-===================
+======================
 
 To work out how fast the air is rising or sinking the autopilot needs to know the
 aircraft's sink rate for a given airspeed in still air. This is related to the 
@@ -95,7 +95,7 @@ SOAR_POLAR_K = 16*Weight/Area
 (weight in kg, area in metres squared).
 
 Set up the Soaring Parameters
-====================
+=============================
 
 Change the SOAR_VSPEED parameter back to a sensible value. Remember, 
 this parameter controls when the mode will be changed to LOITER and thermalling 

@@ -83,7 +83,7 @@ steps would be
 - add a libraries/AP_SensorHead/examples/SensorTest test prog, to test the protocol
 - implement the protocol within STM32. I'd start by implementing it as an alternative serial output type within ArduPilot firmware (see SerialManager library). Later we may do a more bare metal fw for lower end STM32
 - implement SensorHead backends for each of the key sensor libs. So for example libraries/AP_Baro/AP_Baro_SensorHead.cpp
-same for AP_InertialSensor, AP_Compass, AP_GPS
+- same for AP_InertialSensor, AP_Compass, AP_GPS
 
 these will be very thin wrappers around calls inside libraries/AP_SensorHead/
 
