@@ -73,7 +73,7 @@ Specifications
    -  TELEM1/TELEM2
    -  Wifi serial
    -  FrSky Telemetry serial
-   -  Dronecode Debug connector (serial + SWD)
+   -  Debug connector (serial + SWD)
    -  Connectors: GPS+I2C, RC-IN, PPM-IN, RSSI, SBus-IN, Spektrum-IN,
       USART3 (TxD, RxD, CTS, RTS), USART2 (TxD, RxD, CTS, RTS),
       FRSky-IN, FRSky-OUT, CAN, USART8 (TxD, RxD), ESP8266 (full set),
@@ -88,8 +88,7 @@ Specifications
 Connector pin assignments
 =========================
 
-Unless noted otherwise all connectors are JST GH (as required by the
-`Dronecode connector standards <https://wiki.dronecode.org/workgroup/connectors/start>`__).
+Unless noted otherwise all connectors are JST GH
 
 TELEM1, TELEM2+OSD ports
 ------------------------
@@ -376,7 +375,7 @@ Switch
    </tbody>
    </table>
 
-Dronecode debug port (JST SM06B connector)
+Debug port (JST SM06B connector)
 ------------------------------------------
 
 .. raw:: html
