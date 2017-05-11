@@ -4,9 +4,15 @@
 APSync
 ======
 
-APSync is a project sponsored by `EnRoute <http://enroute.co.jp/>`__ which simplifies the setup of companion computers so that they can be used to provide additional functionality to ArduPilot and also to ease integration with internet services.
+APSync is a project sponsored by `eLab <http://elab.co.jp/>`__ which simplifies the setup of companion computers so that they can be used to provide additional functionality to ArduPilot and also to ease integration with internet services.
 
-The first beta has started with support the first section listed below (Wifi Access Point & DataFlash logging) for the :ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>` and :ref:`Intel Edison <intel-edison>`.
+The current release automatically creates a Wifi Access Point on startup, allows DataFlash logging to the companion copmuter and "simple" real-time video streaming from a camera on the drone to the ground station.
+
+The supported companion computers are the :ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>` and :ref:`Intel Edison <intel-edison>`.
+
+.. note::
+
+   Video streaming from the Intel Edison is not supported (yet).
 
 :ref:`Installation instructions <apsync-intro-installing-apsync>` are at the bottom of this page.
 
@@ -73,7 +79,7 @@ This allows more reliable and flexible streaming as the ground station can disco
 
 .. warning::
 
-   The APSync project is still in beta.  This Flexible Video portion is not implemented yet.  Currently a video stream is sent to the IP address of the first ground station that requests telemetry data.
+   The APSync project is still in beta.  This Flexible Video portion is not implemented yet.  Currently a single video stream is sent to the IP address of the first ground station that requests telemetry data.
 
 .. _apsync-intro-installing-apsync:
 
