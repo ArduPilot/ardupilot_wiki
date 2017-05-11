@@ -1,0 +1,36 @@
+.. _rtf:
+
+=====================
+Ready-To-Fly vehicles
+=====================
+
+The following is a list of ready-to-fly vehicles that run ArduPilot that can be easily purchased over the internet.
+These vehicles come pre-configured with everything required to fly, drive or swim right out of the box.
+
+.. note::
+
+   We recommend, when possible, to purchase from our `Partners <http://ardupilot.org/about/Partners>`__ because they directly support ArduPilot and we are more confident that users can upgrade the firmware on the vehicle.
+
+Vehicles from Partners
+======================
+
+* `BlueROV2 from Blue Robotics <http://bluerobotics.com/store/rov/bluerov2/>`__
+
+Vehicles from Non-Partners
+==========================
+
+* 3DR Solo from `Best Buy <http://www.bestbuy.com/site/3dr-solo-drone-black/5351035.p?skuId=5351035>`__ or `B&H Photo <https://www.bhphotovideo.com/c/product/1189763-REG/3dr_solo_quadcopter_with_3_axis.html>`__
+* 3DR IRIS from `Northox <https://northox.myshopify.com/collections/frontpage/products/iris-drone>`__
+* 3DR Aero from `RiseAbove <http://www.riseabove.com.au/3dr-aero-m-915>`__ or `UAVSystems <https://uavsystemsinternational.com/product/3d-robotics-aero-m/>`__
+* 3DR Quad from `DroneFever <http://dronefever.com/3DR-ArduCopter-Quad-D-Almost-Ready-to-Fly.html>`__
+* Cheerson CX-20 from `Amazon <https://www.amazon.com/Cheerson-CX-20-CX20-Auto-Pathfinder-Quadcopter/dp/B00J7OGX9C>`__ (uses now-unsupported APM2 compatible controller)
+* HobbyKing Aperture Hexacopter (`mode1 <https://hobbyking.com/en_us/aperture-rtf-m1.html>`__, `mode2 <https://hobbyking.com/en_us/aperture-rtf-m2.html>`__)
+* `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
+* Walkera Tali H500 from `helipal <http://www.helipal.com/walkera-qr-tali-h500-gps-drone-2-4ghz-rtf-edition.html>`__ or `HobbyKing <https://hobbyking.com/en_us/walkera-tali-h500-gps-hexacopter-with-3-axis-gimbal-and-battery-pnf.html>`__ (uses non-standard version of ArduPilot)
+* `X PlusOne from XCraft <http://store.xcraft.io/xplusone-store-xcraft-vtol-drone-sandpoint-id/copy-of-x-plusone-hdpro>`__
+
+.. note::
+
+   If you are a manufacturer of a RTF vehicle based on ArduPilot and do not appear in this list, please get in touch through one of the methods listed on our `Contact Us page <http://ardupilot.org/copter/docs/common-contact-us.html>`__.
+
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
