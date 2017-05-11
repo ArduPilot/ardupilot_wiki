@@ -204,6 +204,18 @@ indicated by the ch5 flight mode switch. (AC3.3 only)
 
    </td>
    </tr>
+   <tr>
+   <td><strong>Arm/Disarm</strong></td>
+   <td>
+
+Arms the vehicle if the switch goes high (subject to arming checks).
+Disarms the vehicle if brought low.
+AC3.5+ only
+
+.. raw:: html
+
+   </td>
+   </tr>
    </tbody>
    </table>
 
