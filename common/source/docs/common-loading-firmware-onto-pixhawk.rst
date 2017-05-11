@@ -1,16 +1,15 @@
 .. _common-loading-firmware-onto-pixhawk:
 
-========================================
-Loading Firmware onto Pixhawk/APM2.x/PX4
-========================================
+===========================================
+Loading Firmware onto the flight controller
+===========================================
 
-These instructions will show you how to download the latest firmware
-onto the Pixhawk, APM 2.x or PX4 controller.
+These instructions will show you how to download the latest firmware onto the flight controller using the Mission Planner ground station.
 
 [copywiki destination="copter,plane,rover,planner"]
 
-Connect controller to computer
-==============================
+Connect flight controller to computer
+=====================================
 
 Once you've :ref:`installed the Mission Planner <common-install-mission-planner>` onto your computer, connect
 the autopilot board to your computer using the micro USB cable as shown
@@ -20,16 +19,6 @@ below. Use a direct USB port on your computer (not a USB hub).
    :target: ../_images/pixhawk_usb_connection.jpg
 
    Pixhawk USB Connection
-
-.. figure:: ../../../images/apm_micro_usb.jpg
-   :target: ../_images/apm_micro_usb.jpg
-
-   APM USB Connection
-
-.. figure:: ../../../images/PX4FMU_PX4IO_USB.jpg
-   :target: ../_images/PX4FMU_PX4IO_USB.jpg
-
-   PX4 USB Connection
 
 Windows should automatically detect and install the correct driver
 software.
