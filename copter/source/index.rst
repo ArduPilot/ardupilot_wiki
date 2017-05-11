@@ -159,7 +159,7 @@ Getting more info
 -  Continue to the :ref:`Introduction section of this wiki. <introduction>`
 -  Use the `ArduPilot Discuss Server Forums <http://discuss.ardupilot.com/c/arducopter>`__
    to ask support questions and advice.
--  To get involved with the development of the software platform, visit the `ArduPilot development guide <http://ardupilot.org/dev/index.html>`___.
+-  To get involved with the development of the software platform, visit the `ArduPilot development guide <http://ardupilot.org/dev/index.html>`__.
 
 
 
