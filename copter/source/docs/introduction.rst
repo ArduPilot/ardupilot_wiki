@@ -24,7 +24,7 @@ management and control.
 Copter is on the cutting edge of aerial robotics and intended for those
 people who want to try advanced technology, leading edge techniques and
 new flight styles. It is already a preferred platform for numerous
-commercially available ready-to-fly vehicles, and can easily be added to
+commercially available :ref:`ready-to-fly vehicles <rtf>`, and can easily be added to
 enhance your own DIY multirotor craft.
 
 .. image:: ../images/copter-introduction-diagram.jpg
