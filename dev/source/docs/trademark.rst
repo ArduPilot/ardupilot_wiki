@@ -9,7 +9,7 @@ Trademark
 As mentioned on the `License page <http://ardupilot.org/dev/docs/license-gplv3.html>`__ we greatly appreciate those companies and individuals who have incorporated the ArduPilot software into their products for sale.
 A significant number have already done this and we expect many more to follow.
 
-In general the development team encourages the use of "ArduPilot" on products and services which incorporate the ArduPilot software but we make request the following:
+In general the development team encourages the use of "ArduPilot" on products and services which incorporate the ArduPilot software but we request the following:
 
 - The company has throughly tested the product with ArduPilot and provides after sales support to the buyer
 - An official stable release of ArduPilot is used or a release sanctioned by one of the members of the ArduPilot development team
