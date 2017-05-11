@@ -110,10 +110,6 @@ Hexa, Octo, Y6
 .. image:: ../images/MOTORS_Hexa-octo-y6.jpg
     :target: ../_images/MOTORS_Hexa-octo-y6.jpg
 
-.. note::
-
-   2014 3DR RTF Y6 uses the Y6B configuration.
-
 X8
 --
 
