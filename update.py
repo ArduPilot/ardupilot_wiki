@@ -30,7 +30,7 @@ import re
 import os
 from codecs import open
 import subprocess
-
+import sys
 
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
 ALL_WIKIS =['copter', 'plane', 'rover','antennatracker','dev','planner','planner2','ardupilot']
@@ -45,11 +45,18 @@ parser = argparse.ArgumentParser(description='Copy Common Files as needed, strip
 parser.add_argument('--site', help="If you just want to copy to one site, you can do this. Otherwise will be copied.")
 parser.add_argument('--clean', default='False', help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).")
 parser.add_argument('--cached-parameter-files', default=False, help="Do not re-download parameter files", type=bool)
+parser.add_argument('--wikis', default=None, help="Wikis to rebuild", type=str)
 args = parser.parse_args()
 #print(args.site)
 #print(args.clean)
 
-
+WIKIS=ALL_WIKIS
+if args.wikis is not None:
+    WIKIS = args.wikis.split(",")
+    for arg in WIKIS:
+        if arg not in ALL_WIKIS:
+            print("%s is not a wiki (choose from %s)" % (arg, str(ALL_WIKIS)))
+            sys.exit(1)
 
 def fetchparameters(site=args.site):
     """
@@ -89,7 +96,7 @@ def sphinx_make(site):
     Calls 'make html' to build each site
     """
     
-    for wiki in ALL_WIKIS:
+    for wiki in WIKIS:
         if site=='common':
             continue
         if not site==None and not site==wiki:
@@ -104,7 +111,7 @@ def copy_build(site):
     """
     Copies each site into the target location
     """
-    for wiki in ALL_WIKIS:
+    for wiki in WIKIS:
         if site=='common':
             continue
         if not site==None and not site==wiki:
@@ -161,14 +168,14 @@ def generate_copy_dict(start_dir=COMMON_DIR):
     #Clean existing common topics (easiest way to guarantee old ones are removed)
     #Cost is that these will have to be rebuilt even if not changed
     import glob
-    for wiki in ALL_WIKIS:
+    for wiki in WIKIS:
         files = glob.glob('%s/source/docs/common-*.rst' % wiki)
         for f in files:
             print('remove: %s' % f)
             os.remove(f)
 
     #Create destination folders that might be needed (if don't exist)
-    for wiki in ALL_WIKIS:
+    for wiki in WIKIS:
         try:
             os.mkdir(wiki)
         except:
