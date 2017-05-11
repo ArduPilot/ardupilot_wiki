@@ -81,6 +81,9 @@ Do not require GPS lock:
 -  :ref:`Sport <sport-mode>`
 -  :ref:`Land <land-mode>`
 
+Full list of flight modes
+=========================
+
 .. toctree::
     :maxdepth: 1
 
