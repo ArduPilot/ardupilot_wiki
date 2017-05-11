@@ -8,6 +8,9 @@ The :ref:`FRAME_CLASS <copter:FRAME_CLASS>` and :ref:`FRAME_TYPE <copter:FRAME_T
 
 If using the mission planner select Initial Setup, **Mandatory Hardware \| Frame Type**.
 
+.. figure:: ../images/MissionPlanner_Select_Frame-Type.jpg
+   :target: ../_images/MissionPlanner_Select_Frame-Type.jpg
+
 If using Copter-3.5 (or higher) firmware a "Frame Class" section should be visible which allows selecting the "Class" of vehicle (Quad, Hexa, Octa, etc).
 
 .. note::
@@ -19,9 +22,6 @@ Next select the frame "Type" for your vehicle. The default type is **X**.
 Diagrams of most of the available types appear below and on the :ref:`Connect ESC and Motors <connect-escs-and-motors>` page.
 
 For Tricopters, Y6, Traditional Helicopters, SingleCopters and CoaxCopters the frame type is ignored.
-
-.. figure:: ../images/MissionPlanner_Select_Frame-Type.jpg
-   :target: ../_images/MissionPlanner_Select_Frame-Type.jpg
 
 If you are using another Ground Station it should be possible to set the :ref:`FRAME_CLASS <copter:FRAME_CLASS>` and :ref:`FRAME_TYPE <copter:FRAME_TYPE>` parameters directly through a parameter update screen.
 
