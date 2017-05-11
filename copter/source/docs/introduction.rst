@@ -28,7 +28,7 @@ Key features include:
 -  :ref:`Autonomous missions <auto-mode>`: Use the ground station to define complex missions with up to hundreds of GPS wapoints.  Then switch the vehicle to "AUTO" and watch it take-off, execute the mission, then return home, land and disarm all without any human intervention.
 -  :ref:`Failsafes <failsafe-landing-page>`: The software monitors the state of the system and triggers an autonomous return-to-home in case of loss of contact with the pilot, low battery or the vehicle strays outside a defined geofence.
 -  **Flexble and customizable**: Copter can fly :ref:`all shapes and sizes of vehicles <common-all-vehicle-types>` just how you want it to because the user has access to hundreds of parameters that control its behaviour.  You won't need to touch most of them but they are there if you need them.
--  No vendor lock-in: ArduPilot is fully open source with a diverse community of developers behind it.  You remain in full control of what software is on your vehicle and how it performs.
+-  **No vendor lock-in**: ArduPilot is fully open source with a diverse community of developers behind it.  You remain in full control of what software is on your vehicle and how it performs.
 
 Getting started
 ===============
