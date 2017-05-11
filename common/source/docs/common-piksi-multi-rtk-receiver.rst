@@ -1,8 +1,8 @@
 .. _common-piksi-multi-rtk-receiver:
 
-============================
+===============================================
 Swift Navigation's Piksi Multi RTK GPS Receiver
-============================
+===============================================
 
 This article provides a brief overview of Piksi Multi multi-band multi-constellation RTK GPS receiver, available from `Swift Navigation <http://swiftnav.com/>`__.
 
@@ -23,7 +23,7 @@ What is Piksi Multi?
 Piksi Multi the first affordable multi-band multi-constellation RTK GPS unit. Not only does it provide centimeter-accurate positioning similar to other RTK GPS units, it additionally provides RTK lock times on the order of seconds. In comparison, single-frequency RTK GPS receivers require several minutes to aquire or reaquire an RTK FIX.
 
 What is RTK GPS and why does multi-frequency matter?
-=================================================
+====================================================
 
 Real-time Kinematic GPS is a signal processing technique that improves the accuracy of a GPS receiver by removing sources of error through comparison with a second GPS receiver. Real-time kinematic (RTK) GPS exploits information about the GPS carrier wave to improve the accuracy of position estimates. RTK GPS compares the phase of the received carrier wave between two GPS receivers to derive an accurate vector between a stationary base station GPS and moving rover GPS. Note the requirement for two GPS receivers, in comparison to conventional GPS positioning that requires only a single receiver. This approach can provide centimeter-accurate positioning with millisecond latencies.
 
@@ -33,4 +33,3 @@ ArduPilot Integration
 =====================
 
 See the `ArduPilot Integration Guide for Piksi Multi <https://support.swiftnav.com/customer/portal/articles/2803651-piksi-multi-ardupilot-integration-guide>`__ supplied by Swift Navigation.
-
