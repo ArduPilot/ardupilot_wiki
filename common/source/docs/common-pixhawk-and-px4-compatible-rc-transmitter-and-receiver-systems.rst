@@ -1,17 +1,17 @@
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems:
 
-============================================================
-Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4)
-============================================================
+==============================================
+Compatible RC Transmitter and Receiver Systems
+==============================================
 
 This article provides an overview of the RC Transmitter and Receiver
-Systems that can be used with Pixhawk (and PX4) along with guidance on
+Systems that can be used with ArduPilot along with guidance on
 how they are connected.
 
 Overview
 ========
 
-Pixhawk is compatible with 
+ArduPilot is compatible with
     #. PPM RC receivers
     #. Futaba S.Bus receivers 
     #. Spektrum DSM and DSM2 receivers
@@ -137,8 +137,7 @@ Futaba Transmitter Compatible With Futaba S-Bus Receivers
 Futaba S.BUS2 receivers are supported since Copter/Plane 3.2. The SBUS
 receiver must be connected to the PPM input, not the adjacent SBUS output.
 
-The list of supported receivers for the Pixhawk (or a PX4FMU in
-combination with a PX4IO board) is given below:
+The list of supported receivers is:
 
 -  Futaba / Ripmax `R7008SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7675>`__ S.BUS 2 Receiver
 -  Futaba / Ripmax `R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__ S.BUS Receiver
@@ -148,10 +147,6 @@ combination with a PX4IO board) is given below:
    (tested by PX4 core team, very lightweight, only 7g)
 -  FrSky FASST compatible S.BUS compatible TFR8 SB 8ch 2.4Ghz Receiver
    (`HobbyKing <http://www.hobbyking.com/hobbyking/store/__24785__FrSky_TFR8_SB_8ch_2_4Ghz_S_BUS_Receiver_FASST_Compatible.html>`__)
-
-.. note::
-
-   The list above is from `pixhawk.org here <https://pixhawk.org/peripherals/radio-control/futaba/start?s[]=sbus#sbussbus_2>`__.
 
 .. image:: ../../../images/FutabaT8FG.jpg
     :target: ../_images/FutabaT8FG.jpg
@@ -211,35 +206,22 @@ Spektrum Satellite Receivers Operate on PPM-Sum
 .. image:: ../../../images/PX4SpektrumSatellite1.jpg
     :target: ../_images/PX4SpektrumSatellite1.jpg
 
-PPM encoder and telemetry radio
-===============================
+PPM encoder
+===========
 
-A `PPM Encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ will
-allow you to use any Conventional RC receiver. Both the new and previous
-versions of the *3DR PPM-Sum encoder* (the linked encoder is compatible) are shown
-below:
-
-.. figure:: ../../../images/PPM_cables_-_Copy.jpg
-   :target: ../_images/PPM_cables_-_Copy.jpg
-
-   Newest 3DR PPM-Sum encoder
+A `PPM Encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ allows you to use older RC receivers that output each channel on a separate pin.
 
 .. figure:: ../../../images/PPMEncoderDesc.jpg
    :target: ../_images/PPMEncoderDesc.jpg
 
-   Original 3DR PPM-Sumencoder
+There are some downsides of using a PPM encoder:
 
-There are some downsides of using this encoder:
-
--  The PPM Encoder does require quite a bit of additional wiring to the receiver.
--  It uses quite a bit of power making it likely you will need to plug
-   in your battery while doing radio setup with USB cable in Mission Planner.
--  The encoder also costs as much or more than several of the
-   available PPM-Sum receivers including the FrSky Delta 8 below.
+-  Additional cost, wiring and weight on the vehicle
+-  Consumes more power making it likely that a USB cable alone cannot power the system so the vehicle's battery will likely need to be plugged in during Radio calibration.
 
 There is addition information :ref:`about connecting and configuring the encoder here <common-ppm-encoder>`.
 
-Using the 3DR PPM Sum encoder in a system
+Using a PPM Sum encoder in a system
 -----------------------------------------
 
 The diagram below shows how to use the original 3DR PPM-Sum encoder. The
