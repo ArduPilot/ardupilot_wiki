@@ -269,16 +269,16 @@ or unsigned 32bit integers):**
 
 .. raw:: html
 
-+---------+----------------------------------------------------------------------------------------------------+
-| FIELD   | DESCRIPTION                                                                                        |
-+---------+----------------------------------------------------------------------------------------------------+
-| id      | Identification number for the variable. There are only two possible values:                        |
-+---------+----------------------------------------------------------------------------------------------------+
-|         | *   7 = bit mask of internal state.  ( The meaning of individual bits can be found in the def'n    |
-|         | of the ap structure <https://github.com/ardupilot/blob/master/arducopter/arducopter.cpp#l361>      |
-+---------+----------------------------------------------------------------------------------------------------+
-|         | *   9 = simple mode's initial heading in centi-degrees                                             |
-+---------+----------------------------------------------------------------------------------------------------+
++---------+-------------------------------------------------------------------------------------------------------+
+| FIELD   | DESCRIPTION                                                                                           |
++---------+-------------------------------------------------------------------------------------------------------+
+| id      | Identification number for the variable. There are only two possible values:                           |
+|         |                                                                                                       |
+|         | *   7 = bit mask of internal state.  ( The meaning of individual bits can be found in the def'n       |
+|         |     of the ap structure <https://github.com/ardupilot/ardupilot/blob/master/ArduCopter/Copter.h#L251> |
+|         |                                                                                                       |
+|         | *   9 = simple mode's initial heading in centi-degrees                                                |
++---------+-------------------------------------------------------------------------------------------------------+
 
 **EKF (Extended Kalman Filter**):
 
