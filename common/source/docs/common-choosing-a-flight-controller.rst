@@ -14,8 +14,6 @@ vehicle and the applications that you want to run. Broadly speaking:
    general use.
 -  :ref:`Pixracer <common-pixracer-overview>` is recommended for small
    frames that require no more than 6 PWM outputs.
--  :ref:`PX4 <common-px4fmu-overview>` is recommended in very small/fast
-   vehicles (it is much smaller than Pixhawk).
 -  :ref:`NAVIO+ <common-navio-overview>` or
    :ref:`Erle-Brain <common-erle-brain-linux-autopilot>` Linux Autopilots
    should be considered for UAV Vision applications.
