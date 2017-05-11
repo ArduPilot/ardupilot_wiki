@@ -9,7 +9,11 @@ The :ref:`FRAME_CLASS <copter:FRAME_CLASS>` and :ref:`FRAME_TYPE <copter:FRAME_T
 If using the mission planner select Initial Setup, **Mandatory Hardware \| Frame Type**.
 
 If using Copter-3.5 (or higher) firmware a "Frame Class" section should be visible which allows selecting the "Class" of vehicle (Quad, Hexa, Octa, etc).
-If you are using a Traditional Helicopter, "Heli" should already be selected and it should not be changed.
+
+.. note::
+
+   For Traditional Helicopters, "Heli" should already be selected and it should not be changed.
+   For :ref:`Single Copter and Coax Copter <singlecopter-and-coaxcopter>` the :ref:`FRAME_CLASS <copter:FRAME_CLASS>` parameter should be set directly from the Full Parameter List until `this issue <https://github.com/ArduPilot/MissionPlanner/issues/1552>`__ is resolved.
 
 Next select the frame "Type" for your vehicle. The default type is **X**.
 Diagrams of most of the available types appear below and on the :ref:`Connect ESC and Motors <connect-escs-and-motors>` page.
