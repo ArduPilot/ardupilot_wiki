@@ -8,7 +8,7 @@ This article explains how a `ZED stereo camera <https://www.stereolabs.com>`__ c
 
 .. note::
 
-   This is an experimental feature planned for release in Copter-3.6.
+   This is an experimental feature planned for release in Copter-3.5.
 
 ..  youtube:: ze3zs9Bhm98
     :width: 100%
@@ -34,7 +34,7 @@ Setup
 Configuration through the Ground Station 
 ========================================
 
-Ensure that Copter-3.6 (or higher) is loaded onto the flight controller and connect with a Ground Station (i.e. Mission Planner).
+Ensure that Copter-3.5 (or higher) is loaded onto the flight controller and connect with a Ground Station (i.e. Mission Planner).
 
 - enable communication between the TX1 and flight controller using the `Setup the Pixhawk instructions from the tx1 setup wiki page <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-pixhawk>`__
 - set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 3 (means use EKF3)
