@@ -27,6 +27,7 @@ Vehicles from Non-Partners
 * `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
 * Cheerson CX-20 from `Amazon <https://www.amazon.com/Cheerson-CX-20-CX20-Auto-Pathfinder-Quadcopter/dp/B00J7OGX9C>`__ (uses now-unsupported APM2 compatible controller)
 * `ErleRover from ErleRobotics <https://erlerobotics.com/blog/product/erle-rover/>`__
+* `FireFly6 PRO from BirdsEyeView <https://www.birdseyeview.aero/products/firefly6>`__ (non-standard version of ArduPlane)
 * HobbyKing Aperture Hexacopter (`mode1 <https://hobbyking.com/en_us/aperture-rtf-m1.html>`__, `mode2 <https://hobbyking.com/en_us/aperture-rtf-m2.html>`__)
 * HobbyKing Quanum Nova PRO (`mode1 <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-1.html>`__, `mode2 <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-2.html>`__) (may use now-unsupported APM2 compatible controller)
 * `Steadidrone Mavrik from Maverick Drone Systems <https://www.maverickdrone.com/collections/diy-kits/products/steadidrone-mavrik>`__
