@@ -1,8 +1,8 @@
 .. _rtf:
 
-=====================
-Ready-To-Fly vehicles
-=====================
+===================================
+Ready-To-Fly & Easy-To-Buy vehicles
+===================================
 
 The following is a list of ready-to-fly vehicles that run ArduPilot that can be easily purchased over the internet.
 These vehicles come pre-configured with everything required to fly, drive or swim right out of the box.
@@ -26,6 +26,7 @@ Vehicles from Non-Partners
 * 3DR Y6 from `OneDrone <http://onedrone.com/store/3drobotics/ardupilot/3dr-arducopter-y6-kit.html>`__
 * `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
 * Cheerson CX-20 from `Amazon <https://www.amazon.com/Cheerson-CX-20-CX20-Auto-Pathfinder-Quadcopter/dp/B00J7OGX9C>`__ (uses now-unsupported APM2 compatible controller)
+* `ErleRover from ErleRobotics <https://erlerobotics.com/blog/product/erle-rover/>`__
 * HobbyKing Aperture Hexacopter (`mode1 <https://hobbyking.com/en_us/aperture-rtf-m1.html>`__, `mode2 <https://hobbyking.com/en_us/aperture-rtf-m2.html>`__)
 * `Steadidrone Mavrik from Maverick Drone Systems <https://www.maverickdrone.com/collections/diy-kits/products/steadidrone-mavrik>`__
 * Walkera Scout X4 from `Amazon <https://www.amazon.com/gp/product/B00TY464GC/ref=s9_dcacsd_dcoop_bw_c_x_7_w>`__ (uses non-standard version of ArduPilot)
