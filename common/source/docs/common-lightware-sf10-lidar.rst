@@ -17,12 +17,11 @@ The series includes a number of models:
 Connecting to the Pixhawk
 =========================
 
-The diagram below shows the sensor output pins and a conveniently colour-coded cable (normally included or `you can purchase here <http://www.lightware.co.za/shop/en/accessories/37-main-cable-type-1-35-cm.html>`__) which is used to connect to the flight controller. :ref:`Serial <sf10-serial-connection>`, :ref:`I2C <sf10-i2c-connection>` and :ref:`Analog <sf10-analog-connection>` connections are possible but we recommended using :ref:`Serial <sf10-serial-connection>` if possible (`see issue here <https://github.com/ArduPilot/ardupilot/issues/4803>`__).
+The diagram below shows the sensor output pins and a conveniently colour-coded cable (normally included or `you can purchase here <http://www.lightware.co.za/shop/en/accessories/37-main-cable-type-1-35-cm.html>`__) which is used to connect to the flight controller. :ref:`Serial <sf10-serial-connection>`, :ref:`I2C <sf10-i2c-connection>` and :ref:`Analog <sf10-analog-connection>` connections are possible but we recommended using :ref:`Serial <sf10-serial-connection>` if possible especially if using cables that are 30cm or longer.
 
 .. tip::
 
-   The serial connection is recommended when using longer
-   cables or when using Copter (`see issue here <https://github.com/ArduPilot/ardupilot/issues/4803>`__)
+   The serial connection is recommended when using longer cables
 
 .. figure:: ../../../images/RangeFinder_SF10_Output_Pins.png
    :target: http://www.lightware.co.za/shop/en/drone-altimeters/32-sf10b.html
@@ -73,7 +72,7 @@ I2C connection
 
 .. warning::
 
-   I2C support is present in Plane 3.4 (and higher) and Rover 2.50 (and higher) but should not be used for Copter (`see issue here <https://github.com/ArduPilot/ardupilot/issues/4803>`__).
+   I2C support is present in Plane 3.4 (and higher) and Rover 2.50 (and higher) and Copter 3.4 (and higher).
 
 Connect the SDA line of the Lidar to the SDA line of the I2C port on the Pixhawk, and the SCL line of the Lidar to the SCL line of the I2C port. Also connect the GND and 5V lines.
 
