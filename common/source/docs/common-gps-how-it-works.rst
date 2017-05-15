@@ -4,15 +4,7 @@
 GPS - How it Works
 ==================
 
-This page provide general information about GPS navigation.
-
-Overview
-========
-
 GPS system is a Global Navigation Satellite System (GNSS).
-
-.. image:: https://mail.google.com/mail/u/0/?ui=2&ik=874e42e97b&view=att&th=13f260e440902b5f&attid=0.1.1&disp=emb&zw&atsh=1
-    :target: ../_images/?ui=2&ik=874e42e97b&view=att&th=13f260e440902b5f&attid=0.1.1&disp=emb&zw&atsh=1
 
 .. image:: ../../../images/ag_GPS_Operation_New_low_res.jpg
     :target: ../_images/ag_GPS_Operation_New_low_res.jpg
