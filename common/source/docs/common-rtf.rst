@@ -28,6 +28,7 @@ Vehicles from Non-Partners
 * Cheerson CX-20 from `Amazon <https://www.amazon.com/Cheerson-CX-20-CX20-Auto-Pathfinder-Quadcopter/dp/B00J7OGX9C>`__ (uses now-unsupported APM2 compatible controller)
 * `ErleRover from ErleRobotics <https://erlerobotics.com/blog/product/erle-rover/>`__
 * HobbyKing Aperture Hexacopter (`mode1 <https://hobbyking.com/en_us/aperture-rtf-m1.html>`__, `mode2 <https://hobbyking.com/en_us/aperture-rtf-m2.html>`__)
+* HobbyKing Quanum Nova PRO (`mode1 <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-1.html>`__, `mode2 <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-2.html>`__) (may use now-unsupported APM2 compatible controller)
 * `Steadidrone Mavrik from Maverick Drone Systems <https://www.maverickdrone.com/collections/diy-kits/products/steadidrone-mavrik>`__
 * Walkera Scout X4 from `Amazon <https://www.amazon.com/gp/product/B00TY464GC/ref=s9_dcacsd_dcoop_bw_c_x_7_w>`__ (uses non-standard version of ArduPilot)
 * Walkera Tali H500 from `helipal <http://www.helipal.com/walkera-qr-tali-h500-gps-drone-2-4ghz-rtf-edition.html>`__ or `HobbyKing <https://hobbyking.com/en_us/walkera-tali-h500-gps-hexacopter-with-3-axis-gimbal-and-battery-pnf.html>`__ (uses non-standard version of ArduPilot)
