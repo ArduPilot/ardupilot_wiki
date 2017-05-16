@@ -15,6 +15,7 @@ Vehicles from Partners
 ======================
 
 * `BlueROV2 from Blue Robotics <http://bluerobotics.com/store/rov/bluerov2/>`__
+* `IRIS+ for Precision Mapping from Event38 <https://event38.com/product/iris-precision-mapping-package/>`__
 
 Vehicles from Non-Partners
 ==========================
