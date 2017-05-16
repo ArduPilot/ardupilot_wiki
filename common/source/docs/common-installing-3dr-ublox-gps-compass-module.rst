@@ -1,22 +1,13 @@
 .. _common-installing-3dr-ublox-gps-compass-module:
 
-==============================
-3DR UBlox GPS + Compass Module
-==============================
+==========================
+UBlox GPS + Compass Module
+==========================
 
-This page covers the installation of the `3DR UBlox GPS + Compass module <https://3dr.com/support/articles/207681053/3dr_ublox_gps_with_compass_kit/>`__.
+The UBlox GPS + Compass module is the most commonly used GPS for ArduPilot compatible flight controllers.
+There are many versions of these modules available from various manufacturers, the recommended models are :ref:`here <common-positioning-landing-page>`.
 
-.. note::
-
-    The 3DR UBlox GPS + Compass module is no longer produced or sold by 3DR, but it is still available from a few vendors. In addition, this page is still relevant to the installation of most gps modules. A number of alternatives can be found :ref:`here <common-positioning-landing-page>`.
-
-Overview
-========
-
-The *3DR UBlox GPS + Compass module* is the recommended GPS for Pixhawk,
-PX4 and APM2.6 (and above) flight controllers using Plane, Rover and
-Copter.  These come set-up with :ref:`the best known GPS configuration <common-ublox-gps>` and have been thoroughly tested by
-thousands of users.
+ArduPilot automatically configures the GPS soon after startup so there is no need for any GPS related calibration.  The :ref:`compass must be calibrated <common-compass-calibration-in-mission-planner>` however.
 
 .. image:: ../../../images/GPS_TopAndSide.jpg
     :target: ../_images/GPS_TopAndSide.jpg
@@ -37,39 +28,11 @@ if other I2C devices are to be attached.
 .. image:: ../../../images/pixhawk_with_dual_gps.jpg
     :target: ../_images/pixhawk_with_dual_gps.jpg
 
-.. note::
-
-   As of Copter 3.2 and recent versions of Plane and Rover, a
-   secondary GPS can be connected to the Pixhawk’s Serial 4/5 port. Limited
-   testing suggests that a secondary GPS can reduce the likelihood that GPS
-   glitches will affect the vehicle, but can also lead to sudden movements
-   of the vehicle when the primary GPS switches.
-
-.. tip::
-
-   On Copter we do
-   not recommend using a second compass due to these sudden vehicle
-   movements.
-
-If the parameters are set-up as shown below, the flight controller will
-use the GPS with the higher number of satellites (Note: it will switch
-when one GPS has at least 2 more satellites than the other).
-
--  GPS_AUTO_SWITCH = 1
--  GPS_TYPE2 = 1
-
-.. image:: ../../../images/GPS_MPSetup_Dual.jpg
-    :target: ../_images/GPS_MPSetup_Dual.jpg
-
-If using Copter 3.3 or higher or recent versions of Plane/Rover then
-this parameter should also be set:
-
--  SERIAL4_PROTOCOL = 5
+Details on how to setup and use a 2nd GPS can be found on the :ref:`GPS Blending page <common-gps-blending>` page.
 
 .. note::
 
-   The baud rate is set by the UBlox driver (setting
-   ``SERIAL4_BAUD = 38`` is ignored).
+   The baud rate is set by the UBlox driver (setting ``SERIAL4_BAUD = 38`` is ignored).
 
 .. note::
 
@@ -103,26 +66,6 @@ same for APM2.0/APM2.5 as for APM2.6.
    re-calibrate the compass [site wiki="copter" inline="on"] including
    :ref:`Compassmot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`\ [/site]
    (if you had run this procedure for the internal compass).
-
-Connecting to PX4
------------------
-
--  To connect GPS part of the this module to PX4, connect the GPS port
-   to the PX4FMU’s GPS connector.
--  Connect the compass lead on the module to the PX4IO’s I2C port.
--  The PX4IO board I2C port is the 4 pin connector located on the board
-   side opposite the Servo Out connectors in the second row of
-   connectors in and next to the board mounting hole.
--  When the external compass is plugged into the PX4IO boards I2C port,
-   it is automatically detected and used and the internal compass
-   is disabled.
-
-.. image:: ../../../images/PX4IOtopI2C.jpg
-    :target: ../_images/PX4IOtopI2C.jpg
-
-Next connect with the Mission Planner and go to **INITIAL SETUP \|
-Mandatory Hardware \| Compass** and set the Orientation to
-``ROTATION_ROLL_180``.
 
 Connecting to Erle-Brain2
 -------------------------
