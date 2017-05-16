@@ -15,7 +15,8 @@ Vehicles from Partners
 ======================
 
 * `BlueROV2 from Blue Robotics <http://bluerobotics.com/store/rov/bluerov2/>`__
-* `IRIS+ for Precision Mapping from Event38 <https://event38.com/product/iris-precision-mapping-package/>`__
+* `Event38 IRIS+ for Precision Mapping <https://event38.com/product/iris-precision-mapping-package/>`__
+* `Event38 e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__ and `e386 Mapping Drones (fixed wing) <https://event38.com/fixed-wing/e384-mapping-drone/>`__
 
 Vehicles from Non-Partners
 ==========================
@@ -32,6 +33,7 @@ Vehicles from Non-Partners
 * HobbyKing Aperture Hexacopter (`mode1 <https://hobbyking.com/en_us/aperture-rtf-m1.html>`__, `mode2 <https://hobbyking.com/en_us/aperture-rtf-m2.html>`__)
 * HobbyKing Quanum Nova PRO (`mode1 <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-1.html>`__, `mode2 <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-2.html>`__) (may use now-unsupported APM2 compatible controller)
 * `Steadidrone Mavrik from Maverick Drone Systems <https://www.maverickdrone.com/collections/diy-kits/products/steadidrone-mavrik>`__
+* `UAV Mapper from TuffWing <http://www.tuffwing.com/products/drone_mapper.html>`__
 * Walkera Scout X4 from `Amazon <https://www.amazon.com/gp/product/B00TY464GC/ref=s9_dcacsd_dcoop_bw_c_x_7_w>`__ (uses non-standard version of ArduPilot)
 * Walkera Tali H500 from `helipal <http://www.helipal.com/walkera-qr-tali-h500-gps-drone-2-4ghz-rtf-edition.html>`__ or `HobbyKing <https://hobbyking.com/en_us/walkera-tali-h500-gps-hexacopter-with-3-axis-gimbal-and-battery-pnf.html>`__ (uses non-standard version of ArduPilot)
 * `X PlusOne from XCraft <http://store.xcraft.io/xplusone-store-xcraft-vtol-drone-sandpoint-id/copy-of-x-plusone-hdpro>`__
