@@ -41,7 +41,7 @@ in order for the flight controller to be flashed with ArduPilot.
 
 The final step is to copy the arducopter.px4 firwmware to the Aero compute board and then flash it to the flight board:
 
-- Download the latest aero-fc ardupilot firmware from `firmware.ardupilot.org <http://firmware.ardupilot.org/Copter/latest/>`__ (`issue <https://github.com/ArduPilot/ardupilot/issues/6058>`__ to make firmware available soon)
+- Download the latest aero-fc ardupilot firmware from `firmware.ardupilot.org <http://firmware.ardupilot.org/Copter/latest/>`__ 
 - Copy the above firmware to the Aero compute board in much the same way the BIOS's .rpm file was copied
 - `Flash the flight controller board <https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-setup#flashing-the-flight-controller-rtf-only>`__ with the ardupilot.px4 firmware
 
