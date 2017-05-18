@@ -68,4 +68,5 @@ please see the topics below:
     Building Your Own Frame <what-you-need>
     MultiCopter Safety <safety-multicopter>
     Ready to Fly vehicles <common-rtf>
+    Supported vehicle types <common-all-vehicle-types>
     Use-Case Overview <copter-use-case-overview>
