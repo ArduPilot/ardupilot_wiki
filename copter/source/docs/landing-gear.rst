@@ -6,27 +6,20 @@ Landing Gear
 
 Copter supports retractable Landing Gear activated by a servo mechanism
 (like these sold by `Hobby King <http://www.hobbyking.com/hobbyking/store/__63508__Quanum_600_Class_Quick_Release_Universal_Retractable_Gear_Set_680UC_Pro_Hexa_Copter_.html>`__).
-The gear can be manually retracted/deployed with an auxiliary switch and
-there are several automatic features which enhance operational safety.
+The gear can be manually retracted/deployed with an auxiliary switch.
+The gear will also automatically deploy during landing.
 
 There is some simple logic controlling the operation beyond simply
 responding to retract/deploy commands from the controller.  If the
-APM:Copter system is booted up and the landing gear control switch is in
+system is booted up and the landing gear control switch is in
 the retract position, the landing gear will not retract.  This is done
 to prevent damage to the landing gear or airframe should the switch be
 accidentally left in the retract position on start-up.  In this case,
 the landing gear will not retract until the switch is first moved to the
-deploy position, and then the retract position.
+deploy position, and then back to the retract position.
 
-Furthermore, the landing gear will automatically deploy immediately upon
-entering Land mode, as well as the landing phase of RTL mode, or an
-auto-land in Auto mode.  This is especially important in the case of
-radio failsafe RTL events, where it would not be possible for the pilot
-to lower the gear manually.
-
-If assigned to a 3-position switch, the middle position will not cause a
-change in state of the landing gear.  In the future, this will be used
-for an automatic mode, but this is not enabled for AC3.3.
+The landing gear will automatically deploy when the flight mode is changed to Land,
+during the final landing phase of RTL mode, and when a Land command is executed in AUTO mode.
 
 .. note::
 
@@ -47,8 +40,7 @@ AUX4).
 
 .. note::
 
-   The signal wire (usually white) should be connected to the lower
-   most "S" pin.
+   The signal wire (usually white) should be connected to the lower most "S" pin.
 
 Setup through the Mission Planner
 =================================
@@ -56,10 +48,10 @@ Setup through the Mission Planner
 Use the Mission Planner's Full Parameter List (or equivalent) to set the
 following parameters:
 
--  ``RCn_FUNCTION to 29`` "Landing Gear", where **n** is the number for
-   the connected servo (e.g.
-   :ref:`RC9_FUNCTION <RC9_FUNCTION>` for AUX1,
-   :ref:`RC10_FUNCTION <RC10_FUNCTION>` for AUX2 etc.)
+-  If using AC3.4.6 (or lower) set ``RCn_FUNCTION to 29`` "Landing Gear", where **n** is the number for
+   the connected servo (e.g. :ref:`RC9_FUNCTION <RC9_FUNCTION>` for AUX1, :ref:`RC10_FUNCTION <RC10_FUNCTION>` for AUX2 etc.)
+-  If using AC3.5 (or higher) set ``SERVOn_FUNCTION to 29`` "Landing Gear", where **n** is the number for
+   the connected servo (e.g. :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` for AUX1, :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` for AUX2 etc.)
 -  :ref:`LGR_SERVO_DEPLOY <LGR_SERVO_DEPLOY>`
    — servo PWM value required to deploy the landing gear.
 -  :ref:`LGR_SERVO_RTRACT <LGR_SERVO_RTRACT>`
@@ -70,11 +62,9 @@ following parameters:
 
    MissionPlanner: Landing Gear Configuration
 
-Set Ch7 or Ch8 Opt to "Landing Gear" in order to enable manual control. 
-When the switch is in the "low" position the gear will be deployed,
-"high" will be retracted, "middle" will be a neutral position that will
-not change state (will be used for automatic operation on a future
-release).
+Set an :ref:`auxiliary switch <channel-7-and-8-options>` to "Landing Gear" in order to enable manual control (i.e. set :ref:`CH7_OPT <CH7_OPT>` or :ref:`CH8_OPT <CH8_OPT>` to "29")
+
+When the switch is in the "low" position the gear will be deployed, "high" will be retracted, "middle" is a neutral position that will not change the gear's state.
 
 .. figure:: ../images/LandingGear_PixhawkSetup2.png
    :target: ../_images/LandingGear_PixhawkSetup2.png
