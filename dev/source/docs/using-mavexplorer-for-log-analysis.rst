@@ -16,7 +16,7 @@ Linux do this:
 
 ::
 
-    sudo apt-get install python-matplotlib python-serial python-wxgtk2.8 python-lxml
+    sudo apt-get install python-matplotlib python-serial python-wxgtk3.0 python-lxml
     sudo apt-get install python-scipy python-opencv  python-pip python-pexpect python-tk
     sudo pip install --upgrade pymavlink mavproxy
 
