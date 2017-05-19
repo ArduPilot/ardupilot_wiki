@@ -1,70 +1,58 @@
 .. _common-telemetry-port-setup-for-apm-px4-and-pixhawk:
 
-========================================
-Telemetry Port Setup for Pixhawk and PX4
-========================================
+=============================
+Telemetry / Serial Port Setup
+=============================
 
-This article shows how to enable the second telemetry port on Pixhawk
-and PX4 and configure the ports in Mission Planner.
+This article shows how to configure the telemetry ports (aka serial ports) on the flight controller.
+The instructions use the Pixhawk but they apply for most flight controllers.
 
-.. note::
+Overview
+========
 
-   Support for the second port was added in Copter 3.1 and equivalent
-   Rover/Plane firmware.
+On a Pixhawk there are a total of 5 serial ports.  The default use of each port is:
 
-Enable 2nd Telemetry Port on Pixhawk
-====================================
-
-On a Pixhawk there are two 6 pin DF13 serial ports marked as "telemetry"
-(TELEM 1 and TELEM 2). Both ports will be active for communication.
-
-Use **TELEM 1** for higher power devices (up to 1A), such as the :ref:`RFD900 telemetry radio <common-rfd900>`.
+- The micro USB port (aka Serial0) is used to connect to the ground station using a USB cable.  This should not be connected in flight because the flight code assumes that if it is receiving power through this port that it is on the bench and some :ref:`failsafes <copter:failsafe-landing-page>` (i.e. battery failsafe) are disabled.
+- Telem1 (aka Serial1) is for MAVLink communication and supports flow control.  This should be used especially for high power devices (up to 1 amp) such as the :ref:`RFD900 telemetry radio <common-rfd900>`
+- Telem2 (aka Serial2) is for MAVLink communication and supports flow control.
+- GPS (aka Serial3) is for connecting a GPS
+- Serial 4/5 contains two serial connections on a single port.  Serial4 is normally used for a :ref:`second GPS <common-gps-blending>`.  Serial5 is a :ref:`debug connection <dev:interfacing-with-pixhawk-using-the-nsh>`.
 
 .. image:: ../../../images/PixhawkTelem.jpg
     :target: ../_images/PixhawkTelem.jpg
 
-Enable 2nd Telemetry Port on PX4
-================================
+More details of the exact pins on each port can be found :ref:`here <common-pixhawk-overview>`.
 
-On a PX4v1 you can enable the second telemetry port by creating a empty
-file named **uartD.en** in the APM directory on your SD card. This
-changes the 5 pin DF13 (FMU USART2) connector on the corner of the PX4IO
-board from being 3 PWM outputs to being a second telemetry port.
+Set-up through the Ground Station
+=================================
 
-.. image:: ../../../images/PX4IOtelem.jpg
-    :target: ../_images/PX4IOtelem.jpg
+The telemetry ports can be configured through the ground station by setting the parameters listed below.  If you are using the *Mission Planner* open the **Config/Tuning \| Full Parameter List** page.
 
-Set-up through the Mission Planner
-==================================
-
-The telemetry port is configured using parameters, which you can edit
-though your GCS. Using *Mission Planner* open the **Config/Tuning \|
-Full Parameter List** page.
-
-The parameters to change for each port are listed below. These are
-documented with the parameter in Mission Planner and in the Parameter
-documentation on each wiki:
-
--  Telem1: ``SERIAL1_BAUD``, ``SERIAL1_PROTOCOL``, ``BRD_SER1_RTSCTS``
--  Telem2: ``SERIAL2_BAUD``, ``SERIAL2_PROTOCOL``, ``BRD_SER2_RTSCTS``
+- ``SERIALx_PROTOCOL`` parameters (where "x" is a number from 0 to 4, i.e. :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>`) control the protocol or purpose of the serial port.  You will see on wiki pages including the :ref:`Lightware Lidar page <common-lightware-sf10-lidar>` instructions for choosing the appropriate protocol.
+- ``SERIALx_BAUD`` (i.e. :ref:`SERIAL1_BAUD <SERIAL1_BAUD>`) sets the baud rate or speed of the serial port.
+- :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` and :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` parameters allow enabling or disabling flow control on Telem1 and Telem2.
 
 .. image:: ../../../images/MP-Serial2_protocol.png
     :target: ../_images/MP-Serial2_protocol.png
 
-You can also set the desired stream rates for messages on the ports (the
-telemetry rates to zero to try to keep CPU loads down) by setting
-``SR1_*`` and ``SR2_*`` parameters in the *Advanced Parameter List*. Due
-to CPU resource limitations, the actual rate of the data sent and saved
-may be lower than the rate requested.
+MAVLink1, MAVLink2 and Stream Rates
+===================================
 
-The data can also be changed in the Mission Planner's **Software \|
-Planner** screen's **Telemetry** drop-down.
+For telemetry ports used for MAVLink communication you may select to use MAVLink1 by setting the ``SERIALx_PROTOCOL`` to "1" or MAVLink2 by setting ``SERIALx_PROTOCOL`` to "2".
+
+MAVLink2 supports "signing" of packets which improves security and flexible length messages so it should be used when possible but some older telemetry radios do not understand MAVLink2 so the default is MAVLink1.
+
+As mentioned on the :ref:`Telemetry Logs page <common-mission-planner-telemetry-logs>` the rate messages are sent from the vehicle can be controlled using the ``SRx_*`` parameters (i.e. :ref:`SR1_POSITION <SR1_POSITION>`).
+
+The Mission Planner's **Config/Tuning |Planner** screen's **Telemetry Rates** drop-downs allow a convenient way to set these parameters.
 
 .. image:: ../../../images/mp_telemetry_rate.png
     :target: ../_images/mp_telemetry_rate.png
 
-.. warning::
+Due to CPU or bandwidth limitations, the actual rate of the data sent may be lower than the rate requested.
 
-   If you change the rates using the ``REQUEST_DATA_STREAM``
-   MAVLink message Copter **DOES NOT** save the rate changes and they
-   will not persist over a reboot.
+.. note::
+
+   Most ground stations set the desired stream rate by sending the `REQUEST_DATA_STREAM <http://mavlink.org/messages/common#REQUEST_DATA_STREAM>`__ MAVLink message to the vehicle instead of directly settting the parameters mentioned above.  If done this way, Copter **DOES NOT** save the rate changes to eeprom meaning they will not persist over a reboot.
+
+   In practice users may notice that if the vehicle is rebooted but the telemetry connection is not disconnected and reconnected that the data from the vehicle may be much slower or missing.  I.e. the vehicle's position on the map may not update.  Normally disconnecting/reconnecting with the ground station will resolve this.
