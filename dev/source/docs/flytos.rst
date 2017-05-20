@@ -71,7 +71,7 @@ Click on corresponding links to know more about building custom apps in `cpp <ht
 Remote APIs
 -----------
 
-These are APIs for building web/mobile apps for remote devices. These are helpful for creating custom User Interfaces specific to the application as well as for integrating any off-board processing. The APIs are available as `RESTful <http://api.flytbase.com/?javascript--REST#introduction>`_ and `WebSocket <http://api.flytbase.com/?javascript--Websocket#introduction>`_ requests, where typically REST is used for sending commands to the drone and WebSocket for getting continual data stream (telemetry). Click one of the below links, to know more about building custom apps for web and mobile.
+These are APIs for building web/mobile apps for remote devices and are helpful for creating custom User Interfaces specific to the application as well as for integrating any off-board processing. They are available as `RESTful <http://api.flytbase.com/?javascript--REST#introduction>`_ and `WebSocket <http://api.flytbase.com/?javascript--Websocket#introduction>`_ requests, where typically REST is used for sending commands to the drone and WebSocket for getting continual data stream (telemetry). Click one of the below links, to know more about building custom apps for web and mobile.
 
 * `JS <http://docs.flytbase.com/docs/FlytOS/Developers/BuildingCustomApps/RemoteWeb.html#write-remote-web>`_
 * `Java (Android) <http://docs.flytbase.com/docs/FlytOS/Developers/BuildingCustomApps/RemoteMobile.html#write-remote-mobile>`_
@@ -109,7 +109,7 @@ Important Links
 You can refer `FlytOS installation instructions <http://docs.flytbase.com/docs/FlytOS/GettingStarted/FlytOSInstallationGuide.html>`_  for a step-by-step installation guide.  |br|
 You can post your queries/issues on FlytOS `forum <http://forums.flytbase.com/>`_. |br|
 Use the detailed `API reference <http://api.flytbase.com/>`_ to develop drone apps using your preferred language (Python, C++, ROS, RESTful, Websocket, etc.). |br|
-We have made available, a few `sample applications <https://github.com/flytbase/flytsamples>`_ are available for the developers to get started quickly.
+We have made available, a few `sample applications <https://github.com/flytbase/flytsamples>`_ for the developers to get started quickly.
 
 Keep yourself up-to-date with latest updates by joining FlytOS `Facebook community <https://goo.gl/MWlexy>`_ of users and developers. Visit FlytOS `youtube channel <https://goo.gl/DzfW1V>`_ to see more drone applications in action. |br|
 Mail us at support@flytbase.com for dedicated support and visit https://flytbase.com for more information.
