@@ -108,7 +108,7 @@ Important Links
 `Download FlytOS <https://my.flytbase.com/downloads/>`_ now, and get started with Companion Computer of your choice. |br|
 You can refer `FlytOS installation instructions <http://docs.flytbase.com/docs/FlytOS/GettingStarted/FlytOSInstallationGuide.html>`_  for a step-by-step installation guide.  |br|
 You can post your queries/issues on FlytOS `forum <http://forums.flytbase.com/>`_. |br|
-Use the detailed `API reference <http://api.flytbase.com/>`_ to develop drone apps using your preferred language (Python, C++, ROS, RESTful, Websocket, etc.). |br|
+Use the detailed `API reference <http://api.flytbase.com/>`_ to develop drone apps using your preferred language (Python, C++, ROS, REST, Websocket). |br|
 We have made available, a few `sample applications <https://github.com/flytbase/flytsamples>`_ for the developers to get started quickly.
 
 Keep yourself up-to-date with latest updates by joining FlytOS `Facebook community <https://goo.gl/MWlexy>`_ of users and developers. Visit FlytOS `youtube channel <https://goo.gl/DzfW1V>`_ to see more drone applications in action. |br|
