@@ -7,7 +7,13 @@ FlytOS
 `FlytOS Website <https://flytbase.com>`_ is a software framework which provides Drone APIs and SDKs for building high-level drone applications such as aerial delivery, precision agriculture, surveys, photography, industrial inspections and disaster management. It is designed to enable drone-developers build advanced drone applications using its open APIs.
 
 FlytOS is based on Linux and ROS (Robot Operating System), making it an ideal platform for building commercial as well as research orientated drone applications. It supports a wide range of hardware options such as *Raspberry Pi 3, Odroid XU4, Nvidia TX1, Intel Edison, Intel Aero and FlytPOD*. It uses MAVLink to communicate with the autopilot, and exposes high level FlytAPIs in *ROS, CPP, Python, REST and Websocket*. |br|
-*Insert companion computer image here*
+
+.. figure:: ../images/flytosccsupport.jpg
+    :target: ../_images/flytosccsupport.jpg
+    :align: center
+
+    Supported Companion Computers
+
 This makes it easy to build high-level applications using computer-vision, machine-learning, cloud-connectivity and enables developers to create their custom user-interfaces on web/mobile devices of their choice. FlytOS also has modules to manage payloads, security and updates. The modular design of FlytOS allows for integration with external ROS/Linux libraries and custom data plumbing between onboard and offboard apps. FlytOS aims to provide a standard language for the drone application developers to talk to their drones.
 
 .. youtube:: CZFVWDN5Gcc
@@ -47,18 +53,33 @@ Supported Companion Computers
 
 Supported Languages
 ===================
-* `PYTHON <http://docs.flytbase.com/docs/FlytOS/Developers/BuildingCustomApps/OnboardPython.html#write-onboard-python>`_
-* `C++ <http://docs.flytbase.com/docs/FlytOS/Developers/BuildingCustomApps/OnboardCPP.html#write-onboard-cpp>`_
-* `ROS <http://api.flytbase.com/?shell#introduction>`_
-* `ROSCPP <http://api.flytbase.com/?cpp--ros#introduction>`_
-* `ROSPY <http://api.flytbase.com/?python--ros#introduction>`_
-* `JS REST <http://api.flytbase.com/?javascript--REST#introduction>`_
-* `JS WEBSOCKET <http://api.flytbase.com/?javascript--Websocket#introduction>`_
+
+FlytOS offers Drone APIs for building applications with onboard as well as remote components.
+
+Onboard APIs
+------------
+
+These are APIs available onboard the companion computer and can be used for developing domain specific intelligence and business logic. Typical candidates are tasks requiring high reliability, low latency and relatively low processing power as offered by the onboard computers.
+
+* `C++ <http://api.flytbase.com/?cpp#>`_
+* `Python <http://api.flytbase.com/?python#>`_
+* `ROSCpp <http://api.flytbase.com/?cpp--ros#introduction>`_
+* `ROSPy <http://api.flytbase.com/?python--ros#introduction>`_
+
+Click on corresponding links to know more about building custom apps in `cpp <http://docs.flytbase.com/docs/FlytOS/Developers/BuildingCustomApps/OnboardCPP.html#write-onboard-cpp>`_ and `python <http://docs.flytbase.com/docs/FlytOS/Developers/BuildingCustomApps/OnboardPython.html#write-onboard-python>`_.
+
+Remote APIs
+-----------
+
+These are APIs for building web/mobile apps for remote devices. These are helpful for creating custom User Interfaces specific to the application as well as for integrating any off-board processing. The APIs are available as `RESTful <http://api.flytbase.com/?javascript--REST#introduction>`_ and `WebSocket <http://api.flytbase.com/?javascript--Websocket#introduction>`_ requests, where typically REST is used for sending commands to the drone and WebSocket for getting continual data stream (telemetry). Click one of the below links, to know more about building custom apps for web and mobile.
+
+* `JS <http://docs.flytbase.com/docs/FlytOS/Developers/BuildingCustomApps/RemoteWeb.html#write-remote-web>`_
+* `Java (Android) <http://docs.flytbase.com/docs/FlytOS/Developers/BuildingCustomApps/RemoteMobile.html#write-remote-mobile>`_
 
 Sample Applications
 ===================
 
-We have made available, a few sample apps to help you get started with drone application development. You can find them on github at `FlytSamples github repository <https://github.com/flytbase/flytsamples>`_. These sample apps are written in all of the above supported languages. Web/android developers could begin with a simple `Joystick App <https://github.com/flytbase/flytsamples/tree/master/Mobile-Apps/Java-Apps/Joystick>`_. A couple of easy-to-understand `CPP/Python/ROS based apps <https://github.com/flytbase/flytsamples/tree/master/CPP-Python-ROS-Apps>`_ are also available.
+We have made available, a few sample apps to help you get started with drone application development. You can find them on github at `FlytSamples github repository <https://github.com/flytbase/flytsamples>`_. These sample apps are written in all of the above :ref:`supported languages <supported_languages>`. Web/android developers could begin with a simple `Joystick App <https://github.com/flytbase/flytsamples/tree/master/Mobile-Apps/Java-Apps/Joystick>`_. A couple of easy-to-understand `CPP/Python/ROS based apps <https://github.com/flytbase/flytsamples/tree/master/CPP-Python-ROS-Apps>`_ are also available.
 
 GPS based Object Following
 --------------------------
@@ -85,7 +106,7 @@ Important Links
 ---------------
 
 `Download FlytOS <https://my.flytbase.com/downloads/>`_ now, and get started with Companion Computer of your choice. |br|
-You can refer `FlytOS installation instructions <http://docs.flytbase.com/docs/FlytOS/GettingStarted/FlytOSInstallationGuide.html>`_  for a step-by-step installation guide  |br|
+You can refer `FlytOS installation instructions <http://docs.flytbase.com/docs/FlytOS/GettingStarted/FlytOSInstallationGuide.html>`_  for a step-by-step installation guide.  |br|
 You can post your queries/issues on FlytOS `forum <http://forums.flytbase.com/>`_. |br|
 Use the detailed `API reference <http://api.flytbase.com/>`_ to develop drone apps using your preferred language (Python, C++, ROS, RESTful, Websocket, etc.). |br|
 We have made available, a few `sample applications <https://github.com/flytbase/flytsamples>`_ are available for the developers to get started quickly.
