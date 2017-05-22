@@ -4,23 +4,16 @@
 Auxiliary Function Switches
 ===========================
 
-This article shows how to set up which features are invoked from the
-transmitter's auxiliary function switches (Up to/including AC3.2.1 you
-could only set the Channel 7 and 8 options, From AC3.3 you can set
-options for channels 7 - 12).
-
-.. note::
-
-   AC3.3 introduces support for auxiliary functions on channels 9 ~
-   12.
+This article shows how to set up which features are invoked from the transmitter's auxiliary function switches.
+AC3.2.1 and earlier allowed channels 7 and 8 to be used as auxiliary switches.  AC3.3 and higher supports channels 7 to 12.
 
 Configuration
 =============
 
 By default the auxiliary switches are disabled but you can assign
 features using the *Mission Planner*'s **Config/Tuning \| Extended
-Tuning** screen or by setting the ``CH7_OPT`` (or ``CH8_OPT``) parameter
-directly.
+Tuning** screen or by setting the :ref:`CH7_OPT <CH7_OPT>`, :ref:`CH8_OPT <CH8_OPT>`, :ref:`CH9_OPT <CH9_OPT>`,
+:ref:`CH10_OPT <CH10_OPT>`, :ref:`CH11_OPT <CH11_OPT>`, or :ref:`CH12_OPT <CH12_OPT>` parameters directly.
 
 .. image:: ../images/MPchan7options.jpg
     :target: ../_images/MPchan7options.jpg
@@ -37,10 +30,9 @@ Here are the options:
    </tr>
    <tr>
    <td><strong>Flip</strong></td>
-   <td>Vehicle will flip is on roll axis. Vehicle will rise for 1 second and
-   then rapidly roll. The vehicle will not flip again until the switch is
-   brought low and back to high. Give yourself at least 10m of altitude
-   before trying flip for the first time!
+   <td>Vehicle will flip on its roll or pitch axis depending upon the pilot's roll and pitch stick position.
+   Vehicle will rise for 1 second and then rapidly flip. The vehicle will not flip again until the switch is
+   brought low and back to high. Give yourself at least 10m of altitude before trying flip for the first time!
    </td>
    </tr>
    <tr>
@@ -59,11 +51,8 @@ heading. :ref:`See here for more details <simpleandsuper-simple-modes>`.
    <td><strong>RTL</strong></td>
    <td>
 
-   
-Return-to-Launch. The vehicle will first climb to a safe altitude
-(defined by ``RTL_ALT`` parameter), then return home, pause over home
-for 5 seconds (configurable by ``RTL_LOIT_TIME`` parameter) then descend
-to 2m or land (configurable by ``RTL_ALT_FINAL`` parameter).
+Invokes the :ref:`Return-to-Launch <rtl-mode>` flight mode when switch is pulled high.
+Bringing switch back to low will return the vehicle to the mode indicated by the ch5 flight mode switch.
 
 .. raw:: html
 
@@ -72,13 +61,12 @@ to 2m or land (configurable by ``RTL_ALT_FINAL`` parameter).
    <tr>
    <td><strong>Save Trim</strong></td>
    <td>
-   
 
 Adjust the vehicle level position using the current roll and pitch stick
-inputs. See details `here <autotrim>`__.</td>
+inputs. See details `here <autotrim>`__.
 
 .. raw:: html
-
+   </td>
    </tr>
    <tr>
    <td><strong>Save WP</strong></td>
@@ -89,10 +77,7 @@ inputs. See details `here <autotrim>`__.</td>
    <td><strong>Multi Mode</strong></td>
    <td>
    
-
-.. note::
-
-   This option has been removed from AC3.3 (and higher).
+This option has been removed from AC3.3 (and higher).
 
 Ch6 tuning knob position controls which of the following 3 functions is
 invoked when ch7 or ch8 switch put in the on position.
@@ -117,8 +102,14 @@ Camera shutter will be activated. See more details
    </td>
    </tr>
    <tr>
-   <td><strong>Sonar</strong></td>
-   <td>Sonar is disabled when switch is in low position, enabled when it high position.</td>
+   <td><strong>Range Finder</strong></td>
+   <td>
+
+:ref:`RangeFinder <common-rangefinder-landingpage>` is disabled when switch is in low position, enabled when in high position.
+
+.. raw:: html
+
+   </td>
    </tr>
    <tr>
    <td><strong>Fence</strong></td>
@@ -126,7 +117,10 @@ Camera shutter will be activated. See more details
    </tr>
    <tr>
    <td><strong>ResetToArmedYaw</strong></td>
-   <td>Vehicle will turn to face the same direction that it was facing when it
+   <td>
+   This option has been removed from AC3.3 (and higher).
+
+   Vehicle will turn to face the same direction that it was facing when it
    was first armed (e.g. at take-off). An alternative to simple mode when
    you've lost orientation and need to bring the craft home.</td>
    </tr>
@@ -150,6 +144,169 @@ enable/disable Super Simple mode only).
    </td>
    </tr>
    <tr>
+   <td><strong>Acro Trainer</strong></td>
+   <td>
+
+Turn on automatic leveling in the :ref:`ACRO <acro-mode>` flight mode.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Sprayer</strong></td>
+   <td>
+   
+Turn on the :ref:`crop sprayer <sprayer>` when switch is pulled high.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Auto</strong></td>
+   <td>
+
+Invokes the :ref:`Auto <auto-mode>` flight mode when switch is pulled high.
+Bringing switch back to low will return the vehicle to the mode indicated by the ch5 flight mode switch.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>AutoTune</strong></td>
+   <td>
+
+Invokes the :ref:`AutoTune <autotune>` flight mode when switch is pulled high.
+Bringing switch back to low will return the vehicle to the mode indicated by the ch5 flight mode switch.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Land</strong></td>
+   <td>
+
+Invokes the :ref:`Land <land-mode>` flight mode when switch is pulled high.
+Bringing switch back to low will return the vehicle to the mode indicated by the ch5 flight mode switch.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Gripper</strong></td>
+   <td>
+
+Operates the :ref:`gripper <common-gripper-landingpage>`.  Switch pulled low releases the gripper, high closes or grabs.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Parachute Enable</strong></td>
+   <td>
+
+Enables the automatic release of the :ref:`parachute <parachute>` (this does not immediately trigger the release).
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Parachute Release</strong></td>
+   <td>
+
+Immediately triggers the release of the :ref:`parachute <parachute>` as long as the vehicle is not landed or too low.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Parachute 3Pos</strong></td>
+   <td>
+
+Switch pulled low disables the :ref:`parachute <parachute>`.  Switch in middle enables the parachute for automatic release.  Switch pulled high triggers release of the parachute as long as vehicle is not landed or too low.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Mission Reset</strong></td>
+   <td>
+
+Reset :ref:`Auto <auto-mode>` to run the first mission command in the command list.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>AttCon Feed Forward</strong></td>
+   <td>Turns on/off attitude controllers feed forward. For developers only.
+   </td>
+   </tr>
+   <tr>
+   <td><strong>AttCon Accel Limits</strong></td>
+   <td>Turns on/off attitude controller acceleration limits. For developers only.
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Retract Mount</strong></td>
+   <td>
+
+Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted position.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Relay On/Off</strong></td>
+   <td>
+
+Switch pulled low turns off the first :ref:`relay <common-relay>`, pulled high turns on the first relay.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Relay2 On/Off</strong></td>
+   <td>
+
+Switch pulled low turns off the second :ref:`relay <common-relay>`, pulled high turns on the second relay.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Relay3 On/Off</strong></td>
+   <td>
+
+Switch pulled low turns off the third :ref:`relay <common-relay>`, pulled high turns on the third relay.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Relay4 On/Off</strong></td>
+   <td>
+
+Switch pulled low turns off the fourth :ref:`relay <common-relay>`, pulled high turns on the fourth relay.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
    <td>
 
 :ref:`Landing Gear <landing-gear>`
@@ -157,14 +314,14 @@ enable/disable Super Simple mode only).
 .. raw:: html
 
    </td>
-   <td>Retracts/Deploys landing gear. (AC3.3 only)</td>
+   <td>Retracts/Deploys landing gear. (AC3.3 and higher)</td>
    </tr>
    <tr>
    <td><strong>Lost Copter Alarm</strong></td>
    <td>
 
 Plays the `lost copter alarm <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__
-though the buzzer (AC3.3 only)
+though the buzzer (AC3.3 and higher)
 
 .. raw:: html
 
@@ -175,7 +332,7 @@ though the buzzer (AC3.3 only)
    <td>
 
 Stops motors immediately
-(`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__). (AC3.3 only)
+(`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__). (AC3.3 and higher)
 
 .. raw:: html
 
@@ -186,7 +343,7 @@ Stops motors immediately
    <td>
 
 Opposite of Emergency stop (above) in that switch must be ON for motors
-to spin (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__). (AC3.3 only)
+to spin (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__). (AC3.3 and higher)
 
 .. raw:: html
 
@@ -198,7 +355,39 @@ to spin (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__). (AC3.3 only)
 
 Invokes the :ref:`Brake flight mode <brake-mode>` when switch goes high.
 Bringing switch back to low will return the vehicle to the mode
-indicated by the ch5 flight mode switch. (AC3.3 only)
+indicated by the ch5 flight mode switch. (AC3.3 and higher)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Throw</strong></td>
+   <td>
+
+Invokes the :ref:`Throw flight mode <throw-mode>` when switch goes high.
+Bringing switch back to low will return the vehicle to the mode
+indicated by the ch5 flight mode switch. (AC3.4 and higher)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>ADSB-Avoidance</strong></td>
+   <td>
+
+When switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of manned aircraft) is enabled, when switch is low, disabled. (AC3.4 and higher)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Object Avoidance</strong></td>
+   <td>
+
+When switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>` or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`. (AC3.4 and higher)
 
 .. raw:: html
 
@@ -209,8 +398,7 @@ indicated by the ch5 flight mode switch. (AC3.3 only)
    <td>
 
 Arms the vehicle if the switch goes high (subject to arming checks).
-Disarms the vehicle if brought low.
-AC3.5+ only
+Disarms the vehicle if brought low. (AC3.5 and higher)
 
 .. raw:: html
 
