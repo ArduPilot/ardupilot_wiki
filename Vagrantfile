@@ -19,7 +19,7 @@ Vagrant.configure(2) do |config|
         
         # Install git and sphinx from git
         apt-get -y install git
-        pip install git+https://github.com/hamishwillee/sphinx_rtd_theme.git -UI
+        pip install git+https://github.com/ArduPilot/sphinx_rtd_theme.git -UI
 
 
 
