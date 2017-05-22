@@ -4,7 +4,7 @@
 ROS
 ===
 
-ArduPilot can be used with ROS using `Gazebo <http://gazebosim.org/>`__ and `MAVROS <http://wiki.ros.org/mavros>`__.  The best tutorials are these `ErleRobotics Tutorials <http://docs.erlerobotics.com/simulation/vehicles/erle_copter/tutorial_4>`__.
+ArduPilot can be used with ROS using `Gazebo <http://gazebosim.org/>`__ and `MAVROS <http://wiki.ros.org/mavros>`__.  The best tutorials are these `Emlid <https://docs.emlid.com/navio2/common/dev/ros/>`__.
 
 Instructions for using :ref:`Gazebo with ArduPilot are here <using-gazebo-simulator-with-sitl>` and has been `blogged about here <http://diydrones.com/profiles/blogs/705844:BlogPost:2151758>`__.
 
