@@ -22,6 +22,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Telemetry <common-telemetry-landingpage>
     Power Modules <common-powermodule-landingpage>
     Rangefinders <common-rangefinder-landingpage>
+    Power Tether <common-power-tether>
 [site wiki="copter"]
     Object Avoidance with Lightware SF40C <common-lightware-sf40c-objectavoidance>
     Object Avoidance with TeraRanger Tower <common-teraranger-tower-objectavoidance>
