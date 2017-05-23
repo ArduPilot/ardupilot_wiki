@@ -13,7 +13,7 @@ AutoTune attempts to automatically tune the Stabilize P, Rate P and D, and maxim
 
 .. note::
 
-   The AutoTune feature was introduced in Copter 3.1.
+   Position Hold during AutoTune is available in Copter 3.5 (and higher).
 
 ..  youtube:: js2GzeRysAc
     :width: 100%
@@ -72,6 +72,20 @@ twitchy when flying Stabilize, AltHold or PosHold (but ok in more
 autonomous modes like Loiter, RTL, Auto) try reducing the RC_FEEL
 parameter to 0.25.  This smooths out the pilot's input.
 
+Invoke AutoTune with Position Hold
+==================================
+
+In Copter-3.5 (and higher) AutoTune performs a weak position hold if invoked from Loiter or PosHold flight modes (as opposed to AltHold).
+
+   .. image:: ../images/autotune_from_loiter.png
+       :target: ../_images/autotune_from_loiter.png
+       :width: 400px
+
+- The vehicle will gently lean (up to 10 degrees) towards a "target point" which is initially set to the vehicle's location at the moment AutoTune was invoked.
+- The pilot can reposition the vehicle using the roll, pitch, yaw or throttle sticks.  The target position will be reset to the vehicle's location at the moment the pilot releases the roll and pitch sticks.
+- In order to twitch perpendicular to the wind direction, the vehicle may suddenly rotate in either direction up to 90 degrees as it drifts 5m (or more) from the target location.
+- If there is little or no wind, the vehicle's gentle position control may mean it moves back and forth, ping ponging around the target point changing yaw each time it strays more than 5m from the target.  In these cases it may be more comfortable to revert the simpler AltHold based AutoTune. 
+
 Additional Notes
 ==================
 
@@ -96,22 +110,7 @@ Additional Notes
 -   AutoTune can **request very large and fast changes in output**\ s to the motors which can cause ESC sync issues especially when using SimonK firmware and/or low KV motors (under 500KV). See this `video showing a test <https://www.youtube.com/watch?v=hBUBbeyLe0Q>`__ which recreates a sync problem.
 -   AutoTune is sometimes unable to find a good tune for frames with very soft vibration dampening of the flight controller or very flexible arms.
 -   For best results the copter shouldn't be allowed to build up too much horizontal speed. This can be prevented by applying a quick correction between tests (twitches) to stop the vehicle from flying too fast.
--   Be advised that AutoTune will engage in Stabilize, so don't accidentally flip your AutoTune switch until you are in AltHold and ready to begin the procedure.
-=======
-Copter 3.3 adds some additional features:
-
--  AutoTune can be setup as a flight-mode.  Switching into or out of the
-   AutoTune flight mode responds in the same way as raising or lowering
-   a ch7/ch8 aux switch high assigned the AutoTune function.
--  Yaw axis is also autotuned
--  Upon a succesful tune these additional values are saved:
-
-   -  roll and pitch axis rate feed-forward is enabled
-      (:ref:`ATC_RATE_FF_ENABLE <ATC_RATE_FF_ENABLE>`)
-   -  roll, pitch and yaw acceleration limits are saved (ACCEL_R\_MAX,
-      ACCEL_P\_MAX, ACCEL_Y\_MAX)
-
-AutoTuning notes
+-   Be advised that AutoTune will engage from Stabilize, so don't accidentally flip your AutoTune switch until you are in AltHold and ready to begin the procedure.
 
 .. tip::
 
