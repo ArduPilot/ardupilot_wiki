@@ -1,11 +1,11 @@
 .. _common-powermodule-landingpage:
 
-============================
-Power Modules (landing page)
-============================
+====================================
+Battery Monitors (aka Power Modules)
+====================================
 
-If possible it is best to power your Pixhawk, PX4 or APM flight
-controller with a :ref:`3DR power module <common-3dr-power-module>` to
+If possible it is best to power your flight controller 
+controller with a :ref:`power module <common-3dr-power-module>` to
 reduce the chances of a brownout.  The links below have information
 about these modules and other alternatives.
 
@@ -13,14 +13,12 @@ about these modules and other alternatives.
 .. toctree::
     :maxdepth: 1
 
-    Smart Batteries <common-smart-battery>
+    Common Power Module <common-3dr-power-module>
+    AirbotPower Power Module <common-airbotpower-power-module>
     AttoPilot Current Sensor <common-using-a-current-sensor>
     Mauch Power Modules <common-mauch-power-modules>
-    AirbotPower Power Module <common-airbotpower-power-module>
-    3DR Power Module <common-3dr-power-module>
     Power Module Configuration <common-power-module-configuration-in-mission-planner>
-
-
+    Smart Batteries <common-smart-battery>
 
 .. image:: ../../../images/PowerModule_landingpage.jpg
     :target: ../_images/PowerModule_landingpage.jpg
