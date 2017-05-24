@@ -297,7 +297,7 @@ build and start SITL for a 4-core CPU and then launch a *MAVProxy map*:
    ::
 
        cd ~/ardupilot/ArduCopter
-       sim_vehicle.py -j4 --map
+       sim_vehicle.py -j4 --map --console
 
    If you get a windows security alert for the the firewall, allow the
    connection.
