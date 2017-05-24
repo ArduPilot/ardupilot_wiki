@@ -1,8 +1,8 @@
 .. _common-rcmap:
 
-===========================
-RCMAP Input Channel Mapping
-===========================
+===============================
+RC Input Channel Mapping (RCMAP)
+===============================
 
 This article shows how to set up a non-standard RC input channel mapping
 using the RCMAP feature.
