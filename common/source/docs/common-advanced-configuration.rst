@@ -19,7 +19,7 @@ tuning options for the vehicle.
     Ground Effect Compensation <ground-effect-compensation>
     Boat mode <boat-mode>
     Telemetry Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
-    RCMAP <common-rcmap>
+    RC Input Channel Mapping (RCMAP) <common-rcmap>
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Full Parameter List <parameters>
     Parameter Reset <common-parameter-reset>    
