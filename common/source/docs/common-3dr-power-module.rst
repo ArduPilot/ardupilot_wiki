@@ -1,19 +1,18 @@
 .. _common-3dr-power-module:
 
-================
-3DR Power Module
-================
+===================
+Common Power Module
+===================
 
-This page explains how to set up the 3DR Power Module (PM) to measure
+This page explains how to set up the Common Power Module to measure
 battery voltage and current consumption. The information will also be
 useful for setting up other types of Power Module.
 
 Overview
 ========
 
-The Pixhawk and APM 2.x have a dedicated connector for attaching the
-`3DR Power Module <http://store.jdrones.com/APM25_PSU_XT60_p/pwrapm25x1.htm>`__
-(PM). This is useful because it:
+Most flight controllers including the Pixhawk have a dedicated connector for attaching the
+`Power Module <http://store.jdrones.com/APM25_PSU_XT60_p/pwrapm25x1.htm>`__. This is useful because it:
 
 -  Provides a stable 5.37V and 2.25Amp power supply which reduces the
    chances of a brown-out
@@ -32,19 +31,13 @@ There is more general information on powering in :ref:`Powering the Pixhawk <com
 
 .. warning::
 
-   The Power Module's maximum input voltage is 18V. This is the
+   Most Power Module's maximum input voltage is 18V. This is the
    maximum allowed by the on-board regulator. (4 cell LiPo max).
 
 .. warning::
 
-   The Power Module does not have sufficient power for servos or
-   high current devices such as FPV transmitters.
-
-   -  The power module does provide sufficient power for the Pixhawk/APM,
-      your receiver and a small electronic module such as a PPM encoder or
-      3DR telemetry radio.
-   -  You may "control" servos from signal pins, but the servos must be
-      powered by a separate ESC.
+   The Power Module provides enough power for the flight controller, receiver, lower power peripherals like a low power lidar and telemetry radio but it does not have
+   sufficient power for servos or high current devices like FPV transmitters and the RFD900 telemetry radios.
 
 Connecting the PM to a flight controller board
 ==============================================
