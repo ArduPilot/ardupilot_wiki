@@ -16,7 +16,6 @@ parameters. The following topics shown you how.
     AutoTune <autotune>
     Roll and Pitch Tuning <ac_rollpitchtuning>
     Advanced Tuning <tuning>
-    EKF Overview/Tuning <common-apm-navigation-extended-kalman-filter-overview>
 [/site]
 
 [site wiki="plane"]
