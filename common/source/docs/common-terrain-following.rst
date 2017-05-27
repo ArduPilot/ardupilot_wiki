@@ -9,9 +9,7 @@ aircraft if you have an autopilot board with local storage (such as the
 Pixhawk). This page explains how terrain following works, how to enable
 it and what its limitations are.
 
-Copter 3.2 (on Pixhawk/PX4) supports terrain data but only for viewing
-purposes.  AC3.4 (and higher) will likely allow using this data for
-missions, landing, etc.
+If using Copter, see :ref:`Copter specific terrain following instructions here <copter:terrain-following>`.
 
 .. image:: ../../../images/Terrain_TitleImage.png
     :target: ../_images/Terrain_TitleImage.png
