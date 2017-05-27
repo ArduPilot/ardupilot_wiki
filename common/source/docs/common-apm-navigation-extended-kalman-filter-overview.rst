@@ -1,8 +1,8 @@
 .. _common-apm-navigation-extended-kalman-filter-overview:
 
-======================================
-ArduPilot Extended Kalman Filter (EKF)
-======================================
+============================
+Extended Kalman Filter (EKF)
+============================
 
 .. image:: ../../../images/advanced-configuration-ekf.png
 
