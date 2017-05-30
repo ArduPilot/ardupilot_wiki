@@ -95,7 +95,7 @@ that allow us to rebuild ArduPilot on Windows.
    +----------------+----------------------------------------------------------------------------------+
    | libxslt-devel  | Libs \| libxslt-devel: XML template library (development files)                  |
    +----------------+----------------------------------------------------------------------------------+
-   | python-devel   | Python \| python-devel: Python2 language interpreter (python3 does not work yet) |
+   | python2-devel  | Python \| python2-devel: Python2 language interpreter (python3 does not work yet)|
    +----------------+----------------------------------------------------------------------------------+
    | procps         | System \| procps-ng: System and process monitoring utilities (required for pkill)|
    +----------------+----------------------------------------------------------------------------------+
