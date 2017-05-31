@@ -17,9 +17,9 @@ on the UAVs performance and position and can serve as a “virtual
 cockpit”, showing many of the same instruments that you would have if
 you were flying a real plane. A GCS can also be used to control a UAV in
 flight, uploading new mission commands and setting parameters. It is
-often also use to monitor the live video stream from a UAV’s cameras.
+often also used to monitor the live video streams from a UAV’s cameras.
 
-There are at least ten different ground control stations, Desktop there is (*Mission
+There are at least ten different ground control stations. On desktop there is (*Mission
 Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl* and *UgCS*. For Tablet/Smartphone there is
 *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot* and *SidePilot* that can be
 used to communicate with ArduPilot (i.e.
@@ -68,7 +68,7 @@ APM Planner 2.0
 ---------------
 
 The best autopilot for use on MAC and Linux platforms. It has a smaller
-user base and reduced feature set when compared with Mission Planner.
+user base and a reduced feature set when compared with Mission Planner.
 
 -  **Platform**: Windows, Mac OS X, Linux
 -  **Licence**: `Open source <https://github.com/ArduPilot/apm_planner/blob/master/license.txt>`__
