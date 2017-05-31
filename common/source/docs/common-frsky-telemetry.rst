@@ -12,10 +12,10 @@ It is particularly useful:
  * when a separate person operates the ground control station,
  * for instantaneous situational awareness by the pilot.
 
-Compared to a MAVLink radio link, the FrSky telemetry link has practically no delay. 
+Compared to a MAVLink radio link, the FrSky telemetry link has practically no delay.
 
 Moreover, some RC transmitters such as the Taranis can be configured to play sounds, vibrate or perform automatic RC actions based on telemetry information through the highly configurable OpenTX firmware.
-   
+
 .. figure:: ../../../images/frsky_requiredhardware_flightdeck.png
     :target: ../_images/frsky_requiredhardware_flightdeck.png
     :align: center
@@ -37,7 +37,7 @@ Moreover, some RC transmitters such as the Taranis can be configured to play sou
 Protocol Information
 ====================
 
-ArduPilot has FrSky telemetry drivers to natively output flight controller information through the serial ports. It comes in two flavors: 
+ArduPilot has FrSky telemetry drivers to natively output flight controller information through the serial ports. It comes in two flavors:
 
 a) :ref:`Repurposed FrSky telemetry <common-frsky-repurposed>` (D and SmartPort) (available since AC3.2), which reuses FrSky data IDs to transmit basic flight control information to the RC transmitter (e.g. T2 temperature message reused to transmit the number of GPS satelites and GPS status); and
 
@@ -72,15 +72,15 @@ The following equipment is required to enable FrSky telemetry on an ArduPilot-co
   There are receivers available for two types of FrSky telemetry systems, which are not compatible with each other:
 
   - D telemetry
-      
+
       D telemetry is a deprecated protocol for D receivers. It uses 16 bit data frames, only supports one way communication and requires a hub to connect other D telemetry sensors. Only repurposed FrSky telemetry is available over the D telemetry system.
 
   - SmartPort telemetry (recommended)
-      
+
       SmartPort telemetry is available on X-series receivers. It uses 32 bit data frames, supports two-way communication; and enables other SmartPort sensors to be connected without a hub.
 
 * :ref:`A telemetry cable <frsky_cables>` to connect your flight controller to your FrSky receiver.
-  
+
 In addition to the required hardware, a selection of :ref:`FrSky sensors <frsky_sensors>` can be added. (see below)
 
 .. tip::
@@ -126,7 +126,7 @@ Craft and Theory Pixhawk to FrSky Telemetry Cables
 
    .. figure:: http://www.craftandtheoryllc.com/wp-content/uploads/2016/09/pxwk2_x8r_cable.jpg
       :target:  http://www.craftandtheoryllc.com/product/frsky-servo-x6r-x8r-flvss-mlvss-smartport-telemetry-cable-for-pixhawk-2-1-jst-gh-taranis-ardupilot/
-      
+
       Craft and Theory Pixhawk 2.1 to FrSky X6R and X8R receiver cable
 
 -  `Pixhawk to FrSky Telemetry Cable (X6R, X8R, FLVSS) <http://www.craftandtheoryllc.com/product/frsky-x6r-x8r-flvss-telemetry-cable-for-pixhawk/>`__:
@@ -232,7 +232,7 @@ While battery pack voltage is usually a good indicator of remaining flight time,
 By using a FrSky FLVSS or MLVSS LiPo voltage sensor, the lowest cell voltage (which is not available on a ground station using radio telemetry) can be displayed on your transmitter.
 
 To install, connect the telemetry cable between the autopilot and the FLVSS/MLVSS sensor, then use the cable supplied with your receiver or supplied with the FLVSS/MLVSS sensor to connect the FLVSS/MLVSS sensor to the Smart Port connector of your X-series receiver:
-  
+
 .. figure:: ../../../images/FrSky_FLVSS_X8R.png
    :scale: 50 %
    :alt: Setup with X8R
@@ -265,7 +265,7 @@ To enable FrSky Telemetry on one of the serial ports, connect with **Mission Pla
 |                      Flight Controller                      |           Port used            |     Parameter name     |
 +=============================================================+================================+========================+
 | Pixhawk 2.1                                                 | TELEM1                         | SERIAL1_PROTOCOL       |
-|                                                             +--------------------------------+------------------------+ 
+|                                                             +--------------------------------+------------------------+
 |                                                             | TELEM2                         | SERIAL2_PROTOCOL       |
 |                                                             +--------------------------------+------------------------+
 |                                                             | GPS 1                          | SERIAL3_PROTOCOL       |
@@ -311,7 +311,7 @@ Perform the steps in the following tutorial if you've never configured or must r
 
 .. warning::
 
-  It is highly recommended to configure the power module (both voltage and current), otherwise the voltage, current, battery consumption (Ah) and battery percentage reported in Mission Planner and via FrSky telemetry will not be accurate!!! 
+  It is highly recommended to configure the power module (both voltage and current), otherwise the voltage, current, battery consumption (Ah) and battery percentage reported in Mission Planner and via FrSky telemetry will not be accurate!!!
 
 Battery Capacity Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -360,7 +360,7 @@ Enabling Scripts on OpenTX
 
    .. image:: ../../../images/opentx_dlwindow.png
        :target: ../_images/opentx_dlwindow.png
-    
+
    5. Enter bootloader mode on the Taranis by sliding both horizontal trims, each under the main sticks, towards the center and then turning the Taranis on. The top of the Taranis LCD screen should now display “Taranis Bootloader.”
 
    .. image:: ../../../images/frsky_taranis_bootloadermode.png
@@ -369,12 +369,12 @@ Enabling Scripts on OpenTX
    6. Connect a USB cable between the Taranis and the computer. “USB Connected” should appear in the center of the Taranis LCD screen. Click on Read/Write >> Write Firmware to Radio.
 
    .. image:: ../../../images/opentx_RWtab.png
-       :target: ../_images/opentx_RWtab.png 
+       :target: ../_images/opentx_RWtab.png
 
    7. Locate/load the firmware (.bin) which was downloaded earlier, then click on the “Write to TX” button. A popup window should display a progress bar which will eventually reach 100%. Once flashing is done, click on the “Close” button to close the popup window.
 
    .. image:: ../../../images/opentx_flashwindow.png
-       :target: ../_images/opentx_flashwindow.png 
+       :target: ../_images/opentx_flashwindow.png
 
 Copying Scripts and Sounds to the Taranis
 -----------------------------------------
@@ -396,7 +396,7 @@ OpenTX 2.1.x requires “discovering” the telemetry messages from the Pixhawk 
 1. Press the MENU button, then long press the PAGE button to get to the TELEMETRY page. Press the - button until “Discover new sensors” is highlighted and press ENTER. The Taranis LCD screen should display “Stop discovery.”
 
  .. image:: ../../../images/OpenTX_Discover.png
-    :target: ../_images/OpenTX_Discover.png 
+    :target: ../_images/OpenTX_Discover.png
 
 2. Power on the Pixhawk and FrSky receiver. Wait for 15 seconds. The Taranis should discover the emulated sensors based on the data from the Pixhawk. The sensors must all be properly discovered for the scripts to run. For example:
 
@@ -411,7 +411,7 @@ If a scripts has a display, it needs to be assigned to telemetry screens. Once t
 On the TELEMETRY page, scroll down using the - button, and highlight the “None” entry next to “Screen 1.” Once “None” is highlighted, press ENT, then navigate the choices with the +/- buttons until “Script” appears. Press ENT to validate, then press - to move to the right (highlighting “- - -“). Press ENT and select your script (e.g. “screens”) using the +/- buttons, then press ENT to validate. The “screens” script handles the display capabilities. The Taranis LCD display should then look like this:
 
 .. image:: ../../../images/OpenTX_assign_script_to_screen.png
-    :target: ../_images/OpenTX_assign_script_to_screen.png 
+    :target: ../_images/OpenTX_assign_script_to_screen.png
 
 Activating a Custom Script (no display function)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
