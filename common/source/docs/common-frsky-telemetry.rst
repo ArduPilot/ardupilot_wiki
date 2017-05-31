@@ -4,7 +4,7 @@
 FrSky Telemetry
 ===============
 
-FrSky telemetry allows you to display ArduPilot information such as flight modes, battery level, and error messages, as well as information from additional FrSky sensors on the FrSky Taranis and other FrSky compatible RC transmitters.
+FrSky telemetry allows you to display ArduPilot information such as flight modes, battery level, and error messages, as well as information from additional FrSky sensors on the FrSky Taranis, Turnigy 9XR Pro, and other FrSky compatible RC transmitters.
 
 It is particularly useful:
  * for flying without a ground control station (no need for MAVLink telemetry radio),
@@ -102,6 +102,8 @@ Hardware Selection Guide
 
 The following equipment is required to enable FrSky telemetry on an ArduPilot-compatible flight controller:
 
+.. _ersky9x: http://www.er9x.com/
+
 * A FrSky telemetry capable RC transmitter.
   Possible options include:
 
@@ -109,8 +111,8 @@ The following equipment is required to enable FrSky telemetry on an ArduPilot-co
   - FrSky Taranis X9D Plus (recommended)
   - FrSky Taranis X9E
   - FrSky Horus X12S
-  - A number of DIY solutions are also available (e.g., for Turnigy 9X and 9XR)
-
+  - Turnigy 9XR Pro (running ErSky9x_ version 211 or later)
+  - A number of DIY solutions are also available
 
 * :ref:`A FrSky telemetry capable receiver <frsky_receivers>`.
   There are receivers available for two types of FrSky telemetry systems, which are not compatible with each other:
@@ -471,3 +473,93 @@ Press EXIT once, long press PAGE to get to the CUSTOM SCRIPT page, then press EN
     FlightDeck <common-frsky-flightdeck>
     Repurposed FrSky Telemetry <common-frsky-repurposed>
     MavLink to FrSky Telemetry Converters <common-frsky-mavlink>
+
+Turnigy 9XR Pro
+===============
+
+This section describes how to enable FrSky telemetry on the Turnigy
+9XR Pro transmitter.
+
+Requirements
+------------
+
+- You will need a transmitter module with support for FrSky telemetry,
+  such as the `FrSky XJT`_.  The DJT_ also supports telemetry, but you
+  will need to use an external cable to connect the telemetry data
+  from the module to your transmitter.
+
+  The instructions in this section are specifically for the XJT
+  module.
+
+- You will need to be running a recent version (211 or later) of the
+  ErSky9x_ firmware.  You can find more information about upgrading
+  the firmware and about ErSky9x in general from `the
+  documentation`_.
+
+.. _frsky xjt: http://www.frsky-rc.com/product/pro.php?pro_id=104
+.. _djt:  http://www.frsky-rc.com/product/pro.php?pro_id=8
+.. _the documentation: http://openrcforums.com/forum/viewtopic.php?f=122&t=5575#p79483
+
+Configuring Ardupilot
+---------------------
+
+Ensure that you have the appropriate ``SERIALn_PROTOCOL`` parameter
+set to ``4`` to select the standard FrSky SPORT protocol.  For
+example, if you have plugged your SmartPort cable into the serial 4/5
+port on your Pixhawk, set ``SERIAL4_PROTOCOL`` to ``4``.
+
+Reboot your controller after making this change.
+
+Configuring the 9XR Pro
+-----------------------
+
+#. Verify that you are running version 211 or later.  Navigate to the ``Radio
+   Setup`` menu and then select ``Version``.  Look at the ``SVN``
+   field.
+
+    .. figure:: ../../../images/9xrpro-version.png
+        :target: ../_images/9xrpro-version.png
+        :align: center
+
+#. Navigate to ``Model Setup`` menu, then select ``Protocol``.  Ensure
+   that you have ``Proto`` set to ``XJT``, and ``Type`` set to ``D16``.
+
+    .. figure:: ../../../images/9xrpro-protocol.png
+        :target: ../_images/9xrpro-protocol.png
+        :align: center
+
+#. Navigate to the ``Model Setup`` menu, then select ``Telemetry``, and
+   then again select ``Telemetry`` from the popup menu.  Ensure that
+   ``UsrProto`` is set to ``ArduP`` (for ArduPlane) or ``ArduC`` (for
+   ArduCopter), ``FrSky Com Port`` is ``1``, and ``Invert COM 1`` is
+   off (unchecked).
+
+    .. figure:: ../../../images/9xrpro-telem-1.png
+        :target: ../_images/9xrpro-telem-1.png
+        :align: center
+
+    .. figure:: ../../../images/9xrpro-telem-2.png
+        :target: ../_images/9xrpro-telem-2.png
+        :align: center
+
+   If you are using something other than ArduPlane or ArduCopter, you
+   can set ``UsrProto`` to ``FrSky``.  You will get a more basic
+   telemetry display that will be missing things like a descriptive
+   flight mode.
+
+At this point, you should be receiving extended telemetry on your 9XR
+Pro.  If you navigate to the telemetry home screen (use the up/down
+arrows to switch between screens) you should see standard FrSky
+telemetry values (such as RSSI, receiver voltage, etc) as well as
+extended telemetry, such as flight mode, current measurements, GPS
+information, etc.
+
+.. figure:: ../../../images/9xrpro-telem-arducopter.png
+    :target: ../_images/9xrpro-telem-arducopter.png
+    :align: center
+
+Use the left/right arrows to switch between available views:
+
+.. figure:: ../../../images/9xrpro-telem-gps.png
+    :target: ../_images/9xrpro-telem-gps.png
+    :align: center
