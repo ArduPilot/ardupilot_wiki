@@ -34,10 +34,19 @@ Vagrant.configure(2) do |config|
         #would like to get from pip but there is no version on pypi
 		apt-get -y install mercurial
 		hg clone https://bitbucket.org/birkenfeld/sphinx-contrib
-		cd ./sphinx-contrib/youtube/
+		pushd ./sphinx-contrib/youtube/
 		python setup.py build
 		python setup.py install
-        
+		popd
+
+        # and a vimeo plugin:
+		apt-get -y install mercurial
+		hg clone https://bitbucket.org/jdouglass/sphinxcontrib.vimeo
+		pushd sphinxcontrib.vimeo
+		python setup.py build
+		python setup.py install
+		popd
+
 
 		cd /vagrant
 
