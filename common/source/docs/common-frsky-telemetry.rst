@@ -504,12 +504,18 @@ Requirements
 Configuring Ardupilot
 ---------------------
 
-Ensure that you have the appropriate ``SERIALn_PROTOCOL`` parameter
-set to ``4`` to select the standard FrSky SPORT protocol.  For
-example, if you have plugged your SmartPort cable into the serial 4/5
-port on your Pixhawk, set ``SERIAL4_PROTOCOL`` to ``4``.
+Ensure that you have the appropriate ``SERIAL#_PROTOCOL`` parameter
+set to ``10`` ("passthrough FrSky telemetry") to select the ArduPilot
+SPORT protocol.  For example, if you have plugged your SmartPort cable
+into the serial 4/5 port on your Pixhawk, set ``SERIAL4_PROTOCOL`` to
+``10``.
 
 Reboot your controller after making this change.
+
+ErSky9x will also work with protocol ``4`` ("repurposed FrSky
+telemetry"), but you will not have access to ArduPilot-specific
+information such as the name of the current flight mode or arming
+status.
 
 Configuring the 9XR Pro
 -----------------------
@@ -518,35 +524,43 @@ Configuring the 9XR Pro
    Setup`` menu and then select ``Version``.  Look at the ``SVN``
    field.
 
-    .. figure:: ../../../images/9xrpro-version.png
-        :target: ../_images/9xrpro-version.png
+    .. figure:: ../../../images/9xrpro-firmware-version.png
+        :target: ../_images/9xrpro-firmware-version.png
         :align: center
+
+   Telemetry support is substantially improved in revision 218 and
+   later.
 
 #. Navigate to ``Model Setup`` menu, then select ``Protocol``.  Ensure
    that you have ``Proto`` set to ``XJT``, and ``Type`` set to ``D16``.
 
-    .. figure:: ../../../images/9xrpro-protocol.png
-        :target: ../_images/9xrpro-protocol.png
+    .. figure:: ../../../images/9xrpro-settings-protocol.png
+        :target: ../_images/9xrpro-settings-protocol.png
         :align: center
+
+   In older versions of the firmware, you may see `PXX` instead of
+   `XJT`.
 
 #. Navigate to the ``Model Setup`` menu, then select ``Telemetry``, and
    then again select ``Telemetry`` from the popup menu.  Ensure that
    ``UsrProto`` is set to ``ArduP`` (for ArduPlane) or ``ArduC`` (for
-   ArduCopter), ``FrSky Com Port`` is ``1``, and ``Invert COM 1`` is
+   ArduCopter), ``Telemetry Com Port`` (previously ``FrSky Com Port``)
+   is ``1``, and ``Com Port Invert`` (previously ``Invert Com 1``) is
    off (unchecked).
 
-    .. figure:: ../../../images/9xrpro-telem-1.png
-        :target: ../_images/9xrpro-telem-1.png
+    .. figure:: ../../../images/9xrpro-settings-telem-protocol.png
+        :target: ../_images/9xrpro-settings-telem-protocol.png
         :align: center
 
-    .. figure:: ../../../images/9xrpro-telem-2.png
-        :target: ../_images/9xrpro-telem-2.png
+    .. figure:: ../../../images/9xrpro-settings-telem-port.png
+        :target: ../_images/9xrpro-settings-telem-port.png
         :align: center
 
    If you are using something other than ArduPlane or ArduCopter, you
    can set ``UsrProto`` to ``FrSky``.  You will get a more basic
-   telemetry display that will be missing things like a descriptive
-   flight mode.
+   telemetry display that will be missing things like the graphic
+   heading indicator, the name of the current flight mode, and so
+   forth.
 
 At this point, you should be receiving extended telemetry on your 9XR
 Pro.  If you navigate to the telemetry home screen (use the up/down
@@ -559,8 +573,20 @@ information, etc.
     :target: ../_images/9xrpro-telem-arducopter.png
     :align: center
 
-Use the left/right arrows to switch between available views:
+Use the left/right arrows to switch between available telemetry views:
 
 .. figure:: ../../../images/9xrpro-telem-gps.png
     :target: ../_images/9xrpro-telem-gps.png
+    :align: center
+
+Configuring custom telemetry screens
+------------------------------------
+
+ErSky9x allows you to customize two telemetry display screens with
+your choice of information.  To configure the custom screens, navigate
+to ``Model Setup``, then select ``Telemetry``, and then select
+``Custom``:
+
+.. figure:: ../../../images/9xrpro-settings-telem-custom.png
+    :target: ../_images/9xrpro-settings-telem-custom.png
     :align: center

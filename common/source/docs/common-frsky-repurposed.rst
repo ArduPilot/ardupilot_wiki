@@ -9,6 +9,40 @@ For information on how to configure ArduPilot for FrSky telemetry, please go :re
 
 Once your equipment is connected and ArduPilot is configured, follow the instructions below to get standard FrSky telemetry displayed on your RC transmitter.
 
+Protocol information
+--------------------
+
+Values that are sent over the FrSky telemetry link by ArduPilot:
+
++-------------------------------------+---------------------------------------------------------------+
+| Taranis telemetry screen identifier |                          Description                          |
++=====================================+===============================================================+
+| Fuel                                | Remaining battery capacity %                                  |
++-------------------------------------+---------------------------------------------------------------+
+| VFAS                                | Battery voltage                                               |
++-------------------------------------+---------------------------------------------------------------+
+| Curr                                | Current consumption                                           |
++-------------------------------------+---------------------------------------------------------------+
+| GPS                                 | Latitude/longitude                                            |
++-------------------------------------+---------------------------------------------------------------+
+| GSpd                                | GPS groundspeed                                               |
++-------------------------------------+---------------------------------------------------------------+
+| GAlt                                | GPS altitude                                                  |
++-------------------------------------+---------------------------------------------------------------+
+| Hdg                                 | Yaw angle                                                     |
++-------------------------------------+---------------------------------------------------------------+
+| Alt                                 | Navigation altitude (relative to home)                        |
++-------------------------------------+---------------------------------------------------------------+
+| Tmp1                                | Control/flight mode                                           |
++-------------------------------------+---------------------------------------------------------------+
+| Tmp2                                | GPS status and number of satellites (as num_sats*10 + status) |
++-------------------------------------+---------------------------------------------------------------+
+
+If you installed FrSky sensors on your vehicle, other messages from these may also appear during discovery.
+
+Configuration with OpenTX
+=========================
+
 Transmitter set-up
 ------------------
 
@@ -63,33 +97,7 @@ When configured to display “GPS,” the custom telemetry screen will show long
 .. image:: ../../../images/OpenTX_GPSdisplay.png
  :target: ../_images/OpenTX_GPSdisplay.png
 
-Protocol information
---------------------
+Configuringation with ErSky9x
+=============================
 
-Values that are sent over the FrSky telemetry link by ArduPilot:
-
-+-------------------------------------+---------------------------------------------------------------+
-| Taranis telemetry screen identifier |                          Description                          |
-+=====================================+===============================================================+
-| Fuel                                | Remaining battery capacity %                                  |
-+-------------------------------------+---------------------------------------------------------------+
-| VFAS                                | Battery voltage                                               |
-+-------------------------------------+---------------------------------------------------------------+
-| Curr                                | Current consumption                                           |
-+-------------------------------------+---------------------------------------------------------------+
-| GPS                                 | Latitude/longitude                                            |
-+-------------------------------------+---------------------------------------------------------------+
-| GSpd                                | GPS groundspeed                                               |
-+-------------------------------------+---------------------------------------------------------------+
-| GAlt                                | GPS altitude                                                  |
-+-------------------------------------+---------------------------------------------------------------+
-| Hdg                                 | Yaw angle                                                     |
-+-------------------------------------+---------------------------------------------------------------+
-| Alt                                 | Navigation altitude (relative to home)                        |
-+-------------------------------------+---------------------------------------------------------------+
-| Tmp1                                | Control/flight mode                                           |
-+-------------------------------------+---------------------------------------------------------------+
-| Tmp2                                | GPS status and number of satellites (as num_sats*10 + status) |
-+-------------------------------------+---------------------------------------------------------------+
-
-If you installed FrSky sensors on your vehicle, other messages from these may also appear during discovery.
+For information on how to configure your ErSky9x transmitter (such as a Turnigy 9XR Pro) for FrSky telemetry, please go :ref:`here <common-frsky-telemetry>`.
