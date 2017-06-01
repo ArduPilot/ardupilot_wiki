@@ -32,7 +32,8 @@ Required/Compatible Hardware
 	- Pixhack
 	- (Linux Boards have not been tested and APM2.6 is not supported)
 
-* A Taranis X9D, X9D Plus or X9E
+* A Taranis X9D, X9D Plus or X9E, or a device running ErSky9x, such as
+  the Turnigy 9XR Pro.
 
 * An X series FrSky SmartPort receiver from this list:
 	
