@@ -53,7 +53,7 @@ Install Cygwin
 `Cygwin <http://www.cygwin.com/>`__ provides the tools and libraries
 that allow us to rebuild ArduPilot on Windows.
 
-#. Download and run the `Cygwin 32-bit installer <https://cygwin.com/setup-x86.exe>`__ or the `Cygwin 64-bit installer <https://cygwin.com/setup-x86_64.exe`__.
+#. Download and run the `Cygwin 32-bit installer <https://cygwin.com/setup-x86.exe>`__ or the `Cygwin 64-bit installer <https://cygwin.com/setup-x86_64.exe>`__.
 
 
 #. Accept the all the prompts (including default file locations) until
