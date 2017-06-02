@@ -1,4 +1,4 @@
-.. _common_partners:
+.. _common-partners:
 
 ========
 Partners
