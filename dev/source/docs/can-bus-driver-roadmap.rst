@@ -135,10 +135,10 @@ Necessary methods are following:
 
   Returns true if the CAN manager was initialized successfully
 
-- void set_UAVCAN(AP_UAVCAN *uavcan)
+- void set_UAVCAN(AP_UAVCAN \*uavcan)
 
   Method stores the pointer to the UAVCAN instance
 
-- AP_UAVCAN *get_UAVCAN(void)
+- AP_UAVCAN \*get_UAVCAN(void)
 
   Method returns the pointer to the UAVCAN instance that is connected with this manager
