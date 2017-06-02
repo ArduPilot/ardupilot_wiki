@@ -23,9 +23,6 @@ you can do with it include:
 -  Diagnose sensor failures
 -  Assist in debugging new drivers
 
-This topic explains how to connect and send NSH commands from *MAVProxy*
-via remote and serial connections.
-
 Running NSH using Debug Cable and Serial5
 =========================================
 
