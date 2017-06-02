@@ -20,7 +20,7 @@ estimates the following states
 -  Body magnetic field (X,Y,Z)
 -  Wind Velocity (North,East)
 
-It is based on the filter equations derived `here https://github.com/priseborough/InertialNav/blob/master/derivations/RotationVectorAttitudeParameterisation/GenerateNavFilterEquations.m`__.
+It is based on the filter equations derived `here <https://github.com/priseborough/InertialNav/blob/master/derivations/RotationVectorAttitudeParameterisation/GenerateNavFilterEquations.m>`__.
 
 EKF2 Advantages
 ---------------
@@ -291,7 +291,7 @@ instance bing used for flight control
    |EKF2 - offset uncertainty|
 
 Tuning Parameters
-=================
+-----------------
 
 The EKF2 parameters have been tuned to provide a compromise between
 accuracy and robustness to sensor errors. i tis likely that further
