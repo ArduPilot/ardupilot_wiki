@@ -64,7 +64,7 @@ Setting up X-Plane
 
    Unfortunately, the X-Plane 10 demo doesn’t provide airfoils for most of the above models, and refuses to load these models without them. Fortunately, someone has created and published the airfoils too!
    
-   The airfoils are in `NACA_64_xxx_Airfoils_from_TR824.zip in the ArduPilot repo <https://github.com/ArduPilot/ardupilot/tree/master/Tools/Frame_params/XPlane>`_. Originally, this archive comes from `here <http://forums.x-plane.org/index.php?/files/file/6953-several-naca-64-series-airfoils/>`_, and `this X-Plane forum thread <http://forums.x-plane.org/index.php?/files/category/3-airfoils/>`_ is a good place to look for more airfoils.
+   The airfoils are in `NACA_64_xxx_Airfoils_from_TR824.zip in the ArduPilot repo <https://github.com/ArduPilot/ardupilot/tree/master/Tools/Frame_params/XPlane>`_. Originally, this archive comes from `a post on X-Plane forum <http://forums.x-plane.org/index.php?/files/file/6953-several-naca-64-series-airfoils/>`_, and `this X-Plane forum thread <http://forums.x-plane.org/index.php?/files/category/3-airfoils/>`_ is a good place to look for more airfoils.
    
    To install them, extract the .afl files from the downloaded archive into *%XPlane-install-dir%\\Airfoils*.  This will enable you to fly, at the very least, Vee-gull 005 and Houston Hawk.
 
