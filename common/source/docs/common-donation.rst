@@ -10,7 +10,7 @@ cause, there are several ways of doing that:
 - Direct `PayPal Donation <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BBF28AFAD58B2>`__
 - By Credit Card using `ClickAndPledge <https://co.clickandpledge.com/advanced/default.aspx?wid=34115>`__.  Be sure to enter the amount in the ArduPilot section, other sections are for other `SPI projects <http://www.spi-inc.org/>`__.  Other methods can be found on the `SPI donations page <http://www.spi-inc.org/donations/>`__.
 - Buying supporting merchandise from :ref:`official stores <stores>`
-- :ref:`Partner Donations <common_sponsors>` (for Companies)
+- :ref:`Partner Donations <common-partners>` (for Companies)
  
 PayPal Donations 
 ================
