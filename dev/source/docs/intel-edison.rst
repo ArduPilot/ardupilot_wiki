@@ -113,51 +113,61 @@ It is important to note this will only work under Linux Ubuntu 14.04
 
 Download the latest version of xFSTK onto your Ubuntu 14.04 32-bit system from `here <https://communities.intel.com/external-link.jspa?url=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fxfstk%2Ffiles%2F>`__. and extract.
 
-	1. Unzip the downloaded file with 
-	::
-		tar xvfz xfstk-dldr-linux-source-1.7.2.tar.gz
-		
-	2. Navigate to the source folder 
-	::	
-		cd xfstk-build/linux-source-package
-		
-	3. Install the required packages
-	::
-		sudo apt-get install g++ qtcreator build-essential devscripts libxml2-dev alien doxygen graphviz libusb-dev libboost-all-dev  
-	 	sudo apt-get install libqt4-dev qt4-qmake  
-	 	sudo apt-get install libusb-1.0-0-dev
-	 	
-	4. Create the following Symlink  
-	::
-		ln -s /usr/lib/x86_64-linux-gnu/libusb-1.0.a /usr/lib/libusb.a
-		
-	5. Configure the build parameters
-	::
-		export DISTRIBUTION_NAME=ubuntu14.04  
-		export BUILD_VERSION=0.0.0
-		
-	6. Build the xFSTK tools 
-	::
-		make --version -j 6
-		
-	7. Run cmake
-	::
-		mkdir build
-		cd build
-		cmake ..
-		
-	8. Build the package 
-	::
-		make package
-		
-	9. Install the package you just built 
-	::
-		dpkg -i [built package]
-		
-	10. May need to install:
-	::
-		sudo apt-get install libboost-program-options1.55.0
-		sudo apt-get install dfu-util
+    1. Unzip the downloaded file with
+    ::
+
+        tar xvfz xfstk-dldr-linux-source-1.7.2.tar.gz
+
+    2. Navigate to the source folder
+    ::
+
+        cd xfstk-build/linux-source-package
+
+    3. Install the required packages
+    ::
+
+        sudo apt-get install g++ qtcreator build-essential devscripts libxml2-dev alien doxygen graphviz libusb-dev libboost-all-dev  
+        sudo apt-get install libqt4-dev qt4-qmake  
+        sudo apt-get install libusb-1.0-0-dev
+
+    4. Create the following Symlink
+    ::
+
+        ln -s /usr/lib/x86_64-linux-gnu/libusb-1.0.a /usr/lib/libusb.a
+
+    5. Configure the build parameters
+    ::
+
+        export DISTRIBUTION_NAME=ubuntu14.04  
+        export BUILD_VERSION=0.0.0
+
+    6. Build the xFSTK tools
+    ::
+
+        make --version -j 6
+
+    7. Run cmake
+    ::
+
+        mkdir build
+        cd build
+        cmake ..
+
+    8. Build the package
+    ::
+
+        make package
+
+    9. Install the package you just built
+    ::
+
+        dpkg -i [built package]
+
+    10. May need to install:
+    ::
+
+        sudo apt-get install libboost-program-options1.55.0
+        sudo apt-get install dfu-util
 
 now you should be able to run ``./flashall.sh —recovery`` to recover the Edison.
 
