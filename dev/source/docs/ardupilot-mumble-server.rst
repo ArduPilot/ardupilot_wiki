@@ -22,7 +22,7 @@ Installing and Connecting
 
 .. note::
 
-The port number is NOT the default mumble port number. If you find an empty server then please check your port number.
+    The port number is NOT the default mumble port number. If you find an empty server then please check your port number.
 
 When you first join the server it will ask you to choose a username. Please choose something like *FirstnameLastname*. The user name must not have any spaces.
 
