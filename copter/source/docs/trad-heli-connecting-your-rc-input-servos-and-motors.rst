@@ -56,8 +56,8 @@ Connecting the servos
 -  Output 4 should be connected to the rudder servo.
 -  Main rotor's ESC should be connected to Output #8.
 
-.. image:: ../images/APM_RX_Serrvo_Connections.jpg
-    :target: ../_images/APM_RX_Serrvo_Connections.jpg
+.. image:: ../images/APM_RX_Servo_Connections.jpg
+    :target: ../_images/APM_RX_Servo_Connections.jpg
 
 Notes:
 
