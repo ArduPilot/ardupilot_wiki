@@ -32,7 +32,7 @@ Since Windows 10 has Ubuntu as his new partner, it is possible to compile Ardupi
 
 
 Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
-===============
+=============================================================
 
 #. First, you have to insert your local host to the /etc/hosts file:
 
