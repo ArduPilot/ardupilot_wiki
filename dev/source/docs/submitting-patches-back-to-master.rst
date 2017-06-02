@@ -43,7 +43,7 @@ to `online resources <http://gitready.com/advanced/2009/02/10/squashing-commits-
 to understand how to use this tool.
 
 Try to follow the style conventions of the existing code.  In
-particular, check that your :ref:`editor uses 4 spaces instead of tab <editing-the-code>`.
+particular, check that your :ref:`editor uses 4 spaces instead of tab <style-guide>`.
 
 Log messages
 ------------
