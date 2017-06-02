@@ -195,7 +195,7 @@ Sep 2016 - Flymaple board support removed ( not actively tested or used , also l
 
 Sep 2016 - Relationship with 3DR, Chris Anderson and PX4 team lead sours as DroneCode Platinum board members outvote Silver board members to remove GPLv3 projects including ArduPilot from DroneCode.
 
-Sep 2016 - ArduPilot begins :ref:`ArduPilot Partners <common_sponsors>` group. 
+Sep 2016 - ArduPilot begins :ref:`ArduPilot Partners <common-partners>` group.
 
 .. note::
 
