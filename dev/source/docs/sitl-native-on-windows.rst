@@ -8,6 +8,10 @@ This article shows how to build and run SITL *natively* on Windows. The
 specific commands were tested on *Windows 8.1* using *Cygwin 2.0.0*,
 *MAVProxy 1.4.19*, *Mission Planner 1.3.25*, and *AC3.3* (Copter).
 
+It is also possible to use Windows 10 'Subsystem for Linux' by installing a display manager such as 
+Xming and following the Ubuntu instructions :ref:`Setting up SITL on Linux <setting-up-sitl-on-linux>`
+Tested with MAVproxy 1.5.7
+
 Overview
 ========
 
