@@ -1,4 +1,4 @@
-.. _common_sponsors:
+.. _common_partners:
 
 ========
 Partners
