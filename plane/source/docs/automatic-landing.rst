@@ -390,17 +390,23 @@ Reverse-Thrust Landing
 ======================
 
 Some ESC's allow for reverse direction. When using reverse on the
-propeller it will generate a negative thrust which can be used to slow
-you down. During a steep landing approach this method can be used to
-maintain a stable airspeed allowing you to land much more precisely even
-with a LiDAR Baro bump on the approach. To use this feature it is highly
-recommend to use an airspeed sensor  and a rangefinder (see above) for
-an accurate altitude.
+propeller it will generate a negative thrust which can be used to reduce
+your airspeed. During a steep landing approach this method can be used to
+maintain a stable and low airspeed allowing you to land much more softly and 
+precisely. To use this feature it is highly recommend to use an airspeed sensor
+and a rangefinder (see above) for an accurate altitude.
 
 .. note::
 
    Reverse-thrust landings are available starting from Plane
    v3.5.1.
+
+
+The below video is an example of a Skywalker X8 performing an auto-landing with a 15 degree slope. The target is the hat on the ground showing it is possible to get repeatable high precision landings where the final position error was dictated by the GPS position error. This particular aircraft has been landed at 20deg and 25deg slopes too. YMMV depending on weight of aircraft and available thrust from motor/properlor. Typically a Skywalker X8 would need a shallow slope such at 6 to 10deg.  
+
+..  youtube:: kdw8vjbttNo
+    :width: 100%
+
 
 Key Parameters
 --------------
@@ -436,7 +442,7 @@ Hardware configuration
 
 .. note::
 
-   Remove propeller while configuring ESCs.
+   Remove propeller while configuring ESCs and thrust parameters
 
 Configure your ESC for reverse thrust by changing it's neutral point.
 Many ESC require custom firmware to accomplish this. Search google or
@@ -455,24 +461,24 @@ Determining your max glide slope angle
 
 For a steep landing approach, the limitation is how well you can
 maintain your desired airspeed. This is determined by your aircraft's
-ability to create reverse thrust (motor+prop combo) and its resistance
-to slowing down (aircraft mass). In most cases extreme steepness is
+ability to create reverse thrust (motor+prop thrust ability) and its resistance
+to slowing down (aircraft mass). In many cases extreme steepness is
 unnecessary, but possible. With an over-sized motor and lightweight
 aircraft you can come in as steep as 60 degrees.
 
 To determine your steepest approach angle, set :ref:`TECS_APPR_SMAX <TECS_APPR_SMAX>`
 very high as to not limit you (e.g. 99). Next, plan a mission with a
 steeper than normal approach (try 15 degrees and go up from there).
-Watch your airspeed on the approach - the plane should be able to
-maintain :ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>` with
-only 75% of the available reverse throttle range. If not, you're coming
+Watch your airspeed on the approach - the aircraft should be able to
+maintain :ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>` without exceeding
+75% of the available reverse throttle range. If not, you're coming
 in too steep for the negative-thrust-to-mass ratio of your aircraft.
 
 .. tip::
 
    Keep in mind that whatever value you determine as your maximum may
    not be acceptable in all wind conditions. It is best to be a little
-   conservative.
+   conservative to maintain repeatability.
 
 Setting up the Pre-Flare
 ------------------------
@@ -486,8 +492,7 @@ set ``LAND_PF_ARSPD`` to a value just above your stall speed.
 
 When LAND_PF_ALT is reached the airspeed demand will instantly go
 from :ref:`TECS_LAND_ARSPD <TECS_LAND_ARSPD>` to LAND_PF_ARSPD.
-This will cause it to slam on the brakes via increased reverse thrust to
-reduce speed instead of just maintaining a given speed.
+This will cause it to slam on the brakes via increased reverse thrust so that the airspeed reduces to the desired airspeed.
 
 The trick is to set ``LAND_PF_ALT`` to an altitude where it
 achieves ``LAND_PF_ARSPD`` before killing the throttle at
@@ -496,9 +501,9 @@ or 2m).
 
 Example, ``TECS_LAND_ARSPD = 15``, ``LAND_PF_ARSPD = 12``, ``LAND_PF_ALT=12``, ``LAND_FLARE_ALT=2``.
 Depending on your slope, mass of aircraft and motor+propellor thrust
-ability, you're expecting the aircraft to decelerate from 15 to 12m/s
-airspeed while dropping 10m. These are the critical params to adjust to
-ensure a smooth and slow flare.
+ability, you're expecting the aircraft to decelerate from 15m/s to 12m/s
+airspeed while dropping 10m to 2m. These are the critical params to adjust to
+ensure a smooth and slow flare below 2m altitude.
 
 Flare
 -----
@@ -506,30 +511,17 @@ Flare
 Now that you are starting the flare with a stable and predictable
 airspeed, it's much easier to :ref:`control the flare <automatic-landing_controlling_the_flare>`. If you've already
 tuned your flare for an auto-land without reverse thrust you'll want to
-retune it. You'll notice you're coming in much slower.
+retune it. You'll notice you're coming in much slower ad tuning will be easier. The tweaks and compromises you had to do before are much easier to deal with.
 
-Other benefits of reverse-thrust landings
------------------------------------------
-
-LiDAR baro bump is handled better
-+++++++++++++++++++++++++++++++++
-
-On a long duration flight the baro drift will cause an altitude offset
-that is not detectable until the LiDAR detects the ground (at which
-point the aircraft "snaps" to the glide-slope). This causes an increased
-airspeed moments before your flare, causing a touch-down beyond the
-intended land point. With reverse-thrust the "snap" still happens, but
-the TECS controller automatically changes the throttle demand to
-maintain the desired airspeed.
 
 Determining actual stall speed of your aircraft
 +++++++++++++++++++++++++++++++++++++++++++++++
 
 Unless you really know what you're doing, stall speed can be hard to
-estimate. To be sure of the value you normally need to slowly decrease
-your airspeed until you stall - with the consequent problem that now you
-have a stalled plane falling out of the sky.
+estimate. Traditionally, to dtermine this true value you would need to slowly decrease
+your airspeed until you stall but that comes with the pesky problem that now you
+have a stalled aircraft falling out of the sky.
 
 With LAND_PF_ALT and LAND_PF_ARSPD you can check your stall speed
-much lower to the ground. To know the exact moment it stalls, check your
-logs for when roll and roll_desired diverge.
+much lower to the ground. To know the airspeed at the exact moment it stalls, check your
+dataflash logs (*.bin on SD card) for the airspeed (ARSP.Airspeed) when your wing loses lift and drops by comparing actual roll (CTUN.Roll) and desired roll (CTUN.NavPitch) diverge.
