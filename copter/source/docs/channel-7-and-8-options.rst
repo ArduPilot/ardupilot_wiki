@@ -66,6 +66,7 @@ Adjust the vehicle level position using the current roll and pitch stick
 inputs. See details `here <autotrim>`__.
 
 .. raw:: html
+
    </td>
    </tr>
    <tr>
