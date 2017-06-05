@@ -26,7 +26,7 @@ Required Hardware
 
 The uAvionix Ping sensor can be purchased directly from `uAvionix <http://www.uavionix.com/products/>`__ or from the following vendors:
 
-   -  USA: `Unmanned Systems Source <https://www.unmannedsystemssource.com/shop/atc-devices/pingusb/>`__
+   -  USA: `Unmanned Systems Source <https://www.unmannedsystemssource.com/shop/atc-devices/pingrx-ads-b-receiver/>`__
    -       `R Cubed Engineering <http://www.rcubedengineering.com/ecommerce/>`__
    -  U.K.: `Unmanned Tech <http://www.unmannedtech.co.uk/>`__
    -  Germany: `UAV Store <http://www.uav-store.de/ads-b-receivers/>`__
