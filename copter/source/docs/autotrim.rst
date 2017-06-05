@@ -25,7 +25,8 @@ Hardware > Mandatory Hardware > Radio Calibration screen.
 2. Set the CH7 Option to Save Trim on the Software > Copter Pids screen
 and press the "Write Params" button.
 
-*|MP_SaveTrim_Ch7|*
+.. image:: ../images/MP_SaveTrim_Ch7.png
+    :target: ../_images/MP_SaveTrim_Ch7.png
 
 3. With your CH7 switch in the off position, fly your copter in
 Stabilize mode and use your transmitters's roll and pitch trim to get it
