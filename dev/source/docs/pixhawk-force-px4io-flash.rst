@@ -24,7 +24,11 @@ Press and hold the safety switch while powering on the PixHawk.  You should hear
 Use the nsh console
 ===================
 
-You will need to have :ref:`nsh console access <interfacing-with-pixhawk-using-the-nsh>` to attempt this method.
+You will need to have :ref:`nsh console access <interfacing-with-pixhawk-using-the-nsh>` to attempt this method, and ONLY via USB connection with the SD card ejected.
+
+.. note::
+
+   On px4v1 you should disconnect the telemetry radio before attempting an update the the IO firmware
 
 At the nsh console:
 
