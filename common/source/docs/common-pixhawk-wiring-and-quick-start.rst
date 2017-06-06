@@ -107,6 +107,7 @@ main output signal (S) pins by motor number:
 -  Pin 2 = Motor 2 - - Pin 6 = Motor 6
 -  Pin 3 = Motor 3 - - Pin 7 = Motor 7
 -  Pin 4 = Motor 4 - - Pin 8 = Motor 8
+
 [/site]
 
 [site wiki="plane"]
@@ -117,6 +118,7 @@ pins:
 -  Pin 2 = Elevator
 -  Pin 3 = Throttle
 -  Pin 4 = Rudder
+
 [/site]
 
 [site wiki="rover"]
@@ -125,6 +127,7 @@ signal pins:
 
 -  Pin 3 = Throttle
 -  Pin 1 = Steering
+
 The skid-steer parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The parameters are: SKID_STEER_OUT and SKID_STEER_IN. When enabled, flight controller's ouput RC1 is used for the left track control, and ouput RC3 is used for right track control.
 [/site]
 
