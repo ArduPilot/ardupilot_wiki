@@ -1,19 +1,19 @@
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems:
 
-==============================================
-Compatible RC Transmitter and Receiver Systems
-==============================================
+============================================================
+Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4)
+============================================================
 
 This article provides an overview of the RC Transmitter and Receiver
-Systems that can be used with ArduPilot along with guidance on
+Systems that can be used with Pixhawk (and PX4) along with guidance on
 how they are connected.
 
 Overview
 ========
 
-ArduPilot is compatible with
+Pixhawk is compatible with 
     #. PPM RC receivers
-    #. Futaba S.Bus receivers 
+    #. S.Bus receivers 
     #. Spektrum DSM and DSM2 receivers
     #. Spectrum DSM-X Satellite receivers
     #. MULTIPLEX SRXL version 1 and version 2 receivers
@@ -25,10 +25,10 @@ used to convert the receiver outputs to PPM-SUM.
 Connecting the receiver
 =======================
 
-To connect a PPM receiver, Futaba S.Bus receiver, or PPM encoder,
+To connect a PPM receiver, S.Bus receiver, or PPM encoder,
 connect the black ground, red power and white signal wires to the RC
 pins. These S.BUS receivers have been tested and are known to work:
-R2008SB, R6008SB.
+R2008SB, R6008SB, FrSky X8R, FrSky XSR.
 
 .. image:: ../../../images/rc-input-wiring.jpg
     :target: ../_images/rc-input-wiring.jpg
@@ -56,53 +56,87 @@ These **MULTIPLEX SRXL** receivers have been tested and are known to work:
     #. RX-9-DR SRXL16 #55840, Firmware 1.35 --> 9 servo sockets, 16 of 16 channels active on SRXL v2 datastream
     #. RX-16-DR pro #55815, Firmware 1.35 --> 16 servo sockets, 16 of 16 channels active on SRXL v2 datastream
 
-Radio systems that support PPM-Sum or S-Bus directly
+Radio systems that support PPM-Sum or S.Bus directly
 ====================================================
 
-This section list radio systems that support PPM-Sum or S-Bus directly.
+This section list radio systems that support PPM-Sum or S.Bus directly.
 
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems_frsky_taranis_ppm-sum_compatible_transmitter:
 
-FrSky Taranis PPM-Sum Compatible Transmitter
---------------------------------------------
+FrSky Taranis X9D and Taranis Q X7 RC Transmitters
+--------------------------------------------------
 
 .. tip::
 
-   This solution is **highly recommended** for all RC uses
+   These transmitters are **highly recommended** for all RC uses.
 
-The `FrSky Taranis RC Transmitter <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__ is a
-high quality open source RC Transmitter that is compatible with a
-wide variety of high quality FrSky PPM-Sum compatible receivers.
+.. figure:: ../../../images/FrSky_Taranis_X7white.jpg
+    :target: ../_images/FrSky_Taranis_X7white.jpg
+    :width: 60 %
+    :align: center
 
-.. image:: ../../../images/FRSkyTaranis.jpg
+    New and even more affordable Taranis Q X7
+
+.. figure:: ../../../images/FRSkyTaranis.jpg
     :target: ../_images/FRSkyTaranis.jpg
+    :width: 60 %
+    :align: center
+
+    Taranis X9D
 
 .. note::
 
-   This transmitter is a real bargain. You can buy it from different locations e.g. `Range Video <http://www.rangevideo.com/en/radios-and-receivers/96-frsky-taranis-24ghz-rc-system.html>`__ , `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ or `HobbyKing <https://hobbyking.com/en_us/catalogsearch/result/?q=X9D>`__ .
+   Theses transmitters are a real bargain. You can buy them from different locations e.g. `Craft and Theory <http://www.craftandtheoryllc.com/packageq>`__ , `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ .
+The `FrSky Taranis RC Transmitter <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__ is a
+high quality `OpenTX <http://www.open-tx.org/downloads.html>`__ enabled RC Transmitter that is compatible with a wide variety of high quality FrSky PPM-Sum and S.Bus compatible receivers. 
 
-FrSky Delta 8 MultiProtocol PPM-Sum Receiver
---------------------------------------------
+One of the major advantages of the Taranis is that it can receive and display telemetry data **directly from ArduPilot** and on-board FrSky telemetry sensors, such as current and LiPo cell sensors, that can be added to your vehicle. For more information, see :ref:`FrSky telemetry <common-frsky-telemetry>`.
 
--  This PPM-Sum compatible `FrSky Delta 8 Receiver <http://www.frsky-rc.com/product/pro.php?pro_id=110>`__ is
-   multi-platform capable including Hitec Aurora 9 and Futaba RC
-   transmitters.
--  For an Aurora 9, install a jumper between receiver signal pins 6 and
-   7 (Hitec AFHSS) and pins 3 and 4 (CPPM mode) in order to bind.
+Both the Taranis X9D and the Taranis Q X7 have integrated ACCST 2.4GHz transmitters that are compatible with X series FrSky receivers such as the very popular X8R or the newer and lighter XSR receivers. *This means that an additional JR type transmitter module is not required.* If needed, both the Taranis X9D and Taranis Q X7 have JR module bays that can accomodate external radio transmitters.
 
-.. note::
- 
-   For a Hitec Aurora 9 system you need to have version 3.01 or later of the firmware in the transmitter's AFHSS 2.4 GHz module.
-    - If your module does not have version 3.01 or later firmware you will need the Hitec HPP-22 programmer module in order to upgrade it.
-    - Upgrade both the AFHSS 2.4 GHz module and the transmitter itself to the latest versions following `HP-22 online
-      instructions <http://hitecrcd.co.kr/tester/hpp_22.htm>`__.
-    - If the transmitter's AFHSS module's blue LED will not illuminate during binding you will need to perform this firmware upgrade.
+Features that we like are:
 
--  I am using the Delta 8 successfully with a PX4 and an Aurora 9, I had
-   to complete the firmware upgrade procedure before I could bind.
+* 2.4GHz ACCST frequency hopping radio transmitter with range that is sufficient for most VLOS applications
+* Quad Ball Bearing Gimbals
+* Audio Speech Outputs (values, alarms, settings, etc.)
+* Vibration Alerts
+* Receiver Signal Strength Indicator (RSSI) Alerts
+* Open source firmware OpenTx
+* Flash via USB
+* High visibility LCD screen
+* Very reliable and low latency telemetry with matched FrSky receiver
+* Removable MicroSD card to store sounds, voices, models and custom scripts
 
-.. image:: ../../../images/receiver_delta8.jpg
-    :target: ../_images/receiver_delta8.jpg
+The Taranis X9D and Taranis Q X7 can run the :ref:`FlightDeck <common-frsky-flightdeck>` telemetry user interface.
+
+.. image:: ../../../images/FD-X9-1.jpg
+    :target: http://www.craftandtheoryllc.com/feature
+    :width: 60 %
+    :align: center
+
+FrSky X Receivers
+-----------------
+
+FrSky X receivers are compatible with the FrSky Taranis and XJT transmitter modules. They support S.Bus RC signals and bidirectional S.Port telemetry. For more information about FrSky X receiver, refer to the :ref:`receiver section on the FrSky telemetry page <frsky_receivers>`.
+
+.. figure:: ../../../images/FrSky_x8r.jpg
+    :scale: 20 %
+    :align: center
+
+    FrSky X8R receiver
+
+
+.. warning::
+
+  Make sure to connect the S.Bus port on the X8R receiver to the **RC IN** port of the Pixhawk/Pixhawk 2.1. The S.Bus port on the Pixhawk is actually an *S.Bus out* connection!
+
+.. figure:: ../../../images/FrSky_Ph2-X8R-FLVSS_adj.jpg
+    :scale: 20 %
+    :align: center
+
+    FrSky X8R receiver and FLVSS LiPo Cell Voltage Sensor (optional) connected to Pixhawk 2.1 "The Cube"
+
+
 
 Turnigy Transmitter Compatible With FrSky Transmitter Module
 ------------------------------------------------------------
@@ -137,7 +171,8 @@ Futaba Transmitter Compatible With Futaba S-Bus Receivers
 Futaba S.BUS2 receivers are supported since Copter/Plane 3.2. The SBUS
 receiver must be connected to the PPM input, not the adjacent SBUS output.
 
-The list of supported receivers is:
+The list of supported receivers for the Pixhawk (or a PX4FMU in
+combination with a PX4IO board) is given below:
 
 -  Futaba / Ripmax `R7008SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7675>`__ S.BUS 2 Receiver
 -  Futaba / Ripmax `R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__ S.BUS Receiver
@@ -147,6 +182,10 @@ The list of supported receivers is:
    (tested by PX4 core team, very lightweight, only 7g)
 -  FrSky FASST compatible S.BUS compatible TFR8 SB 8ch 2.4Ghz Receiver
    (`HobbyKing <http://www.hobbyking.com/hobbyking/store/__24785__FrSky_TFR8_SB_8ch_2_4Ghz_S_BUS_Receiver_FASST_Compatible.html>`__)
+
+.. note::
+
+   The list above is from `pixhawk.org here <https://pixhawk.org/peripherals/radio-control/futaba/start?s[]=sbus#sbussbus_2>`__.
 
 .. image:: ../../../images/FutabaT8FG.jpg
     :target: ../_images/FutabaT8FG.jpg
@@ -206,22 +245,35 @@ Spektrum Satellite Receivers Operate on PPM-Sum
 .. image:: ../../../images/PX4SpektrumSatellite1.jpg
     :target: ../_images/PX4SpektrumSatellite1.jpg
 
-PPM encoder
-===========
+PPM encoder and telemetry radio
+===============================
 
-A `PPM Encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ allows you to use older RC receivers that output each channel on a separate pin.
+A `PPM Encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ will
+allow you to use any Conventional RC receiver. Both the new and previous
+versions of the *3DR PPM-Sum encoder* (the linked encoder is compatible) are shown
+below:
+
+.. figure:: ../../../images/PPM_cables_-_Copy.jpg
+   :target: ../_images/PPM_cables_-_Copy.jpg
+
+   Newest 3DR PPM-Sum encoder
 
 .. figure:: ../../../images/PPMEncoderDesc.jpg
    :target: ../_images/PPMEncoderDesc.jpg
 
-There are some downsides of using a PPM encoder:
+   Original 3DR PPM-Sumencoder
 
--  Additional cost, wiring and weight on the vehicle
--  Consumes more power making it likely that a USB cable alone cannot power the system so the vehicle's battery will likely need to be plugged in during Radio calibration.
+There are some downsides of using this encoder:
+
+-  The PPM Encoder does require quite a bit of additional wiring to the receiver.
+-  It uses quite a bit of power making it likely you will need to plug
+   in your battery while doing radio setup with USB cable in Mission Planner.
+-  The encoder also costs as much or more than several of the
+   available PPM-Sum receivers including the FrSky Delta 8 below.
 
 There is addition information :ref:`about connecting and configuring the encoder here <common-ppm-encoder>`.
 
-Using a PPM Sum encoder in a system
+Using the 3DR PPM Sum encoder in a system
 -----------------------------------------
 
 The diagram below shows how to use the original 3DR PPM-Sum encoder. The
