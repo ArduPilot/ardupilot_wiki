@@ -10,10 +10,13 @@ Companies that use ArduPilot in Products
 
 
 
-.. list-table:: 
+.. list-table::
    :widths: 10 30 10  
    :header-rows: 1
    
    * - Company
      - Platforms
      - Country
+   * - Name
+     - Copter/Plane/Rover/Sub
+     - Earth
