@@ -19,9 +19,9 @@ Required/Compatible Hardware
 ============================
 
 .. image:: ../../../images/frsky_requiredhardware_flightdeck.png
-    :target: ../../../images/frsky_requiredhardware_flightdeck.png
-	
-	Common FrSky Telemetry Setup with Taranis RC transmitter running :ref:`FlightDeck <common-frsky-flightdeck>`.
+    :target: ../_images/frsky_requiredhardware_flightdeck.png
+
+Common FrSky Telemetry Setup with Taranis RC transmitter running :ref:`FlightDeck <common-frsky-flightdeck>`.
 
 * An ArduPilot compatible flight controler from this list:
 	
