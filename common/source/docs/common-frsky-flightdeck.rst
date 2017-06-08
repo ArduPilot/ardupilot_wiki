@@ -7,7 +7,7 @@ FlightDeck FrSky Taranis App
 Overview
 ========
 
-`FlightDeck <http://www.craftandtheoryllc.com/product/flightdeck-taranis-user-interface-for-ardupilot-arducopter-arduplane-pixhawk-frsky-telemetry-smartport-opentx/>`__  by `Craft and Theory <http://www.craftandtheoryllc.com>`__ is a terrific way to obtain ArduPilot flight modes, altitude, speeds, attitude and critical system alerts including failsafes and battery errors such as unballanced cells warnings and low battery alerts. As such, it's a great companion to Tower or Mission Planner that adds extra confidence to your piloting.
+`FlightDeck <http://www.craftandtheoryllc.com/flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-x9d-x7-q-x7-qx7-telemetry-smartport-smart-port-serial/>`__  by `Craft and Theory <http://www.craftandtheoryllc.com>`__ is a terrific way to obtain ArduPilot flight modes, altitude, speeds, attitude and critical system alerts including failsafes and battery errors such as unballanced cells warnings and low battery alerts. As such, it's a great companion to Tower or Mission Planner that adds extra confidence to your piloting.
 
 .. raw:: html
 
@@ -20,13 +20,13 @@ Complete documentation for FlightDeck is available `here <http://www.craftandthe
 Turnkey Packages
 ================
 
-.. figure:: http://www.craftandtheoryllc.com/wp-content/uploads/2016/11/WholePackage-984x983.jpg
+.. figure:: ../../../images/FrSky_FlightDeck_Package.jpg
   :align: center
-  :height: 300pt
-  :target:  http://www.craftandtheoryllc.com/product/frsky-telemetry-flightdeck-whole-package-taranis-servo-cable-x8r-flvss-smartport-for-ardupilot-pixhawk-2-1-mini-pixracer-pixhack/
+  :width: 60%
+  :target:  http://www.craftandtheoryllc.com/product/package-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-x9d-x7-q-x7-qx7-telemetry-smartport-smart-port-serial/#configuration
 
 
-Complete turnkey packages containing the required equipment for FrSky telemetry with FlightDeck preinstalled on the Taranis are available `here <http://www.craftandtheoryllc.com/product/frsky-telemetry-flightdeck-whole-package-taranis-servo-cable-x8r-flvss-smartport-for-ardupilot-pixhawk-2-1-mini-pixracer-pixhack/>`__.
+Complete turnkey packages containing the required equipment for FrSky telemetry with FlightDeck preinstalled on the Taranis are available `here <http://www.craftandtheoryllc.com/product/package-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-x9d-x7-q-x7-qx7-telemetry-smartport-smart-port-serial/#configuration>`__.
 
 With the turnkey package, FlightDeck can be run in 3 easy steps:
 
