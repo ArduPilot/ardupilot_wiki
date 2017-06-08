@@ -16,8 +16,8 @@ Compared to a MAVLink radio link, the FrSky telemetry link has practically no de
 
 Moreover, some RC transmitters such as the Taranis can be configured to play sounds, vibrate or perform automatic RC actions based on telemetry information through the highly configurable OpenTX firmware.
 
-.. figure:: ../../../images/frsky_requiredhardware_flightdeck.png
-    :target: ../_images/frsky_requiredhardware_flightdeck.png
+.. figure:: ../../../images/frsky_requiredhardware_flightdeck.jpg
+    :target: ../_images/frsky_requiredhardware_flightdeck.jpg
     :align: center
 
     Common FrSky Telemetry Setup with Taranis RC transmitter running :ref:`FlightDeck <common-frsky-flightdeck>`.
@@ -25,6 +25,8 @@ Moreover, some RC transmitters such as the Taranis can be configured to play sou
 .. note::
 
     FrSky telemetry packages including Taranis, X-receiver, LiPo cell voltage sensor and flight controller specific telemetry cable for the Pixhawk, Pixhawk 2.1, PixRacer and Pixhack are available from `Craft and Theory <http://www.craftandtheoryllc.com/store/>`__.
+
+**Pages Related to FrSky Telemetry**
 
 .. toctree::
     :maxdepth: 1
@@ -47,55 +49,80 @@ FrSky telemetry is also possible through the use of a :ref:`MAVLink to FrSky con
 
 The following table summarizes the information available using each protocol:
 
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Features             | Standard | Passthrough | MAVLink (Airborne Projects) | MAVLink (DIY) | MAVLink (TBS Crossfire) |
-+======================+==========+=============+=============================+===============+=========================+
-| Flight/control mode  | ●        | ●           | ●                           | ●             |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Throttle %           |          |             |                             | ●             |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Battery pack voltage | ●        | ●           | ●                           | ●             | ●                       |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Battery failsafe     |          | ●           |                             |               |                         |
-| capacity             |          |             |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| EKF failsafe trigger |          | ●           |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Total current        |          | ●           |                             |               | ●                       |
-| consumption          |          |             |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Battery pack         | ●        | ●           |                             | ●             |                         |
-| capacity remaining   |          |             |                             |               |                         |
-| (%)                  |          |             |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| GPS fix status       | ●        | ●           | ●                           | ●             |                         |
-| (e.g., 2D, 3D, DGPS, |          |             |                             |               |                         |
-| RTK)                 |          |             |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| GPS latitude and     | ●        | ●           | ●                           | ●             | ●                       |
-| longitude            |          |             |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| GPS speed            | ●        |             | ●                           | ●             | ●                       |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Air speed (from      |          | ●           |                             | ●             |                         |
-| airspeed sensor)     |          |             |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| X, Y, Z              |          |             |                             | ●             |                         |
-| accelerations        |          |             |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Barometric altitude  |          |             | ●                           | ●             |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Rangefinder distance |          | ●           |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Distance from home   |          | ●           | ●                           | ●             |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| Arming status        |          | ●           | ●                           | ●             |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
-| EKF error messages   |          | ●           |                             |               |                         |
-| (e.g., “Error        |          |             |                             |               |                         |
-| compass variance”)   |          |             |                             |               |                         |
-+----------------------+----------+-------------+-----------------------------+---------------+-------------------------+
 
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Feature                                                    | Native standard FrSky telemetry | Native passthrough FrSky telemetry | Converted MAVLink telemetry (Airborne Projects) | Converted MAVLink telemetry (DIY) | Converted MAVLink telemetry (TBS Crossfire) |
++============================================================+=================================+====================================+=================================================+===================================+=============================================+
+| Vehicle/frame type                                         |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Flight/control mode                                        | ●                               | ●                                  | ●                                               | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Simple/super simple mode                                   |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Throttle %                                                 |                                 |                                    |                                                 | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Flight timer (automatically counting while in flight)      |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Battery pack voltage                                       | ●                               | ●                                  | ●                                               | ●                                 | ●                                           |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Battery failsafe voltage                                   |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Battery failsafe capacity                                  |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Battery failsafe trigger                                   |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| EKF failsafe trigger                                       |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Instantaneous current consumption                          | ●                               | ●                                  | ●                                               |                                   | ●                                           |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Total current consumption                                  |                                 | ●                                  |                                                 |                                   | ●                                           |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Battery pack capacity (mAh)                                |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Battery pack capacity remaining (%)                        | ●                               | ●                                  |                                                 | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| GPS number of satellites visible                           | ●                               | ●                                  | ●                                               | ●                                 | ●                                           |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| GPS fix status (e.g., 2D, 3D, DGPS, RTK)                   | ●                               | ●                                  | ●                                               | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| GPS HDOP                                                   |                                 | ●                                  | ●                                               | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| GPS latitude and longitude                                 | ●                               | ●                                  | ●                                               | ●                                 | ●                                           |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| GPS altitude                                               | ●                               | ●                                  |                                                 | ●                                 | ●                                           |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| GPS speed                                                  | ●                               |                                    | ●                                               | ●                                 | ●                                           |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Ground speed (using GPS/INS filter)                        |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Air speed (from airspeed sensor)                           |                                 | ●                                  |                                                 | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| GPS heading                                                | ●                               |                                    | ●                                               |                                   | ●                                           |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| X, Y, Z accelerations                                      |                                 |                                    |                                                 | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Roll/pitch/yaw                                             |                                 | ●                                  |                                                 | ●                                 | ●                                           |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Barometric altitude                                        |                                 |                                    | ●                                               | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Altitude from home (using GPS/INS filter, incl. barometer) | ●                               | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Rangefinder distance                                       |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Direction to home                                          |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Distance from home                                         |                                 | ●                                  | ●                                               | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Vertical velocity                                          |                                 | ●                                  |                                                 | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Arming status                                              |                                 | ●                                  | ●                                               | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| Sensor health messages (e.g., Bad Compass Health)          |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| EKF error messages (e.g., Error compass variance)          |                                 | ●                                  |                                                 |                                   |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
+| MAVLink status messages                                    |                                 | ●                                  | ●                                               | ●                                 |                                             |
++------------------------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------+-----------------------------------+---------------------------------------------+
 
 Hardware Selection Guide
 ========================
@@ -107,6 +134,7 @@ The following equipment is required to enable FrSky telemetry on an ArduPilot-co
 * A FrSky telemetry capable RC transmitter.
   Possible options include:
 
+  - FrSky Taranis Q X7
   - FrSky Taranis X9D
   - FrSky Taranis X9D Plus (recommended)
   - FrSky Taranis X9E
@@ -131,7 +159,7 @@ In addition to the required hardware, a selection of :ref:`FrSky sensors <frsky_
 
 .. tip::
 
-    The use of an FLVSS or MLVSS LiPo cell voltage  (see below) sensor is recommended as ArduPilot is not capable of measuring and reporting the voltage of individual cells in a battery pack.
+    The use of an FLVSS or MLVSS LiPo cell voltage (see below) sensor is recommended to measure and report the voltage of individual cells in a battery pack.
 
 .. _frsky_receivers:
 
@@ -164,25 +192,37 @@ Craft and Theory Pixhawk to FrSky Telemetry Cables
 
 `Craft and Theory <http://www.craftandtheoryllc.com/product-category/frsky-smartport-telemetry-cables/>`__ supplies cost-effective all-in-one X-receiver cables with connectors for the various FrSky receivers.
 
-.. figure:: ../../../images/frsky_cables300x300.png
-    :target: http://www.craftandtheoryllc.com/product-category/frsky-smartport-telemetry-cables/
+.. figure:: ../../../images/FrSky_Hardware3.jpg
+    :target: http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/
+    :width: 50%
     :align: center
 
--  `Servo telemetry Cable (X6R/X8R, SmartPort sensors) for Pixhawk 2.1 <http://www.craftandtheoryllc.com/product/frsky-servo-x6r-x8r-flvss-mlvss-smartport-telemetry-cable-for-pixhawk-2-1-jst-gh-taranis-ardupilot/>`__:
+-  `Servo telemetry Cable (X6R/X8R, SmartPort sensors) for Pixhawk 2.1 <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
 
-   .. figure:: http://www.craftandtheoryllc.com/wp-content/uploads/2016/09/pxwk2_x8r_cable.jpg
-      :target:  http://www.craftandtheoryllc.com/product/frsky-servo-x6r-x8r-flvss-mlvss-smartport-telemetry-cable-for-pixhawk-2-1-jst-gh-taranis-ardupilot/
+   .. figure:: ../../../images/FrSky_Ph2-X8R.jpg
+      :target:  http://www.craftandtheoryllc.com/telemetry-cable
+      :width: 50%
+      :align: center
 
       Craft and Theory Pixhawk 2.1 to FrSky X6R and X8R receiver cable
 
--  `Pixhawk to FrSky Telemetry Cable (X6R, X8R, FLVSS) <http://www.craftandtheoryllc.com/product/frsky-x6r-x8r-flvss-telemetry-cable-for-pixhawk/>`__:
+-  `Pixhawk to FrSky Telemetry Cable (X6R, X8R, FLVSS) <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
 
-   .. figure:: http://www.craftandtheoryllc.com/wp-content/uploads/2015/12/X8R-Pixhawk-cable.jpg
-      :target:  http://www.craftandtheoryllc.com/product/frsky-x6r-x8r-flvss-telemetry-cable-for-pixhawk/
+   .. figure:: ../../../images/FrSky_Phawk-X8R.jpg
+      :target:  http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/
+      :width: 50%
+      :align: center
 
       Craft and Theory Pixhawk to FrSky X6R and X8R receiver cable
 
+-  `Pixhawk 2.1 to FrSky XSR Telemetry Cable <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
 
+   .. figure:: ../../../images/FrSky_Ph2-XSR.jpg
+      :target:  http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/
+      :width: 50%
+      :align: center
+
+      Craft and Theory Pixhawk 2.1 to FrSky XSR receiver cable
 
 DIY cable for X-receivers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -247,7 +287,7 @@ The following SmartPort sensors are available from FrSky:
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | |mlvss|         | MLVSS          | Provides cell voltage (smaller than FLVSS)          | Yes, as individual cell voltages are not available in ArduPilot.                                    |
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| |rpm|           | RPM            | RPM sensors                                         | Yes, for traditional heli                                                                           |
+| |rpm|           | RPM            | RPM and temperature sensors                         | Yes, for traditional heli rpm and monitoring motors/battery temperature                             |
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | |fas40s|        | FAS40S/FAS150s | 40A/150A current sensor                             | Mostly no. Information already provided by ArduPilot if equipped with a power module                |
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
@@ -280,22 +320,28 @@ By using a FrSky FLVSS or MLVSS LiPo voltage sensor, the lowest cell voltage (wh
 
 To install, connect the telemetry cable between the autopilot and the FLVSS/MLVSS sensor, then use the cable supplied with your receiver or supplied with the FLVSS/MLVSS sensor to connect the FLVSS/MLVSS sensor to the Smart Port connector of your X-series receiver:
 
-.. figure:: ../../../images/FrSky_FLVSS_X8R.png
-   :scale: 50 %
-   :alt: Setup with X8R
+.. figure:: ../../../images/FrSky_Ph2-X8R-FLVSS_adj.jpg
+   :width: 70 %
+   :alt: Setup with Pixhawk 2.1 "the Cube" and X8R
 
-   Setup with X8R
+   Setup with Pixhawk 2.1 "the Cube" and X8R
+
+.. figure:: ../../../images/FrSky_Conn_Phawk-X8R.jpg
+   :width: 70 %
+   :alt: Setup with Pixhawk and X8R
+
+   Setup with Pixhawk and X8R
 
 .. figure:: ../../../images/FrSky_FLVSS_X4R.png
-   :scale: 50 %
+   :width: 70 %
    :alt: Setup with X4R
 
-   Setup with X4R
+   Setup with Pixhawk and X4R
 
 
 .. note::
 
-   For both receivers, the same servo telemetry cable is used. This is because in both cases the autopilot is directly connected to the LiPo sensor instead of the receiver.
+   For both the X4R and the X8R configuration, the same servo telemetry cable is used. This is because in both cases the autopilot is directly connected to the LiPo sensor instead of the receiver.
 
 .. _common-frsky-configMP:
 
@@ -306,7 +352,7 @@ To enable FrSky Telemetry on one of the serial ports, connect with **Mission Pla
 
 - Standard D telemetry: **3**
 - Standard SmartPort telemetry: **4**
-- Ardupilot SmartPort telemetry: **10**
+- Passthrough SmartPort telemetry: **10**
 
 +-------------------------------------------------------------+--------------------------------+------------------------+
 |                      Flight Controller                      |           Port used            |     Parameter name     |
@@ -438,7 +484,7 @@ This section describes how to the discover the telemetry sensors (similar to usi
 Discovering Sensors
 ^^^^^^^^^^^^^^^^^^^
 
-OpenTX 2.1.x requires “discovering” the telemetry messages from the Pixhawk that are not passthrough messages. To discover them, unplug the USB cable, turn off the Taranis, then turn it back on (not in bootloader mode). Repeat the following steps for each model for which you want to use FrSky telemetry:
+OpenTX 2.2.0 requires “discovering” the telemetry messages from the Pixhawk that are not passthrough messages. To discover them, unplug the USB cable, turn off the Taranis, then turn it back on (not in bootloader mode). Repeat the following steps for each model for which you want to use FrSky telemetry:
 
 1. Press the MENU button, then long press the PAGE button to get to the TELEMETRY page. Press the - button until “Discover new sensors” is highlighted and press ENTER. The Taranis LCD screen should display “Stop discovery.”
 
@@ -465,15 +511,6 @@ Activating a Custom Script (no display function)
 
 Scripts that do not display anything (e.g. data parsing, sounds) are activated on the CUSTOM script page.
 Press EXIT once, long press PAGE to get to the CUSTOM SCRIPT page, then press ENT to edit LUA1. On the LUA1 page, press ENT and select the script using the +/- buttons, then press ENT to validate.
-
-
-.. toctree::
-    :maxdepth: 1
-
-    Passthrough FrSky Telemetry <common-frsky-passthrough>
-    FlightDeck <common-frsky-flightdeck>
-    Repurposed FrSky Telemetry <common-frsky-repurposed>
-    MavLink to FrSky Telemetry Converters <common-frsky-mavlink>
 
 Turnigy 9XR Pro
 ===============
@@ -590,3 +627,13 @@ to ``Model Setup``, then select ``Telemetry``, and then select
 .. figure:: ../../../images/9xrpro-settings-telem-custom.png
     :target: ../_images/9xrpro-settings-telem-custom.png
     :align: center
+
+**Pages Related to FrSky Telemetry**
+
+.. toctree::
+    :maxdepth: 1
+
+    Passthrough FrSky Telemetry <common-frsky-passthrough>
+    FlightDeck <common-frsky-flightdeck>
+    Repurposed FrSky Telemetry <common-frsky-repurposed>
+    MavLink to FrSky Telemetry Converters <common-frsky-mavlink>
