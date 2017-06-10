@@ -72,7 +72,7 @@ his Copter based quadcopter including MinimOSD
 Stefan Cenkov's FPV flight footage (recoded from the ground station) of
 his Plane running on VrBrain including MinimOSD.
 
-..  youtube:: LxjtUl8Fw6o&feature=c4-overview&list=UUaT25BYqLWgAbnuZWJw9erg
+..  youtube:: LxjtUl8Fw6o
     :width: 100%
 
 Robert Mcintosh's in `Lone Pine California <http://diydrones.com/profiles/blogs/the-best-place-to-fly>`__

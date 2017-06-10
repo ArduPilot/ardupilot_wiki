@@ -9,7 +9,7 @@ Copter, Plane and Rover support UAVCAN Electronic Speed Controllers
 enabling potentially easier setup and in-flight monitoring of ESC and
 motor health.
 
-..  youtube:: https://youtu.be/LnUmYgAINBc
+..  youtube:: LnUmYgAINBc
     :width: 100%
 
 .. note::
