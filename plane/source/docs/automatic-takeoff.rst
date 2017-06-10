@@ -55,17 +55,17 @@ The keys to a good hand launch are:
 
 The main parameters that control the hand launch are:
 
--  TKOFF_THR_MINACC
--  TKOFF_THR_DELAY
--  TKOFF_THR_MINSPD
--  TECS_PITCH_MAX
+-  :ref:`TKOFF_THR_MINACC <TKOFF_THR_MINACC>`
+-  :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>`
+-  :ref:`TKOFF_THR_MINSPD <TKOFF_THR_MINSPD>`
+-  :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
 
 When the auto takeoff mission command starts (usually by switching to
 AUTO mode) the autopilot starts in "throttle suppressed" mode. The
 throttle will not start until the conditions set by the TKOFF_THR\_
 parameters met.
 
-The TKOFF_THR_MINACC parameter controls the minimum forward
+The :ref:`TKOFF_THR_MINACC <TKOFF_THR_MINACC>` parameter controls the minimum forward
 acceleration of the aircraft before the throttle will engage. The
 forward acceleration comes from the throwing action of your arm as you
 launch the aircraft. You need to set this value high enough that the
@@ -74,25 +74,25 @@ normally, but low enough that you can reliably trigger the acceleration
 with a normal throwing action. A value of around 15 m/s/s is good for
 most aircraft.
 
-The TKOFF_THR_DELAY parameter is a delay in 1/10 of a second units to
+The :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>` parameter is a delay in 1/10 of a second units to
 hold off starting the motor after the minimum acceleration is reached.
 This is meant to ensure that the propeller is past your hand before the
 motor starts. A value of at least 2 (which is 0.2 seconds) is
 recommended for a hand launch.
 
-The TKOFF_THR_MINSPD parameter is a minimum ground speed (as measured
+The :ref:`TKOFF_THR_MINSPD <TKOFF_THR_MINSPD>` parameter is a minimum ground speed (as measured
 by the GPS) before the motor starts. This is an additional safety
 measure to ensure the aircraft is out of your hand before the motor
 starts. A value of 4m/s is recommended for a hand launch.
 
 Note that if your aircraft is a "tractor" type with the motor at the
-front then you may want to set TKOFF_THR_DELAY and TKOFF_THR_MINSPD
+front then you may want to set :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>` and :ref:`TKOFF_THR_MINSPD <TKOFF_THR_MINSPD>`
 to zero, or use lower values.
 
-The final parameter you should think about is the ``TECS_PITCH_MAX``
+The final parameter you should think about is the :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
 parameter. That controls the maximum pitch which the autopilot will
 demand in auto flight. When set to a non-zero value this replaces the
-LIM_PITCH_CD parameter for all auto-throttle flight modes. Setting
+:ref:`LIM_PITCH_MAX <LIM_PITCH_MAX>` parameter for all auto-throttle flight modes. Setting
 this parameter to a value which is small enough to ensure the aircraft
 can climb reliably at full throttle will make takeoff much more
 reliable. A value of 20 is good for most aircraft.
@@ -109,9 +109,9 @@ In most other ways a catapult launch is like a hand launch, and the same
 4 key parameters apply. If your catapult is setup so that the motor
 cannot run until the aircraft is out of the frame of the catapult then
 you will need to choose the parameters to ensure there is sufficient
-delay. Often this means a higher value for TKOFF_THR_MINACC (say
+delay. Often this means a higher value for :ref:`TKOFF_THR_MINACC <TKOFF_THR_MINACC>` (say
 20m/s/s) and a longer delay before the GPS ground speed is measured.
-Some experimentation may be needed, but a value of ``TKOFF_THR_DELAY``
+Some experimentation may be needed, but a value of :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>`
 of 5 is likely to be good for many catapults.
 
 Bungee Launching
@@ -126,7 +126,7 @@ apply to a bungee launch, but the values you will need are different.
 The main risk with a bungee launch (especially with a pusher propeller)
 is that the propeller will strike the bungee cord, damaging either the
 propeller or the bungee or both. To prevent this from happening you
-should have a much higher value of ``TKOFF_THR_DELAY``, making it high
+should have a much higher value of :ref:`TKOFF_THR_DELAY <TKOFF_THR_DELAY>`, making it high
 enough that the aircraft will have released the bungee before the motor
 starts. A value of around 50 (giving a 5 second delay) may be a good
 starting point.
@@ -147,23 +147,23 @@ aircraft, with a tail dragger needing additional parameters.
 
 The key parameters for runway takeoff are:
 
--  TKOFF_TDRAG_ELEV
--  TKOFF_TDRAG_SPD1
--  TKOFF_THR_SLEW
--  TKOFF_ROTATE_SPD
--  TECS_PITCH_MAX
--  GROUND_STEER_ALT
+-  :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>`
+-  :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>`
+-  :ref:`TKOFF_THR_SLEW <TKOFF_THR_SLEW>`
+-  :ref:`TKOFF_ROTATE_SPD <TKOFF_ROTATE_SPD>`
+-  :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>`
+-  :ref:`GROUND_STEER_ALT <GROUND_STEER_ALT>`
 
 In addition to those parameters you also need to tune ground steering,
 so that the ground steering controller is able to reliably steer the
 aircraft. See the separate page on :ref:`setting up ground steering <tuning-ground-steering-for-a-plane>`. As part of this tuning
-you will need to setup the GROUND_STEER_ALT parameter.
+you will need to setup the :ref:`GROUND_STEER_ALT <GROUND_STEER_ALT>` parameter.
 
 The first two parameters are primarily for tail dragger aircraft,
 although they can also be used to hold the nose of a tricycle aircraft
 down on takeoff.
 
-The TKOFF_TDRAG_ELEV parameter is used to hold the tail of a tail
+The :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` parameter is used to hold the tail of a tail
 dragger hard on the runway during the initial stages of takeoff, to give
 it enough grip on the runway to steer. For a tail dragger this is
 normally set to 100, meaning that 100% up elevator is applied during the
@@ -171,24 +171,24 @@ initial stages of takeoff. For a tricycle undercarriage plane that needs
 a bit of extra weight on the nose for good steering you may find that a
 value of -20 (meaning 20% down elevator) may help.
 
-When the takeoff starts, the autopilot will apply ``TKOFF_TDRAG_ELEV``
+When the takeoff starts, the autopilot will apply :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>`
 elevator (as a percentage) until the aircraft reaches a speed of
-``TKOFF_TDRAG_SPD1`` meters per second. You need to set
-TKOFF_TDRAG_SPD1 to a speed below the takeoff speed, but above the
+:ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` meters per second. You need to set
+:ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` to a speed below the takeoff speed, but above the
 speed where the aircraft is able to steer using its rudder. When the
-aircraft reaches TKOFF_TDRAG_SPD1 it will release the elevator and
+aircraft reaches :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` it will release the elevator and
 instead use the normal flight pitch controller to try to hold the pitch
 level. That will have the effect of raising the tail on a tail dragger
 aircraft.
 
-The TKOFF_ROTATE_SPD parameter controls when the autopilot will try to
+The :ref:`TKOFF_ROTATE_SPD <TKOFF_ROTATE_SPD>` parameter controls when the autopilot will try to
 raise the nose (pitch up) to leave the ground. This needs to be a speed
 at which the aircraft can sustain a climb, so it should be at least 2
 meters per second above the stall speed of the aircraft, preferably
 more. A higher value will mean a longer takeoff (and thus need more
 runway).
 
-The TKOFF_THR_SLEW parameter controls the throttle slew rate (as a
+The :ref:`TKOFF_THR_SLEW <TKOFF_THR_SLEW>` parameter controls the throttle slew rate (as a
 percentage per second) during takeoff. This is used to allow the
 throttle to ramp up at a rate appropriate for your aircraft. How high
 this should be depends on the type of aircraft. It is usually a good
@@ -198,7 +198,7 @@ prevent torque from the motor causing large steering changes. A value of
 draggers. A tricycle undercarriage aircraft may be able to handle a
 larger throttle slew rate.
 
-As with other types of takeoff the ``TECS_PITCH_MAX`` parameter controls
+As with other types of takeoff the :ref:`TECS_PITCH_MAX <TECS_PITCH_MAX>` parameter controls
 the maximum pitch used when climbing on takeoff. Make sure that this is
 limited to a value that the aircraft can use to climb quickly at full
 throttle. A value of around 20 degrees is good for a wide range of
@@ -208,17 +208,17 @@ Testing Ground Takeoff in FBWA mode
 ===================================
 
 It is sometimes useful to test the takeoff code using the FBWA flight
-mode. The way you do this is to set the ``FBWA_TDRAG_CHAN`` parameter to
+mode. The way you do this is to set the :ref:`FBWA_TDRAG_CHAN <FBWA_TDRAG_CHAN>` parameter to
 an RC input channel on your transmitter for a switch (usually a
 momentary switch, such as the trainer switch). When this RC channel goes
 high while you are on the runway waiting for takeoff in FBWA mode the
-autpilot will check if you have configured the ``TKOFF_TDRAG_ELEV`` and
-``TKOFF_TDRAG_SPD1`` parameters. If they have been set to non-zero
+autpilot will check if you have configured the :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` and
+:ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` parameters. If they have been set to non-zero
 values then the elevator will be controlled in FBWA in an identical
 manner to how it is controller for an AUTO takeoff. The elevator will go
-to the ``TKOFF_TDRAG_ELEV`` value (usually 100% for a tail dragger) as
+to the :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` value (usually 100% for a tail dragger) as
 soon as that RC channel goes high, and will stay there until the
-aircraft reaches a ground speed of TKOFF_TDRAG_SPD1 meters per second.
+aircraft reaches a ground speed of :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` meters per second.
 
 This provides a convenient way to test auto takeoff in FBWA mode, and
 also is a nice way to get better ground steering in FBWA mode in
