@@ -40,7 +40,7 @@ based upon your set-up.
 [/site]
 
     LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
-    LightWare SF10 Lidar <common-lightware-sf10-lidar>
+    LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
     Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
