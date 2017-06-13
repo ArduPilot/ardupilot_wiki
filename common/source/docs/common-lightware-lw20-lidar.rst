@@ -35,7 +35,7 @@ following parameters (this can be done using the *Mission Planner*
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 8 (LightWareSerial)
 -  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **10000**.  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **9500**.  *This is the distance in centimeters that the rangefinder can reliably read.*
 -  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 19200
@@ -58,7 +58,7 @@ You then need to configure the rangefinder parameters as shown below
 -  :ref:`RNGFND_ADDR <RNGFND_ADDR>` = 102 (I2C Address of lidar in decimal).  *Note that this setting is in decimal. The default address is 0x66 hexademical which is 102 in decimal.*
 -  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **10000**.  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **9500**.  *This is the distance in centimeters that the rangefinder can reliably read.*
 -  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 Testing the sensor
