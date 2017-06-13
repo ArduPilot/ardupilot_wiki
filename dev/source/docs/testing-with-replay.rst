@@ -54,45 +54,31 @@ Run a log through Replay to generate the plot and EKF data files:
 
 .. note::
 
-    You may need to explicitly set the loop rate with ``-r400``
+    You may need to explicitly set the loop rate with ``-r400`` and ignore floating point errors with "--no-fpe"
 
-This will produce six output files: plot.dat, plot2.dat, EKF1.dat, EKF2.dat, EKF3.dat, EKF4.dat
+This will produce an output file 1.BIN in the folder "./logs"
 
-Look at the raw data to see which values are available to be plotted:
-
-``less plot.dat`` (you can replace ``plot.dat`` with any of the other
-six files produced)
-
-.. image:: ../images/Replay_PlotDatColumns.png
-    :target: ../_images/Replay_PlotDatColumns.png
-
-Use the simple plotit.sh script to graph some data. 
-Below is the command to compare the EKF calculated altitude with the older Inertial Nav calculated altitude and the flight's actual altitude.
+Use mavgraph.py to graph the data
 
 .. code-block:: bash
 
-    ./Tools/Replay/plotit.sh EKF.Alt INAV.Alt FLIGHT.Alt
+    mavgraph.py MyLogFile.BIN GPA.SAcc NKF4.SV
 
-.. image:: ../images/Replay_EKFInavFlightAlt.png
-    :target: ../_images/Replay_EKFInavFlightAlt.png
 
-Use the more complex mavgraph.py to graph the data
+.. image:: ../images/Replay_GPSSAcc_NKF4SV.png
+    :target: ../_images/Replay_GPSSAcc_NKF4SV.png
 
-.. code-block:: bash
-
-    mavgraph.py MyLogFile.BIN EKF1.PN NTUN.PosX*0.01
-
-This example compares the EKF estimated North-South position from home vs the older Inertial Nav estimated position. See image at the top of this page for the resulting graph.
+This example graphs the changes in speed innovation of the EKF against the GPS speed measurement accuracy
 
 Changing parameters
 ===================
 
-Simulation parameters may be changed before replaying a log using the option: ``-pNAME=VALUE`` (this sets the parameter ``NAME`` to
+Simulation parameters may be changed before replaying a log using the option: ``-parm NAME=VALUE`` (this sets the parameter ``NAME`` to
 ``VALUE``). 
 The parameters which may be edited are those listed by running the `:ref:`param show`` command in `SITL <setting-up-sitl-on-linux>`.
 
-For example, to change the EKF velocity delay parameter from 220ms to 400ms, run the command:
+For example, to change the EKF I gate value to 1,000, run the command:
 
 .. code-block:: bash
 
-    ./build/linux/tools/Replay -- -pEKF_VEL_DELAY=400 MyLogFile.Bin
+    build/linux/tools/Replay -- --no-fpe --parm EK2_VEL_I_GATE=1000 log_1.bin
