@@ -60,7 +60,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Pozyx for Non-GPS navigation <common-pozyx>
     Precision Landing (IRLock) <precision-landing-with-irlock>
 [/site]
-    Rangefinders <common-rangefinder-landingpage>
+    Rangefinders (Sonar, Lidar) <common-rangefinder-landingpage>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Relay Switch <common-relay>
     Servo <common-servo>
