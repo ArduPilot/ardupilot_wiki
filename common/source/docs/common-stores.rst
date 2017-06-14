@@ -15,7 +15,7 @@ recommended for use with ArduPilot (in alphabetical order).
 * `CUAV <http://www.cuav.net>`__
 * `Drotek <https://drotek.com/>`__
 * `Emlid <https://emlid.com/shop/>`__
-* `EnRoute LAB <http://store.shopping.yahoo.co.jp/elab-store/>`__
+* `EnRoute LAB <http://www.elab.co.jp/>`__
 * `Event38 <https://event38.com/shop/>`__
 * `Harris Aerial <https://www.harrisaerial.com/shop/>`__
 * `Hex <http://www.hex.aero/shop/>`__ 
