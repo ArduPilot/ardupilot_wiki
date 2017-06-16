@@ -22,4 +22,4 @@ If you have any further questions about using ArduPilot on your product, please 
 Below is the logo we use.  An equivalent .ai file can also be provided.
 
 .. image:: ../images/logos/ardupilot_logo.jpg
-    :target: ../_images/logos/ardupilot_logo.jpg
+    :target: ../_images/ardupilot_logo.jpg
