@@ -14,9 +14,9 @@ instructions for adding other hardware are covered in
 
     Mounting the Flight Controller <common-mounting-the-flight-controller>
     Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>
+    NAVIO2 Wiring QuickStart <common-navio2-wiring-and-quick-start>
     Erle-Brain2 Wiring Quick Start <common-erle-brain2-wiring-quick-start>
     PXFmini Wiring Quick Start <common-pxfmini-wiring-quick-start>
-    NAVIO2 Wiring QuickStart <common-navio2-wiring-and-quick-start>
     APM2 <common-apm25-and-26-overview>
     ESCs and Motors <connect-escs-and-motors>
     GPS+Compass Module <common-installing-3dr-ublox-gps-compass-module>
