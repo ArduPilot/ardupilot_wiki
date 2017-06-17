@@ -30,13 +30,12 @@ Closed hardware
 .. toctree::
     :maxdepth: 1
 
-    NAVIO+ <common-navio-overview>
     NAVIO2 <common-navio2-overview>
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
     Intel Aero <common-intel-aero-overview>
     Intel Aero RTF vehicle <common-intel-aero-rtf>
-    Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
     Parrot C.H.U.C.K (for the Parrot Disco) <common-CHUCK-overview>
+    Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
     
 Discontinued boards
 ===================
@@ -44,8 +43,6 @@ Discontinued boards
 The following boards are end-of-life. The documentation is archived, but
 available if you're still working on those platforms:
 
--  :ref:`APM 2.6 <common-apm25-and-26-overview>` - no longer supported for
-   Copter or Plane. The last firmware builds that fit on this board are
-   Copter 3.2.1 and Plane 3.3.0.
--  :ref:`PX4FMU <common-px4fmu-overview>` and
-   (:ref:`PX4IO <common-px4io-overview>`)
+-  :ref:`APM 2.6 <common-apm25-and-26-overview>` - no longer supported for Copter or Plane. The last firmware builds that fit on this board are Copter 3.2.1 and Plane 3.3.0.
+-  :ref:`NAVIO+ <common-navio-overview>`
+-  :ref:`PX4FMU <common-px4fmu-overview>` and (:ref:`PX4IO <common-px4io-overview>`)
