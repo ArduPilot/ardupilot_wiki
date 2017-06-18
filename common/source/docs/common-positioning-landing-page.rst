@@ -21,6 +21,6 @@ positioning technologies:
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
     Trimble BD930 RTK GPS <common-gps-trimble>
-    Zubax UAVCAN GPS, Compass, Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
+    Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
     GPS Blending (aka Dual GPS) <common-gps-blending>
     GPS – How it Works <common-gps-how-it-works>
