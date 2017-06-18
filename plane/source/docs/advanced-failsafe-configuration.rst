@@ -89,7 +89,7 @@ communication is interrupted between the main FMU microcontroller and
 the IO microcontroller, for example if the flight firmware crashes.
 
 An AFS flight termination is not recoverable. Once your aircraft starts
-a termination then is no way to recover.
+a termination, there is no way to recover.
 
 Types of Failsafe Events
 ------------------------
@@ -127,7 +127,7 @@ Aircraft then use their barometer to measure the pressure relative to
 that QNH pressure, which gives them an altitude reference which all
 aircraft in the area should be using.
 
-The AFS failsystem system is able to enforce a pressure altitude limit
+The AFS system is able to enforce a pressure altitude limit
 by setting the QNH pressure in the AFS_QNH_PRESSURE parameter, as a
 value in millibars. The pilot should then also set a pressure altitude
 limit using the AFS_AMSL_LIMIT parameter (in meters). Note that this
@@ -161,7 +161,7 @@ The AFS system monitors the health of your GPS receivers throughout the
 flight. If all of your available GPS receivers lose position lock then
 this initiates a GPS failure failsafe.
 
-When a GPS failure occurs (which is defines as loss of GPS lock for 3
+When a GPS failure occurs (which is defined as loss of GPS lock for 3
 seconds) the AFS system will look at the AFS_WP_GPS_LOSS parameter.
 This parameter species a waypoint number in your mission to use when a
 GPS failure occurs. If AFS_WP_GPS_LOSS is non-zero the aircraft will
@@ -178,7 +178,7 @@ include "loiter at the current location" waypoints. That is achieved by
 setting both the latitude and longitude of LOITER mission commands to
 zero.
 
-If the GPS recovers after a GPS failsafe has started then the aircraft
+If the GPS recovers after a GPS failsafe has started, then the aircraft
 will automatically resume its mission where it left off.
 
 If during a period of GPS loss the aircraft also loses communications
@@ -225,8 +225,8 @@ for a short period of communications failure).
 RC Loss
 ~~~~~~~
 
-If RC control is lost a manual control mode for more than
-AFS_RC_FAIL_MS milliseconds then flight termination is activated.
+If RC control is lost in a manual control mode for more than
+AFS_RC_FAIL_MS milliseconds, flight termination is activated.
 This termination mode is only enabled if AFS_RC_FAIL_MS is non-zero.
 For the OBC rules it should be set to 1500 (giving 1.5 seconds).
 
@@ -255,7 +255,7 @@ Manual Termination
 ------------------
 
 Apart from automatic termination it is also important for the aircrafts
-operator to be able to terminate the aircraft immediately if the think
+operator to be able to terminate the aircraft immediately if they think
 the aircraft is a danger to people or other aircraft. To force an
 immediate termination you should use the AFS_TERMINATION parameter. By
 setting that parameter to 1 the aircraft will immediately terminate.
@@ -298,8 +298,8 @@ Additional tips for AFS failsafe users
 --------------------------------------
 
 You need to ensure that your geofence is enabled before takeoff. This
-can either be done as part if your preflight checklist, or you could set
-it a FENCE_CHANNEL and enable it from within your transmitter, ensuring
+can either be done as part of your preflight checklist, or you could set
+a FENCE_CHANNEL and enable it from within your transmitter.  This ensures
 that if your transmitter is out of range that the fence remains enabled.
 
 Settings for Outback Challenge 2014
