@@ -1,37 +1,33 @@
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems:
 
-============================================================
-Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4)
-============================================================
+==============================================
+Compatible RC Transmitter and Receiver Systems
+==============================================
 
 This article provides an overview of the RC Transmitter and Receiver
-Systems that can be used with Pixhawk (and PX4) along with guidance on
+Systems that can be used with Pixhawk along with guidance on
 how they are connected.
 
 Overview
 ========
 
 Pixhawk is compatible with 
-    #. PPM RC receivers
+    #. PPM-Sum receivers
     #. S.Bus receivers 
-    #. Spektrum DSM and DSM2 receivers
-    #. Spectrum DSM-X Satellite receivers
+    #. Spektrum DSM, DSM2, and DSM-X Satellite receivers
     #. MULTIPLEX SRXL version 1 and version 2 receivers
 
-For traditional single-wire-per-channel (PWM) receivers a 
+For traditional single-wire-per-channel (PWM) receivers, a 
 `PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be
-used to convert the receiver outputs to PPM-SUM.
+used to convert the receiver outputs to PPM-Sum.
 
 Connecting the receiver
 =======================
 
-To connect a PPM receiver, S.Bus receiver, or PPM encoder,
-connect the black ground, red power and white signal wires to the RC
-pins. These S.BUS receivers have been tested and are known to work:
-R2008SB, R6008SB, FrSky X8R, FrSky XSR.
+To connect a PPM-Sum receiver or an S.Bus receiver, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. The following S.Bus receivers have been tested and are known to work: FrSky `X8R <http://www.frsky-rc.com/product/pro.php?pro_id=105>`__, FrSky `XSR <http://www.frsky-rc.com/product/pro.php?pro_id=154>`__, Futaba R2008SB, Futaba R6008SB.
 
-.. image:: ../../../images/rc-input-wiring.jpg
-    :target: ../_images/rc-input-wiring.jpg
+.. image:: ../../../images/RCIN_connection.jpg
+    :target: ../_images/RCIN_connection.jpg
 
 For a **Spektrum DSM**, **DSM2**, or **DSM-X Satellite** receiver,
 connect to the **SPKT/DSM** port.
@@ -41,7 +37,7 @@ connect to the **SPKT/DSM** port.
 
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems-multiplex-srxl:
 
-For a **MULTIPLEX SRXL** receiver, connect the **SPKT/DSM** port of the pixhawk to the **B/D** port of the MULTIPLEX SRXL receiver, without using the +3,3V voltage supplied at the **SPKT/DSM** port of the pixhawk and power the MULTIPLEX SRXL receiver separately.
+For a **MULTIPLEX SRXL** receiver, connect the **SPKT/DSM** port of the Pixhawk to the **B/D** port of the MULTIPLEX SRXL receiver, without using the +3,3V voltage supplied at the **SPKT/DSM** port of the Pixhawk and power the MULTIPLEX SRXL receiver separately.
 
 .. image:: ../../../images/multiplex_srxl_B_D_port_to_pixhawk_spkt_dsm_pinout.jpg
     :target: ../_images/multiplex_srxl_B_D_port_to_pixhawk_spkt_dsm_pinout.jpg
@@ -63,8 +59,8 @@ This section list radio systems that support PPM-Sum or S.Bus directly.
 
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems_frsky_taranis_ppm-sum_compatible_transmitter:
 
-FrSky Taranis X9D and Taranis Q X7 RC Transmitters
---------------------------------------------------
+FrSky Taranis X9D Plus and Taranis Q X7 RC Transmitters
+-------------------------------------------------------
 
 .. tip::
 
@@ -77,22 +73,23 @@ FrSky Taranis X9D and Taranis Q X7 RC Transmitters
 
     New and even more affordable Taranis Q X7
 
-.. figure:: ../../../images/FRSkyTaranis.jpg
-    :target: ../_images/FRSkyTaranis.jpg
-    :width: 60 %
+.. figure:: ../../../images/FrSky_Taranis9XD_Plus.jpg
+    :target: ../_images/FrSky_Taranis9XD_Plus.jpg
+    :width: 90 %
     :align: center
 
-    Taranis X9D
+    Taranis X9D Plus
 
 .. note::
 
-   Theses transmitters are a real bargain. You can buy them from different locations e.g. `Craft and Theory <http://www.craftandtheoryllc.com/packageq>`__ , `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ .
+   Theses transmitters are a real bargain. You can buy them from different locations e.g. `Craft and Theory <http://www.craftandtheoryllc.com/packageq>`__, `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ .
+
 The `FrSky Taranis RC Transmitter <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__ is a
-high quality `OpenTX <http://www.open-tx.org/downloads.html>`__ enabled RC Transmitter that is compatible with a wide variety of high quality FrSky PPM-Sum and S.Bus compatible receivers. 
+high quality `OpenTX <http://www.open-tx.org/downloads.html>`__ (open source firmware) enabled RC Transmitter that is compatible with a wide variety of high quality FrSky PPM-Sum and S.Bus compatible receivers. 
 
-One of the major advantages of the Taranis is that it can receive and display telemetry data **directly from ArduPilot** and on-board FrSky telemetry sensors, such as current and LiPo cell sensors, that can be added to your vehicle. For more information, see :ref:`FrSky telemetry <common-frsky-telemetry>`.
+One of the major advantages of the Taranis is that it can receive and display telemetry data **directly from ArduPilot** and on-board FrSky telemetry sensors, such as flight mode, GPS status, current drawn and cell voltages, and even ArduPilot messages, that can be added to your vehicle. For more information, see :ref:`FrSky telemetry <common-frsky-telemetry>`.
 
-Both the Taranis X9D and the Taranis Q X7 have integrated ACCST 2.4GHz transmitters that are compatible with X series FrSky receivers such as the very popular X8R or the newer and lighter XSR receivers. *This means that an additional JR type transmitter module is not required.* If needed, both the Taranis X9D and Taranis Q X7 have JR module bays that can accomodate external radio transmitters.
+Both the Taranis X9D Plus and the Taranis Q X7 have integrated ACCST 2.4GHz transmitters that are compatible with X series FrSky receivers such as the very popular X8R or the newer and lighter XSR receivers. *This means that an additional JR type transmitter module is not required.* If needed, both the Taranis X9D Plus and the Taranis Q X7 have JR module bays for external radio transmitters.
 
 Features that we like are:
 
@@ -117,7 +114,7 @@ The Taranis X9D and Taranis Q X7 can run the :ref:`FlightDeck <common-frsky-flig
 FrSky X Receivers
 -----------------
 
-FrSky X receivers are compatible with the FrSky Taranis and XJT transmitter modules. They support S.Bus RC signals and bidirectional S.Port telemetry. For more information about FrSky X receiver, refer to the :ref:`receiver section on the FrSky telemetry page <frsky_receivers>`.
+FrSky X receivers are compatible with the FrSky Taranis and XJT transmitter modules. They support S.Bus and bidirectional S.Port telemetry. For more information about FrSky X receivers, refer to the :ref:`receiver section on the FrSky telemetry page <frsky_receivers>`.
 
 .. figure:: ../../../images/FrSky_x8r.jpg
     :scale: 20 %
@@ -134,7 +131,7 @@ FrSky X receivers are compatible with the FrSky Taranis and XJT transmitter modu
     :scale: 20 %
     :align: center
 
-    FrSky X8R receiver and FLVSS LiPo Cell Voltage Sensor (optional) connected to Pixhawk 2.1 "The Cube"
+    FrSky X8R receiver and FLVSS LiPo Cell Voltage Sensor (optional) connected to Pixhawk 2.1 "The Cube". Both the S.Bus connection to the RC IN and the S.Port connections are shown.
 
 
 
@@ -144,32 +141,46 @@ Turnigy Transmitter Compatible With FrSky Transmitter Module
 .. image:: ../../../images/Turnigy9XR.jpg
     :target: ../_images/Turnigy9XR.jpg
 
-FrSky Transmitter Adapter Module and PPM-Sum Receiver
------------------------------------------------------
+FrSky Transmitter Module and S.Bus/PPM-Sum Receiver
+---------------------------------------------------
 
-The FrSky PPM Sum Receiver and conversion module below will work with
+The FrSky receiver and transmitter modules below will work with
 Turnigy 9x, 9XR (above) and other RC transmitters.
 
-FrSKY makes several receivers, some are compatible with PPM-Sum, some
-are not, check at `FrSky's web site <http://www.frsky-rc.com/product/product.php?cate_id=12&cate_name=Receivers>`__.
+FrSKY makes several PPM-Sum and S.Bus receivers and transmitters `FrSky's web site <http://www.frsky-rc.com/product/category.php?cate_id=17>`__.
 
-The receiver shown is PPM-Sum compatible and is recommended (4 channel
-receivers still do 8 channel PPM-Sum)
+The FrSky XJT module is a 2.4GHz frequency hopping "ACCST" transmitter that features Smart Port telemetry. It can operate in 8 channel, 16 channel and long range 12 channel mode. The XJT is compatible with the FrSky X series receivers such as the popular X8R and XSR. This radio 
 
-.. image:: ../../../images/receiver_frsky.gif
-    :target: ../_images/receiver_frsky.gif
+The `X8R <http://www.frsky-rc.com/product/pro.php?pro_id=105>`__ and `XSR <http://www.frsky-rc.com/product/pro.php?pro_id=154>`__ receivers have S.Bus and CPPM outputs, and also feature Smart Port telemetry, which provides telemetry from ArduPilot and other on-board FrSky sensors (current sensor, cell voltage sensor, temperature sensor, ...)
 
-.. image:: ../../../images/receiver_frssky_d4r_2.jpg
-    :target: ../_images/receiver_frssky_d4r_2.jpg
 
+.. figure:: ../../../images/FrSky_XJT_TX.jpg
+    :target: ../_images/FrSky_XJT_TX.jpg
+    :width: 60 %
+    :align: center
+
+    FrSky XJT transmitter module
+
+.. figure:: ../../../images/FrSky_x8r.jpg
+    :target: ../_images/FrSky_x8r.jpg
+    :width: 60 %
+    :align: center
+
+    FrSky X8R receiver module with S.Bus and Smart Port telemetry
+
+.. figure:: ../../../images/FrSky_xsr.jpg
+    :target: ../_images/FrSky_xsr.jpg
+    :width: 60 %
+    :align: center
+
+    FrSky XSR receiver module with S.Bus and Smart Port telemetry. This receiver module has a slightly less range as the X8R but is lighter and more compact.
     
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems_futaba_transmitter_compatible_with_futaba_s-bus_receivers:
 
 Futaba Transmitter Compatible With Futaba S-Bus Receivers
 ---------------------------------------------------------
 
-Futaba S.BUS2 receivers are supported since Copter/Plane 3.2. The SBUS
-receiver must be connected to the PPM input, not the adjacent SBUS output.
+Futaba S.BUS2 receivers are supported since Copter/Plane 3.2.
 
 The list of supported receivers for the Pixhawk (or a PX4FMU in
 combination with a PX4IO board) is given below:
@@ -249,7 +260,7 @@ PPM encoder and telemetry radio
 ===============================
 
 A `PPM Encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ will
-allow you to use any Conventional RC receiver. Both the new and previous
+allow you to use any conventional RC receiver. Both the new and previous
 versions of the *3DR PPM-Sum encoder* (the linked encoder is compatible) are shown
 below:
 
