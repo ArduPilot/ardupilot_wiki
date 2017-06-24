@@ -110,7 +110,7 @@ If you want to support 6 modes then the transmitter will need to emit
 PWM widths of around 1165, 1295, 1425, 1555, 1685, and 1815
 milliseconds. Typically this is achieved by configuring the transmitter
 to mix a two position switch and a three position switch (giving 6 modes
-in total). You can also do this with an analog dial if one is available,
+ in total). You can also do this with an analog dial if one is available,
 but it’s hard to reliably turn a dial to just the right position for six
 distinct settings.
 
@@ -150,6 +150,7 @@ systems:
 -  `Futaba 9ZAP/ZHP <http://diydrones.com/profiles/blogs/flight-mode-switching-on-a>`__
 -  `Futaba T10CAG <http://www.diydrones.com/profiles/blogs/getting-six-fly-modes-on-futaba-t10cag-transmitter>`__
 -  `Futaba T14 <http://diydrones.com/profiles/blogs/futaba-t14-mz-mode-configuration-for-all-6-modes>`__
+-  `Futaba T14SG <http://diydrones.com/forum/topics/set-6-point-switch-for-flight-mode-control-in-futaba-t14sg>`__
 -  `Futaba 9C Super <http://diydrones.com/profiles/blogs/6-positions-for-futaba-9c-super>`__
 -  `Graupner MX-16 <http://diydrones.com/profiles/blogs/six-modes-with-graupner-mx-16>`__
 -  `Turnigy 9x <http://diydrones.com/profiles/blogs/mode-switch-setup-for-turnigy-1>`__\ (or
