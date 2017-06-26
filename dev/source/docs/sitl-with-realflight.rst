@@ -45,8 +45,8 @@ From within Mission Planner:
    - From the "Model" drop-down, select "flightaxis" and push the Multirotor icon
    - on the Full Parameter List or Tree screens, on the right-side select realflight-quad and press load parameters
 
-  .. image:: ../images/realflight-mp-sitl.png
-    :target: ../_images/realflight-mp-sitl.png
+  .. image:: ../images/realflight-mp-sitl.jpg
+    :target: ../_images/realflight-mp-sitl.jpg
 
 On the real-flight controller press the red "reset" button to reset the vehicle's attitude and position and initialise the connection with SITL.
 - the message "FlightAxis Controller Device has been activated." should appear and the motors should become quieter
