@@ -1,4 +1,4 @@
-.. _sitl_with_xplane:
+.. _sitl-with-xplane:
 
 ==========================
 Using SITL with X-Plane 10
