@@ -1,8 +1,10 @@
 .. _the-ardupilot-autotest-framework:
 
-================================
-The ArduPilot Autotest Framework
-================================
+==================
+Autotest Framework
+==================
+
+.. image:: ../images/autotest.jpg
 
 ArduPilot has an automatic testing framework based on SITL. The autotest
 framework is what produces the web pages at
