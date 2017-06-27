@@ -4,6 +4,8 @@
 SITL Simulator (Software in the Loop)
 =====================================
 
+.. image:: ../images/sitl.jpg
+
 The SITL (software in the loop) simulator allows you to run Plane,
 Copter or Rover without any hardware. It is a build of the autopilot
 code using an ordinary C++ compiler, giving you a native executable that
@@ -63,13 +65,12 @@ port numbers depending on your environment.
 
     SITL on Linux <setting-up-sitl-on-linux>
     SITL on Windows <sitl-native-on-windows>
+    SITL on Windows in a VM <setting-up-sitl-on-windows>
     SITL using Vagrant <setting-up-sitl-using-vagrant>
     Copter SITL/MAVProxy Tutorial <copter-sitl-mavproxy-tutorial>
     ArduPilot Testing using SITL <using-sitl-for-ardupilot-testing>
     Using Gazebo Simulator with SITL <using-gazebo-simulator-with-sitl>
     Using Last_letter Simulator with SITL <using-last_letter-as-an-external-sitl-simulator>
     Using the CRRCSim simulator <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
-    SITL on Windows in a VM <setting-up-sitl-on-windows>
     Using X-Plane 10 with SITL <sitl-with-xplane>
     Soaring SITL with X-Plane <soaring-sitl-with-xplane>
-    
