@@ -9,8 +9,8 @@ Overview
 
 AC 3.0.1 (and higher) includes a simple "tin can" shaped fence centered
 on home that will attempt to stop your copter from flying too far away
-by initiating an RTL.  The maximum circular distance and altitude and
-the vehicle behaviour when the fence is reached can be configured using
+by stopping at the fence (if in Loiter mode and using Copter-3.4 or higher) or initiating an RTL.
+The maximum circular distance and altitude and the vehicle behaviour when the fence is reached can be configured using
 Mission Planner.
 
 .. image:: ../images/copter_simple_tincan_geofence.jpg
@@ -40,8 +40,8 @@ Enabling the Fence in Mission Planner
 
 The Fence can be set-up by doing the following:
 
--  Connect your APM/PX4 to the Mission Planner
--  Go to the **Software \| GeoFence** screen
+-  Connect your flight controller to the Mission Planner
+-  Go to the **Config/Tuning \| GeoFence** screen
 -  Click the **Enable** button
 -  Leave the "Type" as "Altitude and Circle" (unless you want only an
    Altitude limit or only a Circular fence in which case you can select
@@ -58,7 +58,7 @@ It is not necessary to set-up a switch to enable or disable the fence
 but if you wish to control the fence with a switch please follow these
 steps:
 
--  Go to the Mission Planner's Software > Copter Pids screen and set
+-  Go to the Mission Planner's Config/Tuning > Extended Tuning screen and set
    either "Ch7 Opt" OR "Ch8 Opt" to Fence.
 -  holding the switch high (i.e. PWM > 1800) will enable the fence, low
    (under 1800) will disable the fence.
