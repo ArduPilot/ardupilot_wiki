@@ -63,13 +63,13 @@ Using different channel mappings
 --------------------------------
 
 You can remap what output channels the quad motors are on by setting
-values for RCn_FUNCTION. This follows the same approach as :ref:`other output functions <channel-output-functions>`.
+values for SERVOn_FUNCTION. This follows the same approach as :ref:`other output functions <channel-output-functions>`.
 
 .. note::
 
-   Note that you do not need to set any of the RCn_FUNCTION values unless
+   Note that you do not need to set any of the SERVOn_FUNCTION values unless
    you have a non-standard motor ordering. It is highly recommended that
-   you use the standard ordering and do not set the RCn_FUNCTION
+   you use the standard ordering and do not set the SERVOn_FUNCTION
    parameters, leaving them at zero. They will be automatically set to
    the right values for your frame on boot.
 
@@ -87,8 +87,8 @@ The output function numbers are:
 So to put your quad motors on outputs 9 to 12 (the auxillary channels on
 a Pixhawk) you would use these settings in the advanced parameter list:
 
--  RC9_FUNCTION = 33
--  RC10_FUNCTION = 34
--  RC11_FUNCTION = 35
--  RC12_FUNCTION = 36
+-  SERVO9_FUNCTION = 33
+-  SERVO10_FUNCTION = 34
+-  SERVO11_FUNCTION = 35
+-  SERVO12_FUNCTION = 36
 

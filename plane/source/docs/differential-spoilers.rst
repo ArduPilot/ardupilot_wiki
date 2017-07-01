@@ -27,37 +27,28 @@ Preparation
 ===========
 
 To use differential spoiler function, the airframe is required to use
-have 4 control surfaces (2 on each wing) and use elevon configuration.
-Setup one surface on each side using output channel 1 (roll) and channel
-2 (pitch) as elevons:
-
-If you have not done so, please follow the tutorial to setup elevon
-properly: :ref:`Archived:APM2.x Wiring QuickStart <archived-apm2x-wiring-quickstart>`
+have 4 control surfaces (2 on each wing). 
 
 Setup
 =====
 
-Once you have setup two elevon channels successfully, connect the
-additional 2 surfaces to auxiliary channels (5 to 11 on APM2.X) and set
-corresponding \ **RC_FUNCTION**:
+Now setup your 4 channels using the SERVOn_FUNCTION parameters:
 
-+--------------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------+
-| **Function Name**        | **Function Number**   | **Description**                                                                                                      |
-+--------------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------+
-| Differential Spoiler 1   | 16                    | This should be set to the control surface on the same side of elevon connected to output channel 1 (roll channel)    |
-+--------------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------+
-| Differential Spoiler 2   | 17                    | This should be set to the control surface on the same side of elevon connected to output channel 2 (pitch channel)   |
-+--------------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------+
++-------------------------------+-----------------------+-----------------------------------------------+
+| **Function Name**             | **Function Number**   | **Description**                               |
++-------------------------------+-----------------------+-----------------------------------------------+
+| Differential Spoiler Left 1   | 16                    | This should be set to the outer left servo    |
++-------------------------------+-----------------------+-----------------------------------------------+
+| Differential Spoiler Right 1  | 17                    | This should be set to the outer right servo   |
++-------------------------------+-----------------------+-----------------------------------------------+
+| Differential Spoiler Left 2   | 86                    | This should be set to the inner left servo    |
++-------------------------------+-----------------------+-----------------------------------------------+
+| Differential Spoiler Right 2  | 87                    | This should be set to the outer right servo   |
++-------------------------------+-----------------------+-----------------------------------------------+
 
-By now, you should have normal elevon function in MANUAL mode. Now
-switch to FBW mode and use RC controller to test roll, pitch and yaw.
-Adjust corresponding \ ``RC_REV`` until the behavior is correct.
-
-.. note::
-
-   If you have servo direction reversed on either side of the wing,
-   it is most likely that the servo orientations are different or rotation
-   is reversed through programming on some digital servos
+You can adjust the direction of each servo using the SERVOn_REVERSED
+parameters, and swap channels to get the right movement direction for
+elevons and rudder.
 
 .. |4surfLeftYaw| image:: ../images/4surfLeftYaw.jpg
     :target: ../_images/4surfLeftYaw.jpg

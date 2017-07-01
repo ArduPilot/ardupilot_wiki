@@ -39,10 +39,11 @@ the air.
 
 .. note::
 
-   *APM is designed to easily integrate with most standard RC aircraft,
-   from simple high-wing trainers to high-speed swept wing fighters and
-   flying wings. If you have something out of the ordinary please assume
-   that a bit more tuning will be required to get things dialed in.*
+   *APM is designed to easily integrate with most standard RC
+   aircraft, from simple high-wing trainers to high-speed swept wing
+   fighters and flying wings, to quadplanes and tilt-rotors. If you
+   have something out of the ordinary please assume that a bit more
+   tuning will be required to get things dialed in.*
 
 All of us involved with this project care a great deal about the privacy
 and safety of those whom we share this planet with. Please be a good
