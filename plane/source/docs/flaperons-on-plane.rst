@@ -8,11 +8,6 @@ Flaperon Configuration
 ailerons (using one channel each) as both flaps and ailerons. This
 article shows how to set up Flaperons in Plane.
 
-.. note::
-
-   This page was tested on Plane 3.3, but should be relevant to older
-   versions. It was originally created from `this blog post <http://marc.merlins.org/perso/rc/post_2015-08-04_Using-Flaperons-With-Ardupilot.html>`__.
-
 Input/Output Channels
 =====================
 
@@ -24,11 +19,11 @@ channels. The input and output channels may not directly map to one
 another.
 
 Flaperons are the classic example of a setup where input and output
-channels do not map directly.  The autopilot will use the input from the
-aileron (INPUT channel 1) AND the input from the flap channel (INPUT
-channel 5 - in the example below) and "mix" them to calculate how the
-flaperons on the plane should move. The result is sent out to each flap
-OUTPUT channel (channels 5 and 6 in the example below).
+channels do not map directly.  The autopilot will use the input from
+the aileron (INPUT channel 1) AND the input from the flap channel
+(INPUT channel 5 - in the example below) and "mix" them to calculate
+how the flaperons on the plane should move. The result is sent out to
+each flaperon OUTPUT channel (channels 5 and 6 in the example below).
 
 Flaperon setup
 ==============
@@ -39,7 +34,7 @@ Flaperon setup
    -  Leave the standard aileron input on channel 1.
    -  You need to add an input channel on your transmitter to control
       the flaps. You can configure any unused input channel for this
-      however we are going to use RC5.  Configure your transmitter to
+      however we are going to use servo output channel 5.  Configure your transmitter to
       use Channel 5 for flaps (either a switch or a rotary button) and
       set :ref:`FLAP_IN_CHANNEL <FLAP_IN_CHANNEL>` to 5.
    -  Move your ailerons to 2 spare output channels on the autopilot
@@ -48,38 +43,35 @@ Flaperon setup
 
 -  OUTPUTS:
 
-   -  Set :ref:`RC5_FUNCTION <RC5_FUNCTION>` and :ref:`RC6_FUNCTION <RC6_FUNCTION>`
+   -  Set :ref:`SERVO5_FUNCTION <SERVO5_FUNCTION>` and :ref:`SERVO6_FUNCTION <SERVO6_FUNCTION>`
       to 24 and 25 (Flaperon 1 and flaperon 2 respectively - which
       channel is which does not matter).
    -  Check that
-      :ref:`RC5_MIN <RC5_MIN>`, :ref:`RC5_MAX <RC5_MAX>`,
-      :ref:`RC5_TRIM <RC5_TRIM>` has the
+      :ref:`SERVO5_MIN <SERVO5_MIN>`, :ref:`SERVO5_MAX <SERVO5_MAX>`,
+      :ref:`SERVO5_TRIM <SERVO5_TRIM>` has the
       correct range set if you haven't used them previously.  If your
       unsure usually 1000, 2000, 1500 will work fine.  Do the same for
-      the RC6 equivalents.
+      the SERVO6 equivalents.
 
--  Set :ref:`FLAPERON_OUTPUT <FLAPERON_OUTPUT>` to 1 initially.
 -  Switch to FBWA or CRUISE.  Roll your plane back and forth and make
    sure the ailerons move in the correct direction (aileron goes down on
-   the wing that you roll down). If they don't, try setting
-   ``FLAPERON_OUTPUT`` to 4.
+   the wing that you roll down). If they don't then use
+   SERVO5_REVERSED and SERVO6_REVERSED to reverse channels as needed.
 -  Once this works, try your flaps control on your transmitter and make
-   sure flaps go down and not up. If they go the wrong way, change
-   ``RC1_REV`` from 1 to -1 (or the other way around) and test again. 
-   Once working go back and check ``FLAPERON_OUTPUT`` in the step above
-   as it may also need to change again.
+   sure flaps go down and not up. If they go the wrong way you will
+   need to swap the two output channels and correct the reversals.
 -  Confirm that when in FBWA and your roll the plane the ailerons move
    in the correct direction, and that your flaps go down.
 -  Now try the ailerons stick on your transmitter. If they go the wrong
-   way, reverse channel 1 on the transmitter ONLY.  Test again.  If you
+   way, you can use RC1_REVERSED to change the direction of the input channel. If you
    put your stick left, the left aileron should go up.
 
 Tuning
 ======
 
 -  Go to failsafe setup in *APM Planner 2* or *Mission Planner*, and
-   make sure the max/min values match ``RC5_MIN``/``RC5_MAX`` (or adjust
-   them) so that your flaps move all the way (`:ref:`RC1_TRIM`` should also be set to 1500). - Setting the :ref:`FLAP_SLEWRATE <FLAP_SLEWRATE>`
+   make sure the max/min values match ``SERVO5_MIN``/``SERVO5_MAX`` (or adjust
+   them) so that your flaps move all the way (`:ref:`SERVO1_TRIM`` should also be set to 1500). - Setting the :ref:`FLAP_SLEWRATE <FLAP_SLEWRATE>`
    to 100 allows moving flaps from 0 to 100% in one second.  Lower this
    to make your flaps move more slowly.
 -  Adjust `FLAP_x_PERCNT|SPEED` as desired for auto modes - see `Automatic Flaps <automatic-flaps>`. Note you can ignore the
@@ -105,11 +97,9 @@ Tuning
 Crow flaperons
 ==============
 
-If you need Crow flaps (i.e if your ailerons must go up, not down), you
-can use these instructions and reverse ``RC1_REV`` so that when you send
-flaps input, ailerons go up instead of down. Then you should be able to
-set your flaps channels as :ref:`FLAP <channel-output-functions_flap>` or
-:ref:`FLAP_AUTO <channel-output-functions_flap_auto>`.
+You can also setup crow flaps (where the ailerons go up, not down) by
+swapping the two output channels and setting the channel reversal as
+needed.
 
 See :ref:`How would I setup crow flaps? <fixed-wing-faq_how_would_i_setup_crow_flaps>` (Fixed Wing
 FAQ) for more information.
@@ -122,8 +112,8 @@ Notes
    and you flip the mode to RTL or some other mode to abort the landing
    and go back to an auto mode, flaps will stay full. You need to
    retract them on your transimitter.
--  ``RCx_MIN`` and ``RCx_MAX`` for Flaperon output channels limit
+-  ``SERVOx_MIN`` and ``SERVOx_MAX`` for Flaperon output channels limit
    deflection of Flaperons and you can use the TRIM value to move the
    neutral position in case you want more down travel than up travel.
--  ``RC1_TRIM`` acts as normal aileron trim.  ``RC1_MIN`` and
-   ``RC1_MAX`` should match the transmitter setting
+-  ``SERVO1_TRIM`` acts as normal aileron trim.  ``SERVO1_MIN`` and
+   ``SERVO1_MAX`` should match the transmitter setting

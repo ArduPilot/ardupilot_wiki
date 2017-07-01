@@ -4,22 +4,21 @@
 Channel Output Functions
 ========================
 
-The first 4 output channels in Plane have specific meanings - typically
-Aileron, Elevator, Throttle and Rudder. Beyond that you may map the
-remaining output channels to any of a large number of output functions.
-On a board like the Pixhawk which has 14 output channels that means you
-have 10 channels that you can freely assign to any function.
+All servo outputs may be mapped to any function supported by
+ArduPilot. The default settings are for the first 4 channels to be
+Aileron, Elevator, Throttle and Rudder (commonly known as AETR), but
+you can re-assign them as needed.
 
 This page describes how to configure these output channels and what each
 of the available functions is.
 
-The RCn_FUNCTION parameters
-----------------------------
+The SERVOn_FUNCTION parameters
+------------------------------
 
-In the advanced parameter view of your GCS you will find that each RC
-output channel beyond channel 4 has a RCn_FUNCTION parameter. For
-example, RC5_FUNCTION controls the output function of channel 5,
-RC6_FUNCTION controls the output function of channel 6 and so on.
+In the advanced parameter view of your GCS you will find that each
+SERVO output channel has a SERVOn_FUNCTION parameter. For example,
+SERVO5_FUNCTION controls the output function of channel 5,
+SERVO6_FUNCTION controls the output function of channel 6 and so on.
 
 The values you can set these parameters to are shared with copters and
 rovers, and not all of them have been implemented on fixed wing
@@ -37,26 +36,64 @@ aircraft. The ones that are implemented on fixed wing are listed below:
 -  mount2_pan=12
 -  mount2_tilt=13
 -  mount2_roll=14
--  DifferentialSpoiler1=16
--  DifferentialSpoiler2=17
+-  DifferentialSpoilerLeft1=16
+-  DifferentialSpoilerRight1=17
+-  DifferentialSpoilerLeft2=86
+-  DifferentialSpoilerRight2=87
 -  AileronWithInput=18
 -  Elevator=19
 -  ElevatorWithInput=20
 -  Rudder=21
--  Flaperon1=24
--  Flaperon2=25
+-  FlaperonLeft=24
+-  FlaperonRight=25
 -  GroundSteering=26
+-  ParachuteRelease=27
+-  QuadPlaneMotor1=33
+-  QuadPlaneMotor2=34
+-  QuadPlaneMotor3=35
+-  QuadPlaneMotor4=36
+-  QuadPlaneMotor5=37
+-  QuadPlaneMotor6=38
+-  QuadPlaneMotor7=39
+-  QuadPlaneMotor8=40
+-  MotorTilt=41
+-  RCPassThru1=51
+-  RCPassThru2=52
+-  RCPassThru3=53
+-  RCPassThru4=54
+-  RCPassThru5=55
+-  RCPassThru6=56
+-  RCPassThru7=57
+-  RCPassThru8=58
+-  RCPassThru9=59
+-  RCPassThru10=60
+-  RCPassThru11=61
+-  RCPassThru12=62
+-  RCPassThru13=63
+-  RCPassThru14=64
+-  RCPassThru15=65
+-  RCPassThru16=66
+-  Ignition=67
+-  Starter=69
+-  Throttle=70
+-  ThrottleLeft=73
+-  ThrottleRight=74
+-  TiltMotorLeft=75
+-  TiltMotorRight=76
+-  ElevonLeft=77
+-  ElevonRight=77
+-  VTailLeft=79
+-  VTailRight=80
 
-The default value for all channels is 0, meaning disabled. That means
-the channel will output the trim value for that channel (for example, if
-RC5_FUNCTION is 0 then channel 5 will output RC5_TRIM) unless it is
-overridden by a mission command.
+The default values for the first 4 channels are Aileron, Elevator,
+Throttle and Rudder. The default for all other channels s is 0,
+meaning disabled. A disabled channel will output the trim value for
+that channel (for example, if SERVO5_FUNCTION is 0 then channel 5 will
+output SERVO5_TRIM) unless it is overridden by a mission command.
 
-All of these functions may be used on multiple channels. So if you want
-3 more elevator channels for some reason you can set RCn_FUNCTION to 19
-on 3 of your output channels. The normal elevator (channel 2) will still
-work, but you will also have 3 extra elevons, each of which you can trim
-and set the range of separately.
+All of these functions may be used on multiple channels. So if you
+want 3 elevator channels for some reason you can set SERVOn_FUNCTION
+to 19 on 3 of your output channels.
 
 Disabled
 --------
@@ -68,7 +105,7 @@ some ways "disabled" could be called "mission-controlled".
 
 When you fly an auto mission you can ask for a servo to be set to a
 value as part of that mission. In that case you should set the
-RCn_FUNCTION for that channel to Disabled, so that the value doesn't
+SERVOn_FUNCTION for that channel to Disabled, so that the value doesn't
 get changed by another output function immediately after the mission
 sets the value.
 
@@ -77,7 +114,7 @@ RCPassThru
 
 Setting a channel to RCPassThru means it will output the value that is
 coming into the board from the corresponding input channel. For example,
-if RC5_FUNCTION is 1 (meaning RCPassThru) then channel 5 output will
+if SERVO5_FUNCTION is 1 (meaning RCPassThru) then channel 5 output will
 always be equal to channel 5 input.
 
 .. _channel-output-functions_flap:
@@ -120,7 +157,7 @@ AileronWithInput
 The AileronWithInput function is used where you have setup your
 transmitter to input the aileron signal you want on this channel on the
 corresponding input channel for this output. For example, if you set
-RC6_FUNCTION=18 and have setup your transmitter to send the right
+SERVO6_FUNCTION=18 and have setup your transmitter to send the right
 aileron signal for manual mode to channel 6 then you can use
 AileronWithInput. The main difference is in manual mode. In manual with
 AileronWithInput the output comes directly from the corresponding input
@@ -129,7 +166,7 @@ based on the main aileron input channel (usually channel 1) but trimmed
 and scaled according to the RC6 trim values.
 
 Mount_pan, Mount_tilt and Mount_roll
----------------------------------------
+------------------------------------
 
 These control the output channels for controlling a servo gimbal. Please
 see the :ref:`camera gimbal configuration documentation <common-camera-gimbal>` for details.
@@ -158,7 +195,7 @@ ElevatorWithInput
 The ElevatorWithInput function is used where you have setup your
 transmitter to input the elevator signal you want on this channel on the
 corresponding input channel for this output. For example, if you set
-RC6_FUNCTION=20 and have setup your transmitter to send the right
+SERVO6_FUNCTION=20 and have setup your transmitter to send the right
 elevator signal for manual mode to channel 6 then you can use
 ElevatorWithInput. The main difference is in manual mode. In manual with
 ElevatorWithInput the output comes directly from the corresponding input
@@ -192,11 +229,7 @@ Using the flaperon1 and flaperon2 output functions you can setup
 flaperons, which are ailerons that double as flaps. They are very useful
 for aircraft which have ailerons but no flaps.
 
-To use the flaperon output functions you need to also set the
-FLAPERON_OUTPUT option to the right value (from 1 to 4) for your servo
-setup. See the :ref:`Elevon setup page <reversing-servos-and-setting-normalelevon-mode>`
-for a more detailed description of how this parameter works (that page
-is for elevons, but flaperons work in the same manner).
+See the :ref:`flaperon guide <guide-flaperons>` for more details.
 
 Note that flaperons act like Flap_auto described above for the flap
 component of the output.

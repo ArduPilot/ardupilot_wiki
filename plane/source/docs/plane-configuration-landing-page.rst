@@ -19,10 +19,17 @@ components, including those required for the operation of the autopilot.
 
     Mandatory Hardware Configuration <first-time-apm-setup>
     Configuration Values for Common Airframes <configuration-files-for-common-airframes>
-    Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
+    ESC Calibration <guide-esc-calibration>
+    Four Channel Planes <guide-four-channel-plane>
+    Elevon Planes <guide-elevon-plane>
+    VTail Planes <guide-vtail-plane>
+    Quadplanes <quadplane-support>
+    Tailsitters <guide-tailsitter>
+    Tilt-Rotors <guide-tilt-rotor>
     Differential Spoilers <differential-spoilers>
     Flaperons <flaperons-on-plane>
     Automatic Flaps <automatic-flaps>
+    Center of Gravity <guide-center-of-gravity>
     Throttle Arming in Plane <arming-throttle>
     Advanced Failsafe Configuration <advanced-failsafe-configuration>
     Sensor Testing <common-sensor-testing>
