@@ -8,7 +8,7 @@ Choosing Servo Functions
 
 The most fundamental setup for any plane is the servo output
 functions. Flight boards vary in the number of outputs they support,
-some with as few as 6 outputs and others with 14 or more. Each of
+some with as few as 6 outputs and others with up to 16. Each of
 these outputs can be configured as needed for your airframe.
 
 The default outputs are very simple:

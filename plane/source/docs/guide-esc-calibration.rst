@@ -33,9 +33,10 @@ autopilot from a USB cable for the purposes of this calibration.
 
 The steps for calibration are:
 
-- start with the autopilot powered, but with the motor unpowered
+- start with the autopilot powered, but with the motor unpowered or
+  propeller removed
 - switch to MANUAL flight mode
-- disable the safety on outputs
+- disable the safety switch (if fitted)
 - move the throttle stick on your transmitter to maximum
 - add power to the motor
 
