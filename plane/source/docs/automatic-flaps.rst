@@ -24,7 +24,7 @@ Software configuration
 
 The first step in setting up flaps is to set the parameter for the
 channel function for the channel you are using for flaps to a value of
-3. For example, if you have flaps on channel 5 then set RC5_FUNCTION to
+3. For example, if you have flaps on channel 5 then set SERVO5_FUNCTION to
 3.
 
 Next set the parameters for your two flap speeds and flap values. These
@@ -37,8 +37,9 @@ is stored as the trim (default) position.
 
 That is basically all the setup required for flaps. If you find that
 your flaps are moving backwards from what you expect, change the
-reversing parameter for your flap channel - The reversing parameter
-should have a value of 1 or -1 (Not 0).
+reversing parameter for your flap channel, for example
+SERVO5_REVERSED. Set it to 1 to reverse the flaps, set to 0 for normal
+operation.
 
 Using flaps
 ~~~~~~~~~~~
@@ -56,3 +57,8 @@ can change cruise_speed to a value in one of the flap ranges from the
 GCS and should see the flaps deploy. Also, if you use the
 Do_Change_Speed command in mission flaps will be deployed when the
 target speed is changed into one of the flap speed ranges.
+
+Using Flaperons
+===============
+
+You can also setup flaperons. Please see the separate :ref:`flaperon guide <guide-flaperons>` for details.
