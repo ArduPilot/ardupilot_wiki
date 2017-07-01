@@ -3,8 +3,6 @@
 Controlling Input Throw, Trim and Reversal
 ==========================================
 
-.. note:: this page only applies for plane firmware version 3.8.0 and later. 
-
 Where the parameters starting with SERVOn_ control the servo outputs,
 the parameters starting with RCn_ control the input side, related to
 pilot stick movement.

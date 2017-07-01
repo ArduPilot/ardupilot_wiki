@@ -30,6 +30,7 @@ components, including those required for the operation of the autopilot.
     Flaperons <flaperons-on-plane>
     Automatic Flaps <automatic-flaps>
     Center of Gravity <guide-center-of-gravity>
+    RC Input Throw and Trim <rc-throw-trim>
     Throttle Arming in Plane <arming-throttle>
     Advanced Failsafe Configuration <advanced-failsafe-configuration>
     Sensor Testing <common-sensor-testing>
