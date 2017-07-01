@@ -79,7 +79,7 @@ For example, if your left tilt servo is channel 5 and your right tilt
 servo is channel 6, then set:
 
 - SERVO5_FUNCTION=75
-- SERVO5_FUNCTION=76
+- SERVO6_FUNCTION=76
 
 you also need to set the right SERVOn_REVERSED values, and the right
 SERVOn_TRIM, SERVOn_MIN and SERVOn_MAX values.
@@ -94,12 +94,12 @@ of vectored thrust movement in forward flight.
 The Q_TAILSIT_VHGAIN parameter controls vectored thrust in hover. A
 typical value is around 0.8, which gives a lot of control to vectored
 thrust in hover. This control is combined with control from your
-elevon mxing gain (controlled by MIXING_GAIN).
+elevon mixing gain (controlled by MIXING_GAIN).
 
 The Q_TAILSIT_VFGAIN parameter controls vectored thrust in forward
 flight. A typical value is around 0.2, which gives a small amount of
 control to vectored thrust in forward flight. This control is combined
-with control from your elevon mxing gain (controlled by MIXING_GAIN).
+with control from your elevon mixing gain (controlled by MIXING_GAIN).
 
 By adjusting the relative values of Q_TAILSIT_VHGAIN, Q_TAILSIT_VFGAIN
 and MIXING_GAIN you can adjust how much control you have from elevons

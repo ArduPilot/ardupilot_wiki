@@ -45,7 +45,7 @@ Servo Reversal
 
 The next step is to get the reversals right. You should connect the
 battery (with propeller removed) and turn on your RC transmitter. Now
-switch to MANUAL mode and disable the output safety (if enabled).
+switch to MANUAL mode and disable the safety switch (if fitted).
 
 At this point your RC transmitter should have control of your 3
 control surfaces (aileron, elevator and rudder). You should now adjust
