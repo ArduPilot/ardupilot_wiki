@@ -13,6 +13,8 @@ its first flight, and includes an explanation of the main :ref:`Flight Modes <fl
     Starting up and calibrating Plane <starting-up-and-calibrating-arduplane>
     Arming Plane <arming-your-plane>
     Flight Modes <flight-modes>
-    Tuning <common-tuning>
+    Automatic Tuning <automatic-tuning-with-autotune>
+    Tuning Quickstart <tuning-quickstart>
+    Manual Tuning <common-tuning>
     Measuring Vibration <common-measuring-vibration>
     Transmitter based tuning <common-transmitter-tuning>
