@@ -40,9 +40,7 @@ aircraft. The ones that are implemented on fixed wing are listed below:
 -  DifferentialSpoilerRight1=17
 -  DifferentialSpoilerLeft2=86
 -  DifferentialSpoilerRight2=87
--  AileronWithInput=18
 -  Elevator=19
--  ElevatorWithInput=20
 -  Rudder=21
 -  FlaperonLeft=24
 -  FlaperonRight=25
@@ -151,20 +149,6 @@ trim each aileron separately, or if your main aileron is setup as an
 elevon mixer (using the ELEVON_OUTPUT option), and you also want some
 normal ailerons.
 
-AileronWithInput
-----------------
-
-The AileronWithInput function is used where you have setup your
-transmitter to input the aileron signal you want on this channel on the
-corresponding input channel for this output. For example, if you set
-SERVO6_FUNCTION=18 and have setup your transmitter to send the right
-aileron signal for manual mode to channel 6 then you can use
-AileronWithInput. The main difference is in manual mode. In manual with
-AileronWithInput the output comes directly from the corresponding input
-channel. With the Aileron output function the output in manual mode is
-based on the main aileron input channel (usually channel 1) but trimmed
-and scaled according to the RC6 trim values.
-
 Mount_pan, Mount_tilt and Mount_roll
 ------------------------------------
 
@@ -188,20 +172,6 @@ separate per-channel trim and range. This is useful when you want to
 trim each elevator separately, or if your main elevator is setup as an
 elevon mixer (using the ELEVON_OUTPUT option), and you also want some
 normal elevator.
-
-ElevatorWithInput
------------------
-
-The ElevatorWithInput function is used where you have setup your
-transmitter to input the elevator signal you want on this channel on the
-corresponding input channel for this output. For example, if you set
-SERVO6_FUNCTION=20 and have setup your transmitter to send the right
-elevator signal for manual mode to channel 6 then you can use
-ElevatorWithInput. The main difference is in manual mode. In manual with
-ElevatorWithInput the output comes directly from the corresponding input
-channel. With the Elevator output function the output in manual mode is
-based on the main elevator input channel (usually channel 2) but trimmed
-and scaled according to the RC6 trim values.
 
 Rudder
 ------
