@@ -9,7 +9,7 @@ on Windows with *Make*.
 
 .. note::
 
-   The commands for building Pixhawk and Pixhawk2 are identical (``make px4-v2``). Building for Pixracer is the same except ``make px4-v4`` is used.  For the older (obsolete) PX4 use ``make px4-v1``. 
+   The commands for building Pixhawk are (``make px4-v2``). Building for Pixhawk2.1 is the same except ``make px4-v3`` is used. Building for Pixracer is the same except ``make px4-v4`` is used.  For the older (obsolete) PX4 use ``make px4-v1``. 
 
 Build instructions
 ==================
@@ -66,20 +66,13 @@ Open the *PX4Console* and navigate to the target vehicle directory:
 Build the firmware by entering one of the following commands:
 
 +--------------------------------------+--------------------------------------+
-| ``make px4-v2``                      | Build the Pixhawk/Pixhawk2 firmware  |
-|                                      | (identical) for a quad               |
+| ``make px4-v2``                      | Build the Pixhawk firmware for a     |
+|                                      | quad                                 |
++--------------------------------------+--------------------------------------+
+| ``make px4-v3``                      | Build the Pixhawk2.1 firmware for a  |
+|                                      | quad                                 |
 +--------------------------------------+--------------------------------------+
 | ``make px4-v4``                      | Build the PixRacer firmware for quad |
-+--------------------------------------+--------------------------------------+
-| ``make px4-v2-hexa``                 | Build the Pixhawk firmware for a     |
-|                                      | hexacopter.                          |
-|                                      |                                      |
-|                                      | # Other supported suffixes include   |
-|                                      | "octa", "octa-quad, "tri", "single"  |
-|                                      | and "heli".                          |
-|                                      |                                      |
-|                                      | # More can be found in               |
-|                                      | "mk/targets.mk" under FRAMES         |
 +--------------------------------------+--------------------------------------+
 | ``make px4``                         | Build both PX4 (obsolete) and PixHawk|
 |                                      | firmware for a quadcopter            |
