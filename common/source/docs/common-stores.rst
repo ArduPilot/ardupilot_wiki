@@ -26,6 +26,7 @@ recommended for use with ArduPilot (in alphabetical order).
 * `Northox <https://northox.myshopify.com/>`__
 * `ProfiCNC <http://www.proficnc.com/stores>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
+* `Skeyetech <http://www.skeyetech-shop.fr/>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <http://www.uavionix.com/>`__
 * `VirtualRobotix <http://www.virtualrobotix.it/index.php/en/shop>`__
