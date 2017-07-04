@@ -48,7 +48,7 @@ Once you've attached the USB or Telemetry Radio, Windows will
 automatically assign your autopilot a COM port number, and that will
 show in the drop-down menu (the actual number does not matter). The
 appropriate data rate for the connection is also set (typically the USB
-connection data rate is 11520 and the radio connection rate is 57600).
+connection data rate is 115200 and the radio connection rate is 57600).
 
 Select the desired port and data rate and then press the **Connect**
 button to connect to the autopilot. After connecting **Mission Planner**
