@@ -842,12 +842,11 @@ See also
     LEDs <common-leds-pixhawk>
     Safety Switch <common-safety-switch-pixhawk>
     Sounds <common-sounds-pixhawkpx4>
-
+    Pixhawk Serial Names <common-pixhawk-serial-names>
 
 [site wiki="planner"]
     Pixhawk Wiring Quick Start <common-pixhawk-wiring-and-quick-start>
     Powering the Pixhawk <common-powering-the-pixhawk>
     Mounting the Flight Controller <common-mounting-the-flight-controller>
     Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>
-    Pixhawk Serial Names <pixhawk-serial-names>
 [/site]
