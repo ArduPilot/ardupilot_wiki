@@ -420,6 +420,15 @@ Debug port (JST SM06B connector)
    </tbody>
    </table>
 
+
+See also
+========
+
+.. toctree::
+    :maxdepth: 1
+
+   PixRacer Serial Names <common-pixracer-serial-names>
+
 .. note::
 
    Some information and images in this page were copied from
