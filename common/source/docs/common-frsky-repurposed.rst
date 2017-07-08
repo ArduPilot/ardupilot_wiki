@@ -60,7 +60,7 @@ for how to display values from the FrSky telemetry feed on the RC transmitter's 
 .. image:: ../../../images/Telemetry_FrSky_TXSetup.png
     :target: ../_images/Telemetry_FrSky_TXSetup.png
 
-FrSky telemetry data consists of 16 or 32bit unsigned integers recognized by OpenTX. Standard FrSky telemetry does not include flight controller messages natively. Therefore, less important telemetry data messages (temperature, variometer…) have been repurposd to carry more useful information such as flight mode.
+FrSky telemetry data consists of 16 or 32bit unsigned integers recognized by OpenTX. Standard FrSky telemetry does not include flight controller messages natively. Therefore, less important telemetry data messages (temperature, variometer…) have been repurposed to carry more useful information such as flight mode.
 
 Using telemetry values in OpenTX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,7 +87,7 @@ ArduPilot already provides variometer values through the FrSky telemetry link, s
 GPS
 ~~~
 
-You can setup the display of the latest transmitted latitude and longitude information; for instance, in case of a crash or fly away, to locate your copter. 
+You can setup the display of the latest transmitted latitude and longitude information; for instance, in case of a crash or fly away, to locate your copter.
 
 .. image:: ../../../images/OpenTX_GPStelem.png
  :target: ../_images/OpenTX_GPStelem.png
@@ -97,7 +97,7 @@ When configured to display “GPS,” the custom telemetry screen will show long
 .. image:: ../../../images/OpenTX_GPSdisplay.png
  :target: ../_images/OpenTX_GPSdisplay.png
 
-Configuringation with ErSky9x
-=============================
+Configuration with ErSky9x
+==========================
 
 For information on how to configure your ErSky9x transmitter (such as a Turnigy 9XR Pro) for FrSky telemetry, please go :ref:`here <common-frsky-telemetry>`.
