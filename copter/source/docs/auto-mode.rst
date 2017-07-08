@@ -30,8 +30,12 @@ including returning an HDOP of under 2.0.
 Controls
 ========
 
-AUTO should be set-up as one of the :ref:`Flight Modes <flight-modes>` on the flight
-mode switch.
+AUTO should be set-up as one of the :ref:`Flight Modes <flight-modes>`
+on the flight mode switch.
+
+You must arm your copter before you can engage AUTO mode. See
+:ref:`Arming the motors <arming_the_motors>` for details on how to arm
+your copter.
 
 If starting the mission while the copter is on the ground the pilot
 should ensure the throttle is down, then switch to the Auto flight mode,
@@ -39,7 +43,7 @@ then raise the throttle.  The moment that the throttle is raised above
 zero, the copter will begin the mission.
 
 If starting the mission from the air the mission will begin from the
-first command the moment that the flight mode switch is moved to Auto. 
+first command the moment that the flight mode switch is moved to Auto.
 If the first command in the mission is a take-off command but the
 vehicle is already above the take-off command's altitude the take-off
 command will be considered completed and the vehicle will move onto the
