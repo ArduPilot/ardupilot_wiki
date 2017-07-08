@@ -146,7 +146,6 @@ systems:
 -  `Futaba T8J <http://www.diydrones.com/profiles/blogs/pixhawk-futaba-t8j-6-modes-configuration-with-2-switches-c-d>`__
 -  `Futaba T7CP <http://diydrones.com/profiles/blogs/configure-6-flight-modes-for>`__
 -  `Futaba T6EX <http://diydrones.com/profiles/blogs/four-modes-switch-for-futaba>`__
--  `Futaba 12fg <http://diydrones.com/profiles/blog/list>`__
 -  `Futaba 9ZAP/ZHP <http://diydrones.com/profiles/blogs/flight-mode-switching-on-a>`__
 -  `Futaba T10CAG <http://www.diydrones.com/profiles/blogs/getting-six-fly-modes-on-futaba-t10cag-transmitter>`__
 -  `Futaba T14 <http://diydrones.com/profiles/blogs/futaba-t14-mz-mode-configuration-for-all-6-modes>`__
@@ -161,7 +160,6 @@ systems:
 -  `Hitech Aurora 9 <http://www.diydrones.com/forum/topics/quad-goes-to-full-throttle?commentId>`__
 -  `Spektrum DX8 <http://diydrones.com/profiles/blogs/spectrum-dx8-2-switches-1-tx-channel-6-flight-modes?>`__ 
    (alternate method below)
--  `Spektrum DX7 <http://diydrones.com/profiles/blog/show?id>`__
 -  `Spektrum DX7s <http://diydrones.com/profiles/blogs/getting-6-modes-out-of-channel-5-on-a-spektrum-dx7s>`__
 -  `Spektrum DX7 Version 6 <http://diydrones.com/profiles/blogs/dx7-new-version-6-flight-mode-setup-with-pixhawk>`__
 
