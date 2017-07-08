@@ -41,7 +41,7 @@ Protocol Information
 
 ArduPilot has FrSky telemetry drivers to natively output flight controller information through the serial ports. It comes in two flavors:
 
-a) :ref:`Repurposed FrSky telemetry <common-frsky-repurposed>` (D and SmartPort) (available since AC3.2), which reuses FrSky data IDs to transmit basic flight control information to the RC transmitter (e.g. T2 temperature message reused to transmit the number of GPS satelites and GPS status); and
+a) :ref:`Repurposed FrSky telemetry <common-frsky-repurposed>` (D and SmartPort) (available since AC3.2), which reuses FrSky data IDs to transmit basic flight control information to the RC transmitter (e.g. T2 temperature message reused to transmit the number of GPS satellites and GPS status); and
 
 b) :ref:`Passthrough telemetry <common-frsky-passthrough>` (SmartPort) (available since AC3.4), which leverages the new passthrough FrSky data IDs to send an extensive amount of flight controller specific information to the RC transmitter.
 
@@ -314,7 +314,7 @@ Connect the telemetry cable to one of the serial ports available on your autopil
 Adding a FrSky FLVSS or MLVSS LiPo sensor to measure individual cell voltages
 -----------------------------------------------------------------------------
 
-While battery pack voltage is usually a good indicator of remaining flight time, **flight time is actually limited by the lowest cell voltage**. Once the voltage of a cell drops below a certain level, that cell’s voltage will continue to drop dramatically. This in turn causes the battery pack voltage to drop and may irreparably damage the battery pack.
+While battery pack voltage is usually a good indicator of remaining flight time, **flight time is actually limited by the lowest cell voltage**. Once the voltage of a cell drops below a certain level, that cell's voltage will continue to drop dramatically. This in turn causes the battery pack voltage to drop and may irreparably damage the battery pack.
 
 By using a FrSky FLVSS or MLVSS LiPo voltage sensor, the lowest cell voltage (which is not available on a ground station using radio telemetry) can be displayed on your transmitter.
 
@@ -499,7 +499,7 @@ OpenTX 2.2.0 requires “discovering” the telemetry messages from the Pixhawk 
 Assigning a Display Script to a Screen
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If a scripts has a display, it needs to be assigned to telemetry screens. Once the script has been assigned to a screen, the script is accessed by doing a long press on the main OpenTX screen. Each long press will switch screens. Multiple scripts can be assigned to multliple screens.
+If a scripts has a display, it needs to be assigned to telemetry screens. Once the script has been assigned to a screen, the script is accessed by doing a long press on the main OpenTX screen. Each long press will switch screens. Multiple scripts can be assigned to multiple screens.
 
 On the TELEMETRY page, scroll down using the - button, and highlight the “None” entry next to “Screen 1.” Once “None” is highlighted, press ENT, then navigate the choices with the +/- buttons until “Script” appears. Press ENT to validate, then press - to move to the right (highlighting “- - -“). Press ENT and select your script (e.g. “screens”) using the +/- buttons, then press ENT to validate. The “screens” script handles the display capabilities. The Taranis LCD display should then look like this:
 
