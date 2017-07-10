@@ -38,6 +38,12 @@ Upgrade the PX4Flow sensor's firmware
 
 The PX4Flow firmware must be updated prior to connecting to the Pixhawk.  This can be accomplished with `QGround Control <http://qgroundcontrol.com/>`__ or Mission Planner but the instructions below only cover the method using Mission Planner.
 
+.. warning::
+
+   QGroundControl currently defaults to an incompatible firmware for PX4Flow.
+   Mission Planner defaults to the correct firmware, and supports setup of the
+   device for Arducopter.
+
 #. Download and unzip the `PX4Flow-KLT firmware <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
    (`source code here <https://github.com/priseborough/px4flow/tree/klt_flow>`__)
 #. Connect the PX4Flow sensor to your computer using a micro USB cable.  On a Windows machine a "PX4Flow" device should appear in Connection drop-down of the Mission Planner (and the Windows Device Manager).  If it does not you may need to download, unzip and manually install the `px4flow windows driver <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow_win_driver.zip>`__ which may in turn require allowing installing unsigned drivers.
