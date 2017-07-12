@@ -202,10 +202,6 @@ To see other wind parameters do:
 
     param show sim_wind*
 
-.. note::
-
-   At time of writing the wind parameters only appear to work for
-   Plane.
 
 Adding a virtual gimbal
 =======================
