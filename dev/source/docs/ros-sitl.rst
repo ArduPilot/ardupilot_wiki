@@ -40,8 +40,9 @@ Get back to your ROS terminal. Let's create a new directory for our launch file.
 .. code-block:: bash
 
     mkdir launch
+    cd launch
 
- .. tip::
+.. tip::
 
     It is simpler to write launch file than remembering ROS command.
 
