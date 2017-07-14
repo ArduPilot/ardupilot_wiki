@@ -30,6 +30,10 @@ A more detailed view of the HUD (with legend) is given below.
 #. Ground speed
 #. Battery status
 #. Artificial Horizon
+#. Aircraft Attitude
+#. GPS Status
+#. Current Waypoint Number > Distance to Waypoint
+#. Current Flight Mode
 
 Tips for using the Flight Data screen
 -------------------------------------
