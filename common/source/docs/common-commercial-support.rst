@@ -29,22 +29,21 @@ support for ArduPilot) please email the request to `the ArduPilot team <mailto:a
 Support Providers
 =================
 
-Droidika S.A. de C.V.
+Element Aero S.A.P.I. de C.V.
 ---------------------
-Address: Circunvalacion Ote #689, Col. Ciudad Granja, Zapopan, Jal. 45030, Mexico
+Address: Av. General Ramon Corona 2514, ITESM Edificio PCyTec Piso 2, Col. Nuevo Mexico, Zapopan, Jal. 45138, Mexico
 
 Contact: Jaime Machuca
 
-Tel.: +52 33 3777 5327
+Tel.: +52 33 3805 4627
 
-Email: jaime@droidika.com
+Email: jaime@element.aero
 
 **Capabilities:**
 
 -  Vehicle Design/Integration
 -  Vehicle Setup
 -  Trouble Shooting and support (log review, vehicle support)
--  Local 3DR Service site for Mexico (tier 1 and tier 2)
 -  Customization of Ardupilot code
 -  Companion Computer setup
 
