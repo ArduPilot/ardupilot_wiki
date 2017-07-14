@@ -1,9 +1,9 @@
 
-.. _building-ardupilot-on-windows10:
+.. _building-ardupilot-onwindows10:
 
-=======================================
+===============================================
 Building ArduPilot on Windows with waf and Bash
-=======================================
+===============================================
 .. warning::
     This build method is ONLY for Windows10 x64 and does not describe building for 
     deprecated Arduino based flight controllers (APM1.x, 2.x). It supports most users,
@@ -14,15 +14,18 @@ Building ArduPilot on Windows with waf and Bash
 .. image:: ../images/Windows10_Ubuntu_0.jpg
     :target: ../_images/Windows10_Ubuntu_0.jpg
 
-Since Windows 10 has Ubuntu as his new partner, it is possible to compile Ardupilot in Windows without adding any strange thing: just install "Bash on Ubuntu on Windows" and follow next tutorial.
+Microsoft has introduced WSL - the Windows Subsystem for Linux - into Windows 10.
+This tutorial describes "Bash on Ubuntu on Windows", as it is currently the only released
+distribution supported by WSL.  Other Linux distributions, such as Fedora, are likely to be
+available in the future however will require slightly different setup to compile Ardupilot.
    
 .. warning::
 
-   This tutorial is intended to be a "copy & paste" approach. Just follow the text step by step and be patient with yourself!
+   This tutorial is intended to be a "copy & paste" guide. Just follow the process step by step and be patient with yourself!
 
 .. tip::
 
-   For install "Bash on Ubuntu on Windows" there are many tutorials on the web. An example is here:
+   To install "Bash on Ubuntu on Windows" there are many tutorials on the web. An example is here:
    <http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`__.
 
 
@@ -43,7 +46,7 @@ Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
          
    (where "hostname" is your PC name)
 
-#. Then, take root control over the bash:
+#. Then, take root control over the terminal:
 
    .. code-block:: python
    
@@ -62,7 +65,7 @@ Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
    
        sudo apt-get install git
 
-#. Make a new folder for future reference:
+#. Make a new folder for future reference (optional):
 
    .. code-block:: python
    
@@ -84,12 +87,16 @@ Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
    .. image:: ../images/Windows10_Ubuntu_1.jpg
        :target: ../_images/Windows10_Ubuntu_1.jpg
        
-#. At this point, we need to install some extra tools, because for now, Ubuntu bash on Windows only supports native x64 programs:
+#. We also need to install some extra tools, so we can compile for the various Ardupilot targets:
 
    .. code-block:: python
    
        cd
-              
+           
+       sudo add-apt-repository ppa:george-edison55/cmake-3.x -y		
+       sudo apt-get update		
+       sudo apt-get install cmake
+ 
        sudo add-apt-repository ppa:ubuntu-toolchain-r/test
        sudo apt-get update
        sudo apt-get install g++-4.9
@@ -143,11 +150,11 @@ Compile ArduPilot Code
 
 .. note::
 
-    The released Ubuntu on Windows does not have access to USB serial peripherals, so the --upload option
+    The released WSL does not have access to USB serial peripherals, so the --upload option
     in waf will not work.  The compiled binary must be uploaded to your flight controller using another 
     tool, such as MissionPlanner as a "Custom Firmware".
     If you wish to upload via waf, at time of writing USB serial access is only available in the Windows Insider
-    releases of Windows Support for Linux (WSL), which requires you to join the Windows Insider program.
+    releases of Windows Subsystem for Linux (WSL), which requires you to join the Windows Insider program.
     https://insider.windows.com/GettingStarted
 
 .. tip::
