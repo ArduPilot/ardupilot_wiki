@@ -21,7 +21,7 @@ Creating a voting form
 - fill in the form title both in the main view and on the top left of the page
 - In the description we normally add the following line:
 
-As this is a non-technical proposal, no reason/s are required, just pick one.  For more details on how this works see here: https://docs.google.com/document/d/1Pj2ffFvwTnN2HxeTeBXyV7oAq0YONE98E6EJVVpDXCA/edit?usp=sharing
+"As this is a non-technical proposal, no reason/s are required, just pick one.  For more details on how this works see here: https://docs.google.com/document/d/1Pj2ffFvwTnN2HxeTeBXyV7oAq0YONE98E6EJVVpDXCA/edit?usp=sharing"
 
 - The first question should be titled "Your Email", of type "Short answer" and "Required"
 - The 2nd question is normally a "Multiple choice" and also "Required"
@@ -37,7 +37,7 @@ As this is a non-technical proposal, no reason/s are required, just pick one.  F
 - Finally to send out the voting form:
 
   - push the Send button
-  - set the Email To" field to "ardupilot-dev-team@googlegroups.com"
+  - set the "Email To" field to "ardupilot-dev-team@googlegroups.com"
   - fill in the Subject and Message fields
   - to allow others to see the responses (including ardupilot.devel@gmail.com), click the "Collaborators" link and add their email in the "Invite people" field.  If you are submitting the vote as yourself, include 
   - check "Include form in email" and press "Send"
