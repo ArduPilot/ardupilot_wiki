@@ -207,7 +207,7 @@ we need to change an important parameter in Mission Planner. Under
 **Configuration \| Standard Parameters**, scroll about 4/5 of the way
 down to find the **Servo out function** parameters for each channel.
 Find the parameter that corresponds to your camera control channel. For
-us, it's **Servo out function (RC7_FUNCTION)**.
+us, it's **Servo out function (SERVO7_FUNCTION or RC7_FUNCTION)**.
 
 .. note::
 
@@ -599,7 +599,7 @@ that you'll be using often. Under **Configuration** -> **Standard
 Parameters**, scroll about 4/5 of the way down to find the **Servo out
 function** parameters for each channel. Find the parameter that
 corresponds to your camera control channel. For us, it's **Servo out
-function (RC7_FUNCTION)**.
+function (SERVO7_FUNCTION or RC7_FUNCTION)**.
 
 ***Set this parameter to Manual whenever you want to control your camera
 using your RC transmitter; set to Disabled when you want the flight controller to
@@ -651,7 +651,7 @@ Troubleshooting
 **Problem**: The tester script runs but does not display any output on
 the camera screen.
 
-Cause 1: Do you have the parameter RCx_FUNCTION=1 or SERVOx_FUNCTION=1 for manual
+Cause 1: Do you have the parameter SERVOx_FUNCTION=1 ir RCx_FUNCTION=1 for manual
 override of the RC channel you are using? You can see both the PWM input
 and output on the **Configuration \| Failsafes** screen in the Mission
 Planner.
