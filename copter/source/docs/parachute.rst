@@ -54,12 +54,10 @@ set the following parameters.
 
 -  CHUTE_ENABLED = "1"
 -  CHUTE_TYPE = "10" to release with a servo
--  CHUTE_SERVO_ON should be set to the servo position required to
-   release the parachute
--  CHUTE_SERVO_OFF should be the "resting" servo position.  I.e. the
-   position the servo is in before the parachute is released
--  RC9_FUNCTION = "27".  RC9 refers to the Pixhawk's AUX OUT 1.  To use
-   AUX OUT2 instead set RC10_FUNCTION to 27, etc.
+-  CHUTE_SERVO_ON should be set to the servo position required to release the parachute
+-  CHUTE_SERVO_OFF should be the "resting" servo position.  I.e. the position the servo is in before the parachute is released
+-  if using AC3.5 (or high) set SERVO9_FUNCTION = "27".  SERVO9_ refers to the Pixhawk's AUX OUT 1.  To use AUX OUT2 instead set SERVO10_FUNCTION to 27, etc.
+-  if using AC3.4.6 (or lower) set RC9_FUNCTION = "27".  RC9_ refers to the Pixhawk's AUX OUT 1.  To use AUX OUT2 instead set RC10_FUNCTION to 27, etc.
 
 .. image:: ../images/Parachute_MPSetup1.png
     :target: ../_images/Parachute_MPSetup1.png
