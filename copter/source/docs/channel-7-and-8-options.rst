@@ -385,6 +385,16 @@ When switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of
    </td>
    </tr>
    <tr>
+   <td><strong>Precision Loiter</strong></td>
+   <td>
+
+Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`.  I.e. holding position above a target in Loiter mode using IR-Lock sensor. (AC3.5 and higher)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
    <td><strong>Object Avoidance</strong></td>
    <td>
 

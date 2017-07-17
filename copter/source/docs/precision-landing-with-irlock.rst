@@ -1,17 +1,16 @@
 .. _precision-landing-with-irlock:
 
-==============================
-Precision Landing with IR-LOCK
-==============================
+=========================================
+Precision Landing and Loiter with IR-LOCK
+=========================================
 
 Overview
 ========
 
-Copter 3.4 supports precision landing using the IR-LOCK sensor and a :ref:`sonar or lidar <common-rangefinder-landingpage>`. Using this system, it is possible to land within 30cm of an IR beacon that is moving at less than 1m/s.
+Copter 3.4 (and higher) supports Precision Landing using the `IR-LOCK sensor <http://irlock.com/collections/frontpage/products/ir-lock-sensor-precision-landing-kit>`__ and a :ref:`sonar or lidar <common-rangefinder-landingpage>`.
+Using this system, when the vehicle enters LAND mode (and has GPS lock) it is possible to reliably land within 30cm of an IR beacon that is moving at less than 1m/s.
 
-.. note::
-
-   This feature is supported in Copter 3.4 (and higher).  As of Oct 2016, Copter-3.4 can be loaded using the Mission Planner's Install Firmware screen's "Beta firmwares" link.
+Copter 3.5 (and higher) additionally supports Precision Loiter which allows a vehicle to maintain its position above a target while in Loiter mode.  The Pilot can enable this using one of the transmitter's :ref:`auxiliary function switches <channel-7-and-8-options>`.
 
 ..  youtube:: rGFO73ZxADY
     :width: 100%
@@ -77,14 +76,14 @@ Setup through Mission Planner
 =============================
 
 Set the following parameters through the Mission Planner (or other GCS)
-to enable the precision landing feature.
+to enable the precision landing feature and then Reboot the flight controller.
 
--  :ref:`PLND_ENABLED <PLND_ENABLED>` 1
--  :ref:`PLND_TYPE <PLND_TYPE>` 2
+-  :ref:`PLND_ENABLED <PLND_ENABLED>` = 1
+-  :ref:`PLND_TYPE <PLND_TYPE>` = 2
 
-.. note::
+To enable Precision Loiter, an :ref:`Auxiliary Function Switch <channel-7-and-8-options>` must be set to "Precision Loiter":
 
-   Remember to reboot the Pixhawk after making these changes.
+-  :ref:`CH7_OPT <CH7_OPT>` = 39 (or alternatively set :ref:`CH8_OPT <CH8_OPT>` to :ref:`CH12_OPT <CH12_OPT>`)
 
 Flying and Testing
 ==================
@@ -114,4 +113,9 @@ and examine the PL messages.
 Refer to the IR-LOCK `wiki page <https://irlock.readme.io/docs/interpreting-pl-logs>`__ for more trouble-shooting information.
 
 ..  youtube:: IRfo5GcHniU
+    :width: 100%
+
+Precision Loiter demonstration:
+
+..  youtube:: KoLZpSZDfII
     :width: 100%
