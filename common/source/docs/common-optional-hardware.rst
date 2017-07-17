@@ -25,7 +25,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Battery Monitors (aka Power Modules) <common-powermodule-landingpage>
 [site wiki="copter,plane"]
-    Buzzer <nav-leds>
+    Buzzer <common-buzzer>
 [/site]
     Cameras & Gimbals <common-cameras-and-gimbals>
 [site wiki="copter,plane,rover"]
