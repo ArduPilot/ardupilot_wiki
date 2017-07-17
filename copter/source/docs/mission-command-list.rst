@@ -193,6 +193,20 @@ This is a video made during the development of this feature.  Note in the video 
 ..  youtube:: 9VK3yjIyCSo
     :width: 100%
 
+Package Place
+~~~~~~~~~~~~~
+
+.. image:: ../../../images/MissionList_packageplace.png
+    :target: ../_images/MissionList_packageplace.png
+
+Support for Package Place was added in Copter-3.5.
+
+Vehicle flies to the specified location and descends until it senses (using motor output) that the package has reached the ground.  The gripper is then released to unload the package.
+The first column ("Max Desc") hold the maximum descent (in meters) that the vehicle should descend.  If the package has still not reached the ground despite this descent, the package will not be released and the vehicle will advance to the next mission command.
+
+..  youtube:: m4GK4ALqluc
+    :width: 100%
+
 .. _mission-command-list_do-set-roi:
 
 Do-Set-ROI
