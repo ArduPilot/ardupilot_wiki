@@ -58,7 +58,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     PPM Encoder <common-ppm-encoder>
 [site wiki="copter"]
     Pozyx for Non-GPS navigation <common-pozyx>
-    Precision Landing (IRLock) <precision-landing-with-irlock>
+    Precision Landing and Loiter (IRLock) <precision-landing-with-irlock>
 [/site]
     Rangefinders (Sonar, Lidar) <common-rangefinder-landingpage>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
