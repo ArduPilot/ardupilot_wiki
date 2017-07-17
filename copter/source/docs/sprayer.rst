@@ -6,10 +6,6 @@ Crop Sprayer
 
 Copter 3.4 (and higher) include support for a crop sprayer.  This feature allows a flight controller connected to a PWM operated pump and (optionally) spinner to control the rate of flow of liquid fertilizer based on the vehicle speed.
 
-.. note::
-
-   This feature is still experimental.
-
 ..  youtube:: O8ZnxkXMv6A
     :width: 100%
 
@@ -42,7 +38,7 @@ Enabling the Sprayer
 
 Configuring the pump
 ====================
--  PWM range used to control the pump and spinner can be confgigured by setting the RC*_MIN, RC*_MAX parameters corresponding to the ports the pump and spinner are connected to.
+-  PWM range used to control the pump and spinner can be configured by setting the SERVO*_MIN/RC*_MIN, SERVO*_MAX/RC*_MAX parameters corresponding to the pwm output channels the pump and spinner are connected to.
 -  :ref:`SPRAY_PUMP_MIN <SPRAY_PUMP_MIN>` controls the minimum pump rate (expressed as a percentage).  By default this is 0% meaning the pump will completely stop if the vehicle stops.
 -  :ref:`SPRAY_PUMP_RATE <SPRAY_PUMP_RATE>` controls the pump rate (expressed as a percentage) when the vehicle is travelling at 1m/s.  By default this is 10%.  The pump rate increases linearly with the vehicle speed meaning by default the pump will reach 100% at 10m/s.
 -  :ref:`SPRAY_SPINNER <SPRAY_SPINNER>` sets the pwm value sent to the spinner when the pump is on.
