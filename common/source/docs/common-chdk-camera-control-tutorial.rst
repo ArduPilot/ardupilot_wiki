@@ -19,7 +19,7 @@ scripts, and securing the camera to your fixed-wing plane. This
 straightforward method is great for basic automatic camera control.
 
 Next we'll describe how to coordinate camera controls with autonomous
-missions by integrating CHDK with APM. Although more complex, this
+missions by integrating CHDK with ArduPilot. Although more complex, this
 implementation provides excellent functionality for taking pictures
 automatically at waypoints. Finally, we'll show a fun application where
 you can map an area by creating a composite image of still photos.
@@ -61,7 +61,7 @@ You'll also need an SD card reader for your computer.
 
 We use the gentWIRE USB with two channels, available
 `here <http://www.brooxes.com/newsite/BBKK/BBKK-PARTS.html>`__ (half way
-down page). This cable is necessary for integrating CHDK with APM and is
+down page). This cable is necessary for integrating CHDK with ArduPilot and is
 not required to use the intervalometer script function.
 
 .. image:: ../../../images/gentled-CHDK.jpg
@@ -147,24 +147,24 @@ you start the script, the camera will automatically begin taking
 pictures after a delay of five seconds, so be sure to take that into
 account when launching your plane.
 
-Integrating CHDK with APM
-=========================
+Integrating CHDK with ArduPilot
+===============================
 
 .. image:: ../../../images/chdk-cable.jpg
     :target: ../_images/chdk-cable.jpg
 
-To integrate your CHDK setup with APM, you will need a CHDK cable
-(pictured across) that connects the APM's output signal pins with the
+To integrate your CHDK setup with ArduPilot, you will need a CHDK cable
+(pictured across) that connects the flight controller's output signal pins with the
 camera's USB port. We used \ `Gentles' gentWIRE-USB2 cable <http://gentles.ltd.uk/gentwire/usb.htm>`__. (Stay tuned for a 3DR
 CHDK cable.)
 
 CHDK cables work by translating pulse width modulation (PWM) output by
-the APM into USB power pulses that can be read by the camera. It does
+the flight controller into USB power pulses that can be read by the camera. It does
 this by establishing a range of how long power is applied to the USB
 port (ex: 40-80 ms) and assigning that range to a PWM value
 corresponding to a channel switch position (ex: channel 1 middle). The
 table below shows the corresponding values between the switch position
-on the RC transmitter, the APM's PWM output, and the camera's USB power.
+on the RC transmitter, the flight controller's PWM output, and the camera's USB power.
 
 +-------------------+-----------+------------------+
 | Switch position   | PWM (µs)  | USB power (ms)   |
@@ -189,15 +189,15 @@ tutorial, we'll show you how to set up three functions using only the
 first channel, but this process can be followed to utilize the full six
 options if you choose to.
 
-Configuring the CHDK cable for use with APM
--------------------------------------------
+Configuring the CHDK cable for use with ArduPilot
+-------------------------------------------------
 
 First we need to select an RC channel to assign to CHDK's channel 1.
-Connect your plane's APM to Mission Planner. Go to **Configuration \|
+Connect your plane's flight controller to Mission Planner. Go to **Configuration \|
 Radio Calibration** to locate an available channel and its corresponding
 three-position switch on your RC transmitter. For this tutorial, we'll
 use channel 7. (If you decide to use a different channel, substitute
-your channel wherever we input channel 7.) Don't disconnect your APM
+your channel wherever we input channel 7.) Don't disconnect your flight controller
 yet.
 
 Before we fly, we'll need to test the integration between this channel
@@ -213,18 +213,18 @@ us, it's **Servo out function (RC7_FUNCTION)**.
 
    Set this parameter to **Manual** whenever you want to control your
    camera using your RC transmitter; set to **Disabled** when you want the
-   APM to control the camera automatically.
+   flight controller to control the camera automatically.
 
 Since we're using the RC transmitter to test the CHDK cable, set **Servo
 out function** to **Manual**. Select **Write Params** before
-disconnecting your APM.
+disconnecting your flight controller.
 
 Once you've chosen your camera control channel, you'll need to connect
-your CHDK cable to the APM's output pins. Connect either of the pin
-connectors on the CHDK cable to the APM output pins corresponding to
+your CHDK cable to the flight controller's output pins. Connect either of the pin
+connectors on the CHDK cable to the flight controller output pins corresponding to
 your camera control channel (black cable on the outside). For example,
-we connected our CHDK cable to the channel 7 output pins on the APM.
-Make sure no input pins are connected to the APM for that channel.
+we connected our CHDK cable to the channel 7 output pins on the flight controller.
+Make sure no input pins are connected to the flight controller for that channel.
 
 For **Pixhawk**, connect the CHDK cable to aux out pin 5. However, this
 pin outputs only 3.3V, and 5V are required to trigger CHDK. To convert
@@ -235,7 +235,7 @@ Adding a script
 ---------------
 
 Now that you've configured your CHDK cable, we'll add a script to
-control the camera when commanded by the APM. Let's break down a CHDK
+control the camera when commanded by the flight controller. Let's break down a CHDK
 cable UBASIC script into its main parts.
 
 ::
@@ -374,11 +374,11 @@ below, select your first waypoint and click “Add Below”.
     :target: ../_images/mp_add_command1.jpg
 
 For your new command, set **Command** type to **DO_SET_SERVO**. (This
-tells the APM that this command means output to a servo.) Set **Ser
+tells the flight controller that this command means output to a servo.) Set **Ser
 No**\ (servo number) to the number of your camera control channel
-(ex:**7**). (This tells the APM where to output: for us, servo channel 7
+(ex:**7**). (This tells the flight controller where to output: for us, servo channel 7
 is the CHDK cable.) And set **PWM** to **1900**. (This value tells the
-APM what to output: 1,900 microseconds of pulse width modulation
+flight controller what to output: 1,900 microseconds of pulse width modulation
 corresponds to the high position under which the shoot command is
 located). Repeat this process for each waypoint at which you would like
 to take a picture. The screen below shows a shutter command correctly
@@ -394,12 +394,12 @@ applied at each of three waypoints.
     become visible when the command is selected as different parameters
     apply to different types of commands.*
 
-Since we're using the APM to control the camera, we need to set
-the \ **Servo out function (RC7_FUNCTION)** parameter to **Disabled**
+Since we're using the flight controller to control the camera, we need to set
+the \ **Servo out function (RC7_FUNCTION or SERVO7_FUNCTION)** parameter to **Disabled**
 (under **Standard Parameters**). Write waypoints and parameters to the
-APM.
+flight controller.
 
-Ensure that your camera and APM are connected correctly.
+Ensure that your camera and flight controller are connected correctly.
 Run \ **3DR_Shoot.bas** prior to launch. Fly your mission according to
 standard practices and safety procedures.
 
@@ -551,12 +551,12 @@ CHDK Cable Troubleshooting and Testing
 --------------------------------------
 
 CHDK cables work by translating pulse width modulation (PWM) output by
-the APM into USB power pulses that can be read by the camera. It does
+the flight controller into USB power pulses that can be read by the camera. It does
 this by establishing a range of how long power is applied to the USB
 port (ex: 40-80 ms) and assigning that range to a PWM value
 corresponding to a channel switch position (ex: Channel middle).The
 table below shows the corresponding output values between the switch
-position on the RC transmitter, the APM's PWM output, and the camera's
+position on the RC transmitter, the flight controller's PWM output, and the camera's
 USB power. In practice, our Spektrum DX 8 outputs the values shown in
 the rightmost column.
 
@@ -588,13 +588,13 @@ Configuring CHDK cable for Testing
 
 Before we can test the CHDK cable, we'll need to choose a channel for
 camera control and configure the corresponding inputs. Connect your
-plane's APM to Mission Planner. Go to **Configuration \| Radio
+plane's flight controller to Mission Planner. Go to **Configuration \| Radio
 Calibration** to locate an available channel and its corresponding
 switch on your RC transmitter. (We'll use channel 7.) Check the PWM
 outputs for the up, mid, and down positions of the channel. Compare them
 with the table shown above.
 
-Before we disconnect the APM, we need to change an important parameter
+Before we disconnect the flight controller, we need to change an important parameter
 that you'll be using often. Under **Configuration** -> **Standard
 Parameters**, scroll about 4/5 of the way down to find the **Servo out
 function** parameters for each channel. Find the parameter that
@@ -602,18 +602,18 @@ corresponds to your camera control channel. For us, it's **Servo out
 function (RC7_FUNCTION)**.
 
 ***Set this parameter to Manual whenever you want to control your camera
-using your RC transmitter; set to Disabled when you want the APM to
+using your RC transmitter; set to Disabled when you want the flight controller to
 control the camera automatically.***
 
 Since we're using the RC transmitter to test the CHDK cable, set **Servo
 out function** to **Manual**. Select Write Params before disconnecting
-your APM.
+your flight controller.
 
 Once you've chosen your camera control channel, you'll need to connect
-your CHDK cable to the APM's output pins. Connect either of the pin
-connectors on the CHDK cable to the APM output pins corresponding to
+your CHDK cable to the flight controller's output pins. Connect either of the pin
+connectors on the CHDK cable to the flight controller output pins corresponding to
 your camera control channel (black cable on the outside). For example,
-we connected our CHDK cable to the channel 7 output pins on the APM.
+we connected our CHDK cable to the channel 7 output pins on the flight controller.
 Make sure no input pins are connected for that channel.
 
 Testing the CHDK cable
@@ -651,7 +651,7 @@ Troubleshooting
 **Problem**: The tester script runs but does not display any output on
 the camera screen.
 
-Cause 1: Do you have the APM parameter RC#_FUNCTION=1 for manual
+Cause 1: Do you have the parameter RCx_FUNCTION=1 or SERVOx_FUNCTION=1 for manual
 override of the RC channel you are using? You can see both the PWM input
 and output on the **Configuration \| Failsafes** screen in the Mission
 Planner.
