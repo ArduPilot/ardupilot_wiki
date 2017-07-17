@@ -48,10 +48,10 @@ Setup through the Mission Planner
 Use the Mission Planner's Full Parameter List (or equivalent) to set the
 following parameters:
 
--  If using AC3.4.6 (or lower) set ``RCn_FUNCTION to 29`` "Landing Gear", where **n** is the number for
-   the connected servo (e.g. :ref:`RC9_FUNCTION <RC9_FUNCTION>` for AUX1, :ref:`RC10_FUNCTION <RC10_FUNCTION>` for AUX2 etc.)
 -  If using AC3.5 (or higher) set ``SERVOn_FUNCTION to 29`` "Landing Gear", where **n** is the number for
    the connected servo (e.g. :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` for AUX1, :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` for AUX2 etc.)
+-  If using AC3.4.6 (or lower) set ``RCn_FUNCTION to 29`` "Landing Gear", where **n** is the number for
+   the connected servo (e.g. :ref:`RC9_FUNCTION <RC9_FUNCTION>` for AUX1, :ref:`RC10_FUNCTION <RC10_FUNCTION>` for AUX2 etc.)
 -  :ref:`LGR_SERVO_DEPLOY <LGR_SERVO_DEPLOY>`
    — servo PWM value required to deploy the landing gear.
 -  :ref:`LGR_SERVO_RTRACT <LGR_SERVO_RTRACT>`
