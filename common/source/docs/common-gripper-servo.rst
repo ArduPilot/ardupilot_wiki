@@ -26,7 +26,7 @@ Connecting the servo to a Pixhawk
 
 Configuration
 =============
-- set which RC output is used by setting RCX_FUNCTION to 28 (i.e. if using AUX OUT 1 on a Pixhawk, set :ref:`RC9_FUNCTION <RC9_FUNCTION>` to 28).
+- set which RC output is used by setting SERVOx_FUNCTION (or RCX_FUNCTION) to 28 (i.e. if using AUX OUT 1 on a Pixhawk, set :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to 28).
 - :ref:`GRIP_ENABLE <GRIP_ENABLE>` to 1 to enable the gripper feature and then refetch parameters from the ground station in order to make other gripper parameters visible.
 - :ref:`GRIP_TYPE <GRIP_TYPE>` to 1 to enable the servo gripper and reboot the flight controller
 - :ref:`GRIP_GRAB <GRIP_GRAB>` to the pwm value (i.e. 1000 ~ 2000) for the gripper's closed position
