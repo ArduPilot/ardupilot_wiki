@@ -83,8 +83,8 @@ channels because the EPM is connected to output ch9 (or higher).
 
 Assuming the above is possible for your set-up, connect with the mission
 planner.  Go to the Config/Tuning >> Full Parameters List and set the
-RC9_FUNCTION to "1" (i.e. "RCPassThru").  Note that if the EPM is
-connected to AUX OUT 2 then RC10_FUNCTION should be set instead, etc.
+SERVO9_FUNCTION (or RC9_FUNCTION) to "1" (i.e. "RCPassThru").  Note that if the EPM is
+connected to AUX OUT 2 then SERVO10_FUNCTION (or RC10_FUNCTION)should be set instead, etc.
 
 On the transmitter set CH9 to be controlled from a 3-position switch and
 the positions set as follows:
@@ -132,9 +132,9 @@ control through the ground station.
     :target: ../_images/EPM_SetupMissionControlMP.png
 
 Connect with the mission planner. Go to the Config/Tuning >> Full
-Parameters List and set the RC9_FUNCTION to "0" (it's default value).
+Parameters List and set the SERVO9_FUNCTION (or RC9_FUNCTION) to "0" (it's default value).
 Note that if the EPM is connected to Pixhawk's AUX OUT 2 then
-RC10_FUNCTION should be set instead, etc.  If using an APM2 it will be
+SERVO10_FUNCTION (or RC10_FUNCTION) should be set instead, etc.  If using an APM2 it will be
 the RC10_FUNCTION or RC11_FUNCTION parameter.
 
 Create the mission you wish to fly and add pairs of DO_SET_SERVO
