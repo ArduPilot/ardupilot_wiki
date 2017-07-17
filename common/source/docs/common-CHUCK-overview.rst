@@ -39,8 +39,8 @@ wire it like this:
 * servo rail pin6 : elevator
 * servo rail pin5 : throttle
 * servo rail pin2 : rudder
-* set RC5_FUNCTION=70 to make channel 5 output throttle
-* set RC5_MIN, RC5_MAX and RC5_TRIM for the throttle range of your motor
+* set SERVO5_FUNCTION=70 or RC5_FUNCTION=70 to make channel 5 output throttle
+* set SERVO5_MIN/RC5_MIN, SERVO5_MAX/RC5_MAX and SERVO5_TRIM/RC5_TRIM for the throttle range of your motor
   
 Apart from that pin mapping, setting up a C.H.U.C.K with another
 airframe is the same as with any aircraft with ArduPilot. It could be
