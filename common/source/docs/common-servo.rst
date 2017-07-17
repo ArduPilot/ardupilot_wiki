@@ -4,8 +4,7 @@
 Servo
 =====
 
-This article explains how to connect Servos to the Pixhawk and APM2, and
-how to control them from the transmitter or Mission Planner.
+This article explains how to connect Servos to flight controller, and how to control them from the transmitter or ground station (i.e. Mission Planner).
 
 Overview
 ========
@@ -87,12 +86,8 @@ Controlling the servo as a servo
 The traditional way to control a servo only works as part of a mission
 (i.e. AUTO mode).  Follow these instructions:
 
--  Connect your APM or Pixhawk to the mission planner
--  On the Config/Tuning > Full Parameter List page, ensure that the
-   RCXX_FUNCTION is set to zero for the servo (i.e.
-   RC\ **10**\ \_FUNCTION if the servo is connected to A10 on the left
-   side of the APM, RC9_FUNCTION is the servo is connected to the
-   Pixhawk's AUX OUT 1).
+-  Connect to your flight controller from the ground station
+-  On the Config/Tuning > Full Parameter List page, ensure that the SERVOx_FUNCTION (or RCx_FUNCTION) is set to zero for the servo (i.e. :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` = 0 if the servo is connected a Pixhawks AUX OUT1).
 -  Press the Write Params button
 
    .. image:: ../../../images/MissionPlanner_ServoSetup.jpg
