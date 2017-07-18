@@ -63,6 +63,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Rangefinders (Sonar, Lidar) <common-rangefinder-landingpage>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Relay Switch <common-relay>
+    Safety Switch <common-safety-switch-pixhawk>
     Servo <common-servo>
     Telemetry Radio <common-telemetry-landingpage>
     UAVCAN ESCs <common-uavcan-escs>
