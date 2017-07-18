@@ -89,6 +89,6 @@ The steps required are:
 Additional information
 ======================
 
-`Zubax Sapog wiki page <https://docs.zubax.com/sapog/using_with_ardupilot>`__,
+`Zubax Sapog wiki page <https://kb.zubax.com/x/hIAh>`__,
 `Sapog reference manual <https://files.zubax.com/products/io.px4.sapog/Sapog_v2_Reference_Manual.pdf>`__,
 and `ESC firmware <https://github.com/PX4/sapog>`__.
