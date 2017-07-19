@@ -33,7 +33,7 @@ From within RealFlight, Reduce graphics options to improve performance:
 
    - Simulation, Settings, Graphics
    - Under "Quality" set all values to "No" or "Low" (i.e. set "Clouds" to "No", "Water Quality" to "Low", etc)
-   - Under "Hardware" set "Resolution" to "800 x 600 Medium(16 bit)
+   - Under "Hardware" set "Resolution" to "800 x 600 Medium(16 bit) and select "Full Screen" mode
    
   .. image:: ../images/realflight-settings-graphics.png
     :target: ../_images/realflight-settings-graphics.png
