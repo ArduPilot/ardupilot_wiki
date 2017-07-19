@@ -24,6 +24,9 @@ gimbal has been tested with a `DYS 3-axis brushless gimbal <https://hobbyking.co
    gimbals running
    `v067e <http://www.olliw.eu/storm32bgc-wiki/Downloads>`__ (or higher). 
 
+Be aware that some v1.3x boards has been found to cause significant RF interference on the 433mhz and 915mhz band.
+Use with caution, if you are using either 433/915mhz control or telemetry.
+
 Connecting the gimbal to the Pixhawk
 ====================================
 
