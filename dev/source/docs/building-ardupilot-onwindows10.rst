@@ -150,11 +150,13 @@ Compile ArduPilot Code
 .. note::
 
     The released WSL does not have access to USB serial peripherals, so the --upload option
-    in waf will not work.  The compiled binary must be uploaded to your flight controller using another 
+    in waf will not work over USB.  The compiled binary must be uploaded to your flight controller using another 
     tool, such as MissionPlanner as a "Custom Firmware".
     If you wish to upload via waf, at time of writing USB serial access is only available in the Windows Insider
     releases of Windows Subsystem for Linux (WSL), which requires you to join the Windows Insider program.
     https://insider.windows.com/GettingStarted
+    For network connected flight controllers, such as linux targets, --upload does function as described here:
+    https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md
 
 .. tip::
 
