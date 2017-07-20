@@ -17,6 +17,5 @@ high-precision barometer and a 3-axis compass.
 The Zubax website has all the documentation needed to use Zubax GNSS 2
 with ArduPilot:
 
--  `Zubax GNSS tutorials <https://docs.zubax.com/zubax_gnss_2/tutorials>`__.
--  `Technical Specification <https://docs.zubax.com/zubax_gnss_2>`__ for
-   general information about the device, LED indicators, etc.
+-  `Zubax GNSS tutorials <https://kb.zubax.com/x/W4Ah>`__.
+-  `Product page <https://zubax.com/products/gnss_2>`__ for general information about the device.
