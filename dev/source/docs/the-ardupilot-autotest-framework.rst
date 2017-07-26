@@ -42,7 +42,7 @@ fixed wing code and then run a test flight do this:
 
 ::
 
-    ./Tools/scripts/autotest/autotest.py build.Plane fly.Plane
+    ./Tools/scripts/autotest/autotest.py build.ArduPlane fly.ArduPlane
 
 the results (and log files) will be put in the ../buildlogs directory.
 
@@ -51,7 +51,7 @@ watching autotest a bit less boring! Run it like this:
 
 ::
 
-    ./Tools/scripts/autotest/autotest.py build.Plane fly.Plane --map
+    ./Tools/scripts/autotest/autotest.py build.ArduPlane fly.ArduPlane --map
 
 you will actually see the map appear twice, once for when it loads the
 default parameters, and then for the real flight. Just close the first
