@@ -6,7 +6,7 @@
 
 This article details upgrading and operating ArduCopter version 3.5.0 and higher a 3DR Solo.
 
-OVERVIEW
+Overview
 --------
 The 3DR Solo contains, among many things, a Pixhawk 2.0 flight controller. It comes with a heavily customized branch of an early ArduCopter 3.3 compiled specifically for the Solo by 3DR. When you do the initial pre-flight update on a new Solo (or after a factory reset), part of that update is this Solo  branch of ArduCopter. It is installed on the Pixhawk, and has all the necessary default parameters and customizations baked into it. It is essentially transparent to the user, taking place behind the curtains.  Since 3DR is no longer in the consumer UAS business, this custom branch of ArduCopter will not be seeing any further updates. It was last updated in early 2016, and is now very far behind.
 
@@ -29,7 +29,7 @@ Since the Solo uses a Pixhawk flight controller, it is capable of running variat
 
 Hardware Requirements
 ^^^^^^^^^^^^^^^^^^^^^
-The Pixhawk 2.1 Green Cube (or a traditional Pixhawk 2.1 with the internal jumper set for 5 volts) is currently required for safe and reliable use of ArduCopter 3.5.0 and higher on a 3DR Solo. You can `purchase the Green Cube from ProfiCNC <http://www.proficnc.com/3dr-solo-accessories/79-the-cube.html>`_.  The Pixhawk 2.1 has significantly more advanced components.  This includes 3 temperature controlled IMUs and the 5 volt signalling the Solo needs to operate safely. If you already have a Pixhawk 2.1 cube, you can set an internal solder jumper to 5 volt signalling and use it in your Solo.  The Green Cube comes with this jumper pre-set for 5 volts.
+The Pixhawk 2.1 Green Cube (or a traditional Pixhawk 2.1 with the internal jumper set for 5 volts) is currently required for safe and reliable use of ArduCopter 3.5.0 and higher on a 3DR Solo. You can purchase the Green Cube from `Jesters Drones <http://www.jestersdrones.org/store/index.php?rt=product%2Fproduct&path=68&product_id=126>`_ or directly from  `ProfiCNC <http://www.proficnc.com/3dr-solo-accessories/79-the-cube.html>`_.  The Pixhawk 2.1 has significantly more advanced components.  This includes 3 temperature controlled IMUs and the 5 volt signalling the Solo needs to operate safely. If you already have a Pixhawk 2.1 cube, you can set an internal solder jumper to 5 volt signalling and use it in your Solo.  The Green Cube comes with this jumper pre-set for 5 volts.
 
 .. image:: ../images/solo_greencube.jpg
     :width: 45 %
@@ -40,8 +40,9 @@ You *can* install ArduCopter master on the stock Pixhawk 2.0, but it is highly d
 
 There are other potential ways to mitigate the electrical problem with the motor pods without buying a new Pixhawk 2.1.  You could use conventional DIY ESCs and bypass the ones built into the motor pods.  Or you could build a level converter that steps the signalling voltage up from 3v to 5v.  None of these solutions are commercially available as a kit, but can be done on a DIY basis if you are creative. You would not have the benefit of enhanced hardware in the Pixhawk 2.1, but it would be just as safe and reliable to fly.
 
- .. note:: 	You cannot use the old stock 3DR Solo firmware on the Pixhawk 2.1. It is entirely incompatible. This also means you cannot do a factory reset on the Solo with the Pixhawk 2.1 still in the Solo. The factory reset tries to reload the old Solo firmware, which is incompatible.  If you need to Factory Reset, you will need to put the old stock Pixhawk 2.0 back in, run the full factory reset and update, then put the Green Cube back in. This is annoying, but there is no way around it now or in the foreseeable future. In short, do not need to factory reset. Which also means do not lose your WiFi password!  
+You cannot use the old stock 3DR Solo firmware on the Pixhawk 2.1. It is entirely incompatible. This also means you cannot do a factory reset on the Solo with the Pixhawk 2.1 still in the Solo. The factory reset tries to reload the old Solo firmware, which is incompatible.  If you need to Factory Reset, you will need to put the old stock Pixhawk 2.0 back in, run the full factory reset and update, then put the Green Cube back in. This is annoying, but there is no way around it now or in the foreseeable future. In short, do not need to factory reset. Which also means do not lose your WiFi password!  Do not throw away your old stock cube!
 
+|
 
 Resources
 ^^^^^^^^^
@@ -50,6 +51,9 @@ There are several great resources online for modification ideas,vendors, beta te
 -  `Solo Beta Test Facebook group <https://www.facebook.com/groups/617648671719759/>`_
 -  `Solo Mod Club Facebook group <https://www.facebook.com/groups/3DRSOLOModClub/>`_
 -  `Solex Users Facebook group <https://www.facebook.com/groups/176789056089526/>`_
+-  `ArduPilot Discuss Forums <https://discuss.ardupilot.org/c/arducopter/copter-3-5>`_
+-  `ArduPilot copter Wiki <http://ardupilot.org/copter/docs/common-advanced-configuration.html>`_
+-  `3DR Pilots Forum <https://3drpilots.com/>`_ 
  
 .. _solo_aducopter_upgrade_process:
 
@@ -57,7 +61,7 @@ There are several great resources online for modification ideas,vendors, beta te
 |
 |
 
-UPGRADE PROCESS
+Upgrade Process
 ---------------
 
 Preparation
@@ -121,7 +125,7 @@ With all of the above complete, it is time to take your first flight on ArduCopt
 |
 |
 
-ARDUCOPTER PARAMETERS
+ArduCopter Parameters
 ---------------------
 There are over 700 parameters in ArduCopter. For everyday use of the Solo, you still do not need to worry about any of them. They're all pre-set for you in the above processes and by way of defaults.  All the configuration parameters for the Solo that require a value different from the ArduCopter defaults can be found in the `ArduPilot GitHub repository /tools/frame_params/ directory <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Solo_AC35.param>`_. These are the parameters that are loaded during the upgrade process. If you are not familiar with editting parameters and have no special use case to warrant changing them, altering them is not recommended. 
 
