@@ -4,8 +4,8 @@
 Copter Object Avoidance
 =======================
 
-ArduPilot Copter supports object avoidance using a :ref:`Lightware SF40C <copter:common-lightware-sf40c-objectavoidance>` or with any sensor capable of providing distances using the MAVLink `DISTANCE_SENSOR <http://mavlink.org/messages/common#DISTANCE_SENSOR>`__ message.
-This page describe how the object avoidance feature works and how "proximity sensors" should provide data into ArduPilot.
+ArduCopter, from release 3.5, supports object avoidance using a :ref:`Lightware SF40C <copter:common-lightware-sf40c-objectavoidance>`, :ref:`TeraRanger Tower <copter:common-teraranger-tower-objectavoidance>`  or with any sensor capable of providing distances using the MAVLink `DISTANCE_SENSOR <http://mavlink.org/messages/common#DISTANCE_SENSOR>`__ message.
+This page describes how the object avoidance feature works and how "proximity sensors" should provide data into ArduPilot.
 
 Avoidance in Loiter
 ===================
@@ -61,7 +61,7 @@ This is quite different from Loiter mode in which the pilot cannot force the veh
 Reporting to the Ground Station
 ===============================
 
-The Mission Planner (and hopefully other ground stations in the future) support displaying the distance to nearby objects.
+MissionPlanner, from v1.3.48 onwards (and hopefully other ground stations in the future), shows the distance to nearby objects in a RADAR type window. This window will automatically appear if the `PRX_TYPE <http://ardupilot.org/copter/docs/parameters.html#prx-type>`__ parameter is set to enable a sensor, and messages are being received.
 
 .. image:: ../images/code-overview-object-avoidance4.png
     :target: ../_images/code-overview-object-avoidance4.png
