@@ -18,16 +18,22 @@ This page describes generic waypoint setup for all types of vehicles.
 Setting the Home Position
 =========================
 
-For **Copter** the home position is set as the location where the copter
-was armed. This means if you execute an RTL in Copter, it will return to
-the location where it was armed, so arm your copter in the location you
-want it to return to.
+.. warning::
 
-For **Plane** the home position is the location of the plane where the
-GPS was locked. This means if you execute an RTL in Plane, it will
-return to the location where it first acquired the GPS lock, so only
-power up your plane in the location you intend it to return to when
-performing an RTL.
+   When an auto mission is executed, the first waypoint in the mission will
+   be interpretted as the home position, overwriting any other home position
+   that is set. This means that users **MUST** set the first waypoint at 
+   their desired home position to ensure safe Take-Off and RTL behaviour.
+
+For **Copter** except as above, the home position is set as the location 
+where the copter was armed. This means if you execute an RTL in Copter, it
+will return to the location where it was armed, so arm your copter in the
+location you want it to return to.
+
+For **Plane** except as above, the home position is the location of the plane
+where the GPS was locked. This means if you execute an RTL in Plane, it will
+return to the location where it first acquired the GPS lock, so only power up
+your plane in the location you intend it to return to when performing an RTL.
 
 Video: Produce and save a Multi-waypoint Mission
 ================================================
