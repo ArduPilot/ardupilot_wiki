@@ -176,7 +176,7 @@ Getting more info
    Traditional Helicopters <docs/traditional-helicopters>
    Tricopter <docs/tricopter>
    SingleCopter and CoaxCopter <docs/singlecopter-and-coaxcopter>
-   Solo Enhancements <docs/solo_arducopter_upgrade>
+   Solo <docs/solo_arducopter_upgrade>
    AutoPilot Hardware Options <docs/common-autopilots>
    Use-Cases and Applications <docs/common-use-cases-and-applications>
    Antenna Tracking <docs/common-antenna-tracking>
