@@ -28,9 +28,9 @@ information here pertains to those modes as well.
    as the primary means for determining altitude ("Pressure Altitude") and
    if the air pressure is changing in your flight area due to extreme
    weather, the copter will follow the air pressure change rather than
-   actual altitude (unless you are within 20 feet of the ground and have
-   SONAR installed and enabled). Below 26 feet, SONAR (if enabled) will
-   automatically provide even more accurate altitude maintenance.
+   actual altitude.  When fitted and enabled, a downward facing rangefiner
+   such as LiDAR or SONAR will automatically provide even more accurate 
+   altitude maintenance, up to the rangefinders limit.
 
 .. _altholdmode_controls:
 
