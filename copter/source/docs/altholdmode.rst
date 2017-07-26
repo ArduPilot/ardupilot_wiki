@@ -28,9 +28,9 @@ information here pertains to those modes as well.
    as the primary means for determining altitude ("Pressure Altitude") and
    if the air pressure is changing in your flight area due to extreme
    weather, the copter will follow the air pressure change rather than
-   actual altitude.  When fitted and enabled, a downward facing rangefiner
+   actual altitude.  When fitted and enabled, a downward facing rangefinder
    such as LiDAR or SONAR will automatically provide even more accurate 
-   altitude maintenance, up to the rangefinders limit.
+   altitude maintenance, up to the limit of the sensor.
 
 .. _altholdmode_controls:
 
