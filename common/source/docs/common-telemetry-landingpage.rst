@@ -22,7 +22,6 @@ information based upon your set-up.
     Configuring a Telemetry Radio <common-configuring-a-telemetry-radio-using-mission-planner>
     Bluetooth <common-mission-planner-bluetooth-connectivity>
     FrSky telemetry <common-frsky-telemetry>
-    FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
     XBee <common-telemetry-xbee>
     SiK Radio — Advanced Configuration <common-3dr-radio-advanced-configuration-and-technical-information>
     3DR Radio v1 <common-3dr-radio-v1>
