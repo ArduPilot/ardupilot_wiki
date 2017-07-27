@@ -67,6 +67,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Servo <common-servo>
     Telemetry Radio <common-telemetry-landingpage>
     UAVCAN ESCs <common-uavcan-escs>
+[site wiki="rover"]
+    Wheel Encoders <common-wheel-encoder>
+[/site]
 [site wiki="copter,rover"]
     ZED for Non-GPS navigation <common-zed>
 [/site]
