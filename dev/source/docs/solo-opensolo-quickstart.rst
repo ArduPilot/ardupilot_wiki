@@ -52,13 +52,41 @@ Update Solo:
 ::
 
    cd /solo-build/build/tmp-eglibc/deploy/images/imx6solo-3dr-1080p
-   scp 3dr-solo.tar.gz 3dr-solo.tar.gz.md5 root@10.0.1.10:/log/updates/
-   ssh root@10.0.1.10 -c "touch /log/updates/UPDATE && /sbin/shutdown -r now"
+   scp 3dr-solo.tar.gz 3dr-solo.tar.gz.md5 root@10.1.1.10:/log/updates/
+   ssh root@10.1.1.10 -C "touch /log/updates/UPDATE && /sbin/shutdown -r now"
+
+.. note:
+
+   Two reboots of Solo may be required
+
+.. note:
+
+   Green LEDs are good.  ssh takes some time to be available
+
+After update, ensure the flash was successful:
+
+   ::
+
+      ls -l /log/updates/UPDATEFAILED
+      cat /VERSION
+
+The UPDATEFAILED file should NOT exist
+The content of /VERSION should correspond to the build you made; in particular, ensure the date looks reasonable.
 
 Update Artoo:
 
 ::
 
    cd /solo-build/build/tmp-eglibc/deploy/images/imx6solo-3dr-artoo
-   scp 3dr-controller.tar.gz 3dr-controller.tar.gz.md5 root@10.0.1.1:/log/updates/
-   ssh root@10.0.1.1 -c "touch /log/updates/UPDATE && /sbin/shutdown -r now"
+   scp 3dr-controller.tar.gz 3dr-controller.tar.gz.md5 root@10.1.1.1:/log/updates/
+   ssh root@10.1.1.1 -c "touch /log/updates/UPDATE && /sbin/shutdown -r now"
+
+After update, ensure the flash was successful:
+
+   ::
+
+      ls -l /log/updates/UPDATEFAILED
+      cat /VERSION
+
+The content of /VERSION should correspond to the build you made; in particular, ensure the date looks reasonable.
+
