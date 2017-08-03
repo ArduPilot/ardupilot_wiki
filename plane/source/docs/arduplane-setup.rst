@@ -17,3 +17,4 @@ give you a taste:
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuration <plane-configuration-landing-page>
     Airframe Setup Guides <airframe-guides>
+    Migration from release 3.7 to 3.8 <plane-3-7-to-3-8-migration>
