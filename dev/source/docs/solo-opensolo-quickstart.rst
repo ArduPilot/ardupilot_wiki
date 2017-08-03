@@ -56,18 +56,13 @@ Update Solo:
    ssh root@10.1.1.1 -C "cd /log/updates; md5sum 3dr-solo.tar.gz >3dr-solo.tar.gz.md5"
    ssh root@10.1.1.10 -C "touch /log/updates/UPDATE && /sbin/shutdown -r now"
 
-.. note:
+note/s:
 
    If you have not SSH'd into your Solo before and changed things, you may be propted for a ssh password when doing 'ssh' or 'scp' commands. 
    The 'root' password to use is 'TjSDBkAu'.  more details here: https://dev.3dr.com/starting-network.html
-
-.. note:
-
    Two reboots of Solo may be required
-
-.. note:
-
-   Green LEDs are good.  ssh takes some time to be available
+   Green LEDs are good.  
+   ssh can take some time to be available after a reflash
 
 After update, ensure the flash was successful:
 
