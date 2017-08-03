@@ -145,3 +145,19 @@ that both of the following are checked carefully after you update:
 
 There is a detailed guide to checking for reversals in the :ref:`four channel plane <guide-four-channel-plane>` document.
 
+Airspeed Setup Changes
+======================
+
+The parameter for enabling an airspeed sensor has changed from
+ARSPD_ENABLE in plane 3.7 to ARSPD_TYPE in plane 3.8. This change was
+made to provide a more flexible way of supporting multiple airspeed
+sensor types.
+
+If you have a MS4525 digital airspeed sensor then the parameter
+upgrade should happen automatically and you should find that
+ARSPD_TYPE will be automatically set to 1. However if you have an
+analog airspeed sensor then you will need to set ARSPD_TYPE=2 after
+updating to plane 3.8.
+
+Plane 3.8 also supports the new MS5525 airspeed sensor. That is
+selected by setting ARSPD_TYPE=3.
