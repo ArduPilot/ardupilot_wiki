@@ -58,6 +58,11 @@ Update Solo:
 
 .. note:
 
+   If you have not SSH'd into your Solo before and changed things, you may be propted for a ssh password when doing 'ssh' or 'scp' commands. 
+   The 'root' password to use is 'TjSDBkAu'.  more details here: https://dev.3dr.com/starting-network.html
+
+.. note:
+
    Two reboots of Solo may be required
 
 .. note:
