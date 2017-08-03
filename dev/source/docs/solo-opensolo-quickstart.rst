@@ -133,8 +133,17 @@ In your GCS of choice: click-click-click etc.
 In your GCS of choice: click-click-click etc.
 
 
-
 Troubleshooting:
 ================
 - the update will fail if there are multiple images present on /log/updates
+
+
+Undo All This Madness? 
+======================
+
+A Standard 3DR "Factory Reset" will return you to your normal Solo, as 3DR made it: 
+https://3drobotics.zendesk.com/hc/en-us/articles/208396933-Factory-Reset
+
+You may also find you have to re-pair your Solo and Controller after the Factory Reset:
+https://3dr.com/support/articles/pairing_the_controller/
 
