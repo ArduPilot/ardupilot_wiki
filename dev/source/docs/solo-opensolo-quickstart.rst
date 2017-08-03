@@ -52,7 +52,8 @@ Update Solo:
 ::
 
    cd /solo-build/build/tmp-eglibc/deploy/images/imx6solo-3dr-1080p
-   scp 3dr-solo.tar.gz 3dr-solo.tar.gz.md5 root@10.1.1.10:/log/updates/
+   scp 3dr-solo.tar.gz root@10.1.1.10:/log/updates/
+   ssh root@10.1.1.1 -C "cd /log/updates; md5sum 3dr-solo.tar.gz >3dr-solo.tar.gz.md5"
    ssh root@10.1.1.10 -C "touch /log/updates/UPDATE && /sbin/shutdown -r now"
 
 .. note:
@@ -78,8 +79,9 @@ Update Artoo:
 ::
 
    cd /solo-build/build/tmp-eglibc/deploy/images/imx6solo-3dr-artoo
-   scp 3dr-controller.tar.gz 3dr-controller.tar.gz.md5 root@10.1.1.1:/log/updates/
-   ssh root@10.1.1.1 -c "touch /log/updates/UPDATE && /sbin/shutdown -r now"
+   scp 3dr-controller.tar.gz root@10.1.1.1:/log/updates/
+   ssh root@10.1.1.1 -C "cd /log/updates; md5sum 3dr-controller.tar.gz >3dr-controller.tar.gz.md5"
+   ssh root@10.1.1.1 -C "touch /log/updates/UPDATE && /sbin/shutdown -r now"
 
 After update, ensure the flash was successful:
 
@@ -89,4 +91,50 @@ After update, ensure the flash was successful:
       cat /VERSION
 
 The content of /VERSION should correspond to the build you made; in particular, ensure the date looks reasonable.
+
+
+Wipe Parameters / Set Parameters from magic Parameters
+======================================================
+
+Set a parameter to a nonsense value which will reset all parameters:
+
+::
+
+   param set SYSID_SW_MREV 0
+
+That's for MAVProxy; use you GCS of choice to get the same effect.
+
+Load the default parameters file (which can be found here <link>)
+
+::
+
+   param load /tmp/Solo_AC350_Params.param
+   param load /tmp/Solo_AC350_Params.param
+
+Again, use your GCS of choice to effect the same change.  Yes, do it twice.
+
+
+Redo Calibrations
+=================
+
+In MAVProxy:
+
+::
+
+   accelcal
+
+In your GCS of choice: click-click-click etc.
+
+
+::
+
+   magcal
+
+In your GCS of choice: click-click-click etc.
+
+
+
+Troubleshooting:
+================
+- the update will fail if there are multiple images present on /log/updates
 
