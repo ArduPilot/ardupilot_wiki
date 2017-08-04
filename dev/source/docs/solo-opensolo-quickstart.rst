@@ -38,7 +38,7 @@ ssh into the vagrant virtual machine and run the build:
 ::
 
    vagrant ssh -- -X
-   time /vagrant/builder.sh # about 2-15 hours ( depending on computer speed, and internet donload speed ) 
+   time /vagrant/builder.sh # about 2-15 hours ( depending on computer speed, and internet download speed ) 
 
 note/s:
 
@@ -58,7 +58,15 @@ View Solo build products:
 
    ls /solo-build/build/tmp-eglibc/deploy/images/imx6solo-3dr-1080p/
 
-Update Solo:
+Connect to your Solo/Controller Wifi from this point:
+   SSID usually starts with 'SoloLink_' 
+   Default solo wifi password is 'sololink' but you probably changed this when you first used it, right. 
+   If you want to continue to have internet access while Doing these next step:
+      get 'solo-cli' repository and 
+      run 'solo wifi --name=YOURHOMEWIFINAME --password=yourhomewifipassword' to enable solo to get to the internet! 
+::
+
+Update Solo :
 
 ::
 
