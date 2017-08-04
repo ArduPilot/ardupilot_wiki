@@ -16,6 +16,11 @@ OpenSolo QuickStart Guide
 
    ArduPilot's master branch is missing throttle-slew-rate-limitting which is present on 3DR's ArduPilot branch.  In the absence of a Green Cube this makes flying ArduPilot-master on your Solo *very dangerous*.
 
+Prerequisites (get these first, and install them to your PC):
+===========   
+   Vagrant
+   VirtualBox
+
 Compilation
 ===========
 
@@ -26,6 +31,7 @@ Bring the vagrant virtual machine up on your host machine:
    git clone https://github.com/OpenSolo/solo-builder
    cd solo-builder
    vagrant up
+   git
 
 ssh into the vagrant virtual machine and run the build:
 
