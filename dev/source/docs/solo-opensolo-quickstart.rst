@@ -32,7 +32,6 @@ Bring the vagrant virtual machine up on your host machine:
    git clone https://github.com/OpenSolo/solo-builder
    cd solo-builder
    vagrant up
-   git
 
 ssh into the vagrant virtual machine and run the build:
 
