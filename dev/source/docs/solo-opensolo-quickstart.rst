@@ -32,8 +32,13 @@ ssh into the vagrant virtual machine and run the build:
 ::
 
    vagrant ssh -- -X
-   time /vagrant/builder.sh # about 15 hours
+   time /vagrant/builder.sh # about 2-15 hours ( depending on computer speed, and internet donload speed ) 
 
+note/s:
+
+  The /vagrant folder inside of the solo-builder ‘vagrant up’ VM is actually the folder that you started the VM in ... 'solo-builder/'
+  To get file/s out of the 'VM" you can ‘vagrant ssh’ into the VM and copy it to /vagrant and exit the vm… alternatively… 
+  If you are on your solo's wifi, you can 'scp' the file/s directly to your solo/artoo. ( see 'update solo' below ) 
 
 View Artoo (controller) build products:
 
@@ -61,8 +66,8 @@ note/s:
    If you have not SSH'd into your Solo before and changed things, you may be propted for a ssh password when doing 'ssh' or 'scp' commands. 
    The 'root' password to use is 'TjSDBkAu'.  more details here: https://dev.3dr.com/starting-network.html
    Two reboots of Solo may be required
-   Green LEDs are good.  
-   ssh can take some time to be available after a reflash
+   Your LED colours will be different that you are used to. Red cycling during first reboot, rainbow cycling during second reboot. maybe.  
+   ssh can take some time to be available after a reflash, be patient, wait another minute.
 
 After update, ensure the flash was successful:
 
