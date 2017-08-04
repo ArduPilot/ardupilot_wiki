@@ -21,6 +21,12 @@ Prerequisites (get these first, and install them to your PC):
    Vagrant
    VirtualBox
    git
+   
+   notes:  If you are running windows, then you also need to nsure that git is set to leave line endings untouched. THis command should fix that: 
+   ::
+      git config --global core.autocrlf false
+
+
 
 Compilation
 ===========
