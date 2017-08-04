@@ -20,6 +20,7 @@ Prerequisites (get these first, and install them to your PC):
 ===========   
    Vagrant
    VirtualBox
+   git
 
 Compilation
 ===========
