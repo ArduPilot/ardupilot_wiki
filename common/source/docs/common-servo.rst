@@ -87,7 +87,7 @@ The traditional way to control a servo only works as part of a mission
 (i.e. AUTO mode).  Follow these instructions:
 
 -  Connect to your flight controller from the ground station
--  On the Config/Tuning > Full Parameter List page, ensure that the SERVOx_FUNCTION (or RCx_FUNCTION) is set to zero for the servo (i.e. :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` = 0 if the servo is connected a Pixhawks AUX OUT1).
+-  On the Config/Tuning > Full Parameter List page, ensure that the SERVOx_FUNCTION (or RCx_FUNCTION) is set to zero for the servo (i.e. :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` = 0 if the servo is connected a Pixhawks AUX OUT2).
 -  Press the Write Params button
 
    .. image:: ../../../images/MissionPlanner_ServoSetup.jpg
