@@ -51,7 +51,7 @@ that when you re-calibrate your RC inputs it doesn't affect the tuning
 of your aircraft.
 
 You may also notice that the "REV" parameters have been renamed to
-"REVERSED". This is because the old parameters had a convention like
+"REVERSED". This is because the old parameters had a convention so
 that "reversed" was chosen by setting RC1_REV to -1, and "not
 reversed" was chosen by setting RC1_REV to 1. This caused quite a lot
 of confusion, so for 3.8 we now use the convention that RC1_REVERSED=0
