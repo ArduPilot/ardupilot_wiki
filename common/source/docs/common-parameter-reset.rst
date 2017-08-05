@@ -39,7 +39,7 @@ Option #3: Load another vehicle's firmware
    consuming.
 
 Upload the firmware for a completely different vehicle type (I.e. if you
-were using Copter, now upload the Plane firmware).  Reboot the board and
+were using Copter, now upload the Rover firmware).  Reboot the board and
 let it sit for 30 seconds to clear the EEPROM.  Then upload the original
 firmware (i.e. Copter) to the flight controller.
 
