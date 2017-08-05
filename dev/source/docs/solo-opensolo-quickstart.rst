@@ -77,6 +77,7 @@ Update Solo :
 ::
 
    cd /solo-build/build/tmp-eglibc/deploy/images/imx6solo-3dr-1080p
+   ssh root@10.1.1.10 -C "rm /log/updates/*"
    scp 3dr-solo.tar.gz root@10.1.1.10:/log/updates/
    ssh root@10.1.1.10 -C "cd /log/updates; md5sum 3dr-solo.tar.gz >3dr-solo.tar.gz.md5"
    ssh root@10.1.1.10 -C "touch /log/updates/UPDATE && /sbin/shutdown -r now"
@@ -104,6 +105,7 @@ Update Artoo:
 ::
 
    cd /solo-build/build/tmp-eglibc/deploy/images/imx6solo-3dr-artoo
+   ssh root@10.1.1.1 -C "rm /log/updates/*"
    scp 3dr-controller.tar.gz root@10.1.1.1:/log/updates/
    ssh root@10.1.1.1 -C "cd /log/updates; md5sum 3dr-controller.tar.gz >3dr-controller.tar.gz.md5"
    ssh root@10.1.1.1 -C "touch /log/updates/UPDATE && /sbin/shutdown -r now"
