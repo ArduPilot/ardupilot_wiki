@@ -33,7 +33,7 @@ Installation steps
 
    .. tip::
 
-      An automatic download and installation script for MAVProxy, Cygwin, JSBSim and ArduPilot can be found `here <https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/autotest/win_sitl/InstallCygwinAPM.ps1>`__. After downloading the file, right click -> Run in Powershell.
+      An automatic download and installation script for MAVProxy, Cygwin, JSBSim and ArduPilot can be found `here <https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/autotest/win_sitl/InstallDevEnvironmentAndAPMSource.ps1>`__. After downloading the file, right click -> Run in Powershell.
       
 Install MAVProxy
 ----------------
