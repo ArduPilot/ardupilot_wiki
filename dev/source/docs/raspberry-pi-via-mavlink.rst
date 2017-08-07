@@ -144,7 +144,7 @@ packages:
 ::
 
     sudo apt-get update    #Update the list of packages in the software center
-    sudo apt-get install screen python-wxgtk2.8 python-matplotlib python-opencv python-pip python-numpy python-dev libxml2-dev libxslt-dev
+    sudo apt-get install screen python-wxgtk2.8 python-matplotlib python-opencv python-pip python-numpy python-dev libxml2-dev libxslt-dev python-lxml
     sudo pip install future
     sudo pip install pymavlink
     sudo pip install mavproxy
