@@ -17,8 +17,7 @@ For more specific details see
 `copying.txt <https://github.com/ArduPilot/ardupilot/blob/master/COPYING.txt>`__
 in the codebase.
 
-The GNU operating system which is under the same license has an
-informative `FAQ here <http://www.gnu.org/licenses/gpl-faq.html>`__.
+The GNU operating system has an informative GPL `FAQ here <http://www.gnu.org/licenses/gpl-faq.html>`__.
 
 Note to developers
 ==================
