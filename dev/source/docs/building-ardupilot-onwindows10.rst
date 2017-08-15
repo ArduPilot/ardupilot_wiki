@@ -169,3 +169,19 @@ Compile ArduPilot Code
        attrib -s -h lxss
        
    You can make a direct access to "lxss" folder on your desktop for a quick navigation.
+   
+A few things that you may need if things do not go to plan
+==========================================================
+
+   .. code-block:: python
+   
+       sudo apt-get install python
+       git submodule update --recursive --init modules/uavcan
+       pip install future
+       pip install lxml
+       sudo apt-get install genromfs
+       sudo apt-get install unzip
+       sudo apt-get install zip
+       apt-get install python-empy
+   
+   (.............)
