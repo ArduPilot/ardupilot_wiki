@@ -1,8 +1,8 @@
 .. _release-procedures:
 
-==================
-Release Procedures
-==================
+=========================
+Copter Release Procedures
+=========================
 
 This page outlines the steps that are normally followed for a Copter
 release. Listed mostly as a reference so that we don't forget the steps.
