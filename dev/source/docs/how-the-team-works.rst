@@ -10,7 +10,9 @@ These pages are less about the software directly and more about the procedures a
 .. toctree::
     :maxdepth: 1
 
+    Communication Channels (aka Contact Us) <common-contact-us>
     Copter Release Procedures <release-procedures>
     Development Fund <how-the-team-works-development-fund>
+    Team <common-team>
     Weekly meetings on Mumble Server <ardupilot-mumble-server>
     Voting <how-the-team-works-voting>
