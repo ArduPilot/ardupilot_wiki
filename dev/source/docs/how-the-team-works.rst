@@ -5,7 +5,7 @@ How the team works
 ==================
 
 The pages linked below outline some details of how the ArduPilot team operates.
-These pages are less about the software directly and more about the procedures, rules and more general code of conduct that team of people who bear the bulk of the responsibility of maintaining the software.
+These pages are less about the software directly and more about the procedures and rules followed by the team of people who bear the bulk of the responsibility of maintaining ArduPilot.
 
 .. toctree::
     :maxdepth: 1
