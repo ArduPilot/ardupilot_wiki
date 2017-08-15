@@ -151,7 +151,7 @@ Full Table of Contents
     Code Editors & IDEs <docs/code-editing-tools-and-ides>
     Simulation & Testing <docs/simulation-2>
     Debugging <docs/debugging>
-    Contributing <docs/contributing>
+    Contributing Code <docs/contributing>
     MAVLink Commands <docs/mavlink-commands>
     CAN and UAVCAN <docs/can-bus>
     Companion Computers <docs/companion-computers>
