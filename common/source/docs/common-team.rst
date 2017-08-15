@@ -4,27 +4,24 @@
 Team
 ====
 
+Hundreds of people have contributed to the ArduPilot project in many ways large and small.
+It is impossible to list them all but if you wish to see at least some of the people who have contributed code and/or are helping other users please see the following links:
 
-The ArduPilot Dev Team
-======================
+- `ArduPilot flight code contributors <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
+- `Wiki contributors <https://github.com/ArduPilot/ardupilot_wiki/graphs/contributors>`__
+- `Most active Support Forum users <https://discuss.ardupilot.org/u?order=post_count&period=quarterly>`__
+- `Mission Planner GCS contributors <https://github.com/ArduPilot/MissionPlanner/graphs/contributors>`__
+- `AP Planner 2.0 GCS contributors <https://github.com/ArduPilot/apm_planner/graphs/contributors>`__
 
-Please check out our lists for **ArduPilot**
-`contributors <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
-and `maintainers <https://github.com/ArduPilot/ardupilot#maintainers>`__
-on GitHub.
-
-**Mission Planner GCS** `contributors <https://github.com/ArduPilot/MissionPlanner/graphs/contributors>`__
-
-**APM Planner 2.0 GCS** `contributors <https://github.com/ArduPilot/apm_planner/graphs/contributors>`__ 
+In additional please see the list of `maintainers <https://github.com/ArduPilot/ardupilot#maintainers>`__ who hold responsibility for specific areas of the code.
 
 .. note::
 
-   Hundreds of people have contributed to ArduPilot project over
-   time, in ways large and small. Sadly not all of them will be listed
-   above.
+   We do not yet have a way to capture and quantify the help provided on our `Gitter chat channels <https://gitter.im/ArduPilot/ardupilot>`__, `Facebook pages <https://www.facebook.com/groups/ArduPilot.org>`__ and other channels.
+   
 
 Collaboration with other projects
-=================================
+---------------------------------
 
 The ArduPilot dev team is also fortunate to benefit from collaboration
 with some related projects, including:
