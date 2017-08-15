@@ -159,5 +159,6 @@ Full Table of Contents
     Pixhawk Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
+    How The Team Works <docs/how-the-team-works>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
