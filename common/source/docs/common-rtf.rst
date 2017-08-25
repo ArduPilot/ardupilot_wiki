@@ -17,6 +17,7 @@ Vehicles from Partners
 * `BlueROV2 from Blue Robotics <http://bluerobotics.com/store/rov/bluerov2/>`__
 * `Event38 IRIS+ for Precision Mapping <https://event38.com/product/iris-precision-mapping-package/>`__
 * `Event38 e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__ and `e386 Mapping Drones (fixed wing) <https://event38.com/fixed-wing/e384-mapping-drone/>`__
+* `SkyRocket's SkyViper GPS Streaming Drone <http://sky-viper.com/product/info/V2450GPS-sd>`__ (and `version with FPV headset <http://sky-viper.com/product/info/V2450GPS-sd>`__)
 
 Vehicles from Non-Partners
 ==========================
