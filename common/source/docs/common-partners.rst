@@ -70,6 +70,9 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_bluerobotics.png
     :target:  http://www.bluerobotics.com/
 
+.. image:: ../../../images/supporters/supporters_logo_skyrocket.png
+    :target:  http://sky-viper.com/
+
 .. image:: ../../../images/supporters/supporters_logo_drotek.png
     :target:  http://www.drotek.com/
 
