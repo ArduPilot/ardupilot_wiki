@@ -108,6 +108,11 @@ Now check the following:
    <tr><td>Roll plane right</td><td>Both vtail surfaces go left</td><tr>
    <tr><td>Roll plane left</td><td>Both vtail surfaces go right</td><tr>
    </table>
+   
+ATail Planes
+============
+
+If you have an "ATail" plane (an inverted VTail) then you will need to swap left and right vtail outputs. This is because with an ATail, to get right rudder the right servo needs to go up and left servo go down. With a VTail, right rudder is achieved with the right servo going down and left servo going up.
 
 Servo Trim
 ==========
