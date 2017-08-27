@@ -60,7 +60,7 @@ Use the :ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>`
 More Information
 ================
 
-see  `www.pixhawk2.com  <http://www.pixhawk2.com>`__
+see  `www.proficnc.com  <http://www.proficnc.com>`__
 
 More Images
 ===========
