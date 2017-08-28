@@ -197,6 +197,12 @@ Sep 2016 - Relationship with 3DR, Chris Anderson and PX4 team lead sours as Dron
 
 Sep 2016 - ArduPilot begins :ref:`ArduPilot Partners <common-partners>` group.
 
+Dec 2016 - Copter-3.4 release including object avoidance.
+
+July 2017 - Copter-3.5 release including Visual Odometry and Pozyx support for non-GPS navigation, AutoTune gets position hold, `Solo support <https://discuss.ardupilot.org/t/the-solo-lives-on/19347>`__.
+
+Aug 2017 - SkyRocket announces release of ArduPilot based SkyVipter GPS Streaming drone `(blog) <https://discuss.ardupilot.org/t/skyrocket-and-ardupilot/20381>`__
+
 .. note::
 
    The above list includes many of the major milestones for the project.  Please see the
