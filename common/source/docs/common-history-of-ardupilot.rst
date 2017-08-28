@@ -197,11 +197,19 @@ Sep 2016 - Relationship with 3DR, Chris Anderson and PX4 team lead sours as Dron
 
 Sep 2016 - ArduPilot begins :ref:`ArduPilot Partners <common-partners>` group.
 
+Sep 2016 - `Canberra UAV places 1st in Medical Express 2016 <https://uavchallenge.org/2016/09/29/final-day-of-medical-express-2016>`__ competition (aka Outback Challenge) (`debrief <https://discuss.ardupilot.org/t/canberrauav-outback-challenge-2016-debrief/12162>`__)
+
 Dec 2016 - Copter-3.4 release including object avoidance.
 
-July 2017 - Copter-3.5 release including Visual Odometry and Pozyx support for non-GPS navigation, AutoTune gets position hold, `Solo support <https://discuss.ardupilot.org/t/the-solo-lives-on/19347>`__.
+Feb 2017 - ArduSub officially joins ArduPilot and `merges back to master <https://discuss.ardupilot.org/t/best-contribution-for-feb-ardusub-rustom-jehangir-and-jacob-walser/16031>`__
 
-Aug 2017 - SkyRocket announces release of ArduPilot based SkyVipter GPS Streaming drone `(blog) <https://discuss.ardupilot.org/t/skyrocket-and-ardupilot/20381>`__
+Feb 2017 - ArduPilot developer unconference in Canberra Australia (`Tridge <https://discuss.ardupilot.org/t/developer-unconference-feb-2017-andrew-tridgell/15888>`__, `PaulR <https://discuss.ardupilot.org/t/developer-unconference-feb-2017-andrew-tridgell/15888>`__, `MichaelO <https://discuss.ardupilot.org/t/developer-unconference-michael-oborne/16015>`__)
+
+May 2017 - `Google Summer of Code funds 4 developers <https://discuss.ardupilot.org/t/calling-student-programmers-google-and-ardupilot-2017-summer-of-code/15296>`__ for the summer (see `SafeRTL <https://discuss.ardupilot.org/t/safertl-mode-for-copter/20486>`__)
+
+July 2017 - Copter-3.5 release including Visual Odometry and Pozyx support for non-GPS navigation, AutoTune gets position hold, `Solo support <https://discuss.ardupilot.org/t/the-solo-lives-on/19347>`__
+
+Aug 2017 - SkyRocket announces release of ArduPilot based SkyVipter GPS Streaming drone (`blog <https://discuss.ardupilot.org/t/skyrocket-and-ardupilot/20381>`__)
 
 .. note::
 
