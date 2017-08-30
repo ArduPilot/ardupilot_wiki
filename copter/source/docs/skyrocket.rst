@@ -32,6 +32,7 @@ Hardware
 - 145g
 - flight time of about 11min
 - top speed of between 8m/s ~ 10m/s
+- video streaming uses a Sonix board with ARM CPU running FreeRTOS and OmniVision OV9732 chip
 
 Software
 --------
@@ -39,7 +40,7 @@ Software
 - the drone ships with a custom version of ArduPilot (Copter) which is close to Copter-3.5 but has additional features that will be coming back into master in the near future (notch filter, etc).  Links to the source are coming soon!
 - live video can be viewed through a SkyRocket app (Mission Planner video support coming soon).
 - APWeb (a tiny open source web server) runs on the drone and allows easy calibration, modification of parameters, uploading firmware to both the drone and transmitter, downloading log files, pictures and videos.
-- the transmitter has a relatively low powered STM8 processor running open source software written by Tridge (incorporates some code from Papparazi). more details to follow.
+- the transmitter has a relatively low powered STM8 processor running open source software written by Tridge (incorporates some code from Paparazzi). more details to follow.
 
 Videos
 ------
