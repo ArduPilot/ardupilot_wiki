@@ -41,6 +41,7 @@ on Mac OS X (ver 10.6 onwards) with *Make*.
 
        sudo easy_install pip
        sudo pip install pyserial
+       sudo pip install future
 
 #. Now create your directory and install all the software:
 
