@@ -25,7 +25,7 @@ To setup this using GPS1 input (serial3) configure these parameters:
 - SERIAL3_BAUD,115
 - SERIAL3_PROTOCOL,5
 
-To setup this using GPS1 input (serial3) configure these parameters:
+To setup this using GPS2 input (serial4) configure these parameters:
 
 - GPS_INJECT_TO,1
 - GPS_RATE_MS2,100
