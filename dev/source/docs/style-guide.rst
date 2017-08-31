@@ -361,7 +361,7 @@ Parameter Naming
 
 Parameter with multiple words should have the words ordered from left to right by importance:
 
-- the flight mode or sensor should be the first word.  A parameter relevant only to the RTL flight mode should start with "RTL_" (i.e. "RTL_ALT")
+- the flight mode, feature or sensor should be the first word.  I.e. a parameter relevant only to the RTL flight mode should start with "RTL" like "RTL_ALT".
 - qualifiers like "MIN", "MAX" or units (in the rare case they appear in the name) should be on the far right.  I.e RTL_ALT_MIN is better than RTL_ALT_MIN.
 
 Re-use words from other parameters if possible instead of creating new words.  For eample we use "MIN" and "MAX" so these should be used instead of equivalent words like "TOP" and "BOTTOM".
