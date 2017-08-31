@@ -1,10 +1,10 @@
 .. _common-gps-septentrio:
 
 ==============================
-Septentrio AsteRx-mUAS RTK GPS
+Septentrio AsteRx-m UAS and AsteRx-m2 UAS RTK GPS
 ==============================
 
-The Septentrio AsteRx-mUAS RTK GPS is a relatively expensive but also highly accurate RTK GPS.  Detailed `information from the manufacturer can be found here <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m-uas/>`__.
+The Septentrio `AsteRx-m UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m-uas/>`__ and `AsteRx-m2 UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m2-uas/>`__ RTK GPS are relatively expensive but also highly accurate RTK GPS.
 
 .. image:: ../../../images/gps-septrino.png
 	:target: ../_images/gps-septrino.png
@@ -13,6 +13,31 @@ The Septentrio AsteRx-mUAS RTK GPS is a relatively expensive but also highly acc
 
      This GPS is supported in Copter-3.4 (and higher), Plane 3.7.0 (and higher) and Rover 3.0.1 (and higher).
      Mission Planner GCS is the only GCS to support this feature currently.
+
+Setup instructions
+==================================
+
+To setup this using GPS1 input (serial3) configure these parameters:
+
+- GPS_INJECT_TO,0
+- GPS_RATE_MS,100
+- GPS_TYPE,10
+- SERIAL3_BAUD,115
+- SERIAL3_PROTOCOL,5
+
+To setup this using GPS1 input (serial3) configure these parameters:
+
+- GPS_INJECT_TO,1
+- GPS_RATE_MS2,100
+- GPS_TYPE2,10
+- SERIAL4_BAUD,115
+- SERIAL4_PROTOCOL,5
+
+Warning
+==================================
+
+Do not connect Mission Planner or any other gound station to ArduPilot during the first 15 seconds after booting otherwise the GPS will not get configured properly and will therefore not work.
+Wait for the GPS to fully boot before connecting a ground station to Ardupilot.
 
 Video including setup instructions
 ==================================
