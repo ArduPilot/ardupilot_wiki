@@ -26,8 +26,6 @@ and instead a separate :ref:`Range Finder <common-rangefinder-landingpage>`
 such as the :ref:`LightWare SF10b <common-lightware-sf10-lidar>`
 must also be attached to the vehicle.
 
-More information on this sensor can be found on the `ETH's PX4FLOW wiki page <http://pixhawk.org/modules/px4flow>`__.
-
 .. warning::
 
    To use this flow sensor you will need to purchase a separate range
