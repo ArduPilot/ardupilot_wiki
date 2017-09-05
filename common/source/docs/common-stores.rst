@@ -4,21 +4,22 @@
 Stores
 ======
 
-The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc. 
+The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc.
 recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Fly vehicles <rtf>`.
 
 * `AltiGator <http://www.altigator.com/>`__
 * `AUAV <http://www.auav.co/>`__
 * `Bask Aerospace <http://www.baskaerospace.com.au/>`__
 * `BlueRobotics <https://www.bluerobotics.com/store/>`__
-* `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules) 
+* `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules)
 * `CUAV <http://www.cuav.net>`__
 * `Drotek <https://drotek.com/>`__
 * `Emlid <https://emlid.com/shop/>`__
 * `EnRoute LAB <http://www.elab.co.jp/>`__
+* `Erle Robotics <https://erlerobotics.com/blog/shop-index/>`__
 * `Event38 <https://event38.com/shop/>`__
 * `Harris Aerial <https://www.harrisaerial.com/shop/>`__
-* `Hex <http://www.hex.aero/shop/>`__ 
+* `Hex <http://www.hex.aero/shop/>`__
 * `JapanDrones <http://japandrones.com/>`__
 * `jDrones <http://store.jdrones.com/>`__
 * `Lightware <http://www.lightware.co.za>`__
