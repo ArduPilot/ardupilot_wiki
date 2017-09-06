@@ -19,6 +19,10 @@ Dataflash logs.
    known as "tlogs") collect similar information to dataflash logs (see
    :ref:`Diagnosing problems using Logs <common-diagnosing-problems-using-logs>` for more information).
 
+.. note::
+
+   If your vehicle is having trouble producing dataflash logs - including the infamous "No IO heartbeat" diagnostic message - try a different SD card.  You may also choose to test the card using a dedicated tool, such as ``H2testw``.  Low board voltates are also known to cause logging issues.
+
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_downloading_logs_via_mavlink:
 
 Downloading logs via MAVLink
