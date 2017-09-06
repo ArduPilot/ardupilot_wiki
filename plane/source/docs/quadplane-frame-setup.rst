@@ -46,10 +46,13 @@ You can optionally move the quad motors to be on any other channel above
 To use a different frame type you can set Q_FRAME_CLASS and
 Q_FRAME_TYPE. Q_FRAME_CLASS can be:
 
--  0 for quad
--  1 for hexa
--  2 for octa
--  3 for octaquad
+-  1 for quad
+-  2 for hexa
+-  3 for octa
+-  4 for octaquad
+-  5 for Y6
+-  7 for Tri
+-  10 for Tailsitter
 
 Within each of these frame classes the Q_FRAME_TYPE chooses the motor
 layout
@@ -58,6 +61,7 @@ layout
 -  1 for X frame
 -  2 for V frame
 -  3 for H frame
+-  11 for FireFly6Y6 (for Y6 only)
 
 Using different channel mappings
 --------------------------------
