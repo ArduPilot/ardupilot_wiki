@@ -107,36 +107,6 @@ that is only recommanded for advanced users who are very familiar with
 automated flight control with ArduPilot. We hope to support the Disco
 WiFi based transmitter in ArduPilot in the future.
 
-For controlling Disco using a SBUS receiver and R/C transmitter you
-need to setup how the elevon mixing is done. The combination of
-channel directions on your transmitter must match the parameters setup
-in the Disco.
-
-The most common issue with R/C setup on the Disco is what reversal you
-have on your R/C transmitter for elevator (pitch) input. Some
-transmitters default to pulling back on the pitch stick giving a
-higher PWM value whereas other transmitter manufacturers use a
-convention where pulling back on the pitch stick gives a lower PWM
-value.
-
-With the 3.7.0 and earlier release of APM:Plane you need to change
-your transmitter to match the expected direction for the Disco
-parameters. That expected direction is that pulling back on the pitch
-stick produces a lower PWM output from the transmitter. For that setup
-you need:
-
-* ELEVON_OUTPUT 2
-* RC2_REV -1
-
-For the 3.7.1 release and later there are additional options for
-ELEVON_OUTPUT which allow for your transmitter to have either
-reversal. If you have 3.7.1 or later installed and your transmitter
-produces a higher value on the pitch channel when pulling back on the
-stick then you need:
-
-* ELEVON_OUTPUT 6
-* RC2_REV 1
-
 .. warning::
 
    The telemetry output option of many R/C receivers can interfere
