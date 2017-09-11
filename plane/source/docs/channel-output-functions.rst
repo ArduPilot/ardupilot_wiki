@@ -79,7 +79,7 @@ aircraft. The ones that are implemented on fixed wing are listed below:
 -  TiltMotorLeft=75
 -  TiltMotorRight=76
 -  ElevonLeft=77
--  ElevonRight=77
+-  ElevonRight=78
 -  VTailLeft=79
 -  VTailRight=80
 
