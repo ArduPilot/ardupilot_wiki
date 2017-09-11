@@ -19,6 +19,10 @@ This provides everything you need to help the wiki grow!
 Making a quick edit
 ===================
 
+There is a YouTube tutorial for editing ArduPilot documentation here:
+..  youtube:: fb73F8_MiMg
+    :width: 100%
+
 Once you've got your `Github account <https://github.com/join>`__ you can edit
 project source pages directly on Github. 
 
