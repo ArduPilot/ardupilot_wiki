@@ -39,17 +39,6 @@ modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non
 value. In that case the forward motor will be used to hold the
 aircraft level in a wind. See the description of :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>`.
 
-.. note::
-
-   If you transition to QLOITER or QLAND while flying at high speed
-   then the loiter code will try to bring the aircraft to a very rapid
-   stop which will cause the plane to pitch up hard and then fly
-   backwards to get back to the point where QLOITER was
-   entered. Unless you are sure of the strength of your airframe it
-   would be a good idea to transition to QHOVER first which will
-   result in a much gentler transition, then move to QLOITER once the
-   aircraft has slowed down.
-
 Assisted fixed-wing flight
 ==========================
 
@@ -235,22 +224,6 @@ forward due to its momentum. The drag of the air will slowly bring it to
 a stop. The attitude of the aircraft can be controlled with roll and
 pitch sticks (aileron and elevator). You can yaw the aircraft with
 rudder.
-
-I am flying fast in FBWA mode and switch to QLOITER mode
---------------------------------------------------------
-
-The quad motors will immediately engage and the aircraft will pitch up
-hard, as it tries to hold position at the position it was in when you
-switched to QLOITER mode.
-
-The aircraft will stop very quickly, and will back up slightly to the
-position where QLOITER was entered. The movement of the aircraft can be
-controlled with roll and pitch sticks (aileron and elevator). You can
-yaw the aircraft with rudder.
-
-The climb/descent rate is now set by the throttle stick, with a higher
-throttle stick meaning climb and a lower throttle stick meaning descend.
-At mid-stick the aircraft will hold altitude.
 
 I switch to RTL mode while hovering
 -----------------------------------
