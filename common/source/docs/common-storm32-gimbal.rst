@@ -107,11 +107,9 @@ The custom STorM32 protocol was added as an alternative to the MAVLink
 protocol and has the same features. To use the serial protocol use all
 the same settings as above except:
 
--  Set ``SERIALX_PROTOCOL`` to "8" (where "X" is "1", "2" or "4" depending upon which Pixhawk serial port
-the gimbal is connected to)
+-  Set ``SERIALX_PROTOCOL`` to "8" (where "X" is "1", "2" or "4" depending upon which Pixhawk serial port the gimbal is connected to)
 -  Set ``MNT_TYPE`` to "5"
--  When :ref:`Configuring the Gimbal <common-storm32-gimbal_configuring_the_gimbal>` controller set the
-"MAVLink configuration" parameter to "no heartbeat"
+-  When :ref:`Configuring the Gimbal <common-storm32-gimbal_configuring_the_gimbal>` controller set the "MAVLink configuration" parameter to "no heartbeat"
 
 Testing the gimbal
 ==================
