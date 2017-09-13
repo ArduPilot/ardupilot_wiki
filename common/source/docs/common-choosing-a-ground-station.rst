@@ -28,7 +28,7 @@ used to communicate with ArduPilot (i.e.
 :ref:`Rover <rover:home>`,
 :ref:`AntennaTracker <antennatracker:home>`).
 
-The decision to select a particular GSC often depends on your vehicle
+The decision to select a particular GCS often depends on your vehicle
 and preferred computing platform:
 
 -  **Ready-to-fly** users may prefer the portability and ease of use of
@@ -236,7 +236,7 @@ Android GCS intended for enthusiasts.
 -  `Issues List <https://github.com/geeksville/arduleader/issues>`__
 -  `Source Code <https://github.com/geeksville/arduleader/tree/master/andropilot>`__
 
-Additional GSC hardware
+Additional GCS hardware
 =======================
 
 Android
@@ -246,7 +246,7 @@ For Android devices, you will need:
 
 -  Android based tablet that can act as a USB host. Google Nexus tablet
    are recommended, and the compatible hardware lists for the different
-   GSCs are listed in the table above.
+   GCSs are listed in the table above.
 -  :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or
    similar (915 Mhz for US, 433 for Europe) which includes the
    bidirectional ground and air telemetry units.
