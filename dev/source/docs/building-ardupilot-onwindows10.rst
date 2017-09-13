@@ -92,19 +92,10 @@ Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
    
        cd
        
-       sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
-       sudo apt-get update
-       sudo apt-get install cmake
-       
+       sudo add-apt-repository ppa:george-edison55/cmake-3.x -y    
        sudo add-apt-repository ppa:ubuntu-toolchain-r/test
        sudo apt-get update
-       sudo apt-get install g++-4.9
-       
-       sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
-       sudo apt-get update
-       sudo apt-get install gcc-arm-none-eabi=4.9.3.2015q3-1trusty1
-       
-       sudo apt-get update
+       sudo apt-get install g++-4.9 cmake gcc-arm-none-eabi
        sudo apt-get upgrade
 
 Compile ArduPilot Code
