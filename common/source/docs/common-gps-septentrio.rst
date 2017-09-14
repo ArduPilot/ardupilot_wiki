@@ -33,12 +33,6 @@ To setup this using GPS2 input (serial4) configure these parameters:
 - SERIAL4_BAUD,115
 - SERIAL4_PROTOCOL,5
 
-Warning
-==================================
-
-Do not connect Mission Planner or any other ground station to ArduPilot during the first 15 seconds after booting otherwise the GPS will not get configured properly and will therefore not work.
-Wait for the GPS to fully boot before connecting a ground station to Ardupilot.
-
 Video including setup instructions
 ==================================
 ..  youtube:: HWJnG3tu9iM
