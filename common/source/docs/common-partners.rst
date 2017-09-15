@@ -11,87 +11,115 @@ Corporate Partners
 ==================
 
 .. image:: ../../../images/supporters/supporters_logo_elab.png
+    :width: 250px
     :target:  http://elab.co.jp/
 
 .. image:: ../../../images/supporters/supporters_logo_jDrones.png
+    :width: 250px
     :target:  http://www.jDrones.com/home/
 
 .. image:: ../../../images/supporters/supporters_logo_mrobotics.png
+    :width: 250px
     :target:  http://mrobotics.io/
 
 .. image:: ../../../images/supporters/supporters_logo_emlid.png
+    :width: 250px
     :target:  http://www.emlid.com/
 
 .. image:: ../../../images/supporters/supporters_logo_cuav.jpg
+    :width: 250px
     :target:  http://www.cuav.net/
 
 .. image:: ../../../images/supporters/supporters_logo_falconunmanned.gif
+    :width: 250px
     :target:  http://www.falconunmanned.com/
 
 .. image:: ../../../images/supporters/supporters_logo_livelink.png
+    :width: 250px
     :target:  http://www.livelinktechnology.net/
 
 .. image:: ../../../images/supporters/supporters_logo_craftandtheory.png
+    :width: 250px
     :target:  http://craftandtheoryllc.com
 
 .. image:: ../../../images/supporters/supporters_logo_proficnc.png
+    :width: 250px
     :target:  http://www.proficnc.com/stores
 
 .. image:: ../../../images/supporters/supporters_logo_LaserNavigation.png
+    :width: 250px
     :target:  http://www.lasernavigation.it/
 
 .. image:: ../../../images/supporters/supporters_logo_lightware.png
+    :width: 250px
     :target:  http://www.lightware.co.za
 
 .. image:: ../../../images/supporters/supporters_logo_spektreworks.png
+    :width: 250px
     :target:  http://www.spektreworks.com/
 
 .. image:: ../../../images/supporters/supporters_logo_uavionix.png
+    :width: 250px
     :target:  http://www.uavionix.com/
 
 .. image:: ../../../images/supporters/supporters_logo_hex.png
+    :width: 250px
     :target:  http://www.hex.aero/
 
 .. image:: ../../../images/supporters/supporters_logo_dronebility.png
+    :width: 250px
     :target:  http://www.dronebility.com/
 
 .. image:: ../../../images/supporters/supporters_logo_apub.jpg
+    :width: 250px
     :target:  http://www.unmannedairlines.com/a_pub/
 
 .. image:: ../../../images/supporters/supporters_logo_dronejapan.png
+    :width: 250px
     :target:  http://www.drone-j.com/
 
 .. image:: ../../../images/supporters/supporters_logo_robsense.png
+    :width: 250px
     :target:  http://www.robsense.com/
 
 .. image:: ../../../images/supporters/supporters_logo_bluerobotics.png
+    :width: 250px
     :target:  http://www.bluerobotics.com/
 
 .. image:: ../../../images/supporters/supporters_logo_skyrocket.jpg
+    :width: 250px
     :target:  http://sky-viper.com/
 
 .. image:: ../../../images/supporters/supporters_logo_drotek.png
+    :width: 250px
     :target:  http://www.drotek.com/
 
 .. image:: ../../../images/supporters/supporters_logo_dslrpros.jpg
+    :width: 250px
     :target:  http://www.dslrpros.com/
 
 .. image:: ../../../images/supporters/supporters_logo_harrisaerial.jpg
+    :width: 250px
     :target:  http://www.harrisaerial.com/
 
 .. image:: ../../../images/supporters/supporters_logo_bubblefly.png
+    :width: 250px
     :target:  http://www.bubblefly.in/
 
 .. image:: ../../../images/supporters/supporters_logo_altigator.png
+    :width: 250px
     :target:  http://altigator.com/
 
 .. image:: ../../../images/supporters/supporters_logo_event38.png
+    :width: 250px
     :target:  http://event38.com/
 
 .. image:: ../../../images/supporters/supporters_logo_skeyetech.png
+    :width: 250px
     :target:  http://www.skeyetech.fr
 
 .. image:: ../../../images/supporters/supporters_logo_AAC.png
+    :width: 250px
     :target:  http://advancedaircraftcompany.com
 
 How does my company become a partner?
