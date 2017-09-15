@@ -16,8 +16,8 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_jDrones.png
     :target:  http://www.jDrones.com/home/
 
-.. image:: ../../../images/supporters/supporters_logo_auav.png
-    :target:  http://www.auav.co/
+.. image:: ../../../images/supporters/supporters_logo_mrobotics.png
+    :target:  http://mrobotics.io/
 
 .. image:: ../../../images/supporters/supporters_logo_emlid.png
     :target:  http://www.emlid.com/
@@ -54,9 +54,6 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_dronebility.png
     :target:  http://www.dronebility.com/
-
-.. image:: ../../../images/supporters/supporters_logo_mrobotics.png
-    :target:  http://mrobotics.io/
 
 .. image:: ../../../images/supporters/supporters_logo_apub.jpg
     :target:  http://www.unmannedairlines.com/a_pub/
