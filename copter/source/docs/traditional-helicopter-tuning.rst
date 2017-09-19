@@ -5,7 +5,7 @@ Traditional Helicopter – Tuning
 ===============================
 
 General ArduCopter Flight Control Law Description
-==========
+===================================================
 Users should generally understand the flight control laws before tuning. At
 a high level, the arducopter control laws are designed as a model following
 architecture where the software converts the pilot input into a commanded
@@ -39,32 +39,51 @@ swashplate command. These are summed and sent to the mixing unit where the servo
 positions are determined.
 
 Initial Setup of Pitch and Roll Tuning Parameters
-=============
-ATC_ACCEL_P_MAX = 90000
-ATC_ACCEL_R_MAX = 90000
-ATC_ANG_PIT_P = 4.5
-ATC_ANG_RLL_P = 4.5
-ATC_RAT_PIT_D = 0
-ATC_RAT_PIT_FILT = 20
-ATC_RAT_PIT_I = 0
-ATC_RAT_PIT_ILMI = 0
-ATC_RAT_PIT_IMAX  = 0.4
-ATC_RAT_PIT_P = 0
-ATC_RAT_PIT_VFF = 0.15
-ATC_RAT_RLL_D = 0
-ATC_RAT_RLL_FILT = 20
-ATC_RAT_RLL_I = 0
-ATC_RAT_RLL_ILMI = 0
-ATC_RAT_RLL_IMAX = 0.4
-ATC_RAT_RLL_P = 0
-ATC_RAT_RLL_VFF = 0.15
+===================================================
++---------------------+---------+
+| ATC_ACCEL_P_MAX     | 90000   |
++---------------------+---------+
+| ATC_ACCEL_R_MAX     | 90000   |
++---------------------+---------+
+| ATC_ANG_PIT_P       | 4.5     |
++---------------------+---------+
+| ATC_ANG_RLL_P       | 4.5     |
++---------------------+---------+
+| ATC_RAT_PIT_D       | 0       |
++---------------------+---------+
+| ATC_RAT_PIT_FILT    | 20      |
++---------------------+---------+
+| ATC_RAT_PIT_I       | 0       |
++---------------------+---------+
+| ATC_RAT_PIT_ILMI    | 0       |
++---------------------+---------+
+| ATC_RAT_PIT_IMAX    | 0.40    |
++---------------------+---------+
+| ATC_RAT_PIT_P       | 0       |
++---------------------+---------+
+| ATC_RAT_PIT_VFF     | 0.15    |
++---------------------+---------+
+| ATC_RAT_RLL_D       | 0       |
++---------------------+---------+
+| ATC_RAT_RLL_FILT    | 20      |
++---------------------+---------+
+| ATC_RAT_RLL_I       | 0       |
++---------------------+---------+
+| ATC_RAT_RLL_ILMI    | 0       |
++---------------------+---------+
+| ATC_RAT_RLL_IMAX    | 0.40    |
++---------------------+---------+
+| ATC_RAT_RLL_P       | 0       |
++---------------------+---------+
+| ATC_RAT_RLL_VFF     | 0.15    |
++---------------------+---------+
 
 It is suggested that you tune the tail first using the guide. The helicopter
 will be easily controllable with just the FF set to 0.15 on pitch and roll while
 tuning the tail. 
 
 Setting VFF and ACCEL_MAX for Desired Pitch and Roll Response
-================
+===============================================================
 In both pitch and roll axes, the VFF gain is set so that the actual aircraft
 rate matches the desired rate. To do this, the RATE message in the log is
 required to compare the P.des and P signals for pitch and the R.des and R
@@ -95,7 +114,7 @@ Below is a graph showing an example of Rate Roll Desired vs actual Rate Roll.
 The peak corresponds to a rapid stick input and the amplitude (height) of the
 peaks should be approximately the same with no more than 100 milliseconds offset.
 
-.. image:: ../images/TradHeli_tuning_example1.png
+.. image:: ../images/TradHeli_tuning_example1_1.png
 
 Tuning the D and P gain
 =========================
@@ -135,6 +154,7 @@ stick movements in both pitch and roll to make sure it's stable.
 After tuning the P and D gain the aircraft should feel much smoother.
 
 Setting the I gain, IMAX, and ILMI
+====================================
 It is recommended to set the ATC_RATE_PIT_I gain equal to the ATC_RATE_PIT_VFF
 gain and the ATC_RATE_RLL_I gain equal to the ATC_RATE_RLL_VFF gain.  The IMAX
 value limits amount of integrator error that can be stored to counter large
@@ -160,4 +180,4 @@ considered to be a sort of “auto trim” for hover that will reduce the
 discrepancy between desired and actual pitch and roll attitude when the
 helicopter is not in dynamic flight.
 
-.. image:: ../images/TradHeli_tuning_example2.png
+.. image:: ../images/TradHeli_tuning_example2_1.png
