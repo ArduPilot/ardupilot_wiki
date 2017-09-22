@@ -94,9 +94,17 @@ Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
        
        sudo add-apt-repository ppa:george-edison55/cmake-3.x -y    
        sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+       sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded		
        sudo apt-get update
-       sudo apt-get install g++-4.9 cmake gcc-arm-none-eabi
+       sudo apt-get install g++-4.9 cmake gcc-arm-none-eabi=4.9.3.2015q3-1trusty1
        sudo apt-get upgrade
+       
+   .. note::
+       The preferred specific version of the cross-scompiler is not available
+       on all versions of WSL.  If it fails to install as above, use the following
+       as an alternative.
+       "sudo apt-get install gcc-arm-none-eabi"
+       
 
 Compile ArduPilot Code
 ======================
