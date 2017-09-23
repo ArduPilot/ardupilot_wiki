@@ -37,7 +37,7 @@ first connect with the Mission Planner and then open the Config/Tuning
 >> Full Parmeter List page and set the following parameters:
 
 -  RNGFND_MAX_CM = "700" (i.e. 7m max range)
--  RNGFND_TYPE = “4" (PX4-MaxbotixI2C sonar)
+-  RNGFND_TYPE = “2" (MaxbotixI2C sonar)
 
 .. image:: ../../../images/RangeFinder_MaxbotixI2C_MPSetup.png
     :target: ../_images/RangeFinder_MaxbotixI2C_MPSetup.png
