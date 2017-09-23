@@ -33,7 +33,9 @@ The attitude controller is used to ensure the actual attitude of the aircraft
 matches the predicted attitude of the flight controller. It uses the
 ATC_ANG_PIT_P in pitch and the ATC_ANG_RLL_P in roll to determine a rate that is
 fed to the rate controller that will drive the aircraft to the predicted
-attitude. The rate controller receives the sum of the requested rate resulting
+attitude. 
+
+The rate controller receives the sum of the requested rate resulting
 from the pilot input and the rate from the attitude controller and determines
 the swashplate commands required to achieve the input rate. The rate controller
 uses a PID control algorithm and a feed forward path to control the aircraft and
@@ -44,8 +46,40 @@ error between the actual rate and input rate to determine its portion of the
 swashplate command. These are summed and sent to the mixing unit where the servo
 positions are determined.
 
+So this tuning method uses the VFF gain initially to ensure the requested rates
+match the actual rates.  However the rates can vary from the requested due to
+disturbances.  The P and D gains are then used to guard against disturbances
+that cause the actual rates to deviate from the requested rates. So the P and D
+gain may not be able to keep the actual rates exactly matching the requested
+rates.  Since the software is tracking where the orientation of the aircraft
+should be, then any error between the requested and actual rates will result in
+attitude error. So there is a feature called the integrator that continually
+sums the rate errors which effectively calculates the error in attitude.  The
+I gain is multiplied by the integrator and summed with the other outputs of the
+rate controller.  The integrator is limited by the ATC_RATE_RLL_IMAX in roll and
+ATC_RATE_PIT_IMAX in pitch.  When ground speed is less than 5 m/s, the
+integrator is leaked off (reduced at a specified rate) and another parameter, 
+ATC_RATE_RLL_ILMI and ATC_RATE_PIT_ILMI, only lets it leak off so much.  If the 
+ILMI, or integrator leak minimum, is zero then the integrator will not be 
+allowed to grow and the attitude will not be driven to exactly match the 
+software’s predicted attitude.  However, if this is non zero or large enough for
+attitude errors that may be encountered at low speeds and in a hover then the 
+actual attitude will track the predicted attitude.  The reason for the leak and 
+ILMI parameter is that a larger amount of integrator is needed for forward 
+flight however in a hover and in particular during air ground transition 
+allowing large amounts of integrator can cause the aircraft to flip itself on
+its side.  So the integrator leak along with the leak minimum parameter keep 
+enough of the integrator to make it effective in keeping the attitudes matching
+but not so powerful to cause the aircraft to roll over.
+
 Initial Setup of Pitch and Roll Tuning Parameters
 ===================================================
+Below are the initial parameters values that should be used to start the tuning
+of your helicopter.  Use the suggested parameters in the section below for the
+tail until the pitch and roll axes are tuned. The helicopter will be easily 
+controllable with just the FF set to 0.15 on pitch and roll in the event that
+you need to modify the tail settings from what was suggested.  
+
 +---------------------+---------+
 | ATC_ACCEL_P_MAX     | 90000   |
 +---------------------+---------+
@@ -83,10 +117,8 @@ Initial Setup of Pitch and Roll Tuning Parameters
 +---------------------+---------+
 | ATC_RAT_RLL_VFF     | 0.15    |
 +---------------------+---------+
-
-It is suggested that you tune the tail first using the guide. The helicopter
-will be easily controllable with just the FF set to 0.15 on pitch and roll while
-tuning the tail. 
+| RC_FEEL             | 50      |
++---------------------+---------+
 
 Setting VFF and ACCEL_MAX for Desired Pitch and Roll Response
 ===============================================================
@@ -102,23 +134,30 @@ properly leveled in the setup or the cg is not right.  In this case, just make
 sure the change in rate is similar between desired and actual.  Once you get the
 rates to match and they feel like they are too fast then you can reduce the
 ATC_ACCEL_MAX parameter and repeat the process above to match the desired and
-actual rates.
+actual rates.  
 
-With a flybar head where the linkage rate is normally lower it is recommended to
-start with 0.22 VFF for both pitch and roll and you will likely have to go
-higher with VFF. But for a FBL head VFF shouldn't be more than 0.22 unless you
-have really really slow servos or slow linkage rate. With all helicopters the
-VFF gain compensates for differences in servo and linkage speed. The final
-setting for ATC_ACCEL_MAX parameters will depend on the size of the helicopter.
-Large 800-900 class machines will typically be in the 36000-52000 range; smaller
-450-500 class machines will typically be in the 90000-110000 range.
+If while tuning the VFF gain the aircraft starts to oscillate, reduce the 
+ATC_ANG_XXX_P gain for that axis until the oscillations stop.  However for most 
+helicopteters the suggested values above should not cause this problem.
 
-Once this process is complete, the aircraft should have the desired feel in
-snappiness and rate.  
+With a flybar head where the linkage rate is normally lower, it is recommended
+to start with 0.22 VFF for both pitch and roll and you will likely have to go
+higher with VFF. But for a flybarless head, VFF shouldn't be more than 0.22 
+unless you have really really slow servos or slow linkage rate. With all 
+helicopters the VFF gain compensates for differences in servo and linkage speed. 
+
+The final setting for ATC_ACCEL_MAX parameters will depend on the size of the
+helicopter.  Large 800-900 class machines will typically be in the 36000-52000 
+range; smaller 450-500 class machines will typically be in the 90000-110000 
+range. You may want to experiment with the RC_FEEL parameter as well to get the
+initial aircraft response the way you like it.  It is recommended to keep the
+RC_FEEL parameter between 25 and 50. Once this process is complete, the aircraft
+should have the desired feel in snappiness and rate.
 
 Below is a graph showing an example of Rate Roll Desired vs actual Rate Roll.
 The peak corresponds to a rapid stick input and the amplitude (height) of the
-peaks should be approximately the same with no more than 100 milliseconds offset.
+peaks should be approximately the same with no more than 100 milliseconds 
+offset.
 
 .. image:: ../images/TradHeli_tuning_example1_1.png
 
@@ -187,3 +226,30 @@ discrepancy between desired and actual pitch and roll attitude when the
 helicopter is not in dynamic flight.
 
 .. image:: ../images/TradHeli_tuning_example2_1.png
+
+Tuning the Yaw Axis (Rudder)
+====================================
+The yaw axis can be tuned using the method provided above for the pitch and roll
+axes. However it is recommended to get the tuning complete for the pitch and 
+axes before tuning the yaw axis with this method.  A good set of paramters for 
+the yaw axis to start with are given below.  
+
++---------------------+---------+
+| ATC_ACCEL_Y_MAX     | 36000   |
++---------------------+---------+
+| ATC_ANG_YAW_P       | 4.5     |
++---------------------+---------+
+| ATC_RAT_YAW_D       | ??      |
++---------------------+---------+
+| ATC_RAT_YAW_FILT    | 20      |
++---------------------+---------+
+| ATC_RAT_YAW_I       | ??      |
++---------------------+---------+
+| ATC_RAT_YAW_ILMI    | ??      |
++---------------------+---------+
+| ATC_RAT_YAW_IMAX    | ??      |
++---------------------+---------+
+| ATC_RAT_YAW_P       | ??      |
++---------------------+---------+
+| ATC_RAT_YAW_VFF     | ??      |
++---------------------+---------+
