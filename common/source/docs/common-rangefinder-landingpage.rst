@@ -53,7 +53,7 @@ based upon your set-up.
     TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
     Leddar One Lidar <common-leddar-one-lidar>
     LIDAR-Lite <common-rangefinder-lidarlite>
-    ST VL53L0X I2C Time of Flight LiDAR *(guide to follow)* `Product page <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`
+    ST VL53L0X I2C LiDAR <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>
     
 [site wiki="copter"]
     Analog Sonar (AC3.1) <sonar>
