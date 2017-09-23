@@ -10,6 +10,13 @@ parameters, and scaling, were changed from Copter 3.3 to 3.4 the
 :ref:`old tuning guide is archived here <traditional-helicopter-archived-
 tuning>`
 
+For making settings to traditional helicopters users are reminded to use only
+the Full or Complete Parameter List in your ground station software. **Do not
+use the Basic, Extended or Advanced Tuning pages that are designed for
+multi-rotor aircraft.** These pages will make unwanted settings to traditional
+helicopters. And remember to write the changes to the flight controller after
+making them or they won't be saved!
+
 General ArduCopter Flight Control Law Description
 ===================================================
 Users should generally understand the flight control laws before tuning. At
@@ -17,10 +24,10 @@ a high level, the arducopter control laws are designed as a model following
 architecture where the software converts the pilot input into a commanded
 attitude (Stabilize Mode) or commanded rate (Acro mode) and controls the
 aircraft to achieve that commanded value. In the background, the software keeps
-track of or predicts where the aircraft should be in space (i.e. pitch and roll
-attitude) based on the inputs of the pilot or autopilot. It has two controllers
-(attitude and rate) that work together to ensure the actual aircraft is
-following the software’s predicted pitch and roll rates and attitudes.
+track of, or predicts, where the aircraft should be in space (i.e. pitch and
+roll attitude) based on the inputs of the pilot or autopilot. It has two
+controllers (attitude and rate) that work together to ensure the actual aircraft
+is following the software’s predicted pitch and roll rates and attitudes.
  
 The pilot’s commands are limited by the amount of acceleration that can be
 commanded through the ATC_ACCEL_P_MAX for pitch and ATC_ACCEL_R_MAX for roll.
@@ -48,7 +55,7 @@ positions are determined.
 
 So this tuning method uses the VFF gain initially to ensure the requested rates
 match the actual rates.  However the rates can vary from the requested due to
-disturbances.  The P and D gains are then used to guard against disturbances
+disturbances. The P and D gains are then used to guard against disturbances
 that cause the actual rates to deviate from the requested rates. So the P and D
 gain may not be able to keep the actual rates exactly matching the requested
 rates.  Since the software is tracking where the orientation of the aircraft
@@ -63,10 +70,10 @@ ATC_RATE_RLL_ILMI and ATC_RATE_PIT_ILMI, only lets it leak off so much.  If the
 ILMI, or integrator leak minimum, is zero then the integrator will not be 
 allowed to grow and the attitude will not be driven to exactly match the 
 software’s predicted attitude.  However, if this is non zero or large enough for
-attitude errors that may be encountered at low speeds and in a hover then the 
-actual attitude will track the predicted attitude.  The reason for the leak and 
+attitude errors that may be encountered at low speeds and in a hover, then the 
+actual attitude will track the predicted attitude. The reason for the leak and 
 ILMI parameter is that a larger amount of integrator is needed for forward 
-flight however in a hover and in particular during air ground transition 
+flight. However, in a hover and in particular during air ground transition, 
 allowing large amounts of integrator can cause the aircraft to flip itself on
 its side.  So the integrator leak along with the leak minimum parameter keep 
 enough of the integrator to make it effective in keeping the attitudes matching
@@ -75,15 +82,15 @@ but not so powerful to cause the aircraft to roll over.
 Initial Setup of Pitch and Roll Tuning Parameters
 ===================================================
 Below are the initial parameters values that should be used to start the tuning
-of your helicopter.  Use the suggested parameters in the section below for the
-tail until the pitch and roll axes are tuned. The helicopter will be easily 
-controllable with just the FF set to 0.15 on pitch and roll in the event that
-you need to modify the tail settings from what was suggested.  
+of your helicopter. Use the suggested parameters in the yaw section below for
+the tail. The helicopter will be easily controllable with just the VFF set to
+0.15 on pitch and roll in the event that you need to modify the tail settings
+from the defaults.  
 
 +---------------------+---------+
-| ATC_ACCEL_P_MAX     | 90000   |
+| ATC_ACCEL_P_MAX     | 110000  |
 +---------------------+---------+
-| ATC_ACCEL_R_MAX     | 90000   |
+| ATC_ACCEL_R_MAX     | 110000  |
 +---------------------+---------+
 | ATC_ANG_PIT_P       | 4.5     |
 +---------------------+---------+
@@ -120,27 +127,71 @@ you need to modify the tail settings from what was suggested.
 | RC_FEEL             | 50      |
 +---------------------+---------+
 
+Tuning the Yaw Axis (Rudder)
+====================================
+It is recommended to make sure the tail functions properly before proceeding
+with tuning pitch and roll.
+
+**Important Note** - UAV helicopters, as opposed to sport helicopters, will
+usually be running low headspeed and higher disc loading. With a mechanically
+driven tail this also means lower than normal tail speed and reduced tail
+authority. If your helicopter meets this description it is recommended to set
+ATC_RAT_YAW_VFF to 0.05 before the first test hover.
+
+Below are the current default settings for yaw. Spool up the heli and hover it
+no more than .25 meters above ground in Stabilize flight mode and test the
+starting tail settings. If the tail seems "loose" and doesn't want to hold
+increase the ATC_RAT_YAW_P. If the tail rapidly shakes side to side reduce the
+ATC_ANG_YAW_P.
+
+In all cases it is not recommended to adjust ATC_ANG_YAW_P below 3.5 or
+ATC_RAT_YAW_P above 0.38. If your helicopter cannot seem to achieve a solid tail
+within those limits you likely have a mechanical problem with the tail - either
+excessive "slop" or play in the linkage, binding of the linkage or a servo
+problem. Correct the problem before proceeding with roll and pitch tuning.
+
++---------------------+---------+
+| ATC_ACCEL_Y_MAX     | 27000   |
++---------------------+---------+
+| ATC_ANG_YAW_P       | 4.5     |
++---------------------+---------+
+| ATC_RAT_YAW_D       | 0.003   |
++---------------------+---------+
+| ATC_RAT_YAW_FILT    | 20      |
++---------------------+---------+
+| ATC_RAT_YAW_I       | 0.12    |
++---------------------+---------+
+| ATC_RAT_YAW_ILMI    | 0       |
++---------------------+---------+
+| ATC_RAT_YAW_IMAX    | 0.33    |
++---------------------+---------+
+| ATC_RAT_YAW_P       | 0.18    |
++---------------------+---------+
+| ATC_RAT_YAW_VFF     | 0.024   |
++---------------------+---------+
+
 Setting VFF and ACCEL_MAX for Desired Pitch and Roll Response
 ===============================================================
 In both pitch and roll axes, the VFF gain is set so that the actual aircraft
 rate matches the desired rate. To do this, the RATE message in the log is
 required to compare the P.des and P signals for pitch and the R.des and R
-signals for roll. With the VFF gains set to 0.15, takeoff and establish a hover,
-then make some sharp stick inputs in both pitch and roll. Land and pull the log
-and look at the signals. If the actual rate is more than the desired rate then
-you'll want to decrease VFF and if it is less, increase VFF. If the desired and
-actual rates are offset by some amount, it means that your swash was not
-properly leveled in the setup or the cg is not right.  In this case, just make
+signals for roll. With the VFF gains set to 0.15, takeoff and establish a hover
+in Stabilize flight mode, then make some sharp stick inputs in both pitch and
+roll. Land and pull the log from the microSD card and look at the signals in
+your ground station software. If the actual rate is more than the desired rate
+then you'll want to decrease VFF. If it is less, increase VFF. If the desired
+and actual rates are offset by some amount it means that your swash was not
+properly leveled in the setup or the CG is not right.  In this case, just make
 sure the change in rate is similar between desired and actual.  Once you get the
 rates to match and they feel like they are too fast then you can reduce the
 ATC_ACCEL_MAX parameter and repeat the process above to match the desired and
 actual rates.  
 
 If while tuning the VFF gain the aircraft starts to oscillate, reduce the 
-ATC_ANG_XXX_P gain for that axis until the oscillations stop.  However for most 
-helicopteters the suggested values above should not cause this problem.
+ATC_ANG_xxx_P gain for that axis until the oscillations stop.  However for most 
+helicopters the suggested values above should not cause this problem.
 
-With a flybar head where the linkage rate is normally lower, it is recommended
+With a flybar head, where the linkage rate is normally lower, it is recommended
 to start with 0.22 VFF for both pitch and roll and you will likely have to go
 higher with VFF. But for a flybarless head, VFF shouldn't be more than 0.22 
 unless you have really really slow servos or slow linkage rate. With all 
@@ -227,29 +278,79 @@ helicopter is not in dynamic flight.
 
 .. image:: ../images/TradHeli_tuning_example2_1.png
 
-Tuning the Yaw Axis (Rudder)
-====================================
-The yaw axis can be tuned using the method provided above for the pitch and roll
-axes. However it is recommended to get the tuning complete for the pitch and 
-axes before tuning the yaw axis with this method.  A good set of paramters for 
-the yaw axis to start with are given below.  
+=======================================================================
+Advanced Tuning for Hover Trim, Loiter Flight Mode and Waypoint Flying
+=======================================================================
+At this point you should have a helicopter that is responsive and yet stable.
+But we need to trim the helicopter so it hovers pretty much hands-off in
+Stabilize flight mode. And adjust the I-gains for Auto flight mode so it tracks
+attitude properly under full autopilot control.
 
-+---------------------+---------+
-| ATC_ACCEL_Y_MAX     | 36000   |
-+---------------------+---------+
-| ATC_ANG_YAW_P       | 4.5     |
-+---------------------+---------+
-| ATC_RAT_YAW_D       | ??      |
-+---------------------+---------+
-| ATC_RAT_YAW_FILT    | 20      |
-+---------------------+---------+
-| ATC_RAT_YAW_I       | ??      |
-+---------------------+---------+
-| ATC_RAT_YAW_ILMI    | ??      |
-+---------------------+---------+
-| ATC_RAT_YAW_IMAX    | ??      |
-+---------------------+---------+
-| ATC_RAT_YAW_P       | ??      |
-+---------------------+---------+
-| ATC_RAT_YAW_VFF     | ??      |
-+---------------------+---------+
+Hover Trim
+===========
+All conventional single-rotor helicopters with a torque-compensating tail rotor
+hover either right skid low or left skid low, depending on which way the main
+rotor turns. The ArduCopter software has a parameter, ATC_HOVR_RLL_TRIM, to
+compensate for this phenomenon. To tune the hover trims first set this parameter
+to zero, load the helicopter with its normal payload, and hover the helicopter
+in no-wind conditions in Stabilize flight mode. Note which way the helicopter
+wants to drift if you center the cyclic pitch.
+
+When you leveled your swashplate during head setup you likely used a special
+tool designed for the task. However, swashplate level in static conditions on
+the bench does not always equate to swashplate level in dynamic conditions in
+flight due to frame flex and other issues. After noting which way the helicopter
+wants to drift in hover, bring it back to the bench, place it on a level
+surface and verify that the flight controller's trims are set properly for the
+angle the flight controller was installed in the frame at. Measure the actual
+frame angle in pitch and roll with your digital pitch gauge. Connected to your
+ground station software with MavLink, note the pitch and roll angle the flight
+controller is "seeing". Adjust the AHRS_TRIM_X and AHRS_TRIM_Y values so the
+flight controller "sees" the identical frame angle you measured with the digital
+pitch gauge.
+
+Now take the helicopter out, hover it again in no-wind conditions and note which
+way it tends to drift. You will need to adjust your servo trims until it hovers
+hands-off in Stabilize. For instance, if it drifts back you will need to raise
+the elevator servo trim. If it drifts left you will need to raise the trim for
+Servo #1 and lower the trim for Servo #2 (conventional swash). Adjust the trims
+until you get the hands-off hover.
+
+**Important Note** - do not use the radio trims at all. Make sure they are
+centered. Do not merely adjust the AHRS trims to get a hands-off hover. The
+AHRS trims may work for a multi-rotor aircraft with poorly aligned arms or
+motors. But with helicopters we need to know where true swash level is in
+dynamic flight. And the flight controller needs to be measuring the true frame
+angle of the aircraft, and not some arbitrary angle that is compensating for the
+flight controller not being "true" with real swash level in dynamic flight.
+
+Once you get a hands-off hover note in the logs how many degrees of roll
+compensation is required to counter tail rotor "side blow". Enter this value in
+the ATC_HOVR_RLL_TRIM parameter in centidegrees. For a CW turning main rotor if
+it took 3.5 degrees of right roll to compensate, enter 350. Negative values are
+for a CCW turning main rotor that requires left roll to compensate.
+
+After setting the ATC_HOVR_RLL_TRIM now re-adjust the trims for Servo #1 and
+Servo #2 (conventional swashplate) to once again achieve the hands-off hover in
+no-wind conditions in Stabilize flight mode. Your helicopter is now trimmed
+properly. This trimming procedure makes the difference between a helicopter that
+is difficult to handle vs one that flies with true scale quality and handling.
+Improper trimming is often the cause of "tail bounce" or excessive sensitivity
+in the roll axis.
+
+Adjusting I-gains For High-Speed Autonomous Flight
+===================================================
+Prepare a mission with your ground station software that will fly the helicopter
+, preferably in a figure-8 pattern to make both right and left turns, at a
+speed of 6 m/s. Fly the helicopter on this mission, pull the logs from the
+microSD card and look at the AHRS desired vs actual pitch, roll and yaw
+attitudes in dynamic flight. They should track within 1-2 degrees. If they do
+not, increase the ATC_RAT_xxx_I value for that axis until they do.
+
+Now, fly the same mission, but at higher speed of 9-10 m/s, and analyze the logs
+the same way. Make further adjustments to the I-gains and IMAX values as
+required. It is not clear what I-gain values will be required as no two
+helicopters are the same. But I-gain values from 0.25 - 0.38 are common in pitch
+and roll, and 0.18 - 0.30 in yaw. IMAX values of 0.40 - 0.45 are common, however
+refer to the 'Setting the I gain, IMAX, and ILMI' section on how to determine
+what the IMAX value should be.
