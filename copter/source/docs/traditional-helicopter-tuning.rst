@@ -4,6 +4,12 @@
 Traditional Helicopter – Tuning
 ===============================
 
+This tuning guide is applicable to all versions of ArduCopter for traditional
+helicopters. However, it is written for Copter 3.4 and newer. Since the names of
+parameters, and scaling, were changed from Copter 3.3 to 3.4 the
+:ref:`old tuning guide is archived here <traditional-helicopter-archived-
+tuning>`
+
 General ArduCopter Flight Control Law Description
 ===================================================
 Users should generally understand the flight control laws before tuning. At
