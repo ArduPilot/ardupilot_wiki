@@ -317,51 +317,48 @@ All conventional single-rotor helicopters with a torque-compensating tail rotor
 hover either right skid low or left skid low, depending on which way the main
 rotor turns. The ArduCopter software has a parameter, ATC_HOVR_RLL_TRIM, to
 compensate for this phenomenon. To tune the hover trims first set this parameter
-to zero, load the helicopter with its normal payload, and hover the helicopter
-in no-wind conditions in Stabilize flight mode. Note which way the helicopter
-wants to drift if you center the cyclic pitch.
+to zero, place the helicopter on a level surface and verify that the flight
+controller's trims are set properly for the angle the flight controller was
+installed in the frame at.
 
-When you leveled your swashplate during head setup you likely used a special
-tool designed for the task. However, swashplate level in static conditions on
-the bench does not always equate to swashplate level in dynamic conditions in
-flight due to frame flex and other issues. After noting which way the helicopter
-wants to drift in hover, bring it back to the bench, place it on a level
-surface and verify that the flight controller's trims are set properly for the
-angle the flight controller was installed in the frame at. Measure the actual
-frame angle in pitch and roll with your digital pitch gauge. Connected to your
-ground station software with MavLink, note the pitch and roll angle the flight
-controller is "seeing". Adjust the AHRS_TRIM_X and AHRS_TRIM_Y values so the
-flight controller "sees" the identical frame angle you measured with the digital
-pitch gauge.
+The AHRS trim values that we will change are normally set during the
+accelerometer calibration. But in the real world the flight controller was
+likely not installed perfectly "true" and helicopters are very hard to calibrate
+the accelerometer with the flight controller already installed. So we compensate
+using the following method:
 
-Now take the helicopter out, hover it again in no-wind conditions and note which
-way it tends to drift. You will need to adjust your servo trims until it hovers
-hands-off in Stabilize. For instance, if it drifts back you will need to raise
-the elevator servo trim. If it drifts left you will need to raise the trim for
-Servo #1 and lower the trim for Servo #2 (conventional swash). Adjust the trims
-until you get the hands-off hover.
+Measure the actual frame angle (on a portion of the frame that is perpendicular
+to the mainshaft) in pitch and roll with your digital pitch gauge. Connected to
+your ground station software with MavLink, note the pitch and roll angle the
+flight controller is "seeing". Adjust the AHRS_TRIM_X and AHRS_TRIM_Y values so
+the flight controller "sees" the identical frame angle you measured with the
+digital pitch gauge.
+
+The above is necessary so we can accurately measure the roll angle to set the
+ATC_HOVR_RLL_TRIM. The flight controller now "knows" when the mainshaft is
+perfectly vertical. 
+
+Load the helicopter with its normal payload, and hover the helicopter
+in no-wind conditions in Stabilize flight mode. Land it and pull the log, noting
+the roll angle that you had to hold with the stick to keep the helicopter from
+drifting. Enter this value in the ATC_HOVR_RLL_TRIM parameter in centidegrees.
+For a CW turning main rotor if it took 3.5 degrees of right roll to compensate,
+enter 350. Negative values are for a CCW turning main rotor that requires left
+roll to compensate.
 
 **Important Note** - do not use the radio trims at all. Make sure they are
-centered. Do not merely adjust the AHRS trims to get a hands-off hover. The
-AHRS trims may work for a multi-rotor aircraft with poorly aligned arms or
-motors. But with helicopters we need to know where true swash level is in
-dynamic flight. And the flight controller needs to be measuring the true frame
-angle of the aircraft, and not some arbitrary angle that is compensating for the
-flight controller not being "true" with real swash level in dynamic flight.
+centered. 
 
-Once you get a hands-off hover note in the logs how many degrees of roll
-compensation is required to counter tail rotor "side blow". Enter this value in
-the ATC_HOVR_RLL_TRIM parameter in centidegrees. For a CW turning main rotor if
-it took 3.5 degrees of right roll to compensate, enter 350. Negative values are
-for a CCW turning main rotor that requires left roll to compensate.
+After setting the ATC_HOVR_RLL_TRIM now hover the helicopter again. If it still
+drifts make adjustments to the AHRS trims for x and y as necessary to stop the
+drifting in Stabilize flight mode. Things are slightly different in flight, due
+to flexing of the frame, than they are on the bench. So this requires some in-
+flight adjustments to be made to AHRS trims.
 
-After setting the ATC_HOVR_RLL_TRIM now re-adjust the trims for Servo #1 and
-Servo #2 (conventional swashplate) to once again achieve the hands-off hover in
-no-wind conditions in Stabilize flight mode. Your helicopter is now trimmed
-properly. This trimming procedure makes the difference between a helicopter that
-is difficult to handle vs one that flies with true scale quality and handling.
-Improper trimming is often the cause of "tail bounce" or excessive sensitivity
-in the roll axis.
+Your helicopter is now trimmed properly. This trimming procedure makes the
+difference between a helicopter that is difficult to handle vs one that flies
+with true scale quality and handling. Improper trimming is often the cause of
+"tail bounce" or excessive sensitivity in the roll axis.
 
 Adjusting I-gains For High-Speed Autonomous Flight
 ===================================================
