@@ -10,12 +10,12 @@ parameters, and scaling, were changed from Copter 3.3 to 3.4 the
 :ref:`old tuning guide is archived here <traditional-helicopter-archived-
 tuning>`
 
-For making settings to traditional helicopters users are reminded to use only
-the Full or Complete Parameter List in your ground station software. **Do not
-use the Basic, Extended or Advanced Tuning pages that are designed for
-multi-rotor aircraft.** These pages will make unwanted settings to traditional
-helicopters. And remember to write the changes to the flight controller after
-making them or they won't be saved!
+For making setting changes to traditional helicopters, users are reminded to 
+use only the Full or Complete Parameter List in your ground station software. 
+**Do not use the Basic, Extended or Advanced Tuning pages that are designed for
+multi-rotor aircraft.** These pages will make unwanted setting changes to 
+traditional helicopters. And remember to write the changes to the flight 
+controller after making them or they won't be saved!
 
 General ArduCopter Flight Control Law Description
 ===================================================
@@ -135,7 +135,7 @@ with tuning pitch and roll.
 **Important Note** - UAV helicopters, as opposed to sport helicopters, will
 usually be running low headspeed and higher disc loading. With a mechanically
 driven tail this also means lower than normal tail speed and reduced tail
-authority. If your helicopter meets this description it is recommended to set
+authority. If your helicopter meets this description, it is recommended to set
 ATC_RAT_YAW_VFF to 0.05 before the first test hover.
 
 Below are the current default settings for yaw. Spool up the heli and hover it
@@ -182,10 +182,10 @@ your ground station software. If the actual rate is more than the desired rate
 then you'll want to decrease VFF. If it is less, increase VFF. If the desired
 and actual rates are offset by some amount it means that your swash was not
 properly leveled in the setup or the CG is not right.  In this case, just make
-sure the change in rate is similar between desired and actual.  Once you get the
-rates to match and they feel like they are too fast then you can reduce the
+sure the change in rate is similar between desired and actual.  If you get the
+rates to match and they feel like they are too fast, then reduce the
 ATC_ACCEL_MAX parameter and repeat the process above to match the desired and
-actual rates.  
+actual rates. 
 
 If while tuning the VFF gain the aircraft starts to oscillate, reduce the 
 ATC_ANG_xxx_P gain for that axis until the oscillations stop.  However for most 
@@ -195,7 +195,8 @@ With a flybar head, where the linkage rate is normally lower, it is recommended
 to start with 0.22 VFF for both pitch and roll and you will likely have to go
 higher with VFF. But for a flybarless head, VFF shouldn't be more than 0.22 
 unless you have really really slow servos or slow linkage rate. With all 
-helicopters the VFF gain compensates for differences in servo and linkage speed. 
+helicopters, the VFF gain compensates for differences in servo and linkage
+speed. 
 
 The final setting for ATC_ACCEL_MAX parameters will depend on the size of the
 helicopter.  Large 800-900 class machines will typically be in the 36000-52000 
@@ -220,10 +221,14 @@ keep the actual aircraft following the software predicted rates.
  
 Start with the D gain.  Use the tuning feature of ArduCopter which is linked to
 channel 6 on your radio.  Make the following parameter changes.
-TUNING = 21
-TUNING_LOW = 0
-TUNING_HIGH = 30 (for futaba radios this equates to one increment in the knob to
-0.001)
++---------------------+---------+
+| TUNING              | 21      |
++---------------------+---------+
+| TUNING_LOW          | 0       |
++---------------------+---------+
+| TUNING_HIGH         | 30*     |
++---------------------+---------+
+*for futaba radios this equates to one increment in the knob to 0.001
 
 Adjust the tuning knob until the ATC_RATE_RLL_D and ATC_RATE_PIT_D gains are
 0.001. Lift into a hover and make some sharp stick inputs in roll.  Most
@@ -235,10 +240,14 @@ ATC_RATE_PIT_D.  Test hover the heli and make some rapid stick movements in both
 pitch and roll to make sure it's stable.
 
 Now tune the P gains.  Make the following tuning parameter changes.
-TUNE = 4
-TUNE_LOW = 0
-TUNE_HIGH = 300 (for futaba radios this equates to one increment in the knob to
-0.01)
++---------------------+---------+
+| TUNING              | 4       |
++---------------------+---------+
+| TUNING_LOW          | 0       |
++---------------------+---------+
+| TUNING_HIGH         | 300*    |
++---------------------+---------+
+*for futaba radios this equates to one increment in the knob to 0.01
 
 Adjust the tuning knob until the ATC_RATE_RLL_P and ATC_RATE_PIT_P  gains are
 0.05. Lift into a hover and roll aggressively from side to side.  If it doesn't
@@ -340,9 +349,9 @@ in the roll axis.
 
 Adjusting I-gains For High-Speed Autonomous Flight
 ===================================================
-Prepare a mission with your ground station software that will fly the helicopter
-, preferably in a figure-8 pattern to make both right and left turns, at a
-speed of 6 m/s. Fly the helicopter on this mission, pull the logs from the
+Prepare a mission with your ground station software that will fly the 
+helicopter, preferably in a figure-8 pattern to make both right and left turns,
+at a speed of 6 m/s. Fly the helicopter on this mission, pull the logs from the
 microSD card and look at the AHRS desired vs actual pitch, roll and yaw
 attitudes in dynamic flight. They should track within 1-2 degrees. If they do
 not, increase the ATC_RAT_xxx_I value for that axis until they do.
