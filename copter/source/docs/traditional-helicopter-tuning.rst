@@ -218,10 +218,10 @@ mechanical version of the rate PID loop. So flybar is tuned using only VFF in
 pitch and roll. The rate D and P gains mentioned in the next topic below are
 left set to zero for flybar. I-gain, IMAX, and ILMI are tuned just like FBL.
 Below is a plot of beginning a tune on a flybar helicopter using the starting
-setting of ATC_RAT_RLL_VFF = 0.22. The graph shows the aircraft's response to the
-rate request of the attitude controller is low, meaning the VFF value must be
-increased to achieve proper rate response. For all flybar helicopters be sure to
-set H_FLYBAR_MODE = 1
+setting of ATC_RAT_RLL_VFF = 0.22. The graph shows the aircraft's response to
+the rate request of the attitude controller is low, meaning the VFF value must
+be increased to achieve proper rate response. For all flybar helicopters be sure
+to set H_FLYBAR_MODE = 1
 
 .. image:: ../images/TradHeli_tuning_example3_1.png
 
