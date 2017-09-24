@@ -233,6 +233,7 @@ keep the actual aircraft following the software predicted rates.
  
 Start with the D gain.  Use the tuning feature of ArduCopter which is linked to
 channel 6 on your radio.  Make the following parameter changes.
+
 +---------------------+---------+
 | TUNING              | 21      |
 +---------------------+---------+
@@ -240,6 +241,7 @@ channel 6 on your radio.  Make the following parameter changes.
 +---------------------+---------+
 | TUNING_HIGH         | 30*     |
 +---------------------+---------+
+
 *for futaba radios this equates to one increment in the knob to 0.001
 
 Adjust the tuning knob until the ATC_RAT_RLL_D and ATC_RAT_PIT_D gains are
@@ -252,6 +254,7 @@ ATC_RAT_PIT_D.  Test hover the heli and make some rapid stick movements in both
 pitch and roll to make sure it's stable.
 
 Now tune the P gains.  Make the following tuning parameter changes.
+
 +---------------------+---------+
 | TUNING              | 4       |
 +---------------------+---------+
@@ -259,6 +262,7 @@ Now tune the P gains.  Make the following tuning parameter changes.
 +---------------------+---------+
 | TUNING_HIGH         | 300*    |
 +---------------------+---------+
+
 *for futaba radios this equates to one increment in the knob to 0.01
 
 Adjust the tuning knob until the ATC_RAT_RLL_P and ATC_RAT_PIT_P  gains are
