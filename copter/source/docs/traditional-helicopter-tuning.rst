@@ -47,7 +47,7 @@ from the pilot input and the rate from the attitude controller and determines
 the swashplate commands required to achieve the input rate. The rate controller
 uses a PID control algorithm and a feed forward path to control the aircraft and
 achieve the input rate. The feed forward path uses the input rate and applies
-the ATC_RATE_PIT_VFF gain for pitch and ATC_RATE_RLL_VFF gain for roll to
+the ATC_RAT_PIT_VFF gain for pitch and ATC_RAT_RLL_VFF gain for roll to
 determine its portion of the swashplate command. The PID algorithm uses the
 error between the actual rate and input rate to determine its portion of the
 swashplate command. These are summed and sent to the mixing unit where the servo
@@ -63,10 +63,10 @@ should be, then any error between the requested and actual rates will result in
 attitude error. So there is a feature called the integrator that continually
 sums the rate errors which effectively calculates the error in attitude.  The
 I gain is multiplied by the integrator and summed with the other outputs of the
-rate controller.  The integrator is limited by the ATC_RATE_RLL_IMAX in roll and
-ATC_RATE_PIT_IMAX in pitch.  When ground speed is less than 5 m/s, the
+rate controller.  The integrator is limited by the ATC_RAT_RLL_IMAX in roll and
+ATC_RAT_PIT_IMAX in pitch.  When ground speed is less than 5 m/s, the
 integrator is leaked off (reduced at a specified rate) and another parameter, 
-ATC_RATE_RLL_ILMI and ATC_RATE_PIT_ILMI, only lets it leak off so much.  If the 
+ATC_RAT_RLL_ILMI and ATC_RAT_PIT_ILMI, only lets it leak off so much.  If the 
 ILMI, or integrator leak minimum, is zero then the integrator will not be 
 allowed to grow and the attitude will not be driven to exactly match the 
 software’s predicted attitude.  However, if this is non zero or large enough for
@@ -212,6 +212,18 @@ offset.
 
 .. image:: ../images/TradHeli_tuning_example1_1.png
 
+**Note on Tuning Flybar Helicopers** - for flybar heads the flybar is a
+mechanical version of the rate PID loop. So flybar is tuned using only VFF in
+pitch and roll. The rate D and P gains mentioned in the next topic below are
+left set to zero for flybar. I-gain, IMAX, and ILMI are tuned just like FBL.
+Below is a plot of beginning a tune on a flybar helicopter using the starting
+setting of ATC_RAT_RLL_VFF = 0.22. The graph shows the aircraft's response to the
+rate request of the attitude controller is low, meaning the VFF value must be
+increased to achieve proper rate response. For all flybar helicopters be sure to
+set H_FLYBAR_MODE = 1
+
+.. image:: ../images/TradHeli_tuning_example3_1.png
+
 Tuning the D and P gain
 =========================
 Once you have the heli responding nicely with the rate VFF gain, now tune the
@@ -225,13 +237,13 @@ TUNING_LOW = 0
 TUNING_HIGH = 30 (for futaba radios this equates to one increment in the knob to
 0.001)
 
-Adjust the tuning knob until the ATC_RATE_RLL_D and ATC_RATE_PIT_D gains are
+Adjust the tuning knob until the ATC_RAT_RLL_D and ATC_RAT_PIT_D gains are
 0.001. Lift into a hover and make some sharp stick inputs in roll.  Most
 helicopters will see roll oscillations before they see pitch oscillations.
 That is why roll inputs are suggested.  If it doesn't shake, increase the gain
 by 0.001 and try it again. At the value where you get the rapid shaking, cut
-that value in half and enter it as the final tuning value for ATC_RATE_RLL_D and
-ATC_RATE_PIT_D.  Test hover the heli and make some rapid stick movements in both
+that value in half and enter it as the final tuning value for ATC_RAT_RLL_D and
+ATC_RAT_PIT_D.  Test hover the heli and make some rapid stick movements in both
 pitch and roll to make sure it's stable.
 
 Now tune the P gains.  Make the following tuning parameter changes.
@@ -240,19 +252,19 @@ TUNE_LOW = 0
 TUNE_HIGH = 300 (for futaba radios this equates to one increment in the knob to
 0.01)
 
-Adjust the tuning knob until the ATC_RATE_RLL_P and ATC_RATE_PIT_P  gains are
+Adjust the tuning knob until the ATC_RAT_RLL_P and ATC_RAT_PIT_P  gains are
 0.05. Lift into a hover and roll aggressively from side to side.  If it doesn't
 shake, increase the gain by 0.01 and try it again. At the value where you get
 the rapid shaking, cut that value in half and enter it as the final tuning value
-for ATC_RATE_RLL_P and ATC_RATE_PIT_P.  Test hover the heli and make some rapid
+for ATC_RAT_RLL_P and ATC_RAT_PIT_P.  Test hover the heli and make some rapid
 stick movements in both pitch and roll to make sure it's stable.  
 
 After tuning the P and D gain the aircraft should feel much smoother.
 
 Setting the I gain, IMAX, and ILMI
 ====================================
-It is recommended to set the ATC_RATE_PIT_I gain equal to the ATC_RATE_PIT_VFF
-gain and the ATC_RATE_RLL_I gain equal to the ATC_RATE_RLL_VFF gain.  The IMAX
+It is recommended to set the ATC_RAT_PIT_I gain equal to the ATC_RAT_PIT_VFF
+gain and the ATC_RAT_RLL_I gain equal to the ATC_RAT_RLL_VFF gain.  The IMAX
 value limits amount of integrator error that can be stored to counter large
 disturbances in attitude.  In the pitch axis this is set by the integrator error
 required to hold the aircraft attitude at high forward speeds.  The starting
