@@ -313,19 +313,25 @@ attitude properly under full autopilot control.
 
 Hover Trim
 ===========
-All conventional single-rotor helicopters with a torque-compensating tail rotor
-hover either right skid low or left skid low, depending on which way the main
-rotor turns. The ArduCopter software has a parameter, ATC_HOVR_RLL_TRIM, to
-compensate for this phenomenon. To tune the hover trims first set this parameter
-to zero, place the helicopter on a level surface and verify that the flight
-controller's trims are set properly for the angle the flight controller was
-installed in the frame at.
+Trimming the helicopter in pitch and roll axes is an important step to keep the
+aircraft from drifting in modes like Stabilize and Althold.  The trim attitude 
+in the roll axis is affected by the tail rotor thrust.  All conventional single-
+rotor helicopters with a torque-compensating tail rotor hover either right skid 
+low or left skid low, depending on which way the main rotor turns. The 
+ArduCopter software has a parameter, ATC_HOVR_RLL_TRIM, to compensate for this 
+phenomenon. Longitudinal CG location will affect the trim attitude in the pitch
+axis.  There is no parameter to tell the flight controller what pitch attitude 
+the aircraft hovers with no drift. It always targets zero deg pitch as measured
+by the flight controller. Therefore the actual pitch attitude the aircraft 
+hovers may be 5 deg nose high but the flight controller AHRS Trim value is set
+to make it think the attitude is zero deg. 
 
-The AHRS trim values that we will change are normally set during the
-accelerometer calibration. But in the real world the flight controller was
-likely not installed perfectly "true" and helicopters are very hard to calibrate
-the accelerometer with the flight controller already installed. So we compensate
-using the following method:
+In order to trim the aircraft, set the ATC_HOVR_RLL_TRIM parameter to zero. 
+During the initial setup of the flight controller, the AHRS_TRIM values are set 
+during the accelerometer calibration on the last step that has you level the 
+aircraft. For that step you should have made certain that the shaft was 
+perfectly straight up in pitch and roll. For this trim procedure, it is 
+recommended that you check it and using the method below.
 
 Measure the actual frame angle (on a portion of the frame that is perpendicular
 to the mainshaft) in pitch and roll with your digital pitch gauge. Connected to
@@ -357,8 +363,7 @@ flight adjustments to be made to AHRS trims.
 
 Your helicopter is now trimmed properly. This trimming procedure makes the
 difference between a helicopter that is difficult to handle vs one that flies
-with true scale quality and handling. Improper trimming is often the cause of
-"tail bounce" or excessive sensitivity in the roll axis.
+with true scale quality and handling. 
 
 Adjusting I-gains For High-Speed Autonomous Flight
 ===================================================
