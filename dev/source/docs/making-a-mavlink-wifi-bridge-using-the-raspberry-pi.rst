@@ -295,7 +295,13 @@ may want to try:
 ::
 
     driver=nl80211
-
+    
+If you are using the built in WiFi on a Raspberry Pi 3 as wlan0, comment out the driver line:
+    
+::
+    
+    #driver=rt1871xdrv
+ 
 Make sure the file has no extra spaces or tabs at the beginning and ends
 of the lines, this file is very sensitive to this.
 
@@ -415,9 +421,10 @@ adapter.
 Update hostapd
 --------------
 
-The hostapd version installed by apt-get does not fully support the WiFi
-dongle we are using so we need to update it to a later version. Lets get
-the new version of hostapd by typing the follwing command:
+If you are not using the built in WiFi on a Raspberry Pi 3 then the hostapd
+version installed by apt-get does not fully support the WiFi dongle we are using
+so we need to update it to a later version. Lets get the new version of hostapd 
+by typing the follwing command: (only if NOT using the built in Wifi)
 
 ::
 
