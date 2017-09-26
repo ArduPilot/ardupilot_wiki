@@ -54,7 +54,6 @@ There are several great resources online for modification ideas,vendors, beta te
 -  `ArduPilot Discuss Forums <https://discuss.ardupilot.org/c/arducopter/copter-3-5>`_
 -  `ArduPilot copter Wiki <http://ardupilot.org/copter/docs/common-advanced-configuration.html>`_
 -  `3DR Pilots Forum <https://3drpilots.com/>`_ 
--  _`Solo Battery Calibration Process <solo_battery_calibration>`
 -  :ref:`Solo Battery Calibration Process <solo_battery_calibration>`
 
 
