@@ -6,7 +6,7 @@ Tilt Rotor Planes
 
 Tilt rotors are treated by ArduPilot as a special type of
 QuadPlane. You should start off by reading the :ref:`QuadPlane
-documentation <quadplane-support` before moving onto this tilt-rotor
+documentation <quadplane-support>` before moving onto this tilt-rotor
 specific documentation.
 
 In ArduPilot nomenclature, a tilt-rotor is a type of VTOL aircraft
@@ -14,7 +14,7 @@ where transition between hover and forward flight is accomplished by
 tilting one or more rotors so that it provides forward thrust instead
 of upward thrust.
 
-This is distinct from :ref:`tailsitters <guide-tailsitter` where the
+This is distinct from :ref:`tailsitters <guide-tailsitter>` where the
 autopilot and main fuselage change orientation when moving between
 hover and forward flight.
 
