@@ -122,7 +122,7 @@ described
 :ref:`here <roll-pitch-controller-tuning>`.
 
 Once all this has checked out, you can program waypoint missions and
-test then in Auto mode.
+test them in Auto mode.
 
 Level Adjustment
 ================
