@@ -3,6 +3,8 @@
 FrSky Telemetry Using Repurposed Messages
 =========================================
 
+The original solution for transmitting Ardupilot telemetry data over the FrSky telemetry link was to reuse FrSky data messages meant for another purpose and/or reserved by FrSky for their sensors. For example in this protocol the Flight mode is sent using the tmp1 message instead of the temperature. If you are not using a temperature sensor on your vehicle, this will not cause any problem. If you intend to use other FrSky sensors, this telemetry protocol will cause conflicts with them.
+
 For information on how to connect the FrSky equipment together, please go :ref:`here <common-frsky-equipment>`.
 
 For information on how to configure ArduPilot for FrSky telemetry, please go :ref:`here <common-frsky-configMP>`. 
@@ -39,6 +41,25 @@ Values that are sent over the FrSky telemetry link by ArduPilot:
 +-------------------------------------+---------------------------------------------------------------+
 
 If you installed FrSky sensors on your vehicle, other messages from these may also appear during discovery.
+
+Repurposed Messages Scripts for Ardupilot
+=========================================
+The following script was made specifically for Ardupilot with telemetry protocol 4, repurposed messages.
+
+* `LuaPilot <http://ilihack.github.io/LuaPilot_Taranis_Telemetry>`__
+
+for additional information, see:
+
+* `LuapPilot use for plane discussion <https://discuss.ardupilot.org/t/lua-script-for-apm-plane-quadplane/16202>`__
+
+
+
+.. image:: ../../../images/LuaPilot-Logo.jpg
+      :target: ../_images/LuaPilot-Logo.jpg
+
+.. image:: ../../../images/LuaPilot.jpg
+      :target: ../_images/LuaPilot.jpg
+
 
 Configuration with OpenTX
 =========================
