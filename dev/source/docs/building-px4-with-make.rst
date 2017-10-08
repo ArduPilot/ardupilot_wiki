@@ -15,7 +15,7 @@ Build instructions
 ==================
 
 
-#. Install `GitHub for Windows <http://windows.github.com/>`__
+#. Install `GitHub Desktop <http://desktop.github.com/>`__
 #. Ensure your github settings are set to leave line endings untouched.
 
    -  The "Git Shell (or Bash)" terminal was also installed when you
