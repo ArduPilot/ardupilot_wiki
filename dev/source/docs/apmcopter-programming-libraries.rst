@@ -24,7 +24,7 @@ libraries and their function.
 -  `AC_AttitudeControl <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_AttitudeControl>`__ -
    ArduCopter's control library includes various functions of attitude, position control based on PID control.
    
--  `AP_WPNav <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_InertialNav>`__
+-  `AP_WPNav <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_WPNav>`__
    - waypoint navigation library
 -  `AP_Motors <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Motors>`__
    - multicopter and traditional helicopter motor mixing
