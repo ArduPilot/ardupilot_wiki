@@ -30,9 +30,9 @@ First, you need to plug in your motor cooling, field elevation, and
 ambient temperature. Notice that when you put in the ESC, you need to
 put in the \ **surge or burst** rating:
 
-.. image:: http://api.ning.com/files/gWhc*8EYmk*056RibQYQMXEviNvqyB5ZGnpR0Z1zmqYcI0BmrTMtZCi527vap*sDBt6sPcmcGH2DTQk5k2eHLOfSgKr4T16A/eCalc1.png
-    :target:  http://api.ning.com/files/gWhc*8EYmk*056RibQYQMXEviNvqyB5ZGnpR0Z1zmqYcI0BmrTMtZCi527vap*sDBt6sPcmcGH2DTQk5k2eHLOfSgKr4T16A/eCalc1.png
-
+.. image:: https://www.dropbox.com/s/t7go40ig2mtkcyb/eCalc%201.png?dl=0
+    :target: https://www.dropbox.com/s/t7go40ig2mtkcyb/eCalc%201.png?dl=0
+    
 Battery Information
 ~~~~~~~~~~~~~~~~~~~
 
@@ -43,8 +43,8 @@ drop down and select \ **CUSTOM**. In my example, I chose a 2100 mAh
 battery, but went back and changed it to 2200 for more precise flight
 times:
 
-.. image:: http://api.ning.com/files/gWhc*8EYmk9l4FEglvwSGqJnQ3PmWGs-3ADj1NEchm15QfjSC1DspdFrq2mMskkwhYkjg13BnXVUBJyxjHi6BlHp5b3EXDaA/eCalc2.png
-    :target: ../_images/eCalc2.png
+.. image:: https://www.dropbox.com/s/2yiozjnvyoinzik/eCalc%202.png?dl=0
+    :target: https://www.dropbox.com/s/2yiozjnvyoinzik/eCalc%202.png?dl=0
 
 Motor Information
 ~~~~~~~~~~~~~~~~~
@@ -55,9 +55,9 @@ populate the rest of the fields for you and then go back and change the
 fields with information from the manufacturer's website. In my example,
 I had to change power (watts) and weight:
 
-.. image:: http://api.ning.com/files/gWhc*8EYmk9bKR4yB0KEmw38gVMoVavotgxs2b8CTcYGnWlJg1jvfFjf7v5S3KWLQ0WQG9H2l2Din5-9yzDGvWEffFskMtV-/eCalc3.png
-    :target:  http://api.ning.com/files/gWhc*8EYmk9bKR4yB0KEmw38gVMoVavotgxs2b8CTcYGnWlJg1jvfFjf7v5S3KWLQ0WQG9H2l2Din5-9yzDGvWEffFskMtV-/eCalc3.png
-
+.. image:: https://www.dropbox.com/s/h3efar88p5hn941/eCalc%203.png?dl=0
+    :target:  https://www.dropbox.com/s/h3efar88p5hn941/eCalc%203.png?dl=0
+    
 Propeller Information
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -65,9 +65,9 @@ Next, select a prop and press \ **CALCULATE**. You want to experiment
 with motor and prop combinations that do not give you the red warning
 letters:
 
-.. image:: http://api.ning.com/files/gWhc*8EYmk9JGfv7XlQv1U3ancO1aonJ1lZWrz05orWsx21YWX9sIsg10tEl*vn7SUJSHZdOwDUSZ4LD0Xda7HFJ0lk8wL*q/eCalc4.png
-    :target:  http://api.ning.com/files/gWhc*8EYmk9JGfv7XlQv1U3ancO1aonJ1lZWrz05orWsx21YWX9sIsg10tEl*vn7SUJSHZdOwDUSZ4LD0Xda7HFJ0lk8wL*q/eCalc4.png
-
+.. image:: https://www.dropbox.com/s/ufxk5zl321bu5fq/eCalc%204.png?dl=0
+    :target:  https://www.dropbox.com/s/ufxk5zl321bu5fq/eCalc%204.png?dl=0
+    
 Try Various Propellers
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -75,8 +75,8 @@ After making some changes, the most efficient prop for this motor is a 6
 x 3E from APC. Notice the flight times offer you a range, depending on
 your flying style:
 
-.. image:: http://api.ning.com/files/gWhc*8EYmk-wH9lw2GStAGUnSZTSyXPeR9a4h5etzgdg5dzjvAsGwmR4cCmXV3hgbpwHtEuEVGKWlx6nn17EZTwEW7kFWWIZ/eCalc5.png
-    :target:  http://api.ning.com/files/gWhc*8EYmk-wH9lw2GStAGUnSZTSyXPeR9a4h5etzgdg5dzjvAsGwmR4cCmXV3hgbpwHtEuEVGKWlx6nn17EZTwEW7kFWWIZ/eCalc5.png
+.. image:: https://www.dropbox.com/s/t1q6u6j8bzlzsj3/eCalc%205.png?dl=0
+    :target:  https://www.dropbox.com/s/t1q6u6j8bzlzsj3/eCalc%205.png?dl=0
 
 Tune For Actual Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,9 +87,8 @@ of stalling with very little reserve thrust. It would literally stand
 still in ~20 MPH winds! I changed out for a 6 x 4E prop which gives much
 more power while sacrificing very little in flight times:
 
-.. image:: http://api.ning.com/files/gWhc*8EYmk8J8reiqy97JBKUTTQ60akJKaxYiEB2TqaqvAj4aBPUcD*5g8-eLldhuUCx-RbIfnz4I1ozydzbANfZQHXis78s/eCalc6.png
-    :target:  http://api.ning.com/files/gWhc*8EYmk8J8reiqy97JBKUTTQ60akJKaxYiEB2TqaqvAj4aBPUcD*5g8-eLldhuUCx-RbIfnz4I1ozydzbANfZQHXis78s/eCalc6.png
-
+.. image:: https://www.dropbox.com/s/bgu4a61pxkt4ng8/eCalc%206.png?dl=0
+    :target:  https://www.dropbox.com/s/bgu4a61pxkt4ng8/eCalc%206.png?dl=0
 I can attest that the accuracy is dead-on with eCalc. At 10-11 minutes
 of flight time, my battery is at 50%. I hope this helps someone out on
 their journey!
