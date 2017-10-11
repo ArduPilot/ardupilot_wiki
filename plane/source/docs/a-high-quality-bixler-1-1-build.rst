@@ -6,14 +6,6 @@ High Quality Bixler 1.1 Build (APM2.x)
 
 This article describes a well planned Bixler Build (by Dave Smith).
 
-.. image:: http://api.ning.com/files/u325ipbpd7oqTtPXcbe06pO*YRgzw3pmmYp1bMm2Wg9DNb8LsLAgkd2DEDlgEKdYRKjFIMWOg1LkAG4u-fMpgy-Jp9ceEGXv/mainbix6.jpg
-    :target:  http://api.ning.com/files/u325ipbpd7oqTtPXcbe06pO*YRgzw3pmmYp1bMm2Wg9DNb8LsLAgkd2DEDlgEKdYRKjFIMWOg1LkAG4u-fMpgy-Jp9ceEGXv/mainbix6.jpg
-
-.. tip::
-
-   This wiki page is a work in progress and will be completed as the
-   information becomes available.
-
 Overview
 ========
 
@@ -22,16 +14,16 @@ with everything taped to the outside. After digging through the
 internet, I found the answers I needed to build my plane, but the
 learning curve was pretty steep.
 
-Hopefully I can help somebody out and save them a lot of frustration by
-logging my whole build.
+**Hopefully I can help somebody out and save them a lot of frustration by
+logging my whole build.**
 
-The equipment list
+The Equipment List
 ==================
 
 #. `Bixler 1.1 ARF <http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idProduct=18083>`__
    (HobbyKing)
-#. `Motor <http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idProduct=34108>`__
-   (HobbyKing)
+#. `Motor <http://www.buddyrc.com/sunnysky-v2216-12-800kv-ii-brushless-motor.html>`_
+   (Buddy RC)
 #. `ESC <http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idProduct=26497>`__
    (HobbyKing)
 #. `SBEC <http://www.hobbyking.com/hobbyking/store/uh_viewItem.asp?idProduct=39470>`__
@@ -43,8 +35,7 @@ The equipment list
 #. APM 2.6 with separate GPS/compass
 #. Radio: Spektrum DX8
 #. Receiver: AR6210, no satellite
-#. Prop: APC 7-5. The HK 7-5 prop came with horrible adapter collars and
-   I do not recommend them!
+#. Prop: APC 8-4.7 Pusher
 #. `25cm 4 position cable <http://store.jdrones.com/cable_df13_4pin_25cm_p/cbldf13p4c25.htm>`__
    (store.3drobotics.com)
 #. `25 cm 6 position cable <http://store.jdrones.com/cable_df13_6pin_25cm_p/cbldf13p6c25.htm>`__
@@ -57,38 +48,23 @@ The equipment list
 Getting Started
 ===============
 
--  I am waiting on my new air-frame after an unfortunate incident with
-   an electrical wire on a windy day.
-
-   -  Part of the learning curve, which I will not elaborate upon
-      thoroughly to spare you the anquish.
-   -  Before I knocked the tail off, I had my plane hitting waypoints,
-      loitering, RTL, and auto-landing.
-
--  For now, I will show you what I did with the electronics.
-
-   -  I do not have telemetry yet, so I just used the stock PID settings
-      and added some I gain. (More on that later.)
-
--  About using an external SBEC: I chose to do this because I am an RC
+About using an external SBEC: I chose to do this because I am an RC
    heli guy, and I often use servos that draw ridiculous current.
 
-   -  If you power the servos separately from the motor, there is less
-      chance of either one shutting down due to over-current draw.
+   -  If you power the servos separately from the BEC built into the ESC,
+      there is less chance of either one shutting down due to over-current draw.
    -  But you also add a second electronic device that can fail.
    -  When the motor is at max throttle and servos are fully deflected,
       such as on a windy day, the separate BEC gives you some headroom.
-
--  I will post pics of the air-frame assembly when I receive it next
-   week.
+   -  There are smaller, inexpensive BECs on the market that use up less space
+      than what I have pictured.
 
 Programming the ESC
 ===================
 
 **Set up the programmer card as follows:**
 
-.. image:: http://i1302.photobucket.com/albums/ag127/davesmith111/internet%20pics/205cdb8d-fae5-47fe-99bf-fcf541a96d87_zpsba9c68f8.jpg
-    :target:  http://i1302.photobucket.com/albums/ag127/davesmith111/internet%20pics/205cdb8d-fae5-47fe-99bf-fcf541a96d87_zpsba9c68f8.jpg
+.. image:: https://www.dropbox.com/s/phtf6opy0weyf0q/IMG_5530.JPG?dl=0
 
 #. Set the low voltage cutoff to its lowest setting to allow the APM
    failsafe feature do its job.
@@ -121,7 +97,7 @@ have them. XT-60 are just fine.
 #. Pull the center (red) pin and wire from the ESC receiver connector.
 
    #. This disconnects the built in BEC from the ESC. You don't need it
-      since it is only powering the motor.
+      since it since we are using a separate (dedicated) BEC.
    #. Tuck the ESCs BEC wire away with heat shrink tubing over the end.
    #. You will need access to it if you need to re-program the ESC.
 
@@ -129,9 +105,14 @@ have them. XT-60 are just fine.
    make it easier to wire the Bixler's motor later.
 
 **Here it is ready to go:**
+.. image:: https://www.dropbox.com/s/1q7df67yviiv1jx/IMG_5529.JPG?dl=0
 
-.. image:: http://i1302.photobucket.com/albums/ag127/davesmith111/internet%20pics/7db2fd9a-9ee0-40a7-92d3-6fe473d97ce1_zps37b398da.jpg
-    :target:  http://i1302.photobucket.com/albums/ag127/davesmith111/internet%20pics/7db2fd9a-9ee0-40a7-92d3-6fe473d97ce1_zps37b398da.jpg
+Setting up the Flight Controller, sensors, and optional equipment
+======================================
+
+The purpose of this article is to detail the aircraft build, not the APM. There
+are many documents in the wiki covering the APM, sensors, and tuning.
+`Airplane walk-through <http://ardupilot.org/plane/docs/arduplane-setup.html>`_
 
 Mount the APM and install the wiring
 ====================================
@@ -142,19 +123,17 @@ Mount the APM and install the wiring
    the flight controller to provide vibration suppression.
 #. Zeal has high strength double sided adhesive, but if your pads do
    not, consider using "Welders Glue" available at Amazon or Lowes.
-
-   #. Re Welder's Glue: it is contact cement. Lightly cover each surface
-      you wish to bond and let them dry for about five minutes.
-   #. Then carefully align and put the two surfaces together and for
-      immediate bonding.
-   #. I will also use Welder's Glue for assembling the foam air frame
-      and building an access door in the fuselage.
+#. Re Welder's Glue: it is contact cement. Lightly cover each surface
+   you wish to bond and let them dry for about five minutes.
+#. Then carefully align and put the two surfaces together and for
+   immediate bonding.
+#. I will also use Welder's Glue for assembling the foam air frame
+   and building an access door in the fuselage.
 
 **The APM mounted on the plate: (Pictured are the stock cables to the
 GPS. I will actually be using the 30cm cables)**
 
-.. image:: http://i1302.photobucket.com/albums/ag127/davesmith111/internet%20pics/13968d8e-044e-4000-9768-11eb05257832_zps129a65ba.jpg
-    :target:  http://i1302.photobucket.com/albums/ag127/davesmith111/internet%20pics/13968d8e-044e-4000-9768-11eb05257832_zps129a65ba.jpg
+.. image:: https://www.dropbox.com/s/nsxdxxxca4i328l/IMG_5528.JPG?dl=0
 
 Preparing the Fuselage
 ======================
@@ -254,7 +233,8 @@ COMPONENT Installation Details
 .. image:: ../images/Componentlayout_zpsf49f6f82.jpg
     :target: ../_images/Componentlayout_zpsf49f6f82.jpg
 
--  At this point, space is becoming a concern.
+-  At this point, space is becoming a concern. Using a smaller BEC will help
+   you out.
 -  You will notice that we have put nothing in the nose so far, and all
    of our components are pretty tightly tucked under the wing.
 -  I did this so that we can utilize bigger batteries in future builds.
@@ -270,17 +250,33 @@ Complete The Construction
 =========================
 
 #. Use a servo splitter cable for the ailerons, I got odd results
-   when programming separate aileron servo on its own channel.
+   when programming separate aileron servo on its own channel. That was just my
+   choice, and using seperate channels will work fine.
 #. I am quite happy with this setup because you can get the CG perfect
-   with Zippy 2200mAh Lipo batteries.
+   with Zippy 2200mAh Lipo batteries. I was able to use up to 3000 mAh batts.
 #. I mounted the GPS/Compass on the right wing after removing just a
    small amount of material.
-#. I mounted it with hot glue and taped the cables in place with 3M
-   Blenderm tape.
-#. I like Blenderm because it sticks well and is flexible.
 #. Having it sitting up high on the wing is not ideal, but I wanted to
    get it away from the fuselage and all of the current-carrying
-   electronics.
+   electronics. I ultimately ran the cables under the wing along
+   the carbon fiber rod, which is much smoother.
 
 .. image:: ../images/plane_bixler_compass_on_wing.jpg
     :target: ../_images/plane_bixler_compass_on_wing.jpg
+
+
+Tuning and Flight Performance
+=========================
+
+To get the best motor and propeller for my build, I used eCalc, which is
+worth the money. There is a tutorial here:
+`eCalc motor and prop efficience guide <http://ardupilot.org/plane/docs/ecalc-motor-and-prop-efficiency-guide.html?highlight=ecalc>`_
+
+After going through the wizard in Mission Planner, you should have a compass
+that points correctly, and a properly working GPS. I found that the initial
+settings were quite flyable, and using the Autotune to give very good results.
+
+At 6 m/s the aircraft becomes unstable and begins to tip stall, so keep your
+cruise speed higher than this. Using a 2217-800 kV motor and and 8-4.7 prop
+configuration and a 3000 mAh battery, I was able to achieve
+**80 minute flights** at 12 m/s air speed!
