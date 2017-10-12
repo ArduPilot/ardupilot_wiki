@@ -134,7 +134,7 @@ these classes.
 | bool ChangeParam (string param,      |                                      |
 | float value)                         |                                      |
 +--------------------------------------+--------------------------------------+
-| Float getParam (string param)        |                                      |
+| Float GetParam (string param)        |                                      |
 +--------------------------------------+--------------------------------------+
 | bool ChangeMode (string mode)        | Changes flying mode                  |
 +--------------------------------------+--------------------------------------+
