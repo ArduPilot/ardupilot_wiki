@@ -123,3 +123,10 @@ Here are some extra tips for throw mode on the SkyViper:
 - after the throw, the copter will take a few seconds to settle, then
   will automatically switch to LOITER mode for you to fly it
 
+Using Other GCS Software
+------------------------
+
+The SkyViper has its own app that runs on android or iOS, but to access the full capabilities of the ArduCopter firmware you may prefer to use another ground station package. The SkyViper can work with a wide range of GCS software, including MissionPlanner, QGC, Tower, MAVProxy etc. For each of them, set them up to listen on UDP port 14550.
+The SkyViper uses MAVLink2 by default, which doesn't work with some older GCS software (such as Tower). To use those GCS versions you need to change the parameter SERIAL1_PROTOCOL to 1 from the default of 2. That will allow MAVLink1 GCS implementations to connect.
+As the SkyViper uses UDP broadcasts you can connect from multiple devices at once.
+
