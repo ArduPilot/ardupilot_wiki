@@ -4,284 +4,380 @@
 Traditional Helicopter – Tuning
 ===============================
 
-PID Tuning
-==========
+This tuning guide is applicable to all versions of ArduCopter for traditional
+helicopters. However, it is written for Copter 3.4 and newer. Since the names of
+parameters, and scaling, were changed from Copter 3.3 to 3.4 the
+:ref:`old tuning guide is archived here <traditional-helicopter-archived-
+tuning>`
 
-Now, we come to the PID tuning. This part is a bit trickier. The first
-tip is that whenever you go into the Copter PID configuration screen;
-make sure that Lock Pitch/Roll is unchecked. Helis need separate
-pitch/roll values because the moment of inertia of the airframe is very
-different in the two different axes. This is because the tail boom is so
-long and there's a lot more mass in the fore/aft axis, so it's slower.
+For making setting changes to traditional helicopters, users are reminded to 
+use only the Full or Complete Parameter List in your ground station software. 
+**Do not use the Basic, Extended or Advanced Tuning pages that are designed for
+multi-rotor aircraft.** These pages will make unwanted setting changes to 
+traditional helicopters. And remember to write the changes to the flight 
+controller after making them or they won't be saved!
 
-On the Copter Config tab, the STB_RLL_P value should be the default of
-4.5 and STB_PIT_P value should be the default value of 3.5. This
-softens the pitch axis a bit compared to the roll axis and helps prevent
-bouncing. The I-term on both should be zero.
+General ArduCopter Flight Control Law Description
+===================================================
+Users should generally understand the flight control laws before tuning. At
+a high level, the arducopter control laws are designed as a model following
+architecture where the software converts the pilot input into a commanded
+attitude (Stabilize Mode) or commanded rate (Acro mode) and controls the
+aircraft to achieve that commanded value. In the background, the software keeps
+track of, or predicts, where the aircraft should be in space (i.e. pitch and
+roll attitude) based on the inputs of the pilot or autopilot. It has two
+controllers (attitude and rate) that work together to ensure the actual aircraft
+is following the software’s predicted pitch and roll rates and attitudes.
+ 
+The pilot’s commands are limited by the amount of acceleration that can be
+commanded through the ATC_ACCEL_P_MAX for pitch and ATC_ACCEL_R_MAX for roll.
+The initial responsiveness (crispness/sluggishness) of the aircraft to the pilot
+input can be adjusted through the RC_FEEL parameter. The pilot input and these
+parameters are used to determine the requested rate required to achieve the
+desired response that is fed to the rate controller.
+ 
+The attitude controller is used to ensure the actual attitude of the aircraft
+matches the predicted attitude of the flight controller. It uses the
+ATC_ANG_PIT_P in pitch and the ATC_ANG_RLL_P in roll to determine a rate that is
+fed to the rate controller that will drive the aircraft to the predicted
+attitude. 
 
-Now, the Rate part is a little trickier.
+The rate controller receives the sum of the requested rate resulting
+from the pilot input and the rate from the attitude controller and determines
+the swashplate commands required to achieve the input rate. The rate controller
+uses a PID control algorithm and a feed forward path to control the aircraft and
+achieve the input rate. The feed forward path uses the input rate and applies
+the ATC_RAT_PIT_VFF gain for pitch and ATC_RAT_RLL_VFF gain for roll to
+determine its portion of the swashplate command. The PID algorithm uses the
+error between the actual rate and input rate to determine its portion of the
+swashplate command. These are summed and sent to the mixing unit where the servo
+positions are determined.
 
-You will need to change the RATE_PIT_P and RATE_RLL_P to get your
-heli to fly properly but to start with, set these to zero. They should
-be zero by default.
+So this tuning method uses the VFF gain initially to ensure the requested rates
+match the actual rates.  However the rates can vary from the requested due to
+disturbances. The P and D gains are then used to guard against disturbances
+that cause the actual rates to deviate from the requested rates. So the P and D
+gain may not be able to keep the actual rates exactly matching the requested
+rates.  Since the software is tracking where the orientation of the aircraft
+should be, then any error between the requested and actual rates will result in
+attitude error. So there is a feature called the integrator that continually
+sums the rate errors which effectively calculates the error in attitude.  The
+I gain is multiplied by the integrator and summed with the other outputs of the
+rate controller.  The integrator is limited by the ATC_RAT_RLL_IMAX in roll and
+ATC_RAT_PIT_IMAX in pitch.  When ground speed is less than 5 m/s, the
+integrator is leaked off (reduced at a specified rate) and another parameter, 
+ATC_RAT_RLL_ILMI and ATC_RAT_PIT_ILMI, only lets it leak off so much.  If the 
+ILMI, or integrator leak minimum, is zero then the integrator will not be 
+allowed to grow and the attitude will not be driven to exactly match the 
+software’s predicted attitude.  However, if this is non zero or large enough for
+attitude errors that may be encountered at low speeds and in a hover, then the 
+actual attitude will track the predicted attitude. The reason for the leak and 
+ILMI parameter is that a larger amount of integrator is needed for forward 
+flight. However, in a hover and in particular during air ground transition, 
+allowing large amounts of integrator can cause the aircraft to flip itself on
+its side.  So the integrator leak along with the leak minimum parameter keep 
+enough of the integrator to make it effective in keeping the attitudes matching
+but not so powerful to cause the aircraft to roll over.
 
-Something to keep in mind here, the Rate PID numbers you come up with
-will be heavily influenced by the following: # Your swash servo speed #
-Your swash servo motion ratio i.e. servo arm length, swash plate
-dimensions and blade grip arm length # H_PIT_MAX and H_ROL_MAX
-values.
+Initial Setup of Pitch and Roll Tuning Parameters
+===================================================
+Below are the initial parameters values that should be used to start the tuning
+of your helicopter. Use the suggested parameters in the yaw section below for
+the tail. The helicopter will be easily controllable with just the VFF set to
+0.15 on pitch and roll in the event that you need to modify the tail settings
+from the defaults.  
 
-Any time you change these you'll probably have to retune your Rate PID's
-a bit. We expect that with faster servos you'll be able to tune Rate P
-up and get better control without oscillation. Start with RATE_RLL_I
-of 0.1000 (default) and RATE_PIT_I of 0.0500 (default is 0.1000).
++---------------------+---------+
+| ATC_ACCEL_P_MAX     | 110000  |
++---------------------+---------+
+| ATC_ACCEL_R_MAX     | 110000  |
++---------------------+---------+
+| ATC_ANG_PIT_P       | 4.5     |
++---------------------+---------+
+| ATC_ANG_RLL_P       | 4.5     |
++---------------------+---------+
+| ATC_RAT_PIT_D       | 0       |
++---------------------+---------+
+| ATC_RAT_PIT_FILT    | 20      |
++---------------------+---------+
+| ATC_RAT_PIT_I       | 0       |
++---------------------+---------+
+| ATC_RAT_PIT_ILMI    | 0       |
++---------------------+---------+
+| ATC_RAT_PIT_IMAX    | 0.40    |
++---------------------+---------+
+| ATC_RAT_PIT_P       | 0       |
++---------------------+---------+
+| ATC_RAT_PIT_VFF     | 0.15    |
++---------------------+---------+
+| ATC_RAT_RLL_D       | 0       |
++---------------------+---------+
+| ATC_RAT_RLL_FILT    | 20      |
++---------------------+---------+
+| ATC_RAT_RLL_I       | 0       |
++---------------------+---------+
+| ATC_RAT_RLL_ILMI    | 0       |
++---------------------+---------+
+| ATC_RAT_RLL_IMAX    | 0.40    |
++---------------------+---------+
+| ATC_RAT_RLL_P       | 0       |
++---------------------+---------+
+| ATC_RAT_RLL_VFF     | 0.15    |
++---------------------+---------+
+| RC_FEEL             | 50      |
++---------------------+---------+
 
-Now set Ch6 tuning in the Copter Config tab to CH6_RATE_KP and set the
-Min to 0.0100 and the Max to 0.0750 and make sure you turn your Ch6 knob
-all the way down. Refresh parameters and make sure that RATE_PIT_P and
-RATE_RLL_P show up as 0.0100 so that you know the Ch6 tuning is
-working properly.
+Tuning the Yaw Axis (Rudder)
+====================================
+It is recommended to make sure the tail functions properly before proceeding
+with tuning pitch and roll.
 
-Here's where it gets tricky and we really recommend you do this in a
-large area with no wind. Maybe indoors in a 20m by 20m area, but only if
-you're a good pilot.
+**Important Note** - UAV helicopters, as opposed to sport helicopters, will
+usually be running low headspeed and higher disc loading. With a mechanically
+driven tail this also means lower than normal tail speed and reduced tail
+authority. If your helicopter meets this description, it is recommended to set
+ATC_RAT_YAW_VFF to 0.05 before the first test hover.
 
-Spool up your heli **VERY CAREFULLY**. Don't just take off because you
-will have very little control over the heli! It might be best to do this
-with training gear if you can. Lift off just one inch but be ready to
-put it down because you will have little or no control. It's going to be
-bad, so be ready for it! You should have no oscillation with a P-term of
-0.0100.
+Below are the current default settings for yaw. Spool up the heli and hover it
+no more than .25 meters above ground in Stabilize flight mode and test the
+starting tail settings. If the tail seems "loose" and doesn't want to hold
+increase the ATC_RAT_YAW_P. If the tail rapidly shakes side to side reduce the
+ATC_ANG_YAW_P.
 
-If you do, you have big problems and will need to consult the
-specialists on DIYDrones!
+In all cases it is not recommended to adjust ATC_ANG_YAW_P below 3.5 or
+ATC_RAT_YAW_P above 0.38. If your helicopter cannot seem to achieve a solid tail
+within those limits you likely have a mechanical problem with the tail - either
+excessive "slop" or play in the linkage, binding of the linkage or a servo
+problem. Correct the problem before proceeding with roll and pitch tuning.
 
-Now try turning the knob up a bit, maybe to 0.0200. Try just lifting off
-remembering that you will still have little control but hopefully you
-will have no oscillation. Keep doing this, testing more and more P-term
-until you get oscillation. Be careful with that P-term because once you
-find the point where it oscillates, it gets bad REALLY fast and you
-could destroy your helicopter! You will find that the oscillation will
-always happen in the roll direction first. This is because of its lower
-moment of inertia.
++---------------------+---------+
+| ATC_ACCEL_Y_MAX     | 27000   |
++---------------------+---------+
+| ATC_ANG_YAW_P       | 4.5     |
++---------------------+---------+
+| ATC_RAT_YAW_D       | 0.003   |
++---------------------+---------+
+| ATC_RAT_YAW_FILT    | 20      |
++---------------------+---------+
+| ATC_RAT_YAW_I       | 0.12    |
++---------------------+---------+
+| ATC_RAT_YAW_ILMI    | 0       |
++---------------------+---------+
+| ATC_RAT_YAW_IMAX    | 0.33    |
++---------------------+---------+
+| ATC_RAT_YAW_P       | 0.18    |
++---------------------+---------+
+| ATC_RAT_YAW_VFF     | 0.024   |
++---------------------+---------+
 
-You should get to a RATE_RLL_P of about 0.0400 (on a 450 size heli) or
-maybe even a little bit more but hopefully you end up in this range.
-However, you will find that you still have very little control, even up
-to the point where it starts to oscillate!
+Setting VFF and ACCEL_MAX for Desired Pitch and Roll Response
+===============================================================
+In both pitch and roll axes, the VFF gain is set so that the actual aircraft
+rate matches the desired rate. To do this, the RATE message in the log is
+required to compare the P.des and P signals for pitch and the R.des and R
+signals for roll. With the VFF gains set to 0.15, takeoff and establish a hover
+in Stabilize flight mode, then make some sharp stick inputs in both pitch and
+roll. Land and pull the log from the microSD card and look at the signals in
+your ground station software. If the actual rate is more than the desired rate
+then you'll want to decrease VFF. If it is less, increase VFF. If the desired
+and actual rates are offset by some amount it means that your swash was not
+properly leveled in the setup or the CG is not right.  In this case, just make
+sure the change in rate is similar between desired and actual.  If you get the
+rates to match and they feel like they are too fast, then reduce the
+ATC_ACCEL_MAX parameter and repeat the process above to match the desired and
+actual rates. 
 
-Once you find the oscillation point, back off a bit, maybe 0.005 to
-0.010. Now, set the Ch6 tuning to "None", and make sure you have a good
-Rate P-term in the RATE_RLL_P and RATE_PIT_P window. If you fly
-right at the limit of oscillation you will find that sometimes if you
-bump the skids or there's a wind gust, it can start to oscillate. That's
-why you want to back off a bit.
+If while tuning the VFF gain the aircraft starts to oscillate, reduce the 
+ATC_ANG_xxx_P gain for that axis until the oscillations stop.  However for most 
+helicopters the suggested values above should not cause this problem.
 
-Remember that when you get your P value to high the heli will **rock and
-roll** something fierce. Be careful and only lift of the ground a few
-inches or a foot at most and be ready to put it down if it starts to
-oscillate out of control.
+With a flybar head, where the linkage rate is normally lower, it is recommended
+to start with 0.22 VFF for both pitch and roll and you will likely have to go
+higher with VFF. But for a flybarless head, VFF shouldn't be more than 0.22 
+unless you have really really slow servos or slow linkage rate. With all 
+helicopters, the VFF gain compensates for differences in servo and linkage
+speed. 
 
-Now you have established your RATE_RLL_P value, your RATE_PIT_P
-value can be a little higher. For example, use 0.050 with 0.040 for Roll
-and remember to unchecked "Lock Pitch/Roll"!
+The final setting for ATC_ACCEL_MAX parameters will depend on the size of the
+helicopter.  Large 800-900 class machines will typically be in the 36000-52000 
+range; smaller 450-500 class machines will typically be in the 90000-110000 
+range. You may want to experiment with the RC_FEEL parameter as well to get the
+initial aircraft response the way you like it.  It is recommended to keep the
+RC_FEEL parameter between 25 and 50. Once this process is complete, the aircraft
+should have the desired feel in snappiness and rate.
 
-Now you can play with the I-term. You can do so similarly, with Ch6.
-It’s important to remember the RATE_PIT_I term will be LOWER than the
-RATE_RLL_I. Try using Roll I = 0.250 and Pitch I = 0.150. These
-I-values are less critical than the P-values - you're not likely to
-destroy your heli with a high value, more likely to just get a "bounce".
-So, at this point, you should have a heli that will fly without shaking
-but it still flies like it's “drunk”. It'll just wander around with you
-chasing it but now it's time to fix that.
+Below is a graph showing an example of Rate Roll Desired vs actual Rate Roll.
+The peak corresponds to a rapid stick input and the amplitude (height) of the
+peaks should be approximately the same with no more than 100 milliseconds 
+offset.
 
-Go into Advanced Parameters>Parameters List and find RATE_RLL_FF and
-set it to maybe 0.020 to start. Do the same for RATE_PIT_FF. Write
-these and then give it a test fly. You should now find that it flies
-much better, you will have more control, it should hover better. Play
-with these numbers a bit and always remember to “write” the parameters
-to the APM. For a 450 size heli try using 0.040 on Roll and 0.050 on
-Pitch. It’s not clear how high you can push these but it will start to
-oscillate eventually.
+.. image:: ../images/TradHeli_tuning_example1_1.png
 
-Here’s a question that might come up as you begin to fly more: It it’s a
-little windy and I do not have enough control over the swash, what can I
-do?
+**Note on Tuning Flybar Helicopers** - for flybar heads the flybar is a
+mechanical version of the rate PID loop. So flybar is tuned using only VFF in
+pitch and roll. The rate D and P gains mentioned in the next topic below are
+left set to zero for flybar. I-gain, IMAX, and ILMI are tuned just like FBL.
+Below is a plot of beginning a tune on a flybar helicopter using the starting
+setting of ATC_RAT_RLL_VFF = 0.22. The graph shows the aircraft's response to
+the rate request of the attitude controller is low, meaning the VFF value must
+be increased to achieve proper rate response. For all flybar helicopters be sure
+to set H_FLYBAR_MODE = 1
 
-Increase STB_RLL_P from, say, 3.8 to 4.5 is probably a step in the
-right direction... sort of. It will make the heli try to make bulk moves
-more strongly, which is good for fighting winds but maybe not so good
-for camera work as it could jerk the camera around. It does indirectly
-increase the servo movement.
+.. image:: ../images/TradHeli_tuning_example3_1.png
 
-Yes, increasing your RATE_RLL_P will cause it to shake. That's not a
-great solution. Fill your plate with RATE_RLL_FF? This gives you much
-more control authority with less chance of shake you get with P-term. It
-can still crop up however.
-
-RATE_RLL_I and I_MAX are also important. You should be able to
-increase I and get more travel without getting the shakes.
-
-Moving the control link out on the servo horn will have the exact same
-effect as increasing the PID terms, so it's not a solution. You'll find
-you just have to back off the rate PID's to avoid shake again. And then
-you can get into a situation where you don't have enough resolution on
-the servo.
-
-One part of this situation is the fact that the Rate I term is not a
-classic I-term, but a "leaky" I term. It bleeds down 2% every 100ms...
-it's complicated but it's there for a few reasons. One of these reasons
-is because if we use a standard I-term, and you leave your heli sitting
-on off-level ground, the swash will slowly tip over as the I-term builds
-up. If you spool up, the heli will tip over. It's not fun. The problem
-with this is it really limits how much control movement we can get out
-of the I-term. It's sort of a lesser of two evils. If we could use a
-regular I-term, it would help. But we can't... well, we’re working on
-something but it will only work if you are using the Ch8 rotor speed
-controller so make sure you have this set up properly.
-
-Rudder Tuning
-=============
-
-At the same time, think about adding some RATE_YAW_FF. Maybe try using
-0.040 here. You might expect to back-off on the RATE_YAW_P just a bit
-as RATE_YAW_FF increases. Start with a RATE_YAW_P value of 0.25
-(default) and move downward to say P=0.120 or even P=0.100. Try I = 0.02
-and D = 0.002
-
-For a 600 size heli the rudder (yaw) settings may look like this:
-
-+-------------------+---------+
-| RATE_YAW_D        | 0.004   |
-+-------------------+---------+
-| RATE_YAW_FF       | 0.05    |
-+-------------------+---------+
-| RATE_YAW_I        | 0.15    |
-+-------------------+---------+
-| RATE_YAW_IMAX     | 2000    |
-+-------------------+---------+
-| RATE_YAW_P        | 0.38    |
-+-------------------+---------+
-
-You’re not finished fiddling with this yet but what you will find is
-that these settings make the yaw control much stronger then on previous
-versions of the software and also help reduce the very small oscillation
-it used to have.
-
-Acro Mode Tuning
-================
-
-The AXIS_ENABLE parameter should be set to 1 otherwise Acro mode will
-be unflyable. AXIS_ENABLE basically turns on a 3-D "heading lock" gyro
-mode that works very well.
-
-There are a few other parameters you should know about:
-
-ACRO_BAL_PITCH and ACRO_BAL_ROLL: These create a "virtual dihedral"
-which attempts to return the heli to level. This is what Leonard calls
-"Acro with training wheels". 200 makes it feel almost like stabilize. If
-you fly with it on 50 it feels nice. 0 would obviously turn it off
-completely.
-
-ACRO_TRAINER: This is in addition to ACRO_BAL_ROLL and prevents the
-heli from rolling past 45°. You can push it a bit beyond but it won't go
-too far. If you don’t want it, just turn it off.
-
-If you want to speed up the angular rate, you will want to play with
-ACRO_P which defaults to 4.5 which gives you a rate of 202°/s. Set at 6
-will give about 270°/s and 8 will give about 360°/s. The gyros have a
-full scale of 2,000°/s
-
-Stabilization Mode Tuning
+Tuning the D and P gain
 =========================
+Once you have the heli responding nicely with the rate VFF gain, now tune the
+PID gains. The rate PID controller provides stability to reject disturbances and
+keep the actual aircraft following the software predicted rates.
+ 
+Start with the D gain.  Use the tuning feature of ArduCopter which is linked to
+channel 6 on your radio.  Make the following parameter changes.
 
-One of the things you should look at is your STAB_PIT_P and
-STAB_RLL_P numbers? These were probably quite low in version 2.7.3,
-probably less than 1, and they should now be 3.5 to 4.5. This is a
-really big factor in getting the servo movement you are expecting.
++---------------------+---------+
+| TUNING              | 21      |
++---------------------+---------+
+| TUNING_LOW          | 0       |
++---------------------+---------+
+| TUNING_HIGH         | 30*     |
++---------------------+---------+
 
-Throttle Tuning
-===============
+*for futaba radios this equates to one increment in the knob to 0.001
 
-THR_MID convert's the pilot's throttle input (0~1000) to the motor
-output (130~1000). It has two different scales so that the pilot's 0~500
-input maps to the 130~THR_MID value...then another scale so pilot's
-501~1000 input is mapped to the THR_MID~1000 output for the motor.
+Adjust the tuning knob until the ATC_RAT_RLL_D and ATC_RAT_PIT_D gains are
+0.001. Lift into a hover and make some sharp stick inputs in roll.  Most
+helicopters will see roll oscillations before they see pitch oscillations.
+That is why roll inputs are suggested.  If it doesn't shake, increase the gain
+by 0.001 and try it again. At the value where you get the rapid shaking, cut
+that value in half and enter it as the final tuning value for ATC_RAT_RLL_D and
+ATC_RAT_PIT_D.  Test hover the heli and make some rapid stick movements in both
+pitch and roll to make sure it's stable.
 
-Essentially THR_MID should be the throttle setting for hover.
+Now tune the P gains.  Make the following tuning parameter changes.
 
-For a 600 size heli a possible throttle set up could be:
++---------------------+---------+
+| TUNING              | 4       |
++---------------------+---------+
+| TUNING_LOW          | 0       |
++---------------------+---------+
+| TUNING_HIGH         | 300*    |
++---------------------+---------+
 
-+--------------------+---------+
-| THR_ACCEL_D        | 0.001   |
-+--------------------+---------+
-| THR_ACCEL_I        | 0.6     |
-+--------------------+---------+
-| THR_ACCEL_IMAX     | 500     |
-+--------------------+---------+
-| THR_ACCEL_P        | 0.3     |
-+--------------------+---------+
-| THR_ALT_I          | 0       |
-+--------------------+---------+
-| THR_ALT_IMAX       | 300     |
-+--------------------+---------+
-| THR_ALT_P          | 2       |
-+--------------------+---------+
-| THR_MAX            | 1000    |
-+--------------------+---------+
-| THR_MID            | 500     |
-+--------------------+---------+
-| THR_MIN            | 130     |
-+--------------------+---------+
-| THR_RATE_D         | 0.001   |
-+--------------------+---------+
-| THR_RATE_I         | 0       |
-+--------------------+---------+
-| THR_RATE_IMAX      | 300     |
-+--------------------+---------+
-| THR_RATE_P         | 3       |
-+--------------------+---------+
+*for futaba radios this equates to one increment in the knob to 0.01
 
-Aerobatics in Acro Mode
-=======================
+Adjust the tuning knob until the ATC_RAT_RLL_P and ATC_RAT_PIT_P  gains are
+0.05. Lift into a hover and roll aggressively from side to side.  If it doesn't
+shake, increase the gain by 0.01 and try it again. At the value where you get
+the rapid shaking, cut that value in half and enter it as the final tuning value
+for ATC_RAT_RLL_P and ATC_RAT_PIT_P.  Test hover the heli and make some rapid
+stick movements in both pitch and roll to make sure it's stable.  
 
-Acro Mode in APM:Copter now supports full acrobatic flight!  The
-function is similar to any other acrobatic FBL controller available on
-the market.  The performance might not be suitable for helicopter
-competition, but it certainly adequate for sport flying.
+After tuning the P and D gain the aircraft should feel much smoother.
 
-Many maneuvers have been fully tested, loops, rolls, inverted flight,
-etc.  Caution should be exercised if aggressive 3D type maneuvers are
-attempted, such as tic-tocs, etc.  While the control algorithms are
-fine, it's unproven if the system is able to maintain it's orientation
-relative the ground.  In other FBL controllers, if this were to happen,
-the controller would simply turn off the self-leveling function but the
-acrobatic flight can continue as normal.  But with APM:Copter, this
-could lead to loss of control even in Acro mode. We will attempt to
-remedy this situation in the future so that all maneuvers can be
-performed.
+Setting the I gain, IMAX, and ILMI
+====================================
+It is recommended to set the ATC_RAT_PIT_I gain equal to the ATC_RAT_PIT_VFF
+gain and the ATC_RAT_RLL_I gain equal to the ATC_RAT_RLL_VFF gain.  The IMAX
+value limits amount of integrator error that can be stored to counter large
+disturbances in attitude.  In the pitch axis this is set by the integrator error
+required to hold the aircraft attitude at high forward speeds.  The starting
+value is 0.4.  To check this set the value to IMAX = 1, fly the aircraft at the
+maximum desired speed.  Pull the log and look at what the maximum I value is in
+the PIDP message.  Set IMAX for 0.1 above the maximum value.  You could do the
+same for the roll axis but typically 0.4 should be sufficient.  ILMI is set for
+the maximum amount of integrator that you want to retain in a hover to help
+maintain attitude.  It is recommended that this value is no larger than 0.1
 
-ACRO_BAL_PITCH = 50 
+Below is a graph of desired roll attitude vs actual roll attitude for a
+helicopter in high-speed autonomous flight with the ILMI parameters set to zero.
+The effect of the I-gain and IMAX parameters, properly set, will make the
+helicopter track the desired attitude very closely at speed exceeding 5m/s for
+more than 2 seconds (what we call “dynamic flight”). It should be within 1-2
+degrees of desired in dynamic flight. Towards the right side of the graph the
+helicopter came to a stop in hover and the pilot switched to Stabilize flight
+mode. You will notice a discrepancy between the actual and desired roll attitude
+at that point. This is the effect of having ILMI set to zero. The ILMI can be
+considered to be a sort of “auto trim” for hover that will reduce the
+discrepancy between desired and actual pitch and roll attitude when the
+helicopter is not in dynamic flight.
 
-ACRO_BAL_ROLL = 50 
+.. image:: ../images/TradHeli_tuning_example2_1.png
 
-ACRO_P = 4.5 
+=======================================================================
+Advanced Tuning for Hover Trim, Loiter Flight Mode and Waypoint Flying
+=======================================================================
+At this point you should have a helicopter that is responsive and yet stable.
+But we need to trim the helicopter so it hovers pretty much hands-off in
+Stabilize flight mode. And adjust the I-gains for Auto flight mode so it tracks
+attitude properly under full autopilot control.
 
-ACRO_TRAINER =
-0 
+Hover Trim
+===========
+Trimming the helicopter in pitch and roll axes is an important step to keep the
+aircraft from drifting in modes like Stabilize and Althold.  The trim attitude 
+in the roll axis is affected by the tail rotor thrust.  All conventional single-
+rotor helicopters with a torque-compensating tail rotor hover either right skid 
+low or left skid low, depending on which way the main rotor turns. The 
+ArduCopter software has a parameter, ATC_HOVR_RLL_TRIM, to compensate for this 
+phenomenon. Longitudinal CG location will affect the trim attitude in the pitch
+axis.  There is no parameter to tell the flight controller what pitch attitude 
+the aircraft hovers with no drift. It always targets zero deg pitch as measured
+by the flight controller. Therefore the actual pitch attitude the aircraft 
+hovers may be 5 deg nose high but the flight controller AHRS Trim value is set
+to make it think the attitude is zero deg. 
 
-AXIS_ENABLE = 1
+In order to trim the aircraft, set the ATC_HOVR_RLL_TRIM parameter to zero. 
+During the initial setup of the flight controller, the AHRS_TRIM values are set 
+during the accelerometer calibration on the last step that has you level the 
+aircraft. For that step you should have made certain that the shaft was 
+perfectly straight up in pitch and roll. For this trim procedure, it is 
+recommended that you check it and using the method below.
 
-ACRO_P is basically the angular rate. 4.5 gives you 202.5°/s. 9 would
-give you 405. But nobody has pushed that high.
+Measure the actual frame angle (on a portion of the frame that is perpendicular
+to the mainshaft) in pitch and roll with your digital pitch gauge. Connected to
+your ground station software with MavLink, note the pitch and roll angle the
+flight controller is "seeing". Adjust the AHRS_TRIM_X and AHRS_TRIM_Y values so
+the flight controller "sees" the identical frame angle you measured with the
+digital pitch gauge.
 
-ACRO_BAL_ROLL is like a faked "dihedral" effect. It makes the copter
-return to level gently at center stick. 50 is fairly low, 200 makes it
-feel almost like Stabilize.
+The above is necessary so we can accurately measure the roll angle to set the
+ATC_HOVR_RLL_TRIM. The flight controller now "knows" when the mainshaft is
+perfectly vertical. 
 
-ACRO_TRAINER is an addition thing that makes the heli not want to roll
-past 45°.
+Load the helicopter with its normal payload, and hover the helicopter
+in no-wind conditions in Stabilize flight mode. Land it and pull the log, noting
+the roll angle that you had to hold with the stick to keep the helicopter from
+drifting. Enter this value in the ATC_HOVR_RLL_TRIM parameter in centidegrees.
+For a CW turning main rotor if it took 3.5 degrees of right roll to compensate,
+enter 350. Negative values are for a CCW turning main rotor that requires left
+roll to compensate.
 
-AXIS_ENABLE turns the whole angle-lock thing on. Sort of like Futaba
-AVCS in all 3 axes. Without it, it's pure rate control and your
-experience will be pretty bad.
+**Important Note** - do not use the radio trims at all. Make sure they are
+centered. 
+
+After setting the ATC_HOVR_RLL_TRIM now hover the helicopter again. If it still
+drifts make adjustments to the AHRS trims for x and y as necessary to stop the
+drifting in Stabilize flight mode. Things are slightly different in flight, due
+to flexing of the frame, than they are on the bench. So this requires some in-
+flight adjustments to be made to AHRS trims.
+
+Your helicopter is now trimmed properly. This trimming procedure makes the
+difference between a helicopter that is difficult to handle vs one that flies
+with true scale quality and handling. 
+
+Adjusting I-gains For High-Speed Autonomous Flight
+===================================================
+Prepare a mission with your ground station software that will fly the 
+helicopter, preferably in a figure-8 pattern to make both right and left turns,
+at a speed of 6 m/s. Fly the helicopter on this mission, pull the logs from the
+microSD card and look at the AHRS desired vs actual pitch, roll and yaw
+attitudes in dynamic flight. They should track within 1-2 degrees. If they do
+not, increase the ATC_RAT_xxx_I value for that axis until they do.
+
+Now, fly the same mission, but at higher speed of 9-10 m/s, and analyze the logs
+the same way. Make further adjustments to the I-gains and IMAX values as
+required. It is not clear what I-gain values will be required as no two
+helicopters are the same. But I-gain values from 0.25 - 0.38 are common in pitch
+and roll, and 0.18 - 0.30 in yaw. IMAX values of 0.40 - 0.45 are common, however
+refer to the 'Setting the I gain, IMAX, and ILMI' section on how to determine
+what the IMAX value should be.
