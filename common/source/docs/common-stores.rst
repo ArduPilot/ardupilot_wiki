@@ -11,7 +11,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `AUAV <http://www.auav.co/>`__
 * `Bask Aerospace <http://www.baskaerospace.com.au/>`__
 * `BlueRobotics <https://www.bluerobotics.com/store/>`__
-* `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules)
+* `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__
 * `CUAV <http://www.cuav.net>`__
 * `Drotek <https://drotek.com/>`__
 * `Emlid <https://emlid.com/shop/>`__
@@ -31,7 +31,6 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <http://www.uavionix.com/>`__
 * `VirtualRobotix <http://www.virtualrobotix.it/index.php/en/shop>`__
-* `3DR <https://store.3dr.com/>`__ (Solo parts and accessories)
 * `3DXR <https://www.3dxr.co.uk/>`__
 
 
