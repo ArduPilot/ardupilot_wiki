@@ -44,7 +44,7 @@ requires however that we need to point out:
 
 -  As with the contributions of individual developers, we would like it
    if you could keep us informed of the products that incorporate the
-   software by emailing drones-discuss@googlegroups.com.  Also for those
+   software by emailing partners@ardupilot.org.  Also for those
    changes that could be useful to the wider community we would
    appreciate it if you could :ref:`contribute them back using a pull request <submitting-patches-back-to-master>`
    for consideration to be added to the original code base.
