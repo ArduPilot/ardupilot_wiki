@@ -36,6 +36,8 @@ If you already have an ArduPilot repository:
    git remote add skyrocket https://github.com/SkyRocketToys/ardupilot
    git fetch skyrocket
 
+Otherwise:
+
 ::
 
    git clone https://github.com/SkyRocketToys/ardupilot
