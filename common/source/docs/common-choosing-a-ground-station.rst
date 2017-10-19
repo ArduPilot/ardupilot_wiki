@@ -244,7 +244,7 @@ Android
 
 For Android devices, you will need:
 
--  Android based tablet that can act as a USB host. Google Nexus tablet
+-  Android based tablet that can act as a USB host. Google Nexus tablets
    are recommended, and the compatible hardware lists for the different
    GCSs are listed in the table above.
 -  :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or
