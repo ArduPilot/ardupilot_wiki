@@ -148,8 +148,8 @@ Download and compile ArduCopter
    except the ``make`` command is:
 #. ::
 
-       cd ArduCopter
-       make bebop
+       ./waf configure --board=bebop --static
+       ./waf build
 
 #. Strip the binary to reduce the memory footprint:
 
