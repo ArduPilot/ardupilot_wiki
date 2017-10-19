@@ -129,13 +129,12 @@ Developing the Transmitter Firmware
    git clone https://github.com/SkyRocketToys/STM8TX
    cd STM8TX
    make
-   ls -l combined.ihx
+   ls -l txmain.img
 
-``combined.ihx`` can be flashed usng the web interface.
+``txmain.img`` can be flashed usng the web interface.  Once the image is transfered, the transmitter will need to be wpoer-rthpower-cycled for the upgrade to continue.  It will take about 15 seconds to flash the new firmware. The LEDs will flash alternately at 1Hz during upgrade.
 
 .. note::
 
-   After upgrading the TX firmware you need to power cycle it.  It will take about 15 seconds to flash the new firmware. The LEDs will flash alternately at 1Hz during upgrade.
 
 MAVLink Access
 ==============
