@@ -3326,7 +3326,7 @@ Copter
 ~~~~~~
 
 Points the :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region
-of interest", and possibly also rotates the nose of the vehicle if the
+of interest", and also rotates the nose of the vehicle if the
 mount type does not support a yaw feature.
 
 After setting the ROI, the camera/vehicle will continue to follow it
