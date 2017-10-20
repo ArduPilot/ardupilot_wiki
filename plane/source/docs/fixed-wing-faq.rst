@@ -91,7 +91,7 @@ to detect an airspeed failure. If the failure leads to a low airspeed
 reading then if the plane is in an auto-throttle mode (such as AUTO,
 GUIDED, LOITER or RTL) then the plane will tend to lose altitude as it
 tries to gain speed. The amount of altitude it will lose depends on how
-low the airspeed reading is. If the airspeed reading it low enough then
+low the airspeed reading is. If the airspeed reading is low enough then
 it may trigger a fast enough descent to crash the aircraft.
 
 If the failure leads to a too high airspeed reading then the plane will
@@ -171,7 +171,7 @@ you fly.
 How would I setup crow flaps?
 -----------------------------
 
-Crow flaps combined flaperons with normal flaps, but the flaperons move
+Crow flaps combine flaperons with normal flaps, but the flaperons move
 upward when the flaps are engaged. Crow flaps can add a lot of drag to
 slow an aircraft for landing without inducing a lot of pitching moment.
 
