@@ -124,19 +124,21 @@ Message Details (Copter specific)
 **ATT (attitude information):**
 
 +-----------+--------------------------------------------------------------------------------------------------------+
-| RollIn    | The pilot's desired roll angle in centi-degrees (roll left is negative, right is positive)             |
+| DesRoll   | The pilot's desired roll angle in degrees (roll left is negative, right is positive)                   |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| Roll      | The vehicle's actual roll in centi-degrees (roll left is negative, right is positive)                  |
+| Roll      | The vehicle's actual roll in degrees (roll left is negative, right is positive)                        |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| PitchIn   | The pilot's desired pitch angle in centi-degrees (pitch forward is negative, pitch back is positive)   |
+| DesPitch  | The pilot's desired pitch angle in degrees (pitch forward is negative, pitch back is positive)         |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| Pitch     | The vehicle's actual pitch angle in centi-degrees (roll left is negative, right is positive)           |
+| Pitch     | The vehicle's actual pitch angle in degrees (pitch forward is negative, pitch back is positive)        |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| YawIn     | Tthe pilot's desired yaw rate as a number from -4500 ~ 4500 (not in deg/sec, clockwise is positive)    |
+| DesYaw    | The pilot's desired heading in degrees with 0 = north                                                  |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| Yaw       | The vehicles actual heading in centi-degrees with 0 = north                                            |
+| Yaw       | The vehicle's actual heading in degrees with 0 = north                                                 |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| NavYaw    | The desired heading in centi-degrees                                                                   |
+| ErrRP     | The average size of the roll/pitch error estimate (values between 0 and 1)                             |
++-----------+--------------------------------------------------------------------------------------------------------+
+| ErrYaw    | The average size of the yaw error estimate (values between 0 and 1)                                    |
 +-----------+--------------------------------------------------------------------------------------------------------+
 
 **ATUN (auto tune overview):**
