@@ -71,7 +71,7 @@ to the BUZZER and SWITCH ports as shown.
 
 .. warning::
 
-   Mount the beeper is at least 5cm away from the flight
+   Mount the beeper at least 5cm away from the flight
    controller or the noise may upset the accelerometers.
 
 3DR GPS+Compass
