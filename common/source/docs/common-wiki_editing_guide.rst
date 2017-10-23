@@ -20,6 +20,7 @@ Making a quick edit
 ===================
 
 There is a YouTube tutorial for editing ArduPilot documentation here:
+
 ..  youtube:: fb73F8_MiMg
     :width: 100%
 
