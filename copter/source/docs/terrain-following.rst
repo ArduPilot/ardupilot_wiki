@@ -44,7 +44,18 @@ If the ground station does not have terrain data available at the resolution req
 Terrain Accuracy
 ----------------
 
-The accuracy of the SRTM database varies over the surface of the earth.  Typical accuracy is around 10 to 20 meters, but some developers have noticed inaccuracies of 35m.  This makes terrain following suitable for aircraft that are flying at altitudes of 60 meters or more.  For very accurate terrain following at lower altitudes it is recommended to use a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>`.
+The accuracy of the SRTM database varies over the surface of the earth.  Typical accuracy is around 10m but one developer noticed an inaccuracy of 35m at the peak of a skihill.  This makes terrain following suitable for aircraft that are flying at altitudes of 60 meters or more.  For very accurate terrain following at lower altitudes it is recommended to use a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>`.
+
+Warning
+-------
+
+When planning missions containing commands with different altitudes-above-terrain keep in mind that the vehicle's altitude-above-terrain will gradually change between the waypoints.  I.e. it will not immediately climb or descend to the new target altitude-above-terrain as it starts towards the next waypoint.
+
+In practice it is best to set the initial take-off command's altitude high enough to clear obstacles.
+
+   .. image:: ../images/terrain-warning-diagram.png
+       :target: ../_images/terrain-warning-diagram.png
+       :width: 500px
 
 Example mission at 2m using Lidar
 ---------------------------------
