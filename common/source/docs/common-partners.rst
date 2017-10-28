@@ -122,13 +122,17 @@ Corporate Partners
     :width: 250px
     :target:  http://advancedaircraftcompany.com
 
-.. image:: ../../../images/supporters/supporters_logo_ageagle.png
+.. image:: ../../../images/supporters/supporters_logo_3dxr.jpg
     :width: 250px
-    :target:  http://ageagle.com
+    :target: http://www.3dxr.co.uk
 
 .. image:: ../../../images/supporters/supporters_logo_volansi.jpg
     :width: 250px
     :target: http://www.volans-i.com
+
+.. image:: ../../../images/supporters/supporters_logo_ageagle.png
+    :width: 250px
+    :target:  http://ageagle.com
 
 How does my company become a partner?
 ===============================================
