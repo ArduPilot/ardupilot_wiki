@@ -125,10 +125,6 @@ repository, follow these directions:
 #. Check the list of change at the bottom of the page only includes your
    intended changes, then press "Click to create pull request for this
    comparison".
-#. Let the dev team know! Post on the
-   `drones-discuss <https://groups.google.com/forum/#!forum/drones-discuss>`__
-   mailing list so the discussion and code review is easily publicly
-   available.
 
 It is very common, especially for large changes, for the main developers
 to ask you to modify you pull request to fit in better with the existing
