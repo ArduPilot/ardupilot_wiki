@@ -1,5 +1,5 @@
 .. _gsoc-ideas-list:
-
+    
 ========================================
 List of Suggested Projects for GSoC 2017
 ========================================
@@ -10,16 +10,17 @@ We have a lot of talented developers in the ArduPilot dev team who would love to
 - `Improved Object Avoidance for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid
 - Improved live video for `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ including video stream discover and publishing
 - Improved IoT integration using `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ to allow live viewing of drone location on web page
-- Safe Return-To-Launch which will involve storing vehicle's current location and maintaining the shortest possible safe path back home
+- (DONE) Safe Return-To-Launch which will involve storing vehicle's current location and maintaining the shortest possible safe path back home.
 - Improve flight control for `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ to bring it to the same level of performance of other multicopters
 - Improve SITL simulator to include a 3D viewer and objects
 - Helicopter autorotation support
 - Add support for the AirSim drone simulator to ArduPilot SITL (see https://github.com/Microsoft/AirSim/)
 - Build a JavaScript DataFlash log parser and a system for graphing user logs with similar capabilities to MAVExplorer, but hosted in users browsers
 - work on the FreeRTOS port of ArduPilot
+- (IN PROGRESS) work on the ChibiOS/RT port of ArduPilot
 - improve UAVCAN integration with ArduPilot
 - work on 3D aerobatic support for fixed wing aircraft
-- add support for "sensor head" operation of ArduPilot, split between two CPUs
+- (IN PROGRESS) add support for "sensor head" operation of ArduPilot, split between two CPUs
 - Create a cloud based GCS for persistent control of a fleet of drones. Here is a Search and Rescue use case example: http://www.surtsey.org/projects/cloud-control-station/ 
 
 More Details
