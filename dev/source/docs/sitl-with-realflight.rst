@@ -9,18 +9,21 @@ Using SITL with RealFlight
 
 `RealFlight <http://www.realflight.com/>`__ is a commercial flight simulator with a 3D view, and ability to design and test custom vehicles.
 
-This simulator only runs on Windows and requires a special version be installed that can connect to ArduPilot's SITL environment.
-Unfortunately this version is not yet readily available outside the development team.
+This simulator only runs on Windows and requires RealFlight
+version 8. Note that RealFlight-X does not work with ArduPilot.
 
 Installing modified RealFlight
 ==============================
 
-  - `Buy <http://www.realflight.com/where-to-buy.php>`__ and Install the regular version of RealFlight
+  - `Buy <http://www.realflight.com/where-to-buy.php>`__ and Install the regular version of RealFlight8
   - Connect the RealFlight transmitter to your PC's USB port
-  - Start RealFlight, Select Help, About and check the version is: 7.50.015.  If it is lower you will need to upgrade the version.
-  - Shutdown RealFlight
-  - In Windows file explorer, rename the standard version of RealFlight (normally found in, "C:\Program Files (x86)\RealFlight7\RealFlight.exe") to "RealFlight.orig.bak"
-  - Download the modified RealFlight executable (ie. "RealFlight - FA1 4-28.exe"), and place it in the RealFlight directory (i.e. "C:\Program Files (x86)\RealFlight7\") and rename the file to "RealFlight.exe"
+  - Start RealFlight8 and in the launcher choose "Technical Support"
+  - Click "Enter Tech Support Code"
+  - Enter the code: LINK
+  - a message box will appear with a new code
+  - enter that code on the knifeedge signup page (NOTE: this page is  not yet available, it should be available by the 2nd week of November 2017)
+  - Enter your response code in the same location
+  - You should receive a message indicating that Link functionality is now unlocked.
   - Download the "Quadcopter X - direct throttles_AV.RFX" file to your PC
   - Start RealFlight (it should look exactly like regular RealFlight, there is no way to visually determine the difference)
   - Select Simulation, Import, RealFlight Archive (RFX, G3X) and select the file downloaded above.  A message, "..was successfully imported" should be displayed
