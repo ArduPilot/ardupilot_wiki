@@ -126,6 +126,10 @@ Corporate Partners
     :width: 250px
     :target: http://www.3dxr.co.uk
 
+.. image:: ../../../images/supporters/supporters_logo_carbonix.png
+    :width: 250px
+    :target: http://www.carbonix.com.au
+
 .. image:: ../../../images/supporters/supporters_logo_volansi.jpg
     :width: 250px
     :target: http://www.volans-i.com
