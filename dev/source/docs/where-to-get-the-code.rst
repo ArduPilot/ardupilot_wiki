@@ -13,7 +13,7 @@ Overview
 The ArduPilot project uses `git <http://git-scm.com/>`__ for source code
 management and `GitHub <https://github.com/>`__ for source code hosting.
 
-Developers who want to contribute to ArduPilot will will fork the
+Developers who want to contribute to ArduPilot should fork the
 project, create a branch on their fork with new features, and then raise
 a pull request to get the changes merged into the "master" project.
 Developers who just want to use and build the latest code can do so by
