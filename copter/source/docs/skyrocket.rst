@@ -43,6 +43,11 @@ Software
 - APWeb (a tiny open source web server) runs on the drone and allows easy calibration, modification of parameters, uploading firmware to both the drone and transmitter, downloading log files, pictures and videos.
 - the transmitter has a relatively low powered STM8 processor running open source software written by Tridge (incorporates some code from Paparazzi).  `Github repo is here <https://github.com/SkyRocketToys/STM8TX>`__.
 
+Discussion
+----------
+
+We have a `SkyViper section <https://discuss.ardupilot.org/c/arducopter/skyviper>` on the ArduPilot discussion forum. Have a look there to see what people are up to and ask questions.
+
 Videos
 ------
 
