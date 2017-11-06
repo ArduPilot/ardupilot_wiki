@@ -43,31 +43,6 @@ terminal and run:
     cd ardupilot
     git submodule update --init --recursive
 
-JSBSim (Plane only)
--------------------
-
-If you want to fly the fixed wing (Plane) simulator then you will need
-to use the JSBSim flight simulator. JSBSim is a sophisticated flight
-simulator that is used as the core flight dynamics system for several
-well known flight simulation systems.
-
-In the same directory (your home directory) run these commands:
-
-::
-
-    git clone git://github.com/tridge/jsbsim.git
-    sudo apt-get install libtool libtool-bin automake autoconf libexpat1-dev
-
-If you are getting an error message saying you need a newer version of
-JSBSim then you can update it like this:
-
-::
-
-    cd jsbsim
-    git pull
-    ./autogen.sh --enable-libraries
-    make
-
 Install some required packages
 ------------------------------
 
@@ -92,12 +67,10 @@ Add some directories to your search path
 Add the following lines to the end of your ".bashrc" in your home
 directory (notice the . on the start of that filename. Also, this is a
 hidden file, so if you're using a file manager, make sure to turn on
-"show hidden files"). Note the order, it is important to have jsbsim/src
-before autotest in case you're running a virtual machine.
+"show hidden files"). 
 
 ::
 
-    export PATH=$PATH:$HOME/jsbsim/src
     export PATH=$PATH:$HOME/ardupilot/Tools/autotest 
     export PATH=/usr/lib/ccache:$PATH
 
@@ -177,8 +150,32 @@ this command
 
     sudo pip install --upgrade pymavlink MAVProxy
 
-Using a different JSBSim model
-------------------------------
+Using JSBSim
+------------
+
+For ArduPlane you can choose several possible simulators. A popular
+choice is JSBSim, which you can enable with the -f jsbsim option to SITL.
+
+JSBSim is a sophisticated flight
+simulator that is used as the core flight dynamics system for several
+well known flight simulation systems.
+
+In the same directory (your home directory) run these commands:
+
+::
+
+    git clone git://github.com/tridge/jsbsim.git
+    sudo apt-get install libtool libtool-bin automake autoconf libexpat1-dev
+
+If you are getting an error message saying you need a newer version of
+JSBSim then you can update it like this:
+
+::
+
+    cd jsbsim
+    git pull
+    ./autogen.sh --enable-libraries
+    make
 
 If using the JSBSim plane simulator you can specify a different JSBSim
 model than the default Rascal110 by specifying the model name using the
