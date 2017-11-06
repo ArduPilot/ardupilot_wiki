@@ -177,35 +177,6 @@ The platform that is built depends on the directory where you run
    An additional component is required before you can build Plane -
    see next step!
 
-JSBSim (Plane only)
--------------------
-
-If you want to fly the fixed wing (Plane) simulator then you will need
-to use the JSBSim flight simulator. JSBSim is a sophisticated flight
-simulator that is used as the core flight dynamics system for several
-well known flight simulation systems. The reason we use JSBSim is that
-it provides a way to get extremely high frame rate simulation, which is
-essential for the register level sensor emulation that we use in the
-SITL build.
-
-Open the *Cygwin Terminal*, navigate to your home directory, and enter:
-
-::
-
-    git clone git://github.com/tridge/jsbsim.git
-    cd jsbsim
-    ./autogen.sh
-    make
-    cp src/JSBSim.exe /usr/local/bin
-
-Now you can navigate to the ArduPlane directory and build Plane in the
-same way as described for Copter in the next section (:ref:`Running SITL and MAVProxy <sitl-native-on-windows_running_sitl_andmavproxy>`):
-
-::
-
-    cd ~/ardupilot/ArduPlane
-    sim_vehicle.py -j4 --map
-
 FlightGear 3D View (Optional)
 -----------------------------
 

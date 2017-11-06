@@ -38,17 +38,6 @@ using the ``--map`` and ``--console`` options:
     cd ~/ardupilot/ArduPlane
     sim_vehicle.py -j4 --map --console
 
-As part of the setup you should have loaded some standard/test
-parameters into the *MAVProxy Command Prompt*:
-
-::
-
-    param load ..\Tools\autotest\default_params\plane-jsbsim.parm
-    
-.. note::
-  - Some arduplane versions' param path is not same as this, if fail to open file, you should check param path.
-  - In ardupilot/ArduPlane file, there is a mav.parm with all parameters. If you want to change more params you can edit it and load it. 
-
 The *MAVProxy Command Prompt*, *Console* and *Map* should be arranged
 conveniently so you can observe the status and send commands at the same
 time.
