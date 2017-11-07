@@ -12,7 +12,7 @@ The SkyRocket SkyViper GPS streaming drone uses ArduPilot as its main flight con
 Where to Buy
 ------------
 
-The `SkyViper GPS Streaming drone <http://sky-viper.com/product/info/V2450GPS-sd>`__ (`version with FPV headset <http://sky-viper.com/product/info/V2450GPS-fpv>`__) is on sale through `Amazon <https://www.amazon.com/Sky-Viper-v2450GPS-Streaming-Autopilot/dp/B072HH13VQ/ref=lp_13203361011_1_6>`__, `ToysRUs <https://www.toysrus.com/product?productId=125702746>`__ (`with FPV headset <https://www.toysrus.com/buy/video-drones/sky-viperr-v2450-gps-streaming-video-drone-with-fpv-headset-816322018322-134534546>`__) `Target <https://www.target.com/p/sky-viper-streaming-video-drone-v2450hd/-/A-52136996>`__ and Costco in the US, Australia, Canada, Chile, France, German, Holland, Lithuania, Mexico, New Zealand, Serbia, UK since October 2017.
+The `SkyViper GPS Streaming drone <http://sky-viper.com/product/info/V2450GPS-sd>`__ (`version with FPV headset <http://sky-viper.com/product/info/V2450GPS-fpv>`__) is on sale through `Amazon <https://www.amazon.com/Sky-Viper-v2450GPS-Streaming-Autopilot/dp/B072HH13VQ/ref=lp_13203361011_1_6>`__, `ToysRUs <https://www.toysrus.com/product?productId=125702746>`__ (`with FPV headset <https://www.toysrus.com/buy/video-drones/sky-viperr-v2450-gps-streaming-video-drone-with-fpv-headset-816322018322-134534546>`__), `Target <https://www.target.com/p/sky-viper-streaming-video-drone-v2450hd/-/A-52136996>`__ and Costco in the US, Australia, Canada, Chile, France, German, Holland, Lithuania, Mexico, New Zealand, Serbia, UK since October 2017.
 
 SkyRocket sells a variety of different drones, be sure to get the GPS Streaming drone which should have a white shell and usually sells for around $150 US.
 
