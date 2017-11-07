@@ -36,7 +36,7 @@ incorporate this software into their products for sale.  A significant
 number have already done this.  There are some things that the license
 requires however that we need to point out:
 
--  Inform your customers that the flight code software is open source and provide the actual source code in the product or provide a link to where the    source code can be found (see sample below).
+-  Inform your customers that the flight code software is open source and provide the actual source code in the product or provide a link to where the source code can be found (see sample below).
 
 .. image:: ../images/license-sample-web-page.png
     :target: ../_images/license-sample-web-page.png
@@ -65,7 +65,7 @@ Why did we pick this license over others?
       :target: http://www.cio.com/article/3112582/linux/linus-torvalds-says-gpl-was-defining-factor-in-linuxs-success.html
       :width: 400px
 
-- the "v3" portion of the license ensures that the customer who purchased the vehicle has the right to upgrade or replace the version of ArduPilot on the flight controller.  The license doesn't require that it actually work but just that the upgrade is possible.  This ensures that even if a manufacturer stops supporting the product (which can happen for very valid reasons) the product can continue to be useful if the owner or a community of developers decides to pick up support.  Examples of this have already happened with ArduPilot.
+- the "v3" portion of the license ensures that the customer who purchased the vehicle has the right to upgrade or replace the version of ArduPilot on the flight controller.  The license doesn't require that it actually work but just that the upgrade is possible.  This ensures that even if a manufacturer stops supporting the product (which can happen for very valid reasons) the product can continue to be useful if the owner or a community of developers decides to pick up support.  Examples of this have already happened with ArduPilot.  Note that this requirement only applies to `"User Products" <https://github.com/ArduPilot/ardupilot/blob/master/COPYING.txt#L297>`__ and products where it is technically possible for the manufacturer to upgrade the firmware on the device.
 
 Can I integrate Closed source (i.e. Proprietary) and Open Source?
 =================================================================
