@@ -34,6 +34,9 @@ Hardware
 - top speed of between 8m/s ~ 10m/s
 - video streaming uses a Sonix board with ARM CPU running FreeRTOS and OmniVision OV9732 chip
 
+.. image:: ../../../images/skyrocket-flight-controller.png
+    :target: ../_images/skyrocket-flight-controller.png
+
 Software
 --------
 
