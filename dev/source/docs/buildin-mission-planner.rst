@@ -15,7 +15,7 @@ pre-fligth mission planner, in-flight monitoring and post flight log
 file analysis.
 
 This page provides instructions on how you can build the Mission Planner
-software on your own machine using MS Visual Studio 2015 which may be
+software on your own machine using MS Visual Studio 2017 which may be
 useful if you wish to make changes for your own use or improvements for
 the community.  Building the mission planner may also help as a guide in
 case you plan to build your own custom ground station development.
@@ -43,36 +43,38 @@ System Requirements
 
 Here is what you will need.
 
--  Windows XP, Vista, 7, 8, 10
+-  Windows Vista, 7, 8, 10
 -  Sufficient disk space, memory, processor power to comfortably run
    Visual Studio (details below)
 -  An Internet connection.
--  Visual Studio 2015 community edition
+-  Visual Studio 2017 community edition
 
 Install Visual Studio and DirectX and Python
 ============================================
 
-The first step is to get `Microsoft Visual Studio 2015 <http://www.visualstudio.com/>`__\ installed and working in your
+The first step is to get `Microsoft Visual Studio Community 2017 <http://www.visualstudio.com/>`__\ installed and working in your
 Windows system.
 
--  Download and install MS Visual Studio 2015 Community Edition which
+-  Download and install MS Visual Studio 2017 Community Edition which
    can be found `here <http://www.visualstudio.com/>`__.
+-  During the install Process, you may be prompted to install optional "workloads", at this stage, you may select: ".NET desktop development" ( or you may install it later... when you open the .sln for the first time, you'll be prompted to do it).
 -  Reboot your PC
 -  Start Visual Studio from the Start Menu
 -  After your installation is complete and before attempting to work
    with Mission Planner test your installation on a simple "Hello World"
    application.
+-  TIP: By default it is installed here: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\"  
 
 Install Python 2.7 (if not already installed) by downloading it
-`here <https://www.python.org/downloads/>`__.
+`here <https://www.python.org/downloads/>`__.    We recommend you install this to the c:\\Python27\\ folder.
 
 Getting the source code from Github into your computer
 ======================================================
 
 The Mission Planner source code is stored in GitHub.  In general you can
 follow the instructions :ref:`for the ardupilot flight code <where-to-get-the-code>` except that you should use the
-**https://github.com/ArduPilot/MissionPlanner** repository in place of
-the ardupilot repository.
+**https://github.com/ArduPilot/MissionPlanner** repository in place of the ardupilot repository.  
+You could clone the git repo to (for example) c:\\MissionPlanner\\  but the exact folder is not critical.
 
 Open the Mission Planner solution in Visual Studio
 ==================================================
@@ -88,6 +90,7 @@ Open the Mission Planner solution in Visual Studio
    Planner and a few other related applications (i.e. "3DR Radio",
    "Updater", etc) which can all be see in the Solution Explorer
    (highlighted in yellow above).
+-  If you haven't already installed the ".NET desktop development" add-in, you will be prompted to do it now.   
 -  Set the "Solution Configuration" to "Debug" or "Release" (this can be
    found just below the Tools menu)
 -  Set the "Solution Platforms" to "x86"
