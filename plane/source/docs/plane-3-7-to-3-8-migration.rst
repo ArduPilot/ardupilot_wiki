@@ -18,6 +18,9 @@ If you later downgrade from Plane 3.8 to an earlier version then any
 changes that were made to the RC_* and SERVOn_* parameters will be lost. 
 Upgrading back to 3.8 (or higher) will not copy over any new param changes. 
 This is only an issue if the user decides to downgrade.
+**Please note that downgrading from 3.8 to 3.7 is very likely to cause an
+immediate crash if you lose RCx_REV settings since some of your servos will
+be reserved**
 
 Change to Servo Range Parameters
 ================================
