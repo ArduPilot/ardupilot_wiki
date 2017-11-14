@@ -76,6 +76,8 @@ Configuration of CAN driver
 
 The driver should be set to use some protocol. Currently there is support for UAVCAN,
 which is numbered 1.
+The parameter **CAN_PX_PROTOCOL**, where X is the number of driver, should be filled
+with the number of protocol for this driver.
 
 figure:: ../../../images/can-driver-parameters-protocol
 
