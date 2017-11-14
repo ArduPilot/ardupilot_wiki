@@ -50,3 +50,5 @@ tuning options for the vehicle.
 [site wiki="plane,planner,rover"]
     Vibration Damping <common-vibration-damping>
 [/site]
+    CAN Bus Setup <common-canbus-setup-advanced>
+    UAVCAN Setup <common-uavcan-setup-advanced>
