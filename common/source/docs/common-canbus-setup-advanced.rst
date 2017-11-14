@@ -22,10 +22,10 @@ All nodes are connected to each other through a two wire bus. The wires are
 Most flight controllers that run Ardupilot have either one or two CAN interfaces
 for connection of different devices.
 The setup of the interfaces can be made in a way that will provide redundancy or
-maximum throughtput or a mix of both.
+maximum throughput or a mix of both.
 This is accomplished with a three layer approach, where apart from the physical
 interface there exist a driver layer that represents a specific protocol and a
-software layer (Ardupilot) that comunicates on CAN bus throught these drivers.
+software layer (Ardupilot) that communicates on CAN bus through these drivers.
 
 Each physical interface can be virtually connected to one of the drivers that
 represent protocols to be used.
@@ -60,8 +60,9 @@ After enabling the interface and reboot two more parameters can be set for each
 of the enabled interfaces.
 
 These are:
-- **CAN_PX_BITRATE** - sets the desiret rate of transfer on this interface
-- **CAN_PX_DEBUG** - allows output of debug messages
+
+-  **CAN_PX_BITRATE** - sets the desired rate of transfer on this interface
+-  **CAN_PX_DEBUG** - allows output of debug messages
 
 Usually the bitrate used by default is 1 Mbit.
 Debug level can be set on user's preference and needs.
