@@ -28,9 +28,9 @@ Configuration settings
 
 There are three parameters present at the moment in CAN category of setting:
 
-- **CAN_DX_UC_NODE** - which is the node ID of the autopilot
-- **CAN_D1_UC_ESC_BM** - bitmask that enables sending of ESC commands
-- **CAN_D1_UC_SRV_BM** - bitmask that enables sending of servo commands
+-  **CAN_DX_UC_NODE** - which is the node ID of the autopilot
+-  **CAN_D1_UC_ESC_BM** - bitmask that enables sending of ESC commands
+-  **CAN_D1_UC_SRV_BM** - bitmask that enables sending of servo commands
 
 figure:: ../../../images/uavcan-main-settings.png
 
