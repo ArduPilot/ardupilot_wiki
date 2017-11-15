@@ -34,7 +34,7 @@ There are three parameters present at the moment in CAN category of setting:
 -  **CAN_D1_UC_ESC_BM** - bitmask that enables sending of ESC commands
 -  **CAN_D1_UC_SRV_BM** - bitmask that enables sending of servo commands
 
-figure:: ../../../images/uavcan-main-settings.png
+image:: ../../../images/uavcan-main-settings.png
 
 In a bitmap mask, each position in the binary number represents an ESC or servo ID
 that the command will be generated for. In case of copters, usually the ESC bitmask
@@ -48,4 +48,4 @@ If there is a GNSS connected to UAVCAN network, it has to be enabled in **GPS**
 subgroup of parameters.
 The **TYPE** parameter should be set to 9 for corresponding GNSS receiver in autopilot.
 
-figure:: ../../../images/uavcan-gnss-settings.png
+image:: ../../../images/uavcan-gnss-settings.png
