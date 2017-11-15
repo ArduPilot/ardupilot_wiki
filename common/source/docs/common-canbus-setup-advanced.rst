@@ -49,7 +49,7 @@ to it.
 The **CAN_P1_DRIVER** and **CAN_P2_DRIVER** parameters in this configuration should be set to 1 (first
 driver).
 
-figure:: ../../../images/can-driver-parameters.png
+image:: ../../../images/can-driver-parameters.png
 
 After change of any **CAN_PX_DRIVER** the autopilot has to be rebooted for the changes to take place.
 
@@ -67,7 +67,7 @@ These are:
 Usually the bitrate used by default is 1 Mbit.
 Debug level can be set on user's preference and needs.
 
-figure:: ../../../images/can-driver-parameters-bitrate
+image:: ../../../images/can-driver-parameters-bitrate
 
 When any of the interfaces are associated with any driver, that driver will be
 loaded with specified protocol.
@@ -80,6 +80,6 @@ which is numbered 1.
 The parameter **CAN_PX_PROTOCOL**, where X is the number of driver, should be filled
 with the number of protocol for this driver.
 
-figure:: ../../../images/can-driver-parameters-protocol
+image:: ../../../images/can-driver-parameters-protocol
 
 After the change to protocol the autopilot has to be rebooted for the changes to take place.
