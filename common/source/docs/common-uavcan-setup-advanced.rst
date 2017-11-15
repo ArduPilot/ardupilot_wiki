@@ -4,7 +4,7 @@
 UAVCAN Setup
 ============
 
-This article provides guidance to setup UAVCAN protocol on Ardupilot. 
+This article provides guidance to setup UAVCAN protocol on Ardupilot.
 
 .. tip::
 
@@ -19,6 +19,8 @@ in aerospace and robotic applications via CAN bus.
 The UAVCAN network is a decentralized peer network, where each peer
 (node) has a unique numeric identifier - node ID and that is only one
 parameter needs to be set for basic setup.
+
+Detailed description of protocol can be found at http://uavcan.org/
 
 **UAVCAN driver for Aurdupilot do not support auto node numbering in
 current version. All nodes should have the ID explicitly set.**
