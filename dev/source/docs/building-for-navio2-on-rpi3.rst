@@ -23,6 +23,16 @@ Setup
 Use an ssh terminal program such as `Putty <http://www.putty.org/>`__ to
 log into the Navio2 board's RPI3.
 
+.. note::
+    
+    On Raspbian Stretch, one of the Python requirements might be missing, so please install future by
+
+::
+
+    pip install future
+
+
+
 Clone the source:
 
 ::
