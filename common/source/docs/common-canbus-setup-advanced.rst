@@ -68,8 +68,8 @@ These are:
 Usually the bitrate used by default is 1 Mbit.
 Debug level can be set on user's preference and needs.
 
-.. image:: ../../../images/can-driver-parameters-bitrate
-    :target: ../_images/can-driver-parameters-bitrate
+.. image:: ../../../images/can-driver-parameters-bitrate.png
+    :target: ../_images/can-driver-parameters-bitrate.png
     
 When any of the interfaces are associated with any driver, that driver will be
 loaded with specified protocol.
@@ -82,7 +82,7 @@ which is numbered 1.
 The parameter **CAN_PX_PROTOCOL**, where X is the number of driver, should be filled
 with the number of protocol for this driver.
 
-.. image:: ../../../images/can-driver-parameters-protocol
-    :target: ../_images/can-driver-parameters-bitrate
+.. image:: ../../../images/can-driver-parameters-protocol.png
+    :target: ../_images/can-driver-parameters-bitrate.png
     
 After the change to protocol the autopilot has to be rebooted for the changes to take place.
