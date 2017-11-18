@@ -21,7 +21,7 @@ Installing modified RealFlight
   - Click "Enter Tech Support Code"
   - Enter the code: LINK
   - a message box will appear with a new code
-  - enter that code on the knifeedge signup page (NOTE: this page is  not yet available, it should be available by the 2nd week of November 2017)
+  - enter that code on the `knifeedge signup page <https://www.knifeedge.com/cart/index.php?main_page=product_info&products_id=181>`__
   - Enter your response code in the same location
   - You should receive a message indicating that Link functionality is now unlocked.
   - Download the "Quadcopter X - direct throttles_AV.RFX" file to your PC
