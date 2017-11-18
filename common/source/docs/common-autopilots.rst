@@ -43,6 +43,6 @@ Discontinued boards
 The following boards are end-of-life. The documentation is archived, but
 available if you're still working on those platforms:
 
--  :ref:`APM 2.6 <common-apm25-and-26-overview>` - no longer supported for Copter or Plane. The last firmware builds that fit on this board are Copter 3.2.1 and Plane 3.3.0.
+-  :ref:`APM 2.x <common-apm25-and-26-overview>` - APM 2.x (APM 2.6 and later) are no longer supported for Copter or Plane. The last firmware builds that fit on this board are Copter 3.2.1 and Plane 3.3.0.
 -  :ref:`NAVIO+ <common-navio-overview>`
 -  :ref:`PX4FMU <common-px4fmu-overview>` and (:ref:`PX4IO <common-px4io-overview>`)
