@@ -57,7 +57,7 @@ How do I setup reverse throttle on a IC plane?
 
 Some planes (mostly nitro or petrol planes) have a reversed throttle
 servo, so lower PWM values on the throttle channel gives more throttle
-not less. To setup Plane to handle this you need to change 3 settings:
+not less. To set up Plane 3.7 or earlier to handle this you need to change 3 settings:
 
 -  set RC3_REV to -1
 -  setup your transmitter for reverse throttle
@@ -67,6 +67,10 @@ not less. To setup Plane to handle this you need to change 3 settings:
 
 After you setup reverse throttle make sure you test correct failsafe by
 turning off your transmitter while on the ground.
+
+For plane 3.8.0 or later, the servo library allows you to reverse the 
+throttle output channel without affecting your RC inputs or failsafe configuration.
+to do this, set SERVO3_REVERSED to 1.
 
 What happens if an airspeed sensor fails in flight?
 ---------------------------------------------------
