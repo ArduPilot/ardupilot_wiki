@@ -35,7 +35,7 @@ Open a terminal window and go to the location where you downloaded the
 
 ::
 
-    sudo dpkg -i apmplanner*.deb
+    sudo dpkg -i apm_planner*.deb
 
 The installation will likely fail because of missing dependencies. 
 These dependencies can be installed with this command:
@@ -48,7 +48,7 @@ Then retry the apmplanner installation again:
 
 ::
 
-    sudo dpkg -i apmplanner*.deb
+    sudo dpkg -i apm_planner*.deb
 
 Create a desktop icon
 =====================
