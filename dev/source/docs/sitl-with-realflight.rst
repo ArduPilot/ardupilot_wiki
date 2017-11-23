@@ -12,8 +12,8 @@ Using SITL with RealFlight
 This simulator only runs on Windows and requires RealFlight
 version 8. Note that RealFlight-X does not work with ArduPilot.
 
-Installing modified RealFlight
-==============================
+Enabling RealFlight Link Feature
+================================
 
   - `Buy <http://www.realflight.com/where-to-buy.php>`__ and Install the regular version of RealFlight8
   - Connect the RealFlight transmitter to your PC's USB port
@@ -37,6 +37,7 @@ From within RealFlight, Reduce graphics options to improve performance:
    - Simulation, Settings, Graphics
    - Under "Quality" set all values to "No" or "Low" (i.e. set "Clouds" to "No", "Water Quality" to "Low", etc)
    - Under "Hardware" set "Resolution" to "800 x 600 Medium(16 bit) and select "Full Screen" mode
+   - Under physics settings, change the option for "pause simulator when in background" to No
    
   .. image:: ../images/realflight-settings-graphics.png
     :target: ../_images/realflight-settings-graphics.png
