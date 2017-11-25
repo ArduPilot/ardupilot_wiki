@@ -28,6 +28,17 @@ available in the future however will require slightly different setup to compile
    <http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`__.
 
 
+.. tip::
+    With the latest "Fall Creators update" someting is broken in the file access from WSL to Windows directories.
+    It seems that if you put ardupilot source code to a windows drive and try to build it from WSL via the /mnt/<drive> folders,
+    the build will fail with random include errors. To make it work, you have to put your source code to a directory under the 
+    "native" WSL filesystem or keep it on windows, share it, and mount via the drvfs driver, like this:
+
+    .. code-block:: python
+ 
+        mount -t drvfs '\\127.0.0.1\ardupilot' /devel/ardupilot
+
+
 Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
 =============================================================
 
