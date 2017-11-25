@@ -49,7 +49,7 @@ Software
 Discussion
 ----------
 
-We have a `SkyViper section <https://discuss.ardupilot.org/c/arducopter/skyviper>` on the ArduPilot discussion forum. Have a look there to see what people are up to and ask questions.
+We have a `SkyViper section <https://discuss.ardupilot.org/c/arducopter/skyviper>`__ on the ArduPilot discussion forum. Have a look there to see what people are up to and ask questions.
 
 Videos
 ------
