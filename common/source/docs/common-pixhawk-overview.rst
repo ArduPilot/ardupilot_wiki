@@ -82,7 +82,8 @@ RTS, 4 = CTS, 3 = RX, 2 = TX, 1 = 5V.**
 Pixhawk connector pin assignments
 =================================
 
-**TELEM1, TELEM2 ports**
+TELEM1, TELEM2 ports
+~~~~~~~~~~~~~~~~~~~~
 
 .. raw:: html
 
@@ -128,7 +129,8 @@ Pixhawk connector pin assignments
 
 
 
-**GPS port**
+GPS port
+~~~~~~~~
 
 .. raw:: html
 
@@ -174,8 +176,8 @@ Pixhawk connector pin assignments
 
 
 
-**SERIAL 4/5 port - due to space constraints two ports are on one
-connector.**
+SERIAL 4/5 port - due to space constraints two ports are on one connector.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
@@ -222,7 +224,8 @@ connector.**
    </table>
 
 
-**ADC 6.6V**
+ADC 6.6V
+~~~~~~~~
 
 
 .. raw:: html
@@ -254,7 +257,8 @@ connector.**
 
 
 
-**ADC 3.3V**
+ADC 3.3V
+~~~~~~~~
 
 
 
@@ -297,7 +301,8 @@ connector.**
 
 
 
-**I2C**
+I2C
+~~~
 
 
 
@@ -335,7 +340,8 @@ connector.**
 
 
 
-**CAN**
+CAN
+~~~
 
 
 
@@ -371,7 +377,8 @@ connector.**
    </tbody>
    </table>
 
-**SPI**
+SPI
+~~~
 
 
 
@@ -422,7 +429,8 @@ connector.**
    </tbody>
    </table>
 
-**POWER**
+POWER
+~~~~~
 
 .. raw:: html
 
@@ -464,7 +472,8 @@ connector.**
    </tbody>
    </table>
 
-**SWITCH**
+SWITCH
+~~~~~~
 
 .. raw:: html
 
@@ -493,7 +502,8 @@ connector.**
    </tbody>
    </table>
 
-**Console Port**
+Console Port
+~~~~~~~~~~~~
 
 The system's serial console runs on the port labeled SERIAL4/5. The
 pinout is standard serial pinout, to connect to a standard FTDI cable
@@ -552,7 +562,8 @@ pinout is standard serial pinout, to connect to a standard FTDI cable
    </tbody>
    </table>
 
-**Spektrum/DSM Port**
+Spektrum/DSM Port
+~~~~~~~~~~~~~~~~~
 
 The Spektrum/DSM port is for connecting Spektrum DSM-2/DSMX receiver
 modules.
