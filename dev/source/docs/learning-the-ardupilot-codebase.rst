@@ -38,6 +38,7 @@ Tutorial steps
     Copter - Scheduling your new code to run intermittently <code-overview-scheduling-your-new-code-to-run-intermittently>
     Copter - Object Avoidance <code-overview-object-avoidance>
     Rover - Adding a new drive mode <rover-adding-a-new-drive-mode>
+    Plane - Architecture overview <plane-architecture>
     Adding a new MAVLink message <code-overview-adding-a-new-mavlink-message>
     Adding a new MAVLink Gimbal <code-overview-adding-support-for-a-new-mavlink-gimbal>
 
