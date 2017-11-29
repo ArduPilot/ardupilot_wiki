@@ -37,6 +37,7 @@ Tutorial steps
     Copter - Adding a new flight mode <apmcopter-adding-a-new-flight-mode>
     Copter - Scheduling your new code to run intermittently <code-overview-scheduling-your-new-code-to-run-intermittently>
     Copter - Object Avoidance <code-overview-object-avoidance>
+    Rover - Adding a new drive mode <rover-adding-a-new-drive-mode>
     Adding a new MAVLink message <code-overview-adding-a-new-mavlink-message>
     Adding a new MAVLink Gimbal <code-overview-adding-support-for-a-new-mavlink-gimbal>
 
