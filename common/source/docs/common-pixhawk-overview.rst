@@ -552,6 +552,37 @@ pinout is standard serial pinout, to connect to a standard FTDI cable
    </tbody>
    </table>
 
+**Spektrum/DSM Port**
+
+The Spektrum/DSM port is for connecting Spektrum DSM-2/DSMX receiver
+modules.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (white)</td>
+   <td>Signal</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>2 (black)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   <tr>
+   <td>3 (red)</td>
+   <td>VCC</td>
+   <td>+3.3V</td>
+   </tr>
+   </tbody>
+   </table>
 
 
 Pixhawk system features
