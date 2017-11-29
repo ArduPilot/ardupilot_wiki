@@ -53,8 +53,6 @@ As a reference the diagram below provides a high level view of Rover's architect
 
    ::
 
-        protected:
-
         // return if in non-manual mode : AUTO, GUIDED, RTL
         virtual bool is_autopilot_mode() const { return false; }
 
