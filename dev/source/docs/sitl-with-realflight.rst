@@ -16,6 +16,7 @@ Enabling RealFlight Link Feature
 ================================
 
   - `Buy <http://www.realflight.com/where-to-buy.php>`__ and Install the regular version of RealFlight8
+  - update it to the latest version using the Technical Support button in the launcher (you need at least version 8.00.019)
   - Connect the RealFlight transmitter to your PC's USB port
   - Start RealFlight8 and in the launcher choose "Technical Support"
   - Click "Enter Tech Support Code"
