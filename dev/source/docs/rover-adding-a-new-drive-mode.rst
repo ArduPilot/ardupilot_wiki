@@ -92,7 +92,7 @@ As a reference the diagram below provides a high level view of Rover's architect
         g2.motors.set_steering(steering_out * 4500.0f);
         calc_throttle(target_speed, false);
 
-#. Instantiate the new mode class in `Rover.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/Rover.h#L382>`__ (search for "ModeAcro" and add the new mode somewhere below)
+#. Instantiate the new mode class in `Rover.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/Rover.h#L382>`__ by searching for "ModeAcro" and then adding the new mode somewhere below.
 
    ::
 
@@ -104,6 +104,22 @@ As a reference the diagram below provides a high level view of Rover's architect
         ModeAuto mode_auto;
         ModeSteering mode_steering;
         ModeRTL mode_rtl;
+
+   Also at the top of Rover.h add the new mode as a "friend" which allows the mode to access the Rover class's internal variables and functions.
+
+   ::
+
+        class Rover : public AP_HAL::HAL::Callbacks {
+        public:
+            <some lines omitted>
+            friend class Mode;
+            friend class ModeAcro;
+            friend class ModeAuto;
+            friend class ModeGuided;
+            friend class ModeHold;
+            friend class ModeSteering;
+            friend class ModeManual;
+            friend class ModeRTL;
 
 #. In `Rover.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/control_modes.cpp>`__ add the new mode to the ``control_mode_from_num()`` function to create the mapping between the mode's number and the class.
 
