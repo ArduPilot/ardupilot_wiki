@@ -189,7 +189,11 @@ This parameter controls which measurement source is used to determine
 height during optical flow navigation. Set to 0 to use the barometer or
 to 1 to use the range finder. If set to 1,the vehicle will attempt to
 maintain a constant height relative to the terrain, which is the default
-behaviour during optical flow navigation.
+behaviour during optical flow navigation. 
+Warning : EK2_ALT_SOURCE = 1 is only suitable for low altitude and 
+low speed operation over flat surfaces, not for up and away flight. 
+To use range finder at lower altitudes and barometer for up and away flight, 
+set EK2_ALT_SOURCE = 0 and use the RNG_USE_HGT parameter.
 
 EKF_EAS_GATE
 --------------
