@@ -101,7 +101,7 @@ ideas for your own build.
    http://diydrones.com/profiles/blogs/building-flying-and-not-crashing-a-large-octaquadplane
 -  Porter QuadPlane build:
    http://diydrones.com/profiles/blogs/building-flying-and-crashing-a-large-quadplane
--  QuadRanger build: http://px4.io/docs/quadranger-vtol/
+-  The PerthUAV Mozzie build: http://mozzie.readthedocs.io/
 
 if you would like to add your own build to this list then please
 contact the ArduPilot dev team.
