@@ -22,6 +22,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Hex <http://www.hex.aero/shop/>`__
 * `JapanDrones <http://japandrones.com/>`__
 * `jDrones <http://store.jdrones.com/>`__
+* `Jester's Drones <http://www.jestersdrones.org/store/>`__ (Solo addons, MAUCH power modules)
 * `Lightware <http://www.lightware.co.za>`__
 * `mRobotics <http://mrobotics.io/>`__
 * `Northox <https://northox.myshopify.com/>`__
