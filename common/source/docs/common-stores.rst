@@ -32,7 +32,6 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <http://www.uavionix.com/>`__
 * `VirtualRobotix <http://www.virtualrobotix.it/index.php/en/shop>`__
-* `3DR <https://store.3dr.com/>`__ (Solo parts and accessories)
 * `3DXR <https://www.3dxr.co.uk/>`__
 
 
