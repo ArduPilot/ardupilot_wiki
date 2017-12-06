@@ -1,0 +1,272 @@
+|image0| \ |image1|
+
+    **Camera Trigger Setup for Pixhawk**
+
+    
+
+This guide is intended to help you modify a remote shutter release cable
+for use with APM/Pixhawk Flight Controllers and setup the flight
+controller for triggering the camera. This method eliminates the need
+(and costs) for 3\ :sup:`rd` party triggering devices. In this specific
+example, we will use a Sony Alpha 6000 (A6000) camera. This procedure
+may work with other cameras however for this specific example, we will
+use a Sony Alpha A6000 (A6000).
+
+**Items Required:**
+
+-  Sony A6000 (or other camera with wire shutter release)
+
+-  Pixhawk or APM Flight Controller
+
+-  Remote Shutter Release Cable (Click `*HERE
+       * <https://www.amazon.com/SHOOT-DSC-RX100M3-DSC-RX100M20-DSC-RX100II-DSC-RX100III/dp/B00ME7N6P8/ref=sr_1_1?ie=UTF8&qid=1496578319&sr=8-1&keywords=Sony+A6000+Shutter+Release+Cable>`__\ for
+       a link to an affordable solution)
+
+-  Servo Pins
+       (`*LINK* <https://www.digikey.com/products/en?keywords=952-2157-1-ND>`__)
+
+-  Servo Pin Crimper
+       (`*LINK* <https://www.amazon.com/ServoCity-Production-Pin-Crimpers/dp/B00UXYW2FE/ref=sr_1_2?ie=UTF8&qid=1496578466&sr=8-2&keywords=Servo+Pin+Crimper>`__)
+
+-  Wire Stripper or Razor Blade
+
+-  Laptop with Mission Planner Installed
+
+**Step 1:** Preparing the Remote Shutter Release Cable
+
+    a) Trim the Remote Shutter Release Cable to the desired cable length
+
+|image2|
+
+
+
+b) Strip off approximately 2-3cm of the black sleeve making sure not to
+       damage the 3 wires contained within the sleeve.
+
+|image3|
+
+c) Remove approximately 3mm of the sleeves off of each of the three
+       wires. You will need to make sure that there is enough of the
+       sleeve removed that when the servo pin is crimped to the wire
+       that there is contact between the pin and the exposed wire.
+
+|image4|
+
+
+
+The three wires have the following functions:
+
+    i. RED: SHUTTER
+
+ii.  YELLOW: GROUND
+
+iii. WHITE:FOCUS
+
+**NOTE:** Your wire coloring may differ from this example. You can
+identify which functions are controlled by each cable by connecting the
+cable to your camera, powering it on and then shorting the cables in
+pairs to identify which pair does what. For example, if you have a
+GREEN, BLUE and BLACK set of wires and shorting BLUE and BLACK results
+in the camera focusing, and then you short the GREEN AND BLUE wires and
+nothing happens but shorting the GREEN AND BLACK results in the camera
+exposing, then you know that the BLACK wire is ground, GREEN is shutter
+and BLUE is focus.
+
+d) Twist the exposed ends of the FOCUS and GROUND wires together then
+       crimp a servo connector to the pair as well as to the exposed end
+       of the SHUTTER wire.
+
+|image5|
+
+
+
+\ |image6|
+
+TIP: The Servo Pin has two sets of tabs which after crimping will fold
+on each other and secure the wire. To make life a little easier, use a
+small pair of needle nose pliers to press the pair of tabs on the end of
+the servo pin tightly against the wires. This will prevent the wires
+from coming out of the servo pin while trying to crimp them.
+
+|image7|
+
+
+
+\ |image8|
+
+e) Insert the Servo Pins into a Servo connector, one pin on each side of
+       the middle slot of the servo connector.
+
+|image9|
+
+
+
+The cable is now ready for connection to your Pixhawk or APM Flight
+Controller. Note that the Shutter Pin (in this case the RED wire) will
+be on the SIGNAL side of the Auxiliary port while the WHITE/YELLOW wire
+will be on the GROUND side of the Auxiliary port.
+
+|image10|
+
+**Step 2:** Setting up your Pixhawk/APM flight controller to trigger
+your camera via the Shutter Release Cable
+
+a) Connect to your Pixhawk/APM Flight Controller via Mission Planner
+       either through direct USB connection or wireless telemetry link.
+
+b) Connect your modified shutter release cable to AUX 1 on the Pixhawk
+       (CH9 on APM) making sure to maintain the correct orientation for
+       polarity.
+
+
+
+\ |image11|
+
+c) Connect the shutter release cable to your camera and power the camera
+       on.
+
+|image12|
+
+
+
+Since we have shorted the FOCUS and GROUND wires, the camera should
+automatically pull focus. As of now, I have not found a way to connect
+the SHUTTER, FOCUS and GROUND wires individually to the Pixhawk/APM and
+have the flight controller pull the camera focus and trigger the camera
+in sequence. To get around this, the camera settings are set so that the
+camera has the following features activated:
+
+i.  Pre-Shutter Focus
+
+ii. Continuous Auto-Focus
+
+d) In Mission Planner, navigate to INITIAL SETUP -> CAMERA GIMBAL and
+       change the SHUTTER drop-down menu to “RELAY”
+
+|image13|
+
+NOTE: You can play around with the “Duration” values to increase or
+decrease the responsiveness of the shutter command. With the Sony A6000,
+a duration of 1/10\ :sup:`th` of a Second functions perfectly.
+
+
+
+e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission
+       Planner and change the CH7 OPT to “Camera Trigger”. This will be
+       necessary if you intend to use your remote controls CH7 to
+       trigger the camera in addition to having the flight controller
+       trigger the camera.
+
+|image14|
+
+f) Navigate to the FULL PARAMETER LIST under the main
+
+    CONFIG/TUNING tab and locate the “CAM\_TRIG\_TYPE” parameter. This
+    parameter must show as 1 for “RELAY”. If it is not set to 1, change
+    this parameter to 1 before proceeding to the next step.
+
+
+
+\ |image15|
+
+g) Scroll down through the parameters until you get to “RELAY\_PIN”.
+       Here you will want to set the “RELAY\_PIN” parameter to match the
+
+    AUX Port you have connected the shutter release cable to. Since we
+    have connected the cable to AUX1 on a Pixhawk, we need to change the
+    “RELAY\_PIN” parameter to “50” (50:Pixhawk AUXOUT1). If you are
+    connecting to an APM, then you will need to change this parameter to
+    “13”.
+
+|image16|
+
+
+
+h) Now that the required parameters have been changed, click on
+
+    “WRITE PARAMS”
+
+|image17|
+
+**Step 3:** Testing the Remote Shutter Cable and Flight Controller
+
+Now that the cable has been modified and connected to the Pixhawk/APM
+which has been setup to trigger the camera via relay, let’s test it.
+
+a) Navigate back to the FLIGHT DATA Screen and right click on the map to
+       select “TRIGGER CAMERA NOW”
+
+|image18|
+
+
+
+Once clicked, you should hear or see the camera expose. If the camera
+does not expose, check the following:
+
+-  Correct Orientation of cables (ie, Shutter Wire is connected to the
+       SIGNAL pin on the correct port of the flight controller and
+       Ground is connected to Ground)
+
+-  Camera is On and not in an Error State
+
+-  Camera lens is not too close to an object which may cause it to be
+       unable to autofocus and expose
+
+If you still are not getting the camera to expose and all of the
+above-mentioned check points are not a problem, then you may want to
+adjust the Shutter Duration mentioned in Step 2 Part D.
+
+If your camera took a picture, congratulations! You are all set to take
+pictures using the Pixhawk/APM flight controller without needing third
+party hardware!
+
+Please feel free to give us a LIKE and follow us on Facebook:
+
+`*https://www.facebook.com/MicroAerialProjects/* <https://www.facebook.com/MicroAerialProjects/>`__
+
+and subscribe to our Website for updates on our drone mapping
+
+adventures around the World:
+`*www.microaerialprojects.com* <http://www.microaerialprojects.com/>`__
+
+**If you enjoy having this cost cutting functionality and would like to
+donate to the continuous development of our Pixhawk/APM/Mission Planner
+open source projects, please do so by visiting:**
+
+`*https://www.paypal.com/au/cgi-* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
+
+`*bin/webscr?cmd=\_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT5* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
+`*0TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
+`*663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donatio* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
+`*n\_\_DonationFlow\_\_\_StateDonationStart&rapidsStateSignature=426e017c* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
+`*193d6077f946b10961df11f68294ea28* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
+
+
+
+OR
+
+    Share your solutions and experiences with others on the appropriate
+    social media/blog platforms!
+
+
+
+.. |image0| image:: https://user-images.githubusercontent.com/34314456/33682607-105baf26-da96-11e7-8d06-da8f90016af8.png
+.. |image1| image:: https://user-images.githubusercontent.com/34314456/33682608-10700318-da96-11e7-9bf8-3e83509778b8.png
+.. |image2| image:: https://user-images.githubusercontent.com/34314456/33682609-10a8b5d2-da96-11e7-8e7d-450c5e180ec2.png
+.. |image3| image:: https://user-images.githubusercontent.com/34314456/33682610-10bda5be-da96-11e7-90e7-e98ef210d66a.png
+.. |image4| image:: https://user-images.githubusercontent.com/34314456/33682611-10efb0b8-da96-11e7-9e66-8a78702ca993.png
+.. |image5| image:: https://user-images.githubusercontent.com/34314456/33682612-11006318-da96-11e7-9d3a-d508a236fa8b.png
+.. |image6| image:: https://user-images.githubusercontent.com/34314456/33682613-11141642-da96-11e7-83be-113f15b547ca.png
+.. |image7| image:: https://user-images.githubusercontent.com/34314456/33682614-1128194e-da96-11e7-92b7-0e64be53801b.png
+.. |image8| image:: https://user-images.githubusercontent.com/34314456/33682615-11554e8c-da96-11e7-8f9e-2d4da901d341.png
+.. |image9| image:: https://user-images.githubusercontent.com/34314456/33682616-11942850-da96-11e7-84d5-f4872563d9cf.png
+.. |image10| image:: https://user-images.githubusercontent.com/34314456/33682617-11ca0d76-da96-11e7-9442-2514b099f905.png
+.. |image11| image:: https://user-images.githubusercontent.com/34314456/33682619-11ee2e90-da96-11e7-854a-9c850528beba.png
+.. |image12| image:: https://user-images.githubusercontent.com/34314456/33682620-122cd0a0-da96-11e7-9336-6701ec637017.png
+.. |image13| image:: https://user-images.githubusercontent.com/34314456/33682621-12654836-da96-11e7-8fa2-8a6b5c88d8a1.png
+.. |image14| image:: https://user-images.githubusercontent.com/34314456/33682622-129b622c-da96-11e7-9954-2c042e427ffe.png
+.. |image15| image:: https://user-images.githubusercontent.com/34314456/33682623-12d831f2-da96-11e7-9c34-93ee7fc1439a.png
+.. |image16| image:: https://user-images.githubusercontent.com/34314456/33682624-13149020-da96-11e7-97f5-f3d4109fb6c9.png
+.. |image17| image:: https://user-images.githubusercontent.com/34314456/33682627-134cf6f4-da96-11e7-99eb-a50b286a6bd1.png
+.. |image18| image:: https://user-images.githubusercontent.com/34314456/33682629-13882738-da96-11e7-9c0d-1de73a74ca19.png
+
