@@ -1,4 +1,4 @@
-|image0| \ |image1|
+.. image:: ../../../images/CTimage0.png
 
     **Camera Trigger Setup for Pixhawk**
 
@@ -36,21 +36,21 @@ use a Sony Alpha A6000 (A6000).
 
     a) Trim the Remote Shutter Release Cable to the desired cable length
 
-|image2|
+.. image:: ../../../images/CTimage2.png
 
 
 
 b) Strip off approximately 2-3cm of the black sleeve making sure not to
        damage the 3 wires contained within the sleeve.
 
-|image3|
+.. image:: ../../../images/CTimage3.png
 
 c) Remove approximately 3mm of the sleeves off of each of the three
        wires. You will need to make sure that there is enough of the
        sleeve removed that when the servo pin is crimped to the wire
        that there is contact between the pin and the exposed wire.
 
-|image4|
+.. image:: ../../../images/CTimage4.png
 
 
 
@@ -76,11 +76,11 @@ d) Twist the exposed ends of the FOCUS and GROUND wires together then
        crimp a servo connector to the pair as well as to the exposed end
        of the SHUTTER wire.
 
-|image5|
+.. image:: ../../../images/CTimage5.png
 
 
 
-\ |image6|
+.. image:: ../../../images/CTimage6.png
 
 TIP: The Servo Pin has two sets of tabs which after crimping will fold
 on each other and secure the wire. To make life a little easier, use a
@@ -88,16 +88,16 @@ small pair of needle nose pliers to press the pair of tabs on the end of
 the servo pin tightly against the wires. This will prevent the wires
 from coming out of the servo pin while trying to crimp them.
 
-|image7|
+.. image:: ../../../images/CTimage7.png
 
 
 
-\ |image8|
+.. image:: ../../../images/CTimage8.png
 
 e) Insert the Servo Pins into a Servo connector, one pin on each side of
        the middle slot of the servo connector.
 
-|image9|
+.. image:: ../../../images/CTimage9.png
 
 
 
@@ -106,7 +106,7 @@ Controller. Note that the Shutter Pin (in this case the RED wire) will
 be on the SIGNAL side of the Auxiliary port while the WHITE/YELLOW wire
 will be on the GROUND side of the Auxiliary port.
 
-|image10|
+.. image:: ../../../images/CTimage10.png
 
 **Step 2:** Setting up your Pixhawk/APM flight controller to trigger
 your camera via the Shutter Release Cable
@@ -120,12 +120,12 @@ b) Connect your modified shutter release cable to AUX 1 on the Pixhawk
 
 
 
-\ |image11|
+.. image:: ../../../images/CTimage11.png
 
 c) Connect the shutter release cable to your camera and power the camera
        on.
 
-|image12|
+.. image:: ../../../images/CTimage12.png
 
 
 
@@ -143,7 +143,7 @@ ii. Continuous Auto-Focus
 d) In Mission Planner, navigate to INITIAL SETUP -> CAMERA GIMBAL and
        change the SHUTTER drop-down menu to “RELAY”
 
-|image13|
+.. image:: ../../../images/CTimage13.png
 
 NOTE: You can play around with the “Duration” values to increase or
 decrease the responsiveness of the shutter command. With the Sony A6000,
@@ -157,7 +157,7 @@ e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission
        trigger the camera in addition to having the flight controller
        trigger the camera.
 
-|image14|
+.. image:: ../../../images/CTimage14.png
 
 f) Navigate to the FULL PARAMETER LIST under the main
 
@@ -167,7 +167,7 @@ f) Navigate to the FULL PARAMETER LIST under the main
 
 
 
-\ |image15|
+.. image:: ../../../images/CTimage15.png
 
 g) Scroll down through the parameters until you get to “RELAY\_PIN”.
        Here you will want to set the “RELAY\_PIN” parameter to match the
@@ -178,7 +178,7 @@ g) Scroll down through the parameters until you get to “RELAY\_PIN”.
     connecting to an APM, then you will need to change this parameter to
     “13”.
 
-|image16|
+.. image:: ../../../images/CTimage16.png
 
 
 
@@ -186,7 +186,7 @@ h) Now that the required parameters have been changed, click on
 
     “WRITE PARAMS”
 
-|image17|
+.. image:: ../../../images/CTimage17.png
 
 **Step 3:** Testing the Remote Shutter Cable and Flight Controller
 
@@ -196,7 +196,7 @@ which has been setup to trigger the camera via relay, let’s test it.
 a) Navigate back to the FLIGHT DATA Screen and right click on the map to
        select “TRIGGER CAMERA NOW”
 
-|image18|
+.. image:: ../../../images/CTimage18.png
 
 
 
