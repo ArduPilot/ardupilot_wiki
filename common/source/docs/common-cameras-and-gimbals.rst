@@ -38,6 +38,7 @@ camera (including its shutter). The topics explain how to configure the
 camera shutter, and list a number of different approaches for converting
 the output signal into the form expected by your particular camera:
 
+-  :ref:`Trigger Camera Directly from AUX Ports of the Pixhawk (No 3rd Party Device) <pixhawk-camera-trigger-setup>`
 -  :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter-with-servo>`
 -  :ref:`Camera Shutter Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
 -  :ref:`CHDK Camera Control Tutorial <common-chdk-camera-control-tutorial>` (non-standard
