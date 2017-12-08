@@ -11,6 +11,10 @@ Using SITL with RealFlight
 
 This simulator only runs on Windows and requires RealFlight
 version 8. Note that RealFlight-X does not work with ArduPilot.
+The reason for the long installation process is to ensure you
+have the opportunity to read (and agree) to the terms of use by
+RealFlight/KnifeEdge to remove their liability from your
+experiemental autopilot flights.
 
 Enabling RealFlight Link Feature
 ================================
@@ -21,11 +25,12 @@ Enabling RealFlight Link Feature
   - Start RealFlight8 and in the launcher choose "Technical Support"
   - Click "Enter Tech Support Code"
   - Enter the code: LINK
-  - a message box will appear with a new code
+  - A message box will appear with a new code in the form of "LINK-1234567"
   - enter that code on the `knifeedge signup page <https://www.knifeedge.com/cart/index.php?main_page=product_info&products_id=181>`__
   - Enter your response code in the same location
-  - You should receive a message indicating that Link functionality is now unlocked.
-  - Download the "Quadcopter X - direct throttles_AV.RFX" file to your PC
+  - After reading and accepting the legal stuff, purchase the "FlightAxis Link" feature for $0 (Free)
+  - RealFlight/KnifeEdge will contact you via email with an unlock code in the form of "LINKUNLOCK12345678"
+  - Enter the unlock code into ReafFlight 8 at Launcher -> "Technical Support" -> "Enter Tech Support Code"
   - Start RealFlight (it should look exactly like regular RealFlight, there is no way to visually determine the difference)
   - Select Simulation, Import, RealFlight Archive (RFX, G3X) and select the file downloaded above.  A message, "..was successfully imported" should be displayed
   - Select Aircraft, Select Aircraft, open "Custom Aircraft" section and select "Quadcopter X - direct throttle".  In the current state, the RC inputs come straight from the stick so it is not flyable.
