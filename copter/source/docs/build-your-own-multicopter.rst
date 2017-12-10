@@ -12,7 +12,7 @@ There are Lots of Ways you Can Put Together a MultiCopter
    fast.
 #. You are likely to have a good experience if you start with a simple,
    small QuadCopter, either a Ready to Fly or an All Inclusive Kit.
-#. For for those with good DIY capabilities an Almost Ready To Fly build
+#. For those with good DIY capabilities an Almost Ready To Fly build
    like the F450 FlameWheel described below can also work well.
 #. For your first MultiCopter, DO NOT initially try to build a Photo /
    Video or First Person View copter, just build a good QuadCopter.
