@@ -91,8 +91,8 @@ Setup Ardupilot Dev Enviromment for Ubuntu bash on Windows 10
 #. Create a folder named "opt" under the root path while WSL doesn't have it:
 
    .. code-block:: python
-       
-       sudo mkdir /opt
+   
+       sudo mkdir /opt
        
 #. Run the install-prereqs-ubuntu.sh script:
 
