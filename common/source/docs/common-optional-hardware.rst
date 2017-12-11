@@ -18,7 +18,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
    
 .. toctree::
     :maxdepth: 1
-
+    
     ADS-B Receiver <common-ads-b-receiver>
 [site wiki="plane"]
     Airspeed Sensor <airspeed>
@@ -50,7 +50,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Object Avoidance with TeraRanger Tower <common-teraranger-tower-objectavoidance>
 [/site]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
-    OSD for FPV <common-osd-boards-on-screen-display>    
+    OSD for FPV <common-osd-boards-on-screen-display>
 [site wiki="copter"]
     Parachute <parachute>
 [/site]
@@ -65,6 +65,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Relay Switch <common-relay>
     Safety Switch <common-safety-switch-pixhawk>
     Servo <common-servo>
+    SBus Out <common-sbus-out>
     Telemetry Radio <common-telemetry-landingpage>
     UAVCAN ESCs <common-uavcan-escs>
 [site wiki="rover"]
