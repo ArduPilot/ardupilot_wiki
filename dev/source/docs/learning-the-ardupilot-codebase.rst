@@ -34,7 +34,8 @@ Tutorial steps
     Copter - Vehicle Code introduction <apmcopter-code-overview>
     Copter - Attitude Control <apmcopter-programming-attitude-control-2>
     Copter - Adding Parameters <code-overview-adding-a-new-parameter>
-    Copter - Adding a new flight mode <apmcopter-adding-a-new-flight-mode>
+    Copter - Adding a new flight mode (ver 3.6 and higher) <apmcopter-adding-a-new-flight-mode>
+    Copter - Adding a new flight mode (ver 3.5 and lower) <apmcopter-adding-a-new-flight-mode-35>
     Copter - Scheduling your new code to run intermittently <code-overview-scheduling-your-new-code-to-run-intermittently>
     Copter - Object Avoidance <code-overview-object-avoidance>
     Rover - Adding a new drive mode <rover-adding-a-new-drive-mode>
