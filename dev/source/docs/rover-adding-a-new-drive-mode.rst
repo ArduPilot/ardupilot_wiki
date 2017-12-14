@@ -121,7 +121,7 @@ As a reference the diagram below provides a high level view of Rover's architect
             friend class ModeManual;
             friend class ModeRTL;
 
-#. In `Rover.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/control_modes.cpp>`__ add the new mode to the ``control_mode_from_num()`` function to create the mapping between the mode's number and the class.
+#. In `control_modes.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/control_modes.cpp>`__ add the new mode to the ``mode_from_mode_num()`` function to create the mapping between the mode's number and the instance of the class.
 
    ::
 
