@@ -7,6 +7,11 @@ Adding a New Flight Mode to Copter
 This section covers the basics of how to create a new high level flight
 mode (i.e. equivalent of Stabilize, Loiter, etc) in Copter-3.6 (and higher).
 
+As a reference the diagram below provides a high level view of Copter's architecture.
+
+.. image:: ../images/copter-architecture.png
+    :target: ../_images/copter-architecture.png
+
 #. Pick a name for the new mode and add it to the bottom of the control_mode_t enum in `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L90>`__ just like "NEW_MODE" has been added below.
 
    ::
