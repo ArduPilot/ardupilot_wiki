@@ -16,8 +16,8 @@ Below is a highlevel view of the ardupilot architecture.
 
 Below is a more zoomed in view (as compared to the above diagram) of the architecture.
 
-.. image:: ../images/copter-code-overview-architecture2.png
-    :target: ../_images/copter-code-overview-architecture2.png
+.. image:: ../images/copter-architecture.png
+    :target: ../_images/copter-architecture.png
 
 Click on the images below to see a high level view of flight-mode to
 motor output code:
