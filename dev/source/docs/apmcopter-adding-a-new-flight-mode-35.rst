@@ -8,6 +8,11 @@ This section covers the basics of how to create a new high level flight
 mode (i.e. equivalent of Stabilize, Loiter, etc) for Copter version 3.5 (or earlier).
 For newer versions see the main :ref:`Adding a New Flight Mode <apmcopter-adding-a-new-flight-mode>` page. 
 
+As a reference the diagram below provides a high level view of Copter's architecture for ver 3.5 (and earlier)
+
+.. image:: ../images/copter-code-overview-architecture2.png
+    :target: ../_images/copter-code-overview-architecture2.png
+
 #. Create the #define for the new flight mode in
    `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L88>`__.
    and increase the NUM_MODES by 1.
