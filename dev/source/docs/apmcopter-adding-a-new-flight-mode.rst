@@ -152,9 +152,8 @@ As a reference the diagram below provides a high level view of Copter's architec
                     ret = &mode_stabilize;
                     break;
 
-
 #. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L297>`__ (Search for "FLTMODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.
-Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the FLTMODE1 (or FLTMODE2, etc) parameters to the number of the new mode.
+   Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the FLTMODE1 (or FLTMODE2, etc) parameters to the number of the new mode.
 
    ::
 
