@@ -19,6 +19,5 @@ In addition to mandatory calibration, you may also choose to :ref:`Configure Opt
     Radio Control Calibration <common-radio-control-calibration>
     Accelerometer Calibration <common-accelerometer-calibration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
-    Arming in Rover <arming-throttle>
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
     Example Configuration <example-configuration>
