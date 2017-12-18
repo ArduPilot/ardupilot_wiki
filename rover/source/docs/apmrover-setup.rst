@@ -16,4 +16,3 @@ or APM 2.x.
     Loading Firmware <common-loading-firmware-onto-pixhawk>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuration <rover-code-configuration>
-    Parameter  tuning <parameter-meanings-and-tuning>
