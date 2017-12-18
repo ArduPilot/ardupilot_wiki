@@ -49,7 +49,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Object Avoidance with Lightware SF40C <common-lightware-sf40c-objectavoidance>
     Object Avoidance with TeraRanger Tower <common-teraranger-tower-objectavoidance>
 [/site]
+[site wiki="copter,plane"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
+[/site]
     OSD for FPV <common-osd-boards-on-screen-display>
 [site wiki="copter"]
     Parachute <parachute>
