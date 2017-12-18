@@ -11,7 +11,7 @@ or APM 2.x.
 .. toctree::
     :maxdepth: 1
 
-    Rover Assembly Instructions <rover-assembly-instructions>
+    Assembly Instructions <rover-assembly-instructions>
     Install Mission Planner <common-install-mission-planner>
     Loading Firmware <common-loading-firmware-onto-pixhawk>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
