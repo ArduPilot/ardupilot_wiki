@@ -18,5 +18,4 @@ or APM 2.x.
     Configuration <rover-code-configuration>
     Arming your Rover <arming-your-rover>
     Tuning steering and navigation for a Rover <tuning-steering-and-navigation-for-a-rover>
-    Sensor Testing <common-sensor-testing>
     Parameter  tuning <parameter-meanings-and-tuning>
