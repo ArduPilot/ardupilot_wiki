@@ -9,7 +9,6 @@ This section contains topics about tuning Rover parameters:
 .. toctree::
     :maxdepth: 1
 
-    Skid Steer Tuning <skid-steer-parameter-tuning>
     Sonar Tuning <sonar-parameter-tuning>
     Speed Turn Tuning <speed-turn-parameter-tuning>
     MAVLink Parameters <parameters>
