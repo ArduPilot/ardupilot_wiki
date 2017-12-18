@@ -1,10 +1,10 @@
-.. _sonar-parameter-tuning:
+.. _rover-object-avoidance:
 
 ======================
-Sonar Parameter Tuning
+Rover Object Avoidance
 ======================
 
-This topic explains how to tune the SONAR/RANGEFINDER parameters.
+This topic explains how to tune Rover's simple objet avoidance feature 
 
 Overview
 ========

@@ -33,6 +33,9 @@ tuning options for the vehicle.
 [site wiki="plane,planner,rover"]
     Magnetic Interference <common-magnetic-interference>
 [/site]
+[site wiki="rover"]
+    Object Avoidance <rover-object-avoidance>
+[/site]
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
     RC Input Channel Mapping (RCMAP) <common-rcmap>
