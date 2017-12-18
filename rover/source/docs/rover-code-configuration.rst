@@ -20,4 +20,5 @@ In addition to mandatory calibration, you may also choose to :ref:`Configure Opt
     Accelerometer Calibration <common-accelerometer-calibration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
+    Skid Steer Setup <skid-steer-parameter-tuning>
     Example Configuration <example-configuration>
