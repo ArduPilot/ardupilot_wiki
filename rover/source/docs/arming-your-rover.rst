@@ -1,11 +1,8 @@
 .. _arming-your-rover:
 
-============
-Arming Rover
-============
-
-Arming your rover
-=================
+==================
+Arming / Disarming
+==================
 
 Before you can driver your rover you need to arm it. Arming the rover
 before flight has two purposes:
