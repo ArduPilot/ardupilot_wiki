@@ -1,0 +1,34 @@
+.. _rover-motor-and-servo-connections:
+
+===========================
+Motor and Servo Connections
+===========================
+
+Two steering/throttle methods are supported and each requires slightly different wiring and configuration as described below.
+
+Separate Steering and Throttle
+------------------------------
+
+Most RC cars are like full sized cars in that they have separate steering and throttle controls.
+For these rovers, the steering servo (which normally turns the front wheels) should be connected to the flight controller's RC Output 1.  The motor's ESC (which normally controls the speed of the back wheels) should be connected to RC Output 3.
+
+.. image:: ../images/rover-motor-connections.jpg
+    :target: ../_images/rover-motor-connections.jpg
+
+For this setup these parameters values should be set (they should actually be set by default):
+
+- :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 26 (steering)
+- :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 70 (throttle)
+
+Skid Steering
+-------------
+
+"Skid steering" vehicles (like R2D2) control their direction and forward/reverse motions by varying the speed of two (or more) independent wheels.  For these style rovers the left wheel should be connected to RC Output 1 and the right wheel should be connected to RC Output 3.
+
+.. image:: ../images/rover-skid-steer-motor-connections.jpg
+    :target: ../_images/rover-skid-steer-motor-connections.jpg
+
+For this setup these parameters values will need to be set:
+
+- :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 73 (left throttle)
+- :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 74 (right throttle)
