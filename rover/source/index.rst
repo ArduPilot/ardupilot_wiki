@@ -40,7 +40,6 @@ Table of Contents
     Optional Hardware <docs/common-optional-hardware>
     Autopilot Hardware Options <docs/common-autopilots>
     Use-Cases and Applications <docs/common-use-cases-and-applications>
-    Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
