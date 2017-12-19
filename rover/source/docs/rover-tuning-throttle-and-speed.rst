@@ -1,7 +1,7 @@
 .. _rover-tuning-throttle-and-speed:
 
 =========================
-Speed and Throttle Tuning
+Tuning Speed and Throttle
 =========================
 
 This page decribes how a Rover's speed and throttle controls can be tuned.
@@ -37,7 +37,7 @@ Recommended steps for tuning this controller are:
 - connect the ground station to the vehicle using a telemetry radio
 - drive the vehicle in :ref:`Acro <acro-mode>` or :ref:`Steering <steering-mode>` mode
 - the :ref:`P gain <ATC_SPEED_P>` is the most important and should be tuned first.  If the vehicle's speed is jerky and unstable then this parameter should be reduced.  If the vehicle is slow to get up to speed, this parameter should be increased.
-- The :ref:`I gain <ATC_SPEED_I>` corrects for long-term error.  If the vehicle never achieves the desired speed, then this parameter should be increased.  If the vehicle's speed is slowly oscilating between too fast and too slow, this parameter should be reduced.
+- The :ref:`I gain <ATC_SPEED_I>` corrects for long-term error.  If the vehicle never achieves the desired speed, then this parameter should be increased.  If the vehicle's speed is slowly oscillating between too fast and too slow, this parameter should be reduced.
 - The :ref:`D gain <ATC_SPEED_D>` is meant to stablize the output by fighting against short-term changes in speed.  This gain can normally be left at zero.
 
 The desired speed vs achieved speed, along with the individual contributions to the throttle output from P, I and D gains can be seen in real-time by doing the following:
@@ -49,3 +49,8 @@ The desired speed vs achieved speed, along with the individual contributions to 
 
 .. image:: ../images/rover-throttle-and-speed2.png
     :target: ../_images/rover-throttle-and-speed2.png
+
+Acceleration Maximum
+--------------------
+
+Although less important than other tuning values, the :ref:`ATC_ACCEL_MAX <ATC_ACCE_MAX>` should be set the vehicle's maximum acceleration or deceleration value (whichever is lower) in m/s/s.  This will stop the Desired-Speed-to-Throttle controller from attempting impossible accelerations and reduce overshoot.
