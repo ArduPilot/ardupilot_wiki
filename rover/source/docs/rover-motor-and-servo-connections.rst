@@ -32,3 +32,11 @@ For this setup these parameters values will need to be set:
 
 - :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 73 (left throttle)
 - :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 74 (right throttle)
+
+Wheel Encoders
+--------------
+
+Up to two wheel encoders can be connected to the flight controller as described on the :ref:`Optional Hardware / Wheel Encoders <common-wheel-encoder>` page.
+
+.. image:: ../../../images/wheel-encoder-pixhawk.png
+    :target: ../_images/wheel-encoder-pixhawk.png
