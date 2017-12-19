@@ -30,3 +30,12 @@ For "Skid steering" vehicles (like R2D2) these parameters values will need to be
 
 .. image:: ../images/rover-motor-and-servo-config2.png
     :target: ../_images/rover-motor-and-servo-config2.png
+
+Motor Driver Types
+------------------
+
+At least three different Motor Driver (aka ESC) types are supported which allows using ArduPilot with most motor drivers.  The :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` parameter should be used to ensure the output from the flight controller board matches the input required by the motor driver.
+
+- "Normal" is the most common and involves sending PWM values normally between 1000 and 2000 (1ms ~ 2ms)
+- "Brushed With Relay" is for brushed motor drivers that use a :ref:`relay pin <common-relay>` to indicate whether it should rotate forwards or backwards.
+- "Brushed BiPolar" is for brushed motor drivers that, a bit like "Normal" pwm interpret a low PWM values for reverse, a high PWM value for forward
