@@ -15,3 +15,4 @@ This section covers items required for your first drive including basic tuning r
     Speed and Throttle Tuning <rover-tuning-throttle-and-speed>
     Steering and Navigation Tuning <tuning-steering-and-navigation-for-a-rover>
     Waypoint Turn Speed Tuning <speed-turn-parameter-tuning>
+    Tuning Steering Rate <rover-tuning-steering-rate>
