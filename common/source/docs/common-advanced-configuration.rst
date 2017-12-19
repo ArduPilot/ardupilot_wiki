@@ -15,6 +15,9 @@ tuning options for the vehicle.
     Auxiliary Function Switches <channel-7-and-8-options>
     Boat mode <boat-mode>
 [/site]
+[site wiki="rover"]
+    Auxiliary Functions <rover-auxiliary-functions>
+[/site]
     Compass Setup (Advanced) <common-compass-setup-advanced>
 [site wiki="copter"]
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
