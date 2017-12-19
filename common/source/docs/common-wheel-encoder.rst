@@ -16,7 +16,7 @@ Connection and Setup
 .. image:: ../../../images/wheel-encoder-pixhawk.png
     :target: ../_images/wheel-encoder-pixhawk.png
 
-- connect motor encoder's A and B outputs to the flight controller (i.e. Pixhawk's) AUX OUT 3,4,5 and 6 signal pins as shown above.
+- connect motor encoder's A and B outputs to the flight controller (i.e. Pixhawk's) AUX OUT 3,4,5 and 6 pins.  Normally 3,4 should be used for the left motor's encoder, 5,6 for the right's.
 - set :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` to 2 to allow AUX OUT 3 and 4 to be used as inputs
 - set :ref:`WENC_TYPE <WENC_TYPE>` and :ref:`WENC2_TYPE <WENC_TYPE>` to 1 to enable reading from two wheel encoders
 - set :ref:`WENC_CPR <WENC_CPR>` and :ref:`WENC2_CPR <WENC2_CPR>` to the counts-per-revolution of the encoder.  This is the number of "pings" the encoder will produce for each full revolution of the wheel
