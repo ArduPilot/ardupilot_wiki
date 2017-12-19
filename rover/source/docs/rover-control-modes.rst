@@ -16,6 +16,7 @@ The full list of modes in alphabetical order is:
 .. toctree::
     :maxdepth: 1
 
+    Acro Mode <acro-mode>
     Auto Mode <auto-mode>
     Guided mode <guided-mode>
     Hold Mode <hold-mode>
