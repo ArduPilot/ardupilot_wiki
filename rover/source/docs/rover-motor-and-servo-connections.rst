@@ -15,10 +15,10 @@ For these rovers, the steering servo (which normally turns the front wheels) sho
 .. image:: ../images/rover-motor-connections.jpg
     :target: ../_images/rover-motor-connections.jpg
 
-For this setup these parameters values should be set (they should actually be set by default):
+For this setup these parameters values should be set (they should actually be set by default).  More details can be found on the :ref:`Motor and Servo Configuration <rover-motor-and-servo-configuration>` page.
 
-- :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 26 (steering)
-- :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 70 (throttle)
+- :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 26 (Ground Steering)
+- :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 70 (Throttle)
 
 Skid Steering
 -------------
@@ -28,10 +28,10 @@ Skid Steering
 .. image:: ../images/rover-skid-steer-motor-connections.jpg
     :target: ../_images/rover-skid-steer-motor-connections.jpg
 
-For this setup these parameters values will need to be set:
+For this setup these parameters values will need to be set.  More details can be found on the :ref:`Motor and Servo Configuration <rover-motor-and-servo-configuration>` page.
 
-- :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 73 (left throttle)
-- :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 74 (right throttle)
+- :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 73 (Throttle Left)
+- :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 74 (Throttle Right)
 
 Wheel Encoders
 --------------
