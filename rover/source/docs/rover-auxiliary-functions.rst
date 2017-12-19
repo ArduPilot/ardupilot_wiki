@@ -61,48 +61,48 @@ Supported Features
    <tr>
    <td>4</td>
    <td><strong>Manual</strong></td>
-   <td>Change to :ref:`Manual <manual-mode>` mode
+   <td>Change to Manual mode
    </td>
    </tr>
    <tr>
    <td>5</td>
    <td><strong>Acro</strong></td>
-   <td>Change to :ref:`Acro <acro-mode>` mode
+   <td>Change to Acro mode
    </td>
    </tr>
    <tr>
    <td>6</td>
    <td><strong>Steering</strong></td>
-   <td>Change to :ref:`Steering <steering-mode>` mode
+   <td>Change to Steering mode
    </td>
    </tr>
    <tr>
    <td>7</td>
    <td><strong>Hold</strong></td>
-   <td>Change to :ref:`Hold <hold-mode>` mode
+   <td>Change to Hold mode
    </td>
    </tr>
    <tr>
    <td>8</td>
    <td><strong>Auto</strong></td>
-   <td>Change to :ref:`Auto <auto-mode>` mode
+   <td>Change to Auto mode
    </td>
    </tr><tr>
    <td>9</td>
    <td><strong>RTL</strong></td>
-   <td>Change to :ref:`RTL <rtl-mode>` mode
+   <td>Change to RTL mode
    </td>
    </tr>
    <tr>
    <td>10</td>
    <td><strong>SmartRTL</strong></td>
-   <td>Change to :ref:`SmartRTL <smartrtl-mode>` mode
+   <td>Change to SmartRTL mode
    </td>
    </tr>
    <tr>
    <td>11</td>
    <td><strong>Guided</strong></td>
-   <td>Change to :ref:`Guided <guided-mode>` mode
+   <td>Change to Guided mode
    </td>
    </tr>
    </tbody>
