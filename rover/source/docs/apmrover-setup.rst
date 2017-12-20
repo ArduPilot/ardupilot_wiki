@@ -1,12 +1,10 @@
 .. _apmrover-setup:
 
-=============================
-Rover Setup and Configuration
-=============================
+==================================
+First Time Setup and Configuration
+==================================
 
-This section provides a step-by-step guide for building an Unmanned
-Ground Vehicle (UGV) using the Rover autopilot running on Pixhawk, PX4
-or APM 2.x.
+This section provides a step-by-step guide for assembling and configuring an Unmanned Ground Vehicle (UGV) using ArduPilot.
 
 .. toctree::
     :maxdepth: 1
