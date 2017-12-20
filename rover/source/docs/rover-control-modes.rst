@@ -20,8 +20,8 @@ The full list of modes in alphabetical order is:
     Auto Mode <auto-mode>
     Guided mode <guided-mode>
     Hold Mode <hold-mode>
-    Learning Mode <learning-mode>
     Manual mode <manual-mode>
+    Learning (deprecated) <learning-mode>
     RTL <rtl-mode>
     Steering Mode <steering-mode>
     Smart RTL <smartrtl-mode>
