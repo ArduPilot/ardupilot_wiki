@@ -68,6 +68,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Safety Switch <common-safety-switch-pixhawk>
     SBus Out <common-sbus-out>
     Servo <common-servo>
+[site wiki="rover"]
+    Start/Stop Switch <startstop-switch>
+[/site]
     Telemetry Radio <common-telemetry-landingpage>
     UAVCAN ESCs <common-uavcan-escs>
 [site wiki="rover"]
