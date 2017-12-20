@@ -34,6 +34,9 @@ tuning options for the vehicle.
     Ground Effect Compensation <ground-effect-compensation>
     Motor Thrust Scaling <motor-thrust-scaling>
 [/site]
+[site wiki="rover"]
+    Motor Thurst Scaling <rover-motor-thrust-scaling>
+[/site]
 [site wiki="plane,planner,rover"]
     Magnetic Interference <common-magnetic-interference>
 [/site]
