@@ -31,6 +31,10 @@ For "Skid steering" vehicles (like R2D2) these parameters values will need to be
 .. image:: ../images/rover-motor-and-servo-config2.png
     :target: ../_images/rover-motor-and-servo-config2.png
 
+.. note::
+
+   In Rover-3.1 (and earlier), skid steering output was enabled by setting the SKID_STEER_OUT parameter to "1".
+
 Motor Driver Types
 ------------------
 
