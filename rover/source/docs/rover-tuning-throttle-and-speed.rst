@@ -53,4 +53,12 @@ The desired speed vs achieved speed, along with the individual contributions to 
 Acceleration Maximum
 --------------------
 
-Although less important than other tuning values, the :ref:`ATC_ACCEL_MAX <ATC_ACCE_MAX>` should be set the vehicle's maximum acceleration or deceleration value (whichever is lower) in m/s/s.  This will stop the Desired-Speed-to-Throttle controller from attempting impossible accelerations and reduce overshoot.
+Although less important than other tuning values, the :ref:`ATC_ACCEL_MAX <ATC_ACCEL_MAX>` should be set the vehicle's maximum acceleration or deceleration value (whichever is lower) in m/s/s.  This will stop the Desired-Speed-to-Throttle controller from attempting impossible accelerations and reduce overshoot.
+
+Throttle Slew
+-------------
+
+The :ref:`MOT_SLEWRATE <MOT_SLEWRATE>` parameter can be used to limit how quickly the throttle output can change.
+
+- a value of 100 allows the throttle output to change over its full range in one second
+- a value of zero disables the limit
