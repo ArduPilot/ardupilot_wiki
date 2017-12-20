@@ -22,5 +22,4 @@ In addition to mandatory calibration, you may also choose to :ref:`Configure Opt
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
     Motor and Servo configuration <rover-motor-and-servo-configuration>
     Boats <boat-configuration>
-    Skid Steer Setup <skid-steer-parameter-tuning>
     Example Configuration <example-configuration>
