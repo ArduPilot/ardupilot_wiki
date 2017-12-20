@@ -5,7 +5,7 @@ Start/Stop Switch
 =================
 
 For some robotics competitions, RC control is not allowed and the rover
-must be started in autonomous mode with an onboard switch. This article
+must be started in :ref:`Auto <auto-mode>` mode with an onboard switch. This article
 explains how to set up such a switch.
 
 .. image:: ../images/rover_start_stop_switch.jpg
@@ -15,8 +15,7 @@ explains how to set up such a switch.
 
    You don't necessarily need to use a switch for this. If you enable
    the :ref:`AUTO_KICKSTART <AUTO_KICKSTART>`
-   function you can just kick your rover [not too hard!] and APM will
-   register the acceleration and start the vehicle automatically. But if
+   function you can just kick your rover [not too hard!] and the sensed acceleration will start the vehicle automatically. But if
    you don't want to kick your car, a switch is the way to go)
 
 Physical wiring
