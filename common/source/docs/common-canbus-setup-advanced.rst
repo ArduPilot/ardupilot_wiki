@@ -7,6 +7,10 @@ CAN Bus Setup
 This article shows how to setup CAN bus and what options users have
 to accomplish the setup suitable for their specific needs.
 
+.. tip::
+
+   The :ref:`UAVCAN setup page is here <common-uavcan-setup-advanced>`.
+
 Overview
 ========
 
