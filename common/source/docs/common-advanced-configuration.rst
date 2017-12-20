@@ -49,6 +49,9 @@ tuning options for the vehicle.
     RC Output Channel Mapping <common-rcoutput-mapping>
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
+[site wiki="rover"]
+    Steering Input Type and Reversing Behaviour <rover-steering-input-type-and-reversing-behaviour>
+[/site]
     Telemetry / Serial Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
 [site wiki="copter,planner"]
     Tuning <common-tuning>
