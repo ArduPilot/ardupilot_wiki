@@ -18,6 +18,7 @@ tuning options for the vehicle.
 [site wiki="rover"]
     Auxiliary Functions <rover-auxiliary-functions>
 [/site]
+    CAN Bus Setup <common-canbus-setup-advanced>
     Compass Setup (Advanced) <common-compass-setup-advanced>
 [site wiki="copter"]
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
@@ -48,10 +49,11 @@ tuning options for the vehicle.
     Telemetry / Serial Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
 [site wiki="copter,planner"]
     Tuning <common-tuning>
+[/site]
+    UAVCAN Setup <common-uavcan-setup-advanced>
+[site wiki="copter,planner"]
     UBlox GPS Configuration <common-ublox-gps>
 [/site]
 [site wiki="plane,planner,rover"]
     Vibration Damping <common-vibration-damping>
 [/site]
-    CAN Bus Setup <common-canbus-setup-advanced>
-    UAVCAN Setup <common-uavcan-setup-advanced>
