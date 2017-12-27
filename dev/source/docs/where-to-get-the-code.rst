@@ -72,6 +72,9 @@ online. Here are just a few you may find useful:
    levels
 -  `Git SCM Book <http://git-scm.com/book/en/Getting-Started>`__:
    introduction and full documentation
+-  `Git Flight Rules <https://github.com/k88hudson/git-flight-rules/blob/master/README.md>`__:
+   a guide for what to do when things go wrong
+
 
 Forking the main repository
 ===========================
