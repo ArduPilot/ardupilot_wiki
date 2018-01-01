@@ -32,7 +32,8 @@ Enabling RealFlight Link Feature
   - RealFlight/KnifeEdge will contact you via email with an unlock code in the form of "LINKUNLOCK12345678"
   - Enter the unlock code into ReafFlight 8 at Launcher -> "Technical Support" -> "Enter Tech Support Code"
   - Start RealFlight (it should look exactly like regular RealFlight, there is no way to visually determine the difference)
-  - Select Simulation, Import, RealFlight Archive (RFX, G3X) and select the file downloaded above.  A message, "..was successfully imported" should be displayed
+  - Down load the QuadcopterX from https://github.com/ArduPilot/SITL_Models/raw/master/RealFlight/Tridge/MultiRotors/QuadCopterX/Quadcopter%20X%20-%20direct%20throttles_AV.RFX
+  - Select Simulation, Import, RealFlight Archive (RFX, G3X) and select the file QuadcopterX downloaded above.  A message, "..was successfully imported" should be displayed
   - Select Aircraft, Select Aircraft, open "Custom Aircraft" section and select "Quadcopter X - direct throttle".  In the current state, the RC inputs come straight from the stick so it is not flyable.
 
   .. image:: ../images/realflight-select-aircraft.png
