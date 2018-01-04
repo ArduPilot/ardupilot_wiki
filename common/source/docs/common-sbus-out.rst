@@ -1,8 +1,8 @@
 .. _common-sbus-output:
 
-========
-SBus Out
-========
+=============================
+SBus Servo Out on Serial Port
+=============================
 
 This article explains how to configure a serial port to control `S.BUS <http://www.futabarc.com/sbus/>`_ servos. The SBus protocol supports PWM values for 16 channels, and these are mapped to ArduPilot's servo channels 1-16. The transmission rate is 100K baud with inverted logic levels (unidirectional: output only), and an inverting cable will be required to use a standard serial port. A simple NPN transistor inverter will suffice:
 
