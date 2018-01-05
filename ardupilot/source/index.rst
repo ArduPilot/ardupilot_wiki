@@ -178,5 +178,6 @@ Features:
    Mission Planner <http://ardupilot.org/planner/index.html>
    APM Planner 2 <http://ardupilot.org/planner2/index.html>
    AntennaTracker <http://ardupilot.org/antennatracker/index.html>
+   Companion Computers <http://ardupilot.org/dev/docs/companion-computers.html>
    Developers <http://ardupilot.org/dev/index.html>
 
