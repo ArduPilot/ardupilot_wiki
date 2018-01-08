@@ -359,25 +359,30 @@ but the most common are:
 +------------+----------------------------------------------------------------------------------------------------+
 
 
+
+
 **GPA: (Global Position Accuracy)**
 
 +------------+----------------------------------------------------------------------------------------------------+
 | FIELD      | DESCRIPTION                                                                                        |
 +------------+----------------------------------------------------------------------------------------------------+
-| TimeUS     | The GPS reported time since epoch in milliseconds                                                  |
-+------------+----------------------------------------------------------------------------------------------------+
 | VDop       | Vertical dilution of precision, a unitless measure of precision                                    |
 |            | https://en.wikipedia.org/wiki/dilution_of_precision                                                |
 +------------+----------------------------------------------------------------------------------------------------+
-| HAcc       | The horizontal accuracy as reported by the GPS module, in meters                                   |
+| HAcc       | Horizontal Accuracy as reported by the GPS module, in meters                                       |
 +------------+----------------------------------------------------------------------------------------------------+
-| VAcc       | The vertical accuracy as reported by the GPS module, in meters                                     |
+| VAcc       | Vertical Accuracy as reported by the GPS module, in meters                                         |
 +------------+----------------------------------------------------------------------------------------------------+
-| SAcc       |                                                                                                    |
+| SAcc       | Speed accuracy as reported by the GPS, in m/s/s                                                    |
 +------------+----------------------------------------------------------------------------------------------------+
-| VV         |                                                                                                    |
+| VV         | Flag to indicate if the GPS is reporting vertical velocity                                         |
+|            |   0 No vertical velocity data                                                                      |
+|            |   1 GPS has vertical velocity data                                                                 |
 +------------+----------------------------------------------------------------------------------------------------+
-| SMS        |                                                                                                    |
+| SMS        | The autopilot time in milliseconds that the accuracy/GPS position data is associated with.         |
++------------+----------------------------------------------------------------------------------------------------+
+| Delta      | The time between when the previous GPS message and the current GPS message was parsed by the       |
+|            | autopilot, in milliseconds                                                                         |
 +------------+----------------------------------------------------------------------------------------------------+
 
 
