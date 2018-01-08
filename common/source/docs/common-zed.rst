@@ -57,7 +57,7 @@ Ground Testing
 - If you are using Mission Planner as your ground station, once messages are successfully passing from the ZED/TX1 to the flight controller:
   - a proximity viewer should appear showing the distance to objects ahead of the vehicle (if :ref:`PRX_TYPE <PRX_TYPE>` was enabled above) 
   - "Bad Vision Position" message should disappear from the HUD
-- Set the home position from the ground station map (from MP's Flight Data screen, right-mouse-button-click on the map and select "Set Home Here").  The vehicle should appear on the map.
+- Set the home position from the ground station map (from MP's Flight Data screen, right-mouse-button-click on the map and select "Set EKF Origin Here").  The vehicle should appear on the map.
 - Pick-up the vehicle and walk it around checking that the vehicle's position movements are shown on the map
 
 Flight testing
