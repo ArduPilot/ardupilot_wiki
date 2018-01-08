@@ -67,20 +67,21 @@ Next install JetPack and flash the OS
 
 - an "Installing" page will appear asking for your password in order to begin the local installation
 - a "JetPack L4T Component Manager" screen should appear
-  - from the top left, select "JetPack L4T 3.0" (this may need to be selected twice to work)
-  - for "Host - Ubuntu" set the "Action" column to "no action" for everything (select "Keep & Apply" if a question pops up)
-  - Target - Jetson TX1: mixed
-  - Linux for Tegra Host Side Image Setup: install
-  - Flash OS Image to Target: install 24.2.1
-  - Install on Target: mixed
-  - CUDA Toolkit: install
-  - Compile CUDA Samples: no action
-  - PerfKit: install
-  - TensorRT: install
-  - Multimedia API package: no action
-  - cuDNN Package: install
-  - OpenCV for Tegra: install
-  - VisionWorks on TX1 Target: no action
+
+   - from the top left, select "JetPack L4T 3.0" (this may need to be selected twice to work)
+   - for "Host - Ubuntu" set the "Action" column to "no action" for everything (select "Keep & Apply" if a question pops up)
+   - Target - Jetson TX1: mixed
+   - Linux for Tegra Host Side Image Setup: install
+   - Flash OS Image to Target: install 24.2.1
+   - Install on Target: mixed
+   - CUDA Toolkit: install
+   - Compile CUDA Samples: no action
+   - PerfKit: install
+   - TensorRT: install
+   - Multimedia API package: no action
+   - cuDNN Package: install
+   - OpenCV for Tegra: install
+   - VisionWorks on TX1 Target: no action
 
 .. image:: ../images/companion-computer-tx1-compmgr.png
 
