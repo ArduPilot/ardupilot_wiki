@@ -30,12 +30,13 @@ Desired Speed to Throttle PID Tuning
 
 The Desired-Speed-to-Throttle controller attempts to achieve the desired speed (set by the pilot or autopilot) using a relatively standard PID controller.  All modes except :ref:`Hold <hold-mode>` and :ref:`Manual <manual-mode>` use this controller.
 
-The P, I and D gains for this controller are held in the :ref:`ATC_SPEED_P <ATC_SPEED_P>`, :ref:`ATC_SPEED_I <ATC_SPEED_I>` and :ref:`ATC_SPEED_D <ATC_SPEED_D>` parameters respectively.
+The Feed Forward, P, I and D gains for this controller are held in the :ref:`ATC_SPEED_FF <ATC_SPEED_FF>`, :ref:`ATC_SPEED_P <ATC_SPEED_P>`, :ref:`ATC_SPEED_I <ATC_SPEED_I>` and :ref:`ATC_SPEED_D <ATC_SPEED_D>` parameters respectively.
 
 Recommended steps for tuning this controller are:
 
 - connect the ground station to the vehicle using a telemetry radio
 - drive the vehicle in :ref:`Acro <acro-mode>` or :ref:`Steering <steering-mode>` mode
+- the :ref:`FF gain <ATC_SPEED_FF>` should be left at zero because the :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEED>` are used to calculate a base throttle output which removes the need for feed-forward.
 - the :ref:`P gain <ATC_SPEED_P>` is the most important and should be tuned first.  If the vehicle's speed is jerky and unstable then this parameter should be reduced.  If the vehicle is slow to get up to speed, this parameter should be increased.
 - the :ref:`I gain <ATC_SPEED_I>` corrects for long-term error.  If the vehicle never achieves the desired speed, then this parameter should be increased.  If the vehicle's speed is slowly oscillating between too fast and too slow, this parameter should be reduced.
 - the :ref:`D gain <ATC_SPEED_D>` is meant to stablize the output by fighting against short-term changes in speed.  This gain can normally be left at zero.
