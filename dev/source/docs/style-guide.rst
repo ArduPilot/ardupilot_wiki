@@ -195,7 +195,7 @@ Line breaks
 Single statements
 -----------------
 
-Each statement should get its own line.
+Each statement should get its own line except in method implementations in header files which may (or may not be) on a single lines.
 
 **Right:**
 
@@ -213,6 +213,12 @@ Each statement should get its own line.
 
     x++; y++;
     if (condition) foo();
+
+**Right:**
+
+::
+
+     bool requires_GPS() const override { return false; }
 
 Else statement
 --------------
