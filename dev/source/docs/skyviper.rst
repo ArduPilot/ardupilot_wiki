@@ -131,7 +131,7 @@ Developing the Transmitter Firmware
    make
    ls -l txmain.img
 
-``txmain.img`` can be flashed usng the web interface.  Once the image is transfered, the transmitter will need to be wpoer-rthpower-cycled for the upgrade to continue.  It will take about 15 seconds to flash the new firmware. The LEDs will flash alternately at 1Hz during upgrade.
+``txmain.img`` can be flashed usng the web interface.  Once the image is transfered, the transmitter will need to be power-cycled for the upgrade to continue.  It will take about 15 seconds to flash the new firmware. The LEDs will flash alternately at 1Hz during upgrade.
 
 .. note::
 
@@ -246,7 +246,7 @@ Each test station uses a different set of channels, so are unlikely to interfere
 Log Files
 =========
 
-DataFlash logs are stored on the microSD card of the Sonix in the DATAFLASH directory. You can access them via the filesystem interface of the web interface.
+DataFlash logs are stored on the microSD card of the Sonix in the DATAFLASH directory. You can access them via the filesystem interface of the web interface. If the DATAFLASH directory is not present, then logging may not be enabled by default. In order to enable logging, go to the web interface Flight Parameters page, select Logging, in the drop-down, and set LOGGING_ENABLED to 1. After this you will see the DATAFLASH directory appear. Logs are binary files and can be viewed in several log viewers, including MissionPlanner.
 
 Factory Reset
 =============
