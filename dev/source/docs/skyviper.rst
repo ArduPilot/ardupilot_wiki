@@ -246,7 +246,9 @@ Each test station uses a different set of channels, so are unlikely to interfere
 Log Files
 =========
 
-DataFlash logs are stored on the microSD card of the Sonix in the DATAFLASH directory. You can access them via the filesystem interface of the web interface. If the DATAFLASH directory is not present, then logging may not be enabled by default. In order to enable logging, go to the web interface Flight Parameters page, select Logging, in the drop-down, and set LOGGING_ENABLED to 1. After this you will see the DATAFLASH directory appear. Logs are binary files and can be viewed in several log viewers, including MissionPlanner.
+DataFlash logs are stored on the microSD card of the Sonix in the DATAFLASH directory. You can access them via the filesystem interface of the web interface. In order to enable logging while Disarmed, go to the web interface Flight Parameters page, select Logging, in the drop-down, and set LOG_DISARMED to 1:ENABLED. 
+
+Logs are binary files and can be viewed in several log viewers, including MissionPlanner.
 
 Factory Reset
 =============
