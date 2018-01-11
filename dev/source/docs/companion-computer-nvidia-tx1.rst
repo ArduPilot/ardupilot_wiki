@@ -113,3 +113,9 @@ Flashing the APSync image to the TX1
 
 Official instructions from NVidia on flashing images can be found `here <https://devtalk.nvidia.com/default/topic/898999/jetson-tx1/tx1-r23-1-new-flash-structure-how-to-clone-/post/4784149/#4784149>`__.
 
+Notes if using ZED camera
+-------------------------
+
+If you are using the `StereoLabs <https://www.stereolabs.com/>`__ :ref:`ZED camera <copter:common-zed>` then the TX1 will need to be powered up once with the ethernet cable plugged in so that it has access to the internet in order to download the camera's factory calibration.
+
+If using the AUVidea J120 board, the ZED camera may need to be plugged into the lower USB port to work correctly.
