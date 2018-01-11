@@ -9,9 +9,9 @@ the compass (magnetometer).
 
 .. tip::
 
-   Users who have selected the :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>`
-   (recommended) and mounted it according to the specified instructions can
-   usually perform a simple "live calibration" as described in :ref:`Compass Calibration in Mission Planner <common-compass-calibration-in-mission-planner>`).
+   Users with who have selected the :ref:`UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>`
+   (recommended) and have mounted it in the default orientation can
+   usually perform a simple "Onboard Calibration" as described in :ref:`Compass Calibration <common-compass-calibration-in-mission-planner>`).
 
    This topic provides a more complete overview of compass calibration. It
    will be useful if the compass is mounted in a non-standard orientation
