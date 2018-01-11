@@ -61,6 +61,7 @@ If calibration fails:
 
 - you will hear a failure tone and the green bars may reset to the left and the calibration routine may restart (depending upon the ground station)
 - if, after multiple attempts, you are unable to calibrate the compass, Press the "Cancel" button and change the "Fitness" drop-down to a more relaxed setting and try again.
+- if compass calibration still fails it may help to raise :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>` from 850 to 2000 or even 3000
 
 Offboard Calibration (aka "Live Calibration")
 =============================================
