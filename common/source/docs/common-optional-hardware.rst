@@ -58,8 +58,10 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Power Tether <common-power-tether>
     PPM Encoder <common-ppm-encoder>
-[site wiki="copter"]
+[site wiki="copter,rover"]
     Pozyx for Non-GPS navigation <common-pozyx>
+[/site]
+[site wiki="copter"]
     Precision Landing and Loiter (IRLock) <precision-landing-with-irlock>
 [/site]
     Rangefinders (Sonar, Lidar) <common-rangefinder-landingpage>
