@@ -8,7 +8,7 @@ This article explains how a `Pozyx <https://www.pozyx.io/>`__ system based on th
 
 .. note::
 
-   This is an experimental feature planned for release in Copter-3.5.
+   This is an experimental feature released in Copter-3.5.  Better results may be possible by using Copter-3.6 and enabling the EKF3.
 
 ..  youtube:: ozr8tGO9CFs
     :width: 100%
