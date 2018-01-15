@@ -58,6 +58,10 @@ Ground Testing
   - a proximity viewer should appear showing the distance to objects ahead of the vehicle (if :ref:`PRX_TYPE <PRX_TYPE>` was enabled above) 
   - "Bad Vision Position" message should disappear from the HUD
 - Set the home position from the ground station map (from MP's Flight Data screen, right-mouse-button-click on the map and select "Set EKF Origin Here").  The vehicle should appear on the map.
+
+.. image:: ../../../images/zed-set-ekf-origin.png
+    :target: ../_images/zed-set-ekf-origin.png
+
 - Pick-up the vehicle and walk it around checking that the vehicle's position movements are shown on the map
 
 Flight testing
