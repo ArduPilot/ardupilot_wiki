@@ -42,7 +42,6 @@ The AC3.4 implementation has the following limitations.  Future versions will li
 
 -  Object avoidance only works in Loiter mode and AltHold
 -  The vehicle should stop before hitting objects but will never back away from objects that approach the vehicle (a slow backing away will be added in future firmware versions).
--  The safety margin to objects is hard-coded to 2m.
 
 Please report issues found in the `support forums <http://discuss.ardupilot.org/c/arducopter/copter-3-5>`__ and we will try to address them.
 
@@ -50,4 +49,5 @@ Distance reporting
 ==================
 
 The distance to the nearest object in 8 quadrants around the vehicle is recorded in the DataFlash log's PRX messages.
-Real-time distances can be seen in the Mission Planner's proximity viewer which appears automatically once distances are detected by the sensor.
+
+Real-time distances can be seen in the Mission Planner's proximity viewer which can be opened by moving to the MP's Flight Data screen, press Ctrl-F and push the Proximity button.
