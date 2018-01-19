@@ -61,10 +61,16 @@ This is quite different from Loiter mode in which the pilot cannot force the veh
 Reporting to the Ground Station
 ===============================
 
-MissionPlanner, from v1.3.48 onwards (and hopefully other ground stations in the future), shows the distance to nearby objects in a RADAR type window. This window will automatically appear if the `PRX_TYPE <http://ardupilot.org/copter/docs/parameters.html#prx-type>`__ parameter is set to enable a sensor, and messages are being received.
+MissionPlanner, from v1.3.48 onwards (and hopefully other ground stations in the future), shows the distance to nearby objects in a RADAR type window. 
 
 .. image:: ../images/code-overview-object-avoidance4.png
     :target: ../_images/code-overview-object-avoidance4.png
+
+This window can be opened by going to the Flight Data screen, press Ctrl-F and push the Proximity button.  Values will will appear if the `PRX_TYPE <http://ardupilot.org/copter/docs/parameters.html#prx-type>`__ parameter is set to enable a sensor, and messages are being received.
+
+.. image:: ../images/code-overview-object-avoidance-show-radar-view.png
+    :target: ../_images/code-overview-object-avoidance-show-radar-view.png
+    :width: 300px
 
 This is accomplished by the vehicle sending DISTANCE_SENSOR messages to the ground station at regular intervals.
 The method that does this can be seen in the vehicle code's `GCS_Mavlink.cpp file <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp#L224>`__ (search for "send_proximity").
