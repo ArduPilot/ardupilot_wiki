@@ -16,13 +16,13 @@ information based upon your set-up.
 .. toctree::
     :maxdepth: 1
 
+    Bluetooth <common-mission-planner-bluetooth-connectivity>
+    FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
+    FrSky telemetry <common-frsky-telemetry>
     RFD900 <common-rfd900>
     SiK Radio v2 <common-sik-telemetry-radio>
-    Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
-    Configuring a Telemetry Radio <common-configuring-a-telemetry-radio-using-mission-planner>
-    Bluetooth <common-mission-planner-bluetooth-connectivity>
-    FrSky telemetry <common-frsky-telemetry>
-    FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
     XBee <common-telemetry-xbee>
-    SiK Radio — Advanced Configuration <common-3dr-radio-advanced-configuration-and-technical-information>
-    3DR Radio v1 <common-3dr-radio-v1>
+    Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
+    SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
+    SiK Radio advanced configuration <common-3dr-radio-advanced-configuration-and-technical-information>
+    SiK Radio v1 <common-3dr-radio-v1>
