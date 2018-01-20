@@ -1,27 +1,24 @@
 .. _gsoc-ideas-list:
     
 ========================================
-List of Suggested Projects for GSoC 2017
+List of Suggested Projects for GSoC 2018
 ========================================
 
-This is a list of projects suggested by ArduPilot developers for GSoC 2017. These are only suggestions, and if you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see http://discuss.ardupilot.org/c/google-summer-of-code). 
-We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2017. We're looking for enthusiastic students who can really get stuck into their project and make a substantial contribution to the ArduPilot project.
+This is a list of projects suggested by ArduPilot developers for GSoC 2018. These are only suggestions, and if you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see http://discuss.ardupilot.org/c/google-summer-of-code). 
+We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2018. We're looking for enthusiastic students who can really get stuck into their project and make a substantial contribution to the ArduPilot project.
 
 - `Improved Object Avoidance for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid
 - Improved live video for `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ including video stream discover and publishing
-- Improved IoT integration using `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ to allow live viewing of drone location on web page
-- (DONE) Safe Return-To-Launch which will involve storing vehicle's current location and maintaining the shortest possible safe path back home.
+- Improved IoT integration to allow live viewing of drone location on web page
 - Improve flight control for `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ to bring it to the same level of performance of other multicopters
 - Improve SITL simulator to include a 3D viewer and objects
 - Helicopter autorotation support
-- Add support for the AirSim drone simulator to ArduPilot SITL (see https://github.com/Microsoft/AirSim/)
-- Build a JavaScript DataFlash log parser and a system for graphing user logs with similar capabilities to MAVExplorer, but hosted in users browsers
-- work on the FreeRTOS port of ArduPilot
-- (IN PROGRESS) work on the ChibiOS/RT port of ArduPilot
+- AirSim drone simulator support for ArduPilot SITL (see https://github.com/Microsoft/AirSim/)
+- JavaScript DataFlash log parser and a system for graphing user logs with similar capabilities to MAVExplorer, but hosted in users browsers
+- FreeRTOS port of ArduPilot
 - improve UAVCAN integration with ArduPilot
 - work on 3D aerobatic support for fixed wing aircraft
-- (IN PROGRESS) add support for "sensor head" operation of ArduPilot, split between two CPUs
-- Create a cloud based GCS for persistent control of a fleet of drones. Here is a Search and Rescue use case example: http://www.surtsey.org/projects/cloud-control-station/ 
+- Cloud ground station for persistent control of a fleet of drones. Here is a Search and Rescue use case example: http://www.surtsey.org/projects/cloud-control-station/ 
 
 More Details
 ============
@@ -95,3 +92,9 @@ With the addition of prop-hang in ArduPilot (see http://discuss.ardupilot.org/t/
 This project involves taking that to the next level to add support for "trick" mode. In trick mode the user will have access to a a variety of common 3D maneuvers, including knife-edge, loops, harrier and rolling loops. Implementing this will involve some careful use of quaternion controllers, but a good UI design so the stick inputs to control these tricks are easy to learn.
 Testing can be done in the FlightAxis simulator (as in the above video), allowing for development without risking real aircraft.
 
+Projects Completed during GSoC 2017
+-----------------------------------
+
+- Smart Return-To-Launch which involves storing vehicle's current location and maintaining the shortest possible safe path back home.
+- ChibiOS/RT port of ArduPilot
+- Add "sensor head" operation of ArduPilot, split between two CPUs
