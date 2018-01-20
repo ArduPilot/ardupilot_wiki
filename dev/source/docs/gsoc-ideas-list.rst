@@ -7,8 +7,9 @@ List of Suggested Projects for GSoC 2018
 This is a list of projects suggested by ArduPilot developers for GSoC 2018. These are only suggestions, and if you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see http://discuss.ardupilot.org/c/google-summer-of-code). 
 We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2018. We're looking for enthusiastic students who can really get stuck into their project and make a substantial contribution to the ArduPilot project.
 
-- `Improved Object Avoidance for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid
-- Improved live video for `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ including video stream discover and publishing
+- `Object Avoidance improvements for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid
+- `ROS <http://ardupilot.org/dev/docs/ros.html>`__ visual or lidar SLAM for non-GPS navigation and object avoidance
+- Live video improvements for `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ including frame rates optimised for bandwidth and video stream discovery
 - Improved IoT integration to allow live viewing of drone location on web page
 - Improve flight control for `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ to bring it to the same level of performance of other multicopters
 - Improve SITL simulator to include a 3D viewer and objects
