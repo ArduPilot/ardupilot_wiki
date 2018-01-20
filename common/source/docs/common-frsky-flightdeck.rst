@@ -7,7 +7,7 @@ FlightDeck FrSky Taranis App
 Overview
 ========
 
-`FlightDeck <http://www.craftandtheoryllc.com/flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-x9d-x7-q-x7-qx7-telemetry-smartport-smart-port-serial/>`__  by `Craft and Theory <http://www.craftandtheoryllc.com>`__ is a terrific way to obtain ArduPilot flight modes, altitude, speeds, attitude and critical system alerts including failsafes and battery errors such as unballanced cells warnings and low battery alerts. As such, it's a great companion to Tower or Mission Planner that adds extra confidence to your piloting.
+`FlightDeck <http://www.craftandtheoryllc.com/flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-x9d-x7-q-x7-qx7-telemetry-smartport-smart-port-serial/>`__  by `Craft and Theory <http://www.craftandtheoryllc.com>`__ allows easy viewing of flight modes, altitude, speeds, attitude and critical system alerts including failsafes and battery errors such as unbalanced cells warnings and low battery alerts on your transmitters. As such, it is a good companion to Tower or Mission Planner that adds extra confidence to your piloting.
 
 .. raw:: html
 
