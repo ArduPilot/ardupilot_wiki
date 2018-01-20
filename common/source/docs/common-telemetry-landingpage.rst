@@ -19,6 +19,7 @@ information based upon your set-up.
     Bluetooth <common-mission-planner-bluetooth-connectivity>
     FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
     FrSky telemetry <common-frsky-telemetry>
+    Robsense SwarmLink <common-telemetry-robsense-swarmlink>
     RFD900 <common-rfd900>
     SiK Radio v2 <common-sik-telemetry-radio>
     XBee <common-telemetry-xbee>
