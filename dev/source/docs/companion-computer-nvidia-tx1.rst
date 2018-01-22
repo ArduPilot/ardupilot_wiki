@@ -6,10 +6,6 @@ NVidia TX1 as a Companion Computer
 
 This page explains how to connect and configure an `NVidia TX1 <http://www.nvidia.com/object/jetson-tx1-dev-kit.html>`__ using `AuVidea.eu's J120 carrier board <http://auvidea.com/j120/>`__ so that it is able to communicate with a Pixhawk flight controller using the MAVLink protocol over a serial connection.
 
-.. warning::
-
-   APSync (Dec 2017) has `an issue <https://github.com/ArduPilot/companion/issues/33>`__ which requires the flight controller (i.e. Pixhawk) must be powered up at least 10 seconds before the TX1 companion computer.  This issue should hopefully be resolved in a Jan 2018 release.
-
 Connecting the Pixhawk and TX1
 ==============================
 
