@@ -24,6 +24,10 @@ automatically according to the guidelines below.
 Remember any formatting changes to a file should be done as a separate
 commit.
 
+.. note::
+
+   Ensure your editor is configured with UTF-8 encode.
+
 Case
 ====
 
