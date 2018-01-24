@@ -10,6 +10,7 @@ We have a lot of talented developers in the ArduPilot dev team who would love to
 - `Object Avoidance improvements for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid
 - `ROS <http://ardupilot.org/dev/docs/ros.html>`__ visual or lidar SLAM for non-GPS navigation and object avoidance
 - Live video improvements for `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ including frame rates optimised for bandwidth and video stream discovery
+- Stay out zones for multicopters and/or rovers
 - Improved IoT integration to allow live viewing of drone location on web page
 - Improve flight control for `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ to bring it to the same level of performance of other multicopters
 - Improve SITL simulator to include a 3D viewer and objects
