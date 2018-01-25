@@ -4,7 +4,7 @@
 ROS with SITL
 =============
 
-Connect ardupilot to ROS
+Connect ArduPilot to ROS
 ------------------------
 
 First, a good ROS habit is to always work in a workspace directory, so create one:
@@ -33,7 +33,7 @@ Now you got an SITL instance launched with TCP and UDP access, you should have s
 
     "mavproxy.py" "--master" "tcp:127.0.0.1:5760" "--sitl" "127.0.0.1:5501" "--out" "127.0.0.1:14550" "--out" "127.0.0.1:14551" "--map" "--console"
 
-Both "--out" refer to UDP connexion create by mavproxy. We will use UDP access with mavros.
+Both "--out" refer to UDP connexion create by MAVProxy. We will use UDP access with mavros.
 
 Get back to your ROS terminal. Let's create a new directory for our launch file.
 
@@ -46,7 +46,7 @@ Get back to your ROS terminal. Let's create a new directory for our launch file.
 
     It is simpler to write launch file than remembering ROS command.
 
-Let's copy mavros default launchfile for ardupilot :
+Let's copy MAVROS default launchfile for ArduPilot :
 
 .. code-block:: bash
 
@@ -90,7 +90,7 @@ To connect to SITL we just need to modify the first line to ``<arg name="fcu_url
 
     roslaunch apm.launch
 
-You should see some verbose from mavros that read its configuration and some line that indicate a connexion:
+You should see some verbose from MAVROS that read its configuration and some line that indicate a connexion:
 
 .. code-block:: none
 
@@ -112,21 +112,21 @@ You should see some verbose from mavros that read its configuration and some lin
 
 The connection was done !l!
 
-Let use rqt to how ardupilot information are shown in ROS. Normally, Mavros will do most of the translation MAVLink <--> ROS
-open another terminal and launch rqt with
+Let use RQT to how ArduPilot information are shown in ROS. Normally, MAVROS will do most of the translation MAVLink <--> ROS
+open another terminal and launch RQT with
 
 .. code-block:: bash
 
     rqt
 
 go to plugins/ topics /topics monitor
-TADAM! !!!! You see all the topics that mavros has to create from ardupilot information, click on the box to see the current value.
+TADAM! !!!! You see all the topics that mavros has to create from ArduPilot information, click on the box to see the current value.
 You could see in plugins/robot tools/ runtime monitor that everything is ok!
 
 Let's try to change mode with mavros:
 go to plugins / services/ services caller
 set service to /mavros/set_mode
 set custom_mode to 'GUIDED' and click the call button
-The response should be true, you can look on /mavros/state topic that the mode is now GUIDED. it should be the same in you mavproxy console.
+The response should be true, you can look on /mavros/state topic that the mode is now GUIDED. it should be the same in you MAVProxy console.
 
-Now, you know the base of ROS usage with ardupilot! ROS got plenty others features that you can use like plotting, 3d visualisation, etc.
+Now, you know the base of ROS usage with ArduPilot! ROS got plenty others features that you can use like plotting, 3d visualisation, etc.

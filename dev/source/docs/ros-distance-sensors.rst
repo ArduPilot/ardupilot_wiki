@@ -24,14 +24,14 @@ Receive from FCU
 
     Distance sensor message is currently support on :
 
-    - Ardupilot Master
+    - ArduPilot Master
     - Copter >= 3.5.1 (Planned)
     - Rover >= 3.2.0 (Planned)
     - Plane >= 3.8.0 (Planned)
 
-By default, Ardupilot will send distance sensors message for each rangefinder connected on FCU on Rover and only downward oriented (PITCH_270) on Copter and Plane.
+By default, ArduPilot will send distance sensors message for each rangefinder connected on FCU on Rover and only downward oriented (PITCH_270) on Copter and Plane.
 Example : launch SITL and add a analog rangefinder, see `SITL instruction here <http://ardupilot.org/dev/docs/using-sitl-for-ardupilot-testing.html#adding-a-virtual-rangefinder>`__.
-Launch mavros with default config. You should have rangefinder data in /mavros/distance_sensor/rangefinder_pub.
+Launch MAVROS with default config. You should have rangefinder data in /mavros/distance_sensor/rangefinder_pub.
 
 .. code-block:: none
 
@@ -49,13 +49,13 @@ Send to FCU
 
     Distance sensor message is currently support on :
 
-    - Ardupilot Master
+    - ArduPilot Master
     - Copter >= 3.4
     - Rover >= 3.1.0
     - Plane >= 3.7.1
 
-Ardupilot support receiving rangefinder data coming from Companion Computer for example.
-To do that, setup a Mavlink rangefinder on Ardupilot side (:ref:`see here <common:common-rangefinder-mavlink>`) and simply set a subscriber in mavros plugin :
+ArduPilot support receiving rangefinder data coming from Companion Computer for example.
+To do that, setup a Mavlink rangefinder on ArduPilot side (:ref:`see here <common:common-rangefinder-mavlink>`) and simply set a subscriber in MAVROS plugin :
 
 .. code-block:: none
 
@@ -63,7 +63,7 @@ To do that, setup a Mavlink rangefinder on Ardupilot side (:ref:`see here <commo
     distance_sensor:       <== plugin name
       rangefinder_sub:     <== ROS subscriber name
         subscriber: true   <== set subscriber type
-        id: 1              <== sensor instance number must match the one set on Ardupilot side
+        id: 1              <== sensor instance number must match the one set on ArduPilot side
         orientation: PITCH_270  <== only that orientation are supported by Copter 3.4+
 
 Now, publish a sensor_msgs/Range message on /mavros/distance_sensor/rangefinder_sub.
