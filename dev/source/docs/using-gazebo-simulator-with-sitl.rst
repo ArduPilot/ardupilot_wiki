@@ -17,6 +17,7 @@ This wiki will be updated more gazebo support becomes available.
 
 
 .. warning::
+
    Gazebo support is still under development.
    If it seems that these instructions are outdated, please open an issue on the ardupilot_wiki github.
 
@@ -66,6 +67,7 @@ Make a gazebo workspace
 Compiling and installing Gazebo From Source
 ===========================================
 .. warning::
+
    Following Installing gazebo pre-built packages guides below is recommended.
    This guide is outdated, you will be able to compile Ignition Maths, Msgs, Tools. 
    But, installing SDFormat and Gazebo requires some fix at the moment.
@@ -225,9 +227,7 @@ If all works well, you should see this:
 
 
 
-
 .. note::
-
 
    If you get error from gazebo [Server.cc:376] Could not open file [wolrds/iris_arducopter_demo.world]
    you can download it here
