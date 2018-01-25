@@ -15,7 +15,7 @@ ArduPilot's Passthrough FrSky telemetry protocol is an open protocol that is fre
 
 The ArduPilot passthrough telemetry specification including data packets and message rates is available as a `spreadsheet <https://cdn.rawgit.com/ArduPilot/ardupilot_wiki/33cd0c2c/images/FrSky_Passthrough_protocol.xlsx>`__.
 
-An example on how to decode all messages available via Passthrough to be displayed in a telemetry lua script can be dowloaded for free in this repo  https://github.com/jplopezll/OpenTX_FrSkySPort_passthrough_master.
+An example on how to decode all messages available via Passthrough to be displayed in a telemetry lua script can be dowloaded for free from this `repo <https://github.com/jplopezll/OpenTX_FrSkySPort_passthrough_master/>`__.
 
 Required/Compatible Hardware
 ============================
