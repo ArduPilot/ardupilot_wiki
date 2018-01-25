@@ -34,7 +34,7 @@ Setup through the mission planner
 
 To configure Copter, Plane or Rover to use the Maxbotix I2C, please
 first connect with the Mission Planner and then open the Config/Tuning
->> Full Parmeter List page and set the following parameters:
+>> Full Parameter List page and set the following parameters:
 
 -  RNGFND_MAX_CM = "700" (i.e. 7m max range)
 -  RNGFND_TYPE = “2" (MaxbotixI2C sonar)

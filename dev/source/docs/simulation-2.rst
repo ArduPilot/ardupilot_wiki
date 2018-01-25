@@ -16,7 +16,7 @@ The most commonly used simulators are:
 
 -  :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` is the simulator most commonly used by developers.  It is used by the :ref:`autotester <the-ardupilot-autotest-framework>` and other simulators below are actually built on top of SITL
 -  :ref:`Gazebo <using-gazebo-simulator-with-sitl>` is the official DARPA virtual robotics simulator
--  :ref:`XPlane-10 <sitl_with_xplane>` a commercial flight simulator with a rich 3D interface
+-  :ref:`XPlane-10 <sitl-with-xplane>` a commercial flight simulator with a rich 3D interface
 -  :ref:`RealFlight <sitl-with-realflight>` a commercial flight simulator with a rich 3D interface and ability to design custom vehicles
 -  :ref:`Replay <testing-with-replay>` has no graphical interfacde but allows re-running master from a dataflash log
 
