@@ -29,7 +29,7 @@ Japan
 =====
 
 Drone Japan
-----------------------
+-----------
 
 .. image:: ../../../images/training-drone-japan.png
     :target: http://www.drone-j.com/
