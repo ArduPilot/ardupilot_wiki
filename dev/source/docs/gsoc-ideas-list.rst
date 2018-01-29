@@ -7,10 +7,10 @@ List of Suggested Projects for GSoC 2018
 This is a list of projects suggested by ArduPilot developers for GSoC 2018. These are only suggestions, and if you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see http://discuss.ardupilot.org/c/google-summer-of-code). 
 We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2018. We're looking for enthusiastic students who can really get stuck into their project and make a substantial contribution to the ArduPilot project.
 
-- `Object Avoidance improvements for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid
-- `ROS <http://ardupilot.org/dev/docs/ros.html>`__ visual or lidar SLAM for non-GPS navigation and object avoidance
+- `Object Avoidance improvements for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid using `OctoMap <https://octomap.github.io/>`__ or `ROS <http://ardupilot.org/dev/docs/ros.html>`__.
+- Path Planning around obstructions for Multicopters and Rovers.
+- No-Fly / Stay-Out zones for multicopters and/or rovers
 - Live video improvements for `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ including frame rates optimised for bandwidth and video stream discovery
-- Stay out zones for multicopters and/or rovers
 - Improved IoT integration to allow live viewing of drone location on web page
 - Improve flight control for `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ to bring it to the same level of performance of other multicopters
 - Improve SITL simulator to include a 3D viewer and objects
@@ -27,10 +27,67 @@ More Details
 
 The following sections give a bit more detail on some of the projects listed above.
 
+Object Avoidance improvements for Multicopters and Rovers
+---------------------------------------------------------
+
+Multicopters and Rovers already include "simple" object avoidance (`here is how it works <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__) which stops the vehicle before hitting objects but it only works while the sonar/lidar/vision-system senses the object.  This causes problems when using lidar/sonar which cannot see in all directions in 3D.  The vehicle stops before hitting an object head-on but the user can then turn the vehicle 90degrees left or right (so the obstruction is out of view from the lidar) and then fly left or right into the obstruction.  A better approach would be to:
+
+- build up a 3D map of areas where we have sensed obstructions using a program like `OctoMap <https://octomap.github.io/>`__ or `ROS <http://ardupilot.org/dev/docs/ros.html>`__.  It is likely only `high performance flight controllers <http://ardupilot.org/copter/docs/common-autopilots.html>`__ or on a `companion computer <http://ardupilot.org/dev/docs/companion-computers.html>`__ would be capable of running these programs (but this should be checked).
+- use the above generated 3D map to decide which directions we can or cannot fly in and then provide this "which way is safe" information to the vehicle's avoidance/proximity libraries using mavlink DISTANCE_SENSOR messages.
+
+Path Planning around obstructions for Multicopters and Rovers
+-------------------------------------------------------------
+
+The purpose of this project is to allow multicopters and rovers to move autonomously around obstructions.  There are two key moments when this is important:
+
+- the vehicle is beginning its journey towards a "waypoint".  Currently our navigation controllers record the origin and destination and then send attitude and thrust commands (many times per second) to our lower level controllers in order to follow a straight line path.  In this project, we would add a new path-planning navigation library that would create a path (probably made up of multiple straight lines) based on known obstructions.  This obstruction data would initially include only terrain data (already available) but could be expanded to other sources in the future (i.e. see Stay Out Zones below).
+- the vehicle becomes caught behind an obstruction based on real-time sonar/lidar information.  The vehicle could use "Path Planning" to try and find its way around the obstruction.  It might involve a "failsafe" being triggered if the vehicle becomes stuck for more than a few seconds.  The end location the vehicle is trying to get to would be provided to the path-planner and the path-planner would provide 3d movements (probably 3d velocity vectors) to move the vehicle around the obstruction.  This real-time path-planning feature likely requires the above "Object Avoidance improvements for Multicopters and Rover" to be completed so that the 3D map is available.
+
+No-Fly / Stay-Out zones for Multicopters and/or Rovers
+------------------------------------------------------
+
+In this project, multicopters and rovers would stop and/or avoid "No-Fly" (aka "Stay-out") zones provided by the user or an external 3rd party data provider (like `Altitude Angel <https://www.altitudeangel.com/>`__).
+
+- Zones would likely be defined as 3D cylinders or cubes with attributes including location (latitude, longitude, altitude) and size.
+- The ground stations (i.e Mission Planner or QGroundControl) would be responsible for consolidating the user defined No-Fly zones with the 3rd party data provider information on the ground station computer.
+- ArduPilot (running on the flight controller) would send mavlink messages to the ground station to request all the No-Fly zone information within a given area.  The reply messages would be processed and held in a small database on the flight controller similar to how we store Terrain data (`see AP_Terrain library <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Terrain>`__).
+- The `AC_Avoidance library <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_Avoidance>`__ would be extended to stop the vehicle from entering these No-Fly zones similar to how we avoid hitting the `Fence <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_Fence>`__.
+- In the future this No-Fly zone information might also be provided to a "Path Planner" (see "Path Planning around obstructions for Multicopters and Rover").
+
+This is an important feature that will be required for regulatory purposes in some countries in coming years.  It is also one of our oldest user requests (see `issue 391 <https://github.com/ArduPilot/ardupilot/issues/391>`__ and `issue 1056 <https://github.com/ArduPilot/ardupilot/issues/1056>`__).
+
+Live video improvements
+-----------------------
+
+Most users want live video transmitted from their vehicle to the ground station.  ArduPilot's `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ includes live video using `gstreamer <https://gstreamer.freedesktop.org/>`__ but its performance could be greatly improved by:
+
+- modifying the frame rate and video quality based on the bandwidth
+- allow the ground station to discover which video streams are available from the vehicle
+- allow switching on/off streaming of video streams
+
+Much work has already gone into the `Intel Camera Streaming Daemon <https://github.com/intel/camera-streaming-daemon>`__ so this could be a good starting point.
+
+Improved IoT integration
+------------------------
+
+The purpose of this project is to make it much easier for ArduPilot vehicles to be integrated into the Internet-of-things by adding support for the `MQTT protocol <http://mqtt.org/>`__ either to ArduPilot directly or to `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ running on a `companion computer <http://ardupilot.org/dev/docs/companion-computers.html>`__.
+
+If support was added directly to ArduPilot, it should be handled similarly to how we support the existing `MAVLink <http://qgroundcontrol.org/mavlink/start>`__ and `FrSky <http://ardupilot.org/copter/docs/common-frsky-telemetry.html>`__ protocols meaning that we would add a new library that knows how to consume and publish the mqtt messages, filling them in with data as required from ArduPilot's various subsystems like the GPS, accelerometers, etc.
+
+If support was added to APSync, this project would best be handled by adding a mavlink/mqtt conversion program.  I.e. a translation layer that accepts mavlink from ardupilot and mqtt messages from external sources.
+
+Developers interested in this project will likely first need to spend effort defining which mqtt messages we should support, their format and where this information can be found amongst ArduPilot's subsystems.  This will be made easier by some earlier attempts like `this one <https://github.com/ArduPilot/ardupilot/pull/6325>`__.
+
 Improve Single Copter and/or Coax Copter
 ----------------------------------------
 
-Single copter and coax copter are copter frame types that use one or two motors on the top, along with 4 servo controlled vanes below to direct the air. We added support for these in ArduPilot a while ago and there have been some successful flights, but it needs more work to improve the flight control.
+`Single Copter and Coax Copters <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ are vehicles with one or two motors on the top, along with 4 servo controlled fins below to direct the air.  ArduPilot already supports these vehicles and there have been some successful flights but their attitude controllers need more love and attention to bring them up to the level of performance of our other frame types.
+
+This project would involve first running the vehicles in a simulator (probably `RealFlight8 <http://ardupilot.org/dev/docs/sitl-with-realflight.html#sitl-with-realflight>`__) and then testing on a real vehicle.
+
+Developers looking to take on this project should have some understanding of control theory (PID controllers) and be prepared to do detailed analysis of dataflash logs of the simulated and real-flights to ensure our control methods match the physics of these vehicles.
+
+Expenses for purchasing the simulator and vehicle will be provided by ArduPilot.
 
 Add 3D Viewer to SITL
 ---------------------
