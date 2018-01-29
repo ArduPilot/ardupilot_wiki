@@ -18,7 +18,7 @@ The sensor's position offsets are specified as 3 values (X, Y and Z) which are d
 
 - X : distance forward of the IMU or center of gravity.  Positive values are towards the front of the vehicle, negative values are towards the back.
 - Y : distance to the right of the IMU or center of gravity.  Positive values are towards the right side of the vehicle, negative values are towards the left.
-- Y : distance *below* the IMU or center of gravity.  Positive values are *lower*, negative values are *higher*.
+- Z : distance *below* the IMU or center of gravity.  Positive values are *lower*, negative values are *higher*.
 
 In practice the distance to the sensor can be measured from the center of the flight controller unless the flight controller itself is placed a significant distance from the vehicle's center of gravity in which case
 the IMU position offsets can be specified and then the other sensor's position offsets can be specified from the vehicle's center of gravity.
