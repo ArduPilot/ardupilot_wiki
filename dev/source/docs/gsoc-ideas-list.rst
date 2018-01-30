@@ -4,15 +4,17 @@
 List of Suggested Projects for GSoC 2018
 ========================================
 
-This is a list of projects suggested by ArduPilot developers for GSoC 2018. These are only suggestions, and if you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see http://discuss.ardupilot.org/c/google-summer-of-code). 
+This is a list of projects suggested by ArduPilot developers for `GSoC 2018 <https://summerofcode.withgoogle.com/>`__. These are only suggestions, and if you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see http://discuss.ardupilot.org/c/google-summer-of-code). 
 We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2018. We're looking for enthusiastic students who can really get stuck into their project and make a substantial contribution to the ArduPilot project.
 
 - `Object Avoidance improvements for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid using `OctoMap <https://octomap.github.io/>`__ or `ROS <http://ardupilot.org/dev/docs/ros.html>`__.
 - Path Planning around obstructions for Multicopters and Rovers.
 - No-Fly / Stay-Out zones for multicopters and/or rovers
 - Live video improvements for `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ including frame rates optimised for bandwidth and video stream discovery
-- Improved IoT integration to allow live viewing of drone location on web page
-- Improve flight control for `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ to bring it to the same level of performance of other multicopters
+- Improve `ROS <http://ardupilot.org/dev/docs/ros.html>`__ integration and documentation
+- Improve IoT integration to allow live viewing of drone location on web page
+- Balance Bot support
+- `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ flight control improvements
 - Improve SITL simulator to include a 3D viewer and objects
 - Helicopter autorotation support
 - AirSim drone simulator support for ArduPilot SITL (see https://github.com/Microsoft/AirSim/)
@@ -67,6 +69,18 @@ Most users want live video transmitted from their vehicle to the ground station.
 
 Much work has already gone into the `Intel Camera Streaming Daemon <https://github.com/intel/camera-streaming-daemon>`__ so this could be a good starting point.
 
+Improved ROS integration and documentation
+------------------------------------------
+
+ArduPilot can be used with `ROS <http://ardupilot.org/dev/docs/ros.html>`__ using `mavros <http://wiki.ros.org/mavros>`__ and we some documentation `here <http://ardupilot.org/dev/docs/ros.html>`__.  This project involves:
+
+- confirming the `ROS/ardupilot <http://ardupilot.org/dev/docs/ros.html>`__ setup instructions are correct and if not correct them
+- code changes to mavros or ArduPilot as required to improve integration
+- develop and document example scripts/programs to show other developers how common tasks can be done
+- if time permits, add ROS to the `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__ images to make setup for new users easier
+
+Developers interested in this project should demonstrate a good understanding of ROS.
+
 Improved IoT integration
 ------------------------
 
@@ -78,8 +92,19 @@ If support was added to APSync, this project would best be handled by adding a m
 
 Developers interested in this project will likely first need to spend effort defining which mqtt messages we should support, their format and where this information can be found amongst ArduPilot's subsystems.  This will be made easier by some earlier attempts like `this one <https://github.com/ArduPilot/ardupilot/pull/6325>`__.
 
-Improve Single Copter and/or Coax Copter
-----------------------------------------
+Balance Bot support
+-------------------
+
+ArduPilot supports a `huge variety of vehicle types <http://ardupilot.org/copter/docs/common-all-vehicle-types.html>`__ but not Balance Bots (`description from make magazine <https://makezine.com/projects/arduroller-self-balancing-robot/>`__).  This project involves extending ArduPilot's Rover firmware to support balance bots.  Some steps in this project would be:
+
+- extend the `AR_AttitudeControl library <https://github.com/ArduPilot/ardupilot/blob/master/libraries/APM_Control/AR_AttitudeControl.h>`__.  A pitch angle to throttle/acceleration control will probably be needed and possibly a combined steering and throttle controller.
+- ensure all existing drive modes work with balance bots
+- document the setup on our wiki.
+
+Expenses for purchasing a balance bot will be covered by ArduPilot.
+
+Single Copter and/or Coax Copter flight control improvements
+--------------------------------------------------------------------
 
 `Single Copter and Coax Copters <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ are vehicles with one or two motors on the top, along with 4 servo controlled fins below to direct the air.  ArduPilot already supports these vehicles and there have been some successful flights but their attitude controllers need more love and attention to bring them up to the level of performance of our other frame types.
 
@@ -87,7 +112,7 @@ This project would involve first running the vehicles in a simulator (probably `
 
 Developers looking to take on this project should have some understanding of control theory (PID controllers) and be prepared to do detailed analysis of dataflash logs of the simulated and real-flights to ensure our control methods match the physics of these vehicles.
 
-Expenses for purchasing the simulator and vehicle will be provided by ArduPilot.
+Expenses for purchasing the simulator and vehicle will be covered by ArduPilot.
 
 Add 3D Viewer to SITL
 ---------------------
