@@ -161,5 +161,6 @@ Full Table of Contents
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
     How The Team Works <docs/how-the-team-works>
     GSoC 2018 project ideas <docs/gsoc-ideas-list>
+    Developer Code of Conduct <docs/developer-code-of-conduct>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
