@@ -160,5 +160,6 @@ Full Table of Contents
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
     How The Team Works <docs/how-the-team-works>
+    GSoC 2018 project ideas <docs/gsoc-ideas-list>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
