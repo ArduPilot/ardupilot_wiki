@@ -17,6 +17,7 @@ We have a lot of talented developers in the ArduPilot dev team who would love to
 - `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ flight control improvements
 - Improve SITL simulator to include a 3D viewer and objects
 - Helicopter autorotation support
+- Machine Vision/Learning example on a copter or rover
 - AirSim drone simulator support for ArduPilot SITL (see https://github.com/Microsoft/AirSim/)
 - JavaScript DataFlash log parser and a system for graphing user logs with similar capabilities to MAVExplorer, but hosted in users browsers
 - improve UAVCAN integration with ArduPilot
@@ -124,6 +125,19 @@ Helicopter auto-rotation support
 --------------------------------
 
 When the engine fails on a helicopter a good pilot can land the helicopter safely using auto-rotation. We would like ArduPilot to support doing this automatically. We already have a very nice simulation system for helicopters using the RealFlight FlightAxis backend, which gives the ideal test environment for developing this feature. The project would involve using the rotor RPM and motor RPM sensors in the simulator to produce a reliable auto-rotation from a variety of heights and flight speeds. If simulator testing goes well then it could be tested on a number of real helicopters.
+
+Machine Vision/Learning on a copter or rover
+--------------------------------------------
+
+This project involves using machine vision and/or machine learning to add a new useful feature to ArduPilot's copter or rover firmware.  This could be to allow a copter or rover to follow a road or a known path or perhaps allow a copter to decide on a safe location to land in case of a failsafe.
+
+- would likely require a high powered `companion computer <http://ardupilot.org/dev/docs/companion-computers.html>`__ (perhaps an NVidia TX1/TX2).
+- recognise the road or landing spot using machine vision or learning (perhaps using `TensorFlow <https://www.tensorflow.org/>`__)
+- send velocity commands (probably using the `SET_GLOBAL_POSITION_INT <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <http://mavlink.org/messages/common#SET_POSITION_TARGET_GLOBAL_INT>`__) to move the vehicle in the correct direction
+- add solution to `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__
+- document the solution
+
+Expenses for purchasing a TX1/TX2 will be covered by ArduPilot.
 
 Support for AirSim simulator
 ----------------------------
