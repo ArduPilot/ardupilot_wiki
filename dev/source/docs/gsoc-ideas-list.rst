@@ -160,6 +160,10 @@ Testing can be done in the FlightAxis simulator (as in the above video), allowin
 Projects Completed during GSoC 2017
 -----------------------------------
 
+In 2017, we got 3 successful GSoC students :
+
 - Smart Return-To-Launch which involves storing vehicle's current location and maintaining the shortest possible safe path back home.
-- ChibiOS/RT port of ArduPilot
-- Add "sensor head" operation of ArduPilot, split between two CPUs
+- Rework ArduRover architecture to allow more configurations and rover type. Details at https://github.com/khancyr/GSOC-2017 
+- Add "sensor head" operation of ArduPilot, split between two CPUs.
+
+ You can find their proposals and works on Google GSoC 2017 archive page : https://summerofcode.withgoogle.com/archive/2017/organizations/5801067908431872/ .
