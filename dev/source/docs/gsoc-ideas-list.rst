@@ -22,7 +22,6 @@ We have a lot of talented developers in the ArduPilot dev team who would love to
 - JavaScript DataFlash log parser and a system for graphing user logs with similar capabilities to MAVExplorer, but hosted in users browsers
 - improve UAVCAN integration with ArduPilot
 - work on 3D aerobatic support for fixed wing aircraft
-- Cloud ground station for persistent control of a fleet of drones. Here is a Search and Rescue use case example: http://www.surtsey.org/projects/cloud-control-station/ 
 
 More Details
 ============
@@ -129,10 +128,10 @@ When the engine fails on a helicopter a good pilot can land the helicopter safel
 Machine Vision/Learning on a copter or rover
 --------------------------------------------
 
-This project involves using machine vision and/or machine learning to add a new useful feature to ArduPilot's copter or rover firmware.  This could be to allow a copter or rover to follow a road or a known path or perhaps allow a copter to decide on a safe location to land in case of a failsafe.
+This project involves using machine vision and/or machine learning to add a new useful feature to ArduPilot's copter or rover firmware.  This could be to allow a copter or rover to follow a road, allow a copter to decide on a safe place to land, or find its way home if GPS is lost.
 
 - would likely require a high powered `companion computer <http://ardupilot.org/dev/docs/companion-computers.html>`__ (perhaps an NVidia TX1/TX2).
-- recognise the road or landing spot using machine vision or learning (perhaps using `TensorFlow <https://www.tensorflow.org/>`__)
+- recognise the road, landing spot or return path to home using machine vision or learning (perhaps using `TensorFlow <https://www.tensorflow.org/>`__)
 - send velocity commands (probably using the `SET_GLOBAL_POSITION_INT <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <http://mavlink.org/messages/common#SET_POSITION_TARGET_GLOBAL_INT>`__) to move the vehicle in the correct direction
 - add solution to `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__
 - document the solution
