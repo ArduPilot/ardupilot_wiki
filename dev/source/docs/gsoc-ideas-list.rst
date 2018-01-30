@@ -19,7 +19,6 @@ We have a lot of talented developers in the ArduPilot dev team who would love to
 - Helicopter autorotation support
 - AirSim drone simulator support for ArduPilot SITL (see https://github.com/Microsoft/AirSim/)
 - JavaScript DataFlash log parser and a system for graphing user logs with similar capabilities to MAVExplorer, but hosted in users browsers
-- FreeRTOS port of ArduPilot
 - improve UAVCAN integration with ArduPilot
 - work on 3D aerobatic support for fixed wing aircraft
 - Cloud ground station for persistent control of a fleet of drones. Here is a Search and Rescue use case example: http://www.surtsey.org/projects/cloud-control-station/ 
@@ -137,37 +136,6 @@ JavaScript Log Viewer
 We would like to be able to offer a browser-based log analysis and graphing tool for ArduPilot users. This will involve writing a JavaScript parser for the ArduPilot DataFlash log format and adding a nice graphing interface for browsers based on the parsed data. The user interaction model we are looking for is similar to the python based MAVExplorer (see http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html), where arbitrary graph expressions can be used, along with selecting from a menu of common graphs.
 Ideally the tool would also support MAVLink telemetry logs, using the pymaylink JavaScript code generator.
 This tool will be combined with a log upload website to offer good log analysis for all ArduPilot users.
-
-FreeRTOS port of ArduPilot
---------------------------
-
-ArduPilot is based around a HAL (hardware abstraction layer). The HAL supports a number of operating systems, including NuttX, Linux and QURT. Adding FreeRTOS to the officially supported list of ports would be very nice. There is a FreeRTOS HAL port done by kwikius (see https://github.com/kwikius/ardupilot/tree/quantracker_master) that is flying on an adapted OSD board already (see http://discuss.ardupilot.org/t/aerflite-flight-controller-osd-new-years-eve-maiden-flight-running-arduplane/13840). That port would be a really good starting point for a fully supported ArduPilot FreeRTOS HAL. Two other people have attempted FreeRTOS ports with less success. The project would involve working on the ports to address the remaining issues and get something that can be accepted into ArduPilot master.
-One interesting approach would be to get FreeRTOS running on a Pixhawk, allowing for a direct comparison between ArduPilot on NuttX and FreeRTOS on the same hardware.
-
-Sensor-head Port of ArduPilot
------------------------------
-
-Quite a number of drones now have powerful "companion computers", along with microcontrollers (such as the STM32F4) for flight control. To allow for more advanced control and estimation code in ArduPilot it would be nice to support a new mode of operation where most of the flight code runs on the companion computer, and the microcontroller just acts as a "sensor head". 
-As the companion computers usually run Linux already, the port of ArduPilot to that side is easy. The real work involves adding a UART based protocol between the companion computer and the microcontroller that would do the following:
-
-- gather sensor data from all sensors
-- get RC inputs from uarts and pins
-- send outputs to motors and servos
-- control the bi-directional data between the two CPUs
-
-This project could be developed using a wide variety of hwardware. A simple setup would be a RaspberryPi with a pixhawk. Another very nice setup would be a Pixhawk2 with an Edison embedded.
-One possible development approach would be as follows:
-Run sensor drivers, PWM out and RC input on the STM32 which means we'd need to create a libraries/AP_SensorHead library that implements the sensorhead protocol.
-steps would be
-
-- draft the protocol
-- implement basic design of AP_SensorHead
-- add a libraries/AP_SensorHead/examples/SensorTest test prog, to test the protocol
-- implement the protocol within STM32. I'd start by implementing it as an alternative serial output type within ArduPilot firmware (see SerialManager library). Later we may do a more bare metal fw for lower end STM32
-- implement SensorHead backends for each of the key sensor libs. So for example libraries/AP_Baro/AP_Baro_SensorHead.cpp
-- same for AP_InertialSensor, AP_Compass, AP_GPS
-
-these will be very thin wrappers around calls inside libraries/AP_SensorHead/
 
 Improve fixed-wing 3D aerobatics support in ArduPilot
 -----------------------------------------------------
