@@ -47,7 +47,7 @@ the following:
    .. note::
 
       As you move your transmitter's flight mode switch the green
-         highlight bar will move to a different position.
+      highlight bar will move to a different position.
 
 -  Use the drop-down on each line to select the flight mode for that
    switch position.
@@ -110,7 +110,7 @@ If you want to support 6 modes then the transmitter will need to emit
 PWM widths of around 1165, 1295, 1425, 1555, 1685, and 1815
 milliseconds. Typically this is achieved by configuring the transmitter
 to mix a two position switch and a three position switch (giving 6 modes
- in total). You can also do this with an analog dial if one is available,
+in total). You can also do this with an analog dial if one is available,
 but it’s hard to reliably turn a dial to just the right position for six
 distinct settings.
 

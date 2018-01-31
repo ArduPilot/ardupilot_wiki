@@ -255,7 +255,6 @@ For Android devices, you will need:
    and
    `Amazon <http://www.amazon.com/T-Flash-Adapter-Samsung-GT-i9100-GT-N7000/dp/B005FUNYSA/ref=sr_1_5?ie=UTF8&qid=1376262351&sr=8-5&keywords=android+otg+cable>`__).
 
-   |AndroidGCS_USB_dongle|
    
 iOS
 -------
