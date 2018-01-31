@@ -140,7 +140,6 @@ If pre-processing works correctly, you will see ``Done`` displayed at
 the end of the *Process Messages Area*.
 
 .. note::
-/note
 
    The most common problem when using this method is the use of an
    inaccurate time offset. Remember that the estimated time offset is just
@@ -310,7 +309,7 @@ Alternative Commercial Hardware Solutions
 =========================================
 
 DROTAGx - In-Camera Card Photo Tagging - Airborne Projects
----------------------------
+----------------------------------------------------------
 
 With the appropriate mission from Mission Planner(or similar),
 `DROTAGx <https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/>`_ (airborneprojects.com) enables APM compatible Flight Controllers (like Pixhawk)

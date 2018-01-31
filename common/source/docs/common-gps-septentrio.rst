@@ -1,8 +1,8 @@
 .. _common-gps-septentrio:
 
-==============================
+=================================================
 Septentrio AsteRx-m UAS and AsteRx-m2 UAS RTK GPS
-==============================
+=================================================
 
 The Septentrio `AsteRx-m UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m-uas/>`__ and `AsteRx-m2 UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m2-uas/>`__ RTK GPS are relatively expensive but also highly accurate RTK GPS.
 
@@ -15,7 +15,7 @@ The Septentrio `AsteRx-m UAS <http://www.septentrio.com/products/gnss-receivers/
      Mission Planner GCS is the only GCS to support this feature currently.
 
 Setup instructions
-==================================
+==================
 
 To setup this using GPS1 input (serial3) configure these parameters:
 
