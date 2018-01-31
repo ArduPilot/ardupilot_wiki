@@ -14,8 +14,8 @@ easier-to-use design. See the :ref:`Pixhawk Overview <copter:common-pixhawk-over
 for more information.
 
 +--------------------------------------+----------------------------------------------------------------------------------------------------+
-| **Purchase**                         | various                       |
-
+| **Purchase**                         | various                                                                                            |
+|                                      |                                                                                                    |
 +--------------------------------------+----------------------------------------------------------------------------------------------------+
 | **Setup**                            | `Pixhawk Overview <http://copter.ardupilot.com/common-pixhawk-overview/#specifications>`__,        |
 |                                      | `Powering <http://copter.ardupilot.com/wiki/common-powering-the-pixhawk/>`__                       |
@@ -127,7 +127,9 @@ an app store for drones and robots.
    a complete embedded Linux board.
 
 +--------------------------------------+--------------------------------------+
-| **Purchase**                         | |erlebrain_3_purchase|               |
+| **Purchase**                         | `www.erlerobotics.com <https://erler |
+|                                      | obotics.com/blog/product/erle-brain- |
+|                                      | 3/>`__                               |
 +--------------------------------------+--------------------------------------+
 | **Setup**                            | `Documentation <http://erlerobotics. |
 |                                      | com/docs/>`__                        |
@@ -216,7 +218,8 @@ in the PXF cape, provides a minimalist approach which allows having a
 reduced size/lightweight and low-cost.
 
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| **Purchase**                         | `pxfmini <https://erlerobotics.com/blog/product/pxfmini/>`__                                   +--------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| **Purchase**                         | `pxfmini <https://erlerobotics.com/blog/product/pxfmini/>`__                                                   |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Setup**                            | `Setup <http://erlerobotics.com/docs/Artificial_Brains_and_Autopilots/Autopilot_shields/PXFmini/Intro.html>`__ |
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | **Design files**                     | To be delivered in February 2016                                                                               |
