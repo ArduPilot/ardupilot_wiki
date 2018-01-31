@@ -55,7 +55,7 @@ Send to FCU
     - Plane >= 3.7.1
 
 ArduPilot support receiving rangefinder data coming from Companion Computer for example.
-To do that, setup a Mavlink rangefinder on ArduPilot side (:ref:`see here <common:common-rangefinder-mavlink>`) and simply set a subscriber in MAVROS plugin :
+To do that, setup a Mavlink rangefinder on ArduPilot side and simply set a subscriber in MAVROS plugin :
 
 .. code-block:: none
 
