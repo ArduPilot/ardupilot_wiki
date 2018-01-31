@@ -11,7 +11,7 @@ This article shows how to get the Received Signal Strength Indication
     :target: ../_images/mp_hud_rssi.jpg
 
 How to visualize RSSI value in the artificial horizon of Mission Planner
-========================================
+========================================================================
 
 If the RSSI reading is not displayed in your artificial horizon yet,
   - Open Mission Planner Software.
@@ -25,14 +25,14 @@ If the RSSI reading is not displayed in your artificial horizon yet,
     :target: ../_images/MissionPlanner_RSSI_DisplayRxRSSI.JPG
 
 How to utilize Futaba S.BUS2 "Frame Error Rate" information to be used as RSSI in your flight controller
-========================================
+========================================================================================================
 
 The **Frame Error Rate (FER)** indicates, if the receiver has trouble decoding a received data package sent by the transmitter. The value is similar to RSSI. 
 
 The FER information is implemented within the **Futaba S.BUS2** datastream. It is not transmitted as a continuous value, but is sent in 25% resolution.
 
 How to setup the Hardware
-----------------------------------------
+-------------------------
 
 To extract the FER from the **Futaba S.BUS2** datastream, a `S.BUS2 to Analog DC voltage converter <http://shop.tje.dk/catalog/product_info.php?products_id=43>`__ can be used.
 
@@ -40,6 +40,7 @@ A basic setup using a **Futaba R7008SB** receiver and an additional S.BUS2 GPS M
    
    
 .. note::
+
    To enable **S.Bus and S.Bus2 protocol** on your Futaba receiver, you have to set your **R7008SB** receiver to **"Mode B"** or **"Mode C"** and your **R7003SB** receiver to **"Mode A"**. Check out your `R7008SB <http://manuals.hobbico.com/fut/r7008sb-manual.pdf>`__ or `R7003SB <http://manuals.hobbico.com/fut/r7003sb-manual.pdf>`__  user manual for further details.
 
 
@@ -47,7 +48,7 @@ A basic setup using a **Futaba R7008SB** receiver and an additional S.BUS2 GPS M
     :target: ../_images/SBUS2_2_analog_converter.png
 
 How to configure flight controller RSSI parameters in Mission Planner using Analog Input 
-----------------------------------------
+----------------------------------------------------------------------------------------
 
 To setup the RSSI parameter in your flight controller,
   - Connect your flight controller hardware via USB to your computer and open Mission Planner Software.
@@ -64,7 +65,8 @@ To setup the RSSI parameter in your flight controller,
 .. image:: ../../../images/MissionPlanner_RSSI_SetupAnalogInput.JPG
     :target: ../_images/MissionPlanner_RSSI_SetupAnalogInput.JPG
 
-.. note:: 
+.. note::
+
    The converter is designed to provide a max. voltage output of 3.3 V DC when 100% of the frames are good, and appr. 0.4 V DC when connection is lost or receiver is in failsafe. To get best results, it is best practice to calibrate the output voltages of the converter at "full reception" and "Tx off" using a voltmeter. In general the converter should output the following DC voltage:
   - **Rx in failsafe** --> 12 % of max. **VDC out ~ 0.4 V DC**
   - Rx received <= 25 % good frames --> 34 % of max. VDC out ~ 1.1 V DC
@@ -73,7 +75,7 @@ To setup the RSSI parameter in your flight controller,
   - **Rx received <= 100 % good frames** --> 100 % of max. **VDC out ~ 3.3 V DC**
   
 How to setup RSSI Feedback to your Futaba FASSTest Telemetry capable transmitter
-----------------------------------------
+--------------------------------------------------------------------------------
 
 In addition to the S.BUS2 to Analog conversion, the `converter <http://shop.tje.dk/catalog/product_info.php?products_id=43>`__  is looping back the FER / RSSI value to the S.BUS2 datastream simultaniously. This feature enables all users of **FASSTest Telemetry capable transmitters** to setup a **Telemetry RSSI Feedback** as an option. Moreover an **audible and/or vibration alarm** can be set to notice when received signal quality is degrading.
 
