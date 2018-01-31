@@ -86,6 +86,7 @@ Build and install Ignition Maths
 
 Build and install Ignition Msgs
 ::
+
     sudo apt-get install libprotobuf-dev protobuf-compiler libprotoc-dev libignition-math4-dev
     hg clone https://bitbucket.org/ignitionrobotics/ign-msgs ~/gazebo_ws/ign-msgs
     cd ~/gazebo_ws/ign-msgs

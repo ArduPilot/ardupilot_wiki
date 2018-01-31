@@ -133,8 +133,6 @@ Developing the Transmitter Firmware
 
 ``txmain.img`` can be flashed usng the web interface.  Once the image is transfered, the transmitter will need to be power-cycled for the upgrade to continue.  It will take about 15 seconds to flash the new firmware. The LEDs will flash alternately at 1Hz during upgrade.
 
-.. note::
-
 
 MAVLink Access
 ==============

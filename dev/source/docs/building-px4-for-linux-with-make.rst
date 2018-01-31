@@ -1,8 +1,8 @@
 .. _building-px4-for-linux-with-make:
 
-=====================================================
+=======================================================
 Building ArduPilot for Pixhawk/2/PX4 on Linux with Make
-=====================================================
+=======================================================
 
 This article shows how to build ArduPilot for Pixhawk, Pixhawk2, PixRacer and the original PX4 (obsolete) on Linux with *Make*.
 
