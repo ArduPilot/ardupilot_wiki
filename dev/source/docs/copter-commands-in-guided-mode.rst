@@ -647,9 +647,9 @@ The protocol definition for this command is here:
 `SET_HOME_POSITION <http://mavlink.org/messages/common#SET_HOME_POSITION>`__
 
 
-.. _copter-commands-in-guided-mode_set_target_attitude:
+.. _copter-commands-in-guided-mode_set_attitude_target:
 
-SET_TARGET_ATTITUDE
+SET_ATTITUDE_TARGET
 -------------------
 
 Sets a desired vehicle attitude. Used by an external controller to command the vehicle (manual controller or other system).
