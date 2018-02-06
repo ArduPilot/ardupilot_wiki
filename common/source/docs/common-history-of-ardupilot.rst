@@ -27,7 +27,7 @@ May 2009 - `First ArduPilot board <http://diydrones.com/profiles/blogs/ardupilot
 `thermopiles <http://diydrones.com/profiles/blogs/attopilot-ir-sensors-now>`__)
 released by Jordi/3DRobotics
 
-Nov 2009 - `ardupilot code respository <https://code.google.com/p/ardupilot/>`__ created by Jordi
+Nov 2009 - `ardupilot code repository <https://code.google.com/p/ardupilot/>`__ created by Jordi
 
 Nov 2009 - first version of ArduIMU written by Jordi, Doug Weibel, Jose
 Julio using DCM from William Premerlani
