@@ -21,6 +21,7 @@ We have a lot of talented developers in the ArduPilot dev team who would love to
 - AirSim drone simulator support for ArduPilot SITL (see https://github.com/Microsoft/AirSim/)
 - JavaScript DataFlash log parser and a system for graphing user logs with similar capabilities to MAVExplorer, but hosted in users browsers
 - improve UAVCAN integration with ArduPilot
+- D-Shot ESC support
 - work on 3D aerobatic support for fixed wing aircraft
 
 More Details
@@ -149,6 +150,11 @@ JavaScript Log Viewer
 We would like to be able to offer a browser-based log analysis and graphing tool for ArduPilot users. This will involve writing a JavaScript parser for the ArduPilot DataFlash log format and adding a nice graphing interface for browsers based on the parsed data. The user interaction model we are looking for is similar to the python based MAVExplorer (see http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html), where arbitrary graph expressions can be used, along with selecting from a menu of common graphs.
 Ideally the tool would also support MAVLink telemetry logs, using the pymaylink JavaScript code generator.
 This tool will be combined with a log upload website to offer good log analysis for all ArduPilot users.
+
+D-Shot ESC support
+------------------
+
+D-Shot is a relatively new protocol for communicating with some ESCs including BLHeli ESCs (`see explanation here <https://oscarliang.com/dshot/>`__).  Beyond the low latency D-Shot supports two-way communication meaning ArduPilot could potentially sense motor failures and take corrective action.
 
 Improve fixed-wing 3D aerobatics support in ArduPilot
 -----------------------------------------------------
