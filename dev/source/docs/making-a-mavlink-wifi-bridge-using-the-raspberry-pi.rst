@@ -188,13 +188,13 @@ Find the line that says
 
 ::
 
-    interfaces=""
+    interfacesV4=""
 
 and change it to:
 
 ::
 
-    interfaces="wlan0"
+    interfacesV4="wlan0"
 
 Save the file by typing in **Control-X** then **Y** then **return**
 
