@@ -7,7 +7,7 @@ Stores
 The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc.
 recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Fly vehicles <rtf>`.
 
-* `ArduPilot SWAG <https://shop.ardupilot.org/>`__ ArduPilot SWAG, Support and fun merchandise
+`ArduPilot SWAG <https://shop.ardupilot.org/>`__ ArduPilot SWAG, Support and fun merchandise
 
 * `AltiGator <http://www.altigator.com/>`__
 * `AUAV <http://www.auav.co/>`__
