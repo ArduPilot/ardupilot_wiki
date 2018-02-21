@@ -166,6 +166,7 @@ Set up the Vagrant and the virtual machine
       ::
 
 	 vagrant ssh
+	 cd /vagrant
 	 git submodule update --init --recursive
 	 exit
 
