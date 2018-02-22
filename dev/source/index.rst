@@ -15,10 +15,16 @@ We pride ourselves on being **versatile** (rich in features with support for a l
 
 The source code is developed by a group of voluteer and profession (i.e. paid) developers who, along with our users and `Partners <http://ardupilot.org/about/Partners>`__, make up the `ArduPilot Community <http://ardupilot.org>`__.
 
-New developers are always welcome! The best way to start is to read this wiki to learn the basics of the software and how the team works, then get involved with the other developers by posting on the
-`Developer Team Forum <http://discuss.ardupilot.org/c/development-team>`__, chat to us on `Gitter <https://gitter.im/ArduPilot/ardupilot>`__ or join the :ref:`weekly development call <ardupilot-mumble-server>`.
-You can also find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.
-:ref:`All channels <common-contact-us>` are open to all.  Lurk for a while to get a feel for it, then participate!
+Getting Involved
+================
+
+New developers are always welcome! The best way to start is to:
+
+- read this wiki to learn the basics of the software and :ref:`how the team works <how-the-team-works>`
+- get involved with the other developers by posting on the `Developer Team Forum <http://discuss.ardupilot.org/c/development-team>`__, chat to us on `Gitter <https://gitter.im/ArduPilot/ardupilot>`__ or join the :ref:`weekly development call <ardupilot-mumble-server>`.  You can also find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  :ref:`All channels <common-contact-us>` are open to all.  Lurk for a while to get a feel for it, then participate!
+- find a specific bug you'd like to fix or a feature you'd like to add (check out the `issues list <https://github.com/ArduPilot/ardupilot/issues?state=open>`__ to get some ideas).
+- fix the bug in your own clone and :ref:`test <simulation-2>` that it's working
+- submit the change to the main code base :ref:`via a pull request <submitting-patches-back-to-master>`.
 
 Why the name?
 =============
@@ -89,31 +95,16 @@ ArduPilot dev team.
    applications via CAN bus. Ardupilot is using the `Libuavcan <http://uavcan.org/Implementations/Libuavcan/>`__,
    which is a portable, cross-platform library written in C++ with minimal dependency on the C++ standard library.
 
-Getting Started with ArduPilot Development
-==========================================
-
-The main entry points for developing flight controller/antenna tracker
-and companion computer code are listed in the sidebar.
-
-For topics related to Ground Control Station development see:
-
--  :ref:`Building Mission Planner (C#, Windows) <buildin-mission-planner>`
--  `Building APM Planner 2.0 (Qt, C++, Linux, Mac OSX, Windows) <https://github.com/ArduPilot/apm_planner/blob/master/README.md>`__
-
 How the team works
 ==================
 
--  :ref:`Bringing new members onto the team <guidelines-for-contributors-to-the-apm-codebase>`
--  Most developer chat happens on `Gitter <https://gitter.im/ArduPilot/ardupilot>`__ or in the `Developer Team Forum <http://discuss.ardupilot.org/c/development-team>`__.  Real-time voice discussions take place on our :ref:`mumble server <ardupilot-mumble-server>`.  All these channels are open for anyone to join
--  Our annual developers conference is `DroneCon <http://www.dronecon.org/>`__. See previous years speeches and content `here <http://www.dronecon.org/>`__.
+-  Our annual developers conference is held in Feb/March in Canberra Australia (`2018 annoucement <https://discuss.ardupilot.org/t/developer-meetup-in-canberra-february-2018>`__).
 -  The source code for ArduPilot/APM is managed using git on https://github.com/ArduPilot/ardupilot
 -  Pre-compiled firmware for supported autopilot boards is available from http://firmware.ardupilot.org
 -  User support is available on the `forums <http://discuss.ardupilot.org/>`__.
 -  The ArduPilot `automatic test system <http://autotest.ardupilot.org/>`__ shows the test status of each commit. It's described `here <http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A703309>`__.
 -  Bug tracking and open issues are tracked using the `github issues system <https://github.com/ArduPilot/ardupilot/issues>`__
 -  Vehicle onboard parameter documentation for :ref:`copter <copter:parameters>`, :ref:`plane <plane:parameters>` and :ref:`rover <rover:parameters>` is auto-generated from the source code
--  :ref:`Release Procedures for Copter <release-procedures>`
--  :ref:`Current and Past Dev Team members <planner:common-team>`
 
 Development languages and tools
 ===============================
