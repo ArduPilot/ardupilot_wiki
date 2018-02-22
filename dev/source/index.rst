@@ -143,7 +143,6 @@ Full Table of Contents
    
     Working with the ArduPilot Project Code <docs/where-to-get-the-code>
     License (GPLv3) <docs/license-gplv3>
-    Supported Controller Boards <docs/supported-autopilot-controller-boards>
     Learning the Codebase <docs/learning-the-ardupilot-codebase>
     Building the code <docs/building-the-code>
     Code Editors & IDEs <docs/code-editing-tools-and-ides>
