@@ -143,7 +143,7 @@ Full Table of Contents
    
     Working with the ArduPilot Project Code <docs/where-to-get-the-code>
     License (GPLv3) <docs/license-gplv3>
-    Learning the Codebase <docs/learning-the-ardupilot-codebase>
+    Learning the code <docs/learning-the-ardupilot-codebase>
     Building the code <docs/building-the-code>
     Editors & IDEs <docs/code-editing-tools-and-ides>
     Simulation & Testing <docs/simulation-2>
@@ -159,5 +159,6 @@ Full Table of Contents
     How The Team Works <docs/how-the-team-works>
     GSoC 2018 project ideas <docs/gsoc-ideas-list>
     Developer Code of Conduct <docs/developer-code-of-conduct>
+    Wiki Editing Guide <common-wiki_editing_guide>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
