@@ -26,7 +26,6 @@ Collaboration with other projects
 The ArduPilot dev team is also fortunate to benefit from collaboration
 with some related projects, including:
 
--  The `PX4 dev team <http://pixhawk.org/en/start>`__
 -  The `MatrixPilot team <https://github.com/MatrixPilot/MatrixPilot/wiki>`__
 
 
