@@ -21,6 +21,3 @@ articles and tutorials:
     :maxdepth: 1
 
     MAVProxy on Windows 7 <mavproxy-on-windows-7>
-    Copter SITL/ MAVProxy Tutorial <copter-sitl-mavproxy-tutorial>
-    Plane SITL/MAVProxy Tutorial <plane-sitlmavproxy-tutorial>
-    Rover SITL/MAVProxy Tutorial <rover-sitlmavproxy-tutorial>
