@@ -150,6 +150,6 @@ Full Table of Contents
     How The Team Works <docs/how-the-team-works>
     GSoC 2018 project ideas <docs/gsoc-ideas-list>
     Developer Code of Conduct <docs/developer-code-of-conduct>
-    Wiki Editing Guide <common-wiki_editing_guide>
+    Wiki Editing Guide <docs/common-wiki_editing_guide>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
