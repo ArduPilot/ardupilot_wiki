@@ -8,33 +8,36 @@ Welcome to the ArduPilot Development Site
 
     Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
 
-:ref:`ArduPilot <ardupilot:home>` (also known as APM) is a open source autopilot
-system supporting multi-copters, traditional helicopters, fixed wing
-aircraft and rovers. The source code is developed by a `large community of enthusiasts <http://ardupilot.org>`__. 
-New developers are always welcome! The best way to start is by joining the 
+:ref:`ArduPilot <ardupilot:home>` (sometimes known as APM) is the leading open source autopilot
+system supporting multi-copters, traditional helicopters, fixed wing aircraft, rovers, submarines and antenna trackers.
+
+We pride ourselves on being **versatile** (rich in features with support for a large number of flight controllers, sensors and frame types), **trusted** (reliable and predictable) and **open** (both in terms of software and in our team's organisation and governance).
+
+The source code is developed by a group of voluteer and profession (i.e. paid) developers who, along with our users and `Partners <http://ardupilot.org/about/Partners>`__, make up the `ArduPilot Community <http://ardupilot.org>`__.
+
+New developers are always welcome! The best way to start is to read this wiki to learn the basics of the software and how the team works, then get involved with the other developers by posting on the
 `Developer Team Forum <http://discuss.ardupilot.org/c/development-team>`__, chat to us on `Gitter <https://gitter.im/ArduPilot/ardupilot>`__ or join the :ref:`weekly development call <ardupilot-mumble-server>`.
-You will find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.
-All channels are open to all.  Lurk for a while to get a feel for it, then participate!
+You can also find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.
+:ref:`All channels <common-contact-us>` are open to all.  Lurk for a while to get a feel for it, then participate!
 
 Why the name?
 =============
 
 The 'Ardu' part of the ArduPilot name comes from `Arduino <http://www.arduino.cc/>`__. The original :ref:`APM1 and APM2 <common-apm25-and-26-overview>` boards were based around the
-Arduino development environment and AVR CPUs. We've since outgrown these boards and recommend people use one of the many more capable boards found on our :ref:`Autopilot Hardware Options page <common-autopilots>` including the Pixhawk.
-A timeline history of ArduPilot can be found :ref:`here <history-of-ardupilot>`.
+Arduino development environment and AVR CPUs. We long ago outgrew these boards so we recommend users use one of the many more capable boards found on our :ref:`Autopilot Hardware Options page <common-autopilots>` including the Pixhawk.
 
+A timeline history of ArduPilot can be found :ref:`here <history-of-ardupilot>`.
 
 Supported boards
 ================
 
-:ref:`Supported AutoPilot Controller Boards <supported-autopilot-controller-boards>` provides an overview
-and key links for all the supported controller boards, including
+The :ref:`Autopilot Hardware Options <common-autopilots>` page provides an overview for all the supported controller boards, including
 :ref:`Pixhawk <common-pixhawk-overview>`, :ref:`Pixhawk2 <common-pixhawk2-overview>`,
-:ref:`Pixracer <common-pixracer-overview>`, :ref:`Erle-Brain <common-erle-brain-linux-autopilot>`,
-:ref:`NAVIO2 <common-navio2-overview>`, :ref:`Bebop2 <parrot-bebop-autopilot>`, etc.
+:ref:`Pixracer <common-pixracer-overview>`, :ref:`NAVIO2 <common-navio2-overview>`, :ref:`Bebop2 <parrot-bebop-autopilot>`, etc.
 
-The ArduPilot/APM source code is written on top of
-the `AP-HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__
+To get going quickly please consider purchasing one of the :ref:`ready-to-fly vehicles <common-rtf>` including the very low-cost `SkyRocket/SkyViper drone <http://ardupilot.org/copter/docs/skyrocket.html>`__.
+
+The ArduPilot source code includes the `AP-HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__
 hardware abstraction layer, making it relatively easy to port the code to a
 wide range of autopilot boards. See this `blog post <http://diydrones.com/profiles/blogs/lots-of-changes-to-apm-development>`__
 for more information on the move to AP-HAL.
@@ -97,11 +100,6 @@ For topics related to Ground Control Station development see:
 -  :ref:`Building Mission Planner (C#, Windows) <buildin-mission-planner>`
 -  `Building APM Planner 2.0 (Qt, C++, Linux, Mac OSX, Windows) <https://github.com/ArduPilot/apm_planner/blob/master/README.md>`__
 
-RTF vehicles
-============
-
-There are dozens if not hundreds of companies offering services based on ArduPilot or selling ArduPilot based drones.  If the drone has a Pixhawk inside, it is most likely running ardupilot.  The most well known commercial grade drone using ardupilot is the :ref:`3DR Solo <solo>`.
-
 How the team works
 ==================
 
@@ -146,7 +144,7 @@ Full Table of Contents
     Working with the ArduPilot Project Code <docs/where-to-get-the-code>
     License (GPLv3) <docs/license-gplv3>
     Supported Controller Boards <docs/supported-autopilot-controller-boards>
-    Learning the ArduPilot Codebase <docs/learning-the-ardupilot-codebase>
+    Learning the Codebase <docs/learning-the-ardupilot-codebase>
     Building the code <docs/building-the-code>
     Code Editors & IDEs <docs/code-editing-tools-and-ides>
     Simulation & Testing <docs/simulation-2>
