@@ -4,6 +4,8 @@
 Copter Release Procedures
 =========================
 
+ArduPilot is very reliable because bug fixes are prioritised over new features and releases are performed carefully and only after sufficient testing has been completed.
+
 This page outlines the steps that are normally followed for a Copter release.  Listed mostly as a reference so that we don't forget the steps.
 
 Alpha Testing
