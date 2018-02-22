@@ -15,7 +15,7 @@ Preparing commits
 
 Commits should be made to your fork/clone of the project in a new branch
 (i.e. not "master") that is up-to-date with the ardupilot/ardupilot
-master branch does and not include any other changes. See :ref:`Working with the ArduPilot Project Code <where-to-get-the-code>` for
+master branch and does not include any other changes. See :ref:`Working with the ArduPilot Project Code <where-to-get-the-code>` for
 instructions on how to correctly update your working branch.
 
 **Commits should be small, and do just one thing.** If a change touches
@@ -58,7 +58,7 @@ Example: ::
 
     APM_Control: reduce the number of parameter saves in autotune
 
-    don't save a parameter unless it has changed by 0.1%
+    do not save a parameter unless it has changed by 0.1%
 
 Before you submit a pull request
 --------------------------------
