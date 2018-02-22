@@ -1,4 +1,4 @@
-.. _rtf:
+.. _common-rtf:
 
 ===================================
 Ready-To-Fly & Easy-To-Buy vehicles
