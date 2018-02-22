@@ -1,7 +1,7 @@
 .. _guidelines-for-contributors-to-the-apm-codebase:
 
 ===============================================
-Guidelines for Contributors to the APM Codebase
+Guidelines for Contributors to the Codebase
 ===============================================
 
 **How to become a contributor**: Please see \ `this post <http://diydrones.com/profiles/blogs/how-to-contribute-to-the>`__ for
