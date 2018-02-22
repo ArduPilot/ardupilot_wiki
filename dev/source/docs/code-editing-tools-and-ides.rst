@@ -1,8 +1,8 @@
 .. _code-editing-tools-and-ides:
 
-===========================
-Code Editing Tools and IDEs
-===========================
+================
+Editors and IDEs
+================
 
 This section contains topics related to code editing tools and IDEs that are commonly used with the ArduPilot project.
 

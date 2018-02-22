@@ -145,7 +145,7 @@ Full Table of Contents
     License (GPLv3) <docs/license-gplv3>
     Learning the Codebase <docs/learning-the-ardupilot-codebase>
     Building the code <docs/building-the-code>
-    Code Editors & IDEs <docs/code-editing-tools-and-ides>
+    Editors & IDEs <docs/code-editing-tools-and-ides>
     Simulation & Testing <docs/simulation-2>
     Debugging <docs/debugging>
     Contributing Code <docs/contributing>
