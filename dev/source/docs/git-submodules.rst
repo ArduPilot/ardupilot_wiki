@@ -4,9 +4,14 @@
 Git Submodules
 ==============
 
-This page describes how we use `git submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`__ in
-the ArduPilot build. Submodules are used to manage external dependencies
-in the ArduPilot build, particularly for building for PX4 targets.
+ArduPilot is dependent upon several external code repositories which are held in **submodules**.  These are forked, cloned and built along with ArduPilot.
+
+- `ChibiOS <https://github.com/ChibiOS>`__
+- `UAVCAN <https://github.com/ArduPilot/uavcan>`__
+- `PX4Firmware <https://github.com/ArduPilot/PX4Firmware>`__,
+- `PX4NuttX <https://github.com/ArduPilot/PX4NuttX>`__,
+
+This page describes how we use `git submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`__ in the ArduPilot build.
 
 Background
 ==========

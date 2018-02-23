@@ -47,7 +47,7 @@ Initialise and update submodules
     git submodule update --init --recursive
 
 
-Download and install the *PX4 toolchain* by running the
+Download and install the *Pixhawk toolchain* by running the
 `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/PX4-tools/pixhawk_toolchain_installer_latest.exe>`__
 
 Open the *PX4Console* and navigate to the target vehicle directory:
