@@ -80,5 +80,3 @@ Links to all build pages
     Building for Qualcomm Snapdragon Flight Kit <building-for-qualcomm-snapdragon-flight-kit>
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
     Building Mission Planner with Visual Studio <buildin-mission-planner>
-
-    Git Submodules <git-submodules>
