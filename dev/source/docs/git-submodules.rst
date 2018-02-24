@@ -39,7 +39,7 @@ To manually update submodules use the following command
 
 ::
 
-    git submodule update
+    git submodule update --recursive
 
 Very occasionally a new submodule is added to ArduPilot, after which every developer must run this command:
 
@@ -95,4 +95,4 @@ to reinitialise and update the submodules:
 ::
 
     git submodule init
-    git submodule update
+    git submodule update --recursive
