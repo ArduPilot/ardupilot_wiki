@@ -1,11 +1,10 @@
 .. _editing-the-code-with-eclipse:
 
-=================================================
-Building for Pixhawk/PX4 using Eclipse on Windows
-=================================================
+========================================
+Editing/Building with Eclipse on Windows
+========================================
 
-This article shows how you can set up Eclipse for editing ArduPilot code
-and building for Pixhawk/PX4 targets.
+This article shows how you can setup Eclipse for editing and building binaries for Pixhawk/STM32 boards.  It is not possible to build on Windows for other boards.
 
 .. note::
 
@@ -14,7 +13,7 @@ and building for Pixhawk/PX4 targets.
 Preconditions
 =============
 
-Follow the instructions in :ref:`Building for Pixhawk/PX4 on Windows with Make <building-px4-with-make>` to download the required source code
+Follow the instructions in :ref:`Building for Pixhawk on Windows with Make <building-px4-with-make>` to download the required source code
 (*ardupilot*, *PX4Firmware* and *PX4NuttX*) and toolchain.
 
 The *PX4 toolchain* includes a preconfigured version of Eclipse that has
