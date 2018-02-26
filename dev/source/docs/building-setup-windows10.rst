@@ -1,5 +1,5 @@
 
-.. _building-ardupilot-onwindows10:
+.. _building-setup-windows10:
 
 ===============================================
 Setting up the waf Build Environment on Windows
