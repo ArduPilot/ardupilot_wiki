@@ -40,5 +40,15 @@ GitHub Desktop
 
    .. image:: ../images/CloningTheRepository_Windows_OpenGithub.png
        :target: ../_images/CloningTheRepository_Windows_OpenGithub.png
-   
+
+- Ensure your github settings are set to leave line endings untouched.
+
+   -  The "Git Shell (or Bash)" terminal was also installed when you
+      installed Git.  Click on your new "Git Shell (or Bash)" Icon and
+      type in the following in the Git "MINGW32" Terminal window:
+
+      ::
+
+          git config --global core.autocrlf false
+
 -  You can now also open the file in your favourite editor such as `NotePad++ <http://notepad-plus-plus.org/>`__, `Sublime Text <http://www.sublimetext.com/>`__ or `acme <http://acme.cat-v.org/>`__.
