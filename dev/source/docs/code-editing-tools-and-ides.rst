@@ -9,7 +9,7 @@ This section contains topics related to code editing tools and IDEs that are com
 .. toctree::
     :maxdepth: 1
 
-    Eclipse <editing-the-code-with-eclipse>
+    Eclipse on Windows <editing-the-code-with-eclipse>
     NotePad++ <editing-the-code-with-notepad>
 
 -  Emacs on Linux, Windows or MacOS, with etags for finding code elements
