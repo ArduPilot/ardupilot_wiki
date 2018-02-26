@@ -48,7 +48,8 @@ From within RealFlight, Reduce graphics options to improve performance:
   .. image:: ../images/realflight-settings-graphics.png
     :target: ../_images/realflight-settings-graphics.png
    
-From within Mission Planner:
+Connecting to Mission Planner's SITL
+------------------------------------
 
    - On Config/Tuning, Planner set the Layout drop-down to "Advanced"
    - On the top menu bar, select Simulation
@@ -68,10 +69,11 @@ If the vehicle's position is not reset, from within RealFlight:
   - press OK
   - after the vehicles position is reset, press the transmitter's "Reset" button again
 
-To use SITL running on a separate (or Virtual Machine):
+Connecting to SITL running on a separate (or Virtual) machine:
+--------------------------------------------------------------
 
-   - on the windows machine, determine its IP address by opening a console and entering "ipconfig".  The result will likely be something like 192.168.x.x.
-   - on the separate machine, start SITL with "-f flightaxis:192.168.x.x"
+   - determine the IP address of the Windows machine running RealFlight by opening a console and entering "ipconfig".  The result will likely be something like 192.168.x.x.
+   - on the separate machine where SITL will run, start SITL with "-f flightaxis:192.168.x.x"
 
        - cd ArduCopter
        - ../Tools/autotest/sim_vehicle -f flightaxis:192.168.x.x --map --console
