@@ -13,6 +13,7 @@ Setting up the Build Environment
 
 - :ref:`Setup the Build Environment on Linux/Ubuntu <building-setup-linux>`
 - :ref:`Setup the Build Environment on Windows <building-setup-windows>`
+- :ref:`Setup the waf Build Environment on Windows10 <building-setup-windows10>`
 - :ref:`Setup the Build Environment on MacOSX <building-setup-mac>`
 
 Building / Compiling
@@ -27,7 +28,7 @@ In most cases the build dependencies described for **waf** and **make** are the 
 
 **Windows users:**
 
-- :ref:`Building for Pixhawk on Windows10 with waf and Bash <building-ardupilot-onwindows10>`
+
 - :ref:`Building for Pixhawk on Windows with Make <building-px4-with-make>` 
 
 **Board specific instructions:**
@@ -65,8 +66,8 @@ Links to all build pages
 
     Setup the Build Environment on Linux/Ubuntu <building-setup-linux>
     Setup the Build Environment on Windows <building-setup-windows>
+    Setup the waf Build Environment on Windows10 <building-setup-windows10>
     Setup the Build Environment on MacOSX <building-setup-mac>
-    Building for Pixhawk on Windows10 with Bash on Ubuntu <building-ardupilot-onwindows10>
     Building for Pixhawk on Windows with Make <building-px4-with-make>
     Building for Pixhawk on Mac with Make <building-px4-with-make-on-mac>
     Building for Pixhawk on Linux with make <building-px4-for-linux-with-make>
