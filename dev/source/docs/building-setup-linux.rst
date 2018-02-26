@@ -1,8 +1,8 @@
 .. _building-setup-linux:
 
-========================================
-Setting up the Build Environment (Linux)
-========================================
+===============================================
+Setting up the Build Environment (Linux/Ubuntu)
+===============================================
 
 This article shows how to setup your build environment on Linux/Ubuntu machines.
 
