@@ -42,7 +42,7 @@ Here is a list of currently available merchandise products (at end of Jun 2016).
 .. image:: ../../../images/jDrones_ArduPilot_merchandize-keyring_Front_500px.jpg
     :target: ../../_images/jDrones_ArduPilot_merchandize-keyring_Front_500px.jpg
 
-- ArduPilot keyring: "Remove Pilot..." `buy here <https://shop.ardupilot.org/index.php?route=product/product&path=59&product_id=58>`__
+- ArduPilot keyring: "Remove Pilot.." `buy here <https://shop.ardupilot.org/index.php?route=product/product&path=59&product_id=58>`__
 
 - ArduPilot `SWAG Shop <https://shop.ardupilot.org/>`__
 
