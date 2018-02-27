@@ -9,6 +9,8 @@ The development team votes on various proposals including the "Top Contribution 
 Creating a voting form
 ======================
 
+Description belows how to creat a form from scratch, alternatively you can use `this template <https://docs.google.com/forms/d/12blIQLXUpibOFeCqWrWsHHroRJbgh7PXUfVQHfN_1tY/copy>`__.
+
 .. image:: ../images/how-the-team-works-voting1.png
     :target: ../_images/how-the-team-works-voting1.png
 
