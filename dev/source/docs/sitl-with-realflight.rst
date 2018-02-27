@@ -7,7 +7,7 @@ Using SITL with RealFlight
 .. youtube:: 5XqQ52n_U8M
     :width: 100%
 
-`RealFlight <http://www.realflight.com/>`__ is a commercial flight simulator with a 3D view, and ability to design and test custom vehicles.
+`RealFlight <http://www.realflight.com/>`__ is a commercial flight simulator with a 3D view, and the ability to design and test custom vehicles.
 
 This simulator only runs on Windows and requires RealFlight
 version 8. Note that RealFlight-X does not work with ArduPilot.
@@ -80,3 +80,27 @@ Connecting to SITL running on a separate (or Virtual) machine:
    - back on RealFlight push the red "RESET" button on the transmitter
    - after about a minute, the vehicle should be visible on the SITL map
    - the performance of the connection can be checked by opening the "ArduCopter" window (on the machine running SITL), the "FPS" (Frames Per Second) count needs to be over 150 for the vehicle to fly well
+
+Using ready-made models
+-----------------------
+
+As mentioned above, RealFlight allows designing your own custom vehicles including choosing the size, weight, appearance, and motor and control surface placement.
+
+A number of custom models have been created by ArduPilot developers and stored in the `ArduPilot/SITL_Models repository <https://github.com/ArduPilot/SITL_Models>`__.
+You should be able to :ref:`clone <git-clone>` this repo using ``git clone https://github.com/ArduPilot/SITL_Models.git`` and then load the models into RealFlight.
+In the directory for each model there is a .parm file that can be loaded into SITL so that appropriate tunings parameters are set.
+
+To import one of these models:
+
+- on RealFlight select Simulation >> Import >> RealFlight Archive (RX, G3X) and select the model you're interested in
+- select Aircraft >> Select Aircraft and select the model imported from the above step
+
+  .. image:: ../images/realflight-import-model.png
+    :width: 70%
+    :target: ../_images/realflight-import-model.png
+
+- from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model, i.e. ``param load ../../SITL_Models/RealFlight/Tridge/QuadPlane/BigStickQuadPlane.parm`` to load the quadplane parameters.  In some cases you may need to restart SITL in order for some parameters to take effect.
+
+  .. image:: ../images/realflight-import-parms.png
+    :width: 70%
+    :target: ../_images/realflight-import-parms.png
