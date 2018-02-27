@@ -15,9 +15,10 @@ We have a lot of talented developers in the ArduPilot dev team who would love to
 - Improve IoT integration to allow live viewing of drone location on web page
 - Balance Bot support
 - `Single Copter or Coax Copter <http://ardupilot.org/copter/docs/singlecopter-and-coaxcopter.html>`__ flight control improvements
-- Improve SITL simulator to include a 3D viewer and objects
 - Helicopter autorotation support
 - Machine Vision/Learning example on a copter or rover
+- Improve SITL simulator to include a 3D viewer and objects
+- `SimuLink <https://www.mathworks.com/products/simulink.html>`__ interface to ArduPilot SITL
 - AirSim drone simulator support for ArduPilot SITL (see https://github.com/Microsoft/AirSim/)
 - JavaScript DataFlash log parser and a system for graphing user logs with similar capabilities to MAVExplorer, but hosted in users browsers
 - improve UAVCAN integration with ArduPilot
@@ -114,13 +115,6 @@ Developers looking to take on this project should have some understanding of con
 
 Expenses for purchasing the simulator and vehicle will be covered by ArduPilot.
 
-Add 3D Viewer to SITL
----------------------
-
-The ArduPilot software in the loop simulator supports many physics backends. Some of those backends have nice 3D interfaces allowing the flight to be visualised, but the "built-in" physics backends don't have that. The built-in backends are very convenient for rapid development however, so it would be nice to have a way to visualise the vehicle when using those backends. 
-We do have a workaround at the moment where we can visualise using FlightGear externally, but it doesn't provide as good a visualisation as we would like, and we have no way to add objects (such as buildings) which are part of the physics.
-This projects would involve adding a 3D visualisation backend, along with support for objects in those backends that the physics simulation can interact with. The ability to load different 3D models of the vehicle would be a great bonus.
-
 Helicopter auto-rotation support
 --------------------------------
 
@@ -138,6 +132,13 @@ This project involves using machine vision and/or machine learning to add a new 
 - document the solution
 
 Expenses for purchasing a TX1/TX2 will be covered by ArduPilot.
+
+Add 3D Viewer to SITL
+---------------------
+
+The ArduPilot software in the loop simulator supports many physics backends. Some of those backends have nice 3D interfaces allowing the flight to be visualised, but the "built-in" physics backends don't have that. The built-in backends are very convenient for rapid development however, so it would be nice to have a way to visualise the vehicle when using those backends. 
+We do have a workaround at the moment where we can visualise using FlightGear externally, but it doesn't provide as good a visualisation as we would like, and we have no way to add objects (such as buildings) which are part of the physics.
+This projects would involve adding a 3D visualisation backend, along with support for objects in those backends that the physics simulation can interact with. The ability to load different 3D models of the vehicle would be a great bonus.
 
 Support for AirSim simulator
 ----------------------------
