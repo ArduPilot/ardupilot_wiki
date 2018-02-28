@@ -53,4 +53,4 @@ Some ESCs support three "Running Models":
 #. Forward and reverse with brake
 #. Forward and Reverse
 
-For Rover to have full and straight forward control of the throttle it is best to the "Running Model" as the 3rd option, "Forward and Reverse".  An ESC programming card compatible with the ESC can normally be used to change the ESC's configuration.
+For Rover to have full and straight forward control of the throttle it is best to set the "Running Model" to the 3rd option, "Forward and Reverse".  An ESC programming card compatible with the ESC can normally be used to change the ESC's configuration.
