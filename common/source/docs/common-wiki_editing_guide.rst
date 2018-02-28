@@ -238,7 +238,7 @@ To use the preferred method you will need to install the correct versions of `Va
 to `fork <https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box>`__ and clone the repository 
 (if you haven't already done so).
 
-For Windows users, it is adviced to install SSH client on the computer before starting vagrant. Vagrant needs 
+For Windows users, it is advised to install SSH client on the computer before starting vagrant. Vagrant needs 
 SSH client program to access development container. We have had great success with OpenSSH packer from MLS-Software
 `here <http://www.mls-software.com/opensshd.html>`__
 
