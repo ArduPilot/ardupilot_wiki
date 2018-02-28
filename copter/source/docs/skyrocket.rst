@@ -139,3 +139,18 @@ The SkyViper has its own app that runs on android or iOS, but to access the full
 The SkyViper uses MAVLink2 by default, which doesn't work with some older GCS software (such as Tower). To use those GCS versions you need to change the parameter SERIAL1_PROTOCOL to 1 from the default of 2. That will allow MAVLink1 GCS implementations to connect.
 As the SkyViper uses UDP broadcasts you can connect from multiple devices at once.
 
+
+Toy Mode
+------------------------
+
+The Skyviper has Toy Mode set by default. Toy Mode handles the following functions, specific to the Sky Viper 2450GPS:
+
+- Handles the button presses from the transmitter
+- Magically trims the sticks when they're idle and the SV is disarmed
+- Toggles the fence on and off depending on the situation
+   - Basically, if GPS is "good", the fence is armed, if GPS is "not good", the fence is disarmed (for obvious reasons)
+- Toy Mode also handles moving you between ALT_HOLD and LOITER automatically depending on GPS Status.
+- Handles the LED bling (source: peterbarker)
+- Toy Mode automatically adjusts the thrust based on voltage
+- Toy Mode processes an arming script when armed using the throttle control to prevent sudden climbs (idles motors for a moment before increasing speed)
+- Performs some automatic Compass tuning if needed
