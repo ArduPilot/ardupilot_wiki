@@ -43,3 +43,14 @@ At least three different Motor Driver (aka ESC) types are supported which allows
 - "Normal" is the most common and involves sending PWM values normally between 1000 and 2000 (1ms ~ 2ms)
 - "Brushed With Relay" is for brushed motor drivers that use a :ref:`relay pin <common-relay>` to indicate whether it should rotate forwards or backwards.
 - "Brushed BiPolar" is for brushed motor drivers that, a bit like "Normal" pwm interpret a low PWM values for reverse, a high PWM value for forward
+
+ESC Configuration
+-----------------
+
+Some ESCs support three "Running Models":
+
+#. Forward with brake
+#. Forward and reverse with brake
+#. Forward and Reverse
+
+For Rover to have full and straight forward control of the throttle it is best to the "Running Model" as the 3rd option, "Forward and Reverse".  An ESC programming card compatible with the ESC can normally be used to change the ESC's configuration.
