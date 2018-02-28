@@ -15,6 +15,15 @@ This is a list of known schools that teach how to use ArduPilot (i.e. operation 
   - **Schedule:** One or two days training per month for four months.  Custom training including intensive courses available on request.
   - **Contact:** `drone-j.com <https://www.drone-j.com/>`__
 
+`Drones Center France <https://www.drones-center.fr/>`__
+--------------------------------------------------------
+
+  - **Location:** 30min from Paris, France
+  - **Languages:** French, English
+  - **Description:** Operational training for all types of aircraft from experienced pilots.
+  - **Schedule:** One-on-one or group training to fit your schedule.
+  - **Contact:** `Drones-Center.fr <https://www.drones-center.fr/>`__
+
 .. note::
 
      If your school would like to be added to this list, please send an email to partners@ardupilot.org.  We ask that you consider supporting ArduPilot by becoming a `Partner <http://ardupilot.org/about/Partners>`__
