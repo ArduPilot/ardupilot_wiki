@@ -20,6 +20,7 @@ the wiki.
     History of ArduPilot <common-history-of-ardupilot>
     Partners <common-partners>
     Stores <common-stores>
+    Ready-To-Fly vehicles <common-rtf>
     Advanced user tools (downloads) <common-downloads_advanced_user_tools>
     Developer tools (downloads) <common-downloads_developer_tools>
     Firmware (downloads) <common-downloads_firmware>
