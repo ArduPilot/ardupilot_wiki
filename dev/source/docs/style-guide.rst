@@ -467,3 +467,36 @@ The user field helps to categorize and hide advanced parameters from being adjus
 
 - Standard - Available to anyone
 - Advanced - Available to advanced users
+
+Floating Point Annotation
+=========================
+
+ArduPilot is compiled with ``-fsingle-precision-constant``.
+
+That means it is currently allowable to leave off the float specifier from constants.  It is also permissable to have them.
+
+**Right**
+
+::
+
+   1.0f
+   1.0
+
+Multiplication vs Division
+==========================
+
+Use multiplication rather than division where possible:
+
+**Right**
+
+::
+
+   const float foo_m = foo_cm * 0.01;
+
+**Wrong**
+
+::
+
+   const float foo_m = foo_cm / 100;
+
+Multiplications typically take fewer cycles to compute than divisions.
