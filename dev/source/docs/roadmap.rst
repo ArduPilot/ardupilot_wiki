@@ -4,8 +4,6 @@
 RoadMap for 2018/2019
 =====================
 
-** WORK IN PROGRESS **
-
 This roadmap shows the direction of the ArduPilot team in 2018 and beyond.  The purpose of this roadmap
 is not to guarantee exactly when features will be added but instead to help the team, `Partners <http://ardupilot.org/about/Partners>`__
 and independent developers to spot areas for cooperation.  There will also undoubtedly be developments that are not on this list.
