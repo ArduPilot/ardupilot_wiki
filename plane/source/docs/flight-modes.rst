@@ -31,18 +31,18 @@ of functionality available.
 
    <table border="1" class="docutils">
    <tr><th>Mode</th><th>Roll</th><th>Pitch</th><th>Throttle</th><th>GPS</th><th>Summary</th></tr>
-   <tr><td>MANUAL</td><td>-</td><td>-</td><td>-</td><td></td><td>Manual control surface movement</td></tr>
+   <tr><td>MANUAL</td><td>-</td><td>-</td><td>-</td><td></td><td>Manual control surface movement, passthrough</td></tr>
    <tr><td>FBWA</td><td>s</td><td>s</td><td>-</td><td></td><td>Roll and pitch follow stick input, up to set limits</td></tr>
    <tr><td>FBWB</td><td>s</td><td>A</td><td>A</td><td>Y</td><td>like FBWA, but with automatic height and speed control</td></tr>
    <tr><td>CRUISE</td><td>A</td><td>A</td><td>A</td><td>Y</td><td>like FBWB, but with ground course tracking and terrain following</td></tr>
-   <tr><td>STABILIZE`</td><td>+</td><td>+</td><td>-</td><td></td><td>Wing-leveling on stick release</td></tr>
+   <tr><td>STABILIZE</td><td>+</td><td>+</td><td>-</td><td></td><td>Wing-leveling on stick release</td></tr>
    <tr><td>AUTOTUNE</td><td>s</td><td>s</td><td>-</td><td></td><td>like FBWA, but learns attitude tuning while flying</td></tr>
    <tr><td>TRAINING</td><td>+</td><td>+</td><td>-</td><td></td><td>Manual control up to roll and pitch limits</td></tr>
    <tr><td>ACRO</td><td>+</td><td>+</td><td>-</td><td></td><td>rate controlled mode with no attitude limits</td></tr>
-   <tr><td>AUTO</td><td>A</td><td>A</td><td>A</td><td><Y/td><td>Follows Mission</td></tr>
-   <tr><td>LOITER</td><td>A</td><td>A</td><td>A</td><td><Y/td><td>Circles point where mode switched</td></tr>
+   <tr><td>AUTO</td><td>A</td><td>A</td><td>A</td><td>Y</td><td>Follows Mission</td></tr>
+   <tr><td>LOITER</td><td>A</td><td>A</td><td>A</td><td>Y</td><td>Circles point where mode switched</td></tr>
    <tr><td>CIRCLE</td><td>A</td><td>A</td><td>A</td><td></td><td>Gently turns aircraft</td></tr>
-   <tr><td>GUIDED</td><td>A</td><td>A</td><td>A</td><td></td><td>Circles user defined point from GCS</td></tr>
+   <tr><td>GUIDED</td><td>A</td><td>A</td><td>A</td><td>Y</td><td>Circles user defined point from GCS</td></tr>
    <tr><td>Return To Launch (RTL)</td><td>A</td><td>A</td><td>A</td><td>Y</td><td>Returns to and circles home or rally point</td></tr>
    </table>
    
