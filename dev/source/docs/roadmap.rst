@@ -34,8 +34,8 @@ EKF (PaulR / Randy)
 - Multicopter improved baro disturbance compensation
 - RW robust yaw estimator
 
-Plane (Tridge / Leonard)
-------------------------
+Plane (Tridge / Leonard / Peter / TomP)
+---------------------------------------
 
 - VTOL control improvements with a focus on better tailsitter support
 - support for dual-airspeed with estimation based failover
