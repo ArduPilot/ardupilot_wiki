@@ -67,7 +67,8 @@ Links to all build pages
 
     Setup the Build Environment on Linux/Ubuntu <building-setup-linux>
     Setup the Build Environment on Windows <building-setup-windows>
-    Setup the waf Build Environment on Windows10 <building-setup-windows10>
+    Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
+    Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>
     Setup the Build Environment on MacOSX <building-setup-mac>
     Building for Pixhawk on Windows with Make <building-px4-with-make>
     Building for Pixhawk on Mac with Make <building-px4-with-make-on-mac>
