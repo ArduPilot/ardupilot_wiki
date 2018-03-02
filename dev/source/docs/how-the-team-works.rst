@@ -15,6 +15,6 @@ These pages are less about the software directly and more about the procedures a
     Development Fund <how-the-team-works-development-fund>
     Developer Code of Conduct <developer-code-of-conduct>
     Job Openings <job-openings>
-    Team <common-team>
-    Weekly meetings on Mumble Server <ardupilot-mumble-server>
+    Top Contributors <common-team>
     Voting <how-the-team-works-voting>
+    Weekly meetings on Mumble Server <ardupilot-mumble-server>
