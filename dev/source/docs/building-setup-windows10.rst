@@ -1,11 +1,11 @@
 
 .. _building-setup-windows10:
 
-===============================================
-Setting up the waf Build Environment on Windows
-===============================================
+===========================================================
+Setting up the waf Build Environment on Windows10 using WSL
+===========================================================
 
-These setup instructions describe how to setup "Bash on Ubuntu on Windows" which allows building with waf.  Alternative setup instructions for building with **make** are :ref:`here <building-setup-windows>`.
+These setup instructions describe how to setup "Bash on Ubuntu on Windows" (aka "Windows Subsystem for Linux") which allows building with waf.  Alternative setup instructions for building with **make** are :ref:`here <building-setup-windows>`.
 
 .. image:: ../images/build-on-windows10-top-image.jpg
     :target: ../_images/build-on-windows10-top-image.jpg
