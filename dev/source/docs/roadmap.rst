@@ -37,12 +37,13 @@ EKF (PaulR / Randy)
 Plane (Tridge / Leonard)
 ------------------------
 
-- VTOL control improvements
+- VTOL control improvements with a focus on better tailsitter support
+- support for dual-airspeed with estimation based failover
 - architecture update to align with Rover/Copter
 - DeepStall accuracy improvements
 
-Copter (Randy / Leonard)
-------------------------
+Copter (Randy / Leonard / Tridge)
+---------------------------------
 
 - Object Avoidance
 
@@ -58,6 +59,7 @@ Copter (Randy / Leonard)
 
 - Flight Mode Improvements
 
+  - 4kHz+ loop rate PIDs
   - follow mode
   - add spool state handling
   - Stand-By mode
@@ -120,10 +122,11 @@ Dev Tools (Buzz)
 
 - code coverage analyser
 
-Other (Randy / Peter / Tridge)
+Other (Randy / Peter / Tridge / MichaelDB)
 ------------------------------
 
 - AP_Telemetry library to include json, mavlink, frsky protocols
+- two stage failsafe for Plane, Copter, Rover, Sub
 
 Organisational (Randy / Tridge)
 -------------------------------
