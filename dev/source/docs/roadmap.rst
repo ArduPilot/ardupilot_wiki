@@ -39,6 +39,7 @@ Plane (Tridge / Leonard)
 
 - VTOL control improvements
 - architecture update to align with Rover/Copter
+- DeepStall accuracy improvements
 
 Copter (Randy / Leonard)
 ------------------------
