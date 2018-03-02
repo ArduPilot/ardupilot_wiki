@@ -12,8 +12,9 @@ Setting up the Build Environment
 --------------------------------
 
 - :ref:`Setup the Build Environment on Linux/Ubuntu <building-setup-linux>`
-- :ref:`Setup the Build Environment on Windows <building-setup-windows>`
-- :ref:`Setup the waf Build Environment on Windows10 <building-setup-windows10>`
+- :ref:`Setup the make Build Environment on Windows <building-setup-windows>`
+- :ref:`Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>`
+- :ref:`Setup the waf Build Environment on Windows using Cygwin (not fully tested) <building-setup-windows-cygwin>`
 - :ref:`Setup the Build Environment on MacOSX <building-setup-mac>`
 
 Building / Compiling
