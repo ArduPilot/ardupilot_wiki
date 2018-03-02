@@ -23,31 +23,31 @@ Step 2 - create a hwdef.dat file for the board
 Step 3 - configure and build a minimal firmware for the board
 ------
 
-Follow the :ref:`Building the code <building-the-code>` instructions take the shortcut and read the `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ file which includes doing the following:
+Follow the :ref:`Building the code <building-the-code>` instructions or take a shortcut and read the `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ file which includes doing the following:
 
-- ``cd ardupilot`` (wherever you have :ref:`cloned <git-clone>` ArduPilot to)
+- ``cd ardupilot`` (or wherever you have :ref:`cloned <git-clone>` ArduPilot to)
 - ``./waf configure --board new-board``
 - ``./waf copter``
 
 If successful the build should produce an .apj file.
 
-Step 4 - upload an ArduPilot compatible bootloader to the the board
+Step 4 - upload an ArduPilot compatible bootloader to the board
 ------
 
-Some boards come with a bootloader pre-installed while others rely on the board manufacturer to use `dfu <http://dfu-util.sourceforge.net/>`__ to install the firmware to the board.  In either case, in order to conveniently load ArduPilot to the board over USB, an ArduPilot compatible bootloader must be uploaded to the board, using "`dfu <http://dfu-util.sourceforge.net/>`__". "dfu" can be downloaded from `here <http://dfu-util.sourceforge.net/>`__.
+Some boards come with a bootloader pre-installed while others rely on the board manufacturer to use `dfu <http://dfu-util.sourceforge.net/>`__ to install the firmware to the board.  In either case, in order to conveniently load ArduPilot to the board over USB, an ArduPilot compatible bootloader must be uploaded to the board using "dfu <http://dfu-util.sourceforge.net/>__". "dfu" can be downloaded from `here <http://dfu-util.sourceforge.net/>`__.
 
 The source code for the bootloaders can be found in `ArduPilot/Bootloader <https://github.com/ArduPilot/Bootloader>`__ but pre-compiled binaries are available for common CPUs in the `Tools/bootloaders <https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders>`__ directory.  Please refer to the `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.txt>`__ to see if one of the existing bootloaders is compatible for the new board.
 
 .. note::
 
-   this document doesn’t currently spell out the steps to compile a bootloader so if you find yourself in this situation, please `contact us on Gitter <https://gitter.im/ArduPilot/ChibiOS>`__!
+   this document does not currently explain how to compile a bootloader so if you find yourself in this situation, please `contact us on Gitter <https://gitter.im/ArduPilot/ChibiOS>`__!
 
-Upload the bootloader to the board ``dfu-util -a 0 --dfuse-address 0x08000000 -D new-board-bootloader.bin -R``.
+Upload the bootloader to the board ``dfu-util -a 0 --dfuse-address 0x08000000 -D new-board-bootloader.bin -R``
 
 Step 5 - upload the minimal firmware onto the board
 ---------------------------------------------------
 
-Using Mission Planner to load the firmware to the board:
+If using Mission Planner to load the firmware to the board:
 
 - connect the board to the windows PC with a USB cable
 - go to MP’s Initial Setup >> Install Firmware screen and click on the “Load custom firmware" and select the .apj file and press OK.  If the "Load custom firmware" link it not available go to the Config/Tuning >> Planner page and set the "Layout" to "Advanced"
@@ -57,10 +57,10 @@ Using Mission Planner to load the firmware to the board:
 
     Windows7/8 users may need to create a .ini file to allow the USB device to be recognised.  On Windows10 the board should be reconised automatically.
 
-Using waf to upload (Linux, MacOSX only):
+If using waf to upload (Linux, MacOSX only):
 
-- Connect the board to the PC with a USB cable
-- Commands are in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ but in short, ``./waf copter --upload``
+- connect the board to the PC with a USB cable
+- commands are in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ but in short, ``./waf copter --upload``
 
 After uploading, most likely no LEDs on the board will light up but it should be possible to connect to the board from your favourite ground station.  An error message should appear on the ground station HUD complaining, “failed to init barometer”.
 
