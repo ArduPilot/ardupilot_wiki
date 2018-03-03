@@ -34,7 +34,7 @@ If successful the build should produce an .apj file in build/new-board/bin/arduc
 Step 4 - upload an ArduPilot compatible bootloader to the board
 ------
 
-Some boards come with a bootloader pre-installed while others rely on the board manufacturer to use `dfu <http://dfu-util.sourceforge.net/>`__ to install the firmware to the board.  In either case, in order to conveniently load ArduPilot to the board over USB, an ArduPilot compatible bootloader must be uploaded to the board using "dfu <http://dfu-util.sourceforge.net/>__". "dfu" can be downloaded from `here <http://dfu-util.sourceforge.net/>`__.
+Some boards come with a bootloader pre-installed while others rely on the board manufacturer to use `dfu <http://dfu-util.sourceforge.net/>`__ to install the firmware to the board.  In either case, in order to conveniently load ArduPilot to the board over USB, an ArduPilot compatible bootloader must be uploaded to the board using `dfu <http://dfu-util.sourceforge.net/>`__. "dfu" can be downloaded from `here <http://dfu-util.sourceforge.net/>`__.
 
 The source code for the bootloaders can be found in `ArduPilot/Bootloader <https://github.com/ArduPilot/Bootloader>`__ but pre-compiled binaries are available for common CPUs in the `Tools/bootloaders <https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders>`__ directory.  Please refer to the `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.txt>`__ to see if one of the existing bootloaders is compatible for the new board.
 
