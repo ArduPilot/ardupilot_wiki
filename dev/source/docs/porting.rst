@@ -55,7 +55,7 @@ If using Mission Planner to load the firmware to the board:
 
 .. note::
 
-    Windows7/8 users may need to create a .ini file to allow the USB device to be recognised.  On Windows10 the board should be reconised automatically.
+    Windows7/8 users may need to create a .ini file to allow the USB device to be recognised.  On Windows10 the board should be recognised automatically.
 
 If using waf to upload (Linux, MacOSX only):
 
@@ -107,6 +107,6 @@ Here is `how it was done for the skyviper <https://github.com/ArduPilot/ardupilo
 Next Steps
 ----------
 
-If you have gotten this far, congratulation you have ported ArduPilot to a new board!  Please reach out to the other developers on the `ArduPilot/ChibiOS gitter channel <https://gitter.im/ArduPilot/ChibiOS>`__ to announce your success.
+If you have gotten this far, congratulations you have ported ArduPilot to a new board!  Please reach out to the other developers on the `ArduPilot/ChibiOS gitter channel <https://gitter.im/ArduPilot/ChibiOS>`__ to announce your success.
 
 For widely available boards it is very likely we will help you get the board on the official list of supported boards including automatic firmware builds, easy uploading through the ground stations and onto our wiki!  In any case, we welcome new ports so please contact us.
