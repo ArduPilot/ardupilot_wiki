@@ -29,7 +29,7 @@ Follow the :ref:`Building the code <building-the-code>` instructions or take a s
 - ``./waf configure --board new-board``
 - ``./waf copter``
 
-If successful the build should produce an .apj file.
+If successful the build should produce an .apj file in build/new-board/bin/arducopter.apj
 
 Step 4 - upload an ArduPilot compatible bootloader to the board
 ------
