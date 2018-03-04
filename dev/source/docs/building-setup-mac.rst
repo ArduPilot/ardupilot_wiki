@@ -6,6 +6,12 @@ Setting up the Build Environment (MacOSX)
 
 This article shows how to setup your build environment on Mac OS X (ver 10.6 onwards).
 
+..  youtube:: wLK2wLwEXm4
+    :width: 100%
+
+Setup steps
+-----------
+
 #. Install `Homebrew <http://brew.sh>`__ for Mac OS X
 
 #. Install xcode and say YES to install Command Line Tools
