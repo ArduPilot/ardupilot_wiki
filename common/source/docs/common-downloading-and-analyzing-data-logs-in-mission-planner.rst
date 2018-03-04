@@ -4,9 +4,8 @@
 Downloading and Analyzing Data Logs in Mission Planner
 ======================================================
 
-:ref:`Dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>`
-are stored on the Pixhawk (or APM2.x) onboard dataflash memory and can
-be download after a flight. On Plane and Rover dataflash logs are
+Dataflash logs are stored on the flight controller's onboard dataflash memory
+and can be download after a flight. On Plane and Rover dataflash logs are
 created soon after start-up. On Copter they are created after you first
 arm the copter. This topic explains how to configure and access
 Dataflash logs.
