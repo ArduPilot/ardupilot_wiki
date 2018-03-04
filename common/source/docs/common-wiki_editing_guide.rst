@@ -20,6 +20,7 @@ Making a quick edit
 ===================
 
 There is a YouTube tutorial for editing ArduPilot documentation here:
+
 ..  youtube:: fb73F8_MiMg
     :width: 100%
 
@@ -230,14 +231,14 @@ If we have any questions we'll add them to the request.
 Building/testing docs locally
 =============================
 
-We provide a Vagrantfile in the root of the repo which can be used to set up a build environment.
+We provide a Vagrantfile in the root of the repo which can be used to set up a build environment.  This is the preferred (and supported) method to create a local build environment.  Alternatively, you may choose to use the instructions for installing `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ to build natively on your system, without Vagrant or a Virtual Machine, and skip the Vagrant specific instructions below.
 
-You will need to install the correct versions of `Vagrant <https://www.vagrantup.com/downloads.html>`__ and 
+To use the preferred method you will need to install the correct versions of `Vagrant <https://www.vagrantup.com/downloads.html>`__ and 
 `Oracle VirtualBox <https://www.virtualbox.org/wiki/Downloads>`__ for your computer. You will also need
 to `fork <https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box>`__ and clone the repository 
 (if you haven't already done so).
 
-For Windows users, it is adviced to install SSH client on the computer before starting vagrant. Vagrant needs 
+For Windows users, it is advised to install SSH client on the computer before starting vagrant. Vagrant needs 
 SSH client program to access development container. We have had great success with OpenSSH packer from MLS-Software
 `here <http://www.mls-software.com/opensshd.html>`__
 

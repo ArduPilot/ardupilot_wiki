@@ -3244,7 +3244,8 @@ sequence of mission items that represents a landing starts. It may also
 be sent via a ``COMMAND_LONG`` to trigger a landing, in which case the
 nearest (geographically) landing sequence in the mission will be used.
 
-The latitude/longitude are not used.
+If ``RTL_AUTOLAND`` is set to 2, the plane will jump to the nearest 
+``DO_LAND_START`` in the mission table when RTL is initialized. 
 
 .. note::
 
@@ -3326,7 +3327,7 @@ Copter
 ~~~~~~
 
 Points the :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region
-of interest", and possibly also rotates the nose of the vehicle if the
+of interest", and also rotates the nose of the vehicle if the
 mount type does not support a yaw feature.
 
 After setting the ROI, the camera/vehicle will continue to follow it

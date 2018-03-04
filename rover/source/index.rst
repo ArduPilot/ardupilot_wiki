@@ -34,13 +34,13 @@ Table of Contents
    
     Introduction <docs/gettit>
     First Time Setup <docs/apmrover-setup>
+    First Drive <docs/rover-first-drive>
+    Advanced Configuration <docs/common-advanced-configuration>
     Mission Planning <docs/common-mission-planning>
     Logs <docs/common-logs>
-    Advanced Configuration <docs/common-advanced-configuration>
     Optional Hardware <docs/common-optional-hardware>
     Autopilot Hardware Options <docs/common-autopilots>
     Use-Cases and Applications <docs/common-use-cases-and-applications>
-    Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>

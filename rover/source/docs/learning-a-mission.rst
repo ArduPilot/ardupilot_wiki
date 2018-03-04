@@ -4,32 +4,35 @@
 Learning a Mission
 ==================
 
-:ref:`LEARNING <learning-mode>` mode allows you to *teach* the Rover a
-mission by manually driving around recording the desired waypoints.
+Missions can be created by driving the vehicle around intermittently recording the vehicle's position as a waypoint by toggling the channel 7 switch.
 
 .. tip::
 
-   This is the easiest way to create a mission on Rover. Alternatively
-   you can :ref:`plan a mission using Mission Planner <common-planning-a-mission-with-waypoints-and-events>` or some
-   other GCS.
+   This is just one way to create a mission on Rover. Alternatively you can :ref:`plan a mission using Mission Planner <common-planning-a-mission-with-waypoints-and-events>` or some other GCS.
 
-To add waypoints in *Learning Mode*:
+If using version 3.2 (or higher) this can be accomplished by doing the following:
 
--  Make sure you have GPS lock (solid blue LED on APM).
--  Turn on *Learning mode* using the mode switch.
--  Drive around manually and flick the CH7 toggle when you want the
-   autopilot to record a waypoint.
+- set the :ref:`Auxiliary Function Switch <rover-auxiliary-functions>` to "Save Waypoint" by setting :ref:`CH7_OPTION <CH7_OPTION>` to "1"
+- wait for a good position estimate (i.e. LED will turn green)
+- drive the vehicle around in any mode except Auto.
+- when the vehicle is at a position that you would like to record as a waypoint, toggle the auxiliary function switch high (and then return to low)
+- after recording all points, check the mission by connecting with a ground station and then download all waypoints.  If using the Mission Planner go to the Flight Plan screen and press the "Read WPs" button.
 
-The waypoints will be added to the end of the current mission stored in
-the rover. Once you're done, you can switch into :ref:`AUTO <auto-mode>`
-mode and the Rover should retrace your steps, hitting all the waypoints
-you recorded.
+To then drive the mission, switch the vehicle into :ref:`Auto <auto-mode>`.
 
-If you're connected to the *Mission Planner*, you can click **Read WPs**
-on the *Flight Planner* screen and it will show the recorded waypoints
-on a map.
+Deprecated instructions for Ver 3.1 (and lower)
+-----------------------------------------------
+   
+If using version 3.1 (or lower):
+
+- setup :ref:`Learning <learning-mode>` as a mode on the  :ref:`RC Transmitter Mode Swithc <common-rc-transmitter-flight-mode-configuration>`
+- wait for a good position estimate (LED will become green)
+- drive the vehicle around in :ref:`Learning <learning-mode>` mode
+- when the vehicle is at a position that you would like to record as a waypoint, toggle the auxiliary function switch high (and then return to low)
+- after recording all points, check the mission by connecting with a ground station and then download all waypoints.  If using the Mission Planner go to the Flight Plan screen and press the "Read WPs" button.
+
+To then drive the mission, switch the vehicle into ref:`Auto <auto-mode>`.
 
 .. note::
 
-   You can erase the mission stored in the rover by toggling the CH7
-   switch while in :ref:`Manual <manual-mode>` mode.
+   In Rover-3.1 (and earlier) you can erase the mission stored in the rover by toggling the CH7 switch while in :ref:`Manual <manual-mode>` mode.

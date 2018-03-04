@@ -15,7 +15,7 @@ pre-fligth mission planner, in-flight monitoring and post flight log
 file analysis.
 
 This page provides instructions on how you can build the Mission Planner
-software on your own machine using MS Visual Studio 2015 which may be
+software on your own machine using MS Visual Studio 2017 which may be
 useful if you wish to make changes for your own use or improvements for
 the community.  Building the mission planner may also help as a guide in
 case you plan to build your own custom ground station development.
@@ -43,36 +43,43 @@ System Requirements
 
 Here is what you will need.
 
--  Windows XP, Vista, 7, 8, 10
+-  Windows Vista, 7, 8, 10
 -  Sufficient disk space, memory, processor power to comfortably run
    Visual Studio (details below)
 -  An Internet connection.
--  Visual Studio 2015 community edition
+-  Visual Studio 2017 community edition
 
 Install Visual Studio and DirectX and Python
 ============================================
 
-The first step is to get `Microsoft Visual Studio 2015 <http://www.visualstudio.com/>`__\ installed and working in your
+The first step is to get `Microsoft Visual Studio Community 2017 <http://www.visualstudio.com/>`__\ installed and working in your
 Windows system.
 
--  Download and install MS Visual Studio 2015 Community Edition which
+-  Download and install MS Visual Studio 2017 Community Edition which
    can be found `here <http://www.visualstudio.com/>`__.
+-  During the install Process, you may be prompted to install optional "workloads", at this stage, you may select: ".NET desktop development" ( or you may install it later... such as when you open the .sln for the first time, you'll be prompted to do it).
 -  Reboot your PC
 -  Start Visual Studio from the Start Menu
--  After your installation is complete and before attempting to work
-   with Mission Planner test your installation on a simple "Hello World"
-   application.
 
 Install Python 2.7 (if not already installed) by downloading it
-`here <https://www.python.org/downloads/>`__.
+`here <https://www.python.org/downloads/>`__.    We recommend you install this to the c:\\Python27\\ folder.
 
-Getting the source code from Github into your computer
-======================================================
+
+After your VS installation is complete: 
+=======================================
+
+-   Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Summary ( right of screen) -> then tick the tickbox labeled ".Net Core 2.0 development tools" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete.
+-   Also, Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Windows ( left of screen) -> then tick the tickbox labeled ".Net desktop development tools" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete. If it's already ticked, leave it as-is, that's already fine.  :-) 
+-  you might like to test your installation on a simple "Hello World" application, or the "SimpleExample" described below.
+-  TIP: By default it is installed here: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\"  
+
+Getting the Mission Planner source code from Github into your computer
+======================================================================
 
 The Mission Planner source code is stored in GitHub.  In general you can
 follow the instructions :ref:`for the ardupilot flight code <where-to-get-the-code>` except that you should use the
-**https://github.com/ArduPilot/MissionPlanner** repository in place of
-the ardupilot repository.
+**https://github.com/ArduPilot/MissionPlanner** repository in place of the ardupilot repository.  
+You could clone the git repo to (for example) c:\\MissionPlanner\\  but the exact folder is not critical.
 
 Open the Mission Planner solution in Visual Studio
 ==================================================
@@ -88,6 +95,7 @@ Open the Mission Planner solution in Visual Studio
    Planner and a few other related applications (i.e. "3DR Radio",
    "Updater", etc) which can all be see in the Solution Explorer
    (highlighted in yellow above).
+-  (If you haven't already installed the ".NET desktop development" add-in, you will be prompted to do it now.)
 -  Set the "Solution Configuration" to "Debug" or "Release" (this can be
    found just below the Tools menu)
 -  Set the "Solution Platforms" to "x86"
@@ -99,7 +107,7 @@ Open the Mission Planner solution in Visual Studio
     :target: ../_images/MPBuild_UncheckSigning.png
 
 -  Mission Planner is made up of several projects, you can see these by
-   expanding the "MissionPlanner" and "Libs" folders of the Solution
+   expanding the "MissionPlanner" and "ExtLibs" folders of the Solution
    Explorer.
 
    -  MissionPlanner (the main code)
@@ -120,8 +128,8 @@ Open the Mission Planner solution in Visual Studio
    -  SharpKml
    -  ZedGraph
 
-Building Mission Planner
-========================
+Building Mission Planner - Use the Batch Build Feature
+======================================================
 
 Before you attempt to build (compile) Mission Planner you must also have
 the official version installed on your PC.  This is because there are
@@ -143,7 +151,6 @@ If errors persist try some of the following:
       Properties, Reference Paths
    -  In the Folder entry, browse to and select the location of the
       "installed" Mission Planner which is probably:
-
       *C:\\Program Files (x86)\\Mission Planner* OR *C:\\Program
       Files\\Mission Planner*
    -  Click the Add Folder button to put the path to the installed MP
@@ -151,6 +158,9 @@ If errors persist try some of the following:
    -  Click (select)  Build Events.  Remove all pre-build and post build
       options.
    -  Click (select)  Build.
+   -  If any of the sub-projects says "(incompatible)" next to it 
+      inside Solution Explorer, then right-click that sub-project 
+      and choose "reload", that should fix it. 
 
 For  errors about missing references, you will see the name of the
 project for each error listed. Select Properties for each project with
@@ -189,7 +199,7 @@ Mission Planner and is simpler to build and understand.
 
 Open the solution from Visual Studio by selecting File >> Open >>
 Project/Solution, and in the MissionPlanner code directory select
-ExtLibs / SimpleExample.sln
+ExtLibs / SimpleExample.sln ( close the MissionPlanner solution first if you have that open )
 
 Ensure the program can be build successfully by selecting Build >> Build
 Solution.
@@ -212,15 +222,15 @@ Debugging may result in some warnings. You should learn what they mean
 and take the necessary steps to resolve them if that is the case. Here
 is a simple debugging example to get you started.
 
--  Do not connect your APM to the compiled version of MP.  You must
-   first copy some .xml files to the bin/debug folder. See details
-   below.
+-  Do not (yet) connect your AutoPilot Hardware ( Pixhawk, etc ) to the 
+   compiled version of MP.  You must  first copy some .xml files to 
+   the bin/debug folder. See details below.
 -  First be sure VS is configured for debug (versus release) Set this in
    the top menu tools area or the configuration manager.
 -  Select menu DEBUG, Start Debugging.   (Or, press F5).  Mission
    Planner should run as you normally see it.  However, some important
-   configuration files are missing so connection to the APM is not
-   recommended at this time.
+   configuration files are missing so connection to the AutoPilot Hardware 
+   ( eg Pixhawk, etc ) is not recommended at this time.
 
    -  If after "Start Debugging" the program loading hangs in the splash
       screen and you see this message:  "Managed Debugging Assistant
@@ -238,10 +248,8 @@ is a simple debugging example to get you started.
       you see the objects included.
    -  Scroll down to MainV2.cs, right click that object and select View
       Code.
-   -  In the code window for MainV2.cs, scroll down to the module public
-      MainV2() then to the line
-   -  splash.Text = "Mission Planner " + Application.ProductVersion + "
-      " + strVersion;   (about line number 169)
+   -  In the code window for MainV2.cs, scroll down to the line "public MainV2" 
+      then to one of the first code lines after that ( currently it is a log.Info("..."); line ) .
    -  Click in front of that line (In the dark gray bar on the left) to
       set a break point  (red circle).
    -  Start Debugging  (press F5).
@@ -289,8 +297,8 @@ will get you started.
       Files\\APM Planner)  **to the bin/Debug folder** in the folder
       where your Visual Studio Mission Planner solution is stored. (the
       Git hub clone folder). This will setup your compiled version to
-      match the current configuration of your APM (copter versus plane,
-      other options.)
+      match the current configuration of your AutoPilot (copter versus plane,
+      other options, etc)
    -  I.E, if you solution is in folder MPGitClone, then copy the .xml
       files to MPGitClone\\bin\\Debug.  Some will copy without notice,
       but some  will ask you if you want to replace the existing file.

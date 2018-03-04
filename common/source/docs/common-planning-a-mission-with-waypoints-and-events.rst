@@ -45,7 +45,7 @@ Instructions
 ============
 
 In the screenshot below, a Copter mission starts with an auto takeoff to
-20 meters attitude; then goes to WP 2 rising to 100 meters altitude on
+20 meters altitude; then goes to WP 2 rising to 100 meters altitude on
 the way, then waits 10 seconds; then the craft will proceed to WP 3
 (descending to 50 meters altitude on the way), then returns to launch.
 Since the default altitude is 100 meters, the return to launch will be

@@ -25,6 +25,8 @@ position and velocity control of the vehicle.
 
 :ref:`SET_POSITION_TARGET_GLOBAL_INT <copter-commands-in-guided-mode_set_position_target_global_int>`
 
+:ref:`SET_ATTITUDE_TARGET (for Guided_NoGPS mode) <copter-commands-in-guided-mode_set_attitude_target>`
+
 MAV_CMDs
 =========
 
@@ -643,3 +645,93 @@ explicitly set by the operator before or after.
 
 The protocol definition for this command is here:
 `SET_HOME_POSITION <http://mavlink.org/messages/common#SET_HOME_POSITION>`__
+
+
+.. _copter-commands-in-guided-mode_set_attitude_target:
+
+SET_ATTITUDE_TARGET
+-------------------
+
+Sets a desired vehicle attitude. Used by an external controller to command the vehicle (manual controller or other system).
+
+.. note::
+
+   Only available in Copter-3.4 (or higher)
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>time_boot_ms</strong></td>
+   <td>uint32_t</td>
+   <td>Timestamp in milliseconds since system boot. Used to avoid duplicate commands. 0 to ignore.</td>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>int8_t</td>
+   <td>Component ID</td>
+   </tr>
+   <tr>
+   <td><strong>type_mask</strong></td>
+   <td>int8_t</td>
+   <td>
+   Mappings: If any of these bits are set, the corresponding input should be ignored: 
+   (LSB is bit 1)
+   bit 1: body roll rate, 
+   bit 2: body pitch rate, 
+   bit 3: body yaw rate. 
+   bit 4-bit 6: reserved, 
+   bit 7: throttle
+   bit 8: attitude
+   <br>
+   Currently, throttle and attitude must be set to 0, i.e. not ignored
+   </td>
+   </tr>
+   <tr>
+   <td><strong>q</strong></td>
+   <td>float[4]</td>
+   <td>
+   Attitude quaternion (w, x, y, z order, zero-rotation is {1, 0, 0, 0})
+   <br>
+   Note that zero-rotation causes vehicle to rotate towards 0 yaw.
+   </td>
+   </tr>
+   <tr>
+   <td><strong>body_roll_rate</strong></td>
+   <td>float</td>
+   <td>Body roll rate in radians per second</td>
+   </tr>
+   <tr>
+   <td><strong>body_pitch_rate</strong></td>
+   <td>float</td>
+   <td>Body pitch rate in radians per second</td>
+   </tr>
+   <tr>
+   <td><strong>body_yaw_rate</strong></td>
+   <td>float</td>
+   <td>Body yaw rate in radians per second</td>
+   </tr>
+   <tr>
+   <td><strong>thrust</strong></td>
+   <td>float</td>
+   <td>Collective thrust, normalized to 0 .. 1 (-1 .. 1 for vehicles capable of reverse trust)
+   </td>
+   </tr>
+   </tbody>
+   </table>
+
+The protocol definition for this command is here:
+`SET_ATTITUDE_TARGET <http://mavlink.org/messages/common#SET_ATTITUDE_TARGET>`__

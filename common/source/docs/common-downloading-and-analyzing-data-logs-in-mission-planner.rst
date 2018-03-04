@@ -124,19 +124,21 @@ Message Details (Copter specific)
 **ATT (attitude information):**
 
 +-----------+--------------------------------------------------------------------------------------------------------+
-| RollIn    | The pilot's desired roll angle in centi-degrees (roll left is negative, right is positive)             |
+| DesRoll   | The pilot's desired roll angle in degrees (roll left is negative, right is positive)                   |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| Roll      | The vehicle's actual roll in centi-degrees (roll left is negative, right is positive)                  |
+| Roll      | The vehicle's actual roll in degrees (roll left is negative, right is positive)                        |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| PitchIn   | The pilot's desired pitch angle in centi-degrees (pitch forward is negative, pitch back is positive)   |
+| DesPitch  | The pilot's desired pitch angle in degrees (pitch forward is negative, pitch back is positive)         |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| Pitch     | The vehicle's actual pitch angle in centi-degrees (roll left is negative, right is positive)           |
+| Pitch     | The vehicle's actual pitch angle in degrees (pitch forward is negative, pitch back is positive)        |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| YawIn     | Tthe pilot's desired yaw rate as a number from -4500 ~ 4500 (not in deg/sec, clockwise is positive)    |
+| DesYaw    | The pilot's desired heading in degrees with 0 = north                                                  |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| Yaw       | The vehicles actual heading in centi-degrees with 0 = north                                            |
+| Yaw       | The vehicle's actual heading in degrees with 0 = north                                                 |
 +-----------+--------------------------------------------------------------------------------------------------------+
-| NavYaw    | The desired heading in centi-degrees                                                                   |
+| ErrRP     | The average size of the roll/pitch error estimate (values between 0 and 1)                             |
++-----------+--------------------------------------------------------------------------------------------------------+
+| ErrYaw    | The average size of the yaw error estimate (values between 0 and 1)                                    |
 +-----------+--------------------------------------------------------------------------------------------------------+
 
 **ATUN (auto tune overview):**
@@ -271,8 +273,6 @@ a mission):**
 **D32, DU32 (single data values which are either signed 32bit integers
 or unsigned 32bit integers):**
 
-.. raw:: html
-
 +---------+-------------------------------------------------------------------------------------------------------+
 | FIELD   | DESCRIPTION                                                                                           |
 +---------+-------------------------------------------------------------------------------------------------------+
@@ -355,6 +355,35 @@ but the most common are:
 +------------+----------------------------------------------------------------------------------------------------+
 | 25         | Set Home (home location coordinates have been capture)                                             |
 +------------+----------------------------------------------------------------------------------------------------+
+
+
+
+
+**GPA: (Global Position Accuracy)**
+
++------------+----------------------------------------------------------------------------------------------------+
+| FIELD      | DESCRIPTION                                                                                        |
++------------+----------------------------------------------------------------------------------------------------+
+| VDop       | Vertical dilution of precision, a unitless measure of precision                                    |
+|            | https://en.wikipedia.org/wiki/dilution_of_precision                                                |
++------------+----------------------------------------------------------------------------------------------------+
+| HAcc       | Horizontal Accuracy as reported by the GPS module, in meters                                       |
++------------+----------------------------------------------------------------------------------------------------+
+| VAcc       | Vertical Accuracy as reported by the GPS module, in meters                                         |
++------------+----------------------------------------------------------------------------------------------------+
+| SAcc       | Speed accuracy as reported by the GPS, in m/s/s                                                    |
++------------+----------------------------------------------------------------------------------------------------+
+| VV         | Flag to indicate if the GPS is reporting vertical velocity                                         |
+|            |   0 No vertical velocity data                                                                      |
+|            |   1 GPS has vertical velocity data                                                                 |
++------------+----------------------------------------------------------------------------------------------------+
+| SMS        | The autopilot time in milliseconds that the accuracy/GPS position data is associated with.         |
++------------+----------------------------------------------------------------------------------------------------+
+| Delta      | The time between when the previous GPS message and the current GPS message was parsed by the       |
+|            | autopilot, in milliseconds                                                                         |
++------------+----------------------------------------------------------------------------------------------------+
+
+
 
 **GPS:**
 

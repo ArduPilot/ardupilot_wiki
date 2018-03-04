@@ -11,20 +11,20 @@ the wiki.
 .. toctree::
     :maxdepth: 1
     
-    common-wiki_editing_guide
-    common-glossary
-    common-acknowledgments
-    common-donation
-    common-partners
+    Wiki Editing Guide <common-wiki_editing_guide>
+    Acknowledgments <common-acknowledgments>
     Commercial Support <common-commercial-support>
-    Development Team <common-team>
+    Donating to ArduPilot <common-donation>
+    Glossary <common-glossary>
     History of ArduPilot <common-history-of-ardupilot>
+    Partners <common-partners>
+    Ready-To-Fly vehicles <common-rtf>
     Stores <common-stores>
+    Top Contributors <common-team>
     Advanced user tools (downloads) <common-downloads_advanced_user_tools>
     Developer tools (downloads) <common-downloads_developer_tools>
     Firmware (downloads) <common-downloads_firmware>
 
-    
 [site wiki="planner"]
     Mission Planner – Proposed Table Of Contents (TOC) <mission-planner-toc-planning>
 [/site]

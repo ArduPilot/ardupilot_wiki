@@ -7,21 +7,30 @@ Using SITL with RealFlight
 .. youtube:: 5XqQ52n_U8M
     :width: 100%
 
-`RealFlight <http://www.realflight.com/>`__ is a commercial flight simulator with a 3D view, and ability to design and test custom vehicles.
+`RealFlight <http://www.realflight.com/>`__ is a commercial flight simulator with a 3D view, and the ability to design and test custom vehicles.
 
-This simulator only runs on Windows and requires a special version be installed that can connect to ArduPilot's SITL environment.
-Unfortunately this version is not yet readily available outside the development team.
+This simulator only runs on Windows and requires RealFlight
+version 8. Note that RealFlight-X does not work with ArduPilot.
+The reason for the long installation process is to ensure you
+have the opportunity to read (and agree) to the terms of use by
+RealFlight/KnifeEdge to remove their liability from your
+experiemental autopilot flights.
 
-Installing modified RealFlight
-==============================
+Enabling RealFlight Link Feature
+================================
 
-  - `Buy <http://www.realflight.com/where-to-buy.php>`__ and Install the regular version of RealFlight
+  - `Buy <http://www.realflight.com/where-to-buy.php>`__ and Install the regular version of RealFlight8
+  - update it to the latest version using the Technical Support button in the launcher (you need at least version 8.00.019)
   - Connect the RealFlight transmitter to your PC's USB port
-  - Start RealFlight, Select Help, About and check the version is: 7.50.015.  If it is lower you will need to upgrade the version.
-  - Shutdown RealFlight
-  - In Windows file explorer, rename the standard version of RealFlight (normally found in, "C:\Program Files (x86)\RealFlight7\RealFlight.exe") to "RealFlight.orig.bak"
-  - Download the modified RealFlight executable (ie. "RealFlight - FA1 4-28.exe"), and place it in the RealFlight directory (i.e. "C:\Program Files (x86)\RealFlight7\") and rename the file to "RealFlight.exe"
-  - Download the "Quadcopter X - direct throttles_AV.RFX" file to your PC
+  - Start RealFlight8 and in the launcher choose "Technical Support"
+  - Click "Enter Tech Support Code"
+  - Enter the code: LINK
+  - A message box will appear with a new code in the form of "LINK-1234567"
+  - enter that code on the `knifeedge signup page <https://www.knifeedge.com/cart/index.php?main_page=product_info&products_id=181>`__
+  - Enter your response code in the same location
+  - After reading and accepting the legal stuff, purchase the "FlightAxis Link" feature for $0 (Free)
+  - RealFlight/KnifeEdge will contact you via email with an unlock code in the form of "LINKUNLOCK12345678"
+  - Enter the unlock code into ReafFlight 8 at Launcher -> "Technical Support" -> "Enter Tech Support Code"
   - Start RealFlight (it should look exactly like regular RealFlight, there is no way to visually determine the difference)
   - Select Simulation, Import, RealFlight Archive (RFX, G3X) and select the file downloaded above.  A message, "..was successfully imported" should be displayed
   - Select Aircraft, Select Aircraft, open "Custom Aircraft" section and select "Quadcopter X - direct throttle".  In the current state, the RC inputs come straight from the stick so it is not flyable.
@@ -34,11 +43,13 @@ From within RealFlight, Reduce graphics options to improve performance:
    - Simulation, Settings, Graphics
    - Under "Quality" set all values to "No" or "Low" (i.e. set "Clouds" to "No", "Water Quality" to "Low", etc)
    - Under "Hardware" set "Resolution" to "800 x 600 Medium(16 bit) and select "Full Screen" mode
+   - Under physics settings, change the option for "pause simulator when in background" to No
    
   .. image:: ../images/realflight-settings-graphics.png
     :target: ../_images/realflight-settings-graphics.png
    
-From within Mission Planner:
+Connecting to Mission Planner's SITL
+------------------------------------
 
    - On Config/Tuning, Planner set the Layout drop-down to "Advanced"
    - On the top menu bar, select Simulation
@@ -58,13 +69,38 @@ If the vehicle's position is not reset, from within RealFlight:
   - press OK
   - after the vehicles position is reset, press the transmitter's "Reset" button again
 
-To use SITL running on a separate (or Virtual Machine):
+Connecting to SITL running on a separate (or Virtual) machine:
+--------------------------------------------------------------
 
-   - on the windows machine, determine its IP address by opening a console and entering "ipconfig".  The result will likely be something like 192.168.x.x.
-   - on the separate machine, start SITL with "-f flightaxis:192.168.x.x"
+   - determine the IP address of the Windows machine running RealFlight by opening a console and entering "ipconfig".  The result will likely be something like 192.168.x.x.
+   - on the separate machine where SITL will run, start SITL with "-f flightaxis:192.168.x.x"
 
        - cd ArduCopter
        - ../Tools/autotest/sim_vehicle -f flightaxis:192.168.x.x --map --console
    - back on RealFlight push the red "RESET" button on the transmitter
    - after about a minute, the vehicle should be visible on the SITL map
    - the performance of the connection can be checked by opening the "ArduCopter" window (on the machine running SITL), the "FPS" (Frames Per Second) count needs to be over 150 for the vehicle to fly well
+
+Using ready-made models
+-----------------------
+
+As mentioned above, RealFlight allows designing your own custom vehicles including choosing the size, weight, appearance, and motor and control surface placement.
+
+A number of custom models have been created by ArduPilot developers and stored in the `ArduPilot/SITL_Models repository <https://github.com/ArduPilot/SITL_Models>`__.
+You should be able to :ref:`clone <git-clone>` this repo using ``git clone https://github.com/ArduPilot/SITL_Models.git`` and then load the models into RealFlight.
+In the directory for each model there is a .parm file that can be loaded into SITL so that appropriate tunings parameters are set.
+
+To import one of these models:
+
+- on RealFlight select Simulation >> Import >> RealFlight Archive (RX, G3X) and select the model you're interested in
+- select Aircraft >> Select Aircraft and select the model imported from the above step
+
+  .. image:: ../images/realflight-import-model.png
+    :width: 70%
+    :target: ../_images/realflight-import-model.png
+
+- from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model, i.e. ``param load ../../SITL_Models/RealFlight/Tridge/QuadPlane/BigStickQuadPlane.parm`` to load the quadplane parameters.  In some cases you may need to restart SITL in order for some parameters to take effect.
+
+  .. image:: ../images/realflight-import-parms.png
+    :width: 70%
+    :target: ../_images/realflight-import-parms.png

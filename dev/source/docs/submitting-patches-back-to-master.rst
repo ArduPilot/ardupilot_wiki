@@ -15,7 +15,7 @@ Preparing commits
 
 Commits should be made to your fork/clone of the project in a new branch
 (i.e. not "master") that is up-to-date with the ardupilot/ardupilot
-master branch does and not include any other changes. See :ref:`Working with the ArduPilot Project Code <where-to-get-the-code>` for
+master branch and does not include any other changes. See :ref:`Working with the ArduPilot Project Code <where-to-get-the-code>` for
 instructions on how to correctly update your working branch.
 
 **Commits should be small, and do just one thing.** If a change touches
@@ -58,7 +58,7 @@ Example: ::
 
     APM_Control: reduce the number of parameter saves in autotune
 
-    don't save a parameter unless it has changed by 0.1%
+    do not save a parameter unless it has changed by 0.1%
 
 Before you submit a pull request
 --------------------------------
@@ -125,10 +125,6 @@ repository, follow these directions:
 #. Check the list of change at the bottom of the page only includes your
    intended changes, then press "Click to create pull request for this
    comparison".
-#. Let the dev team know! Post on the
-   `drones-discuss <https://groups.google.com/forum/#!forum/drones-discuss>`__
-   mailing list so the discussion and code review is easily publicly
-   available.
 
 It is very common, especially for large changes, for the main developers
 to ask you to modify you pull request to fit in better with the existing

@@ -27,6 +27,9 @@ Setup
 - flash the TX1 as described in the `Setup the TX1 <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-tx1>`__ section of the above wiki page but use the apsync-tx1-openkai image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/beta/>`__
 - mount the ZED camera upside-down and using vibration dampeners to the front of the vehicle.  It can be mounted right-side-up after `connecting with ssh <http://ardupilot.org/dev/docs/apsync-intro.html#connecting-with-ssh>`__ and then modify `~/src/OpenKAI/kiss/apmCopter.kiss <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss#L60>`__ so "bFlip" is 1
 - in order to download the ZED camera's calibration parameters from stereolabs.com, connect the TX1 to the internet with an ethernet cable during powerup (this procedure is only required once)
+- disable APSync's video streaming (so that OpenKai can use the camera) by connecting your computer to APSync's access point (ssid=ardupilot, pw=ardupilot), then open a browser to `http://10.0.1.128:8000 <http://10.0.1.128:8000>`__ and click the red "Disable Auto Streaming" button (button should turn green) and reboot the TX1.
+
+.. image:: ../../../images/apsync-disable-auto-stream.png
 
 .. image:: ../../../images/zed-enrouteex700.jpg
     :target: ../_images/zed-enrouteex700.jpg
@@ -57,7 +60,11 @@ Ground Testing
 - If you are using Mission Planner as your ground station, once messages are successfully passing from the ZED/TX1 to the flight controller:
   - a proximity viewer should appear showing the distance to objects ahead of the vehicle (if :ref:`PRX_TYPE <PRX_TYPE>` was enabled above) 
   - "Bad Vision Position" message should disappear from the HUD
-- Set the home position from the ground station map (from MP's Flight Data screen, right-mouse-button-click on the map and select "Set Home Here").  The vehicle should appear on the map.
+- Set the home position from the ground station map (from MP's Flight Data screen, right-mouse-button-click on the map and select "Set EKF Origin Here").  The vehicle should appear on the map.
+
+.. image:: ../../../images/zed-set-ekf-origin.png
+    :target: ../_images/zed-set-ekf-origin.png
+
 - Pick-up the vehicle and walk it around checking that the vehicle's position movements are shown on the map
 
 Flight testing

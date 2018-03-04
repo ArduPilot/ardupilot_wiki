@@ -11,7 +11,7 @@ This article describes how to setup the `PX4FLOW (Optical Flow) Sensor <https://
 
 .. warning::
 
-   The PX4FLOW is supported as an experimental feature starting from Copter 3.3. It is not supported in Plane or Rover.
+   The PX4FLOW is supported from Copter 3.3 and higher. It is not yet supported in Plane or Rover.
 
 Overview
 ========
@@ -38,9 +38,8 @@ The PX4Flow firmware must be updated prior to connecting to the Pixhawk.  This c
 
 .. warning::
 
-   QGroundControl currently defaults to an incompatible firmware for PX4Flow.
-   Mission Planner defaults to the correct firmware, and supports setup of the
-   device for Arducopter.
+   QGroundControl currently defaults to an incompatible firmware for PX4Flow. In order to load the correct release, download px4flow-klt-06Dec2014.px4 from the link below and upload it by selecting custom firmware file on QGC the Firmware Upgrade Menu.
+   Mission Planner defaults to the correct firmware, and supports setup of the device for ArduCopter.
 
 #. Download and unzip the `PX4Flow-KLT firmware <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
    (`source code here <https://github.com/priseborough/px4flow/tree/klt_flow>`__)

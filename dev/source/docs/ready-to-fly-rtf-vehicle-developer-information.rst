@@ -21,3 +21,4 @@ vehicles based on ArduPilot.
     :maxdepth: 1
 
     3DR Solo <solo>
+    SkyRocket SkyViper V2450GPS <skyviper>

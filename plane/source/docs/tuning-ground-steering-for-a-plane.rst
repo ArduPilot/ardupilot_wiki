@@ -146,3 +146,24 @@ the same automated elevator behaviour as is used in auto-takeoff when in
 FBWA mode. That helps keep tail wheels on the ground in taildragger
 aircraft (and can also be used to keep nose wheels on the ground in
 tricycle aircraft).
+
+Limiting the steering to prevent a roll on a wing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On a large fast planes, especially with large wingspan, there is a chance
+on rolling on the wing if the steering is too aggressive.
+To coupe with this problem steering limiting can be setup that will derate
+steering angles with increasing speed.
+When the speed is lower than the set derating speed, no limit occurs and
+the angle for steering is passed through without changes.
+When the speed increase, the steering angle starts to decrease at a setup
+rate until the minimum steering angle is reached.
+
+-  **DRTSPD** - After this speed the steering angle gets reduced
+-  **DRTFCT** - Amount of degrees to reduce per each additional m/s increase in speed
+-  **DTRMIN** - minimum angle of steering that will not be decreased further
+
+The steering angle vs. speed can be illustrated with following chart:
+
+.. image:: ../images/steering-derating.png
+    :target: ../_images/steering-derating.png

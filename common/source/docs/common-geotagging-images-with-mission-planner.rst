@@ -308,37 +308,45 @@ working with specific cameras:
 Alternative Commercial Hardware Solutions
 =========================================
 
-DROTAG - Airborne Projects
---------------------------
+DROTAGx - In-Camera Card Photo Tagging - Airborne Projects
+----------------------------------------------------------
 
 With the appropriate mission from Mission Planner(or similar),
-`DROTAG <https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/>`_ (airborneprojects.com) enables APM compatible Flight Controllers (like Pixhawk)
-to *Configure, Trigger and Geo-Tag* your Digital Camera pictures in
+`DROTAGx <https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/>`_ (airborneprojects.com) enables APM compatible Flight Controllers (like Pixhawk)
+to *Trigger and Geo-Tag* your Digital Camera pictures in
 the air. It works through one of the available TELEMETRY ports and
-through a microUSB cable to the camera. That's it.
+through a microUSB cable to the camera.
 
-You will have your taken pictures automatically Geo-Tagged by DROTAG in
-the microSD card at the time you land, with no need for any post-processing.
-DROTAG also has a way to configure most of your camera settings. This is
-specially important if you often change your camera settings manually for
-other uses.
+You will have your taken pictures automatically Geo-Tagged by DROTAGx in the
+microSD card inside your camera at the time you land, with no need for any
+post-processing.
+
+DROTAGx enables non DRONE experts to get professional survey level results,
+with it's easy to use and included accessories:
+
+-   Photo tagging directly on the camera card itself.
+-   Have a plain text log file with geographical data in the camera card itself.
+    Includes Yaw, Roll, and Pitch of the Drone.
+-   1 Picture every 1.6 seconds.
+-   Guaranteed correct tagging even if the camera misses several pictures in a row!
+-   Hotshoe for camera flash feedback included for cameras with external flash.
+    With the hotshoe installed take pictures as fast as your camera allows for,
+    and microsecond accurate shutter lag.
+-   Also tags RAW photos.
+-   Customer support.
 
 Airborne Project's also provides a comprehensive
-`DROTAG manual <https://www.airborneprojects.com/wp-content/uploads/2016/06/Manual.Gstreamer.Arietta.pdf>`_ (airborneprojects.com)
+`DROTAGx manual <https://www.airborneprojects.com/docs/drotagx_manual.pdf>`_ (airborneprojects.com)
 with before flight checklists, detailed explanations for diagnosis and
 other tips.
 
-.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/text_image_1-1200x548.jpg
+DROTAGx is used by several national governmental organizations including Land
+Management Organizations around the world. Many professional surveying
+companies also choose the DROTAG for their tagging needs.
+
+.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/drotag_1.jpg
     :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
     :width: 100%
-    
-.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/3.jpg
-    :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
-    :width: 50%
-
-.. image:: https://www.airborneprojects.com/wp-content/uploads/2016/06/2.jpg
-    :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
-    :width: 49%
 
 
 Acknowledgements

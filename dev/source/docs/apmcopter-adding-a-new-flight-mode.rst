@@ -5,193 +5,168 @@ Adding a New Flight Mode to Copter
 ==================================
 
 This section covers the basics of how to create a new high level flight
-mode (i.e. equivalent of Stabilize, Loiter, etc) which is the top level
-of "the onion" as described on the
-:ref:`Attitude <apmcopter-programming-attitude-control-2>` page. 
-This page unfortunately can't provide all the information on what you
-may need to do to create your ideal flight mode but hopefully it's a
-start.
+mode (i.e. equivalent of Stabilize, Loiter, etc) in Copter-3.6 (and higher).
 
-#. Create the #define for the new flight mode in
-   `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L88>`__.
-   and increase the NUM_MODES by 1.
+As a reference the diagram below provides a high level view of Copter's architecture.
+
+.. image:: ../images/copter-architecture.png
+    :target: ../_images/copter-architecture.png
+
+#. Pick a name for the new mode and add it to the bottom of the control_mode_t enum in `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L90>`__ just like "NEW_MODE" has been added below.
 
    ::
 
-       // Auto Pilot modes
-       // ----------------
-       #define STABILIZE 0 // hold level position
-       #define ACRO 1 // rate control
-       #define ALT_HOLD 2 // AUTO control
-       #define AUTO 3 // AUTO control
-       #define GUIDED 4 // AUTO control
-       #define LOITER 5 // Hold a single location
-       #define RTL 6 // AUTO control
-       #define CIRCLE 7 // AUTO control
-       #define LAND 9 // AUTO control
-       #define OF_LOITER 10 // Hold a single location using optical flow sensor
-       #define DRIFT 11 // DRIFT mode (Note: 12 is no longer used)
-       #define SPORT 13 // earth frame rate control
-       #define FLIP 14 // flip the vehicle on the roll axis
-       #define AUTOTUNE 15 // autotune the vehicle's roll and pitch gains
-       #define POSHOLD 16 // position hold with manual override
-       #define NEWFLIGHTMODE 17                // new flight mode description
-       #define NUM_MODES 18
+       // Auto Pilot Modes enumeration
+       enum control_mode_t {
+           STABILIZE =     0,  // manual airframe angle with manual throttle
+           ACRO =          1,  // manual body-frame angular rate with manual throttle
+           ALT_HOLD =      2,  // manual airframe angle with automatic throttle
+           AUTO =          3,  // fully automatic waypoint control using mission commands
+           GUIDED =        4,  // fully automatic fly to coordinate using GCS commands
+           LOITER =        5,  // automatic horizontal acceleration with automatic throttle
+           RTL =           6,  // automatic return to launching point
+           CIRCLE =        7,  // automatic circular flight with automatic throttle
+           LAND =          9,  // automatic landing with horizontal position control
+           DRIFT =        11,  // semi-automous position, yaw and throttle control
+           SPORT =        13,  // manual earth-frame angular rate control with manual throttle
+           FLIP =         14,  // automatically flip the vehicle on the roll axis
+           AUTOTUNE =     15,  // automatically tune the vehicles roll and pitch gains
+           POSHOLD =      16,  // automatic position hold with manual override
+           BRAKE =        17,  // full-brake using inertial/GPS system, no pilot input
+           THROW =        18,  // throw to launch mode using inertial/GPS system, no pilot input
+           AVOID_ADSB =   19,  // automatic avoidance of obstacles in the macro scale
+           GUIDED_NOGPS = 20,  // guided mode but only accepts attitude and altitude
+           SMART_RTL =    21,  // SMART_RTL returns to home by retracing its steps
+           NEW_MODE =     22,  // your new flight mode
+    };
 
-#. Create a new control_<new flight mode> sketch based on a similar
-   flight mode such as
-   `control_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_stabilize.cpp>`__
-   or
-   `control_loiter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_loiter.cpp>`__. 
-   This new file should have an ``_init()`` function and ``_run()``
-   function.
+#. Define a new class for the mode in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h>`__.
+   It is probably easiest to copy a similar existing mode's class definition and just change the class name (i.e. copy and rename "class ModeStabilize" to "class ModeNewMode").
+   The new class should inherit from the Copter::Mode class and must implement the ``init()``, ``run()``, ``name()`` and ``name4()`` methods.
 
-   ::
+    ::
 
-       /// -*- tab-width: 4; Mode: C++; c-basic-offset: 4; indent-tabs-mode: nil -*-
+        public:
+           ModeNewMode(Copter &copter) : Copter::Mode(copter) { }
+           bool init(bool ignore_checks) override;
+           void run() override;
 
-       /*
-        * control_newflightmode.cpp - init and run calls for new flight mode
-        */
+        protected:
+           const char *name() const override { return "NEWMODE"; }
+           const char *name4() const override { return "NEWM"; }
 
-       // newflightmode_init - initialise flight mode
-       static bool newflightmode_init(bool ignore_checks)
-       {
-           // do any required initialisation of the flight mode here
-           // this code will be called whenever the operator switches into this mode
+   The ``name()`` and ``name4()`` methods are for logging and display purposes.  ``init()`` will be called when the vehicle first switches into this new mode so it should implement any required initialisation.  ``run()`` will be called at 400hz and should implement any pilot input decoding and then set position and attitude targets (see below).
 
-           // return true initialisation is successful, false if it fails
-           // if false is returned here the vehicle will remain in the previous flight mode
-           return true;
-       }
+   There are also some simple methods returning true/false that you may want to override that control features such as whether the vehicle can be armed in the new mode:
 
-       // newflightmode_run - runs the main controller
-       // will be called at 100hz or more
-       static void newflightmode_run()
-       {
-           // if not armed or throttle at zero, set throttle to zero and exit immediately
-           if(!motors.armed() || g.rc_3.control_in <= 0) {
-               attitude_control.relax_bf_rate_controller();
-               attitude_control.set_yaw_target_to_current_heading();
-               attitude_control.set_throttle_out(0, false);
-               return;
-           }
+    ::
 
-           // convert pilot input into desired vehicle angles or rotation rates
-           //   g.rc_1.control_in : pilots roll input in the range -4500 ~ 4500
-           //   g.rc_2.control_in : pilot pitch input in the range -4500 ~ 4500
-           //   g.rc_3.control_in : pilot's throttle input in the range 0 ~ 1000
-           //   g.rc_4.control_in : pilot's yaw input in the range -4500 ~ 4500
+        bool is_autopilot() const override { return false; }
+        bool requires_GPS() const override { return false; }
+        bool has_manual_throttle() const override { return true; }
+        bool allows_arming(bool from_gcs) const override { return true; };
 
-           // call one of attitude controller's attitude control functions like
-           //   attitude_control.angle_ef_roll_pitch_rate_yaw(roll angle, pitch angle, yaw rate);
+#. Create a new mode_<new flight mode>.cpp file based on a similar mode such as
+   `mode_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp>`__
+   or `mode_loiter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_loiter.cpp>`__.
+   This new file should implement the ``init()`` method which will be called when the vehicle first enters the mode.  This function should return true if it is OK for the vehicle to enter the mode, false if it cannot.
+   Below is an excerpt from `mode_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp>`__'s init method that shows how the vehicle cannot enter stabilize mode if armed while the throttle is too high. 
 
-           // call position controller's z-axis controller or simply pass through throttle
-           //   attitude_control.set_throttle_out(desired throttle, true);
-       }
+    ::
 
-#. Add declarations in
-   `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h>`__
-   for the new ``_init()`` function and ``_run()`` functions:
+        // stabilize_init - initialise stabilize controller
+        bool Copter::ModeStabilize::init(bool ignore_checks)
+        {
+            // if landed and the mode we're switching from does not have manual throttle and the throttle stick is too high
+            if (motors->armed() && ap.land_complete && !_copter.flightmode->has_manual_throttle() &&
+                    (get_pilot_desired_throttle(channel_throttle->get_control_in()) > get_non_takeoff_throttle())) {
+                return false;
+            }
+            // set target altitude to zero for reporting
+            pos_control->set_alt_target(0);
 
-   ::
+            return true;
+        }
 
-       bool newflightmode_init(bool ignore_checks);
-       void newflightmode_run();
-
-#. Add a case for the new mode to the ``set_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L14>`__
-   to call the ``above _init()`` function.
+   
+   Below is an excerpt from `mode_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp>`__'s update method (called 400 times per second) that decodes the user's input, then sends new targets to the attitude controller.
 
    ::
 
-       // set_mode - change flight mode and perform any necessary initialisation
-       static bool set_mode(uint8_t mode)
-       {
-           // boolean to record if flight mode could be set
-           bool success = false;
-           bool ignore_checks = !motors.armed();   // allow switching to any mode if disarmed.  We rely on the arming check to perform
+        void Copter::ModeStabilize::run()
+        {
+            float target_roll, target_pitch;
+            float target_yaw_rate;
+            float pilot_throttle_scaled;
 
-           // return immediately if we are already in the desired mode
-           if (mode == control_mode) {
-               return true;
-           }
+            // convert pilot input to lean angles
+            get_pilot_desired_lean_angles(channel_roll->get_control_in(), channel_pitch->get_control_in(), target_roll, target_pitch, aparm.angle_max);
 
-           switch(mode) {
-               case ACRO:
-                   #if FRAME_CONFIG == HELI_FRAME
-                       success = heli_acro_init(ignore_checks);
-                   #else
-                       success = acro_init(ignore_checks);
-                   #endif
-                   break;
+            // get pilots desired yaw rate
+            target_yaw_rate = get_pilot_desired_yaw_rate(channel_yaw->get_control_in());
 
-               case NEWFLIGHTMODE:
-                   success = newflightmode_init(ignore_checks);
-                   break;
-           }
-       }
+            // get pilots desired throttle
+            pilot_throttle_scaled = get_pilot_desired_throttle(channel_throttle->get_control_in());
 
-#. Add a case for the new mode to the ``update_flight_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L132>`__
-   to call the above ``_run()`` function.
+            // call attitude controller
+            attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate, get_smoothing_gain());
+
+            // output pilots throttle
+            attitude_control->set_throttle_out(pilot_throttle_scaled, true, g.throttle_filt);
+
+#. Instantiate the new mode class in `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h#L875>`__ by searching for "ModeAcro" and then adding the new mode somewhere below.
 
    ::
 
-       // update_flight_mode - calls the appropriate attitude controllers based on flight mode
-       // called at 100hz or more
-       static void update_flight_mode()
-       {
-           switch (control_mode) {
-               case ACRO:
-                   #if FRAME_CONFIG == HELI_FRAME
-                       heli_acro_run();
-                   #else
-                       acro_run();
-                   #endif
-                   break;
-               case NEWFLIGHTMODE:
-                   success = newflightmode_run();
-                   break;
-           }
-       }
+            Mode *flightmode;
+        #if FRAME_CONFIG == HELI_FRAME
+            ModeAcro_Heli mode_acro{*this};
+        #else
+            ModeAcro mode_acro{*this};
+        #endif
+            ModeAltHold mode_althold{*this};
+            ModeAuto mode_auto{*this, mission, circle_nav};
+        #if AUTOTUNE_ENABLED == ENABLED
+            ModeAutoTune mode_autotune{*this};
+        #endif
+            ModeBrake mode_brake{*this};
+            ModeCircle mode_circle{*this, circle_nav};
+            ModeDrift mode_drift{*this};
+            ModeFlip mode_flip{*this};
 
-#. Add the string to print out the flight mode to the
-   ``print_flight_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L312>`__.
+#. In `mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.cpp>`__ add the new mode to the ``mode_from_mode_num()`` function to create the mapping between the mode's number and the instance of the class.
 
    ::
 
-       static void
-       print_flight_mode(AP_HAL::BetterStream *port, uint8_t mode)
-       {
-           switch (mode) {
-           case STABILIZE:
-               port->print_P(PSTR("STABILIZE"));
-               break;
-           case NEWFLIGHTMODE:
-               port->print_P(PSTR("NEWFLIGHTMODE"));
-               break;
+        // return the static controller object corresponding to supplied mode
+        Copter::Mode *Copter::mode_from_mode_num(const uint8_t mode)
+        {
+            Copter::Mode *ret = nullptr;
 
-#. Add the new flight mode to the list of valid ``@Values`` for the
-   ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L300>`__.
+            switch (mode) {
+                case ACRO:
+                    ret = &mode_acro;
+                    break;
+
+                case STABILIZE:
+                    ret = &mode_stabilize;
+                    break;
+
+#. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L297>`__ (Search for "FLTMODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.
+   Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the FLTMODE1 (or FLTMODE2, etc) parameters to the number of the new mode.
 
    ::
 
-           // @Param: FLTMODE1
-           // @DisplayName: Flight Mode 1
-           // @Description: Flight mode when Channel 5 pwm is 1230, <= 1360
-           // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,8:Position,9:Land,10:OF_Loiter,11:ToyA,12:ToyM,13:Sport,17:NewFlightMode
-           // @User: Standard
-           GSCALAR(flight_mode1, "FLTMODE1",               FLIGHT_MODE_1),
+        // @Param: FLTMODE1
+        // @DisplayName: Flight Mode 1
+        // @Description: Flight mode when Channel 5 pwm is <= 1230
+        // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,9:Land,11:Drift,13:Sport,14:Flip,15:AutoTune,16:PosHold,17:Brake,18:Throw,19:Avoid_ADSB,20:Guided_NoGPS,21:Smart_RTL
+        // @User: Standard
+        GSCALAR(flight_mode1, "FLTMODE1",               FLIGHT_MODE_1),
 
-           // @Param: FLTMODE2
-           // @DisplayName: Flight Mode 2
-           // @Description: Flight mode when Channel 5 pwm is >1230, <= 1360
-           // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,8:Position,9:Land,10:OF_Loiter,11:ToyA,12:ToyM,13:Sport,17:NewFlightMode
-           // @User: Standard
-           GSCALAR(flight_mode2, "FLTMODE2",               FLIGHT_MODE_2),
-
-#. Raise a request in the `Mission Planner's Issue List <https://github.com/ArduPilot/MissionPlanner/issues>`__ if you
-   wish the new flight mode to appear in the Mission Planner's HUD and
-   Flight Mode set-up.
-
-   .. image:: ../images/FlightMode.jpg
-       :target: ../_images/FlightMode.jpg
+        // @Param: FLTMODE2
+        // @DisplayName: Flight Mode 2
+        // @Description: Flight mode when Channel 5 pwm is >1230, <= 1360
+        // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,9:Land,11:Drift,13:Sport,14:Flip,15:AutoTune,16:PosHold,17:Brake,18:Throw,19:Avoid_ADSB,20:Guided_NoGPS,21:Smart_RTL
+        // @User: Standard
+        GSCALAR(flight_mode2, "FLTMODE2",               FLIGHT_MODE_2),

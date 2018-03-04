@@ -41,6 +41,15 @@ consume more than 90amps at full throttle).
    servo rail, backup power and support for larger batteries. Using this
    sort of module means that you don't need to think about most of the
    wiring issues discussed in the rest of this article.
+   
+.. warning::
+
+   Pixhawk supplies power for an RC receiver if that receiver is connected via a 3-conductor servo cable to the RC connector on the Pixhawk. If that receiver is also connected to the SBus port on the
+   Pixhawk to communicate an analog RSSI signal via a 3-conductor cable, there is an opportunity to inadvertently power the servo bus from the primary PixHawk power input thru the radio.
+
+Some radios (e.g., FRSky) will pass power received on their RC output cable out on their analog RSSI port. And the PixHawk servo-rail power bus includes the SBus +5v pin.
+
+Removing the center conductor from the RSSI monitoring cable will avoid powering the Pixhawk servo bus from the wrong (or from multiple) voltage sources thru the RC radio receiver.
 
 Powering/backup off the servo rail
 ==================================

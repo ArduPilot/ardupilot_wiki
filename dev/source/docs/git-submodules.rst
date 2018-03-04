@@ -4,40 +4,26 @@
 Git Submodules
 ==============
 
-This page describes how we use `git submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`__ in
-the ArduPilot build. Submodules are used to manage external dependencies
-in the ArduPilot build, particularly for building for PX4 targets.
+   .. image:: ../images/git-submodules.png
+       :width: 70%
 
-Background
-==========
+ArduPilot is dependent upon several external code repositories which are held in **submodules**.  These are forked, cloned and built along with ArduPilot.
 
-*Git submodules* allow us to automatically bring in dependent git trees
-in the ArduPilot build. It replaces our old mechanism of having to
-separately clone the **ArduPilot/PX4Firmware** and
-**ArduPilot/PX4NuttX** tree when developers want to build for PX4
-targets.
+- `ChibiOS <https://github.com/ChibiOS>`__
+- `UAVCAN <https://github.com/ArduPilot/uavcan>`__
+- `PX4Firmware <https://github.com/ArduPilot/PX4Firmware>`__
+- `PX4NuttX <https://github.com/ArduPilot/PX4NuttX>`__
+- `waf <https://github.com/waf-project/waf>`__
 
-.. note::
-
-   For now *git submodules* are only used for the PX4 builds. It is
-   likely we will start to use submodules for other builds in the future
-   (for example, we will probably use them for the mavlink message XML
-   files)
-
-See https://git-scm.com/book/en/v2/Git-Tools-Submodules for more
-information on *git submodules*.
+This page describes how we use `git submodules <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`__ in the ArduPilot build.
 
 Submodule approach
-==================
+------------------
 
-The approach we have implemented in ArduPilot is to use a single level
-of *git submodules*, with all modules stored in the **modules/**
-directory. This approach was chosen as it makes for diagnosis of issues
-with submodules somewhat simpler.
+ArduPilot uses a single level of *git submodules*, with all modules stored in the `modules <https://github.com/ArduPilot/ardupilot/tree/master/modules>`__
+directory. This approach was chosen as it makes for diagnosis of issues with submodules simpler.  This means that if an external project (i.e. PX4Firmware) has submodules of its own, those submodule appear directly in the `ArduPilot modules directory <https://github.com/ArduPilot/ardupilot/tree/master/modules>`__.
 
-This means that the submodules from the upstream PX4Firmware tree are
-not used. Instead each required submodule is added as a direct submodule
-of the ArduPilot tree.
+ArduPilot maintains local forks of each external project's repo in order to shielf itself from unexpected changes.
 
 You may also note that the URLs used for the submodules use the old
 ``git://`` protocol. This was done to make it less likely we will get
@@ -46,8 +32,23 @@ getting used to *git submodules* (as the ``git://`` protocol is
 read-only). Developers with commit access to the submodules should add a
 new ardupilot remote with a writeable protocol as needed.
 
+Updating your local repo's submodules
+-------------------------------------
+
+To manually update submodules use the following command
+
+::
+
+    git submodule update --recursive
+
+Very occasionally a new submodule is added to ArduPilot, after which every developer must run this command:
+
+::
+
+    git submodule init
+
 Common errors
-=============
+-------------
 
 The following is a list of comment errors and how to deal with them.
 
@@ -84,27 +85,14 @@ This indicates that you have old PX4Firmware or PX4NuttX directories in
 you from building. The warning is there so you know that commits and
 changes made in those directories won't be used.
 
-Updating submodules
--------------------
-
-If you need to manually update submodules you should run the command
-
-::
-
-    git submodule update
-
-from the root of the ardupilot tree. That will check all submodules for
-updates in the ardupilot repository and will pull in changes as needed.
-
 Disaster recovery
 -----------------
 
 If things have gone very badly wrong with your git tree the simplest
-thing to do it to remove the modules/ directory completely. Then do a
-new px4 build with
+thing to do it to remove the modules/ directory completely from your local repo and run these commands
+to reinitialise and update the submodules:
 
 ::
 
-    make px4-v2
-
-and the submodules will be automatically reinitialised and updated.
+    git submodule init
+    git submodule update --recursive

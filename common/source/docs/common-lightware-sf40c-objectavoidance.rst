@@ -48,10 +48,8 @@ Limitation
 
 The AC3.4 implementation has the following limitations.  Future versions will likely resolve these.
 
--  Object avoidance only works in Loiter mode.
+-  Object avoidance only works in Loiter and AltHold modes.
 -  The vehicle should stop before hitting objects but will never back away from objects that approach the vehicle (a slow backing away will be added in future firmware versions).
--  The safety margin to objects is hard-coded to 2m.
--  Object avoidance only works in the direction the vehicle is travelling.  This means it is possible the vehicle may scrape into a wall if the vehicle is travelling parallel to the wall.
 
 Please report issues found in the `support forums <http://discuss.ardupilot.org/c/arducopter/copter34>`__ and we will try to address them.
 
@@ -59,3 +57,5 @@ DataFlash logging
 =================
 
 The distance to the nearest object in 8 quadrants around the vehicle is recorded in the DataFlash log's PRX messages.
+
+Real-time distances can be seen in the Mission Planner's proximity viewer which can be opened by moving to the MP's Flight Data screen, press Ctrl-F and push the Proximity button.

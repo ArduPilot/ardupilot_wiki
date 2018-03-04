@@ -24,17 +24,17 @@ Terminal window:
     sudo pip install --upgrade mavproxy
 
 **Step #2:** Decide what type of message you want to add and how it will
-fit in with the existing `MAVLink messages <https://pixhawk.ethz.ch/mavlink/>`__.
+fit in with the existing `MAVLink messages <https://mavlink.io/en/>`__.
 
 For example you might want to send a new new navigation command to the
 vehicle so that it can perform a trick (like a flip) in the middle of a
 mission (i.e. in AUTO mode).  In this case you would need a new
 MAV_CMD_NAV_TRICK similar to the MAV_CMD_NAV_WAYPOINT definition
-(search for "MAV_CMD_NAV_WAYPOINT" in the \ `MAVLink messages <http://mavlink.org/messages/common>`__ page).
+(search for "MAV_CMD_NAV_WAYPOINT" in the \ `MAVLink messages <https://mavlink.io/en/messages/common.html>`__ page).
 
 Alternatively you may want to send down a new type of sensor data from
 the vehicle to the ground station.  Perhaps similar to the
-`SCALED_PRESSURE <https://pixhawk.ethz.ch/mavlink/#SCALED_PRESSURE>`__
+`SCALED_PRESSURE <https://mavlink.io/en/messages/common.html#SCALED_PRESSURE>`__
 message.
 
 **Step #3:** Add the new message definition to the

@@ -244,7 +244,7 @@ Android
 
 For Android devices, you will need:
 
--  Android based tablet that can act as a USB host. Google Nexus tablet
+-  Android based tablet that can act as a USB host. Google Nexus tablets
    are recommended, and the compatible hardware lists for the different
    GCSs are listed in the table above.
 -  :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` or
@@ -255,7 +255,6 @@ For Android devices, you will need:
    and
    `Amazon <http://www.amazon.com/T-Flash-Adapter-Samsung-GT-i9100-GT-N7000/dp/B005FUNYSA/ref=sr_1_5?ie=UTF8&qid=1376262351&sr=8-5&keywords=android+otg+cable>`__).
 
-   |AndroidGCS_USB_dongle|
    
 iOS
 -------

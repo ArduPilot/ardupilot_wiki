@@ -14,7 +14,7 @@ location of the vehicle while "Do" commands (i.e. "Do-Set-Servo" and
 vehicle's position.  During a mission at most one "Navigation" command
 and one "Do" command can be running at one time.  The "Do" commands will
 be run in order as soon as the preceeding navigation command before them
-starts.  For more information on setting up missions please refer to the
+completes.  For more information on setting up missions please refer to the
 :ref:`Planning a Mission with Waypoints and Events <common-planning-a-mission-with-waypoints-and-events>`
 page.
 

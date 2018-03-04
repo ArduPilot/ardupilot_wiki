@@ -1,20 +1,11 @@
 .. _manual-mode:
 
 ===========
-MANUAL mode
+Manual mode
 ===========
 
-Basic radio pass through drive your vehicle with the RC transmitter.
+In Manual mode the transmitter's steering and throttle sticks directly control the vehicle's throttle and steering output.
 
--  Control steering and throttle manually.
--  One dedicated mode is always Manual mode (Flight Mode 6).
--  For all modes other than just driving around in Manual Mode you must
-   have GPS lock and a Home position.
-
-   -  After vehicle is first powered up, GPS lock is achieved (when GPS
-      blue LED solid on) and Home position is set to that location.
-
--  Momentary toggle of (CH7) switch clears the waypoints list.
-
-   -  Steering hard right when CH7 switch is toggled resets resets the
-      vehicles current position to the Home position.
+- this mode does not require a position estimate (i.e. GPS is not required)
+- it is recommended to always have one :ref:`transmitter mode switch <common-rc-transmitter-flight-mode-configuration>` position assigned to this mode
+- the throttle slew still applies. See the bottom of the :ref:`Tuning Speed and Throttle <rover-tuning-throttle-and-speed>` page for more details of the throttle slew limit

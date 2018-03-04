@@ -145,11 +145,11 @@ Download and compile ArduCopter
 
 #. Building the flight control firmware is nearly identical for
    :ref:`building for the Pixhawk <building-px4-for-linux-with-make>`
-   except the ``make`` command is:
+   except the build command is:
 #. ::
 
-       cd ArduCopter
-       make bebop
+       ./waf configure --board=bebop --static
+       ./waf build
 
 #. Strip the binary to reduce the memory footprint:
 

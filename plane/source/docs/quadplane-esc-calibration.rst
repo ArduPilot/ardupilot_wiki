@@ -49,7 +49,7 @@ The process when using Q\_ESC_CAL=1 is
 #. you should hear a beep from your ESCs to indicate they have
    registered the throttle range
 
-The process when using Q\_ESC_CAL=2 is
+The process when using Q\_ESC\_CAL=2 is
 
 #. remove your propellers for safety
 #. power up just the flight board and not your motors. If you don't have

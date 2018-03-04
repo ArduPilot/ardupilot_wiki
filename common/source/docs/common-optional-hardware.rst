@@ -18,7 +18,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
    
 .. toctree::
     :maxdepth: 1
-
+    
     ADS-B Receiver <common-ads-b-receiver>
 [site wiki="plane"]
     Airspeed Sensor <airspeed>
@@ -49,22 +49,30 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Object Avoidance with Lightware SF40C <common-lightware-sf40c-objectavoidance>
     Object Avoidance with TeraRanger Tower <common-teraranger-tower-objectavoidance>
 [/site]
+[site wiki="copter,plane"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
-    OSD for FPV <common-osd-boards-on-screen-display>    
+[/site]
+    OSD for FPV <common-osd-boards-on-screen-display>
 [site wiki="copter"]
     Parachute <parachute>
 [/site]
     Power Tether <common-power-tether>
     PPM Encoder <common-ppm-encoder>
-[site wiki="copter"]
+[site wiki="copter,rover"]
     Pozyx for Non-GPS navigation <common-pozyx>
+[/site]
+[site wiki="copter"]
     Precision Landing and Loiter (IRLock) <precision-landing-with-irlock>
 [/site]
     Rangefinders (Sonar, Lidar) <common-rangefinder-landingpage>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Relay Switch <common-relay>
     Safety Switch <common-safety-switch-pixhawk>
+    SBus Out <common-sbus-out>
     Servo <common-servo>
+[site wiki="rover"]
+    Start/Stop Switch <startstop-switch>
+[/site]
     Telemetry Radio <common-telemetry-landingpage>
     UAVCAN ESCs <common-uavcan-escs>
 [site wiki="rover"]

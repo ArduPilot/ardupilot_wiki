@@ -11,10 +11,10 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__. ROS (
 ROS is completely open source (BSD) and free for others to use, change and commercialize upon. The primary goal is to enable software developers to build more capable robot applications quickly and easily on a common platform.
 Those pages will show you how to:
 
-- Connect ardupilot to ROS
-- Retrieve ardupilot information in ROS
-- Use ROS to command an ardupilot vehicle
-- Simulate ardupilot in `Gazebo <http://gazebosim.org/>`__
+- Connect ArduPilot to ROS
+- Retrieve ArduPilot information in ROS
+- Use ROS to command an ArduPilot vehicle
+- Simulate ArduPilot in `Gazebo <http://gazebosim.org/>`__
 
 .. warning::
 
@@ -24,12 +24,12 @@ Those pages will show you how to:
     - Make a fully autonomous vehicle
     - Make non-GPS vehicle
 
-Those are outside the scope of ardupilot and difficult. Even if ROS and ardupilot are powerful, their combined usage will require more work than the example shown in this wiki to make advance things (SLAM, autonomous movement etc). You can find a good description of current ROS limits in http://design.ros2.org/articles/why_ros2.html
+Those are outside the scope of ArduPilot and difficult. Even if ROS and ArduPilot are powerful, their combined usage will require more work than the example shown in this wiki to make advance things (SLAM, autonomous movement etc). You can find a good description of current ROS limits in http://design.ros2.org/articles/why_ros2.html
 
 Preconditions
 =============
 
-- Learn on to use ardupilot first! Don't expect that things will work magically especially with a real vehicle. You need to understand and make your vehicle working well in MANUAL and GUIDED mode before trying to use ROS. We won't explain here how to setup your vehicle nor why it won't arm or takeoff.
+- Learn on to use ArduPilot first! Don't expect that things will work magically especially with a real vehicle. You need to understand and make your vehicle working well in MANUAL and GUIDED mode before trying to use ROS. We won't explain here how to setup your vehicle nor why it won't arm or takeoff.
 - Learn how to use ROS! Please do at least ROS all `beginner tutorials <http://wiki.ros.org/ROS/Tutorials>`__. In the case of a problem with ROS, ask on ROS community first (or google your error). You will find many other tutorials about ROS like `Emlid <https://docs.emlid.com/navio2/common/dev/ros/>`__, reading some of them is always beneficial.
 
 - Use ROS Kinetic Kame on Ubuntu Linux (16.04). Those are default and LTS version of both ROS and Ubuntu. THIS DON'T WORK ON WINDOWS NOR MACOS ! We assume now that you are using Ubuntu and ROS Kinetic.
@@ -37,7 +37,7 @@ Preconditions
 - Please add ROS tool to your shell as stated in ROS wiki.
 - Please don't use root as the default user.
 
-- To make the connection between ROS and ardupilot, we will use `MAVROS <http://wiki.ros.org/mavros>`__. Install it should be as simple as
+- To make the connection between ROS and ArduPilot, we will use `MAVROS <http://wiki.ros.org/mavros>`__. Install it should be as simple as
 
 .. code-block:: bash
 
@@ -68,6 +68,7 @@ Next tutorials :
         ROS with SITL <ros-sitl>
         ROS with SITL in Gazebo <ros-gazebo>
         ROS with real vehicle <ros-vehicle>
+        ROS with distance sensors <ros-distance-sensors>
 
 
 Instructions for using :ref:`Gazebo with ArduPilot are here <using-gazebo-simulator-with-sitl>` and an old version has been `blogged about here <http://diydrones.com/profiles/blogs/705844:BlogPost:2151758>`__.

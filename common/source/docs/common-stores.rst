@@ -5,7 +5,9 @@ Stores
 ======
 
 The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc.
-recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Fly vehicles <rtf>`.
+recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Fly vehicles <common-rtf>`.
+
+`ArduPilot SWAG <https://shop.ardupilot.org/>`__ ArduPilot SWAG, Support and fun merchandise
 
 * `AltiGator <http://www.altigator.com/>`__
 * `AUAV <http://www.auav.co/>`__
@@ -22,6 +24,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Hex <http://www.hex.aero/shop/>`__
 * `JapanDrones <http://japandrones.com/>`__
 * `jDrones <http://store.jdrones.com/>`__
+* `Jester's Drones <http://www.jestersdrones.org/store/>`__ (Solo addons, MAUCH power modules)
 * `Lightware <http://www.lightware.co.za>`__
 * `mRobotics <http://mrobotics.io/>`__
 * `Northox <https://northox.myshopify.com/>`__
@@ -31,7 +34,6 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <http://www.uavionix.com/>`__
 * `VirtualRobotix <http://www.virtualrobotix.it/index.php/en/shop>`__
-* `3DR <https://store.3dr.com/>`__ (Solo parts and accessories)
 * `3DXR <https://www.3dxr.co.uk/>`__
 
 

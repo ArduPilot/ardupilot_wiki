@@ -4,24 +4,26 @@
 Rover Control Modes
 ===================
 
-This topic lists Rover's control modes.
+This topic describes Rover's available modes.
 
-Autopilot control modes are controlled through a :ref:`radio transmitter switch <common-rc-transmitter-flight-mode-configuration>`, via mission
-commands, or using commands from a ground station (GCS) or companion
-computer.
+Users normally set the vehicle's mode using a :ref:`radio transmitter switch <common-rc-transmitter-flight-mode-configuration>`.
+The modes can also be changed using a ground station (GCS).
 
-For a 3 position switch initially set 5 and 6 to
-:ref:`MANUAL <manual-mode>`, 3 and 4 to :ref:`LEARNING <learning-mode>` and 1
-and 2 to :ref:`AUTO <auto-mode>`.
+For a 3 position switch it is normally best to setup one switch position to be :ref:`Hold <hold-mode>`, another :ref:`Manual <manual-mode>` and the third to :ref:`Steering <steering-mode>` or :ref:`Auto <auto-mode>`.
 
-The control modes supported for Rover are:
+The full list of modes in alphabetical order is:
 
 .. toctree::
     :maxdepth: 1
 
-    MANUAL mode <manual-mode>
-    LEARNING Mode <learning-mode>
-    AUTO Mode <auto-mode>
-    STEERING Mode <steering-mode>
-    HOLD Mode <hold-mode>
-    GUIDED mode <guided-mode>
+    Acro <acro-mode>
+    Auto <auto-mode>
+    Guided <guided-mode>
+    Hold <hold-mode>
+    Learning (deprecated) <learning-mode>
+    Manual <manual-mode>
+    RTL <rtl-mode>
+    Steering <steering-mode>
+    Smart RTL <smartrtl-mode>
+    
+    

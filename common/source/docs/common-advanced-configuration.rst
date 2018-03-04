@@ -15,6 +15,10 @@ tuning options for the vehicle.
     Auxiliary Function Switches <channel-7-and-8-options>
     Boat mode <boat-mode>
 [/site]
+[site wiki="rover"]
+    Auxiliary Functions <rover-auxiliary-functions>
+[/site]
+    CAN Bus Setup <common-canbus-setup-advanced>
     Compass Setup (Advanced) <common-compass-setup-advanced>
 [site wiki="copter"]
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
@@ -30,8 +34,14 @@ tuning options for the vehicle.
     Ground Effect Compensation <ground-effect-compensation>
     Motor Thrust Scaling <motor-thrust-scaling>
 [/site]
+[site wiki="rover"]
+    Motor Thrust Scaling <rover-motor-thrust-scaling>
+[/site]
 [site wiki="plane,planner,rover"]
     Magnetic Interference <common-magnetic-interference>
+[/site]
+[site wiki="rover"]
+    Object Avoidance <rover-object-avoidance>
 [/site]
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
@@ -40,11 +50,14 @@ tuning options for the vehicle.
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
 [site wiki="rover"]
-    Start/Stop Switch <startstop-switch>
+    Steering Input Type and Reversing Behaviour <rover-steering-input-type-and-reversing-behaviour>
 [/site]
     Telemetry / Serial Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
 [site wiki="copter,planner"]
     Tuning <common-tuning>
+[/site]
+    UAVCAN Setup <common-uavcan-setup-advanced>
+[site wiki="copter,planner"]
     UBlox GPS Configuration <common-ublox-gps>
 [/site]
 [site wiki="plane,planner,rover"]

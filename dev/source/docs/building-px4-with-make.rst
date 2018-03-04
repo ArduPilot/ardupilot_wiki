@@ -1,11 +1,10 @@
 .. _building-px4-with-make:
 
-=======================================================
-Building ArduPilot for Pixhawk/PX4 on Windows with Make
-=======================================================
+===================================================
+Building for Pixhawk on Windows with Make
+===================================================
 
-This article shows how to build ArduPilot for Pixhawk 2, Pixhawk and PX4
-on Windows with *Make*.
+This article shows how to build ArduPilot for Pixhawk 2, Pixhawk, PixRacer on Windows with *Make*.  These instructions assume you have already :ref:`setup the build environment <building-setup-windows>`
 
 .. note::
 
@@ -13,42 +12,6 @@ on Windows with *Make*.
 
 Build instructions
 ==================
-
-
-#. Install `GitHub for Windows <http://windows.github.com/>`__
-#. Ensure your github settings are set to leave line endings untouched.
-
-   -  The "Git Shell (or Bash)" terminal was also installed when you
-      installed Git.  Click on your new "Git Shell (or Bash)" Icon and
-      type in the following in the Git "MINGW32" Terminal window:
-
-      ::
-
-          git config --global core.autocrlf false
-
-#. Clone the ardupilot repository onto your machine:
-
-   -  Go to the
-      `GitHub/ArduPilot/ardupilot <https://github.com/ArduPilot/ardupilot>`__
-      web page and click the **Clone in Desktop** button
-   -  Warning: be careful that the directory path is less than about 50
-      characters.  For example
-      "C:\\Users\\rmackay9\\Documents\\GitHub\\ardupilot" is short
-      enough but
-      "C:\\Users\\rmackay9\\Documents\\GitHub\\rmackay9-ardupilot" is
-      too long.  This limit is because during compiling temporary files
-      are created with much much longer paths which can exceed Windows'
-      260 character path limit.
-
-Initialise and update submodules
-
-::
-
-    git submodule update --init --recursive
-
-
-Download and install the *PX4 toolchain* by running the
-`pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/PX4-tools/pixhawk_toolchain_installer_latest.exe>`__
 
 Open the *PX4Console* and navigate to the target vehicle directory:
 

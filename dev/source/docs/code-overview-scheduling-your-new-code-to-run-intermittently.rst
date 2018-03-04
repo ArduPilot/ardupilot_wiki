@@ -22,8 +22,8 @@ is for slow CPUs (i.e. APM2).
 Adding a task is fairly simple, just create a new row in the list
 (higher in the list means high priority).  The first column holds the
 function name, the 2nd is a number of 2.5ms units (or 10ms units in case
-of APM2).  So if you wanted the function executed at 400hz this column
-would contain "1", if you wanted 50hz it would contain "8".  The final
+of APM2).  So if you wanted the function executed at 400Hz this column
+would contain "1", if you wanted 50Hz it would contain "8".  The final
 column holds the number of microseconds (i.e. millions of a second) the
 function is expected to take.  This helps the scheduler guess whether or
 not there is enough time to run your function before the main loop
@@ -64,20 +64,20 @@ your function to one of the existing timed loops.  There is no real
 advantage to this approach over the above approach except in the case of
 the fast-loop.  Adding your function to the fast-loop will mean that it
 runs at the highest possible priority (i.e. it is nearly 100% guaranteed
-to run at 400hz).
+to run at 400Hz).
 
 -  `fast_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L990>`__
-   : runs at 100hz on APM2, 400hz on Pixhawk
+   : runs at 100Hz on APM2, 400Hz on Pixhawk
 -  `fifty_hz_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L370>`__
-   : runs at 50hz
+   : runs at 50Hz
 -  `ten_hz_logging_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L341>`__:
-   runs at 10hz
+   runs at 10Hz
 -  `three_hz <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L405>`__\ \_loop:
-   runs at 3.3hz
+   runs at 3.3Hz
 -  >\ `one_hz_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L427>`__
-   : runs at 1hz
+   : runs at 1Hz
 
-So for example if you want your new code to run at 10hz you could add it
+So for example if you want your new code to run at 10Hz you could add it
 to one of the case statements in the
 `ten_hz_logging_loop() <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L341>`__
 function found in

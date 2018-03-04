@@ -8,23 +8,25 @@ WIP DOCUMENT!  You will almost certainly brick your Solo if you follow these ins
 OpenSolo QuickStart Guide
 =========================
 
-.. note:
+.. note::
 
    This document is known to be incomplete.  In particular, if you are running a "Green Cube" Solo modifications must be made to the "Golden Image" on the Solo.  Details to come.
 
-.. note:
+.. note::
 
    ArduPilot's master branch is missing throttle-slew-rate-limitting which is present on 3DR's ArduPilot branch.  In the absence of a Green Cube this makes flying ArduPilot-master on your Solo *very dangerous*.
 
 Prerequisites (get these first, and install them to your PC):
-===========   
+=============================================================
    Vagrant
    VirtualBox
    git
    
-   notes:  If you are running windows, then you also need to nsure that git is set to leave line endings untouched. THis command should fix that: 
-   ::
-      git config --global core.autocrlf false
+.. note::  
+
+   If you are running windows, then you also need to nsure that git is set to leave line endings untouched. This command should fix that: 
+   ::   
+       git config --global core.autocrlf false
 
 
 

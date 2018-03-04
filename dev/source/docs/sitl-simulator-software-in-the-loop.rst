@@ -68,6 +68,8 @@ port numbers depending on your environment.
     SITL on Windows in a VM <setting-up-sitl-on-windows>
     SITL using Vagrant <setting-up-sitl-using-vagrant>
     Copter SITL/MAVProxy Tutorial <copter-sitl-mavproxy-tutorial>
+    Plane SITL/MAVProxy Tutorial <plane-sitlmavproxy-tutorial>
+    Rover SITL/MAVProxy Tutorial <rover-sitlmavproxy-tutorial>
     ArduPilot Testing using SITL <using-sitl-for-ardupilot-testing>
     Using Gazebo Simulator with SITL <using-gazebo-simulator-with-sitl>
     Using Last_letter Simulator with SITL <using-last_letter-as-an-external-sitl-simulator>

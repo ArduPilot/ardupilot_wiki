@@ -28,26 +28,90 @@ You may need to manually disable flow control on Telem2 although this is not nor
 
 -  :ref:`BRD_SER2_RTSCTS <copter:BRD_SER2_RTSCTS>` = 0
 
+As a side note the J120's UART2 appears on the TX1 as /dev/ttyTHS1.
+
 Setup the TX1
 =============
 
-The easiest way to setup the TX1 is to flash one of the existing :ref:`APSync <apsync-intro>` images from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__ (look for images starting with "tx1") or you can create your own image by following the instructions found `here in the ardupilot companion repo <https://github.com/ArduPilot/companion/tree/master/Nvidia_JTX1/Ubuntu>`__.
+There are two steps required to setting up the TX1:
 
-.. note::
+- install JetPack-3.0 to an Ubuntu 16 desktop and flash the TX1 operating system
+- flash the APSync image to the TX1
 
-   Images can only be uploaded to the TX1 if the existing image, and new image are from the same jetpack version.
-   :ref:`APSync <apsync-intro>` images for TX1 are built with JetPack-2.3.1 so if your TX1 has another version on it currently (or has never been flashed) you should first follow `"Step1 : install NVidia image onto the TX1" from here <https://github.com/ArduPilot/companion/blob/master/Nvidia_JTX1/Ubuntu/1_create_base_image.txt>`__ before attempting to upload the latest apsync image.
+Installing JetPack-3.0 and flashing the OS
+------------------------------------------
 
--  mount the TX1 back on the NVidia development board
--  download and unzip the latest image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__.  Look for the file starting with "apsync-tx1".
--  official instructions on flashing images can be found `here <https://devtalk.nvidia.com/default/topic/898999/jetson-tx1/tx1-r23-1-new-flash-structure-how-to-clone-/post/4784149/#4784149>`__ but in short:
+First put the TX1 into bootloader mode
 
-    - install the TX1 on an NVidia TX1 development board or the auvidea.com J120 board
-    - install JetPack-2.3.1 on an Ubuntu machine
-    - connect a USB cable from the Ubuntu machine to the TX1 development board
-    - power on the TX1 development board
-    - put the TX1 into bootloader mode (Hold and keep pressed the "Force-Recovery" button, press and release the "Reset" button, release the "Force-Recovery" button).  You can check the TX1 is in bootloader mode by typing "lsusb" on the Ubuntu machine and look for "NVidia".
-    - on the Ubuntu machine, from the ../JetPack/TX1/Linux_for_Tegra_tx1/bootloader directory run a command like below where "IMAGE.img" is replaced with the name of the image file downloaded above: ``sudo ./tegraflash.py --bl cboot.bin --applet nvtboot_recovery.bin --chip 0x21 --cmd "write APP IMAGE.img"``
+- connect the TX1 to an Ubuntu 16.04 machine using a USB cable
+- put the TX1 into bootloader mode by holding the "Force Recovery" button (aka "REC"), then press the "Reset" button (aka "RST") and then release the "Force Recovery" button
+- check the TX1 is in bootloader mode by typing "lsusb" on the Ubuntu machine and look for "NVidia Corp"
 
--  alternatively you may use the setup instructions found in the `ardupilot/companion repo <https://github.com/ArduPilot/companion/tree/master/Nvidia_JTX1/Ubuntu>`__.
--  the J120's UART2 appears on the TX1 as /dev/ttyTHS1
+.. image:: ../images/companion-computer-tx1-lsusb.png
+
+Next install JetPack and flash the OS
+
+- connect an Ubuntu 16.04 machine to the internet and download `JetPack-3.1 <https://developer.nvidia.com/embedded/dlc/jetpack-l4t-3_1>`__ (nvidia login required)
+- move the downloaded file to the directory you want JetPack installed into (i.e. "~/Desktop/JetPack-3.1")
+- make sure the file is executable by typing, "chmod a+x JetPack-L4T-3.1-linux-x64.run"
+- start the installation by running the downloaded file, "./JetPack-L4T-3.1-linux-x64.run"
+- a "JetPack L4T 3.1 Installer" window should appear, press "Next"
+- a "Installation Configuration" page should appear confirming where JetPack will be installed, press "Next"
+- a "Select Development Environment" page should appear allowing you to select the board type, select "Jetson TX1" (APSync images are not yet available for the TX2)
+
+.. image:: ../images/companion-computer-tx1-install1.png
+
+- an "Installing" page will appear asking for your password in order to begin the local installation
+- a "JetPack L4T Component Manager" screen should appear
+
+   - from the top left, select "JetPack L4T 3.0" (this may need to be selected twice to work)
+   - for "Host - Ubuntu" set the "Action" column to "no action" for everything (select "Keep & Apply" if a question pops up)
+   - Target - Jetson TX1: mixed
+   - Linux for Tegra Host Side Image Setup: install
+   - Flash OS Image to Target: install 24.2.1
+   - Install on Target: mixed
+   - CUDA Toolkit: install
+   - Compile CUDA Samples: no action
+   - PerfKit: install
+   - TensorRT: install
+   - Multimedia API package: no action
+   - cuDNN Package: install
+   - OpenCV for Tegra: install
+   - VisionWorks on TX1 Target: no action
+
+.. image:: ../images/companion-computer-tx1-compmgr.png
+
+- an "Terms & Conditions" window may appear, select "Accept All" and push the "Accept" button
+- a "Host installation is complete" window should appear, press "Next"
+- a "Network Layout - Jetson TX1" window should appear, select "Device accesses Internet via router/switch" after first ensuring the TX1 and Ubuntu machine are connected to the internet with an ethernet cable
+- if a "Network Interface Selection" window pops up, select the Ubuntu machine's network connection that corresponds to the ethernet cable
+
+.. image:: ../images/companion-computer-tx1-networklayout.png
+
+- a "Post Installation Jetson TX1" window may appear, press "Next"
+- a black console window titled, "Post Installation" should appear asking that the TX1 be put in bootloader mode (this should already have been done), Press "Enter"
+- installation should continue for about 15min and finally a message should appear asking you to close the black console window.
+- an "Installation Complete" window should appear, leave "Remove downloaded files" unchecked and press "Finish"
+
+These instructions can also be found in `"Step1 : install NVidia image onto the TX1" from here <https://github.com/ArduPilot/companion/blob/master/Nvidia_JTX1/Ubuntu/1_create_base_image.txt>`__.
+
+Flashing the APSync image to the TX1
+------------------------------------
+
+- connect a USB cable from the Ubuntu 16 machine to the TX1 development board, power on the TX1 and put the TX1 into bootloader mode (see instructions above)
+- On the Ubuntu 16 machine, download the latest `APSync image for the tx1 <http://firmware.ardupilot.org/Companion/apsync/apsync-tx1-latest-img.xz>`__ from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__ (look for images starting with "tx1").
+- uncompress the downloaded image (i.e. open a file explorer, right-mouse-button click on the file and select "Extract Here")
+- on the Ubuntu machine, from the directory where you installed JetPack (i.e. ~/Desktop/JetPack-3.1)
+- cd 64_TX1/Linux_for_Tegra_64_tx1/bootloader
+- run this command but replace IMAGE.img with the name of the image downloaded, sudo ./tegraflash.py --bl cboot.bin --applet nvtboot_recovery.bin --chip 0x21 --cmd "write APP IMAGE.img"
+
+.. image:: ../images/companion-computer-flashapsync.png
+
+Official instructions from NVidia on flashing images can be found `here <https://devtalk.nvidia.com/default/topic/898999/jetson-tx1/tx1-r23-1-new-flash-structure-how-to-clone-/post/4784149/#4784149>`__.
+
+Notes if using ZED camera
+-------------------------
+
+If you are using the `StereoLabs <https://www.stereolabs.com/>`__ :ref:`ZED camera <copter:common-zed>` then the TX1 will need to be powered up once with the ethernet cable plugged in so that it has access to the internet in order to download the camera's factory calibration.
+
+If using the AUVidea J120 board, the ZED camera may need to be plugged into the lower USB port to work correctly.

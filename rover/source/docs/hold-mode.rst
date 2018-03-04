@@ -1,24 +1,13 @@
 .. _hold-mode:
 
 =========
-HOLD Mode
+Hold Mode
 =========
 
-All Stop.
+In Hold mode the vehicle should stop and for regular steering-throttle rovers, the wheels will point straight ahead.
 
--  When you switch to Hold mode, the vehicle should stop with its wheels
-   pointed straight ahead.
--  It is necessary to set your throttle (``RC3_Trim``) parameter to the
-   correct position for your vehicles throttle off PWM.
--  If you have a reversing vehicle with a center neutral point set
-   ``RC3_TRIM`` parameter to 1500: (May need adjustment for your
-   vehicle).
--  If you have a non reversing vehicle RC3_TRIM can be left to it's
-   default low (~1100 PWM) setting or adjusted to it if necessary.
--  In Auto mode if RC reception is lost, the controller will
-   automatically switch to Hold mode.
--  If you enable Throttle Failsafe and set the Failsafe action to HOLD
-   it will go to HOLD if radio reception is lost in all modes.
--  Normally you do not have to install this as a switch option.
--  If it failsafes to HOLD mode, switching to another mode and back will
-   clear it.
+This is a good mode to :ref:`Arm and Disarm <arming-your-rover>` the vehicle in because the transmitter inputs required to arm/disarm will not affect the steering or motors.
+
+The various Failsafe features are often setup to switch the vehicle into this mode.
+
+The output to the :ref:`servo and motors <rover-motor-and-servo-configuration>` will be the values held in the SERVOx_TRIM parameters (i.e. :ref:`SERVO1_TRIM <SERVO1_TRIM>`, :ref:`SERVO3_TRIM <SERVO3_TRIM>`)

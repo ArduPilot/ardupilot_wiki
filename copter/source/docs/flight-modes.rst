@@ -47,6 +47,7 @@ Additional flight modes:
 -  :ref:`Throw <throw-mode>`
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Simple and Super Simple <simpleandsuper-simple-modes>`
+-  :ref:`Smart RTL (Return-to-Launch) <smartrtl-mode>`
 -  :ref:`Avoid_ADSB <common-ads-b-receiver>` for ADS-B based avoidance of manned aircraft.  Should not be set-up as a pilot selectable flight mode.
 
 Most transmitters provide a 3 position switch but you can find
@@ -71,6 +72,7 @@ Requires GPS lock prior to takeoff:
 -  :ref:`PosHold <poshold-mode>`
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Circle <circle-mode>`
+-  :ref:`Smart RTL (Return-to-Launch) <smartrtl-mode>`
 -  :ref:`Throw <throw-mode>`
 
 Do not require GPS lock:
@@ -101,6 +103,7 @@ Full list of flight modes
     Position Mode <ac2_positionmode>
     RTL Mode <rtl-mode>
     Simple and Super Simple Modes <simpleandsuper-simple-modes>
+    Smart RTL (Return-to-Launch) <smartrtl-mode>
     Sport Mode <sport-mode>
     Stabilize Mode <stabilize-mode>
     Throw Mode <throw-mode>
