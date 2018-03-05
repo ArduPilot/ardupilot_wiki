@@ -51,20 +51,8 @@ Discussion
 
 We have a `SkyViper section <https://discuss.ardupilot.org/c/arducopter/skyviper>`__ on the ArduPilot discussion forum. Have a look there to see what people are up to and ask questions.
 
-Videos
-------
-
-`sUAS news <https://www.suasnews.com/>`__ interview with Tridge and Matt (from SkyRocket):
-
-..  youtube:: 3RdEELDIeVs
-    :width: 100%
-
-Bo Lorentzen's intro video:
-
-..  youtube:: T_ccNYEeviE
-    :width: 100%
-
-:ref:`Throw Mode <throw-mode>` demonstrations
+Using Throw Mode
+----------------
 
 ..  youtube:: L8xTlBnlu9E
     :width: 100%
@@ -72,37 +60,8 @@ Bo Lorentzen's intro video:
 ..  youtube:: YujYnQHEqQw
     :width: 100%
 
-Calibration using the Web Interface
-
-..  youtube:: VIf9eEwTKkk
-    :width: 100%
-
-SkyViper GPS web server demo
-
-..  youtube:: vd0KGiwVd2g
-    :width: 100%
-
-Customising transmitter tunes
-
-..  youtube:: ch4o8Rt5pB0
-    :width: 100%
-
-Mission Planner Simulator connection to SkyViper
-
-..  youtube:: 1TmlVwTiBRg
-    :width: 100%
-
-Adjusting Transmitter Buzzer Frequency
-
-..  youtube:: TI5arJSzYX8
-    :width: 100%
-
-
-Using Throw Mode
-----------------
-
-The SkyViper is such a small frame that ii is great for "throw
-mode". If you want to try throw mode then first read the :ref:`throw mode documentation <throw-mode>`.
+The SkyViper is such a small frame that ii is great for :ref:`Throw Mode <throw-mode>`.
+If you want to try throw mode then first read the :ref:`throw mode documentation <throw-mode>`.
 
 Here are some extra tips for throw mode on the SkyViper:
 
@@ -150,3 +109,41 @@ As the SkyViper uses UDP broadcasts you can connect from multiple devices at onc
 .. warning::
 
       The SkyViper uses MAVLink2 by default, which does not work with some older GCS software (such as Tower) that only use MAVLink1. To use these older GCSs you may need to change the :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` parameter to 1 from the default of 2.
+
+Videos
+------
+
+`sUAS news <https://www.suasnews.com/>`__ interview with Tridge and Matt (from SkyRocket):
+
+..  youtube:: 3RdEELDIeVs
+    :width: 100%
+
+Bo Lorentzen's intro video:
+
+..  youtube:: T_ccNYEeviE
+    :width: 100%
+
+Calibration using the Web Interface
+
+..  youtube:: VIf9eEwTKkk
+    :width: 100%
+
+SkyViper GPS web server demo
+
+..  youtube:: vd0KGiwVd2g
+    :width: 100%
+
+Customising transmitter tunes
+
+..  youtube:: ch4o8Rt5pB0
+    :width: 100%
+
+Mission Planner Simulator connection to SkyViper
+
+..  youtube:: 1TmlVwTiBRg
+    :width: 100%
+
+Adjusting Transmitter Buzzer Frequency
+
+..  youtube:: TI5arJSzYX8
+    :width: 100%
