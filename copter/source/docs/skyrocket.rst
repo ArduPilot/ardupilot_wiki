@@ -41,7 +41,7 @@ Software
 --------
 
 - the drone ships with a custom version of ArduPilot (Copter) which is close to Copter-3.5 but has additional features that will be coming back into master in the near future (notch filter, etc).  `GitHub repo is here <https://github.com/SkyRocketToys/ardupilot>`__ in the skyviper-stable branch.
-- live video can be viewed through a SkyRocket app (Mission Planner video support coming soon).
+- live video can be viewed through a SkyRocket app or Mission Planner.
 - firmware source for the video board is here https://github.com/SkyRocketToys/Sonix
 - APWeb (a tiny open source web server) runs on the drone and allows easy calibration, modification of parameters, uploading firmware to both the drone and transmitter, downloading log files, pictures and videos.
 - the transmitter has a relatively low powered STM8 processor running open source software written by Tridge (incorporates some code from Paparazzi).  `Github repo is here <https://github.com/SkyRocketToys/STM8TX>`__.
@@ -135,7 +135,18 @@ Here are some extra tips for throw mode on the SkyViper:
 Using Other GCS Software
 ------------------------
 
-The SkyViper has its own app that runs on android or iOS, but to access the full capabilities of the ArduCopter firmware you may prefer to use another ground station package. The SkyViper can work with a wide range of GCS software, including MissionPlanner, QGC, Tower, MAVProxy etc. For each of them, set them up to listen on UDP port 14550.
-The SkyViper uses MAVLink2 by default, which doesn't work with some older GCS software (such as Tower). To use those GCS versions you need to change the parameter SERIAL1_PROTOCOL to 1 from the default of 2. That will allow MAVLink1 GCS implementations to connect.
+The SkyViper has its own app that runs on android or iOS, but to access the full capabilities of the ArduPilot firmware you may prefer to use another ground station package. The SkyViper can work with any of the :ref:`ArduPilot compatible ground stations <common-choosing-a-ground-station>` including :ref:`Mission Planner <common-install-mission-planner>`.  For any of them:
+
+- connect your PC/tablet/phone to the drone's wifi access point
+- on the ground station set the connection type to "UDP" and press connect.  If asked, set the port to "14550"
+
+.. image:: ../images/skyrocket-with-mp.png
+    :width: 70%
+
+If using Mission Planner, the video from the skyrocket should appear in the "HUD" (the Heads Up Display which normally shows the blue and green attitude display)
+
 As the SkyViper uses UDP broadcasts you can connect from multiple devices at once.
 
+.. warning::
+
+      The SkyViper uses MAVLink2 by default, which does not work with some older GCS software (such as Tower) that only use MAVLink1. To use these older GCSs you may need to change the :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` parameter to 1 from the default of 2.
