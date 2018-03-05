@@ -40,6 +40,7 @@ Tutorial steps
     Copter - Object Avoidance <code-overview-object-avoidance>
     Rover - Adding a new drive mode <rover-adding-a-new-drive-mode>
     Plane - Architecture overview <plane-architecture>
+    Adding a new Log message <code-overview-adding-a-new-log-message>
     Adding a new MAVLink message <code-overview-adding-a-new-mavlink-message>
     Adding a new MAVLink Gimbal <code-overview-adding-support-for-a-new-mavlink-gimbal>
 
