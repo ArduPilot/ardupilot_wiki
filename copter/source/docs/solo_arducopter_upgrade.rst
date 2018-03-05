@@ -212,7 +212,7 @@ Value   Meaning
 Value   Meaning
 =====   =======
 0       GPS disabled
-14      GPS enabled
+1       GPS enabled
 =====   =======
 
 =====   =======
