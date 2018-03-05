@@ -22,7 +22,7 @@ New developers are always welcome! The best way to start is to:
 
 - read this wiki to learn the basics of the software and :ref:`how the team works <how-the-team-works>`
 - get involved with the other developers by posting on the `Developer Team Forum <http://discuss.ardupilot.org/c/development-team>`__, chat to us on `Gitter <https://gitter.im/ArduPilot/ardupilot>`__ or join the :ref:`weekly development call <ardupilot-mumble-server>`.  You can also find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  :ref:`All channels <common-contact-us>` are open to all.  Lurk for a while to get a feel for it, then participate!
-- find a specific bug you'd like to fix or a feature you'd like to add (check out the `issues list <https://github.com/ArduPilot/ardupilot/issues?state=open>`__ to get some ideas).
+- find a specific bug you'd like to fix or a feature you'd like to add (check out the `good first issues <https://github.com/ArduPilot/ardupilot/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22>`__, recent `issues from Randy <https://github.com/ArduPilot/ardupilot/issues/created_by/rmackay9>`__ or our :ref:`roadmap <roadmap>` for ideas).
 - fix the bug in your own clone and :ref:`test <simulation-2>` that it's working
 - submit the change to the main code base :ref:`via a pull request <submitting-patches-back-to-master>`.
 
