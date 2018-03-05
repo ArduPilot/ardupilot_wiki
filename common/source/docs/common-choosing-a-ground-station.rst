@@ -59,6 +59,7 @@ Full featured and widely used GCS.
 .. image:: ../../../images/MP-FP-Screen.jpg
     :target: ../_images/MP-FP-Screen.jpg
 
+-  `Download <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__
 -  :ref:`Wiki <planner:home>`
 -  `Support Forum <http://ardupilot.com/forum/viewforum.php?f=12>`__
 -  `Issues List <https://github.com/ArduPilot/MissionPlanner/issues>`__
