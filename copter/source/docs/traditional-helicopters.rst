@@ -17,14 +17,14 @@ bottom of the page, or in the sidebar, for helicopter specific information.
 Demonstation of a real-world commercial flight with a Trex 600 helicopter flown
 with the ArduPilot system, including additional add-on RC telemetry and FPV.
 
-..  youtube:: https://www.youtube.com/watch?v=FWTb2-sdNW8
+..  youtube:: FWTb2-sdNW8
 
 ==============================================================================
 
 Demonstration of a Gaui GX9 pre-flight and being flown with ArduPilot by the
 Canberra Team in Australia.
 
-..  youtube:: https://www.youtube.com/watch?time_continue=3&v=2xvQvZl8eJc
+..  youtube:: 2xvQvZl8eJc
 
 ==============================================================================
 
