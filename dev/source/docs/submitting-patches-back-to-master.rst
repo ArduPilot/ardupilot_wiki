@@ -4,6 +4,9 @@
 Submitting Patches Back to Master
 =================================
 
+   .. image:: ../images/PullRequest_TopImage.png
+       :width: 70%
+
 Once you have a bug fix or new feature you would like to have included in the ArduPilot project
 you should submit a `Pull Request <https://help.github.com/articles/about-pull-requests/>`__.
 The main developers will see your changes in the `Pulls list, <https://github.com/ArduPilot/ardupilot/pulls>`__ 
