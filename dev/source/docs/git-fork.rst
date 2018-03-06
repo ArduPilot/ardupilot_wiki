@@ -7,7 +7,7 @@ Forking the repository
    .. image:: ../images/git-fork-clone.png
        :width: 70%
 
-If you are working towards submitting code back to the main ArduPilot repo you will want to create your own personal copy of the ArduPilot repository on the GitHub servers.  This is called "forking" the repo.
+If you are working towards :ref:`submitting code back to the main ArduPilot repo <submitting-patches-back-to-master>` you will want to create your own personal copy of the ArduPilot repository on the GitHub servers.  This is called "forking" the repo.
 
 When you fork the ArduPilot repo, the code's history of changes is preserved and a relationship between the fork and the original is maintained which allows the fork to be updated from the original and for changes to be submitted back to the original.
 
