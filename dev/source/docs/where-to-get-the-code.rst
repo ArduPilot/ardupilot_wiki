@@ -69,4 +69,5 @@ Follow the links below to learn more about how we use Git with ArduPilot
     Clone the repository <git-clone>
     Branching and Committing <git-branch>
     Rebasing: keeping your code up to date <git-rebase>
+    Interactive Rebase: cleaning up commits <git-interactive-rebase>
     Git Submodules <git-submodules>
