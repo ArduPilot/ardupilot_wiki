@@ -1,12 +1,16 @@
 .. _trad-heli-mounting:
 
 ==========================================================
-Traditional Helicopter – Mounting APM/Pixhawk to the Frame
+Traditional Helicopter – Mounting the Pixhawk to the Frame
 ==========================================================
 
-The recommended method for mounting your APM/Pixhawk is to build an
-extra layer for the APM/Pixhawk between the main body and the landing
-gear as show in the image below.
+On larger helicopters of approximately 550-class or larger the APM, Pixhawk or
+Pixhawk2 has been mounted in various locations such as on the FBL unit tray, on
+top of the tail drive case, or even on the side of the frame (very popular).
+
+Below is a possible method to mount a full-size Pixhawk on a smaller sized
+helicopter. The Pixracer, Pixhawk Mini, or PixFalcon is also popular on smaller
+frames that have less mounting options.
 
 -  Separate the helicopter's main body from it's landing gear
 -  Attach one carbon fibre plate to the body, the other to the landing
