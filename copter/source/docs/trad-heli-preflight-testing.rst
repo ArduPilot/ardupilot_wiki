@@ -8,13 +8,13 @@ Before your first flight, please follow these pre-flight checks:
 
 .. warning::
 
-   The engine should be disconnected to prevent injury. Be
-   careful! A spinning propeller can cause serious injury!
+   The drive should be disconnected on electric helicopters when they are
+   being handled. An accidental startup can cause serious injury.
 
--  Ensure the miniUSB connector is disconnected from the APM
--  Connect the battery to the ESC
+-  Ensure the USB connector is disconnected from the Pixhawk
+-  Connect the battery to power the Pixhawk and servos
 
-Test leaning the helicopter in Stabilise mode
+Test leaning the helicopter in Stabilize mode
 =============================================
 
 -  By hand, roll the helicopter to the left. The swash plate should lean
@@ -32,10 +32,9 @@ Test leaning the helicopter in Stabilise mode
    should move as if you had pushed the rudder control right (i.e. it's
    should try to fight against the rotation)
 -  Next rotate the helicopter slowly. You should find that in a certain
-   direction the rudder stays in the middle. This is the APM trying to
-   hold that heading.
+   direction the rudder stays in the middle.
 
-Test the transmitter in Stabilise mode
+Test the transmitter in Stabilize mode
 ======================================
 
 -  Using the transmitter, move the roll stick to the left. The
