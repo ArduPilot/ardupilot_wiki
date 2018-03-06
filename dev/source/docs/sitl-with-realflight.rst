@@ -72,8 +72,9 @@ If the vehicle's position is not reset, from within RealFlight:
 Connecting to SITL running on a separate (or Virtual) machine:
 --------------------------------------------------------------
 
-   - determine the IP address of the Windows machine running RealFlight by opening a console and entering "ipconfig".  The result will likely be something like 192.168.x.x.
-   - on the separate machine where SITL will run, start SITL with "-f flightaxis:192.168.x.x"
+   - determine the IP address of the Windows machine running RealFlight by opening a console and entering "ipconfig".
+     The result will likely be something like 192.168.x.x OR 127.0.0.1 if running sitl on a Windows machine using :ref:`cygwin <building-setup-windows-cygwin>` or :ref:`WSL <building-setup-windows10>`
+   - on the separate machine where SITL will run, start SITL with "-f flightaxis:192.168.x.x" or if using a tradition helicopter, "-f heli-dual --model flightaxis:192.168.x.x".
 
        - cd ArduCopter
        - ../Tools/autotest/sim_vehicle -f flightaxis:192.168.x.x --map --console
