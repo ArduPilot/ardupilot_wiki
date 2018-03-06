@@ -41,7 +41,8 @@ Uploading custom firmware to the Pixhawk2
 .. note::
 
    The SSH-PASSWORD should be replaced with the actual ssh password
-   for your vehicle. The default root password is TjSDBkAu
+   for your vehicle. The default root password is TjSDBkAu.
+   
 
 -  Reboot the vehicle and the vehicle's IMX6 should load the firmware
    onto the Pixhawk2 (you should see the regular rainbow colours on the
