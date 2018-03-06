@@ -45,7 +45,7 @@ Preparing commits
 
         do not save a parameter unless it has changed by 0.1%
 
-- **clean up your local commit history** `using interactive rebase <https://help.github.com/articles/interactive-rebase>`__
+- **clean up your local commit history** :ref:`using interactive rebase <git-interactive-rebase>`
   (i.e. ``git rebase -i "HEAD~10"``) to re-arrange patches and fold things together. The idea is to present
   a logical set of patches for review. It can take a bit of effort to get
   used to interactive rebase, but it is definitely worth learning. Refer
