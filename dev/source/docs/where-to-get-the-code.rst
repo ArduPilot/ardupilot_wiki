@@ -67,6 +67,6 @@ Follow the links below to learn more about how we use Git with ArduPilot
     Installing Git <git-install>
     Fork the repository <git-fork>
     Clone the repository <git-clone>
-    Branching <git-branch>
+    Branching and Committing <git-branch>
     Rebasing: keeping your code up to date <git-rebase>
     Git Submodules <git-submodules>
