@@ -4,7 +4,8 @@
 CAN bus and UAVCAN protocol
 ===========================
 
-Support for CAN bus messaging in Ardupilot relies on two parts.
+Support for CAN bus messaging in Ardupilot relies on two parts:
+
 - Hardware CAN bus support that is done with HAL drivers
 - UAVCAN protocol which is responsible for handling all high level work
 
