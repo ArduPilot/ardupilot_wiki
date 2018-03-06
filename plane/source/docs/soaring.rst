@@ -34,6 +34,8 @@ functionality:
    triggered, with the following exception. If the previous mode was FBWB or 
    CRUISE, and thermalling ended due to reaching SOAR_ALT_MIN, RTL will be
    triggered instead.
+   
+Technical details are available `here <https://arxiv.org/abs/1802.08215/>`_.
 
 
 Setting up soaring
