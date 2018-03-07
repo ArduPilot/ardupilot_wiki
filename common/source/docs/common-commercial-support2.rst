@@ -1,4 +1,4 @@
-.. _common-commercial-support:
+.. _common-commercial-support2:
 
 ==================
 Commercial Support
@@ -18,9 +18,9 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
 |     :target: http://element.aero                               || Support, Customization of ArduPilot code, Companion Computer     |
 |     :width: 150px                                              || setup                                                            |
 +----------------------------------------------------------------+-------------------------------------------------------------------+
-| .. image:: ../../../images/logos/proficnc.png                  || Autopilot Hardware designd, Accessory customization, Mechanical  |
-|     :target: http://www.proficnc.com/                          || consulting, Systems engineering, Intricate knowledge of Pixhawk  |
-|     :width: 90px                                               || system (designer of Pixhawk2), Co-designed PX4 CANESC            |
+| .. image:: ../../../images/logos/proficnc.png                  || ProfiCNC: Autopilot Hardware designd, Accessory customization,   |
+|     :target: http://www.proficnc.com/                          || Mechanical consulting, Systems engineering, Intricate knowledge  |
+|     :width: 90px                                               || of Pixhawksystem (designer of Pixhawk2), Co-designed PX4 CANESC  |
 +----------------------------------------------------------------+-------------------------------------------------------------------+
 | .. image:: ../../../images/logos/lthall.jpg                    || Leonard Hall (leonardthall@gmail.com): Multirotor Tuning,Airframe|
 |     :width: 90px                                               || design and performance optimisation, Navigation and attitude     |
