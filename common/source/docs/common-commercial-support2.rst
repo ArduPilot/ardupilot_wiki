@@ -49,7 +49,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         </td>
     </tr>
     <tr class="row-even">
-        <td><center><a class="first last reference internal image-reference" href="../_images/lthall.jpg"><img alt="../_images/lthall.jpg" src="../_images/lthall.jpg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
+        <td><center><a class="first last reference internal image-reference"><img alt="../_images/lthall.jpg" src="../_images/lthall.jpg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
         <td><div class="first last line-block">
             <div class="line">Leonard Hall, <a href="mailto:leonardthall@gmail.com?Subject=ArduPilot%20commercial%20support" target="_top">leonardthall@gmail.com</a></div>
             <div class="line"><br/></div>
@@ -75,7 +75,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
     <tr class="row-even">
         <td><center><a class="first last reference external image-reference" href="http://jdrones.com/"><img alt="../_images/jdrones.png" src="../_images/jdrones.png" style="width: 90px;" /></a><br/><br/>Thailand</center></td>
         <td><div class="first last line-block">
-            <div class="line">Jani Hirvinen, <a href="mailto:jani@jdrones.com?Subject=ArduPilot%20commercial%20support" target="_top">jani@jdrones.com</a></div>
+            <div class="line">Jani Hirvinen, <a href="mailto:jani@jdrones.com?Subject=ArduPilot%20commercial%20support" target="_top">jani@jdrones.com</a>, +66 (0)2 726 8540</div>
             <div class="line"><br/></div>
             <div class="line">jDrones is a leading integrator of ArduPilot into small UAVs</div>
             <div class="line">Autopilot/Airframe/Electronics design and manufacturing</div>
@@ -85,7 +85,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         </td>
     </tr>
     <tr class="row-odd">
-        <td><center><a class="first last reference internal image-reference" href="../_images/gmorph.jpeg"><img alt="../_images/gmorph.jpeg" src="../_images/gmorph.jpeg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
+        <td><center><a class="first last reference internal image-reference"><img alt="../_images/gmorph.jpeg" src="../_images/gmorph.jpeg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
         <td><div class="first last line-block">
             <div class="line">Grant Morphett, <a href="mailto:grant@gmorph.com?Subject=ArduPilot%20commercial%20support" target="_top">grant@gmorph.com</a></div>
             <div class="line"><br/></div>
@@ -145,7 +145,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         </td>
     </tr>
     <tr class="row-even">
-        <td><center><a class="first last reference internal image-reference" href="../_images/buzz.jpeg"><img alt="../_images/buzz.jpeg" src="../_images/buzz.jpeg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
+        <td><center><a class="first last reference internal image-reference"><img alt="../_images/buzz.jpeg" src="../_images/buzz.jpeg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
         <td><div class="first last line-block">
             <div class="line">David Buzz Bussenschutt, <a href="mailto:davidbuzz@gmail.com?Subject=ArduPilot%20commercial%20support" target="_top">davidbuzz@gmail.com</a></div>
             <div class="line"><br/></div>
