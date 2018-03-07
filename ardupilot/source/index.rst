@@ -19,7 +19,7 @@
     <td width="27%">
 
 
-:ref:`Hardware <stores>`  is the peripheral sensors, conrtoller, and output
+:ref:`Hardware <stores>`  is the peripheral sensors, controller, and output
 devices that act as the vehicle's eyes, ears, brain, arms etc.
 
 Almost any mobile machine can be transformed into an autonomous vehicle, 
@@ -59,7 +59,7 @@ update is all it takes to repurpose your hardware into a different role.
     </td>
     <td width="27%">
 
-:ref:`Software <http://ardupilot.org/copter/docs/common-choosing-a-ground-station.html>` is your interface to the
+:ref:`Software <common-choosing-a-ground-station>` is your interface to the
 controller. Also called a Ground Control Station (GCS), the software can run
 on PC's or mobile devices.
 
@@ -67,7 +67,7 @@ A GCS allows users to set-up, configure, test, and tune the vehicle. Advanced
 packages allow autonomous mission planning, operation,
 and post-mission analysis.
 
-:ref:`Mission Planner <planner:home>` is the full-featured GCS supported by Ardupilot. It offers
+:ref:`Mission Planner <planner:home>` is a full-featured GCS supported by Ardupilot. It offers
 point-and-click interaction with your hardware, custom scripting, and simulation. 
 
 .. image:: ../../images/mission_planner_spline_waypoint.jpg
@@ -88,7 +88,7 @@ Community:
 ==========
 .. tip::
 
-   Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
+   Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://discuss.ardupilot.org/c/blog>`__
    
 Community is what really sets ArduPilot apart from other proprietary offerings in the market. Ardupilot offers areas for open discourse on the project's direction.  Here are some of the places you can find ardupilot users and developers:
 
