@@ -1,4 +1,4 @@
-.. _common-commercial-support2:
+.. _common-commercial-support:
 
 ==================
 Commercial Support
