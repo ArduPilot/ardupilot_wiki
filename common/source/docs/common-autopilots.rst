@@ -32,6 +32,7 @@ Closed hardware
 .. toctree::
     :maxdepth: 1
 
+    Emlid Edge <common-emlid-edge>
     NAVIO2 <common-navio2-overview>
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
     Intel Aero <common-intel-aero-overview>
