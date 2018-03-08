@@ -23,6 +23,7 @@ Open hardware
     Beagle Bone Blue <common-beagle-bone-blue>
     Erle-Brain <common-erle-brain-linux-autopilot>
     PXFmini RPi Zero Shield <common-pxfmini>
+    OpenPilot Revo Mini <common-openpilot-revo-mini>
 
 Closed hardware
 -----------------
