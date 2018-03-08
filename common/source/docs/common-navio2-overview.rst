@@ -4,7 +4,7 @@
 NAVIO2 Overview
 ===============
 
-This page presents `Navio2 <http://www.emlid.com/shop/navio2/>`__ - Raspberry Pi autopilot, which runs well proven APM flight stack and supports all its features.
+This page presents `Navio2 <http://www.emlid.com/shop/navio2/>`__ - Raspberry Pi autopilot, which runs well proven ArduPilot flight stack and supports all its features.
 
 
 .. image:: ../../../images/Navio2-features.jpg
