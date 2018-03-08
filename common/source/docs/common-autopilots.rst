@@ -22,8 +22,8 @@ Open hardware
     Pixracer <common-pixracer-overview>
     Beagle Bone Blue <common-beagle-bone-blue>
     Erle-Brain <common-erle-brain-linux-autopilot>
-    PXFmini RPi Zero Shield <common-pxfmini>
     OpenPilot Revo Mini <common-openpilot-revo-mini>
+    PXFmini RPi Zero Shield <common-pxfmini>
     TauLabs Sparky2 <common-taulabs-sparky2>
 
 Closed hardware
@@ -34,9 +34,9 @@ Closed hardware
 
     Emlid Edge <common-emlid-edge>
     NAVIO2 <common-navio2-overview>
-    Parrot Bebop Autopilot <parrot-bebop-autopilot>
     Intel Aero <common-intel-aero-overview>
     Intel Aero RTF vehicle <common-intel-aero-rtf>
+    Parrot Bebop Autopilot <parrot-bebop-autopilot>
     Parrot C.H.U.C.K (for the Parrot Disco) <common-CHUCK-overview>
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
     
