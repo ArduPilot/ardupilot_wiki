@@ -24,6 +24,7 @@ Open hardware
     Erle-Brain <common-erle-brain-linux-autopilot>
     PXFmini RPi Zero Shield <common-pxfmini>
     OpenPilot Revo Mini <common-openpilot-revo-mini>
+    TauLabs Sparky2 <common-taulabs-sparky2>
 
 Closed hardware
 -----------------
