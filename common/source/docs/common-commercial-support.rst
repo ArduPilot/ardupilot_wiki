@@ -85,30 +85,18 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         </td>
     </tr>
     <tr class="row-odd">
-        <td><center><a class="first last reference internal image-reference"><img alt="../_images/gmorph.jpeg" src="../_images/gmorph.jpeg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
-        <td><div class="first last line-block">
-            <div class="line">Grant Morphett, <a href="mailto:grant@gmorph.com?Subject=ArduPilot%20commercial%20support" target="_top">grant@gmorph.com</a></div>
-            <div class="line"><br/></div>
-            <div class="line">I spend all my time developing the ArduPilot software and </div>
-            <div class="line">operating vehicles such as Planes, Multirotors, Rovers and Boats</div>
-            <div class="line">ArduPilot software developer all vehicle types</div>
-            <div class="line">Troubleshooting and support (log review, vehicle support)</div>
-            </div>
-        </td>
-    </tr>
-    <tr class="row-even">
         <td><center><a class="first last reference external image-reference" href="http://erlerobotics.com"><img alt="../_images/erlerobotics.png" src="../_images/erlerobotics.png" style="width: 150px;" /></a><br/><br/>Spain</center></td>
         <td><div class="first last line-block">
             <div class="line">Erle Robotics, <a href="mailto:contact@erlerobot.com?Subject=ArduPilot%20commercial%20support" target="_top">contact@erlerobot.com</a></div>
             <div class="line"><br/></div>
             <div class="line">Autopilot hardware design (creators of Erle-Brain and shield for</div>
             <div class="line">Linux autopilots, Deep understanding of the ArduPilot code,</div>
-            <div class="line">Vehicle design, integration and setup, ROS &amp; ROS2 support</div>
+            <div class="line">Robotic modularization services</div>
             <div class="line">Robot and drone simulation services using Gazebo</div>
             </div>
         </td>
     </tr>
-    <tr class="row-odd">
+    <tr class="row-even">
         <td><center><a class="first last reference external image-reference" href="http://www.virtualrobotix.it"><img alt="../_images/virtualrobotix.png" src="../_images/virtualrobotix.png" style="width: 90px;" /></a><br/><br/>Italy</center></td>
         <td><div class="first last line-block">
             <div class="line">Laser Navigation SRL, <a href="mailto:info@virtualrobotix.com?Subject=ArduPilot%20commercial%20support" target="_top">info@virtualrobotix.com</a></div>
@@ -120,7 +108,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
-    <tr class="row-even">
+    <tr class="row-odd">
         <td><center><a class="first last reference external image-reference" href="http://rfdesign.com.au/"><img alt="../_images/rfdesign.png" src="../_images/rfdesign.png" style="width: 150px;" /></a><br/><br/>Australia</center></td>
         <td><div class="first last line-block">
             <div class="line">RFDesign Pty Ltd, <a href="mailto:info@rfdesign.com.au?Subject=ArduPilot%20commercial%20support" target="_top">info@rfdesign.com.au</a>, +61 (0)7 3272 8769</div>
@@ -132,7 +120,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
-    <tr class="row-odd">
+    <tr class="row-even">
         <td><center><a class="first last reference external image-reference" href="http://www.marcopter.com"><img alt="../_images/marcopter.jpg" src="../_images/marcopter.jpg" style="width: 150px;" /></a><br/><br/>Italy</center></td>
         <td><div class="first last line-block">
             <div class="line">Marco Robustini, <a href="mailto:robustinimarco@gmail.com?Subject=ArduPilot%20commercial%20support" target="_top">robustinimarco@gmail.com</a>, +393381060074</div>
@@ -144,7 +132,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
-    <tr class="row-even">
+    <tr class="row-odd">
         <td><center><a class="first last reference internal image-reference"><img alt="../_images/buzz.jpeg" src="../_images/buzz.jpeg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
         <td><div class="first last line-block">
             <div class="line">David Buzz Bussenschutt, <a href="mailto:davidbuzz@gmail.com?Subject=ArduPilot%20commercial%20support" target="_top">davidbuzz@gmail.com</a></div>
@@ -156,7 +144,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
-    <tr class="row-odd">
+    <tr class="row-even">
         <td><center><a class="first last reference external image-reference" href="http://autosystems.io"><img alt="../_images/asc.png" src="../_images/asc.png" style="width: 90px;" /></a><br/><br/>USA</center></td>
         <td><div class="first last line-block">
             <div class="line">Bill Bonney, Patrick Krekelberg, <a href="mailto:info@autosystems.io?Subject=ArduPilot%20commercial%20support" target="_top">info@autosystems.io</a></div>
@@ -168,7 +156,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
-    <tr class="row-even">
+    <tr class="row-odd">
         <td><center><a class="first last reference external image-reference" href="http://aerialrobotics.com.au"><img alt="../_images/tridge.jpg" src="../_images/tridge.jpg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
         <td><div class="first last line-block">
             <div class="line">Andrew Tridgell, <a href="mailto:andrew@aerialrobotics.com.au?Subject=ArduPilot%20commercial%20support" target="_top">andrew@aerialrobotics.com.au</a></div>
@@ -180,7 +168,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
-    <tr class="row-odd">
+    <tr class="row-even">
         <td><center><a class="first last reference external image-reference" href="http://www.ardupilotinitiative.com"><img alt="../_images/ai.jpg" src="../_images/ai.jpg" style="width: 90px;" /></a><br/><br/>USA</center></td>
         <td><div class="first last line-block">
             <div class="line">ArduPilot Initiative, <a href="mailto:info@ardupilotinitiative.com?Subject=ArduPilot%20commercial%20support" target="_top">info@ardupilotinitiative.com</a></div>
@@ -192,7 +180,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
-    <tr class="row-even">
+    <tr class="row-odd">
         <td><center><a class="first last reference external image-reference" href="http://www.avia-technologies.com/"><img alt="../_images/aerotechllc.png" src="../_images/aerotechllc.png" style="width: 150px;" /></a><br/><br/>Ukraine</center></td>
         <td><div class="first last line-block">
             <div class="line">Aerotech LLC, <a href="mailto:info@avia-technologies.com?Subject=ArduPilot%20commercial%20support" target="_top">info@avia-technologies.com</a></div>
