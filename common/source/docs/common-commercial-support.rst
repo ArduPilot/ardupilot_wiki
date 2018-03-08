@@ -90,7 +90,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">Erle Robotics, <a href="mailto:contact@erlerobot.com?Subject=ArduPilot%20commercial%20support" target="_top">contact@erlerobot.com</a></div>
             <div class="line"><br/></div>
             <div class="line">Autopilot hardware design (creators of Erle-Brain and shield for</div>
-            <div class="line">Linux autopilots, Deep understanding of the ArduPilot code,</div>
+            <div class="line">Linux autopilots). Deep understanding of the ArduPilot code,</div>
             <div class="line">Robotic modularization services</div>
             <div class="line">Robot and drone simulation services using Gazebo</div>
             </div>
