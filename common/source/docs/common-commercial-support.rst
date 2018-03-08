@@ -157,9 +157,9 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         </td>
     </tr>
     <tr class="row-odd">
-        <td><center><a class="first last reference external image-reference" href="http://autosystems.io"><img alt="../_images/asc.png" src="../_images/asc.png" style="width: 90px;" /></a><br/><br/>Canada</center></td>
+        <td><center><a class="first last reference external image-reference" href="http://autosystems.io"><img alt="../_images/asc.png" src="../_images/asc.png" style="width: 90px;" /></a><br/><br/>USA</center></td>
         <td><div class="first last line-block">
-            <div class="line">Bill Bonney, Rob Lefebvre, Patrick Krekelberg, <a href="mailto:info@autosystems.io?Subject=ArduPilot%20commercial%20support" target="_top">info@autosystems.io</a></div>
+            <div class="line">Bill Bonney, Patrick Krekelberg, <a href="mailto:info@autosystems.io?Subject=ArduPilot%20commercial%20support" target="_top">info@autosystems.io</a></div>
             <div class="line"><br/></div>
             <div class="line">More than just consulting, offers complete end-to-end solutions</div>
             <div class="line">Autopilot/Airframe/Electronics design and manufacturing,</div>
