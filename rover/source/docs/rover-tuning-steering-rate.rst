@@ -21,7 +21,7 @@ Recommended steps for tuning this controller are:
 - connect the ground station to the vehicle using a telemetry radio
 - drive the vehicle in a mode that generates significant turns.  This could be :ref:`Acro <acro-mode>` mode (first set the :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>` parameter), :ref:`Steering <steering-mode>` or :ref:`Auto <auto-mode>`.  If using the higher level modes (Steering, Auto, etc) note that the higher level L1 controller may obscure whether the steering rate controller is well tuned.
 - tune the :ref:`FF gain <ATC_STR_RAT_FF>` first.  This gain converts the desired rotation rate directly into a steering servo or motor output.  If the vehicle's turn rate response is sluggish then this parameter should be increased.  If the vehicle is constantly overshooting its desired turn rate then this parameter should be reduced.
-- the :ref:`P gain <ATC_STR_RAT_P>` corrects for short-term error.  It can often be left at zero or another very low value if the FF value is set well.  If set too high the rotation rate may oscillate.
+- the :ref:`P gain <ATC_STR_RAT_P>` corrects for short-term error.  It can often be left at zero or another very low value if the FF value is set well.  If set too high the rotation rate may oscillate.  This :ref:`P gain <ATC_STR_RAT_P>` should always be lower than the :ref:`FF gain <ATC_STR_RAT_FF>`.
 - the :ref:`I gain <ATC_STR_RAT_I>` corrects for long-term error.  If the vehicle never achieves the desired turn rate, then this parameter should be increased.  If the vehicle's turn rate slowly oscillates then this parameter should be reduced.
 - the :ref:`D gain <ATC_STR_RAT_D>` is meant to stablize the output by fighting against short-term changes in turn rate.  This gain can normally be left at zero.
 
