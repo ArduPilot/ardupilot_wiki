@@ -108,6 +108,8 @@ update rate was low.
 .. image:: ../../../images/DiagnosingWithLogs_VibesTlog.png
     :target: ../_images/DiagnosingWithLogs_VibesTlog.png
 
+For more advanced vibration analysis, see :ref:`Batch Sampling <common-imu-batchsampling>`.
+
 .. _common-diagnosing-problems-using-logs_compass_interference:
 
 Compass interference
