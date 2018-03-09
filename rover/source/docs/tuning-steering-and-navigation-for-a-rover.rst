@@ -1,8 +1,14 @@
 .. _tuning-steering-and-navigation-for-a-rover:
 
-==========================================
-Tuning steering and navigation for a Rover
-==========================================
+==============================================================
+Tuning Steering and navigation for a Rover (ver 3.1 and older)
+==============================================================
+
+.. note::
+
+   These instructions are relevant for Rover-3.1 and older.
+   For newer versions of the Rover firmware please refer to these :ref:`steering <rover-tuning-steering-rate>` and
+   :ref:`navigation tuning guides <rover-tuning-navigation>`.
 
 When setting up a Rover there are 6 key parameters you need to get
 right. This guide provides a set of steps to get those parameters right,
