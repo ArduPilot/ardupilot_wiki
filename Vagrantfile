@@ -2,57 +2,35 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
 
 	config.vm.provision "shell", inline: <<-SHELL
-		apt-get -y update
+                set -e
+                set -x
 
-		# Basic essential toolkit
-		#apt-get -y install wget
-		#apt-get -y install build-essential
-		#apt-get -y install python-dev
-		apt-get -y install python-pip
+		apt-get -y update
+                apt-get install -y unzip git imagemagick mercurial python-pip
+
 		easy_install -U pip
         
-        # install imagemagick - useful for converting files if needed
-        apt-get -y install imagemagick
+                # Install sphinx from ArduPilot repository
+                pip install git+https://github.com/ArduPilot/sphinx_rtd_theme.git -UI
+                pip install sphinx==1.3.6
         
-        # Install git and sphinx from git
-        apt-get -y install git
-        pip install git+https://github.com/ArduPilot/sphinx_rtd_theme.git -UI
-
-
-
-		#echo "[ArduPilot]: Sphinx"
-		#pip install sphinx
-		#pip install sphinx_3dr_theme
-		#pip install -U sphinx_3dr_theme
-        #pip install -U sphinx_rtd_theme
-        
-		echo "[ArduPilot]: Sphinx Youtube" 
-        #from https://bitbucket.org/birkenfeld/sphinx-contrib/overview
-        #would like to get from pip but there is no version on pypi
-		apt-get -y install mercurial
+                #from https://bitbucket.org/birkenfeld/sphinx-contrib/overview
+                #would like to get from pip but there is no version on pypi
 		hg clone https://bitbucket.org/birkenfeld/sphinx-contrib
 		pushd ./sphinx-contrib/youtube/
 		python setup.py build
 		python setup.py install
 		popd
 
-        # and a vimeo plugin:
-		apt-get -y install mercurial
+                # and a vimeo plugin:
 		hg clone https://bitbucket.org/jdouglass/sphinxcontrib.vimeo
 		pushd sphinxcontrib.vimeo
 		python setup.py build
 		python setup.py install
 		popd
 
-
-		cd /vagrant
-
-		#echo "[ArduPilot]: Sphinx Docs "
-		#cd docs/
-		#make clean
-		#make html
 	SHELL
 end
