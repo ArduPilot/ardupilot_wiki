@@ -143,14 +143,14 @@ def copy_build(site):
             pass
 
 
-    # delete the old directory
-    print('DEBUG: rm -fi %s' % olddir )
-    try:
-        subprocess.check_call(["rm", "-rf", olddir])
-        print("Deleted olddir")
-    except:
-        #print("no delete of olddir")
-        pass
+        # delete the old directory
+        print('DEBUG: rm -fi %s' % olddir )
+        try:
+            subprocess.check_call(["rm", "-rf", olddir])
+            print("Deleted olddir")
+        except:
+            #print("no delete of olddir")
+            pass
 
 def generate_copy_dict(start_dir=COMMON_DIR):
     """
