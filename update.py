@@ -150,9 +150,8 @@ def copy_build(site):
         print("Deleted olddir")
     except:
         #print("no delete of olddir")
-        pss
-            
-            
+        pass
+
 def generate_copy_dict(start_dir=COMMON_DIR):
     """
     This creates a dict which indexes copy targets for all common docs. 
