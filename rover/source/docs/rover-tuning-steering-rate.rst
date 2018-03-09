@@ -25,7 +25,7 @@ Recommended steps for tuning this controller are:
 - the :ref:`I gain <ATC_STR_RAT_I>` corrects for long-term error.  If the vehicle never achieves the desired turn rate, then this parameter should be increased.  If the vehicle's turn rate slowly oscillates then this parameter should be reduced.
 - the :ref:`D gain <ATC_STR_RAT_D>` is meant to stablize the output by fighting against short-term changes in turn rate.  This gain can normally be left at zero.
 
-The desired vs actual (aka achieved) turn rate, along with the individual contributions to the steering output from the P, I and D components can be seen in real-time by doing the following:
+The desired vs actual (aka achieved) turn rate, along with the individual contributions to the steering output from the FF, P, I and D components can be seen in real-time by doing the following:
 
 - connect the Mission Planner to the vehicle's flight controller using a telemetry radio
 - set the :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 1 (Steering)
