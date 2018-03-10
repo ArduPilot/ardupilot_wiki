@@ -83,7 +83,7 @@ This allows more reliable and flexible streaming as the ground station can disco
 Installing APSync
 =================
 
-Images for the supported boards can be found in `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync>`__.
+Images for the supported boards can be found in `firmware.ardupilot.org <http://firmware.ardupilot.org/Companion/apsync>`__.
 
 Please follow the instructions for installing these images on the wiki page for each board (:ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>` and :ref:`Intel Edison <intel-edison>`).
 
