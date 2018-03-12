@@ -356,6 +356,41 @@ underscores.
 
     class ap_compass { };
 
+Functions and variables
+-----------------------
+
+Functions that return a single pysical value or variables that represent a physical value should be sufixed by the physical unit.
+
+**Right:**
+
+::
+    uint16 get_angle_rad() { ... };
+    float distance_m;
+
+**Wrong:**
+
+::
+
+    uint16 get_angle() { ... };
+    float distance;
+
+Functions or variables that represent a value relative to a frame should be sufixed by the frame first, then by the physical unit if any.
+
+**Right:**
+
+::
+    uint16 get_distance_ned_cm() { ... };
+    uint16 get_distance_enu_m() { ... };
+    float position_neu_mm;
+
+**Wrong:**
+
+::
+
+    uint16 get_distance() { ... };
+    float position;
+
+
 Commenting
 ==========
 
