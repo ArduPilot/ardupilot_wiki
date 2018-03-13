@@ -359,7 +359,7 @@ underscores.
 Functions and variables
 -----------------------
 
-Functions that return a single pysical value or variables that represent a physical value should be sufixed by the physical unit.
+Functions that return a single physical value or variables that represent a physical value should be suffixed by the physical unit.
 
 **Right:**
 
@@ -374,7 +374,7 @@ Functions that return a single pysical value or variables that represent a physi
     uint16 get_angle() { ... };
     float distance;
 
-Functions or variables that represent a value relative to a frame should be sufixed by the frame first, then by the physical unit if any.
+Functions or variables that represent a value relative to a frame should be suffixed with the frame first, then with the physical unit (if any).
 
 **Right:**
 
