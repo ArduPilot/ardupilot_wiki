@@ -14,7 +14,7 @@ for wheeled takeoff and others may have a stand or other landing aid.
 
 All tails-sitters are considered types of QuadPlanes in ArduPilot. You
 should start off by reading the :ref:`QuadPlane documentation
-<quadplane-support` before moving onto this tailsitter specific
+<quadplane-support>` before moving onto this tailsitter specific
 documentation.
 
 Vectored and non-Vectored
