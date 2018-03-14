@@ -134,7 +134,7 @@ Organisational (Randy / Tridge)
 
 - find Wiki maintainer
 - find Antenna Tracker maintainer
-- find Trad Heli maintainer
+- find Trad Heli maintainer -- **COMPLETE!**
 - increase develop team capacity by reducing barriers to entry through documentation and tools
 - improve developer funding by clarifying roadmap and help companies find developer support
 - assist Ready-To-Fly manufacturers get their products to market
