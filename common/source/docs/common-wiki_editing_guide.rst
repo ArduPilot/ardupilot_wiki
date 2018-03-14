@@ -125,7 +125,7 @@ The typical process for working with Git on the command line is:
 	   upstream        https://github.com/ArduPilot/ardupilot_wiki.git (fetch)
 	   upstream        https://github.com/ArduPilot/ardupilot_wiki.git (push)	 
 
-#. Create a branch for your changes
+#. Create a branch in your local clone for your changes
 
    .. code-block:: bash
 
@@ -212,15 +212,12 @@ The title should also be preceded by an anchor link named for the page. So the f
     ===============
     Your Page Title
     ===============
-    
-
 
 How to get changes approved
 ===========================
 
 Once you submit a pull request with your change the wiki team will review it. 
 If we have any questions we'll add them to the request.
-
 
 .. _common_wiki_editing_guide_building_docs:
 
@@ -243,7 +240,8 @@ The main steps for building the docs are:
 #. Open a command prompt in the root of the ardupilot_wiki repo, and start Vagrant:
 
    .. code-block:: bash
-   
+
+       cd ardupilot_wiki
        vagrant up
        
    The first time this is run it may take some time to complete.
@@ -251,16 +249,16 @@ The main steps for building the docs are:
 #. SSH into Vagrant (if you're on Windows you may need to add SSH in your Git installation to your PATH)
 
    .. code-block:: bash
-   
+
        vagrant ssh
-       
+
 #. Navigate in the SSH shell to the /vagrant directory and start the build.
 
    .. code-block:: bash
-   
+
        cd /vagrant
        python update.py
-       
+
 The update.py script will copy the common files into each wiki subdirectory and then build each wiki (you can build 
 just one wiki by passing the site name, e.g.: ``python update.py --site copter``).
 
