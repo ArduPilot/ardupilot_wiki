@@ -5,6 +5,7 @@ Rover: L1 navigation overview
 =============================
 
 This page provides an overview of Rover's navigation feature including the `L1 controller <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_L1_Control>`__ which is also used in Plane.
+The L1 controller is based on `this paper by Sanghyuk Park, John Deyst and Jonathan P How of MIT <http://mercury.kau.ac.kr/park/Archive/PCUAV/gnc_park_deyst_how.pdf>`__.
 
 Overview
 --------
