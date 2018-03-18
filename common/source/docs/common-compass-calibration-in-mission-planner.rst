@@ -63,6 +63,13 @@ If calibration fails:
 - if, after multiple attempts, you are unable to calibrate the compass, Press the "Cancel" button and change the "Fitness" drop-down to a more relaxed setting and try again.
 - if compass calibration still fails it may help to raise :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>` from 850 to 2000 or even 3000
 
+Onbord Calibration using Stick Gestures no GCS
+==============================================
+
+-Requires RC calibrbration first
+-to start compass calibibration hold throttle stick full up and full right yaw for 2 seconds
+-to cancel calibration at anytime hold throttle stick full up and full left yaw for 2 seconds
+
 Offboard Calibration (aka "Live Calibration")
 =============================================
 
