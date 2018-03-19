@@ -66,9 +66,10 @@ If calibration fails:
 Onbord Calibration using Stick Gestures no GCS
 ==============================================
 
--Requires RC calibrbration first
--to start compass calibibration hold throttle stick full up and full right yaw for 2 seconds
--to cancel calibration at anytime hold throttle stick full up and full left yaw for 2 seconds
+- Requires RC calibrbration first
+- to start compass calibibration hold throttle stick full up and full right yaw for 2 seconds
+- to cancel calibration at anytime hold throttle stick full up and full left yaw for 2 seconds
+- reboot required after calibrations
 
 Offboard Calibration (aka "Live Calibration")
 =============================================
