@@ -4,7 +4,7 @@
 Wheel Encoders
 ==============
 
-Rover 3.2 (not yet released) includes support for up to two AB wheel encoders like those in `this Pololu motor <https://www.pololu.com/product/1442>`__ which can be used to improve position estimation especially when no GPS is used.
+Rover 3.2 includes support for up to two AB wheel encoders like those in `this Pololu motor <https://www.pololu.com/product/1442>`__ which can be used to improve position estimation especially when no GPS is used.
 
 ..  youtube:: eaLBRx7LYD8
     :width: 100%
