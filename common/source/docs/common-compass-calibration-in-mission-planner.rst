@@ -65,11 +65,22 @@ If calibration fails:
 
 Onbord Calibration using Stick Gestures no GCS
 ==============================================
+Copter-3.4 (and higher) supports "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the flight controller with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
 
 - Requires RC calibrbration first
 - to start compass calibibration hold throttle stick full up and full right yaw for 2 seconds
+- if your flight controller has a buzzer attached you should hear a single tone followed by short beep once per second
+- hold the vehicle in the air and rotate it so that each side (front, back, left, right, top and bottom) points down towards the earth for a few seconds in turn
+
+   .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg
+      :target: ../_images/accel-calib-positions-e1376083327116.jpg
+      
+- upon successful completion three rising tones will be emitted and you will need to reboot the autopilot before it is possible to arm the vehicle.
+If calibration fails:
+
+- you will hear a failure tone and and the calibration routine will restart
 - to cancel calibration at anytime hold throttle stick full up and full left yaw for 2 seconds
-- reboot required after calibrations
+- if, after multiple attempts, you are unable to calibrate the compass, Cancel with stick and use normal Onboard Calibration from GCS above
 
 Offboard Calibration (aka "Live Calibration")
 =============================================
