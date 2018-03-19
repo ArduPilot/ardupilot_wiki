@@ -17,9 +17,12 @@ Enabling Batch Data Collection
 
 The ``INS_BAT_MASK`` parameter specifies which IMUs in the system to log high-rate data for.  Set this to 255 to collect for all sensors.
 
+``IMU RAW`` sampling must be enabled in your logging bitmask.  This is bit 19, so you must either use a GCS which has checkboxes for each bitmask option or add 1048576 to your current bitmask value.
+
 .. note:
 
-   RAW_IMU must be turned off in your LOG_BITMASK for batch sampling to work
+   ``IMU_FAST`` must be turned off in your LOG_BITMASK for batch sampling to work
+
 
 Collecting useful Data
 ======================
