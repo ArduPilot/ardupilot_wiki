@@ -315,5 +315,6 @@ and simulation using ``param show *``, and to set any parameter using:
 ``param set PARAM_NAME VALUE``. In addition to affecting the vehicle
 itself some parameters simulate the performance/failure of specific
 hardware components and the environment (for example, the wind). These
-can be listed using: `:ref:`param show sim*``. The topic `Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` explains more about how
-you can test using SITL.
+can be listed using: ``param show sim*``. The topic :ref:`Using SITL
+for ArduPilot Testing <using-sitl-for-ardupilot-testing>` explains
+more about how you can test using SITL.
