@@ -8,6 +8,15 @@ Pixhawk 2 (TheCube) Overview
     :target: ../images/thecube/connect-to-com-port.jpg
     :width: 360px
 
+System Features
+=======================
+Pixhawk2.1 'The Cube' flight controller is a further evloution of the Pixhawk flight controller. It is designed for commercial systems and manufacturers who wish to integrate flight controller into their system. On top of the existing features of Pixhawk, it has the following enhancements:
+
+-  3 sets of IMU sensors for extra redundancy
+-  2 sets of IMU are vibration-isolated by built-in pieces of foam, reducing the effect of frame vibration to state estimation
+-  IMUs are temperature-controlled by onboard heating resistors, allowing optimum working temperature of IMUs
+-  The entire flight management unit(FMU) and inertial management unit(IMU) are housed in a reatively small foam factor (a cube). All power and signal inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suite their specific needs of connectivity.
+
 Specifications
 ==============
 
@@ -47,6 +56,358 @@ Specifications
    -  Safety switch / LED
    -  Optional carrier board for Intel Edison
 
+
+
+Pixhawk 2 connector pin assignments
+=================================
+This section details the pin assignments of the standard carrier board of Pixhawk2.1. There are other types of carrier boards available, please refer to the manufacturer pages for pinouts of specific carrier board.
+
+.. image:: ../../../images/thecube/pixhawk2-pinout.jpg
+    :target: ../images/thecube/pixhawk2-pinout.jpg
+    :width: 240px
+
+**TELEM1, TELEM2 ports**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin </th>
+   <th>Signal </th>
+   <th>Volt </th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>TX (OUT)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>RX (IN)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>CTS</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>5 (blk)</td>
+   <td>RTS</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>6 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**GPS1 port**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>TX (OUT)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>RX (IN)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>SCL I2C1</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>5 (blk)</td>
+   <td>SDA I2C1</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>6 (blk)</td>
+   <td>Button</td>
+   <td>GND</td>
+   </tr>
+   <tr>
+   <td>7 (blk)</td>
+   <td>button LED</td>
+   <td>GND</td>
+   </tr>
+   <tr>
+   <td> (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+
+**GPS2 port**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>TX (OUT)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>RX (IN)</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>SCL I2C2</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>5 (blk)</td>
+   <td>SDA I2C2</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>6 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**ADC**
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>ADC IN</td>
+   <td></td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**I2C2**
+
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>SCL</td>
+   <td>+3.3 (pullups)</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>SDA</td>
+   <td>+3.3 (pullups)</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**CAN1&2**
+
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>CAN_H</td>
+   <td>+12V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>CAN_L</td>
+   <td>+12V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**POWER1&1**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin</th>
+   <th>Signal</th>
+   <th>Volt</th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>CURRENT</td>
+   <td>up to +3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>VOLTAGE</td>
+   <td>up to +3.3V</td>
+   </tr>
+   <td>5 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   <td>6 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   </tbody>
+   </table>
+
+
+**USB**
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Pin </th>
+   <th>Signal </th>
+   <th>Volt </th>
+   </tr>
+   <tr>
+   <td>1 (red)</td>
+   <td>VCC</td>
+   <td>+5V</td>
+   </tr>
+   <tr>
+   <td>2 (blk)</td>
+   <td>D_plus</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>3 (blk)</td>
+   <td>D_minus</td>
+   <td>+3.3V</td>
+   </tr>
+   <tr>
+   <td>4 (blk)</td>
+   <td>GND</td>
+   <td>GND</td>
+   </tr>
+   <tr>
+   <td>5 (blk)</td>
+   <td>BUZZER</td>
+   <td>battery voltage</td>
+   </tr>
+   <tr>
+   <td>6 (blk)</td>
+   <td>Boot/Error LED</td>
+   <td></td>
+   </tr>
+   </tbody>
+   </table>
+
+
+
+
 Where to Buy
 ============
 
@@ -61,6 +422,8 @@ More Information
 ================
 
 see  `www.proficnc.com  <http://www.proficnc.com>`__
+
+The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/pixhawk2.1>`__, this serve as a starting point for designers to design their own system based on Pixhawk2.1 flight controller.
 
 More Images
 ===========
