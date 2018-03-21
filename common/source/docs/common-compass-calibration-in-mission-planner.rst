@@ -78,7 +78,7 @@ Copter-3.4 (and higher) supports "Onboard Calibration using RC Controller stick 
 - upon successful completion three rising tones will be emitted and you will need to reboot the autopilot before it is possible to arm the vehicle.
 If calibration fails:
 
-- you will hear a failure tone and and the calibration routine will restart
+- you will hear a failure tone and the calibration routine will restart
 - to cancel calibration at anytime hold throttle stick full up and full left yaw for 2 seconds
 - if, after multiple attempts, you are unable to calibrate the compass, Cancel with stick and use normal Onboard Calibration from GCS above
 
