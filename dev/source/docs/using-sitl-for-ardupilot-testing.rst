@@ -587,3 +587,84 @@ Choose the yougest, then:
 ::
 
    mavlogdump --type PL logs/<youngest>
+
+
+
+Testing Visual Positioning
+--------------------------
+
+Start SITL, wiping parameters:
+
+::
+
+   ./Tools/autotest/sim_vehicle.py -v ArduCopter --gdb --debug -w
+
+Disable GPS, indicate to ArduPilot that instead of a GPS on SERIAL3 it should expect MAVLink (e.g. simulating a 900MHz radio):
+
+::
+
+   param set GPS_TYPE 0
+   param set EK2_GPS_TYPE 3
+   param set SERIAL3_PROTOCOL 1
+   param set DISARM_DELAY 60
+
+Restart the simulation, attaching a simulated VICON system to uartB (which corresponds to ``SERIAL3``:
+
+::
+
+   ./Tools/autotest/sim_vehicle.py -v ArduCopter --gdb --debug -A "--uartB=sim:vicon:" --map --console
+
+The console should indicate no GPS is present:
+
+::
+
+   GPS: 0 (0)
+
+Vision position estimates should now be being fed into ArduCopter:
+
+::
+
+   STABILIZE> status VICON_POSITION_ESTIMATE
+   STABILIZE> 43371: VICON_POSITION_ESTIMATE {usec : 38380000, x : 0.0, y : 0.0, z : -0.0999755859375, roll : 0.0, pitch : 0.0, yaw : -0.122173137963}
+
+
+You should also receive a startup message from the EKF:
+
+::
+
+   APM: EKF2 IMU0 is using external nav data
+   APM: EKF2 IMU0 initial pos NED = 0.0,0.0,-0.1 (m)
+   APM: EKF2 IMU1 is using external nav data
+   APM: EKF2 IMU1 initial pos NED = 0.0,0.0,-0.1 (m)
+
+Use MAVProxy's right-click context menu item to ``Set Origin (with alt)``
+
+Use MAVProxy's right-click context menu item to ``Set Home (with alt)``
+
+Arm in stabilize, switch to loiter:
+
+::
+
+   mode stabilize
+   arm throttle
+   mode loiter
+
+Take off, then fly somewhere:
+
+::
+
+   rc 3 1800
+   rc 2 1400
+
+
+Wait a while, note vehicle moving on map.
+
+Now RTL:
+
+::
+
+   rc 3 1500
+   rc 2 1500
+   mode rtl
+
+Note vehicle returning to home
