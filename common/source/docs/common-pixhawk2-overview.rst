@@ -5,7 +5,7 @@ Pixhawk 2 (TheCube) Overview
 ============================
 
 .. image:: ../../../images/thecube/connect-to-com-port.jpg
-    :target: ../images/thecube/connect-to-com-port.jpg
+    :target: ../_images/connect-to-com-port.jpg
     :width: 360px
 
 System Features
@@ -63,7 +63,7 @@ Pixhawk 2 connector pin assignments
 This section details the pin assignments of the standard carrier board of Pixhawk2.1. There are other types of carrier boards available, please refer to the manufacturer pages for pinouts of specific carrier board.
 
 .. image:: ../../../images/thecube/pixhawk2-pinout.jpg
-    :target: ../images/thecube/pixhawk2-pinout.jpg
+    :target: ../_images/pixhawk2-pinout.jpg
     :width: 240px
 
 **TELEM1, TELEM2 ports**
@@ -429,5 +429,5 @@ More Images
 ===========
 
 .. image:: ../../../images/thecube/pixhawk2-overhead.jpg
-    :target: ../images/thecube/pixhawk2-overhead.jpg
+    :target: ../_images/pixhawk2-overhead.jpg
     :width: 360px
