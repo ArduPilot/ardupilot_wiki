@@ -102,11 +102,6 @@ All at once calibration
 ..  youtube:: gYoknRObfOg
     :width: 100%
 
-**Demonstration of ESC calibration process with Pixhawk:**
-
-..  youtube:: 6kfVusza17I
-    :width: 100%
-
 Manual ESC-by-ESC Calibration
 =============================
 
