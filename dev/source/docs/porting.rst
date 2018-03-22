@@ -8,6 +8,9 @@ ArduPilot :ref:`supports a wide variety of flight controllers <common-autopilots
 
 Consider joining the `ArduPilot/ChibiOS gitter channel <https://gitter.im/ArduPilot/ChibiOS>`__ to speak with other developers about this topic.
 
+..  youtube:: y2KCB0a3xMg
+    :width: 100%
+
 Step 1 - getting started
 ------------------------
 
