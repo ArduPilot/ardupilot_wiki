@@ -117,3 +117,9 @@ must be called.
 -  There are different classes for each frame type (quad, Y6, traditional helicopter) but in each there is an "`output_armed <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Motors/AP_MotorsMatrix.cpp#L123>`__\ " function which is responsible for implementing the conversion of these roll, pitch, yaw and throttle values into pwm outputs.  This conversion often includes implementing a "stability patch" which handles prioritising one axis of control over another when the input requests are outside the physical limits of the frame (i.e. max throttle and max roll is not possible with a quad because some motors must be less than others to cause a roll).  At the bottom of the "output_armed" function there is a call to the hal.rcout->write() which passes the desired pwm values to the AP_HAL layer.
 
 -  The `AP_HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__ libraries (hardware abstraction layer) provides a consistent interface for all boards.  In particular the hal.rc_out_write() function will cause the specified PWM received from the AP_Motors class to appear on the appropriate pwm pin out for the board.
+
+Leonard Hall, Developer Un-Conference 2018
+------------------------------------------
+
+..  youtube:: -PC69jcMizA
+    :width: 100%
