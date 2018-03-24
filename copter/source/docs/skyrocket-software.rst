@@ -13,6 +13,9 @@ SkyRocket Software
 Uploading alternative firmware
 ------------------------------
 
+..  youtube:: fDuU8CjhxkE
+    :width: 100%
+
 The instructions below describe how to uploading alternative firmware to the drone.  Normally we recommend users stick with the official firmware from SkyRocket but for those interested in trying the very latest features from ArduPilot, participating in beta testing or for those who wish to create their own custom firmware, these instructions are useful.
 
 Note that alternative firmwares are use **at your own risk** and probably void your warranty.
