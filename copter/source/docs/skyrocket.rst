@@ -33,7 +33,8 @@ Hardware
 - ICM20789 IMU including 3-axis accelerometer, gyro and barometer
 - Ublox M8 GPS
 - 1S battery (4.2V max, replacement batteries are readily available on Amazon and other places)
-- brushed motors
+- brushed motors; 8.5x20mm with a kV between 16,000 and 17,000 as measured. 
+-     The small pinion is 13T and the larger one is 73T, which provides a gear ratio of approximately 5.6
 - the camera can be manually adjusted to point forward, down or anywhere in between
 - 2.4Ghz wifi for telemetry and video
 - 145g
@@ -45,10 +46,7 @@ Hardware
     :target: ../_images/skyrocket-flight-controller.png
 
 
-Motors
---------
 
-The motors are 8.5x20mm with a kV between 16,000 and 17,000 as measured. The small pinion is 13T and the larger one is 73T, which provides a gear ratio of approximately 5.6.
 
 `sUAS news <https://www.suasnews.com/>`__ interview with Tridge and Matt (from SkyRocket):
 
