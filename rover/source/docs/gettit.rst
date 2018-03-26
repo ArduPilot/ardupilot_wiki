@@ -162,7 +162,6 @@ your choice. The main options are discussed in the topic :ref:`Choosing a Ground
 .. toctree::
     :maxdepth: 1
 
-    Project News <project-news>
     Video Demos <rover-video-demonstrations>
     Choosing a Ground Station <common-choosing-a-ground-station>
     Choosing an Autopilot Board <common-choosing-a-flight-controller>
