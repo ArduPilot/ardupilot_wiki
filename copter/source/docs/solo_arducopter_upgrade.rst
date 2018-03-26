@@ -29,7 +29,7 @@ Since the Solo uses a Pixhawk flight controller, it is capable of running variat
 
 Hardware Requirements
 ^^^^^^^^^^^^^^^^^^^^^
-The Pixhawk 2.1 Green Cube (or a traditional Pixhawk 2.1 with the internal jumper set for 5 volts) is currently required for safe and reliable use of ArduCopter 3.5.0 and higher on a 3DR Solo. You can purchase the Green Cube from `Jesters Drones <http://www.jestersdrones.org/store/index.php?rt=product%2Fproduct&path=68&product_id=126>`_ or directly from  `ProfiCNC <http://www.proficnc.com/3dr-solo-accessories/79-the-cube.html>`_.  The Pixhawk 2.1 has significantly more advanced components.  This includes 3 temperature controlled IMUs and the 5 volt signalling the Solo needs to operate safely. If you already have a Pixhawk 2.1 cube, you can set an internal solder jumper to 5 volt signalling and use it in your Solo.  The Green Cube comes with this jumper pre-set for 5 volts.
+The Pixhawk 2.1 Green Cube (or a traditional Pixhawk 2.1 with the internal jumper set for 5 volts) is currently required for safe and reliable use of ArduCopter 3.5.0 and higher on a 3DR Solo. You can purchase the Green Cube from `Jesters Drones <http://www.jestersdrones.org/store/index.php?rt=product/category&path=68>`_ or directly from  `ProfiCNC <http://www.proficnc.com/3dr-solo-accessories/79-the-cube.html>`_.  The Pixhawk 2.1 has significantly more advanced components.  This includes 3 temperature controlled IMUs and the 5 volt signalling the Solo needs to operate safely. If you already have a Pixhawk 2.1 cube, you can set an internal solder jumper to 5 volt signalling and use it in your Solo.  The Green Cube comes with this jumper pre-set for 5 volts.
 
 .. image:: ../images/solo_greencube.jpg
     :width: 45 %
@@ -212,7 +212,7 @@ Value   Meaning
 Value   Meaning
 =====   =======
 0       GPS disabled
-14      GPS enabled
+1       GPS enabled
 =====   =======
 
 =====   =======

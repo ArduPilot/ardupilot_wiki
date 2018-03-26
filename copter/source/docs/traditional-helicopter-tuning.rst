@@ -7,8 +7,7 @@ Traditional Helicopter – Tuning
 This tuning guide is applicable to all versions of ArduCopter for traditional
 helicopters. However, it is written for Copter 3.4 and newer. Since the names of
 parameters, and scaling, were changed from Copter 3.3 to 3.4 the
-:ref:`old tuning guide is archived here <traditional-helicopter-archived-
-tuning>`
+:ref:`old tuning guide is archived here <traditional-helicopter-archived-tuning>`
 
 For making setting changes to traditional helicopters, users are reminded to 
 use only the Full or Complete Parameter List in your ground station software. 
@@ -338,11 +337,13 @@ to the mainshaft) in pitch and roll with your digital pitch gauge. Connected to
 your ground station software with MavLink, note the pitch and roll angle the
 flight controller is "seeing". Adjust the AHRS_TRIM_X and AHRS_TRIM_Y values so
 the flight controller "sees" the identical frame angle you measured with the
-digital pitch gauge.
+digital pitch gauge. You can use the Level Horizon function in your ground station
+to level the horizon with the helicopter at actual level. That function will
+make the adjustments to the AHRS_TRIM's for you.
 
 The above is necessary so we can accurately measure the roll angle to set the
 ATC_HOVR_RLL_TRIM. The flight controller now "knows" when the mainshaft is
-perfectly vertical. 
+perfectly vertical.
 
 Load the helicopter with its normal payload, and hover the helicopter
 in no-wind conditions in Stabilize flight mode. Land it and pull the log, noting
@@ -356,10 +357,12 @@ roll to compensate.
 centered. 
 
 After setting the ATC_HOVR_RLL_TRIM now hover the helicopter again. If it still
-drifts make adjustments to the AHRS trims for x and y as necessary to stop the
-drifting in Stabilize flight mode. Things are slightly different in flight, due
-to flexing of the frame, than they are on the bench. So this requires some in-
-flight adjustments to be made to AHRS trims.
+drifts make small adjustments to the SERVO1_TRIM, SERVO2_TRIM and SERVO3_TRIM.
+The chances of getting the swashplate perfectly level during bench setup is very
+low and this dynamic tuning is needed to trim the helicopter. If it requires
+large deviation from your original SERVOx_TRIM values it is likely you have a CG
+problem, or your initial setup when leveling the swashplate was not very
+accurate.
 
 Your helicopter is now trimmed properly. This trimming procedure makes the
 difference between a helicopter that is difficult to handle vs one that flies

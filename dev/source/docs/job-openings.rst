@@ -18,15 +18,6 @@ This position involves keeping the vehicle and developer wikis updated to match 
 
 Some level of funding is possible for this position although it may not match the effort required!
 
-TradHeli maintainer / release manager
--------------------------------------
-
-This position includes taking responsibility for:
-
-- reviewing and deciding if heli specific code changes should be accepted to master
-- acting as the point person for tradheli issues.  This does not mean that every tradheli support issue is this positions responsibility of course.
-- ensuring proper testing has been completed before each TradHeli release
-
 Antenna Tracker maintainer / release manager
 --------------------------------------------
 
@@ -35,4 +26,4 @@ Very similar to the TradHeli maintainer role this position includes taking respo
 - reviewing and deciding if tracker specific code changes should be accepted to master
 - acting as the point person for issues.  This does not mean that you must answer all tracker support issues.
 - ensuring proper testing has been completed before each release
-- release tracker to the community (:ref:`see here to learn how it's done for Copter <release-procedures>`)
+- release new versions to the community (:ref:`see here to learn how it's done for Copter <release-procedures>`)

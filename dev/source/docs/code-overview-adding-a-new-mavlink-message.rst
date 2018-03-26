@@ -85,8 +85,56 @@ command (i.e. a trick) the following would be required:
    will be called at 10hz (or higher) repeatedly until the trick is
    complete.  The ``verify_trick()`` function should return true when
    the trick has been completed.
+   
+**Step #6:** Decide how you are going to handle the message at the GCS. One of the
+simplest ways is to use Mavproxy. MavProxy uses pymavlink to define the MAVLink messages,
+so you will need to rebuild pymavlink to include your custom message. 
+ 
+ - Remove the currently install version of pymavlink. ``pip uninstall pymavlink``
+ - Install the updated version. CD to ``ardupilot/modules/mavlink/pymavlink``
+   and run ``python setup.py install --user``
+ - Mavproxy is now capable of sending or receiving the new message. To ask it
+   to print out or send your message you need to implement a module. Modules
+   are python plugins that allow you to add functionality to Mavproxy. By default
+   on Ubuntu they are located in ``/usr/local/lib/python2.7/dist-packages/MAVProxy/modules/``.
+   Here is an example of a module that prints the contents of a MY_CUSTOM_PACKET message. Look
+   at the other modules for examples on how to trigger sending of messages using the command
+   line interface.
+ 
+.. code-block:: python
+ 
+     #!/usr/bin/env python
+    '''Custom'''
 
-**Step #6:** Consider contributing your code back to the main code base.
+    import time, os
+
+    from MAVProxy.modules.lib import mp_module
+    from pymavlink import mavutil
+    import sys, traceback
+
+    class CustomModule(mp_module.MPModule):
+        def __init__(self, mpstate):
+            super(CustomModule, self).__init__(mpstate, "Custom", "Custom module")
+            '''initialisation code'''
+
+        def mavlink_packet(self, m):
+            'handle a mavlink packet'''
+            if m.get_type() == 'MY_CUSTOM_PACKET':
+                print "My Int: %(x).2f" % \
+                    {"x" : m.intField}
+
+    def init(mpstate):
+        '''initialise module'''
+        return CustomModule(mpstate) 
+    
+
+.. warning::
+
+   If the message you added has an ID greater that 255 you will need to enable Mavlink 2 support. This can
+   be done by setting the relevant SERIALn_PROTOCOL parameters to 2 and starting Mavproxy with the ``--mav20``
+   argument.
+
+**Step #7:** Consider contributing your code back to the main code base.
 Email the `drones-discuss email list <https://groups.google.com/forum/#!forum/drones-discuss>`__ and/or
 :ref:`raise a pull request <submitting-patches-back-to-master>`. If
 you raise a pull request it is best to separate the change into at least

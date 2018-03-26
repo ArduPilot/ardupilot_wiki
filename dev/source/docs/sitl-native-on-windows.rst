@@ -100,10 +100,37 @@ that allow us to rebuild ArduPilot on Windows.
    | procps         | System \| procps-ng: System and process monitoring utilities (required for pkill)|
    +----------------+----------------------------------------------------------------------------------+
 
+#. If you want to compile the firmware as well then you should also install these packages:
+
+   +----------------+----------------------------------------------------------------------------------+
+   | Name           | Category / Name / Description                                                    |
+   +================+==================================================================================+
+   | patch          | Devel \| patch: Applies diff files                                               |
+   +----------------+----------------------------------------------------------------------------------+
+   | cmake          | Devel \| cmake: Cross-platform makefile generation system                        |
+   +----------------+----------------------------------------------------------------------------------+
+   | flex           | Devel \| flex: A fast lexical analizer generator                                 |
+   +----------------+----------------------------------------------------------------------------------+
+   | bison          | Devel \| bison: GNU yacc-compatible parser generator                             |
+   +----------------+----------------------------------------------------------------------------------+
+   | zip            | Devel \| zip: Info-ZIP compression utility                                       |
+   +----------------+----------------------------------------------------------------------------------+
+   | unzip          | Devel \| unzip: Info-ZIP decompression utility                                   |
+   +----------------+----------------------------------------------------------------------------------+
+   | python2-pip    | Python \| python2-pip: Python package instalation tool                           |
+   +----------------+----------------------------------------------------------------------------------+
+
 #. When all the packages are selected, click through the rest of the
    prompts and accept all other default options (including
    the additional dependencies).
 #. Select **Finish** to start downloading the files.
+
+#. If you want to compile the firmware as well then you also need to issue these commands on the cygwin prompt:
+
+   ::
+
+       pip2 install argparse
+       pip2 install empy
 
 Set up directories/paths in Cygwin
 ----------------------------------

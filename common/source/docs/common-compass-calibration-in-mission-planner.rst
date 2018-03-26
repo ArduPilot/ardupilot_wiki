@@ -63,6 +63,25 @@ If calibration fails:
 - if, after multiple attempts, you are unable to calibrate the compass, Press the "Cancel" button and change the "Fitness" drop-down to a more relaxed setting and try again.
 - if compass calibration still fails it may help to raise :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>` from 850 to 2000 or even 3000
 
+Onbord Calibration using Stick Gestures (no GCS)
+================================================
+Copter-3.4 (and higher) supports "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the flight controller with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
+
+- requires RC calibration first
+- to start compass calibration hold throttle stick full up and full right yaw for 2 seconds
+- if your flight controller has a buzzer attached you should hear a single tone followed by short beep once per second
+- hold the vehicle in the air and rotate it so that each side (front, back, left, right, top and bottom) points down towards the earth for a few seconds in turn
+
+   .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg
+      :target: ../_images/accel-calib-positions-e1376083327116.jpg
+      
+- upon successful completion three rising tones will be emitted and you will need to reboot the autopilot before it is possible to arm the vehicle.
+If calibration fails:
+
+- you will hear a failure tone and the calibration routine will restart
+- to cancel calibration at anytime hold throttle stick full up and full left yaw for 2 seconds
+- if, after multiple attempts, you are unable to calibrate the compass, Cancel with stick and use normal Onboard Calibration from GCS above
+
 Offboard Calibration (aka "Live Calibration")
 =============================================
 
@@ -106,7 +125,10 @@ found in :ref:`Magnetic Interference <common-magnetic-interference>`.
 Video demonstration
 ===================
 
-Video demonstration of compass calibration.
+Video demonstrations of compass calibration.
+
+..  youtube:: CD8EhVDfgnI
+    :width: 100%
 
 ..  youtube:: DmsueBS0J3E
     :width: 100%

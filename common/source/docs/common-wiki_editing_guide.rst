@@ -63,7 +63,7 @@ a pull request to submit your changes.
 There are a number of way of using Git/Github - including a number of different GUI and command line tools. 
 The typical process for working with Git on the command line is:
 
-#. `Fork the docs repo <https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box>`__ 
+#. `Fork the docs repo <https://github.com/ArduPilot/ardupilot_wiki>`__ 
    (if you haven't already done so).
 
    "Forking" is GitHub's term for copying a repository to your own account.
@@ -74,84 +74,81 @@ The typical process for working with Git on the command line is:
 
    To fork the main repository:
 
-   -  Log into Github and go to https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box.
-   -  At the upper right is a button, "Fork":
+   -  Log into Github and go to `github.com/ArduPilot/ardupilot_wiki <https://github.com/ArduPilot/ardupilot_wiki>`__.
+   -  Click the "Fork" button on the upper right and follow the directions:
 
 	.. image:: ../../../dev/source/images/APM-Git-Github-Fork-300x64.jpg
 	   :target: ../../../dev/source/images/APM-Git-Github-Fork-300x64.jpg
 
-   Click the **Fork** button and follow the directions.
-   
    When your are finished there will be a new repository within your
    account: ``//github.com/YOURID/ardupilot_wiki``
 
-#. Clone your fork of the repository to your local machine: 
-   
+#. Clone your fork of the repository to your local machine:
+
    .. code-block:: bash
 
        git clone https://github.com/YOURID/ardupilot_wiki.git
 
-#. Configure the "upstream" server for your local repository.
+#. Track the ArduPilot wiki repository by adding a "remote" called "upstream":
 
-   - First check which repositories are tracked.
+   - Use the command below to see which repositories are being tracked
 
      .. code-block:: bash
-   
+
 	   git remote -v
 
-     By cloning, at least the "origin" repository should already be tracked.
+     At least "origin" should appear meaning your local repo is tracking your fork on github.com.
 
      .. code-block:: bash
-   
+
 	   origin  https://github.com/YOURID/ardupilot_wiki.git (fetch)
 	   origin  https://github.com/YOURID/ardupilot_wiki.git (push)
-	   
-   - You must track an "upstream" server in order to fetch updates (primarily from
-     the upstream's "master" branch)
-   
+
+   - You must track ArduPilot's main wiki repository in order to fetch updates so use the command below to add a "remote" called "upstream"
+
      .. code-block:: bash
-   
+
 	   git remote add upstream https://github.com/ArduPilot/ardupilot_wiki.git
-	   
-   - Verify that the "upstream" repository is now tracked as well.
-   
+
+   - Verify that the "upstream" repository is now referenced as well.
+
      .. code-block:: bash
-     
+
 	   git remote -v
-	   
+
    - The "upstream" repository should now be part of the remote repository list:  
-     
+
      .. code-block:: bash
 
 	   origin  https://github.com/YOURID/ardupilot_wiki.git (fetch)
 	   origin  https://github.com/YOURID/ardupilot_wiki.git (push)
 	   upstream        https://github.com/ArduPilot/ardupilot_wiki.git (fetch)
 	   upstream        https://github.com/ArduPilot/ardupilot_wiki.git (push)	 
-       
-#. Create a branch for your changes
-   
+
+#. Create a branch in your local clone for your changes
+
    .. code-block:: bash
 
        git checkout -b hgw_my_well_named_branch
-       
+
 #. Make any changes needed and :ref:`test them locally <common_wiki_editing_guide_building_docs>`.
 
 #. Add and commit your changes:
 
    .. code-block:: bash
-   
+
        git add the_name_of_file_you_changed.rst
        git commit -m "A short explanation of the change"
-       
+
 #. Rebase your fork to the latest version of master and push your commits to
    the fork.
 
    .. code-block:: bash
-   
+
        git fetch upstream master
        git rebase upstream/master
        git push origin hgw_my_well_named_branch
-       
+
 #. Open your clone's repository on the GitHub web page and 
    `Create a pull request on GitHub <https://help.github.com/articles/using-pull-requests>`__.
    You'll be making a pull request from your fork/branch to the
@@ -162,7 +159,7 @@ The typical process for working with Git on the command line is:
 
    .. image:: ../../../images/PullRequest_OpenWikiCloneOnGitHubWebPage.png
        :target: ../_images/PullRequest_OpenWikiCloneOnGitHubWebPage.png
-   
+
 #. On top of the web page select the "Pull Request" tab page, and then
    select the green "New pull request" button:
 
@@ -176,11 +173,10 @@ The typical process for working with Git on the command line is:
 
    .. image:: ../../../images/PullRequest_InitiateWikiPullRequest2.png
        :target: ../_images/PullRequest_InitiateWikiPullRequest2.png
-   
+
 #. Check the list of change at the bottom of the page only includes your
    intended changes, then press "Create pull request".
-   
-   
+
 Creating a new wiki page
 ========================
 
@@ -216,15 +212,12 @@ The title should also be preceded by an anchor link named for the page. So the f
     ===============
     Your Page Title
     ===============
-    
-
 
 How to get changes approved
 ===========================
 
 Once you submit a pull request with your change the wiki team will review it. 
 If we have any questions we'll add them to the request.
-
 
 .. _common_wiki_editing_guide_building_docs:
 
@@ -247,7 +240,8 @@ The main steps for building the docs are:
 #. Open a command prompt in the root of the ardupilot_wiki repo, and start Vagrant:
 
    .. code-block:: bash
-   
+
+       cd ardupilot_wiki
        vagrant up
        
    The first time this is run it may take some time to complete.
@@ -255,16 +249,16 @@ The main steps for building the docs are:
 #. SSH into Vagrant (if you're on Windows you may need to add SSH in your Git installation to your PATH)
 
    .. code-block:: bash
-   
+
        vagrant ssh
-       
+
 #. Navigate in the SSH shell to the /vagrant directory and start the build.
 
    .. code-block:: bash
-   
+
        cd /vagrant
        python update.py
-       
+
 The update.py script will copy the common files into each wiki subdirectory and then build each wiki (you can build 
 just one wiki by passing the site name, e.g.: ``python update.py --site copter``).
 

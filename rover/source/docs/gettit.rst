@@ -42,16 +42,9 @@ needed for autopilot mode control and learning.
 Autopilot Hardware
 ------------------
 
-:ref:`Pixhawk <common-pixhawk-overview>` is highly recommended for general
-use.
+The list of supported autopilots is on the :ref:`Choosing a Flight Controller <common-choosing-a-flight-controller>` wiki page.  The :ref:`Pixhawk <common-pixhawk-overview>` family is the most common choice.
 
-Developers creating robot vision applications should consider using a
-separate Companion Computer, or a Linux based autopilot board (e.g.
-:ref:`NAVIO+ <common-navio-overview>` or
-:ref:`Erle-Brain <common-erle-brain-linux-autopilot>`) which is capable of
-running both Rover and the image processing code.
-
-For more options, see the topic :ref:`Choosing a Flight Controller <common-choosing-a-flight-controller>`.
+Developers creating robot vision applications should consider a Linux based autopilot board (e.g. :ref:`Emlid Edge <common-emlid-edge>`) or adding a separate `Companion Computer <http://ardupilot.org/dev/docs/companion-computers.html>`__.
 
 .. note::
 
@@ -80,7 +73,7 @@ Some other options are discussed in the topic :ref:`Compatible RC Transmitter an
 GPS module
 ----------
 
-Your Rover will *require* a GPS module. The recommended module is :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` which also
+Your Rover will *require* a GPS module. The recommended module is :ref:`UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` which also
 includes a compass. You can check out :ref:`other GPS solutions here <common-positioning-landing-page>`.
 
 .. image:: ../../../images/GPS_TopAndSide.jpg
@@ -120,49 +113,26 @@ are recommended for obstacle avoidance.
 Ready to Use Rovers
 ===================
 
-At time of writing, the only Ready-to-Run (RTR) Rover is
-`Erle-Rover <https://erlerobotics.com/blog/product/erle-rover/>`__.
-
-.. figure:: ../images/Erle-Rover_IMG_6946.jpg
-   :target: ../_images/Erle-Rover_IMG_6946.jpg
-
-   Erle-Rover: Ready to Use Rover from Erle-Robotics
-
-This RTR Rover contains all the needed components for getting started:
-the frame, `Erle-Brain <http://erlerobotics.com/blog/erle-brain-2/>`__
-Linux autopilot, 4 Channels 2.4Ghz RC, Power Module (to power up the
-autopilot), NIMH battery and charger.
-
-.. note::
-
-   This Rover uses a powerful Linux autopilot that can run more
-   computationally intensive operations than a traditional autopilot (like
-   Pixhawk). 
+A list of ready-to-use vehicles is on the :ref:`RTF wiki page <common-rtf>`.
 
 Ground Control Station
 ======================
 
-The (free and open source) :ref:`Mission Planner <planner:home>` is required if you're going
-to be loading new versions of Rover onto the autopilot controller, and
-for first-time tuning and calibration. It runs on a PC and can also be
-used for planning missions.
+The list of supported ground stations is on the :ref:`Choosing a Ground Station <common-choosing-a-ground-station>` wiki page.
+
+The free and open source :ref:`Mission Planner <planner:home>` is recommended at least for loading the firmware and setting up the vehicle.
+It runs on a Windows PC and can also be used for planning missions.
 
 .. image:: ../../../images/groundstation-with-MP.jpg
     :target: ../_images/groundstation-with-MP.jpg
 
-Once your Rover is configured, you may find it more convenient to choose
-a different ground station - running on the tablet, phone or computer of
-your choice. The main options are discussed in the topic :ref:`Choosing a Ground Station <common-choosing-a-ground-station>`.
-
 .. note::
 
-   This wiki exclusively uses Mission Planner as the reference
-   GCS.
+   This wiki exclusively uses Mission Planner as the reference GCS.
 
 .. toctree::
     :maxdepth: 1
 
-    Project News <project-news>
     Video Demos <rover-video-demonstrations>
     Choosing a Ground Station <common-choosing-a-ground-station>
     Choosing an Autopilot Board <common-choosing-a-flight-controller>

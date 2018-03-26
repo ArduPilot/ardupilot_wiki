@@ -12,7 +12,7 @@ libraries and their function.
 
 -  `AP_AHRS <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_AHRS>`__ -
    attitude estimation using DCM or EKF
--  `AP_Common <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_InertialNav>`__ -
+-  `AP_Common <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Common>`__ -
    core includes required by all sketches and libraries
 -  `AP_Math <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Math>`__ -
    various math functions especially useful for vector manipulation

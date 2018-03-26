@@ -1,8 +1,13 @@
 .. _speed-turn-parameter-tuning:
 
-==========================
-Tuning Waypoint Turn Speed
-==========================
+==============================================
+Tuning Waypoint Turn Speed (ver 3.1 and older)
+==============================================
+
+.. note::
+
+   These instructions are relevant for Rover-3.1 and older.
+   For newer versions of the Rover firmware please refer to the :ref:`navigation tuning guide <rover-tuning-navigation>`.
 
 The SPEED_TURN parameters are used to set the percentage reduction in
 throttle when turning around a waypoint and the distance before a target

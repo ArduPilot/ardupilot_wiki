@@ -24,6 +24,8 @@ These instructions explain how to measure the vibration levels. If you
 find they are out-of-tolerance then follow the advice found on the First
 Time Set-up sections :ref:`Vibration Damping <common-vibration-damping>`.
 
+For more advanced vibration analysis, see :ref:`Batch Sampling <common-imu-batchsampling>`.
+
 Copter-3.3/Plane 3.4 (and later versions)
 =========================================
 
