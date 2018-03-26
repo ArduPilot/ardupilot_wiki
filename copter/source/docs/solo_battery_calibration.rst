@@ -1,4 +1,4 @@
-.. _solo_arducopter_other_install:
+.. _solo_battery_calibration:
 
 ====================================================================
 3DR Solo - Smart Battery Calibration
