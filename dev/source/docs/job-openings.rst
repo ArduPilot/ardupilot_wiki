@@ -26,4 +26,4 @@ Very similar to the TradHeli maintainer role this position includes taking respo
 - reviewing and deciding if tracker specific code changes should be accepted to master
 - acting as the point person for issues.  This does not mean that you must answer all tracker support issues.
 - ensuring proper testing has been completed before each release
-- release tracker to the community (:ref:`see here to learn how it's done for Copter <release-procedures>`)
+- release new versions to the community (:ref:`see here to learn how it's done for Copter <release-procedures>`)
