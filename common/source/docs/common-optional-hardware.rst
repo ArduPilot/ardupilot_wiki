@@ -45,6 +45,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Landing Gear <landing-gear>
 [/site]
     LEDs (external) <common-external-leds>
+[site wiki="copter,rover"]
+    Marvelmind for Non-GPS Navigation <common-marvelmind>
+[/site]
 [site wiki="copter"]
     Object Avoidance with Lightware SF40C <common-lightware-sf40c-objectavoidance>
     Object Avoidance with TeraRanger Tower <common-teraranger-tower-objectavoidance>
