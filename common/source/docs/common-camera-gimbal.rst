@@ -55,21 +55,6 @@ and ground to an aux out ground (-) pin.
 .. image:: ../../../images/pixhawk_to_gimbal_connection.jpg
     :target: ../_images/pixhawk_to_gimbal_connection.jpg
 
-Connecting the servos to a PX4
-==============================
-
-#. The Camera Gimbal Servo connections are located on (FMU USART2) on
-   the PX4IO board.
-#. The 5 pin connector on the end of the PX4IO board opposite the servo
-   connector and at the edge of the board.
-#. The roll camera gimbal  servo out signal wire should connect to pin 2
-   (RC9).
-#. The pitch camera gimbal  servo out signal wire should connect to pin
-   3 (RC11).
-#. If you have a yaw camera gimbal it's servo out signal wire should
-   should connect to pin 4 (RC12).
-#. Provide power and ground separately to the servos.
-
 Connecting the servos to an APM2
 ================================
 
