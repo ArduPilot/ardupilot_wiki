@@ -1,8 +1,8 @@
 .. _common-pozyx:
 
-========================
-Pozyx for Non-GPS Loiter
-========================
+============================
+Pozyx for Non-GPS Navigation
+============================
 
 This article explains how a `Pozyx <https://www.pozyx.io/>`__ system based on the `DWM1000 <http://www.decawave.com/products/dwm1000-module>`__ can be used as a short-range substitude for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto indoors.
 
