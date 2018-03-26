@@ -44,6 +44,12 @@ Hardware
 .. image:: ../../../images/skyrocket-flight-controller.png
     :target: ../_images/skyrocket-flight-controller.png
 
+
+Motors
+--------
+
+The motors are 8.5x20mm with a kV between 16,000 and 17,000 as measured. The small pinion is 13T and the larger one is 73T, which provides a gear ratio of approximately 5.6.
+
 `sUAS news <https://www.suasnews.com/>`__ interview with Tridge and Matt (from SkyRocket):
 
 ..  youtube:: 3RdEELDIeVs
