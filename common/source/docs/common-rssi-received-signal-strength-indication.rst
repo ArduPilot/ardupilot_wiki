@@ -10,16 +10,13 @@ This article shows how to get the Received Signal Strength Indication
 .. image:: ../../../images/mp_hud_rssi.jpg
     :target: ../_images/mp_hud_rssi.jpg
 
-How to visualize RSSI value in the artificial horizon of Mission Planner
-========================================================================
+Viewing RSSI value in the Mission Planner HUD
+=============================================
 
-If the RSSI reading is not displayed in your artificial horizon yet,
-  - Open Mission Planner Software.
-  - Goto "FLIGHT DATA" menu [1].
-  - "Right click" within artificial horizon window [2].
-  - Choose "User Items".
-  - Check "rxrssi" checkbox [3] and close "Display This" window [4].
-  - "rxrssi" should be displayed in your artificial horizon now [2].
+If the RSSI reading is not displayed in your artificial horizon yet:
+  - Open Mission Planner and connect to the flight controller
+  - On the Flight Data screen, right-mouse-button click on the HUD and select "User Items"
+  - On the "Display this" window that appears, check "rxrssi"
   
 .. image:: ../../../images/MissionPlanner_RSSI_DisplayRxRSSI.JPG
     :target: ../_images/MissionPlanner_RSSI_DisplayRxRSSI.JPG
