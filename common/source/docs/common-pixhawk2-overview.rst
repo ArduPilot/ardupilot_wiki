@@ -317,7 +317,7 @@ This section details the pin assignments of the standard carrier board of Pixhaw
    </table>
 
 
-**POWER1&1**
+**POWER1&2**
 
 .. raw:: html
 
