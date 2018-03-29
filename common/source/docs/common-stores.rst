@@ -5,7 +5,7 @@ Stores
 ======
 
 The following stores are known to stock quality versions of the controllers, telemetry radios, cables etc.
-recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Fly vehicles <common-rtf>`.
+recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Use vehicles <common-rtf>`.
 
 `ArduPilot SWAG <https://shop.ardupilot.org/>`__ ArduPilot SWAG, Support and fun merchandise
 

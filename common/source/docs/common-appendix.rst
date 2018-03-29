@@ -18,7 +18,7 @@ the wiki.
     Glossary <common-glossary>
     History of ArduPilot <common-history-of-ardupilot>
     Partners <common-partners>
-    Ready-To-Fly vehicles <common-rtf>
+    Ready-To-Use vehicles <common-rtf>
     Stores <common-stores>
     Top Contributors <common-team>
     Advanced user tools (downloads) <common-downloads_advanced_user_tools>

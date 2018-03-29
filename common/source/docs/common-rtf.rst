@@ -1,10 +1,10 @@
 .. _common-rtf:
 
 ===================================
-Ready-To-Fly & Easy-To-Buy vehicles
+Ready-To-Use & Easy-To-Buy vehicles
 ===================================
 
-The following is a list of ready-to-fly vehicles that run ArduPilot that can be easily purchased over the internet.
+The following is a list of ready-to-use vehicles that run ArduPilot that can be easily purchased over the internet.
 These vehicles come pre-configured with everything required to fly, drive or swim right out of the box.
 
 .. note::
