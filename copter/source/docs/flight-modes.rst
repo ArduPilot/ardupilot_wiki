@@ -40,6 +40,7 @@ Additional flight modes:
 -  :ref:`Brake <brake-mode>`
 -  :ref:`Circle <circle-mode>`
 -  :ref:`Drift <drift-mode>`
+-  :ref:`Flip <flip-mode>`
 -  :ref:`Guided <ac2_guidedmode>` (and :ref:`Guided_NoGPS <guided_nogps>`)
 -  :ref:`Land <land-mode>`
 -  :ref:`PosHold <poshold-mode>`
@@ -96,6 +97,7 @@ Full list of flight modes
     Circle Mode <circle-mode>
     Drift Mode <drift-mode>
     Follow Me Mode (GSC Enabled) <ac2_followme>
+    Flip Mode <flip-mode>
     Guided Mode <ac2_guidedmode>
     Land Mode <land-mode>
     Loiter Mode <loiter-mode>
