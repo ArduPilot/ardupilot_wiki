@@ -11,7 +11,7 @@ through the RC Transmitter.
 Overview
 ========
 
-Copter has 14 flight built-in flight modes, 10 of which are regularly
+Copter has 20 flight built-in flight modes, 10 of which are regularly
 used. There are modes to support different levels/types of flight
 stabilization, a sophisticated autopilot, a follow-me system etc.
 
