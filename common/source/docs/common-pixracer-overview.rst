@@ -420,6 +420,11 @@ Debug port (JST SM06B connector)
    </tbody>
    </table>
 
+Where to Buy
+============
+
+- Available from many retailers including `HobbyKing <https://hobbyking.com/en_us/new-pixracer-xracer-autopollot-v1-0-fmuv4-generation.html>`, `Banggood <https://www.banggood.com/Pixracer-Autopilot-Xracer-V1-0-Flight-Controller-Mini-PX4-Built-in-Wifi-For-FPV-Racing-RC-Multirotor-p-1056428.html?>`, ...
+
 
 See also
 ========
