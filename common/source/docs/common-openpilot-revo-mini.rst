@@ -46,5 +46,4 @@ Specifications
 Where to Buy
 ============
 
-- Available from many retailers including `HobbyKing <https://hobbyking.com/en_us/openpilot-cc3d-revolution-revo-32bit-flight-controller-w-integrated-433mhz-oplink.html>`__
-
+- Available from many retailers including `HobbyKing <https://hobbyking.com/en_us/openpilot-cc3d-revolution-revo-32bit-flight-controller-w-integrated-433mhz-oplink.html>`, `Banggood <https://www.banggood.com/OpenPilot-OPLINK-MINI-CC3D-REVO-Universal-Transceiver-TX-RX-Module-Integrating-Remote-Controller-p-1000081.html?>`, ...
