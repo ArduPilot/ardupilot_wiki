@@ -70,7 +70,7 @@ port numbers depending on your environment.
     Copter SITL/MAVProxy Tutorial <copter-sitl-mavproxy-tutorial>
     Plane SITL/MAVProxy Tutorial <plane-sitlmavproxy-tutorial>
     Rover SITL/MAVProxy Tutorial <rover-sitlmavproxy-tutorial>
-    ArduPilot Testing using SITL <using-sitl-for-ardupilot-testing>
+    SITL Advanced Testing <using-sitl-for-ardupilot-testing>
     Using Gazebo Simulator with SITL <using-gazebo-simulator-with-sitl>
     Using Last_letter Simulator with SITL <using-last_letter-as-an-external-sitl-simulator>
     Using the CRRCSim simulator <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
