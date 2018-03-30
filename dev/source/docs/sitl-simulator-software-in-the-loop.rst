@@ -63,10 +63,10 @@ port numbers depending on your environment.
 .. toctree::
     :maxdepth: 1
 
-    SITL on Linux <setting-up-sitl-on-linux>
-    SITL on Windows <sitl-native-on-windows>
-    SITL on Windows in a VM <setting-up-sitl-on-windows>
-    SITL using Vagrant <setting-up-sitl-using-vagrant>
+    SITL setup on Linux <setting-up-sitl-on-linux>
+    SITL setup on Windows <sitl-native-on-windows>
+    SITL setup on Windows in a VM <setting-up-sitl-on-windows>
+    SITL setup using Vagrant <setting-up-sitl-using-vagrant>
     Copter SITL/MAVProxy Tutorial <copter-sitl-mavproxy-tutorial>
     Plane SITL/MAVProxy Tutorial <plane-sitlmavproxy-tutorial>
     Rover SITL/MAVProxy Tutorial <rover-sitlmavproxy-tutorial>
