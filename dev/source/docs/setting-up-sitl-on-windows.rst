@@ -42,9 +42,7 @@ and be able to :ref:`build it with Arduino <building-ardupilot-with-arduino-wind
 Step #1 - Install VMWare and create an Ubuntu Virtual Machine
 =============================================================
 
-1. Download and install
-`VMware <https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0>`__
-(look for VMware Player and VMware Player Plus for Windows)
+1. Download and install `VMware <https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0>`__ (look for VMware Player and VMware Player Plus for Windows)
 
 2. Download the `Ubuntu iso <http://www.ubuntu.com/download/desktop/thank-you?country=--&version=14.04.2&architecture=amd64>`__
 
