@@ -1,39 +1,13 @@
 .. _using-sitl-for-ardupilot-testing:
 
-================================
-Using SITL for ArduPilot Testing
-================================
+=====================
+SITL Advanced testing
+=====================
 
-This article describes how to preform a number of common ArduPilot
-testing tasks in :ref:`SITL <sitl-simulator-software-in-the-loop>` using
-:ref:`MAVProxy <mavproxy-developer-gcs>`.
-
-Overview
-========
-
-The :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` simulator is a build of
-the ArduPilot code which allows you to run
-:ref:`Plane <plane:home>`,
-:ref:`Copter <copter:home>` or
-:ref:`Rover <copter:home>` without any hardware. It can be
-built and run on :ref:`Windows <sitl-native-on-windows>` or
-:ref:`Linux <setting-up-sitl-on-linux>`, and can be run on Mac OSX (or the
-other platforms) in a virtual machine with Linux installed.
-
-Using SITL is just like using a real vehicle: you can connect to the
-(simulated) vehicle using the Ground Control Station (GCS) of your
-choice (or even multiple ground stations), take off, change flight
-modes, make guided or automatic missions, and land. The main difference
-is that in addition to being able to configure the vehicle,
-*simulator-specific* parameters allow you to configure the *physical
-environment* (for example wind speed and direction) and also to simulate
-failure of different components. This means that SITL is the perfect
-environment to test bug fixes and other changes to the autopilot,
-failure modes, and DroneKit-Python apps.
-
-This article explains some of the more important parameters that you can
-set to change the environment, simulate failure modes, and configure the
-vehicle with optional components. It also explains how to :ref:`connect to different GSCs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
+This article describes how :ref:`SITL <sitl-simulator-software-in-the-loop>`
+and :ref:`MAVProxy <mavproxy-developer-gcs>` can be used to change the environment,
+simulate failure modes, and configure the vehicle with optional components.
+It also explains how to :ref:`connect to different GSCs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
 
 .. tip::
 
@@ -47,9 +21,8 @@ vehicle with optional components. It also explains how to :ref:`connect to diffe
    :ref:`MAVProxy <mavproxy-developer-gcs>` to
    describe operations (e.g. setting parameters) because it presents a
    simple and consistent command-line interface (removing the need to
-   describe a GSC-specific UI layout). There is no reason the same
-   operations cannot be performed in *Mission Planner* (through the *Full
-   Parameters List*) or any other GSC.
+   describe a GSC-specific UI layout). Many of these operations can also
+   be performed in *Mission Planner* (through the *Full Parameters List*) or any other GSC.
 
 Setting vehicle start location
 ==============================
