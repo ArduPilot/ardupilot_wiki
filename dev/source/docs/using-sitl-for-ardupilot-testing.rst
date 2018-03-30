@@ -1,7 +1,7 @@
 .. _using-sitl-for-ardupilot-testing:
 
 =====================
-SITL Advanced testing
+SITL Advanced Testing
 =====================
 
 This article describes how :ref:`SITL <sitl-simulator-software-in-the-loop>`
