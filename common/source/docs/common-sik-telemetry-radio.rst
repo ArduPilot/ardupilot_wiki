@@ -201,10 +201,11 @@ Improving the range
 
 The range can be improved by:
 
--  Using a small "patch antenna" on the ground like `this flat patch antenna <http://www.readymaderc.com/store/index.php?main_page=product_info&cPath=11_45_47&products_id=51>`__
-   perhaps mounted on an :ref:`Antenna Tracker <antennatracker:home>`
--  Replace at least one of the two radios with a higher powered
-   :ref:`RFD900 <common-rfd900>`
+-  Using a regular (omnidirectional) antenna combined with a 
+   :ref:`RF direction-giving device <common-rfdirectiongivingdevice> 
+   on the ground station and/or manual control transmitter
+-  Using an RF signal booster with `small "patch antenna" <http://www.readymaderc.com/store/index.php?main_page=product_info&cPath=11_45_47&products_id=51>` mounted on a :ref:`airplane antenna tracker <antennatracker:home>`
+-  Replace the airplane radio with a higher powered :ref:`RFD900 <common-rfd900>`
 -  Reduce the ``AirRate`` parameter which will increase range but at the
    expense of the rate of the data transfer.
 
