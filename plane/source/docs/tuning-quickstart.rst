@@ -27,6 +27,8 @@ values needed).
    fly the majority of lightweight RC airframes right out of the box. We
    also provide :ref:`configuration values for many common aircraft <configuration-files-for-common-airframes>` that you can use
    to get your aircraft flying before doing further tuning.
+   
+   For ornithopters, more tuning info is available `here <configuration-for-ornithopters>`
 
    If AUTOTUNE doesn't work with your plane, a fully manual approach is
    described in the :ref:`Roll, Pitch and Yaw Controller Tuning Guide <roll-pitch-controller-tuning>`.
