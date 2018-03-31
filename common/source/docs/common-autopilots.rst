@@ -22,6 +22,7 @@ Open hardware
     Pixracer <common-pixracer-overview>
     Beagle Bone Blue <common-beagle-bone-blue>
     Erle-Brain <common-erle-brain-linux-autopilot>
+    F4BY <common-f4by>
     OpenPilot Revo Mini <common-openpilot-revo-mini>
     PXFmini RPi Zero Shield <common-pxfmini>
     TauLabs Sparky2 <common-taulabs-sparky2>
