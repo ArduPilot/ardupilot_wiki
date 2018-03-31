@@ -13,8 +13,32 @@ rescaling it to 1:18 scale. This will also involve changing the recommended moto
 
 Let's first take a look at the `specs <https://3dlabprint.com/wp-content/uploads/2016/11/userguide_Spitfire_MkXVI.pdf>`.
 It says the plane is 97,3 cm wide and 80 cm long. So let's assume it's 1:12 scale (it isn't because a real spitfire MKXVI is 
-993 cm wide and 960 cm long, so its ratio is off, but let's assume).
-Let's say we find it too big, and want it in 1:18
+993 cm wide and 960 cm long, so its width/length ratio is off, but let's assume).
+Let's say we find it too big, and want it in 1:18 scale.
+97,3 cm width by 80 cm length for 1:12 makes
+1167,6 cm width by 960 cm length for 1:1 makes
+64,8 cm width by 53,3 cm length for 1:18
+
+The 3D model can be changed by means of a 3D modelling program (sketchup, ...)
+We can also integrate other features we want then (i.e. a left and right wing that is interlockable into each other and the  
+fuselage (so that the wings can be taken off for storage), ...
+
+Next, the engine. 3Dlabprint advises using an AX4008Q 620kV. Let's explain 
+`why the kV's are mentioned <http://www.modelairplanenews.com/electric-back-to-basics>` first: this is done as it gives an 
+indication of the airplane speed. Without propeller/airplane, it will spin a 620 rpm per volt. More useful specs however are 
+the maximum amp (A) and maximum voltage (V) ratings. Multiply them and you get the maximum power output (watts).
+For the AX4008Q, that's 570 watts (19V x 30A). Since the airplane weighs 840g, that means it has 655 watt/kg 
+(1000/840= 1,15 x 570 watt = 655. That's way above the 75-105 watt/kg the airplane needs (see 
+`"input watts per pound guidelines" <http://www.modelairplanenews.com/electric-back-to-basics>`).
+
+For our plane, let's assume the weight will be 100g lighter, or 740g.
+1000/740= 1,35 x 105 watts = 142 watts. So we need an engine that can output 142 watt.
+Let's say we'll use a 2P3S LiPo battery. The nominal voltage of a LiPo is 3,7V so 3S x3,7V = 11,1V
+Let's say the batteries have 1250 mAh (=1,25 Ah). 2P3S batteries thus have 2,5 Ah (1,25 Ah x 2).
+At a voltage of 11,1 V the Wh rating is 27,75 Wh.
+So, with a 142 watt engine, the plane can run for 11,74 minutes at full power (142/27,75= 5,11 & 60 mins / 5,11 = 11,74 mins ).
+
+
 
 `? <http://www.modelairplanenews.com/electric-back-to-basics/`
 
