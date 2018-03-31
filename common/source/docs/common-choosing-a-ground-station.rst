@@ -34,7 +34,7 @@ and preferred computing platform:
 -  **Ready-to-fly** users may prefer the portability and ease of use of
    *Tower* (Droid Planner 3), or another GCS running on a tablet or
    phone.
--  **DIY/Kit** users and developers often have to access configuration
+-  **:ref:`DIY <plane:diyplaneconstruction>`/Kit** users and developers often have to access configuration
    and analysis tools, and would therefore need (at least initially)
    *Mission Planner*, *APM Planner 2* or another more full-featured GCS.
 
