@@ -4,11 +4,15 @@
 MAVLink Commands
 ================
 
-ArduPilot has adopted a subset of the MAVLink protocol command set.
+ArduPilot uses a dialect of the MAVLink protocol, which includes elements of the baseline Common message set,
+plus unique messages for ArduPilot, uAvionix (ADS-B), and the NASA Icarous project.  Whilst attempts are made to keep
+the ArduPilot dialect aligned with basic MAVLink, as the MAVLink repository is not controlled by the ArduPilot Project,
+the branch located in the ArduPilot GitHub repository should be used to ensure compatibility with the ArduPilot ecosystem.
+
 Important links for working with commands are listed below:
 
--  `MAVLink Common Message Set in HTML <http://mavlink.org/messages/common>`__ and
-   `XML <https://github.com/mavlink/mavlink/blob/master/message_definitions/v1.0/common.xml>`__
+-  `MAVLink ArduPilot Message Set in HTML <http://mavlink.org/messages/ardupilotmega>`__ and
+   `XML <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml>`__
    (Protocol Definition).
 -  `MavLink Tutorial for Absolute Dummies (Part–1) <http://api.ning.com/files/i*tFWQTF2R*7Mmw7hksAU-u9IABKNDO9apguOiSOCfvi2znk1tXhur0Bt00jTOldFvob-Sczg3*lDcgChG26QaHZpzEcISM5/MAVLINK_FOR_DUMMIESPart1_v.1.1.pdf>`__
    (from `Shyam Balasubramanian <http://api.ning.com/files/i*tFWQTF2R*7Mmw7hksAU-u9IABKNDO9apguOiSOCfvi2znk1tXhur0Bt00jTOldFvob-Sczg3*lDcgChG26QaHZpzEcISM5/MAVLINK_FOR_DUMMIESPart1_v.1.1.pdf>`__).
@@ -26,6 +30,7 @@ Other relevant topics on this wiki include:
     :maxdepth: 1
 
     Command Package Format <ardupilot-mavlink-command-package-format>
+    Adding a new MAVLink Message <code-overview-adding-a-new-mavlink-message>
     Copter Commands (Guided Mode) <copter-commands-in-guided-mode>
     Plane Commands (Guided Mode) <plane-commands-in-guided-mode>
     MAVLink Routing <mavlink-routing-in-ardupilot>
