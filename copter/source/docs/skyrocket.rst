@@ -67,21 +67,14 @@ Hardware
 
 ..  youtube:: 3RdEELDIeVs
     :width: 100%
+
 More Info
 ---------
 
 .. toctree::
     :maxdepth: 1
 
-Videos
--------
-   Videos <skyrocket-videos>
-   
-   Throw Mode <skyrocket-throw>
-   
-   Using other Ground Stations <skyrocket-gcs>
-   
-   Uploading Software <skyrocket-software>
-   
-
-======
+    Videos <skyrocket-videos>
+    Throw Mode <skyrocket-throw>
+    Using other Ground Stations <skyrocket-gcs>
+    Uploading Software <skyrocket-software>
