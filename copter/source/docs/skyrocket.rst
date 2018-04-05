@@ -75,6 +75,7 @@ More Info
     :maxdepth: 1
 
     Videos <skyrocket-videos>
+    Hardware <skyrocket-hardware>
     Throw Mode <skyrocket-throw>
     Using other Ground Stations <skyrocket-gcs>
     Uploading Software <skyrocket-software>
