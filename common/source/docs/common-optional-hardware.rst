@@ -35,6 +35,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Crop Sprayer <sprayer>
 [/site]
     Display (Onboard) <common-display-onboard>
+[site wiki="copter,plane"]
+    DShot and BLHeli pass-through support <common-dshot>
+[/site]
 [site wiki="plane"]
     eCalc Motor and Prop Efficiency Guide <ecalc-motor-and-prop-efficiency-guide>
 [/site]
