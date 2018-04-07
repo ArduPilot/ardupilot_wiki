@@ -18,7 +18,7 @@ Open hardware
     :maxdepth: 1
 
     Pixhawk <common-pixhawk-overview>
-	Pixhawk2 <common-pixhawk2-overview>
+    The Cube <common-thecube-overview>
     Pixracer <common-pixracer-overview>
     Beagle Bone Blue <common-beagle-bone-blue>
     Erle-Brain <common-erle-brain-linux-autopilot>
