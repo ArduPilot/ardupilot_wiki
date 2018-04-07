@@ -162,9 +162,6 @@ variables:
 
 - :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` = 1 to enable automatic mapping of motors to
   BLHeliSuite ESC numbers.  for most users this will do the right thing.
-
-OR
-
 - :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` if you want to instead specify a specific set of
   servo outputs to enable.  For more complex setups where you want to choose exactly which servo outputs you want to configure
 
