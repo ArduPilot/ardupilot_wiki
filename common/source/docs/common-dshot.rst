@@ -18,9 +18,9 @@ Detailed descriptions of these features are lower down on this page.
 
 .. warning::
 
-   These features are available only Copter-3.6 and Plane-3.9 using the ChibiOS firmware for STM32 based flight boards.
-   As of April 2018 please join the http://gitter.im/ArduPilot/ChibiOS gitter channel for up to date information on these builds
-   Only try this on ESCs that support DShot or you will get unpredictable results.
+   As of April 2018 these features are currently only available with Copter-3.6 and Plane-3.9 using the ChibiOS firmware for STM32 based flight boards, and not yet a stable release.
+   Please join the http://gitter.im/ArduPilot/ChibiOS gitter channel for up to date information on these builds.
+   Only try DShot on ESCs that are known to support it or you will get unpredictable results.
 
 Where to buy
 ============
@@ -72,7 +72,7 @@ a flight board and an ESC. The key advantages are:
 - no need to do any ESC throttle range calibration
 - very high protocol frame frames are supported
 
-The DShot protocol can run at several difference speeds. ArduPilot
+The DShot protocol can run at several different speeds. ArduPilot
 supports four speeds:
 
 - DShot150 at 150kbaud (recommended)
@@ -80,9 +80,9 @@ supports four speeds:
 - DShot600 at 600kbaud
 - DShot1200 at 1200kbaud
 
-We recommend using the lowest baud rate DShot150 protocol,
+We recommend using the lowest baud rate, DShot150,
 as it is the most reliable protocol (lower baudrates are less
-susceptible to noise on cables).  Higher values will be possible
+susceptible to noise on cables).  Higher values will be beneficial
 once ArduPilot's main loop rate is capable of speeds above 1kHz.
 
 The protocol ArduPilot uses is controlled by setting the 
@@ -106,14 +106,14 @@ We do not currently support DShot output on other vehicle types.
    DShot output is currently only supported on the "FMU" outputs of
    your flight controller. If you have a board with an IO
    microcontroller, with separate "main" and "auxillary" outputs, such
-   as a Pixhawk1 or Pixhawk2 board then you can only use DShot on the
+   as a Pixhawk1 or Pixhawk2/Cube, then you can only use DShot on the
    "auxillary" outputs. You will need to use the SERVOn_FUNCTION
    parameters to remap your motors to the auxillary outputs.
 
 ESC Telemetry
 =============
 
-You can also enable ESC telemetry feedback, allowing you to log the
+If using BLHeli_32, you can also enable ESC telemetry feedback, allowing you to log the
 following variables from each ESC in flight:
 
 - RPM
@@ -124,9 +124,10 @@ following variables from each ESC in flight:
 
 To use ESC telemetry you need to connect a separate telemetry pin on
 all your ESCs back to a single UART RX pin on your flight board. ESC
-telemetry is only available on BLHeli_32 ESCs, and a wire for the
+telemetry is currently only available with BLHeli_32 ESCs, and a wire for the
 telemetry is only pre-soldered for some ESCs. If the wire isn't
-pre-soldered you will need to solder it yourself.
+pre-soldered you will need to solder it yourself.  
+Support for KISS ESC Telemetry is planned.
 
 The wires from all ESCs should all come back to a single UART RX
 line. The way it works is that the flight board requests telemetry
@@ -170,4 +171,4 @@ parameters you should reboot your flight board.
 
 Now connect a USB cable to your flight board and use BLHeliSuite on
 Windows to connect. You will need to use BLHeliSuite32 for BLHeli_32
-ESCs, and BLHeliSuite16 for older BLHeli_S ESCs.
+ESCs, and BLHeliSuite16 for BLHeli/BLHeli_S ESCs.
