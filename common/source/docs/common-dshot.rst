@@ -8,18 +8,57 @@ DShot and BLHeli ESC Support
     :width: 100%
 
 This articles describes how to setup and use three features supported
-by recenet BLHeli ESC firmwares.
+by recent BLHeli ESC firmwares.
 
 - DShot ESC protocol support
-- BLHeli pass-thru configuration and ESC flashing
 - ESC telemetry support
+- BLHeli pass-thru configuration and ESC flashing
 
-.. note::
+Detailed descriptions of these features are lower down on this page.
 
-   These feature are available only in the ChibiOS firmware
-   builds on STM32 based flight boards. As of April 2018 please join the
-   http://gitter.im/ArduPilot/ChibiOS gitter channel for up to date
-   information on these builds
+.. warning::
+
+   These features are available only Copter-3.6 and Plane-3.9 using the ChibiOS firmware for STM32 based flight boards.
+   As of April 2018 please join the http://gitter.im/ArduPilot/ChibiOS gitter channel for up to date information on these builds
+   Only try this on ESCs that support DShot or you will get unpredictable results.
+
+Where to buy
+============
+
+`blheli32.com provides this list of BLHeli compatible ESCs <http://www.blheli32.com/list-of-blheli_32-escs/>`__.
+We recommend choosing one that has the telemetry wire pre-soldered (see blue wire below).
+
+.. image:: ../../../images/dshot-telemwire.jpg
+    :target: https://hobbyking.com/en_us/turnigy-multistar-32bit-51a-race-spec-esc-2-6s-opto.html
+    :width: 300px
+
+*image courtesy of hobbyking.com*
+
+Connecting and Configuring
+===========================
+
+.. image:: ../../../images/dshot-pixhawk.jpg
+    :target: ../_images/dshot-pixhawk.jpg
+    :width: 600px
+
+For :ref:`Pixhawk <common-pixhawk-overview>` and :ref:`Pixhawk2 <common-pixhawk2-overview>` boards the ESC's ground and signal wire should be connected to the AUX OUT ports.
+For :ref:`Pixracer <common-pixracer-overview>` and :ref:`other boards <common-autopilots>` the normal outputs can be used.
+
+Connect all ESC's telemetry wires to a single Telemetry RX pin on the flight board (above diagram uses Serial5).
+
+To enable DShot:
+
+- :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` (or :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` on quadplanes) to **4** meaning "DShot150"
+- on Pixhawk and Pixhawk2 boards:
+
+  - set :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` to :ref:`SERVO4_FUNCTION <SERVO4_FUNCTION>` to 0
+  - set :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to :ref:`SERVO12_FUNCTION <SERVO12_FUNCTION>` to 33, 34, 35, 36 respectively
+  - for hexacopters, set :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` to 6, :ref:`SERVO1_FUNCTION <SERVO5_FUNCTION>` and :ref:`SERVO6_FUNCTION <SERVO6_FUNCTION>` to 0, :ref:`SERVO13_FUNCTION <SERVO13_FUNCTION>` and :ref:`SERVO14_FUNCTION <SERVO14_FUNCTION>` to 37, 38 respectively
+
+To enable ESC telemetry:
+
+- :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 16 (if telemetry is connected to Serial5)
+- :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>` to 10 to enable 10hz updates from the ESC
 
 DShot Protocol
 ==============
@@ -36,15 +75,19 @@ a flight board and an ESC. The key advantages are:
 The DShot protocol can run at several difference speeds. ArduPilot
 supports four speeds:
 
-- DShot150 at 150kbaud
+- DShot150 at 150kbaud (recommended)
 - DShot300 at 300kbaud
 - DShot600 at 600kbaud
 - DShot1200 at 1200kbaud
 
-As ArduPilot currently runs quite slow loop rates (maximum of 1kHz
-currently), we recommend using the lowest baud rate DShot150 protocol,
+We recommend using the lowest baud rate DShot150 protocol,
 as it is the most reliable protocol (lower baudrates are less
-susceptible to noise on cables).
+susceptible to noise on cables).  Higher values will be possible
+once ArduPilot's main loop rate is capable of speeds above 1kHz.
+
+The protocol ArduPilot uses is controlled by setting the 
+:ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` (or :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` on quadplanes) to a value from 4 to 7.
+The value of 4 corresponds to DShot150.
 
 DShot sends 16 bits per frame, with bits allocated as follows:
 
@@ -56,18 +99,6 @@ This gives a good throttle resolution, with support for asking the ESC
 to provide telemetry feedback. See below for more information on ESC
 telemetry.
 
-To enable DShot support in ArduPilot you should first check that your
-ESC supports it. Do not enable DShot on ESCs that don't support it or
-you will get unpredictable results.
-
-Then you need to set the "Motor PWM Type" to one of the 4 DShot
-protocol varients. On multi-copters you should set the parameter
-MOT_PWM_TYPE to a value from 4 to 7. The value 4 corresponds to
-DShot150.
-
-On a QuadPlane you should set the Q_M_PWM_TYPE to the motor output
-type, with a value of 4 for DShot150.
-
 We do not currently support DShot output on other vehicle types.
 
 .. note::
@@ -78,38 +109,6 @@ We do not currently support DShot output on other vehicle types.
    as a Pixhawk1 or Pixhawk2 board then you can only use DShot on the
    "auxillary" outputs. You will need to use the SERVOn_FUNCTION
    parameters to remap your motors to the auxillary outputs.
-   
-
-BLHeli Pass-Through Support
-===========================
-
-BLHeli pass-through support is a feature that allows you to configure
-and upgrade the firmware on your ESCs without having to disconnect
-them from your vehicle. You can plug a USB cable into your flight
-controller and run the BLHeliSuite software for Windows to configure
-your ESCs.
-
-Note that you do not have to be using DShot to take advantage of
-BLHeli pass-through support, although it is recommended that you do.
-
-To enable BLHeli pass-through support you need to set one of two
-variables:
-
-- SERVO_BLH_AUTO=1 to enable automatic mapping of motors to
-  BLHeliSuite ESC numbers
-- SERVO_BLH_MASK if you want to instead specify a specific set of
-  servo outputs to enable
-
-For most users setting SERVO_BLH_AUTO=1 will do the right thing. The
-alternative SERVO_BLH_MASK is for more complex setups where you want
-to choose exactly which servo outputs you want to configure.
-
-Once you have enabled BLHeli support with one of the above two
-parameters you should reboot your flight board.
-
-Now connect a USB cable to your flight board and use BLHeliSuite on
-Windows to connect. You will need to use BLHeliSuite32 for BLHeli_32
-ESCs, and BLHeliSuite16 for older BLHeli_S ESCs.
 
 ESC Telemetry
 =============
@@ -136,12 +135,42 @@ from only one ESC at a time, cycling between them.
 You can use any of the UARTs on your flight board for telemetry
 feedback. You need to enable it using the SERIALn_PROTOCOL option for
 the UART you are using. For example, on a PH2.1 if you wanted to use
-the Serial5 UART you would set SERIAL5_PROTOCOL=16 (where 16 is the
+the Serial5 UART you would set :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 16 (where 16 is the
 value for "ESC Telemetry").
 
-You also need to set the telemetry rate in the SERVO_BLH_TRATE
+You also need to set the telemetry rate in the :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>`
 parameter. This rate is the rate in Hz per ESC. So if you set it to 10
 then you will get 10Hz data for all ESCs.
 
 The data is logged in the ESCn log messages in your dataflash
 log. This can be viewed in any ArduPilot dataflash log viewer.
+
+BLHeli Pass-Through Support
+===========================
+
+BLHeli pass-through support is a feature that allows you to configure
+and upgrade the firmware on your ESCs without having to disconnect
+them from your vehicle. You can plug a USB cable into your flight
+controller and run the BLHeliSuite software for Windows to configure
+your ESCs.
+
+Note that you do not have to be using DShot to take advantage of
+BLHeli pass-through support, although it is recommended that you do.
+
+To enable BLHeli pass-through support you need to set one of two
+variables:
+
+- :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` = 1 to enable automatic mapping of motors to
+  BLHeliSuite ESC numbers.  for most users this will do the right thing.
+
+OR
+
+- :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` if you want to instead specify a specific set of
+  servo outputs to enable.  For more complex setups where you want to choose exactly which servo outputs you want to configure
+
+Once you have enabled BLHeli support with one of the above two
+parameters you should reboot your flight board.
+
+Now connect a USB cable to your flight board and use BLHeliSuite on
+Windows to connect. You will need to use BLHeliSuite32 for BLHeli_32
+ESCs, and BLHeliSuite16 for older BLHeli_S ESCs.
