@@ -176,6 +176,7 @@ Getting more info
    Traditional Helicopters <docs/traditional-helicopters>
    Tricopter <docs/tricopter>
    SingleCopter and CoaxCopter <docs/singlecopter-and-coaxcopter>
+   HeliQuads <docs/heliquads>
    SkyRocket <docs/skyrocket>
    Solo <docs/solo_arducopter_upgrade>
    AutoPilot Hardware Options <docs/common-autopilots>
