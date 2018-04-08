@@ -25,7 +25,7 @@ Connecting the vehicle and base station GPSs
 
 The Here+ GPS kit comes with a larger round GPS (also knows as the "Rover") that should be mounted on the vehicle so that the round button is on the top and the faint arrow is pointing forwards.
 
-This GPS is connected to the flight controller using the supplied 8-pin clickmate connector (if using a Pixhawk2) or an optional 4pin+6pin DF13 connector (if using Pixhawk1).
+This GPS is connected to the flight controller using the supplied 8-pin clickmate connector (if using The Cube) or an optional 4pin+6pin DF13 connector (if using Pixhawk1).
 
 A smaller GPS (also known as the "base station") labelled "here+" is also included along with it's external antenna.  This GPS is connected to the ground station PC using the supplied USB cable.
 
@@ -138,7 +138,7 @@ To use HERE+ on a UAV, you need the following hardware:
 .. image:: ../../../images/HERE+_sufficient_sky_coverage.png
 	:target: ../_images/HERE+_sufficient_sky_coverage.png
 
-- Connect to the vehicle's flight controller (i.e. Pixhawk, Pixhawk2, etc) using Mission Planner
+- Connect to the vehicle's flight controller (i.e. Pixhawk, The Cube, etc) using Mission Planner
 - Open the Initial Setup >> Optional Hardware >> RTK GPS Inject screen
 - For first time setup in a new location, click the Enter Base Position button, make sure the dialogue box shows empty location information, as shown below:
 
