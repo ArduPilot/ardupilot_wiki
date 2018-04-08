@@ -5,7 +5,7 @@ SiK Telemetry Radio
 ===================
 
 A *SiK Telemetry Radio* is one of the easiest ways to setup a telemetry
-connection between your APM/Pixhawk and a ground station. This article
+connection between your APM/Pixhawk/Cube and a ground station. This article
 provides a basic user guide for how to connect and configure your radio.
 
 .. figure:: ../../../images/3dr_radio_v2.jpg
