@@ -27,7 +27,7 @@ transmitter's channel 6 tuning knob by following these instructions:
 .. image:: ../images/RollPitchTuning.png
     :target: ../_images/RollPitchTuning.png
 
-#. Connect your APM/Pixhawk/PX4 to the Mission Planner
+#. Connect your APM/Pixhawk/PX4/Cube to the Mission Planner
 #. On the mission planner, select Config/Tuning >> Copter Pids
 #. Set the CH6 Opt to "Rate Roll/Pitch kP"
 #. Set Min to 0.08, Max to 0.20 (most copters ideal gain is within this
