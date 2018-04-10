@@ -18,7 +18,7 @@ Detailed descriptions of these features are lower down on this page.
 
 .. warning::
 
-   As of April 2018 these features are currently only available with Copter-3.6 and Plane-3.9 using the ChibiOS firmware for STM32 based flight boards, and not yet a stable release.
+   As of April 2018 these features are currently only available with Copter-3.6, Plane-3.9, Rover-3.3 (or higher) using the ChibiOS firmware for STM32 based flight boards, and not yet in a stable release.
    Please join the http://gitter.im/ArduPilot/ChibiOS gitter channel for up to date information on these builds.
    Only try DShot on ESCs that are known to support it or you will get unpredictable results.
 
