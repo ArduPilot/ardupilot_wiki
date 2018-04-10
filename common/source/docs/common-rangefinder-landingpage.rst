@@ -53,6 +53,7 @@ based upon your set-up.
     TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
     Leddar One Lidar <common-leddar-one-lidar>
     LIDAR-Lite <common-rangefinder-lidarlite>
+    RPLidar A2 360 degree laser scanner <common-rplidar-a2>
     ST VL53L0X I2C LiDAR <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>
     
 [site wiki="copter"]
