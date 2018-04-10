@@ -45,6 +45,10 @@ The source code for the bootloaders can be found in `ArduPilot/Bootloader <https
 
    this document does not currently explain how to compile a bootloader so if you find yourself in this situation, please `contact us on Gitter <https://gitter.im/ArduPilot/ChibiOS>`__!
 
+.. note::
+
+   Your board must be plugged into USB *and* in DFU mode.  DFU mode is usually entered by shorting two pins together on the board.  Please see your board's documentation for details on how to accomplish this.
+
 Upload the bootloader to the board ``dfu-util -a 0 --dfuse-address 0x08000000 -D new-board-bootloader.bin -R``
 
 Step 5 - upload the minimal firmware onto the board
