@@ -45,7 +45,7 @@ Connecting the radio
    can get the D2XX FTDI driver
    `here. <http://www.ftdichip.com/Drivers/D2XX.htm>`__
 -  The 'aircraft' module has a FTDI six pin header, allowing it to be
-   directly connected to your APM/Pixhawk/PX4's telemetry port as shown
+   directly connected to your Flight Controller's telemetry port as shown
    in the following sections.
 
 Connecting to Pixhawk
