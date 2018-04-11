@@ -4,7 +4,7 @@
 Intel Edison as a Companion Computer
 ====================================
 
-This page explains how to setup and use the `Intel Edison <http://www.intel.com/content/www/us/en/do-it-yourself/edison.html>`__ as a companion computer primarily for use with the `Pixhawk2 <http://www.proficnc.com/system-kits/31-pixhawk2-suite.html>`__.
+This page explains how to setup and use the `Intel Edison <http://www.intel.com/content/www/us/en/do-it-yourself/edison.html>`__ as a companion computer primarily for use with the `The Cube <http://www.proficnc.com/content/13-pixhawk2>`__.
 
    .. image:: ../images/intel-edison-in-pixhawk2.jpg
        :width: 100%
@@ -20,14 +20,14 @@ Where to buy
 
 The Edison can be `purchased from Sparkfun here <https://www.sparkfun.com/products/13024>`__.
 
-The Pixhawk2 with carrier board can be purchased from one of these `retailers <http://www.proficnc.com/stores>`__.  Be sure to purchase a Pixhawk2 with the Intel Edison compatible carrier board.
+The Cube with carrier board can be purchased from one of these `retailers <http://www.proficnc.com/stores>`__.  Be sure to purchase a Cube with the Intel Edison compatible carrier board.
 
-Installing the Edison in the Pixhawk2
+Installing the Edison in The Cube
 =====================================
 
-To install the Edison into the Pixhawk 2 Carrier board:
+To install the Edison into The Cube Carrier board:
 
--   Remove the four side screews from the Pixhawk2
+-   Remove the four side screews from The Cube
 
    .. image:: ../images/intel-edison-pixhawk2-remove-screws.png
        :width: 50%
@@ -69,7 +69,7 @@ The easiest way to get started is to flash the Edison with the :ref:`APSync <aps
       - Follow the instructions on the `Homebrew web page <http://brew.sh>`__. 
       - Install dfu-util  ``brew install dfu-util``		
 
--  Connect your PC to the Pixhawk2 using the USB cables as shown below.  The USB cable connected to the Cube (the black cable shown below) provides power.  The two USB cables connected to the carrier board (shown as white cables) enable flashing the image to the edison.  If possible connect the "OTG port Flashing" using the flat USB cable that comes with the Pixhawk2 because it provides the most reliable connection.
+-  Connect your PC to The Cube using the USB cables as shown below.  The USB cable connected to the Cube (the black cable shown below) provides power.  The two USB cables connected to the carrier board (shown as white cables) enable flashing the image to the edison.  If possible connect the "OTG port Flashing" using the flat USB cable that comes with The Cube because it provides the most reliable connection.
 
    .. image:: ../images/intel-edison-pixhawk2-reflash-connections.png
        :width: 50%
@@ -96,13 +96,13 @@ The easiest way to get started is to flash the Edison with the :ref:`APSync <aps
 
 - After flashing is done, wait 1 to 2 min before cutting power to the Edison
 
-Setting up the Pixhawk
+Setting up The Cube
 ======================
 
-Connect to the Pixhawk with a ground station (i.e. Mission Planner) and set the following parameters:
+Connect to The Cube with a ground station (i.e. Mission Planner) and set the following parameters:
 
 -  :ref:`SERIAL2_PROTOCOL <copter:SERIAL2_PROTOCOL>` = 1 (the default) to enable MAVLink on the serial port.
--  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the Pixhawk can communicate with the Edison at 921600 baud.
+-  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so The Cube can communicate with the Edison at 921600 baud.
 -  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the Edison
 
 Troubleshooting bricked Edison
@@ -287,7 +287,7 @@ Install the DroneAPI example code
      client_sketch.py follow_me.py run-fake-gps.sh fake-gps-data.log microgcs.py small_demo.py
 
 Run a basic test of your coprocessor/DroneKit connection (ttyMFD1 is the
-serial port connecting the Edison to the Pixhawk):
+serial port connecting the Edison to The Cube):
 
 ::
 

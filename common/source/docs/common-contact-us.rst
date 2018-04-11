@@ -41,7 +41,7 @@ Facebook
 ========
 
 - `ArduPilot Facebook group <https://www.facebook.com/groups/ArduPilot.org>`__
-- `Pixhawk2 (aka the Cube) Facebook group <https://www.facebook.com/groups/pixhawk2>`__
+- `The Cube Facebook group <https://www.facebook.com/groups/pixhawk2>`__
 - `ArduPilot Japan Facebook group <https://www.facebook.com/groups/1661960827376400>`__
 
 YouTube

@@ -41,7 +41,7 @@ Connecting and Configuring
     :target: ../_images/dshot-pixhawk.jpg
     :width: 600px
 
-For :ref:`Pixhawk <common-pixhawk-overview>` and :ref:`Pixhawk2 <common-pixhawk2-overview>` boards the ESC's ground and signal wire should be connected to the AUX OUT ports.
+For :ref:`Pixhawk <common-pixhawk-overview>` and :ref:`The Cube <common-thecube-overview>` boards the ESC's ground and signal wire should be connected to the AUX OUT ports.
 For :ref:`Pixracer <common-pixracer-overview>` and :ref:`other boards <common-autopilots>` the normal outputs can be used.
 
 Connect all ESC's telemetry wires to a single Telemetry RX pin on the flight board (above diagram uses Serial5).
@@ -49,7 +49,7 @@ Connect all ESC's telemetry wires to a single Telemetry RX pin on the flight boa
 To enable DShot:
 
 - :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` (or :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` on quadplanes) to **4** meaning "DShot150"
-- on Pixhawk and Pixhawk2 boards:
+- on Pixhawk and Cube boards:
 
   - set :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` to :ref:`SERVO4_FUNCTION <SERVO4_FUNCTION>` to 0
   - set :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to :ref:`SERVO12_FUNCTION <SERVO12_FUNCTION>` to 33, 34, 35, 36 respectively
@@ -106,7 +106,7 @@ We do not currently support DShot output on other vehicle types.
    DShot output is currently only supported on the "FMU" outputs of
    your flight controller. If you have a board with an IO
    microcontroller, with separate "main" and "auxillary" outputs, such
-   as a Pixhawk1 or Pixhawk2/Cube, then you can only use DShot on the
+   as a Pixhawk or Cube, then you can only use DShot on the
    "auxillary" outputs. You will need to use the SERVOn_FUNCTION
    parameters to remap your motors to the auxillary outputs.
 
@@ -135,7 +135,7 @@ from only one ESC at a time, cycling between them.
 
 You can use any of the UARTs on your flight board for telemetry
 feedback. You need to enable it using the SERIALn_PROTOCOL option for
-the UART you are using. For example, on a PH2.1 if you wanted to use
+the UART you are using. For example, on a Cube if you wanted to use
 the Serial5 UART you would set :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 16 (where 16 is the
 value for "ESC Telemetry").
 

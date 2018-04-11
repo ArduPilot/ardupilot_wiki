@@ -24,7 +24,7 @@ Moreover, some RC transmitters such as the Taranis can be configured to play sou
 
 .. note::
 
-    FrSky telemetry packages including Taranis, X-receiver, LiPo cell voltage sensor and flight controller specific telemetry cable for the Pixhawk, Pixhawk 2.1, PixRacer and Pixhack are available from `Craft and Theory <http://www.craftandtheoryllc.com/store/>`__.
+    FrSky telemetry packages including Taranis, X-receiver, LiPo cell voltage sensor and flight controller specific telemetry cable for the Pixhawk, Cube, PixRacer and Pixhack are available from `Craft and Theory <http://www.craftandtheoryllc.com/store/>`__.
 
 **Pages Related to FrSky Telemetry**
 
@@ -197,14 +197,14 @@ Craft and Theory Pixhawk to FrSky Telemetry Cables
     :width: 50%
     :align: center
 
--  `Servo telemetry Cable (X6R/X8R, SmartPort sensors) for Pixhawk 2.1 <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
+-  `Servo telemetry Cable (X6R/X8R, SmartPort sensors) for The Cube <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
 
    .. figure:: ../../../images/FrSky_Ph2-X8R.jpg
       :target:  http://www.craftandtheoryllc.com/telemetry-cable
       :width: 50%
       :align: center
 
-      Craft and Theory Pixhawk 2.1 to FrSky X6R and X8R receiver cable
+      Craft and Theory Cube to FrSky X6R and X8R receiver cable
 
 -  `Pixhawk to FrSky Telemetry Cable (X6R, X8R, FLVSS) <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
 
@@ -215,14 +215,14 @@ Craft and Theory Pixhawk to FrSky Telemetry Cables
 
       Craft and Theory Pixhawk to FrSky X6R and X8R receiver cable
 
--  `Pixhawk 2.1 to FrSky XSR Telemetry Cable <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
+-  `Cube to FrSky XSR Telemetry Cable <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
 
    .. figure:: ../../../images/FrSky_Ph2-XSR.jpg
       :target:  http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/
       :width: 50%
       :align: center
 
-      Craft and Theory Pixhawk 2.1 to FrSky XSR receiver cable
+      Craft and Theory Cube to FrSky XSR receiver cable
 
 DIY cable for X-receivers
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -322,9 +322,9 @@ To install, connect the telemetry cable between the autopilot and the FLVSS/MLVS
 
 .. figure:: ../../../images/FrSky_Ph2-X8R-FLVSS_adj.jpg
    :width: 70 %
-   :alt: Setup with Pixhawk 2.1 "the Cube" and X8R
+   :alt: Setup with The Cube and X8R
 
-   Setup with Pixhawk 2.1 "the Cube" and X8R
+   Setup with The Cube and X8R
 
 .. figure:: ../../../images/FrSky_Conn_Phawk-X8R.jpg
    :width: 70 %
@@ -357,7 +357,7 @@ To enable FrSky Telemetry on one of the serial ports, connect with **Mission Pla
 +-------------------------------------------------------------+--------------------------------+------------------------+
 |                      Flight Controller                      |           Port used            |     Parameter name     |
 +=============================================================+================================+========================+
-| Pixhawk 2.1                                                 | TELEM1                         | SERIAL1_PROTOCOL       |
+| The Cube                                                    | TELEM1                         | SERIAL1_PROTOCOL       |
 |                                                             +--------------------------------+------------------------+
 |                                                             | TELEM2                         | SERIAL2_PROTOCOL       |
 |                                                             +--------------------------------+------------------------+
