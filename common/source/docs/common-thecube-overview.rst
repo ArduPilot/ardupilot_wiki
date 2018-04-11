@@ -10,12 +10,12 @@ The Cube Overview
 
 System Features
 =======================
-The Cube flight controller is a further evloution of the Pixhawk flight controller. It is designed for commercial systems and manufacturers who wish to integrate flight controller into their system. On top of the existing features of Pixhawk, it has the following enhancements:
+The Cube flight controller is a further evolution of the Pixhawk flight controller. It is designed for commercial systems and manufacturers who wish to fully integrate a flight controller into their system. On top of the existing features of Pixhawk, it has the following enhancements:
 
 -  3 sets of IMU sensors for extra redundancy
--  2 sets of IMU are vibration-isolated by built-in pieces of foam, reducing the effect of frame vibration to state estimation
+-  2 sets of IMU are vibration-isolated mechanically, reducing the effect of frame vibration to state estimation
 -  IMUs are temperature-controlled by onboard heating resistors, allowing optimum working temperature of IMUs
--  The entire flight management unit(FMU) and inertial management unit(IMU) are housed in a reatively small foam factor (a cube). All power and signal inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suite their specific needs of connectivity.
+-  The entire flight management unit(FMU) and inertial management unit(IMU) are housed in a reatively small form factor (a cube). All inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suite their specific needs.
 
 Specifications
 ==============
