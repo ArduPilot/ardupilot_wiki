@@ -153,7 +153,7 @@ RSSI Connections
     :target: ../_images/rssi_connections_3.jpg
 
 
-RSSI embedded in PWM from UHF systems (Pixhawk)
+RSSI embedded in PWM from UHF systems (Pixhawk & Cube)
 ===============================================
 
 Both EZ-UHF and OpenLRS have the option of embedding RSSI into a PWM channel, saving you from having to add filters, etc.
