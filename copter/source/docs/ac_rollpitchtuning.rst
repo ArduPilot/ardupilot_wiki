@@ -9,6 +9,9 @@ performance, the most critical is the Rate Roll and Pitch P values which
 convert the desired rotation rate into a motor output.  This alone will
 likely get it flying reasonably well at least in Stabilize mode.
 
+This guide assumes you are using Mission Planner as your Ground Control software.
+Other software, such as QGroundControl or APM Planner can also be used.
+
 Some general advice on how to tune this parameter:
 
 -  Too high and the copter will oscillate quickly in roll and/or pitch
@@ -27,8 +30,8 @@ transmitter's channel 6 tuning knob by following these instructions:
 .. image:: ../images/RollPitchTuning.png
     :target: ../_images/RollPitchTuning.png
 
-#. Connect your APM/Pixhawk/PX4 to the Mission Planner
-#. On the mission planner, select Config/Tuning >> Copter Pids
+#. Connect your Flight Controller to Mission Planner
+#. On Mission Planner, select Config/Tuning >> Copter Pids
 #. Set the CH6 Opt to "Rate Roll/Pitch kP"
 #. Set Min to 0.08, Max to 0.20 (most copters ideal gain is within this
    range although from a small number of copter the Max can be as high
