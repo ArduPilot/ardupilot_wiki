@@ -5,7 +5,7 @@ SiK Telemetry Radio
 ===================
 
 A *SiK Telemetry Radio* is one of the easiest ways to setup a telemetry
-connection between your APM/Pixhawk/Cube and a ground station. This article
+connection between your Flight Controller and a ground station. This article
 provides a basic user guide for how to connect and configure your radio.
 
 .. figure:: ../../../images/3dr_radio_v2.jpg
@@ -47,8 +47,7 @@ many different sources, including:
    If you're looking for an alternative, the 
    :ref:`RFD900 Radio Modem <common-rfd900>` is highly recommended by many community members
    (The SiK platform was based on the RFD900 and both platforms have
-   continued to evolve). It is available at a similar price point from
-   quality manufacturers and supports a significantly better range. 
+   continued to evolve). It provides a significantly better range. 
 
 Features
 ========
