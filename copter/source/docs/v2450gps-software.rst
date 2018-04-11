@@ -1,7 +1,7 @@
-.. _skyrocket-software:
+.. _v2450gps-software:
 
 ==================
-SkyRocket Software
+Skyviper V2450 GPS Software
 ==================
 
 - the drone ships with a custom version of ArduPilot (Copter) which is close to Copter-3.5 but has additional features that will be coming back into master in the near future (notch filter, etc).  `GitHub repo is here <https://github.com/SkyRocketToys/ardupilot>`__ in the skyviper-stable branch.
