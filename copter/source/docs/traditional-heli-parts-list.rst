@@ -7,7 +7,7 @@ Traditional Helicopter – Suggested Parts List
 Electronics including flight controller
 =======================================
 
--  :ref:`Pixhawk2 <common-pixhawk2-overview>`
+-  :ref:`The Cube <common-thecube-overview>`
    with :ref:`GPS and external compass <common-positioning-landing-page>`.
 -  Extra long GPS cable
 -  Extra long compass (i2c) cable
