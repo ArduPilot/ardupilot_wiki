@@ -9,8 +9,7 @@ Cube has been mounted in various locations such as on the FBL unit tray, on
 top of the tail drive case, or even on the side of the frame (very popular).
 
 Below is a possible method to mount a full-size flight controller on a smaller sized
-helicopter. The Pixracer, Pixhawk Mini, or PixFalcon is also popular on smaller
-frames that have less mounting options.
+helicopter. The Pixracer is popular on smaller frames that have less mounting options.
 
 -  Separate the helicopter's main body from it's landing gear
 -  Attach one carbon fibre plate to the body, the other to the landing
