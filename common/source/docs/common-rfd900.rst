@@ -44,6 +44,7 @@ filtering, adapter PCBs and strong protective casing
 
 -  `jDrones Store, RF900Mhz Set <http://store.jdrones.com/jD_RD900Plus_Telemetry_Bundle_p/rf900set02.htm>`__
 -  `jDrones Store, RF868Mhz Set <http://store.jdrones.com/jD_RD868Plus_Telemetry_Bundle_p/rf868set02.htm>`__
+-  `Unmanned Tech UK, RF868Mhz Set <https://www.unmannedtechshop.co.uk/rfd-868x-long-range-telemetry-modem-bundle/>`__
 
 The radio and antennas as separate units are available:
 
