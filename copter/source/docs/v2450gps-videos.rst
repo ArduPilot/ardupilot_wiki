@@ -1,8 +1,8 @@
-.. _skyrocket-videos:
+.. _v2450gps-videos:
 
-================
-SkyRocket Videos
-================
+=========================
+Skyviper V2450 GPS Videos
+=========================
 
 Bo Lorentzen's intro video:
 
