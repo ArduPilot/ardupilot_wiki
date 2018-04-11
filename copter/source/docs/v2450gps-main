@@ -52,8 +52,8 @@ More Info
 .. toctree::
     :maxdepth: 1
 
-    Videos <skyrocket-videos>
-    Hardware <skyrocket-hardware>
-    Throw Mode <skyrocket-throw>
-    Using other Ground Stations <skyrocket-gcs>
-    Uploading Software <skyrocket-software>
+    Videos <v2450gps-videos>
+    Hardware <v2450gps-hardware>
+    Throw Mode <v2450gps-throw>
+    Using other Ground Stations <v2450gps-gcs>
+    Uploading Software <v2450gps-software>
