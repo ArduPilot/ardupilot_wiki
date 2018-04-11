@@ -10,8 +10,7 @@ The Cube Info
 .. image:: ../images/PH21_3.jpg
     :target: ../_images/PH21_3.jpg
 
-The Cube is the latest controller that runs the ArduPilot flight stack. It
-is highly recommended for helicopters. It has much better internal damping of
+The Cube is highly recommended for helicopters. It has much better internal damping of
 the IMU's for vibration, triple redundant heated IMU's, redundant barometers and
 compasses. Experience has shown the tuning, handling and stability performance
 of your helicopter will be greatly improved over the first generation Pixhawk.
