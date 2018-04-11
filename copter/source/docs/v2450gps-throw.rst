@@ -1,7 +1,7 @@
-.. _skyrocket-throw:
+.. _v2450gps-throw:
 
 ====================
-SkyRocket Throw Mode
+Skyviper V2450GPS Throw Mode
 ====================
 
 ..  youtube:: L8xTlBnlu9E
