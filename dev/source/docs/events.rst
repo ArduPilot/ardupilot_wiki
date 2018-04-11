@@ -9,7 +9,6 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Mar 22nd ~ 24th 2018: `Japan Drone Expo in Chiba Japan <http://www.japan-drone.com/en_la/>`__ at eLAB and Maxell booths.
 - Apr 30th ~ May 3rd 2018: `AUVSI Xponential in Denver Colorado <http://www.xponential.org/xponential2018/public/enter.aspx>`__ booth 3442.
 - June 22nd ~ 24th 2018: ArduPilot SZUAVIA conference in Shenzhen China (`intro video from Jani Hirvinen <https://www.youtube.com/watch?v=JvRhIh_cQzU>`__)
 - Sep 5th ~ 7th 2018: InterDrone in Las Vegas, USA
@@ -21,3 +20,4 @@ Past Events
 -----------
 
 - 17th/18th Feb 2018 - Canberra Developer Un-Conference (`blog <https://discuss.ardupilot.org/t/ardupilot-unconference-2018-presentations>`__)
+- Mar 22nd ~ 24th 2018: `Japan Drone Expo in Chiba Japan <http://www.japan-drone.com/en_la/>`__ at eLAB and Maxell booths.
