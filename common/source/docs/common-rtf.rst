@@ -15,7 +15,6 @@ Vehicles from Partners
 ======================
 
 * `BlueROV2 from Blue Robotics <http://bluerobotics.com/store/rov/bluerov2/>`__
-* `Event38 IRIS+ for Precision Mapping <https://event38.com/product/iris-precision-mapping-package/>`__
 * `Event38 e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__ and `e386 Mapping Drones (fixed wing) <https://event38.com/fixed-wing/e386-mapping-drone/>`__
 * `mRobotics Nano Talon (fixed wing) <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-talon0318-mr>`__
 * `SkyRocket's SkyViper GPS Streaming Drone <http://sky-viper.com/product/info/V2450GPS-sd>`__ (and `version with FPV headset <http://sky-viper.com/product/info/V2450GPS-sd>`__)
@@ -30,17 +29,16 @@ Vehicles from Non-Partners
 * `ErleRover from ErleRobotics <https://erlerobotics.com/blog/product/erle-rover/>`__
 * `FireFly6 PRO from BirdsEyeView <https://www.birdseyeview.aero/products/firefly6>`__ (non-standard version of ArduPlane)
 * HobbyKing Aperture Hexacopter (`mode1 <https://hobbyking.com/en_us/aperture-rtf-m1.html>`__, `mode2 <https://hobbyking.com/en_us/aperture-rtf-m2.html>`__)
-* HobbyKing Quanum Nova PRO (`mode1 <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-1.html>`__, `mode2 <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-2.html>`__) (may use now-unsupported APM2 compatible controller)
+* `HobbyKing Quanum Nova PRO <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-1.html>`__ (may use now-unsupported APM2 compatible controller)
 * `MotoDoro Farm Mapper (Plane) <http://motodoro.com/product/farm-mapper/>`__
 * `R1 Rover <https://store.aionrobotics.com/products/r1-ardupilot?variant=429602832411>`__ from `Aion Robotics <https://www.aionrobotics.com/>`__
-* `Steadidrone Mavrik from Maverick Drone Systems <https://www.maverickdrone.com/collections/diy-kits/products/steadidrone-mavrik>`__
 * `UAV Mapper from TuffWing <http://www.tuffwing.com/products/drone_mapper.html>`__
 * Walkera Scout X4 from `Amazon <https://www.amazon.com/gp/product/B00TY464GC/ref=s9_dcacsd_dcoop_bw_c_x_7_w>`__ (uses non-standard version of ArduPilot)
-* Walkera Tali H500 from `helipal <http://www.helipal.com/walkera-qr-tali-h500-gps-drone-2-4ghz-rtf-edition.html>`__ or `HobbyKing <https://hobbyking.com/en_us/walkera-tali-h500-gps-hexacopter-with-3-axis-gimbal-and-battery-pnf.html>`__ (uses non-standard version of ArduPilot)
+* Walkera Tali H500 from `HobbyKing <https://hobbyking.com/en_us/walkera-tali-h500-gps-hexacopter-with-3-axis-gimbal-and-battery-pnf.html>`__ (uses non-standard version of ArduPilot)
 * 3DR Aero from `RiseAbove <http://www.riseabove.com.au/3dr-aero-m-915>`__ or `UAVSystems <https://uavsystemsinternational.com/product/3d-robotics-aero-m/>`__
-* 3DR IRIS from `Northox <https://northox.myshopify.com/collections/frontpage/products/iris-drone>`__ or `OneDrone <http://onedrone.com/store/3drobotics/ardupilot/3dr-iris-plus-new.html>`__
+* 3DR IRIS from `Northox <https://northox.myshopify.com/collections/frontpage/products/iris-drone>`__
 * 3DR Quad from `DroneFever <http://dronefever.com/3DR-ArduCopter-Quad-D-Almost-Ready-to-Fly.html>`__
-* 3DR Solo from `Best Buy <http://www.bestbuy.com/site/3dr-solo-drone-black/5351035.p?skuId=5351035>`__ or `B&H Photo <https://www.bhphotovideo.com/c/product/1189763-REG/3dr_solo_quadcopter_with_3_axis.html>`__
+* 3DR Solo from `Amazon <https://www.amazon.com/3DR-Solo-Quadcopter-No-Gimbal/dp/B00ZPM7BOG>`__
 * 3DR Y6 from `OneDrone <http://onedrone.com/store/3drobotics/ardupilot/3dr-arducopter-y6-kit.html>`__
 
 .. note::
