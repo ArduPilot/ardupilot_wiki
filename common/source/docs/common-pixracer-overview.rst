@@ -4,7 +4,7 @@
 Pixracer Overview
 =================
 
-The `Pixracer <http://www.auav.co/product-p/xr-v1.htm>`__ is the first
+The `Pixracer <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__ is the first
 autopilot of the new FMUv4 Pixhawk generation. It comes with a small
 Wifi extension board, upgraded sensors, more flash and better connectors
 than the original Pixhawk.
@@ -21,12 +21,11 @@ than the original Pixhawk.
 Overview
 ========
 
-The `Pixracer V1 <http://www.auav.co/product-p/xr-v1.htm>`__ is the
-first autopilot of the new FMUv4 Pixhawk generation. It has been
-designed primarily for the demanding requirements of small FPV racing
-quad multicopters, but of course can be used on planes and other
+The `Pixracer <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__ is the
+common name for the FMUv4 generation of Pixhawk flight controllers. It has been
+designed primarily for the demanding requirements of small multicopters, but of course can be used on planes and other
 vehicles which require no more than 6 pwm outputs for controlling escs
-and motors. Pixracer is available from the `AUAV shop <http://www.auav.co/product-p/xr-v1.htm>`__
+and motors. Pixracer is available from the `mRobotics <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__
 
 .. tip::
 
@@ -36,7 +35,7 @@ and motors. Pixracer is available from the `AUAV shop <http://www.auav.co/produc
 
 This video below provides a detailed overview of the board. Additional
 information can be found on
-`pixhawk.org <https://pixhawk.org/modules/pixracer>`__ and the `AUAV shop <http://www.auav.co/product-p/xr-v1.htm>`__.
+`pixhawk.org <https://pixhawk.org/modules/pixracer>`__ and the `mRobotics <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__.
 
 ..  youtube:: mpb6Cq023N8
     :width: 100%
@@ -61,7 +60,7 @@ Specifications
 -  **Power**
 
    -  5-5.5VDC from USB or PowerBrick connector. Optional/recommended
-      `ACSP4 +5V/+12V Power Supply <http://www.auav.co/product-p/acsp4.htm>`__.
+      `ACSP4 +5V/+12V Power Supply <https://store.mrobotics.io/product-p/auav-acsp4-mr.htm>`__.
 
 -  **Interfaces/Connectivity**
 
@@ -420,6 +419,12 @@ Debug port (JST SM06B connector)
    </tbody>
    </table>
 
+Where to Buy
+============
+
+- We suggest buying directly from `mRobotics <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__.
+- Whilst PixRacer can be sourced from other retailers, the specific design may differ and not have been tested by the Development Team.  Known retailers of 3rd party PixRacer boards are `HobbyKing <https://hobbyking.com/en_us/new-pixracer-xracer-autopollot-v1-0-fmuv4-generation.html>`__, and `Banggood <https://www.banggood.com/Pixracer-Autopilot-Xracer-V1-0-Flight-Controller-Mini-PX4-Built-in-Wifi-For-FPV-Racing-RC-Multirotor-p-1056428.html?>`__, ...
+
 
 See also
 ========
@@ -434,5 +439,5 @@ See also
    Some information and images in this page were copied from
    `pixhawk.org <https://pixhawk.org/modules/pixracer>`__,
    `px4.io <http://px4.io/docs/pixracer/>`__ and the
-
-   `AUAV shop <http://www.auav.co/product-p/xr-v1.htm>`__.
+   `mRobotics shop <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__
+   
