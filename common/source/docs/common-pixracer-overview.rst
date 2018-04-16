@@ -4,7 +4,7 @@
 Pixracer Overview
 =================
 
-The `Pixracer <http://www.auav.co/product-p/xr-v1.htm>`__ is the first
+The `Pixracer <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__ is the first
 autopilot of the new FMUv4 Pixhawk generation. It comes with a small
 Wifi extension board, upgraded sensors, more flash and better connectors
 than the original Pixhawk.
@@ -423,7 +423,7 @@ Where to Buy
 ============
 
 - We suggest buying directly from `mRobotics <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__.
-- Whilst PixRacer can be sourced from other retailers, the specific design may differ and not have been tested by the Development Team.  Known retailers of 3rd party PixRacer boards are `HobbyKing <https://hobbyking.com/en_us/new-pixracer-xracer-autopollot-v1-0-fmuv4-generation.html>`, and `Banggood <https://www.banggood.com/Pixracer-Autopilot-Xracer-V1-0-Flight-Controller-Mini-PX4-Built-in-Wifi-For-FPV-Racing-RC-Multirotor-p-1056428.html?>`, ...
+- Whilst PixRacer can be sourced from other retailers, the specific design may differ and not have been tested by the Development Team.  Known retailers of 3rd party PixRacer boards are `HobbyKing <https://hobbyking.com/en_us/new-pixracer-xracer-autopollot-v1-0-fmuv4-generation.html>`__, and `Banggood <https://www.banggood.com/Pixracer-Autopilot-Xracer-V1-0-Flight-Controller-Mini-PX4-Built-in-Wifi-For-FPV-Racing-RC-Multirotor-p-1056428.html?>`__, ...
 
 
 See also
@@ -439,5 +439,5 @@ See also
    Some information and images in this page were copied from
    `pixhawk.org <https://pixhawk.org/modules/pixracer>`__,
    `px4.io <http://px4.io/docs/pixracer/>`__ and the
-
-   `AUAV shop <http://www.auav.co/product-p/xr-v1.htm>`__.
+   `mRobotics shop <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__
+   
