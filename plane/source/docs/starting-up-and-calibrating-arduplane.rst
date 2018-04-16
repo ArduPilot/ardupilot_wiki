@@ -42,6 +42,15 @@ If the flight controller has a :ref:`safety switch <common-safety-switch-pixhawk
    safety mechanism to prevent accidental disarming during flight and
    accidental arming during transportation.
 
+Calibrate and check the Airspeed sensor (if present)
+====================================================
+
+If the vehicle has an :ref:`airspeed sensor <airspeed>` then the :ref:`pre-flight checks described here <calibrating-an-airspeed-sensor>` should be performed before each flight.
+
+.. image:: ../images/preflight.jpg
+    :target: ../_images/preflight.jpg
+    :width: 250px
+
 Wait for GPS lock
 =================
 
