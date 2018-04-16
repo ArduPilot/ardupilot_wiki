@@ -16,9 +16,6 @@ controller. After you install an airspeed sensor don't forget to
 .. image:: ../images/BR-0004-03-2T1.jpg
     :target: ../_images/BR-0004-03-2T1.jpg
 
-.. image:: ../images/airspeed_full_assembly_800px.jpg
-    :target: ../_images/airspeed_full_assembly_800px.jpg
-
 Pixhawk Digital Airspeed Pin
 ============================
 
@@ -37,9 +34,6 @@ Pixhawk can also use this `digital airspeed sensor with compass <http://store.jd
 module.  This may allow you to incorporate an external compass well
 away from sources of ElectroMagnmetic Interference (EMI) without
 additional cabling.
-
-.. image:: ../images/jDrones_AirSpeed_Compass_Full_Assembly_800px.jpg
-    :target: ../_images/jDrones_AirSpeed_Compass_Full_Assembly_800px.jpg
 
 To enable the digital airspeed sensor, connect Pixhawk to Mission
 Planner (or APM Planner for OS X), and select the **Advanced Parameter
