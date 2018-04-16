@@ -34,10 +34,9 @@ solid.
    On the UBLOX GPS module itself the LED is off while acquiring
    satellites and on blinking when satellites have been acquired.
 
-The PX4 must have its "Safety" mechanism disengaged before it can be
-armed.
+If the flight controller has a :ref:`safety switch <common-safety-switch-pixhawk>` connected, it must be disengaged before the vehicle can be armed.
 
--  **PX4 Safety Button LED Indications:**
+-  **Safety Switch LED Indications:**
 
    -  Fast Blinking indicates: Error Condition, Safety cannot be
       disengaged. Possibly not calibrated or sensor error.
