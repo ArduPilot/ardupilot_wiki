@@ -69,6 +69,35 @@ reason then you can either comment out or removed the lines in
 **config.mk** which specify the ``PX4_ROOT``, ``NUTTX_SRC`` and
 ``UAVCAN_DIR`` variables.
 
+Update a modified submodule
+---------------------------
+
+If you applied modification to a submodule for a branch *develop*, it is necessary to avoid your modifications to be replaced by the original submodule when you run the command "git submodule update –init –recursive":
+
+   - Create your own repository for the submodule where you can commit the modifications
+   - In the *develop* branch repository, modify the file .gitmodule to link your own submodule repository rather than the *master* branch
+   - Apply your modification to the submodule, commit and push it back to your remote repository
+   - Back to the *develop* branch you can see the modification using git status. Commit the modification and you are done (example below is done for the MAVLink submodule)
+
+::
+
+   git add .gitmodules
+   git add modules/mavlink
+   git commit -m 'mavlink: submodule update + modify gitmodule'
+   git push
+   
+The submodule MAVLink of the *develop* branch is now linked to a different repository than the *master*. The first command is necessary to reflect that change to the superproject:
+
+::
+
+   git submodule sync
+
+the usual command below will then be updated with the approriate submodule according to the branch (*master* or *develop*) you are working on.
+
+::
+
+   git submodule update --init --recursive
+
 Errors from old PX4Firmware and PX4NuttX trees
 ----------------------------------------------
 
