@@ -4,9 +4,6 @@
 Arming Plane
 ============
 
-Arming your plane
-=================
-
 Before you can fly your plane you need to arm it. Arming the aircraft
 before flight has two purposes:
 
