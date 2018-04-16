@@ -42,7 +42,7 @@ Calibrating the airspeed sensor
 ===============================
 
 The :ref:`ARSPD_RATIO <ARSPD_RATIO>` parameter
-determines how APM maps the differential pressure from your airspeed
+determines how ArduPilot maps the differential pressure from your airspeed
 sensor into an airspeed value. The default value is around 2.0, and
 should give good results for most people. The correct value does depend
 on you having your airspeed sensor well placed on your aircraft, and
@@ -59,31 +59,24 @@ are presented below.
 Automatic calibration
 =====================
 
-1) Ensure you have APM Plane 2.76 or later loaded
-
-2) Go to Mission Planner => CONFIG/TUNING => Full Parameter List,
-change ARSPD_AUTOCAL to 1 and click 'Write Params' to send the value to
-the APM.
-
-3) Take-off and fly a repeated circuit or circular loiter for 5 minutes.
-This can be done in any mode, but if the autopilot is already tuned
-sufficiently well, this can be achieved by leaving it in loiter or RTL
-for 5 minutes. The change in ARSPD_RATIO value can be checked in-flight
-by going to Mission Planner => CONFIG/TUNING => Full Parameter List, and
-clicking 'Refresh Params'. Note that when the calibration is active, an
-updated ARSPD_RATIO value is only saved in the APM's non-volatile
-memory every two minutes, and only if the value has changed by more than
-5% from the last saved value.
-
-4) Land,  go to Mission Planner => CONFIG/TUNING => Full Parameter List
-and change ARSPD_AUTOCAL back to 0 to prevent further changes.
-
-5) In Mission Planner => CONFIG/TUNING => Full Parameter List, click
-'Refresh Params' and check the value of ARSPD_RATIO. Normally it will
-be in the range between 1.5 and 3.0. If it is outside this range and you
-have checked for leaks, then if practical, you should consider
-relocating the pitot tube to reduce the aerodynamic interference from
-adjacent fuselage, wings, etc.
+1. Ensure you have Plane 2.76 or later loaded
+2. Go to Mission Planner => CONFIG/TUNING => Full Parameter List, change ARSPD_AUTOCAL to 1 and click 'Write Params' to send the value to the flight controller.
+3. Take-off and fly a repeated circuit or circular loiter for 5 minutes. This can be done in any mode, but if the autopilot is already tuned
+   sufficiently well, this can be achieved by leaving it in loiter or RTL
+   for 5 minutes. The change in ARSPD_RATIO value can be checked in-flight
+   by going to Mission Planner => CONFIG/TUNING => Full Parameter List, and
+   clicking 'Refresh Params'. Note that when the calibration is active, an
+   updated ARSPD_RATIO value is only saved in the APM's non-volatile
+   memory every two minutes, and only if the value has changed by more than
+   5% from the last saved value.
+4. Land,  go to Mission Planner => CONFIG/TUNING => Full Parameter List
+   and change ARSPD_AUTOCAL back to 0 to prevent further changes.
+5. In Mission Planner => CONFIG/TUNING => Full Parameter List, click
+   'Refresh Params' and check the value of ARSPD_RATIO. Normally it will
+   be in the range between 1.5 and 3.0. If it is outside this range and you
+   have checked for leaks, then if practical, you should consider
+   relocating the pitot tube to reduce the aerodynamic interference from
+   adjacent fuselage, wings, etc.
 
 Note: The calculation automatically compensates for the effects of
 altitude on air density.
