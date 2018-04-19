@@ -59,3 +59,8 @@ Videos
     :width: 100%
 
 *first flight of ardupilot on Sparky2*
+
+..  youtube:: WGLc7jNqAyE
+    :width: 100%
+
+*2nd flight using PosHold, RTL*
