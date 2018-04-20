@@ -7,11 +7,9 @@ Traditional Helicopter – Suggested Parts List
 Electronics including flight controller
 =======================================
 
--  :ref:`The Cube <common-thecube-overview>`
+-  :ref:`An ArduPilot supported board <common-autopilots>`
    with :ref:`GPS and external compass <common-positioning-landing-page>`.
--  Extra long GPS cable
--  Extra long compass (i2c) cable
--  Flight controller mounting plate
+
 
 RC helicopter frame
 ===================
