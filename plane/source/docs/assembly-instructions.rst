@@ -18,5 +18,6 @@ The instructions for adding other hardware are covered in :ref:`Optional Hardwar
     Erle-Brain2 Wiring Quick Start <common-erle-brain2-wiring-quick-start>
     PXFmini Wiring Quick Start <common-pxfmini-wiring-quick-start>
     NAVIO2 Wiring QuickStart <common-navio2-wiring-and-quick-start>
+    Edge QuickStart <common-edge-quick-start>
     Installing GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>
     Detailed Vehicle Builds <common-common-airframe-builds>
