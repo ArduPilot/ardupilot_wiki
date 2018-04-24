@@ -26,7 +26,7 @@ More developer specific information including how to compile the sonix and ardup
 
 
 SkyRocket Products with Ardupilot
----------
+-----------------------------------
 
 .. toctree::
     :maxdepth: 1
