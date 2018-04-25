@@ -27,7 +27,7 @@ Installing Mission Planner
 .. image:: ../../../images/driver_installation_warning.png
     :target: ../_images/driver_installation_warning.png
 
-Mission Planner is normally installed in the **C:\\Program Files (x86)\\Mission Plannerer** folder.
+Mission Planner is normally installed in the **C:\\Program Files (x86)\\Mission Planner** folder.
 
 An icon to open the *Mission Planner* is created according to your instructions during the installation.
 
