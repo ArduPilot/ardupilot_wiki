@@ -16,7 +16,7 @@ compasses. Experience has shown the tuning, handling and stability performance
 of your helicopter will be greatly improved over the first generation Pixhawk.
 
 Before you begin connecting the system it is recommended to review the docs for
-the Cube available `here  <http://www.proficnc.com/index.php?controller=attachment&id_attachment=8>`_
+The Cube available `here  <http://www.proficnc.com/index.php?controller=attachment&id_attachment=8>`_
 
 Overview of servo, and RX connection
 ====================================

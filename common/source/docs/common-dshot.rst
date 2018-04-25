@@ -106,7 +106,7 @@ We do not currently support DShot output on other vehicle types.
    DShot output is currently only supported on the "FMU" outputs of
    your flight controller. If you have a board with an IO
    microcontroller, with separate "main" and "auxillary" outputs, such
-   as a Pixhawk1 or Cube, then you can only use DShot on the
+   as a Pixhawk or Cube, then you can only use DShot on the
    "auxillary" outputs. You will need to use the SERVOn_FUNCTION
    parameters to remap your motors to the auxillary outputs.
 
@@ -135,7 +135,7 @@ from only one ESC at a time, cycling between them.
 
 You can use any of the UARTs on your flight board for telemetry
 feedback. You need to enable it using the SERIALn_PROTOCOL option for
-the UART you are using. For example, on a PH2.1 if you wanted to use
+the UART you are using. For example, on a Cube if you wanted to use
 the Serial5 UART you would set :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 16 (where 16 is the
 value for "ESC Telemetry").
 

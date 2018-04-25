@@ -38,7 +38,7 @@ Supported boards
 ================
 
 The :ref:`Autopilot Hardware Options <common-autopilots>` page provides an overview for all the supported controller boards, including
-:ref:`Pixhawk <common-pixhawk-overview>`, :ref:`Pixhawk2 <common-pixhawk2-overview>`,
+:ref:`Pixhawk <common-pixhawk-overview>`, :ref:`The Cube <common-thecube-overview>`,
 :ref:`Pixracer <common-pixracer-overview>`, :ref:`NAVIO2 <common-navio2-overview>`, :ref:`Bebop2 <parrot-bebop-autopilot>`, etc.
 
 To get going quickly please consider purchasing one of the :ref:`ready-to-fly vehicles <common-rtf>` including the very low-cost `SkyRocket/SkyViper drone <http://ardupilot.org/copter/docs/skyrocket.html>`__.

@@ -1,7 +1,7 @@
 .. _common-pixhawk2-overview:
 
 ============================
-Pixhawk 2 (TheCube) Overview
+The Cube Overview
 ============================
 
 .. image:: ../../../images/thecube/connect-to-com-port.jpg
@@ -10,7 +10,7 @@ Pixhawk 2 (TheCube) Overview
 
 System Features
 =======================
-Pixhawk2.1 'The Cube' flight controller is a further evloution of the Pixhawk flight controller. It is designed for commercial systems and manufacturers who wish to integrate flight controller into their system. On top of the existing features of Pixhawk, it has the following enhancements:
+The Cube flight controller is a further evloution of the Pixhawk flight controller. It is designed for commercial systems and manufacturers who wish to integrate flight controller into their system. On top of the existing features of Pixhawk, it has the following enhancements:
 
 -  3 sets of IMU sensors for extra redundancy
 -  2 sets of IMU are vibration-isolated by built-in pieces of foam, reducing the effect of frame vibration to state estimation
@@ -58,9 +58,9 @@ Specifications
 
 
 
-Pixhawk 2 connector pin assignments
+The Cube connector pin assignments
 =================================
-This section details the pin assignments of the standard carrier board of Pixhawk2.1. There are other types of carrier boards available, please refer to the manufacturer pages for pinouts of specific carrier board.
+This section details the pin assignments of the standard carrier board of The Cube. There are other types of carrier boards available, please refer to the manufacturer pages for pinouts of specific carrier board.
 
 .. image:: ../../../images/thecube/pixhawk2-pinout.jpg
     :target: ../_images/pixhawk2-pinout.jpg
@@ -416,14 +416,14 @@ Official retailers are listed `here  <http://www.proficnc.com/stores>`__.
 Quick Start
 ===========
 
-Use the :ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>` as a guide. PH2 update coming soon
+Use the :ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>` as a guide. The Cube update coming soon
 
 More Information
 ================
 
 see  `www.proficnc.com  <http://www.proficnc.com>`__
 
-The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/pixhawk2.1>`__, this serve as a starting point for designers to design their own system based on Pixhawk2.1 flight controller.
+The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/pixhawk2.1>`__, this serve as a starting point for designers to design their own system based on The Cube flight controller.
 
 More Images
 ===========

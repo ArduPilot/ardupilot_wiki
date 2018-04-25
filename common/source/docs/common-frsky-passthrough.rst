@@ -29,7 +29,7 @@ Common FrSky Telemetry Setup with Taranis RC transmitter running :ref:`FlightDec
 	
 	- Pixhawk
 	- Pixhawk derivatives (clones)
-	- Pixhawk 2.1
+	- The Cube
 	- PixRacer
 	- Pixhack
 	- (Linux Boards have not been tested and APM2.6 is not supported)
@@ -45,7 +45,7 @@ Common FrSky Telemetry Setup with Taranis RC transmitter running :ref:`FlightDec
 	- **X8R** (recommended for medium to large airframes)
 	- **XSR** (recommended for mini to medium airframes)
 
-* A SmartPort telemetry cable to connect the ArduPilot compatible autopilot on the FrSky SmartPort bus (Pixhawk, Pixhawk 2.1, PixRacer and Pixhack cables available from `Craft and Theory <http://www.craftandtheoryllc.com/product-category/telemetry-cables/>`__)
+* A SmartPort telemetry cable to connect the ArduPilot compatible autopilot on the FrSky SmartPort bus (Pixhawk, The Cube, PixRacer and Pixhack cables available from `Craft and Theory <http://www.craftandtheoryllc.com/product-category/telemetry-cables/>`__)
 
 .. image:: ../../../images/FrSky_Hardware3.jpg
     :target: http://www.craftandtheoryllc.com/product/package-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-x9d-x7-q-x7-qx7-telemetry-smartport-smart-port-serial/#configuration

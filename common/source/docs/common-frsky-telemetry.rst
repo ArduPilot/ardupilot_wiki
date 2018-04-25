@@ -215,7 +215,7 @@ Craft and Theory Pixhawk to FrSky Telemetry Cables
 
       Craft and Theory Pixhawk to FrSky X6R and X8R receiver cable
 
--  `The Cube to FrSky XSR Telemetry Cable <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
+-  `Cube to FrSky XSR Telemetry Cable <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
 
    .. figure:: ../../../images/FrSky_Ph2-XSR.jpg
       :target:  http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/
