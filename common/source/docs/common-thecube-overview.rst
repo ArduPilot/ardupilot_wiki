@@ -10,6 +10,7 @@ The Cube Overview
 
 System Features
 =======================
+
 The Cube flight controller is a further evolution of the Pixhawk flight controller. It is designed for commercial systems and manufacturers who wish to fully integrate a flight controller into their system. On top of the existing features of Pixhawk, it has the following enhancements:
 
 -  3 sets of IMU sensors for extra redundancy

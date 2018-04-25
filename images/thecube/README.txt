@@ -1,3 +1,3 @@
-The Cube / Pixhawk 2 image folder
+The Cube image folder
 
 Nothing less, nothing more

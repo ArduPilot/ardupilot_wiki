@@ -8,6 +8,7 @@ On larger helicopters of approximately 550-class or larger the APM, Pixhawk or
 Cube has been mounted in various locations such as on the FBL unit tray, on
 top of the tail drive case, or even on the side of the frame (very popular).
 
+
 Below is a possible method to mount a full-size flight controller on a smaller sized
 helicopter. The Pixracer is popular on smaller frames that have less mounting options.
 

@@ -74,7 +74,7 @@ After uploading, most likely no LEDs on the board will light up but it should be
 Step 6 - fill in the hwdef.dat to specify pins used for each peripheral function
 --------------------------------------------------------------------------------
 
-- read the `fmuv3 hwdef.dat file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__ (used for the Cube/Pixhawk2) to understand the full list of hardware configurations that must be specified.
+- read the `fmuv3 hwdef.dat file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__ (used for The Cube) to understand the full list of hardware configurations that must be specified.
 - start filling in the new board’s hwdef.dat file for each bus (SPI, I2C, UART, CAN, etc).  Ideally you can refer to the board’s schematic to determine how pins should be configured but if the schematic is not available a trial-and-error approach may work because on each CPU, there are a limited number of pins that can be used for each peripheral function.  See the STM*.py scripts in the `AP_HAL_ChibiOS/hwdef/scripts directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ as a guide as to what pins can be used for each peripheral function
 - as you enter new values into the hwdef.dat file you can re-compile and upload the firmware to test whether each peripheral function has begun working.
 

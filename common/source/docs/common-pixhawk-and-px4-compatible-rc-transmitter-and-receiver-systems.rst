@@ -125,13 +125,13 @@ FrSky X receivers are compatible with the FrSky Taranis and XJT transmitter modu
 
 .. warning::
 
-  Make sure to connect the S.Bus port on the X8R receiver to the **RC IN** port of the Pixhawk/Pixhawk 2.1. The S.Bus port on the Pixhawk is actually an *S.Bus out* connection!
+  Make sure to connect the S.Bus port on the X8R receiver to the **RC IN** port of the Pixhawk/Cube. The S.Bus port on the Pixhawk is actually an *S.Bus out* connection!
 
 .. figure:: ../../../images/FrSky_Ph2-X8R-FLVSS_adj.jpg
     :scale: 20 %
     :align: center
 
-    FrSky X8R receiver and FLVSS LiPo Cell Voltage Sensor (optional) connected to Pixhawk 2.1 "The Cube". Both the S.Bus connection to the RC IN and the S.Port connections are shown.
+    FrSky X8R receiver and FLVSS LiPo Cell Voltage Sensor (optional) connected to The Cube. Both the S.Bus connection to the RC IN and the S.Port connections are shown.
 
 
 

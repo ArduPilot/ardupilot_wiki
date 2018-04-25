@@ -4,11 +4,11 @@
 Building for Pixhawk on Windows with Make
 ===================================================
 
-This article shows how to build ArduPilot for Pixhawk 2, Pixhawk, PixRacer on Windows with *Make*.  These instructions assume you have already :ref:`setup the build environment <building-setup-windows>`
+This article shows how to build ArduPilot for The Cube, Pixhawk, PixRacer on Windows with *Make*.  These instructions assume you have already :ref:`setup the build environment <building-setup-windows>`
 
 .. note::
 
-   The commands for building Pixhawk are (``make px4-v2``). Building for Pixhawk2.1 is the same except ``make px4-v3`` is used. Building for Pixracer is the same except ``make px4-v4`` is used.  For the older (obsolete) PX4 use ``make px4-v1``. 
+   The commands for building Pixhawk are (``make px4-v2``). Building for The Cube is the same except ``make px4-v3`` is used. Building for Pixracer is the same except ``make px4-v4`` is used.  For the older (obsolete) PX4 use ``make px4-v1``. 
 
 Build instructions
 ==================
@@ -32,7 +32,7 @@ Build the firmware by entering one of the following commands:
 | ``make px4-v2``                      | Build the Pixhawk firmware for a     |
 |                                      | quad                                 |
 +--------------------------------------+--------------------------------------+
-| ``make px4-v3``                      | Build the Pixhawk2.1 firmware for a  |
+| ``make px4-v3``                      | Build The Cube firmware for a  |
 |                                      | quad                                 |
 +--------------------------------------+--------------------------------------+
 | ``make px4-v4``                      | Build the PixRacer firmware for quad |
