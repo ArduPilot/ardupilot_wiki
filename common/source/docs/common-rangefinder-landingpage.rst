@@ -29,6 +29,13 @@ Maxbotix Sonar and Pulsed Light LED range finders.
    Copter-3.5 (and higher) can use lidar for :ref:`object avoidance <common-rangefinder-objectavoidance>`.
 [/site]
 
+   
+.. warning::
+   
+   RNGFND_MAX_CM must be set to a tested, appropriate value.  If RNGFND_MAX_CM is set to a value
+   greater than the range of the sensor, the flight controller will not respond correctly to the 
+   data provided.
+
 Follow the links below (or in sidebar) for configuration information
 based upon your set-up.
 
