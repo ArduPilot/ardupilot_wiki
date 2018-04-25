@@ -14,6 +14,13 @@ parameter) when the sonar detects something below the vehicle.
 
 .. image:: ../images/XLMaxsonarEZ4.jpg
     :target: ../_images/XLMaxsonarEZ4.jpg
+    
+   
+.. warning::
+   
+   RNGFND_MAX_CM must be set to a tested, appropriate value.  If RNGFND_MAX_CM is set to a value
+   greater than the range of the sensor, the flight controller will not respond correctly to the 
+   data provided.
 
 Supported Sonars
 ================
