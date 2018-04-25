@@ -48,7 +48,6 @@ The Skyviper has Toy Mode set by default. Toy Mode handles the following functio
 
 More Info
 ---------
-
 .. toctree::
     :maxdepth: 1
 
