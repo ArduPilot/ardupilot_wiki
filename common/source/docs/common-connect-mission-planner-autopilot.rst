@@ -30,13 +30,15 @@ IP connections etc.
 
 .. figure:: ../../../images/pixhawk_usb_connection.jpg
    :target: ../_images/pixhawk_usb_connection.jpg
+   :width: 450px
 
    Pixhawk USB Connection
 
 .. figure:: ../../../images/new-radio-laptop.jpg
    :target: ../_images/new-radio-laptop.jpg
+   :width: 450px
 
-   Connection using SiK Radio from 3DR
+   Connection using SiK Radio
 
 On *Mission Planner*, the connection and data rate are set up using the
 drop down boxes in the upper right portion of the screen.
