@@ -23,7 +23,7 @@ within the sections) see the topics below:
 .. toctree::
     :maxdepth: 1
 
-    Install Mission Planner <common-install-mission-planner>
+    Install Ground Station software <common-install-mission-planner>
     Assembly <assembly-instructions>
     Loading Firmware <common-loading-firmware-onto-pixhawk>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
