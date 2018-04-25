@@ -10,34 +10,19 @@ performed before launching Plane.
 Ground calibration
 ==================
 
-Set your transmitter mode switch to "Manual". This is a safe mode in
+Set your transmitter mode switch to :ref:`Manual <manual-mode>`. This is a safe mode in
 which to start up the system.
 
 When you power on your board at the field, you should leave the plane
-motionless on the ground until the three colored LEDs stop flashing
-(about 30 seconds). That means that the gyros have been calibrated and
-the plane is ready to fly (assuming you also already have GPS lock).
+motionless on the ground until the :ref:`LEDs <common-leds-pixhawk>` stop flashing blue and red
+(about 30 seconds). This means that the gyros have been calibrated.
 
-After the ground start completes you should wait for GPS lock before
-flying. If you do not wait for GPS lock the home location will not be
-set correctly, and the barometric altimeter calibration will be
-incorrect. It should take less than two minutes to get lock. If you're
-using the MediaTek module, the blue LED on the module will flash while
-it's waiting for lock, then turn solid once it has it. Once that
-happens, the red LED on APM should stop flashing and turn solid. If the
-blue MediaTek LED turns solid but the red APM LED is still flashing,
-press the reset button on APM and once it reboots, the red LED should go
-solid.
+Disengage the safety switch (if present)
+========================================
 
-.. note::
+If the flight controller has a :ref:`safety switch <common-safety-switch-pixhawk>` connected, it must be disengaged before the vehicle can be :ref:`armed <arming-your-plane>`.
 
-   On the UBLOX GPS module itself the LED is off while acquiring
-   satellites and on blinking when satellites have been acquired.
-
-The PX4 must have its "Safety" mechanism disengaged before it can be
-armed.
-
--  **PX4 Safety Button LED Indications:**
+-  **Safety Switch LED Indications:**
 
    -  Fast Blinking indicates: Error Condition, Safety cannot be
       disengaged. Possibly not calibrated or sensor error.
@@ -57,25 +42,35 @@ armed.
    safety mechanism to prevent accidental disarming during flight and
    accidental arming during transportation.
 
-Setting the Home Position
-=========================
+Calibrate and check the Airspeed sensor (if present)
+====================================================
 
-.. tip::
+If the vehicle has an :ref:`airspeed sensor <airspeed>` then the :ref:`pre-flight checks described here <calibrating-an-airspeed-sensor>` should be performed before each flight.
 
-   It is very important to acquire GPS lock in order for RTL, Loiter,
-   Auto or any GPS dependent mode to work properly.
+.. image:: ../images/preflight.jpg
+    :target: ../_images/preflight.jpg
+    :width: 250px
+
+Wait for GPS lock
+=================
+
+You should wait for GPS lock before flying which is normally indicated by the flight controller's :ref:`LEDs <common-leds-pixhawk>` becoming green.
+If you do not wait for GPS lock the barometric altimeter calibration will be incorrect and :ref:`RTL <rtl-mode>`, :ref:`Loiter <loiter-mode>`, :ref:`Auto <auto-mode>` and any other GPS dependent modes will not work properly.
 
 For Plane the home position is initially established at the time the
 plane acquires its GPS lock. It is then continuously updated as long as
 the autopilot is disarmed.
 
 This means that if you execute an RTL, your plane will return to the
-location at which it armed. If the plane you arm is not a good return
-point then please setup a rally point instead. A rally point will be
+location at which it was armed. If the plane you arm is not a good return
+point then please setup a :ref:`rally point <common-rally-points>` instead. A rally point will be
 used in preference to the home location for RTL.
 
-**BEFORE EVERY FLIGHT**: Before you take off, hold your aircraft in your
-hands and switch to FBWA mode, then pitch and tilt the plane it to
+Check servo movements
+=====================
+
+**BEFORE EVERY FLIGHT**: before take off, hold the aircraft in your
+hands and switch to :ref:`FBWA <fbwa-mode>` mode, then pitch and tilt the plane it to
 confirm that the control surfaces move the correct way to return it to
 level flight. (The ailerons and elevators will move; the rudder only
 coordinates turns with the ailerons in flight, so it won't move much on
@@ -103,7 +98,7 @@ rock solid, you can tune the gains by following the
 instructions \ :ref:`here <common-tuning>`.
 
 If you have not tuned your PID gains then you may like to consider doing
-the first takeoff in AUTOTUNE mode. That will start the tuning process
+the first takeoff in :ref:`AUTOTUNE <autotune-mode>` mode. That will start the tuning process
 as soon as you takeoff.
 
 Second flight
@@ -112,14 +107,13 @@ Second flight
 For your second flight, change the third mode (position 3 of your RC
 mode switch) to RTL in the Mission Planner's \ :ref:`mode setup page <common-rc-transmitter-flight-mode-configuration>`.
 
-This will test navigation. The aircraft should return to the location at which it armed (or the nearest Rally point) and orbit
+Once in the air switch the vehicle into RTL.  This will test navigation. The aircraft should return to the location at which it armed (or the nearest Rally point) and orbit
 at a fixed altitude (which can be set with the \ :ref:`Mission Planner <common-install-mission-planner>`).
 
 If it does not return crisply and circle overhead in a near-perfect
 circle, you need to tune the autopilot a bit for your particular
 airframe. This can usually be done by adjusting the Roll parameters, as
-described
-:ref:`here <roll-pitch-controller-tuning>`.
+described :ref:`here <roll-pitch-controller-tuning>`.
 
 Once all this has checked out, you can program waypoint missions and
 test them in Auto mode.

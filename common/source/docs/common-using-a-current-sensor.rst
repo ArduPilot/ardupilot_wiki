@@ -10,8 +10,8 @@ current and voltages.
 Overview
 ========
 
-In general it is best to power your Pixhawk, APM 2.5, 2.6, or PX4 with
-the :ref:`3DR power module <common-3dr-power-module>`\ because it provides
+In general it is best to power your Flight Controller with
+the :ref:`Power Module <common-3dr-power-module>`\  because it provides
 solid 5V power and also allows you to read current and voltage. But for
 cases where you need to measure over 18V (i.e. over 4S batteries) or
 current over 90A, you should use the 

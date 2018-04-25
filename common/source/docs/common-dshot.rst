@@ -18,7 +18,7 @@ Detailed descriptions of these features are lower down on this page.
 
 .. warning::
 
-   As of April 2018 these features are currently only available with Copter-3.6 and Plane-3.9 using the ChibiOS firmware for STM32 based flight boards, and not yet a stable release.
+   As of April 2018 these features are currently only available with Copter-3.6, Plane-3.9, Rover-3.3 (or higher) using the ChibiOS firmware for STM32 based flight boards, and not yet in a stable release.
    Please join the http://gitter.im/ArduPilot/ChibiOS gitter channel for up to date information on these builds.
    Only try DShot on ESCs that are known to support it or you will get unpredictable results.
 
@@ -41,8 +41,8 @@ Connecting and Configuring
     :target: ../_images/dshot-pixhawk.jpg
     :width: 600px
 
-For :ref:`Pixhawk <common-pixhawk-overview>` and :ref:`The Cube <common-thecube-overview>` boards the ESC's ground and signal wire should be connected to the AUX OUT ports.
-For :ref:`Pixracer <common-pixracer-overview>` and :ref:`other boards <common-autopilots>` the normal outputs can be used.
+For :ref:`Pixhawk <common-pixhawk-overview>`, :ref:`The Cube <common-thecube-overview>` and related boards with IO co-processors, the ESC's ground and signal wire should be connected to the AUX OUT ports.
+For :ref:`Pixracer <common-pixracer-overview>` and :ref:`other boards <common-autopilots>` with all PWM outputs coming from the main processor, the normal outputs can be used.
 
 Connect all ESC's telemetry wires to a single Telemetry RX pin on the flight board (above diagram uses Serial5).
 

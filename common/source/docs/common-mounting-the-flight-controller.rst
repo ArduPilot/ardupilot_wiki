@@ -39,7 +39,7 @@ come with foam cubes made by `3M <http://www.3m.com/>`__).
 Alternative orientations
 ========================
 
-If the standard orientation of the Pixhawk/APM2 is not convenient, it
+If the standard orientation of the Flight Controller is not convenient, it
 can be mounted in over 30 other possible orientations.  The full list of
 possible orientations can be seen and set through the Mission Planner
 **Config/Tuning \| Advanced Params** screen, look for the

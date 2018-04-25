@@ -154,9 +154,21 @@ Corporate Partners
     :width: 250px
     :target:  http://ttrobotix.com/
 
+.. image:: ../../../images/supporters/supporters_logo_novaerial.png
+    :width: 250px
+    :target:  https://novaerial.com/
+
+.. image:: ../../../images/supporters/supporters_logo_airsupplyaerial.png
+    :width: 250px
+    :target:  https://www.airsupplyaerial.net/
+
 .. image:: ../../../images/supporters/supporters_logo_terraplane.png
     :width: 250px
     :target:  https://www.terraplanellc.com/
+
+.. image:: ../../../images/supporters/supporters_logo_irlock.jpg
+    :width: 250px
+    :target:  https://irlock.com/
 
 How does my company become a partner?
 ===============================================

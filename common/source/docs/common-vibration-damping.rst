@@ -16,10 +16,10 @@ and isolating the Flight Control Boards.
 Overview
 ========
 
-The Pixhawk, APM2.x and PX4 Flight Control boards have accelerometers
+Flight Control boards have accelerometers
 built into the board that are sensitive to vibrations. ArduPilot (the
 firmware) combines the data from these accelerometers with barometer and
-GPS data to calculate an estimate of it’s position. With excessive
+GPS data to calculate an estimate of its position. With excessive
 vibrations, the estimate can be thrown off and lead to very bad
 performance in modes that rely on accurate positioning (e.g. on Copter:
 AltHold, Loiter, RTL, Guided, Position and AUTO flight modes).

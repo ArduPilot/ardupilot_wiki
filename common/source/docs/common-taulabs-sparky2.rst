@@ -52,3 +52,15 @@ Where to Buy
 
 - Available from many retailers including `HobbyKing <https://hobbyking.com/en_us/taulabs-sparky-2-0-32bit-flight-controller.html>`__
 
+Videos
+======
+
+..  youtube:: 3esk1lnw3SI
+    :width: 100%
+
+*first flight of ardupilot on Sparky2*
+
+..  youtube:: WGLc7jNqAyE
+    :width: 100%
+
+*2nd flight using PosHold, RTL*

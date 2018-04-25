@@ -1,8 +1,8 @@
 .. _common-loading-firmware-onto-pixhawk:
 
-===========================================
-Loading Firmware onto the flight controller
-===========================================
+================
+Loading Firmware
+================
 
 These instructions will show you how to download the latest firmware onto the flight controller using the Mission Planner ground station.
 
@@ -11,22 +11,23 @@ These instructions will show you how to download the latest firmware onto the fl
 Connect flight controller to computer
 =====================================
 
-Once you've :ref:`installed the Mission Planner <common-install-mission-planner>` onto your computer, connect
-the autopilot board to your computer using the micro USB cable as shown
+Once you've :ref:`installed a ground station <common-install-mission-planner>` on your computer, connect
+the flight controller using the micro USB cable as shown
 below. Use a direct USB port on your computer (not a USB hub).
 
 .. figure:: ../../../images/pixhawk_usb_connection.jpg
    :target: ../_images/pixhawk_usb_connection.jpg
+   :width: 450px
 
    Pixhawk USB Connection
 
 Windows should automatically detect and install the correct driver
 software.
 
-Connect to Mission Planner
-==========================
+Select the COM port
+===================
 
-Open the *Mission Planner* and select the COM port drop-down on the
+If using the *Mission Planner* select the COM port drop-down on the
 upper-right corner of the screen (near the **Connect** button).  Select
 **AUTO** or the specific port for your board (**PX4 FMU** or **Arduino
 Mega 2560**). Set the Baud rate to **115200** as shown. Don't hit
@@ -50,7 +51,7 @@ Answer **Yes** when it asks you "Are you sure?".
 
    Mission Planner: Install FirmwareScreen
 
-After the Mission Planner detects which board you are using (i.e.
+After the GCS detects which board you are using (i.e.
 Pixhawk) it will ask you to unplug the board, plug it back in and then
 press **OK** within a few seconds (during this brief period the
 bootloader accepts requests to upload new firmware).

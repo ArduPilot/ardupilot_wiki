@@ -13,10 +13,6 @@ The `Lightware SF40c 360degree lidar <http://www.lightware.co.za/shop/en/scannin
 ..  youtube:: BDBSpR1Dw_8
     :width: 100%
 
-.. note::
-
-   The video shows firmware which was modified to ignore the vehicle's legs.  This feature is not included in AC3.4 but will be present in a future version.
-
 Mounting the SF40c
 ==================
 

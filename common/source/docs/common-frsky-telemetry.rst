@@ -180,7 +180,7 @@ Telemetry capable FrSky receivers
 
 .. tip::
 
-  SBUS signal output is highly recommended as it features 16 RC channels and can be directly plugged into the flight controller (e.g., RCIN on Pixhawk)
+  SBUS signal output is highly recommended as it features 16 RC channels and can be directly plugged into the flight controller (e.g., RCIN on Pixhawk/Cube)
 
 .. _frsky_cables:
 
