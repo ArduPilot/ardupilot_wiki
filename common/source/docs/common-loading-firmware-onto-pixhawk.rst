@@ -6,6 +6,10 @@ Loading Firmware
 
 These instructions will show you how to download the latest firmware onto the flight controller using the Mission Planner ground station.
 
+.. note::
+
+   For beta testers of ArduPilot using ChibiOS see instructions :ref:`here <common-loading-chibios-firmware-onto-pixhawk>`.
+
 [copywiki destination="copter,plane,rover,planner"]
 
 Connect flight controller to computer
@@ -35,9 +39,6 @@ Mega 2560**). Set the Baud rate to **115200** as shown. Don't hit
 
 .. image:: ../../../images/Pixhawk_ConnectWithMP.png
     :target: ../_images/Pixhawk_ConnectWithMP.png
-
-.. image:: ../../../images/connect-to-com-port.png
-    :target: ../_images/connect-to-com-port.png
 
 Install firmware
 ================
