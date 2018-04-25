@@ -18,6 +18,12 @@ Additional information on the similar :ref:`analog version of this sonar can be 
 
    This rangefinder is only supported on the Pixhawk running AC3.2 or
    higher or recent versions of Plane and Rover.
+   
+.. warning::
+   
+   RNGFND_MAX_CM must be set to a tested, appropriate value.  If RNGFND_MAX_CM is set to a value
+   greater than the range of the sensor, the flight controller will not respond correctly to the 
+   data provided.
 
 Connecting to the Pixhawk
 =========================
