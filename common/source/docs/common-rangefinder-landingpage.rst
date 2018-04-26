@@ -54,8 +54,8 @@ based upon your set-up.
     Leddar One Lidar <common-leddar-one-lidar>
     LIDAR-Lite <common-rangefinder-lidarlite>
     RPLidar A2 360 degree laser scanner <common-rplidar-a2>
-    ST VL53L0X I2C LiDAR <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>
-    
+    ST VL53L0X Lidar <common-vl53l0x-lidar>
+
 [site wiki="copter"]
     Analog Sonar (AC3.1) <sonar>
 [/site]
