@@ -35,12 +35,12 @@ The radios can be either 915Mhz or 433Mhz and you should purchase the
 model which is :ref:`appropriate for your country/region <common-telemetry-radio-regional-regulations>`.
 
 As the platform is open source, implementation can be purchased from
-many different sources, including:
+many different sources, including ArduPilot Partners:
 
 -  `jD-SiK Telemetry Set <http://store.jdrones.com/jD_SiK_Radio_Telemetry_radio_p/rfsik20set900.htm>`__ (jDrones)
 -  `mRo SiK Telemetry Radio <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-sikv2>`__ (mRobotics)
--  `HKPilot Transceiver Telemetry Radio Set V2 (915Mhz) <http://www.hobbyking.com/hobbyking/store/__55560__HKPilot_Transceiver_Telemetry_Radio_Set_V2_915Mhz_.html>`__
-   (Hobby King)
+-  `CUAV Transceiver Telemetry Radio Set (433Mhz) <https://store.cuav.net/index.php?id_product=34&id_product_attribute=0&rewrite=500mw-433mhz-3dr-wireless-tx-rx-dual-ttl-telemetry-for-mini-pixhawk-apm-pro-flight-control&controller=product&id_lang=3>`__ (CUAV)
+-  `VirtualRobotix Telemetry Set <http://www.virtualrobotix.it/index.php/en/shop/telemetria>`__ (VirtualRobotix)
 
 .. tip::
 
@@ -109,9 +109,8 @@ and ground stations.
 Connecting to Pixhawk
 ---------------------
 
-Use the `6 pin DF13 connector <http://www.unmannedtechshop.co.uk/df13-6-position-to-5-position-connector-15-cm/>`__
-that should have come with the radio to connect the radio to your
-Pixhawk's "Telem 1" ("Telem 2" or "Serial 4/5" can also be used but the
+Use the `6 pin DF13 connector that should have come with the radio to connect the 
+radio to your Pixhawk's "Telem 1" ("Telem 2" or "Serial 4/5" can also be used but the
 default recommendation is "Telem1").
 
 .. image:: ../../../images/Telemetry_3DR_Radio_Pixhawk.jpg
@@ -120,9 +119,8 @@ default recommendation is "Telem1").
 Connecting to APM2.x
 --------------------
 
-Use the `6-to-5 pin DF13 <http://www.unmannedtechshop.co.uk/df13-6-position-to-5-position-connector-15-cm/>`__
-connector to connect the radio to your APM2's Telem port. Because of the
-limited number of serial ports on the APM2.x, the telemetry radio cannot
+Use the `6-to-5 pin DF13 connector to connect the radio to your APM2's Telem port
+Because of the limited number of serial ports on the APM2.x, the telemetry radio cannot
 be used while the board is also plugged in with the micro USB port.
 
 .. image:: ../../../images/Telemetry_3DR_Radio_APM2.jpg
