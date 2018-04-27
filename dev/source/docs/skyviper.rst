@@ -82,6 +82,23 @@ Place a copy of ``arducopter.abin`` in the root directory of the SD card - but c
 
 Rebooting will cause the Sonix board to flash the Flight Controller before the STM32 leaves the bootloader.
 
+
+Sonix board Recovery using the SD card
+--------------------------------------------
+
+In the rare event you may need to recover Sonix board using the SD card at the boot time.
+
+Place a copy of FIRMWARE_660R_F.bin in the root directory of the SD card.
+
+Rebooting with Sonix board bootloader pin pulled down will cause the Sonix board load firmware from SD card.
+Sonix board bootloader pad is marked as TP4 next to Sonix chip. Need to remove metal shield to reach.
+
+ - Temporarily solder thin wire to SD card slot metal part (GND).
+ - Copy FIRMWARE_660R_F.bin to the root of SD card.
+ - Connect battery while the other end of wire touching the pad.
+If this boot process goes well, firmware file should be erased.
+
+
 Developing the Sonix Firmware
 =============================
 
