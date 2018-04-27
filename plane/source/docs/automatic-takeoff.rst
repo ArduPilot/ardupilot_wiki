@@ -223,3 +223,7 @@ aircraft reaches a ground speed of :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` me
 This provides a convenient way to test auto takeoff in FBWA mode, and
 also is a nice way to get better ground steering in FBWA mode in
 general.
+
+Auto Takeoff and crash detection
+================================
+When using TKOFF_THR_MINACC >0 for hand launches, the  :ref:`CRASH_DETECT <CRASH_DETECT>` (=1) will immediately disable the motor thinking it was a failed bungee/catapult launch. Adding an option of (=2) would offer a longer delay (10s?) so that you can shake to enable the motor and still have plenty of time to hand launch before it thinks something is wrong and disarms.
