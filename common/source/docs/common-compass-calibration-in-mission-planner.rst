@@ -63,7 +63,7 @@ If calibration fails:
 - if, after multiple attempts, you are unable to calibrate the compass, Press the "Cancel" button and change the "Fitness" drop-down to a more relaxed setting and try again.
 - if compass calibration still fails it may help to raise :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>` from 850 to 2000 or even 3000
 
-Onbord Calibration using Stick Gestures (no GCS)
+Onboard Calibration using Stick Gestures (no GCS)
 ================================================
 Copter-3.4 (and higher) supports "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the flight controller with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
 
