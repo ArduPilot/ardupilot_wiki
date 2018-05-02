@@ -91,14 +91,3 @@ You should now be able to start the "Ubuntu" application from your Windows Start
     
     For network connected flight controllers, such as linux targets, --upload does function as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__
 
-.. tip::
-
-   if you want to unhide Ubuntu system folder on Windows, open a command prompt as administrator,
-   navigate to Ubuntu system path (C:\\Users\\username\\AppData\\Local) and change the folder attributes. So (where "username" is your user name):
-   
-   .. code-block:: python
-   
-       cd C:\Users\username\AppData\Local
-       attrib -s -h lxss
-       
-   You can make a direct access to "lxss" folder on your desktop for a quick navigation.
