@@ -7,7 +7,7 @@ EKF2 Estimation System
 **What is the EKF2 Estimation System?**
 ---------------------------------------
 
-It is a 24 state extended Kalman filter in the AP_NavEKF2 library that
+It is a 22 state extended Kalman filter in the AP_NavEKF2 library that
 estimates the following states
 
 -  Attitude (Quaternions)
