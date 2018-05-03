@@ -51,7 +51,7 @@ The reason for the failure can be seen by connecting the flight controller to
 a ground station (using telemetry or a USB cable), after attempting to arm
 the reason should be displayed on the HUD in red letters.
 
-A more complete list of failures can be found on the :ref:`Copter wiki <http://ardupilot.org/copter/docs/prearm_safety_check.html>`__
+A more complete list of failures can be found on the `Copter wiki <http://ardupilot.org/copter/docs/prearm_safety_check.html>`__
 but some common of the Rover specific checks are listed below:
 
 -  Safety switch. The safety switch must be set to the off
