@@ -1,8 +1,8 @@
 .. _building-setup-windows:
 
-=========================================
+==========================================
 Setting up the Build Environment (Windows)
-=========================================
+==========================================
 
 #. Install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/PX4-tools/pixhawk_toolchain_installer_latest.exe>`__
 
