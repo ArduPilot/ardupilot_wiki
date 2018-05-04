@@ -124,7 +124,7 @@ Dev Tools (Buzz)
 - code coverage analyser
 
 Other (Randy / Peter / Tridge / MichaelDB)
-------------------------------
+------------------------------------------
 
 - AP_Telemetry library to include json, mavlink, frsky protocols
 - two stage failsafe for Plane, Copter, Rover, Sub

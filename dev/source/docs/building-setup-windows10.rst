@@ -40,8 +40,10 @@ Setup steps
     - cd to the directory you :ref:`cloned <git-clone>` ardupilot into.  This will be the same as the windows path but with a ``/mnt/`` prefix, the colon (":") removed from the drive letter, and all backslashes converted to forward slashes.  For example if ardupilot was cloned to ``C:\Users\rmackay9\Documents\GitHub\ardupilot`` you would type ``cd /mnt/c/Users/rmackay9/Documents/GitHub/ardupilot``
     - cd to the Tools/scripts directory ``cd Tools/scripts``
     - run the script ``./install-prereqs-ubuntu.sh``.  You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" when it asks if you wish to install a package.
+
     .. image:: ../images/build-on-windows10-prereqs.png
        :target: ../_images/build-on-windows10-prereqs.png
+
     - if you see a message, "not a valid git repository" this means the version of git on your Windows machine is different from the version on the Ubuntu subsystem.  You may need to remove the modules directory using ``rm -rf modules/*`` and :ref:`install a newer version of git <git-install>` in one of the two environments.  The git version can be checked by typing ``git --version``.
 
 #. remove the /opt/gcc-arm-none-eabi directory:

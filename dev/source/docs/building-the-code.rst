@@ -71,9 +71,7 @@ Links to all build pages
     Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>
     Setup the Build Environment on MacOSX <building-setup-mac>
     Building for Pixhawk on Windows with Make <building-px4-with-make>
-    Building for Pixhawk on Mac with Make <building-px4-with-make-on-mac>
-    Building for Pixhawk on Linux with make <building-px4-for-linux-with-make>
-    Building for NAVIO2 on RPi3 <building-for-navio2-on-rpi3>    
+    Building for NAVIO2 on RPi3 <building-for-navio2-on-rpi3>
     Building for Erle-Brain 2 <building-for-erle-brain-2>
     Building for Erle-Brain <building-for-erle-brain>
     Building for Bebop 2 <building-for-bebop-2>

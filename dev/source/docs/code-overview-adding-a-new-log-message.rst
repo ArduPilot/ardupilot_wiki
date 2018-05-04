@@ -41,7 +41,7 @@ An example of the top function being used can be found in `Compass_learn.cpp <ht
 - the remaining arguments are the actual values that will be logged.
   You may notice in the example above, some fields have a format of float ("f") but are cast to ``(double)`` this is correct and necessary to avoid a compiler warning.
 
-The 2nd Log_Write function is the same as the first except that it accepts two additonal string arguments,
+The 2nd Log_Write function is the same as the first except that it accepts two additional string arguments,
 `"units" <https://github.com/ArduPilot/ardupilot/blob/master/libraries/DataFlash/LogStructure.h#L74>`__ and
 `"mults" <https://github.com/ArduPilot/ardupilot/blob/master/libraries/DataFlash/LogStructure.h#L115>`__.
 Similar to the "format" argument, each character in these arguments specifies the
@@ -98,4 +98,5 @@ For commonly used messages, especially those which are output at a relatively hi
            };
            DataFlash.WriteBlock(&pkt, sizeof(pkt));
        }
+
 - call this new function from the :ref:`scheduler <code-overview-scheduling-your-new-code-to-run-intermittently>` or from some other place in the code at the moment you wish to log the values

@@ -13,8 +13,10 @@ the git command line, gitk and git-gui tools are the basics that all users shoul
 
 - download and install from `git-scm.com's download page <http://git-scm.com/downloads>`__
 - Linux/Ubuntu users can install with apt
+
  - ``sudo apt-get update``
  - ``sudo apt-get install git``
+
 - Windows users can install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/PX4-tools/pixhawk_toolchain_installer_latest.exe>`__
 
 Recommended GUI Tools

@@ -18,13 +18,13 @@ Step 1 - getting started
 - determine the crystal frequency (normally 8Mhz or 24Mhz).  refer to the schematic or read the writing on the crystal which is normally a small silver square.
 
 Step 2 - create a hwdef.dat file for the board
-------
+----------------------------------------------
 
 - make a subdir in `libraries/AP_HAL_ChibiOS/hwdef <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ for your board (i.e. “new-board”).  This directory name will eventually be used during the build process (i.e. “waf configure --board new-board”) so keep the name relatively short.
 - copy/rename an existing template hwdef.dat that is similar to the CPU for your board into the directory created above.  For example, if the board has a STMF40x chip copy the `f405-min/hwdef.dat <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/f405-min>`__ file into the new directory.
 
 Step 3 - configure and build a minimal firmware for the board
-------
+-------------------------------------------------------------
 
 Follow the :ref:`Building the code <building-the-code>` instructions or take a shortcut and read the `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ file which includes doing the following:
 
@@ -35,7 +35,7 @@ Follow the :ref:`Building the code <building-the-code>` instructions or take a s
 If successful the build should produce an .apj file in build/new-board/bin/arducopter.apj
 
 Step 4 - upload an ArduPilot compatible bootloader to the board
-------
+---------------------------------------------------------------
 
 Some boards come with a bootloader pre-installed while others rely on the board manufacturer to use `dfu <http://dfu-util.sourceforge.net/>`__ to install the firmware to the board.  In either case, in order to conveniently load ArduPilot to the board over USB, an ArduPilot compatible bootloader must be uploaded to the board using `dfu <http://dfu-util.sourceforge.net/>`__. "dfu" can be downloaded from `here <http://dfu-util.sourceforge.net/>`__.
 

@@ -71,6 +71,7 @@ The rebase step (step 5) above may fail for a few reasons:
 
 - there are uncomitted changes to files in your local repo's branch.  Stage and commit these changes and then try again.
 - there are merge conflicts meaning that another developer has changed the same lines of code as your new commits have changed.  There are two choices
+
  - abort the rebase which will restore your branch to how it was before you began the rebase, ``git rebase --abort``.  If you are happy to throw away your new commits in your local repo's branch you can "reset" your branch so that it looks exactly like upstream master using ``git reset --hard upstream/master``.
  - user a merge tool like `TortoiseGit <https://tortoisegit.org/>`__ to resolve the mergeconflict and then continue with the rebase using ``git rebase --continue``
 
