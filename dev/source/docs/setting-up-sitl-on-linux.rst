@@ -5,7 +5,7 @@ Setting up SITL on Linux
 ========================
 
 This page describes how to setup the :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` on Linux. The specific
-commands were tested on Ubuntu 12.10, 13.04 and 14.10.
+commands were tested on Ubuntu from 12.10 to 16.04.
 
 Overview
 ========
@@ -46,14 +46,11 @@ terminal and run:
 Install some required packages
 ------------------------------
 
-If you are on a debian based system (such as Ubuntu or Mint) then run
-this:
+If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/scripts/install-prereqs-ubuntu.sh>`__ that will do it for you :
 
-::
-
-    sudo apt-get install python-matplotlib python-serial python-wxgtk3.0 python-wxtools python-lxml
-    sudo apt-get install python-scipy python-opencv ccache gawk git python-pip python-pexpect
-    sudo pip install future pymavlink MAVProxy
+    - cd to the directory you :ref:`cloned <git-clone>` ardupilot into.
+    - cd to the Tools/scripts directory ``cd Tools/scripts``
+    - run the script ``./install-prereqs-ubuntu.sh``.  You will be asked for your Ubuntu root password.  Respond with "Y" when it asks if you wish to install a package.
 
 Or if you are on a RPM based system (such as Fedora) run this:
 
@@ -61,8 +58,12 @@ Or if you are on a RPM based system (such as Fedora) run this:
 
     yum install opencv-python wxPython python-pip pyserial scipy python-lxml python-matplotlib python-pexpect python-matplotlib-wx
 
-Add some directories to your search path
-----------------------------------------
+Add some directories to your search path (Facultative)
+------------------------------------------------------
+
+.. note::
+
+    ONLY if you didn't run the install-prereqs script from previous step.
 
 Add the following lines to the end of your ".bashrc" in your home
 directory (notice the . on the start of that filename. Also, this is a
@@ -84,11 +85,11 @@ Start SITL simulator
 --------------------
 
 To start the simulator first change directory to the vehicle directory.
-For example, for the fixed-wing code change to **ardupilot/ArduPlane**:
+For example, for the multicopter code change to **ardupilot/ArduCopter**:
 
 ::
 
-   cd ardupilot/ArduPlane
+   cd ardupilot/ArduCopter
 
 Then start the simulator using **sim_vehicle.py**. The first time you
 run it you should use the -w option to wipe the virtual EEPROM and load
@@ -103,7 +104,7 @@ normally.  First kill the sim_vehicle.py you are running using Ctrl-C.  Then:
 
 ::
 
-    sim_vehicle.py --console --map --aircraft test
+    sim_vehicle.py --console --map
 
 .. tip::
 
@@ -112,6 +113,15 @@ normally.  First kill the sim_vehicle.py you are running using Ctrl-C.  Then:
    through to choosing the initial vehicle location. These can be listed by
    calling it with the ``-h`` flag (and some are demonstrated in :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>`).
 
+.. tip::
+
+   If the map titles don't load, you can temporary change the map provider in the map window by clicking View/Service.
+   To keep the new map service between launch, add the following lines to the end of your ".bashrc" (change MicrosoftHyb by the provider you want):
+
+   ::
+
+     export MAP_SERVICE="MicrosoftHyb"
+
 Load a mission
 --------------
 
@@ -119,17 +129,18 @@ Let's also load a test mission.  From within MAVProxy type:
 
 ::
 
-    wp load ../Tools/autotest/ArduPlane-Missions/CMAC-toff-loop.txt
+    wp load ../Tools/autotest/copter_mission.txt
 
-CMAC-toff-loop.txt contains a mission which flies in a loop around my local flying field.
+copter_mission.txt contains a mission which flies in a loop around CMAC flying field in Australia.
 Now let's takeoff!
 
-Run the command "arm throttle" followed by "mode auto"
+Run the command "arm throttle" followed by "mode auto" and put some throttle on the simulated radio to trigger the takeoff.
 
 ::
 
     arm throttle
     mode auto
+    rc 3 1500
 
 Your virtual aircraft should now takeoff.
 
