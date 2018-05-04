@@ -17,6 +17,15 @@ The path used to return home is captured in a buffer as the vehicle flies around
 
 SmartRTL saves points at a maximum of 3 per second, but only if the vehicle has moved at least :ref:`SRTL_ACCURACY <SRTL_ACCURACY>` meters from the previous point. So for example, if the vehicle was moving at 10m/s it would save the points at 3.3m intervals. After 50 points are saved it goes back and simplifies them into lines again using that :ref:`SRTL_ACCURACY <SRTL_ACCURACY>`. It will replace a string of points with just two end points if all the intermediate points are no more than :ref:`SRTL_ACCURACY <SRTL_ACCURACY>` from the line between the end points. This is how it manages to create a smart path home without flying unecessary maneuvers.
 
+There are multiple ways that the vehicle can mode switch into SmartRTL. Either through user selected, or through failsafe selections. 
+
+The user may manually switch into and out of SmartRTL by commanding straight into the Flight Mode with MAVLink, or setting it to any Channel (7-12).
+
+The :ref:`FS_GCS_ENABLE <FS_GCS_ENABLE>` and :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` parameters set to 4 or 5 will already switch to SmartRTL->Land or SmartRTL->Land based on whether the correct conditions allows the mode. The setting indicates that it will try SmartRTL first, then downgrade to RTL (4) or Land (5)
+
+Additional Failsafes that may be set to switch to SmartRTL are: :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>`, :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>`, :ref:`BATT2_FS_LOW_ACT <BATT2_FS_LOW_ACT>`, and :ref:`BATT2_FS_CRT_ACT <BATT2_FS_CRT_ACT>`.
+
+
 ..  youtube:: gXfBmFn_JEU
     :width: 100%
 
