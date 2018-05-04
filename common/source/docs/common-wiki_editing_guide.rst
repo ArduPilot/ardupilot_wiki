@@ -5,6 +5,37 @@
 Wiki Editing Guide
 ==================
 
+Wiki Infrastructure
+===================
+
+.. tip::
+
+    Most of this information is provided for interest only.  All you really need to know is that 
+    you can use Vagrant to quickly set up a zero-configuration development environment, and then call 
+    ``python update.py`` to make a build. If you are working on a common topic, then create it in 
+    **/common/source/docs** with the filename prefix **common-**.
+
+The wiki is built using the static site generator `Sphinx <http://www.sphinx-doc.org/en/stable/>`__ 
+from source written in `reStructured Text markup <http://www.sphinx-doc.org/en/stable/rest.html>`__ 
+and hosted on `Github here <https://github.com/ArduPilot/ardupilot_wiki>`__. 
+
+Each wiki has a separate folder in the repository (e.g. '/copter', '/plane') containing it's own source 
+and configuration files (**conf.py**). Common files that are shared between the wikis are named with the 
+prefix **common-** and stored in the **/common/source/docs/** directory. Images that are specific to a 
+particular wiki are stored in an /images/ subfolder for the wiki (e.g. **copter/images/**) while 
+images are shared between all wikis and are stored in the "root" **/images** directory.
+Common configuration information for the Wiki Sphinx build is stored in **/common_conf.py**.
+
+The **update.py** build script copies the common topics into specified (in source) target wikis directories 
+and then build them.
+
+The **Vagrantfile** can be used by Vagrant to set up a local build environment independent of your host system.
+This allows you to edit the source in your host computer but manage the build inside Vagrant. You can also
+manually set up a build environment (just inspect the Vagrantfile for dependencies).
+
+The wikis use a `common theme <https://github.com/ArduPilot/sphinx_rtd_theme#read-the-docs-sphinx-theme>`__
+that provides the top menu bar. 
+
 All members of the community are welcome to join and contribute to this
 wiki! Any help you can offer is appreciated — from creating new articles
 and re-validating older articles, through to fixing broken links and
@@ -322,36 +353,7 @@ syntax highlighting and basic on-the-fly rendering in a single application.
     Although the tool is Python based, don't try it on Windows as it very prone to crashes (this is 
     also stated by the website).
 
-Wiki Infrastructure
-===================
 
-.. tip::
-
-    Most of this information is provided for interest only.  All you really need to know is that 
-    you can use Vagrant to quickly set up a zero-configuration development environment, and then call 
-    ``python update.py`` to make a build. If you are working on a common topic, then create it in 
-    **/common/source/docs** with the filename prefix **common-**.
-
-The wiki is built using the static site generator `Sphinx <http://www.sphinx-doc.org/en/stable/>`__ 
-from source written in `reStructured Text markup <http://www.sphinx-doc.org/en/stable/rest.html>`__ 
-and hosted on `Github here <https://github.com/ArduPilot/ardupilot_wiki>`__. 
-
-Each wiki has a separate folder in the repository (e.g. '/copter', '/plane') containing it's own source 
-and configuration files (**conf.py**). Common files that are shared between the wikis are named with the 
-prefix **common-** and stored in the **/common/source/docs/** directory. Images that are specific to a 
-particular wiki are stored in an /images/ subfolder for the wiki (e.g. **copter/images/**) while 
-images are shared between all wikis and are stored in the "root" **/images** directory.
-Common configuration information for the Wiki Sphinx build is stored in **/common_conf.py**.
-
-The **update.py** build script copies the common topics into specified (in source) target wikis directories 
-and then build them.
-
-The **Vagrantfile** can be used by Vagrant to set up a local build environment independent of your host system.
-This allows you to edit the source in your host computer but manage the build inside Vagrant. You can also
-manually set up a build environment (just inspect the Vagrantfile for dependencies).
-
-The wikis use a `common theme <https://github.com/ArduPilot/sphinx_rtd_theme#read-the-docs-sphinx-theme>`__
-that provides the top menu bar. 
 
 
    
