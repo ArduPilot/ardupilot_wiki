@@ -46,7 +46,7 @@ Specifications
   
 Flashing a Beta Firmware
 ========================
-Official support for the Revo Mini will be released in Copter 3.6, but in the meantime you can try a release canidate firmware on the board. Flashing a release canidate firmware is only possible in Mission Planner at the moment.
+Official support for the Revo Mini will be released in Copter 3.6, but in the meantime you can try a release candidate firmware on the board. Flashing a release candidate firmware is only possible in Mission Planner at the moment.
 
 Compile ArduPilot
 -----------------
