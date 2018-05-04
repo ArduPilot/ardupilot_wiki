@@ -39,7 +39,7 @@ For example, to start Copter in *Ballarat* (a named location in
 ::
 
     cd ArduCopter 
-    sim_vehicle.py -j4 -L Ballarat --console --map
+    sim_vehicle.py -L Ballarat --console --map
 
 .. note::
 
@@ -375,7 +375,7 @@ Testing Compass Calibration
 A quick way to test compass calibration in SITL is with the
 "calibration" vehicle model. To use this with plane do this:
 
-   sim_vehicle.py -j4 -D -f plane --model calibration --console --map
+   sim_vehicle.py -D -f plane --model calibration --console --map
 
 then do:
 
