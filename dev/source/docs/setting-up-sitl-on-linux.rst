@@ -234,7 +234,7 @@ The main steps (tested on Ubuntu Linux 14.04 LTS) are:
 
    ::
 
-       sim_vehicle.py -j4 -L KSFO 
+       sim_vehicle.py -L KSFO
 
    .. note::
 

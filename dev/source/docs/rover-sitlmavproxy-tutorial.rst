@@ -43,7 +43,7 @@ using the ``--map`` and ``--console`` options:
 ::
 
     cd ~/ardupilot/APMrover2
-    sim_vehicle.py -j4 --map --console
+    sim_vehicle.py --map --console
 
 Arrange the *MAVProxy Command Prompt*, *Console* and *Map* conveniently
 so you can observe the status and send commands at the same time.

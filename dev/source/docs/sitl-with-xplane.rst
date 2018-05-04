@@ -176,7 +176,7 @@ create a PT60 directory::
  $ cd ArduPlane
  $ mkdir PT60
  $ cd PT60
- $ sim_vehicle.py -j4 -D -f xplane --console --map
+ $ sim_vehicle.py -D -f xplane --console --map
 
 
 Flying a Helicopter

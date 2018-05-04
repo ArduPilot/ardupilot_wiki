@@ -161,7 +161,7 @@ The file will be loaded next time you open the *Cygwin terminal*.
 
    Cygwin will not be able to find **sim_vehicle.py** if you omit
    this step. This will be reported as a "command not found" error when you
-   try and build: ``sim_vehicle.py -j4 --map``
+   try and build: ``sim_vehicle.py --map``
 
 Install required Python packages
 --------------------------------
@@ -251,7 +251,7 @@ The main steps are:
 
    ::
 
-       sim_vehicle.py -j4 -L KSFO
+       sim_vehicle.py -L KSFO
 
    .. note::
 
@@ -295,7 +295,7 @@ build and start SITL for a 4-core CPU and then launch a *MAVProxy map*:
    ::
 
        cd ~/ardupilot/ArduCopter
-       sim_vehicle.py -j4 --map --console
+       sim_vehicle.py --map --console
 
    If you get a windows security alert for the the firewall, allow the
    connection.
