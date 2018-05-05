@@ -35,7 +35,7 @@ We recommend choosing one that has the telemetry wire pre-soldered (see blue wir
 *image courtesy of hobbyking.com*
 
 Connecting and Configuring
-===========================
+==========================
 
 .. image:: ../../../images/dshot-pixhawk.jpg
     :target: ../_images/dshot-pixhawk.jpg

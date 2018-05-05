@@ -16,6 +16,7 @@ Mission Planner has a dedicated **Reset to Default** button if the
 #. On the *Config/Tuning \| Planner* page set the Layout dropdown for Advanced
 
    |ParamReset_MPAdvancedView|
+
 #. Connect the flight controller to *Mission Planner*, and on the
    **Config/Tuning \| Full Parameter List** or **Full Parameter Tree**
    page push the **Reset to Default** button.
@@ -26,7 +27,7 @@ Mission Planner has a dedicated **Reset to Default** button if the
    back to their default values.
 
 Option #2: Change the SYSID_SW_MREV parameter
-===============================================
+=============================================
 
 On any Ground Control Station (that can write parameters) you can reset
 parameters by setting the ``SYSID_SW_MREV`` parameter to zero. After

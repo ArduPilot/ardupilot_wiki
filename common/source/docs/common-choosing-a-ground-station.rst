@@ -144,7 +144,7 @@ Supports multi-node installation, meaning that it is possible to connect multipl
 -  `UgCS Github Repository <https://github.com/ugcs>`__
 
 Comparison Mobile
-==================
+=================
 
 Tower
 -----
@@ -258,7 +258,7 @@ For Android devices, you will need:
 
    
 iOS
--------
+---
 
 For iOS devices, you will need:
 

@@ -186,7 +186,7 @@ software and subsequently analysing logs.
 --------------
 
 Erle Robotics
------------------
+-------------
 
 .. image:: ../../../images/PXFmini2.jpg
     :target: http://erlerobotics.com/blog/pxfmini/
@@ -422,7 +422,7 @@ world.
 --------------
 
 ArduPilot Initiative
---------------------------------
+--------------------
 .. image:: ../../../images/AI_logo_small.jpg
     :target: http://www.ardupilotinitiative.com/
 

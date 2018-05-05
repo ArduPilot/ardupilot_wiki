@@ -19,7 +19,7 @@ Tools
 =====
 
 Tarot Gimbal firmware
-----------------------
+---------------------
 
 Tarot Gimbal firmware and configuration UI for Windows.
 
@@ -63,7 +63,7 @@ User manual for the third version of the 3DR PPM Encoder module
 
 
 USB Driver for PX4 Boards
------------------------------
+-------------------------
 
 `px4_win_drivers.zip <http://firmware.us.ardupilot.org/Tools/PX4_Windows_Driver/px4_win_drivers.zip>`__
 
@@ -136,7 +136,7 @@ This manual covers firmware version 2.3.16.
 
 
 ArduPPM v2.3.16 ATMega32U2 firmware for APM 2.x (recommended APM2.x)
----------------------------------------------------------------------
+--------------------------------------------------------------------
 
 * `ArduPPM_v2.3.16_ATMega32U2.hex_.zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega32U2.hex_.zip>`__
 
@@ -158,7 +158,7 @@ DATE POSTED	April 29, 2013
 
 
 APM 2.x LED STATUS:
-++++++++++++++++++++
++++++++++++++++++++
 
 * - RX – OFF = No input signal detected
 * - RX – SLOW TOGGLE = Input signal OK
@@ -179,7 +179,7 @@ SERVO INPUT (PWM) MODE:
 * + Normal channel operation is restored using the valid input signal
 
 PPM PASS-THROUGH MODE (signal pin 2&3 shorted):
-+++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++
 
 * – PPM output will not be enabled unless a input signal has been detected
 * – Active signal on input channel 1 has been detected:
@@ -278,7 +278,7 @@ Radio Passthrough mode (for ArduPlane only):
 
 
 ArduPPM v2.3.16 ATMega32U2 firmware for APM 2.x 
-------------------------------------------------
+-----------------------------------------------
 
 DATE POSTED	April 29, 2013
 
@@ -318,7 +318,7 @@ SERVO INPUT (PWM) MODE:
 + Normal channel operation is restored using the valid input signal
 
 PPM PASS-THROUGH MODE (signal pin 2&3 shorted):
-++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++
 
 * – PPM output will not be enabled unless a input signal has been detected
 * – Active signal on input channel 1 has been detected:

@@ -33,7 +33,7 @@ For more information see the `QuickStart Guide <https://www.airborneprojects.com
 (www.airborneprojects.com).
 
 APM MavLink to FrSky SmartPort Converter (MavLink_FrSkySPort)
---------------------------------------------------------------
+-------------------------------------------------------------
 
 There are several open source projects such as 
 `MavLink_FrSkySPort <https://github.com/Clooney82/MavLink_FrSkySPort/wiki>`__

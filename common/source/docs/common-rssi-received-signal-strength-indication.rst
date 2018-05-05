@@ -65,6 +65,7 @@ To setup the RSSI parameter in your flight controller,
 .. note::
 
    The converter is designed to provide a max. voltage output of 3.3 V DC when 100% of the frames are good, and appr. 0.4 V DC when connection is lost or receiver is in failsafe. To get best results, it is best practice to calibrate the output voltages of the converter at "full reception" and "Tx off" using a voltmeter. In general the converter should output the following DC voltage:
+
   - **Rx in failsafe** --> 12 % of max. **VDC out ~ 0.4 V DC**
   - Rx received <= 25 % good frames --> 34 % of max. VDC out ~ 1.1 V DC
   - Rx received <= 50 % good frames --> 56 % of max. VDC out ~ 1.85 V DC
