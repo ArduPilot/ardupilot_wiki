@@ -64,7 +64,7 @@ When flying an AUTO mission Plane has some sub-modes that are set using
 mission items. The two main sub-modes are :ref:`TAKEOFF <takeoff-mode>` and :ref:`LAND <land-mode>`.
 
 Flight Mode List
-======================
+================
 
 .. toctree::
     :maxdepth: 1

@@ -89,7 +89,7 @@ Repeat the servo reversal or function change for the right elevon.
           
 
 Verify RC Inputs
-=================
+================
 
 Now that the elevons are configured correctly, verify your RC inputs.
 In FBWA with the airplane level, command pitch-up from your transmitter

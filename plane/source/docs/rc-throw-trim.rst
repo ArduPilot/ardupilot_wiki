@@ -3,8 +3,8 @@
 Controlling Input Throw, Trim and Reversal
 ==========================================
 
-Where the parameters starting with SERVOn_ control the servo outputs,
-the parameters starting with RCn_ control the input side, related to
+Where the parameters starting with \SERVOn_ control the servo outputs,
+the parameters starting with \RCn_ control the input side, related to
 pilot stick movement.
 
 For the 3.8 firmware and above the input side and the output side are
@@ -12,9 +12,9 @@ completely separated, allowing you to have completely different PWM
 ranges, reversal and trim on your transmitter input as compared to the
 servo output.
 
-In addition to the RCn_ parameters for RC input range, trim and
+In addition to the \RCn_ parameters for RC input range, trim and
 reversal, you also can choose the function of the first 4 input
-channels using the RCMAP_ parameters. The defaults are:
+channels using the \RCMAP_ parameters. The defaults are:
 
 .. raw:: html
 

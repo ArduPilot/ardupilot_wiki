@@ -90,7 +90,7 @@ These are conservative values that should give you reasonable behaviour
 for most PLANES.
 
 STEP 2: SETTING THE STEER2SRV_P
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To set your STEER2SRV_P parameter you need to measure the diameter of
 the turning circle of your plane.
