@@ -88,7 +88,7 @@ In Copter-3.5 (and higher) AutoTune performs a weak position hold if invoked fro
 - If there is little or no wind, the vehicle's gentle position control may mean it moves back and forth, ping ponging around the target point changing yaw each time it strays more than 5m from the target.  In these cases it may be more comfortable to revert the simpler AltHold based AutoTune. 
 
 Additional Notes
-==================
+================
 
 -  In Copter-3.3 (and higher) AutoTune can be setup as a flight-mode.  Switching into or out of the AutoTune flight mode responds in the same way as raising or lowering a ch7/ch8 aux switch high assigned the AutoTune function.
 -   :ref:`AUTOTUNE_AXES <AUTOTUNE_AXES>` allows control of which axis are to be tuned.  This is useful if the vehicle's battery life is not long enough to complete all 3-axis).  "1" = tune roll, "2" = tune pitch, "4" = tune yaw.  Add these numbers together to tune multiple axis in a single session (i.e. "7" = tune all axis)

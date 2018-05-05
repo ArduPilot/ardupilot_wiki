@@ -106,3 +106,4 @@ This is the bat file used to start FlightGear
          "--disable-horizon-effect"  ^
          "--disable-clouds"  ^
          "--disable-anti-alias-hud"
+

@@ -29,7 +29,7 @@ aileron, collective pitch, rudder, flight mode, tuning knob, auxiliary
 function switch, throttle hold).
 
 Use of electric and engine governors
-=====================================
+====================================
 
 If you intend to use any Copter flight control modes other than Acro and
 Stabilize, it is recommended that the speed controller you purchase for an

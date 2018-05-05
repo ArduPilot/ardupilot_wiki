@@ -46,7 +46,7 @@ As of early 2018 there are two versions of the firmware available:
 .. image:: ../images/skyrocket-software-web1.png
     :width: 70%
 
-- in the "Upgrade ArduPilot Firmware" section, push the "Browse" button and select the *.abin file downloaded above
+- in the "Upgrade ArduPilot Firmware" section, push the "Browse" button and select the \*.abin file downloaded above
 - push the "Upload File" button and wait a minute or two.  The green bar at the top of the web page should crawl from left to right and then the flight controller should reboot and reconnect to the transmitter
 
 .. image:: ../images/skyrocket-software-web2.png

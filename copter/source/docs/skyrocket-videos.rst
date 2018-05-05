@@ -1,8 +1,8 @@
 .. _skyrocket-videos:
 
-==================
+================
 SkyRocket Videos
-==================
+================
 
 Bo Lorentzen's intro video:
 

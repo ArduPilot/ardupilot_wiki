@@ -45,7 +45,7 @@ the vehicle.  When Run, the ``MOT_THST_EXPO`` value will be printed.
 
 ::
 
-     throttle_pwm = [1000; 1100; 1200; 1300; 1400; 1500; 1600; 1700; 1800; 1900; 2000];
+    throttle_pwm = [1000; 1100; 1200; 1300; 1400; 1500; 1600; 1700; 1800; 1900; 2000];
     thrust = [0; 68.9; 203.1; 441.0; 785.8; 1177.3; 1655.0; 2118.8; 2673.0; 3153.8; 3490.2];
     % Set MOT_THST_MAX to 90% to remove saturated top end
     working_range = 1:9;
@@ -66,3 +66,4 @@ the vehicle.  When Run, the ``MOT_THST_EXPO`` value will be printed.
     line(xgrid, mdl(coefEsts, xgrid), 'Color','g','LineWidth',4);
     xlabel('Normalised Throttle');
     ylabel('Normalised Thrust');
+

@@ -96,7 +96,7 @@ above shows some characteristics of the spline
    resolve in an upcoming release.
 
 Loiter_Time
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 .. image:: ../../../images/MissionList_LoiterTime.png
     :target: ../_images/MissionList_LoiterTime.png
@@ -114,7 +114,7 @@ will hold at the current location.
 will hold at the current altitude.
 
 Loiter_Turns
-~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 .. image:: ../../../images/MissionList_LoiterTurns.png
     :target: ../_images/MissionList_LoiterTurns.png
@@ -136,7 +136,7 @@ will circle around the current location.
 will circle at the current altitude.
 
 Loiter_Unlimited
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. image:: ../../../images/MissionList_LoiterUnlimited.png
     :target: ../_images/MissionList_LoiterUnlimited.png

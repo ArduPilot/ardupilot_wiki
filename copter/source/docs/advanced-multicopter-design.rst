@@ -486,7 +486,9 @@ Consumer Grade Power System for Small Quadcopters (8" - 12" Propellers)
       unusually durable and cost $24.00 each.
    -  And DJI's specially hubbed 10" plastic props at $8.00 a pair are
       well balanced, efficient and
-      rugged.\ |dji-motor01| 
+      rugged.\
+        .. image:: ../images/dji-motor01.jpg
+            :target: ../_images/dji-motor01.jpg
       
       .. image:: ../images/DJI-PROP-1038-2.jpg
           :target: ../_images/DJI-PROP-1038-2.jpg|DJI-PROP-1038-2|
@@ -1044,8 +1046,3 @@ Conclusion and Additional Design Considerations
 
 -  You can do a lot with a rudimentary understanding of the forces
    involved, if you need more it is a career, not a hobby.
-
-
-
-.. |dji-motor01| image:: ../images/dji-motor01.jpg
-    :target: ../_images/dji-motor01.jpg

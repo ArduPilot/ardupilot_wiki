@@ -6,6 +6,7 @@ SingleCopter and CoaxCopter
 
 .. image:: ../images/single-copter-droner.jpg
     :target: ../_images/single-copter-droner.jpg
+
 SingleCopter with vertically mounted flight controller.  Image courtesy of "droner"
 
 Single and Coax copters have one or two propellers to provide thrust and 2 to 4 individual flaps to provide roll, pitch and yaw control.  The difference between a SingleCopter and a CoaxCopter is:
