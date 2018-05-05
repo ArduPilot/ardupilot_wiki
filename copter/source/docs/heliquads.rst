@@ -18,7 +18,7 @@ Where to Buy
 - WLtoys Assassin V383 is available from retailers including `WLtoys.eu <https://wltoys.eu/wl_en/catalog/product/view/id/2359>`__
 
 Connecting and Configuring
-===========================
+==========================
 
 .. image:: ../images/heliquad-pixhawk.png
     :target: ../_images/heliquad-pixhawk.png

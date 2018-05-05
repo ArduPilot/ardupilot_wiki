@@ -1,8 +1,8 @@
 .. _solo_battery_calibration:
 
-====================================================================
+====================================
 3DR Solo - Smart Battery Calibration
-====================================================================
+====================================
 
 The Solo Smart Battery may need recalibration from time to time.  The following write up details how execute a recalibration of the BMS.
 

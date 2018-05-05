@@ -1,8 +1,8 @@
 .. _solo_arducopter_solex_install:
 
-==================================================
+=================================================
 3DR Solo - Initial ArduCopter Install Using Solex
-==================================================
+=================================================
 
 These are detailed instructions for the installation of ArduCopter 3.5.0 and higher on the 3DR Solo using the Solex app for Android. **Your solo should be in safe working order before you start**. It should not be malfunctioning or unreliable before you even begin. It must be up to date with the latest 3DR firmware. You cannot do this with a straight out of the box Solo. You must go through the full pre-flight update first on a new Solo.  Once your Solo is up to date and working well, you're ready to begin this process.
 
@@ -68,7 +68,8 @@ These are detailed instructions for the installation of ArduCopter 3.5.0 and hig
 **15) Calibrations:** Once all of this done, you will need to do the 3D Accelerometer Calibration (aka Accel Cal, aka Level Calibration, AKA IMU Calibration) and the compass calibration. Solex v1.4.9 and higher has these calibrations in the menu. They work the same way they do in the 3DR Solo application.
 - Do the level calibration first on an actual level surface, such as a table. For each orientation, place Solo down gently, and let it settle for about 5 seconds before clicking through to the next one. It must remain perfectly still when you push the button, so hands off the aircraft! Once calibration is complete, you must reboot the Solo.
 - The compass calibration must be done outdoors in an open area, away from structures, vehicles, and other metal objects. This applies to any vehicle running any firmware, not just a Solo, and not just ArduCopter master. Once calibration is complete, you must reboot the Solo.
- .. image:: ../images/solo_solex_cals.jpg
+
+    .. image:: ../images/solo_solex_cals.jpg
 
 **16) FLY!** Once all of the above is complete, you are ready to fly!
 

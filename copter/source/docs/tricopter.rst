@@ -31,7 +31,7 @@ For example the :ref:`Pixracer <common-pixracer-overview>` only has 6 output cha
 Note that if the output channel is changed, the SERVOX_MIN, SERVOX_MAX, SERVOX_TRIM and SERVOX_REVERSED must be set appropriately for the new output channel.
 
 Copter 3.4.x
-=======================
+============
 
 - :ref:`MOT_YAW_SV_ANGLE <MOT_YAW_SV_ANGLE>` : tail servo's maximum lean angle in degrees.  This allows for the rear motor's thrust to be adjusted appropriately depending upon the lean angle.  The default is 30 degrees.  "0" would mean the tail servo can only point directly up (which would not allow the vehicle to fly), "90" means the tail servo can point horizontally.
 
@@ -40,7 +40,7 @@ The channel used for the tail servo can be changed from it's default (channel 7)
 See Copter 3.3 section below for more parameters that can be adjusted.
 
 Copter 3.3.x
-=======================
+============
 
 -  :ref:`MOT_YAW_SV_MIN <MOT_YAW_SV_MIN>`: tail servo's lowest PWM value before binding occurs.
 -  :ref:`MOT_YAW_SV_MAX <MOT_YAW_SV_MAX>`: tail servo's highest PWM value before binding occurs.

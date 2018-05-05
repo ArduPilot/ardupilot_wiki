@@ -73,7 +73,7 @@ Common Problems
    for details) to tighten up on the glitch detection.
 
 Display HDOP on Mission Planner
-================================================
+===============================
 The HDOP value can be made clearly visible through the mission planner's Quick screen by double clicking and then selecting "gpshdop" from the large grid of checkboxes.
 
 .. image:: ../images/Loiter_DisplayHDOP.jpg

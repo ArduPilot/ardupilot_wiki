@@ -1,8 +1,8 @@
 .. _trad-heli-mounting:
 
-==========================================================
+====================================================================
 Traditional Helicopter – Mounting the Flight Controller to the Frame
-==========================================================
+====================================================================
 
 On larger helicopters of approximately 550-class or larger the APM, Pixhawk or
 Cube has been mounted in various locations such as on the FBL unit tray, on

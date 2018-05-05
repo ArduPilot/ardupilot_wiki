@@ -56,7 +56,7 @@ What to get
    for $40.00.
 #. A `Pixhawk <https://store.3dr.com/products/3dr-pixhawk>`__
    Flight controller from 3DR.
-#. A :ref:`GPS and Compass Module <common-positioning-landing-page>'
+#. A :ref:`GPS and Compass Module <common-positioning-landing-page>`
    module.
 #. Two
    `normal <http://www.rcdude.com/servlet/the-2600/GemFan-DJI-Hub-/Detail>`__
