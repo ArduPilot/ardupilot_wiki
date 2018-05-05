@@ -465,7 +465,7 @@ to the two radio models available
    </table>
 
 DUTY_CYCLE setting
-===================
+==================
 
 Most users will want to set the ``DUTY_CYCLE`` to 100. The
 ``DUTY_CYCLE`` is the maximum percentage of time that the radio will

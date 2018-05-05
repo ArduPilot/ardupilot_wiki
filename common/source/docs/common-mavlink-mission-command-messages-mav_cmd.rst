@@ -374,7 +374,7 @@ which are not mission commands (part of the mission).
 .. _mav_cmd_mission_start:
 
 MAV_CMD_MISSION_START
-------------------------
+---------------------
 
 Supported by: Copter
 
@@ -565,7 +565,7 @@ the first waypoint are dropped.
 .. _mav_cmd_nav_waypoint:
 
 MAV_CMD_NAV_WAYPOINT
------------------------
+--------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -792,7 +792,7 @@ Change the target horizontal speed and/or the vehicle's throttle.
 .. _mav_cmd_nav_takeoff:
 
 MAV_CMD_NAV_TAKEOFF
-----------------------
+-------------------
 
 Supported by: Copter, Plane (not Rover).
 
@@ -937,7 +937,7 @@ using an airspeed sensor.
 .. _mav_cmd_nav_loiter_unlim:
 
 MAV_CMD_NAV_LOITER_UNLIM
-----------------------------
+------------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -1090,7 +1090,7 @@ will restart).
 .. _mav_cmd_nav_loiter_turns:
 
 MAV_CMD_NAV_LOITER_TURNS
-----------------------------
+------------------------
 
 Supported by: Copter, Plane (not Rover).
 
@@ -1386,7 +1386,7 @@ The radius of loiter is set in the ``WP_LOITER_RAD`` parameter.
 .. _mav_cmd_nav_return_to_launch:
 
 MAV_CMD_NAV_RETURN_TO_LAUNCH
----------------------------------
+----------------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -1612,7 +1612,7 @@ command in the mission.
 .. _mav_cmd_nav_land:
 
 MAV_CMD_NAV_LAND
--------------------
+----------------
 
 Supported by: Copter, Plane (not Rover).
 
@@ -1761,7 +1761,7 @@ description here?.
 .. _mav_cmd_nav_continue_and_change_alt:
 
 MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT
------------------------------------------
+-----------------------------------
 
 Supported by: Plane (not Copter, Rover).
 
@@ -2082,7 +2082,7 @@ how often to wiggle the control surfaces to prevent them seizing up.
 .. _mav_cmd_nav_loiter_to_alt:
 
 MAV_CMD_NAV_LOITER_TO_ALT
-------------------------------
+-------------------------
 
 Supported by: Plane (not Copter or Rover).
 
@@ -2153,7 +2153,7 @@ This command enables auto-tuning on Plane.
 .. _mav_cmd_do_jump:
 
 MAV_CMD_DO_JUMP
-------------------
+---------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -2255,7 +2255,7 @@ the last waypoint will be skipped.
 .. _mav_cmd_condition_delay:
 
 MAV_CMD_CONDITION_DELAY
---------------------------
+-----------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -2332,7 +2332,7 @@ starts 5 seconds after the vehicle has passed Waypoint #2.
 .. _mav_cmd_condition_change_alt:
 
 MAV_CMD_CONDITION_CHANGE_ALT
---------------------------------
+----------------------------
 
 Supported by: Copter, Plane (not Rover).
 
@@ -2476,7 +2476,7 @@ only starts once the vehicle is within 50m of waypoint #5.
 .. _mav_cmd_condition_yaw:
 
 MAV_CMD_CONDITION_YAW
-------------------------
+---------------------
 
 Supported by: Copter (not Plane or Rover).
 
@@ -2635,7 +2635,7 @@ Set system mode (preflight, armed, disarmed etc.)
 .. _mav_cmd_do_change_speed:
 
 MAV_CMD_DO_CHANGE_SPEED
----------------------------
+-----------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -2846,7 +2846,7 @@ set to 0).
 .. _mav_cmd_do_set_home:
 
 MAV_CMD_DO_SET_HOME
------------------------
+-------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -3081,7 +3081,7 @@ be set high and then after 3 seconds it would be toggled low again.
 .. _mav_cmd_do_set_servo:
 
 MAV_CMD_DO_SET_SERVO
-------------------------
+--------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -3150,7 +3150,7 @@ moved to PWM 1700 (servos generally accept PWM values between 1000 and
 .. _mav_cmd_do_repeat_servo:
 
 MAV_CMD_DO_REPEAT_SERVO
----------------------------
+-----------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -3226,7 +3226,7 @@ seconds it would be moved back to mid.
 .. _mav_cmd_do_land_start:
 
 MAV_CMD_DO_LAND_START
--------------------------
+---------------------
 
 Supported by: Plane (not Copter, Rover).
 
@@ -3306,7 +3306,7 @@ If ``RTL_AUTOLAND`` is set to 2, the plane will jump to the nearest
 .. _mav_cmd_do_set_roi:
 
 MAV_CMD_DO_SET_ROI
-----------------------
+------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -3559,7 +3559,7 @@ command with all zero for ``param5``-``param7`` (Lat, Lon and Alt).
 .. _mav_cmd_do_digicam_configure:
 
 MAV_CMD_DO_DIGICAM_CONFIGURE
---------------------------------
+----------------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -3635,7 +3635,7 @@ if one is present.
 .. _mav_cmd_do_digicam_control:
 
 MAV_CMD_DO_DIGICAM_CONTROL
-------------------------------
+--------------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -3870,7 +3870,7 @@ after every 5m that the vehicle travels.
 .. _mav_cmd_do_fence_enable:
 
 MAV_CMD_DO_FENCE_ENABLE
----------------------------
+-----------------------
 
 Supported by: Plane (not Copter or Rover).
 
@@ -3943,7 +3943,7 @@ Mission command to enable the
 .. _mav_cmd_do_parachute:
 
 MAV_CMD_DO_PARACHUTE
------------------------
+--------------------
 
 Supported by: Copter (not Plane or Rover).
 
@@ -4082,7 +4082,7 @@ Change between normal and :ref:`inverted flight <plane:inverted-flight>`.
 .. _mav_cmd_do_gripper:
 
 MAV_CMD_DO_GRIPPER
----------------------
+------------------
 
 Supported by: Copter (not Plane or Rover).
 
@@ -4241,7 +4241,7 @@ to zero will remove the associated limit.
 .. _mav_cmd_do_autotune_enable:
 
 MAV_CMD_DO_AUTOTUNE_ENABLE
-------------------------------
+--------------------------
 
 Supported by: Plane (not Copter or Rover).
 

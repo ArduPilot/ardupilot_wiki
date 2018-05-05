@@ -109,7 +109,7 @@ and ground stations.
 Connecting to Pixhawk
 ---------------------
 
-Use the `6 pin DF13 connector that should have come with the radio to connect the 
+Use the 6 pin DF13 connector that should have come with the radio to connect the
 radio to your Pixhawk's "Telem 1" ("Telem 2" or "Serial 4/5" can also be used but the
 default recommendation is "Telem1").
 
@@ -119,7 +119,7 @@ default recommendation is "Telem1").
 Connecting to APM2.x
 --------------------
 
-Use the `6-to-5 pin DF13 connector to connect the radio to your APM2's Telem port
+Use the 6-to-5 pin DF13 connector to connect the radio to your APM2's Telem port
 Because of the limited number of serial ports on the APM2.x, the telemetry radio cannot
 be used while the board is also plugged in with the micro USB port.
 
