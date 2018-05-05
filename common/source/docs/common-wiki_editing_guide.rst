@@ -13,7 +13,7 @@ spelling/grammatical errors.
 We've made that very easy - all you need for access is a 
 `Github account <https://github.com/join>`__. 
 
-This provides everything you need to help the wiki grow!wiki-editing-guide:
+This provides everything you need to help the wiki grow.
 
 Wiki Infrastructure
 ===================
