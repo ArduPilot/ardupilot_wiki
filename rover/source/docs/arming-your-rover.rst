@@ -22,7 +22,7 @@ There are three ways to arm the vehicle:
 -  **From a transmitter switch**.  Raise the auxiliary switch to the high position (see :ref:`how to configure aux functions here <rover-auxiliary-functions>`)
 -  **From the Ground Station**.  Press the arm/disarm button on your ground station.  If using the Mission Planner this can be found on the Flight Data screen's action tab on the bottom left
 
-.. image:: ../images/armingButtonMissPlan.jpg
+.. image:: ../../../images/armingButtonMissPlan.jpg
 
 If the vehicle fails to arm, please see the "Pre-Arm Checks" section below.
 
