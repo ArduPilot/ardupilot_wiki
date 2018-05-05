@@ -18,7 +18,7 @@ clear of the propellers. Then do the following:
    and PosHold modes.  You cannot arm your copter in AUTO
    mode.
 
-#. Turn on your transmitter
+#. Turn on your transmitter.
 #. Plug in your LiPo battery.  The red and blue lights should flash for
    a few seconds as the gyros are calibrated (do not move the copter)
 #. The pre-arm checks will run automatically and if any problems are
@@ -53,10 +53,10 @@ Disarming the motors will cause the motors to stop spinning. To disarm
 the motors do the following:
 
 #. Check that your flight mode switch is set to Stabilize, ACRO, AltHold
-   Loiter, or PosHold.
-#. Hold throttle at minimum and rudder to the left for 2 seconds
+   ,Loiter, or PosHold.
+#. Hold throttle at minimum and rudder to the left for 2 seconds.
 #. The red arming light should start flashing on the APM2.  On the
    Pixhawk the RGB LED will start flashing green.
 #. If using a PX4, press the safety button until the led begins flashing
-#. Disconnect the Lipo battery
-#. Turn off your transmitter
+#. Disconnect the Lipo battery.
+#. Turn off your transmitter.
