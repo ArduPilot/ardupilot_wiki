@@ -81,7 +81,7 @@ transmitter when in throttle failsafe or you won't be able to arm using
 the rudder as the APM will think you are at a non-zero throttle level.
 
 Simplest Solution: Use Only ARMING_REQUIRE
-===========================================
+==========================================
 
 The simplest way to use the throttle arming feature is to require the
 user to request the throttle to arm. ARMING_REQUIRE has three possible

@@ -143,7 +143,7 @@ Failsafe Parameters and their meanings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Short failsafe action (Plane:FS_SHORT_ACTN)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The action to take on a short (FS_SHORT_TIMEOUT seconds) failsafe event in AUTO,
 GUIDED or LOITER modes. A short failsafe event in stabilization modes
@@ -173,7 +173,7 @@ condition persists for FS_LONG_TIMEOUT seconds.
    </table>
 
 Long failsafe action (Plane:FS_LONG_ACTN)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The action to take on a long (FS_LONG_TIMEOUT second) failsafe event in AUTO, GUIDED
 or LOITER modes. A long failsafe event in stabilization modes will
@@ -205,7 +205,7 @@ setting.
    </table>
 
 Failsafe battery voltage (Plane:FS_BATT_VOLTAGE)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Battery voltage to trigger failsafe. Set to 0 to disable battery voltage
 failsafe. If the battery voltage drops below this voltage then the plane
@@ -214,7 +214,7 @@ will RTL
 -  Units: Volts
 
 Failsafe battery milliAmpHours (Plane:FS_BATT_MAH)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Battery capacity remaining to trigger failsafe. Set to 0 to disable
 battery remaining failsafe. If the battery remaining drops below this
@@ -223,7 +223,7 @@ level then the plane will RTL
 -  Units: mAh
 
 GCS failsafe enable (Plane:FS_GCS_ENABL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable ground control station telemetry failsafe. Failsafe will trigger
 after FS_SHORT_TIMEOUT and / or FS_LONG_TIMEOUT seconds of no MAVLink heartbeat messages. WARNING: Enabling

@@ -132,7 +132,7 @@ movement.
 .. _channel-output-functions_flap_auto:
 
 Flap_auto
-----------
+---------
 
 The flap auto output function behaves like the Flap output, except it
 can also accept automatic flap output from the TKOFF_FLAP_PCNT and
@@ -161,7 +161,7 @@ The Mount2_pan, Mount2_tilt and Mount2_roll options are the same, but
 control a second camera gimbal
 
 Camera_trigger
----------------
+--------------
 
 The Camera_trigger output function is used to trigger a camera with a
 servo. See the :ref:`camera gimbal documentation <common-camera-gimbal>` for details.

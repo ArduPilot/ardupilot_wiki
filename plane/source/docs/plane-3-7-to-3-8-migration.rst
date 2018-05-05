@@ -13,13 +13,14 @@ The firmware will try to auto-migrate your parameters where possible,
 but it is a complex migration and there is the possibility of errors,
 so careful testing is critical.
 
-.. warning:: 
-If you later downgrade from Plane 3.8 to an earlier version, then any 
-changes that were made to the RC_* and SERVOn_* parameters will be lost. 
-Upgrading back to 3.8 (or higher) will not copy over any new param changes. 
-This is only an issue if the user decides to downgrade.
-**Please note that downgrading from 3.8 to 3.7 (or earlier) is very likely
-to cause a crash if you do not manually restore channel reversals.**
+.. warning::
+
+    If you later downgrade from Plane 3.8 to an earlier version, then any
+    changes that were made to the RC_* and SERVOn_* parameters will be lost.
+    Upgrading back to 3.8 (or higher) will not copy over any new param changes.
+    This is only an issue if the user decides to downgrade.
+    **Please note that downgrading from 3.8 to 3.7 (or earlier) is very likely
+    to cause a crash if you do not manually restore channel reversals.**
 
 Change to Servo Range Parameters
 ================================

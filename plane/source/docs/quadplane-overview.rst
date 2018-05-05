@@ -29,4 +29,4 @@ will see a Q_ENABLE parameter. That defaults to zero, which disables
 QuadPlane support. Setting Q_ENABLE to 1 will enable QuadPlane
 support. You then need to refresh your parameter list to see all the
 other QuadPlane options. All QuadPlane specific parameters start with
-Q_.
+\Q_.
