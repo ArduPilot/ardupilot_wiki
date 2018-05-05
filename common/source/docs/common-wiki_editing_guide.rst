@@ -5,6 +5,16 @@
 Wiki Editing Guide
 ==================
 
+All members of the community are welcome to join and contribute to this
+wiki! Any help you can offer is appreciated — from creating new articles
+and re-validating older articles, through to fixing broken links and
+spelling/grammatical errors.
+
+We've made that very easy - all you need for access is a 
+`Github account <https://github.com/join>`__. 
+
+This provides everything you need to help the wiki grow!wiki-editing-guide:
+
 Wiki Infrastructure
 ===================
 
@@ -36,15 +46,6 @@ manually set up a build environment (just inspect the Vagrantfile for dependenci
 The wikis use a `common theme <https://github.com/ArduPilot/sphinx_rtd_theme#read-the-docs-sphinx-theme>`__
 that provides the top menu bar. 
 
-All members of the community are welcome to join and contribute to this
-wiki! Any help you can offer is appreciated — from creating new articles
-and re-validating older articles, through to fixing broken links and
-spelling/grammatical errors.
-
-We've made that very easy - all you need for access is a 
-`Github account <https://github.com/join>`__. 
-
-This provides everything you need to help the wiki grow!
 
 
 Making a quick edit
