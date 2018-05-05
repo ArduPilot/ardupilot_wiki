@@ -84,7 +84,7 @@ Rebooting will cause the Sonix board to flash the Flight Controller before the S
 
 
 Sonix board Recovery using the SD card
---------------------------------------------
+--------------------------------------
 
 In the rare event you may need to recover Sonix board using the SD card at the boot time.
 
@@ -96,6 +96,7 @@ Sonix board bootloader pad is marked as TP4 next to Sonix chip. Need to remove m
  - Temporarily solder thin wire to SD card slot metal part (GND).
  - Copy FIRMWARE_660R_F.bin to the root of SD card.
  - Connect battery while the other end of wire touching the pad.
+
 If this boot process goes well, firmware file should be erased.
 
 

@@ -10,8 +10,8 @@ and building for Pixhawk/PX4 targets on Windows and Linux.
 Preconditions for Linux
 =======================
 
-Follow the instructions in :ref:`Building for Pixhawk/PX4 on Linux with Make 
-<building-px4-for-linux-with-make>` to download the required source code 
+Follow the instructions in :ref:`Building for Pixhawk/PX4 on Linux with Make <building-px4-with-make>`
+to download the required source code
 (*ardupilot*, *PX4Firmware* and *PX4NuttX*) and toolchain.
 
 Preconditions for Windows
