@@ -4,7 +4,7 @@
 Pixhawk Advanced Hardware Info
 ==============================
 
-Basic information on the Pixhawk can be found in the :ref:`Supported Hardware Section <supported-autopilot-controller-boards>`.
+Basic information on the Pixhawk can be found in the :ref:`Supported Hardware Section <common-autopilots>`.
 
 Please follow the links below to learn more about potential Pixhawk boot issues and how to add a COA (certificate of authenticity) to your Pixhawk boards.
 
