@@ -1,8 +1,8 @@
 .. _rtl-mode:
 
-=========
+========
 RTL Mode
-=========
+========
 
 RTL stands for Return-To-Launch.  When switched into RTL mode the vehicle will turn and attempt to directly return to the position where it was last armed.
 

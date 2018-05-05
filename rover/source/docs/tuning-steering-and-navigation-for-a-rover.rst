@@ -56,7 +56,7 @@ These are conservative values that should give you slow, gentle
 behaviour for most rovers.
 
 Step 2: Setting CRUISE_THROTTLE
-================================
+===============================
 
 We need to get ``CRUISE_THROTTLE`` right so we know what throttle level
 will give us a speed of 2 meters/second.
@@ -69,7 +69,7 @@ will give us a speed of 2 meters/second.
    2 meters/second
 
 Step 3: Setting the STEER2SRV_P
-================================
+===============================
 
 To set your STEER2SRV_P parameter you need to measure the diameter of
 the turning circle of your rover.
@@ -80,7 +80,7 @@ to measure the diameter of that circle and set STEER2SRV_P to that
 value in meters.
 
 Step 4: tuning TURN_MAX_G
-===========================
+=========================
 
 The ``TURN_MAX_G`` parameter can now be tuned so that your rover can
 drive more aggressively, without turning over.
@@ -91,7 +91,7 @@ drive more aggressively, without turning over.
    doesn't start to roll over and doesn't skid
 
 Step 5: tuning NAVL1_PERIOD
-============================
+===========================
 
 Now you can finally start tuning your steering in AUTO mode. To tune in
 AUTO you will need to create a mission for your rover to navigate. A
