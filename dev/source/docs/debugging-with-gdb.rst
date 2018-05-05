@@ -20,9 +20,7 @@ APM1/APM2)
 
 This guide assumes that you have already successfully built the firmware
 on your machine following the instructions for
-:ref:`Windows <building-px4-with-make>`,
-:ref:`Mac <building-px4-with-make-on-mac>` or
-:ref:`Linux <building-px4-for-linux-with-make>`.
+:ref:`Windows <building-px4-with-make>`.
 
 A `BlackMagic probe <http://www.blacksphere.co.nz/main/index.php/blackmagic>`__ is
 also required.  They can be purchased in the US from `Transition Robotics <http://transition-robotics.com/products/black-magic-probe-mini>`__,

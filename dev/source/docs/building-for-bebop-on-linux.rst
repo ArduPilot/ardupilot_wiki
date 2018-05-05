@@ -144,7 +144,7 @@ Download and compile ArduCopter
        git submodule update --init --recursive
 
 #. Building the flight control firmware is nearly identical for
-   :ref:`building for the Pixhawk <building-px4-for-linux-with-make>`
+   :ref:`building for the Pixhawk <building-px4-with-make>`
    except the build command is:
 #. ::
 

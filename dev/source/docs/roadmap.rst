@@ -15,16 +15,16 @@ The main point of contact for each area is provided so that those looking to joi
 know who to contact (see :ref:`Contact Us <common-contact-us>` for a list of ways to contact the devs).
 
 Hardware & OS support (Tridge / Sid / TomP)
-------------------------------------------
+-------------------------------------------
 
-- ChibiOS support all existing flight boards and features (`video <https://www.youtube.com/watch?v=y2KCB0a3xMg>`_)
+- ChibiOS support all existing flight boards and features (`ChibiOS video <https://www.youtube.com/watch?v=y2KCB0a3xMg>`_)
 - port ArduPilot to a wide range of F4 and F7 based flight boards, including boards with integrated OSD and boards in small RTF racing copters
 - software support for new CAN hardware
 
 Scripting (MichaelDB / Tridge)
 ------------------------------
 
-- add Lua scripting to ArduPilot (`video <https://www.youtube.com/watch?v=nc8IwU2G1rY>`_)
+- add Lua scripting to ArduPilot (`Lua video <https://www.youtube.com/watch?v=nc8IwU2G1rY>`_)
 - add new plane flight modes and mission items using Lua scripting
 
 EKF (PaulR / Randy)
@@ -41,7 +41,7 @@ Plane (Tridge / Leonard / Peter / TomP)
 - VTOL control improvements with a focus on better tailsitter support
 - support for dual-airspeed with estimation based failover
 - architecture update to align with Rover/Copter
-- DeepStall accuracy improvements (`video <https://youtu.be/XuSl9Io93aQ?t=1820>`_)
+- DeepStall accuracy improvements (`DeepStall video <https://youtu.be/XuSl9Io93aQ?t=1820>`_)
 
 Copter (Randy / Leonard / Tridge)
 ---------------------------------
@@ -61,7 +61,7 @@ Copter (Randy / Leonard / Tridge)
 - Flight Mode Improvements
 
   - 4kHz+ loop rate PIDs
-  - follow mode (`video <https://www.youtube.com/watch?v=uiJURjgP460>`_)
+  - follow mode (`follow mode video <https://www.youtube.com/watch?v=uiJURjgP460>`_)
   - add spool state handling
   - Stand-By mode
 

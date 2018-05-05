@@ -25,9 +25,10 @@ Prerequisites (get these first, and install them to your PC):
 .. note::  
 
    If you are running windows, then you also need to nsure that git is set to leave line endings untouched. This command should fix that: 
-   ::   
-       git config --global core.autocrlf false
 
+::
+
+   git config --global core.autocrlf false
 
 
 Compilation
@@ -67,12 +68,14 @@ View Solo build products:
    ls /solo-build/build/tmp-eglibc/deploy/images/imx6solo-3dr-1080p/
 
 Connect to your Solo/Controller Wifi from this point:
-   SSID usually starts with 'SoloLink_' 
-   Default solo wifi password is 'sololink' but you probably changed this when you first used it, right. 
-   If you want to continue to have internet access while Doing these next step:
-      get 'solo-cli' repository and 
-      run 'solo wifi --name=YOURHOMEWIFINAME --password=yourhomewifipassword' to enable solo to get to the internet! 
-::
+
+- SSID usually starts with ``SoloLink_``
+- Default solo wifi password is ``sololink`` but you probably changed this when you first used it, right.
+- If you want to continue to have internet access while Doing these next step:
+
+   - get ``solo-cli`` repository and
+   - run ``solo wifi --name=YOURHOMEWIFINAME --password=yourhomewifipassword`` to enable solo to get to the internet!
+
 
 Update Solo :
 
