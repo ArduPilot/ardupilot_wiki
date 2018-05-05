@@ -21,7 +21,7 @@ There are multiple ways that the vehicle can mode switch into SmartRTL. Either t
 
 The user may manually switch into and out of SmartRTL by commanding straight into the Flight Mode with MAVLink, or setting it to any Channel (7-12).
 
-The :ref:`FS_GCS_ENABLE <FS_GCS_ENABLE>` and :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` parameters set to 4 or 5 will already switch to SmartRTL->Land or SmartRTL->Land based on whether the correct conditions allows the mode. The setting indicates that it will try SmartRTL first, then downgrade to RTL (4) or Land (5)
+The :ref:`FS_GCS_ENABLE <FS_GCS_ENABLE>` and :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` parameters set to 4 or 5 will already switch to SmartRTL->RTL or SmartRTL->Land based on whether the correct conditions allows the mode. The setting indicates that it will try SmartRTL first, then downgrade to RTL (4) or Land (5)
 
 Additional Failsafes that may be set to switch to SmartRTL are: :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>`, :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>`, :ref:`BATT2_FS_LOW_ACT <BATT2_FS_LOW_ACT>`, and :ref:`BATT2_FS_CRT_ACT <BATT2_FS_CRT_ACT>`.
 
