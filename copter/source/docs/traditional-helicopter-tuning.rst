@@ -17,7 +17,7 @@ traditional helicopters. And remember to write the changes to the flight
 controller after making them or they won't be saved!
 
 General ArduCopter Flight Control Law Description
-===================================================
+=================================================
 Users should generally understand the flight control laws before tuning. At
 a high level, the arducopter control laws are designed as a model following
 architecture where the software converts the pilot input into a commanded
@@ -79,7 +79,7 @@ enough of the integrator to make it effective in keeping the attitudes matching
 but not so powerful to cause the aircraft to roll over.
 
 Initial Setup of Pitch and Roll Tuning Parameters
-===================================================
+=================================================
 Below are the initial parameters values that should be used to start the tuning
 of your helicopter. Use the suggested parameters in the yaw section below for
 the tail. The helicopter will be easily controllable with just the VFF set to
@@ -127,7 +127,7 @@ from the defaults.
 +---------------------+---------+
 
 Tuning the Yaw Axis (Rudder)
-====================================
+============================
 It is recommended to make sure the tail functions properly before proceeding
 with tuning pitch and roll.
 
@@ -170,7 +170,7 @@ problem. Correct the problem before proceeding with roll and pitch tuning.
 +---------------------+---------+
 
 Setting VFF and ACCEL_MAX for Desired Pitch and Roll Response
-===============================================================
+=============================================================
 In both pitch and roll axes, the VFF gain is set so that the actual aircraft
 rate matches the desired rate. To do this, the RATE message in the log is
 required to compare the P.des and P signals for pitch and the R.des and R
@@ -241,7 +241,7 @@ channel 6 on your radio.  Make the following parameter changes.
 | TUNING_HIGH         | 30*     |
 +---------------------+---------+
 
-*for futaba radios this equates to one increment in the knob to 0.001
+*for futaba radios this equates to one increment in the knob to 0.001*
 
 Adjust the tuning knob until the ATC_RAT_RLL_D and ATC_RAT_PIT_D gains are
 0.001. Lift into a hover and make some sharp stick inputs in roll.  Most
@@ -262,7 +262,7 @@ Now tune the P gains.  Make the following tuning parameter changes.
 | TUNING_HIGH         | 300*    |
 +---------------------+---------+
 
-*for futaba radios this equates to one increment in the knob to 0.01
+*for futaba radios this equates to one increment in the knob to 0.01*
 
 Adjust the tuning knob until the ATC_RAT_RLL_P and ATC_RAT_PIT_P  gains are
 0.05. Lift into a hover and roll aggressively from side to side.  If it doesn't
@@ -274,7 +274,7 @@ stick movements in both pitch and roll to make sure it's stable.
 After tuning the P and D gain the aircraft should feel much smoother.
 
 Setting the I gain, IMAX, and ILMI
-====================================
+==================================
 It is recommended to set the ATC_RAT_PIT_I gain equal to the ATC_RAT_PIT_VFF
 gain and the ATC_RAT_RLL_I gain equal to the ATC_RAT_RLL_VFF gain.  The IMAX
 value limits amount of integrator error that can be stored to counter large
@@ -302,16 +302,16 @@ helicopter is not in dynamic flight.
 
 .. image:: ../images/TradHeli_tuning_example2_1.png
 
-=======================================================================
+======================================================================
 Advanced Tuning for Hover Trim, Loiter Flight Mode and Waypoint Flying
-=======================================================================
+======================================================================
 At this point you should have a helicopter that is responsive and yet stable.
 But we need to trim the helicopter so it hovers pretty much hands-off in
 Stabilize flight mode. And adjust the I-gains for Auto flight mode so it tracks
 attitude properly under full autopilot control.
 
 Hover Trim
-===========
+==========
 Trimming the helicopter in pitch and roll axes is an important step to keep the
 aircraft from drifting in modes like Stabilize and Althold.  The trim attitude 
 in the roll axis is affected by the tail rotor thrust.  All conventional single-
@@ -369,7 +369,7 @@ difference between a helicopter that is difficult to handle vs one that flies
 with true scale quality and handling. 
 
 Adjusting I-gains For High-Speed Autonomous Flight
-===================================================
+==================================================
 Prepare a mission with your ground station software that will fly the 
 helicopter, preferably in a figure-8 pattern to make both right and left turns,
 at a speed of 6 m/s. Fly the helicopter on this mission, pull the logs from the

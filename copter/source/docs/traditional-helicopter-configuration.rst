@@ -30,4 +30,3 @@ Video 4 - Throttle Curves, Piston and Turbine Engines
 
 ..  youtube:: C3E2f8h1CoM
 
--------------------------------------------------------------------------------

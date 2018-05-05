@@ -1,8 +1,8 @@
 .. _ekf-inav-failsafe:
 
-==============================
+========================
 EKF / DCM Check Failsafe
-==============================
+========================
 
 Copter 3.2 adds a DCM heading check and an :ref:`EKF (Extended Kalman Filter - Pixhawk only) <common-apm-navigation-extended-kalman-filter-overview>` check
 to catch flyaways caused by a bad heading estimate.

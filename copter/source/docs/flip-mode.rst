@@ -1,8 +1,8 @@
 .. _flip-mode:
 
-===========
+=========
 Flip Mode
-===========
+=========
 
 
 
@@ -11,7 +11,7 @@ Vehicle will flip on its roll or pitch axis depending upon the pilot's roll and 
 
 
 Flip Mode State Machine
-------------------------
+-----------------------
 
 
  Controls:

@@ -23,6 +23,7 @@ Since the Solo uses a Pixhawk flight controller, it is capable of running variat
     :width: 45 %
 .. image:: ../images/solo_nightraptor.jpg
     :width: 45 %
+
 *Photos by Andrew Emmett, Matt Lawrence, Stephan Schindewolf, & Paul Dinardi*
 
 |
@@ -216,7 +217,7 @@ Value   Meaning
 =====   =======
 
 =====   =======
-:ref:`LOG_DISARMED <LOG_DISARMED>` enables and disables dataflash (*.bin) logging when the Solo is disarmed.  It is currently enabled by default since it can be very useful for testing and troubleshooting. But it does result in large and often unneccessary logs.  If you are comfortable and confident in your Solo, you disable logging while disarmed.  The dataflash logs be much cleaner and volumnous.
+:ref:`LOG_DISARMED <LOG_DISARMED>` enables and disables dataflash (\*.bin) logging when the Solo is disarmed.  It is currently enabled by default since it can be very useful for testing and troubleshooting. But it does result in large and often unneccessary logs.  If you are comfortable and confident in your Solo, you disable logging while disarmed.  The dataflash logs be much cleaner and volumnous.
 ---------------
 Value   Meaning
 =====   =======
