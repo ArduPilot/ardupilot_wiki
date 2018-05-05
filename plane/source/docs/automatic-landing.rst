@@ -307,7 +307,7 @@ altitude to flare at. That will only work if your stall speed is low
 enough that gliding for a while will work reliably.
 
 Using DO_LAND_START
-=====================
+===================
 
 Sometimes it is useful to trigger an automatic landing as part of an RTL
 (return to launch). To do this you need to do two things:
@@ -342,7 +342,7 @@ This can be useful if you have multiple landing sequences for different
 wind conditions or different areas.
 
 How to abort an auto-landing
-=====================================
+============================
 A landing-abort mechanism is provided to allow you to abort a landing sequence in a safe, controlled, and expected way. Custom abort behaviour can be pre-programmed as part of the mission or you can use the default abort mechanism. To enable this feature set param LAND_ABORT_THR=1.
  
 There are three steps to this feature:
@@ -522,6 +522,6 @@ estimate. Traditionally, to dtermine this true value you would need to slowly de
 your airspeed until you stall but that comes with the pesky problem that now you
 have a stalled aircraft falling out of the sky.
 
-With LAND_PF_ALT and LAND_PF_ARSPD you can check your stall speed
+With ``LAND_PF_ALT`` and ``LAND_PF_ARSPD`` you can check your stall speed
 much lower to the ground. To know the airspeed at the exact moment it stalls, check your
 dataflash logs (*.bin on SD card) for the airspeed (ARSP.Airspeed) when your wing loses lift and drops by comparing actual roll (CTUN.Roll) and desired roll (CTUN.NavPitch) diverge.

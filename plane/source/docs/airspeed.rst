@@ -196,7 +196,7 @@ flying will not. To enable automatic airspeed sensor calibration, set
 the value of ARSPD_AUTOCAL to 1.
 
 Using a different pin for the airspeed sensor
-==============================================
+=============================================
 
 -  To assign the airspeed sensor to a specific pin, hook up your flight
    controller to your PC via USB. Start Mission Planner and select the
