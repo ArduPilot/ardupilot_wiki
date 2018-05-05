@@ -1,8 +1,8 @@
 .. _common-pxfmini:
 
-================================
+=======
 PXFmini 
-================================
+=======
 
 The `PXFmini (Pixhawk Fire Cape Mini) Autopilot Shield <http://erlerobotics.com/blog/pxfmini>`__ made by `Erle Robotics <https://erlerobotics.com/>`__ is a low cost
 and open autopilot shield for the Raspberry Pi that allows you to create

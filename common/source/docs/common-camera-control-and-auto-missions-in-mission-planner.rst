@@ -109,6 +109,7 @@ are captured at regular intervals in the vehicle's path.
 -  **Right click** on the map and select **Auto WP \| Survey(Grid)**:
 
    |surveyexample|
+
 -  *Mission Planner* will then display a configuration screen where you
    can define the camera make/model and other parameters including teh
    overlap you want between pictures, lens size, etc.

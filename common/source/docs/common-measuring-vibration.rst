@@ -99,6 +99,7 @@ Earlier firmware versions
    below.
 
    |DiagnosingWithLogs_Vibes|
+
 -  Check the scale on the left and ensure that your vibration levels for
    the AccX and AccY are between -3 and +3.  For AccZ the acceptable
    range is -15 to -5.  If it is very close or over these limits you

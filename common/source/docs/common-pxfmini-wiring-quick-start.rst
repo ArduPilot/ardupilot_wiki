@@ -1,8 +1,8 @@
 .. _common-pxfmini-wiring-quick-start:
 
-==============================
+==========================
 PXFmini Wiring Quick Start
-==============================
+==========================
 
 .. note::
 
@@ -19,7 +19,7 @@ This article provides high level information about how to power
 .. _common-pxfmini-wiring-quick-start_pxfmini_wiring_chart:
 
 PXFmini Wiring Chart
-========================
+====================
 
 .. image:: ../../../images/PXFmini_intro.jpg
     :target: ../_images/PXFmini_intro.jpg
@@ -30,7 +30,7 @@ Copter users should also see the
 [/site]
 
 Power PXFmini
-=================
+=============
 
 PXFmini is typically powered via its "power" port, as shown in the
 picture below. The power port simultaneously powers PXFmini and

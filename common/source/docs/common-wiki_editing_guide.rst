@@ -423,7 +423,7 @@ they move within the file structure.
 
 .. code-block:: rst
 
-    .. _your_file_name:
+    .. _your_file_name2:
 
     ==========
     Page Title

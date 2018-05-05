@@ -36,7 +36,7 @@ Install Drivers (Windows only)
 On a Windows machine a "PX4Flow" device should appear in Connection drop-down of the Mission Planner (and the Windows Device Manager), or be automatically recognized by QGroundControl.  If it does not you may need to download, unzip and manually install the `px4flow windows driver <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow_win_driver.zip>`__ which may in turn require allowing installing unsigned drivers.   
 
 Using MissionPlanner
-=====================================
+====================
 
 #. Download and unzip the `PX4Flow-KLT firmware <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
    (`source code here <https://github.com/priseborough/px4flow/tree/klt_flow>`__)

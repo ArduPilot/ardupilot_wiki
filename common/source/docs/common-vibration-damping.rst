@@ -345,7 +345,7 @@ The log file that was used to produce the results shown above can be
 downloaded from here: \ `Turnigy Talon 2min Loiter (default PIDs) <https://www.dropbox.com/s/qju3b33a82wbh3v/2013-10-03%2009-55%2010.log>`__
 
 3D Printed Anti-Vibration Platform for NAVIO2
------------------------------------------------
+---------------------------------------------
 
 Anti-vibration for NAVIO2 can be easily 3D printed. It significantly simplifies mounting and eliminates vibrations. You can find STL files `here <https://docs.emlid.com/navio2/Navio-APM/hardware-setup/#anti-vibration-mount>`__.
 
