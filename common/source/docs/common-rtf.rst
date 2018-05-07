@@ -23,7 +23,7 @@ Vehicles from Partners
 Vehicles from Non-Partners
 ==========================
 
-* `Anaconda <http://kgaviation.com/store/p11/anaconda>`__, `Stratosurfer <http://kgaviation.com/store/p12/stratosurfer>`__ and `Skyhunter <http://kgaviation.com/store/p10/skyhunter>`__ fixed-wing from `KG aviation <http://kgaviation.com/index.html>`__ (`video <https://www.youtube.com/watch?v=Yx1k8VgpHlU>`__)
+* `Anaconda <http://kgaviation.com/store/p11/anaconda>`__, `Believer <http://kgaviation.com/store/p13/The_Believer_.html>`__, `Stratosurfer <http://kgaviation.com/store/p12/stratosurfer>`__ and `Skyhunter <http://kgaviation.com/store/p10/skyhunter>`__ fixed-wing from `KG aviation <http://kgaviation.com/index.html>`__ (`video <https://www.youtube.com/watch?v=Yx1k8VgpHlU>`__)
 * `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
 * Cheerson CX-20 from `Amazon <https://www.amazon.com/Cheerson-CX-20-CX20-Auto-Pathfinder-Quadcopter/dp/B00J7OGX9C>`__ (uses now-unsupported APM2 compatible controller)
 * `ErleRover from ErleRobotics <https://erlerobotics.com/blog/product/erle-rover/>`__
