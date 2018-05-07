@@ -1,10 +1,10 @@
 .. _common-vl53l0x-lidar:
 
 ==========================
-ST VL53L1X / VL53L1X Lidar
+ST VL53L0X / VL53L0X Lidar
 ==========================
 
-The `VL53L1X <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__ lidar is a very small, affordable but relatively short range (2m range) time-of-flight lidar
+The `VL53L0X <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__ lidar is a very small, affordable but relatively short range (2m range) time-of-flight lidar
 
 .. image:: ../../../images/vl53l0x.jpg
 
