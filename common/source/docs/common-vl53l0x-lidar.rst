@@ -4,20 +4,20 @@
 ST VL53L1X / VL53L1X Lidar
 ==========================
 
-The `ST VL53L1X <http://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html>`__ (4m range) and `VL53L1X <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__ (2m range) lidar is a very small, affordable but relatively short range time-of-flight lidar.
+The `VL53L1X <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__ lidar is a very small, affordable but relatively short range (2m range) time-of-flight lidar
 
 .. image:: ../../../images/vl53l0x.jpg
 
-*images courtesy of Pololu.com and Sparkfun.com*
+*images courtesy of Pololu.com*
 
 .. note::
 
-   Support for this lidar was first made available in available in Copter-3.6, Rover-3.3, and Plane-3.9
+   Support for this lidar was first made available in available in Copter-3.6, Rover-3.3, and Plane-3.9.
+   ArduPilot does not yet support the 4m `ST VL53L1X <http://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html>`__.
 
 Where to Buy
 ------------
 
-- `Sparkfun <https://www.sparkfun.com/products/14667>`__ (VL53L1X, 4m)
 - `Pololu <https://www.pololu.com/product/2490>`__ (VL53L0X, 2m)
 - `Adafruit <https://www.adafruit.com/product/3317>`__ (VL53L0X, 2m)
 
@@ -34,8 +34,8 @@ Please set the rangefinder parameters as shown below (this can be done using the
 -  :ref:`RNGFND_ADDR <RNGFND_ADDR>` = 41 (I2C Address of lidar in decimal).  *The sensor's default I2C address is 0x29 hexademical which is 41 in decimal.*
 -  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **320** (for 4m sensor) or **120** (for 2m).  *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **120**.  *This is the distance in cm that the rangefinder can reliably read.*
+-  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in cm from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 Testing the sensor
 ==================
