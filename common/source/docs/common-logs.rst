@@ -12,6 +12,7 @@ This section contains topics related to mission logging and analysis.
 
     Diagnosing problems using Logs <common-diagnosing-problems-using-logs>
     Dataflash Logs <common-downloading-and-analyzing-data-logs-in-mission-planner>
+    Dataflash "Batch Sampling" <common-imu-batchsampling>
     Telemetry Logs <common-mission-planner-telemetry-logs>
     Recording and Playing Back Missions <common-recording-and-playing-back-missions>
 
