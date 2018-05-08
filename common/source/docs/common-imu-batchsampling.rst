@@ -19,6 +19,8 @@ The ``INS_BAT_MASK`` parameter specifies which IMUs in the system to log high-ra
 
 ``IMU RAW`` sampling must be enabled in your logging bitmask.  This is bit 19, so you must either use a GCS which has checkboxes for each bitmask option or add 1048576 to your current bitmask value.
 
+``INS_LOG_BAT_OPT`` must be set to one
+
 .. note:
 
    ``IMU_FAST`` must be turned off in your LOG_BITMASK for batch sampling to work
