@@ -18,6 +18,10 @@ Corporate Partners
     :width: 250px
     :target:  http://www.jDrones.com/home/
 
+.. image:: ../../../images/supporters/supporters_logo_proficnc.png
+    :width: 250px
+    :target:  http://www.proficnc.com/stores
+    
 .. image:: ../../../images/supporters/supporters_logo_mrobotics.png
     :width: 250px
     :target:  http://mrobotics.io/
@@ -37,10 +41,6 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_craftandtheory.png
     :width: 250px
     :target:  http://craftandtheoryllc.com
-
-.. image:: ../../../images/supporters/supporters_logo_proficnc.png
-    :width: 250px
-    :target:  http://www.proficnc.com/stores
 
 .. image:: ../../../images/supporters/supporters_logo_LaserNavigation.png
     :width: 250px
