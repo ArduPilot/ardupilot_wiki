@@ -30,10 +30,6 @@ Corporate Partners
     :width: 250px
     :target:  http://www.cuav.net/
 
-.. image:: ../../../images/supporters/supporters_logo_falconunmanned.gif
-    :width: 250px
-    :target:  http://www.falconunmanned.com/
-
 .. image:: ../../../images/supporters/supporters_logo_livelink.png
     :width: 250px
     :target:  http://www.livelinktechnology.net/
