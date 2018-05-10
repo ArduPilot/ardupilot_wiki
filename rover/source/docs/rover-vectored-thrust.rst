@@ -9,7 +9,7 @@ Vectored Thrust
 
 *above image is of a Sprint F3 boat from HobbyKing* (`link <https://hobbyking.com/en_us/sprint-f3-fiberglass-tunnel-hull-brushless-racing-boat-w-motor-630mm.html>`__)
 
-Rover-3.3.1 (and higher) supports "vectored thrust" which improves steering control for boats and hovercraft that use the steering servo to aim the motor.
+Rover-3.3.1 (and higher) supports "vectored thrust" which improves steering control for :ref:`boats <boat-configuration>` and hovercraft that use the steering servo to aim the motor.
 This feature should not be used on cars or boats with a rudder positioned away from the motors.
 
 To enable this features set the :ref:`MOT_VEC_THR_BASE <MOT_VEC_THR_BASE>` parameter to a value between 10 and 30 (normally 20 works well).
