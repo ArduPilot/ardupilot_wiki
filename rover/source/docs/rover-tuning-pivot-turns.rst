@@ -18,3 +18,11 @@ Parmeters
 - :ref:`ATC_STR_ANG_P <ATC_STR_ANG_P>` converts the vehicle's heading error into a desired turn rate.  Higher values lead to a more aggressive turn towards the destination.
 - :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` limits the vehicle's maximum turn rate (in degrees per second) in all modes including during pivot turns.
 - :ref:`ATC_STR_ACC_MAX <ATC_STR_ACC_MAX>` limits the vehicle's maximum rotational acceleration (in deg/sec/sec) in all modes.  higher numbers lead to the vehicle getting up to its maximum turn rate more quickly
+
+Videos
+------
+
+..  youtube::  G6BuZuNi5Og   
+    :width: 100%
+
+*box boat performing pivot turns*
