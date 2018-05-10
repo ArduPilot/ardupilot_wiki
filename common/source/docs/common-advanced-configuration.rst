@@ -17,6 +17,7 @@ tuning options for the vehicle.
 [/site]
 [site wiki="rover"]
     Auxiliary Functions <rover-auxiliary-functions>
+    Boats with Vectored Thrust <rover-vectored-thrust>
 [/site]
     CAN Bus Setup <common-canbus-setup-advanced>
     Compass Setup (Advanced) <common-compass-setup-advanced>
