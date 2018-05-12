@@ -119,20 +119,20 @@ As a reference the diagram below provides a high level view of Copter's architec
    ::
 
             Mode *flightmode;
+        #if MODE_ACRO_ENABLED == ENABLED
         #if FRAME_CONFIG == HELI_FRAME
-            ModeAcro_Heli mode_acro{*this};
+            ModeAcro_Heli mode_acro;
         #else
-            ModeAcro mode_acro{*this};
+            ModeAcro mode_acro;
         #endif
-            ModeAltHold mode_althold{*this};
-            ModeAuto mode_auto{*this, mission, circle_nav};
+        #endif
+            ModeAltHold mode_althold;
+        #if MODE_AUTO_ENABLED == ENABLED
+            ModeAuto mode_auto;
+        #endif
         #if AUTOTUNE_ENABLED == ENABLED
-            ModeAutoTune mode_autotune{*this};
+            ModeAutoTune mode_autotune;
         #endif
-            ModeBrake mode_brake{*this};
-            ModeCircle mode_circle{*this, circle_nav};
-            ModeDrift mode_drift{*this};
-            ModeFlip mode_flip{*this};
 
 #. In `mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.cpp>`__ add the new mode to the ``mode_from_mode_num()`` function to create the mapping between the mode's number and the instance of the class.
 
