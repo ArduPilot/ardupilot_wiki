@@ -11,7 +11,7 @@ OpenPilot Mini Revo
 
 .. note::
 
-   Support for the Mini Revo will be released with Copter-3.6.
+   Support for the Revo Mini will be released with Copter-3.6.
 
 Specifications
 ==============
@@ -61,7 +61,8 @@ Compile ArduPilot from the Copter-3.6 branch. After cloning, checkout commit `d5
     git checkout d575d5e
     
     #Assuming you have all of the dependencies.
-    ./waf copter --board mini-revo
+    ./waf configure --board revo-mini
+    ./waf copter
     
 This will generate the file build/revo-min/bin/arducopter.apj that we will use to flash the device.
     
@@ -69,17 +70,17 @@ Enter DFU Mode
 --------------
 The OpenPilot Revolution Mini does not come with an ArduPilot compatible bootloader and so you'll need to flash new bootloader to the device. This only has to be done once. To flash the bootloader you must first enter DFU mode. To do this, you'll need to locate and short two pads on the device. You can short the pads in any particular way (either with a wire, solder joint, or something else). Detailed instructions are available on the `Revo Mini LibrePilot Wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/29622291/Recover+board+using+DFU>`__. A small wire is the easiest way to short the device. You can also power the device via USB first, and then short the pads if using a wire. Once you have the device in DFU mode and connected to your machine continue with the steps here.
 
-Install dfu-utils
+Install dfu-util
 -----------------
 Linux (Ubuntu)
 ::
     
-    sudo apt-get install dfu-utils
+    sudo apt-get install dfu-util
     
 OS X
 ::
     
-    brew install dfu-utils
+    brew install dfu-util
     
 Windows
 
@@ -91,7 +92,7 @@ Download the `bootloader <https://github.com/ArduPilot/ardupilot/blob/master/Too
 
 ::
 
-    dfu-util -d 0483:df11 -c 1 -i 0  -a 0  -D revo405_bl.bin  -s 0x08000000
+    sudo dfu-util -d 0483:df11 -c 1 -i 0  -a 0  -D revo405_bl.bin  -s 0x08000000
 
 Once the flashing is complete, power cycle the board and you should see a solid green power LED and a rapidly blinking blue LED.
 
@@ -118,7 +119,7 @@ Congratulations! You're now running ArduCopter on the OpenPilot Revolution Mini.
 
 Known Issues
 ============
-At the time of writing (the release of Copter 3.6-rc1) the physical board orientation differs from the orientation in software. To fix this, simply change AHRS_ORIENTATION to YAW_180.
+At the time of writing (the release of Copter 3.6-rc1) the physical board orientation differs from the orientation in software. To fix this, simply change AHRS_ORIENTATION to YAW_180.  Test in your GCS software, as this will be rectified at some point.
 
 Where to Buy
 ============
