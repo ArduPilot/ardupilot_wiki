@@ -220,53 +220,7 @@ If your camera took a picture, congratulations! You are all set to take
 pictures using the Pixhawk/APM flight controller without needing third
 party hardware!
 
-Please feel free to give us a LIKE and follow us on Facebook:
+Many thanks to Oliver Volkmann and `*www.microaerialprojects.com* <http://www.microaerialprojects.com/>`__
+for contributing this page.
 
-`*https://www.facebook.com/MicroAerialProjects/* <https://www.facebook.com/MicroAerialProjects/>`__
-
-and subscribe to our Website for updates on our drone mapping
-
-adventures around the World:
-`*www.microaerialprojects.com* <http://www.microaerialprojects.com/>`__
-
-**If you enjoy having this cost cutting functionality and would like to
-donate to the continuous development of our Pixhawk/APM/Mission Planner
-open source projects, please do so by visiting:**
-
-`*https://www.paypal.com/au/cgi-* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
-
-`*bin/webscr?cmd=\_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT5* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
-`*0TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
-`*663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donatio* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
-`*n\_\_DonationFlow\_\_\_StateDonationStart&rapidsStateSignature=426e017c* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
-`*193d6077f946b10961df11f68294ea28* <https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=zXIOPL841RqJk0bJ4xeNYPZcMMTT50TK6UyUKISd8ycJPHxtr3aDXI7M2He&dispatch=5885d80a13c0db1f8e263663d3faee8d83a0bf7db316a7beb1b14b43acd04037&rapidsState=Donation__DonationFlow___StateDonationStart&rapidsStateSignature=426e017c193d6077f946b10961df11f68294ea28>`__
-
-
-
-OR
-
-    Share your solutions and experiences with others on the appropriate
-    social media/blog platforms!
-
-
-
-.. |image0| image:: https://user-images.githubusercontent.com/34314456/33682607-105baf26-da96-11e7-8d06-da8f90016af8.png
-.. |image1| image:: https://user-images.githubusercontent.com/34314456/33682608-10700318-da96-11e7-9bf8-3e83509778b8.png
-.. |image2| image:: https://user-images.githubusercontent.com/34314456/33682609-10a8b5d2-da96-11e7-8e7d-450c5e180ec2.png
-.. |image3| image:: https://user-images.githubusercontent.com/34314456/33682610-10bda5be-da96-11e7-90e7-e98ef210d66a.png
-.. |image4| image:: https://user-images.githubusercontent.com/34314456/33682611-10efb0b8-da96-11e7-9e66-8a78702ca993.png
-.. |image5| image:: https://user-images.githubusercontent.com/34314456/33682612-11006318-da96-11e7-9d3a-d508a236fa8b.png
-.. |image6| image:: https://user-images.githubusercontent.com/34314456/33682613-11141642-da96-11e7-83be-113f15b547ca.png
-.. |image7| image:: https://user-images.githubusercontent.com/34314456/33682614-1128194e-da96-11e7-92b7-0e64be53801b.png
-.. |image8| image:: https://user-images.githubusercontent.com/34314456/33682615-11554e8c-da96-11e7-8f9e-2d4da901d341.png
-.. |image9| image:: https://user-images.githubusercontent.com/34314456/33682616-11942850-da96-11e7-84d5-f4872563d9cf.png
-.. |image10| image:: https://user-images.githubusercontent.com/34314456/33682617-11ca0d76-da96-11e7-9442-2514b099f905.png
-.. |image11| image:: https://user-images.githubusercontent.com/34314456/33682619-11ee2e90-da96-11e7-854a-9c850528beba.png
-.. |image12| image:: https://user-images.githubusercontent.com/34314456/33682620-122cd0a0-da96-11e7-9336-6701ec637017.png
-.. |image13| image:: https://user-images.githubusercontent.com/34314456/33682621-12654836-da96-11e7-8fa2-8a6b5c88d8a1.png
-.. |image14| image:: https://user-images.githubusercontent.com/34314456/33682622-129b622c-da96-11e7-9954-2c042e427ffe.png
-.. |image15| image:: https://user-images.githubusercontent.com/34314456/33682623-12d831f2-da96-11e7-9c34-93ee7fc1439a.png
-.. |image16| image:: https://user-images.githubusercontent.com/34314456/33682624-13149020-da96-11e7-97f5-f3d4109fb6c9.png
-.. |image17| image:: https://user-images.githubusercontent.com/34314456/33682627-134cf6f4-da96-11e7-99eb-a50b286a6bd1.png
-.. |image18| image:: https://user-images.githubusercontent.com/34314456/33682629-13882738-da96-11e7-9c0d-1de73a74ca19.png
 
