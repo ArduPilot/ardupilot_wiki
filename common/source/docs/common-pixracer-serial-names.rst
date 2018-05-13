@@ -1,4 +1,4 @@
-.. _common-pixracer-serial-mapping:
+.. _common-pixracer-serial-names:
 
 =======================
 PixRacer Serial Mapping

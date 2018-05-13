@@ -12,7 +12,7 @@ Current boards
 ==============
 
 Open hardware 
---------------
+-------------
 
 .. toctree::
     :maxdepth: 1
@@ -28,7 +28,7 @@ Open hardware
     TauLabs Sparky2 <common-taulabs-sparky2>
 
 Closed hardware
------------------
+---------------
 
 .. toctree::
     :maxdepth: 1

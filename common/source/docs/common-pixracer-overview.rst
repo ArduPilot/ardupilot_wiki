@@ -378,8 +378,7 @@ Switch
    </table>
 
 Debug port (JST SM06B connector)
-------------------------------------------
-
+--------------------------------
 .. raw:: html
 
    <table border="1" class="docutils">
