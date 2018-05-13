@@ -61,7 +61,7 @@ Compile ArduPilot from the Copter-3.6 branch. After cloning, checkout commit `d5
     git checkout d575d5e
     
     #Assuming you have all of the dependencies.
-    ./waf copter --board mini-revo
+    ./waf copter --board revo-mini
     
 This will generate the file build/revo-min/bin/arducopter.apj that we will use to flash the device.
     
@@ -74,12 +74,12 @@ Install dfu-utils
 Linux (Ubuntu)
 ::
     
-    sudo apt-get install dfu-utils
+    sudo apt-get install dfu-util
     
 OS X
 ::
     
-    brew install dfu-utils
+    brew install dfu-util
     
 Windows
 
@@ -91,7 +91,7 @@ Download the `bootloader <https://github.com/ArduPilot/ardupilot/blob/master/Too
 
 ::
 
-    dfu-util -d 0483:df11 -c 1 -i 0  -a 0  -D revo405_bl.bin  -s 0x08000000
+    sudo dfu-util -d 0483:df11 -c 1 -i 0  -a 0  -D revo405_bl.bin  -s 0x08000000
 
 Once the flashing is complete, power cycle the board and you should see a solid green power LED and a rapidly blinking blue LED.
 
