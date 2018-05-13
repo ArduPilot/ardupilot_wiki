@@ -64,7 +64,7 @@ If calibration fails:
 - if compass calibration still fails it may help to raise :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>` from 850 to 2000 or even 3000
 
 Onboard Calibration using Stick Gestures (no GCS)
-================================================
+=================================================
 Copter-3.4 (and higher) supports "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the flight controller with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
 
 - requires RC calibration first
@@ -74,8 +74,9 @@ Copter-3.4 (and higher) supports "Onboard Calibration using RC Controller stick 
 
    .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg
       :target: ../_images/accel-calib-positions-e1376083327116.jpg
-      
+
 - upon successful completion three rising tones will be emitted and you will need to reboot the autopilot before it is possible to arm the vehicle.
+
 If calibration fails:
 
 - you will hear a failure tone and the calibration routine will restart

@@ -1,15 +1,15 @@
 .. _common-pixhawk2-overview:
 
-============================
+=================
 The Cube Overview
-============================
+=================
 
 .. image:: ../../../images/thecube/connect-to-com-port.jpg
     :target: ../_images/connect-to-com-port.jpg
     :width: 360px
 
 System Features
-=======================
+===============
 The Cube flight controller is a further evloution of the Pixhawk flight controller. It is designed for commercial systems and manufacturers who wish to integrate flight controller into their system. On top of the existing features of Pixhawk, it has the following enhancements:
 
 -  3 sets of IMU sensors for extra redundancy
@@ -59,7 +59,7 @@ Specifications
 
 
 The Cube connector pin assignments
-=================================
+==================================
 This section details the pin assignments of the standard carrier board of The Cube. There are other types of carrier boards available, please refer to the manufacturer pages for pinouts of specific carrier board.
 
 .. image:: ../../../images/thecube/pixhawk2-pinout.jpg
