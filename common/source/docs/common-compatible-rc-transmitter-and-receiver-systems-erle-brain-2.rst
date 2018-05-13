@@ -92,9 +92,6 @@ PPM-Sum. You can check for compatibility at `FRSky's web site <http://www.frsky-
 The receiver shown is PPM-Sum compatible and is recommended (4 channel
 receivers still do 8 channel PPM-Sum).
 
-.. image:: ../../../images/receiver_frsky.gif
-    :target: ../_images/receiver_frsky.gif
-
 .. image:: ../../../images/receiver_frssky_d4r_2.jpg
     :target: ../_images/receiver_frssky_d4r_2.jpg
 

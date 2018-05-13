@@ -9,6 +9,7 @@ See separate wiki pages on object avoidance for Copter and Rover for more detail
 
    .. image:: ../../../images/rplidar-a2.jpg
        :width: 300px
+
 *image courtesy of robotshop.com*
 
 Where to buy
