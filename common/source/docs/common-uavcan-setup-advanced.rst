@@ -44,9 +44,11 @@ possible.
 
 To reduce bandwidth, the CAN_D1_UC_ESC_BM and CAN_D1_UC_SRV_BM params should be set
 to enable only the motor and servo channels you need CAN signals sent to.
-Example: For a configuration of CAN servos on channels 1,2,4 and ESC motor on channel 3, set:
-CAN_D1_UC_SRV_BM = 0x0B
-CAN_D1_UC_ESC_BM = 0x04
+
+-  Example: For a configuration of CAN servos on channels 1,2,4 and ESC motor on channel 3, set:
+-  Example: **CAN_D1_UC_SRV_BM** = 0x0B
+-  Example: **CAN_D1_UC_ESC_BM** = 0x04
+
 
 GNSS receiver configuration settings
 ====================================
