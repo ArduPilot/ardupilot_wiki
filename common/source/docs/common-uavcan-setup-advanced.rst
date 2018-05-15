@@ -42,6 +42,12 @@ that the command will be generated for. In case of copters, usually the ESC bitm
 should be filled and in case of planes - main one is for servo, though any mix is
 possible.
 
+To reduce bandwidth, the CAN_D1_UC_ESC_BM and CAN_D1_UC_SRV_BM params should be set
+to enable only the motor and servo channels you need CAN signals sent to.
+Example: For a configuration of CAN servos on channels 1,2,4 and ESC motor on channel 3, set:
+CAN_D1_UC_SRV_BM = 0x0B
+CAN_D1_UC_ESC_BM = 0x04
+
 GNSS receiver configuration settings
 ====================================
 
@@ -51,4 +57,9 @@ The **TYPE** parameter should be set to 9 for corresponding GNSS receiver in aut
 
 .. image:: ../../../images/uavcan-gnss-settings.png
     :target: ../_images/uavcan-gnss-settings.png
+    
+
+   
+   
+
     
