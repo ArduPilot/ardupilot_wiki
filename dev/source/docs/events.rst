@@ -4,12 +4,11 @@
 Events for 2018/2019
 ====================
 
-This is a list of events where ArduPilot developers and/or their `Partners <http://ardupilot.org/about/Partners>`__ can be found.
+This is a list of events where ArduPilot developers and/or their `Partners <http://ardupilot.org/about/Partners>`__ can be found
 
 Planned Events
 --------------
 
-- Apr 30th ~ May 3rd 2018: `AUVSI Xponential in Denver Colorado <http://www.xponential.org/xponential2018/public/enter.aspx>`__ booth 3442.
 - June 22nd ~ 24th 2018: ArduPilot SZUAVIA conference in Shenzhen China (`intro video from Jani Hirvinen <https://www.youtube.com/watch?v=JvRhIh_cQzU>`__)
 - Sep 5th ~ 7th 2018: InterDrone in Las Vegas, USA
 - Sep 24th ~ 28th 2018: `Medical Express Challenge <https://uavchallenge.org/medical-express/>`__ in Dalby Australia
@@ -19,5 +18,6 @@ Planned Events
 Past Events
 -----------
 
-- 17th/18th Feb 2018 - Canberra Developer Un-Conference (`blog <https://discuss.ardupilot.org/t/ardupilot-unconference-2018-presentations>`__)
-- Mar 22nd ~ 24th 2018: `Japan Drone Expo in Chiba Japan <http://www.japan-drone.com/en_la/>`__ at eLAB and Maxell booths.
+- Apr 30th ~ May 3rd 2018: `AUVSI Xponential in Denver Colorado <http://www.xponential.org/xponential2018/public/enter.aspx>`__ booth 3442 (`blog <https://discuss.ardupilot.org/t/ardupilot-at-auvsi-exponential-18>`__)
+- Mar 22nd ~ 24th 2018: `Japan Drone Expo in Chiba Japan <http://www.japan-drone.com/en_la/>`__ at eLAB and Maxell booths
+- Feb 17th/18th 2018 - Canberra Developer Un-Conference (`blog <https://discuss.ardupilot.org/t/ardupilot-unconference-2018-presentations>`__)
