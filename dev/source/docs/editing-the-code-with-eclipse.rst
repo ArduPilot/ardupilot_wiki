@@ -115,16 +115,9 @@ full list of possible targets can be found in
 |                                      | for a quadcopter                     |
 +--------------------------------------+--------------------------------------+
 | ``make px4-v2``                      | Build the Pixhawk firmware for a     |
-|                                      | quad                                 |
-+--------------------------------------+--------------------------------------+
-| ``make px4-v2-hexa``                 | Build the Pixhawk firmware for a     |
-|                                      | hexacopter.                          |
-|                                      |                                      |
-|                                      | # Other supported suffixes include   |
-|                                      | "octa", "tri" and "heli".            |
-|                                      |                                      |
-|                                      | # More can be found in               |
-|                                      | "mk/tagets.mk" under FRAMES          |
+|                                      | copter. in the new version you can   |
+|                                      | specify the frame type (quad, hexa,  | 
+|                                      | octo) after flashing the pixhawk     | 
 +--------------------------------------+--------------------------------------+
 | ``make clean``                       | "clean" the ardupilot directory      |
 +--------------------------------------+--------------------------------------+
@@ -143,10 +136,6 @@ make target.
 .. image:: ../images/EditingTheCode_Eclipse3.png
     :target: ../_images/EditingTheCode_Eclipse3.png
 
-.. note::
-
-   There is currently no option to upload frames other than
-   quad.
 
 Building from Eclipse
 =====================
