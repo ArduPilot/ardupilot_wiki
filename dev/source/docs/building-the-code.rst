@@ -14,7 +14,7 @@ Setting up the Build Environment
 - :ref:`Setup the Build Environment on Linux/Ubuntu <building-setup-linux>`
 - :ref:`Setup the make Build Environment on Windows <building-setup-windows>`
 - :ref:`Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>`
-- :ref:`Setup the waf Build Environment on Windows using Cygwin (not fully tested) <building-setup-windows-cygwin>`
+- :ref:`Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>`
 - :ref:`Setup the Build Environment on MacOSX <building-setup-mac>`
 
 Building / Compiling
@@ -29,8 +29,11 @@ In most cases the build dependencies described for **waf** and **make** are the 
 
 **Windows users:**
 
+Windows users have 3 options for setting up the build environment. All of the below options will allow building of native (SITL) and Pixhawk-based boards.
 
-- :ref:`Building for Pixhawk on Windows with Make <building-px4-with-make>` 
+- :ref:`Building for Pixhawk on Windows with Make and Eclipse <building-px4-with-make>` 
+- :ref:`Setup the Build Environment on Windows10 using WSL <building-setup-windows10>` 
+- :ref:`Setup the Build Environment on Windows using Cygwin <building-setup-windows-cygwin>` 
 
 **Board specific instructions:**
 
@@ -66,7 +69,7 @@ Links to all build pages
     :maxdepth: 1
 
     Setup the Build Environment on Linux/Ubuntu <building-setup-linux>
-    Setup the Build Environment on Windows <building-setup-windows>
+    Setup the make Build Environment on Windows <building-setup-windows>
     Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
     Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>
     Setup the Build Environment on MacOSX <building-setup-mac>
