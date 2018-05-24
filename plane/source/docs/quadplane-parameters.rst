@@ -26,11 +26,7 @@ Key parameters are:
    as one of your available flight modes (as that will shut down the
    quad motors). Please be careful not to use hard left rudder and zero
    throttle while flying or you risk disarming your motors.
--  The Q_THR_MID parameter is important for smooth transitions. It
-   defaults to 500 which means 50% throttle for hover. If your aircraft
-   needs more or less than 50% throttle to hover then please adjust
-   this. That will prevent a throttle surge during transition as the
-   altitude controller learns the right throttle level
+
 
 .. note::
 
