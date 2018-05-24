@@ -19,11 +19,12 @@ Below is a more zoomed in view (as compared to the above diagram) of the archite
 .. image:: ../images/copter-architecture.png
     :target: ../_images/copter-architecture.png
 
-Click on the images below to see a high level view of flight-mode to
-motor output code:
+The image below shows the architecture of **manual modes** (i.e. Stabilize, Acro, Drift)
 
 .. image:: ../images/AC_CodeOverview_ManualFlightMode.png
     :target: ../_images/AC_CodeOverview_ManualFlightMode.png
+
+The image below shows the architecture of **autonomous modes** (i.e. RTL, Guided, Auto)
 
 .. image:: ../images/AC_CodeOverview_AutoFlightModes.png
     :target: ../_images/AC_CodeOverview_AutoFlightModes.png
