@@ -52,6 +52,7 @@ based upon your set-up.
 
     Benewake TF02 <common-benewake-tf02-lidar>
     Benewake TFmini <common-benewake-tfmini-lidar>
+    EchoLogger ECT400 <common-echologger-ect400>
     LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
