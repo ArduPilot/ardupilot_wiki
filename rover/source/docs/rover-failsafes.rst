@@ -20,9 +20,22 @@ This failsafe is triggered if the connection between the user's transmitter and 
   - the throttle channel (normally input channel 3) value falling below the :ref:`FS_THR_VALUE <FS_THR_VALUE>` parmeter value
 
 - set :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` to "1" to enable this failsafe
-- if :ref:`FS_ACTION <FS_ACTION>` is "1", the vehicle will :ref:`RTL <rtl-mode>` to home, if "2" the vehicle will :ref:`Hold <hold-mode>`
+- if :ref:`FS_ACTION <FS_ACTION>` is "1", the vehicle will :ref:`RTL <rtl-mode>` to home, if "2" the vehicle will :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.
 - once the transmitter/receiver connection is restored, the user may use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode)
-    
+
+Battery Failsafe
+----------------
+
+The battery failsafe is triggered if a :ref:`battery monitor <common-powermodule-landingpage>` has been enabled and the battery voltage and/or the estimated remaining power has crossed a configurable threshold for at least 10 seconds.
+
+- set :ref:`BATT_LOW_VOLT <BATT_LOW_VOLT>` to the minimum voltage (i.e. 10.5V)
+- optionally set :ref:`BATT_LOW_MAH <BATT_LOW_MAH>` to the minimum battery capacity (i.e. 300mAh)
+- :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` configures the failsafe action to take.  "0" to take no action, "1" to change into :ref:`RTL <rtl-mode>`, "2" to change to :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.  "5" will disarm the vehicle.
+- :ref:`BATT_LOW_TIMER <BATT_LOW_TIMER>` allows configuring how many seconds the low voltage or low capacity must continue for the failsafe action to be executed (default is 10seconds)
+
+A two stage failsafe is possible by setting the :ref:`BATT_CRT_VOLT <BATT_CRT_VOLT>`, :ref:`BATT_CRT_MAH <BATT_CRT_MAH>` and :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>`.
+The second stage failsafe action will be taken once the battery falls below these limits for :ref:`BATT_LOW_TIMER <BATT_LOW_TIMER>` seconds.
+
 GCS Failsafe (aka Telemetry Failsafe)
 -------------------------------------
 
