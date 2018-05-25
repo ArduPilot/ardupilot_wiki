@@ -5,7 +5,7 @@ TauLabs Sparky2
 ===============
 
 .. image:: ../../../images/taulabs-sparky2.png
-    :target: ../images/taulabs-sparky2.png
+    :target: ../_images/taulabs-sparky2.png
 
 *above image and some content courtesy of the* `TauLabs wiki <https://github.com/TauLabs/TauLabs/wiki/Sparky2>`__
 
