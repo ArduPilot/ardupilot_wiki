@@ -5,7 +5,7 @@ F4BY FMU
 ========
 
 .. image:: ../../../images/f4by.jpg
-    :target: ../images/f4by.jpg
+    :target: ../_images/f4by.jpg
 
 *above image and some content courtesy of* `Swift-Flyer <http://swift-flyer.com/?page_id=83>`__ *and* `MicroHobby.ru <https://microhobby.ru/polyotnyy-kontroller-f4by>`__
 
