@@ -48,6 +48,12 @@ Loading ArduPilot onto the board
 
 By default the board does not come pre-loaded with ArduPilot.  Instructions will be added soon describing how flash an ArduPilot compatable "bootloader" (a one time operation) and then how to upload ArduPilot using the Mission Planner or other ground station!
 
+If you are using a Kospi1 you may wish to load the default parameter file found `here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/Holybro-kospi1.param>`__ or if you are using the Mission Planner
+it can be conveniently loaded from the Config/Tuning >> Full Parameter Tree screen.  Select "Holybro-kospi1.param" from the drop-down and then push the "Load Presaved" button.
+
+.. image:: ../../../images/holybro-kakutef4-load-default-params.png
+    :target: ../_images/holybro-kakutef4-load-default-params.png
+
 Videos
 ======
 
