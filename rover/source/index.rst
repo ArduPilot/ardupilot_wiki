@@ -39,6 +39,7 @@ Table of Contents
     Mission Planning <docs/common-mission-planning>
     Logs <docs/common-logs>
     Optional Hardware <docs/common-optional-hardware>
+    Boats <docs/boat-configuration>
     Autopilot Hardware Options <docs/common-autopilots>
     Use-Cases and Applications <docs/common-use-cases-and-applications>
     Simulation <docs/common-simulation>
