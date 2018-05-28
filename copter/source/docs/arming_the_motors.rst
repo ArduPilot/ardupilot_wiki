@@ -4,9 +4,6 @@
 Arming the motors
 =================
 
-Arming the motors
-=================
-
 Arming the motors causes ArduPilot to apply power to your motors,
 which will cause them to start spinning.  Before arming the motors,
 make sure all people, objects, and any body parts (e.g., hands) are
