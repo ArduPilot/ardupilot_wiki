@@ -15,7 +15,7 @@ The `Benewake TFmini lidar <http://www.benewake.com/en/tfmini.html>`__ has an in
 Where to Buy
 ------------
 
-- the `Benewake.com Agents <http://www.benewake.com/en/agent.html>`__ page provides the full list of retailers including `3DXR <https://www.3dxr.co.uk/product/benewake-tfmini/>`__.
+- the `Benewake.com Agents <http://www.benewake.com/en/agent.html>`__ page provides the full list of retailers 
 
 Connecting to the Flight Controller
 -----------------------------------
