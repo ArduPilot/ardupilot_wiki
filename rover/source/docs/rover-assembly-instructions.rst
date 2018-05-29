@@ -21,4 +21,3 @@ The instructions for adding other hardware are covered in :ref:`Optional Hardwar
     Edge QuickStart <common-edge-quick-start>
     Installing GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>
     Motor and Servo connections <rover-motor-and-servo-connections>
-    Detailed Vehicle Builds <common-common-airframe-builds>
