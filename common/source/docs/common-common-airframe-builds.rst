@@ -13,10 +13,6 @@ and design.
 .. toctree::
     :maxdepth: 1
 
-[site wiki="rover"]
-    Brushless Traxxas Stampede 4WD Truck (PX4) <px4-rover-build-with-brushless-traxxas-stampede-4wd-truck>
-[/site]
-
 [site wiki="copter"]
     DJI F330 FlameWheel QuadCopter <dji-f330-flamewheel>
     Hoverthings Flip Sport Quadcopter <hoverthings-flip-sport-quadcopter>
