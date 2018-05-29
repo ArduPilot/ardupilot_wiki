@@ -1,4 +1,4 @@
-.. _px4-rover-build-with-brushless-traxxas-stampede-4wd-truck:
+.. _reference-frame-traxxas-stampede:
 
 ==========================
 Traxxas Stampede 4WD Truck
