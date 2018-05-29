@@ -4,7 +4,7 @@
 Benewake TFmini lidar
 =====================
 
-The `Benewake TFmini lidar <http://www.benewake.com/en/tfmini.html>`__ has an indoor range of 12m, an outdoor range of 7m and weighs only (5g).  More specifications can be found `here <http://www.benewake.com/en/canshu/show-171.html>`__.
+The `Benewake TFmini lidar <http://www.benewake.com/en/tfmini.html>`__ has an indoor range of 12m, an outdoor range of 7m and weighs only (5g).  More specifications can be found `here <http://www.benewake.com/en/canshu/show-171.html>`__ and in the `datasheet <http://www.benewake.com/en/down.html>`__.
 
 .. image:: ../../../images/benewake-tfmini-topimage.jpg
 

@@ -4,7 +4,7 @@
 Benewake TF02 lidar
 ===================
 
-The `Benewake TF02 lidar <http://www.benewake.com/en/tf02.html>`__ has an indoor range of 22m, an outdoor range of 10m, an update rate of 100hz and weighs only 52g.  More specifications can be found `here <http://www.benewake.com/en/canshu/show-172.html>`__.
+The `Benewake TF02 lidar <http://www.benewake.com/en/tf02.html>`__ has an indoor range of 22m, an outdoor range of 10m, an update rate of 100hz and weighs only 52g.  More specifications can be found `here <http://www.benewake.com/en/canshu/show-172.html>`__ and in the `datasheet <http://www.benewake.com/en/down.html>`__.
 
 .. image:: ../../../images/benewake-tf02-topimage.jpg
 
