@@ -50,6 +50,7 @@ based upon your set-up.
     Sonar Sensors <sonar-sensors>
 [/site]
 
+    Attollo Engineering Wasp200 <common-wasp200-lidar>
     Benewake TF02 <common-benewake-tf02-lidar>
     Benewake TFmini <common-benewake-tfmini-lidar>
     EchoLogger ECT400 <common-echologger-ect400>
