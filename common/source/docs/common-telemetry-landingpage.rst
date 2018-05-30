@@ -17,6 +17,7 @@ information based upon your set-up.
     :maxdepth: 1
 
     Bluetooth <common-mission-planner-bluetooth-connectivity>
+    ESP8266 wifi telemetry <common-esp8266-telemetry>
     FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
     FrSky telemetry <common-frsky-telemetry>
     RFD900 <common-rfd900>
