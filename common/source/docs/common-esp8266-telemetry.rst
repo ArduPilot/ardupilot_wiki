@@ -23,4 +23,4 @@ Connecting to a flight controller
 Flashing the device with mavlink compatible firmware
 ----------------------------------------------------
 
-instructions coming soon!
+Instructions on how to flash `MAVESP8266 <https://github.com/dogmaphobic/mavesp8266>`__ to the device are coming soon!
