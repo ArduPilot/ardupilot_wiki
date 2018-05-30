@@ -1,8 +1,8 @@
 .. _common-mission-planner-bluetooth-connectivity:
 
-======================================
-Mission Planner Bluetooth Connectivity
-======================================
+=========================
+Bluetooth Telemetry radio
+=========================
 
 A `Bluetooth Data Link <http://store.jdrones.com/Bluetooth_telemetry_modem_p/tlmbt01.htm>`__ can
 be used to connect your Pixhawk (or other controller) to your Bluetooth enabled PC or
@@ -10,8 +10,9 @@ Android Ground station at distances up to 50m.
 
 .. image:: ../../../images/Bluetooth.jpg
     :target: ../_images/Bluetooth.jpg
+    :width: 450px
 
-Connecting to the Pixhawk or APM2.x
+Connecting to the Flight Controller
 ===================================
 
 The Bluetooth data link comes with both a DF13 6 pin and 6-to-5 pin
