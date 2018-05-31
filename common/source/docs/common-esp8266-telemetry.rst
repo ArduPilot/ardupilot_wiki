@@ -23,4 +23,4 @@ Connecting to a flight controller
 Flashing the device with mavlink compatible firmware
 ----------------------------------------------------
 
-Instructions on how to flash `MAVESP8266 <https://github.com/dogmaphobic/mavesp8266>`__ to the device are coming soon!
+Instructions on how to flash `MAVESP8266 <https://github.com/dogmaphobic/mavesp8266>`__ to the device are coming soon!  Until then see `Ray's blog for some good advice <https://rays-blog.de/2016/10/21/224/adding-wi-fi-telemetry-to-pixhawk-flight-controller-with-esp8266-module/>`__.
