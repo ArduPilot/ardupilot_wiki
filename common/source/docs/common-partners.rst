@@ -169,6 +169,11 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_benewake.png
     :width: 250px
     :target:  http://www.benewake.com/en/index.html
+    
+ .. image:: ../../../images/supporters/supporters_foxtech_logo.jpg
+    :width: 250px   
+    :target:  https://www.foxtechfpv.com
+
 
 How does my company become a partner?
 =====================================
