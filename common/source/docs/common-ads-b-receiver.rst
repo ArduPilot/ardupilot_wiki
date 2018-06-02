@@ -68,6 +68,10 @@ For the Ping2020 you'll need to set the _PROTOCOL value to 2. For example, when 
 
 You will need to reboot your board after making those changes.
 
+To enable streaming the ADSB data to the GCS you'll want to check your StreamRate param. In some cases it is already set but it's good to check. These rates are adjustable per telemetry like in the case of having both a high-bandwidth and a low-bandwitdh link attached. The param to adjust the rate would depend on which one your GCS is connected to. In most cases, it is telem1.
+
+-  :ref:`SR1_ADSB <SR1_ADSB>` 5 (meaning 5Hz)
+
 Once operational aircraft within about 50km should appear on the ground
 station map.
 
@@ -129,7 +133,7 @@ Developer information including Simulation
 ==========================================
 The data is transmitted via the `ADSB_VEHICLE message <http://mavlink.org/messages/common#ADSB_VEHICLE>`__. When
 received by ArduPilot, it is streamed out using the SRx_ADSB value where x is the telemetry port number and the
-value is how many vehicles per second to be streamed. The list will not repeat any faster than 1 second. This
+value is how many vehicles per second to be streamed. If using telem1 the streamrate param would be ``SR1_ADSB``. The list will not repeat any faster than 1 second. This
 flexibility is useful to conserve bandwidth on data links but also allow maximum update rate for high-speed links
 such as an on-board companion computer.
 
