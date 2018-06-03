@@ -174,6 +174,9 @@ Corporate Partners
     :width: 250px   
     :target:  https://www.foxtechfpv.com
 
+.. image:: ../../../images/supporters/supporters_logo_skywalker.png
+    :width: 250px   
+    :target:  http://sky-walker.co.jp/english/index.html
 
 How does my company become a partner?
 =====================================
