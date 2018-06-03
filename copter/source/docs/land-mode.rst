@@ -4,6 +4,10 @@
 Land Mode
 =========
 
+.. warning::
+
+    Parameter: LAND_SPEED_HIGH not yet mentioned in the documentation (TODO)
+
 LAND Mode attempts to bring the copter straight down and has these
 features:
 
