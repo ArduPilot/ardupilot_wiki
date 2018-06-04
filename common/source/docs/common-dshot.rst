@@ -10,11 +10,16 @@ DShot and BLHeli ESC Support
 This articles describes how to setup and use three features supported
 by recent BLHeli ESC firmwares.
 
-- DShot ESC protocol support
-- ESC telemetry support
-- BLHeli pass-thru configuration and ESC flashing
+- DShot ESC protocol support (for sending digital signals to the ESC)
+- ESC telemetry support (for receiving performance data from the ESC)
+- BLHeli pass-thru configuration and ESC flashing (for configuring the ESC)
 
-Detailed descriptions of these features are lower down on this page.
+Detailed descriptions of these features are lower down on this page. 
+Dshot and telemetry ESC's provide an advantage over traditional ESC's for a number of reasons. 
+
+The primary advantage of Dshot is that it provides fast, high resolution digital communication. This opens the door for more precise vehicle control and removes the need to calibrate ESC's for different PWM ranges. 
+
+Telemetry ESC's also provide monitoring of performance data that previously required additional sensors (like power modules and RPM sensors). Because of the detailed data provided by every ESC, real-time decisions can be made and logs can be analyzed for indidvidual ESC or motor failure.
 
 .. warning::
 
@@ -30,7 +35,7 @@ We recommend choosing one that has the telemetry wire pre-soldered (see blue wir
 
 .. image:: ../../../images/dshot-telemwire.jpg
     :target: https://hobbyking.com/en_us/turnigy-multistar-32bit-51a-race-spec-esc-2-6s-opto.html
-    :width: 300px
+    :width: 400px
 
 *image courtesy of hobbyking.com*
 
@@ -44,21 +49,38 @@ Connecting and Configuring
 For :ref:`Pixhawk <common-pixhawk-overview>`, :ref:`The Cube <common-thecube-overview>` and related boards with IO co-processors, the ESC's ground and signal wire should be connected to the AUX OUT ports.
 For :ref:`Pixracer <common-pixracer-overview>` and :ref:`other boards <common-autopilots>` with all PWM outputs coming from the main processor, the normal outputs can be used.
 
-Connect all ESC's telemetry wires to a single Telemetry RX pin on the flight board (above diagram uses Serial5).
+To enable DShot (output):
 
-To enable DShot:
-
-- :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` (or :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` on quadplanes) to **4** meaning "DShot150"
+- :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>`, :ref:`SERVO_BLH_OTYPE <SERVO_BLH_OTYPE>`, or :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` on quadplanes to **4** meaning "DShot150"
 - on Pixhawk and Cube boards:
 
-  - set :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` to :ref:`SERVO4_FUNCTION <SERVO4_FUNCTION>` to 0
-  - set :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to :ref:`SERVO12_FUNCTION <SERVO12_FUNCTION>` to 33, 34, 35, 36 respectively
-  - for hexacopters, set :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` to 6, :ref:`SERVO1_FUNCTION <SERVO5_FUNCTION>` and :ref:`SERVO6_FUNCTION <SERVO6_FUNCTION>` to 0, :ref:`SERVO13_FUNCTION <SERVO13_FUNCTION>` and :ref:`SERVO14_FUNCTION <SERVO14_FUNCTION>` to 37, 38 respectively
+  - do not use channels 1-8 for DShot ESC's. Turn off :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` to :ref:`SERVO8_FUNCTION <SERVO8_FUNCTION>` OR set them to something other than motor or throttle functions.
+  - set the auxillary channels to their appropriate functions (:ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to :ref:`SERVO14_FUNCTION <SERVO14_FUNCTION>`). For quadcopters quadplanes, these parameters will be 33, 34, 35, and 36 for channels 9-12 (Aux 1-4).
+  - When using more than the first 4 Aux ports for DShot ESC's, set :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` to 6.
 
-To enable ESC telemetry:
+To enable ESC telemetry (feedback):
 
-- :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 16 (if telemetry is connected to Serial5)
-- :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>` to 10 to enable 10hz updates from the ESC
+Connect all ESC's telemetry wires to a single Telemetry RX pin on the flight board (above diagram uses Serial5).
+ESC telemetry is currently only available with BLHeli_32 ESCs, and a wire for the telemetry is only 
+pre-soldered for some ESCs. If the wire isn't pre-soldered you will need to solder it yourself. Pinouts for
+serial ports on The Cube can be found `here <http://ardupilot.org/copter/docs/common-pixhawk2-overview.html>`__.
+Support for KISS ESC Telemetry is planned.
+
+- :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 16 (if telemetry is connected to Serial5).
+- :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>` to 10 to enable 10hz updates and logging from the ESC.
+- :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` to the corresponding sum for the channels you want to monitor. (channel 1 = 1, channel 9 = 256, channel 10 = 512)
+
+The flight board requests telemetry from only one ESC at a time, cycling between them. 
+The following data is logged in the ESCn log messages in your dataflash
+log. This can be viewed in any ArduPilot dataflash log viewer.
+
+- RPM
+- Voltage
+- current
+- temperature
+- total-current
+
+To configure and flash ESC's using BLHeli, see the Pass-Through Support section bleow.
 
 DShot Protocol
 ==============
@@ -110,41 +132,6 @@ We do not currently support DShot output on other vehicle types.
    "auxillary" outputs. You will need to use the SERVOn_FUNCTION
    parameters to remap your motors to the auxillary outputs.
 
-ESC Telemetry
-=============
-
-If using BLHeli_32, you can also enable ESC telemetry feedback, allowing you to log the
-following variables from each ESC in flight:
-
-- RPM
-- Voltage
-- current
-- temperature
-- total-current
-
-To use ESC telemetry you need to connect a separate telemetry pin on
-all your ESCs back to a single UART RX pin on your flight board. ESC
-telemetry is currently only available with BLHeli_32 ESCs, and a wire for the
-telemetry is only pre-soldered for some ESCs. If the wire isn't
-pre-soldered you will need to solder it yourself.  
-Support for KISS ESC Telemetry is planned.
-
-The wires from all ESCs should all come back to a single UART RX
-line. The way it works is that the flight board requests telemetry
-from only one ESC at a time, cycling between them.
-
-You can use any of the UARTs on your flight board for telemetry
-feedback. You need to enable it using the SERIALn_PROTOCOL option for
-the UART you are using. For example, on a Cube if you wanted to use
-the Serial5 UART you would set :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 16 (where 16 is the
-value for "ESC Telemetry").
-
-You also need to set the telemetry rate in the :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>`
-parameter. This rate is the rate in Hz per ESC. So if you set it to 10
-then you will get 10Hz data for all ESCs.
-
-The data is logged in the ESCn log messages in your dataflash
-log. This can be viewed in any ArduPilot dataflash log viewer.
 
 BLHeli Pass-Through Support
 ===========================
