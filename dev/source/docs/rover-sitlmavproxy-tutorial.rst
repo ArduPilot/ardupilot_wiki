@@ -57,7 +57,11 @@ Starting
 **Right-click** on the map at your target destination, select **Fly
 to**, and enter an altitude (which is ignored). Rover will change to
 ``GUIDED`` mode, drive to the location, and then pause (still in GUIDED
-mode).
+mode). If there is no response, arm the rover by entering the following on
+the mavproxy console
+::
+
+    arm throttle
 
 .. figure:: ../images/MAVProxyRover_Guided_Menu.jpg
    :target: ../_images/MAVProxyRover_Guided_Menu.jpg
