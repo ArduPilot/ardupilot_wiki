@@ -99,7 +99,7 @@ supports four speeds:
 
 - DShot150 at 150kbaud (recommended)
 - DShot300 at 300kbaud
-- DShot600 at 600kbaud
+- DShot600 at 600kbaud (may be needed for BLHeli_S ESC's)
 - DShot1200 at 1200kbaud
 
 We recommend using the lowest baud rate, DShot150,
