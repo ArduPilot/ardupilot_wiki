@@ -5,7 +5,7 @@ Tailsitter Planes
 =================
 
 In ArduPilot tail-sitters are any VTOL aircraft type that rotates the
-fuselage (and autopilot) then moving between forward flight and hover.
+fuselage (and autopilot) when moving between forward flight and hover.
 
 Despite the name, not all tails-sitters land on their tails. Some are
 "belly landers", where they lie down flat for landing to improve
@@ -58,7 +58,7 @@ tailsitter are:
   PTCH2SRV_* and RLL2SRV_* gains)
 - when hovering the nose of the aircraft will try to point up for
   "level" flight
-- when in fixed wing flight nose of the aircraft will try to point
+- when in fixed wing flight the nose of the aircraft will try to point
   forward for "level" flight
 
 Orientation
