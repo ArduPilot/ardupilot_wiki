@@ -114,7 +114,7 @@ ATail Planes
 
 If you have an "A-Tail" plane (an inverted V-Tail) the control surface movements 
 referenced above should still be the same directions. It is likely that your servo 
-reversal will be opposite from a similar V-Tail setup.
+reversal or function will be opposite from a similar V-Tail setup.
 
 Servo Trim
 ==========
