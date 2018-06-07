@@ -36,8 +36,7 @@ RC failures (i.e. transmitter/receiver failures):
 
 **RC not calibrated** : the :ref:`radio calibration <common-radio-control-calibration>` has not been
 performed.  RC3_MIN and RC3_MAX must have been changed from their
-default values (1100 and 1900) and for channels 1 to 4, the MIN must be
-less than 1300 and the MAX greater than 1700.
+default values (1100 and 1900), and for channels 1 to 4, MIN value must be 1300 or less, and MAX value 1700 or more.
 
 Barometer failures:
 
