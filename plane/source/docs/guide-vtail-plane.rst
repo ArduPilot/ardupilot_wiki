@@ -68,8 +68,8 @@ instance, the plane should move its control surfaces to level itself.
    <tr><td>Roll Plane Left</td><td>Right aileron moves down and left aileron goes up</td><tr>
    <tr><td>Pitch plane up</td><td>Both tail surfaces move down</td></tr>
    <tr><td>Pitch plane down</td><td>Both tail surfaces move up</td></tr>
-   <tr><td>Roll Plane Right</td><td>Both tail surfaces move left</td></tr>
-   <tr><td>Roll Plane Left</td><td>Both tail surfaces move right</td></tr>
+   <tr><td>Yaw Plane Right</td><td>Both tail surfaces move left</td></tr>
+   <tr><td>Yaw Plane Left</td><td>Both tail surfaces move right</td></tr>
    </table>
 
 If the ailerons do not respond correctly, reverse the output by changing 
@@ -114,7 +114,7 @@ ATail Planes
 
 If you have an "A-Tail" plane (an inverted V-Tail) the control surface movements 
 referenced above should still be the same directions. It is likely that your servo 
-functions will be opposite from a similar V-Tail setup.
+reversal will be opposite from a similar V-Tail setup.
 
 Servo Trim
 ==========
