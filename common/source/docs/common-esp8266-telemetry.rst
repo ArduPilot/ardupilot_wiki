@@ -53,9 +53,9 @@ If you are using the Adafruit HUZZAH ESP8266 board and are flashing from a Windo
 - connect the device to your computer using the FTDI cable
 - download the ArduPilot specific version of MAVESP8266 from `this directory <http://firmware.ardupilot.org/Tools/MAVESP8266/latest/>`__
 
-  - `firmware-esp01_1m.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/2018-05-29/firmware-esp01_1m.bin>`__ is for boards with 1MB of flash (most boards)
-  - `firmware-esp01.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/2018-05-29/firmware-esp01.bin>`__ is for boards with only 512KB of flash (very old boards)
-  - `firmware-esp12e.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/2018-05-29/firmware-esp12e.bin>`__ is for boards with 4MB of flash
+  - `firmware-esp01_1m.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/latest/firmware-esp01_1m.bin>`__ is for boards with 1MB of flash (most boards)
+  - `firmware-esp01.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/latest/firmware-esp01.bin>`__ is for boards with only 512KB of flash (very old boards)
+  - `firmware-esp12e.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/latest/firmware-esp12e.bin>`__ is for boards with 4MB of flash
 - Windows users should download and run the NodeMCU flasher (`64bit <https://github.com/nodemcu/nodemcu-flasher/blob/master/Win64/Release/ESP8266Flasher.exe>`__ or `32bit <https://github.com/nodemcu/nodemcu-flasher/blob/master/Win32/Release/ESP8266Flasher.exe>`__)
 
   - on the Advanced page ensure the Flash size is set to 4MByte
