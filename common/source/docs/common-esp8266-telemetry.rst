@@ -20,6 +20,22 @@ Connecting to a flight controller
 .. image:: ../../../images/esp8266-telemetry-pixhawk.jpg
     :target: ../_images/esp8266-telemetry-pixhawk.jpg
 
+If connected to Serial1/Telem1 these parameters should be set on the flight controller (if using another telemetry port, replace the "1" in the parameter name with the telemetry port's number):
+
+- :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 2 (MAVLink2) or 1 (MAVLink1)
+- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 921 (921600 baud)
+
+If you have problems connecting, it may help to set :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` = 0 to disable flow control although this is not normally necessary
+
+Connecting from a Ground Station
+--------------------------------
+
+- load the MAVESP8266 firmware to the device if you haven't already (see below)
+- on your PC, open the wifi network connections screen and select the wifi access point (normally "PixRacer")
+- on the ground station, set the connection type to UDP and press "Connect"
+
+If all is well the ground station will connect, download parameters and the HUD should move as the vehicle is moved.
+
 Flashing the device with the MAVESP8266 firmware
 ------------------------------------------------
 
