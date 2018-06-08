@@ -31,7 +31,7 @@ Connecting from a Ground Station
 --------------------------------
 
 - load the MAVESP8266 firmware to the device if you haven't already (see below)
-- on your PC, open the wifi network connections screen and select the wifi access point (normally "PixRacer")
+- on your PC, open the wifi network connections screen and select the wifi access point (normally "ardupilot" or "PixRacer")
 - on the ground station, set the connection type to UDP and press "Connect"
 
 If all is well the ground station will connect, download parameters and the HUD should move as the vehicle is moved.
