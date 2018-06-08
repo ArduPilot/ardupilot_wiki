@@ -43,6 +43,7 @@ We recommend flashing the ArduPilot specific version of MAVESP8266 (`binaries <h
 
 - mavlink2 support
 - subsequent firmware uploads can be done over wifi
+- simple configuration web interface
 
 An `FTDI Cable like this one from SparkFun <https://www.sparkfun.com/products/9717>`__ is required for at least the first time the firmware is upload to the device.
 
@@ -64,6 +65,17 @@ If you are using the Adafruit HUZZAH ESP8266 board and are flashing from a Windo
     .. image:: ../../../images/esp8266-telemetry-flash.jpg
         :target: ../_images/esp8266-telemetry-flash.jpg
 
-- Mac and Linux users should use the `esptool <https://github.com/espressif/esptool>`__ 
-        
+- Mac and Linux users should use the `esptool <https://github.com/espressif/esptool>`__
+
+Changing the Wifi SSID and Password
+-----------------------------------
+
+- connect from your PC to the wifi access point
+- open a browser to `192.168.4.1 <http://192.168.4.1/>`__ and a simple web interface will appear like below
+- click on the "Setup" link
+- set the "AP SSID" and "AP Password" fields (both must between 8 and 16 characters), push the "Save" button and reboot the device
+
+    .. image:: ../../../images/esp8266-telemetry-web-setup.png
+        :target: ../_images/esp8266-telemetry-web-setup.png
+
 Thanks to `Ray's blog <https://rays-blog.de/2016/10/21/224/adding-wi-fi-telemetry-to-pixhawk-flight-controller-with-esp8266-module/>`__ which was the source for some of this page's advice.
