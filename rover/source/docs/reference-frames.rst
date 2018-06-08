@@ -16,4 +16,4 @@ This section includes details on tested frames to speed up DIY builds of rovers 
 
 .. note::
 
-   If you have a tested vehicle of your own that you would like added to this list, please do a `blog post on ardupilot.org <https://discuss.ardupilot.org/c/blog>`__ and/or create a wiki page in this section.  Please include a video, a list of parts, firmware version used and a parameter file.
+   If you have a tested vehicle of your own that you would like added to this list, please do a `blog post on ardupilot.org <https://discuss.ardupilot.org/c/blog>`__, `reply to this discussion <https://discuss.ardupilot.org/t/reference-frames>`__ and/or :ref:`create a wiki page directly <common_wiki_editing_guide>`.  Please include a video, a list of parts, firmware version used and a parameter file.
