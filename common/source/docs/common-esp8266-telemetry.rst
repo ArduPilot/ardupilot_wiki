@@ -20,7 +20,34 @@ Connecting to a flight controller
 .. image:: ../../../images/esp8266-telemetry-pixhawk.jpg
     :target: ../_images/esp8266-telemetry-pixhawk.jpg
 
-Flashing the device with mavlink compatible firmware
-----------------------------------------------------
+Flashing the device with the MAVESP8266 firmware
+------------------------------------------------
 
-Instructions on how to flash `MAVESP8266 <https://github.com/dogmaphobic/mavesp8266>`__ to the device are coming soon!  Until then see `Ray's blog for some good advice <https://rays-blog.de/2016/10/21/224/adding-wi-fi-telemetry-to-pixhawk-flight-controller-with-esp8266-module/>`__.
+We recommend flashing the ArduPilot specific version of MAVESP8266 (`binaries <http://firmware.ardupilot.org/Tools/MAVESP8266/latest/>`__, `source code <https://github.com/tridge/mavesp8266>`__) over the original `MAVESP8266 <https://github.com/dogmaphobic/mavesp8266>`__ because it includes two additional features:
+
+- mavlink2 support
+- subsequent firmware uploads can be done over wifi
+
+An `FTDI Cable like this one from SparkFun <https://www.sparkfun.com/products/9717>`__ is required for at least the first time the firmware is upload to the device.
+
+If you are using the Adafruit HUZZAH ESP8266 board and are flashing from a Windows PC then you should:
+
+- solder a 6pin header to the narrow end of the board that has the TX, RX, VCC and GND pins
+- connect the device to your computer using the FTDI cable
+- download the ArduPilot specific version of MAVESP8266 from `this directory <http://firmware.ardupilot.org/Tools/MAVESP8266/latest/>`__
+
+  - `firmware-esp01_1m.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/2018-05-29/firmware-esp01_1m.bin>`__ is for boards with 1MB of flash (most boards)
+  - `firmware-esp01.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/2018-05-29/firmware-esp01.bin>`__ is for boards with only 512KB of flash (very old boards)
+  - `firmware-esp12e.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/2018-05-29/firmware-esp12e.bin>`__ is for boards with 4MB of flash
+- Windows users should download and run the NodeMCU flasher (`64bit <https://github.com/nodemcu/nodemcu-flasher/blob/master/Win64/Release/ESP8266Flasher.exe>`__ or `32bit <https://github.com/nodemcu/nodemcu-flasher/blob/master/Win32/Release/ESP8266Flasher.exe>`__)
+
+  - on the Advanced page ensure the Flash size is set to 4MByte
+  - on the Config page push the gear and select the firmware downloaded above
+  - on the Operation page select the "COM Port" and push the "Flash" button.  If successful the blue bar will slowly stretch from left to right and the icon on the bottom left will turn green.
+
+    .. image:: ../../../images/esp8266-telemetry-flash.jpg
+        :target: ../_images/esp8266-telemetry-flash.jpg
+
+- Mac and Linux users should use the `esptool <https://github.com/espressif/esptool>`__ 
+        
+Thanks to `Ray's blog <https://rays-blog.de/2016/10/21/224/adding-wi-fi-telemetry-to-pixhawk-flight-controller-with-esp8266-module/>`__ which was the source for some of this page's advice.
