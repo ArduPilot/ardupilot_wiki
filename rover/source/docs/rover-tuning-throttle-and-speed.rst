@@ -63,3 +63,9 @@ The :ref:`MOT_SLEWRATE <MOT_SLEWRATE>` parameter can be used to limit how quickl
 
 - a value of 100 allows the throttle output to change over its full range in one second
 - a value of zero disables the limit
+
+Video
+-----
+
+..  youtube:: mV9Dxp1PX-8
+    :width: 100%
