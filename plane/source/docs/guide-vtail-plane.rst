@@ -1,16 +1,16 @@
 .. _guide-vtail-plane:
 
 ============
-VTail Planes
+V-Tail Planes
 ============
 
-A common alternative to a traditional elevator and rudder is a VTail, or 
-an ATail (an upside down VTail).
+A common alternative to a traditional elevator and rudder is a V-Tail, or 
+an ATail (an upside down V-Tail).
 
-A VTail aircraft has the same functionality as a standard aircraft, 
+A V-Tail aircraft has the same functionality as a standard aircraft, 
 but it requires special configuration of the servo outputs. Do not use
 V-Tail mixing on the transmitter. Although you may choose custom 
-channels, the typical VTail setup uses channel 2 and 4 for the servo 
+channels, the typical V-Tail setup uses channel 2 and 4 for the servo 
 outputs.
 
 .. warning:: Remove the propeller from the aircraft before
@@ -35,9 +35,9 @@ Set the SERVOn_FUNCTIONS to the appropriate values.
    <table border="1" class="docutils">
    <tr><th>Parameter</th><th>Value</th><th>Meaning</th></tr>
    <tr><td>SERVO1_FUNCTION</td><td>4</td><td>aileron</td></tr>
-   <tr><td>SERVO2_FUNCTION</td><td>79</td><td>left vtail</td></tr>
+   <tr><td>SERVO2_FUNCTION</td><td>79</td><td>left V-tail</td></tr>
    <tr><td>SERVO3_FUNCTION</td><td>70</td><td>throttle</td></tr>
-   <tr><td>SERVO4_FUNCTION</td><td>80</td><td>right vtail</td></tr>
+   <tr><td>SERVO4_FUNCTION</td><td>80</td><td>right V-tail</td></tr>
    </table>
 
 
@@ -62,12 +62,12 @@ should move its control surfaces to level itself.
 
    <table border="1" class="docutils">
    <tr><th>Movement</th><th>Action</th></tr>
-   <tr><td>Roll Plane Right</td><td>Left aileron moves up and right aileron goes down</td><tr>
-   <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron goes up</td><tr>
+   <tr><td>Roll Plane Right</td><td>Left aileron moves up and right aileron moves down</td><tr>
+   <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron moves up</td><tr>
    <tr><td>Pitch plane up</td><td>Both tail surfaces move down</td></tr>
    <tr><td>Pitch plane down</td><td>Both tail surfaces move up</td></tr>
-   <tr><td>Yaw Plane Right</td><td>Both tail surfaces move left</td></tr>
-   <tr><td>Yaw Plane Left</td><td>Both tail surfaces move right</td></tr>
+   <tr><td>Roll Plane Right</td><td>Both tail surfaces move left</td></tr>
+   <tr><td>Roll Plane Left</td><td>Both tail surfaces move right</td></tr>
    </table>
 
 If the ailerons do not respond correctly, reverse the output by changing 
@@ -85,8 +85,11 @@ at a time to avoid confusion.
    <tr><td>Incorrect for both movements (pitch and roll)</td><td>Change the reversal of that channel</td><tr>
    </table>
 
-.. note:: KFF_RDDRMIX mut not be set to 0 for rudder setup. 
-          If the plane actually needs 0, then reset it after this setup.
+.. note:: KFF_RDDRMIX mut not be set to 0 for rudder setup. If the 
+          plane actually needs 0, then reset it after this setup.
+
+          KFF_RDDRMIX should cause the tail surfaces point in the 
+          direction of the raised aileron.
 
 
 Confirm RC Transmitter Input
@@ -98,12 +101,12 @@ Keep the plane level in FBWA mode and command the following inputs:
          
    <table border="1" class="docutils">
    <tr><th>Input</th><th>Action</th></tr>
-   <tr><td>Roll Right</td><td>Right aileron goes up and left aileron goes down</td><tr>
-   <tr><td>Roll Left</td><td>Left aileron goes up and right aileron goes down</td><tr>
-   <tr><td>Pitch up</td><td>Both tail surfaces go up</td><tr>
-   <tr><td>Pitch down</td><td>Both tail surfaces go down</td><tr>
-   <tr><td>Yaw right</td><td>Both tail surfaces go right</td><tr>
-   <tr><td>Yaw left</td><td>Both tail surfaces go left</td><tr>
+   <tr><td>Roll Right</td><td>Right aileron moves up and left aileron moves down</td><tr>
+   <tr><td>Roll Left</td><td>Left aileron moves up and right aileron moves down</td><tr>
+   <tr><td>Pitch up</td><td>Both tail surfaces moveup</td><tr>
+   <tr><td>Pitch down</td><td>Both tail surfaces move down</td><tr>
+   <tr><td>Yaw right</td><td>Both tail surfaces move right</td><tr>
+   <tr><td>Yaw left</td><td>Both tail surfaces move left</td><tr>
    </table>
 
 Double check MANUAL mode for the inputs as well. If everything is setup correctly, 
