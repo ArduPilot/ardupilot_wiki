@@ -4,9 +4,8 @@
 Flight Modes
 ============
 
-This article provides an overview of the available flight modes for
-Copter and instructions for how to configure which modes are available
-through the RC Transmitter.
+This article provides an overview and links to the available flight modes
+for Copter.
 
 Overview
 ========
@@ -18,6 +17,44 @@ stabilization, a sophisticated autopilot, a follow-me system etc.
 Flight modes are controlled through the radio (via a :ref:`transmitter switch <common-rc-transmitter-flight-mode-configuration>`),
 via mission commands, or using commands from a ground station (GCS) or
 companion computer.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tr><th>Mode</th><th>Alt Ctrl</th><th>Pos Ctrl</th><th>GPS</th><th>Summary</th></tr>
+   <tr><td>XXXXX</td><td>XXXXX</td><td>XXXXX</td><td>XXXXX</td><td>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td></tr>
+   <tr><td>Stabilize</td><td>-</td><td>+</td><td></td><td>Self-levels the roll and pitch axis</td></tr>
+   <tr><td>Alt Hold</td><td>s</td><td>+</td><td></td><td>Holds altitude and self-levels the roll & pitch</td></tr>
+   <tr><td>Loiter</td><td>s</td><td>s</td><td>Y</td><td>Holds altitude and position, uses GPS for movements</td></tr>
+   <tr><td>RTL</td><td>A</td><td>A</td><td>Y</td><td>Retruns above takeoff location, may aslo include landing</td></tr>
+   <tr><td>AUTO</td><td>A</td><td>A</td><td>Y</td><td>Executes pre-defined mission</td></tr>
+   <tr><td>Acro</td><td>-</td><td>-</td><td></td><td>Holds attitude, no self-level</td></tr>
+   <tr><td>Autotune</td><td>s</td><td>A</td><td>Y</td><td>Automated pitch and bank procedure to improve control loops</td></tr>
+   <tr><td>Brake</td><td>s</td><td>A</td><td>Y</td><td>Brings copter to an immediate stop</td></tr>
+   <tr><td>Circle</td><td>s</td><td>A</td><td>Y</td><td>Automatically circles a point in front of the vehicle</td></tr>
+   <tr><td>Drift</td><td>-</td><td>+</td><td>Y</td><td>Like stabilize, but coordinates yaw with roll like a plane</td></tr>
+   <tr><td>Flip</td><td>A</td><td>A</td><td></td><td>Rises and completes an automated flip</td></tr>
+   <tr><td>Guided</td><td>A</td><td>A</td><td>Y</td><td>Navigates to single points commanded by GCS</td></tr>
+   <tr><td>Land</td><td>A</td><td>s</td><td>(Y)</td><td>Reduces altitude to ground level, attempts to go straight down</td></tr>
+   <tr><td>PosHold</td><td>s</td><td>+</td><td>Y</td><td>Like loiter, but manual roll and pitch when sticks not centered</td></tr>
+   <tr><td>Sport</td><td>s</td><td>s</td><td></td><td>Alt-hold, but holds pitch & roll when sticks centered</td></tr>
+   <tr><td>Throw</td><td>A</td><td>A</td><td>Y</td><td>Holds position after a throwing takeoff</td></tr>
+   <tr><td>Follow Me</td><td>s</td><td>A</td><td>Y</td><td>Follows another GPS on the ground</td></tr>
+   <tr><td>Simple/Super Simple</td><td></td><td></td><td>Y</td><td>An add-on to flight modes to use pilot's view instead of yaw orientation</td></tr>
+   <tr><td>RTL</td><td>A</td><td>A</td><td>Y</td><td>RTL, but traces path to get home</td></tr>
+   </table>
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tr><th>Symbol</th><th>Definition</th></tr>
+   <tr><td>-</td><td>Manual control</td><tr>
+   <tr><td>+</td><td>Maunal control with limits & self-level</td><tr>
+   <tr><td>s</td><td>Automated stabilized control</td></tr>
+   <tr><td>A</td><td>Automatic control</td></tr>
+   </table>
+
 
 Recommended Flight Modes
 ========================
