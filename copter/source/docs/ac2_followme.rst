@@ -9,7 +9,7 @@ as you move, using a telemetry radio and a ground station.
 
 .. note::
 
-   Unlike "proper" autopilot modes, this feature is implemented in
+   Unlike other autopilot modes, this feature is implemented in
    the Ground Station. The ground station controls the movement by reading
    the vehicle position using MAVLink Telemetry and sending GUIDED mode
    instructions to move the vehicle appropriately. Currently this sort of
@@ -19,8 +19,8 @@ as you move, using a telemetry radio and a ground station.
 What you'll need
 ================
 
-#. An Copter with telemetry
-#. A laptop
+#. A Copter with telemetry
+#. A laptop (or a phone/tablet with an integrated GPS available to the GCS app)
 #. A GPS USB dongle `like this <http://www.amazon.com/ND-100S-GlobalSat-USB-GPS-Receiver/dp/B004K39QTY/refsr_1_9?ieUTF8&qid1329773762&sr=8-9>`__
    or Bluetooth GPS module `like this <http://www.amazon.com/GlobalSat-BT-368i-Bluetooth-GPS-Receiver/dp/B0018YZ836/refsr_1_2?selectronics&ieUTF8&qid1329773963&sr1-2>`__.
 
@@ -67,8 +67,7 @@ Instructions for Mission Planner
       important when using Follow Me mode especially with an open bladed
       Multicopter.
 
--  **Warning:** Like all other modes in which the autopilot is
-   responsible for altitude hold (Loiter, AltHold), the barometer is
-   used in the altitude calculation meaning that it can drift over time
-   and the copter will follow the air pressure change rather than actual
-   altitude above ground.
+.. warning::
+   The barometer is used in the altitude calculation meaning that it can
+   drift over time and impact rising terrain. Watch for obstacles and 
+   elevation changes. The altitude maintaing behavior is similar to loiter mode.
