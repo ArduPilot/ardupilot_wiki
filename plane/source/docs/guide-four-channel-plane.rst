@@ -4,31 +4,29 @@
 Four Channel Planes
 ===================
 
-The most common sort of fixed wing plane is a 4 channel plane. As the
-name implies, it has 4 output servos, most commonly in this order:
+The most common type of fixed wing plane is a 4 channel plane. As the
+name implies, it has 4 output channels, and they control the roll, pitch, yaw,
+and throttle independently.
 
-- servo output 1 is aileron
-- servo output 2 is elevator
-- servo output 3 is throttle
-- servo output 4 is rudder
-
-These are the default outputs for APM:Plane as it is such a common
+These are the default outputs for Arduplane as it is such a common
 setup. It is commonly referred to as an AETR setup.
 
-.. warning:: You should remove the propeller from your aircraft before
+.. warning:: Remove the propeller from your aircraft before
              starting your setup.
 
 Setting Up Your Plane
 =====================
 
-After you have setup your :ref:`RC inputs <rc-throw-trim>`, the next
-step is to setup your 4 outputs.
+The most important step to setting up the plane is having the correct inputs, 
+outputs, and reversals. Inputs are covered on the :ref:`RC input setup page <rc-throw-trim>`. 
+After the RC inputs are configured, configure the outputs.
 
-You can connect your 4 servo cables to any output of your autopilot,
-although using the defaults listed above is recommended.
-
-Next check that the SERVOn_FUNCTION values are correct. The following
-table shows the right settings for the default AETR output ordering.
+.. warning:: Make sure the AHRS_ORIENT is set correctly for the autopilot. If it is incorrect, 
+             this setup will fail, and the plane may crash upon entry into any stabilize mode.
+             
+Servo cables can be connected to any output of the autopilot,
+but using the default channels 1-4 listed below is recommended. 
+Set the SERVOn_FUNCTIONS to the appropriate values.
 
 .. raw:: html
 
@@ -39,103 +37,109 @@ table shows the right settings for the default AETR output ordering.
    <tr><td>SERVO3_FUNCTION</td><td>70</td><td>throttle</td></tr>
    <tr><td>SERVO4_FUNCTION</td><td>21</td><td>rudder</td></tr>
    </table>
+   
+.. tip:: Most 4-channel aircraft utilize a Y-splitter for ailerons. It works well if 
+         the servos have equal travel ranges and mirrored movement. If you wish to set
+         the trim, max, or min values for each aileron servo independently, then use
+         another output like channel 5 for the second aileron. Be sure to set that
+         channel's function correctly (4). This principle applies to any additional
+         servo or motor output.
 
-Servo Reversal
-==============
+Servo Function & Reversal
+=========================
 
-The next step is to get the reversals right. You should connect the
-battery (with propeller removed) and turn on your RC transmitter. Now
-switch to MANUAL mode and disable the safety switch (if fitted).
+The next step is to correct the servo reversals. 
+Connect the battery (with propeller removed) and turn on the RC transmitter.
+Switch to FBWA mode using the function switch or a ground station command, and 
+disable the safety switch (if fitted). We use FBWA for setup because it prevents
+double-reversing inputs and outputs. Double-reversing causes correct manual
+behavior, but dangerous and destabilizing behavior in other flight modes.
 
-At this point your RC transmitter should have control of your 3
-control surfaces (aileron, elevator and rudder). You should now adjust
-the reversal of the 3 outputs so that in MANUAL mode the surfaces move
-in the right direction.
+When the plane is level, the servos should be near their trim (neutral) values. 
+Move the plane and leave the transmitter sticks centered while 
+monitoring the control surfaces to determine if the reversals are correct.
+See the table for the correct control surface response to the movements. 
+In each instance, the plane should move its control surfaces to level itself
+and coordinate its turns.
 
 .. raw:: html
 
+   <table border="1" class="docutils">
+   <tr><th>Movement</th><th>Action</th></tr>
+   <tr><td>Roll Plane Right</td><td>Left aileron moves up and right aileron moves down</td><tr>
+   <tr><td>Roll Plane Left</td><td>Left aileron moves down and right aileron moves up</td><tr>
+   <tr><td>Pitch plane up</td><td>Elevator moves down</td></tr>
+   <tr><td>Pitch plane down</td><td>Elevator moves up</td></tr>
+   <tr><td>Roll Plane Right</td><td>Rudder moves left</td></tr>
+   <tr><td>Roll Plane Left</td><td>Rudder moves right</td></tr>
+   </table>
+
+If the any of the control surfaces do not respond correctly, reverse the 
+output by changing the corresponding SERVOn_REVERSED setting (from 0 to 1, 
+or from 1 to 0).
+
+.. note:: KFF_RDDRMIX mut not be set to 0 for rudder setup. If the 
+          plane actually needs 0, then reset it after this setup.
+
+          KFF_RDDRMIX should cause the tail surfaces point away from the 
+          direction of the lowered aileron. This corrects adverse yaw caused
+          by the additional drag of a lowered aileron.
+
+Confirm RC Transmitter Input
+============================
+
+Keep the plane level in FBWA mode and command the following inputs:
+
+.. raw:: html
+         
    <table border="1" class="docutils">
    <tr><th>Input</th><th>Action</th></tr>
-   <tr><td>Right Roll</td><td>Left aileron goes down and right aileron goes up</td><tr>
-   <tr><td>Left Roll</td><td>Right aileron goes down and left aileron goes up</td><tr>
-   <tr><td>Pull back on pitch</td><td>Elevator goes up</td></tr>
-   <tr><td>Push forward on pitch</td><td>Elevator goes down</td></tr>
-   <tr><td>Right Yaw</td><td>Rudder goes right</td></tr>
-   <tr><td>Left Yaw</td><td>Rudder goes left</td></tr>
+   <tr><td>Roll Right</td><td>Right aileron moves up and left aileron moves down</td><tr>
+   <tr><td>Roll Left</td><td>Left aileron moves up and right aileron moves down</td><tr>
+   <tr><td>Pitch up</td><td>Elevator moves up</td><tr>
+   <tr><td>Pitch down</td><td>Elevator moves down</td><tr>
+   <tr><td>Yaw right</td><td>Rudder moves right</td><tr>
+   <tr><td>Yaw left</td><td>Rudder moves right</td><tr>
    </table>
 
-If any of the directions are incorrect then you need to change the
-corresponding SERVOn_REVERSED setting. So for example if your ailerons
-move the wrong way then you should change SERVO1_REVERSED to 1.
-
-Confirm Servo Reversal
-======================
-
-The above servo reversal test in MANUAL mode assumes your RC inputs
-have been correctly setup. As it is so easy to get that wrong, you
-should also do a stabilisation check.
-
-Switch the plane to FBWA mode and with the transmitter sticks centered
-move the plane as follows:
-
-.. raw:: html
-         
-   <table border="1" class="docutils">
-   <tr><th>Movement</th><th>Action</th></tr>
-   <tr><td>Roll plane right</td><td>Right aileron goes down and left aileron goes up</td><tr>
-   <tr><td>Roll plane left</td><td>Left aileron goes down and right aileron goes up</td><tr>
-   <tr><td>Pitch nose up</td><td>Elevator goes down</td><tr>
-   <tr><td>Pitch nose down</td><td>Elevator goes up</td><tr>
-   </table>
-
-Finally you should double check rudder direction. This one is
-particularly easy to get wrong. First check that ground steering is
-disabled (by checking that GROUND_STEER_ALT is zero) and that you have
-a non-zero rudder gain in KFF_RDDRMIX.
-
-Now check the following:
-
-.. raw:: html
-         
-   <table border="1" class="docutils">
-   <tr><th>Movement</th><th>Action</th></tr>
-   <tr><td>Roll plane right</td><td>Rudder goes left</td><tr>
-   <tr><td>Roll plane left</td><td>Rudder goes right</td><tr>
-   </table>
+If the control surfaces do not respond correctly, change the RCn_reversed
+parameter (from 0 to 1, or from 1 to 0). Double check MANUAL mode for the
+same inputs. If everything is setup correctly, the plane should be almost
+ready to fly.
 
 Servo Trim
 ==========
 
-Now switch back to MANUAL mode in order to adjust the servo trim
+Switch to MANUAL mode in order to adjust the servo trim
 values. The servo trim is in the SERVOn_TRIM parameters.
 
-You should adjust the trim values so that the servo is centered when
-your transmitter sticks are centered. If you find you need to adjust
-the trim value by more than 50 PWM from the default of 1500 then it is
-recommended that you instead adjust the trim mechanically.
+Adjust the trim values so that the servo is centered when
+the transmitter sticks are centered. If the trim value is not 
+between 1450 and 1550 PWM, mechanical trim adjustment is recommended.
 
 Servo Throw
 ===========
 
-Finally you should adjust your servo throw. The throw is the range of
-movement for each of your servos.
+Finally adjust the servo throws (range of
+movement for each of the servos).
 
-Check any instructions that came with your plane for suggested throw
+Check any instructions that came with the plane for suggested throw
 values. These are often specified in millimeters or inches of movement
-of the leading edge of the control surface close to the fuselage. If
-your aircraft doesn't come with any suggested throw values then choose
-a throw that doesn't cause your servos to "bind" (which is indicated
-by a high pitched sound when your servos move too far).
+of the trailing edge of the control surface close to the fuselage. If
+suggested throw values are not found, then choose a throw that doesn't 
+cause the servos to "bind" (often indicated by a high pitched sound 
+when servos stall).
 
 To adjust the throw, change the SERVOn_MIN and SERVOn_MAX values. The
-defaults are 1100 to 1900. On many aircraft you will want more throw
-than that, and can change to a throw of 1000 to 2000.
+defaults are 1100 to 1900. On many aircraft, more throw may be desired.
+Changing throws to 1000 to 2000 or beyond is normal. Make sure that 
+the servos are still moving when nearing the extrememe values.
 
 Final Setup
 ===========
 
-After completing the above you should move onto the final setup of
-your aircraft.
+After completing this guide, move onto the final setup of
+the aircraft.
 
 - :ref:`ESC Calibration <guide-esc-calibration>`
 - :ref:`Center of Gravity <guide-center-of-gravity>`
