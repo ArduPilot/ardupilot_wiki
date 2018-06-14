@@ -1,8 +1,8 @@
 .. _common-openpilot-revo-mini:
 
-===================
-OpenPilot Mini Revo
-===================
+====================
+OpenPilot Revolution
+====================
 
 .. image:: ../../../images/openpilot-revo-mini.jpeg
     :target: ../_images/openpilot-revo-mini.jpeg
@@ -12,6 +12,10 @@ OpenPilot Mini Revo
 .. note::
 
    Support for the Revo Mini will be released with Copter-3.6.
+
+.. note::
+
+   The OpenPilot Revo Mini is also Supported
 
 Specifications
 ==============
