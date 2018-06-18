@@ -10,7 +10,7 @@ alternative orientations.
 Standard orientation
 ====================
 
-The :ref:`Autopilot board <common-autopilots>` (Pixhawk etc.) should be
+The :ref:`flight controller <common-autopilots>` (Pixhawk etc.) should be
 housed within a case (which includes foam over the barometer) and should
 be mounted with the white arrow pointing directly towards the front of
 the vehicle.
@@ -22,9 +22,13 @@ motors.  It is not critical that it is placed exactly at the middle but
 closer is better (there are no recorded cases of problems caused by the
 controller being far from the centre of gravity).
 
+[site wiki="rover"]
+.. image:: ../../../images/mounting-flight-controller-rover.png
+    :target: ../_images/mounting-flight-controller-rover.png
+[/site]
+
 The board should be attached to the frame using 4 cubes of vibration
-dampening foam approximately 3/4 inch square (3DR-supplied Pixhawk's
-come with foam cubes made by `3M <http://www.3m.com/>`__).
+dampening foam approximately 3/4 inch square (3M foam can be purchased from `mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__).
 
 .. image:: ../../../images/pixhawk-back-4-corners-foam.jpg
     :target: ../_images/pixhawk-back-4-corners-foam.jpg
