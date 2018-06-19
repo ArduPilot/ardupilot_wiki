@@ -37,3 +37,9 @@ The desired vs actual (aka achieved) turn rate, along with the individual contri
 
 .. image:: ../images/rover-throttle-and-speed2.png
     :target: ../_images/rover-throttle-and-speed2.png
+
+Video
+-----
+
+..  youtube:: 9zOlvTsHY6k
+    :width: 100%
