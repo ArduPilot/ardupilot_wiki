@@ -14,7 +14,7 @@ extra modes:
 
 .. tip::
 
-   You may probably need to set the ``FLTMODE*`` parameters for these
+   You may need to set the ``FLTMODE*`` parameters for these
    extra modes as numeric values if your GCS doesn't understand these
    values yet.
 
@@ -22,6 +22,15 @@ If you are familiar with the equivalent Copter flight modes then you
 should be comfortable flying a QuadPlane. The only real difference comes
 during transition between fixed wing and QuadPlane flight, which is
 described below.
+
+.. tip::
+
+There is also a difference in throttle channel parameters from Copter: instead of THR_DZ 
+for setting the deadzone, QuadPlane uses RCn_DZ (where n is the channel mapped to throttle input). 
+The default for throttle channel deadzone is 60 (+/- 6%).
+Also, there is no mapping of hover throttle to mid-stick in manual throttle modes. If your quadplane 
+does not hover at mid-stick (+/- 6%) in QSTABILIZE, you will need to center it (move it into the deadzone) 
+when switching from QSTABILIZE to QHOVER to hold the current altitude.
 
 .. note::
 
