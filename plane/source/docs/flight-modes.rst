@@ -56,7 +56,16 @@ of functionality available.
    <tr><td>s</td><td>Stabilized control with limits</td></tr>
    <tr><td>A</td><td>Automatic control</td></tr>
    </table>
+   
+.. warning::
 
+   Any stabilized control mode requires tuning for optimal performance.
+   The default PID and TECS values are very conservative to avoid uncontrollable 
+   oscillations. Perform an :ref:`AUTOTUNE <automatic-tuning-with-autotune>` before using stabilized or automatic roll and pitch modes
+   extensively. :ref:`Tune TECS <tecs-total-energy-control-system-for-speed-height-tuning-guide>` before using automatic throttle modes
+   extensively.
+   
+   
 Mission Specific Modes
 ======================
 
