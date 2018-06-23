@@ -23,7 +23,7 @@ Specifications
 
 -  **Sensors**
 
-   -  Dual accel/gyro IMUs (InvenSense ICM20689 and Bosch BMI055)
+   -  Triple accel/gyro IMUs (InvenSense ICM20689, ICM 20602 and Bosch BMI055)
    -  MS5611 barometer
    -  IST8310 magnetometer
 
@@ -39,15 +39,15 @@ Specifications
 
 -  **Interfaces**
 
-   -  6 IOMCU PWM servo outputs
-   -  8 FMU PWM servo outputs (D-Shot capable)
+   -  8 IOMCU PWM servo outputs
+   -  8 FMU PWM outputs (D-Shot capable), 6 with servo headers
    -  3 dedicated PWM/Capture inputs on FMU
    -  S.Bus servo output
    -  R/C inputs for CPPM, Spektrum / DSM and S.Bus
    -  Analogue / PWM RSSI input
    -  5x general purpose serial ports
    -  4x I2C ports
-   -  4x SPI buses
+   -  3x SPI buses enabled
    -  2x CAN Bus ports
 
 
