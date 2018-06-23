@@ -43,7 +43,7 @@ Specifications
    -  8 FMU PWM outputs (D-Shot capable), 6 with servo headers
    -  3 dedicated PWM/Capture inputs on FMU
    -  S.Bus servo output
-   -  R/C inputs for CPPM, Spektrum / DSM and S.Bus
+   -  R/C inputs for CPPM and S.Bus
    -  Analogue / PWM RSSI input
    -  5x general purpose serial ports
    -  4x I2C ports
