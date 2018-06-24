@@ -1,21 +1,18 @@
 .. _common-openpilot-revo-mini:
 
 ====================
-OpenPilot Revolution
+OpenPilot Revolution and RevoMini
 ====================
 
 .. image:: ../../../images/openpilot-revo-mini.jpeg
     :target: ../_images/openpilot-revo-mini.jpeg
+    
+.. image:: https://hobbyking.com/media/catalog/product/cache/3/thumbnail/565x414/9df78eab33525d08d6e5fb8d27136e95/legacy/catalog/98333_1_high.jpg
 
 *Images and some content courtesy of the* `LibrePilot wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/26968084/OpenPilot+Revolution>`__
+and `HobbyKing <https://hobbyking.com/de_de/mini-cc3d-revolution-32bit-flight-controller.html>`__
 
-.. note::
-
-   Support for the Revo Mini will be released with Copter-3.6.
-
-.. note::
-
-   The OpenPilot Revo Mini is also Supported
+The RevoMini likely is the smallest footprint Autpilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, an external SD card adapter can be added with limited effort.
 
 Specifications
 ==============
@@ -34,45 +31,38 @@ Specifications
 
 -  **Power**
 
-   -  4.8V ~ 10V input power provided through ESC connection
+   -  4.8V ~ 10V input power provided through ESC connection for fullsize Revolution
+   -  5V max on RevoMini
 
--  **Interfaces**
+-  **Default Interfaces**
 
-   -  6 PWM outputs (+6 more outputs possible on FlexiIO port)
-   -  1 RC input PWM/PPM (+6 more PWM inputs possible on FlexiIO port)
-   -  2 analog to digital inputs for battery voltage and current monitoring (2 more possible using PWM output pins 5,6)
-   -  1 serial input for GPS (+1 more possible on FlexiIO port, 1 more on Flexi port)
-   -  1 I2C port on Flexi port
-   -  MMCX antenna connector for integrated HopeRF RFM22B 100mW 433MHz
+   -  6 PWM outputs
+   -  RC input PPM/sBus on RC input port's signal pin 1
+   -  analog to digital inputs for battery voltage and current monitoring, more adcs possible on arbitrary pins
+   -  GPS rx / tx on RC input signal pins 3 & 4 
+   -  Telem1 on mainport
+   -  Telem2 on Flexi port
    -  USB port
-   -  SWD Port for flashing and debugging
+   -  SWD Port for flashing and debugging, including 3.3V output for optional periphereals
+   -  MMCX antenna connector for integrated HopeRF RFM22B 100mW 433MHz (fullsize Revolution only)
+   -  OPLink port on RevoMini. OPLink hardware is not supported by ArduPilot, but this port exposes pins to be used for supported periphereals like SD card adapter
+   
+- **Optional Settings**
+
+   -  I2C on Flexi port
+   -  RevoMini's OPLink port can be used for external SD card connection
+   -  arbitrary pins can be used for various connections like 2nd GPS, additional PWM outputs etc. within certain restrictions
    
   
-Flashing a Beta Firmware
+Flashing Firmware
 ========================
-Official support for the Revo Mini will be released in Copter 3.6, but in the meantime you can try a release candidate firmware on the board. Flashing a release candidate firmware is only possible in Mission Planner at the moment.
+Support for Revolution and RevoMini has been introduced with Ardupilot's ChibiOS port. Firmware files can be found at http://firmware.ardupilot.org/
 
-Compile ArduPilot
------------------
-Compile ArduPilot from the Copter-3.6 branch. After cloning, checkout commit `d575d5e` for Copter 3.6-rc1.
-::
-    
-    git clone https://github.com/ardupilot/ArduPilot
-    cd ardupilot
-    git submodule update --init --recursive
-    
-    git checkout Copter-3.6
-    git checkout d575d5e
-    
-    #Assuming you have all of the dependencies.
-    ./waf configure --board revo-mini
-    ./waf copter
-    
-This will generate the file build/revo-min/bin/arducopter.apj that we will use to flash the device.
-    
+An ArduPilot compatible bootloader is required for first time flashing of ardupilot firmware. To flash the bootloader, the board has to be put into DFU mode. Then a tool called dfu-util can be used to flash the bootlader. Once the bootlader is present, firmware files can be flashed using MissionPlanner's firmware functions.
+
 Enter DFU Mode
 --------------
-The OpenPilot Revolution Mini does not come with an ArduPilot compatible bootloader and so you'll need to flash new bootloader to the device. This only has to be done once. To flash the bootloader you must first enter DFU mode. To do this, you'll need to locate and short two pads on the device. You can short the pads in any particular way (either with a wire, solder joint, or something else). Detailed instructions are available on the `Revo Mini LibrePilot Wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/29622291/Recover+board+using+DFU>`__. A small wire is the easiest way to short the device. You can also power the device via USB first, and then short the pads if using a wire. Once you have the device in DFU mode and connected to your machine continue with the steps here.
+To do this, you'll need to locate and short two pads on the device. You can short the pads in any particular way (either with a wire, solder joint, or something else). Detailed instructions are available on the `Revo Mini LibrePilot Wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/29622291/Recover+board+using+DFU>`__. A small wire is the easiest way to short the device. You can also power the device via USB first, and then short the pads if using a wire. Once you have the device in DFU mode and connected to your machine continue with the steps here.
 
 Install dfu-util
 -----------------
@@ -92,13 +82,16 @@ Refer the the Revo Mini LibrePilot wiki above. Install the Zadig USB driver and 
 
 Flash Bootloader
 ----------------
-Download the `bootloader <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/revo405_bl.bin>`__ for the Revo Mini from master. With the Revo Mini connected via USB and DFU mode, open a terminal and flash the new bootloader with the following command line:
+
+Bootloader binaries for the current targets can be found here: https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders
+
+Download revo-mini_bl.bin for this board type. With your board connected via USB and put into DFU mode, open a terminal and flash the new bootloader with the following command line:
 
 ::
 
     sudo dfu-util -d 0483:df11 -c 1 -i 0  -a 0  -D revo405_bl.bin  -s 0x08000000
 
-Once the flashing is complete, power cycle the board and you should see a solid green power LED and a rapidly blinking blue LED.
+Once the flashing is complete, power cycle the board and you should see a solid power LED and a rapidly blinking blue LED.
 
 .. image:: ../../../images/openpilot-revo-mini-awaiting-firmware.jpg
     :target: ../images/openpilot-revo-mini-awaiting-firmware.jpg
@@ -116,14 +109,16 @@ Choose "Load Custom Firmware" and browse to the "arducopter.apj" file. After the
 .. image:: ../../../images/openpilot-revo-mini-load-firmware.png
     :target: ../images/openpilot-revo-mini-load-firmware.png
 
-Congratulations! You're now running ArduCopter on the OpenPilot Revolution Mini. You can use this same process to upgrade to newer versions of ArduCopter. Compile ArduCopter and upload the .apj file to the board.
+Congratulations! You're now running ArduCopter on the OpenPilot Revolution Mini. You can use this same process to upgrade to newer versions of ArduPilot. Compile ArduCopter and upload the .apj file to the board.
 
 .. image:: ../../../images/openpilot-revo-mini-flashed.jpg
     :target: ../images/openpilot-revo-mini-load-flashed.jpg
+    
+Compile ArduPilot
+-----------------
+To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
+http://ardupilot.org/dev/docs/building-the-code.html
 
-Known Issues
-============
-At the time of writing (the release of Copter 3.6-rc1) the physical board orientation differs from the orientation in software. To fix this, simply change AHRS_ORIENTATION to YAW_180.  Test in your GCS software, as this will be rectified at some point.
 
 Where to Buy
 ============
