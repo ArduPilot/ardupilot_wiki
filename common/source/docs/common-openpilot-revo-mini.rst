@@ -12,11 +12,6 @@ OpenPilot Revolution and RevoMini
 
 *Images and some content courtesy of the* `LibrePilot wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/26968084/OpenPilot+Revolution>`__
 
-The RevoMini likely is the smallest footprint autpilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, an external SD card adapter can be added with limited effort.
-
-.. image:: ../../../images/revominiSD.jpg
-    :target: ../_images/revominiSD.jpg
-
 Specifications
 ==============
 
@@ -56,6 +51,12 @@ Specifications
    -  RevoMini's OPLink port can be used for external SD card connection
    -  arbitrary pins can be used for various connections like 2nd GPS, additional PWM outputs etc. within certain restrictions
    
+
+The RevoMini likely is the smallest footprint autpilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, an external SD card adapter can be added with limited effort.
+.. image:: ../../../images/revominiSD.jpg
+    :target: ../_images/revominiSD.jpg
+  
+  
   
 Flashing Firmware
 ========================
