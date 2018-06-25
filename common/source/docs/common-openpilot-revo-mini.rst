@@ -8,7 +8,7 @@ OpenPilot Revolution and RevoMini
     :target: ../_images/openpilot-revo-mini.jpeg
     
 .. image:: ../../../images/revomini_cased.jpeg
-    :target: ../images/revomini_cased.jpeg
+    :target: ../_images/revomini_cased.jpeg
 
 *Images and some content courtesy of the* `LibrePilot wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/26968084/OpenPilot+Revolution>`__
 
