@@ -12,7 +12,7 @@ OpenPilot Revolution and RevoMini
 *Images and some content courtesy of the* `LibrePilot wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/26968084/OpenPilot+Revolution>`__
 and `HobbyKing <https://hobbyking.com/de_de/mini-cc3d-revolution-32bit-flight-controller.html>`__
 
-The RevoMini likely is the smallest footprint Autpilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, an external SD card adapter can be added with limited effort.
+The RevoMini likely is the smallest footprint autpilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, an external SD card adapter can be added with limited effort.
 
 Specifications
 ==============
@@ -57,8 +57,11 @@ Specifications
 Flashing Firmware
 ========================
 Support for Revolution and RevoMini has been introduced with Ardupilot's ChibiOS port. Firmware files can be found at http://firmware.ardupilot.org/
+Besides the *.apj files for firmware flashing via MissionPlanner, there's also *.hex files for use with various utilities like dfu-util or betaflight / iNav GUIs. You will also find a *_bl.hex that contains the firmware plus the ArduPilot compatible bootloader in case it is not already present on your board. 
 
-An ArduPilot compatible bootloader is required for first time flashing of ardupilot firmware. To flash the bootloader, the board has to be put into DFU mode. Then a tool called dfu-util can be used to flash the bootlader. Once the bootlader is present, firmware files can be flashed using MissionPlanner's firmware functions.
+The ArduPilot compatible bootloader is required for first time flashing of ArduPilot firmware. The provided *_bl.hex file can be flashed using BF or iNav GUI, likely the most convenient way to get ArduPilot on your board the first time.
+
+Alternatively, the bootloader can be flashed separately. This requires the board to be put into DFU mode. Tools like dfu-util can be used to flash the bootlader. Once the bootlader is present, all subsequent firmware updates can be done using MissionPlanner's firmware functions.
 
 Enter DFU Mode
 --------------
@@ -89,7 +92,7 @@ Download revo-mini_bl.bin for this board type. With your board connected via USB
 
 ::
 
-    sudo dfu-util -d 0483:df11 -c 1 -i 0  -a 0  -D revo405_bl.bin  -s 0x08000000
+    sudo dfu-util -d 0483:df11 -c 1 -i 0  -a 0  -D revo-mini_bl.bin  -s 0x08000000
 
 Once the flashing is complete, power cycle the board and you should see a solid power LED and a rapidly blinking blue LED.
 
