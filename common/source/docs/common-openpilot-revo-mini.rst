@@ -53,8 +53,9 @@ Specifications
    
 
 The RevoMini likely is the smallest footprint autpilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, an external SD card adapter can be added with limited effort.
+
 .. image:: ../../../images/revominiSD.jpg
-    :target: ../_images/revominiSD.jpg
+    :target: ../images/revominiSD.jpg
   
   
   
