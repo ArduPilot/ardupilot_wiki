@@ -65,7 +65,11 @@ Alternatively, the bootloader can be flashed separately. This requires the board
 
 Enter DFU Mode
 --------------
-To do this, you'll need to locate and short two pads on the device. You can short the pads in any particular way (either with a wire, solder joint, or something else). Detailed instructions are available on the `Revo Mini LibrePilot Wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/29622291/Recover+board+using+DFU>`__. A small wire is the easiest way to short the device. You can also power the device via USB first, and then short the pads if using a wire. Once you have the device in DFU mode and connected to your machine continue with the steps here.
+To do this, you'll need to locate and short two pads on the device. 
+.. image:: ../../../images/revomini1.jpeg
+    :target: ../_images/revomini1.jpeg
+
+You can short the pads in any particular way (either with a wire, solder joint, or something else). Detailed instructions are available on the `Revo Mini LibrePilot Wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/29622291/Recover+board+using+DFU>`__. A small wire is the easiest way to short the device. You can also power the device via USB first, and then short the pads if using a wire. Once you have the device in DFU mode and connected to your machine continue with the steps here.
 
 Install dfu-util
 -----------------
