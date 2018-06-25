@@ -7,10 +7,10 @@ OpenPilot Revolution and RevoMini
 .. image:: ../../../images/openpilot-revo-mini.jpeg
     :target: ../_images/openpilot-revo-mini.jpeg
     
-.. image:: https://hobbyking.com/media/catalog/product/cache/3/thumbnail/565x414/9df78eab33525d08d6e5fb8d27136e95/legacy/catalog/98333_1_high.jpg
+.. image:: ../../../images/revomini_cased.jpeg
+    :target: ../images/revomini_cased.jpeg
 
 *Images and some content courtesy of the* `LibrePilot wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/26968084/OpenPilot+Revolution>`__
-and `HobbyKing <https://hobbyking.com/de_de/mini-cc3d-revolution-32bit-flight-controller.html>`__
 
 The RevoMini likely is the smallest footprint autpilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, an external SD card adapter can be added with limited effort.
 
