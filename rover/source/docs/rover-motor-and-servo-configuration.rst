@@ -20,6 +20,8 @@ If using the mission planner, the Initial Setup >> Mandatory Hardware >> Servo O
 .. image:: ../images/rover-motor-and-servo-config1.png
     :target: ../_images/rover-motor-and-servo-config1.png
 
+.. _rover-motor-and-servo-configuration-skid:
+
 Skid Steering
 -------------
 
@@ -54,6 +56,8 @@ Some ESCs support three "Running Models":
 #. Forward and Reverse
 
 For Rover to have full and straight forward control of the throttle it is best to set the "Running Model" to the 3rd option, "Forward and Reverse".  An ESC programming card compatible with the ESC can normally be used to change the ESC's configuration.
+
+.. _rover-motor-and-servo-configuration-testing:
 
 Testing Motor direction
 -----------------------
