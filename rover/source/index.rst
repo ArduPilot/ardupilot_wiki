@@ -40,6 +40,7 @@ Table of Contents
     Logs <docs/common-logs>
     Optional Hardware <docs/common-optional-hardware>
     Boats <docs/boat-configuration>
+    Balance Bots <docs/balance_bot-home>
     Reference Frames <docs/reference-frames>
     Autopilot Hardware Options <docs/common-autopilots>
     Use-Cases and Applications <docs/common-use-cases-and-applications>
