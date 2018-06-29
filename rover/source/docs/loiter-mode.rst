@@ -4,7 +4,7 @@
 Loiter Mode
 ===========
 
-..  youtube:: odwVqi3agbI
+..  youtube:: IBptvWRT_Tg
     :width: 100%
 
 Loiter mode allows boats to hold position in a strong current.
