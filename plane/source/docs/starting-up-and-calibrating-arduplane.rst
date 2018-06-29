@@ -28,7 +28,7 @@ If the flight controller has a :ref:`safety switch <common-safety-switch-pixhawk
       disengaged. Possibly not calibrated or sensor error.
    -  Slow Blinking indicates: Safe condition. Safety can be disengaged
       by depressing Safety Button for 5 seconds.
-   -  LED Continuously on indicates: Safety has been disengaged. PX4
+   -  LED Continuously on indicates: Safety has been disengaged. The
       flight controller may be armed with Throttle down and to the
       right.
    -  When the LED is continuously on indicating Safety Disengaged it
