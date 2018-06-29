@@ -88,6 +88,9 @@ reversed. \ **Failing to do this is the #1 cause of crashes.**
    come on in any other Auto mode until you are in motion in the
    air.
 
+..  youtube:: RUs62xmdnmg
+    :width: 100%
+
 First flight
 ============
 
