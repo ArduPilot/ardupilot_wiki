@@ -12,6 +12,7 @@ Planned Events
 - June 22nd ~ 24th 2018: ArduPilot SZUAVIA conference in Shenzhen China (`intro video from Jani Hirvinen <https://www.youtube.com/watch?v=JvRhIh_cQzU>`__)
 - Sep 5th ~ 7th 2018: InterDrone in Las Vegas, USA
 - Sep 24th ~ 28th 2018: `Medical Express Challenge <https://uavchallenge.org/medical-express/>`__ in Dalby Australia
+- Oct 10th ~ 12th 2018: `Japan Innovation Challenge <https://prtimes.jp/main/html/rd/p/000000148.000026811.html>`__ search and rescue competition in Hokkaido Japan
 - Oct 15th ~ 17th 2018: ArduPilot conference sponsored by HEX in Suzhou China (`intro video from Philip Rowse <https://youtu.be/_2Qnm0TDoZA?t=1677>`__)
 - Mar 2019: Developer Un-conference in Canberra Australia
 
