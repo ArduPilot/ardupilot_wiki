@@ -1,24 +1,16 @@
-.. _flying-with-a-joystickgamepad-instead-of-rc-controller:
+.. _common-joystick
 
-==============================
-Flying with a Joystick/Gamepad
-==============================
+================
+Joystick/Gamepad
+================
 
-This article explains how you can fly with a Joystick/Gamepad via
-*Mission Planner*.
-
-Overview
-========
-
-This article demonstrates how to control Copter using a
-joystick/gamepad. The approach uses *Mission Planner* to set appropriate
-Remote Control (RC) overrides based on Joystick/Gamepad input.
+This article explains how you can control your vehicle with a Joystick or Gamepad using the Mission Planner which sends "RC Override" messages to the vehicle.
 
 Other GCSs may also support "RC overrides" but they are not covered in
 this article.
 
-.. figure:: ../images/Joystick_LogitechF310.jpg
-   :target: ../_images/Joystick_LogitechF310.jpg
+.. figure:: ../../../images/joystick_LogitechF310.jpg
+   :target: ../_images/joystick_LogitechF310.jpg
 
    Logitech F310 Joystick
 
@@ -26,8 +18,7 @@ this article.
 
    Even if flying with a joystick, you should keep a regular
    transmitter/receiver connected and ready for use as a backup.  In future
-   versions of Copter, after more failsafe testing has been completed we
-   may change this recommendation.
+   versions of ArduPilot, after more failsafe testing has been completed this recommendation may change.
 
 What you will need
 ==================
@@ -47,8 +38,8 @@ Setup with the Mission Planner
 -  Open the *Mission Planner Flight Data* screen. On the **Actions** tab
    push the **Joystick** button
 
-   .. image:: ../images/Joystick_MPSetup.png
-       :target: ../_images/Joystick_MPSetup.png
+   .. image:: ../../../images/joystick_MPSetup.png
+       :target: ../_images/joystick_MPSetup.png
    
 -  Ensure the Logitech joystick appears in the drop-down
 -  The **Enable** button, once pushed, will tell the mission planner to
@@ -140,8 +131,8 @@ no failover to regular transmitter):
 #. Repeat the above test but at step #5 actually disconnect the joystick
    from the computer.  The results should be the same.
 
-.. image:: ../images/Joystick_FailsafeTesting1.jpg
-    :target: ../_images/Joystick_FailsafeTesting1.jpg
+.. image:: ../../../images/joystick_FailsafeTesting1.jpg
+    :target: ../_images/joystick_FailsafeTesting1.jpg
 
 **Simulate failing over to the regular transmitter/receiver**
 
@@ -182,11 +173,8 @@ transmitter but lag can be reduced by:
 -  Reducing the rate of other telemetry data being sent between the
    vehicle and GCS from the MP's **Config/Tuning \| Planner** page
 
-   .. image:: ../images/Joystick_ReduceLag_MPRates.png
-       :target: ../_images/Joystick_ReduceLag_MPRates.png
+   .. image:: ../../../images/joystick_ReduceLag_MPRates.png
+       :target: ../_images/joystick_ReduceLag_MPRates.png
    
 -  If using a SiK Radio or RFD900 Radio these can be put into 
    :ref:`Low Latency mode as described here <common-3dr-radio-advanced-configuration-and-technical-information_low_latency_mode>`.
-
-
-
