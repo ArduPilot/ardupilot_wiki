@@ -39,7 +39,7 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
 
        git remote add upstream https://github.com/ArduPilot/ardupilot.git
 
-#. Fetch changes from the upstream respository (this simply downloads changes into a local cache, it will overwrite or modify your changes in any way)
+#. Fetch changes from the upstream respository (this simply downloads changes into a local cache, it will not overwrite or modify your changes in any way)
 
    ::
 
