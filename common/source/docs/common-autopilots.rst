@@ -39,6 +39,7 @@ Closed hardware
     Holybro Kakute F4 <common-holybro-kakutef4>
     Intel Aero <common-intel-aero-overview>
     Intel Aero RTF vehicle <common-intel-aero-rtf>
+    Mateksys F405-Wing <common-matekf405-wing>
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
     Parrot C.H.U.C.K (for the Parrot Disco) <common-CHUCK-overview>
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
