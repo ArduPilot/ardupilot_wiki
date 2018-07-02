@@ -62,9 +62,9 @@ The RevoMini likely is the smallest footprint autpilot hardware to support ArduP
 Flashing Firmware
 ========================
 Support for Revolution and RevoMini has been introduced with Ardupilot's ChibiOS port. Firmware files can be found at http://firmware.ardupilot.org/
-Besides the *.apj files for firmware flashing via MissionPlanner, there's also *.hex files for use with various utilities like dfu-util or betaflight / iNav GUIs. You will also find a *_bl.hex that contains the firmware plus the ArduPilot compatible bootloader in case it is not already present on your board. 
+Besides the .apj files for firmware flashing via MissionPlanner, there's also .hex files for use with various utilities like dfu-util or betaflight / iNav GUIs. You will also find a _bl.hex that contains the firmware plus the ArduPilot compatible bootloader in case it is not already present on your board. 
 
-The ArduPilot compatible bootloader is required for first time flashing of ArduPilot firmware. The provided *_bl.hex file can be flashed using BF or iNav GUI, likely the most convenient way to get ArduPilot on your board the first time.
+The ArduPilot compatible bootloader is required for first time flashing of ArduPilot firmware. The provided _bl.hex file can be flashed using BF or iNav GUI, likely the most convenient way to get ArduPilot on your board the first time.
 
 Alternatively, the bootloader can be flashed separately. This requires the board to be put into DFU mode. Tools like dfu-util can be used to flash the bootlader. Once the bootlader is present, all subsequent firmware updates can be done using MissionPlanner's firmware functions.
 
@@ -91,7 +91,7 @@ OS X
     
 Windows
 
-Refer the the Revo Mini LibrePilot wiki above. Install the Zadig USB driver and download the `LibrePilot_dfu_flash.zip <https://librepilot.atlassian.net/wiki/download/attachments/29622291/LibrePilot_dfu_flash.zip?version=2&modificationDate=1464128116188&cacheVersion=1&api=v2>`__. Extract the zip archive and open a command prompt or PowerShell window in the directory.
+Refer to the Revo Mini LibrePilot wiki above. Install the Zadig USB driver and download the `LibrePilot_dfu_flash.zip <https://librepilot.atlassian.net/wiki/download/attachments/29622291/LibrePilot_dfu_flash.zip?version=2&modificationDate=1464128116188&cacheVersion=1&api=v2>`__. Extract the zip archive and open a command prompt or PowerShell window in the directory.
 
 Flash Bootloader
 ----------------
@@ -109,6 +109,8 @@ Once the flashing is complete, power cycle the board and you should see a solid 
 .. image:: ../../../images/openpilot-revo-mini-awaiting-firmware.jpg
     :target: ../images/openpilot-revo-mini-awaiting-firmware.jpg
 
+Alternatively, board-specific bootloaders can be built from source with ./waf using the --bootloader option.
+
 
 Flash ArduPilot
 ---------------
@@ -117,12 +119,12 @@ Open Mission Planner and go to the Initial Setup tab. Verify that the COM port i
 .. image:: ../../../images/openpilot-revo-mini-com-ports.png
     :target: ../images/openpilot-revo-mini-com-ports.png
 
-Choose "Load Custom Firmware" and browse to the "arducopter.apj" file. After the flash is complete, power cycle the device.
+Choose "Load Custom Firmware" and browse to the respective .apj file. After the flash is complete, power cycle the device.
 
 .. image:: ../../../images/openpilot-revo-mini-load-firmware.png
     :target: ../images/openpilot-revo-mini-load-firmware.png
 
-Congratulations! You're now running ArduCopter on the OpenPilot Revolution Mini. You can use this same process to upgrade to newer versions of ArduPilot. Compile ArduCopter and upload the .apj file to the board.
+Congratulations! You're now running ArduPilot on the OpenPilot Revolution Mini. You can use this same process to upgrade to newer versions of ArduPilot. Either use MP's firmware update functionality or compile your own desired vehicle firmware from source and upload the .apj file to the board.
 
 .. image:: ../../../images/openpilot-revo-mini-flashed.jpg
     :target: ../images/openpilot-revo-mini-load-flashed.jpg
