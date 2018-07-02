@@ -41,6 +41,7 @@ Closed hardware
     Intel Aero RTF vehicle <common-intel-aero-rtf>
     Mateksys F405-Wing <common-matekf405-wing>
     Omnibus F4 Pro <common-omnibusf4pro>
+    Omnibus F7 <common-omnibusf7>
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
     Parrot C.H.U.C.K (for the Parrot Disco) <common-CHUCK-overview>
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
