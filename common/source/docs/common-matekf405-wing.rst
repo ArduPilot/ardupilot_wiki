@@ -44,7 +44,7 @@ Specifications
    -  Built-in OSD
 
 
-- **Size and Dimensions**
+-  **Size and Dimensions**
 
    - 56mm x 36mm x 15mm
    - 25g
