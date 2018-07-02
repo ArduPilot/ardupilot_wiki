@@ -30,6 +30,7 @@ example, SITL can simulate:
 -  multi-rotor aircraft
 -  fixed wing aircraft
 -  ground vehicles
+-  underwater vehicles
 -  camera gimbals
 -  antenna trackers
 -  a wide variety of optional sensors, such as Lidars and optical flow
