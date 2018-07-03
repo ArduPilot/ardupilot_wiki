@@ -169,6 +169,10 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_unmannedtech.jpg
     :width: 250px   
     :target:  https://www.unmannedtechshop.co.uk/
+    
+.. image:: ../../../images/supporters/supporters_logo_makeflyeasy.jpg
+    :width: 250px   
+    :target:  http://makeflyeasy.com/
 
 How does my company become a partner?
 =====================================
