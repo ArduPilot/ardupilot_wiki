@@ -5,7 +5,7 @@ Pixhack V5 Overview
 ============================
 
 .. image:: ../../../images/pixhackv5/pixhackv5.jpg
-    :target: ../images/pixhackv5/pixhackv5.jpg
+    :target: ../_images/pixhackv5.jpg
     :width: 360px
 
 The CUAV Pixhack v5 is an advanced autopilot designed and made by CUAV.
@@ -60,17 +60,19 @@ Official retailers are listed `here  <https://leixun.aliexpress.com/>`__.
 Quick Start
 ===========
 
-Connector pinouts are detailed `here <../images/pixhackv5/pixhack-v5-connectors.jpg>`
 Use the :ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>` as a general guide.
+
+.. image:: ../../../images/pixhackv5/pixhack-v5-connectors.jpg
+    :target: ../_images/pixhack-v5-connectors.jpg
 
 More Information
 ================
 
-see more documentation `here  <http://doc.cuav.net/flight-controller/pixhack-v5/en/>`__
+see more documentation `here <http://doc.cuav.net/flight-controller/pixhack-v5/en/>`__
 
 More Images
 ===========
 
 .. image:: ../../../images/pixhackv5/pixhackv5_2.jpg
-    :target: ../images/pixhackv5/pixhackv5_2.jpg
+    :target: ../_images/pixhackv5_2.jpg
     :width: 360px
