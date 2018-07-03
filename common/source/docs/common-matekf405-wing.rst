@@ -49,6 +49,8 @@ Specifications
    - 56mm x 36mm x 15mm
    - 25g
 
+See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f405-wing#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-wing#tab-id-3>`__.
+   
 Where to Buy
 ============
 
