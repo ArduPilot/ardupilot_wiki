@@ -11,7 +11,7 @@ Onboard OSD functionality was introduced with chibios port to F4/F7 boards. Main
 
 .. note:: 
 
-  Being an integral library of ArduPilot firmware, the OSD code provides the technical prerquisites to be run on non-aio-boards too, with the output being redirected to various backends other than a MAX-type chipset. This is still work in progress though.
+  Being an integral library of ArduPilot firmware, the OSD code provides the prerequisites to be redirected to various backends other than MAX-type chipsets, including testing on SITL setups without actual autopilot- or video-hardware needed.
 
 Parameters
 ==========
@@ -73,3 +73,17 @@ set the horizontal and vertical position of the item, starting with X = 0 and Y 
 .. note::
    
    The typical MAXChip based OSD screen has a visible matrix of 30 horizontal x 13 vertical chars in NTSC standard, while PAL standard has 16 vertical chars. The OSD code enables auto-detection of NTSC vs. PAL to match input signal properties.
+
+Testing OSD with SITL
+=====================
+
+OSD functionality can be tested without autopilot- or video-hardware using a :ref:`Software In The Loop (SITL) simulator <dev:sitl-simulator-software-in-the-loop>` setup. Follow the SITL-Instructions to setup a simulation environment. Run the simulator on current source code. A graphical OSD simulation in a separate window can be opened by adding the option 
+::
+   --osd
+to sim_vehicle.py. The simulated OSD can now be set and configured via parameters.
+
+.. tip::
+   Type
+   ::
+      ./sim_vehicle.py -help
+   so see all available options.
