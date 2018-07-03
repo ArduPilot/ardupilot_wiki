@@ -58,7 +58,8 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="copter,plane"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
 [/site]
-    OSD for FPV <common-osd-boards-on-screen-display>
+    Onboard OSD for FPV and simulation <common-osd-overwiew>
+    Standalone OSD hardware for FPV <common-osd-boards-on-screen-display>
 [site wiki="copter"]
     Parachute <parachute>
 [/site]
