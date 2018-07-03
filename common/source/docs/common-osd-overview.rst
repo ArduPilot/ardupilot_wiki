@@ -1,8 +1,11 @@
-.. common-osd:
+.. common-osd-overwiew:
 
 ===
 OSD
 ===
+
+.. image:: ../../../images/osd.jpg
+    :target: ../_images/osd.jpg
 
 Onboard OSD functionality was introduced with chibios port to F4/F7 boards. Mainly aiming at aio-boards with onboard MAX7456-type chips, it enables overlay of FC data using the onboard video system. Once enabled, it uses various panel items that can individually be set active and positioned on the screen using respective parameters. It allows to setup multiple screen layouts and switch between those using a spare RC channel.
 
