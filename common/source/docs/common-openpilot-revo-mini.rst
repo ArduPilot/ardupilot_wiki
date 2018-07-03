@@ -102,6 +102,7 @@ Once the flashing is complete, power cycle the board and you should see a solid 
 
 .. image:: ../../../images/openpilot-revo-mini-awaiting-firmware.jpg
     :target: ../images/openpilot-revo-mini-awaiting-firmware.jpg
+    :width: 450px
 
 
 Flash ArduPilot
@@ -120,6 +121,7 @@ Congratulations! You're now running ArduCopter on the OpenPilot Revolution Mini.
 
 .. image:: ../../../images/openpilot-revo-mini-flashed.jpg
     :target: ../images/openpilot-revo-mini-load-flashed.jpg
+    :width: 450px
 
 Known Issues
 ============
