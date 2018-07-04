@@ -18,12 +18,13 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
    
 .. toctree::
     :maxdepth: 1
-    
+
     ADS-B Receiver <common-ads-b-receiver>
 [site wiki="plane"]
     Airspeed Sensor <airspeed>
 [/site]
     Battery Monitors (aka Power Modules) <common-powermodule-landingpage>
+    Barometer (external) <common-baro-external>
 [site wiki="copter,plane"]
     Buzzer <common-buzzer>
 [/site]
