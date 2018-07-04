@@ -1,4 +1,4 @@
-.. common-osd-overwiew:
+.. _common-osd-overwiew:
 
 ===
 OSD
