@@ -9,8 +9,8 @@ Copter/Plane/Rover to allowing sharing flight data, videos or even
 allowing web based control.  Below is the list of known applications (in
 alphabetical order).
 
-.. image:: ../../../images/webapps_titleimage.jpg
-    :target: ../_images/webapps_titleimage.jpg
+.. image:: ../../../images/webapps_titleimage2.jpg
+    :target: ../_images/webapps_titleimage2.jpg
 
 `dronetrack.org <http://www.dronetrack.org/>`__ - Real-Time tracking and
 sharing of flight paths
