@@ -12,12 +12,6 @@ alphabetical order).
 .. image:: ../../../images/webapps_titleimage.jpg
     :target: ../_images/webapps_titleimage.jpg
 
-`DroneDeploy.com <https://www.dronedeploy.com/>`__ - Simple workflows to
-get stuff done with drones.  Create high-precision surveys, agricultural
-maps, and point clouds with just a few clicks.  Long distance missions
-without the equipment.  Fast connections to your drone with LTE for
-untethered control over 80% of the US.
-
 `dronetrack.org <http://www.dronetrack.org/>`__ - Real-Time tracking and
 sharing of flight paths
 
