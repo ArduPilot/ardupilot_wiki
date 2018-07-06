@@ -2334,7 +2334,7 @@ starts 5 seconds after the vehicle has passed Waypoint #2.
 MAV_CMD_CONDITION_CHANGE_ALT
 ----------------------------
 
-Supported by: Copter, Plane (not Rover).
+Supported by: Copter only (not Rover; Plane's commands_logic.cpp does not have this)
 
 Ascend/descend at a specified rate to a given altitude (will override
 the value used in the following Waypoint). Any "_DO_" commands
@@ -2851,7 +2851,7 @@ MAV_CMD_DO_SET_HOME
 Supported by: Copter, Plane, Rover.
 
 Sets the home location either as the current location or at the location
-specified in the command.
+specified in the command.For SITL work, altitude input here needs to be with reference to absolute altitude, taking into account SRTM elevation.
 
 .. note::
 
