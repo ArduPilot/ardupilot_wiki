@@ -108,6 +108,7 @@ Once the flashing is complete, power cycle the board and you should see a solid 
 
 .. image:: ../../../images/openpilot-revo-mini-awaiting-firmware.jpg
     :target: ../images/openpilot-revo-mini-awaiting-firmware.jpg
+    :width: 450px
 
 Alternatively, board-specific bootloaders can be built from source with ./waf using the --bootloader option.
 
@@ -128,12 +129,12 @@ Congratulations! You're now running ArduPilot on the OpenPilot Revolution Mini. 
 
 .. image:: ../../../images/openpilot-revo-mini-flashed.jpg
     :target: ../images/openpilot-revo-mini-load-flashed.jpg
+    :width: 450px
     
 Compile ArduPilot
 -----------------
 To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
 `Building the Code <http://ardupilot.org/dev/docs/building-the-code.html>`__
-
 
 Where to Buy
 ============

@@ -43,7 +43,7 @@ For example, if you wished to re-order a quad-x frame's motors from the :ref:`ki
 
 - :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` leave as 33 (aka "motor1", front-right)
 - :ref:`SERVO2_FUNCTION <SERVO2_FUNCTION>` change from 34 (aka "motor2", back-left) to 36 (motor #4, back-right)
-- :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` change from 35 (aka "motor3", front-right) to 34 (motor #2, back-left)
+- :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` change from 35 (aka "motor3", front-left) to 34 (motor #2, back-left)
 - :ref:`SERVO4_FUNCTION <SERVO4_FUNCTION>` change from 36 (aka "motor4", back-right) to 35 (motor #3, front-left)
 
 .. note::

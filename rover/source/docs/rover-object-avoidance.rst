@@ -1,42 +1,43 @@
 .. _rover-object-avoidance:
 
-======================
-Rover Object Avoidance
-======================
+================
+Object Avoidance
+================
 
-This topic explains how to tune Rover's simple objet avoidance feature 
+Rover supports two forms of object avoidance which can be enabled separately or simultaneously
 
-Overview
-========
+- "dodge" avoidance attempts to steer around obstacles in :ref:`Steering <steering-mode>`, :ref:`RTL <rtl-mode>`, :ref:`SmartRTL <smartrtl-mode>`, :ref:`Guided <guided-mode>` and :ref:`Auto <auto-mode>` modes
+- "simple" object avoidance attempts to stop the vehicle before it hits objects in :ref:`Acro <acro-mode>`, :ref:`Steering <steering-mode>`, :ref:`Loiter <loiter-mode>` and :ref:`Guided <guided-mode>` modes
 
--  Up to 4 RNGFNDs may be used.
--  Debounce lets you specify the number of returns before triggering an
-   obstacle avoidance event, good for filtering false returns.
--  Maximum and Minimum range of the RNGFND can be set.
--  The SONAR readings can be scaled and adjusted for your use.
--  When an obstacle is detected you can set the correcting steering
-   angle and the time to hold it.
+"Dodge" Avoidance
+-----------------
 
-RNGFND parameters
-=================
+.. image:: ../images/rover-dodge-explain.png
+    :target: ../_images/rover-dodge-explain.png
+    :width: 450px
 
-The parameters that are relevant to the rangefinder(s) are :ref:`listed here <RNGFND_TYPE>`.
+-  one or two range finders should be mounted facing forward as described on the :ref:`range finder wiki pages <common-rangefinder-landingpage>`
+-  :ref:`RNGFND_TRIGGR_CM <RNGFND_TRIGGR_CM>` specifies the distance in cm at which the vehicle will begin turning.  I.e. 100 will mean the vehicle will begin turning 1m from the object
+-  :ref:`RNGFND_TURN_ANGL <RNGFND_TURN_ANGL>` controls the direction and aggressiveness of the turn.  Large positive or negative values (i.e. -450 or 450) cause turns up to the vehicle's maximum lateral acceleration (i.e. :ref:`TURN_MAX_G <TURN_MAX_G>`) while values near zero cause gentle turns.  Negative values cause the vehicle to turn left, positive causes a turn right.
+-  :ref:`RNGFND_TURN_TIME <RNGFND_TURN_TIME>` controls how many seconds the vehicle will continue turning after the object has gone out of view.
+-  :ref:`RNGFND_DEBOUNCE <RNGFND_DEBOUNCE>` specifies how many consecutive readings are required to trigger the turn response.  A higher number reduces false positives but also adds a small lag in the response.
 
-The parameters are set in the *Mission Planner* **CONFIG/TUNING\| Basic
-Tuning** or **CONFIG/TUNING \| Standard Params** pages):
+This "dodge" method of avoidance can only be activated in :ref:`Steering <steering-mode>`, :ref:`RTL <rtl-mode>`, :ref:`SmartRTL <smartrtl-mode>`, :ref:`Guided <guided-mode>` and :ref:`Auto <auto-mode>` modes.
 
-.. figure:: ../images/MP_rover_parameter.jpg
-   :target: ../_images/MP_rover_parameter.jpg
+Simple Avoidance (Stopping)
+---------------------------
 
-   Mission Planner: Rover SonarParameters
+..  youtube:: ho9mlVwhgHA
+    :width: 100%
 
-.. figure:: ../images/MissionPlanner_Rover_Basic_Tuning.png
-   :target: ../_images/MissionPlanner_Rover_Basic_Tuning.png
+This form of avoidance attempts to stop the vehicle before hitting objects.
 
-   Mission Planner: Rover BasicTuning
+- follow the normal :ref:`instructions for setting up rangefinders <common-rangefinder-landingpage>`
+- if using regular lidar or sonar (i.e. not 360 degree lidar):
 
-.. note::
+   - set :ref:`RNGFND_ORIENT <RNGFND_ORIENT>` and/or :ref:`RNGFND2_ORIENT <RNGFND2_ORIENT>` to "0" for forward facing lidar and "4" for backwards facing lidar
+   - set :ref:`PRX_TYPE <PRX_TYPE>` = "4" to enable using range finders as "proximity sensors"
 
-   All parameters may be adjusted in the "Advanced Parameter List" in
-   Mission Planner. All the Rover user settable parameters are listed in
-   :doc:`APMrover2 Parameters <parameters>`.
+- set :ref:`AVOID_ENABLE <AVOID_ENABLE>` to "7" to enable avoidance using proximity sensors (and fences)
+
+This "simple" method of avoidance can only be activated in :ref:`Acro <acro-mode>`, :ref:`Steering <steering-mode>`, :ref:`Loiter <loiter-mode>` and :ref:`Guided <guided-mode>` modes.

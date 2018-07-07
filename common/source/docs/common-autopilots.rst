@@ -20,6 +20,7 @@ Open hardware
     Pixhawk <common-pixhawk-overview>
     The Cube <common-thecube-overview>
     Pixracer <common-pixracer-overview>
+    Pixhack v5 <common-pixhackV5-overview>
     Beagle Bone Blue <common-beagle-bone-blue>
     Erle-Brain <common-erle-brain-linux-autopilot>
     F4BY <common-f4by>
@@ -38,6 +39,9 @@ Closed hardware
     Holybro Kakute F4 <common-holybro-kakutef4>
     Intel Aero <common-intel-aero-overview>
     Intel Aero RTF vehicle <common-intel-aero-rtf>
+    Mateksys F405-Wing <common-matekf405-wing>
+    Omnibus F4 Pro <common-omnibusf4pro>
+    Omnibus F7 <common-omnibusf7>
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
     Parrot C.H.U.C.K (for the Parrot Disco) <common-CHUCK-overview>
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>

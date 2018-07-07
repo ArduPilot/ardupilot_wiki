@@ -18,12 +18,13 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
    
 .. toctree::
     :maxdepth: 1
-    
+
     ADS-B Receiver <common-ads-b-receiver>
 [site wiki="plane"]
     Airspeed Sensor <airspeed>
 [/site]
     Battery Monitors (aka Power Modules) <common-powermodule-landingpage>
+    Barometer (external) <common-baro-external>
 [site wiki="copter,plane"]
     Buzzer <common-buzzer>
 [/site]
@@ -43,8 +44,8 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     GPS/Compass <common-positioning-landing-page>
     Grippers <common-gripper-landingpage>
-    Joystick or Gamepad <flying-with-a-joystickgamepad-instead-of-rc-controller>
-[site wiki="copter"]    
+    Joystick or Gamepad <common-joystick>
+[site wiki="copter"]
     Landing Gear <landing-gear>
 [/site]
     LEDs (external) <common-external-leds>
@@ -55,10 +56,10 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Object Avoidance with Lightware SF40C <common-lightware-sf40c-objectavoidance>
     Object Avoidance with TeraRanger Tower <common-teraranger-tower-objectavoidance>
 [/site]
+    On-Screen Display (OSD) <common-osd-boards-on-screen-display>
 [site wiki="copter,plane"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
 [/site]
-    OSD for FPV <common-osd-boards-on-screen-display>
 [site wiki="copter"]
     Parachute <parachute>
 [/site]

@@ -11,6 +11,7 @@ This section includes details on tested frames to speed up DIY builds of rovers 
 .. toctree::
     :maxdepth: 1
 
+    Thunder Tiger Toyota Hilux <reference-frames-tt-toyotahilux>
     HobbyKing Hydrotek <reference-frames-hydrotek>
     Traxxas Stampede 4WD Truck <reference-frame-traxxas-stampede>
 

@@ -107,7 +107,7 @@ then a message explaining what failed is set to the GCS.
 
 The checks performed are:
 
--  Safety switch. The PX4 safety switch must be set to the safety-off
+-  Safety switch. The safety switch must be set to the safety-off
    state before arming is allowed. This is either done by pressing the
    safety switch for 2 seconds until it stops flashing, or you can
    disable the use of the safety switch by setting BRD_SAFETY_ENABLE=0
@@ -127,7 +127,7 @@ The checks performed are:
 -  Airspeed checks. If you have configured an airspeed sensor then the
    sensor needs to be working.
 -  Logging checks. The logging subsystem needs to be working (ie. a
-   microSD must be fitted and working on PX4)
+   microSD must be fitted and working)
 -  RC Control checks. You need to not be in RC failsafe
 
 Throttle output when disarmed
