@@ -61,7 +61,7 @@ The RevoMini likely is the smallest footprint autpilot hardware to support ArduP
   
 Flashing Firmware
 ========================
-Support for Revolution and RevoMini has been introduced with Ardupilot's ChibiOS port. Firmware files can be found at http://firmware.ardupilot.org/
+Support for Revolution and RevoMini has been introduced with Ardupilot's ChibiOS port. Firmware files can be found `here <http://firmware.ardupilot.org/>`__
 Besides the .apj files for firmware flashing via MissionPlanner, there's also .hex files for use with various utilities like dfu-util or betaflight / iNav GUIs. You will also find a _bl.hex that contains the firmware plus the ArduPilot compatible bootloader in case it is not already present on your board. 
 
 The ArduPilot compatible bootloader is required for first time flashing of ArduPilot firmware. The provided _bl.hex file can be flashed using BF or iNav GUI, likely the most convenient way to get ArduPilot on your board the first time.
@@ -96,7 +96,7 @@ Refer to the Revo Mini LibrePilot wiki above. Install the Zadig USB driver and d
 Flash Bootloader
 ----------------
 
-Bootloader binaries for the current targets can be found here: https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders
+Bootloader binaries for the current targets can be found _`here: <https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders>`__
 
 Download revo-mini_bl.bin for this board type. With your board connected via USB and put into DFU mode, open a terminal and flash the new bootloader with the following command line:
 
