@@ -132,7 +132,7 @@ Congratulations! You're now running ArduPilot on the OpenPilot Revolution Mini. 
 Compile ArduPilot
 -----------------
 To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
-http://ardupilot.org/dev/docs/building-the-code.html
+`Building the Code <http://ardupilot.org/dev/docs/building-the-code.html>`__
 
 
 Where to Buy
