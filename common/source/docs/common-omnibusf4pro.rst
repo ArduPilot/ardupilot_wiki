@@ -105,7 +105,7 @@ Choose "Load Custom Firmware" and browse to the respective .apj file. After the 
 .. image:: ../../../images/openpilot-revo-mini-load-firmware.png
     :target: ../images/openpilot-revo-mini-load-firmware.png
 
-Congratulations! You're now running ArduPilot on the OpenPilot Revolution Mini. You can use this same process to upgrade to newer versions of ArduPilot. Either use MP's firmware update functionality or compile your own desired vehicle firmware from source and upload the .apj file to the board.
+Congratulations! You're now running ArduPilot on your omnibusF4. You can use this same process to upgrade to newer versions of ArduPilot. Either use MP's firmware update functionality or compile your own desired vehicle firmware from source and upload the .apj file to the board.
 
 Compile ArduPilot
 -----------------
