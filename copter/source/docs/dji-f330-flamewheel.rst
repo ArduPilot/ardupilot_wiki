@@ -111,6 +111,10 @@ Frame and Motor Assembly
 .. image:: ../images/QuadHookUp800B.jpg
     :target: ../_images/QuadHookUp800B.jpg
 
+-  Be careful to wire motors to the PixHawk using the ArdiPilot numbering convention below. The numbering convention in the DJI FlameWheel F450 instructions are different, and incorrect writing leads to attitude instability.
+.. image:: ../images/MOTORS_QuadX.jpg
+    :target: ../_images/MOTORS_QuadX.jpg
+
 ESC Installation and Soldering the Power Distribution Board
 ===========================================================
 
