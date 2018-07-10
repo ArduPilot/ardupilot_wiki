@@ -38,6 +38,11 @@ Specifications
    -  USB port
    -  Built-in OSD
 
+Where to Buy
+============
+
+- available from multiple retailers including `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
+
 Flashing Firmware
 ========================
 Usually these boards are sold pre-flashed with betaflight / INav firwares and require both firmware and bootloader to be updated if you want to use ArduPilot, as an ArduPilot-compatible bootloader is required for subsequent ArduPilot firmware-upgrade handling.
@@ -55,7 +60,7 @@ To do this, you'll need to locate the DFU jumper on your board. On most board fl
 pressed while connecting your board to your PC via USB: 
 
 .. image:: ../../../images/omnibusf4_dfu_button.png
-    :target: ../images/omnibusf4_dfu_button.png
+    :target: ../_images/omnibusf4_dfu_button.png
 
 Install dfu-util
 -----------------
@@ -71,7 +76,7 @@ Install dfu-util
     
 * Windows
 
-  Download the [dfu-util](http://dfu-util.sourceforge.net/releases/dfu-util-0.8-binaries/win32-mingw32/dfu-util-static.exe) to your local system, e.g., under `D:\dfu-util`.
+  Download the `dfu-util <http://dfu-util.sourceforge.net/releases/dfu-util-0.8-binaries/win32-mingw32/dfu-util-static.exe>`__ to your local system, e.g., under `D:\dfu-util`.
 
   Rename it to `dfu-util.exe`
 
@@ -80,7 +85,7 @@ Install dfu-util
 Flash Bootloader
 ----------------
 
-Bootloader binaries for the current targets can be found _`here: <https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders>`__
+Bootloader binaries for the current targets can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders>`__.
 
 Download omnibusf4pro_bl.bin for this board type. With your board connected via USB and put into DFU mode, open a terminal and flash the new bootloader with the following command line:
 
@@ -98,12 +103,12 @@ Flash ArduPilot
 Open Mission Planner and go to the Initial Setup tab. Verify that the COM port in the top right is the same as in Device Manager.
 
 .. image:: ../../../images/openpilot-revo-mini-com-ports.png
-    :target: ../images/openpilot-revo-mini-com-ports.png
+    :target: ../_images/openpilot-revo-mini-com-ports.png
 
 Choose "Load Custom Firmware" and browse to the respective .apj file. After the flash is complete, power cycle the device.
 
 .. image:: ../../../images/openpilot-revo-mini-load-firmware.png
-    :target: ../images/openpilot-revo-mini-load-firmware.png
+    :target: ../_images/openpilot-revo-mini-load-firmware.png
 
 Congratulations! You're now running ArduPilot on your omnibusF4. You can use this same process to upgrade to newer versions of ArduPilot. Either use MP's firmware update functionality or compile your own desired vehicle firmware from source and upload the .apj file to the board.
 
@@ -111,10 +116,3 @@ Compile ArduPilot
 -----------------
 To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
 `Building the Code <http://ardupilot.org/dev/docs/building-the-code.html>`__
-
-
-
-Where to Buy
-============
-
-- available from multiple retailers including `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
