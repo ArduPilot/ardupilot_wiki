@@ -149,11 +149,13 @@ helpful to set up the path to the **Tools/autotest** directory.
 
 #. Navigate the file system to the home directory and open the
    **.bashrc** files (e.g. **C:\\cygwin\\home\\user_name\\.bashrc**.
-#. Add the following line to the end of **.bashrc**
+#. Add the path to your Ardupilot source to cygwin by adding the following line to the end of **.bashrc**. Note, that your source may not be in $HOME but in some other fixed path that starts with /cygdrive/c/Users/ 
 
    ::
 
        export PATH=$PATH:$HOME/ardupilot/Tools/autotest
+       
+       
 
 The file will be loaded next time you open the *Cygwin terminal*.
 
