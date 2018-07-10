@@ -24,6 +24,50 @@ to 1, reboot and reload paramaters. This exposes the whole OSD parameter group.
 To set a RC channel for screen switching, use parameter
 ::
    OSD_CHAN
+
+General display options bitmask can be set by parameter
+::
+   OSD_OPTIONS
+defaulting to 0. Bitmask options are 
+
+   1: inverted wind pointer
+
+   2: inverted Horizon roll ("russian" HUD)
+
+Fonts can be switched on-the-fly using parameter
+::
+   OSD_FONT
+see OSD fonts `README<https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_OSD/fonts/README.md>`__ for more detail.
+
+The overlay screen can be centered in your display using parameters
+::
+   OSD_V_OFFSET
+and 
+::
+   OSD_H_OFFSET
+with a vertical range of 0-31 and a horizontal range of 0-63.
+
+Warning thresholds can be set for RSSI, battery voltage and gps sat count using
+::
+   OSD_W_RSSI
+   OSD_W_BATVOLT
+   OSD_W_NSAT
+parameters. If the respective value falls below this threshold, the item will start to flash. Warning thresholds default to 5%.
+
+Units can be set by parameter
+::
+   OSD_UNITS
+with the following options:
+
+   0: metric
+   
+   1: imperial
+   
+   2: SI
+   
+   3: aviation
+
+   
 Screens and screen switching
 ============================
 
