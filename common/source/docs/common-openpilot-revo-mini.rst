@@ -55,12 +55,15 @@ Specifications
 The RevoMini likely is the smallest footprint autpilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, an external SD card adapter can be added with limited effort.
 
 .. image:: ../../../images/revominiSD.jpg
-    :target: ../images/revominiSD.jpg
-  
-  
-  
+    :target: ../_images/revominiSD.jpg
+
+Where to Buy
+============
+
+- Available from many retailers including `HobbyKing <https://hobbyking.com/en_us/openpilot-cc3d-revolution-revo-32bit-flight-controller-w-integrated-433mhz-oplink.html>`__.
+
 Flashing Firmware
-========================
+=================
 Support for Revolution and RevoMini has been introduced with Ardupilot's ChibiOS port. Firmware files can be found `here <http://firmware.ardupilot.org/>`__
 Besides the .apj files for firmware flashing via MissionPlanner, there's also .hex files for use with various utilities like dfu-util or betaflight / iNav GUIs. You will also find a _bl.hex that contains the firmware plus the ArduPilot compatible bootloader in case it is not already present on your board. 
 
@@ -73,7 +76,7 @@ Enter DFU Mode
 To do this, you'll need to locate and short two pads on the device. 
 
 .. image:: ../../../images/revomini1.jpeg
-    :target: ../images/revomini1.jpeg
+    :target: ../_images/revomini1.jpeg
 
 You can short the pads in any particular way (either with a wire, solder joint, or something else). Detailed instructions are available on the `Revo Mini LibrePilot Wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/29622291/Recover+board+using+DFU>`__. A small wire is the easiest way to short the device. You can also power the device via USB first, and then short the pads if using a wire. Once you have the device in DFU mode and connected to your machine continue with the steps here.
 
@@ -96,7 +99,7 @@ Refer to the Revo Mini LibrePilot wiki above. Install the Zadig USB driver and d
 Flash Bootloader
 ----------------
 
-Bootloader binaries for the current targets can be found _`here: <https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders>`__
+Bootloader binaries for the current targets can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders>`__
 
 Download revo-mini_bl.bin for this board type. With your board connected via USB and put into DFU mode, open a terminal and flash the new bootloader with the following command line:
 
@@ -107,7 +110,7 @@ Download revo-mini_bl.bin for this board type. With your board connected via USB
 Once the flashing is complete, power cycle the board and you should see a solid power LED and a rapidly blinking blue LED.
 
 .. image:: ../../../images/openpilot-revo-mini-awaiting-firmware.jpg
-    :target: ../images/openpilot-revo-mini-awaiting-firmware.jpg
+    :target: ../_images/openpilot-revo-mini-awaiting-firmware.jpg
     :width: 450px
 
 Alternatively, board-specific bootloaders can be built from source with ./waf using the --bootloader option.
@@ -118,25 +121,20 @@ Flash ArduPilot
 Open Mission Planner and go to the Initial Setup tab. Verify that the COM port in the top right is the same as in Device Manager.
 
 .. image:: ../../../images/openpilot-revo-mini-com-ports.png
-    :target: ../images/openpilot-revo-mini-com-ports.png
+    :target: ../_images/openpilot-revo-mini-com-ports.png
 
 Choose "Load Custom Firmware" and browse to the respective .apj file. After the flash is complete, power cycle the device.
 
 .. image:: ../../../images/openpilot-revo-mini-load-firmware.png
-    :target: ../images/openpilot-revo-mini-load-firmware.png
+    :target: ../_images/openpilot-revo-mini-load-firmware.png
 
 Congratulations! You're now running ArduPilot on the OpenPilot Revolution Mini. You can use this same process to upgrade to newer versions of ArduPilot. Either use MP's firmware update functionality or compile your own desired vehicle firmware from source and upload the .apj file to the board.
 
 .. image:: ../../../images/openpilot-revo-mini-flashed.jpg
-    :target: ../images/openpilot-revo-mini-load-flashed.jpg
+    :target: ../_images/openpilot-revo-mini-flashed.jpg
     :width: 450px
     
 Compile ArduPilot
 -----------------
 To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
 `Building the Code <http://ardupilot.org/dev/docs/building-the-code.html>`__
-
-Where to Buy
-============
-
-- Available from many retailers including `HobbyKing <https://hobbyking.com/en_us/openpilot-cc3d-revolution-revo-32bit-flight-controller-w-integrated-433mhz-oplink.html>`__.
