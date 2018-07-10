@@ -25,7 +25,8 @@ within the sections) see the topics below:
 
     Install Ground Station Software <common-install-mission-planner>
     Assembly <assembly-instructions>
-    Loading Firmware <common-loading-firmware-onto-pixhawk>
+    Loading Firmware to Pixhawk boards <common-loading-firmware-onto-pixhawk>
+    Loading Firmware to ChibiOS-only boards <common-loading-firmware-onto-chibios-only-boards>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuring Hardware <configuring-hardware>
     
