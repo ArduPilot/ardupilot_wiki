@@ -55,3 +55,14 @@ Where to Buy
 ============
 
 - see this list of `Mateksys Distributors <http://www.mateksys.com/?page_id=1212>`__
+
+Connecting a GPS/Compass module
+=============================
+
+This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected as shown below in order for autonomous modes to function.
+
+.. image:: ../../../images/matekf405-wing-with-gps.png
+    :target: ../_images/matekf405-wing-with-gps.png
+    :width: 450px
+
+A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compasss modules.
