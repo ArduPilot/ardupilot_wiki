@@ -23,7 +23,7 @@ Download and Install Zadig (Windows only)
 -----------------------------------------
 
 - Download and run `Zadig <https://zadig.akeo.ie/>`__ (search for "Zadig 2.3" just below "Download") to allow accessing the board using USB.
-- Choose "Select all devices" option from options menu
+- Choose "List all devices" option from options menu
 - Select "STM32 BOOTLOADER" from the drop-down and press the "Replace Driver" button
 
   .. image:: ../../../images/loading-firmware-zadig.png
