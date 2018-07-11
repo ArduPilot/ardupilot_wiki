@@ -4,12 +4,7 @@
 Autopilot Hardware Options
 ==========================
 
-This section provides information about the main ArduPilot Flight
-Controller Hardware options (also see :ref:`Supported AutoPilot Controller Boards <dev:supported-autopilot-controller-boards>`
-(dev wiki) for a high level overview):
-
-Current boards
-==============
+This section provides information about the main ArduPilot Flight Controller Hardware options:
 
 Open hardware 
 -------------
@@ -47,7 +42,7 @@ Closed hardware
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
     
 Discontinued boards
-===================
+-------------------
 
 The following boards are end-of-life. The documentation is archived, but
 available if you're still working on those platforms:
