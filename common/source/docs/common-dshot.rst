@@ -160,3 +160,9 @@ parameters you should reboot your flight board.
 Now connect a USB cable to your flight board and use BLHeliSuite on
 Windows to connect. You will need to use BLHeliSuite32 for BLHeli_32
 ESCs, and BLHeliSuite16 for BLHeli/BLHeli_S ESCs.
+
+You need to select "BLHeli32 Bootloader (Betaflight/Cleanflight)" from
+the interfaces menu
+
+.. image:: ../../../images/blhelisuite32.jpg
+    :target: ../_images/blhelisuite32.jpg
