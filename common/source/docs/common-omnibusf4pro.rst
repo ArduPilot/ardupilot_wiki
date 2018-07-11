@@ -43,6 +43,22 @@ Where to Buy
 
 - available from multiple retailers including `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
 
+Versions
+==============
+There have been many versions of this board and many clones. Best results, with no feature/performance impacts will be obtained with V3 boards and V5 boards which have solder jumpers for selecting "SBUS" or "PPM" RX input. This should be soldered to the "PPM" selection for ALL reciever types. Ardupilot will automatically detect and accept any supported format (SBUS/PPM/DSM/etc.) on the RX input with this jumper selection. In addition, be sure the board has a barometer, SD Card slot, and Current sense circuit.
+
+Board Connections
+==================
+GPS is attached to UART6
+
+Telem is available at UART 1
+
+The shared UART3/I2C pins are enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.
+
+If you want to power the servos from the ESC BEC via the board's center rail for the servo outputs, then you should remove the diode as per here: https://www.rcgroups.com/forums/showthread.php?2874687, otherwise, independently power the servos directly from the ESC or independent BEC with no connection to the board's servo output center rail.
+
+Video power provided on the video input and output center rail, is provide through an on-board noise filter. Either ~4.5V (labeled 5V) or VBAT-0.5V (VBAT) can be selected by solder pads on the back of the board.
+
 Flashing Firmware
 ========================
 Usually these boards are sold pre-flashed with betaflight / INav firwares and require both firmware and bootloader to be updated if you want to use ArduPilot, as an ArduPilot-compatible bootloader is required for subsequent ArduPilot firmware-upgrade handling.
