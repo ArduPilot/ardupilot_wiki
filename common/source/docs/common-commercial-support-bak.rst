@@ -68,9 +68,8 @@ the Pixhawk2 which is used in the 3DR Solo.
 -  Accessory customization
 -  Mechanical consulting
 -  Systems engineering
--  Intricate knowledge of the Pixhawk system (designer of  Pixhawk 2,
-   and Pixhawk Fire)
--  Co-designed the PX4 CAN ESC
+-  Intricate knowledge of the Pixhawk system (designer of  Pixhawk 2, and Pixhawk Fire)
+-  Co-designed the Pixhawk CAN ESC
 
 --------------
 
@@ -141,11 +140,10 @@ Website: `jdrones.com <http://jdrones.com>`__
 .. image:: ../../../images/jDrones-APM_Wiki_CollageP2_sml.jpg
     :target: ../_images/jDrones-APM_Wiki_CollageP2_sml.jpg
 
-jDrones is a leading integrator of ArduPilot into small UAVs. Since
-creating the original ArduCopter frame design in 2010 jDrones has grown
+jDrones is a leading integrator of ArduPilot into small UAVs. 
+Since creating the original ArduCopter frame design in 2010 jDrones has grown
 to provide a wide range of components and consulting services, and is
-always looking to provide innovative solutions to the needs of both
-hobbyist and professional users
+always looking to provide innovative solutions to the needs of both hobbyist and professional users
 
 .. image:: ../../../images/jDrones-APM_Wiki_CollageP3_sml.jpg
     :target: ../_images/jDrones-APM_Wiki_CollageP3_sml.jpg
@@ -347,14 +345,13 @@ Email: davidbuzz@gmail.com
 -  Consultation Services
 -  Customizations of Ardupilot/APM code
 -  Microcontroller Development - including Arduino/APM(atmel),
-   Pixhawk/PX4(ARM Cortex), RFD900/SiK (8051), esp8266 wifi (Tensilica
+   Pixhawk (ARM Cortex), RFD900/SiK (8051), esp8266 wifi (Tensilica
    RISC) etc.
 
    Web Software Development - HTML, PHP, SQL , Javascript, etc
 -  Server/Network Systems Administration/Integration - including
    Private, Cloud, AWS, Google etc
--  Ground Control Station development - Mission Planner tweaks, MavProxy
-   modules, dronekit
+-  Ground Control Station development - Mission Planner tweaks, MavProxy modules, DroneKit
 -  Vehicle Design/Integration - Plane and Copter
 -  Vehicle Setup - Plane and Copter
 -  Mechanical consulting
@@ -381,7 +378,7 @@ Website: `http://autosystems.io <http://autosystems.io>`__
 
 ASC is founded by two core developers from the ArduPilot ecosystem and has close connections with ArduPilot developers around the world.
 
-ASC offer more than just consulting on Ardupilot code, but complete end-to-end solutions. R&D, vehicle design, rapid prototyping micro-manufacturing, program management, autopilot code, payload integration, user interfaces.  ASC also offer assistance with operations, flight training, etc.  As little or as much as required to get customer’s ideas off the ground, or along it!  Companies can focus on integrating mobile robotics into their business and developing new revenue streams, instead of having to undertake the long and difficult process of developing UAS expertise and technology in-house.
+ASC offer more than just consulting on ArduPilot code, but complete end-to-end solutions. R&D, vehicle design, rapid prototyping micro-manufacturing, program management, autopilot code, payload integration, user interfaces.  ASC also offer assistance with operations, flight training, etc.  As little or as much as required to get customer’s ideas off the ground, or along it!  Companies can focus on integrating mobile robotics into their business and developing new revenue streams, instead of having to undertake the long and difficult process of developing UAS expertise and technology in-house.
 
 **Capabilities:**
 

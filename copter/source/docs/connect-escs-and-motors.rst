@@ -4,11 +4,10 @@
 Connect ESCs and Motors
 =======================
 
-This article explains how to connect the ESCs, Motors and Propellers for
-Pixhawk, PX4, APM 2.x. and Erle-Brain2.
+This article explains how to connect the ESCs, Motors and Propellers for Pixhawk, APM 2.x. and Erle-Brain2.
 
-Connect motor PWM signal outputs (Pixhawk/PX4)
-==============================================
+Connect motor PWM signal outputs (Pixhawk)
+==========================================
 
 Connect the power (+), ground (-), and signal (s) wires for each ESC to
 the controller main output pins by motor number. Find your frame type
@@ -58,8 +57,7 @@ module, it is optional to connect the power and ground wires from the
 PDB to the flight controller board. If you would like to use these
 cables in addition to or instead of the power module or as a common
 point for low current servos, connect the ground (-) wire to a main
-output ground (-) pin and the power (+) wire to a main output power (+)
-pin.
+output ground (-) pin and the power (+) wire to a main output power (+) pin.
 
 .. note::
 

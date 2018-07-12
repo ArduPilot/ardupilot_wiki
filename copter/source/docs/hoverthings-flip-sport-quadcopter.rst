@@ -81,9 +81,9 @@ Assembling the frame
 ====================
 
 #. There are two different construction methods depending on whether you
-   are using a Pixhawk or a PX4.
+   are using a Pixhawk or a PX4FMU/PX4IO.
 #. For the Pixhawk you will use the second untabbed center plate on top
-   as shown above, for a PX4 you will not.
+   as shown above, for a PX4FMU/PX4IO you will not.
 #. Construction procedure is as follows (Use blue Locktite on all
    machine screws.)
 #. Assemble the 2 tabbed center sections with four 7/8" standoffs on the
@@ -153,20 +153,20 @@ Installing the Pixhawk flight controller
 #. Mount the GPS module to the top center of the top frame plate using
    double sided tape.
 
-Installing the Px4 FMU / PX4IO flight controller
-================================================
+Installing the PX4FMU/PX4IO flight controller
+=============================================
 
 #. If you are using a PX4 we can't use the top frame plate but can
    construct a little hard top if desired.
 #. Cut a 2" by 2" rectangle from scrap plastic or fiberglass to support
-   the PX4.
+   the PX4FMU/PX4IO.
 #. Drill 4 holes in the rectangle that line up with the mounting hole in
    the PX4 board (roughly centered)
 #. using 4 of the supplied black screws, mount 4 standoffs to the
    rectangle.
 #. Insert the PX4FMU board (connector side up) over the 4 standoff studs
    and (carefully) screw 4 more standoffs over them.
-#. Carefully fasten 4 nuts over the exposed studs securing the PX4
+#. Carefully fasten 4 nuts over the exposed studs securing the PX4FMU/PX4IO
    modules to the rectangle you made.
 #. Place the PX4IO board over the PX4FMU board so that the connector is
    aligned and push down over the studs.
@@ -176,11 +176,11 @@ Installing the Px4 FMU / PX4IO flight controller
    servo connector facing to the rear (between the black frame arms).
 #. Drill a hole through the top 2 frame plates near a frame arm near the
    edge on one side to accommodate the "safety" button.
-#. Also mount the buzzer on the top frame member behind the PX4 stack
+#. Also mount the buzzer on the top frame member behind the PX4FMU/PX4IO stack
    such that it does not touch the "rectangle".
 #. Insert the power connector into the PX4IO board and solder the power
    leads and the ESC power leads to a battery connector.
-#. Connect the buzzer and "Safety" button leads to the PX4 boards.
+#. Connect the buzzer and "Safety" button leads to the PX4FMU/PX4IO boards.
 #. Install the ESC's signal leads into the PX4IO board servo connectors
    (signal wire on top).
 #. 
@@ -194,7 +194,7 @@ Installing the Px4 FMU / PX4IO flight controller
    #. Ensure that your receiver does not block the USB connector on the
       side of the PX4FMU board (put it on the other side).
    #. Run a single servo lead from the PPM-Sum output of the receiver to
-      the far left side of the Px4IO servo connector.
+      the far left side of the PX4IO servo connector.
    #. Or if it is a Spektrum Satellite receiver run the Spektrum
       receiver lead to the Spektrum socket on top of the Pixhawk.
 
@@ -246,9 +246,7 @@ Setup and additions
 ===================
 
 #. Your Flip can now be configured as described elsewhere in this wiki
-   for Pixhawk (recommended) or PX4.
-#. For a PX4 set both board and compass orientation parameters to "Roll
-   180" because it is installed upside down for connector access.
+   for Pixhawk.
 #. There is space for a 3DR telemetry radio and / or an OSD and FPV
    transmitter between the 2 side tabs.
 
@@ -262,6 +260,5 @@ Setup and additions
 #. I have had several crashes and only managed to break 2 props while
    trying (unsuccessfully) to cut down a 80' bull pine tree with them.
 #. This little copter is very high performance, fully acrobatic,
-   surprisingly efficient and nearly indestructible and it is a blast to
-   fly.
+   surprisingly efficient and nearly indestructible and it is a blast to fly.
 

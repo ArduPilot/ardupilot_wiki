@@ -1,14 +1,14 @@
 .. _px4fmu-plus-px4io-wiring:
 
-==============================
-Archived:PX4 Wiring QuickStart
-==============================
+=================================
+Archived:PX4FMU Wiring QuickStart
+=================================
 
 .. warning::
 
     **ARCHIVED**
     
-    The PX4 is end of life and is not generally available for purchase. 
+    The PX4FMU is end of life and is not generally available for purchase. 
     This article is made available for existing users.
 
 This article provides an overview of the :ref:`PX4FMU <common-px4fmu-overview>` and
@@ -23,13 +23,13 @@ PX4FMU plus PX4IO Wiring Diagrams
 .. figure:: ../../../images/PX4FMU_PX4IO_Wire_3DRradio2.jpg
    :target: ../_images/PX4FMU_PX4IO_Wire_3DRradio2.jpg
 
-   PX4 Wiring: PX4FMU plus PX4IO with 3DR 8 channel encoder and 3DRtelemetry radio
+   Wiring: PX4FMU plus PX4IO with 3DR 8 channel encoder and 3DR Telemetry radio
 
 Assembly
 ========
 
 #. **Solder the right angle 9x3 pin connector that was included with
-   your PX4 kit to the side of the PX4IO board that has "PX4 autopilot"
+   your PX4FMU kit to the side of the PX4IO board that has "PX4 autopilot"
    printed on it.**
 
    #. When you insert the 9 x 3 connector into the PX4IO board put it in
@@ -115,7 +115,7 @@ Wire the PX4FMU and PX4IO boards to Your Copter
    x 3 angle connector that is nearest the edge of the PX4IO board with
    the signal wire furthest from the board and the ground closest to the
    board.**
-#. **Wire the PX4 boards servo out signals to your ESC control inputs.**
+#. **Wire the PX4FMU board's servo out signals to your ESC control inputs.**
 
    #. Run the Signal wires ONLY from the ESCs to the 3 x 9 Servo
       Connector on the PX4IO board.
@@ -218,7 +218,7 @@ female servo jumpers.
 Compatible remote control (RC) receivers
 ========================================
 
-PX4 is compatible with PPM remote control (RC) receivers, Futaba S.Bus
+PX4FMU is compatible with PPM remote control (RC) receivers, Futaba S.Bus
 receivers, and Spektrum DSM,DSM2, and DSM-X Satellite receivers. For
 traditional single-wire-per-channel (PWM) receivers a PPM encoder can be
 used to convert the receiver outputs to PPM-SUM.  Information about

@@ -66,7 +66,7 @@ HAL specific threads
 
 On platforms that support real threads the AP_HAL for that platform
 will create a number of threads to support basic operations. For
-example, on PX4 the following HAL specific threads are created:
+example, on Pixhawk the following HAL specific threads are created:
 
 -  The UART thread, for reading and writing UARTs (and USB)
 -  The timer thread, which supports the 1kHz timer functionality
@@ -153,8 +153,8 @@ libraries/AP_InertalSensor/AP_InertialSensor_MPU6000.cpp, and another
 MPU6000 driver in PX4Firmware/src/drivers/mpu6000.
 
 The reason for this duplication is that the PX4 project already provides
-a set of well tested drivers for hardware that comes with PX4 boards,
-and we enjoy a good collaborative relationship with the PX4 project on
+a set of well tested drivers for hardware that comes with Pixhawk boards,
+and we enjoy a good collaborative relationship with the PX4 team on
 developing and enhancing these drivers. So when we build ArduPilot for
 PX4 we take advantage of the PX4 drivers by writing small "shim" drivers
 which present the PX4 drivers with the standard ArduPilot library
@@ -165,8 +165,8 @@ this board and automatically makes all of them available as part of the
 ArduPilot AP_InertialSensor library.
 
 So if we have an MPU6000 on the board we use the
-AP_InertialSensor_MPU6000.cpp driver on non-PX4 platforms, and the
-AP_InertialSensor_PX4.cpp driver on PX4 based platforms.
+AP_InertialSensor_MPU6000.cpp driver on non-Pixhawk/NuttX platforms, and the
+AP_InertialSensor_PX4.cpp driver on NuttX based platforms.
 
 The same type of split can also happen for other AP_HAL ports. For
 example, we could use Linux kernel drivers for some sensors on Linux

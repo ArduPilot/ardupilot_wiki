@@ -1,12 +1,12 @@
 .. _common-leds-pixhawk:
 
-==================
-LEDs (Pixhawk/PX4)
-==================
+==============
+LEDs (Pixhawk)
+==============
 
 This topic explains how to interpret the colours and flash sequence of
 the main LED. Some of the LED patterns have associated sound/tone
-patterns as listed in :ref:`Sounds (Pixhawk/PX4) <common-sounds-pixhawkpx4>`.
+patterns as listed in :ref:`Sounds (Pixhawk) <common-sounds-pixhawkpx4>`.
 
 Video Overview
 ==============

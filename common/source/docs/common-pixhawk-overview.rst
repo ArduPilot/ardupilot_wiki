@@ -599,13 +599,12 @@ modules.
 Pixhawk system features
 =======================
 
--  The Pixhawk flight controller is a further evolution of the PX4
-   flight controller system. Pixhawk consists of a PX4-FMU controller
+-  The Pixhawk (FMUv2) flight controller consists of a PX4-FMU controller
    and a PX4-IO integrated on a single board with additional IO, Memory
    and other features.
 -  It is highly optimized to provide control and automation for APM
    flight navigation software with high performance and
-   capacity. Pixhawk allows current APM and PX4 operators to seamlessly
+   capacity. Pixhawk allows users of older boards to seamlessly
    transition to this system and lowers the barriers to entry for new
    users.
 -  The NuttX real-time operating system features high performance,
@@ -680,15 +679,13 @@ Pixhawk system features
    -  Weight: 38g (1.31oz), Width: 50mm (1.96"), Thickness: 15.5mm
       (.613"), Length: 81.5mm (3.21")
 
-Comparison of PX4-FMU-IO and Pixhawk
-====================================
+Comparison of PX4FMU/PX4IO and Pixhawk
+======================================
 
-The new PX4 \ `Pixhawk module <http://pixhawk.org/modules/pixhawk>`__ is an evolution
-of the
-existing \ `FMU <http://pixhawk.org/modules/px4fmu>`__ and `IO <http://pixhawk.org/modules/px4io>`__ modules
+The new Pixhawk is an evolution of the PX4FMU  and PX4IO modules
 and is completely compatible.
 
--  The PX4 FMU and IO stack is very small (the size of an 8 ch RC
+-  The PX4FMU and PX4IO stack is very small (the size of an 8 ch RC
    receiver) and very densely packed, Pixhawk has more space, more
    serial ports and more PWM outputs.
 -  There are two groups of servo connectors, one main group of 8 outputs
@@ -701,9 +698,9 @@ and is completely compatible.
 -  Inside Pixhawk a FMUv2 and an IOv2 do their duties on a single board
    (and developers will find that the software will refer to FMUv2 and
    IOv2)
--  The PX4 / Pixhawk system has more than 10 times the CPU performance
-   and memory of the APM and a lot more as well.
--  14 PWM outputs (Pixhawk) vs. 12 PWM outputs (PX4)
+-  The Pixhawk system has more than 10 times the CPU performance
+   and memory of the APM2.x and a lot more as well.
+-  14 PWM outputs (Pixhawk) vs. 12 PWM outputs (PX4FMU/PX4IO)
 -  All Pixhawk PWM outputs on servo connectors (PX4: 8 on servo, 4 on 15
    pin DF13 connector)
 -  5 serial ports vs. 4 (with some double functionality, so only 3 in
@@ -890,5 +887,5 @@ See also
     Pixhawk Wiring Quick Start <common-pixhawk-wiring-and-quick-start>
     Powering the Pixhawk <common-powering-the-pixhawk>
     Mounting the Flight Controller <common-mounting-the-flight-controller>
-    Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>
+    Compatible RC Transmitter and Receiver Systems (Pixhawk) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>
 [/site]

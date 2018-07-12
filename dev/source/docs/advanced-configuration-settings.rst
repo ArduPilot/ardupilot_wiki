@@ -972,4 +972,4 @@ copy was taken.
     EKF2 Estimation System <ekf2-estimation-system>
     How to sign a Pixhawk with your Certificate of Authenticity <how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity>
     Forcing Pixhawk px4io flash <pixhawk-force-px4io-flash>
-    Troubleshooting Pixhawk/PX4 Boot <troubleshooting-pixhawkpx4-boot>
+    Troubleshooting Pixhawk Boot <troubleshooting-pixhawkpx4-boot>

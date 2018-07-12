@@ -55,7 +55,7 @@ Optionally you may also:
 Ground Testing
 ==============
 
-- Plug in the vehicle's lipo battery so that both the TX1 and flight controller are powered
+- Plug in the vehicle's LiPo battery so that both the TX1 and flight controller are powered
 - Connect the flight controller to a ground station using a USB cable
 - If you are using Mission Planner as your ground station, once messages are successfully passing from the ZED/TX1 to the flight controller:
   - a proximity viewer should appear showing the distance to objects ahead of the vehicle (if :ref:`PRX_TYPE <PRX_TYPE>` was enabled above) 

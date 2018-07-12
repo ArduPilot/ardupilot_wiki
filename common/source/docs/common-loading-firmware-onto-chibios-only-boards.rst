@@ -10,8 +10,8 @@ Examples of these boards include the :ref:`OpenPilot RevoMini <common-openpilot-
 Installing ArduPilot to these flight controller involves:
 
 - Installing the required driver and flashing tool
-- Downloading the appropriate ardupilot firmware
-- Loading ardupilot to the board
+- Downloading the appropriate ArduPilot firmware
+- Loading ArduPilot to the board
 
 .. note::
 
