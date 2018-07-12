@@ -237,12 +237,9 @@ control to drive servos and speed controllers. There is one PWM signal
 for each channel. The width varies from 1000 to 2000 microseconds,
 depending on the RC manufacturer.
 
-**Pixhawk (PX4FMU and PX4IO)**: Flight Controller system providing
-capabilities for stabilized flight, position maintenance and automated
-mission (waypoint) path following.
+**PX4FMU/PX4IO: First version of Pixhawk-series flight controllers (FMUv1). Discontinued.
 
-**RTL**: Return to Launch. Fly back to the "home" location where the
-aircraft took off.
+**RTL**: Return to Launch. Fly back to the "home" location where the aircraft took off.
 
 **SiRF III**: The standard used by most modern GPS modules. Includes
 !SiRF III binary mode, which is an alternative to the ASCII-based NMEA
