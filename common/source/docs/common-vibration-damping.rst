@@ -106,12 +106,12 @@ Gel pads
    .. figure:: ../../../images/Flamewheel330PX4onZeal2.jpg
       :target: ../_images/Flamewheel330PX4onZeal2.jpg
 
-      FlameWheel F330 With PX4 Mounted on Intermediate platform
+      FlameWheel F330 With PX4FMU/PX4IO Mounted on Intermediate platform
 
    .. figure:: ../../../images/Flamewheel330PX4Hardtop.jpg
       :target: ../_images/Flamewheel330PX4Hardtop.jpg
 
-      FlameWheel F330 With PX4 on Zeal Pads with Protective Hard Top
+      FlameWheel F330 With PX4FMU/PX4IO on Zeal Pads with Protective Hard Top
 
    .. figure:: ../../../images/PX4F330accels_5_9_13.jpg
       :target: ../_images/PX4F330accels_5_9_13.jpg
@@ -491,7 +491,7 @@ Additional Vibration Reduction Considerations
    less than 2 ounces and this is a very small mass.
 #. Virtually all off the shelf solutions (either pad or stud type) are
    designed for an isolated mass that would weigh at least 5 to 10 times
-   what an APM or PX4 / IO board weighs for optimal effectiveness. This
+   what an APM2.x or PX4FMU/PX4IO board weighs for optimal effectiveness. This
    includes all pre-made Sorbothane, Alpha gel, EAR, memory foam or
    other silicone or urethane gel or foam mounts as well as Lord Micro
    mounts.

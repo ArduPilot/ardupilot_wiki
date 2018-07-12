@@ -122,7 +122,7 @@ based platforms.
     $ cd ArduPlane
     $ make upload
 
-For PX4 platforms, the \`px4-upload\` target will use the PX4 bootloader
+For Pixhawk platforms, the \`px4-upload\` target will use the PX4 bootloader
 to perform an upload.
 
 Troubleshooting

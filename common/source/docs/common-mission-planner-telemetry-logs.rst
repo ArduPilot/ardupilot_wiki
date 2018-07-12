@@ -127,7 +127,7 @@ tlog.  This file is tab separated and contains a full list of parameters
 during the flight.  This can be opened in excel or a text editor.
 
 Extract WPs will create one or more .txt files containing any missions
-uploaded to the APM/PX4.  These files can be opened in the Mission
+uploaded to the flight controller.  These files can be opened in the Mission
 Planner by switching to the Flight Plan screen, right-mouse-button
 clicking on the map and selecting "File Load/Save", "Load WP File".
 

@@ -36,4 +36,6 @@ This is normally not required but in some rare cases is required after a firmwar
 
 .. note::
 
-   A Pixhawk has two CPUs, the main CPU (aka FMU) is where ardupilot runs.  There is a separate I/O CPU which is responsible for some I/O including pwm outputs to the MAIN OUT channels.  Pixracers only have the main CPU.
+   A Pixhawk has two CPUs, the main CPU (aka FMU) is where ArduPilot runs.  
+   There is a separate I/O CPU which is responsible for some I/O including PWM outputs to the MAIN OUT channels.  
+   Pixracers only have the main CPU.

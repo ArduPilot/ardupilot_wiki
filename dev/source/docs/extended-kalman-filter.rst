@@ -14,7 +14,7 @@ available tuning parameters.
 Overview
 ========
 
-The availability of faster processors such as Pixhawk and the PX4 have
+The availability of faster processors (like the one on Pixhawk) have
 enabled more advanced mathematical algorithms to be implemented to
 estimate the orientation, velocity and position of the flight vehicle.
 An Extended Kalman Filter (EKF) algorithm has been developed that uses
@@ -40,7 +40,7 @@ significant errors so that the vehicle becomes less susceptible to
 faults that affect a single sensor.
 
 Another feature of the EKF algorithm is that it is able to estimate
-offsets in the vehicles compas readings and also estimate the earth's
+offsets in the vehicles compass readings and also estimate the earth's
 magnetic field for both plane, copter and rover applications. This makes
 it less sensitive to compass calibration errors than current DCM and
 INAV algorithms.

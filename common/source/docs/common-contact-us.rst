@@ -4,7 +4,7 @@
 Communication Channels
 ======================
 
-It is possible to directly communicate with members of the ardupilot community, including developers, through the following channels:
+It is possible to directly communicate with members of the ArduPilot community, including developers, through the following channels:
 
 Support
 =======
@@ -22,8 +22,8 @@ Development
 ===========
 
 - `Mon/Tue Weekly Meetings on Mumble <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html>`__
-- `ArduPilot Gitter (live chat) <https://gitter.im/ArduPilot/ardupilot>`__ the starting place to discuss ardupilot development (not for support questions)
-- `ArduPilot Gitter General Chat <https://gitter.im/ArduPilot/GeneralChat>`__ for discussions not always directly related to ardupilot development
+- `ArduPilot Gitter (live chat) <https://gitter.im/ArduPilot/ardupilot>`__ the starting place to discuss ArduPilot development (not for support questions)
+- `ArduPilot Gitter General Chat <https://gitter.im/ArduPilot/GeneralChat>`__ for discussions not always directly related to ArduPilot development
 - `ArduPilot Gitter Mission Planner Chat <https://gitter.im/ArduPilot/MissionPlanner>`__ for discussion related to Mission Planner development
 - `ArduPilot Gitter APSync and Companion Computer chat <https://gitter.im/ArduPilot/companion>`__ for chat on companion computer development
 - `ArduPilot Gitter APM Planner 2.0 chat <https://gitter.im/ArduPilot/apm_planner>`__ for discussion related to APM Planner 2.0

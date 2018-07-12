@@ -62,12 +62,12 @@ DATE POSTED	January 29, 2014
 User manual for the third version of the 3DR PPM Encoder module
 
 
-USB Driver for PX4 Boards
--------------------------
+USB Driver for Pixhawk Boards
+-----------------------------
 
 `px4_win_drivers.zip <http://firmware.us.ardupilot.org/Tools/PX4_Windows_Driver/px4_win_drivers.zip>`__
 
-Drivers for PX4 Boards
+Drivers for Pixhawk Boards
 Date Posted: May 15, 2013
 
 

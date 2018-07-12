@@ -6,7 +6,7 @@ How to use the "auth" command to sign a Pixhawk Board with your Certificate of A
 
 The essence of this process is an RSA private/public key pair and a
 signing process that uses these keys to put some unique information onto
-every PX4 board.
+every Pixhawk board.
 
 Public/Private Key/s, SD Card, and Logging
 ==========================================
@@ -78,7 +78,7 @@ Preparing SD card (one time only)
    public key.  See below.
 -  Make the public key file on the SD card:
 
-   -  With the SD card inserted, and the PX4 booted, use the *nsh
+   -  With the SD card inserted, and the Pixhawk booted, use the *nsh
       shell*, and type:
 
       ::

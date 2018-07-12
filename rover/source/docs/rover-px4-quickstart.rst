@@ -1,8 +1,8 @@
 .. _rover-px4-quickstart:
 
 =========================================
-Archived:Rover PX4 Wiring and Quick Start
-=========================================
+Archived:Rover PX4FMU/PX4IO Wiring and Quick Start
+==================================================
 
 .. warning::
 
@@ -12,7 +12,7 @@ Archived:Rover PX4 Wiring and Quick Start
     This article is made available for existing users.
 
 This article provides high level information about how to wire up the
-:ref:`PX4 autopilot board <common-px4fmu-overview>` for Rover and connect
+:ref:`PX4FMU/PX4IO autopilot board <common-px4fmu-overview>` for Rover and connect
 its most important peripherals.
 
 Mounting the PX4FMU / PX4IO board stack
@@ -29,7 +29,7 @@ See also :ref:`Mounting the Flight Controller <common-mounting-the-flight-contro
 RC Setup
 ========
 
-PX4 uses a single PPM sum RC input. Output depends on whether a steering
+Pixhawk uses a single PPM sum RC input. Output depends on whether a steering
 servo or "skid steer" (left or right motors turn faster to turn in the
 opposite direction) is used on your rover
 
@@ -49,14 +49,14 @@ Reassigning your RC transmitter stick channels
 The default transmitter stick configuration should be suitable in almost
 all cases. If you do need to change them, then see :ref:`RCMAP Input Channel Mapping <common-rcmap>`.
 
-PX4 Normal One Motor Servo Steering Wiring Diagram
---------------------------------------------------
+Normal One Motor Servo Steering Wiring Diagram
+----------------------------------------------
 
 .. image:: ../images/PX4IOWiringRover2.jpg
     :target: ../_images/PX4IOWiringRover2.jpg
 
-PX4 Two Motor Skid Steering Wiring Diagram
-------------------------------------------
+Two Motor Skid Steering Wiring Diagram
+--------------------------------------
 
 .. image:: ../images/PX4IOWiringRoverSkid1.jpg
     :target: ../_images/PX4IOWiringRoverSkid1.jpg
@@ -64,10 +64,9 @@ PX4 Two Motor Skid Steering Wiring Diagram
 Check out the Basic Operating Modes of the Rover2 Firmware
 ==========================================================
 
-**The PX4 must have its automatic Safety disengaged before the Rover can
-be driven.**
+**The board must have its automatic Safety disengaged before the Rover can be driven.**
 
--  **PX4 Safety Button LED Indications:**
+-  **Safety Button LED Indications:**
 
    -  Fast Blinking indicates: Error Condition, Safety cannot be
       disengaged. Possibly not calibrated or sensor error.
@@ -88,8 +87,8 @@ Test MANUAL mode
 ----------------
 
 To test the Manual mode, put the Rover up on blocks, to prevent a
-runaway, turn on the R/C transmitter, power up the APM or PX4
-(depressing the safety button on the PX4 for 5 seconds to disengage the
+runaway, turn on the R/C transmitter, power up the flight controller
+(depressing the safety button on the PX4FMU for 5 seconds to disengage the
 safety lock (LED solid on)), and when a 3D lock has been obtained
 
 #. verify that when the elevator joystick is moved forward that the
@@ -98,7 +97,7 @@ safety lock (LED solid on)), and when a 3D lock has been obtained
 #. the steering wheels go to the left and vice versa.
 #. A R/C receiver radio tester that can display channel PWM values can
    also be used to determine the throttle and steering outputs of the
-   APM/PX4.
+   Pixhawk.
 #. If either the throttle or steering channel is reversed, then the R/C
    transmitter channel reversing function must be used to reverse the
    appropriate channel.

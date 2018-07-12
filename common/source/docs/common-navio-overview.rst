@@ -39,7 +39,7 @@ Specifications
 
 More details can be found from the `emlid.com website <http://www.emlid.com/>`__.
 
-Developer build information can be found on the :ref:`ardupilot dev wiki <dev:building-for-navio-on-rpi2>`.
+Developer build information can be found on the :ref:`ArduPilot dev wiki <dev:building-for-navio-on-rpi2>`.
 
 ..  youtube:: 63vjrphteRs
     :width: 100%

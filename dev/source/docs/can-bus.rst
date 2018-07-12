@@ -58,7 +58,7 @@ but instead should send all data to AP_UAVCAN class in their own preferable way.
 Initialization description
 ==========================
 
-The following initialization is based on px4 hardware and is provided as example
+The following initialization is based on Pixhawk hardware and is provided as example.
 
 .. image:: ../images/can_init.png
 

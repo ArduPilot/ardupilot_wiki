@@ -138,7 +138,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">David Buzz Bussenschutt, <a href="mailto:davidbuzz@gmail.com?Subject=ArduPilot%20commercial%20support" target="_top">davidbuzz@gmail.com</a></div>
             <div class="line"><br/></div>
             <div class="line">Consultation Services, Customizations of Ardupilot code</div>
-            <div class="line">Microcontroller Development including Pixhawk/PX4(ARM Cortex),</div>
+            <div class="line">Microcontroller Development including Pixhawk (ARM Cortex),</div>
             <div class="line">RFD900/SiK (8051), esp8266 wifi, Web Software Development</div>
             <div class="line">Ground Control Station development, Vehicle Design.</div>
             </div>

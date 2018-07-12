@@ -55,7 +55,7 @@ setting:
 -  Open *Mission Planner* and then click on **CONFIG/TUNING \| Full
    Parameters List**.
 -  Set :ref:`CAM_TRIGG_TYPE` to 0 for a servo (output PWM signal) or 1 for a 
-   :ref:`relay <common-relay>` (Note: although ardupilot supports
+   :ref:`relay <common-relay>` (Note: although ArduPilot supports
    multiple relay channels only the first relay can be used as a camera
    trigger). The image below shows the camera trigger set as a servo.
 

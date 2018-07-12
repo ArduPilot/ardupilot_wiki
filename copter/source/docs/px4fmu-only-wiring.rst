@@ -97,21 +97,21 @@ Wiring the PX4FMU Board to Your QuadCopter
    -  Connect the PPM-SUM RC Receivers Power lead to pin 1 of the Multi
       connector on the PX4 board.
 
--  **Wire the PX4 boards 4 servo out signals to the ESC control
+-  **Wire the PX4FMU board's 4 servo out signals to the ESC control
    inputs.**
 
    -  The wires can be put together with connectors as shown in the
       diagram or solder and heat shrink tubing can be used.
-   -  Wire PX4 PWM control 4 (Multi Connector pin 9) to The ESC signal
+   -  Wire PX4FMU PWM control 4 (Multi Connector pin 9) to The ESC signal
       in for Motor 4.
-   -  Wire PX4 PWM control 2 (Multi Connector pin 10) to The ESC signal
+   -  Wire PX4FMU PWM control 2 (Multi Connector pin 10) to The ESC signal
       in for Motor 2.
-   -  Wire PX4 PWM control 1 (Multi Connector pin 11) to The ESC signal
+   -  Wire PX4FMU PWM control 1 (Multi Connector pin 11) to The ESC signal
       in for Motor 1.
-   -  Wire PX4 PWM control 3 (Multi Connector pin 12) to The ESC signal
+   -  Wire PX4FMU PWM control 3 (Multi Connector pin 12) to The ESC signal
       in for Motor 3.
 
--  **Run a wire from the PX4's Battery Monitor connection (Multi
+-  **Run a wire from the PX4FMU's Battery Monitor connection (Multi
    Connector pin 5) to the positive battery power lead.**
 -  **Note! The cable that is supplied in the plastic envelope with the
    UBLOX GPS which has white 6 pin connectors on both ends is NOT the

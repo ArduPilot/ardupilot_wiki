@@ -124,7 +124,7 @@ the top level of the repository. You can set some defaults in
 
 2. In the sketch directory, type ``make`` to build for APM2.
 Alternatively, ``make apm1`` will build for the APM1 and \`make px4\`
-will build for the PX4. The binaries will generated in
+will build for the Pixhawk. The binaries will generated in
 \`/tmp/\ *sketchname*.build\`.
 
 3. Type \`make upload\` to upload. You may need to set the correct

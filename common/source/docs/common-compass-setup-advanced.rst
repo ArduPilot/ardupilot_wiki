@@ -39,9 +39,9 @@ table below:
 +-------------------------------------------+--------------+-----------------+
 | Configuration                             | Compass #1   | Compass #2      |
 +===========================================+==============+=================+
-| Pixhawk/PX4 + Compass                     | External     | Internal        |
+| Pixhawk + Compass                         | External     | Internal        |
 +-------------------------------------------+--------------+-----------------+
-| Pixhawk/PX4 (no external compass used)    | Internal     | Available       |
+| Pixhawk (no external compass used)        | Internal     | Available       |
 +-------------------------------------------+--------------+-----------------+
 | APM2.6                                    | External     | Not supported   |
 +-------------------------------------------+--------------+-----------------+
@@ -51,12 +51,10 @@ table below:
 +-------------------------------------------+--------------+-----------------+
 
 Most users will only need to select their autopilot/compass
-configuration and perform the :ref:`Live Calibration <common-compass-setup-advanced_live_calibration_of_offsets>` but details are also given on the less-used  :ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>` and
-Manual Declination.  
-Most of this configuration can be
-performed from the *Mission Planner*'s **Initial Setup \| Mandatory
-Hardware \| Compass** screen.  Other ground stations may have similar
-features.
+configuration and perform the :ref:`Live Calibration <common-compass-setup-advanced_live_calibration_of_offsets>` but details are also given on the less-used  :ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>` and Manual Declination.  
+Most of this configuration can be performed from the *Mission Planner*'s **Initial Setup \| Mandatory
+Hardware \| Compass** screen.  
+Other ground stations may have similar features.
 
 .. tip::
 
@@ -248,7 +246,7 @@ Please follow these instructions:
    down into the ground when the throttle is raised
 -  Secure the copter (perhaps with tape) so that it does not move
 -  Turn on your transmitter and keep throttle at zero
--  Connect your vehicle's Lipo battery
+-  Connect your vehicle's LiPo battery
 -  Connect your flight controller to your computer with the usb cable
 -  **If using AC3.2:**
 
@@ -321,7 +319,7 @@ Although we do not believe this is ever necessary, you can manually tune
 the declination in flight using the Channel 6 tuning knob on your
 transmitter by following these steps:
 
-#. Connect your APM/PX4 to the Mission Planner
+#. Connect your Pixhawk (or other board) to the Mission Planner
 #. Go to the **Software \| Copter Pids** screen
 #. Set the Ch6 Opt to "Declination", Min to "0.0" and Max to "3.0". 
    This will give a tunable range of -30 to +30 degrees.  Set Max to

@@ -21,7 +21,7 @@ autonomous vehicle. Here are just a few things you can do with Mission
 Planner:
 
 -  Load the :ref:`firmware <common-glossary>` (the software) into the
-   autopilot (APM, PX4...) that controls your vehicle.
+   autopilot board (i.e. Pixhawk series) that controls your vehicle.
 -  Setup, configure, and tune your vehicle for optimum performance.
 -  Plan, save and load autonomous missions into you autopilot with
    simple point-and-click way-point entry on Google or other maps.

@@ -117,14 +117,14 @@ Setting what data you want recorded
 ===================================
 
 The LOG_BITMASK parameter controls what message types are recorded in
-the dataflash.  Recent versions of the mission planner and ardupilot
+the dataflash.  Recent versions of the mission planner and ArduPilot
 allow individual messages to be enabled/disabled from the MP's
 Config/Tuning, Standard Params screen.
 
 .. image:: ../../../images/mp_dataflash_log_bitmask.png
     :target: ../_images/mp_dataflash_log_bitmask.png
 
-Earlier versions of MP/ardupilot allow selecting the message using a
+Earlier versions of MP/ArduPilot allow selecting the message using a
 drop-down as shown below. 
 
 .. image:: ../../../images/mp_log_bitmask.png
@@ -516,7 +516,7 @@ esc/motor/RC output
 Viewing KMZ FILES
 =================
 
-When you download the dataflash log files from the APM/PX4 it will
+When you download the dataflash log files from the flight controller it will
 automatically create a KMZ file (file with extension .kmz). This file
 can be opened with Google Earth (just double click the file) to view
 your flight in Google Earth. Please see the instructions on the

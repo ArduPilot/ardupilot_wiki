@@ -1,8 +1,8 @@
 .. _common-sounds-pixhawkpx4:
 
-====================
-Sounds (Pixhawk/PX4)
-====================
+================
+Sounds (Pixhawk)
+================
 
 The tone alarm plays tunes to indicate various states. Click on the
 descriptions below to download and listen to the associated tune.
@@ -21,4 +21,3 @@ descriptions below to download and listen to the associated tune.
 * `Barometer Glitch <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/BaroGlitch.wav>`__
 * `Parachute Release <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/parachute_release.wav>`__
 * `Lost Copter Alarm <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__
-

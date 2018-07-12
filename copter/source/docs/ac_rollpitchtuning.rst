@@ -45,7 +45,7 @@ transmitter's channel 6 tuning knob by following these instructions:
 #. Move the CH6 knob back to the middle
 #. Arm and fly your copter in Stabilize mode adjusting the ch6 knob
    until you get a copter that is responsive but not wobbly
-#. After the flight, disconnect your lipo battery and reconnect the APM
+#. After the flight, disconnect your LiPo battery and reconnect the APM
    to the mission planner
 #. With the CH6 knob in the position that gave the best performance,
    return to the Copter Pids screen and push the "Refresh Params" button

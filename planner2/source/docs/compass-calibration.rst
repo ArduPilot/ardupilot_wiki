@@ -21,7 +21,7 @@ Before preforming setup, ensure that:
 ---------------
 
 Under **Orientation**, **select your autopilot** configuration:
-Pixhawk/PX4, APM 2.5 and earlier, or APM 2.6 with 3DR GPS+Compass.
+Pixhawk, APM 2.5 and earlier, or APM 2.6 with 3DR GPS+Compass.
 Ensure that the option to **Enable the compass** and **allow Auto
 Declination** are selected as shown below.
 

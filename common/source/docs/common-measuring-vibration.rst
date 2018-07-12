@@ -87,7 +87,7 @@ Earlier firmware versions
    
 -  Fly your copter in Stabilize mode and try to maintain a level hover
    (it doesn't need to be perfectly stable or level)
--  Disconnect the Lipo, reconnect your APM/PX4 to the mission planner
+-  Disconnect the Lipo, reconnect your Pixhawk to the mission planner
 -  :ref:`Download the dataflash logs and <common-downloading-and-analyzing-data-logs-in-mission-planner_downloading_logs_via_mavlink>`
    after the download has completed, use the Mission Planner's "Review a
    Log" buttong to open the latest file in the log directory (it's last

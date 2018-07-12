@@ -116,9 +116,10 @@ When base/rover is already connected to U-center, click View, go to Message View
 	
 As shown in the figure, the current firmware version is FWVER = HPG 1.30 REF, indicating that the current firmware version is 1.30 for base module. 
 
-Basic opperating manual
-=======================
-This part of the tutorial uses Mission Planner ground control software and Arducopter-3.5 flight control firmware for operating instructions. If you are using PX4 firmware and QGroundControl ground station software, please refer to `this link <https://docs.px4.io/en/advanced_features/rtk-gps.html>`__.
+Basic operating manual
+======================
+This part of the tutorial uses Mission Planner ground control software and Arducopter-3.5 flight control firmware for operating instructions. 
+If you are using PX4 firmware and QGroundControl ground station software, please refer to `this link <https://docs.px4.io/en/advanced_features/rtk-gps.html>`__.
 
 Preperation before operation.
 -----------------------------

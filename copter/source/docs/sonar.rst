@@ -67,21 +67,17 @@ A0 pins as shown in the diagram below:
 .. image:: ../images/APM2_Sonar.jpg
     :target: ../_images/APM2_Sonar.jpg
 
-Connecting the Sonar Sensor on PX4
-==================================
+Connecting the Sonar Sensor on PX4FMU
+=====================================
 
 You will need to assign the Sonar (signal line) to an appropriate PX4
 pin in Mission Planner - Configuration - Advanced Params - Adv Parameter
-List using the SONAR_PIN parameter.  The following PX4 "Pins" are
-available for SONAR use.
+List using the SONAR_PIN parameter.  The following PX4 "Pins" are available for SONAR use.
 
 SONAR_PIN = 11 - (recommended)
 
-The "airspeed" pin. Located on a 3 pin DF13 connector on the PX4IO
-
-board, but directly visible to the ADC on the PX4FMU. This pin can
-
-take voltages up to 6.6V (it has an internal voltage divider).
+The "airspeed" pin. Located on a 3 pin DF13 connector on the PX4IO board, but directly visible to the ADC on the PX4FMU. 
+This pin can take voltages up to 6.6V (it has an internal voltage divider).
 
 SONAR_PIN = 12
 

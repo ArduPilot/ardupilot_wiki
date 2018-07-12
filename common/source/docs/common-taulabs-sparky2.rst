@@ -58,9 +58,9 @@ Videos
 ..  youtube:: 3esk1lnw3SI
     :width: 100%
 
-*first flight of ardupilot on Sparky2*
+* first flight of ArduPilot on Sparky2*
 
 ..  youtube:: WGLc7jNqAyE
     :width: 100%
 
-*2nd flight using PosHold, RTL*
+* 2nd flight using PosHold, RTL*

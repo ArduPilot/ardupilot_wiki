@@ -38,8 +38,9 @@ waf can list the examples it can build:
 
 Once you have uploaded the example you can look at the output by
 attaching to the console. What the console is depends on the type of
-board. On PX4 boards (ie. PX4v1 and Pixhawk) it is the USB connector. So
-just connect to the USB device with your favourite serial program (the
+board. 
+On Pixhawk boards it is the USB connector. 
+So just connect to the USB device with your favourite serial program (the
 baudrate doesn't matter).
 
 For example, if you have mavproxy installed, you could do this to
@@ -110,12 +111,12 @@ in the loop() function.
 Note that this setup()/loop() arrangement is only the tip of the iceberg
 for more complex boards. It may make it seem that ArduPilot is single
 threaded, but in fact there is a lot more going on underneath, and on
-boards that have threading (such as PX4 and Linux based boards) there
+boards that have threading (such as Pixhawk and Linux based boards) there
 will in fact be lots of realtime threads started. See the section on
 understanding ArduPilot threading below.
 
 The AP_HAL_MAIN() macro
--------------------------
+-----------------------
 
 You will notice a extra line like this at the bottom of every sketch:
 
