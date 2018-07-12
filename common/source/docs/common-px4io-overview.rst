@@ -22,12 +22,12 @@ Archived:PX4IO Overview
 -  All power inputs are reverse polarity protected.
 -  All power outputs are current limited.
 -  All logic inputs and outputs are ESD protected.
--  All PX4 boards use positive retention DF13 connectors and a variety
+-  All PX4IO boards use positive retention DF13 connectors and a variety
    of connectors.
 -  Wires with pre-crimped sockets and pre-made cables are available
    inexpensively for the PX4-IO from 3DRobotics.
 
-The Bottom of the PX4 IO Board
+The Bottom of the PX4IO Board
 ==============================
 
 .. image:: ../../../images/PX4io-bottom.jpg
@@ -37,26 +37,26 @@ The Bottom of the PX4 IO Board
 -  For high power servos you can remove L1 to allow you to supply power
    from an external power supply to a servo connector center pin.
 
-The Top of the PX4 IO Board
-===========================
+The Top of the PX4IO Board
+==========================
 
 .. image:: ../../../images/PX4io-top.jpg
     :target: ../_images/PX4io-top.jpg
 
-A Breif Description of the PX4 IO Board
-=======================================
+A Breif Description of the PX4IO Board
+======================================
 
 .. image:: ../../../images/PX4IOdiagram.jpg
     :target: ../_images/PX4IOdiagram.jpg
 
-The PX4 IO Board Connector pin assignments
-==========================================
+The PX4IO Board Connector pin assignments
+=========================================
 
 .. image:: ../../../images/PX4IOconnectors.jpg
     :target: ../_images/PX4IOconnectors.jpg
 
-The PX4 IO Board Stacks On Top of the PX4 FMU board
-===================================================
+The PX4IO Board Stacks On Top of the PX4-FMU board
+==================================================
 
 .. image:: ../../../images/PX4-STACK1.jpg
     :target: ../_images/PX4-STACK1.jpg

@@ -1,23 +1,22 @@
 .. _building-px4-with-qtcreator:
 
-=====================================================================
-Building ArduPilot for Pixhawk/PX4 on Windows or Linux with QtCreator
-=====================================================================
+=================================================================
+Building ArduPilot for Pixhawk on Windows or Linux with QtCreator
+=================================================================
 
 This article shows how you can set up Qt Creator for editing ArduPilot code
-and building for Pixhawk/PX4 targets on Windows and Linux.
+and building for Pixhawk targets on Windows and Linux.
 
 Preconditions for Linux
 =======================
 
-Follow the instructions in :ref:`Building for Pixhawk/PX4 on Linux with Make <building-px4-with-make>`
-to download the required source code
-(*ardupilot*, *PX4Firmware* and *PX4NuttX*) and toolchain.
+Follow the instructions in :ref:`Building for Pixhawk on Linux with Make <building-px4-with-make>`
+to download the required source code (*ardupilot*, *PX4Firmware* and *PX4NuttX*) and toolchain.
 
 Preconditions for Windows
 =========================
 
-Follow the instructions in :ref:`Pixhawk/PX4 on Windows with Make <building-px4-with-make>` 
+Follow the instructions in :ref:`Pixhawk on Windows with Make <building-px4-with-make>` 
 to download the required source code (*ardupilot*, *PX4Firmware* and *PX4NuttX*) and toolchain.
 
 Make sure you have no Cygwin installed (or have it at least out of the environment variables), 
@@ -221,7 +220,7 @@ This section discusses how to build the code in Qt Creator.
 Apply coding style guidelines
 =============================
 It is useful that the Qt Creator editor is configured so that it automatically applies the layout guidelines
-described in :ref:`Ardupilot Style Guide <style-guide>`.
+described in :ref:`ArduPilot Style Guide <style-guide>`.
 		
 #. Indentation: Click on the **Tools** menu
    and choose **Options**. Subsequently, pick the **Text Editor** view and then the **Behaviour** tab page.
@@ -230,6 +229,6 @@ described in :ref:`Ardupilot Style Guide <style-guide>`.
 #. Other interesting settings can be found in the **C++** view in the same *Options* dialog. You can define
    how specific parts of your code will be aligned (e.g. assignments, switch/cases, control statements, braces, etc.)
    
-#. Commenting: In order to comply with the coding guidelines , you will need to provide docmentation in Doxygen format.
+#. Commenting: In order to comply with the coding guidelines , you will need to provide documentation in Doxygen format.
    Qt Creator will automatically generate a Doxygen documentation template if you type ``/**`` before the definition
    of the class, function, ...   

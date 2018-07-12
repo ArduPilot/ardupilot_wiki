@@ -24,7 +24,7 @@ are also supported.
 You'll need a radio control transmitter to manually control your Copter
 and to activate its flight modes. You can use any RC
 transmitter/receiver system with at least six channels. Some of the
-options are discussed in the topic :ref:`Compatible RC Transmitter and Receiver Systems (Pixhawk/PX4) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`.
+options are discussed in the topic :ref:`Compatible RC Transmitter and Receiver Systems (Pixhawk) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`.
 
 .. image:: ../../../images/spektrum-dx8.jpg
     :target: ../_images/spektrum-dx8.jpg

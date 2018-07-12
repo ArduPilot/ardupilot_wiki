@@ -27,7 +27,7 @@ May 2009 - `First ArduPilot board <http://diydrones.com/profiles/blogs/ardupilot
 `thermopiles <http://diydrones.com/profiles/blogs/attopilot-ir-sensors-now>`__)
 released by Jordi/3DRobotics
 
-Nov 2009 - `ardupilot code repository <https://code.google.com/p/ardupilot/>`__ created by Jordi
+Nov 2009 - `ArduPilot code repository <https://code.google.com/p/ardupilot/>`__ created by Jordi
 
 Nov 2009 - first version of ArduIMU written by Jordi, Doug Weibel, Jose
 Julio using DCM from William Premerlani
@@ -81,7 +81,7 @@ is released by Michael Oborne
 Aug 2010 - `TradHeli support <https://vimeo.com/14135066>`__\ added by
 Randy
 
-Dec 2010 - first successful fork of ardupilot code as `MegaPirates group extends original CopterNG code <http://diydrones.com/profiles/blogs/arducopter-ng-taken-over-by>`__
+Dec 2010 - first successful fork of ArduPilot code as `MegaPirates group extends original CopterNG code <http://diydrones.com/profiles/blogs/arducopter-ng-taken-over-by>`__
 
 April 2011 – First fully autonomous Copter mission flown by Jason at
 `Sparkfun AVC <http://diydrones.com/profiles/blogs/acm-at-the-avc>`__
@@ -118,7 +118,7 @@ Jonathan Challinger leads to Copter's inertial based altitude hold by
 Randy and Leonard
 (`AC2.9 <http://diydrones.com/forum/topics/arducopter-2-9-released>`__).
 
-Jan 2013 - ardupilot code moved from `google code <http://code.google.com/p/ardupilot/>`__ to
+Jan 2013 - ArduPilot code moved from `google code <http://code.google.com/p/ardupilot/>`__ to
 `github <https://github.com/ArduPilot/ardupilot>`__
 
 Jan/Feb 2013 - Android GCSs appear (`DroidPlanner from
@@ -183,13 +183,13 @@ June 2015 - `Parrot Bebop port's first successful flights <http://diydrones.com/
 Aug 2015 - Michael Clement & Michael Day fly 
 `50 arduplanes in a multi-vehicle environment <http://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__
 
-Sep 2015 - `First major news event involving a misbehaving pilot of an ardupilot vehicle (a Solo) <http://edition.cnn.com/2015/09/04/us/us-open-tennis-drone-arrest/>`__
+Sep 2015 - `First major news event involving a misbehaving pilot of an ArduPilot vehicle (a Solo) <http://edition.cnn.com/2015/09/04/us/us-open-tennis-drone-arrest/>`__
 
 March 2016 - 3DR ceases direct funding of ArduPilot community as it `cuts jobs <http://www.marketwatch.com/story/drone-maker-3d-robotics-reboots-by-cutting-jobs-refocusing-on-corporate-market-2016-03-23>`__.
 
 March 2016 - Formation of the `ardupilot.org non profit organisation <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__ and new website.
 
-May 2016 - `Flirtey delivery drone (using ardupilot) is entered into Smithsonian Air and Space Museum <http://www.smithsonianmag.com/smart-news/first-delivery-drone-united-states-lands-spot-smithsonian-180958964/?no-ist>`__.
+May 2016 - `Flirtey delivery drone (using ArduPilot) is entered into Smithsonian Air and Space Museum <http://www.smithsonianmag.com/smart-news/first-delivery-drone-united-states-lands-spot-smithsonian-180958964/?no-ist>`__.
 
 Sep 2016 - Flymaple board support removed ( not actively tested or used , also lacks a maintainer see PR #4191 ).
 

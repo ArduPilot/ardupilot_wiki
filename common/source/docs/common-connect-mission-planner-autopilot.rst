@@ -79,10 +79,9 @@ If Mission planner is unable to connect:
    blocking the IP traffic.
 
 You should also ensure that the autopilot controller board has
-appropriate ArduPilot firwmare installed and has booted correctly (on
-Pixhawk/PX4 there are useful :ref:`LEDs <common-leds-pixhawk>` and
-:ref:`Sounds <common-sounds-pixhawkpx4>` which can tell you the state of
-the autopilot).
+appropriate ArduPilot firmware installed and has booted correctly (on
+Pixhawk there are useful :ref:`LEDs <common-leds-pixhawk>` and
+:ref:`Sounds <common-sounds-pixhawkpx4>` which can tell you the state of the autopilot).
 
 Related topics
 ==============

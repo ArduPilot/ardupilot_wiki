@@ -104,9 +104,9 @@ Python, and extensible via python modules.
 QGroundControl
 --------------
 
-QGroundControl work with MAVLink capable autopilots. It's main focus orginally has been PX4 Flight Stack,
-but it now also comes with complete support for ArduPilot based autopilots. It's unique among the GCS offerings
-as it runs on all platforms desktop and mobile.
+QGroundControl work with MAVLink capable autopilots. 
+It's main focus was originally the PX4 Flight Stack, but it now also comes with complete support for ArduPilot based autopilots. 
+It's unique among the GCS offerings as it runs on all platforms desktop and mobile.
 
 -  **Platform**: Windows, Mac OS X, Linux, Android and iOS
 -  **Licence**: `Open Source <http://www.qgroundcontrol.org/license>`__
@@ -122,7 +122,8 @@ as it runs on all platforms desktop and mobile.
 UgCS - Universal Ground Control Station
 ---------------------------------------
 
-Universal and easy to use ground control station with a 3D interface. Supports APM, Pixhawk as well as drones from other manufacturers such as DJI, Mikrokopter and more.
+Universal and easy to use ground control station with a 3D interface. 
+Supports APM, Pixhawk as well as drones from other manufacturers such as DJI, Mikrokopter and more.
 Intended for enthusiasts as well as professional users.
 
 It is capable of communicating with and controlling multiple drones simultaneously. 
@@ -198,7 +199,8 @@ See website for how-to on how connect it to your autopilot
 SidePilot
 ---------
 
-ArduPilot compatible GCS that runs on iPhone/iPad. Also supports PX4 and 3DR Solo.
+ArduPilot compatible GCS that runs on iPhone/iPad. 
+Also supports PX4 and 3DR Solo.
 
 See website for how-to on how connect it to your autopilot
 

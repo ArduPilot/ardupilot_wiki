@@ -64,10 +64,9 @@ The following should be considered when using Rally Points:
    are inside the geofence.
 #. Make sure Rally Point altitudes are high enough to clear terrain and
    buildings.
-#. Because of the limited flash memory size on the APM hardware the
+#. Because of the limited flash memory size on the APM2.x hardware the
    number of Rally Points is restricted to 10 on Plane and 6 on Copter
-   -- this limit may be expanded on other platforms such as PX4 and
-   Pixhawk in the future.
+   -- this limit may be expanded on other platforms such as Pixhawk in the future.
 #. On Plane, loiter radius for a Rally Point is the same as all other
    loiter points; determined by the :ref:`WP_LOITER_RAD <plane:WP_LOITER_RAD>`
    parameter.

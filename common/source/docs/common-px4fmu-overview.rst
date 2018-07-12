@@ -8,32 +8,28 @@ Archived:PX4FMU Overview
 
     **ARCHIVED**
     
-    The PX4FMU ("PX4") is end of life and is not
-    generally available for purchase. This article is made available for
-    existing users.
+    The PX4FMU (v1) is end of life and is not generally available for purchase. 
+    This article is made available for existing users.
 
-This page provides an overview of the PX4 Flight Management Unit.
+This page provides an overview of the Pixhawk Flight Management Unit.
 
-Pixhawk (FMUv2) and PX4 (FMUv1)
-===============================
+Pixhawk (FMUv2) and PX4FMU (FMUv1)
+==================================
 
-There are now two separate platforms supporting the PX4 system:
+The Pixhawk (FMUv2) single board flight controller evolved from the original "PX4 system", 
+which consists of the PX4FMU and various piggyback boards including the PX4IO and PX4IOAR.
 
--  The Pixhawk (FMUv2) single board flight controller.
--  And the original PX4 system which consists of the PX4 FMUv1 and
-   various piggyback boards including the PX4IO and PX4IOAR.
-
-The new Pixhawk also incorporates several additional features to provide
-extended capabilities for our APM flight system.
+The Pixhawk incorporates several additional features to provide
+extended capabilities for our ArduPilot flight system.
 
 A connector diagram of the Pixhawk is shown below, but :ref:`Go to this link for full information on the Pixhawk <common-pixhawk-overview>`
 
-The PX4 (FMUv1) Flight Management System Includes:
-==================================================
+The PX4FMU/PX4IO (FMUv1) Flight Management System Includes:
+===========================================================
 
 -  **The PX4-FMU (Flight Management Unit).**
 
-   -  A powerful Cortex M4F microcontroller and flash memory for
+   -  A powerful Cortex M4F micro-controller and flash memory for
       controlling flight and communications.
    -  A socket for a plug in SD memory card.
    -  A 3 axis gyro for determining orientation.
@@ -49,7 +45,7 @@ The PX4 (FMUv1) Flight Management System Includes:
 
 -  **The PX4-IO (Input Output) Board.**
 
-   -  Contains its own on board microcontroller and stacks with the FMU.
+   -  Contains its own on board micro-controller and stacks with the FMU.
    -  Direct battery input power supply.
    -  8 High speed servo PWM outputs.
    -  Futaba SBUS or PPM-SUM serial servo output.
@@ -57,13 +53,13 @@ The PX4 (FMUv1) Flight Management System Includes:
    -  Two user assignable relays, two 1/2 amp 5 volt outputs and an
       analog input port.
 
--  **The PX4-FLOW Smart (Optical Flow) Camera.**
+-  **The PX4FLOW Smart (Optical Flow) Camera.**
 
    -  Specialized downward pointing camera module that uses ground
       texture and features to determine aircraft motion over the ground.
-   -  The PX4 Flow has the same powerful Cortex M4F Microcontroller as
+   -  The PX4FLOW has the same powerful Cortex M4F micro-controller as
       is used in the PX4FMU.
-   -  The built in microcontroller performs on board automated binned
+   -  The built in micro-controller performs on board automated binned
       pixel image analysis to determine motion relative to ground.
    -  A built in 3 axis gyro enables automatic compensation for variance
       in aircraft tilt angle.
@@ -71,7 +67,7 @@ The PX4 (FMUv1) Flight Management System Includes:
 -  **The PX4-IOAR Quad Carrier is a specialized interface board for the
    Parrot AR.Drone.**
 
-**The PX4 FMU circuit board comes preassembled and ready to load the
+**The PX4FMU circuit board comes preassembled and ready to load the
 firmware for your airframe using the Mission Planner.**
 
 .. image:: ../../../images/PX4OverviewDiagram.jpg
@@ -83,7 +79,7 @@ Detailed Description
 .. image:: ../../../images/PX4-2.jpg
     :target: ../_images/PX4-2.jpg
 
-**The Back of the PX4 FMU showing the SD card carrier and buzzer
+**The Back of the PX4FMU board showing the SD card carrier and buzzer
 socket:**
 
 .. image:: ../../../images/PX4FMUbottom1.jpg
@@ -98,13 +94,12 @@ PX4FMU Connector diagram
 Analog and digital pins
 =======================
 
-This section lists what pins (analog and digital) are available on the
-PX4.
+This section lists what pins (analog and digital) are available on the PX4FMU.
 
 PX4v1 Analog inputs
 -------------------
 
-The PX4 has the following “available” Analog input port pins which may
+The PX4FMUv1 has the following “available” Analog input port pins which may
 be put to a variety of uses.
 
 **Pin 10** (High voltage analog pin):
@@ -240,7 +235,7 @@ Copter wiring (diagram and instructions)
    x 3 angle connector that is nearest the edge of the PX4IO board with
    the signal wire furthest from the board and the ground closest to the
    board.**
-#. **Wire the PX4 boards servo out signals to your ESC control inputs.**
+#. **Wire the PX4FMU boards servo out signals to your ESC control inputs.**
 
    #. Run the Signal wires ONLY from the ESCs to the 3 x 9 Servo
       Connector on the PX4IO board.
@@ -282,13 +277,13 @@ Copter wiring (diagram and instructions)
     PX4IO <common-px4io-overview>
     
 [site wiki="rover"]
-    PX4 Wiring and QuickStart <rover-px4-quickstart>
+    Archived:Rover PX4FMU/PX4IO Wiring Quick Start <rover-px4-quickstart>
 [/site]
 
 [site wiki="copter"]
-    Archived:PX4 Wiring QuickStart <px4fmu-plus-px4io-wiring>
+    Archived:PX4FMU Wiring QuickStart <px4fmu-plus-px4io-wiring>
 [/site]
 
 [site wiki="plane"]
-    Archived:PX4 Wiring QuickStart <px4fmu-plus-px4io-wiring>
+    Archived:PX4FMU Wiring QuickStart <px4fmu-plus-px4io-wiring>
 [/site]

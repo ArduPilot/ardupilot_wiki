@@ -29,8 +29,8 @@ firmware installation in complete.
 .. image:: ../images/ap2_install-firmware-complete.png
     :target: ../_images/ap2_install-firmware-complete.png
 
-3 (Pixhawk/PX4) Power cycle and listen for the tone.
-----------------------------------------------------
+3 (Pixhawk) Power cycle and listen for the tone.
+------------------------------------------------
 
 After the firmware installation is complete, power cycle your vehicle by
 disconnecting and reconnecting the USB. Listen for the tone! If you hear

@@ -231,7 +231,7 @@ Spektrum Satellite Receivers Operate on PPM-Sum
 -  Although Spektrum main receivers do not communicate by PPM-Sum their
    range extending "satellite" receivers do.
 -  So it is feasible to use a single `Spektrum Satellite Receiver <http://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM9645>`__
-   to act as a PPM-Sum receiver with PX4 and Pixhawk.
+   to act as a PPM-Sum receiver with Pixhawk.
 
    -  Simply pre-bind the Spektrum Satellite to your transmitter using a
       conventional Spektrum receiver with satellite attached.
@@ -316,7 +316,7 @@ Using a Standard RC Radio Receiver with 3DR PPM Encoder
 
 .. note::
 
-   If you are using this PPM Encoder with PX4 it is important to know that
+   If you are using this PPM Encoder with PX4FMU it is important to know that
    when you are calibrating your transmitter you will quite likely need
    to hook up your flight battery to the PX4IO because the USB port
    alone can't supply enough power.

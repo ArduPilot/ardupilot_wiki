@@ -181,7 +181,7 @@ Check the following:
    receiver and telemetry (TM1000+AR8000 to DX8) module, connect them
    both together(TM1000 to AR8000). With the transmitter off (DX8 off),
    press the tiny button on the side of the telemetry module (TM1000)
-   and power the receiver (plug the lipo batteries but do not plug the
+   and power the receiver (plug the LiPo batteries but do not plug the
    4-wire connection). Both the receiver and telemetry module will start
    to blink (if they do not blink TM1000 is no good). When that happens
    turn on your radio holding the trainer/bind button and it will bind
