@@ -7,7 +7,7 @@ MAVLink Commands
 ArduPilot has adopted a subset of the MAVLink protocol command set.
 Important links for working with commands are listed below:
 
--  `MAVLINK Common Message Set in HTML <http://mavlink.org/messages/common>`__ and
+-  MAVLINK Common Message Set in `HTML <https://mavlink.io/en/messages/common.html>`__ and
    `XML <https://github.com/mavlink/mavlink/blob/master/message_definitions/v1.0/common.xml>`__
    (Protocol Definition).
 -  `MavLink Tutorial for Absolute Dummies (Part–1) <http://api.ning.com/files/i*tFWQTF2R*7Mmw7hksAU-u9IABKNDO9apguOiSOCfvi2znk1tXhur0Bt00jTOldFvob-Sczg3*lDcgChG26QaHZpzEcISM5/MAVLINK_FOR_DUMMIESPart1_v.1.1.pdf>`__
