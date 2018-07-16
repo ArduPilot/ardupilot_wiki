@@ -4,10 +4,14 @@
 Terrain Following
 =================
 
-Copter 3.4 (and higher) support "terrain following" in :ref:`AUTO <auto-mode>`, :ref:`Guided <ac2_guidedmode>`, :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>` flight modes.  This feature allows the vehicle to climb or descend to maintain a specified distance above the terrain using either a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>` or from terrain altitude data provided by the ground station using a mapping service such as Google maps.  Details of how the Google maps data is used can be found on the :ref:`plane terrain following page <common-terrain-following>`
+Copter 3.4 (and higher) support "terrain following" in nearly all modes including autonomous modes like :ref:`AUTO <auto-mode>`, :ref:`Guided <ac2_guidedmode>`, :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>`.  This feature allows the vehicle to climb or descend to maintain a specified distance above the terrain using either a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>` or from terrain altitude data provided by the ground station using a mapping service such as Google maps.  Details of how the Google maps data is used can be found on the :ref:`plane terrain following page <common-terrain-following>`
 
 ..  youtube:: mT67QOAxuG8
     :width: 100%
+
+.. note::
+
+   :ref:`Loiter <loiter-mode>`, :ref:`PosHold <poshold-mode>` and :ref:`AltHold <altholdmode>` modes also support terrain following using a :ref:`lidar or sonar <common-rangefinder-landingpage>`.  For these modes there is no setup required besides simply connecting and configuring a downward facing :ref:`lidar or sonar <common-rangefinder-landingpage>`.
 
 Setting up a Mission to use Terrain data
 ----------------------------------------
