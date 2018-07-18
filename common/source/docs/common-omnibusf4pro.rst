@@ -101,7 +101,7 @@ Install dfu-util
 Flash Bootloader
 ----------------
 
-Bootloader binaries for the current targets can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/Tools/bootloaders>`__.
+Bootloader binaries for the current targets can be found `here <http://firmware.ardupilot.org/Tools/Bootloaders>`__.
 
 Download omnibusf4pro_bl.bin for this board type. With your board connected via USB and put into DFU mode, open a terminal and flash the new bootloader with the following command line:
 
