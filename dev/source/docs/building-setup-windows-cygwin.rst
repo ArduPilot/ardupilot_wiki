@@ -58,7 +58,7 @@ Install Cygwin
    +----------------+----------------------------------------------------------------------------------+
    | python2-devel  | Python \| python2-devel: Python2 language interpreter (python3 does not work yet)|
    +----------------+----------------------------------------------------------------------------------+
-   | python2-future | Python \| python2-future: Clean single-source support for Python 3 and 2                     |
+   | python2-future | Python \| python2-future: Clean single-source support for Python 3 and 2         |
    +----------------+----------------------------------------------------------------------------------+
    | python2-libxml2| Python \| python2-libxml2: Gnome XML Library (Python bindings                    |
    +----------------+----------------------------------------------------------------------------------+
