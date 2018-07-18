@@ -12,7 +12,7 @@ This has been tested with building SITL and Pixhawk-based targets.
 Install Pixhawk Toolchain
 -------------------------
 
-- install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/PX4-tools/pixhawk_toolchain_installer_latest.exe>`__
+- install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/STM32-tools/pixhawk_toolchain_installer_latest.exe>`__
 
 Install Cygwin
 --------------
