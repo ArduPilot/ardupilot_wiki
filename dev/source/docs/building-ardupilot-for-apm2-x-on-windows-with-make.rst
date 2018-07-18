@@ -83,7 +83,7 @@ Build instructions
                system where the tools are located.
 
 #. Download and install the *PX4 toolchain* by running the
-   `px4_toolchain_installer_v14_win.exe <http://firmware.ardupilot.org/Tools/PX4-tools/px4_toolchain_installer_v14_win.exe>`__
+   `px4_toolchain_installer_v14_win.exe <http://firmware.ardupilot.org/Tools/STM32-tools/px4_toolchain_installer_v14_win.exe>`__
 #. Open the *PX4Console* and navigate to the target vehicle directory:
 
    -  Start the *PX4Console*. This can be found under **Start \| All

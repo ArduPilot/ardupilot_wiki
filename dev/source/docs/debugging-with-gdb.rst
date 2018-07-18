@@ -47,30 +47,14 @@ Installing GDB
 ==============
 
 If using Ubuntu, GDB is likely already installed on your machine and it
-will likely work although we recommend using version 7.7 or higher
-because it includes python extensions.  On an Ubuntu machine you can
-find where your GDB is installed by typing:
+will likely work although we recommend using the version available for
+download here `http://firmware.ardupilot.org/Tools/STM32-tools <http://firmware.ardupilot.org/Tools/STM32-tools>`__
 
-``which gdb``
+The gcc-arm-none-eabi*-linux.tar.bz2 file contains both the
+recommended compiler and the recommended version of gdb.
 
-This will likely return ``/usr/local/bin/arm-none-eabi-gdb``
-
-Next check it's version by calling it with the ``--version`` argument
-
-``/usr/local/bin/arm-none-eabi-gdb --version``
-
-If you wish to upgrade to 7.7 (or higher):
-
--  download a later version from the `GDB download page <http://ftp.gnu.org/gnu/gdb/>`__.
--  when the download completes extract the compressed file to somewhere
-   on your machine (i.e. /home/<username>/Documents)
--  open a terminal and change to the directory that was extracted (i.e.
-   /home/<username>/Documents/gdb-7.7.1)
--  run the configuration script by typing
-   ``./configure --target arm-none-eabi``
--  make gdb for your system by typing ``make``
--  install the newly built gdb into /usr/local/bin by typing
-   ``make install``
+After installation you should find you have a tool called
+arm-none-eabi-gdb. 
 
 Starting GDB and running some commands
 ======================================
@@ -82,7 +66,7 @@ PX4Firmware/Build/px4fmu-v2_APM.build/firmware.elf.
 
 change to your PX4Firmware directory and type the following:
 
-``/usr/local/bin/arm-none-eabi-gdb Build/px4fmu-v2_APM.build/firmware.elf``
+``arm-none-eabi-gdb build/fmuv3/bin/arducopter``
 
 .. image:: ../images/DebuggingWithGDB-startGBD.png
     :target: ../_images/DebuggingWithGDB-startGBD.png
