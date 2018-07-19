@@ -101,6 +101,13 @@ Set up directories/paths and extra packages in Cygwin
 
     pip2 install empy
 
+#. After "empy" has been succesfully installed, you need to install PySerial package:
+
+::
+
+    pip install pyserial
+
+
 #. with your favourite text editor, open C:\\cygwin64\\home\\<username>\\.bashrc and add this line to include the Pixhawk Toolchain's compiler.
 
    ::
