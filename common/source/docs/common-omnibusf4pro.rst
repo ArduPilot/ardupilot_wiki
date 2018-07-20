@@ -51,15 +51,19 @@ There have been many versions of this board and many clones. Best results, with 
 
 Board Connections
 ==================
+See connection diagram above for a typical Plane application (compass is optional)
+
 GPS is attached to UART6
 
 Telem is available at UART 1
 
-The shared UART3/I2C pins are enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.
+The shared UART3/I2C pins are enabled only for I2C operation to allow external compass or digital airspeed sensor attachment. If at least one device attached externally, does not have pull-up resistors, then 2K ohm pull-up resistors will need to be added externally.
 
 If you want to power the servos from the ESC BEC via the board's center rail for the servo outputs, then you should remove the diode as per here: https://www.rcgroups.com/forums/showthread.php?2874687, otherwise, independently power the servos directly from the ESC or independent BEC with no connection to the board's servo output center rail.
 
 Video power provided on the video input and output center rail, is provide through an on-board noise filter. Either ~4.5V (labeled 5V) or VBAT-0.5V (VBAT) can be selected by solder pads on the back of the board.
+
+The board's RSSI pad can be used as an analog RSSI input. Use pin "0" as the RSSI input pin in Mission Planner. Mission planner default values for battery voltage and current scales are provided, however since many variations of this board are available, these may neede to be manually calibrated.
 
 Flashing Firmware
 ========================
