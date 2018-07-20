@@ -169,6 +169,10 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_unmannedtech.jpg
     :width: 250px   
     :target:  https://www.unmannedtechshop.co.uk/
+
+.. image:: ../../../images/supporters/supporters_logo_Rubidium.jpg
+    :width: 250px   
+    :target:  https://rubidiumlight.com.au/rubidium-rover/
     
 .. image:: ../../../images/supporters/supporters_logo_makeflyeasy.jpg
     :width: 250px   
