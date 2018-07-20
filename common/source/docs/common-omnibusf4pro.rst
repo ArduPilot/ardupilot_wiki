@@ -9,7 +9,9 @@ Omnibus F4 Pro
     :width: 450px
 
 *above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
-
+.. image:: ../../../images/omnibusf4pro_connections.png
+    :target: ../_images/omnibusf4pro_connections.png
+    :width: 450px
 .. note::
 
    Support for this board has been introduced with ArduPilot's ChibiOs port.
