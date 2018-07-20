@@ -9,8 +9,8 @@ Omnibus F4 Pro
     :width: 450px
 
 *above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
-.. image:: ../../../images/Omnibusf4pro_connections.png
-    :target: ../_images/Omnibusf4pro_connections.png
+.. image:: ../../../images/Omnibusf4pro_connections.jpg
+    :target: ../_images/Omnibusf4pro_connections.jpg
     :width: 450px
 .. note::
 
