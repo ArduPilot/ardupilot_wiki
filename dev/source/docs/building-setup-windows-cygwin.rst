@@ -12,7 +12,7 @@ This has been tested with building SITL and Pixhawk-based targets.
 Install Pixhawk Toolchain
 -------------------------
 
-- install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/PX4-tools/pixhawk_toolchain_installer_latest.exe>`__
+- install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/STM32-tools/pixhawk_toolchain_installer_latest.exe>`__
 
 Install Cygwin
 --------------
@@ -58,7 +58,7 @@ Install Cygwin
    +----------------+----------------------------------------------------------------------------------+
    | python2-devel  | Python \| python2-devel: Python2 language interpreter (python3 does not work yet)|
    +----------------+----------------------------------------------------------------------------------+
-   | python2-future | Python \| python2-future: Python 2 and 3 compatibility layer                     |
+   | python2-future | Python \| python2-future: Clean single-source support for Python 3 and 2         |
    +----------------+----------------------------------------------------------------------------------+
    | python2-libxml2| Python \| python2-libxml2: Gnome XML Library (Python bindings                    |
    +----------------+----------------------------------------------------------------------------------+
@@ -101,6 +101,13 @@ Set up directories/paths and extra packages in Cygwin
 
     pip2 install empy
 
+#. After "empy" has been succesfully installed, you need to install PySerial package:
+
+::
+
+    pip install pyserial
+
+
 #. with your favourite text editor, open C:\\cygwin64\\home\\<username>\\.bashrc and add this line to include the Pixhawk Toolchain's compiler.
 
    ::
@@ -115,3 +122,5 @@ You should now be able to start the "Cygwin64 Terminal" application from your Wi
    .. warning::
 
       The build may fail if the file path to some files is too long.  If the build fails, please try :ref:`cloning <git-clone>` ArduPilot into a directory very high in the directory structure (i.e. ~/ardupilot).
+      
+      If during build process you get error of missing packet xyz, re-check that you have installed all cygwin packets listed above

@@ -59,7 +59,7 @@ Deprecated instructions
 - :ref:`APM2.x on MacOS with Arduino <building-the-code-on-mac>`
 - :ref:`APM2.x on Linux with Make <building-the-code-onlinux>`
 - :ref:`Building for Flymaple on Linux <building-apm-for-flymaple>`
-- :ref:`Building for Pixhawk/PX4 on Windows or Linux with QtCreator <building-px4-with-qtcreator>`
+- :ref:`Building for Pixhawk on Windows or Linux with QtCreator <building-px4-with-qtcreator>`
 - :ref:`Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>`
 
 Links to all build pages
@@ -82,3 +82,4 @@ Links to all build pages
     Building for Qualcomm Snapdragon Flight Kit <building-for-qualcomm-snapdragon-flight-kit>
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
     Building Mission Planner with Visual Studio <buildin-mission-planner>
+    ArduPilot Pre-Built Binaries <pre-built-binaries>

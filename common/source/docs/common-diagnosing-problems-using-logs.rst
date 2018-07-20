@@ -115,13 +115,12 @@ For more advanced vibration analysis, see :ref:`Batch Sampling <common-imu-batch
 Compass interference
 ====================
 
-Interference from the power distribution board, motors, battery, esc and
-other electrical devices near the APM or PX4 can throw off the compass
+Interference from the power distribution board, motors, battery, ESC and
+other electrical devices near the APM or Pixhawk boards can throw off the compass
 heading which can lead to circling (aka "toilet bowling") or even the
 copter flying off in completely the wrong direction.  Graphing the
 tlog's mag_field (found under "CUSTOM") and throttle (found under
-VFR_HUD) values are the easiest way to quickly see the amount of
-interference.
+VFR_HUD) values are the easiest way to quickly see the amount of interference.
 
 In the graph's below shows an acceptable amount of magnetic
 interference.  You can see the mag_field fluctuates when the throttle
@@ -195,11 +194,11 @@ attempts to ignore glitches by sanity checking the positions.
 Power Problems (BrownOuts, etc)
 ===============================
 
-The introduction of the 3dr power module has made it much easier for
-people to provide a reliable power supply to their APM/PX4.  This has
+The introduction of the 3DR Power Module has made it much easier for
+people to provide a reliable power supply to their Pixhawk-series.  This has
 led to a massive reduction in the number of brown-outs reported but they
-do still occur.  They can normally be reconised by the logs suddenly
-ending while the copter is still in the air (i.e. barometer or inerital
+do still occur.  They can normally be recognised by the logs suddenly
+ending while the copter is still in the air (i.e. barometer or inertial
 navigation altitude is still well above zero).
 
 Try graphing the:
@@ -225,7 +224,7 @@ other weird behaviour.  The board voltage can be graphed using:
 
 In the image directly below shows the board voltage sinking by 0.15V
 when the throttle is raised.  This is generally not a good thing but
-because it's only 0.15V it's probably ok. The 2nd graph below (a
+because it's only 0.15V it's probably OK. The 2nd graph below (a
 dataflash graph from a different user's log) shows a more random
 variation in voltage but also up to 0.15V which is typical.
 

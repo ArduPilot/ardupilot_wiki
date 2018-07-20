@@ -24,7 +24,7 @@ that your copter hovers at 50% throttle:
 
 -  Fly your copter in stabilize mode in a stable hover for at least 30
    seconds
--  Disconnect your lipo battery and connect your APM/PX4 to the Mission
+-  Disconnect your LiPo battery and connect your APM/PX4 to the Mission
    Planner
 -  Go to the Terminal screen and download your latest dataflash log file
    (more details on working with dataflash logs can be found

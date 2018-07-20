@@ -10,8 +10,8 @@ Examples of these boards include the :ref:`OpenPilot RevoMini <common-openpilot-
 Installing ArduPilot to these flight controller involves:
 
 - Installing the required driver and flashing tool
-- Downloading the appropriate ardupilot firmware
-- Loading ardupilot to the board
+- Downloading the appropriate ArduPilot firmware
+- Loading ArduPilot to the board
 
 .. note::
 
@@ -23,6 +23,7 @@ Download and Install Zadig (Windows only)
 -----------------------------------------
 
 - Download and run `Zadig <https://zadig.akeo.ie/>`__ (search for "Zadig 2.3" just below "Download") to allow accessing the board using USB.
+- Choose "List all devices" option from options menu
 - Select "STM32 BOOTLOADER" from the drop-down and press the "Replace Driver" button
 
   .. image:: ../../../images/loading-firmware-zadig.png

@@ -9,7 +9,7 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Sep 5th ~ 7th 2018: InterDrone in Las Vegas, USA
+- Sep 5th ~ 7th 2018: InterDrone in Las Vegas, USA (`Blog <https://discuss.ardupilot.org/t/join-us-at-the-ardupilot-after-hours-at-interdrone-thursday-sept-6-7-00-pm-8-15-pm>`__)
 - Sep 24th ~ 28th 2018: `Medical Express Challenge <https://uavchallenge.org/medical-express/>`__ in Dalby Australia
 - Oct 10th ~ 12th 2018: `Japan Innovation Challenge <https://prtimes.jp/main/html/rd/p/000000148.000026811.html>`__ search and rescue competition in Hokkaido Japan
 - Oct 15th ~ 17th 2018: ArduPilot conference sponsored by HEX in Suzhou China (`intro video from Philip Rowse <https://youtu.be/_2Qnm0TDoZA?t=1677>`__)
