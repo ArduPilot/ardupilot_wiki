@@ -4,23 +4,23 @@
 Installing Mission Planner (Windows)
 ====================================
 
-The instructions below cover the installation procedure for the Mission Planner on Windows:
+The instructions show how to install *Mission Planner* on Windows:
 
-- download the `latest Mission Planner installer from here <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__
-- double click on the downloaded .msi file to run the installer
+- Download the `latest Mission Planner installer from here <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__
+- Double click on the downloaded **.msi** file to run the installer
 
-.. image:: ../../../images/installation.png
-    :target: ../_images/installation.png
+  .. image:: ../../../images/installation.png
+      :target: ../_images/installation.png
 
-- follow the instructions to complete the setup process. The installation
-  utility will automatically install any necessary software drivers. If
-  you receive a DirectX installation error, please update your DirectX
-  plug-in from the `DirectX Download Center <http://www.microsoft.com/en-us/download/details.aspx?id=35>`__.
+- Follow the instructions to complete the setup process. 
+  The installation utility will automatically install any necessary software drivers. 
+  If you receive a DirectX installation error, 
+  please update your DirectX plug-in from the `DirectX Download Center <http://www.microsoft.com/en-us/download/details.aspx?id=35>`__.
 
-- if you receive the warning pictured below, select **Install this driver software anyway** to continue.
+- If you receive the warning pictured below, select **Install this driver software anyway** to continue.
 
-.. image:: ../../../images/driver_installation_warning.png
-    :target: ../_images/driver_installation_warning.png
+  .. image:: ../../../images/driver_installation_warning.png
+      :target: ../_images/driver_installation_warning.png
 
 Mission Planner is normally installed in the **C:\\Program Files (x86)\\Mission Planner** folder.
 
@@ -33,14 +33,13 @@ Once installation is complete, open *Mission Planner* by clicking on its system 
 
 Then you can either:
 
--  :ref:`Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>` in order to receive telemetry and control the vehicle OR
--  :ref:`Load Firmware <common-loading-firmware-onto-pixhawk>`
+- :ref:`Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>` in order to receive telemetry and control the vehicle OR
+- :ref:`Load Firmware <common-loading-firmware-onto-pixhawk>`
 
 Updating Mission Planner
 ========================
 
-*Mission Planner* automatically notifies you about available updates
-(when it is connected to the Internet).
+*Mission Planner* automatically notifies you about available updates (when it is connected to the Internet).
 
 Please always run the most current version of Mission Planner.
 
