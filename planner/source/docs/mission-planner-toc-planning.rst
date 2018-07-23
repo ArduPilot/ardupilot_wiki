@@ -30,7 +30,7 @@ emphasize the major topics and sub topics.)**
    these pages
 
    -  **Windows Installer**
-      ( :ref:`http://\ **planne**\ r.ardupilot.com/wiki/common-install-mission-planner/ <common-install-mission-planner>` )
+      ( :ref:`install mission planner <planner:install-mission-planner>` )
    -  **Advanced Installation**
       (:ref:`mission-planner-advanced-installation <mission-planner-advanced-installation>`) New
       8/7/13. ready to add to TOC (Not a common page)

@@ -38,7 +38,7 @@ Here is a list of :ref:`ready-to-fly vehicles <common-rtf>` to get started with 
 
 If you're using Copter on a :ref:`ready-to-fly vehicle <common-rtf>` then it should come pre-configured and tuned, ready for your first flight.
 We recommend you read the manufacturer's instructions before flying especially the sections concerning safety.
-Then after :ref:`installing the ground station <common-install-mission-planner>` you can likely jump forward to the :ref:`First Flight <flying-arducopter>` instructions.
+Then after :ref:`installing the ground station <common-install-gcs>` you can likely jump forward to the :ref:`First Flight <flying-arducopter>` instructions.
 
 .. tip::
 
