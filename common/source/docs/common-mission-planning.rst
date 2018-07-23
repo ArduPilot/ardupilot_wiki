@@ -11,7 +11,7 @@ automated missions that will run when the ArduPilot is set to
 .. note::
 
    The examples demonstrate mission planning using :ref:`Mission Planner <planner:home>`, a fully-functioned
-   Windows-based Ground Control Station (GCS) that you can :ref:`download and install from here <common-install-mission-planner>`.
+   Windows-based Ground Control Station (GCS) that you can :ref:`download and install from here <planner:install-mission-planner>`.
 
    .. figure:: ../../../images/mp_flight_plan_screen.jpg
       :target: ../_images/mp_flight_plan_screen.jpg

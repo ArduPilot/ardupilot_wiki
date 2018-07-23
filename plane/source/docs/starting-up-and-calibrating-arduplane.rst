@@ -111,7 +111,7 @@ For your second flight, change the third mode (position 3 of your RC
 mode switch) to RTL in the Mission Planner's \ :ref:`mode setup page <common-rc-transmitter-flight-mode-configuration>`.
 
 Once in the air switch the vehicle into RTL.  This will test navigation. The aircraft should return to the location at which it armed (or the nearest Rally point) and orbit
-at a fixed altitude (which can be set with the \ :ref:`Mission Planner <common-install-mission-planner>`).
+at a fixed altitude (which can be set with the \ :ref:`Mission Planner <planner:install-mission-planner>`).
 
 If it does not return crisply and circle overhead in a near-perfect
 circle, you need to tune the autopilot a bit for your particular
