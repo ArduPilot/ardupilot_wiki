@@ -7,10 +7,15 @@ ROS
 .. image:: ../images/logos/rosorg_logo.png
     :target: ../_images/logos/rosorg_logo.png
 
-ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__. ROS (Robot Operating System) provides libraries and tools to help software developers create robot applications. It provides hardware abstraction, device drivers, libraries, visualizers, message-passing, package management, and more.
-ROS is completely open source (BSD) and free for others to use, change and commercialize upon. The primary goal is to enable software developers to build more capable robot applications quickly and easily on a common platform.
-Those pages will show you how to:
+ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka Robot Operating System).
 
+`ROS <http://www.ros.org/>`__ provides libraries, tools, hardware abstraction, device drivers, visualizers, message-passing, package management, and more to help software developers create robot applications.  In the future we expect ROS will be replaced by `ROS2 <http://design.ros2.org/articles/why_ros2.html>`__
+
+`MAVROS <http://wiki.ros.org/mavros>`__ is a ROS "node" that can convert between ROS topics and `MAVLink messages <https://github.com/ArduPilot/mavlink>`__ allowing ArduPilot vehicles to communicate with ROS.  The `MAVROS code can be found here <https://github.com/mavlink/mavros/tree/master/mavros>`__.
+
+These pages will show you how to:
+
+- :ref:`Install ROS and MAVROS <ros-install>`
 - Connect ArduPilot to ROS
 - Retrieve ArduPilot information in ROS
 - Use ROS to command an ArduPilot vehicle
@@ -18,58 +23,25 @@ Those pages will show you how to:
 
 .. warning::
 
-    Those pages won't show you how to:
+    Those pages do not yet include instructions on how to setup ROS for SLAM and non-GPS navigation
 
-    - Install and setup ROS
-    - Make a fully autonomous vehicle
-    - Make non-GPS vehicle
-
-Those are outside the scope of ArduPilot and difficult. Even if ROS and ArduPilot are powerful, their combined usage will require more work than the example shown in this wiki to make advance things (SLAM, autonomous movement etc). You can find a good description of current ROS limits in http://design.ros2.org/articles/why_ros2.html
-
-Preconditions
+Prerequisites
 =============
 
-- Learn on to use ArduPilot first! Don't expect that things will work magically especially with a real vehicle. You need to understand and make your vehicle working well in MANUAL and GUIDED mode before trying to use ROS. We won't explain here how to setup your vehicle nor why it won't arm or takeoff.
-- Learn how to use ROS! Please do at least ROS all `beginner tutorials <http://wiki.ros.org/ROS/Tutorials>`__. In the case of a problem with ROS, ask on ROS community first (or google your error). You will find many other tutorials about ROS like `Emlid <https://docs.emlid.com/navio2/common/dev/ros/>`__, reading some of them is always beneficial.
-
-- Use ROS Kinetic Kame on Ubuntu Linux (16.04). Those are default and LTS version of both ROS and Ubuntu. THIS DON'T WORK ON WINDOWS NOR MACOS ! We assume now that you are using Ubuntu and ROS Kinetic.
-- If you are on a desktop PC, please install ROS Desktop-Full, on a companion computer ROS-Base is enough, see `<http://wiki.ros.org/kinetic/Installation/Ubuntu>`__.
-- Please add ROS tool to your shell as stated in ROS wiki.
-- Please don't use root as the default user.
-
-- To make the connection between ROS and ArduPilot, we will use `MAVROS <http://wiki.ros.org/mavros>`__. Install it should be as simple as
-
-.. code-block:: bash
-
-    sudo apt install ros-kinetic-mavros
-
-and for simpler usage on a desktop computer, please install RQT
-
-.. code-block:: bash
-
-    sudo apt-get install ros-kinetic-rqt ros-kinetic-rqt-common-plugins ros-kinetic-rqt-robot-plugins
-
-
-- We recommend the usage of `caktin_tools <https://catkin-tools.readthedocs.io/en/latest/index.html>`__ instead of the default catkin_make as it is more powerful and got some linter to help you
-
-.. code-block:: bash
-
-    sudo apt-get install python-catkin-tools
-
-.. tip::
-
-    ROS got tabs completion so abuse of it!
+- Learn on to use ArduPilot first by following the relevant wiki for `Rover <http://ardupilot.org/rover/index.html>`__, `Copter <http://ardupilot.org/copter/index.html>`__ or `Plane <http://ardupilot.org/plane/index.html>`__. In particular make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
+- Learn how to use ROS by reading the `beginner tutorials <http://wiki.ros.org/ROS/Tutorials>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error). You will find many other tutorials about ROS like `Emlid <https://docs.emlid.com/navio2/common/dev/ros/>`__.
+- Install ROS Kinetic Kame on Ubuntu Linux (16.04). Those are default and LTS version of both ROS and Ubuntu.  ROS does not yet officially support Windows nor MAC.
 
 Next tutorials :
 
 .. toctree::
     :maxdepth: 1
 
+        Installing ROS and MAVROS <ros-install>
         ROS with SITL <ros-sitl>
         ROS with SITL in Gazebo <ros-gazebo>
         ROS with real vehicle <ros-vehicle>
         ROS with distance sensors <ros-distance-sensors>
-
 
 Instructions for using :ref:`Gazebo with ArduPilot are here <using-gazebo-simulator-with-sitl>` and an old version has been `blogged about here <http://diydrones.com/profiles/blogs/705844:BlogPost:2151758>`__.
 
