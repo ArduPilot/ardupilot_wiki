@@ -7,7 +7,7 @@ Example Configuration
 This topic provides additional recommended configuration for Rover
 vehicles during initial setup and testing. It assumes that the
 configuration is performed using *Mission Planner* (and that *Mission
-Planner* is already :ref:`installed <common-install-mission-planner>` and
+Planner* is already :ref:`installed <planner:install-mission-planner>` and
 :ref:`connected <common-connect-mission-planner-autopilot>`).
 
 #. Go to the **Config/Tuning** tab.

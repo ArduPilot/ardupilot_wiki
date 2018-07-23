@@ -4,7 +4,7 @@
 SkyRocket with other Ground Stations
 ====================================
 
-The SkyViper has its own app that runs on android or iOS, but to access the full capabilities of the ArduPilot firmware you may prefer to use another ground station package. The SkyViper can work with any of the :ref:`ArduPilot compatible ground stations <common-choosing-a-ground-station>` including :ref:`Mission Planner <common-install-mission-planner>`.  For any of them:
+The SkyViper has its own app that runs on android or iOS, but to access the full capabilities of the ArduPilot firmware you may prefer to use another ground station package. The SkyViper can work with any of the :ref:`ArduPilot compatible ground stations <common-choosing-a-ground-station>` including :ref:`Mission Planner <planner:install-mission-planner>`.  For any of them:
 
 - connect your PC/tablet/phone to the drone's wifi access point
 - on the ground station set the connection type to "UDP" and press connect.  If asked, set the port to "14550"

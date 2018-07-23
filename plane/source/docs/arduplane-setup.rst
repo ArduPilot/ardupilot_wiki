@@ -12,7 +12,7 @@ give you a taste:
     :maxdepth: 1
 
     Assembly <assembly-instructions>
-    Install Ground Station Software <common-install-mission-planner>
+    Install Ground Station Software <common-install-gcs>
     Loading Firmware to Pixhawk boards <common-loading-firmware-onto-pixhawk>
     Loading Firmware to ChibiOS-only boards <common-loading-firmware-onto-chibios-only-boards>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>

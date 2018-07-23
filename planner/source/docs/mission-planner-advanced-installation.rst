@@ -13,7 +13,7 @@ Installing Mission Planner In a Different Location
 
 Sometimes you may want to keep  or install the current or different
 version of Mission Planner in a folder different from the normal
-location used by the :ref:`MSI installation <common-install-mission-planner>`. You can do this by
+location used by the :ref:`MSI installation <install-mission-planner>`. You can do this by
 downloading the "zip" version which contains all the files necessary and
 placing the files into a folder of your choice.
 

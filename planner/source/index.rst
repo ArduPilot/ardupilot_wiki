@@ -38,7 +38,7 @@ Full Table of Contents
    :titlesonly:
 
    Mission Planner Overview <docs/mission-planner-overview>
-   docs/common-install-mission-planner
+   docs/mission-planner-installation
    docs/common-loading-firmware-onto-pixhawk
    docs/common-connect-mission-planner-autopilot
    docs/common-mission-planning
