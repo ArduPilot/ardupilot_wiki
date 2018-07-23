@@ -16,9 +16,7 @@ guiding **ground vehicles** and **boats**. It can run fully autonomous
 missions that are defined using mission planning software or
 pre-recorded by the driver during a manual run.
 
-Rover runs on the
-`Pixhawk <https://store.3dr.com/products/3dr-pixhawk>`__ and a
-number of other :ref:`supported autopilot boards <common-autopilots>`.
+Rover runs on the :ref:`Pixhawk <common-pixhawk-overview>` and a number of other :ref:`supported autopilot boards <common-autopilots>`.
 
 This is the platform that won the `2013 and 2014 Sparkfun Autonomous Vehicle Competition <https://avc.sparkfun.com/>`__! That said, Rover is
 far more than just a toy - it is already being used in numerous
