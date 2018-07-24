@@ -1,8 +1,8 @@
 .. _common-openpilot-revo-mini:
 
-====================
+=================================
 OpenPilot Revolution and RevoMini
-====================
+=================================
 
 .. image:: ../../../images/openpilot-revo-mini.jpeg
     :target: ../_images/openpilot-revo-mini.jpeg

@@ -4,11 +4,11 @@
 Omnibus F4 Pro
 ==================
 
-.. image:: ../../../images/omnibusf4pro.png
+.. figure:: ../../../images/omnibusf4pro.png
     :target: ../_images/omnibusf4pro.png
     :width: 450px
 
-*above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
+    above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
 
 .. note::
 
@@ -81,15 +81,17 @@ pressed while connecting your board to your PC via USB:
 Install dfu-util
 -----------------
 * Linux (Ubuntu)
-::
+
+  ::
     
     sudo apt-get install dfu-util
     
 * OS X
-::
+
+  ::
     
     brew install dfu-util
-    
+
 * Windows
 
   Download the `dfu-util <http://dfu-util.sourceforge.net/releases/dfu-util-0.8-binaries/win32-mingw32/dfu-util-static.exe>`__ to your local system, e.g., under `D:\dfu-util`.

@@ -95,65 +95,51 @@ Frame and Motor Assembly
    they exit the motor bottom so that the motor can sit flat.
 
    -  Have the leads exit towards the center of the copter.
-   -  Motor bottom screws are off set and it can only be installed 2
-      ways, toward the center is correct.
-   -  The motor screws are short and it is tricky to start the first
-      screw on the motor bottom.
+   -  Motor bottom screws are off set and it can only be installed 2 ways, toward the center is correct.
+   -  The motor screws are short and it is tricky to start the first screw on the motor bottom.
    -  Ensure that the motor leads are not pushing the motor up.
-   -  Use blue Locktite on each screw and install all 4 screws for a
-      motor loosely and then tighten them.
+   -  Use blue Locktite on each screw and install all 4 screws for a motor loosely and then tighten them.
 
--  Thread the motor leads down through the first 2 large frame member
-   holes.
+-  Thread the motor leads down through the first 2 large frame member holes.
 
    -  Or you can run them around the frame member if you prefer.
 
-.. image:: ../images/QuadHookUp800B.jpg
-    :target: ../_images/QuadHookUp800B.jpg
+      .. image:: ../images/QuadHookUp800B.jpg
+          :target: ../_images/QuadHookUp800B.jpg
 
--  Be careful to wire motors to the PixHawk using the ArdiPilot numbering convention below. The numbering convention in the DJI FlameWheel F450 instructions are different, and incorrect writing leads to attitude instability.
-.. image:: ../images/MOTORS_QuadX.jpg
-    :target: ../_images/MOTORS_QuadX.jpg
+-  Be careful to wire motors to the PixHawk using the ArduPilot numbering convention for QuadX below. 
+   The numbering convention in the DJI FlameWheel F450 instructions are different, and incorrect writing leads to attitude instability.
+
+   .. image:: ../images/MOTORS_QuadX_QuadPlus.jpg
+      :target: ../_images/MOTORS_QuadX_QuadPlus.jpg
+
 
 ESC Installation and Soldering the Power Distribution Board
 ===========================================================
 
 -  Install the ESCs with tie wraps.
 
-   -  Thread the Tie Wraps from front to back through the frame members
-      and between the motor bullet connector sockets.
-   -  Install the ESC power leads through the slot under the bottom of
-      the frame member.
+   -  Thread the Tie Wraps from front to back through the frame members and between the motor bullet connector sockets.
+   -  Install the ESC power leads through the slot under the bottom of the frame member.
    -  Then trim and solder them to the power distribution board.
-   -  This is a little harder than going around the outside of the frame
-      but is neater and provides a little more battery clearance.
+   -  This is a little harder than going around the outside of the frame but is neater and provides a little more battery clearance.
 
--  The above illustration shows a power distribution "Y" connector which
-   functions the same as the FlameWheel's built in power distribution
+-  The above illustration shows a power distribution "Y" connector which functions the same as the FlameWheel's built in power distribution
    board.
--  When you solder the ESC and Battery power leads to the power
-   distribution board.
+-  When you solder the ESC and Battery power leads to the power distribution board.
 
-   -  Flux and preheat both the pads and the wire in order to get a
-      properly tinned (wet) solder joint.
-   -  The board can soak up quite a bit of heat so set your soldering
-      iron sufficiently hot.
+   -  Flux and preheat both the pads and the wire in order to get a properly tinned (wet) solder joint.
+   -  The board can soak up quite a bit of heat so set your soldering iron sufficiently hot.
 
--  The DJI ARF FlameWheel kits have Opto ESCs which do not include a BEC
-   so you will need an external power supply.
+-  The DJI ARF FlameWheel kits have Opto ESCs which do not include a BEC so you will need an external power supply.
 
-   -  The APM, PX4 and Pixhawk are now available with a power supply you
-      can use, other wise you will need to buy a BEC.
-   -  Castle Creations makes an excellent and very reliable 10/5 amp BEC
-      for about $20.00.
-   -  Use a switching BEC in any case, they are more reliable and a lot
-      more efficient than linear ones.
+   -  The APM, PX4 and Pixhawk are now available with a power supply you can use, other wise you will need to buy a BEC.
+   -  Castle Creations makes an excellent and very reliable 10/5 amp BEC for about $20.00.
+   -  Use a switching BEC in any case, they are more reliable and a lot more efficient than linear ones.
 
--  You do not need to and in fact can't balance the DJI ESCs as shown
-   elsewhere in the Copter Wiki.
+-  You do not need to and in fact can't balance the DJI ESCs as shown elsewhere in the Copter Wiki.
 
-   -  DJI ESCs are digital, optically isolated, are completely
-      pre-balanced at the factory and work fine out of the box.
+   -  DJI ESCs are digital, optically isolated, are completely pre-balanced at the factory and work fine out of the box.
 
 .. image:: ../images/FlameWheel330Oring800.jpg
     :target: ../_images/FlameWheel330Oring800.jpg

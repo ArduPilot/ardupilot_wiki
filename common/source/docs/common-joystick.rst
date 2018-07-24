@@ -1,4 +1,4 @@
-.. _common-joystick
+.. _common-joystick:
 
 ================
 Joystick/Gamepad
