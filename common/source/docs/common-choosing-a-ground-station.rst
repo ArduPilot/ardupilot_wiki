@@ -71,17 +71,17 @@ APM Planner 2.0
 The best autopilot for use on MAC and Linux platforms. It has a smaller
 user base and a reduced feature set when compared with Mission Planner.
 
--  **Platform**: Windows, Mac OS X, Linux
--  **Licence**: `Open source <https://github.com/ArduPilot/apm_planner/blob/master/license.txt>`__
+- **Platform**: Windows, Mac OS X, Linux
+- **Licence**: `Open source <https://github.com/ArduPilot/apm_planner/blob/master/license.txt>`__
    (GPLv3)
 
-.. image:: ../../../images/planner2_choose_agcs.jpg
+   .. image:: ../../../images/planner2_choose_agcs.jpg
     :target: ../_images/planner2_choose_agcs.jpg
 
--  :ref:`Wiki <planner2:home>`
--  `Support Forum <http://ardupilot.com/forum/viewforum.php?f=82>`__
--  `Issues List <https://github.com/ArduPilot/apm_planner/issues>`__
--  `Source Code <https://github.com/ArduPilot/apm_planner>`__
+- :ref:`Wiki <planner2:home>`
+- `Support Forum <http://ardupilot.com/forum/viewforum.php?f=82>`__
+- `Issues List <https://github.com/ArduPilot/apm_planner/issues>`__
+- `Source Code <https://github.com/ArduPilot/apm_planner>`__
 
 MAVProxy
 --------
