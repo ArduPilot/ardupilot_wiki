@@ -351,28 +351,16 @@ Professional Grade Power System for Medium Quadcopters (16" Propellers)
 -  This is a very superior ($120.00) `KDE 4014XF-380KV Motor <https://www.kdedirect.com/products/kde4014xf-380>`__ with 3 large
    replaceable ABEC bearings rated at about 200 hours.
 
-   -  This motor is capable of using 13" to 18" propellers and operating
-      very efficiently with a wide range of batteries from 3 cell to 6
-      cell.
-   -  This KDE Motor has a phenomenal range of operation and can be used
-      on a 7 pound to a 20 pound Quadcopter.
-   -  Every component and manufacturing technique was clearly optimized
-      to produce the best possible motor without compromise.
-   -  This motor has a finned heat-sink case and a self ventilated
-      design with high temperature encapsulated components.
-   -  In fact it is designed to run, if necessary, continuously at
-      temperatures that would instantly destroy most other motors.
-   -  It is reasonable to expect that various configurations could
-      provide well over an hour of useful operating time with cameras.
-   -  It is feasible to produce a QuadCopter that will approach the
-      performance of the $15,000.00 Steadidrone at a fraction of the
-      cost.
-   -  A similar practical lifting capability and nearly 40 minute useful
-      flight times should be achievable even with 18" Propellers.
-   -  And given the extreme over design and ruggedness of the motors,
-      similar reliability and longevity could also be expected.
-   -  This is the motor I will be using in my next Quadcopter and I will
-      allow for up to 18" propellers.
+   -  This motor is capable of using 13" to 18" propellers and operating very efficiently with a wide range of batteries from 3 cell to 6 cell.
+   -  This KDE Motor has a phenomenal range of operation and can be used on a 7 pound to a 20 pound Quadcopter.
+   -  Every component and manufacturing technique was clearly optimized to produce the best possible motor without compromise.
+   -  This motor has a finned heat-sink case and a self ventilated design with high temperature encapsulated components.
+   -  In fact it is designed to run, if necessary, continuously at temperatures that would instantly destroy most other motors.
+   -  It is reasonable to expect that various configurations could provide well over an hour of useful operating time with cameras.
+   -  It is feasible to produce a QuadCopter that will approach the performance of the $15,000.00 Steadidrone at a fraction of the cost.
+   -  A similar practical lifting capability and nearly 40 minute useful flight times should be achievable even with 18" Propellers.
+   -  And given the extreme over design and ruggedness of the motors, similar reliability and longevity could also be expected.
+   -  This is the motor I will be using in my next Quadcopter and I will allow for up to 18" propellers.
 
 .. image:: ../images/KDE_4014XF-380KV_Motor_1.jpg
     :target: ../_images/KDE_4014XF-380KV_Motor_1.jpg
@@ -393,14 +381,10 @@ A Hyper Efficient Medium Small Professional Grade Motor For Long Endurance
    is ideal for long flight time applications.
 -  This is the only motor in this size that can get G/W efficiencies
    over 17 at 50 percent throttle.
--  If you want to build a 4-8 pound copter for maximum endurance this is
-   the motor to use with a 4 cell LiPo.
--  Because of it's extremely high efficiency in it's hover range it is
-   also a candidate for high efficiency lithium batteries.
--  Panasonic or LG's high power Lithium batteries have about twice the
-   energy density of the LiPos we normally use.
--  But maximum discharge is only 2C so low current draw is required, the
-   high efficiency of these motors can provide that.
+-  If you want to build a 4-8 pound copter for maximum endurance this is the motor to use with a 4 cell LiPo.
+-  Because of it's extremely high efficiency in it's hover range it is also a candidate for high efficiency lithium batteries.
+-  Panasonic or LG's high power Lithium batteries have about twice the energy density of the LiPos we normally use.
+-  But maximum discharge is only 2C so low current draw is required, the high efficiency of these motors can provide that.
 -  Carbon fiber 14" to 16" propellers will be required.
 
 Professional Grade Power System for Small Quadcopters (10" - 14" Propellers)
@@ -410,18 +394,12 @@ Professional Grade Power System for Small Quadcopters (10" - 14" Propellers)
    10 to 14 inch propellers and weigh 3 to 7 pounds.
 
    -  The `650 KV T-Motor MT3506 <http://www.rctigermotor.com/html/2013/Professional_0912/49.html>`__
-      at $65.00 is a high quality small but powerful pancake that can
-      turn props from 11" to 14" diameter.
-   -  With a 3 cell LiPo battery and T-Motor 14" prop at $73.00 a pair
-      it can lift up to 7 pounds and achieve very good endurance.
-   -  Add 4 T-Motor 18 Amp ESCs at $27.00 @ four each = $514.00 for top
-      quality motors, props and ESCs.
-   -  This small pancake motor can achieve good efficiency with 3S 11.1
-      volt or 4S 14.8 volt LiPo batteries and an appropriate sized prop.
-   -  The frame should be sized to accept up to 14" propellers and
-      various battery configurations.
-   -  It should be configurable to achieve 20+ minute flight times with
-      a GoPro size camera and brushless gimbal plus FPV or telemetry.
+      at $65.00 is a high quality small but powerful pancake that can turn props from 11" to 14" diameter.
+   -  With a 3 cell LiPo battery and T-Motor 14" prop at $73.00 a pair it can lift up to 7 pounds and achieve very good endurance.
+   -  Add 4 T-Motor 18 Amp ESCs at $27.00 @ four each = $514.00 for top quality motors, props and ESCs.
+   -  This small pancake motor can achieve good efficiency with 3S 11.1 volt or 4S 14.8 volt LiPo batteries and an appropriate sized prop.
+   -  The frame should be sized to accept up to 14" propellers and various battery configurations.
+   -  It should be configurable to achieve 20+ minute flight times with a GoPro size camera and brushless gimbal plus FPV or telemetry.
    -  This would still be a very capable and rugged Quadcopter capable
       of professional results and reliability.
 
@@ -461,18 +439,12 @@ Consumer Grade Power System for Medium Quadcopters (15" - 16" Propellers)
 .. image:: ../images/propellors_841.jpg
     :target: ../_images/propellors_841.jpg
 
--  The Sunnysky Combo will cost about $260.00 and work very efficiently
-   for copters up to about ten pounds.
--  The RCTimer Combo will cost about $150.00 and will provide extended
-   flight time for copters up to about 6 pounds.
--  These motors will both actually support up to 17" propellers and work
-   with 3 to 6 cell LiPo batteries.
--  You could still design a copter that would get 30 minute flight times
-   while carrying a GoPro and gimbal if desired.
--  The frame for either of these motors should be designed to support at
-   least 16" prop diameter and 17" would be better.
--  These will not last as long nor be as reliable as the previous
-   T-Motor configurations but will still deliver lots of solid use.
+-  The Sunnysky Combo will cost about $260.00 and work very efficiently for copters up to about ten pounds.
+-  The RCTimer Combo will cost about $150.00 and will provide extended flight time for copters up to about 6 pounds.
+-  These motors will both actually support up to 17" propellers and work with 3 to 6 cell LiPo batteries.
+-  You could still design a copter that would get 30 minute flight times while carrying a GoPro and gimbal if desired.
+-  The frame for either of these motors should be designed to support at least 16" prop diameter and 17" would be better.
+-  These will not last as long nor be as reliable as the previous T-Motor configurations but will still deliver lots of solid use.
 
 
 Consumer Grade Power System for Small Quadcopters (8" - 12" Propellers)
@@ -482,13 +454,11 @@ Consumer Grade Power System for Small Quadcopters (8" - 12" Propellers)
    or even semi-pro sub 5 pound Quadcopters.
 
    -  The `DJI 2212 Motors <http://www.ebay.com/itm/like/231128616387?lpid=82>`__
-      provided with their low cost ARF Flamewheel Quadcopters are
-      unusually durable and cost $24.00 each.
-   -  And DJI's specially hubbed 10" plastic props at $8.00 a pair are
-      well balanced, efficient and
-      rugged.\
-        .. image:: ../images/dji-motor01.jpg
-            :target: ../_images/dji-motor01.jpg
+      provided with their low cost ARF Flamewheel Quadcopters are unusually durable and cost $24.00 each.
+   -  And DJI's specially hubbed 10" plastic props at $8.00 a pair are well balanced, efficient and rugged.
+      
+      .. image:: ../images/dji-motor01.jpg
+          :target: ../_images/dji-motor01.jpg
       
       .. image:: ../images/DJI-PROP-1038-2.jpg
           :target: ../_images/DJI-PROP-1038-2.jpg|DJI-PROP-1038-2|
@@ -497,52 +467,40 @@ Consumer Grade Power System for Small Quadcopters (8" - 12" Propellers)
 -  And this easy to use $40.00 four in one ESC eliminates a power
    distribution board, reduces EMF and provides good reliability.
 
-.. image:: ../../../images/3281_dimg2.jpg
-    :target: ../_images/3281_dimg2.jpg
+   .. image:: ../../../images/3281_dimg2.jpg
+       :target: ../_images/3281_dimg2.jpg
 
 
 -  For $150.00 you can actually get quite a useful and durable power
    system for a smaller sub five pound quadcopter.
 
 
-The $40.00 SunnySky X4108S pancake motor is also capable of being used
-on Quadcopters lifting up to 10 pounds.
+The $40.00 SunnySky X4108S pancake motor is also capable of being used on Quadcopters lifting up to 10 pounds.
 
--  It is well regarded, efficient and durable and is suitable for use
-   with 14" or 15" propellers and 4 cell to 6 cell LiPo batteries.
+-  It is well regarded, efficient and durable and is suitable for use with 14" or 15" propellers and 4 cell to 6 cell LiPo batteries.
 
 .. image:: ../images/sunnysky_x4108S-11_motor.jpg
     :target: ../_images/sunnysky_x4108S-11_motor.jpg
 
 -  Clearly these are not the only alternatives.
 
-   -  If you want to use your copter for constant, professional use you
-      will want something like the first 3 configurations.
-   -  For occasional, hobby or non-critical use for flying, FPV and / or
-      personal video or photography the others should be OK.
-   -  The KDE and Pro T-Motors bearings will last longer and are more
-      weather proof and reliable than the less expensive alternatives.
-   -  And the more expensive Carbon Fiber props are more efficient,
-      better balanced and more durable than cheaper alternatives.
-   -  But properly installed on an appropriate copter the less expensive
-      alternatives listed can provide many reliable hours of flying.
-   -  I have favored slow speed pancake motors because efficiency and
-      flight time benefit from the larger propellers they can use.
+   -  If you want to use your copter for constant, professional use you will want something like the first 3 configurations.
+   -  For occasional, hobby or non-critical use for flying, FPV and / or personal video or photography the others should be OK.
+   -  The KDE and Pro T-Motors bearings will last longer and are more weather proof and reliable than the less expensive alternatives.
+   -  And the more expensive Carbon Fiber props are more efficient, better balanced and more durable than cheaper alternatives.
+   -  But properly installed on an appropriate copter the less expensive alternatives listed can provide many reliable hours of flying.
+   -  I have favored slow speed pancake motors because efficiency and flight time benefit from the larger propellers they can use.
 
--  The above illustrates just some of the possibilities in identifying
-   an appropriate power system for your project.
+-  The above illustrates just some of the possibilities in identifying an appropriate power system for your project.
 
 The MultiCopter Frame
 =====================
 
-There are many types of frames and it is most important to put together
-a frame that is appropriate for your use.
+There are many types of frames and it is most important to put together a frame that is appropriate for your use.
 
--  There are a lot of Multicopter frame types and many are available as
-   bare frame kits or Almost Ready To Fly or Ready To Fly copters.
+-  There are a lot of Multicopter frame types and many are available as bare frame kits or Almost Ready To Fly or Ready To Fly copters.
 
-   -  Most professional grade Multicopters are made from fiberglass and
-      carbon fiber cut tubing and plate.
+   -  Most professional grade Multicopters are made from fiberglass and carbon fiber cut tubing and plate.
 
       -  Carbon fiber is very strong, but is also brittle and can
          shatter on impact, it is also hard to machine and to glue to.

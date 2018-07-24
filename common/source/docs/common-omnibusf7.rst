@@ -4,11 +4,11 @@
 Omnibus F7
 ==========
 
-.. image:: ../../../images/omnibusf7.png
+.. figure:: ../../../images/omnibusf7.png
     :target: ../_images/omnibusf7.png
     :width: 450px
 
-*above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f7/omnibusf7v2.html>`__
+    Above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f7/omnibusf7v2.html>`__
 
 .. note::
 

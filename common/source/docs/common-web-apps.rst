@@ -4,10 +4,8 @@
 Web Apps
 ========
 
-There are several web applications which can be used with
-Copter/Plane/Rover to allowing sharing flight data, videos or even
-allowing web based control.  Below is the list of known applications (in
-alphabetical order).
+There are several web applications which can be used with Copter/Plane/Rover to allowing sharing flight data, videos or even allowing web based control.  
+Below is the list of known applications (in alphabetical order).
 
 .. image:: ../../../images/webapps_titleimage2.jpg
     :target: ../_images/webapps_titleimage2.jpg
@@ -23,5 +21,4 @@ analysis and cumulative flight time
 humanitarian organizations and disaster affected communities with
 greater situation awareness.
 
-If you know of more, or are the owner of one of the above and would like
-to correct the description please email drones-discuss@googlegroups.com.
+If you know of more, or are the owner of one of the above and would like to correct the description please email drones-discuss@googlegroups.com.

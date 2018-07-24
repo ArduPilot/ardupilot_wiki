@@ -8,7 +8,7 @@ Mateksys F405-Wing
     :target: ../_images/matekf405-wing.png
     :width: 450px
 
-*above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f405-wing>`__
+*above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f405-wing>`__*
 
 .. note::
 
@@ -57,7 +57,7 @@ Where to Buy
 - see this list of `Mateksys Distributors <http://www.mateksys.com/?page_id=1212>`__
 
 Connecting a GPS/Compass module
-=============================
+===============================
 
 This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected as shown below in order for autonomous modes to function.
 
@@ -65,4 +65,4 @@ This board does not include a GPS or compass so an :ref:`external GPS/compass <c
     :target: ../_images/matekf405-wing-with-gps.png
     :width: 450px
 
-A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compasss modules.
+A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules.
