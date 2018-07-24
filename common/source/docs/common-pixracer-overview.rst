@@ -434,12 +434,12 @@ See also
 .. toctree::
     :maxdepth: 1
 
-   PixRacer Serial Names <common-pixracer-serial-names>
+    PixRacer Serial Names <common-pixracer-serial-names>
 
 .. note::
 
    Some information and images in this page were copied from
-   `pixhawk.org <https://pixhawk.org/modules/pixracer>`__,
-   `px4.io <http://px4.io/docs/pixracer/>`__ and the
+   `pixhawk.org <https://pixhawk.org/>`__,
+   `docs.px4.io <https://docs.px4.io/en/flight_controller/pixracer.html>`__ and the
    `mRobotics shop <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__
    

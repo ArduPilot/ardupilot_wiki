@@ -4,11 +4,8 @@
 Battery Monitors (aka Power Modules)
 ====================================
 
-If possible it is best to power your flight controller 
-controller with a :ref:`power module <common-3dr-power-module>` to
-reduce the chances of a brownout.  The links below have information
-about these modules and other alternatives.
-
+If possible it is best to power your flight controller controller with a :ref:`power module <common-3dr-power-module>` to reduce the chances of a brownout.  
+The links below have information about these modules and other alternatives.
 
 .. toctree::
     :maxdepth: 1
@@ -30,11 +27,9 @@ about these modules and other alternatives.
     :target: ../_images/AirbotPower_PowerModule_Back.jpg
 
 [site wiki="copter"]
-The smart battery is for Solo only:
-
--  :ref:`Smart Battery <copter:smart-battery>`
-
-.. image:: ../../../images/SmartBattery_Solo.jpg
-    :target:  https://store.3dr.com/products/solo-smart-battery
+.. figure:: ../../../images/smart-battery-solo.jpg
+    :target: https://www.amazon.com/3DR-BT11A-Solo-Smart-Battery/dp/B00X97EXEU
+    
+    Solo (only) smart battery.
 [/site]
 

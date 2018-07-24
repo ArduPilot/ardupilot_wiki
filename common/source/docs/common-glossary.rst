@@ -222,8 +222,7 @@ control algorithm that allows for more accurate sensor-motion control
 loops and less overcontrol.
 See \ `this <https://en.wikipedia.org/wiki/PID_controller>`__ for more.
 
-**POI**: Point of Interest. Designates a spot that a UAV should keep a
-camera pointed towards.
+**POI**: Point of Interest. Designates a spot that a UAV should keep a camera pointed towards.
 
 **PPM**: `Pulse Position Modulation <https://en.wikipedia.org/wiki/Pulse-position_modulation>`__.
 The square-wave pulse train used to transmit multiple channels of
@@ -234,10 +233,9 @@ signal and only provide PWM signals for each channel.
 
 **PWM**: Pulse Width Modulation. The square-wave signals used in RC
 control to drive servos and speed controllers. There is one PWM signal
-for each channel. The width varies from 1000 to 2000 microseconds,
-depending on the RC manufacturer.
+for each channel. The width varies from 1000 to 2000 microseconds, depending on the RC manufacturer.
 
-**PX4FMU/PX4IO: First version of Pixhawk-series flight controllers (FMUv1). Discontinued.
+**PX4FMU/PX4IO**: First version of Pixhawk-series flight controllers (FMUv1). Discontinued.
 
 **RTL**: Return to Launch. Fly back to the "home" location where the aircraft took off.
 
