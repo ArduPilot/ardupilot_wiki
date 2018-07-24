@@ -4,8 +4,7 @@
 Introduction to Rover
 =====================
 
-This article describes the main components of a Rover system, including
-the ground vehicle, autopilot hardware, and the software/firmware.
+This article describes the main components of a Rover system, including the ground vehicle, autopilot hardware, and the software/firmware.
 
 .. image:: ../images/APMrover7.jpg
     :target: ../_images/APMrover7.jpg
@@ -118,17 +117,12 @@ A list of ready-to-use vehicles is on the :ref:`RTF wiki page <common-rtf>`.
 Ground Control Station
 ======================
 
-The list of supported ground stations is on the :ref:`Choosing a Ground Station <common-choosing-a-ground-station>` wiki page.
-
-The free and open source :ref:`Mission Planner <planner:home>` is recommended at least for loading the firmware and setting up the vehicle.
-It runs on a Windows PC and can also be used for planning missions.
-
-.. image:: ../../../images/groundstation-with-MP.jpg
-    :target: ../_images/groundstation-with-MP.jpg
+The list of supported ground stations is on the :ref:`Choosing a Ground Station <common-choosing-a-ground-station>` wiki page
+and we explain how to install a number of them in :ref:`Installing Ground Station (GCS) software <common-install-gcs>`.
 
 .. note::
 
-   This wiki exclusively uses Mission Planner as the reference GCS.
+   This wiki uses :ref:`Mission Planner <planner:home>` as the reference GCS for most instructions.
 
 .. toctree::
     :maxdepth: 1

@@ -7,10 +7,10 @@ First Time Setup
 .. image:: ../images/Quad_Color6.jpg
     :target: ../_images/Quad_Color6.jpg
 
-First-time setup of the autopilot includes downloading and installing
-the *Mission Planner* GCS, mounting the flight controller to the frame,
-connecting it to the receiver, power and motors, and then performing
-initial configuration and calibration.
+First-time setup of the autopilot includes downloading and installing a Ground Control Station (GCS), 
+mounting the flight controller to the frame,
+connecting it to the receiver, power and motors, 
+and then performing initial configuration and calibration.
 
 .. note::
 
