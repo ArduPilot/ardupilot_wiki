@@ -26,7 +26,7 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
 
        cd <ardupilot-path>
 
-#. Ensure you are looking at your master branch
+#. Starting from here we will assume that you want to rebase you master branch on ArduPilot master branch. This process is the same on all branch, just replace master by your branch name. Ensure you are looking at your master branch or the branch that you want to rebase.
 
    ::
 
@@ -39,7 +39,7 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
 
        git remote add upstream https://github.com/ArduPilot/ardupilot.git
 
-#. Fetch changes from the upstream respository (this simply downloads changes into a local cache, it will not overwrite or modify your changes in any way)
+#. Fetch changes from the upstream repository (this simply downloads changes into a local cache, it will not overwrite or modify your changes in any way)
 
    ::
 
@@ -56,6 +56,8 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
    ::
 
        git submodule update --recursive
+
+#. Check that the rebase was successfull. Using cmdline (``git log --oneline --decorate --all --graph`` , type q to exit) or a GUI tool like gitk, sourcetree, etc. Your commits should appear on top of ArduPilot master lastest commit, like show on previous picture.
 
 #. Now push the updated branch to your github repository
 
