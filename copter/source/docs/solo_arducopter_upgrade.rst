@@ -87,11 +87,10 @@ There are two ways to do the upgrade that have detailed instructions published h
 -  :ref:`Initial installation using the Solex app <solo_arducopter_solex_install>`. This is by far the most straight forward and highly recommended method.  Solex has the means to load and reset firmware and parameters, and has access to all the necessary files online directly.
 -  :ref:`Initial installation using Mission Planner and WinSCP <solo_arducopter_other_install>`. This method is a little more involved but is just as successful. You will need to download zip files, use Mission Planner to change settings, and use WinSCP to transfer files.  If you do not have the Solex app, this is the method you will need to follow.
 
-.. _solo_arducopter_first_flight:
 
-|
-|
-|
+
+
+.. _solo_arducopter_first_flight:
 
 FIRST FLIGHT
 ------------
@@ -224,3 +223,14 @@ Value   Meaning
 0       Disabled / No dataflash logging while disarmed
 1       Enabled / Dataflash logging while disarmed and armed.
 =====   =======
+
+
+Further Information
+-------------------
+
+.. toctree::
+    :maxdepth: 1
+
+    solo_arducopter_other_install
+    solo_arducopter_solex_install
+    solo_battery_calibration
