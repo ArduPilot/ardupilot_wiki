@@ -25,7 +25,11 @@ Other controls
 
 These additional mavlink messages are supported in Guided mode.  These are listed mostly for developers of ground stations or :ref:`companion computers <common-companion-computers>` applications:
 
--  `SET_ATTITUDE_TARGET <http://mavlink.org/messages/common#SET_ATTITUDE_TARGET>`__
--  `SET_POSITION_TARGET_LOCAL_NED <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__
--  `SET_POSITION_TARGET_GLOBAL_INT <http://mavlink.org/messages/common#SET_POSITION_TARGET_GLOBAL_INT>`__
--  MAV_CMD_NAV_SET_YAW_SPEED comands within a `COMMAND_LONG <http://mavlink.org/messages/common#COMMAND_LONG>`__
+-  `SET_ATTITUDE_TARGET <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__
+-  `SET_POSITION_TARGET_LOCAL_NED <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__
+-  `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__
+-  ``MAV_CMD_NAV_SET_YAW_SPEED`` commands within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__
+
+
+
+
