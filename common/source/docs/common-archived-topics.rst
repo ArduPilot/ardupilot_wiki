@@ -12,6 +12,7 @@ value to users with old hardware.
 .. toctree::
     :maxdepth: 1
 
+    NAVIO+ Overview <common-navio-overview>
     APM 2.x <common-apm25-and-26-overview>
     Buzzer <nav-leds>
     PX4FMU <common-px4fmu-overview>
