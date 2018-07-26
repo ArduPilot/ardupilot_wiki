@@ -53,6 +53,7 @@ Detail topics
 
     Tarot Brushless Gimbal <common-tarot-gimbal>
     SToRM32 Gimbal Controller <common-storm32-gimbal>
+    SimpleBGC Gimbal <common-simplebgc-gimbal>
     Gimbal with Servos <common-camera-gimbal>
     Camera Shutter Configuration <common-camera-shutter-with-servo>
     Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>

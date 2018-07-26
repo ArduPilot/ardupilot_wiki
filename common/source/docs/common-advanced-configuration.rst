@@ -64,3 +64,4 @@ tuning options for the vehicle.
 [site wiki="plane,planner,rover"]
     Vibration Damping <common-vibration-damping>
 [/site]
+    Transmitter Based Tuning <common-transmitter-tuning>
