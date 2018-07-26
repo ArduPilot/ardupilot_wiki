@@ -44,26 +44,17 @@ Windows users have 3 options for setting up the build environment. All of the be
 - :ref:`Building for Bebop on Linux <building-for-bebop-on-linux>`
 - :ref:`Building for Qualcomm Snapdragon Flight Kit <building-for-qualcomm-snapdragon-flight-kit>`
 - :ref:`Building for Beaglebone Black <building-for-beaglebone-black-on-linux>`
+- :ref:`WIP: OpenSolo QuickStart <solo_opensolo_quickstart>`
 
 Mission Planner
 ---------------
 
 - :ref:`Building Mission Planner with Visual Studio <buildin-mission-planner>`
 
-Deprecated instructions
------------------------
 
-- :ref:`Building ArduPilot with Arduino for Windows <building-ardupilot-with-arduino-windows>`
-- :ref:`Editing & Building with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>`
-- :ref:`Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>`
-- :ref:`APM2.x on MacOS with Arduino <building-the-code-on-mac>`
-- :ref:`APM2.x on Linux with Make <building-the-code-onlinux>`
-- :ref:`Building for Flymaple on Linux <building-apm-for-flymaple>`
-- :ref:`Building for Pixhawk on Windows or Linux with QtCreator <building-px4-with-qtcreator>`
-- :ref:`Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>`
 
-Links to all build pages
-------------------------
+Links to current build pages
+----------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -83,3 +74,22 @@ Links to all build pages
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
     Building Mission Planner with Visual Studio <buildin-mission-planner>
     ArduPilot Pre-Built Binaries <pre-built-binaries>
+    WIP: OpenSolo QuickStart <solo-opensolo-quickstart>
+
+
+Deprecated Instructions
+-----------------------
+
+.. toctree::
+    :maxdepth: 1
+    
+    Deprecated: Building ArduPilot with Arduino for Windows <building-ardupilot-with-arduino-windows>
+    Deprecated: Editing & Building with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>
+    Deprecated: Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>
+    Deprecated: APM2.x on MacOS with Arduino <building-the-code-on-mac>
+    Deprecated: APM2.x on Linux with Make <building-the-code-onlinux>
+    Deprecated: Building for Flymaple on Linux <building-apm-for-flymaple>
+    Deprecated: Building for Pixhawk on Windows or Linux with QtCreator <building-px4-with-qtcreator>
+    Deprecated: Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>
+
+
