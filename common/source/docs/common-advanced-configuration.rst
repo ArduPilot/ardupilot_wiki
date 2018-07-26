@@ -58,7 +58,7 @@ tuning options for the vehicle.
     Tuning <common-tuning>
 [/site]
     UAVCAN Setup <common-uavcan-setup-advanced>
-[site wiki="copter,planner"]
+[site wiki="copter,plane,rover,planner"]
     UBlox GPS Configuration <common-ublox-gps>
 [/site]
 [site wiki="plane,planner,rover"]
