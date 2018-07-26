@@ -4,6 +4,8 @@
 PX4FLOW Optical Flow Camera Board Overview
 ==========================================
 
+[copywiki destination="copter"]
+
 This article describes how to setup the `PX4FLOW (Optical Flow) Sensor <https://northox.myshopify.com/collections/frontpage/products/px4flow>`__ which can be used in place of a GPS.
 
 ..  youtube:: LP8kl4hGfMw
