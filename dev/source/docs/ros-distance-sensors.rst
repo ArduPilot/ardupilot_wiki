@@ -7,7 +7,7 @@ ROS distance sensor usage
 Distance sensor message
 =======================
 
-ArduPilot support `distance sensor message <http://mavlink.org/messages/common#DISTANCE_SENSOR>`__ both as input and output.
+ArduPilot support `distance sensor message <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ both as input and output.
 The following chapters will explain you how to use distance sensor with ROS for :
 
 - Rangefinder : how to receive data from rangefinder plug in a FCU (e.g. pixhawk) and how to send data from ROS to FCU

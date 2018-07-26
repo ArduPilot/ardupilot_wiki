@@ -15,7 +15,7 @@ Messages the gimbal should support
 ==================================
 
 #. The gimbal should listen on the serial port for a
-   `HEARTBEAT <http://mavlink.org/messages/common#HEARTBEAT>`__ message
+   `HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ message
    from the vehicle. It can generally assume that the first heart beat
    it receives will be from the vehicle but to be certain you can check
    the "type" field to be sure it's something sensible (i.e. MAV_TYPE =
@@ -29,7 +29,7 @@ Messages the gimbal should support
    long as it's not zero nor the component id of the vehicle or any
    other device on the vehicle.
 #. The gimbal should send a
-   `HEARTBEAT <http://mavlink.org/messages/common#HEARTBEAT>`__ message
+   `HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ message
    out the serial port at approximately 1hz
 
    -  the system-id and component-id should be as mentioned above.
@@ -44,25 +44,25 @@ Messages the gimbal should support
 #. To support reading/writing parameter values from the ground station
    the gimbal should implement these message:
 
-   -  `PARAM_REQUEST_READ <http://mavlink.org/messages/common#PARAM_REQUEST_READ>`__
+   -  `PARAM_REQUEST_READ <https://mavlink.io/en/messages/common.html#PARAM_REQUEST_READ>`__
       - if the gimbal receives this message and "target_system" and
       "target_component" values match the gimbal's system-id and
       component-id, it should respond with a
-      `PARAM_VALUE <http://mavlink.org/messages/common#PARAM_VALUE>`__
+      `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__
       message which contains the value of the parameter specified by the
       "param_id" field (simply an enum, the gimbal can assign whatever
       enum it wishes to each of it's internal paramters)
-   -  `PARAM_REQUEST_LIST <http://mavlink.org/messages/common#PARAM_REQUEST_LIST>`__
+   -  `PARAM_REQUEST_LIST <https://mavlink.io/en/messages/common.html#PARAM_REQUEST_LIST>`__
       - respond to this message by sending a
-      `PARAM_VALUE <http://mavlink.org/messages/common#PARAM_VALUE>`__
+      `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__
       message for every parameter within the gimbal.
-   -  `PARAM_SET <http://mavlink.org/messages/common#PARAM_SET>`__ -
+   -  `PARAM_SET <https://mavlink.io/en/messages/common.html#PARAM_SET>`__ -
       respond to this by setting the internal variable to the value in
       the "param_value" field.
 
 #. Ardupilot will send angle requests to the gimbal via MAVLink which
    will arrive as
-   `COMMAND_LONG <http://mavlink.org/messages/common#COMMAND_LONG>`__
+   `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__
    messages with the "command" field set to MAV_CMD_DO_MOUNT_CONTROL
    (i.e 205).
 
@@ -74,7 +74,7 @@ Messages the gimbal should support
 
 #. If the gimbal needs extra data from the vehicle it can request it
    using the
-   `REQUEST_DATA_STREAM <http://mavlink.org/messages/common#REQUEST_DATA_STREAM>`__
+   `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__
    message.
 
    -  the target system and component id should be for the vehicle.
@@ -82,11 +82,11 @@ Messages the gimbal should support
       Some useful values are:
 
       -  MAV_DATA_STREAM_POSITION will cause the vehicle to send
-         `GLOBAL_POSITION_INT <http://mavlink.org/messages/common#GLOBAL_POSITION_INT>`__
+         `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__
          messages which includes lat, lon, alt, velocity (3d) and
          heading)
       -  MAV_DATA_STREAM_EXTRA1 will send the
-         `MSG_ATTITUDE <http://mavlink.org/messages/common#ATTITUDE>`__
+         `MSG_ATTITUDE <https://mavlink.io/en/messages/common.html#ATTITUDE>`__
          which includes euler angles for roll, pitch, yaw
 
 Testing
