@@ -42,7 +42,6 @@ Full Table of Contents
    docs/common-loading-firmware-onto-pixhawk
    docs/common-connect-mission-planner-autopilot
    docs/common-mission-planning
-   docs/common-mission-analysis
    docs/mission-planner-features
    docs/common-appendix
    docs/common-table-of-contents

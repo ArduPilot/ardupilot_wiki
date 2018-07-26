@@ -23,9 +23,7 @@ the air.
    rotation and prop orientation.
 -  :ref:`Tuning <common-tuning>`- Verify performance and behavior,
    adjusting parameters to suit
--  :ref:`Mission planning <common-mission-planning>` and
-   :ref:`analysis <common-mission-analysis>` - Programming missions,
-   logging and analyzing telemetry data, ground-control set up.
+-  :ref:`Mission planning <common-mission-planning>` - Programming missions.
 -  :ref:`Flying <starting-up-and-calibrating-arduplane>`- Safe-skillful
    piloting and rules of the air, weather and location considerations,
    pre-flight checks, emergency procedures, operation examples

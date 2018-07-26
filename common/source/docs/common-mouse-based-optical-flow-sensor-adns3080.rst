@@ -4,12 +4,14 @@
 Mouse-based Optical Flow Sensor (ADNS3080)
 ==========================================
 
-Copter-3.2.1 on APM2.x boards included limited support for the mouse sensor based `Optical Flow sensor <http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2047675.m570.l1313.TR0.TRC0.H0.Xoptical+flow.TRS0&_nkw=optical+flow&_sacat=0>`__
-using the OF_Loiter flight mode.
+[copywiki destination="copter,plane"]
+
+Copter-3.2.1 on APM2.x boards included limited support for the mouse sensor based `Optical Flow sensor <http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2047675.m570.l1313.TR0.TRC0.H0.Xoptical+flow.TRS0&_nkw=optical+flow&_sacat=0>`__ using the OF_Loiter flight mode.
 
 .. warning::
 
-   This sensor is not supported in recent versions of the firmware.  Instead please use the :ref:`PX4Flow sensor <common-px4flow-overview>`.
+   This sensor is not supported in recent versions of the firmware.  
+   Instead please use the :ref:`PX4Flow sensor <common-px4flow-overview>`.
 
 .. image:: ../../../images/BR-0016-01-2T.jpg
     :target: ../_images/BR-0016-01-2T.jpg
@@ -20,16 +22,13 @@ using the OF_Loiter flight mode.
 Connecting the sensor to the APM2.5
 ===================================
 
--  Connect VCC, GND, MISO, MOSI, SCLK and NCS pins as shown in the
-   diagram below
+-  Connect VCC, GND, MISO, MOSI, SCLK and NCS pins as shown in the diagram below
 -  Default mounting is lens pointing down, pins forward
 
 .. image:: ../../../images/Optical_Flow_Sensor_APM25.jpg
     :target: ../_images/Optical_Flow_Sensor_APM25.jpg
 
--  Cut and resolder the MISOLVL jumper on the back of the board to
-   switch the MISO pin to work on 3.3v. This is critical to ensure the
-   optical flow sensor does not interfere with the MPU6000.
+-  Cut and resolder the MISOLVL jumper on the back of the board to switch the MISO pin to work on 3.3v. This is critical to ensure the optical flow sensor does not interfere with the MPU6000.
 
 .. image:: ../../../images/Optical_Flow_Sensor_APM25_SolderBridge.jpg
     :target: ../_images/Optical_Flow_Sensor_APM25_SolderBridge.jpg
@@ -38,8 +37,7 @@ Connecting the sensor to the APM2
 =================================
 
 -  Power, GND, NCS pins should be attached to A3
--  MISO, MOSI and SCLK pins should be directly soldered to the pins
-   shown
+-  MISO, MOSI and SCLK pins should be directly soldered to the pins shown
 -  Default mounting is lens pointing down, pins forward
 
 .. image:: ../../../images/Optical_Flow_Sensor_APM2.jpg
@@ -60,18 +58,14 @@ Testing the sensor
 -  Upload the test sketch to the APM:
 
    -  If using an APM2, you can `download the hex file from here <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/AP_OpticalFlow_test.hex>`__
-      and then upload to your APM2 using the Mission Planner's **INITIAL
-      SETUP \| Install Firmware \| Load custom firmware** link
+      and then upload to your APM2 using the Mission Planner's **INITIAL SETUP \| Install Firmware \| Load custom firmware** link
    -  If using an APM1 you must open the
-      `AP_OpticalFlow_test.pde <https://raw.githubusercontent.com/diydrones/ardupilot/860f4b260552297253a28b83a7f108302b84b97e/libraries/AP_OpticalFlow/examples/AP_OpticalFlow_test/AP_OpticalFlow_test.pde>`__\ sketch
-      in the arduino IDE, compile and upload to your APM1
+      `AP_OpticalFlow_test.pde <https://raw.githubusercontent.com/diydrones/ardupilot/860f4b260552297253a28b83a7f108302b84b97e/libraries/AP_OpticalFlow/examples/AP_OpticalFlow_test/AP_OpticalFlow_test.pde>`__\ sketch in the arduino IDE, compile and upload to your APM1
 
--  Connect to your APM with the Serial Monitor or AP Mission Planner
-   Terminal
+-  Connect to your APM with the Serial Monitor or AP Mission Planner Terminal
 -  type 'c' to ensure that the sensor is responding to the APM
 -  type 'm' and move the camera back and forth and check that x,y values
-   change. If they do not change, modify the focus of the lens by
-   turning it left or right.
+   change. If they do not change, modify the focus of the lens by turning it left or right.
 
 .. image:: ../../../images/OpticalFlow_test.jpg
     :target: ../_images/OpticalFlow_test.jpg
@@ -79,9 +73,7 @@ Testing the sensor
 Capturing an image from the sensor
 ==================================
 
-In order to check that you have the lens properly focused you can
-capture an image directly from the sensor and display it using a simpler
-viewer written in Python.
+In order to check that you have the lens properly focused you can capture an image directly from the sensor and display it using a simpler viewer written in Python.
 
 .. image:: ../../../images/ADNS3080ImageGrabber.jpg
     :target: ../_images/ADNS3080ImageGrabber.jpg

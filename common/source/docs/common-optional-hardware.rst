@@ -19,7 +19,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 .. toctree::
     :maxdepth: 1
 
+[site wiki="copter,plane"]
     ADS-B Receiver <common-ads-b-receiver>
+[/site]
 [site wiki="plane"]
     Airspeed Sensor <airspeed>
 [/site]
