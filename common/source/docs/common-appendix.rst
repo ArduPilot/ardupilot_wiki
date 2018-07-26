@@ -42,7 +42,6 @@ the wiki.
 
 [site wiki="plane"]
     Common Airframe Builds <common-common-airframe-builds>
-    Troubleshooting Guide (Plane) <apmplane-troubleshooting-guide>
     Plane News <project-news>
     common-training-centers
 [/site]
