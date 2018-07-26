@@ -57,11 +57,15 @@ based upon your set-up.
     LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
+[site wiki="copter"]
     Lightware SF40c (360 degree) <common-lightware-sf40c-objectavoidance>
+[/site]
     Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
     TeraRanger One Rangefinder <common-teraranger-one-rangefinder>
+[site wiki="copter"]
     TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
+[/site]
     Leddar One Lidar <common-leddar-one-lidar>
     LIDAR-Lite <common-rangefinder-lidarlite>
     RPLidar A2 360 degree laser scanner <common-rplidar-a2>
