@@ -6,7 +6,7 @@ Auto Mode
 
 In Auto mode the vehicle will follow a pre-programmed mission stored in the autopilot which is made up of navigation commands (i.e. waypoints) and “do” commands (i.e. commands that do not affect the location of the vehicle including triggering a camera shutter).
 
-This mode requires the vehicle have :ref:`GPS <common-positioning-landing-page>` and/or :ref:`visual odometry <common-zed>` or :ref:`wheel encoders <common-wheel-encoder>`.
+This mode requires the vehicle have :ref:`GPS <common-positioning-landing-page>` and/or :ref:`visual odometry <common-zed>` or :ref:`wheel encoders <wheel-encoder>`.
 
 Creating a Mission
 ------------------

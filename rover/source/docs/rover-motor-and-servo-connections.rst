@@ -36,7 +36,7 @@ For this setup these parameters values will need to be set.  More details can be
 Wheel Encoders
 --------------
 
-Up to two wheel encoders can be connected to the flight controller as described on the :ref:`Optional Hardware / Wheel Encoders <common-wheel-encoder>` page.
+Up to two wheel encoders can be connected to the flight controller as described on the :ref:`Optional Hardware / Wheel Encoders <wheel-encoder>` page.
 
 .. image:: ../../../images/wheel-encoder-pixhawk.png
     :target: ../_images/wheel-encoder-pixhawk.png
