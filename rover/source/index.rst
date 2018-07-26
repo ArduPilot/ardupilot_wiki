@@ -42,6 +42,7 @@ Table of Contents
     Reference Frames <docs/reference-frames>
     Autopilot Hardware Options <docs/common-autopilots>
     Use-Cases and Applications <docs/common-use-cases-and-applications>
+    Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>

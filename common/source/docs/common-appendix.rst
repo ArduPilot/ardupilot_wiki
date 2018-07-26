@@ -40,8 +40,11 @@ the wiki.
     common-training-centers
 [/site]
 
-[site wiki="plane"]
+[site wiki="rover,plane"]
     Common Airframe Builds <common-common-airframe-builds>
+[/site]
+
+[site wiki="plane"]
     Plane News <project-news>
     common-training-centers
 [/site]
@@ -53,6 +56,7 @@ the wiki.
 [site wiki="copter,plane,rover,dev"]
     Archived Topics <common-archived-topics>
 [/site]
+
 
 
 [copywiki destination="copter,plane,rover,planner,planner2,dev,antennatracker"]
