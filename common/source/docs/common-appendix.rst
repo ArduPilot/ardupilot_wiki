@@ -53,6 +53,10 @@ the wiki.
     project-news
 [/site]
 
+[site wiki="dev"]
+    trademark
+[/site]
+
 [site wiki="copter,plane,rover,dev"]
     Archived Topics <common-archived-topics>
 [/site]

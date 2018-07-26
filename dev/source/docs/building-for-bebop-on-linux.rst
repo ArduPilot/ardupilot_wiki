@@ -374,7 +374,7 @@ flash an alternative version in order to be able to control your Bebop
 with it (information about that is coming soon...).
 
 In order to pilot the Bebop manually, Mission Planner GCS users can use
-a :ref:`gamepad as described here <copter:flying-with-a-joystickgamepad-instead-of-rc-controller>`. 
+a :ref:`gamepad as described here <copter:common-joystick>`. 
 Alternatively use the RCOutput UDP interface on port 777 on the Bebop,
 with a Linux PC (or board type Raspberry Pi) and a USB gamepad.
 
