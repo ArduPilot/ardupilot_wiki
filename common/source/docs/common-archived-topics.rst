@@ -14,7 +14,6 @@ value to users with old hardware.
 
     NAVIO+ Overview <common-navio-overview>
     APM 2.x <common-apm25-and-26-overview>
-    Buzzer <nav-leds>
     PX4FMU <common-px4fmu-overview>
     Open Camera Control Board <common-camera-control-board>
     VR Gimbal Controller (3-Axis Open Source) <common-vrgimbal>

@@ -1,8 +1,8 @@
 .. _guide-vtail-plane:
 
-============
+=============
 V-Tail Planes
-============
+=============
 
 A common alternative to a traditional elevator and rudder is a V-Tail, or 
 an ATail (an upside down V-Tail).
