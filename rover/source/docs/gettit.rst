@@ -130,3 +130,4 @@ and we explain how to install a number of them in :ref:`Installing Ground Statio
     Video Demos <rover-video-demonstrations>
     Choosing a Ground Station <common-choosing-a-ground-station>
     Choosing an Autopilot Board <common-choosing-a-flight-controller>
+    All Supported Vehicle Types <common-all-vehicle-types>
