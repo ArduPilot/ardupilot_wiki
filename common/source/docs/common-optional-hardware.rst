@@ -55,6 +55,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="copter"]
     Object Avoidance with Lightware SF40C <common-lightware-sf40c-objectavoidance>
     Object Avoidance with TeraRanger Tower <common-teraranger-tower-objectavoidance>
+    common-rangefinder-objectavoidance
 [/site]
     On-Screen Display (OSD) <common-osd-boards-on-screen-display>
 [site wiki="copter,plane"]
@@ -83,7 +84,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Telemetry Radio <common-telemetry-landingpage>
     UAVCAN ESCs <common-uavcan-escs>
 [site wiki="rover"]
-    Wheel Encoders <common-wheel-encoder>
+    Wheel Encoders <wheel-encoder>
 [/site]
 [site wiki="copter,rover"]
     ZED for Non-GPS navigation <common-zed>

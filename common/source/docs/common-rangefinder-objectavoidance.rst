@@ -4,6 +4,8 @@
 RangeFinders (Sonar/Lidar) for Object Avoidance
 ===============================================
 
+[copywiki destination="copter"]
+
 :ref:`RangeFinders (Sonar or Lidar) <common-rangefinder-landingpage>` can be used for Object Avoidance in Copter-3.5 (and higher) in Loiter and AltHold modes.
 
 ..  youtube:: y2Kk6nIily0
