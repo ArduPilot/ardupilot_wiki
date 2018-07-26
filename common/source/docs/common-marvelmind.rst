@@ -4,7 +4,9 @@
 Marvelmind for Non-GPS navigation
 =================================
 
-This article explains how a `MarvelMind <https://marvelmind.com/>`__ system can be as a short-range substitude for a GPS allowing position control modes like Auto and Guided.
+[copywiki destination="copter,rover"]
+
+This article explains how a `MarvelMind <https://marvelmind.com/>`__ system can be as a short-range substitute for a GPS allowing position control modes like Auto and Guided.
 See the `user manual <https://marvelmind.com/pics/marvelmind_navigation_system_manual.pdf>`__ for more details on the system.
 
 .. note::
