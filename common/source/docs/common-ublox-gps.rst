@@ -4,7 +4,8 @@
 UBlox GPS Configuration
 =======================
 
-This article explains how to connect to u-center to change the configuration of a :ref:`3DR uBlox <common-installing-3dr-ublox-gps-compass-module>` module. This is not expected to be necessary for normal users.
+This article explains how to connect to u-center to change the configuration of a :ref:`3DR uBlox <common-installing-3dr-ublox-gps-compass-module>` module. 
+This is not expected to be necessary for normal users.
 
 .. image:: ../../../images/3DR-ublox.jpg
     :target: ../_images/3DR-ublox.jpg
@@ -16,11 +17,9 @@ Mission planner and pixhawk can pass through the communication
 between u-center and the GPS by doing the following:
 
 -  Connect Pixhawk to your PC and connect with the Mission Planner
--  On the Flight Data screen press Ctrl-F and then select "MAVSerial
-   pass"
+-  On the Flight Data screen press Ctrl-F and then select "MAVSerial pass"
 -  Open u-center and select Receiver, TCP Client and in the Network
-   Connection window set Address to "localhost" and Port to "500" and
-   press OK.
+   Connection window set Address to "localhost" and Port to "500" and press OK.
 -  See instructions below as to how to upload config with u-center.
 
 .. image:: ../../../images/GPS_PassThrough_MP.jpg
