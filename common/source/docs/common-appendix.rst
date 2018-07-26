@@ -25,6 +25,10 @@ the wiki.
     Developer tools (downloads) <common-downloads_developer_tools>
     Firmware (downloads) <common-downloads_firmware>
 
+[site wiki="copter,plane,rover,planner,planner2,antennatracker"]
+    Contact Us <common-contact-us>
+[/site]
+
 [site wiki="planner"]
     Mission Planner – Proposed Table Of Contents (TOC) <mission-planner-toc-planning>
 [/site]
