@@ -68,8 +68,7 @@ Controls how GPS is used.
 -  1 : use 2D velocity & 2D position (GPS velocity does not contribute
    to altitude estimate)
 -  2: use 2D position
--  3 : no GPS (will use :ref:`optical flow <common-px4flow-overview>` only
-   if available)
+-  3 : no GPS (will use :ref:`optical flow <copter:common-px4flow-overview>` only if available)
 
 :ref:`EK2_YAW_M_NSE <EK2_YAW_M_NSE>`: Controls the weighting between GPS and Compass when calculating the heading.  Default is "0.5", lower values will cause the compass to be trusted more (i.e. higher weighting to the compass)
    

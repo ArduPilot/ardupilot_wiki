@@ -1,5 +1,5 @@
 .. _porting:
-    
+
 ========================================
 Porting to a new flight controller board
 ========================================
@@ -62,11 +62,12 @@ Step 5 - upload the minimal firmware onto the board
 If using Mission Planner to load the firmware to the board:
 
 - connect the board to the windows PC with a USB cable
-- go to MP’s Initial Setup >> Install Firmware screen and click on the “Load custom firmware" and select the .apj file and press OK.  If the "Load custom firmware" link it not available go to the Config/Tuning >> Planner page and set the "Layout" to "Advanced"
-- if the MP fails to load the firmware to the board it is possible the “APJ_BOARD_ID” from your hwdef.dat file does not match the .apj firmware file.  The board-id in the bootloader is listed in the bootloader's `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.txt>`__ file.  A temporary work around is to change the APJ_BOARD_ID in the hwdef.dat file to match the bootloader's.  Longer term a bootloader specific to the new board needs to be created so that ground stations can differentiate this board from others and automatically load the correct firmware. 
-.. note::
+- go to MP’s Initial Setup >> Install Firmware screen and click on the **Load custom firmware** and select the .apj file and press OK.  If the "Load custom firmware" link it not available go to the Config/Tuning >> Planner page and set the "Layout" to "Advanced"
+- if the MP fails to load the firmware to the board it is possible the “APJ_BOARD_ID” from your hwdef.dat file does not match the .apj firmware file.  The board-id in the bootloader is listed in the bootloader's `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.txt>`__ file.  A temporary work around is to change the APJ_BOARD_ID in the hwdef.dat file to match the bootloader's.  Longer term a bootloader specific to the new board needs to be created so that ground stations can differentiate this board from others and automatically load the correct firmware.
 
-    Any time you make a change to the board definition file, you must clean up the build, and reconfigure WAF before re-compiling:
+  .. note::
+
+     Any time you make a change to the board definition file, you must clean up the build, and reconfigure WAF before re-compiling:
 - ``./waf distclean``
 - ``./waf config --board new-board``
 

@@ -25,7 +25,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Battery Monitors (aka Power Modules) <common-powermodule-landingpage>
     Barometer (external) <common-baro-external>
-[site wiki="copter,plane"]
+[site wiki="copter,plane,rover"]
     Buzzer <common-buzzer>
 [/site]
     Cameras & Gimbals <common-cameras-and-gimbals>
