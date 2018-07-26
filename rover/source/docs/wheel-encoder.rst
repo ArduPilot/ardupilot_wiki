@@ -1,4 +1,4 @@
-.. _common-wheel-encoder:
+.. _wheel-encoder:
 
 ==============
 Wheel Encoders
