@@ -53,4 +53,4 @@ The gripper position can be controlled during a mission in AUTO mode using the :
 Controlling Gripper from the ground station
 ===========================================
 
-The gripper can be opened or closed in real-time from the ground station if the ground station sends a :ref:`COMMAND_LONG <http://mavlink.org/messages/common#COMMAND_LONG>` with the command field set to DO_GRIPPER (i.e. 211) but there are no ground stations (as far as we know) that support doing this.
+The gripper can be opened or closed in real-time from the ground station if the ground station sends a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command field set to DO_GRIPPER (i.e. 211) but there are no ground stations (as far as we know) that support doing this.
