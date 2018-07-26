@@ -320,3 +320,13 @@ Using a Standard RC Radio Receiver with 3DR PPM Encoder
    when you are calibrating your transmitter you will quite likely need
    to hook up your flight battery to the PX4IO because the USB port
    alone can't supply enough power.
+
+
+
+SRXL R/C Receivers
+==================
+
+.. toctree::
+    :maxdepth: 1
+
+    common-srxl-receivers
