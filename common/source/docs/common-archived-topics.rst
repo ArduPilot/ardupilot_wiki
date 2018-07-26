@@ -30,6 +30,7 @@ value to users with old hardware.
     Traditional Helicopter Simulator – TradHeliHIL <tradhelihil>
     Archived: Installing the PX4FMU on a QuadCopter <px4fmu-only-wiring>
     GPS Failsafe <archived-gps-failsafe>
+    traditional-helicopter-archived-tuning
 [/site]
 
 [site wiki="dev"]
