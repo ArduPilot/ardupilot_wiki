@@ -26,6 +26,7 @@ components, including those required for the operation of the autopilot.
     Quadplanes <quadplane-support>
     Tailsitters <guide-tailsitter>
     Tilt-Rotors <guide-tilt-rotor>
+    Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
     Differential Spoilers <differential-spoilers>
     Flaperons <flaperons-on-plane>
     Automatic Flaps <automatic-flaps>
