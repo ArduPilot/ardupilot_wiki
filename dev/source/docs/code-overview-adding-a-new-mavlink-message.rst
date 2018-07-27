@@ -34,7 +34,7 @@ MAV_CMD_NAV_TRICK similar to the MAV_CMD_NAV_WAYPOINT definition
 
 Alternatively you may want to send down a new type of sensor data from
 the vehicle to the ground station.  Perhaps similar to the
-`SCALED_PRESSURE <https://mavlink.io/en/messages/common.html#SCALED_PRESSURE>`__
+`SCALED_PRESSURE <http://mavlink.org/messages/common#SCALED_PRESSURE>`__
 message.
 
 **Step #3:** Add the new message definition to the
