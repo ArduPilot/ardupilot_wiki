@@ -99,8 +99,8 @@ You should now be able to start the "Ubuntu" application from your Windows Start
    navigate to Ubuntu system path (C:\\Users\\username\\AppData\\Local) and change the folder attributes. So (where "username" is your user name):
    
    .. code-block:: python
-   
-       cd C:\Users\username\AppData\Local
-       attrib -s -h lxss
+
+       cd C:\Users\username\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState
+       attrib -s -h rootfs
        
    You can make a direct access to "lxss" folder on your desktop for a quick navigation.
