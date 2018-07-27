@@ -28,6 +28,11 @@ Please follow each of the steps described below.
 
 There is also a linked video below showing how to do the setup.
 
+.. warning::
+
+    The video hasn't been updated according to the text. Please read the written instructions in case of error.
+    For example the video speak about ``sim_vehicle.sh`` where it is ``sim_vehicle.py`` now.
+
 .. youtube:: pJGFkZmGV6o
     :width: 100%
 
