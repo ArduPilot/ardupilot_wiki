@@ -6,59 +6,233 @@ Autotest Framework
 
 .. image:: ../images/autotest.jpg
 
-ArduPilot has an automatic testing framework based on SITL. The autotest
-framework is what produces the web pages at
-http://autotest.ardupilot.org
+ArduPilot's AutoTest suite allows for the creation of repeatable tests
+which help prevent regressions in ArduPilot's behaviour.  It is based
+on ArduPilot's :ref:`SITL <using-sitl-for-ardupilot-testing>`
+architecture - i.e. a fully-software-based solution.
 
-You can also manually run the autotester from the command line. That is
-useful when you want to add features to the autotest or want to test
-some new flight code on your own machine with auto scripting.
+Using ArduPilot's AutoTest can:
 
-To use the autotester you need to first :ref:`get SITL running <setting-up-sitl-on-linux>`. After that you should run:
+   - make your development process more efficient by reducing time spent repeatedly running the same scenario in ``sim_vehicle.py``
+   - allow you to repeatedly replicate bad behaviour in ArduPilot, and possibly ship that test to a developer capable of fixing the issue ("test-driven-development")
+   - reduce the chances of a regression in ArduPilot's behaviour by locking in tests for that behaviour
 
-::
+Overview
+========
 
-    cd ardupilot
-    ./Tools/autotest/autotest.py --help
+The AutoTest suite is run on ArduPilot's autotest server on most
+commits to the master branch, but can be run locally to vet software
+changes.  Adding tests is straight-forward and encouraged to show how
+patches improve flight behaviour.
 
-that will show you the command line options for the autotester. If you
-get any python errors it probably means you are missing some required
-packages. Go and check on the SITL setup page and see if you are missing
-anything.
 
-Test actions
-------------
+Running AutoTest
+================
 
-The autotester supports a long list of possible test scripts. If you
-run:
+.. warning::
 
-::
+   Don't run autotest.py with no parameters - unless you know what you are doing or like cleaning up large messes.
 
-    ./Tools/autotest/autotest.py --list
+AutoTest requires a valid SITL environment to run.  Use the SITL instructions (:ref:`SITL <using-sitl-for-ardupilot-testing>`) to obtain a valid environment.  It is suggested the ArduPilot Vagrant virtual machine configuration files be used to obtain a working environement.
 
-you will see what test scripts you can run. You can then add those
-commands on the command line to run them. For example, to build the
-fixed wing code and then run a test flight do this:
+Invocation
+----------
 
-::
+.. note::
 
-    ./Tools/autotest/autotest.py build.ArduPlane fly.ArduPlane
+   running autotest with high-levels of ``--speedup`` can result in enough network traffic that MAVProxy can't keep up.  Error such as "Set RC override timeout" or the vehicle entering GCS failsafe are typical of these failures.  Re-running will often allow the tests to pass.  Reducing the ``--speedup`` factor is typically sufficient to avoid this problem.
 
-the results (and log files) will be put in the ../buildlogs directory.
 
-You can also ask it to display a map while it is flying, which can make
-watching autotest a bit less boring! Run it like this:
+Help is available:
 
 ::
 
-    ./Tools/autotest/autotest.py build.ArduPlane fly.ArduPlane --map
+    pbarker@bluebottle:~/rc/ardupilot(master)$ ./Tools/autotest/autotest.py --helpUsage: autotest
 
-you will actually see the map appear twice, once for when it loads the
-default parameters, and then for the real flight. Just close the first
-one.
+    Options:
+      -h, --help            show this help message and exit
+      --skip=SKIP           list of steps to skip (comma separated)
+      --list                list the available steps
+      --viewerip=VIEWERIP   IP address to send MAVLink and fg packets to
+      --map                 show map
+      --experimental        enable experimental tests
+      --timeout=TIMEOUT     maximum runtime in seconds
+      --frame=FRAME         specify frame type
+      --show-test-timings   show how long each test took to run
 
-Changing the test scripts
--------------------------
+      Build options:
+        --no-configure      do not configure before building
+        --waf-configure-args=WAF_CONFIGURE_ARGS
+                            extra arguments passed to waf in configure
+        -j J                build CPUs
+        --no-clean          do not clean before building
+        --debug             make built binaries debug binaries
 
-Each of the tests is in Tools/autotest. For the fixed wing tests look at
-Tools/autotest/arduplane.py.
+      Simulation options:
+        --speedup=SPEEDUP   speedup to run the simulations at
+        --valgrind          run ArduPilot binaries under valgrind
+        --gdb               run ArduPilot binaries under gdb
+        --gdbserver         run ArduPilot binaries under gdbserver
+        -B BREAKPOINT, --breakpoint=BREAKPOINT
+                            add a breakpoint at given location in debugger
+    pbarker@bluebottle:~/rc/ardupilot(master)$ 
+
+``autotest.py`` is invoked with a sequence of "steps" which will be executed in order:
+
+::
+
+    ./Tools/autotest/autotest.py build.ArduCopter fly.ArduCopter
+
+This command is valid in the root directory of an ArduPilot checkout.  It instructs AutoTest to build the ArduCopter SITL binary, start that binary, test it and then kill it.  The output (:ref:`sample <autotest-verbose>`) is extremely verbose, but a summary is given once all steps have been run.
+
+A list of available steps is available with ``--list``.
+
+.. note::
+
+   The ``--no-clean`` option can greatly reduce your development-cycle-time
+
+.. note::
+
+   When developing tests, consider omitting the "build" step - unless you are changing ArduPilot code.
+
+Complex Invocation
+..................
+
+::
+
+   ./Tools/autotest/autotest.py --no-clean build.ArduCopter fly.ArduCopter build.APmrover2 drive.APmrover2 drive.balancebot build.ArduPlane fly.ArduPlane fly.Quadplane build.AntennaTracker build.ArduSub dive.ArduSub build.Helicopter fly.CopterAVC build.AntennaTracker test.AntennaTracker
+
+At time of writing, these invoke all the vehicle tests.  Expect these to take about 40 minutes to run.
+
+Using with GDB
+..............
+
+AutoTest can run the ArduPilot binary under gdb:
+
+::
+
+   ./Tools/autotest/autotest.py --no-clean --gdb --debug build.ArduCopter fly.ArduCopter
+
+In an X Windowing System environment, an xterm window will contain the GDB terminal; stderr from the ArduPilot binary will also appear in this window.  Where X is not available but `GNU screen <https://www.gnu.org/software/screen/>`__ is, a detached screen will be created with the same content.
+
+Using with Valgrind
+...................
+
+AutoTest can run the ArduPilot binary under the Valgrind memcheck tool.  This is useful for finding reading of uninitialised memory and the like.
+
+.. warn::
+
+   ArduPilot initialises most of its dynamically-allocated memory to zero by overriding the ``new`` function.  Some versions of Valgrind do not understand this.  The supplied xenial32 Vagrant virtual machine contains a version of Valgrind which does not suffer from this issue.
+
+::
+
+   ./Tools/autotest/autotest.py --no-clean --valgrind --debug build.APMrover2 drive.APMrover2
+
+Special log files (e.g. ``arducopter-+-valgrind.log``) are created by autotest when run with this tool.  They should always be empty at the end of an autotest run.
+
+
+Extracting Results
+------------------
+
+After AutoTest has run, several log files are available.
+
+The log on ``autotest.py``'s stdout is obvious!
+
+DataFlash files are available in the "logs" directory:
+
+::
+
+   pbarker@bluebottle:~/rc/ardupilot(master)$ ls -lt logs
+   total 21356
+   -rw-r--r-- 1 pbarker pbarker  8474624 Jul 27 12:07 00000003.BIN
+   -rw-r--r-- 1 pbarker pbarker        3 Jul 27 12:06 LASTLOG.TXT
+   -rw-r--r-- 1 pbarker pbarker 13307904 Jul 27 12:06 00000002.BIN
+   -rw-r--r-- 1 pbarker pbarker    73728 Jul 27 12:05 00000001.BIN
+   pbarker@bluebottle:~/rc/ardupilot(master)$
+
+The mavlink telemetry logs are present in the "buildlogs" directory.  This directory is typically created one-level-higher than the ArduPilot root directory.
+
+::
+
+   pbarker@bluebottle:~/rc/ardupilot(master)$ ls -l ../buildlogs/*tlog
+   -rw-r--r-- 2 pbarker pbarker 2541216 Jul 27 12:11 ../buildlogs/APMrover2-test.tlog
+   pbarker@bluebottle:~/rc/ardupilot(master)$
+
+.. note::
+
+   On the Vagrant virtual machine, the ArduPilot root directory is mounted on /vagrant.  The "vagrant" user has no permission to create the "buildlogs" directory in "/", so instead the buildlogs directory appears at /tmp/buildlogs
+
+.. warning::
+
+   Not all mavlink traffic involved in the testing is present in the buildlogs tlog file.  Only traffic to/from MAVProxy itself (as opposed to additional MAVProxy --outputs) is present.  See AutoTest Structure for more information.
+
+Correlation of Output Files with the autotest server
+....................................................
+
+`ArduPilot's autotest server <http://autotest.ardupilot.org/>`__ displays the results of the most recent AutoTest run.  If a test is failing on the autotest server, it should be possible to replicate that failure locally using ``autotest.py``
+
+AutoTest's "Test Results" section reflects ``autotest.py``'s return value for each of the steps.
+
+AutoTest's "Test Logs" section reflects the contents of the buildlogs directory.
+
+AutoTest's "Flight Tracks" section's images can be created using the "convertgpx" step.
+
+
+AutoTest Structure
+==================
+
+File Structure
+--------------
+
+Tools/autotest/autotest.py
+    the main entry point to the autotest suite
+Tools/autotest/arducopter.py
+    contains tests for ArduCopter in both multicopter and helicopter form
+Tools/autotest/apmrover2.py
+    contains tests for ArduRover
+Tools/autotest/ardusub.py
+    contains tests for ArduSub
+Tools/autotest/arduplane.py
+    contains tests for ArduPlane
+Tools/autotest/quadplane.py
+    contains tests for ArduPlane's Quadplane code
+Tools/autotest/pysim/util.py
+    various utility functions used by AutoTest
+Tools/autotest/common.py
+    Contains a base class inheritted by the per-vehicle testing routines
+
+Network Structure
+-----------------
+
+The AutoTest network plumbing is complicated.
+
+From a test's perspective:
+
+self.mavproxy
+   An pexpect object used to interact with the MAVProxy process.  All MAVProxy commands are valid when sent to this object - e.g. ``set shownoise 0``
+
+self.mav
+   A mavudp object connected to a --output port provided by MAVProxy.  Traffic to this connection is not logged in the tlog.
+
+self.mav.mav
+   The mavudp's mavlink object.  Can be used to send messages via mavlink to the SITL binary: ``self.mav.mav.system_time_send(time.time() * 1000000, 0)``
+
+RC Overrides
+............
+
+A test's call to ``self.set_rc(ch, value)`` effectively sets the RC
+inputs for the simulated vehicle.  It is important to note that these
+are not "RC overrides" - it is "real" simulated RC input.  The SITL
+binary listens on a network port for packets of 8-bit or 16-bit quantities
+representing the RC input.  MAVProxy is invoked in such a way that
+data which it would otherwise have sent as MAVLink RC override
+packets are delivered to that network socket instead.
+
+Adding a Test
+=============
+
+.. note::
+
+   The autotest script is in flux.  This documentation may be out of date.
+
+The git commit e045f61473afa800afc241819cf890591fbecd5a in ArduPilot master's history is a reasonable example of adding an entirely new test to the ArduPilot suite.
