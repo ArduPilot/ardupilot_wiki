@@ -131,7 +131,7 @@ potential conflicts.
 
 Developer information including Simulation
 ==========================================
-The data is transmitted via the `ADSB_VEHICLE message <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`__. When
+The data is transmitted via the `ADSB_VEHICLE message <http://mavlink.org/messages/common#ADSB_VEHICLE>`__. When
 received by ArduPilot, it is streamed out using the SRx_ADSB value where x is the telemetry port number and the
 value is how many vehicles per second to be streamed. If using telem1 the streamrate param would be ``SR1_ADSB``. The list will not repeat any faster than 1 second. This
 flexibility is useful to conserve bandwidth on data links but also allow maximum update rate for high-speed links

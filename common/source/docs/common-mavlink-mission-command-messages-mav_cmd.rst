@@ -3777,7 +3777,7 @@ in the mission.
    <tr>
    <td><strong>param7</strong></td>
    <td></td>
-   <td>`MAV_MOUNT_MODE <https://mavlink.io/en/messages/common.html#MAV_MOUNT_MODE>`__ enum value.</td>
+   <td>`MAV_MOUNT_MODE <http://mavlink.org/messages/common#MAV_MOUNT_MODE>`__ enum value.</td>
    </tr>
    </tbody>
    </table>

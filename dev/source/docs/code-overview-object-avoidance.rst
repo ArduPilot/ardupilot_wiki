@@ -4,7 +4,7 @@
 Copter Object Avoidance
 =======================
 
-ArduCopter, from release 3.5, supports object avoidance using a :ref:`Lightware SF40C <copter:common-lightware-sf40c-objectavoidance>`, :ref:`TeraRanger Tower <copter:common-teraranger-tower-objectavoidance>`  or with any sensor capable of providing distances using the MAVLink `DISTANCE_SENSOR <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ message.
+ArduCopter, from release 3.5, supports object avoidance using a :ref:`Lightware SF40C <copter:common-lightware-sf40c-objectavoidance>`, :ref:`TeraRanger Tower <copter:common-teraranger-tower-objectavoidance>`  or with any sensor capable of providing distances using the MAVLink `DISTANCE_SENSOR <http://mavlink.org/messages/common#DISTANCE_SENSOR>`__ message.
 This page describes how the object avoidance feature works and how "proximity sensors" should provide data into ArduPilot.
 
 Avoidance in Loiter
@@ -56,7 +56,7 @@ This is quite different from Loiter mode in which the pilot cannot force the veh
 .. note::
 
    The vehicle will also stop before hitting barriers above it there is an upward facing range finder.
-   Currently this range finder's distance must be sent to ardupilot using the `DISTANCE_SENSOR <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ message with the orientation field set to 24 (upwards).
+   Currently this range finder's distance must be sent to ardupilot using the `DISTANCE_SENSOR <http://mavlink.org/messages/common#DISTANCE_SENSOR>`__ message with the orientation field set to 24 (upwards).
 
 Reporting to the Ground Station
 ===============================
@@ -80,7 +80,7 @@ These are separate messages though and are likely transferred at a different rat
 Providing Distance Sensor messages to ArduPilot
 ===============================================
 
-For developers of new "proximity" sensors (i.e. sensors that can somehow provide the distance to nearby objects) the easiest method to get your distance measurements into ardupilot is to send `DISTANCE_SENSOR <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ message for each direction the sensor is capable of.
+For developers of new "proximity" sensors (i.e. sensors that can somehow provide the distance to nearby objects) the easiest method to get your distance measurements into ardupilot is to send `DISTANCE_SENSOR <http://mavlink.org/messages/common#DISTANCE_SENSOR>`__ message for each direction the sensor is capable of.
 The system id of the message should match the system id of the vehicle (default is "1" but can be changed using the SYSID_THISMAV parameter).
 The component id can be anything but MAV_COMP_ID_PATHPLANNER (195) or MAV_COMP_ID_PERIPHERAL (158) are probably good choices.
 
