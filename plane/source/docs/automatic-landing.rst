@@ -180,7 +180,7 @@ parameter if it is non-zero, otherwise by the
 :ref:`LIM_PITCH_MAX <LIM_PITCH_MAX>` parameter.
 
 The ``TECS_LAND_DAMP`` parameter is a damping constant for the pitch
-control during. A larger number will cause the pitch demand to change
+control during flare. A larger number will cause the pitch demand to change
 more slowly. This parameter can be used to reduce issues with sudden
 pitch changes when the flare happens.
 
