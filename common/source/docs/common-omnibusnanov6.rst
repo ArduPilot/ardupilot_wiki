@@ -1,12 +1,13 @@
 .. _common-omnibusf4pro:
 
-==================
+===============================
 Omnibus F4 Nano V6 (must be V6)
-==================
+===============================
 
 .. image:: ../../../images/omnibusNanoV6.jpg
     :target: ../_images/omnibusNanoV6.jpg
     :width: 450px
+
 
 *above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4nanov6.html>`__
 
@@ -42,18 +43,19 @@ Specifications
 Where to Buy
 ============
 
-- available from multiple retailers including `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
+- available from multiple retailers including `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4nanov6.html>`__
 
 Versions
 ==============
 There have been many versions of this board and many clones. This for Version 6 only
 
 Board Connections
-==================
+=================
 
 .. image:: ../../../images/nanov6.jpg
     :target: ../_images/nanov6.jpg
     :width: 450px
+    
 Typical Arduplane system
 
 GPS is attached to UART6
@@ -66,7 +68,7 @@ RC input is via pad marked LED on the board and is compatible all RX serial prot
 The Buzzer output pad has no functionality.
 
 Flashing Firmware
-========================
+=================
 Usually these boards are sold pre-flashed with betaflight / INav firwares and require both firmware and bootloader to be updated if you want to use ArduPilot, as an ArduPilot-compatible bootloader is required for subsequent ArduPilot firmware-upgrade handling.
 
 Firmware files can be found `here <http://firmware.ardupilot.org/>`__
@@ -79,22 +81,22 @@ Alternatively, the bootloader can be flashed separately. This requires the board
 Enter DFU Mode
 --------------
 To do this, you'll need to locate the DFU jumper on your board. On most board flavours this is a little push button thas needs to be
-pressed while connecting your board to your PC via USB: 
+pressed while connecting your board to your PC via USB(board shown below is not this board, for illustration only):
+
 
 .. image:: ../../../images/omnibusf4_dfu_button.png
     :target: ../_images/omnibusf4_dfu_button.png
 
 Install dfu-util
------------------
+----------------
 * Linux (Ubuntu)
-::
-    
-    sudo apt-get install dfu-util
+
+  sudo apt-get install dfu-util
     
 * OS X
-::
-    
-    brew install dfu-util
+
+
+  brew install dfu-util
     
 * Windows
 
