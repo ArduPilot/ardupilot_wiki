@@ -4,14 +4,21 @@
 Connecting with ROS
 ===================
 
-The connection between ArduPilot running on the flight controller and ROS/MAVROS can be tested with the following commands on the companion computer:
+The connection between ArduPilot running on the flight controller and ROS/MAVROS can be established with the following commands on the companion computer:
 
 - open up a terminal and type, "roscore"
 - open another terminal and start mavros as described `here on the ros/mavros wiki <http://wiki.ros.org/mavros#Usage>`__.  For example, the following instruction is appropriate for a TX2/APSync install with port 14855 opened (see "How flight controller data is routed to various programs" at the bottom of :ref:`this page <apsync-intro>`):
 
 ::
 
-    roslaunch mavros apm.launch fcu_url:=udp://@127.0.0.1:14855
+    roslaunch mavros apm.launch fcu_url:=udp://:14855@
+
+Test the flight controller is responding to `mavros commands <http://wiki.ros.org/mavros#Utility_commands>`__ like `mavsys <http://wiki.ros.org/mavros#mavsys>`__ (which can set the flight mode) and `mavsafety <http://wiki.ros.org/mavros#mavsafety>`__ (which can arm/disarm the vehicle):
+
+::
+
+    rosrun mavros mavsys mode -c 0 (sets the vehicle to mode "0")
+    rosrun mavros mavsafety arm (to arm the vehicle)
 
 .. note::
 
