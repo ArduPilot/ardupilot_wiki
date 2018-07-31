@@ -34,9 +34,6 @@ also required.  They can be purchased in the US from `Transition Robotics <http:
 or in NewZealand from
 `Greenstage <http://shop.greenstage.co.nz/product/black-magic-debug-probe>`__.
 
-Alternative instructions for the set-up can be found on the PX4 wiki
-`here <http://pixhawk.org/dev/jtag/start>`__.
-
 Connecting the probe to the Pixhawk
 ===================================
 
@@ -46,8 +43,7 @@ Connecting the probe to the Pixhawk
 The BlackMagic probe should be connected to the Pixhawk's JTAG connector
 using the grey 10wire cable that came with the probe. Note that most
 Pixhawk come with no headers soldered onto the JTAG connector because it
-interferes with the case. Please contact `Craig Elder <mailto:craig@3dr.com?Subject=Pixhawk%20with%20JTAG%20connectors>`__
-to order a Pixhawk with the JTAG pins soldered.
+interferes with the case.
 
 Installing GDB
 ==============
@@ -65,12 +61,12 @@ arm-none-eabi-gdb.
 Starting GDB and running some commands
 ======================================
 
-GDB requires both the binary file that's been uploaded to the board
-(i.e. Copter-v2.px4) which can normally be found in Copter, Plane or
+GDB requires both the firmware file that's been uploaded to the board
+(i.e. arducopter.apj) which can normally be found in Copter, Plane or
 APMRover2 directory and the firmware.elf file that can be found in
-PX4Firmware/Build/px4fmu-v2_APM.build/firmware.elf.
+the build directory.
 
-change to your PX4Firmware directory and type the following:
+Change to your firmware directory and type the following:
 
 ``arm-none-eabi-gdb build/fmuv3/bin/arducopter``
 
