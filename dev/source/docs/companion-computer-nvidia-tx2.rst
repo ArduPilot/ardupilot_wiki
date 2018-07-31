@@ -21,7 +21,7 @@ Setup the Pixhawk
 Connect to the Pixhawk with a ground station (i.e. Mission Planner) and set the following parameters:
 
 -  :ref:`SERIAL2_PROTOCOL <copter:SERIAL2_PROTOCOL>` = 1 (the default) to enable MAVLink on the serial port.
--  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the Pixhawk can communicate with the TX2 at 921600 baud.
+-  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 1500 so the Pixhawk can communicate with the TX2 at 1,500,000 baud.
 -  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the TX2
 
 You may need to manually disable flow control on Telem2 although this is not normally required:
