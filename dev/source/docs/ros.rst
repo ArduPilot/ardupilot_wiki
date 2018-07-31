@@ -41,7 +41,6 @@ Next tutorials :
         Connecting to ArduPilot from ROS <ros-connecting>
         ROS with SITL <ros-sitl>
         ROS with SITL in Gazebo <ros-gazebo>
-        ROS with real vehicle <ros-vehicle>
         ROS with distance sensors <ros-distance-sensors>
 
 Instructions for using :ref:`Gazebo with ArduPilot are here <using-gazebo-simulator-with-sitl>` and an old version has been `blogged about here <http://diydrones.com/profiles/blogs/705844:BlogPost:2151758>`__.
