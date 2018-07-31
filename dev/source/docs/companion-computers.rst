@@ -24,6 +24,7 @@ Related topics on this wiki include:
     Raspberry Pi <raspberry-pi-via-mavlink>
     ODroid <odroid-via-mavlink>
     Intel Edison <intel-edison>
+    NVidia TX2 <companion-computer-nvidia-tx2>
     NVidia TX1 <companion-computer-nvidia-tx1>
     BeaglePilot Project <beaglepilot>
     Turnkey Companion Computer Solutions <turnkey-companion-computer-solutions>
