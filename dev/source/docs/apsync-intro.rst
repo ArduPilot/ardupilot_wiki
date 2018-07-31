@@ -97,3 +97,26 @@ Connecting with SSH
 ===================
 
 You can connect to the companion computer with a terminal emulator such as `Putty <http://www.putty.org/>`__ by connecting to the board's wifi access point and then ssh to 10.0.1.128 username: apsync, password: apsync
+
+How flight controller data is routed to various programs
+========================================================
+
+By default APsync uses "mavlink-router" to allow multiple programs running on the companion computer to talk to the flight controller.  This programs configuration can is held in ~/start_mavlink-router/mavlink-router.conf and defines the following connections:
+
+- /dev/ttyTHS1 at baud 1500000 to communicate with the flight controller (on TX1/TX2)
+- UDP 127.0.0.1:14655 for MavProxy running on the companion computer
+- UDP 127.0.0.1:14556 for dflogger (writes dataflash logs to companion computer)
+- UDP 127.0.0.1:14755 for APweb (small configuration web service)
+- UDP 127.0.0.1:14765 for OpenKai (vision processing program, similar to ROS)
+- UDP 10.0.1.255:14765 for telemetry to Ground Station via wifi
+
+If additional programs are run on the companion computer that also need data from the flight controller, new ports can be opened by adding new lines at the bottom of ~/start_mavlink-router/mavlink-router.conf and then reboot the board.
+
+For example the following lines could be added to open up port 14855 for use by ROS running locally on the companion computer:
+
+::
+
+    [UdpEndpoint to_ros]
+    Mode = Normal
+    Address = 127.0.0.1
+    Port = 14855
