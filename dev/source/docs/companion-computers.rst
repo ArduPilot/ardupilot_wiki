@@ -17,9 +17,10 @@ Related topics on this wiki include:
     :maxdepth: 1
 
     APSync <apsync-intro>
-    Maverick <https://goodrobots.github.io/maverick/#/>
-    FlytOS <flytos>
     DroneKit Tutorial <droneapi-tutorial>
+    FlytOS <flytos>
+    Maverick <https://goodrobots.github.io/maverick/#/>
+    ROS <ros>
     Raspberry Pi <raspberry-pi-via-mavlink>
     ODroid <odroid-via-mavlink>
     Intel Edison <intel-edison>
