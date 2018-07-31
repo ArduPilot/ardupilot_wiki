@@ -16,7 +16,7 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka R
 These pages will show you how to:
 
 - :ref:`Install ROS and MAVROS <ros-install>`
-- Connect ArduPilot to ROS
+- :ref:`Connecting to ArduPilot from ROS <ros-connecting>`
 - Retrieve ArduPilot information in ROS
 - Use ROS to command an ArduPilot vehicle
 - Simulate ArduPilot in `Gazebo <http://gazebosim.org/>`__
@@ -38,6 +38,7 @@ Next tutorials :
     :maxdepth: 1
 
         Installing ROS and MAVROS <ros-install>
+        Connecting to ArduPilot from ROS <ros-connecting>
         ROS with SITL <ros-sitl>
         ROS with SITL in Gazebo <ros-gazebo>
         ROS with real vehicle <ros-vehicle>
