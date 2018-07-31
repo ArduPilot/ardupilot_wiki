@@ -16,6 +16,8 @@ The `SkyViper GPS Streaming drone <http://sky-viper.com/product/info/V2450GPS-sd
 
 SkyRocket sells a variety of different drones, be sure to get the GPS Streaming drone which should have a white shell and usually sells for around $150 US.
 
+In August 2018, SkyRocket released three new ArduPilot powered drones, the Fury, Scout, and Journey. The Fury and Scout utilize ArduPilot's excellent OpticalFlow stability to allow for indoor flight stability and position holding, unprecendented in this price range. The Journey, while lacking OpticalFlow, takes lessons learned from the V2450GPS and builds on those for a solid re-release for the full GPS-enabled ArduPilot experience. The flight parameters and firmware for both the Scout and Journey can be easily modified as the user sees fit through the embedded wifi access point, powered by APWeb or using your favorite ground control software.  Much of the information on this page, which was written for the V2450GPS, will at least partially apply to these new models, with exceptions annotated as they are discovered.
+
 Discussion
 ----------
 
