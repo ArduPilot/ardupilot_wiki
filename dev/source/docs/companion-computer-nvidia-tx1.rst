@@ -57,7 +57,7 @@ Next install JetPack and flash the OS
 - start the installation by running the downloaded file, "./JetPack-L4T-3.1-linux-x64.run"
 - a "JetPack L4T 3.1 Installer" window should appear, press "Next"
 - a "Installation Configuration" page should appear confirming where JetPack will be installed, press "Next"
-- a "Select Development Environment" page should appear allowing you to select the board type, select "Jetson TX1" (APSync images are not yet available for the TX2)
+- a "Select Development Environment" page should appear allowing you to select the board type, select "Jetson TX1"
 
 .. image:: ../images/companion-computer-tx1-install1.png
 
