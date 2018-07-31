@@ -1,8 +1,8 @@
-.. _skyrocket-gcs:
+.. _v2450gps-gcs:
 
-====================================
-SkyRocket with other Ground Stations
-====================================
+============================================
+Skyviper V2450GPS with other Ground Stations
+============================================
 
 The SkyViper has its own app that runs on android or iOS, but to access the full capabilities of the ArduPilot firmware you may prefer to use another ground station package. The SkyViper can work with any of the :ref:`ArduPilot compatible ground stations <common-choosing-a-ground-station>` including :ref:`Mission Planner <planner:install-mission-planner>`.  For any of them:
 
