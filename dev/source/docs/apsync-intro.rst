@@ -8,11 +8,11 @@ APSync is a project sponsored by `eLab <http://elab.co.jp/>`__ which simplifies 
 
 The current release automatically creates a Wifi Access Point on startup, allows DataFlash logging to the companion copmuter and "simple" real-time video streaming from a camera on the drone to the ground station.
 
-The supported companion computers are the :ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>` and :ref:`Intel Edison <intel-edison>`.
+The supported companion computers are the :ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>`, :ref:`NVidia TX2 <companion-computer-nvidia-tx2>` and :ref:`Intel Edison <intel-edison>`.
 
 .. note::
 
-   Video streaming from the Intel Edison is not supported (yet).
+   Video streaming from the Intel Edison is not supported.
 
 :ref:`Installation instructions <apsync-intro-installing-apsync>` are at the bottom of this page.
 
@@ -27,7 +27,7 @@ Wifi Access Point & DataFlash logging
 .. image:: ../images/apsync-wifiap-dflogger.png
     :target: ../_images/apsync-wifiap-dflogger.png
 
-On start-up an access point is created with name "ardupilot".  The password is "ardupilot" on TX1, Intel Edison and RPi.
+On start-up an access point is created with name "ardupilot".  The default password is also "ardupilot".
 
 The user can connect to this access point and then easily connect to ardupilot running on the flight controller by setting their ground station (including Mission Planner) to connect using "UDP", port 14550.
 
@@ -63,7 +63,7 @@ The user can connect to the drone using a known URL (`http://10.0.1.128:8000 <ht
 
 .. warning::
 
-   This Simple Configuration portion is only partially implemented and currently only allows starting and stopping the simple video stream.
+   This Simple Configuration portion is partially implemented allows starting and stopping the simple video stream.
 
 Flexible Video
 ==============
