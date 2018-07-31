@@ -1,8 +1,8 @@
 .. _v2450gps-main:
 
-=========
+==================
 Skyviper V2450 GPS
-=========
+==================
 
    .. image:: ../images/skyrocket-skyvipergpsdrone.png
        :target: ../_images/skyrocket-skyvipergpsdrone.png
@@ -22,7 +22,7 @@ Discussion
 
 We have a `SkyViper section <https://discuss.ardupilot.org/c/arducopter/skyviper>`__ on the ArduPilot discussion forum. Have a look there to see what people are up to and ask questions.
 
-More developer specific information including how to compile the sonix and ardupilot firmware can be found on the `developer wiki <http://ardupilot.org/dev/docs/skyviper.html>`__.
+More developer specific information including how to compile the sonix and ArduPilot firmware can be found on the `developer wiki <http://ardupilot.org/dev/docs/skyviper.html>`__.
 
 Toy Mode
 --------

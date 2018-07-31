@@ -7,7 +7,7 @@ SkyRocket
    .. image:: ../images/skyrocket-skyvipergpsdrone.png
        :target: ../_images/skyrocket-skyvipergpsdrone.png
 
-In 2017 `SkyRocketToys <https://www.skyrocketon.com/>`__ introduced their first Ardupilot powered quad with the Skyviper V2450 GPS. This quad, with the help of many developers within the Ardupilot community can be considered a huge success for both Ardupilot and entry-level hobbyists who are looking to get into advanced drones, but want to start small.  With all the full capabilities of a massive AP quad, the little quad was capable of doing much more than was advertised on the box, and many enthusiasts flocked to it.  Bouyed by the massive success and capabilities of the quad, SkyRocket advertised that they would be building more Ardupilot powered quads in the future.
+In 2017 `SkyRocketToys <https://www.skyrocketon.com/>`__ introduced their first ArduPilot powered quad with the Skyviper V2450 GPS. This quad, with the help of many developers within the Ardupilot community can be considered a huge success for both Ardupilot and entry-level hobbyists who are looking to get into advanced drones, but want to start small. With all the full capabilities of a massive AP quad, the little quad was capable of doing much more than was advertised on the box, and many enthusiasts flocked to it. Bouyed by the massive success and capabilities of the quad, SkyRocket advertised that they would be building more ArduPilot powered quads in the future.
 
 .. toctree::
     :maxdepth: 1
@@ -26,7 +26,7 @@ Discussion
 
 We have a `SkyViper section <https://discuss.ardupilot.org/c/arducopter/skyviper>`__ on the ArduPilot discussion forum. Have a look there to see what people are up to and ask questions.
 
-More developer specific information including how to compile the sonix and ardupilot firmware can be found on the `developer wiki <http://ardupilot.org/dev/docs/skyviper.html>`__.
+More developer specific information including how to compile the sonix and ArduPilot firmware can be found on the `developer wiki <http://ardupilot.org/dev/docs/skyviper.html>`__.
 
 
 
