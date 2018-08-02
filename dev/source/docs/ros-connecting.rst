@@ -4,6 +4,8 @@
 Connecting with ROS
 ===================
 
+Before attempting to connect with ROS, ensure that the physical serial cable connection and ArduPilot side parameters have been set as described on the appropriate companion computer page (:ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>`, :ref:`NVidia TX2 <companion-computer-nvidia-tx2>` or :ref:`Intel Edison <intel-edison>`).
+
 The connection between ArduPilot running on the flight controller and ROS/MAVROS can be established with the following commands on the companion computer:
 
 - open up a terminal and type, "roscore"

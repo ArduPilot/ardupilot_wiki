@@ -17,13 +17,10 @@ These pages will show you how to:
 
 - :ref:`Install ROS and MAVROS <ros-install>`
 - :ref:`Connecting to ArduPilot from ROS <ros-connecting>`
+- :ref:`SLAM for non-GPS navigation <ros-slam>`
 - Retrieve ArduPilot information in ROS
 - Use ROS to command an ArduPilot vehicle
 - Simulate ArduPilot in `Gazebo <http://gazebosim.org/>`__
-
-.. warning::
-
-    Those pages do not yet include instructions on how to setup ROS for SLAM and non-GPS navigation
 
 Prerequisites
 =============
@@ -39,6 +36,7 @@ Next tutorials :
 
         Installing ROS and MAVROS <ros-install>
         Connecting to ArduPilot from ROS <ros-connecting>
+        SLAM for non-GPS navigation <ros-slam>
         ROS with SITL <ros-sitl>
         ROS with SITL in Gazebo <ros-gazebo>
         ROS with distance sensors <ros-distance-sensors>
