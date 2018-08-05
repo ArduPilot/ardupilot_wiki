@@ -13,13 +13,11 @@ These setup instructions describe how to setup "Bash on Ubuntu on Windows" (aka 
 Setup steps
 -----------
 
+.. note::
+
+Starting with the Fall Creators Update (Windows 10 version 1803), enabling the Developer Mode is not longer required for using WSL.
+
 #. Enable Ubuntu on Windows which includes the following steps (original `How-To Geek's instructions here <http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`__):
-
-    - Under Settings >> Update & Security >> For developers, enable "Developer mode"
-
-       .. image:: ../images/build-on-windows10-devmode.png
-           :width: 70%
-           :target: ../_images/build-on-windows10-devmode.png
 
    - Under Control Panel >> Programs >> Turn Windows features on or off, enable "Windows Subsystem for Linux
 
@@ -27,52 +25,45 @@ Setup steps
            :width: 70%
            :target: ../_images/build-on-windows10-subsys-for-linux.png
 
-   - Open the Microsoft Store (open a browser to http://aka.ms/wslstore) and install Ubuntu
+   - Open the Microsoft Store and install Ubuntu 16.04 (Direct link: https://www.microsoft.com/store/productId/9PJN388HP8C9)
    - Push the Launch button which will open a Bash terminal and ask for a username and password
 
        .. image:: ../images/build-on-windows10-usernamepwd.png
            :width: 70%
            :target: ../_images/build-on-windows10-usernamepwd.png
-   
+           
+#. From withing the Ubuntu bash terminal, update your system to the latest packages:
 
-#. From withing the Ubuntu bash terminal, run the Tools/scripts/install-prereqs-ubuntu.sh script:
+    - ``sudo apt-get update``
+    - ``sudo apt-get upgrade``
+    
+#. Copy the Ardupilot source files to your local Ubuntu filesystem by cloning the git repository and updating the submodules. (Accessing the source files on your Windows filesystem won't work because the must be kept on the native WSl filesystem)
 
-    - cd to the directory you :ref:`cloned <git-clone>` ardupilot into.  This will be the same as the windows path but with a ``/mnt/`` prefix, the colon (":") removed from the drive letter, and all backslashes converted to forward slashes.  For example if ardupilot was cloned to ``C:\Users\rmackay9\Documents\GitHub\ardupilot`` you would type ``cd /mnt/c/Users/rmackay9/Documents/GitHub/ardupilot``
-    - cd to the Tools/scripts directory ``cd Tools/scripts``
-    - run the script ``./install-prereqs-ubuntu.sh``.  You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" when it asks if you wish to install a package.
+    - ``git clone https://github.com/ardupilot/ardupilot.git``
+    - ``cd ardupilot``
+    - ``git submodule init``
+    - ``git submodule update --recursive``
+
+#.  run the Tools/scripts/install-prereqs-ubuntu.sh script:
+
+    - run the script ``./Tools/scripts/install-prereqs-ubuntu.sh``.  You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" when it asks if you wish to install a package.
 
     .. image:: ../images/build-on-windows10-prereqs.png
        :target: ../_images/build-on-windows10-prereqs.png
+       
+#. Remove arm-none-earbi-ar from the path in ~/.profile because the script installs the i386 version of the compiller, which does not run under a x64 WSL (unlike in real linux):
 
-    - if you see a message, "not a valid git repository" this means the version of git on your Windows machine is different from the version on the Ubuntu subsystem.  You may need to remove the modules directory using ``rm -rf modules/*`` and :ref:`install a newer version of git <git-install>` in one of the two environments.  The git version can be checked by typing ``git --version``.
+    - Open the file in a text editor ``nano ~/.profile``
+    - Search for the line ``export PATH=/opt/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH`` and delete it
+    - Hit ``Ctrl + O`` to save the file
 
-#. remove the /opt/gcc-arm-none-eabi directory:
+#. Install a 64 bit version of the compiler from the repositories:
 
-    - ``sudo rm -rf /opt/gcc-arm-none-eabi-4_9-2015q3/bin``
+    - ``apt-get install gcc-arm-none-eabi``
 
-#. Install some extra tools, so we can compile for the various targets:
+#. Reload the .profile script to let the changes take effect:
 
-   .. code-block:: python
-
-       sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
-       sudo apt-get update
-       sudo apt-get install cmake
-
-       sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-       sudo apt-get update
-       sudo apt-get install g++-4.9
-
-       sudo add-apt-repository ppa:terry.guo/gcc-arm-embedded
-       sudo apt-get update
-       sudo apt-get install gcc-arm-none-eabi
-
-       sudo apt-get update
-       sudo apt-get upgrade
-
-.. note::
-
-    Bash can be configured to start from the directory you :ref:`cloned <git-clone>` ardupilot into by editing the .bashrc file and adding the "cd" command from Step 2 (above) to the end
-
+    - ``. ~/.profile``
 
 Build with Waf
 ==============
@@ -92,10 +83,21 @@ You should now be able to start the "Ubuntu" application from your Windows Start
     If this link is not visible, open Config/Tuning >> Planner and set the "Layout" to "Advanced".
     
     For network connected flight controllers, such as linux targets, --upload does function as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__
-
+    
 .. tip::
 
-   if you want to unhide Ubuntu system folder on Windows, open a command prompt as administrator,
+  You can run XWindows applications (including SITL) by installing VcXsrv on Windows and adding
+  
+  .. code-block:: python
+  
+      export DISPLAY=:0.0
+      export LIBGL_ALWAYS_INDIRECT=1
+      
+  to your ~/.bashrc. For code editing you can install VSCode inside WSL.
+  
+.. tip::
+
+   If you want to unhide Ubuntu system folder on Windows, open a command prompt as administrator,
    navigate to Ubuntu system path (C:\\Users\\username\\AppData\\Local) and change the folder attributes. So (where "username" is your user name):
    
    .. code-block:: python
