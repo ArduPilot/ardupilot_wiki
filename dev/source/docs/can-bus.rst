@@ -69,4 +69,5 @@ for creation of CAN driver and UAVCAN interface class.
     :maxdepth: 1
 
     CAN bus driver implementation roadmap <can-bus-driver-roadmap>
+    Setting up Mavlink over UAVCAN <can-bus-mavlink>
     
