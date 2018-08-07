@@ -69,7 +69,7 @@ If using Mission Planner to load the firmware to the board:
 
      Any time you make a change to the board definition file, you must clean up the build, and reconfigure WAF before re-compiling:
 - ``./waf distclean``
-- ``./waf config --board new-board``
+- ``./waf configure --board new-board``
 
 .. note::
 
