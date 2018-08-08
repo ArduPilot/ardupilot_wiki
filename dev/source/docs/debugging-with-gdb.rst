@@ -23,4 +23,4 @@ In the following page, we will explain how to debug your modification on Linux a
     :maxdepth: 1
 
         Debugging with SITL on Linux <debugging-with-gdb-on-linux>
-        Debugging with GDB on Pixhawk <debugging-with-gdb-on-pixhawk>
+        Debugging with GDB on STM32 <debugging-with-gdb-on-stm32>
