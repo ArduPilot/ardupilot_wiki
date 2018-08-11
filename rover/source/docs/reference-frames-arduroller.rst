@@ -38,6 +38,7 @@ Connection and Setup
     :width: 450px
 
 - Connect the yellow and white wires from the wheel encoders to the AUX OUT 3,4,5,6 pins as described on the :ref:`wheel encoder wiki page <wheel-encoder>`
+- Connect the flight controller, motor driver and motors as shown below
 
 .. image:: ../images/reference-frame-arduroller-pixhawk-roboclaw.png
     :target: ../_images/reference-frame-arduroller-pixhawk-roboclaw.png
