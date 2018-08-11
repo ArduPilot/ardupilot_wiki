@@ -13,6 +13,7 @@ This section includes details on tested frames to speed up DIY builds of rovers 
 
     Thunder Tiger Toyota Hilux <reference-frames-tt-toyotahilux>
     HobbyKing Hydrotek <reference-frames-hydrotek>
+    ArduRoller balance bot <reference-frames-arduroller>
     Traxxas Stampede 4WD Truck <reference-frame-traxxas-stampede>
 
 .. note::
