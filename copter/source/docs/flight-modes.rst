@@ -22,7 +22,6 @@ companion computer.
 
    <table border="1" class="docutils">
    <tr><th>Mode</th><th>Alt Ctrl</th><th>Pos Ctrl</th><th>GPS</th><th>Summary</th></tr>
-   <tr><td>XXXXX</td><td>XXXXX</td><td>XXXXX</td><td>XXXXX</td><td>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td></tr>
    <tr><td>Acro</td><td>-</td><td>-</td><td></td><td>Holds attitude, no self-level</td></tr>
    <tr><td>Alt Hold</td><td>s</td><td>+</td><td></td><td>Holds altitude and self-levels the roll & pitch</td></tr>
    <tr><td>Auto</td><td>A</td><td>A</td><td>Y</td><td>Executes pre-defined mission</td></tr>
