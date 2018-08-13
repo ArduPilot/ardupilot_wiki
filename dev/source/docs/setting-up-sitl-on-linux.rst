@@ -36,55 +36,9 @@ There is also a linked video below showing how to do the setup.
 .. youtube:: pJGFkZmGV6o
     :width: 100%
 
-Download ardupilot
-------------------
-
-If you don't have a copy of the ardupilot git repository then open a
-terminal and run:
-
-::
-
-    git clone git://github.com/ArduPilot/ardupilot.git
-    cd ardupilot
-    git submodule update --init --recursive
-
-Install some required packages
-------------------------------
-
-If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/scripts/install-prereqs-ubuntu.sh>`__ that will do it for you :
-
-    - cd to the directory you :ref:`cloned <git-clone>` ardupilot into.
-    - cd to the Tools/scripts directory ``cd Tools/scripts``
-    - run the script ``./install-prereqs-ubuntu.sh``.  You will be asked for your Ubuntu root password.  Respond with "Y" when it asks if you wish to install a package.
-
-Or if you are on a RPM based system (such as Fedora) run this:
-
-::
-
-    yum install opencv-python wxPython python-pip pyserial scipy python-lxml python-matplotlib python-pexpect python-matplotlib-wx
-
-Add some directories to your search path (Facultative)
-------------------------------------------------------
-
-.. note::
-
-    ONLY if you didn't run the install-prereqs script from previous step.
-
-Add the following lines to the end of your ".bashrc" in your home
-directory (notice the . on the start of that filename. Also, this is a
-hidden file, so if you're using a file manager, make sure to turn on
-"show hidden files"). 
-
-::
-
-    export PATH=$PATH:$HOME/ardupilot/Tools/autotest 
-    export PATH=/usr/lib/ccache:$PATH
-
-Then reload your PATH by using the "dot" command in a terminal
-
-::
-
-    . ~/.bashrc
+.. include:: building-setup-linux.rst
+    :start-after: Setup on Ubuntu
+    :end-before: Setup for other Distributions
 
 Start SITL simulator
 --------------------
@@ -127,27 +81,6 @@ normally.  First kill the sim_vehicle.py you are running using Ctrl-C.  Then:
 
      export MAP_SERVICE="MicrosoftHyb"
 
-Load a mission
---------------
-
-Let's also load a test mission.  From within MAVProxy type:
-
-::
-
-    wp load ../Tools/autotest/copter_mission.txt
-
-copter_mission.txt contains a mission which flies in a loop around CMAC flying field in Australia.
-Now let's takeoff!
-
-Run the command "arm throttle" followed by "mode auto" and put some throttle on the simulated radio to trigger the takeoff.
-
-::
-
-    arm throttle
-    mode auto
-    rc 3 1500
-
-Your virtual aircraft should now takeoff.
 
 Learn MAVProxy
 --------------

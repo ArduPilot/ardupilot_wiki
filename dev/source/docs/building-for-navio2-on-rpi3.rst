@@ -31,15 +31,9 @@ log into the Navio2 board's RPI3.
 
     pip install future
 
-
-
-Clone the source:
-
-::
-
-    git clone https://github.com/diydrones/ardupilot.git
-    cd ardupilot
-    git submodule update --init
+.. include:: building-setup-linux.rst
+    :start-after: Setup on Ubuntu
+    :end-before: Setup for other Distributions
 
 .. note::
     
@@ -51,6 +45,9 @@ To keep access to Waf convenient, use the following alias from the root ardupilo
 ::
     
     alias waf="$PWD/modules/waf/waf-light"
+
+Configure
+---------
 
 Choose the board to be used:
 
