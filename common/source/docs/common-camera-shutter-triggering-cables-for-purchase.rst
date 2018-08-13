@@ -25,7 +25,7 @@ boards that can be used for this purpose.
 Seagull #REC
 ============
 
-`Seagull #REC <http://www.seagulluav.com/product/seagull-rec/>`__ provides
+`Seagull #REC <https://www.seagulluav.com/product/seagull-rec/>`__ provides
 everything needed to connect a Pixhawk to a supported Sony MultiPort™
 equipped camera in order to automate camera shutter triggering. The
 current list of compatible cameras :ref:`can be found here <common-camera-shutter-triggering-for-sony-multiport-connectors-using-seagull-map_compatible_cameras>`.
@@ -39,7 +39,7 @@ the camera On/Off.
 
 :ref:`Camera Shutter Triggering for Sony MultiPort Connectors using Seagull #REC <common-camera-shutter-triggering-for-sony-multiport-connectors-using-seagull-map>`
 provides a brief overview of how to set up the MAP board. ( the RECs predecessor ) 
-More detailed instructions are provided in the `Seagull #REC Manual <http://www.seagulluav.com/manuals/Seagull_REC-Manual.pdf>`__.
+More detailed instructions are provided in the `Seagull #REC Manual <https://www.seagulluav.com/manuals/Seagull_REC-Manual.pdf>`__.
 
 TIP:   the #REC superceeds the #MAP and #MAP2 which were it's predecessors.  
 

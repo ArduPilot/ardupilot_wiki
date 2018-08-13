@@ -26,7 +26,7 @@ Specifications
    -  MPU6050 for accelerometers and gyroscope (I2C)
    -  AKM 8963 compass
    -  MS5607 barometer
-   -  `Furuno GN-87F GPS <http://www.furuno.com/en/products/gnss-module/GN-87>`__
+   -  `Furuno GN-87F GPS <https://www.furuno.com/en/products/gnss-module/GN-87>`__
    -  Sonar
    -  Optical-flow
    -  HD camera

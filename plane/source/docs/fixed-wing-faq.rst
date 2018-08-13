@@ -6,7 +6,7 @@ Fixed Wing FAQ
 
 This is a set of frequently asked questions with answers. It is created
 when we see questions in `the forums <http://ardupilot.com/forum/viewforum.php?f=1>`__ or on
-`discuss.ardupilot.org <http://discuss.ardupilot.org/c/arduplane>`__ that are not sufficiently
+`discuss.ardupilot.org <https://discuss.ardupilot.org/c/arduplane>`__ that are not sufficiently
 answered in the rest of the docs.
 
 When reading this FAQ please refer to the :doc:`full parameter list <parameters>` for an explanation of each

@@ -14,8 +14,8 @@ be used to create 3d maps.
     :target:  https://sketchfab.com/models/ca785239f99643499fab7c62e1944f95
 
 The image above is
-`Sylvain <http://www.diydrones.com/profile/Sylvain793>`__'s `"the fallen
-blockhouse" <http://www.diydrones.com/profiles/blogs/the-fallen-blockhouse-t3-entry>`__ and `the winner <http://www.diydrones.com/profiles/blogs/announcing-the-winner-of-the-13th-t3-competition>`__\ of
+`Sylvain <https://diydrones.com/profiles/profile/show?id=Sylvain793>`__'s `"the fallen
+blockhouse" <https://diydrones.com/profiles/blogs/the-fallen-blockhouse-t3-entry>`__ and `the winner <https://diydrones.com/profiles/blogs/announcing-the-winner-of-the-13th-t3-competition>`__\ of
 the Feb 2014 T3 competition.
 
 Equipment you will need
@@ -102,7 +102,7 @@ Recommended Desktop 3d mapping software
 =======================================
 
 MicMac based toolchain together with
-(`ImageJ/Fiji <http://fiji.sc/>`__, `QGIS <http://qgis.org/en/site/>`__,
+(`ImageJ/Fiji <http://fiji.sc/>`__, `QGIS <https://qgis.org/en/site/>`__,
 `SAGA GIS <https://sourceforge.net/projects/saga-gis/>`__): open source
 and free!
 
@@ -132,13 +132,13 @@ completed 3d models so that others can interactively view the model in
 their web browsers.  Click on the image at the top of the blog post to
 see an example.
 
-`Three.js <http://threejs.org/>`__ allows you to provide 3D models on
+`Three.js <https://threejs.org/>`__ allows you to provide 3D models on
 your own webpage.
 
 `Blender <https://www.blender.org/>`__ can be used to create video files
 of virtual fly throughs of the 3d model which can then be posted to
 YouTube.  Here is an example by
-`Richard <http://www.diydrones.com/profile/Richard721>`__.
+`Richard <https://www.diydrones.com/profile/Richard721>`__.
 
 `Dronemapper <https://dronemapper.com/>`__ allows uploading and managing
 raw images.
@@ -149,14 +149,14 @@ raw images.
 Additional resources and Examples
 =================================
 
--  `T3 season 2 - "the model" blog post <http://www.diydrones.com/profiles/blogs/t3-season-2-the-model>`__
-   and `winner announcement <http://www.diydrones.com/profiles/blogs/announcing-the-winner-of-the-13th-t3-competition>`__
--  `Sylvain's "fallen blockhouse" T3 entry blog post <http://diydrones.com/profiles/blogs/the-fallen-blockhouse-t3-entry>`__
--  `Thorsten's "resconstruction of largest hallstatt tumulus grave" T3 entry blog post <http://diydrones.com/profiles/blogs/3d-reconstruction-of-largest-hallstatt-tumulus-grave-in-central>`__
--  `Stephen Gienow's "Octocopter scan of UMBC" T3 entry blog post <http://diydrones.com/profiles/blogs/apm-octocopter-build-and-mission>`__
--  `Krasiczyn Castle 3D model, Poland <http://diydrones.com/profiles/blogs/krasiczyn-castle-3d-model-poland>`__
+-  `T3 season 2 - "the model" blog post <https://www.diydrones.com/profiles/blogs/t3-season-2-the-model>`__
+   and `winner announcement <https://diydrones.com/profiles/blogs/announcing-the-winner-of-the-13th-t3-competition>`__
+-  `Sylvain's "fallen blockhouse" T3 entry blog post <https://diydrones.com/profiles/blogs/the-fallen-blockhouse-t3-entry>`__
+-  `Thorsten's "resconstruction of largest hallstatt tumulus grave" T3 entry blog post <https://diydrones.com/profiles/blogs/3d-reconstruction-of-largest-hallstatt-tumulus-grave-in-central>`__
+-  `Stephen Gienow's "Octocopter scan of UMBC" T3 entry blog post <https://diydrones.com/profiles/blogs/apm-octocopter-build-and-mission>`__
+-  `Krasiczyn Castle 3D model, Poland <https://diydrones.com/profiles/blogs/krasiczyn-castle-3d-model-poland>`__
 -  `MyDrone's "Buisante Chapel" T3 entry <http://prebut.free.fr/>`__
--  `Creating Maps from Drone Imagery - 3DRobotics and Aero drone <https://www.mapbox.com/blog/processing-drone-imagery/>`__
+-  `Creating Maps from Drone Imagery - 3DRobotics and Aero drone <https://blog.mapbox.com/creating-maps-from-drone-imagery-b76953e8480d?gi=6b282b4c9955>`__
 -  `Ecosynth wiki - a suite of tools used to map vegetation in 3d using
    off-the-shelf digital cameras and open-source computer vision software <http://wiki.ecosynth.org/index.php?title=Main_Page>`__ 
 - :ref:`Triggering non-CHDK cameras from Pixhawk <common-pixhawk-auto-camera-trigger-without-chdk>`

@@ -127,7 +127,7 @@ note that the DIY Drones team will only support the recommended 900Mhz
 Xbee modules, so if you use something else please turn the community for
 help, not the DIY Drones developers.
 
-`Here is more discussion <http://diydrones.com/profiles/blog/show?id705844%3ABlogPost%3A56130>`__
+`Here is more discussion <https://diydrones.com/profiles/blog/show?id705844%3ABlogPost%3A56130>`__
 on how to pick the best frequencies for your setup.
 
 All Xbee modules need adapters to work with APM. You have two choices:

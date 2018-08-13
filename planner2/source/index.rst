@@ -6,7 +6,7 @@ APM Planner 2 Home
 
 .. tip::
 
-   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
+   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <https://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
    
 ..  raw:: html
 
@@ -131,7 +131,7 @@ Quick Start Guide
 
 #. Plan a mission with APM Planner.
 
-**Need further help?** Visit the `APM Planner 2.0 <http://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__ APM Planner 2.0 forums on
+**Need further help?** Visit the `APM Planner 2.0 <https://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__ APM Planner 2.0 forums on
 `discuss.ardupilot.org <http://discuss.ardupilot.org>`__
 
 

@@ -73,7 +73,7 @@ Hacking your camera
 First you'll need to install CHDK onto your camera, so naturally, you'll
 need `STICK: Simple Tool for Installing CHDK <http://zenoshrdlu.com/stick/stick.html>`__ (available for Windows,
 Mac, and Linux). (You'll also need to have
-`Java <http://www.java.com/en/download/manual.jsp>`__ installed on your
+`Java <https://www.java.com/en/download/manual.jsp>`__ installed on your
 computer.)
 
 Follow this link to the `STICK instructions page <http://zenoshrdlu.com/stick/stick.html>`__, click on “STICK zip
@@ -643,7 +643,7 @@ GeoTagging Images
 -----------------
 
 For information regarding geotagging images, more information can be
-found on `Sandro Beningo's step-by-step guide. <http://www.diydrones.com/profiles/blogs/geotagging-images-with-mission-planner>`__
+found on `Sandro Beningo's step-by-step guide. <https://www.diydrones.com/profiles/blogs/geotagging-images-with-mission-planner>`__
 
 Troubleshooting
 ---------------

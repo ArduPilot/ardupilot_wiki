@@ -11,11 +11,11 @@ These instructions clarify how to build ArduPilot for the Navio2 board
 on the Navio2's RPi3 board itself using Waf build system. These instructions assume the RPi3
 has already been setup according to the manufacturer's (i.e. Emlid's)
 instructions
-`here <http://docs.emlid.com/navio2/Navio-APM/configuring-raspberry-pi/>`__.
+`here <https://docs.emlid.com/navio2/Navio-APM/configuring-raspberry-pi/>`__.
 
 Alternatively you can follow Emlid's instructions on how to build from
 source found
-`here <http://docs.emlid.com/navio2/Navio-APM/building-from-sources/>`__.
+`here <https://docs.emlid.com/navio2/Navio-APM/building-from-sources/>`__.
 
 Setup
 -----

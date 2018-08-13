@@ -6,7 +6,7 @@
 ADS-B Receiver
 ==============
 
-This article describes how to attach and configure the MAVLink enabled `uAvionix ADS-B PING™ <http://www.uavionix.com/products/pingrx/>`__ sensor so that the pilot is aware of nearby manned aircraft and optionally to allow the vehicle to automatically avoid near misses.
+This article describes how to attach and configure the MAVLink enabled `uAvionix ADS-B PING™ <https://uavionix.com/products/pingrx/>`__ sensor so that the pilot is aware of nearby manned aircraft and optionally to allow the vehicle to automatically avoid near misses.
 
    ..  youtube:: boe-25OI4bM
     :width: 100%
@@ -24,7 +24,7 @@ ADS-B (aka `Automatic Dependent Surveillance Broadcast <https://en.wikipedia.org
 Required Hardware
 =================
 
-The uAvionix Ping sensor can be purchased directly from `uAvionix <http://www.uavionix.com/products/>`__ or from the following vendors:
+The uAvionix Ping sensor can be purchased directly from `uAvionix <https://uavionix.com/products/>`__ or from the following vendors:
 
    -  USA: `Unmanned Systems Source <https://www.unmannedsystemssource.com/shop/atc-devices/pingrx-ads-b-receiver/>`__
    -       `R Cubed Engineering <http://www.rcubedengineering.com/ecommerce/>`__
@@ -33,7 +33,7 @@ The uAvionix Ping sensor can be purchased directly from `uAvionix <http://www.ua
    -  Asia: `jDrones pingRX <http://store.jdrones.com/ping_ads_b_receiver_p/adsbping01.htm>`__
    -  Japan: `Japan Drones <http://japandrones.com/shopdetail/000000000124/004/X/page1/order/>`__
 
-The full reseller list can be found at `uAvionix <http://www.uavionix.com/resellers/>`__
+The full reseller list can be found at `uAvionix <https://uavionix.com/resellers/>`__
 
 
 Connecting to the flight controller

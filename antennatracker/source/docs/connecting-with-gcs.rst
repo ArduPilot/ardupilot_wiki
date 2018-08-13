@@ -33,7 +33,7 @@ Connect with a USB cable
 
 If the antenna controller is a Pixhawk you can simply connect your
 ground station computer to the Pixhawk using a long micro USB cable
-(`like these from ebay <http://www.ebay.com/sch/i.html?_odkw=long+micro+usb+cable&_osacat=0&_from=R40&_from=R40&_trksid=p2045573.m570.l1313.TR0.TRC0.H0.X3m+micro+usb+cable&_nkw=3m+micro+usb+cable&_sacat=0>`__).
+(`like these from ebay <https://www.ebay.com/sch/i.html?_odkw=long+micro+usb+cable&_osacat=0&_from=R40&_from=R40&_trksid=p2045573.m570.l1313.TR0.TRC0.H0.X3m+micro+usb+cable&_nkw=3m+micro+usb+cable&_sacat=0>`__).
 
 On an APM2 the micro USB port and Telemetry port cannot be used at the
 same time which means that to connect with a USB cable, the radio must

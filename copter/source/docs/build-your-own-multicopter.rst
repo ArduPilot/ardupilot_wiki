@@ -95,21 +95,21 @@ Inexpensive, Ready To Fly Nano, Micro or Small QuadCopter
    typically cost less than a hundred dollars.
 #. Importantly you will get you a much better understanding of how they
    work and of what you really want to do next.
-#. The `Traxxas QR1 QuadCopter <http://traxxas.com/products/models/heli/6208qr1>`__ is an
+#. The `Traxxas QR1 QuadCopter <https://traxxas.com/products/models/heli/6208qr1>`__ is an
    inexpensive RTF Micro Quadcopter that is great for a first
    experience. (Left image below).
 #. For $45.00 the `(Hubsan
-   X4) <http://www.amazon.com/Hubsan-X4-H107-Copter-2-4GHZ/dp/B009M1PO7W>`__ is
+   X4) <https://www.amazon.com/Hubsan-X4-H107-Copter-2-4GHZ/dp/B009M1PO7W>`__ is
    identical to the Traxxas and for $70.00 you can get it with a still
    photo and 720P HD video
-   camera.\ `Husban <http://www.amazon.com/Hubsan-X4-H107-Copter-2-4GHZ/dp/B009M1PO7W>`__
+   camera.\ `Husban <https://www.amazon.com/Hubsan-X4-H107-Copter-2-4GHZ/dp/B009M1PO7W>`__
 #. For $200.00 there is even a really easy to fly **FPV** version of the
-   `Hubsan <http://www.ebay.com/itm/like/171203630670?lpid=82">`__ that
+   `Hubsan <https://www.ebay.com/itm/like/171203630670?lpid=82">`__ that
    comes with a RC transmitter with an excellent LCD display.
 #. Even the parts for the Hubsans are readily available: \ `Hobby Flip <http://hobbyflip.com/>`__
 #. The \ `Helimax 1SQ <http://www.helimax-rc.com/helicopters/hmxe0834-1sq/index.html>`__ is
    another low cost palm sized micro QuadCopter.
-#. Or even the really, really tiny $40.00 `Estes Proto X <http://www.amazon.com/Estes-4606-Proto-Nano-Quadcopter/dp/B00G924W98>`__ actually
+#. Or even the really, really tiny $40.00 `Estes Proto X <https://www.amazon.com/Estes-4606-Proto-Nano-Quadcopter/dp/B00G924W98>`__ actually
    a Hubsan H111 which flies remarkably well (Middle and right images
    below).
 
@@ -124,7 +124,7 @@ Inexpensive, Ready To Fly Nano, Micro or Small QuadCopter
 
 -  Below left is a larger, but very durable copter, the $88.00 UDI U818A
    2.4GHz Quadcopter with Camera from Amazon Prime.
--  And a link to an important `Blog Article by RocklandUSA <http://diydrones.com/profiles/blogs/noob-quadcopter-training-thank-you-community>`__
+-  And a link to an important `Blog Article by RocklandUSA <https://diydrones.com/profiles/blogs/noob-quadcopter-training-thank-you-community>`__
    for all people considering their first Multicopter purchase.
 -  The Blade Nano QX at $90.00 below right is also highly recommended,
    is very light and easy to fly and incredibly durable.
@@ -168,8 +168,7 @@ actually \ **Ready To Fly** and comes with the top of the line
 **Pixhawk** flight controller. However, these are no longer produced/sold by 3DR.
 
     #. It is capable of fully autonomous flight and includes the RC
-       transmitter, the battery and even telemetry, at $750.00 it is a real
-       bargain.
+       transmitter, the battery and even telemetry, at $750.00 it is a real bargain.
     #. The Iris structurally strong and resilient and it is set up to
        support a GoPro camera or even FPV (First Person View) when you are
        ready.
@@ -177,10 +176,9 @@ actually \ **Ready To Fly** and comes with the top of the line
        .. image:: ../images/AeduCopterAndIris.jpg
            :target: ../_images/AeduCopterAndIris.jpg
 
-#. Erle Robotics also offers a DIY kit (named `Erle-Copter Drone Kit <https://erlerobotics.com/blog/product/erle-copter-diy-ubuntu-drone-kit/>`__,
-starting from 449€) which includes `Erle-Brain <https://erlerobotics.com/blog/product/erle-brain-v2/>`__,
-Linux-based autopilot. You can personalize your kit and you can also
-purchase the kit assembled.
+#. Erle Robotics also offers a DIY kit (named `Erle-Copter Drone Kit <https://erlerobotics.com/blog/product/erle-copter-diy-kit/>`__,
+starting from 449€) which includes `Erle-Brain <https://erlerobotics.com/blog/product/erle-brain-3/>`__,
+Linux-based autopilot. You can personalize your kit and you can also purchase the kit assembled.
 
     #. The basic DIY kit includes all the needed to assemble the drone plus
        6 channels RC, a WiFi dongle to receive telemetry data and a battery
@@ -219,7 +217,7 @@ Almost Ready to Fly
 
 #. Most ARF kits that are cheaper than this are not nearly as sturdy and
    the components generally fail much more frequently.
-#. You can buy the `F450 ARF kit Here! <http://www.amainhobbies.com/product_info.php/cPath/2_382_2405_3233_3237/products_id/235232/n/DJI-Innovations-Flame-Wheel-F450-ARF-Quadcopter-Kit-w-Motors-ESC-Propellers>`__ This
+#. You can buy the `F450 ARF kit Here! <https://www.amainhobbies.com/dji-flame-wheel-f450-arf-quadcopter-drone-kit-dji-fw450/p235232>`__ This
    source has the **F350 ARF** kit also.
 #. DO NOT get a clone kit that looks like it, the real DJI motors and
    ESCs are top quality and the frame is stiff and strong, the clones
@@ -227,7 +225,7 @@ Almost Ready to Fly
 #. There are more expensive high quality ARF kits available but the
    FlameWheels will give great service and have very high performance.
 #. If you want to keep initial cost to a bare minimum, start with
-   a `Simple Flight Controller <http://www.hobbyking.com/hobbyking/store/__24723__Hobbyking_KK2_0_Multi_rotor_LCD_Flight_Control_Board.html>`__ then
+   a `Simple Flight Controller <https://hobbyking.com/en_us/hobbyking-kk2-0-multi-rotor-lcd-flight-control-board.html?___store=en_us>`__ then
    graduate to a
    `Pixhawk <https://store.3dr.com/products/3dr-pixhawk>`__ when
    you are ready
@@ -262,7 +260,7 @@ Frame Kit
       center sections and extra 7/8" spacers.
    #. The extra center plates mount below the stock plates on 7/8"
       spacers to accommodate the battery and flight gear.
-   #. I am using 4 of the stock DJI Flamewheel motors and a special `4 in 1 ESC <http://mymobilemms.com/OFFTHEGRIDWATER.CA/index.php?main_page=product_info&cPath=2_4&products_id=203>`__ placed
+   #. I am using 4 of the stock DJI Flamewheel motors and a special `4 in 1 ESC <ttp://mymobilemms.com/OFFTHEGRIDWATER.CA/ESC/4-in-1-Speed-Control-Quad-HOBBYWING-Skywalker-Quattro-25A-X-4?cPath=2_4>`__ placed
       between the center plates of the copter.
 
       .. image:: ../../../images/3281_dimg2.jpg
@@ -282,7 +280,7 @@ Frame Kit
       .. image:: ../images/FlipPX41.jpg
           :target: ../_images/FlipPX41.jpg
 
-#. The `Tarot 650 <http://www.ebay.com/itm/Tarot-Iron-Man-650-Foldable-3K-carbon-fiber-Quad-copter-Quadcopter-Frame-TL65B02-/151050276421>`__ is
+#. The `Tarot 650 <https://www.ebay.com/itm/Tarot-Iron-Man-650-Foldable-3K-carbon-fiber-Quad-copter-Quadcopter-Frame-TL65B02-/151050276421>`__ is
    a carbon fiber frame that is quite large for a QuadCopter and it can
    incorporate up to 17" propellers.
 
@@ -317,8 +315,7 @@ Frame Kit
          construct one of these for your first build.
 
 #. A really handy link for quickly calculating performance requirements
-   for various multicopters and
-   components: `eCalc <http://www.ecalc.ch/indexcalc.htm>`__
+   for various multicopters and components: `eCalc <https://ecalc.ch/index.htm>`__
 
 .. image:: ../images/copter_tarot_frame.jpg
     :target: ../_images/copter_tarot_frame.jpg

@@ -19,7 +19,7 @@ After that you can proceed to the hardware installation guide and install your E
 
 
 .. tip::
-    If you encounter any issues performing these steps, we are happy to help you out on our `community forum <http://community.emlid.com/>`__ .
+    If you encounter any issues performing these steps, we are happy to help you out on our `community forum <https://community.emlid.com/>`__ .
 
 
 ------------------------

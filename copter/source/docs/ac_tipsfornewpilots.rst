@@ -85,7 +85,7 @@ to safely land your copter (and not ruin the battery).
 -  You may also program your ESCs to use a slow or no cutoff at low
    voltages.
 -  For APM 2 or 2.5 without power module it is HIGHLY recommended you
-   install a `Battery Voltage Monitor <http://www.hobbyking.com/hobbyking/store/RC_PRODUCT_SEARCH.asp?strSearch=Battery+Monitor>`__.
+   install a `Battery Voltage Monitor <https://hobbyking.com/en_us/catalogsearch/result/?q=Battery+Monitor&order=relevance&dir=asc&___store=en_us>`__.
 
    -  For 3S LiPo batteries, the two wires can be soldered to the P-PCB
       directly, or you can connect to the balancing plug of your

@@ -72,7 +72,7 @@ reaching the limit of the code size, a new developer (https://github.com/night-g
 up the project and through some clever development effort managed to bring it back to life.
 
 The new project is located at https://github.com/night-ghost/minimosd-extra and has an 
-active discussion at `this RCGroups forum thread <http://www.rcgroups.com/forums/showthread.php?t=2591835>`__.
+active discussion at `this RCGroups forum thread <https://www.rcgroups.com/forums/showthread.php?t=2591835>`__.
 
 Some of the differences from the old traditional firmware are:
 

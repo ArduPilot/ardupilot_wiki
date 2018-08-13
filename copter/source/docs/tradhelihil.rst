@@ -23,7 +23,7 @@ which can be found
 `here <http://www.aerosimrc.com/downloads/AeroSIMRC_3.83-3.81.exe>`__.
 
 2. AP Mission Planner v 1.0.84+
-http://code.google.com/p/ardupilot-mega/downloads/list
+https://code.google.com/archive/p/ardupilot-mega/downloads
 
 3. In your AP Mission Planner installation directory you will find a
 file called AeroSIMRCAPMHIL.zip. Extract this to your AeroSIM-RC

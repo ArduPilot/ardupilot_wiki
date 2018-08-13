@@ -32,7 +32,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `RF Design <http://store.rfdesign.com.au/>`__
 * `Skeyetech <http://www.skeyetech-shop.fr/>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
-* `uAvionix <http://www.uavionix.com/>`__
+* `uAvionix <https://www.uavionix.com/>`__
 * `VirtualRobotix <http://www.virtualrobotix.it/index.php/en/shop>`__
 * `3DXR <https://www.3dxr.co.uk/>`__
 

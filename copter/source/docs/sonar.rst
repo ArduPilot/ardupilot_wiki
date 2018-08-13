@@ -35,11 +35,11 @@ Maxbotix.
 
 These other sonar are also supported:
 
--  `XL-EZL0 <http://www.maxbotix.com/Ultrasonic_Sensors/MB1260.htm>`__
+-  `XL-EZL0 <https://www.maxbotix.com/Ultrasonic_Sensors/MB1260.htm>`__
    (10.68m max range but lower resolution, also XLL)
 -  `HRLV-EZ4 <https://www.sparkfun.com/products/11309>`__ (5m max range
    but higher resolution, also HRLV-EZ0)
--  `LV-EZ4 <http://www.maxbotix.com/Ultrasonic_Sensors/MB1040.htm>`__
+-  `LV-EZ4 <https://www.maxbotix.com/Ultrasonic_Sensors/MB1040.htm>`__
    (6.45m max range, cheaper but less resistant to noise, also LV_EZ0)
 
 We do not yet support I2C based MaxBotix sonars.
@@ -47,7 +47,7 @@ We do not yet support I2C based MaxBotix sonars.
 Building a cable to reduce sonar noise
 ======================================
 
-As described in `this Maxbotix article <http://www.maxbotix.com/articles/035.htm>`__, you will need to
+As described in `this Maxbotix article <https://www.maxbotix.com/articles/maxsonar-troubleshooting.htm>`__, you will need to
 make a special cable which requires:
 
 -  `100uF capacitor <https://www.sparkfun.com/products/96>`__
@@ -178,8 +178,8 @@ function for about 10 minutes after an extreme drop in temperature (i.e.
 a drop from a warm 27C/80F house to the chilly 10C/50F outdoors) because
 of condensation building up on the sensor.
 
-`This post <http://diydrones.com/forum/topics/arducopter-2-0-48?xg_source=activity&id=705844%3ATopic%3A676942&page=31#comments>`__ includes
-one member's (`Geir Engebakken <http://www.diydrones.com/forum/topic/listForContributor?user=3a28calx54gma>`__)
+`This post <https://diydrones.com/forum/topics/arducopter-2-0-48?xg_source=activity&id=705844%3ATopic%3A676942&page=31#comments>`__ includes
+one member's (`Geir Engebakken <https://www.diydrones.com/forum/topic/listForContributor?user=3a28calx54gma>`__)
 solution (initially suggested by the developer Olivier ADLER) involving
 attaching 4x10Ohm resistors to the base of the sonar powered from a 5V
 source.

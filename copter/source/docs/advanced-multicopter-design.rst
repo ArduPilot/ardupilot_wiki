@@ -169,7 +169,7 @@ Motors, propellers and ESCs
 For multicopters, motors, propellers and ESCs (speed controllers) are
 critical and have been failure prone in the past.
 
-This ECalc based `Xcopter: motor - propeller - battery - ESC calculator <http://www.ecalc.ch/xcoptercalc.php?ecalc&lang=en>`__ will
+This ECalc based `Xcopter: motor - propeller - battery - ESC calculator <https://www.ecalc.ch/xcoptercalc.php?ecalc&lang=en>`__ will
 help you pick the best components for your copter.
 
 -  Quadcopter design will be used for illustration as they are the most
@@ -289,8 +289,7 @@ Professional Grade Power System for large Quadcopters (28" Propellers)
 ----------------------------------------------------------------------
 
 -  The `Tigermotor U8 Pro <http://www.rctigermotor.com/html/2013/Efficiency-Type_1219/176.html>`__
-   Series motor is currently top of the line for a commercially
-   available (large) copter motor.
+   Series motor is currently top of the line for a commercially available (large) copter motor.
 
    -  It features Environmentally protected, closed construction and
       easily replaceable bearings.
@@ -453,7 +452,7 @@ Consumer Grade Power System for Small Quadcopters (8" - 12" Propellers)
 -  Here is a durable and low cost alternative for powering smaller hobby
    or even semi-pro sub 5 pound Quadcopters.
 
-   -  The `DJI 2212 Motors <http://www.ebay.com/itm/like/231128616387?lpid=82>`__
+   -  The `DJI 2212 Motors <https://www.ebay.com/itm/231128616387?lpid=82>`__
       provided with their low cost ARF Flamewheel Quadcopters are unusually durable and cost $24.00 each.
    -  And DJI's specially hubbed 10" plastic props at $8.00 a pair are well balanced, efficient and rugged.
       
@@ -679,15 +678,15 @@ it is strong and light and easily manufactured.
 -  There are a wide variety of Carbon fiber and epoxy fiberglass
    components to choose from.
 
-   -  Carbon fiber products are available from \ `RockWest Composites <http://www.rockwestcomposites.com/>`__ and `Carbon Fiber Tube Shop <http://www.carbonfibertubeshop.com>`__\ and \ `Dragon Plate <http://dragonplate.com/default.asp>`__
+   -  Carbon fiber products are available from \ `RockWest Composites <https://www.rockwestcomposites.com/>`__ and `Carbon Fiber Tube Shop <http://www.carbonfibertubeshop.com>`__\ and \ `Dragon Plate <http://dragonplate.com/default.asp>`__
    -  A really good article on cutting and gluing carbon fiber products
       from \ `Carbon Fiber Tube Shop <http://www.carbonfibertubeshop.com/cut%20&%20bond.html>`__
    -  Fiberglass and Carbon Fiber products are available from: `CST Sales <http://www.cstsales.com/products.html>`__ and `ACP Sales <http://www.acpsales.com/Carbon-Fiber.html>`__
-   -  A datasheet for `3M 2216 Epoxy Glue <http://multimedia.3m.com/mws/mediawebserver?6666660Zjcf6lVs6EVs666GGfCOrrrrQ->`__
+   -  A datasheet for `3M 2216 Epoxy Glue <http://multimedia.3m.com/mws/media/153955O/3mtm-scotch-weldtm-epoxy-adhesive-2216-b-a.pdf>`__
       and a source for it
-      `Amazon <http://www.amazon.com/3M-Scotch-Weld-Epoxy-Adhesive-EC-2216/dp/B000WXL090/ref=sr_1_2?ie=UTF8&qid=1392508104&sr=8-2&keywords=3m+2216>`__
+      `Amazon <https://www.amazon.com/3M-Scotch-Weld-Epoxy-Adhesive-EC-2216/dp/B000WXL090/ref=sr_1_2?ie=UTF8&qid=1392508104&sr=8-2&keywords=3m+2216>`__
    -  A datasheet for Loctite 9430 Glue and a source for Loctite
-      9340 \ `Amazon <http://www.amazon.com/Loctite-9340%C3%A2-Hysol-Adhesive-Temperature/dp/B000WXL1YE/ref=sr_1_1?s=industrial&ie=UTF8&qid=1392508821&sr=1-1&keywords=loctite+9340>`__
+      9340 \ `Amazon <https://www.amazon.com/Loctite-9340%C3%A2-Hysol-Adhesive-Temperature/dp/B000WXL1YE/ref=sr_1_1?s=industrial&ie=UTF8&qid=1392508821&sr=1-1&keywords=loctite+9340>`__
 
 
 Using manufactured Plastic and Fiberglass Components in Your Own Frames.
@@ -737,7 +736,7 @@ carbon fiber arms and plastic electrical and plumbing parts.
 .. image:: ../images/wavecopterimprovements4.jpg
     :target: ../_images/wavecopterimprovements4.jpg
 
--  Here is a link to `Alec Short's construction article in Makezine <http://makezine.com/projects/wavecopter-a-waterproof-quadcopter/>`__
+-  Here is a link to `Alec Short's construction article in Makezine <https://makezine.com/projects/wavecopter-a-waterproof-quadcopter/>`__
 -  I really like the use of the central 4 way hub for stabilizing the
    tubes and the slip fit adjustable tension T's for motor mounts are
    also great.
@@ -872,7 +871,7 @@ A Small Quadcopter Optimised to Use High Efficiency Lithium Batteries
    receiver and even an FPV camera and transmitter.
 -  It weighs about a pound and since the battery is 2 parallel it can
    provide 13.2 amps of current (max current is less than 10 amps.)
--  `Xcalc computations <http://www.ecalc.ch/xcoptercalc.php?ecalc>`__
+-  `Xcalc computations <https://www.ecalc.ch/xcoptercalc.php?ecalc>`__
    show that a hover time of 60 minutes might be possible with a
    realistic fly around time of about 30 minutes.
 
@@ -886,7 +885,7 @@ Links To Specific MultiCopter Builds
 ====================================
 
 -  Here is a link to Forrest Franz's build of a very simple, very light
-   weight, very strong \ `carbon fiber Quadcopter frame <http://diydrones.com/forum/topics/build-your-own-copter-part-iii?xg_source=activity>`__
+   weight, very strong \ `carbon fiber Quadcopter frame <https://diydrones.com/forum/topics/build-your-own-copter-part-iii?xg_source=activity>`__
 
 .. image:: ../images/QuadMartyFitTest.jpg
     :target: ../_images/QuadMartyFitTest.jpg
@@ -894,13 +893,13 @@ Links To Specific MultiCopter Builds
 -  And some links to some of Forrests extremely ambitious copter
    building techniques and concepts.
 
-   -  `building-copters-with-round-tubes-stronger-lighter-easier <http://diydrones.com/group/arducopterusergroup/forum/topics/building-copters-with-round-tubes-stronger-lighter-easier-to>`__
-   -  `build-your-own-copter-part-ii <http://diydrones.com/forum/topics/build-your-own-copter-part-ii>`__
-   -  `build-your-own-copter-part-iii <http://diydrones.com/forum/topics/build-your-own-copter-part-iii>`__
-   -  `build-your-own-copter-part-iv <http://diydrones.com/forum/topics/build-your-own-copter-part-iv>`__
+   -  `building-copters-with-round-tubes-stronger-lighter-easier <https://diydrones.com/group/arducopterusergroup/forum/topics/building-copters-with-round-tubes-stronger-lighter-easier-to>`__
+   -  `build-your-own-copter-part-ii <https://diydrones.com/forum/topics/build-your-own-copter-part-ii>`__
+   -  `build-your-own-copter-part-iii <https://diydrones.com/forum/topics/build-your-own-copter-part-iii>`__
+   -  `build-your-own-copter-part-iv <https://diydrones.com/forum/topics/build-your-own-copter-part-iv>`__
 
 -  And here is a link to Luke Cook's very serious, very well thought out
-   and meticulously executed \ `OctoCopter Build <http://diydrones.com/profiles/blogs/octocopter-scratch-build>`__
+   and meticulously executed \ `OctoCopter Build <https://diydrones.com/profiles/blogs/octocopter-scratch-build>`__
 
    .. image:: ../images/octocopter_luke_cook.jpg
        :target: ../_images/octocopter_luke_cook.jpg

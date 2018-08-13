@@ -26,7 +26,7 @@ PXFmini Wiring Chart
 
 [site wiki="copter"]
 Copter users should also see the 
-`official setup documentation <http://erlerobotics.com/docs/Robots/Erle-Copter/index.html>`__.
+`official setup documentation <http://docs.erlerobotics.com/erle_robots/erle_copter>`__.
 [/site]
 
 Power PXFmini
@@ -183,7 +183,7 @@ More information in `official documentation <http://erlerobotics.com/docs/Artifi
 Related information
 ===================
 
-`Erle Robotics official documentation <http://erlerobotics.com/docs/Intro.html>`__ includes
+`Erle Robotics official documentation <http://docs.erlerobotics.com/>`__ includes
 additional information about how to use PXFmini.
 
 

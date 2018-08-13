@@ -6,7 +6,7 @@ Mouse-based Optical Flow Sensor (ADNS3080)
 
 [copywiki destination="copter,plane"]
 
-Copter-3.2.1 on APM2.x boards included limited support for the mouse sensor based `Optical Flow sensor <http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2047675.m570.l1313.TR0.TRC0.H0.Xoptical+flow.TRS0&_nkw=optical+flow&_sacat=0>`__ using the OF_Loiter flight mode.
+Copter-3.2.1 on APM2.x boards included limited support for the mouse sensor based `Optical Flow sensor <https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2047675.m570.l1313.TR0.TRC0.H0.Xoptical+flow.TRS0&_nkw=optical+flow&_sacat=0>`__ using the OF_Loiter flight mode.
 
 .. warning::
 
@@ -163,7 +163,7 @@ Known issues
 Acknowledgements:
 =================
 
-#. `Marko Klein Berkenbusch's <http://diydrones.com/profile/MarkoKleineBerkenbusch>`__
+#. `Marko Klein Berkenbusch's <https://diydrones.com/profile/MarkoKleineBerkenbusch>`__
    position hold with mouse sensor
 
 #. research paper re `optical flow for position hold <http://www.araa.asn.au/acra/acra2007/papers/paper181final.pdf>`__

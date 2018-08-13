@@ -153,7 +153,7 @@ to plans.
 
 Copter is also useful for sample collection in difficult to reach or
 hazardous areas (this requires that the vehicle is fitted with a small
-probe or other sample device). The `Modcopter Sample Collection System <http://permalink.lanl.gov/object/tr?what=info:lanl-repo/lareport/LA-UR-13-23300>`__
+probe or other sample device). The `Modcopter Sample Collection System <https://permalink.lanl.gov/object/tr?what=info:lanl-repo/lareport/LA-UR-13-23300>`__
 is an excellent government-backed student project for accessing a
 variety of samples.
 

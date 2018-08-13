@@ -53,7 +53,7 @@ Body
 You will need a body that can support the tremendous weight of your
 antennas. 4 lbs is a "tremendous" amount of weight to throw around
 depending on what torque and what materials your servos are sporting.
-`This is the one I chose to use for this guide. <http://www.readymaderc.com/store/index.php?main_page=product_info&cPath=11_27&products_id=96>`__
+`This is the one I chose to use for this guide. <https://www.readymaderc.com/products/details/antenna-pan-tilt-for-eagleeyes-eztracker-antenna-tracker>`__
 It currently is holding two patch antennas each weighing about 12oz. You
 can design your own body, but you should have a `CNC machine <https://en.wikipedia.org/wiki/Numerical_control>`__ as part of
 the solution as any inaccuracies could make it not track correctly and
@@ -161,9 +161,9 @@ run up to 6 servos with the input provided by the micro USB cable but
 you will only use 2 of them plus the power pins. The ArduPilot version
 uses one of the early versions of the APM called ArduPilot. It is
 stripped down and cheap, you might have one from years ago, I don't know
-much about it, but `this is a build <http://code.google.com/p/happykillmore-gcs/wiki/Tracking>`__ that
+much about it, but `this is a build <https://code.google.com/archive/p/happykillmore-gcs/wikis/Tracking.wiki>`__ that
 HappyKilmore's GCS uses and
-`they <http://www.diydrones.com/profiles/blogs/antenna-tracking-in?xg_source=activity>`__
+`they <https://www.diydrones.com/profiles/blogs/antenna-tracking-in?xg_source=activity>`__
 did a write up on both of them. I used it a lot and you can't go wrong
 reading it yourself either! No matter which controller type you use to
 drive your servos you WILL need to download and install the firmware for
@@ -337,7 +337,7 @@ Advanced use
 .. note::
 
    This section is an excerpt from a post by Scott Fuller. The
-   original post is here: `The expensive but attention grabbing Antenna Tracker <http://diydrones.com/profiles/blogs/the-expensive-but-attention-grabbing-antenna-tracker>`__)
+   original post is here: `The expensive but attention grabbing Antenna Tracker <https://diydrones.com/profiles/blogs/the-expensive-but-attention-grabbing-antenna-tracker>`__)
 
 Usually the first thing I do is power up everything and get a solid GPS
 lock on the APM. After that I'll set my plane in front of the antenna

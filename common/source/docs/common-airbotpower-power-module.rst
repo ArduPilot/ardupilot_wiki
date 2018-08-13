@@ -39,7 +39,7 @@ The following sections provide an overview of the setup. For more
 detailed information about the benefits of this board and setup see:
 
 -  AirbotPower Power Module (airbotservices store)
--  `AirbotPower board <http://diydrones.com/profiles/blogs/airbotpower-board>`__ (DIY
+-  `AirbotPower board <https://diydrones.com/profiles/blogs/airbotpower-board>`__ (DIY
    Drones blog post)
 
 Key Features

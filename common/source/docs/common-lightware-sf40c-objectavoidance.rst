@@ -49,7 +49,7 @@ The AC3.4 implementation has the following limitations.  Future versions will li
 -  Object avoidance only works in Loiter and AltHold modes.
 -  The vehicle should stop before hitting objects but will never back away from objects that approach the vehicle (a slow backing away will be added in future firmware versions).
 
-Please report issues found in the `support forums <http://discuss.ardupilot.org/c/arducopter/copter34>`__ and we will try to address them.
+Please report issues found in the `support forums <https://discuss.ardupilot.org/c/arducopter/copter34>`__ and we will try to address them.
 
 DataFlash logging
 =================

@@ -63,12 +63,12 @@ During the preparation of this guide, ublox-1.40 version of the firmware has als
 
 Downloading U-centre UI and 1.30 Firmware
 =========================================
-Upgrading firmware requires the use of Ublox's Windows software U-center. To download U-center, please go to the `official website <https://www.u-blox.com/en/product/u-center-windows>`__. Then follow the prompts to install U-cent software. During the installation process, you will be prompted to install the device Driver, please ensure that only the Standard Driver For Windows is checked, as shown below. 
+Upgrading firmware requires the use of Ublox's Windows software U-center. To download U-center, please go to the `official website <https://www.u-blox.com/en/product/u-center>`__. Then follow the prompts to install U-cent software. During the installation process, you will be prompted to install the device Driver, please ensure that only the Standard Driver For Windows is checked, as shown below. 
 
 .. image:: ../../../images/HERE+_Ublox_standard_drivers.png
 	:target: ../_images/HERE+_Ublox_standard_drivers.png
 
-You will also need to download firmware `here <https://www.ublox.com/en/search?keywords=HPG+1.30>`__. Click the choice: u-blox M8 Flash Firmware 3.01 HPG 1.30 - ONLY for High Precision GNSS products.
+You will also need to download firmware `here <https://www.u-blox.com/en/search?keywords=HPG+1.30>`__. Click the choice: u-blox M8 Flash Firmware 3.01 HPG 1.30 - ONLY for High Precision GNSS products.
 
 Connect your HERE+ Base and Rover to Computer
 =============================================

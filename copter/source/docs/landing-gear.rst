@@ -5,7 +5,7 @@ Landing Gear
 ============
 
 Copter supports retractable Landing Gear activated by a servo mechanism
-(like these sold by `Hobby King <http://www.hobbyking.com/hobbyking/store/__63508__Quanum_600_Class_Quick_Release_Universal_Retractable_Gear_Set_680UC_Pro_Hexa_Copter_.html>`__).
+(like these sold by `Hobby King <https://hobbyking.com/en_us/quanum-600-class-quick-release-universal-retractable-gear-set-680uc-pro-hexa-copter.html?___store=en_us>`__).
 The gear can be manually retracted/deployed with an auxiliary switch.
 The gear will also automatically deploy during landing.
 

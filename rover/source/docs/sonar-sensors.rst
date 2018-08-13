@@ -246,13 +246,13 @@ markedly by adding a simple filter.
 
 To avoid spikes in the sonar data you should connect with a shielded
 cable and include a cap and resistor to filter the power to the sonar as
-described in \ `this tutorial <http://www.diydrones.com/profiles/blogs/fantastic-maxbotics-tutorial-on-using-sonor-sensors-with-multicop>`__ on
+described in \ `this tutorial <https://www.diydrones.com/profiles/blogs/fantastic-maxbotics-tutorial-on-using-sonor-sensors-with-multicop>`__ on
 techniques to reduce noise and improve sensor performance. Maxbotics
 sells the necessary components
 `here <http://www.maxbotix.com/Ultrasonic_Sensors/MB7961.htm>`__.
 
 .. image:: ../images/XL-Filter.jpg
-    :target:  http://www.maxbotix.com/articles/035.htm
+    :target:  https://www.maxbotix.com/articles/maxsonar-troubleshooting.htm
 
 This image shows Slash Rover's twin sonars and shielded cables as part
 of a power filtering setup.

@@ -42,7 +42,7 @@ This can be due to a number of mistakes:
    your LiPo after it's already up, or just ensure that the four-wire
    cable from your APM board to your power distribution board is
    disconnected during regular startup. See
-   details \ `here <http://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
+   details \ `here <https://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
 #. It's possible you've changed your throttle trim settings since you
    did your initial radio calibration. Trim the throttle down a few
    notches and try arming again.
@@ -438,7 +438,7 @@ Copter ESCs keep beeping
    your LiPo after it's already up, or just ensure that the four-wire
    cable from your APM board to your power distribution board is
    disconnected during regular startup. See
-   details \ `here <http://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
+   details \ `here <https://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
 
 I'm using a MediaTek GPS, and although the module's blue lock LED goes solid, APM is not showing a lock or I'm getting "No GPS" on the Mission Planner display
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -481,7 +481,7 @@ If you have a uBlox module and APM is not showing lock, you may not have
 ordered the module preprogammed for ArduPilot from the DIY Drones store
 (you had to select that option). In that case, program it yourself with
 the
-instructions \ `here <http://diydrones.com/profiles/blogs/tutorial-programming-your>`__.
+instructions \ `here <https://diydrones.com/profiles/blogs/tutorial-programming-your>`__.
 
 I want to load the code in Arduino, but I'm having trouble
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -494,7 +494,7 @@ Arduino where your libraries are properly.
 
 If you're getting avrdude sync error message in the Arduino status bar),
 go through \ *all* of the
-tips \ `here <http://diydrones.com/profiles/blogs/arduino-debugging-tips>`__.
+tips \ `here <https://diydrones.com/profiles/blogs/arduino-debugging-tips>`__.
 
 My Copter just won't rise/lift off
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -530,7 +530,7 @@ I've got a tricopter and I'm having trouble with the yaw
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Please see the
-tips \ `here <http://diydrones.com/profiles/blogs/tricopter-based-on-arducopter-yaw-issues-and-solutions>`__.
+tips \ `here <https://diydrones.com/profiles/blogs/tricopter-based-on-arducopter-yaw-issues-and-solutions>`__.
 
 The Mission Planner's HUD display moves around even though my copter is motionless
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -561,7 +561,7 @@ values to become very noisy and throw off the altitude estimates. The
 solution is to reduce sources of vibration from your frame (bent prop
 adapters and motor shafts, replace EPP props with APC) and remove hard
 connections between the frame and APM by using vibration dampening
-products such as \ `DuBro foam <https://dubro.com/products/r-c-protective-foam-rubber>`__.
+products such as \ `DuBro foam <https://www.dubro.com/products/r-c-protective-foam-rubber>`__.
 
 As of version 2.9 of Copter, inertial navigation is used to maintain
 altitude and in 2.9.2 horizontal position as well so vibration truly
@@ -592,7 +592,7 @@ than -5 to -15 or alt hold will not function correctly.
     :target: ../_images/BadVibrations1.png
 
 There is a good
-discussion \ `here <http://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__ re
+discussion \ `here <https://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__ re
 vibration dampening.
 
 My copter slowly rises or descends when I enable Alt-Hold or Loiter
