@@ -4,7 +4,7 @@
 LightWare SF10 and SF11 Lidar
 =============================
 
-The `Lightware SF10 and SF11 <http://www.lightware.co.za/shop/en/>`__ series of laser rangefinders are particularly lightweight, and provide fast and accurate distance measurements.
+The `Lightware SF10 and SF11 <https://lightware.co.za/collections/lidar-rangefinders>`__ series of laser rangefinders are particularly lightweight, and provide fast and accurate distance measurements.
 Although slightly more expensive than other rangefinders, members of the dev team have had good success with them.
 The series includes a number of models:
 `SF10/A <http://www.lightware.co.za/shop/en/drone-altimeters/33-sf10a.html>`__ (25m),
