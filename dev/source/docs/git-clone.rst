@@ -7,6 +7,8 @@ Clone a repository
    .. image:: ../images/git-fork-clone.png
        :width: 70%
 
+.. inclusion-marker-do-not-remove
+
 "Cloning" is git's term for making a local copy of a remote repository (i.e. one held on the GitHub servers).
 
 Developers should clone the main `ArduPilot repository <https://github.com/ArduPilot/ardupilot>`__ (if they simply want to download and compile the latest code) or their own :ref:`fork <git-fork>` (if they want to make changes to the source code and potentially submit changes back).
