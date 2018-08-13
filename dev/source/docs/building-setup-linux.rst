@@ -9,13 +9,25 @@ This article shows how to setup your build environment on Linux/Ubuntu machines.
 Setup on Ubuntu
 ===============
 
-Run the install-prereqs-ubuntu.sh script:
+Download ArduPilot
+------------------
+
+If you don't have a copy of the ArduPilot git repository then open a
+terminal and run:
 
 ::
 
-    Tools/scripts/install-prereqs-ubuntu.sh -y
+    git clone git://github.com/ArduPilot/ardupilot.git
+    cd ardupilot
+    git submodule update --init --recursive
 
-Also follow the `MAVProxy's install instructions <https://ardupilot.github.io/MAVProxy/html/getting_started/download_and_installation.html#linux>`__ if you plan to use the simulator.
+Install some required packages
+------------------------------
+
+If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/scripts/install-prereqs-ubuntu.sh>`__ that will do it for you. From ardupilot directory :
+::
+
+    Tools/scripts/install-prereqs-ubuntu.sh -y
 
 Reload the path (log-out and log-in to make permanent):
 
@@ -24,9 +36,14 @@ Reload the path (log-out and log-in to make permanent):
     . ~/.profile
 
 Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+For more explanations and step-by-step instructions, please read instructions on how to setup the simulator SITL on Linux :ref:`Setting up SITL on Linux <setting-up-sitl-on-linux>`.
 
 Setup for other Distributions
 =============================
+
+.. warning::
+
+    Do not use this if you have already use the ``install-prereqs-ubuntu.sh`` script !
 
 To build for a Cube/Pixhawk target on Linux you need the
 following tools and git repositories:
@@ -53,16 +70,17 @@ You will need to log out and then log back in for the group change to take effec
 Compiler
 --------
 
-You need the specific gcc-arm cross-compiler linked above. You need to unpack it:
+You need the specific gcc-arm cross-compiler linked above. You need to unpack it where you want, for now let's call this location TARGET_DIR:
 
 ::
 
+    cd TARGET_DIR
     tar -xjvf gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
 
 and then add the bin directory from the tarball to your $PATH by editing
-the $HOME/.bashrc file and adding a line like this to the end:
+the $HOME/.bashrc file and adding a line like this to the end. TARGET_DIR is the location choose previouly where you unpack the toolchain:
 
-``export PATH=$PATH:/home/your_username/bin/gcc-arm-none-eabi-4_9-2015q3/bin``
+``export PATH=$PATH:TARGET_DIR/gcc-arm-none-eabi-4_9-2015q3/bin``
 
 Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
