@@ -9,17 +9,12 @@ This article shows how to setup your build environment on Linux/Ubuntu machines.
 Setup on Ubuntu
 ===============
 
-Download ArduPilot
-------------------
+Clone ArduPilot repository
+--------------------------
 
-If you don't have a copy of the ArduPilot git repository then open a
-terminal and run:
-
-::
-
-    git clone git://github.com/ArduPilot/ardupilot.git
-    cd ardupilot
-    git submodule update --init --recursive
+.. include:: git-clone.rst
+    :start-after: inclusion-marker-do-not-remove
+    :end-before: Cloning with the GitHub GUI (Windows or MAC)
 
 Install some required packages
 ------------------------------
@@ -36,7 +31,29 @@ Reload the path (log-out and log-in to make permanent):
     . ~/.profile
 
 Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
-For more explanations and step-by-step instructions, please read instructions on how to setup the simulator SITL on Linux :ref:`Setting up SITL on Linux <setting-up-sitl-on-linux>`.
+
+Add some directories to your search path (Facultative)
+------------------------------------------------------
+
+.. note::
+
+    ONLY if you didn't run the install-prereqs script from previous step.
+
+Add the following lines to the end of your ".bashrc" in your home
+directory (notice the . on the start of that filename. Also, this is a
+hidden file, so if you're using a file manager, make sure to turn on
+"show hidden files").
+
+::
+
+    export PATH=$PATH:$HOME/ardupilot/Tools/autotest
+    export PATH=/usr/lib/ccache:$PATH
+
+Then reload your PATH by using the "dot" command in a terminal
+
+::
+
+    . ~/.bashrc
 
 Setup for other Distributions
 =============================
