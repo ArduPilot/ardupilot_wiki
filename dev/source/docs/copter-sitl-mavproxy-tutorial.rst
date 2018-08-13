@@ -23,7 +23,7 @@ The tutorial is complementary to the topic :ref:`Using SITL for ArduPilot Testin
    -  We use *MAVProxy* here, but you can :ref:`attach another ground station to SITL <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`
       if you prefer (similar instructions can be used in any GCS).
    -  This tutorial is for Copter - see
-      :ref:`Plane <plane-sitlmavproxy-tutorial>` and Rover for similar
+      :ref:`Plane <plane-sitlmavproxy-tutorial>` and :ref:`Rover <rover-sitlmavproxy-tutorial>` for similar
       tutorials on the other vehicles.
 
 Preconditions
