@@ -57,7 +57,20 @@ The shared UART3/I2C pins are enabled only for I2C operation to allow external c
 
 If you want to power the servos from the ESC BEC via the board's center rail for the servo outputs, then you should remove the diode as per here: https://www.rcgroups.com/forums/showthread.php?2874687, otherwise, independently power the servos directly from the ESC or independent BEC with no connection to the board's servo output center rail.
 
+.. figure:: ../../../images/OMNIBUSF4Pro_remove_diode.jpg
+    :target: ../_images/OMNIBUSF4Pro_remove_diode.jpg
+    :width: 450px
+
 Video power provided on the video input and output center rail, is provide through an on-board noise filter. Either ~4.5V (labeled 5V) or VBAT-0.5V (VBAT) can be selected by solder pads on the back of the board.
+
+PPM solder pad/resistor should be soldered and “S-BUS” resistor/solder pad removed
+Overwise UART1 or UART6 or RCIN will not work
+
+.. figure:: ../../../images/omnibusf4pro_ardupilot_wiring.jpg
+    :target: ../_images/omnibusf4pro_ardupilot_wiring.jpg
+    :width: 450px
+
+
 
 Flashing Firmware
 ========================
@@ -99,6 +112,9 @@ Install dfu-util
   Rename it to `dfu-util.exe`
 
   Append the path of the `dfu-util.exe` to the system environment variable `Path`: "My Computer" > "Properties" > "Advanced" > "Environment Variables" > "Path". Please note that paths in the variable `Path` are seperated by semicolon `;`. This will allow dfu-util to be executed globally in command prompt.
+  
+    Instead of using dfu-util, you could flash bootloader with betaflight. Instructions are detailled here : https://github.com/betaflight/betaflight/wiki/Installing-Betaflight
+  If you board is not recognize as a com port under windows, you have to download and install zadig : http://zadig.akeo.ie/
 
 Flash Bootloader
 ----------------
@@ -134,3 +150,17 @@ Compile ArduPilot
 -----------------
 To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
 `Building the Code <http://ardupilot.org/dev/docs/building-the-code.html>`__
+
+
+Configuration
+-----------------
+Enable Battery monitor with these settings :
+
+BAT_MONITOR=4
+
+Then reboot.
+
+BAT_VOLT_PIN 12
+BAT_CURR_PIN 11
+BAT_VOLT_MULT 11.0
+BAT_AMP_PERVOLT 38.0
