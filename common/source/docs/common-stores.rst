@@ -28,6 +28,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Lightware <http://www.lightware.co.za>`__
 * `mRobotics <http://mrobotics.io/>`__
 * `Northox <https://northox.myshopify.com/>`__
+* `Polaris-GNSS <https://www.polaris-gnss.com>`__
 * `ProfiCNC <http://www.proficnc.com/stores>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
 * `Skeyetech <http://www.skeyetech-shop.fr/>`__
