@@ -85,6 +85,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
     UAVCAN ESCs <common-uavcan-escs>
+    Video <common-video-landingpage>
 [site wiki="rover"]
     Wheel Encoders <wheel-encoder>
 [/site]
