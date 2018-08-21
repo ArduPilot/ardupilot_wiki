@@ -38,33 +38,10 @@ scratch" or using pre-defined project files. Using the template files
 saves you a little work as they already include the project location and
 *px4-v2 make target definitions* for Copter and Plane.
 
-Creating the Project from template files
-----------------------------------------
+Creating the Project
+--------------------
 
-The project can be created from predefined template files:
-
--  Rename **/ardupilot/eclipse.cproject** to **.cproject** and
-   **/ardupilot/eclipse.project** to **.project**
-
-   .. note::
-
-      If using *Windows Explorer* append an additional period "." to
-         the end of the files when renaming them - e.g. **.cproject.** (the
-         additional period is not actually "saved".)
-
--  Select **File \| Import \| General \| Existing Projects into
-   Workspace**
--  Check **Select root directory** and browse to the ardupilot directory
--  Select the ardupilot directory and press **Finish**
-
-.. image:: ../images/EditingWithEclipse_ImportProject.png
-    :target: ../_images/EditingWithEclipse_ImportProject.png
-
-Creating the Project from scratch
----------------------------------
-
-Alternative to the above steps, the project can be created by doing the
-following:
+The project can be created by doing the following:
 
 -  Select **File \| New \| Make Project with Existing Code**
 -  Fill in the Project Name and set the *Existing Code Location* to the
