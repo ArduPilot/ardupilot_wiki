@@ -96,6 +96,13 @@ Edit Hector SLAM's tutorial.launch file which can be found at `$HOME/catkin_ws/s
 
     <param name="/use_sim_time" value="false"/>
 
+By default, once started, Hector SLAM will pop-up a window to show the map in real-time but this can be disabled by commenting out one line of `tutorial.launch <https://github.com/tu-darmstadt-ros-pkg/hector_slam/blob/catkin/hector_slam_launch/launch/tutorial.launch>`__ file so that it looks like below:
+
+::
+
+    <!--node pkg="rviz" type="rviz" name="rviz"
+      args="-d $(find hector_slam_launch)/rviz_cfg/mapping_demo.rviz"/-->
+
 Build the Packages
 ------------------
 
