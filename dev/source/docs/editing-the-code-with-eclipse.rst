@@ -33,14 +33,6 @@ toolchain*. The link can be accessed from either:
 Creating the Project
 ====================
 
-You can set up an Eclipse project to build ArduPilot either "from
-scratch" or using pre-defined project files. Using the template files
-saves you a little work as they already include the project location and
-*px4-v2 make target definitions* for Copter and Plane.
-
-Creating the Project
---------------------
-
 The project can be created by doing the following:
 
 -  Select **File \| New \| Make Project with Existing Code**
