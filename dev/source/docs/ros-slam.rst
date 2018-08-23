@@ -90,11 +90,23 @@ Using your favourite editor open Hector SLAM's launch file which can be found at
 
     <node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0 0 0 0 base_link laser 100" />
 
+Edit Hector SLAM's `hector_imu_attitude_to_tf/launch/example.launch <https://github.com/tu-darmstadt-ros-pkg/hector_slam/blob/catkin/hector_imu_attitude_to_tf/launch/example.launch>`__ file which can be found at `$HOME/catkin_ws/src/hector_slam/hector_imu_attitude_to_tf/launch/example.launch <https://github.com/tu-darmstadt-ros-pkg/hector_slam/blob/catkin/hector_imu_attitude_to_tf/launch/example.launch>`__ and change it to consume IMU data from the flight controller (via mavros) by replacing "thumper_imu" with "/mavros/imu/data" so that it looks like below:
+
+::
+
+    <remap from="imu_topic" to="/mavros/imu/data" />
+
 Edit Hector SLAM's tutorial.launch file which can be found at `$HOME/catkin_ws/src/hector_slam/hector_slam_launch/launch/tutorial.launch <https://github.com/tu-darmstadt-ros-pkg/hector_slam/blob/catkin/hector_slam_launch/launch/tutorial.launch>`__ and change the "use_sim_time" line to look like below:
 
 ::
 
     <param name="/use_sim_time" value="false"/>
+
+Continue editing the `tutorial.launch <https://github.com/tu-darmstadt-ros-pkg/hector_slam/blob/catkin/hector_slam_launch/launch/tutorial.launch>`__ and add a new line (just below the existing include line) so that the `example.launch <https://github.com/tu-darmstadt-ros-pkg/hector_slam/blob/catkin/hector_imu_attitude_to_tf/launch/example.launch>`__ file modified above is included:
+
+::
+
+    <include file="$(find hector_imu_attitude_to_tf)/launch/example.launch"/>
 
 By default, once started, Hector SLAM will pop-up a window to show the map in real-time but this can be disabled by commenting out one line of `tutorial.launch <https://github.com/tu-darmstadt-ros-pkg/hector_slam/blob/catkin/hector_slam_launch/launch/tutorial.launch>`__ file so that it looks like below:
 
