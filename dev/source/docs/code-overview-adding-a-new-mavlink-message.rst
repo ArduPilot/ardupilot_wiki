@@ -135,7 +135,7 @@ so you will need to rebuild pymavlink to include your custom message.
    argument.
 
 **Step #7:** Consider contributing your code back to the main code base.
-Email the `drones-discuss email list <https://groups.google.com/forum/#!forum/drones-discuss>`__ and/or
+Discuss this with other developers on `Gitter <https://gitter.im/ardupilot/ardupilot>`__ and/or
 :ref:`raise a pull request <submitting-patches-back-to-master>`. If
 you raise a pull request it is best to separate the change into at least
 two separate commits. One commit for the changes to the .xml files
