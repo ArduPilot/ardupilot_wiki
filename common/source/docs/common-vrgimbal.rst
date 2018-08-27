@@ -92,7 +92,7 @@ fail (see "BAD" device driver screen shot below).
       computer for driver software" and select the folder where you
       unzipped the driver.  Windows 8 machines may complain because the
       driver is not signed, instructions are
-      `here <http://www.makeuseof.com/tag/how-can-i-install-hardware-with-unsigned-drivers-in-windows-8/>`__
+      `here <https://www.makeuseof.com/tag/how-can-i-install-hardware-with-unsigned-drivers-in-windows-8/>`__
       on how to get around this.
    -  After the driver is installed, if the Maple device appears as COM9
       or higher you will not be able to connect.  The Control Panel's
@@ -154,7 +154,7 @@ Other Open Source Alternatives
 
 `Martinez 2-axis gimbal controllers <https://sourceforge.net/projects/brushless-gimbal-brugi/>`__
 using the original AVR328 chip can be found at retailers including
-`hobbyking <http://www.hobbyking.com/hobbyking/store/__41386__2_Axis_Brushless_Camera_Gimbal_Stabilization_Control_Board_w_IMU.html>`__.
+`hobbyking <https://hobbyking.com/en_us/2-axis-brushless-camera-gimbal-stabilization-control-board-w-imu.html?___store=en_us>`__.
 
 `OlliW's STorM3 BGC 3-Axis STM32 based brushless gimbal controller <http://www.olliw.eu/2013/storm32bgc/?en>`__ is open source
 hardware, closed source (but free) gimbal firmware and open source

@@ -7,7 +7,7 @@ This section contains hardware MAVLink to FrSky converter solutions.
 
 Please feel free to add your own solutions (`or ask us to <https://github.com/ArduPilot/ardupilot/issues/new>`__).
 
-`DIY solution for the APM2.x here <http://diydrones.com/forum/topics/amp-to-frsky-x8r-sport-converter>`__
+`DIY solution for the APM2.x here <https://diydrones.com/forum/topics/amp-to-frsky-x8r-sport-converter>`__
 
 .. _common-frsky-telemetry_apm_mavlink_to_frsky_smartport_converter_airborne_projects:
 

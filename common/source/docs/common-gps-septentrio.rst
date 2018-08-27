@@ -4,7 +4,7 @@
 Septentrio AsteRx-m UAS and AsteRx-m2 UAS RTK GPS
 =================================================
 
-The Septentrio `AsteRx-m UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m-uas/>`__ and `AsteRx-m2 UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m2-uas/>`__ RTK GPS are relatively expensive but also highly accurate RTK GPS.
+The Septentrio `AsteRx-m UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m-uas/>`__ and `AsteRx-m2 UAS <https://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m2-uas>`__ RTK GPS are relatively expensive but also highly accurate RTK GPS.
 
 .. image:: ../../../images/gps-septrino.png
 	:target: ../_images/gps-septrino.png

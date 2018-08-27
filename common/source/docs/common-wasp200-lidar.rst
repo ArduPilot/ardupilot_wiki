@@ -15,7 +15,7 @@ The `Wasp200 <http://www.attolloengineering.com/wasp-200-lrf.html>`__ has a rang
 Where to Buy
 ------------
 
-- The `Attollo Engineering online store <http://www.attolloengineering.com/store/p14/WASP-LRF_200_Rangefinder.html>`__ sells the lidar directly
+- The `Attollo Engineering online store <http://www.attolloengineering.com/store/p14/WASP-200_Laser_Rangefinder.html>`__ sells the lidar directly
 
 Connecting to the Flight Controller
 -----------------------------------

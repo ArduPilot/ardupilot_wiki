@@ -20,7 +20,7 @@ The `EZ4 <http://www.maxbotix.com/Ultrasonic_Sensors/MB1240.htm>`__
 (recommended) has the narrowest beam providing the best noise resistance
 while the `EZ0 <http://www.maxbotix.com/Ultrasonic_Sensors/MB1200.htm>`__ has the
 widest beam and higher sensitivity.  The long range
-`EZL0 <http://www.maxbotix.com/Ultrasonic_Sensors/MB1260.htm>`__ has the
+`EZL0 <https://www.maxbotix.com/Ultrasonic_Sensors/MB1260.htm>`__ has the
 same sensitivity as the EZ0 but a 10m range (as opposed to 7m).
 
 Connecting to the Pixhawk

@@ -4,7 +4,7 @@
 ST VL53L0X / VL53L0X Lidar
 ==========================
 
-The `VL53L0X <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__ lidar is a very small, affordable but relatively short range (2m range) time-of-flight lidar
+The `VL53L0X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__ lidar is a very small, affordable but relatively short range (2m range) time-of-flight lidar
 
 .. image:: ../../../images/vl53l0x.jpg
 
@@ -13,7 +13,7 @@ The `VL53L0X <http://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>
 .. note::
 
    Support for this lidar was first made available in available in Copter-3.6, Rover-3.3, and Plane-3.9.
-   ArduPilot does not yet support the 4m `ST VL53L1X <http://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html>`__.
+   ArduPilot does not yet support the 4m `ST VL53L1X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html>`__.
 
 Where to Buy
 ------------

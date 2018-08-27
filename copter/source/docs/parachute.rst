@@ -15,14 +15,14 @@ release.
 ..  youtube:: KmjPZIQ9c0A
     :width: 100%
 
-Video above is from Henri's `DIYDrones discussion that led to this feature being added to Copter <http://diydrones.com/forum/topics/diy-parachute-deployment-mechanism-for-multicopter>`__.
+Video above is from Henri's `DIYDrones discussion that led to this feature being added to Copter <https://diydrones.com/forum/topics/diy-parachute-deployment-mechanism-for-multicopter>`__.
 
 What you will need
 ==================
 
 A complete parachute mechanism like one of these:
 
--  `SkyCat <http://www.skycat.pro/shop/>`__
+-  `SkyCat <https://www.skycat.pro/shop/>`__
 -  `CAD Drones <http://store.caddrones.com/products>`__
 
 OR if you prefer a DIY solution, parachute release mechanism that can be
@@ -30,7 +30,7 @@ triggered by a PWM signal (i.e. a Servo) and a parachute large enough to
 slow your multicopter's decent to less than 5m/s. Some recommended
 parachute vendors:
 
--  `Fruity Chutes <http://fruitychutes.com/uav_rpv_drone_recovery_parachutes.htm>`__
+-  `Fruity Chutes <https://fruitychutes.com/uav_rpv_drone_recovery_parachutes.htm>`__
 -  `Opale Paramodels <http://www.opale-paramodels.com/index.php/en/shop-opaleparamodels/4/rescue-systems>`__
 -  `Mars Mini <http://1uas.com/Gears/Parachutes-Protection-System/Mars-Mini>`__
 

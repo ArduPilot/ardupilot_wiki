@@ -10,14 +10,14 @@ the log data, our resident expert, Andrew Tridgell, suggested adjusting
 the turn rate and increasing the maximum roll angle to correct the
 plane's failure to reach a waypoint as a result of turning too slowly.
 The original forum posts can be found
-`**here** <http://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1264198>`__.
+`**here** <https://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1264198>`__.
 
 DIY Drones member Vishnu posted these logs of his X8 plane using APM
 code 2.73. He described an issue with auto take off where his throttle
 was maintaining 100% despite being set to 75%.
 
 -  5/26/2013 tlog file (803 KB) - Downloaded from original blog
-   post \ `**here** <http://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1264198>`__. - `x8 throttle slew rate 100 param file <http://firmware.ardupilot.org/downloads/wiki/other_files/x8throttleslewrate100.param>`__
+   post \ `**here** <https://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1264198>`__. - `x8 throttle slew rate 100 param file <http://firmware.ardupilot.org/downloads/wiki/other_files/x8throttleslewrate100.param>`__
 -  `Jakkur Auto take off and land text file <http://firmware.ardupilot.org/downloads/wiki/other_files/Jakkur-Auto-take-off-and-land.txt>`__
 
 By analyzing this data using

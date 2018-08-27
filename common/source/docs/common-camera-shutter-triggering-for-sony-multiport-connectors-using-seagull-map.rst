@@ -5,7 +5,7 @@ Camera Shutter Triggering for Sony MultiPort Connectors using Seagull #MAP
 ==========================================================================
 
 This article shows how to implement automatic camera shutter triggering
-for cameras equipped with the Sony MultiPort™ connector using `Seagull #MAP <http://www.seagulluav.com/product/seagull-map2/>`__.
+for cameras equipped with the Sony MultiPort™ connector using `Seagull #MAP <https://www.seagulluav.com/product/seagull-map2/>`__.
 
 .. figure:: ../../../images/SeagullMAP-1000_3.jpg
    :target: ../_images/SeagullMAP-1000_3.jpg
@@ -20,7 +20,7 @@ ArduPilot allows you to :ref:`configure a servo or relay output as the control s
 Additional hardware is required to convert the shutter activation signal
 to the format expected by the particular camera.
 
-The `Seagull #MAP <http://www.seagulluav.com/product/seagull-map2/>`__
+The `Seagull #MAP <https://www.seagulluav.com/product/seagull-map2/>`__
 provides everything needed to connect a Pixhawk to a :ref:`supported Sony MultiPort™ equipped camera <common-camera-shutter-triggering-for-sony-multiport-connectors-using-seagull-map_compatible_cameras>` in order to automate
 camera shutter triggering.
 
@@ -35,7 +35,7 @@ This feature can be used in missions by adding the commands
 
 This article provides a brief overview of how to set up the board. More
 detailed instructions are provided in the `Seagull #MAP Manual <http://seagulluav.com/wp-content/uploads/2015/08/Seagull-MAP-Manual.pdf>`__
-and the `Seagull #MAP product support page <http://www.seagulluav.com/seagull-map-support/>`__.
+and the `Seagull #MAP product support page <https://www.seagulluav.com/seagull-map-support/>`__.
 
 .. note::
 
@@ -45,7 +45,7 @@ and the `Seagull #MAP product support page <http://www.seagulluav.com/seagull-ma
 Parts and hardware connections
 ==============================
 
-The Seagull #MAP can be `purchased from Seagull UAV <http://www.seagulluav.com/product/seagull-map/>`__ and comes with a
+The Seagull #MAP can be `purchased from Seagull UAV <https://www.seagulluav.com/product/seagull-map-x/>`__ and comes with a
 servo cable and one of the following cables (depending on your camera):
 
 -  Canon: 2.5mm, N3
@@ -179,7 +179,7 @@ Technical specifications
 References
 ==========
 
--  `Purchase Seagull #MAP <http://www.seagulluav.com/product/seagull-map2/#tab-description>`__
+-  `Purchase Seagull #MAP <https://www.seagulluav.com/product/seagull-map2/#tab-description>`__
 -  `#MAP Setup
-   Overview/Support <http://www.seagulluav.com/seagull-map-support/>`__ - `Seagull #MAP Manual <http://seagulluav.com/wp-content/uploads/2015/08/Seagull-MAP-Manual.pdf>`__
--  `diydrones.com discussion <http://diydrones.com/profiles/blogs/seagull-map-uav-camera-trigger-with-100-camera-models-supported>`__.
+   Overview/Support <https://www.seagulluav.com/seagull-map-support/>`__ - `Seagull #MAP Manual <http://seagulluav.com/wp-content/uploads/2015/08/Seagull-MAP-Manual.pdf>`__
+-  `diydrones.com discussion <https://diydrones.com/profiles/blogs/seagull-map-uav-camera-trigger-with-100-camera-models-supported>`__.

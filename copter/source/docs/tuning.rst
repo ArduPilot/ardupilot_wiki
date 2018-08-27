@@ -34,7 +34,7 @@ performance in Auto mode.
 
 .. note::
 
-   `Dave C's AC2.8.1 tuning guide <http://diydrones.com/forum/topics/arducopter-tuning-guide>`__ 
+   `Dave C's AC2.8.1 tuning guide <https://diydrones.com/forum/topics/arducopter-tuning-guide>`__ 
    has good information for tuning for rate roll and pitch but altitude hold,
    Loiter and navigation has changed dramatically since AC2.8.1 so those
    sections are no longer valid.

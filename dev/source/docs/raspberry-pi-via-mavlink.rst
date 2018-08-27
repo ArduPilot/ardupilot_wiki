@@ -335,7 +335,7 @@ Connecting with the mission planner is shown below:
 Example projects
 ================
 
-`FPV with raspberry Pi <http://diydrones.com/profiles/blogs/fpv-setup-with-raspberry-pi>`__
+`FPV with raspberry Pi <https://diydrones.com/profiles/blogs/fpv-setup-with-raspberry-pi>`__
 
 Can't get it to work? Try posting your question in the `APM Forum's APM Code section <http://ardupilot.com/forum/viewforum.php?f=69>`__.
 

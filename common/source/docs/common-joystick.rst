@@ -25,7 +25,7 @@ What you will need
 
 You will need the following equipment:
 
--  USB joystick or Gamepad such as the `Logitech F310 <http://gaming.logitech.com/en-us/product/f310-gamepad>`__
+-  USB joystick or Gamepad such as the `Logitech F310 <https://www.logitechg.com/en-us/product/f310-gamepad>`__
    (shown above).
 -  A :ref:`telemetry connection <common-telemetry-landingpage>`
    between your ground station and vehicle.

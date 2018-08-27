@@ -4,7 +4,7 @@
 UAVCAN ESCs
 ===========
 
-Copter, Plane and Rover support `UAVCAN <http://uavcan.org>`__ Electronic Speed Controllers
+Copter, Plane and Rover support `UAVCAN <https://uavcan.org/>`__ Electronic Speed Controllers
 (ESCs) that allow two-way communication with the flight controller
 enabling potentially easier setup and in-flight monitoring of ESC and
 motor health.
@@ -22,7 +22,7 @@ List of CAN ESCs
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 + `AutoQuad ESC32 <http://autoquad.org/esc32/>`__                                               + No                                                                                        + No                                                                                                    +
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-+ `VESC <http://vedder.se/2015/01/vesc-open-source-esc/>`__                                     + `Yes <http://www.ollinboardcompany.com/product/vedder-s-speed-controller>`__              + No (`proposal <http://discuss.ardupilot.org/t/next-gen-esc-validation-and-integration-vesc/12534>`__) +
++ `VESC <http://vedder.se/2015/01/vesc-open-source-esc/>`__                                     + `Yes <http://www.ollinboardcompany.com/product/vedder-s-speed-controller>`__              + No (`proposal <https://discuss.ardupilot.org/t/next-gen-esc-validation-and-integration-vesc/12534>`__) +
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 + `HiEnd Can Bus ESC <https://www.aerolab.de/esc-regler/hiend-can-bus-esc/>`__                  + Yes                                                                                       + ?                                                                                                     +
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
@@ -44,7 +44,7 @@ into one of it's 4-pin UAVCAN ports.
 The FTDI Cable connection is only required for the one-time set-up
 discussed below.
 
-Alternatively, the ESC can be configured via CAN bus using the `UAVCAN GUI Tool <http://uavcan.org/GUI_Tool/>`__.
+Alternatively, the ESC can be configured via CAN bus using the `UAVCAN GUI Tool <https://uavcan.org//GUI_Tool/>`__.
 
 ESC setup using CLI
 ===================

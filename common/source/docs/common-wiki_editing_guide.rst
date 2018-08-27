@@ -760,12 +760,12 @@ Wiki pages can be deleted by removing them from git and any menu in which they a
 Legal information
 =================
 
-All content on this wiki is licensed under the terms of the `Creative Commons Attribution-ShareAlike 3.0 Unported <http://creativecommons.org/licenses/by-sa/3.0/>`__.
+All content on this wiki is licensed under the terms of the `Creative Commons Attribution-ShareAlike 3.0 Unported <https://creativecommons.org/licenses/by-sa/3.0/>`__.
 
 .. warning::
 
    Only post content that you have the legal right to make
-   available under the `CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>`__ license. If you
+   available under the `CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0/>`__ license. If you
    do use images or content that belongs to others, seek permission for
    re-use and clearly state their origin and terms for re-use.
    

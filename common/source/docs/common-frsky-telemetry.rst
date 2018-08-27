@@ -200,7 +200,7 @@ Craft and Theory Pixhawk to FrSky Telemetry Cables
 -  `Servo telemetry Cable (X6R/X8R, SmartPort sensors) for The Cube <http://www.craftandtheoryllc.com/product/telemetry-cable-flightdeck-taranis-opentx-ardupilot-arducopter-pixhawk-2-cube-servo-frsky-smartport-smart-port-df13-jst-gh-serial/>`__:
 
    .. figure:: ../../../images/FrSky_Ph2-X8R.jpg
-      :target:  http://www.craftandtheoryllc.com/telemetry-cable
+      :target:  http://www.craftandtheoryllc.com/store/ct-telemetry-cable-for-frsky-radios/
       :width: 50%
       :align: center
 
@@ -233,7 +233,7 @@ You can make your own cable using the following components:
     :target: ../_images/Telemetry_FrSky_Pixhawk-SPORT.jpg
 
 -  TTL-to-RS232 converter such as the `FrSky FUL-1 <http://www.frsky-rc.com/product/pro.php?pro_id=34>`__ which is
-   sold by many retailers `including these on ebay <http://www.ebay.com/sch/i.html?_trksid=p2050601.m570.l1313.TR11.TRC1.A0.H0.Xfrsky+ful-1.TRS0&_nkw=frsky+ful-1&_sacat=0&_from=R40>`__.
+   sold by many retailers `including these on ebay <https://www.ebay.com/sch/i.html?_trksid=p2050601.m570.l1313.TR11.TRC1.A0.H0.Xfrsky+ful-1.TRS0&_nkw=frsky+ful-1&_sacat=0&_from=R40>`__.
 -  SPC cable such as `SPC Cable <http://www.frsky-rc.com/product/pro.php?pro_id=132>`__
 -  `DF13 6 position connector <http://www.unmannedtechshop.co.uk/df13-6-position-connector-30cm/>`__
    which will be cut and soldered to the TTL-to-RS232 converter

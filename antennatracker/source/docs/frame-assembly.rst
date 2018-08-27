@@ -16,7 +16,7 @@ Recommended Frames
 
 The following have been tested and shown to work:
 
--  `Eagle Eyes Antenna Tracker <http://www.readymaderc.com/store/index.php?main_page=product_info&cPath=11_27&products_id=96>`__
+-  `Eagle Eyes Antenna Tracker <https://www.readymaderc.com/products/details/antenna-pan-tilt-for-eagleeyes-eztracker-antenna-tracker>`__
 
 These systems also likely work:
 

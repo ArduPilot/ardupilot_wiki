@@ -18,8 +18,8 @@ This article explains how a `ZED stereo camera <https://www.stereolabs.com>`__ c
 Required Hardware
 =================
 
-* `Stereo Labs ZED camera <https://zedstore.stereolabs.com/products/zed>`__
-* `NVidia TX1 <http://www.nvidia.com/object/embedded-systems-dev-kits-modules.html>`__
+* `Stereo Labs ZED camera <https://store.stereolabs.com/products/zed>`__
+* `NVidia TX1 <https://www.nvidia.com/en-us/autonomous-machines/embedded-systems-dev-kits-modules/>`__
 * `Auvidea J120 carrier board <https://auvidea.com/j120/>`__
 
 Setup

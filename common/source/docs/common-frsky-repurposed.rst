@@ -46,7 +46,7 @@ Configuration with OpenTX
 Transmitter set-up
 ------------------
 
-Please refer to the `OpenTX manual <https://www.gitbook.com/book/opentx/opentx-taranis-manual/details>`__
+Please refer to the `OpenTX manual <https://legacy.gitbook.com/book/opentx/opentx-taranis-manual/details>`__
 for how to display values from the FrSky telemetry feed on the RC transmitter's screen.
 
 .. note::

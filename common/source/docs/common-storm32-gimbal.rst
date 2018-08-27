@@ -127,7 +127,7 @@ gimbal like the :ref:`Tarot Gimbal <common-tarot-gimbal>`.
 Resistor issue on some boards
 =============================
 
-Some in-depth analysis `here on rcgroups <http://www.rcgroups.com/forums/showthread.php?t=2494532&page=5>`__
+Some in-depth analysis `here on rcgroups <https://www.rcgroups.com/forums/showthread.php?t=2494532&page=5>`__
 turned up that some STorM32 boards need resistor #4 (shown in pic below)
 shorted (i.e. a wire soldered over the top of the resistor to turn it
 into a regular wire) in order for the gimbal controllers messages to get

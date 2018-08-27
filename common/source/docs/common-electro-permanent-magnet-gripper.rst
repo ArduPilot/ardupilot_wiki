@@ -4,7 +4,7 @@
 Electro Permanent Magnet Gripper (EPM688)
 =========================================
 
-This article shows how to use the `Electro Permanent Magnet Gripper (EPM688) <http://nicadrone.com/index.php?id_product=13&controller=product>`__
+This article shows how to use the `Electro Permanent Magnet Gripper (EPM688) <https://nicadrone.com//index.php?id_product=13&controller=product>`__
 with ArduPilot.
 
 Overview
@@ -15,7 +15,7 @@ Electro Permanent Magnet gripper capable of 7kg of force meaning it can
 hold about 1kg of cargo.  The gripping and releasing of the cargo if
 accomplished by delivering a short pulse to an electromagnet which
 reverses it's field.  Objects that it grips onto should be metal or have
-the included `thin steel target square <http://nicadrone.com/index.php?id_product=15&controller=product>`__
+the included `thin steel target square <https://nicadrone.com/index.php?id_product=15&controller=product>`__
 attached to them.
 
 The device accepts a standard PWM servo input and uses a 5V power
@@ -187,7 +187,7 @@ Reduced magnetic interference allows mounting within 5cm of a compass
 
 `Paper by Ara Nerses Knaian <http://www.hizook.com/files/users/3/Electropermanent_Magnets_Knaian.pdf>`__
 
-`Datasheet <http://nicadrone.com/img/Datasheet%20EPM688-V2.0.pdf>`__
+`Datasheet <https://nicadrone.com//img/Datasheet%20EPM688-V2.0.pdf>`__
 
 `Schematics and PCB files <https://upverter.com/eda/#tool=schematic,designId=5466622af0d942e4>`__
 

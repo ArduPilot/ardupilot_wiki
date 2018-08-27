@@ -49,8 +49,8 @@ What to get
    .. image:: ../../../images/3281_dimg2.jpg
        :target: ../_images/3281_dimg2.jpg
    
-#. `Two tabbed center sections <hhttp://www.hoverthings.com/flip4tabblack>`__ and `eight 7/8" standoffs <http://www.hoverthings.com/spcr0875qty8>`__.
-#. Four DJI motors for Flamewheel from `Amain Hobby <http://www.amainhobbies.com/rc-drones/dji-multirotor-replacement-brushless-motor-dji-motor01/p235238>`__
+#. `Two tabbed center sections <http://www.hoverthings.com/flip4tabblack>`__ and `eight 7/8" standoffs <http://www.hoverthings.com/spcr0875qty8>`__.
+#. Four DJI motors for Flamewheel from `Amain Hobby <https://www.amainhobbies.com/dji-multirotor-replacement-brushless-motor-dji-motor01/p235238>`__
    for $24.00 each.
 #. A 20 or 25 Amp four in one ESC from `Off the Grid Water <http://mymobilemms.com/OFFTHEGRIDWATER.CA/ESC/4-in-1-Speed-Control-Quad-HOBBYWING-Quattro-Skywalker-25A-X-41?cPath=2_4>`__
    for $40.00.
@@ -65,13 +65,13 @@ What to get
    rotation DJI compatible Gemfan 10" carbon filled propellers from RC
    Dude.
 
-#. A 2600 to `4000mah LiPo battery <http://www.hobbyking.com/hobbyking/store/__11927__Turnigy_nano_tech_4000mah_3S_25_50C_Lipo_Pack.html>`__
+#. A 2600 to `4000mah LiPo battery <https://hobbyking.com/en_us/turnigy-battery-nano-tech-4000mah-3s-25-50c-lipo-pack-xt-60.html?___store=en_us>`__
    that fits between the 2 bottom plates.
 #. PPM-Sum compatible receiver that works with your RC transmitter:
    `FRSky <http://www.valuehobby.com/radio-systems-servos/receivers/frsky-receiver-telemetry.html>`__\ `(Delta
    8) <http://www.valuehobby.com/frysky-delta-8.html>`__, Futaba SBus or
    Spektrum satellite recommended.
-#. For a PX4 system: A `Pad of Kyousho Zeal Antivibration gel <http://www.amainhobbies.com/rc-cars-trucks/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__
+#. For a PX4 system: A `Pad of Kyousho Zeal Antivibration gel <https://www.amainhobbies.com/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__
    and four nylon or aluminum 1 1/2" threaded standoffs.
 
 .. image:: ../images/FlipTop.jpg

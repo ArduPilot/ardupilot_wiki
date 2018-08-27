@@ -141,7 +141,7 @@ Supports multi-node installation, meaning that it is possible to connect multipl
     :target:  https://www.ugcs.com/files/2016-04/1459769168_elevation-profile.jpeg
 
 -  `UgCS Website <http://www.ugcs.com>`__
--  `DIY Drones Group for UgCS Users <http://diydrones.com/group/ugcs>`__
+-  `DIY Drones Group for UgCS Users <https://diydrones.com/group/ugcs>`__
 -  `UgCS Github Repository <https://github.com/ugcs>`__
 
 Comparison Mobile
@@ -191,7 +191,7 @@ See website for how-to on how connect it to your autopilot
 .. image:: ../../../images/MAVPilot_1.4.png
     :target: ../_images/MAVPilot_1.4.png
 
--  `Release announcement Blog & Discussion <http://diydrones.com/profiles/blogs/mav-pilot-1-4-for-iphone-released>`__
+-  `Release announcement Blog & Discussion <https://diydrones.com/profiles/blogs/mav-pilot-1-4-for-iphone-released>`__
 -  `Support Blog <http://www.communistech.com/support/>`__
 -  `Support Forum <http://www.communistech.com/forums/>`__
 -  `iTunes Store link <https://itunes.apple.com/ca/developer/communis-tech/id649232032>`__
@@ -210,7 +210,7 @@ See website for how-to on how connect it to your autopilot
 .. image:: ../../../images/sidepilot.jpg
     :target: ../_images/sidepilot.jpg
 
--  `Release announcement Blog & Discussion <http://diydrones.com/profiles/blogs/sidepilot-app-version-1-1-formerly-imavlink>`__
+-  `Release announcement Blog & Discussion <https://diydrones.com/profiles/blogs/sidepilot-app-version-1-1-formerly-imavlink>`__
 -  `Website <http://sidepilot.net>`__
 -  `Support Forum <http://sidepilot.net/forum>`__
 -  `iTunes Store link <https://itunes.apple.com/us/app/sidepilot/id1138193193?ls=1&mt=8>`__
@@ -254,7 +254,7 @@ For Android devices, you will need:
    similar (915 Mhz for US, 433 for Europe) which includes the
    bidirectional ground and air telemetry units.
 -  USB OTG cable (typically less than $2 on
-   `ebay <http://www.ebay.com/sch/i.html?_trksid=m570.l3201&_nkw=usb+otg+cable&_sacat=0>`__
+   `ebay <https://www.ebay.com/sch/i.html?_trksid=m570.l3201&_nkw=usb+otg+cable&_sacat=0>`__
    and
    `Amazon <http://www.amazon.com/T-Flash-Adapter-Samsung-GT-i9100-GT-N7000/dp/B005FUNYSA/ref=sr_1_5?ie=UTF8&qid=1376262351&sr=8-5&keywords=android+otg+cable>`__).
 

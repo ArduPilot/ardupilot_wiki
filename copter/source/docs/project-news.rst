@@ -36,13 +36,13 @@ releases/milestones.
 -  Sep 29, 2015 Copter (AC) **3.3** released. Enhancements and bug
    fixes. Details
    `here <https://github.com/ArduPilot/ardupilot/blob/Copter-3.3/ArduCopter/ReleaseNotes.txt>`__.
-   Release announcement: `Copter-3.3 released! <http://diydrones.com/profiles/blogs/copter-3-3-released>`__.
+   Release announcement: `Copter-3.3 released! <https://diydrones.com/profiles/blogs/copter-3-3-released>`__.
 
 -  Feb 11, 2015 Copter (AC) **3.2.1** released. Enhancements and bug
    fixes. Details
    `here <https://github.com/ArduPilot/ardupilot/blob/ArduCopter-3.2.1/ArduCopter/ReleaseNotes.txt>`__.
    Release announcement:
-   `here <http://diydrones.com/profiles/blogs/arducopter-3-2-1-released>`__.
+   `here <https://diydrones.com/profiles/blogs/arducopter-3-2-1-released>`__.
 
 -  November 07, 2014 Copter (AC) **3.2** released. Numerous enhancements
    and bug fixes. Details
@@ -53,38 +53,38 @@ releases/milestones.
    `here <https://github.com/ArduPilot/ardupilot/blob/ArduCopter-3.1.2/ArduCopter/ReleaseNotes.txt>`__
 
 -  January 25, 2014: Copter **3.1.1** released. Mostly enhancements and
-   bug fixes for Pixhawk. `Details here <http://diydrones.com/forum/topics/arducopter-3-1-released?commentId=705844%3AComment%3A1540849&xg_source=activity>`__.
+   bug fixes for Pixhawk. `Details here <https://diydrones.com/forum/topics/arducopter-3-1-released?commentId=705844%3AComment%3A1540849&xg_source=activity>`__.
 
 -  December 14, 2013: Copter 3.1 released. Major feature additions and
-   performance improvements. `Details here <http://diydrones.com/forum/topics/arducopter-3-1-released?id=705844%3ATopic%3A1501436&>`__.
+   performance improvements. `Details here <https://diydrones.com/forum/topics/arducopter-3-1-released?id=705844%3ATopic%3A1501436&>`__.
 
 -  July 11, 2013: Copter 3.01 released. Major performance improvements.
-   `Details here. <http://diydrones.com/forum/topics/arducopter-3-0-1-released>`__
+   `Details here. <https://diydrones.com/forum/topics/arducopter-3-0-1-released>`__
 
 -  April 5, 2013: Copter 2.9.1b released. Adds some performance
    enhancing parameter changes and a few small bug fixes.
-   Details \ `here <http://diydrones.com/forum/topics/apm-copter-2-9-1-b-has-been-released>`__.
+   Details \ `here <https://diydrones.com/forum/topics/apm-copter-2-9-1-b-has-been-released>`__.
 
 -  Jan 17, 2013: Copter 2.9/2.9.1 released. Major performance
    improvements and some bug fixes.
-   Details \ `here <http://www.diydrones.com/forum/topics/arducopter-2-9-released>`__.
+   Details \ `here <https://www.diydrones.com/forum/topics/arducopter-2-9-released>`__.
 
 -  Oct 19, 2012: Copter 2.8/2.81 released. Bug fixes and performance
-   improvements. `Details here <http://www.diydrones.com/forum/topics/arducopter-2-8-released?xg_sourceactivity>`__.
+   improvements. `Details here <https://www.diydrones.com/forum/topics/arducopter-2-8-released?xg_sourceactivity>`__.
 
 -  Sept 1, 2012: Copter 2.7.2 and 2.7.3 released. Bug fixes and
-   performance improvements. `Details here. <http://diydrones.com/forum/topics/arducopter-2-7-2-released?xg_sourceactivity>`__
+   performance improvements. `Details here. <https://diydrones.com/forum/topics/arducopter-2-7-2-released?xg_sourceactivity>`__
 
 -  Aug 1, 2012: Copter 2.7.1 released. Minor maintenance release with a
    few bug fixes. Also includes preliminary support for the Digital
    Motion Processor (DMP) in the MPU-6000 sensor. Details
-   `here <http://diydrones.com/forum/topics/arducopter-2-7-1-released>`__
+   `here <https://diydrones.com/forum/topics/arducopter-2-7-1-released>`__
    .
 
 -  July 24, 2012: Copter 2.7 released. Many performance improvements,
    including in loiter and waypoints. Adds 3-axis camera stabilization,
    altitude limits and geofencing. More details
-   `here <http://diydrones.com/profiles/blogs/arducopter-2-7-released>`__
+   `here <https://diydrones.com/profiles/blogs/arducopter-2-7-released>`__
    ; details on geofencing
    :ref:`here <ac2_simple_geofence>` .
 
@@ -92,40 +92,40 @@ releases/milestones.
    enhancements, MAVLink 1.0 support, dataflash erase speedups
    (including proper MAVLink connectivity during erase, to improve first
    use experience) and support for new 3DR uBlox GPS. Details
-   `here <http://diydrones.com/forum/topics/arducopter-2-6-released>`__
+   `here <https://diydrones.com/forum/topics/arducopter-2-6-released>`__
    .
 
 -  May 14, 2012: Copter 2.5.5 released. Fixes a bug that affected some
    APM 2 boards with a newer version of the MPU-6000 sensor. Fixes bug
    that required some APM 2 boards to be reset after power-on. Various
    stability improvements. Details
-   `here <http://diydrones.com/profiles/blogs/updated-arducopter-and-arduplane-code-apm2-users-please-upgrade>`__
+   `here <https://diydrones.com/profiles/blogs/updated-arducopter-and-arduplane-code-apm2-users-please-upgrade>`__
    .
 
 -  March 24, 2012: Copter 2.5.3 released. Maintenance release with some
    bug fixes, including changing to a more appropriate throttle setting
    for most people in Alt Hold and re-enabling the Ch 7 auto-trim.
-   `Details here. <http://diydrones.com/forum/topics/arducopter-2-5-released?commentId=705844%3AComment%3A816307>`__
+   `Details here. <https://diydrones.com/forum/topics/arducopter-2-5-released?commentId=705844%3AComment%3A816307>`__
 
 -  March 17, 2012: Copter 2.5 released. First code optimized for the APM
    2 board, which will now outperform APM 1. Significant improvements in
    DCM code for performance and stability. More details in the release
    post
-   `here <http://www.diydrones.com/forum/topics/arducopter-2-5-released>`__
+   `here <https://www.diydrones.com/forum/topics/arducopter-2-5-released>`__
    .
 
 -  Feb 19, 2012: Copter 2.4 released. This is mostly bug fixes and
-   performance improvements. Recommended for all users. `More details in the release post here. <http://diydrones.com/forum/topics/arducopter-2-4-released?xg_sourceactivity>`__
+   performance improvements. Recommended for all users. `More details in the release post here. <https://diydrones.com/forum/topics/arducopter-2-4-released?xg_sourceactivity>`__
 
 -  Jan 31, 2012: Copter 2.3 released. This is the feature complete
    release of 2.x, and is recommended for all users. More details in the
    release post
-   `here <http://diydrones.com/forum/topics/arducopter-2-3-released>`__ .
+   `here <https://diydrones.com/forum/topics/arducopter-2-3-released>`__ .
 
 -  Jan 14, 2012: Copter 2.2 released. Mostly performance enhancement,
    bug fixes and improved APM 2 compatibility. Autoland now much
    improved. More details
-   `here <http://www.diydrones.com/forum/topics/arducopter-2-2-beta>`__
+   `here <https://www.diydrones.com/forum/topics/arducopter-2-2-beta>`__
    .
 
 -  Dec 16, 2011: Copter 2.1 released. This is the first version that
@@ -134,7 +134,7 @@ releases/milestones.
    harmonize with APM 2, the hardware CLI switch is no longer used--you
    now get into the CLI by hitting "Enter" three times in a terminal.
    Other details are in the announcement post
-   `here <http://diydrones.com/forum/topics/arducopter-2-0-56>`__ .
+   `here <https://diydrones.com/forum/topics/arducopter-2-0-56>`__ .
 
 -  Dec 3, 2011: Copter 2.0.55 released. Most stable flying version yet.
    Includes new stability patch by default and a new DCM gain and clamp
@@ -153,7 +153,7 @@ releases/milestones.
    enhancements. Log files will now overwrite from the beginning when
    the dataflash is full (rather than stopping). Initial compatibility
    with MAVLink 1.0. A full list of changes is
-   `here <http://www.diydrones.com/forum/topics/arducopter-2-0-50>`__ .
+   `here <https://www.diydrones.com/forum/topics/arducopter-2-0-50>`__ .
 
 -  Oct 16, 2011: Copter 2.0.49 released. Tweaked Alt Hold PIDs, Loiter
    PIDs based on SIM testing and feedback. Increased distance error for
@@ -173,7 +173,7 @@ releases/milestones.
    2.0.42, including improved sensor filtering, loiter and waypoint
    navigation. Simple mode has been changed and Guided mode added `(see
    this post for more
-   information). <http://diydrones.com/forum/topics/arducopter-2-0-43?xg_sourceactivity>`__
+   information). <https://diydrones.com/forum/topics/arducopter-2-0-43?xg_sourceactivity>`__
 
 -  Sept 11, 2011: Copter 2.0.42 released. Includes much more efficient
    DCM processing, now running 25% faster. Should be most stable yet.
@@ -226,7 +226,7 @@ releases/milestones.
    now it's download only (get the file from the download section above
    and compile and load with Arduino). Full description of the changes
    in this release is
-   `here. <http://diydrones.com/forum/topics/arducopter-2034-preview>`__
+   `here. <https://diydrones.com/forum/topics/arducopter-2034-preview>`__
 
 -  July 2, 2011: AC Beta 2.0.32 released: New Loiter PIDs, tuned down
    control on standard frame, shunk the mixing range for sonar from 3
@@ -253,31 +253,31 @@ releases/milestones.
    (traditional heli) into the AC2 trunk, giving it full MAVLink
    capability, too. Many other tweaks and performance improvements
    (details
-   `here <http://diydrones.com/forum/topics/arducopter-2024b>`__ ).
+   `here <https://diydrones.com/forum/topics/arducopter-2024b>`__ ).
    Getting close now!
 
 -  June 5, 2011: Much improved Mission Planner 1.0 released. Check out
-   the `gorgeous new design! <http://www.diydrones.com/profiles/blogs/new-apm-planner-10>`__
+   the `gorgeous new design! <https://www.diydrones.com/profiles/blogs/new-apm-planner-10>`__
 
--  June 3, 2011: `AC2 Beta 2.0.23 released. <http://diydrones.com/forum/topics/arducopter-2023?xg_sourceactivity>`__
+-  June 3, 2011: `AC2 Beta 2.0.23 released. <https://diydrones.com/forum/topics/arducopter-2023?xg_sourceactivity>`__
    Minor bug fixes and tuning to improve loiter and hex airframe
    performance. Sonar test added to CLI test suite.
 
 -  May 27, 2011: AC2 Beta 2.0.16
-   `released <http://diydrones.com/forum/topics/705844:Topic:393643>`__
+   `released <https://diydrones.com/forum/topics/705844:Topic:393643>`__
    . Improvements in yaw control, minor changes in LED function, and
    other bug fixes. The Mission Planner has also been updated, so check
    the Update menu item in that to upgrade. Just a few more things left
    to get beta test feedback on before we'll feel confident in taking
    AC2 out of beta.
 
--  May 18, 2011: `AC2 beta 2.0.6 <http://www.diydrones.com/profiles/blogs/ac2-206-beta>`__
+-  May 18, 2011: `AC2 beta 2.0.6 <https://www.diydrones.com/profiles/blogs/ac2-206-beta>`__
    released. We're still bug-fixing at a rapid pace, so thanks for your
    patience. The Mission Planner has been significantly revamped,
    especially on the firmware upload process, which is now based on
    visual icons. Frame choices are now made at firmware upload time, but
    orientation (x vs +) can be made in the CLI. We still recommend that
-   new users stick with the `ArduPirates code <http://code.google.com/p/ardupirates/wiki/Softwares_Building>`__
+   new users stick with the `ArduPirates code <https://code.google.com/archive/p/ardupirates/wikis/Softwares_Building.wiki>`__
    , but people with well-tested hardware are invited to join the AC2
    beta test. Feedback at DIY Drones, please.
 
@@ -291,11 +291,11 @@ releases/milestones.
    manual before flying!
 
 -  May 7, 2011: Copter 2 first beta released. Details
-   `here <http://www.diydrones.com/profiles/blogs/arducopter-20-beta-first>`__
+   `here <https://www.diydrones.com/profiles/blogs/arducopter-20-beta-first>`__
    . This is an early public beta and may be unstable. Some features and
    portions of the manual are a work in progress and will be changed
    over the next few weeks. Most users are advised to continue using
-   `ArduPirates code <http://code.google.com/p/ardupirates/wiki/Softwares_Building>`__
+   `ArduPirates code <https://code.google.com/archive/p/ardupirates/wikis/Softwares_Building.wiki>`__
    until Copter 2 comes out of beta.
 
 -  May 5, 2011: Manual revised for Copter 2. Older Copter 1 manual

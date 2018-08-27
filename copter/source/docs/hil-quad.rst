@@ -17,7 +17,7 @@ This article explains how to setup Quad HIL in the mission planner.
 What you need
 -------------
 
-#. `Download Flightgear 2.x.x here <http://www.flightgear.org/Downloads/>`__
+#. `Download Flightgear 2.x.x here <http://www.flightgear.org/download/>`__
 
 #. `Download the latest APM Mission Planner here <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__.
 

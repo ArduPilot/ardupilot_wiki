@@ -5,7 +5,7 @@ Erle-Brain Linux Autopilot
 ==========================
 
 This page presents the
-`Erle-Brain <https://erlerobotics.com/blog/product/erle-brain/>`__ Linux
+`Erle-Brain <https://erlerobotics.com/blog/product/erle-brain-3/>`__ Linux
 autopilot — an APM autopilot and :ref:`companion computer <dev:companion-computers>` in a
 single package.
 
@@ -19,7 +19,7 @@ shield:
 -  *Erle-Brain 1 (*Discontinued*)*: The first Open-Source Linux
    Autopilot that runs APM and ROS natively.
 
-Erle-Brain based drones can be assembled as discussed in the `official documentation <https://erlerobotics.com/docs/Robots/Erle-Copter/index.html>`__.
+Erle-Brain based drones can be assembled as discussed in the `official documentation <http://docs.erlerobotics.com/erle_robots/erle_copter>`__.
 Erle-Brain based drones can also be purchased from the Erle Robotics
 official store in both `ready to use <https://erlerobotics.com/blog/product-category/robots/>`__ and `DIY kit <https://erlerobotics.com/blog/product-category/robots/kits/>`__
 form.
@@ -27,7 +27,7 @@ form.
 Erle-Brain 2
 ============
 
-`Erle-Brain 2 <https://erlerobotics.com/blog/product/erle-brain-v2/>`__
+`Erle-Brain 2 <https://erlerobotics.com/blog/product/erle-brain-3/>`__
 is the second generation of Linux-based artificial robotic brain for
 making robots and drones with official support for the Robot Operating
 System (ROS) and access to the app store.
@@ -98,7 +98,7 @@ If connected by Ethernet
 
 Get more info in `our docs <http://erlerobotics.com/docs/Artificial_Brains_and_Autopilots/Erle-Brain_2/Intro.html>`__
 
-Erle-Brain can be purchased from the \ `Erle Robotics store <https://erlerobotics.com/blog/product/erle-brain-v2/>`__.
+Erle-Brain can be purchased from the \ `Erle Robotics store <https://erlerobotics.com/blog/product/erle-brain-3/>`__.
 
 Hardware setup
 --------------
@@ -150,7 +150,7 @@ variable:
 
     $ rosrun image_view image_view image:=/camera/image _image_transport:=compressed
 
-Erle-Brain can be purchased from the `Erle Robotics store <https://erlerobotics.com/blog/product/erle-brain-v2/>`__.
+Erle-Brain can be purchased from the `Erle Robotics store <https://erlerobotics.com/blog/product/erle-brain-3/>`__.
 
 
 Erle-Brain 1 (*Discontinued*)
@@ -181,7 +181,7 @@ Some *Erle-Brain* features include:
    network.
 -  3 IMUs (LSM9D, MPU9250, MPU6000)
 
-Erle-Brain can be purchased from the \ `Erle Robotics store <https://erlerobotics.com/blog/product/erle-brain/>`__.
+Erle-Brain can be purchased from the \ `Erle Robotics store <https://erlerobotics.com/blog/product/erle-brain-3/>`__.
 
 ..  youtube:: ZbcIjelaFgM
     :width: 100%
@@ -265,7 +265,7 @@ on Erle-Brain:
 Snappy Ubuntu Core store
 ========================
 
-Erle-Brain comes with full support for `Snappy Ubuntu Core <http://www.ubuntu.com/internet-of-things>`__. Just fetch one of the `available images <http://erlerobotics.com/docs/Artificial_Brains_and_Autopilots/Operating_System_images/Ubuntu.html>`__
+Erle-Brain comes with full support for `Snappy Ubuntu Core <https://www.ubuntu.com/internet-of-things>`__. Just fetch one of the `available images <http://erlerobotics.com/docs/Artificial_Brains_and_Autopilots/Operating_System_images/Ubuntu.html>`__
 (for the microSD card) and start developing *snaps*.
 
 .. note::

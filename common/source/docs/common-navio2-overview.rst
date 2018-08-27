@@ -4,7 +4,7 @@
 NAVIO2 Overview
 ===============
 
-This page presents `Navio2 <http://www.emlid.com/shop/navio2/>`__ - Raspberry Pi autopilot, which runs well proven ArduPilot flight stack and supports all its features.
+This page presents `Navio2 <https://store.emlid.com/product/navio2/>`__ - Raspberry Pi autopilot, which runs well proven ArduPilot flight stack and supports all its features.
 
 
 .. image:: ../../../images/Navio2-features.jpg
@@ -64,6 +64,6 @@ For more details and purchase
 =============================
 
 - `Emlid website <http://www.emlid.com/>`__ 
-- `Navio2 documentation <http://docs.emlid.com/navio2/>`__
-- `Purchase page <http://www.emlid.com/shop/navio2/>`__
+- `Navio2 documentation <https://docs.emlid.com/navio2/>`__
+- `Purchase page <https://store.emlid.com/product/navio2/>`__
 

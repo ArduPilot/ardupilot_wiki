@@ -37,7 +37,7 @@ Where to buy
 We recommend choosing one that has the telemetry wire pre-soldered (see blue wire below).
 
 .. image:: ../../../images/dshot-telemwire.jpg
-    :target: https://hobbyking.com/en_us/turnigy-multistar-32bit-51a-race-spec-esc-2-6s-opto.html
+    :target: https://hobbyking.com/en_us/turnigy-multistar-32bit-51a-race-spec-esc-2-6s-opto.html?___store=en_us
     :width: 400px
 
 *image courtesy of hobbyking.com*

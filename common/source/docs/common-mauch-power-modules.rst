@@ -73,7 +73,7 @@ HS-200-V2 (without any time limit). The maximum burst current is
 -  53mm x 21mm x 14mm / 20g with cables and shrinking tube.
 
 There is more information about hall current sensors and these PMs in
-this blog post: `Safety First: 100A & 200A Hall Sensor with BEC for Pixhawk / APM <http://diydrones.com/forum/topics/safety-first-100a-200a-hall-sensor-mit-bec-for-pixhawk-apm>`__.
+this blog post: `Safety First: 100A & 200A Hall Sensor with BEC for Pixhawk / APM <https://diydrones.com/forum/topics/safety-first-100a-200a-hall-sensor-mit-bec-for-pixhawk-apm>`__.
 
 Connecting the PM to a flight controller board
 ==============================================

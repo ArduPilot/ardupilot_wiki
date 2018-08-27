@@ -31,7 +31,7 @@ These parts are required:
    preloaded with Linux (the EMMC module is about 4x faster which may be
    useful for image processing)
 -  `FTDI Cable or <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__\ USB
-   to Serial interface like `this one <http://www.ebay.com/itm/1pcs-USB-2-0-to-TTL-UART-6PIN-Module-Serial-Converter-CP2102-STC-new-/131205013464>`__
+   to Serial interface like `this one <https://www.ebay.com/itm/1pcs-USB-2-0-to-TTL-UART-6PIN-Module-Serial-Converter-CP2102-STC-new-/131205013464>`__
    from ebay
 
 These optional items may also be useful:

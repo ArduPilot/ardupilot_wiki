@@ -9,7 +9,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
 
 .. tip::
 
-   This is for commercial support.  For unpaid support by volunteers please visit the `forums <http://discuss.ardupilot.org/>`__ 
+   This is for commercial support.  For unpaid support by volunteers please visit the `forums <https://discuss.ardupilot.org/>`__ 
 
 .. raw:: html
 

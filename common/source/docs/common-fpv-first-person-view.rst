@@ -19,14 +19,14 @@ Recommended parts
 To set up an FPV system on your Copter/Plane equipped vehicle you will
 need:
 
--  `Sony CCD camera <http://www.amazon.com/Miniature-Color-Camera-Super-520TV/dp/B00LAK573Y>`__
+-  `Sony CCD camera <https://www.amazon.com/Miniature-Color-Camera-Super-520TV/dp/B00LAK573Y>`__
 -  `MinimOSD <http://store.jdrones.com/jD_MiniOSD_V12_p/jdminiosd12.htm>`__
    for On Screen Display of aircraft data
 -  5.8Ghz 200mw video transmitter/receiver pair
 -  Two 900mAh LiPo batteries (one for the air, one for the ground) to
    power the transmitter, receiver and camera
 
-In addition you will need a monitor like the `Black Pearl <http://www.amazon.com/FlySight-Black-Pearl-Diversity-Integrated/dp/B00KR69WHY>`__
+In addition you will need a monitor like the `Black Pearl <https://www.amazon.com/FlySight-Black-Pearl-Diversity-Integrated/dp/B00KR69WHY>`__
 or goggles.
 
 **Goggle options:**
@@ -75,12 +75,12 @@ his Plane running on VrBrain including MinimOSD.
 ..  youtube:: LxjtUl8Fw6o
     :width: 100%
 
-Robert Mcintosh's in `Lone Pine California <http://diydrones.com/profiles/blogs/the-best-place-to-fly>`__
+Robert Mcintosh's in `Lone Pine California <https://diydrones.com/profiles/blogs/the-best-place-to-fly>`__
 FPV Flight with HD video footage from GoPro camera
 
 https://vimeo.com/70365435
 
-Euan Ramsey's APM2 powered `TBS Discovery <http://diydrones.com/profiles/blogs/tbs-disco-apm-mounting-suggestion>`__. 
+Euan Ramsey's APM2 powered `TBS Discovery <https://diydrones.com/profiles/blogs/tbs-disco-apm-mounting-suggestion>`__. 
 Note the TBS frame spreads the 2 front arms apart so the blades don't
 interfere with the FPV and allow the camera to easily be mounted in
 front
@@ -90,7 +90,7 @@ Safety Warnings Relating Specifically to FPV Flight
 
 -  Because of the limited field-of-view of the FPV camera you may not be
    able to easily see obstacles near the vehicle which may be why the
-   `Academy of Model Aeronautics <http://www.modelaircraft.org/>`__
+   `Academy of Model Aeronautics <https://www.modelaircraft.org/>`__
    requires that there be a second person acting as spotter for all FPV
    flights.
 -  Be ready for loss of FPV video caused by flying beyond your FPV
