@@ -444,7 +444,7 @@ Enabling Scripts on OpenTX
 
    The version installed on your Taranis may not have the option to run scripts. If this is the case, you will need to install a new version via OpenTX Companion. This can be done in a few easy steps.
 
-   1. Download and install the latest version of OpenTX Companion from `OpenTX <www.open-tx.org/downloads.html>`__. Open the OpenTX Companion program, then go to Settings >> Settings
+   1. Download and install the latest version of OpenTX Companion from `OpenTX <http://www.open-tx.org/downloads.html>`__. Open the OpenTX Companion program, then go to Settings >> Settings
 
    .. image:: ../../../images/opentx_settingstab.png
        :target: ../_images/opentx_settingstab.png
@@ -544,7 +544,7 @@ Requirements
   the firmware and about ErSky9x in general from `the
   documentation`_.
 
-.. _frsky xjt: http://www.frsky-rc.com/product/pro.php?pro_id=104
+.. _frsky xjt: https://www.frsky-rc.com/product/xjt-2/
 .. _djt:  http://www.frsky-rc.com/product/pro.php?pro_id=8
 .. _the documentation: http://openrcforums.com/forum/viewtopic.php?f=122&t=5575#p79483
 
