@@ -27,7 +27,7 @@ Connecting and Configuring
 
 The ECT400 provides distance measurements using the NMEA protocol over serial at 115200 baud.
 
-The sensor can be connected to any available serial/uart port on the fligth controller.  In the diagram below the sensor is connected to SERIAL2.
+The sensor can be connected to any available serial/uart port on the flight controller.  In the diagram below the sensor is connected to SERIAL2.
 
 .. image:: ../../../images/echologger-ect400-pixhawk.png
     :target: ../_images/echologger-ect400-pixhawk.png
@@ -42,6 +42,30 @@ Then the following range finder related parameters should be set:
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 17 (NMEA)
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 13
 -  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = 10000 (i.e. 100m).  *This is the distance in centimeters that the rangefinder can reliably read.*
+
+Configuring the sensor
+----------------------
+
+By default the sensor comes configured to sample the depth at only 1hz and to a maximum depth of 10m.
+
+Using a `USB to RS232 converter <https://www.sparkfun.com/products/11304>`__ connect to the sensor from your PC using a terminal program like `Putty <https://www.putty.org/>`__ (Connection type of "Serial", Speed of "115200" and Serial line of the appropriate COM port).
+
+If connected properly NMEA data should appear on the console.  Type:
+
+::
+
+    #help           (to display the help menu)
+    #range 100000   (to set the range to 100m)
+    #interval 0.5   (to set update rate to 2hz)
+    #nmeadpt 0      (to disable dpt message)
+    #nmeamtw 0      (to disable mtw message)
+    #nmeaxdr 0      (to disable xdr message)
+    #nmeaema 0      (to disable ema message
+
+.. image:: ../../../images/echologger-ect400-sensor-config.png
+    :target: ../_images/echologger-ect400-sensor-config.png
+
+More info on NMEA message contents can be found `here <http://www.catb.org/gpsd/NMEA.html>`__
 
 Testing the sensor
 ==================
