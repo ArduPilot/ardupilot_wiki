@@ -10,7 +10,8 @@ Ardupilot can now run Balance Bots too!
     :width: 100%
 
 
-Currently, the balance bot has only been tested for Manual and Hold modes.
+
+Currently, Balance Bots work only in Manual and Hold modes.
 
 Before you proceed:
 -------------------
