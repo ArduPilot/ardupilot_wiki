@@ -177,6 +177,10 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_makeflyeasy.jpg
     :width: 250px   
     :target:  http://makeflyeasy.com/
+    
+.. image:: ../../../images/supporters/supporters_logo_MicroAerialProjects.png
+    :width: 250px   
+    :target:  http://www.microaerialprojects.com
 
 How does my company become a partner?
 =====================================
