@@ -49,16 +49,17 @@ such as Alt Hold and Loiter.
 Tips for your first flights
 ===========================
 
--  Make sure you are in a wind free environment. (Wind will play against
-   you on in air auto trim.)
--  Make sure you have no trim on your Radio. (The APM is what we want to
-   trim, the radio should never get trimmed.)
+-  Make sure you are in a wind free environment
+   (wind will play against you on in air auto trim).
+-  Make sure you have no trim on your Radio 
+   (the APM is what we want to trim, the radio should never get trimmed).
 -  Hold the copter still and level after connecting the battery to allow
    the gyroscopes to initialize.
 -  Get above ground effect, around 3-4 feet is enough on most models.
 -  Make sure to practice a lot before you actually try the auto trim to
    find the sweet spot on the Radio right stick to have the copter super
-   stable and not moving. (This is where wind affect your inputs.)
+   stable and not moving
+   (This is where wind affect your inputs).
 -  We recommend not starting in Simple mode. Begin your flying in the
    basic Stabilize mode.
 -  Copter establishes its home position at the time of arming, so arm
