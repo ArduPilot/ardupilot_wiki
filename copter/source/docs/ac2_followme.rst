@@ -21,8 +21,8 @@ What you'll need
 
 #. A Copter with telemetry
 #. A laptop (or a phone/tablet with an integrated GPS available to the GCS app)
-#. A GPS USB dongle `like this <http://www.amazon.com/ND-100S-GlobalSat-USB-GPS-Receiver/dp/B004K39QTY/refsr_1_9?ieUTF8&qid1329773762&sr=8-9>`__
-   or Bluetooth GPS module `like this <http://www.amazon.com/GlobalSat-BT-368i-Bluetooth-GPS-Receiver/dp/B0018YZ836/refsr_1_2?selectronics&ieUTF8&qid1329773963&sr1-2>`__.
+#. A GPS USB dongle `like this <https://www.amazon.com/ND-100S-GlobalSat-USB-GPS-Receiver/dp/B004K39QTY/>`__
+   or Bluetooth GPS module `like this <https://www.amazon.com/GlobalSat-BT-368i-Bluetooth-GPS-Receiver/dp/B0018YZ836/>`__.
 
 Instructions for Mission Planner
 ================================
@@ -70,4 +70,4 @@ Instructions for Mission Planner
 .. warning::
    The barometer is used in the altitude calculation meaning that it can
    drift over time and impact rising terrain. Watch for obstacles and 
-   elevation changes. The altitude maintaing behavior is similar to loiter mode.
+   elevation changes. The altitude maintaining behavior is similar to loiter mode.
