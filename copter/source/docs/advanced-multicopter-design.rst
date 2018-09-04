@@ -78,19 +78,20 @@ There are several popular frame layouts for MultiCopters
          and simple and it's natural symmetry balances flying forces
          better.
 
-   -  A humming bird sized `Estes Proto X <http://www.estesrockets.com/helis-quads/quadcopters/004606-proto-x>`__
+   -  A humming bird sized 
+     `Estes Proto X <http://www.estesrockets.com/helis-quads/quadcopters/004606-proto-x>`__
       is shown below.
 
-.. image:: ../images/leste4606__92098.1384842703.1020.1020.jpg
-    :target: ../_images/leste4606__92098.1384842703.1020.1020.jpg
+      .. image:: ../images/leste4606__92098.1384842703.1020.1020.jpg
+          :target: ../_images/leste4606__92098.1384842703.1020.1020.jpg
 
 
 -  A fifteen thousand dollar SteadyDrone Q4D-X Quadcopter with 28"
    propellers, 8KG lifting capability and claimed 60 minute flight
    times.
 
-.. image:: ../images/SteadiDroneQ4DX.jpg
-    :target: ../_images/SteadiDroneQ4DX.jpg
+   .. image:: ../images/SteadiDroneQ4DX.jpg
+       :target: ../_images/SteadiDroneQ4DX.jpg
 
 -  For professional use, HexaCopters and OctoCopters with 6 and 8
    Motor/propeller propulsion units are popular.
@@ -106,8 +107,8 @@ There are several popular frame layouts for MultiCopters
    -  However it also results in some reduction in flight efficiency and
       endurance all other things being equal.
 
-.. image:: ../images/hexacopter.jpg
-    :target: ../_images/hexacopter.jpg
+   .. image:: ../images/hexacopter.jpg
+       :target: ../_images/hexacopter.jpg
 
 -  Hex Y6 and Octo X8 designs with pairs of coaxial motor/propeller
    units mounted back to back are also becoming popular.
@@ -142,9 +143,8 @@ There are several popular frame layouts for MultiCopters
 -  There are also variable pitch Multicopters for incredible acrobatic
    performance.
 
-   -  Variable pitch multicopters have some interesting potential uses
-      as well like the `Curtis Youngblood Stingray 500 <http://curtisyoungblood.com/V2/products/quadcopters/stingray-500>`__ shown
-      below.
+   -  Variable pitch multicopters have some interesting potential uses as well like the 
+      `Curtis Youngblood Stingray 500 <http://curtisyoungblood.com/V2/products/quadcopters/stingray-500>`__ shown below.
    -  Servo control of the props (rotors) produces roll, pitch and yaw
       so they are often powered by a single motor with shaft or belt
       drive.
@@ -169,7 +169,7 @@ Motors, propellers and ESCs
 For multicopters, motors, propellers and ESCs (speed controllers) are
 critical and have been failure prone in the past.
 
-This ECalc based `Xcopter: motor - propeller - battery - ESC calculator <http://www.ecalc.ch/xcoptercalc.php?ecalc&lang=en>`__ will
+This ECalc based `Xcopter: motor - propeller - battery - ESC calculator <https://www.ecalc.ch/xcoptercalc.php?ecalc&lang=en>`__ will
 help you pick the best components for your copter.
 
 -  Quadcopter design will be used for illustration as they are the most
@@ -288,11 +288,11 @@ help you pick the best components for your copter.
 Professional Grade Power System for large Quadcopters (28" Propellers)
 ----------------------------------------------------------------------
 
--  The `Tigermotor U8 Pro <http://www.rctigermotor.com/html/2013/Efficiency-Type_1219/176.html>`__
-   Series motor is currently top of the line for a commercially
+-  The `Tigermotor U8 Pro Series <http://www.rctigermotor.com/html/2013/Efficiency-Type_1219/176.html>`__
+   motor is currently top of the line for a commercially
    available (large) copter motor.
 
-   -  It features Environmentally protected, closed construction and
+   - It features Environmentally protected, closed construction and
       easily replaceable bearings.
 
 .. image:: ../images/TmotorU8Pro1.jpg
@@ -329,7 +329,7 @@ Professional Grade Power System for Medium Quadcopters (16" Propellers)
 -  Clearly, applying similar quality to a more reasonably sized (and
    cost) copter is normally going to be a lot more practical.
 
-   -  A `380KV T-Motor 4008 <http://www.rctigermotor.com/html/2013/Professional_0912/52.html>`__
+   -  A `380KV T-Motor 4008 <http://www.rctigermotor.com/html/2013/Professional_0912/52.html>`__ 
       is $85.00, 16x5 CF Prop $90.00 a pair and 30 Amp Pro ESC $50.00 @
       four each = $720.00.
    -  This setup will work well for a copter up to 10 pounds or so and
@@ -393,7 +393,7 @@ Professional Grade Power System for Small Quadcopters (10" - 14" Propellers)
 -  The largest market segment is for Quadcopters in frame sizes that use
    10 to 14 inch propellers and weigh 3 to 7 pounds.
 
-   -  The `650 KV T-Motor MT3506 <http://www.rctigermotor.com/html/2013/Professional_0912/49.html>`__
+   -  The `650 KV T-Motor MT3506 <http://www.rctigermotor.com/html/2013/Professional_0912/49.html>`__ 
       at $65.00 is a high quality small but powerful pancake that can turn props from 11" to 14" diameter.
    -  With a 3 cell LiPo battery and T-Motor 14" prop at $73.00 a pair it can lift up to 7 pounds and achieve very good endurance.
    -  Add 4 T-Motor 18 Amp ESCs at $27.00 @ four each = $514.00 for top quality motors, props and ESCs.
@@ -679,15 +679,15 @@ it is strong and light and easily manufactured.
 -  There are a wide variety of Carbon fiber and epoxy fiberglass
    components to choose from.
 
-   -  Carbon fiber products are available from \ `RockWest Composites <http://www.rockwestcomposites.com/>`__ and `Carbon Fiber Tube Shop <http://www.carbonfibertubeshop.com>`__\ and \ `Dragon Plate <http://dragonplate.com/default.asp>`__
+   -  Carbon fiber products are available from \ `RockWest Composites <https://www.rockwestcomposites.com/>`__ and `Carbon Fiber Tube Shop <http://www.carbonfibertubeshop.com>`__\ and \ `Dragon Plate <https://dragonplate.com/>`__
    -  A really good article on cutting and gluing carbon fiber products
       from \ `Carbon Fiber Tube Shop <http://www.carbonfibertubeshop.com/cut%20&%20bond.html>`__
    -  Fiberglass and Carbon Fiber products are available from: `CST Sales <http://www.cstsales.com/products.html>`__ and `ACP Sales <http://www.acpsales.com/Carbon-Fiber.html>`__
-   -  A datasheet for `3M 2216 Epoxy Glue <http://multimedia.3m.com/mws/mediawebserver?6666660Zjcf6lVs6EVs666GGfCOrrrrQ->`__
+   -  A datasheet for `3M 2216 Epoxy Glue <http://multimedia.3m.com/mws/media/153955O/3mtm-scotch-weldtm-epoxy-adhesive-2216-b-a.pdf>`__
       and a source for it
-      `Amazon <http://www.amazon.com/3M-Scotch-Weld-Epoxy-Adhesive-EC-2216/dp/B000WXL090/ref=sr_1_2?ie=UTF8&qid=1392508104&sr=8-2&keywords=3m+2216>`__
+      `Amazon <https://www.amazon.com/3M-Scotch-Weld-Epoxy-Adhesive-EC-2216/dp/B000WXL090/>`__
    -  A datasheet for Loctite 9430 Glue and a source for Loctite
-      9340 \ `Amazon <http://www.amazon.com/Loctite-9340%C3%A2-Hysol-Adhesive-Temperature/dp/B000WXL1YE/ref=sr_1_1?s=industrial&ie=UTF8&qid=1392508821&sr=1-1&keywords=loctite+9340>`__
+      9340 \ `Amazon <https://www.amazon.com/Loctite-9340%C3%A2-Hysol-Adhesive-Temperature/dp/B000WXL1YE/>`__
 
 
 Using manufactured Plastic and Fiberglass Components in Your Own Frames.
