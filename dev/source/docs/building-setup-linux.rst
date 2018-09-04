@@ -6,6 +6,30 @@ Setting up the Build Environment (Linux/Ubuntu)
 
 This article shows how to setup your build environment on Linux/Ubuntu machines.
 
+Setup using Docker
+==================
+
+Clone ArduPilot repository
+--------------------------
+
+.. include:: git-clone.rst
+    :start-after: inclusion-marker-do-not-remove
+    :end-before: Cloning with the GitHub GUI (Windows or MAC)
+
+Build Docker Image
+------------------
+Build the docker image and tag it with the name ardupilot:
+::
+    docker build . -t ardupilot
+
+Run Ardupilot Container
+-----------------------
+The following command runs the docker container, linking your current directory with
+the ardupilot source, and launches an interactive shell inside the container. From here
+you can build ardupilot:
+::
+    docker run --rm -it -v `pwd`:/ardupilot ardupilot:latest bash
+
 Setup on Ubuntu
 ===============
 
