@@ -4,10 +4,9 @@
 Lightware SF02 Rangefinder
 ==========================
 
-The `Lightware SF02 <http://www.lightware.co.za/shop/en/drone-altimeters/7-sf02f.html>`__ is
-lightweight laser rangefinder module that provides fast and accurate
-distance measurements up to 40 meters (130 feet). 
-In `tests by the development team <http://diydrones.com/profiles/blogs/testing-laser-rangefinders-with-arduplane>`__
+The `Lightware SF02 <http://documents.lightware.co.za/SF02%20-%20Laser%20Rangefinder%20Manual%20-%20Rev%2012.pdf>`__ is
+lightweight laser rangefinder module that provides fast and accurate distance measurements up to 40 meters (130 feet). 
+In `tests by the development team <https://diydrones.com/profiles/blogs/testing-laser-rangefinders-with-arduplane>`__
 the sensor has produced very reliable distance measurements for long and
 short ranges even on fast moving vehicles.
 

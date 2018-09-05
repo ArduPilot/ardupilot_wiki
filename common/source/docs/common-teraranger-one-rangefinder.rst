@@ -12,7 +12,7 @@ small size, high performance and low power consumption make it ideal for
 modern robotic applications, drone operations and automation.
 
 More technical information about ToF sensors can be found
-`here <http://www.teraranger.com/products/teraranger-one/>`__.
+`here <https://www.terabee.com/portfolio-item/teraranger-tower-scanner-for-slam-and-collision-avoidance/>`__.
 
 .. note::
 
@@ -24,7 +24,7 @@ Connecting to the TeraRanger via I2C
 ====================================
 
 The TeraRanger One sensor can be easily connected to the Pixhawk with
-the `TeraRanger I2C adaptor <http://www.teraranger.com/product/teraranger-i2c-adapter/>`__.
+the `TeraRanger I2C adaptor <http://www.teraranger.com/product/adapters-for-oneduo/>`__.
 Then it’s nearly a plug&play solution:
 
 #. Solder the alimentation for the TeraRanger I2C adaptor:

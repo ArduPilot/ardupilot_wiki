@@ -19,7 +19,7 @@ The supported companion computers are the :ref:`RPi3 <raspberry-pi-via-mavlink>`
 ..  youtube:: 3bVFEF4MPdU
     :width: 100%
 
-Please get involved by reporting issues in the `ArduPilot Forums <http://discuss.ardupilot.org/c/development-team>`__.  Deveopers can help improve APSync by submitting PRs to `ArduPilot/companion <https://github.com/ArduPilot/companion>`__ and/or discuss with others developers in `Gitter's ArduPilot/companion chat room <https://gitter.im/ArduPilot/companion>`__!
+Please get involved by reporting issues in the `ArduPilot Forums <https://discuss.ardupilot.org/c/development-team>`__.  Developers can help improve APSync by submitting PRs to `ArduPilot/companion <https://github.com/ArduPilot/companion>`__ and/or discuss with others developers in `Gitter's ArduPilot/companion chat room <https://gitter.im/ArduPilot/companion>`__!
 
 Wifi Access Point & DataFlash logging
 =====================================

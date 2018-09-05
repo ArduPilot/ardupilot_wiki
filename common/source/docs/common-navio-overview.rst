@@ -44,7 +44,7 @@ Specifications
    -  Weight 12g (shield) + 54g (RPi2)
    -  Size: 55x65mm (shield only)
 
-More details can be found from the `emlid.com website <http://www.emlid.com/>`__.
+More details can be found from the `emlid.com website <https://emlid.com/>`__.
 
 Developer build information can be found on the :ref:`ArduPilot dev wiki <dev:building-for-navio-on-rpi2>`.
 

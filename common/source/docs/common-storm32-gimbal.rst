@@ -16,7 +16,7 @@ corrections leading to better performance during aggressive maneuvers.
 
 Please refer to the `STorM32-BGC wiki pages <http://www.olliw.eu/storm32bgc-wiki/Main_Page>`__ for more
 detailed information including where the gimbals can be purchased.  This
-gimbal has been tested with a `DYS 3-axis brushless gimbal <http://www.hobbyking.com/hobbyking/store/__52136__DYS_Smart3_3_Axis_GoPro_Gimbal_with_AlexMos_Control_Board_BaseCam_.html>`__.
+gimbal has been tested with a `DYS 3-axis brushless gimbal <https://hobbyking.com/en_us/dys-smart3-3-axis-gopro-gimbal-with-alexmos-control-board-basecam.html?___store=en_us>`__.
 
 .. note::
 
@@ -127,7 +127,7 @@ gimbal like the :ref:`Tarot Gimbal <common-tarot-gimbal>`.
 Resistor issue on some boards
 =============================
 
-Some in-depth analysis `here on rcgroups <http://www.rcgroups.com/forums/showthread.php?t=2494532&page=5>`__
+Some in-depth analysis `here on rcgroups <https://www.rcgroups.com/forums/showthread.php?2494532-Storm32-with-Pixhawk-over-serial-connection/page5>`__
 turned up that some STorM32 boards need resistor #4 (shown in pic below)
 shorted (i.e. a wire soldered over the top of the resistor to turn it
 into a regular wire) in order for the gimbal controllers messages to get

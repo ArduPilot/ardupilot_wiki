@@ -50,7 +50,7 @@ Specifications
 Where to Buy
 ============
 
-- Available from many retailers including `HobbyKing <https://hobbyking.com/en_us/taulabs-sparky-2-0-32bit-flight-controller.html>`__
+- Available from many retailers including `HobbyKing <https://hobbyking.com/en_us/taulabs-sparky-2-0-32bit-flight-controller.html?___store=en_us>`__
 
 Videos
 ======

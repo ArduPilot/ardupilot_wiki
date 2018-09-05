@@ -124,7 +124,7 @@ Inexpensive, Ready To Fly Nano, Micro or Small QuadCopter
 
 -  Below left is a larger, but very durable copter, the $88.00 UDI U818A
    2.4GHz Quadcopter with Camera from Amazon Prime.
--  And a link to an important `Blog Article by RocklandUSA <http://diydrones.com/profiles/blogs/noob-quadcopter-training-thank-you-community>`__
+-  And a link to an important `Blog Article by RocklandUSA <https://diydrones.com/profiles/blogs/noob-quadcopter-training-thank-you-community>`__
    for all people considering their first Multicopter purchase.
 -  The Blade Nano QX at $90.00 below right is also highly recommended,
    is very light and easy to fly and incredibly durable.

@@ -61,7 +61,7 @@ Full featured and widely used GCS.
 
 -  `Download <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__
 -  :ref:`Wiki <planner:home>`
--  `Support Forum <http://ardupilot.com/forum/viewforum.php?f=12>`__
+-  `Support Forum <https://discuss.ardupilot.org/c/ground-control-software/mission-planner>`__
 -  `Issues List <https://github.com/ArduPilot/MissionPlanner/issues>`__
 -  `Source Code <https://github.com/ArduPilot/MissionPlanner>`__
 
@@ -79,7 +79,7 @@ user base and a reduced feature set when compared with Mission Planner.
     :target: ../_images/planner2_choose_agcs.jpg
 
 - :ref:`Wiki <planner2:home>`
-- `Support Forum <http://ardupilot.com/forum/viewforum.php?f=82>`__
+- `Support Forum <https://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
 - `Issues List <https://github.com/ArduPilot/apm_planner/issues>`__
 - `Source Code <https://github.com/ArduPilot/apm_planner>`__
 
@@ -141,7 +141,7 @@ Supports multi-node installation, meaning that it is possible to connect multipl
     :target:  https://www.ugcs.com/files/2016-04/1459769168_elevation-profile.jpeg
 
 -  `UgCS Website <http://www.ugcs.com>`__
--  `DIY Drones Group for UgCS Users <http://diydrones.com/group/ugcs>`__
+-  `DIY Drones Group for UgCS Users <https://diydrones.com/group/ugcs>`__
 -  `UgCS Github Repository <https://github.com/ugcs>`__
 
 Comparison Mobile
@@ -167,7 +167,7 @@ drone) and special missions for 3D mapping.
    from Google Play.
 -  `Android compatible hardware list <https://github.com/arthurbenemann/droidplanner/wiki/Compatible-Devices>`__
 -  `Wiki <https://github.com/DroidPlanner/Tower/wiki>`__
--  `Support Forum <http://ardupilot.com/forum/viewforum.php?f=15>`__
+-  `Support Forum <https://discuss.ardupilot.org/c/ground-control-software/tower>`__
 -  `Issues List <https://github.com/DroidPlanner/Tower/issues>`__
 -  `Source Code <https://github.com/DroidPlanner/droidplanner>`__
 
@@ -191,7 +191,7 @@ See website for how-to on how connect it to your autopilot
 .. image:: ../../../images/MAVPilot_1.4.png
     :target: ../_images/MAVPilot_1.4.png
 
--  `Release announcement Blog & Discussion <http://diydrones.com/profiles/blogs/mav-pilot-1-4-for-iphone-released>`__
+-  `Release announcement Blog & Discussion <https://diydrones.com/profiles/blogs/mav-pilot-1-4-for-iphone-released>`__
 -  `Support Blog <http://www.communistech.com/support/>`__
 -  `Support Forum <http://www.communistech.com/forums/>`__
 -  `iTunes Store link <https://itunes.apple.com/ca/developer/communis-tech/id649232032>`__
@@ -210,7 +210,7 @@ See website for how-to on how connect it to your autopilot
 .. image:: ../../../images/sidepilot.jpg
     :target: ../_images/sidepilot.jpg
 
--  `Release announcement Blog & Discussion <http://diydrones.com/profiles/blogs/sidepilot-app-version-1-1-formerly-imavlink>`__
+-  `Release announcement Blog & Discussion <https://diydrones.com/profiles/blogs/sidepilot-app-version-1-1-formerly-imavlink>`__
 -  `Website <http://sidepilot.net>`__
 -  `Support Forum <http://sidepilot.net/forum>`__
 -  `iTunes Store link <https://itunes.apple.com/us/app/sidepilot/id1138193193?ls=1&mt=8>`__
@@ -235,7 +235,7 @@ Android GCS intended for enthusiasts.
 -  `Downloads (Google Play) <https://play.google.com/store/apps/details?id=com.geeksville.andropilot>`__
 -  `Android compatible hardware list <https://github.com/geeksville/arduleader/wiki/Android%20Device%20Compatibility%20List>`__
 -  `Wiki <https://github.com/geeksville/arduleader/wiki>`__
--  `Support Forum <http://ardupilot.com/forum/viewforum.php?f=14>`__
+-  `Support Forum <https://discuss.ardupilot.org/c/ground-control-software/other-gcs>`__
 -  `Issues List <https://github.com/geeksville/arduleader/issues>`__
 -  `Source Code <https://github.com/geeksville/arduleader/tree/master/andropilot>`__
 

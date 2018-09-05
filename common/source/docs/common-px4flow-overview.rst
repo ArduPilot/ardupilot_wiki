@@ -210,7 +210,7 @@ Second Flight (Copter only)
 #. Take-off in loiter and bring the copter to about 1m height
 #. If the vehicle starts to accelerate away or there is erratic pitch or roll
    movement, then switch to Stabilise or AltHold and land. You will need to
-   download the log file and share it on `the forums <http://discuss.ardupilot.org/c/arducopter>`__ to understand why.
+   download the log file and share it on `the forums <https://discuss.ardupilot.org/c/arducopter>`__ to understand why.
 #. If it holds location then congratulations, you have succeeded and can
    now start experimenting with height changes and moving it around in
    LOITER

@@ -305,6 +305,6 @@ libraries first allows us to import them with the next "import" command:
 Tutorials and sample scripts
 ============================
 
--  `Scripting fixed-wing acrobatics <http://diydrones.com/profiles/blogs/scripted-fixed-wing-acrobatics>`__
--  `Adding new variables and classes <http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A1469666>`__
--  `Writing a time-based script <http://diydrones.com/forum/topics/how-to-python-script-a-time-based-flight-plan>`__
+-  `Scripting fixed-wing acrobatics <https://diydrones.com/profiles/blogs/scripted-fixed-wing-acrobatics>`__
+-  `Adding new variables and classes <https://diydrones.com/profiles/blogs/python-scripting-in-mission-planner>`__
+-  `Writing a time-based script <https://diydrones.com/forum/topics/how-to-python-script-a-time-based-flight-plan>`__

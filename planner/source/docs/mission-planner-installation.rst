@@ -15,7 +15,7 @@ The instructions show how to install *Mission Planner* on Windows:
 - Follow the instructions to complete the setup process. 
   The installation utility will automatically install any necessary software drivers. 
   If you receive a DirectX installation error, 
-  please update your DirectX plug-in from the `DirectX Download Center <http://www.microsoft.com/en-us/download/details.aspx?id=35>`__.
+  please update your DirectX plug-in from the `Windows Download Center <https://www.microsoft.com/en-us/download/windows.aspx>`__.
 
 - If you receive the warning pictured below, select **Install this driver software anyway** to continue.
 

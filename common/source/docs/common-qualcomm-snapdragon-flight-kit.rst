@@ -126,7 +126,7 @@ compatible serial GPS can be used.
 WiFi
 ----
 
-WLAN0, WLAN1 (+BT 4.0): U.FL connector: `Taoglas adhesive antenna (DigiKey) <http://www.digikey.com/product-detail/en/FXP840.07.0055B/931-1222-ND/3877414>`__
+WLAN0, WLAN1 (+BT 4.0): U.FL connector: `Taoglas adhesive antenna (DigiKey) <https://www.digikey.com/product-detail/en/FXP840.07.0055B/931-1222-ND/3877414>`__
 
 J9 / GPS
 --------
@@ -357,7 +357,7 @@ board.
 
 .. note::
 
-   `Qualcomm/Intrinsyc have released a ESC <https://shop.intrinsyc.com/collections/dragonboard-accessories/products/qualcomm-electronic-speed-control-board>`__ for use with this board but it has not been tested for use with ArduPilot.
+   `Qualcomm/Intrinsyc have released a ESC <https://shop.intrinsyc.com/products/qualcomm-electronic-speed-control-board>`__ for use with this board but it has not been tested for use with ArduPilot.
 
 Logging
 =======
@@ -380,7 +380,7 @@ possible using the qcamvid application on the flight controller.
 -  Connect the ground station computer to the flight controller's wifi
    network (normally appears as *Atlanticus_XXXX*)
 -  Use an ssh program such as
-   `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`__
+   `Putty <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`__
    to login into the board
 -  Type the following to record 10 minutes of video from the front
    camera to /root/video.h264 (other options can be seen by typing

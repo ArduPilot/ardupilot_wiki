@@ -114,7 +114,7 @@ Meaning that when flying, our throttle values will range between 1100 -
 
 **Transmitter Tutorials:**
 
-`Spektrum Setup <http://diydrones.com/profiles/blogs/spektrum-dx8-and-ar8000-failsafe-setup>`__
+`Spektrum Setup <https://diydrones.com/profiles/blogs/spektrum-dx8-and-ar8000-failsafe-setup>`__
 
 GCS Failsafe
 ~~~~~~~~~~~~

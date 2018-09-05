@@ -4,8 +4,7 @@
 Advanced Tuning
 ===============
 
-This article provides an overview of how to tune various Copter
-parameters.
+This article provides an overview of how to tune various Copter parameters.
 
 Overview
 ========
@@ -34,7 +33,7 @@ performance in Auto mode.
 
 .. note::
 
-   `Dave C's AC2.8.1 tuning guide <http://diydrones.com/forum/topics/arducopter-tuning-guide>`__ 
+   `Dave C's AC2.8.1 tuning guide <https://diydrones.com/forum/topics/arducopter-tuning-guide>`__ 
    has good information for tuning for rate roll and pitch but altitude hold,
    Loiter and navigation has changed dramatically since AC2.8.1 so those
    sections are no longer valid.
@@ -109,8 +108,7 @@ of P) should be maintained if you modify these parameters.  These values
 should never be increased but for very powerful copters you may get
 better response by reducing both by 50% (i.e P to 0.5, I to 1.0).
 
-See the :ref:`Altitude Hold flight mode page <altholdmode>` for more
-information.
+See the :ref:`Altitude Hold flight mode page <altholdmode>` for more information.
 
 Loiter Tuning
 =============

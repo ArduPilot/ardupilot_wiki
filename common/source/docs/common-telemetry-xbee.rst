@@ -44,7 +44,7 @@ restarted).
     :target: ../_images/Telemetry_XBee_MPSetup.jpg
 
 The
-`X-CTU <http://www.digi.com/products/xbee-rf-solutions/xctu-software/xctu>`__
+`X-CTU <https://www.digi.com/products/xbee-rf-solutions/xctu-software/xctu>`__
 application can be used to configure the XBee modules.  In particular
 they should be set to transmit at 57600 baud.
 

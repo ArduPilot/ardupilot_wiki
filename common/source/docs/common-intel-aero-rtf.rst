@@ -7,7 +7,7 @@ Intel Aero RTF
 .. image:: ../../../images/intel-aero-rtf.jpg
     :target: ../_images/intel-aero-rtf.jpg
 
-The `Intel Aero RTF vehicle <https://software.intel.com/en-us/aero/drone-dev-kit>`__ includes the :ref:`Intel Aero compute board <common-intel-aero-overview>`,
+The `Intel Aero RTF vehicle <https://software.intel.com/en-us/aero/drone-kit>`__ includes the :ref:`Intel Aero compute board <common-intel-aero-overview>`,
 `Vision Accessory Kit <https://software.intel.com/en-us/aero/vision-kit>`__ and a `Spektrum DXe transmitter <http://spektrumrc.com/Products/Default.aspx?ProdId=SPM1000>`__.
 
 Within the vehicle is an STM32F427V flight controller board which can run ArduPilot (replacing the pre-loaded non-ArduPilot software).
@@ -21,7 +21,7 @@ Additional parts to buy
 
 Although "Ready-to-fly" some additional parts are required to complete the upgrade and fly with ArduPilot.
 
-- LiPo battery `3S <https://hobbyking.com/en_us/multistar-high-capacity-3s-5200mah-multi-rotor-lipo-pack.html>`__ or `4S <https://hobbyking.com/en_us/multistar-high-capacity-4s-5200mah-multi-rotor-lipo-pack.html>`__
+- LiPo battery `3S <https://hobbyking.com/en_us/multistar-high-capacity-3s-5200mah-multi-rotor-lipo-pack.html?___store=en_us>`__ or `4S <https://hobbyking.com/en_us/multistar-high-capacity-5200mah-4s-12c-multi-rotor-lipo-pack-w-xt60.html?___store=en_us>`__
 - 2GB (or larger) USB thumb drive (`like this one <https://www.amazon.com/SanDisk-Cruzer-Glide-Drive-SDCZ60-008G-B35/dp/B007YX9O94/ref=sr_1_4?ie=UTF8&qid=1492397331&sr=8-4>`__) is needed for updating to the last release of the Linux distro.
 - Micro USB OTG to USB cable (`like this one <https://www.amazon.com/Micro-USB-OTG-Go-Adapter/dp/B005GI2VMG>`__)
 - `Spektrum USB programming cable <https://www.spektrumrc.com/Products/Default.aspx?ProdID=SPMA3065>`__ (optional)

@@ -21,7 +21,7 @@ Getting Involved
 New developers are always welcome! The best way to start is to:
 
 - read this wiki to learn the basics of the software and :ref:`how the team works <how-the-team-works>`
-- get involved with the other developers by posting on the `Developer Team Forum <http://discuss.ardupilot.org/c/development-team>`__, chat to us on `Gitter <https://gitter.im/ArduPilot/ardupilot>`__ or join the :ref:`weekly development call <ardupilot-mumble-server>`.  You can also find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  :ref:`All channels <common-contact-us>` are open to all.  Lurk for a while to get a feel for it, then participate!
+- get involved with the other developers by posting on the `Developer Team Forum <https://discuss.ardupilot.org/c/development-team>`__, chat to us on `Gitter <https://gitter.im/ArduPilot/ardupilot>`__ or join the :ref:`weekly development call <ardupilot-mumble-server>`.  You can also find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  :ref:`All channels <common-contact-us>` are open to all.  Lurk for a while to get a feel for it, then participate!
 - find a specific bug you'd like to fix or a feature you'd like to add (check out the `good first issues <https://github.com/ArduPilot/ardupilot/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22>`__, recent `issues from Randy <https://github.com/ArduPilot/ardupilot/issues/created_by/rmackay9>`__ or our :ref:`roadmap <roadmap>` for ideas).
 - fix the bug in your own clone and :ref:`test <simulation-2>` that it's working
 - submit the change to the main code base :ref:`via a pull request <submitting-patches-back-to-master>`.
@@ -45,7 +45,7 @@ To get going quickly please consider purchasing one of the :ref:`ready-to-fly ve
 
 The ArduPilot source code includes the `AP-HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__
 hardware abstraction layer, making it relatively easy to port the code to a
-wide range of autopilot boards. See this `blog post <http://diydrones.com/profiles/blogs/lots-of-changes-to-apm-development>`__
+wide range of autopilot boards. See this `blog post <https://diydrones.com/profiles/blogs/lots-of-changes-to-apm-development>`__
 for more information on the move to AP-HAL.
 
 Project List
@@ -87,9 +87,9 @@ ArduPilot dev team.
 -  `PX4* <https://pixhawk.org/start>`__ - designers of the original PX4FMU hardware (from which the Pixhawk was developed) and owners of a relatively small number of drivers we use when running on a Pixhawk flight controller board
 -  `MAVLink* <http://www.qgroundcontrol.org/mavlink/start>`__ -
    the protocol for communication between the ground station, flight
-   controller and some periphers including the OSD. A "Dummy's Guide" to
+   controller and some peripherals including the OSD. A "Dummy's Guide" to
    working with MAVLink is
-   `here <http://diydrones.com/group/arducopterusergroup/forum/topics/mavlink-tutorial-for-absolute-dummies-part-i?xg_source=activity>`__.
+   `here <https://diydrones.com/forum/topics/mavlink-tutorial-for-absolute-dummies-part-i?groupUrl=arducopterusergroup>`__.
 -  `UAVCAN* <http://uavcan.org>`__ -
    Lightweight protocol designed for reliable communication in aerospace and robotic 
    applications via CAN bus. Ardupilot is using the `Libuavcan <http://uavcan.org/Implementations/Libuavcan/>`__,
@@ -101,8 +101,8 @@ How the team works
 -  Our annual developers conference is held in Feb/March in Canberra Australia (`2018 annoucement <https://discuss.ardupilot.org/t/developer-meetup-in-canberra-february-2018>`__).
 -  The source code for ArduPilot/APM is managed using git on https://github.com/ArduPilot/ardupilot
 -  Pre-compiled firmware for supported autopilot boards is available from http://firmware.ardupilot.org
--  User support is available on the `forums <http://discuss.ardupilot.org/>`__.
--  The ArduPilot `automatic test system <http://autotest.ardupilot.org/>`__ shows the test status of each commit. It's described `here <http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A703309>`__.
+-  User support is available on the `forums <https://discuss.ardupilot.org/>`__.
+-  The ArduPilot `automatic test system <http://autotest.ardupilot.org/>`__ shows the test status of each commit. It's described `here <https://diydrones.com/profiles/blogs/ardupilot-automatic-testing-system>`__.
 -  Bug tracking and open issues are tracked using the `github issues system <https://github.com/ArduPilot/ardupilot/issues>`__
 -  Vehicle onboard parameter documentation for :ref:`copter <copter:parameters>`, :ref:`plane <plane:parameters>` and :ref:`rover <rover:parameters>` is auto-generated from the source code
 

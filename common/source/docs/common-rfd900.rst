@@ -112,4 +112,4 @@ Discussion Forum
 ================
 
 The best place to discuss these radios including set-up issues is on
-`Seppo's RFD900 discussion on diydrones <http://diydrones.com/forum/topics/rfd900-new-long-range-radio-modem>`__.
+`Seppo's RFD900 discussion on diydrones <https://diydrones.com/forum/topics/rfd900-new-long-range-radio-modem>`__.

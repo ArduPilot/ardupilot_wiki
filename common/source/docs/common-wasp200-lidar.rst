@@ -4,7 +4,7 @@
 Attollo Engineering Wasp200 Lidar
 =================================
 
-The `Wasp200 <http://www.attolloengineering.com/wasp-200-lrf.html>`__ has a range of up to 250m and an update rate from 56hz to 10kHz.  More specifications can be found `here <http://www.attolloengineering.com/uploads/5/7/5/1/57512457/xm000001-01_user_manual_wasp-200_lrf.pdf>`__.
+The `Wasp200 <https://www.attolloengineering.com/wasp-200-lrf.html>`__ has a range of up to 250m and an update rate from 56hz to 10kHz.  More specifications can be found `here <http://www.attolloengineering.com/uploads/5/7/5/1/57512457/xm000001-01_user_manual_wasp-200_lrf.pdf>`__.
 
 .. image:: ../../../images/wasp200-lidar.png
 
@@ -15,7 +15,7 @@ The `Wasp200 <http://www.attolloengineering.com/wasp-200-lrf.html>`__ has a rang
 Where to Buy
 ------------
 
-- The `Attollo Engineering online store <http://www.attolloengineering.com/store/p14/WASP-LRF_200_Rangefinder.html>`__ sells the lidar directly
+- The `Attollo Engineering online store <https://www.attolloengineering.com/store/p14/WASP-200_Laser_Rangefinder.html>`__ sells the lidar directly
 
 Connecting to the Flight Controller
 -----------------------------------

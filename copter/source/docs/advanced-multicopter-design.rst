@@ -886,7 +886,7 @@ Links To Specific MultiCopter Builds
 ====================================
 
 -  Here is a link to Forrest Franz's build of a very simple, very light
-   weight, very strong \ `carbon fiber Quadcopter frame <http://diydrones.com/forum/topics/build-your-own-copter-part-iii?xg_source=activity>`__
+   weight, very strong \ `carbon fiber Quadcopter frame <https://diydrones.com/forum/topics/build-your-own-copter-part-iii?xg_source=activity>`__
 
 .. image:: ../images/QuadMartyFitTest.jpg
     :target: ../_images/QuadMartyFitTest.jpg
@@ -894,13 +894,13 @@ Links To Specific MultiCopter Builds
 -  And some links to some of Forrests extremely ambitious copter
    building techniques and concepts.
 
-   -  `building-copters-with-round-tubes-stronger-lighter-easier <http://diydrones.com/group/arducopterusergroup/forum/topics/building-copters-with-round-tubes-stronger-lighter-easier-to>`__
-   -  `build-your-own-copter-part-ii <http://diydrones.com/forum/topics/build-your-own-copter-part-ii>`__
-   -  `build-your-own-copter-part-iii <http://diydrones.com/forum/topics/build-your-own-copter-part-iii>`__
-   -  `build-your-own-copter-part-iv <http://diydrones.com/forum/topics/build-your-own-copter-part-iv>`__
+   -  `building-copters-with-round-tubes-stronger-lighter-easier <https://diydrones.com/forum/topics/building-copters-with-round-tubes-stronger-lighter-easier-to?groupUrl=arducopterusergroup&>`__
+   -  `build-your-own-copter-part-ii <https://diydrones.com/forum/topics/build-your-own-copter-part-ii>`__
+   -  `build-your-own-copter-part-iii <https://diydrones.com/forum/topics/build-your-own-copter-part-iii>`__
+   -  `build-your-own-copter-part-iv <https://diydrones.com/forum/topics/build-your-own-copter-part-iv>`__
 
 -  And here is a link to Luke Cook's very serious, very well thought out
-   and meticulously executed \ `OctoCopter Build <http://diydrones.com/profiles/blogs/octocopter-scratch-build>`__
+   and meticulously executed \ `OctoCopter Build <https://diydrones.com/profiles/blogs/octocopter-scratch-build>`__
 
    .. image:: ../images/octocopter_luke_cook.jpg
        :target: ../_images/octocopter_luke_cook.jpg

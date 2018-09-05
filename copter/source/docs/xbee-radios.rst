@@ -20,21 +20,17 @@ Hooking up your Xbee wireless modules
 Adding wireless telemetry is not difficult and can extend the
 capabilities of your UAV immensely. We recommend 
 `900Mhz Xbees <https://www.sparkfun.com/categories/222.html>`__. If you are in
-Europe, where 900Mhz is not allowed, you can use a 2.4Ghz Xbee kit
-instead. 
+Europe, where 900Mhz is not allowed, you can use a 2.4Ghz Xbee kit instead. 
 
 .. warning::
 
    On APM 2, you cannot use the Xbee while your APM board is
    connected to the USB port.
 
-That's because the Xbee and USB share the same serial port, with some
-clever multiplexing to detect if the USB cable is plugged in and
-switching output to the USB if so. Although that has the huge win of
-freeing up a serial port for some other use (e.g. 
-`connect an Android phone <http://store.3drobotics.com/products?utf8=%E2%9C%93&keywords=phonedrone>`__),
-it does mean that you need to disconnect the board from the USB cable
-and power it some other way when testing wireless telemetry on your bench.
+   That's because the Xbee and USB share the same serial port, with some clever multiplexing to detect if the USB cable is plugged in and switching output to the USB if so. 
+   Although that has the huge win of freeing up a serial port for some other use (e.g. 
+   connect an Android phone), 
+   it does mean that you need to disconnect the board from the USB cable and power it some other way when testing wireless telemetry on your bench.
 
 Wiring it up
 ------------
@@ -127,7 +123,7 @@ note that the DIY Drones team will only support the recommended 900Mhz
 Xbee modules, so if you use something else please turn the community for
 help, not the DIY Drones developers.
 
-`Here is more discussion <http://diydrones.com/profiles/blog/show?id705844%3ABlogPost%3A56130>`__
+`Here is more discussion <https://diydrones.com/profiles/blogs/some-tips-on-picking-frequencies>`__
 on how to pick the best frequencies for your setup.
 
 All Xbee modules need adapters to work with APM. You have two choices:
@@ -207,9 +203,9 @@ For Non-PC users
 MacOS, Linux or Windows users - there is a free cross-platform
 alternative to X-CTU, called moltosenso Network Manager. 
 Download the software 
-`here <http://www.moltosenso.com/#/pc=/client/fe/download.php>`__.
+`here <https://www.moltosenso.com/client/fe/browser.php?pc=/client/fe/download.php>`__.
 The moltosenso Team collaborated with us writing a 
-`special tutorial <http://forum.moltosenso.com/viewtopic.php?f16&t=8>`__
+`special tutorial <https://forum.moltosenso.com/viewtopic.php?f=16&t=8#p9>`__
 on the setup of Xbee radios for ArduPilot and Copter Telemetry using
 their software. Enjoy!
 

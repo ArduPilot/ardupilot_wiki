@@ -424,7 +424,7 @@ More Information
 
 see  `www.proficnc.com  <http://www.proficnc.com>`__
 
-The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/pixhawk2.1>`__, this serve as a starting point for designers to design their own system based on The Cube flight controller.
+The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, this serve as a starting point for designers to design their own system based on The Cube flight controller.
 
 More Images
 ===========

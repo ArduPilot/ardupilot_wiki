@@ -4,13 +4,13 @@
 Minim OSD Quick Installation Guide
 ==================================
 
-`MinimOSD <https://code.google.com/p/arducam-osd/wiki/minimosd>`__
+`MinimOSD <https://code.google.com/archive/p/arducam-osd/wikis/minimosd.wiki>`__
 "On-Screen Display" is a small circuit board that pulls telemetry data
 from your APM or Pixhawk flight controller and over-lays it on your
 :ref:`First Person View <common-fpv-first-person-view>` monitor.
 
 This article provides brief instructions for how to connect the board.
-For more detailed instructions please refer to the `MinimOSD Project wiki <https://code.google.com/p/arducam-osd/wiki/minimosd>`__.
+For more detailed instructions please refer to the `MinimOSD Project wiki <https://code.google.com/archive/p/arducam-osd/wikis/minimosd.wiki>`__.
 
 .. note::
 
@@ -20,7 +20,7 @@ For more detailed instructions please refer to the `MinimOSD Project wiki <https
 Overview
 ========
 
-To connect to Pixhawk, use this `DF13 6-pin cable <http://www.unmannedtechshop.co.uk/df13-6-position-connector-30cm/>`__
+To connect to Pixhawk, use this `DF13 6-pin cable <https://www.unmannedtechshop.co.uk/df13-6-position-connector-30cm-pack-of-5/>`__
 to connect to the TELEM2 port. To connect to APM 2.5 and 2.6, use a
 5-pin splitter cable that allows the telemetry port to be connected to
 both a :ref:`SiK Radio <common-sik-telemetry-radio>` and the MinimOSD.
@@ -72,7 +72,7 @@ reaching the limit of the code size, a new developer (https://github.com/night-g
 up the project and through some clever development effort managed to bring it back to life.
 
 The new project is located at https://github.com/night-ghost/minimosd-extra and has an 
-active discussion at `this RCGroups forum thread <http://www.rcgroups.com/forums/showthread.php?t=2591835>`__.
+active discussion at `this RCGroups forum thread <https://www.rcgroups.com/forums/showthread.php?2591835-New-MinimOSD-fork>`__.
 
 Some of the differences from the old traditional firmware are:
 
@@ -116,7 +116,7 @@ To compile on Windows:
 #. Sketch -> Export Compiled Binary (it will save the hex file in the MinimOSD folder of the source, one file with the bootloader and one without)
 
 The developer also provides a convenient ready to use package that includes all the required files in their latest version here:
-`OSD latest <https://github.com/night-ghost/minimosd-extra/blob/c3d21869a06f4917b2841cf2405f59b0aab668bc/osd_latest.zip?raw=true>`__.
+`OSD latest <https://raw.githubusercontent.com/night-ghost/minimosd-extra/c3d21869a06f4917b2841cf2405f59b0aab668bc/osd_latest.zip>`__.
 
 Lately a new style of Board, the "Micro MinimOSD w/ KV Team mod", has appeared on sale at various locations.
 This board is only 15mm x 15mm and functionally does the same as the described MinimOSD but adds some 

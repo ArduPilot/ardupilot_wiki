@@ -2596,7 +2596,7 @@ Set system mode (preflight, armed, disarmed etc.)
    <tr>
    <td><strong>param1</strong></td>
    <td></td>
-   <td>Mode, as defined by `MAV_MODE <https://pixhawk.ethz.ch/mavlink/#ENUM_MAV_MODE>`__</td>
+   <td>Mode, as defined by `MAV_MODE <http://mavlink.org/messages/common#MAV_MODE>`__</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
