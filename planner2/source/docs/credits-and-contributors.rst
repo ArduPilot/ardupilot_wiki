@@ -10,8 +10,8 @@ the offspring of :ref:`Mission Planner <planner:home>` and
 user interface of Mission Planner and cross platform capability of
 QGround Control.
 
-We offer a special thanks to `Michael Oborne <http://diydrones.com/profile/Michaelo>`__ and his team at
-:ref:`Mission Planner <planner:home>` and `Lorenz Meier <http://diydrones.com/profile/LorenzMeier>`__ and the team at
+We offer a special thanks to `Michael Oborne <https://diydrones.com/profiles/profile/show?id=Michaelo&>`__ and his team at
+:ref:`Mission Planner <planner:home>` and `Lorenz Meier <https://diydrones.com/profiles/profile/show?id=LorenzMeier&>`__ and the team at
 `QGround Control <http://qgroundcontrol.org/credits>`__.
 
 APM Planner 2.0 is written in `Qt <http://www.qt.io/developers/>`__, a
@@ -20,13 +20,13 @@ Mac, and Linux.
 
 APM Planner is currently lead by:
 
--  Bill Bonney  (`GitHub <https://github.com/billbonney>`__  `DiyDrones <http://diydrones.com/profile/BillBonney>`__)
+-  Bill Bonney  (`GitHub <https://github.com/billbonney>`__  `DiyDrones <https://diydrones.com/profiles/profile/show?id=BillBonney&>`__)
 
 with contributions from:
 
-- `Michael Carpenter <http://diydrones.com/profile/MichaelCarpenter>`__
-- `Stephen Dade <http://diydrones.com/profile/StephenDade>`__
-- `Kelly Schrock <http://diydrones.com/profile/KellySchrock>`__
+- `Michael Carpenter <https://diydrones.com/profiles/profile/show?id=MichaelCarpenter&>`__
+- `Stephen Dade <https://diydrones.com/profiles/profile/show?id=StephenDade&>`__
+- `Kelly Schrock <https://diydrones.com/profiles/profile/show?id=KellySchrock&>`__
 - `others <https://github.com/ArduPilot/apm_planner/graphs/contributors>`__
 
 

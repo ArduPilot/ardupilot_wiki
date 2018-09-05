@@ -31,7 +31,7 @@ MAV_CMDs
 =========
 
 These MAV_CMDs can be processed if packaged within a
-`COMMAND_LONG <https://pixhawk.ethz.ch/mavlink/#COMMAND_LONG>`__ message.
+`COMMAND_LONG <http://mavlink.org/messages/common#COMMAND_LONG>`__ message.
 
 :ref:`MAV_CMD_NAV_LOITER_UNLIM <plane:mav_cmd_nav_loiter_unlim>`
 
@@ -100,27 +100,27 @@ GUIDED mode.
    Most of these commands are not relevant to DroneKit-Python apps or
    are already provided through the API.
 
-`SET_MODE <https://pixhawk.ethz.ch/mavlink/#SET_MODE>`__
+`SET_MODE <http://mavlink.org/messages/common#SET_MODE>`__
 
-`MISSION_REQUEST_LIST <https://pixhawk.ethz.ch/mavlink/#MISSION_REQUEST_LIST>`__
+`MISSION_REQUEST_LIST <http://mavlink.org/messages/common#MISSION_REQUEST_LIST>`__
 
-`MISSION_REQUEST <https://pixhawk.ethz.ch/mavlink/#MISSION_REQUEST>`__
+`MISSION_REQUEST <http://mavlink.org/messages/common#MISSION_REQUEST>`__
 
 MISSION_ACK:
 
-`PARAM_REQUEST_LIST <https://pixhawk.ethz.ch/mavlink/#PARAM_REQUEST_LIST>`__
+`PARAM_REQUEST_LIST <http://mavlink.org/messages/common#PARAM_REQUEST_LIST>`__
 
-`PARAM_REQUEST_READ <https://pixhawk.ethz.ch/mavlink/#PARAM_REQUEST_READ>`__
+`PARAM_REQUEST_READ <http://mavlink.org/messages/common#PARAM_REQUEST_READ>`__
 
-`MISSION_CLEAR_ALL <https://pixhawk.ethz.ch/mavlink/#MISSION_CLEAR_ALL>`__
+`MISSION_CLEAR_ALL <http://mavlink.org/messages/common#MISSION_CLEAR_ALL>`__
 
-`MISSION_SET_CURRENT <https://pixhawk.ethz.ch/mavlink/#MISSION_SET_CURRENT>`__
+`MISSION_SET_CURRENT <http://mavlink.org/messages/common#MISSION_SET_CURRENT>`__
 
-`MISSION_COUNT <https://pixhawk.ethz.ch/mavlink/#MISSION_COUNT>`__
+`MISSION_COUNT <http://mavlink.org/messages/common#MISSION_COUNT>`__
 
-`MISSION_WRITE_PARTIAL_LIST <https://pixhawk.ethz.ch/mavlink/#MISSION_WRITE_PARTIAL_LIST>`__
+`MISSION_WRITE_PARTIAL_LIST <http://mavlink.org/messages/common#MISSION_WRITE_PARTIAL_LIST>`__
 
-`MISSION_ITEM <https://pixhawk.ethz.ch/mavlink/#MISSION_ITEM>`__
+`MISSION_ITEM <http://mavlink.org/messages/common#MISSION_ITEM>`__
 
 MAVLINK_MSG_ID_FENCE_POINT
 
@@ -130,36 +130,36 @@ RALLY_POINT
 
 RALLY_FETCH_POINT
 
-`PARAM_SET <https://pixhawk.ethz.ch/mavlink/#PARAM_SET>`__
+`PARAM_SET <http://mavlink.org/messages/common#PARAM_SET>`__
 
 GIMBAL_REPORT
 
-`RC_CHANNELS_OVERRIDE <https://pixhawk.ethz.ch/mavlink/#RC_CHANNELS_OVERRIDE>`__
+`RC_CHANNELS_OVERRIDE <http://mavlink.org/messages/common#RC_CHANNELS_OVERRIDE>`__
 
-`HEARTBEAT <https://pixhawk.ethz.ch/mavlink/#HEARTBEAT>`__
+`HEARTBEAT <http://mavlink.org/messages/common#HEARTBEAT>`__
 
-`HIL_STATE <https://pixhawk.ethz.ch/mavlink/#HIL_STATE>`__
+`HIL_STATE <http://mavlink.org/messages/common#HIL_STATE>`__
 
 RADIO
 
-`RADIO_STATUS <https://pixhawk.ethz.ch/mavlink/#RADIO_STATUS>`__
+`RADIO_STATUS <http://mavlink.org/messages/common#RADIO_STATUS>`__
 
-`LOG_REQUEST_DATA <https://pixhawk.ethz.ch/mavlink/#LOG_REQUEST_DATA>`__
+`LOG_REQUEST_DATA <http://mavlink.org/messages/common#LOG_REQUEST_DATA>`__
 
-`LOG_ERASE <https://pixhawk.ethz.ch/mavlink/#LOG_ERASE>`__
+`LOG_ERASE <http://mavlink.org/messages/common#LOG_ERASE>`__
 
-`LOG_REQUEST_LIST <https://pixhawk.ethz.ch/mavlink/#LOG_REQUEST_LIST>`__
+`LOG_REQUEST_LIST <http://mavlink.org/messages/common#LOG_REQUEST_LIST>`__
 
-`LOG_REQUEST_END <https://pixhawk.ethz.ch/mavlink/#LOG_REQUEST_END>`__
+`LOG_REQUEST_END <http://mavlink.org/messages/common#LOG_REQUEST_END>`__
 
-`SERIAL_CONTROL <https://pixhawk.ethz.ch/mavlink/#SERIAL_CONTROL>`__
+`SERIAL_CONTROL <http://mavlink.org/messages/common#SERIAL_CONTROL>`__
 
-`GPS_INJECT_DATA <https://pixhawk.ethz.ch/mavlink/#GPS_INJECT_DATA>`__
+`GPS_INJECT_DATA <http://mavlink.org/messages/common#GPS_INJECT_DATA>`__
 
-`TERRAIN_DATA <https://pixhawk.ethz.ch/mavlink/#TERRAIN_DATA>`__
+`TERRAIN_DATA <http://mavlink.org/messages/common#TERRAIN_DATA>`__
 
-`TERRAIN_CHECK <https://pixhawk.ethz.ch/mavlink/#TERRAIN_CHECK>`__
+`TERRAIN_CHECK <http://mavlink.org/messages/common#TERRAIN_CHECK>`__
 
 AUTOPILOT_VERSION_REQUEST
 
-`REQUEST_DATA_STREAM <https://pixhawk.ethz.ch/mavlink/#REQUEST_DATA_STREAM>`__
+`REQUEST_DATA_STREAM <http://mavlink.org/messages/common#REQUEST_DATA_STREAM>`__

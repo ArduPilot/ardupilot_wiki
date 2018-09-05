@@ -41,7 +41,7 @@ As of early 2018 there are two versions of the firmware available:
 **Uploading using APWeb**
 
 - from your PC, connect to the SkyViper wifi access point (normally called "SKYVIPERGPS-xxxxxx", password is "vipergps")
-- open a web browser to http://192.168.99.1 and click the "Upgrade Firmware" link
+- open a web browser to ``http://192.168.99.1`` and click the **Upgrade Firmware** link
 
 .. image:: ../images/skyrocket-software-web1.png
     :width: 70%

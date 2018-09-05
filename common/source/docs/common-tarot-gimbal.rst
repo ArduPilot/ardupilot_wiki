@@ -82,7 +82,7 @@ change the configuration you should:
    
    .. note::
    
-       Windows 8 and 10 users may find issues with the Prolific USB-to-Serial driver not starting.  This issue can apparently be resolved according by `following instructions on this web page: <http://leftbraintinkering.blogspot.jp/2013/05/usb-to-serial-prolific-2303-device.html>`__
+       Windows 8 and 10 users may find issues with the Prolific USB-to-Serial driver not starting.  This issue can apparently be resolved according by `following instructions on this web page: <http://leftbraintinkering.blogspot.com/2013/05/usb-to-serial-prolific-2303-device.html>`__
    
 #. Download and unzip the `Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
    file to a convenient place on your computer.

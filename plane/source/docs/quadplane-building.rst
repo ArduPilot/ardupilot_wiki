@@ -98,9 +98,9 @@ Here are some build logs of a few QuadPlanes that may help you with
 ideas for your own build.
 
 -  Porter OctaQuadPlane build:
-   http://diydrones.com/profiles/blogs/building-flying-and-not-crashing-a-large-octaquadplane
+   https://diydrones.com/profiles/blogs/building-flying-and-not-crashing-a-large-octaquadplane
 -  Porter QuadPlane build:
-   http://diydrones.com/profiles/blogs/building-flying-and-crashing-a-large-quadplane
+   https://diydrones.com/profiles/blogs/building-flying-and-crashing-a-large-quadplane
 -  The PerthUAV Mozzie build: http://mozzie.readthedocs.io/
 
 if you would like to add your own build to this list then please

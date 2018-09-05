@@ -27,7 +27,7 @@ and heading orientation.
 
 **AMA**: Academy of Model Aeronautics. The main US model aircraft
 association. The AMA works closely with the Federal Aviation
-Administration (FAA) to establish\ `reasonable rules <http://www.modelaircraft.org/aboutama/gov.aspx>`__\ for the use
+Administration (FAA) to establish\ `reasonable rules <https://www.modelaircraft.org/aboutama/gov.aspx>`__\ for the use
 of amateur UAVs. Each AMA chapter and field may have slightly different
 policies, but it's possible to fly and test air frames and some
 technology on AMA fields without violating the association's (or
@@ -65,11 +65,11 @@ program. Also see Firmware.
 **COA**: Certificate of Authorization. A FAA approval for a UAV flight.
 See
 the \ `faa.gov <http://www.faa.gov/about/office_org/headquarters_offices/ato/service_units/systemops/aaim/organizations/uas/coa/>`__ web
-site for more details and the \ `DIY Drones Regulatory FAQ <http://www.diydrones.com/profiles/blogs/regulatory-faq>`__.
+site for more details and the \ `DIY Drones Regulatory FAQ <https://www.diydrones.com/profiles/blogs/regulatory-faq>`__.
 
 **DCM**: Direction Cosine Matrix. A algorithm that is a less processing
 intensive equivalent of the Kalman Filter.
-See \ `this <http://diydrones.com/forum/topics/robust-estimator-of-the>`__ for
+See \ `this <https://diydrones.com/forum/topics/robust-estimator-of-the>`__ for
 more.
 
 **Eagle file**: The schematic and PCB design files (and related files

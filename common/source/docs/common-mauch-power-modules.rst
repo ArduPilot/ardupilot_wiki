@@ -5,9 +5,9 @@ MAUCH Power Modules
 ===================
 
 This page explains how to set up the
-`MAUCH <http://www.mauch-electronic.com/#webs-bin-563c137b7add4cb229080f55>`__
+`MAUCH <https://www.mauch-electronic.com/#webs-bin-563c137b7add4cb229080f55>`__
 power modules HS-050-xx\* (50A), HS-100-xx (100A) and HS-200-xx\* (200A)
-to measure battery voltage and current consumption.  For information on purchasing, please see the `MAUCH Electronics <http://www.mauch-electronic.com/apps/webstore/>`__ website.
+to measure battery voltage and current consumption.  For information on purchasing, please see the `MAUCH Electronics <https://www.mauch-electronic.com/apps/webstore/>`__ website.
 
 .. tip::
 
@@ -23,7 +23,7 @@ Voltage 4-14S, maximum 60V).
 Overview
 ========
 
-`MAUCH <http://www.mauch-electronic.com/#webs-bin-563c137b7add4cb229080f55>`__
+`MAUCH <https://www.mauch-electronic.com/#webs-bin-563c137b7add4cb229080f55>`__
 has a number of PMs, which are compatible with Pixhawk, APM, Pixhawk
 lite, AUAV-X2, DroTek und CUAV Pixhack. The sensors boards are capable
 of delivering 100A continuous current for HS-100-V2 and 200A for the
@@ -73,7 +73,7 @@ HS-200-V2 (without any time limit). The maximum burst current is
 -  53mm x 21mm x 14mm / 20g with cables and shrinking tube.
 
 There is more information about hall current sensors and these PMs in
-this blog post: `Safety First: 100A & 200A Hall Sensor with BEC for Pixhawk / APM <http://diydrones.com/forum/topics/safety-first-100a-200a-hall-sensor-mit-bec-for-pixhawk-apm>`__.
+this blog post: `Safety First: 100A & 200A Hall Sensor with BEC for Pixhawk / APM <https://diydrones.com/forum/topics/safety-first-100a-200a-hall-sensor-mit-bec-for-pixhawk-apm>`__.
 
 Connecting the PM to a flight controller board
 ==============================================

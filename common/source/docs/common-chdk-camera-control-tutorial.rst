@@ -643,7 +643,7 @@ GeoTagging Images
 -----------------
 
 For information regarding geotagging images, more information can be
-found on `Sandro Beningo's step-by-step guide. <http://www.diydrones.com/profiles/blogs/geotagging-images-with-mission-planner>`__
+found on `Sandro Beningo's step-by-step guide. <https://www.diydrones.com/profiles/blogs/geotagging-images-with-mission-planner>`__
 
 Troubleshooting
 ---------------

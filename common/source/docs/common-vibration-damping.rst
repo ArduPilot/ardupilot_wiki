@@ -70,7 +70,7 @@ the flight controller as described on the :ref:`Mounting the Flight Controller w
 HobbyKing Orange Foam
 ---------------------
 
-#. `foam <http://www.hobbyking.com/hobbyking/store/__26457__anti_vibration_foam_orange_latex_190mm_x_140mm_x_6mm.html>`__
+#. `foam <https://hobbyking.com/en_us/anti-vibration-foam-orange-latex-190mm-x-140mm-x-6mm.html?___store=en_us>`__
    should be cut into small 1cm ~ 2cm cubes
 #. attach to the edges of the flight controller using double sided or
    "carpet fixing tape"
@@ -81,13 +81,13 @@ Gel pads
 #. Put off-the-shelf vibration damping gel pads of 1/2" ~ 1" (1cm ~ 2cm)
    on each corner of the flight control board.  Possible gels include:
 
-   -  `Kyosho Zeal Gel Tape <http://www.amainhobbies.com/rc-cars-trucks/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__ Probably
+   -  `Kyosho Zeal Gel Tape <https://www.amainhobbies.com/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__ Probably
       the single best solution, now in stock at Amazon, E-Bay and A-Main
       Hobbies.
    -  `United States Silicone Gel Tape and Pads (V10Z62MGT5 tape recommended) <http://www.vibrationmounts.com/RFQ/VM08010.htm>`__
-   -  `United Kingdom Silicone Gel Tape, Pads <http://www.gelmec.co.uk/family.php?page=58&ty=9&gr=9>`__ and
-      `grommets <http://www.gelmec.co.uk/family.php?page=64&ty=19&gr=19>`__
-   -  `Moon Gel Pads <http://www.amazon.com/RTOM-Moongel-Damper-Pads-Original/dp/B00F2PKRJW/>`__
+   -  `United Kingdom Silicone Gel Tape, Pads <https://gelmec.co.uk/family.php?page=58&ty=9&gr=9>`__ and
+      `grommets <https://gelmec.co.uk/family.php?page=64&ty=19&gr=19>`__
+   -  `Moon Gel Pads <https://www.amazon.com/RTOM-Moongel-Damper-Pads-Original/dp/B00F2PKRJW/>`__
       (also available in music stores). Caution: Moon Gel has been shown
       to fail in heat above 100 degrees Fahrenheit so it should be used
       cautiously.
@@ -118,7 +118,7 @@ Gel pads
 
       The Zeal Mounted FlameWheel has Plus and Minus one vibration all axes = 1/10 G
 
-The blog `Testing simple anti-vibration solutions for GoPro on an Arducopter <http://diydrones.com/profiles/blogs/testing-simple-anti-vibration-solutions-for-gopro-on-an>`__
+The blog `Testing simple anti-vibration solutions for GoPro on an Arducopter <https://diydrones.com/profiles/blogs/testing-simple-anti-vibration-solutions-for-gopro-on-an>`__
 has a video demonstrating vibration isolation using Moon Gel on a Go-Pro
 camera.
 
@@ -257,7 +257,7 @@ Bulb Damper + Ear Plug .05G Ultra Low Vibration Mount
 An Excellent 3D Printed Anti-Vibration Platform
 -----------------------------------------------
 
-By \ `GuyMcCaldin <http://diydrones.com/profile/GuyMcCaldin>`__ (original
+By \ `GuyMcCaldin <https://diydrones.com/profiles/profile/show?id=GuyMcCaldin&>`__ (original
 Blog article: 3D Printed Anti Vibration Mount (no longer available)).
 
 .. image:: http://i.imgur.com/minON7K.jpg
@@ -298,7 +298,7 @@ The above graph is taken from a two minute hover in loiter mode. All
 axes are below ±1g, which exceeds the specifications set out in Copter
 guidelines.
 
-Using a tool that \ `Forrest Frantz <http://www.diydrones.com/profile/ForrestFrantz>`__ developed, we
+Using a tool that \ `Forrest Frantz <https://diydrones.com/profiles/profile/show?id=ForrestFrantz>`__ developed, we
 can see these results from another perspective:
 
 .. image:: http://i.imgur.com/9wFdgV0.png?width=640
@@ -318,14 +318,13 @@ much isolation. It certainly doesn't appear to be affecting flying
 performance, the tricopter is impressively stable in loiter mode. I
 won't know if it's an issue or not until more people try Forrest's tool
 out, so I have more data to compare my results to (you can find the
-forum
-thread \ `(Here!) <http://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9?xg_source=activity&id=705844%3ATopic%3A1102762&page=21#comments>`__
+forum thread `(Here!) <https://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__
 
 If you have access to a 3D printer, you can download the STL files
 here: \ `Omnimac APM Mount v1.5.stl <https://www.dropbox.com/s/69zrbzy1lz53xnc/Omnimac%20APM%20Mount%20v1.5.stl>`__
 
 Alternatively, I've uploaded the design to
-`Shapeways <http://www.shapeways.com/product/45H92T5RS/omnimac-apm-mount-v1-5?li=aeTabs>`__.
+`Shapeways <https://www.shapeways.com/product/45H92T5RS/omnimac-apm-mount-v1-5>`__.
 
 You can purchase it starting from $22.92 depending on material:
 
@@ -334,7 +333,7 @@ to Africa in November, where I'll be donating time and resources using
 3DR powered UAS in wildlife research and conservation.
 
 To complete the mount, you'll need these
-`Dampers <http://www.hobbyking.com/hobbyking/store/__37447__General_Purpose_Anti_Vibration_Rubber_w_M3_x_11mm_Screw_and_M3_Nylock_Nut_4pcs_set.html>`__ which
+`Dampers <https://hobbyking.com/en_us/general-purpose-anti-vibration-rubber-w-m3-x-11mm-screw-and-m3-nylock-nut-4pcs-set.html?___store=en_us>`__ which
 cost $1.20 from Hobby King.
 
 The mount can be installed using double sided tape, or M3 screws spaced
@@ -405,8 +404,7 @@ A Summary of the particular vibration characteristics we need to damp
 #. The vibration frequency and amplitude we primarily need to reduce is
    a characteristic of the motor / prop units turning at flight speed.
 #. That is, it is a fairly high frequency with fairly low amplitude.
-#. This requires that we provide a short coupled damping and isolation
-   range.
+#. This requires that we provide a short coupled damping and isolation range.
 #. The board itself does not need to have nor benefit from a range of
    motion that exceeds the amplitude of the vibration.
 #. Because the board does not apply any force to the airframe, the only
@@ -446,8 +444,8 @@ Additional Vibration Reduction Considerations
    and is not as effective at vibration reduction as the Gel solutions.
 #. A link to a Blog about the first APM anti-vibration mounting system
    to achieve 0.05 G damping (2/20/2013 improved to 0.02 G), a dual zone
-   isolation system, combining Oring suspension and silicone pad is
-   `(Here!) <http://diydrones.com/profiles/blogs/very-good-anti-vibration-results-with-following-apm2-5-mount-quad>`__
+   isolation system, combining O-ring suspension and silicone pad is
+   `(Here!) <https://diydrones.com/profiles/blogs/very-good-anti-vibration-results-with-following-apm2-5-mount-quad>`__
 #. Motor balancing can also reduce vibration and especially so for
    cheaper or larger motors. Balancing involves:
 
@@ -463,8 +461,7 @@ Additional Vibration Reduction Considerations
    -  Add a small dot of hot glue gun glue where the Tie-Wrap clasp was
       and increase the glue a bit at a time till the vibration is
       minimized.
-   -  If you put too much glue on it can be removed with an X-acto
-      knife.
+   -  If you put too much glue on it can be removed with an X-acto knife.
 
 #. Vibration damping motor mounts like
    `this <http://store.jdrones.com/Anti_Vibration_MultiMount_for_Multicopters_p/mmset02.htm>`__
@@ -514,9 +511,9 @@ The methods used will typically incorporate both damping and isolation:
 Links to related discussions
 ============================
 
--  `RC Groups page on Vibration Effects relating to a camera mounts <http://www.rcgroups.com/forums/showpost.php?p=16315017&postcount=16338>`__
--  `DIYDrones discussion related to Vibration Control <http://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__
--  `Gary McCray's DIYDrones BLOG re Vibration Control <http://diydrones.com/profiles/blogs/vibration-control-wiki-section-started-for-better-or-worse>`__
+- `RC Groups page on Vibration Effects relating to a camera mounts <https://www.rcgroups.com/forums/showpost.php?p=16315017&postcount=16338>`__
+- `DIYDrones discussion related to Vibration Control <https://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__
+- `Gary McCray's DIYDrones BLOG re Vibration Control <https://diydrones.com/profiles/blogs/vibration-control-wiki-section-started-for-better-or-worse>`__
 
 
 

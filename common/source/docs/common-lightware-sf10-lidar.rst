@@ -7,29 +7,28 @@ LightWare SF10 and SF11 Lidar
 The `Lightware SF10 and SF11 <https://lightware.co.za/collections/lidar-rangefinders>`__ series of laser rangefinders are particularly lightweight, and provide fast and accurate distance measurements.
 Although slightly more expensive than other rangefinders, members of the dev team have had good success with them.
 The series includes a number of models:
-`SF10/A <http://www.lightware.co.za/shop/en/drone-altimeters/33-sf10a.html>`__ (25m),
-`SF10/B <http://www.lightware.co.za/shop/en/drone-altimeters/32-sf10b.html>`__ (50m),
-`SF10/C <http://www.lightware.co.za/shop/en/drone-altimeters/34-sf10c.html>`__ (100m) and 
-`SF11/C <http://www.lightware.co.za/shop/en/drone-altimeters/51-sf11c-120-m.html>`__ (120m)
+`SF10/A <http://pixhawkstore.com.au/sf10-a-lightware-25m-laser-altimeter/>`__ (25m),
+`SF10/B <http://pixhawkstore.com.au/sf10-b-lightware-50m-laser-altimeter/>`__ (50m),
+SF10/C (100m) and 
+`SF11/C <https://lightware.co.za/collections/lidar-rangefinders/products/sf11-c-120-m>`__ (120m)
 
 \ |SF10-B|
 
 Connecting to the Pixhawk
 =========================
 
-The diagram below shows the sensor output pins and a conveniently colour-coded cable (normally included or `you can purchase here <http://www.lightware.co.za/shop/en/accessories/37-main-cable-type-1-35-cm.html>`__) which is used to connect to the flight controller. :ref:`Serial <sf10-serial-connection>`, :ref:`I2C <sf10-i2c-connection>` and :ref:`Analog <sf10-analog-connection>` connections are possible but we recommended using :ref:`Serial <sf10-serial-connection>` if possible especially if using cables that are 30cm or longer.
+The diagram below shows the sensor output pins and a conveniently colour-coded cable (normally included or `see spec here <http://documents.lightware.co.za/LW%20000_135%20-%20Main%20cable%20type%201%20assembly%20-%20Rev%200.pdf>`__) which is used to connect to the flight controller. :ref:`Serial <sf10-serial-connection>`, :ref:`I2C <sf10-i2c-connection>` and :ref:`Analog <sf10-analog-connection>` connections are possible but we recommended using :ref:`Serial <sf10-serial-connection>` if possible especially if using cables that are 30cm or longer.
 
 .. tip::
 
    The serial connection is recommended when using longer cables
 
 .. figure:: ../../../images/RangeFinder_SF10_Output_Pins.png
-   :target: http://www.lightware.co.za/shop/en/drone-altimeters/32-sf10b.html
 
    SF10 Rangefinder: Output Pins
 
 .. figure:: ../../../images/SF10_Rangefinder_main-cable-type-1-35-cm.jpg
-   :target: http://www.lightware.co.za/shop/en/accessories/37-main-cable-type-1-35-cm.html
+   :target: http://documents.lightware.co.za/LW%20000_135%20-%20Main%20cable%20type%201%20assembly%20-%20Rev%200.pdf
 
    Main cable for SF10 Rangefinder
 
@@ -125,7 +124,7 @@ List** page):
 -  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 The :ref:`RNGFND_SCALING <RNGFND_SCALING>` value depends on the voltage on the rangefinders output pin at the maximum range. By default the SF10/B will output 2.56V at 50m, so the scaling factor is 50m / 2.56v ≈ 19.53 (the analog
-distance range for each of the rangefinder variants can be found in the `SF10 Manual <http://www.lightware.co.za/shop/en/shop/en/index.php?controller=attachment&id_attachment=9>`__).
+distance range for each of the rangefinder variants can be found in the `SF10 Manual <http://documents.lightware.co.za/SF10%20-%20Laser%20Altimeter%20Manual%20-%20Rev%2011.pdf>`__).
 The manual explains how you can confirm and change the maximum output range/voltage.
 
 .. tip::

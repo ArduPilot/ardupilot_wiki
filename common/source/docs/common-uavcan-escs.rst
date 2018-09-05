@@ -4,7 +4,7 @@
 UAVCAN ESCs
 ===========
 
-Copter, Plane and Rover support `UAVCAN <http://uavcan.org>`__ Electronic Speed Controllers
+Copter, Plane and Rover support `UAVCAN <https://uavcan.org>`__ Electronic Speed Controllers
 (ESCs) that allow two-way communication with the flight controller
 enabling potentially easier setup and in-flight monitoring of ESC and
 motor health.
@@ -18,15 +18,15 @@ List of CAN ESCs
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 + Name                                                                                          + Avail                                                                                     + Ever Worked                                                                                           +
 +===============================================================================================+===========================================================================================+=======================================================================================================+
-+ `Zubax Orel 20 <https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf>`__ + `Yes <http://titaneliteinc.com/titanoc/index.php?route=product/product&product_id=995>`__ + Yes                                                                                                   +
++ `Zubax Orel 20 <https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf>`__ + `Yes <https://titaneliteinc.com/titanoc/index.php?route=product/product&product_id=995>`__ + Yes                                                                                                   +
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 + `AutoQuad ESC32 <http://autoquad.org/esc32/>`__                                               + No                                                                                        + No                                                                                                    +
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-+ `VESC <http://vedder.se/2015/01/vesc-open-source-esc/>`__                                     + `Yes <http://www.ollinboardcompany.com/product/vedder-s-speed-controller>`__              + No (`proposal <http://discuss.ardupilot.org/t/next-gen-esc-validation-and-integration-vesc/12534>`__) +
++ `VESC <http://vedder.se/2015/01/vesc-open-source-esc/>`__                                     + `Yes <https://www.ollinboardcompany.com/product/vedder-s-speed-controller>`__              + No (`proposal <https://discuss.ardupilot.org/t/next-gen-esc-validation-and-integration-vesc-declined/12534>`__) +
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 + `HiEnd Can Bus ESC <https://www.aerolab.de/esc-regler/hiend-can-bus-esc/>`__                  + Yes                                                                                       + ?                                                                                                     +
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-+ `ESC Velocity <http://www.currawongeng.com/products/sensors-and-actuators/esc-velocity/>`__   + Yes                                                                                       + No                                                                                                    +
++ `ESC Velocity <https://www.currawongeng.com/servos-escs/esc-velocity/>`__   + Yes                                                                                       + No                                                                                                    +
 +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Connecting to the Pixhawk
@@ -44,7 +44,7 @@ into one of it's 4-pin UAVCAN ports.
 The FTDI Cable connection is only required for the one-time set-up
 discussed below.
 
-Alternatively, the ESC can be configured via CAN bus using the `UAVCAN GUI Tool <http://uavcan.org/GUI_Tool/>`__.
+Alternatively, the ESC can be configured via CAN bus using the `UAVCAN GUI Tool <https://uavcan.org/GUI_Tool/>`__.
 
 ESC setup using CLI
 ===================
@@ -60,7 +60,7 @@ The steps required are:
    image above.
 -  Power the ESCs with a battery
 -  Use a terminal program such as
-   `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`__
+   `Putty <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`__
    to connect to the ESC using the FTDI cable's COM port, using serial
    at 115200 baud
 -  press **Enter** into the terminal and a "ch>" prompt should appear
@@ -89,6 +89,6 @@ The steps required are:
 Additional information
 ======================
 
-`Zubax Sapog wiki page <https://kb.zubax.com/x/hIAh>`__,
+`Zubax Sapog wiki page <https://kb.zubax.com/display/MAINKB/Using+Sapog-based+ESC+with+ArduPilot>`__,
 `Sapog reference manual <https://files.zubax.com/products/io.px4.sapog/Sapog_v2_Reference_Manual.pdf>`__,
 and `ESC firmware <https://github.com/PX4/sapog>`__.

@@ -102,7 +102,7 @@ button. In the example above the ATT's Roll-In and Roll data have been
 graphed. The mouse's scroll wheel can be used to zoom in or out. You may
 also select an area of the graph to zoom in on it. Zoom out by
 right-mouse-button clicking and selecting "Set Scale to Default".
-`Here's <http://www.diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A801607>`__
+`Here's <https://www.diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A801607>`__
 a mini tutorial on using this feature. You may also filter on just the
 first column (the flight data message type) by clicking on the first
 column and selecting the message type from the drop-down. This is very
@@ -214,7 +214,7 @@ a mission):**
 +--------+----------------------------------------------------------------------------------------+
 | CNum   | This command's number in the mission (0 is always home, 1 is the first command, etc)   |
 +--------+----------------------------------------------------------------------------------------+
-| CId    | The `mavlink message id <https://pixhawk.ethz.ch/mavlink/>`__                          |
+| CId    | The `MAVLink message id <http://mavlink.org/messages/common>`__                        |
 +--------+----------------------------------------------------------------------------------------+
 | Copt   | The option parameter (used for many different purposes)                                |
 +--------+----------------------------------------------------------------------------------------+
@@ -379,7 +379,7 @@ but the most common are:
 | FIELD      | DESCRIPTION                                                                                        |
 +------------+----------------------------------------------------------------------------------------------------+
 | VDop       | Vertical dilution of precision, a unitless measure of precision                                    |
-|            | https://en.wikipedia.org/wiki/dilution_of_precision                                                |
+|            | https://en.wikipedia.org/wiki/Dilution_of_precision                                                |
 +------------+----------------------------------------------------------------------------------------------------+
 | HAcc       | Horizontal Accuracy as reported by the GPS module, in meters                                       |
 +------------+----------------------------------------------------------------------------------------------------+
@@ -411,7 +411,7 @@ but the most common are:
 | NSats      | The number of satellites current being used                                                        |
 +------------+----------------------------------------------------------------------------------------------------+
 | HDop       | A measure of gps precision (1.5 is good, >2.0 is not so good)                                      |
-|            | https://en.wikipedia.org/wiki/dilution_of_precision                                                |
+|            | https://en.wikipedia.org/wiki/Dilution_of_precision                                                |
 +------------+----------------------------------------------------------------------------------------------------+
 | Lat        | Lattitude according to the GPS                                                                     |
 +------------+----------------------------------------------------------------------------------------------------+

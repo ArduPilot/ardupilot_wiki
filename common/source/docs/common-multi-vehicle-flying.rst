@@ -7,11 +7,11 @@ Multi-Vehicle Flying
 This page shows how to monitor and control multiple vehicles using a
 single ground station. Although this capability has been demonstrated
 (see video below) it is somewhat
-`experimental <http://diydrones.com/profiles/blogs/multi-vehicle-testing-with-apm-copter-tracker-and-mission-planner>`__.
+`experimental <https://diydrones.com/profiles/blogs/multi-vehicle-testing-with-apm-copter-tracker-and-mission-planner>`__.
 
 .. note::
 
-   This example has been greatly surpassed by `Michael Clement's 50 plane demonstration <http://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__\ 
+   This example has been greatly surpassed by `Michael Clement's 50 plane demonstration <https://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__\ 
 
 ..  youtube:: M4LxtYa94nk
     :width: 100%

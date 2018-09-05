@@ -38,7 +38,7 @@ Boat
 ArduBoat MK4 - RC Boat
 ----------------------
 
-This video originates from `this DIYDrones blog post <http://diydrones.com/profiles/blogs/arduboat-mk4>`__.
+This video originates from `this DIYDrones blog post <https://diydrones.com/profiles/blogs/arduboat-mk4>`__.
 
 ..  youtube:: Ad7d_S9cHiU
     :width: 100%

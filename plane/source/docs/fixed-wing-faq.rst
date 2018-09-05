@@ -4,19 +4,15 @@
 Fixed Wing FAQ
 ==============
 
-This is a set of frequently asked questions with answers. It is created
-when we see questions in `the forums <http://ardupilot.com/forum/viewforum.php?f=1>`__ or on
-`discuss.ardupilot.org <http://discuss.ardupilot.org/c/arduplane>`__ that are not sufficiently
-answered in the rest of the docs.
+This is a set of frequently asked questions with answers. 
+It is updated when we see questions on `discuss.ardupilot.org <https://discuss.ardupilot.org/c/arduplane>`__ that are not sufficiently answered in the rest of the docs.
 
-When reading this FAQ please refer to the :doc:`full parameter list <parameters>` for an explanation of each
-parameter which is mentioned in the answers.
+When reading this FAQ please refer to the :doc:`full parameter list <parameters>` for an explanation of each parameter which is mentioned in the answers.
 
 How do you stop a Nitro plane from cutting the engine in flight?
 ----------------------------------------------------------------
 
-For internal combustion motor planes (which can be prone to cutting the
-engine at low throttle), you should use the following settings:
+For internal combustion motor planes (which can be prone to cutting the engine at low throttle), you should use the following settings:
 
 -  THR_MIN=10
 -  THR_PASS_STAB=1

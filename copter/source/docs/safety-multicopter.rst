@@ -119,14 +119,14 @@ MultiCopter Safety
       put them in harm's way, you threaten the future of our personal
       use of models. Please, understand the law and the rights of others
       - and fly accordingly.
-   #. Most countries have a prominent model aircraft organization. In
-      the USA that is the `AMA <http://www.modelaircraft.org/>`__.
-      Review the AMA `safety code <http://www.modelaircraft.org/files/105.pdf>`__. Working with
-      the FAA and other government organizations, the AMA has
-      established (and continues to update) `rules for UAV's and for FPV flight <http://www.modelaircraft.org/documents.aspx#FPV>`__. If
-      you are in the USA (or not), read these documents! The AMA has a
-      strong lobbying group that will help protect our rights. Get
-      involved and support your country's model aircraft organizations -
+   #. Most countries have a prominent model aircraft organization. 
+      In the USA that is the `AMA <https://www.modelaircraft.org/>`__.
+      Review the AMA `safety code <https://www.modelaircraft.org/sites/default/files/105.pdf>`__. 
+      Working with the FAA and other government organizations, 
+      the AMA has established (and continues to update) rules for `First Person View (FPV) Operations <https://www.modelaircraft.org/sites/default/files/550.pdf>`__. 
+      If you are in the USA (or not), read these documents! The AMA has a
+      strong lobbying group that will help protect our rights. 
+      Get involved and support your country's model aircraft organizations -
       and help protect our right to fly.
 
 .. warning::
@@ -246,10 +246,9 @@ MultiCopter Safety
 
 .. note::
 
-   Get a Printable PDF Safety
-   Sheet: \ `MultiCopter_Safety <http://download.ardupilot.org/downloads/wiki/pdf_guides/MultiCopter_Safety.pdf>`__\ 
+   Get a Printable PDF Safety Sheet: `MultiCopter_Safety <http://download.ardupilot.org/downloads/wiki/pdf_guides/MultiCopter_Safety.pdf>`__ 
 
-The \ `Copter Forum <http://ardupilot.com/forum/viewforum.php?f=3>`__ permits the
+The `Copter Forum <https://discuss.ardupilot.org/c/arducopter>`__ permits the
 developers to respond to your questions and enables you to research
 similar issues, Please choose the sub-forum that is most appropriate to
 the wiki page and issues you are having.

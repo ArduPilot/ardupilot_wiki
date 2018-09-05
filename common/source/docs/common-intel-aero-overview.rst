@@ -4,7 +4,7 @@
 Intel Aero Overview
 ===================
 
-The `Intel Aero <https://software.intel.com/en-us/aero/dev-kit>`__ computer board is a high performance linux board that can run ArduPilot natively while still having enough compute resources to do other CPU intensive tasks including vision processing.
+The `Intel Aero <https://software.intel.com/en-us/aero/compute-board>`__ computer board is a high performance linux board that can run ArduPilot natively while still having enough compute resources to do other CPU intensive tasks including vision processing.
 
 .. image:: ../../../images/intel-aero.jpg
     :target: ../_images/intel-aero.jpg

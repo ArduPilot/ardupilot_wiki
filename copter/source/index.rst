@@ -156,8 +156,8 @@ interfaces to accomplish a wide variety of tasks.
 Getting more info
 ~~~~~~~~~~~~~~~~~
 
--  Continue to the :ref:`Introduction section of this wiki. <introduction>`
--  Use the `ArduPilot Discuss Server Forums <http://discuss.ardupilot.com/c/arducopter>`__
+-  Continue to the :ref:`Introduction section of this wiki <introduction>`.
+-  Use the `ArduPilot Discuss Server Forums <https://discuss.ardupilot.org/c/arducopter>`__
    to ask support questions and advice.
 -  To get involved with the development of the software platform, visit the `ArduPilot development guide <http://ardupilot.org/dev/index.html>`__.
 
