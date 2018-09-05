@@ -26,7 +26,7 @@ PXFmini Wiring Chart
 
 [site wiki="copter"]
 Copter users should also see the 
-`official setup documentation <http://erlerobotics.com/docs/Robots/Erle-Copter/index.html>`__.
+`official setup documentation <http://docs.erlerobotics.com/erle_robots/erle_copter>`__.
 [/site]
 
 Power PXFmini
@@ -147,7 +147,7 @@ WiFi dongle
 
 Use a (regular or high gain) WiFi dongle to create a hotspot that can,
 for example, be used for sending telemetry data and commands to a Ground
-Station.  If you use the `images <http://erlerobotics.com/docs/Artificial_Brains_and_Autopilots/Operating_System_images/Debian.html>`__ provided 
+Station.  If you use the `images <http://docs.erlerobotics.com/brains/os_images>`__ provided 
 by Erle Robotics, they automatically generate a WiFi hotspot.
 
 
@@ -183,7 +183,7 @@ More information in `official documentation <http://erlerobotics.com/docs/Artifi
 Related information
 ===================
 
-`Erle Robotics official documentation <http://erlerobotics.com/docs/Intro.html>`__ includes
+`Erle Robotics official documentation <http://docs.erlerobotics.com/>`__ includes
 additional information about how to use PXFmini.
 
 

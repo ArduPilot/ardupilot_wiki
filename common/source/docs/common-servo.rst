@@ -16,8 +16,8 @@ a switch on the transmitter, through commands sent from the ground
 station or as part of a mission.
 
 Either
-`analog <http://www.amazon.com/Hitec-31055S-HS-55-Economy-Universal/dp/B0006O3WNW>`__
-or `digital servos <http://www.amazon.com/Hitec-RCD-35076S-HS-A5076HB-Digital/dp/B003RXHMNK>`__
+`analog <https://www.amazon.com/Hitec-31055S-HS-55-Economy-Universal/dp/B0006O3WNW>`__
+or `digital servos <https://www.amazon.com/Hitec-RCD-35076S-HS-A5076HB-Digital/dp/B003RXHMNK>`__
 may be used.
 
 Connecting the servo to a Pixhawk

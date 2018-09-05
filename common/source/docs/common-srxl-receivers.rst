@@ -14,8 +14,8 @@ SRXL is a serial protocol which transfers control data of a R/C receiver to a fl
 
    The following SRXL variants are supported by ArduPilot
    
-     #. `MULTIPLEX SRXL version 1 "12-channel" <http://www.multiplex-rc.de/Downloads/Multiplex/Schnittstellenbeschreibungen/srxl-multiplex-v2.pdf>`__
-     #. `MULTIPLEX SRXL version 2 "16-channel" <http://www.multiplex-rc.de/Downloads/Multiplex/Schnittstellenbeschreibungen/srxl-multiplex-v2.pdf>`__
+     #. `MULTIPLEX SRXL version 1 "12-channel" <https://www.multiplex-rc.de/Downloads/Multiplex/Schnittstellenbeschreibungen/srxl-multiplex-v2.pdf>`__
+     #. `MULTIPLEX SRXL version 2 "16-channel" <https://www.multiplex-rc.de/Downloads/Multiplex/Schnittstellenbeschreibungen/srxl-multiplex-v2.pdf>`__
      #. JR propo X.BUS Mode B
      #. `SPEKTRUM SRXL <http://www.spektrumrc.com/ProdInfo/Files/SPM4649T_Bi-Directional_SRXL_specifications.pdf>`__
 
@@ -38,19 +38,19 @@ The SRXL signal is emitted by the **B/D port(s)** of the receiver.
 
 The number of active channels on the SRXL signal are depending on the type of receiver:
 
-   - `RX-4/9 FLEXX, # 55837 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55837-bedienungsanleitung-empfaenger-rx-4-9-flexx--de-en-fr-it-es.pdf>`__ , 4 servo sockets, 9 channels active on SRXL signal
-   - `RX-4/16 FLEXX, # 55838 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55838-bedienungsanleitung-empfaenger-rx-4-16-flexx--de-en-fr-it-es.pdf>`__ , 4 servo sockets, 16 channels active on SRXL signal
-   - `RX-5, # 55817 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55817-bedienungsanleitung-empfaenger-rx-5--de-en-fr-it-es.pdf>`__ , 5 servo sockets, 5 channels active on SRXL signal
-   - `RX-7, # 55818 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55818-bedienungsanleitung-empfaenger-rx-7--de-en-fr-it-es.pdf>`__ , 7 servo sockets, 7 channels active on SRXL signal
-   - `RX-7-DR, # 55811 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55811-bedienungsanleitung-empfaenger-rx-7-dr--de-en-fr-it-es.pdf>`__ , 7 servo sockets, 7 channels active on SRXL signal
-   - `RX-7-DR compact, # 55819 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55819-bedienungsanleitung-empfaenger-rx-7-dr-compact--de-en-fr-it-es.pdf>`__ , 7 servo sockets, 7 channels active on SRXL signal
-   - `RX-9-DR, # 55812 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55812-bedienungsanleitung-empfaenger-rx-9-dr--de-en-fr-it-es.pdf>`__ , 9 servo sockets, 9 channels active on SRXL signal
-   - `RX-9-DR compact, # 55820 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55820-bedienungsanleitung-empfaenger-rx-7-dr-compact--de-en-fr-it-es.pdf>`__ , 9 servo sockets, 9 channels active on SRXL signal
-   - `RX-9-DR SRXL16, # 55840 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55840-bedienungsanleitung-rx-9-dr-srxl-16--de-en-fr.pdf>`__ , 9 servo sockets, 16 channels active on SRXL signal
-   - `RX-9-DR pro, # 55813 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55813-bedienungsanleitung-empfaenger-rx-9-dr-pro--de-en-fr-it-es.pdf>`__ , 9 servo sockets, 9 channels active on SRXL signal
-   - `RX-12-DR pro, # 55814 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55814-bedienungsanleitung-empfaenger-rx-12-dr-pro--de-en-fr-it-es.pdf>`__ , 12 servo sockets, 12 channels active on SRXL signal
-   - `RX-12-DR compact, # 55821 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55821-bedienungsanleitung-empfaenger-rx-7-dr-compact--de-en-fr-it-es.pdf>`__ , 12 servo sockets, 12 channels active on SRXL signal
-   - `RX-16-DR pro, # 55815 <http://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55815-bedienungsanleitung-empfaenger-rx-16-dr-pro--de-en-fr-it-es.pdf>`__ , 16 servo sockets, 16 channels active on SRXL signal
+   - `RX-4/9 FLEXX, # 55837 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55837-bedienungsanleitung-empfaenger-rx-4-9-flexx--de-en-fr-it-es.pdf>`__ , 4 servo sockets, 9 channels active on SRXL signal
+   - `RX-4/16 FLEXX, # 55838 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55838-bedienungsanleitung-empfaenger-rx-4-16-flexx--de-en-fr-it-es.pdf>`__ , 4 servo sockets, 16 channels active on SRXL signal
+   - `RX-5, # 55817 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55817-bedienungsanleitung-empfaenger-rx-5--de-en-fr-it-es.pdf>`__ , 5 servo sockets, 5 channels active on SRXL signal
+   - `RX-7, # 55818 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55818-bedienungsanleitung-empfaenger-rx-7--de-en-fr-it-es.pdf>`__ , 7 servo sockets, 7 channels active on SRXL signal
+   - `RX-7-DR, # 55811 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55811-bedienungsanleitung-empfaenger-rx-7-dr--de-en-fr-it-es.pdf>`__ , 7 servo sockets, 7 channels active on SRXL signal
+   - `RX-7-DR compact, # 55819 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55819-bedienungsanleitung-empfaenger-rx-7-dr-compact--de-en-fr-it-es.pdf>`__ , 7 servo sockets, 7 channels active on SRXL signal
+   - `RX-9-DR, # 55812 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55812-bedienungsanleitung-empfaenger-rx-9-dr--de-en-fr-it-es.pdf>`__ , 9 servo sockets, 9 channels active on SRXL signal
+   - `RX-9-DR compact, # 55820 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55820-bedienungsanleitung-empfaenger-rx-7-dr-compact--de-en-fr-it-es.pdf>`__ , 9 servo sockets, 9 channels active on SRXL signal
+   - `RX-9-DR SRXL16, # 55840 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55840-bedienungsanleitung-rx-9-dr-srxl-16--de-en-fr.pdf>`__ , 9 servo sockets, 16 channels active on SRXL signal
+   - `RX-9-DR pro, # 55813 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55813-bedienungsanleitung-empfaenger-rx-9-dr-pro--de-en-fr-it-es.pdf>`__ , 9 servo sockets, 9 channels active on SRXL signal
+   - `RX-12-DR pro, # 55814 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55814-bedienungsanleitung-empfaenger-rx-12-dr-pro--de-en-fr-it-es.pdf>`__ , 12 servo sockets, 12 channels active on SRXL signal
+   - `RX-12-DR compact, # 55821 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55821-bedienungsanleitung-empfaenger-rx-7-dr-compact--de-en-fr-it-es.pdf>`__ , 12 servo sockets, 12 channels active on SRXL signal
+   - `RX-16-DR pro, # 55815 <https://www.multiplex-rc.de/Downloads/Multiplex/Bedienungsanleitungen/55815-bedienungsanleitung-empfaenger-rx-16-dr-pro--de-en-fr-it-es.pdf>`__ , 16 servo sockets, 16 channels active on SRXL signal
 
 How to configure a MULTIPLEX receiver for SRXL signal output
 ------------------------------------------------------------
@@ -59,7 +59,7 @@ To configure the receiver to send out SRXL signal you need a USB to UART Adapter
 .. image:: ../../../images/Multiplex_USB_UART_Adapter.jpg
     :target: ../_images/Multiplex_USB_UART_Adapter.jpg
     
-For this purpose MULTIPLEX offers the plug-and-play `PC-cable # 85149 <http://www.multiplex-rc.de/produkte/85149-usb-pc-kabel-rx-s-telemetrie-uni>`__ which contains a SILABS CP2102 Single-chip USB to UART Bridge.
+For this purpose MULTIPLEX offers the plug-and-play `PC-cable # 85149 <https://www.multiplex-rc.de/produkte/85149-usb-pc-kabel-rx-s-telemetrie-uni>`__ which contains a SILABS CP2102 Single-chip USB to UART Bridge.
 
 To do the configuration follow the following steps:
 

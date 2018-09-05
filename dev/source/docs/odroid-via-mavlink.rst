@@ -313,7 +313,8 @@ cherrypy by entering the following in an Odroid terminal:
 
     sudo pip install cherrypy
 
-Can't get it to work? Try posting your question in the `APM Forum's APM Code section <http://ardupilot.com/forum/viewforum.php?f=69>`__.
+Can't get it to work? 
+Try posting your question in the `Companion Computer discussion board <https://discuss.ardupilot.org/c/apsync-companion-computers>`__.
 
 .. toctree::
     :maxdepth: 1

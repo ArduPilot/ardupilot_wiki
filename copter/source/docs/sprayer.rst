@@ -15,9 +15,9 @@ Required Hardware
 =================
 
    .. image:: ../images/sprayer_EnRoute_AC940D.jpg
-       :target: http://enroute1.com/portfolio-posts/zion-ac-940-d/
+       :target: https://enroute.co.jp/products/ac940d/
 
-A multicopter such as the `EnRoute AC 940-D <http://enroute1.com/portfolio-posts/zion-ac-940-d/>`_ with a PWM controlled pump and optionally a PWM controlled spinning mechanism (EnRoute vehicle does not require this secondary spinner control).
+A multicopter such as the `EnRoute AC 940-D <https://enroute.co.jp/products/ac940d/>`_ with a PWM controlled pump and optionally a PWM controlled spinning mechanism (EnRoute vehicle does not require this secondary spinner control).
 
 The pump controls the rate of flow of the fertilizer.
 

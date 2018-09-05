@@ -22,7 +22,7 @@ RTK has historically been used primarily by surveyors and others who required ce
 
 Reach runs open-source RTK processing software called RTKLIB written by Tomoji Takasu. Previously a computer was required to run RTKLIB, but now all RTKLIB features are available directly on Reach.
 
-For further information see `Reach documentation <http://docs.emlid.com/reach/introduction/>`__.
+For further information see `Reach documentation <https://docs.emlid.com/reach/>`__.
 
 ArduPilot integration
 =====================
@@ -46,7 +46,7 @@ For more information on Reach and Pixhawk integration, visit `Reach Ardupilot in
 
 Read about Reach and its other applications:
 
-- `Reach overview <http://www.emlid.com/reach/>`__  
-- `Introduction to using Reach <http://docs.emlid.com/reach/introduction/>`__
+- `Reach overview <https://emlid.com/reach/>`__  
+- `Introduction to using Reach <https://docs.emlid.com/reach/>`__
 
 

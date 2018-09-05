@@ -4,14 +4,14 @@
 Maxbotic I2C Sonar Rangefinder
 ==============================
 
-`Maxbotic I2C EZ4 <http://www.maxbotix.com/Ultrasonic_Sensors/I2C_Sensors.htm>`__
+`Maxbotic I2C EZ4 <https://www.maxbotix.com/product-category/i2cxl-maxsonar-ez-products>`__
 sonar (also known as the I2CXL-MaxSonar-EZ4 or MB1242) is a relatively
 inexpensive, short range (up to 7m) range finder primarily designed for
 indoor use but which has been successfully used outdoors on Copter.
 
 The EZ4 (recommended) has the narrowest beam providing the best noise
 resistance while the EZ0 has the widest beam and highest sensitivity. 
-`The datasheet can be found here <http://www.maxbotix.com/documents/I2CXL-MaxSonar-EZ_Datasheet.pdf>`__. 
+`The datasheet can be found here <https://www.maxbotix.com/documents/I2CXL-MaxSonar-EZ_Datasheet.pdf>`__. 
 Additional information on the similar :ref:`analog version of this sonar can be found here <copter:sonar>`.
 
 .. note::

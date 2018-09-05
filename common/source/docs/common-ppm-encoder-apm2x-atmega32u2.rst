@@ -26,7 +26,7 @@ allows you to flash it without needing a special SPI programmer. The
 to convert radio PCM signals to a PPM signal for the 2560.  APM 2.5
 modules shipped before March 4th 2013  have an older version of the
 firmware. Here is a discussion on the
-newer \ `firmware <http://www.diydrones.com/profiles/blogs/new-arduppm-firmware-version-2-3-16-in-the-downloads-section>`__.
+newer \ `firmware <https://www.diydrones.com/profiles/blogs/new-arduppm-firmware-version-2-3-16-in-the-downloads-section>`__.
 
 What you need
 =============

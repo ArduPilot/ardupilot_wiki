@@ -6,7 +6,7 @@ Mission Planner Home
 
 .. tip::
 
-   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <http://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
+   The ArduPilot Developer Ecosystem is Evolving! `Find out more here … <https://diydrones.com/profiles/blogs/a-new-chapter-in-ardupilot-development>`__
 
 
 .. image:: ../../images/mission_planner_screen_flight_plan.jpg

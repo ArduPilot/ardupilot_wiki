@@ -4,7 +4,7 @@
 Mission Planner Flight Plan
 ===========================
 
-The `APM Forum <http://discuss.ardupilot.org/>`__ permits
+The `APM Forum <https://discuss.ardupilot.org/>`__ permits
 developers to respond to your questions and enables you to research
 similar issues, Please choose the sub-forum that is most appropriate to
 the wiki page and issues you are having.

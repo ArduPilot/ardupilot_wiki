@@ -9,7 +9,7 @@ It is possible to directly communicate with members of the ArduPilot community, 
 Support
 =======
 
-- User support requests should be posted to the `Discuss Forums <http://discuss.ardupilot.org>`__ (staffed by volunteers)
+- User support requests should be posted to the `Discuss Forums <https://discuss.ardupilot.org/>`__ (staffed by volunteers)
 - Flight code enhancement requests and known bugs should be added to the `ArduPilot Issues list <https://github.com/ArduPilot/ardupilot/issues>`__
 - Ground Station enhancement requests and bug reports should be added to the relevant issues list:
     - `Mission Planner Issues list <https://github.com/ArduPilot/MissionPlanner/issues>`__

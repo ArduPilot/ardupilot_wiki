@@ -19,7 +19,7 @@ Erle-Brain2 Wiring Chart
 
 [site wiki="copter"]
 Copter users should also see the 
-`official setup documentation <http://erlerobotics.com/docs/Robots/Erle-Copter/index.html>`__.
+`official setup documentation <http://docs.erlerobotics.com/erle_robots/erle_copter>`__.
 [/site]
 
 Power Erle-Brain2
@@ -70,8 +70,8 @@ I2C port with the four-position DF13 cable, as shown in the
 Connect Motors
 ==============
 
-.. image:: http://docs.erlerobotics.com/brains/erle-brain-3/hardware/power/ErleBrain3_Power_ESC.jpg
-    :target:  http://docs.erlerobotics.com/brains/erle-brain-3/hardware/power/ErleBrain3_Power_ESC.jpg
+.. image:: http://erlerobotics.com/docs/brains/erle-brain-3/hardware/power/ErleBrain3_Power_ESC.jpg
+    :target:  http://erlerobotics.com/docs/brains/erle-brain-3/hardware/power/ErleBrain3_Power_ESC.jpg
 
 .. note::
 
@@ -160,7 +160,7 @@ More information in `official documentation <http://erlerobotics.com/docs/Artifi
 Related information
 ===================
 
-`Erle Robotics official documentation <http://erlerobotics.com/docs/Intro.html>`__ includes
+`Erle Robotics official documentation <http://docs.erlerobotics.com/>`__ includes
 additional information about how to use Erle-Brain2.
 
 

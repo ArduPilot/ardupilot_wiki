@@ -85,18 +85,18 @@ rail) because the servo rail itself is not powered.
 1 x 220 ohm
 
 .. figure:: http://api.ning.com/files/6A05RJELsODapmzmxrkfVjh3WsYV3VM6gRNmnUfTqO8MDOtaCuWg6baF2UChPaKaq52lXT63W*i-uwbGNqEGfbEczIHGK3ER/3.3vto5vlogiclevelshifterwithtransistorsinproteus.jpg
-   :target:  http://diydrones.com/xn/detail/705844:Comment:1581209
+   :target:  https://diydrones.com/forum/topics/using-aux-pins-as-relays-for-chdk?commentId=705844%3AComment%3A1581209
 
    3Vto 5V Shifter Circuit
 
 .. figure:: http://api.ning.com/files/iAT0B9wCR3AoT2PagGiqpRaMPAUgnytMSGSeJ7sSKh9gtRNuhdzj01dCdTkRLM2*x0pN58LfGHlqFbKfTThHXPkyjaetHNu-/Pixhawk_35_diag.png
-   :target:  http://diydrones.com/xn/detail/705844:Comment:1594680
+   :target:  https://diydrones.com/forum/topics/using-aux-pins-as-relays-for-chdk?commentId=705844%3AComment%3A1594680
 
    3V to5V Shifter (PCB)
 
 .. note::
 
-   The voltage stepper circuit and PCB above are `from the community discussion boards <http://diydrones.com/forum/topics/using-aux-pins-as-relays-for-chdk?commentId=705844%3AComment%3A1581209>`__.
+   The voltage stepper circuit and PCB above are `from the community discussion boards <https://diydrones.com/forum/topics/using-aux-pins-as-relays-for-chdk?commentId=705844%3AComment%3A1581209>`__.
 
 It is also possible to find pre-built stepper circuits like the
 `SparkFun 5V Step-Up Breakout - NCP1402 <https://www.sparkfun.com/products/10968>`__ (not tested).

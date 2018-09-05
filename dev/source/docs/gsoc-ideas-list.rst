@@ -4,7 +4,7 @@
 List of Suggested Projects for GSoC 2018
 ========================================
 
-This is a list of projects suggested by ArduPilot developers for `GSoC 2018 <https://summerofcode.withgoogle.com/>`__. These are only suggestions, and if you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see http://discuss.ardupilot.org/c/google-summer-of-code). 
+This is a list of projects suggested by ArduPilot developers for `GSoC 2018 <https://summerofcode.withgoogle.com/>`__. These are only suggestions, and if you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see https://discuss.ardupilot.org/c/google-summer-of-code). 
 We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2018. We're looking for enthusiastic students who can really get stuck into their project and make a substantial contribution to the ArduPilot project.
 
 - `Object Avoidance improvements for Multicopters <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__ and Rovers including adding occupancy grid using `OctoMap <https://octomap.github.io/>`__ or `ROS <http://ardupilot.org/dev/docs/ros.html>`__.
@@ -160,7 +160,7 @@ D-Shot is a relatively new protocol for communicating with some ESCs including B
 Improve fixed-wing 3D aerobatics support in ArduPilot
 -----------------------------------------------------
 
-With the addition of prop-hang in ArduPilot (see http://discuss.ardupilot.org/t/ardupilot-flying-3d-aircraft-including-hovering/14837) we now have the beginnings of a nice 3D aerobatics for fixed wing.
+With the addition of prop-hang in ArduPilot (see https://discuss.ardupilot.org/t/ardupilot-flying-3d-aircraft-including-hovering/14837) we now have the beginnings of a nice 3D aerobatics for fixed wing.
 This project involves taking that to the next level to add support for "trick" mode. In trick mode the user will have access to a a variety of common 3D maneuvers, including knife-edge, loops, harrier and rolling loops. Implementing this will involve some careful use of quaternion controllers, but a good UI design so the stick inputs to control these tricks are easy to learn.
 Testing can be done in the FlightAxis simulator (as in the above video), allowing for development without risking real aircraft.
 

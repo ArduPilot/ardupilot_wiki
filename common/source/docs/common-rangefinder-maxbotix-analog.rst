@@ -4,7 +4,7 @@
 Maxbotic Analog Sonar - Copter3.2
 =================================
 
-`XL-Maxbotic-EZ <http://www.maxbotix.com/Ultrasonic_Sensors/People_Sensors.htm>`__
+`XL-Maxbotic-EZ <https://www.maxbotix.com/product-category/xl-maxsonar-ez-products/>`__
 line of analog sonars (XL-MaxSonar-EZ0, EZ4 and EZL0) are relatively
 inexpensive, short range (7m to 10m) range finder primarily designed for
 indoor use but which has been successfully used outdoors on Copter and
@@ -16,11 +16,11 @@ versions of Plane, Rover.  Setup instructions for Copter-3.1.5 (and
 earlier) :ref:`can be found here <copter:sonar>`.
 [/site]
 
-The `EZ4 <http://www.maxbotix.com/Ultrasonic_Sensors/MB1240.htm>`__
+The `EZ4 <https://www.maxbotix.com/Ultrasonic_Sensors/MB1240.htm>`__
 (recommended) has the narrowest beam providing the best noise resistance
-while the `EZ0 <http://www.maxbotix.com/Ultrasonic_Sensors/MB1200.htm>`__ has the
+while the `EZ0 <https://www.maxbotix.com/Ultrasonic_Sensors/MB1200.htm>`__ has the
 widest beam and higher sensitivity.  The long range
-`EZL0 <http://www.maxbotix.com/Ultrasonic_Sensors/MB1260.htm>`__ has the
+`EZL0 <https://www.maxbotix.com/Ultrasonic_Sensors/MB1260.htm>`__ has the
 same sensitivity as the EZ0 but a 10m range (as opposed to 7m).
 
 Connecting to the Pixhawk

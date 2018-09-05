@@ -235,7 +235,7 @@ You can make your own cable using the following components:
 -  TTL-to-RS232 converter such as the `FrSky FUL-1 <http://www.frsky-rc.com/product/pro.php?pro_id=34>`__ which is
    sold by many retailers `including these on ebay <http://www.ebay.com/sch/i.html?_trksid=p2050601.m570.l1313.TR11.TRC1.A0.H0.Xfrsky+ful-1.TRS0&_nkw=frsky+ful-1&_sacat=0&_from=R40>`__.
 -  SPC cable such as `SPC Cable <http://www.frsky-rc.com/product/pro.php?pro_id=132>`__
--  `DF13 6 position connector <http://www.unmannedtechshop.co.uk/df13-6-position-connector-30cm/>`__
+-  `DF13 6 position connector <https://www.unmannedtechshop.co.uk/df13-6-position-connector-30cm-pack-of-5/>`__
    which will be cut and soldered to the TTL-to-RS232 converter
 -  `Molex Picoblade <http://www.molex.com/molex/products/family?key=picoblade&channel=products&chanName=family&pageTitle=Introduction&parentKey=wire_to_board_connectors>`__
    4 position telemetry wire which will be cut and soldered to the

@@ -9,7 +9,7 @@ This case study brings you an example of a flight where, by analyzing
 the log data, our resident expert, Andrew Tridgell, suggested increasing
 the waypoint radius to correct the plane's failure to complete a neat
 navigation path. The original forum posts can be
-found \ `**here** <http://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1265467>`__.
+found \ `**here** <https://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1265467>`__.
 
 DIY Drones member Iskess posted these logs of his X8 plane using APM
 code 2.73. He described an issue with auto take off where his plane
@@ -19,7 +19,7 @@ the flight starts off with a couple laps around a course of tightly set
 waypoints, and FBW-B doesn't start until 77.2% through the log.
 
 -  5/23/2013 tlog file (1.9 MB) - Download from original blog
-   post \ `**here** <http://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1265467>`__. - `X8 Parameters spreadsheet file download (14 KB) <http://firmware.ardupilot.org/downloads/wiki/other_files/X8Parameters.xlsx>`__
+   post \ `**here** <https://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1265467>`__. - `X8 Parameters spreadsheet file download (14 KB) <http://firmware.ardupilot.org/downloads/wiki/other_files/X8Parameters.xlsx>`__
 
 By analyzing this data
 using \ **`Mavgraph <http://qgroundcontrol.org/mavlink/mavproxy_startpage#mavgraphpy>`__**,

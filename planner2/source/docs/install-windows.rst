@@ -25,7 +25,7 @@ Download the insatller (XXX_win.exe) file for your machine from
 
 And also check the discussion forum for lastest info
 
-`<http://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
+`<https://discuss.ardupilot.org/c/ground-control-software/apm-planner-2-0>`__
 
 
 

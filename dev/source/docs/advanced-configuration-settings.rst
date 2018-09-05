@@ -20,7 +20,7 @@ be recognized by Arduino; \ ``//`` means "comment".
 If you have a APM1280 board and are finding the code is too big to
 compile and load with Arduino, you will need to turn off some
 memory-hogging features. A guide to doing that
-is \ `here <http://diydrones.com/profiles/blogs/getting-the-most-out-of-your>`__.
+is \ `here <https://diydrones.com/profiles/blogs/getting-the-most-out-of-your>`__.
 
 Avoid changing too many options at once; test the effect of each change
 as you go.

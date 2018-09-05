@@ -198,7 +198,7 @@ Improving the range
 
 The range can be improved by:
 
--  Using a small "patch antenna" on the ground like `this flat patch antenna <http://www.readymaderc.com/store/index.php?main_page=product_info&cPath=11_45_47&products_id=51>`__
+-  Using a small "patch antenna" on the ground like `this flat patch antenna <https://www.readymaderc.com/products/details/900-mhz-8-dbi-flat-patch-antenna-4ft-sma-male-connector>`__
    perhaps mounted on an :ref:`Antenna Tracker <antennatracker:home>`
 -  Replace at least one of the two radios with a higher powered
    :ref:`RFD900 <common-rfd900>`
@@ -234,5 +234,5 @@ settings, see
 ==========================
 
 The best place to get involved with the development or tuning of these
-radios is the `SiK Radios forum <http://discuss.ardupilot.org/c/hardware-discussion/radios-hardware>`__. Join in on the
+radios is the `SiK Radios forum <https://discuss.ardupilot.org/c/hardware-discussion/radios-hardware>`__. Join in on the
 forum to help make these radios even better!

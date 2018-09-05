@@ -4,7 +4,9 @@
 Parrot Bebop Autopilot
 ======================
 
-The Parrot `Bebop2 <https://www.parrot.com/us/drones/parrot-bebop-2-fpv>`__ is a Wifi controlled quadrotor UAV that uses a Linux autopilot which can run ArduPilot firmware.  Instructions for converting a Bebop to run ardupilot are :ref:`here <dev:building-for-bebop-2>`.  We recommend the Bebop2 over the original Bebop because of its much improved GPS.
+The Parrot `Bebop2 <https://www.parrot.com/global/drones/parrot-bebop-2-fpv>`__ is a Wifi controlled quadrotor UAV that uses a Linux autopilot which can run ArduPilot firmware.  
+Instructions for converting a Bebop to run ardupilot are :ref:`here <dev:building-for-bebop-2>`.  
+We recommend the Bebop2 over the original Bebop because of its much improved GPS.
 
 .. note::
 
@@ -26,7 +28,7 @@ Specifications
    -  MPU6050 for accelerometers and gyroscope (I2C)
    -  AKM 8963 compass
    -  MS5607 barometer
-   -  `Furuno GN-87F GPS <http://www.furuno.com/en/products/gnss-module/GN-87>`__
+   -  `Furuno GN-87F GPS <https://www.furuno.com/en/products/gnss-module/GN-87>`__
    -  Sonar
    -  Optical-flow
    -  HD camera

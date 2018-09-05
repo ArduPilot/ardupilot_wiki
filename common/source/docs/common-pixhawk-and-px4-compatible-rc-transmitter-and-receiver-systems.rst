@@ -188,11 +188,11 @@ combination with a PX4IO board) is given below:
 -  Futaba / Ripmax `R7008SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7675>`__ S.BUS 2 Receiver
 -  Futaba / Ripmax `R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__ S.BUS Receiver
 -  FrSky TFR4 SB 3/16ch 2.4Ghz S.BUS Receiver FASST Compatible
-   (`HobbyKing <http://www.hobbyking.com/hobbyking/store/__27176__FrSky_TFR4_SB_3_16ch_2_4Ghz_S_BUS_Receiver_FASST_Compatible.html>`__)
+   (`HobbyKing <https://hobbyking.com/en_us/frsky-tfr4-sb-3-16ch-2-4ghz-s-bus-receiver-fasst-compatible.html?___store=en_us>`__)
 -  Futaba FASST S.BUS `2.4 GHz Receiver R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__
    (tested by PX4 core team, very lightweight, only 7g)
 -  FrSky FASST compatible S.BUS compatible TFR8 SB 8ch 2.4Ghz Receiver
-   (`HobbyKing <http://www.hobbyking.com/hobbyking/store/__24785__FrSky_TFR8_SB_8ch_2_4Ghz_S_BUS_Receiver_FASST_Compatible.html>`__)
+   (`HobbyKing <https://hobbyking.com/en_us/frsky-tfr8-sb-8ch-2-4ghz-s-bus-receiver-fasst-compatible.html?___store=en_us>`__)
 
 .. note::
 

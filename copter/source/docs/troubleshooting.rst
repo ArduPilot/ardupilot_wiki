@@ -41,8 +41,8 @@ This can be due to a number of mistakes:
    plugging in a USB cable first, to boot the board, and then plug in
    your LiPo after it's already up, or just ensure that the four-wire
    cable from your APM board to your power distribution board is
-   disconnected during regular startup. See
-   details \ `here <http://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
+   disconnected during regular startup. 
+   See details `here <https://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
 #. It's possible you've changed your throttle trim settings since you
    did your initial radio calibration. Trim the throttle down a few
    notches and try arming again.
@@ -54,8 +54,7 @@ This can be due to a number of mistakes:
    LiPo must be plugged in to power the RC gear.
 #. If you've checked the previous things, it may be that you need to
    recalibrate your ESCs. Do it the manual way
-   (:ref:`here <esc-calibration>` to be
-   sure).
+   (:ref:`here <esc-calibration>` to be sure).
 
 My APM 2 is locking up
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -437,8 +436,8 @@ Copter ESCs keep beeping
    plugging in a USB cable first, to boot the board, and then plug in
    your LiPo after it's already up, or just ensure that the four-wire
    cable from your APM board to your power distribution board is
-   disconnected during regular startup. See
-   details \ `here <http://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
+   disconnected during regular startup. 
+   See details `here <https://diydrones.com/profiles/blogs/apm2-esc-startup-problem-and-workaround>`__.
 
 I'm using a MediaTek GPS, and although the module's blue lock LED goes solid, APM is not showing a lock or I'm getting "No GPS" on the Mission Planner display
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -478,10 +477,10 @@ have a bad cable or an older MediaTek module that needs to have its
 firmware updated.
 
 If you have a uBlox module and APM is not showing lock, you may not have
-ordered the module preprogammed for ArduPilot from the DIY Drones store
-(you had to select that option). In that case, program it yourself with
-the
-instructions \ `here <http://diydrones.com/profiles/blogs/tutorial-programming-your>`__.
+ordered the module preprogrammed for ArduPilot from the DIY Drones store
+(you had to select that option). 
+In that case, program it yourself with
+the instructions `here <https://diydrones.com/profiles/blogs/tutorial-programming-your>`__.
 
 I want to load the code in Arduino, but I'm having trouble
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -489,12 +488,10 @@ I want to load the code in Arduino, but I'm having trouble
 First, ensure you've downloaded the latest AC2 code and are using the
 latest Arduino (at least 022).
 
-If you're getting compile errors, that means that you haven't told
-Arduino where your libraries are properly.
+If you're getting compile errors, that means that you haven't told Arduino where your libraries are properly.
 
 If you're getting avrdude sync error message in the Arduino status bar),
-go through \ *all* of the
-tips \ `here <http://diydrones.com/profiles/blogs/arduino-debugging-tips>`__.
+go through *all* of the tips `here <https://diydrones.com/profiles/blogs/arduino-debugging-tips>`__.
 
 My Copter just won't rise/lift off
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -523,20 +520,19 @@ expected, check your PID settings and you can try to upload firmware
 again.
 
 Firmware upload might be successful but due internal timing issues some
-of the code is not written properly and this can cause unstabiliness on
+of the code is not written properly and this can cause unstableness on
 your Copter.
 
 I've got a tricopter and I'm having trouble with the yaw
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please see the
-tips \ `here <http://diydrones.com/profiles/blogs/tricopter-based-on-arducopter-yaw-issues-and-solutions>`__.
+Please see the tips `here <https://diydrones.com/profiles/blogs/tricopter-based-on-arducopter-yaw-issues-and-solutions>`__.
 
 The Mission Planner's HUD display moves around even though my copter is motionless
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As of 2.9 we've enabled a feature that uses GPS velocities/accelerations
-to compensate for centifugal forces. It should not cause you any issues
+to compensate for centrifugal forces. It should not cause you any issues
 in flight but you can disable it by setting the AHRS_GPS_GAIN to 0
 through the Mission Planner's Advanced Parameters List if it makes you
 uncomfortable. \ `Here is a video <https://www.youtube.com/watch?v=SXppOmZ3Rpg&feature=player_detailpage>`__ demonstrating
@@ -561,7 +557,7 @@ values to become very noisy and throw off the altitude estimates. The
 solution is to reduce sources of vibration from your frame (bent prop
 adapters and motor shafts, replace EPP props with APC) and remove hard
 connections between the frame and APM by using vibration dampening
-products such as \ `DuBro foam <https://dubro.com/products/r-c-protective-foam-rubber>`__.
+products such as \ `DuBro foam <https://www.dubro.com/products/r-c-protective-foam-rubber>`__.
 
 As of version 2.9 of Copter, inertial navigation is used to maintain
 altitude and in 2.9.2 horizontal position as well so vibration truly
@@ -580,8 +576,7 @@ either of the above techniques can get them down to the plus to minus 1
 range if they are just right.
 
 You can graph your Z-axis vibrations by enabling the "RAW" message type
-in
-the \ :ref:`dataflash <common-downloading-and-analyzing-data-logs-in-mission-planner>`,
+in the :ref:`dataflash <common-downloading-and-analyzing-data-logs-in-mission-planner>`,
 then take a short flight in Stabilize mode and finally download the logs
 and graph them with the mission planner. Below is an example of an
 extremely badly vibrating copter (top) and a nearly perfectly smooth
@@ -591,9 +586,7 @@ than -5 to -15 or alt hold will not function correctly.
 .. image:: ../images/BadVibrations1.png
     :target: ../_images/BadVibrations1.png
 
-There is a good
-discussion \ `here <http://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__ re
-vibration dampening.
+There is a good discussion `here <https://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__ re vibration dampening.
 
 My copter slowly rises or descends when I enable Alt-Hold or Loiter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

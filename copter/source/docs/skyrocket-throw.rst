@@ -12,12 +12,11 @@ If you want to try throw mode then first read the :ref:`throw mode documentation
 
 Here are some extra tips for throw mode on the SkyViper:
 
-- you can assign throw mode to a button on your TX. Go to the web
-  interface at http://192.168.99.1 and choose the parameters
-  page. Then assign throw mode to one of the action buttons. I like
+- you can assign throw mode to a button on your TX. 
+  Go to the web interface at ``http://192.168.99.1`` and choose the parameters page. 
+  Then assign throw mode to one of the action buttons. I like
   using ACTION5, which you get by holding the MODE button, then
-  pressing the right shoulder button (the one marked with the photo
-  icon)
+  pressing the right shoulder button (the one marked with the photo icon)
 - wait till you have full GPS lock (green LED on transmitter is solid)
 - with your skyviper disarmed and on the ground, select throw mode
   with the button you have setup in the first step. You will hear a

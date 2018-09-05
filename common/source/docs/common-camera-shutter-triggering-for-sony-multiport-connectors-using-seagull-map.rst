@@ -182,4 +182,4 @@ References
 -  `Purchase Seagull #MAP <http://www.seagulluav.com/product/seagull-map2/#tab-description>`__
 -  `#MAP Setup
    Overview/Support <http://www.seagulluav.com/seagull-map-support/>`__ - `Seagull #MAP Manual <http://seagulluav.com/wp-content/uploads/2015/08/Seagull-MAP-Manual.pdf>`__
--  `diydrones.com discussion <http://diydrones.com/profiles/blogs/seagull-map-uav-camera-trigger-with-100-camera-models-supported>`__.
+-  `diydrones.com discussion <https://diydrones.com/profiles/blogs/seagull-map-uav-camera-trigger-with-100-camera-models-supported>`__.

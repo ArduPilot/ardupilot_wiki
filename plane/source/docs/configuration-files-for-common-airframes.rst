@@ -99,7 +99,7 @@ Key parameters
 Bixler Tips
 -----------
 
-See `this posting <http://diydrones.com/profiles/blogs/mounting-an-apm-on-a-bixler2-upside-down-using-ahrs-orientation>`__
+See `this posting <https://diydrones.com/profiles/blogs/mounting-an-apm-on-a-bixler2-upside-down-using-ahrs-orientation>`__
 for how to fit an APM to a Bixler2. Also see :ref:`High Quality Bixler 1.1 Build (APM2.x) <a-high-quality-bixler-1-1-build>`.
 
 #. Heavy Bixler's fly much faster and are prone to tip stalling if
@@ -346,4 +346,4 @@ It flies well with the following parameters:
 -  ARSPD_FBW_MAX: 20
 -  TRIM_AIRSPEED_CM: 1200
 
-For a more complete guide `see this review <http://diydrones.com/profiles/blogs/tuning-the-techpod>`__.
+For a more complete guide `see this review <https://diydrones.com/profiles/blogs/tuning-the-techpod>`__.

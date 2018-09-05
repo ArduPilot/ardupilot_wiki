@@ -62,5 +62,5 @@ Video of BeagleBone Blue flying Copter-3.5
 More Links
 ==========
 
-- `Blog post announcing support <http://discuss.ardupilot.org/t/beaglebone-blue-released-linux-enabled-autopilot-for-80>`__
+- `Blog post announcing support <https://discuss.ardupilot.org/t/beaglebone-blue-released-linux-enabled-autopilot-for-80/15772>`__
 - `BeagleBone recommended accessories page <https://github.com/beagleboard/beaglebone-blue/wiki/Accessories>`__

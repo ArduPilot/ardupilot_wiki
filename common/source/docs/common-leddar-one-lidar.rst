@@ -4,7 +4,7 @@
 Leddar One Lidar
 ================
 
-The `Leddar One Lidar <http://leddartech.com/modules/leddarone/>`__ is a light weight and reasonably priced lidar with 40m range, 70hz update rate and 3-degree diffuse beam.  For more details please refer to the `datasheet <http://leddartech.com/app/uploads/dlm_uploads/2016/02/Datasheet-LeddarOne.pdf>`__.
+The `Leddar One Lidar <https://leddartech.com/modules/leddarone/>`__ is a light weight and reasonably priced lidar with 40m range, 70hz update rate and 3-degree diffuse beam.  For more details please refer to the `datasheet <https://leddartech.com/app/uploads/dlm_uploads/2016/02/Datasheet-LeddarOne.pdf>`__.
 
 .. figure:: ../../../images/leddar-one.jpg
    :target: ../_images/leddar-one.jpg

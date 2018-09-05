@@ -204,8 +204,3 @@ Turnigy transmitter compatible with FRSky transmitter module
 .. image:: ../../../images/FutabaT8FG.jpg
     :target: ../_images/FutabaT8FG.jpg
 
-Futaba transmitter compatible with Futaba S-Bus receivers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**You can also go to the PixHawk Link for even more options
-`(Here!) <https://pixhawk.ethz.ch/px4/modules/peripherals#rc_transmitters>`__**

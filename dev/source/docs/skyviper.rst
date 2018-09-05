@@ -136,7 +136,7 @@ Developing the Transmitter Firmware
 
 .. warning::
 
-   The transmitter is relatively easy to make unbootable!  Recovery requires an ST-Link hardware tool and the ``stm8flash`` tool.  If you do not have access to those, you may wish to reconsider modifying your transmitter firmware!
+   The transmitter is relatively easy to make unbootable! Recovery requires an ST-Link hardware tool and the ``stm8flash`` tool.  If you do not have access to those, you may wish to reconsider modifying your transmitter firmware!
 
 ::
 
@@ -149,7 +149,7 @@ Developing the Transmitter Firmware
    make
    ls -l txmain.img
 
-``txmain.img`` can be flashed usng the web interface.  Once the image is transfered, the transmitter will need to be power-cycled for the upgrade to continue.  It will take about 15 seconds to flash the new firmware. The LEDs will flash alternately at 1Hz during upgrade.
+``txmain.img`` can be flashed using the web interface.  Once the image is transfered, the transmitter will need to be power-cycled for the upgrade to continue.  It will take about 15 seconds to flash the new firmware. The LEDs will flash alternately at 1Hz during upgrade.
 
 
 MAVLink Access
@@ -157,7 +157,7 @@ MAVLink Access
 
 When on WiFi the drone broadcasts MAVLink traffic on UDP port 14550. Start up your favourite GCS and ask it to connect to port 14550 on UDP.
 
-After connecting on WiFI you may wish to change the WiFi password or SSID on http://192.168.99.1/system.html
+After connecting on WiFI you may wish to change the WiFi password or SSID on ``http://192.168.99.1/system.html``.
 Note that to use the SkyViper app, the SSID must start with ``SKYVIPERGPS_``
 
 
@@ -210,7 +210,7 @@ To use a different transmitter you will probably have to force the DSM protocol 
 Mode1/Mode2
 -----------
 
-The default TX stick mapping is mode2. To change to mode1, go to the Flight Parameters page in the web interface (http://192.168.99.1/parameters.html) and choose the Radio category. Change ``BRD_RADIO_STKMD`` to your preferred RC mode. Modes 1, 2, 3 and 4 are supported.
+The default TX stick mapping is mode2. To change to mode1, go to the Flight Parameters page in the web interface (``http://192.168.99.1/parameters.html``) and choose the Radio category. Change ``BRD_RADIO_STKMD`` to your preferred RC mode. Modes 1, 2, 3 and 4 are supported.
 
 Disabling RX Telemetry
 ----------------------
@@ -225,7 +225,7 @@ Factory Test Mode for TX/RX
 
 To facilitate rapid testing of transmitters in the factory there is a special factory test mode. This mode avoids the need to bind each transmitter, and gives fast startup on fixed channels.
 Factory test mode can be setup for up to 8 test stations in the factory. Each test station should have its own test copter.
-To setup a copter for factory test mode you need to set a receiving copter as the test copter for a particular test station. You do this by setting the ``BRD_RADIO_TESTCH`` parameter in the Radio parameters on http://192.168.99.1/parameters.html to a factory testing station number. This can be:
+To setup a copter for factory test mode you need to set a receiving copter as the test copter for a particular test station. You do this by setting the ``BRD_RADIO_TESTCH`` parameter in the Radio parameters on ``http://192.168.99.1/parameters.html`` to a factory testing station number. This can be:
 
 ::
 
@@ -255,7 +255,8 @@ To test a transmitter you need to boot it into test mode for the right test stat
    test station 7 = right stick fully down
    test station 8 = right stick fully right
 
-When you startup in factory test mode the transmitter will play a different buzzer tune, and will bind immediately with the receiver. You can then do rapid testing on the Transmitter tab of the status page on the web interface at http://192.168.99.1/status.html
+When you startup in factory test mode the transmitter will play a different buzzer tune, and will bind immediately with the receiver. 
+You can then do rapid testing on the Transmitter tab of the status page on the web interface at ``http://192.168.99.1/status.html``.
 Each test station uses a different set of channels, so are unlikely to interfere with each other.
 
 

@@ -31,8 +31,7 @@ MAV_CMDs
 =========
 
 These MAV_CMDs can be processed if packaged within a
-`COMMAND_LONG <https://pixhawk.ethz.ch/mavlink/#COMMAND_LONG>`__
-message.
+`COMMAND_LONG <http://mavlink.org/messages/common#COMMAND_LONG>`__ message.
 
 :ref:`MAV_CMD_NAV_TAKEOFF <copter:mav_cmd_nav_takeoff>`
 (Copter 3.2.1 or earlier)
@@ -172,7 +171,7 @@ in GUIDED mode.
 
 `COMMAND_ACK <http://mavlink.org/messages/common#COMMAND_ACK>`__
 
-`HIL_STATE <https://pixhawk.ethz.ch/mavlink/#HIL_STATE>`__
+`HIL_STATE <http://mavlink.org/messages/common#HIL_STATE>`__
 
 `RADIO <http://mavlink.org/messages/ardupilotmega#RADIO>`__
 
@@ -285,7 +284,7 @@ bit 3: z, bit 4: vx, bit 5: vy, bit 6: vz, bit 7: ax, bit 8: ay, bit 9:
    (0b0000111111111000) OR all three bits for the velocity
    (0b0000111111000111). Setting just one bit of the position/velocity or
    mixing the bits is not supported. The **acceleration**, **yaw**,
-   **yaw_rate** are present in the `protocol definition <https://pixhawk.ethz.ch/mavlink/#SET_POSITION_TARGET_LOCAL_NED>`__
+   **yaw_rate** are present in the `protocol definition <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__
    but are not supported by ArduPilot.
 
    
@@ -428,7 +427,7 @@ coordinate system.
    only be interrupted when the next movement command was received.
 
 The protocol definition is here:
-`SET_POSITION_TARGET_GLOBAL_INT <https://pixhawk.ethz.ch/mavlink/#SET_POSITION_TARGET_GLOBAL_INT>`__.
+`SET_POSITION_TARGET_GLOBAL_INT <http://mavlink.org/messages/common#SET_POSITION_TARGET_GLOBAL_INT>`__.
 
 **Command parameters**
 
@@ -481,7 +480,7 @@ bit 3: z, bit 4: vx, bit 5: vy, bit 6: vz, bit 7: ax, bit 8: ay, bit 9:
    (0b0000111111111000) OR all three bits for the velocity
    (0b0000111111000111). Setting just one bit of the position/velocity or
    mixing the bits is not supported. The **acceleration**, **yaw**,
-   **yaw_rate** are present in the `protocol definition <https://pixhawk.ethz.ch/mavlink/#SET_POSITION_TARGET_LOCAL_NED>`__
+   **yaw_rate** are present in the `protocol definition <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__
    but are not supported by ArduPilot.
 
 .. raw:: html

@@ -4,8 +4,8 @@
 Copter Mission Command List
 ===========================
 
-This page provides details of all the mission commands (i.e. `MAVLink commands <https://pixhawk.ethz.ch/mavlink/>`__) supported by Copter that
-can be run as part of a mission (i.e. :ref:`AUTO flight mode <auto-mode>`).
+This page provides details of all the mission commands 
+(i.e. `MAVLink commands <http://mavlink.org/messages/common#MAV_CMD_NAV_WAYPOINT>`__) supported by Copter that can be run as part of a mission (i.e. :ref:`AUTO flight mode <auto-mode>`).
 
 Each of the commands below is either a "Navigation" command or a "Do"
 command.  Navigation commands (i.e. "TakeOff" and "Waypoint") affect the
@@ -13,7 +13,7 @@ location of the vehicle while "Do" commands (i.e. "Do-Set-Servo" and
 "Do-Cam-Trigg-Dist") are for auxiliary functions and do not affect the
 vehicle's position.  During a mission at most one "Navigation" command
 and one "Do" command can be running at one time.  The "Do" commands will
-be run in order as soon as the preceeding navigation command before them
+be run in order as soon as the preceding navigation command before them
 completes.  For more information on setting up missions please refer to the
 :ref:`Planning a Mission with Waypoints and Events <common-planning-a-mission-with-waypoints-and-events>`
 page.

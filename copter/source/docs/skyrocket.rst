@@ -7,16 +7,25 @@ SkyRocket
    .. image:: ../images/skyrocket-skyvipergpsdrone.png
        :target: ../_images/skyrocket-skyvipergpsdrone.png
 
-A number of SkyRocket drones use ArduPilot as flight control software.  This page provides details for advanced users and potential developers on these RTF drones.
+A number of SkyRocket drones use ArduPilot as flight control software. 
+This page provides details for advanced users and potential developers on these RTF drones.
 
 Where to Buy
 ------------
 
-2017 models.  The `SkyViper GPS Streaming drone <http://sky-viper.com/product/info/V2450GPS-sd>`__ (`version with FPV headset <http://sky-viper.com/product/info/V2450GPS-fpv>`__) is on sale through `Target <https://www.target.com/p/sky-viper-streaming-video-drone-v2450hd/-/A-52136996>`__, `Walmart <https://www.walmart.com/ip/Sky-Viper-Streaming-Drone-with-GPS/797973157>`__, `Amazon <https://www.amazon.com/Sky-Viper-v2450GPS-Streaming-Autopilot/dp/B072HH13VQ/ref=lp_13203361011_1_6>`__ and Costco in the US, Australia, Canada, Chile, France, German, Holland, Lithuania, Mexico, New Zealand, Serbia, UK since October 2017.
+**2017 models**
 
-SkyRocket sells a variety of different drones.  Of the 2017 models, only the V2450GPS Streaming drone (which will have a white shell) is capable of running ArduPilot.
+The *Sky Viper v2450GPS Drone with Autopilot and GPS* is on sale through `Walmart <https://www.walmart.com/ip/Sky-Viper-Streaming-Drone-with-GPS/797973157>`__, `Amazon <https://www.amazon.com/Sky-Viper-v2450GPS-Streaming-Autopilot/dp/B072HH13VQ/ref=lp_13203361011_1_6>`__ and Costco in the US, Australia, Canada, Chile, France, German, Holland, Lithuania, Mexico, New Zealand, Serbia, UK since October 2017.
 
-2018 models.  In August 2018, SkyRocket released three new ArduPilot powered drones, the Fury, Scout, and Journey. The Fury and Scout utilize "SurfaceScan", built on ArduPilot's OpticalFlow feature, to allow for indoor flight stability and position holding, unprecendented in this price range. The Journey, with GPS rather than OpticalFlow, takes lessons learned from the V2450GPS and builds on those for a solid re-release for the full GPS-enabled ArduPilot experience. The flight parameters and firmware for both the Scout and Journey can be easily modified as the user sees fit through the embedded wifi access point, powered by APWeb or using your favorite ground control software.  Much of the information on this page, which was written for the V2450GPS, will at least partially apply to these new models, with updates annotated as they are discovered.
+SkyRocket sells a variety of different drones. 
+Of the 2017 models, only the V2450GPS Streaming drone (which will have a white shell) is capable of running ArduPilot.
+
+**2018 models**
+
+In August 2018, SkyRocket released three new ArduPilot powered drones, the Fury, Scout, and Journey. 
+The Fury and Scout utilize "SurfaceScan", built on ArduPilot's OpticalFlow feature, to allow for indoor flight stability and position holding, unprecendented in this price range. 
+The Journey, with GPS rather than OpticalFlow, takes lessons learned from the V2450GPS and builds on those for a solid re-release for the full GPS-enabled ArduPilot experience. The flight parameters and firmware for both the Scout and Journey can be easily modified as the user sees fit through the embedded wifi access point, powered by APWeb or using your favorite ground control software. 
+Much of the information on this page, which was written for the V2450GPS, will at least partially apply to these new models, with updates annotated as they are discovered.
 
 Discussion
 ----------

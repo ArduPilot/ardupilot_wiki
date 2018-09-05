@@ -16,7 +16,7 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_jDrones.png
     :width: 250px
-    :target:  http://www.jDrones.com/home/
+    :target:  http://www.jDrones.com/
 
 .. image:: ../../../images/supporters/supporters_logo_proficnc.png
     :width: 250px
@@ -28,7 +28,7 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_emlid.png
     :width: 250px
-    :target:  http://www.emlid.com/
+    :target:  https://emlid.com/
 
 .. image:: ../../../images/supporters/supporters_logo_cuav.jpg
     :width: 250px
@@ -40,15 +40,15 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_LaserNavigation.png
     :width: 250px
-    :target:  http://www.lasernavigation.it/
+    :target:  http://www.lasernavigation.it/index.php
 
 .. image:: ../../../images/supporters/supporters_logo_lightware.png
     :width: 250px
-    :target:  http://www.lightware.co.za
+    :target:  https://lightware.co.za/
 
 .. image:: ../../../images/supporters/supporters_logo_spektreworks.png
     :width: 250px
-    :target:  http://www.spektreworks.com/
+    :target:  https://www.spektreworks.com/
 
 .. image:: ../../../images/supporters/supporters_logo_hex.png
     :width: 250px
@@ -64,7 +64,7 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_dronejapan.png
     :width: 250px
-    :target:  http://www.drone-j.com/
+    :target:  https://www.drone-j.com/
 
 .. image:: ../../../images/supporters/supporters_logo_robsense.png
     :width: 250px
@@ -72,7 +72,7 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_bluerobotics.png
     :width: 250px
-    :target:  http://www.bluerobotics.com/
+    :target:  https://www.bluerobotics.com/
 
 .. image:: ../../../images/supporters/supporters_logo_skyrocket.jpg
     :width: 250px
@@ -84,15 +84,15 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_harrisaerial.jpg
     :width: 250px
-    :target:  http://www.harrisaerial.com/
+    :target:  https://www.harrisaerial.com/
 
 .. image:: ../../../images/supporters/supporters_logo_altigator.png
     :width: 250px
-    :target:  http://altigator.com/
+    :target:  https://altigator.com/en/
 
 .. image:: ../../../images/supporters/supporters_logo_event38.png
     :width: 250px
-    :target:  http://event38.com/
+    :target:  https://event38.com/
 
 .. image:: ../../../images/supporters/supporters_logo_skeyetech.png
     :width: 250px
@@ -100,15 +100,15 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_AAC.png
     :width: 250px
-    :target:  http://advancedaircraftcompany.com
+    :target:  http://www.advancedaircraftcompany.com/
 
 .. image:: ../../../images/supporters/supporters_logo_3dxr.jpg
     :width: 250px
-    :target: http://www.3dxr.co.uk
+    :target: https://www.3dxr.co.uk/
 
 .. image:: ../../../images/supporters/supporters_logo_carbonix.png
     :width: 250px
-    :target: http://www.carbonix.com.au
+    :target: http://carbonix.com.au/
 
 .. image:: ../../../images/supporters/supporters_logo_volansi.jpg
     :width: 250px
@@ -116,11 +116,11 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_ageagle.png
     :width: 250px
-    :target:  http://ageagle.com
+    :target:  https://ageagle.com
 
 .. image:: ../../../images/supporters/supporters_logo_enroute.jpg
     :width: 250px
-    :target:  https://enroute1.com/
+    :target:  https://enroute.co.jp/
 
 .. image:: ../../../images/supporters/supporters_logo_dronescenter.png
     :width: 250px

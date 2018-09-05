@@ -63,7 +63,7 @@ Frame and Motor Assembly
 ========================
 
 -  Go to the DJI web site Flamewheel support section
-   `(Here!) <http://www.dji.com/product/flame-wheel-arf/download>`__
+   `(Here!) <https://www.dji.com/flame-wheel-arf/download>`__
    to get a PDF copy of their "manual" none is included in the kits.
 
    -  It is more of an assembly diagram than a manual, but the pictures

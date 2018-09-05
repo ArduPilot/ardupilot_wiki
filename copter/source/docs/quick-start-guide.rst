@@ -9,18 +9,12 @@ Archived: Quick Start Guide for Ready-to-Fly Vehicles
    **ARCHIVED ARTICLE**
 
    The article is out of date (3DR replaced APM2.x with Pixhawk
-   and the kits come with everything configured out of the box). In
-   addition, 3DR provides its own detailed usage instructions for all RTF
-   vehicles in the `Support page <https://3dr.com/support/>`__ (e.g.
-   `Iris+ <https://3dr.com/kb/iris/>`__,
-   `Solo <https://3dr.com/solo-drone/>`__,
-   `X8 <https://3dr.com/kb/x8/>`__,
-   `Aero-M <https://3dr.com/kb/aero-m/>`__).
+   and the kits come with everything configured out of the box). 
+   In addition, 3DR no longer supplies hardware described in this article (including Iris+, Solo, X8, Aero-M).
 
-This page is a quick start guide for users who have purchased a
-`3DRobotics Ready-to-Fly (RTF) multicopter <https://store.3dr.com/t/hobby-and-mapping>`__
-including a Pixhawk preloaded with the latest Copter firmware.  All
-other users should skip to the \ :ref:`First Time Setup <initial-setup>` section which
+This page is a quick start guide for users who have purchased a *3DRobotics Ready-to-Fly (RTF) multicopter*
+including a Pixhawk preloaded with the latest Copter firmware.  
+All other users should skip to the :ref:`First Time Setup <initial-setup>` section which
 includes the full flight controller set-up and calibration instructions.
 
 Install Mission Planner
@@ -37,11 +31,9 @@ installation utility.
 Follow the instructions to complete the setup process (accept the
 license terms, choose a location for the installation etc.)
 
-The installation utility will automatically install any necessary
-software drivers. If you receive a DirectX installation error, please
-update your DirectX plug-in from the `DirectX Download Center <http://www.microsoft.com/en-us/download/details.aspx?id=35>`__.
-If you receive the warning pictured here, select **Install this driver
-software anyway** to continue.
+The installation utility will automatically install any necessary software drivers. 
+If you receive a DirectX installation error, please update your DirectX plug-in from the `Windows Download Center <https://www.microsoft.com/en-us/download/windows.aspx>`__.
+If you receive the warning pictured here, select **Install this driver software anyway** to continue.
 
 .. image:: ../images/directx_driver_install_warning.png
     :target: ../_images/directx_driver_install_warning.png
@@ -190,10 +182,8 @@ Pre-flight information
 Safety is the key to successful flight. Please read the \ :ref:`Safety Information Page <safety-multicopter>` before
 flying. Select an unpopulated area to fly your copter, away from people
 and developed areas, and always run the :ref:`pre-flight checklist <checklist>`\ before
-connecting the battery. Make sure to read the
-:ref:`Flying <flying-arducopter>` page
-for information about arming, disarming, and controlling your copter
-during flight.
+connecting the battery. 
+Make sure to read the :ref:`Flying <flying-arducopter>` page for information about arming, disarming, and controlling your copter during flight.
 
 When you're ready to fly, place copter on the ground facing away from
 you. Connect fully charged LiPo battery to the power module connector

@@ -163,7 +163,7 @@ Known issues
 Acknowledgements:
 =================
 
-#. `Marko Klein Berkenbusch's <http://diydrones.com/profile/MarkoKleineBerkenbusch>`__
+#. `Marko Klein Berkenbusch's <https://diydrones.com/profiles/profile/show?id=MarkoKleineBerkenbusch&>`__
    position hold with mouse sensor
 
 #. research paper re `optical flow for position hold <http://www.araa.asn.au/acra/acra2007/papers/paper181final.pdf>`__

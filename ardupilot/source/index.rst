@@ -92,10 +92,10 @@ Community:
    
 Community is what really sets ArduPilot apart from other proprietary offerings in the market. Ardupilot offers areas for open discourse on the project's direction.  Here are some of the places you can find ardupilot users and developers:
 
-`Discussion Forums: <http://discuss.ardupilot.org/>`__
+`Discussion Forums: <https://discuss.ardupilot.org/>`__
 
 .. image:: ../../images/ArduPilotDiscuss.png
-    :target: http://discuss.ardupilot.org/
+    :target: https://discuss.ardupilot.org/
     :width: 640px
 
 `Facebook ArduPilot group <https://www.facebook.com/groups/ArduPilot.org/>`__
@@ -119,7 +119,7 @@ A comprehensive list of features that are continually born from the
 needs of the community.
 
 .. image:: ../../images/diydrones.jpg
-    :target: http://diydrones.com
+    :target: https://diydrones.com/
     :width: 360px
 
 --------------
@@ -177,7 +177,7 @@ Features:
    :hidden:
 
    News <http://www.ardupilot.org>
-   Community <http://discuss.ardupilot.org>
+   Community <https://discuss.ardupilot.org/>
    Copter <http://ardupilot.org/copter/index.html>
    Plane <http://ardupilot.org/plane/index.html>
    Rover <http://ardupilot.org/rover/index.html>

@@ -61,7 +61,7 @@ to configure an "unknown" power module.
 To calibrate the voltage reading:
 
 #. Check the voltage of your LiPo battery with a hand-held volt meter or
-   a `power analyzer <http://www.hobbyking.com/hobbyking/store/__10080__Turnigy_130A_Watt_Meter_and_Power_Analyzer.html>`__
+   a `power analyzer <https://hobbyking.com/en_us/turnigy-130a-watt-meter-and-power-analyzer.html?___store=en_us>`__
 #. Connect your Pixhawk-series to your computer and plug in the LiPo battery
 #. Check the voltage through the *Mission Planner*'s **INITIAL SETUP \|
    Optional Hardware \| Battery Monitor** screen or on the Flight Data
