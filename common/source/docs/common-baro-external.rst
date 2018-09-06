@@ -5,7 +5,7 @@ Barometer (external)
 
 .. warning::
 
-   This page is a work-in-progress and the instructions below have not been completely verified to be correct
+   Support for external barometers will be released with Copter-3.6.1.  The instructions below have only been verified for the Drotek MS5611 barometer. The Adafruit BMP280 has not been verified to work yet.
 
 .. image:: ../../../images/baro-top-image.png
     :width: 450px
@@ -31,11 +31,13 @@ Connect the barometer to the flight controller's I2C port as shown below
     :target: ../_images/baro-ms5611-pixhawk.jpg
     :width: 450px
 
+On the top of the Drotek MS5611 board, the "I2C" jumper should be soldered.  Look for "I2C/SPI" written on the board.
+
 .. image:: ../../../images/baro-bmp280-pixhawk.jpg
     :target: ../_images/baro-bmp280-pixhawk.jpg
     :width: 450px
 
-- :ref:`GND_EXT_BUS <GND_EXT_BUS>` to 1 for Pixhawk boards or 0 for Cubes.  Other flight controllers will also be either 0 or 1.  Reboot the flight controller after changing this parameter.
+- :ref:`GND_PROBE_EXT <GND_PROBE_EXT>` to 4 for the Drotek MS5611 or 2 for the Adafruit BMP280.  Reboot the flight controller after changing this parameter.
 - :ref:`GND_PRIMARY <GND_PRIMARY>` to 1 to use the external barometer as the primary
 
 Testing
@@ -45,4 +47,10 @@ Testing
     :target: ../_images/baro-testing.png
     :width: 450px
 
-Real-time pressure and temperature from the barometer are sent to the ground station.  If using Mission Planner these values can be seen on the Flight Data >> Status tab, look for "press_abs" and "press_temp".
+Real-time pressure and temperature from the barometer are sent to the ground station.  If using Mission Planner they will be visible (`once this issue is resolved <https://github.com/ArduPilot/MissionPlanner/issues/1939>`__) on the Flight Data >> Status tab, look for "press_abs2" and "press_temp2".
+
+Mission Planner's MAVLink Inspector can also be used to view the data.  From the Flight Data screen press Ctrl-F, then push the "MAVLink In" button and then expand the view and look for SCALED_PRESSURE2.
+
+.. image:: ../../../images/baro-testing-with-mavlink-inspector.png
+    :target: ../_images/baro-testing-with-mavlink-inspector.png
+    :width: 450px
