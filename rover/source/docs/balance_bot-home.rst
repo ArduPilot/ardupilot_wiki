@@ -15,7 +15,7 @@ Currently, Balance Bots work only in Manual and Hold modes.
 
 Before you proceed:
 -------------------
-Please note that the balance bot is not part of any rover release yet. If you wish to try it out, you will have to clone the code from our master branch. Follow the instructions :ref:`here <git-clone>` to clone the code. We recommend this only for experienced users!
+Balance bot support will be officially included in Rover-3.5 (and higher).  Until this is released, it can be tested using "latest" which can be downloaded from the Mission Planner's Install Firmware screen by pressing Ctrl-Q.  Please note though that "latest" has not gone through beta testing and may have issues.
 
 .. toctree::
   :titlesonly:
