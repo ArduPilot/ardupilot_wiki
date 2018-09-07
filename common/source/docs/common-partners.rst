@@ -178,7 +178,7 @@ Corporate Partners
     :width: 250px   
     :target:  http://makeflyeasy.com/
     
-    .. image:: ../../../images/supporters/supporters_logo_hexsoon.jpg
+.. image:: ../../../images/supporters/supporters_logo_hexsoon.jpg
     :width: 250px   
     
 .. image:: ../../../images/supporters/supporters_logo_MicroAerialProjects.png
