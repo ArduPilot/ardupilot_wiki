@@ -184,6 +184,10 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_MicroAerialProjects.png
     :width: 250px   
     :target:  http://www.microaerialprojects.com
+    
+.. image:: ../../../images/supporters/Supporters_Logo_EaglePride.png
+    :width: 250px   
+    :target:  http://www.eaglepridedrones.com
 
 How does my company become a partner?
 =====================================
