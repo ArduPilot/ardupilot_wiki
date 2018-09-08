@@ -53,7 +53,9 @@ GPS is attached to UART6
 
 Telem is available at UART 1
 
-The shared UART3/I2C pins are enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.
+The shared UART3/I2C pins are enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.If at least one device attached externally, does not have pull-up resistors, then 2K ohm pull-up resistors will need to be added externally.
+
+The board's RSSI pad can be used as an analog RSSI input. Use pin "0" as the RSSI input pin in Mission Planner. Mission planner default values for battery voltage and current scales are provided, however since many variations of this board are available, these may needed to be manually calibrated.
 
 If you want to power the servos from the ESC BEC via the board's center rail for the servo outputs, then you should remove the diode as per here: https://www.rcgroups.com/forums/showthread.php?2874687, otherwise, independently power the servos directly from the ESC or independent BEC with no connection to the board's servo output center rail.
 
@@ -64,7 +66,7 @@ If you want to power the servos from the ESC BEC via the board's center rail for
 Video power provided on the video input and output center rail, is provide through an on-board noise filter. Either ~4.5V (labeled 5V) or VBAT-0.5V (VBAT) can be selected by solder pads on the back of the board.
 
 PPM solder pad/resistor should be soldered and “S-BUS” resistor/solder pad removed
-Overwise UART1 or UART6 or RCIN will not work
+Otherwise, UART1 or UART6 or RCIN will not work
 
 .. figure:: ../../../images/omnibusf4pro_ardupilot_wiring.jpg
     :target: ../_images/omnibusf4pro_ardupilot_wiring.jpg
@@ -161,6 +163,9 @@ BAT_MONITOR=4
 Then reboot.
 
 BAT_VOLT_PIN 12
+
 BAT_CURR_PIN 11
+
 BAT_VOLT_MULT 11.0
-BAT_AMP_PERVOLT 38.0
+
+BAT_AMP_PERVOLT 38.0 (note, this value may vary from 18 to 38, depending on specific board manufacturer...will need to be calibrated to match actual current)
