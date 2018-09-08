@@ -185,6 +185,10 @@ Corporate Partners
     :width: 250px   
     :target:  http://www.microaerialprojects.com
     
+.. image:: ../../../images/supporters/supporters_logo_ARACE_UAS.png
+    :width: 250px   
+    :target:  http://www.facebook.com/araceuas
+    
 .. image:: ../../../images/supporters/Supporters_Logo_EaglePride.png
     :width: 250px   
     :target:  http://www.eaglepridedrones.com
