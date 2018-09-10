@@ -44,6 +44,16 @@ Specifications
    -  Width 50 mm (2.0”)
    -  Height 15.5 mm (.6”)
    -  Length 81.5 mm (3.2”)
+   
+   
+Purchase
+========
+
+The Pixhawk 1 was originally manufactured and sold by 3DR.
+
+A slightly improved but fully compatible variant can now be obtained from mRo:
+`mRo Pixhawk 2.4.6 Essential Kit! <https://store.mrobotics.io/Genuine-PixHawk-Flight-Controller-p/mro-pixhawk1-minkit-mr.htm>`__
+
 
 Pixhawk connector assignments
 =============================
