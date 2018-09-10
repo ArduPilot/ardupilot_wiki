@@ -44,26 +44,21 @@ Why a FLIP Sport?
 What to get
 ===========
 
-#. A `Hoverthings Flip Sport Frame <http://www.hoverthings.com/the-flip-black>`__ for $89.00.
+#. A `Hoverthings Flip Sport Frame <https://www.amazon.com/HoverThings-Flip-Frame-Black-Orange/dp/B00HZTN6GO/>`__ (approx $89.00 USD).
 
    .. image:: ../../../images/3281_dimg2.jpg
        :target: ../_images/3281_dimg2.jpg
    
-#. `Two tabbed center sections <hhttp://www.hoverthings.com/flip4tabblack>`__ and `eight 7/8" standoffs <http://www.hoverthings.com/spcr0875qty8>`__.
+#. `Two tabbed center sections <hhttp://www.hoverthings.com/flip4tabblack>`__ and *eight 7/8" standoffs* (e.g. `similar to these <http://hoverthings.com/standoff-nylon-f-f/>`__).
 #. Four DJI motors for Flamewheel from `Amain Hobby <https://www.amainhobbies.com/dji-multirotor-replacement-brushless-motor-dji-motor01/p235238>`__
    for $24.00 each.
 #. A 20 or 25 Amp four in one ESC from `Off the Grid Water <http://mymobilemms.com/OFFTHEGRIDWATER.CA/ESC/4-in-1-Speed-Control-Quad-HOBBYWING-Quattro-Skywalker-25A-X-41?cPath=2_4>`__
    for $40.00.
-#. A `Pixhawk <https://store.3dr.com/products/3dr-pixhawk>`__
-   Flight controller from 3DR.
-#. A :ref:`GPS and Compass Module <common-positioning-landing-page>`
-   module.
-#. Two
-   `normal <http://www.rcdude.com/servlet/the-2600/GemFan-DJI-Hub-/Detail>`__
-   and two
-   `reverse <http://www.rcdude.com/servlet/the-2499/GemFan-DJI-Hub-10x4.5/Detail>`__
-   rotation DJI compatible Gemfan 10" carbon filled propellers from RC
-   Dude.
+#. A :ref:`Pixhawk <common-pixhawk-overview>` compatible flight controller.
+#. A :ref:`GPS and Compass Module <common-positioning-landing-page>` module.
+#. Two `normal <https://www.rcdude.com/product-p/gf-1045-c.htm>`__
+   and two `reverse <https://www.rcdude.com/product-p/gf-1045r-blk.htm>`__
+   rotation DJI compatible Gemfan 10" carbon filled propellers from RC Dude.
 
 #. A 2600 to `4000mah LiPo battery <https://hobbyking.com/en_us/turnigy-battery-nano-tech-4000mah-3s-25-50c-lipo-pack-xt-60.html?___store=en_us>`__
    that fits between the 2 bottom plates.
