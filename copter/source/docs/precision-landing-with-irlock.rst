@@ -38,8 +38,8 @@ Connecting to Pixhawk
 
 The IR-LOCK sensor can be connected directly to Pixhawk via an `I2C cable <https://irlock.com/collections/shop/products/pixhawk-cable>`__. If
 you are using multiple I2C sensors, then you will need an \ `I2C splitter <http://store.jdrones.com/Pixhawk_I2C_splitter_p/dstpx4i2c01.htm>`__.
-More detailed instructions are included in the `irlock.com Documentation <https://irlock.readme.io/docs>`__. The IR-LOCK sensor can
-also be `connected via USB to a Linux system <https://irlock.readme.io/docs/interfacing-sensor-w-linux-and-python>`__,
+More detailed instructions are included in the `irlock.com Documentation <https://irlock.readme.io/docs>`__. 
+The IR-LOCK sensor can also be `connected via USB to a Linux system <https://irlock.readme.io/v1.0/docs/interfacing-sensor-w-linux-and-python>`__,
 and sensor output can be retrieved in Python.
 
 .. figure:: ../images/precision_landing_connect_irlock_to_pixhawk.jpg
@@ -110,7 +110,7 @@ and examine the PL messages.
 -  The pX, pY values show the horizontal distance to the target from the vehicle.
 -  The vX, vY values show the estimated velocity of the target relative to the vehicle.
 
-Refer to the IR-LOCK `wiki page <https://irlock.readme.io/docs/interpreting-pl-logs>`__ for more trouble-shooting information.
+Refer to the IR-LOCK `wiki page <https://irlock.readme.io/v1.0/docs/interpreting-pl-logs>`__ for more trouble-shooting information.
 
 ..  youtube:: IRfo5GcHniU
     :width: 100%
