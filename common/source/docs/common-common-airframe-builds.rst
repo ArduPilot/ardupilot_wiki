@@ -15,7 +15,6 @@ and design.
 
 [site wiki="copter"]
     DJI F330 FlameWheel QuadCopter <dji-f330-flamewheel>
-    Hoverthings Flip Sport Quadcopter <hoverthings-flip-sport-quadcopter>
     Build Your Own Multicopter <build-your-own-multicopter>
     Advanced MultiCopter Design <advanced-multicopter-design>
     Improving the Capabilities of Your Multicopter <improving-the-capabilities-of-your-multicopter>
