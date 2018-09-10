@@ -31,16 +31,14 @@ slow your multicopter's decent to less than 5m/s. Some recommended
 parachute vendors:
 
 -  `Fruity Chutes <https://fruitychutes.com/uav_rpv_drone_recovery_parachutes.htm>`__
--  `Opale Paramodels <http://www.opale-paramodels.com/index.php/en/shop-opaleparamodels/4/rescue-systems>`__
+-  `Opale Paramodels <https://www.opale-paramodels.com/fr/57-parachutiste-rc>`__
 -  `Mars Mini <http://1uas.com/Gears/Parachutes-Protection-System/Mars-Mini>`__
 
 Connecting to the Pixhawk
 =========================
 
-The parachute release mechanism can be triggered from either a Relay or
-a PWM (i.e. Servo) but because of `an issue with the Relay pins being pulled high at start-up <https://github.com/ArduPilot/ardupilot/issues/1239>`__, we
-recommend using PWM, in particular any of the Pixhawk's AUX OUT 1 to 4
-pins.
+The parachute release mechanism can be triggered from either a Relay or a PWM (i.e. Servo) but because of `an issue with the Relay pins being pulled high at start-up <https://github.com/ArduPilot/ardupilot/issues/1239>`__, 
+we recommend using PWM, in particular any of the Pixhawk's AUX OUT 1 to 4 pins.
 
 .. image:: ../images/Parachute_Pixhawk.jpg
     :target: ../_images/Parachute_Pixhawk.jpg
