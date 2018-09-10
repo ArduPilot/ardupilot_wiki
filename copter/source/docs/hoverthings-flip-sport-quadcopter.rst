@@ -1,8 +1,15 @@
 .. _hoverthings-flip-sport-quadcopter:
 
-=================================
-Hoverthings Flip Sport Quadcopter
-=================================
+===========================================
+Archived: Hoverthings Flip Sport Quadcopter
+===========================================
+
+.. warning::
+
+   **ARCHIVED ARTICLE**
+
+   The frame is no longer in production/available for purchase.
+   Some of the instructions cover PX4FMU/PX4IO, which is no longer supported.
 
 The Hoverthings FLIP Sport is very easy to build resulting in a
 remarkably sturdy and very high performance little quadcopter. The FLIP

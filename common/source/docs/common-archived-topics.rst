@@ -30,6 +30,7 @@ value to users with old hardware.
     Archived: Installing the PX4FMU on a QuadCopter <px4fmu-only-wiring>
     GPS Failsafe <archived-gps-failsafe>
     traditional-helicopter-archived-tuning
+    Hoverthings Flip Sport Quadcopter (detailed build) <hoverthings-flip-sport-quadcopter>
 [/site]
 
 [site wiki="dev"]
