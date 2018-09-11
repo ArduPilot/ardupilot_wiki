@@ -43,8 +43,7 @@ The **Vagrantfile** can be used by Vagrant to set up a local build environment i
 This allows you to edit the source in your host computer but manage the build inside Vagrant. You can also
 manually set up a build environment (just inspect the Vagrantfile for dependencies).
 
-The wikis use a `common theme <https://github.com/ArduPilot/sphinx_rtd_theme#read-the-docs-sphinx-theme>`__
-that provides the top menu bar. 
+The wikis use a `common theme <https://github.com/ArduPilot/sphinx_rtd_theme>`__ that provides the top menu bar. 
 
 
 
@@ -219,7 +218,7 @@ Creating a new wiki page
    about your topic — it is better to improve an existing topic than create
    a near-duplicate! 
    Also discuss it with the 
-   `Wiki Editors Discussion Group <https://groups.google.com/forum/#!forum/ardu-wiki-editors>`__.
+   Wiki Editors Discussion Group (``https://groups.google.com/forum/#!forum/ardu-wiki-editors``).
 
 To create a new wiki page you will need to follow the same process as any other 
 :ref:`big edit <common_wiki_editing_guide_big_edit>`.
@@ -669,8 +668,7 @@ also ignore this case, but it will give a "missing article" warning.
 How to put links in the top menu
 --------------------------------
 
-Top menu links are hard coded in the 
-`site theme <https://github.com/ArduPilot/sphinx_rtd_theme#read-the-docs-sphinx-theme>`__.
+Top menu links are hard coded in the `site theme <https://github.com/ArduPilot/sphinx_rtd_theme>`__.
 
 
 Using images in your wiki pages
