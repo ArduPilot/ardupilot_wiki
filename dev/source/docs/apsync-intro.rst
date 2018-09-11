@@ -55,7 +55,7 @@ Simple Configuration Web page
     :target: ../_images/apsync-configurator.png
 
 A light weight webserver runs on the companion computer (using CherryPy).
-The user can connect to the drone using a known URL (`http://10.0.1.128:8000 <http://10.0.1.128:8000>`__) and change configuration information including:
+The user can connect to the drone using a known URL (``http://10.0.1.128:8000``) and change configuration information including:
 
 - wifi access point name and password
 - list of trusted wifi access points
