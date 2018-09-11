@@ -27,9 +27,10 @@ Setup
 
 - connect the flight controller and TX1 as shown on the `NVidia TX1 as a Companion Computer <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html>`__ wiki page
 - flash the TX1 as described in the `Setup the TX1 <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-tx1>`__ section of the above wiki page but use the apsync-tx1-openkai image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/beta/>`__
-- mount the ZED camera upside-down and using vibration dampeners to the front of the vehicle.  It can be mounted right-side-up after `connecting with ssh <http://ardupilot.org/dev/docs/apsync-intro.html#connecting-with-ssh>`__ and then modify `~/src/OpenKAI/kiss/apmCopter.kiss <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss#L60>`__ so "bFlip" is 1
-- in order to download the ZED camera's calibration parameters from stereolabs.com, connect the TX1 to the internet with an ethernet cable during powerup (this procedure is only required once)
-- disable APSync's video streaming (so that OpenKai can use the camera) by connecting your computer to APSync's access point (ssid=ardupilot, pw=ardupilot), then open a browser to `http://10.0.1.128:8000 <http://10.0.1.128:8000>`__ and click the red "Disable Auto Streaming" button (button should turn green) and reboot the TX1.
+- mount the ZED camera upside-down and using vibration dampeners to the front of the vehicle.  
+  It can be mounted right-side-up after `connecting with ssh <http://ardupilot.org/dev/docs/apsync-intro.html#connecting-with-ssh>`__ and then modify `~/src/OpenKAI/kiss/apmCopter.kiss <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss#L60>`__ so "bFlip" is `1`.
+- in order to download the ZED camera's calibration parameters from stereolabs.com, connect the TX1 to the Internet with an Ethernet cable during powerup (this procedure is only required once)
+- disable APSync's video streaming (so that OpenKai can use the camera) by connecting your computer to APSync's access point (``ssid=ardupilot``, pw=ardupilot), then open a browser to ``http://10.0.1.128:8000`` and click the red **Disable Auto Streaming** button (button should turn green) and reboot the TX1.
 
 .. image:: ../../../images/apsync-disable-auto-stream.png
 
@@ -52,7 +53,8 @@ Ensure that Copter-3.5 (or higher) is loaded onto the flight controller and conn
 Optionally you may also:
 
 - set the :ref:`VISO_POS_X <VISO_POS_X>`, :ref:`VISO_POS_Y  <VISO_POS_Y>` and :ref:`VISO_POS_Z  <VISO_POS_Z>` to account for the camera's offset from the IMU or vehicle's center-of-gravity (:ref:`more details here <common-sensor-offset-compensation>`)
-- mount the camera in other orientations and change the :ref:`VISO_ORIENT <VISO_ORIENT>` parameter.  Note: if you are using the ZED's depth sensing you will also need to modify `OpenKai's configuration <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss>`__  (not documented)
+- mount the camera in other orientations and change the :ref:`VISO_ORIENT <VISO_ORIENT>` parameter.  
+  Note: if you are using the ZED's depth sensing you will also need to modify `OpenKai's configuration <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss>`__  (not documented)
 
 Ground Testing
 ==============
