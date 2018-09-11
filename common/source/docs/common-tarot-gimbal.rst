@@ -4,10 +4,8 @@
 Tarot Gimbal
 ============
 
-The `Tarot 2-Axis Gimbal <https://store.3dr.com/products/tarot-t-2d-brushless-gimbal-kit>`__
-is the recommended gimbal for the :ref:`Pixhawk <common-pixhawk-overview>`
-and :ref:`APM2 <common-apm25-and-26-overview>` due to its low cost and good
-performance.
+The `Tarot 2-Axis Gimbal <https://www.amazon.com/Tarot-T-2D-Brushless-Gimbal-Robotics/dp/B00OJFWAWS/ref=pd_lpo_sbs_21_t_0?_encoding=UTF8&psc=1&refRID=307GA49DPT5W5VJB7H32>`__
+is the recommended gimbal for the :ref:`Pixhawk <common-pixhawk-overview>` due to its low cost and good performance.
 
 Copter, Plane, Rover support passing through a pilot desired roll or
 pitch angle and also more advanced automated aiming of the camera (i.e.
@@ -24,7 +22,7 @@ user manual can also be found in the "User Manual" directory of the
 `Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
 file.
 
-Connecting the gimbal to the Pixhawk
+Connecting the Gimbal to the Pixhawk
 ====================================
 
 .. image:: ../../../images/Gimbal_Pixhawk_Tarot.jpg
@@ -96,8 +94,7 @@ change the configuration you should:
 #. In the configuration UI, select the COM port and press the **Open COM Port** button.  After a few seconds the image of the camera should begin moving as the gimbal is moved.
 #. The most important setting is to set the **Default Mode** (just above COM port drop-down) to **Default Mode: stick position mode**.  Select this and press **Write Settings To Flash**.  Alternatively to load all the 3DR recommended configuration:
 
-   #. First right-click on `this link to the 3DR_Tarot.bgsc file <https://raw.githubusercontent.com/diydrones/ardupilot/master/Tools/Frame_params/3DR_Tarot.bgsc>`__
-      and save to somewhere on your computer.
+   #. First right-click on `this link to the 3DR_Tarot.bgsc file <https://raw.githubusercontent.com/diydrones/ardupilot/master/Tools/Frame_params/3DR_Tarot.bgsc>`__ and save to somewhere on your computer.
    #. Press the **Load Config** button on the configuration UI and
       select the *3DR_Tarot.bgsc file* downloaded above.
    #. Press Write **Settings To Flash** button
