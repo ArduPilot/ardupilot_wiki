@@ -179,7 +179,8 @@ Corporate Partners
     :target:  http://makeflyeasy.com/
     
 .. image:: ../../../images/supporters/supporters_logo_hexsoon.jpg
-    :width: 250px   
+    :width: 250px
+    :target: http://ardupilot.org/about/Partners
     
 .. image:: ../../../images/supporters/supporters_logo_MicroAerialProjects.png
     :width: 250px   
