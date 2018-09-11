@@ -62,9 +62,9 @@ Components required in addition to the Flamewheel ARF kit
 Frame and Motor Assembly
 ========================
 
--  Go to the DJI web site Flamewheel support section
-   `(Here!) <https://www.dji.com/flame-wheel-arf/download>`__
-   to get a PDF copy of their "manual" none is included in the kits.
+-  Get the "manual": `F330_User_Manual_v1.6_en.pdf <http://dl.djicdn.com/downloads/flamewheel/en/F330_User_Manual_v1.6_en.pdf>`__.
+   (If there is a more recent version, you may find it in the 
+   `DJI website Flamewheel support section <https://www.dji.com/flame-wheel-arf/download>`__).
 
    -  It is more of an assembly diagram than a manual, but the pictures
       are definitely useful.

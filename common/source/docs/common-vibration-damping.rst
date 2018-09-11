@@ -133,8 +133,8 @@ O-ring Suspension Mount
    board has been mounted.
 #. Insert 1/16" nylon O-rings through each corner of the flight control
    board and the standoffs so that the flight controller has no hard
-   connections to the frame. Link
-   `(Here!) <http://www.oringwarehouse.com/#selector>`__
+   connections to the frame. 
+   Link `(Here!) <http://www.oringwarehouse.com/>`__
 
    -  The overall O-ring diameter should be chosen to firmly retain the
       board while providing for light to moderate initial but rapidly
@@ -182,7 +182,7 @@ Ear Plug Mount
 
 #. Purchase slow response silicon or urethane foam or PVC foam earplugs
    such as `these from
-   3M <http://solutions.3m.com/wps/portal/3M/en_EU/OccSafety/Home/Products/ProductCatalogue/?PC_7_RJH9U5230GE3E02LECFTDQKKT1000000_nid=D4H3DJ5WP9beN8MT32R3VMgl>`__
+   3M <https://www.3m.com/3M/en_US/company-us/all-3m-products/~/3M-E-A-R-Classic-Earplugs-390-1000-Uncorded-Value-Pack-2000-Pair-Case/?N=5002385+3294755285&rt=rud>`__
 #. Create a platform upon which to mount your flight control board with
    holes at the four corners. The holes should be large enough to allow
    the ear plugs to be inserted into them but not so loose that the
@@ -225,11 +225,8 @@ Bulb Damper + Ear Plug .05G Ultra Low Vibration Mount
    .. image:: ../../../images/vibration_flamewheel_clone_closeup.jpg
        :target: ../_images/vibration_flamewheel_clone_closeup.jpg
        
-#. The APM flight controller is also mounted on anti-vibration grommets
-   available from `McMaster Carr <http://www.mcmaster.com/#vibration-damping-grommets/>`__ package
-   of 25 each part #9311K64 recommended.
-#. This was successful at damping a FlameWheel clone with flexible arms
-   and over size 12" propellers into the .05 G range.
+#. The APM flight controller is also mounted on anti-vibration grommets available from `McMaster Carr <https://www.mcmaster.com/vibration-damping-grommets>`__ (package of 25 each part #9311K64 recommended).
+#. This was successful at damping a FlameWheel clone with flexible arms and over size 12" propellers into the .05 G range.
 
    .. image:: ../../../images/F450-Quad-Vibes-1.png
        :target: ../_images/F450-Quad-Vibes-1.png
@@ -346,9 +343,9 @@ downloaded from here: \ `Turnigy Talon 2min Loiter (default PIDs) <https://www.d
 3D Printed Anti-Vibration Platform for NAVIO2
 ---------------------------------------------
 
-Anti-vibration for NAVIO2 can be easily 3D printed. It significantly simplifies mounting and eliminates vibrations. You can find STL files `here <https://docs.emlid.com/navio2/Navio-APM/hardware-setup/#anti-vibration-mount>`__.
-
-
+Anti-vibration for NAVIO2 can be easily 3D printed. 
+It significantly simplifies mounting and eliminates vibrations. 
+You can find STL files `here <https://docs.emlid.com/navio2/ardupilot/hardware-setup/#anti-vibration-mount>`__.
 
 Anti-vibration with Navio2 mounted on frame:
 

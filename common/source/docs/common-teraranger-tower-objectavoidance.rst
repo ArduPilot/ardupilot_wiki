@@ -6,7 +6,7 @@ TeraRanger Tower for Object Avoidance
 
 [copywiki destination="copter"]
 
-The `TeraRanger Tower <http://www.teraranger.com/teraranger-tower/>`__ can be used for Object Avoidance in Copter-3.5 and higher in Loiter and AltHold modes.  The sensor has a maximum useable range of about 4.5 meters.
+The `TeraRanger Tower <https://www.terabee.com/portfolio-item/teraranger-tower-scanner-for-slam-and-collision-avoidance/>`__ can be used for Object Avoidance in Copter-3.5 and higher in Loiter and AltHold modes.  The sensor has a maximum useable range of about 4.5 meters.
 
 ..  youtube:: dOaO1mff9QM
     :width: 100%

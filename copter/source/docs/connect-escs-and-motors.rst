@@ -240,7 +240,7 @@ clock-wise until reaching the front left motor.
 KDE (and other) Opto Isolated ESCs
 ==================================
 
-The KDEXF-UAS and KDEF-UASHV Series are opto-solated and do not provide
+The KDEXF-UAS and KDEF-UASHV Series are opto-isolated and do not provide
 BEC power output for the peripheral equipment. They require +5V to power
 the opto-isolator and while the Pixhawk can be powered from the servo
 rail, it does not provide +5V to the servo rail. The ESCs must be
@@ -264,14 +264,11 @@ Some ESCs have been reported as not working with Pixhawk.
 The Pixhawk should work with every ESC that works with a normal RC
 receiver (because it sends the same type of signal) but there is `one known exception, the EMAX ESC <https://github.com/ArduPilot/ardupilot/issues/2094>`__.
 
-In most cases problems are due to incorrect wiring. Always connect
-signal and ground. Check your ESC type to decide how to connect the +5V
-line. On APM2.x you could get away with using the power ground as the
-signal return with the APM but for Pixhawk you must connect both the
-signal and the signal ground in order to make the ESC work.
+In most cases problems are due to incorrect wiring. Always connect signal and ground. 
+Check your ESC type to decide how to connect the +5V line. 
+For Pixhawk you must connect both the signal and the signal ground in order to make the ESC work.
 
-For more information `see this page <https://pixhawk.org/users/actuators/pwm_escs_and_servos>`__ and
-the `video here <https://youtu.be/6C1YG1e2aTo>`__.
+For more information see `this video <https://youtu.be/6C1YG1e2aTo>`__.
 
 .. |prop_direction| image:: ../images/prop_direction.jpg
     :target: ../_images/prop_direction.jpg
