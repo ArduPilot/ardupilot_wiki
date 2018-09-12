@@ -11,3 +11,4 @@ make a airframe specific setup guide worthwhile.
     :maxdepth: 1
 
     Parrot Disco <airframe-disco>
+    MakeFlyEasy Believer <airframe-believer>
