@@ -25,7 +25,7 @@ Key features include:
 -  :ref:`Loiter <loiter-mode>` and :ref:`PosHold <poshold-mode>` modes: the vehicle will hold its position using its GPS, accelerometers and barometer.
 -  :ref:`Return to launch <rtl-mode>`: Flip a switch to have Copter fly back to the launch location and land automatically.
 -  :ref:`Ad-hoc commands in Flight <ac2_guidedmode>` : With a two-way telemetry radio installed, just click on the map and the vehicle will fly to the desired location.
--  :ref:`Autonomous missions <auto-mode>`: Use the ground station to define complex missions with up to hundreds of GPS wapoints.  Then switch the vehicle to "AUTO" and watch it take-off, execute the mission, then return home, land and disarm all without any human intervention.
+-  :ref:`Autonomous missions <auto-mode>`: Use the ground station to define complex missions with up to hundreds of GPS waypoints.  Then switch the vehicle to "AUTO" and watch it take-off, execute the mission, then return home, land and disarm all without any human intervention.
 -  :ref:`Failsafes <failsafe-landing-page>`: The software monitors the state of the system and triggers an autonomous return-to-home in case of loss of contact with the pilot, low battery or the vehicle strays outside a defined geofence.
 -  **Flexible and customizable**: Copter can fly :ref:`all shapes and sizes of vehicles <common-all-vehicle-types>` just how you want it to because the user has access to hundreds of parameters that control its behaviour.  You won't need to touch most of them but they are there if you need them.
 -  **No vendor lock-in**: ArduPilot is fully open source with a diverse community of developers behind it.  You remain in full control of what software is on your vehicle and how it performs.
