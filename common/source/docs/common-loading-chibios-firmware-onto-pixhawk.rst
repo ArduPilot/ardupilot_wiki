@@ -30,7 +30,7 @@ Download the appropriate beta firmware from `firmware.ardupilot.org <http://firm
 Uploading as Custom Firmware
 ============================
  
-- connect the ground station PC to the flight controller using a USB cable
+- connect the ground station PC to the flight controller using a USB cable (Don't use external USB only use the USB built into the flight controller)
 - select the COM port and baud rate (normally 115200) for the board.  If using the Mission Planner these are selected on the top right of the screen.  Do **not** press the Connect button
 - go to the GCS's firmware install screen.  If using the Mission Planner select "Initial Setup >> Install Firmware"
 - click the "Load custom firmware" link and select the .apj file downloaded above.  If using the Mission Planner and the "Load custom firmware" link is not visible select "Config/Tuning >> Planner" and set the "Layout" drop-down to "Advanced".
