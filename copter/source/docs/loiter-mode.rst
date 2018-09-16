@@ -49,6 +49,28 @@ Details for tuning :ref:`AltHold are on this wiki page <altholdmode_tuning>`.
 
 :ref:`VEL_XY_P <VEL_XY_P>` (shown as "Rate Loiter P, I and D") converts the desired speed towards the target to a desired acceleration.  The resulting desired acceleration becomes a lean angle which is then passed to the same angular controller used by :ref:`Stabilize mode <stabilize-mode>`.  **It is generally not required to adjust this.**
 
+
+.. _loiter-mode_tuning (from Copter version 3.6):
+.. note::
+
+Tuning the new Loiter mode (from Copter version 3.6)
+======
+You can tune the new Loiter by recording the lean angle at the maximum speed you want loiter to travel.
+
+Set LOIT_ANG_MAX and LOIT_SPEED to those two values.
+
+Then set LOIT_BRK_ACCEL to define how much extra breaking you want to see when you let go of the sticks.
+
+And the LOIT_BRK_DELAY to define how long after you let the sticks go the extra breaking kicks in. This is there so you         can fly around slowly without the aircraft constantly trying to break.
+
+If you find that the breaking increases too rapidly when it kicks in (after LOIT_BRK_DELAY) then you can reduce the     LOIT_BRK_JERK.
+
+You can also increase or decrease the maximum correction acceleration that the aircraft will use as it removes position errors using LOIT_ACC_MAX. Lower values will make these corrections more subtle but also less aggressive.
+
+
+
+
+
 Common Problems
 ===============
 
