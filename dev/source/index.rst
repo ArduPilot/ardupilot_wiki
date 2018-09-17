@@ -152,6 +152,7 @@ Full Table of Contents
     Events <docs/events>
     Schools <docs/schools>
     GSoC 2018 project ideas <docs/gsoc-ideas-list>
+    Google Code-In 2018 <docs/google-code-in-task-list>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
