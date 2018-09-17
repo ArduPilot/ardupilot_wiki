@@ -91,7 +91,6 @@ For the APM 2.x board for ch9, ch10 and/or ch11 ensure that the jumper
 trace(s) on the bottom of the board have not been cut and that they have
 not been re-jumpered for analog use.
 
-For APM 1: ch5, ch6, ch7 and/or ch8
 
 Gimbal configuration through the mission planner
 ================================================
@@ -104,10 +103,8 @@ channel and ensure the **"Stabilise"** checkbox is checked.
 
 .. note::
 
-   Modern brushless gimbals (like the :ref:`Tarot <common-tarot-gimbal>`
-   and :ref:`SToRM32 <common-storm32-gimbal>`) usually come with their own
-   controllers that handle gimbal *stabilisation*. For those controllers
-   the **"Stabilise"** checkbox must not be checked. 
+   Modern brushless gimbals (like the :ref:`SToRM32 <common-storm32-gimbal>`) usually come with their own controllers that handle gimbal *stabilisation*. 
+   For those controllers the **Stabilise** checkbox must not be checked. 
 
 The **Servo Limits** should be adjusted to ensure the gimbal servos
 don't bind.

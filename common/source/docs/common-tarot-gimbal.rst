@@ -1,8 +1,12 @@
 .. _common-tarot-gimbal:
 
-============
-Tarot Gimbal
-============
+==========================
+Archived: 3DR Tarot Gimbal
+==========================
+
+.. warning::
+
+   **ARCHIVED ARTICLE**: The Tarot Gimbal is no longer being manufactured by 3DR.
 
 The `Tarot 2-Axis Gimbal <https://www.amazon.com/Tarot-T-2D-Brushless-Gimbal-Robotics/dp/B00OJFWAWS/ref=pd_lpo_sbs_21_t_0?_encoding=UTF8&psc=1&refRID=307GA49DPT5W5VJB7H32>`__
 is the recommended gimbal for the :ref:`Pixhawk <common-pixhawk-overview>` due to its low cost and good performance.
@@ -37,8 +41,7 @@ gimbal.
 
 The "T" pin should be connected to the Pixhawk's AUX1 signal pin.
 
-One of the two "-" pins should be connected to the Pixhawk's AUX1 ground
-pin.
+One of the two "-" pins should be connected to the Pixhawk's AUX1 ground pin.
 
 Operation
 =========
@@ -94,9 +97,8 @@ change the configuration you should:
 #. In the configuration UI, select the COM port and press the **Open COM Port** button.  After a few seconds the image of the camera should begin moving as the gimbal is moved.
 #. The most important setting is to set the **Default Mode** (just above COM port drop-down) to **Default Mode: stick position mode**.  Select this and press **Write Settings To Flash**.  Alternatively to load all the 3DR recommended configuration:
 
-   #. First right-click on `this link to the 3DR_Tarot.bgsc file <https://raw.githubusercontent.com/diydrones/ardupilot/master/Tools/Frame_params/3DR_Tarot.bgsc>`__ and save to somewhere on your computer.
-   #. Press the **Load Config** button on the configuration UI and
-      select the *3DR_Tarot.bgsc file* downloaded above.
+   #. Download the **3DR_Tarot.bgsc** file to your computer (this was previously at `Tools/Frame_params <https://github.com/ArduPilot/ardupilot/tree/master/Tools/Frame_params>`__; you may need to get an old commit to find).
+   #. Press the **Load Config** button on the configuration UI and select the *3DR_Tarot.bgsc file* downloaded above.
    #. Press Write **Settings To Flash** button
 
 Set-up through the mission planner
@@ -105,8 +107,7 @@ Set-up through the mission planner
 .. image:: ../../../images/Tarot_MP_CameraGimbal_setup.png
     :target: ../_images/Tarot_MP_CameraGimbal_setup.png
 
-The channel 6 tuning knob's output can be used to control the pitch
-angle of the gimbal by:
+The channel 6 tuning knob's output can be used to control the pitch angle of the gimbal by:
 
 -  Connect the Pixhawk to the mission planner
 -  Open the **Initial Setup \| Optional Hardware \| Camera Gimbal**
@@ -174,7 +175,3 @@ The gimbal must be running firmware version 1.4 or higher. Follow the instructio
 
 ..  youtube:: A2WXguD2Ghs
     :width: 100%
-
-
-
-
