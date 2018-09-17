@@ -35,9 +35,9 @@ Specifications
 -  **Default Interfaces**
 
    -  6 PWM outputs
-   -  RC input PPM/sBus on RC input port's signal pin 3 (the yellow wire) )
+   -  RC input PPM/sBus on RC input port's signal pin 1 ( pin 3 (the yellow wire) for Plane )
    -  analog to digital inputs for battery voltage and current monitoring, more adcs possible on arbitrary pins
-   -  GPS rx / tx on RC input signal pins 3 & 4 
+   -  GPS rx / tx on RC input signal pins 3 & 4 (on Flexy port for Plane )
    -  Telem1 on mainport
    -  Telem2 on Flexi port
    -  USB port
