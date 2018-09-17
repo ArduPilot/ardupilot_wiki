@@ -36,7 +36,7 @@ Specifications
 
    -  6 PWM outputs
    -  RC input PPM/sBus on RC input port's signal pin 3 (the yellow wire)
-   -  analog to digital inputs for battery voltage and current monitoring pins 12,11, more adcs possible on arbitrary pins
+   -  analog to digital inputs for battery voltage and current monitoring ( set pins 12,11 in params ), more adcs possible on arbitrary pins
    -  GPS rx / tx on Flexy port
    -  Telem1 on mainport
    -  USB port
