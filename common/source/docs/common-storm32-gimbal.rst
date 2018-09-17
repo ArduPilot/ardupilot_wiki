@@ -115,11 +115,10 @@ Testing the gimbal
 ==================
 
 For instructions for testing the gimbal moves correctly please check the
-:ref:`similar section for the Tarot gimbal <common-tarot-gimbal_testing_the_gimbal_moves_correctly>`.
+:ref:`similar section for the SimpleBGC gimbal <common-simplebgc-gimbal_testing_the_gimbal_moves_correctly>`.
 
-The video below shows the STorM32 being tested on Copter3.3. It
-demonstrates a few features that would not be possible on a 2-axis
-gimbal like the :ref:`Tarot Gimbal <common-tarot-gimbal>`.
+The video below shows the STorM32 being tested on Copter3.3. 
+It demonstrates a few features that would not be possible on a 2-axis gimbal like the :ref:`Tarot Gimbal <common-tarot-gimbal>`.
 
 ..  youtube:: LAKrGXSFWpM
     :width: 100%

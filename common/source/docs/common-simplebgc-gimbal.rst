@@ -50,7 +50,25 @@ For a 3-axis gimbal with 360 degrees of yaw set:
 
 - :ref:`MNT_ANGMIN_PAN <MNT_ANGMIN_PAN>`, :ref:`MNT_ANGMAX_PAN <MNT_ANGMAX_PAN>` to -18000 and 18000 to get a full 360 degrees of yaw range
 
-Testing the gimbal
-==================
 
-For instructions for testing the gimbal moves correctly please check the :ref:`similar section for the Tarot gimbal <common-tarot-gimbal_testing_the_gimbal_moves_correctly>`.
+
+.. _common-simplebgc-gimbal_testing_the_gimbal_moves_correctly:
+
+Testing the gimbal moves correctly
+==================================
+
+**Testing the pilot's control of pitch**
+
+Once powered the gimbal should point to it's Tilt Angle Min (i.e. straight down) when your transmitter's channel 6 tuning knob is at its minimum PWM value (perhaps around 1000) and the camera should point to its maximum tilt angle (i.e. straight forward) when the tuning knob is at its maximum (perhaps around 2000). 
+The Mission Planner Radio calibration page can be used to check the Ch6's current input PWM value.
+
+**Testing ROI**
+
+**You must have GPS lock to test ROI.** 
+The ROI feature points the vehicle and/or camera to point at a target. 
+The instructions above describe setting up the APM/Pixhawk so that it only controls the Tilt (i.e. pitch) of the Tarot gimbal so when a :ref:`Do-Set-ROI <copter:mission-command-list_do-set-roi>` command is received Copter will attempt to turn the vehicle's nose to point in the direction of the target and tilt camera depending upon the vehicle's distance and altitude. 
+You can test the gimbal tilt moves correctly by connecting with the mission planner, then on the Flight Data screen's map, right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select **Point Camera Here** and input an altitude of -50 (meters). 
+This should cause the gimbal to point down at about 45 degrees.
+
+.. image:: ../../../images/Tarot_BenchTestROI.jpg
+    :target: ../_images/Tarot_BenchTestROI.jpg

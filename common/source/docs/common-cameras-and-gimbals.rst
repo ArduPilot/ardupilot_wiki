@@ -19,7 +19,6 @@ ArduPilot supports both brushless direct drive gimbals (Tarot, SimpleBGC, SToRM3
 that have their own self-stabilization controllers and the simpler servo-driven
 gimbals in which ArduPilot controls the stabilisation.
 
--  :ref:`Tarot Gimbal <common-tarot-gimbal>` — an inexpensive 2-axis brushless gimbal controller that is controlled using PWM signals.
 -  :ref:`SimpleBGC (aka AlexMos) Gimbal <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface.
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface.
 -  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation.
@@ -51,7 +50,6 @@ Detail topics
 .. toctree::
     :maxdepth: 1
 
-    Tarot Brushless Gimbal <common-tarot-gimbal>
     SToRM32 Gimbal Controller <common-storm32-gimbal>
     SimpleBGC Gimbal <common-simplebgc-gimbal>
     Gimbal with Servos <common-camera-gimbal>
