@@ -35,15 +35,18 @@ Specifications
 -  **Default Interfaces**
 
    -  6 PWM outputs
-   -  RC input PPM/sBus on RC input port's signal pin 1
-   -  analog to digital inputs for battery voltage and current monitoring, more adcs possible on arbitrary pins
-   -  GPS rx / tx on RC input signal pins 3 & 4 
+   -  RC input PPM/sBus on RC input port's signal pin 3 (the yellow wire)
+   -  analog to digital inputs for battery voltage and current monitoring ( set pins 12,11 in params ), more adcs possible on arbitrary pins
+   -  GPS rx / tx on Flexy port
    -  Telem1 on mainport
-   -  Telem2 on Flexi port
    -  USB port
    -  SWD Port for flashing and debugging, including 3.3V output for optional periphereals
    -  MMCX antenna connector for integrated HopeRF RFM22B 100mW 433MHz (fullsize Revolution only)
    -  OPLink port on RevoMini. OPLink hardware is not supported by ArduPilot, but this port exposes pins to be used for supported periphereals like SD card adapter
+   
+   Up to date info on Plane pinouts can be found here in define section: https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/revo-mini/hwdef.dat
+   
+   
    
 - **Optional Settings**
 
