@@ -258,30 +258,43 @@ a mission):**
 +---------------------+----------------------------------------------------------------------------------------+
 
 
-**CTUN (throttle and altitude information):**
+**CTUN (Control, Throttle and altitude information):**
 
 +---------+----------------------------------------------------------------------------------------------------+
 | FIELD   | DESCRIPTION                                                                                        |
 +---------+----------------------------------------------------------------------------------------------------+
-| ThrIn   | The pilot's throttle in as a number from 0 to 1000                                                 |
+| TimeUS  | Time stamp for messages (can be ignored)                                                           |
 +---------+----------------------------------------------------------------------------------------------------+
-| SonAlt  | The altitude above ground according to the sonar                                                   |
+| ThI     | The pilot's throttle in as a number from 0 to 1000                                                 |
 +---------+----------------------------------------------------------------------------------------------------+
-| BarAlt  | The altitude above ground according to the barometer                                               |
+| ABst    | Angle Boost: throttle increase (from 0 ~ 1000) as a result of the copter leaning over              |
+|         | (automatically added to all pilot and autopilot throttle to reduce altitude loss while leaning)    |
 +---------+----------------------------------------------------------------------------------------------------+
-| WPAlt   | The desired altitude while in AltHold, Loiter, RTL or Auto flight modes                            |
-+---------+----------------------------------------------------------------------------------------------------+
-| NavThr  | Not used                                                                                           |
-+---------+----------------------------------------------------------------------------------------------------+
-| AngBst  | Throttle increase (from 0 ~ 1000) as a result of the copter leaning over (automatically            |
-|         | added to all pilot and autopilot throttle to reduce altitude loss while  leaning)                  |
-+---------+----------------------------------------------------------------------------------------------------+
-| CRate   | Accelerometer + baro climb rate estimate in cm/s                                                   |
-+---------+----------------------------------------------------------------------------------------------------+
-| ThrOut  | Final throttle output sent to the motors (from 0 ~ 1000). Normally equal to ThrIn+AngBst while     |
+| ThO     | Final throttle output sent to the motors (from 0 ~ 1000). Normally equal to ThrI+ABst while        |
 |         | in stabilize mode.                                                                                 |
 +---------+----------------------------------------------------------------------------------------------------+
-| DCRate  | Pilot desired climb rate in cm/s                                                                   |
+| ThH     | ?                                                                                                  |
++---------+----------------------------------------------------------------------------------------------------+
+| DAlt    | The Desired Altitude while in AltHold, Loiter, RTL or Auto flight modes.                           |
+|         | It is influenced by EKF origin, which in 3.5.X is corrected by GPS altitude. This is behaviour is  |
+|         | turned off in 3.6.X and can be turned on with EKF_OGN_HGT_MASK.                                    |
++---------+----------------------------------------------------------------------------------------------------+
+| Alt     | The current EKF Altitude                                                                           |
++---------+----------------------------------------------------------------------------------------------------+
+| BAlt    | Barometer Altitude: The altitude above ground according to the barometer                           |
++---------+----------------------------------------------------------------------------------------------------+
+| DSAlt   | Not used? (Only visible of Sonar is available)                                                     |
++---------+----------------------------------------------------------------------------------------------------+
+| SAlt    | Sonar Altitude: the altitude above ground according to the sonar                                   |
+|         | (Only visible of Sonar is available)                                                               |
++---------+----------------------------------------------------------------------------------------------------+
+| TAlt    | Not used?                                                                                          |
++---------+----------------------------------------------------------------------------------------------------+
+| CRate   | Climb Rate: Accelerometer + baro estimate in cm/s                                                  |
++---------+----------------------------------------------------------------------------------------------------+
+| DCRate  | Desired Climb Rate in cm/s                                                                         |
++---------+----------------------------------------------------------------------------------------------------+
+| CRate   | Climb Rate in cm/s                                                                                 |
 +---------+----------------------------------------------------------------------------------------------------+
 
 **D32, DU32 (single data values which are either signed 32bit integers
