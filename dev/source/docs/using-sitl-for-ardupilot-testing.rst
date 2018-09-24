@@ -184,7 +184,7 @@ SITL can simulate a virtual gimbal.
 .. note::
 
    Gimbal simulation causes SITL to start sending
-   `MOUNT_STATUS <http://mavlink.org/messages/ardupilotmega#MOUNT_STATUS>`__
+   `MOUNT_STATUS <https://mavlink.io/en/messages/ardupilotmega.html#MOUNT_STATUS>`__
    messages. These messages contain the orientation according to the last
    commands sent to the gimbal, not actual measured values. As a result, it
    is possible that the true gimbal position will not match - i.e. a
