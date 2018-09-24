@@ -74,6 +74,6 @@ Instructions
 
 Guided_NoGPS
 ============
-This variation of Guided mode does not require a GPS but it only accepts `attitude targets <http://mavlink.org/messages/common#SET_ATTITUDE_TARGET>`__.  Because it does not accept position or velocity targets like regular Guided mode it is generally not useful for regular users.  This mode was created for use by companion computers that may want to fly the vehicle as if it was in AltHold mode.
+This variation of Guided mode does not require a GPS but it only accepts `attitude targets <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__.  Because it does not accept position or velocity targets like regular Guided mode it is generally not useful for regular users.  This mode was created for use by companion computers that may want to fly the vehicle as if it was in AltHold mode.
 
 This mode is only available in Copter-3.4 (and higher).

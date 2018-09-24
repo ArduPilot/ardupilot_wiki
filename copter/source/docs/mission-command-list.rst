@@ -5,7 +5,7 @@ Copter Mission Command List
 ===========================
 
 This page provides details of all the mission commands 
-(i.e. `MAVLink commands <http://mavlink.org/messages/common#MAV_CMD_NAV_WAYPOINT>`__) supported by Copter that can be run as part of a mission (i.e. :ref:`AUTO flight mode <auto-mode>`).
+(i.e. `MAVLink commands <https://mavlink.io/en/messages/common.html#MAV_CMD_NAV_WAYPOINT>`__) supported by Copter that can be run as part of a mission (i.e. :ref:`AUTO flight mode <auto-mode>`).
 
 Each of the commands below is either a "Navigation" command or a "Do"
 command.  Navigation commands (i.e. "TakeOff" and "Waypoint") affect the

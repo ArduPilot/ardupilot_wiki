@@ -187,7 +187,7 @@ In addition to ``takeoff``, you can send the following commands in
    :ref:`MAV_CMD_NAV_TAKEOFF <copter:mav_cmd_nav_takeoff>`,
    :ref:`MAV_CMD_DO_CHANGE_SPEED <copter:mav_cmd_do_change_speed>`,
    :ref:`MAV_CMD_CONDITION_YAW <copter:mav_cmd_condition_yaw>`,
-   `SET_POSITION_TARGET_LOCAL_NED <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__.
+   `SET_POSITION_TARGET_LOCAL_NED <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__.
 
    At time of writing, the other :ref:`Copter Commands <copter-commands-in-guided-mode>`
    are not supported (`MAVProxy #150 <https://github.com/ArduPilot/MAVProxy/issues/150>`__)
