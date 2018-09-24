@@ -127,7 +127,7 @@ This project involves using machine vision and/or machine learning to add a new 
 
 - would likely require a high powered `companion computer <http://ardupilot.org/dev/docs/companion-computers.html>`__ (perhaps an NVidia TX1/TX2).
 - recognise the road, landing spot or return path to home using machine vision or learning (perhaps using `TensorFlow <https://www.tensorflow.org/>`__)
-- send velocity commands (probably using the `SET_GLOBAL_POSITION_INT <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <http://mavlink.org/messages/common#SET_POSITION_TARGET_GLOBAL_INT>`__) to move the vehicle in the correct direction
+- send velocity commands (probably using the `SET_GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__) to move the vehicle in the correct direction
 - add solution to `APSync <http://ardupilot.org/dev/docs/apsync-intro.html>`__
 - document the solution
 

@@ -31,7 +31,7 @@ MAV_CMDs
 =========
 
 These MAV_CMDs can be processed if packaged within a
-`COMMAND_LONG <http://mavlink.org/messages/common#COMMAND_LONG>`__ message.
+`COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message.
 
 :ref:`MAV_CMD_NAV_TAKEOFF <copter:mav_cmd_nav_takeoff>`
 (Copter 3.2.1 or earlier)
@@ -84,37 +84,37 @@ These MAV_CMDs can be processed if packaged within a
 :ref:`MAV_CMD_DO_GRIPPER <copter:mav_cmd_do_gripper>`
 (If gripper enabled) (Copter 3.2.1 or earlier)
 
-`MAV_CMD_START_RX_PAIR <http://mavlink.org/messages/common#MAV_CMD_START_RX_PAIR>`__
+`MAV_CMD_START_RX_PAIR <https://mavlink.io/en/messages/common.html#MAV_CMD_START_RX_PAIR>`__
 (Copter 3.3) Starts receiver pairing
 
-`MAV_CMD_PREFLIGHT_CALIBRATION <http://mavlink.org/messages/common#MAV_CMD_PREFLIGHT_CALIBRATION>`__
+`MAV_CMD_PREFLIGHT_CALIBRATION <https://mavlink.io/en/messages/common.html#MAV_CMD_PREFLIGHT_CALIBRATION>`__
 (Copter 3.3)
 
-`MAV_CMD_PREFLIGHT_SET_SENSOR_OFFSETS <http://mavlink.org/messages/common#MAV_CMD_PREFLIGHT_SET_SENSOR_OFFSETS>`__
+`MAV_CMD_PREFLIGHT_SET_SENSOR_OFFSETS <https://mavlink.io/en/messages/common.html#MAV_CMD_PREFLIGHT_SET_SENSOR_OFFSETS>`__
 (Copter 3.3)
 
-`MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN <http://mavlink.org/messages/common#MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN>`__
+`MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN <https://mavlink.io/en/messages/common.html#MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN>`__
 (Copter 3.3)
 
-`MAV_CMD_DO_MOTOR_TEST <http://mavlink.org/messages/ardupilotmega#MAV_CMD_DO_MOTOR_TEST>`__
+`MAV_CMD_DO_MOTOR_TEST <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_MOTOR_TEST>`__
 (Copter 3.3)
 
-`MAV_CMD_REQUEST_AUTOPILOT_CAPABILITIES <http://mavlink.org/messages/common#MAV_CMD_REQUEST_AUTOPILOT_CAPABILITIES>`__
+`MAV_CMD_REQUEST_AUTOPILOT_CAPABILITIES <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_AUTOPILOT_CAPABILITIES>`__
 (Copter 3.3)
 
-`MAV_CMD_GET_HOME_POSITION <http://mavlink.org/messages/common#MAV_CMD_GET_HOME_POSITION>`__
+`MAV_CMD_GET_HOME_POSITION <https://mavlink.io/en/messages/common.html#MAV_CMD_GET_HOME_POSITION>`__
 (Copter 3.3)
 
-`MAV_CMD_DO_START_MAG_CAL <http://mavlink.org/messages/ardupilotmega#MAV_CMD_DO_START_MAG_CAL>`__
+`MAV_CMD_DO_START_MAG_CAL <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_START_MAG_CAL>`__
 (Master - not in Copter 3.3)
 
-`MAV_CMD_DO_ACCEPT_MAG_CAL <http://mavlink.org/messages/ardupilotmega#MAV_CMD_DO_ACCEPT_MAG_CAL>`__
+`MAV_CMD_DO_ACCEPT_MAG_CAL <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_ACCEPT_MAG_CAL>`__
 (Master - not in Copter 3.3)
 
-`MAV_CMD_DO_CANCEL_MAG_CAL <http://mavlink.org/messages/ardupilotmega#MAV_CMD_DO_CANCEL_MAG_CAL>`__
+`MAV_CMD_DO_CANCEL_MAG_CAL <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_CANCEL_MAG_CAL>`__
 (Master - not in Copter 3.3)
 
-`MAV_CMD_DO_FLIGHTTERMINATION <http://mavlink.org/messages/common#MAV_CMD_DO_FLIGHTTERMINATION>`__
+`MAV_CMD_DO_FLIGHTTERMINATION <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_FLIGHTTERMINATION>`__
 (Copter 3.3) Disarms motors immediately (Copter falls!).
 
 MAV_CMD_DO_SEND_BANNER - No link available (?)
@@ -124,7 +124,7 @@ inside `:ref:`COMMAND_LONG``): `MAV_CMD_DO_DIGICAM_CONFIGURE <copter:mav_cmd_do_
 
 :ref:`MAV_CMD_DO_DIGICAM_CONTROL <copter:mav_cmd_do_digicam_control>`
 
-`MAV_CMD_DO_MOUNT_CONFIGURE <http://mavlink.org/messages/common#MAV_CMD_DO_MOUNT_CONFIGURE>`__
+`MAV_CMD_DO_MOUNT_CONFIGURE <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_MOUNT_CONFIGURE>`__
 
 :ref:`MAV_CMD_DO_MOUNT_CONTROL <copter:mav_cmd_do_mount_control>`
 
@@ -139,73 +139,73 @@ in GUIDED mode.
    Most of these commands are not relevant to DroneKit-Python apps or
    are already provided through the API.
 
-`HEARTBEAT <http://mavlink.org/messages/common#HEARTBEAT>`__
+`HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__
 
-`SET_MODE <http://mavlink.org/messages/common#SET_MODE>`__
+`SET_MODE <https://mavlink.io/en/messages/common.html#SET_MODE>`__
 
-`PARAM_REQUEST_READ <http://mavlink.org/messages/common#PARAM_REQUEST_READ>`__
+`PARAM_REQUEST_READ <https://mavlink.io/en/messages/common.html#PARAM_REQUEST_READ>`__
 
-`PARAM_REQUEST_LIST <http://mavlink.org/messages/common#PARAM_REQUEST_LIST>`__
+`PARAM_REQUEST_LIST <https://mavlink.io/en/messages/common.html#PARAM_REQUEST_LIST>`__
 
-`PARAM_SET <http://mavlink.org/messages/common#PARAM_SET>`__
+`PARAM_SET <https://mavlink.io/en/messages/common.html#PARAM_SET>`__
 
-`MISSION_WRITE_PARTIAL_LIST <http://mavlink.org/messages/common#MISSION_WRITE_PARTIAL_LIST>`__
+`MISSION_WRITE_PARTIAL_LIST <https://mavlink.io/en/messages/common.html#MISSION_WRITE_PARTIAL_LIST>`__
 
-`MISSION_ITEM <http://mavlink.org/messages/common#MISSION_ITEM>`__
+`MISSION_ITEM <https://mavlink.io/en/messages/common.html#MISSION_ITEM>`__
 
-`MISSION_REQUEST <http://mavlink.org/messages/common#MISSION_REQUEST>`__
+`MISSION_REQUEST <https://mavlink.io/en/messages/common.html#MISSION_REQUEST>`__
 
-`MISSION_SET_CURRENT <http://mavlink.org/messages/common#MISSION_SET_CURRENT>`__
+`MISSION_SET_CURRENT <https://mavlink.io/en/messages/common.html#MISSION_SET_CURRENT>`__
 
-`MISSION_REQUEST_LIST <http://mavlink.org/messages/common#MISSION_REQUEST_LIST>`__
+`MISSION_REQUEST_LIST <https://mavlink.io/en/messages/common.html#MISSION_REQUEST_LIST>`__
 
-`MISSION_COUNT <http://mavlink.org/messages/common#MISSION_COUNT>`__
+`MISSION_COUNT <https://mavlink.io/en/messages/common.html#MISSION_COUNT>`__
 
-`MISSION_CLEAR_ALL <http://mavlink.org/messages/common#MISSION_CLEAR_ALL>`__
+`MISSION_CLEAR_ALL <https://mavlink.io/en/messages/common.html#MISSION_CLEAR_ALL>`__
 
-`REQUEST_DATA_STREAM <http://mavlink.org/messages/common#REQUEST_DATA_STREAM>`__
+`REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__
 
-`GIMBAL_REPORT <http://mavlink.org/messages/ardupilotmega#GIMBAL_REPORT>`__
+`GIMBAL_REPORT <https://mavlink.io/en/messages/ardupilotmega.html#GIMBAL_REPORT>`__
 
-`RC_CHANNELS_OVERRIDE <http://mavlink.org/messages/common#RC_CHANNELS_OVERRIDE>`__
+`RC_CHANNELS_OVERRIDE <https://mavlink.io/en/messages/common.html#RC_CHANNELS_OVERRIDE>`__
 
-`COMMAND_ACK <http://mavlink.org/messages/common#COMMAND_ACK>`__
+`COMMAND_ACK <https://mavlink.io/en/messages/common.html#COMMAND_ACK>`__
 
-`HIL_STATE <http://mavlink.org/messages/common#HIL_STATE>`__
+`HIL_STATE <https://mavlink.io/en/messages/common.html#HIL_STATE>`__
 
-`RADIO <http://mavlink.org/messages/ardupilotmega#RADIO>`__
+`RADIO <https://mavlink.io/en/messages/ardupilotmega.html#RADIO>`__
 
-`RADIO_STATUS <http://mavlink.org/messages/common#RADIO_STATUS>`__
+`RADIO_STATUS <https://mavlink.io/en/messages/common.html#RADIO_STATUS>`__
 
-`LOG_REQUEST_DATA <http://mavlink.org/messages/common#LOG_REQUEST_DATA>`__
+`LOG_REQUEST_DATA <https://mavlink.io/en/messages/common.html#LOG_REQUEST_DATA>`__
 
-`LOG_ERASE <http://mavlink.org/messages/common#LOG_ERASE>`__
+`LOG_ERASE <https://mavlink.io/en/messages/common.html#LOG_ERASE>`__
 
-`LOG_REQUEST_LIST <http://mavlink.org/messages/common#LOG_REQUEST_LIST>`__
+`LOG_REQUEST_LIST <https://mavlink.io/en/messages/common.html#LOG_REQUEST_LIST>`__
 
-`LOG_REQUEST_END <http://mavlink.org/messages/common#LOG_REQUEST_END>`__
+`LOG_REQUEST_END <https://mavlink.io/en/messages/common.html#LOG_REQUEST_END>`__
 
-`SERIAL_CONTROL <http://mavlink.org/messages/common#SERIAL_CONTROL>`__
+`SERIAL_CONTROL <https://mavlink.io/en/messages/common.html#SERIAL_CONTROL>`__
 
-`GPS_INJECT_DATA <http://mavlink.org/messages/common#GPS_INJECT_DATA>`__
+`GPS_INJECT_DATA <https://mavlink.io/en/messages/common.html#GPS_INJECT_DATA>`__
 
-`TERRAIN_DATA <http://mavlink.org/messages/common#TERRAIN_DATA>`__
+`TERRAIN_DATA <https://mavlink.io/en/messages/common.html#TERRAIN_DATA>`__
 
-`TERRAIN_CHECK <http://mavlink.org/messages/common#TERRAIN_CHECK>`__
+`TERRAIN_CHECK <https://mavlink.io/en/messages/common.html#TERRAIN_CHECK>`__
 
-`RALLY_POINT <http://mavlink.org/messages/ardupilotmega#RALLY_POINT>`__
+`RALLY_POINT <https://mavlink.io/en/messages/ardupilotmega.html#RALLY_POINT>`__
 
-`RALLY_FETCH_POINT <http://mavlink.org/messages/ardupilotmega#RALLY_FETCH_POINT>`__
+`RALLY_FETCH_POINT <https://mavlink.io/en/messages/ardupilotmega.html#RALLY_FETCH_POINT>`__
 
-`AUTOPILOT_VERSION_REQUEST <http://mavlink.org/messages/ardupilotmega#AUTOPILOT_VERSION_REQUEST>`__
+`AUTOPILOT_VERSION_REQUEST <https://mavlink.io/en/messages/ardupilotmega.html#AUTOPILOT_VERSION_REQUEST>`__
 
-`LED_CONTROL <http://mavlink.org/messages/ardupilotmega#LED_CONTROL>`__
+`LED_CONTROL <https://mavlink.io/en/messages/ardupilotmega.html#LED_CONTROL>`__
 
-`ADSB_VEHICLE <http://mavlink.org/messages/common#ADSB_VEHICLE>`__
+`ADSB_VEHICLE <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`__
 
-`REMOTE_LOG_BLOCK_STATUS <http://mavlink.org/messages/ardupilotmega#REMOTE_LOG_BLOCK_STATUS>`__
+`REMOTE_LOG_BLOCK_STATUS <https://mavlink.io/en/messages/ardupilotmega.html#REMOTE_LOG_BLOCK_STATUS>`__
 
-`LANDING_TARGET <http://mavlink.org/messages/common#LANDING_TARGET>`__
+`LANDING_TARGET <https://mavlink.io/en/messages/common.html#LANDING_TARGET>`__
 (Planned for Copter 3.4)
 
 :ref:`SET_HOME_POSITION <copter-commands-in-guided-mode_set_home_position>` (Master branch - not in
@@ -284,7 +284,7 @@ bit 3: z, bit 4: vx, bit 5: vy, bit 6: vz, bit 7: ax, bit 8: ay, bit 9:
    (0b0000111111111000) OR all three bits for the velocity
    (0b0000111111000111). Setting just one bit of the position/velocity or
    mixing the bits is not supported. The **acceleration**, **yaw**,
-   **yaw_rate** are present in the `protocol definition <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__
+   **yaw_rate** are present in the `protocol definition <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__
    but are not supported by ArduPilot.
 
    
@@ -427,7 +427,7 @@ coordinate system.
    only be interrupted when the next movement command was received.
 
 The protocol definition is here:
-`SET_POSITION_TARGET_GLOBAL_INT <http://mavlink.org/messages/common#SET_POSITION_TARGET_GLOBAL_INT>`__.
+`SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__.
 
 **Command parameters**
 
@@ -480,7 +480,7 @@ bit 3: z, bit 4: vx, bit 5: vy, bit 6: vz, bit 7: ax, bit 8: ay, bit 9:
    (0b0000111111111000) OR all three bits for the velocity
    (0b0000111111000111). Setting just one bit of the position/velocity or
    mixing the bits is not supported. The **acceleration**, **yaw**,
-   **yaw_rate** are present in the `protocol definition <http://mavlink.org/messages/common#SET_POSITION_TARGET_LOCAL_NED>`__
+   **yaw_rate** are present in the `protocol definition <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__
    but are not supported by ArduPilot.
 
 .. raw:: html
@@ -643,7 +643,7 @@ explicitly set by the operator before or after.
    </table>
 
 The protocol definition for this command is here:
-`SET_HOME_POSITION <http://mavlink.org/messages/common#SET_HOME_POSITION>`__
+`SET_HOME_POSITION <https://mavlink.io/en/messages/common.html#SET_HOME_POSITION>`__
 
 
 .. _copter-commands-in-guided-mode_set_attitude_target:
@@ -733,4 +733,4 @@ Sets a desired vehicle attitude. Used by an external controller to command the v
    </table>
 
 The protocol definition for this command is here:
-`SET_ATTITUDE_TARGET <http://mavlink.org/messages/common#SET_ATTITUDE_TARGET>`__
+`SET_ATTITUDE_TARGET <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__

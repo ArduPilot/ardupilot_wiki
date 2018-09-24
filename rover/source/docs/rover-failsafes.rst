@@ -39,7 +39,7 @@ The second stage failsafe action will be taken once the battery falls below thes
 GCS Failsafe (aka Telemetry Failsafe)
 -------------------------------------
 
-This failsafe is triggered if the vehicle stops receiving `heartbeat messages <http://mavlink.org/messages/common#HEARTBEAT>`__ from the ground station for at least :ref:`FS_TIMEOUT <FS_TIMEOUT>` seconds.
+This failsafe is triggered if the vehicle stops receiving `heartbeat messages <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ from the ground station for at least :ref:`FS_TIMEOUT <FS_TIMEOUT>` seconds.
 
 - set :ref:`FS_GCS_ENABLE <FS_GCS_ENABLE>` to "1" to enable this failsafe
 - if :ref:`FS_ACTION <FS_ACTION>` is "1", the vehicle will :ref:`RTL <rtl-mode>` to home, if "2" the vehicle will :ref:`Hold <hold-mode>`
