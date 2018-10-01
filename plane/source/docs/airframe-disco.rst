@@ -28,8 +28,8 @@ To build the ArduPilot firmware yourself you should use the waf build
 system, which is included as part of ArduPilot. The command to build
 APM:Plane for Disco is:
 
-* ./waf configure --board disco
-* ./waf plane
+* ``./waf configure --board disco``
+* ``./waf plane``
 
 this will give you a file build/disco/bin/arduplane that needs to be
 installed on your Disco.
