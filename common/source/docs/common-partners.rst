@@ -198,7 +198,7 @@ Corporate Partners
     :width: 250px   
     :target:  https://agrobot.en.alibaba.com/company_profile.html
     
-.. image:: ../../../images/supporters/Supporters_logo_Mateksys.png
+.. image:: ../../../images/supporters/Supporters_Logo_Mateksys.png
     :width: 250px   
     :target:  http://www.mateksys.com/
 
