@@ -126,3 +126,18 @@ If there have been updates to some git submodules you may need to do a full clea
     make px4-clean
 
 that will remove the *PX4NuttX* archives so you can do a `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ from scratch
+
+
+Additional Steps for macOS mojave
+---------------------------------
+Due to some changes binutils installed via brew have stopped working for macOS mojave leading to crashing builds. So if installed, remove via following command:
+
+::
+
+    brew uninstall binutils
+
+Also you will need to install the c++ include headers to /usr/include to do that. Run the following in commandline and follow the installation routine:
+
+::
+
+    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
