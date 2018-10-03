@@ -15,9 +15,9 @@ This data can be used in post-flight analysis to characterise vibration issues, 
 Enabling Batch Data Collection
 ==============================
 
-The ``INS_BAT_MASK`` parameter specifies which IMUs in the system to log high-rate data for.  Set this to 255 to collect for all sensors.
+The ``INS_LOG_BAT_MASK`` parameter specifies which IMUs in the system to log high-rate data for.  Set this to 255 to collect for all sensors.
 
-``IMU RAW`` sampling must be enabled in your logging bitmask.  This is bit 19, so you must either use a GCS which has checkboxes for each bitmask option or add 1048576 to your current bitmask value.
+``IMU RAW`` sampling must be enabled in your logging bitmask.  This is bit 19, so you must either use a GCS which has checkboxes for each bitmask option or add 524288 to your current bitmask value.
 
 ``INS_LOG_BAT_OPT`` must be set to one
 
