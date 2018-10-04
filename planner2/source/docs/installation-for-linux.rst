@@ -51,7 +51,7 @@ Then retry the apmplanner installation again:
 Create a desktop icon
 =====================
 
-Click on `this link to download the apmplanner2.desktop <https://raw.githubusercontent.com/diydrones/apm_planner/master/debian/apmplanner2.desktop>`__
+Click on `this link to download the apmplanner2.desktop <https://raw.githubusercontent.com/ArduPilot/apm_planner/master/common/apmplanner2.desktop>`__
 file from github.  Set the properties on the file to "Allow executing
 file as program", then drag and drop the file to your start bar.
 
