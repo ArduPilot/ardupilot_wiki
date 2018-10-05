@@ -13,7 +13,7 @@ Overview
 On a Pixhawk there are a total of 5 serial ports.  The default use of each port is:
 
 - The micro USB port (aka Serial0) is used to connect to the ground station using a USB cable.  This should not be connected in flight because the flight code assumes that if it is receiving power through this port that it is on the bench and some :ref:`failsafes <copter:failsafe-landing-page>` (i.e. battery failsafe) are disabled.
-- Telem1 (aka Serial1) is for MAVLink communication and supports flow control.  This should be used especially for high power devices (up to 1 amp) such as the :ref:`RFD900 telemetry radio <common-rfd900>`
+- Telem1 (aka Serial1) is for MAVLink communication and supports flow control.  This should be used especially for high power devices (up to 1 amp) But NOT the :ref:`RFD900 telemetry radio <common-rfd900>`
 - Telem2 (aka Serial2) is for MAVLink communication and supports flow control.
 - GPS (aka Serial3) is for connecting a GPS
 - Serial 4/5 contains two serial connections on a single port.  Serial4 is normally used for a :ref:`second GPS <common-gps-blending>`.  Serial5 is a :ref:`debug connection <dev:interfacing-with-pixhawk-using-the-nsh>`.
