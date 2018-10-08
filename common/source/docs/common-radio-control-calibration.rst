@@ -70,7 +70,7 @@ Plane default channel mappings are:
 -  **Channel 3**: Throttle
 -  **Channel 4**: Yaw
 -  **Channel 8** (default): Flight modes. Mode selection can be mapped
-   to any unused parameter with the ``FLTMODE_CH`` parameter.
+   to any RC channel using the ``FLTMODE_CH`` parameter.
 
 [/site]
 
@@ -81,7 +81,7 @@ Rover default channel mappings are:
 -  **Channel 1**: Steer
 -  **Channel 3**: Throttle
 -  **Channel 8** (default): Flight modes. Mode selection can be mapped
-   to any unused parameter with the ``MODE_CH`` parameter.
+   to any RC channel using the ``MODE_CH`` parameter.
 
 [/site]
 
