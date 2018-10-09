@@ -201,6 +201,10 @@ Corporate Partners
 .. image:: ../../../images/supporters/Supporters_Logo_Mateksys.png
     :width: 250px   
     :target:  http://www.mateksys.com/
+    
+.. image:: ../../../images/supporters/Supporters_Logo_Tiho_Aviation.PNG
+    :width: 250px   
+    :target:  http://ardupilot.org/about/Partners
 
 How does my company become a partner?
 =====================================
