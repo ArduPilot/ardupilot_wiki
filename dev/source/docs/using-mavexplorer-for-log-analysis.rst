@@ -32,8 +32,13 @@ http://firmware.ardupilot.org/Tools/MAVProxy/
 
 That package includes both MAVProxy and MAVExplorer. 
 
-Then create a link from c:\Program Files (x86)\MAVProxy\MAVExplorer.exe onto your desktop.
-You can then start MAVExplorer by dragging a log file onto the MAVExplorer shortcut.
+Then create a link from 
+
+::
+
+    c:\Program Files (x86)\MAVProxy\MAVExplorer.exe 
+    
+onto your desktop. You can then start MAVExplorer by dragging a log file onto the MAVExplorer shortcut.
 
 Installing MAVExplorer on MacOS
 -------------------------------
