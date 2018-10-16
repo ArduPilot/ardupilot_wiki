@@ -26,9 +26,9 @@ types:
 
  - ``*.apj`` files: these are "ArduPilot JSON" firmwares, which contain a firmware that can be loaded by ArduPilot compatible ground station software
  - ``*.px4`` files: these are an older name for an apj file, and use the same format
- - hex files: these are firmwares in Intel hex format, for loading with DFU loading tools. 
+ - ``*.hex`` files: these are firmwares in Intel hex format, for loading with DFU loading tools. 
    These are used for boards which don't come with an ArduPilot compatible bootloader
- - hex with bl files: these are variants of the hex files with the bootloader built-in. 
+ - ``*_with_bl.hex`` files: these are variants of the hex files with the bootloader built-in. 
    They can be used to install both the bootloader and ArduPilot vehicle firmware in one step using a DFU loading tool
 
 Build Variants
