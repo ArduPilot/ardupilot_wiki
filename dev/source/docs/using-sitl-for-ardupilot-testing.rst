@@ -375,9 +375,13 @@ Testing Compass Calibration
 A quick way to test compass calibration in SITL is with the
 "calibration" vehicle model. To use this with plane do this:
 
+::
+
    sim_vehicle.py -D -f plane --model calibration --console --map
 
 then do:
+
+:: 
 
    servo set 5 1250
 
