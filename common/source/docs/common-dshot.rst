@@ -72,6 +72,7 @@ Support for KISS ESC Telemetry is planned.
 - :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 16 (if telemetry is connected to Serial5).
 - :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>` to 10 to enable 10hz updates and logging from the ESC.
 - :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` to the corresponding sum for the channels you want to monitor. (channel 1 = 1, channel 9 = 256, channel 10 = 512)
+- :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors. Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
 
 The flight board requests telemetry from only one ESC at a time, cycling between them. 
 The following data is logged in the ESCn log messages in your dataflash
