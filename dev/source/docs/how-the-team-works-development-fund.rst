@@ -1,10 +1,10 @@
 .. _how-the-team-works-development-fund:
 
-================
-Development Fund
-================
+=================
+Funding Committee
+=================
 
-ArduPilot collects funds through donations from individuals and Partners and are held within SPI.
+ArduPilot collects funds through donations from :ref:`individuals <common-donation>` and `Partners <http://ardupilot.org/about/Partners>`__ and these are held within SPI.
 Some of these funds go to pay for fixed costs including servers (i.e. build servers, wiki servers, etc) and are billed directly to ArduPilot's account within SPI.
 
 This page attempts to outline how any remaining funds are managed.
@@ -29,7 +29,11 @@ All proposal submissions are considered public information, and may be disclosed
 Evaluating Proposals
 --------------------
 
-The ArduPilot funding committee is made up of three elected members from the team.  Elections are held each year in November.
+The ArduPilot funding committee is made up of three elected members from the team with elections held each November.  The currently elected members are:
+
+- James Pattison
+- Pierre Kancir
+- Olivier Brousse
 
 This committee reviews the `Proposal category <https://discuss.ardupilot.org/c/proposals>`__ regularly and evaluates proposals based on both the benefit to ArduPilot and likelihood of success.
 The approve/reject decision is made by a simple majority vote (i.e. 2 of 3 must approve).
