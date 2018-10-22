@@ -42,6 +42,7 @@ Then the following range finder related parameters should be set:
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 17 (NMEA)
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 13
 -  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = 10000 (i.e. 100m).  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND_ORIENT <RNGFND_ORIENT>` = 25 (i.e. down) if mounted on a boat
 
 Configuring the sensor
 ----------------------
