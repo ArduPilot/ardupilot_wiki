@@ -193,7 +193,11 @@ Corporate Partners
 .. image:: ../../../images/supporters/Supporters_Logo_EaglePride.png
     :width: 250px   
     :target:  http://www.eaglepridedrones.com
-    
+
+.. image:: ../../../images/supporters/supporters_logo_KDE_Direct.png
+    :width: 250px
+    :target:  http://www.kdedirect.com
+
 .. image:: ../../../images/supporters/Supporters_logo_HangZhouQiFei.png
     :width: 250px   
     :target:  https://agrobot.en.alibaba.com/company_profile.html
