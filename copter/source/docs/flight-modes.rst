@@ -31,7 +31,7 @@ companion computer.
    <tr><td>Drift</td><td>-</td><td>+</td><td>Y</td><td>Like stabilize, but coordinates yaw with roll like a plane</td></tr>
    <tr><td>Flip</td><td>A</td><td>A</td><td></td><td>Rises and completes an automated flip</td></tr>
    <tr><td>FlowHold</td><td>s</td><td>A</td><td></td><td>Position control using Optical Flow</td></tr>
-   <tr><td>Follow</td><td>s</td><td>A</td><td>Y</td><td>Follows another GPS on the ground</td></tr>
+   <tr><td>Follow</td><td>s</td><td>A</td><td>Y</td><td>Follows another vehicle</td></tr>
    <tr><td>Guided</td><td>A</td><td>A</td><td>Y</td><td>Navigates to single points commanded by GCS</td></tr>
    <tr><td>Land</td><td>A</td><td>s</td><td>(Y)</td><td>Reduces altitude to ground level, attempts to go straight down</td></tr>
    <tr><td>Loiter</td><td>s</td><td>s</td><td>Y</td><td>Holds altitude and position, uses GPS for movements</td></tr>
@@ -79,6 +79,7 @@ Additional flight modes:
 -  :ref:`Drift <drift-mode>`
 -  :ref:`Flip <flip-mode>`
 -  :ref:`FlowHold <flowhold-mode>`
+-  :ref:`Follow <follow-mode>`
 -  :ref:`Guided <ac2_guidedmode>` (and :ref:`Guided_NoGPS <guided_nogps>`)
 -  :ref:`Land <land-mode>`
 -  :ref:`PosHold <poshold-mode>`
@@ -106,6 +107,7 @@ Requires GPS lock prior to takeoff:
 -  :ref:`Auto <auto-mode>`
 -  :ref:`Circle <circle-mode>`
 -  :ref:`Drift <drift-mode>`
+-  :ref:`Follow <follow-mode>`
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Guided <ac2_guidedmode>`
 -  :ref:`Loiter <loiter-mode>`
@@ -134,8 +136,9 @@ Full list of flight modes
     Brake <brake-mode>
     Circle <circle-mode>
     Drift <drift-mode>
-    Follow Me (GSC Enabled) <ac2_followme>
     Flip <flip-mode>
+    Follow <follow-mode>
+    Follow Me (GSC Enabled) <ac2_followme>
     Guided <ac2_guidedmode>
     Land <land-mode>
     Loiter <loiter-mode>
