@@ -50,8 +50,8 @@ companion computer.
    <table border="1" class="docutils">
    <tr><th>Symbol</th><th>Definition</th></tr>
    <tr><td>-</td><td>Manual control</td><tr>
-   <tr><td>+</td><td>Maunal control with limits & self-level</td><tr>
-   <tr><td>s</td><td>Automated stabilized control</td></tr>
+   <tr><td>+</td><td>Manual control with limits & self-level</td><tr>
+   <tr><td>s</td><td>Pilot controls climb rate</td></tr>
    <tr><td>A</td><td>Automatic control</td></tr>
    </table>
 
