@@ -30,6 +30,7 @@ companion computer.
    <tr><td>Circle</td><td>s</td><td>A</td><td>Y</td><td>Automatically circles a point in front of the vehicle</td></tr>
    <tr><td>Drift</td><td>-</td><td>+</td><td>Y</td><td>Like stabilize, but coordinates yaw with roll like a plane</td></tr>
    <tr><td>Flip</td><td>A</td><td>A</td><td></td><td>Rises and completes an automated flip</td></tr>
+   <tr><td>FlowHold</td><td>s</td><td>A</td><td></td><td>Position control using Optical Flow</td></tr>
    <tr><td>Follow</td><td>s</td><td>A</td><td>Y</td><td>Follows another GPS on the ground</td></tr>
    <tr><td>Guided</td><td>A</td><td>A</td><td>Y</td><td>Navigates to single points commanded by GCS</td></tr>
    <tr><td>Land</td><td>A</td><td>s</td><td>(Y)</td><td>Reduces altitude to ground level, attempts to go straight down</td></tr>
@@ -77,6 +78,7 @@ Additional flight modes:
 -  :ref:`Circle <circle-mode>`
 -  :ref:`Drift <drift-mode>`
 -  :ref:`Flip <flip-mode>`
+-  :ref:`FlowHold <flowhold-mode>`
 -  :ref:`Guided <ac2_guidedmode>` (and :ref:`Guided_NoGPS <guided_nogps>`)
 -  :ref:`Land <land-mode>`
 -  :ref:`PosHold <poshold-mode>`
