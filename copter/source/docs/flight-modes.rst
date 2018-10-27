@@ -103,22 +103,22 @@ of GPS dependency for Copter flight modes.
 
 Requires GPS lock prior to takeoff:
 
--  :ref:`Loiter <loiter-mode>`
--  :ref:`RTL (Return-to-Launch) <rtl-mode>`
 -  :ref:`Auto <auto-mode>`
--  :ref:`Guided <ac2_guidedmode>`
--  :ref:`Drift <drift-mode>`
--  :ref:`PosHold <poshold-mode>`
--  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Circle <circle-mode>`
+-  :ref:`Drift <drift-mode>`
+-  :ref:`Follow Me <ac2_followme>`
+-  :ref:`Guided <ac2_guidedmode>`
+-  :ref:`Loiter <loiter-mode>`
+-  :ref:`PosHold <poshold-mode>`
+-  :ref:`RTL (Return-to-Launch) <rtl-mode>`
 -  :ref:`Smart RTL (Return-to-Launch) <smartrtl-mode>`
 -  :ref:`Throw <throw-mode>`
 
 Do not require GPS lock:
 
--  :ref:`Stabilize <stabilize-mode>`
--  :ref:`Alt Hold <altholdmode>`
 -  :ref:`Acro <acro-mode>`
+-  :ref:`Alt Hold <altholdmode>`
+-  :ref:`Stabilize <stabilize-mode>`
 -  :ref:`Sport <sport-mode>`
 -  :ref:`Land <land-mode>`
 
@@ -128,22 +128,22 @@ Full list of flight modes
 .. toctree::
     :maxdepth: 1
 
-    Acro Mode <acro-mode>
-    Altitude Hold Mode <altholdmode>
-    Auto Mode <auto-mode>
-    Brake Mode <brake-mode>
-    Circle Mode <circle-mode>
-    Drift Mode <drift-mode>
-    Follow Me Mode (GSC Enabled) <ac2_followme>
-    Flip Mode <flip-mode>
-    Guided Mode <ac2_guidedmode>
-    Land Mode <land-mode>
-    Loiter Mode <loiter-mode>
-    PosHold Mode <poshold-mode>
-    Position Mode <ac2_positionmode>
-    RTL Mode <rtl-mode>
-    Simple and Super Simple Modes <simpleandsuper-simple-modes>
+    Acro <acro-mode>
+    Altitude Hold <altholdmode>
+    Auto <auto-mode>
+    Brake <brake-mode>
+    Circle <circle-mode>
+    Drift <drift-mode>
+    Follow Me (GSC Enabled) <ac2_followme>
+    Flip <flip-mode>
+    Guided <ac2_guidedmode>
+    Land <land-mode>
+    Loiter <loiter-mode>
+    PosHold <poshold-mode>
+    Position <ac2_positionmode>
+    RTL <rtl-mode>
+    Simple and Super Simple <simpleandsuper-simple-modes>
     Smart RTL (Return-to-Launch) <smartrtl-mode>
-    Sport Mode <sport-mode>
-    Stabilize Mode <stabilize-mode>
-    Throw Mode <throw-mode>
+    Sport <sport-mode>
+    Stabilize <stabilize-mode>
+    Throw <throw-mode>
