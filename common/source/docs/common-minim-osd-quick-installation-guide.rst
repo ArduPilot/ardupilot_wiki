@@ -67,12 +67,62 @@ safe by this way:
 Firmware available for MinimOSD
 ===============================
 
+There are several firmware options available for MinimOSD boards. Currently the two most active development streams are:
+
+* Minimosd-extra NG
+* MWOSD
+
+Core functionality is broadly similar between the two firmwares.
+
+
+MWOSD
+===============================
+
+* The project is located `here <https://github.com/ShikOfTheRa/scarab-osd>`__.
+* The documentation is located `here <https://github.com/ShikOfTheRa/scarab-osd/wiki>`__.
+* The support thread is located `here <https://fpvlab.com/forums/showthread.php?34250-MWOSD-for-BETAFLIGHT-CLEANFLIGHT-RACEFLIGHT-PIXHAWK-KISS-DRONIN-INAV-and-others>`__.
+
+
+MWOSD is a very popular OSD which has been around for many years initially supporting the muiltiwii based flight controllers - iNav, betaflight, etc. Recent versions now provides full support for Ardupilot based FC.
+
+MWOSD has an easy to use GUI configurator which has the added advantage of being able to flash firmware versions directly from within the GUI. Arduino or third party software is no longer required.
+
+MWOSD continues to be actively developed and supported. 
+
+
+* Modern GUI configurator with ability to flash hardware directly from within GUI
+* Drag / drop easy configurable screen layouts
+* Autoconfigures mavlink for highe rperformance
+* OSD also fully supports many different FC types other than Ardupilot
+* MAX7456 renew doing in VSYNC to get rid of "snow" on screen but on interrupt instead of SPI polling
+* 3 screens instead of 2
+* Individual control of sign icon visibility of each panel per screen
+* Voltage, current & RSSI can be measured on external pins (which can be found on some MinimOSD boards)
+* Alternative RADAR / MAP display modes
+* PAL/NTSC detected dynamically which allows using different cameras
+* Any RC channel can be translated to output pin (e.g. for cameras switch)
+* Font uploader included in the main firmware and much more usable
+* Font editor and several fonts already included with the GUI
+* Multiple pre-set layouts to choose from. All can be customised
+* Choose to display pilot icon or callsigns
+
+The following links contain a quick start overview and an ardupilot specific installation guide 
+https://github.com/ShikOfTheRa/scarab-osd/wiki/Quick-start-guide
+https://github.com/ShikOfTheRa/scarab-osd/wiki/MAVLINK-installation
+
+
+MinimOSD-extra NG
+===============================
+
+* The project is located `here <https://github.com/night-ghost/minimosd-extra>`__.
+* The documentation is located `here <https://github.com/night-ghost/minimosd-extra/wiki>`__.
+* The support thread is located `here <https://www.rcgroups.com/forums/showthread.php?2591835-New-MinimOSD-fork>`__.
+
+
 After some time with a stalled development of the firmware for the MinimOSD boards due to 
 reaching the limit of the code size, a new developer (https://github.com/night-ghost) picked 
 up the project and through some clever development effort managed to bring it back to life.
 
-The new project is located at https://github.com/night-ghost/minimosd-extra and has an 
-active discussion at `this RCGroups forum thread <https://www.rcgroups.com/forums/showthread.php?2591835-New-MinimOSD-fork>`__.
 
 Some of the differences from the old traditional firmware are:
 
@@ -118,10 +168,27 @@ To compile on Windows:
 The developer also provides a convenient ready to use package that includes all the required files in their latest version here:
 `OSD latest <https://raw.githubusercontent.com/night-ghost/minimosd-extra/c3d21869a06f4917b2841cf2405f59b0aab668bc/osd_latest.zip>`__.
 
-Lately a new style of Board, the "Micro MinimOSD w/ KV Team mod", has appeared on sale at various locations.
-This board is only 15mm x 15mm and functionally does the same as the described MinimOSD but adds some 
-changes by the KV Team, such as 4 external analog input pins (2 of which can be output or digital inputs). 
-All functions referred on this firmware related to additional pins are for this board.
+
+Alternative Hardware
+====================
+
+Recently, new style of boards have appeared for sale on ebay and vendor sites:
+
+* MinimOSD w/ KV Team mod
+* Micro MinimOSD w/ KV Team mod
+* AEROMAX
+
+The minimOSD w/ KV team mod is adds extra analogue/digital IO pins for direct voltage, current and RSSI measurement. 
+
+The Micro MinimOSD board is only 15mm x 15mm and is ideal for micro UAV projects.
+
+The AEROMAX is slightly smaller than tradional minimOSD, has the additional KV mods,further I/O pins, a more efficient power consumption and a hardware IC that is far more resilient to power fluctuations providing a cleaner imnage.
 
 .. image:: ../../../images/MinimOSD_Micro.jpg
     :target: ../_images/MinimOSD_Micro.jpg
+    
+
+
+
+
+
