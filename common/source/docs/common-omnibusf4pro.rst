@@ -169,3 +169,17 @@ BAT_CURR_PIN 11
 BAT_VOLT_MULT 11.0
 
 BAT_AMP_PERVOLT 38.0 (note, this value may vary from 18 to 38, depending on specific board manufacturer...will need to be calibrated to match actual current)
+
+
+How to trigger a camera with relay pin.
+========================
+
+All PWM could be use as relay. BRD_PWM_COUNT have to be set.
+
+BRD_PWM_COUNT = 2
+RELAY_PIN = 15 # for output PWM 5
+
+if we want to set PWM 6 as relay pin :
+RELAY_PIN = 41 # for output PWM 6
+
+Hardware definition is available `here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/omnibusf4pro/hwdef.dat>`__.
