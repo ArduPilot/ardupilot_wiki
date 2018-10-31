@@ -170,3 +170,5 @@ As a reference the diagram below provides a high level view of Copter's architec
         // @Values: 0:Stabilize,1:Acro,2:AltHold,3:Auto,4:Guided,5:Loiter,6:RTL,7:Circle,9:Land,11:Drift,13:Sport,14:Flip,15:AutoTune,16:PosHold,17:Brake,18:Throw,19:Avoid_ADSB,20:Guided_NoGPS,21:Smart_RTL
         // @User: Standard
         GSCALAR(flight_mode2, "FLTMODE2",               FLIGHT_MODE_2),
+
+#. Optionally you may wish to add the flight mode to the ``COPTER_MODE`` enum within the `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L956>`__ because some ground stations may use this to automatically populate the list of available flight modes.
