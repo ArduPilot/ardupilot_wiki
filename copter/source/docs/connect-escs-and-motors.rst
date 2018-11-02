@@ -10,7 +10,7 @@ Connect motor PWM signal outputs (Pixhawk)
 ==========================================
 
 Connect the power (+), ground (-), and signal (s) wires for each ESC to
-the controller main output pins by motor number. Find your frame type
+the flight controller's main output pins by motor number. Find your frame type
 below to determine the assigned order of the motors.
 
 .. figure:: ../images/Pixhwak_outputs.jpg
