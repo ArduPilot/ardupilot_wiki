@@ -4,7 +4,7 @@
 Connect ESCs and Motors
 =======================
 
-This article explains how to connect the ESCs, Motors and Propellers for Pixhawk, APM 2.x. and Erle-Brain2.
+This article explains how to connect the ESCs, Motors and Propellers for Pixhawk and Erle-Brain2.  Other flight controllers are connected in a similar way.
 
 Connect motor PWM signal outputs (Pixhawk)
 ==========================================
@@ -21,61 +21,28 @@ below to determine the assigned order of the motors.
 Connect motor PWM signal outputs (Erle-Brain2)
 ==============================================
 
-When connecting the ESCs directly to autopilot board, connect the power
-(+), ground (-), and signal (s) wires for each ESC to the controller
-main output pins by motor number. Find your frame type below to
-determine the assigned order of the motors.
+For Erle-Brain boards be sure you connect the ESC connector in the right way.  Signal goes on the top of the rail (white or orange color wire) and ground at the bottom (black or brown color wire)
+
+Using a Power Distribution Board
+================================
 
 .. image:: ../images/3dr_power_distribution_board.jpg
     :target: ../_images/3dr_power_distribution_board.jpg
 
-.. note::
-
-   Be sure you connect the ESC connector in the right way. Signal
-   goes on the top of the rail (white or orange color wire) and ground at
-   the bottom (black or brown color wire)
-
-Connect motor PWM signal outputs (APM2)
-=======================================
-
-There are two methods of connecting the motor outputs: connect the
-electronic speed controllers (ESCs) to autopilot controller board
-directly or use a power distribution board (PDB).
-
-.. warning::
-
-   The APM power distribution board PDB described here is not
-   compatible with the Pixhawk, PX4 or Erle.
+There are two methods of connecting the motor outputs.  Either connect the
+electronic speed controllers (ESCs) directly to the flight controller OR use a power distribution board (PDB).
 
 When using a PDB, connect the power (+), ground (-), and signal (s)
 wires for each ESC to the PDB according to motor number. Find your frame
 type below to determine the assigned order of the motors. Then connect
 the signal wires from the PDB to the main output signal pins on the
-flight controller board (ensuring that the motor order numbers match the
+flight controller  (ensuring that the motor order numbers match the
 main output pin numbers on the controller). If you are using a power
 module, it is optional to connect the power and ground wires from the
 PDB to the flight controller board. If you would like to use these
 cables in addition to or instead of the power module or as a common
 point for low current servos, connect the ground (-) wire to a main
 output ground (-) pin and the power (+) wire to a main output power (+) pin.
-
-.. note::
-
-   Information on assembling PDB is found `here for Quad <https://3dr.com/wp-content/uploads/2013/06/PDB-Assembly-Instructions-Quad.pdf>`__\ and
-   `here for Hexa <https://3dr.com/wp-content/uploads/2013/06/PDB-Assembly-Instructions-Hexa.pdf>`__.
-
-.. image:: ../images/3dr_power_distribution_board.jpg
-    :target: ../_images/3dr_power_distribution_board.jpg
-
-When connecting the ESCs directly to autopilot board, connect the power
-(+), ground (-), and signal (s) wires for each ESC to the controller
-main output pins by motor number. Find your frame type below to
-determine the assigned order of the motors.
-
-.. figure:: ../images/APM_outputs.jpg
-   :target: ../_images/APM_outputs.jpg
-
-   APM Output Pins (numbered)
 
 Motor order diagrams
 ====================
