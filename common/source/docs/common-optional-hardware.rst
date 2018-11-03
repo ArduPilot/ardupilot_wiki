@@ -87,6 +87,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     UAVCAN ESCs <common-uavcan-escs>
     Video <common-video-landingpage>
 [site wiki="rover"]
+    Wind Vane <wind-vane>
     Wheel Encoders <wheel-encoder>
 [/site]
 [site wiki="copter,rover"]
