@@ -42,7 +42,7 @@ For Copter-3.6 (and higher)
 
 - :ref:`LOIT_SPEED <LOIT_SPEED>` : max horizontal speed in cm/s (i.e. 1250 = 12.5m/s)
 - :ref:`LOIT_ACC_MAX <LOIT_ACC_MAX>` : max acceleration in cm/s/s.  Higher values cause the copter to accelerate and stop more quickly
-- :ref:`LOIT_ANG_MAX <LOIT_ANG_MAX>` : max lean angle in centi-degrees (i.e. 3000 = 30deg).  By default this value is zero which causes the ANGLE_MAX parameter's value to be used
+- :ref:`LOIT_ANG_MAX <LOIT_ANG_MAX>` : max lean angle in centi-degrees (i.e. 3000 = 30deg).  By default this value is zero which causes the :ref:`ANGLE_MAX <ANGLE_MAX>` parameter's value to be used
 - :ref:`LOIT_BRK_ACCEL <LOIT_BRK_ACCEL>`: max acceleration in cm/s/s while braking (i.e. pilot has moved sticks to center).  Higher values will stop the vehicle more quickly
 - :ref:`LOIT_BRK_DELAY <LOIT_BRK_DELAY>`: the delay in seconds before braking starts once the pilot has centered the sticks
 - :ref:`LOIT_BRK_JERK <LOIT_BRK_JERK>`: max change in acceleration in cm/s/s/s while braking.  Higher numbers will make the vehicle reach the maximum braking angle more quickly, lower numbers will cause smoother braking
