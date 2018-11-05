@@ -11,7 +11,7 @@ TauLabs Sparky2
 
 .. note::
 
-   Support for the TauLabs Sparky2 will be released with Copter-3.6.
+   Support for the TauLabs Sparky2 is available with Copter-3.6.0 (and higher)
 
 Specifications
 ==============

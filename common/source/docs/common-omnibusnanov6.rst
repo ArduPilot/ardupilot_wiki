@@ -13,7 +13,7 @@ Omnibus F4 Nano V6 (must be V6)
 
 .. note::
 
-   Support for this board has been introduced with ArduPilot's ChibiOs port.
+   Support for this board is available with Copter-3.6.0 (and higher)
 
 Specifications
 ==============

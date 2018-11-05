@@ -11,7 +11,7 @@ F4BY FMU
 
 .. note::
 
-   Support for this board will be released with Copter-3.6.  More info available from `Swift-Flyer.com <http://swift-flyer.com/?page_id=83>`__
+   Support for this board is available with Copter-3.6.0 (and higher).  More info available from `Swift-Flyer.com <http://swift-flyer.com/?page_id=83>`__
 
 Specifications
 ==============

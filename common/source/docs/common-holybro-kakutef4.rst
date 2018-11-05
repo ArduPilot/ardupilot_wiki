@@ -11,7 +11,7 @@ Holybro Kakute F4
 
 .. note::
 
-   Support for the Kakute F4 will be released with Copter-3.6.
+   Support for this board is available with Copter-3.6.0 (and higher)
 
 Specifications
 ==============

@@ -12,7 +12,7 @@ Omnibus F7
 
 .. note::
 
-   Support for this board is included in Copter-3.6 (and higher).
+   Support for this board is available with Copter-3.6.0 (and higher)
 
 Specifications
 ==============
