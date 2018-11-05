@@ -8,11 +8,11 @@ Mateksys F405-Wing
     :target: ../_images/matekf405-wing.png
     :width: 450px
 
-*above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f405-wing>`__*
+the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f405-wing>`__
 
 .. note::
 
-   Support for this board is included in Copter-3.6 (and higher).
+   Support for this board is available with Copter-3.6.0 (and higher)
 
 Specifications
 ==============
