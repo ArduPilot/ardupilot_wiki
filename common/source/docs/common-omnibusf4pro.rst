@@ -12,7 +12,7 @@ Omnibus F4 Pro
 
 .. note::
 
-   Support for this board has been introduced with ArduPilot's ChibiOs port.
+   Support for this board is available with Copter-3.6.0 (and higher)
 
 Specifications
 ==============
