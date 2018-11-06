@@ -19,7 +19,7 @@ In general, the development team encourages the use of "ArduPilot" on products a
 
 If you have any further questions about using ArduPilot on your product, please get in touch with Andrew Tridgell or Randy Mackay through one of the methods listed on our `Contact Us page <http://ardupilot.org/copter/docs/common-contact-us.html>`__.
 
-Below is the logo we use.  An equivalent .ai file can also be provided.
+Below is the logo we use.  Other file types are available `here <https://github.com/ArduPilot/ardupilot_wiki/tree/master/logos>`__.
 
 .. image:: ../images/logos/ardupilot_logo.jpg
     :target: ../_images/ardupilot_logo.jpg
