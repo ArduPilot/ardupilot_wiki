@@ -6,7 +6,6 @@ Speedy Bee F4
 
 .. image:: ../../../images/speedybeef4.jpg
     :target: ../_images/speedybeef4.jpg
-    :width: 450px
 
 *above image and some content courtesy of the* `speedybee.com <https://www.speedybee.com/speedy-bee-f4-aio-flight-controller/>`__
 
