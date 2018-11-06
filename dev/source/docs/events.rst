@@ -9,7 +9,7 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Mar 2019: Developer Un-conference in Canberra Australia
+- Mar 23rd & 24th 2019: Developer Un-conference in Canberra Australia (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-meetup-in-canberra-march-23rd-and-24th-2019>`__)
 - Apr 2019: AUVSI Xponential in Chicago
 
 Past Events
