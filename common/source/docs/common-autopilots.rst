@@ -43,7 +43,8 @@ Closed hardware
 [site wiki="copter"]
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
-    
+    SpeedyBee F4 <common-speedybeef4>
+
 Discontinued boards
 -------------------
 
