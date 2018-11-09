@@ -19,6 +19,7 @@ experiemental autopilot flights.
 Enabling RealFlight Link Feature
 ================================
 
+  - Create an account on the KnifeEdge forums <http://www.knifeedge.com/forums/index.php>. You will need this account in the following steps, and it is easier if you create it first
   - `Buy <http://www.realflight.com/where-to-buy.php>`__ and Install the regular version of RealFlight8. Note that you can now get RealFlight8 on steam, which is a very easy way to get it quickly.
   - update it to the latest version using the Technical Support button in the launcher (you need at least version 8.00.019)
   - Connect the RealFlight transmitter to your PC's USB port
