@@ -31,7 +31,7 @@ Closed hardware
 
     Emlid Edge <common-emlid-edge>
     NAVIO2 <common-navio2-overview>
-    Furious FPV F-35 Lightning <common-furiousfpv-f35>
+    Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Holybro Kakute F4 <common-holybro-kakutef4>
     Intel Aero <common-intel-aero-overview>
     Intel Aero RTF vehicle <common-intel-aero-rtf>
