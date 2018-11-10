@@ -11,7 +11,7 @@ Speedy Bee F4
 
 .. note::
 
-   Support for the SpeedyBee F4 will be released with Copter-3.6.1
+   Support for the SpeedyBee F4 was released with Copter-3.6.1
 
 Specifications
 ==============
