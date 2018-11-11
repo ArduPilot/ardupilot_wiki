@@ -40,6 +40,7 @@ Vehicles from Non-Partners
 * 3DR Quad from `DroneFever <http://dronefever.com/3DR-ArduCopter-Quad-D-Almost-Ready-to-Fly.html>`__
 * 3DR Solo from `Amazon <https://www.amazon.com/3DR-Solo-Quadcopter-No-Gimbal/dp/B00ZPM7BOG>`__
 * 3DR Y6 from `OneDrone <http://onedrone.com/store/3drobotics/ardupilot/3dr-arducopter-y6-kit.html>`__
+* Alfonce X500 from `Dronotique <https://www.dronotique.fr/produit/alfonce-x500-quadcopter-homologue-dgac-s1-s2-et-s3/>`__
 
 .. note::
 
