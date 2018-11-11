@@ -10,6 +10,42 @@ This article lists turnkey companion computer solutions that are advertised as w
 
    Please let us know if you discover a new companion computer, so we can add it to this list. 
 
+UAVcast-Pro - Raspberry Pi software for LTE / WiFi Drones
+==============================
+
+.. figure:: https://uavmatrix.com/wp-content/uploads/2018/08/ipad.png
+   :target:  https://uavmatrix.com/uavcast-pro/
+
+`UAVcast-Pro <https://uavmatrix.com/uavcast-pro/>`__ is an application which simplifies the process to communicate with your Ardupilot
+flight controller over cell or WiFi network. Create the ultimate 4G / 5G / LTE Drone in couple of clicks.
+
+Everything can be configured from a responsive web interface which can be accessed from any devices such as phone, tablet, desktop.
+
+Read the `Documentation <https://docs.uavmatrix.com/>`__  for installation and configuration.
+
+
+**UAVcast-Pro supports the following:**
+
+* UDP & TCP Telemetry
+* Connect Flight Controller to RPI by **USB => USB** or **Telem => GPIO**
+* UDP & TCP Video Stream
+* HD Video
+* Custom Video Pipelines
+* VPN with NAT Traversal (Zerotier)
+* Multiple Telemetry Destinations
+
+**Supported Raspberry Models:**
+
+* Model Pi0w - (with Raspian stretch lite or desktop)
+* Model Pi2 - (with Raspian stretch lite or desktop)
+* Model Pi3 - (with Raspian stretch lite or desktop)
+
+UAVcast-Pro supports a broad variety of modems. Open link below to see supported models.
+`Supported 4G / 5G / LTE Modems. <https://www.freedesktop.org/wiki/Software/ModemManager/SupportedDevices/>`__
+
+Flying LTE has never been easier
+
+
 4Gmetry Companion Computer Kit
 ==============================
 
