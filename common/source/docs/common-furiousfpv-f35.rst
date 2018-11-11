@@ -51,3 +51,5 @@ It is generally recommended that servos be powered independent of on-board regul
 Both boards have an onboard compass, however, since there is an on-board current sensor, if used, the compass cannot be accurately used and should be disabled in Ardupilot. For plane use, not having a compass is a non-issue, but compass is required for Copter/Quadplane. Since these boards have no external I2C pinouts, external compass is not an option. So, currently, this board is only applicable to Plane applications. (Using Compass_Motor_Compensation for copter/quadplane may be viable,but it has not been shown yet)
 
 Either rssi or analog airspeed can be input on the AIR pin. Either must be first enabled in the params, params refreshed, and then pin "13" set for the input, and type set.
+
+In the serial parameters, Serial 0 corresponds to USB, Serial 1 (default: 57K/Mavlink) to UART1, Serial 2 (default: 38K/GPS) to GPS, and Serial 4 (default: 57K/Mavlink) to UART5
