@@ -13,6 +13,7 @@ tuning options for the vehicle.
 [site wiki="copter"]
     AutoTune <autotune>
     Auxiliary Function Switches <channel-7-and-8-options>
+    Baro Temperature Compensation <common-baro-temp-comp>
     Boat mode <boat-mode>
 [/site]
 [site wiki="rover"]
