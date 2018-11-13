@@ -54,6 +54,8 @@ based upon your set-up.
     Benewake TF02 <common-benewake-tf02-lidar>
     Benewake TFmini <common-benewake-tfmini-lidar>
     EchoLogger ECT400 <common-echologger-ect400>
+    Garman Lidar-Lite <common-rangefinder-lidarlite>
+    Leddar One Lidar <common-leddar-one-lidar>
     LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
@@ -62,14 +64,12 @@ based upon your set-up.
 [/site]
     Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
+    RPLidar A2 360 degree laser scanner <common-rplidar-a2>
+    ST VL53L0X Lidar <common-vl53l0x-lidar>
     TeraRanger One Rangefinder <common-teraranger-one-rangefinder>
 [site wiki="copter"]
     TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
 [/site]
-    Leddar One Lidar <common-leddar-one-lidar>
-    LIDAR-Lite <common-rangefinder-lidarlite>
-    RPLidar A2 360 degree laser scanner <common-rplidar-a2>
-    ST VL53L0X Lidar <common-vl53l0x-lidar>
 
 [site wiki="copter"]
     Analog Sonar (AC3.1) <sonar>
