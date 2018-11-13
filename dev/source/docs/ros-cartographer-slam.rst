@@ -89,7 +89,7 @@ Install some more packages
 
     sudo apt-get install python-wstool python-rosdep ninja-build
 
-Re-initialise the workspace with wstool then merge the cartographer_ros.rosinstall file and fetch code for dependencies.
+Re-initialise the workspace with `wstool <http://wiki.ros.org/wstool>`__ then merge the cartographer_ros.rosinstall file and fetch code for dependencies.
 
 ::
 
