@@ -70,6 +70,7 @@ based upon your set-up.
 [site wiki="copter"]
     TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
 [/site]
+    Underwater Sonar (Analog) <common-underwater-sonar-analog>
 
 [site wiki="copter"]
     Analog Sonar (AC3.1) <sonar>
