@@ -17,7 +17,8 @@ These pages will show you how to:
 
 - :ref:`Install ROS and MAVROS <ros-install>`
 - :ref:`Connecting to ArduPilot from ROS <ros-connecting>`
-- :ref:`SLAM for non-GPS navigation <ros-slam>`
+- :ref:`Hector SLAM for non-GPS navigation <ros-slam>`
+- :ref:`Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>`
 - Retrieve ArduPilot information in ROS
 - Use ROS to command an ArduPilot vehicle
 - Simulate ArduPilot in `Gazebo <http://gazebosim.org/>`__
