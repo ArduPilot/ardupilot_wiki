@@ -185,6 +185,12 @@ If all is working, vision position estimates should begin flowing in from ROS to
 
 Using the Mission Planner (or similar) go to the Flight Data screen and right-mouse-button click on the map and select "Set Home Here" >> "Set EKF Origin".  The vehicle should appear immediatley on the map where you clicked.
 
+Video
+-----
+
+..  youtube:: P0Xblybi0aw
+    :width: 100%
+
 .. note::
 
    We are keen to improve ArduPilot's support of ROS so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__ with a title that includes "ROS" and we will attempt to resolve them as quickly as possible.
