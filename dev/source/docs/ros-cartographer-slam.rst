@@ -37,6 +37,7 @@ Check the RPLidar's serial port
 
 ::
 
+    sudo usermod -a -G dialout
     sudo chmod 666 /dev/ttyUSB0
     sudo chmod 666 /dev/ttyACM0
 
@@ -47,7 +48,7 @@ Install more packages
 
 ::
 
-    sudo apt-get install ros-kinetic-desktop-full
+    sudo apt-get install ros-kinetic-desktop
 
 - OR install each of these individual packages (this list is not yet complete):
 
@@ -107,6 +108,10 @@ Install proto3 and deb dependencies
     rosdep update
     rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 
+.. note::
+
+   Cartographer installs a version of protobuf that overrides the system defaults and can only be removed with "make uninstall"
+
 Clone the `Robot Pose Publisher <http://wiki.ros.org/robot_pose_publisher>`__ package into the workspace
 
 ::
@@ -119,17 +124,17 @@ Modify the robot_pose_publisher.cpp file
 ::
 
     cd ~/catkin_ws/src/robot_pose_publisher/src
-    vi robot_pose_publisher.cpp
+    gedit robot_pose_publisher.cpp
 
     # modify line 40 to look like below ("false" has been changed to "true")
     nh_priv.param<bool>("is_stamped", is_stamped, true);
 
-Create the cartographer_ros launch file using your favourite editor (like "vi")
+Create the cartographer_ros launch file using your favourite editor (like "gedit")
 
 ::
 
     cd ~/catkin_ws/src/cartographer_ros/cartographer_ros/launch
-    vi cartographer.launch
+    gedit cartographer.launch
 
 Copy-paste the contents below into the file
 
@@ -155,12 +160,12 @@ Copy-paste the contents below into the file
           <node pkg="tf" type="static_transform_publisher" name="base_to_laser_broadcaster" args="0 0 0 0 0 0 base_link laser 100" />
        </launch>
 
-Create the cartographer.lua script using our favourite editor (like "vi")
+Create the cartographer.lua script using our favourite editor (like "gedit")
 
 ::
 
     cd ~/catkin_ws/src/cartographer_ros/cartographer_ros/configuration_files
-    vi cartographer.lua
+    gedit cartographer.lua
 
 Copy-paste the contents below into the file
 
@@ -207,13 +212,13 @@ Copy-paste the contents below into the file
 
     return options
 
-Modify mavros's node.launch file with your favourite editor (like vi shown below)
+Modify mavros's node.launch file with your favourite editor (like gedit shown below)
 
 ::
 
     roscd mavros
     cd launch
-    sudo vi node.launch
+    sudo gedit node.launch
 
 After <rosparam command="load" file="$(arg config_yaml)" /> add a line like below
 
