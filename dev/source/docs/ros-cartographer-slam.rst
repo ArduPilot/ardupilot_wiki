@@ -38,8 +38,6 @@ Check the RPLidar's serial port
 ::
 
     sudo usermod -a -G dialout
-    sudo chmod 666 /dev/ttyUSB0
-    sudo chmod 666 /dev/ttyACM0
 
 Install more packages
 ---------------------
