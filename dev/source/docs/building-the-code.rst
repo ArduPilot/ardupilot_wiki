@@ -43,7 +43,6 @@ Windows users have 3 options for setting up the build environment. All of the be
 - :ref:`Building for Bebop2 on Linux <building-for-bebop-2>`
 - :ref:`Building for Bebop on Linux <building-for-bebop-on-linux>`
 - :ref:`Building for Beaglebone Black <building-for-beaglebone-black-on-linux>`
-- :ref:`WIP: OpenSolo QuickStart <solo_opensolo_quickstart>`
 
 Mission Planner
 ---------------
@@ -72,8 +71,6 @@ Links to current build pages
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
     Building Mission Planner with Visual Studio <buildin-mission-planner>
     ArduPilot Pre-Built Binaries <pre-built-binaries>
-    WIP: OpenSolo QuickStart <solo-opensolo-quickstart>
-
 
 Deprecated Instructions
 -----------------------
