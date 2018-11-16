@@ -37,7 +37,8 @@ Next tutorials :
 
         Installing ROS and MAVROS <ros-install>
         Connecting to ArduPilot from ROS <ros-connecting>
-        SLAM for non-GPS navigation <ros-slam>
+        Hector SLAM for non-GPS navigation <ros-slam>
+        Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>
         ROS with SITL <ros-sitl>
         ROS with SITL in Gazebo <ros-gazebo>
         ROS with distance sensors <ros-distance-sensors>
