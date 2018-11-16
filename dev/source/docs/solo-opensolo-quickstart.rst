@@ -1,16 +1,12 @@
 .. _solo_opensolo_quickstart:
 
-==========================================================================================
-WIP DOCUMENT!  You will almost certainly brick your Solo if you follow these instructions!
-==========================================================================================
-
 =========================
 OpenSolo QuickStart Guide
 =========================
 
 .. note::
 
-   This document is known to be incomplete.  In particular, if you are running a "Green Cube" Solo modifications must be made to the "Golden Image" on the Solo.  Details to come.
+   More complete information for developers can be found `here <https://github.com/OpenSolo/documentation>`__
 
 .. note::
 
