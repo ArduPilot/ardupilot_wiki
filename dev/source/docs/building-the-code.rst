@@ -42,7 +42,6 @@ Windows users have 3 options for setting up the build environment. All of the be
 - :ref:`Building for Erle-Brain <building-for-erle-brain>`
 - :ref:`Building for Bebop2 on Linux <building-for-bebop-2>`
 - :ref:`Building for Bebop on Linux <building-for-bebop-on-linux>`
-- :ref:`Building for Qualcomm Snapdragon Flight Kit <building-for-qualcomm-snapdragon-flight-kit>`
 - :ref:`Building for Beaglebone Black <building-for-beaglebone-black-on-linux>`
 - :ref:`WIP: OpenSolo QuickStart <solo_opensolo_quickstart>`
 
@@ -70,7 +69,6 @@ Links to current build pages
     Building for Erle-Brain <building-for-erle-brain>
     Building for Bebop 2 <building-for-bebop-2>
     Building for Bebop on Linux <building-for-bebop-on-linux>
-    Building for Qualcomm Snapdragon Flight Kit <building-for-qualcomm-snapdragon-flight-kit>
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
     Building Mission Planner with Visual Studio <buildin-mission-planner>
     ArduPilot Pre-Built Binaries <pre-built-binaries>
@@ -91,5 +89,6 @@ Deprecated Instructions
     Deprecated: Building for Flymaple on Linux <building-apm-for-flymaple>
     Deprecated: Building for Pixhawk on Windows or Linux with QtCreator <building-px4-with-qtcreator>
     Deprecated: Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>
+    Deprecated: Building for Qualcomm Snapdragon <building-for-qualcomm-snapdragon-flight-kit>
 
 
