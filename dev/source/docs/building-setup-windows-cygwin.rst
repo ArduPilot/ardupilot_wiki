@@ -5,14 +5,7 @@
 Setting up the waf Build Environment on Windows using Cygwin
 ============================================================
 
-These setup instructions describe how to setup `Cygwin <http://www.cygwin.com/>`__ on Windows so that waf (the build system) can run natively and be used for building.
-
-This has been tested with building SITL and Pixhawk-based targets.
-
-Install Pixhawk Toolchain
--------------------------
-
-- install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/STM32-tools/pixhawk_toolchain_installer_latest.exe>`__
+These setup instructions describe how to setup `Cygwin <http://www.cygwin.com/>`__ on so that waf (the build system) can run natively on windows and build for all supported boards.
 
 Install Cygwin
 --------------
@@ -83,6 +76,17 @@ Install Cygwin
       Sometimes the installation can stall because of anti-virus protection software is running.
       If this occurs, shutdown all other programs on your PC including the anti-virus protection and try again.
 
+Install the GCC compiler
+-------------------------
+
+- download and install the gcc-arm-non-eabi compiler from `firmware.ardupilot.org/Tools/STM32-tools <http://firmware.ardupilot.org/Tools/STM32-tools>`__ (`quick link is here <http://firmware.ardupilot.org/Tools/STM32-tools/gcc-arm-none-eabi-6-2017-q2-update-win32-sha2.exe>`__)
+    - accept the license
+    - install to the default location
+    - accept the ssl certificate
+    - check option to "Add path to environment variable"
+
+.. image:: ../images/building-setup-windows-cygwin-gcc.png
+
 Install MAVProxy
 -----------------------------------------------------
 
@@ -100,19 +104,8 @@ Set up directories/paths and extra packages in Cygwin
 ::
 
     pip2 install empy
-
-#. After "empy" has been succesfully installed, you need to install PySerial package:
-
-::
-
-    pip install pyserial
-
-
-#. with your favourite text editor, open C:\\cygwin64\\home\\<username>\\.bashrc and add this line to include the Pixhawk Toolchain's compiler.
-
-   ::
-
-       export PATH=$PATH:/cygdrive/c/pixhawk_toolchain/toolchain/bin
+    pip instsall pyserial
+    pip2 install pymavlink
 
 Build with Waf
 ==============

@@ -1,8 +1,25 @@
 .. _building-setup-windows:
 
-==========================================
-Setting up the Build Environment (Windows)
-==========================================
+======================================
+Setup the Build Environment on Windows
+======================================
+
+There are three options for building on windows.  We recommended the first option which uses Cygwin.
+
+Setup for building with waf using Cygwin
+----------------------------------------
+
+#. :ref:`Install cygwin as described here <building-setup-windows-cygwin>`
+
+#. :ref:`Setup Eclipse as described here <building-setup-windows-eclipse>` (optional)
+
+Setup for building with waf using WSL (Windows10 only)
+------------------------------------------------------
+
+#. :ref:`Instructions are here <building-setup-windows10>`
+
+Setup for building with Make (not recommended)
+----------------------------------------------
 
 #. Install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/STM32-tools/pixhawk_toolchain_installer_latest.exe>`__
 
