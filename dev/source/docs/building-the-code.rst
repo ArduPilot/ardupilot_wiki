@@ -12,15 +12,13 @@ Setting up the Build Environment
 --------------------------------
 
 - :ref:`Setup the Build Environment on Linux/Ubuntu <building-setup-linux>`
-- :ref:`Setup the make Build Environment on Windows <building-setup-windows>`
-- :ref:`Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>`
-- :ref:`Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>`
+- :ref:`Setup the Build Environment on Windows <building-setup-windows>`
 - :ref:`Setup the Build Environment on MacOSX <building-setup-mac>`
 
 Building / Compiling
 --------------------
 
-ArduPilot currently supports two build systems, `waf <https://waf.io/>`__ and **make** with waf being the recommended option especially for Linux/Ubuntu and MacOS users.
+ArduPilot currently supports two build systems, `waf <https://waf.io/>`__ and **make** with waf being the recommended option because it allows building for all boards.
 In most cases the build dependencies described for **waf** and **make** are the same, the only part of the instructions that changes is the build commmand. 
 
 **Linux / MacOSX users:**
@@ -29,11 +27,12 @@ In most cases the build dependencies described for **waf** and **make** are the 
 
 **Windows users:**
 
-Windows users have 3 options for setting up the build environment. All of the below options will allow building of native (SITL) and Pixhawk-based boards.
+Windows users have 3 or 4 options for setting up the build environment. All of the below options will allow building of native (SITL) and Pixhawk-based boards.
 
-- :ref:`Building for Pixhawk on Windows with Make and Eclipse <building-px4-with-make>` 
-- :ref:`Setup the Build Environment on Windows10 using WSL <building-setup-windows10>` 
-- :ref:`Setup the Build Environment on Windows using Cygwin <building-setup-windows-cygwin>` 
+- :ref:`Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>`
+- :ref:`Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>`
+- :ref:`Setup Eclipse on Windows for building with waf <building-setup-windows-eclipse>`
+- :ref:`Setup the Make Build on Windows (not recommended) <building-px4-with-make>`
 
 **Board specific instructions:**
 
