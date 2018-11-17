@@ -65,6 +65,9 @@ Install Cygwin
    +----------------+----------------------------------------------------------------------------------+
    | zip            | Archive \| zip: Info-ZIP compression utility                                     |
    +----------------+----------------------------------------------------------------------------------+   
+   Or you can run 
+   ::
+      setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,libxslt-devel,python2-devel,python2-future,python2-libxml2,python2-pip,procps-ng,gdb,ddd,zip
 
 #. When all the packages are selected, click through the rest of the
    prompts and accept all other default options (including
