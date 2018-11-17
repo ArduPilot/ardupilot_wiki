@@ -53,3 +53,8 @@ Both boards have an onboard compass, however, since there is an on-board current
 Either rssi or analog airspeed can be input on the AIR pin. Either must be first enabled in the params, params refreshed, and then pin "13" set for the input, and type set.
 
 In the serial parameters, Serial 0 corresponds to USB, Serial 1 (default: 57K/Mavlink) to UART1, Serial 2 (default: 38K/GPS) to GPS, and Serial 4 (default: 57K/Mavlink) to UART5
+
+Videos
+======
+..  vimeo:: 301399536
+    :width: 100%
