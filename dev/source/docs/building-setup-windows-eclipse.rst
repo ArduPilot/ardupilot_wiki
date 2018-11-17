@@ -57,7 +57,7 @@ Setup Build Target
 - If the build fails with a "Missing configuration file" check the ardupilot directory for a directory called "build" and delete it and try again
 - Other useful build targets include, ``clean``, ``plane``, ``rover`` and  ``--help``
 
-The arducopter.apj firmware will be created in the **ardupilot\build\fmuv3\bin** directory and can be uploaded from the Mission Planner or other ground station.
+The arducopter.apj firmware will be created in the **ardupilot\\build\\fmuv3\\bin** directory and can be uploaded from the Mission Planner or other ground station.
 
 .. image:: ../images/eclipse-install5.png
     :target: ../_images/eclipse-install5.png
