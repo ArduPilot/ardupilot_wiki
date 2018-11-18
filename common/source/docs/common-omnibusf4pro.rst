@@ -57,7 +57,7 @@ The shared UART3/I2C pins are enabled only for I2C operation to allow external c
 
 The board's RSSI pad can be used as an analog RSSI input. Use pin "0" as the RSSI input pin in Mission Planner. Mission planner default values for battery voltage and current scales are provided, however since many variations of this board are available, these may needed to be manually calibrated.
 
-If you want to power the servos from the ESC BEC via the board's center rail for the servo outputs, then you should remove the diode as per here: https://www.rcgroups.com/forums/showthread.php?2874687, otherwise, independently power the servos directly from the ESC or independent BEC with no connection to the board's servo output center rail.
+If you want to power the servos from the ESC BEC via the board's center rail for the servo outputs, then you should remove the diode as per here: https://www.rcgroups.com/forums/showthread.php?2874687, otherwise, independently power the servos directly from the ESC or independent BEC with no connection to the board's servo output center rail. The VCC pin next to the RX in pin is a 5V output only and not affected by this modification.
 
 .. figure:: ../../../images/OMNIBUSF4Pro_remove_diode.jpg
     :target: ../_images/OMNIBUSF4Pro_remove_diode.jpg
@@ -66,7 +66,7 @@ If you want to power the servos from the ESC BEC via the board's center rail for
 Video power provided on the video input and output center rail, is provide through an on-board noise filter. Either ~4.5V (labeled 5V) or VBAT-0.5V (VBAT) can be selected by solder pads on the back of the board.
 
 PPM solder pad/resistor should be soldered and “S-BUS” resistor/solder pad removed
-Otherwise, UART1 or UART6 or RCIN will not work
+Otherwise, UART1 or UART6 or RCIN will not work. 
 
 .. figure:: ../../../images/omnibusf4pro_ardupilot_wiring.jpg
     :target: ../_images/omnibusf4pro_ardupilot_wiring.jpg
