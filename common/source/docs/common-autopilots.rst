@@ -35,6 +35,7 @@ Closed hardware
     Holybro Kakute F4 <common-holybro-kakutef4>
     Intel Aero <common-intel-aero-overview>
     Intel Aero RTF vehicle <common-intel-aero-rtf>
+    Mateksys F405-STD and variants <common-matekf405>
     Mateksys F405-Wing <common-matekf405-wing>
     Omnibus F4 Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
