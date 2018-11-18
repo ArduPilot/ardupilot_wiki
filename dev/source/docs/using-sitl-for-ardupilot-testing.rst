@@ -7,7 +7,7 @@ SITL Advanced Testing
 This article describes how :ref:`SITL <sitl-simulator-software-in-the-loop>`
 and :ref:`MAVProxy <mavproxy-developer-gcs>` can be used to change the environment,
 simulate failure modes, and configure the vehicle with optional components.
-It also explains how to :ref:`connect to different GSCs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
+It also explains how to :ref:`connect to different GCSs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
 
 .. tip::
 
@@ -21,8 +21,8 @@ It also explains how to :ref:`connect to different GSCs <using-sitl-for-ardupilo
    :ref:`MAVProxy <mavproxy-developer-gcs>` to
    describe operations (e.g. setting parameters) because it presents a
    simple and consistent command-line interface (removing the need to
-   describe a GSC-specific UI layout). Many of these operations can also
-   be performed in *Mission Planner* (through the *Full Parameters List*) or any other GSC.
+   describe a GCS-specific UI layout). Many of these operations can also
+   be performed in *Mission Planner* (through the *Full Parameters List*) or any other GCS.
 
 Setting vehicle start location
 ==============================
@@ -65,7 +65,7 @@ and
 
 .. tip::
 
-   This only needs to be done once. After loading the parameters are
+   This only needs to be done once, after loading, the parameters are
    stored in the simulated EEPROM.
 
 The MAVProxy commands to load the parameters for Copter, Rover and Plane
@@ -229,7 +229,7 @@ following commands:
     # Enable rangefinder for landing (Plane only!)
     param set RNGFND_LANDING 1
 
-The above commands will setup an analog rangefinder with a maximum range
+The above commands will set up an analog rangefinder with a maximum range
 of 50 meters (the 50m comes from an analog voltage range of 0 to 5V, and
 a scaling of 10). After making the above changes you need to restart
 SITL.
@@ -275,13 +275,13 @@ Go for a flight and see if you get reasonable data.
 Accessing log files
 ===================
 
-SITL supports both tlogs and DF logs (same as other types of ArduPilot
+SITL supports both blogs and DF logs (same as other types of ArduPilot
 ports). The DF logs are stored in a "logs" subdirectory in the directory
 where you start SITL. You can also access the DF logs via MAVLink using
 a GCS, but directly accessing them in the logs/ directory is usually
 more convenient.
 
-To keep your tlogs organised it is recommended you start SITL using the
+To keep your blogs organised it is recommended you start SITL using the
 "--aircraft NAME" option. That will create a subdirectory called NAME
 which will have flight logs organised by date. Each flight will get its
 own directory, and will include the parameters for the flight plus any
@@ -348,10 +348,10 @@ GPS for the 2nd UART.
 
 Any of the 5 UARTs can be configured in this way, using uartA to uartE.
 
-Similar to this if you were running a vehicle in SITL via cygwin on
+Similar to this if you were running a vehicle in SITL via Cygwin on
 Microsoft Windows and you wanted to send the mavlink output through a
 connected radio on COM16 to AntennaTracker you can use a command like
-this - note under cygwin comm ports are ttyS and they start at 0 so 15
+this - note under Cygwin comm ports are ttyS and they start at 0 so 15
 is equivalent to COM16:
 
 ::
@@ -559,7 +559,7 @@ Check the logs for precision landing messages:
 
    ls -lt logs
 
-Choose the yougest, then:
+Choose the youngest, then:
 
 ::
 
