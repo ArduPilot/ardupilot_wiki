@@ -27,7 +27,6 @@ within the sections) see the topics below:
     Assembly <assembly-instructions>
     Loading Firmware to Pixhawk boards <common-loading-firmware-onto-pixhawk>
     Loading Firmware to ChibiOS-only boards <common-loading-firmware-onto-chibios-only-boards>
-    common-loading-chibios-firmware-onto-pixhawk
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuring Hardware <configuring-hardware>
     
