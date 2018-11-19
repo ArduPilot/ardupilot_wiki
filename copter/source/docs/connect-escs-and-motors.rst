@@ -123,17 +123,6 @@ shallow consistent curve at the leading edge in direction of rotation
 and the more radical scalloped (and usually thinner edge) as the
 trailing edge. You can use these features to recognize propellers of the
 correct direction of rotation. |prop_direction|
-
-Choosing propellers
-===================
-
-Propellers come in many varieties and are suited to different needs.
-
-.. note::
-
-   Have experience choosing propellers? Help us by editing this
-   section!
-   
    
 .. _connect-escs-and-motors_testing_motor_spin_directions:
 
