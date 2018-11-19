@@ -12,6 +12,7 @@ value to users with old hardware.
 .. toctree::
     :maxdepth: 1
 
+    Loading ChibiOS firmware onto Pixhawk <common-loading-chibios-firmware-onto-pixhawk>
     NAVIO+ Overview <common-navio-overview>
     APM 2.x <common-apm25-and-26-overview>
     PX4FMU <common-px4fmu-overview>

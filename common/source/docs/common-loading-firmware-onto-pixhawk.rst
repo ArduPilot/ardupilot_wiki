@@ -51,8 +51,7 @@ Answer **Yes** when it asks you "Are you sure?".
 
    Mission Planner: Install FirmwareScreen
 
-After the GCS detects which board you are using (i.e.
-Pixhawk) it will ask you to unplug the board, plug it back in and then
+After the GCS detects which board you are using it will ask you to unplug the board, plug it back in and then
 press **OK** within a few seconds (during this brief period the
 bootloader accepts requests to upload new firmware).
 
@@ -60,6 +59,13 @@ bootloader accepts requests to upload new firmware).
    :target: ../_images/Pixhawk_InstallFirmware2.png
 
    Mission Planner: Install FirmwarePrompt
+
+Next you may be asked "Upload ChibiOS?".  Most users will not notice a significant difference regardless of how this is answered.
+
+.. image:: ../../../images/loading-the-firmware-chibiOS-yes-no.png
+
+  - "Yes" will load ArduPilot using the newer ChibiOS operating system which results in a smaller and more efficient firmware but has a few `missing features <https://github.com/ArduPilot/ardupilot/issues/8109>`__
+  - "No" will load ArduPilot using the older NuttX operating system.
 
 If all goes well you will see some status appear on the bottom right
 including the words, "erase...", "program...", "verify.." and "Upload
