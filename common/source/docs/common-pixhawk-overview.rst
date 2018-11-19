@@ -612,24 +612,8 @@ Pixhawk system features
 -  The Pixhawk (FMUv2) flight controller consists of a PX4-FMU controller
    and a PX4-IO integrated on a single board with additional IO, Memory
    and other features.
--  It is highly optimized to provide control and automation for APM
-   flight navigation software with high performance and
-   capacity. Pixhawk allows users of older boards to seamlessly
-   transition to this system and lowers the barriers to entry for new
-   users.
--  The NuttX real-time operating system features high performance,
-   flexibility, and reliability for controlling any autonomous vehicle.
--  A Unix/Linux-like programming environment, integrated
-   multithreading and autopilot functions such as scripting of
-   missions and flight behavior provide powerful development
-   capabilities.
--  A custom PX4 driver layer ensures tight timing across all processes.
--  Peripheral options include digital airspeed sensors,
-   external multi-color LED indicators and external
-   compasses.
--  Most peripherals are automatically detected and configured.
--  **A very powerful 32-bit processor with an additional failsafe backup
-   controller and extensive memory.**
+-  **A 32-bit processor with an additional failsafe backup
+   controller.**
 
    -  STM32F427 32-bit primary microcontroller: 168 MHz, 252 MIPS,
       Cortex M4 core with a floating point unit.
@@ -639,37 +623,7 @@ Pixhawk system features
    -  Socket for a plug in micro SD memory card for data logging and
       other uses.
 
--  **Advanced sensor profile**
-
-   -  3 axis 16-bit ST Micro L3GD20H gyro for determining orientation.
-   -  3 axis 14-bit accelerometer and compass for determining outside
-      influences and compass heading.
-   -  Provision for external compass with automatic switch-over if
-      desired.
-   -  MEAS MS5611 barometric pressure sensor for determining altitude.
-   -  Built in voltage and current sensing for battery condition
-      determination.
-   -  Connections for externally-mountable GPS units for
-      determining absolute position.
-
--  **Extensive I/O interfaces with dedicated connectors**
-
-   -  Fourteen PWM servo or ESC speed control outputs.
-   -  Five UARTs (serial ports), one high-power capable, 2 with HW flow
-      control.
-   -  Two CAN I/O ports (one with internal 3.3V transceiver, one on
-      expansion connector)
-   -  Spektrum DSM / DSM2 / DSM-X® Satellite reciever compatible input:
-      Permits use of Spektrum RC Transmitters.
-   -  Futaba S.BUS® compatible input and output.
-   -  PPM sum signal input.
-   -  RSSI (PWM or voltage) input.
-   -  I2C and SPI serial ports.
-   -  Two 3.3 volt and one 6.6 volt Analog inputs.
-   -  Internal microUSB port and external microUSB port extension.
-
--  **Comprehensive power system with redundancy and extensive
-   protection.**
+-  **Power system with redundancy.**
 
    -  The Pixhawk is supplied with an in line power supply with voltage
       and current sensor outputs.
@@ -689,65 +643,10 @@ Pixhawk system features
    -  Weight: 38g (1.31oz), Width: 50mm (1.96"), Thickness: 15.5mm
       (.613"), Length: 81.5mm (3.21")
 
-Comparison of PX4FMU/PX4IO and Pixhawk
-======================================
-
-The new Pixhawk is an evolution of the PX4FMU  and PX4IO modules
-and is completely compatible.
-
--  The PX4FMU and PX4IO stack is very small (the size of an 8 ch RC
-   receiver) and very densely packed, Pixhawk has more space, more
-   serial ports and more PWM outputs.
--  There are two groups of servo connectors, one main group of 8 outputs
-   wired through the backup processor, and an auxiliary group of 6
-   outputs directly wired to the main processor.
--  The port labeled "RC" can take normal PPM sum or Futaba S.Bus inputs
-   and the port labeled "SB" can read RSSI or output S.Bus to servos.
--  A Spektrum satellite compatible port is on top (labeled SPKT/DSM).
--  The basic operation is the same, and the software is shared.
--  Inside Pixhawk a FMUv2 and an IOv2 do their duties on a single board
-   (and developers will find that the software will refer to FMUv2 and
-   IOv2)
--  The Pixhawk system has more than 10 times the CPU performance
-   and memory of the APM2.x and a lot more as well.
--  14 PWM outputs (Pixhawk) vs. 12 PWM outputs (PX4FMU/PX4IO)
--  All Pixhawk PWM outputs on servo connectors (PX4: 8 on servo, 4 on 15
-   pin DF13 connector)
--  5 serial ports vs. 4 (with some double functionality, so only 3 in
-   some configurations on old version)
--  256 KB RAM and 2 MB flash vs 192 KB RAM and 1 MB flash (old)
--  Modernized sensor suite (latest generation)
--  High-power buzzer driver (old: VBAT driven, not as loud)
--  High-power multicolor led (old: only external BlinkM support)
--  Support for panel-mounted USB extension (old: not present)
--  Revised, improved power architecture
--  Better protection on all input / output pins against shorts and over
-   voltage
--  Better sensing of power rails (internal and external, e.g. servo
-   voltage)
--  Support for Spektrum Satellite pairing (needed some manual wiring
-   work in v1, but also software-supported)
--  No more solid state relays on v2 (was not really used)
--  Connectors easier to disconnect in case, as the surrounding plastic
-   helps to place the fingers correctly
--  Case prevents one-off failure operation of servo connectors
--  The new unit is consirably larger, has the same height, but offers in
-   general more handling convenience.
--  External power supply similar to existing 3DR power brick (every unit
-   comes with a free module).
--  Both generations offer the same backup / override processor that
-   allows failover to manual if the autopilot fails in fixed wing
-   setups.
--  For software developers the differences are nicely abstracted in the
-   PX4 middleware, and can be sensed / configured at runtime.
-
 Connecting and disconnecting DF13 connectors
 ============================================
 
 ..  youtube:: Kfu8M8t2fWY
-    :width: 100%
-
-..  youtube:: TverfQwSdzU
     :width: 100%
 	    
 .. _common-pixhawk-overview_pixhawk_analog_input_pins:
