@@ -6,10 +6,6 @@ Loading Firmware
 
 These instructions will show you how to download the latest firmware onto the flight controller using the Mission Planner ground station.
 
-.. note::
-
-   For beta testers of ArduPilot using ChibiOS see instructions :ref:`here <common-loading-chibios-firmware-onto-pixhawk>`.
-
 [copywiki destination="copter,plane,rover,planner"]
 
 Connect flight controller to computer
