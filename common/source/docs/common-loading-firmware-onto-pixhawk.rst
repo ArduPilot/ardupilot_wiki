@@ -62,10 +62,10 @@ bootloader accepts requests to upload new firmware).
 
 Next you may be asked "Upload ChibiOS?".  Most users will not notice a significant difference regardless of how this is answered.
 
-.. image:: ../../../images/loading-the-firmware-chibiOS-yes-no.png
-
   - "Yes" will load ArduPilot using the newer ChibiOS operating system which results in a smaller and more efficient firmware but has a few `missing features <https://github.com/ArduPilot/ardupilot/issues/8109>`__
   - "No" will load ArduPilot using the older NuttX operating system.
+
+.. image:: ../../../images/loading-the-firmware-chibiOS-yes-no.png
 
 If all goes well you will see some status appear on the bottom right
 including the words, "erase...", "program...", "verify.." and "Upload
