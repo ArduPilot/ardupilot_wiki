@@ -1,15 +1,14 @@
 .. _home:
 
-==========
-Rover Home
-==========
-
-.. tip::
-
-   Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
+.. image:: /images/ardurover_logo.png
+    :target: _images/ardurover_logo.png
 
 .. image:: /images/home_rover.jpg
     :target: _images/home_rover.jpg
+
+==========
+Rover Home
+==========
 
 Rover is an advanced :ref:`open source <dev:license-gplv3>` autopilot for
 guiding **ground vehicles** and **boats**. It can run fully autonomous
@@ -24,11 +23,9 @@ applications (you can see a few examples including agricultural
 automation in our :ref:`Video Demos <rover-video-demonstrations>`).
 
 
-Table of Contents
------------------
-
 .. toctree::
    :titlesonly:
+   :hidden:
    
     Introduction <docs/gettit>
     First Time Setup <docs/apmrover-setup>
