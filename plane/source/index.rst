@@ -1,15 +1,15 @@
 .. _home:
 
-==========
-Plane Home
-==========
+.. image:: /images/ArduPilot.png
+    :target: _images/ArduPlane.png
 
-.. tip::
-
-   Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
 
 .. image:: /images/home_plane.jpg
     :target: _images/home_plane.jpg
+
+===============
+Plane Home
+===============
 
 --------------
 
@@ -93,11 +93,10 @@ Announcements
 Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcements.
 
 
-Full Table of Contents
-----------------------
 
 .. toctree::
    :maxdepth: 4
+   :hidden:
    
     Introduction <docs/introduction>
     First Time Setup <docs/arduplane-setup>
