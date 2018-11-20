@@ -1,8 +1,7 @@
 .. _home:
 
-.. image:: /images/ArduPilot.png
-    :target: _images/ArduPlane.png
-
+.. image:: /images/arduplane_logo.png
+    :target: _images/arduplane_logo.png
 
 .. image:: /images/home_plane.jpg
     :target: _images/home_plane.jpg
