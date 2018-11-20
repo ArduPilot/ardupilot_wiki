@@ -19,6 +19,7 @@ These pages will show you how to:
 - :ref:`Connecting to ArduPilot from ROS <ros-connecting>`
 - :ref:`Hector SLAM for non-GPS navigation <ros-slam>`
 - :ref:`Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>`
+- :ref:`Clock/Time syncronisation <ros-timesync>`
 - Retrieve ArduPilot information in ROS
 - Use ROS to command an ArduPilot vehicle
 - Simulate ArduPilot in `Gazebo <http://gazebosim.org/>`__
