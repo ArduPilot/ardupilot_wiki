@@ -140,7 +140,7 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_airsupplyaerial.png
     :width: 250px
-    :target:  https://www.airsupplyaerial.net/
+    :target:  https://www.airsupplyaerial.net/shop
 
 .. image:: ../../../images/supporters/supporters_logo_terraplane.png
     :width: 250px
