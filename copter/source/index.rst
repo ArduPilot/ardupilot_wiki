@@ -1,16 +1,14 @@
 .. _home:
 
-===========
-Copter Home
-===========
-
-.. tip::
-
-    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
-
+.. image:: /images/arducopter_logo.png
+    :target: _images/arducopter_logo.png
 
 .. image:: /images/home_copter.jpg
     :target: _images/home_copter.jpg
+
+===========
+Copter Home
+===========
 
 ..  raw:: html
 
