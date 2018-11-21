@@ -1,17 +1,17 @@
 .. _terrain-following:
 
-=================
-Terrain Following
-=================
+========================================
+Terrain Following (in Auto, Guided, etc)
+========================================
 
-Copter 3.4 (and higher) support "terrain following" in nearly all modes including autonomous modes like :ref:`AUTO <auto-mode>`, :ref:`Guided <ac2_guidedmode>`, :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>`.  This feature allows the vehicle to climb or descend to maintain a specified distance above the terrain using either a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>` or from terrain altitude data provided by the ground station using a mapping service such as Google maps.  Details of how the Google maps data is used can be found on the :ref:`plane terrain following page <common-terrain-following>`
+Copter 3.4 (and higher) support "terrain following" in nearly all modes including autonomous modes like :ref:`AUTO <auto-mode>`, :ref:`Guided <ac2_guidedmode>`, :ref:`RTL <rtl-mode>` and :ref:`Land <land-mode>`.  This feature allows the vehicle to climb or descend to maintain a specified distance above the terrain using either a :ref:`downward facing Lidar or Sonar <common-rangefinder-landingpage>` or from `SRTM <https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission>`__ data (aka terrain altitude data) provided by the ground station using a mapping service such as Google maps.  Details of how the SRTM data is used can be found on the :ref:`plane terrain following page <common-terrain-following>`
 
 ..  youtube:: mT67QOAxuG8
     :width: 100%
 
 .. note::
 
-   :ref:`Loiter <loiter-mode>`, :ref:`PosHold <poshold-mode>` and :ref:`AltHold <altholdmode>` modes also support terrain following using a :ref:`lidar or sonar <common-rangefinder-landingpage>`.  For these modes there is no setup required besides simply connecting and configuring a downward facing :ref:`lidar or sonar <common-rangefinder-landingpage>`.
+   :ref:`Loiter <loiter-mode>`, :ref:`PosHold <poshold-mode>` and :ref:`AltHold <altholdmode>` modes also support terrain following.  Please refer to the :ref:`terrain following for non-autonomous modes <terrain-following-manual-modes>` wiki page.
 
 Setting up a Mission to use Terrain data
 ----------------------------------------
@@ -24,6 +24,9 @@ Setting up a Mission to use Terrain data
        :target: ../_images/terrain_mission.png
        :width: 500px
 
+.. warning::
+
+    Do not set the :ref:`EK2_ALT_SOURCE <EK2_ALT_SOURCE>` or :ref:`EK3_ALT_SOURCE <EK3_ALT_SOURCE>` parameters.  These parameters should be left at "0" (barometer).
 
 Using Terrain Altitude during RTL and Land
 ------------------------------------------

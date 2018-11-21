@@ -56,6 +56,7 @@ tuning options for the vehicle.
 [/site]
     Telemetry / Serial Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
 [site wiki="copter,planner"]
+    Terrain Following (Non-Autonomous modes) <terrain-following-manual-modes>
     Tuning <common-tuning>
 [/site]
     UAVCAN Setup <common-uavcan-setup-advanced>
