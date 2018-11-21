@@ -59,7 +59,7 @@ Commonly modified parameters
 -  1 : use range finder.  This can be used for environments where the barometer data is very noisy and the ground is relatively flat (i.e. indoors where an airconditioner may cause sudden pressure changes).  This should not be used if the intention is to perform terrain following.  For terrain terrain following see :ref:`copter <terrain-following>` and :ref:`plane specific terrain following instructions <common-terrain-following>`).
 -  2 : use GPS.  Useful when GPS quality is very good and barometer drift could be a problem.  For example if the vehicle will perform long distance missions with altitude changes of >100m.
 
-:ref:`EK2_ALT_NOISE <dev:extended-kalman-filter_ekf_alt_noise>`: Default is "1.0".  Lower number reduces reliance on accelerometers, increases reliance on barometer.
+:ref:`EK2_ALT_M_NSE <dev:extended-kalman-filter_ekf_alt_noise>`: Default is "1.0".  Lower number reduces reliance on accelerometers, increases reliance on barometer.
 
 :ref:`EK2_GPS_TYPE <dev:extended-kalman-filter_ekf_gps_type>`:
 Controls how GPS is used.
