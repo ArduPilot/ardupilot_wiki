@@ -41,19 +41,4 @@ Configuration through the Ground Station
 - :ref:`PRX_ORIENT <PRX_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 - :ref:`PRX_YAW_CORR <PRX_YAW_CORR>` allows adjusting the forward direction of the SF40c.  Even with the sensor's lightware logo pointed forwards, in testing the lidar has reported objects 20 ~ 30degrees off from their actual direction.  The best way to determine this value is to place an object in front of the sensor, connect a PC to the sensor using a USB cable, then open the Lightware Terminal application and enter "?TS,90,0" (search light, 90 degree wide beam directly forward).  The sensor should return two numbers, an angle and a distance.  The negative of the angle should be entered into the :ref:`PRX_YAW_CORR <PRX_YAW_CORR>` parameter.
 
-Limitation
-==========
-
-The AC3.4 implementation has the following limitations.  Future versions will likely resolve these.
-
--  Object avoidance only works in Loiter and AltHold modes.
--  The vehicle should stop before hitting objects but will never back away from objects that approach the vehicle (a slow backing away will be added in future firmware versions).
-
-Please report issues found in the `support forums <https://discuss.ardupilot.org/c/arducopter/copter34>`__ and we will try to address them.
-
-DataFlash logging
-=================
-
-The distance to the nearest object in 8 quadrants around the vehicle is recorded in the DataFlash log's PRX messages.
-
-Real-time distances can be seen in the Mission Planner's proximity viewer which can be opened by moving to the MP's Flight Data screen, press Ctrl-F and push the Proximity button.
+More details on using this sensor for object avoidance on Copter can be found :ref:`here <copter-object-avoidance>`.

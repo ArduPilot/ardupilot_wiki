@@ -54,11 +54,6 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="copter,rover"]
     Marvelmind for Non-GPS Navigation <common-marvelmind>
 [/site]
-[site wiki="copter"]
-    Object Avoidance with Lightware SF40C <common-lightware-sf40c-objectavoidance>
-    Object Avoidance with TeraRanger Tower <common-teraranger-tower-objectavoidance>
-    common-rangefinder-objectavoidance
-[/site]
     On-Screen Display (OSD) <common-osd-boards-on-screen-display>
 [site wiki="copter,plane"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>

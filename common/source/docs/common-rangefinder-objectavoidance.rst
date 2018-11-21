@@ -27,5 +27,5 @@ Connecting and Configuring the Lidar
 References
 ==========
 
-- :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>` (the first lidar used to add object avoidance) has details about limitations of the current implementation.
-- More details of the algorithms used are on the `developer wiki's object avoidance page <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__.
+- `Copter object avoidance wiki page is here <copter-object-avoidance>`__
+- More details of the algorithms used are on the `developer wiki's object avoidance page <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__
