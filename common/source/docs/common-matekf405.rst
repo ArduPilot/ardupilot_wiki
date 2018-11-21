@@ -51,7 +51,7 @@ See mateksys.com for more `detailed specifications <http://www.mateksys.com/?por
 Variants
 ========
 
-Besides STD and CTR versions, there are older variants called -AIO and -OSD that are tagged end-of-life by mateksys, both use the ICM20602 IMU like the STD version. Both do not have an onboard barometer. While the -AIO has I2C pads exposed, the -OSD version does not. 
+In addition to STD and CTR versions, there are older variants called -AIO and -OSD that have been declared end-of-life by mateksys.  Both use the ICM20602 IMU, like the STD version. Neither have an onboard barometer. While the -AIO has I2C pads exposed, the -OSD version does not.
 
 .. note::
 
@@ -83,4 +83,4 @@ This board does not include a GPS or compass so an :ref:`external GPS/compass <c
     :target: ../_images/matekf405-std-wiring.png
     :width: 450px
 
-A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules.
+A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules. USB power is not provided to peripherals.
