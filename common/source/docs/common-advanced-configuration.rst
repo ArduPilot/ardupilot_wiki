@@ -42,6 +42,9 @@ tuning options for the vehicle.
 [site wiki="plane,planner,rover"]
     Magnetic Interference <common-magnetic-interference>
 [/site]
+[site wiki="copter"]
+    Object Avoidance <copter-object-avoidance>
+[/site]
 [site wiki="rover"]
     Object Avoidance <rover-object-avoidance>
 [/site]

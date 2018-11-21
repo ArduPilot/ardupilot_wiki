@@ -26,7 +26,7 @@ Maxbotix Sonar and Pulsed Light LED range finders.
 
    Copter-3.4 (and higher) includes support for :ref:`Terrain Following <terrain-following>` in Auto mode.
 
-   Copter-3.5 (and higher) can use lidar for :ref:`object avoidance <common-rangefinder-objectavoidance>`.
+   Copter-3.5 (and higher) can use lidar for :ref:`object avoidance <copter-object-avoidance>`.
 [/site]
 
    

@@ -48,9 +48,4 @@ It may be necessary to turn off flow control if using Telem1 (aka Serial1) or Te
 
 - :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` =  "0" if using Serial1
 
-DataFlash logging
-=================
-
-The distance to the nearest object in 8 quadrants around the vehicle is recorded in the DataFlash log's PRX messages.
-
-Real-time distances can be seen in the Mission Planner's proximity viewer which can be opened by moving to the MP's Flight Data screen, press Ctrl-F and push the Proximity button.
+More details on using this sensor for object avoidance on Copter can be found :ref:`here <copter-object-avoidance>`.
