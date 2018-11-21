@@ -63,3 +63,32 @@ Flying LTE has never been easier
    4GmetryII
 
 *Image and text from Volta Website*
+
+Alfonce Remote Gateway - Companion Computer
+==============================
+
+.. figure:: https://www.dronotique.fr/wp-content/uploads/2018/10/offre_complete-300x215.jpg
+   :target:  https://www.dronotique.fr/produit/alfonce-remote-gateway/
+
+`Alfonce Remote Gateway <https://www.dronotique.fr/produit/alfonce-remote-gateway/>`__ is a turn key companion computer to interface cameras, Ardupilot and ground stations over cell Network, Wifi and RC transmitter.
+
+**It integrates :**
+
+* Mavlink proxy
+* Cameras management
+* Media server with MJPEG video streams
+* Computer vision scripts
+* Web management interface
+* Wifi and 3/4G connexion
+* Open VPN client
+
+**It supports a large variety of cameras :**
+
+* USB : PTP and UVC
+* Wifi : Sony, Mapir, MJPEG and RTSP
+
+Full list can be `found here <https://www.dronotique.fr/docs/alfonce-remote-gateway/gestion-des-appareils-photos-et-cameras/modeles-dappareils-photos-et-de-cameras-supportes/>`__ 
+
+You can also read the full `documentation <https://www.dronotique.fr/docs/alfonce-remote-gateway/>`__ to discover full functionnalities
+
+By defaut it installed on a OrangePi Zero 2 + H5, but it could be integrated on a lot of supported nano computers or servers!
