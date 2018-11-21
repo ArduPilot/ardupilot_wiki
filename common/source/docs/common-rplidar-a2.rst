@@ -13,12 +13,12 @@ See separate wiki pages on object avoidance for Copter and Rover for more detail
 *image courtesy of robotshop.com*
 
 Where to buy
-============
+------------
 
 - Slamtec.com includes a `list of resellers here <https://www.slamtec.com/en/Home/Buy>`__
 
 Specifications
-==============
+--------------
 
 - rotation rate: 10hz / 600 RPM
 - sample rate: 4000 to 8000 samples/s
@@ -27,7 +27,7 @@ Specifications
 - voltage/current requirement: 5V / 1.5A
 
 Connecting and Configuring
-==========================
+--------------------------
 
    .. image:: ../../../images/rplidar-a2-pixhawk.jpg
        :target: ../_images/rplidar-a2-pixhawk.jpg

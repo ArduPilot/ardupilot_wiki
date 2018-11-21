@@ -1,21 +1,20 @@
 .. _common-lightware-sf40c-objectavoidance:
 
-====================================
-LightWare SF40/C for Object Avoidance
-====================================
-
+==========================
+LightWare SF40/C 360 Lidar
+==========================
 
 The `Lightware SF40/C 360degree lidar <https://lightware.co.za/collections/lidar-rangefinders/products/sf40-c-100-m>`__ can be used for Object Avoidance in Copter-3.4 and higher in Loiter mode.
 
 .. warning::
 
-   This feature is new for Copter-3.4 and has not been tested in a wide variety of situations.  It should be used with caution.
+   This feature has not been tested in a wide variety of situations and should be used with caution.
 
 ..  youtube:: BDBSpR1Dw_8
     :width: 100%
 
 Mounting the SF40c
-==================
+------------------
 
    .. image:: ../../../images/lightware-sf40c.png
        :target: ../_images/lightware-sf40c.png
@@ -23,8 +22,8 @@ Mounting the SF40c
 
 The SF40c should be mounted on the top or bottom of the vehicle so that the rotating portion scans horizontally and its view is not obstructed by any portion of the vehicle including GPS mast, vehicle legs etc.  The round gold and black lightware logo should be facing forward.
     
-Connecting to the Pixhawk
-=========================
+Connecting to the Flight Controller
+-----------------------------------
 
    .. image:: ../../../images/lightware-sf40c-pixhawk.png
        :target: ../_images/lightware-sf40c-pixhawk.png
@@ -32,7 +31,7 @@ Connecting to the Pixhawk
 The diagram above shows how the SF40c can be connected to the flight controller's serial input.  The above pictures shows use of Serial4 but any free serial port can be used.
 
 Configuration through the Ground Station
-========================================
+----------------------------------------
 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = "11" ("Lidar360") if using Serial4.
 - :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` =  "115" if using Serial4.
