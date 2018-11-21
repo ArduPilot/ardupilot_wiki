@@ -112,11 +112,8 @@ These two videos shows a `ZED 3D camera <https://www.stereolabs.com/>`__ connect
 Future Steps
 ============
 
-- add support for cheaper proximity sensors (`issue here <https://github.com/ArduPilot/ardupilot/issues/5605>`__)
-- provide an option for simply stopping instead of sliding past obstacles in Loiter mode (`issue here <https://github.com/ArduPilot/ardupilot/issues/5606>`__)
 - add avoidance to other modes including RTL, AUTO (`issue here <https://github.com/ArduPilot/ardupilot/issues/5607>`__)
 - improve integration with ROS (`issue here <https://github.com/ArduPilot/ardupilot/issues/5608>`__)
 - implement a simple occupancy grid for cases where we cannot (or do not want to) implement ROS on the vehicle (`issue here <https://github.com/ArduPilot/ardupilot/issues/5609>`__)
-- add RNGFND_ORIENT parameter to allow an upward facing range finder to be connected in the same way a downward facing range finder is connected (`issue here <https://github.com/ArduPilot/ardupilot/issues/5610>`__)
 
 If you would like to get involved with the development of this area, please consider posting in the issues listed above or chatting with the developers on `Gitter/ArduPilot <https://gitter.im/ArduPilot/ardupilot>`__.
