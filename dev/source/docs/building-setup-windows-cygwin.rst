@@ -107,7 +107,7 @@ Set up directories/paths and extra packages in Cygwin
 ::
 
     pip2 install empy
-    pip install pyserial
+    pip2 install pyserial
     pip2 install pymavlink
 
 Build with Waf
