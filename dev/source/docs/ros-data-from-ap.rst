@@ -42,3 +42,7 @@ From within ArduPilot the default update rate of the IMU data sent to ROS/mavros
 .. warning::
 
     Users of :ref:`APSync <apsync-intro>` may notice that `APWeb <https://github.com/ArduPilot/APWeb>`__ resets the data stream rates to 4hz every 10 seconds.  This is a `known issue <https://github.com/ArduPilot/APWeb/issues/15>`__ that can be worked around by editing the /etc/rc.local file and commenting out the line that starts APWeb.
+
+.. note::
+
+    If you notice AP is sending data at a higher rate than requested it may be because of `this issue <https://github.com/ArduPilot/ardupilot/issues/9878>`__
