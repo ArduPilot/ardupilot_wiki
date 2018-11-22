@@ -13,6 +13,8 @@ Copter 3.5 (and higher) supports object avoidance horizontally and upwards using
 ..  youtube:: BDBSpR1Dw_8
     :width: 100%
 
+Horizontal object avoidance works in :ref:`AltHold <altholdmode>` and :ref:`Loiter <loiter-mode>` modes.  Upward object avoidance works in all modes except Stabilize and Acro.
+
 Details on how object avoidance is implemented can be found :ref:`here in the developer wiki <dev:code-overview-object-avoidance>`
 
 Setup the Lidar
