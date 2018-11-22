@@ -51,6 +51,19 @@ Specifications
 
 See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f405-wing#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-wing#tab-id-3>`__.
    
+Default UART order
+==================
+
+- SERIAL0 = console = USB
+- SERIAL1 = Telemetry1 = USART1
+- SERIAL2 = empty, USART2 used for RCInput
+- SERIAL3 = GPS1 = USART3
+- SERIAL4 = GPS2 = UART4
+- SERIAL5 = USER = UART5
+- SERIAL6 = USER = USART6
+
+Serial protocols can be adjusted to personal preferences.
+
 Where to Buy
 ============
 
