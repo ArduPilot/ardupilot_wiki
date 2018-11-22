@@ -9,8 +9,8 @@ The flight controller and companion computer clocks can be syncronised using MAV
 - `mavros's sys_time plugin <https://github.com/mavlink/mavros/blob/master/mavros/src/plugins/sys_time.cpp>`__ implements the mavros/ROS side
 - ArduPilot's `AP_RTC <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_RTC>`__ library implements the ArduPilot side
 
-Configuration
--------------
+Mavros Configuration
+--------------------
 
 Mavros's `apm_config.yaml <https://github.com/mavlink/mavros/blob/master/mavros/launch/apm_config.yaml>`__ file can be modified to configure the rate of the `SYSTEM_TIME <https://mavlink.io/en/messages/common.html#SYSTEM_TIME>`__ and `TIMESYNC <https://mavlink.io/en/messages/common.html#TIMESYNC>`__ messages.  Below are the recommended settings.
 
@@ -23,7 +23,22 @@ Mavros's `apm_config.yaml <https://github.com/mavlink/mavros/blob/master/mavros/
     time:
       timesync_mode: MAVLINK
 
+ArduPilot Configuration
+-----------------------
+
 The flight controller's time is set from the GPS by default but this can be modified to be set from the `SYSTEM_TIME <https://mavlink.io/en/messages/common.html#SYSTEM_TIME>`__ command by setting RTC_TYPES = 1 (for "MAVLINK_SYSTEM_TIME")
+
+For Rover or Plane, the SCHED_LOOP_RATE parameter should be increased to 200 because mavros ignores TIMESYNC messages if the round trip time is more than 10ms.  It may also be necessary to increase the update rate of the `gcs related tasks in the scheduler <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/APMrover2.cpp#L63>`__.
+
+For rover, open `APMrover2.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/APMrover2.cpp>`__ and within the scheduler_tasks[] array ensure the gcs entries have their update rate set to 200 like below:
+
+::
+
+    SCHED_TASK(gcs_retry_deferred,    200,    500),
+    SCHED_TASK(gcs_update,            200,    500),
+    SCHED_TASK(gcs_data_stream_send,  200,   1000),
+
+After making this change you will need to compile rover and upload the new binary to the flight controller.  Hopefully this will not be necessary in future versions of Plane or Rover.
 
 Testing
 -------
