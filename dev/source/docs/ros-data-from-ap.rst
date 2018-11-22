@@ -33,7 +33,12 @@ mavros can be used to send a command to ArduPilot to change the rate of the data
 
 ::
 
-    rosrun mavros mavsys rate --all 10  <-- to set the data rate for all data to 10hz
-    rosrun mavros mavsys rate --help    <-- to see help on this command
+    rosrun mavros mavsys rate --all 10     <-- to set the data rate for all data to 10hz
+    rosrun mavros mavsys rate --extra1 10  <-- to set the data rate for IMU_RAW to 10hz
+    rosrun mavros mavsys rate --help       <-- to see help on this command
 
 From within ArduPilot the default update rate of the IMU data sent to ROS/mavros can be set by changing the SRx_RAW_SENS parameter (where "x" is the serial port number on the flight controller)
+
+.. warning::
+
+    Users of :ref:`APSync <apsync-intro>` may notice that `APWeb <https://github.com/ArduPilot/APWeb>`__ resets the data stream rates to 4hz every 10 seconds.  This is a `known issue <https://github.com/ArduPilot/APWeb/issues/15>`__ that can be worked around by editing the /etc/rc.local file and commenting out the line that starts APWeb.
