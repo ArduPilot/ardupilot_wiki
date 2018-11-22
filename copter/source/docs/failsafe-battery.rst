@@ -48,7 +48,7 @@ As with all failsafes, the user can re-take control of the vehicle by changing t
 
 .. note::
 
-    Even if the failsafe action is set to "None" (i.e. :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` = 0) the buzzer will buzz and the LEDs will flash yellow.  To completely disable the battery failsafe set :ref:`BATT_LOW_VOLT <BATT_LOW_VOLT>` and :ref:`BATT_LOW_MAH <BATT_LOW_MAH>` to zero.
+    Once the battery failsafe has triggered, it cannot be reset until the flight controller is rebooted.
 
 Setting up using Mission Planner
 --------------------------------
