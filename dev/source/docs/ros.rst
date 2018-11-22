@@ -37,7 +37,7 @@ Prerequisites
 
     VR Robotics has successfully used Rover with ROS for SLAM as demonstrated below.
 
-..  youtube:: orMXVby-tSI
+..  youtube:: DUsPAa20YdQ
     :width: 100%
 
     We are keen to improve ArduPilot's support of ROS so if you find issues (such as commands that do not seem to be supported), please report them in the `ArduPilot issues list <https://github.com/ArduPilot/ardupilot/issues>`__ with a title that includes "ROS" and we will attempt to resolve them as quickly as possible.
