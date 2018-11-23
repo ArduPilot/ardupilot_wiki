@@ -4,11 +4,6 @@
 AutoTune
 ========
 
-This article explains how to use AutoTune on Copter.
-
-Overview
-========
-
 AutoTune attempts to automatically tune the Stabilize P, Rate P and D, and maximum rotational accelerations to provide the highest response without significant overshoot. Copter needs to be "basically" flyable in :ref:`AltHold mode <altholdmode>` before attempting to use AutoTune as the feature needs to be able to "twitch" the copter in the roll and pitch axis.
 
 .. note::
