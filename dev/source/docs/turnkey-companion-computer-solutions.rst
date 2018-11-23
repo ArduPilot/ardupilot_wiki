@@ -65,7 +65,7 @@ Flying LTE has never been easier
 *Image and text from Volta Website*
 
 Alfonce Remote Gateway - Companion Computer
-==============================
+===========================================
 
 .. figure:: https://www.dronotique.fr/wp-content/uploads/2018/10/offre_complete-300x215.jpg
    :target:  https://www.dronotique.fr/produit/alfonce-remote-gateway/
