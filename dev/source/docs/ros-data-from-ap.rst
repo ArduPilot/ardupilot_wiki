@@ -37,7 +37,7 @@ mavros can be used to send a command to ArduPilot to change the rate of the data
     rosrun mavros mavsys rate --extra1 10  <-- to set the data rate for IMU_RAW to 10hz
     rosrun mavros mavsys rate --help       <-- to see help on this command
 
-From within ArduPilot the default update rate of the IMU data sent to ROS/mavros can be set by changing the SRx_RAW_SENS parameter (where "x" is the serial port number on the flight controller)
+From within ArduPilot the default update rate of the IMU data sent to ROS/mavros can be set by changing the SRx_EXTRA1 parameter (where "x" is normally the serial port number on the flight controller)
 
 .. warning::
 
