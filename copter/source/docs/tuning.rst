@@ -154,3 +154,8 @@ firmware to continuously stabilize the vehicle
 
 ..  youtube:: sDd4VOpOnnA
     :width: 100%
+
+-----
+
+.. image:: ../../../images/banner-freespace.png
+   :target: https://freespace.solutions/
