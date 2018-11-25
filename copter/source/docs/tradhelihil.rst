@@ -19,13 +19,13 @@ What you need
 
 1. AeroSIM-RC 3.7 http://www.aerosimrc.com/j/index.php/en/downloads.
    Note: As of Feb 20th 2012, you need to use the beta version of 3.83
-which can be found `here <http://www.aerosimrc.com/downloads/AeroSIMRC_3.83-3.81.exe>`__.
+   which can be found `here <http://www.aerosimrc.com/downloads/AeroSIMRC_3.83-3.81.exe>`__.
 
 2. `AP Mission Planner v 1.0.84+ <https://code.google.com/archive/p/ardupilot-mega/downloads>`__
 
 3. In your AP Mission Planner installation directory you will find a
-file called AeroSIMRCAPMHIL.zip. Extract this to your AeroSIM-RC
-plug-ins directory (i.e. C:Program Files (x86)AeroSIM-RCplugin)
+   file called AeroSIMRCAPMHIL.zip. Extract this to your AeroSIM-RC
+   plug-ins directory (i.e. C:Program Files (x86)AeroSIM-RCplugin)
 
 How to make it work
 ~~~~~~~~~~~~~~~~~~~
