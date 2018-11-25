@@ -78,8 +78,7 @@ There are several popular frame layouts for MultiCopters
          and simple and it's natural symmetry balances flying forces
          better.
 
-   -  A humming bird sized 
-     `Estes Proto X <http://www.estesrockets.com/helis-quads/quadcopters/004606-proto-x>`__
+   -  A humming bird sized `Estes Proto X <http://www.estesrockets.com/helis-quads/quadcopters/004606-proto-x>`__
       is shown below.
 
       .. image:: ../images/leste4606__92098.1384842703.1020.1020.jpg
