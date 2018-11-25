@@ -1,8 +1,8 @@
 .. _sailboat_bot-home:
 
-=================
+======================
 Sailing Vechicles Home
-=================
+======================
 
 ArduRover now supports sailing vehicles. Only sail boats have been tested so far, although there is no reason land based vehicles wouldn’t work. It is recommended that the user familiarises themselves with the basic principles and terminology of sailing and sailboats. 
 
