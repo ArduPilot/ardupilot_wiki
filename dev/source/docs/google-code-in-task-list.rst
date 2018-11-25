@@ -1,8 +1,8 @@
 .. _google-code-in-task-list:
     
-========================================
+===============================================
 List of Suggested Tasks for Google Code-in 2018
-========================================
+===============================================
 
 This is a list of tasks suggested by ArduPilot developers for `Google Code-in 2018 <https://codein.withgoogle.com/>`__. These are currently the example tasks and they may be further refined later. If you have your own ideas then please discuss them on either the gitter channel (at https://gitter.im/ArduPilot/GSoC) or on the discuss server (see https://discuss.ardupilot.org/c/google-summer-of-code). 
 We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for Code-in 2018. We're looking for enthusiastic students who can really get stuck into their project and make a substantial contributions to the ArduPilot project.
@@ -119,7 +119,6 @@ Create an ArduPilot logo in a square form factor for profile pictures
 
 Create a system connection diagram with updated components
 ----------------------------------------------------------
-- Reproduce this image using new up to date components so that it reflects the current state of the art in components.
-https://www.dropbox.com/s/b4u3kb1rw2xbvef/Pixhawk-Inforgraphic2.jpg?dl=0"
+- Reproduce this image using new up to date components so that it reflects the current state of the art in components. https://www.dropbox.com/s/b4u3kb1rw2xbvef/Pixhawk-Inforgraphic2.jpg?dl=0"
 
 

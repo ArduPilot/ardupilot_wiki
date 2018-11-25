@@ -11,7 +11,7 @@ This article lists turnkey companion computer solutions that are advertised as w
    Please let us know if you discover a new companion computer, so we can add it to this list. 
 
 UAVcast-Pro - Raspberry Pi software for LTE / WiFi Drones
-==============================
+=========================================================
 
 .. figure:: https://uavmatrix.com/wp-content/uploads/2018/08/ipad.png
    :target:  https://uavmatrix.com/uavcast-pro/

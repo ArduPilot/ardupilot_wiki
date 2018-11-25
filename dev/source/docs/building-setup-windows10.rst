@@ -15,7 +15,7 @@ Setup steps
 
 .. note::
 
-Starting with the Fall Creators Update (Windows 10 version 1803), enabling the Developer Mode is not longer required for using WSL.
+    Starting with the Fall Creators Update (Windows 10 version 1803), enabling the Developer Mode is not longer required for using WSL.
 
 #. Enable Ubuntu on Windows which includes the following steps (original `How-To Geek's instructions here <http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`__):
 
