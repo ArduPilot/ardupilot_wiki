@@ -1,4 +1,4 @@
-.. _common-omnibusf4pro:
+.. _common-omnibusnanov6:
 
 ===============================
 Omnibus F4 Nano V6 (must be V6)
@@ -8,8 +8,7 @@ Omnibus F4 Nano V6 (must be V6)
     :target: ../_images/omnibusNanoV6.jpg
     :width: 450px
 
-
-*above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4nanov6.html>`__
+Above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4nanov6.html>`__
 
 .. note::
 

@@ -214,7 +214,7 @@ a mission):**
 +--------+----------------------------------------------------------------------------------------+
 | CNum   | This command's number in the mission (0 is always home, 1 is the first command, etc)   |
 +--------+----------------------------------------------------------------------------------------+
-| CId    | The `MAVLink message id <https://mavlink.io/en/messages/common.html>`__                        |
+| CId    | The `MAVLink message id <https://mavlink.io/en/messages/common.html>`__                |
 +--------+----------------------------------------------------------------------------------------+
 | Copt   | The option parameter (used for many different purposes)                                |
 +--------+----------------------------------------------------------------------------------------+

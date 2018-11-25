@@ -50,8 +50,9 @@ Specifications
    -  4x I2C ports
    -  4x SPI buses enabled
    -  2x CAN Bus ports
-   
-   **Other**
+
+-  **Other**
+
   -  Weight: 90g
   -  Dimensions: 44mm x 84mm x 12mm
   -  Operating temperature: -20 ~ 80°c（Measured value）
