@@ -8,7 +8,7 @@ Omnibus F4 Pro
     :target: ../_images/omnibusf4pro.png
     :width: 450px
 
-    above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
+    Above image and some content courtesy of `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4prov3.html>`__
 
 .. note::
 
@@ -115,8 +115,9 @@ Install dfu-util
 
   Append the path of the `dfu-util.exe` to the system environment variable `Path`: "My Computer" > "Properties" > "Advanced" > "Environment Variables" > "Path". Please note that paths in the variable `Path` are seperated by semicolon `;`. This will allow dfu-util to be executed globally in command prompt.
   
-    Instead of using dfu-util, you could flash bootloader with betaflight. Instructions are detailled here : https://github.com/betaflight/betaflight/wiki/Installing-Betaflight
+  Instead of using dfu-util, you could flash bootloader with betaflight. Instructions are detailled here : https://github.com/betaflight/betaflight/wiki/Installing-Betaflight
   If you board is not recognize as a com port under windows, you have to download and install zadig : http://zadig.akeo.ie/
+
 
 Flash Bootloader
 ----------------
@@ -155,7 +156,7 @@ To build your own firmware, see the instructions on setting up a build envrionme
 
 
 Configuration
------------------
+-------------
 Enable Battery monitor with these settings :
 
 BAT_MONITOR=4
@@ -171,8 +172,8 @@ BAT_VOLT_MULT 11.0
 BAT_AMP_PERVOLT 38.0 (note, this value may vary from 18 to 38, depending on specific board manufacturer...will need to be calibrated to match actual current)
 
 
-How to trigger a camera with relay pin.
-========================
+How to trigger a camera with relay pin
+======================================
 
 All PWM could be use as relay. BRD_PWM_COUNT have to be set.
 
