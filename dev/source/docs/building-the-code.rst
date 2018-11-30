@@ -57,11 +57,11 @@ Links to current build pages
     :maxdepth: 1
 
     Setup the Build Environment on Linux/Ubuntu <building-setup-linux>
-    Setup the make Build Environment on Windows <building-setup-windows>
+    Setup the Build Environment on Windows <building-setup-windows>
     Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
     Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>
+    Setup Eclipse on Windows for building with waf <building-setup-windows-eclipse>
     Setup the Build Environment on MacOSX <building-setup-mac>
-    Building for Pixhawk on Windows with Make <building-px4-with-make>
     Building for NAVIO2 on RPi3 <building-for-navio2-on-rpi3>
     Building for Erle-Brain 2 <building-for-erle-brain-2>
     Building for Erle-Brain <building-for-erle-brain>
@@ -76,7 +76,8 @@ Deprecated Instructions
 
 .. toctree::
     :maxdepth: 1
-    
+
+    Deprecated: Building for Pixhawk on Windows with Make <building-px4-with-make>
     Deprecated: Building ArduPilot with Arduino for Windows <building-ardupilot-with-arduino-windows>
     Deprecated: Editing & Building with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>
     Deprecated: Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>

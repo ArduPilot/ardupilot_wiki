@@ -4,11 +4,6 @@
 AutoTune
 ========
 
-This article explains how to use AutoTune on Copter.
-
-Overview
-========
-
 AutoTune attempts to automatically tune the Stabilize P, Rate P and D, and maximum rotational accelerations to provide the highest response without significant overshoot. Copter needs to be "basically" flyable in :ref:`AltHold mode <altholdmode>` before attempting to use AutoTune as the feature needs to be able to "twitch" the copter in the roll and pitch axis.
 
 .. note::
@@ -131,6 +126,10 @@ ATUN (auto tune overview) and ATDE (auto tune details) messages are
 written to the dataflash logs. Some details of the contents of those
 messages can be found on the :ref:`Downloading and Analyzing Data Logs in Mission Planner <common-downloading-and-analyzing-data-logs-in-mission-planner_message_details_copter_specific>` wiki page.
 
+-----
+
+.. image:: ../../../images/banner-freespace.png
+   :target: https://freespace.solutions/
+
 .. |AutoTuneCh7Switch| image:: ../images/AutoTuneCh7Switch.png
     :target: ../_images/AutoTuneCh7Switch.png
-

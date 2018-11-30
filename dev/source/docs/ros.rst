@@ -15,14 +15,18 @@ ArduPilot capabilities can be extended with `ROS <http://www.ros.org/>`__ (aka R
 
 These pages will show you how to:
 
-- :ref:`Install ROS and MAVROS <ros-install>`
-- :ref:`Connecting to ArduPilot from ROS <ros-connecting>`
-- :ref:`Hector SLAM for non-GPS navigation <ros-slam>`
-- :ref:`Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>`
-- :ref:`Clock/Time syncronisation <ros-timesync>`
-- Retrieve ArduPilot information in ROS
-- Use ROS to command an ArduPilot vehicle
-- Simulate ArduPilot in `Gazebo <http://gazebosim.org/>`__
+.. toctree::
+    :maxdepth: 1
+
+        Install ROS and MAVROS <ros-install>
+        Connecting to ArduPilot from ROS <ros-connecting>
+        Hector SLAM for non-GPS navigation <ros-slam>
+        Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>
+        Clock/Time syncronisation <ros-timesync>
+        Send data from AP to ROS/mavros <ros-data-from-ap>
+        ROS with SITL <ros-sitl>
+        ROS with SITL in Gazebo <ros-gazebo>
+        ROS with distance sensors <ros-distance-sensors>
 
 Prerequisites
 =============
@@ -30,24 +34,6 @@ Prerequisites
 - Learn on to use ArduPilot first by following the relevant wiki for `Rover <http://ardupilot.org/rover/index.html>`__, `Copter <http://ardupilot.org/copter/index.html>`__ or `Plane <http://ardupilot.org/plane/index.html>`__. In particular make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
 - Learn how to use ROS by reading the `beginner tutorials <http://wiki.ros.org/ROS/Tutorials>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error). You will find many other tutorials about ROS like `Emlid <https://docs.emlid.com/navio2/common/dev/ros/>`__.
 - Install ROS Kinetic Kame on Ubuntu Linux (16.04). Those are default and LTS version of both ROS and Ubuntu.  ROS does not yet officially support Windows nor MAC.
-
-Next tutorials :
-
-.. toctree::
-    :maxdepth: 1
-
-        Installing ROS and MAVROS <ros-install>
-        Connecting to ArduPilot from ROS <ros-connecting>
-        Hector SLAM for non-GPS navigation <ros-slam>
-        Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>
-        ROS with SITL <ros-sitl>
-        ROS with SITL in Gazebo <ros-gazebo>
-        ROS with distance sensors <ros-distance-sensors>
-
-Instructions for using :ref:`Gazebo with ArduPilot are here <using-gazebo-simulator-with-sitl>` and an old version has been `blogged about here <https://diydrones.com/profiles/blogs/705844:BlogPost:2151758>`__.
-
-..  youtube:: orMXVby-tSI
-    :width: 100%
 
     VR Robotics has successfully used Rover with ROS for SLAM as demonstrated below.
 

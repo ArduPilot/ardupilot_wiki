@@ -42,6 +42,9 @@ tuning options for the vehicle.
 [site wiki="plane,planner,rover"]
     Magnetic Interference <common-magnetic-interference>
 [/site]
+[site wiki="copter"]
+    Object Avoidance <copter-object-avoidance>
+[/site]
 [site wiki="rover"]
     Object Avoidance <rover-object-avoidance>
 [/site]
@@ -56,6 +59,7 @@ tuning options for the vehicle.
 [/site]
     Telemetry / Serial Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
 [site wiki="copter,planner"]
+    Terrain Following (Non-Autonomous modes) <terrain-following-manual-modes>
     Tuning <common-tuning>
 [/site]
     UAVCAN Setup <common-uavcan-setup-advanced>

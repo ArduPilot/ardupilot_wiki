@@ -25,7 +25,7 @@ Specifications
 -  **Sensors**
 
    -  ICM20602 IMU on STD version, MPU6000 on CTR version
-   -  BMP280 barometer
+   -  BMP280 barometer (STD and CTR)
    -  184A Voltage & current sensor on CTR version
 
 
@@ -34,7 +34,7 @@ Specifications
    -  5x UARTS
    -  6x PWM outputs
    -  1x RC input PWM/PPM, SBUS
-   -  I2C port for external compass and airspeed sensor
+   -  I2C port for external compass and airspeed sensor (STD, CTR and AIO)
    -  USB port
    -  Built-in OSD
    -  MicroSD slot
@@ -51,11 +51,11 @@ See mateksys.com for more `detailed specifications <http://www.mateksys.com/?por
 Variants
 ========
 
-Besides STD and CTR versions, there are older variants called -AIO and -OSD that are tagged end-of-life by mateksys, both use the ICM20602 IMU like the STD version.
+In addition to STD and CTR versions, there are older variants called -AIO and -OSD that have been declared end-of-life by mateksys.  Both use the ICM20602 IMU, like the STD version. Neither have an onboard barometer. While the -AIO has I2C pads exposed, the -OSD version does not.
 
 .. note::
 
-   For the -STD version and other ICM20602 board variants please use the MatekF405-STD type firmware. For the -CTR version with MPU6000 please use the MatekF405 type firmware. For the :ref:`MatekF405-Wing <common-matekf405-wing>` which has an essentially different board layout please use the dedicated firmware.
+  For the -STD version please use the MatekF405-STD type firmware. For the -CTR version with MPU6000 please use the MatekF405 type firmware. For the :ref:`MatekF405-Wing <common-matekf405-wing>` which has an essentially different board layout please use the dedicated firmware. Please note that ArduPilot does not support -AIO and -OSD versions per default as additional hardware and / or software adjustments are required. 
 
 
 Default UART order
@@ -83,4 +83,4 @@ This board does not include a GPS or compass so an :ref:`external GPS/compass <c
     :target: ../_images/matekf405-std-wiring.png
     :width: 450px
 
-A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules.
+A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules. USB power is not provided to peripherals.

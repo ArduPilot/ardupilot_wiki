@@ -26,7 +26,7 @@ Maxbotix Sonar and Pulsed Light LED range finders.
 
    Copter-3.4 (and higher) includes support for :ref:`Terrain Following <terrain-following>` in Auto mode.
 
-   Copter-3.5 (and higher) can use lidar for :ref:`object avoidance <common-rangefinder-objectavoidance>`.
+   Copter-3.5 (and higher) can use lidar for :ref:`object avoidance <copter-object-avoidance>`.
 [/site]
 
    
@@ -59,17 +59,13 @@ based upon your set-up.
     LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
-[site wiki="copter"]
     Lightware SF40c (360 degree) <common-lightware-sf40c-objectavoidance>
-[/site]
     Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
     RPLidar A2 360 degree laser scanner <common-rplidar-a2>
     ST VL53L0X Lidar <common-vl53l0x-lidar>
     TeraRanger One Rangefinder <common-teraranger-one-rangefinder>
-[site wiki="copter"]
     TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
-[/site]
     Underwater Sonar (Analog) <common-underwater-sonar-analog>
 
 [site wiki="copter"]

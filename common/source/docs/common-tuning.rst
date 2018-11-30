@@ -16,6 +16,12 @@ parameters. The following topics shown you how.
     AutoTune <autotune>
     Roll and Pitch Tuning <ac_rollpitchtuning>
     Advanced Tuning <tuning>
+
+-----
+
+.. image:: ../../../images/banner-freespace.png
+   :target: https://freespace.solutions/
+
 [/site]
 
 [site wiki="plane"]

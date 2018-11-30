@@ -18,7 +18,7 @@ Mounting the RPLidar and Pixhawk
 .. image:: ../images/ros-pixhawk-rplidara2-orientation.png
     :target: ../_images/ros-pixhawk-rplidara2-orientation.png
 
-The RPLidar shoulid be oriented so that it's USB cable wire is pointing forward in the same direction as the arrow on the flight controller.
+The RPLidar should be oriented so that it's USB cable wire is pointing forward in the same direction as the arrow on the flight controller.
 
 The USB cable should be plugged into a USB port on the companion computer running ROS.
 
@@ -92,7 +92,7 @@ Re-initialise the workspace with `wstool <http://wiki.ros.org/wstool>`__ then me
 
 ::
 
-    cd ~/catkin_ws
+    cd $HOME/catkin_ws
     wstool init src
     wstool merge -t src https://raw.githubusercontent.com/googlecartographer/cartographer_ros/master/cartographer_ros.rosinstall
     wstool update -t src
@@ -114,14 +114,14 @@ Clone the `Robot Pose Publisher <http://wiki.ros.org/robot_pose_publisher>`__ pa
 
 ::
 
-    cd ~/catkin_ws/src
+    cd $HOME/catkin_ws/src
     git clone https://github.com/GT-RAIL/robot_pose_publisher.git
 
 Modify the robot_pose_publisher.cpp file
 
 ::
 
-    cd ~/catkin_ws/src/robot_pose_publisher/src
+    cd $HOME/catkin_ws/src/robot_pose_publisher/src
     gedit robot_pose_publisher.cpp
 
     # modify line 40 to look like below ("false" has been changed to "true")
@@ -131,7 +131,7 @@ Create the cartographer_ros launch file using your favourite editor (like "gedit
 
 ::
 
-    cd ~/catkin_ws/src/cartographer_ros/cartographer_ros/launch
+    cd $HOME/catkin_ws/src/cartographer_ros/cartographer_ros/launch
     gedit cartographer.launch
 
 Copy-paste the contents below into the file
@@ -162,7 +162,7 @@ Create the cartographer.lua script using our favourite editor (like "gedit")
 
 ::
 
-    cd ~/catkin_ws/src/cartographer_ros/cartographer_ros/configuration_files
+    cd $HOME/catkin_ws/src/cartographer_ros/cartographer_ros/configuration_files
     gedit cartographer.lua
 
 Copy-paste the contents below into the file

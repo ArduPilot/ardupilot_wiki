@@ -48,17 +48,15 @@ Then retry the apmplanner installation again:
 
     sudo dpkg -i apm_planner*.deb
 
-Create a desktop icon
-=====================
+Start APM Mission Planner 
+=========================
+Open Terminal windows and run
 
-Click on `this link to download the apmplanner2.desktop <https://raw.githubusercontent.com/ArduPilot/apm_planner/master/common/apmplanner2.desktop>`__
-file from github.  Set the properties on the file to "Allow executing
-file as program", then drag and drop the file to your start bar.
+::
 
-.. image:: ../images/apm_planner_2_install_linux_desktop_icon.jpg
-    :target: ../_images/apm_planner_2_install_linux_desktop_icon.jpg
+    apmplanner2
 
-Click on the new Icon and the APM Planner 2 should start.
+Or use the link create in your launcher
 
 Common problems
 ===============
@@ -70,3 +68,14 @@ by entering the following command into a terminal window:
 ::
 
     sudo apt-get --purge remove modemmanager
+
+Missing desktop icon
+--------------------
+
+Click on `this link to download the apmplanner2.desktop <https://raw.githubusercontent.com/ArduPilot/apm_planner/master/common/apmplanner2.desktop>`__
+file from github.  Set the properties on the file to "Allow executing
+file as program", then drag and drop the file to your start bar.
+
+.. image:: ../images/apm_planner_2_install_linux_desktop_icon.jpg
+    :target: ../_images/apm_planner_2_install_linux_desktop_icon.jpg
+

@@ -13,12 +13,12 @@ See separate wiki pages on object avoidance for Copter and Rover for more detail
 *image courtesy of robotshop.com*
 
 Where to buy
-============
+------------
 
 - Slamtec.com includes a `list of resellers here <https://www.slamtec.com/en/Home/Buy>`__
 
 Specifications
-==============
+--------------
 
 - rotation rate: 10hz / 600 RPM
 - sample rate: 4000 to 8000 samples/s
@@ -27,7 +27,7 @@ Specifications
 - voltage/current requirement: 5V / 1.5A
 
 Connecting and Configuring
-==========================
+--------------------------
 
    .. image:: ../../../images/rplidar-a2-pixhawk.jpg
        :target: ../_images/rplidar-a2-pixhawk.jpg
@@ -48,9 +48,4 @@ It may be necessary to turn off flow control if using Telem1 (aka Serial1) or Te
 
 - :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` =  "0" if using Serial1
 
-DataFlash logging
-=================
-
-The distance to the nearest object in 8 quadrants around the vehicle is recorded in the DataFlash log's PRX messages.
-
-Real-time distances can be seen in the Mission Planner's proximity viewer which can be opened by moving to the MP's Flight Data screen, press Ctrl-F and push the Proximity button.
+More details on using this sensor for object avoidance on Copter can be found :ref:`here <copter-object-avoidance>`.
