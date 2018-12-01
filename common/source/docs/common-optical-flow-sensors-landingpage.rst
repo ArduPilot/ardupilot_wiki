@@ -14,6 +14,7 @@ Select the links below for information on the available sensors.
     :maxdepth: 1
 
 [site wiki="copter"]
+    Cheerson CX-OF <common-cheerson-cxof>
     PX4FLOW <common-px4flow-overview>
 [/site]
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
