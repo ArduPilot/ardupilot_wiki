@@ -190,7 +190,7 @@ check.
 First Flight (Copter Only)
 ==========================
 
-#. Set ``EKF_GPS_TYPE = 0`` (we don't want the optical flow being used by the EKF at this stage)
+#. Set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 0 (we don't want the optical flow being used by the EKF at this stage)
 #. Perform a short test flight hovering in stabilise or AltHold at small lean angles at heights ranging from 50cm to 3m with 
 #. Download the flash log and plot the following in mission planner
 #. EKF5.meaRng should correlate with the change in vehicle height
@@ -205,7 +205,7 @@ Second Flight (Copter only)
    You will need at least 15m of clear space around the vehicle to do this flight safely.
    If the optical flow velocity estimates are bad, you will have little warning and the copter may lean to it's maximum lean angle very quickly.
 
-#. Set the EKF_GPS_TYPE parameter to 3 to make the EKF ignore GPS and use the flow sensor
+#. Set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 3 to make the EKF ignore GPS and use the flow sensor
 #. Ensure you have Loiter and either AltHold or Stabilize mode available on you transmitter.
 #. Take-off in loiter and bring the copter to about 1m height
 #. If the vehicle starts to accelerate away or there is erratic pitch or roll
