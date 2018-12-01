@@ -50,4 +50,6 @@ After the voting period ends, you will want to check the response and inform the
 
 - open `docs.google.com/forms <https://docs.google.com/forms>`__
 - find your voting form and click on it
-- click the "Responses" tab to see a graph of who voted and the results
+- click the "Responses" tab to see a graph of who voted (ensure there is only one response per person) and the results.
+
+The vote is passed if more than 50% of the responses are positive.
