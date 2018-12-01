@@ -60,6 +60,16 @@ tailsitter are:
   "level" flight
 - when in fixed wing flight the nose of the aircraft will try to point
   forward for "level" flight
+  
+Q_TAILSIT_THSCMX defines the maximum throttle scaling that will be applied
+to the control surfaces, this should be reduced if oscillations are seen 
+at throttles bellow hover throttle.
+
+Q_TAILSIT_RLL_MX allows the roll limit angle limit to be set differently from
+Q_ANGLE_MAX. If left at zero both pitch and roll are limited by Q_ANGLE_MAX.
+If none zero roll angle will be limited, pitch max angle will still be Q_ANGLE_MAX.
+This should be set if your tailsitter can achieve much larger pitch angle that 
+would be safe for roll.
 
 Orientation
 ===========
