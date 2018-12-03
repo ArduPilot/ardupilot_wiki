@@ -29,7 +29,7 @@ All proposal submissions are considered public information, and may be disclosed
 Evaluating Proposals
 --------------------
 
-The ArduPilot funding committee is made up of three elected members from the team with elections held each November.  The currently elected members are:
+The ArduPilot funding committee is made up of three elected members from the team with elections held each December.  The currently elected members are:
 
 - James Pattison
 - Pierre Kancir
