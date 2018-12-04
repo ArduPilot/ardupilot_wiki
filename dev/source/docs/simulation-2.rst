@@ -18,6 +18,7 @@ The most commonly used simulators are:
 -  :ref:`Gazebo <using-gazebo-simulator-with-sitl>` is the official DARPA virtual robotics simulator
 -  :ref:`XPlane-10 <sitl-with-xplane>` a commercial flight simulator with a rich 3D interface
 -  :ref:`RealFlight <sitl-with-realflight>` a commercial flight simulator with a rich 3D interface and ability to design custom vehicles
+-  :ref:`Morse <sitl-with-morse>` a robotics simulation environment commonly used in research
 -  :ref:`Replay <testing-with-replay>` has no graphical interfacde but allows re-running master from a dataflash log
 
 Less often used simulators include:
@@ -35,6 +36,7 @@ List of simulators (so they can appear in the menu):
     Gazebo <using-gazebo-simulator-with-sitl>
     XPlane-10 <sitl-with-xplane>
     RealFlight <sitl-with-realflight>
+    Morse <sitl-with-morse>
     Replay <testing-with-replay>
     Last Letter <using-last_letter-as-an-external-sitl-simulator>
     CRRCSim <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
