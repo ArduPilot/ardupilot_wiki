@@ -41,6 +41,7 @@ The examples include:
 
  - a simple rover
  - a simple quadcopter
+ - a rover with a scanning laser rangefinder
 
 These scripts setup the standard sensor suite that ArduPilot needs and
 exports them using the socket API. It is recommended that you read
@@ -90,3 +91,30 @@ Notice that in this case it is showing a wire-frame view instead of a
 rendered 3D view. That is selected by setting fastmode=True in the
 Environment() declaration in quadcopter.py. Using fast mode will lower
 CPU usage a lot which is good for slow machines.
+
+Laser Scanner Support
+=====================
+
+The Morse SITL backend supports a laser scanner sensor. This allows
+you to use the proximity avoidance systems in ArduPilot with vehicles
+created in Morse.
+
+There is an example of a Rover setup with a laser scanner in the
+rover_scanner.py script. Run it like this:
+
+::
+
+   morse run libraries/SITL/examples/Morse/rover_scanner.py
+
+Then start ArduPilot SITL, using the morse-rover simulation backend
+
+::
+
+   sim_vehicle.py -v ArduCopter --model morse-rover --add-param-file=libraries/SITL/examples/Morse/rover_scanner.parm --console --map
+
+That will give you something like this:
+
+  .. image:: ../images/morse_rover_scanner.jpg
+    :target: ../_images/morse_rover_scanner.jpg
+
+The red area shows the extent that the laser scanner proximity sensor is seeing.
