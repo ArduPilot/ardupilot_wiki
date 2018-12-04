@@ -31,7 +31,7 @@ Should the EKF2 or EKF3 be used?
 In general we recommend users stick with the EKF2 but there are some cases where the EKF3 should be used.  Below is a list of advantages of each:
 
 - EKF2 is used by default for most users, has had the most testing and is considered the most stable
-- EKF2 can accept external position estimates from Vicon systems or ROS SLAM (HectorSLAM, Cartographer, etc).  EKF3 will get this feature once this PR is merged
+- EKF2 can accept external position estimates from Vicon systems or ROS SLAM (HectorSLAM, Cartographer, etc).  EKF3 will get this feature once `this PR <https://github.com/ArduPilot/ardupilot/pull/8730>`__ is merged
 - EKF3 should be used on tailsitters or any other vehicle that spends a significant amount of time pointing directly up or down.  The reason is that the EKF2 only estimates accelerometer Z-axis offsets while EKF3 estimates for all 3 axis
 - EKF3 accepts some newer sensor sources including Beacons, Wheel Encoders and Visual Odometry
 - EKF2 estimates gyro scale factors but the EKF3 does not.  In general this is not important because gyro scale factors are nearly always very close to 1.0.  This may be important for vehicles that spin very rapidly
