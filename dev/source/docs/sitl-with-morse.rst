@@ -120,3 +120,9 @@ That will give you something like this:
     :target: ../_images/morse_rover_scanner.jpg
 
 The red area shows the extent that the laser scanner proximity sensor is seeing.
+
+Video
+-----
+
+..  youtube:: Zk8MYmt03-Q
+    :width: 100%
