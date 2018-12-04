@@ -130,9 +130,8 @@ so you will need to rebuild pymavlink to include your custom message.
 
 .. warning::
 
-   If the message you added has an ID greater that 255 you will need to enable Mavlink 2 support. This can
-   be done by setting the relevant SERIALn_PROTOCOL parameters to 2 and starting Mavproxy with the ``--mav20``
-   argument.
+   If the message you added has an ID greater that 255 you will need to enable Mavlink 2 support. 
+   This can be done by setting the relevant ``SERIALn_PROTOCOL`` parameters (e.g. ``SERIAL1_PROTOCOL``) to 2 and starting Mavproxy with the ``--mav20`` argument.
 
 **Step #7:** Consider contributing your code back to the main code base.
 Discuss this with other developers on `Gitter <https://gitter.im/ardupilot/ardupilot>`__ and/or
