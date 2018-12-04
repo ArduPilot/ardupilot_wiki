@@ -25,8 +25,19 @@ At any one time, only the output from a single EKF core is ever used, that core 
 Most user should not need to modify any EKF parameters but the information below provides some information on those parameters that are most commonly changed.
 More detailed information can be found on the :ref:`developer EKF wiki page <dev:extended-kalman-filter>`. 
 
+Should the EKF2 or EKF3 be used?
+--------------------------------
+
+In general we recommend users stick with the EKF2 but there are some cases where the EKF3 should be used.  Below is a list of advantages of each:
+
+- EKF2 is used by default for most users, has had the most testing and is considered the most stable
+- EKF2 can accept external position estimates from Vicon systems or ROS SLAM (HectorSLAM, Cartographer, etc).  EKF3 will get this feature once this PR is merged
+- EKF3 should be used on tailsitters or any other vehicle that spends a significant amount of time pointing directly up or down.  The reason is that the EKF2 only estimates accelerometer Z-axis offsets while EKF3 estimates for all 3 axis
+- EKF3 accepts some newer sensor sources including Beacons, Wheel Encoders and Visual Odometry
+- EKF2 estimates gyro scale factors but the EKF3 does not.  In general this is not important because gyro scale factors are nearly always very close to 1.0.  This may be important for vehicles that spin very rapidly
+
 Choosing the EKF and number of cores
-====================================
+------------------------------------
 
 :ref:`AHRS_EKF_USE <dev:extended-kalman-filter_ahrs_ekf_use>`: set to "1" to use the EKF, "0" to use DCM for attitude control and
 inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.  In Copter-3.3 (and higher) this parameter is forced to "1" and cannot be changed.
@@ -51,7 +62,7 @@ inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.
    Using the parameters above it is possible to run up to 5 AHRSs in parallel at the same time (DCMx1, EKF2x2, EKF3x2) but this can result in performance problems so if running EKF2 and EKF3 in parallel, set the IMU_MASK to reduce the total number of cores.
 
 Commonly modified parameters
-============================
+----------------------------
 
 :ref:`EK2_ALT_SOURCE <EK2_ALT_SOURCE>` which sensor to use as the primary altitude source
 
