@@ -53,13 +53,15 @@ Running the Examples
 
 The following steps will get you running with the Rover example.
 
-First, start the rover simulator:
+First, make sure you have a copy of the :ref:`ArduPilot code <where-to-get-the-code>`
+
+Then open a terminal and start the rover simulator from within your /ardupilot directory:
 
 ::
 
    morse run libraries/SITL/examples/Morse/rover.py
 
-Then start ArduPilot SITL, using the morse-rover simulation backend
+Open another terminal to /ardupilot directory and start ArduPilot SITL, using the morse-rover simulation backend
 
 ::
 
