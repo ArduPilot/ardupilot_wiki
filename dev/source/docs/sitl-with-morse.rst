@@ -25,7 +25,7 @@ For recent Ubuntu Linux installs all you need is
 
 ::
 
-   sudo apt-get install morse-simulator
+   sudo apt install morse-simulator
 
 Builder Scripts
 ===============
