@@ -6,9 +6,6 @@ Connect ESCs and Motors
 
 This article explains how to connect the ESCs, motors and propellers to a flight controller.  The Pixhawk is used as an example but other flight controllers are connected in a similar way.
 
-Connect motor PWM signal outputs (Pixhawk)
-==========================================
-
 Connect the power (+), ground (-), and signal (s) wires for each ESC to
 the flight controller's main output pins by motor number. Find your frame type
 below to determine the assigned order of the motors.
