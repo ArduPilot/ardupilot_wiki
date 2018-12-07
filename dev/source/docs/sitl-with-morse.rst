@@ -4,24 +4,24 @@
 Using SITL with Morse
 =====================
 
-  .. image:: ../images/morse_rover.jpg
-    :target: ../_images/morse_rover.jpg
+..  youtube:: Zk8MYmt03-Q
+    :width: 100%
 
 `Morse <http://www.openrobots.org/morse/doc/stable/morse.html>`__ is
 an open robotics platform that uses python APIs and the blender 3D
 environment to create a complete robotics platform.
 
 ArduPilot has a Morse SITL simulation backend that allows ArduPilot to
-control vehicles created within morse.
+control vehicles created within Morse.
+
+.. note::
+
+    Morse has only been tested to on Linux/Ubuntu environments
 
 Installing Morse
 ================
 
-See instructions here:
-
-http://www.openrobots.org/morse/doc/stable/user/installation.html
-
-For recent Ubuntu Linux installs all you need is
+`Official instuctions can be found on openrobots.com <http://www.openrobots.org/morse/doc/stable/user/installation.html>`__ but for recent Ubuntu Linux installs all you need is
 
 ::
 
@@ -33,9 +33,7 @@ Builder Scripts
 The Morse simulator has the concept of builder scripts, which are
 python scripts setup to run within the Morse/Blender environment.
 
-Some example builder scripts for use with ArduPilot are provided here:
-
-https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Morse
+Some example builder scripts for use with ArduPilot are provided in the `ArduPilot/libraries/SITL/examples/Morse directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Morse>`__.
 
 The examples include:
 
@@ -53,44 +51,47 @@ Running the Examples
 
 The following steps will get you running with the Rover example.
 
-First, make sure you have a copy of the :ref:`ArduPilot code <where-to-get-the-code>`
-
-Then open a terminal and start the rover simulator from within your /ardupilot directory:
+- Ensure the :ref:`ArduPilot source code is installed on your machine <where-to-get-the-code>`
+- Open a terminal and start the rover simulator from within your /ardupilot directory:
 
 ::
 
    morse run libraries/SITL/examples/Morse/rover.py
 
-Open another terminal to /ardupilot directory and start ArduPilot SITL, using the morse-rover simulation backend
+- Open another terminal to /ardupilot directory and start ArduPilot SITL, using the morse-rover simulation backend
 
 ::
 
    sim_vehicle.py -v APMrover2 --model morse-rover --add-param-file=libraries/SITL/examples/Morse/rover.parm --console --map
 
-That will give you something like this:
+- A window like below should appear:
 
   .. image:: ../images/morse_rover_sitl.jpg
     :target: ../_images/morse_rover_sitl.jpg
 
-Now for the quadcopter simulator:
+- Use the ArduPilot SITL console to control the vehicle (i.e. "arm throttle" to arm the vehicle, "rc 3 1800" to raise throttle to 80%, etc)
+
+To run the Quadcopter example:
+
+- Open a terminal and start the quadcopter simulator from within your /ardupilot directory:
 
 ::
 
    morse run libraries/SITL/examples/Morse/quadcopter.py
 
-Then start ArduPilot SITL, using the morse-quad simulation backend
+- Start ArduPilot SITL, using the morse-quad simulation backend
 
 ::
 
    sim_vehicle.py -v ArduCopter --model morse-quad --add-param-file=libraries/SITL/examples/Morse/quadcopter.parm --console --map
 
-That will give you something like this:
+- A window like below should appear:
 
   .. image:: ../images/morse_quad.jpg
     :target: ../_images/morse_quad.jpg
              
-Notice that in this case it is showing a wire-frame view instead of a
-rendered 3D view. That is selected by setting fastmode=True in the
+Note that in the image above a wire-frame view is shown instead of a
+rendered 3D view. That is configured by setting fastmode=True in the
 Environment() declaration in quadcopter.py. Using fast mode will lower
 CPU usage a lot which is good for slow machines.
 
@@ -120,9 +121,3 @@ That will give you something like this:
     :target: ../_images/morse_rover_scanner.jpg
 
 The red area shows the extent that the laser scanner proximity sensor is seeing.
-
-Video
------
-
-..  youtube:: Zk8MYmt03-Q
-    :width: 100%
