@@ -62,7 +62,7 @@ The following steps will get you running with the Rover example.
 
 ::
 
-   sim_vehicle.py -v APMrover2 --model morse-rover --add-param-file=libraries/SITL/examples/Morse/rover.parm --console --map
+   Tools/autotest/sim_vehicle.py -v APMrover2 --model morse-rover --add-param-file=libraries/SITL/examples/Morse/rover.parm --console --map
 
 - A window like below should appear:
 
@@ -83,7 +83,7 @@ To run the Quadcopter example:
 
 ::
 
-   sim_vehicle.py -v ArduCopter --model morse-quad --add-param-file=libraries/SITL/examples/Morse/quadcopter.parm --console --map
+   Tools/autotest/sim_vehicle.py -v ArduCopter --model morse-quad --add-param-file=libraries/SITL/examples/Morse/quadcopter.parm --console --map
 
 - A window like below should appear:
 
@@ -121,3 +121,38 @@ That will give you something like this:
     :target: ../_images/morse_rover_scanner.jpg
 
 The red area shows the extent that the laser scanner proximity sensor is seeing.
+
+Swarming Support
+================
+
+To start a three rover swarm open two terminals and cd to your /ardupilot directory:
+
+- Run the following command to start Morse with three rovers side-by-side
+
+::
+
+   morse run libraries/SITL/examples/Morse/rover_follow.py
+
+- Start the ArduPilot SITL environment with three rovers:
+
+::
+
+   libraries/SITL/examples/Morse/start_follow.sh
+
+To connect with Mission Planner
+
+- On the Windows machine open a terminal (on the windows machine) and type ``ipconfig`` to determine the machines IP address
+- On the Ubuntu machine
+
+  - open your favourite editor and edit ``libraries/SITL/examples/Morse/start_follow.sh``
+  - modify line 7 of the script to set your windows machines IP address
+
+::
+
+   GCS_IP=192.168.2.48  <-- replace with your windows machine\'s IP address
+
+- On the Windows machine start Mission Planner, set the connection type drop-down to "UDP" and press "Connect"
+- The three vehicles should appear on the map. They can be controlled separately by changing the vehicle selector drop-down just below the "Connect" button
+
+  .. image:: ../images/morse-rover-swarm-with-mp.png
+    :target: ../_images/morse-rover-swarm-with-mp.png
