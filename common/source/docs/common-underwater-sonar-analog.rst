@@ -42,7 +42,7 @@ Next pins on the left side of the DST-2 (serial and RS-232 output) should be con
 Connect with a ground station to the flight controller and set the following parameters (these settings assume the sensor is connected to Telem2/Serial2)
 
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9 (Lidar)
--  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 baud)
+-  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 4 (4800 baud)
 
 Then the following range finder related parameters should be set:
 
