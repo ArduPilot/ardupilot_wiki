@@ -44,6 +44,7 @@ value to users with old hardware.
     Advanced Configuration Settings <advanced-configuration-settings>
     Updating the APM2.x BootLoader <updating-the-apm2-x-bootloade>
     Mission Planner Terminal <mission-planner-terminal>
+    Debugging using JTAG <jtag>
 [/site]
 
 
