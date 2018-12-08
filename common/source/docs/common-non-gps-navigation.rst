@@ -14,3 +14,6 @@ These are the available options that allow a vehicle to estimate its position wi
 - :ref:`ROS cartographer <ros-cartographer-slam>`
 - Vicon systems (documentation needed)
 
+.. note::
+
+   The low cost IMUs (accelerometers, gyros, compass) used in most flight controllers drift too quickly to allow position estimation without an external velocity or position source.  In other words, low-cost IMUs on their own are not sufficient for estimating position
