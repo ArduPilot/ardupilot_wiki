@@ -9,10 +9,6 @@ a target location wirelessly using a telemetry radio module and ground
 station application. This page provides instructions for using guided
 mode.
 
-.. note::
-
-   Copter-3.4 (and higher) include :ref:`Guided_NoGPS <guided_nogps>` which is meant for developer use only.
-
 Overview
 ========
 
@@ -75,5 +71,9 @@ Instructions
 Guided_NoGPS
 ============
 This variation of Guided mode does not require a GPS but it only accepts `attitude targets <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__.  Because it does not accept position or velocity targets like regular Guided mode it is generally not useful for regular users.  This mode was created for use by companion computers that may want to fly the vehicle as if it was in AltHold mode.
+
+.. note::
+
+   Guided_NoGPS does not allow a vehicle to hold position without a GPS (i.e. non-GPS navigation).  For information on :ref:`non-GPS navigation see this wiki page <common-non-gps-navigation>`
 
 This mode is only available in Copter-3.4 (and higher).
