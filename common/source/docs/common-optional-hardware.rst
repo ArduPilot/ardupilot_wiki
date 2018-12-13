@@ -67,6 +67,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Pozyx for Non-GPS navigation <common-pozyx>
 [/site]
 [site wiki="copter"]
+    OptiTrack for Non-GPS navigation <common-optitrack>
+[/site]
+[site wiki="copter"]
     Precision Landing and Loiter (IRLock) <precision-landing-with-irlock>
 [/site]
     Rangefinders (Sonar, Lidar) <common-rangefinder-landingpage>
