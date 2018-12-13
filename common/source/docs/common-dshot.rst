@@ -19,16 +19,14 @@ by recent BLHeli ESC firmwares.
 Detailed descriptions of these features are lower down on this page. 
 Dshot and telemetry ESC's provide an advantage over traditional ESC's for a number of reasons. 
 
-The primary advantage of Dshot is that it provides fast, high resolution digital communication. This opens the door for more precise vehicle control and removes the need to calibrate ESC's for different PWM ranges. 
+- Provides fast, high resolution digital communication. This opens the door for more precise vehicle control and removes the need to calibrate ESC's for different PWM ranges. 
+- Telemetry ESC's also provide monitoring of performance data that previously required additional sensors (like power modules and RPM sensors). Because of the detailed data provided by every ESC, real-time decisions can be made and logs can be analyzed for indidvidual ESC or motor failure.
 
-Telemetry ESC's also provide monitoring of performance data that previously required additional sensors (like power modules and RPM sensors). Because of the detailed data provided by every ESC, real-time decisions can be made and logs can be analyzed for indidvidual ESC or motor failure.
+.. note::
 
-.. warning::
-
-   As of April 2018 these features are currently only available with Copter-3.6, Plane-3.9, Rover-3.3 (or higher) using the ChibiOS firmware for STM32 based flight boards, and not yet in a stable release.
-   Please join the https://gitter.im/ArduPilot/ChibiOS gitter channel for up to date information on these builds.
+   These features are available with Copter-3.6, Plane-3.9 and Rover-3.5 (or higher) using the ChibiOS firmware for STM32 based flight boards.
    Only try DShot on ESCs that are known to support it or you will get unpredictable results. 
-   Reverse thrust and virtual batteries are not yet supported.
+   Reverse thrust and virtual batteries are not yet supported in an official release.
 
 Where to buy
 ============
@@ -80,9 +78,15 @@ log. This can be viewed in any ArduPilot dataflash log viewer.
 
 - RPM
 - Voltage
-- current
-- temperature
-- total-current
+- Current
+- Temperature
+- Total Current
+
+This data can also be viewed in real-time using a ground station.  If using the Mission Planner go to the Flight Data screen's status tab and look for esc1_rpm.
+
+.. image:: ../../../images/dshot-realtime-esc-telem-in-mp.jpg
+    :target: ../_images/dshot-realtime-esc-telem-in-mp.jpg
+    :width: 450px
 
 To configure and flash ESC's using BLHeli, see the Pass-Through Support section bleow.
 
