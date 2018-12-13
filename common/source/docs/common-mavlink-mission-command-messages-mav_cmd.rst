@@ -221,8 +221,6 @@ enabled only)
 
 :ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
 
-:ref:`MAV_CMD_CONDITION_CHANGE_ALT <mav_cmd_condition_change_alt>`
-
 :ref:`MAV_CMD_NAV_SPLINE_WAYPOINT <mav_cmd_nav_spline_waypoint>`
 
 :ref:`MAV_CMD_CONDITION_YAW <mav_cmd_condition_yaw>`
