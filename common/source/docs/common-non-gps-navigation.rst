@@ -12,7 +12,7 @@ These are the available options that allow a vehicle to estimate its position wi
 - :ref:`Optical Flow <common-optical-flow-sensors-landingpage>`
 - :ref:`Fixed Beacons <common-pozyx>`
 - :ref:`ROS cartographer <ros-cartographer-slam>`
-- OptiTrack motion capture system (documentation needed)
+- :ref:`OptiTrack motion capture system <common-optitrack>`
 
 .. note::
 
