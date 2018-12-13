@@ -72,6 +72,7 @@ Configuration the drone
 
 - set :ref:`COMPASS_USE <COMPASS_USE>`, :ref:`COMPASS_USE2 <COMPASS_USE2>`, :ref:`COMPASS_USE3 <COMPASS_USE3>` to 0. It makes ardupilot use orientation from motion capture system rather than compass, because there are many source casue electromagnetic interference in indoor enviorment
 - set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` to 3 and :ref:`GPS_TYPE <GPS_TYPE>` to 0 to disable the GPS
+- set :ref:`EK2_POSNE_M_NSE <EK2_POSNE_M_NSE>` to 0.1 or lower to increase the weighting of position measurements from motion capture system.
 
 Send data to the drone
 ======================
