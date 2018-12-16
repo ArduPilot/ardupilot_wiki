@@ -228,18 +228,14 @@ These include:
 Spektrum Satellite Receivers Operate on PPM-Sum
 ===============================================
 
--  Although Spektrum main receivers do not communicate by PPM-Sum their
-   range extending "satellite" receivers do.
--  So it is feasible to use a single `Spektrum Satellite Receiver <http://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM9645>`__
-   to act as a PPM-Sum receiver with Pixhawk.
+-  It is feasible to use a single `Spektrum Satellite Receiver <http://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM9645>`__
+   to act as a DSM receiver with Pixhawk.
 
    -  Simply pre-bind the Spektrum Satellite to your transmitter using a
       conventional Spektrum receiver with satellite attached.
    -  Then connect the tiny Spektrum Satellite receiver to the special
       "Spektrum" connector on either the PX4IO or Pixhawk.
 
--  Currently satellites only work with the Spektrum DX7 and DX8
-   transmitters, Transmitters with more channels are (in progress).
 -  The satellite receiver can be bound to transmitter with Mission Planner.
    This functionality is located in Radio Calibration screen on
    Initial Setup.
@@ -248,7 +244,7 @@ Spektrum Satellite Receivers Operate on PPM-Sum
     :target: ../_images/dsm_bind.png
 
 -  Being a satellite, range is limited with this configuration and the
-   preceding receivers and methods will provide greater range.
+   preceding receivers and methods may provide greater range.
 
 .. image:: ../../../images/spm9645.jpg
     :target: ../_images/spm9645.jpg
