@@ -8,6 +8,10 @@ Optitrack for Non-GPS Navigation
 
 This article explains how a `OptiTrack <https://optitrack.com/>`__ motion catpure system can be used as a short-range substitute for a GPS allowing position control modes like Loiter, Guided, RTL, and Auto indoors.
 
+.. note::
+
+   This is an new feature released in Copter-3.6 and currently only supported in EKF2.
+
 .. youtube:: IocykCXJmhw
    :width: 100%
 
@@ -49,7 +53,7 @@ Prepare the drone
 
 .. tip::
 
-   If you are looking for a small drone for indoor flight test, Skyviper V2450 GPS drone or its successor journey GPS drone is a good choice. It is very affordable and running Ardupilot out-of-box. You can easily flash it wit custom build Ardupilot. If you perfer custom build small drone, there is a very good discuss `here <https://discuss.ardupilot.org/t/microarducopter-3-props-omnibus-nano-success/32568?u=chobitsfan>`__
+   If you are looking for a small drone for indoor flight test, Skyviper V2450 GPS drone or its successor journey GPS drone is a good choice. It is very affordable and running Ardupilot out-of-box. You can easily flash it wit custom build Ardupilot. If you perfer custom build small drone, there is a very good discuss `here <https://discuss.ardupilot.org/t/microarducopter-3-props-omnibus-nano-success/32568?u=chobitsfan>`__. The RTF quadcopter frame used in another example video is available from `sdmodel <https://goods.ruten.com.tw/item/show?21806678027603>`__.
 
 First, you need to place markers on the drone. It is very important to place markers so that they form a stereoscopic, asymmetrical shape. Please refer to OptiTrack `rigid body marker placement <https://v20.wiki.optitrack.com/index.php?title=Rigid_Body_Tracking#Rigid_Body_Marker_Placement>`__ for details.
 
@@ -70,6 +74,7 @@ Select all markers in Motive and create a rigid body from them. Please refer to 
 Configuration the drone
 =======================
 
+- set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 2 and :ref:`EK2_ENABLE <EK2_ENABLE>` to 1. Currently, external navigation is only supported in EKF2
 - set :ref:`COMPASS_USE <COMPASS_USE>`, :ref:`COMPASS_USE2 <COMPASS_USE2>`, :ref:`COMPASS_USE3 <COMPASS_USE3>` to 0. It makes ardupilot use orientation from motion capture system rather than compass, because there are many source casue electromagnetic interference in indoor enviorment
 - set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` to 3 and :ref:`GPS_TYPE <GPS_TYPE>` to 0 to disable the GPS
 - set :ref:`EK2_POSNE_M_NSE <EK2_POSNE_M_NSE>` to 0.1 or lower to increase the weighting of position measurements from motion capture system.
@@ -138,8 +143,9 @@ Flight testing
 
 Take off in AltHold mode and maintain a stable hover. Switch to Loiter but be ready to switch back to AltHold or Stabilize if the vehicle's position or altitude becomes unstable.
 
-
 .. note::
 
    In order to take off in guided or auto mode, you need to use `GPS_GLOBAL_ORIGIN <https://mavlink.io/en/messages/common.html#SET_GPS_GLOBAL_ORIGIN>`__ to set the GPS location of motion capture system origin. It is not need to be accurate, any valid lat/lng is ok.
 
+.. youtube:: JKzuaVQZclI
+   :width: 100%
