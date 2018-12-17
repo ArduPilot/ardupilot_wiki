@@ -55,14 +55,16 @@ following parameters (this is done in the *Mission Planner*
 **Config/Tuning \| Full Parameter List** page):
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
--  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 19 (19200 baud)
+-  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud) 
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 8 (LightWareSerial)
 -  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
 -  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **2500** (for SF10A), **5000** (for SF10B), **10000** (for SF10C) or **12000** (for SF11C).  *This is the distance in centimeters that the rangefinder can reliably read. The value depends on the model of the lidar.*
 -  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
-If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 19200
+If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115
+
+Lightware lidars manufactured before May 2018 shipped with a default baud rate of 19200. If your device was produced before this date, you will need to set the baud rate to 19200 (Parameter value 19). Alternatively, you may reconfigure your lightware device to use a baudrate of 115200 using the Lightware Terminal application and use the settings above.
 
 .. _sf10-i2c-connection:
 
