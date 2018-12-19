@@ -38,6 +38,7 @@ Tutorial steps
     Copter - Adding a new flight mode (ver 3.5 and lower) <apmcopter-adding-a-new-flight-mode-35>
     Copter - Scheduling your new code to run intermittently <code-overview-scheduling-your-new-code-to-run-intermittently>
     Copter - Motors Library <code-overview-copter-motors-library>
+    Copter - PosControl and Navigation <code-overview-copter-poscontrol-and-navigation>
     Copter - Object Avoidance <code-overview-object-avoidance>
     Rover - Adding a new drive mode <rover-adding-a-new-drive-mode>
     Rover - L1 navigation controller <rover-L1>
