@@ -44,6 +44,7 @@ Closed hardware
 [site wiki="copter"]
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
+    RadioLink MiniPix <common-radiolink-minipix>
     SpeedyBee F4 <common-speedybeef4>
 
 Discontinued boards
