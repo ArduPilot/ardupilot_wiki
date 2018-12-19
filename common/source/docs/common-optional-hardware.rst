@@ -76,8 +76,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Relay Switch <common-relay>
     Safety Switch <common-safety-switch-pixhawk>
-    SBus Out <common-sbus-out>
-    Servo <common-servo>
+    Servos <common-servo-landingpage>
 [site wiki="rover"]
     Start/Stop Switch <startstop-switch>
 [/site]
