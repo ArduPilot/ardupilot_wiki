@@ -4,11 +4,6 @@
 Servo
 =====
 
-This article explains how to connect Servos to flight controller, and how to control them from the transmitter or ground station (i.e. Mission Planner).
-
-Overview
-========
-
 Copter, Plane and Rover can control servos for any purpose, including:
 triggering a camera shutter, releasing a parachute or dropping a tennis
 ball.  These servo(s) can be controlled either directly by the pilot via
@@ -36,26 +31,6 @@ Connecting the servo to a Pixhawk
    RELAY_PIN and RELAY_PIN2 to -1.
 -  The Pixhawk flight controller cannot provide power to the servos so
    an external BEC or ESC that can provide 5V should be used.
-
-Connecting the servo to an APM2.x
-=================================
-
-.. image:: ../../../images/OptionalHardware_Servo.jpg
-    :target: ../_images/OptionalHardware_Servo.jpg
-
--  On Copter connect the servo's signal wire to either A10 or A11 on the
-   left side of the APM
--  On Plane the servos may also be connected to any available channel
-   RC1 ~ RC8 on the back of the APM.
--  Connect the power and ground wires to the rear power rail (if the JP1
-   jumper is removed) or to an external BEC (if the JP1 jumper is left
-   in place).  It is absolutely critical that the servos power and
-   ground wires not be connected to the + and - pins on A10 or A11
-   because the servos will then be sharing their power source with the
-   main CPU.  Movements of the servo will cause ripples in the power
-   supply to the CPU and could cause brown-outs. For the same reason the
-   rear power rail should not be used if the JP1 jumper is left in
-   place.
 
 Controlling the servo as a camera shutter
 =========================================
@@ -114,3 +89,4 @@ correctly.
 
 .. image:: ../../../images/Servo_TestingWithMP.jpg
     :target: ../_images/Servo_TestingWithMP.jpg
+    :width: 450px
