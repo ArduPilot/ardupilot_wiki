@@ -223,18 +223,3 @@ Although this mostly works it is not recommended because it will not
 trigger if the receiver loses power or if the wires between the receiver
 and flight controller are broken.
 
-Warning to Copter 3.1.5 and FRSky receiver users and users of other receivers that modify channel 5 during a failsafe event
-===========================================================================================================================
-
-Some FRSky tx/rx systems receivers can only be set-up to modify all
-channels including the flight mode channel (channel 5) when a failsafe
-event occurs.  For these receivers if using Copter 3.1.5 (or earlier) it
-is important to setup the receiver's channel 5 failsafe value so that
-the Pixhawk/APM is switched into RTL, Loiter or LAND.  This is critical
-because there is a very short period of time (3/50ths of a second)
-between when the receiver pulls the throttle low and when the
-Pixhawk/APM initiates the RTL or LAND.  During this time, if the
-receiver also switches the flight mode channel to stabilize or acro the
-Pixhawk/APM may switch to stabilize momentarily and then because the
-copter is in stabilize with throttle at zero it will disarm the copter
-(i.e. Test #2).
