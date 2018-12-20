@@ -14,7 +14,7 @@ The main failsafe topics are listed below.
     Radio Failsafe <radio-failsafe>
     Battery Failsafe <failsafe-battery>
     GCS Failsafe <gcs-failsafe>
-    EKF / DCM failsafe <ekf-inav-failsafe>
+    EKF failsafe <ekf-inav-failsafe>
     Simple GeoFence <ac2_simple_geofence>
     Polygon Fence <polygon_fence>
     Crash Check <crash_check>

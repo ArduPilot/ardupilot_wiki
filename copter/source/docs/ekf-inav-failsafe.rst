@@ -1,11 +1,10 @@
 .. _ekf-inav-failsafe:
 
-========================
-EKF / DCM Check Failsafe
-========================
+============
+EKF Failsafe
+============
 
-Copter 3.2 adds a DCM heading check and an :ref:`EKF (Extended Kalman Filter - Pixhawk only) <common-apm-navigation-extended-kalman-filter-overview>` check
-to catch flyaways caused by a bad heading estimate.
+The EKF failsafe monitors the health of EKF (the position and attitude estimation system) to catch problems with the vehicle's position estimate (often caused by GPS glitches or compass errors) and prevent "flyaways".
 
 .. note::
 
@@ -14,54 +13,37 @@ to catch flyaways caused by a bad heading estimate.
 When will it trigger?
 =====================
 
-The DCM check runs by default on all boards and will trigger when the
-GPS implied heading and DCM's estimated heading disagree by at least 60
-degrees (configurable with the DCM_CHECK_THRESH parameter) for a full
-second.
+The EKF failsafe will trigger when any two of the EKF "variances" for compass, position or velocity are higher than the :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` parameter value for 1 second.
 
-The EKF check runs only on the Pixhawk and only when the EKF is being
-used as the primary source for attitude and position estimates (i.e.
-AHRS_EKF_USE = 1).  This check will trigger when the EKF's compass and
-velocity "variance" are higher than 0.8 (configurable with
-EKF_CHECK_THRESH parameter) for one second.  This "variance" increases
-as the estimates become untrustworthy.  0 = very trustworthy, >1.0 =
-very untrustworthy.  If both variances climb above the
-EKF_CHECK_THRESH parameter (default is 0.8) the EKF/Inav failsafe
-triggers.
+These "variances" come from the EKF itself and are numbers indicating the EKF's confidence in its estimates.  The values are between 0 and 1 with 0 meaning the estimate is very trustwrothy and 1.0 is very untrustworthy.
+
+The EKF calculates these "variances" by comparing the results from multiple sensors.  So for example, if the GPS position suddenly jumps but the accelerometers do not show a sudden acceleration, the EKF variance for position would climb (i.e become less trustworthy)
+
+The variances can be viewed in real-time on the ground station.  If using Mission Planner click on the "EKF" label on the HUD.
+
+.. image:: ../images/ekf-failsafe-variance-viewer.png
+    :target: ../_images/ekf-failsafe-variance-viewer.png
+    :width: 450px
 
 What will happen when the failsafe triggers?
 ============================================
 
-The Pixhawk's `LED will flash red-yellow, the tone-alarm will sound <https://www.youtube.com/watch?v=j-CMLrAwlco&feature=player_detailpage#t=60>`__.
+- The flight controller's `LED will flash red-yellow or blue-yellow and the tone-alarm will sound <https://www.youtube.com/watch?v=j-CMLrAwlco&feature=player_detailpage#t=60>`__
+- "EKF variance" will appear on the ground station's HUD if telemetry is connected
+- In manual flight modes that do not require GPS (i.e. Stabilize, Acro, AltHold) nothing further will happen but the pilot will be unable to switch into autonomous flight modes (Loiter, PosHold, RTL, Guided, Auto) until the failure clears
+- In autonomous modes that require GPS (i.e. Loiter, PosHold, RTL, Guided, Auto, etc) the :ref:`FS_EKF_ACTION <FS_EKF_ACTION>` controls the behaviour.  By default this is "1" meaning the vehicle will switch to :ref:`Land <land-mode>` mode.  This is a "pilot controlled" land meaning the pilot will have control of the roll and pitch angle but the vehicle will descend at the :ref:`LAND_SPEED <LAND_SPEED>`.  It will land and finally disarm its motors
+- An EKF failsafe error will be written to the dataflash logs
 
-If telemetry is attached "EKF variance" will appear on the HUD.
+After an EKF failsafe occurs, the pilot can re-take control (using the flight mode switch) in a manual flight mode such as :ref:`AltHold <altholdmode>` to bring the vehicle home.
 
-And EKF/DCM error will be written to the dataflash logs
+Adjusting the Sensitivity of the failsafe
+=========================================
 
-If flying in a flight mode that does not require GPS nothing further
-will happen but you will be unable to switch into an autopilot flight
-mode (Loiter, PosHold, RTL, Guided, Auto) until the failure clears.
+The :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` parameter can be adjusted to control the sensitivity of the failsafe
 
-If flying in a mode that requires GPS (Loiter, PosHold, RTL, Guided,
-Auto) the vehicle will switch to "pilot controlled" LAND.  Meaning the
-pilot will have control of the roll and pitch angle but the vehicle will
-descend, land and finally disarm it's motors.  The pilot can, like
-always switch into a manual flight mode including Stabilize or AltHold
-to bring the vehicle home.
-
-Adjusting sensitivity or disabling the check
-============================================
-
-The DCM and EKF check and failsafe can be disabled by setting the
-DCM_CHECK_THRESH or EKF_CHECK_THRESH to "0" through the Mission
-Planner's Config/Tuning >> Full Parameter List.  Alternatively it can be
-made less sensitive by increasing this parameter from 0.8 to 0.9 or
-1.0.  The downside of increasing this parameter's value is that during a
-flyaway caused by a bad compass or GPS glitching, the vehicle will fly
-further away before the vehicle is automatically switched to LAND mode.
-
-.. image:: ../images/ekfcheck_setupThroughMP.png
-    :target: ../_images/ekfcheck_setupThroughMP.png
+- Set :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` = 0 to disable the EKF failsafe
+- Increase :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` to values between 0.8 and 1.0 to reduce the chance of an EKF failsafe.  The downside of increasing this parameter value is that during a flyaway caused by a bad compass or GPS glitch, the vehicle will fly further away before the vehicle is automatically switched to LAND mode
+- Decrease :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` to values as low as 0.6 to increase the chance of an EKF failsafe triggering quickly.  The downside of lowering this value is the EKF failsafe could trigger a LAND during aggressive maneuvers
 
 Video
 =====
