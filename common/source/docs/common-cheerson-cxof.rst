@@ -33,6 +33,7 @@ Connection to Flight Controller
 - Connect the sensor's VDD (aka VCC or 3.3V) to a 3.3V power source.  In the above diagram the Pixhawk's Switch port is used but another alternative would be the SPKT/DSM port's power pin
 - Set :ref:`FLOW_ENABLE <FLOW_ENABLE>` = 1
 - Set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 18 if using Serial2/Telem2, if connected to another serial port use the corresponding SERIALx_PROTOCOL parameter
+- Set :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` = 80
 - Optionally set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 3 to force the EKF to only use the optical flow sensor and not use the GPS
 
 Additional Notes
