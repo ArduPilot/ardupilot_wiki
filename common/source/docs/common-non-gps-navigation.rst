@@ -13,6 +13,7 @@ These are the available options that allow a vehicle to estimate its position wi
 - :ref:`Fixed Beacons <common-pozyx>`
 - :ref:`ROS cartographer <ros-cartographer-slam>`
 - :ref:`OptiTrack motion capture system <common-optitrack>`
+- :ref:`Visual Odometry with OpenKai and ZED <common-zed>`
 
 .. note::
 
