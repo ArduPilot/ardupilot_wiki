@@ -40,6 +40,8 @@ Connecting Servos to a Flight Controller
 
 If using a Pixhawk connect the servo to the "SB" port on the back of the flight controller.  For Cube autopilots use the "SBUSo" port.  For other autopilots without these connectors see the instructions below
 
+:ref:`SERVO_SBUS_RATE <SERVO_SBUS_RATE>` controls the update rate to the servos.  The default is 50 Hz but can be set to any value in the range of 25 Hz to 250 Hz
+
 Connecting Servos to a Serial Port
 ----------------------------------
 
@@ -49,4 +51,8 @@ SBus servos can also be controlled from any of the flight controller's serial po
 
 - Set the :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 15 ("SBUS servo out") if using Telem2.  For other serial ports use the appropriate ``SERIALx_PROTCOL`` parameter.
 - The port's baud rate parameter (in this case :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` ) will automatically be set to 100,000
-- :ref:`SERVO_SBUS_RATE <SERVO_SBUS_RATE>` defaults to 50 Hz, but may be set to any value in the range of [25,250] Hz. Beware that some SBus to PWM adapters e.g. `FrSky <https://alofthobbies.com/frsky-sbus-cppm-decoder-with-pins.html>`__ generate a fixed PWM output rate (~170 Hz) that may damage analog servos. Digital servos and those designed with SBus inputs should handle high frame rates with no problems.
+
+SBUS to PWM Decoders
+--------------------
+
+SBus to PWM decoders allow using the SBus interface with regular PWM servos but beware that some decoders including the `FrSky SBUS & CCPM Decoder <https://alofthobbies.com/frsky-sbus-cppm-decoder-with-pins.html>`__ generate a fixed PWM output rate (~170 Hz) that may damage analog servos (digital servos should be fine)
