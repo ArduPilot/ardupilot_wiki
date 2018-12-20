@@ -27,7 +27,51 @@ a few noticeable changes, not the least being a much better quality GPS
 Building ArduCopter for Bebop 2
 ===============================
 
-The instructions are exactly the same as :ref:`the one used for Bebop <building-for-bebop-on-linux_build_arducopter_for_bebop>`
+.. tip::
+
+   You can skip this step if you just want to try out the
+   (experimental) binary version.
+
+The following steps show how to build a custom version of the Copter
+software for Bebop 2:
+
+Install armhf toolchain
+-----------------------
+
+#. Install Parrot's version of linaro *arm-linux-gnueabihf* toolchain that can be downloaded from
+   `here <https://github.com/Parrot-Developers/toolchains/blob/master/parrot-tools-linuxgnutools-2016.02-linaro_1.0.0-2_amd64.deb>`__
+
+#. Install it (the toolchain will be extracted in /opt)
+
+   ::
+
+       sudo dpkg -i parrot-tools-linuxgnutools-2016.02-linaro_1.0.0-2_amd64.deb
+
+#. Add the path to the toolchain to the PATH variable
+
+   ::
+
+       export PATH=/opt/arm-2016.02-linaro/bin:$PATH
+
+Download and compile ArduCopter
+-------------------------------
+
+#. Clone ardupilot repository
+
+   ::
+
+       git clone https://github.com/ArduPilot/ardupilot.git
+       cd ardupilot
+       git submodule update --init --recursive
+
+#. Building the flight control firmware is nearly identical for
+   :ref:`building for the Pixhawk <building-px4-with-make>`
+   except the build command is:
+#. ::
+
+       ./waf configure --board=bebop
+       ./waf build
+
 
 Uploading the Firmware
 ======================
