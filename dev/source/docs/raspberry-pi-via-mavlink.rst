@@ -180,7 +180,7 @@ And then "Serial" to disable OS use of the serial connection:
 
 .. note::
 
-   In the latest Rapbian Stretch, these settings willbe found in  "Interfacing Options"
+   In the latest Rapbian Stretch, these settings will be found in  "Interfacing Options"
 
 Reboot the Raspberry Pi when you are done.
 
