@@ -1,13 +1,11 @@
 .. _common-pixracer-overview:
 
-=================
-Pixracer Overview
-=================
+========
+Pixracer
+========
 
 The `Pixracer <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__ is the first
-autopilot of the new FMUv4 Pixhawk generation. It comes with a small
-Wifi extension board, upgraded sensors, more flash and better connectors
-than the original Pixhawk.
+autopilot of the FMUv4 Pixhawk generation. It comes with a small Wifi extension board.
 
 .. figure:: ../../../images/pixracer_top.jpg
    :target: ../_images/pixracer_top.jpg
