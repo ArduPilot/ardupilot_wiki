@@ -177,6 +177,11 @@ And then "Serial" to disable OS use of the serial connection:
 .. image:: ../images/dev_RasPi_Config_Utility_SerialSetting_Capture2-300x78.png
     :target: ../_images/dev_RasPi_Config_Utility_SerialSetting_Capture2-300x78.png
 
+
+.. note::
+
+   In the latest Rapbian Stretch, these settings willbe found in  "Interfacing Options"
+
 Reboot the Raspberry Pi when you are done.
 
 Testing the connection
@@ -189,7 +194,7 @@ RPi type:
 ::
 
     sudo -s
-    mavproxy.py --master=/dev/ttyAMA0 --baudrate 57600 --aircraft MyCopter
+    mavproxy.py --master=/dev/ttyAMA0 --baudrate 921600 --aircraft MyCopter
     
 .. note::
 
