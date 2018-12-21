@@ -1,13 +1,11 @@
 .. _common-mission-planner-telemetry-logs:
 
-==============================
-Mission Planner Telemetry Logs
-==============================
+==============
+Telemetry Logs
+==============
 
-Telemetry logs (also known as "tlogs") are recorded by the *Mission
-Planner* (or other ground station) when you connect ArduPilot to your
-computer via a :ref:`telemetry link <common-telemetry-landingpage>`. This
-topic explains how to configure and access tlogs.
+Telemetry logs (also known as "tlogs") are recorded by the ground station when you connect ArduPilot to your
+computer via a :ref:`telemetry link <common-telemetry-landingpage>`. This topic explains how to configure and access tlogs.
 
 [copywiki destination="copter,plane,rover,planner"]
 
@@ -20,8 +18,10 @@ When and where tlogs are created
 ================================
 
 Tlogs are recordings of the MAVLink telemetry messages sent between the
-APM/PX and the groundstation and are automatically created the moment
-you press the connect button on the mission planner.  Files of the
+flight controller and the ground station and are automatically created the moment
+you press the connect button on the ground station.
+
+If using the Mission Planner, files of the
 format YYYY-MM-DD hh-mm-ss.tlog appear in the "logs" subfolder in your
 Mission Planner installation folder or to the location you select in the
 Planner options [Config/Tuning] [Planner].
