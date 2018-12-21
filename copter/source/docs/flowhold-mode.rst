@@ -6,6 +6,9 @@ FlowHold Mode
 
 FlowHold mode uses an :ref:`optical flow sensor <common-optical-flow-sensors-landingpage>` to hold position without the need for a GPS nor a downward facing Lidar.
 
+..  youtube:: SSISkG58cDk?t=70
+    :width: 100%
+
 .. note::
 
    FlowHold is available in Copter-3.6 (and higher)
