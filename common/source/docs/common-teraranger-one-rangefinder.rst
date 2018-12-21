@@ -53,7 +53,7 @@ List section and set:
    distance that the TeraRanger One is used by the Pixhawk.
 -  ``RNGFND_MIN_CM``: 20cm. This parameter set the minimum distance that
    the TeraRanger One is used by the Pixhawk.
--  ``RNGFND_TYPE``: 4
+-  ``RNGFND_TYPE``: 14
 
 .. figure:: ../../../images/TeraRangerOne_MissionPlannerSettings.jpg
    :target: ../_images/TeraRangerOne_MissionPlannerSettings.jpg
