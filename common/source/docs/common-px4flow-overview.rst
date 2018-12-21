@@ -1,8 +1,8 @@
 .. _common-px4flow-overview:
 
-==========================================
-PX4FLOW Optical Flow Camera Board Overview
-==========================================
+=================================
+PX4FLOW Optical Flow Camera Board
+=================================
 
 [copywiki destination="copter"]
 
