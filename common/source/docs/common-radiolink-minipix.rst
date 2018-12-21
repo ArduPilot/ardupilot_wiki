@@ -67,12 +67,13 @@ In case a bootloader re-installation is required, you can boot your board to DFU
 .. image:: ../../../images/minipix_dfu.jpg
     :target: ../_images/minipix_dfu.jpg
 
-Then follow the instructions on how to `load firmare onto ChibiOS boards <common-loading-firmware-onto-chibios-only-boards>`__ .
+Then follow the instructions on how to :ref:`load firmare onto ChibiOS boards <common-loading-firmware-onto-chibios-only-boards>`.
 
 
-Notes
-=====
-
-The flightcontroller's plastic case shows the telemetry ports' numbers reversed compared to the board's PCB imprints and the firmware's SERIALn assignments, this requires additional attention!
-MiniPix voltage and current sensing pins use Pixhawk standard (VOLT_PIN = 2, CURR_PIN = 3).
-The additional ADC pin can be used for either RSSI or analog airspeed. Set required option to PIN = 11.
+.. warning::
+    The flightcontroller's plastic case shows the telemetry ports' numbers reversed compared to the board's PCB imprints and the  
+    firmware's SERIALn assignments, this requires additional attention!
+    
+.. note::
+    MiniPix voltage and current sensing pins use Pixhawk standard (VOLT_PIN = 2, CURR_PIN = 3).
+    The additional ADC pin can be used for either RSSI or analog airspeed. Set required option to PIN = 11.
