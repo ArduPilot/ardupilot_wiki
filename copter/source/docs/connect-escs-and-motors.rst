@@ -4,10 +4,7 @@
 Connect ESCs and Motors
 =======================
 
-This article explains how to connect the ESCs, Motors and Propellers for Pixhawk and Erle-Brain2.  Other flight controllers are connected in a similar way.
-
-Connect motor PWM signal outputs (Pixhawk)
-==========================================
+This article explains how to connect the ESCs, motors and propellers to a flight controller.  The Pixhawk is used as an example but other flight controllers are connected in a similar way.
 
 Connect the power (+), ground (-), and signal (s) wires for each ESC to
 the flight controller's main output pins by motor number. Find your frame type
@@ -18,42 +15,12 @@ below to determine the assigned order of the motors.
 
    Pixhawk Outputpins (numbered). First 4 pins are colour-coded for connecting a Quadframe
 
-Connect motor PWM signal outputs (Erle-Brain2)
-==============================================
-
-For Erle-Brain boards be sure you connect the ESC connector in the right way.  Signal goes on the top of the rail (white or orange color wire) and ground at the bottom (black or brown color wire)
-
-Using a Power Distribution Board
-================================
-
-.. image:: ../images/3dr_power_distribution_board.jpg
-    :target: ../_images/3dr_power_distribution_board.jpg
-
-There are two methods of connecting the motor outputs.  Either connect the
-electronic speed controllers (ESCs) directly to the flight controller OR use a power distribution board (PDB).
-
-When using a PDB, connect the power (+), ground (-), and signal (s)
-wires for each ESC to the PDB according to motor number. Find your frame
-type below to determine the assigned order of the motors. Then connect
-the signal wires from the PDB to the main output signal pins on the
-flight controller  (ensuring that the motor order numbers match the
-main output pin numbers on the controller). If you are using a power
-module, it is optional to connect the power and ground wires from the
-PDB to the flight controller board. If you would like to use these
-cables in addition to or instead of the power module or as a common
-point for low current servos, connect the ground (-) wire to a main
-output ground (-) pin and the power (+) wire to a main output power (+) pin.
-
 Motor order diagrams
 ====================
 
-The sections below show motor order for each frame type (the numbers
-indicates the connected autopilot output pin) and the propeller
-direction (clockwise (CW) motors are shown in green and take pusher
-propellers,counterclockwise motors (CCW) are shown in blue and take
-puller propellers.
-
-Use the diagram for your frame type, and wire the motors as shown.
+The diagrams below show motor order for each frame type.
+The numbers indicate which output pin from the flight controller shoould be connected to each motor/propeller.
+The propeller direction is shown in green (clockwise, CW) or blue (counter-clockwise, CCW)
 
 .. figure:: ../images/MOTORS_CW_CCWLegend.jpg
    :target: ../_images/MOTORS_CW_CCWLegend.jpg
@@ -94,21 +61,18 @@ Tricopter
    should be set to -1 (from 1), See :ref:`TriCopter setup page <tricopter>` for
    details.)
 
+DodecaHexacopter
+----------------
+
+.. image:: ../images/motororder-dodecahexa-x.png
+    :target: ../_images/motororder-dodecahexa-x.png
+    :width: 300px
+
+.. image:: ../images/motororder-dodecahexa-plus.png
+    :target: ../_images/motororder-dodecahexa-plus.png
+    :width: 300px
+
 .. _connect-escs-and-motors_attach_propellers:
-
-Attach propellers
-=================
-
-Find your frame in the motor order diagrams above. Clockwise motors are
-shown in green, marked CW, and take pusher propellers. Counterclockwise
-motors are shown in blue, marked CCW, and take puller propellers. Use
-the diagram for your frame type, and attach propellers to your vehicle
-as shown. For copters, attach propellers with the writing facing towards
-the sky. For more information on recognizing the different types of
-propellers, see the next section.
-
-.. image:: ../images/APM_2_5_MOTORS_HEXA_OCTA.jpg
-    :target: ../_images/APM_2_5_MOTORS_HEXA_OCTA.jpg
 
 Recognizing clockwise and counterclockwise propellers
 -----------------------------------------------------
@@ -192,6 +156,27 @@ the bottom front-right, and proceed around with the same pattern.
 
 OctoV will spin the front-right motor first, and then again, proceed
 clock-wise until reaching the front left motor.
+
+Using a Power Distribution Board
+================================
+
+.. image:: ../images/3dr_power_distribution_board.jpg
+    :target: ../_images/3dr_power_distribution_board.jpg
+
+There are two methods of connecting the motor outputs.  Either connect the
+electronic speed controllers (ESCs) directly to the flight controller OR use a power distribution board (PDB).
+
+When using a PDB, connect the power (+), ground (-), and signal (s)
+wires for each ESC to the PDB according to motor number. Find your frame
+type below to determine the assigned order of the motors. Then connect
+the signal wires from the PDB to the main output signal pins on the
+flight controller  (ensuring that the motor order numbers match the
+main output pin numbers on the controller). If you are using a power
+module, it is optional to connect the power and ground wires from the
+PDB to the flight controller board. If you would like to use these
+cables in addition to or instead of the power module or as a common
+point for low current servos, connect the ground (-) wire to a main
+output ground (-) pin and the power (+) wire to a main output power (+) pin.
 
 KDE (and other) Opto Isolated ESCs
 ==================================
