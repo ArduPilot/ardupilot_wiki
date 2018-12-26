@@ -42,6 +42,8 @@ For the last two options "carpet fixing tape" will be required to attach the foa
 .. image:: ../../../images/Vibration_3MFoam.jpg
     :target: ../_images/Vibration_3MFoam.jpg
 
+For vehicles with :ref:`internal combustion engines <common-ice>`, the flight controller should be mounted on an intermediate plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass
+
 Gel pads
 --------
 
