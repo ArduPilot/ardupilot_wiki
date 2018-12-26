@@ -82,6 +82,18 @@ has a video demonstrating vibration isolation using Moon Gel on a Go-Pro camera.
 
 The mount can be installed using double sided tape, or M3 screws spaced at 45mm x 45mm.
 
+3D Printed Anti-Vibration Platform for NAVIO2
+---------------------------------------------
+
+Anti-vibration for NAVIO2 can be easily 3D printed. 
+It significantly simplifies mounting and eliminates vibrations. 
+You can find STL files `here <https://docs.emlid.com/navio2/ardupilot/hardware-setup/#anti-vibration-mount>`__.
+
+Anti-vibration with Navio2 mounted on frame:
+
+.. figure:: ../../../images/anti-vibration-mount.jpg
+   :target: ../_images/anti-vibration-mount.jpg
+
 O-ring Suspension Mount
 -----------------------
 
@@ -169,18 +181,6 @@ Bulb Damper + Ear Plug Vibration Mount
 #. The flight controller is also mounted on anti-vibration grommets available from `McMaster Carr <https://www.mcmaster.com/vibration-damping-grommets>`__ (package of 25 each part #9311K64 recommended).
 #. The 100G bulb type gimbal vibration dampers can be ordered direct
    from a variety of vendors: \ `copter-rc.com <http://copter-rc.com/en/accessories/36-100g-av-ball-tension-damper.html>`__
-
-3D Printed Anti-Vibration Platform for NAVIO2
----------------------------------------------
-
-Anti-vibration for NAVIO2 can be easily 3D printed. 
-It significantly simplifies mounting and eliminates vibrations. 
-You can find STL files `here <https://docs.emlid.com/navio2/ardupilot/hardware-setup/#anti-vibration-mount>`__.
-
-Anti-vibration with Navio2 mounted on frame:
-
-.. figure:: ../../../images/anti-vibration-mount.jpg
-   :target: ../_images/anti-vibration-mount.jpg
 
 Advice for reducing vibrations
 ==============================
