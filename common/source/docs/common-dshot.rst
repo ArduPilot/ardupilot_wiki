@@ -4,7 +4,7 @@
 DShot and BLHeli ESC Support
 ============================
 
-[copywiki destination="copter,plane"]
+[copywiki destination="copter,plane,rover"]
 
 ..  youtube:: np7xXY_e5sA
     :width: 100%
