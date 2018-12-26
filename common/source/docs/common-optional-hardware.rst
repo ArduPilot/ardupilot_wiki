@@ -10,12 +10,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 
 .. note::
 
-   If using the Mission Planner GCS, select **Hardware \| Optional
-   Hardware** to configure additional (optional) hardware including the 3DR
-   radio and widely used power module. For other GCS software, check their
-   documentation.
+   If using the Mission Planner, many of these sensors can be set-up
+   from the Initial Setup >> Optional Hardware screens
 
-   
 .. toctree::
     :maxdepth: 1
 
@@ -38,7 +35,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Crop Sprayer <sprayer>
 [/site]
     Display (Onboard) <common-display-onboard>
-    DShot and BLHeli pass-through support <common-dshot>
+    ESCs and Motors <common-escs-and-motors>
 [site wiki="plane"]
     eCalc Motor and Prop Efficiency Guide <ecalc-motor-and-prop-efficiency-guide>
 [/site]
@@ -79,7 +76,6 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Start/Stop Switch <startstop-switch>
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
-    UAVCAN ESCs <common-uavcan-escs>
     Video <common-video-landingpage>
 [site wiki="rover"]
     Wind Vane <wind-vane>
