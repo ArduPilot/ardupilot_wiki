@@ -11,6 +11,9 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
 .. toctree::
     :maxdepth: 1
 
+[site wiki="copter"]
+    Booster motor <booster-motor>
+[/site]
     DShot and BLHeli pass-through support <common-dshot>
     ICE (Internal Combustion Engines) <common-ice>
 [site wiki="rover"]
