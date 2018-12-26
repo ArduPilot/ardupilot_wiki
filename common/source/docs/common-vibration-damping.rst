@@ -190,31 +190,19 @@ For copters the largest source of vibration is normally the blades passing over 
 -  Frame flex especially arm flex is a big cause of asynchronous
    vibration, Frame arms should be as rigid as possible.
 
-   -  The real DJI Flamewheel copters have sufficiently rigid injection
-      molded arms, the many off brand clones do not.
-   -  Generally carbon fiber armed copters have sufficient anti twist
-      and anti-bend characteristics.
-   -  Heavier aluminum armed copters like the Copter are flex free,
-      cheaper Chinese ones often not.
-   -  Most purpose designed commercial copters with injection molded
-      exoskeletons or arms like the Iris or Phantom are sufficiently
-      rigid.
-   -  Cheap, light frames tend to flex more than high quality stronger
-      ones and the heavier you load the copter the more "Flexi" it gets.
+   -  Original DJI Flamewheel copters have sufficiently rigid injection molded arms, the many clones do not
+   -  Aluminum or carbon fibre arms twist and best less which reduces vibrations
+   -  Copters with injection molded exoskeletons or arms like the Iris are sufficiently rigid
+   -  Cheap, light frames tend to flex more than high quality stronger ones and the heavier you load the copter the more flex it gets (not good)
 
--  Motor to frame arm and frame arm to central hub mounts need to be
-   secure and flex free (sometimes a problem for carbon tube arms).
--  Motors need to run smoothly (bearings not worn-out or "screeching").
--  Prop adapters connecting the propellers to the motors need to be
-   concentric and very straight.
+-  Motor to frame arm and frame arm to central hub mounts need to be secure and flex free (sometimes a problem for carbon tube arms)
+-  Motors need to run smoothly (bearings not worn-out or "screeching")
+-  Prop adapters connecting the propellers to the motors need to be concentric and very straight
 -  Propellers should be fully balanced using a good manual prop balancer
--  Motor balancing (or really well factory balanced motors like T-Motor)
-   can have a major effect.
--  Propellers that are not well matched to the frame and weight or do
-   not have the same flex for CCW and CW are very problematic.
--  Get Good propellers.
--  Carbon fiber props are expensive, rigid strong and as sharp as a
-   razor so they are a major safety hazard.
+-  Motor balancing (or really well factory balanced motors like T-Motor) can have a major effect
+-  Propellers that are not well matched to the frame and weight or do  not have the same flex for CCW and CW are very problematic
+-  Good propellers vibrate less
+-  Carbon fiber props are rigid and vibrate less which reduces vibration but are very sharp which is a major safety hazard
 
 Summary of the vibrations that should be damped
 ===============================================
