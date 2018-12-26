@@ -4,86 +4,50 @@
 Vibration Damping
 =================
 
-This article provides a number of tips and methods for vibration damping
-and isolating the Flight Control Boards.
-
-.. warning::
-
-   The vibration damping methods described in this article may not
-   be as simple and effective as the :ref:`recommended method <common-mounting-the-flight-controller>` (mounting the the
-   flight controller using four cubes of vibration damping foam).
-
-Overview
-========
-
-Flight Control boards have accelerometers
-built into the board that are sensitive to vibrations. ArduPilot (the
-firmware) combines the data from these accelerometers with barometer and
-GPS data to calculate an estimate of its position. With excessive
+Flight Control boards have accelerometers that are sensitive to vibrations.
+These accelerometer values are combined with barometer and
+GPS data to estimate the vehicle's position. With excessive
 vibrations, the estimate can be thrown off and lead to very bad
 performance in modes that rely on accurate positioning (e.g. on Copter:
-AltHold, Loiter, RTL, Guided, Position and AUTO flight modes).
+AltHold, Loiter, RTL, Guided, Position and Auto flight modes).
+
+Please refer to the :ref:`Measuring Vibration <common-measuring-vibration>` page for details of
+how to measure your vehicle's vibration levels and confirm they are within the acceptable range
 
 The goal of vibration damping is to reduce high and medium frequency
 vibrations while still allowing low frequency actual board movement to
-take place in concert with the airframe. This article provides a number
-of community-contributed approaches for reducing vibrations, along with
-additional theory.
-
-.. note::
-
-   The examples and images in this article refer to Copter, but the
-   information is also largely applicable to Plane and Rover.
-
-Measuring your vibration levels
-===============================
-
--  Vibration needs to be less than 0.3 G in the X and Y axes and less
-   than 0.5 G in the Z axis.
--  You should strive to get in the region of + and - 1/10 G in all axes,
-   the information provided here will generally achieve that.
--  Please refer to the :ref:`Measuring Vibration <common-measuring-vibration>` wiki page for details of
-   how to measure whether your vehicle's levels are within the
-   acceptable range.
-
-Isolate the Pixhawk/autopilot from the frame
-============================================
+take place in concert with the airframe.
 
 Double sided foam tape or Velcro has traditionally been used to attach
 the flight controller to the frame. In many cases foam tape or Velcro
 does not provide adequate vibration isolation because the mass of the
 flight control board is so small.
 
-The following sections describe a number of alternatives that have been
-tested and shown to perform better:
+.. note::
 
-3M foam
--------
+   The examples and images in this article refer to Copter, but the
+   information is also largely applicable to Plane and Rover.
 
-This `foam sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ comes is sticky on both sides and comes pre-cut so that
-individual cubes can be easily attached to each of the four corners of
-the flight controller as described on the :ref:`Mounting the Flight Controller wiki page <common-mounting-the-flight-controller>`.
+3M, Du-Bro or HobbyKing Foam
+----------------------------
+
+One of the following three types of foam should be cut into small 1cm ~ 2cm cubes and attached to each of the four corners of the flight controller as described on the :ref:`Mounting the Flight Controller wiki page <common-mounting-the-flight-controller>`:
+
+- `3M foam sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ is sticky on both sides and comes pre-cut so that individual cubes can be easily attached to the flight controller
+- `Du-Bro 1/4" R/C foam <https://www.dubro.com/products/r-c-protective-foam-rubber>`__
+- `HobbyKing orange foam <https://hobbyking.com/en_us/anti-vibration-foam-orange-latex-190mm-x-140mm-x-6mm.html?___store=en_us>`__ (discontinued)
+
+For the last two options "carpet fixing tape" will be required to attach the foam to the flight controller and vehicle frame
 
 .. image:: ../../../images/Vibration_3MFoam.jpg
     :target: ../_images/Vibration_3MFoam.jpg
 
-HobbyKing Orange Foam
----------------------
-
-#. `foam <https://hobbyking.com/en_us/anti-vibration-foam-orange-latex-190mm-x-140mm-x-6mm.html?___store=en_us>`__
-   should be cut into small 1cm ~ 2cm cubes
-#. attach to the edges of the flight controller using double sided or
-   "carpet fixing tape"
-
 Gel pads
 --------
 
-#. Put off-the-shelf vibration damping gel pads of 1/2" ~ 1" (1cm ~ 2cm)
-   on each corner of the flight control board.  Possible gels include:
+#. Cut one of the recommended gels into 1cm ~ 2cm cubes and attach to each corner of the flight controller.  Possible gels include:
 
-   -  `Kyosho Zeal Gel Tape <https://www.amainhobbies.com/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__ Probably
-      the single best solution, now in stock at Amazon, E-Bay and A-Main
-      Hobbies.
+   -  `Kyosho Zeal Gel Tape <https://www.amainhobbies.com/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__ performs best and is available from Amazon, E-Bay and A-Main Hobbies
    -  `United States Silicone Gel Tape and Pads (V10Z62MGT5 tape recommended) <http://www.vibrationmounts.com/RFQ/VM08010.htm>`__
    -  `United Kingdom Silicone Gel Tape, Pads <https://gelmec.co.uk/family.php?page=58&ty=9&gr=9>`__ and
       `grommets <https://gelmec.co.uk/family.php?page=64&ty=19&gr=19>`__
@@ -92,35 +56,31 @@ Gel pads
       to fail in heat above 100 degrees Fahrenheit so it should be used
       cautiously.
 
-#. Secure the board with a 1/4" ~ 1/2" (~1cm) wide velcro retaining
+#. Secure the flight controller to the frame with 1cm) wide velcro retaining
    strap or a rubber band. Be careful the strap does not hold down the
    controller so securely that it interferes with the damping of the
    pads. Consider putting a layer of soft foam between the strap and the
    flight controller.
 
-   .. figure:: ../../../images/FlameWheel330ZealPads.jpg
-      :target: ../_images/FlameWheel330ZealPads.jpg
-
-      FlameWheel F330 with Kyosho Zeal Pads
-
    .. figure:: ../../../images/Flamewheel330PX4onZeal2.jpg
       :target: ../_images/Flamewheel330PX4onZeal2.jpg
+      :width: 450px
 
-      FlameWheel F330 With PX4FMU/PX4IO Mounted on Intermediate platform
-
-   .. figure:: ../../../images/Flamewheel330PX4Hardtop.jpg
-      :target: ../_images/Flamewheel330PX4Hardtop.jpg
-
-      FlameWheel F330 With PX4FMU/PX4IO on Zeal Pads with Protective Hard Top
-
-   .. figure:: ../../../images/PX4F330accels_5_9_13.jpg
-      :target: ../_images/PX4F330accels_5_9_13.jpg
-
-      The Zeal Mounted FlameWheel has Plus and Minus one vibration all axes = 1/10 G
+      FlameWheel F330 with PX4FMU Mounted on Intermediate platform
 
 The blog `Testing simple anti-vibration solutions for GoPro on an Arducopter <https://diydrones.com/profiles/blogs/testing-simple-anti-vibration-solutions-for-gopro-on-an>`__
-has a video demonstrating vibration isolation using Moon Gel on a Go-Pro
-camera.
+has a video demonstrating vibration isolation using Moon Gel on a Go-Pro camera.
+
+3D Printed Anti-Vibration Platform
+----------------------------------
+
+`GuyMcCaldin's <https://diydrones.com/profiles/profile/show?id=GuyMcCaldin&>`__ 3D Printed vibration mount (available from `Shapeways <https://www.shapeways.com/product/45H92T5RS/omnimac-apm-mount-v1-5>`__ and `Thingiverse <https://www.thingiverse.com/thing:160655>`__) using `these Hobbyking dampers <https://hobbyking.com/en_us/general-purpose-anti-vibration-rubber-w-m3-x-11mm-screw-and-m3-nylock-nut-4pcs-set.html?___store=en_us>`__
+
+.. image:: ../../../images/guymccaldin-vibration-mount.jpg
+   :target: ../_images/guymccaldin-vibration-mount.jpg
+   :width: 450px
+
+The mount can be installed using double sided tape, or M3 screws spaced at 45mm x 45mm.
 
 O-ring Suspension Mount
 -----------------------
@@ -145,24 +105,9 @@ O-ring Suspension Mount
 
 .. figure:: ../../../images/330FOringSuspPlate45.jpg
    :target: ../_images/330FOringSuspPlate45.jpg
+   :width: 450px
 
    FlameWheel F450 O-Ring Suspension Platform Mount
-
-.. figure:: ../../../images/Flamewheel330SuspMount.jpg
-   :target: ../_images/Flamewheel330SuspMount.jpg
-
-   FlameWheel O-RingSuspension Mount: Graph of vibration levels shows they are under 0.1G onall axis
-
-.. warning::
-
-   If you are mounting your flight control board to the power
-   distribution board it might be better to mount the standoffs for the
-   Flight control board to a separate piece of fiberglass cut to size that
-   can subsequently be bolted through existing holes in the power
-   distribution board. Only drill through the power distribution board for
-   mounting the standoffs if you are completely certain you will not cause
-   a short and use threaded nylon machine screws or standoff
-   studs.
 
 Vibrations are short coupled, so all that leaving excess corner
 clearance does is to require higher initial O-ring tension which reduces
@@ -181,8 +126,7 @@ Ear Plug Mount
 --------------
 
 #. Purchase slow response silicon or urethane foam or PVC foam earplugs
-   such as `these from
-   3M <https://www.3m.com/3M/en_US/company-us/all-3m-products/~/3M-E-A-R-Classic-Earplugs-390-1000-Uncorded-Value-Pack-2000-Pair-Case/?N=5002385+3294755285&rt=rud>`__
+   such as `these from 3M <https://www.3m.com/3M/en_US/company-us/all-3m-products/~/3M-E-A-R-Classic-Earplugs-390-1000-Uncorded-Value-Pack-2000-Pair-Case/?N=5002385+3294755285&rt=rud>`__
 #. Create a platform upon which to mount your flight control board with
    holes at the four corners. The holes should be large enough to allow
    the ear plugs to be inserted into them but not so loose that the
@@ -197,20 +141,16 @@ Ear Plug Mount
    mounted. "Tuning" is possible by varying the amount of earplug left
    exposed in the middle.
 
-.. image:: ../../../images/Vibration_EarPlug.jpg
-    :target: ../_images/Vibration_EarPlug.jpg
-
 .. figure:: ../../../images/EarPlugVibrationMount.jpg
    :target: ../_images/EarPlugVibrationMount.jpg
+   :width: 450px
 
    Ear Plug Vibration Mount
 
-Bulb Damper + Ear Plug .05G Ultra Low Vibration Mount
------------------------------------------------------
+Bulb Damper + Ear Plug Vibration Mount
+--------------------------------------
 
-#. Robert Lefebvre developed this extremely high performance mount which
-   actually performed way better than expectations.
-#. It consists of a mounting plate with a 100g soft rubber bulb type
+#. Mounting plate with a 100g soft rubber bulb type
    "gimbal" damper at each corner and a half a urethane foam earplug
    placed inside each one.
 #. Gimbal bulb type dampers themselves can work in tension or
@@ -224,121 +164,11 @@ Bulb Damper + Ear Plug .05G Ultra Low Vibration Mount
 
    .. image:: ../../../images/vibration_flamewheel_clone_closeup.jpg
        :target: ../_images/vibration_flamewheel_clone_closeup.jpg
-       
-#. The APM flight controller is also mounted on anti-vibration grommets available from `McMaster Carr <https://www.mcmaster.com/vibration-damping-grommets>`__ (package of 25 each part #9311K64 recommended).
-#. This was successful at damping a FlameWheel clone with flexible arms and over size 12" propellers into the .05 G range.
+       :width: 450px
 
-   .. image:: ../../../images/F450-Quad-Vibes-1.png
-       :target: ../_images/F450-Quad-Vibes-1.png
-       
-#. Note that the X & Y vibrations are less than + and - 0.05G, the Z
-   vibrations are a bit higher due to Flamewheel clone arm flex, high
-   vibration motors and the inordinately large 12" propellers.
-#. Robert describes this Copter as a real "paint shaker" due to the
-   inadequacies listed above making the results achieved even more
-   remarkable.
-
-   .. image:: ../../../images/vibration_flamewheel_copter_clone.jpg
-       :target: ../_images/vibration_flamewheel_copter_clone.jpg
-       
+#. The flight controller is also mounted on anti-vibration grommets available from `McMaster Carr <https://www.mcmaster.com/vibration-damping-grommets>`__ (package of 25 each part #9311K64 recommended).
 #. The 100G bulb type gimbal vibration dampers can be ordered direct
-   from a variety of
-   vendors: \ `copter-rc.com <http://copter-rc.com/en/accessories/36-100g-av-ball-tension-damper.html>`__
-#. This can be considered to be an excellent solution for many types of
-   airframes as it seems to have a very wide dynamic range.
-#. Clearly some fine tuning would be possible by varying the type and
-   size of the earplug section in the dampers.
-#. There are also 200G and 300G dampers but those would be best used on
-   higher mass modules perhaps including a battery.
-
-An Excellent 3D Printed Anti-Vibration Platform
------------------------------------------------
-
-By \ `GuyMcCaldin <https://diydrones.com/profiles/profile/show?id=GuyMcCaldin&>`__ (original
-Blog article: 3D Printed Anti Vibration Mount (no longer available)).
-
-.. image:: http://i.imgur.com/minON7K.jpg
-    :target:  http://i.imgur.com/minON7K.jpg
-
-Over the last few weeks, I've been prototyping different anti vibration
-mount designs using an Up Mini 3D printer. I wanted something that
-performed well, using affordable and readily available components.
-
-.. image:: http://i.imgur.com/bgzBepz.jpg
-    :target:  http://i.imgur.com/bgzBepz.jpg
-
-The first design started with anti vibration dampeners in a simple
-vertical configuration. This suffered from too much play in the
-horizontal plane, which might have caused instability in quick
-accelerations. The next design rotated the dampeners 45°, which resulted
-in much more even resistance across the horizontal and vertical planes.
-
-The large rubber dampeners provide outstanding isolation. Too much in
-fact. The ideal anti vibration mount isolates the controller from high
-frequency vibrations, but conducts lower frequency vibrations that might
-represent small changes in attitude. For the next design, I moved to
-smaller and slightly stiffer dampeners available from Hobby King.
-
-.. image:: http://i.imgur.com/pJsUheM.jpg
-    :target:  http://i.imgur.com/pJsUheM.jpg
-
-I've been testing them on a Turnigy Talon tricopter, using an APM 2.5.
-The GPS is mounted to the top of the APM to increase the moving weight,
-which assists slightly in reducing higher frequency vibrations.
-
-The results so far suggest that it's working very well:
-
-.. image:: http://i.imgur.com/7TksoQI.png?width=640
-    :target:  http://i.imgur.com/7TksoQI.png
-
-The above graph is taken from a two minute hover in loiter mode. All
-axes are below ±1g, which exceeds the specifications set out in Copter
-guidelines.
-
-Using a tool that \ `Forrest Frantz <https://diydrones.com/profiles/profile/show?id=ForrestFrantz>`__ developed, we
-can see these results from another perspective:
-
-.. image:: http://i.imgur.com/9wFdgV0.png?width=640
-    :target:  http://i.imgur.com/9wFdgV0.png
-
-The Acceleration results are still excellent, but the pitch and roll
-stability shows a bit of oscillation. I'm using default PID values which
-would definitely benefit from tuning, and flying in slightly windy
-conditions. I'm also new to rotary wing flight, so I'm still honing my
-flying skills. I'm able to keep the tricopter in a 1m x 1m x 1m cube,
-but it slowly drifts around if there is a change in wind.
-
-These are the most likely causes, but in the interests of full
-disclosure, I wanted to mention that it could be caused by the APM not
-responding to small changes in attitude if the mount is creating too
-much isolation. It certainly doesn't appear to be affecting flying
-performance, the tricopter is impressively stable in loiter mode. I
-won't know if it's an issue or not until more people try Forrest's tool
-out, so I have more data to compare my results to (you can find the
-forum thread `(Here!) <https://diydrones.com/forum/topics/vibration-isolation-and-dampening-of-apm-px4-for-version-2-9>`__
-
-If you have access to a 3D printer, you can download the STL files
-here: \ `Omnimac APM Mount v1.5.stl <https://www.dropbox.com/s/69zrbzy1lz53xnc/Omnimac%20APM%20Mount%20v1.5.stl>`__
-
-Alternatively, I've uploaded the design to
-`Shapeways <https://www.shapeways.com/product/45H92T5RS/omnimac-apm-mount-v1-5>`__.
-
-You can purchase it starting from $22.92 depending on material:
-
-I've include a 30% margin in the price (~$5) that will go towards a trip
-to Africa in November, where I'll be donating time and resources using
-3DR powered UAS in wildlife research and conservation.
-
-To complete the mount, you'll need these
-`Dampers <https://hobbyking.com/en_us/general-purpose-anti-vibration-rubber-w-m3-x-11mm-screw-and-m3-nylock-nut-4pcs-set.html?___store=en_us>`__ which
-cost $1.20 from Hobby King.
-
-The mount can be installed using double sided tape, or M3 screws spaced
-at 45mm x 45mm. If you'd like me to modify the file to suit the mounting
-options of your airframe, just let me know.
-
-The log file that was used to produce the results shown above can be
-downloaded from here: \ `Turnigy Talon 2min Loiter (default PIDs) <https://www.dropbox.com/s/qju3b33a82wbh3v/2013-10-03%2009-55%2010.log>`__
+   from a variety of vendors: \ `copter-rc.com <http://copter-rc.com/en/accessories/36-100g-av-ball-tension-damper.html>`__
 
 3D Printed Anti-Vibration Platform for NAVIO2
 ---------------------------------------------
@@ -352,11 +182,10 @@ Anti-vibration with Navio2 mounted on frame:
 .. figure:: ../../../images/anti-vibration-mount.jpg
    :target: ../_images/anti-vibration-mount.jpg
 
-Check frame motors, props and prop adapters
-===========================================
+Advice for reducing vibrations
+==============================
 
-For copters vibration comes mostly from frame flex and motors and
-propellers and often you can reduce vibration significantly:
+For copters the largest source of vibration is normally the blades passing over the arms but other sources of vibration also exist and may be reduced by following this advice:
 
 -  Frame flex especially arm flex is a big cause of asynchronous
    vibration, Frame arms should be as rigid as possible.
@@ -386,17 +215,9 @@ propellers and often you can reduce vibration significantly:
 -  Get Good propellers.
 -  Carbon fiber props are expensive, rigid strong and as sharp as a
    razor so they are a major safety hazard.
--  Large slow propellers will definitely induce more vibration than
-   small fast ones, but the big slow props are a lot more efficient.
--  And large slow propellers will also make frame flex a lot worse as
-   the motor units will twist around the props axis from unbalanced
-   lift.
--  If you really optimize all of the above characteristics, your flight
-   controller will likely need only a bit of Gel or foam for vibration
-   isolation.
 
-A Summary of the particular vibration characteristics we need to damp
-=====================================================================
+Summary of the vibrations that should be damped
+===============================================
 
 #. The vibration frequency and amplitude we primarily need to reduce is
    a characteristic of the motor / prop units turning at flight speed.
@@ -437,7 +258,7 @@ Additional Vibration Reduction Considerations
    actually specified at 15 to 20 percent compression for optimal
    damping.
 #. Although 30 durometer Sorbothane seems an excellent candidate,
-   personal experience indicates that it becomes permanently compressed
+   experience indicates that it becomes permanently compressed
    and is not as effective at vibration reduction as the Gel solutions.
 #. A link to a Blog about the first APM anti-vibration mounting system
    to achieve 0.05 G damping (2/20/2013 improved to 0.02 G), a dual zone
@@ -485,7 +306,7 @@ Additional Vibration Reduction Considerations
    less than 2 ounces and this is a very small mass.
 #. Virtually all off the shelf solutions (either pad or stud type) are
    designed for an isolated mass that would weigh at least 5 to 10 times
-   what an APM2.x or PX4FMU/PX4IO board weighs for optimal effectiveness. This
+   what an average flight controller weighs for optimal effectiveness. This
    includes all pre-made Sorbothane, Alpha gel, EAR, memory foam or
    other silicone or urethane gel or foam mounts as well as Lord Micro
    mounts.
