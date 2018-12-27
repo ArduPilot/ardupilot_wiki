@@ -39,7 +39,7 @@ of functionality available.
    <tr><td>AUTOTUNE</td><td>s</td><td>s</td><td>-</td><td></td><td>Y</td><td>like FBWA, but learns attitude tuning while flying</td></tr>
    <tr><td>TRAINING</td><td>+</td><td>+</td><td>-</td><td></td><td>Y</td><td>Manual control up to roll and pitch limits</td></tr>
    <tr><td>ACRO</td><td>+</td><td>+</td><td>-</td><td></td><td>Y</td><td>rate controlled mode with no attitude limits</td></tr>
-   <tr><td>Q(Copter Modes)</td><td>s</td><td>s</td><td>A</td><td>Y</td><td>Y</td><td>Roll and pitch follow stick input, up to set limits</td></tr>
+   <tr><td>Q(Copter Modes)</td><td>s</td><td>s</td><td>A</td><td>Y</td><td>Y</td><td>Varies depending on mode. See quadplane documentation</td></tr>
    <tr><td>AUTO</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Follows Mission</td></tr>
    <tr><td>LOITER</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Circles point where mode switched</td></tr>
    <tr><td>CIRCLE</td><td>A</td><td>A</td><td>A</td><td></td><td></td><td>Gently turns aircraft</td></tr>
