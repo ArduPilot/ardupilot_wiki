@@ -26,6 +26,21 @@ Install steps
 
 Please follow each of the steps described below.
 
+Open up a terminal and type the following to update the list of packages in the software center:
+
+sudo apt-get update
+
+Then install the following packages (reply ‘y’ if it prompts you re additional disk space used)
+
+sudo apt-get install python-dev dos2unix python-wxgtk2.8 python-matplotlib python-opencv python-pip g++ g++-4.7 gawk git ccache
+
+sudo pip install pymavlink
+sudo pip install mavproxy
+
+If you wish to run Plane you will also need to install these packages:
+
+sudo apt-get install libexpat1-dev auto.conf libtool automake
+
 There is also a linked video below showing how to do the setup.
 
 .. warning::
