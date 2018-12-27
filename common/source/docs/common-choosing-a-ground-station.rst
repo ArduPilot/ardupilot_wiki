@@ -104,9 +104,8 @@ Python, and extensible via python modules.
 QGroundControl
 --------------
 
-QGroundControl work with MAVLink capable autopilots. 
-It's main focus was originally the PX4 Flight Stack, but it now also comes with complete support for ArduPilot based autopilots. 
-It's unique among the GCS offerings as it runs on all platforms desktop and mobile.
+QGroundControl work with MAVLink capable autopilots including ArduPilot.
+Its unique among the GCS offerings as it runs on all platforms desktop and mobile.
 
 -  **Platform**: Windows, Mac OS X, Linux, Android and iOS
 -  **Licence**: `Open Source <http://www.qgroundcontrol.org/license>`__
@@ -180,8 +179,7 @@ drone) and special missions for 3D mapping.
 MAV Pilot 1.4
 -------------
 
-A GCS in your pocket that supports predominantly ArduPilot autopilot on iPhone/iPad. Supports for Plane, Copter & Rover vehicle types.
-Also supports ArDrone2.0 with Flight Recorder and PX4 Flight Stack.
+A GCS in your pocket that supports predominantly ArduPilot autopilot on iPhone/iPad. Supports for Plane, Copter & Rover vehicle types
 
 See website for how-to on how connect it to your autopilot
 
@@ -199,8 +197,7 @@ See website for how-to on how connect it to your autopilot
 SidePilot
 ---------
 
-ArduPilot compatible GCS that runs on iPhone/iPad. 
-Also supports PX4 and 3DR Solo.
+ArduPilot compatible GCS that runs on iPhone/iPad.
 
 See website for how-to on how connect it to your autopilot
 

@@ -182,15 +182,13 @@ Futaba Transmitter Compatible With Futaba S-Bus Receivers
 
 Futaba S.BUS2 receivers are supported since Copter/Plane 3.2.
 
-The list of supported receivers for the Pixhawk (or a PX4FMU in
-combination with a PX4IO board) is given below:
+The list of supported receivers is given below:
 
 -  Futaba / Ripmax `R7008SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7675>`__ S.BUS 2 Receiver
 -  Futaba / Ripmax `R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__ S.BUS Receiver
 -  FrSky TFR4 SB 3/16ch 2.4Ghz S.BUS Receiver FASST Compatible
    (`HobbyKing <https://hobbyking.com/en_us/frsky-tfr4-sb-3-16ch-2-4ghz-s-bus-receiver-fasst-compatible.html?___store=en_us>`__)
 -  Futaba FASST S.BUS `2.4 GHz Receiver R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__
-   (tested by PX4 core team, very lightweight, only 7g)
 -  FrSky FASST compatible S.BUS compatible TFR8 SB 8ch 2.4Ghz Receiver
    (`HobbyKing <https://hobbyking.com/en_us/frsky-tfr8-sb-8ch-2-4ghz-s-bus-receiver-fasst-compatible.html?___store=en_us>`__)
 
@@ -234,7 +232,7 @@ Spektrum Satellite Receivers Operate on PPM-Sum
    -  Simply pre-bind the Spektrum Satellite to your transmitter using a
       conventional Spektrum receiver with satellite attached.
    -  Then connect the tiny Spektrum Satellite receiver to the special
-      "Spektrum" connector on either the PX4IO or Pixhawk.
+      "Spektrum" connector on the Pixhawk.
 
 -  The satellite receiver can be bound to transmitter with Mission Planner.
    This functionality is located in Radio Calibration screen on
@@ -312,7 +310,7 @@ Using a Standard RC Radio Receiver with 3DR PPM Encoder
 
 .. note::
 
-   If you are using this PPM Encoder with PX4FMU it is important to know that
+   If you are using this PPM Encoder it is important to know that
    when you are calibrating your transmitter you will quite likely need
    to hook up your flight battery to the PX4IO because the USB port
    alone can't supply enough power.
