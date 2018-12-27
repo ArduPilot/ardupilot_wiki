@@ -167,6 +167,7 @@ Getting more info
    :hidden:
    
    Introducing Copter <docs/introduction>
+   AutoPilot Hardware Options <docs/common-autopilots>
    First Time Setup <docs/initial-setup>
    First Flight <docs/flying-arducopter>
    Advanced Configuration <docs/common-advanced-configuration>
@@ -179,7 +180,6 @@ Getting more info
    HeliQuads <docs/heliquads>
    SkyRocket <docs/skyrocket>
    Solo <docs/solo_arducopter_upgrade>
-   AutoPilot Hardware Options <docs/common-autopilots>
    Use-Cases and Applications <docs/common-use-cases-and-applications>
    Antenna Tracking <docs/common-antenna-tracking>
    Simulation <docs/common-simulation>
