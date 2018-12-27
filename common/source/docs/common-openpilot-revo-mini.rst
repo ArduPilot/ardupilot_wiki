@@ -58,7 +58,7 @@ Default UART order
    
 Wiring diagrams
 ===============
-**Ardupilot default pin assignments on fullsize Revolution and RevoMini**
+**ArduPilot default pin assignments on fullsize Revolution and RevoMini**
 
 .. image:: ../../../images/revolution_wiring.jpg
     :target: ../_images/revolution_wiring.jpg
@@ -89,9 +89,9 @@ Where to Buy
 
 Firmware handling
 =================
-Support for Revolution and RevoMini has been introduced with Ardupilot's ChibiOS port. Firmware files can be found `here <http://firmware.ardupilot.org/>`__
+Ardupilot supports Revolution and RevoMini in Stable releases. Firmware files can be found `here <http://firmware.ardupilot.org/>`__
 
-First time flashing ArduPilot requires to boot your device in DFU mode to flash an ArduPIlot compatible bootloader and firmware file.
+First time flashing ArduPilot requires to boot your device in DFU mode to flash an ArduPilot compatible bootloader and firmware file.
 
 Enter DFU Mode
 --------------
