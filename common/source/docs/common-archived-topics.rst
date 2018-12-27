@@ -37,6 +37,9 @@ value to users with old hardware.
     Build Your Own Multicopter <build-your-own-multicopter>
     Advanced MultiCopter Design <advanced-multicopter-design>
     Improving the Capabilities of Your Multicopter <improving-the-capabilities-of-your-multicopter>
+    PDF Guides <pdf-guides>
+    Copter Project News <project-news>
+    Troubleshooting <troubleshooting>
 [/site]
 
 [site wiki="dev"]
