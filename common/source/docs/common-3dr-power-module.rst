@@ -23,10 +23,9 @@ This is useful because it:
    interference on the compass from other components
 
 The PM accepts a maximum input voltage of 18V (up to 4S LiPo battery) and maximum current of 90Amps. 
-When used with an APM board the full 90Amp current sensing range can be used, 
-with the Pixhawk-series boards up to 60Amps can be measured.
+When used with a Pixhawk up to 60Amps can be measured.
 
-There is more general information on powering in :ref:`Powering the Pixhawk <common-powering-the-pixhawk>` and :ref:`Powering the APM2 <common-powering-the-apm2>`.
+There is more general information on powering in :ref:`Powering the Pixhawk <common-powering-the-pixhawk>`.
 
 .. warning::
 
@@ -38,14 +37,14 @@ There is more general information on powering in :ref:`Powering the Pixhawk <com
    The Power Module provides enough power for the flight controller, receiver, lower power peripherals like a low power lidar and telemetry radio but it does not have
    sufficient power for servos or high current devices like FPV transmitters and the RFD900 telemetry radios.
 
-Connecting the PM to a flight controller board
-==============================================
+Connecting the PM to a flight controller
+========================================
 
 .. image:: ../../../images/3DR-current-sensor-top.jpg
     :target: ../_images/3DR-current-sensor-top.jpg
 
 The 6-pos cable plugs into the 6-pos connector on both the Power Module
-and Pixhawk/APM.
+and flight controller.
 
 .. figure:: ../../../images/pixhawkpower-port.jpg
    :target: ../_images/pixhawkpower-port.jpg
