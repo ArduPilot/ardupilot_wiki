@@ -41,11 +41,6 @@ To allow the pilot to directly control the ignition and (optional) starter from 
 Be sure to check the engine's behaviour when the transmitter is turned off to simulate what will happen during an RC failsafe.
 [/site]
 
-Vibration isolation
--------------------
-
-The high vibration from internal combustion engines means that :ref:`vibration dampening <common-vibration-damping>` is critical.  It is often necessary to mount the flight controller on an plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.
-
 [site wiki="plane"]
 Starting and Stopping the Motor
 -------------------------------
@@ -61,3 +56,8 @@ To stop the motor
 - Lower the transmitter's starter switch
 - Disarm the vehicle
 [/site]
+
+Vibration isolation
+-------------------
+
+The high vibration from internal combustion engines means that :ref:`vibration dampening <common-vibration-damping>` is critical.  It is often necessary to mount the flight controller on an plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.
