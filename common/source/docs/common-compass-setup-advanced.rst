@@ -81,10 +81,8 @@ Mission Planner supports automatic configuration of almost all
 parameters for the most common autopilot boards. All you need to do is
 select the button corresponding to your autopilot controller:
 
--  For Pixhawk and PX4, select the button **Pixhawk/PX4**. You may be
-   prompted for a specific ArduPilot version.
+-  For most modern flight controller, select the button **Pixhawk/PX4**. You may be prompted for a specific ArduPilot version.
 -  For APM 2.6, select **APM with External Compass**.
--  For APM 2.5, select **APM (Internal Compass)**.
 
 If your external compass is in a non-standard orientation, you must manually 
 select the orientation in the combo box (change from ``ROTATION_NONE``). 
@@ -256,17 +254,6 @@ Please follow these instructions:
 
       .. image:: ../../../images/CompassCalibration_CompassMot.png
          :target: ../_images/CompassCalibration_CompassMot.png
-
--  **If using AC3.1.5:**
-
-   -  open the Terminal screen, press the **Connect APM** or **Connect
-      PX4** button
-   -  At the prompt type ``setup`` and then ``compassmot``
-   -  If the PowerModule/Current monitor is enabled you should see
-      "measuring compass vs CURRENT"
-
-      .. image:: ../../../images/CompassMot1.png
-          :target: ../_images/CompassMot1.png
 
 -  You should hear your ESCs arming beep
 -  Raise the throttle slowly to between 50% ~ 75% (the props will spin!)
