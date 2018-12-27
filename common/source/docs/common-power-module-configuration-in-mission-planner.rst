@@ -4,19 +4,9 @@
 Power Module Configuration in Mission Planner
 =============================================
 
-This page explains how to configure and calibrate a Power Module (PM) to
-measure battery voltage and current consumption.
+A power module can be used to measure the battery voltage and current for use in the battery failsafe and also to provide a stable power supply to the flight controller
 
-Overview
-========
-
-A power module can be used to provide a stable power supply to the
-system, and to accurately measure the battery voltage/current in order
-to trigger a return to launch on low battery. ArduPilot is 
-:ref:`compatible with a number of power modules <common-powermodule-landingpage>`.
-
-This article explains how to set up and configure power modules using
-*Mission Planner*.
+ArduPilot is :ref:`compatible with a number of power modules <common-powermodule-landingpage>`.
 
 Mission Planner Setup
 =====================
