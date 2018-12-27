@@ -65,6 +65,7 @@ condition the power across the rail and restrict it to less than 5.7V.
 
 .. image:: ../../../images/zener-diode.jpg
     :target: ../_images/zener-diode.jpg
+    :width: 300px
 
 This method can also be used as backup power for Pixhawk when using a
 power module. If the voltage provided by the power module falls too low
