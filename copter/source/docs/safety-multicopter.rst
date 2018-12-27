@@ -54,8 +54,7 @@ MultiCopter Safety
    #. Do not attempt to fly longer than your battery's safe capacity, it
       is very bad for the battery and can cause a crash.
 
-#. **The APM and PX4 flight controllers we use incorporate a motor
-   arming safety feature.**
+#. **ArduPilot includes a motor arming safety feature.**
 
    #. Immediately prior to flight after the battery has been connected,
       the RC transmitter's throttle stick needs to be held down and to

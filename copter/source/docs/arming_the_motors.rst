@@ -23,7 +23,7 @@ clear of the propellers. Then do the following:
    the RGB led will blink yellow.  Please refer to :ref:`this page <prearm_safety_check>`.
 #. Check that your flight mode switch is set to Stabilize, ACRO, AltHold
    Loiter, or PosHold.
-#. If using a PX4, press the safety button until the light goes solid.
+#. If using a flight controller with a safety switch, press it until the light goes solid.
 #. If you are planning on using the autopilot (i.e. Loiter, RTL, Drift,
    Auto or Guided modes) you should wait for 30 seconds after the GPS
    has gotten 3d lock.  This will give the GPS position time to settle.
@@ -52,8 +52,7 @@ the motors do the following:
 #. Check that your flight mode switch is set to Stabilize, ACRO, AltHold
    ,Loiter, or PosHold.
 #. Hold throttle at minimum and rudder to the left for 2 seconds.
-#. The red arming light should start flashing on the APM2.  On the
-   Pixhawk the RGB LED will start flashing green.
-#. If using a PX4, press the safety button until the led begins flashing
+#. The RGB LED will start flashing green
+#. If using a flight controller with a safety switch, press it until the led begins flashing
 #. Disconnect the Lipo battery.
 #. Turn off your transmitter.
