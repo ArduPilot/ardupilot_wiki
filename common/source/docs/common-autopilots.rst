@@ -33,6 +33,8 @@ Closed hardware
     NAVIO2 <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Holybro Kakute F4 <common-holybro-kakutef4>
+    `Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>`_
+    `Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>`_
     Intel Aero <common-intel-aero-overview>
     Intel Aero RTF vehicle <common-intel-aero-rtf>
     Mateksys F405-STD and variants <common-matekf405>
