@@ -29,7 +29,7 @@ Select the COM port
 
 If using the *Mission Planner* select the COM port drop-down on the
 upper-right corner of the screen (near the **Connect** button).  Select
-**AUTO** or the specific port for your board (**PX4FMU** or **Arduino Mega 2560**). 
+**AUTO** or the specific port for your board. 
 Set the Baud rate to **115200** as shown. Don't hit **Connect** just yet.
 
 .. image:: ../../../images/Pixhawk_ConnectWithMP.png

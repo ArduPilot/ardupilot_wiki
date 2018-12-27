@@ -71,8 +71,7 @@ To calibrate the voltage reading:
        :target: ../_images/MPCheckVoltage.jpg
 
 If you find the voltage is not correct (i.e. if off from the hand-held
-volt meter's reading by more than perhaps 0.2V) you can correct the
-APM/PX4's reading by doing the following:
+volt meter's reading by more than perhaps 0.2V) you can calibrate it by doing the following:
 
 #. On *Mission Planner*'s **INITIAL SETUP \| Optional Hardware \|
    Battery Monitor** screen set the "Sensor" to "Other".
