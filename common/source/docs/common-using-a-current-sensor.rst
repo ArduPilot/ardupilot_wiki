@@ -23,6 +23,7 @@ Connection to Pixhawk
 
 .. figure:: ../../../images/Pixhawk_AttoPilot_CurrentSensor.jpg
    :target: ../_images/Pixhawk_AttoPilot_CurrentSensor.jpg
+   :width: 450px
 
    Pixhawk/ toAttopilot 180A Voltage/Current Sensor Wiring Diagram
 
