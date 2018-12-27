@@ -34,19 +34,6 @@ as shown in the photo above including connecting:
 -  I pin (current) to the Pixhawk's 4th pin from the left
 -  GND pin (ground) to the 1st pin on the left
 
-Connection to APM
-=================
-
-.. image:: ../../../images/ConnectionDiagram2.jpg
-    :target: ../_images/ConnectionDiagram2.jpg
-
-Connect the autopilot sensor to APM as shown in the photo above
-including connecting:
-
--  V pin (voltage) to APM's A1's S pin
--  I pin (current) to APM's A2's S pin
--  GND pin (ground) to APM's A1 "-" pin
-
 Setup in Mission Planner
 ========================
 

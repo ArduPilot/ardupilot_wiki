@@ -52,38 +52,8 @@ and Pixhawk/APM.
 
    Pixhawk Power Port
 
-.. figure:: ../../../images/3DR-current-sensor-APM-conn.jpg
-   :target: ../_images/3DR-current-sensor-APM-conn.jpg
-
-   APM2.x Power Port
-
 Your battery connects to the Power Module's male connector, and its
 female connector plugs into your ESC or Power Distribution Board.
-
-.. note::
-
-   **APM 2.x Power Module Notes:**
-
-   -  You should normally remove the APM's JP1 jumper when using the Power
-      Module so that only your APM board and your receiver are powered from
-      the Power Module's on-board regulator and not from your ESCs.
-
-      -  Removing the jumper allows you to use the APM's servo output rail
-         to distribute power from your ESC's BEC or separate UBEC to any
-         servos or external equipment.
-      -  If you are using servos, plug an ESC BEC or stand alone UBEC power
-         wire and ground wire into two of the power and ground pins on the
-         APM's servo output rail to provide a common power and ground bus
-         for servo power.
-
-   -  You can leave the jumper present if you are using ESCs that have no
-      BECs or if all the ESC BECs power wires are cut and you are not
-      powering any servos from the servo out rail.
-   -  You can also individually power each servo from each individual
-      ESC-BEC.
-
-      -  Simply run the power and ground from each ESC-BEC individually and
-         directly to each servo (very handy for multicopters).
 
 Setup through Mission Planner
 =============================
