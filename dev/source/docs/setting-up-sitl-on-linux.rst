@@ -136,6 +136,41 @@ model than the default Rascal110 by specifying the model name using the
 
 the model should be in the **Tools/autotest/aircraft/** directory.
 
+debugging
+sudo apt install gdb
+also with debugging GDB
+
+cd ~/ardupilot
+./waf configure --debug
+./waf configure --board sitl --debug   # software-in-the-loop simulator with debug symbols
+# Build everything and run all tests
+./waf check-all
+Some more install checks.
+http://ardupilot.github.io/MAVProxy/html/getting_started/download_and_installation.html
+
+cd ardupilot/ArduPlane
+sim_vehicle.py -f jsbsim:Rascal --console –map 
+
+also with debugging
+sim_vehicle.py -f jsbsim:Rascal --console –map -D -G
+in terminal
+mode auto
+wait 1 min 
+
+arm throttle
+
+The Rascal takes off fallowing a mission if the first waypoint has takeoff loaded.
+
+The other JSBSim planes do not further autotest framework testing and scripts could be tested. The Boeing314 does not.
+
+CTRL + Middle mouse brings up a xterm menu to turn off the autoscrolling to see JSBSim output in xterm. 
+
+HIL simulator shows
+“If you used the file “system.fgfsrc” then you can just increase your throttle to fly the Rascal plane. If you didn’t and are flying the default Cessna, hold down ‘s’ on the keyboard to start the plane’s engine, then advance your throttle to take off.”
+
+So a script may increase the Rascals throttle and start it after arm throttle.
+
+
 FlightGear 3D View (Optional)
 -----------------------------
 
