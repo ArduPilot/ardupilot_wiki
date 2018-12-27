@@ -29,10 +29,14 @@ value to users with old hardware.
     Quick Start for RTFs <quick-start-guide>
     HIL Quad Simulator <hil-quad>
     Traditional Helicopter Simulator – TradHeliHIL <tradhelihil>
-    Archived: Installing the PX4FMU on a QuadCopter <px4fmu-only-wiring>
+    Installing the PX4FMU on a QuadCopter <px4fmu-only-wiring>
     GPS Failsafe <archived-gps-failsafe>
     traditional-helicopter-archived-tuning
     Hoverthings Flip Sport Quadcopter (detailed build) <hoverthings-flip-sport-quadcopter>
+    DJI F330 FlameWheel QuadCopter <dji-f330-flamewheel>
+    Build Your Own Multicopter <build-your-own-multicopter>
+    Advanced MultiCopter Design <advanced-multicopter-design>
+    Improving the Capabilities of Your Multicopter <improving-the-capabilities-of-your-multicopter>
 [/site]
 
 [site wiki="dev"]

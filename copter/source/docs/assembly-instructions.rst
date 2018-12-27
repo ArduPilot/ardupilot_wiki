@@ -22,4 +22,3 @@ instructions for adding other hardware are covered in
     GPS+Compass Module <common-installing-3dr-ublox-gps-compass-module>
     Vibration Damping <common-vibration-damping>
     Magnetic Interference <common-magnetic-interference>
-    Detailed Vehicle Builds <common-common-airframe-builds>
