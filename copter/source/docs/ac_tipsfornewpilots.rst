@@ -80,9 +80,7 @@ you know your battery consumption and use one of the following batteries
 monitoring methods to ensure that you always have enough power remaining
 to safely land your copter (and not ruin the battery).
 
--  The APM 2.5 power module and PX4 have Battery voltage monitoring
-   built in. For more information, visit the :ref:`3DR Power Module for Measuring Voltage and Current <common-3dr-power-module>`
-   page.
+-  Ardupilot support Battery voltage monitoring. For more information, visit the :ref:`3DR Power Module for Measuring Voltage and Current <common-3dr-power-module>` page.
 -  You may also program your ESCs to use a slow or no cutoff at low
    voltages.
 -  For APM 2 or 2.5 without power module it is HIGHLY recommended you

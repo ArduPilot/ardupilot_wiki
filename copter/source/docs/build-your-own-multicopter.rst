@@ -276,8 +276,7 @@ Frame Kit
       than the DJI F450 Flamewheel - inexpensively.
    #. Although it's a small copter the Flip is powerful and agile enough
       to use FPV video and/or a GoPro Camera and brushless gimbal.
-   #. Here is a link to the :ref:`Hoverthings Flip Sport Quadcopter Wiki Build Page <hoverthings-flip-sport-quadcopter>` using a Pixhawk
-      or PX4 flight controller.
+   #. Here is a link to the :ref:`Hoverthings Flip Sport Quadcopter Wiki Build Page <hoverthings-flip-sport-quadcopter>` using a Pixhawk flight controller.
 
       .. image:: ../images/FlipPX41.jpg
           :target: ../_images/FlipPX41.jpg
@@ -407,8 +406,7 @@ Which Approach is Right for You
 #. There are expensive, high end Multicopters, which are generally
    oriented to commercial photo or video use and outside our scope here.
 #. All of the Copters I have and will be putting together incorporate
-   3DR APM, PX4 or :ref:`Pixhawk <common-pixhawk-overview>` Flight
-   Controllers.
+   a :ref:`Pixhawk <common-pixhawk-overview>` flight controller
 
    #. These are the best and most capable flight controllers available
       and they have great **DIYDrones** community support.
