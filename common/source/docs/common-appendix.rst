@@ -11,42 +11,32 @@ the wiki.
 .. toctree::
     :maxdepth: 1
     
-    Wiki Editing Guide <common-wiki_editing_guide>
     Acknowledgments <common-acknowledgments>
+    Advanced user tools (downloads) <common-downloads_advanced_user_tools>
     Commercial Support <common-commercial-support>
+    Contact Us <common-contact-us>
+    Developer tools (downloads) <common-downloads_developer_tools>
     Donating to ArduPilot <common-donation>
+    Firmware (downloads) <common-downloads_firmware>
     Glossary <common-glossary>
     History of ArduPilot <common-history-of-ardupilot>
     Partners <common-partners>
     Ready-To-Use vehicles <common-rtf>
     Stores <common-stores>
     Top Contributors <common-team>
-    Advanced user tools (downloads) <common-downloads_advanced_user_tools>
-    Developer tools (downloads) <common-downloads_developer_tools>
-    Firmware (downloads) <common-downloads_firmware>
-
-[site wiki="copter,plane,rover,planner,planner2,antennatracker"]
-    Contact Us <common-contact-us>
-[/site]
+    Training Centers <common-training-centers>
+    Wiki Editing Guide <common-wiki_editing_guide>
 
 [site wiki="planner"]
     Mission Planner – Proposed Table Of Contents (TOC) <mission-planner-toc-planning>
 [/site]
 
-[site wiki="copter"]
-    PDF Guides <pdf-guides>
-    Troubleshooting <troubleshooting>
-    Copter Project News <project-news>
-    common-training-centers
-[/site]
-
-[site wiki="rover,plane"]
+[site wiki="plane"]
     Common Airframe Builds <common-common-airframe-builds>
 [/site]
 
 [site wiki="plane"]
     Plane News <project-news>
-    common-training-centers
 [/site]
 
 [site wiki="antennatracker"]
