@@ -30,6 +30,7 @@ Vehicles from Non-Partners
 * `FireFly6 PRO from BirdsEyeView <https://www.birdseyeview.aero/products/firefly6>`__ (non-standard version of ArduPlane)
 * HobbyKing Aperture Hexacopter (`mode1 <https://hobbyking.com/en_us/aperture-rtf-m1.html?___store=en_us>`__, `mode2 <https://hobbyking.com/en_us/aperture-rtf-m2.html?___store=en_us>`__)
 * `HobbyKing Quanum Nova PRO <https://hobbyking.com/en_us/nova-pro-main-body-esc-radio-receiver-charger-rtf-mode-1.html?___store=en_usl>`__ (may use now-unsupported APM2 compatible controller)
+* `Holybro QAV250 Pixhawk 4 Mini (Copter) <https://shop.holybro.com/c/pixhawk4-mini-qav250-kit_0494>`__
 * `MotoDoro Farm Mapper (Plane) <http://motodoro.com/product/farm-mapper-uav/>`__
 * `R1 Rover <https://store.aionrobotics.com/products/r1-ardupilot?variant=429602832411>`__ from `Aion Robotics <https://www.aionrobotics.com/>`__
 * `UAV Mapper from TuffWing <http://www.tuffwing.com/products/drone_mapper.html>`__
