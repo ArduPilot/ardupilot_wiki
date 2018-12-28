@@ -15,8 +15,8 @@ What to Buy
 -----------
 
 - Gas motor and ignition module
-- RC Switch for controlling power to ignition module like 'this one from milehighrc.com <http://milehighrc.com/switch.html>'
-- Optionally an electric starter like `this one from milehighrc.com <http://milehighrc.com/EME_E_Start.html>`__
+- RC Switch for controlling power to ignition module like `this one from milehighrc.com <http://milehighrc.com/switch.html>`
+- Optionally an electric starter like `this one from milehighrc.com <http://milehighrc.com/EME_E_Start.html>
 
 Connection and Configuration
 ----------------------------
@@ -35,12 +35,12 @@ These parameters may also need to be adjusted:
 - Set :ref:`ICE_PWM_IGN_ON <ICE_PWM_IGN_ON>` is the PWM value sent to the ignition power switch when the engine should be running
 - Set :ref:`ICE_PWM_IGN_OFF <ICE_PWM_IGN_OFF>` is the PWM value sent to the ignition power switch when the engine should be stopped
 
-If using an onboard starter, it is important to configure an RPM sensor for the engine. This will allow the ArduPilot to detect an in-flight engine failure and attempt to restart the engine. ArduPilot supports generic pulse tachometers sensors connected to GPIO pins (such as the Aux servo pins on a Pixhawk or Cube). A tachometer may be made using a simple hall effect switch IC. Alternatively, some ignition modules support a tachometer output that can be connected directly to the GPIO pins. Desert Aircraft Electronic Ignition V2 modules support tacometer output on the signal pin of the power input connector. Note that when connecting an RPM sensor to an AUX pin, it is important to make sure that this pin is not configured to output a PWM value. On a Pixhawk or Cube, Aux 5 and 6 are configured to not output PWM by default. If you need to use a different Aux pin you may need to adjust :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>`.
+If using an on-board starter, it is important to configure an RPM sensor for the engine. This will allow the ArduPilot to detect an in-flight engine failure and attempt to restart the engine. ArduPilot supports generic pulse tachometers connected to GPIO pins (such as the Aux servo pins on a PixHawk or Cube). A tachometer may be made using a simple hall effect switch IC. Alternatively, some ignition modules support a tachometer output that can be connected directly to the GPIO pins. Desert Aircraft Electronic Ignition V2 modules support tachometer output on the signal pin of the power input connector. Note that when connecting an RPM sensor to an AUX pin, it is important to make sure that this pin is not configured to output a PWM value. On a PixHawk or Cube, Aux 5 and 6 are configured to not output PWM by default. If you need to use a different Aux pin you may need to adjust :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>`.
 
 In order to configure an RPM sensor, the following parameters must be set:
 
 - Set :ref:`RPM_TYPE <RPM_TYPE>` to 2 for a standard GPIO input pin. 
-- Set :ref:`RPM_PIN <RPM_PIN>` to the appropriate value for the auxilliary pin you are using.
+- Set :ref:`RPM_PIN <RPM_PIN>` to the appropriate value for the auxiliary pin you are using.
 - Set the remaining 'RPM_*' parameters as appropriate for your system.
 - Set :ref:`ICE_RPM_CHAN <ICE_RPM_CHAN>` to 1.
 
@@ -55,12 +55,12 @@ If you are using a quadplane and would like the ICE engine to be disabled during
 
 Advanced Starter Configuration
 ------------------------------
-A variety of parameters are available for configuring the engine start routine. The auto-start functionality will attempt to start then engine any time the vehicle is armed, the engine is enabled, and the measured RPM is below the ICE_RPM_THRESH. If the engine is not successfully started within a configurable amount of time, the program will wait for a configurable dealy before attempting to start again. It is important to remember that the starter will run in pulses. DO NOT approach the engine between failed start attempts as the starter will attempt to start again if the engine is still enabled.
+A variety of parameters are available for configuring the engine start routine. The auto-start functionality will attempt to start the engine any time the vehicle is armed, the engine is enabled, and the measured RPM is below the ICE_RPM_THRESH. If the engine is not successfully started within a configurable amount of time, the program will wait for a configurable dealy before attempting to start again. It is important to remember that the starter will run in pulses. DO NOT approach the engine between failed start attempts as the starter will attempt to start again if the engine is still enabled.
 
 - :ref:`ICE_START_PCT <ICE_START_PCT>` overrides the throttle setting during start. 
 - :ref:`ICE_START_TIME <ICE_STARTER_TIME>` controls the maximum amount of time the starter will run in each start attempt.
-- :ref:`ICE_START_DELAY <ICE_START_DELAY>` sets a delay between start attempts. This can be useful when your starter ahs a limited duty cycle.
-- :ref: `ICE_RPM_THRESH <ICE_RPM_THRESH>` sets the minimum RPM reading for the engine to be considered running. This should be set to a value below your idle RPM.
+- :ref:`ICE_START_DELAY <ICE_START_DELAY>` sets a delay between start attempts. This can be useful when your starter has a limited duty cycle.
+- :ref:`ICE_RPM_THRESH <ICE_RPM_THRESH>` sets the minimum RPM reading for the engine to be considered running. This should be set to a value below your idle RPM.
 
 
 [/site]
@@ -69,7 +69,7 @@ To allow the pilot to directly control the ignition and (optional) starter from 
 
 - Set ``SERVOx_FUNCTION`` (where "x" is the flight controller's output channel connected to the ignition or starter) to ``RCINy`` (where "y" is the transmitter channel).  For example set :ref:`SERVO8_FUNCTION <SERVO8_FUNCTION>` = 59/"RCIN9" to allow the transmitter's channel 9 to control the flight controller Output 8
 
-Be sure to check the engine's behaviour when the transmitter is turned off to simulate what will happen during an RC failsafe.
+Be sure to check the engine's behavior when the transmitter is turned off to simulate what will happen during an RC failsafe.
 [/site]
 
 [site wiki="plane"]
@@ -82,7 +82,7 @@ When using the ArduPilot ICE library to control an engine, the engine can be ena
 - Mid: Keep the current state of the engine, but allow MAVLink commands and mission items to change the state of the engine.
 - High: Force the engine to be enabled. This ignores MAVLink commands and mission items that attempt to control the engine's state.
 
-If an ICE_START_CHAN is not configured, the behaviour will be the same as when the switch is in the middle position.
+If an ICE_START_CHAN is not configured, the behavior will be the same as when the switch is in the middle position.
 
 To start the motor with RC control:
 
