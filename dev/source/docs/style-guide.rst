@@ -422,20 +422,25 @@ The description is a long text field for a complete description of the parameter
 **Right:**
 
 ::
-	// @Description: Gain added to pitch to keep aircraft from descending or ascending in turns. Increase in increments of 0.05 to reduce altitude loss. Decrease for altitude gain.
-   
+
+    // @Description: Gain added to pitch to keep aircraft from descending or ascending in turns. Increase in increments of 0.05 to reduce altitude loss. Decrease for altitude gain.
+
 **Wrong:**
 
 ::
-	// @Description: This is the gain term that is applied to the pitch rate offset calculated as required to keep the nose level during turns. The default value is 1 which will work for all models. Advanced users can use it to correct for height variation in turns. If height is lost initially in turns this can be increased in small increments of 0.05 to compensate. If height is gained initially in turns then it can be decreased.
+
+    // @Description: This is the gain term that is applied to the pitch rate offset calculated as required to keep the nose level during turns. The default value is 1 which will work for all models. Advanced users can use it to correct for height variation in turns. If height is lost initially in turns this can be increased in small increments of 0.05 to compensate. If height is gained initially in turns then it can be decreased.
+
 
 Avoid in Descriptions:
+
 - Helping words and nondescriptive language such as "This parameter changes..., you, etc." that is common to all parameters
 - Referencing other parameters unless it is critical
 - Describing a 0 setting as "disabled"
 - Default settings
 
 Encourage in Descriptions:
+
 - Present tense language
 - Consequences of changing the parameter (this also guides users how to tune for their vehicle)
 - When the parameter is used or ignored
@@ -444,5 +449,6 @@ Encourage in Descriptions:
 The values, units, ranges, and steps are all critical for adjusting the parameter as well. Include them when possible.
 
 The user field helps to categorize and hide advanced parameters from being adjusted by new users. There are currently 2 user fields:
+
 - Standard - Available to anyone
 - Advanced - Available to advanced users
