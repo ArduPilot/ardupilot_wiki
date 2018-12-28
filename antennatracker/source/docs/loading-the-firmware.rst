@@ -4,6 +4,8 @@
 Loading the Firmware
 ====================
 
+Before loading Firmware, you need to choose which :ref:`autopilot hardware <common-autopilots>` to use.
+All supported autopilots are suitable for use with AntennaTracker.
 The antenna tracker firmware can be loaded from the Mission Planner's
 **Initial Setup \| Install Firmware** very :ref:`much like Copter. <planner:common-loading-firmware-onto-pixhawk>`
 
