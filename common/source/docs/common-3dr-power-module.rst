@@ -45,6 +45,7 @@ Most ground stations provide a battery monitor interface but the parameters can 
 - :ref:`BATT_AMP_OFFSET <BATT_AMP_OFFSET>` voltage offset received from the power module's current pin when ther is no current being pulled from the battery
 
 Instructions for setup and calibration using the :ref:`Mission Planner can be found here <common-power-module-configuration-in-mission-planner>`
+A Blog post with instructions for `set-up using QGC can be found here <https://discuss.ardupilot.org/t/power-monitor-setup-on-ardupilot-copter-3-6/35441>`__
 
 [site wiki="copter"]
 Instructions for :ref:`battery failsafe can be found here <failsafe-battery>`
