@@ -397,8 +397,14 @@ Commenting
 Each file, function and method with public visibility should have a
 comment at the top describing what it does.
 
-Parameter Naming
-================
+Parameters
+==========
+
+Users gather critical information from these fields. With parameters that are well-documented in the code, the wiki and GCS can update parameters automatically. When parameters are properly documented, users can often tune their vehicles without needing pages and posts of external non-linked documentation. While information here is not a substitute for a tuning guide, it can be very effective at guiding users to change the right things.
+
+
+Parameter Name
+--------------
 
 Parameter with multiple words should have the words ordered from left to right by importance:
 
@@ -410,12 +416,14 @@ Re-use words from other parameters if possible instead of creating new words.  F
 The total length of the parameter name must be 16 characters or less.
 
 
-Display Names, Descriptions, Values, Units, Ranges, Steps, and Users
---------------------------------------------------------------------
-
-Users gather critical information from these fields. With parameters that are well-documented in the code, the wiki and GCS can update parameters automatically. When parameters are properly documented, users can often tune their vehicles without needing pages and posts of external non-linked documentation. While information here is not a substitute for a tuning guide, it can be very effective at guiding users to change the right things.
+Display Name
+------------
 
 The display name is typically a 2-5 word phrase that describes what the parameter changes. Often this is the Parameter Name spelled out in full words. Do not start with nondescriptive word like "the." A good Display Name for LIM_PITCH_MAX is "Maximum Pitch Angle".
+
+
+Description
+-----------
 
 The description is a long text field for a complete description of the parameter and how changing it may affect vehicle behavior. It should be kept concise while giving the most critical information to the user.
 
@@ -446,7 +454,15 @@ Encourage in Descriptions:
 - When the parameter is used or ignored
 - When a 0 setting uses another parameter for the value
 
+
+Value, Unit, Range
+------------------
+
 The values, units, ranges, and steps are all critical for adjusting the parameter as well. Include them when possible.
+
+
+User
+----
 
 The user field helps to categorize and hide advanced parameters from being adjusted by new users. There are currently 2 user fields:
 
