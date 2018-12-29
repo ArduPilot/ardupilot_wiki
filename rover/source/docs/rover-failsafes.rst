@@ -36,6 +36,8 @@ The battery failsafe is triggered if a :ref:`battery monitor <common-powermodule
 A two stage failsafe is possible by setting the :ref:`BATT_CRT_VOLT <BATT_CRT_VOLT>`, :ref:`BATT_CRT_MAH <BATT_CRT_MAH>` and :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>`.
 The second stage failsafe action will be taken once the battery falls below these limits for :ref:`BATT_LOW_TIMER <BATT_LOW_TIMER>` seconds.
 
+An independent battery failsafe can also be configured for a second battery using the ``BATT2_`` parameters
+
 GCS Failsafe (aka Telemetry Failsafe)
 -------------------------------------
 
