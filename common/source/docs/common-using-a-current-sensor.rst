@@ -4,19 +4,7 @@
 Attopilot 180A Voltage and Current Sensor
 =========================================
 
-This article explains how to use the AttoPilot for measuring high
-current and voltages.
-
-Overview
-========
-
-In general it is best to power your Flight Controller with
-the :ref:`Power Module <common-3dr-power-module>`\  because it provides
-solid 5V power and also allows you to read current and voltage. But for
-cases where you need to measure over 18V (i.e. over 4S batteries) or
-current over 90A, you should use the 
-`AttoPilot 180A current and voltage module <https://www.sparkfun.com/products/10644>`__ which can be
-purchased from `Sparkfun <https://www.sparkfun.com/products/10644>`__.
+In general it is best to use a power module specifically designed to work with flight controllers but for cases where you need to measure over the voltage limit (i.e. > 18V) or current limit (i.e. > 90Amps) of the available power modules you may wish to use an `AttoPilot 180A current and voltage module <https://www.sparkfun.com/products/10644>`__ which can be purchased from `Sparkfun <https://www.sparkfun.com/products/10644>`__.
 
 Connection to Pixhawk
 =====================
