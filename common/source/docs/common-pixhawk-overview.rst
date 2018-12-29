@@ -605,44 +605,6 @@ modules.
    </tbody>
    </table>
 
-
-Pixhawk system features
-=======================
-
--  The Pixhawk (FMUv2) flight controller consists of a PX4-FMU controller
-   and a PX4-IO integrated on a single board with additional IO, Memory
-   and other features.
--  **A 32-bit processor with an additional failsafe backup
-   controller.**
-
-   -  STM32F427 32-bit primary microcontroller: 168 MHz, 252 MIPS,
-      Cortex M4 core with a floating point unit.
-   -  Two megabytes of Flash program memory and 256 kilobytes of RAM.
-   -  STM32F103 backup failsafe 32-bit co-processor provides for manual
-      recovery and has its own power supply.
-   -  Socket for a plug in micro SD memory card for data logging and
-      other uses.
-
--  **Power system with redundancy.**
-
-   -  The Pixhawk is supplied with an in line power supply with voltage
-      and current sensor outputs.
-   -  Ideal diode controller with redundant power supply inputs and
-      automatic fail-over.
-   -  Servo rail high-power (max. 10V) and high-current (10A+) ready.
-   -  All peripheral outputs are over-current protected and all inputs
-      ESD protected.
-   -  The provided external safety button enables safe motor activation
-      / deactivation.
-   -  LED status indicators and driver for high brightness external
-      multicolored LED to indicate flight status.
-   -  High-power, multi-tone piezo audio indicator also informs of
-      current flight status.
-   -  High performance UBLOX GPS plus external compass in
-      protective case available.
-   -  Weight: 38g (1.31oz), Width: 50mm (1.96"), Thickness: 15.5mm
-      (.613"), Length: 81.5mm (3.21")
-
 Connecting and disconnecting DF13 connectors
 ============================================
 
@@ -659,10 +621,10 @@ virtual pins, defined in the firmware.
 
 **Virtual Pin 2 and Power connector Pin 4**: power
 management connector voltage pin, accepts up to 3.3V, usually attached
-to 3DR power brick with 10.1:1 scaling
+to a power module with 10.1:1 scaling
 
 **Virtual Pin 3 and Power connector Pin 3**: power management connector
-current pin, accepts up to 3.3V, usually attached to 3DR power brick
+current pin, accepts up to 3.3V, usually attached to a power module
 with 17:1 scaling
 
 **Virtual Pin 4 and (No connector Pin)**: VCC 5V rail sensing. This
