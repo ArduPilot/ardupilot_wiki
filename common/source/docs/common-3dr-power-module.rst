@@ -39,7 +39,7 @@ Configuration
 
 Most ground stations provide a battery monitor interface but the parameters can also be set manually:
 
-- :ref:`BATT_MONITOR <BATT_MONITOR>` = **3** to measure only voltage or **4** to measure both voltage and current (you may need to reboot the board after changing this)
+- :ref:`BATT_MONITOR <BATT_MONITOR>` = **3** to measure only voltage or **4** to measure both voltage and current (you will need to reboot the board after changing this)
 - :ref:`BATT_VOLT_PIN <BATT_VOLT_PIN>` = **2**. The flight controller pin connected to the power module's voltage pin
 - :ref:`BATT_VOLT_MULT <BATT_VOLT_MULT>` converts the analog voltage received from the power module's voltage pin to the battery's voltage
 - :ref:`BATT_CURR_PIN <BATT_CURR_PIN>` = **3**. The flight controller pin connected to the power module's current pin
@@ -54,7 +54,7 @@ Dual Battery Monitoring
 
 If the flight controller has additional analog-to-digital pins available, a second battery can be monitored by setting up the ``BATT2_`` parameters.  The values below allow reading a second battery's voltage and current using :ref:`The Cube's <common-thecube-overview>` POWER2 port.
 
-- :ref:`BATT2_MONITOR <BATT_MONITOR>` = **4** to measure both voltage and current (you may need to reboot the board after changing this)
+- :ref:`BATT2_MONITOR <BATT_MONITOR>` = **4** to measure both voltage and current (you will need to reboot the board after changing this)
 - :ref:`BATT2_VOLT_PIN <BATT_VOLT_PIN>` = **13**
 - :ref:`BATT_CURR_PIN <BATT_CURR_PIN>` = **14**
 
