@@ -77,3 +77,4 @@ Advanced Settings
 
 - :ref:`BATT_FS_VOLTSRC <BATT_FS_VOLTSRC>` allows configuring whether the raw battery voltage or a sag corrected voltage is used
 - :ref:`BATT_LOW_TIMER <BATT_LOW_TIMER>` can configure how long the voltage must be below the threshold for the failsafe to trigger
+- ``BATT2_`` parameters can be setup to trigger the failsafe on a second battery
