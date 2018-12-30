@@ -541,7 +541,7 @@ Video tutorials
 
 ..  youtube:: 62TmGiwFiDU
     :width: 100%
-
+|
 ..  youtube:: IcVlJCR8N2g
     :width: 100%
 
