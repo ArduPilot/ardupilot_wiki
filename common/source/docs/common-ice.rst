@@ -15,8 +15,8 @@ What to Buy
 -----------
 
 - Gas motor and ignition module
-- RC Switch for controlling power to ignition module like `this one from milehighrc.com <http://milehighrc.com/switch.html>`
-- Optionally an electric starter like `this one from milehighrc.com <http://milehighrc.com/EME_E_Start.html>
+- RC Switch for controlling power to ignition module like `this one from milehighrc.com <http://milehighrc.com/switch.html>`__
+- Optionally an electric starter like `this one from milehighrc.com <http://milehighrc.com/EME_E_Start.html>__
 
 Connection and Configuration
 ----------------------------
