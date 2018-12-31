@@ -16,7 +16,7 @@ What to Buy
 
 - Gas motor and ignition module
 - RC Switch for controlling power to ignition module like `this one from milehighrc.com <http://milehighrc.com/switch.html>`__
-- Optionally an electric starter like `this one from milehighrc.com <http://milehighrc.com/EME_E_Start.html>__
+- Optionally an electric starter like `this one from milehighrc.com <http://milehighrc.com/EME_E_Start.html>`__
 
 Connection and Configuration
 ----------------------------
@@ -47,6 +47,7 @@ In order to configure an RPM sensor, the following parameters must be set:
 Throttle control for an ICE engine is similar to controlling a standard brushless ESC. The throttle servo can be connected to any servo output with a SERVOX_FUNCTION set to 70 (Channel 3 is configured this way by default). It is important to set the Min and Max PWM values on this servo output to be within the mechanical limits of your throttle assembly (using SEVOX_MIN and SERVOX_MAX). While doing this, also verify that the servo moves in the correct direction with respect to a manual throttle input. Note that the throttle servo will not move unless the vehicle is armed. It is recommended to arm the vehicle with ignition power disconnected in order to test the throttle servo.
 
 After configuring the limits of your throttle servo, the following parameters must be set:
+
 - Set :ref:`THR_MIN <THR_MIN>` to the desired setting at idle. This will be found empirically during engine testing.
 - Set :ref:`THR_SLEWRATE <THR_SLEWRATE>` to a value appropriate for your engine. 20%/s is a good starting point.
 - Set :ref:`THR_MAX <THR_MAX>` if you would like to prevent your engine from reaching full throttle.
@@ -55,7 +56,7 @@ If you are using a quadplane and would like the ICE engine to be disabled during
 
 Advanced Starter Configuration
 ------------------------------
-A variety of parameters are available for configuring the engine start routine. The auto-start functionality will attempt to start the engine any time the vehicle is armed, the engine is enabled, and the measured RPM is below the ICE_RPM_THRESH. If the engine is not successfully started within a configurable amount of time, the program will wait for a configurable dealy before attempting to start again. It is important to remember that the starter will run in pulses. DO NOT approach the engine between failed start attempts as the starter will attempt to start again if the engine is still enabled.
+A variety of parameters are available for configuring the engine start routine. The auto-start functionality will attempt to start the engine any time the vehicle is armed, the engine is enabled, and the measured RPM is below the :ref:`ICE_RPM_THRESH <ICE_RPM_THRESH>`. If the engine is not successfully started within a configurable amount of time, the program will wait for a configurable dealy before attempting to start again. It is important to remember that the starter will run in pulses. DO NOT approach the engine between failed start attempts as the starter will attempt to start again if the engine is still enabled.
 
 - :ref:`ICE_START_PCT <ICE_START_PCT>` overrides the throttle setting during start. 
 - :ref:`ICE_START_TIME <ICE_STARTER_TIME>` controls the maximum amount of time the starter will run in each start attempt.
@@ -82,7 +83,7 @@ When using the ArduPilot ICE library to control an engine, the engine can be ena
 - Mid: Keep the current state of the engine, but allow MAVLink commands and mission items to change the state of the engine.
 - High: Force the engine to be enabled. This ignores MAVLink commands and mission items that attempt to control the engine's state.
 
-If an ICE_START_CHAN is not configured, the behavior will be the same as when the switch is in the middle position.
+If an :ref:`ICE_START_CHAN <ICE_START_CHAN>` is not configured, the behavior will be the same as when the switch is in the middle position.
 
 To start the motor with RC control:
 
