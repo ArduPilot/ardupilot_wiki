@@ -22,6 +22,7 @@ gimbals in which ArduPilot controls the stabilisation.
 -  :ref:`SimpleBGC (aka AlexMos) Gimbal <common-simplebgc-gimbal>` - a popular 2-axis or 3-axis brushess gimbal controller which uses a custom serial interface.
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface.
 -  :ref:`Servo Gimbals <common-camera-gimbal>` — older-style servo-driven gimbal where ArduPilot provides stabilisation.
+-  :ref:`Tarot 2D Gimbal <common-tarot-gimbal>` — low cost 2-axis brushless gimbal
 
 .. _common-cameras-and-gimbals_camera_shutter_triggering:
 
@@ -53,6 +54,7 @@ Detail topics
     SToRM32 Gimbal Controller <common-storm32-gimbal>
     SimpleBGC Gimbal <common-simplebgc-gimbal>
     Gimbal with Servos <common-camera-gimbal>
+    Tarot 2D Gimbal <common-tarot-gimbal>
     Camera Shutter Configuration <common-camera-shutter-with-servo>
     Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
     Camera Shutter Trigger Boards for Purchase <common-camera-shutter-triggering-cables-for-purchase>
