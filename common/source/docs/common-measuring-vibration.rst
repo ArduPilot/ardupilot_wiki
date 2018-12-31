@@ -18,6 +18,17 @@ find they are out-of-tolerance then follow the advice found on the :ref:`Vibrati
 
 For more detailed vibration analysis, see :ref:`Batch Sampling <common-imu-batchsampling>`.
 
+Real-Time view in Ground Station
+--------------------------------
+
+Ground Stations can display a real-time view of vibration and clipping.  If using the Mission Planner click on "Vibe" on the HUD to display the current vibration levels.
+
+   .. image:: ../../../images/vibration-realtime-mp.png
+       :target: ../_images/vibration-realtime-mp.png
+       :width: 450px
+
+Vibration levels below 30m/s/s are normally acceptable.  Levels above 30m/s/s *may* have problems and levels above 60m/s/s nearly always have problems with position or altitude hold.
+
 Vibe Dataflash Log message
 --------------------------
 
