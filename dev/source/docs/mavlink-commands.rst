@@ -23,7 +23,7 @@ External References
 Autonomous Mission Commands
 ---------------------------
 
-Mission commands are stored in eeprom and executed one-by-one when the vehicle is switched into Auto mode.  Although not directly related to the real-time MAVLink interface linked above, the available commands are a subset of the `MAVLink MAV_CMD list <https://mavlink.io/en/messages/common.html#mavlink-commands-mavcmd>`__
+Mission commands are stored on the flight controller in eeprom and executed one-by-one when the vehicle is switched into Auto mode.  Although not directly related to the real-time MAVLink interface linked above, the available commands are a subset of the `MAVLink MAV_CMD list <https://mavlink.io/en/messages/common.html#mavlink-commands-mavcmd>`__
 
 -  :ref:`Mission Command List <planner:common-mavlink-mission-command-messages-mav_cmd>`
 -  :ref:`Copter Mission Command List <copter:mission-command-list>`
