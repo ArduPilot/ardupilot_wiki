@@ -43,26 +43,6 @@ The EPM is connected to the Pixhawk in the same way as a
    at 5V for the short period that the gripper is first activated to
    latch onto the cargo.
 
-Connecting to an APM2
-=====================
-
-.. image:: ../../../images/EPM_APM2.jpg
-    :target: ../_images/EPM_APM2.jpg
-
-The EPM is connected to the APM2 in the same way as a
-:ref:`servo <common-servo>`.
-
--  If using Copter, connect the EPM's signal wire to either A10 or A11
-   on the left side of the APM.
--  If using Plane or Rover A10, A11 or any available RC1 ~ RC8
-   connectors on the back of the APM may be used.
--  The EPM should be powered using the rear power rail (ensure JP1
-   jumper is removed) or to an external BEC (not shown).  It is
-   absolutely critical that the power and ground wires not be connected
-   to the + and - pins of A10 or A11 because the EPM will be sharing
-   power with the APM2's CPU and will likely cause a brownout when it is
-   activated.
-
 Controlling from a transmitter using servo pass-through
 =======================================================
 
@@ -116,8 +96,9 @@ pass through the receiver to the Pixhawk/APM2.  Only PWM and Ground
 should be connected.  The EPM should be powered from a BEC (not shown
 below).
 
-.. image:: ../../../images/DSC00803.jpg
-    :target: ../_images/DSC00803.jpg
+.. image:: ../../../images/EPM-with-receiver.jpg
+    :target: ../_images/EPM-with-receiver.jpg
+    :width: 450px
 
 Controlling during missions and from GCS
 ========================================
@@ -167,6 +148,7 @@ Specifications and more info
 
 .. image:: ../../../images/EPMV2_1.jpg
     :target: ../_images/EPMV2_1.jpg
+    :width: 450px
 
 The EPM has an onboard PIC12F MCU with an in circuit programming header
 to allow easy reflashing.
@@ -185,15 +167,11 @@ capacitor size .
 Reduced magnetic interference allows mounting within 5cm of a compass
 (please test it with your application)
 
-`Paper by Ara Nerses Knaian <http://www.hizook.com/files/users/3/Electropermanent_Magnets_Knaian.pdf>`__
-
-`Datasheet <http://nicadrone.com/img/Datasheet%20EPM688-V2.0.pdf>`__
-
-`Schematics and PCB files <https://upverter.com/eda/#tool=schematic,designId=5466622af0d942e4>`__
-
-`Git repository for Parts Drawing PCB Masks Pic12F source code <https://github.com/ctech4285/EPM_688_V2>`__
-
-`User Group (Help) <https://groups.google.com/forum/#%21forum/opengrab>`__
+- `Paper by Ara Nerses Knaian <http://www.hizook.com/files/users/3/Electropermanent_Magnets_Knaian.pdf>`__
+- `Datasheet <http://nicadrone.com/img/Datasheet%20EPM688-V2.0.pdf>`__
+- `Schematics and PCB files <https://upverter.com/eda/#tool=schematic,designId=5466622af0d942e4>`__
+- `Git repository for Parts Drawing PCB Masks Pic12F source code <https://github.com/ctech4285/EPM_688_V2>`__
+- `User Group (Help) <https://groups.google.com/forum/#%21forum/opengrab>`__
 
 Magnetic interference and Board Voltage check
 =============================================
