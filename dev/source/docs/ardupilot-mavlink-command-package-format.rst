@@ -1,11 +1,10 @@
 .. _ardupilot-mavlink-command-package-format:
 
 ========================================
-ArduPilot MAVLink Command Package Format
+ArduPilot Mission Command Package Format
 ========================================
 
-ArduPilot's MAVLink commands are stored in 14 bytes, arranged as
-follows:
+ArduPilot's Mission command list is stored in eeprom with each command requiring 14 bytes arranged as follows:
 
 .. raw:: html
 
