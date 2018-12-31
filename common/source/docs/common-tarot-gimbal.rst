@@ -1,50 +1,34 @@
 .. _common-tarot-gimbal:
 
-==========================
-Archived: 3DR Tarot Gimbal
-==========================
+============
+Tarot Gimbal
+============
 
-.. warning::
-
-   **ARCHIVED ARTICLE**: The Tarot Gimbal is no longer being manufactured by 3DR.
-
-The `Tarot 2-Axis Gimbal <https://www.amazon.com/Tarot-T-2D-Brushless-Gimbal-Robotics/dp/B00OJFWAWS/ref=pd_lpo_sbs_21_t_0?_encoding=UTF8&psc=1&refRID=307GA49DPT5W5VJB7H32>`__
-is the recommended gimbal for the :ref:`Pixhawk <common-pixhawk-overview>` due to its low cost and good performance.
-
-Copter, Plane, Rover support passing through a pilot desired roll or
-pitch angle and also more advanced automated aiming of the camera (i.e.
-ROI - region-of-interest).
+The Tarot T-2D is a popular low cost 2-axis brushless gimbal
 
 .. image:: ../../../images/Tarot_OnX8.jpg
     :target: ../_images/Tarot_OnX8.jpg
+    :width: 450px
 
-Gimbal Assembly instructions
-============================
+.. note::
 
-Paper instructions are normally provided with the gimbal and a short
-user manual can also be found in the "User Manual" directory of the
-`Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
-file.
+    The instructions below recommend using Tarot Gimbal Firmware v1.5 but `more recent versions are available from tarot <http://www.tarotrc.com/Download/Detail.aspx?Lang=en&Id=f742d38f-ee46-4321-b1b3-145c0d0a92d1>`__ but have not been tested.
 
-Connecting the Gimbal to the Pixhawk
-====================================
+Connecting to the Flight Controller
+-----------------------------------
 
 .. image:: ../../../images/Gimbal_Pixhawk_Tarot.jpg
     :target: ../_images/Gimbal_Pixhawk_Tarot.jpg
 
-The Tarot gimbal's red and black power wires should be connected
-directly to a 2S or 3S battery. If you plan to use 4S, please use a
-voltage regulator to ensure the voltage stays within safe operating
-limits: DC 7.4 V - 14.8 V (recommended 12 V). 3DR RTF Quad, Y6, and X8
-include a voltage regular to allow use of 4S batteries with the Tarot
-gimbal.
-
-The "T" pin should be connected to the Pixhawk's AUX1 signal pin.
-
-One of the two "-" pins should be connected to the Pixhawk's AUX1 ground pin.
+- The Tarot gimbal's red and black power wires should be connected directly to a 2S or 3S battery. If you plan to use 4S (or higher), please use a voltage regulator to ensure the voltage stays within safe operating limits: DC 7.4 V - 14.8 V (recommended 12 V). 3DR RTF Quad, Y6, and X8 include a voltage regular to allow use of 4S batteries with the Tarot gimbal
+- The "T" pin should be connected to the Pixhawk's AUX1 signal pin
+- One of the two "-" pins should be connected to the Pixhawk's AUX1 ground pin
 
 Operation
-=========
+---------
+
+Paper instructions are normally provided with the gimbal but a slightly out of date user manual can be found in the "User Manual" directory of the
+`Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__ file.
 
 Upon powering your vehicle, the gimbal will display a solid yellow light
 while it is starting and calibrating. Do not touch the gimbal while it
@@ -55,18 +39,15 @@ a solid blue light.
 
 **LED meanings**
 
-Solid yellow      = calibrating
+- Solid yellow      = calibrating
+- Blinking blue      = ready, connected to autopilot
+- Solid blue     = ready, not connected to autopilot
 
-Blinking blue      = ready, connected to autopilot
+Configuring the Gimbal
+----------------------
 
-Solid blue     = ready, not connected to autopilot
-
-Configuring the gimbal
-======================
-
-Tarot gimbals purchased from 3DR should come pre-configured to work with
-Copter but if you have purchased from another source or just wish to
-change the configuration you should:
+Tarot gimbals normally work out of the box but if you wish to
+change the gimbal's internal configuration:
 
 #. Use the provided USB dongle to connect the Gimbal board to your
    computer (Windows only).  If this is the first time you have plugged
@@ -76,60 +57,49 @@ change the configuration you should:
    Manager as shown below.  If drivers cannot be found you may be able
    to install Windows 7 or Windows XP drivers using one of the .exe
    files found in the "driver" directory of the `Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
-   file. 
+   file
 
    .. image:: ../../../images/Gimbal_Tarot_DeviceManager2.png
        :target: ../_images/Gimbal_Tarot_DeviceManager2.png
-   
+       :width: 300px
+
    .. note::
-   
+
        Windows 8 and 10 users may find issues with the Prolific USB-to-Serial driver not starting.  This issue can apparently be resolved according by `following instructions on this web page: <http://leftbraintinkering.blogspot.com/2013/05/usb-to-serial-prolific-2303-device.html>`__
-   
-#. Download and unzip the `Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
-   file to a convenient place on your computer.
-#. Double click on the **ZYX-BMGC-EN_V1.5.exe** file (found in the
-   above zip) and the configuration UI shown below should appear
+
+#. Download and unzip the `Tarot Gimbal Firmware v1.5 zip <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__ file to a convenient place on your computer
+#. Double click on the **ZYX-BMGC-EN_V1.5.exe** file (found in the above zip) and the configuration UI shown below should appear
 
    .. image:: ../../../images/Tarot_Gimbal_Config.png
        :target: ../_images/Tarot_Gimbal_Config.png
-    
-#. Power the Gimbal by plugging in the battery.
-#. In the configuration UI, select the COM port and press the **Open COM Port** button.  After a few seconds the image of the camera should begin moving as the gimbal is moved.
-#. The most important setting is to set the **Default Mode** (just above COM port drop-down) to **Default Mode: stick position mode**.  Select this and press **Write Settings To Flash**.  Alternatively to load all the 3DR recommended configuration:
 
-   #. Download the **3DR_Tarot.bgsc** file to your computer (this was previously at `Tools/Frame_params <https://github.com/ArduPilot/ardupilot/tree/master/Tools/Frame_params>`__; you may need to get an old commit to find).
-   #. Press the **Load Config** button on the configuration UI and select the *3DR_Tarot.bgsc file* downloaded above.
-   #. Press Write **Settings To Flash** button
+#. Power the Gimbal by plugging in the battery
+#. In the configuration UI, select the COM port and press the **Open COM Port** button.  After a few seconds the image of the camera should begin moving as the gimbal is moved
+#. The most important setting is to set the **Default Mode** (just above COM port drop-down) to **Default Mode: stick position mode**.  Select this and press **Write Settings To Flash**
 
-Set-up through the mission planner
-==================================
+Set-up through the Ground Station
+---------------------------------
 
 .. image:: ../../../images/Tarot_MP_CameraGimbal_setup.png
     :target: ../_images/Tarot_MP_CameraGimbal_setup.png
 
-The channel 6 tuning knob's output can be used to control the pitch angle of the gimbal by:
+If using the Mission Planner a Camera Gimbal setup screen is available as shown above:
 
--  Connect the Pixhawk to the mission planner
--  Open the **Initial Setup \| Optional Hardware \| Camera Gimbal**
-   screen set:
+- "Type" should be set to "Servo"
+- "Tilt" should be set to "SERVO9" to specify AUX OUT 1 is connected to the gimbal's tilt input
+- "Stabilize Tilt" should be unchecked
+- "Servo Limits" holds the minimum and maximum PWM values that will be sent to the gimbal
+- "Angle Limits" are the earth-frame angles (in degrees) that the gimbal can achieve. "0" degrees is straight ahead, "-90" is straight down
 
-   -  Tilt drop-down to RC9 (equivalent to the Pixhawk's AUX OUT1)
-   -  Input Ch drop-down to RC6
-   -  The "Stabilize Tilt" checkbox should not be checked
+If manually setting parameters:
 
-:ref:`Do-Set-ROI <copter:mission-command-list_do-set-roi>`
-mission commands and the MP's "Point Camera Here" feature should work if
-the Tilt Servo Limits and Angle Limits Min and Max values as set as
-shown above.
-
-The "Servo Limits" holds the minimum and maximum PWM values that will be
-sent from the APM/Pixhawk to the gimbal (i.e. on RC9 if set-up like
-above).
-
-The "Angle Limits" are the earth-frame angles (in degrees) that the
-gimbal can achieve. "0" degrees is straight ahead, "90" degrees is
-straight up, "-90" degrees is straight down. The Tarot gimbal is capable
-of pointing straight down (i.e. "-90") to straight ahead (i.e. "0").
+- :ref:`MNT_TYPE <MNT_TYPE>` = 1 (for "Servo" gimbal)
+- :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` = 6 to specify that RC input channel 6 (normally the tuning knob) will be used to control the pitch/tilt of the gimbal
+- :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` = 0 to specify the gimbal's highest angle is zero degrees (i.e. forward)
+- :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>` = -9000 to specify the gimbal's lowest angle is 90 degrees (i.e. down)
+- :ref:`MNT_STAB_TILT <MNT_STAB_TILT>` = 0 to specify ArduPilot should not send tilt compensation to the gimbal (the gimbal does this by itself)
+- :ref:`SERVO9_MIN <SERVO9_MIN>` = 1000 to specify the minimum PWM value to send to the gimbal
+- :ref:`SERVO9_MAX <SERVO9_MAX>` = 1520 to specify the maximum PWM value to send to the gimbal
 
 .. _common-tarot-gimbal_testing_the_gimbal_moves_correctly:
 
@@ -147,7 +117,7 @@ calibration page can be used to check the Ch6's current input pwm value.
 
 **Testing ROI**
 
-**You must have GPS lock to test ROI.** The ROI feature points the vehicle and/or camera to point at a target. The instructions above describe setting up the APM/Pixhawk so that it only controls the Tilt (i.e. pitch) of the Tarot gimbal so when a :ref:`Do-Set-ROI <copter:mission-command-list_do-set-roi>` command is received Copter will attempt to turn the vehicle's nose to point in the direction of the target and tilt camera depending upon the vehicle's distance and altitude. You can test the gimbal tilt moves correctly by connecting with the mission planner, then on the Flight Data screen's map, right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select "Point Camera Here" and input an altitude of -50 (meters). This should cause the gimbal to point down at about 45 degrees.
+**You must have GPS lock to test ROI.** The ROI feature points the vehicle and/or camera to point at a target. The instructions above describe a setup so that only controls the Tilt (i.e. pitch) of the Tarot gimbal so when a :ref:`Do-Set-ROI <copter:mission-command-list_do-set-roi>` command is received Copter will attempt to turn the vehicle's nose to point in the direction of the target and tilt camera depending upon the vehicle's distance and altitude. You can test the gimbal tilt moves correctly by connecting with the mission planner, then on the Flight Data screen's map, right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select "Point Camera Here" and input an altitude of -50 (meters). This should cause the gimbal to point down at about 45 degrees.
 
 .. image:: ../../../images/Tarot_BenchTestROI.jpg
     :target: ../_images/Tarot_BenchTestROI.jpg
