@@ -140,7 +140,7 @@ Full Table of Contents
     Simulation & Testing <docs/simulation-2>
     Debugging <docs/debugging>
     Contributing Code <docs/contributing>
-    MAVLink Commands <docs/mavlink-commands>
+    MAVLink Interface <docs/mavlink-commands>
     CAN and UAVCAN <docs/can-bus>
     Companion Computers <docs/companion-computers>
     ROS <docs/ros>

@@ -4,13 +4,7 @@
 MAVLink Routing in ArduPilot
 ============================
 
-This topic explains how MAVLink routing is handled in ArduPilot (AC3.3
-and later).
-
-Overview
-========
-
-A MAVLINK network is made up of *systems* (vehicles, GCS, antenna
+A MAVLink network is made up of *systems* (vehicles, GCS, antenna
 trackers etc.) which are themselves made up of components (Autopilot,
 camera system, etc.). The protocol defines two ids that can be specified
 in messages to control routing of the command to a required system and
@@ -29,17 +23,10 @@ network/components on the target system.
 
 The routing on ArduPilot systems works in the following way:
 
--  All received MAVLINK messages are checked by the ``MAVLink_routing``
-   class.
--  The class extracts the source system id (aka *sysid*) and component
-   id (aka *compid*) and builds up a routing array which maps the
-   channel (i.e. USB port, Telem1, Telem2) to the *<sysid,compid>* pair.
--  The class also extracts the target system id (``target_system``) and
-   component id (``target_component``) and if these don’t match the
-   vehicle’s *<sysid,compid>* the messages are forwarded to the
-   appropriate channel using the array above.
--  Messages that don’t have a target *<sysid,compid>* are processed by
-   the vehicle and then forwarded to each known system/component.
+-  All received MAVLink messages are checked by the ``MAVLink_routing`` class.
+-  The class extracts the source system id (aka *sysid*) and component id (aka *compid*) and builds up a routing array which maps the channel (i.e. USB port, Telem1, Telem2) to the *<sysid,compid>* pair.
+-  The class also extracts the target system id (``target_system``) and component id (``target_component``) and if these don’t match the vehicle’s *<sysid,compid>* the messages are forwarded to the appropriate channel using the array above.
+-  Messages that don’t have a target *<sysid,compid>* are processed by the vehicle and then forwarded to each known system/component.
 
 Detailed theory of MAVLink routing
 ==================================
