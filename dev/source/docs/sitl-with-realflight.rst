@@ -19,19 +19,21 @@ experiemental autopilot flights.
 Enabling RealFlight Link Feature
 ================================
 
-  - Create an account on the KnifeEdge forums <http://www.knifeedge.com/forums/index.php>. You will need this account in the following steps, and it is easier if you create it first
-  - `Buy <http://www.realflight.com/where-to-buy.php>`__ and Install the regular version of RealFlight8. Note that you can now get RealFlight8 on steam, which is a very easy way to get it quickly.
-  - update it to the latest version using the Technical Support button in the launcher (you need at least version 8.00.019)
-  - Connect the RealFlight transmitter to your PC's USB port
-  - Start RealFlight8 and in the launcher choose "Technical Support"
-  - Click "Enter Tech Support Code"
-  - Enter the code: LINK
-  - A message box will appear with a new code in the form of "LINK-1234567"
-  - enter that code on the `knifeedge signup page <https://www.knifeedge.com/cart/index.php?main_page=product_info&products_id=181>`__
-  - Enter your response code in the same location
-  - After reading and accepting the legal stuff, purchase the "FlightAxis Link" feature for $0 (Free)
-  - RealFlight/KnifeEdge will contact you via email with an unlock code in the form of "LINKUNLOCK12345678"
-  - Enter the unlock code into ReafFlight 8 at Launcher -> "Technical Support" -> "Enter Tech Support Code"
+DVD and Tower Hobbies Digital versions:
+------------------------------------
+  - Start the RealFlight 8 Launcher
+  - Click Technical Support
+  - Click Enter Tech Support Code
+  - Enter the following code: PBEC#92jq3hhhyfhf (If successful, you will see a message saying "You are now registered to use the Public Beta site until the new version is posted to official download site.")
+  - Click Update to Specific Version, choose 8.00.055 from the list, and click OK
+
+Steam version:
+------------------------------------
+  - Right-click on RealFlight 8 in your Steam Library, then select Properties
+  - In the Properties window, select the Betas tab, and click the dropdown list
+  - Select "flightaxislinkbeta"
+  - Close the Properties dialog
+  - Wait for RealFlight 8 to update. If it doesn't do so immediately, you can force an update by completely restarting Steam. To do so, right click the Steam icon in your system tray and select Exit. Once everything closes, run Steam again, and the update should complete.
 
 Configure RealFlight
 ====================
