@@ -33,9 +33,6 @@ the wiki.
 
 [site wiki="plane"]
     Common Airframe Builds <common-common-airframe-builds>
-[/site]
-
-[site wiki="plane"]
     Plane News <project-news>
 [/site]
 
