@@ -5,7 +5,7 @@ Barometer (external)
 
 .. warning::
 
-   Support for external barometers will be released with Copter-3.6.1.  The instructions below have only been verified for the Drotek MS5611 barometer. The Adafruit BMP280 has not been verified to work yet.
+   Support for external barometers was released with Copter-3.6.  The instructions below have been verified for the Drotek MS5611 barometer but the Adafruit BMP280 has not been verified to work.
 
 .. image:: ../../../images/baro-top-image.png
     :width: 450px
