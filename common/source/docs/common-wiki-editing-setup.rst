@@ -72,10 +72,10 @@ Check the Results
 
 With your favourite web browser, open the locally built wiki which should be near where the ardupilot_wiki repo was cloned to
 
-- For Copter look for ``build_wiki/ardupilot_wiki/copter/build/html/index.html``
-- For Plane look for ``build_wiki/ardupilot_wiki/plane/build/html/index.html``
-- For Rover look for ``build_wiki/ardupilot_wiki/rover/build/html/index.html``
-- For Developer look for ``build_wiki/ardupilot_wiki/dev/build/html/index.html``
+- For Copter look for ``ardupilot_wiki/copter/build/html/index.html``
+- For Plane look for ``ardupilot_wiki/plane/build/html/index.html``
+- For Rover look for ``ardupilot_wiki/rover/build/html/index.html``
+- For Developer look for ``ardupilot_wiki/dev/build/html/index.html``
 
 RST editing/previewing
 ======================
