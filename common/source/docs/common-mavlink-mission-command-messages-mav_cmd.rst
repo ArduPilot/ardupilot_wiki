@@ -1,20 +1,14 @@
 .. _common-mavlink-mission-command-messages-mav_cmd:
 
-==========================================
-MAVLink Mission Command Messages (MAV_CMD)
-==========================================
+================
+Mission Commands
+================
 
-This article describes the specific set of mission commands and
-parameters that are supported by Copter, Plane and Rover.
+This article describes the mission commands that are supported by Copter, Plane and Rover when switched into Auto mode.
 
 .. warning::
 
-   This is a WORK IN PROGRESS. It has not been reviewed, and is
-   full of questions/actions (usually preceded by "#HW" or "TODO". The list
-   of what commands are supported in each platform are likely to be
-   correct. The copter-specific documentation is more likely to be correct
-   as it is based on existing copter mission docs. 
-
+   This is a work-in-progress and has not been full reviewed.  A better list for :ref:`Copter can be found here <copter:mission-command-list>`
 
 Overview
 ========
