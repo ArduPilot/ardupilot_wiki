@@ -4,26 +4,23 @@
 MAVLink Routing in ArduPilot
 ============================
 
-A MAVLink network is made up of *systems* (vehicles, GCS, antenna
-trackers etc.) which are themselves made up of components (Autopilot,
-camera system, etc.). The protocol defines two ids that can be specified
-in messages to control routing of the command to a required system and
-component:
+ArduPilot (which runs on the flight controller) can route MAVLink messages received on one telemetry port to all other telemetry ports.  This is important in cases where there are multiple MAVLink enabled components on the vehicle (i.e. a flight controller and a companion computer) but only a single telemetry connection between the vehicle and the ground station.  This page describes how ArduPilot decides which messages should be routed and to which telemetry ports.
 
--  ``target_system``: System which should execute the command
--  ``target_component``: Component which should execute the command
+.. image:: ../images/mavlink-routing.png
+    :target: ../_images/mavlink-routing.png
+    :width: 450px
 
-By default a GCS will typically have a system id of 255, and vehicles
-have an ID of 1. In a system with multiple vehicles (or including an
-AntennaTracker), each system should be given a unique ID
-(:ref:`SYSID_THISMAV <copter:SYSID_THISMAV>`).
+As described on the :ref:`MAVLink Basics <mavlink-basics>` page a MAVLink network is made up of *systems* (vehicles, GCS, antenna trackers, etc) which are themselves made up of *components* (flight controller, camera system, etc).
+
+Each message contains a ``System ID`` and ``Component ID`` field to specify where the message came from.  In addition *some messages* (including `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__) include ``target_system`` and ``target_component`` fields to allow specifying which system/component should execute the command.
+
 A value of 0 for the ``target_system`` or ``target_component`` is
 considered a broadcast ID, and will be sent to all systems in the
 network/components on the target system.
 
 The routing on ArduPilot systems works in the following way:
 
--  All received MAVLink messages are checked by the ``MAVLink_routing`` class.
+-  All received MAVLink messages are checked by the `MAVLink_routing <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/MAVLink_routing.h>`__ class.
 -  The class extracts the source system id (aka *sysid*) and component id (aka *compid*) and builds up a routing array which maps the channel (i.e. USB port, Telem1, Telem2) to the *<sysid,compid>* pair.
 -  The class also extracts the target system id (``target_system``) and component id (``target_component``) and if these don’t match the vehicle’s *<sysid,compid>* the messages are forwarded to the appropriate channel using the array above.
 -  Messages that don’t have a target *<sysid,compid>* are processed by the vehicle and then forwarded to each known system/component.
