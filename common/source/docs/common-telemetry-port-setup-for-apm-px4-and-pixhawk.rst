@@ -20,6 +20,7 @@ On a Pixhawk there are a total of 5 serial ports.  The default use of each port 
 
 .. image:: ../../../images/PixhawkTelem.jpg
     :target: ../_images/PixhawkTelem.jpg
+    :width: 450px
 
 More details of the exact pins on each port can be found :ref:`here <common-pixhawk-overview>`.
 
