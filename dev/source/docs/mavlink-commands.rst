@@ -9,6 +9,7 @@ ArduPilot supports the MAVLink protocol for communication with Ground Stations a
 .. toctree::
     :maxdepth: 1
 
+    MAVLink Basics <mavlink-basics>
     Copter Commands (Guided Mode) <copter-commands-in-guided-mode>
     Plane Commands (Guided Mode) <plane-commands-in-guided-mode>
     MAVLink Routing <mavlink-routing-in-ardupilot>
@@ -32,6 +33,6 @@ Mission commands are stored on the flight controller in eeprom and executed one-
 Vehicle Parameter References
 ----------------------------
 
-  - :ref:`Copter Parameters <copter:parameters>`
-  - :ref:`Plane Parameters <plane:parameters>`
-  - :ref:`Rover Parameters <rover:parameters>`
+- :ref:`Copter Parameters <copter:parameters>`
+- :ref:`Plane Parameters <plane:parameters>`
+- :ref:`Rover Parameters <rover:parameters>`
