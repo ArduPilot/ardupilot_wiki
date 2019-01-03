@@ -497,17 +497,17 @@ The message definition can be found `here <https://mavlink.io/en/messages/common
    <tr>
    <td><strong>latitude</strong></td>
    <td>int32_t</td>
-   <td>Latitude (WGS84), in degrees \* 1E7</td>
+   <td>Latitude * 1e7</td>
    </tr>
    <tr>
    <td><strong>longitude</strong></td>
    <td>int32_t</td>
-   <td>Longitude (WGS84), in degrees \* 1E7</td>
+   <td>Longitude * 1e7</td>
    </tr>
    <tr>
    <td><strong>altitude</strong></td>
    <td>int32_t</td>
-   <td>Altitude (AMSL), in meters \* 1000 (positive for up)</td>
+   <td>Altitude above sea level in millimeters (i.e. meters * 1000)</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>x</strong></td>
