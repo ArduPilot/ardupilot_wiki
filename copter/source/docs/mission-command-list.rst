@@ -71,7 +71,7 @@ Spline Waypoint
 .. image:: ../../../images/MissionList_SplineWaypoint.jpg
     :target: ../_images/MissionList_SplineWaypoint.jpg
 
-`Spline <https://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__ waypoints take all the same arguments are regular waypoints (lat, lon, alt, delay) but when executed the vehicle will fly smooth paths (both vertically and horizontally) instead of straight lines.  Spline waypoints can be mixed with regular straight line waypoints as shown in the image above.
+`Spline <https://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__ waypoints take all the same arguments as regular waypoints (lat, lon, alt, delay) but when executed the vehicle will fly smooth paths (both vertically and horizontally) instead of straight lines.  Spline waypoints can be mixed with regular straight line waypoints as shown in the image above.
 
 The Mission Planner shows the path the vehicle will take.  The image
 above shows some characteristics of the spline
@@ -90,8 +90,7 @@ Loiter_Time
     :target: ../_images/MissionList_LoiterTime.png
 
 The vehicle will fly to and then wait at the specified location for the
-specified number of seconds.  This is the mission equivalent of the
-:ref:`Loiter flight mode <loiter-mode>`.
+specified number of seconds.  This is the same as a Waypoint command.
 
 **Times** - the number of seconds to remain at the location.
 
@@ -203,7 +202,7 @@ Do-Set-ROI
 .. image:: ../../../images/MissionList_DoSetRoi.jpg
     :target: ../_images/MissionList_DoSetRoi.jpg
 
-Points the nose of the vehicle or :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region of interest".  In the example above the nose and camera would be pointed at the red marker.
+Points the nose of the vehicle or :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region of interest".  In the example above the nose or camera would be pointed at the red marker.
 
 The nose will continue to point at the red marker until the end of the mission OR "clear" the do-set-roi and cause the vehicle to return to its default behaviour (i.e. pointing at the next waypoint) by adding a second DO_SET_ROI command later in the mission with all zero for Lat, Lon and Alt.
 
@@ -299,8 +298,7 @@ command.
 
 .. warning::
 
-   No more that three (3) Do-Jump commands can be used in a
-   mission, the fourth and subsequent Do-Jumps will be ignored.
+   No more that fifteen (15) Do-Jump commands can be used in a mission.  Subsequent Do-Jumps will be ignored.
 
 Do-Change-Speed
 ~~~~~~~~~~~~~~~
@@ -312,9 +310,9 @@ Change the target horizontal speed (in meters/sec) of the vehicle.
 
 **speed m/s** - the desired maximum speed in meters/second.
 
-.. note::
+.. warning::
 
-   The speed parameter will be in the SECOND COLUMN, not the first column as shown in the screenshot above
+   The speed parameter should be in the SECOND COLUMN, not the first column as shown in the screenshot above
 
 Do-Set-Home
 ~~~~~~~~~~~
@@ -426,9 +424,7 @@ Do-Mount-Control
 .. image:: ../../../images/MissionList_DoMountControl.png
     :target: ../_images/MissionList_DoMountControl.png
 
-From AC3.3 This command allows you to specify a roll, pitch and yaw
-angle which will be sent to the :ref:`camera gimbal <common-cameras-and-gimbals>`. This can be used to point the
-camera in specific directions at various times in the mission.
+Controls the roll, pitch and yaw angle of the :ref:`camera gimbal <common-cameras-and-gimbals>`. This can be used to point the camera in specific directions at various times in the mission.
 
 Do-Gripper
 ~~~~~~~~~~
