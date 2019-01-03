@@ -9,6 +9,78 @@ This page explains some specific parts of syntax used by the wiki along with gen
 For more information check out the 
 `Sphinx reStructured Text Primer <http://www.sphinx-doc.org/en/stable/rest.html>`__.
 
+Creating a new page
+===================
+
+.. tip::
+
+   First search the wiki to determine if there is already a wiki page
+   about your topic — it is better to improve an existing topic than create
+   a near-duplicate! 
+   Also discuss it with the 
+   Wiki Editors Discussion Group (``https://groups.google.com/forum/#!forum/ardu-wiki-editors``).
+
+To create a new wiki page you will need to follow the same process as any other 
+:ref:`big edit <common_wiki_editing_guide_big_edit>`.
+
+Pages should be created in the **/source/docs/** folder for your target wiki, given a "descriptive" name,
+and the file suffix ".rst". Typically we use all lower case for filename, and separate words using "-" or "_". 
+For example: **advanced-multicopter-design.rst**.
+
+Pages that are common to all wikis must be named with the prefix **common-** and must be created 
+in **/common/source/docs/**. See :ref:`common_wiki_editing_guide_common_pages` for more information.
+
+The title of the new page should be concise — informative enough that
+the reader can determine whether the topic is relevant and to differentiate it from other similar topics. 
+The first letter of every word in the heading should be capitalized, with the exception of short
+connecting words like "a", "with", "and", "the".
+
+The title should also be preceded by an anchor link named for the page. So the first information on the page would be:
+
+.. code-block:: rst
+
+    .. _your_file_name:
+
+    ===============
+    Your Page Title
+    ===============
+
+.. _common_wiki_editing_guide_common_pages:
+
+Working with common pages
+=========================
+
+The wiki has a lot of information that is applicable to users of all the
+different vehicle types. In order to reduce (manual) duplication we
+define these topics in one place (**/common/source/docs**) and automatically copy them 
+to other wikis where they are needed.
+
+Creating and editing common pages is similar to editing other pages except:
+
+- The filename of common pages must start with the text *common-*. For
+  example, this page is **common-wiki_editing_guide.rst**.
+- All common pages must be stored in **/common/source/docs**
+- The copywiki shortcode can be put at the end of the source to specify the set 
+  of destination wikis (use "copywiki" rather than "xcopywiki" below):
+
+  .. code-block:: bash
+
+      [xcopywiki destination="copter,plane"]
+
+- If no copywiki shortcode is specified, common pages are automatically copied to the copter, 
+  plane and rover wikis
+
+- Vehicle-specific content can be added to the common topic using the
+  ``site`` shortcode. Text that is not applicable to a target wiki is stripped out 
+  before the common page is copied to each wiki. The example below shows text that 
+  will only appear on rover and plane wikis (use site rather than xsite shown below!)
+
+  .. code-block:: bash
+
+      [xsite wiki="rover, plane"]Rover and plane specific text[/xsite]
+
+-  Always :ref:`link to other common topics <common-editor-information-resource_how_to_link_to_other_topics>` using relative linking. This ensures that you will link to the correct common topic when the wiki article is copied.
+
 Titles
 ------
 
@@ -28,7 +100,7 @@ they move within the file structure.
     ==========
     Page Title
     ==========
-    
+
 
 Abstract
 --------

@@ -13,7 +13,7 @@ All members of the ArduPilot community are welcome to contribute to the wiki inc
     Making a Quick Edit <common-wiki-editing-quick-edit>
     Infrastructure Overview <common-wiki-editing-infra-overview>
     Setting Up the Editing Environment <common-wiki-editing-setup>
-    Making a Big Edit <common-wiki-editing-big-edit>
+    Submitting Changes <common-wiki-editing-submitting-changes>
     Style Guide <common-wiki-editing-style-guide>
     Archiving and Deleting pages <common-wiki-editing-archiving>
 
@@ -38,6 +38,6 @@ Translation is currently not supported.
 FAQ - Why are my changes not published?
 =======================================
 
-All changes to the wiki are `reviewed <https://github.com/ArduPilot/ardupilot_wiki/pulls>`__ by the wiki "maintainers" to help reduce the chance of misleading or incorrect information being posted
+All changes to the wiki are `reviewed <https://github.com/ArduPilot/ardupilot_wiki/pulls>`__ by the wiki "maintainers" to help reduce the chance of misleading or incorrect information being posted.  Feel free to post comments in the PullRequest and/or attend the :ref:`weekly dev meeting <dev:ardupilot-mumble-server>` to escalate getting your changes submitted.
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
