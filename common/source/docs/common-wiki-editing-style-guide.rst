@@ -18,10 +18,7 @@ Creating a new page
    about your topic — it is better to improve an existing topic than create
    a near-duplicate! 
    Also discuss it with the 
-   Wiki Editors Discussion Group (``https://groups.google.com/forum/#!forum/ardu-wiki-editors``).
-
-To create a new wiki page you will need to follow the same process as any other 
-:ref:`big edit <common_wiki_editing_guide_big_edit>`.
+   `Wiki Editors Gitter channel <https://gitter.im/ArduPilot/ardupilot_wiki>`__ or `Wiki issue list <https://github.com/ArduPilot/ardupilot_wiki/issues>`__.
 
 Pages should be created in the **/source/docs/** folder for your target wiki, given a "descriptive" name,
 and the file suffix ".rst". Typically we use all lower case for filename, and separate words using "-" or "_". 
