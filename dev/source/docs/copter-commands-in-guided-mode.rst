@@ -109,11 +109,7 @@ This section contains details of MAVLink commands to move the vehicle
 SET_POSITION_TARGET_LOCAL_NED
 -----------------------------
 
-Set vehicle position or velocity setpoint in local frame.
-
-.. note::
-
-   Velocity commands should be resent every second (the vehicle will stop after 3 seconds if no command is received)
+Set the vehicle's target position, velocity, heading or turn rate.  The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__
 
 .. raw:: html
 
@@ -126,19 +122,16 @@ Set vehicle position or velocity setpoint in local frame.
    <tr>
    <td><strong>time_boot_ms</strong></td>
    <td>
-   Timestamp in milliseconds since system boot. The rationale for the
-   timestamp in the setpoint is to allow the system to compensate for the
-   transport delay of the setpoint. This allows the system to compensate
-   processing latency.
+   Sender's system time in milliseconds since boot
    </td>
    </tr>
    <tr>
    <td><strong>target_system</strong></td>
-   <td>System ID</td>
+   <td>System ID of vehicle</td>
    </tr>
    <tr>
    <td><strong>target_component</strong></td>
-   <td>Component ID</td>
+   <td>Component ID of flight controller or just 0</td>
    </tr>
    <tr>
    <td><strong>coordinate_frame</strong></td>
@@ -148,21 +141,17 @@ Set vehicle position or velocity setpoint in local frame.
    <td><strong>type_mask</strong></td>
    <td>
 
-Bitmask to indicate which dimensions should be ignored by the vehicle (a
-value of 0b0000000000000000 or 0b0000001000000000 indicates that none of
-the setpoint dimensions should be ignored). Mapping: bit 1: x, bit 2: y,
-bit 3: z, bit 4: vx, bit 5: vy, bit 6: vz, bit 7: ax, bit 8: ay, bit 9:
+Bitmask to indicate which fields should be **ignored** by the vehicle (see POSITION_TARGET_TYPEMASK enum)
 
-.. note::
+bit1:PosX, bit2:PosY, bit3:PosZ, bit4:VelX, bit5:VelY, bit6:VelZ, bit7:AccX, bit8:AccY, bit9:AccZ, bit11:yaw, bit12:yaw rate
 
-   At
-   time of writing you **must** enable all three bits for the position
-   (0b0000111111111000) OR all three bits for the velocity
-   (0b0000111111000111). Setting just one bit of the position/velocity or
-   mixing the bits is not supported. The **acceleration**, **yaw**,
-   **yaw_rate** are present in the `protocol definition <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__
-   but are not supported by ArduPilot.
+When providing Pos or Vel all 3 axis must be provided
 
+- Use Position : 0b110111111000 / 0x0DF8 / 3576 (decimal)
+- Use Velocity : 0b110111000111 / 0x0DC7 / 3527 (decimal)
+- Use Pos+Vel : 0b110111000000 / 0x0DC0 / 3520 (decimal)
+
+Acceleration not supported
    
 .. raw:: html
    
@@ -170,47 +159,47 @@ bit 3: z, bit 4: vx, bit 5: vy, bit 6: vz, bit 7: ax, bit 8: ay, bit 9:
    </tr>
    <tr>
    <td><strong>x</strong></td>
-   <td>X Position in specified NED frame in meters</td>
+   <td>X Position in meters (positive is forward or North)</td>
    </tr>
    <tr>
    <td><strong>y</strong></td>
-   <td>y Position in specified NED frame in meters</td>
+   <td>Y Position in meters (positive is right or East)</td>
    </tr>
    <tr>
    <td><strong>z</strong></td>
-   <td>Z Position in specified NED frame in meters (note, altitude is negative in NED)</td>
+   <td>Z Position in meters (positive is down)</td>
    </tr>
    <tr>
    <td><strong>vx</strong></td>
-   <td>X velocity in specified NED frame in meter/s</td>
+   <td>X velocity in m/s (positive is forward or North)</td>
    </tr>
    <tr>
    <td><strong>vy</strong></td>
-   <td>Y velocity in NED frame in meter/s</td>
+   <td>Y velocity in m/s (positive is right or East)</td>
    </tr>
    <tr>
    <td><strong>vz</strong></td>
-   <td>Z velocity in NED frame in meter/s</td>
+   <td>Z velocity in m/s (positive is down)</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>afx</td>
-   <td>X acceleration or force (if bit 10 of type_mask is set) in specified NED frame in meter/s^2 or N</td>
+   <td>X acceleration not supported</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>afy</td>
-   <td>Y acceleration or force (if bit 10 of type_mask is set) in specified NED frame in meter/s^2 or N</td>
+   <td>Y acceleration not supported</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>afz</td>
-   <td>Z acceleration or force (if bit 10 of type_mask is set) in specified NED frame in meter/s^2 or N</td>
+   <td>Z acceleration not supported</td>
    </tr>
    <tr>
    <td><strong>yaw</strong></td>
-   <td>yaw setpoint in rad</td>
+   <td>yaw or heading in radians (0 is forward or North)</td>
    </tr>
-   <tr">
+   <tr>
    <td><strong>yaw_rate</strong></td>
-   <td>yaw rate setpoint in rad/s</td>
+   <td>yaw rate in rad/s</td>
    </tr>
    </tbody>
    </table>
@@ -221,52 +210,47 @@ The ``co-ordinate frame`` field takes the following values:
 | Frame                                | Description                          |
 +======================================+======================================+
 | ``MAV_FRAME_LOCAL_NED``              | Positions are relative to the        |
-|                                      | vehicle's *home position* in the     |
-|                                      | North, East, Down (NED) frame. Use   |
-|                                      | this to specify a position x metres  |
-|                                      | north, y metres east and (-) z       |
-|                                      | metres above the home position.      |
+|                                      | vehicle's EKF Origin in NED frame    |
 |                                      |                                      |
-|                                      | Velocity directions are in the       |
-|                                      | North, East, Down (NED) frame.       |
+|                                      | I.e x=1,y=2,z=3 is 1m North, 2m East |
+|                                      | and 3m Down from the origin          |
+|                                      |                                      |
+|                                      | The **EKF origin** is the vehicle's  |
+|                                      | location when it first achieved a    |
+|                                      | good position estimate               |
+|                                      |                                      |
+|                                      | Velocity are in NED frame            |
 +--------------------------------------+--------------------------------------+
 | ``MAV_FRAME_LOCAL_OFFSET_NED``       | Positions are relative to the        |
-|                                      | current vehicle position in the      |
-|                                      | North, East, Down (NED) frame. Use   |
-|                                      | this to specify a position x metres  |
-|                                      | north, y metres east and (-) z       |
-|                                      | metres of the current vehicle        |
+|                                      | vehicle's current position           |
+|                                      |                                      |
+|                                      | I.e. x=1,y=2,z=3 is 1m North,        |
+|                                      | 2m East and 3m below the current     |
 |                                      | position.                            |
 |                                      |                                      |
-|                                      | Velocity directions are in the       |
-|                                      | North, East, Down (NED) frame.       |
+|                                      | Velocity are in NED frame.           |
 +--------------------------------------+--------------------------------------+
 | ``MAV_FRAME_BODY_OFFSET_NED``        | Positions are relative to the        |
-|                                      | current vehicle position in a frame  |
-|                                      | based on the vehicle's current       |
-|                                      | heading. Use this to specify a       |
-|                                      | position x metres forward from the   |
-|                                      | current vehicle position, y metres   |
-|                                      | to the right, and z metres down      |
-|                                      | (forward, right and down are         |
-|                                      | "positive" values).                  |
+|                                      | vehicle's current position and       |
+|                                      | heading                              |
 |                                      |                                      |
+|                                      | I.e x=1,y=2,z=3 is 1m forward,       |
+|                                      | 2m right and 3m Down from the current|
+|                                      | position                             |
 |                                      |                                      |
-|                                      | Velocity directions are relative to  |
+|                                      | Velocities are relative to           |
 |                                      | the current vehicle heading. Use     |
 |                                      | this to specify the speed forward,   |
 |                                      | right and down (or the opposite if   |
 |                                      | you use negative values).            |
 +--------------------------------------+--------------------------------------+
 | ``MAV_FRAME_BODY_NED``               | Positions are relative to the        |
-|                                      | vehicle's *home position* in the     |
-|                                      | North, East, Down (NED) frame. Use   |
-|                                      | this to specify a position x metres  |
-|                                      | north, y metres east and (-) z       |
-|                                      | metres above the home position.      |
+|                                      | EKF Origin in NED frame              |
 |                                      |                                      |
+|                                      | I.e x=1,y=2,z=3 is 1m North, 2m East |
+|                                      | and 3m Down from the origin          |
 |                                      |                                      |
-|                                      | Velocity directions are relative to  |
+|                                      | Velocities are relative to           |
 |                                      | the current vehicle heading. Use     |
 |                                      | this to specify the speed forward,   |
 |                                      | right and down (or the opposite if   |
@@ -275,26 +259,20 @@ The ``co-ordinate frame`` field takes the following values:
 
 .. tip::
 
-   In frames, ``_OFFSET_`` means "relative to vehicle position" while
-   ``_LOCAL_`` is "relative to home position" (these have no impact on
-   *velocity* directions). ``_BODY_`` means that velocity components are
-   relative to the heading of the vehicle rather than the NED frame.
+   In frames, ``_OFFSET_`` means "relative to vehicle position" while ``_LOCAL_`` is "relative to home position" (these have no impact on *velocity* directions). ``_BODY_`` means that velocity components are relative to the heading of the vehicle rather than the NED frame.
 
+.. note::
+
+   If sending velocity commands, they should be resent every second (the vehicle will stop after 3 seconds if no command is received)
    
 .. _copter-commands-in-guided-mode_set_position_target_global_int:
 
 SET_POSITION_TARGET_GLOBAL_INT
 ------------------------------
 
-Set vehicle position, velocity and acceleration setpoint in the WGS84
-coordinate system.
+Set the vehicle's target position (in WGS84 coordinates), velocity, heading or turn rate.  This is similar to the SET_POSITION_TARGET_LOCAL_NED message (see above) except positions are provided as latitude and longitude values and altitudes can be above sea-level, relative to home or relative to terrain.
 
-.. note::
-
-   Velocity commands should be resent every second (the vehicle will stop after 3 seconds if no command is received)
-
-The protocol definition is here:
-`SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__.
+The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__
 
 **Command parameters**
 
@@ -309,25 +287,30 @@ The protocol definition is here:
    <tr>
    <td><strong>time_boot_ms</strong></td>
    <td>
-   Timestamp in milliseconds since system boot. The rationale for the
-   timestamp in the setpoint is to allow the system to compensate for the
-   transport delay of the setpoint. This allows the system to compensate
-   processing latency.
+   Sender's system time in milliseconds since boot
    </td>
    </tr>
    <tr>
    <td><strong>target_system</strong></td>
-   <td>System ID</td>
+   <td>System ID of vehicle</td>
    </tr>
    <tr>
    <td><strong>target_component</strong></td>
-   <td>Component ID</td>
+   <td>Component ID of flight controller or just 0</td>
    </tr>
    <tr>
    <td><strong>coordinate_frame</strong></td>
    <td>
-   Valid options are: MAV_FRAME_GLOBAL_INT,
-   MAV_FRAME_GLOBAL_RELATIVE_ALT_INT
+
+Valid options are:
+
+- MAV_FRAME_GLOBAL_INT : alt is meters above sea level
+- MAV_FRAME_GLOBAL_RELATIVE_ALT: alt is meters above home
+- MAV_FRAME_GLOBAL_RELATIVE_ALT_INT: alt is meters above home
+- MAV_FRAME_GLOBAL_RELATIVE_TERRAIN_ALT: alt is meters above terrain
+- MAV_FRAME_GLOBAL_RELATIVE_TERRAIN_ALT_INT: alt is meters above terrain
+
+.. raw:: html
 
    </td>
    </tr>
@@ -335,20 +318,17 @@ The protocol definition is here:
    <td><strong>type_mask</strong></td>
    <td>
 
-Bitmask to indicate which dimensions should be ignored by the vehicle (a
-value of 0b0000000000000000 or 0b0000001000000000 indicates that none of
-the setpoint dimensions should be ignored). Mapping: bit 1: x, bit 2: y,
-bit 3: z, bit 4: vx, bit 5: vy, bit 6: vz, bit 7: ax, bit 8: ay, bit 9:
+Bitmask to indicate which fields should be **ignored** by the vehicle (see POSITION_TARGET_TYPEMASK enum)
 
-.. note::
+bit1:PosX, bit2:PosY, bit3:PosZ, bit4:VelX, bit5:VelY, bit6:VelZ, bit7:AccX, bit8:AccY, bit9:AccZ, bit11:yaw, bit12:yaw rate
 
-   At
-   time of writing you **must** enable all three bits for the position
-   (0b0000111111111000) OR all three bits for the velocity
-   (0b0000111111000111). Setting just one bit of the position/velocity or
-   mixing the bits is not supported. The **acceleration**, **yaw**,
-   **yaw_rate** are present in the `protocol definition <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__
-   but are not supported by ArduPilot.
+When providing Pos or Vel all 3 axis must be provided
+
+- Use Position : 0b110111111000 / 0x0DF8 / 3576 (decimal)
+- Use Velocity : 0b110111000111 / 0x0DC7 / 3527 (decimal)
+- Use Pos+Vel : 0b110111000000 / 0x0DC0 / 3520 (decimal)
+
+Acceleration not supported
 
 .. raw:: html
 
@@ -356,63 +336,62 @@ bit 3: z, bit 4: vx, bit 5: vy, bit 6: vz, bit 7: ax, bit 8: ay, bit 9:
    </tr>
    <tr>
    <td><strong>lat_int</strong></td>
-   <td>X Position in WGS84 frame in 1e7 \* meters</td>
+   <td>Latitude * 1e7</td>
    </tr>
    <tr>
    <td><strong>lon_int</strong></td>
-   <td>Y Position in WGS84 frame in 1e7 \* meters</td>
+   <td>Longitude * 1e7</td>
    </tr>
    <tr>
    <td><strong>alt</strong></td>
-   <td>Altitude in meters in AMSL altitude, not WGS84 if absolute or relative, above terrain if GLOBAL_TERRAIN_ALT_INT</td>
+   <td>Alt in meters above sea level, home or terrain (see coordinate_frame field)</td>
    </tr>
    <tr>
    <td><strong>vx</strong></td>
-   <td>X velocity in MAV_FRAME_LOCAL_NED frame in meter/s</td>
+   <td>X velocity in m/s (positive is North)</td>
    </tr>
    <tr>
    <td><strong>vy</strong></td>
-   <td>Y velocity in MAV_FRAME_LOCAL_NED frame in meter/s</td>
+   <td>Y velocity in m/s (positive is East)</td>
    </tr>
    <tr>
    <td><strong>vz</strong></td>
-   <td>Z velocity in MAV_FRAME_LOCAL_NED frame in meter/s</td>
+   <td>Z velocity in m/s (positive is down)</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>afx</td>
-   <td>X acceleration or force (if bit 10 of type_mask is set) in specified
-   MAV_FRAME_LOCAL_NED frame in meter/s^2 or N
+   <td>X acceleration not supported
    </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>afy</td>
-   <td>Y acceleration or force (if bit 10 of type_mask is set) in specified MAV_FRAME_LOCAL_NED frame in meter/s^2 or N</td>
+   <td>Y acceleration not supported</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>afz</td>
-   <td>Z acceleration or force (if bit 10 of type_mask is set) in specified MAV_FRAME_LOCAL_NED frame in meter/s^2 or N</td>
+   <td>Z acceleration not supported</td>
    </tr>
-   <tr">
+   <tr>
    <td><strong>yaw</strong></td>
-   <td>yaw setpoint in rad</td>
+   <td>yaw or heading in radians (0 is forward or North)</td>
    </tr>
    <tr>
    <td><strong>yaw_rate</strong></td>
-   <td>yaw rate setpoint in rad/s</td>
+   <td>yaw rate in rad/s</td>
    </tr>
    </tbody>
    </table>
+
+.. note::
+
+   Velocity commands should be resent every second (the vehicle will stop after 3 seconds if no command is received)
 
 .. _copter-commands-in-guided-mode_set_attitude_target:
 
 SET_ATTITUDE_TARGET
 -------------------
 
-Sets a desired vehicle attitude. Used by an external controller to command the vehicle (manual controller or other system).
-
-.. note::
-
-   Only available in Copter-3.4 (or higher)
+Set the vehicle's target attitude and climb rate.  This message is accepted in :ref:`Guided <copter:ac2_guidedmode>` or Guided_NoGPS (this is the only message accepted by Guided_NoGPS).  The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__
 
 **Command parameters**
 
@@ -428,32 +407,31 @@ Sets a desired vehicle attitude. Used by an external controller to command the v
    <tr>
    <td><strong>time_boot_ms</strong></td>
    <td>uint32_t</td>
-   <td>Timestamp in milliseconds since system boot. Used to avoid duplicate commands. 0 to ignore.</td>
+   <td>Sender's system time in milliseconds since boot</td>
    </tr>
    <tr>
    <td><strong>target_system</strong></td>
    <td>uint8_t</td>
-   <td>System ID</td>
+   <td>System ID of vehicle</td>
    </tr>
    <tr>
    <td><strong>target_component</strong></td>
    <td>int8_t</td>
-   <td>Component ID</td>
+   <td>Component ID of flight controller or just 0</td>
    </tr>
    <tr>
    <td><strong>type_mask</strong></td>
    <td>int8_t</td>
    <td>
-   Mappings: If any of these bits are set, the corresponding input should be ignored: 
-   (LSB is bit 1)
-   bit 1: body roll rate, 
-   bit 2: body pitch rate, 
-   bit 3: body yaw rate. 
-   bit 4-bit 6: reserved, 
-   bit 7: throttle
-   bit 8: attitude
-   <br>
-   Currently, throttle and attitude must be set to 0, i.e. not ignored
+
+Bitmask to indicate which fields should be **ignored** by the vehicle
+
+bit1:body roll rate, bit2:body pitch rate, bit3:body yaw rate, bit7:throttle, bit8:attitude
+
+Should always be 0b00000111 / 0x07 / 7 (decimal)
+
+.. raw:: html
+
    </td>
    </tr>
    <tr>
@@ -462,35 +440,32 @@ Sets a desired vehicle attitude. Used by an external controller to command the v
    <td>
    Attitude quaternion (w, x, y, z order, zero-rotation is {1, 0, 0, 0})
    <br>
-   Note that zero-rotation causes vehicle to rotate towards 0 yaw.
+   Note that zero-rotation causes vehicle to rotate towards North.
    </td>
    </tr>
-   <tr>
+   <tr style="color: #c0c0c0">
    <td><strong>body_roll_rate</strong></td>
    <td>float</td>
-   <td>Body roll rate in radians per second</td>
+   <td>Body roll rate not supported</td>
    </tr>
-   <tr>
+   <tr style="color: #c0c0c0">
    <td><strong>body_pitch_rate</strong></td>
    <td>float</td>
-   <td>Body pitch rate in radians per second</td>
+   <td>Body pitch rate not supported</td>
    </tr>
-   <tr>
+   <tr style="color: #c0c0c0">
    <td><strong>body_yaw_rate</strong></td>
    <td>float</td>
-   <td>Body yaw rate in radians per second</td>
+   <td>Body yaw rate not supported</td>
    </tr>
    <tr>
    <td><strong>thrust</strong></td>
    <td>float</td>
-   <td>Collective thrust, normalized to 0 .. 1 (-1 .. 1 for vehicles capable of reverse trust)
+   <td>Climb rate where 0.5 = no climb, 0 = WPNAV_SPEED_DN, 1 = WPNAV_SPEED_UP
    </td>
    </tr>
    </tbody>
    </table>
-
-The protocol definition for this command is here:
-`SET_ATTITUDE_TARGET <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__
 
 .. _copter-commands-in-guided-mode_set_home_position:
 
@@ -500,6 +475,8 @@ SET_HOME_POSITION
 The position the system will return to and land on. The position is set
 automatically by the system during the takeoff if it has not been
 explicitly set by the operator before or after.
+
+The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_HOME_POSITION>`__
 
 **Command parameters**
 
@@ -592,6 +569,3 @@ explicitly set by the operator before or after.
    </tr>
    </tbody>
    </table>
-
-The protocol definition for this command is here:
-`SET_HOME_POSITION <https://mavlink.io/en/messages/common.html#SET_HOME_POSITION>`__
