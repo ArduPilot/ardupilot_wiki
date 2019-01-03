@@ -20,7 +20,7 @@ Enabling RealFlight Link Feature
 ================================
 
 DVD and Tower Hobbies Digital versions:
-------------------------------------
+---------------------------------------
   - Start the RealFlight 8 Launcher
   - Click Technical Support
   - Click Enter Tech Support Code
@@ -28,7 +28,7 @@ DVD and Tower Hobbies Digital versions:
   - Click Update to Specific Version, choose 8.00.055 from the list, and click OK
 
 Steam version:
-------------------------------------
+--------------
   - Right-click on RealFlight 8 in your Steam Library, then select Properties
   - In the Properties window, select the Betas tab, and click the dropdown list
   - Select "flightaxislinkbeta"
