@@ -4,7 +4,7 @@
 Editing the code with NotePad++
 ===============================
 
-NotePad++ can be downloaded from `here <http://notepad-plus-plus.org/>`__.
+NotePad++ can be downloaded from `here <https://notepad-plus-plus.org/>`__.
 
 Use Project Panels to organise lots of files
 ============================================
