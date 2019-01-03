@@ -94,8 +94,7 @@ repository, follow these directions:
        :width: 70%
        :target: ../_images/PullRequest_InitiatePullRequest1.png
 
-#. Check the "base fork" is `ArduPilot/ardupilot <https://github.com/ArduPilot/ardupilot>`__ and
-   "base" is "master" and then fill in the PR's subject line and detailed description.
+#. Check the "base fork" is `ArduPilot/ardupilot <https://github.com/ArduPilot/ardupilot>`__ and "base" is "master" and then fill in the PR's subject line and detailed description.  The detailed description should include any evidence of testing performed.
    
    Check the list of changes at the bottom of the page only includes your
    intended changes, then push the "Create pull request" button.
@@ -109,10 +108,8 @@ Next Steps
 
 You can track the state of your PR from the `Pulls list <https://github.com/ArduPilot/ardupilot/pulls>`__.
 
-It is very common, especially for large changes, for the main developers
-to ask you to modify the pull request to fit in better with the existing
-code base or resolve some knock-on impact that you may not have known
-about.  Please don't take this the wrong way, we're definitely not
-trying to make your life difficult!
+PR are more likely to be merged quickly if there is good testing evidence provided.  This could be graphs of logs recorded before and after the change.
+
+It is very common, especially for large changes, for the main developers to ask you to modify the pull request to fit in better with the existing code base or resolve some knock-on impact that you may not have known about. Please don't take this the wrong way, we're definitely not trying to make your life difficult!
 
 Feel free to join the :ref:`weekly dev call <ardupilot-mumble-server>` where PRs and issues are discussed or reach out to us through one of the other :ref:`communication channels <common-contact-us>`
