@@ -11,6 +11,7 @@ This section contains topics related to code editing tools and IDEs that are com
 
     Eclipse on Windows <editing-the-code-with-eclipse>
     NotePad++ <editing-the-code-with-notepad>
+    VSCode <editing-the-code-with-vscode>
 
 -  Emacs on Linux, Windows or MacOS, with etags for finding code elements
 -  Vim on emacs with ctags
