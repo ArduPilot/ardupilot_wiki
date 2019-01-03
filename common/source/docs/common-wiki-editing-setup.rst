@@ -1,17 +1,34 @@
 .. _common-wiki-editing-setup:
 
-===========================================
-Wiki Editing - Building and Testing Locally
-===========================================
+=========================================
+Wiki Editing - Setting Up the Environment
+=========================================
 
 .. _common_wiki_editing_guide_building_docs:
 
-Before submitting :ref:`Big Edits <common-wiki-editing-big-edit>` to the wiki it is best to check the pages are rendered correctly including checking all images and links appear correctly.  This page explains how to "build" the wiki (i.e. convert the rst files and image files into a set of html pages) on your local machine so that you can perform these checks.
+Before submitting large changes to the wiki it is best to check the pages are rendered correctly including checking all images and links appear correctly.  This page explains how to "build" the wiki (i.e. convert the rst files and image files into a set of html pages) on your local machine so that you can perform these checks.
 
 There are two methods to setup a local build environment:
 
 #. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a virtual machine with all the necessary packages installed.  This is the preferred and supported method
 #. Install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local machine and skip the Vagrant instructions below (unsupported)
+
+Fork and Clone the Wiki
+-----------------------
+
+The wiki should be forked and cloned much like :ref:`developers do for the flight code <dev:where-to-get-the-code>`.
+
+- Create a `Github account <https://github.com/join>`__ if you do not have one already
+- :ref:`Install a Git Client <dev:git-install>`
+- :ref:`Fork <dev:git-fork>` the `ardupilot_wiki <https://github.com/ArduPilot/ardupilot_wiki>`__ to create your own copy in GitHub (note linked instructions are for the ardupilot flight code so "ardupilot" should be replaced with "ardupilot_wiki")
+
+    .. image:: ../../../dev/source/images/APM-Git-Github-Fork-300x64.jpg
+
+- :ref:`Clone <dev:git-clone>` your copy of ardupilot_wiki on GitHub to your local machine (note linked instructions are for the ardupilot flight code so "ardupilot" should be replaced with "ardupilot_wiki")
+
+   .. code-block:: bash
+
+       git clone https://github.com/YOURID/ardupilot_wiki.git
 
 Setup with Vagrant
 ------------------
@@ -21,8 +38,6 @@ Setup with Vagrant
 #. Download and install `Oracle VirtualBox <https://www.virtualbox.org/wiki/Downloads>`__.
 
 #. Windows users should install an SSH client on the computer before starting vagrant. Vagrant needs  SSH client program to access development container. We have had great success with OpenSSH packer from MLS-Software `here <http://www.mls-software.com/opensshd.html>`__
-
-#. fork and clone the `ardupilot_wiki <https://github.com/ArduPilot/ardupilot_wiki#fork-destination-box>`__ repository to your local machine.  There are instructions :ref:`here for forking <git-fork>` and :ref:`cloning <git-clone>` but note that these are for the main flight code so "ardupilot" should be replaced with "ardupilot_wiki"
 
 The main steps for building the docs are:
 
@@ -63,7 +78,7 @@ The update.py script will copy the common files into each wiki subdirectory and 
 
 .. note::
 
-    The script will show the build output of each of the wikis - this should be inspected for warnings and errors.
+    The script will show the build output of each of the wikis.  This should be inspected for warnings and errors.
     The script does some file copying at the end, which will fail and can be ignored (this is used when publishing
     the docs)
 
