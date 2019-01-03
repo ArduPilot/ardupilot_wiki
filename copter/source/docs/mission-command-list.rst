@@ -71,13 +71,7 @@ Spline Waypoint
 .. image:: ../../../images/MissionList_SplineWaypoint.jpg
     :target: ../_images/MissionList_SplineWaypoint.jpg
 
-From AC3.2 (and higher),
-`Spline <https://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__
-waypoints are supported.  The Spline commands take all the same
-arguments are regular waypoints (lat, lon, alt, delay) but when executed
-the vehicle will fly smooth paths (both vertically and horizontally)
-instead of straight lines.  Spline waypoints can be mixed with regular
-straight line waypoints as shown in the image above.
+`Spline <https://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__ waypoints take all the same arguments are regular waypoints (lat, lon, alt, delay) but when executed the vehicle will fly smooth paths (both vertically and horizontally) instead of straight lines.  Spline waypoints can be mixed with regular straight line waypoints as shown in the image above.
 
 The Mission Planner shows the path the vehicle will take.  The image
 above shows some characteristics of the spline
@@ -88,12 +82,6 @@ above shows some characteristics of the spline
    #3 is parallel to an imaginary line drawn between waypoints #2 and #4
 -  Waypoint #5 is a straight line so the vehicle lines itself up to
    point towards waypoint #5 even before reaching waypoint #4.
-
-.. note::
-
-   As of AC3.2-rc4, there is a slight twitch as the vehicle passes
-   through each spline waypoint.  This is a technical issue that we hope to
-   resolve in an upcoming release.
 
 Loiter_Time
 ~~~~~~~~~~~
@@ -215,21 +203,9 @@ Do-Set-ROI
 .. image:: ../../../images/MissionList_DoSetRoi.jpg
     :target: ../_images/MissionList_DoSetRoi.jpg
 
-Points the nose of the vehicle and :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region of
-interest".  In the example above the nose and camera would be pointed at
-the red marker.
+Points the nose of the vehicle or :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region of interest".  In the example above the nose and camera would be pointed at the red marker.
 
-If using AC3.1.5: The nose would point at the marker for only the period
-that the vehicle is flying from Waypoint #1 to Waypoint #3.  If you
-wanted the nose/camera to continue to point at the red marker as it
-flies from #3 to #4, a second DO_SET_ROI command would need to be
-entered after Waypoint #3.
-
-If using AC3.2: The nose would continue to point at the red marker until
-the end of the mission.  To "clear" the do-set-roi and cause the vehicle
-to return to it's default behaviour (i.e. pointing at the next waypoint)
-a second DO_SET_ROI command should be placed later in the mission with
-all zero for Lat, Lon and Alt.
+The nose will continue to point at the red marker until the end of the mission OR "clear" the do-set-roi and cause the vehicle to return to its default behaviour (i.e. pointing at the next waypoint) by adding a second DO_SET_ROI command later in the mission with all zero for Lat, Lon and Alt.
 
 **Lat, Lon** - the latitude and longitude targets.
 
@@ -326,11 +302,6 @@ command.
    No more that three (3) Do-Jump commands can be used in a
    mission, the fourth and subsequent Do-Jumps will be ignored.
 
-.. warning::
-
-   This command should not be used with ArduCotper 3.1.5 or
-   earlier (it works properly in AC3.2).
-
 Do-Change-Speed
 ~~~~~~~~~~~~~~~
 
@@ -343,12 +314,7 @@ Change the target horizontal speed (in meters/sec) of the vehicle.
 
 .. note::
 
-   In AC3.1.5 (and earlier) versions the speed change will only take
-   effect after the current navigation command (i.e. waypoint command)
-   completes. From AC3.2 onwards the vehicle speed will change immediately.
-   Also note that in AC3.2 the speed parameter will be in the SECOND
-   COLUMN, not the first column as in previous releases as shown in the
-   screenshot above (this is to match the official MAVLINK protocol)
+   The speed parameter will be in the SECOND COLUMN, not the first column as shown in the screenshot above
 
 Do-Set-Home
 ~~~~~~~~~~~
@@ -356,15 +322,9 @@ Do-Set-Home
 .. image:: ../../../images/MissionList_DoSetHome.png
     :target: ../_images/MissionList_DoSetHome.png
 
-This command should not be used because of 
-`an issue found in AC3.2 <https://github.com/ArduPilot/ardupilot/issues/1677>`__. 
-Instead :ref:`Rally Points <common-rally-points>` can be used to
-control the position used for Return-To-Launch ("Home" is also used
-internally as the "origin" for all navigation calculations).
+This command should be avoided if possible and instead use :ref:`Rally Points <common-rally-points>` which can also control the position used for Return-To-Launch.
 
-**Current(1)/Spec(0)** - if "1" use the current location as the new
-home, if "0" use the specified Lat and Lon coordinate (not labelled
-yet!)
+**Current(1)/Spec(0)** - if "1" use the current location as the new home, if "0" use the specified Lat and Lon coordinate (not labelled yet!)
 
 **Lat, Lon** - the latitude and longitude targets.
 
@@ -380,10 +340,7 @@ the camera shutter to trigger after every 5m that the vehicle travels.
 
 **Dist (m)** - distance interval in meters.
 
-**Note: In AC3.1.5 (and earlier) versions this command cannot be
-shut-off. The camera will continue to be triggered repeatedly even after
-the mission has been ended. In AC3.2 (and higher) providing a distance
-of zero will stop the camera shutter from being triggered**
+To stop the camera from triggering, add a DO_SET_CAM_TRIGG_DIST later in the mission with Dist = 0
 
 .. _mission-command-list_do-set-relay:
 
