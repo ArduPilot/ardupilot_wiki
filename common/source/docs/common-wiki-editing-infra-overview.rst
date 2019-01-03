@@ -8,7 +8,7 @@ The wiki is built using the static site generator `Sphinx <http://www.sphinx-doc
 
 The wiki has several sections:
 
-- `Common <https://github.com/ArduPilot/ardupilot_wiki/tree/master/common/source/docs>`__ holds pages that are common to all vehicles like the :ref:`Optional Hardware <copter:common-optional-hardware>` section of the wikis.  The pages all have the **common-** prefix and are stored in the **/common/source/docs/** directory.  Common images are in the :ref:`images <https://github.com/ArduPilot/ardupilot_wiki/tree/master/images>`__ directory.  Common configuration information for the Wiki Sphinx build is stored in **/common_conf.py**.
+- `Common <https://github.com/ArduPilot/ardupilot_wiki/tree/master/common/source/docs>`__ holds pages that are common to all vehicles like the :ref:`Optional Hardware <copter:common-optional-hardware>` section of the wikis.  The pages all have the **common-** prefix and are stored in the **/common/source/docs/** directory.  Common images are in the `images <https://github.com/ArduPilot/ardupilot_wiki/tree/master/images>`__ directory.  Common configuration information for the Wiki Sphinx build is stored in **/common_conf.py**.
 - Each vehicle or ground station has a separate folder in the repository (e.g. '/copter', '/plane') which contains its own source and configuration files (**conf.py**).  Corresponding images are stored in the /images/ subfolder.
 
 The **update.py** build script copies the common topics into specified (in source) target wikis directories and then build them.
