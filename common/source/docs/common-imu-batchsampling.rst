@@ -8,22 +8,14 @@ The IMU BatchSampler can be used to record high-frequency data from the IMU sens
 
 This data can be used in post-flight analysis to characterise vibration issues, most notably through the creation of graphs created from Fast Fourier Transforms of the data.
 
-.. note:
-
-   This is a relatively new feature in ArduPilot.  No stable firmware has been released containing this feature
-
 Enabling Batch Data Collection
 ==============================
 
 The ``INS_LOG_BAT_MASK`` parameter specifies which IMUs in the system to log high-rate data for.  Set this to 255 to collect for all sensors.
 
-``IMU RAW`` sampling must be enabled in your logging bitmask.  This is bit 19, so you must either use a GCS which has checkboxes for each bitmask option or add 524288 to your current bitmask value.
+``IMU RAW`` sampling must not be enabled in your logging bitmask. The default LOG_BITMASK value is fine.
 
 ``INS_LOG_BAT_OPT`` must be set to one
-
-.. note:
-
-   ``IMU_FAST`` must be turned off in your LOG_BITMASK for batch sampling to work
 
 
 Collecting useful Data
