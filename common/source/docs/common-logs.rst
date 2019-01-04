@@ -13,7 +13,6 @@ This section contains topics related to mission logging and analysis.
     Diagnosing problems using Logs <common-diagnosing-problems-using-logs>
     Dataflash Logs <common-downloading-and-analyzing-data-logs-in-mission-planner>
     Telemetry Logs <common-mission-planner-telemetry-logs>
-    Recording and Playing Back Missions <common-recording-and-playing-back-missions>
     Measuring Vibration with "Batch Sampling" <common-imu-batchsampling>
 
 [site wiki="plane"]
