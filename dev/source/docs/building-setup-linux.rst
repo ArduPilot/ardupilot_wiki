@@ -9,8 +9,16 @@ This article shows how to setup your build environment on Linux/Ubuntu machines.
 Setup on Ubuntu
 ===============
 
+Get git
+-------
+
+.. include:: git-install.rst
+    :start-after: inclusion-marker-do-not-remove
+    :end-before: Alternative for Windows user
+
 Clone ArduPilot repository
 --------------------------
+
 
 .. include:: git-clone.rst
     :start-after: inclusion-marker-do-not-remove
