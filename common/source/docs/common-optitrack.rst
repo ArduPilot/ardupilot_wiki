@@ -134,6 +134,7 @@ Ground testing
 - Connect the drone to a ground station
 - Start Motive and make sure `data streaming <https://v20.wiki.optitrack.com/index.php?title=Data_Streaming>`__ is turned on, then start SampleClientML.exe we just build.
 - If you see following message in ground station console (initial pos may vary), then the drone should be ready for flight test
+
 *EKF2 IMU0 is using external nav data
 EKF2 IMU0 initial pos NED = 0.1,-0.2,0.0 (m)
 EKF2 IMU0 ext nav yaw alignment complete*
