@@ -16,8 +16,6 @@ AltHold, Loiter, RTL, Guided, Position and Auto flight modes).
 These instructions explain how to measure the vibration levels. If you
 find they are out-of-tolerance then follow the advice found on the :ref:`Vibration Damping <common-vibration-damping>` page.
 
-For more detailed vibration analysis, see :ref:`Batch Sampling <common-imu-batchsampling>`.
-
 Real-Time view in Ground Station
 --------------------------------
 
@@ -87,6 +85,11 @@ The image below shows a typical log in which the attitudes match well
 .. image:: ../../../images/vibration-measuring-leans.png
     :target: ../_images/vibration-measuring-leans.png
     :width: 450px
+
+Advanced Analysis with FFT
+--------------------------
+
+Refer to the :ref:`Measuring Vibration with IMU Batch Sampler <common-imu-batchsampling>` page for instructions on how to collect large amounts of IMU data and perform an FFT analysis to determine the frequencies with the most vibration.
 
 IMU Dataflash Log message
 -------------------------
