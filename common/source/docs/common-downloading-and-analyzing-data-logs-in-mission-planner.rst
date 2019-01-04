@@ -320,8 +320,10 @@ SubSystem and Error codes listed below
    <tr>
    <td>2 = Radio</td>
    <td>
+
 - 0 = Errors Resolved
 - 2 = Late Frame : no updates received from receiver for two seconds
+
 .. raw:: html
 
    </td>
@@ -741,7 +743,7 @@ Video tutorials
 
 ..  youtube:: 62TmGiwFiDU
     :width: 100%
-|
+
 ..  youtube:: IcVlJCR8N2g
     :width: 100%
 

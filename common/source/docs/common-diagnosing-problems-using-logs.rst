@@ -146,8 +146,10 @@ The Subsys (aka Sub-system) gives the area that generated the error and the ECod
    <tr>
    <td>2 = Radio</td>
    <td>
+
 - 0 = Errors Resolved
 - 2 = Late Frame : no updates received from receiver for two seconds
+
 .. raw:: html
 
    </td>
