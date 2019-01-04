@@ -114,17 +114,10 @@ press "Cancel" to clear the filter.
 Setting what data you want recorded
 ===================================
 
-The :ref:`LOG_BITMASK <LOG_BITMASK>` parameter controls what message types are recorded in
-the dataflash
+The :ref:`LOG_BITMASK <LOG_BITMASK>` parameter controls what messages are recorded in the dataflash
 
 .. image:: ../../../images/mp_dataflash_log_bitmask.png
     :target: ../_images/mp_dataflash_log_bitmask.png
-
-Earlier versions of MP/ArduPilot allow selecting the message using a
-drop-down as shown below. 
-
-.. image:: ../../../images/mp_log_bitmask.png
-    :target: ../_images/mp_log_bitmask.png
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_message_details_copter_specific:
 
