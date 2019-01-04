@@ -27,9 +27,7 @@ Dataflash logs.
 Downloading logs via MAVLink
 ============================
 
-This method is available in AC3.2 (or higher).
-
--  Connect your vehicle to the mission planner using the micro USB cable
+-  Connect your vehicle to the ground station using the micro USB cable
 -  Open the Mission Planner's Flight Data screen
 -  On the bottom left, select the "DataFlash Logs" tab and push the
    "Download DataFlash Log Via Mavlink" button
@@ -116,10 +114,8 @@ press "Cancel" to clear the filter.
 Setting what data you want recorded
 ===================================
 
-The LOG_BITMASK parameter controls what message types are recorded in
-the dataflash.  Recent versions of the mission planner and ArduPilot
-allow individual messages to be enabled/disabled from the MP's
-Config/Tuning, Standard Params screen.
+The :ref:`LOG_BITMASK <LOG_BITMASK>` parameter controls what message types are recorded in
+the dataflash
 
 .. image:: ../../../images/mp_dataflash_log_bitmask.png
     :target: ../_images/mp_dataflash_log_bitmask.png
@@ -305,8 +301,8 @@ or unsigned 32bit integers):**
 +---------+-------------------------------------------------------------------------------------------------------+
 | id      | Identification number for the variable. There are only two possible values:                           |
 |         |                                                                                                       |
-|         | *   7 = bit mask of internal state.  ( The meaning of individual bits can be found in the def'n       |
-|         |     of the ap structure <https://github.com/ardupilot/ardupilot/blob/master/ArduCopter/Copter.h#L251> |
+|         | *   7 = bit mask of internal state (The meaning of individual bits can be found in the def'n of the   |
+|         |     `ap structure <https://github.com/ardupilot/ardupilot/blob/master/ArduCopter/Copter.h#L296>`__    |
 |         |                                                                                                       |
 |         | *   9 = simple mode's initial heading in centi-degrees                                                |
 +---------+-------------------------------------------------------------------------------------------------------+
