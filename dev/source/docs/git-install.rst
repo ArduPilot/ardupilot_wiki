@@ -4,25 +4,39 @@
 Installing Git
 ==============
 
+.. inclusion-marker-do-not-remove
+
+Git is a free and open source distributed version control system that is used to manage ArduPilot codebase.
 Git is available on all major OS platforms, and a variety of tools exist to make it easier to get started.
 
-git command line, gitk and git-gui
-----------------------------------
+Git command line
+----------------
 
-the git command line, gitk and git-gui tools are the basics that all users should have installed and are available from a few places:
+Ubuntu
+++++++
 
-- download and install from `git-scm.com's download page <http://git-scm.com/downloads>`__
-- Linux/Ubuntu users can install with apt
+Linux/Ubuntu users can install with apt :
 
  - ``sudo apt-get update``
  - ``sudo apt-get install git``
+ - ``sudo apt-get install gitk git-gui``
 
-- Windows users can install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/STM32-tools/pixhawk_toolchain_installer_latest.exe>`__
+Other Systems
++++++++++++++
+
+ - download and install from `git-scm.com's download page <http://git-scm.com/downloads>`__
+
+Alternative for Windows user
+++++++++++++++++++++++++++++
+
+ - Windows users can install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/STM32-tools/pixhawk_toolchain_installer_latest.exe>`__
 
 Recommended GUI Tools
 ---------------------
 
-a comprehensive list of GUI tools are listed `here on git-scm.com <https://git-scm.com/downloads/guis>`__ but here are a few of the developer favouites:
+The git command line, gitk and git-gui tools are the basics that all users should have installed and are available from a few places.
+
+A comprehensive list of GUI tools are listed `here on git-scm.com <https://git-scm.com/downloads/guis>`__ but here are a few of the developer favourites:
 
 - `GitHub Desktop <https://desktop.github.com/>`__ for Windows and Mac is an easy to use tool with good GitHub integration but has fewer features than other clients.
 - `Sourcetree for Windows and Mac OSX <https://www.sourcetreeapp.com/>`__ is a full featured tool with a nice interface with many features including allowing individual lines from a file to be included in a new commit (simpler tools only allow the entire file to be included)
