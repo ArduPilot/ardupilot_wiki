@@ -1,8 +1,8 @@
 .. _common-recording-and-playing-back-missions:
 
-===================================
-Recording and Playing Back Missions
-===================================
+=============================================
+Archived: Recording and Playing Back Missions
+=============================================
 
 [copywiki destination="copter,plane,rover,planner"]
 

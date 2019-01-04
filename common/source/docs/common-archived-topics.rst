@@ -22,6 +22,7 @@ value to users with old hardware.
     External GPS AP2.x <common-disabling-the-built-in-gps-on-apm2-to-use-an-external-gps-instead>
     GPS Module (External) <common-mounting-the-gps-module>
     External Compass (Magnetometer) <common-external-magnetometer-for-improved-performance>
+    Recording and Playing Back Missions <common-recording-and-playing-back-missions>
 [/site]
 
 [site wiki="copter"]
