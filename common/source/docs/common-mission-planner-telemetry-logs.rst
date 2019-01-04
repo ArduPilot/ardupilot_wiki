@@ -35,15 +35,9 @@ planner.  but cannot be parsed or played back so they should be ignored.
 Setting the datarate
 ====================
 
-The desired rate at which data is sent from the APM/PX to the ground
-station can be controlled through the mission planner's Software >
-Planner screen's Telemetry drop-downs.  Because all data sent over the
-telemetry link is also recorded in the tlog, this also controls the rate
-of data saved to the tlogs.
+The desired rate at which data is sent from the flight controller to the ground station can be controlled through the mission planner's Config/Tuning > Planner screen's Telemetry drop-downs.  Because all data sent over the telemetry link is also recorded in the tlog, this also controls the rate of data saved to the tlogs.
 
-Note that especially on Copter, due to CPU resource limitations, the
-actual rate of the data sent and saved may be lower than the rate
-requested.
+Note that due to bandwidth limitations, the actual rate of the data sent and saved may be lower than the rate requested.
 
 .. image:: ../../../images/mp_telemetry_rate.png
     :target: ../_images/mp_telemetry_rate.png
@@ -51,9 +45,7 @@ requested.
 Playing back missions
 =====================
 
-If you are using wireless telemetry and have connected to to APM via the
-Mission Planner, your flight data will automatically recorded.  You can
-play back these logs by doing the following:
+It is possible to play back a tlog by doing the following:
 
 -  Open the mission planner's Flight Data screen
 -  click on the Telemetry Logs tab
