@@ -36,16 +36,13 @@ Flight and Post-Flight Analysis
 Advanced Configuration and Analysis
 -----------------------------------
 
-- Set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 1 to enable batch sampling at the sensor's highest rate which allows analysis above 500hz
+- Set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 1 to enable batch sampling at the sensor's highest rate which allows analysis above 500hz for very fast IMUs from InvenseSense
 - :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` can be used to sample just a single sensor.  This will increase the number of samples retrieved from a single sensor (e.g. the best on the platform), which may provide better data for analysis
 - :ref:`INS_LOG_BAT_CNT <INS_LOG_BAT_CNT>` specifies the number of samples which will be collected.  Increasing this will yield a more representative idea of problem frequencies.  When divided by the sample rate will give the smallest frequency which can be detected, so 1024 samples at 1024kHz sampling will (poorly) pick up 0.5Hz frequencies
-- :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` an options bitmask which can be used to change the behaviour of the Batch Sampler, for example to specify sensor-rate-logging
 - :ref:`INS_LOG_BAT_LGIN <INS_LOG_BAT_LGIN>` interval between pushing samples to the dataflash log, in ms.  Increase this to reduce the time taken to flush data to the dataflash log, reducing cycle time.  This will be at the expense of increased system load and possibly choking up the dataflash log for other messages
 - :ref:`INS_LOG_BAT_LGCT <INS_LOG_BAT_LGCT>` Number of samples to push to count every :ref:`INS_LOG_BAT_LGIN <INS_LOG_BAT_LGIN>` ms.  Increase this to push more samples each time they are sent to the dataflash log.  Increasing this may cause timing jitter, and possibly choke up the dataflash log for other messages
 
-Some sensors in ArduPilot have the option of logging data at the same rate it is received from the sensor.  For example, InvenSense sensors may give you 8kHz gyro samples and 4kHz accelerometer samples.  This data will help you find vibrations at frequencies above what normal (1kHz) batch sampling will allow.
-
-The following two graphs are from the same flight on a PixRacer flight controller.  Accel[0] on the right is the InvenseSense IMU and shows higher vibrations at higher frequencies.
+The following two graphs are from the same flight on a PixRacer flight controller.  Accel[0] on the right is the InvenseSense IMU and shows higher frequencies than the slower IMU on the left
 
 .. image:: ../../../images/imu-batchsampling-fft-sensorrate-pixracer.png
     :target:  ../_images/imu-batchsampling-fft-sensorrate-pixracer.png
