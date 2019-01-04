@@ -135,104 +135,258 @@ The easiest way to find these is to look in the dataflash logs and filter the fi
 
 The Subsys (aka Sub-system) gives the area that generated the error and the ECode (aka Error Code) tells you what the error was specifically.  The list of subsystems and error codes can be found at the bottom of the Copter `defines.h file <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L339>`__.
 
-Sub Systems / Error Codes
+.. raw:: html
 
-1: Main (never used)
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Subsys</th>
+   <th>ECode and Description</th>
+   </tr>
+   <tr>
+   <td>2 = Radio</td>
+   <td>
+- 0 = Errors Resolved
+- 2 = Late Frame : no updates received from receiver for two seconds
+.. raw:: html
 
-2: Radio
+   </td>
+   </tr>
+   <tr>
+   <td>3 = Compass</td>
+   <td>
 
-ECode 1: "Late Frame" which means the APM's onboard ppm encoder did not
-provide an update for at least 2 seconds
+- 0 = Errors Resolved
+- 1 = Failed to initialise (probably a hardware issue)
+- 4 = Unhealthy : failed to read from the sensor
 
-ECode 0: error resolved which means the ppm encoder started providing
-data again
+.. raw:: html
 
-3: Compass
+   </td>
+   </tr>
 
-ECode 1: the compass failed to initialise (likely a hardware issue)
+   <tr>
+   <td>5 = Radio Failsafe</td>
+   <td>
 
-ECode 2: failure while trying to read a single value from the compass
-(probably a hardware issue)
+- 0 = Failsafe Resolved
+- 1 = Failsafe Triggered
 
-ECode 0: above errors resolved
+.. raw:: html
 
-4: Optical flow
+   </td>
+   </tr>
 
-Ecode 1: failed to initialise (likely a hardware issue)
+   <tr>
+   <td>6 = Battery Failsafe</td>
+   <td>
 
-5: Throttle failsafe
+- 0 = Failsafe Resolved
+- 1 = Failsafe Triggered
 
-ECode 1: throttle dropped below FS_THR_VALUE meaning likely loss of
-contact between RX/TX
+.. raw:: html
 
-ECode 0: above error resolve meaning RX/TX contact likely restored
+   </td>
+   </tr>
 
-6: Battery failsafe
+   <tr>
+   <td>8 = GCS Failsafe</td>
+   <td>
 
-ECode 1: battery voltage dropped below LOW_VOLT or total battery
-capacity used exceeded BATT_CAPACITY
+- 0 = Failsafe Resolved
+- 1 = Failsafe Triggered
 
-7: GPS failsafe
+.. raw:: html
 
-ECode 1: GPS lock lost for at least 5 seconds
+   </td>
+   </tr>
 
-ECode 0: GPS lock restored
+   <tr>
+   <td>9 = Fence Failsafe</td>
+   <td>
 
-8: GCS (Ground station) failsafe
+- 0 = Failsafe Resolved
+- 1 = Altitude fence breach, Failsafe Triggered
+- 2 = Circular fence breach, Failsafe Triggered
+- 3 = Both Alt and Circular fence breached, Failsafe Triggered
+- 4 = Polygon fence breached, Failsafe Triggered
 
-ECode 1: updates from ground station joystick lost for at least 5
-seconds
+.. raw:: html
 
-ECode 0: updates from ground station restored
+   </td>
+   </tr>
 
-9: Fence
+   <tr>
+   <td>10 = Flight mode Change failure</td>
+   <td>
 
-ECode 1: altitude fence breached
+Vehicle was unable to enter the desired flight mode normally because of a bad position estimate
 
-ECode 2: circular fence breached
+See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L34>`__
 
-ECode 3: both altitude and circular fences breached
+.. raw:: html
 
-ECode 0: vehicle is back within the fences
+   </td>
+   </tr>
 
-10: Flight Mode
+   <tr>
+   <td>11 = GPS</td>
+   <td>
 
-ECode 0 ~ 22: the vehicle was unable to enter the desired flight mode (the mapping of code to flight mode can be found here in `Copter's defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L34>`__)
+- 0 = Glitch cleared
+- 2 = GPS Glitch occurred
 
-11: GPS
+.. raw:: html
 
-ECode 2: GPS Glitch
+   </td>
+   </tr>
 
-ECode 0: GPS Glitch cleared
+   <tr>
+   <td>12 = Crash Check</td>
+   <td>
 
-12: Crash Check
+- 1 = Crash into ground detected.  Normally vehicle is disarmed soon after
+- 2 = Loss of control detected.  Normally parachute is released soon after
 
-ECode 1: Crash detected
+.. raw:: html
 
-13: Flip
+   </td>
+   </tr>
 
-ECode 2: Flip abandoned (because of 2 second timeout)
+   <tr>
+   <td>13 = Flip mode</td>
+   <td>2 = Flip abandoned (not armed, pilot input or timeout)</td>
+   </tr>
+   <tr>
+   <td>15 = Parachute</td>
+   <td>
 
-14: AutoTune
+- 2 = Not Deployed, vehicle too low
+- 3 = Not Deployed, vehicle landed
 
-ECode 2: Bad Gains (failed to determine proper gains)
+.. raw:: html
 
-15: Parachute
+   </td>
+   </tr>
 
-ECode 2: Too low to deploy parachute
+   <tr>
+   <td>16 = EKF Check</td>
+   <td>
 
-16: EKF/InertialNav Check
+- 0 = Variance cleared (position estimate OK)
+- 2 = Bad Variance (position estimate bad)
 
-ECode 2: Bad Variance
+.. raw:: html
 
-ECode 0: Bad Variance cleared
+   </td>
+   </tr>
 
-17: EKF Failsafe
+   <tr>
+   <td>17 = EKF Failsafe</td>
+   <td>
 
-ECode 2: EKF Failsafe triggered
+- 0 = Failsafe Resolved
+- 1 = Failsafe Triggered
 
-18: Baro glitch
+.. raw:: html
 
-ECode 2: Baro glitch
+   </td>
+   </tr>
 
-ECode 0: Baro glitch cleared
+   <tr>
+   <td>18 = Barometer</td>
+   <td>
+
+- 0 = Errors Resolved
+- 4 = Unhealthy : failed to read from the sensor
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   <tr>
+   <td>19 = CPU Load Watchdog</td>
+   <td>
+
+- 0 = Failsafe Resolved
+- 1 = Failsafe Triggered (normally vehicle disarms)
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   <tr>
+   <td>20 = ADSB Failsafe</td>
+   <td>
+
+- 0 = Failsafe Resolved
+- 1 = No action just report to Pilot
+- 2 = Vehicle avoids by climbing or descending
+- 3 = Vehicle avoids by moving horizontally
+- 4 = Vehicle avoids by moving perpendicular to other vehicle
+- 5 = RTL invoked
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   <tr>
+   <td>21 = Terrain Data</td>
+   <td>2 = missing terrain data</td>
+   </tr>
+
+   <tr>
+   <td>22 = Navigation</td>
+   <td>
+
+- 2 = Failed to set destination
+- 3 = RTL restarted
+- 4 = Circle initialisation failed
+- 5 = Destination outside fence
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   <tr>
+   <td>23 = Terrain Failsafe</td>
+   <td>
+
+- 0 = Failsafe Resolved
+- 1 = Failsafe Triggered (normally vehicle RTLs)
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   <tr>
+   <td>24 = EKF Primary changed</td>
+   <td>
+
+- 0 = 1st EKF has become primary
+- 1 = 2nd EKF has become primary
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   <tr>
+   <td>25 = Thrust Loss Check</td>
+   <td>
+
+- 0 = Thrust Restored
+- 1 = Thrust Loss Detected (altitude may be prioritised over yaw control)
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   </tbody>
+   </table>
