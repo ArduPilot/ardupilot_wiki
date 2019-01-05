@@ -11,6 +11,9 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
 .. toctree::
     :maxdepth: 1
 
+[site wiki="copter,rover"]
+    Brushed motors <common-brushed-motors>
+[/site]
 [site wiki="copter"]
     Booster motor <booster-motor>
 [/site]
