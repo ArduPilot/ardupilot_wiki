@@ -23,4 +23,4 @@ How to Use
 - power on the board and leave it for about 10 minutes
 - learning will happen as the board heats up and while it is not moving
 - the :ref:`TCAL_BARO_EXP <TCAL_BARO_EXP>` should be updated with a non-zero value
-- optionally turn off learning by setting :ref:`TCAL_ENABLE <TCAL_ENABLE>` to 1 (to use but not learn new calibration values)
+- optionally turn off learning by setting :ref:`TCAL_ENABLED <TCAL_ENABLED>` to 1 (to use but not learn new calibration values)
