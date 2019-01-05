@@ -1,4 +1,4 @@
-.. _common-CUAVv5-overview:
+.. _common-pixhackV5-overview:
 
 ============================
 CUAV v5 Overview
@@ -35,7 +35,7 @@ Specifications
    -  High-power servo rail, up to 36V
       (servo rail does not power the flight controller)
    -  Dual voltage and current monitor inputs
-   -  Pixhack V5 can be triple redundant if power is provided
+   -  CUAV v5 can be triple redundant if power is provided
       to both battery monitor inputs and the USB port
 
 -  **Interfaces**
@@ -44,7 +44,7 @@ Specifications
    -  8 FMU PWM outputs (D-Shot capable)
    -  3 dedicated PWM/Capture inputs on FMU
    -  S.Bus servo output
-   -  R/C inputs for CPPM, DSM and S.Bus
+   -  R/C inputs for CPPM and S.Bus
    -  Analogue / PWM RSSI input
    -  5x general purpose serial ports
    -  4x I2C ports
