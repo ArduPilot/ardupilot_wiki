@@ -43,3 +43,5 @@ Connection and Configuration
 .. warning::
 
     ArduPilot does not currently support controlling both brushed and brushless **motors** at the same time
+
+[copywiki destination="copter,rover"]
