@@ -1,14 +1,14 @@
-.. _common-pixhackV5-overview:
+.. _common-CUAVv5-overview:
 
 ============================
-Pixhack V5 Overview
+CUAV v5 Overview
 ============================
 
 .. image:: ../../../images/pixhackv5/v5-autopilot.jpg
     :target: ../_images/v5-autopilot.jpg
     :width: 360px
 
-The CUAV Pixhack v5 is an advanced autopilot designed and made by CUAV.
+The CUAV v5 is an advanced autopilot designed and made by CUAV.
 The board is based on the FMUv5 open hardware design, with further attribution `here <https://github.com/cuav/hardware/blob/master/PixHack_v5/README.md>`__.
 It is intended primarily for academic and commercial users.
 
@@ -69,13 +69,13 @@ Quick Start
 
 Use the :ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>` as a general guide.
 
-.. image:: ../../../images/pixhackv5/pixhack-v5-connectors.jpg
-    :target: ../_images/pixhack-v5-connectors.jpg
+.. image:: ../../../images/pixhackv5/v5-pinouts_release.jpg
+    :target: ../_images/v5-pinouts_release.jpg
 
 More Information
 ================
 
-see more documentation `here <http://doc.cuav.net/flight-controller/pixhack-v5/en/>`__
+see more documentation `here <http://doc.cuav.net/flight-controller/v5-autopilot/en/>`__
 
 More Images
 ===========
