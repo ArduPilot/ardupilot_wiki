@@ -99,6 +99,7 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
    :hidden:
    
     Introduction <docs/introduction>
+    AutoPilot Hardware <docs/common-autopilots>
     First Time Setup <docs/arduplane-setup>
     First Flight <docs/first-flight-landing-page>
     Flight Features <docs/flight-features>
@@ -107,7 +108,6 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
     Mission Planning <docs/common-mission-planning>
     Logs <docs/common-logs>
     Optional Hardware <docs/common-optional-hardware>
-    AutoPilot Hardware <docs/common-autopilots>
     Use-Cases and Applications <docs/common-use-cases-and-applications>
     Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>
