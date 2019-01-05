@@ -18,7 +18,7 @@ Some small flight controllers with very tightly packed components can suffer fro
 How to Use
 ----------
 
-- set :ref:`TCAL_ENABLE <TCAL_ENABLE>` to 2 (to learn and use calibration)
+- set :ref:`TCAL_ENABLED <TCAL_ENABLED>` to 2 (to learn and use calibration)
 - power down the board and let it cool for a few minutes
 - power on the board and leave it for about 10 minutes
 - learning will happen as the board heats up and while it is not moving
