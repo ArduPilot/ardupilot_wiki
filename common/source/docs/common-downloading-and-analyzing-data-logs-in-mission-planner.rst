@@ -67,13 +67,14 @@ QUADCOPTER or ROVER.
 
 Steps to review a log downloaded from the internet, or your vehicle
 -------------------------------------------------------------------
-For DataFlash logs, with a .bin extension:
-#. Download the log file. Note the place on your computer to which it is downloaded. (For example, it might be C:\Downloads)
+For DataFlash logs, with a .bin or .log extension:
+
+#. Download the log file. Note the place on your computer to which it is downloaded. (For example, it might be C:\\Downloads)
 #. Open Mission Planner
 #. Navigate to the “Flight Data” page (top left)
 #. Select the “Dataflash Logs” tab (mid-screen, left side)
 #. Select the “Review a Log” button.
-#. A standard Windows “select a file” box will let you go find the .bin file that you downloaded, at the place that you downloaded it. (Per the example above, it is in C:\Downloads) Choose that file.
+#. A standard Windows “select a file” box will let you go find the .bin file that you downloaded, at the place that you downloaded it. (Per the example above, it is in C:\\Downloads) Choose that file.
 #. After reading the log, a Manual Log Review window will be open, which allows you to plot data from the log for inspection. (see below)
 
 Reviewing the log data
