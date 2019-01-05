@@ -31,6 +31,7 @@ Table of Contents
    :titlesonly:
    
     Introduction <docs/gettit>
+    Autopilot Hardware Options <docs/common-autopilots>
     First Time Setup <docs/apmrover-setup>
     First Drive <docs/rover-first-drive>
     Advanced Configuration <docs/common-advanced-configuration>
@@ -41,7 +42,6 @@ Table of Contents
     Balance Bots <docs/balance_bot-home>
     Sailboats <docs/sailboat-home>
     Reference Frames <docs/reference-frames>
-    Autopilot Hardware Options <docs/common-autopilots>
     Use-Cases and Applications <docs/common-use-cases-and-applications>
     Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>
