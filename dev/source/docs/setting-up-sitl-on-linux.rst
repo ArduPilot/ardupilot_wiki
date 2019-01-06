@@ -110,7 +110,7 @@ simulator that is used as the core flight dynamics system for several
 well known flight simulation systems.
 
 In the past ArduPilot required a special version of JSBSim. As of
-Decemember 2018 that is no longer the case, and we can use the
+December 2018 that is no longer the case, and we can use the
 standard JSBSim releases.
 
 In the same directory (your home directory) run these commands:
