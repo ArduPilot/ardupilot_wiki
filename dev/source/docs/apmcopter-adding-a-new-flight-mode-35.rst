@@ -15,8 +15,8 @@ As a reference the diagram below provides a high level view of Copter's architec
     :width: 450px
 
 #. Create the #define for the new flight mode in
-   `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L88>`__.
-   and increase the NUM_MODES by 1.
+   `defines.h <https://github.com/ArduPilot/ardupilot/blob/Copter-3.5/ArduCopter/defines.h#L88>`__.
+   and increase the NUM_MODES by 1. Or add your mode to the enum control_mode_t (depend on you copter version)
 
    ::
 
@@ -42,9 +42,9 @@ As a reference the diagram below provides a high level view of Copter's architec
 
 #. Create a new control_<new flight mode> sketch based on a similar
    flight mode such as
-   `control_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_stabilize.cpp>`__
+   `control_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/Copter-3.5/ArduCopter/control_stabilize.cpp>`__
    or
-   `control_loiter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_loiter.cpp>`__. 
+   `control_loiter.cpp <https://github.com/ArduPilot/ardupilot/blob/Copter-3.5/ArduCopter/control_loiter.cpp>`__.
    This new file should have an ``_init()`` function and ``_run()``
    function.
 
@@ -93,7 +93,7 @@ As a reference the diagram below provides a high level view of Copter's architec
        }
 
 #. Add declarations in
-   `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h>`__
+   `Copter.h <https://github.com/ArduPilot/ardupilot/blob/Copter-3.5/ArduCopter/Copter.h>`__
    for the new ``_init()`` function and ``_run()`` functions:
 
    ::
@@ -101,7 +101,7 @@ As a reference the diagram below provides a high level view of Copter's architec
        bool newflightmode_init(bool ignore_checks);
        void newflightmode_run();
 
-#. Add a case for the new mode to the ``set_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L14>`__
+#. Add a case for the new mode to the ``set_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/Copter-3.5/ArduCopter/flight_mode.cpp#L12>`__
    to call the ``above _init()`` function.
 
    ::
@@ -133,7 +133,7 @@ As a reference the diagram below provides a high level view of Copter's architec
            }
        }
 
-#. Add a case for the new mode to the ``update_flight_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L132>`__
+#. Add a case for the new mode to the ``update_flight_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/Copter-3.5/ArduCopter/flight_mode.cpp#L172>`__
    to call the above ``_run()`` function.
 
    ::
@@ -157,7 +157,7 @@ As a reference the diagram below provides a high level view of Copter's architec
        }
 
 #. Add the string to print out the flight mode to the
-   ``print_flight_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/flight_mode.cpp#L312>`__.
+   ``print_flight_mode()`` function in `flight_mode.cpp <https://github.com/ArduPilot/ardupilot/blob/Copter-3.5/ArduCopter/flight_mode.cpp#L444>`__.
 
    ::
 
@@ -173,7 +173,7 @@ As a reference the diagram below provides a high level view of Copter's architec
                break;
 
 #. Add the new flight mode to the list of valid ``@Values`` for the
-   ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L300>`__.
+   ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/Copter-3.5/ArduCopter/Parameters.cpp#L306>`__.
 
    ::
 

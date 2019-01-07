@@ -11,7 +11,7 @@ Introduction
 ============
 
 Want a robust development environment for the APM code?  Try out Atmel
-Studio 6.2 or Microsoft Visual Studio with the \ `Visual Micro <http://www.visualmicro.com/>`__ plugin. You can edit, build and
+Studio 6.2 or Microsoft Visual Studio with the \ `Visual Micro <https://www.visualmicro.com/>`__ plugin. You can edit, build and
 upload the APM code using these tools. The builds and uploads are the
 same as with the ArduPilot Ardunio builds.
 
@@ -40,7 +40,7 @@ features:
    APM boards.
 -  All the files are shown in the solution panel, making it easy to
    open, browse or edit any file.
--  Take a look at the \ `Visual Micro <http://www.visualmicro.com/>`__ website for all the details.
+-  Take a look at the \ `Visual Micro <https://www.visualmicro.com/>`__ website for all the details.
 -  Visual Micro has a debug feature when used with standard Arduino
    sketches but the APM code has removed or modified much of the
    standard Arduino features like Serial.print() and the hardware Serial
@@ -62,7 +62,7 @@ get you started. Links to other wiki pages are provided where
 appropriate for more detail.  No detail is included for Visual Studio or
 Atmel Studio features. You will need to learn that on your own.
 
-The  `Visual Micro <http://www.visualmicro.com/>`__ website explains
+The  `Visual Micro <https://www.visualmicro.com/>`__ website explains
 how to install Visual Micro for Arduino and how to set up Atmel Studio
 or Visual Studio to work with Arduino sketches and boards. What is not
 clearly covered is how to add support for the APM boards. Once that
@@ -76,7 +76,7 @@ the key steps required:
       are :ref:`here <building-ardupilot-with-arduino-windows>`. For
       this example it is assumed that the installation is
       at C:\\ArduPilot-Arduino-1.0.3-windows.
-   -  You need `Atmel Studio 6.2 <http://www.atmel.com/tools/ATMELSTUDIO.aspx>`__ (free) or a
+   -  You need `Atmel Studio 6.2 <https://www.microchip.com/mplab/avr-support/atmel-studio-7>`__ (free) or a
       licensed full version of  Visual Studio Pro 2008, 2010 or 2012
       installed. Visual Micro does not work with the free Express
       versions of Visual Studio.  Visual Studio 2008 is used in this
@@ -88,21 +88,21 @@ the key steps required:
       Get the latest released code zip files "Plane x.x.x"
       `here <http://firmware.ardupilot.org/>`__ or use :ref:`Git Hub <where-to-get-the-code>` to
       create a clone of the current code. If you want a specific release
-      version go to the `diydrones/ardupilot <https://github.com/ArduPilot/ardupilot>`__ repository,
+      version go to the `ardupilot <https://github.com/ArduPilot/ardupilot>`__ repository,
       select the desired ardupilot branch, then click download zip.
 
--  Download and install Visual Micro from the \ `Visual Micro <http://www.visualmicro.com/>`__ website and compete the
-   `setup <http://www.visualmicro.com/post/2011/10/04/How-to-test-a-new-installation-of-Arduino-for-Visual-Studio.aspx>`__.
+-  Download and install Visual Micro from the \ `Visual Micro <https://www.visualmicro.com/>`__ website and compete the
+   `setup <https://www.visualmicro.com/post/2011/10/04/How-to-test-a-new-installation-of-Arduino-for-Visual-Studio.aspx>`__.
    Instructions are at the site.
 -  Test Visual Micro for Arduino using
-   these `instructions <http://www.visualmicro.com/post/2011/10/04/How-to-test-a-new-installation-of-Arduino-for-Visual-Studio.aspx>`__.
+   these `instructions <https://www.visualmicro.com/post/2011/10/04/How-to-test-a-new-installation-of-Arduino-for-Visual-Studio.aspx>`__.
    Get it working before you proceed.
 -  Download and install the APM board information.  This is a key
    requirement to build and upload the APM code.
 
-   -  Go to the \ `Apm - Installation Guide <http://www.visualmicro.com/post/2013/05/02/APM-Installation-Guide.aspx>`__ on
+   -  Go to the \ `Apm - Installation Guide <https://www.visualmicro.com/post/2013/05/02/APM-Installation-Guide.aspx>`__ on
       the Visual Micro Forum. Read the post, then download the
-      `boards.txt file <http://www.visualmicro.com/downloads/APM_Sketchbook_Hardware.zip>`__.
+      `boards.txt file <https://www.visualmicro.com/downloads/APM_Sketchbook_Hardware.zip>`__.
 
    -  Put the file  "boards.txt" into a folder "APM" within the folder
       "Arduino/hardware".  Regardless of where you Arduino IDE is
