@@ -3,6 +3,9 @@
 ================================================
 Building ArduPilot for BeagleBone Black on Linux
 ================================================
+.. warning::
+
+    This project is old and unmaintained, prefer `BBBMini project <http://bbbmini.com/>`__
 
 Get your BeagleBone running Debian
 ==================================
@@ -74,7 +77,7 @@ On Windows
 ----------
 
 Download Win32 disk imager from
-`here <http://sourceforge.net/projects/win32diskimager/>`__. Insert your
+`here <https://sourceforge.net/projects/win32diskimager/>`__. Insert your
 SD card, then start the application that you downloaded.
 
 Select the image that you downloaded and then press \ **Write**.
@@ -99,7 +102,7 @@ Power down the BBB and remove the SD card.
 
 Connect the BeagleBone Black to your machine using the USB cord that's
 provided with it. Depending on your OS, install the required
-`drivers <http://beagleboard.org/Getting%20Started#step2>`__.
+`drivers <http://beagleboard.org/getting-started#step2>`__.
 
 Now ssh into the BeagleBone Black by typing
 
@@ -117,13 +120,14 @@ The PixHawk Fire Cape
 
 In order to run APM in the BeagleBone black you'll need to use the right
 set of sensors. Most of these sensors are included in the PixHawk Fire
-cape (PXF), an open hardware board available from `Erle Robotics store <https://erlerobotics.com/blog/product/pixhawk-fire-cape/>`__.
+cape (PXF), an open hardware board available from `Erle Robotics store <https://erlerobotics.com/blog/product/pxfmini/>`__.
 
 Making the rt kernel
 ====================
 
 (taken from
-http://wiki.beyondlogic.org/index.php/BeagleBoneBlack_Building_Kernel)
+https://wiki.beyondlogic.org/index.php/BeagleBoneBlack_Building_Kernel
+)
 
 modified for the RT version, and to simplify.
 

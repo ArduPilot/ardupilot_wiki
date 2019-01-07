@@ -18,7 +18,7 @@ using the Arduino toolchain.
    installed at time of writing but you can no longer build APM2.x off the
    master branch (you will need to build off a supported release branch).
 
-   The last Copter firmware that can be built on APM 2.x `can be downloaded from here <http://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__.
+   The last Copter firmware that can be built on APM 2.x `can be downloaded from here <https://github.com/ArduPilot/ardupilot/archive/master-AVR.zip>`__.
 
    In addition to the above restrictions, this article covers:
 
@@ -30,7 +30,7 @@ Install Git-SCM
 ===============
 
 #. Download and run the install file from:
-   http://git-scm.com/download/win
+   https://git-scm.com/download/win
 #. Follow the screenshots below to make your selections during install.
 
    .. image:: ../images/git_setup_wizard_welcome.jpg
