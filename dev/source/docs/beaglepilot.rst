@@ -29,7 +29,7 @@ For now BeaglePilot is still in development phase being tested in the
 following devices:
 
 -  BeagleBone Black + PixHawk Fire Cape
--  `Erle Robot <https://erlerobot.com>`__
+-  `Erle Robot <https://erlerobotics.com>`__
 
 Communication
 =============
