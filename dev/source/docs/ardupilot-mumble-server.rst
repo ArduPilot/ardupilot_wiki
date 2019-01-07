@@ -4,7 +4,7 @@
 ArduPilot Mumble Server
 =======================
 
-The ArduPilot dev team uses a `mumble server <http://wiki.mumble.info/wiki/Main_Page>`__ for real-time voice chat.  We have a "General Discussion" channel for chatting about ArduPilot development at any time. How many developers are connected depends a lot on timezones.  Don't be shy about your English language ability, we have developers from all over the world.
+The ArduPilot dev team uses a `mumble server <https://wiki.mumble.info/wiki/Main_Page>`__ for real-time voice chat.  We have a "General Discussion" channel for chatting about ArduPilot development at any time. How many developers are connected depends a lot on timezones.  Don't be shy about your English language ability, we have developers from all over the world.
 
 .. note::
 
@@ -14,7 +14,7 @@ The ArduPilot dev team uses a `mumble server <http://wiki.mumble.info/wiki/Main_
 Installing and Connecting
 -------------------------
 
--  Download the software from http://mumble.sf.net (look for **Download Mumble** and pick the "Stable Release" for your operating system)
+-  Download the software from https://wiki.mumble.info/wiki/Main_Page (look for **Download Mumble** and pick the "Stable Release" for your operating system)
 -  Install and open mumble
 -  from the Server menu select Connect
 -  server address: mumble.ardupilot.org

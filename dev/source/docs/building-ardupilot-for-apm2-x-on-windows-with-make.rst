@@ -20,7 +20,7 @@ This article shows how to build ArduPilot for APM2.x on Windows with *Make*.
    supported release branch, or for the keen developer, from the AVR-master branch master-AVR and the tags from there.  see: https://github.com/ArduPilot/ardupilot/tree/master-AVR ).
 
    The last Copter firmware that can be built on APM 2.x 
-   `can be downloaded from here <http://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__.
+   `can be downloaded from here <https://github.com/ArduPilot/ardupilot/archive/master-AVR.zip>`__.
 
 Overview
 ========
@@ -40,7 +40,7 @@ have been tested on Windows 10 to build the ArduCopter-3.2.1 branch.
 Build instructions
 ==================
 
-#. Install `GitHub for Windows <http://windows.github.com/>`__
+#. Install `GitHub for Windows <https://desktop.github.com/>`__
 #. Ensure your github settings are set to leave line endings untouched.
 
    -  The "Git Shell (or Bash)" terminal was also installed when you
