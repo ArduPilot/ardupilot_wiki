@@ -4,6 +4,10 @@
 BeaglePilot Project
 ===================
 
+.. warning::
+
+    This project is old and unmaintained, prefer `BBBMini project <http://bbbmini.com/>`__
+
 The BeaglePilot Project aims to create the first Linux-based autopilot
 for flying robots using the BeagleBone and the BeagleBone Black as the
 "hardware blueprint".
@@ -25,7 +29,7 @@ For now BeaglePilot is still in development phase being tested in the
 following devices:
 
 -  BeagleBone Black + PixHawk Fire Cape
--  `Erle Robot <http://erlerobot.com>`__
+-  `Erle Robot <https://erlerobot.com>`__
 
 Communication
 =============
@@ -33,8 +37,8 @@ Communication
 -  IRC Freenode #beaglepilot
    (`logs <http://logs.nslu2-linux.org/livelogs/beaglepilot/>`__)
 -  `BeaglePilot mailing list <https://groups.google.com/forum/#!forum/beaglepilot>`__
--  `eLinux Wiki <http://elinux.org/BeagleBoard/GSoC/BeaglePilot>`__
--  `BeagleBoard project page <http://beagleboard.org/project/BeaglePilot/>`__
+-  `eLinux Wiki <https://elinux.org/BeagleBoard/GSoC/BeaglePilot>`__
+-  `BeagleBoard project page <https://beagleboard.org/p/v-mayoralv/beaglepilot-9de5d9>`__
 -  :ref:`ArduPilot Wiki <beaglepilot>`
 -  `GitHub repository <https://github.com/beaglepilot>`__
 
