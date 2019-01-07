@@ -13,7 +13,7 @@ About Flymaple
 ==============
 
 -  The APMPilot firmware has been ported to run on
-   `Flymaple <http://www.dfrobot.com/wiki/index.php?title=Flymaple_V1.1(SKU:DFR0188)>`__
+   `Flymaple <https://www.dfrobot.com/wiki/index.php/Flymaple_V1.1(SKU:DFR0188)>`__
 -  Flymaple is an inexpensive board based on a 75MHz ARM Cortex-M3
    processor.
 -  It includes 10DOF sensors (accelerometer, gyroscope, magnetometer and

@@ -11,7 +11,7 @@ Mission Planner (MP) is an open source ground station developed in C#
 primarily for use on Windows computers (although it can be run on Mac
 using mono).  This is the most commonly used ground station as it
 provides the most complete functionality for vehicle setup as well as
-pre-fligth mission planner, in-flight monitoring and post flight log
+pre-flight mission planner, in-flight monitoring and post flight log
 file analysis.
 
 This page provides instructions on how you can build the Mission Planner
@@ -52,11 +52,11 @@ Here is what you will need.
 Install Visual Studio and DirectX and Python
 ============================================
 
-The first step is to get `Microsoft Visual Studio Community 2017 <http://www.visualstudio.com/>`__\ installed and working in your
+The first step is to get `Microsoft Visual Studio Community 2017 <https://visualstudio.microsoft.com/>`__\ installed and working in your
 Windows system.
 
 -  Download and install MS Visual Studio 2017 Community Edition which
-   can be found `here <http://www.visualstudio.com/>`__.
+   can be found `here <https://visualstudio.microsoft.com/>`__.
 -  During the install Process, you may be prompted to install optional "workloads", at this stage, you may select: ".NET desktop development" ( or you may install it later... such as when you open the .sln for the first time, you'll be prompted to do it).
 -  Reboot your PC
 -  Start Visual Studio from the Start Menu

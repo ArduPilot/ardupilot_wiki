@@ -96,7 +96,7 @@ The flight controller (i.e. Pixhawk or similar) should be configured to communic
 Connecting with SSH
 ===================
 
-You can connect to the companion computer with a terminal emulator such as `Putty <http://www.putty.org/>`__ by connecting to the board's wifi access point and then ssh to 10.0.1.128 username: apsync, password: apsync
+You can connect to the companion computer with a terminal emulator such as `Putty <https://www.putty.org/>`__ by connecting to the board's wifi access point and then ssh to 10.0.1.128 username: apsync, password: apsync
 
 How flight controller data is routed to various programs
 ========================================================
