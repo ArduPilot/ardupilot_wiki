@@ -5,7 +5,7 @@ Building for Bebop 2
 ====================
 
 These instructions explain how to use ArduPilot for the
-`Bebop2 <http://www.parrot.com/usa/products/bebop2/>`__ on a Linux
+`Bebop2 <https://www.parrot.com/us/drones/parrot-bebop-2?ref=#parrot-bebop-2-details/>`__ on a Linux
 machine. The Bebop 2 is based on the same architecture as the Bebop with
 a few noticeable changes, not the least being a much better quality GPS
 (UBlox GPS with a bigger antenna).

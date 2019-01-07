@@ -5,7 +5,7 @@ Building ArduPilot with Atmel Studio or Visual Studio &amp; Visual Micro
 ========================================================================
 
 This tutorial provides instructions for how to set up and build AMP
-using Atmel Studio 6.2 or Microsoft Visual Studio with the `Visual Micro <http://www.visualmicro.com/>`__ plugin.
+using Atmel Studio 6.2 or Microsoft Visual Studio with the `Visual Micro <https://www.visualmicro.com/>`__ plugin.
 
 Introduction
 ============
@@ -266,7 +266,7 @@ advantage of the Atmel Studio or Visual Studio and Visual Micro IDE.
 
 You just need to do the following:
 
--  Download the version of `ArduPilot Arduino that supports the 2.x.x revisions <https://code.google.com/p/ardupilot-mega/downloads/detail?name=ArduPilot-Arduino-1.0.3-windows.zip&can=2&q=>`__.
+-  Download the version of `ArduPilot Arduino that supports the 2.x.x revisions <https://code.google.com/archive/p/ardupilot-mega/downloads>`__.
    Don't confuse this with the current version. They have the same name
    but are different.
 -  Install the ArduPilot Arduino in a separate folder, and add the
