@@ -133,6 +133,10 @@ model than the default Rascal110 by specifying the model name using the
 ::
 
     sim_vehicle.py -f jsbsim:MyModel --console --map
+    
+    replace MyModel with Rascal It is in the *Tools/autotest/aircraft/** directory.
+    
+    sim_vehicle.py -f jsbsim:Rascal --console --map
 
 the model should be in the **Tools/autotest/aircraft/** directory.
 
