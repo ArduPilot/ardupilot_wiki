@@ -35,3 +35,8 @@ and landing:
     wp load ../Tools/autotest/ArduPlane-Missions/KSFO-VTOL.txt
 
 As usual you can edit the mission using "module load misseditor"
+
+Right click on the map mission -> editor read wp change one move selection write waypoints.
+
+mode auto
+arm throttle
