@@ -4,8 +4,7 @@
 Adding a new MAVLink Message
 ============================
 
-Data and commands are passed between the ground station (i.e mission
-planner, Droid Planner, etc) using the `MAVLink protocol <https://en.wikipedia.org/wiki/MAVLink>`__ over a serial
+Data and commands are passed between the ground station (i.e Mission Planner, QGroundControl, MAVProxy etc) using the `MAVLink protocol <https://mavlink.io/en/>`__ over a serial
 interface. This page provides some high level advice for adding a new
 MAVLink message.
 
@@ -43,17 +42,16 @@ or
 `ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml>`__
 file in the mavlink submodule.
 
-If this command will hopefully be added to the MAVLink protocol then it
+If this command is generally useful, and will hopefully be added to the MAVLink protocol, then it
 should be added to the
 ../modules/mavlink/message_definitions/v1.0/common.xml
-file. If it is only for your personal use or only for use with Copter,
-Plane, Rover then it should be added to the ardupilotmega.xml file.
+file. If it is only for your personal use or only applicable to ArduPilot then it should be added to the ardupilotmega.xml file.
 
-**Step #4:** Starting in Jan 2016 the source code is automatically generated when you compile the project but before that date you would cd to the ardupilot directory and then run this command to manually generate it.
+**Step #4:** Generate MAVLink source.  The source code is automatically generated when you compile the project, but for testing and debugging it may be useful cd to the ardupilot directory and then run this command to manually generate it.
 
 ``./libraries/GCS_MAVLink/generate.sh``
 
-**Step #5:** Add functions to the main vehicle code to handle sending or receiving the command to/from the ground station. A compile will be needed (ie. make px4-v2) to generate the mavlink packet code so make sure to do that after editing the xml file. The mavlink generation happens first so it doesn't matter if the project compilation is successful or notdue to other source code changes.
+**Step #5:** Add functions to the main vehicle code to handle sending or receiving the command to/from the ground station. A compile will be needed (ie. ./waf copter) to generate the mavlink packet code so make sure to do that after editing the xml file. The mavlink generation happens first so it doesn't matter if the project compilation is successful or notdue to other source code changes.
 
 The top level of this code will most likely be in the vehicle's
 `GCS_MAVLink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp>`__
