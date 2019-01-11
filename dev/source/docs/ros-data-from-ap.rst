@@ -26,7 +26,7 @@ Run the following command to view the accelerometer and gyro data and update rat
 
 ::
 
-    rostopic echo /mavros/imu/dadtda  <-- to see the data itself
+    rostopic echo /mavros/imu/data  <-- to see the data itself
     rostopic hz /mavros/imu/data      <-- to view the update rate
 
 mavros can be used to send a command to ArduPilot to change the rate of the data as shown below
