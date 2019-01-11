@@ -31,14 +31,14 @@ following parameters (this can be done using the *Mission Planner*
 **Config/Tuning \| Full Parameter List** page):
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
--  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
+-  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud) for newer sensors, 19 (19200 baud) for sensors manufactured before mid 2018
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 8 (LightWareSerial)
 -  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
 -  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **9500**.  *This is the distance in centimeters that the rangefinder can reliably read.*
 -  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
-If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 19200
+If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to 115 (115200 baud) or 19 (19200 baud)
 
 I2C connection
 --------------
