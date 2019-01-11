@@ -698,29 +698,19 @@ but the most common are:
 +------------+----------------------------------------------------------------------------------------------------+
 | FIELD      | DESCRIPTION                                                                                        |
 +------------+----------------------------------------------------------------------------------------------------+
-| RenCnt     | DCM renormalization count - a high number may indicate problems in DCM (extremely rare)            |
-+------------+----------------------------------------------------------------------------------------------------+
-| RenBlw     | DCM renormalization blow-up count - how many times DCM had to completely rebuild the DCM matrix    |
-|            | since the last PM. Normally innocuous but a number that constantly grows may be an indication      |
-|            | that DCM is having troubles calculating the attitude (extremely rare)                              |
-+------------+----------------------------------------------------------------------------------------------------+
-| FixCnt     | The number of GPS fixes received since the last PM message was received                            |
-|            | (it's hard to imagine how this would be useful)                                                    |
-+------------+----------------------------------------------------------------------------------------------------+
-| NLon       | Number of long running main loops                                                                  |
-|            | (i.e. loops that take more than 5% longer than the 10ms they should)                               |
+| NLon       | Number of long running main loops (i.e. loops that take more than 20% longer                       |
+|            | than they should according to SCHED_LOOP_RATE - ex. 3ms for 400Hz rate)                            |
 +------------+----------------------------------------------------------------------------------------------------+
 | NLoop      | The total number of loops since the last PM message was displayed. This allows you to calculate    |
 |            | the percentage of slow running loops (which should never be higher than 15%). Note that the        |
-|            | value will depend on the autopilot clock speed.                                                    |
+|            | value will depend on the autopilot clock speed                                                     |
 +------------+----------------------------------------------------------------------------------------------------+
-| MaxT       | The maximum time that any loop took since the last PM message. This should be close to 10,000 but  |
-|            | will be up to 6,000,000 during the interval where the motors are armed                             |
+| MaxT       | The maximum time that any loop took since the last PM message. This shouldn't exceed 120% of       |
+|            | scheduler loop period, but will be much higher during the interval where the motors are armed      |
 +------------+----------------------------------------------------------------------------------------------------+
-| PMT        | A number that increments each time a heart beat is received from the ground station                |
+| Mem        | Available memory, in bytes                                                                         |
 +------------+----------------------------------------------------------------------------------------------------+
-| I2CErr     | The number of I2C errors since the last PM message. Any I2C errors may indicate a problem on the   |
-|            | I2C bus which may in turn slow down the main loop and cause performance problems.                  |
+| Load       | Percentage (times 10) of the scheduler loop period when CPU is used                                |
 +------------+----------------------------------------------------------------------------------------------------+
 
 
