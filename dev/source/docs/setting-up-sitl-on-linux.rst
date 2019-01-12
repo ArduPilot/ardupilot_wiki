@@ -117,7 +117,7 @@ In the same directory (your home directory) run these commands:
 
 ::
 
-    git clone git://jsbsim.git.sourceforge.net/gitroot/jsbsim/jsbsim
+    git clone git://github.com/JSBSim-Team/jsbsim.git
     sudo apt-get install cmake
     cd jsbsim
     mkdir build
