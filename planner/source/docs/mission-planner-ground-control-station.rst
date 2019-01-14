@@ -23,7 +23,7 @@ A more detailed view of the HUD (with legend) is given below.
 #. Crosstrack error and turn rate (T)
 #. Heading direction
 #. Bank angle
-#. Wireless telemetry connection (% bad packets)
+#. Telemetry connection link quality (averaged percentage of good packets)
 #. GPS time
 #. Altitude ( blue bar is rate of climb )
 #. Air speed
