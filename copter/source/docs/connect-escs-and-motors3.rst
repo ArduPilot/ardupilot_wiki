@@ -34,40 +34,40 @@ The propeller direction is shown in green (clockwise, CW) or blue (counter-clock
 Quadcopter
 ----------
 
-.. image:: ../images/motororder-quad-x-2d.jpg
-    :target: ../_images/motororder-quad-x-2d.jpg
-    :width: 300px
+.. image:: ../images/motororder-quad-x-2d.png
+    :target: ../_images/motororder-quad-x-2d.png
+    :scale: 45%
 
-.. image:: ../images/motororder-quad-plus-2d.jpg
-    :target: ../_images/motororder-quad-plus-2d.jpg
-    :width: 300px
+.. image:: ../images/motororder-quad-plus-2d.png
+    :target: ../_images/motororder-quad-plus-2d.png
+    :scale: 45%
 
-.. image:: ../images/motororder-quad-v-2d.jpg
-    :target: ../_images/motororder-quad-v-2d.jpg
-    :width: 300px
+.. image:: ../images/motororder-quad-v-2d.png
+    :target: ../_images/motororder-quad-v-2d.png
+    :scale: 45%
 
-.. image:: ../images/motororder-quad-h-2d.jpg
-    :target: ../_images/motororder-quad-h-2d.jpg
-    :width: 300px
+.. image:: ../images/motororder-quad-h-2d.png
+    :target: ../_images/motororder-quad-h-2d.png
+    :scale: 45%
 
-.. image:: ../images/motororder-quad-vtail-2d.jpg
-    :target: ../_images/motororder-quad-vtail-2d.jpg
-    :width: 300px
+.. image:: ../images/motororder-quad-vtail-2d.png
+    :target: ../_images/motororder-quad-vtail-2d.png
+    :scale: 40%
 
-.. image:: ../images/motororder-quad-atail-2d.jpg
-    :target: ../_images/motororder-quad-atail-2d.jpg
-    :width: 300px
+.. image:: ../images/motororder-quad-atail-2d.png
+    :target: ../_images/motororder-quad-atail-2d.png
+    :scale: 40%
 
 Tricopter
 ---------
 
-.. image:: ../images/motororder-tri-a.png
-    :target: ../_images/motororder-tri-a.png
-    :width: 300px
+.. image:: ../images/motororder-tri-a-2d.png
+    :target: ../_images/motororder-tri-a-2d.png
+    :scale: 45%
 
-.. image:: ../images/motororder-tri-b.png
-    :target: ../_images/motororder-tri-b.png
-    :width: 300px
+.. image:: ../images/motororder-tri-b-2d.png
+    :target: ../_images/motororder-tri-b-2d.png
+    :scale: 45%
 
 .. note::
 
@@ -79,77 +79,77 @@ Tricopter
 Hexacopter
 ----------
 
-.. image:: ../images/motororder-hexa-x.png
-    :target: ../_images/motororder-hexa-x.png
-    :width: 300px
+.. image:: ../images/motororder-hexa-x-2d.png
+    :target: ../_images/motororder-hexa-x-2d.png
+    :scale: 45%
 
-.. image:: ../images/motororder-hexa-plus-2d.jpg
-    :target: ../_images/motororder-hexa-plus-2d.jpg
-    :width: 300px
+.. image:: ../images/motororder-hexa-plus-2d.png
+    :target: ../_images/motororder-hexa-plus-2d.png
+    :scale: 45%
 
 Y6
 --
 
-.. image:: ../images/motororder-y6a.png
-    :target: ../_images/motororder-y6a.png
-    :width: 300px
+.. image:: ../images/motororder-y6a-2d.png
+    :target: ../_images/motororder-y6a-2d.png
+    :scale: 40%
 
-.. image:: ../images/motororder-y6b.png
-    :target: ../_images/motororder-y6b.png
-    :width: 300px
+.. image:: ../images/motororder-y6b-2d.png
+    :target: ../_images/motororder-y6b-2d.png
+    :scale: 40%
 
-.. image:: ../images/motororder-y6f.png
-    :target: ../_images/motororder-y6f.png
-    :width: 300px
+.. image:: ../images/motororder-y6f-2d.png
+    :target: ../_images/motororder-y6f-2d.png
+    :scale: 40%
 
 Octocopter
 ----------
 
-.. image:: ../images/motororder-octo-x.png
-    :target: ../_images/motororder-octo-x.png
-    :width: 300px
+.. image:: ../images/motororder-octo-x-2d.png
+    :target: ../_images/motororder-octo-x-2d.png
+    :scale: 45%
 
-.. image:: ../images/motororder-octo-plus.png
-    :target: ../_images/motororder-octo-plus.png
-    :width: 300px
+.. image:: ../images/motororder-octo-plus-2d.png
+    :target: ../_images/motororder-octo-plus-2d.png
+    :scale: 45%
 
-.. image:: ../images/motororder-octo-v.png
-    :target: ../_images/motororder-octo-v.png
-    :width: 300px
+.. image:: ../images/motororder-octo-v-2d.png
+    :target: ../_images/motororder-octo-v-2d.png
+    :scale: 45%
 
-.. image:: ../images/motororder-octo-h.png
-    :target: ../_images/motororder-octo-h.png
-    :width: 300px
+.. image:: ../images/motororder-octo-h-2d.png
+    :target: ../_images/motororder-octo-h-2d.png
+    :scale: 45%
 
 OctoQuad
 --------
 
-.. image:: ../images/motororder-octoquad-x-2d.jpg
-    :target: ../_images/motororder-octoquad-x.-2d.jpg
-    :width: 300px
+.. image:: ../images/motororder-octoquad-x-2d.png
+    :target: ../_images/motororder-octoquad-x-2d.png
+    :scale: 40%
 
-.. image:: ../images/motororder-octoquad-plus.png
-    :target: ../_images/motororder-octoquad-plus.png
-    :width: 300px
+.. image:: ../images/motororder-octoquad-plus-2d.png
+    :target: ../_images/motororder-octoquad-plus-2d.png
+    :scale: 40%
 
-.. image:: ../images/motororder-octoquad-v.png
-    :target: ../_images/motororder-octoquad-v.png
-    :width: 300px
+.. image:: ../images/motororder-octoquad-v-2d.png
+    :target: ../_images/motororder-octoquad-v-2d.png
+    :scale: 40%
 
-.. image:: ../images/motororder-octoquad-h.png
-    :target: ../_images/motororder-octoquad-h.png
-    :width: 300px
+.. image:: ../images/motororder-octoquad-h-2d.png
+    :target: ../_images/motororder-octoquad-h-2d.png
+    :scale: 40%
 
 DodecaHexacopter
 ----------------
 
-.. image:: ../images/motororder-dodecahexa-x.png
-    :target: ../_images/motororder-dodecahexa-x.png
-    :width: 300px
+.. image:: ../images/motororder-dodecahexa-x-2d.png
+    :target: ../_images/motororder-dodecahexa-x-2d.png
+    :scale: 40%
 
-.. image:: ../images/motororder-dodecahexa-plus.png
-    :target: ../_images/motororder-dodecahexa-plus.png
-    :width: 300px
+.. image:: ../images/motororder-dodecahexa-plus-2d.png
+    :target: ../_images/motororder-dodecahexa-plus-2d.png
+    :scale: 40%
 
 .. _connect-escs-and-motors_attach_propellers:
 
