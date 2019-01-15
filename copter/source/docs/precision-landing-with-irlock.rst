@@ -73,10 +73,12 @@ various mounting locations.
 Setup through Mission Planner
 =============================
 
-Set the following parameters through the Mission Planner (or other GCS)
-to enable the precision landing feature and then Reboot the flight controller.
+Set the following parameters through the Mission Planner (or other GCS) to enable the precision landing feature, and then Reboot the flight controller.
 
--  :ref:`PLND_ENABLED <PLND_ENABLED>` = 1
+-  :ref:`PLND_ENABLED <PLND_ENABLED>` = 1 or 2
+
+   - 1 (Enabled Always Land): Use precision landing if beacon available. Otherwise land immediately using normal landing process.
+   - 2 (Enabled Strict): Use precision landing, searching for beacon if not available. Land normally if beacon not found after search.
 -  :ref:`PLND_TYPE <PLND_TYPE>` = 2
 
 To enable Precision Loiter, an :ref:`Auxiliary Function Switch <channel-7-and-8-options>` must be set to "Precision Loiter":
