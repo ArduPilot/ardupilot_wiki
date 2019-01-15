@@ -5,7 +5,7 @@ Barometer (external)
 
 .. warning::
 
-   Support for external barometers was released with Copter-3.6.  The instructions below have been verified for the Drotek MS5611 barometer but the Adafruit BMP280 has not been verified to work.
+   Support for external barometers was released with Copter-3.6.  The instructions below have been verified for the Drotek MS5611 and BMP280 types.
 
 .. image:: ../../../images/baro-top-image.png
     :width: 450px
@@ -15,6 +15,10 @@ Most flight controllers include a barometer directly on the flight controller bu
 .. note::
 
    Copter users can partially reduce the effect of air pressure disurbances by enabling :ref:`Ground Effect Compensation <Copter:ground-effect-compensation>`
+
+.. tip::
+
+   Besides providing pressure readings for altitude estimation, an additional barometer can be used for monitoring the environmental or an internal component's temperature within a typical range of -40 - +85°C.
 
 Where to Buy
 ------------
@@ -47,10 +51,13 @@ Testing
     :target: ../_images/baro-testing.png
     :width: 450px
 
-Real-time pressure and temperature from the barometer are sent to the ground station.  If using Mission Planner they will be visible (`once this issue is resolved <https://github.com/ArduPilot/MissionPlanner/issues/1939>`__) on the Flight Data >> Status tab, look for "press_abs2" and "press_temp2".
+Real-time pressure and temperature from the barometer are sent to the ground station.  If using Mission Planner they are visible on the Flight Data >> Status tab, look for "press_abs2" and "press_temp2".
 
 Mission Planner's MAVLink Inspector can also be used to view the data.  From the Flight Data screen press Ctrl-F, then push the "MAVLink In" button and then expand the view and look for SCALED_PRESSURE2.
 
 .. image:: ../../../images/baro-testing-with-mavlink-inspector.png
     :target: ../_images/baro-testing-with-mavlink-inspector.png
     :width: 450px
+
+.. tip::
+   If using ArduPilot onboard OSD, the secondary barometer's temperature reading can be displayed using the OSDn_BTEMP panel.
