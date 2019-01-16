@@ -164,7 +164,7 @@ Commands supported by Copter
 ============================
 
 This list of commands was inferred from the command handler in
-`/ArduCopter/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/commands_logic.cpp#L49>`__. 
+`/ArduCopter/mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp#L388>`__. 
 
 :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
 
@@ -289,8 +289,6 @@ only)
 :ref:`MAV_CMD_NAV_ALTITUDE_WAIT <mav_cmd_nav_altitude_wait>`
 
 :ref:`MAV_CMD_NAV_LOITER_TO_ALT <mav_cmd_nav_loiter_to_alt>`
-
-:ref:`MAV_CMD_CONDITION_CHANGE_ALT <mav_cmd_condition_change_alt>`
 
 :ref:`MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>`
 
@@ -2320,21 +2318,6 @@ After reaching a waypoint, delay the execution of the next conditional
 
 In the example above, Command #4 (``DO_SET_ROI``) is delayed so that it
 starts 5 seconds after the vehicle has passed Waypoint #2.
-
-.. _mav_cmd_condition_change_alt:
-
-MAV_CMD_CONDITION_CHANGE_ALT
-----------------------------
-
-Supported by: Copter, Plane (not Rover).
-
-Ascend/descend at a specified rate to a given altitude (will override
-the value used in the following Waypoint). Any "_DO_" commands
-associated with the waypoint will be delayed until the desired altitude
-is reached.
-
-#HW TODO / Questions: Is this the same for plane and copter (confirm).
-What is the MP value for param 1 (ascent/descent rate)
 
 **Command parameters**
 
