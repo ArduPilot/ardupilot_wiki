@@ -17,8 +17,8 @@ know who to contact (see :ref:`Contact Us <common-contact-us>` for a list of way
 Hardware & OS support (Tridge / Sid / TomP)
 -------------------------------------------
 
-- ChibiOS support all existing flight boards and features (`ChibiOS video <https://www.youtube.com/watch?v=y2KCB0a3xMg>`_)
-- port ArduPilot to a wide range of F4 and F7 based flight boards, including boards with integrated OSD and boards in small RTF racing copters
+- ChibiOS support all existing flight boards and features (`ChibiOS video <https://www.youtube.com/watch?v=y2KCB0a3xMg>`_) -- **COMPLETE!**
+- port ArduPilot to a wide range of F4 and F7 based flight boards, including boards with integrated OSD and boards in small RTF racing copters -- **COMPLETE!**
 - software support for new CAN hardware
 
 Scripting (MichaelDB / Tridge)
@@ -61,7 +61,7 @@ Copter (Randy / Leonard / Tridge)
 - Flight Mode Improvements
 
   - 4kHz+ loop rate PIDs
-  - follow mode (`follow mode video <https://www.youtube.com/watch?v=uiJURjgP460>`_)
+  - follow mode (`follow mode video <https://www.youtube.com/watch?v=uiJURjgP460>`_) -- **COMPLETE!**
   - add spool state handling
   - Stand-By mode
 
@@ -100,9 +100,9 @@ Copter (Randy / Leonard / Tridge)
 Rover (Randy / Grant)
 ---------------------
 
-- support balance bots
-- pivot turn improvements
-- active loiter / boat thruster
+- support balance bots -- **COMPLETE!**
+- pivot turn improvements -- **COMPLETE!**
+- active loiter / boat thruster -- **COMPLETE!**
 - backaway from objects
 
 APSync (Randy / PeterB)
@@ -133,7 +133,7 @@ Organisational (Randy / Tridge)
 -------------------------------
 
 - find Wiki maintainer
-- find Antenna Tracker maintainer
+- find Antenna Tracker maintainer -- **COMPLETE!**
 - find Trad Heli maintainer -- **COMPLETE!**
 - increase develop team capacity by reducing barriers to entry through documentation and tools
 - improve developer funding by clarifying roadmap and help companies find developer support
