@@ -23,10 +23,6 @@ For movement, Plane uses:
 message encoded with the "current" parameter set to "2" to indicate that
 it is a guided mode "goto" message.
 
-:ref:`MAV_CMD_CONDITION_CHANGE_ALT <plane:mav_cmd_condition_change_alt>`
-message encoded with the "current" parameter set to "3" to indicate that
-it is a guided mode "altitude change" message.
-
 MAV_CMDs
 =========
 
