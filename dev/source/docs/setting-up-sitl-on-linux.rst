@@ -113,18 +113,22 @@ In the past ArduPilot required a special version of JSBSim. As of
 December 2018 that is no longer the case, and we can use the
 standard JSBSim releases.
 
+In order to build JSBSIM, you need Cmake, install it with :
+
+::
+
+    sudo apt-get install cmake
+
 In the same directory (your home directory) run these commands:
 
 ::
 
     git clone git://github.com/JSBSim-Team/jsbsim.git
-    sudo apt-get install cmake
     cd jsbsim
     mkdir build
     cd build
-    cmake ..
-    make
-    sudo make install
+    cmake -DCMAKE_CXX_FLAGS_RELEASE="-O3 -march=native -mtune=native" -DCMAKE_C_FLAGS_RELEASE="-O3 -march=native -mtune=native" -DCMAKE_BUILD_TYPE=Release ..
+    make -j2
 
 If using the JSBSim plane simulator you can specify a different JSBSim
 model than the default Rascal110 by specifying the model name using the
@@ -132,7 +136,7 @@ model than the default Rascal110 by specifying the model name using the
 
 ::
 
-    sim_vehicle.py -f jsbsim:MyModel --console --map
+    sim_vehicle.py -v ArduPlane -f jsbsim:MyModel --console --map
 
 the model should be in the **Tools/autotest/aircraft/** directory.
 
