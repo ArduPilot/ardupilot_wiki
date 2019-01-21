@@ -119,6 +119,11 @@ In order to build JSBSIM, you need Cmake, install it with :
 
     sudo apt-get install cmake
 
+SCIPY install for requirements numpy
+python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+
+
 In the same directory (your home directory) run these commands:
 
 ::
