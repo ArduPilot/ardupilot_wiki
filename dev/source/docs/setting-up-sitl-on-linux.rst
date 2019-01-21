@@ -119,6 +119,13 @@ In order to build JSBSIM, you need Cmake, install it with :
 
     sudo apt-get install cmake
 
+pypy cylon is needed
+Install pypy
+Installing pypy package on Ubuntu 16.04 (Xenial Xerus) is as easy as running the following command on terminal:
+
+sudo apt-get update
+sudo apt-get install pypy
+
 In the same directory (your home directory) run these commands:
 
 ::
