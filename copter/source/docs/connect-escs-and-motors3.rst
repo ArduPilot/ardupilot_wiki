@@ -36,38 +36,38 @@ Quadcopter
 
 .. image:: ../images/motororder-quad-x-2d.png
     :target: ../_images/motororder-quad-x-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. image:: ../images/motororder-quad-plus-2d.png
     :target: ../_images/motororder-quad-plus-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. image:: ../images/motororder-quad-v-2d.png
     :target: ../_images/motororder-quad-v-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. image:: ../images/motororder-quad-h-2d.png
     :target: ../_images/motororder-quad-h-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. image:: ../images/motororder-quad-vtail-2d.png
     :target: ../_images/motororder-quad-vtail-2d.png
-    :scale: 40%
+    :scale: 35%
 
 .. image:: ../images/motororder-quad-atail-2d.png
     :target: ../_images/motororder-quad-atail-2d.png
-    :scale: 40%
+    :scale: 35%
 
 Tricopter
 ---------
 
 .. image:: ../images/motororder-tri-a-2d.png
     :target: ../_images/motororder-tri-a-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. image:: ../images/motororder-tri-b-2d.png
     :target: ../_images/motororder-tri-b-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. note::
 
@@ -81,92 +81,83 @@ Hexacopter
 
 .. image:: ../images/motororder-hexa-x-2d.png
     :target: ../_images/motororder-hexa-x-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. image:: ../images/motororder-hexa-plus-2d.png
     :target: ../_images/motororder-hexa-plus-2d.png
-    :scale: 45%
+    :scale: 40%
 
 Y6
 --
 
 .. image:: ../images/motororder-y6a-2d.png
     :target: ../_images/motororder-y6a-2d.png
-    :scale: 40%
+    :scale: 35%
 
 .. image:: ../images/motororder-y6b-2d.png
     :target: ../_images/motororder-y6b-2d.png
-    :scale: 40%
+    :scale: 35%
 
 .. image:: ../images/motororder-y6f-2d.png
     :target: ../_images/motororder-y6f-2d.png
-    :scale: 40%
+    :scale: 35%
 
 Octocopter
 ----------
 
 .. image:: ../images/motororder-octo-x-2d.png
     :target: ../_images/motororder-octo-x-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. image:: ../images/motororder-octo-plus-2d.png
     :target: ../_images/motororder-octo-plus-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. image:: ../images/motororder-octo-v-2d.png
     :target: ../_images/motororder-octo-v-2d.png
-    :scale: 45%
+    :scale: 40%
 
 .. image:: ../images/motororder-octo-h-2d.png
     :target: ../_images/motororder-octo-h-2d.png
-    :scale: 45%
+    :scale: 40%
 
 OctoQuad
 --------
 
 .. image:: ../images/motororder-octoquad-x-2d.png
     :target: ../_images/motororder-octoquad-x-2d.png
-    :scale: 40%
+    :scale: 35%
 
 .. image:: ../images/motororder-octoquad-plus-2d.png
     :target: ../_images/motororder-octoquad-plus-2d.png
-    :scale: 40%
+    :scale: 35%
 
 .. image:: ../images/motororder-octoquad-v-2d.png
     :target: ../_images/motororder-octoquad-v-2d.png
-    :scale: 40%
+    :scale: 35%
 
 .. image:: ../images/motororder-octoquad-h-2d.png
     :target: ../_images/motororder-octoquad-h-2d.png
-    :scale: 40%
+    :scale: 35%
 
 DodecaHexacopter
 ----------------
 
 .. image:: ../images/motororder-dodecahexa-x-2d.png
     :target: ../_images/motororder-dodecahexa-x-2d.png
-    :scale: 40%
+    :scale: 35%
 
 .. image:: ../images/motororder-dodecahexa-plus-2d.png
     :target: ../_images/motororder-dodecahexa-plus-2d.png
-    :scale: 40%
+    :scale: 35%
 
 .. _connect-escs-and-motors_attach_propellers:
 
 Recognizing clockwise and counterclockwise propellers
 -----------------------------------------------------
 
-The diagrams above show two types of propellers: clockwise (called
-pushers) and counterclockwise (called pullers). Pusher propellers are
-often marked with a P. However not all propellers are marked and both
-types are often available in either rotational direction. Therefore, it
-is most reliable to recognize the correct propeller type by its shape as
-shown below. Note that the propellers below have the edge with the
-shallow consistent curve at the leading edge in direction of rotation
-and the more radical scalloped (and usually thinner edge) as the
-trailing edge. You can use these features to recognize propellers of the
-correct direction of rotation. |prop_direction|
-   
+The diagrams above show two types of propellers: clockwise (called pushers) and counterclockwise (called pullers). The most reliable to recognize the correct propeller type by its shape as shown below. The thicker edge is the leading edge which moves in the direction of rotation. The trailing edge is more radical scalloped and usually thinner. |prop_direction|
+
 .. _connect-escs-and-motors_testing_motor_spin_directions:
 
 Testing motor spin directions
@@ -290,5 +281,6 @@ For Pixhawk you must connect both the signal and the signal ground in order to m
 
 For more information see `this video <https://youtu.be/6C1YG1e2aTo>`__.
 
-.. |prop_direction| image:: ../images/prop_direction.jpg
-    :target: ../_images/prop_direction.jpg
+.. |prop_direction| image:: ../images/prop-direction.png
+    :target: ../_images/prop-direction.png
+    :width: 450px
