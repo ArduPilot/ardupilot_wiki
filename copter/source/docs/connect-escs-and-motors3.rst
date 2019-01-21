@@ -4,10 +4,6 @@
 Connect ESCs and Motors
 =======================
 
-.. warning::
-
-   This page is a work-in-progress to more easily visualise new motor order diagrams.  Some diagrams below have errors.
-
 This article explains how to connect the ESCs, motors and propellers to a flight controller.  The Pixhawk is used as an example but other flight controllers are connected in a similar way.
 
 Connect the power (+), ground (-), and signal (s) wires for each ESC to
