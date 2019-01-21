@@ -119,6 +119,10 @@ In order to build JSBSIM, you need Cmake, install it with :
 
     sudo apt-get install cmake
 
+cylon needed
+sudo python -m pip install cython
+
+
 In the same directory (your home directory) run these commands:
 
 ::
