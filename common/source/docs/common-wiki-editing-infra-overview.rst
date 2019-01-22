@@ -14,6 +14,7 @@ The wiki has several sections:
 The **update.py** build script copies the common topics into specified (in source) target wikis directories and then build them.
 
 The **Vagrantfile** can be used by Vagrant to set up a local build environment independent of your host system.
+(`Vagrant <https://www.vagrantup.com>`__ is a software tool that allows for the quick and automated  setup of a virtual machine on your host operating system).
 This allows you to edit the source in your host computer but manage the build inside Vagrant. You can also
 manually set up a build environment (just inspect the Vagrantfile for dependencies).
 
