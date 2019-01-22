@@ -46,7 +46,7 @@ makes developing and testing new features in ArduPilot much simpler.
 Running SITL
 ============
 
-The APM SITL environment has been developed to run natively on on both
+The Ardupilot SITL environment has been developed to run natively on on both
 Linux and Windows. For instructions see :ref:`Setting up SITL on Linux <setting-up-sitl-on-linux>` and :ref:`Setting up SITL on Windows <sitl-native-on-windows>`
 for more information.
 
