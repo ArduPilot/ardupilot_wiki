@@ -10,8 +10,8 @@ Before submitting large changes to the wiki it is best to check the pages are re
 
 There are two methods to setup a local build environment:
 
-#. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a virtual machine with all the necessary packages installed.  This is the preferred and supported method
-#. Install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local machine and skip the Vagrant instructions below (unsupported)
+#. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a Linux virtual machine with all the necessary packages installed.  This is the preferred and supported method
+#. Install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine and skip the Vagrant instructions below (unsupported). To do this you can simply edit the Vagrantfile removing the specific vagrant provisioning commands, and run the Vagrantfile as a shell script.
 
 Fork and Clone the Wiki
 -----------------------
