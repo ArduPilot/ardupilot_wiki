@@ -148,12 +148,6 @@ to display a 3D simulation of the vehicle and its surroundings. This
 provides a much better visualization than the 2D maps and HUD flight
 displays provided by *MAVProxy* and *Mission Planner*.
 
-.. note::
-
-   FlightGear support is currently only in master (January 2016). It
-   should appear in the *next* versions of the vehicle codelines (not
-   present on current versions: Copter 3.3, Plane 3.4, Rover 2.5).
-
 .. figure:: ../images/flightgear_copter_windows.jpg
    :target: ../_images/flightgear_copter_windows.jpg
 
