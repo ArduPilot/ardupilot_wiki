@@ -5,7 +5,7 @@
 Wiki Editing Guide
 ==================
 
-All members of the ArduPilot community are welcome to contribute to the wiki including creating new pages, updating older ones and fixing broken links and spelling errors.
+All members of the ArduPilot community are encouraged to contribute to the wiki,  including creating new pages, updating older ones and fixing broken links and spelling errors.
 
 .. toctree::
     :maxdepth: 1
