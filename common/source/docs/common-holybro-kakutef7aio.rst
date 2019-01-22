@@ -46,18 +46,29 @@ Specifications
 
 The KakuteF7 comes in two varients. One is an AIO (All-In-One) board with current sensor and power distribution. The other is a smaller board without the current sensor or PDB.
 Both variants include a 5-volt regulator rated for 2 amps.
+
+Kakute F7 AIO
+
+.. image:: ../../../images/holybro-kakutef7_AIO.jpg
+
+
+Kakute F7
+
+.. image:: ../../../images/holybro-kakutef7.jpg
+    
+
 -  **UART Mapping**
 
 The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the
 receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 
- - SERIAL0 -> USB
- - SERIAL1 -> UART1 (Telem1)
- - SERIAL2 -> UART2 (Telem2)
- - SERIAL3 -> UART3 (GPS)
- - SERIAL4 -> UART4
- - SERIAL5 -> UART7
- - SERIAL6 -> UART6 (Transmit only, FrSky)
+   -  SERIAL0 -> USB
+   -  SERIAL1 -> UART1 (Telem1)
+   -  SERIAL2 -> UART2 (Telem2)
+   -  SERIAL3 -> UART3 (GPS)
+   -  SERIAL4 -> UART4
+   -  SERIAL5 -> UART7
+   -  SERIAL6 -> UART6 (Transmit only, FrSky)
 
 The SERIAL5 port (UART7) is for ESC telemetry, and has a R7 pad on
 each of the four corners of the KakuteF7 AIO board.
