@@ -15,7 +15,7 @@ The :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` sim
 the ArduPilot code which allows you to run Plane, Copter or Rover
 without any hardware.
 
-SITL was originally developed on Linux, and but can now be built and
+SITL was originally developed on Linux, but can now be built and
 run *natively* on both Linux or Windows. It can also be run on
 a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux.
 
