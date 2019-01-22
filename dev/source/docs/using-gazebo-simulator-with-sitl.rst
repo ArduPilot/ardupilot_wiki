@@ -15,7 +15,7 @@ No current release has built-in support for ArduPilot,  however. (Previous PRs f
 
 .. warning::
 
-   If you find that some of these instructions are outdated, please open an issue on  for  ardupilot_wiki repositary on github.
+   If you find that some of these instructions are outdated, please open an issue for the ardupilot_wiki repository on github.
 
 .. tip::
 
