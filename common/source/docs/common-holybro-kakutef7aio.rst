@@ -42,22 +42,24 @@ Specifications
    -  AT7456E OSD
    -  2A 5v regulator
    
--  **Pinout**
+Pinout
+======
 
 The KakuteF7 comes in two varients. One is an AIO (All-In-One) board with current sensor and power distribution. The other is a smaller board without the current sensor or PDB.
 Both variants include a 5-volt regulator rated for 2 amps.
 
-Kakute F7 AIO
+**Kakute F7 AIO**
 
 .. image:: ../../../images/holybro-kakutef7_AIO.jpg
 
 
-Kakute F7
+**Kakute F7**
 
 .. image:: ../../../images/holybro-kakutef7.jpg
     
 
--  **UART Mapping**
+UART Mapping
+============
 
 The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the
 receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
@@ -73,22 +75,26 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 The SERIAL5 port (UART7) is for ESC telemetry, and has a R7 pad on
 each of the four corners of the KakuteF7 AIO board.
 
--  **RC Input**
+RC Input
+========
  
 RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols.
  
--  **FrSky Telemetry**
+FrSky Telemetry
+===============
  
 FrSky Telemetry is supported using the T6 pin (UART6 transmit). You need to set the following parameters to enable support for FrSky S.PORT
  
   - SERIAL6_PROTOCOL 10
   - SERIAL6_OPTIONS 7
   
--  **OSD Support**
+OSD Support
+===========
 
 The KakuteF7 AIO supports OSD using OSD_TYPE 1 (MAX7456 driver).
 
--  **PWM Output**
+PWM Output
+==========
 
 The KakuteF7 supports up to 6 PWM outputs. The pads for motor output M1 to M6 on the above diagram are for the 6 outputs. All 6 outputs support DShot as well as all PWM types.
 
@@ -102,7 +108,8 @@ Channels within the same group need to use the same output rate. If
 any channel in a group uses DShot then all channels in the group need
 to use DShot.
 
-## Battery Monitoring
+Battery Monitoring
+==================
 
 The AIO board has a built-in current sensor. The current
 sensor can read up to 130 Amps. The voltage sensor can handle up to 6S
@@ -116,11 +123,13 @@ The correct battery setting parameters are:
  - BATT_VOLT_MULT 10.1
  - BATT_AMP_PERVLT 17.0
 
--  **Compass**
+Compass
+=======
 
 The KakuteF7 AIO does not have a built-in compass, however you can attach an external compass using I2C on the SDA and SCL pads.
 
--  **Loading Firmware**
+Loading Firmware
+================
 
 Initial firmware load can be done with DFU by plugging in USB with the
 bootloader button pressed. Then you should load the "with_bl.hex"
@@ -131,7 +140,8 @@ any ArduPilot ground station software. Updates should be done with the
 *.apj firmware files.
 
 
--  **Where to Buy**
+Where to Buy
+============
 
 
 - Available from many retailers including `Holybro Kakute F7 AIO <https://shop.holybro.com/kakute-f7-aio_p1105.html>`__ and `Holybro Kakute F7 <https://shop.holybro.com/kakute-f7_p1104.html>`__
