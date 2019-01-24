@@ -216,7 +216,7 @@ Corporate Partners
     
 .. image:: ../../../images/supporters/Supporters_Logo_Holybro.png
     :width: 250px   
-    :target:  https://www.holybro.com
+    :target:  http://www.holybro.com
 
 How does my company become a partner?
 =====================================
