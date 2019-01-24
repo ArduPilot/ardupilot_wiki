@@ -53,6 +53,16 @@ value to users with old hardware.
     Updating the APM2.x BootLoader <updating-the-apm2-x-bootloade>
     Mission Planner Terminal <mission-planner-terminal>
     Debugging using JTAG <jtag>
+    Building for Pixhawk on Windows with Make <building-px4-with-make>
+    Building ArduPilot with Arduino for Windows <building-ardupilot-with-arduino-windows>
+    Editing & Building with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>
+    Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>
+    APM2.x on MacOS with Arduino <building-the-code-on-mac>
+    APM2.x on Linux with Make <building-the-code-onlinux>
+    Building for Flymaple on Linux <building-apm-for-flymaple>
+    Building for Pixhawk on Windows or Linux with QtCreator <building-px4-with-qtcreator>
+    Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>
+    Building for Qualcomm Snapdragon <building-for-qualcomm-snapdragon-flight-kit>
 [/site]
 
 

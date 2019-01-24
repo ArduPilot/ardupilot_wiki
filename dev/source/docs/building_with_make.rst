@@ -1,8 +1,14 @@
 .. _building_with_make:
 
-=======================================
-Building ArduPilot for APM2.x with Make
-=======================================
+=================================================
+Archived: Building ArduPilot for APM2.x with Make
+=================================================
+
+.. warning::
+
+   **ARCHIVED ARTICLE**
+
+   Ardupilot no longer supports Arduino or AVR.
 
 This article explains how to build the code for APM2.x with Make on
 Windows, Mac and Linux.
