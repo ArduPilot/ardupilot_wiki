@@ -137,7 +137,7 @@ firmware, using your favourite DFU loading tool.
 
 Once the initial firmware is loaded you can update the firmware using
 any ArduPilot ground station software. Updates should be done with the
-*.apj firmware files.
+\*.apj firmware files.
 
 
 Where to Buy
