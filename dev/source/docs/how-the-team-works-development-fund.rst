@@ -31,9 +31,9 @@ Evaluating Proposals
 
 The ArduPilot funding committee is made up of three elected members from the team with elections held each December.  The currently elected members are:
 
+- Francisco Ferreira
 - James Pattison
-- Pierre Kancir
-- Olivier Brousse
+- Tom Pittenger
 
 This committee reviews the `Proposal category <https://discuss.ardupilot.org/c/proposals>`__ regularly and evaluates proposals based on both the benefit to ArduPilot and likelihood of success.
 The approve/reject decision is made by a simple majority vote (i.e. 2 of 3 must approve).
