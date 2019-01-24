@@ -1,8 +1,14 @@
 .. _building-the-code-onlinux:
 
-================================================
-Building ArduPilot for APM2.x on Linux with Make
-================================================
+==========================================================
+Archived: Building ArduPilot for APM2.x on Linux with Make
+==========================================================
+
+.. warning::
+
+   **ARCHIVED ARTICLE**
+
+   Ardupilot no longer supports make, Arduino or AVR.
 
 Quick start
 ===========

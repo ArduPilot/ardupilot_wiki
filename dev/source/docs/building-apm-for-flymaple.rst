@@ -1,8 +1,14 @@
 .. _building-apm-for-flymaple:
 
-========================================
-Building ArduPilot for Flymaple on Linux
-========================================
+==================================================
+Archived: Building ArduPilot for Flymaple on Linux
+==================================================
+
+.. warning::
+
+   **ARCHIVED ARTICLE**
+
+   Ardupilot no longer supports FlyMaple.
 
 .. note::
 

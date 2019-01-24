@@ -1,8 +1,15 @@
 .. _building-px4-with-qtcreator:
 
-=================================================================
-Building ArduPilot for Pixhawk on Windows or Linux with QtCreator
-=================================================================
+===========================================================================
+Archived: Building ArduPilot for Pixhawk on Windows or Linux with QtCreator
+===========================================================================
+
+.. warning::
+
+   **ARCHIVED ARTICLE**
+
+   Ardupilot no longer supports Qt Creator.
+
 
 This article shows how you can set up Qt Creator for editing ArduPilot code
 and building for Pixhawk targets on Windows and Linux.

@@ -1,8 +1,14 @@
 .. _building-for-navio-on-rpi2:
 
-===========================
-Building for NAVIO+ on RPi2
-===========================
+=====================================
+Archived: Building for NAVIO+ on RPi2
+=====================================
+
+.. warning::
+
+   **ARCHIVED ARTICLE**
+
+   Ardupilot no longer supports NAVIO+ on Rpi2.
 
 Overview
 ========
