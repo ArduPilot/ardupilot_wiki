@@ -1,8 +1,14 @@
 .. _building-the-code-on-mac:
 
-===================================================
-Building ArduPilot for APM2.x on MacOS with Arduino
-===================================================
+=============================================================
+Archived: Building ArduPilot for APM2.x on MacOS with Arduino
+=============================================================
+
+.. warning::
+
+   **ARCHIVED ARTICLE**
+
+   Ardupilot no longer supports Arduino or AVR.
 
 .. warning::
 

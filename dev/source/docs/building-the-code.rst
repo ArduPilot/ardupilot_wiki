@@ -32,7 +32,6 @@ Windows users have 3 or 4 options for setting up the build environment. All of t
 - :ref:`Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>`
 - :ref:`Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>`
 - :ref:`Setup Eclipse on Windows for building with waf <building-setup-windows-eclipse>`
-- :ref:`Setup the Make Build on Windows (not recommended) <building-px4-with-make>`
 
 **Board specific instructions:**
 
@@ -70,22 +69,4 @@ Links to current build pages
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
     Building Mission Planner with Visual Studio <buildin-mission-planner>
     ArduPilot Pre-Built Binaries <pre-built-binaries>
-
-Deprecated Instructions
------------------------
-
-.. toctree::
-    :maxdepth: 1
-
-    Deprecated: Building for Pixhawk on Windows with Make <building-px4-with-make>
-    Deprecated: Building ArduPilot with Arduino for Windows <building-ardupilot-with-arduino-windows>
-    Deprecated: Editing & Building with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>
-    Deprecated: Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>
-    Deprecated: APM2.x on MacOS with Arduino <building-the-code-on-mac>
-    Deprecated: APM2.x on Linux with Make <building-the-code-onlinux>
-    Deprecated: Building for Flymaple on Linux <building-apm-for-flymaple>
-    Deprecated: Building for Pixhawk on Windows or Linux with QtCreator <building-px4-with-qtcreator>
-    Deprecated: Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>
-    Deprecated: Building for Qualcomm Snapdragon <building-for-qualcomm-snapdragon-flight-kit>
-
 
