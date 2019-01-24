@@ -213,6 +213,10 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_freespace.png
     :width: 250px   
     :target:  https://freespace.solutions/
+    
+.. image:: ../../../images/supporters/Supporters_Logo_Holybro.png
+    :width: 250px   
+    :target:  https://www.holybro.com
 
 How does my company become a partner?
 =====================================
