@@ -322,16 +322,18 @@ How to abort an auto-landing
 A landing-abort mechanism is provided to allow you to abort a landing sequence in a safe, controlled, and expected way. Custom abort behaviour can be pre-programmed as part of the mission or you can use the default abort mechanism. To enable this feature set param LAND_ABORT_THR=1.
  
 There are three steps to this feature:
-#. Trigger an abort
-#. The behavior during the abort
-#. The mission state after the abort completes.
+
+1. :ref:`Trigger an abort <trigger_an_abort>`
+#. :ref:`The behavior during the abort <behavior_during_the_abort>`
+#. :ref:`The mission state after the abort completes <mission_state_after_an_aborted_landing_completes>`
 
 .. note::
 
    This section describes the abort behavior introduced in Plane
    3.4.
 
-   
+.. _trigger_an_abort:
+
 Step 1) Abort land triggers
 ---------------------------
 The are three ways to trigger an auto-landing abort. All of them will only work while in AUTO mode and currently executing a ``LAND`` waypoint mission item:
@@ -340,6 +342,7 @@ The are three ways to trigger an auto-landing abort. All of them will only work 
 -  *RC input Throttle > 90%*. This will trigger an abort while staying in AUTO mode. The throttle only needs to be high briefly to trigger it. Don't forget to lower it!
 -  *Mode change*. For human piloted landing abort you can switch out of AUTO mode into, for example MANUAL/STABILIZE/FBWA, and navigate the aircraft safely however you'd like. Using this method will skip abort behavior step 2 because it is being done manually. When switching back to AUTO the mission will resume as described in step 3 below.
 
+.. _behavior_during_the_abort:
 
 Step 2) Abort land flight behavior
 ----------------------------------
@@ -350,6 +353,7 @@ The abort behaviour has a default configuration and does not require a pre-plann
   
 This step is skipped if the abort trigger is via mode change because it is assumed the pilot manually took over and flew the aircraft to a safe altitude at the pitch and throttle of their choosing.
 
+.. _mission_state_after_an_aborted_landing_completes:
 
 Step 3) Mission state after an aborted landing completes
 --------------------------------------------------------
