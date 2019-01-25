@@ -124,7 +124,12 @@ The main steps are:
 #. Set :ref:`CAM_FEEDBACK_POL <CAM_FEEDBACK_POL>`
    to indicate whether the feedback pin (hotshoe voltage) goes high or
    low when the picture is taken.
+   
+.. note::
 
+   You may purchase one of the camera hotshoe adapters for enhanced triggering and logging from Seagull UAV called
+   :ref:`#SYNC2 <https://www.seagulluav.com/product/seagull-sync2/>`. 
+   
 Shutter configuration with APM 2.x
 ==================================
 
