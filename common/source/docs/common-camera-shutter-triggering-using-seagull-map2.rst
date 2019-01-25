@@ -46,7 +46,7 @@ and the `Seagull #MAP2 product support page <https://www.seagulluav.com/seagull-
 Parts and hardware connections
 ==============================
 
-The Seagull #MAP can be `purchased from Seagull UAV <http://www.seagulluav.com/product/seagull-map2/>`__ and comes with a
+The Seagull #MAP2 can be `purchased from Seagull UAV <http://www.seagulluav.com/product/seagull-map2/>`__ and comes with a
 servo cable included. The camera cables has to be purchased separately - please use the `**Cable Finder** <https://www.seagulluav.com/map-cable-finder/>` page to determine which cable is needed.
 
 Below is a list of the cables offered by Seagull UAV:
@@ -75,7 +75,7 @@ to any of Pixhawk's usable AUX ports, as discussed in :ref:`Camera Shutter Confi
 
    #MAP2 is powered by Pixhawk's power rail ( the middle pin + ).
    Ensure that the rail is powered by BEC or other power source ranging
-   from 3.5-5.5 Volts in order for #MAP to function properly.
+   from 3.5-5.5 Volts in order for #MAP2 to function properly.
 
 Camera shutter configuration in Mission Planner
 ===============================================
@@ -103,7 +103,7 @@ triggering.
 .. figure:: https://www.seagulluav.com/wp-content/uploads/2016/03/smap2_mp.png
    :target: https://www.seagulluav.com/wp-content/uploads/2016/03/smap2_mp.png
 
-   Mission Planner: Camera Setupusing Seagull #MAP
+   Mission Planner: Camera Setup using Seagull #MAP2
 
 Video Guides
 ============
@@ -122,14 +122,14 @@ Set up transmitter
 Troubleshooting
 ===============
 
-To determine what state *Seagull #MAP* is currently in - simply read the
+To determine what state **Seagull #MAP2** is currently in - simply read the
 output of the "STATE LED" and match it with the "Action" in the table
 below.
 
 .. figure:: https://www.seagulluav.com/wp-content/uploads/2016/03/smap2_stateled-300x111.png
    :target: https://www.seagulluav.com/wp-content/uploads/2016/03/smap2_stateled-300x111.png
 
-   #MAP: STATE LED
+   #MAP2: STATE LED
 
 The following table shows the STATE LED readout for the different states
 / modes.
