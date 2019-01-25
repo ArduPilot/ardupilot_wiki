@@ -15,7 +15,8 @@ information based upon your set-up.
 
 .. toctree::
     :maxdepth: 1
-
+    
+    Seagull UAV #RADIO <common-telemetry-seagull-radio>
     Bluetooth <common-mission-planner-bluetooth-connectivity>
     ESP8266 wifi telemetry <common-esp8266-telemetry>
     FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
