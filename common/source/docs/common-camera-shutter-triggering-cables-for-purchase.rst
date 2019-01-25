@@ -22,26 +22,96 @@ boards that can be used for this purpose.
 
    Please add new boards/cables you discover to this page (or `request the addition <https://github.com/ArduPilot/ardupilot_wiki/issues/new>`__).
 
+Seagull #IR
+============
+
+`Seagull #IR <https://www.seagulluav.com/product/seagull-ir/>`__ is an infrared camera trigger device. It supports a wide range of camera brands and models. Check the full compatibility list at `Seagull #IR page <https://www.seagulluav.com/product/seagull-ir/>`__.
+
+.. figure:: https://www.seagulluav.com/wp-content/uploads/2016/03/SIRU-1000-01-570x570.png
+   :target: https://www.seagulluav.com/wp-content/uploads/2016/03/SIRU-1000-01-570x570.png
+   
+   #IR Infrared Camera Shutter Controller from Seagull UAV
+
+The board supports the following two modes: 
+
+-  **Picture** (Shutter trigger) 
+-  **Video Record** (only for **Sony** cameras)
+
+More detailed instructions on how to setup #IR are provided in the `Seagull #IR Manual <https://www.seagulluav.com/manuals/Seagull_IR-Manual.pdf>`__ as well as `#IR Support <https://www.seagulluav.com/seagull-ir-support/>`__ page.
+
+Seagull #MAP2
+============
+
+`Seagull #MAP2 <https://www.seagulluav.com/product/seagull-map2/>`__ provides
+everything needed to connect a Pixhawk to a camera in order to automate camera shutter triggering. The
+current list of compatible cameras can be found on `Seagull MAP Cable Finder <https://www.seagulluav.com/map-cable-finder/>`__.
+
+.. figure:: https://www.seagulluav.com/wp-content/uploads/2016/03/SMAP-1100_01.png
+   :target: https://www.seagulluav.com/wp-content/uploads/2016/03/SMAP-1100_01.png
+   
+   #MAP2 Camera Shutter Controller from Seagull UAV
+
+The board supports two shutter trigger modes: 
+
+-  **AF-T** ("AutoFocus-Trigger", with 1 second pre-focus followed by trigger) 
+-  **IS-T** ("Instant-Trigger", instant trigger as soon as camera locks focus)
+
+Seagull #MAP2 also supports **"Camera ON/OFF"** - which is exclusive to **Sony MULTI** cameras.
+
+More detailed instructions on how to setup #MAP2 are provided in the `Seagull #MAP2 Manual <https://www.seagulluav.com/manuals/Seagull_MAP2-Manual.pdf>`__ as well as `#MAP2 Support <https://www.seagulluav.com/seagull-map2-support/>`__ page.
+
+Link to Ardupilot page for `Seagull #MAP2 <http://ardupilot.org/copter/docs/common-camera-shutter-triggering-using-seagull-map2.html?highlight=map2/>`__ .
+
+
+Seagull #MAP-X2
+============
+
+`Seagull #MAP-X2 <https://www.seagulluav.com/product/seagull-map-x2/>`__ is a precision camera shutter trigger and logger. It is very easy to integrate into a Pixhawk in order to automate camera shutter triggering and log the precise co-ordinates of each photo for geotagging purposes. 
+
+Seagull #MAP-X2 utilizes event based logging for extra precision by using `#SYNC2 <https://www.seagulluav.com/product/seagull-sync2/>`__
+
+The current list of compatible cameras can be found on `Seagull MAP Cable Finder <https://www.seagulluav.com/map-cable-finder/>`__.
+
+.. figure:: https://www.seagulluav.com/wp-content/uploads/2018/09/SMX2-1001_01-570x570.png
+   :target: https://www.seagulluav.com/wp-content/uploads/2018/09/SMX2-1001_01-570x570.png
+   
+   #MAP-X2 Camera Shutter Controller / Logger from Seagull UAV
+
+The board supports 4 shutter trigger modes: 
+
+-  **ACT** ("AutoCustomTrigger", user is able to define required focus time and then trigger) 
+-  **PWM** ("PWM", fully customisable PWM trigger for cameras that utilze PWM triggering)
+-  **SST** (Read event signal then trigger)
+-  **Timelapse** (User defined interval triggering)
+
+Seagull #MAP-X2 also supports **"Camera ON/OFF"** - which is exclusive to **Sony MULTI** cameras.
+
+More detailed instructions on how to setup #MAP-X2 are provided in the `Seagull #MAP-X2 Manual <https://www.seagulluav.com/manuals/Seagull_MAP-X2-Manual.pdf>`__ as well as `#MAP-X2 Support <https://www.seagulluav.com/seagull-map-x2-support/>`__ page.
+
 Seagull #REC
 ============
 
 `Seagull #REC <http://www.seagulluav.com/product/seagull-rec/>`__ provides
 everything needed to connect a Pixhawk to a supported Sony MultiPort™
 equipped camera in order to automate camera shutter triggering. The
-current list of compatible cameras :ref:`can be found here <common-camera-shutter-triggering-for-sony-multiport-connectors-using-seagull-map_compatible_cameras>`.
+current list of compatible cameras `can be found here <https://www.seagulluav.com/product/seagull-rec/>`__.
 
-   #REC Camera Board from Seagull
+.. figure:: https://www.seagulluav.com/wp-content/uploads/2015/11/SREC-1000_1_no_text.png
+   :target: https://www.seagulluav.com/wp-content/uploads/2015/11/SREC-1000_1_no_text.png
+   
+   #REC Camera Controller from Seagull UAV
 
-The board supports two trigger modes: AF-T (Autofocus-Trigger, 1 sec
-pre-AF then trigger) and IS-T (Instant-Trigger, instant trigger as soon
-as camera locks focus). On Sony "Multi" cameras it also supports turning
-the camera On/Off.
+The board supports three shutter trigger modes: 
 
-:ref:`Camera Shutter Triggering for Sony MultiPort Connectors using Seagull #REC <common-camera-shutter-triggering-for-sony-multiport-connectors-using-seagull-map>`
-provides a brief overview of how to set up the MAP board. ( the RECs predecessor ) 
-More detailed instructions are provided in the `Seagull #REC Manual <http://www.seagulluav.com/manuals/Seagull_REC-Manual.pdf>`__.
+-  **AF-T** ("AutoFocus-Trigger", with 1 second pre-focus followed by trigger) 
+-  **IS-T** ("Instant-Trigger", instant trigger as soon as camera locks focus)
+-  **Manual** ("Three stage trigger control", neutral-focus-trigger)
 
-TIP:   the #REC superceeds the #MAP and #MAP2 which were it's predecessors.  
+Seagull #REC also supports **"Video RECORD", "ZOOM", "Timelapse Triggering" and "Camera ON/OFF"**.
+
+More detailed instructions on how to setup #REC are provided in the `Seagull #REC Manual <https://www.seagulluav.com/manuals/Seagull_REC-Manual.pdf>`__ as well as `#REC Support <https://www.seagulluav.com/seagull-rec-support/>`__ page.
+
+TIP:   The #REC is only compatible with "**Sony MULTI**" cameras.  
 
 SkySight MONO
 =============
