@@ -22,6 +22,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Foxtech <https://www.foxtechfpv.com>`__
 * `Harris Aerial <https://www.harrisaerial.com/shop/>`__
 * `Hex <http://www.hex.aero/shop/>`__
+* `Holybro <https://shop.holybro.com/>`__
 * `JapanDrones <http://japandrones.com/>`__
 * `jDrones <http://store.jdrones.com/>`__
 * `Jester's Drones <http://www.jestersdrones.org/store/>`__ (Solo addons, MAUCH power modules)
