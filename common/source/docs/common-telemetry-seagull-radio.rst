@@ -52,7 +52,7 @@ Details for Seagull #RADIO:
 
 - **Voltage**: 3.9 – 12V (5 volts recommended – do NOT exceed 12V!)
 - **Communication level**: 3.3V
-- **Current draw transmitting**: 100mW = 31.8mA | 500mW = 159mA | 1Watt = 318mA
+- **Current draw transmitting**: 100mW = 31.8mA / 500mW = 159mA / 1Watt = 318mA
 - **Current draw receiving**: 29mA
 - **Dimensions**: 45mm x 41mm x 11mm
 - **Weight**: 16 gram
