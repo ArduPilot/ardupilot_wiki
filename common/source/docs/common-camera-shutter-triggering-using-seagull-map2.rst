@@ -47,7 +47,7 @@ Parts and hardware connections
 ==============================
 
 The Seagull #MAP2 can be `purchased from Seagull UAV <http://www.seagulluav.com/product/seagull-map2/>`__ and comes with a
-servo cable included. The camera cables has to be purchased separately - please use the `**Cable Finder** <https://www.seagulluav.com/map-cable-finder/>` page to determine which cable is needed.
+servo cable included. The camera cables has to be purchased separately - please use the `Cable Finder <https://www.seagulluav.com/map-cable-finder/>`__ page to determine which cable is needed.
 
 Below is a list of the cables offered by Seagull UAV:
 
@@ -159,7 +159,7 @@ The following table shows the STATE LED readout for the different states
 Compatible cameras
 ==================
 
-The full list of compatible cameras (January 2019) can be found on `**Seagull UAV's Cable Finder page** <https://www.seagulluav.com/map-cable-finder/>`.
+The full list of compatible cameras (January 2019) can be found on `Seagull UAV's Cable Finder page <https://www.seagulluav.com/map-cable-finder/>`__.
 
 Technical specifications
 ========================
@@ -169,7 +169,7 @@ Technical specifications
 +--------------------+--------------------------------------------------------------------------+
 | **Dimensions**     | 28.6 x 10.3 x 7.7 mm                                                     |
 +--------------------+--------------------------------------------------------------------------+
-| **Voltage**        | 3.5 – 5.5 volts ( 5 volts recommended – **do NOT exceed 5.5 volts !** )  |
+| **Voltage**        | 3.5 – 5.5 volts ( 5 volts recommended, **do NOT exceed 5.5 volts !** )   |
 +--------------------+--------------------------------------------------------------------------+
 | **Current**        | 21.75mA max                                                              |
 +--------------------+--------------------------------------------------------------------------+
