@@ -67,9 +67,9 @@ at throttles bellow hover throttle.
 
 Q_TAILSIT_RLL_MX allows the roll limit angle limit to be set differently from
 Q_ANGLE_MAX. If left at zero both pitch and roll are limited by Q_ANGLE_MAX.
-If none zero roll angle will be limited, pitch max angle will still be Q_ANGLE_MAX.
-This should be set if your tailsitter can achieve much larger pitch angle that 
-would be safe for roll.
+If Q_TAILSIT_RLL_MX is nonzero roll angle will be limited and pitch max angle will still be Q_ANGLE_MAX.
+This should be set if your tailsitter can achieve much larger pitch angle than 
+would be safe for roll (some airframes can't recover from high-speed knife-edge flight).
 
 Orientation
 ===========
@@ -83,7 +83,7 @@ Vectored Thrust
 
 If your tailsitter has vectored thrust then you should set the
 SERVOn_FUNCTION values for your two tilt servos for the left and right
-tilt servos.
+motors.
 
 For example, if your left tilt servo is channel 5 and your right tilt
 servo is channel 6, then set:
