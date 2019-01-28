@@ -16,4 +16,4 @@ ArduPilot supports three types of servos.
     Servos (PWM) <common-servo>
     SBus Servos <common-sbus-out>
     Robotis Servos <common-servo-robotis>
-
+    Volz Servos <common-servo-volz>
