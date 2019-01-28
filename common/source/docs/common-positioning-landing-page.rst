@@ -14,6 +14,7 @@ positioning technologies:
 .. toctree::
     :maxdepth: 1
 
+    Seagull UAV RTK / PPK GNSS Receiver <common-seagull-gpk-rtk-ppk-gnss-receiver.rst>
     Mayan Robotics M8N Gps+Compass Module <https://store.mrobotics.io/mRo-GPS-u-Blox-Neo-M8N-HMC5983-Compass-p/gps002-mr.htm>
     JDrones GPS Options <http://store.jdrones.com/GPS_s/193.htm>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
