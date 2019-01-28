@@ -1,0 +1,50 @@
+.. _common-toshiba-can-escs:
+
+================
+Toshiba CAN ESCs
+================
+
+..  youtube:: mPRICmE3kyk
+    :width: 100%
+
+ToshibaCAN ESCs are high-end ESCs that allow control and feedback using a custom CAN protocol.  Some additional specifications:
+
+- FOC which should result in about 10% longer flight times while also being quieter than non-FOC ESCs
+- Up to 7S batteries (future versions are planned for up to 12S), 50Amps
+- Up to 12 motors
+- Fast sync issue recovery time (100ms to 150ms)
+- Relatively lightweight
+- Designed and manufactured in Japan
+
+.. note::
+
+    Support for these ESCs is included in Copter-3.7 (and higher), Plane-3.10 (and higher) and Rover-3.5 (and higher)
+
+Where To Buy
+------------
+
+As of Feb 2019 these ESCs can only be purchased by directly contacting Toshiba.
+
+CAN splitter boards are also required, the boards used in the above video were provided by `EAMS Lab <http://elab.co.jp/>`__ but these are also not readily available for sale.
+
+Connection and Configuration
+----------------------------
+
+.. image:: ../../../images/toshiba-can-esc-pixhawk.jpg
+    :target: ../_images/toshiba-can-esc-pixhawk.jpg
+    :width: 400px
+
+- ESCs should be daisy chained together using CAN splitter boards and then one 4-pin CAN cable should be connected to the flight controller's CAN port.  Note that the last splitter board has a terminator (i.e. no port) on one side.
+
+.. warning::
+
+    If using a Cube autopilot, the CAN1 and CAN2 labels are reversed.  These instructions assume the ESCs are connected to the CAN1 port which is labelled "CAN2" on Cube autopilots
+
+.. image:: ../../../images/toshiba-can-esc-dip-switches.png
+    :target: ../_images/toshiba-can-esc-dip-switches.png
+    :width: 400px
+
+- Set the dip switches on each ESC to specify its unique number.  This number also maps the ESC to an equivalent PWM output on the back of the flight controller.  For example ESC 1 will react just like a normal PWM ESC connected to the flight controller's MAIN OUT 1.  By default this mapping also matches the :ref:`motor order diagrams <Copter:connect-escs-and-motors>`.
+- Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 3 (ToshibaCAN)
+- Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver) to specify that the ESCs are connected to the CAN1 port
+

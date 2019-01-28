@@ -21,6 +21,7 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
     ICE (Internal Combustion Engines) <common-ice>
 [site wiki="rover"]
     Thrusters (for boats) <thrusters>
+    Toshiba CAN ESCs <common-toshiba-can-escs>
     Trolling motors <trolling-motor>
 [/site]
     UAVCAN ESCs <common-uavcan-escs>
