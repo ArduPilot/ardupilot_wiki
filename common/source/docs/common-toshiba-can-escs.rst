@@ -47,4 +47,13 @@ Connection and Configuration
 - Set the dip switches on each ESC to specify its unique number.  This number also maps the ESC to an equivalent PWM output on the back of the flight controller.  For example ESC 1 will react just like a normal PWM ESC connected to the flight controller's MAIN OUT 1.  By default this mapping also matches the :ref:`motor order diagrams <Copter:connect-escs-and-motors>`.
 - Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 3 (ToshibaCAN)
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver) to specify that the ESCs are connected to the CAN1 port
-
+[site wiki="copter,rover"]
+- Set :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` = 2000 so ArduPilot uses an output range that matches the ESCs input range
+[/site]
+[site wiki="copter"]
+- Set :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` = 0.03 meaning the motors will spin at 3% of full thrust when armed
+- Set :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` = 0.05 meaning the motors will spin at no less than 5% of full thrust when flying
+[/site]
+[site wiki="plane"]
+- Set ``SERVOx_MIN`` = 1000 and ``SERVOx_MAX`` = 2000 for each ESC connected (``x`` corresponds to the ESC number) so ArduPilot uses an output range that matches the ESCs input range
+[/site]
