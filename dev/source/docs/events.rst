@@ -10,7 +10,7 @@ Planned Events
 --------------
 
 - Mar 23rd & 24th 2019: Developer Un-conference in Canberra Australia (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-meetup-in-canberra-march-23rd-and-24th-2019>`__)
-- Apr 2019: AUVSI Xponential in Chicago
+- Apr 29th to May 2nd 2019: AUVSI Xponential in Chicago.  Booth #4006
 - Sep 3rd to 6th: InterDrone 2019 in Las Vegas (`overview <https://www.interdrone.com/conference/overview/>`__)
 - Jun 20th to 22nd: SZUAVIA ArduPilot developer conference at Shenzhen UAV Expo in Shenzhen,China
 
