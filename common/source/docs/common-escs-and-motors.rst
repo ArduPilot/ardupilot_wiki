@@ -19,6 +19,7 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
 [/site]
     DShot and BLHeli pass-through support <common-dshot>
     ICE (Internal Combustion Engines) <common-ice>
+    KDE CAN ESCs <common-kde-can-escs>
 [site wiki="rover"]
     Thrusters (for boats) <thrusters>
 [/site]
