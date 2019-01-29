@@ -37,6 +37,17 @@ For "Skid steering" vehicles (like R2D2) these parameters values will need to be
 
    In Rover-3.1 (and earlier), skid steering output was enabled by setting the SKID_STEER_OUT parameter to "1".
 
+Omni Vehicles
+-------------
+
+For Omni vehicles (that can move left-to-right without changing heading) these parameter values will need to be set:
+
+- :ref:`FRAME_TYPE <FRAME_TYPE>` = 1 (Omni3), 2 (OmniX) or 3 (OmniPlus)
+- :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 33 (motor1)
+- :ref:`SERVO2_FUNCTION <SERVO2_FUNCTION>` = 34 (motor2)
+- :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 35 (motor3)
+- :ref:`SERVO4_FUNCTION <SERVO4_FUNCTION>` = 36 (motor4)
+
 Motor Driver Types
 ------------------
 
