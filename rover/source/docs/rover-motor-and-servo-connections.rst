@@ -33,6 +33,14 @@ For this setup these parameters values will need to be set.  More details can be
 - :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 73 (Throttle Left)
 - :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 74 (Throttle Right)
 
+Omni Vehicles
+-------------
+
+Omni vehicles can move laterally (i.e. left and right) without changing their heading with the help of omni wheels (`like these from RobotShop <https://www.robotshop.com/en/6-duraomni-wheel.html>`__) or thrusters.  ArduPilot supports three configurations X, Plus and "3".  The flight controller motor outputs that should be connected to each motor are shown below.
+
+.. image:: ../images/omni-motor-order.png
+    :target: ../_images/omni-motor-order.png
+
 Wheel Encoders
 --------------
 
