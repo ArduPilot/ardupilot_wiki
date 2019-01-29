@@ -145,11 +145,7 @@ Related information
 ===================
 
 -  :ref:`Pixhawk Overview <common-pixhawk-overview>` - includes specifications, pin assignments etc.
--  `3DR Pixhawk Quick Start PDF <https://3dr.com/wp-content/uploads/2014/03/pixhawk-manual-rev7.pdf>`__
-   - duplicates some content from this wiki article
 
-
-   
 .. toctree::
     :maxdepth: 1
 
