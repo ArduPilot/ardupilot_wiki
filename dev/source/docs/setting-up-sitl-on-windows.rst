@@ -138,8 +138,7 @@ additional disk space used)
 
 ::
 
-    sudo apt-get install python-dev dos2unix python-wxgtk2.8 python-matplotlib python-opencv python-pip g++ g++-4.7 gawk git ccache
-
+    sudo apt-get install python-dev dos2unix python-wxgtk3.0 python-matplotlib python-opencv python-pip g++ gawk git ccache
     sudo pip install pymavlink
     sudo pip install mavproxy
 
@@ -147,7 +146,7 @@ If you wish to run Plane you will also need to install these packages:
 
 ::
 
-    sudo apt-get install libexpat1-dev auto.conf libtool automake
+    sudo apt-get install libexpat1-dev autoconf libtool automake
 
 Step #5 - Follow the Linux instructions
 =======================================
