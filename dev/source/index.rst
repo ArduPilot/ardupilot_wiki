@@ -151,7 +151,7 @@ Full Table of Contents
     How The Team Works <docs/how-the-team-works>
     Events <docs/events>
     Schools <docs/schools>
-    GSoC 2018 project ideas <docs/gsoc-ideas-list>
+    GSoC 2019 project ideas <docs/gsoc-ideas-list>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
