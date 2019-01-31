@@ -1,8 +1,8 @@
 .. _common-telemetry-seagull-radio:
 
-==============
+==================
 Seagull UAV #RADIO
-==============
+==================
 
 `Seagull #RADIO <https://www.seagulluav.com/product/seagull-radio/>`__ is a fully configurable transceiver module designed for use in platforms where unrestricted data size and continuous
 transmission/receiving is required, as well as long range - stretching up to 6 kilometers!
@@ -26,7 +26,7 @@ Seagull #RADIO highlights the following features:
 - **UART Interface**
 
 What it supports
-=============
+================
 
 +------------------------+-----------------+
 | **Flight Controllers** | **Seagull UAV** |
@@ -46,7 +46,7 @@ What it supports
 - **Applications that require data to be transferred!**
 
 Specifications
-================================
+==============
 
 Details for Seagull #RADIO:
 
@@ -58,12 +58,12 @@ Details for Seagull #RADIO:
 - **Weight**: 16 gram
 
 Where to buy
-================================
+============
 
 Check the `#RADIO modules <https://www.seagulluav.com/product/seagull-radio/>`__ on the webstore of Seagull UAV.
 
 Other related information
-================================
+=========================
 
 Link to the - `MANUAL <https://www.seagulluav.com/manuals/Seagull_RADIO-Manual.pdf>`__
 
