@@ -218,7 +218,7 @@ Modify mavros's node.launch file with your favourite editor (like gedit shown be
     cd launch
     sudo gedit node.launch
 
-After <rosparam command="load" file="$(arg config_yaml)" /> add a line like below
+After <rosparam command="load" file="$(arg config_yaml)" /> add a line like below.   This causes the `mavros vision_pose_estimate plugin <https://github.com/mavlink/mavros/blob/master/mavros_extras/src/plugins/vision_pose_estimate.cpp>`__ (which uses the "/mavros/vision_pose/pose" topic) to pull data from the "/robot_pose" topic output by cartographer
 
 ::
 
@@ -293,7 +293,19 @@ If all is working, vision position estimates should begin flowing in from ROS to
     EKF2 IMU0 initial pos NED = 0.0,0.0,0.0 (m)
     EKF2 IMU0 is using external nav data
 
-Using the Mission Planner (or similar) go to the Flight Data screen and right-mouse-button click on the map and select "Set Home Here" >> "Set EKF Origin".  The vehicle should appear immediatley on the map where you clicked.
+Using the Mission Planner (or similar) go to the Flight Data screen and right-mouse-button click on the map and select "Set Home Here" >> "Set EKF Origin".  The vehicle should appear immediately on the map where you clicked.
+
+Testing
+-------
+
+To confirm the ROS side is working correctly type the command below and live updates of position estimates from cartographer should be displayed
+
+::
+
+    rostopic echo /robot_pose
+
+.. image:: ../images/ros-cartographer-testing.png
+    :target: ../_images/ros-cartographer-testing.png
 
 Video
 -----
