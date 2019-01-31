@@ -1,8 +1,8 @@
 .. _common-camera-shutter-triggering-using-seagull-map2:
 
-==========================================================================
+=============================================
 Camera Shutter Triggering using Seagull #MAP2
-==========================================================================
+=============================================
 
 This article shows how to implement automatic camera shutter triggering
 for cameras using `Seagull #MAP2 <http://www.seagulluav.com/product/seagull-map2/>`__.
