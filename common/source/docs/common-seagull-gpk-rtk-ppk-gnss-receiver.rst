@@ -1,8 +1,8 @@
 .. _common-seagull-gpk-rtk-ppk-gnss-receiver:
 
-==========================================================================
+======================================
 Seagull UAV #GPK RTK/PPK GNSS Receiver
-==========================================================================
+======================================
 
 This article provides a brief overview of Seagull UAV #GPK RTK/PPK GNSS receiver and highlights it's features. 
 
@@ -12,7 +12,7 @@ This article provides a brief overview of Seagull UAV #GPK RTK/PPK GNSS receiver
    Seagull #GPK from - Seagull UAV
 
 #GPK – Extreme Positioning
-========
+==========================
 
 `Seagull #GPK <https://www.seagulluav.com/product/seagull-gpk/>`__ is a high precision GNSS receiver which can operate in **multiple modes** in order to give you the utmost flexibility and precision for your UAV platform!
 
@@ -31,7 +31,7 @@ This article provides a brief overview of Seagull UAV #GPK RTK/PPK GNSS receiver
    Representation of two `#GPK <https://www.seagulluav.com/product/seagull-gpk/>`__ modules operating in RTK mode with `#RADIO <https://www.seagulluav.com/product/seagull-radio/>`__ modules used for data transmission
 
 What it does
-==============================
+============
 **Seagull #GPK supports the following functions**
 
 - **BASE / ROVER** ( #GPK can operate either as a BASE or ROVER )
@@ -40,8 +40,8 @@ What it does
 - **MB** ( Moving Baseline navigation and logging, requires 2 x #GPK modules – at 4Hz )
 - **GNSS** ( Non-Kinematic mode navigation and logging – at 10Hz )
 
-
-===============================================
+What it supports
+================
 
 +------------------------+-----------------+
 | **Flight Controllers** | **Seagull UAV** |
@@ -60,7 +60,7 @@ What it does
 – all of the **ardupilot based FCs’** are supported as well any FC that is capable of utilizing **UBX/NMEA messages** for navigation
 
 Specifications
-===============
+==============
 
 - Ublox NEO-M8P-2, L1/B1, GPS/GLONASS/BEIDOU GNSS receiver – **update rate up to 10Hz**
 - Voltage: 3.9 – 12V (5 volts recommended – **do NOT exceed 12V!**)
