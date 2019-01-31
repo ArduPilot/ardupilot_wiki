@@ -40,7 +40,7 @@ The board supports the following two modes:
 More detailed instructions on how to setup #IR are provided in the `Seagull #IR Manual <https://www.seagulluav.com/manuals/Seagull_IR-Manual.pdf>`__ as well as `#IR Support <https://www.seagulluav.com/seagull-ir-support/>`__ page.
 
 Seagull #MAP2
-============
+=============
 
 `Seagull #MAP2 <https://www.seagulluav.com/product/seagull-map2/>`__ provides
 everything needed to connect a Pixhawk to a camera in order to automate camera shutter triggering. The
@@ -64,7 +64,7 @@ Link to Ardupilot page for `Seagull #MAP2 <http://ardupilot.org/copter/docs/comm
 
 
 Seagull #MAP-X2
-============
+===============
 
 `Seagull #MAP-X2 <https://www.seagulluav.com/product/seagull-map-x2/>`__ is a precision camera shutter trigger and logger. It is very easy to integrate into a Pixhawk in order to automate camera shutter triggering and log the precise co-ordinates of each photo for geotagging purposes. 
 
