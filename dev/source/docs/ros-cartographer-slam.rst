@@ -306,6 +306,13 @@ To confirm the ROS side is working correctly type the command below and live upd
 
 .. image:: ../images/ros-cartographer-testing.png
     :target: ../_images/ros-cartographer-testing.png
+    :width: 450px
+
+Mission Planner's MAVLink Inspector (press Ctrl-F and then press the "MAVLink Inspector" button) can be used to check if VISION_POSITION_ESTIMATE messages are being successfully sent to the flight controller
+
+.. image:: ../images/ros-cartographer-testing-mavlink-inspector.png
+    :target: ../_images/ros-cartographer-testing-mavlink-inspector.png
+    :width: 450px
 
 Video
 -----
