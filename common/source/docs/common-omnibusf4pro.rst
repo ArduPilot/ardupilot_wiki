@@ -159,17 +159,17 @@ Configuration
 -------------
 Enable Battery monitor with these settings :
 
-BAT_MONITOR=4
+BATT_MONITOR=4
 
 Then reboot.
 
-BAT_VOLT_PIN 12
+BATT_VOLT_PIN 12
 
-BAT_CURR_PIN 11
+BATT_CURR_PIN 11
 
-BAT_VOLT_MULT 11.0
+BATT_VOLT_MULT 11.0
 
-BAT_AMP_PERVOLT 38.0 (note, this value may vary from 18 to 38, depending on specific board manufacturer...will need to be calibrated to match actual current)
+BATT_AMP_PERVOLT 38.0 (note, this value may vary from 18 to 38, depending on specific board manufacturer...will need to be calibrated to match actual current)
 
 
 How to trigger a camera with relay pin
