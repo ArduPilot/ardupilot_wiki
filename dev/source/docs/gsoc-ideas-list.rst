@@ -15,6 +15,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2019 <htt
 - Helicopter autorotation support
 - 3D aerobatic support for fixed wing aircraft
 - Improve :ref:`Morse simulator <sitl-with-morse>` integration including setup to move camera with vehicles
+- create new vehicle models for the Morse simulator, including boats, planes and copters
 - `MathWorks SimuLink <https://www.mathworks.com/products/simulink.html>`__ interface to ArduPilot SITL
 - `AirSim drone simulator <https://github.com/Microsoft/AirSim/>`__ support for ArduPilot SITL
 
