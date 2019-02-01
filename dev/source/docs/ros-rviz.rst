@@ -96,3 +96,23 @@ Start rviz
 
     - select "Add", "Pose"
     - once added, expand the "Pose" section and set the "Topic" to "/robot_pose"
+
+Sending Position Targets
+------------------------
+
+- Allow ROS to send velocity targets to ArduPilot via mavros by logging onto the Companion Computer running ROS and modify mavros's node.launch file with your favourite editor (like gedit shown below)
+
+::
+
+    roscd mavros
+    cd launch
+    sudo gedit node.launch
+
+- After <rosparam command="load" file="$(arg config_yaml)" /> add a line like below and restart the all ROS processes
+
+::
+
+    <remap from="/mavros/setpoint_attitude/attitude" to="move_base_simple_/goal" />
+
+- To send a position target to ROS's navigation controller, click rviz's "2D Nav Goal" button and then click and hold the mouse button on the map, aim the green arrow that appears to also set the vehicle's final attitude and release the mouse button.
+
