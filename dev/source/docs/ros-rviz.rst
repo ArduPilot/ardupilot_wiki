@@ -100,11 +100,11 @@ Start rviz
 Sending Position Targets
 ------------------------
 
-- Allow ROS to send velocity targets to ArduPilot via mavros by logging onto the Companion Computer running ROS and modify mavros's node.launch file with your favourite editor (like gedit shown below)
+- To allow ROS to send position targets to ArduPilot via mavros, log onto the Companion Computer running ROS and modify mavros's node.launch file with your favourite editor (like gedit shown below)
 
 ::
 
-    roscd mavros
+    roscd mavros   <-- this assumes mavros has been installed with rosdep
     cd launch
     sudo gedit node.launch
 
@@ -112,7 +112,14 @@ Sending Position Targets
 
 ::
 
-    <remap from="/mavros/setpoint_attitude/attitude" to="move_base_simple_/goal" />
+    <remap from="/mavros/setpoint_position/local" to="/move_base_simple/goal" />
 
-- To send a position target to ROS's navigation controller, click rviz's "2D Nav Goal" button and then click and hold the mouse button on the map, aim the green arrow that appears to also set the vehicle's final attitude and release the mouse button.
+- Arm the vehicle and switch to Guided mode
+- From within rviz, click the "2D Nav Goal" button and then click and hold the mouse button on the map to aim the green arrow (this sets the target position and final attitude) and then release the mouse button
+- The ground station should show the target position that the vehicle is moving towards (Mission Planner drops a green marker at the target position and draws an orange line towards the target from the vehicle)
 
+If everything does not go as expected the following commands may help diagnose the issue
+
+- ``rostopic info /move_base_simple/goal`` should show Publishers as "rviz" and Subscribers as "mavros"
+- ``rostopic echo /move_base_simple/goal`` should display a "position" and "orientation" the moment after the "2D NavGoal" has been set
+- ``rosrun rqt_graph rqt_graph`` shows a graphical diagram of ROS's nodes and their connections
