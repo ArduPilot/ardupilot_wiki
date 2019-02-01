@@ -22,6 +22,7 @@ These pages will show you how to:
         Connecting to ArduPilot from ROS <ros-connecting>
         Hector SLAM for non-GPS navigation <ros-slam>
         Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>
+        Sending Commands from rviz <ros-rviz>
         Clock/Time syncronisation <ros-timesync>
         Send data from AP to ROS/mavros <ros-data-from-ap>
         ROS with SITL <ros-sitl>
