@@ -10,7 +10,17 @@ These setup instructions describe how to setup `Cygwin <http://www.cygwin.com/>`
 Install Cygwin
 --------------
 
-#. open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and select "Run setup-x86_64.exe"
+#. Open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and download  "Run setup-x86_64.exe"
+
+#. Paste the  following command at a DOS prompt (type window-R and enter run.cmd) in the directory where you downloaded "Run setup-x86_64.exe"
+
+::
+
+    setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,libxslt-devel,python2-devel,python2-future,python2-libxml2,python2-pip,procps-ng,gdb,ddd,zip
+    
+Or, for a stepped install:
+
+#. open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and run setup-x86_64.exe"
 
 #. accept the all the prompts (including default file locations) until
    you reach the *Select Packages* dialog.
@@ -66,11 +76,7 @@ Install Cygwin
    | zip            | Archive \| zip: Info-ZIP compression utility                                     |
    +----------------+----------------------------------------------------------------------------------+   
 
-   Or you can run
-
-::
-
-    setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,libxslt-devel,python2-devel,python2-future,python2-libxml2,python2-pip,procps-ng,gdb,ddd,zip
+   
 
 #. When all the packages are selected, click through the rest of the
    prompts and accept all other default options (including
