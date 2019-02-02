@@ -10,9 +10,9 @@ These setup instructions describe how to setup `Cygwin <http://www.cygwin.com/>`
 Install Cygwin
 --------------
 
-#. Open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and download  "Run setup-x86_64.exe"
+#. Open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and download  "setup-x86_64.exe"
 
-#. Paste the  following command at a DOS prompt (type window-R and enter run.cmd) in the directory where you downloaded "Run setup-x86_64.exe"
+#. Paste the  following command at a DOS prompt (press window and R key then enter cmd) in the directory where you downloaded "Run setup-x86_64.exe"
 
 ::
 
