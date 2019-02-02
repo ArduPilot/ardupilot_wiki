@@ -26,7 +26,7 @@ sketch on a Pixhawk:
 ::
 
     cd $ARDUPILOT_HOME # the top-level of an AruPilot repository
-    ./waf configure --board=px4-v2
+    ./waf configure --board=Pixhawk1
     ./waf build --target examples/INS_generic --upload
 
 waf can list the examples it can build:
