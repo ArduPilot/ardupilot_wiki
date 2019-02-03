@@ -97,7 +97,7 @@ this command
 
 ::
 
-    sudo pip install --upgrade pymavlink MAVProxy
+    pip install --upgrade pymavlink MAVProxy --user
 
 Using JSBSim
 ------------
