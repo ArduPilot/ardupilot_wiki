@@ -94,7 +94,7 @@ this command
 
 ::
 
-    sudo pip install --upgrade pymavlink MAVProxy
+    pip install --upgrade pymavlink MAVProxy --user
 
 
 FlightGear 3D View (Optional)
