@@ -223,7 +223,7 @@ Aug 2018 - Plane 3.9.0 released with ChibiOS support, support for many smaller f
 
 Oct 2018 - Copter-3.6.0 released with ChibiOS support, support for many smaller flight controllers, DShot ESCS, Follow mode
 
-Feb 2019 - Rover-3.5 released including Sailboat support, Follow and Simple modes
+Feb 2019 - Rover-3.5.0 released including Sailboat support, Follow and Simple modes
 
 .. note::
 
