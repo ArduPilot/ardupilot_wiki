@@ -21,6 +21,11 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2019 <htt
 
 See lower down on this page for more details for some of the projects listed above
 
+Timeline
+========
+
+The timeline for `GSoC 2019 is here <https://summerofcode.withgoogle.com/how-it-works/#timeline>`__
+
 How to improve your chances of being accepted
 =============================================
 
