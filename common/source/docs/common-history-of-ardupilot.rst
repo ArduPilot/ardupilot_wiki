@@ -211,6 +211,20 @@ July 2017 - Copter-3.5 release including Visual Odometry and Pozyx support for n
 
 Aug 2017 - SkyRocket announces release of ArduPilot based SkyViper GPS Streaming drone (`blog <https://discuss.ardupilot.org/t/skyrocket-and-ardupilot/20381>`__)
 
+Aug 2017 - Rover-3.2.0 released "onion" architecture, new layered rate and speed controllers, skid-steering vehicle support, SmartRTL
+
+May 2018 - Google Summer of Code funds 5 developers for the summer.  Successful projects include Balance Bot support.
+
+May 2018 - Rover-3.3.0 released including circle and polygon fences, simple object avoidance, boats
+
+Jun 2018 - Rover-3.4.0 released including "Lane based speed control", Loiter for boats, omni rovers, vision based position estimates from ROS
+
+Aug 2018 - Plane 3.9.0 released with ChibiOS support, support for many smaller flight controller, better VTOL support
+
+Oct 2018 - Copter-3.6.0 released with ChibiOS support, support for many smaller flight controllers, DShot ESCS, Follow mode
+
+Feb 2019 - Rover-3.5 released including Sailboat support, Follow and Simple modes
+
 .. note::
 
    The above list includes many of the major milestones for the project.  Please see the
