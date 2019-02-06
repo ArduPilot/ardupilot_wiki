@@ -18,6 +18,7 @@ The full list of modes in alphabetical order is:
 
     Acro <acro-mode>
     Auto <auto-mode>
+    Follow <follow-mode>
     Guided <guided-mode>
     Hold <hold-mode>
     Learning (deprecated) <learning-mode>
