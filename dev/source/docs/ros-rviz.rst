@@ -16,10 +16,6 @@ These instructions were tested on a :ref:`Nvidia TX2 <companion-computer-nvidia-
 - `answers.ros.org's "How to run Rviz remotely" <https://answers.ros.org/question/10343/how-to-run-rviz-remotely/>`__
 - `answers.ros.org's "rostopic list works but rostopic echo does not" <https://answers.ros.org/question/48240/rostopic-list-works-but-rostopic-echo-does-not/>`__
 
-.. note::
-
-    these pages are a work-in-progress
-
 Client PC Setup
 ---------------
 
@@ -108,7 +104,7 @@ Sending Position Targets
     cd launch
     sudo gedit node.launch
 
-- After <rosparam command="load" file="$(arg config_yaml)" /> add a line like below and restart the all ROS processes
+- After ``<rosparam command="load" file="$(arg config_yaml)" />`` add a line like below and restart the all ROS processes
 
 ::
 
