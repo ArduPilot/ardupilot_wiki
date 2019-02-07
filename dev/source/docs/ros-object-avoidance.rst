@@ -55,7 +55,7 @@ Companion Computer Setup
 ::
 
     cd ~/catkin/src
-    wget https://github.com/rmackay9/companion/raw/ros-navigation/Common/ROS/ap_navigation.zip
+    wget https://github.com/ardupilot/companion/raw/ros-navigation/Common/ROS/ap_navigation.zip
     unzip ap_navigation.zip
 
 - Rebuild all packages including ap_navigation
@@ -63,6 +63,7 @@ Companion Computer Setup
 ::
 
     cd ~/catkin
+    source devel
     cakin build
 
 Start ap_navigation
