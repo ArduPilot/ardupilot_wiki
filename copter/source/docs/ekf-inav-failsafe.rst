@@ -45,6 +45,17 @@ The :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` parameter can be adjusted to control th
 - Increase :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` to values between 0.8 and 1.0 to reduce the chance of an EKF failsafe.  The downside of increasing this parameter value is that during a flyaway caused by a bad compass or GPS glitch, the vehicle will fly further away before the vehicle is automatically switched to LAND mode
 - Decrease :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` to values as low as 0.6 to increase the chance of an EKF failsafe triggering quickly.  The downside of lowering this value is the EKF failsafe could trigger a LAND during aggressive maneuvers
 
+Dataflash Log example
+=====================
+
+The EKF's innovations can be viewed by graphing a dataflash log's NKF4.SP (position innovation), NKF4.SV (velocity innovation) and NKF4.SM (compass innovation) values
+
+The graph below show the EKF's innovations for position (green), velocity (red) and compass (yellow) during an actual EKF failsafe event.  During this incident external interference (probably from a high-powered radio tower nearby) caused the GPS to report inaccurate positions and velocities.  The vehicle switches to Land mode soon after both velocity and position innovations climb over the FS_EKF_THRESH value of 0.8
+
+.. image:: ../images/ekf-failsafe-example-log.png
+    :target: ../_images/ekf-failsafe-example-log.png
+    :width: 450px
+
 Video
 =====
 
