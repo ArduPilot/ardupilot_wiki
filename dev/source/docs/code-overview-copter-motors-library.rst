@@ -93,3 +93,6 @@ To add support for a new Multicopter Matrix frame type (i.e. a frame with downwa
   - set success = true at the bottom of the case to alert the AP_Motors initialisation code that the frame has been setup
 
 Detailed instructions are not yet available for adding more complex frame types (sorry!)
+
+..  youtube:: c6aCwSHr_is
+    :width: 100%
