@@ -125,7 +125,7 @@ then run the simulator:
 
 ::
 
-    vagrant ssh -c "sim_vehicle.py -j 2"
+    vagrant ssh -c "sim_vehicle.py -j 2 -v ArduCopter"
 
 Once the simulation is running, you will start getting information from
 the MAVLink prompt about vehicle state. For example:
@@ -138,8 +138,8 @@ the MAVLink prompt about vehicle state. For example:
     APM: Frame: QUAD
     APM: PreArm: RC not calibrated
 
-The Copter Simulator is built by default, but you can instead build for
-the plane or rover using the ``-v`` option:
+The Copter Simulator is built in this example, but you can instead build for
+the plane or rover by changing the ``-v`` option:
 
 ::
 
