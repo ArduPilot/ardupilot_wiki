@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This program updates and rebuilds wiki sources from Github and from parameters on the test server. 
+This program updates and rebuilds wiki sources from Github and from parameters on the test server.
 
 It is intended to be run on the main wiki server or
 locally within the project's Vagrant environment.
@@ -12,7 +12,7 @@ Build notes:
   * Default is just a normal fetch and pull from master
   * If the --clean option is "True" then git will reset to head
 
-* Common topics are copied from /common/source/docs. 
+* Common topics are copied from /common/source/docs.
   * Topics are copied based on information in the copywiki shortcode. For example a topic marked as below
     would only be copied to copter and plane wikis:
     [copywiki destination="copter,plane"]
@@ -40,7 +40,7 @@ COPY_TARGET_DIR_BASE='/var/sites/wiki/web/'
 #GIT_REPO = ''
 
 #Set up option parsing to get connection string
-import argparse  
+import argparse
 parser = argparse.ArgumentParser(description='Copy Common Files as needed, stripping out non-relevant wiki content')
 parser.add_argument('--site', help="If you just want to copy to one site, you can do this. Otherwise will be copied.")
 parser.add_argument('--clean', default='False', help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).")
@@ -53,9 +53,9 @@ args = parser.parse_args()
 
 def fetchparameters(site=args.site):
     """
-    Fetches the parameters for all the sites from the test server and 
+    Fetches the parameters for all the sites from the test server and
     copies them to the correct location.
-    
+
     This is always run as part of a build (i.e. no checking to see if parameters have changed.)
     """
     PARAMETER_SITE={'rover':'APMrover2', 'copter':'ArduCopter','plane':'ArduPlane','antennatracker':'AntennaTracker' }
@@ -64,7 +64,7 @@ def fetchparameters(site=args.site):
         subprocess.check_call(["rm", 'Parameters.rst'])
     except:
         pass
-        
+
     for key, value in PARAMETER_SITE.items():
         fetchurl='http://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
         targetfile='./%s/source/docs/parameters.rst' % key
@@ -79,16 +79,16 @@ def fetchparameters(site=args.site):
             except:
                 pass
             #copy in new file
-            subprocess.check_call(["mv", 'Parameters.rst', targetfile]) 
-            
+            subprocess.check_call(["mv", 'Parameters.rst', targetfile])
 
 
-        
+
+
 def sphinx_make(site):
     """
     Calls 'make html' to build each site
     """
-    
+
     for wiki in ALL_WIKIS:
         if site=='common':
             continue
@@ -97,7 +97,7 @@ def sphinx_make(site):
         print('make and clean: %s' % wiki)
         subprocess.check_call(["make", "-C", wiki ,"clean"])
         subprocess.check_call(["make", "-C", wiki ,"html"])
-            
+
 
 
 def copy_build(site):
@@ -154,9 +154,9 @@ def copy_build(site):
 
 def generate_copy_dict(start_dir=COMMON_DIR):
     """
-    This creates a dict which indexes copy targets for all common docs. 
+    This creates a dict which indexes copy targets for all common docs.
     """
-    
+
     #Clean existing common topics (easiest way to guarantee old ones are removed)
     #Cost is that these will have to be rebuilt even if not changed
     import glob
@@ -177,13 +177,13 @@ def generate_copy_dict(start_dir=COMMON_DIR):
             os.mkdir('%s/source' % wiki)
         except:
             pass
-            
+
         try:
             os.mkdir('%s/source/docs' % wiki)
         except:
             pass
-            
-            
+
+
     for root, dirs, files in os.walk(start_dir):
         for file in files:
             if file.endswith(".rst"):
@@ -202,8 +202,8 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
                     destination_file.close()
-                
-            
+
+
 def get_copy_targets(content):
     p = re.compile(r'\[copywiki.*?destination\=\"(.*?)\".*?\]',flags=re.S)
     m = p.search(content)
@@ -221,23 +221,23 @@ def strip_content(content, site):
     """
     Strips the copywiki shortcode. Removes content for other sites and the [site] shortcode itself.
     """
-    
+
     def fix_copywiki_shortcode(matchobj):
         """
         Strip the copywiki shortcode if found (just return "nothing" to result of re)
-        """        
+        """
         #logmatch_code(matchobj, 'STRIP')
         #print("STRIPPED")
         return ''
-    
+
     #Remove the copywiki from content
     newText=re.sub(r'\[copywiki.*?\]', fix_copywiki_shortcode, content, flags= re.M)
-    
-    
-    def fix_site_shortcode(matchobj):        
+
+
+    def fix_site_shortcode(matchobj):
         #logmatch_code(matchobj, 'SITESC_')
         sitelist=matchobj.group(1)
-        #print("SITES_BLOCK: %s" % sitelist) 
+        #print("SITES_BLOCK: %s" % sitelist)
         if site not in sitelist:
             #print("NOT")
             return ''
@@ -246,34 +246,34 @@ def strip_content(content, site):
             return matchobj.group(2)
     #Remove the site shortcode from content
     newText=re.sub(r'\[site\s.*?wiki\=\"(.*?)\".*?\](.*?)\[\/site\]', fix_site_shortcode, newText, flags= re.S)
-    
+
     return newText
 
 
-    
+
 def logmatch_code(matchobj, prefix):
 
     try:
         print("%s m0: %s" % (prefix,matchobj.group(0)) )
     except:
         print("%s: except m0" % prefix)
-        
-        
+
+
     try:
         print("%s m1: %s" % (prefix,matchobj.group(1)))
     except:
         print("%s: except m1" % prefix)
-        
+
     try:
         print("%s m2: %s" % (prefix,matchobj.group(2)))
     except:
         print("%s: except m1" % prefix)
-        
+
     try:
         print("%s m3: %s" % (prefix,matchobj.group(3)))
     except:
         print("%s: except m3" % prefix)
-        
+
     try:
         print("%s m4: %s" % (prefix,matchobj.group(4)))
     except:
