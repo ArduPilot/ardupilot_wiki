@@ -72,7 +72,7 @@ As shown in the last step of the vagrant instructions above, use update.py to bu
        python update.py --site copter  (to build just the copter wiki)
        python update.py --site plane   (to build just the plane wiki)
        python update.py --site rover   (to build just the rover wiki)
-       python update.py --site dev     (to build just the developer wiki)
+       python update.py --site dev     (to build just this developer wiki)
 
 The update.py script will copy the common files into each wiki subdirectory and then build each wiki.
 
