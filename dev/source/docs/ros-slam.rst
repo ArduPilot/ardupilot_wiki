@@ -54,9 +54,9 @@ Install more packages
 ::
 
     sudo apt-get install ros-kinetic-tf ros-kinetic-tf-conversions ros-kinetic-laser-geometry
-    sudo apt-get install ros-kinetic-cv-bridge install ros-kinetic-image-transport
+    sudo apt-get install ros-kinetic-cv-bridge ros-kinetic-image-transport
     sudo apt-get install qt4-qmake qt4-dev-tools
-    sudo apt-get install protobus-compiler
+    sudo apt-get install protobuf-compiler
 
 Create a Catkin WorkSpace
 -------------------------
