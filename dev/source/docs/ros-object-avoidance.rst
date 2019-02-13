@@ -8,7 +8,7 @@ ROS for Object Avoidance
     :target: ../_images/ros-object-avoidance.png
     :width: 450px
 
-This page describes how to setup ROS's navigation controllers to provide velocity commands to ArduPilot to steer a rover around obstacles.  This assumes all the previous setup including :ref:`Cartographer <ros-cartographer-slam>` and :ref:`rviz <ros-rviz>` have already been completed.
+This page describes how to setup `ROS's base local planner <http://wiki.ros.org/base_local_planner>`__ to provide velocity commands to ArduPilot to steer a rover around obstacles.  This assumes all the previous setup including :ref:`Cartographer <ros-cartographer-slam>` and :ref:`rviz <ros-rviz>` have already been completed.
 
 These instructions were tested on a :ref:`Nvidia TX2 <companion-computer-nvidia-tx2>` running an :ref:`APSync image <apsync-intro>` with ROS installed as described :ref:`here <ros-install>`.
 
