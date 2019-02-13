@@ -9,6 +9,7 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
+- Feb 26th: HEX booth at Avalon Airshow 2019, Geelong Australia (`announcement <https://discuss.cubepilot.org/t/avalon-airshow-2019-come-meet-us/195>`__)
 - Mar 23rd & 24th 2019: Developer Un-conference in Canberra Australia (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-meetup-in-canberra-march-23rd-and-24th-2019>`__)
 - Apr 29th to May 2nd 2019: AUVSI Xponential in Chicago.  Booth #4006
 - Sep 3rd to 6th: InterDrone 2019 in Las Vegas (`overview <https://www.interdrone.com/conference/overview/>`__)
