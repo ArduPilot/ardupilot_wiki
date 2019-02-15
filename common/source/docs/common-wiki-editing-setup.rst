@@ -59,7 +59,7 @@ The main steps for building the docs are:
    .. code-block:: bash
 
        cd /vagrant
-       python update.py
+       python3 update.py
 
 Build the Wiki
 --------------
@@ -68,11 +68,11 @@ As shown in the last step of the vagrant instructions above, use update.py to bu
 
    .. code-block:: bash
 
-       python update.py
-       python update.py --site copter  (to build just the copter wiki)
-       python update.py --site plane   (to build just the plane wiki)
-       python update.py --site rover   (to build just the rover wiki)
-       python update.py --site dev     (to build just this developer wiki)
+       python3 update.py
+       python3 update.py --site copter  (to build just the copter wiki)
+       python3 update.py --site plane   (to build just the plane wiki)
+       python3 update.py --site rover   (to build just the rover wiki)
+       python3 update.py --site dev     (to build just this developer wiki)
 
 The update.py script will copy the common files into each wiki subdirectory and then build each wiki.
 
@@ -97,15 +97,15 @@ RST editing/previewing
 
 The tools described in this section can make it easier to edit RST files and reduce the time required to preview changes.
 
-.. note:: 
-    
+.. note::
+
     The RST rendering tools can be useful for rapidly previewing small changes in the documentation. Rendering will not be perfect because the tools are designed for generic reStructuredText (they and are not "Sphinx-aware). We therefore recommend that you build with Sphinx to do a final review before you make a documentation pull request. 
 
 RST rendering on Windows
 ------------------------
 
 A combination of two Windows tools can help you previewing your modifications:
-  	
+
 * `Notepad++ plugin for RST files <https://github.com/steenhulthin/reStructuredText_NPP>`__
 * `restview (on-the-fly renderer for RST files) <https://mg.pov.lt/restview/>`__
 
@@ -118,9 +118,9 @@ The installation of the Notepad++ plugin is clearly explained on the plugin's we
 Restview can be installed with:
 
 .. code-block:: bat
-	
+
 	python -m pip install restview
-		
+
 The restview executable will be installed in the **Scripts** folder of the Python main folder.
 Restview will start the on-the-fly HTML rendering and open a tab page in your preferred web browser.
 
@@ -129,16 +129,16 @@ Example:
 If you are in the root folder of your local Wiki repository:
 
 .. code-block:: bat
-	
-	start \python-folder\Scripts\restview common\source\docs\common-wiki_editing_guide.rst	
-	
+
+	start \python-folder\Scripts\restview common\source\docs\common-wiki_editing_guide.rst
+
 RST rendering on Linux
 ----------------------
 
 `ReText <https://github.com/retext-project/retext>`__ is a Linux tool that provides
 syntax highlighting and basic on-the-fly rendering in a single application.
 
-.. note:: 
+.. note::
 
     Although the tool is Python based, don't try it on Windows as it very prone to crashes (this is 
     also stated by the website).
