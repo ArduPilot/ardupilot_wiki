@@ -3,22 +3,18 @@
 Barometer (external)
 ====================
 
-.. warning::
-
-   Support for external barometers was released with Copter-3.6.  The instructions below have been verified for the Drotek MS5611 and BMP280 types.
-
 .. image:: ../../../images/baro-top-image.png
     :width: 450px
 
-Most flight controllers include a barometer directly on the flight controller but attaching an external barometer can be useful in order to place the barometer away from air pressure disturbances.
+Most flight controllers include a barometer directly on the flight controller but attaching an external barometer can be useful in order to place the barometer away from air pressure disturbances.  It can also allow monitoring the environmental or an internal component's temperature within a typical range of -40 - +85°C.
+
+.. warning::
+
+   Copter-3.6 only supports the Drotek MS5611.  BMP280 support will be released with Copter-3.7.
 
 .. note::
 
    Copter users can partially reduce the effect of air pressure disurbances by enabling :ref:`Ground Effect Compensation <Copter:ground-effect-compensation>`
-
-.. tip::
-
-   Besides providing pressure readings for altitude estimation, an additional barometer can be used for monitoring the environmental or an internal component's temperature within a typical range of -40 - +85°C.
 
 Where to Buy
 ------------
