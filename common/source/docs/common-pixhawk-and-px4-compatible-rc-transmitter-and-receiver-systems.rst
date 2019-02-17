@@ -84,7 +84,7 @@ FrSky Taranis X9D Plus and Taranis Q X7 RC Transmitters
 
    Theses transmitters are a real bargain. You can buy them from different locations e.g. `Craft and Theory <http://www.craftandtheoryllc.com/packageq>`__, `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ .
 
-The `FrSky Taranis RC Transmitter <http://www.frsky-rc.com/product/pro.php?pro_id=113>`__ is a
+The `FrSky Taranis RC Transmitter <https://www.frsky-rc.com/product/taranis-q-x7-2/>`__ is a
 high quality `OpenTX <http://www.open-tx.org/downloads.html>`__ (open source firmware) enabled RC Transmitter that is compatible with a wide variety of high quality FrSky PPM-Sum and S.Bus compatible receivers. 
 
 One of the major advantages of the Taranis is that it can receive and display telemetry data **directly from ArduPilot** and on-board FrSky telemetry sensors, such as flight mode, GPS status, current drawn and cell voltages, and even ArduPilot messages, that can be added to your vehicle. For more information, see :ref:`FrSky telemetry <common-frsky-telemetry>`.
@@ -147,11 +147,11 @@ FrSky Transmitter Module and S.Bus/PPM-Sum Receiver
 The FrSky receiver and transmitter modules below will work with
 Turnigy 9x, 9XR (above) and other RC transmitters.
 
-FrSKY makes several PPM-Sum and S.Bus receivers and transmitters `FrSky's web site <http://www.frsky-rc.com/product/category.php?cate_id=17>`__.
+FrSKY makes several PPM-Sum and S.Bus receivers and transmitters `FrSky's web site <https://www.frsky-rc.com/product-category/transmitters/>`__.
 
 The FrSky XJT module is a 2.4GHz frequency hopping "ACCST" transmitter that features Smart Port telemetry. It can operate in 8 channel, 16 channel and long range 12 channel mode. The XJT is compatible with the FrSky X series receivers such as the popular X8R and XSR. This radio 
 
-The `X8R <http://www.frsky-rc.com/product/pro.php?pro_id=105>`__ and `XSR <http://www.frsky-rc.com/product/pro.php?pro_id=154>`__ receivers have S.Bus and CPPM outputs, and also feature Smart Port telemetry, which provides telemetry from ArduPilot and other on-board FrSky sensors (current sensor, cell voltage sensor, temperature sensor, ...)
+The `RX8 <https://www.frsky-rc.com/product/g-rx8/>`__ and `XSR <https://www.frsky-rc.com/product/r-xsr/>`__ receivers have S.Bus and CPPM outputs, and also feature Smart Port telemetry, which provides telemetry from ArduPilot and other on-board FrSky sensors (current sensor, cell voltage sensor, temperature sensor, ...)
 
 
 .. figure:: ../../../images/FrSky_XJT_TX.jpg
