@@ -226,12 +226,12 @@ In some countries it is not possible to donate through PayPal in which case you 
 
 What do I get for becoming an ArduPilot partner?
 ================================================
-Beyond a warm feeling in your heart for helping a worthy project, your company can send a representative to the "ArduPilot Advisory Board" meeting.  This is a meeting held on the first Wednesday or Thursday (depending upon your timezone) of each month.  It is attended by the core devs and presents an opportunity to get high-level updates on the project and influence how funds are spent (the formal voting procedure is still to be finalised).  You may also find like-minded companies with whom you can cooperate in various ways.
+Beyond a warm feeling in your heart for helping a worthy project, your company can send a representative to the "ArduPilot Advisory Board" meeting.  This is a meeting held on the first Wednesday or Thursday (depending upon your timezone) of each month.  It is attended by the core devs and presents an opportunity to get high-level updates on the project and influence how funds are spent (via proposals to the Funding Committee).  You may also find like-minded companies with whom you can cooperate in various ways.
 
 How are collected funds spent?
 ==============================
 Funds are first used to cover fixed costs including servers to host the wiki, autotest and build servers and other running expenses.
-Any remaining funds will be used to pay for documentation efforts and hardware/software costs for developers working on ArduPilot related enhancements.  It is expected that a voting mechanism will be created in the near future to allow to influence how the collected funds are spent. 
+Any remaining funds will be used to pay for documentation efforts and hardware/software costs for developers working on ArduPilot related enhancements, and subsidise the annual Developers Conference.  A Funding Committee of 3 people is voted on annually from within the Development Team to oversee and control financial matters. 
 
 I'm not a company, but I love your stuff, how can I help?
 =========================================================
