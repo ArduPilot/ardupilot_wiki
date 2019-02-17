@@ -123,8 +123,8 @@ General wiring recommendations
    moved rapidly ). The key thing is that the digital servo causes the
    voltage on the rail to rise above the critical 5.7V level. Above that
    level the Pixhawk power management will cut power to the FMU and the
-   Pixhawk will reboot. If that happens when flying you will lose your
-   aircraft.
+   Pixhawk will reboot.
+   **If that happens when flying you will lose your aircraft.**
 
    .. image:: ../../../images/servo-V-spike.jpg
        :target: ../_images/servo-V-spike.jpg
