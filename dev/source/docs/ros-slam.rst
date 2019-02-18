@@ -8,6 +8,8 @@ This page shows how to setup ROS and `Hector SLAM <http://wiki.ros.org/hector_sl
 
 These instructions were tested on an :ref:`NVidia TX2 <companion-computer-nvidia-tx2>` flashed with :ref:`APSync <apsync-intro>` and then ROS and MAVROS were :ref:`installed as described here <ros-install>`.
 
+They were also tested on an :ref:`RaspberryPi 3 B+ <raspberry-pi-via-mavlink.rst>` with ROS and MAVROS installed :ref:`installed as described here <ros-install>`. 
+
 .. note::
 
     these pages are a work-in-progress
@@ -146,7 +148,7 @@ In Terminal2:
 
     roslaunch rplidar_ros rplidar.launch
 
-In Terminal3:
+In Terminal3 (For RaspberryPi we recommend running this on another Machine explained :ref:`here<http://wiki.ros.org/ROS/Tutorials/MultipleMachines>`:
 
 .. code-block:: bash
 
