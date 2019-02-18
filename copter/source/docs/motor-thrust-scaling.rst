@@ -34,6 +34,14 @@ The curve is controlled by two parameters:
    out near it's maximum.  By default this is 0.95 meaning 95% of full
    throttle.
 
+Thrust Stands
+=============
+
+The thrust stands listed below can be used to measure the PWM signal vs thrust output for a vehicle's specific motor, esc and battery
+
+- `RCbenchmark.com thrust stands <https://www.rcbenchmark.com/pages/series-1580-thrust-stand-dynamometer>`__
+- `Turnigy thrust stand <https://hobbyking.com/en_us/turnigy-thrust-stand-and-power-analyser-v3.html>`__
+
 MatLab example code
 ===================
 
