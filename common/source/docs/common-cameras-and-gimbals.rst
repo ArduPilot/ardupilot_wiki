@@ -40,8 +40,8 @@ the output signal into the form expected by your particular camera:
 
 -  :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter-with-servo>`
 -  :ref:`Camera Shutter Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
--  :ref:`CHDK Camera Control Tutorial <common-chdk-camera-control-tutorial>` (non-standard
-   integration)
+-  :ref:`CHDK Camera Control Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
+-  :ref:`FLIR Vue Pro <common-flir-vue-pro>`
 
 Detail topics
 =============
@@ -57,3 +57,4 @@ Detail topics
     Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
     Camera Shutter Trigger Boards for Purchase <common-camera-shutter-triggering-cables-for-purchase>
     CHDK Camera Control <common-chdk-camera-control-tutorial>
+    FLIR Vue Pro <common-flir-vue-pro>
