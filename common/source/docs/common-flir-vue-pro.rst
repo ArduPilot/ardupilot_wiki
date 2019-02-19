@@ -32,10 +32,12 @@ Set the following parameters on the autopilot (assuming Telem2/Serial2 is used):
 
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 1 (MAVLink 1)
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 57 (57200 baud)
+-  :ref:`SR2_POSITION <SR2_POSITION>` = 5 to send the vehicle's position to the camera at 5hz
 
 To allow triggering the taking of pictures during a mission or from a transmitter's auxiliary switch connect the "P3" 3-pin servo connector to the one of the flight controller's servo outputs.  In this example AUX OUT 1 (aka SERVO9) is used.  Then set the following parameters
 
 - :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` = 10 (Camera Trigger)
+- :ref:`CAM_SERVO_ON <CAM_SERVO_ON>` = 1900
 - :ref:`CH8_OPT <CH8_OPT>` or :ref:`RC8_OPTION <RC8_OPTION>` = 9 (Camera Trigger) to enable triggering from transmitter switch 8
 
 Configure the Phone
@@ -51,7 +53,16 @@ Configure the Phone
 Testing
 -------
 
-- Power up the camera and flight controller in a location where the vehicle can get a GPS lock
+- Power up the camera and flight controller in a location where the vehicle can get a GPS lock.
 - Connect with a ground station (like Mission Planner) and check that the vehicle appears on the map
-- Trigger taking a picture using the transmitter's auxiliary switch or by right-mouse-button-clicking on the map and selecting "Trigger Camera NOW"
-- Connect the camera to your computer using a USB cable (or remove the camera's SD card) and check that an image has been captured.  Use an EXIF viewing tool to check that the latitude, longitude, altitude and heading are correctly recorded in the image
+- If the serial connection between the flight controller and camera is working then shortly after the camera is powered on, it will begin sending heartbeats to the flight controller and ground station which, if using the Mission Planner, will make it appear as "CAMERA" in the top-right drop-down.  Selecting the CAMERA will not work though because the camera does not respond to requests for parameters
+
+.. image:: ../../../images/flir-vue-pro-mp.png
+    :target: ../_images/flir-vue-pro-mp.png
+
+- Trigger taking a picture using the transmitter's auxiliary switch or by right-mouse-button-clicking on the map and selecting "Trigger Camera NOW".  The camera should beep
+- Connect the camera to your computer using a USB cable (or remove the camera's SD card) and check that an image has been captured
+- Check the file properties to ensure the latitude, longitude and altitude have been recorded with the image
+
+.. image:: ../../../images/flir-vue-pro-exif.png
+    :target: ../_images/flir-vue-pro-exif.png
