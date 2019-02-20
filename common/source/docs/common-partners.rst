@@ -218,7 +218,7 @@ Corporate Partners
     :width: 250px
     :target:  http://www.holybro.com
 
-.. image:: ../../../images/supporters/supporters_logo_aws.png
+.. image:: ../../../images/supporters/supporters_logo_asw.png
     :width: 250px
     :target:  https://www.aerosystemswest.com/
 
