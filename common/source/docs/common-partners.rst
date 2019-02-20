@@ -155,27 +155,27 @@ Corporate Partners
     :target:  http://www.benewake.com/en/index.html
 
 .. image:: ../../../images/supporters/supporters_logo_foxtech.jpg
-    :width: 250px   
+    :width: 250px
     :target:  https://www.foxtechfpv.com
 
 .. image:: ../../../images/supporters/supporters_logo_skywalker.png
-    :width: 250px   
+    :width: 250px
     :target:  http://sky-walker.co.jp/english/index.html
 
 .. image:: ../../../images/supporters/supporters_logo_bfd.jpg
-    :width: 250px   
+    :width: 250px
     :target:  https://www.bfdsystems.com
 
 .. image:: ../../../images/supporters/supporters_logo_unmannedtech.jpg
-    :width: 250px   
+    :width: 250px
     :target:  https://www.unmannedtechshop.co.uk/
 
 .. image:: ../../../images/supporters/supporters_logo_Rubidium.jpg
-    :width: 250px   
+    :width: 250px
     :target:  https://rubidiumlight.com.au/rubidium-rover/
     
 .. image:: ../../../images/supporters/supporters_logo_makeflyeasy.jpg
-    :width: 250px   
+    :width: 250px
     :target:  http://makeflyeasy.com/
     
 .. image:: ../../../images/supporters/supporters_logo_hexsoon.jpg
@@ -183,15 +183,15 @@ Corporate Partners
     :target: http://ardupilot.org/about/Partners
     
 .. image:: ../../../images/supporters/supporters_logo_MicroAerialProjects.png
-    :width: 250px   
+    :width: 250px
     :target:  http://www.microaerialprojects.com
     
 .. image:: ../../../images/supporters/supporters_logo_ARACE_UAS.png
-    :width: 250px   
+    :width: 250px
     :target:  http://www.facebook.com/araceuas
     
 .. image:: ../../../images/supporters/Supporters_Logo_EaglePride.png
-    :width: 250px   
+    :width: 250px
     :target:  http://www.eaglepridedrones.com
 
 .. image:: ../../../images/supporters/supporters_logo_KDE_Direct.png
@@ -199,24 +199,32 @@ Corporate Partners
     :target:  http://www.kdedirect.com
 
 .. image:: ../../../images/supporters/Supporters_logo_HangZhouQiFei.png
-    :width: 250px   
+    :width: 250px
     :target:  https://agrobot.en.alibaba.com/company_profile.html
     
 .. image:: ../../../images/supporters/Supporters_Logo_Mateksys.png
-    :width: 250px   
+    :width: 250px
     :target:  http://www.mateksys.com/
     
 .. image:: ../../../images/supporters/Supporters_Logo_Tiho_Aviation.PNG
-    :width: 250px   
+    :width: 250px
     :target:  http://ardupilot.org/about/Partners
 
 .. image:: ../../../images/supporters/supporters_logo_freespace.png
-    :width: 250px   
+    :width: 250px
     :target:  https://freespace.solutions/
     
 .. image:: ../../../images/supporters/Supporters_Logo_Holybro.png
-    :width: 250px   
+    :width: 250px
     :target:  http://www.holybro.com
+
+.. image:: ../../../images/supporters/supporters_logo_aws.png
+    :width: 250px
+    :target:  https://www.aerosystemswest.com/
+
+.. image:: ../../../images/supporters/supporters_logo_baskaerospace.jpg
+    :width: 250px
+    :target:  https://baskaerospace.com.au/
 
 How does my company become a partner?
 =====================================
