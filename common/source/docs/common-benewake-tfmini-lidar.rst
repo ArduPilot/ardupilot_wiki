@@ -1,10 +1,12 @@
 .. _common-benewake-tfmini-lidar:
 
-=====================
-Benewake TFmini lidar
-=====================
+===================================
+Benewake TFmini / TFmini Plus lidar
+===================================
 
-The `Benewake TFmini lidar <http://www.benewake.com/en/tfmini.html>`__ has an indoor range of 12m, an outdoor range of 7m and weighs only (5g).  More specifications can be found `here <http://www.benewake.com/en/canshu/show-171.html>`__ and in the `datasheet <http://www.benewake.com/en/down.html>`__.
+The `Benewake TFmini lidar <http://en.benewake.com/product/detail/5c345e26e5b3a844c472329c.html>`__ and `TFmini Plus <http://en.benewake.com/product/detail/5c345cd0e5b3a844c472329b.html>`__ have an indoor range of 12m, an outdoor range of 7m and weigh only (5g).
+
+More details on both these lidar can be found in the `benewake.com's downloads area <http://en.benewake.com/download>`__
 
 .. image:: ../../../images/benewake-tfmini-topimage.jpg
 
@@ -15,7 +17,7 @@ The `Benewake TFmini lidar <http://www.benewake.com/en/tfmini.html>`__ has an in
 Where to Buy
 ------------
 
-- the `Benewake.com Agents <http://www.benewake.com/en/agent.html>`__ page provides the full list of retailers.
+- the `Benewake.com Agents <http://en.benewake.com/agent>`__ page provides the full list of retailers.
 
 Connecting to the Flight Controller
 -----------------------------------

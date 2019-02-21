@@ -1,10 +1,14 @@
 .. _common-benewake-tf02-lidar:
 
-===================
-Benewake TF02 lidar
-===================
+==========================
+Benewake TF02 / TF03 lidar
+==========================
 
-The `Benewake TF02 lidar <http://www.benewake.com/en/tf02.html>`__ has an indoor range of 22m, an outdoor range of 10m, an update rate of 100hz and weighs only 52g.  More specifications can be found `here <http://www.benewake.com/en/canshu/show-172.html>`__ and in the `datasheet <http://www.benewake.com/en/down.html>`__.
+The `Benewake TF02 lidar <http://en.benewake.com/product/detail/5c345c9de5b3a844c4723299.html>`__ has an indoor range of 22m, an outdoor range of 10m, an update rate of 100hz and weighs only 52g.
+
+The `TF03 <http://en.benewake.com/product/detail/5c345cc2e5b3a844c472329a.html>`__ has a range of 50m to 180m (depending upon the surface) and weighs 77g.
+
+More details on both these lidar can be found in the `benewake.com's downloads area <http://en.benewake.com/download>`__
 
 .. image:: ../../../images/benewake-tf02-topimage.jpg
 
@@ -30,7 +34,7 @@ If the SERIAL4/5 port on a Pixhawk is being used then the following parameters s
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
 -  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 19 (Benewake TF02)
 -  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 30
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **2000** for indoor use OR **1000** for outdoor.  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>`: for TF02 use **2000** for indoor, **1000** for outdoor.  For TF03 use **3500** for indoor, **12000** for outdoor.  *This is the distance in centimeters that the rangefinder can reliably read.*
 -  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If instead the Telem2 port was used then the serial parameters listed above should instead be:
