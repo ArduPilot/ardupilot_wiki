@@ -106,10 +106,12 @@ repository, follow these directions:
 Next Steps
 ----------
 
-You can track the state of your PR from the `Pulls list <https://github.com/ArduPilot/ardupilot/pulls>`__.
+You can track the state of your PR from the `Pull Requests list <https://github.com/ArduPilot/ardupilot/pulls>`__.
 
-PR are more likely to be merged quickly if there is good testing evidence provided.  This could be graphs of logs recorded before and after the change.
+PRs are more likely to be merged quickly if:
 
-It is very common, especially for large changes, for the main developers to ask you to modify the pull request to fit in better with the existing code base or resolve some knock-on impact that you may not have known about. Please don't take this the wrong way, we're definitely not trying to make your life difficult!
+- The PR clearly states what changes in behaviour are expected
+- Good testing evidence is provided.  This could be graphs of logs recorded before and after the change
+- The PR is discussed on the :ref:`weekly dev call <ardupilot-mumble-server>`.  To get the PR discussed add the "DevCallTopic" label.  If you are unable to add the label ping one of the developers on the `ArduPilot Gitter channel <https://gitter.im/ArduPilot/ardupilot>`__
 
-Feel free to join the :ref:`weekly dev call <ardupilot-mumble-server>` where PRs and issues are discussed or reach out to us through one of the other :ref:`communication channels <common-contact-us>`
+It is very common, especially for large changes, for the core developers to ask you to modify the pull request to fit in better with the existing code base or resolve some knock-on impact that you may not have known about. Please don't take this the wrong way, we're definitely not trying to make your life difficult!
