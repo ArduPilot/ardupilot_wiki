@@ -1,8 +1,8 @@
 .. _differential-spoilers:
 
-=====================
-Differential Spoilers
-=====================
+=========================================
+Differential Spoilers & Full House Wing
+=========================================
 
 Usage
 =====
@@ -43,12 +43,40 @@ Now setup your 4 channels using the SERVOn_FUNCTION parameters:
 +-------------------------------+-----------------------+-----------------------------------------------+
 | Differential Spoiler Left 2   | 86                    | This should be set to the inner left servo    |
 +-------------------------------+-----------------------+-----------------------------------------------+
-| Differential Spoiler Right 2  | 87                    | This should be set to the outer right servo   |
+| Differential Spoiler Right 2  | 87                    | This should be set to the inner right servo   |
 +-------------------------------+-----------------------+-----------------------------------------------+
 
 You can adjust the direction of each servo using the SERVOn_REVERSED
 parameters, and swap channels to get the right movement direction for
-elevons and rudder.
+elevons and rudder. The wighting of flap to the movement of the outer and inner control surfaces can be set
+using :ref:`DSPOILER_CROW_W1 <DSPOILER_CROW_W1>` and :ref:`DSPOILER_CROW_W2 <DSPOILER_CROW_W2>` respectively.
+
+Differential Spoiler options
+============================
+:ref:`DSPOILER_OPTS <DSPOILER_OPTS>` parameter gives several options that can be used to tailor the dspoiler 
+functionality to your aircraft. They can be used to setup a 'full house' wing on a glider. DSPOILER_OPTS is 
+a bit-mask each, bit enables different functionality. 
+
++-------+-----------------------------------------------------------------------------------------------+
+|**Bit**|                                    **Description**                                            |
++-------+-----------------------------------------------------------------------------------------------+
+|   0   | Pitch control, this bit enables or disables pitch control output using the differential       |
+|       | spoilers. 0 uses elevons as source for use with a flying wing, 1 uses ailerons as source for  |
+|       | use with a traditional plane                                                                  |
++-------+-----------------------------------------------------------------------------------------------+
+|   1   | Full span ailerons, 1 uses both the inner and outer control surfaces for roll control         |
+|       | 0 just used the outer control surfaces                                                        |
++-------+-----------------------------------------------------------------------------------------------+
+|   2   | Progressive crow, 0 gives crow brakes - the inner control surfaces are moved down and the     |
+|       | outer surfaces moved up at the same time 1, for 0 to 50% flap only the inner surfaces are     |
+|       | moved down then from 50% to 100% flap the outer surfaces are moved up, this gives traditional |
+|       | flaps first then crow brakes                                                                  |
++-------+-----------------------------------------------------------------------------------------------+
+
+:ref:`DSPOILER_AILMTCH <DSPOILER_AILMTCH>` allows the downwards travel of the inner surfaces to be limited 
+to a percentage of there full downwards travel. This only affects the travel when the control surfaces are used 
+as full span ailerons or for differential yaw. Using this parameter a flap control surface with lots of downwards 
+travel can still be utilized for full span ailerons. Upwards travel of the control surfaces is unaffected.
 
 .. |4surfLeftYaw| image:: ../images/4surfLeftYaw.jpg
     :target: ../_images/4surfLeftYaw.jpg
