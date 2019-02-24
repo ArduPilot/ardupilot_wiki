@@ -49,6 +49,13 @@ Setup steps
 
        sudo easy_install pip
        sudo pip install pyserial future empy
+       
+   ::
+   
+       ** Starting with MacOS Mojave (10.14.x) you might want to install the SDK headers
+       
+       open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+
 
 #. Follow the `MAVProxy's install instructions <https://ardupilot.github.io/MAVProxy/html/getting_started/download_and_installation.html#mac>`__ if you plan to use the simulator.
 
