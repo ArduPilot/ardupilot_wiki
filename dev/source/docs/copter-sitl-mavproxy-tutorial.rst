@@ -177,8 +177,8 @@ In addition to ``takeoff``, you can send the following commands in
 
 ::
 
-    yaw ANGLE ANGULAR_SPEED MODE  (MODE is 0 for "absolute" or 1 for "relative")
-    speed SPEED_VALUE
+    setyaw ANGLE ANGULAR_SPEED MODE  (MODE is 0 for "absolute" or 1 for "relative")
+    setspeed SPEED_VALUE
     velocity x y z   (m/s)
 
 .. note::
