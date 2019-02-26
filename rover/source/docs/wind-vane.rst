@@ -6,7 +6,7 @@ Wind Vane
 
 A wind vane is used to sense both the wind speed and direction of the apparent wind; this can
 then be used to calculate the true wind speed and direction. Wind vanes are only supported for Rover sailing vehicles.
-All wind vane paramiters can be found by serching for the prefix :ref:`WNDVN <WNDVN_TYPE>`.
+All wind vane parameters can be found by searching for the prefix :ref:`WNDVN <WNDVN_TYPE>`.
 
 Sensing wind direction
 ----------------------
@@ -72,15 +72,18 @@ Sensing wind speed
 
 A wind speed sensor is not absolutely required to get a sailing vehicle to work well. If one is not fitted apparent wind effects are
 ignored, for vehicles that move slowly in comparison to the wind speed this will have little effect however If possible it is always
-better to have a wind speed sensor.
+better to have a wind speed sensor. The wind speed sensor type can be changed with :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>`. The wind
+speed is filtered using a low pass filter, the frequency of this filter can be set using :ref:`WNDVN_SPEED_FILT <WNDVN_SPEED_FILT>`.
 
-The wind speed can be sensed in two ways, the wind speed sensor type can be changed with :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>`.  The first is to read the
-speed from the :ref:`airspeed library <airspeed>` . This allows any pitot tube type airspeed sensor to be used. It is important the :ref:`ARSPD_USE <ARSPD_USE>` and
-:ref:`ARSPD_AUTOCAL <ARSPD_AUTOCAL>` parameters are left at zero, they enable features designed for aircraft that will not work with Rover.
 
-It may also be desirable to disable start up calibration with :ref:`ARSPD_SKIP_CAL <ARSPD_SKIP_CAL>`. If left enabled the airspeed sensor will be zeroed at boot.
-This recalibration requires the sensor is sheltered from the wind, this may be hard on a sailing craft. Pitot tube airspeed sensors must 
-be pointed directly into the wind, in this case that would require mounting the sensor to the wind vane. Due to this mechanical complexity
+Pitot tube airspeed sensor
++++++++++++++++++++
+
+Setting :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>` to 1 allows reading the wind speed from the :ref:`airspeed library <airspeed>`. This allows any pitot tube type
+airspeed sensor to be used. It is important the :ref:`ARSPD_USE <ARSPD_USE>` and :ref:`ARSPD_AUTOCAL <ARSPD_AUTOCAL>` parameters are left at zero, they enable features
+designed for aircraft that will not work with Rover. It may also be desirable to disable start up calibration with :ref:`ARSPD_SKIP_CAL <ARSPD_SKIP_CAL>`. If left
+enabled the airspeed sensor will be zeroed at boot. This recalibration requires the sensor is sheltered from the wind, this may be hard on a sailing craft. Pitot tube
+airspeed sensors must be pointed directly into the wind, in this case that would require mounting the sensor to the wind vane. Due to this mechanical complexity
 other methods of sensing wind speed may be more convenient.
 
 Hot Wire Anemometer
@@ -91,14 +94,23 @@ Hot Wire Anemometer
     :width: 50%
 
 A hot wire anemometer can be used to sense the wind speed from any direction so can be mounted directly to the vehicle. So far only the
-`modern devices wind sensor Rev. P <https://moderndevice.com/product/wind-sensor-rev-p/>`__ is supported.
-This should be wired to between 10V and 12V the OUT and TMP pins are then connected to two 3.3V ADC pins. As with the wind vane the
+`modern devices wind sensor Rev. P <https://moderndevice.com/product/wind-sensor-rev-p/>`__ is supported. This is selected by setting :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>`
+to 2. This should be wired to between 10V and 12V the OUT and TMP pins are then connected to two 3.3V ADC pins. As with the wind vane the
 sensor should be mounted as high as possible.
 
-The speed output pin labelled OUT should connected to the flight controller ADC pin defined by :ref:`WNDVN_SPEED_PIN <WNDVN_SPEED_PIN>`. The TMP pin of
+The speed output pin labeled OUT should connected to the flight controller ADC pin defined by :ref:`WNDVN_SPEED_PIN <WNDVN_SPEED_PIN>`. The TMP pin of
 the sensor should be connected to the flight controller ADC pin defined by :ref:`WNDVN_TEMP_PIN <WNDVN_TEMP_PIN>`. If only a single ADC pin is available
 the TMP output can be omitted, :ref:`WNDVN_TEMP_PIN <WNDVN_TEMP_PIN>` should be set to -1 in this case. The code will then assume room temperature; this will
 reduce the accuracy of the wind speed reading. The :ref:`WNDVN_SPEED_OFS <WNDVN_SPEED_OFS>` parameter should be increased until there is a small wind speed reading in
 zero actual wind speed, it can then be reduced again until it just reaches zero.
 
-The wind speed is filtered using a low pass filter, the frequency of this filter can be set using :ref:`WNDVN_SPEED_FILT <WNDVN_SPEED_FILT>`.
+Rotating Cups Anemometer
++++++++++++++++++++
+
+A cups type anemometer can be used via the RPM library (as of master feb 2019). This is selected by setting :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>`
+to 3. The RPM library must be setup accordingly using the first :ref:`RPM sensor <RPM_TYPE>`. The :ref:`RPM_SCALING <RPM_SCALING>` value must be calculated
+such that wind speed in m/s is returned. 
+
+.. image:: ../../../images/wind-vane-cups.jpg
+    :target: ../_images/wind-vane-cups.jpg
+    :width: 50%
