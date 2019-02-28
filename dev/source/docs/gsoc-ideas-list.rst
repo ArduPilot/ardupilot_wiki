@@ -18,6 +18,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2019 <htt
 - create new vehicle models for the Morse simulator, including boats, planes and copters
 - `MathWorks SimuLink <https://www.mathworks.com/products/simulink.html>`__ interface to ArduPilot SITL
 - `AirSim drone simulator <https://github.com/Microsoft/AirSim/>`__ support for ArduPilot SITL
+- Build system improvements, specifically fixing dependency handling and speeding up the waf build
 
 See lower down on this page for more details for some of the projects listed above
 
