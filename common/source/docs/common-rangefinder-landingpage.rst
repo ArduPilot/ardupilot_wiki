@@ -63,7 +63,7 @@ based upon your set-up.
     Maxbotic I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotic Analog Sonar <common-rangefinder-maxbotix-analog>
     RPLidar A2 360 degree laser scanner <common-rplidar-a2>
-    ST VL53L0X Lidar <common-vl53l0x-lidar>
+    ST VL53L0X / VL53L1X Lidar <common-vl53l0x-lidar>
     TeraRanger One Rangefinder <common-teraranger-one-rangefinder>
     TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
     Underwater Sonar (Analog) <common-underwater-sonar-analog>
