@@ -25,7 +25,7 @@ Setup steps
            :width: 70%
            :target: ../_images/build-on-windows10-subsys-for-linux.png
 
-   - Open the Microsoft Store and install Ubuntu 16.04 (Direct link: https://www.microsoft.com/store/productId/9PJN388HP8C9)
+   - Open the Microsoft Store and install Ubuntu 18.04 (Direct link: https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q)
    - Push the Launch button which will open a Bash terminal and ask for a username and password
 
        .. image:: ../images/build-on-windows10-usernamepwd.png
@@ -78,8 +78,7 @@ You should now be able to start the "Ubuntu" application from your Windows Start
 
 .. note::
 
-    WSL (Windows Subsystem Linux) does not have access to USB serial peripherals, so the waf --upload option
-    does not work over USB.  A workaround is to upload using a ground station.  For example Mission Planner's Initial Setup >> Install Firmware screen has a "Load custom firmware" link on the bottom right.
+    As of Windows 10 Build 16176 (April 2017), WSL (Windows Subsystem Linux) has support for access to USB serial peripherals. If you have not updated, please do so. That will allow you to compile and upload directly with the waf --upload option. You can also upload using a ground station.  For example Mission Planner's Initial Setup >> Install Firmware screen has a "Load custom firmware" link on the bottom right.
     If this link is not visible, open Config/Tuning >> Planner and set the "Layout" to "Advanced".
     
     For network connected flight controllers, such as linux targets, --upload does function as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__
