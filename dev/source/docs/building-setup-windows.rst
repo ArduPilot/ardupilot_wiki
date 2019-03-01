@@ -18,7 +18,7 @@ Setup for building with waf using WSL (Windows10 only)
 
 #. :ref:`Instructions are here <building-setup-windows10>`
 
-Setup for building with Make (not recommended)
+Setup for building with Make (depricated, not recommended for new designs)
 ----------------------------------------------
 
 #. Install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/STM32-tools/pixhawk_toolchain_installer_latest.exe>`__
