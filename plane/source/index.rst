@@ -85,6 +85,12 @@ switching to a copter instead. The same APM autopilot can control that
 equally well by simply loading the :ref:`Copter <copter:home>` code.
 
 
+.. tip::
+
+    For a simplified chinese 简体中文 version abstract of this wiki please check `ArduPilot.org partner CUAV! <http://doc.cuav.net/tutorial/plane/>`__
+
+
+
 --------------
 
 Announcements
