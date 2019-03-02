@@ -162,6 +162,12 @@ Getting more info
 -  To get involved with the development of the software platform, visit the `ArduPilot development guide <http://ardupilot.org/dev/index.html>`__.
 
 
+.. tip::
+
+    For a simplified chinese 简体中文 version abstract of this wiki please check `ArduPilot.org partner CUAV! <http://doc.cuav.net/tutorial/copter/>`__
+
+
+
 
 .. toctree::
    :hidden:
