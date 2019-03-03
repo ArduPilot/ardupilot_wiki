@@ -28,3 +28,4 @@ Related topics on this wiki include:
     NVidia TX1 <companion-computer-nvidia-tx1>
     BeaglePilot Project <beaglepilot>
     Turnkey Companion Computer Solutions <turnkey-companion-computer-solutions>
+    LYCHEE - Drone Computer (with built in Raspberry Pi Compute Module 3+)<https://dronee.aero/pages/lychee>
