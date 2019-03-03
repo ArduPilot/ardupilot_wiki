@@ -16,7 +16,7 @@ Install Cygwin
 
 ::
 
-    setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,libxslt-devel,python2-devel,python2-future,python2-libxml2,python2-pip,procps-ng,gdb,ddd,zip
+    setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,libxslt-devel,python2-devel,python2-future,python2-lxml,python2-libxml2,python2-pip,procps-ng,gdb,ddd,zip
     
 Or, for a stepped install:
 
