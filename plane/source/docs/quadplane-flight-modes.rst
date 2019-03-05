@@ -11,6 +11,20 @@ extra modes:
 -  mode 19: QLOITER (like :ref:`Copter LOITER <copter:loiter-mode>`)
 -  mode 20: QLAND (like :ref:`Copter LAND <copter:land-mode>`)
 -  mode 21: QRTL (like :ref:`Copter RTL <copter:rtl-mode>`)
+-  mode 23: QACRO (like :ref:`Copter ACRO <copter:acro-mode>`)
+
+QACRO mode is best suited to aerobatic flight of a copter tailsitter. It is recommended to set
+parameter Q_TAILSIT_INPUT to FixedWing (1) for this mode. This selects plane style controls
+with the aileron stick controlling body frame roll rate and the rudder stick controlling body frame yaw rate.
+Also, set Q_M_HOVER_LEARN to 2 (learn and save) to allow the throttle midpoint to set automatically.
+Training mode is not implemented and this mode will behave similar to a fixed wing plane in MANUAL mode,
+with no limitations on earth frame roll and pitch.
+Aileron and elevator stick scalings are set by parameters ACRO_ROLL_RATE and ACRO_PITCH_RATE, respectively,
+with default of 180 deg/sec.  Yaw stick scaling is set by Q_YAW_RATE_MAX with default of 100 deg/sec.
+Gain scaling to prevent control surface oscillation at high speed is enabled by setting parameter
+Q_TAILSIT_THSCMX to zero. There are currently no parameters defined to adjust this scaling.
+If parameter ARSPD_USE=0, this scaling is based on attitude and throttle level. If an airspeed sensor
+is present and enabled, the gain scaling will be based on measured airspeed.
 
 .. tip::
 
