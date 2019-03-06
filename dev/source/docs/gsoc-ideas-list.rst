@@ -19,6 +19,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2019 <htt
 - `MathWorks SimuLink <https://www.mathworks.com/products/simulink.html>`__ interface to ArduPilot SITL
 - `AirSim drone simulator <https://github.com/Microsoft/AirSim/>`__ support for ArduPilot SITL
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
+- Improvements to the `MAVProxy GCS<https://github.com/ArduPilot/MAVProxy>`. Adding a parameter editor module, improving waypoint editor. Requires strong python skills.
 
 See lower down on this page for more details for some of the projects listed above
 
