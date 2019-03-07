@@ -181,6 +181,8 @@ And then "Serial" to disable OS use of the serial connection:
 .. note::
 
    In the latest Rapbian Stretch, these settings will be found in  "Interfacing Options"
+   
+   You may disable the ``serial login shell`` and keep ``serial interface`` enabled
 
 Reboot the Raspberry Pi when you are done.
 
@@ -201,6 +203,16 @@ RPi type:
     On newer versions of Raspberry Pi 3 the uart serial connection may be disable by default. In order to enable serial
     connection on the Raspberry Pi edit **/boot/config.txt** and ``set enable_uart=1``.
     the build-in serial port is ``/dev/ttyS0``.
+    
+    For Raspberry Pi 3B+, the bluetooth module occupied uart serial port. To disable the bluetooth, add ``dtoverlay=pi-disable-bt`` and 
+    ``enable_uart=1`` at the end of **/boot/config.txt**. 
+    Also, edit the content of **/boot/cmdline.txt** to
+    
+    ::
+    
+    
+        dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
+    
 
 Once MAVProxy has started you should be able to type in the following
 command to display the ``ARMING_CHECK`` parameters value
