@@ -143,3 +143,5 @@ Common Problems
 -  sudden flips during flight.  This is nearly always caused by
    :ref:`mechanical failures <common-diagnosing-problems-using-logs_mechanical_failures>`
    of the motor or ESCs.
+-  overshoot & wobble in descent (landing). This and anything having to do with wind or correct for steady un-evenness of motors is caused by I-term buildup :ref: https://quadmeup.com/how-to-tune-pid-i-term-on-a-quadcopter/?fbclid=IwAR20vLvHYaQPmdzwK65Tz-8NxlSE9ROzSbl-t1bx-hIGVWkpYc8D4syG2-s
+
