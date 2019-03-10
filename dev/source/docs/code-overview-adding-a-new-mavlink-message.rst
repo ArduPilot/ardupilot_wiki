@@ -68,7 +68,7 @@ command (i.e. a trick) the following would be required:
    ``mavlink_to_mission_cmd()`` functions to convert the MAVProxy
    command into an AP_Mission::Mission_Command structure.
 -  Add a new case to the vehicle's
-   `commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/commands_logic.cpp>`__'s
+   commands_logic.cpp 's (`mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp>`__ for ArduCopter) 
    ``start_command()`` and ``verify_command()`` functions to check for
    the arrival of the new ``MAV_CMD_NAV_TRICK``. These should call two
    new functions that you create called ``do_trick()`` and
@@ -76,7 +76,7 @@ command (i.e. a trick) the following would be required:
 -  Create these two new functions,  do_trick() and verify_trick(),
    that somehow command the vehicle *to perform the trick* (perhaps by
    calling another function in
-   `control_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_auto.cpp>`__
+   control_auto.cpp (`mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp>`__ for ArduCopter) 
    that sets the auto_mode variable and then calls a new
    ``auto_trick_start()`` function).  The ``do_trick()`` function will
    be called when the command is first invoked.  The ``verify_trick()``
