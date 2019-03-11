@@ -192,6 +192,17 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+    <tr class="row-even">
+        <td><center><a class="first last reference external image-reference" href="https://oxinarf.pt"><img alt="oxinarf.pt" src="../_images/oxinarf.jpg" style="width: 90px;" /></a><br/><br/>Portugal</center></td>
+        <td><div class="first last line-block">
+            <div class="line">Francisco Ferreira, <a href="mailto:ardupilot@oxinarf.pt" target="_top">ardupilot@oxinarf.pt</a></div>
+            <div class="line"><br/></div>
+            <div class="line">Leveraging the experience as ArduPilot's code reviewer, Francisco</div>
+            <div class="line">provides consulting services, especially focused on custom firmware</div>
+            <div class="line">development and support.</div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
@@ -207,49 +218,52 @@ people on the forums. The intention with this policy is to ensure that companies
 listed here will be active participants in the community.
 
 .. image:: ../../../images/logos/element-aero.png
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/proficnc.png
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/lthall.jpg
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/communistech.png
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/jdrones.png
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/gmorph.jpeg
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/erlerobotics.png
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/virtualrobotix.png
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/rfdesign.png
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/marcopter.jpg
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/buzz.jpeg
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/asc.png
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/tridge.jpg
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/ai.jpg
-    :width: 1px
+    :scale: 0%
 
 .. image:: ../../../images/logos/aerotechllc.png
-    :width: 1px
+    :scale: 0%
+
+.. image:: ../../../images/logos/oxinarf.jpg
+    :scale: 0%
 
 
 [copywiki destination="ardupilot,copter,plane,rover,planner,planner2,antennatracker,dev"]
