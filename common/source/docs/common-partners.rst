@@ -188,7 +188,7 @@ Corporate Partners
     
 .. image:: ../../../images/supporters/supporters_logo_ARACE_UAS.png
     :width: 250px
-    :target:  http://www.facebook.com/araceuas
+    :target:  https://longrangefpv.com
     
 .. image:: ../../../images/supporters/Supporters_Logo_EaglePride.png
     :width: 250px
