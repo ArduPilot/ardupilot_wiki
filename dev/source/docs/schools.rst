@@ -36,6 +36,15 @@ This is a list of known schools that teach how to use ArduPilot (i.e. operation 
      - Operations in the National Airspace System (real-world application of prior courses; data management/processing/analysis, geotagging, etc), Lab: use of Ardupilot vehicles used in prior courses to pursue data collection projects that benefit the community
   - **Apply** through the web `here <http://www.letu.edu/_Academics/Aero-Science/degrees/Remotely_Piloted_Aircraft_Systems/index.html>`__
 
+`D-Makers <http://itmakers.co.kr>`__
+------------------------------------
+
+  - **Location:** Sangju-si or Incheon, South Korea
+  - **Languages:** Korean, English
+  - **Description:** Supplies education programs about making and operating drones using ArduPilot and Pixhawk.
+  - **Schedule:** One-on-one or group training to fit your schedule.
+  - **Contact:** `itmakers.co.kr <http://itmakers.co.kr>`__
+
 .. note::
 
      If your school would like to be added to this list, please send an email to partners@ardupilot.org.  We ask that you consider supporting ArduPilot by becoming a `Partner <http://ardupilot.org/about/Partners>`__
