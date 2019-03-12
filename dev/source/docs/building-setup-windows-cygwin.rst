@@ -91,6 +91,10 @@ Or, for a stepped install:
 Install the GCC compiler
 -------------------------
 
+.. note::
+
+      This step is only required if you intend to compile for ARM-based boards.
+
 - download and install the gcc-arm-non-eabi compiler from `firmware.ardupilot.org/Tools/STM32-tools <http://firmware.ardupilot.org/Tools/STM32-tools>`__ (`quick link is here <http://firmware.ardupilot.org/Tools/STM32-tools/gcc-arm-none-eabi-6-2017-q2-update-win32-sha2.exe>`__)
     - accept the license
     - install to the default location
