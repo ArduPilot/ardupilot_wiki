@@ -24,7 +24,7 @@ for a windows install.
 Install steps
 =============
 
-Please follow each of the steps described below.
+Please follow the instructions in :ref:`Setting up the Build Environment (Linux/Ubuntu) <building-setup-linux>` to set up the full environment, including SITL.
 
 There is also a linked video below showing how to do the setup.
 
@@ -36,9 +36,6 @@ There is also a linked video below showing how to do the setup.
 .. youtube:: pJGFkZmGV6o
     :width: 100%
 
-.. include:: building-setup-linux.rst
-    :start-after: Setup on Ubuntu
-    :end-before: Setup for other Distributions
 
 Start SITL simulator
 --------------------
