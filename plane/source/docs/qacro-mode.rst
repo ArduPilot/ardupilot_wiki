@@ -5,11 +5,9 @@ QACRO Mode
 =========+
 
 QACRO (for acrobatic) is a quadplane mode for advanced users that provides rate
-based stabilization like :ref:`Copter ACRO <copter:acro-mode>`.  QACRO mode is best suited for aerobatic flight of a copter tailsitter.
+based stabilization like :ref:`Copter ACRO <copter:acro-mode>`.  QACRO mode is best suited for aerobatic flight of a copter tailsitter, but is also available for other quadplane types.
 
-It is recommended to set parameter Q_TAILSIT_INPUT to FixedWing (1) for this mode. This selects plane style controls with the aileron stick controlling body frame roll rate and the rudder stick controlling body frame yaw rate.
-
-Also, set Q_M_HOVER_LEARN to 2 (learn and save) to allow the throttle midpoint to set automatically.
+Also, set Q_M_HOVER_LEARN to 2 (learn and save) to allow the throttle midpoint to adjust automatically when hovering.
 
 Training mode is not implemented and this mode will behave similarly to a fixed wing plane in MANUAL mode, with no limitations on earth frame roll, pitch and yaw.
 
