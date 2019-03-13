@@ -122,14 +122,24 @@ You can change how control inputs while hovering a tailsitter will be
 interpreted using the Q_TAILSIT_INPUT parameter. The choices are:
 
 - Q_TAILSIT_INPUT=0 means that in hover the aircraft responds like a
-  multi-rotor, with the yaw stick controlling earth-frame yaw, and
-  roll stick controls earth-frame roll. This is a good choice for
+  multi-rotor, with the ****yaw stick controlling earth-frame yaw, and
+  roll stick controlling earth-frame roll. This is a good choice for
   pilots who are used to flying multi-rotor aircraft.
 
 - Q_TAILSIT_INPUT=1 means that in hover the aircraft responds like a
-  3D aircaft, with the yaw stick controlling body-frame yaw, and roll
-  stick controls body-frame roll. This is a good choice for pilots who
-  are used to flying 3D aircraft in prop-hang.
+  3D aircaft, with the yaw stick controlling earth-frame roll, and roll
+  stick controlling earth-frame yaw. This is a good choice for pilots who
+  are used to flying 3D aircraft in prop-hang, but is not very useful
+  when flying around, due to the earth-frame multicopter control inputs.
+
+- Q_TAILSIT_INPUT=2 and 3 mean that the aircraft responds like a 3D aircraft
+  with the yaw stick controlling earth-frame yaw and the roll stick controlling
+  body-frame roll when flying level. When hovering, these options behave the same
+  as types 0 and 1, respectively. This is accomplished by splitting the roll and
+  yaw command inputs into bodyframe roll and yaw components as a function of Euler pitch.
+
+**Note:** 
+Due to the rotation of the tailsitter body frame with respect to the multicopter body frame, the roll limits are set by parameter Q_YAW_RATE_MAX (in degrees), and the yaw rate limits are set by parameter Q_TAILSIT_RLL_MX (in deg/sec).  The pitch limit is set by parameter Q_ANGLE_MAX (in centidegrees), and this also serves as the yaw rate limit if Q_TAILSIT_RLL_MX is zero. If any rate limit is too high for the airframe, you may experience glitches in attitude control at high rates.
 
 Tailsitter Input Mask
 =====================
