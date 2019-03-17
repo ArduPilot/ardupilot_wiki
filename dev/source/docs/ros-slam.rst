@@ -8,7 +8,7 @@ This page shows how to setup ROS and `Hector SLAM <http://wiki.ros.org/hector_sl
 
 These instructions were tested on an :ref:`NVidia TX2 <companion-computer-nvidia-tx2>` flashed with :ref:`APSync <apsync-intro>` and then ROS and MAVROS were :ref:`installed as described here <ros-install>`.
 
-They were also tested on an :ref:`RaspberryPi 3 B+ <raspberry-pi-via-mavlink.rst>` with ROS and MAVROS installed :ref:`installed as described here <ros-install>`. 
+They were also tested on an :ref:`RaspberryPi 3 B+ <raspberry-pi-via-mavlink>` with ROS and MAVROS installed :ref:`installed as described here <ros-install>`.
 
 .. note::
 
@@ -39,13 +39,12 @@ Check the RPLidar's serial port
 
 ::
 
-    sudo chmod 666 /dev/ttyUSB0
-    sudo chmod 666 /dev/ttyACM0
+    sudo usermod -a -G dialout $USER
 
 Install more packages
 ---------------------
 
-- install the ROS dektop full:
+- install the ROS desktop full:
 
 ::
 
@@ -148,7 +147,7 @@ In Terminal2:
 
     roslaunch rplidar_ros rplidar.launch
 
-In Terminal3 (For RaspberryPi we recommend running this on another Machine explained :ref:`here<http://wiki.ros.org/ROS/Tutorials/MultipleMachines>`:
+In Terminal3 (For RaspberryPi we recommend running this on another Machine explained `here <http://wiki.ros.org/ROS/Tutorials/MultipleMachines>`__):
 
 .. code-block:: bash
 
