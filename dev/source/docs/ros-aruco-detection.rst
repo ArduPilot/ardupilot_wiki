@@ -27,6 +27,7 @@ Components of the system
 ========================
 
 - A little quadcopter (160mm) with Revolution Flight Controller with Arducopter 3.7-dev and the following relevant parameters:
+
 .. code-block:: none
 
     AHRS_EKF_TYPE 2
@@ -57,6 +58,7 @@ On the Raspberry Pi 3 on quadcopter
 -----------------------------------
 - Install Ubuntu 16.04 and ROS Kinetic with Ubiquity Robotics `Raspberry Pi images <https://downloads.ubiquityrobotics.com/pi.html>`__
 - Edit /boot/config.txt to have higher serial speed on /dev/ttyAMA0 (connection at 921600 baud)
+
 .. code-block:: none
 
     find the row with #init_uart_clock=3000000 and change it in this way:
@@ -73,6 +75,7 @@ On the Raspberry Pi 3 on quadcopter
 - Calibrate the camera following the instructions in this `wiki <http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration>`__
 - Clone this fork of `aruco_gridboard <https://github.com/anbello/aruco_gridboard>`__ in ~/catkin_ws/src
 - Build all
+
 .. code-block:: none
 
     cd ~/catkin_ws
@@ -87,11 +90,13 @@ On the desktop PC
 - Install mavros (sudo apt install ros-kinetic-mavros*)
 - If you are not familiar with ROS follow the `tutorials <http://wiki.ros.org/ROS/Tutorials>`__
 - Edit ~/.bashrc and append the following line:
+
 .. code-block:: none
 
     export ROS_MASTER_URI="http://ubiquityrobot.local:11311"
 
 - Create a Catkin WorkSpace (on Raspberry Pi this is not necessary because it is already in Ubiquity Robotics image)
+
 .. code-block:: bash
 
     cd $HOME
@@ -101,6 +106,7 @@ On the desktop PC
 
 - Clone this fork of `aruco_gridboard <https://github.com/anbello/aruco_gridboard>`__ in ~/catkin_ws/src
 - Build all
+
 .. code-block:: bash
 
     cd ~/catkin_ws
@@ -171,8 +177,8 @@ You should see the quadcopter arm, takeoff, flight along the square and land as 
 Some Useful links
 =================
 
-- Blog post `Indoor autonomous flight with Arducopter, ROS and Aruco Boards Detection <https://discuss.ardupilot.org/t/indoor-autonomous-flight-with-arducopter-ros-and-aruco-boards-detection/34699>`__
-A similar system to the one described here but on the quadcopter there is a Raspberry Pi 0 (instead of Raspberry Pi 3), due to the limited computing resources the aruco_gridboard node run on desktop PC and the relevant data (mainly images and pose estimation) are exchanged with the quadcopter using ROS messages.
+- Blog post `Indoor autonomous flight with Arducopter, ROS and Aruco Boards Detection <https://discuss.ardupilot.org/t/indoor-autonomous-flight-with-arducopter-ros-and-aruco-boards-detection/34699>`__:
+  A similar system to the one described here but on the quadcopter there is a Raspberry Pi 0 (instead of Raspberry Pi 3), due to the limited computing resources the aruco_gridboard node run on desktop PC and the relevant data (mainly images and pose estimation) are exchanged with the quadcopter using ROS messages.
 
-- Blog post `Vision Positionning Experiments using SKYVIPER <https://discuss.ardupilot.org/t/vision-positionning-experiments-using-skyviper/38348>`__
-Here is described a system similar to the previous one, in place of the DIY quadcopter a Skyviper one is used, because of this it should be easier to replicate.
+- Blog post `Vision Positionning Experiments using SKYVIPER <https://discuss.ardupilot.org/t/vision-positionning-experiments-using-skyviper/38348>`__:
+  Here is described a system similar to the previous one, in place of the DIY quadcopter a Skyviper one is used, because of this it should be easier to replicate.
