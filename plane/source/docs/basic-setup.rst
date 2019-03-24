@@ -11,22 +11,22 @@ Arduplane Basic Setup Guide
     1. Introduction
     2. Hardware
     3. Software
-       a) Firmware
-       b) GCS
+       - Firmware
+       - GCS
     4. Setup
-       a) GPS
-       b) Radio Calibration
-       c) Flight modes
-       d) Accel Calibration
-       e) Servo Functions
-       f) OSD
-       g) RSSI
-       h) Failsafe
-       i) Battery Monitor
-       j) Compass
-       k) Airspeed
-       l) Other Parameters
-       m)ESC calibration
+       - GPS
+       - Radio Calibration
+       - Flight modes
+       - Accel Calibration
+       - Servo Functions
+       - OSD
+       - RSSI
+       - Failsafe
+       - Battery Monitor
+       - Compass
+       - Airspeed
+       - Other Parameters
+       - ESC calibration
     5. First flight
 
 
@@ -105,9 +105,10 @@ Possible issues:
 3. Though UBLOX and NMEA-type GPS receivers are supported by ArduPilot these days, your GPS receiver is not supported.
 
 .. Note::
-    this may NOT be the same number as the UART port...ie UART6 may be designated by that board's AP firmware to be
-    GPS and is Serial 3 in the parameter listing. You should not have to mess with this if you
-    attach the GPS on the correct port.
+    The board's hardware UART number may NOT necessarily be the same as the SERIAL port number in ArduPilot firmware / MP.
+    See your respective board's `hardware page <common-autopilots>`__ for wiring guides and UART to SERIAL mapping. GPS defaults
+    to SERIAL3 in the parameter listing and you should not have to worry about UART mapping if you attach the GPS to the port
+    suggested in the wiring guide.
 
 -  Radio Calibration
 
@@ -145,9 +146,8 @@ Lo   -  Hi   -  Cruise
   
 Lo   -  Mid  -  Stabilize (or FBWA)
   
-Lo   -  Lo   -  Manual
-  
-(low on SW2 ALWAYS drives Manual - that's your bailout!)
+Lo   -  Lo   -  Manual (low on SW2 ALWAYS drives Manual - that's your bailout!)
+
 Set these up in the Flight Modes subtab under Initial Setup -> Mandatory Hardware.
 
 -  Accel Calibration
@@ -167,7 +167,14 @@ You should try to get the servo-arms centered when the channel driving it is in 
 position if possible. You can tweak this using the SERVOx_TRIM params. You can do this
 manually or via the Initial Configuration -> Mandatory Hardware -> Servo tab. You can also set the
 output range in this tab. Default is 1100 to 1900uS. Depending on your individual airframe's requirements, these endpoints 
-can be adjusted. Values of 1000/2000uS provides full throws.
+can be adjusted. Values of 1000/2000uS usually provide full throws.
+
+Now check that the servos move in the correct directions to level the plane when moved around while in STAB or FBWA mode. 
+Reverse the sevos with the reverse box for a servo if needed. If you have correctly adjusted the TX channel directions in part B above,
+then they will move in the correct directions also in MANUAL mode.Now check that the servos move in the correct directions to 
+level the plane when moved around while in STAB or FBWA mode. Reverse the sevos with the reverse box for a servo if needed. 
+If you have correctly adjusted the TX channel directions in part B above, then they will move in the correct directions also 
+in MANUAL mode.
 
 -  OSD
 
@@ -248,8 +255,10 @@ AUTOTAKEOFFs.
 4. If you have a small flying wing (like Z-84), it might be required to decrease your default PTCH2SRV_P value if it is too aggressive 
 and causes flutter. In that case, reduce the default by half.
 
-5. ARMING: Leave all arming check params at default when flying. While it might seem comfortable to disable arming checks for
-indoor bench testing, these checks add tons of safety and will keep you from flying if your flight controller is not fully functional.
+5. ARMING: Leave all arming parameters at default. There is no reason to disable these safety checks. You should be able to get a 
+GPS lock even indoors with modern GPS units. Inability to arm due to one of these checks failing means something has to be corrected. 
+This adds noticeable safety by keeping you from accidentally starting your airframe without your flight controller being in a fully 
+functional state.
 
 All other parameters can be left to default. However, after you get some flights, you might want to play with:
 LIM_PITCH_MAX, LIM_ROLL_CD, and FBWB_CLIMB_RATE. These are pretty docile at default values.
