@@ -169,7 +169,7 @@ BATT_CURR_PIN 11
 
 BATT_VOLT_MULT 11.0
 
-BATT_AMP_PERVOLT 38.0 (note, this value may vary from 18 to 38, depending on specific board manufacturer...will need to be calibrated to match actual current)
+BATT_AMP_PERVLT 38.0 (note, this value may vary from 18 to 38, depending on specific board manufacturer...will need to be calibrated to match actual current)
 
 
 How to trigger a camera with relay pin
