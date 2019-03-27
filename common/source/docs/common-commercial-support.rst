@@ -51,7 +51,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
     <tr class="row-even">
         <td><center><a class="first last reference internal image-reference"><img alt="../_images/lthall.jpg" src="../_images/lthall.jpg" style="width: 90px;" /></a><br/><br/>Australia</center></td>
         <td><div class="first last line-block">
-            <div class="line">Leonard Hall, <a href="mailto:leonardthall@gmail.com?Subject=ArduPilot%20commercial%20support" target="_top">leonardthall@gmail.com</a></div>
+            <div class="line">Leonard Hall, <a href="mailto:leonard@freespacesolutions.com.au?Subject=ArduPilot%20commercial%20support" target="_top">leonard@freespacesolutions.com.au</a></div>
             <div class="line"><br/></div>
             <div class="line">Leonard is responsible for Ardupilot’s multicopter attitude,</div>
             <div class="line">navigation and motor control libraries and developed AutoTune.</div>
