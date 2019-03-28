@@ -22,7 +22,7 @@ Specifications
 
 -  **Sensors**
 
-   -  InvenSense ICM20689 IMU (accel, gyro, compass) on vibration isolating foam
+   -  InvenSense ICM20689 IMU (accel and gyro only, no compass) on vibration isolating foam
    -  BMP280 barometers
 
 -  **Power**
