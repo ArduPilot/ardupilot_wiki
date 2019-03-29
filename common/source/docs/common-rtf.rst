@@ -41,6 +41,7 @@ Vehicles from Non-Partners
 * 3DR Solo from `Amazon <https://www.amazon.com/3DR-Solo-Quadcopter-No-Gimbal/dp/B00ZPM7BOG>`__
 * 3DR Y6 from `OneDrone <http://onedrone.com/store/3drobotics/ardupilot/3dr-arducopter-y6-kit.html>`__
 * Alfonce X500 from `Dronotique <https://www.dronotique.fr/produit/alfonce-x500-quadcopter-homologue-dgac-s1-s2-et-s3/>`__
+* Alfonce H960 from `Dronotique <https://www.dronotique.fr/produit/alfonce-h960-drone-homologue-s1-et-s2-12kg/>`__
 * DRONEE  Easy to Use Mapping Plane Drone `DRONEE PLANE <https://dronee.aero/pages/droneeplane>`__
 
 .. note::
