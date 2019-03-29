@@ -26,6 +26,7 @@ Vehicles from Non-Partners
 * `Anaconda <http://kgaviation.com/store/p11/anaconda>`__, `Believer <http://kgaviation.com/store/p13/The_Believer_.html>`__, `Stratosurfer <http://kgaviation.com/store/p12/stratosurfer>`__ and `Skyhunter <http://kgaviation.com/store/p10/skyhunter>`__ fixed-wing from `KG aviation <http://kgaviation.com/index.html>`__ (`video <https://www.youtube.com/watch?v=Yx1k8VgpHlU>`__)
 * `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
 * Cheerson CX-20 from `Amazon <https://www.amazon.com/Cheerson-CX-20-CX20-Auto-Pathfinder-Quadcopter/dp/B00J7OGX9C>`__ (uses now-unsupported APM2 compatible controller)
+* DRONEE  Easy to Use Mapping Plane Drone `DRONEE PLANE <https://dronee.aero/pages/droneeplane>`__
 * `ErleRover from ErleRobotics <https://erlerobotics.com/blog/product/erle-rover/>`__
 * `FireFly6 PRO from BirdsEyeView <https://www.birdseyeview.aero/products/firefly6>`__ (non-standard version of ArduPlane)
 * HobbyKing Aperture Hexacopter (`mode1 <https://hobbyking.com/en_us/aperture-rtf-m1.html?___store=en_us>`__, `mode2 <https://hobbyking.com/en_us/aperture-rtf-m2.html?___store=en_us>`__)
@@ -40,9 +41,6 @@ Vehicles from Non-Partners
 * 3DR Quad from `DroneFever <http://dronefever.com/3DR-ArduCopter-Quad-D-Almost-Ready-to-Fly.html>`__
 * 3DR Solo from `Amazon <https://www.amazon.com/3DR-Solo-Quadcopter-No-Gimbal/dp/B00ZPM7BOG>`__
 * 3DR Y6 from `OneDrone <http://onedrone.com/store/3drobotics/ardupilot/3dr-arducopter-y6-kit.html>`__
-* Alfonce X500 from `Dronotique <https://www.dronotique.fr/produit/alfonce-x500-quadcopter-homologue-dgac-s1-s2-et-s3/>`__
-* Alfonce H960 from `Dronotique <https://www.dronotique.fr/produit/alfonce-h960-drone-homologue-s1-et-s2-12kg/>`__
-* DRONEE  Easy to Use Mapping Plane Drone `DRONEE PLANE <https://dronee.aero/pages/droneeplane>`__
 
 .. note::
 
