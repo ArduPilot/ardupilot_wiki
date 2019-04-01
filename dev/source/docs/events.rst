@@ -9,8 +9,6 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Feb 26th: HEX booth at Avalon Airshow 2019, Geelong Australia (`announcement <https://discuss.cubepilot.org/t/avalon-airshow-2019-come-meet-us/195>`__)
-- Mar 23rd & 24th 2019: Developer Un-conference in Canberra Australia (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-meetup-in-canberra-march-23rd-and-24th-2019>`__)
 - Apr 29th to May 2nd 2019: AUVSI Xponential in Chicago.  Booth #4006
 - Sep 3rd to 6th: InterDrone 2019 in Las Vegas (`overview <https://www.interdrone.com/conference/overview/>`__)
 - Jun 20th to 22nd: SZUAVIA ArduPilot developer conference at Shenzhen UAV Expo in Shenzhen,China
@@ -18,6 +16,8 @@ Planned Events
 Past Events
 -----------
 
+- Mar 23rd & 24th 2019: Developer Un-conference in Canberra Australia (`videos <https://www.youtube.com/watch?v=vupF2ALjwoA&list=PLC8WVaJJhN4wApCP6BkbDKQL_TkVHQqmy>`__, `post-event blog <https://discuss.ardupilot.org/t/ardupilot-unconference-2019/40155>`__, `intro blog <https://discuss.ardupilot.org/t/ardupilot-developer-meetup-in-canberra-march-23rd-and-24th-2019>`__)
+- Feb 26th: HEX booth at Avalon Airshow 2019, Geelong Australia (`announcement <https://discuss.cubepilot.org/t/avalon-airshow-2019-come-meet-us/195>`__)
 - Oct 15th ~ 17th 2018: ArduPilot conference sponsored by HEX in Suzhou China (`intro video from Philip Rowse <https://youtu.be/_2Qnm0TDoZA?t=1677>`__)
 - Oct 10th ~ 12th 2018: `Japan Innovation Challenge <https://prtimes.jp/main/html/rd/p/000000148.000026811.html>`__ search and rescue competition in Hokkaido Japan
 - Sep 24th ~ 28th 2018: `Medical Express Challenge <https://uavchallenge.org/medical-express/>`__ in Dalby Australia
