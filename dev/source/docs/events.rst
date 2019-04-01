@@ -9,7 +9,7 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Apr 29th to May 2nd 2019: AUVSI Xponential in Chicago.  Booth #4006
+- Apr 29th to May 2nd 2019: `AUVSI Xponential <https://www.xponential.org/xponential2019/public/enter.aspx>`__ in Chicago.  Booth #4006
 - Sep 3rd to 6th: InterDrone 2019 in Las Vegas (`overview <https://www.interdrone.com/conference/overview/>`__)
 - Jun 20th to 22nd: SZUAVIA ArduPilot developer conference at Shenzhen UAV Expo in Shenzhen,China
 
