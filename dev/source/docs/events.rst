@@ -1,8 +1,8 @@
 .. _events:
     
-====================
-Events for 2018/2019
-====================
+===============
+Events for 2019
+===============
 
 This is a list of events where ArduPilot developers and/or their `Partners <http://ardupilot.org/about/Partners>`__ can be found
 
