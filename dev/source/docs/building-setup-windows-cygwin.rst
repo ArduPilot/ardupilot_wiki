@@ -7,6 +7,10 @@ Setting up the waf Build Environment on Windows using Cygwin
 
 These setup instructions describe how to setup `Cygwin <http://www.cygwin.com/>`__ on so that waf (the build system) can run natively on windows and build for all supported boards.
 
+.. note::
+
+      There is a pre-built script at `/ardupilot/Tools/environment_install/install-prereqs-windows.ps1 <https://github.com/ArduPilot/ardupilot/tree/master/Tools/environment_install/install-prereqs-windows.ps1>`__ that will automatically perform all of the below steps.
+
 Install Cygwin
 --------------
 
