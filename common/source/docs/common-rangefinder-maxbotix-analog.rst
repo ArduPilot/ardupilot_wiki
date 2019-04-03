@@ -1,10 +1,10 @@
 .. _common-rangefinder-maxbotix-analog:
 
 =================================
-Maxbotic Analog Sonar - Copter3.2
+Maxbotix Analog Sonar - Copter3.2
 =================================
 
-`XL-Maxbotic-EZ <https://www.maxbotix.com/product-category/xl-maxsonar-ez-products/>`__
+`XL-Maxbotix-EZ <https://www.maxbotix.com/product-category/xl-maxsonar-ez-products/>`__
 line of analog sonars (XL-MaxSonar-EZ0, EZ4 and EZL0) are relatively
 inexpensive, short range (7m to 10m) range finder primarily designed for
 indoor use but which has been successfully used outdoors on Copter and
