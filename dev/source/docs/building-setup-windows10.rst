@@ -46,7 +46,7 @@ Setup steps
 
 #.  run the Tools/scripts/install-prereqs-ubuntu.sh script:
 
-    - run the script ``./Tools/scripts/install-prereqs-ubuntu.sh``.  You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" when it asks if you wish to install a package.
+    - run the script ``./Tools/environment_install/install-prereqs-ubuntu.sh``.  You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" when it asks if you wish to install a package.
 
     .. image:: ../images/build-on-windows10-prereqs.png
        :target: ../_images/build-on-windows10-prereqs.png
