@@ -1,10 +1,10 @@
 .. _common-rangefinder-maxbotixi2c:
 
 ==============================
-Maxbotic I2C Sonar Rangefinder
+Maxbotix I2C Sonar Rangefinder
 ==============================
 
-`Maxbotic I2C EZ4 <https://www.maxbotix.com/product-category/i2cxl-maxsonar-ez-products>`__
+`Maxbotix I2C EZ4 <https://www.maxbotix.com/product-category/i2cxl-maxsonar-ez-products>`__
 sonar (also known as the I2CXL-MaxSonar-EZ4 or MB1242) is a relatively
 inexpensive, short range (up to 7m) range finder primarily designed for
 indoor use but which has been successfully used outdoors on Copter.
