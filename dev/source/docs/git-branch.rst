@@ -45,7 +45,7 @@ Creating a Branch
 
    ::
 
-       git add Tools/GIT_Test/Git_Success.txt
+       git add Tools/GIT_Test/GIT_Success.txt
        git commit -m 'Tools: added name to GIT_Success.txt'
 
    In this case, the subject line of the commit is simply "Tools: added name to GIT_Success.txt" but see
