@@ -98,10 +98,6 @@ Corporate Partners
     :width: 250px
     :target:  http://www.skeyetech.fr
 
-.. image:: ../../../images/supporters/supporters_logo_AAC.png
-    :width: 250px
-    :target:  http://www.advancedaircraftcompany.com/
-
 .. image:: ../../../images/supporters/supporters_logo_3dxr.jpg
     :width: 250px
     :target: https://www.3dxr.co.uk/
