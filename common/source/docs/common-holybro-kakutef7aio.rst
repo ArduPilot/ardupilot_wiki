@@ -1,7 +1,7 @@
 .. _common-holybro-kakutef7aio:
 
 =================
-Holybro Kakute F7
+Holybro Kakute F7 and KAKUTE F7 AIO
 =================
 
 .. image:: ../../../images/holybro-kakutef7aio.png
@@ -11,7 +11,7 @@ Holybro Kakute F7
 
 .. note::
 
-   Support for this board is available with Copter-3.6.0 (and higher)
+   Support for these two boards are available with Copter-3.6.0 (and higher)
 
 Specifications
 ==============
@@ -45,8 +45,8 @@ Specifications
 Pinout
 ======
 
-The KakuteF7 comes in two varients. One is an AIO (All-In-One) board with current sensor and power distribution. The other is a smaller board without the current sensor or PDB.
-Both variants include a 5-volt regulator rated for 2 amps.
+The KakuteF7 comes in two varients with the primary difference being the AIO (All-In-One) board employs current sensor and provides power distribution in each of the four corners.
+Both variants include a 5-volt regulator rated for 2 amps, OSD, vibration-isolated IMU, etc.
 
 **Kakute F7 AIO**
 
@@ -126,7 +126,7 @@ The correct battery setting parameters are:
 Compass
 =======
 
-The KakuteF7 AIO does not have a built-in compass, however you can attach an external compass using I2C on the SDA and SCL pads.
+The Kakute F7 and Kakute F7 AIO do not have a built-in compass, however you can attach an external compass using I2C on the SDA and SCL pads.
 
 Loading Firmware
 ================
