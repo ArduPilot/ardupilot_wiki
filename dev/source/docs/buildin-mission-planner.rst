@@ -43,7 +43,7 @@ System Requirements
 
 Here is what you will need.
 
--  Windows Vista, 7, 8, 10
+-  Windows 10.  Sorry earlier versions no longer work.  Windows 7 etc will NOT work. 
 -  Sufficient disk space, memory, processor power to comfortably run
    Visual Studio (details below)
 -  An Internet connection.
