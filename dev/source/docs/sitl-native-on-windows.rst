@@ -271,8 +271,6 @@ Updating ArduPilot
 
 See advice on :ref:`this wiki page <git-rebase>` regarding how to "Rebase" on ArduPilot's master branch.
 
-The JSBSim source can be updated by calling ``git pull`` in the **jsbsim/** directory.
-
 Updating MAVProxy
 =================
 
