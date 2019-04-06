@@ -84,7 +84,7 @@ ArduPilot dev team.
    `code <https://github.com/DroidPlanner/Tower>`__, `google play <https://play.google.com/store/apps/details?id=org.droidplanner.android>`__)
    - android ground station
 -  `QGroundControl* <http://www.qgroundcontrol.org/>`__ is an alternative ground station written in C++ using the Qt libraries
--  `PX4* <https://pixhawk.org/start>`__ - designers of the original PX4FMU hardware (from which the Pixhawk was developed) and owners of a relatively small number of drivers we use when running on a Pixhawk flight controller board
+-  `PX4* <https://pixhawk.org/start>`__ - designers of the original PX4FMU hardware (from which the Pixhawk was developed)
 -  `MAVLink* <http://www.qgroundcontrol.org/mavlink/start>`__ -
    the protocol for communication between the ground station, flight
    controller and some peripherals including the OSD. A "Dummy's Guide" to
@@ -99,7 +99,7 @@ How the team works
 ==================
 
 -  Our annual developers conference is held in Feb/March in Canberra Australia (`2018 annoucement <https://discuss.ardupilot.org/t/developer-meetup-in-canberra-february-2018>`__).
--  The source code for ArduPilot/APM is managed using git on https://github.com/ArduPilot/ardupilot
+-  The source code for ArduPilot is managed using git on https://github.com/ArduPilot/ardupilot
 -  Pre-compiled firmware for supported autopilot boards is available from http://firmware.ardupilot.org
 -  User support is available on the `forums <https://discuss.ardupilot.org/>`__.
 -  The ArduPilot `automatic test system <http://autotest.ardupilot.org/>`__ shows the test status of each commit. It's described `here <https://diydrones.com/profiles/blogs/ardupilot-automatic-testing-system>`__.
