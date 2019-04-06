@@ -14,12 +14,13 @@ Simulation allows for safe testing of experimental code and settings and crashin
 
 The most commonly used simulators are:
 
--  :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` is the simulator most commonly used by developers.  It is used by the :ref:`autotester <the-ardupilot-autotest-framework>` and other simulators below are actually built on top of SITL
+-  :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` is the simulator most commonly used by developers. It is a simple simulator that is built within all SITL builds of ArduPilot. It is used by the :ref:`autotester <the-ardupilot-autotest-framework>` and other simulators below are actually built on top of SITL
 -  :ref:`Gazebo <using-gazebo-simulator-with-sitl>` is the official DARPA virtual robotics simulator
 -  :ref:`XPlane-10 <sitl-with-xplane>` a commercial flight simulator with a rich 3D interface
 -  :ref:`RealFlight <sitl-with-realflight>` a commercial flight simulator with a rich 3D interface and ability to design custom vehicles
 -  :ref:`Morse <sitl-with-morse>` a robotics simulation environment commonly used in research
--  :ref:`Replay <testing-with-replay>` has no graphical interfacde but allows re-running master from a dataflash log
+-  :ref:`Replay <testing-with-replay>` has no graphical interface but allows re-running master from a dataflash log
+-  :ref:`JSBSim <sitl-with-jsbsim>` is a sophisticated open-source plane and multicopter simulator with no graphical interface. It can be used with a wide variety of airframes.
 
 Less often used simulators include:
 
@@ -38,6 +39,7 @@ List of simulators (so they can appear in the menu):
     RealFlight <sitl-with-realflight>
     Morse <sitl-with-morse>
     Replay <testing-with-replay>
+    JSBSim <sitl-with-jsbsim>
     Last Letter <using-last_letter-as-an-external-sitl-simulator>
     CRRCSim <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
     HITL Simulators <hitl-simulators>
