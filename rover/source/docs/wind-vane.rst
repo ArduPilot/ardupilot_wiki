@@ -77,7 +77,7 @@ speed is filtered using a low pass filter, the frequency of this filter can be s
 
 
 Pitot tube airspeed sensor
-+++++++++++++++++++
+++++++++++++++++++++++++++
 
 Setting :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>` to 1 allows reading the wind speed from the :ref:`airspeed library <airspeed>`. This allows any pitot tube type
 airspeed sensor to be used. It is important the :ref:`ARSPD_USE <ARSPD_USE>` and :ref:`ARSPD_AUTOCAL <ARSPD_AUTOCAL>` parameters are left at zero, they enable features
@@ -105,7 +105,7 @@ reduce the accuracy of the wind speed reading. The :ref:`WNDVN_SPEED_OFS <WNDVN_
 zero actual wind speed, it can then be reduced again until it just reaches zero.
 
 Rotating Cups Anemometer
-+++++++++++++++++++
+++++++++++++++++++++++++
 
 A cups type anemometer can be used via the RPM library (as of master feb 2019). This is selected by setting :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>`
 to 3. The RPM library must be setup accordingly using the first :ref:`RPM sensor <RPM_TYPE>`. The :ref:`RPM_SCALING <RPM_SCALING>` value must be calculated
