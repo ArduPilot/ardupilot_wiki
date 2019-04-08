@@ -47,12 +47,14 @@ Default UART order
 ==================
 
 - SERIAL0 = console = USB
-- SERIAL1 = Telemetry1 = USART1
-- SERIAL2 = Telemetry2 = UART5
-- SERIAL3 = GPS1 = USART2
+- SERIAL1 = Telemetry1 = USART1 (= BLE port on orig. F-35)
+- SERIAL2 = Telemetry2 = UART5 (= M-RX port on orig. F-35)
+- SERIAL3 = GPS1 = USART2 (= GPS port)
 - SERIAL4 = not used
-- SERIAL5 = USER = UART4 (only TX4 pinned out)
-- SERIAL6 = USER = USART6 (only TX6 pinned out as "SPO" with hardware inverter)
+- SERIAL5 = USER = UART4 (only TX4 pinned out, TX-pin on orig. F-35's VTx port)
+- SERIAL6 = USER = USART6 (only TX6 pinned out as "SPO" with hardware inverter, TX-pin on orig. F-35's F-RX port)
+
+USART3 RX used as RC input (F-RX port's Rx pin on orig. F-35)
 
 Serial protocols can be adjusted to personal preferences.
 
