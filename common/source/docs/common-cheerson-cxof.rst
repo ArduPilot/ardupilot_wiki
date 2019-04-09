@@ -20,6 +20,8 @@ Where to Buy
 
 The sensor is available from various retailers incluing `Banggood.com <https://www.banggood.com/Cheerson-CX-OF-CXOF-RC-Quadcopter-Spare-Parts-Optical-Flow-Module-p-1215911.html>`__ and `AliExpress <https://www.aliexpress.com/item/Original-Cheerson-CX-OF-CXOF-RC-Quadcopter-Spare-Parts-Optical-Flow-Module-for-RC-Toys-Models/32838098799.html>`__.  More retailers can be found by searching for "CX-OF spare parts".
 
+The `UPIXELS UP-Flow sensor <https://www.aliexpress.com/item/UPIXELS-UP-FLOW-Optical-Flow-Module-FPV-Drone-Hovering-Altitude-Hold-Control-Optical-Flow-Sensor-For/32969297064.html>`__ may also work although this has not yet been confirmed
+
 Connection to Flight Controller
 -------------------------------
 
