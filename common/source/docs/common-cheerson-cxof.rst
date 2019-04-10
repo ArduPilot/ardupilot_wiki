@@ -11,9 +11,7 @@ The Cheerson CX-OF optical flow sensor is a lightweight and low cost optical flo
 ..  youtube:: SSISkG58cDk
     :width: 100%
 
-.. warning::
-
-   Support for this sensor will be included in Copter-3.6.4 (and higher)
+Support for this sensor is available in Copter-3.6.4 (and higher)
 
 Where to Buy
 ------------
