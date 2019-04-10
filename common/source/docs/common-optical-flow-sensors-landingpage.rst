@@ -16,5 +16,6 @@ Select the links below for information on the available sensors.
 [site wiki="copter"]
     Cheerson CX-OF <common-cheerson-cxof>
     PX4FLOW <common-px4flow-overview>
+    OpenMV <common-openmv-optflow>
 [/site]
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
