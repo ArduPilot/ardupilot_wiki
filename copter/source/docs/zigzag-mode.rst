@@ -20,6 +20,7 @@ The way it works is:
 - The vehicle is flown manually (it flies like :ref:`Loiter <loiter-mode>`) to one side of the field and then the auxiliary switch is moved to the highest or lowest position (it doesn't matter which) to record that side
 - The vehicle is flown to the other side of the field and the switch is moved to the opposite position
 - The switch can now be used to start the vehicle flying autonomously (at the current height) to either side of the field.  Once the vehicle reaches the other side it will revert to manual control.  The pilot can also regain manual control by moving the auxiliary switch to the middle position or by changing the flight mode.
+- If a downward facing :ref:`range finder <common-rangefinder-landingpage>` is used, the vehicle will follow the terrain when flying.  If the range finder becomes unhealthy while traversing from one side to the other, the vehicle will revert to manual control and come to a stop.
 
 .. image:: ../images/zigzag-mode.png
    :target: ../_images/zigzag-mode.png
