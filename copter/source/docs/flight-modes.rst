@@ -42,6 +42,7 @@ companion computer.
    <tr><td>Stabilize</td><td>-</td><td>+</td><td></td><td>Self-levels the roll and pitch axis</td></tr>
    <tr><td>Sport</td><td>s</td><td>s</td><td></td><td>Alt-hold, but holds pitch & roll when sticks centered</td></tr>
    <tr><td>Throw</td><td>A</td><td>A</td><td>Y</td><td>Holds position after a throwing takeoff</td></tr>
+   <tr><td>ZigZag</td><td>A</td><td>A</td><td>Y</td><td>Useful for crop spraying</td></tr>
    </table>
 
 
@@ -88,6 +89,7 @@ Additional flight modes:
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Simple and Super Simple <simpleandsuper-simple-modes>`
 -  :ref:`Smart RTL (Return-to-Launch) <smartrtl-mode>`
+-  :ref:`ZigZag <zigzag-mode>`
 -  :ref:`Avoid_ADSB <common-ads-b-receiver>` for ADS-B based avoidance of manned aircraft.  Should not be set-up as a pilot selectable flight mode.
 
 Most transmitters provide a 3 position switch but you can find
@@ -115,6 +117,7 @@ Requires GPS lock prior to takeoff:
 -  :ref:`RTL (Return-to-Launch) <rtl-mode>`
 -  :ref:`Smart RTL (Return-to-Launch) <smartrtl-mode>`
 -  :ref:`Throw <throw-mode>`
+-  :ref:`ZigZag <zigzag-mode>`
 
 Do not require GPS lock:
 
@@ -150,3 +153,4 @@ Full list of flight modes
     Sport <sport-mode>
     Stabilize <stabilize-mode>
     Throw <throw-mode>
+    ZigZag <zigzag-mode>
