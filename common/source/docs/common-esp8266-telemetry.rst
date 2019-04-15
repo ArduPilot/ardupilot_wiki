@@ -51,6 +51,7 @@ If you are using the Adafruit HUZZAH ESP8266 board and are flashing from a Windo
 
 - solder a 6pin header to the narrow end of the board that has the TX, RX, VCC and GND pins
 - connect the device to your computer using the FTDI cable
+- put the device into bootloader mode by pressing both the Reset and GPIO0 buttons, then release the Reset button followed by the GPIO0 button.  the red LED should remain dimly lit.
 - download the ArduPilot specific version of MAVESP8266 from `this directory <http://firmware.ardupilot.org/Tools/MAVESP8266/latest/>`__
 
   - `firmware-esp01_1m.bin <http://firmware.ardupilot.org/Tools/MAVESP8266/latest/firmware-esp01_1m.bin>`__ is for boards with 1MB of flash (most boards)
