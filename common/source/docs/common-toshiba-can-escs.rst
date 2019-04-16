@@ -23,7 +23,10 @@ ToshibaCAN ESCs are high-end ESCs that allow control and feedback using a custom
 Where To Buy
 ------------
 
-As of Feb 2019 these ESCs can only be purchased by directly contacting Toshiba.
+These ESCs can be purchased by directly contacting the following companies (replace "AT" with "@" in the email addresses)
+
+- Toshiba USA: Alan.Li AT taec.toshiba.com
+- Hikari Alphax Japan: masaki_nakamura AT h-ax.com
 
 CAN splitter boards are also required, the boards used in the above video were provided by `EAMS Lab <http://elab.co.jp/>`__ but these are also not readily available for sale.
 
