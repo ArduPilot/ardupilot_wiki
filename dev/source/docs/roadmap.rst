@@ -14,10 +14,15 @@ and independent developers to spot areas for cooperation.  There will also undou
 The main point of contact for each area is provided so that those looking to join in or sponsor the development
 know who to contact (see :ref:`Contact Us <common-contact-us>` for a list of ways to contact the devs).
 
-Hardware & OS support (Tridge / Sid)
--------------------------------------------
+Hardware & OS support (Tridge)
+------------------------------
 
-- software support for new CAN hardware
+- CAN ecosystem ramp-up
+- Add FDCAN support
+- Sensor re-ordering
+- Increase max number of sensors
+- Log synthetic airpseed
+- Bi-directional D-shot support
 
 Scripting (MichaelDB / Tridge)
 ------------------------------
@@ -31,13 +36,13 @@ EKF (PaulR / Randy)
 - Robust yaw estimator for Copters
 - SLAM integration for position estimation
 
-Plane (Tridge / Mark Whitehorn / MichaelDB)
--------------------------------------------
+Plane (Tridge)
+--------------
 
-- VTOL control improvements with a focus on better tailsitter support
-- support for dual-airspeed with estimation based failover
-- architecture update to align with Rover/Copter
-- DeepStall accuracy improvements (`DeepStall video <https://youtu.be/XuSl9Io93aQ?t=1820>`__)
+- Takeoff mode
+- Automatic Taxiing
+- Increase QuadPlane landing approach options
+- Plane architectural improvements (aka "the onion")
 
 Copter/Rover Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
 --------------------------------------------------------------------------------------
@@ -100,28 +105,26 @@ Boat (Randy / Peter)
 
 - Underwater mapping with scanning sonar
 - Precision Docking (using marker on shore)
+- 3G/LTE telemetry (Randy)
+- APSync to support connecting to external Wifi access point (Randy/Peter)
 
 Documentation (Randy / PierreK)
 -------------------------------
 
 - Complete MAVLink interface section of developer wiki
 
-Other (names listed below)
---------------------------
+ChrisB
+------
 
-- Two stage failsafe for Plane, Copter, Rover, Sub (Michael DB)
-- FrSky Sensors to act as battery monitor, airspeed sensor, etc (Chris)
-- Black Magic Cinema Camera Pocket 4K control via bluetooth BLE interface for full camera control (Chris)
-- Improved detection of a failed airspeed sensor (using synthetic airspeed, wind estimation and through a KF) (Chris)
-- 3G/LTE telemetry (Randy)
-- APSync to support connecting to external Wifi access point (Randy/Peter)
+- FrSky Sensors to act as battery monitor, airspeed sensor, etc (ChrisB)
+- Black Magic Cinema Camera Pocket 4K control via bluetooth BLE interface for full camera control (ChrisB)
+- Improved detection of a failed airspeed sensor (using synthetic airspeed, wind estimation and through a KF) (ChrisB)
 
 Organisational (Randy / Tridge)
 -------------------------------
 
-- find Wiki maintainer
-- increase develop team capacity by reducing barriers to entry through documentation and tools
-- assist Ready-To-Fly manufacturers get their products to market
+- Find Wiki maintainer
+- Assist Ready-To-Fly manufacturers get their products to market
 
 =======================
 Items completed in 2018
@@ -132,11 +135,13 @@ Below is a list of Roadmap items completed in 2018.  There were many more projec
 - ChibiOS support all existing flight boards and features (`ChibiOS video <https://www.youtube.com/watch?v=y2KCB0a3xMg>`_) -- **COMPLETE!**
 - port ArduPilot to a wide range of F4 and F7 based flight boards, including boards with integrated OSD and boards in small RTF racing copters -- **COMPLETE!**
 - follow mode (`follow mode video <https://www.youtube.com/watch?v=uiJURjgP460>`_) -- **COMPLETE!**
+- Two stage battery failsafe for Plane, Copter, Rover, Sub (Michael DB) -- **COMPLETE!**
 - add spool state handling -- **COMPLETE!**
 - support balance bots -- **COMPLETE!**
 - pivot turn improvements -- **COMPLETE!**
 - active loiter / boat thruster -- **COMPLETE!**
 - bring heli mixers up to date -- **COMPLETE!**
 - code coverage analyser -- **COMPLETE!**
+- improve developer wiki -- **COMPLETE!**
 - find Antenna Tracker maintainer -- **COMPLETE!**
 - find Trad Heli maintainer -- **COMPLETE!**
