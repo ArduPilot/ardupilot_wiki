@@ -71,7 +71,7 @@ If you are using the Adafruit HUZZAH ESP8266 board and are flashing from a Windo
 Changing the Wifi SSID and Password
 -----------------------------------
 
-- connect from your PC to the wifi access point
+- connect from your PC to the wifi access point (initial access point ID is "ArduPilot", and password is "ardupilot")
 - open a browser to `192.168.4.1 <http://192.168.4.1/>`__ and a simple web interface will appear like below
 - click on the "Setup" link
 - set the "AP SSID" and "AP Password" fields (both must between 8 and 16 characters), push the "Save" button and reboot the device
