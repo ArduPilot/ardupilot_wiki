@@ -95,6 +95,12 @@ Copter (Randy / Leonard / Tridge)
   - add AltHold tuning
   - chirp, stepped CW, or BPSK excitations
 
+Boat (Randy / Peter)
+--------------------
+
+- Underwater mapping with scanning sonar
+- Precision Docking (using marker on shore)
+
 Documentation (Randy / PierreK)
 -------------------------------
 
