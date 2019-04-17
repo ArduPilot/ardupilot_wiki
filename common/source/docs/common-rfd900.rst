@@ -11,7 +11,7 @@ designed for long range serial communication.  Ranges of `15km and much higher h
 
    These modems are high-power RF devices. It is suggested to
    provide separate +5 voltage to the modems. It is NOT suggested to power
-   these modems directly from Autopilots telemetry port. This is made simple using an `RFD Adapater Board <https://baskaerospace.com.au/store/telemetry/aerolink-rfd-adapter-board/>`__ from Bask Aerospace.
+   these modems directly from Autopilots telemetry port.
 
 .. image:: ../../../images/RFD900_telemetry_radio.jpg
     :target: ../_images/RFD900_telemetry_radio.jpg
@@ -61,6 +61,8 @@ They offer two different variants that meet the needs of the ground and airside 
 
 -  `AeroLink Base <https://baskaerospace.com.au/store/telemetry/aerolink-base/>`__
 -  `AeroLink RFD Adapater Board <https://baskaerospace.com.au/store/telemetry/aerolink-rfd-adapter-board/>`__
+
+The AeroLink RFD Adapter Board makes it easy to power your RFD modem from a seperate 5V BEC as recommended above.
 
 Key Features
 ============
