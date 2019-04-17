@@ -11,7 +11,7 @@ designed for long range serial communication.  Ranges of `15km and much higher h
 
    These modems are high-power RF devices. It is suggested to
    provide separate +5 voltage to the modems. It is NOT suggested to power
-   these modems directly from Autopilots telemetry port
+   these modems directly from Autopilots telemetry port. This is made simple using an `RFD Adapater Board <https://baskaerospace.com.au/store/telemetry/aerolink-rfd-adapter-board/>`__ from Bask Aerospace.
 
 .. image:: ../../../images/RFD900_telemetry_radio.jpg
     :target: ../_images/RFD900_telemetry_radio.jpg
@@ -25,19 +25,28 @@ meaning configuration and setup is extremely similar and these radios
 can even be paired with a 900Mhz SiK radio (i.e. you may choose to use
 one RFD900 on the ground, and a SiK radio in the aircraft).
 
-Users can either use radio modem unit itself and acquire antennas,
-cables as separate or by getting ready made telemetry sets as in below:
-
-.. image:: ../../../images/jDrones_RF900PlusSET_NoLogo.jpg
-    :target: ../_images/jDrones_RF900PlusSET_NoLogo.jpg
-
 Frequencies available:
 
 -  868Mhz ISM for EU area
 -  900Mhz ISM for US area
 
-Ready made sets are available:
+Users can either aquire a radio modem, antennas and
+cables separately or by getting ready made telemetry set (as seen below).
 
+The radio and antennas as separate units are available:
+
+-  `RFDesign Store, 900Mhz <http://store.rfdesign.com.au/rfd-900p-modem/>`__
+-  `RFDesign Store, 868Mhz <http://store.rfdesign.com.au/rfd-868-modem/>`__
+
+Ready made Sets
+---------------
+
+JDrones
++++++++
+
+.. image:: ../../../images/jDrones_RF900PlusSET_NoLogo.jpg
+    :target: ../_images/jDrones_RF900PlusSET_NoLogo.jpg
+    
 Ready made set includes antennas, connecting cables for Pixhawk and APM
 2.x autopilots, usb cable for ground unit. FTDI adapter, power
 filtering, adapter PCBs and strong protective casing
@@ -45,10 +54,13 @@ filtering, adapter PCBs and strong protective casing
 -  `jDrones Store, RF900Mhz Set <http://store.jdrones.com/jD_RD900Plus_Telemetry_Bundle_p/rf900set02.htm>`__
 -  `jDrones Store, RF868Mhz Set <http://store.jdrones.com/jD_RD868Plus_Telemetry_Bundle_p/rf868set02.htm>`__
 
-The radio and antennas as separate units are available:
+Bask Aerospace
+++++++++++++++
+Bask Aerospace offer the AeroLink range of products that are built to work with all RFDesign modems.
+They offer two different variants that meet the needs of the ground and airside radios.
 
--  `RFDesign Store, 900Mhz <http://store.rfdesign.com.au/rfd-900p-modem/>`__
--  `RFDesign Store, 868Mhz <http://store.rfdesign.com.au/rfd-868-modem/>`__
+-  `AeroLink Base <https://baskaerospace.com.au/store/telemetry/aerolink-base/>`__
+-  `AeroLink RFD Adapater Board <https://baskaerospace.com.au/store/telemetry/aerolink-rfd-adapter-board/>`__
 
 Key Features
 ============
