@@ -24,11 +24,10 @@ Hardware & OS support (Tridge)
 - Log synthetic airpseed
 - Bi-directional D-shot support
 
-Scripting (MichaelDB / Tridge)
-------------------------------
+Scripting (MichaelDB)
+---------------------
 
 - add Lua scripting to ArduPilot (`video <https://www.youtube.com/watch?v=ZUNOZMxOwsI>`_ from 2019 un-conference)
-- add new plane flight modes and mission items using Lua scripting
 
 EKF (PaulR / Randy)
 -------------------
@@ -36,13 +35,14 @@ EKF (PaulR / Randy)
 - Robust yaw estimator for Copters
 - SLAM integration for position estimation
 
-Plane (Tridge)
---------------
+Plane (Tridge / MichaelDB)
+--------------------------
 
 - Takeoff mode
 - Automatic Taxiing
 - Increase QuadPlane landing approach options
 - Plane architectural improvements (aka "the onion")
+- QuadPlane flat/spoiler control (MichaelDB)
 
 Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
 -------------------------------------------------------------------------
