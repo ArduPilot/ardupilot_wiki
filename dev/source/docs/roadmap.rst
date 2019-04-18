@@ -44,11 +44,11 @@ Plane (Tridge)
 - Increase QuadPlane landing approach options
 - Plane architectural improvements (aka "the onion")
 
-Copter/Rover Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
---------------------------------------------------------------------------------------
+Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
+-------------------------------------------------------------------------
 
 - Add support for Intel RealSense T265, D435 (ROS & non-ROS)
-- Back away from objects
+- Copter & Rover back away from objects
 - Proximity data (i.e. obstacles) recorded in Earth coordinates
 - On-board Path Planning around obstacles
 - Improve Off-Board SLAM + Object Avoidance (`dev wiki link <http://ardupilot.org/dev/docs/ros-cartographer-slam.html>`__)
@@ -57,11 +57,6 @@ Copter (Randy / Leonard / Tridge)
 ---------------------------------
 
 - ESC feedback handling
-- Motor Mixers
-
-  - sub unity limits on Roll, Pitch and Yaw
-  - custom motor mixers
-
 - Flight Mode Improvements
 
   - System identification mode
@@ -70,39 +65,26 @@ Copter (Randy / Leonard / Tridge)
 
 - Attitude controller
 
-  - separate FF and PID input for correct scaling
-  - rate loop updates
-  - enable rate loop saturation from external sources
-  - quaternion error limits based on output saturation
-  - quaternion error limits defined by user
+  - Separate FF and PID input for correct scaling
+  - Rate loop updates
+  - Enable rate loop saturation from external sources
   - SI unit input
 
 - Position Controller
 
-  - update Z to XY feed forward architecture
-  - include position error limits based on velocity saturation
-  - include velocity error limits based on accel saturation
-  - handle EKF reset correctly
+  - Update Z to XY feed forward architecture
+  - Include position error limits based on velocity saturation
+  - Include velocity error limits based on accel saturation
+  - Handle EKF reset for position correctly
 
-- Waypoint Navigation
+- AutoTune
 
-  - Loiter: add support for slippery airframes
-  - Auto: navigation rewrite for new pos control
-  - Auto: add support for advanced corner support
-  - Auto: add support for S-Curves (jerk limited navigation)
+  - Add tuning type to PID object
 
-- Autotune
+Rover & Boat (Randy / Leonard / Peter)
+--------------------------------------
 
-  - update for large aircraft
-  - fix over angle P issue
-  - enable frame specific or controller specific tuning tests
-  - helicopter autotune
-  - add AltHold tuning
-  - chirp, stepped CW, or BPSK excitations
-
-Boat (Randy / Peter)
---------------------
-
+- S-Curve navigation (video from 2019 un-conference)
 - Underwater mapping with scanning sonar
 - Precision Docking (using marker on shore)
 - 3G/LTE telemetry (Randy)
@@ -141,6 +123,9 @@ Below is a list of Roadmap items completed in 2018.  There were many more projec
 - pivot turn improvements -- **COMPLETE!**
 - active loiter / boat thruster -- **COMPLETE!**
 - bring heli mixers up to date -- **COMPLETE!**
+- handle EKF reset for attitude correctly -- **COMPLETE!**
+- AutoTune update for large aircraft
+- AutoTune fix for over angle P issue
 - code coverage analyser -- **COMPLETE!**
 - improve developer wiki -- **COMPLETE!**
 - find Antenna Tracker maintainer -- **COMPLETE!**
