@@ -84,7 +84,7 @@ Copter (Randy / Leonard / Tridge)
 Rover & Boat (Randy / Leonard / Peter)
 --------------------------------------
 
-- S-Curve navigation (video from 2019 un-conference)
+- S-Curve navigation (`video from 2019 un-conference <https://www.youtube.com/watch?v=LHq5o9zgNWk>`__)
 - Underwater mapping with scanning sonar
 - Precision Docking (using marker on shore)
 - 3G/LTE telemetry (Randy)
