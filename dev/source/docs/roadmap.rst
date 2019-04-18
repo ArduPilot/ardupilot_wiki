@@ -102,6 +102,14 @@ ChrisB
 - Black Magic Cinema Camera Pocket 4K control via bluetooth BLE interface for full camera control (ChrisB)
 - Improved detection of a failed airspeed sensor (using synthetic airspeed, wind estimation and through a KF) (ChrisB)
 
+Hardware (PhilipR)
+------------------
+
+- CAN hardware
+- ADSB inclusion
+- Professional Tightly coupled GNSS
+- Reference multicopter frame
+
 Organisational (Randy / Tridge)
 -------------------------------
 
@@ -124,8 +132,8 @@ Below is a list of Roadmap items completed in 2018.  There were many more projec
 - active loiter / boat thruster -- **COMPLETE!**
 - bring heli mixers up to date -- **COMPLETE!**
 - handle EKF reset for attitude correctly -- **COMPLETE!**
-- AutoTune update for large aircraft
-- AutoTune fix for over angle P issue
+- AutoTune update for large aircraft -- **COMPLETE!**
+- AutoTune fix for over angle P issue -- **COMPLETE!**
 - code coverage analyser -- **COMPLETE!**
 - improve developer wiki -- **COMPLETE!**
 - find Antenna Tracker maintainer -- **COMPLETE!**
