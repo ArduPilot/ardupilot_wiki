@@ -14,15 +14,16 @@ and independent developers to spot areas for cooperation.  There will also undou
 The main point of contact for each area is provided so that those looking to join in or sponsor the development
 know who to contact (see :ref:`Contact Us <common-contact-us>` for a list of ways to contact the devs).
 
-Hardware & OS support (Tridge)
-------------------------------
+Hardware & OS support (Tridge / PeterB)
+---------------------------------------
 
-- CAN ecosystem ramp-up
-- Add FDCAN support
-- Sensor re-ordering
-- Increase max number of sensors
-- Log synthetic airpseed
-- Bi-directional D-shot support
+- CAN ecosystem ramp-up  (Tridge)
+- Add FDCAN support (Tridge)
+- Sensor re-ordering (Tridge)
+- Increase max number of sensors (Tridge)
+- Log synthetic airpseed (Tridge)
+- Bi-directional D-shot support (Tridge)
+- HAL file operation abstractions (PeterB)
 
 Scripting (MichaelDB)
 ---------------------
@@ -81,12 +82,13 @@ Copter (Randy / Leonard / Tridge)
 
   - Add tuning type to PID object
 
-Rover & Boat (Randy / Leonard / Peter)
---------------------------------------
+Rover & Boat
+------------
 
-- S-Curve navigation (`video from 2019 un-conference <https://www.youtube.com/watch?v=LHq5o9zgNWk>`__)
-- Underwater mapping with scanning sonar
-- Precision Docking (using marker on shore)
+- S-Curve navigation (`video from 2019 un-conference <https://www.youtube.com/watch?v=LHq5o9zgNWk>`__) (Leonard/Randy)
+- Stick Mixing in Auto (TomP)
+- Underwater mapping with scanning sonar (Randy/PeterB)
+- Precision Docking (using marker on shore) (Randy)
 - 3G/LTE telemetry (Randy)
 - APSync to support connecting to external Wifi access point (Randy/Peter)
 
@@ -109,6 +111,11 @@ Hardware (PhilipR)
 - ADSB inclusion
 - Professional Tightly coupled GNSS
 - Reference multicopter frame
+
+Logging (PeterB)
+----------------
+
+- Support adding information about messages and fields to Onboard logs
 
 Organisational (Randy / Tridge)
 -------------------------------
