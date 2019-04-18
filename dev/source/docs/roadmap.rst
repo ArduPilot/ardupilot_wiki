@@ -104,13 +104,14 @@ ChrisB
 - Black Magic Cinema Camera Pocket 4K control via bluetooth BLE interface for full camera control (ChrisB)
 - Improved detection of a failed airspeed sensor (using synthetic airspeed, wind estimation and through a KF) (ChrisB)
 
-Hardware (PhilipR)
-------------------
+Hardware (PhilipR, JeffW)
+-------------------------
 
-- CAN hardware
-- ADSB inclusion
-- Professional Tightly coupled GNSS
-- Reference multicopter frame
+- CAN hardware (PhilipR)
+- ADSB inclusion (PhilipR)
+- Professional Tightly coupled GNSS (PhilipR)
+- Reference multicopter frame (PhilipR)
+- Intel Open Drone ID setup (JeffW)
 
 Logging (PeterB)
 ----------------
