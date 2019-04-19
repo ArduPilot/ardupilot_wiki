@@ -15,6 +15,7 @@ Select the links below for information on the available sensors.
 
 [site wiki="copter"]
     Cheerson CX-OF <common-cheerson-cxof>
+    HereFlow <common-hereflow>
     PX4FLOW <common-px4flow-overview>
     OpenMV <common-openmv-optflow>
 [/site]
