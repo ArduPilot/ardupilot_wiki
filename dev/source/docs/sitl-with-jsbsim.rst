@@ -33,6 +33,12 @@ In the same directory (your home directory) run these commands:
     cmake -DCMAKE_CXX_FLAGS_RELEASE="-O3 -march=native -mtune=native" -DCMAKE_C_FLAGS_RELEASE="-O3 -march=native -mtune=native" -DCMAKE_BUILD_TYPE=Release ..
     make -j2
 
+Add JSBSim executable to your search path. Add the line at the end of your ".bashrc" in your home directory to automatically set the path whenever a new terminal is opened.
+
+::
+
+    export PATH=$PATH:$HOME/jsbsim/build/src
+
 If using the JSBSim plane simulator you can specify a different JSBSim
 model than the default Rascal110 by specifying the model name using the
 -f parameter to sim_vehicle.py, like this:
