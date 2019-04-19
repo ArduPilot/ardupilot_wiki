@@ -62,7 +62,7 @@ Corporate Partners
     :width: 250px
     :target:  http://www.unmannedairlines.com/a_pub/
 
-.. image:: ../../../images/supporters/supporters_logo_dronejapan.png
+.. image:: ../../../images/supporters/supporters_logo_dronejapan.jpg
     :width: 250px
     :target:  https://www.drone-j.com/
 
