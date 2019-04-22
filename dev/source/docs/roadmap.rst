@@ -82,6 +82,18 @@ Copter (Randy / Leonard / Tridge)
 
   - Add tuning type to PID object
 
+Trad Heli (Bill Geyer, Chris Olson)
+-----------------------------------
+
+- Closed loop rotor speed governor for gas and turbine engine helicopters
+- Automatic engine failure identification and autorotation entry
+- Autonomous Autorotation
+- L1 navigation and speed/height controller for helicopter high speed autonomous missions
+- Improve ground handling and ground/air transitions
+- Improve rotor speed control library architecture
+- Tie motor spool states to measured rotor speed when measurement is available
+- Virtual flybar option for acro flight mode
+
 Rover & Boat
 ------------
 
