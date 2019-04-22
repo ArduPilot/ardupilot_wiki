@@ -136,6 +136,8 @@ Organisational (Randy / Tridge)
 - Find Wiki maintainer
 - Assist Ready-To-Fly manufacturers get their products to market
 
+---------------------------------------------
+
 =======================
 Items completed in 2018
 =======================
