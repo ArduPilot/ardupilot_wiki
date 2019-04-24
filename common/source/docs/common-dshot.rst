@@ -31,14 +31,12 @@ Dshot and telemetry ESC's provide an advantage over traditional ESC's for a numb
 Where to buy
 ============
 
-`blheli32.com provides this list of BLHeli compatible ESCs <http://www.blheli32.com/list-of-blheli_32-escs/>`__.
-We recommend choosing one that has the telemetry wire pre-soldered (see blue wire below).
+A `search for "BLHeli32 shopping" <https://www.google.com/search?q=blheli32&tbm=shop>`__ turns up many compatible ESCs.  Look for an ESC which includes the telemetry wire connector like the `HolyBro Tekko32 shown below <https://shop.holybro.com/holybro-tekko32-esc35a_p1074.html>`__
 
-.. image:: ../../../images/dshot-telemwire.jpg
-    :target: https://hobbyking.com/en_us/turnigy-multistar-32bit-51a-race-spec-esc-2-6s-opto.html
-    :width: 400px
+.. image:: ../../../images/dshot-telemwire.png
+    :target: https://shop.holybro.com/holybro-tekko32-esc35a_p1074.html
 
-*image courtesy of hobbyking.com*
+*image courtesy of holybro.com*
 
 Connecting and Configuring
 ==========================
