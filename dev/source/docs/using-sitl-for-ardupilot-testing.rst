@@ -221,10 +221,10 @@ following commands:
 ::
 
     param set SIM_SONAR_SCALE 10
-    param set RNGFND_TYPE 1
-    param set RNGFND_SCALING 10
-    param set RNGFND_PIN 0
-    param set RNGFND_MAX_CM 5000
+    param set RNGFND1_TYPE 1
+    param set RNGFND1_SCALING 10
+    param set RNGFND1_PIN 0
+    param set RNGFND1_MAX_CM 5000
 
     # Enable rangefinder for landing (Plane only!)
     param set RNGFND_LANDING 1
@@ -261,7 +261,7 @@ You can add a virtual optical flow sensor like this:
 ::
 
     param set SIM_FLOW_ENABLE 1
-    param set FLOW_ENABLE 1
+    param set FLOW_TYPE 10
 
 Then restart SITL. After setting it up try this:
 
