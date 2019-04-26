@@ -69,4 +69,5 @@ Links to current build pages
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
     Building Mission Planner with Visual Studio <buildin-mission-planner>
     ArduPilot Pre-Built Binaries <pre-built-binaries>
+    ArduPilot Bootloader <bootloader>
 
