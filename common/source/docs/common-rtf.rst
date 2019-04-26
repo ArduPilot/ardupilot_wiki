@@ -16,8 +16,10 @@ Vehicles from Partners
 
 * `BlueROV2 from Blue Robotics <https://bluerobotics.com/store/rov/bluerov2/>`__
 * `Event38 e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__ and `e386 Mapping Drones (fixed wing) <https://event38.com/fixed-wing/e386-mapping-drone/>`__
+* `Hitec HCS Xeno FX <https://hitecnology.com/drones/hcs-xeno-fx-fixed-wing-mapping-suas>`__ (fixed wing)
+* `Hitec SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__ (multicopter)
 * `mRobotics Nano Talon (fixed wing) <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-talon0318-mr>`__
-* `SkyRocket's SkyViper GPS Streaming Drone <http://sky-viper.com/product/info/V2450GPS-sd>`__ (and `version with FPV headset <http://sky-viper.com/product/info/V2450GPS-sd>`__)
+* `SkyRocket's Journey <http://sky-viper.com/journey/>`__
 * `TT Robotix Rhino 6x6 <http://www.ttrobotix.com/product/rhino6x6>`__ and `Base 1 Rover <http://www.ttrobotix.com/product/base1rover>`__
 
 Vehicles from Non-Partners
