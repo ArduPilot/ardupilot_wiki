@@ -16,6 +16,10 @@ by recent BLHeli ESC firmwares.
 - ESC telemetry support (for receiving performance data from the ESC)
 - BLHeli pass-thru configuration and ESC flashing (for configuring the ESC)
 
+.. note::
+
+   ArduPilot firmware supports the pass-through protocol with BLHeli_32 only.
+
 Detailed descriptions of these features are lower down on this page. 
 Dshot and telemetry ESC's provide an advantage over traditional ESC's for a number of reasons. 
 
@@ -146,7 +150,7 @@ BLHeli pass-through support is a feature that allows you to configure
 and upgrade the firmware on your ESCs without having to disconnect
 them from your vehicle. You can plug a USB cable into your flight
 controller and run the BLHeliSuite software for Windows to configure
-your ESCs.
+your ESCs. ArduPilot firmware supports the pass-through protocol with BLHeli_32 only.
 
 Note that you do not have to be using DShot to take advantage of
 BLHeli pass-through support, although it is recommended that you do.
@@ -164,7 +168,7 @@ parameters you should reboot your flight board.
 
 Now connect a USB cable to your flight board and use BLHeliSuite on
 Windows to connect. You will need to use BLHeliSuite32 for BLHeli_32
-ESCs, and BLHeliSuite16 for BLHeli/BLHeli_S ESCs.
+ESCs.
 
 You need to select "BLHeli32 Bootloader (Betaflight/Cleanflight)" from
 the interfaces menu
