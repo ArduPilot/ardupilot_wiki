@@ -13,4 +13,5 @@ Please follow the links below to learn more about potential Pixhawk boot issues 
 
     How to sign a Pixhawk with your Certificate of Authenticity <how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity>
     Loading a bootloader with DFU <using-DFU-to-load-bootloader>
+    ArduPilot Bootloader <bootloader>
     Troubleshooting Pixhawk Boot <troubleshooting-pixhawkpx4-boot>
