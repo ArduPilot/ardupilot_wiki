@@ -145,7 +145,7 @@ Full Table of Contents
     Companion Computers <docs/companion-computers>
     ROS <docs/ros>
     Porting to a new Flight Controller <docs/porting>
-    Pixhawk Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
+    Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
     How The Team Works <docs/how-the-team-works>
