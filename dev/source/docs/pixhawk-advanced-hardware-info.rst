@@ -1,8 +1,8 @@
 .. _pixhawk-advanced-hardware-info:
 
-==============================
-Pixhawk Advanced Hardware Info
-==============================
+======================
+Advanced Hardware Info
+======================
 
 Basic information on the Pixhawk can be found in the :ref:`Supported Hardware Section <common-autopilots>`.
 
