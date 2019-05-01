@@ -34,8 +34,7 @@ Setup steps
            
 #. From withing the Ubuntu bash terminal, update your system to the latest packages:
 
-    - ``sudo apt-get update``
-    - ``sudo apt-get upgrade``
+    - ``sudo apt-get update && sudo apt-get upgrade``
     
 #. Copy the Ardupilot source files to your local Ubuntu filesystem by cloning the git repository and updating the submodules. (Accessing the source files on your Windows filesystem won't work because the must be kept on the native WSl filesystem)
 
@@ -45,25 +44,12 @@ Setup steps
 
 #.  run the Tools/environment_install/install-prereqs-ubuntu.sh script:
 
-    - run the script ``./Tools/environment_install/install-prereqs-ubuntu.sh``.  You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" when it asks if you wish to install a package.
+    - ``./Tools/environment_install/install-prereqs-ubuntu.sh -y``
+    - You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" if it asks if you wish to install a package.
 
     .. image:: ../images/build-on-windows10-prereqs.png
        :target: ../_images/build-on-windows10-prereqs.png
        
-#. Remove arm-none-earbi-ar from the path in ~/.profile because the script installs the i386 version of the compiller, which does not run under a x64 WSL (unlike in real linux):
-
-    - Open the file in a text editor ``nano ~/.profile``
-    - Search for the line ``export PATH=/opt/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH`` and delete it
-    - Hit ``Ctrl + O`` to save the file
-
-#. Install a 64 bit version of the compiler from the repositories:
-
-    - ``apt-get install gcc-arm-none-eabi``
-
-#. Reload the .profile script to let the changes take effect:
-
-    - ``. ~/.profile``
-
 Build with Waf
 ==============
 
@@ -84,14 +70,7 @@ You should now be able to start the "Ubuntu" application from your Windows Start
     
 .. tip::
 
-  You can run XWindows applications (including SITL) by installing VcXsrv on Windows and adding
-  
-  .. code-block:: python
-  
-      export DISPLAY=:0.0
-      export LIBGL_ALWAYS_INDIRECT=1
-      
-  to your ~/.bashrc. For code editing you can install VSCode inside WSL.
+  You can run XWindows applications (including SITL) by installing VcXsrv on Windows. For code editing you can install VSCode inside WSL.
   
 .. tip::
 
