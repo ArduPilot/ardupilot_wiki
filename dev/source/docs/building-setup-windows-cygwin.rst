@@ -125,9 +125,7 @@ Set up directories/paths and extra packages in Cygwin
 
 ::
 
-    pip2 install empy
-    pip2 install pyserial
-    pip2 install pymavlink
+    pip2 install empy pyserial pymavlink
 
 Download Ardupilot Source
 =========================
@@ -138,8 +136,7 @@ The Ardupilot source files then need to be downloaded to your local Cygwin files
 
     git clone https://github.com/ardupilot/ardupilot.git
     cd ardupilot
-    git submodule init
-    git submodule update --recursive
+    git submodule update --init --recursive
 
 
 Build with Waf
