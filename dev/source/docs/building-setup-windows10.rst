@@ -44,7 +44,7 @@ Setup steps
     - ``git submodule init``
     - ``git submodule update --recursive``
 
-#.  run the Tools/scripts/install-prereqs-ubuntu.sh script:
+#.  run the Tools/environment_install/install-prereqs-ubuntu.sh script:
 
     - run the script ``./Tools/environment_install/install-prereqs-ubuntu.sh``.  You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" when it asks if you wish to install a package.
 
