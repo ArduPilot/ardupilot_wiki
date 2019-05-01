@@ -41,8 +41,7 @@ Setup steps
 
     - ``git clone https://github.com/ardupilot/ardupilot.git``
     - ``cd ardupilot``
-    - ``git submodule init``
-    - ``git submodule update --recursive``
+    - ``git submodule update --init --recursive``
 
 #.  run the Tools/environment_install/install-prereqs-ubuntu.sh script:
 
