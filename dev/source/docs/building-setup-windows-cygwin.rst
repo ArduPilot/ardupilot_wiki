@@ -20,7 +20,7 @@ Install Cygwin
 
 ::
 
-    setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,libxslt-devel,python2-devel,python2-future,python2-libxml2,python2-pip,procps-ng,gdb,ddd,zip
+    setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python27,python2-future,python27-libxml2,python27-pip,libxslt-devel,python27-devel,procps-ng,zip,gdb,ddd
     
 Or, for a stepped install:
 
@@ -38,47 +38,49 @@ Or, for a stepped install:
 
       Cygwin Installer: Select Package Dialog
 
-   +----------------+----------------------------------------------------------------------------------+
-   | Package Name   | Category / Name / Description                                                    |
-   +================+==================================================================================+
-   | autoconf       | Devel \| autoconf: Wrapper scripts for autoconf commands                         |
-   +----------------+----------------------------------------------------------------------------------+
-   | automake       | Devel \| automake: Wrapper scripts for automake and aclocal                      |
-   +----------------+----------------------------------------------------------------------------------+
-   | ccache         | Devel \| ccache: A C compiler cache for improving recompilation                  |
-   +----------------+----------------------------------------------------------------------------------+
-   | gcc-g++        | Devel \| gcc-g++ GNU Compiler Collection (C++)                                   |
-   +----------------+----------------------------------------------------------------------------------+
-   | git            | Devel \| git: Distributed version control system                                 |
-   +----------------+----------------------------------------------------------------------------------+
-   | libtool        | Devel \| libtool: Generic library support script                                 |
-   +----------------+----------------------------------------------------------------------------------+
-   | make           | Devel \| make: The GNU version of the 'make' utility                             |
-   +----------------+----------------------------------------------------------------------------------+
-   | gawk           | Interpreters \| gawk: GNU awk, a pattern scanning and processing language        |
-   +----------------+----------------------------------------------------------------------------------+
-   | libexpat-devel | Libs \| libexpat-devel: Expat XML parser library (development files)             |
-   +----------------+----------------------------------------------------------------------------------+
-   | libxml2-devel  | Libs \| libxml2-devel: Gnome XML library (development)                           |
-   +----------------+----------------------------------------------------------------------------------+
-   | libxslt-devel  | Libs \| libxslt-devel: XML template library (development files)                  |
-   +----------------+----------------------------------------------------------------------------------+
-   | python2-devel  | Python \| python2-devel: Python2 language interpreter (python3 does not work yet)|
-   +----------------+----------------------------------------------------------------------------------+
-   | python2-future | Python \| python2-future: Clean single-source support for Python 3 and 2         |
-   +----------------+----------------------------------------------------------------------------------+
-   | python2-libxml2| Python \| python2-libxml2: Gnome XML Library (Python bindings                    |
-   +----------------+----------------------------------------------------------------------------------+
-   | python2-pip    | Python \| python2-pip: Python package installation tool                          |
-   +----------------+----------------------------------------------------------------------------------+
-   | procps-ng      | System \| procps-ng: System and process monitoring utilities (required for pkill)|
-   +----------------+----------------------------------------------------------------------------------+
-   | gdb            | Devel \| gdb: The GNU Debugger                                                   |
-   +----------------+----------------------------------------------------------------------------------+
-   | ddd            | Devel \| ddd: DDD, the data display debugger                                     |
-   +----------------+----------------------------------------------------------------------------------+
-   | zip            | Archive \| zip: Info-ZIP compression utility                                     |
-   +----------------+----------------------------------------------------------------------------------+   
+   +-----------------+----------------------------------------------------------------------------------+
+   | Package Name    | Category / Name / Description                                                    |
+   +=================+==================================================================================+
+   | autoconf        | Devel \| autoconf: Wrapper scripts for autoconf commands                         |
+   +-----------------+----------------------------------------------------------------------------------+
+   | automake        | Devel \| automake: Wrapper scripts for automake and aclocal                      |
+   +-----------------+----------------------------------------------------------------------------------+
+   | ccache          | Devel \| ccache: A C compiler cache for improving recompilation                  |
+   +-----------------+----------------------------------------------------------------------------------+
+   | gcc-g++         | Devel \| gcc-g++ GNU Compiler Collection (C++)                                   |
+   +-----------------+----------------------------------------------------------------------------------+
+   | git             | Devel \| git: Distributed version control system                                 |
+   +-----------------+----------------------------------------------------------------------------------+
+   | libtool         | Devel \| libtool: Generic library support script                                 |
+   +-----------------+----------------------------------------------------------------------------------+
+   | make            | Devel \| make: The GNU version of the 'make' utility                             |
+   +-----------------+----------------------------------------------------------------------------------+
+   | gawk            | Interpreters \| gawk: GNU awk, a pattern scanning and processing language        |
+   +-----------------+----------------------------------------------------------------------------------+
+   | libexpat-devel  | Libs \| libexpat-devel: Expat XML parser library (development files)             |
+   +-----------------+----------------------------------------------------------------------------------+
+   | libxml2-devel   | Libs \| libxml2-devel: Gnome XML library (development)                           |
+   +-----------------+----------------------------------------------------------------------------------+
+   | libxslt-devel   | Libs \| libxslt-devel: XML template library (development files)                  |
+   +-----------------+----------------------------------------------------------------------------------+
+   | python27        | Python \| python27: Python2 language interpreter                                 |
+   +-----------------+----------------------------------------------------------------------------------+
+   | python27-devel  | Python \| python27-devel: Python2 language interpreter                           |
+   +-----------------+----------------------------------------------------------------------------------+
+   | python2-future  | Python \| python2-future: Clean single-source support for Python 3 and 2         |
+   +-----------------+----------------------------------------------------------------------------------+
+   | python27-libxml2| Python \| python27-libxml2: Gnome XML Library (Python bindings)                  |
+   +-----------------+----------------------------------------------------------------------------------+
+   | python27-pip    | Python \| python27-pip: Python package installation tool                         |
+   +-----------------+----------------------------------------------------------------------------------+
+   | procps-ng       | System \| procps-ng: System and process monitoring utilities (required for pkill)|
+   +-----------------+----------------------------------------------------------------------------------+
+   | gdb             | Devel \| gdb: The GNU Debugger                                                   |
+   +-----------------+----------------------------------------------------------------------------------+
+   | ddd             | Devel \| ddd: DDD, the data display debugger                                     |
+   +-----------------+----------------------------------------------------------------------------------+
+   | zip             | Archive \| zip: Info-ZIP compression utility                                     |
+   +-----------------+----------------------------------------------------------------------------------+   
 
    
 
@@ -126,6 +128,19 @@ Set up directories/paths and extra packages in Cygwin
     pip2 install empy
     pip2 install pyserial
     pip2 install pymavlink
+
+Download Ardupilot Source
+=========================
+
+The Ardupilot source files then need to be downloaded to your local Cygwin filesystem by cloning the git repository and updating the submodules. Enter the following commands into the Cygwin terminal to download the source files:
+
+::
+
+    git clone https://github.com/ardupilot/ardupilot.git
+    cd ardupilot
+    git submodule init
+    git submodule update --recursive
+
 
 Build with Waf
 ==============
