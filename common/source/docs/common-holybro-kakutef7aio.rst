@@ -75,6 +75,20 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
 The SERIAL5 port (UART7) is for ESC telemetry, and has a R7 pad on
 each of the four corners of the KakuteF7 AIO board.
 
+
+Servo Output Mapping
+====================
+
+The PWM outputs are marked M1-M6 in the above pinouts. The corresponding servo outputs are:
+
+    - M1 -> Servo Output 4
+    - M2 -> Servo Output 1
+    - M3 -> Servo Output 2
+    - M4 -> Servo Output 3
+    - M5 -> Servo Output 5
+    - M6 -> Servo Output 6
+    
+
 RC Input
 ========
  
