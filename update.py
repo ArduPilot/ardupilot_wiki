@@ -35,7 +35,6 @@ import subprocess
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
 ALL_WIKIS =['copter', 'plane', 'rover','antennatracker','dev','planner','planner2','ardupilot']
 COMMON_DIR='common'
-COPY_TARGET_DIR_BASE='/var/sites/wiki/web/'
 
 #GIT_REPO = ''
 
@@ -45,6 +44,7 @@ parser = argparse.ArgumentParser(description='Copy Common Files as needed, strip
 parser.add_argument('--site', help="If you just want to copy to one site, you can do this. Otherwise will be copied.")
 parser.add_argument('--clean', default='False', help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).")
 parser.add_argument('--cached-parameter-files', default=False, help="Do not re-download parameter files", type=bool)
+parser.add_argument('--destdir', default="/var/sites/wiki/web", help="Destination directory for compiled docs")
 args = parser.parse_args()
 #print(args.site)
 #print(args.clean)
@@ -110,9 +110,9 @@ def copy_build(site):
         if not site==None and not site==wiki:
             continue
         print('copy: %s' % wiki)
-        targetdir=COPY_TARGET_DIR_BASE+wiki
+        targetdir = os.path.join(args.destdir, wiki)
         # copy target directory to "old" folder
-        olddir=COPY_TARGET_DIR_BASE+'old'
+        olddir = os.path.join(args.destdir, 'old')
         try:
             subprocess.check_call(['mkdir', olddir])
         except:
@@ -130,9 +130,9 @@ def copy_build(site):
         #sourcedir='./%s/build/html/*' % wiki
         sourcedir='./%s/build/html/' % wiki
         #print("DEBUG: sourcedir: %s" % sourcedir)
-        #print('DEBUG: mv %s %s' % (sourcedir, COPY_TARGET_DIR_BASE) )
+        #print('DEBUG: mv %s %s' % (sourcedir, args.destdir) )
 
-        html_moved_dir = COPY_TARGET_DIR_BASE+'html'
+        html_moved_dir = os.path.join(args.destdir, 'html')
         try:
             subprocess.check_call(['mv', sourcedir, html_moved_dir])
             #Rename move! (single move to html/* failed)
