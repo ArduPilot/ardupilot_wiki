@@ -104,3 +104,8 @@ You should now be able to start the "Ubuntu" application from your Windows Start
        attrib -s -h rootfs
        
    You can make a direct access to "lxss" folder on your desktop for a quick navigation.
+   
+.. tip::
+
+    Windows 10 includes "Windows Defender" virus scanner. It will slow down WSL quite a bit. Disabling greating improves disk performance but increases your risk to viruses. Disabling at your own risk. Here is one of many resources/videos that show yo uhow to disable it: https://www.youtube.com/watch?v=FmjblGay3AM
+    
