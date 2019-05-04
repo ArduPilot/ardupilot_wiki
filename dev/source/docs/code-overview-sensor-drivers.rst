@@ -153,4 +153,4 @@ Additional Advice
 
 When writing a sensor driver, never include any wait or sleep code because this will either delay the main thread or the background thread associated with the bus being used.
 
-If a new library is written, it must be added to the make.inc and wscript files in the vehicle directory (i.e. the ardupilot/ArduCopter/make.inc and /ardupilot/ArduCopter/wscript) in order for it to be linked into the final binary
+If a new library is written, it must be added to the wscript file in the vehicle directory (i.e. /ardupilot/ArduCopter/wscript) in order for it to be linked into the final binary
