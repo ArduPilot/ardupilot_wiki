@@ -25,18 +25,16 @@ Note to developers
 We very much appreciate you using our code to do fun and interesting
 things. We hope that while doing this you may find and fix bugs or
 make enhancements that could be useful for the greater community and
-will makes the developers aware of them by creating an issue in the `issues list <https://github.com/ArduPilot/ardupilot/issues>`__ and/or :ref:`contribute a fix using a pull request <submitting-patches-back-to-master>`
+will make the developers aware of them by creating an issue in the `issues list <https://github.com/ArduPilot/ardupilot/issues>`__ and/or :ref:`contribute a fix using a pull request <submitting-patches-back-to-master>`
 so they can be considered to be added to the original code base.
 
 Note to  businesses or individuals including this software in products
 ======================================================================
 
-We also greatly appreciate those companies and individuals who
-incorporate this software into their products for sale.  A significant
-number have already done this.  There are some things that the license
-requires however that we need to point out:
+Firstly, by the very nature of the ArduPilot Project you are free to use all of the code and tools provided in our Github repository under the terms of the licenses without any authorization or involvement from our team.
+We greatly appreciate those companies and individuals who incorporate this software into their products for sale.  A significant number have already done this.  There are some things that the license requires however that we need to point out:
 
--  Inform your customers that the flight code software is open source and provide the actual source code in the product or provide a link to where the source code can be found (see sample below).
+-  Inform your customers that the software is open source and provide the actual source code in the product or provide a link to where the source code can be found (see sample below).
 
 .. image:: ../images/license-sample-web-page.png
     :target: ../_images/license-sample-web-page.png
@@ -70,7 +68,7 @@ Why did we pick this license over others?
 Can I integrate Closed source (i.e. Proprietary) and Open Source?
 =================================================================
 
-Ardupilot is open source (GPLv3) but you can use a companion computer to run closed source code to ease integrating ArduPilot into your corporate systems or to add higher level features to differentiate yourself from your rivals.  You build on the reliability of the free low-level flight code so you can instead invest in the higher level features.  We believe ArduPilot is as reliable as the leading closed system and you are not beholden to a particular manufacturer.  Below is an image of how one manufacturer accomplished this.
+ArduPilot is open source (GPLv3) but you can use a companion computer to run closed source code to ease integrating ArduPilot into your corporate systems or to add higher level features to differentiate yourself from your rivals.  You build on the reliability of the free low-level flight code so you can instead invest in the higher level features.  We believe ArduPilot is as reliable as the leading closed system and you are not beholden to a particular manufacturer.  Below is an image of how one manufacturer accomplished this.
 
 .. image:: ../images/license-integrating-open-and-closed.png
     :target: ../_images/license-integrating-open-and-closed.png
