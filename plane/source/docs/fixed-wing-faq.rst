@@ -26,20 +26,20 @@ shutting down the motor when you need to.
 THR_SLEWRATE can also aid in prevention of a nitro engine stalling in
 flight by slowing the throttle advance from going wide open to quickly.
 
-How do you prevent the servo demo and have faster startups?
------------------------------------------------------------
+How do you inhibit gyro calibration?
+------------------------------------
 
-Set the parameter SKIP_GYRO_CAL=1. That will disable the servo demo
-and will also skip the gyro calibration done on each startup. The last
+Set the parameter INS_GYRO_CAL=0. That will skip the gyro calibration 
+done on each startup. The last
 gyro calibration from when you calibrated the accelerometers will be
 used instead. This also means you don't need to hold the plane still
 when booting.
 
-The downside of using SKIP_GYRO_CAL is that your gyros may have
+The downside of skipping gyro calibration is that your gyros may have
 drifted since you last calibrated them, perhaps due to temperature
 changes. If you have ARMING_REQUIRE enabled then the arming checks will
 catch that problem if it is very large, but in general we recommend not
-using SKIP_GYRO_CAL unless you have a good reason to use it. This is
+skipping gyro calibration unless you have a good reason to use it. This is
 especially the case if you have the EKF enabled, as it is particularly
 sensitive to gyro error.
 
