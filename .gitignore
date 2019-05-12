@@ -8,6 +8,16 @@
 /antennatracker/source/docs/common-*
 /dev/source/docs/common-*
 
+# Common CSS except under Common
+/ardupilot/source/_static/common_*
+/copter/source/_static/common_*
+/plane/source/_static/common_*
+/rover/source/_static/common_*
+/planner/source/_static/common_*
+/planner2/source/_static/common_*
+/antennatracker/source/_static/common_*
+/dev/source/_static/common_*
+
 # Any build directory
 */build/*
 

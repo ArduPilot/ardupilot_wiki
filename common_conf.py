@@ -56,3 +56,6 @@ if disable_non_local_image_warnings:
 
     sphinx.environment.BuildEnvironment.warn_node = _warn_node
 ############ ENDPATH
+
+def setup(app):
+   app.add_stylesheet("common_theme_override.css")
