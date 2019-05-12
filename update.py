@@ -30,6 +30,7 @@ import re
 import os
 from codecs import open
 import subprocess
+import shutil
 
 
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
@@ -183,6 +184,11 @@ def generate_copy_dict(start_dir=COMMON_DIR):
         except:
             pass
 
+        try:
+            os.mkdir('%s/source/_static' % wiki)
+        except:
+            pass
+
 
     for root, dirs, files in os.walk(start_dir):
         for file in files:
@@ -202,6 +208,9 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
                     destination_file.close()
+            elif file.endswith(".css"):
+                for wiki in ALL_WIKIS:
+                    shutil.copy2(os.path.join(root, file), '%s/source/_static/' % wiki)
 
 
 def get_copy_targets(content):

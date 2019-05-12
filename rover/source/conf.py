@@ -380,3 +380,6 @@ epub_exclude_files = ['search.html']
 
 #Intersphinx mapping config (done globally)
 intersphinx_mapping = common_conf.intersphinx_mapping
+
+def setup(app):
+   common_conf.setup(app)
