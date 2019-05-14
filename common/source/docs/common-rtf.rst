@@ -21,6 +21,7 @@ Vehicles from Partners
 * `mRobotics Nano Talon (fixed wing) <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-talon0318-mr>`__
 * `SkyRocket's Journey <http://sky-viper.com/journey/>`__
 * `TT Robotix Rhino 6x6 <http://www.ttrobotix.com/product/rhino6x6>`__ and `Base 1 Rover <http://www.ttrobotix.com/product/base1rover>`__
+* Bask Aerospace - `AeroDrone MR4 <http://www.baskaerospace.com.au/aerodrone/mr4>`__
 
 Vehicles from Non-Partners
 ==========================
