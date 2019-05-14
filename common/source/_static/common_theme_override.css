@@ -34,3 +34,9 @@ table.partners-table td {
         display: block;
     }
 }
+
+/* wiki top menu makes anchor links disappear under it, this hack fixes it */
+.section {
+    padding-top: 40px;
+    margin-top: -40px;
+}
