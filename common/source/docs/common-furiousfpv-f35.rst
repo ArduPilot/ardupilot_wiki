@@ -58,6 +58,11 @@ USART3 RX used as RC input (F-RX port's Rx pin on orig. F-35)
 
 Serial protocols can be adjusted to personal preferences.
 
+Dshot capability
+================
+
+All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output groups that must be the same (PWM or Dshot, when configured as a normal servo/motor output) are: 1/2, 3/4, 5/6.
+
 Notes
 =====
 The F-35 has ability to have the middle rail for M1/M2 to be independent of that of the S1-S6 slots, which are supplied by the internal 5V regulator, or to have it tied to them, via board jumper pads. The WingFC10 is isolated with no pad option. The internal regulators can only supply two or three standard servos (3A).
