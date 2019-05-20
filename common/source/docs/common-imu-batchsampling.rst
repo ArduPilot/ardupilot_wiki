@@ -27,7 +27,7 @@ Flight and Post-Flight Analysis
     :target:  ../_images/imu-batchsampling-fft-mp2.png
     :width: 450px
 
-- Accelerometer data appears in the top left window with the vertical access showing the amplitude and horizontal axis showing the frequency.  The amplitude is not scaled to a useful value meaning the graph is useful for determining the frequency of the vibration but not whether the levels are too high or not.  Vibration at frequencies above 300hz may lead to attitude or position control problems.
+- Accelerometer data appears in the top left window with the vertical axis showing the amplitude and horizontal axis showing the frequency.  The amplitude is not scaled to a useful value meaning the graph is useful for determining the frequency of the vibration but not whether the levels are too high or not.  Vibration at frequencies above 300hz may lead to attitude or position control problems.
 
 .. image:: ../../../images/imu-batchsampling-fft-mp.png
     :target:  ../_images/imu-batchsampling-fft-mp.png
