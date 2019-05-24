@@ -58,10 +58,6 @@ Corporate Partners
     :width: 250px
     :target:  http://dronebility.com
 
-.. image:: ../../../images/supporters/supporters_logo_APUB.jpg
-    :width: 250px
-    :target:  http://www.unmannedairlines.com/a_pub/
-
 .. image:: ../../../images/supporters/supporters_logo_Drone_Japan.jpg
     :width: 250px
     :target:  https://drone-j.com
@@ -106,10 +102,6 @@ Corporate Partners
     :width: 250px
     :target: https://carbonix.com.au
 
-.. image:: ../../../images/supporters/supporters_logo_Volans_i.png
-    :width: 250px
-    :target: http://volans-i.com
-
 .. image:: ../../../images/supporters/supporters_logo_AgEagle.png
     :width: 250px
     :target:  https://ageagle.com
@@ -153,10 +145,6 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_Foxtech.jpg
     :width: 250px
     :target:  https://foxtechfpv.com
-
-.. image:: ../../../images/supporters/supporters_logo_Sky-Walker.png
-    :width: 250px
-    :target:  http://sky-walker.co.jp/english/index.html
 
 .. image:: ../../../images/supporters/supporters_logo_BFD_Systems.jpg
     :width: 250px
