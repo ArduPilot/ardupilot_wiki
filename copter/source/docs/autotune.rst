@@ -129,7 +129,7 @@ messages can be found on the :ref:`Downloading and Analyzing Data Logs in Missio
 -----
 
 .. image:: ../../../images/banner-freespace.png
-   :target: https://freespace.solutions/
+   :target: https://freespacesolutions.com.au/
 
 .. |AutoTuneCh7Switch| image:: ../images/AutoTuneCh7Switch.png
     :target: ../_images/AutoTuneCh7Switch.png
