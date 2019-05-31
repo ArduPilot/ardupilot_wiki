@@ -65,6 +65,9 @@ ArduPilot dev team.
 -  Rover (`wiki <http://rover.ardupilot.com/>`__,
    `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
    ground vehicles
+-  Sub (`wiki <https://www.ardusub.com/>`__,
+   `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
+   submersible vehicles
 -  Antenna Tracker (`wiki <http://ardupilot.org/antennatracker/index.html>`__,
    `code <https://github.com/ArduPilot/ardupilot>`__) - for automatically aiming an antenna at a vehicle
 -  Mission Planner (`wiki <http://planner.ardupilot.com/>`__,
