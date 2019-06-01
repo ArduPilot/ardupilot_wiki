@@ -18,11 +18,8 @@ The copter will first rise to :ref:`RTL_ALT <RTL_ALT>` before returning home or 
 .. image:: ../images/RTL.jpg
     :target: ../_images/RTL.jpg
 
-RTL is a GPS-dependent move, so it is essential that GPS lock is
-acquired before attempting to use this mode. Before arming, ensure that
-the APM's blue LED is solid and not blinking. For a GPS without compass,
-the LED will be solid blue when GPS lock is acquired. For the
-GPS+Compass module, the LED will be blinking blue when GPS is locked.
+RTL mode requires a reliable position estimate to work properly, most commonly provided by GPS and compass. Default prearm checks will ensure a 3D GPS lock with sufficient HDOP is acquired and your mag is working as expected prior to arming. When using non-default arming checks, make sure you do have a sufficient GPS lock and / or a reliable position estimate for RTL to perform as expected.
+
 
 RTL will command the copter to return to the home position, meaning that
 it will return to the location where it was armed. Therefore, the home
