@@ -10,6 +10,12 @@ This article explains how to perform basic compass calibration.
 
    This article assumes that you are using the most common configuration — a flight controller and compass mounted with the arrow on each facing toward the front of the vehicle. If you're using a different configuration see :ref:`Advanced Compass Setup <common-compass-setup-advanced>`.
 
+
+.. note::
+
+   See `this forum post <https://discuss.ardupilot.org/t/copter-3-5-5-released-take-care-re-new-hex-gps-compass-orientation/25373>`__ for a orientation issue with certain HEX Here / compass hardware when upgrading from ArduCopter 3.5.4 to 3.5.5.
+   
+
 [site wiki="rover"]
 .. tip::
 
