@@ -32,7 +32,8 @@ Overview
 
    Acro is the most difficult flight mode to master and you can
    look forward to crashing multiple times before you get the hang of
-   it.
+   it. While Acro mode does not necessarily require GPS, switching to RTL in case of emergency does. Make sure you do have a reliable
+   position estimate prior to arming, most commonly provided by 3D GPS fix with sufficient HDOP.
 
 .. youtube:: tC0mF-N5z0Q
     :width: 100%
