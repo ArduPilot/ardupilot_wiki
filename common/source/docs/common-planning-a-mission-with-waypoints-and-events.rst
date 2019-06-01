@@ -21,7 +21,7 @@ Setting the Home Position
 For **Copter**, **Plane** and **Rover** the home position is set as the location where the vehicle
 was armed. This means if you execute an RTL, it will return to
 the location where it was armed, so arm your vehicle in the location you
-want it to return to, or use a rally point to setup an alternative return point.
+want it to return to, or use a rally point to setup an alternative return point. Home is set as waypoint 0 by default.
 
 Video: Produce and save a Multi-waypoint Mission
 ================================================
