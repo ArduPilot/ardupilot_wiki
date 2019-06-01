@@ -14,6 +14,13 @@ the roll and pitch axis.
    Stabilize. You'll have fewer crashes if you don't need to concentrate on
    too many controls at once.
 
+
+.. warning::
+
+   While stabilize mode does not necessarily require GPS, switching to RTL in case of emergency does. Make sure you do have a reliable
+   position estimate prior to arming, most commonly provided by 3D GPS fix with sufficient HDOP.
+
+
 Overview
 ========
 
