@@ -29,7 +29,7 @@ When the failsafe is triggered:
 
 Then one of the following will happen:
 
--  **Nothing** if the vehicle is already disarmed
+-  **Nothing** if the vehicle is already disarmed or executing RTL or Land
 -  **Disarm motors** if the vehicle is in Stabilize or Acro mode and the throttle is at zero OR the vehicle is landed
 -  The user configurable action held in the :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` (Copter-3.6 or higher) or :ref:`FS_BATT_ENABLE <FS_BATT_ENABLE>` (Copter-3.5 or lower) parameter:
 
