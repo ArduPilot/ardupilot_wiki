@@ -4,7 +4,7 @@
 Setup the Build Environment on Windows
 ======================================
 
-There are several options for building on windows.  We recommended the first option which uses Cygwin.
+There are two options for building on windows.  Both are support and should work equally well.
 
 Setup for building with waf using Cygwin
 ----------------------------------------
