@@ -114,6 +114,7 @@ SITL-specific parameters start with ``SIM_``, and can be obtained using:
 
 .. tip::
 
+   A table of user settable SITL-specific parameters can be found in `SITL.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/SITL/SITL.cpp>`__
    When you change a parameter the value remains in the virtual EEPROM
    after you restart SITL. Remember to change it back if you don't want it
    any more (or :ref:`reload/reset the parameters <using-sitl-for-ardupilot-testing_loading_a_parameter_set>`). 
