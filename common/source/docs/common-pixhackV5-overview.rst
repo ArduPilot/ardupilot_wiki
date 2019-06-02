@@ -40,8 +40,8 @@ Specifications
 
 -  **Interfaces**
 
-   -  6 IOMCU PWM servo outputs
-   -  8 FMU PWM outputs (D-Shot capable)
+   -  8 IOMCU PWM servo outputs
+   -  6 FMU PWM outputs (D-Shot capable)
    -  3 dedicated PWM/Capture inputs on FMU
    -  S.Bus servo output
    -  R/C inputs for CPPM and S.Bus
