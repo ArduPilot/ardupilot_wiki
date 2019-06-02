@@ -7,7 +7,7 @@ OSD
 .. image:: ../../../images/osd.jpg
     :target: ../_images/osd.jpg
 
-Onboard OSD functionality was introduced with ChibiOS port to F4/F7 boards. Mainly aiming at aio-boards with onboard MAX7456-type chips, it enables overlay of FC data using the onboard video system. Once enabled, it uses various panel items that can individually be set active and positioned on the screen using respective parameters. It allows to setup multiple screen layouts and switch between those using a spare RC channel.
+Onboard OSD functionality was introduced with the ChibiOS port to ArduCopter 3.6x, ArduPlane 3.9x and ArduRover 3.5x firmware versions. Mainly aiming at aio-boards with onboard MAX7456-type chips, it enables overlay of FC data using the onboard video system. Once enabled, it uses various panel items that can individually be set active and positioned on the screen using respective parameters. It allows to setup multiple screen layouts and switch between those using a spare RC channel.
 
 .. note:: 
 
