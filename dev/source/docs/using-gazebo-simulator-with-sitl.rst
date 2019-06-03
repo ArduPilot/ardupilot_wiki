@@ -93,7 +93,7 @@ In another terminal window, enter the ArduCopter directory and start the SITL si
 ::
 
     cd ~/ardupilot/ArduCopter
-    sim_vehicle.py -f gazebo-iris --console --map
+    ../Tools/autotest/sim_vehicle.py -f gazebo-iris --console --map
 
 If all works well, you should see this:
 
