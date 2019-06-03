@@ -9,7 +9,7 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Jun 20th to 22nd: SZUAVIA ArduPilot developer conference at Shenzhen UAV Expo in Shenzhen, China
+- Jun 20th to 22nd: SZUAVIA ArduPilot developer conference at Shenzhen UAV Expo in Shenzhen, China (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-shenzhen-china-21th-june-2019>`__)
 - Sep 3rd to 6th: InterDrone 2019 in Las Vegas (`overview <https://www.interdrone.com/conference/overview/>`__)
 - Oct 20th to 21st: CubePilot conference in Xiamen, China
 
