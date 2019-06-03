@@ -4,7 +4,9 @@
 Tarot Gimbal
 ============
 
-The Tarot T-2D is a popular low cost 2-axis brushless gimbal
+.. note::
+
+   The Tarot T-2D has been a popular low cost 2-axis brushless gimbal. While this actual hardware has been retired and manufacturer support discontinued, this page is intended to keep up basic support for this item, as well as to serve as an illustrative example of how to configure ardupilot gimbal control options.
 
 .. image:: ../../../images/Tarot_OnX8.jpg
     :target: ../_images/Tarot_OnX8.jpg
@@ -12,7 +14,7 @@ The Tarot T-2D is a popular low cost 2-axis brushless gimbal
 
 .. note::
 
-    The instructions below recommend using Tarot Gimbal Firmware v1.5 but `more recent versions are available from tarot <http://www.tarotrc.com/Download/Detail.aspx?Lang=en&Id=f742d38f-ee46-4321-b1b3-145c0d0a92d1>`__ but have not been tested.
+    The instructions below recommend using `Tarot Gimbal Firmware v1.5 <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
 
 Connecting to the Flight Controller
 -----------------------------------
