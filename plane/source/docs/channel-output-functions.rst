@@ -192,16 +192,16 @@ function except that it only acts when the aircraft is below
 GROUND_STEER_ALT altitude. At altitudes above GROUND_STEER_ALT the
 output will be the trim value for the channel.
 
-.. _channel-output-functions_flaperon1_and_flaperon2:
+.. _channel-output-functions_flaperons:
 
-Flaperon1 and Flaperon2
+Flaperons
 -----------------------
 
-Using the flaperon1 and flaperon2 output functions you can setup
+Using SERVOn_FUNCTION 24 and 25 (Flaperon Left / FlaperonRight) you can setup
 flaperons, which are ailerons that double as flaps. They are very useful
 for aircraft which have ailerons but no flaps.
 
-See the :ref:`flaperon guide <guide-flaperons>` for more details.
+See the :ref:`flaperon guide <flaperons-on-plane>` for more details.
 
 Note that flaperons act like Flap_auto described above for the flap
 component of the output.
