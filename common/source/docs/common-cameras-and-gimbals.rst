@@ -52,6 +52,7 @@ Detail topics
     Servo Gimbal <common-camera-gimbal>
     SimpleBGC Gimbal <common-simplebgc-gimbal>
     SToRM32 Gimbal Controller <common-storm32-gimbal>
+    Tarot 2D Gimbal <common-tarot-gimbal>
     Camera Shutter Configuration <common-camera-shutter-with-servo>
     Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
     Camera Shutter Trigger Boards for Purchase <common-camera-shutter-triggering-cables-for-purchase>
