@@ -1,7 +1,7 @@
 .. _basic-setup:
 
 ===========================
-Arduplane Basic Setup Guide
+Arduplane Quick Start Guide
 ===========================
 
 
