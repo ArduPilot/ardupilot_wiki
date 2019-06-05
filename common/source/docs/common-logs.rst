@@ -14,19 +14,6 @@ This section contains topics related to mission logging and analysis.
     Dataflash Logs <common-downloading-and-analyzing-data-logs-in-mission-planner>
     Telemetry Logs <common-mission-planner-telemetry-logs>
     Measuring Vibration with "Batch Sampling" <common-imu-batchsampling>
-    
-Tools for log handling and analysis
-
-.. toctree::
-    :maxdepth: 1
-
-
-    
-    `MAVExplorer <http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html>`__
-    `MissionPLanner <http://ardupilot.org/planner/>`__
-    `QGroundControl <http://qgroundcontrol.com/>`__
-    `Dronee Plotter <https://plot.dron.ee/>`__
-    
 
 [site wiki="plane"]
     Log Analysis Case Study: Fly-by-Wire <case-study-fly-by-wire>
@@ -36,5 +23,12 @@ Tools for log handling and analysis
 [site wiki="rover,planner"]
     Measuring Vibration <common-measuring-vibration>
 [/site]
+
+Tools for log handling and analysis
+    
+- `MAVExplorer <http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html>`__
+- `MissionPLanner <http://ardupilot.org/planner/>`__
+- `QGroundControl <http://qgroundcontrol.com/>`__
+- `Dronee Plotter <https://plot.dron.ee/>`__
 
 [copywiki destination="copter,plane,rover,planner"]
