@@ -356,6 +356,8 @@ Example projects
 
 Can't get it to work? Try posting your question in the `Companion Computer discussion board <https://discuss.ardupilot.org/c/apsync-companion-computers>`__.
 
+`LYCHEE - Carrier board for Cube flight controller with built in Raspberry Pi Compute Module 3+ <https://dronee.aero/pages/lychee>`__
+
 .. toctree::
     :maxdepth: 1
 
