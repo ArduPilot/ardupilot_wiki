@@ -233,7 +233,7 @@ The radio firmware will try to fit multiple MAVLink packets into one
 radio packet where possible for maximum efficiency. The highest radio
 packet size is 252 bytes.
 
-The radio firmware supports both the MAVLink 0.9 and the MAVLink 1.0
+The radio firmware supports both the MAVLink 1.0 and the MAVLink 2.0
 transmission formats.
 
 MAVLink reporting
