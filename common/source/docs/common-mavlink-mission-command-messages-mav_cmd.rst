@@ -2866,7 +2866,7 @@ specified in the command.
 
    1=Set home as current location.
 
-   2=Use location specified in message parameters.
+   0=Use location specified in message parameters.
    </td>
    </tr>
    <tr style="color: #c0c0c0">
