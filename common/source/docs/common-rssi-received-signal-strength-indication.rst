@@ -10,16 +10,214 @@ This article shows how to get the Received Signal Strength Indication
 .. image:: ../../../images/mp_hud_rssi.jpg
     :target: ../_images/mp_hud_rssi.jpg
 
-Viewing RSSI value in the Mission Planner HUD
-=============================================
+Setting up RSSI on your flightcontroller
+========================================
 
-If the RSSI reading is not displayed in your artificial horizon yet:
-  - Open Mission Planner and connect to the flight controller
-  - On the Flight Data screen, right-mouse-button click on the HUD and select "User Items"
-  - On the "Display this" window that appears, check "rxrssi"
+RSSI can be specifically set up by a collapsible set of parameters. By default, it is required to first set 
+``RSSI_TYPE`` according to how the RC receiver's signal strength indication will be fed to the flightcontroller:
+
++---+--------------------+---------------------------------------------------------------------------------------------+
+| Value                  | Function                                                                                    |
++===+====================+=============================================================================================+
+| 0 | Disabled           | no RSSI used                                                                                |
++---+--------------------+---------------------------------------------------------------------------------------------+
+| 1 | AnalogPin          | signal strength indicated by a fixed voltage (0 - 3.3 or 5V) fed to an analog (ADC) pin     |
++---+--------------------+---------------------------------------------------------------------------------------------+
+| 2 | RCChannelPwmValue  | signal strength indicated by a dedicated channel's PWM value,                               |
+|   |                    | optionally embedded into a sum signal (cPPM / SBus)                                         |
++---+--------------------+---------------------------------------------------------------------------------------------+
+| 3 | ReceiverProtocol   | supports RSSI via dedicated receiver protocols like SBUS, SUMD or S24                       |
++---+--------------------+---------------------------------------------------------------------------------------------+
+| 4 | PWMInputPin        | allows to specify a GPIO pin to read PWM type RSSI input                                    |
++---+--------------------+---------------------------------------------------------------------------------------------+
+
+
+After setting RSSI_TYPE to a value other than 0 you will have to save and refresh your parameters to uncollapse a set of subordinate parameters that allow to further specify RSSI handling. 
+
+There are three basic options for feeding RSSI to your flightcontroller:
+
+``RSSI_TYPE = 1`` Analog voltage type RSSI fed to a dedicated pin
+ ``RSSI_ANA_PIN`` specifies the pin used to read RSSI voltage. This parameter defaults to the correct pin number on most boards when using current chibios firmware.
+ 
+ ``RSSI_PIN_HIGH`` voltage received on the RSSI_ANA_PIN when the signal is the strongest. 
+ 
+ ``RSSI_PIN_LOW`` voltage received on the RSSI_ANA_PIN when the signal is the weakest.
+
+
+``RSSI_TYPE = 2`` PWM Channel type RSSI embedded in a collective PPM / sum signal (sBus)
+ ``RSSI_CHANNEL`` Channel number the radio receiver will use to embed RSSI if collective / sum signal is used (channel 5 and up).
+ 
+ ``RSSI_CHAN_HIGH`` PWM value the radio receiver will output when the signal is the strongest.
+ 
+ ``RSSI_CHAN_LOW`` PWM value the radio receiver will output when the signal is the weakest.
+
+``RSSI_TYPE = 4`` PWM type RSSI fed to a dedicated GPIO pin
+ ``RSSI_ANA_PIN`` Specifies the GPIO pin to read PWM type RSSI from. On boards with IOMCU these are the AUX pins that can be used as PWM output by default or alternatively set to be used as GPIO using the ``BRD_PWM_COUNT`` parameter.
+ 
+ ``RSSI_CHAN_HIGH`` PWM value the radio receiver will output when the signal is the strongest.
+ 
+ ``RSSI_CHAN_LOW`` PWM value the radio receiver will output when the signal is the weakest.
+
+
+.. note::
+    Some radio receivers output inverted RSSI values (lowest voltage / PWM on best reception), so _HIGH parameters may actually be set to lower values than corresponding _LOW parameters for correct internal scaling to 0 - 100%.
+
+
+.. note::
+    To read analog voltage type RSSI, ``RSSI_ANA_PIN`` can be set to any free ADC pin available. On pixhawk / cube type boards, this includes the sBus out / RSSI input pin (103). When using dedicated ADC pins, the corresponding pin number usually matches the ADC1 channel used on that pin. See the DMA1 map in the `resepective processor's alternative function table <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ for further reference.
+
+
+Displaying the RC receiver's RSSI value in MissionPlanner's HUD
+===============================================================
+
+Once you have set up RSSI correctly on your flightcontroller, the corresponding values will be sent to your groundstation within the telemetry stream and can be displayed on your GCS. Additionally, your RC receiver's RSSI will be logged and can be displayed on your onboard or standalone OSD.
+
+To display RC receiver's RSSI on MP's HUD:
+
+- Open Mission Planner and connect to the flight controller
+- On the Flight Data screen, right-mouse-button click on the HUD and select "User Items"
+- On the "Display this" window that appears, check "rxrssi"
 
 .. image:: ../../../images/MissionPlanner_RSSI_DisplayRxRSSI.JPG
     :target: ../_images/MissionPlanner_RSSI_DisplayRxRSSI.JPG
+
+
+
+.. note::
+    It is crucial to select ``rxrssi`` to display the RC link's rssi, while the items ``rssi`` and ``remrssi`` are used to display a radio modem's ground- and remote-transceiver's signal strength indication.
+
+
+
+Connection examples
+===================
+===================
+
+Below are examples of typical RC receiver RSSI connection schemes:
+
+
+RSSI embedded in a collective PPM / sum signal's channel
+========================================================
+
+It is common practice to feed all RC channels from your RC receiver to your flightcontroller using a cPPM or sBus type sum signal on a single signal wire. Most UHF type RC systems like EZUHF, OpenLRS, Crossfire or DragonLink support embedding RSSI into a dedicated channel within this collective / sum signal stream. As per ArduPilot default channels 1-4 are used as input for primary control (roll, pitch, throttle, yaw), any channel number above 4 can be used to embed RSSI. Usually, these systems use a GUI to assign RSSI to a dedicated channel slot on your RC receiver, or have it set to a standard channel by default. See your respective system's user manual for reference.
+
+If there is an existing RC receiver connection to your flightcontroller, no additional wiring is required for using embedded RSSI:
+
+.. image:: ../../../images/embed_rssi.jpg
+    :target: ../_images/embed_rssi.jpg
+
+The example below shows how to assign channel 5 to embed RSSI on a DragonLink RC receiver:
+
+.. image:: ../../../images/DL_rssi.jpg
+    :target: ../_images/DL_rssi.jpg
+
+RSSI values will be output both within the PPM stream on signal pin 1 as well as within the sBus stream on pin 4. Either can be fed to your flightcontroller's RCInput pin.
+
+Now set your RSSI parameters accordingly:
+
+``RSSI_TYPE`` = 2 (requires parameter reload if set to default 0 previously)
+
+``RSSI_CHANNEL`` = the channel used to embed RSSI on your RC receiver (Ch5 in the above example)
+
+``RSSI_CHAN_HIGH`` = channel value at strongest reception
+
+``RSSI_CHAN_LOW`` = channel value at weakest reception
+
+Displaying ``rxssi`` alongside with the respective RC channel's input value in your GCS helps to adjust the value range to match a 0 - 100% RSSI scale:
+
+.. image:: ../../../images/hud_rssi_ch.jpg
+    :target: ../_images/hud_rssi_ch.jpg
+
+At strongest reception, Ch5 shows a PWM value of 1904 us. With the transmitter switched off, it will drop to 1093 us. Setting ``RSSI_CHAN_HIGH`` and ``RSSI_CHAN_LOW`` respectively allows to scale the used PWM range to 0 - 100 % with optimal resolution.
+
+.. note::
+    Certain sBus protocol variances may lead to channel values not being updated during receiver failsafe conditions. In this case, you will see the last valid RSSI value displayed during a failsafe. As the received signal strength usually gradually decreases under flight conditions, this will likely not have any negative effects. However, during setup and testing it might be confusing to see RSSI freezed at a compareably high value while your RC transmitter is actually switched off.
+
+
+
+Analog voltage type RSSI fed to a dedicated pin
+===============================================
+
+If your RC receiver outputs an analog voltage range type RSSI, you can feed this to your flightcontroller's analog RSSI input pin. Typical voltage range is 0 - 3,3V or 0 - 5V. See your RC system's manual for detail or check using a multimeter.
+
+If there is an existing RC receiver connection to your flightcontroller that includes supply voltage and ground, only one additional signal wire is required. The example below shows how to connect a receiver's analog voltage type RSSI to a pixhawk flightcontroller's sBus output pin:
+
+.. image:: ../../../images/volt_type_rssi.jpg
+    :target: ../_images/volt_type_rssi.jpg
+
+
+Now set your RSSI parameters accordingly:
+
+``RSSI_TYPE`` = 1 (requires parameter reload if set to default 0 previously)
+
+``RSSI_ANA_PIN`` = 103 (PixHawk SBUS output / RSSI input pin)
+ 
+``RSSI_PIN_HIGH`` voltage received on the RSSI_ANA_PIN when the signal is the strongest, usually 3,3V.
+ 
+``RSSI_PIN_LOW`` voltage received on the RSSI_ANA_PIN when the signal is the weakest, usually 0V
+
+.. note::
+    RSSI type options depend on your individual RC system's specifications. Some systems require additional workarounds or additional hardware conversion of non-standard proprietary protocols.
+
+    
+
+PWM type RSSI fed to a dedicated pin
+====================================
+
+If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can feed this to one of your flightcontroller's GPIO pins. Use parameter ``BRD_PWM_COUNT`` to set PWM output pins as GPIO. On pixahwk type hardware, this refers to the AUX pins as they are connected to the board's MCU, bypassing the IOMCU co-processer.
+
++----------------------+-------------------------+
+| HW Pin (AUX) number  | alternative GPIO number |
++======================+=========================+
+| 1                    | 50                      |
++----------------------+-------------------------+
+| 2                    | 51                      |
++----------------------+-------------------------+
+| 3                    | 52                      |
++----------------------+-------------------------+
+| 4                    | 53                      |
++----------------------+-------------------------+
+| 5                    | 54                      |
++----------------------+-------------------------+
+| 6                    | 55                      |
++----------------------+-------------------------+
+
+In the above example, setting ``BRD_PWM_COUNT`` to 4 will set pins 1-4 for use as PWM output and free the remaining pins 5 and 6 for use as GPIO 54 and 55.
+
+If there is an existing RC receiver connection to your flightcontroller that includes supply voltage and ground, only one additional signal wire is required. The example below shows how to connect a receiver's PWM type RSSI output to a pixhawk flightcontroller's AUX 6 pin set for use as GPIO 55:
+
+.. image:: ../../../images/PWM_type_rssi.jpg
+    :target: ../_images/PWM_tpye_rssi.jpg
+
+
+Now set your RSSI parameters accordingly:
+
+``RSSI_TYPE`` = 4 (requires parameter reload if set to default 0 previously)
+
+``RSSI_ANA_PIN`` = GPIO pin number used (55 in the above example)
+ 
+``RSSI_CHAN_HIGH`` = PWM value at strongest reception
+
+``RSSI_CHAN_LOW`` = PWM value at weakest reception
+
+
+
+Special use cases
+=================
+=================
+
+
+Converting Non-standard PWM type RSSI to analog voltage
+=======================================================
+
+For non-standard RSSI types like some FrSky receivers' high frequency PWM RSSI, an RC filter can be used to level the signal, rendering it useable for the flightcontroller's analog RSSI input pin:
+
+**A 4.7k resistor and 10uF capacitor are used to filter out the pulses
+from the receiver's RSSI output.**
+
+.. image:: ../../../images/rssi_rc_filter.jpg
+    :target: ../_images/rssi_rc_filter.jpg
+
+
 
 How to utilize Futaba S.BUS2 "Frame Error Rate" information to be used as RSSI in your flight controller
 ========================================================================================================
@@ -44,23 +242,6 @@ A basic setup using a **Futaba R7008SB** receiver and an additional S.BUS2 GPS M
 .. image:: ../../../images/SBUS2_2_analog_converter.png
     :target: ../_images/SBUS2_2_analog_converter.png
 
-How to configure flight controller RSSI parameters in Mission Planner using Analog Input 
-----------------------------------------------------------------------------------------
-
-To setup the RSSI parameter in your flight controller,
-  - Connect your flight controller hardware via USB to your computer and open Mission Planner Software.
-  - Connect your flight controller using the "CONNECT" button [1].
-  - Goto "CONFIG/TUNING" menu [2].
-  - Goto "Full Parameter List" tab [3].
-  - Goto "Search" input field and enter "rssi\_" [4].
-  - Choose an input pin on your flight controller where you want to input the analog voltage output of your converter [5.1]. In this example we set "RSSI_ANA_PIN" to "103". This means, analog DC voltage output of the converter must be connected to "SBUS" input pins of the flight controller as shown in the image above.
-  - Enter your calibration voltages for "RSSI_PIN_HIGH" [5.2] and "RSSI_PIN_LOW" [5.3] according to the Note shown below. 
-  - Set "RSSI_TYPE" to "1" [5.4]. This means, your flight controller is set to accept an analog voltage on the input pin you set in step [5.1].
-  - Write the parameters to your flight controller by pressing the "Write Params" button [6].
-  - Note: All other "RSSI_*" parameters shown in the list are not used by the flight controller when "RSSI_TYPE" is set to "1". They can be ignored.
-
-.. image:: ../../../images/MissionPlanner_RSSI_SetupAnalogInput.JPG
-    :target: ../_images/MissionPlanner_RSSI_SetupAnalogInput.JPG
 
 .. note::
 
@@ -116,56 +297,5 @@ To display the FER / RSSI value and to trigger an alarm, your TELEMETRY MONITOR 
 .. image:: ../../../images/FASSTest_SetupTelemetryDisplay.png
     :target: ../_images/FASSTest_SetupTelemetryDisplay.png
  
-Provide RSSI from FrSky receiver to APM.
-========================================
-
--  Select the input pin with the **RSSI_PIN** parameter.
--  However some of receivers such as FrSky D8R-XP output 0 - 3.3 V.
--  For that reason I've added new parameter: **RSSI_RANGE**.
--  This was also a requested issue
-   previously: **https://github.com/ArduPilot/ardupilot/issues/648**
--  When the RSSI_RANGE parameter is set to your radio's maximum RSSI
-   voltage the RSSI **rxrssi** is shown in the range 0-100.
--  The ability to set the RSSI_RANGE  parameter has been added to
-   Mission Planner in the Full Parameter List:
-
-.. image:: ../../../images/mp_rssi_parameter.png
-    :target: ../_images/mp_rssi_parameter.png
-
-Complete System with RSSI addition
-==================================
-
-.. image:: ../../../images/complete_amp2_system_with_rssi.jpg
-    :target: ../_images/complete_amp2_system_with_rssi.jpg
-
-RSSI Filter
-===========
-
-**A 4.7k resistor and 10uF capacitor are used to filter out the pulses
-from the receiver's RSSI output.**
-
-.. image:: ../../../images/rssi_circuit_to_filter_out_pulses.jpg
-    :target: ../_images/rssi_circuit_to_filter_out_pulses.jpg
-
-RSSI Connections
-================
-
-.. image:: ../../../images/rssi_connections_3.jpg
-    :target: ../_images/rssi_connections_3.jpg
-
-
-RSSI embedded in PWM from UHF systems (Pixhawk & Cube)
-======================================================
-
-Both EZ-UHF and OpenLRS have the option of embedding RSSI into a PWM channel, saving you from having to add filters, etc.
-You can use any channel from channel 5 and up, but keeping the on channel 9 or above will keep your regular servo channels free.
-
-Set up your UHF system to embed the RSSI into the desired channel and then change the following parameters:
-
-- RSSI_ANA_PIN : 103
-- RSSI_TYPE    : 2 
-- RSSI_CHANNEL : Your selected channel from above.
-
-
 
 **Developed and illustrated by Lukasz - Thank You - Hope this helps.**
