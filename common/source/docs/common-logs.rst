@@ -4,7 +4,8 @@
 Logs
 ====
 
-This section contains topics related to mission logging and analysis.
+Topics related to mission logging and analysis
+----------------------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -25,10 +26,16 @@ This section contains topics related to mission logging and analysis.
 [/site]
 
 Tools for log handling and analysis
+-----------------------------------
     
-- `MAVExplorer <http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html>`__
-- `MissionPLanner <http://ardupilot.org/planner/>`__
-- `QGroundControl <http://qgroundcontrol.com/>`__
-- `Dronee Plotter <https://plot.dron.ee/>`__
+.. toctree::
+    :maxdepth: 1
+    
+    
+    MAVExplorer <http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html>
+    MissionPLanner <http://ardupilot.org/planner/>
+    QGroundControl <http://qgroundcontrol.com/>
+    Dronee Plotter <https://plot.dron.ee/>
+    
 
 [copywiki destination="copter,plane,rover,planner"]
