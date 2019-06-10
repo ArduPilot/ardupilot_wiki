@@ -240,6 +240,12 @@ setup then the aircraft will do a fixed wing landing.
 If you set :ref:`Q_RTL_MODE <Q_RTL_MODE>` to 1 then the aircraft will switch to a VTOL
 landing when it gets close to return point.
 
+Radio or Throttle Failsafe
+==========================
+
+If flying in a plane mode or AUTO, behaviour is determined by the FS_SHORT_ACT and FS_LONG_ACT parameter settings (see Plane Failsafe Function). Quadplanes can be set such that instead of normal plane behviour on Failsafe induced RTLs, to transistion to QRTL and land once at the rally point or home, if  Q_RTL_MODE =1.
+If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how Q_OPTION, bit 5, is set.
+
 Typical flight
 ==============
 
