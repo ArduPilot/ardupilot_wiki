@@ -146,9 +146,9 @@ Short failsafe action (Plane:FS_SHORT_ACTN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The action to take on a short (FS_SHORT_TIMEOUT seconds) failsafe event in AUTO,
-GUIDED or LOITER modes. A short failsafe event in stabilization modes
-will always cause a change to CIRCLE mode. In AUTO mode you can choose
-whether it will RTL (ReturnToLaunch) or continue with the mission. If
+GUIDED or LOITER modes. A short failsafe event in plane stabilization modes
+will always cause a change to CIRCLE mode, or to QLAND or QRTL, dependent upon which Q_OPTION is selected), in Quadplane stabilization modes.
+In AUTO mode you can choose whether it will RTL (ReturnToLaunch) or continue with the mission. If
 FS_SHORT_ACTN is 0 then it will continue with the mission, if it is 1
 then it will enter CIRCLE mode, and then enter RTL if the failsafe
 condition persists for FS_LONG_TIMEOUT seconds.
@@ -176,9 +176,8 @@ Long failsafe action (Plane:FS_LONG_ACTN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The action to take on a long (FS_LONG_TIMEOUT second) failsafe event in AUTO, GUIDED
-or LOITER modes. A long failsafe event in stabilization modes will
-always cause an RTL (ReturnToLaunch). In AUTO modes you can choose
-whether it will RTL or continue with the mission. If FS_LONG_ACTN is 0
+or LOITER modes. A long failsafe event in plane stabilization modes will
+always cause an RTL (ReturnToLaunch) or a QLAND or QRTL, dependent upon which Q_OPTION is selected), if in copter stabilization modes in a Quadplane. In AUTO modes you can choose whether it will RTL or continue with the mission. If FS_LONG_ACTN is 0
 then it will continue with the mission, if it is 1 then it will enter
 RTL mode. Note that if FS_SHORT_ACTN is 1, then the aircraft will
 enter CIRCLE mode after FS_SHORT_TIMEOUT seconds of failsafe, and will always enter
