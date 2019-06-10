@@ -662,6 +662,10 @@ but the most common are:
 | ThrCrs     | Throttle cruise (from 0 ~ 1000) which is the autopilot's best guess as to what throttle            |
 |            | is required to maintain a stable hover                                                             |
 +------------+----------------------------------------------------------------------------------------------------+
+| Rsn        | Reason for mode change (TX command, failsafe, etc) . The meaning of code values can be found in    |
+|            | your vehicle's define.h file (under the mode_reason_t enum). For instance for ArduCopter the file  |
+|            | is Arducopter/define.h                                                                             |
++------------+----------------------------------------------------------------------------------------------------+
 
 **NTUN (navigation information):**
 
