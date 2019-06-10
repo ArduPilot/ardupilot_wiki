@@ -204,7 +204,7 @@ RPi type:
     connection on the Raspberry Pi edit **/boot/config.txt** and ``set enable_uart=1``.
     the build-in serial port is ``/dev/ttyS0``.
     
-    For Raspberry Pi 3B+, the bluetooth module occupied uart serial port. To disable the bluetooth, add ``dtoverlay=pi-disable-bt`` and 
+    For Raspberry Pi 3B+, the bluetooth module occupied uart serial port. To disable the bluetooth, add ``dtoverlay=pi3-disable-bt`` and 
     ``enable_uart=1`` at the end of **/boot/config.txt**. 
     Also, edit the content of **/boot/cmdline.txt** to
     
