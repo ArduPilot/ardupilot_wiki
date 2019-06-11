@@ -4,63 +4,82 @@
 Commmon Issues and Fixes
 ========================
 
-This page details some of the most common issues with Balance Bots and their fixes.
+This page details some of the most common issues with Balance Bots and possible solutions.
 
-The Bot Balances, but wobbles too much
---------------------------------------
-If your Balance Bot is able to maintain balance but wobbles a lot, or moves back and forth randomly trying to balance then your Bot must be having one of the following issues. Take a look at this video, if you are not sure if this is your problem:
+1) Manual/Hold Mode issues:
+===========================
 
- .. youtube:: -EESMnSEpeM
-    :width: 100%
+The vehicle struggles to balance or wobbles too much
+----------------------------------------------------
 
-1) Motor Backlash
-+++++++++++++++++
-
-The balancing depends on very fine adjustments of the wheel. So any backlash between the motor and wheels would lead to poor balancing performance. 
+**1) Motor Backlash** : 
+The balancing depends on very fine adjustments of the wheel. So any backlash between gears of the motor could lead to poor balancing performance. 
 
 This is bad:
 
 .. youtube:: 4Lkcze44W3E
     :width: 100%
 
-The only fix is to change your motors. Make sure the backlash is as less as possible.
+The only fix is to change motors. Make sure the backlash is as less as possible.
 
-2) Weight Distribution
-++++++++++++++++++++++
-For good balancing, the center of gravity of the vehicle must be reasonably higher than the axis of the wheels. 
+**2) Weight Distribution** : 
+If the center of gravity is near the wheels, the vehicle can topple quickly and if the motors are not fast enough to compensate, then the vehicle can become wobbly. The higher the center of gravity, the slower the vehicle falls. But more torque would be required from the motors to keep it balanced.
 
-A good way to get the weight distribution right is to keep the batteries at the top of the Balance Bot, instead of near the wheels like in other rover frames.
-
-How high depends on the power of your motors. If it too high, then the motors would have trouble balancing the vehicle. In our Balance Bot, the total height was less than 30cm.
-
-3) Minimum Throttle
-+++++++++++++++++++
-If the minimum throtte sent to the motors from the Flight Controller is **too less** to turn on the motors, then your Balance Bot will move back and forth struggling to keep balance. Sometimes this issue can also cause it to go off in one direction and topple.
-
-If the minimum throttle value is **too high** then your Balance Bot will be able maintain balance and stand on spot, but will be very shaky. 
-
-Refer to this guide to set the minimum throttle value correctly.
+A good way to change the weight distribution is to move up/down the position of the batteries. How high depends on the torque and speed of the motors. In case of very fast motors with low torque, keep it closer to the wheels. If instead the motors are slow, but can provide high torque, then shift the center of mass higher by placing the batteries higher.
 
 
-4) PID tuning
-+++++++++++++
-No amount of PID tuning can fix wobbling if the above two reasons are not handled. So please verify those before proceeding. Refer to the tuning page for details on PID tuning.
+**3) Minimum Throttle** : 
+If the minimum throttle sent to the motors from the Flight Controller is **too low** to turn on the motors, then the Balance Bot will move back and forth struggling to keep balance. Sometimes this issue can also cause it to drift off in one direction and topple. If the minimum throttle value is **too high** then the Balance Bot will be able maintain balance, but will be very wobbly. Refer to this guide to set the :ref:`minimum throttle <balance_bot-configure-throttle>` value correctly.
+
+**4) PID tuning** : 
+Improper PID tuning, especially high P or I gains can cause the vehicle to become wobbly. An insufficient D gain can also make the vehicle wobbly, but a very high D gain can cause very fast wobbling.
 
 
-The Bot always moves off in one direction
------------------------------------------
-This issue can be because the **minimum throttle** is not set correctly. Refer to the instructions above to set it.
+The vehicle drifts off in one direction
+---------------------------------------
 
-This can also be because the **accelerometer calibration** is invalid. Disturbing the flight controller, changing connections, crashes etc can affect the acceleromter calibration. Often, a one axis trim should fix this. To perform a one axis trim:
+**1) Accelerometer Calibration** :
+This can happen because the accelerometer calibration is invalid. Disturbing the flight controller, changing connections, crashes etc can disturb the acceleromter calibration. Do the accelerometer calibration again. Often, a one axis acccelerometer trim can fix this. 
 
-#. Keep your balance bot upright and level
-#. In Mission Plaaner, go to Initial Setup -> Mandatory Hardware -> Accelerometer Calibration and click calibrate level
-#. If you use MAVProxy instead,execute the command ahrstrim
-#. Hold the Bot steady as the Flight Controller light flashes red and blue
+**2) Pitch trim** :
+The center of mass of the vehicle be slightly displaced from the zero pitch position. Hence the vehicle is not in equilibrium at 0 degrees pitch. This can be offset by :ref:`setting the pitch trim <balance_bot-tuning-pitch-trim>` parameter.
 
-Other issues
-------------
-Many issues can arise because of incorrect parameter settings. Do verify that the parameters on your Bot are set as specified in the :ref:`configuration page<balance_bot-configure>`. 
+Configuration Issues
+--------------------
+Refer to the steps in the :ref:`configuration page<balance_bot-configure>` if you encounter any of the following issues:
 
-If you encounter an issue, where the motor directions seem inverted or the Bot spins in circles, then recheck your connections. 
+- Vehicle does not respond to RC input
+- Vehicle does not try to balance
+- Motors are not moving
 
+2) Acro Mode Issues
+===================
+
+The vehicle drives well, but randomly topples
+---------------------------------------------
+This happens when GPS lock occurs while the vehicle is indoors. The best solution is to disable GPS while the vehicle is used indoors. Set parameter:
+
+- :ref:`GPS_TYPE<GPS_TYPE>` = 0 (Set this to 1 when outdoors)
+
+The vehicle topples at higher speeds
+------------------------------------
+The motors may not have sufficient torque to balance the vehicle at these speeds. Lower the maximum speed of the vehicle by bringing down the :ref:`CRUISE_SPEED <CRUISE_SPEED>` parameter. Another option to consider is to reduce :ref:`BAL_PITCH_MAX<BAL_PITCH_MAX>` , which is the maximum pitch angle in degrees.
+
+Vehicle tends to drift or yaw over time, without input
+-----------------------------------------------------
+**1) Enable compass** (if not enabled already): Set parameters
+
+- :ref:`COMPASS_USE <COMPASS_USE>` = 1
+- :ref:`COMPASS_ENABLE <COMPASS_ENABLE>` = 1
+
+**2) PID tuning** : Refer the :ref:`Acro tuning <balance_bot-tuning-acro>` page for more details
+
+3) Auto Mode Issues
+===================
+
+Vehicle crashes after an Auto mission
+-------------------------------------
+This can happen if the vehicle switched to Hold after an Auto mission. To switch to Acro instead, set:
+
+- :ref:`MIS_DONE_BEHAVE <MIS_DONE_BEHAVE>` =2
+ 
