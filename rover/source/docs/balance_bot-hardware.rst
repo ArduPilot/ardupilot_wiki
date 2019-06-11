@@ -1,34 +1,47 @@
 .. _balance_bot-hardware: 
 
-==============
-Hardware Setup
-==============
+================
+Hardware Options
+================
+This page lists the hardware options that can meet all of the Balance Bot specific requirements. Though there is no limitation to running Balance Bot on any Rover compatible hardware, not all features and drive modes may be supported in certain configurations.
 
-Look up the rover hardware :ref:`assembly<rover-assembly-instructions>` page for a step by step guide. This page only deals with the extra balance specific information.
+Autopilot Board
+===============
+Autopilot Boards than can be used with Balance Bot are limited by the number of PWM and aux pins that are available. Currently supported boards are:
 
-Building your Balance Bot
--------------------------
-Take a look at the :ref:`Arduroller<reference-frames-arduroller>` page for instructions on building your Balance Bot from scratch.
+#. **Pixhawk:**  All full sized versions
+#. **Pixracer:**  When using pixracer, only :ref:`RC PWM controlled<common-brushed-motors>` or :ref:`Brushed BiPolar<common-brushed-motors>` motor drivers can be used. Four pins on the pixracer will be used for wheel encoders leaving only two for driving motors.
 
-Supported Hardware:
--------------------
-The Balance Bot requires wheel encoders to run most flight modes. These require 4 Auxilliary pins on the flight controller. This places certain limitations on the hardware we can use. 
+.. warning:: Miniature versions of Pixhawk, like pixhawk mini, pixfalcon and Openpilot/Betaflight boards cannot interface wheel encoders
 
-Flight Controllers
-==================
+Balance Bot Frame
+=================
+Any readily available or custom made frame suitable for Balance Bots can be used. Ensure that there is sufficient space to hold all the components.
 
-#. All  full sized **Pixhawk** variants(Pixfalcon and Pixhawk Mini lack aux pins)
-#. **Pixracer** (2 pins for PWM, other 4 for wheel encoders)
+For a 3d printable frame, check out :ref:`Arduroller<reference-frames-arduroller>`.
+
+Motors with encoders
+====================
+Brushed Motors with quadrature encoders(two pin output) are recommended for Balance Bots. There is no restriction on using brushless motors, additional quadrature encoders will have to be added to run any mode other than Hold and Manual. Stepper Motors and motors that use UART/I2C interface are not currently supported.
+
+Gear backlash is a problem with many geared dc motors and this can badly affect stability of Balance Bots. It is recommended to use motors that are specified to be zero-backlash or have very less backlash.
 
 Motor Drivers/ESC
 =================
-We strongly recommend using motor drivers or ESCs which take servo **PWM** (50Hz,1-2ms) as input, like this one from `Pololu <https://www.pololu.com/product/3284>`__.  Duty cycle based motor drivers and those which use relay pins to control direction are not compatible with the Balance Bot as of now.
+For a full list of Ardupilot supported brushed motor drives/ESCs, refer the :ref:`brushed motors<common-brushed-motors>` page.
 
 Wheel Encoders
 ==============
-The wheel encoder libraries are designed to run only with quadrature encoders with two output channels. 
+When using motors without an an inbuilt encoder, external encoders that can be attached to the motor shaft, can be used. Only quadrature encoders with two output pins are currently supported. For more information, refer the :ref:`wheel encoder<wheel-encoder>` page.
 
 
+GPS + Compass(optional)
+=========================
+A GPS+Compass module is required for running Auto, Guided and RTL Modes. Using compass is also recommended for steering in Acro Mode. For more details on supported GPS hardware, refer :ref:`GPS<common-positioning-landing-page>` page.
+
+Telemetry Radio(optional)
+=========================
+Telemetry radios are very useful for tuning and debugging. For more information on supported hardware options refer :ref:`telemetry<common-telemetry-landingpage>` page.
 
 
 
