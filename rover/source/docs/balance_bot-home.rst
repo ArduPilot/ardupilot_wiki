@@ -1,30 +1,47 @@
 .. _balance_bot-home:
 
 =================
-Balance Bot Home
+Balance Bots
 =================
 
-Ardupilot can now run Balance Bots too! 
+Ardupilot Rover(version 3.5+) includes support for Self Balancing Robots or Balance Bots. This section provides instructions for configuring Rover to run on Balance Bots. 
 
-..  youtube:: hbPzTOfn3EA
+..  youtube:: EmhTBPNDpWw
     :width: 100%
 
 
 
-Currently, Balance Bots work only in Manual and Hold modes.
+Supported Control Modes:
+########################
+
+- Manual
+- Hold
+- Acro
+- Guided
+- Auto
+- RTL
+
+.. note:: New or inexperienced Ardupilot users are recommended to go through the Rover :ref:`Intoduction<gettit>`, :ref:`Setup<apmrover-setup>` and :ref:`First drive<rover-first-drive>` sections before proceeding with this section.
 
 Before you proceed:
 -------------------
 Balance bot support will be officially included in Rover-3.5 (and higher).  Until this is released, it can be tested using "latest" which can be downloaded from the Mission Planner's Install Firmware screen by pressing Ctrl-Q.  Please note though that "latest" has not gone through beta testing and may have issues.
 
+Get Started:
+############
+
 .. toctree::
   :titlesonly:
 
-    Hardware Setup <balance_bot-hardware>
+    How it works <balance_bot-working>
+    Hardware Options <balance_bot-hardware>
     Configuration and Setup <balance_bot-configure>
-    Common Issues and Fixes<balance_bot-issues>
+    Balance Bot Control Modes <balance_bot-modes>
     Tuning the Balance Bot <balance_bot-tuning>
-    Feedback <balance_bot-feedback>
+    Common Issues and Fixes<balance_bot-issues>
+
+
+
 
 
 
