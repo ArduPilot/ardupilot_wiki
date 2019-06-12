@@ -56,7 +56,7 @@ There are a number of way of using Git/Github - including a number of different 
 
    .. code-block:: bash
 
-       git push my_well_named_branch
+       git push --set-upstream origin my_well_named_branch
 
 #. Open your clone's repository on the GitHub web page and `Create a pull request on GitHub <https://help.github.com/articles/about-pull-requests/>`__. You'll be making a pull request from your fork/branch on GitHub to the    ardupilot_wiki/master repository. If using the GitHub for Windows client, one convenient way to navigate to the repository/branch is to click one one of your commits and click the "github" (view this commit on github.com) button:
 
