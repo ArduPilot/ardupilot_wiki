@@ -141,9 +141,10 @@ Common Problems
    the copter where the flight controller is mounted which leads the
    altitude hold controller to believe it is climbing so it responds by
    descending.  There is no cure for this behaviour at the moment
-   although increasing the ``INAV_TC_Z`` parameter to 7 (default is 5)
-   reduces the effect but increases the change of Common Problem #1
-   listed above.
+   although increasing the ``EK2_ALT_M_NSE`` parameter reduces 
+   the effect but increases the change of Common Problem #1
+   listed above. The ``EK2_ALT_M_NSE`` parameter has a range from 0.1 to
+   10.0 and allows increments of 0.1.
 #. Altitude hold becomes erratic when the vehicle is close to the ground
    or during landing.  This can be caused by the barometer being
    affected by pressure changes created by prop-wash.  The solution is
