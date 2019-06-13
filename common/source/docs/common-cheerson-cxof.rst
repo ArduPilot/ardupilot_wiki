@@ -18,10 +18,14 @@ Where to Buy
 
 The sensor is available from various retailers incluing `Banggood.com <https://www.banggood.com/Cheerson-CX-OF-CXOF-RC-Quadcopter-Spare-Parts-Optical-Flow-Module-p-1215911.html>`__ and `AliExpress <https://www.aliexpress.com/item/Original-Cheerson-CX-OF-CXOF-RC-Quadcopter-Spare-Parts-Optical-Flow-Module-for-RC-Toys-Models/32838098799.html>`__.  More retailers can be found by searching for "CX-OF spare parts".
 
-These alternatives may also work (not confirmed yet):
+These alternatives have also been shown to work:
+
+- `FPV RC Drone Optical Flow Module <https://www.aliexpress.com/item/1-3-2CM-FPV-RC-Drone-Optical-Flow-Module-Hovering-Altitude-Hold-Optical-Flow-Sensor-Balance/33002000486.html>`__
+- `ThoneFlow-3901U UART Serial Version PMW3901 Optical Flow Sensor <https://www.seeedstudio.com/ThoneFlow_3901U_UART_Serial_Version_PMW3901_Optical_Flow_Sensor-p-4040.html>`__
+
+These alternatives may work but this has not been confirmed:
 
 - `JJRC H62 Flow sensor <https://www.banggood.com/JJRC-H62-RC-Quadcopter-Spare-Parts-Optical-Current-Board-H62-03-p-1302982.html>`__
-- `FPV RC Drone Optical Flow Module <https://www.aliexpress.com/item/1-3-2CM-FPV-RC-Drone-Optical-Flow-Module-Hovering-Altitude-Hold-Optical-Flow-Sensor-Balance/33002000486.html>`__
 
 This similar flow sensor is not supported (yet):
 
