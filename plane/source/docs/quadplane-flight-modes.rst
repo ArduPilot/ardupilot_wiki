@@ -11,7 +11,7 @@ extra modes:
 -  mode 19: QLOITER (like :ref:`Copter LOITER <copter:loiter-mode>`)
 -  mode 20: QLAND (like :ref:`Copter LAND <copter:land-mode>`)
 -  mode 21: QRTL (like :ref:`Copter RTL <copter:rtl-mode>`)
--  mode 23: QACRO (details :ref:`Plane QACRO <plane:qacro-mode>`)
+-  mode 23::ref:`QACRO <plane:qacro-mode>`
 
 .. tip::
 
