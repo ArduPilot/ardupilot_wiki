@@ -8,14 +8,16 @@ The IMU BatchSampler can be used to record high-frequency data from the IMU sens
 
 FFT transforms data from the time domain into the frequency domain.  Put another way, accelerometer data recorded over time (i.e. a flight) can be converted into a graph showing the frequencies of the vibration.  A frequent feature of these graphs is a spike at the propeller's "blade passage frequency" (the frequency at which the blade crosses over the arms) which causes an acceleration in the aircraft body.  FFT has the following limitations:
 
-- FFT can not show you frequencies above half your sensor's sampling rate
+- FFT cannot show you frequencies above half your sensor's sampling rate
 - The smallest frequency that can be shown is half your sample size divided by your sample rate
+
+Samples are typically taken at the same rate as gyro updates provided to the flight controller. For example if you are using :ref:`INS_FAST_SAMPLE <INS_FAST_SAMPLE>` on an MPU9250 sensor (fairly typical on modern Pixhawk class flight controllers) then samples will be take at 8KHz. If you are not using fast sampling then sample rates of 1KHz are typical.
 
 Pre-Flight Setup
 ================
 
 - Set :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` = 1 to collect data from the first IMU
-- :ref:`LOG_BITMASK <copter:LOG_BITMASK>`'s IMU_RAW bit must **not** be checked.  The default LOG_BITMASK value is fine
+- :ref:`LOG_BITMASK <copter:LOG_BITMASK>`'s IMU_RAW bit must **not** be checked.  The default LOG_BITMASK value is fine. If it is checked the results can be confusing as you will get no samples if using post-filter or regular logging, you will however get samples if using sensor rate logging and your SD card is able to cope.
 
 Flight and Post-Flight Analysis
 ===============================
@@ -27,7 +29,9 @@ Flight and Post-Flight Analysis
     :target:  ../_images/imu-batchsampling-fft-mp2.png
     :width: 450px
 
-- Accelerometer data appears in the top left window with the vertical axis showing the amplitude and horizontal axis showing the frequency.  The amplitude is not scaled to a useful value meaning the graph is useful for determining the frequency of the vibration but not whether the levels are too high or not.  Vibration at frequencies above 300hz may lead to attitude or position control problems.
+- Accelerometer data appears in the top left window with the vertical axis showing the amplitude and horizontal axis showing the frequency.  The amplitude is not scaled to a useful value meaning the graph is useful for determining the frequency of the vibration but not whether the levels are too high or not.  Vibration at frequencies above 300Hz may lead to attitude or position control problems.
+- The default configuration shows raw accelerometer and gyro data before it has been filtered. Filtering is a key part of preventing noise reaching the PID loops and motors and thus it is important to be able look at the data after it has been filtered as well. In addition, when configuring advanced filtering using a notch (see :ref:`INS_NOTCH_ENABLE <INS_NOTCH_ENABLE>`) it is hard to do this effectively without seeing the output. In order to see post-filter output set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 2.
+- For small copters in manual flight modes it is important to let as much signal through below about 100Hz and as little as possible above this. Configuring post-filter output will allow you to see this.
 
 .. image:: ../../../images/imu-batchsampling-fft-mp.png
     :target:  ../_images/imu-batchsampling-fft-mp.png
@@ -38,7 +42,7 @@ Advanced Configuration and Analysis
 
 - Set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 1 to enable batch sampling at the sensor's highest rate which allows analysis above 500hz for very fast IMUs from InvenseSense
 - :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` can be used to sample just a single sensor.  This will increase the number of samples retrieved from a single sensor (e.g. the best on the platform), which may provide better data for analysis
-- :ref:`INS_LOG_BAT_CNT <INS_LOG_BAT_CNT>` specifies the number of samples which will be collected.  Increasing this will yield a more representative idea of problem frequencies.  When divided by the sample rate will give the smallest frequency which can be detected, so 1024 samples at 1024kHz sampling will (poorly) pick up 0.5Hz frequencies
+- :ref:`INS_LOG_BAT_CNT <INS_LOG_BAT_CNT>` specifies the number of samples which will be collected.  Increasing this will yield a more representative idea of problem frequencies.  When divided by the sample rate will give the lowest frequency which can be detected, so 1024 samples at 1024kHz sampling will (poorly) pick up 0.5Hz frequencies
 - :ref:`INS_LOG_BAT_LGIN <INS_LOG_BAT_LGIN>` interval between pushing samples to the dataflash log, in ms.  Increase this to reduce the time taken to flush data to the dataflash log, reducing cycle time.  This will be at the expense of increased system load and possibly choking up the dataflash log for other messages
 - :ref:`INS_LOG_BAT_LGCT <INS_LOG_BAT_LGCT>` Number of samples to push to count every :ref:`INS_LOG_BAT_LGIN <INS_LOG_BAT_LGIN>` ms.  Increase this to push more samples each time they are sent to the dataflash log.  Increasing this may cause timing jitter, and possibly choke up the dataflash log for other messages
 
@@ -62,7 +66,7 @@ Analysis with pymavlink
 
 ::
 
-   pbarker@bluebottle:~/rc/ardupilot(fastest-sampling)$ ~/rc/pymavlink/tools/mavfft_isb.py /tmp/000003.BIN 
+   pbarker@bluebottle:~/rc/ardupilot(fastest-sampling)$ ~/rc/pymavlink/tools/mavfft_isb.py /tmp/000003.BIN
    Processing log /tmp/000003.BIN
    .Skipping ISBD outside ISBH (fftnum=0)
 
