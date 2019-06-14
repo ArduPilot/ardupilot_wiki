@@ -55,6 +55,13 @@ will be done at whatever height the aircraft is at when it starts on
 the NAV_VTOL_LAND waypoint. So you would typically want the previous
 waypoint to have an altitude of about 20 meters above the ground.
 
+If Q_OPTIONS is set for "Use a fixed wing approach" (bit 4), then instead of transitioning to VTOL flight and doing a VTOL landing, it will remain in plane mode (question for WickedShell: what if in VTOL mode already? transition to plane?), climb or descend to the altitude set in the NAV_VTOL_LAND waypoint. When it reaches within Q_FW_LND_APPROACH_RAD of the landing location, it will perform a LOITER_TO_ALT down (question for WickedShell: what if its lower than this alt already by mistake?) to Q__LND_FINAL_ALT, turning into the wind, transition to VTOL mode and proceed to the landing location and land.
+
+.. image:: ../images/VTOL_LAND.jpg
+    :target: ../_images/VTOL_LAND.jpg
+
+(figure courtesy of SRP AERO)
+
 Return to Launch
 ----------------
 
