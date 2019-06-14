@@ -42,6 +42,18 @@ There are 3 possible ways:
 ::
 
     gdb [gdb options] --args path-to-SITL-firmware(generally in build/sitl/bin) [SITL options]
+    
+Example: The following launches the default Copter SITL:
+
+::
+
+    gdb --args $HOME/ardupilot/build/sitl/bin/arducopter -S -I0 --home -35.363261,149.165230,584,353 --model + --speedup 1 --defaults $HOME/ardupilot/Tools/autotest/default_params/copter.parm
+    
+You can also attach MAVProxy if required
+
+::
+
+    mavproxy.py --master tcp:127.0.0.1:5760 --sitl 127.0.0.1:5501 --out 127.0.0.1:14550 --out 127.0.0.1:14551 --console --map
 
 - run gdb with SITL launch script ``sim_vehicle.py`` : simply add ``-D -G`` to build and launch SITL with debug symbols and in gdb directly :
 
