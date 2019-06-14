@@ -27,3 +27,6 @@ If vehicle has an airspeed sensor and gain interpolation is desired:
 
 3. Set Q_TAILSIT_SPDMIN and Q_TAILSIT_SPDMAX to the range of speeds over which multicopter and fixed-wing controller gains should be interpolated.
 
+QACRO flying tips:
+
+Transitions from QACRO mode to any other Q-mode are not aided by the autopilot: no throttle boost is automatically applied. This is critical when airspeed (or high throttle) is needed for attitude control, as with non-vectored dual motor tailsitters. The safest way to transition is to make sure you have sufficient airspeed for elevon authority if flying level, or to establish a stable nose-up hover before switching out of QACRO.
