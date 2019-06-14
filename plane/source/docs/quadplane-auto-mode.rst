@@ -62,7 +62,7 @@ Note that if Q_FW_LND_APR_RAD=0, the Waypoint loiter radius will be used. Be sur
 .. image:: ../images/VTOL_LAND.jpg
     :target: ../_images/VTOL_LAND.jpg
 
-(figure courtesy of SRP AERO)
+(figure courtesy of SRP AERO   https://srp.aero/)
 
 Return to Launch
 ----------------
