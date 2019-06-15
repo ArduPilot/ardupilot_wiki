@@ -1,7 +1,7 @@
 .. _common-omnibusf4pro:
 
 ==================
-Omnibus F4 Pro
+Omnibus F4 Pro (on-board current sensor) and Omnibus F4 AIO (no sensor onboard)
 ==================
 
 .. figure:: ../../../images/omnibusf4pro.png
@@ -26,13 +26,13 @@ Specifications
 
    -  InvenSense MPU6000 IMU (accel, gyro)
    -  BMP280 barometer
-   -  Voltage and current sensor
+   -  Voltage and current (only Pro version) sensors
 
 
 -  **Interfaces**
 
    -  UARTS
-   -  PWM outputs
+   -  6 or 8 PWM (Pro only) outputs
    -  RC input PWM/PPM, SBUS
    -  I2C port for external compass
    -  USB port
@@ -45,7 +45,7 @@ Where to Buy
 
 Versions
 ==============
-There have been many versions of this board and many clones. Best results, with no feature/performance impacts will be obtained with V3 boards and V5 boards which have solder jumpers for selecting "SBUS" or "PPM" RX input. This should be soldered to the "PPM" selection for ALL reciever types. Ardupilot will automatically detect and accept any supported format (SBUS/PPM/DSM/etc.) on the RX input with this jumper selection. In addition, be sure the board has a barometer, SD Card slot, and Current sense circuit.
+There have been many versions of this board and many clones. Best results, with no feature/performance impacts will be obtained boards which have solder jumpers for selecting "SBUS" or "PPM" RX input. This should be soldered to the "PPM" selection for ALL reciever types. Ardupilot will automatically detect and accept any supported format (SBUS/PPM/DSM/etc.) on the RX input with this jumper selection. In addition, be sure the board has a barometer, SD Card slot, and Current sense circuit.
 
 Board Connections
 ==================
@@ -71,6 +71,11 @@ Otherwise, UART1 or UART6 or RCIN will not work.
 .. figure:: ../../../images/omnibusf4pro_ardupilot_wiring.jpg
     :target: ../_images/omnibusf4pro_ardupilot_wiring.jpg
     :width: 450px
+
+PWM Outputs
+===========
+
+The Pro version has 6 PWM outputs available on thru-hole pads, and two additional (PWM7 & PWM8) on the rear, via solder pads above the "MOTO" silk screen printing. The AIO version only provides 6 PWM outputs vai thru-hole pads.
 
 Dshot capability
 ================
