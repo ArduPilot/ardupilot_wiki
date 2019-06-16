@@ -31,6 +31,10 @@ described below.
    Also, there is no mapping of hover throttle to mid-stick in manual throttle modes. 
    If your quadplane does not hover at mid-stick (+/- 6%) in QSTABILIZE, you will need to center it (move it into the deadzone) when switching from QSTABILIZE to QHOVER to hold the current altitude.
 
+.. tip::
+
+   Since Quadplanes have much higher surface area than most Copters, hovering or loitering in a tail wind can be a challenge for stability. It is generally better to hover or loiter with the nose pointed into the wind, see Weathervaning <quadplane-weathervaning>.
+
 .. note::
 
    The landing detection logic in QLOITER mode is not as sophisticated as the landing detection logic in Copter, so if you get GPS movement while on the ground in QLOITER mode then the aircraft may try to tip over as it tries to hold position while in contact with the ground. 
