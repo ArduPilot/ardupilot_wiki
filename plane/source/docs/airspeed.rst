@@ -103,8 +103,11 @@ For the Pixhawk
 -  Assign the airspeed sensor to an appropriate "PIN" in Mission Planner
    - Configuration - Advanced Params - Adv Parameter List.
 
-   -  Set the ``ARSPD_PIN`` parameter to 15 in the Advanced Parameter
-      List and select "Write Parameters".
+   -  For Pixhawk v1, set the ``ARSPD_PIN`` parameter to 15 in the Advanced Parameter
+      List and select "Write Parameters". 
+   -  For Pixhawk v4, set the ``ARSPD_PIN`` parameter to 4 in the Advanced Parameter
+      List and select "Write Parameters". 
+           
 
 APM 2
 -----
