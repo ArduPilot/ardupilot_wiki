@@ -75,8 +75,12 @@ Otherwise, UART1 or UART6 or RCIN will not work.
 PWM Outputs
 ===========
 
-The Pro version has 6 PWM outputs available on thru-hole pads, and two additional (PWM7 & PWM8) on the rear, via solder pads above the "MOTO" silk screen printing. The AIO version only provides 6 PWM outputs vai thru-hole pads.
+The Pro version has 6 PWM outputs available on thru-hole pads, and two additional (PWM7 & PWM8) on the rear, via solder pads above the "MOTO" silk screen printing. The AIO version only provides 6 PWM outputs via thru-hole pads.
 
+.. figure:: ../../../images/PWM7-8.jpg
+    :target: ../_images/PWM7-8.jpg
+    :width: 450px
+    
 Dshot capability
 ================
 
