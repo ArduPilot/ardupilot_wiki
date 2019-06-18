@@ -26,7 +26,7 @@ RSSI can be specifically set up by a collapsible set of parameters. By default, 
 | 2 | RCChannelPwmValue  | signal strength indicated by a dedicated channel's PWM value,                               |
 |   |                    | optionally embedded into a sum signal (cPPM / SBus)                                         |
 +---+--------------------+---------------------------------------------------------------------------------------------+
-| 3 | ReceiverProtocol   | supports RSSI via dedicated receiver protocols like SBUS, SUMD or S24                       |
+| 3 | ReceiverProtocol   | supports RSSI via dedicated receiver protocols like SUMD or ST24                            |
 +---+--------------------+---------------------------------------------------------------------------------------------+
 | 4 | PWMInputPin        | allows to specify a GPIO pin to read PWM type RSSI input                                    |
 +---+--------------------+---------------------------------------------------------------------------------------------+
@@ -34,7 +34,7 @@ RSSI can be specifically set up by a collapsible set of parameters. By default, 
 
 After setting RSSI_TYPE to a value other than 0 you will have to save and refresh your parameters to uncollapse a set of subordinate parameters that allow to further specify RSSI handling. 
 
-There are three basic options for feeding RSSI to your flightcontroller:
+There are four basic options for feeding RSSI to your flightcontroller:
 
 ``RSSI_TYPE = 1`` Analog voltage type RSSI fed to a dedicated pin
  ``RSSI_ANA_PIN`` specifies the pin used to read RSSI voltage. This parameter defaults to the correct pin number on most boards when using current chibios firmware.
@@ -50,6 +50,11 @@ There are three basic options for feeding RSSI to your flightcontroller:
  ``RSSI_CHAN_HIGH`` PWM value the radio receiver will output when the signal is the strongest.
  
  ``RSSI_CHAN_LOW`` PWM value the radio receiver will output when the signal is the weakest.
+
+
+``RSSI_TYPE = 3`` digital receiver protocols' signal quality or dropped packts information (SUMD / ST24)
+ Scaled internally, no further adjustments required.
+ 
 
 ``RSSI_TYPE = 4`` PWM type RSSI fed to a dedicated GPIO pin
  ``RSSI_ANA_PIN`` Specifies the GPIO pin to read PWM type RSSI from. On boards with IOMCU these are the AUX pins that can be used as PWM output by default or alternatively set to be used as GPIO using the ``BRD_PWM_COUNT`` parameter.
@@ -139,6 +144,11 @@ Analog voltage type RSSI fed to a dedicated pin
 
 If your RC receiver outputs an analog voltage range type RSSI, you can feed this to your flightcontroller's analog RSSI input pin. Typical voltage range is 0 - 3,3V or 0 - 5V. See your RC system's manual for detail or check using a multimeter.
 
+
+.. note::
+    Mind that though most flightcontrollers' input pins theoretically are 5V tolerant, most ADCs will only measure up to 3,3 - 3,6 V unless equipped with voltage dividers to scale down higher input voltages. Check your RC receiver's RSSI voltage as well as your flightcontroller's specifications to ensure compatibility.
+
+
 If there is an existing RC receiver connection to your flightcontroller that includes supply voltage and ground, only one additional signal wire is required. The example below shows how to connect a receiver's analog voltage type RSSI to a pixhawk flightcontroller's sBus output pin:
 
 .. image:: ../../../images/volt_type_rssi.jpg
@@ -198,7 +208,6 @@ Now set your RSSI parameters accordingly:
 ``RSSI_CHAN_HIGH`` = PWM value at strongest reception
 
 ``RSSI_CHAN_LOW`` = PWM value at weakest reception
-
 
 
 Special use cases
