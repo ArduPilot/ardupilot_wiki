@@ -226,12 +226,24 @@ Craft and Theory Pixhawk to FrSky Telemetry Cables
 
 DIY cable for SmartPort
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 You can make your own cable using the following components:
 
--MAX3232 RS-232 to TTL converter breakout board
+.. image:: ../../../images/Telemetry_FrSky_Pixhawk-SPORT.jpg
+    :target: ../_images/Telemetry_FrSky_Pixhawk-SPORT.jpg
 
--Any silicon diode
+-  TTL-to-RS232 converter such as the `FrSky FUL-1  <http://www.ebay.com/sch/i.html?_trksid=p2050601.m570.l1313.TR11.TRC1.A0.H0.Xfrsky+ful-1.TRS0&_nkw=frsky+ful-1&_sacat=0&_from=R40>`__
+-  `SPC cable <https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=frsky+spc+cable&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=spc+cable>`_
+-  `DF13 6 position connector <https://www.unmannedtechshop.co.uk/df13-6-position-connector-30cm-pack-of-5/>`__
+   which will be cut and soldered to the TTL-to-RS232 converter
+-  `Molex Picoblade <http://www.molex.com/molex/products/family?key=picoblade&channel=products&chanName=family&pageTitle=Introduction&parentKey=wire_to_board_connectors>`__
+   4 position telemetry wire which will be cut and soldered to the
+   TTL-to-RS232 converter (should be included with the receiver)
+
+Or a more compact version using the following components:
+
+-`MAX3232 RS-232 to TTL converter breakout board <https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=max3232+rs-232+to+TTL&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=max3232+breakout&LH_TitleDesc=0>`__
+
+-Any silicon `diode <https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313.TR4.TRC1.A0.H0.X1n4148.TRS0&_nkw=1n4148&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=1n4118&LH_TitleDesc=0>`__
 
  .. figure:: ../../../images/DIY_SPort_Cable.jpg
       :width: 50%
