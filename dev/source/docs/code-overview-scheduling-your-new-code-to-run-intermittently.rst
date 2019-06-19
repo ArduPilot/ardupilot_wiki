@@ -12,11 +12,11 @@ Running your code with the scheduler
 
 The most flexible way to run your code at a given interval is to use the
 scheduler.  This can be done by adding your new function to the
-`scheduler_tasks <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L96>`__
+`scheduler_tasks <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L91>`__
 array in
-`ArduCopter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp>`__. 
-Note that there are actually two task lists, `the upper list <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L788>`__
-is for high speed CPUs (i.e. Pixhawk) and the `lower list <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L856>`__
+`Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp>`__. 
+Note that there are actually two task lists, `the upper list <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L788>`__
+is for high speed CPUs (i.e. Pixhawk) and the `lower list <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L856>`__
 is for slow CPUs (i.e. APM2).
 
 Adding a task is fairly simple, just create a new row in the list
@@ -66,22 +66,22 @@ the fast-loop.  Adding your function to the fast-loop will mean that it
 runs at the highest possible priority (i.e. it is nearly 100% guaranteed
 to run at 400Hz).
 
--  `fast_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L990>`__
+-  `fast_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L229>`__
    : runs at 100Hz on APM2, 400Hz on Pixhawk
--  `fifty_hz_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L370>`__
+-  `fifty_hz_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L370>`__
    : runs at 50Hz
--  `ten_hz_logging_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L341>`__:
+-  `ten_hz_logging_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L333>`__:
    runs at 10Hz
--  `three_hz <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L405>`__\ \_loop:
+-  `three_hz_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L398>`__:
    runs at 3.3Hz
--  >\ `one_hz_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L427>`__
+-  `one_hz_loop <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L417>`__
    : runs at 1Hz
 
 So for example if you want your new code to run at 10Hz you could add it
 to one of the case statements in the
-`ten_hz_logging_loop() <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp#L341>`__
+`ten_hz_logging_loop() <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L333>`__
 function found in
-`ArduCopter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp>`__.
+`Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp>`__.
 
 ::
 

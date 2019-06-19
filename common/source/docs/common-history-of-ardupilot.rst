@@ -228,7 +228,7 @@ Feb 2019 - Rover-3.5.0 released including Sailboat support, Follow and Simple mo
 .. note::
 
    The above list includes many of the major milestones for the project.  Please see the
-   `ArduCopter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/ArduCopter.cpp>`__
+   `Copter.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp>`__
    or the `GitHub contributors graph <https://github.com/ArduPilot/ardupilot/graphs/contributors>`__
    for a more complete list of contributors to the project.
 
