@@ -113,7 +113,7 @@ Then start ArduPilot SITL, using the morse-rover simulation backend
 
 ::
 
-   sim_vehicle.py -v APMrover2 --model morse-rover --add-param-file=libraries/SITL/examples/Morse/rover_scanner.parm --console --map
+   Tools/autotest/sim_vehicle.py -v APMrover2 --model morse-rover --add-param-file=libraries/SITL/examples/Morse/rover_scanner.parm --console --map
 
 That will give you something like this:
 
