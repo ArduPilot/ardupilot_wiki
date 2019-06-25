@@ -37,7 +37,7 @@ Run the install-prereqs-ubuntu.sh script:
 
 ::
 
-    ardupilot/Tools/scripts/install-prereqs-ubuntu.sh -y
+    ardupilot/Tools/environment_install/install-prereqs-ubuntu.sh -y
 
 Reload the path (log-out and log-in to make permanent):
 
