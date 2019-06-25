@@ -47,6 +47,8 @@ Setup steps
     - ``./Tools/environment_install/install-prereqs-ubuntu.sh -y``
     - You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" if it asks if you wish to install a package.
 
+    - If you do not have permission or receive permission denied use ``chmod +x install-prereqs-ubuntu.sh``.
+
     .. image:: ../images/build-on-windows10-prereqs.png
        :target: ../_images/build-on-windows10-prereqs.png
        
