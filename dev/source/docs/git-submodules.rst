@@ -23,7 +23,7 @@ Submodule approach
 ArduPilot uses a single level of *git submodules*, with all modules stored in the `modules <https://github.com/ArduPilot/ardupilot/tree/master/modules>`__
 directory. This approach was chosen as it makes for diagnosis of issues with submodules simpler.  This means that if an external project (i.e. PX4Firmware) has submodules of its own, those submodule appear directly in the `ArduPilot modules directory <https://github.com/ArduPilot/ardupilot/tree/master/modules>`__.
 
-ArduPilot maintains local forks of each external project's repo in order to shielf itself from unexpected changes.
+ArduPilot maintains local forks of each external project's repo in order to shield itself from unexpected changes.
 
 You may also note that the URLs used for the submodules use the old
 ``git://`` protocol. This was done to make it less likely we will get
