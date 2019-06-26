@@ -1,8 +1,8 @@
 .. _basic-setup:
 
-===========================
-Arduplane Quick Start Guide
-===========================
+===============
+Basic FPV Plane
+===============
 
 
 .. toctree::
@@ -48,15 +48,15 @@ mission capable, with a well flying plane that you can expand on.
 -----------
 
 There are many choices and options for ArduPilot FCs, see `this list of currently supported boards <common-autopilots>`__. 
-Omnibus F4 Pro or Matek F405-Wing are good choices for a basic plane
-configuration. This guide will assume a compareable integrated peripheral setup containing onboard battery monitoring 
-and OSD. Additionally, the following items are required:
+Omnibus F4 Pro or Matek F405-Wing are good choices for a basic FPV plane
+configuration, since they integrate OSD and power module functions into one board. This guide will assume a compareable integrated peripheral setup containing onboard battery monitoring and OSD. Additionally, the following items are required:
 
 -  GPS
 -  RX
 -  ESC & Servos
 -  VTX and Camera
-    
+
+
 This guide presumes you are capable to correctly wire all components using the readily available
 resources for the selected board. RCGroups provides forums for hardware help on any of the supported boards.
 Other peripherals (compass, pitot, telemetry, etc.) will not be covered here as they are not necessarily
@@ -101,8 +101,8 @@ That means you have hardware debug to do!
 Possible issues:
 
 1. Connected to wrong serial port (see your hardware docs for which port AP expects) or incorrectly connected (TX/RX swapped).
-2. Serial port settings were changed from default. ArduPlane expects GPS on Serial 3 at 38.4Kbaud per default. 
-3. Though UBLOX and NMEA-type GPS receivers are supported by ArduPilot these days, your GPS receiver is not supported.
+2. Serial port settings were changed from default. ArduPlane expects GPS on Serial 3 at 38.4Kbaud per default.
+3. UBLOX, NMEA, and many other GPS receivers are supported by ArduPilot, but your GPS receiver is not currently supported.
 
 .. Note::
     The board's hardware UART number may NOT necessarily be the same as the SERIAL port number in ArduPilot firmware / MP.
