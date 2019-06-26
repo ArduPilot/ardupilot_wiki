@@ -245,20 +245,18 @@ good basic performance. In order to display this in the OSD, you will need to se
 
 - Other Parameters
 
-1. Set SERVO_AUTO_TRIM =1. This will automatically adjust your servo trims as
-required for level flight. Unless you have your mechanical trims WAY OFF, this eliminates the need to manually trim the plane. 
-You should never trim using the TX trims, as stated above.
 
-2. If you have an overpowered plane, you might want to set THR_MAX to value lower
-than 100%, ie 75%. Otherwise climbs will be performed at max throttle, like during
-AUTOTAKEOFFs.
+1. Set SERVO_AUTO_TRIM =1. This will automatically adjust your servo trims as required for level flight. Unless you have your mechanical trims WAY OFF, this eliminates the need to manually trim the plane. You should never trim using the TX trims, as stated above.
+
+2. If you have an overpowered plane, you might want to set THR_MAX to value lower than 100%, ie 75%. Otherwise climbs will be performed at max throttle, like during AUTOTAKEOFFs.
+
 
 3. Set TRIM_THROTTLE to the expected cruise throttle. Usually a little below midthrottle.
 
 4. If you have a small flying wing (like Z-84), it might be required to decrease your default PTCH2SRV_P value if it is too aggressive and causes flutter. In that case, reduce the default by half.
 
-5. ARMING: Leave all arming parameters at default. There is no reason to disable these safety checks. You should be able to get a GPS lock even indoors with modern GPS units. Inability to arm due to one of these checks failing means something has to be corrected. 
-This adds noticeable safety by keeping you from accidentally starting your flight without your flight controller being in a fully functional state.
+
+5. ARMING: Leave all arming parameters at default. There is no reason to disable these safety checks. You should be able to get a GPS lock even indoors with modern GPS units. Inability to arm due to one of these checks failing means something has to be corrected. This adds noticeable safety by keeping you from accidentally starting your flight without your flight controller being in a fully functional state.
 
 All other parameters can be left to default. However, after you get some flights, you might want to play with:
 LIM_PITCH_MAX, LIM_ROLL_CD, and FBWB_CLIMB_RATE. These are pretty docile at default values.
