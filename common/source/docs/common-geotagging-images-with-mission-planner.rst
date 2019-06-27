@@ -308,6 +308,32 @@ working with specific cameras:
 Alternative Commercial Hardware Solutions
 =========================================
 
+Entire - Camera memory card geotagging solution by Airpixel.cz
+--------------------------------------------------------------
+
+`The Entire <http://photogrammetry.airpixel.cz/>`_ is a standalone device for GeoTagging of images in-camera SD card. 
+The Entire is reading GPS or RTK data from MAVlink bus and saves them into the EXIF of photos in camera body via USB. The Entire is also able to trigger the camera by MAVlink commands.
+
+- Tagging photos via EXIF in the camera body
+- Functions of GPS stream post filtering for highest accuracy
+- Optional functions of automated triggering by flown distance or by defined time
+- Tunable offset position of the camera in X/Y/Z axis
+- High accuracy of EXIF saving - 1mm in distance
+- Tagging available for JPG and RAW
+- hot-shoe sync connector for 0% error possibility
+- geotagging is available at the *maximum speed of camera* (even lower than 1s)
+- WiFi configuration and simple firmware updates
+
+
+More info at `photogrammetry.airpixel.cz <http://photogrammetry.airpixel.cz/>`_
+
+.. image:: http://shop.airpixel.cz/wp-content/uploads/2018/12/entire-shop.jpg
+    :target: http://shop.airpixel.cz/product/air-commander-entire/
+    :width: 60%
+    :align: center
+	
+
+
 DROTAGx - In-Camera Card Photo Tagging - Airborne Projects
 ----------------------------------------------------------
 
