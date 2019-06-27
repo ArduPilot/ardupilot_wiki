@@ -21,7 +21,7 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_ProfiCNC.png
     :width: 250px
     :target:  http://proficnc.com/stores
-    
+
 .. image:: ../../../images/supporters/supporters_logo_mRobotics.png
     :width: 250px
     :target:  http://mrobotics.io
@@ -169,23 +169,23 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_Rubidium_Light.jpg
     :width: 250px
     :target:  https://rubidiumlight.com.au/rubidium-rover
-    
+
 .. image:: ../../../images/supporters/supporters_logo_Makeflyeasy.jpg
     :width: 250px
     :target:  http://makeflyeasy.com
-    
+
 .. image:: ../../../images/supporters/supporters_logo_Hexsoon.jpg
     :width: 250px
     :target: http://ardupilot.org/about/Partners
-    
+
 .. image:: ../../../images/supporters/supporters_logo_Micro_Aerial_Projects.png
     :width: 250px
     :target:  https://microaerialprojects.com
-    
+
 .. image:: ../../../images/supporters/supporters_logo_ARACE_UAS.png
     :width: 250px
     :target:  https://longrangefpv.com
-    
+
 .. image:: ../../../images/supporters/supporters_logo_Eagle_Pride.png
     :width: 250px
     :target:  https://eaglepridedrones.com
@@ -197,11 +197,11 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_Qifei.png
     :width: 250px
     :target:  https://agrobot.en.alibaba.com
-    
+
 .. image:: ../../../images/supporters/supporters_logo_Mateksys.png
     :width: 250px
     :target:  http://mateksys.com
-    
+
 .. image:: ../../../images/supporters/supporters_logo_Tiho_Aviation.png
     :width: 250px
     :target:  http://ardupilot.org/about/Partners
@@ -209,7 +209,7 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_Freespace.png
     :width: 250px
     :target:  https://freespace.solutions
-    
+
 .. image:: ../../../images/supporters/supporters_logo_Holybro.png
     :width: 250px
     :target:  http://holybro.com
@@ -233,7 +233,7 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_AeroScanTech.png
     :width: 250px
     :target:  https://aeroscantech.com
-    
+
 .. image:: ../../../images/supporters/supporters_logo_Quaternium.png
     :width: 250px
     :target:  https://quaternium.com
@@ -241,6 +241,10 @@ Corporate Partners
 .. image:: ../../../images/supporters/supporters_logo_NP_UAS_TS.png
     :width: 250px
     :target:  http://npuasts.com
+
+.. image:: ../../../images/supporters/supporters_logo_AION_ROBOTICS.png
+    :width: 250px
+    :target:  http://aionrobotics.com
 
 How does my company become a partner?
 =====================================
@@ -255,11 +259,11 @@ Beyond a warm feeling in your heart for helping a worthy project, your company c
 How are collected funds spent?
 ==============================
 Funds are first used to cover fixed costs including servers to host the wiki, autotest and build servers and other running expenses.
-Any remaining funds will be used to pay for documentation efforts and hardware/software costs for developers working on ArduPilot related enhancements, and subsidise the annual Developers Conference.  A Funding Committee of 3 people is voted on annually from within the Development Team to oversee and control financial matters. 
+Any remaining funds will be used to pay for documentation efforts and hardware/software costs for developers working on ArduPilot related enhancements, and subsidise the annual Developers Conference.  A Funding Committee of 3 people is voted on annually from within the Development Team to oversee and control financial matters.
 
 I'm not a company, but I love your stuff, how can I help?
 =========================================================
-Please see our more general, :ref:`how-to-donate <common-donation>` page but in short, we accept donations of any amount from individuals as well.  Also please consider helping out with documentation, beta testing or code development.  Tell your friends and post videos of your successes with ArduPilot! 
+Please see our more general, :ref:`how-to-donate <common-donation>` page but in short, we accept donations of any amount from individuals as well.  Also please consider helping out with documentation, beta testing or code development.  Tell your friends and post videos of your successes with ArduPilot!
 
 I want a new feature, do I have to be a partner to get it?
 ==========================================================
