@@ -244,7 +244,7 @@ Corporate Partners
 
 .. image:: ../../../images/supporters/supporters_logo_AION_ROBOTICS.png
     :width: 250px
-    :target:  http://aionrobotics.com
+    :target:  https://aionrobotics.com
 
 How does my company become a partner?
 =====================================
