@@ -41,7 +41,7 @@ Required softwares
 
 * `Motive:Tracker <https://optitrack.com/products/motive/tracker/>`__
 * `NatNet SDK <https://optitrack.com/products/natnet-sdk/>`__
-* `MAVLink <https://github.com/mavlink/mavlink/>`__
+* `Mission Planner source <https://github.com/ArduPilot/MissionPlanner>`__
 
 
 Prepare the drone
@@ -87,7 +87,7 @@ Send data to the drone
 
    Example system block diagram
 
-We can modify NatNet SDK sample code and use it to read and send position data to the drone. Open Samples/NatNetSamples.sln, add generated MAVLink library (Mavlink.cs, MavlinkMessage.cs, etc) to the project called SampleClientML. You may need to change target framework to 4.6.1 and select "allow unsafe code" in project properties. 
+We need to modify NatNet SDK sample code and use it to read and send position data to the drone. Open Samples/NatNetSamples.sln, add all .cs files in MissionPlanner/ExtLibs/Mavlink/ (Mavlink.cs, MavlinkMessage.cs, MavlinkCRC.cs, etc) to the project called SampleClientML. You may need to change target framework to 4.6.1 and select "allow unsafe code" in project properties. 
 
 In SampleClientML.cs, modify/Add following code
 
