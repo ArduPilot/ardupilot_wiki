@@ -11,7 +11,7 @@ Before submitting large changes to the wiki it is best to check the pages are re
 There are two methods to setup a local build environment:
 
 #. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a Linux virtual machine with all the necessary packages installed.  This is the preferred and supported method
-#. Install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine and skip the Vagrant instructions below (unsupported). To do this you can simply edit the Vagrantfile removing the specific vagrant provisioning commands, and run the Vagrantfile as a shell script.
+#. Install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine and skip the Vagrant instructions below (unsupported). To do this you can simply edit the Vagrantfile removing the specific vagrant provisioning commands (remove lines before "apt-get -y ..."), and run the Vagrantfile as a shell (.sh)script. Be sure to use the sudo prefix. Then jump down to "Build the wiki".
 
 Fork and Clone the Wiki
 -----------------------
@@ -64,7 +64,7 @@ The main steps for building the docs are:
 Build the Wiki
 --------------
 
-As shown in the last step of the vagrant instructions above, use update.py to build some or all of the wiki
+As shown in the last step of the vagrant instructions above, use update.py to build some or all of the wiki. You may need to prefix the python commands below with "sudo", especially when rebuilding.
 
    .. code-block:: bash
 
