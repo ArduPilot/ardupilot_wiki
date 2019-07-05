@@ -71,6 +71,10 @@ If Q_TAILSIT_RLL_MX is nonzero roll angle will be limited and pitch max angle wi
 This should be set if your tailsitter can achieve much larger pitch angle than 
 would be safe for roll (some airframes can't recover from high-speed knife-edge flight).
 
+Q_TAILSIT_ANGLE specifies how far the nose must pitch up or down before a transition is complete: 
+down for transition from VTOL mode to FW mode, and up for transition from FW to VTOL. 
+So a value of e.g. 60 degrees results in switching from copter to plane controller (forward transition) when the nose reaches 30 degrees above the horizon (60 degrees down from vertical). For the back transition, the plane controller would be used until the nose reaches 60 degrees above the horizon. So the larger the value of Q_TAILSIT_ANGLE, the later the switch from one controller to the other.
+
 Orientation
 ===========
 
