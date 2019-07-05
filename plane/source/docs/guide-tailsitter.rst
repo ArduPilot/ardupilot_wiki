@@ -75,6 +75,8 @@ Q_TAILSIT_ANGLE specifies how far the nose must pitch up or down before a transi
 down for transition from VTOL mode to FW mode, and up for transition from FW to VTOL. 
 So a value of e.g. 60 degrees results in switching from copter to plane controller (forward transition) when the nose reaches 30 degrees above the horizon (60 degrees down from vertical). For the back transition, the plane controller would be used until the nose reaches 60 degrees above the horizon. So the larger the value of Q_TAILSIT_ANGLE, the later the switch from one controller to the other.
 
+Q_TRANSITION_MS specifies a timeout for transition from VTOL to FW flight. Even if the angle specified by Q_TAILSIT_ANGLE has not been reached before this interval has elapsed, the transition will be considered complete. The timeout for back transitions (from FW to VTOL flight) is hardcoded to 2 seconds.
+
 Orientation
 ===========
 
