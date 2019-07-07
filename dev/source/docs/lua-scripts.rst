@@ -53,7 +53,7 @@ The following script is used to change a servo output based on the aircraft's di
      local current_pos = ahrs:get_position() -- fetch the current position of the vehicle
      local home = ahrs:get_home()            -- fetch the home position of the vehicle
      if current_pos and home then            -- check that both a vehicle location, and home location are available
-       local distance = current_pos:get_distance(ahrs:get_home()) -- calculate the distance from home in meters
+       local distance = current_pos:get_distance(home) -- calculate the distance from home in meters
        if distance > 1000 then -- if more then 1000 meters away
          distance = 1000;      -- clamp the distance to 1000 meters
        end
@@ -124,6 +124,36 @@ The ahrs library represents the Attitude Heading Reference System computed by th
 - :code:`wind_estimate()` - Returns a Vector3f containing the current wind estimate for the vehicle.
 
 - :code:`groundspeed_vector()` - Returns a Vector2f containing the vehicles velocity in meters/second in north and east components.
+
+=======
+Battery
+~~~~~~~
+
+The battery library provides access to information about the currently connected batteries on the vehicle.
+
+- :code:`num_instances()` - Returns the number of battery instances currently available.
+
+- :code:`healthy(instance)` - Returns true if the requested battery instance is healthy. Healthy is considered to be ArduPilot is currently able to monitor the battery.
+
+- :code:`voltage(instance)` - Returns the voltage of the selected battery instance.
+
+- :code:`voltage_resting(instance)` - Returns the estimated battery voltage if it was not under load.
+
+- :code:`current_amps(instance)` - Returns the current (in Amps) that is currently being consumed by the battery, or nil if current monitoring is not available.
+
+- :code:`consumed_mah(instance)` - Returns the capacity (in milliamp hours) used from the battery, or nil if current monitoring is not available.
+
+- :code:`consumed_wh(instance)` - Returns the used watt hours from the battery, or nil if energy monitoring is not available.
+
+- :code:`capacity_remaining_pct(instance)` - Returns the remaining percentage of battery (from 0 to 100)
+
+- :code:`pack_capacity_mah(instance)` - Returns the full pack capacity (in milliamp hours) from the battery.
+
+- :code:`has_failsafed()` - Returns true if any of the batteries being monitored have triggered a failsafe.
+
+- :code:`overpower_detected(instance)` - Returns true if too much power is being drawn from the battery being monitored.
+
+- :code:`get_temperature(instance)` - Returns the temperature of the battery in degrees Celsius if the battery supports temperature monitoring.
 
 How to Add New Bindings
 =======================
