@@ -4,7 +4,7 @@
 Underwater Sonar (Analog)
 =========================
 
-This page details the setup of a low cost analog underwater sonar (aka "fish finder") and a digitizer to convert the analog readings into NMEA 0183 which can be read by ardupilot.  This setup allows measuring the depth of the water below a boat.  The sensor described has a maximum claimed range of 300m and a relatively wide beam of 22deg.
+This page details the setup of a low-cost analog underwater sonar (aka "fish finder") and a digitizer to convert the analog readings into NMEA 0183 which can be read by ardupilot.  This setup allows measuring the depth of the water below a boat.  The sensor described has a maximum claimed a range of 300m and a relatively wide beam of 22deg.
 
 These instructions were provided by `OlavA at the bottom of this ardupilot.org blog post <https://discuss.ardupilot.org/t/mapping-a-lake-with-ardupilot/32401/34>`__
 
@@ -25,17 +25,17 @@ Recommended Hardware
 Connecting and Configuring
 --------------------------
 
-The image below shows the pin-out of an airmar analog transducer but the pintout is the same as for the Lowrance HST-WSBL
+The image below shows the pin-out of an airmar analog transducer, but the pinout is the same as for the Lowrance HST-WSBL
 
 .. image:: ../../../images/underwater-sonar-analog-airman-pinout.jpg
 
-The Lowrance HST-WSBL pins should be connectded to the pins on the right side of the DST-2 as shown below.   Note that the Lowrance HST-WSBL does not have a speed sensor so only pins 1 and 4-7 should be connected
+The Lowrance HST-WSBL pins should be connected to the pins on the right side of the DST-2, as shown below.   Note that the Lowrance HST-WSBL does not have a speed sensor so only pins 1 and 4-7 should be connected
 
 .. image:: ../../../images/underwater-sonar-analog-connection-table.png
 
-The DST-2 requires a 10V to 28V power source meaning it can be powered from a 3S or 4S lipo battery.
+The DST-2 requires a 10V to 28V power source, meaning it can be powered from a 3S or 4S lipo battery.
 
-Next pins on the left side of the DST-2 (serial and RS-232 output) should be connected to the flight controller's telemetry/serial input. The easiest connection method is to connect the DST-2's 5V serial output directly to the telemetry port of the flight controller's Tx, Rx and a common ground.  It is best to check the DST-2 docs before connecting but below shows how the telemetry pins from a Pixhawk (or other flight controller) should be connected to the pins on the left side of the DST-2
+Next pins on the left side of the DST-2 (serial and RS-232 output) should be connected to the flight controller's telemetry/serial input. The easiest connection method is to connect the DST-2's 5V serial output directly to the telemetry port of the flight controller's Tx, Rx, and common ground.  It is best to check the DST-2 docs before connecting but below shows how the telemetry pins from a Pixhawk (or another flight controller) should be connected to the pins on the left side of the DST-2.
 
 .. image:: ../../../images/underwater-sonar-analog-wiring.png
 
@@ -59,3 +59,4 @@ Data screen's Status tab. Look closely for "sonarrange".
 
 .. image:: ../../../images/mp_rangefinder_lidarlite_testing.jpg
     :target: ../_images/mp_rangefinder_lidarlite_testing.jpg
+
