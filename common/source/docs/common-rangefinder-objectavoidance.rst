@@ -27,5 +27,5 @@ Connecting and Configuring the Lidar
 References
 ==========
 
-- `Copter object avoidance wiki page is here <copter-object-avoidance>`__
+- `Copter object avoidance wiki page is here <http://ardupilot.org/copter/docs/copter-object-avoidance.html>`__
 - More details of the algorithms used are on the `developer wiki's object avoidance page <http://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__
