@@ -33,7 +33,7 @@ described below.
 
 .. tip::
 
-   Since Quadplanes have much higher surface area than most Copters, hovering or loitering in a tail wind can be a challenge for stability. It is generally better to hover or loiter with the nose pointed into the wind, see Weathervaning <quadplane-weathervaning>.
+   Since Quadplanes have much higher surface area than most Copters, hovering or loitering in a tail wind can be a challenge for stability. It is generally better to hover or loiter with the nose pointed into the wind, see Weathervaning <http://ardupilot.org/plane/docs/quadplane-weathervaning.html>.
 
 .. note::
 
