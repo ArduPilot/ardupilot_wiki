@@ -66,7 +66,7 @@ based upon your set-up.
     ST VL53L0X / VL53L1X Lidar <common-vl53l0x-lidar>
     TeraRanger One Rangefinder <common-teraranger-one-rangefinder>
     TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
-    Underwater Sonar (Analog) <common-underwater-sonar-analog>
+    Underwater Sonar <common-underwater-sonars-landingpage>
 
 [site wiki="copter"]
     Analog Sonar (AC3.1) <sonar>
