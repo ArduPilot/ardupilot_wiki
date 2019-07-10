@@ -16,7 +16,7 @@ having the throttle outside of the 40% ~ 60% deadzone will be
 interpreted as meaning you want the copter to climb or descend.
 
 For this reason it is a good idea to adjust the Throttle Mid parameter
-(also known as THR_MID) so that your mid throttle while in stabilize
+(also known as THR_MID (MOT_THST_HOVER for ver 3.6 and up)) so that your mid throttle while in stabilize
 mode is closer to 50%.
 
 Please follow these instructions to adjust your manual throttle to so
@@ -63,7 +63,7 @@ that your copter hovers at 50% throttle:
       switch from a 3S to a 4S battery).
 
 Open the Mission Planner's Software > Standard Params screen and update
-the Throttle Mid Position (THR_MID) to the value estimated above
+the Throttle Mid Position (THR_MID (MOT_THST_HOVER for ver 3.6 and up)) to the value estimated above
 (you'll find it near the bottom of the list)
 
 Push the Write Params button
