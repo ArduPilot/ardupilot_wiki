@@ -151,6 +151,11 @@ packages:
 
 .. note::
 
+   For raspbian versions buster use:
+   sudo apt-get install screen python-wxgtk3.0 python-matplotlib python-opencv python-pip python-numpy python-dev libxml2-dev libxslt-dev    python-lxml
+
+.. note::
+
    The packages are :ref:`mostly the same as when setting up SITL <setting-up-sitl-on-windows>`. Reply Reply 'y' when
    prompted re additional disk space.
 
