@@ -12,7 +12,7 @@ before flight has two purposes:
 -  prevent takeoff before the autopilot is fully configured and ready to
    fly
 
-In past releases of APM:Plane arming was optional, and the requirement
+In past releases of ArduPlane, arming was optional, and the requirement
 to arm (controlled by the ARMING_REQUIRED parameter) was disabled by
 default. This was changed for the 3.3.0 release to require arming by
 default.
@@ -25,6 +25,17 @@ armed.
 then it is particularly important that you have arming enabled with
 arming checks enabled. Flying EKF without arming checks may cause a
 crash.
+
+.. warning::
+
+   This feature in no way removes the need to respect the
+   prop! When the plane is powered, ALWAYS avoid placing hands in
+   the vicinity of the propellor, even when the throttle is
+   disarmed. If all is not well with the autopilot electronics or software
+   there is always a slight possibility that signal could unintentionally
+   reach the motor. Even though this is unlikely (and made even less likely
+   by safety features such as this) it only takes one time to chew up a
+   finger or hand!
 
 Configuring Arming
 ==================
@@ -39,11 +50,23 @@ There are three parameters which control how arming works:
    before arming is allowed. The default is 1, meaning all checks are
    done. Most users should leave it at 1, as the arming checks are
    important to ensure the autopilot is ready.
--  **ARMING_RUDDER**: This parameter allows you to configure rudder 
-   based arming/disarming. The default is 1, meaning you are able to 
-   arm with right rudder. If you set this to 2 you can also disarm 
-   with left rudder. If you set this to 0 then you will only be able 
+-  **ARMING_RUDDER**: This parameter allows you to configure rudder
+   based arming/disarming. The default is 1, meaning you are able to
+   arm with right rudder. If you set this to 2 you can also disarm
+   with left rudder. If you set this to 0 then you will only be able
    to arm/disarm via a ground station.
+
+IMPORTANT: RC Transmitter Calibration
+=====================================
+
+It is essential that your RC radio transmitter be calibrated correctly
+before continuing. Please see the :ref:`Calibrate your RC input <common-radio-control-calibration>` wiki page if you don't know how to calibrate your radio.
+
+When calibrating your RC input you should also be careful to set the
+minimum value of the throttle (usually RC3_MIN) to the minimum value
+when in normal flight control. Don't set it to the value used by your
+transmitter when in throttle failsafe or you won't be able to arm using
+the rudder as the flight controller will think you are at a non-zero throttle level.
 
 How to Arm
 ==========
@@ -55,23 +78,28 @@ two ways:
    throttle stick fully down for 2 seconds.
 -  **GCS Arming**. Press the arming button on your ground station
 
+.. figure:: ../../../images/armingButtonMissPlan.jpg
+   :target: ../_images/armingButtonMissPlan.jpg
+
+   Location of the Arm/Disarm buttonin Mission Planner (button circled in red near the bottom of the image).
+
 How to Disarm
 =============
 
-Since APM:Plane 3.4.0 it is possible to disarm using the transmitter. 
-This is done holding throttle at minimum and rudder to the left for 2 
-seconds. In ArduPlane this condition could be accidentally triggered by 
+Since ArduPlane 3.4.0 it is possible to disarm using the transmitter.
+This is done holding throttle at minimum and rudder to the left for 2
+seconds. In ArduPlane this condition could be accidentally triggered by
 pilots while flying so there are additional requirements prior to disarm:
 
--  You need to allow rudder disarming by changing **ARMING_RUDDER** 
+-  You need to allow rudder disarming by changing **ARMING_RUDDER**
    parameter to 2 (ArmOrDisarm).
--  The flight controller needs to make sure that you are not actually 
-   flying. There is an algorithm for this that uses the **airspeed sensor** 
-   readings. So you need this source available and giving values lower 
-   enough (in a windy day you might not be able to disarm even landed 
+-  The flight controller needs to make sure that you are not actually
+   flying. There is an algorithm for this that uses the **airspeed sensor**
+   readings. So you need this source available and giving values lower
+   enough (in a windy day you might not be able to disarm even landed
    if the plane thinks you are still flying)
 
-You can also disarm without using the transmitter with one of the 
+You can also disarm without using the transmitter with one of the
 following methods:
 
 -  use a ground station to issue a disarm command
@@ -83,7 +111,7 @@ following methods:
 Visual and Audible signals
 ==========================
 
-APM:Plane will provide visual and audio clues to the arming state if
+ArduPlane will provide visual and audio clues to the arming state if
 your autopilot has LEDs and a buzzer. The clues are:
 
 -  if the autopilot is disarmed, but is ready to arm then the large
