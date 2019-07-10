@@ -155,8 +155,8 @@ armed.**
       by depressing Safety Button for 5 seconds.
    -  LED Continuously on indicates: Safety has been disengaged.
       Depending on your parameter settings, throttle may be armed with
-      Throttle down and to the right.  For details on throttle arming
-      see: :ref:`Arming Throttle <arming-throttle>`.
+      Throttle down and to the right.  For details on arming
+      see: :ref:`Arming Plane <arming-your-plane>`.
    -  When the LED is continuously on indicating Safety Disengaged it
       may be toggled back to a Safety engaged condition by depressing
       the Safety button for 5 seconds.
