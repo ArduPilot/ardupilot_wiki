@@ -9,8 +9,8 @@ This page decribes how to tune the Navigation control including the "L1 controll
 .. image:: ../images/rover-tuning-navigation1.png
     :target: ../_images/rover-tuning-navigation1.png
 
-L1 contoller
-------------
+L1 controller
+-------------
 
 The L1 one controller is the highest level steering controller.  It accepts position targets (i.e. latitude, longitude points) and the vehicle's current speed and outputs a desired lateral acceleration which is then fed into lower level controllers (including the Steering Rate controller).  Together this leads to the vehicle tracking a line towards the target.  This controller is used in all the autonomous modes including :ref:`Auto <auto-mode>`, :ref:`Guided <guided-mode>`, :ref:`RTL <rtl-mode>` and :ref:`SmartRTL <smartrtl-mode>`.
 
