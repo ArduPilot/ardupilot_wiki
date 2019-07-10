@@ -38,7 +38,7 @@ integrated flight controller boards, including onboard battery monitoring and an
 multitude of options and parameters, a first time setup may seem daunting. 
 This guide attempts to provide the necessary instructions to get airborn on a typical ArduPlane setup with autonomous 
 flight fleatures and is intentionally focussing only a small part of what ArduPilot has to offer. 
-For a more in-depth explanation of flight features see the `full setup guide <arduplane-setup>`__.
+For a more in-depth explanation of flight features see the `full setup guide <arduplane-setup.html>`__.
 ArduPilot's additional features and options (terrain following, airspeed use, autoland features, logging,
 compass setup etc.) are left for you to pursue in the future. The goal in here is to get you in the air,
 mission capable, with a well flying plane that you can expand on.
@@ -47,7 +47,7 @@ mission capable, with a well flying plane that you can expand on.
 2. Hardware
 -----------
 
-There are many choices and options for ArduPilot FCs, see `this list of currently supported boards <common-autopilots>`__. 
+There are many choices and options for ArduPilot FCs, see `this list of currently supported boards <common-autopilots.html>`__. 
 Omnibus F4 Pro or Matek F405-Wing are good choices for a basic FPV plane
 configuration, since they integrate OSD and power module functions into one board. This guide will assume a compareable integrated peripheral setup containing onboard battery monitoring and OSD. Additionally, the following items are required:
 
@@ -74,7 +74,7 @@ will focus this.
 Commercially targeted boards like Pixhawk will usually already have some version of ArduPilot loaded, along with an 
 ArduPilot compatible bootloader that will allow updating the firmware using Mission Planner or other GCS software (ground control station) immediately.
 Boards like Omnibus F4 Pro usually don't come with an ArduPilot bootloader by default, so you will need to
-follow `this straight forward procedure to load ArduPilot on your board for the first time <common-loadingfirmware-onto-chibios-only-boards>`__.
+follow `this straight forward procedure to load ArduPilot on your board for the first time <common-loading-firmware-onto-chibios-only-boards.html>`__.
 
 -  Mission Planner
 
@@ -106,7 +106,7 @@ Possible issues:
 
 .. Note::
     The board's hardware UART number may NOT necessarily be the same as the SERIAL port number in ArduPilot firmware / MP.
-    See your respective board's `hardware page <common-autopilots>`__ for wiring guides and UART to SERIAL mapping. GPS defaults
+    See your respective board's `hardware page <common-autopilots.html>`__ for wiring guides and UART to SERIAL mapping. GPS defaults
     to SERIAL3 in the parameter listing and you should not have to worry about UART mapping if you attach the GPS to the port
     suggested in the wiring guide.
 
@@ -128,7 +128,7 @@ Follow the RC Calibration steps as prompted.
 
 Now setup your TX to provide the ability to output six different levels on Channel 8. This will be your flight mode channel.
 (the default flight mode channel can be adjusted by the FLTMODE_CH param, it defaults to channel 8). 
-See setup instructions `for various transmitters <common-rc-transmitter-flight-mode-configuration>`__.
+See setup instructions `for various transmitters <common-rc-transmitter-flight-mode-configuration.html>`__.
 Now that the TX can select 6 modes (usually using combining two three-position-switches), set your flight modes for each switch position.
 It is strongly recommended to initally use two positions for MANUAL mode, allowing you to "bailout" to MANUAL no matter what
 position the second switch is in. It's a lot easier to remember to just slam one switch down( or up)
@@ -188,7 +188,7 @@ Ardupilot supports either analog RSSI or PWM RSSI (also known as "Digital RSSI")
 analog (voltage-type), set RSSI_TYPE =1 and reboot, for PWM set RSSI_TYPE =2. The remaining RSSI
 parameters will not appear until this parameter is set and saved and your FC rebooted.
 
-    RSSI_ANA_PIN,x (see `this page for details <common-rssi-received-signal-strength-indication>`__)
+    RSSI_ANA_PIN,x (see `this page for details <common-rssi-received-signal-strength-indication.html>`__)
     
     RSSI_PIN_HIGH,3.3 (Note that most RSSI input pins are tolerant only up to 3.3V)
     
@@ -209,7 +209,7 @@ For PWM adjust these parameters:
 
 Ardupilot has many options for initiating failsafe. The only one of concern for this guide
 is receiver failsafe. Failsafe will always be entered if the RC input signal to the FC is lost. 
-In addition, for Sbus-type receivers, radio failsafe will be triggered by specific failsafe bits sent in the Sbus output stream. For PPM-type receivers, you set the RX's failsafe to use either throttle failsafe or no signal output ( DON'T USE HOLD!). Setting up throttle failsafe is described `here <apms-failsafe-function>`__.
+In addition, for Sbus-type receivers, radio failsafe will be triggered by specific failsafe bits sent in the Sbus output stream. For PPM-type receivers, you set the RX's failsafe to use either throttle failsafe or no signal output ( DON'T USE HOLD!). Setting up throttle failsafe is described `here <apms-failsafe-function.html>`__.
 
 The option to activate throttle failsafe by a separate TX switch that forces the throttle channel to the failsafe value avoids having to set RTH as an additional flight mode and is a good way to check faislafe behaviour while flying.
 
@@ -294,7 +294,7 @@ This allows the SERVO_AUTO_TRIM function to adjust the servo trims accordingly. 
 
 Then check all the other flight modes one by one. Check FS behaviour also.
 
-At this point the plane should be flyable and well trimmed. Now you can explore all the other features of Ardupilot and tweak your setup to personal preferences. If you elect to use AUTOTUNE, be sure to read its `documentation <automatic-tuning-with-autotune>`__ thoroughly. Failing to run the autotune procedures as recommended bears the risk to decrease , rather than increase, your airframe's flight handling characteristics.
+At this point the plane should be flyable and well trimmed. Now you can explore all the other features of Ardupilot and tweak your setup to personal preferences. If you elect to use AUTOTUNE, be sure to read its `documentation <automatic-tuning-with-autotune.html>`__ thoroughly. Failing to run the autotune procedures as recommended bears the risk to decrease , rather than increase, your airframe's flight handling characteristics.
 
 Mind that the default settings do work fairly well for most standard sized aircraft.
 
