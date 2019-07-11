@@ -50,11 +50,11 @@ Companion Computer Setup
 
     sudo apt-get install ros-kinetic-navigation
 
-- Download `ArduPilot/companion/Common/ROS/ap_navigation.zip <https://github.com/ArduPilot/companion/tree/master/Common/ROS>`__ to the catkin/src directory
+- Download `ArduPilot/companion/Common/ROS/ap_navigation.zip <https://github.com/ArduPilot/companion/tree/master/Common/ROS>`__ to the catkin_ws/src directory
 
 ::
 
-    cd ~/catkin/src
+    cd ~/catkin_ws/src
     wget https://github.com/ArduPilot/companion/raw/master/Common/ROS/ap_navigation.zip
     unzip ap_navigation.zip
 
@@ -62,7 +62,7 @@ Companion Computer Setup
 
 ::
 
-    cd ~/catkin
+    cd ~/catkin_ws
     source devel
     cakin build
 
@@ -73,7 +73,7 @@ Start ap_navigation
 
 ::
 
-    cd ~/catkin
+    cd ~/catkin_ws
     source devel
     roslaunch ap_navigation ap_nav.launch
 
