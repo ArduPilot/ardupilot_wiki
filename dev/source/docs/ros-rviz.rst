@@ -41,7 +41,7 @@ Client PC Setup
 ::
 
     export ROS_HOSTNAME=your-host-name.local    <--- substitute the client PC's name here
-    export ROS_MASTER_URI=https://apsync.local:11311
+    export ROS_MASTER_URI=http://apsync.local:11311
 
 Companion Computer Setup
 ------------------------
@@ -57,7 +57,7 @@ Companion Computer Setup
 ::
 
     export ROS_HOSTNAME=apsync.local
-    export ROS_MASTER_URI=https://apsync.local:11311
+    export ROS_MASTER_URI=http://apsync.local:11311
 
 Check ROS data is available on the Client
 -----------------------------------------
