@@ -31,7 +31,7 @@ From these distances and angles a fence (an array of 2D Vectors) is built up aro
     :target: ../_images/code-overview-object-avoidance1.png
 
 The `AC_Avoidance library <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_Avoidance>`__ consumes the above fence and uses it to adjust (mostly shortens) desired velocity vectors sent to it by
-the `Loiter controller <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AC_WPNav/AC_WPNav.cpp#L302>`__ (search for "avoid->adjust_velocity").  Loiter's desired velocity vectors come from the pilot's inputs.
+the `Loiter controller <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AC_WPNav/AC_Loiter.cpp#L310>`__ (search for "avoid->adjust_velocity").  Loiter's desired velocity vectors come from the pilot's inputs.
 
 .. note::
 
@@ -73,7 +73,7 @@ This window can be opened by going to the Flight Data screen, press Ctrl-F and p
     :width: 300px
 
 This is accomplished by the vehicle sending DISTANCE_SENSOR messages to the ground station at regular intervals.
-The method that does this can be seen in the vehicle code's `GCS_Mavlink.cpp file <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp#L224>`__ (search for "send_proximity").
+The method that does this can be seen in the `GCS_Common.cpp file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/GCS_MAVLink/GCS_Common.cpp#L408>`__ (search for "send_proximity").
 Note that this means that it is possible that DISTANCE_SENSOR messages can be used both to send distances into the vehicle code, and then similar DISTANCE_SENSOR messages might be sent out from the vehicle to the ground station.
 These are separate messages though and are likely transferred at a different rate.
 
