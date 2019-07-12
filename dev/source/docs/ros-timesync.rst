@@ -28,9 +28,9 @@ ArduPilot Configuration
 
 The flight controller's time is set from the GPS by default but this can be modified to be set from the `SYSTEM_TIME <https://mavlink.io/en/messages/common.html#SYSTEM_TIME>`__ command by setting RTC_TYPES = 1 (for "MAVLINK_SYSTEM_TIME")
 
-For Rover or Plane, the SCHED_LOOP_RATE parameter should be increased to 200 because mavros ignores TIMESYNC messages if the round trip time is more than 10ms.  It may also be necessary to increase the update rate of the `gcs related tasks in the scheduler <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/APMrover2.cpp#L63>`__.
+For Rover or Plane, the SCHED_LOOP_RATE parameter should be increased to 200 because mavros ignores TIMESYNC messages if the round trip time is more than 10ms.  It may also be necessary to increase the update rate of the `gcs related tasks in the scheduler <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/Rover.cpp#L67>`__.
 
-For rover, open `APMrover2.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/APMrover2.cpp>`__ and within the scheduler_tasks[] array ensure the gcs entries have their update rate set to 200 like below:
+For rover, open `Rover.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/Rover.cpp>`__ and within the scheduler_tasks[] array ensure the gcs entries have their update rate set to 200 like below:
 
 ::
 
