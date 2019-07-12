@@ -24,6 +24,7 @@ information based upon your set-up.
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>
     SiK Radio v2 <common-sik-telemetry-radio>
     XBee <common-telemetry-xbee>
+    UAVCast 3G/4G Cellular <common-uavcast-telemetry>
     Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
     SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
     SiK Radio advanced configuration <common-3dr-radio-advanced-configuration-and-technical-information>
