@@ -23,10 +23,6 @@ Each script is run in its own sandboxed environment.
 This allows each script to manipulate any global variables it wants to without causing other scripts problems, and allows the script to persist state between calls to its callback.
 A side effect of this however is that heavy memory usage in a script can cause other scripts to be short on memory.
 
-
-Lua Scripts can be used to add custom behaviours to ArduPilot vehicles without requiring a Companion Computer.
-Scripts are relatively easy to write and run in a "sandbox" separate from the main flight code which greatly reduces the chance of a script compromising the vehicles ability to fly.
-
 This page describes how to setup scripts on your flight controller, the scripting API and some examples to help get started.
 
 This feature will be released with Copter-3.7, Rover-3.6 and Plane-3.11.
