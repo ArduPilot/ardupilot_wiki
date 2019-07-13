@@ -134,10 +134,6 @@ To give Lua scripts access to more features of ArduPilot the API can be extended
 - Edit the `libraries/AP_Scripting/generator/description/bindings.desc <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`__ and add a new line in the appropriate section for the method.
 - Open a command line prompt and cd to the `/libraries/AP_Scripting/generator <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/generator>`__ directory and type "make run"
 
-.. warning::
-
-   As of July 2019 the final step above ("make run") requires that "sudo apt-get install libreadline-dev" be run once to install readline
-
 `Here is an example PR <https://github.com/ArduPilot/ardupilot/pull/11787>`__ which adds a binding for AHRS's get_roll, get_pitch and get_yaw methods.
 
 Further Information
