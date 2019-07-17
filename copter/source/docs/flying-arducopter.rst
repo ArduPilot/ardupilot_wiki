@@ -25,7 +25,7 @@ Please follow each of the links below.
     Getting Off the Ground – Tips for New Operators <ac_tipsfornewpilots>
     Basic Tuning <basic-tuning>
     Measuring Vibration <common-measuring-vibration>
-    Setting Throttle Mid <ac_throttlemid>
+    Setting Hover Throttle <ac_throttlemid>
     Save Trim & Auto Trim <autotrim>
     Failsafe Mechanisms <failsafe-landing-page>
     Pre-Flight Checklist <checklist>
