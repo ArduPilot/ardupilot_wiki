@@ -46,13 +46,13 @@ As a reference the diagram below provides a high level view of Copter's architec
 
 #. Define a new class for the mode in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h>`__.
    It is probably easiest to copy a similar existing mode's class definition and just change the class name (i.e. copy and rename "class ModeStabilize" to "class ModeNewMode").
-   The new class should inherit from the Copter::Mode class and implement ``run()``, ``name()`` and ``name4()`` and optionally ``init()``.
+   The new class should inherit from the Mode class and implement ``run()``, ``name()`` and ``name4()`` and optionally ``init()``.
 
     ::
 
         public:
            // inherit constructor
-           using Copter::Mode::Mode;
+           using Mode::Mode;
            bool init(bool ignore_checks) override;
            void run() override;
 
@@ -80,7 +80,7 @@ As a reference the diagram below provides a high level view of Copter's architec
     ::
 
         // rtl_init - initialise rtl controller
-        bool Copter::ModeRTL::init(bool ignore_checks)
+        bool ModeRTL::init(bool ignore_checks)
         {
             if (!ignore_checks) {
                 if (!AP::ahrs().home_is_set()) {
@@ -100,7 +100,7 @@ As a reference the diagram below provides a high level view of Copter's architec
 
    ::
 
-        void Copter::ModeStabilize::run()
+        void ModeStabilize::run()
         {
             // convert pilot input to lean angles
             float target_roll, target_pitch;
@@ -143,9 +143,9 @@ As a reference the diagram below provides a high level view of Copter's architec
    ::
 
         // return the static controller object corresponding to supplied mode
-        Copter::Mode *Copter::mode_from_mode_num(const uint8_t mode)
+        Mode *Copter::mode_from_mode_num(const uint8_t mode)
         {
-            Copter::Mode *ret = nullptr;
+            Mode *ret = nullptr;
 
             switch (mode) {
                 case ACRO:
