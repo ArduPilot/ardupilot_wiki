@@ -13,9 +13,11 @@ parameters. The following topics shown you how.
 .. toctree::
     :maxdepth: 1
 
+    Tuning Process Instructions <tuning-process-instructions>
     AutoTune <autotune>
     Roll and Pitch Tuning <ac_rollpitchtuning>
     Advanced Tuning <tuning>
+    Basic Tuning <basic-tuning>
 
 -----
 
