@@ -21,6 +21,7 @@ The most commonly used simulators are:
 -  :ref:`Morse <sitl-with-morse>` a robotics simulation environment commonly used in research
 -  :ref:`Replay <testing-with-replay>` has no graphical interface but allows re-running master from a dataflash log
 -  :ref:`JSBSim <sitl-with-jsbsim>` is a sophisticated open-source plane and multicopter simulator with no graphical interface. It can be used with a wide variety of airframes.
+-  :ref:`AirSim <sitl-with-airsim>` is an open-source, cross-platform simulator for drones & cars, built on Unreal Engine for physically and visually realistic simulations
 
 Less often used simulators include:
 
@@ -40,6 +41,7 @@ List of simulators (so they can appear in the menu):
     Morse <sitl-with-morse>
     Replay <testing-with-replay>
     JSBSim <sitl-with-jsbsim>
+    AirSim <sitl-with-airsim>
     Last Letter <using-last_letter-as-an-external-sitl-simulator>
     CRRCSim <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
     HITL Simulators <hitl-simulators>
