@@ -23,7 +23,7 @@ Please follow each of the links below.
     Pre-arm Safety Check <prearm_safety_check>
     Arming and Disarming <arming_the_motors>
     Getting Off the Ground – Tips for New Operators <ac_tipsfornewpilots>
-    Basic Tuning <basic-tuning>
+    Tuning <common-tuning>
     Measuring Vibration <common-measuring-vibration>
     Setting Hover Throttle <ac_throttlemid>
     Save Trim & Auto Trim <autotrim>
