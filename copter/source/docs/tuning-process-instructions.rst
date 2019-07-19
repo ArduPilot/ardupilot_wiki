@@ -9,26 +9,54 @@ Setting the aircraft up ready for tuning
 
 The following parameters should be set correctly based on the specifications of your aircraft.
 
-- MOT_BAT_VOLT_MAX - 4.2 x No. Cells
-- MOT_BAT_VOLT_MIN - 3.3 x No. Cells
-- MOT_PWM_MAX - Check ESC manual for fixed range or 2000
-- MOT_PWM_MIN - Check ESC manual for fixed range or 1000
-- MOT_SPIN_ARM - use INITIAL SETUP -> OPTIONAL HARDWARE -> MOTOR TEST facility in mission planner to check.
-- MOT_SPIN_MAX - 0.95
-- MOT_SPIN_MIN - use INITIAL SETUP -> OPTIONAL HARDWARE -> MOTOR TEST facility in mission planner to check.
-- MOT_THST_EXPO - 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props. This parameter should be derived by thrust stand measurements for best results (don’t trust manufacture data).
-- MOT_THST_HOVER - 0.25 or below the expected hover thrust percentage (low is safe)
-- INS_ACCEL_FILTER -  10 to 20
-- INS_GYRO_FILTER - 80 for 5 inch props, 40 for 10 inch props, 20 for 20 inch props
-- ATC_RAT_PIT_FILT - INS_GYRO_FILTER / 2
-- ATC_RAT_RLL_FILT - INS_GYRO_FILTER / 2
-- ATC_RAT_YAW_FILT - 2
-- ATC_ACCEL_P_MAX - 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
-- ATC_ACCEL_R_MAX - 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
-- ATC_ACCEL_Y_MAX - 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props 
-- ACRO_YAW_P - 0.5 x ATC_ACCEL_Y_MAX / 4500
+.. warning::
 
-The initial tune of the aircraft should be done in the aircrafts most agile configuration. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
+    Values provide here are a starting point to tune your aircraft, they should not be hardly trust as the best values. Before flying please read the entire instruction to understand what you will do, what you should expect and what to do.
+
+Battery setting
+^^^^^^^^^^^^^^^
+Parameters used to linearise your motor thrust curve.
+
+- :ref:`MOT_BAT_VOLT_MAX <MOT_BAT_VOLT_MAX>` - 4.2v x No. Cells
+- :ref:`MOT_BAT_VOLT_MIN <MOT_BAT_VOLT_MIN>` - 3.3v x No. Cells
+- :ref:`MOT_THST_EXPO <MOT_THST_EXPO>` - 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props. This parameter should be derived by thrust stand measurements for best results (don’t trust manufacture data).
+
+.. image:: ../images/tuning-process-instructions-1.hires.png
+    :target: ../_images/tuning-process-instructions-1.hires.png
+
+Motors setup
+^^^^^^^^^^^^
+Parameters used to define the output range sent to the ESC.
+
+- :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` - Check ESC manual for fixed range or 2000us
+- :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` - Check ESC manual for fixed range or 1000us
+- :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` - use the motor test feature :ref:`Checking the motor numbering with the Mission Planner Motor test`
+- :ref:`MOT_SPIN_MAX <MOT_SPIN_MAX>` - 0.95
+- :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` - use the motor test feature :ref:`Checking the motor numbering with the Mission Planner Motor test`
+- :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` - 0.25 or below the expected hover thrust percentage (low is safe)
+
+Controler setup
+^^^^^^^^^^^^^^^
+- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` -  10Hz to 20Hz
+- :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` - 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
+- :ref:`ATC_RAT_PIT_FILT <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_RLL_FILT <ATC_RAT_RLL_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_YAW_FILT <ATC_RAT_YAW_FILT__AC_AttitudeControl_Multi>` - 2
+- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` - 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
+- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` - 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
+- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` - 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
+- :ref:`ACRO_YAW_P <ACRO_YAW_P>` - 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500
+
+.. image:: ../images/tuning-process-instructions-2.hires.png
+    :target: ../_images/tuning-process-instructions-2.hires.png
+
+.. image:: ../images/tuning-process-instructions-3.hires.png
+    :target: ../_images/tuning-process-instructions-3.hires.png
+
+.. image:: ../images/tuning-process-instructions-4.hires.png
+    :target: ../_images/tuning-process-instructions-4.hires.png
+
+The initial tune of the aircraft should be done **in the aircrafts most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
 
 Pilots preparation for first flight
 -----------------------------------
@@ -37,26 +65,34 @@ The first take off of an untuned multirotor is the most dangerous seconds of the
 
 There are a number of things that the pilot can do to minimise the risk during the early tuning process:
 
-1. All flights after a significant tuning change should be done in Stabilize. Stabilize provides the pilot with significantly more control over the aircraft in the event that the attitude controllers are unstable.
-2. The pilot should not take off in Alt Hold until the altitude controller has been tested in flight. This should be done by taking off in Stabilize and switching to Alt Hold. While Alt Hold is rarely a problem unless the aircraft has a very low hover throttle.
-3. For the initial flights the pilot should ensure that these parameters are set:
+1. The pilot should conduct a motor number and orientation check (see :ref:`Checking the motor numbering with the Mission Planner Motor test`). Care should be taken to ensure that the correct frame type is selected. Incorrect frame type can result in a very fast yaw rotation or complete loss of control. Take note of the output percentage required to spin the propellers and ensure that:
 
-- ATC_THR_MIX_MAN to 0.1
-- MOT_THST_HOVER to 0.25 (or lower than the expected hover throttle)
+- :ref:`MOT_PWM_MAX <MOT_SPIN_ARM>` is set high enough to spin the motors cleanly.
+- :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` is set high enough to spin the motors win a minimal level of thrust.
 
-4. The pilot should conduct a motor number and orientation check using the INITIAL SETUP -> OPTIONAL HARDWARE -> MOTOR TEST facility in mission planner. Care should be taken to ensure that the correct frame type is selected. Incorrect frame type can result in a very fast yaw rotation or complete loss of control. Take note of the output percentage required to spin the propellers and ensure that:
+2. All flights after a significant tuning change should be done in Stabilize. Stabilize provides the pilot with significantly more control over the aircraft in the event that the attitude controllers are unstable.
+3. The pilot should not take off in Alt Hold until the altitude controller has been tested in flight. This should be done by taking off in Stabilize and switching to Alt Hold. While Alt Hold is rarely a problem unless the aircraft has a very low hover throttle.
+4. For the initial flights the pilot should ensure that these parameters are set:
 
-- MOT_SPIN_ARM is set high enough to spin the motors cleanly.
-- MOT_SPIN_MIN is set high enough to spin the motors win a minimal level of thrust. 
+- :ref:`ATC_THR_MIX_MAN <ATC_THR_MIX_MAN>` to 0.1
+- :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` to 0.25 (or lower than the expected hover throttle)
+
+5. Use a radio and calibrate the radio correctly (see :ref:`common-radio-control-calibration`).
+6. Configure a Emergency Stop Motors switch and test it (see :ref:`channel-7-and-8-options`).
+7. Do tune in low wind condition and normal weather (no rain and between 15°C and 25°C).
+8. Practice STABILIZE flight in simulator or on low end drone first, you should be confident to be able to takeoff and land with you untuned aircraft.
+
 
 First flight
 ------------
 
 The first take off is the most dangerous time for any multirotor. Care must be taken to ensure the aircraft is not destroyed in the first seconds of flight and nobody is injured.
 
-- Ensure that all spectators are at a safe distance.
-- Ensure the pilot is at a safe distance and position.
-- The pilot should refresh themselves on the method used to disarm the aircraft (using the AUXSW_MOTOR_INTERLOCK or AUXSW_ARMDISARM may be beneficial)
+- **Ensure that all spectators are at a safe distance**.
+- **Ensure the pilot is at a safe distance and position**.
+- The pilot should refresh themselves on the method used to disarm the aircraft (using the AUXSW_MOTOR_INTERLOCK or AUXSW_ARMDISARM may be beneficial, see :ref:`channel-7-and-8-options`)
+
+This flight will allow to setup your aircraft in a "flyable for tuning" state.
 
 1. Ensure the aircraft is in Stabilize.
 2. Arm the aircraft.
@@ -70,6 +106,8 @@ The first take off is the most dangerous time for any multirotor. Care must be t
 10. Hover at approximately 1m altitude and apply small (5 degrees) control inputs into roll and pitch.
 11. Immediately land if any oscillation is observed.
 
+Next section will explain how to remove the oscillations.
+
 Initial aircraft tune
 ---------------------
 
@@ -80,12 +118,12 @@ The first priority when tuning an multirotor aircraft is to establish a stable t
 3. If the aircraft starts to oscillate immediately abort the take off or land the aircraft.
 4. Reduce all the following parameters by 50%
 
-a. ATC_RAT_PIT_P
-b. ATC_RAT_PIT_I
-c. ATC_RAT_PIT_D
-d. ATC_RAT_RLL_P
-e. ATC_RAT_RLL_I
-f. ATC_RAT_RLL_D
+a. :ref:`ATC_RAT_PIT_P <ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`
+b. :ref:`ATC_RAT_PIT_I <ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`
+c. :ref:`ATC_RAT_PIT_D <ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`
+d. :ref:`ATC_RAT_RLL_P <ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`
+e. :ref:`ATC_RAT_RLL_I <ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`
+f. :ref:`ATC_RAT_RLL_D <ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`
 
 This process is repeated until the aircraft can hover without oscillations being detectable visually or audibly.
 
@@ -96,16 +134,18 @@ Be aware that in this state the aircraft may be very slow to respond to large co
 Test Alt Hold
 -------------
 
-Take off in Stabilise and increase altitude to 5m. Switch to Alt_Hold and be ready to switch back. If the aircraft is hovering at a very low hover throttle value you may hear a reasonably fast oscillation in the motors.
+This test will allow to test the altitude controler and unsure the stability of your aircraft.
 
-1. Check MOT_HOVER_LEARN is set to 2
-2. Ensure the aircraft has spent enough time in hover to let the hover throttle value converge to the correct value.
-3. Set:
+1. Check :ref:`MOT_HOVER_LEARN <MOT_HOVER_LEARN>` is set to 2. This will allow the controler to learn by itself the correct hover value when flying.
 
-  - PSC_ACCZ_I to 2 x MOT_THST_HOVER
-  - PSC_ACCZ_P to MOT_THST_HOVER
+2. Take off in Stabilise and increase altitude to 5m. Switch to Alt_Hold and be ready to switch back to Stabilize. If the aircraft is hovering at a very low hover throttle value you may hear a reasonably fast oscillation in the motors. Ensure the aircraft has spent at least 30 seconds in hover to let the hover throttle parameter converge to the correct value. Land and disarm the aircraft.
 
-Alt Hold starts to move up and down the position and velocity controllers may need to be reduced by 50%. These values are: PSC_POSZ_P and PSC_VELZ_P.
+3. Set those parameter on ground and disarm preferably (confident pilot could try to set them in flight with GCS or CH6 tuning knob):
+
+  - :ref:`PSC_ACCZ_I <PSC_ACCZ_I>` to 2 x :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
+  - :ref:`PSC_ACCZ_P <PSC_ACCZ_P>` to :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
+
+Alt Hold starts to move up and down the position and velocity controllers may need to be reduced by 50%. These values are: :ref:`PSC_POSZ_P <PSC_POSZ_P>` and :ref:`PSC_VELZ_P <PSC_VELZ_P>`.
 
 Evaluating the aircraft tune
 ----------------------------
@@ -117,25 +157,25 @@ Most pilots will look to move to Autotune as quickly as possible once their airc
 3. Increase inputs gradually to full stick deflection.
 4. Go to full stick deflection and letting the sticks spring back to centre.
 
-If the aircraft begins to overshoot significantly or oscillate, after the stick input halt the tests before the situation begins to endanger the aircraft. The aircraft may require manual tuning before autotune can be run.
+If the aircraft begins to overshoot significantly or oscillate after the stick input, halt the tests before the situation begins to endanger the aircraft. The aircraft may require manual tuning (:ref:`see next section <Manual tuning of Roll and Pitch>`) before autotune can be run.
 
-To test the stabilization loops independent of the input shaping, set the parameter: ATC_RATE_FF_ENAB to 0.
+To test the stabilization loops independent of the input shaping, set the parameter: :ref:`ATC_RATE_FF_ENAB <ATC_RATE_FF_ENAB>` to 0.
 
 1. Take off in Alt Hold or Stabilize
 2. Hold a roll or pitch input
 3. Release the stick and observe the overshoot as the aircraft levels itself.
 4. Gradually increase the stick deflection to 100%
 
-Halt the tests if the aircraft overshoots level significantly or if the aircraft oscillates, the aircraft may require manual tuning before autotune can be run.
+Halt the tests if the aircraft overshoots level significantly or if the aircraft oscillates, the aircraft may require manual tuning (:ref:`see next section <Manual tuning of Roll and Pitch>`) before autotune can be run.
 
-Set ATC_RATE_FF_ENAB to 1 after the tests are complete.
+Set :ref:`ATC_RATE_FF_ENAB <ATC_RATE_FF_ENAB>` to 1 after the tests are complete.
 
 Manual tuning of Roll and Pitch
 -------------------------------
 
 Manual tuning may be required to provide a stable tune before Autotune is run, or if Autotune does not produce an acceptable tune. The process below can be done on roll and pitch at the same time for a quick manual tune provided the aircraft is symmetrical. If the aircraft is not symmetrical then the process should be repeated for both roll and pitch individually.
 
-The pilot should be especially careful to ensure that ATC_THR_MIX_MAN and MOT_THST_HOVER are set correctly before manual tuning is started.
+The pilot should be especially careful to ensure that :ref:`ATC_THR_MIX_MAN <ATC_THR_MIX_MAN>` and :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` are set correctly before manual tuning is started.
 
 When oscillations start do not make large or sudden stick inputs. Reduce the throttle smoothly to land the aircraft while using very slow and small roll and pitch inputs to control the aircraft position.
 
@@ -146,7 +186,7 @@ When oscillations start do not make large or sudden stick inputs. Reduce the thr
 5. Reduce the P term in steps of 10% until the oscillation disappears.
 6. Reduce the P term by a further 25%.
 
-Each time the P term is changed set the I term equal to the P term.
+Each time the P term is changed set the I term equal to the P term. Those parameter can be changed on ground and disarm preferably. Confident pilot could set them in flight with GCS or CH6 tuning knob.
 
 The ch6 tuning knob may be used to make these adjustments. If this is done set the minimum value of the tuning range to the current safe value and the upper range to approximately 4 times the current value. Be careful not to move the slider before the parameter list is refreshed to recover the set value. Ensure the ch6 tuning is switched off before setting the parameter value or the tuning may immediately overwrite it.
 
@@ -158,96 +198,98 @@ If the aircraft appears stable enough to attempt autotune follow the instruction
 There a number of problems that can prevent Autotune from providing a good tune. Some of the reason autotune can fail are:
 
 - High levels of gyro noise.
-- Incorrect value of MOT_THST_EXPO.
+- Incorrect value of :ref:`MOT_THST_EXPO <MOT_THST_EXPO>`.
 - Flexible frame or payload mount.
 - Overly flexible vibration isolation mount.
 - Non-linear ESC response.
-- Very low setting for MOT_SPIN_MIN.
+- Very low setting for :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`.
 - Overloaded propellers or motors.
 
 If Autotune has failed you will need to do a manual tune.
 
 Some signs that Autotune has been successful are:
 
-- An increase in the values of ATC_ANG_PIT_P and ATC_ANG_RLL_P.
-- ATC_RAT_PIT_D and ATC_RAT_RLL_D are larger than AUTOTUNE_MIN_D.
+- An increase in the values of :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>` and :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>`.
+- :ref:`ATC_RAT_PIT_D <ATC_RAT_PIT_D__AC_AttitudeControl_Multi>` and :ref:`ATC_RAT_RLL_D <ATC_RAT_RLL_D__AC_AttitudeControl_Multi>` are larger than :ref:`AUTOTUNE_MIN_D <AUTOTUNE_MIN_D>`.
 
 Autotune will attempt to tune each axis as tight as the aircraft can tolerate. In some aircraft this can be unnecessarily responsive. A guide for most aircraft:
 
-- ATC_ANG_PIT_P should be reduced to 6 to 10
-- ATC_ANG_RLL_P should be reduced to 6 to 10
-- ATC_ANG_YAW_P should be reduced to 6 to 10
-- ATC_RAT_YAW_P should be reduced to 0.5 to 1
-- ATC_RAT_YAW_I = ATC_RAT_YAW_P x 0.1
+- :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>` should be reduced from 6 to 10
+- :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>` should be reduced from 6 to 10
+- :ref:`ATC_ANG_YAW_P <ATC_ANG_YAW_P>` should be reduced from 6 to 10
+- :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` should be reduced from 0.5 to 1
+- :ref:`ATC_RAT_YAW_I <ATC_RAT_YAW_I__AC_AttitudeControl_Multi>` = :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` x 0.1
 
 These values should only be changed if Autotune produces higher values. Small aerobatic aircraft may prefer to keep these values as high as possible.
 
 Setting the input shaping parameters
 ------------------------------------
 
-Arducopter has a set of parameters that define the way the aircraft feels to fly. This lets allows the aircraft to be set up with a very aggressive tune but still feel like a very docile and friendly aircraft to fly. 
+Arducopter has a set of parameters that define the way the aircraft feels to fly. This allows the aircraft to be set up with a very aggressive tune but still feel like a very docile and friendly aircraft to fly.
 
 The most important of these parameters is:
 
-- ACRO_YAW_P - yaw rate x 45 degrees/s
-- ANGLE_MAX -  maximum lean angle
-- ATC_ACCEL_P_MAX - Pitch rate acceleration
-- ATC_ACCEL_R_MAX - Roll rate acceleration
-- ATC_ACCEL_Y_MAX - Yaw rate acceleration
-- ATC_ANG_LIM_TC - Aircraft smoothing time
+- :ref:`ACRO_YAW_P <ACRO_YAW_P>` - yaw rate x 45 degrees/s
+- :ref:`ANGLE_MAX <ANGLE_MAX>` -  maximum lean angle
+- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` - Pitch rate acceleration
+- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` - Roll rate acceleration
+- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` - Yaw rate acceleration
+- :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>` - Aircraft smoothing time
 
-Autotune will set the ATC_ACCEL_X_MAX parameters to their maximum based on measurements done during the Autotune tests. These values should not be increased beyond what Autotune suggests without careful testing. In most cases pilots will want to reduce these values significantly.
+Autotune will set the :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` and :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` parameters to their maximum based on measurements done during the Autotune tests. These values should not be increased beyond what Autotune suggests without careful testing. In most cases pilots will want to reduce these values significantly.
 
-For aircraft designed to carry large directly mounted payloads, the maximum values of ATC_ACCEL_X_MAX should be reduced based on the minimum and maximum take off weight (TOW):
-ATC_ACCEL_X_MAX  x (min_TOW / max_TOW)
+For aircraft designed to carry large directly mounted payloads, the maximum values of :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` and :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` should be reduced based on the minimum and maximum take off weight (TOW):
 
-ACRO_YAW_P should be set to be approximately 0.5 x ATC_ACCEL_Y_MAX / 4500 to ensure that the aircraft will get upto full yaw rate and stop again in approximately half a second.
+- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`  x (min_TOW / max_TOW)
+- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`  x (min_TOW / max_TOW)
+- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`  x (min_TOW / max_TOW)
 
-ATC_ANG_LIM_TC may be increased to provide a very smooth feeling on the sticks at the expense of a slower reaction time.
+:ref:`ACRO_YAW_P <ACRO_YAW_P>` should be set to be approximately 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500 to ensure that the aircraft can achieve full yaw rate in approximately half a second.
 
-Aerobatic aircraft should keep the ATC_ACCEL_X_MAX provided by autotune and reduce ATC_ANG_LIM_TC to achieve the stick feel desired by the pilot. For pilots wanting to fly ACRO the following input shaping parameters can be used to tune the feel of ACRO:
+:ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>` may be increased to provide a very smooth feeling on the sticks at the expense of a slower reaction time.
 
-- ACRO_BAL_PITCH
-- ACRO_BAL_ROLL
-- ACRO_RP_EXPO
-- ACRO_RP_P
-- ACRO_THR_MID
-- ACRO_TRAINER
-- ACRO_Y_EXPO
-- ACRO_YAW_P
+Aerobatic aircraft should keep the :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` and :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` provided by autotune and reduce :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>` to achieve the stick feel desired by the pilot. For pilots wanting to fly ACRO the following input shaping parameters can be used to tune the feel of ACRO:
+
+- :ref:`ACRO_BAL_PITCH <ACRO_BAL_PITCH>`
+- :ref:`ACRO_BAL_ROLL <ACRO_BAL_ROLL>`
+- :ref:`ACRO_RP_EXPO <ACRO_RP_EXPO>`
+- :ref:`ACRO_RP_P <ACRO_RP_P>`
+- :ref:`ACRO_THR_MID <ACRO_THR_MID>`
+- :ref:`ACRO_TRAINER <ACRO_TRAINER>`
+- :ref:`ACRO_Y_EXPO <ACRO_Y_EXPO>`
+- :ref:`ACRO_YAW_P <ACRO_YAW_P>`
 
 The full list of input shaping parameters are:
 
-- ACRO_BAL_PITCH
-- ACRO_BAL_ROLL
-- ACRO_RP_EXPO
-- ACRO_RP_P
-- ACRO_THR_MID
-- ACRO_TRAINER
-- ACRO_Y_EXPO
-- ACRO_YAW_P
-- ANGLE_MAX
-- ATC_ACCEL_P_MAX
-- ATC_ACCEL_R_MAX
-- ATC_ACCEL_Y_MAX
-- ATC_ANG_LIM_TC
-- ATC_RATE_P_MAX
-- ATC_RATE_R_MAX
-- ATC_RATE_Y_MAX
-- ATC_SLEW_YAW
-- PILOT_ACCEL_Z
-- PILOT_SPEED_DN
-- PILOT_SPEED_UP
-- PILOT_THR_BHV
-- PILOT_THR_FILT
-- PILOT_TKOFF_ALT
-- PILOT_TKOFF_DZ
-- LOIT_ACC_MAX
-- LOIT_ANG_MAX
-- LOIT_BRK_ACCEL
-- LOIT_BRK_DELAY
-- LOIT_BRK_JERK
-- LOIT_SPEED
+- :ref:`ACRO_BAL_PITCH <ACRO_BAL_PITCH>`
+- :ref:`ACRO_BAL_ROLL <ACRO_BAL_ROLL>`
+- :ref:`ACRO_RP_EXPO <ACRO_RP_EXPO>`
+- :ref:`ACRO_RP_P <ACRO_RP_P>`
+- :ref:`ACRO_THR_MID <ACRO_THR_MID>`
+- :ref:`ACRO_TRAINER <ACRO_TRAINER>`
+- :ref:`ACRO_Y_EXPO <ACRO_Y_EXPO>`
+- :ref:`ACRO_YAW_P <ACRO_YAW_P>`
+- :ref:`ANGLE_MAX <ANGLE_MAX>`
+- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`
+- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`
+- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`
+- :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>`
+- :ref:`ATC_RATE_P_MAX <ATC_RATE_P_MAX>`
+- :ref:`ATC_RATE_R_MAX <ATC_RATE_R_MAX>`
+- :ref:`ATC_RATE_Y_MAX <ATC_RATE_Y_MAX>`
+- :ref:`ATC_SLEW_YAW <ATC_SLEW_YAW>`
+- :ref:`PILOT_ACCEL_Z <PILOT_ACCEL_Z>`
+- :ref:`PILOT_SPEED_DN <PILOT_SPEED_DN>`
+- :ref:`PILOT_SPEED_UP <PILOT_SPEED_UP>`
+- :ref:`PILOT_THR_BHV <PILOT_THR_BHV>`
+- :ref:`PILOT_THR_FILT <PILOT_THR_FILT>`
+- :ref:`PILOT_TKOFF_ALT <PILOT_TKOFF_ALT>`
+- :ref:`LOIT_ACC_MAX <LOIT_ACC_MAX>`
+- :ref:`LOIT_ANG_MAX <LOIT_ANG_MAX>`
+- :ref:`LOIT_BRK_ACCEL <LOIT_BRK_ACCEL>`
+- :ref:`LOIT_BRK_DELAY <LOIT_BRK_DELAY>`
+- :ref:`LOIT_BRK_JERK <LOIT_BRK_JERK>`
+- :ref:`LOIT_SPEED <LOIT_SPEED>`
 
 Advanced Tuning
 ---------------
