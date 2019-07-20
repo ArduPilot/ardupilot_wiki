@@ -64,6 +64,8 @@ Note that if Q_FW_LND_APR_RAD=0, the Waypoint loiter radius will be used. Be sur
 
 (figure courtesy of SRP AERO   https://srp.aero/)
 
+.. warning:: If a VTOL mode landing (VTOL_LAND, QLAND,QRTL) is attempted immediately after a VTOL Loiter including Guided mode VTOL loiter,if enabled,  and the quadplane's heading,wind speed, and direction is such that significant negative pitch is required to hold position or progress to the landing position, the landing will fail with the vehicle holding altitude and drifting in the wind direction indefinitely until mode is changed. This occurs even if the landing (QLAND or QRTL) was initiated due to a fail-safe event while in VTOL Loiter. A fly-away is possible in case of radio failure. This can be avoided if Q_VFWD_GAIN is used to provide enough forward assistance against the wind to allow progress towards the final landing position. Be aware that Tilt-Rotor Quadplane configurations do not have this feature!
+
 Return to Launch
 ----------------
 
