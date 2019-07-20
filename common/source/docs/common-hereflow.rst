@@ -1,8 +1,8 @@
 .. _common-hereflow:
 
-===============================
+================================
 Hex HereFlow Optical Flow Sensor
-===============================
+================================
 
 [copywiki destination="copter"]
 
