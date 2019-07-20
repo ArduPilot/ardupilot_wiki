@@ -95,13 +95,12 @@ To display RC receiver's RSSI on MP's HUD:
 
 Connection examples
 ===================
-===================
 
 Below are examples of typical RC receiver RSSI connection schemes:
 
 
 RSSI embedded in a collective PPM / sum signal's channel
-========================================================
+--------------------------------------------------------
 
 It is common practice to feed all RC channels from your RC receiver to your flightcontroller using a cPPM or sBus type sum signal on a single signal wire. Most UHF type RC systems like EZUHF, OpenLRS, Crossfire or DragonLink support embedding RSSI into a dedicated channel within this collective / sum signal stream. As per ArduPilot default channels 1-4 are used as input for primary control (roll, pitch, throttle, yaw), any channel number above 4 can be used to embed RSSI. Usually, these systems use a GUI to assign RSSI to a dedicated channel slot on your RC receiver, or have it set to a standard channel by default. See your respective system's user manual for reference.
 
@@ -140,7 +139,7 @@ At strongest reception, Ch5 shows a PWM value of 1904 us. With the transmitter s
 
 
 Analog voltage type RSSI fed to a dedicated pin
-===============================================
+-----------------------------------------------
 
 If your RC receiver outputs an analog voltage range type RSSI, you can feed this to your flightcontroller's analog RSSI input pin. Typical voltage range is 0 - 3,3V or 0 - 5V. See your RC system's manual for detail or check using a multimeter.
 
@@ -171,7 +170,7 @@ Now set your RSSI parameters accordingly:
     
 
 PWM type RSSI fed to a dedicated pin
-====================================
+------------------------------------
 
 If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can feed this to one of your flightcontroller's GPIO pins. Use parameter ``BRD_PWM_COUNT`` to set PWM output pins as GPIO. On pixahwk type hardware, this refers to the AUX pins as they are connected to the board's MCU, bypassing the IOMCU co-processer.
 
@@ -212,11 +211,10 @@ Now set your RSSI parameters accordingly:
 
 Special use cases
 =================
-=================
 
 
 Converting Non-standard PWM type RSSI to analog voltage
-=======================================================
+-------------------------------------------------------
 
 For non-standard RSSI types like some FrSky receivers' high frequency PWM RSSI, an RC filter can be used to level the signal, rendering it useable for the flightcontroller's analog RSSI input pin:
 
@@ -229,7 +227,7 @@ from the receiver's RSSI output.**
 
 
 How to utilize Futaba S.BUS2 "Frame Error Rate" information to be used as RSSI in your flight controller
-========================================================================================================
+--------------------------------------------------------------------------------------------------------
 
 The **Frame Error Rate (FER)** indicates, if the receiver has trouble decoding a received data package sent by the transmitter. The value is similar to RSSI. 
 

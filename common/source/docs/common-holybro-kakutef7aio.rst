@@ -1,8 +1,8 @@
 .. _common-holybro-kakutef7aio:
 
-=================
+===================================
 Holybro Kakute F7 and KAKUTE F7 AIO
-=================
+===================================
 
 .. image:: ../../../images/holybro-kakutef7aio.png
     :target: ../_images/holybro-kakutef7aio.png

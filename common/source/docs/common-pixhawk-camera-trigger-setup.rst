@@ -1,8 +1,8 @@
 .. _common-pixhawk-camera-trigger-setup:
 
-===================
+================================
 Camera Trigger Setup for Pixhawk
-===================
+================================
 
 .. image:: ../../../images/CTimage0.png
 
@@ -24,8 +24,7 @@ Items Required
 
 -  Pixhawk or APM Flight Controller
 
--  Remote Shutter Release Cable (Click `*HERE
-       * <https://www.amazon.com/SHOOT-DSC-RX100M3-DSC-RX100M20-DSC-RX100II-DSC-RX100III/dp/B00ME7N6P8/ref=sr_1_1?ie=UTF8&qid=1496578319&sr=8-1&keywords=Sony+A6000+Shutter+Release+Cable>`__\ for
+-  Remote Shutter Release Cable (Click `*HERE* <https://www.amazon.com/SHOOT-DSC-RX100M3-DSC-RX100M20-DSC-RX100II-DSC-RX100III/dp/B00ME7N6P8/ref=sr_1_1?ie=UTF8&qid=1496578319&sr=8-1&keywords=Sony+A6000+Shutter+Release+Cable>`__\ for
        a link to an affordable solution)
 
 -  Servo Pins
