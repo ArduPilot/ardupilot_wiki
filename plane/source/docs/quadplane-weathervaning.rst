@@ -85,3 +85,5 @@ in position controlled VTOL modes. This means it is not enabled in
 QSTABILIZE or QHOVER flight modes. It is available in QLOITER, QRTL,
 QLAND and in AUTO mode when executing VTOL flight commands.
 
+.. note::
+ Tilt-Rotor Quadplanes do not have this capability, since there is no separate foward motor.
