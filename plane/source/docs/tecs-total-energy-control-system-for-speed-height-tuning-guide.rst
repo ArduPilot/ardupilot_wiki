@@ -131,7 +131,7 @@ Flight Testing
       limit ``LIM_PITCH_MAX`` needs to be increased or the maximum
       climb rate ``TECS_CLMB_MAX`` needs to be reduced.
 
-#. Verify ``LIM_PITCH_MIN`` and TECS_CLMB_MIN are set correctly. The
+#. Verify ``LIM_PITCH_MIN`` and ``TECS_SINK_MAX`` are set correctly. The
    setting of these parameters can be checked by commanding a negative
    altitude change of no less than 50m in loiter, RTL or guided mode. The
    objective is to set these parameters such that the throttle is on
