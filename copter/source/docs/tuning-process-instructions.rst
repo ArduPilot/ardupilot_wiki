@@ -9,10 +9,6 @@ Setting the aircraft up ready for tuning
 
 The following parameters should be set correctly based on the specifications of your aircraft.
 
-.. warning::
-
-    Values provide here are a starting point to tune your aircraft, they should not be hardly trust as the best values. Before flying please read the entire instruction to understand what you will do, what you should expect and what to do.
-
 Battery setting
 ^^^^^^^^^^^^^^^
 Parameters used to linearise your motor thrust curve.
