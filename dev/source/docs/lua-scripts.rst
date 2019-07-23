@@ -108,6 +108,33 @@ A Location userdata object supports the following calls:
 
 - :code:`get_vector_from_origin_NEU()` - Returns nil or Vector3f that contains the offset from the EKF origin to this location. This will return nil if the EKF origin wasn’t available at the time this was called.
 
+Vector2f
+~~~~~~~~
+
+Vector2f is a userdata object that holds a 2D vector. The components are stored as floating point numbers. To create a new Vector2f you can call Vector2f() to allocate a new one, or call a method that returns one to you.
+
+A Vector2f object supports the following calls:
+
+- :code:`x([new_x])` - If called with no arguments, return the currently set X component as a floating point number. If called with one argument it will assign the value to the X component.
+
+- :code:`y([new_y])` - If called with no arguments, return the currently set Y component as a floating point number. If called with one argument it will assign the value to the Y component.
+
+- :code:`length()` - Returns the length of the vector as a floating point number.
+
+- :code:`normalize()` - Normalizes the vector to be a unit vector.
+
+- :code:`is_nan()` - Returns true if the vector contains any NaN members.
+
+- :code:`is_inf()` - Returns true if the vector contains any infinity members.
+
+- :code:`is_zero()` - Returns true if all the vector fields are 0.
+
+The following operators are supported on a Vector2f:
+
+- :code:`+` - Adds the two vectors by components.
+
+- :code:`-` - Subtracts the two vectors by components.
+
 AHRS
 ~~~~
 
@@ -154,6 +181,56 @@ The battery library provides access to information about the currently connected
 - :code:`overpower_detected(instance)` - Returns true if too much power is being drawn from the battery being monitored.
 
 - :code:`get_temperature(instance)` - Returns the temperature of the battery in degrees Celsius if the battery supports temperature monitoring.
+
+===
+GPS
+~~~
+
+The GPS library provides access to information about the GPS's on the vehicle.
+
+- :code:`num_sensors()` - Returns the number of connected GPS devices. If GPS blending is turned on that will show up as the third sensor, and be reported here.
+
+- :code:`primary_sensor()` - Returns which GPS is currently being used as the primary GPS device.
+
+- :code:`status(instance)` - Returns the GPS fix status. Compare this to one of the GPS fix types (GPS.NO_GPS, GPS.GPS_OK_FIX_2D, GPS.GPS_OK_FIX_3D GPS.GPS_OK_FIX_3D_DGPS GPS.GPS_OK_FIX_3D_RTK_FLOAT GPS.GPS_OK_FIX_3D_RTK_FIXED
+
+- :code:`location(instance)` - Returns a Location userdata for the last GPS position. You must check the status to know if the location is still current, if it is NO_GPS, or NO_FIX then it will be returning old data.
+
+- :code:`speed_accuracy(instance)` - Returns nil, or the speed accuracy of the GPS in meters per second, if the information is available for the GPS instance.
+
+- :code:`horizontal_accuracy(instance)` - Returns nil, or the horizontal accuracy of the GPS in meters, if the information is available for the GPS instance.
+
+- :code:`vertical_accuracy(instance)` - Returns nil, or the vertical accuracy of the GPS in meters, if the information is available for the GPS instance.
+
+- :code:`velocity(instance)` - Returns a Vector3f that contains the velocity as observed by the GPS. You must check the status to know if the velocity is still current.
+
+- :code:`ground_speed(instance)` - Returns the ground speed of the vehicle in meters per second. You must check the status to know if the ground speed is still current.
+
+- :code:`ground_course(instance)` - Returns the ground course of the vehicle in degrees. You must check the status to know if the ground course is still current.
+
+- :code:`num_sats(instance)` - Returns the number of satellites that the GPS is currently tracking.
+
+- :code:`time_week(instance)` - Returns the GPS week number.
+
+- :code:`time_week_ms(instance)` - Returns the number of milliseconds into the current week.
+
+- :code:`get_hdop(instance)` - Returns the horizontal dilution of precision of the GPS instance.
+
+- :code:`get_vdop(instance)` - Returns the vertical dilution of precision of the GPS instance.
+
+- :code:`last_fix_time_ms(instance)` - Returns the time of the last fix in system milliseconds.
+
+- :code:`have_vertical_velocity(instance)` - Returns true if the GPS instance can report the vertical velocity.
+
+- :code:`get_antenna_offset(instance)` - Returns a Vector3f that contains the offsets of the GPS in meters in the body frame.
+
+- :code:`first_unconfigured_gps()` - Returns nil or the instance number of the first GPS that has not been fully configured. If all GPS's have been configured this returns 255 if all the GPS's have been configured.
+
+======
+Notify
+~~~~~~
+
+- :code:`play_tune(tune)` - Plays a MML tune through the buzzer on the vehicle. The tune is provided as a string.
 
 How to Add New Bindings
 =======================
