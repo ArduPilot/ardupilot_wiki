@@ -4,9 +4,12 @@
 Soaring
 =======
 
-The Autonomous Soaring functionality in ardupilot allows the plane to respond to 
+The autonomous soaring functionality in ArduPlane allows the plane to respond to 
 rising air current (thermals) in order to extend endurance and gain altitude with 
-minimal use of the motor (soaring).
+minimal use of the motor (soaring). Its full technical description is available in
+
+*S. Tabor, I. Guilliard, A. Kolobov.* `ArduSoar: an Open-Source Thermalling Controller for Resource-Constrained Autopilots <https://arxiv.org/abs/1802.08215/>`_. *International Conference on Intelligent Robots and Systems (IROS), 2018.*
+
 
 .. image:: ../../../images/thermalling.jpg
 
@@ -34,10 +37,7 @@ functionality:
    triggered, with the following exception. If the previous mode was FBWB or 
    CRUISE, and thermalling ended due to reaching SOAR_ALT_MIN, RTL will be
    triggered instead.
-   
-Technical details are available `here <https://arxiv.org/abs/1802.08215/>`_.
-
-
+  
 Setting up soaring
 ==================
 
