@@ -16,6 +16,7 @@ Open hardware
     The Cube <common-thecube-overview>
     Pixracer <common-pixracer-overview>
     CUAV v5 <common-pixhackV5-overview>
+    CUAV v5 Nano <common-cuav-v5nano-overview>
     Beagle Bone Blue <common-beagle-bone-blue>
     Erle-Brain <common-erle-brain-linux-autopilot>
     F4BY <common-f4by>
