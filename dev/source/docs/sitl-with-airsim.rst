@@ -19,6 +19,11 @@ Currently, only support for ArduCopter vehicle has been developed in AirSim & Ar
 
 AirSim is an excellent platform for testing and developing systems based on Computer Vision, etc. on simulated vehicles. It's a very feature-rich simulator with detailed environments and APIs (Python, C++, ROS) for collecting data. See the `main Airsim Readme <https://github.com/microsoft/AirSim#welcome-to-airsim>`__ for details and the features available.
 
+A demo of AirSim running with ArduPilot SITL
+
+.. youtube:: 0kE6gc7pn8M
+    :width: 100%
+
 
 Installing AirSim
 =================
@@ -178,7 +183,7 @@ Current `settings.json` file for launching Arducopter with Lidar
         "Altitude": 583
       },
       "Vehicles": {
-        "ArduCopter": {
+        "Copter": {
           "VehicleType": "ArduCopter",
           "UseSerial": false,
           "DefaultVehicleState": "Disarmed",
@@ -219,6 +224,16 @@ Launch Copter with Lidar using
 ::
 
     sim_vehicle.py -v ArduCopter -f airsim-copter --add-param-file=libraries/SITL/examples/Airsim/quadX_lidar.parm --console --map
+
+Manual Flying using RC
+^^^^^^^^^^^^^^^^^^^^^^
+Using an RC such as FrSky Taranis X9D Plus to fly manually is possible, you'll have to use the same branch as the Lidar for this.
+
+Just plug the device in the computer and it should work. See `AirSim's Remote Control page <https://github.com/microsoft/AirSim/blob/master/docs/remote_control.md>`__ for details on supported devices and FAQs.
+
+.. note::
+
+    This feature hasn't been tested properly as of now so you might need to modify the Joystick file as mentioned in the page or set some RC parameters, especially if using a different controller.
 
 
 Custom Environment
