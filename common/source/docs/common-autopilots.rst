@@ -15,7 +15,7 @@ Open hardware
     Pixhawk <common-pixhawk-overview>
     The Cube <common-thecube-overview>
     Pixracer <common-pixracer-overview>
-    CUAV v5 <common-pixhackV5-overview>
+    CUAV v5 Plus <common-cuav-v5plus-overview>
     CUAV v5 Nano <common-cuav-v5nano-overview>
     Beagle Bone Blue <common-beagle-bone-blue>
     Erle-Brain <common-erle-brain-linux-autopilot>
@@ -61,3 +61,4 @@ available if you're still working on those platforms:
 -  :ref:`NAVIO+ <common-navio-overview>`
 -  :ref:`PX4FMU <common-px4fmu-overview>` and (:ref:`PX4IO <common-px4io-overview>`)
 -  :ref:`Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>`
+-  :ref:`CUAV v5 <common-pixhackV5-overview>`
