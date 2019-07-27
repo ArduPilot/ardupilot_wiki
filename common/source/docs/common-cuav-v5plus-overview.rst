@@ -11,7 +11,7 @@ CUAV V5 Plus Overview
 The CUAV v5 Plus is an advanced STM32F765 autopilot designed and made by CUAV.
 It is a variant of the CUAV V5, updated to use Pixhawk standard pinouts.
 The modular design allows the users to customize their own carrier board.
-The Carrier Board design reference is 'here <Base board design reference：https://github.com/cuav/hardware/tree/master/V5_Autopilot/V5%2B/V5%2B_BASE)>`__
+The Carrier Board design reference is `here <Base board design reference：https://github.com/cuav/hardware/tree/master/V5_Autopilot/V5%2B/V5%2B_BASE)>`
 
 Specifications
 ==============
