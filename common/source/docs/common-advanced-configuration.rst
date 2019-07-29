@@ -57,6 +57,7 @@ tuning options for the vehicle.
     RC Output Channel Mapping <common-rcoutput-mapping>
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
+    Serial Passthrough <common-serial-passthrough>
 [site wiki="rover"]
     Steering Input Type and Reversing Behaviour <rover-steering-input-type-and-reversing-behaviour>
 [/site]
