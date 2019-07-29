@@ -1,8 +1,8 @@
 .. _common-rangefinder-maxbotix-analog:
 
-=================================
-Maxbotix Analog Sonar - Copter3.2
-=================================
+=====================
+Maxbotix Analog Sonar
+=====================
 
 `XL-Maxbotix-EZ <https://www.maxbotix.com/product-category/xl-maxsonar-ez-products/>`__
 line of analog sonars (XL-MaxSonar-EZ0, EZ4 and EZL0) are relatively
@@ -33,15 +33,6 @@ requires.
 .. image:: ../../../images/RangeFinder_MaxbotixAnalog_Pixhawk.jpg
     :target: ../_images/RangeFinder_MaxbotixAnalog_Pixhawk.jpg
 
-Connecting to the APM2.x
-========================
-
-The sonar should be connected to the APM's A0 port as shown below. The
-APM will provide the regulated 5V power supply the sonar requires.
-
-.. image:: ../../../images/RangeFinder_MaxbotixAnalog_APM2.jpg
-    :target: ../_images/RangeFinder_MaxbotixAnalog_APM2.jpg
-
 Setup through the mission planner
 =================================
 
@@ -49,8 +40,7 @@ please first connect with the Mission Planner and then open the
 Config/Tuning >> Full Parameter List page and set the following
 parameters:
 
--  RNGFND_PIN = "14" for Pixhawk's ADC 3.3v pin #2 **OR** "0" for
-   APM2.x
+-  RNGFND_PIN = "14" for Pixhawk's ADC 3.3v pin #2
 -  RNGFND_MAX_CM = "700" (i.e. 7m max range) if using EZ0 or EZ4,
    "1000" if using EZL0
 -  RNGFND_SCALING = "2.04" (i.e. 7m / 5v) if using EZ0 or EZ4, "4.08"
