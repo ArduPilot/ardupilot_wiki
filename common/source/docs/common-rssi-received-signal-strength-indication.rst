@@ -9,6 +9,7 @@ This article shows how to get the Received Signal Strength Indication
 
 .. image:: ../../../images/mp_hud_rssi.jpg
     :target: ../_images/mp_hud_rssi.jpg
+    :width: 400px
 
 Setting up RSSI on your flightcontroller
 ========================================
