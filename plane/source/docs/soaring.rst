@@ -4,7 +4,7 @@
 Soaring
 =======
 
-The autonomous soaring functionality in ArduPlane allows the plane to respond to 
+The autonomous soaring functionality in ArduPilot allows the plane to respond to 
 rising air current (thermals) in order to extend endurance and gain altitude with 
 minimal use of the motor (soaring). Its full technical description is available in
 
