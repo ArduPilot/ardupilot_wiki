@@ -13,7 +13,7 @@ When switched into Follow, the vehicle will attempt to follow another vehicle (o
 
    Follow is available in Rover-3.5 (and higher)
 
-The following parameters can be used to tune FlowHold's performance:
+The following parameters can be used to tune Follow mode's performance:
 
 -  :ref:`FOLL_ENABLE <FOLL_ENABLE>` : set to 1 to enable follow mode and refresh parameters
 -  :ref:`FOLL_SYSID <FOLL_SYSID>` : mavlink system id of lead vehicle ("0" means follow the first vehicle "seen")
