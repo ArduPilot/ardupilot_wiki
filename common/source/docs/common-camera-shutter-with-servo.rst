@@ -180,8 +180,7 @@ hardware is used to send the shutter signal to the camera. The following
 topics describe the hardware setup and configuration settings for a
 number of specific cameras/camera types:
 
--  `Camera Shutter Tutorial using
-   Stratosnapper <common-pixhawk-auto-camera-trigger-without-chdk>`__ -
+-  :ref:`Camera Shutter Tutorial using Stratosnapper <common-pixhawk-auto-camera-trigger-without-chdk>`__ -
    shows how to connect to a camera with an IR interface. The
    Stratosnapper can also be used to connect to cameras using other
    cables and protocols
