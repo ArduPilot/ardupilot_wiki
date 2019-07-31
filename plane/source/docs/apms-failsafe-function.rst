@@ -112,6 +112,10 @@ Meaning that when flying, our throttle values will range between 1100 -
    If you observe this behavior, your failsafe function has been set up
    correctly.
 
+.. note::
+
+   One can also use this function to command failsafe actions (CIRCLE then RTL) if a transmitter switch is configured to force the throttle channel to the THR_FS_VALUE. This allows the RTL mode to be evoked without using a mode channel switch position. If this is implemented, be careful if a radio calibration is ever redone, that it is not activated during the procedure, since the incorrect value for throttle minimum will be captured.
+
 **Transmitter Tutorials:**
 
 `Spektrum Setup <https://diydrones.com/profiles/blogs/spektrum-dx8-and-ar8000-failsafe-setup>`__
