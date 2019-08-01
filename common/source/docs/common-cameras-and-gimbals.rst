@@ -24,10 +24,15 @@ gimbals in which ArduPilot controls the stabilisation.
 -  :ref:`SToRM32 Gimbal Controller <common-storm32-gimbal>` — an inexpensive 2-axis or 3-axis brushless gimbal controller which responds to MAVLink commands (a richer format than PWM) over a serial interface
 -  :ref:`Tarot 2D Gimbal <common-tarot-gimbal>` — low cost 2-axis brushless gimbal
 
+Cameras with MAVLink interfaces
+===============================
+
+-  :ref:`FLIR Vue Pro <common-flir-vue-pro>`
+
 .. _common-cameras-and-gimbals_camera_shutter_triggering:
 
-Camera shutter triggering
-=========================
+Camera Control and GeoTagging
+=============================
 
 ArduPilot allows you to :ref:`configure the camera shutter output port <common-camera-shutter-with-servo>` (servo, relay). In :ref:`camera mission planning <common-camera-control-and-auto-missions-in-mission-planner>`
 you can specify when the camera shutter should trigger, or a distance
@@ -38,11 +43,12 @@ camera (including its shutter). The topics explain how to configure the
 camera shutter, and list a number of different approaches for converting
 the output signal into the form expected by your particular camera:
 
+-  :ref:`Airpixel Entire <common-geotagging-airpixel-entire>`
+-  :ref:`DROTAG x <common-geotagging-drotagx>`
 -  :ref:`Trigger Camera Directly from AUX Ports of the Pixhawk (No 3rd Party Device) <common-pixhawk-camera-trigger-setup>`
 -  :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter-with-servo>`
 -  :ref:`Camera Shutter Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
 -  :ref:`CHDK Camera Control Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
--  :ref:`FLIR Vue Pro <common-flir-vue-pro>`
 
 Detail topics
 =============
@@ -59,3 +65,5 @@ Detail topics
     Camera Shutter Trigger Boards for Purchase <common-camera-shutter-triggering-cables-for-purchase>
     CHDK Camera Control <common-chdk-camera-control-tutorial>
     FLIR Vue Pro <common-flir-vue-pro>
+    Airpixel Entire <common-geotagging-airpixel-entire>
+    DROTAG x <common-geotagging-drotagx>
