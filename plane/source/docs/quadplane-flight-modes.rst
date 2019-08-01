@@ -21,8 +21,8 @@ extra modes:
 
 If you are familiar with the equivalent Copter flight modes then you
 should be comfortable flying a QuadPlane. The only real difference comes
-during transition between fixed wing and QuadPlane flight, which is
-described below.
+during :ref:`Transistion<plane:quadplane-flying>` between fixed wing and QuadPlane flight and
+QRTL which will simultaneously head to home while climbing or descending towards Q_RTL_ALT at home, instead of climbing first like Copter, and will then will begin descent immediately upon reaching home position.
 
 .. tip::
 
@@ -55,5 +55,7 @@ These modes also make log analysis difficult. Please use FBWA mode instead of ST
 
 In the future we may adds ways to use the quad motors in these modes, but for now please avoid them.
 
-The other mode where the quad motors are disabled is MANUAL mode. 
+The other mode where the quad motors are disabled is MANUAL mode.
 That mode still can be useful for checking aircraft trim in fixed wing flight or for taxiing your aircraft.
+
+.. note:: If TILT_MASK is non-zero (:ref:`Tailsitter <plane:guide-tailsitter>` configuration), then some quad motors will be active in MANUAL mode since they are also used for forward propulsion.
