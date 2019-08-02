@@ -1,11 +1,10 @@
-.. _common-camera-shutter-triggering-for-sony-multiport-connectors-using-skysight-mono:
+.. _common-camera-trigger-skysight-mono:
 
-===========================================================================
-Camera Shutter Triggering for Sony MultiPort Connectors using SkySight MONO
-===========================================================================
+===================================================================
+Camera Triggering for Sony MultiPort Connectors using SkySight MONO
+===================================================================
 
-This article shows how to implement automatic camera shutter triggering
-for cameras equipped with the Sony MultiPort™ connector using `SkySight MONO <http://skysight.eu/?product=skysight-mono>`__.
+This article shows how to setup the `SkySight MONO <http://skysight.eu/?product=skysight-mono>`__ to trigger pictures on cameras equipped with the Sony MultiPort™ connector
 
 .. figure:: ../../../images/SkySightMono.jpg
    :target: ../_images/SkySightMono.jpg
