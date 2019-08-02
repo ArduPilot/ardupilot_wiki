@@ -52,7 +52,7 @@ next waypoint.
 At any time the pilot can retake control from the autopilot by returning
 the flight mode switch to another flight mode such as Stabilize or
 Loiter.  If the pilot then switches to AUTO again, the mission will
-restart from the first command.
+resume from the last command.
 
 During the mission the pilot's roll, pitch and throttle inputs are
 ignored but the yaw can be overridden with the yaw stick.  This allows
@@ -77,9 +77,7 @@ waypoint and the pilot will need to retake control with the transmitter.
 Remember that when using RTL, the copter will return to the "home"
 position which is the location where the copter was armed.
 
-As the copter touches down at the end of the mission the pilot should
-move the throttle to zero at which point the autopilot will disarm the
-motors if it also believes that it has landed.
+As the copter touches down at the end of the mission the vehicle should automatically disarm but occasionally the vehicle may not sense the landing and the pilot may need to hold the throttle down and takeoff in another mode like Stabilize or Loiter and then manually disarm the vehicle.
 
 Tuning
 ======
