@@ -27,7 +27,7 @@ This section contains articles about creating missions that will run when the Ar
 [/site]
     
     Mission Command List <common-mavlink-mission-command-messages-mav_cmd>
-    Camera Control and Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>
+    Camera Control in Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>
     Rally Points <common-rally-points>
     Geotagging Images with Mission Planner <common-geotagging-images-with-mission-planner>
 

@@ -1,17 +1,12 @@
 .. _common-camera-control-and-auto-missions-in-mission-planner:
 
-===================================================
-Camera Control and Auto Missions in Mission Planner
-===================================================
+===============================
+Camera Control in Auto Missions
+===============================
 
 This article describes ArduPilot's camera and gimbal commands, and
 explains how these can be used in Mission Planner to define camera
-survey missions.
-
-The instructions assume that the camera shutter/gimbal have already been
-:ref:`connected and configured <common-cameras-and-gimbals>`.
-
-[copywiki destination="copter,plane,rover,planner"]
+survey missions.  These instructions assume a :ref:`camera trigger and gimbal have already been connected and configured <common-cameras-and-gimbals>`.
 
 Overview
 ========
@@ -26,11 +21,6 @@ For simple missions you can manually specify the required waypoints and
 camera commands. For more complex paths and grid surveys Mission Planner
 makes things easy by providing tools to automatically generating the
 required mission for arbitrary regions.
-
-This article explains the available camera and gimbal commands. It also
-describes the auto-missions provided by Mission Planner and shows how
-these can be used to generate composite survey images of arbitrary
-regions.
 
 Camera commands
 ---------------
@@ -51,7 +41,7 @@ roll) or aim it at a specific region of interest (ROI):
 -  ``DO_MOUNT_CONTROL`` — Position the gimbal with the specified roll,
    pitch and yaw.
 
-Servo and relay commands
+Servo and Relay commands
 ------------------------
 
 Servos and relay outputs can be connected to hardware and activated
@@ -66,11 +56,7 @@ from still to video).
 
    The method used to connect your servo or relay to the camera, and
    what features are accessible, will depend the camera and its supported
-   remote-control mechanism(s). Depending on the camera manufacturer, you
-   may find hints at how this can be done in these
-   :ref:`CHDK <common-chdk-camera-control-tutorial>` and
-   :ref:`Camera Triggering using Stratosnapper <common-camera-trigger-stratosnapperv2>`
-   tutorials.
+   remote-control mechanism(s) (see the :ref:`Camera Control and GeoTagging section of the Cameras and Gimbals wiki page <common-cameras-and-gimbals>`)
 
 Auto-mission types
 ==================
@@ -129,6 +115,7 @@ The final mission with waypoints and camera triggers looks like this:
 
 .. image:: ../../../images/mp_camera_control_mission.jpg
     :target: ../_images/mp_camera_control_mission.jpg
+    :width: 450px
 
 The test mission shown above was run. It generated 15 images, which have
 been stitched together. A thumbnail of the composite image is shown
@@ -136,11 +123,7 @@ below (because the full size image is too large at about 107 MBytes).
 
 .. image:: ../../../images/Mortierthumbnail2.jpg
     :target: ../_images/Mortierthumbnail2.jpg
-
-.. note::
-
-   This section was originally part of the article :ref:`Camera Triggering using Stratosnapper <common-camera-trigger-stratosnapperv2>` (by
-   Hugues)
+    :width: 450px
 
 Creating composite images
 =========================
@@ -157,3 +140,5 @@ images:
 
 .. |surveyexample| image:: ../../../images/surveyexample.jpg
     :target: ../_images/surveyexample.jpg
+
+[copywiki destination="copter,plane,rover,planner"]
