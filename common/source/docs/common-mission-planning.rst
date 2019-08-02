@@ -4,7 +4,7 @@
 Mission Planning
 ================
 
-This section contains articles about creating missions that will run when the ArduPilot is set to :ref:`AUTO <auto-mode>` mode.
+This section contains articles about creating missions that will run when the vehicle switched to :ref:`AUTO <auto-mode>` mode.
 
 .. figure:: ../../../images/mp_flight_plan_screen.jpg
   :target: ../_images/mp_flight_plan_screen.jpg
