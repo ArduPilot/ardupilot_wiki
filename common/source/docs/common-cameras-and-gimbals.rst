@@ -45,6 +45,9 @@ the output signal into the form expected by your particular camera:
 
 -  :ref:`Airpixel Entire Geotagger <common-geotagging-airpixel-entire>`
 -  :ref:`DROTAG x Geotagger  <common-geotagging-drotagx>`
+-  :ref:`Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>`
+-  :ref:`Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>`
+-  :ref:`Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>`
 -  :ref:`Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>`
 -  :ref:`Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>`
 -  :ref:`StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>`
@@ -66,7 +69,10 @@ Detail topics
     FLIR Vue Pro Thermal Camera <common-flir-vue-pro>
     Airpixel Entire Geotagger <common-geotagging-airpixel-entire>
     DROTAG x Geotagger <common-geotagging-drotagx>
-    Seagull REC Camera Trigger<common-camera-trigger-seagull-rec>
+    Seagull IR Camera Trigger <common-camera-trigger-seagull-ir>
+    Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>
+    Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>
+    Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>
     Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>
     StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>
     Camera Trigger Directly from AUX Ports <common-pixhawk-camera-trigger-setup>
