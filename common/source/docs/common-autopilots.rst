@@ -23,11 +23,11 @@ Open hardware
     Hex/ProfiCNC Cube Orange <http://www.proficnc.com/all-products/188-the-cube.html>
     Hex/ProfiCNC Cube Purple <http://www.proficnc.com/all-products/176-the-cube.html>
     Hex/ProfiCNC Cube Yellow <http://www.proficnc.com/all-products/187-the-cube.html>
+    mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
-    MRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/mro-x2.1rv2-mr.htm>
-    MRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/mro-x2.1-777-mr.htm>
+    mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/mro-x2.1rv2-mr.htm>
+    mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/mro-x2.1-777-mr.htm>
     OpenPilot Revolution <common-openpilot-revo-mini>
-    Pixhawk <common-pixhawk-overview>
     PocketPilot <https://github.com/PocketPilot/PocketPilot>
     TauLabs Sparky2 <common-taulabs-sparky2>
     
