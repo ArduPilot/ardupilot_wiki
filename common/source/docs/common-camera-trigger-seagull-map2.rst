@@ -7,10 +7,10 @@ Camera Triggering using Seagull MAP2
 .. image:: ../../../images/camera-trigger-seagull-map2.png
     :width: 450px
 
-This article shows how connect and configure the `Seagull MAP2 <http://www.seagulluav.com/product/seagull-map2/>`__ so that ArduPilot can trigger a camera shutter from the pilot's transmitter or during :ref:`camera missions <common-camera-control-and-auto-missions-in-mission-planner>`.  More detailed instructions are provided in the `Seagull MAP2 Manual <https://www.seagulluav.com/manuals/Seagull_MAP2-Manual.pdf>`__ and `Seagull MAP2 product support page <https://www.seagulluav.com/seagull-map2-support>`__.
+This article shows how connect and configure the `Seagull MAP2 <https://www.seagulluav.com/product/seagull-map2/>`__ so that ArduPilot can trigger a camera shutter from the pilot's transmitter or during :ref:`camera missions <common-camera-control-and-auto-missions-in-mission-planner>`.  More detailed instructions are provided in the `Seagull MAP2 Manual <https://www.seagulluav.com/manuals/Seagull_MAP2-Manual.pdf>`__ and `Seagull MAP2 product support page <https://www.seagulluav.com/seagull-map2-support>`__.
 
 
-The :ref:`list of supported cameras can be found `here on Seagull UAVs Cable Finder page <https://www.seagulluav.com/map-cable-finder/>`__
+The list of supported cameras can be found `here on Seagull UAVs Cable Finder page <https://www.seagulluav.com/map-cable-finder/>`__
 
 The board supports two trigger modes which are determined by the servo PWM output set in the :ref:`Camera Shutter Configuration <common-camera-shutter-with-servo>` in Mission Planner:
 
@@ -27,7 +27,7 @@ If used with Sony "Multi" cameras, Seagull MAP2 also supports turning the camera
 Parts and hardware connections
 ==============================
 
-The Seagull MAP2 can be `purchased from Seagull UAV <http://www.seagulluav.com/product/seagull-map2/>`__ and comes with a
+The Seagull MAP2 can be `purchased from Seagull UAV <https://www.seagulluav.com/product/seagull-map2/>`__ and comes with a
 servo cable included. The camera cables has to be purchased separately - please use the `Cable Finder <https://www.seagulluav.com/map-cable-finder/>`__ page to determine which cable is needed.
 
 Below is a list of the cables offered by Seagull UAV:
