@@ -131,8 +131,8 @@ than that, and can change to a throw of 1000 to 2000.
 Mixing Gain
 ===========
 
-The MIXING_GAIN parameter is critical for elevon aircraft. It is the
-gain used in mixing between roll and pitch output and your elevon
+The :ref:`MIXING_GAIN<MIXING_GAIN>` parameter is critical for elevon aircraft. It is the
+gain used in mixing between roll and pitch input and your elevon
 movement.
 
 For example, if your MIXING_GAIN is 0.5, then the following outputs
@@ -141,9 +141,25 @@ are used:
 - LEFT_ELEVON = (roll+pitch)*0.5
 - RIGHT_ELEVON = (roll-pitch)*0.5
 
-By adjusting the MIXING_GAIN you can quickly setup the right throws of
-your elevon aircraft.
-  
+So, simultaneous full roll and  full pitch input will result in maximum travel of the elevons if mixing gain is 0.5. But if just full roll or pitch is input, maximum elevon deflection would be only 50%.  
+
+If more deflection is desired when using only one control input, the mixing gain can be increased. However, with gains above 0.5, surface deflection will be saturated at some point when both inputs are simultaneously applied. For example, if you use a gain of 1.0, and apply full roll, you will obtain the maximum elevon deflection possible to produce roll. But then adding in pitch while holding full roll input, will reduce the effective roll deflection because one elevon deflection is already saturated.
+
+Mixing Offset
+=============
+
+The :ref:`MIXING_OFFSET<MIXING_OFFSET>` parameter allows increasing the sensitivity of either roll or pitch inputs by effectively multiplying the stick input. A value between -1000 and +1000 can be used, with 0 having no effect.
+
+If a negative value is used, the pitch input is multiplied, while the roll input is unaffected. If  positive, only roll is affected.
+
+The amount the stick input value is multiplied is given by:
+
+Multiplier in % = 100 + | MIXING_OFFSET |
+
+So, if MIXING_OFFSET = 100 then roll inputs will be multiplied by 2...so when the aileron stick is deflected halfway, full throw will be effectively input.CAUTION: Roll stick inputs above half will have no further effect.
+
+
+
 Final Setup
 ===========
 
