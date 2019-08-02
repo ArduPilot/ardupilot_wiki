@@ -5,9 +5,7 @@ Camera Trigger Setup for Pixhawk
 ================================
 
 .. image:: ../../../images/CTimage0.png
-
-
-    
+    :width: 450px
 
 This guide is intended to help you modify a remote shutter release cable
 for use with APM/Pixhawk Flight Controllers and setup the flight
@@ -21,20 +19,11 @@ Items Required
 ==============
 
 -  Sony A6000 (or other camera with wire shutter release)
-
--  Pixhawk or APM Flight Controller
-
--  Remote Shutter Release Cable (Click `*HERE* <https://www.amazon.com/SHOOT-DSC-RX100M3-DSC-RX100M20-DSC-RX100II-DSC-RX100III/dp/B00ME7N6P8/ref=sr_1_1?ie=UTF8&qid=1496578319&sr=8-1&keywords=Sony+A6000+Shutter+Release+Cable>`__\ for
-       a link to an affordable solution)
-
--  Servo Pins
-       (`*LINK* <https://www.digikey.com/products/en?keywords=952-2157-1-ND>`__)
-
--  Servo Pin Crimper
-       (`*LINK* <https://www.amazon.com/ServoCity-Production-Pin-Crimpers/dp/B00UXYW2FE/ref=sr_1_2?ie=UTF8&qid=1496578466&sr=8-2&keywords=Servo+Pin+Crimper>`__)
-
+-  ArduPilot compatible flight controller
+-  Remote Shutter Release Cable (`see here for an affordable solution <https://www.amazon.com/SHOOT-DSC-RX100M3-DSC-RX100M20-DSC-RX100II-DSC-RX100III/dp/B00ME7N6P8/ref=sr_1_1?ie=UTF8&qid=1496578319&sr=8-1&keywords=Sony+A6000+Shutter+Release+Cable>`__)
+-  Servo Pins (`link <https://www.digikey.com/products/en?keywords=952-2157-1-ND>`__)
+-  Servo Pin Crimper (`link <https://www.servocity.com/pin-crimpers>`__)
 -  Wire Stripper or Razor Blade
-
 -  Laptop with Mission Planner Installed
 
 **Step 1:** Preparing the Remote Shutter Release Cable
@@ -42,22 +31,17 @@ Items Required
     a) Trim the Remote Shutter Release Cable to the desired cable length
 
 .. image:: ../../../images/CTimage2.png
+    :width: 450px
 
-
-
-b) Strip off approximately 2-3cm of the black sleeve making sure not to
-       damage the 3 wires contained within the sleeve.
+b) Strip off approximately 2-3cm of the black sleeve making sure not to damage the 3 wires contained within the sleeve.
 
 .. image:: ../../../images/CTimage3.png
+    :width: 450px
 
-c) Remove approximately 3mm of the sleeves off of each of the three
-       wires. You will need to make sure that there is enough of the
-       sleeve removed that when the servo pin is crimped to the wire
-       that there is contact between the pin and the exposed wire.
+c) Remove approximately 3mm of the sleeves off of each of the three wires. You will need to make sure that there is enough of the sleeve removed that when the servo pin is crimped to the wire that there is contact between the pin and the exposed wire.
 
 .. image:: ../../../images/CTimage4.png
-
-
+    :width: 450px
 
 The three wires have the following functions:
 
@@ -75,15 +59,13 @@ nothing happens but shorting the GREEN AND BLACK results in the camera
 exposing, then you know that the BLACK wire is ground, GREEN is shutter
 and BLUE is focus.
 
-d) Twist the exposed ends of the FOCUS and GROUND wires together then
-       crimp a servo connector to the pair as well as to the exposed end
-       of the SHUTTER wire.
+d) Twist the exposed ends of the FOCUS and GROUND wires together then crimp a servo connector to the pair as well as to the exposed end of the SHUTTER wire
 
 .. image:: ../../../images/CTimage5.png
-
-
+    :width: 450px
 
 .. image:: ../../../images/CTimage6.png
+    :width: 450px
 
 TIP: The Servo Pin has two sets of tabs which after crimping will fold
 on each other and secure the wire. To make life a little easier, use a
@@ -92,17 +74,15 @@ the servo pin tightly against the wires. This will prevent the wires
 from coming out of the servo pin while trying to crimp them.
 
 .. image:: ../../../images/CTimage7.png
-
-
+    :width: 450px
 
 .. image:: ../../../images/CTimage8.png
+    :width: 450px
 
-e) Insert the Servo Pins into a Servo connector, one pin on each side of
-       the middle slot of the servo connector.
+e) Insert the Servo Pins into a Servo connector, one pin on each side of the middle slot of the servo connector.
 
 .. image:: ../../../images/CTimage9.png
-
-
+    :width: 450px
 
 The cable is now ready for connection to your Pixhawk or APM Flight
 Controller. Note that the Shutter Pin (in this case the RED wire) will
@@ -110,27 +90,24 @@ be on the SIGNAL side of the Auxiliary port while the WHITE/YELLOW wire
 will be on the GROUND side of the Auxiliary port.
 
 .. image:: ../../../images/CTimage10.png
+    :width: 450px
 
 **Step 2:** Setting up your Pixhawk/APM flight controller to trigger
 your camera via the Shutter Release Cable
 
-a) Connect to your Pixhawk/APM Flight Controller via Mission Planner
-       either through direct USB connection or wireless telemetry link.
+a) Connect to your Flight Controller via Mission Planner either through direct USB connection or wireless telemetry link.
 
 b) Connect your modified shutter release cable to AUX 1 on the Pixhawk
        (CH9 on APM) making sure to maintain the correct orientation for
        polarity.
 
-
-
 .. image:: ../../../images/CTimage11.png
+    :width: 450px
 
-c) Connect the shutter release cable to your camera and power the camera
-       on.
+c) Connect the shutter release cable to your camera and power the camera on
 
 .. image:: ../../../images/CTimage12.png
-
-
+    :width: 450px
 
 Since we have shorted the FOCUS and GROUND wires, the camera should
 automatically pull focus. As of now, I have not found a way to connect
@@ -143,77 +120,51 @@ i.  Pre-Shutter Focus
 
 ii. Continuous Auto-Focus
 
-d) In Mission Planner, navigate to INITIAL SETUP -> CAMERA GIMBAL and
-       change the SHUTTER drop-down menu to “RELAY”
+d) In Mission Planner, navigate to INITIAL SETUP -> CAMERA GIMBAL and change the SHUTTER drop-down menu to “RELAY”
 
 .. image:: ../../../images/CTimage13.png
+    :width: 450px
 
 NOTE: You can play around with the “Duration” values to increase or
 decrease the responsiveness of the shutter command. With the Sony A6000,
 a duration of 1/10\ :sup:`th` of a Second functions perfectly.
 
-
-
-e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission
-       Planner and change the CH7 OPT to “Camera Trigger”. This will be
-       necessary if you intend to use your remote controls CH7 to
-       trigger the camera in addition to having the flight controller
-       trigger the camera.
+e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission Planner and change the CH7 OPT to “Camera Trigger”. This will be necessary if you intend to use your remote controls CH7 to trigger the camera in addition to having the flight controller trigger the camera.
 
 .. image:: ../../../images/CTimage14.png
+    :width: 450px
 
-f) Navigate to the FULL PARAMETER LIST under the main
-
-    CONFIG/TUNING tab and locate the “CAM\_TRIG\_TYPE” parameter. This
-    parameter must show as 1 for “RELAY”. If it is not set to 1, change
-    this parameter to 1 before proceeding to the next step.
-
-
+f) Navigate to the FULL PARAMETER LIST under the main CONFIG/TUNING tab and locate the “CAM\_TRIG\_TYPE” parameter. This parameter must show as 1 for “RELAY”. If it is not set to 1, change this parameter to 1 before proceeding to the next step.
 
 .. image:: ../../../images/CTimage15.png
+    :width: 450px
 
-g) Scroll down through the parameters until you get to “RELAY\_PIN”.
-       Here you will want to set the “RELAY\_PIN” parameter to match the
-
-    AUX Port you have connected the shutter release cable to. Since we
-    have connected the cable to AUX1 on a Pixhawk, we need to change the
-    “RELAY\_PIN” parameter to “50” (50:Pixhawk AUXOUT1). If you are
-    connecting to an APM, then you will need to change this parameter to
-    “13”.
+g) Scroll down through the parameters until you get to “RELAY\_PIN”. Here you will want to set the “RELAY\_PIN” parameter to match the AUX Port you have connected the shutter release cable to. Since we have connected the cable to AUX1 on a Pixhawk, we need to change the “RELAY\_PIN” parameter to “50” (50:Pixhawk AUXOUT1). If you are connecting to an APM, then you will need to change this parameter to “13”.
 
 .. image:: ../../../images/CTimage16.png
+    :width: 450px
 
-
-
-h) Now that the required parameters have been changed, click on
-
-    “WRITE PARAMS”
+h) Now that the required parameters have been changed, click on “WRITE PARAMS”
 
 .. image:: ../../../images/CTimage17.png
+    :width: 450px
 
 **Step 3:** Testing the Remote Shutter Cable and Flight Controller
 
 Now that the cable has been modified and connected to the Pixhawk/APM
 which has been setup to trigger the camera via relay, let’s test it.
 
-a) Navigate back to the FLIGHT DATA Screen and right click on the map to
-       select “TRIGGER CAMERA NOW”
+a) Navigate back to the FLIGHT DATA Screen and right click on the map to select “TRIGGER CAMERA NOW”
 
 .. image:: ../../../images/CTimage18.png
-
-
+    :width: 450px
 
 Once clicked, you should hear or see the camera expose. If the camera
 does not expose, check the following:
 
--  Correct Orientation of cables (ie, Shutter Wire is connected to the
-       SIGNAL pin on the correct port of the flight controller and
-       Ground is connected to Ground)
-
+-  Correct Orientation of cables (ie, Shutter Wire is connected to the SIGNAL pin on the correct port of the flight controller and Ground is connected to Ground)
 -  Camera is On and not in an Error State
-
--  Camera lens is not too close to an object which may cause it to be
-       unable to autofocus and expose
+-  Camera lens is not too close to an object which may cause it to be unable to autofocus and expose
 
 If you still are not getting the camera to expose and all of the
 above-mentioned check points are not a problem, then you may want to
@@ -225,5 +176,4 @@ party hardware!
 
 Many thanks to Oliver Volkmann and `*www.microaerialprojects.com* <http://www.microaerialprojects.com/>`__
 for contributing this page.
-
 
