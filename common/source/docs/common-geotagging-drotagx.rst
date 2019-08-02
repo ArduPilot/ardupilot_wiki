@@ -8,7 +8,7 @@ DROTAG x for Geotagging
     :target: https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/
     :width: 450px
 
-DROTAGx enables non drone experts to get professional survey level results with it's easy to use and included accessories:
+`DROTAGx <https://www.airborneprojects.com/product/drotag-onboard-image-tagging-computer/>`__ enables non drone experts to get professional survey level results with it's easy to use and included accessories:
 
 -   Photo tagging directly on the camera card itself
 -   Have a plain text log file with geographical data in the camera card itself.
@@ -21,7 +21,7 @@ DROTAGx enables non drone experts to get professional survey level results with 
 -   Also tags RAW photos
 -   Customer support
 
-More details can be found in the `DROTAGx manual <https://www.airborneprojects.com/docs/drotagx_manual.pdf>`_ (airborneprojects.com) including pre-flight checklists, detailed explanations for diagnosis and other tips.
+More details can be found in the `DROTAGx manual <https://www.airborneprojects.com/docs/drotagx_manual.pdf>`__ (airborneprojects.com) including pre-flight checklists, detailed explanations for diagnosis and other tips.
 
 Acknowledgements
 ================
