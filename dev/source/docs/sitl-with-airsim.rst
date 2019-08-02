@@ -190,7 +190,7 @@ Current `settings.json` file for launching Arducopter with Lidar
           "UdpIp": "127.0.0.1",
           "UdpPort": 9003,
           "SitlPort": 9002,
-              "AutoCreate": true,
+          "AutoCreate": true,
           "Sensors": {
             "Imu": {
               "SensorType": 2,
@@ -235,6 +235,63 @@ Just plug the device in the computer and it should work. See `AirSim's Remote Co
 
     This feature hasn't been tested properly as of now so you might need to modify the Joystick file as mentioned in the page or set some RC parameters, especially if using a different controller.
 
+Multi-Vehicle Simulation
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+For simulating 2 copters, a example script has been added which will create 2 copter instances and enable Follow mode in one of them.
+
+``settings.json`` for 2 copters
+
+::
+
+    {
+      "SettingsVersion": 1.2,
+      "LocalHostIp": "127.0.0.1",
+      "SimMode": "Multirotor",
+      "OriginGeopoint": {
+        "Latitude": -35.363261,
+        "Longitude": 149.165230,
+        "Altitude": 583
+      },
+      "Vehicles": {
+        "Copter1": {
+          "VehicleType": "ArduCopter",
+          "UseSerial": false,
+          "DefaultVehicleState": "Disarmed",
+          "UdpIp": "127.0.0.1",
+          "UdpPort": 9003,
+          "SitlPort": 9002
+        },
+        "Copter2": {
+          "VehicleType": "ArduCopter",
+          "UseSerial": false,
+          "DefaultVehicleState": "Disarmed",
+          "UdpIp": "127.0.0.1",
+          "UdpPort": 9013,
+          "SitlPort": 9012,
+          "X": 0, "Y": 3, "Z": 0
+        }
+      }
+    }
+
+Press Play, cd to ardupilot directory then run the script to launch 2 copter instances.
+You can specify the IP address of the computer with the GCS, if everything is on the same computer, use 127.0.0.1
+
+::
+
+    libraries/SITL/examples/Airsim/follow-copter.sh 127.0.0.1
+
+To attach MAVProxy -
+
+::
+
+    mavproxy.py --master=127.0.0.1:14550 --source-system 1 --console --map
+
+This will bring up the map but with only a single vehicle, use the ``vehicle`` command to switch between controlling the vehicles such as with ``vehicle 1`` & ``vehicle 2``, after which both the vehicles should be appearing on the map
+
+Now, you can have the first vehicle (i,e with SYSID 1) flying in Guided or Auto Mission, and then takeoff the second vehicle and put it in Follow mode, after which the second copter will follow the first one.
+
+For increasing the number of simulated vehicles, just modify the ``seq`` number in the script.
 
 Custom Environment
 ++++++++++++++++++
@@ -277,7 +334,13 @@ A ROS wrapper has also been added. See `airsim_ros_pkgs <https://github.com/micr
 Run on different machines
 +++++++++++++++++++++++++
 
-Change ``UdpIp`` to the IP address of the machine running Ardupilot, use ``--sim-address`` to specify Airsim's IP address
+Change ``UdpIp`` to the IP address of the machine running Ardupilot, use ``-A`` option to pass the next arguments to the SITL instance, followed by ``--sim-address`` to specify Airsim's IP address
+
+An example-
+
+::
+
+    sim_vehicle.py -v ArduCopter -f airsim-copter --add-param-file=libraries/SITL/examples/Airsim/quadX.parm --console --map -A --sim-address=127.0.0.1
 
 
 Using different ports
@@ -287,8 +350,10 @@ Using different ports
 
 ``SitlPort`` assigns the motor control port on which Airsim receives the rotor control message
 
-- ``--sim-port-in`` should be equal to sensor port i.e. ``UdpPort``
-- ``--sim-port-out`` should be equal to motor control port i.e. ``SitlPort``
+- ``--sim-port-in`` should be equal to sensor port i.e. port specified in ``UdpPort``
+- ``--sim-port-out`` should be equal to motor control port i.e. port specified in ``SitlPort``
+
+Similar to changing the IP address as mentioned above, use ``-A`` to pass the arguments to the SITL instance.
 
 Development Workflow
 ++++++++++++++++++++
