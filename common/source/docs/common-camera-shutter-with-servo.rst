@@ -125,26 +125,6 @@ The main steps are:
    to indicate whether the feedback pin (hotshoe voltage) goes high or
    low when the picture is taken.
 
-Shutter configuration with APM 2.x
-==================================
-
-APM2.x has dedicated servo and relay ports, so unlike for Pixhawk, there
-is no need to separately specify the trigger type (``CAM_TRIGG_TYPE``).
-Pins **A10** or **A11** are used for servos (*Mission Planner* refers to
-these as RC10 and RC11, respectively). Pin **A9** is used for relays on
-APM2.x (*Mission Planner* refers to this as *Relay* in the shutter
-selection drop-down.)
-
-.. figure:: ../../../images/apm2_analog_pins2.jpg
-   :target: ../_images/apm2_analog_pins2.jpg
-   
-   APM Analog Pins
-
-All configuration is done in the *Camera Gimbal Configuration Screen*.
-The configuration settings are exactly the same as for Pixhawk, except
-that you need to select **Relay** in *Shutter* drop-down list for a
-relay shutter trigger.
-
 Manually trigger the camera shutter
 ===================================
 
