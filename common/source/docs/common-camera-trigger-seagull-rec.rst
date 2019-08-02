@@ -7,7 +7,7 @@ Camera Triggering using Seagull REC
 .. image:: ../../../images/camera-trigger-seagull-rec.png
     :width: 450px
 
-`Seagull REC <http://www.seagulluav.com/product/seagull-rec/>`__ provides everything needed to connect a Pixhawk to a supported Sony MultiPort™ equipped camera in order to automate camera shutter triggering. The current list of compatible cameras `can be found here <https://www.seagulluav.com/product/seagull-rec/>`__
+`Seagull REC <https://www.seagulluav.com/product/seagull-rec/>`__ provides everything needed to connect a Pixhawk to a supported Sony MultiPort™ equipped camera in order to automate camera shutter triggering. The current list of compatible cameras `can be found here <https://www.seagulluav.com/product/seagull-rec/>`__
 
 The board supports three shutter trigger modes: 
 

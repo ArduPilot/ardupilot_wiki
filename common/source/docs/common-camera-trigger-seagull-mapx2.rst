@@ -9,7 +9,7 @@ Camera Triggering using Seagull MAP-X2
 
 The `Seagull MAP-X2 <https://www.seagulluav.com/product/seagull-map-x2/>`__ is a precision camera shutter trigger and logger. It can be connected to Pixhawk or other ArduPilot compatible flight controller in order to automate camera shutter triggering and log the precise co-ordinates of each photo for geotagging purposes. 
 
-The current list of compatible cameras can be found on `Seagull MAP Cable Finder <https://www.seagulluav.com/map-cable-finder/>`__.
+The current list of compatible cameras can be found on `Seagull Cable Finder <https://www.seagulluav.com/map-cable-finder/>`__.
 
 Seagull MAP-X2 utilizes event based logging for extra precision if used with the `Seagull SYNC2 Hot Shoe Adapter <https://www.seagulluav.com/product/seagull-sync2/>`__
 
