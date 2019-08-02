@@ -43,12 +43,15 @@ camera (including its shutter). The topics explain how to configure the
 camera shutter, and list a number of different approaches for converting
 the output signal into the form expected by your particular camera:
 
--  :ref:`Airpixel Entire <common-geotagging-airpixel-entire>`
--  :ref:`DROTAG x <common-geotagging-drotagx>`
--  :ref:`Trigger Camera Directly from AUX Ports of the Pixhawk (No 3rd Party Device) <common-pixhawk-camera-trigger-setup>`
--  :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter-with-servo>`
--  :ref:`Camera Shutter Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
--  :ref:`CHDK Camera Control Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
+-  :ref:`Airpixel Entire Geotagger <common-geotagging-airpixel-entire>`
+-  :ref:`DROTAG x Geotagger  <common-geotagging-drotagx>`
+-  :ref:`Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>`
+-  :ref:`Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>`
+-  :ref:`StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>`
+-  :ref:`Camera Triggering Directly from AUX Ports <common-pixhawk-camera-trigger-setup>`
+-  :ref:`Camera Triggering Configuration <common-camera-shutter-with-servo>`
+-  :ref:`Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
+-  :ref:`Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
 
 Detail topics
 =============
@@ -57,13 +60,17 @@ Detail topics
     :maxdepth: 1
 
     Servo Gimbal <common-camera-gimbal>
-    SimpleBGC Gimbal <common-simplebgc-gimbal>
+    SimpleBGC Gimbal Controller <common-simplebgc-gimbal>
     SToRM32 Gimbal Controller <common-storm32-gimbal>
     Tarot 2D Gimbal <common-tarot-gimbal>
-    Camera Shutter Configuration <common-camera-shutter-with-servo>
+    FLIR Vue Pro Thermal Camera <common-flir-vue-pro>
+    Airpixel Entire Geotagger <common-geotagging-airpixel-entire>
+    DROTAG x Geotagger <common-geotagging-drotagx>
+    Seagull REC Camera Trigger<common-camera-trigger-seagull-rec>
+    Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>
+    StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>
+    Camera Trigger Directly from AUX Ports <common-pixhawk-camera-trigger-setup>
+    Camera Triggering Configuration <common-camera-shutter-with-servo>
     Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
+    Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
     Camera Shutter Trigger Boards for Purchase <common-camera-shutter-triggering-cables-for-purchase>
-    CHDK Camera Control <common-chdk-camera-control-tutorial>
-    FLIR Vue Pro <common-flir-vue-pro>
-    Airpixel Entire <common-geotagging-airpixel-entire>
-    DROTAG x <common-geotagging-drotagx>
