@@ -4,22 +4,15 @@
 Mission Planning
 ================
 
-This section contains articles about Mission Planning; creating
-automated missions that will run when the ArduPilot is set to
-:ref:`AUTO <auto-mode>` mode.
+This section contains articles about creating missions that will run when the ArduPilot is set to :ref:`AUTO <auto-mode>` mode.
+
+.. figure:: ../../../images/mp_flight_plan_screen.jpg
+  :target: ../_images/mp_flight_plan_screen.jpg
+  :width: 450px
 
 .. note::
 
-   The examples demonstrate mission planning using :ref:`Mission Planner <planner:home>`, a fully-functioned
-   Windows-based Ground Control Station (GCS) that you can :ref:`download and install from here <planner:install-mission-planner>`.
-
-   .. figure:: ../../../images/mp_flight_plan_screen.jpg
-      :target: ../_images/mp_flight_plan_screen.jpg
-
-      Mission Planner: Flight Plan Screen
-
-   The main concepts will also apply to other :ref:`Ground Control Stations <common-choosing-a-ground-station>` (although the details of
-   the user interface will differ).
+   The instructions focus on the :ref:`Mission Planner <planner:home>` but the main concepts apply to other :ref:`Ground Control Stations <common-choosing-a-ground-station>` as well
 
 .. toctree::
     :maxdepth: 1
