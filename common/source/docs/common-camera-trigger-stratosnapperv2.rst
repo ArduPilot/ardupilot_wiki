@@ -1,8 +1,8 @@
-.. _common-pixhawk-auto-camera-trigger-without-chdk:
+.. _common-camera-trigger-stratosnapperv2:
 
-=============================================
-Camera Shutter Triggering using Stratosnapper
-=============================================
+=======================================
+Camera Triggering using StratosnapperV2
+=======================================
 
 This tutorial shows how to automatically trigger the camera shutter from
 ArduPilot using a Pixhawk and `Stratosnapper V2 <http://littlesmartthings.com/product/stratosnapper-2/>`__ (with an

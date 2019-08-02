@@ -69,7 +69,7 @@ from still to video).
    remote-control mechanism(s). Depending on the camera manufacturer, you
    may find hints at how this can be done in these
    :ref:`CHDK <common-chdk-camera-control-tutorial>` and
-   :ref:`Stratosnapper <common-pixhawk-auto-camera-trigger-without-chdk>`
+   :ref:`Camera Triggering using Stratosnapper <common-camera-trigger-stratosnapperv2>`
    tutorials.
 
 Auto-mission types
@@ -139,7 +139,7 @@ below (because the full size image is too large at about 107 MBytes).
 
 .. note::
 
-   This section was originally part of the article :ref:`Camera Shutter Tutorial using Stratosnapper <common-pixhawk-auto-camera-trigger-without-chdk>` (by
+   This section was originally part of the article :ref:`Camera Triggering using Stratosnapper <common-camera-trigger-stratosnapperv2>` (by
    Hugues)
 
 Creating composite images
