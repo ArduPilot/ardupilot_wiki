@@ -159,4 +159,3 @@ Additional resources and Examples
 -  `Creating Maps from Drone Imagery - 3DRobotics and Aero drone <https://www.mapbox.com/blog/processing-drone-imagery/>`__
 -  `Ecosynth wiki - a suite of tools used to map vegetation in 3d using
    off-the-shelf digital cameras and open-source computer vision software <http://wiki.ecosynth.org/index.php?title=Main_Page>`__ 
-- :ref:`Triggering non-CHDK cameras from Pixhawk <common-pixhawk-auto-camera-trigger-without-chdk>`
