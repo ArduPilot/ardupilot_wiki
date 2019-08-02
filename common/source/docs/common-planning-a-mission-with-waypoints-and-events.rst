@@ -42,8 +42,7 @@ In the screenshot below, a Copter mission starts with an auto takeoff to
 20 meters altitude; then goes to WP 2 rising to 100 meters altitude on
 the way, then waits 10 seconds; then the craft will proceed to WP 3
 (descending to 50 meters altitude on the way), then returns to launch.
-Since the default altitude is 100 meters, the return to launch will be
-at 100 meters.  After reaching the launch position, the craft will land.
+After reaching the launch position, the craft will land.
 The mission assumes that the launch position is set at the home
 position.
 
@@ -62,10 +61,6 @@ launch altitude/home position, so if you set 100m, for example, it will
 fly 100m above you.
 
 **Default Alt** is the default altitude when entering new waypoints.
-It's also the altitude RTL (return to launch) mode will fly at if you
-have **Hold Default ALT** checked; if you don't have that checked, your
-aircraft will try to maintain the altitude it was at when you switched
-on RTL.
 
 **Verify height** means that the Mission Planner will use Google Earth
 topology data to adjust your desired altitude at each waypoint to
