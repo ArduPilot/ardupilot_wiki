@@ -4,30 +4,12 @@
 Camera Triggering using StratosnapperV2
 =======================================
 
-This tutorial shows how to automatically trigger the camera shutter from
-ArduPilot using a Pixhawk and `Stratosnapper V2 <http://littlesmartthings.com/product/stratosnapper-2/>`__ (with an
-IR Module).
+This tutorial shows how connect the `Stratosnapper V2 <https://www.mjmulticopter.com/strato-snapper-v2.html>`__ (with an IR Module) to a Sony NEX5 so that its shutter can be triggered from the pilot's transmitter or during :ref:`camera missions <common-camera-control-and-auto-missions-in-mission-planner>`.
 
-.. tip::
+Where To Buy
+============
 
-   The *Stratosnapper v2* board supports a large number of output
-   types: cables/connectors, infra-red, LANC, etc. The approach described
-   in this article could be extended to target a `broad range of cameras <http://littlesmartthings.com/support-documentation/faq/supported-cameras-2/>`__
-   from many popular brands.
-
-Overview
-========
-
-ArduPilot allows you to :ref:`configure a servo or relay output as the control signal for the camera shutter <common-camera-shutter-with-servo>` so that it can be used in
-:ref:`Camera Missions <common-camera-control-and-auto-missions-in-mission-planner>`.
-Additional hardware is required to convert the shutter activation signal
-to the format expected by the particular camera.
-
-This tutorial shows how to set up a Pixhawk to connect to a Sony NEX5
-using the *Stratosnapper v2* board with an IR trigger. This
-configuration has been selected because the NEX5 is widely used for
-aerial photography in UAVs, and because an IR Trigger does not require
-an extra cable connected to your camera.
+This device is becoming increasingly rare but can still be found on `mjmulticopter.com <https://www.mjmulticopter.com/strato-snapper-v2.html>`__ and `ebay <https://www.ebay.com/itm/Strato-Snapper-V2-Control-For-Drone-Photography-Camera-Zoom-Or-Switch/312473455984>`__
 
 Parts and hardware connections
 ==============================
@@ -38,9 +20,11 @@ camera, and the BEC to power the *Stratosnapper*.
 
 .. image:: ../../../images/generalhwconnectionscheme.jpg
     :target: ../_images/generalhwconnectionscheme.jpg
+    :width: 450px
 
 .. image:: ../../../images/Pixhawklargeview.jpg
     :target: ../_images/Pixhawklargeview.jpg
+    :width: 450px
 
 Pixhawk board
 -------------
@@ -51,6 +35,7 @@ diagram below:
 
 .. image:: ../../../images/Pixhawkdetailview.jpg
     :target: ../_images/Pixhawkdetailview.jpg
+    :width: 450px
 
 IR trigger device
 -----------------
@@ -62,6 +47,7 @@ USB.
 
 .. image:: ../../../images/stratosnapper2cables.jpg
     :target: ../_images/stratosnapper2cables.jpg
+    :width: 450px
 
 Note the two servo leads are connected on the input side of
 *Stratosnapper*; one of these is to power the IR module.
@@ -76,36 +62,24 @@ Note the two servo leads are connected on the input side of
 The control signal from Pixhawk can be assigned to any of the 4 servo
 inputs.
 
-.. image:: ../../../images/SS2AUX1.jpg
-    :target: ../_images/SS2AUX1.jpg
+.. image:: ../../../images/camera-trigger-stratosnapperv2-pic1.jpg
+    :target: ../_images/camera-trigger-stratosnapperv2-pic1.jpg
 
 The output of the *Stratosnapper* is shown below. It connects to an IR
 cable, which in turn triggers a IR led that must be placed in front of
 your camera IR sensor:
 
-.. image:: ../../../images/SS2IR.jpg
-    :target: ../_images/SS2IR.jpg
+.. image:: ../../../images/camera-trigger-stratosnapperv2-pic2.jpg
+    :target: ../_images/camera-trigger-stratosnapperv2-pic2.jpg
 
 IR LED positioning and camera gimbal
 ------------------------------------
 
-Shown here is a picture of X8 Mr Grey (formerly known as Mr Red when was
-used with APM).
-
-The electronics are protected using a grey flower pot (the only colour
-my wife had!) and we used some green gardening wire to shape the IR LED
-cable so it is correctly positioned in front of the camera's IR sensor.
-Gardeners & farmers are notoriously UAV friendly :-)
-
-.. image:: ../../../images/vuegimbal1.jpg
-    :target: ../_images/vuegimbal1.jpg
-
 The Sony NEX5 is held in a 2-axis stabilized brushless gimbal (NEX5 not
-shown...used to take this picture). Here below a zoomed view of the IR
-LED positioning and gimbal:
+shown). Here below a zoomed view of the IR LED positioning and gimbal:
 
-.. image:: ../../../images/vuegimbal2.jpg
-    :target: ../_images/vuegimbal2.jpg
+.. image:: ../../../images/camera-trigger-stratosnapperv2-mounted.jpg
+    :target: ../_images/camera-trigger-stratosnapperv2-mounted.jpg
 
 The IR LED works well even in bright sunlight (verified in the field).
 It also works some distance from the sensor (no problem within 5inches
@@ -143,17 +117,11 @@ Every IR device has its own configuration method. *Stratosnapper* comes
 with a simple GUI interface to define which PWM values will trigger what
 port.
 
-The IR device configuration is explained in this video:
-
-https://player.vimeo.com/video/67660032
+The IR device configuration is explained in `this video <https://player.vimeo.com/video/67660032>`__
 
 Testing and mission planning
 ============================
 
-Once a camera trigger has been defined it can be used in :ref:`Camera Control and Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>`
-to take pictures and make area surveys.
+Once a camera trigger has been defined it can be used in :ref:`Camera Control and Auto Missions <common-camera-control-and-auto-missions-in-mission-planner>` to take pictures and make area surveys.
 
 The configuration in this article was tested when creating the :ref:`Survey (Grid) Example <common-camera-control-and-auto-missions-in-mission-planner_survey_grid_example>`.
-
-**I hope this will help you in your own auto-photo-shoot missions!
-Cheers, Hugues**
