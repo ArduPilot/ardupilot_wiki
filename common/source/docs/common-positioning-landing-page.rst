@@ -14,10 +14,10 @@ positioning technologies:
 .. toctree::
     :maxdepth: 1
 
-    Mayan Robotics M8N Gps+Compass Module <https://store.mrobotics.io/mRo-GPS-u-Blox-Neo-M8N-HMC5983-Compass-p/gps002-mr.htm>
-    JDrones GPS Options <http://store.jdrones.com/GPS_s/193.htm>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
-    Here+ RTK Receiver <common-here-plus-gps>
+    Hex Here+ RTK Receiver <common-here-plus-gps>
+    JDrones GPS Options <http://store.jdrones.com/GPS_s/193.htm>
+    MRo M8N Gps+Compass Module <https://store.mrobotics.io/mRo-GPS-u-Blox-Neo-M8N-HMC5983-Compass-p/gps002-mr.htm>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
     Trimble BD930 RTK GPS <common-gps-trimble>
