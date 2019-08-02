@@ -24,6 +24,22 @@ It also explains how to :ref:`connect to different GCSs <using-sitl-for-ardupilo
    describe a GCS-specific UI layout). Many of these operations can also
    be performed in *Mission Planner* (through the *Full Parameters List*) or any other GCS.
 
+Selecting a vehicle/frame type
+==============================
+
+The simulation will default to the vehicle type in the directory in which it is started. You can select the vehicle type if starting from the ardupilot directory by starting the simulator calling **sim_vehicle.py** with the ``-v`` parameter.
+
+::
+
+     sim_vehicle.py -v ArduPlane --console --map
+
+The frame type can also be changed with the ``-f`` parameter.
+
+::
+
+    sim_vehicle.py -v ArduPlane -f quadplane --console --map
+    
+
 Setting vehicle start location
 ==============================
 
