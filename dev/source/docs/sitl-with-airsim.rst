@@ -150,7 +150,6 @@ First launch AirSim, after that launch the ArduPilot SITL using
 
     Initially, the editor will hang after pressing the Play button if the Ardupilot SITL hasn't been started (this is due to Lock-Step Scheduling). Run `sim_vehicle.py` and it should go back to normal.
 
-
 For closing, first stop the AirSim simulation by pressing the Stop button, then close Ardupilot.
 If Ardupilot is closed first, then UE hangs and you'll need to force close it.
 
@@ -159,17 +158,9 @@ You can restart by just pressing the Play button and then start the Ardupilot si
 Using Lidar
 ^^^^^^^^^^^
 
-See `Lidar Settings <https://github.com/Microsoft/AirSim/blob/master/docs/lidar.md>`__ for info on Lidar
+See `Lidar Settings <https://github.com/Microsoft/AirSim/blob/master/docs/lidar.md>`__ for info on Lidar and it's properties in AirSim.
 
-`PR <https://github.com/ArduPilot/ardupilot/pull/11835>`__ is open for adding Lidar support for AirSim in Ardupilot. Until it is merged, you'll have to fetch the specific branch for using this feature
-
-::
-
-    git remote add <remote-name> https://github.com/rajat2004/ardupilot.git
-    git fetch <remote-name>
-    git checkout -b <your-branch-name> <remote-name>/pr-airsim-lidar
-
-Current `settings.json` file for launching Arducopter with Lidar
+Current `settings.json` file for launching ArduCopter with Lidar
 
 ::
 
@@ -227,7 +218,8 @@ Launch Copter with Lidar using
 
 Manual Flying using RC
 ^^^^^^^^^^^^^^^^^^^^^^
-Using an RC such as FrSky Taranis X9D Plus to fly manually is possible, you'll have to use the same branch as the Lidar for this.
+
+For flying manually, you need a Remote Control or RC.
 
 Just plug the device in the computer and it should work. See `AirSim's Remote Control page <https://github.com/microsoft/AirSim/blob/master/docs/remote_control.md>`__ for details on supported devices and FAQs.
 
@@ -291,7 +283,11 @@ This will bring up the map but with only a single vehicle, use the ``vehicle`` c
 
 Now, you can have the first vehicle (i,e with SYSID 1) flying in Guided or Auto Mission, and then takeoff the second vehicle and put it in Follow mode, after which the second copter will follow the first one.
 
-For increasing the number of simulated vehicles, just modify the ``seq`` number in the script.
+For increasing the number of simulated vehicles, just modify the ``seq`` number in the script and add the settings for each individual vehicle in the ``settings.json``.
+
+.. note::
+
+    The difference of 10 between the ports is important since the script is launching the vehicles using the ``instance`` option which increases the ports from ArduPilot's side by 10. For using different ports, modify the script as required following the intructions at the end of the page for specifying the ports.
 
 Custom Environment
 ++++++++++++++++++
