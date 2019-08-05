@@ -14,14 +14,14 @@ This page explains how to write a new dataflash log message.
 The Easy Way
 ------------
 
-Use `AP::logger().Write(...) <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L212>`__:
+Use `AP::logger().Write(...) <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L278>`__:
 
    .. code-block:: python
 
        void Write(const char *name, const char *labels, const char *fmt, ...);
        void Write(const char *name, const char *labels, const char *units, const char *mults, const char *fmt, ...);
 
-An example of the top function being used can be found in `Compass_learn.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/Compass_learn.cpp#L107>`__:
+An example of the top function being used can be found in `Compass_learn.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/Compass_learn.cpp#L99>`__:
 
    .. code-block:: python
 
@@ -42,11 +42,11 @@ An example of the top function being used can be found in `Compass_learn.cpp <ht
   You may notice in the example above, some fields have a format of float ("f") but are cast to ``(double)`` this is correct and necessary to avoid a compiler warning.
 
 The 2nd Log_Write function is the same as the first except that it accepts two additional string arguments,
-`"units" <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L81>`__ and
-`"mults" <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L124>`__.
+`"units" <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L42>`__ and
+`"mults" <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L86>`__.
 Similar to the "format" argument, each character in these arguments specifies the
-`units <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L81>`__ (i.e. "d" for degrees) or
-`multiplier <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L124>`__ (i.e. "2" for \*100, "B" for \*0.01) for the following fields.
+`units <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L42>`__ (i.e. "d" for degrees) or
+`multiplier <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L86>`__ (i.e. "2" for \*100, "B" for \*0.01) for the following fields.
 These help the graphing tools scale the output correctly when displaying to the user.
 
 For example, below is a "TEST" log message which outputs the current system time and altitude.
@@ -71,7 +71,7 @@ For commonly used messages, especially those which are output at a relatively hi
 - decide if the logging will come from a library (i.e. the call to Log_Write will from somewhere within
   the `libraries directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__) or
   the vehicle code (i.e. from within `ArduCopter <https://github.com/ArduPilot/ardupilot/tree/master/ArduCopter>`__, `ArduPlane <https://github.com/ArduPilot/ardupilot/tree/master/ArduPlane>`__, etc)
-- add a new entry to the `vehicle's #define list or enum in defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L239>`__ or `AP_Logger/LogStructure.h's LogMessages enum <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L1502>`__.
+- add a new entry to the `vehicle's #define list or enum in defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L222>`__ or `AP_Logger/LogStructure.h's LogMessages enum <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L1566>`__.
 - define a structure to hold the values to be logged in either the vehicle's `Log.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Log.cpp>`__ file
   or in `AP_Logger/LogStructure.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h>`__.  All log file messages should have time_us as their first field.
 
@@ -83,9 +83,9 @@ For commonly used messages, especially those which are output at a relatively hi
            float a_value;
        }
 
-- add the log message's name, `units <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L81>`__,
-  `multiplier <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L124>`__ and `format <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L1191>`__ strings into the `vehicle's LogStructure array <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L1215>`__ or `AP_Logger/LogStructure.h's LOG_EXTRA_STRUCTURES array <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L1318>`__
-- add a new method to the vehicle code or AP_Logger library called Log_Write_<something-or-other> which fills in the structure and then calls `AP_Logger/WriteBlock() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L133>`__
+- add the log message's name, `units <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L42>`__,
+  `multiplier <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L86>`__ and `format <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L6>`__ strings into the `vehicle's LogStructure array <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Log.cpp#L390>`__ or `AP_Logger/LogStructure.h's LOG_EXTRA_STRUCTURES array <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L1360>`__
+- add a new method to the vehicle code or AP_Logger library called Write_<something-or-other> which fills in the structure and then calls `AP_Logger/WriteBlock() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L197>`__
 
    .. code-block:: python
 
