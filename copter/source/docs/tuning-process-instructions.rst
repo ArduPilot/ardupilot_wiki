@@ -15,7 +15,7 @@ Parameters used to linearise your motor thrust curve.
 
 - :ref:`MOT_BAT_VOLT_MAX <MOT_BAT_VOLT_MAX>` - 4.2v x No. Cells
 - :ref:`MOT_BAT_VOLT_MIN <MOT_BAT_VOLT_MIN>` - 3.3v x No. Cells
-- :ref:`MOT_THST_EXPO <MOT_THST_EXPO>` - 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props. This parameter should be derived by thrust stand measurements for best results (don’t trust manufacture data).
+- :ref:`MOT_THST_EXPO <MOT_THST_EXPO>` - 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props. This parameter should be derived by thrust stand measurements for best results (don’t trust manufacturer data).
 
 .. image:: ../images/tuning-process-instructions-1.hires.png
     :target: ../_images/tuning-process-instructions-1.hires.png
@@ -31,7 +31,7 @@ Parameters used to define the output range sent to the ESC.
 - :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` - use the motor test feature :ref:`Checking the motor numbering with the Mission Planner Motor test`
 - :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` - 0.25 or below the expected hover thrust percentage (low is safe)
 
-Controler setup
+PID Controller Initial Setup
 ^^^^^^^^^^^^^^^
 - :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` -  10Hz to 20Hz
 - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` - 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
@@ -54,12 +54,12 @@ Controler setup
 
 The initial tune of the aircraft should be done **in the aircrafts most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
 
-Pilots preparation for first flight
+Pilot's preparation for first flight
 -----------------------------------
 
-The first take off of an untuned multirotor is the most dangerous seconds of the aircraft’s life. This is where the aircraft could be very unstable causing a sudden increase in power resulting in the aircraft jumping into the air, or it may be so badly tuned that you have insufficient control over the aircraft once it is airborne. The pilot should be extremely diligent during the tuning flights to avoid a situation that could result in injury or damage.
+The first takeoff of an untuned multirotor is the most dangerous seconds of the aircraft’s life. This is where the aircraft could be very unstable causing a sudden increase in power when then results in the aircraft jumping into the air, or it may be so poorly tuned that you have insufficient control over the aircraft once it is airborne. The pilot should be extremely diligent during the tuning flights to avoid a situation that could result in injury or damage.
 
-There are a number of things that the pilot can do to minimise the risk during the early tuning process:
+There are several things that the pilot can do to minimise the risk during the early tuning process:
 
 1. The pilot should conduct a motor number and orientation check (see :ref:`Checking the motor numbering with the Mission Planner Motor test`). Care should be taken to ensure that the correct frame type is selected. Incorrect frame type can result in a very fast yaw rotation or complete loss of control. Take note of the output percentage required to spin the propellers and ensure that:
 
@@ -67,7 +67,7 @@ There are a number of things that the pilot can do to minimise the risk during t
 - :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` is set high enough to spin the motors win a minimal level of thrust.
 
 2. All flights after a significant tuning change should be done in Stabilize. Stabilize provides the pilot with significantly more control over the aircraft in the event that the attitude controllers are unstable.
-3. The pilot should not take off in Alt Hold until the altitude controller has been tested in flight. This should be done by taking off in Stabilize and switching to Alt Hold. While Alt Hold is rarely a problem unless the aircraft has a very low hover throttle.
+3. The pilot should not take off in AltHold until the altitude controller has been tested in flight. This should be done by taking off in Stabilize and switching to Alt Hold. While Alt Hold is rarely a problem unless the aircraft has a very low hover throttle.
 4. For the initial flights the pilot should ensure that these parameters are set:
 
 - :ref:`ATC_THR_MIX_MAN <ATC_THR_MIX_MAN>` to 0.1
@@ -75,11 +75,11 @@ There are a number of things that the pilot can do to minimise the risk during t
 
 5. Use a radio and calibrate the radio correctly (see :ref:`common-radio-control-calibration`).
 6. Configure a Emergency Stop Motors switch and test it (see :ref:`channel-7-and-8-options`).
-7. Do tune in low wind condition and normal weather (no rain and between 15°C and 25°C).
-8. Practice STABILIZE flight in simulator or on low end drone first, you should be confident to be able to takeoff and land with you untuned aircraft.
+7. Do tuning flights in low-wind condition and normal weather (no rain and between 15°C/59°F and 25°C/77°F).
+8. Practice STABILIZE flight in simulator or on a low-end drone first, you should be confident to be able to takeoff and land with your untuned aircraft.
 
 
-First flight
+First Flight
 ------------
 
 The first take off is the most dangerous time for any multirotor. Care must be taken to ensure the aircraft is not destroyed in the first seconds of flight and nobody is injured.
@@ -90,17 +90,17 @@ The first take off is the most dangerous time for any multirotor. Care must be t
 
 This flight will allow to setup your aircraft in a "flyable for tuning" state.
 
-1. Ensure the aircraft is in Stabilize.
-2. Arm the aircraft.
-3. Immediately disarm the aircraft to ensure your disarm procedure is correct.
-4. Arm the aircraft.
-5. Slowly increase the throttle looking for signs of oscillation. (long or flexible landing gear may cause some landing gear oscillation that will only go away after the aircraft leaves the ground).
-6. As soon as the aircraft lifts off the ground immediately put the aircraft back down as gently as possible.
-7. Disarm the aircraft.
-8. Evaluate what you observed to decide if you need to make adjustments to the tuning parameters or if it is safe to take off again.
-9. Arm and increase the throttle to initiate a take off.
-10. Hover at approximately 1m altitude and apply small (5 degrees) control inputs into roll and pitch.
-11. Immediately land if any oscillation is observed.
+1. Ensure the aircraft is in STABILIZE mode
+2. Arm the aircraft
+3. Immediately disarm the aircraft to ensure your disarm procedure is correct
+4. Arm the aircraft
+5. Slowly increase the throttle looking for signs of oscillation. (long or flexible landing gear may cause some landing gear oscillation that will only go away after the aircraft leaves the ground)
+6. As soon as the aircraft lifts off the ground immediately put the aircraft back down as gently as possible
+7. Disarm the aircraft
+8. Evaluate what you observed to decide if you need to make adjustments to the tuning parameters or if it is safe to take off again
+9. Arm and increase the throttle to initiate a takeoff
+10. Hover at approximately 1m altitude and apply small (5 degrees) control inputs into roll and pitch
+11. Immediately land if any oscillation is observed
 
 Next section will explain how to remove the oscillations.
 
@@ -109,9 +109,9 @@ Initial aircraft tune
 
 The first priority when tuning an multirotor aircraft is to establish a stable tune, free of oscillations, that can be used to do further tests.
 
-1. Arm the aircraft in Stabilize.
-2. Increase the throttle slowly until the aircraft leaves the ground.
-3. If the aircraft starts to oscillate immediately abort the take off or land the aircraft.
+1. Arm the aircraft in STABILIZE
+2. Increase the throttle slowly until the aircraft leaves the ground
+3. If the aircraft starts to oscillate immediately abort the takeoff and/or land the aircraft
 4. Reduce all the following parameters by 50%
 
 a. :ref:`ATC_RAT_PIT_P <ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`
@@ -127,39 +127,39 @@ If the aircraft has very long or flexible landing gear then you may need to leav
 
 Be aware that in this state the aircraft may be very slow to respond to large control inputs and disturbances. The pilot should be extremely careful to put minimal stick inputs into the aircraft to avoid the possibility of a crash.
 
-Test Alt Hold
+Test AltHold
 -------------
 
-This test will allow to test the altitude controler and unsure the stability of your aircraft.
+This test will allow to test the altitude controller and ensure the stability of your aircraft.
 
-1. Check :ref:`MOT_HOVER_LEARN <MOT_HOVER_LEARN>` is set to 2. This will allow the controler to learn by itself the correct hover value when flying.
+1. Check :ref:`MOT_HOVER_LEARN <MOT_HOVER_LEARN>` is set to 2. This will allow the controller to learn by itself the correct hover value when flying.
 
-2. Take off in Stabilise and increase altitude to 5m. Switch to Alt_Hold and be ready to switch back to Stabilize. If the aircraft is hovering at a very low hover throttle value you may hear a reasonably fast oscillation in the motors. Ensure the aircraft has spent at least 30 seconds in hover to let the hover throttle parameter converge to the correct value. Land and disarm the aircraft.
+2. Take off in STABILIZE and increase altitude to 5m. Switch to AltHold and be ready to switch back to STABILIZE. If the aircraft is hovering at a very low hover throttle value you may hear a reasonably fast oscillation in the motors. Ensure the aircraft has spent at least 30 seconds in hover to let the hover throttle parameter converge to the correct value. Land and disarm the aircraft.
 
-3. Set those parameter on ground and disarm preferably (confident pilot could try to set them in flight with GCS or CH6 tuning knob):
+3. Set these parameters on ground and preferably disarm  (A confident pilot could set them in flight with GCS or CH6 tuning knob):
 
   - :ref:`PSC_ACCZ_I <PSC_ACCZ_I>` to 2 x :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
   - :ref:`PSC_ACCZ_P <PSC_ACCZ_P>` to :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
 
-Alt Hold starts to move up and down the position and velocity controllers may need to be reduced by 50%. These values are: :ref:`PSC_POSZ_P <PSC_POSZ_P>` and :ref:`PSC_VELZ_P <PSC_VELZ_P>`.
+AltHold starts to move up and down the position and velocity controllers may need to be reduced by 50%. These values are: :ref:`PSC_POSZ_P <PSC_POSZ_P>` and :ref:`PSC_VELZ_P <PSC_VELZ_P>`.
 
 Evaluating the aircraft tune
 ----------------------------
 
-Most pilots will look to move to Autotune as quickly as possible once their aircraft can hover safely in Alt Hold. Before Autotune is run the pilot should ensure that the current tune is good enough to recover from the repeated tests run by Autotune. To test the current state of tune:
+Most pilots will look to move to Autotune as quickly as possible once their aircraft can hover safely in AltHold. Before Autotune is run the pilot should ensure that the current tune is good enough to recover from the repeated tests run by Autotune. To test the current state of tune:
 
-1. Take off in Alt Hold or Stabilize
-2. Apply small roll and pitch inputs. Start with 5 degree inputs and releasing the stick to centre, pitch, left, right, roll forward back, then all 4 points on the diagonal.
-3. Increase inputs gradually to full stick deflection.
-4. Go to full stick deflection and letting the sticks spring back to centre.
+1. Take off in AltHold or STABILIZE
+2. Apply small roll and pitch inputs. Start with 5 degree inputs and releasing the stick to centre, pitch, left, right, roll forward back, then all 4 points on the diagonal
+3. Increase inputs gradually to full stick deflection
+4. Go to full stick deflection and letting the sticks spring back to centre
 
 If the aircraft begins to overshoot significantly or oscillate after the stick input, halt the tests before the situation begins to endanger the aircraft. The aircraft may require manual tuning (:ref:`see next section <Manual tuning of Roll and Pitch>`) before autotune can be run.
 
 To test the stabilization loops independent of the input shaping, set the parameter: :ref:`ATC_RATE_FF_ENAB <ATC_RATE_FF_ENAB>` to 0.
 
-1. Take off in Alt Hold or Stabilize
+1. Take off in AltHold or STABILIZE
 2. Hold a roll or pitch input
-3. Release the stick and observe the overshoot as the aircraft levels itself.
+3. Release the stick and observe the overshoot as the aircraft levels itself
 4. Gradually increase the stick deflection to 100%
 
 Halt the tests if the aircraft overshoots level significantly or if the aircraft oscillates, the aircraft may require manual tuning (:ref:`see next section <Manual tuning of Roll and Pitch>`) before autotune can be run.
@@ -175,14 +175,14 @@ The pilot should be especially careful to ensure that :ref:`ATC_THR_MIX_MAN <ATC
 
 When oscillations start do not make large or sudden stick inputs. Reduce the throttle smoothly to land the aircraft while using very slow and small roll and pitch inputs to control the aircraft position.
 
-1. Increase the D term in steps of 50% until oscillation is observed.
-2. Reduce the D term in steps of 10% until the oscillation disappears.
-3. Reduce the D term by a further 25%.
-4. Increase the P term in steps of 50% until oscillation is observed.
-5. Reduce the P term in steps of 10% until the oscillation disappears.
-6. Reduce the P term by a further 25%.
+1. Increase the D term in steps of 50% until oscillation is observed
+2. Reduce the D term in steps of 10% until the oscillation disappears
+3. Reduce the D term by a further 25%
+4. Increase the P term in steps of 50% until oscillation is observed
+5. Reduce the P term in steps of 10% until the oscillation disappears
+6. Reduce the P term by a further 25%
 
-Each time the P term is changed set the I term equal to the P term. Those parameter can be changed on ground and disarm preferably. Confident pilot could set them in flight with GCS or CH6 tuning knob.
+Each time the P term is changed set the I term equal to the P term. Those parameters can be changed on ground and preferably disarmed. A confident pilot could set them in flight with GCS or CH6 tuning knob.
 
 The ch6 tuning knob may be used to make these adjustments. If this is done set the minimum value of the tuning range to the current safe value and the upper range to approximately 4 times the current value. Be careful not to move the slider before the parameter list is refreshed to recover the set value. Ensure the ch6 tuning is switched off before setting the parameter value or the tuning may immediately overwrite it.
 
@@ -234,7 +234,7 @@ The most important of these parameters is:
 
 Autotune will set the :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` and :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` parameters to their maximum based on measurements done during the Autotune tests. These values should not be increased beyond what Autotune suggests without careful testing. In most cases pilots will want to reduce these values significantly.
 
-For aircraft designed to carry large directly mounted payloads, the maximum values of :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` and :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` should be reduced based on the minimum and maximum take off weight (TOW):
+For aircraft designed to carry large directly mounted payloads, the maximum values of :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` and :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` should be reduced based on the minimum and maximum takeoff weight (TOW):
 
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`  x (min_TOW / max_TOW)
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`  x (min_TOW / max_TOW)
