@@ -136,7 +136,7 @@ formula:
 
 ::
 
-    NEW_RATIO = OLD_RATIO*((AVERAGE_AIRSPEED + AIRSPEED_INCREASE)/AVERAGE_AIRSPEED)2
+    NEW_RATIO = OLD_RATIO*((AVERAGE_AIRSPEED + AIRSPEED_INCREASE)/AVERAGE_AIRSPEED)²
 
 where:
 
@@ -152,7 +152,7 @@ we can calculate the new ratio as:
 
 ::
 
-    NEW_RATIO = 2.0 * ((36.5 + 2) / 36.5)2 = 2.23
+    NEW_RATIO = 2.0 * ((36.5 + 2) / 36.5)² = 2.23
 
 After adjusting the ARSPD_RATIO do another flight and check that the
 airspeed is now well calibrated. Don't forget the pre-flight checks!
