@@ -128,7 +128,7 @@ You can change how control inputs while hovering a tailsitter will be
 interpreted using the Q_TAILSIT_INPUT parameter. The choices are:
 
 - Q_TAILSIT_INPUT=0 means that in hover the aircraft responds like a
-  multi-rotor, with the ****yaw stick controlling earth-frame yaw, and
+  multi-rotor, with the yaw stick controlling earth-frame yaw, and
   roll stick controlling earth-frame roll. This is a good choice for
   pilots who are used to flying multi-rotor aircraft.
 
