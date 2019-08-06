@@ -4,8 +4,7 @@
 Hardware Setup
 ==============
 
-Sailing vehicles require a rudder for boats or movable wheel/ wheels for land vehicles. This is setup in the normal way
- by assigning a servo output channel to function 26 – Ground Steering.
+Sailing vehicles require a rudder for boats or movable wheel(s) for land vehicles. This is setup in the normal way by assigning a servo output channel to function 26 (Ground Steering).
 
 Sailing vehicles also require a method of controlling the sails. The servo must pull in and let out the sails in a symmetrical
 way. I.e. no change of servo position should be required to set the sails at the same angle on a new tack. This is typically 
