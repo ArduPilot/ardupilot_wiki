@@ -32,7 +32,7 @@ Parameters used to define the output range sent to the ESC.
 - :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` - 0.25 or below the expected hover thrust percentage (low is safe)
 
 PID Controller Initial Setup
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` -  10Hz to 20Hz
 - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` - 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
 - :ref:`ATC_RAT_PIT_FILT <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
@@ -55,7 +55,7 @@ PID Controller Initial Setup
 The initial tune of the aircraft should be done **in the aircrafts most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
 
 Pilot's preparation for first flight
------------------------------------
+------------------------------------
 
 The first takeoff of an untuned multirotor is the most dangerous seconds of the aircraft’s life. This is where the aircraft could be very unstable causing a sudden increase in power when then results in the aircraft jumping into the air, or it may be so poorly tuned that you have insufficient control over the aircraft once it is airborne. The pilot should be extremely diligent during the tuning flights to avoid a situation that could result in injury or damage.
 
