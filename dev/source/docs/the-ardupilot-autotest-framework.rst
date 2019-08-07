@@ -120,7 +120,7 @@ Using with Valgrind
 
 AutoTest can run the ArduPilot binary under the Valgrind memcheck tool.  This is useful for finding reading of uninitialised memory and the like.
 
-.. warn::
+.. warning::
 
    ArduPilot initialises most of its dynamically-allocated memory to zero by overriding the ``new`` function.  Some versions of Valgrind do not understand this.  The supplied xenial32 Vagrant virtual machine contains a version of Valgrind which does not suffer from this issue.
 
