@@ -92,3 +92,35 @@ Full list can be `found here <https://www.dronotique.fr/docs/alfonce-remote-gate
 You can also read the full `documentation <https://www.dronotique.fr/docs/alfonce-remote-gateway/>`__ to discover full functionnalities
 
 By defaut it installed on a OrangePi Zero 2 + H5, but it could be integrated on a lot of supported nano computers or servers!
+
+XBStation - Platform For Internet Drone Base On Real Time 4G/5G Connectivity
+=========================================================
+
+.. youtube:: JkNdeAKmSrg
+        :width: 100%
+
+`XBStation <https://xb-uav.com>`__ is a solution for streaming video and controling UAV via internet (wifi, 3G/4G/5G cellular network).
+
+`XBStation <https://xb-uav.com>`__ has been designed to provide the drone applications for delivery, surveys, security, ambulance and emergency response.
+
+**Supported Companion Computers:**
+
+* Raspberry Pi 2
+* Raspberry Pi 3B/3B+
+* Raspberry Pi 4
+* Odroid XU4
+
+**Features :**
+
+* UDP & TCP Telemetry
+* HD Video
+* Multiple Vehicles Control with MissionPlanner
+* Sharing Telemetry Data and Video Streaming to Your Partners/Customers
+* Realtime Vehicle Informations (GPS, Battery, Roll, Pitch, Yaw, ...) API
+* HD Streaming Live Ardupilot Drone Footage to Your Application/Youtube/Facebook
+* OpenVPN
+* XB Server for reliable connections
+
+Read the `Documentation <https://xb-uav.com/getting-started/overview>`__  for manual setup and installation.
+
+Read the `Ready to Fly Kit <https://product.xb-uav.com/xbstation-kit>`__ pre-loaded with XBFirm softwares, you just plug and play.
