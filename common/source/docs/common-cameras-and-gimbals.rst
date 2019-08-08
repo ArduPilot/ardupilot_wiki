@@ -79,4 +79,4 @@ Detail topics
     Camera Triggering Configuration <common-camera-shutter-with-servo>
     Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
     Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
-    Camera Shutter Trigger Boards for Purchase <common-camera-shutter-triggering-cables-for-purchase>
+
