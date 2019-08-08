@@ -94,7 +94,7 @@ You can also read the full `documentation <https://www.dronotique.fr/docs/alfonc
 By defaut it installed on a OrangePi Zero 2 + H5, but it could be integrated on a lot of supported nano computers or servers!
 
 XBStation - Platform For Internet Drone Base On Real Time 4G/5G Connectivity
-=========================================================
+============================================================================
 
 .. youtube:: JkNdeAKmSrg
         :width: 100%
