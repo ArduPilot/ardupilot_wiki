@@ -152,7 +152,6 @@ The ahrs library represents the Attitude Heading Reference System computed by th
 
 - :code:`groundspeed_vector()` - Returns a Vector2f containing the vehicles velocity in meters/second in north and east components.
 
-=======
 Battery
 ~~~~~~~
 
@@ -182,7 +181,6 @@ The battery library provides access to information about the currently connected
 
 - :code:`get_temperature(instance)` - Returns the temperature of the battery in degrees Celsius if the battery supports temperature monitoring.
 
-===
 GPS
 ~~~
 
@@ -226,7 +224,6 @@ The GPS library provides access to information about the GPS's on the vehicle.
 
 - :code:`first_unconfigured_gps()` - Returns nil or the instance number of the first GPS that has not been fully configured. If all GPS's have been configured this returns 255 if all the GPS's have been configured.
 
-======
 Notify
 ~~~~~~
 
