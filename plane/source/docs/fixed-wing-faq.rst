@@ -177,7 +177,7 @@ slow an aircraft for landing without inducing a lot of pitching moment.
 
 To setup crow flaps you will need to combine two features. First you
 will need to :ref:`setup flaperons <flaperons-on-plane>` on two
-output channels using the :ref:`flaperon output channels functions <channel-output-functions_flaperon1_and_flaperon2>`.
+output channels using the FlaperonLeft and FlaperonRight functions.
 You will need to choose the FLAPERON_OUTPUT parameter value so that the
 flaps go up instead of down when flaps are engaged, while being careful
 that aileron input goes in the right direction for roll.
