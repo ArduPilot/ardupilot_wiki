@@ -144,8 +144,8 @@ flight mode will transition to VTOL flight and then fly at the
 
 Once the return point is reached the aircraft will start a vertical
 descent towards the ground for landing. The initial descent rate is
-set by :ref:`Q_WP_SPEED_DN. <Q_WP_SPEED_DN.>` Once the aircraft reaches an altitude of
-:ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>` then the descent rate will
+set by :ref:`Q_WP_SPEED_DN <Q_WP_SPEED_DN>`. Once the aircraft reaches an altitude of
+:ref:`Q_LAND_FINAL_ALT <Q_LAND_FINAL_ALT>` the descent rate will
 change to :ref:`Q_LAND_SPEED <Q_LAND_SPEED>` for
 the final landing phase.
 
