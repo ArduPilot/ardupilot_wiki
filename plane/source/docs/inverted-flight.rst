@@ -4,14 +4,12 @@
 Inverted Flight
 ===============
 
-Plane now supports inverted flight. You can tell if your version
-supports inverted flight by looking for the
-:ref:`INVERTEDFLT_CH <INVERTEDFLT_CH>` EEPROM configuration parameter.
+Plane  supports inverted flight. Inverted flight is initiated by either the INVERTEDFLT_CH parameter, in older versions, or by setting an RC channel via RCx_OPTION parameter in later versions.
 
 Details
 =======
 
-The INVERTEDFLT_CH parameter allows you to configure a transmitter
+The INVERTEDFLT_CH  or RCx_OPTION parameter allows you to configure a transmitter
 switch to enable inverted flight with APM. The default is zero, which
 means no inverted flight. To enable it, choose a RC input channel which
 is not being used for anything else, and setup your transmitter to give
@@ -19,7 +17,7 @@ a PWM value larger than 1750 when a previously unused 2 position switch
 is enabled, and a value well below 1750 when it is not enabled.
 
 For example, if channel 7 is currently unused, and you set
-INVERTEDFLT_CH to 7, then if your transmitter sends 1900 on channel 7
+INVERTEDFLT_CH to 7 or RC7_OPTION to InvertedFlight (depending on your particular firmware version), then if your transmitter sends 1900 on channel 7
 the APM will flip the plane upside down and continue flying in whatever
 mode it is in, but with the plane inverted.
 
