@@ -1,5 +1,7 @@
 .. _common-non-gps-navigation:
 
+[copywiki destination="copter,rover"]
+
 ==================
 Non-GPS Navigation
 ==================

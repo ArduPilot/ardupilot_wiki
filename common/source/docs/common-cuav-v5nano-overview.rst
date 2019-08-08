@@ -69,6 +69,7 @@ Quick Start
 .. image:: ../../../images/cuav_autopilot/v5-nano/v5-nano_pinouts.png
     :target: ../_images/cuav_autopilot/v5-nano/v5-nano_pinouts.png
 
+Interfaces
     +------------------+--------------------------------------------------------------+
     | Main Interface   | Function                                                     |
     +==================+==============================================================+
@@ -96,11 +97,14 @@ Quick Start
     +------------------+--------------------------------------------------------------+
     | DSM/SBUS/RSSI    | RC Input (SBUS / DSM / ST24 / SRXL / PPM) or RSSI Input      |
     +------------------+--------------------------------------------------------------+
-    .. image:: ../../../images/cuav_autopilot/v5-nano/v5-nano_quickstart_01.png
+
+.. image:: ../../../images/cuav_autopilot/v5-nano/v5-nano_quickstart_01.png
         :target: ../_images/cuav_autopilot/v5-nano/v5-nano_quickstart_01.png
 
-   .. image:: ../../../images/cuav_autopilot/v5-nano/v5-nano_quickstart_02.png
+
+.. image:: ../../../images/cuav_autopilot/v5-nano/v5-nano_quickstart_02.png
        :target: ../_images/cuav_autopilot/v5-nano/v5-nano_quickstart_02.png
+
 
 More Information
 ================

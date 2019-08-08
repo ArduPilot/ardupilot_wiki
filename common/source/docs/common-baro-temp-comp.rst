@@ -1,4 +1,5 @@
 .. _common-baro-temp-comp:
+[copywiki destination="copter"]
 
 Barometer Temperature Compensation
 ==================================
