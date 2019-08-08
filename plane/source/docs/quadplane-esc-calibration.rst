@@ -80,8 +80,7 @@ Old ESC Calibration Procedure (3.5.3 and earlier)
 #. power up just the flight board and not your motors. If you don't have
    the ability to isolate power to the ESCs when on battery power then
    power up your flight board on USB power
-#. set both the parameters :ref:`Q_M_SPIN_ARMED <Q_M_SPIN_ARMED>` and
-   :ref:`Q_THR_MID <Q_THR_MID>` to 1000.
+#. set both the parameters Q_M_SPIN_ARMED and Q_THR_MID to 1000.
    This sets the PWM output when armed at zero throttle to full power
 #. set the safety switch off to activate the outputs
 #. arm your aircraft. The PWM output on all quad motors will now climb
@@ -92,8 +91,8 @@ Old ESC Calibration Procedure (3.5.3 and earlier)
 #. disarm your aircraft. The ESCs should beep again indicating they have
    registered minimum PWM
 
-Now set the Q_M\_SPIN_ARMED and Q_THR_MID parameters back to the
-correct values. A value of 50 for Q_M\_SPIN_ARMED is a reasonable
+Now set the Q_M_SPIN_ARMED and Q_THR_MID parameters back to the
+correct values. A value of 50 for Q_M_SPIN_ARMED is a reasonable
 starting point. For Q_THR_MID a value of between 500 and 600 is good
 depending on the power of your motors
 

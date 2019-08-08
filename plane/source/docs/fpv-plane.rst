@@ -5,33 +5,8 @@ Basic FPV Plane
 ===============
 
 
-.. toctree::
-    :maxdepth: 1
-
-    1. Introduction
-    2. Hardware
-    3. Software
-       - Firmware
-       - GCS
-    4. Setup
-       - GPS
-       - Radio Calibration
-       - Flight modes
-       - Accel Calibration
-       - Servo Functions
-       - OSD
-       - RSSI
-       - Failsafe
-       - Battery Monitor
-       - Compass
-       - Airspeed
-       - Other Parameters
-       - ESC calibration
-    5. First flight
-
-
-1. Introduction
----------------
+Introduction
+------------
 
 With ArduPilot (AP) it is possible to use a fully functional, powerful autonomous flight system on inexpensive, highly
 integrated flight controller boards, including onboard battery monitoring and an onboard OSD. Due to ArduPilot's 
@@ -44,8 +19,8 @@ compass setup etc.) are left for you to pursue in the future. The goal in here i
 mission capable, with a well flying plane that you can expand on.
 
 
-2. Hardware
------------
+Hardware
+--------
 
 There are many choices and options for ArduPilot FCs, see `this list of currently supported boards <common-autopilots.html>`__. 
 Omnibus F4 Pro or Matek F405-Wing are good choices for a basic FPV plane
@@ -63,8 +38,8 @@ Other peripherals (compass, pitot, telemetry, etc.) will not be covered here as 
 required to get you in the air and flying. They can well be added and configured in the future, subject to personal preferences.
 
 
-3. Software
------------
+Software
+--------
 
 This is the part that likely gives potential new users the most concern, that's why this guide
 will focus this.
@@ -89,8 +64,8 @@ Parameters may be changed manually using the Configuration / Tuning Tabs.
 
 Note that some parameters can only be set while dis-armed, and that many parameter groups are not visible until enabled and refreshed, such as the RSSI and OSD parameter groups.
 
-4. Setup
---------
+Setup
+-----
 
 -  GPS
 
@@ -271,8 +246,8 @@ If it does not arm, something has not been setup correctly above, or (if you hav
 card for logging) the SD card is not inserted. Diagnostic messages will be displayed on the
 OSD and in MP messages tab.
 
-5. First Flight
----------------
+First Flight
+------------
 
 First, go to the flight planner page of MP and create a waypoint anywhere, set it to TAKEOFF type. 
 Set it for 100 to 150ft altitude and pitch of no more than 15deg for the first flight. Write it to the FC.
