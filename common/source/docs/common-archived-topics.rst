@@ -16,6 +16,8 @@ value to users with old hardware.
     NAVIO+ Overview <common-navio-overview>
     APM 2.x <common-apm25-and-26-overview>
     PX4FMU <common-px4fmu-overview>
+    PX4IO <common-px4io-overview>
+    Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
     Open Camera Control Board <common-camera-control-board>
     VR Gimbal Controller (3-Axis Open Source) <common-vrgimbal>
     Tarot Brushless Gimbal <common-tarot-gimbal>

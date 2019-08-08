@@ -73,6 +73,7 @@ Quick Start
 .. image:: ../../../images/cuav_autopilot/v5plus/v5plus_pinouts.png
     :target: ../_images/cuav_autopilot/v5plus/v5plus_pinouts.png
 
+Interfaces
     +------------------+--------------------------------------------------------------+
     | Main Interface   | Function                                                     |
     +==================+==============================================================+
@@ -94,7 +95,7 @@ Quick Start
     +------------------+--------------------------------------------------------------+
     | USB C            | USB for setup / firmware upload                              |
     +------------------+--------------------------------------------------------------+
-    | SBUS Out         | SBUS output for peripherals: gimbal / camera etc            |
+    | SBUS Out         | SBUS output for peripherals: gimbal / camera etc             |
     +------------------+--------------------------------------------------------------+
     | CAN1/CAN2        | CANBUS (UAVCAN, KDECAN, ToshibaCAN)                          |
     +------------------+--------------------------------------------------------------+
@@ -104,14 +105,18 @@ Quick Start
     +------------------+--------------------------------------------------------------+
     | DSM/SBUS/RSSI    | RC Input (SBUS / DSM / ST24 / SRXL / PPM) or RSSI Input      |
     +------------------+--------------------------------------------------------------+
-    .. image:: ../../../images/cuav_autopilot/v5plus/v5plus_quickstart_01.png
+
+.. image:: ../../../images/cuav_autopilot/v5plus/v5plus_quickstart_01.png
         :target: ../_images/cuav_autopilot/v5plus/v5plus_quickstart_01.png
 
-   .. image:: ../../../images/cuav_autopilot/v5plus/v5plus_quickstart_02.png
+
+.. image:: ../../../images/cuav_autopilot/v5plus/v5plus_quickstart_02.png
        :target: ../_images/cuav_autopilot/v5plus/v5plus_quickstart_02.png
 
-   .. image:: ../../../images/cuav_autopilot/v5plus/v5plus_quickstart_03.png
+
+.. image:: ../../../images/cuav_autopilot/v5plus/v5plus_quickstart_03.png
        :target: ../_images/cuav_autopilot/v5plus/v5plus_quickstart_03.png
+
 
 More Information
 ================
