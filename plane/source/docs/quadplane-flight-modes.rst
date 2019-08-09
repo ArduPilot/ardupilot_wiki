@@ -3,15 +3,18 @@
 QuadPlane Flight modes
 ======================
 
-The QuadPlane code is based upon the Plane master firmware but with 5
-extra modes:
+The QuadPlane code is based upon the Plane master firmware but with 6
+extra modes. Most are identical to equivalent Copter modes:
 
--  mode 17: QSTABILIZE (like :ref:`Copter STABILIZE <copter:stabilize-mode>`)
--  mode 18: QHOVER (like :ref:`Copter ALT_HOLD <copter:altholdmode>`)
--  mode 19: QLOITER (like :ref:`Copter LOITER <copter:loiter-mode>`)
--  mode 20: QLAND (like :ref:`Copter LAND <copter:land-mode>`)
--  mode 21: QRTL (like :ref:`Copter RTL <copter:rtl-mode>`)
--  mode 23::ref:`QACRO <plane:qacro-mode>`
+.. toctree::
+    :maxdepth: 1
+
+    QSTABILIZE (Mode 17) <qstabilize-mode>
+    QHOVER    (Mode 18) <qhover-mode>
+    QLOITER   (Mode 19) <qloiter-mode>
+    QLAND     (Mode 20) <qland-mode>
+    QRTL      (Mode 21) <qrtl-mode>
+    QACRO     (Mode 23) <qacro-mode>
 
 .. tip::
 
@@ -20,20 +23,19 @@ extra modes:
    values yet.
 
 If you are familiar with the equivalent Copter flight modes then you
-should be comfortable flying a QuadPlane. The only real difference comes
+should be comfortable flying a QuadPlane. The most significant difference comes
 during transition between fixed wing and QuadPlane flight, which is
-described below.
+described :ref:`here <quadplane-flying>`.
 
 .. tip::
 
    There is also a difference in throttle channel parameters from Copter: instead of THR_DZ for setting the deadzone, QuadPlane uses RCn_DZ (where n is the channel mapped to throttle input). 
    The default for throttle channel deadzone is 60 (+/- 6%).
-   Also, there is no mapping of hover throttle to mid-stick in manual throttle modes. 
-   If your quadplane does not hover at mid-stick (+/- 6%) in QSTABILIZE, you will need to center it (move it into the deadzone) when switching from QSTABILIZE to QHOVER to hold the current altitude.
+   If your Quadplane does not hover at mid-stick (+/- 6%) in QSTABILIZE, you will need to center it using Q_M_THST_HOVER to set the throttle percentage applied at mid-stick in QSTABILIZE such that switching to QHOVER or QLOITER does not result in an altitude change. This value can be automatically learned and applied during QLOITER and QHOVER modes, by enabling Q_M_HOVER_LEARN.
 
 .. tip::
 
-   Since Quadplanes have much higher surface area than most Copters, hovering or loitering in a tail wind can be a challenge for stability. It is generally better to hover or loiter with the nose pointed into the wind, see Weathervaning <http://ardupilot.org/plane/docs/quadplane-weathervaning.html>.
+   Since Quadplanes have much higher surface area than most Copters, hovering or loitering in a tail wind can be a challenge for stability. It is generally better to hover or loiter with the nose pointed into the wind, see :ref:`Weathervaning <quadplane-weathervaning>`.
 
 .. note::
 
