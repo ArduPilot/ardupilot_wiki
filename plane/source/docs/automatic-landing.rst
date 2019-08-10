@@ -240,8 +240,7 @@ Also note that if you have a longer range rangefinder then it is a very
 good idea to set the minimum range of the rangerfinder well above zero.
 For example, the PulsedLight Lidar has a typical range of over 40
 meters, and when it gets false readings it tends to read ranges of less
-than 1 meter. Setting :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>`
-to 150 will discard any rangerfinder readings below 1.5 meters, and will
+than 1 meter. And setting :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` to 150 , if its the first system rangefinder, will discard any rangerfinder readings below 1.5 meters, and will
 greatly improve the robustness of the Lidar for landing.
 
 Improving the landing
