@@ -71,7 +71,7 @@ Tuning
 
 -  Go to failsafe setup in *APM Planner 2* or *Mission Planner*, and
    make sure the max/min values match ``SERVO5_MIN``/``SERVO5_MAX`` (or adjust
-   them) so that your flaps move all the way (`:ref:`SERVO1_TRIM`` should also be set to 1500). - Setting the :ref:`FLAP_SLEWRATE <FLAP_SLEWRATE>`
+   them) so that your flaps move all the way ( :ref:`SERVO1_TRIM <SERVO1_TRIM>` should also be set to 1500). - Setting the :ref:`FLAP_SLEWRATE <FLAP_SLEWRATE>`
    to 100 allows moving flaps from 0 to 100% in one second.  Lower this
    to make your flaps move more slowly.
 -  Adjust `FLAP_x_PERCNT|SPEED` as desired for auto modes - see `Automatic Flaps <automatic-flaps>`. Note you can ignore the
@@ -100,9 +100,6 @@ Crow flaperons
 You can also setup crow flaps (where the ailerons go up, not down) by
 swapping the two output channels and setting the channel reversal as
 needed.
-
-See :ref:`How would I setup crow flaps? <fixed-wing-faq_how_would_i_setup_crow_flaps>` (Fixed Wing
-FAQ) for more information.
 
 Notes
 =====

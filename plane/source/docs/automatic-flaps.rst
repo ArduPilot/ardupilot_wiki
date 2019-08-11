@@ -61,4 +61,4 @@ target speed is changed into one of the flap speed ranges.
 Using Flaperons
 ===============
 
-You can also setup flaperons. Please see the separate :ref:`flaperon guide <guide-flaperons>` for details.
+You can also setup flaperons. Please see the separate :ref:`flaperon guide <flaperons-on-plane>` for details.
