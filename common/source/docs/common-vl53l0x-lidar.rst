@@ -24,18 +24,18 @@ Where to Buy
 Connecting to the Flight Controller
 -----------------------------------
 
-Connect the VCC, GND, SDA ans SCL lines of the lidar to the I2C port on the flight controller as shown below.
+Connect the VCC, GND, SDA ans SCL lines of the lidar to the I2C port on the flight controller as shown below for the first rangefinder.
 
 .. image:: ../../../images/vl53l0x-pixhawk.jpg
 
 Please set the rangefinder parameters as shown below (this can be done using the *Mission Planner* **Config/Tuning \| Full Parameter List** page):
 
--  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 16 (VL53L0X)
--  :ref:`RNGFND_ADDR <RNGFND_ADDR>` = 41 (I2C Address of lidar in decimal).  *The sensor's default I2C address is 0x29 hexademical which is 41 in decimal.*
--  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = 1
--  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 5
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **120** for the VL53L0X, **360** for the VL53L1X.  *This is the distance in cm that the rangefinder can reliably read.*
--  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in cm from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 16 (VL53L0X)
+-  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 41 (I2C Address of lidar in decimal).  *The sensor's default I2C address is 0x29 hexademical which is 41 in decimal.*
+-  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
+-  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 5
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **120** for the VL53L0X, **360** for the VL53L1X.  *This is the distance in cm that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in cm from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 Testing the sensor
 ==================

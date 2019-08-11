@@ -24,13 +24,13 @@ For a serial connection you can use any spare Serial/UART port.  The diagram bel
 
 .. image:: ../../../images/wasp200-pixhawk.jpg
 
-If the SERIAL4 port on a Pixhawk is being used then the following parameters should be set:
+If the SERIAL4 port on a Pixhawk is being used then the following parameters should be set for the first rangefinder:
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
--  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 18 (Wasp200)
--  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 200
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = 20000.  *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 18 (Wasp200)
+-  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 200
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 20000.  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If instead the Telem2 port was used then the serial parameters listed above should instead be:
 
