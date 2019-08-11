@@ -39,17 +39,17 @@ Next pins on the left side of the DST-2 (serial and RS-232 output) should be con
 
 .. image:: ../../../images/underwater-sonar-analog-wiring.png
 
-Connect with a ground station to the flight controller and set the following parameters (these settings assume the sensor is connected to Telem2/Serial2)
+Connect with a ground station to the flight controller and set the following parameters (these settings assume the first sensor is connected to Telem2/Serial2)
 
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 4 (4800 baud)
 
 Then the following range finder related parameters should be set:
 
--  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 17 (NMEA)
--  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 13
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = 30000 (i.e. 300m).  *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND_ORIENT <RNGFND_ORIENT>` = 25 (i.e. down) if mounted on a boat
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 17 (NMEA)
+-  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 13
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 30000 (i.e. 300m).  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (i.e. down) if mounted on a boat
 
 Testing the sensor
 ==================
