@@ -13,7 +13,7 @@ PXFmini Wiring Quick Start
     :target: ../_images/jst.jpg
 
 This article provides high level information about how to power
-:ref:`PXFmini` and connect its most important peripherals.
+:ref:`PXFmini<common-pxfmini>` and connect its most important peripherals.
 
 
 .. _common-pxfmini-wiring-quick-start_pxfmini_wiring_chart:
