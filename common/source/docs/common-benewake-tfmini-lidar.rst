@@ -26,14 +26,14 @@ For a serial connection you can use any spare Serial/UART port.  The diagram bel
 
 .. image:: ../../../images/benewake-tfmini-pixhawk.png
 
-If the SERIAL4/5 port on a Pixhawk is being used then the following parameters should be set:
+If the SERIAL4/5 port on a Pixhawk is being used then the following parameters should be set for the first rangefinder:
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
--  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 20 (Benewake TFmini)
--  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 30
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = **1000** for indoor use OR **600** for outdoors.  *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND_GNDCLEAR <RNGFND_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 (Benewake TFmini)
+-  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 30
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **1000** for indoor use OR **600** for outdoors.  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 If instead the Telem2 port was used then the serial parameters listed above should instead be:
 

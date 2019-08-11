@@ -27,7 +27,7 @@ Connecting and Configuring
 
 The ECT400 provides distance measurements using the NMEA protocol over serial at 115200 baud.
 
-The sensor can be connected to any available serial/uart port on the flight controller.  In the diagram below the sensor is connected to SERIAL2.
+The sensor can be connected to any available serial/uart port on the flight controller.  In the diagram below the first sensor is connected to SERIAL2.
 
 .. image:: ../../../images/echologger-ect400-pixhawk.png
     :target: ../_images/echologger-ect400-pixhawk.png
@@ -39,10 +39,10 @@ If the SERIAL2 is used then the following parameters should be set:
 
 Then the following range finder related parameters should be set:
 
--  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = 17 (NMEA)
--  :ref:`RNGFND_MIN_CM <RNGFND_MIN_CM>` = 13
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = 10000 (i.e. 100m).  *This is the distance in centimeters that the rangefinder can reliably read.*
--  :ref:`RNGFND_ORIENT <RNGFND_ORIENT>` = 25 (i.e. down) if mounted on a boat
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 17 (NMEA)
+-  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 13
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 10000 (i.e. 100m).  *This is the distance in centimeters that the rangefinder can reliably read.*
+-  :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>` = 25 (i.e. down) if mounted on a boat
 
 Configuring the sensor
 ----------------------

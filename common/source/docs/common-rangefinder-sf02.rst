@@ -33,11 +33,11 @@ To configure Copter, Plane or Rover to use the LIDAR-Lite, please first
 connect with the Mission Planner and then open the Config/Tuning >> Full
 Parameter List page and set:
 
--  :ref:`RNGFND_MAX_CM <RNGFND_MAX_CM>` = "3700" (i.e. 40m max range - 3m buffer.  This buffer is required so the flight code can detect when there is nothing in range)
--  :ref:`RNGFND_PIN <RNGFND_PIN>` = "14" (2nd pin of 3.3V ADC connector)
--  :ref:`RNGFND_SCALING <RNGFND_SCALING>` = "12.12" (ie. 40m / 3.3v = 12.12) **
--  :ref:`RNGFND_TYPE <RNGFND_TYPE>` = “1" (Analog)
--  :ref:`RNGFND_RMETRIC <RNGFND_RMETRIC>` = "0" (non-ratiometric, shown incorrectly in the
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = "3700" (i.e. 40m max range - 3m buffer.  This buffer is required so the flight code can detect when there is nothing in range)
+-  :ref:`RNGFND1_PIN <RNGFND1_PIN>` = "14" (2nd pin of 3.3V ADC connector)
+-  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = "12.12" (ie. 40m / 3.3v = 12.12) **
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = “1" (Analog)
+-  :ref:`RNGFND1_RMETRIC <RNGFND1_RMETRIC>` = "0" (non-ratiometric, shown incorrectly in the
    diagram below)
 
 ** The default range for an SF02 is 33m / 3.3V = 10 m/V
