@@ -102,7 +102,7 @@ stall and crash the aircraft.
 We are looking at ways of detecting partial airspeed sensor failures and
 hope to add some protection into the code in the future.
 
-Why don't my surfaces move enough with FLAPERON_OUTPUT, VTAIL_OUTPUT or ELEVON_OUTPUT?
+Why don't my surfaces move enough when using flaperons, elevons, or v-tail?
 -----------------------------------------------------------------------------------------
 
 You are probably using the default MIXING_GAIN of 0.5. The default is
@@ -175,22 +175,9 @@ Crow flaps combine flaperons with normal flaps, but the flaperons move
 upward when the flaps are engaged. Crow flaps can add a lot of drag to
 slow an aircraft for landing without inducing a lot of pitching moment.
 
-To setup crow flaps you will need to combine two features. First you
-will need to :ref:`setup flaperons <flaperons-on-plane>` on two
-output channels using the FlaperonLeft and FlaperonRight functions.
-You will need to choose the FLAPERON_OUTPUT parameter value so that the
-flaps go up instead of down when flaps are engaged, while being careful
-that aileron input goes in the right direction for roll.
+To setup crow flaps you :ref:`setup flaperons <flaperons-on-plane>` on two
+output channels just as you would for normal flaperons. However, follow the crow instructions to make sure that the ailerons move upward when the flap channel is activated, instead of downward.
 
-Then you should separately setup 1 or 2 flap channels (depending on
-whether your flap servos are setup to use a Y lead) using the
-:ref:`flap_auto output channel function <channel-output-functions_flap_auto>`.
-
-It is strongly suggested that you also setup a FLAP_INPUT_CHANNEL on
-an RC input channel to allow easy testing of flaps on the ground, and to
-give manual flap control for testing in FBWA mode. That will allow you
-to test what degree of flap movement produces the desired increase in
-drag without inducing a stall.
 
 Why do my servos jitter when on the ground?
 -------------------------------------------
