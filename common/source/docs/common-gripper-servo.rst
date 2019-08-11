@@ -45,7 +45,7 @@ The transmitter's auxiliary switch can control the gripper.  If using the missio
 Controlling Gripper during a mission
 ====================================
 
-The gripper position can be controlled during a mission in AUTO mode using the :ref:`DO_GRIPPER <mission-command-list#do-mount-control>` command.  Set the "drop/grab" column to 0 to close the gripper, 1 to open the gripper.
+The gripper position can be controlled during a mission in AUTO mode using the :ref:`DO_GRIPPER <common-mavlink-mission-command-messages-mav_cmd>` command.  Set the "drop/grab" column to 0 to close the gripper, 1 to open the gripper.
 
 .. image:: ../../../images/MissionList_DoGripper.png
     :target: ../_images/MissionList_DoGripper.png

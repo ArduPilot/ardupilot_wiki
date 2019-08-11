@@ -29,7 +29,7 @@ In Ardupilot/APM Planner/Mission planner set the following variables:
 - :ref:`MNT_TYPE <MNT_TYPE>` to 4 / "Mount Type (None, Servo or MavLink)"
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 1 / "MavLink" (Notee "SERIAL2" should be "SERIAL1" if using Telem1 port, SERIAL4 if using Serial4/5, etc)
 - :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 20
-- :ref:`SR2_POSITION <SR2_POSITIOIN>` to 10
+- :ref:`SR2_POSITION <SR2_POSITION>` to 10
 - :ref:`SR2_RC_CHAN <SR2_RC_CHAN>` to 20 and all other SR2_* variables to 0.
 
 If you wish to control the pitch angle manually you can set:
@@ -57,7 +57,7 @@ If you are unable to connect you may wish to set the following parameters althou
 The gimbal's maximum lean angles can be set using these parameters:
 
 - :ref:`MNT_ANGMIN_ROL <MNT_ANGMIN_ROL>`, :ref:`MNT_ANGMAX_ROL <MNT_ANGMAX_ROL>` to -3000 and 3000 to limit the roll angle to 30 degrees in each direction
-- :ref:`MNT_ANGMIN_TIL <MNT_ANGMI_TIL>`, :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` to -9000 and 0 to limit the gimbal to point between straight down (-90 degrees) and straight forward (0 degrees)
+- :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>`, :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` to -9000 and 0 to limit the gimbal to point between straight down (-90 degrees) and straight forward (0 degrees)
 
 To control the gimbal's lean angles from a transmitter set:
 

@@ -18,8 +18,7 @@ Configuration
 
 Depending upon the firmware version either the RCx_FUNCTION or SERVOx_FUNCTION can be set to any of `85+ different values <https://github.com/ArduPilot/ardupilot/blob/master/libraries/SRV_Channel/SRV_Channel.h#L40>`__
 to specify what the output channel should be used for (Note: most ground stations should display the entire list of possible options).
-The "x" in this case is the channel number so RC1_FUNCTION or :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` assigns what "MAIN OUT 1" pin on the back of a Pixhawk is used for.
-:ref:`RC9_FUNCTION <RC9_FUNCTION>` or :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` assigns what the "AUX OUT1" pin is used for.
+The "x" in this case is the channel number so RC1_FUNCTION or :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` assigns what "MAIN OUT 1" pin on the back of a Pixhawk is used for. RC9_FUNCTION or :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` assigns what the "AUX OUT1" pin is used for.
 
 .. image:: ../../../images/rcoutput-mapping.png
     :target: ../_images/rcoutput-mapping.png
