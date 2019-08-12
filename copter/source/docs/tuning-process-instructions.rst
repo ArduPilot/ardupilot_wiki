@@ -26,9 +26,9 @@ Parameters used to define the output range sent to the ESC.
 
 - :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` - Check ESC manual for fixed range or 2000us
 - :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` - Check ESC manual for fixed range or 1000us
-- :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` - use the motor test feature :ref:`Checking the motor numbering with the Mission Planner Motor test`
+- :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` - use the motor test feature :ref:`Checking the motor numbering with the Mission Planner Motor test <connect-escs-and-motors_testing_motor_spin_directions>`
 - :ref:`MOT_SPIN_MAX <MOT_SPIN_MAX>` - 0.95
-- :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` - use the motor test feature :ref:`Checking the motor numbering with the Mission Planner Motor test`
+- :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` - use the motor test feature :ref:`Checking the motor numbering with the Mission Planner Motor test <connect-escs-and-motors_testing_motor_spin_directions>`
 - :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` - 0.25 or below the expected hover thrust percentage (low is safe)
 
 PID Controller Initial Setup
@@ -61,7 +61,7 @@ The first takeoff of an untuned multirotor is the most dangerous seconds of the 
 
 There are several things that the pilot can do to minimise the risk during the early tuning process:
 
-1. The pilot should conduct a motor number and orientation check (see :ref:`Checking the motor numbering with the Mission Planner Motor test`). Care should be taken to ensure that the correct frame type is selected. Incorrect frame type can result in a very fast yaw rotation or complete loss of control. Take note of the output percentage required to spin the propellers and ensure that:
+1. The pilot should conduct a motor number and orientation check (see :ref:`Checking the motor numbering with the Mission Planner Motor test <connect-escs-and-motors_testing_motor_spin_directions>`). Care should be taken to ensure that the correct frame type is selected. Incorrect frame type can result in a very fast yaw rotation or complete loss of control. Take note of the output percentage required to spin the propellers and ensure that:
 
 - :ref:`MOT_PWM_MAX <MOT_SPIN_ARM>` is set high enough to spin the motors cleanly.
 - :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` is set high enough to spin the motors win a minimal level of thrust.
@@ -153,7 +153,7 @@ Most pilots will look to move to Autotune as quickly as possible once their airc
 3. Increase inputs gradually to full stick deflection
 4. Go to full stick deflection and letting the sticks spring back to centre
 
-If the aircraft begins to overshoot significantly or oscillate after the stick input, halt the tests before the situation begins to endanger the aircraft. The aircraft may require manual tuning (:ref:`see next section <Manual tuning of Roll and Pitch>`) before autotune can be run.
+If the aircraft begins to overshoot significantly or oscillate after the stick input, halt the tests before the situation begins to endanger the aircraft. The aircraft may require manual tuning (:ref:`see next section <ac_rollpitchtuning>`) before autotune can be run.
 
 To test the stabilization loops independent of the input shaping, set the parameter: :ref:`ATC_RATE_FF_ENAB <ATC_RATE_FF_ENAB>` to 0.
 
@@ -162,7 +162,7 @@ To test the stabilization loops independent of the input shaping, set the parame
 3. Release the stick and observe the overshoot as the aircraft levels itself
 4. Gradually increase the stick deflection to 100%
 
-Halt the tests if the aircraft overshoots level significantly or if the aircraft oscillates, the aircraft may require manual tuning (:ref:`see next section <Manual tuning of Roll and Pitch>`) before autotune can be run.
+Halt the tests if the aircraft overshoots level significantly or if the aircraft oscillates, the aircraft may require manual tuning (:ref:`see next section <ac_rollpitchtuning>`) before autotune can be run.
 
 Set :ref:`ATC_RATE_FF_ENAB <ATC_RATE_FF_ENAB>` to 1 after the tests are complete.
 
