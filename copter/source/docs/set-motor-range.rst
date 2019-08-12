@@ -28,13 +28,13 @@ Measuring the deadzone
 Setting Spin-Armed and Min Throttle
 ===================================
 
-By default, when the vehicle is armed but not flying, the motors will spin at a slightly slower than normal speed.  This speed can be configured using MOT_SPIN_ARMED or MOT_SPIN_ARM paramter (depending upon the version).
+By default, when the vehicle is armed but not flying, the motors will spin at a slightly slower than normal speed.  This speed can be configured using :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` paramter (For older versions check MOT_SPIN_ARMED).
 Once the vehicle is flying, we want to ensure that we never output a value that causes the motors to stop spinning, this lower limit can be configured with the THR_MIN or MOT_SPIN_MIN parameter (depending upon the version).
 
 If using Copter-3.3 (or earlier):
 
--  set the :ref:`MOT_SPIN_ARMED <MOT_SPIN_ARMED>` parameter to **(the percentage discovered above + 2%) * 10**.  I.e. if you found the deadzone of the ESCs was 7%, set :ref:`MOT_SPIN_ARMED <MOT_SPIN_ARMED>` to 90 (i.e. (7 + 2) * 10).
--  set the THR_MIN parameter to at least 30 higher than :ref:`MOT_SPIN_ARMED <MOT_SPIN_ARMED>`.  I.e. if :ref:`MOT_SPIN_ARMED <MOT_SPIN_ARMED>` was 90, set THR_MIN to 120.
+-  set the :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` parameter to **(the percentage discovered above + 2%) * 10**.  I.e. if you found the deadzone of the ESCs was 7%, set :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` to 90 (i.e. (7 + 2) * 10).
+-  set the THR_MIN parameter to at least 30 higher than :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>`.  I.e. if :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` was 90, set THR_MIN to 120.
 
 If using Copter-3.4 (or higher):
 
