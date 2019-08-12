@@ -79,7 +79,7 @@ Tuning Parameters
    higher rotation rates, lower to slower rotation rates.
 -  :ref:`ACRO_YAW_P <ACRO_YAW_P>` controls the rotation rate for the yaw axis. The default, 4.5, like
    roll and pitch, will command a 200deg/sec rotation rate.
--  :ref:`ACRO_EXPO <ACRO_EXPO>` is
+-  :ref:`ACRO_RP_EXPO <ACRO_RP_EXPO>` and :ref:`ACRO_Y_EXPO <ACRO_Y_EXPO>` are
    an amount of Exponential to apply to the pilots stick inputs that
    only applies to ACRO mode. By default, ACRO mode is much more
    responsive, even in the center-sticks positions, than the other
