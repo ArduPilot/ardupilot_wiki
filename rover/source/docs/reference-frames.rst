@@ -11,10 +11,11 @@ This section includes details on tested frames to speed up DIY builds of rovers 
 .. toctree::
     :maxdepth: 1
 
+    ArduRoller Balance Bot <reference-frames-arduroller>
+    Boogie Board Boat <reference-frames-boogieboard-boat>
     Thunder Tiger Toyota Hilux <reference-frames-tt-toyotahilux>
     HobbyKing Hydrotek <reference-frames-hydrotek>
     HobbyKing Hydropro Inception <reference-frames-hydropro-inception>
-    ArduRoller balance bot <reference-frames-arduroller>
     Traxxas Stampede 4WD Truck <reference-frame-traxxas-stampede>
 
 .. note::
