@@ -12,11 +12,11 @@ The Japan Drones Boogie Board boat is a low cost and agile autonomous boat suita
 Parts List
 ----------
 
-- `Morey Mach9TR boogie board <https://item.rakuten.co.jp/shopavail/268/>`__
+- `Morey Mach9TR boogie board <https://www.amazon.com/Morey-Mach-Tube-Rail-9TR/dp/B074SDPKDF>`__
 - 2x `Blue Robotics T200 Thrusters <https://www.bluerobotics.com/store/thrusters/t100-t200-thrusters/t200-thruster/>`__ and `mounting brackets <https://www.bluerobotics.com/store/thrusters/t100-t200-thrusters/t100-p-bracket-r1/>`__
 - 2x `BlueRobotics Basic ESCs <https://www.bluerobotics.com/store/thrusters/speed-controllers/besc30-r3/>`__
-- `Boxco box (21cm x 21cm x 10cm) with clear lid <https://jp.misumi-ec.com/vona2/detail/222000801005/?HissuCode=BCAP212110T>`__
-- `Boxco box base 2020P (20cm x 20cm) <https://jp.misumi-ec.com/vona2/detail/222000222473/?HissuCode=BMP2020P&PNSearch=BMP2020P&KWSearch=BMP2020P&searchFlow=results2products>`__
+- `Boxco Box BCAP212110T (21cm x 21cm x 10cm) with clear lid <https://jp.misumi-ec.com/vona2/detail/222000801005/?HissuCode=BCAP212110T>`__
+- `Boxco Box Base 2020P (20cm x 20cm) <https://jp.misumi-ec.com/vona2/detail/222000222473/?HissuCode=BMP2020P&PNSearch=BMP2020P&KWSearch=BMP2020P&searchFlow=results2products>`__
 - 2x `Glands for passing Thrust wires into box <https://jp.misumi-ec.com/vona2/detail/110400210840/?PNSearch=CRMPM-M12-4578-G&HissuCode=CRMPM-M12-4578-G&searchFlow=suggest2products&Keyword=CRMPM-M12-4578-G>`__
 - Mounting discs and plates from `CNCMadness.com <http://www.cncmadness.com/home.html>`__
 - `3S 7500mAh battery <https://www.banggood.com/ZOP-Power-11_1V-7500mAh-35C-3S-Lipo-Battery-XT60-Plug-for-RC-Quadcopter-Car-p-1334677.html>`__
