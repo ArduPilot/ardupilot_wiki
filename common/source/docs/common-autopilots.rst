@@ -6,7 +6,7 @@ Autopilot Hardware Options
 
 This section provides information about ArduPilot Flight Controller Hardware options.  The list below is sorted by manufacturer and product name.
 
-Open hardware 
+Open hardware
 -------------
 
 .. toctree::
@@ -30,7 +30,7 @@ Open hardware
     OpenPilot Revolution <common-openpilot-revo-mini>
     PocketPilot <https://github.com/PocketPilot/PocketPilot>
     TauLabs Sparky2 <common-taulabs-sparky2>
-    
+
 Closed hardware
 ---------------
 
@@ -41,6 +41,7 @@ Closed hardware
     Emlid Edge <common-emlid-edge>
     Emlid NAVIO2 <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
+    Holybro Durandal H7 <common-durandal-overview>
     Holybro Kakute F4 <common-holybro-kakutef4>
     Holybro Kakute F7 AIO <common-holybro-kakutef7aio>
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
