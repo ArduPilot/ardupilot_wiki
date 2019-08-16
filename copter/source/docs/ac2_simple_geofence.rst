@@ -76,12 +76,12 @@ Warnings:
 -  For the best results, ensure RTL is working on your vehicle.
 -  With the Fence enabled, the pre-arm checks will require you have GPS
    lock before arming the vehicle.
--  If GPS failsafe is not enabled and the Fence is enabled and you loose
+-  If GPS failsafe is not enabled and the Fence is enabled and you lose
    GPS lock while flying the fence will be disabled.
 -  If GPS failsafe is enabled and the Fence is enabled and you lose GPS
    lock while flying the vehicle will switch to LAND because we no
    longer know the vehicle position and we want to ensure the copter
-   never travels far outside the fence.  This beahviour will occur
+   never travels far outside the fence.  This behaviour will occur
    regardless of the flight mode.  If a LAND sequence is not desired,
    the pilot can retake control by moving the flight mode switch.
 -  The backup fences are created 20m out from the previous breached
