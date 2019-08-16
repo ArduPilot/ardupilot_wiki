@@ -148,4 +148,4 @@ You should now be able to start the "Cygwin64 Terminal" application from your Wi
 
       The build may fail if the file path to some files is too long.  If the build fails, please try :ref:`cloning <git-clone>` ArduPilot into a directory very high in the directory structure (i.e. ~/ardupilot).
       
-      If during build process you get error of missing packet xyz, re-check that you have installed all cygwin packets listed above
+      If during build process you get error of missing packet xyz, re-check that you have installed all cygwin packages listed above
