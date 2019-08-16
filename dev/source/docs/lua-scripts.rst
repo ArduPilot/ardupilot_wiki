@@ -135,6 +135,35 @@ The following operators are supported on a Vector2f:
 
 - :code:`-` - Subtracts the two vectors by components.
 
+Vector3f
+~~~~~~~~
+
+Vector3f is a userdata object that holds a 2D vector. The components are stored as floating point numbers. To create a new Vector3f you can call Vector3f() to allocate a new one, or call a method that returns one to you.
+
+A Vector3f object supports the following calls:
+
+- :code:`x([new_x])` - If called with no arguments, return the currently set X component as a floating point number. If called with one argument it will assign the value to the X component.
+
+- :code:`y([new_y])` - If called with no arguments, return the currently set Y component as a floating point number. If called with one argument it will assign the value to the Y component.
+
+- :code:`z([new_z])` - If called with no arguments, return the currently set Z component as a floating point number. If called with one argument it will assign the value to the Z component.
+
+- :code:`length()` - Returns the length of the vector as a floating point number.
+
+- :code:`normalize()` - Normalizes the vector to be a unit vector.
+
+- :code:`is_nan()` - Returns true if the vector contains any NaN members.
+
+- :code:`is_inf()` - Returns true if the vector contains any infinity members.
+
+- :code:`is_zero()` - Returns true if all the vector fields are 0.
+
+The following operators are supported on a Vector3f:
+
+- :code:`+` - Adds the two vectors by components.
+
+- :code:`-` - Subtracts the two vectors by components.
+
 AHRS
 ~~~~
 
@@ -228,6 +257,35 @@ Notify
 ~~~~~~
 
 - :code:`play_tune(tune)` - Plays a MML tune through the buzzer on the vehicle. The tune is provided as a string.
+
+Terrain
+~~~~~~
+
+The terrain library proivdes access to checking heights against a terrain database.
+
+- :code:`enabled()` - Returns true if terrain is enabled.
+
+- :code:`status()` - Returns the current status of the rangefinder. Compare this to one of the terrain statuses (terrain.TerrainStatusDisabled, terrain.TerrainStatusUnhealthy, terrain.TerrainStatusOK).
+
+- :code:`height_amsl(location)` - Returns the height (in meters) above mean sea level at the provided Location userdata, or returns nil if that is not available.
+
+- :code:`height_terrain_difference_home(location)` - Returns the difference in height (in meters) between the provided location and home, or returns nil if that is not available.
+
+- :code:`height_above_terrain()` - Returns the height (in meters) that the vehicle is currently above the terrain, or returns nil if that is not available.
+
+
+Relay
+~~~~~~
+
+The relay library proivdes access to controlling relay outputs.
+
+- :code:`on(relay_num)` - Turns the requested relay on.
+
+- :code:`off(relay_num)` - Turns the requested relay off.
+
+- :code:`enabled(relay_num)` - Returns true if the requested relay is currently turned on.
+
+- :code:`toggle(relay_num)` - Toggles the requested relay on or off.
 
 How to Add New Bindings
 =======================
