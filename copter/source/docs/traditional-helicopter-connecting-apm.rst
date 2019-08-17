@@ -7,8 +7,8 @@ Traditional Helicopter — Connecting and Calibrating the System
 Flight Controller Info
 =============
 
-.. image:: ../images/PH21_3.jpg
-    :target: ../_images/PH21_3.jpg
+.. image:: ../images/pixhackv5.jpg
+    :target: ../_images/pixhackv5.jpg
 
 A flight controller with internally damped IMU's is highly recommended for 
 helicopters. Experience has shown the tuning, handling and stability 
