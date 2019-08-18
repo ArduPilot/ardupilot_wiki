@@ -22,6 +22,7 @@ These pages will show you how to:
         Connecting to ArduPilot from ROS <ros-connecting>
         Hector SLAM for non-GPS navigation <ros-slam>
         Google Cartographer SLAM for non-GPS navigation <ros-cartographer-slam>
+        VIO tracking camera for non-GPS navigation <ros-vio-tracking-camera>
         Sending Commands from rviz <ros-rviz>
         Object Avoidance <ros-object-avoidance>
         Clock/Time syncronisation <ros-timesync>
