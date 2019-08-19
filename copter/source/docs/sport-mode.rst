@@ -17,7 +17,7 @@ Overview
    of the vehicle so when the sticks are released the vehicle will
    remain in it's current attitude.
 -  The vehicle will not lean more than 45 degrees (this angle is
-   adjustable with the ANGLE_MAX parameter)
+   adjustable with the :ref:`ACRO_BALL_ROLL <ACRO_BALL_ROLL>` and :ref:`ACRO_BALL_PITCH <ACRO_BALL_PITCH>` parameters)
 -  The altitude is maintained with the altitude hold controller so the
    vehicle will attempt to hold it's current altitude when the sticks
    are placed with 10% of mid-throttle. It will climb or descend at up
