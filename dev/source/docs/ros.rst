@@ -31,6 +31,7 @@ These pages will show you how to:
         ROS with SITL in Gazebo <ros-gazebo>
         ROS with distance sensors <ros-distance-sensors>
         ROS with Aruco Boards detection <ros-aruco-detection>
+        ROS with Apriltag Boards detection <ros-apriltag-detection>
 
 Prerequisites
 =============
