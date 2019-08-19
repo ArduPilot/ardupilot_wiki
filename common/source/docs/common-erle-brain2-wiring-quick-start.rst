@@ -70,8 +70,8 @@ I2C port with the four-position DF13 cable, as shown in the
 Connect Motors
 ==============
 
-.. image:: http://erlerobotics.com/docs/brains/erle-brain-3/hardware/power/ErleBrain3_Power_ESC.jpg
-    :target:  http://erlerobotics.com/docs/brains/erle-brain-3/hardware/power/ErleBrain3_Power_ESC.jpg
+.. figure:: ../../../images/ErleBrain3_Power_ESC.png
+    :target:  ../../../images/ErleBrain3_Power_ESC.png
 
 .. note::
 
@@ -145,8 +145,8 @@ Use a Bluetooth dongle to connect additional devices, such as joysticks.
    You will need to configure BlueTooth interface to make it
    work
 
-.. image:: http://erlerobotics.com/docs/img/Artificial_Brains/Erle_Brain2/Hardware/Erle-Brain_DongleWifi.jpg
-    :target:  http://erlerobotics.com/docs/img/Artificial_Brains/Erle_Brain2/Hardware/Erle-Brain_DongleWifi.jpg
+.. figure:: ../../../images/Erle-Brain_DongleWifi.jpg
+    :target: .. figure:: ../../../images/
 
 Connect other peripherals
 =========================
