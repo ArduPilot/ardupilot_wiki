@@ -138,7 +138,7 @@ The following operators are supported on a Vector2f:
 Vector3f
 ~~~~~~~~
 
-Vector3f is a userdata object that holds a 2D vector. The components are stored as floating point numbers. To create a new Vector3f you can call Vector3f() to allocate a new one, or call a method that returns one to you.
+Vector3f is a userdata object that holds a 3D vector. The components are stored as floating point numbers. To create a new Vector3f you can call Vector3f() to allocate a new one, or call a method that returns one to you.
 
 A Vector3f object supports the following calls:
 
