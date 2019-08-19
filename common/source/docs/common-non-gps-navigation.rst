@@ -15,6 +15,8 @@ These are the available options that allow a vehicle to estimate its position wi
 - :ref:`Pozyx Beacons <common-pozyx>`
 - :ref:`ROS cartographer <ros-cartographer-slam>`
 - :ref:`Visual Odometry with OpenKai and ZED <common-zed>`
+- :ref:`Visual Odometry with VIO tracking camera <common-vio-tracking-camera>`
+- :ref:`Visual Odometry with VIO tracking camera and ROS <ros-vio-tracking-camera>`
 
 .. note::
 
