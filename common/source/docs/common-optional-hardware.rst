@@ -77,6 +77,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
     Video <common-video-landingpage>
+[site wiki="copter,rover"]
+    VIO tracking camera for Non-GPS navigation <common-vio-tracking-camera>
+[/site]
 [site wiki="rover"]
     Wind Vane <wind-vane>
     Wheel Encoders <wheel-encoder>
