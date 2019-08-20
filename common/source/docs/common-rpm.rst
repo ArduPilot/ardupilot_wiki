@@ -55,7 +55,7 @@ glued in place (as in the image below).  For ICE the magnet will be mounted in t
     :width: 240px
 
 The polarity of the magnet matters.  Only one pole will create the change in voltage required.  To ensure that the magnet is affixed in the correct orientation 
-either an oscilloscope or the `Arduino sketch found here <https://github.com/Gone4Dirt/ardupilot/blob/RPM_Tool/libraries/AP_RPM/examples/ArduinoHallEffectDebug.ino>`__ 
+either an oscilloscope or the `Arduino sketch found here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_RPM/examples/ArduinoHallEffectDebug.ino>`__ 
 can be used.  If using an oscilloscope, this guide assumes that you have sufficient knowledge to be able to set up this test.  If using the Arduino sketch method 
 in the link provided, a comprehensive set of instructions are commented at the beginning of the sketch.  An Arduino Uno was used when writing and testing the sketch 
 and is recommended.
