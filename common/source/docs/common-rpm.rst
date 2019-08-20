@@ -1,4 +1,4 @@
-.. _common-rpm.rst
+.. _common-rpm:
 
 ===========
 RPM Sensors
