@@ -5,7 +5,7 @@ Traditional Helicopter — Connecting and Calibrating the System
 ==============================================================
 
 Flight Controller Info
-=============
+======================
 
 .. image:: ../images/pixhackv5.jpg
     :target: ../_images/pixhackv5.jpg
