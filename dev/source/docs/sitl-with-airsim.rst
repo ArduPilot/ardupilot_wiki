@@ -37,16 +37,7 @@ The main page for Windows setup is `here <https://github.com/microsoft/AirSim/bl
 
 #. `Install Unreal Engine <https://github.com/microsoft/AirSim/blob/master/docs/build_windows.md#install-unreal-engine>`__
 
-#. Build AirSim - Follow the `steps on AirSim Setup <https://github.com/microsoft/AirSim/blob/master/docs/build_windows.md#build-airsim>`__ for Visual Studio
-
-  After cloning the repo, follow these steps to get the ArduCopter branch since the `AirSim PR <https://github.com/microsoft/AirSim/pull/2075>`__  for ArduCopter Support hasn't been merged
-
-    ::
-
-        cd AirSim
-        git remote add <remote-name> https://github.com/rajat2004/AirSim.git
-        git fetch <remote-name>
-        git checkout -b <your-branch-name> <remote-name>/pr-arducopter
+#. Build AirSim - Follow the `steps on AirSim Setup <https://github.com/microsoft/AirSim/blob/master/docs/build_windows.md#build-airsim>`__ for Visual Studio packages and clone AirSim.
 
 Run ``build.cmd`` from the command line. This will create ready to use plugin bits in the ``Unreal\Plugins`` folder that can be dropped into any Unreal project.
 
@@ -66,19 +57,11 @@ AirSim's page on Linux Setup is `here <https://github.com/microsoft/AirSim/blob/
 
             git clone https://github.com/Microsoft/AirSim.git
 
-  #. Currently, the `AirSim PR <https://github.com/microsoft/AirSim/pull/2075>`__  for ArduCopter Support hasn't been merged, so you'll need to fetch that particular branch for using Ardupilot.
-
-        ::
-
-            cd AirSim
-            git remote add <remote-name> https://github.com/rajat2004/AirSim.git
-            git fetch <remote-name>
-            git checkout -b <your-branch-name> <remote-name>/pr-arducopter
-
   #. Build it
 
         ::
 
+            cd AirSim
             ./setup.sh
             ./build.sh
 
@@ -330,7 +313,9 @@ A ROS wrapper has also been added. See `airsim_ros_pkgs <https://github.com/micr
 Run on different machines
 +++++++++++++++++++++++++
 
-Change ``UdpIp`` to the IP address of the machine running Ardupilot, use ``-A`` option to pass the next arguments to the SITL instance, followed by ``--sim-address`` to specify Airsim's IP address
+#. Change ``UdpIp`` in the ``settings.json`` file to the IP address of the machine running Ardupilot
+
+#. Use ``-A`` option to pass the next arguments to the SITL instance, followed by ``--sim-address`` to specify Airsim's IP address
 
 An example-
 
