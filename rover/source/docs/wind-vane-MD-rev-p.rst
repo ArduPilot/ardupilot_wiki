@@ -1,8 +1,8 @@
 .. _wind-vane-MD-rev-p:
 
-=======================
+================================
 Modern Devices Wind Speed Sensor
-=======================
+================================
 
 A `Modern Devices wind sensor Rev. P <https://www.moderndevice.com/product/wind-sensor-rev-p>`__ hot wire anemometer can be used to sense the wind speed. This is selected by
 setting :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>` to 2. 
