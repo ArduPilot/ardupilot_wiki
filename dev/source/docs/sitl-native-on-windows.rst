@@ -20,12 +20,16 @@ Installation steps
 - Install Cygwin as described :ref:`here <building-setup-windows-cygwin>`
 - `Download MAVProxy for Windows <http://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe>`__ (latest build), install the executable including accepting the license and all default installation options
 
+.. tip::
+
+   Makes sure that Cygwin is in your PATH. As for troubleshooting, you may add a Windows environment variable called CYGWIN_HOME in your path pointing to your c:\cygwin\bin (if you installed at "C:"). You may check it by doing a Right-click on "My Computer" -> Properties -> Advanced -> Environment Variables.
+
 Running SITL
 ============
       
 #. Open a Cygwin64 terminal from the start menu
 
-#. Navigate to one of the vehicle directories (in this case Copter) and call ``sim_vehicle.py`` to start SITL.  If you get a windows security alert for the the firewall, allow the connection.
+#. Navigate to one of the vehicle directories (in this case Copter) and call ``sim_vehicle.py`` to start SITL.  If you get a windows security alert for the the firewall, allow the connection. 
 
    ::
 
