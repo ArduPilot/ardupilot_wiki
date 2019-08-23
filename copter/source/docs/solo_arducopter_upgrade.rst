@@ -156,7 +156,7 @@ Value   Meaning
 =====   =======
 
 =====   =======
-:ref:`FS_BATT_ENABLE <FS_BATT_ENABLE>` controls the low battery failsafe action. The low battery failsafe kicks in when when the values set in parameters ``FS_BATT_VOLTAGE`` or ``FS_BATT_MAH`` are breached.
+FS_BATT_ENABLE controls the low battery failsafe action for Copter-3.5 (and earlier). For Copter-3.6 (and higher) check the :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` parameter. The low battery failsafe kicks in when when the values set in parameters ``FS_BATT_VOLTAGE`` or ``FS_BATT_MAH`` are breached.
 ---------------
 Value   Meaning
 =====   =======
@@ -166,7 +166,7 @@ Value   Meaning
 =====   =======
 
 =====   =======
-:ref:`FS_BATT_VOLTAGE <FS_BATT_VOLTAGE>` is the low battery voltage threshold. When the battery voltage drops below this point, the low battery beeper sounds and it will do what you have ``FS_BATT_ENABLE`` set for. This value is expressed in volts. The default is 14.0. You can adjust this higher or lower depending on use case and preference.
+FS_BATT_VOLTAGE is the low battery voltage threshold for Copter-3.5 (and earlier). For Copter-3.6 (and higher) check the :ref:`BATT_LOW_VOLT <BATT_LOW_VOLT>` parameter. When the battery voltage drops below this point, the low battery beeper sounds and it will do what you have ``FS_BATT_ENABLE`` set for. This value is expressed in volts. The default is 14.0. You can adjust this higher or lower depending on use case and preference.
 ---------------
 Value   Meaning
 =====   =======
@@ -176,7 +176,7 @@ Value   Meaning
 
 
 =====   =======
-:ref:`FS_BATT_MAH <FS_BATT_MAH>` is the battery capacity remaining threshold expressed in milliamperes (MAH). When the battery remaining capacity drops below this point, the low battery beeper sounds and it will do what you have ``FS_BATT_ENABLE`` set for. The default is 520. On the solo, that is on average about 1.5 minutes of flying time remaining. You can adjust this up or down to fit your preference and use case. Setting it for 0 will disable capacity remaining based alarms and failsafes.
+FS_BATT_MAH is the battery capacity remaining threshold expressed in milliamperes (MAH) for Copter-3.5 (and earlier). For Copter-3.6 (and higher) check the :ref:`BATT_LOW_MAH <BATT_LOW_VOLT>` parameter. When the battery remaining capacity drops below this point, the low battery beeper sounds and it will do what you have ``FS_BATT_ENABLE`` set for. The default is 520. On the solo, that is on average about 1.5 minutes of flying time remaining. You can adjust this up or down to fit your preference and use case. Setting it for 0 will disable capacity remaining based alarms and failsafes.
 ---------------
 Value   Meaning
 =====   =======
