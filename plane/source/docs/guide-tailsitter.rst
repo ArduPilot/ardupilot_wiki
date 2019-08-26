@@ -100,6 +100,8 @@ servo is channel 6, then set:
 you also need to set the right SERVOn_REVERSED values, and the right
 SERVOn_TRIM, SERVOn_MIN and SERVOn_MAX values.
 
+Q_A_ANGLE_BOOST should be disabled for vectored thrust tailsitters. Failure to disable this will cause the throttle to decrease and the nose dips, making the nose dip even further and resulting in a crash. 
+
 Vectored Gains
 ==============
 
