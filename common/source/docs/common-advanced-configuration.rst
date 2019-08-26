@@ -20,6 +20,9 @@ tuning options for the vehicle.
     Auxiliary Functions <rover-auxiliary-functions>
     Boats with Vectored Thrust <rover-vectored-thrust>
 [/site]
+[site wiki="plane"]
+    Auxiliary Functions <plane-auxiliary-functions>
+[/site]
     CAN Bus Setup <common-canbus-setup-advanced>
     Compass Setup (Advanced) <common-compass-setup-advanced>
 [site wiki="copter"]
