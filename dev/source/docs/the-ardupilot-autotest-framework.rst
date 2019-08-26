@@ -104,6 +104,16 @@ Complex Invocation
 
 At time of writing, these invoke all the vehicle tests.  Expect these to take about 40 minutes to run.
 
+Running a specific sub-test
+...........................
+
+To run a specific sub-test just add the test name with a '.' between the test and sub-test names. 
+
+::
+
+  ./Tools/autotest/autotest.py build.ArduPlane fly.ArduPlane.ThrottleFailsafe
+
+
 Using with GDB
 ..............
 
