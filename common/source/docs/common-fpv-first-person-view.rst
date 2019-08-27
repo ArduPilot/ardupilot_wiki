@@ -19,12 +19,10 @@ Recommended parts
 To set up an FPV system on your Copter/Plane equipped vehicle you will
 need:
 
--  `Sony CCD camera <http://www.amazon.com/Miniature-Color-Camera-Super-520TV/dp/B00LAK573Y>`__
--  `MinimOSD <http://store.jdrones.com/jD_MiniOSD_V12_p/jdminiosd12.htm>`__
-   for On Screen Display of aircraft data
--  5.8Ghz 200mw video transmitter/receiver pair
--  Two 900mAh LiPo batteries (one for the air, one for the ground) to
-   power the transmitter, receiver and camera
+-  Miniature video camera. The variety of cameras increases daily. Most now support resolutions of 600-1200 TVL (TV Lines) and have wide supply range tolerance (5-24V typically). Lens are available from wide-angle (<2.8mm) to ultra-narrow (>5mm). For mini-quads, usually wide angle are used, while for planes, normal field of view/focal lengths (2.8mm-3.6mm) are usually used. A wide selection are easily found by searching the internet for ``FPV Camera``.
+-  5.8Ghz 25mw to 200mw video transmitter/receiver pair. Again, supply voltage tolerances now easily accommodate 2s-4s Lipo batteries normally used as vehicle power.
+-  OSD (On-Screen-Display). Many flight controllers now integrate this function directly. If not, external OSDs like `MinimOSD <http://store.jdrones.com/jD_MiniOSD_V12_p/jdminiosd12.htm>`__ can be used. Or, not used at all. However, being able to see the battery status, flight data, etc. makes a much more enjoyable flight!
+-  Separate batteries for powering the above are rarely needed now, since most now accommodate the flight pack's voltage range from full to empty,
 
 In addition you will need a monitor like the `Black Pearl <http://www.amazon.com/FlySight-Black-Pearl-Diversity-Integrated/dp/B00KR69WHY>`__
 or goggles.
@@ -35,7 +33,7 @@ or goggles.
    of goggles including the "Attitude" and "Dominator" that have been
    proven to work.  Note that some models come with a built in
    transmitter & receiver that would replace the 3DR video kits 5.8 Ghz
-   transmitter/receiver pair mentioned above.
+   transmitter/receiver pair mentioned above. SkyZone, Eachine, and others also make many models for FPV use.
 -  Low cost 320x240 resolution goggles (`example video <https://www.youtube.com/watch?v=tG-4JNpE2fc>`__) are not
    recommended because the higher resolution 640x480 (`example video <https://www.youtube.com/watch?v=ywqacXyjcNw>`__) or SVGA
    goggles provide a much better flying experience.
@@ -59,6 +57,11 @@ Minim OSD setup through mission planner
 =======================================
 
 The MinimOSD set-up guide :ref:`can be found here <common-minim-osd-quick-installation-guide>`.
+
+Integrated OSD
+==============
+
+Many flight controllers now integrate the :ref:`OSD function<common-osd-overview>` on board, eliminating the need for an external device and reducing wiring.
 
 User Videos / Blogs
 ===================
@@ -95,8 +98,14 @@ Safety Warnings Relating Specifically to FPV Flight
    flights.
 -  Be ready for loss of FPV video caused by flying beyond your FPV
    systems limits or interference from structures between you and the
-   vehicle.
--  Know and recognise the FPV signal loss warning signs and be ready to
+   vehicle. Being able to invoke the vehicle's RTL mode is a worthwhile safety feature even though most countries require FPV operation within line of sight of the operator.
+-  Know and recognize the FPV signal loss warning signs and be ready to
    shed the FPV equipment and retake line-of-sight control at all times.
 -  FPV equipment can interfere with the vehicle's radio or GPS if placed
-   too close
+   too close.
+
+Government/Local Regulations
+============================
+
+FPV flight regulations imposed by countries and localities vary greatly and are constantly evolving. Be sure you know the applicable restrictions.
+Also, be aware that FPV transmitters may have restrictions on frequency bands and power that vary from country to country, as well as requirements for licensing.
