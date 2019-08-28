@@ -37,6 +37,7 @@ Get Started:
     Hardware Options <balance_bot-hardware>
     Configuration and Setup <balance_bot-configure>
     Balance Bot Control Modes <balance_bot-modes>
+    Testing the Balance Bot <balance_bot-testing>
     Tuning the Balance Bot <balance_bot-tuning>
     Common Issues and Fixes<balance_bot-issues>
 
