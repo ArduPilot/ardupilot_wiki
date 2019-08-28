@@ -6,7 +6,7 @@ QuadPlane Frame setup
 The QuadPlane code supports several frame arrangements of quadcopter,
 hexacopter, octacopter and octaquad multicopter frames.
 
-The motor order and output channel is the same as for copter (see :ref:`Copter motor layout <copter:connect-escs-and-motors3>`)
+The motor order and output channel is the same as for copter (see :ref:`Copter motor layout <copter:connect-escs-and-motors>`)
 except that the default output channel numbers start at 5 instead of 1.
 
 For example, with the default Quad-X frame the motors are on outputs
