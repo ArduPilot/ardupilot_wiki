@@ -41,7 +41,7 @@ An active buzzer can be used with boards setup for a passive buzzer in two ways.
 
 First, the active buzzer can simply replace the passive piezo, paying attention to the polarity of the buzzer (unlike passive piezo buzzers, active buzzers need to be connected with the right polarity in order to function). It will play all the sounds, however, at lower volume and without the precise tone frequencies as played with a passive buzzer.
 
-Alternatively, you can set the :ref:`NFT_BUZZER_PIN<NTF_BUZZER_PIN>` to a GPIO pin, like those used for :ref:`relay control <common-relay>` , and attach an active buzzer to that pin with its negative lead, and apply power (usually +5V) to the buzzer's positive lead.
+Alternatively, you can set the :ref:`NTF_BUZZ_PIN<NTF_BUZZ_PIN>` to a GPIO pin, like those used for :ref:`relay control <common-relay>` , and attach an active buzzer to that pin with its negative lead, and apply power (usually +5V) to the buzzer's positive lead.
 
 .. note:: For many boards, the GPIO pin numbers are assigned to PWM outputs for alternate use can only be found by looking at that board's hwdef.dat file `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ .
 
