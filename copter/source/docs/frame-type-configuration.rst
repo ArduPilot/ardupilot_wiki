@@ -4,7 +4,7 @@
 Frame Class and Type Configuration
 ==================================
 
-The :ref:`FRAME_CLASS <copter:FRAME_CLASS>` and :ref:`FRAME_TYPE <copter:FRAME_TYPE>` parameters should be set to match the physical frame being used.  See the :ref:`Connect ESCs and Motors <connect-escs-and-motors3>` page for the list of supported multicopter frames
+The :ref:`FRAME_CLASS <copter:FRAME_CLASS>` and :ref:`FRAME_TYPE <copter:FRAME_TYPE>` parameters should be set to match the physical frame being used.  See the :ref:`Connect ESCs and Motors <connect-escs-and-motors>` page for the list of supported multicopter frames
 
 If using the mission planner select Initial Setup, **Mandatory Hardware \| Frame Type**.  If you are using another Ground Station it should be possible to set the :ref:`FRAME_CLASS <copter:FRAME_CLASS>` and :ref:`FRAME_TYPE <copter:FRAME_TYPE>` parameters directly through a parameter update screen.
 
@@ -25,4 +25,4 @@ For Tricopters, Y6, Traditional Helicopters, SingleCopters and CoaxCopters the f
 Motor Order Diagrams
 ====================
 
-See the :ref:`Connect ESCs and Motors <connect-escs-and-motors3>` page for the list of supported multicopter frames
+See the :ref:`Connect ESCs and Motors <connect-escs-and-motors>` page for the list of supported multicopter frames

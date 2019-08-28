@@ -95,7 +95,7 @@ to move.
 Users can easily test that their ESC/Motors are connected correctly.
 Move your AIL/ELE stick to up/down/left/right and corresponding motor
 should start pulsing slowly. Correct motor rotation directions are shown
-:ref:`here <copter:connect-escs-and-motors3>`.
+:ref:`here <copter:connect-escs-and-motors>`.
 
 SAFETY! Disconnect propellers before doing your test.
 
