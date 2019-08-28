@@ -55,16 +55,16 @@ motor won't turn.
 Alternative ESC Calibration
 ===========================
 
-If the typical ESC calibation method above doesn't work,
-instead adjust the SERVOn_MIN and SERVOn_MAX values on 
-the appropriate channel(s) to match the existing range of your ESC.
+If the typical ESC calibration method above doesn't work,
+instead adjust the SERVOx_MIN and SERVOx_MAX values on 
+the appropriate servo channel (SERVOx) you had set as the Throttle channel in ref:`servo setup <servo-functions>` to match the existing range of your ESC.
 
-To use this method slowly raise the SERVOn_MIN value until it is set
+To use this method slowly raise the SERVOx_MIN value until it is set
 to a value just below the point that the motor comes on. A value about
-20 PWM below the point where the motor starts turning is usually a
+20 PWM points below the point where the motor starts turning is usually a
 good choice.
 
-Next move the transmitter stick to full throttle and adjust SERVO3_MAX
+Next move the transmitter stick to full throttle and adjust SERVOx_MAX
 until maximum RPM is reached. You can use a tachometer, or just use
 the sound of the motor as a guide.
 
