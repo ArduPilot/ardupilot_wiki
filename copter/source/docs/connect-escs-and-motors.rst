@@ -1,4 +1,4 @@
-.. _connect-escs-and-motors3:
+.. _connect-escs-and-motors:
 
 =======================
 Connect ESCs and Motors
