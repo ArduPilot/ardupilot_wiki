@@ -1,8 +1,8 @@
-.. _balance_bot-tuning:
+.. _balance_bot-testing:
 
-======================
-Tuning the Balance Bot
-======================
+=======================
+Testing the Balance Bot
+=======================
 
 If you have completed all the previous steps succesfully, then you're all set to start testing! 
 
@@ -22,3 +22,7 @@ For testing, make sure your vehicle is connected to the GCS via telemetry radio.
 #. Once the vehicle can balance itself, try moving it around. Move up the throttle slightly and see how it goes.
 
 #. If you find it too difficult to drive, try adjusting BAL_PITCH_MAX. It's the pitch angle at 100% throttle. If you increase it, the vehicle will accelerate faster but will become more likely to topple. Reducing it will make it more stable, but sluggish.
+
+.. tip::
+
+   It is possible to reach a better behavior of the rover by adjusting its PID. The :ref: `tunning page <balance_bot-tuning>` have more detailed information.
