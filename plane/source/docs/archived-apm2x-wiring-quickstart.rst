@@ -101,7 +101,7 @@ See also :ref:`Connecting the Radio Receiver <common-connecting-the-radio-receiv
    in the Mission Planner setup process.
 
 If you're flying a V-tail, please see the
-:ref:`VTAIL_OUTPUT <VTAIL_OUTPUT>`
+``VTAIL_OUTPUT``.
 option in the :ref:`servo setup documentation <reversing-servos-and-setting-normalelevon-mode>`.
 
 Reassigning your RC transmitter stick channels:
