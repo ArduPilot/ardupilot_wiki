@@ -1,21 +1,14 @@
 .. _common-camera-shutter-with-servo:
 
-===============================================
-Camera Shutter Configuration in Mission Planner
-===============================================
-
-This article explains how to configure Mission Planner to trigger the
-camera shutter with a servo or relay.
-
-Overview
-========
+============================
+Camera Shutter Configuration
+============================
 
 ArduPilot allows you to configure a particular port (servo or relay) as
 the camera trigger, which will then be activated when 
 :ref:`camera commands are specified in missions <common-camera-control-and-auto-missions-in-mission-planner>`.
 
-This article explains what settings you need to configure for both
-servos and relays, and covers both Pixhawk and APM.
+This article explains what settings you need to configure for both servos and relays.
 
 .. note::
 
