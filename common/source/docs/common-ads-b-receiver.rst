@@ -88,10 +88,10 @@ Copter-3.4 (and higher) and very recent versions of Plane include a new flight m
 To enable this feature connect with a Ground Station and set the following parameters:
 
 -  :ref:`AVD_ENABLE <AVD_ENABLE>` : set to "1" to enable ADS-B based avoidance (param refresh may be necessary after setting this)
--  :ref:`AVD_F_DIST_XY <AVD_F_DIST_XY>` : the horizontal distance in meters that should be considered a near-miss
+-  ``AVD_F_DIST_XY`` : the horizontal distance in meters that should be considered a near-miss
 -  :ref:`AVD_F_DIST_Z <AVD_F_DIST_Z>` : the vertical distance in meters above or below the vehicle that should be considered a near-miss
--  :ref:`AVD_F_TIME <AVD_F_TIME>` : how many seconds in advance of a projected near-miss (based on the vehicle's current position and velocity) the vehicle should begin the :ref:`AVD_F_ACTION <AVD_F_ACTION>`
--  :ref:`AVD_F_ACTION <AVD_F_ACTION>` : controls how the vehicle should respond to a projected near-miss (i.e. 2:Climb Or Descend, 3:Move Horizontally, 4:Move Perpendicularly in 3D, 5:RTL or 6:Hover)
+-  :ref:`AVD_F_TIME <AVD_F_TIME>` : how many seconds in advance of a projected near-miss (based on the vehicle's current position and velocity) the vehicle should begin the ``AVD_F_ACTION``.
+-  ``AVD_F_ACTION`` : controls how the vehicle should respond to a projected near-miss (i.e. 2:Climb Or Descend, 3:Move Horizontally, 4:Move Perpendicularly in 3D, 5:RTL or 6:Hover)
 -  :ref:`AVD_F_RCVRY <AVD_F_RCVRY>` : sets how the vehicle will behave after the vehicle has cleared the near-miss area (i.e. 1 = resume previous flight mode)
 
 Note: there are equivalent "Warn" parameters (i.e. AVD_W_DIST_XY) that can be used to adjust when warnings to the pilot will appear on the ground station.
@@ -122,7 +122,7 @@ Vehicle Database
 
 When enabled, the ADS-B library will store information for up to 50 vehicles
 detected by the ADS-B receiver but can be further limited using the
-:ref:`ADSB_LIST_SIZE <ADSB_LIST_SIZE>` parameter. Due to some experimental work
+``ADSB_LIST_SIZE`` parameter. Due to some experimental work
 in other features, such as EKF2, available RAM may be limited. It is
 important to note that when ADS-B is disabled (ADSB_ENABLE=0) then the
 memory is released, effectively freeing up about 1KB of RAM. When
