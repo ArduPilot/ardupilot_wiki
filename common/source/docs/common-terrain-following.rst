@@ -169,4 +169,4 @@ The climb rate used in the terrain look ahead is based on the
 ``TECS_MAX_CLIMB`` parameter, combined with your current ground speed.
 
 
-[copywiki destination="copter,plane"]
+[copywiki destination="plane"]

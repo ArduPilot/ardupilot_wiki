@@ -105,9 +105,6 @@ Turn on transmitter. Verify that the transmitter is in Airplane mode
 (APM needs airplane mode regardless of the platform type being piloted)
 and all trims are centered.
 
-.. figure:: ../../../images/rc_transmitter_mode2_setup.png
-   :target: ../_images/rc_transmitter_mode2_setup.png
-
    Transmitter(Mode 2): Recommended Channels
 
 The left stick will control throttle and yaw; the right stick will
