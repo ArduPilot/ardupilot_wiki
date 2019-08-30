@@ -68,6 +68,7 @@ The following boards are no longer produced, however documentation is still avai
 .. toctree::
     :maxdepth: 1
 
+    CUAV V5 <common-pixhackV5-overview>
     Erle PXFmini RPi Zero Shield <common-pxfmini>
     Erle ErleBrain <common-erle-brain-linux-autopilot>
     Intel Aero <common-intel-aero-overview>
