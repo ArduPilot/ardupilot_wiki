@@ -21,7 +21,7 @@ the Feb 2014 T3 competition.
 Equipment you will need
 =======================
 
-:ref:`Plane <plane:home>` or
+`Plane <http://ardupilot.org/plane/index.html>`_ or
 :ref:`Multicopter <copter:home>`
 
 A digital still camera:
