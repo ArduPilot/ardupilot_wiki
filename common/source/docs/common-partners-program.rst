@@ -1,3 +1,5 @@
+.. _common-partners-program:
+
 .. image:: ../../../logos/ArduPilotPartners2.png
     :width: 480px
 
