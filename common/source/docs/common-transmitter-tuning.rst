@@ -246,6 +246,8 @@ bup-bip-bup-bip sound from the buzzer.
 
 At that point you can land the vehicle, or just enjoy flying it.
 
+[copywiki destination="plane"]
+
 The first time you do a full tune in this way it will probably take
 about five minutes of flight time to do a tune. With some practice you
 can do a full tune in a bit over a minute.

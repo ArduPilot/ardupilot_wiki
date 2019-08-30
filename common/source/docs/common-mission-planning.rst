@@ -34,6 +34,7 @@ This section contains articles about creating missions that will run when the ve
 [site wiki="plane"]
     Terrain Following <common-terrain-following>
 [/site]
+
 [site wiki="copter"]
     Terrain Following <terrain-following>
 [/site]
