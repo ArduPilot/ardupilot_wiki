@@ -21,6 +21,7 @@ the wiki.
     Glossary <common-glossary>
     History of ArduPilot <common-history-of-ardupilot>
     Partners <common-partners>
+    Partners Program <common-partners-program>
     Ready-To-Use vehicles <common-rtf>
     Stores <common-stores>
     Top Contributors <common-team>
