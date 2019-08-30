@@ -24,7 +24,7 @@ Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl* and *UgCS*. For Tablet/S
 *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot* and *SidePilot* that can be
 used to communicate with ArduPilot (i.e.
 :ref:`Copter <copter:home>`,
-:ref:`Plane <plane:home>`,
+`Plane <http://ardupilot.org/plane/index.html>`_,
 :ref:`Rover <rover:home>`,
 :ref:`AntennaTracker <antennatracker:home>`).
 
