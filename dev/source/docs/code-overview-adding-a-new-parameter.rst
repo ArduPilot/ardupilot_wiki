@@ -135,7 +135,7 @@ use the `AP_Compass <https://github.com/ArduPilot/ardupilot/tree/master/librarie
 library as an example.
 
 **Step #1:** Add the new class variable to the top level .h file (i.e.
-`Compass.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/AP_Compass.h>`__). 
+`Compass.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Compass/AP_Compass.h>`__).
 Possible types include AP_Int8, AP_Int16, AP_Float, AP_Int32 and
 AP_Vector3f.  Also add the default value you'd like for the parameter
 (we will use this in step #2)
@@ -248,6 +248,26 @@ where the Compass class appears.
 
         AP_VAREND
     };
- 
+
 **Step #5:**
 If the class is a completely new addition to the code, also add k_param_my_new_lib to the enum in `Parameters.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.h>`__, where my_new_lib is the first argument to the GOBJECT declaration in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__. Read the comments above the enum to understand where to place the new value, as order is important here.
+
+
+Changing the type of a parameter
+================================
+
+From time to time parameters need to be altered or renamed. ArduPilot has capabilities that allow this to be managed from release to release so that upgrades always preserve user configured parameters. Parameters are keyed off slots in the eeprom, so if the occupied slot does not change then the parameter does not change - regardless of its name. If however the type needs to change then the parameter needs to be moved to a new slot and the existing slot be reserved to prevent unexpected configuration. In order for the configuration to be preserved it needs to be copied and converted from the old slot to the new slot.
+
+**Step #1:** Change the index of the existing parameter to an unused index and add a comment to the effect that the old slot is reserved.
+
+**Step #2:** In order to figure out the keys for conversion:
+
+    * Set the AP_PARAM_KEY_DUMP definition to "1" [here in AP_Param.h](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Param/AP_Param.h#L36)
+
+    * Change the delay here from 1ms to 2ms [here in AP_Param::show_all](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Param/AP_Param.cpp#L2338)
+
+    * Remove the #if / #endif from [here in Copter's system.cpp](https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/system.cpp#L262)
+
+    * Start the old code in SITL and all the parameter names and their magic numbers will be displayed
+
+    * Copy-paste from Copter's Parameters.cpp file's [existing parameter conversion tables like the ones done for the attitude controller's filters](https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L1219).
