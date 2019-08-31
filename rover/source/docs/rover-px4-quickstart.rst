@@ -132,7 +132,3 @@ sure to set the Waypoint Radius to around 2 meters for good performance.
 A more complete guide to using the Mission Planner with Rover is
 described in \ :ref:`Learning a Mission <learning-a-mission>`.
 
-Further information
-===================
-
-A full PX4 vehicle build is described in :ref:`PX4 Rover Build with Brushless Traxxas Stampede 4WD Truck <px4-rover-build-with-brushless-traxxas-stampede-4wd-truck>`.
