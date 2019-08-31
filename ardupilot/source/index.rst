@@ -42,7 +42,7 @@ devices such as ESC's, servos, gimbals, etc.
 
 :ref:`Firmware <common-downloads_firmware>`- is the code or "skill set"
 running on the controller. You choose the firmware to match your vehicle and
-mission: :ref:`Copter <copter:home>`, :ref:`Plane <plane:home>`,
+mission: :ref:`Copter <copter:home>`, `Plane <http://ardupilot.org/plane/index.html>`__,
 :ref:`Rover <rover:home>`, Sub, or :ref:`Antenna Tracker <antennatracker:home>`.
 
 The choice is yours -- one autopilot for any mission. A firmware
