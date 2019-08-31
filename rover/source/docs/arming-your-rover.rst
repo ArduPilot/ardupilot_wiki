@@ -57,7 +57,7 @@ but some common of the Rover specific checks are listed below:
 -  Safety switch. The safety switch must be set to the off
    state before arming is allowed. This is either done by pressing the
    safety switch for 2 seconds until it stops flashing, or you can
-   disable the use of the safety switch by setting :ref:`BRD_SAFETY_ENABLE <BRD_SAFETY_ENABLE>` to 0.
+   disable the use of the safety switch by setting :ref:`BRD_SAFETYENABLE <BRD_SAFETYENABLE>` to 0.
 -  Inertial Sensor Checks. The accelerometers and gyroscopes must all be
    healthy and all be calibrated. If you have more than one accel or
    gyro then they need to be consistent with each other.
