@@ -20,7 +20,7 @@ Connecting and Configuring the Lidar
 ====================================
 
 - follow the normal :ref:`instructions for setting up rangefinders <common-rangefinder-landingpage>`.
-- set the RNGFNDx_ORIENT parameters (i.e. :ref:`RNGFND_ORIENT <RNGFND_ORIENT>`, :ref:`RNGFND2_ORIENT <RNGFND2_ORIENT>`) to specify the direction the range finder is pointing in (i.e. 0=Forward, 2=Right, 4=Back, 6=Left, 24=Up, 25=Down)
+- set the RNGFNDx_ORIENT parameters (i.e. :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>`, :ref:`RNGFND2_ORIENT <RNGFND2_ORIENT>`) to specify the direction the range finder is pointing in (i.e. 0=Forward, 2=Right, 4=Back, 6=Left, 24=Up, 25=Down)
 - set :ref:`PRX_TYPE <PRX_TYPE>` = "4" to enable using range finders as "proximity sensors".
 - set :ref:`AVOID_ENABLE <AVOID_ENABLE>` to "7" to enable avoidance using proximity sensors (and fences)
 
