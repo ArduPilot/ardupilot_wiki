@@ -259,7 +259,8 @@ Notify
 - :code:`play_tune(tune)` - Plays a MML tune through the buzzer on the vehicle. The tune is provided as a string.
 
 Terrain
-~~~~~~
+~~~~~~~
+
 
 The terrain library proivdes access to checking heights against a terrain database.
 
