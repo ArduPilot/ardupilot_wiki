@@ -18,45 +18,66 @@ This description uses the Mission Planner for setup, but you can also use Qgroun
 Key Features{#datasheet}
 ============
 
-* Receiver type
- * RTK Receiver: Ublox F9P 
-* GNSS
- * GPS / QZSS,Beidou,Galileo, GLONASS
-* GNSS Bands
- * GPS L1C/A L2C, GLONASS L1OF L2OF, GALILEO E1B/C E5b, BDS B1I B2I, QZSS L1C/A L2C
-* Nav. update rate
- * RTK Up to 20HZ
-* Position accuracy  
- * RTK 0.01 m + 1 ppm CEP
-* Convergence time
- * RTK < 10 sec
-* Acquisition
- * Cold starts 24 s
- * Aided starts 2 s
- * Reacquisition 2 s
-* Sensitivity
- * Tracking & Nav -167 dBm
- * Cold starts -148 dBm 
- * Hot starts -157 dBm
- * Reacquisition -160 dBm
-* Anti-jamming
- * Active CW detection and removal Onboard band pass ﬂter
-* Anti-spoofng
- * Advanced anti-spoofng algorithms
-* Interfaces
- * 2 UART 
- * 1 USB
- * 1 I2C
- * 1 Antenna interface(MMCX)
-* Protocols
- * NMEA
- * UBX binary
- * RTCM version 3.x
-* Supply voltage
- * –40 °C to +85 °C
-* Size  
- * 31.5\*48\*12MM
-* weight:21g 
+- RTK Receiver: Ublox F9P 
+
+-  **GNSS**
+
+   -  GPS / QZSS,Beidou,Galileo, GLONASS
+   
+-  **GNSS Bands**
+
+   -  GPS L1C/A L2C, GLONASS L1OF L2OF, GALILEO E1B/C E5b, BDS B1I B2I, QZSS L1C/A L2C
+   
+-  **Nav. update rate**
+
+   -  RTK Up to 20HZ
+   
+-  **Position accuracy** 
+ 
+   -  RTK 0.01 m + 1 ppm CEP
+   
+-  **Convergence time**
+
+   -  RTK < 10 sec
+   
+-  **Acquisition**
+
+   -  Cold starts 24 s
+   -  Aided starts 2 s
+   -  Reacquisition 2 s
+   
+-  **Sensitivity**
+
+   -  Tracking & Nav -167 dBm
+   -  Cold starts -148 dBm 
+   -  Hot starts -157 dBm
+   -  Reacquisition -160 dBm
+   
+-  **Anti-jamming**
+
+   -  Active CW detection and removal Onboard band pass ﬂter
+   
+-  **Anti-spoofng**
+
+   -  Advanced anti-spoofng algorithms
+   
+-  **Interfaces**
+
+   -  2 UART 
+   -  1 USB
+   -  1 I2C
+   -  1 Antenna interface(MMCX)
+   
+-  **Protocols**
+
+   -  NMEA
+   -  UBX binary
+   -  RTCM version 3.x
+   -  Supply voltage
+   -  –40 °C to +85 °C
+-  **Size**  
+   -  31.5\*48\*12MM
+   -  weight:21g 
 
 Where to buy
 ============
