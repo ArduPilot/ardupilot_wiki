@@ -10,5 +10,5 @@ In Steering mode the user's steering stick controls the vehicle's lateral accele
 - when not moving, skid-steering vehicles will pivot in response to steering input but regular steering-throttle rovers will show almost no steering response
 - the top speed is interpolated from the :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEED>` parameters.  These parameters are described on the :ref:`Tuning Speed and Throttle <rover-tuning-throttle-and-speed>` page
 - :ref:`object avoidance <rover-object-avoidance>` is active in this mode (if configured)
-- the :ref:`SPEED_TURN_GAIN <SPEED_TURN_GAIN>` parameter will slow the vehicle as it does in :ref:`Auto <auto-mode>`.  This is described briefly on the :ref:`Tuning Navigation <rover-tuning-navigation>` page
+- the ``SPEED_TURN_GAIN`` (Rover 3.1  and older) or :ref:`WP_OVERSHOOT <WP_OVERSHOOT>` parameter will slow the vehicle as it does in :ref:`Auto <auto-mode>`.  This is described briefly on the :ref:`Tuning Navigation <rover-tuning-navigation>` page
 - this mode can be used to tune the :ref:`steering rate <rover-tuning-steering-rate>` and :ref:`speed controllers <rover-tuning-throttle-and-speed>` ahead of attempting to tune :ref:`navigation controls <rover-tuning-navigation>`
