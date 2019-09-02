@@ -66,3 +66,6 @@ You can buy it from `CUAV store <https://www.aliexpress.com/item/4000120384761.h
 Connect to Pixhawk
 ============
 
+.. image:: ../../../images/c-rtk-9p/connect-to-pixhawk.jpg
+	:target: ../images/c-rtk-9p/connect-to-pixhawk.jpg
+
