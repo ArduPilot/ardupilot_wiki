@@ -76,8 +76,8 @@ Connect to CUAV V5+ Or V5 nano
 	:target: ../images/c-rtk-9p/c-rtk-9p-connection.jpg
 	
 .. note::
-Please use V5+ or V5 nano special cable
-10 pin connector plugged into GPS&SAFETY PORT, 6 pin connector plugged into UART 4.
+
+         Please use V5+ or V5 nano special cable,10 pin connector plugged into GPS&SAFETY PORT, 6 pin connector plugged into UART 4.
 
 
 
