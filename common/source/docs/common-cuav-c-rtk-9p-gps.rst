@@ -68,4 +68,16 @@ Connect to Pixhawk
 
 .. image:: ../../../images/c-rtk-9p/connect-to-pixhawk.jpg
 	:target: ../images/c-rtk-9p/connect-to-pixhawk.jpg
+	
+Connect to CUAV V5+ Or V5 nano
+============
+
+.. image:: ../../../images/c-rtk-9p/c-rtk-9p-connection.jpg
+	:target: ../images/c-rtk-9p/c-rtk-9p-connection.jpg
+	
+.. note::
+Please use V5+ or V5 nano special cable
+10 pin connector plugged into GPS&SAFETY PORT, 6 pin connector plugged into UART 4.
+
+
 
