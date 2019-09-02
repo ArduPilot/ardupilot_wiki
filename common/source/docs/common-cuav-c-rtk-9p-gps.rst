@@ -79,5 +79,7 @@ Connect to CUAV V5+ Or V5 nano
 
          Please use V5+ or V5 nano special cable,10 pin connector plugged into GPS&SAFETY PORT, 6 pin connector plugged into UART 4.
 
+More information
+============
 
-
+`User guide <http://doc.cuav.net/gps/c-rtk/en/c-rtk-9p.html>`__.
