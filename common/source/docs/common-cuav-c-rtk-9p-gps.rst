@@ -35,12 +35,12 @@ Key Features{#datasheet}
  * Aided starts 2 s
  * Reacquisition 2 s
 * Sensitivity
- * Tracking & Nav 鈥?67 dBm
- * Cold starts 鈥?48 dBm 
- * Hot starts 鈥?57 dBm
- * Reacquisition 鈥?60 dBm
+ * Tracking & Nav -167 dBm
+ * Cold starts -148 dBm 
+ * Hot starts -157 dBm
+ * Reacquisition -160 dBm
 * Anti-jamming
- * Active CW detection and removal Onboard band pass 铿倀er
+ * Active CW detection and removal Onboard band pass ﬂter
 * Anti-spoofng
  * Advanced anti-spoofng algorithms
 * Interfaces
@@ -58,9 +58,11 @@ Key Features{#datasheet}
  * 31.5\*48\*12MM
 * weight:21g 
 
-
 Where to buy
 ============
 
 You can buy it from `CUAV store <https://www.aliexpress.com/item/4000120384761.html>`__.
+
+Connect to Pixhawk
+============
 
