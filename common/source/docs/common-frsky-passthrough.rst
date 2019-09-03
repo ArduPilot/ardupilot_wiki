@@ -7,6 +7,8 @@ Passthrough FrSky Telemetry Protocol
 Overview
 ========
 
+(Available in Arduplane 3.7.0, Arducopter 3.4.0, ArduRover 3.1.0, ArduSub 3.5.3 and later).
+
 Passthrough FrSky Telemetry is the latest protocol available in ArduPilot and it allows the transmission of raw data directly to OpenTX without any preprocessing by OpenTX and without the need for discovery. The passthrough telemetry protocol is optimized specifically for the FrSky datalink bandwidth and enhancements include having multiple data elements in a single telemetry packet and using floating point representation (e.g. we don't really need centimeter precision altitude to be displayed on screen when flying at 100m). This results in an improved data refresh rate such that information such as attitude (roll, pitch, yaw) is displayed without any perceptible lag.
 
 Compared to regular FrSky telemetry, passthrough telemetry contains ArduPilot specific information such as flight modes, error messages, warnings, and failsafes.
