@@ -33,6 +33,7 @@ Moreover, some RC transmitters such as the Taranis can be configured to play sou
 
     Passthrough FrSky Telemetry <common-frsky-passthrough>
     FlightDeck <common-frsky-flightdeck>
+    Yaapu FrSky Telemetry Script for OpenTX <common-frsky-yaapu>
     Repurposed FrSky Telemetry <common-frsky-repurposed>
     MavLink to FrSky Telemetry Converters <common-frsky-mavlink>
 
