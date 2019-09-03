@@ -19,6 +19,7 @@ information based upon your set-up.
     Bluetooth <common-mission-planner-bluetooth-connectivity>
     ESP8266 wifi telemetry <common-esp8266-telemetry>
     FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
+    Yaapu FrSky Telemetry Script for OpenTX <common-frsky-yaapu>
     FrSky telemetry <common-frsky-telemetry>
     RFD900 <common-rfd900>
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>
