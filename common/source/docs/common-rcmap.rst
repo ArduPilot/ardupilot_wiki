@@ -52,10 +52,7 @@ elevator (throttle) is on channel 2, then the settings should be:
 ``RCMAP_PITCH`` and ``RCMAP_YAW`` can be whatever channels you want to
 make them as long as they are not channels 1 and 2.
 
-For Rover you should also select the receiver channels that will be used
-to control the Waypoint select (:ref:`CH7_OPTION <rover:CH7_OPTION>`)
-and the Mode select (:ref:`MODE_CH <rover:MODE_CH>`).
-As an example, the Gear switch (2-way) is on channel 5 and can be
-assigned to the ``LEARN_CH`` while the Flap switch (3-way) is on channel
-6 and can be assigned to the ``MODE_CH``.
+For Rover you should also select the receiver channel that will be used
+to control the Mode select (:ref:`MODE_CH <rover:MODE_CH>`).
+
 [/site]
