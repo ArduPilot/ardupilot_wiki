@@ -33,5 +33,4 @@ Other Parameters
 - :ref:`TURN_MAX_G <TURN_MAX_G>` defines the maximum lateral acceleration (in Gs = 9.81m/s/s) the controllers will attempt during cornering.  If the vehicle leans dangerously or flips in corners this number should be reduced
 - :ref:`WP_RADIUS <WP_RADIUS>` specifies the distance before the waypoint that the vehicle may begin turning towards the next waypoint
 - :ref:`WP_OVERSHOOT <WP_OVERSHOOT>` is used to slow the vehicle before it reaches a waypoint.  It is the maximum distance (in meters) that the vehicle may drive beyond the waypoint as it turns towards the next waypoint
-- :ref:`SPEED_TURN_GAIN <SPEED_TURN_GAIN>` reduces the vehicle's speed if the heading error and/or lateral acceleration become too great.  Expressed as a percentage from 0% to 100%, lower values cause the vehicle slow more.
 - :ref:`PIVOT_TURN_ANGLE <PIVOT_TURN_ANGLE>` is only used by skid steering vehicles.  If the vehicle's heading error becomes larger than this value (in degrees) the vehicle will momentarily stop and pivot towards the target before continuing.

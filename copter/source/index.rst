@@ -142,7 +142,7 @@ Rotor Craft types
 
 Because of its open design, Copter also supports more unusual frame
 types including the :ref:`Single and Coax-Copters <singlecopter-and-coaxcopter>`.  Put this together
-with :ref:`Plane <plane:home>`,
+with `Plane <http://ardupilot.org/plane/index.html>`__,
 :ref:`Rover <rover:home>` and :ref:`Antenna Tracker <antennatracker:home>` and you have a system
 of robotic vehicles that can be controlled through very similar
 interfaces to accomplish a wide variety of tasks.

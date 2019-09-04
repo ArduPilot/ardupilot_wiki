@@ -53,4 +53,5 @@ elevator (throttle) is on channel 2, then the settings should be:
 make them as long as they are not channels 1 and 2.
 
 For Rover you should also select the Mode select (:ref:`MODE_CH <rover:MODE_CH>`) channel.
+
 [/site]
