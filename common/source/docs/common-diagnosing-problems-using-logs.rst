@@ -6,7 +6,7 @@ Diagnosing problems using Logs
 
 This page show how to diagnose the six most common problems affecting Copter in particular but to some extent Plane and Rover as well.
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,dev,planner"]
 
 Log Types (Dataflash vs tlogs)
 ==============================
