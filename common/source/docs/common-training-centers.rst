@@ -45,5 +45,4 @@ How to get added to this list
 
 Please send your company information including a logo to partners@ardupilot.org and express your desire to be added to the Training centers page.  Please include any evidence you can provide of the types of training provided.
 
-
-[copywiki destination="copter,plane,rover,planner,planner2,dev,antennatracker"]
+[copywiki destination="copter,plane,rover"]

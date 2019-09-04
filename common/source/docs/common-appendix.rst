@@ -25,7 +25,9 @@ the wiki.
     Ready-To-Use vehicles <common-rtf>
     Stores <common-stores>
     Top Contributors <common-team>
+[site wiki="plane, copter, rover"]    
     Training Centers <common-training-centers>
+[/site]
     Wiki Editing Guide <common-wiki_editing_guide>
 
 [site wiki="planner"]

@@ -10,7 +10,7 @@ created soon after start-up. On Copter they are created after you first
 arm the copter. This topic explains how to configure and access
 Dataflash logs.
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,dev,planner"]
 
 .. note::
 
