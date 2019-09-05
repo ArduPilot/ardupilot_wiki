@@ -134,5 +134,3 @@ More information
 ================
 
 `User guide <http://doc.cuav.net/gps/c-rtk/en/c-rtk-9p.html>`__.
-
-`Ublox F9P date sheet <http://doc.cuav.net/gps/c-rtk/en/c-rtk-9p.html>`__.
