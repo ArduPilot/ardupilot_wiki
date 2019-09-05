@@ -24,11 +24,41 @@ A demo of AirSim running with ArduPilot SITL
 .. youtube:: 0kE6gc7pn8M
     :width: 100%
 
+A list of topics for easier navigation in the page-
+
+#. `Install AirSim <http://ardupilot.org/dev/docs/sitl-with-airsim.html#installing-airsim>`__
+
+   * `Build on Windows <http://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-windows>`__
+   * `Build on Linux <http://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-linux>`__
+
+#. `Setup Unreal Environment <http://ardupilot.org/dev/docs/sitl-with-airsim.html#setup-unreal-environemt>`__
+
+#. `Using AirSim with ArduPilot <http://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-with-ardupilot>`__
+
+#. `Launch Copter SITL <http://ardupilot.org/dev/docs/sitl-with-airsim.html#launch-copter-sitl>`__
+
+#. `Using Lidar <http://ardupilot.org/dev/docs/sitl-with-airsim.html#using-lidar>`__
+
+#. `Manual Flying using RC <http://ardupilot.org/dev/docs/sitl-with-airsim.html#manual-flying-using-rc>`__
+
+#. `Multi-Vehicle Simulation <http://ardupilot.org/dev/docs/sitl-with-airsim.html#multi-vehicle-simulation>`__
+
+#. `Custom Environment <http://ardupilot.org/dev/docs/sitl-with-airsim.html#custom-environment>`__
+
+#. `Using AirSim APIs <http://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-apis>`__
+
+#. `Run on Different Machines <http://ardupilot.org/dev/docs/sitl-with-airsim.html#run-on-different-machines>`__
+
+#. `Debugging and Development Workflow <http://ardupilot.org/dev/docs/sitl-with-airsim.html#development-workflow>`__
+
 
 Installing AirSim
 =================
 
-`Binaries <https://microsoft.github.io/AirSim/docs/use_precompiled/>`__ are available for AirSim, but since this is a very recent development, you'll have to build it yourself (on Windows as well as Linux).
+`Binaries <https://microsoft.github.io/AirSim/docs/use_precompiled/>`__ are available for AirSim, **but since this is a very recent development, you'll have to build it yourself (on Windows as well as Linux).**
+
+Using the precompiled environments won't work, only environments whose source code is available such as Blocks or any other environments which you download from the Unreal Marketplace will work.
+Using the precompiled environemnts will be possible once AirSim has it's next stable release.
 
 Build on Windows
 ----------------
@@ -81,21 +111,21 @@ For using another environment, check the information at the end of the page.
 Using AirSim with ArduPilot
 ---------------------------
 
-Make sure that you have setup ArduPilot SITL before proceeding.
+Make sure that you have setup ArduPilot SITL, completed the Unreal Environment setup and verified that both are working individually before proceeding.
 
 .. note::
 
     Go to ``Edit->Editor Preferences``, in the ``Search`` box type ``CPU`` and ensure that the ``Use Less CPU when in Background`` is unchecked.
 
 
-Launch SITL
-+++++++++++
-
 `AirSim's settings.json file <https://github.com/microsoft/AirSim/blob/master/docs/settings.md>`__ specifies the vehicle and it's various properties. See the page for the options available.
 
 It's stored in at the following places- Windows: ``Documents\AirSim``, Linux: ``~/Documents/AirSim``
 
 The file is in usual JSON format. On the first startup, AirSim would create ``settings.json`` file with no settings.
+
+Launch Copter SITL
+++++++++++++++++++
 
 For using ArduCopter, the settings are as follows-
 
@@ -112,15 +142,15 @@ For using ArduCopter, the settings are as follows-
         "Altitude": 583
       },
       "Vehicles": {
-          "Copter": {
-              "VehicleType": "ArduCopter",
-              "UseSerial": false,
-              "AllowAPIAlways": false,
-              "UdpIp": "127.0.0.1",
-              "UdpPort": 9003,
-              "SitlPort": 9002
-            }
+        "Copter": {
+          "VehicleType": "ArduCopter",
+          "UseSerial": false,
+          "DefaultVehicleState": "Disarmed",
+          "UdpIp": "127.0.0.1",
+          "UdpPort": 9003,
+          "SitlPort": 9002
         }
+      }
     }
 
 First launch AirSim, after that launch the ArduPilot SITL using
@@ -213,7 +243,7 @@ Just plug the device in the computer and it should work. See `AirSim's Remote Co
 Multi-Vehicle Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-For simulating 2 copters, a example script has been added which will create 2 copter instances and enable Follow mode in one of them.
+For simulating 2 copters, an example script has been added which will create 2 copter instances and enable Follow mode in one of them.
 
 ``settings.json`` for 2 copters
 
@@ -270,7 +300,7 @@ For increasing the number of simulated vehicles, just modify the ``seq`` number 
 
 .. note::
 
-    The difference of 10 between the ports is important since the script is launching the vehicles using the ``instance`` option which increases the ports from ArduPilot's side by 10. For using different ports, modify the script as required following the intructions at the end of the page for specifying the ports.
+    The difference of 10 between the ports is important since the script is launching the vehicles using the ``instance`` option which increases the ports from ArduPilot's side by 10. For using different ports, modify the script as required following the instructions at the end of the page for specifying the ports.
 
 Custom Environment
 ++++++++++++++++++
@@ -299,7 +329,7 @@ Using AirSim APIs
 
 `AirSim's APIs document <https://github.com/microsoft/AirSim/blob/master/docs/apis.md>`__ explains the different APIs available and their usage.
 
-Currently, ArduCopter vehicle doesn't support controlling the drone through APIs, for that you'll have to use something like Dronekit.
+Currently, ArduCopter vehicle doesn't support controlling the drone through the AirSim APIs, however any method of controlling the movement which connects directly to ArduPilot rather than using AirSim’s API work, examples include DroneKit & ROS with Mavros
 
 The `Image APIs <https://github.com/microsoft/AirSim/blob/master/docs/image_apis.md>`__ have been tested to work with Copter, for some ready-to-run sample codes, see the files in ``PythonClient/multirotor`` such as ``opencv_show.py``.
 
@@ -345,3 +375,10 @@ For Linux, make code changes in AirLib or Unreal/Plugins folder and then run ``.
 You can then follow the steps to start Unreal Editor and launch the project. When prompted about missing .so files, press Yes to build it again.
 
 `Linux Troubleshooting <https://github.com/microsoft/AirSim/blob/master/docs/build_linux.md#faqs>`__
+
+`Windows FAQs <https://microsoft.github.io/AirSim/docs/build_windows/#faq>`__
+
+`General FAQs <https://microsoft.github.io/AirSim/docs/faq/>`__
+
+
+Before reporting any problems, please update the ArduPilot and AirSim installations to the latest master. After updating the local AirSim repository, make sure to run the commands mentioned in the `Unreal Environment Setup page <https://github.com/microsoft/AirSim/blob/master/docs/unreal_blocks.md>`__, otherwise the updates won't be reflected in the simulation.
