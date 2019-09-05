@@ -118,7 +118,7 @@ Port and LED
 .. image:: ../../../images/c-rtk-9p/c-rtk-9p-port-and-led.png
 	:target: ../images/c-rtk-9p/c-rtk-9p-port-and-led.png
 
-**LED status**
+**LED status**:
 
 RTK status: solid (rtk fixed), Blinking (receiving and using RTCM corrections), off
 (otherwise).
