@@ -4,7 +4,7 @@
 Servos
 ======
 
-ArduPilot supports three types of servos.
+ArduPilot supports several types of servos.
 
 .. image:: ../../../images/servo-landingpage-image.jpg
 
