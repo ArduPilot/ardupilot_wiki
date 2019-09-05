@@ -20,6 +20,8 @@ Key Features
 
 - RTK Receiver: Ublox F9P 
 
+- Compass : IST8310
+
 -  **GNSS**
 
    -  GPS / QZSS,Beidou,Galileo, GLONASS
@@ -116,6 +118,15 @@ Port and LED
 .. image:: ../../../images/c-rtk-9p/c-rtk-9p-port-and-led.png
 	:target: ../images/c-rtk-9p/c-rtk-9p-port-and-led.png
 
+**LED status**
+
+RTK status: solid (rtk fixed), Blinking (receiving and using RTCM corrections), off
+(otherwise).
+
+GPS status:solid(no fix),Blinking(GPS FIX).
+
+PWR status:solid(power input),off( not power  input or vcc is not healthy).
+
 .. image:: ../../../images/c-rtk-9p/c-rtk-9p-port-and-led2.png
 	:target: ../images/c-rtk-9p/c-rtk-9p-port-and-led2.png
 
@@ -123,3 +134,5 @@ More information
 ================
 
 `User guide <http://doc.cuav.net/gps/c-rtk/en/c-rtk-9p.html>`__.
+
+`Ublox F9P date sheet <http://doc.cuav.net/gps/c-rtk/en/c-rtk-9p.html>`__.
