@@ -14,7 +14,7 @@ Plane Home
 The free Plane firmware running on a compatible controller board gives
 any fixed-wing aircraft full autonomous capability. VTOL fixed-wing aircraft that 
 hover and cruise in different configurations 
-are also included under the arduplane firmware.
+are also included under the Plane firmware.
 
 Plane provides advanced functions such as support for hundreds of
 three-dimensional waypoints, automatic take-off and landing as well as
