@@ -59,5 +59,6 @@ window.
     RC Transmitter Flight Mode Configuration <common-rc-transmitter-flight-mode-configuration>
     Flight Plan <mission-planner-flight-plan>
     Flight Data <mission-planner-flight-data>
+    Logs <common-logs>
     Language Translations <mission-planner-language-translations>
     Other Mission Planner Features <other-mission-planner-features>
