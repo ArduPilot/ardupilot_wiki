@@ -186,6 +186,7 @@ Getting more info
    HeliQuads <docs/heliquads>
    SkyRocket <docs/skyrocket>
    Solo <docs/solo_arducopter_upgrade>
+   Reference Frames <docs/reference-frames>
    Use-Cases and Applications <docs/common-use-cases-and-applications>
    Antenna Tracking <docs/common-antenna-tracking>
    Simulation <docs/common-simulation>
