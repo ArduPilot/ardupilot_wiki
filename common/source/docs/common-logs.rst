@@ -38,4 +38,4 @@ Tools for log handling and analysis
     Dronee Plotter <https://plot.dron.ee/>
     
 
-[copywiki destination="copter,plane,rover,dev"]
+[copywiki destination="copter,plane,rover,dev,planner"]
