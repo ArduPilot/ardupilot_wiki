@@ -16,7 +16,7 @@ SERVO output channel has a SERVOn_FUNCTION parameter. For example,
 SERVO5_FUNCTION controls the output function of channel 5,
 SERVO6_FUNCTION controls the output function of channel 6 and so on.
 
-Not all the functions are available in each vehicle. Defaults are set to 0 when firmware a vehicle type is first loaded. Choosing a frame
+Not all the functions are available in each vehicle. Defaults are set to 0 when firmware for a vehicle type is first loaded. Choosing a frame
 configuration in Mission Planner during initial setup will set the outputs to the basic typical functions for that frame type. For example,
 fixed wing plane will set the first four outputs, SERVO1-SERVO4 to Aileron, Elevator, Throttle, and Rudder functions, respectively.
 
@@ -508,4 +508,32 @@ Sprayer Pump/Mixer
 
 These outputs are controlling a :ref:`sprayer` .
 
+DEFAULT VALUES
+--------------
 
+Either upon loading the firmware or selecting the frame type, certain default values will be set for the output functions. The user may move these to alternate servo/motor outputs if they desire. The default values are shown below:
+
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| VEHICLE TYPE                 SERVO | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| MultiCopter                        |33 |34 |35 |36 |37 |38 |39 |40 |82 |83  |84  |85  |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| Tricopter                          |33 |34 |0  |36 |0  |0  |39 |0  |0  |0   |0   |0   |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| SingleCopter/ CoAxialCopter        |33 |34 |35 |36 |37 |38 |0  |0  |0  |0   |0   |0   |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| Traditional Helicopter             |33 |34 |35 |36 |0  |0  |0  |31 |0  |0   |0   |0   |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| HeliQuad                           |33 |34 |35 |36 |0  |0  |0  |31 |0  |0   |0   |0   |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| Fixed Wing Plane                   |4  |19 |21 |70 |0  |0  |0  |0  |0  |0   |0   |0   |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| Quadplane                          |4  |19 |21 |70 |33 |34 |35 |36 |0  |0   |0   |0   |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| Quadplane  Tricopter               |4  |19 |21 |70 |33 |34 |0  |36 |0  |0   |39  |0   |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+| Rover                              |26 |0  |70 |0  |0  |0  |0  |0  |0  |0   |0   |0   |
++------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
+
+ .. note:: Rover Skid Steered vehicles will need to manually change SERVO1 and SERVO3 to Throttle Left and Throttle Right to enable skid steering.
+ 
