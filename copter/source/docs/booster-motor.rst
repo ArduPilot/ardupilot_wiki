@@ -7,7 +7,7 @@ Booster Motor
 ..  youtube:: RjjF_S69Ywk
     :width: 100%
 
-Copter 3.6 (and higher) support additional motors placed in the middle of the frame to provide additional lift.  This feature is compatible with any of the multicopter frame types (i.e. quad, tri, hexa, octa, dodecahexa).  The video above shows this feature used along with an :ref:`internal combustion engine <common-ice>` but the feature can also be used with electric motors
+Copter 3.6 (and higher) and QuadPlanes support additional motors placed in the middle of the frame to provide additional lift.  This feature is compatible with any of the multicopter frame types (i.e. quad, tri, hexa, octa, dodecahexa).  The video above shows this feature used along with an :ref:`internal combustion engine <common-ice>` but the feature can also be used with electric motors
 
 .. note::
 
