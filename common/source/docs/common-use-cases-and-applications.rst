@@ -18,5 +18,6 @@ Indoor Flying, and Web Applications.
 
 [site wiki="copter"]
     Indoor Flying Guidelines <indoor-flying>
+    Using a Vicon Positioning System <vicon-setup>
 [/site]
 
