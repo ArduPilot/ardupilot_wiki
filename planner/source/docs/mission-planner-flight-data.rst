@@ -4,15 +4,14 @@
 Mission Planner Flight Data
 ===========================
 
-DRAFT
 
 This section covers the information you will need to use the features in
 the Mission Planner Flight Data - selected in the Top menu of Mission
 Planner.
 
--  **:ref:`An Introduction <mission-planner-ground-control-station>`** 
+-  :ref:`An Introduction <mission-planner-ground-control-station>` 
    An overview with pointers to the various areas of information.
--  **Heads Up Area**  (HUD) This is the area in the upper left side of
+-  Heads Up Area  (HUD) This is the area in the upper left side of
    the Mission Planner menu.
 
    -  See "An Introduction" above to see what each area and entry
@@ -29,7 +28,7 @@ Planner.
          button.
       -  Other options - what they do TBD
 
--  **Control and Status (Lower Left) Area** The Control and Status area
+-  Control and Status (Lower Left): The Control and Status area
    of the Flight Data screen is in the lower left hand portion of
    Mission Planner.  In this area you can select any of several
    different menu items. Some items provide informations (status) and
@@ -46,11 +45,11 @@ Planner.
    -  Status: Clicking the Status menu button will display all of the
       telemetry parameters
    -  Servos:  TBD
-   -  **:ref:`Telemetry Logs <common-mission-planner-telemetry-logs>`**   Use
+   -  :ref:`Telemetry Logs <common-mission-planner-telemetry-logs>`:  Use
       this section to view, analyze, convert, and play back telemetry
       logs that are recorded by Mission Planner.
 
-      -  :ref:`Playing Back Missions with Tlogs <common-recording-and-playing-back-missions>` 
+      -  :ref:`Playing Back Missions with Tlogs <common-recording-and-playing-back-missions>`
          Specifics on playing back your mission and viewing the mission
          in the map area.
 
@@ -61,7 +60,7 @@ Planner.
       Details :ref:`here <common-downloading-and-analyzing-data-logs-in-mission-planner>`.
    -  :ref:`Scripts: <using-python-scripts-in-mission-planner>` - A different way to create missions
 
--  **Map Area:** The map area on the right side of the Flight Data
+-  Map Area: The map area on the right side of the Flight Data
    screen displays the vehicle track as it moves, provides other
    information and allows the user to enter some control actions - which
    send commands to the vehicle (telemetry required)
@@ -77,7 +76,7 @@ Planner.
 -  Flight Planner:  You can open the flight planner window in the map
    area and leave the rest of the Flight Data Screen as is.
 
--  Information/options at the bottom of the screen
+-  Information/options at the bottom of the screen:
 
    -  hdop, sats: shows information about the GPS reception quality and
       the number of satellites in view.
@@ -92,7 +91,7 @@ Planner.
 
 -  Scroll bar: Use the scroll bar to change the zoom level of the map.
 
--  Other Hints and Tricks for Map area
+-  Other Hints and Tricks for Map area:
 
    -  Change the map used:  Right Click, select Planner, change the map,
       then close the Planner view.  The new map will now be used in the

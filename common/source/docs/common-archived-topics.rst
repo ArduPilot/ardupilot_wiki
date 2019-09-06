@@ -8,7 +8,7 @@ This is the parent topic for grouping "archived" topics - topics that
 are no longer considered relevant to most users, but which may have some
 value to users with old hardware.
 
-[site wiki="copter,plane,rover"]
+[site wiki="copter,plane,rover,planner"]
 .. toctree::
     :maxdepth: 1
 
