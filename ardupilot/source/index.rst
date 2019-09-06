@@ -104,13 +104,13 @@ Community is what really sets ArduPilot apart from many other offerings in the m
 Developer Community:
 ====================
 
-`Developers Guide <http://ardupilot.org/dev/index.html>`__
-
-All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the developer guide. ie. `meeting times <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__, `Gitter Chat <https://gitter.im/ArduPilot/ardupilot/>`__ and `on the forums <http://discuss.ardupilot.org/>`__
-
 `Developers Chat <https://gitter.im/ArduPilot/ardupilot>`__
-
 Working on the code?  Ask questions of the team in Gitter.
+
+`Developers Guide <http://ardupilot.org/dev/index.html>`__
+All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the Developer Guide. ie. `meeting times <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__, and `on the forums <http://discuss.ardupilot.org/>`__
+
+
 
 History:
 ========
