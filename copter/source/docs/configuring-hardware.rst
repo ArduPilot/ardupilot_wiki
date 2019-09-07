@@ -17,6 +17,7 @@ camera gimbal, antenna tracker etc.
 .. toctree::
     :maxdepth: 1
 
+    Basic System Overview <common-basic-operation>
     Frame Type Configuration <frame-type-configuration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
     Radio Control Calibration <common-radio-control-calibration>

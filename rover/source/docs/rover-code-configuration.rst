@@ -16,6 +16,7 @@ In addition to mandatory calibration, you may also choose to :ref:`Configure Opt
 .. toctree::
     :maxdepth: 1
 
+    Basic System Overview <common-basic-operation>
     Radio Control Calibration <common-radio-control-calibration>
     Accelerometer Calibration <common-accelerometer-calibration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
