@@ -545,7 +545,7 @@ Requirements
   documentation`_.
 
 .. _frsky xjt: https://www.frsky-rc.com/product/xjt-2/
-.. _djt:  http://www.frsky-rc.com/product/pro.php?pro_id=8
+.. _djt:  https://www.frsky-rc.com/product/djt-2/
 .. _the documentation: http://openrcforums.com/forum/viewtopic.php?f=122&t=5575#p79483
 
 Configuring Ardupilot
