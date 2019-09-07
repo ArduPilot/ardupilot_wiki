@@ -123,6 +123,10 @@ PLANE FUNCTIONS (Also applies to QuadPlanes)
 +--------------------------------+----+---------------------------------------+
 |      Throttle                  | 70 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
+|      Throttle Left             | 73 |    Plane, Rover                       |
++--------------------------------+----+---------------------------------------+
+|      Throttle Right            | 74 |    Plane, Rover                       |
++--------------------------------+----+---------------------------------------+
 |      Rudder                    | 21 |    Plane                              |
 +--------------------------------+----+---------------------------------------+
 |      Flap                      | 2  |    Plane                              |
@@ -180,6 +184,11 @@ Throttle
 ++++++++
 
 Typical servo output for motor power control for vehicles. Multiple outputs can be used for multi-engine vehicles. Primary power control output for normal fixed-wing planes, single rotor helicopter, and rovers.
+
+Throttle Left/ Right
+++++++++++++++++++++
+
+In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`.
 
 Rudder
 ++++++
@@ -373,9 +382,9 @@ ROVER FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      Throttle                  | 70 |    Plane, QuadPlane, Copter, Rover    |
 +--------------------------------+----+---------------------------------------+
-|      Throttle Left             | 73 |    Rover                              |
+|      Throttle Left             | 73 |    Plane, Rover                       |
 +--------------------------------+----+---------------------------------------+
-|      Throttle Right            | 74 |    Rover                              |
+|      Throttle Right            | 74 |    Plane, Rover                       |
 +--------------------------------+----+---------------------------------------+
 |      Winch                     | 88 |    Rover                              |
 +--------------------------------+----+---------------------------------------+
@@ -390,7 +399,7 @@ Typical servo output for motor power control for vehicles. Multiple outputs can 
 Throttle Left/ Right
 ++++++++++++++++++++
 
-These outputs are for steering motor control for :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`.
+In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`.
 
 Winch/ Main Sail Sheet
 ++++++++++++++++++++++
