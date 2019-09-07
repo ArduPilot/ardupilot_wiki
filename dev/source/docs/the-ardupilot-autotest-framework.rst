@@ -85,6 +85,11 @@ Help is available:
 
 This command is valid in the root directory of an ArduPilot checkout.  It instructs AutoTest to build the ArduCopter SITL binary, start that binary, test it and then kill it.  The output (:ref:`sample <autotest-verbose>`) is extremely verbose, but a summary is given once all steps have been run.
 
+.. toctree::
+    :maxdepth: 1
+
+     AutoTest Sample Output <autotest-verbose>
+     
 A list of available steps is available with ``--list``.
 
 .. note::
