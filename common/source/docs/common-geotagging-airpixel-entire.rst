@@ -22,5 +22,5 @@ Airpixel Entire for Geotagging
 
 More info at `photogrammetry.airpixel.cz <http://photogrammetry.airpixel.cz/>`_
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover"]
 
