@@ -28,5 +28,5 @@ Acknowledgements
 
 This page was originally created by Sandro Benigno and Guto Santaella and updated by Jesus Alvarez.
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover"]
 
