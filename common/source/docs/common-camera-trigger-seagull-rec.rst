@@ -21,4 +21,4 @@ More detailed instructions on how to setup REC are provided in the `Seagull REC 
 
 TIP:   The REC is only compatible with "**Sony MULTI**" cameras
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover"]

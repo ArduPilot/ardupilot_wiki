@@ -13,4 +13,4 @@ The board supports the following two modes:
 -  **Picture** (Shutter trigger)
 -  **Video Record** (only for **Sony** cameras)
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover"]

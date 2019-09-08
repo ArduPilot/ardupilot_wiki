@@ -24,4 +24,4 @@ Seagull MAP-X2 also supports **"Camera ON/OFF"** - which is exclusive to **Sony 
 
 More detailed instructions on how to setup MAP-X2 are provided in the `Seagull MAP-X2 Manual <https://www.seagulluav.com/manuals/Seagull_MAP-X2-Manual.pdf>`__ as well as `Seagull MAP-X2 Support <https://www.seagulluav.com/seagull-map-x2-support/>`__ page.
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover"]
