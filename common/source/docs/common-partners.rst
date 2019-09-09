@@ -162,7 +162,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Air_Supply_Aerial.png
             :width: 250px
             :align: center
-            :target:  https://www.airsupplyaerial.net/shop
+            :target:  https://airsupplyaerial.com
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Terraplane.png
