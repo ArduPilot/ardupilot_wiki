@@ -52,17 +52,17 @@ For Copter-3.6 (and higher)
 For Copter-3.5 (and lower)
 ----------------------------
 
-- :ref:`WPNAV_LOIT_SPEED <WPNAV_LOIT_SPEED>` : max horizontal speed in cm/s.  I.e. 500 = 5m/s.  By default, the maximum acceleration is 1/2 of the Loiter speed (i.e. 2.5m/s/s).
-- :ref:`WPNAV_LOIT_MAXA <WPNAV_LOIT_MAXA>` : max acceleration in cm/s/s.  Higher values cause the copter to accelerate and stop more quickly.
-- :ref:`WPNAV_LOIT_MINA <WPNAV_LOIT_MINA>` : min acceleration in cm/s/s.  Higher values stop the copter more quickly when the stick is centered, but cause a larger jerk when the copter stops.
-- :ref:`WPNAV_LOIT_JERK <WPNAV_LOIT_JERK>`: max change in acceleration in cm/s/s/s.  Higher numbers will make the vehicle more responsive, lower numbers will make it smoother.
-- :ref:`POS_XY_P <POS_XY_P>` : (shown as "Position XY (Dist to Speed)" at the top right of the screen shot above) converts the horizontal position error (i.e difference between the desired position and the actual position) to a desired speed towards the target position.  **It is generally not required to adjust this.**
-- :ref:`VEL_XY_P <VEL_XY_P>` (shown as "Rate Loiter P, I and D") converts the desired speed towards the target to a desired acceleration.  The resulting desired acceleration becomes a lean angle which is then passed to the same angular controller used by :ref:`Stabilize mode <stabilize-mode>`.  **It is generally not required to adjust this.**
+- ``WPNAV_LOIT_SPEED <WPNAV_LOIT_SPEED>`` : max horizontal speed in cm/s.  I.e. 500 = 5m/s.  By default, the maximum acceleration is 1/2 of the Loiter speed (i.e. 2.5m/s/s).
+- ``WPNAV_LOIT_MAXA <WPNAV_LOIT_MAXA>`` : max acceleration in cm/s/s.  Higher values cause the copter to accelerate and stop more quickly.
+- ``WPNAV_LOIT_MINA <WPNAV_LOIT_MINA>`` : min acceleration in cm/s/s.  Higher values stop the copter more quickly when the stick is centered, but cause a larger jerk when the copter stops.
+- ``WPNAV_LOIT_JERK <WPNAV_LOIT_JERK>``: max change in acceleration in cm/s/s/s.  Higher numbers will make the vehicle more responsive, lower numbers will make it smoother.
+- ``POS_XY_P <POS_XY_P>`` : (shown as "Position XY (Dist to Speed)" at the top right of the screen shot above) converts the horizontal position error (i.e difference between the desired position and the actual position) to a desired speed towards the target position.  **It is generally not required to adjust this.**
+- ``VEL_XY_P <VEL_XY_P>`` (shown as "Rate Loiter P, I and D") converts the desired speed towards the target to a desired acceleration.  The resulting desired acceleration becomes a lean angle which is then passed to the same angular controller used by :ref:`Stabilize mode <stabilize-mode>`.  **It is generally not required to adjust this.**
 
 Common Problems
 ===============
 
-#. When using Copter-3.5 (or lower) the vehicle slows to a stop very slowly after the pilot releases the sticks (aka "freight train stop").  This can be resolved by increasing :ref:`WPNAV_LOIT_MAXA <WPNAV_LOIT_MAXA>` (to perhaps 500), :ref:`WPNAV_LOIT_MINA <WPNAV_LOIT_MINA>` (to perhaps 100) and :ref:`WPNAV_LOIT_JERK <WPNAV_LOIT_JERK>` (to perhaps 4000).
+#. When using Copter-3.5 (or lower) the vehicle slows to a stop very slowly after the pilot releases the sticks (aka "freight train stop").  This can be resolved by increasing ``WPNAV_LOIT_MAXA <WPNAV_LOIT_MAXA>`` (to perhaps 500), ``WPNAV_LOIT_MINA <WPNAV_LOIT_MINA>`` (to perhaps 100) and ``WPNAV_LOIT_JERK <WPNAV_LOIT_JERK>`` (to perhaps 4000).
 #. The vehicle `circles (aka "toiletbowls") <https://www.youtube.com/watch?v=a-3G9ZvXHhk>`__.  This
    is normally caused by a compass problem the most likely being
    :ref:`magnetic interference <common-diagnosing-problems-using-logs_compass_interference>`

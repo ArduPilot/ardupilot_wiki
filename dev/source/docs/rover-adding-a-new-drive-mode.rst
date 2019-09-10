@@ -11,7 +11,7 @@ As a reference the diagram below provides a high level view of Rover's architect
 .. image:: ../images/rover_architecture.png
     :target: ../_images/rover_architecture.png
 
-#. Pick a name for the new mode (i.e. "NEW_MODE") and add it to the mode enum in `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/defines.h#L29>`__ as "NEW_MODE" has been added below.
+#. Pick a name for the new mode (i.e. "NEW_MODE") and add it to the mode enum in `mode.h <https://github.com/ardupilot/ardupilot/blob/master/APMrover2/mode.h#L21>`__ as "NEW_MODE" has been added below.
 
    ::
 
@@ -121,7 +121,7 @@ As a reference the diagram below provides a high level view of Rover's architect
             friend class ModeManual;
             friend class ModeRTL;
 
-#. In `control_modes.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/control_modes.cpp>`__ add the new mode to the ``mode_from_mode_num()`` function to create the mapping between the mode's number and the instance of the class.
+#. In `mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.cpp>`__ add the new mode to the ``mode_from_mode_num()`` function to create the mapping between the mode's number and the instance of the class.
 
    ::
 

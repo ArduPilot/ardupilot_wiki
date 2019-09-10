@@ -21,13 +21,18 @@ the wiki.
     Glossary <common-glossary>
     History of ArduPilot <common-history-of-ardupilot>
     Partners <common-partners>
+    Partners Program <common-partners-program>
     Ready-To-Use vehicles <common-rtf>
     Stores <common-stores>
     Top Contributors <common-team>
+[site wiki="plane, copter, rover"]    
     Training Centers <common-training-centers>
+[/site]
     Wiki Editing Guide <common-wiki_editing_guide>
 
 [site wiki="planner"]
+    Archived - Recording and Playing Back Missions<common-recording-and-playing-back-missions>
+    Archived - Loading ChiBios Firmware Onto Pixhawk<common-loading-chibios-firmware-onto-pixhawk>
     Mission Planner – Proposed Table Of Contents (TOC) <mission-planner-toc-planning>
 [/site]
 

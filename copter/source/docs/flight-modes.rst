@@ -140,6 +140,7 @@ Full list of flight modes
     Circle <circle-mode>
     Drift <drift-mode>
     Flip <flip-mode>
+    FlowHold <flowhold-mode>
     Follow <follow-mode>
     Follow Me (GSC Enabled) <ac2_followme>
     Guided <ac2_guidedmode>
