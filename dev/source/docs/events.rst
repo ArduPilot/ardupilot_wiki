@@ -9,7 +9,7 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Oct 20th to 21st: CubePilot conference in Xiamen, China
+- Oct 20th to 21st: CubePilot conference in Xiamen, China (`blog <https://discuss.ardupilot.org/t/2019-cubepilot-conference/46848>`__)
 - Mar 2020: Developer Un-conference in Canberra, Australia
 
 Past Events
