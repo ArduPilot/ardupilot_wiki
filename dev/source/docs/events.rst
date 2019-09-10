@@ -9,8 +9,8 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Sep 3rd to 6th: InterDrone 2019 in Las Vegas (`overview <https://www.interdrone.com/conference/overview/>`__)
 - Oct 20th to 21st: CubePilot conference in Xiamen, China
+- Mar 2020: Developer Un-conference in Canberra, Australia
 
 Past Events
 -----------
