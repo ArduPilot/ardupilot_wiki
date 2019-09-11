@@ -16,20 +16,6 @@ Clone ArduPilot repository
     :start-after: inclusion-marker-do-not-remove
     :end-before: Cloning with the GitHub GUI (Windows or MAC)
 
-Build Docker Image
-------------------
-Build the docker image and tag it with the name ardupilot:
-::
-    docker build . -t ardupilot
-
-Run Ardupilot Container
------------------------
-The following command runs the docker container, linking your current directory with
-the ardupilot source, and launches an interactive shell inside the container. From here
-you can build ardupilot:
-::
-    docker run --rm -it -v `pwd`:/ardupilot ardupilot:latest bash
-
 Setup on Ubuntu
 ===============
 
@@ -150,3 +136,19 @@ If there have been updates to some git submodules you may need to do a full clea
     make px4-clean
 
 that will remove the *PX4NuttX* archives so you can do a `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ from scratch
+
+How to Build a Docker Image
+---------------------------
+Build the docker image and tag it with the name ardupilot:
+::
+    docker build . -t ardupilot
+
+Run Ardupilot Container
+-----------------------
+The following command runs the docker container, linking your current directory with
+the ardupilot source, and launches an interactive shell inside the container. From here
+you can build ardupilot:
+::
+    docker run --rm -it -v `pwd`:/ardupilot ardupilot:latest bash
+
+
