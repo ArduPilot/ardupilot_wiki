@@ -46,7 +46,7 @@ tuning options for the vehicle.
     Magnetic Interference <common-magnetic-interference>
 [/site]
 [site wiki="copter,rover"]
-    Non-GPS Navigation <common-non-gps-navigation>
+    Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
 [site wiki="copter"]
     Object Avoidance <copter-object-avoidance>

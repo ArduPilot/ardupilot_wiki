@@ -74,4 +74,4 @@ This variation of Guided mode does not require a GPS but it only accepts `attitu
 
 .. note::
 
-   Guided_NoGPS does not allow a vehicle to hold position without a GPS (i.e. non-GPS navigation).  For information on :ref:`non-GPS navigation see this wiki page <common-non-gps-navigation>`
+   Guided_NoGPS does not allow a vehicle to hold position without a GPS (i.e. non-GPS navigation).  For information on :ref:`non-GPS navigation see this wiki page <common-non-gps-navigation-landing-page>`
