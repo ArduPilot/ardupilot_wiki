@@ -47,7 +47,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     LEDs (external) <common-external-leds>
 [site wiki="copter,rover"]
-    Marvelmind for Non-GPS Navigation <common-marvelmind>
+	Non-GPS navigation <common-non-gps-navigation-landing-page>
 [/site]
     On-Screen Display (OSD) <common-osd-boards-on-screen-display>
 [site wiki="copter,plane"]
@@ -58,12 +58,6 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Power Tether <common-power-tether>
     PPM Encoder <common-ppm-encoder>
-[site wiki="copter,rover"]
-    Pozyx for Non-GPS navigation <common-pozyx>
-[/site]
-[site wiki="copter"]
-    OptiTrack for Non-GPS navigation <common-optitrack>
-[/site]
 [site wiki="copter"]
     Precision Landing and Loiter (IRLock) <precision-landing-with-irlock>
 [/site]
@@ -78,13 +72,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
     Video <common-video-landingpage>
-[site wiki="copter,rover"]
-    VIO tracking camera for Non-GPS navigation <common-vio-tracking-camera>
-[/site]
 [site wiki="rover"]
     Wind Vane <wind-vane>
     Wheel Encoders <wheel-encoder>
-[/site]
-[site wiki="copter,rover"]
-    ZED for Non-GPS navigation <common-zed>
 [/site]

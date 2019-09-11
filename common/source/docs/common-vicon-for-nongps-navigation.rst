@@ -1,4 +1,6 @@
-.. _vicon-setup:
+.. _common-vicon-for-nongps-navigation:
+
+[copywiki destination="copter,rover"]
 
 =======================================
 Using a Vicon indoor positioning system
@@ -6,9 +8,9 @@ Using a Vicon indoor positioning system
 
 Robotics labs commonly have an indoor flying facility using a Vicon
 indoor positioning system. These systems use infra-red cameras to give
-high rate (200Hz) position and attitude via a network
+a high rate (200Hz) position and attitude via a network
 connection. ArduPilot can use this positioning information for precise
-indoor flight.
+indoor flight. 
 
 .. youtube:: XMb4MKi2HSQ
     :width: 100%
