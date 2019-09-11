@@ -46,3 +46,11 @@ Inverted flight test
 Picture of CanberraUAV vehicle
 
 .. image:: ../images/heliquad-canberrauav.jpg
+
+.. note::
+
+Heli quad requires a :ref:`traditional helicopter <traditional-helicopters>` as the base firmware. It is available for download from the `firmware server <http://firmware.ardupilot.org/>`__. It is also possible to compile Copter to generate traditional helicopter and multirotor firmware.
+
+
+
+
