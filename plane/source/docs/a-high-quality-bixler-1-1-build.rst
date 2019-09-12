@@ -241,9 +241,8 @@ Complete The Construction
 Tuning and Flight Performance
 =============================
 
-To get the best motor and propeller for my build, I used eCalc, which is
-worth the money. There is a tutorial here:
-`eCalc motor and prop efficiency guide <http://ardupilot.org/plane/docs/ecalc-motor-and-prop-efficiency-guide.html?highlight=ecalc>`_
+To get the best motor and propeller for my build, I used `eCalc <http://ecalc.ch>`__ , which is
+worth the money. You can also use :ref:`Drive Calculator<drivecalculator-guide>` , which is free.
 
 After going through the wizard in Mission Planner, you should have a compass
 that points correctly, and a properly working GPS. I found that the initial

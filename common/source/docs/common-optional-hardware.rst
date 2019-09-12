@@ -37,7 +37,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Display (Onboard) <common-display-onboard>
     ESCs and Motors <common-escs-and-motors>
 [site wiki="plane"]
-    eCalc Motor and Prop Efficiency Guide <ecalc-motor-and-prop-efficiency-guide>
+     Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
 [/site]
     GPS/Compass <common-positioning-landing-page>
     Grippers <common-gripper-landingpage>
