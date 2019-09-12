@@ -24,11 +24,9 @@ applications (you can see a few examples including agricultural
 automation in our :ref:`Video Demos <rover-video-demonstrations>`).
 
 
-Table of Contents
------------------
-
 .. toctree::
-   :titlesonly:
+   :maxdepth: 4
+   :hidden:
    
     Introduction <docs/gettit>
     Autopilot Hardware Options <docs/common-autopilots>
