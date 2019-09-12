@@ -9,31 +9,18 @@ Using SITL with RealFlight
 
 `RealFlight <http://www.realflight.com/>`__ is a commercial flight simulator with a 3D view, and the ability to design and test custom vehicles.
 
-This simulator only runs on Windows and requires RealFlight
-version 8. Note that RealFlight-X does not work with ArduPilot.
-The reason for the long installation process is to ensure you
-have the opportunity to read (and agree) to the terms of use by
-RealFlight/KnifeEdge to remove their liability from your
-experiemental autopilot flights.
+This simulator only runs on Windows and requires RealFlight version 8
+or version 9. Note that RealFlight-X does not work with ArduPilot. If
+you are installing for the first time then RealFlight version 9 is
+recommended.
+
+The quickest way to get started it to buy `RealFlight 9 <https://store.steampowered.com/app/1070820/RealFlight_9/>` in `Steam <https://store.steampowered.com/>`.
 
 Enabling RealFlight Link Feature
 ================================
 
-DVD and Tower Hobbies Digital versions:
----------------------------------------
-  - Start the RealFlight 8 Launcher
-  - Click Technical Support
-  - Click Enter Tech Support Code
-  - Enter the following code: PBEC#92jq3hhhyfhf (If successful, you will see a message saying "You are now registered to use the Public Beta site until the new version is posted to official download site.")
-  - Click Update to Specific Version, choose 8.00.055 from the list, and click OK
-
-Steam version:
---------------
-  - Right-click on RealFlight 8 in your Steam Library, then select Properties
-  - In the Properties window, select the Betas tab, and click the dropdown list
-  - Select "flightaxislinkbeta"
-  - Close the Properties dialog
-  - Wait for RealFlight 8 to update. If it doesn't do so immediately, you can force an update by completely restarting Steam. To do so, right click the Steam icon in your system tray and select Exit. Once everything closes, run Steam again, and the update should complete.
+On RealFlight 9 go to Settings->Physics and enable the FlightAxis
+option then restart RealFlight.
 
 Configure RealFlight
 ====================
