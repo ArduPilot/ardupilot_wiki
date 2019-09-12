@@ -39,7 +39,6 @@ many different sources, including ArduPilot Partners:
 
 -  `jD-SiK Telemetry Set <http://store.jdrones.com/jD_SiK_Radio_Telemetry_radio_p/rfsik20set900.htm>`__ (jDrones)
 -  `mRo SiK Telemetry Radio <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-sikv2>`__ (mRobotics)
--  `CUAV Transceiver Telemetry Radio Set (433Mhz) <https://store.cuav.net/index.php?id_product=34&id_product_attribute=0&rewrite=500mw-433mhz-3dr-wireless-tx-rx-dual-ttl-telemetry-for-mini-pixhawk-apm-pro-flight-control&controller=product&id_lang=3>`__ (CUAV)
 -  `VirtualRobotix Telemetry Set <http://www.virtualrobotix.it/index.php/en/shop/telemetria>`__ (VirtualRobotix)
 
 .. tip::
@@ -198,8 +197,7 @@ Improving the range
 
 The range can be improved by:
 
--  Using a small "patch antenna" on the ground like `this flat patch antenna <https://www.readymaderc.com/products/details/900-mhz-8-dbi-flat-patch-antenna-4ft-sma-male-connector>`__
-   perhaps mounted on an :ref:`Antenna Tracker <antennatracker:home>`
+-  Using an inexpensive 900Mhz yagi antenna on the ground like `these <https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR1.TRC0.A0.H0.X900mhz+yagi.TRS2&_nkw=900mhz+yagi&_sacat=0>`__  perhaps mounted on an :ref:`Antenna Tracker <antennatracker:home>`
 -  Replace at least one of the two radios with a higher powered
    :ref:`RFD900 <common-rfd900>`
 -  Reduce the ``AirRate`` parameter which will increase range but at the
