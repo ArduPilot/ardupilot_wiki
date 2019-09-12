@@ -28,6 +28,7 @@ components, including those required for the operation of the autopilot.
     Tailsitters <guide-tailsitter>
     Tilt-Rotors <guide-tilt-rotor>
     Basic FPV Plane <fpv-plane>
+    Orinthopters <ornithopter>
     Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
     Differential Spoilers & Full House Wing <differential-spoilers>
     Flaperons <flaperons-on-plane>
