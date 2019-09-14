@@ -130,6 +130,13 @@ Rover default channel mappings are:
 -  **Channel 8** (default): Flight modes. Mode selection can be mapped to any RC channel using the :ref:`MODE_CH <MODE_CH>` parameter
 -  **Channel 7 to 12**: (Optional) Auxiliary function switches
 
+Spring Centered Throttle Stick versus Free Moving
+-------------------------------------------------
+
+Rover's throttle channel is assumed to be normally centered, with forward commanding forward movement, and backward, reverse movement. Most RC systems for cars and boats have this spring centered throttle arrangement. However, most aircraft RC systems have a free moving throttle stick. Use of this arrangement presents a challenge to maintain the stick precisely centered for zero motion.
+
+If the transmitter is capable of programming multiple throttle curves controlled by a switch, then it is easy to have one switch position (for FORWARD) have a throttle curve that starts at 1500uS (50%, or mid-range of the channel) at low stick and increases linearly to maximum output (+100% or ~2000us), and in the other position (for REVERSE) that again starts at mid range at low stick, but linearly decreases pulse width to the channel minimum value (-100% or ~1000us), representing full reverse throttle. Zero motion position of the stick is fully down in either case, making it much easier to use.
+
 [/site]
 
 Further Reading
