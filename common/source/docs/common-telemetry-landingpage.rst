@@ -30,3 +30,4 @@ information based upon your set-up.
     SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
     SiK Radio advanced configuration <common-3dr-radio-advanced-configuration-and-technical-information>
     SiK Radio v1 <common-3dr-radio-v1>
+    Repeater for Wireless Ground Station Connections <common-wireless-gcs-repeater>
