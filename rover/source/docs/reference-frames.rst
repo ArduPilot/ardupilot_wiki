@@ -17,6 +17,7 @@ This section includes details on tested frames to speed up DIY builds of rovers 
     HobbyKing Hydrotek <reference-frames-hydrotek>
     HobbyKing Hydropro Inception <reference-frames-hydropro-inception>
     Traxxas Stampede 4WD Truck <reference-frame-traxxas-stampede>
+    Vac-U-Tug Tugboat <reference-frames-vacutug>
 
 .. note::
 
