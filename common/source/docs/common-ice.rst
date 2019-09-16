@@ -22,7 +22,7 @@ Connection and Configuration
 ----------------------------
 
 
-The engine's ignition power switch and (optional) starter should be connected to the flight controller's servo outputs
+The engine's ignition power switch and (optional) starter should be connected to the flight controller's servo outputs, ``Ignition`` and ``Starter`` (see ICE section in :ref:`common-rcoutput-mapping`).
 
 [site wiki="plane"]
 - Set :ref:`ICE_ENABLE <ICE_ENABLE>` = 1 to enable the ICE feature (you may need to reload parameters after setting this in order to see below parameters)
