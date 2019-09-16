@@ -7,7 +7,20 @@ Follow Mode
 ..  youtube:: _g9SkK0IhRk
     :width: 100%
 
-When switched into Follow, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.  The vehicle lead vehicle's position must be published to the vehicle in Follow mode using a telemetry system.
+When switched into Follow, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.  The vehicle lead vehicle's position must be published to the vehicle in Follow mode using a telemetry system as shown below.
+
+In its simplest form, each vehicle has a telemetry radio with the same NETID, on one of their telemetry ports.
+
+.. image:: ../images/Follow1.jpg
+   :target: ../_images/Follow1.jpg
+
+Vehicle A merely enters FOLLOW mode and it will attempt to follow Vehicle B, and vice-versa.
+
+If Vehicle A or B requires Ground Station Control, an additional Telemetry radio on a different NETID (YY) can be installed on another telemetry port on the vehicle controller, paired with the GCS's radio on that same NETID.
+
+.. image:: ../images/Follow2.jpg
+   :target: ../_images/Follow2.jpg
+
 
 .. note::
 
