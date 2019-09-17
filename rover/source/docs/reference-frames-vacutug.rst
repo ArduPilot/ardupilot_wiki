@@ -30,14 +30,20 @@ Build
 -----
 
 The build followed the manufacturer's instructions exactly, with a few minor deviations:
+
 #. Install the telemetry radio in the upper deck before gluing to lower deck
+
 #. Waterproof the GPS, since it is located in the most likely place to get wet if a wave broadsided the vessel. I 3D printed a small plastic case and sealed the GPS inside, assuring a waterproof seal around it.
+
+#. During ballasting step, in order to avoid rolling over while filling ballast cups on top deck, split the operation into two or more steps: putting the partial ballast in the plastic bags that will be used to mix them with epoxy in a later step, and placing them inside the hull below the cups before continuing to fill them with the final amounts of ballast. Keeping the center of gravity low.
 
 Additional Build Steps
 ----------------------
 
 #. Mount the autopilot controller as shown below on the electronics deck.
+
 #. Install the camera and video transmitter as shown below. Paint and glue the pilot house roof before  installing the video transmitter's antenna. After confirming that the camera is oriented and functioning correctly. Waterproof around its exit hole from the pilot house. Hot glue works well and can be removed in the future, if needed.
+
 #. Locate the components as shown below. Separating the GPS, video transmitter, and telemetry transmitter will prevent any interference between these systems.
 
 .. image:: ../images/vacutug-tray.jpg
