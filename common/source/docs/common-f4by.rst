@@ -35,7 +35,7 @@ Specifications
 
 -  **Interfaces**
 
-   -  5x UART serial ports, 1 with inverter for frsky telemertry
+   -  5x UART serial ports, 1 with inverter for frsky telemetry
    -  Up to 12x PWM outputs
    -  Spektrum DSM/DSM2/DSM-X Satellite input
    -  Futaba S.BUS input support (with external inverter)
