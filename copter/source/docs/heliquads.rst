@@ -9,9 +9,7 @@ HeliQuads (Variable Pitch Multicopters)
 
 Copter-3.6 (and higher) supports HeliQuads, also called Collective Pitch Quadcopters or Variable Pitch Multicopters.
 
-.. note::
-
-Heli quad requires a :ref:`traditional helicopter <traditional-helicopters>` as the base firmware. It is available for download from the `firmware server <http://firmware.ardupilot.org/>`__. When Copter is compiled, it now generates both traditional helicopter and multirotor firmware.
+.. note:: Heli quad requires a :ref:`traditional helicopter <traditional-helicopters>` as the base firmware. It is available for download from the `firmware server <http://firmware.ardupilot.org/>`__. When Copter is compiled, it now generates both traditional helicopter and multirotor firmware.
 
 These vehicles use independently controlled collective pitch on each of 4 rotors, with a single electric motor that powers all 4 rotors at the same speed via belts and a torque tube.
 It is highly aerobatic, capable of inverted flight but can suffer from :ref:`high vibration levels <common-measuring-vibration>`.
