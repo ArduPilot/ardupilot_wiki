@@ -280,6 +280,8 @@ COPTER / QUADPLANE FUNCTIONS
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Motor 1                   | 33 |    Copter, QuadPlane, HeliQuad, Traditional & Dual helicopters  |
 +--------------------------------+----+-----------------------------------------------------------------+
+|      Motor 2                   | 34 |    Copter, QuadPlane, HeliQuad, Traditional & Dual helicopters  |
++--------------------------------+----+-----------------------------------------------------------------+
 |      Motor 3                   | 35 |    Copter, QuadPlane, HeliQuad, Traditional & Dual helicopters  |
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Motor 4                   | 36 |    Copter, QuadPlane, HeliQuad, Traditional & Dual helicopters  |
