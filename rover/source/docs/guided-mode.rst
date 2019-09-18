@@ -14,11 +14,17 @@ Most ground stations support commanding the vehicle to drive to a location speci
 - connect to the vehicle with a :ref:`telemetry radio <common-telemetry-landingpage>`
 - from the Flight Data screen, right-mouse-button click on the map and select "Fly To Here".
 - the vehicle will switch to Guided mode and attempted to drive to the location specified.
+- once at the destination it will hold position if a surface vehicle, or loiter/circle around the destination if it is a boat.
 
 .. image:: ../images/rover-guided-fly-to-here.png
     :target: ../_images/rover-guided-fly-to-here.png
 
 The ground station will normally set the vehicle to Guided mode before the target destination is sent meaning it is not necessary to set up Guided mode on the :ref:`transmitter mode switch <common-rc-transmitter-flight-mode-configuration>`.
+
+Speed
+-----
+
+While the vehicle is travelling, the user can increase the vehicle's speed by raising the transmitter's throttle stick to between 75% and 100%.  At 75% the vehicle will remain at it's configured speed (i.e. :ref:`WP_SPEED <WP_SPEED>` or :ref:`CRUISE <CRUISE_SPEED>` if :ref:`WP_SPEED <WP_SPEED>` is zero, versions of Rover after 3.5.1 use only :ref:`WP_SPEED <WP_SPEED>`), this linearly increases to the vehicle's maximum speed as the pilot's throttle stick reaches 100%.
 
 Other controls
 --------------
