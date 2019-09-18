@@ -49,7 +49,12 @@ The mission can be started from a switch as described on the :ref:`Start/Stop sw
 Speed Nudging
 -------------
 
-While the vehicle is executing a mission, the user can increase the vehicle's speed by raising the transmitter's throttle stick to between 75% and 100%.  At 75% the vehicle will remain at it's configured speed (i.e. :ref:`CRUISE <CRUISE_SPEED>` or :ref:`WP_SPEED <WP_SPEED>`), this linearly increases to the vehicle's maximum speed as the pilot's throttle stick reaches 100%.
+While the vehicle is executing a mission, the user can increase the vehicle's speed by raising the transmitter's throttle stick to between 75% and 100%.  At 75% the vehicle will remain at it's configured speed (i.e. :ref:`WP_SPEED <WP_SPEED>` or :ref:`CRUISE <CRUISE_SPEED>` if :ref:`WP_SPEED <WP_SPEED>` is zero, versions of Rover after 3.5.1 use only :ref:`WP_SPEED <WP_SPEED>`), this linearly increases to the vehicle's maximum speed as the pilot's throttle stick reaches 100%.
+
+Mission End
+-----------
+
+If a mission ends on a waypoint, then it will switch to a mode determined by the :ref:`MIS_DONE_BEHAVE<MIS_DONE_BEHAVE>` parameter. It can be changed from this mode either by the RC mode switch changing, or via ground control station.
 
 Resuming or Restarting a Mission
 --------------------------------
