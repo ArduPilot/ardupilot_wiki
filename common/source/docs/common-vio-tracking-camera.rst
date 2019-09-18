@@ -91,7 +91,7 @@ Python Packages Installation
 
   - You should be able to run the examples provided by Intel can be found in the folder ``~/librealsense/wrappers/python/example`` with Python3 command.
 
-.. code-block:: python
+.. code-block:: bash
 
     # Update the PYTHONPATH environment variable to add the path to the pyrealsense2 library
     export PYTHONPATH=$PYTHONPATH:/usr/local/lib
@@ -105,7 +105,7 @@ Python Packages Installation
 
 - Install Python packages:
 
-.. code-block:: python
+.. code-block:: bash
 
     # pip install may require sudo, so proceed accordingly
     pip install pyrealsense2
@@ -118,7 +118,7 @@ Python Packages Installation
 
 - Download the script `t265_to_mavlink.py <https://github.com/hoangthien94/vision_to_mavros/blob/master/scripts/t265_to_mavlink.py>`__. In case you have downloaded the `vision_to_mavros <https://github.com/hoangthien94/vision_to_mavros>`__ package, it can be found in the script folder.
 
-.. code-block:: python
+.. code-block:: bash
 
     # Navigate to the location of the scripts
     cd ~/path/to/the/script/
@@ -133,7 +133,7 @@ How to run
 
 - Before the script can be run, the ``PYTHONPATH`` environment variable needs to be added with the path to the ``pyrealsense2`` library. Alternatively, copy the build output (``librealsense2.so`` and ``pyrealsense2.so`` in ``~/librealsense/build/``) next to the script. First, run the test script ``t265_test_streams.py`` to verify installation of ``pyrealsense2`` and the T265 is connected.
 
-.. code-block:: python
+.. code-block:: bash
 
     # Update the PYTHONPATH environment variable to add the path to the pyrealsense2 library
     export PYTHONPATH=$PYTHONPATH:/usr/local/lib
@@ -148,7 +148,7 @@ How to run
 
 - Modify parameters in the ``t265_to_mavlink.py`` script for your system configuration. Most importantly, find and change the following parameters in the script:
 
-.. code-block:: python
+.. code-block:: bash
 
     # Default configurations for connection to the FCU
     connection_string_default = '/dev/ttyUSB0'
@@ -165,7 +165,7 @@ How to run
 
 - The parameters can also be passed as input arguments from the command line. Now let's run the main script:
 
-.. code-block:: python
+.. code-block:: bash
 
     # For serial connection: set udev.rules in order to get the USB available; allow permission to serial
     sudo chmod 666 /dev/ttyUSB0
@@ -254,7 +254,7 @@ The script can be run automatically at boot time.
 
 - Download or create a shell file ``t265.sh``, modify the path to `t265_to_mavlink.py` script in this shell file, then make it executable:
 
-.. code-block:: python
+.. code-block:: bash
 
     wget https://raw.githubusercontent.com/hoangthien94/vision_to_mavros/master/scripts/t265.sh
 
@@ -272,7 +272,7 @@ The script can be run automatically at boot time.
 
 - Let’s create a file ``/etc/systemd/system/t265.service`` with the following content. Set your actual username after ``User=`` and set the proper path to your ``t265.sh`` in ``ExecStart=``.
 
-.. code-block:: python
+.. code-block:: bash
 
     [Unit]
     Description=Realsense T265 Service
@@ -294,7 +294,7 @@ The script can be run automatically at boot time.
 
 - That’s it. We can now start the service and automatically get it to start on boot:
 
-.. code-block:: python
+.. code-block:: bash
 
     systemctl start t265
 
