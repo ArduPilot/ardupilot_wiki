@@ -53,7 +53,6 @@ based upon your set-up.
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Benewake TF02 / TF03 <common-benewake-tf02-lidar>
     Benewake TFmini / TFmini Plus <common-benewake-tfmini-lidar>
-    EchoLogger ECT400 <common-echologger-ect400>
     Garman Lidar-Lite <common-rangefinder-lidarlite>
     Leddar One Lidar <common-leddar-one-lidar>
     LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
