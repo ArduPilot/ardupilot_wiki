@@ -42,7 +42,7 @@ The following steps are intended for Ubuntu Linux. Since no Debian package is av
 - **Install OS** (if you have not done so): `Ubuntu MATE 16.04 LTS <https://ubuntu-mate.org/blog/ubuntu-mate-xenial-final-release/>`__.
 - **Increase swap size**: RPi does not have enough RAM to compile the SDK, hence swap size needs to be increased. Swap size of 2048 (2GB) seems to work well, but you can go with less.
 
-.. code-block:: python
+.. code-block:: bash
 
     # Toggle swap off
     sudo dphys-swapfile swapoff
@@ -65,7 +65,7 @@ The following steps are intended for Ubuntu Linux. Since no Debian package is av
 
 - **Clone librealsense repo and compile SDK**
 
-.. code-block:: python
+.. code-block:: bash
 
     # Update system
     sudo apt update
@@ -114,7 +114,7 @@ The following steps are intended for Ubuntu Linux. Since no Debian package is av
   - Update the ``PYTHONPATH`` environment variable to add the path to the ``pyrealsense`` library: ``export PYTHONPATH=$PYTHONPATH:/usr/local/lib``. Alternatively, copy the build output (``librealsense2.so`` and ``pyrealsense2.so`` files, located in ``~/librealsense/build/``) next to your script.
   - The basic examples provided by Intel can be found in the folder ``~/librealsense/wrappers/python/example``. Run it with Python3.
 
-.. code-block:: python
+.. code-block:: bash
 
     export PYTHONPATH=$PYTHONPATH:/usr/local/lib
 
@@ -132,7 +132,7 @@ Install ``realsense-ros``
 - The installation steps for ROS are straightforward and you can follow the instruction on the official repo `here <https://github.com/IntelRealSense/realsense-ros#installation-instructions>`__.
 - Launch the node: ``roslaunch realsense2_camera rs_t265.launch``. All sensor data will be published as ROS topics: 
 
-.. code-block:: python
+.. code-block:: bash
 
     /camera/odom/sample
     /camera/accel/sample
@@ -161,7 +161,7 @@ Install ``vision_to_mavros``
 
 - Clone and build the package:
 
-.. code-block:: python
+.. code-block:: bash
 
     # Navigate to catkin workspace
     cd ~/catkin_ws/src
