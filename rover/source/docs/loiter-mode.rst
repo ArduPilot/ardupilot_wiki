@@ -22,6 +22,6 @@ The way this mode works is:
 - if/when the boat strays more than :ref:`WP_RADIUS <WP_RADIUS>` from the target it:
 
     - rotates to point either directly towards the target or directly away from it (whichever results in less rotation)
-    - drives/floats forwards or backwards at 0.5 m/s * the distance to the edge of the circle around the target
+    - drives/floats forwards or backwards at 0.5 m/s * the distance to the edge of the circle around the target, but at a speed no greater than :ref:`WP_SPEED<WP_SPEED>`.
 
 .. image:: ../images/loiter-mode-algorithm.png
