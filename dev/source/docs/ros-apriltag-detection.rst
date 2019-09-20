@@ -92,7 +92,7 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 .. code-block:: none
 
     AHRS_EKF_TYPE 2
-    BRD_RTC_TYPES 1
+    BRD_RTC_TYPES 2
     EKF2_ENABLE 1
     EKF3_ENABLE 0
     EK2_GPS_TYPE 3
