@@ -8,10 +8,10 @@ A lot of components in ArduPilot rely on UARTs. They are used for debug
 output, telemetry, GPS modules and more. Understanding how to talk to
 the UARTs via the HAL will help you understand a lot of ArduPilot code.
 
-The 5 UARTs
+The 8 UARTs
 ===========
 
-The ArduPilot HAL currently defines 5 UARTs. The HAL itself doesn't
+The ArduPilot HAL currently defines 8 UARTs. The HAL itself doesn't
 define any particular roles for these UARTs, but the other parts of
 ArduPilot assume they will be assigned particular functions
 
@@ -20,53 +20,47 @@ ArduPilot assume they will be assigned particular functions
 -  uartC - primary telemetry (telem1 on Pixhawk, 2nd radio on APM2)
 -  uartD - secondary telemetry (telem2 on Pixhawk)
 -  uartE - 2nd GPS
+-  uartF - User Configurable
+-  uartG - User Configurable
+-  uartH - User Configurable
+
 
 If you are writing your own sketch using the ArduPilot HAL then you can
 use these UARTs for any purpose you like, but if possible you should try
 to use the above assignments as it will allow you to fit in more easily
 to existing code.
 
-Some UARTs have dual roles. For example there is a parameter
-SERIAL2_PROTOCOL changes uartD from being used for MAVLink versus being
-used for Frsky telemetry.
+You can change the role of UART by changing its SERIALn_PROTOCOL param. Possible parameter values are 
+-1:None, 1:MAVLink1, 2:MAVLink2, 3:Frsky D, 4:Frsky SPort, 5:GPS, 7:Alexmos Gimbal Serial, 8:SToRM32 Gimbal Serial, 9:Rangefinder, 10:FrSky SPort Passthrough (OpenTX), 11:Lidar360, 13:Beacon, 14:Volz servo out, 15:SBus servo out, 16:ESC Telemetry, 17:Devo Telemetry, 18:OpticalFlow, 19:RobotisServo, 20:NMEA Output, 21:WindVane, 22:SLCAN
+Search code for 1_PROTOCOL to get updated list of uart roles.
 
 Go and have a look at the
 `libraries/AP_HAL/examples/UART_test <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/examples/UART_test/UART_test.cpp>`__
-example sketch. It prints a hello message to all 5 UARTs. Try it on your
+example sketch. It prints a hello message to the 1st 5 UARTs. Try it on your
 board and see if you can get all the outputs displaying using a USB
 serial adapter. Try changing the baudrate in the sketch.
 
 Debug console
 -------------
 
-In addition to these 5 UARTs there is an additional debug console
-available on some platforms. You can tell if the platform you are on has
-a debug console by checking for the HAL_OS_POSIX_IO macro, like
-this:
-
-::
-
-    #if HAL_OS_POSIX_IO
-      ::printf("hello console\n");
-    #endif
+Historically, In addition to the basic 5 UARTs there was an additional debug console
+available on some platforms. Recently debug console is directed to USB.
+On SITL debug is directed to terminal running SITL, while USB is directed to port 5760 by default.
 
 If you have a board that does have HAL_OS_POSIX_IO set (check that
 in
 `AP_HAL/AP_HAL_Boards.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL/AP_HAL_Boards.h>`__)
 then try adding some ::printf() and other stdio functions to the
-UART_test sketch. 
+UART_test sketch.
 
 If ::printf doesn't work for you, it may be that your particular file ( eg a library ) does not have "#include <stdio.h>" at the top of it, just add it. :-) 
 
-Note that on some boards (eg. the Pixhawk) hal.console->printf() goes to
-a different place to ::printf(). On the Pixhawk a hal.console->printf()
-goes to the USB port whereas ::printf() goes to the dedicated debug
-console (which also runs the nsh shell for NuttX access).
+You can also use hal.console->printf() to specify USB port.
 
 UART Functions
 ==============
 
-Every UART has a number of basis IO functions available. The key
+Every UART has a number of basic IO functions available. The key
 functions are:
 
 -  printf - formatted print
