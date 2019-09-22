@@ -76,6 +76,8 @@ available storage into areas that provide:
 -  fence points
 -  waypoints
 -  rally points
+-  signing key
+-  RC bind info
 
 Go and have a read of
 `libraries/StorageManager/StorageManager.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/StorageManager/StorageManager.cpp>`__.
