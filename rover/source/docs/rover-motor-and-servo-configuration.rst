@@ -68,6 +68,16 @@ Some ESCs support three "Running Models":
 
 For Rover to have full and straight forward control of the throttle it is best to set the "Running Model" to the 3rd option, "Forward and Reverse".  An ESC programming card compatible with the ESC can normally be used to change the ESC's configuration.
 
+.. _rover-motor-and-servo-min-throttle:
+
+Minimum Throttle
+================
+Many motors and ESCs have a dead zone. This is the zone between the zero throttle value and the throttle value at which the motor starts to move. This can be compensated by setting minimum throttle in the firmware.
+
+.. tip:: Remove wheels before proceeding with surface vehicles. Be aware of propellers on boats if they cannot be easily removed!
+
+To fix the dead zone, open the motor test window in Mission Planner, as mentioned :ref:`below<rover-motor-and-servo-configuration-testing>`.  Find the minimum throttle value at which the motor turns on and set the parameter :ref:`MOT_THR_MIN<MOT_THR_MIN>` to that value. Now the motor should start at 1% throttle.
+
 .. _rover-motor-and-servo-configuration-testing:
 
 Testing Motor direction

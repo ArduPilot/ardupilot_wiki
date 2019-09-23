@@ -25,3 +25,6 @@ The way this mode works is:
     - drives/floats forwards or backwards at 0.5 m/s * the distance to the edge of the circle around the target, but at a speed no greater than :ref:`WP_SPEED<WP_SPEED>`.
 
 .. image:: ../images/loiter-mode-algorithm.png
+
+
+.. tip:: In order to obtain the optimum performance, the ESC deadband should be small. The :ref:`MOT_THR_MIN<MOT_THR_MIN>` can be used to compensate for ESC deadband. See this :ref:`section<rover-motor-and-servo-min-throttle>` for details.
