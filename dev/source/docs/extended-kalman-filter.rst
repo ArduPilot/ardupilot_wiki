@@ -4,6 +4,13 @@
 Extended Kalman Filter Navigation Overview and Tuning
 =====================================================
 
+.. warning::
+
+   **IMPORTANT:** This article is about EKF1 which is deprecated
+   since 2016 as EKF3 is introduced. It's kept as a reference, as it
+   has been the basis for EKF2 and EKF3. EKF2 is now the default.
+
+
 This article describes the Extended Kalman Filter (EKF) algorithm used
 by Copter and Plane to estimate vehicle position, velocity and angular
 orientation based on rate gyroscopes, accelerometer, compass
