@@ -31,9 +31,10 @@ is following the software’s predicted pitch and roll rates and attitudes.
 The pilot’s commands are limited by the amount of acceleration that can be
 commanded through the ATC_ACCEL_P_MAX for pitch and ATC_ACCEL_R_MAX for roll.
 The initial responsiveness (crispness/sluggishness) of the aircraft to the pilot
-input can be adjusted through the RC_FEEL parameter. The pilot input and these
-parameters are used to determine the requested rate required to achieve the
-desired response that is fed to the rate controller.
+input can be adjusted through the ATC_INPUT_TC parameter (in AC 3.5 or earlier,
+this parameter was called RC_FEEL). The pilot input and these parameters are
+used to determine the requested rate required to achieve the desired response
+that is fed to the rate controller.
  
 The attitude controller is used to ensure the actual attitude of the aircraft
 matches the predicted attitude of the flight controller. It uses the
@@ -123,7 +124,7 @@ from the defaults.
 +---------------------+---------+
 | ATC_RAT_RLL_VFF     | 0.15    |
 +---------------------+---------+
-| RC_FEEL             | 50      |
+| ATC_INPUT_TC        | 0.15    |
 +---------------------+---------+
 
 Tuning the Yaw Axis (Rudder)
@@ -200,9 +201,10 @@ speed.
 The final setting for ATC_ACCEL_MAX parameters will depend on the size of the
 helicopter.  Large 800-900 class machines will typically be in the 36000-52000 
 range; smaller 450-500 class machines will typically be in the 90000-110000 
-range. You may want to experiment with the RC_FEEL parameter as well to get the
-initial aircraft response the way you like it.  It is recommended to keep the
-RC_FEEL parameter between 25 and 50. Once this process is complete, the aircraft
+range. You may want to experiment with the ATC_INPUT_TC parameter as well to get
+the initial aircraft response the way you like it.  It is recommended to keep the
+ATC_INPUT_TC parameter between 0.15 and 0.25 (for RC_FEEL with AC 3.5 or earlier,
+the recommended range was 25 to 50).  Once this process is complete, the aircraft
 should have the desired feel in snappiness and rate.
 
 Below is a graph showing an example of Rate Roll Desired vs actual Rate Roll.
