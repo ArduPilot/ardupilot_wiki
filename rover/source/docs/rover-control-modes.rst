@@ -25,6 +25,7 @@ The full list of modes in alphabetical order is:
     Loiter (for boats) <loiter-mode>
     Manual <manual-mode>
     RTL <rtl-mode>
+    Simple <simple-mode>
     Steering <steering-mode>
     Smart RTL <smartrtl-mode>
     
