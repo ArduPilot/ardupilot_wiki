@@ -31,7 +31,7 @@ Install some required packages
 If you are on a debian based system (such as Ubuntu or Mint), we provide `a script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-ubuntu.sh>`__ that will do it for you. From ardupilot directory :
 ::
 
-    Tools/environment_install/install-prereqs-ubuntu.sh -y
+    Tools/scripts/install-prereqs-ubuntu.sh -y
 
 Reload the path (log-out and log-in to make permanent):
 
