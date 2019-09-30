@@ -30,9 +30,8 @@ These parts are required:
    OR `8GB eMMC Module <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G138749987644>`__
    preloaded with Linux (the EMMC module is about 4x faster which may be
    useful for image processing)
--  `FTDI Cable or <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__\ USB
-   to Serial interface like `this one <http://www.ebay.com/itm/1pcs-USB-2-0-to-TTL-UART-6PIN-Module-Serial-Converter-CP2102-STC-new-/131205013464>`__
-   from ebay
+-  `FTDI Cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__ or USB
+   to Serial interface like `this <https://www.amazon.com/Prolific-PL2303-USB-TTL-Module/dp/B008958S7A>`__. This `link <https://www.sjoerdlangkemper.nl/2019/03/20/usb-to-serial-uart/>`__ provides an overview of USB-TTL modules.
 
 These optional items may also be useful:
 
