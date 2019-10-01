@@ -97,6 +97,10 @@ Announcements
 Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcements.
 
 
+How to get involved with ArduPilot?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can involve yourself in many ways. If you want some help using Ardupilot, or give some help to other users, or even getting in touch with other users and their projects, the best channel is the `Discuss Forums <https://discuss.ardupilot.org/>`__. You can also learn :ref:`how the team works <how-the-team-works>`, get involved with the :ref:`development of Ardupilot <dev:home>` or check the :ref:`contact channels<common-contact-us>`.
 
 .. toctree::
    :maxdepth: 4
