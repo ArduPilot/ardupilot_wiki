@@ -29,6 +29,7 @@ Connection to Flight Controller
 - Connect the sensor to the flight controllers' CAN port (if using a Cube note that pre-Apr 2019 boards have CAN1 and CAN2 swapped)
 - Set :ref:`FLOW_TYPE <FLOW_TYPE>` = 6 (UAVCAN)
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 to enable UAVCAN
+- Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 1 (UAVCAN)
 - Set :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 24 (UAVCAN)
 - Set :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 300 to set range finder's maximum range to 3m
 
