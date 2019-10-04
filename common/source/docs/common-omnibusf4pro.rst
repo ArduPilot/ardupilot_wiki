@@ -80,7 +80,20 @@ The Pro version has 6 PWM outputs available on thru-hole pads, and two additiona
 .. figure:: ../../../images/PWM7-8.jpg
     :target: ../_images/PWM7-8.jpg
     :width: 450px
-    
+
+Default UART order
+==================
+
+- SERIAL0 = console = USB
+- SERIAL1 = Telemetry1 = USART1
+- SERIAL2 = not assigned
+- SERIAL3 = GPS1 = USART6
+- SERIAL4 = not assigned
+- SERIAL5 = not assigned
+- SERIAL6 = not assigned
+
+Serial protocols can be adjusted to personal preferences.
+
 Dshot capability
 ================
 
@@ -127,7 +140,7 @@ Install dfu-util
   Rename it to `dfu-util.exe`
 
   Append the path of the `dfu-util.exe` to the system environment variable `Path`: "My Computer" > "Properties" > "Advanced" > "Environment Variables" > "Path". Please note that paths in the variable `Path` are seperated by semicolon `;`. This will allow dfu-util to be executed globally in command prompt.
-  
+
   Instead of using dfu-util, you could flash bootloader with betaflight. Instructions are detailled here : https://github.com/betaflight/betaflight/wiki/Installing-Betaflight
   If you board is not recognize as a com port under windows, you have to download and install zadig : http://zadig.akeo.ie/
 
