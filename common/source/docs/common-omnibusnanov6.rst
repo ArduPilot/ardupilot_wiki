@@ -39,6 +39,19 @@ Specifications
    -  Built-in OSD
    -  There is no logging support, so disable in parameters
 
+Default UART order
+==================
+
+- SERIAL0 = console = USB
+- SERIAL1 = Telemetry1 = USART1
+- SERIAL2 = Telemetry2 = USART4
+- SERIAL3 = GPS1 = USART6
+- SERIAL4 = not assigned
+- SERIAL5 = not assigned
+- SERIAL6 = not assigned
+
+Serial protocols can be adjusted to personal preferences.
+
 Dshot capability
 ================
 
