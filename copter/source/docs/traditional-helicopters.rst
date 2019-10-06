@@ -35,6 +35,7 @@ Canberra Team in Australia.
     Loading the Firmware <loading-the-code>
     Mounting the Pixhawk <trad-heli-mounting>
     Connecting and Calibration <traditional-helicopter-connecting-apm>
+    Swashplate Setup <traditional-helicopter-swashplate-setup>
     ArduPilot Helicopter Ground School <traditional-helicopter-configuration>
     Pre-Flight Testing <trad-heli-preflight-testing>
     Tuning <traditional-helicopter-tuning>
