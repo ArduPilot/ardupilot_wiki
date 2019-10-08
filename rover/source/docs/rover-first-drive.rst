@@ -11,6 +11,7 @@ This section covers items required for your first drive including basic tuning r
 
     Control Modes <rover-control-modes>
     Arming / Disarming <arming-your-rover>
+    Steering Trim <savetrim>
     Tuning Speed and Throttle <rover-tuning-throttle-and-speed>
     Tuning Steering Rate <rover-tuning-steering-rate>
     Tuning Pivot Turns <rover-tuning-pivot-turns>
