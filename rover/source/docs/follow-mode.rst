@@ -32,7 +32,7 @@ The following parameters can be used to tune Follow mode's performance:
 -  :ref:`FOLL_ENABLE <FOLL_ENABLE>` : set to 1 to enable follow mode and refresh parameters.
 -  :ref:`FOLL_SYSID <FOLL_SYSID>` : mavlink system id of lead vehicle ("0" means follow the first vehicle "seen").
 -  :ref:`FOLL_DIST_MAX <FOLL_DIST_MAX>` : if lead vehicle is more than this many meters away, give up on following and hold position (loiter if boat, stop if ground vehicle).
--  :ref:`FOLL_OFS_X <FOLL_OFS_X>`, :ref:`FOLL_OFS_Y <FOLL_OFS_Y>`, :ref:`FOLL_OFS_Z <FOLL_OFS_Z>` (not used in Rover) : 3D offset (in meters) from the lead vehicle. If they are zero, then the current vehicle's offset from the follow target at time of mode entry is used. These offsets can be altered via Mavlink, but will be only used on the next entry into Follow Mode.
+-  :ref:`FOLL_OFS_X <FOLL_OFS_X>`, :ref:`FOLL_OFS_Y <FOLL_OFS_Y>`, :ref:`FOLL_OFS_Z <FOLL_OFS_Z>` (not used in Rover) : 3D offset (in meters) from the lead vehicle. If they are zero, then the current vehicle's offset from the follow target at time of mode entry is used every time. These offsets can be altered via Mavlink and will take effect immediately. However, if they were originally zero and changed during FOLLOW MODE rather than during another mode, they will be reset to zero for the next entry into FOLLOW mode, until a reboot occurs and then the changed offsets will be restored. 
 -  :ref:`FOLL_OFS_TYPE <FOLL_OFS_TYPE>` : set to 0 if offsets are North-East (NED), 1 if offsets are relative to lead vehicle's heading, see diagrams below.
 -  :ref:`FOLL_POS_P <FOLL_POS_P>` : gain which controls how aggressively this vehicle moves towards lead vehicle (limited by :ref:`WPNAV_SPEED <WPNAV_SPEED>`)
 
