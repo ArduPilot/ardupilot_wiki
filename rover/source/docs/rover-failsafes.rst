@@ -56,3 +56,8 @@ If enabled by setting the :ref:`FS_CRASH_CHECK <FS_CRASH_CHECK>` parameter to "1
 - velocity falls below 0.08m/s (i.e. 8cm/s)
 - the vehicle is turning at less than 4.5 deg/s
 - demanded throttle to the motors (from the pilot or autopilot) is at least 5%
+
+Hold Mode Failsafes
+-------------------
+
+The :ref:`FS_OPTIONS<FS_OPTIONS>` bitmask parameter determines if failsafes will be recognized while in HOLD Mode. If bit 0 is set, then failsafes will be recognized and acted upon. If not, failsafes will be ignored in HOLD mode (default).
