@@ -2319,59 +2319,6 @@ After reaching a waypoint, delay the execution of the next conditional
 In the example above, Command #4 (``DO_SET_ROI``) is delayed so that it
 starts 5 seconds after the vehicle has passed Waypoint #2.
 
-**Command parameters**
-
-.. raw:: html
-
-   <table border="1" class="docutils">
-   <tbody>
-   <tr>
-   <th>Command Field</th>
-   <th>Mission Planner Field</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td><strong>param1</strong></td>
-   <td>Rate (cm/sec)</td>
-   <td>Descent / Ascend rate (m/s).</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td>param2</td>
-   <td>
-   </td>
-   <td>Empty</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td>param3</td>
-   <td>
-   </td>
-   <td>Empty</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td>param4</td>
-   <td>
-   </td>
-   <td>Empty</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td>param5</td>
-   <td>
-   </td>
-   <td>Empty</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td>param6</td>
-   <td>
-   </td>
-   <td>Empty</td>
-   </tr>
-   <tr>
-   <td><strong>param7</strong></td>
-   <td>Alt</td>
-   <td>Target altitude</td>
-   </tr>
-   </tbody>
-   </table>
 
 .. _mav_cmd_condition_distance:
 
@@ -2826,7 +2773,7 @@ MAV_CMD_DO_SET_HOME
 Supported by: Copter, Plane, Rover.
 
 Sets the home location either as the current location or at the location
-specified in the command.
+specified in the command.For SITL work, altitude input here needs to be with reference to absolute altitude, taking into account SRTM elevation.
 
 .. note::
 
