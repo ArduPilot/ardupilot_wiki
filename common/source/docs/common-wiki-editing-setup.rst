@@ -144,4 +144,4 @@ syntax highlighting and basic on-the-fly rendering in a single application.
     also stated by the website).
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]

@@ -158,4 +158,4 @@ Since we want you to have a great experience, please make sure that you do all o
 
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
