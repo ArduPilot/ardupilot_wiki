@@ -38,4 +38,4 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `3DXR <https://www.3dxr.co.uk/>`__
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
