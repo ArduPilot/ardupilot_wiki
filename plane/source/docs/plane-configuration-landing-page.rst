@@ -21,6 +21,7 @@ components, including those required for the operation of the autopilot.
     Configuration Values for Common Airframes <configuration-files-for-common-airframes>
     Choosing Servo Functions <servo-functions>
     ESC Calibration <guide-esc-calibration>
+    Automatic Trim <auto-trim>
     Four Channel Planes <guide-four-channel-plane>
     Elevon Planes <guide-elevon-plane>
     VTail Planes <guide-vtail-plane>
