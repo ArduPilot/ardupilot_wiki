@@ -266,4 +266,4 @@ listed here will be active participants in the community.
     :scale: 0%
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]

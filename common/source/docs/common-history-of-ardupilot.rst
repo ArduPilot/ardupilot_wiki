@@ -233,4 +233,4 @@ Feb 2019 - Rover-3.5.0 released including Sailboat support, Follow and Simple mo
    for a more complete list of contributors to the project.
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
