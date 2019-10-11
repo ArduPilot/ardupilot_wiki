@@ -1,8 +1,14 @@
 .. _project-news:
 
-==========
-Plane News
-==========
+=============
+Release Notes
+=============
+
+`Current Releases <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/release-notes.txt>`__
+-----------------------------------------------------------------------------------------------------
+
+Older Releases
+--------------
 
 -  Feb 02, 2016: Plane 3.5.0 released. Major Release including new
    Kalman Filter (EKF2), Parachute Support, QuadPlane Support, Support

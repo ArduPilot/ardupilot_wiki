@@ -38,7 +38,7 @@ the wiki.
 
 [site wiki="plane"]
     Common Airframe Builds <common-common-airframe-builds>
-    Plane News <project-news>
+    Release Notes <project-news>
 [/site]
 
 [site wiki="antennatracker"]
