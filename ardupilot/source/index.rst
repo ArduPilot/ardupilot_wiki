@@ -119,7 +119,7 @@ From those hobbyist beginnings, ArduPilot led the professionalisation of the Ope
 Since leaving DroneCode in 2016 ArduPilot has grown further to stand as an independent, open, global project.
 The comprehensive and ever growing list of ArduPilot features are continually born from the
 needs of the community - be they hobbyists, commercial users, academics, or the largest of enterprises.
-
+See the :ref:`history-of-ardupilot` for more information.
 Features:
 =========
 
@@ -178,8 +178,16 @@ Features:
    Plane <http://ardupilot.org/plane/index.html>
    Rover <http://ardupilot.org/rover/index.html>
    Sub <http://ardusub.com/>
+   Firmware Downloads <docs/common-downloads_firmware>
    Mission Planner <http://ardupilot.org/planner/index.html>
    APM Planner 2 <http://ardupilot.org/planner2/index.html>
    AntennaTracker <http://ardupilot.org/antennatracker/index.html>
    Companion Computers <http://ardupilot.org/dev/docs/companion-computers.html>
    Developers <http://ardupilot.org/dev/index.html>
+   The Ardupilot Team <docs/common-team>
+   The History of Ardupilot<docs/common-history-of-ardupilot>
+   Ardupilot Partners Program <docs/common-partners-program>
+   Commercial Support <docs/common-commercial-support>
+   Acknowledgements <docs/common-acknowledgments>
+   Hardware Vendors <docs/common-stores>
+   Contact Us <docs/common-contact-us>
