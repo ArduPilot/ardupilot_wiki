@@ -154,7 +154,7 @@ Full Table of Contents
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
     How The Team Works <docs/how-the-team-works>
     Events <docs/events>
-    Schools <docs/schools>
+    Training Centers <docs/common-training-centers>
     GSoC 2019 project ideas <docs/gsoc-ideas-list>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     Appendix <docs/common-appendix>
