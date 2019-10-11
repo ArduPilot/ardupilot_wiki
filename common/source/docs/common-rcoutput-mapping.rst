@@ -106,6 +106,8 @@ coming into the board from the corresponding input channel. For example,
 if SERVO5_FUNCTION is 1 (meaning RCPassThru) then channel 5 output will
 always be equal to channel 5 input.
 
+.. note:: The servo output will exactly match the RC input source's PWM value. RCx_TRIM/_MIN/_MAX and SERVOx_TRIM/_MIN/_MAX has no affect in this mode.
+
 RCPassThru1 to RCPassThru16
 +++++++++++++++++++++++++++
 
