@@ -40,6 +40,12 @@ Specifications
    -  Onboard voltage sensor
    -  Onboard winbond 25Q128 for dataflash-type logging 
 
+Where to Buy
+============
+
+- available from multiple retailers including `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4nanov6.html>`__
+
+
 Default UART order
 ==================
 
@@ -56,12 +62,12 @@ Serial protocols can be adjusted to personal preferences.
 Dshot capability
 ================
 
-All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output group that must be the same (PWM or Dshot, when configured as a normal servo/motor output) is: 1/2.
+All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output group that must be the same (PWM or Dshot, when configured as a normal servo/motor output) is: 1/2 and 3/4.
 
-Where to Buy
-============
+Logging
+=======
 
-- available from multiple retailers including `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f3-f4/omnibusf4nanov6.html>`__
+Logging to on-board data flash is supported on this controller.
 
 Versions
 ==============
