@@ -98,7 +98,7 @@ For using DShot on non-multirotor motors like traditional fixed wings' main moto
 - on Pixhawk and Cube boards:
 
   - do not use channels 1-8 for DShot ESC's. Turn off :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` to :ref:`SERVO8_FUNCTION <SERVO8_FUNCTION>` OR set them to something other than motor or throttle functions.
-  
+
   - set the auxillary channels to their appropriate functions (:ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` to :ref:`SERVO14_FUNCTION <SERVO14_FUNCTION>`). For quadcopters quadplanes, these parameters will be 33, 34, 35, and 36 for channels 9-12 (Aux 1-4).
   - When using more than the first 4 Aux ports for DShot ESC's, set :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` to 6.
 
@@ -118,7 +118,7 @@ The following section shows how to setup BLHeli_32 pass-through support:
 To enable BLHeli_32 pass-through you need to set the following parameters and reboot your flight controller:
 
 - Set :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` to 1 to enable automatic mapping of multirotor motors for BLHeli_32 pass-through and telemetry support. for most multirotor and quadplane users this will do the right thing. if using BLHeli_32 ESCs on non-multirotor motors with the respective SERVOn_FUNCTION set to 70 (=throttle), 73 (=throttle left) or 74 (=throttle right), you will need to further specify the used outputs as follows:
-  
+
 - Use :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` to enable BLHeli_32 pass-through and telemetry support on non-multirotor motors and / or exactly specify which servo outputs you want to enable BLHeli_32 pass-through and telemetry on.
 
 - Set :ref:`SERVO_BLH_PORT <SERVO_BLH_PORT>` to specify the flight controller's port used to connect to your PC running BLHeliSuite32 for ESC configuration. It defaults to USB and likely does not need to be altered. Beware that this does NOT specify the serial port used for the ESC's telemetry feedback to your flight controller!
@@ -128,6 +128,7 @@ Now connect a USB cable to your flight controller and use BLHeliSuite32 on Windo
 .. image:: ../../../images/blhelisuite32.jpg
     :target: ../_images/blhelisuite32.jpg
 
+.. _common-dshot-blheli-telemetry:
 
 BLHeli_32 ESC telemetry feedback
 ================================
@@ -139,7 +140,7 @@ Connect all ESC's telemetry wires to a single serial port's RX pin on the flight
 Set the following parameters to enable BLHeli_32 telemetry feedback to a flight controller's serial port:
 
 - :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` = 1 to enable automatic mapping of multirotor motors for BLHeli_32 pass-through and telemetry support. for most multirotor and quadplane users this will do the right thing. If using BLHeli_32 ESCs on non-multirotor motors with the respective SERVOn_FUNCTION set to 70 (=throttle), 73 (=throttle left) or 74 (=throttle right), you will need to further specify the used outputs as follows:
-  
+
 - :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` : a bitmap used to enable BLHeli_32 pass-through and telemetry support on non-multirotor motors and / or exactly specify which servo outputs you want to enable pass-through and telemetry on (if available in ESC).
 
 - :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` 16 (= ESC telemetry). This assumes serial port 5 is used. Adjust the serial port's protocol parameter to 16 , for the serial port that your ESC telemetry wire is connected to, as required. The correlation between serial port numbering and UART physical ports for you flight controller should be documented in its description page linked :ref:`here <common-autopilots>`.
