@@ -23,6 +23,10 @@ DROTAG x for Geotagging
 
 More details can be found in the `DROTAGx manual <https://www.airborneprojects.com/docs/drotagx_manual.pdf>`__ (airborneprojects.com) including pre-flight checklists, detailed explanations for diagnosis and other tips.
 
+.. warning::
+
+ ArduPilot development team members report mixed results with this product.  Some report it worked easily, others were unable to get it to work.
+
 Acknowledgements
 ================
 
