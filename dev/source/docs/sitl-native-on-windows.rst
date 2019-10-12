@@ -73,6 +73,7 @@ Running SITL
 
       ::
 
+          rc 3 1500
           mode circle
           param set circle_radius 2000
 
