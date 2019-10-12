@@ -86,4 +86,11 @@ The rebase step (step 5) above may fail for a few reasons:
 
 The submodule update (step 6) occasionally fails if new submodules have been added.  ``git submodule init`` usually resolves this.
 
-The push step (step 7) above may fail if your :ref:`fork <git-fork>`'s branch has already been updated previously.  You can "force" the push using ``git push -f`` which will overwrite your github fork's branch to look like your local repo's branch.
+The push step (step 7) above may fail if your :ref:`fork <git-fork>`'s branch has already been updated previously.  You can "force" the push using ``git push -f`` which will overwrite your github fork's branch to look like your local repo's branch. It will also fail if the topic-branch does not already exist in your remote repository. In that case use
+
+   ::
+
+       git push -u origin topic-branch
+
+to create the branch there and have your local topic-branch track it.
+
