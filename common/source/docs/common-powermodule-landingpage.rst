@@ -13,7 +13,6 @@ The links below have information about the most commonly used power modules
 
     Common Power Module <common-3dr-power-module>
     AirbotPower Power Module <common-airbotpower-power-module>
-    AttoPilot Current Sensor <common-using-a-current-sensor>
     Mauch Power Modules <common-mauch-power-modules>
     Power Module Configuration <common-power-module-configuration-in-mission-planner>
     Smart Batteries <common-smart-battery>
