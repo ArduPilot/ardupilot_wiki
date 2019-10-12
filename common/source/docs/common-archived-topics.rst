@@ -25,6 +25,7 @@ value to users with old hardware.
     GPS Module (External) <common-mounting-the-gps-module>
     External Compass (Magnetometer) <common-external-magnetometer-for-improved-performance>
     Recording and Playing Back Missions <common-recording-and-playing-back-missions>
+    AttoPilot Current/Voltage Sensor <common-using-a-current-sensor>
 [/site]
 
 [site wiki="copter"]
