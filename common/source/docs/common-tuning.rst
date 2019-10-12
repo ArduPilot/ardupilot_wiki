@@ -18,6 +18,7 @@ parameters. The following topics shown you how.
     Roll and Pitch Tuning <ac_rollpitchtuning>
     Advanced Tuning <tuning>
     Basic Tuning <basic-tuning>
+    Configuring Notch Filtering <common-imu-notch-filtering>
 
 -----
 

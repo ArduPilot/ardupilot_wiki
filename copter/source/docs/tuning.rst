@@ -33,7 +33,7 @@ performance in Auto mode.
 
 .. note::
 
-   `Dave C's AC2.8.1 tuning guide <https://diydrones.com/forum/topics/arducopter-tuning-guide>`__ 
+   `Dave C's AC2.8.1 tuning guide <https://diydrones.com/forum/topics/arducopter-tuning-guide>`__
    has good information for tuning for rate roll and pitch but altitude hold,
    Loiter and navigation has changed dramatically since AC2.8.1 so those
    sections are no longer valid.
@@ -118,7 +118,7 @@ Generally if Roll and Pitch are tuned correctly,  the
 and :ref:`compass <common-diagnosing-problems-using-logs_compass_interference>`
 are set-up and performing well and :ref:`vibration levels <common-diagnosing-problems-using-logs_vibrations>`
 are acceptable, Loiter does not require much tuning but please see the
-:ref:`Loiter Mode <loiter-mode_tuning>` page for more details on tunable 
+:ref:`Loiter Mode <loiter-mode_tuning>` page for more details on tunable
 parameters including the horizontal speed.
 
 In-flight tuning
@@ -126,7 +126,7 @@ In-flight tuning
 
 A single parameter's value can be tuned in flight using the
 transmitter's Ch6 tuning knob.  A specific example for tuning the Rate
-Roll/Pitch P values can be found on the :ref:`Rate Roll and Pitch P tuning wiki page <ac_rollpitchtuning_in-flight_tuning>`. 
+Roll/Pitch P values can be found on the :ref:`Rate Roll and Pitch P tuning wiki page <ac_rollpitchtuning_in-flight_tuning>`.
 Please see the Ch6 Opt drop-down on the Mission Planner's
 **Config/Tuning \| Copter Pids**'s screen for a full list of parameters
 that can be tuned.
@@ -135,6 +135,12 @@ After setting the Ch6 Opt value, the Min and Max should also be set to
 reasonable values (i.e. non-zero and also not unreasonably high) and
 then the "Refresh screen" button should be pushed by tuning the Ch6 knob
 to ensure that the parameter is updating correctly.
+
+Filter tuning
+=============
+
+Copters are often affected by vibration and tuning the various software filters available is critical to achieving an overall tune.
+A guide on tuning the various notch filters available can be found on the :ref:`Notch Filtering wiki page <common-imu-notch-filtering>`.
 
 Video introduction to PIDs
 ==========================
