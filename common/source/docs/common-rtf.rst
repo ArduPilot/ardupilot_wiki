@@ -49,4 +49,4 @@ Vehicles from Non-Partners
 
    If you are a manufacturer of a RTF vehicle based on ArduPilot and do not appear in this list, please get in touch through one of the methods listed on our :ref:`Contact Us page <common-contact-us>`.
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
