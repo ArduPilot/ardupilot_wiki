@@ -6,14 +6,14 @@ First Flight with Copter
 
 This section covers the information you will need to know for your first
 flight and also some basic configuration to get your copter flying
-reasonably well.  
+reasonably well.
 
 Some of this contents is also covered in this "first flight checks" video
 
 ..  youtube:: NOQPrTdrQJM
     :width: 100%
 
-    
+
 Please follow each of the links below.
 
 .. toctree::
