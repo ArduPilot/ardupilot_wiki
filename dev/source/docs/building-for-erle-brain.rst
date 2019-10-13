@@ -1,8 +1,8 @@
 .. _building-for-erle-brain:
 
-=======================
-Building for Erle-Brain
-=======================
+=======================================
+Archived Topic: Building for Erle-Brain
+=======================================
 
 .. warning::
 

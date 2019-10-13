@@ -14,14 +14,17 @@ vehicle and the applications that you want to run. Broadly speaking:
    general use.
 -  :ref:`Pixracer <common-pixracer-overview>` is recommended for small
    frames that require no more than 6 PWM outputs.
--  :ref:`NAVIO+ <common-navio-overview>` or
-   :ref:`Erle-Brain <common-erle-brain-linux-autopilot>` Linux Autopilots
-   should be considered for UAV Vision applications.
+   :ref:`Emlid NAVIO2 <common-navio2-overview>` Linux Autopilots
+-   should be considered for UAV Vision applications.
 
 .. tip::
 
    There are also numerous clones and minor variants of the boards
    linked above. Many of these may be perfectly capable replacements.
+   
+-  If redundant sensors are not required, many inexpensive controllers originally targeted for mini-quadcopter use are now supported by Ardupilot and are listed in :ref:`AutoPilot Hardware Options <common-autopilots>`.
+
+
 
 [site wiki="copter, plane" heading="off"]
 

@@ -1,8 +1,8 @@
 .. _common-pxfmini-wiring-quick-start:
 
-==========================
-PXFmini Wiring Quick Start
-==========================
+==========================================
+Archived Topic: PXFmini Wiring Quick Start
+==========================================
 
 .. note::
 

@@ -177,19 +177,6 @@ actually \ **Ready To Fly** and comes with the top of the line
        .. image:: ../images/AeduCopterAndIris.jpg
            :target: ../_images/AeduCopterAndIris.jpg
 
-#. Erle Robotics also offers a DIY kit (named `Erle-Copter Drone Kit <https://erlerobotics.com/blog/product/erle-copter-diy-ubuntu-drone-kit/>`__,
-starting from 449€) which includes `Erle-Brain <https://erlerobotics.com/blog/product/erle-brain-v2/>`__,
-Linux-based autopilot. You can personalize your kit and you can also
-purchase the kit assembled.
-
-    #. The basic DIY kit includes all the needed to assemble the drone plus
-       6 channels RC, a WiFi dongle to receive telemetry data and a battery
-       charger. If you wish to make autonomous missions, you need to acquire
-       a GPS.
-
-       .. image:: ../images/ErleCopter1.jpg
-           :target: ../_images/ErleCopter1.jpg
-
 Almost Ready to Fly
 ===================
 

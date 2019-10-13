@@ -1,8 +1,8 @@
 .. _common-erle-brain2-wiring-quick-start:
 
-==============================
-Erle-Brain2 Wiring Quick Start
-==============================
+==============================================
+Archived Topic: Erle-Brain2 Wiring Quick Start
+==============================================
 
 This article provides high level information about how to power
 :ref:`Erle-Brain2 <common-erle-brain-linux-autopilot>` and connect its most
