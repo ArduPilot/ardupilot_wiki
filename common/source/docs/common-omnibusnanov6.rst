@@ -37,7 +37,8 @@ Specifications
    -  I2C port for external compass
    -  USB port
    -  Built-in OSD
-   -  There is no logging support, so disable in parameters
+   -  Onboard voltage sensor
+   -  Onboard winbond 25Q128 for dataflash-type logging 
 
 Default UART order
 ==================
@@ -83,6 +84,22 @@ The shared UART3/I2C pins are enabled only for I2C operation to allow external c
 
 RC input is via pad marked LED on the board and is compatible all RX serial protocols supported by Ardupilot.
 The Buzzer output pad has no functionality.
+
+Battery monitoring
+==================
+
+Supports analog voltage monitoring on VBAT pin
+
+Set :ref:`BATT_MONITOR <BATT_MONITOR>` to 3 (= analog voltage only) and reboot
+
+Default pin values:
+
+:ref:`BATT_VOLT_PIN <BATT_VOLT_PIN>` = 12
+
+:ref:`BATT_VOLT_MULT <BATT_VOLT_MULT>` = 11
+
+Optionally add voltage and / or current monitoring using BLHeli_32-capable ESCs. See instructions :ref:`here <common-dshot>` for setting up BLHeli_32 ESC telemetry.
+
 
 Flashing Firmware
 =================
