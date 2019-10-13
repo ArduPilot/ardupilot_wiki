@@ -26,6 +26,7 @@ value to users with old hardware.
     External Compass (Magnetometer) <common-external-magnetometer-for-improved-performance>
     Recording and Playing Back Missions <common-recording-and-playing-back-missions>
     AttoPilot Current/Voltage Sensor <common-using-a-current-sensor>
+    Erle-Brain2 Wiring Quick Start <common-erle-brain2-wiring-quick-start>
 [/site]
 
 [site wiki="copter"]
@@ -65,8 +66,11 @@ value to users with old hardware.
     APM2.x on Linux with Make <building-the-code-onlinux>
     Building for Flymaple on Linux <building-apm-for-flymaple>
     Building for Pixhawk on Windows or Linux with QtCreator <building-px4-with-qtcreator>
-    Building for NAVIO+ on RPi2 <building-for-navio-on-rpi2>
     Building for Qualcomm Snapdragon <building-for-qualcomm-snapdragon-flight-kit>
+    Building for Erle-Brain 2 <building-for-erle-brain-2>
+    Building for Erle-Brain <building-for-erle-brain>
+    Building for Navio on RPI 2<building-for-navio-on-rpi2>
+
 [/site]
 
 

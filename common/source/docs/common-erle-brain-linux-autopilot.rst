@@ -1,8 +1,8 @@
 .. _common-erle-brain-linux-autopilot:
 
-==========================
-Erle-Brain Linux Autopilot
-==========================
+==========================================
+Archived Topic: Erle-Brain Linux Autopilot
+==========================================
 
 This page presents the `Erle-Brain <https://erlerobotics.com/blog/product/erle-brain/>`__ Linux autopilot — an ArduPilot autopilot and :ref:`companion computer <dev:companion-computers>` in a single package.
 

@@ -1,8 +1,8 @@
 .. _common-compatible-rc-transmitter-and-receiver-systems-erle-brain-2:
 
-=============================================================
-Compatible RC Transmitter and Receiver Systems (Erle-Brain 2)
-=============================================================
+=============================================================================
+Archived Topic: Compatible RC Transmitter and Receiver Systems (Erle-Brain 2)
+=============================================================================
 
 This article provides an overview of the RC Transmitter and Receiver
 Systems that can be used with Erle-Brain 2, along with guidance on how

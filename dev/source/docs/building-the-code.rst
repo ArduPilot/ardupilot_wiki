@@ -36,8 +36,6 @@ Windows users have 3 or 4 options for setting up the build environment. All of t
 **Board specific instructions:**
 
 - :ref:`Building for NAVIO2 on RPi3 <building-for-navio2-on-rpi3>`
-- :ref:`Building for Erle-Brain 2 <building-for-erle-brain-2>`
-- :ref:`Building for Erle-Brain <building-for-erle-brain>`
 - :ref:`Building for Bebop2 on Linux <building-for-bebop-2>`
 - :ref:`Building for Bebop on Linux <building-for-bebop-on-linux>`
 - :ref:`Building for Beaglebone Black <building-for-beaglebone-black-on-linux>`

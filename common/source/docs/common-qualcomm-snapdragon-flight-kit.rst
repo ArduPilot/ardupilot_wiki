@@ -11,7 +11,7 @@ The Snapdragon Flight platform is a high performance CPU autopilot with a two on
 
 .. warning::
 
-   Numerous developers have reported this board is difficult to get working perhaps because of a lack of documentation or issues with underlying software on the board.  If you are looking for a high performance Linux flight controller, you may wish to consider the :ref:`Intel Aero <common-intel-aero-overview>`, :ref:`Navio2 <common-navio2-overview>` or :ref:`Erle Brain <common-erle-brain-linux-autopilot>` instead.
+   Numerous developers have reported this board is difficult to get working perhaps because of a lack of documentation or issues with underlying software on the board. If you are looking for a high performance Linux flight controller, you may wish to consider the :ref:`Navio2 <common-navio2-overview>` instead.
 
 Overview
 ========

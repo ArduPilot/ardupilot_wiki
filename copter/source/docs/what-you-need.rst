@@ -38,10 +38,7 @@ flight. At time of writing (December 2015)
 use.
 
 Developers creating UAV vision applications should consider using a
-separate Companion Computer, or a Linux based autopilot board (e.g.
-:ref:`NAVIO+ <common-navio-overview>` or
-:ref:`Erle-Brain <common-erle-brain-linux-autopilot>`) which is capable of
-running both Copter and the image processing code.
+separate Companion Computer, or a Linux based autopilot board.
 
 For more options, see the topic :ref:`Choosing a Flight Controller <common-choosing-a-flight-controller>`.
 

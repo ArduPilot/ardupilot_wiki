@@ -1,8 +1,8 @@
 .. _building-for-erle-brain-2:
 
-=========================
-Building for Erle-Brain 2
-=========================
+=========================================
+Archived Topic: Building for Erle-Brain 2
+=========================================
 
 These instructions explain how to build ArduPilot on board the
 Erle-Brain 2.
