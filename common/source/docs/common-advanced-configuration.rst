@@ -65,6 +65,7 @@ tuning options for the vehicle.
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
     Serial Passthrough <common-serial-passthrough>
+    Serial Port Hardware Configuraton <common-serial-options>
 [site wiki="rover"]
     Steering Input Type and Reversing Behaviour <rover-steering-input-type-and-reversing-behaviour>
 [/site]
