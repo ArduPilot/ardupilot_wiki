@@ -29,7 +29,7 @@ Running SITL
       
 #. Open a Cygwin64 terminal from the start menu
 
-#. Navigate and call ``sim_vehicle.py`` to start SITL.  If you get a windows security alert for the the firewall, allow the connection. Specify a vehicle type after ``-v`` parameter.
+#. Call ``sim_vehicle.py`` to start SITL.  If you get a Windows security alert for the the firewall, allow the connection. Specify a vehicle type (ArduCopter | ArduPlane | APMrover2 | ArduSub) after ``-v`` parameter.
 
    ::
 
