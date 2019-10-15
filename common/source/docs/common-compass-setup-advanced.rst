@@ -134,7 +134,7 @@ controller:
    lookup tables following GPS lock. Users can override this default
    behaviour; after deselecting the checkbox (``COMPASS_AUTODEC=0``)
    they can manually enter declination in ``COMPASS_DEC``.
--  **Automatically learn offsets**: TBD.
+-  **Automatically learn offsets**: See Automatic Offset Learning section below.
 
 Compass specific settings
 -------------------------
@@ -171,6 +171,8 @@ calibration sections below).
 
 Live calibration of offsets
 ===========================
+
+.. note:: This method is no longer recommended for recent versions of ArduPilot that support Onboard Calibration. See the basic calibration page :ref:`here<common-compass-calibration-in-mission-planner>`.
 
 Live calibration calculates offsets to compensate for “hard iron”
 distortions.
@@ -330,6 +332,27 @@ transmitter by following these steps:
 #. If you find it's impossible to tune away the circling then it's
    likely you will require an external compass
    or :ref:`GPS+compass module<common-positioning-landing-page>` (some of these)
+   
+.. _automatic-compass-offset-calibration:
+
+Automatic Offset Calibration
+============================
+
+In the 4.0 releases of Ardupilot, an automatic offset learning feature is available. The :ref:`COMPASS_LEARN<COMPASS_LEARN>` parameter determines how this feature works.
+
+- If set to 1, then the offsets will be learned solely by compass readings while armed. This is suitable only for Plane applications. The offsets learned will be saved upon disarming.
+- If set to 2, the offsets will be learned by the EKF estimations while armed. The offsets learned will be saved upon disarming.
+- If set to 3, the offsets will be learned automatically during flight, be saved, and this parameter reset to 0. Position control modes (Loiter, Auto, etc.) should not be used while the offsets are being learned.
+
+  The procedure for COMPASS_LEARN = 3 is:
+
+  1. set COMPASS_LEARN = 3. The message “CompassLearn: Initialised” will appear on the MP’s message tab (it does not appear in red letters on the HUD).
+  2. “Bad Compass” will appear but this is nothing to be worried about. We will hopefully make this disappear before the final release.
+  3. Arm and drive/fly the vehicle around in whatever mode you like, do some turns “CompassLearn: have earth field” should appear on MP’s message tab and then eventually “CompassLearn: finished”.
+  4. If you want you can check the COMPASS_LEARN parameter has been set back to zero (you may need to refresh parameters to see this) and the COMPASS_OFS_X/Y/Z values will have changed.
+  5. This method can also be evoked using the RCxOPTION for "Compass Learn". It will activate when the channel goes above 1800uS and automatically complete and save.
+
+.. note: These methods do not fully calibrate the compass, like Onboard Calibration does, setting the scales and (in 4.0 vehicle releases) automatically determining the compass orientation.
 
 Compass error messages
 ======================
