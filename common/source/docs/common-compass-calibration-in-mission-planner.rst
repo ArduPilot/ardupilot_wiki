@@ -40,7 +40,7 @@ Calibration first steps
 Onboard Calibration
 ===================
 
-Copter-3.4 (and higher) supports "Onboard Calibration" meaning that the calibration routine runs on the flight controller.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
+Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibration" meaning that the calibration routine runs on the flight controller.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
 
    .. figure:: ../../../images/CompassCalibration_Onboard.png
       :target: ../_images/CompassCalibration_Onboard.png
@@ -57,6 +57,8 @@ To perform the onboard calibration:
 - as the vehicle is rotated the green bars should extend further and further to the right until the calibration completes
 - upon successful completion three rising tones will be emitted and a "Please reboot the autopilot" window will appear and you will need to reboot the autopilot before it is possible to arm the vehicle.
 
+.. note: In Copter 3.6.0, Plane 3.9.0, and Rover 3.5.0 and later versions, the compass orientation is also automatically determined upon successful completion of Onboard Calibration.
+
 If calibration fails:
 
 - you will hear a failure tone and the green bars may reset to the left and the calibration routine may restart (depending upon the ground station)
@@ -65,7 +67,7 @@ If calibration fails:
 
 Onboard Calibration using Stick Gestures (no GCS)
 =================================================
-Copter-3.4 (and higher) supports "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the flight controller with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
+Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the flight controller with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
 
 - requires RC calibration first
 - to start compass calibration hold throttle stick full up and full right yaw for 2 seconds
@@ -85,6 +87,8 @@ If calibration fails:
 
 Offboard Calibration (aka "Live Calibration")
 =============================================
+
+.. note:: This method is not recommended if you are using a recent version of ArudPilot that supports the Onboard Calibration described above.
 
 Older versions of ArduPilot rely on the ground station to calculate the compass offsets.  To use this older method:
 
@@ -118,7 +122,7 @@ Additional information
 ======================
 
 More information about compass configuration can be found in :ref:`Advanced Compass Setup <common-compass-setup-advanced>`. This includes
-instructions for how to set up additional compasses, non-standard compass alignments, :ref:`compassmot <copter:common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`, etc.
+instructions for how to set up additional compasses, :ref:`automatic setting of offsets<automatic-compass-offset-calibration>`, non-standard compass alignments, :ref:`compassmot <copter:common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`, etc.
 
 General discussion on magnetic interference and ways to reduce it can be
 found in :ref:`Magnetic Interference <common-magnetic-interference>`.
