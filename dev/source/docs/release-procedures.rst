@@ -113,5 +113,4 @@ Didn't find what you are looking for?
 If you think of something that should be added to this site, please
 `open an issue <https://github.com/ArduPilot/ardupilot/issues>`__ or
 post a comment on the
-`drones-discuss <https://groups.google.com/forum/#!forum/drones-discuss>`__
-mailing list.
+`ArduPilot Gitter General Chat <https://gitter.im/ArduPilot/GeneralChat>`__.
