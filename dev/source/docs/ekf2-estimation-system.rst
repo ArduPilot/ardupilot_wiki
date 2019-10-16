@@ -297,8 +297,7 @@ The EKF2 parameters have been tuned to provide a compromise between
 accuracy and robustness to sensor errors. i tis likely that further
 improvements in performance are available with further tuning.
 
-If you have a question regarding tuning of the filer, please post to
-https://groups.google.com/forum/#!forum/drones-discuss along with your
+If you have a question regarding tuning of the filer, please post `on the forums <http://discuss.ardupilot.org/>`__ along with your
 log file and mention the term EKF2 in your post title.
 
 The parameters for the new EKF start with the prefix EK2\_ and are
