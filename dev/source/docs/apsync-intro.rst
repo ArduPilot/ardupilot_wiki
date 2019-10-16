@@ -6,7 +6,7 @@ APSync
 
 APSync is a project sponsored by `eLab <http://elab.co.jp/>`__ which simplifies the setup of companion computers so that they can be used to provide additional functionality to ArduPilot and also to ease integration with internet services.
 
-The current release automatically creates a Wifi Access Point on startup, allows DataFlash logging to the companion copmuter and "simple" real-time video streaming from a camera on the drone to the ground station.
+The current release automatically creates a Wifi Access Point on startup, allows DataFlash logging to the companion computer and "simple" real-time video streaming from a camera on the drone to the ground station.
 
 The supported companion computers are the :ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>`, :ref:`NVidia TX2 <companion-computer-nvidia-tx2>` and :ref:`Intel Edison <intel-edison>`.
 
