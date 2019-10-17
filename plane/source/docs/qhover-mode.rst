@@ -85,11 +85,6 @@ Common Problems
    altitude hold is engaged.  Check the :ref:`Measuring Vibration <common-measuring-vibration>`
    and :ref:`Vibration Dampening <common-vibration-damping>`
    wiki pages for details on how to measure and reduce vibrations.
-#. QuadPlane slowly descends or climbs until the pilot retakes control in
-   stabilize.  Normally this is caused by not having the throttle stick
-   in the mid position.  This commonly happens when the pilot is
-   switching into an altitude holding mode from a manual flight mode (like QSTABILIZE) on
-   a QuadPlane that does not hover at mid throttle. See :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>` and :ref:`Q_M_HOVER_LEARN <Q_M_HOVER_LEARN>` parameters.
 #. The motors seem to stop for a moment just as an altitude hold mode is engaged but
    then it soon recovers.  This normally occurs when the pilot enters
    altitude hold modes while climbing rapidly.  The target altitude is set at the
@@ -121,6 +116,11 @@ Common Problems
    it within an appropriately ventilated enclosure.
 #. Sudden altitude changes caused by light striking the barometer. 
    Assuring sunlight cannot hit the baro will cure this.
+#. QuadPlane slowly descends or climbs until the pilot retakes control in
+   stabilize.  Normally this is caused by not having the throttle stick
+   in the mid position.  This commonly happens when the pilot is
+   switching into an altitude holding mode from a manual flight mode (like QSTABILIZE) on
+   a QuadPlane that does not hover at mid throttle. Usually it is desired to hover in any mode at mid-stick on throttle, so that transitions between modes is easily accomplished without throttle position changes. This can be adjusted using the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` parameter, or automatically learned in QHOVER or QLOITER modes by enabling :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>`.
 
 Adequate Power
 ==============

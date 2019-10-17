@@ -6,8 +6,6 @@ QACRO Mode
 
 QACRO (for acrobatic) is a quadplane mode for advanced users that provides rate based stabilization like :ref:`Copter ACRO <copter:acro-mode>`.  QACRO mode is best suited for aerobatic flight of a copter tailsitter, but is also available for other quadplane types.
 
-Also, set Q_M_HOVER_LEARN to 2 (learn and save) to allow the throttle midpoint to adjust automatically when hovering.
-
 Training mode is not implemented and this mode will behave similarly to a fixed wing plane in MANUAL mode, with no limitations on earth frame roll, pitch and yaw.
 
 Aileron and elevator stick scalings are set by parameters ACRO_ROLL_RATE and ACRO_PITCH_RATE, respectively, with default of 180 deg/sec. Yaw stick scaling is set by Q_YAW_RATE_MAX with default of 100 deg/sec.
@@ -30,3 +28,11 @@ If vehicle has an airspeed sensor and gain interpolation is desired:
 QACRO flying tips:
 
 Transitions from QACRO mode to any other Q-mode are not aided by the autopilot: no throttle boost is automatically applied. This is critical when airspeed (or high throttle) is needed for attitude control, as with non-vectored dual motor tailsitters. The safest way to transition is to make sure you have sufficient airspeed for elevon authority if flying level, or to establish a stable nose-up hover before switching out of QACRO.
+
+Hover Throttle
+==============
+
+Usually, it is desired to hover in any mode, at mid-stick on throttle, so that transitions between modes is easily accomplished without throttle position changes. This can be adjusted using the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` parameter, or automatically learned in QHOVER or QLOITER modes by enabling :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>`.
+
+.. note:: If :ref:`Q_THROTTLE_EXPO<Q_THROTTLE_EXPO>` = 0 in QACRO and QSTABILIZE modes , then :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>`, whether set manually or learned via Q_M_HOVER_LEARN, is not applied, and the throttle is determined directly from the RC input.
+

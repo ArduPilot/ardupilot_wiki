@@ -60,6 +60,12 @@ Common Problems
    before take-off is always good and it may help to reduce the
    ``EK2_GLITCH_RAD`` and/or ``EK3_GLITCH_RAD`` parameters (see :ref:`GPS glitch wiki page <gps-failsafe-glitch-protection>`
    for details) to tighten up on the glitch detection.
+#. QuadPlane slowly descends or climbs until the pilot retakes control in
+   stabilize.  Normally this is caused by not having the throttle stick
+   in the mid position.  This commonly happens when the pilot is
+   switching into an altitude holding mode from a manual flight mode (like QSTABILIZE) on
+   a QuadPlane that does not hover at mid throttle. Usually it is desired to hover in any mode at mid-stick on throttle, so that transitions between modes is easily accomplished without throttle position changes. This can be adjusted using the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` parameter, or automatically learned in QHOVER or QLOITER modes by enabling :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>`.
+
 
 Display HDOP on Mission Planner
 ===============================
