@@ -20,19 +20,20 @@ The primary way to initiate a transition is to change flight mode,
 either using the flight mode channel on your transmitter or using a
 ground station to command a mode change.
 
--  If you transition to :ref:`MANUAL <manual-mode>` then the quad motors
-   will immediately stop.
--  If you transition to any other fixed wing mode then the quad will
+-  If you transition to :ref:`MANUAL <manual-mode>` then the VTOL motors
+   will immediately stop. In the case of a tilt-rotor, the motors will immediately rotate to foward flight orientation.
+-  If you transition to any other fixed wing mode then the VTOL motors will
    continue to supply lift and stability until you have reached the
-   :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>` airspeed (or airspeed estimate if no airspeed sensor).
+   :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>` airspeed (or airspeed estimate if no airspeed sensor). In the case of tilt-rotors, the motors will tilt to :ref:`Q_TILT_MAX<Q_TILT_MAX>` to begin building forward airspeed for the transistion.
 -  Once that airspeed is reached the quad motors will slowly drop in
    power over :ref:`Q_TRANSITION_MS <Q_TRANSITION_MS>` milliseconds (default is 5000, so 5
-   seconds) and will switch off after that
+   seconds) and will switch off after that. And tilt-rotors will slowly rotate to full forward thrust configuration.
+-  If :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` is not zero, then exceeding this time before reaching  :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>` airspeed will cancel the transition and the aircraft will immediately change to QLAND. The default is 0, which disables this timeout.
 
 If you transition from a fixed wing mode to a QuadPlane mode then the
 forward motor will immediately stop, but the control surfaces will
 continue to provide stability while the plane slows down. This allows
-for transitions to QuadPlane modes while flying at high speed.
+for transitions to QuadPlane modes while flying at high speed. Tilt-rotors will immediately move to VTOL position.
 
 The one exception to the forward motor stopping in QuadPlane VTOL
 modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non-zero
@@ -66,15 +67,15 @@ From the 3.7.0 release an additional assistance type is available
 based on attitude error. If :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` is
 non-zero then this parameter gives an attitude error in degrees above
 which assistance will be enabled even if the airspeed is above
-Q_ASSIST_SPEED. The attitude assistance will only be used if
-Q_ASSIST_SPEED greater than zero.
+:ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`. The attitude assistance will only be used if
+:ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` greater than zero.
 
 What assistance the quad motors provides depends on the fixed wing
 flight mode. If you are flying in an autonomous or semi-autonomous
 mode then the quad motors will try to assist with whatever climb rate
 and turn rate the autonomous flight mode wants when assistance is
-enabled (ie. airspeed is below Q_ASSIST_SPEED or attitude error is
-above Q_ASSIST_ANGLE). In a manually navigated mode the quad will try
+enabled (ie. airspeed is below :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` or attitude error is
+above :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>`). In a manually navigated mode the quad will try
 to provide assistance that fits with the pilot inputs.
 
 The specific handling is:
@@ -246,16 +247,16 @@ landing when it gets close to return point.
 Radio or Throttle Failsafe
 ==========================
 
-If flying in a plane mode or AUTO, behaviour is determined by the FS_SHORT_ACT and FS_LONG_ACT parameter settings (see Plane Failsafe Function). Quadplanes can be set such that instead of normal plane behviour on Failsafe induced RTLs, to transistion to QRTL and land once at the rally point or home, if  Q_RTL_MODE =1.
-If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how Q_OPTION, bit 5, is set.
+If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACT<FS_SHORT_ACT>` and :ref:`FS_LONG_ACT<FS_LONG_ACT>` parameter settings (see Plane Failsafe Function). Quadplanes can be set such that instead of normal plane behviour on Failsafe induced RTLs, to transistion to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1.
+If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how :ref:`Q_OPTION<Q_OPTION>`, bit 5, is set.
 
 Typical flight
 ==============
 
 A typical test flight would be:
 
--  takeoff in QLOITER or QHOVER
--  switch to :ref:`FBWA <fbwa-mode>` mode and advance throttle to start
+-  VTOL takeoff in :ref:`QLOITER<qloiter-mode>` or :ref:`QHOVER<qhover-mode>`
+-  switch to :ref:`FBWA <fbwa-mode>` mode and advance throttle over 50% and start
    flying fixed wing
--  switch to QHOVER mode to go back to quad mode.
+-  switch to :ref:`QHOVER<qhover-mode>` mode to go back to quad mode and reduce throttle back to 50% for hover.
 
