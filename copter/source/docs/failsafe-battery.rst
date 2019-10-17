@@ -42,6 +42,17 @@ Then one of the following will happen:
 
 As with all failsafes, the user can re-take control of the vehicle by changing the flight mode switch to another mode.  The battery failsafe will not trigger again unless the two-layer failsafe is setup (see below)
 
+The :ref:`FS_OPTIONS<FS_OPTIONS>` parameter (Copter 4.0 and later) is a bitmask parameter to select one or more options that modify the standard actions of the radio, GCS, and battery failsafe.  In the Mission Planner full parameter list or full parameter tree, the handy checkbox popup window is an easy what to set this (and any other bitmask) parameter. Be sure to go to Help > Check Beta Updates to pull the latest parameter definitions first while connected to the internet. The FS_OPTIONS bits are as follows:
+
+- bit 0 set: Continue if in auto mode on :ref:`Radio Failsafe <radio-failsafe>`
+- bit 1 set: Continue if in auto mode on :ref:`Ground Control Station Failsafe<gcs-failsafe>`
+- bit 2 set: Continue if in guided mode :ref:`Radio Failsafe <radio-failsafe>`
+- bit 3 set: Continue if landing on any failsafe
+- bit 4 set: Continue in pilot control on :ref:`Ground Control Station Failsafe<gcs-failsafe>`
+- if none of the above are set, then execute the :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` or :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` options as configured.
+
+.. note:: Only bitmask bit 3 affects actions taken during Battery failsafe. This parameter also works in conjunction with the GCS and radio failsafe, so ensure you are taking all options into account when setting this parameter.
+
 .. note::
 
     Even if the failsafe action is set to "None" (i.e. :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` = 0) the buzzer will buzz and the LEDs will flash yellow.  To completely disable the battery failsafe set :ref:`BATT_LOW_VOLT <BATT_LOW_VOLT>` and :ref:`BATT_LOW_MAH <BATT_LOW_MAH>` to zero.
