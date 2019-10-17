@@ -4,19 +4,14 @@
 Radio Failsafe
 ==============
 
-Copter supports Return-To-Launch in cases where contact between the
-Pilot's RC transmitter and the flight controller's receiver is lost. 
-This page explains this failsafe's setup and testing.  Note the "Radio
-failsafe" was previously called "Throttle failsafe" because of the way
-in which some receivers use the throttle channel to signal the loss of
-contact.
+Copter supports several configurable failsafe options in cases where contact between the Pilot's RC transmitter and the flight controller's receiver is lost.  This page explains this failsafe's setup and testing.  Note the "Radio failsafe" was previously called "Throttle failsafe" because of the way in which some receivers use the throttle channel to signal the loss of contact.
 
 .. image:: ../images/RadioFailsafe_Intro.jpg
     :target: ../_images/RadioFailsafe_Intro.jpg
 
 .. note::
 
-   Copter also supports :ref:`Battery <failsafe-battery>`, :ref:`Ground Station <gcs-failsafe>` and :ref:`EKF/DCM failsafes <ekf-inav-failsafe>`.
+   Copter also supports other failsafes, including: :ref:`Battery <failsafe-battery>`, :ref:`Ground Station <gcs-failsafe>` and :ref:`EKF/DCM failsafes <ekf-inav-failsafe>`. See the :ref:`failsafe-landing-page` for more details.
 
 When the failsafe will trigger
 ==============================
@@ -24,129 +19,80 @@ When the failsafe will trigger
 If enabled and set-up correctly the radio failsafe will trigger if:
 
 -  The pilot turns off the RC transmitter
--  The vehicle travels outside of RC range (usually at around 500m ~
-   700m)
+-  The vehicle travels outside of RC range
+-  The pilot forces the throttle channel below :ref:`FS_THR_VALUE<FS_THR_VALUE>` from the transmitter
 -  The receiver loses power (unlikely)
 -  The wires connecting the receiver to the flight controller are broken
-   (unlikely).  Note: with APM2 only the ch3 connection between receiver
-   and flight controller will trigger the failsafe.
+   (unlikely).
 
 What will happen
 ================
 
-When a radio failsafe is triggered one of the following will happen:
+When a radio failsafe is triggered, the copter can be configured via parameters to do nothing, land immediately, RTL, or SmartRTL.  It can also be configured to bypass the failsafe in an Auto Mode mission, or to continue landing if already in a landing phase.
 
--  **Nothing** if the vehicle is already disarmed
--  **Motors will be immediately disarmed** if the vehicle is landed OR
-   in stabilize or acro mode and the pilot's throttle is at zero
--  **Return-to-Launch (RTL)** if the vehicle has a GPS lock and is more
-   than 2 meters from the home position
--  **LAND** if the vehicle has:
+- If the copter is disarmed, no failsafe will take place.
+- If the copter is armed but has landed, the copter will immediately disarm.
+- If the copter is armed in Stabilize or Acro modes, and the throttle input is at minimum, the copter will immediately disarm.
+- Otherwise, the copter will take the actions as configured in the parameters described below.
 
-   -  no GPS lock OR
-   -  is within 2 meters of home OR
-   -  the FS_THR_ENABLE parameter is set to "Enabled Always Land"
+If the failsafe clears (i.e. transmitter and receiver regain contact) the copter will remain in its failsafe mode. It will **not** automatically return to the flight mode that was active before the failsafe was triggered. This means that if, for example, the vehicle was in Loiter when the failsafe occurred and the flight mode was automatically changed to RTL, even after the transmitter and receiver regained contact, the vehicle would remain in RTL.  If the pilot wished to re-take control in Loiter he/she would need to change your flight mode switch to another position and then back to Loiter.
 
-**Continue with the mission** if the vehicle is in AUTO mode and the
-FS_THR_ENABLE parameter is set to "Enabled Continue with Mission in
-Auto Mode".
+Receiver Configuration
+======================
 
-If the failsafe clears (i.e. transmitter and receiver regain contact)
-the copter will remain in its current flight mode. It
-will **not** automatically return to the flight mode that was active
-before the failsafe was triggered. This means that if, for example, the
-vehicle was in Loiter when the failsafe occurred and the flight mode was
-automatically changed to RTL, even after the transmitter and receiver
-regained contact, the vehicle would remain in RTL.  If the pilot wished
-to re-take control in Loiter he/she would need to change your flight
-mode switch to another position and then back to Loiter.
+By default, most newly purchased receivers will simply not output pulses if contact with the transmitter is lost. However, some low end receivers will be set-up to simply hold all channels at their last known position.  This is not good because the flight controller has no way to know that the Pilot has lost control of the vehicle.  Instead the receiver must be set-up to signal to the flight controller it has lost contact and there are two ways that it can do this (the method depends upon the receiver). Each brand of Transmitter/Receiver is slightly different so please refer to your transmitter's user manual to determine which method is available and how to set it up.
 
-Receiver and flight controller set-up
-=====================================
-
-By default, a newly purchased receiver will be set-up to simply hold all
-channels at their last known position when the receiver and transmitter
-lose contact.  This is not good because the flight controller has no way
-to know that the Pilot has lost control of the vehicle.  Instead the
-receiver must be set-up to signal to the flight controller it has lost
-contact and there are two ways that it can do this (the method depends
-upon the receiver):
-
--  "Low-Throttle" method - the receiver pulls the throttle channel
-   (normally channel 3) to a value below the bottom of it's normal range
-   (normally below 975).  This method is used by Futaba systems and many
-   older systems.
--  "No Signal" method - the receiver stops sending signals to the flight
-   controller.  This is the preferred method and is how most modern
-   FrSky receivers operate.
-
-Each brand of Transmitter/Receiver is slightly different so please refer
-to your transmitter's user manual to determine which method is available
-and how to set it up.
-
-Set-up for low-throttle method
-------------------------------
+Receiver configuration for low-throttle method
+----------------------------------------------
+The **"Low-Throttle" method** pulls the throttle channel (normally channel 3) to a value below the bottom of it's normal range (normally below 1000us).  This method is used by Futaba systems and many older systems.  Below is the setup method for a Futaba T7C Transmitter with R617FS or TFR4-B receiver which uses the "low throttle" method.
 
 ..  youtube:: qf8YinLKQww
     :width: 100%
 
-Above is the setup method for a Futaba T7C Transmitter with R617FS or
-TFR4-B receiver which uses the "low throttle" method.
 
-With the LiPo battery disconnected:
+Many receivers allow for the failsafe positions to be set either by simply pressing a button on the receiver, or directly from the transmitter. In this case, the transmitter is temporarily adjusted to output a throttle signal below the normal low idle position (if low idle is 1000us, then 990uS would be sent) setting this as the failsafe value for the receiver, then adjusting low stick back to normal idle position. This below throttle idle value is then set for :ref:`FS_THR_VALUE<FS_THR_VALUE>`, as discussed below.
 
--  Connect your flight controller to the mission planner and select
-   Initial Setup >> Mandatory Hardware >> Failsafe.
--  Set the Failsafe Options to one of the three options:
-
-   -  "Enabled always RTL" to force the vehicle to always RTL even if
-      flying a mission in AUTO mode
-   -  "Enabled Continue with Mission in AUTO" to allow the vehicle to
-      continue with missions even if it takes the vehicle outside of RC
-      range (not recommended).  In all other cases the vehicle will RTL.
-   -  "Enable always LAND" to force the vehicle to Land immediately if
-      it loses RC contact
-
-Set the "FS Pwm" value to be:
-
--  at least 10 PWM higher than your Channel 3's PWM value when the
-   throttle stick is fully down and the transmitter is **off**
--  at least 10 lower than your channel 3's PWM value when the throttle
-   stick is fully down and the transmitter is **on**\ 
-
--  *above 910*
-
-.. image:: ../images/RadioFailsafe_MPSetup.png
-    :target: ../_images/RadioFailsafe_MPSetup.png
-
-Set-up for No-Signal method
----------------------------
+Receiver configuration for No-Signal method
+-------------------------------------------
+**"No Signal" method** - the receiver stops sending signals to the flight controller.  This is the preferred method and is how most modern FrSky receivers operate. Below is the setup method for a FlySky 9 channel transmitter with FrSky D4R-II receiver which uses the "No Signal" method.
 
 ..  youtube:: FhKREgqjCpM
     :width: 100%
 
-Above is the setup method for a FlySky 9 channel transmitter with FrSky
-D4R-II receiver which uses the "No Signal" method.
 
-Similar to the "Low-Throttle" method, with the LiPo battery
-disconnected:
+Parameter Configuration
+========================
 
--  Connect your flight controller to the mission planner and select
-   Initial Setup >> Mandatory Hardware >> Failsafe.
--  Set the Failsafe Options to one of the three options:
+The :ref:`FS_THR_ENABLE<FS_THR_ENABLE>` parameter can be set in the Mission Planner full parameter list or full parameter tree, or can also be set using the Mission Planner *failsafe options* dropdown in the Initial Setup >> Mandatory Hardware >> Failsafe menu.
 
-   -  "Enabled always RTL" to force the vehicle to always RTL even if
-      flying a mission in AUTO mode
-   -  "Enabled Continue with Mission in AUTO" to allow the vehicle to
-      continue with missions even if it takes the vehicle outside of RC
-      range (not recommended).  In all other cases the vehicle will RTL.
-   -  "Enable always LAND" to force the vehicle to Land immediately if
-      it loses RC contact
+-  **Disabled** (Value 0) will disable the radio failsafe entirely.
+-  **Enabled Always RTL** (Value 1) will switch the copter to RTL Mode.  If the GPS position is not usable, the copter will change to Land Mode instead.
+-  **Enabled Continue with Mission in Auto Mode (Deprecated in 4.0+)** (Value 2) will ignore the failsafe in an Auto Mode mission. Otherwise, it will behave the same as *Enabled Always RTL*. This option no longer exists in ArduCopter 4.0. Instead, see the :ref:`FS_OPTIONS<FS_OPTIONS>` parameter for this function. Setting this value in Copter 4.0 and later version will automatically be converted and set to (Value 1) and the :ref:`FS_OPTIONS<FS_OPTIONS>` will be modified to include bit (0) in the bitmask for "Continue if in auto mode on Radio Failsafe".
+-  **Enabled Always Land** (Value 3) will switch the copter to Land Mode.
+-  **Enabled SmartRTL or RTL** (Value 4) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to RTL Mode instead.  If the GPS position is not usable, the copter will change to Land Mode instead.
+-  **Enabled SmartRTL or Land** (Value 5) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to Land Mode instead.
+-  Any invaild value (Such as accidentally enter 99 as a parameter value) will will behave the same as **Enabled Always LAND**
 
-Because the throttle is not pulled low, there is normally no need to
-adjust the "FS Pwm" value from it's default (975).  Just ensure that
-it's well below (i.e. at least 10pwm points below) the minimum value
-that channel 3 (throttle) can be.
+The :ref:`FS_THR_VALUE<FS_THR_VALUE>`  parameter can be set in the Mission Planner full parameter list or full parameter tree, or can also be set using the Mission Planner *FS PWM* value in the Initial Setup >> Mandatory Hardware >> Failsafe menu.
+-  At least 10 PWM higher than your Channel 3's PWM value when the throttle stick is fully down and the transmitter is **off**
+-  At least 10 PWM lower than your channel 3's PWM value when the throttle stick is fully down and the transmitter is **on**
+-  Above 910 PWM
+
+The :ref:`FS_OPTIONS<FS_OPTIONS>`  parameter (Copter 4.0 and later) is a bitmask parameter to select one or more options that modify the standard actions of the radio, GCS, and battery failsafe. In the Mission Planner full parameter list or full parameter tree, the handy checkbox popup window is an easy what to set this (and any other bitmask) parameter. Be sure to go to Help > Check Beta Updates to pull the latest parameter definitions first while connected to the internet. The FS_OPTIONS bits are as follows:
+
+- bit 0 set: Continue if in auto mode on :ref:`Radio Failsafe <radio-failsafe>`
+- bit 1 set: Continue if in auto mode on :ref:`Ground Control Station Failsafe<gcs-failsafe>`
+- bit 2 set: Continue if in guided mode :ref:`Radio Failsafe <radio-failsafe>`
+- bit 3 set: Continue if landing on any failsafe
+- bit 4 set: Continue in pilot control on :ref:`Ground Control Station Failsafe<gcs-failsafe>`
+- if none of the above are set, then execute the :ref:`FS_THR_ENABLE<FS_THR_ENABLE>` option as configured.
+
+.. note:: Only bitmask bits 0, 2, & 3 affect actions taken during radio failsafe. This parameter also works in conjunction with the battery and GCS failsafe, so ensure you are taking all options into account when setting this parameter.
+
+Below is a screenshot of the Mission Planner Initial Setup >> Mandatory Hardware >> Failsafe menu.
+
+.. image:: ../images/RadioFailsafe_MPSetup.png
+    :target: ../_images/RadioFailsafe_MPSetup.png
 
 Testing
 =======
@@ -173,7 +119,7 @@ channel drops with loss of radio contact**
 .. image:: ../images/MPFailsafeSetup1.jpg
     :target: ../_images/MPFailsafeSetup1.jpg
 
-Test #2 : ensuring motors disarm if in stabilize or acro with throttle
+Test #2 : ensuring motors disarm if in STABILIZE or ACRO with throttle
 at zero
 
 -  Switch to stabilize mode, arm your motors but keep your throttle at
@@ -203,9 +149,10 @@ Test #5 (optional) : removing power from the receiver
 -  Switch to stabilize mode, arm your motors and keep your throttle
    above zero.
 -  Carefully disconnect the power wires connecting the receiver to the
-   APM
+   flight controller
 -  The Flight Mode should switch to RTL or LAND as described in Test #3
--  Warning: unplug the APM so that it is powered down before reattaching
+
+.. warning:: Unplug the flight controller so that it is powered down before reattaching
    the receiver's power
 
 Using the receiver to set the flight mode (not recommended)
@@ -213,9 +160,9 @@ Using the receiver to set the flight mode (not recommended)
 
 Instead of setting up the receiver and flight controller as described
 above (i.e. "Low-Throttle" and "No Signal" methods) the receiver can be
-set-up to set channel 5 (flight mode channel) to a :ref:`flight mode <flight-modes>`\ slot that has
+set-up to set channel 5 (flight mode channel) to a :ref:`flight mode <flight-modes>` slot that has
 been set to RTL.  For example the receiver could be setup to move ch5's
-pwm value to 1700 which is "Flight Mode 5" which could then be set to
+pwm value to 1700us which is "Flight Mode 5" which could then be set to
 RTL on the Mission Planner's Initial Setup >> Mandatory Hardware >>
 Flight Modes screen.
 
