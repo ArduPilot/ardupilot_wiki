@@ -50,9 +50,11 @@ tuning options for the vehicle.
 [/site]
 [site wiki="copter"]
     Object Avoidance <copter-object-avoidance>
+    Object Avoidance with Bendy Ruler <common-oa-bendyruler>
 [/site]
 [site wiki="rover"]
     Object Avoidance <rover-object-avoidance>
+    Object Avoidance with Bendy Ruler <common-oa-bendyruler>
 [/site]
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
