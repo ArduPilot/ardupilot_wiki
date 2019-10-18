@@ -1,8 +1,8 @@
 .. _common-oa-bendyruler:
 
-===========================
-Path Planning - Bendy Ruler
-===========================
+=================================
+Object Avoidance with Bendy Ruler
+=================================
 
 ..  youtube:: E0KYLpXnD1A
     :width: 100%
