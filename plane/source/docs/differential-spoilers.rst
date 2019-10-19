@@ -13,9 +13,8 @@ to control yaw. Differential spoiler takes advantage of splitting
 elevons to 4 independent control surfaces: normal elevon functions are
 reserved for pitch and roll control, but yaw control is done by using
 two surfaces on one side of the wing to create drag force thus
-controlling yaw motion. If calibrated correctly, it will ensure pilot
-has smooth yaw control during take-off and landing as well as
-compensation during turning (similar to differential aileron).
+controlling yaw motion, emulating rudder control. If calibrated correctly, it will ensure pilot
+has smooth yaw control via rudder input during take-off and landing as well as allowing the pilot to compensate for slip/skid compensation during turning (similar to differential aileron).
 
 +-----------------------------------------------+-------------------------------------------------+
 | **Left Yaw by inducing drag on left wing:**   | **Right Yaw by inducing drag on right wing:**   |
@@ -48,7 +47,7 @@ Now setup your 4 channels using the SERVOn_FUNCTION parameters:
 
 You can adjust the direction of each servo using the SERVOn_REVERSED
 parameters, and swap channels to get the right movement direction for
-elevons and rudder. The wighting of flap to the movement of the outer and inner control surfaces can be set
+elevons and rudder. Flap operation is also possible. The weighting of flap input to the movement of the outer and inner control surfaces can be set
 using :ref:`DSPOILER_CROW_W1 <DSPOILER_CROW_W1>` and :ref:`DSPOILER_CROW_W2 <DSPOILER_CROW_W2>` respectively.
 
 Differential Spoiler options
@@ -74,7 +73,7 @@ a bit-mask each, bit enables different functionality.
 +-------+-----------------------------------------------------------------------------------------------+
 
 :ref:`DSPOILER_AILMTCH <DSPOILER_AILMTCH>` allows the downwards travel of the inner surfaces to be limited 
-to a percentage of there full downwards travel. This only affects the travel when the control surfaces are used 
+to a percentage of their full downwards travel. This only affects the travel when the control surfaces are used 
 as full span ailerons or for differential yaw. Using this parameter a flap control surface with lots of downwards 
 travel can still be utilized for full span ailerons. Upwards travel of the control surfaces is unaffected.
 
