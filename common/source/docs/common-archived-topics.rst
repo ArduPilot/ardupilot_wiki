@@ -44,6 +44,7 @@ value to users with old hardware.
     PDF Guides <pdf-guides>
     Copter Project News <project-news>
     Troubleshooting <troubleshooting>
+    Landing Gear <landing-gear>
 [/site]
 
 [site wiki="dev"]

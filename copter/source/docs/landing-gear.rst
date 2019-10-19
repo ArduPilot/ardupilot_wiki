@@ -1,8 +1,10 @@
 .. _landing-gear:
 
-============
-Landing Gear
-============
+.. note:: This information is superceded by :ref:`<common-landing-gear>`
+
+======================
+Archived: Landing Gear
+======================
 
 Copter supports retractable Landing Gear activated by a servo mechanism
 (like these sold by `Hobby King <https://hobbyking.com/en_us/quanum-600-class-quick-release-universal-retractable-gear-set-680uc-pro-hexa-copter.html?___store=en_us>`__).

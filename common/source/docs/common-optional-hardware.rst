@@ -42,8 +42,8 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     GPS/Compass <common-positioning-landing-page>
     Grippers <common-gripper-landingpage>
     Joystick or Gamepad <common-joystick>
-[site wiki="copter"]
-    Landing Gear <landing-gear>
+[site wiki="copter,plane"]
+    Landing Gear/ Retractable Camera Mount <common-landing-gear>
 [/site]
     LEDs (external) <common-external-leds>
 [site wiki="copter,rover"]
