@@ -89,13 +89,18 @@ Send data to the drone
 
 We need to modify NatNet SDK sample code and use it to read and send position data to the drone. Open Samples/NatNetSamples.sln, add all .cs files in MissionPlanner/ExtLibs/Mavlink/ (Mavlink.cs, MavlinkMessage.cs, MavlinkCRC.cs, etc) to the project called SampleClientML. You may need to change target framework to 4.6.1 and select "allow unsafe code" in project properties. 
 
-In SampleClientML.cs, modify/Add following code
+In SampleClientML.cs, modify or add following code
 
 .. code-block:: c#
+
+   using System.Diagnostics;
+   using System.Net;
+   using System.Net.Sockets;
 
    public class SampleClientML {
        private static IPEndPoint drone_ep = new IPEndPoint(IPAddress.Parse("192.168.99.1"), 14550); //assume your drone is connected to PC running SampleClientML through wifi and its ip is 192.168.99.1
        private static Socket mavSock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+       private static MAVLink.MavlinkParse mavlinkParse = new MAVLink.MavlinkParse()
        private static Stopwatch stopwatch;
        static void Main() {
            stopwatch = new Stopwatch();
