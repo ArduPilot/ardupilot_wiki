@@ -31,3 +31,5 @@ Videos
 
 ..  youtube:: SPu0a23FGKc
     :width: 100%
+
+[copywiki destination="copter,rover"]
