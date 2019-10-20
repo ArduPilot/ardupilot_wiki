@@ -26,11 +26,6 @@ Other Systems
 
  - download and install from `git-scm.com's download page <http://git-scm.com/downloads>`__
 
-Alternative for Windows user
-++++++++++++++++++++++++++++
-
- - Windows users can install the Pixhawk Toolchain by downloading and running the `pixhawk_toolchain_installer_latest.exe <http://firmware.ardupilot.org/Tools/STM32-tools/pixhawk_toolchain_installer_latest.exe>`__
-
 Recommended GUI Tools
 ---------------------
 
