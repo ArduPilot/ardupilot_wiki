@@ -175,7 +175,7 @@ motors are spinning in the correction direction:
 
    -  Pre-Arm safety check failure is also indicated by the red arming
       light double flashing and then repeating.
-   -  If the Pre-Arm check fails go to the :ref:`Prearm Safety Check Page <prearm_safety_check>` and correct the problem or disable
+   -  If the Pre-Arm check fails go to the :ref:`Prearm Safety Check Page <common-prearm-safety-checks>` and correct the problem or disable
       the check before continuing.
 
 #. When you can Arm successfully, apply a small amount of throttle, and

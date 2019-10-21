@@ -1,13 +1,13 @@
-.. _prearm_safety_check:
+.. _common-prearm-safety-checks:
 
-====================
-Pre-Arm Safety Check
-====================
+=====================
+Pre-Arm Safety Checks
+=====================
 
-Copter includes a suite of Pre-arm Safety Checks which will prevent the
-vehicle from arming if any of a fairly large number of issues are
-discovered before take-off including missed calibration, configuration
-or bad sensor data. These checks help prevent crashes and fly-aways but
+ArduPilot includes a suite of Pre-arm Safety Checks which will prevent the
+vehicle from arming its propulsion system if any of a fairly large number of issues are
+discovered before movement including missed calibration, configuration
+or bad sensor data. These checks help prevent crashes or fly-aways but
 they can also be disabled if necessary.
 
 ..  youtube:: gZ3H2eLmStI
@@ -17,28 +17,36 @@ Recognising which Pre-Arm Check has failed using the GCS
 ========================================================
 
 The pilot will notice a pre-arm check failure because he/she will be
-unable to arm the copter and the LED will be flashing yellow.  To
+unable to arm the vehicle and the notification LED, if available, will be flashing yellow.  To
 determine exactly which check has failed:
 
 #. Connect the Flight Controller to the ground station using a USB cable
    or :ref:`Telemetry <common-telemetry-landingpage>`.
 #. Ensure the GCS is connected to the vehicle (i.e. on Mission
-   Plannerand push the "Connect" button on the upper right).
+   Planner and push the "Connect" button on the upper right).
 #. Turn on your radio transmitter and attempt to arm the vehicle
-   (regular procedure using throttle down, yaw right)
+   (regular procedure is using throttle down, yaw right or via an RCx_OPTION switch)
 #. The first cause of the Pre-Arm Check failure will be displayed in red
    on the HUD window
 
 Failure messages
 ================
 
-RC failures (i.e. transmitter/receiver failures):
+Failsafes:
+----------
+
+Any failsafe (RC, Battery, GCS,etc.) will display a message and prevent arming.
+
+RC failures:
+-------------------------------------------------
 
 **RC not calibrated** : the :ref:`radio calibration <common-radio-control-calibration>` has not been
 performed.  RC3_MIN and RC3_MAX must have been changed from their
 default values (1100 and 1900), and for channels 1 to 4, MIN value must be 1300 or less, and MAX value 1700 or more.
 
+
 Barometer failures:
+-------------------
 
 **Baro not healthy** : the barometer sensor is reporting that it is
 unhealthy which is normally a sign of a hardware failure.
@@ -51,6 +59,7 @@ flight controller is first plugged in or if it receives a hard jolt
 be a barometer hardware issue.
 
 Compass failures:
+-----------------
 
 **Compass not healthy** : the compass sensor is reporting that it is
 unhealthy which is a sign of a hardware failure.
@@ -80,6 +89,7 @@ caused by the external compasses orientation (i.e. COMPASS_ORIENT
 parameter) being set incorrectly.
 
 GPS related failures:
+---------------------
 
 **GPS Glitch** : the :ref:`GPS is glitching <gps-failsafe-glitch-protection>` and the vehicle
 is in a flight mode that requires GPS (i.e. Loiter, PosHold, etc) and/or
@@ -112,6 +122,7 @@ Quick tab as shown below.
     :target: ../_images/MP_QuicHDOP.jpg
 
 INS checks (i.e. Acclerometer and Gyro checks):
+-----------------------------------------------
 
 **INS not calibrated**: some or all of the accelerometer's offsets are
 zero.  The :ref:`accelerometers need to be calibrated <common-accelerometer-calibration>`.
@@ -140,6 +151,7 @@ rates that differ by more than 20deg/sec.  This is likely a hardware
 failure or caused by a bad gyro calibration.
 
 Board Voltage checks:
+---------------------
 
 **Check Board Voltage**: the board's internal voltage is below 4.3 Volts
 or above 5.8 Volts.
@@ -153,12 +165,11 @@ If powered from a battery this is a serious problem and the power system
 flying.
 
 Parameter checks:
+-----------------
 
-**Ch7&Ch8 Opt cannot be same**: :ref:`Auxiliary Function Switches <channel-7-and-8-options>` are set to the same option which
-is not permitted because it could lead to confusion.
+**Ch7&Ch8 Opt cannot be same**: :ref:`Auxiliary Function Switches <channel-7-and-8-options>` are set to the same option which is not permitted because it could lead to confusion.
 
-**Check FS_THR_VALUE**: the :ref:`radio failsafe pwm value <radio-failsafe>` has been set too close to the throttle
-channels (i.e. ch3) minimum.
+**Check FS_THR_VALUE**: the :ref:`radio failsafe pwm value <radio-failsafe>` has been set too close to the throttle channels (i.e. ch3) minimum.
 
 **Check ANGLE_MAX**: the ANGLE_MAX parameter which controls the
 vehicle's maximum lean angle has been set below 10 degrees (i.e. 1000)
@@ -170,14 +181,68 @@ the Stabilize Pitch P value.  This could lead to the pilot being unable
 to control the lean angle in ACRO mode because the :ref:`Acro Trainer stabilization <acro-mode_acro_trainer>` would overpower the pilot's
 input.
 
+Battery:
+--------
+
+If a flight battery voltage is below its failsafe voltage, this check will fail.
+
+Airspeed:
+---------
+
+If an airspeed sensor is configured, and it is not providing a reading or failed to calibrate, this check will fail.
+
+Logging:
+--------
+
+**Logging failed**: Logging pre-armed was enabled but failed to write to the log.
+
+**No SD Card**: Logging is enabled, but no SD card is detected.
+
+Safety Switch:
+--------------
+
+**Hardware safety switch**: Hardware safety switch has not been pushed.
+
+System:
+-------
+
+**Param storage failed**: A check of reading the parameter storage area failed.
+
+**Internal errors (0xx)**: An internal error has occurred. Try rebooting.
+
+**KDECAN Failed**: KDECAN system failure.
+
+**UAVCAN Failed**: UAVCAN system failure.
+
+Mission:
+--------
+
+See :ref:`ARMING_MIS_ITEMS<ARMING_MIS_ITEMS>`
+
+**No mission library present**: Mission checking is enabled, but no mission is loaded.
+
+**No rally library present**: Rally point checking is enabled, but no rally points loaded.
+
+**Missing mission item: xxxx**: A required mission items is missing.
+
+
+Rangefinder:
+------------
+
+IF a rangefinder has been configured, a reporting error has occurred.
+
 Disabling the Pre-arm Safety Check
 ==================================
+
+.. warning:: Disabling pre-arm safety checks is not recommended. The cause of the pre-arm failure should be corrected before operation of the vehicle if at all possible. If you are confident that the pre-arm check failure is not a real problem, it is possible to disable a failing check.
+
+Arming checks can be individually disabled by setting the :ref:`ARMING_CHECKS<>` parameter to something other than 1. Setting to 0 completely removes all pre-arm checks. For example, setting to  4 only checks that the GPS has lock.
+
+This can also be configured using Mission Planner:
 
 .. image:: ../images/MP_PreArmCheckDisable.png
     :target: ../_images/MP_PreArmCheckDisable.png
 
-If you are confident that the pre-arm check failure is not a real
-problem you can disable the checks by:
 
 -  Connecting your Flight Controller to the Mission Planner
 -  Go to Mission Planner's Config/Tuning >> Standard Params screen
@@ -185,6 +250,4 @@ problem you can disable the checks by:
    options which more effectively skips the item causing the failure.
 -  Push the "Write Params" button
 
-Ideally however you should determine the cause of the pre-arm failure
-and if it can be resolved, return the Arming Check parameter back to
-"Enabled"
+
