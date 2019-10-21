@@ -1,11 +1,11 @@
 .. _common-leds-pixhawk:
 
-==============
-LEDs (Pixhawk)
-==============
+============
+LEDs Meaning
+============
 
 This topic explains how to interpret the colours and flash sequence of
-the main LED. Some of the LED patterns have associated sound/tone
+the main and/or external LED(s), if the :ref:`NTF_LED_OVERRIDE<NTF_LED_OVERRIDE>` parameter is set to its ``standard`` default setting. Some of the LED patterns have associated sound/tone
 patterns as listed in :ref:`Sounds (Pixhawk) <common-sounds-pixhawkpx4>`.
 
 Video Overview
@@ -52,5 +52,4 @@ failure
 
 **Solid Red**: Error
 
-**Solid Red with `SOS tone sequence <http://firmware.ardupilot.org/downloads/wiki/pixhawk_sound_files/NoSDCard_short.wav>`__**:
-SD Card missing (or other SD error like bad format etc.)
+**Solid Red with `SOS tone sequence <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/NoSDCard_short.wav>`__ **: SD Card missing (or other SD error like bad format etc.)
