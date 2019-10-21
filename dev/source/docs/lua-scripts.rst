@@ -38,7 +38,7 @@ How to Enable Scripting
 
 - Use a recent build of master, or compile ArduPilot for yourself
 - Set the SCR_ENABLE parameter to 1 to enable scripting
-- The HEAP_SIZE parameter can be adjusted to increase or decrease the amount of memory available for scripting. The amount of free memory is highly dependent upon what hardware and peripherals you have, and to test the amount of memory scripts require it is important to ensure you have all the hardware connected and enabled you expect to use with the vehicle. This defaults to 32KB which is sufficient to start with small scripts, and generally seems to fit onto embedded boards.
+- The SCR_HEAP_SIZE parameter can be adjusted to increase or decrease the amount of memory available for scripting. The amount of free memory is highly dependent upon what hardware and peripherals you have, and to test the amount of memory scripts require it is important to ensure you have all the hardware connected and enabled you expect to use with the vehicle. This defaults to 32KB which is sufficient to start with small scripts, and generally seems to fit onto embedded boards.
 - When the vehicle is started it will automatically load and start all scripts (files with extension .lua) in the scripts folder. With the simulator the scripts folder is expected to be found in whatever directory the simulation is running in, on real hardware it’s expected to be inside the APM folder on the micro SD card.
 
 A Sample Script
