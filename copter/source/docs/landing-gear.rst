@@ -1,6 +1,6 @@
 .. _landing-gear:
 
-.. note:: This information is superceded by :ref:`<common-landing-gear>`
+.. note:: This information is superceded by :ref:`common-landing-gear`
 
 ======================
 Archived: Landing Gear
