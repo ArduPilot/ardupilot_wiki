@@ -4,14 +4,14 @@
 Landing Gear/ Retractable Camera Mount
 ======================================
 
-ArduCopter and ArduPlane support retractable Landing Gear / Camera Mounts activated by a servo mechanism(like these sold by `Hobby King <https://hobbyking.com/en_us/quanum-600-class-quick-release-universal-retractable-gear-set-680uc-pro-hexa-copter.html?___store=en_us>`__ for copters).
+Copter and Plane support retractable Landing Gear / Camera Mounts activated by a servo mechanism(like these sold by `Hobby King <https://hobbyking.com/en_us/quanum-600-class-quick-release-universal-retractable-gear-set-680uc-pro-hexa-copter.html?___store=en_us>`__ for copters).
 The gear/ mount can be manually retracted or deployed with an auxiliary switch.
 The gear will also automatically deploy during landing and/or retract during takeoff.
 The output which controls the servo for landing gear/ camera mount is set by the SERVOx_FUNCTION =29.
 
 During startup, the status of the landing gear/ camera mount is determined by the :ref:`LGR_STARTUP<LGR_STARTUP>`  parameter. Starting either in deployed or retracted state can be selected, or to wait for pilot input, which prevents PWM signals from being active on the outputs whose SERVOx_FUNCTION = 29 (Landing Gear). This prevents the current position of those outputs from changing until the pilot or automatic operation commands a change.
 
-For ArduCopter, the landing gear/ camera mount will automatically deploy when the flight mode is changed to Land, during the final landing phase of RTL mode, and when a Land command is executed in AUTO mode. For ArduPlane, it will deploy after a Takeoff is completed in AUTO mode, during the final glide phase of a LAND in AUTO mode, or final descent phase of a VTOL landing.
+For Copter, the landing gear/ camera mount will automatically deploy when the flight mode is changed to Land, during the final landing phase of RTL mode, and when a Land command is executed in AUTO mode. For Plane, it will deploy after a Takeoff is completed in AUTO mode, during the final glide phase of a LAND in AUTO mode, or final descent phase of a VTOL landing.
 
 In addition, the landing gear/ camera mount can automatically deploy or retract based on altitude, using the :ref:`LGR_DEPLOY_ALT<LGR_DEPLOY_ALT>` for automatic deployment below this altitude, and automatic retraction if above the :ref:`LGR_RETRACT_ALT<LGR_RETRACT_ALT>`. If these are set to 0, then these functions are not active.
 
