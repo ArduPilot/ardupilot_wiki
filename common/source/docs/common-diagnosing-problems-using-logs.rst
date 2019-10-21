@@ -390,5 +390,53 @@ See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/maste
    </td>
    </tr>
 
+   <tr>
+   <td>26 = Sensor Failsafe (Sub)</td>
+   <td>
+
+- 0 = Sensor Failsafe Cleared
+- 1 = Sensor Failsafe Triggered
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   <tr>
+   <td>27 = Leak Failsafe (Sub)</td>
+   <td>
+
+- 0 = Leak Failsafe Cleared
+- 1 = Leak Detector Failsafe Triggered
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   <tr>
+   <td>28 = Pilot Input Timeout Failsafe (Sub only)</td>
+   <td>
+
+- 0 = Pilot Input Failsafe Cleared
+- 1 = Pilot Input Failsafe Triggered
+
+.. raw:: html
+
+   </td>
+   </tr>
+
+   <tr>
+   <td>29 = Vibration Failsafe</td>
+   <td>
+
+- 0 = Excessive Vibration Compensation De-activated
+- 1 = Excessive Vibration Compenstaion Activated
+
+.. raw:: html
+
+   </td>
+   </tr>
+
    </tbody>
    </table>
