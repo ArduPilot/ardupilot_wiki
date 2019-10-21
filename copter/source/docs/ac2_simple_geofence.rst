@@ -71,7 +71,7 @@ Warnings:
 
 -  The minimum recommended fence radius is 30m
 -  The fence requires the GPS to be functioning well so do not disable
-   the :ref:`GPS arming check <prearm_safety_check>` nor the :ref:`EKF failsafe <ekf-inav-failsafe>` while the fence is enabled. 
+   the :ref:`GPS arming check <common-prearm-safety-checks>` nor the :ref:`EKF failsafe <ekf-inav-failsafe>` while the fence is enabled. 
    Conversely if you disable either of these checks, disable the Fence.
 -  For the best results, ensure RTL is working on your vehicle.
 -  With the Fence enabled, the pre-arm checks will require you have GPS

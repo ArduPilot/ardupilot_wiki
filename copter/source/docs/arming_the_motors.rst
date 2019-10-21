@@ -16,7 +16,7 @@ clear of the propellers. Then do the following:
 
 #. Turn on your transmitter.
 #. Plug in the LiPo battery.  The red and blue lights should flash for a few seconds as the gyros are calibrated (do not move the copter)
-#. The pre-arm checks will run automatically and if any problems are found the RGB LED will blink yellow and the failure will be displayed on the ground station.  Please refer to :ref:`this page <prearm_safety_check>`
+#. The pre-arm checks will run automatically and if any problems are found the RGB LED will blink yellow and the failure will be displayed on the ground station.  Please refer to :ref:`this page <common-prearm-safety-checks>`
 #. Check that your flight mode switch is set to Stabilize, ACRO, AltHold, Loiter, or PosHold
 #. If using a flight controller with a safety switch, press it until the light goes solid
 #. If you are planning on using an autonomous mode (i.e. Loiter, RTL, Auto, etc) swith the vehicle to Loiter or PosHold and wait until the LEDs blink green indicating a good GPS lock

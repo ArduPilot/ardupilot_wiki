@@ -20,7 +20,7 @@ Please follow each of the links below.
     :maxdepth: 1
 
     Flight Modes <flight-modes>
-    Pre-arm Safety Check <prearm_safety_check>
+    Pre-arm Safety Check <common-prearm-safety-checks>
     Arming and Disarming <arming_the_motors>
     Getting Off the Ground – Tips for New Operators <ac_tipsfornewpilots>
     Tuning <common-tuning>
