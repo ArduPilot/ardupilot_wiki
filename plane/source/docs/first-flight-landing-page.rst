@@ -11,6 +11,7 @@ its first flight, and includes an explanation of the main :ref:`Flight Modes <fl
     :maxdepth: 1
 
     Starting up and calibrating Plane <starting-up-and-calibrating-arduplane>
+    Pre-Arm Safety Checks <common-prearm-safety-checks>
     Arming Plane <arming-your-plane>
     Flight Modes <flight-modes>
     Automatic Tuning <automatic-tuning-with-autotune>
