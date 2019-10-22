@@ -21,4 +21,5 @@ analysis and cumulative flight time
 humanitarian organizations and disaster affected communities with
 greater situation awareness.
 
-If you know of more, or are the owner of one of the above and would like to correct the description please email drones-discuss@googlegroups.com.
+
+If you know other applications, or you are the owner of one of the above and would like to correct the description; please leave your comments in the Git Issue Tracker down on the footer. You also feel free to edit these pages straightforward by clicking on "Edit on Github" on the top right of the page.
