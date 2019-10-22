@@ -117,7 +117,11 @@ Every IR device has its own configuration method. *Stratosnapper* comes
 with a simple GUI interface to define which PWM values will trigger what
 port.
 
-The IR device configuration is explained in `this video <https://player.vimeo.com/video/67660032>`__
+The IR device configuration is explained in this video
+
+.. vimeo:: 67660032
+   :width: 400
+   :height: 400
 
 Testing and mission planning
 ============================
