@@ -394,7 +394,7 @@ it reduces the weighting of the baro measurement and will make the
 filter respond more slowly to baro measurement errors, but will make it
 more sensitive to GPS and accelerometer errors.  It has units of metres.
 
-**EK2_HGT_GATE**
+**EK2_HGT_I_GATE**
 
 This sets the number of standard deviations applied to the height
 measurement innovation consistency check. Decreasing it makes it more
