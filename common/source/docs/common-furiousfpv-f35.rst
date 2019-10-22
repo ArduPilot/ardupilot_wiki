@@ -74,4 +74,9 @@ Either rssi or analog airspeed can be input on the AIR pin. Either must be first
 
 Videos
 ======
-arduplane auto mission using the Wing FC10: https://vimeo.com/301399536
+
+arduplane auto mission using the Wing FC10:
+
+.. vimeo:: 301399536
+   :width: 400
+   :height: 400

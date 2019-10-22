@@ -73,6 +73,8 @@ Video demonstration of accelerometer calibration. This is for an older
 version of Copter/Mission Planner, but is useful as an example of how
 you might hold a Copter.
 
-https://vimeo.com/56224615
+.. vimeo:: 56224615
+   :width: 400
+   :height: 400
 
 [/site]
