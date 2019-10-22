@@ -28,5 +28,8 @@ copter immediately after pressing the key for each step.
 .. image:: ../images/ap2_calibrate-accelerometer.png
     :target: ../_images/apm_planner2_calibrate-accelerometer.png
 
-`Check out this video <https://vimeo.com/56224615>`__ for an example of
-how to hold your vehicle during accelerometer calibration.
+Check out this video for an example of how to hold your vehicle during accelerometer calibration.
+
+.. vimeo:: 56224615
+   :width: 400
+   :height: 400

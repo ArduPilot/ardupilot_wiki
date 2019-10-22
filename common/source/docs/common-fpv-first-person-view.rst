@@ -81,7 +81,9 @@ his Plane running on VrBrain including MinimOSD.
 Robert Mcintosh's in `Lone Pine California <https://diydrones.com/profiles/blogs/the-best-place-to-fly>`__
 FPV Flight with HD video footage from GoPro camera
 
-https://vimeo.com/70365435
+.. vimeo:: 70365435
+   :width: 400
+   :height: 400
 
 Euan Ramsey's APM2 powered `TBS Discovery <https://diydrones.com/profiles/blogs/tbs-disco-apm-mounting-suggestion>`__. 
 Note the TBS frame spreads the 2 front arms apart so the blades don't
