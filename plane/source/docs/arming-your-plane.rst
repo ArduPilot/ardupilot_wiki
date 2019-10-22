@@ -49,12 +49,20 @@ There are three parameters which control how arming works:
 -  **ARMING_CHECK**: this controls what checks the autopilot does
    before arming is allowed. The default is 1, meaning all checks are
    done. Most users should leave it at 1, as the arming checks are
-   important to ensure the autopilot is ready.
+   important to ensure the autopilot is ready. See below.
 -  **ARMING_RUDDER**: This parameter allows you to configure rudder
    based arming/disarming. The default is 1, meaning you are able to
    arm with right rudder. If you set this to 2 you can also disarm
    with left rudder. If you set this to 0 then you will only be able
-   to arm/disarm via a ground station.
+   to arm/disarm via a ground station or RC channel input using its RCx_OPTION.
+
+Arming Checks
+=============
+
+Before allowing arming the autopilot checks a set of conditions. All
+conditions must pass for arming to be allowed. If any condition fails
+then a message explaining what failed is set to the GCS. Any or all of the 
+Pre-Arming Checks can be disabled, but it is not recommended. See the :ref:`common-prearm-safety-checks` topic for more information.
 
 IMPORTANT: RC Transmitter Calibration
 =====================================
@@ -76,12 +84,13 @@ two ways:
 
 -  **Rudder Arming**. Hold the rudder stick fully to the right and the
    throttle stick fully down for 2 seconds.
+-  **Arming Switch**. An RC channel can be configured as an ARM/DISARM switch by using the RCx_OPTION for that channel set to 41.
 -  **GCS Arming**. Press the arming button on your ground station
 
 .. figure:: ../../../images/armingButtonMissPlan.jpg
    :target: ../_images/armingButtonMissPlan.jpg
 
-   Location of the Arm/Disarm buttonin Mission Planner (button circled in red near the bottom of the image).
+   Location of the Arm/Disarm button in Mission Planner (button circled in red near the bottom of the image).
 
 How to Disarm
 =============
@@ -92,7 +101,8 @@ seconds. In ArduPlane this condition could be accidentally triggered by
 pilots while flying so there are additional requirements prior to disarm:
 
 -  You need to allow rudder disarming by changing **ARMING_RUDDER**
-   parameter to 2 (ArmOrDisarm).
+   parameter to 2 (ArmOrDisarm) or use the ARM/DISARM switch function provided by 
+   setting an RC channel's RCx_OPTION to 41.
 -  The flight controller needs to make sure that you are not actually
    flying. There is an algorithm for this that uses the **airspeed sensor**
    readings. So you need this source available and giving values lower
@@ -112,7 +122,7 @@ Visual and Audible signals
 ==========================
 
 ArduPlane will provide visual and audio clues to the arming state if
-your autopilot has LEDs and a buzzer. The clues are:
+your autopilot has notification LEDs and a buzzer. The clues are:
 
 -  if the autopilot is disarmed, but is ready to arm then the large
    3-colour LED will be flashing green
@@ -126,49 +136,17 @@ your autopilot has LEDs and a buzzer. The clues are:
 See the :ref:`sounds page <common-sounds-pixhawkpx4>` to listen to what the
 buzzer sounds like for each state.
 
-Arming Checks
-=============
-
-Before allowing arming the autopilot checks a set of conditions. All
-conditions must pass for arming to be allowed. If any condition fails
-then a message explaining what failed is set to the GCS.
-
-The checks performed are:
-
--  Safety switch. The safety switch must be set to the safety-off
-   state before arming is allowed. This is either done by pressing the
-   safety switch for 2 seconds until it stops flashing, or you can
-   disable the use of the safety switch by setting BRD_SAFETY_ENABLE=0
--  Barometer check. The barometer must be healthy (getting good data)
--  Inertial Sensor Checks. The accelerometers and gyroscopes must all be
-   healthy and all be calibrated. If you have more than one accel or
-   gyro then they need to be consistent with each other.
--  AHRS checks. The AHRS (attitude heading reference system) needs to be
-   initialized and ready. Note that if you have the EKF enabled this may
-   take up to 30 seconds after boot.
--  Compass checks. All compasses must be configured and calibrated, and
-   need to be consistent with each other (if you have more than one
-   compass)
--  GPS Checks. You need to have a 3D GPS fix.
--  Battery checks. The battery voltage must be above the failsafe
-   voltage (if configured)
--  Airspeed checks. If you have configured an airspeed sensor then the
-   sensor needs to be working.
--  Logging checks. The logging subsystem needs to be working (ie. a
-   microSD must be fitted and working)
--  RC Control checks. You need to not be in RC failsafe
-
 Throttle output when disarmed
 =============================
 
 When the plane is disarmed the throttle channel will not respond to
-pilot input. There are two possible behaviours you can configure:
+pilot input. There are two possible behaviors you can configure:
 
--  ARMING_REQUIRE=1. When disarmed the minimum value for the throttle
+-  :ref:`ARMING_REQUIRE<ARMING_REQUIRE>` = 1. When disarmed the minimum value for the throttle
    channel (normally RC3_MIN) will be sent to the throttle channel
--  ARMING_REQUIRE=2. When disarmed no pulses are sent to the throttle
+-  :ref:`ARMING_REQUIRE<ARMING_REQUIRE>` = 2. When disarmed no pulses are sent to the throttle
    channel. Note that some ESCs will beep to complain that they are
-   powered on without a control signal
+   powered on without a control signal or even refuse to initialize and operate.
 
 Diagnosing failure to arm
 =========================
@@ -203,8 +181,8 @@ Reasons for refusing to arm
 ---------------------------
 
 When the autopilot refuses to arm it sends a STATUSTEXT MAVLink message
-to the GCS explaining why it is refusing. The possible reasons why the
-autopilot can refuse to arm are:
+to the GCS explaining why it is refusing. Some possible reasons why the
+autopilot can refuse to arm are (See the :ref:`common-prearm-safety-checks` topic for more information):
 
 -  **barometer not healthy**. This is very rare. If it happens
    repeatedly then you may have a barometer hardware fault.
