@@ -46,8 +46,8 @@ import argparse
 parser = argparse.ArgumentParser(description='Copy Common Files as needed, stripping out non-relevant wiki content')
 parser.add_argument('--site', help="If you just want to copy to one site, you can do this. Otherwise will be copied.")
 parser.add_argument('--clean', action='store_true', help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).")
-parser.add_argument('--cached-parameter-files', action='store_true', help="Do not re-download parameter files", default=False)
-parser.add_argument('--parallel', type=int, help="limit parallel builds, -1 for unlimited", default=-1)
+parser.add_argument('--cached-parameter-files', action='store_true', help="Do not re-download parameter files")
+parser.add_argument('--parallel', type=int, help="limit parallel builds, -1 for unlimited", default=1)
 parser.add_argument('--destdir', default="/var/sites/wiki/web", help="Destination directory for compiled docs")
 args = parser.parse_args()
 #print(args.site)
@@ -109,7 +109,6 @@ def sphinx_make(site):
             continue
         if not site==None and not site==wiki:
             continue
-        print('make and clean: %s' % wiki)
         p = multiprocessing.Process(target=build_one, args=(wiki,))
         p.start()
         procs.append(p)
