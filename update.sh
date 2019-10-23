@@ -95,6 +95,6 @@ git clean -f -f -x -d -d
 pip install --user -U .
 popd
 
-cd ardupilot_wiki && python update.py --clean True
+cd ardupilot_wiki && python update.py --clean --parallel 4
 
 ) >> update.log 2>&1
