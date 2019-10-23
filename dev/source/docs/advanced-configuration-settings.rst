@@ -1,8 +1,8 @@
 .. _advanced-configuration-settings:
 
-===============================
-Advanced Configuration Settings
-===============================
+=========================================
+Archived: Advanced Configuration Settings
+=========================================
 
 Almost all user-modifiable settings in APM can be configured in your
 ground station via MAVLink. However, if for any reason you want to

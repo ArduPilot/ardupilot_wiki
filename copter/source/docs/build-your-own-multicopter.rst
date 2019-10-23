@@ -1,8 +1,8 @@
 .. _build-your-own-multicopter:
 
-==========================
-Build Your Own Multicopter
-==========================
+====================================
+Archived: Build Your Own Multicopter
+====================================
 
 There are Lots of Ways you Can Put Together a MultiCopter
 =========================================================

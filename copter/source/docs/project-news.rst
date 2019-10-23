@@ -1,8 +1,8 @@
 .. _project-news:
 
-===================
-Copter Project News
-===================
+=============================
+Archived: Copter Project News
+=============================
 
 This page contains information and links about Copter
 releases/milestones.

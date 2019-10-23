@@ -1,8 +1,8 @@
 .. _common-qualcomm-snapdragon-flight-kit:
 
-==============================
-Qualcomm Snapdragon Flight Kit
-==============================
+========================================
+Archived: Qualcomm Snapdragon Flight Kit
+========================================
 
 The Snapdragon Flight platform is a high performance CPU autopilot with a two onboard cameras.
 

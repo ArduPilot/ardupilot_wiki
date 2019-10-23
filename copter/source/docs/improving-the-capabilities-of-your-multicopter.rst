@@ -1,8 +1,8 @@
 .. _improving-the-capabilities-of-your-multicopter:
 
-==============================================
-Improving the Capabilities of Your Multicopter
-==============================================
+========================================================
+Archived: Improving the Capabilities of Your Multicopter
+========================================================
 
 This page describes one of our members (Euan Ramasy's) highly advanced
 photographic quadcopter. It illustrates the incremental improvements he

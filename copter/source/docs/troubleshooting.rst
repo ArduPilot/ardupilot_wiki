@@ -1,8 +1,8 @@
 .. _troubleshooting:
 
-===============
-Troubleshooting
-===============
+=========================
+Archived: Troubleshooting
+=========================
 
 .. warning::
 

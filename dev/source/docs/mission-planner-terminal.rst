@@ -1,8 +1,8 @@
 .. _mission-planner-terminal:
 
-========================
-Mission Planner Terminal
-========================
+==================================
+Archived: Mission Planner Terminal
+==================================
 
 .. warning::
 

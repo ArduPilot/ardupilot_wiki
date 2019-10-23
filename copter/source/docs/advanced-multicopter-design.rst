@@ -1,8 +1,8 @@
 .. _advanced-multicopter-design:
 
-===========================
-Advanced MultiCopter Design
-===========================
+=====================================
+Archived: Advanced MultiCopter Design
+=====================================
 
 This section is topics related to advanced multicopter construction and
 design.

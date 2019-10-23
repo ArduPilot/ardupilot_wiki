@@ -20,7 +20,6 @@ value to users with old hardware.
     Qualcomm Snapdragon Flight Kit <common-qualcomm-snapdragon-flight-kit>
     Open Camera Control Board <common-camera-control-board>
     VR Gimbal Controller (3-Axis Open Source) <common-vrgimbal>
-    Tarot Brushless Gimbal <common-tarot-gimbal>
     External GPS AP2.x <common-disabling-the-built-in-gps-on-apm2-to-use-an-external-gps-instead>
     GPS Module (External) <common-mounting-the-gps-module>
     External Compass (Magnetometer) <common-external-magnetometer-for-improved-performance>
