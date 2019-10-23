@@ -1,8 +1,8 @@
 .. _updating-the-apm2-x-bootloade:
 
-==============================
-Updating the APM2.x BootLoader
-==============================
+========================================
+Archived: Updating the APM2.x BootLoader
+========================================
 
 The Atmel 2560 boot loader should not have to replaced, however
 sometimes developers or users or a brownout etc., will corrupt the boot

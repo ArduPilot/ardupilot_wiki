@@ -1,8 +1,8 @@
 .. _common-loading-chibios-firmware-onto-pixhawk:
 
-=====================================
-Loading ChibiOS firmware onto Pixhawk
-=====================================
+==============================================
+Archived:Loading ChibiOS firmware onto Pixhawk
+==============================================
 
 .. figure:: ../../../images/chibios-logo.png
 

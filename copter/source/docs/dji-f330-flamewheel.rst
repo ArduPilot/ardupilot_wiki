@@ -1,8 +1,8 @@
 .. _dji-f330-flamewheel:
 
-=======================================
-DJI F330 FlameWheel QuadCopter Assembly
-=======================================
+=================================================
+Archived: DJI F330 FlameWheel QuadCopter Assembly
+=================================================
 
 This article provides and overview of the DJI F330 FlameWheel
 QuadCopter, and instructions for how it may be assembled.

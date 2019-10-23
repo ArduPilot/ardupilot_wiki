@@ -1,8 +1,8 @@
 .. _pdf-guides:
 
-==========
-PDF Guides
-==========
+====================
+Archived: PDF Guides
+====================
 
 The following links provide PDF file downloads which can be printed and
 used as guides and checklists. These cover installing and using the APM2
