@@ -17,7 +17,7 @@ It is highly aerobatic, capable of inverted flight but can suffer from :ref:`hig
 Where to Buy
 ============
 
-- WLtoys Assassin V383 is available from retailers including `WLtoys.eu <https://wltoys.eu/wl_en/catalog/product/view/id/2359>`__
+- WLtoys Assassin V383 is available from retailers including `WLtoys.eu <https://wltoys.eu/wltoys-v383>`__
 
 Connecting and Configuring
 ==========================
