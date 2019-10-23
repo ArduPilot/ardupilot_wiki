@@ -340,9 +340,9 @@ Automatic Offset Calibration
 
 In the 4.0 releases of Ardupilot, an automatic offset learning feature is available. The :ref:`COMPASS_LEARN<COMPASS_LEARN>` parameter determines how this feature works.
 
-- If set to 1, then the offsets will be learned solely by compass readings while armed. This is suitable only for Plane applications. The offsets learned will be saved upon disarming.
-- If set to 2, the offsets will be learned by the EKF estimations while armed. The offsets learned will be saved upon disarming.
 - If set to 3, the offsets will be learned automatically during flight, be saved, and this parameter reset to 0. Position control modes (Loiter, Auto, etc.) should not be used while the offsets are being learned.
+
+.. note:: Setting :ref:`COMPASS_LEARN<COMPASS_LEARN>` to 1 or 2 is not recommended. These modes are deprecated and are either non-functional, or still in development.
 
   The procedure for COMPASS_LEARN = 3 is:
 
