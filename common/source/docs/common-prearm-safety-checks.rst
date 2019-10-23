@@ -118,7 +118,7 @@ recommended.
 Note: the GPS HDOP can be readily viewed through the Mission Planner's
 Quick tab as shown below.
 
-.. image:: ../images/MP_QuicHDOP.jpg
+.. image:: ../../../images/MP_QuicHDOP.jpg
     :target: ../_images/MP_QuicHDOP.jpg
 
 INS checks (i.e. Acclerometer and Gyro checks):
@@ -240,7 +240,7 @@ Arming checks can be individually disabled by setting the :ref:`ARMING_CHECK<ARM
 
 This can also be configured using Mission Planner:
 
-.. image:: ../images/MP_PreArmCheckDisable.png
+.. image:: ../../../images/MP_PreArmCheckDisable.png
     :target: ../_images/MP_PreArmCheckDisable.png
 
 
