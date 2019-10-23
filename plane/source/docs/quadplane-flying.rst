@@ -247,8 +247,8 @@ landing when it gets close to return point.
 Radio or Throttle Failsafe
 ==========================
 
-If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACT<FS_SHORT_ACT>` and :ref:`FS_LONG_ACT<FS_LONG_ACT>` parameter settings (see Plane Failsafe Function). Quadplanes can be set such that instead of normal plane behviour on Failsafe induced RTLs, to transistion to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1.
-If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how :ref:`Q_OPTION<Q_OPTION>`, bit 5, is set.
+If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter settings (see Plane Failsafe Function). Quadplanes can be set such that instead of normal plane behviour on Failsafe induced RTLs, to transistion to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1.
+If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bit 5, is set.
 
 Typical flight
 ==============

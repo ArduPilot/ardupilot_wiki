@@ -236,7 +236,7 @@ Disabling the Pre-arm Safety Check
 
 .. warning:: Disabling pre-arm safety checks is not recommended. The cause of the pre-arm failure should be corrected before operation of the vehicle if at all possible. If you are confident that the pre-arm check failure is not a real problem, it is possible to disable a failing check.
 
-Arming checks can be individually disabled by setting the :ref:`ARMING_CHECKS<>` parameter to something other than 1. Setting to 0 completely removes all pre-arm checks. For example, setting to  4 only checks that the GPS has lock.
+Arming checks can be individually disabled by setting the :ref:`ARMING_CHECK<ARMING_CHECK>` parameter to something other than 1. Setting to 0 completely removes all pre-arm checks. For example, setting to  4 only checks that the GPS has lock.
 
 This can also be configured using Mission Planner:
 
