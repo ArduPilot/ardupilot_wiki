@@ -30,7 +30,9 @@ import re
 import os
 from codecs import open
 import subprocess
+import multiprocessing
 import shutil
+import time
 
 
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
@@ -43,8 +45,9 @@ COMMON_DIR='common'
 import argparse
 parser = argparse.ArgumentParser(description='Copy Common Files as needed, stripping out non-relevant wiki content')
 parser.add_argument('--site', help="If you just want to copy to one site, you can do this. Otherwise will be copied.")
-parser.add_argument('--clean', default='False', help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).")
-parser.add_argument('--cached-parameter-files', default=False, help="Do not re-download parameter files", type=bool)
+parser.add_argument('--clean', action='store_true', help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).")
+parser.add_argument('--cached-parameter-files', action='store_true', help="Do not re-download parameter files", default=False)
+parser.add_argument('--parallel', type=int, help="limit parallel builds, -1 for unlimited", default=-1)
 parser.add_argument('--destdir', default="/var/sites/wiki/web", help="Destination directory for compiled docs")
 args = parser.parse_args()
 #print(args.site)
@@ -84,20 +87,44 @@ def fetchparameters(site=args.site):
 
 
 
+def build_one(wiki):
+    '''build one wiki'''
+    print('make and clean: %s' % wiki)
+    subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
+    subprocess.check_call(["nice", "make", "html"], cwd=wiki)
 
 def sphinx_make(site):
     """
     Calls 'make html' to build each site
     """
+    done = set()
+    wikis = set(ALL_WIKIS[:])
+    num_procs = 0
+    procs = []
 
-    for wiki in ALL_WIKIS:
+    while len(done) != len(wikis):
+        wiki = list(wikis.difference(done))[0]
+        done.add(wiki)
         if site=='common':
             continue
         if not site==None and not site==wiki:
             continue
         print('make and clean: %s' % wiki)
-        subprocess.check_call(["make", "-C", wiki ,"clean"])
-        subprocess.check_call(["make", "-C", wiki ,"html"])
+        p = multiprocessing.Process(target=build_one, args=(wiki,))
+        p.start()
+        procs.append(p)
+        while args.parallel != -1 and len(procs) >= args.parallel:
+            for p in procs:
+                if p.exitcode is not None:
+                    p.join()
+                    procs.remove(p)
+            time.sleep(0.1)
+    while len(procs) > 0:
+        for p in procs[:]:
+            if p.exitcode is not None:
+                p.join()
+                procs.remove(p)
+        time.sleep(0.1)
 
 
 
