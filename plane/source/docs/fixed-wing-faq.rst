@@ -14,22 +14,22 @@ How do you stop a Nitro plane from cutting the engine in flight?
 
 For internal combustion motor planes (which can be prone to cutting the engine at low throttle), you should use the following settings:
 
--  THR_MIN=10
--  THR_PASS_STAB=1
--  THR_SUPP_MAN=1
+-  :ref:`THR_MIN<THR_MIN>` =10
+-  :ref:`THR_PASS_STAB<THR_PASS_STAB>` =1
+-  :ref:`THR_SUPP_MAN<THR_SUPP_MAN>` =1
 
 That will prevent the throttle dropping below 10%, but will give you
 manual throttle control for idling while on the ground, and manual
 throttle control in stabilisation modes (such as FBWA and STABILIZE) for
 shutting down the motor when you need to.
 
-THR_SLEWRATE can also aid in prevention of a nitro engine stalling in
+:ref:`THR_SLEWRATE<THR_SLEWRATE>` can also aid in prevention of a nitro engine stalling in
 flight by slowing the throttle advance from going wide open to quickly.
 
 How do you inhibit gyro calibration?
 ------------------------------------
 
-Set the parameter INS_GYRO_CAL=0. That will skip the gyro calibration 
+Set the parameter :ref:`INS_GYR_CAL<INS_GYR_CAL>` =0. That will skip the gyro calibration 
 done on each startup. The last
 gyro calibration from when you calibrated the accelerometers will be
 used instead. This also means you don't need to hold the plane still
@@ -37,7 +37,7 @@ when booting.
 
 The downside of skipping gyro calibration is that your gyros may have
 drifted since you last calibrated them, perhaps due to temperature
-changes. If you have ARMING_REQUIRE enabled then the arming checks will
+changes. If you have :ref:`ARMING_REQUIRE<ARMING_REQUIRE>` enabled then the arming checks will
 catch that problem if it is very large, but in general we recommend not
 skipping gyro calibration unless you have a good reason to use it. This is
 especially the case if you have the EKF enabled, as it is particularly
@@ -55,9 +55,9 @@ Some planes (mostly nitro or petrol planes) have a reversed throttle
 servo, so lower PWM values on the throttle channel gives more throttle
 not less. To set up Plane 3.7 or earlier to handle this you need to change 3 settings:
 
--  set RC3_REV to -1
+-  set :ref:`RC3_REVERSED<RC3_REVERSED>` to -1
 -  setup your transmitter for reverse throttle
--  change THR_FS_VALUE to a high value instead of a low value (eg.
+-  change :ref:`THR_FS_VALUE<THR_FS_VALUE>` to a high value instead of a low value (eg.
    2100 instead of 900). It needs to be a higher PWM value than you will
    use in normal flight
 
@@ -66,7 +66,7 @@ turning off your transmitter while on the ground.
 
 For plane 3.8.0 or later, the servo library allows you to reverse the 
 throttle output channel without affecting your RC inputs or failsafe configuration.
-to do this, set SERVO3_REVERSED to 1.
+to do this, set :ref:`SERVO3_REVERSED<SERVO3_REVERSED>` to 1.
 
 What happens if an airspeed sensor fails in flight?
 ---------------------------------------------------
@@ -105,9 +105,9 @@ hope to add some protection into the code in the future.
 Why don't my surfaces move enough when using flaperons, elevons, or v-tail?
 -----------------------------------------------------------------------------------------
 
-You are probably using the default MIXING_GAIN of 0.5. The default is
+You are probably using the default :ref:`MIXING_GAIN<MIXING_GAIN>` of 0.5. The default is
 setup to prevent channel saturation. If you instead want to be able to
-have full deflection then try setting MIXING_GAIN=1.0 or something in
+have full deflection then try setting :ref:`MIXING_GAIN<MIXING_GAIN>` =1.0 or something in
 between.
 
 How do I get a good flare in automatic landing?
@@ -118,8 +118,8 @@ Please see :ref:`this page <automatic-landing>`
 How do I reset all parameters to defaults?
 ------------------------------------------
 
-To reset all parameters set the parameter FORMAT_VERSION to 0 and
-reboot. When ArduPilot starts up it checks if FORMAT_VERSION has the
+To reset all parameters set the parameter :ref:`FORMAT_VERSION<FORMAT_VERSION>` to 0 and
+reboot. When ArduPilot starts up it checks if :ref:`FORMAT_VERSION<FORMAT_VERSION>` has the
 correct value, and if it doesn't it wipes the parameters, which resets
 them to the default values.
 
@@ -127,9 +127,14 @@ What does "Bad AHRS" mean on a ground station?
 ----------------------------------------------
 
 It means the "Attitude Heading Reference System" is unhealthy. That is
-the software that determines the attitude of the aircraft. The most
-common cause is bad 3D accelerometer calibration when AHRS_EKF_USE is
-set to 1. Check your accelerometer calibration.
+the software that determines the attitude of the aircraft. Possible causes:
+
+- Accelerometer calibration
+- GPS has not acquired a good enough lock (#sats, HDOP, etc.)
+- EKF has not settled (tilt/yaw initialization, origin not set yet, variances, etc.). 
+  **"EKF IMUx using GPS"** message will be displayed on ground control station when EKF is ready.
+  
+.. note:: if no compass is enabled, the **"EKF IMUx using GPS"** message will be not be displayed until after flight begins, since EKF yaw alignment will not occur until sufficient ground speed is acquired for the GPS to provide a heading. This is normal in this situation.
 
 How do I reduce throttle oscillation in auto flight?
 ----------------------------------------------------
@@ -137,12 +142,12 @@ How do I reduce throttle oscillation in auto flight?
 There are 3 parameters that affect the amount the throttle changes in
 automatic flight.
 
--  THR_SLEWRATE is the percentage of throttle change allowed per
+-  :ref:`THR_SLEWRATE<THR_SLEWRATE>` is the percentage of throttle change allowed per
    second. A value of 100 means the throttle cannot change over its full
    range in less than 1 second.
--  TECS_THR_DAMP is a damping factor for throttle control. The default
+-  :ref:`TECS_THR_DAMP<TECS_THR_DAMP>` is a damping factor for throttle control. The default
    is 0.5. A higher value will dampen throttle changes.
--  TECS_TIME_CONST is the overall time constant for both throttle and
+-  :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` is the overall time constant for both throttle and
    pitch changes in TECS. It controls how rapidly TECS tries to correct
    for any error in speed or height. It is in seconds, and defaults to
    5. A higher value makes the pitch and throttle corrections happen
@@ -158,12 +163,12 @@ this test is less in recent releases of the firmware.
 
 The reason is the new :ref:`stall prevention code <stall-prevention>`. When the plane is on
 the ground the airspeed is very low, so is always under the minimum
-airspeed set in ARSPD_FBW_MIN. That means the maximum roll demand is
+airspeed set in :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` . That means the maximum roll demand is
 limited to 25 degrees, which means the amount of demanded aileron
 surface movement is less than it would be without stall prevention.
 
 If you want to see what the movement would be without stall prevention
-then just set STALL_PREVENTION=0. Remember to turn it back on before
+then just set :ref:`STALL_PREVENTION<STALL_PREVENTION>` = 0. Remember to turn it back on before
 you fly.
 
 .. _fixed-wing-faq_how_would_i_setup_crow_flaps:
@@ -200,9 +205,6 @@ amount of false input. The sources of the false input are:
    airspeed is quite noisy at low speed, so this effect can be quite
    large
 
-Both of these effects are smaller if you enable the EKF (with
-AHRS_EKF_USE=1) as it has smarter logic for handling attitude
-estimation when on the ground.
 
 How is airspeed used with no airspeed sensor?
 ---------------------------------------------
@@ -228,11 +230,11 @@ sensor data. The techniques are:
 When no airspeed sensor is available some parameters are not used for
 some purposes:
 
--  the TRIM_ARSPD_CM parameter is not used as an airspeed target in
-   auto flight. Instead the TRIM_THROTTLE parameter is used as base
+-  the :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` parameter is not used as an airspeed target in
+   auto flight. Instead the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is used as base
    throttle, with extra throttle added/removed to retain the target
    altitude
--  the ARSPD_FBW_MIN and ARSPD_FBW_MAX parameters are not used for
+-  the :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` and :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` parameters are not used for
    airspeed limiting in TECS, but they are still used for the stall
    prevention code, using the synthetic airspeed value
 
@@ -240,14 +242,14 @@ Why does my trim change when I change modes?
 --------------------------------------------
 
 Some people experience a problem where their roll or pitch trim changes
-when they change flight modes. So for example they are trimmed with
-level aileron in manual with the aircraft level and when they change to
-FBWA mode the ailerons move significantly off centre trim.
+when they change flight modes. So for example, in FBWA the plane is flying level, but
+when changed to MANUAL mode the plane is no longer in level trim.
 
-One likely cause of this is that you have a transmitter that has per
+One cause of this is that you have a transmitter that has per
 flight mode trims. The Taranis is a good example of this if you use its
-builtin flight mode controls. What happens is you setup the plane with
-correct trims in MANUAL by adjusting using the trip tabs in flight, but
-those trims don't get used when you change flight modes. You need to
-change your transmitter settings so that the stick inputs are the same
-in all flight modes.
+built in flight mode controls. You need to be sure  your transmitter trim settings 
+are the same, so that the stick inputs are the same in all flight modes and  match those
+you used for the RC calibration setup.
+
+Another, is that you are not using :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` to automatically adjust the trim
+of the pitch and roll controlling flying surfaces. Enabling this will assure that MANUAL mode trim matches that of the auto-leveled modes, like STABLIZE and FBWA.
