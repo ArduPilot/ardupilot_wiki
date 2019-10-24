@@ -173,15 +173,14 @@ Features:
    :hidden:
 
    Home <http://www.ardupilot.org>
-   Forum <https://discuss.ardupilot.org/>
    Copter <http://ardupilot.org/copter/index.html>
    Plane <http://ardupilot.org/plane/index.html>
    Rover <http://ardupilot.org/rover/index.html>
    Sub <http://ardusub.com/>
+   AntennaTracker <http://ardupilot.org/antennatracker/index.html>
    Firmware Downloads <docs/common-downloads_firmware>
    Mission Planner <http://ardupilot.org/planner/index.html>
    APM Planner 2 <http://ardupilot.org/planner2/index.html>
-   AntennaTracker <http://ardupilot.org/antennatracker/index.html>
    Companion Computers <http://ardupilot.org/dev/docs/companion-computers.html>
    Developers <http://ardupilot.org/dev/index.html>
    The Ardupilot Team <docs/common-team>
