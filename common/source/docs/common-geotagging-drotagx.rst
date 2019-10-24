@@ -15,7 +15,7 @@ DROTAG x for Geotagging
 -   Captures picture every 1.6 seconds
 -   Includes a Hotshoe which connects between the flight controller and your camera's flash to improve the accuracy of the geo-tagging
 
-More details can be found in the `DROTAGx manual <https://www.airborneprojects.com/docs/drotagx_manual.pdf>`__ (airborneprojects.com) including pre-flight checklists, detailed explanations for diagnosis and other tips.
+More details can be found in the official DrotagX manual (`web <https://www.airborneprojects.com/doc/drotagx/>`__, `pdf <https://www.airborneprojects.com/docs/drotagx_manual.pdf>`__) including pre-flight checklists, detailed explanations for diagnosis and other tips.
 
 Setup, Configuration
 --------------------
@@ -69,12 +69,13 @@ Drotag writes the location information directly into the .jpg images files using
 
         DSC00027.JPG,36.3242995,138.6392682,938.0399780,0.3200000,0.1200000,-24.9599991
 
-- The tagging_xxxx.log file does not have the image name but does have the following information
+- The tagging_xxxx.log file has the following information
 
    ::
 
         {
-            Time: 1571822099701000,
+            filename: "DSC00027.JPG",
+            time: 1571822099701000,
             latitude: 363242995,
             longitude: 1386392682,
             alt_msl: 938.039978,
