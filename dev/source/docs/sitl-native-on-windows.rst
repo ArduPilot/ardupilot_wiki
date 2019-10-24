@@ -34,7 +34,7 @@ Running SITL
    ::
 
        cd ~/ardupilot/ArduCopter
-       sim_vehicle.py --map --console
+       ../Tools/autotest/sim_vehicle.py --map --console
 
 #. SITL and *MAVProxy* will start. *MAVProxy* displays three windows:
 
