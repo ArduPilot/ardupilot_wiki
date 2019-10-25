@@ -4,9 +4,9 @@
 DroneKit Tutorial
 =================
 
-DroneKit-Python allows you to control ArduPilot using the Python programming language.
+`DroneKit-Python <https://github.com/dronekit/dronekit-android/>`__ allows you to control ArduPilot using the Python programming language.
 
-The `official DroneKit Python documentation <http://python.dronekit.io/>`__ contains a `quick start guide <http://python.dronekit.io/guide/quick_start.html>`__.
+The `official DroneKit Python documentation <https://dronekit-python.readthedocs.io/en/latest/>`__ contains a `quick start guide <https://dronekit-python.readthedocs.io/en/latest/guide/quick_start.html>`__.
 
 There is also a video below showing how to setup Dronekit for
 SITL/MAVProxy on Linux.
