@@ -37,6 +37,7 @@ A comprehensive list of GUI tools are listed `here on git-scm.com <https://git-s
 - `Sourcetree for Windows and Mac OSX <https://www.sourcetreeapp.com/>`__ is a full featured tool with a nice interface with many features including allowing individual lines from a file to be included in a new commit (simpler tools only allow the entire file to be included)
 - `GitKraken <https://www.gitkraken.com/>`__ is a a full featured tool for Windows, Mac and Linux
 
+.. Alternative for Windows user
 
 GitHub Desktop
 --------------
