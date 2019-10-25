@@ -1,4 +1,4 @@
-.. _common-serial-options::
+.. _common-serial-options:
 
 ============================
 Serial Port Hardware Options
@@ -10,7 +10,7 @@ This page describes the hardware configuration options for the serial ports. Cur
 SERIALx_OPTIONS Parameter
 =========================
 
-Every serial port has in addition, to its baud rate (``SERIALx_BAUD``) and protocol format (``SERIALx_PROTOCOL`), the ability to invert its RX input and/or TX data, operate in half-duplex mode, and/or swap its RX and TX inputs.
+Every serial port has in addition, to its baud rate (``SERIALx_BAUD``) and protocol format (``SERIALx_PROTOCOL``), the ability to invert its RX input and/or TX data, operate in half-duplex mode, and/or swap its RX and TX inputs.
 
 For example, for direct connection to FRSky SPort telemetry, normally inverters and diode OR externally would be required. With SERIALx_OPTIONS bitmask set to 7, direct connection to the SPort can be accomplished from a serial port.
 
