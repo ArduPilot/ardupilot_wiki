@@ -52,4 +52,4 @@ failure
 
 **Solid Red**: Error
 
-**Solid Red with `SOS tone sequence <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/NoSDCard_short.wav>`__ **: SD Card missing (or other SD error like bad format etc.)
+**Solid Red with** `SOS tone sequence <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/NoSDCard_short.wav>`__ : SD Card missing (or other SD error like bad format etc.)
