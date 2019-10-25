@@ -26,6 +26,7 @@ value to users with old hardware.
     Recording and Playing Back Missions <common-recording-and-playing-back-missions>
     AttoPilot Current/Voltage Sensor <common-using-a-current-sensor>
     Erle-Brain2 Wiring Quick Start <common-erle-brain2-wiring-quick-start>
+    PXFmini Wiring Quick Start <common-pxfmini-wiring-quick-start>
 [/site]
 
 [site wiki="copter"]
