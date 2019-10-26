@@ -25,7 +25,7 @@ A side effect of this however is that heavy memory usage in a script can cause o
 
 This page describes how to setup scripts on your flight controller, the scripting API and some examples to help get started.
 
-This feature will be released with Copter-3.7, Rover-3.6 and Plane-3.11.
+This feature will be released with Copter-4.0, Rover-3.6 and Plane-3.11.
 
 Requirements
 ============

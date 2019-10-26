@@ -10,7 +10,7 @@ Serial Passthrough
 
 .. note::
 
-     This feature is available in Copter-3.7 (and higher), Plane-3.10, Rover-3.6 (and higher)
+     This feature is available in Copter-4.0 (and higher), Plane-3.10, Rover-3.6 (and higher)
 
 Setup
 -----

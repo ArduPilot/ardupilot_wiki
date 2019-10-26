@@ -13,7 +13,7 @@ The `VL53L0X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html
 .. note::
 
    Support for this lidar was first made available in available in Copter-3.6, Rover-3.3, and Plane-3.9.
-   Support the 4m `ST VL53L1X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html>`__ will be released with Copter-3.7.
+   Support the 4m `ST VL53L1X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html>`__ will be released with Copter-4.0.
 
 Where to Buy
 ------------

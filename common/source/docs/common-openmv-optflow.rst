@@ -13,7 +13,7 @@ The `OpenMV camera <https://openmv.io/>`__ is a programmable camera which includ
 
 .. warning::
 
-   Support for this sensor will be included in Copter-3.7 (and higher)
+   Support for this sensor will be included in Copter-4.0 (and higher)
 
 Where to Buy
 ------------
