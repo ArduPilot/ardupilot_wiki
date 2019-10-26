@@ -5,26 +5,29 @@ Compatible RC Transmitter and Receiver Systems
 ==============================================
 
 This article provides an overview of the RC Transmitter and Receiver
-Systems that can be used with Pixhawk along with guidance on
+Systems that can be used with Ardupilot flight controllers along with guidance on
 how they are connected.
 
 Overview
 ========
 
-Pixhawk is compatible with 
+Ardupilot flight controllers are compatible with 
     #. PPM-Sum receivers
     #. S.Bus receivers 
+    #. IBUS recievers
     #. Spektrum DSM, DSM2, and DSM-X Satellite receivers
     #. MULTIPLEX SRXL version 1 and version 2 receivers
 
-For traditional single-wire-per-channel (PWM) receivers, a 
-`PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be
-used to convert the receiver outputs to PPM-Sum.
+For traditional single-wire-per-channel (PWM) receivers, a `PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be used to convert the receiver outputs to PPM-Sum.
 
 Connecting the receiver
 =======================
 
-To connect a PPM-Sum receiver or an S.Bus receiver, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. The following S.Bus receivers have been tested and are known to work: FrSky `X8R <http://www.frsky-rc.com/product/pro.php?pro_id=105>`__, FrSky `XSR <http://www.frsky-rc.com/product/pro.php?pro_id=154>`__, Futaba R2008SB, Futaba R6008SB.
+Ardupilot auto-detects the protocol of the RC receiver system. For most flight controllers there is a pin labeled RCin to which the output from the receiver is connected. On many closed source flight controllers, other pins are used and are detailed in their board documentation, linked from the :ref:`Ardupilot Hardware<common-autopilots>` page.
+
+In addition, beginning with Ardupilot firmware releases 4.0 and later, any UART RX input will auto-detect the RC receiver, if attached.
+
+To connect a PPM-Sum receiver or an S.Bus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. The following S.Bus receivers have been tested and are known to work: FrSky `X8R <http://www.frsky-rc.com/product/pro.php?pro_id=105>`__, FrSky `XSR <http://www.frsky-rc.com/product/pro.php?pro_id=154>`__, Futaba R2008SB, Futaba R6008SB.
 
 .. image:: ../../../images/RCIN_connection.jpg
     :target: ../_images/RCIN_connection.jpg
