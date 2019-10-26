@@ -46,6 +46,7 @@ Pixhawk is compatible with
    #. Futaba S.Bus receivers
    #. Spektrum DSM and DSM2 receivers
    #. Spektrum DSM-X Satellite receivers
+   #. IBUS receivers
    #. MULTIPLEX SRXL version 1 and version 2 receivers.
 
 For traditional single-wire-per-channel (PWM) receivers a PPM encoder
