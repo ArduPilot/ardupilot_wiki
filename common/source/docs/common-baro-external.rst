@@ -10,7 +10,7 @@ Most flight controllers include a barometer directly on the flight controller bu
 
 .. warning::
 
-   Copter-3.6 only supports the Drotek MS5611.  BMP280 support will be released with Copter-3.7.
+   Copter-3.6 only supports the Drotek MS5611.  BMP280 support will be released with Copter-4.0.
 
 .. note::
 

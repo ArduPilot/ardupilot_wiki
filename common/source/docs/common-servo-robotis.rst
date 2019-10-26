@@ -12,7 +12,7 @@ Robotis servos using the "Robotis Protocol version 2.0" are supported.  Look for
 
 .. note::
 
-   Support for these servos is available in Copter-3.7, Plane-3.10 and Rover-3.5 (or higher)
+   Support for these servos is available in Copter-4.0, Plane-3.10 and Rover-3.5 (or higher)
 
 Where to Buy
 ------------
