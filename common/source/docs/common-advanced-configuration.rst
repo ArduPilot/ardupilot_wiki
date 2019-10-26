@@ -36,19 +36,18 @@ tuning options for the vehicle.
 [/site]
 [site wiki="plane"]
     Fly-By-Wire Low Altitude Limit <fly-by-wire-low-altitude-limit>
-    LUA Scripting <common-lua-scripts>
 [/site]
 [site wiki="copter"]
     Ground Effect Compensation <ground-effect-compensation>
-    LUA Scripting <common-lua-scripts>
-    Motor Thrust Scaling <motor-thrust-scaling>
 [/site]
-[site wiki="rover"]
+    Independent Watchdog <common-watchdog>
     LUA Scripting <common-lua-scripts>
+    Magnetic Interference <common-magnetic-interference>
+[site wiki="rover"]
     Motor Thrust Scaling <rover-motor-thrust-scaling>
 [/site]
-[site wiki="plane,planner,rover"]
-    Magnetic Interference <common-magnetic-interference>
+[site wiki="copter"]
+    Motor Thrust Scaling <motor-thrust-scaling>
 [/site]
 [site wiki="copter,rover"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
