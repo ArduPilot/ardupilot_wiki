@@ -11,7 +11,7 @@ The `HereFlow optical flow sensor <http://www.proficnc.com/all-products/185-pixh
 ..  youtube:: MKJB_7cA_0s
     :width: 100%
 
-Support for this sensor is available in Copter-3.7.0 (and higher)
+Support for this sensor is available in Copter-4.0.0 (and higher)
 
 Where to Buy
 ------------

@@ -10,7 +10,7 @@ KDECAN ESCs are high-end ESCs that allow control and feedback using a custom CAN
 
 .. note::
 
-    Support for these ESCs is included in Copter-3.7 (and higher), Plane-3.10 (and higher) and Rover-3.5 (and higher)
+    Support for these ESCs is included in Copter-4.0 (and higher), Plane-3.10 (and higher) and Rover-3.5 (and higher)
 
 Where To Buy
 ------------
