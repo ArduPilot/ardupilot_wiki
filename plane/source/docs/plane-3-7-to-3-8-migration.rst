@@ -1,8 +1,8 @@
 .. _plane-3-7-to-3-8-migration:
 
-===============================
-Migration from Plane 3.7 to 3.8
-===============================
+=========================================
+Archived: Migration from Plane 3.7 to 3.8
+=========================================
 
 This is a guide to migrating from plane 3.7 to plane 3.8. There have
 been a large number of configuration changes, so please read the guide

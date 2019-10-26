@@ -1,8 +1,10 @@
 .. _reversing-servos-and-setting-normalelevon-mode:
 
-===========================================
-Normal/Elevon/VTail Mode & Reversing Servos
-===========================================
+=====================================================
+Archived:Normal/Elevon/VTail Mode & Reversing Servos
+=====================================================
+
+.. note::  This page was duplicated content after a re-organization of topics
 
 There are a huge variety of control surface configurations possible in
 fixed wing aircraft, and ArduPilot supports most of them. The
