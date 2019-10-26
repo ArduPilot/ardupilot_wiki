@@ -51,6 +51,11 @@ value to users with old hardware.
     Landing Gear <landing-gear>
 [/site]
 
+[site wiki="plane"]
+    Migration from release 3.7 to 3.8 <plane-3-7-to-3-8-migration>
+    Mandatory Hardware Configuration <first-time-apm-setup>
+    Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
+[/site]
 [site wiki="dev"]
 .. toctree::
     :maxdepth: 1

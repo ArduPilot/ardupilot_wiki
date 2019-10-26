@@ -17,25 +17,15 @@ components, including those required for the operation of the autopilot.
 .. toctree::
     :maxdepth: 1
 
-    Mandatory Hardware Configuration <first-time-apm-setup>
-    Configuration Values for Common Airframes <configuration-files-for-common-airframes>
-    Choosing Servo Functions <servo-functions>
+    Basic System Overview <common-basic-operation>
+    Choosing Servo Output Functions <servo-functions>
+    RC Input Throw and Trim <rc-throw-trim>
+    Accelerometer Calibration <common-accelerometer-calibration>
+    Radio Control Calibration <common-radio-control-calibration>
+    RC Transmitter Flight Mode Configuration <common-rc-transmitter-flight-mode-configuration>
+    Compass Calibration <common-compass-calibration-in-mission-planner>
     ESC Calibration <guide-esc-calibration>
     Automatic Trim <auto-trim>
-    Four Channel Planes <guide-four-channel-plane>
-    Elevon Planes <guide-elevon-plane>
-    VTail Planes <guide-vtail-plane>
-    Quadplanes <quadplane-support>
-    Tailsitters <guide-tailsitter>
-    Tilt-Rotors <guide-tilt-rotor>
+    Failsafe Function <apms-failsafe-function>
     Basic FPV Plane <fpv-plane>
-    Orinthopters <ornithopter>
-    Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
-    Differential Spoilers & Full House Wing <differential-spoilers>
-    Flaperons <flaperons-on-plane>
-    Automatic Flaps <automatic-flaps>
-    Center of Gravity <guide-center-of-gravity>
-    RC Input Throw and Trim <rc-throw-trim>
-    Arming your Plane <arming-your-plane>
-    Advanced Failsafe Configuration <advanced-failsafe-configuration>
-    Sensor Testing <common-sensor-testing>
+
