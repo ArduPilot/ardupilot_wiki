@@ -7,11 +7,12 @@ Choosing Servo Functions
 .. note:: this page only applies for plane firmware version 3.8.0 and later. 
 
 The most fundamental setup for any plane is the servo output
-functions. Flight boards vary in the number of outputs they support,
-some with as few as 6 outputs and others with up to 16. Each of
+functions. Each type of plane frame type will require different servo output functions 
+to controls its motor(s) and control surfaces. Flight boards vary in the number of outputs 
+they support,some with as few as 6 outputs and others with up to 16. Each of
 these outputs can be configured as needed for your airframe.
 
-The default outputs are very simple:
+The default outputs for a standard plane frame are very simple:
 
 - servo output 1 is aileron
 - servo output 2 is elevator
@@ -19,7 +20,7 @@ The default outputs are very simple:
 - servo output 4 is rudder
 
 This is fine for many simple aircraft, but will need to be changed if
-you have elevons, a vtail, flaps or any other more complex setup.
+you have elevons, a vtail, flaps or any other more complex setup, such as QuadPlane or Tail-sitter.
 
 Overview
 ========
@@ -45,35 +46,13 @@ Available Output Functions
 ==========================
 
 Each of your servo outputs can be configured to a wide range of
-possible functions. The key options for traditional fixed wing
-aircraft are:
+possible functions. See the Plane Functions section of :ref:`common-rcoutput-mapping` section.
 
-.. raw:: html
-
-   <table border="1" class="docutils">
-   <tr><th>Function</th><th>Value</th></tr>
-   <tr><td>FLAP</td><td>2</td</tr>
-   <tr><td>AILERON</td><td>4</td></tr>
-   <tr><td>ELEVATOR</td><td>19</td></tr>
-   <tr><td>RUDDER</td><td>21</td></tr>
-   <tr><td>STEERING</td><td>26</td></tr>
-   <tr><td>THROTTLE</td><td>70</td></tr>
-   <tr><td>THROTTLE_LEFT</td><td>73</td></tr>
-   <tr><td>THROTTLE_RIGHT</td><td>74</td></tr>
-   <tr><td>ELEVON_LEFT</td><td>77</td></tr>
-   <tr><td>ELEVON_RIGHT</td><td>78</td></tr>
-   <tr><td>VTAIL_LEFT</td><td>79</td></tr>
-   <tr><td>VTAIL_RIGHT</td><td>80</td></tr>
-   </table>
-
-in addition, there are servo functions for vtol lifting motors on
-quadplanes, control of internal combustion engines, pass-thru of
+In addition, there are servo functions for control of internal combustion engines, pass-thru of
 controls from RC inputs, camera controls, control of motor tilt
 functions for tilt-rotors and many others. Those functions are
-discussed in other parts of the documentation.
+also discussed in the :ref:`common-rcoutput-mapping` section.
 
-The guide below will concentrate in the primary flight control
-surfaces of fixed wing aircraft.
 
 Controlling Servo Throw, Trim and Reversal
 ==========================================
@@ -129,22 +108,29 @@ should read the guide for your particular type of aircraft.
 Before you do that however, you should make sure you have correctly
 setup your :ref:`RC inputs <rc-throw-trim>`.
 
-- :ref:`4 Channel Plane Setup Guide <guide-four-channel-plane>`
-- :ref:`Elevon Plane Setup Guide <guide-elevon-plane>`
-- :ref:`VTail Plane Setup Guide <guide-vtail-plane>`
-- :ref:`QuadPlane Setup Guide <quadplane-support>`
-- :ref:`TiltRotor Setup Guide <guide-tilt-rotor>`
-- :ref:`Tailsitter Setup Guide <guide-tailsitter>`
+.. toctree::
+    :maxdepth: 1
+    
+    Four Channel Planes <guide-four-channel-plane>
+    Elevon Planes <guide-elevon-plane>
+    VTail Planes <guide-vtail-plane>
+    Quadplanes <quadplane-support>
+    Tailsitters <guide-tailsitter>
+    Tilt-Rotors <guide-tilt-rotor>
+    Orinthopter <ornithopter>
 
 Note that you can combine setups for more complex aircraft. So for
 example, you could setup a vtail tiltrotor quadplane by combining
 functions from the guides above.
 
-Final Setup
-===========
+Auxiliary Flying Surfaces
+-------------------------
 
-After completing the above you should move onto the final setup of
-your aircraft.
+In addition, auxiliary control surfaces, such as flaps and spoilers can be configured:
 
-- :ref:`ESC Calibration <guide-esc-calibration>`
-- :ref:`Center of Gravity <guide-center-of-gravity>`
+.. toctree::
+    :maxdepth: 1
+    
+    Differential Spoilers & Full House Wing <differential-spoilers>
+    Flaperons <flaperons-on-plane>
+    Automatic Flaps <automatic-flaps>

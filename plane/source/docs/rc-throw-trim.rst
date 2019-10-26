@@ -1,5 +1,6 @@
 .. _rc-throw-trim:
 
+==========================================
 Controlling Input Throw, Trim and Reversal
 ==========================================
 
@@ -50,6 +51,8 @@ For example, if you have:
 then channel 1 input will be roll (mapping to aileron), with a minimum
 PWM of 1100, a maximum of 1900 and a trim of 1500. The RC1_REVERSED
 value of zero means it is not reversed.
+
+.. note:: The process of doing :ref:`Radio Control Calibration <common-radio-control-calibration>` actually will set the TRIM,MIN,and MAX values of each RC input channel to match your Transmitter's output, so these values rarely need to be manually adjusted.
 
 Meaning of Reversed
 ===================
