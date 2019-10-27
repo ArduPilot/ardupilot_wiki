@@ -1,8 +1,8 @@
 .. _common-accelerometer-calibration:
 
-============================================
-Accelerometer Calibration in Mission Planner
-============================================
+=========================
+Accelerometer Calibration
+=========================
 
 [copywiki destination="copter,plane,rover,planner"]
 
@@ -11,10 +11,12 @@ This article shows how to perform basic accelerometer calibration (using
 
 .. note::
 
-   Accelerometer calibration is mandatory if you're :ref:`using EKF to estimate vehicle position <common-apm-navigation-extended-kalman-filter-overview>`.
+   Accelerometer calibration is mandatory in Ardupilot.
 
 Calibration steps
 =================
+
+.. warning:: If the board is mounted in a non-standard orientation (i.e. arrow is not pointing forward) then please ensure the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>`  is properly set before doing the accelerometer calibration.
 
 #. Under **Initial Setup \| Mandatory Hardware**, select **Accel
    Calibration** from the left-side menu.
