@@ -6,6 +6,9 @@ Auxiliary Functions
 
 This page describes how to set up additional features which can be invoked from the transmitter's auxiliary function switches.
 
+.. note::
+   Support for this feature has been added to Plane with firmware version 4.0
+
 Configuring which transmitter channel is used
 =============================================
 
