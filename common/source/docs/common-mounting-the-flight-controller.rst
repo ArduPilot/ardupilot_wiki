@@ -63,3 +63,6 @@ points off to the right).
 
 .. image:: ../../../images/MountingToFrame_MPBoardOrientation.png
     :target: ../_images/MountingToFrame_MPBoardOrientation.png
+
+.. warning:: If the board is mounted in a non-standard orientation (i.e. arrow is not pointing forward) then please ensure the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>`  is properly set before doing the accelerometer calibration.
+
