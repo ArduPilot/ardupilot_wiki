@@ -318,6 +318,8 @@ COPTER / QUADPLANE FUNCTIONS
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Landing Gear              | 29 |    Copter, Plane                                                |
 +--------------------------------+----+-----------------------------------------------------------------+
+|      Winch                     | 88 |    Copter                                                       |
++--------------------------------+----+-----------------------------------------------------------------+
 |      Rotor Head Speed          | 31 |    Traditional & Dual Helicopter, HeliQuad                      |
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Tail Rotor Speed          | 32 |    Traditional Helicopter                                       |
@@ -364,6 +366,11 @@ Landing Gear
 
 This output controls the landing gear servo(s) in Copter and Plane. See :ref:`landing-gear` for more information.
 
+Winch
++++++
+
+This output controls a winch for object delivery in Copter.
+
 Rotor Head Speed
 ++++++++++++++++
 
@@ -388,8 +395,6 @@ ROVER FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      Throttle Right            | 74 |    Plane, Rover                       |
 +--------------------------------+----+---------------------------------------+
-|      Winch                     | 88 |    Rover                              |
-+--------------------------------+----+---------------------------------------+
 |      Main Sail Sheet           | 89 |    Rover                              |
 +--------------------------------+----+---------------------------------------+
 
@@ -403,10 +408,10 @@ Throttle Left/ Right
 
 In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`.
 
-Winch/ Main Sail Sheet
+Main Sail Sheet
 ++++++++++++++++++++++
 
-These outputs are used to control the Main Sail in Rover based Sailboats. See :ref:`Sailing Vehicle Setup<sailboat-hardware>` setup for more information.
+This output is used to control the Main Sail in Rover based Sailboats. See :ref:`Sailing Vehicle Setup<sailboat-hardware>` setup for more information.
 
 ANTENNA TRACKER FUNCTIONS
 -------------------------
