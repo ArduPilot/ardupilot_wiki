@@ -147,7 +147,7 @@ Full Table of Contents
     CAN and UAVCAN <docs/can-bus>
     Companion Computers <docs/companion-computers>
     ROS <docs/ros>
-    Lua Scripts <common-lua-scripts>
+    Lua Scripts <docs/common-lua-scripts>
     Porting to a new Flight Controller <docs/porting>
     Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
