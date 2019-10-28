@@ -1,10 +1,10 @@
 .. _channel-7-and-8-options:
 
-===========================
-Auxiliary Function Switches
-===========================
+=============================================
+Auxiliary Function Switches (3.6 and earlier)
+=============================================
 
-This article shows how to set up which features are invoked from the transmitter's auxiliary function switches.
+This article shows how to set up which features are invoked from the transmitter's auxiliary function switches prior to Copter-4.0.
 AC3.2.1 and earlier allowed channels 7 and 8 to be used as auxiliary switches.  AC3.3 and higher supports channels 7 to 12.
 
 Configuration

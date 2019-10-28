@@ -12,16 +12,17 @@ tuning options for the vehicle.
 
 [site wiki="copter"]
     AutoTune <autotune>
-    Auxiliary Function Switches <channel-7-and-8-options>
+    Auxiliary Function Switches <common-auxiliary-functions>
+    Auxiliary Function Switches (3.6 and earlier) <channel-7-and-8-options>
     Baro Temperature Compensation <common-baro-temp-comp>
     Boat mode <boat-mode>
 [/site]
 [site wiki="rover"]
-    Auxiliary Functions <rover-auxiliary-functions>
+    Auxiliary Functions <common-auxiliary-functions>
     Boats with Vectored Thrust <rover-vectored-thrust>
 [/site]
 [site wiki="plane"]
-    Auxiliary Functions <plane-auxiliary-functions>
+    Auxiliary Functions <common-auxiliary-functions>
 [/site]
     CAN Bus Setup <common-canbus-setup-advanced>
     Compass Setup (Advanced) <common-compass-setup-advanced>
