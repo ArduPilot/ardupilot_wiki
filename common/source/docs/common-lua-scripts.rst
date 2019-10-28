@@ -1,5 +1,6 @@
 .. _common-lua-scripts:
 
+[copywiki destination="plane,copter,rover,dev"]
 ===========
 Lua Scripts
 ===========
