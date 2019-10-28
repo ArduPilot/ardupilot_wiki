@@ -33,6 +33,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
 [site wiki="copter"]
     Crop Sprayer <sprayer>
+    Delivery Winch <winch>
 [/site]
     Display (Onboard) <common-display-onboard>
     ESCs and Motors <common-escs-and-motors>
