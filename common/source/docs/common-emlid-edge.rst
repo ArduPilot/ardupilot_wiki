@@ -1,8 +1,8 @@
 .. _common-emlid-edge:
 
-==========
-Emlid Edge
-==========
+====================
+Archived: Emlid Edge
+====================
 
 The `Emlid Edge <https://emlid.com/edge/>`__ is an advanced flight controller with HDMI video input and 5.8 GHz data link which allows full HD video streaming and telemetry up to 2 km.  Dual temperature-controlled IMUs, external UAVCAN GNSS module and a wide range power module based on Hall sensor.
 

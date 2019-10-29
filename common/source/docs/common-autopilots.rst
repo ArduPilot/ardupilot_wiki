@@ -38,7 +38,6 @@ Closed hardware
     :maxdepth: 1
 
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
-    Emlid Edge <common-emlid-edge>
     Emlid NAVIO2 <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Holybro Durandal H7 <common-durandal-overview>
@@ -69,6 +68,7 @@ The following boards are no longer produced, however documentation is still avai
     :maxdepth: 1
 
     CUAV V5 <common-pixhackV5-overview>
+    Emlid Edge <common-emlid-edge>
     Erle PXFmini RPi Zero Shield <common-pxfmini>
     Erle ErleBrain <common-erle-brain-linux-autopilot>
     Intel Aero <common-intel-aero-overview>
