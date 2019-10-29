@@ -9,12 +9,12 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Oct 20th & 21st: CubePilot conference in Xiamen, China (`blog <https://discuss.ardupilot.org/t/2019-cubepilot-conference/46848>`__)
-- Mar 27th ~ 29th 2020: Developer Un-conference in Canberra, Australia
+- Mar 27th ~ 29th 2020: Developer Un-conference in Canberra, Australia (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-march-2020/48633>`__)
 
 Past Events
 -----------
 
+- Oct 20th & 21st: CubePilot conference in Xiamen, China (`blog <https://discuss.ardupilot.org/t/2019-cubepilot-conference/46848>`__)
 - Jun 20th to 22nd: SZUAVIA ArduPilot developer conference at Shenzhen UAV Expo in Shenzhen, China (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-shenzhen-china-21th-june-2019>`__)
 - Apr 29th to May 2nd 2019: `AUVSI Xponential <https://www.xponential.org/xponential2019/public/enter.aspx>`__ in Chicago.  Booth #4006 (`blog <https://discuss.ardupilot.org/t/ardupilot-and-partners-at-auvsi-xponential-2019/41428>`__)
 - Mar 23rd & 24th 2019: Developer Un-conference in Canberra Australia (`videos <https://www.youtube.com/playlist?list=PLC8WVaJJhN4wApCP6BkbDKQL_TkVHQqmy>`__, `post-event blog <https://discuss.ardupilot.org/t/ardupilot-unconference-2019/40155>`__, `intro blog <https://discuss.ardupilot.org/t/ardupilot-developer-meetup-in-canberra-march-23rd-and-24th-2019>`__)
