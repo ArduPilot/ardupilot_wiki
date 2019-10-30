@@ -140,8 +140,7 @@ and test again and repeat until its correct.
 Video guide
 ===========
 
-The following video guide also shows how to set up the LIDAR-Lite
-(referencing this wiki article):
+The video guide below shows the setup using PWM but is based on out-of-date instructions and skips the setting of the :ref:`RNGFND1_PIN <RNGFND1_PIN>` parameter
 
 ..  youtube:: FUT-ZsKGtxI
     :width: 100%
