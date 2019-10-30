@@ -94,7 +94,7 @@ The resistor can be between 200 Ohm and 1kOhm.  Connecting a resistor between th
 Set the following parameters:
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 5 "PWM"
--  :ref:`RNGFND1_PIN <RNGFND1_PIN>` = 55 "AUX5" (if using 4.0.0 or higher any Auxiliary output may be used)
+-  :ref:`RNGFND1_PIN <RNGFND1_PIN>` = 54 "AUX5" (if using 4.0.0 or higher any Auxiliary output may be used)
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 3500 (the maximum range the lidar can accurately report in cm)
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MAX_CM>` = 20 (the mininum range the lidar can accurately report in cm)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1 ("0.8" may produce more accurate readings for some units)
@@ -111,7 +111,7 @@ When using the PWM driver you can optionally configure the lidar to be disabled 
 
 Set the following parameters:
 
--  :ref:`RNGFND1_STOP_PIN <RNGFND1_STOP_PIN>` to 56 "AUX6" (other auxiliary pins may also be used)
+-  :ref:`RNGFND1_STOP_PIN <RNGFND1_STOP_PIN>` to 55 "AUX6" (other auxiliary pins may also be used)
 -  :ref:`RNGFND1_PWRRNG <RNGFND1_PWRRNG>` to a terrain height in meters above which the Lidar will be disabled to save power
 
 When the terrain data indicates that the vehicle is above the :ref:`RNGFND1_PWRRNG <RNGFND1_PWRRNG>` height the :ref:`RNGFND1_STOP_PIN <RNGFND1_STOP_PIN>` will be used to disable the Lidar
