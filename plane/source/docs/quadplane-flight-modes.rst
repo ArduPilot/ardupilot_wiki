@@ -14,6 +14,7 @@ extra modes. Most are identical to equivalent Copter modes:
     QLOITER   (Mode 19) <qloiter-mode>
     QLAND     (Mode 20) <qland-mode>
     QRTL      (Mode 21) <qrtl-mode>
+    QAUTOTUNE (Mode 22) <qautotune-mode>
     QACRO     (Mode 23) <qacro-mode>
 
 .. tip::
