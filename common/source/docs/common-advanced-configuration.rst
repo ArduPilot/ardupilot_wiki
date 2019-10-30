@@ -22,6 +22,7 @@ tuning options for the vehicle.
     Boats with Vectored Thrust <rover-vectored-thrust>
 [/site]
 [site wiki="plane"]
+    Advanced Failsafe <advanced-failsafe-configuration>
     Auxiliary Functions <common-auxiliary-functions>
 [/site]
     CAN Bus Setup <common-canbus-setup-advanced>
