@@ -54,7 +54,7 @@ DShot ESC protocol
 Dshot is a digital ESC protocol. In contrast to traditional servo-type PWM it allows fast, high resolution digital communication. This opens the door for more precise vehicle control. This is especially useful in multirotor and quadplane applications.
 
 ..  note::
-   Only try DShot on ESCs that are known to support it or you will get unpredictable results. Reverse thrust and virtual batteries are not yet supported in stable releases of ardupilot firmware.
+   Only try DShot on ESCs that are known to support it or you will get unpredictable results. Reverse thrust is supported in 4.0 and later firmware versions.
 
 The DShot ESC protocol's key advantages are:
 
