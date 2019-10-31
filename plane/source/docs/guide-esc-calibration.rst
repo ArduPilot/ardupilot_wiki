@@ -68,6 +68,13 @@ Next move the transmitter stick to full throttle and adjust SERVOx_MAX
 until maximum RPM is reached. You can use a tachometer, or just use
 the sound of the motor as a guide.
 
+Reversing PWM based ESCs
+========================
+
+If you are using a reversing ESC for reverse thrust ( see :ref:`Automatic Landing<automatic-landing>` section on Reverse Thrust Landing ), and its PWM based rather than CAN, OneShot, or DShot, then you may need to calibrate it. Usually, a button is provided for setting full forward, neutral, and full reverse. In this case, you will need to setup an RCx_OPTION on an RC channel to allow setting full reverse manually. Follow the manufacturers instructions for calibration.
+
+Most brushed motor ESCs have a fixed calibration which will require manually setting the throttle output's ``SERVOx_MAX``, and ``SERVOx_MIN`` parameters to match the ESCs maximum points.
+
 Other ESC Protocols
 ===================
 
