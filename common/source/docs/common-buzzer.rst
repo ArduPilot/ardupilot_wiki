@@ -14,7 +14,7 @@ A buzzer (or Tone Alarm) can be used to audibly indicate status changes for the 
 .. image:: ../../../images/buzzer.jpg
     :target: ../_images/buzzer.jpg
 
-If a passive piezo is used, it can play various :ref:`sounds <common-sounds-pixhawkpx4>` including the Arming buzz and Lost Vehicle Alarms (search for "Lost Copter Alarm" on :ref:`this page <channel-7-and-8-options>` , "Lost Plane" in the RCx_OPTIONS, for example, :ref:`RC5_OPTION <RC5_OPTION>` , or "Lost Rover" in the :ref:`Auxiliary Functions <rover-auxiliary-functions>`).
+If a passive piezo is used, it can play various :ref:`sounds <common-sounds-pixhawkpx4>` including the Arming buzz and Lost Vehicle Alarms (search for "Lost Copter Alarm" on :ref:`this page <channel-7-and-8-options>` , "Lost Plane" in the RCx_OPTIONS, for example, :ref:`RC5_OPTION <RC5_OPTION>` , or "Lost Rover" in the :ref:`Auxiliary Functions <common-auxiliary-functions>`).
 
 If an active buzzer is used, it can indicate the following:
 

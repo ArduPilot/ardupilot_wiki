@@ -35,7 +35,7 @@ The relays can be controlled with the auxiliary switches. For Copter:
     :target: ../_images/Relay_SetupCh7WithMP.png
 
 For Plane, setting the RCx_OPTION parameter, such as :ref:`RC5_OPTION<RC5_OPTION>` .
-For Rover, see :ref:`Auxiliary Functions<rover-auxiliary-functions>` .
+For Rover, see :ref:`Auxiliary Functions<common-auxiliary-functions>` .
 
 Mission control of the relay
 ============================
