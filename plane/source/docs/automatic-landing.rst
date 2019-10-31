@@ -394,10 +394,17 @@ The key parameters that control reverse thrust landing in addition to the ones :
 -  :ref:`LAND_PF_ARSPD <LAND_PF_ARSPD>`
 -  :ref:`USE_REV_THRUST <USE_REV_THRUST>`
 -  :ref:`TECS_APPR_SMAX <TECS_APPR_SMAX>`
--  :ref:`RC3_TRIM <RC3_TRIM>`
+-  :ref:`SERVO3_TRIM <SERVO3_TRIM>`
 -  :ref:`THR_MIN <THR_MIN>`
 
+Most important is to set the ::ref:`SERVO3_TRIM <SERVO3_TRIM>` (assuming the esc/motor is attached to output 3)to the point that the ESC is idle, usually around mid-range (1500us) to create an output curve that has :ref:`SERVO3_MAX<SERVO3_MAX>` for full forward thrust, and :ref:`SERVO3_MAX<SERVO3_MIN>` for full reverse thrust. This should be done AFTER the RC Calibrations setup step. The maximum amount of reverse thrust used in flight controller throttle controlled modes is set by :ref:`THR_MIN <THR_MIN>`. A value of -100 provides the maximum, while -20 would provide 20% of  maximum, and so on.
 
+The :ref:`USE_REV_THRUST <USE_REV_THRUST>` parameter is a bit mask that allows the setting of when reverse thrust can be activated, as when autolanding, or in other throttle controlled modes.
+
+If an ``RCx_OPTION`` auxiliary function has been set, then activating the switch will also provide access to the reverse thrust capability in non-throttle controlled modes, as shown in the figure below.
+
+
+.. image:: ../images/reversing.jpg
 
 ESC (Electronic Speed Controller)
 ---------------------------------
@@ -405,8 +412,7 @@ ESC (Electronic Speed Controller)
 Hardware selection and programming
 ++++++++++++++++++++++++++++++++++
 
-Most ESCs can operate in forwards and reverse, however that is usually not a stock feature and may need to be reprogrammed to do it. 
-Any SimonK and BLHeli compatible ESC can be flashed to support reverse thrust. 
+Many ESCs can operate in forwards and reverse, however that is usually not a stock feature and may need to be reprogrammed to do it. Any SimonK and BLHeli compatible ESC can be flashed to support reverse thrust.
 
 `Here's info about BLHeli compatible ones <https://blhelisuite.wordpress.com/>`__.
 
@@ -421,10 +427,7 @@ Hardware configuration
 Configure your ESC for reverse thrust by changing it's neutral point.
 Many ESC require custom firmware to accomplish this. Search Google or your ESC's mfgr for instructions on how to configure your particular ESC.
 
-Set these:
-
-#. Minimum PWM to 1000, mid to 1500, and maximum to 2000.
-#. ``THR_MIN`` to a negative value such -100. Next set ``RC3_TRIM`` (or whatever ``RCx`` is mapped to throttle via ``RCMAP_THROTTLE``) to your ESC's mid value.
+Set  Minimum PWM to 1000, mid to 1500, and maximum to 2000, corresponding to maximum reverse thrust,idle, and maximum positive thrust from the ESC/Motor.
 
 Determining your max glide slope angle
 --------------------------------------
