@@ -17,7 +17,7 @@ The :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEE
 
 One way to set the value is to:
 
-- set the :ref:`Auxiliary Function Switch <rover-auxiliary-functions>` to "Learn Cruise Speed"
+- set the :ref:`Auxiliary Function Switch <common-auxiliary-functions>` to "Learn Cruise Speed"
 - arm the vehicle and switch to :ref:`Manual <manual-mode>`
 - drive the vehicle at a speed close to the speed you would normally drive it at (in Auto or other modes)
 - move the aux function switch to the high position for a few seconds and then back down to the low position

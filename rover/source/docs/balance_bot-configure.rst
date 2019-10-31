@@ -59,7 +59,7 @@ The vehicle must be armed for the wheels to start moving. Check the :ref:`rover 
 
 .. tip:: Remove wheels before proceeding. 
 
-#. Set a :ref:`transmitter switch<rover-auxiliary-functions>` for arming. Ensure the channel used for the switch has been :ref:`calibrated<common-radio-control-calibration>`. To configure a channel for arming, for example channel 7, then set the parameter:
+#. Set a :ref:`transmitter switch<common-auxiliary-functions>` for arming. Ensure the channel used for the switch has been :ref:`calibrated<common-radio-control-calibration>`. To configure a channel for arming, for example channel 7, then set the parameter:
 
     - :ref:`RC7_OPTION<RC7_OPTION>` =41 (Sets function of channel 7 as arming/disarming)
 
