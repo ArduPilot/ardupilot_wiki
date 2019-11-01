@@ -11,23 +11,39 @@ information based upon your set-up.
 .. image:: ../../../images/Telemetry_LandingImage.jpg
     :target: ../_images/Telemetry_LandingImage.jpg
 
-
+Short Range (<10KM)
+===================
 
 .. toctree::
     :maxdepth: 1
 
     Bluetooth <common-mission-planner-bluetooth-connectivity>
     ESP8266 wifi telemetry <common-esp8266-telemetry>
-    FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
-    Yaapu FrSky Telemetry Script for OpenTX <common-frsky-yaapu>
     FrSky telemetry <common-frsky-telemetry>
-    RFD900 <common-rfd900>
-    Robsense SwarmLink <common-telemetry-robsense-swarmlink>
+    SiK Radio v1 <common-3dr-radio-v1>
     SiK Radio v2 <common-sik-telemetry-radio>
-    UAVCast 3G/4G Cellular <common-uavcast-telemetry>
-    XBee <common-telemetry-xbee>
-    Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
     SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
     SiK Radio advanced configuration <common-3dr-radio-advanced-configuration-and-technical-information>
-    SiK Radio v1 <common-3dr-radio-v1>
+    XBee <common-telemetry-xbee>
+    
+Long Range
+==========
+
+.. toctree::
+    :maxdepth: 1
+    
+    RFD900 <common-rfd900>
+    Robsense SwarmLink <common-telemetry-robsense-swarmlink>
+    SPL Satellite Telemetry <https://discuss.ardupilot.org/t/stretching-comm-links-from-indoors-to-the-globe/45896>
+    UAVCast 3G/4G Cellular <common-uavcast-telemetry>
+
+Applications and Info
+=====================
+
+.. toctree::
+    :maxdepth: 1
+    
+    FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
     Repeater for Wireless Ground Station Connections <common-wireless-gcs-repeater>
+    Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
+
