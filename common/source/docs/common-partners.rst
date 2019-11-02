@@ -225,97 +225,94 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://eaglepridedrones.com
 
-      - .. image:: ../../../images/supporters/supporters_logo_KDE_Direct.png
-            :width: 250px
-            :align: center
-            :target:  https://kdedirect.com
-
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Qifei.png
             :width: 250px
             :align: center
             :target:  https://agrobot.en.alibaba.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Mateksys.png
             :width: 250px
             :align: center
             :target:  http://mateksys.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Tiho_Aviation.png
             :width: 250px
             :align: center
             :target:  http://ardupilot.org/about/Partners
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Freespace.png
             :width: 250px
             :align: center
             :target:  https://freespace.solutions
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Holybro.png
             :width: 250px
             :align: center
             :target:  http://holybro.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_ASW.png
             :width: 250px
             :align: center
             :target:  https://aerosystemswest.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Bask_Aerospace.jpg
             :width: 250px
             :align: center
             :target:  https://baskaerospace.com.au
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_D_Makers.png
             :width: 250px
             :align: center
             :target:  http://itmakers.co.kr
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Hitec.png
             :width: 250px
             :align: center
             :target:  https://hitecnology.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_AeroScanTech.png
             :width: 250px
             :align: center
             :target:  https://aeroscantech.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Quaternium.png
             :width: 250px
             :align: center
             :target:  https://quaternium.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_NP_UAS_TS.png
             :width: 250px
             :align: center
             :target:  http://npuasts.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_AION_ROBOTICS.png
             :width: 250px
             :align: center
             :target:  https://aionrobotics.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_ALTI.jpg
             :width: 250px
             :align: center
             :target:  https://www.altiuas.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Flytrex.png
             :width: 250px
             :align: center
             :target:  https://www.flytrex.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_VimDrones.jpg
             :width: 250px
             :align: center
             :target:  https://vimdrones.com
+
+      -
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
