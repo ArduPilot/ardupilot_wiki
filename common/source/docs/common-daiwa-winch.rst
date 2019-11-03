@@ -1,5 +1,6 @@
 .. _common-daiwa-winch:
 
+[copywiki destination="copter"]
 ===========
 Daiwa Winch
 ===========
