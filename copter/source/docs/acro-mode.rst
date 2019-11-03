@@ -52,8 +52,8 @@ The :ref:`ACRO_TRAINER <ACRO_TRAINER>` parameter can be set to:
    no automatic leveling nor angle-limiting performed by the autopilot.
 -  1 = automatic leveling. The vehicle will automatically return to the
    level when the pilot releases the sticks. The aggressiveness with
-   which it returns to level can be controlled with the ACRO_BAL_ROLL
-   and ACRO_BAL_PITCH parameters. The default of 1.0 will cause it to
+   which it returns to level can be controlled with the :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>`
+   and :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameters. The default of 1.0 will cause it to
    return to level at up to 30deg/sec. Higher values will make it return
    more quickly.
 -  2 (Default) = automatic leveling and lean angle limited. Includes the
@@ -61,7 +61,7 @@ The :ref:`ACRO_TRAINER <ACRO_TRAINER>` parameter can be set to:
    lean more than 45 degrees (this angle can be configured with the
    ANGLE_MAX parameter).
 
-The trainer can be enabled/disabled using the Ch7/Ch8 switches.  With a
+The trainer can be enabled/disabled using the Ch7/Ch8 switches or a channel setup via its ``RCx_OPTION`` parameter.  With a
 3 position switch the off position (i.e. PWM < 1200) will disable the
 trainer, middle position will enable option #1 (automatic leveling) and
 the top position (i.e. PWM > 1800) will enable option #2 (leveling and
@@ -70,6 +70,17 @@ and option #2 (leveling & limited) are possible.
 
 .. image:: ../images/MP_Ch7_AcroTrainer.png
     :target: ../_images/MP_Ch7_AcroTrainer.png
+
+Traditional Helicopters
+=======================
+
+For Traditional Helicopters, this modes operates the same. However, experienced pilots might find that this mode has a slightly robotic feel, and attitude jumps as it lifts from the skids that they are not familiar with. In Copter-4.0 and later, a "Virtual Flybar" feature has been introduced, that simulates the classic feel of a flybar helicopter. By setting the :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` and :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameters to non-zero values, this feature takes effect. 
+
+The Virtual Flybar will add decay term to the attitude controller to bleed off accumulated differences between the current attitude and accumulated commanded attitude, if the copter has not quickly obtained it, such as when sitting on the ground but stick inputs are being given. Otherwise, when the helicopter clears it will jump to the accumulated commanded attitude when skids clear, perhaps surprisingly. This is familiar to Multicopter pilots.
+
+Values for :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` and :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameters ~ 2, will usually give good results.
+
+.. note:: This feature is not active when ACRO_TRAINER is active
 
 Tuning Parameters
 =================
