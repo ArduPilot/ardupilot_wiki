@@ -72,6 +72,13 @@ Tricopter
    should be set to -1 (from 1), See :ref:`TriCopter setup page <tricopter>` for
    details.)
 
+Bicopter
+---------
+
+.. image:: ../images/motororder-bicopter.png
+    :target: ../_images/motororder-bicopter.png
+    :scale: 40%
+
 Hexacopter
 ----------
 
