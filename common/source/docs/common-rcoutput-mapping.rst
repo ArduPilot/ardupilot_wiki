@@ -125,9 +125,9 @@ PLANE FUNCTIONS (Also applies to QuadPlanes)
 +--------------------------------+----+---------------------------------------+
 |      Throttle                  | 70 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Throttle Left             | 73 |    Plane, Rover                       |
+|      Throttle Left             | 73 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Throttle Right            | 74 |    Plane, Rover                       |
+|      Throttle Right            | 74 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
 |      Rudder                    | 21 |    Plane                              |
 +--------------------------------+----+---------------------------------------+
@@ -190,7 +190,8 @@ Typical servo output for motor power control for vehicles. Multiple outputs can 
 Throttle Left/ Right
 ++++++++++++++++++++
 
-In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`.
+In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, theses outputs are used for the Bicopter motors.
+
 
 Rudder
 ++++++
@@ -306,9 +307,13 @@ COPTER / QUADPLANE FUNCTIONS
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Motor Tilt                | 41 |    QuadPlane                                                    |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Tilt Motor Left           | 75 |    QuadPlane                                                    |
+|      Throttle Left             | 73 |    Plane, Copter, Rover                                         |
 +--------------------------------+----+-----------------------------------------------------------------+
-|      Tilt Motor Right          | 76 |    QuadPlane                                                    |
+|      Throttle Right            | 74 |    Plane, Copter, Rover                                         |
++--------------------------------+----+-----------------------------------------------------------------+
+|      Tilt Motor Left           | 75 |    Copter, QuadPlane                                            |
++--------------------------------+----+-----------------------------------------------------------------+
+|      Tilt Motor Right          | 76 |    Copter, QuadPlane                                            |
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Boost Engine Throttle     | 81 |    Copter, QuadPlane                                            |
 +--------------------------------+----+-----------------------------------------------------------------+
@@ -341,10 +346,16 @@ These are the Copter and Quadplane VTOL motor outputs. For Multi-Copters, see :r
 
 For Quadplanes, see :ref:`quadplane-frame-setup` for motor output configuration.
 
+Throttle Left/ Right
+++++++++++++++++++++
+
+In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, theses outputs are used for the Bicopter motors.
+
+
 Motor Tilt/ Tilt Motor Left/ Tilt Motor Right
 +++++++++++++++++++++++++++++++++++++++++++++
 
-These outputs control the tilt servos for :ref:`guide-tilt-rotor`.
+These outputs control the tilt servos for :ref:`guide-tilt-rotor` in Plane and Bicopters in Copter.
 
 Boost Engine Throttle
 +++++++++++++++++++++
@@ -391,9 +402,9 @@ ROVER FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      Throttle                  | 70 |    Plane, QuadPlane, Copter, Rover    |
 +--------------------------------+----+---------------------------------------+
-|      Throttle Left             | 73 |    Plane, Rover                       |
+|      Throttle Left             | 73 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
-|      Throttle Right            | 74 |    Plane, Rover                       |
+|      Throttle Right            | 74 |    Plane, Copter, Rover               |
 +--------------------------------+----+---------------------------------------+
 |      Main Sail Sheet           | 89 |    Rover                              |
 +--------------------------------+----+---------------------------------------+
@@ -406,7 +417,7 @@ Typical servo output for motor power control for vehicles. Multiple outputs can 
 Throttle Left/ Right
 ++++++++++++++++++++
 
-In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`.
+In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, theses outputs are used for the Bicopter motors.
 
 Main Sail Sheet
 ++++++++++++++++++++++
@@ -544,7 +555,7 @@ Either upon loading the firmware or selecting the frame type, certain default va
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
 | HeliQuad                           |33 |34 |35 |36 |0  |0  |0  |31 |0  |0   |0   |0   |
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
-| Fixed Wing Plane                   |4  |19 |21 |70 |0  |0  |0  |0  |0  |0   |0   |0   |
+| Fixed Wing Plan/ Tailsitter        |4  |19 |21 |70 |0  |0  |0  |0  |0  |0   |0   |0   |
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
 | Quadplane                          |4  |19 |21 |70 |33 |34 |35 |36 |0  |0   |0   |0   |
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
