@@ -89,7 +89,7 @@ Vectored Thrust
 
 If your tailsitter has vectored thrust then you should set the
 SERVOn_FUNCTION values for your two tilt servos for the left and right
-motors.
+motors and for the left and right motor throttles.
 
 For example, if your left tilt servo is channel 5 and your right tilt
 servo is channel 6, then set:
@@ -97,8 +97,13 @@ servo is channel 6, then set:
 - :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` =75
 - :ref:`SERVO6_FUNCTION<SERVO6_FUNCTION>` =76
 
+and you need to assign left throttle to the left motor and right throttle to the right motor, for example using the SERVO 7 and SERVO 8 outputs, for left and right motor escs, respectively:
+
+- :ref:`SERVO7_FUNCTION<SERVO7_FUNCTION>` =73
+- :ref:`SERVO8_FUNCTION<SERVO8_FUNCTION>` =74
+
 you also need to set the right SERVOn_REVERSED values, and the right
-SERVOn_TRIM, SERVOn_MIN and SERVOn_MAX values.
+SERVOn_TRIM, SERVOn_MIN and SERVOn_MAX values, as appropriate.
 
 :ref:`Q_A_ANGLE_BOOST<Q_A_ANGLE_BOOST>` should be disabled for vectored thrust tailsitters. Failure to disable this will cause the throttle to decrease as the nose dips, making the nose dip even further and resulting in a crash. 
 
