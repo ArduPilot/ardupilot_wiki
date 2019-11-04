@@ -16,6 +16,5 @@ The instructions for adding other hardware are covered in :ref:`Optional Hardwar
     Mounting the Flight Controller <common-mounting-the-flight-controller>
     Pixhawk Wiring and Quick Start <common-pixhawk-wiring-and-quick-start>
     NAVIO2 Wiring QuickStart <common-navio2-wiring-and-quick-start>
-    Edge QuickStart <common-edge-quick-start>
     Installing GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>
     Motor and Servo connections <rover-motor-and-servo-connections>
