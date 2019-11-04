@@ -15,7 +15,6 @@ instructions for adding other hardware are covered in
     Mounting the Flight Controller <common-mounting-the-flight-controller>
     Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>
     NAVIO2 Wiring QuickStart <common-navio2-wiring-and-quick-start>
-    Edge QuickStart <common-edge-quick-start>
     ESCs and Motors <connect-escs-and-motors>
     GPS+Compass Module <common-installing-3dr-ublox-gps-compass-module>
     Vibration Damping <common-vibration-damping>

@@ -27,8 +27,11 @@ value to users with old hardware.
     AttoPilot Current/Voltage Sensor <common-using-a-current-sensor>
     Erle-Brain2 Wiring Quick Start <common-erle-brain2-wiring-quick-start>
     PXFmini Wiring Quick Start <common-pxfmini-wiring-quick-start>
-[/site]
 
+[/site]
+[site wiki="copter,plane,rover"]
+    Edge Quick Start <common-edge-quick-start>
+[/site]
 [site wiki="copter"]
     Using Xbee radios for telemetry with APM <xbee-radios>
     Quick Start for RTFs <quick-start-guide>
