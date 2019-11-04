@@ -1,8 +1,8 @@
 .. _common-edge-qick-start:
 
-================
-Edge Quick Start
-================
+=========================
+Archived:Edge Quick Start
+=========================
 
 
 This quickstart tutorial will guide you through the initial setup of Edge drone controller and its accessories.
