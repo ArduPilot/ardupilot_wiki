@@ -32,6 +32,8 @@ Specifications
    -  USB port
    -  3S to 6S input power
 
+.. note:: This controller does not integrate a barometer which Ardupilot requires for proper operation, so an external barometer must be attached.
+
 Dshot capability
 ================
 
