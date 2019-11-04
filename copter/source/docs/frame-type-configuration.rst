@@ -20,7 +20,7 @@ If using Copter-3.5 (or higher) firmware a "Frame Class" section should be visib
 
 Next select the frame "Type" for your vehicle. The default type is **X**.
 
-For Tricopters, Y6, Traditional Helicopters, SingleCopters and CoaxCopters the frame type is ignored.
+For Tricopters, Y6, Traditional Helicopters, Bicopters, SingleCopters and CoaxCopters the frame type is ignored.
 
 Motor Order Diagrams
 ====================
