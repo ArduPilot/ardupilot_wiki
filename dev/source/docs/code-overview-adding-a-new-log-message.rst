@@ -36,8 +36,8 @@ An example of the top function being used can be found in `Compass_learn.cpp <ht
                                                num_samples);
 
 - the 1st argument is the message name.  This should be 4 characters or less and be unique
-- the 2nd argument is a comma separated list of field names
-- the 3rd argument is a format string with each letter holding the format for the corresponding field.  The meaning of each letter can be found `here in AP_Logger/LogStructure.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L6>`__
+- the 2nd argument is a comma separated list of up to 16 field names; with a limit of 64 characters in total
+- the 3rd argument is a format string (maximum of 16 characters) with each letter holding the format for the corresponding field.  The meaning of each letter can be found `here in AP_Logger/LogStructure.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L6>`__
 - the remaining arguments are the actual values that will be logged.
   You may notice in the example above, some fields have a format of float ("f") but are cast to ``(double)`` this is correct and necessary to avoid a compiler warning.
 
