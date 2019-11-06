@@ -7,7 +7,7 @@ Polygon Fence
 Overview
 ========
 
-Copter 3.4 (and higher) include support for a polygon fence with up to 84 points.  The purpose of this fence is to attempt to stop your vehicle from flying out of the polygon by initiating an RTL or, if flying in Loiter mode, the vehicle will normally stop before breaching the fence.  This feature is an extension of the simpler :ref:`circular fence <ac2_simple_geofence>`.
+Copter 3.4 (and higher) include support for a polygon fence with up to 70 points.  The purpose of this fence is to attempt to stop your vehicle from flying out of the polygon by initiating an RTL or, if flying in Loiter mode, the vehicle will normally stop before breaching the fence.  This feature is an extension of the simpler :ref:`circular fence <ac2_simple_geofence>`.
 
 .. note::
 
