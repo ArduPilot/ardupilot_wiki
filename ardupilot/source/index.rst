@@ -82,6 +82,11 @@ point-and-click interaction with your hardware, custom scripting, and simulation
 
 --------------
 
+Regulations:
+============
+
+Every country has different regulations governing the operation of remote controlled and/or autonomous vehicles. `This database <https://droneregulations.info>`__  has country specific information, but it is every operator's responsibility to be seek out and be aware of local, regional, and federal regulations.
+
 Community:
 ==========
 .. tip::
