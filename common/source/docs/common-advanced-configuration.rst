@@ -10,6 +10,7 @@ tuning options for the vehicle.
 .. toctree::
     :maxdepth: 1
 
+    Advanced Failsafe <common-advanced-failsafe-configuration>
 [site wiki="copter"]
     AutoTune <autotune>
     Auxiliary Function Switches <common-auxiliary-functions>
@@ -22,7 +23,6 @@ tuning options for the vehicle.
     Boats with Vectored Thrust <rover-vectored-thrust>
 [/site]
 [site wiki="plane"]
-    Advanced Failsafe <advanced-failsafe-configuration>
     Auxiliary Functions <common-auxiliary-functions>
 [/site]
     CAN Bus Setup <common-canbus-setup-advanced>

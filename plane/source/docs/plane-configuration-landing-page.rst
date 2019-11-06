@@ -37,5 +37,5 @@ components, including those required for the operation of the autopilot.
     Center of Gravity <guide-center-of-gravity>
     RC Input Throw and Trim <rc-throw-trim>
     Arming your Plane <arming-your-plane>
-    Advanced Failsafe Configuration <advanced-failsafe-configuration>
+    Advanced Failsafe Configuration <common-advanced-failsafe-configuration>
     Sensor Testing <common-sensor-testing>
