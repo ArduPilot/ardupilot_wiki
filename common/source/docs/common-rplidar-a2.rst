@@ -48,4 +48,4 @@ It may be necessary to turn off flow control if using Telem1 (aka Serial1) or Te
 
 - :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` =  "0" if using Serial1
 
-More details on using this sensor for object avoidance on Copter can be found :ref:`here <copter-object-avoidance>`.
+More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.

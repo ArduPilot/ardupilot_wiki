@@ -39,4 +39,4 @@ Configuration through the Ground Station
 - :ref:`PRX_ORIENT <PRX_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 - :ref:`PRX_YAW_CORR <PRX_YAW_CORR>` allows adjusting the forward direction of the SF40c.  Even with the sensor's lightware logo pointed forwards, in testing the lidar has reported objects 20 ~ 30degrees off from their actual direction.  The best way to determine this value is to place an object in front of the sensor, connect a PC to the sensor using a USB cable, then open the Lightware Terminal application and enter "?TS,90,0" (search light, 90 degree wide beam directly forward).  The sensor should return two numbers, an angle and a distance.  The negative of the angle should be entered into the :ref:`PRX_YAW_CORR <PRX_YAW_CORR>` parameter.
 
-More details on using this sensor for object avoidance on Copter can be found :ref:`here <copter-object-avoidance>`.
+More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
