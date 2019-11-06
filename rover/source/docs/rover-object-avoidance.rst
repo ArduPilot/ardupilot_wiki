@@ -1,8 +1,8 @@
 .. _rover-object-avoidance:
 
-================
-Object Avoidance
-================
+==========================
+Archived: Object Avoidance
+==========================
 
 Rover supports two forms of object avoidance which can be enabled separately or simultaneously
 

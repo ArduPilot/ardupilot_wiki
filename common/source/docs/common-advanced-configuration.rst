@@ -54,15 +54,8 @@ tuning options for the vehicle.
 [/site]
 [site wiki="copter"]
     Notch Filter Configuration <common-imu-notch-filtering>
-    Object Avoidance <copter-object-avoidance>
 [/site]
-[site wiki="rover"]
-    Object Avoidance <rover-object-avoidance>
-[/site]
-[site wiki="copter,rover"]
-    Object Avoidance with Bendy Ruler <common-oa-bendyruler>
-    Object Avoidance with Dijkstra's <common-oa-dijkstras>
-[/site]
+    Object Avoidance <common-object-avoidance-landing-page>
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
     RC Input Channel Mapping (RCMAP) <common-rcmap>

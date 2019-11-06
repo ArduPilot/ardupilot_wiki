@@ -4,8 +4,9 @@
 Rangefinders (landing page)
 ===========================
 
-Copter/Plane/Rover support a number of different rangefinders including
-Maxbotix Sonar and Pulsed Light LED range finders. Rangefinders are used to provide precise altitude information when close to the ground and/or provide proximity sensing for object avoidance.
+Copter/Plane/Rover support a number of different rangefinders including Lidars (which use lasers or infra-red beams for distance measurements) and Sonars (which use ultrasonic sound), and also includes Maxbotix Sonar and Pulsed Light LED range finders. These devices can be used for measuring distance near to  the ground for precision landings and altitude control, water depth, or object distance as proximity sensors for avoiding objects.
+
+360 degree Lidars are typically used in object avoidance as proximity sensors. While multiple 1D (single dimensional) sensors can be used for proximity detection.
 
 [site wiki="plane"]
 .. tip::
@@ -19,14 +20,14 @@ Maxbotix Sonar and Pulsed Light LED range finders. Rangefinders are used to prov
 [site wiki="copter"]
 .. note::
 
-   Downward facing Lidar are used in flight modes which have height control, such
+   Downward facing rangefinders are automatically used in flight modes which have height control, such
    as Altitude Hold, Loiter and PosHold Mode.  The data from the sensor
    will be used until you exceed RNGFND_MAX_CM, after that it switches to
    the barometer.
 
    Copter-3.4 (and higher) includes support for :ref:`Terrain Following <terrain-following>` in Auto mode.
 
-   Copter-3.5 (and higher) can use lidar for :ref:`object avoidance <copter-object-avoidance>`.
+   Copter-3.5 (and higher) and Rover-3.5 (and higher) can use rangefinders for :ref:`Object Avoidance <common-object-avoidance-landing-page>`.
 [/site]
 
    
@@ -45,7 +46,9 @@ based upon your set-up.
 
 .. toctree::
     :maxdepth: 1
-    
+
+    Rangefinder Setup Overview <common-rangefinder-setup>
+
 [site wiki="rover"]
     Sonar Sensors <sonar-sensors>
 [/site]

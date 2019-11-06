@@ -1,8 +1,9 @@
-.. _ac2_simple_geofence:
+.. _common-ac2_simple_geofence:
 
-===============
-Simple GeoFence
-===============
+[copywiki destination="copter,rover"]
+====================
+Cylindrical GeoFence
+====================
 
 Overview
 ========
@@ -10,10 +11,10 @@ Overview
 AC 3.0.1 (and higher) includes a simple "tin can" shaped fence centered
 on home that will attempt to stop your copter from flying too far away
 by stopping at the fence (if in Loiter mode and using Copter-3.4 or higher) or initiating an RTL.
-The maximum circular distance and altitude and the vehicle behaviour when the fence is reached can be configured using
+The maximum circular distance and altitude and the vehicle behavior when the fence is reached can be configured using
 Mission Planner.
 
-.. image:: ../images/copter_simple_tincan_geofence.jpg
+.. image:: ../../../images/copter_simple_tincan_geofence.jpg
     :target: ../_images/copter_simple_tincan_geofence.jpg
 
 If the vehicle strays outside these borders it will switch into RTL or
@@ -35,7 +36,7 @@ home.
 Enabling the Fence in Mission Planner
 =====================================
 
-.. image:: ../images/Fence_MPSetup.png
+.. image:: ../../../images/Fence_MPSetup.png
     :target: ../_images/Fence_MPSetup.png
 
 The Fence can be set-up by doing the following:
@@ -51,19 +52,25 @@ The Fence can be set-up by doing the following:
 -  Set "Max Radius" to the maximum distance from home you want (in
    meters).  This should normally be at least 50m
 
-Enabling the fence with Channel 7 or 8
-======================================
+Enabling the fence with an RC Channel Auxiliary Switch
+======================================================
 
 It is not necessary to set-up a switch to enable or disable the fence
 but if you wish to control the fence with a switch please follow these
 steps:
 
+for firmware versions before 4.0:
+
 -  Go to the Mission Planner's Config/Tuning > Extended Tuning screen and set
-   either "Ch7 Opt" OR "Ch8 Opt" to Fence.
+   either "Ch7 Opt" OR "Ch8 Opt" to Fence. These parameters can also be directly set from the Config/Tuning > Full Parameter List screen
+   
+alternatively, for firmware versions 4.0 or later, an RCx_OPTION can be set via the Config/Tuning > Full Parameter List screen:
+
+-  Use an RCx_OPTION set to Fence
 -  holding the switch high (i.e. PWM > 1800) will enable the fence, low
    (under 1800) will disable the fence.
 
-.. image:: ../images/Fence_MPCh78.png
+.. image:: ../../../images/Fence_MPCh78.png
     :target: ../_images/Fence_MPCh78.png
 
 Warnings:

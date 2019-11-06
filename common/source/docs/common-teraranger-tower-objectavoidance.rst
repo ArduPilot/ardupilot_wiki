@@ -1,8 +1,8 @@
 .. _common-teraranger-tower-objectavoidance:
 
-============================
-TeraRanger Tower (360 Lidar)
-============================
+================================
+TeraRanger Tower/EVO (360 Lidar)
+================================
 
 The `TeraRanger Tower <https://www.terabee.com/portfolio-item/teraranger-tower-scanner-for-slam-and-collision-avoidance/>`__ can be used for Object Avoidance in Copter-3.5 and higher in Loiter and AltHold modes.  The sensor has a maximum useable range of about 4.5 meters.
 
@@ -35,4 +35,4 @@ Configuration through the Ground Station
 - :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` =  "921" if using Serial4.
 - :ref:`PRX_TYPE <PRX_TYPE>` = "3" to enable the TeraRanger Tower (or 0 to disable).
 
-More details on using this sensor for object avoidance on Copter can be found :ref:`here <copter-object-avoidance>`.
+More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
