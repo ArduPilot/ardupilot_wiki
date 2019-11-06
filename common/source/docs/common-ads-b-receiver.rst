@@ -1,6 +1,5 @@
 .. _common-ads-b-receiver:
 
-[copywiki destination="copter,plane"]
 
 ==============
 ADS-B Receiver

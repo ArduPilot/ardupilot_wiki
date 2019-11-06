@@ -49,6 +49,9 @@ value to users with old hardware.
     Copter Project News <project-news>
     Troubleshooting <troubleshooting>
     Landing Gear <landing-gear>
+    [/site]
+[site wiki="rover"]
+    Pre-4.0 Rover Avoidance <rover-object-avoidance>
 [/site]
 
 [site wiki="plane"]
