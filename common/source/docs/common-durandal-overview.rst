@@ -7,7 +7,7 @@ Holybro Durandal
     :width: 360px
 
 Durandal is the latest update to the successful family of Holybro flight controllers.
-It was designed and developed by Holybro, optimized to run the latest Ardupilot firmware.
+It was designed and developed by Holybro, optimized to run the latest ArduPilot firmware.
 It features the STM32H743 microprocessor, the latest advanced processor technology from STMicroelectronics®,
 plus sensor technology from Bosch® and InvenSense®, and a ChibiOS real-time operating system, delivering incredible
 performance, flexibility, and reliability for controlling any autonomous vehicle.

@@ -23,13 +23,13 @@ but is also used in many other contexts.
 All nodes are connected to each other through a two wire bus. The wires are
 120 Ω nominal twisted pair.
 
-Most flight controllers that run Ardupilot have either one or two CAN interfaces
+Most flight controllers that run ArduPilot have either one or two CAN interfaces
 for connection of different devices.
 The setup of the interfaces can be made in a way that will provide redundancy or
 maximum throughput or a mix of both.
 This is accomplished with a three layer approach, where apart from the physical
 interface there exist a driver layer that represents a specific protocol and a
-software layer (Ardupilot) that communicates on CAN bus through these drivers.
+software layer (ArduPilot) that communicates on CAN bus through these drivers.
 
 Each physical interface can be virtually connected to one of the drivers that
 represent protocols to be used.

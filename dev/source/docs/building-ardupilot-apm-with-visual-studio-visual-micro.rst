@@ -8,7 +8,7 @@ Archived: Building ArduPilot with Atmel Studio or Visual Studio &amp; Visual Mic
 
    **ARCHIVED ARTICLE**
 
-   Ardupilot no longer supports Arduino or AVR.
+   ArduPilot no longer supports Arduino or AVR.
 
 This tutorial provides instructions for how to set up and build AMP
 using Atmel Studio 6.2 or Microsoft Visual Studio with the `Visual Micro <https://www.visualmicro.com/>`__ plugin.

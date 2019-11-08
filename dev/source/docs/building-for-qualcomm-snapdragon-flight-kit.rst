@@ -8,7 +8,7 @@ Archived: Building for Qualcomm Snapdragon Flight Kit
 
    **ARCHIVED ARTICLE**
 
-   Ardupilot no longer supports Qualcomm Snapdragon Flight Kit.
+   ArduPilot no longer supports Qualcomm Snapdragon Flight Kit.
 
 This article shows how to build ArduPilot for 
 :ref:`Qualcomm® Snapdragon Flight™ Kit (Developer’s Edition) <copter:common-qualcomm-snapdragon-flight-kit>`

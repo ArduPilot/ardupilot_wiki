@@ -16,7 +16,7 @@ UAVcast-Pro - Raspberry Pi software for LTE / WiFi Drones
 .. figure:: https://uavmatrix.com/wp-content/uploads/2018/08/ipad.png
    :target:  https://uavmatrix.com/uavcast-pro/
 
-`UAVcast-Pro <https://uavmatrix.com/uavcast-pro/>`__ is an application which simplifies the process to communicate with your Ardupilot
+`UAVcast-Pro <https://uavmatrix.com/uavcast-pro/>`__ is an application which simplifies the process to communicate with your ArduPilot
 flight controller over cell or WiFi network. Create the ultimate 4G / 5G / LTE Drone in couple of clicks.
 
 Everything can be configured from a responsive web interface which can be accessed from any devices such as phone, tablet, desktop.
@@ -70,7 +70,7 @@ Alfonce Remote Gateway - Companion Computer
 .. figure:: https://www.dronotique.fr/wp-content/uploads/2018/10/offre_complete-300x215.jpg
    :target:  https://www.dronotique.fr/produit/alfonce-remote-gateway/
 
-`Alfonce Remote Gateway <https://www.dronotique.fr/produit/alfonce-remote-gateway/>`__ is a turn key companion computer to interface cameras, Ardupilot and ground stations over cell Network, Wifi and RC transmitter.
+`Alfonce Remote Gateway <https://www.dronotique.fr/produit/alfonce-remote-gateway/>`__ is a turn key companion computer to interface cameras, ArduPilot and ground stations over cell Network, Wifi and RC transmitter.
 
 **It integrates :**
 
@@ -117,7 +117,7 @@ XBStation - Platform For Internet Drone Base On Real Time 4G/5G Connectivity
 * Multiple Vehicles Control with MissionPlanner
 * Sharing Telemetry Data and Video Streaming to Your Partners/Customers
 * Realtime Vehicle Informations (GPS, Battery, Roll, Pitch, Yaw, ...) API
-* HD Streaming Live Ardupilot Drone Footage to Your Application/Youtube/Facebook
+* HD Streaming Live ArduPilot Drone Footage to Your Application/Youtube/Facebook
 * OpenVPN
 * XB Server for reliable connections
 

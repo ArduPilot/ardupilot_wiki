@@ -75,7 +75,7 @@ To build for a Cube/Pixhawk target on Linux you need the
 following tools and git repositories:
 
 -  The gcc-arm cross-compiler from `here <http://firmware.ardupilot.org/Tools/STM32-tools/>`__
-   (Ardupilot is only built and tested on these specific versions of gcc-arm; if installed
+   (ArduPilot is only built and tested on these specific versions of gcc-arm; if installed
    with ``apt-get`` gcc-arm will not produce a working binary in many cases)
 -  gnu make, gawk and associated standard Linux build tools
 -  On a 64 bit system you will also need to have installed libc6-i386.
@@ -171,7 +171,7 @@ Build the docker image and tag it with the name ardupilot:
 
     docker build . -t ardupilot
 
-Run Ardupilot Container
+Run ArduPilot Container
 -----------------------
 The following command runs the docker container, linking your current directory with
 the ardupilot source, and launches an interactive shell inside the container. From here

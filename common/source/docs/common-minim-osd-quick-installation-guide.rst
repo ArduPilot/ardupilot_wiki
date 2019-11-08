@@ -83,7 +83,7 @@ MWOSD
 * The support thread is located `here <https://fpvlab.com/forums/showthread.php?34250-MWOSD-for-BETAFLIGHT-CLEANFLIGHT-RACEFLIGHT-PIXHAWK-KISS-DRONIN-INAV-and-others>`__.
 
 
-MWOSD is a very popular OSD which has been around for many years initially supporting the muiltiwii based flight controllers - iNav, betaflight, etc. Recent versions now provides full support for Ardupilot based FC.
+MWOSD is a very popular OSD which has been around for many years initially supporting the muiltiwii based flight controllers - iNav, betaflight, etc. Recent versions now provides full support for ArduPilot based FC.
 
 MWOSD has an easy to use GUI configurator which has the added advantage of being able to flash firmware versions directly from within the GUI. Arduino or third party software is no longer required.
 
@@ -93,7 +93,7 @@ MWOSD continues to be actively developed and supported.
 * Modern GUI configurator with ability to flash hardware directly from within GUI
 * Drag / drop easy configurable screen layouts
 * Autoconfigures mavlink for highe rperformance
-* OSD also fully supports many different FC types other than Ardupilot
+* OSD also fully supports many different FC types other than ArduPilot
 * MAX7456 renew doing in VSYNC to get rid of "snow" on screen but on interrupt instead of SPI polling
 * 3 screens instead of 2
 * Individual control of sign icon visibility of each panel per screen

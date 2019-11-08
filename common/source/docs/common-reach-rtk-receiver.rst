@@ -42,7 +42,7 @@ A Reach unit mounted on the vehicle can receive base corrections over telemetry 
 .. image:: ../../../images/Reach_pixhawk_radio.jpg
 	:target: ../_images/Reach_pixhawk_radio.jpg
 
-For more information on Reach and Pixhawk integration, visit `Reach Ardupilot integration docs <https://docs.emlid.com/reach/ardupilot-integration/>`__.
+For more information on Reach and Pixhawk integration, visit `Reach ArduPilot integration docs <https://docs.emlid.com/reach/ardupilot-integration/>`__.
 
 Read about Reach and its other applications:
 

@@ -4,12 +4,12 @@
 CAN bus and UAVCAN protocol
 ===========================
 
-Support for CAN bus messaging in Ardupilot relies on two parts:
+Support for CAN bus messaging in ArduPilot relies on two parts:
 
 - Hardware CAN bus support that is done with HAL drivers
 - UAVCAN protocol which is responsible for handling all high level work
 
-CAN bus support in Ardupilot
+CAN bus support in ArduPilot
 ============================
 
 The base for hardware CAN bus support is located in AP_HAL library and
@@ -29,7 +29,7 @@ UAVCAN protocol
 ===============
 
 The support for UAVCAN protocl is based on AP_UAVCAN class that is wrapping interaction
-with Libuavcan and provides access points for other libraries present in Ardupilot. It is
+with Libuavcan and provides access points for other libraries present in ArduPilot. It is
 responsible for sending the messages over CAN bus with UAVCAN protocol, receiving the messages,
 translation of messages to form that is acceptable to other libraries and provide cyclic
 update of Libuavcan.

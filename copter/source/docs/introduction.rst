@@ -11,7 +11,7 @@ Copter is an advanced open-source autopilot system for multicopters, helicopters
 
 As part of the wider ArduPilot software platform it works seamlessly with a variety of :ref:`Ground Control Station programs <common-choosing-a-ground-station>`
 that are used to setup the vehicle, monitor the vehicle's flight in real-time and perform powerful mission planning activities.
-It also benefits from other parts of the Ardupilot ecosystem, including simulators, log analysis tools, and higher level APIs for vehicle control.
+It also benefits from other parts of the ArduPilot ecosystem, including simulators, log analysis tools, and higher level APIs for vehicle control.
 
 ArduPilot is already a preferred platform for numerous commercially available autopilot systems but you can also use it to enhance the abilities of your own DIY multirotor.
 

@@ -188,9 +188,9 @@ Features:
    Companion Computers <http://ardupilot.org/dev/docs/companion-computers.html>
    Developers <http://ardupilot.org/dev/index.html>
    Firmware Downloads <docs/common-downloads_firmware>
-   The Ardupilot Team <docs/common-team>
-   The History of Ardupilot<docs/common-history-of-ardupilot>
-   Ardupilot Partners Program <docs/common-partners-program>
+   The ArduPilot Team <docs/common-team>
+   The History of ArduPilot<docs/common-history-of-ardupilot>
+   ArduPilot Partners Program <docs/common-partners-program>
    Commercial Support <docs/common-commercial-support>
    Acknowledgements <docs/common-acknowledgments>
    Hardware Vendors <docs/common-stores>

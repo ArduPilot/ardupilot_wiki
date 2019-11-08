@@ -8,7 +8,7 @@ Archived: Building ArduPilot for APM2.x on Linux with Make
 
    **ARCHIVED ARTICLE**
 
-   Ardupilot no longer supports make, Arduino or AVR.
+   ArduPilot no longer supports make, Arduino or AVR.
 
 Quick start
 ===========

@@ -8,7 +8,7 @@ Archived: Building ArduPilot for Flymaple on Linux
 
    **ARCHIVED ARTICLE**
 
-   Ardupilot no longer supports FlyMaple.
+   ArduPilot no longer supports FlyMaple.
 
 .. note::
 

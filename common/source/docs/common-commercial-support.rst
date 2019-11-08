@@ -32,7 +32,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line"><br/></div>
             <div class="line">Vehicle Design/Integration, Vehicle Setup</div>
             <div class="line">Trouble Shooting and support (log review, vehicle support)</div>
-            <div class="line">Customization of Ardupilot code, Companion Computer setup</div>
+            <div class="line">Customization of ArduPilot code, Companion Computer setup</div>
             </div>
         </td>
     </tr>
@@ -53,7 +53,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         <td><div class="first last line-block">
             <div class="line">Leonard Hall, <a href="mailto:leonard@freespacesolutions.com.au?Subject=ArduPilot%20commercial%20support" target="_top">leonard@freespacesolutions.com.au</a></div>
             <div class="line"><br/></div>
-            <div class="line">Leonard is responsible for Ardupilot’s multicopter attitude,</div>
+            <div class="line">Leonard is responsible for ArduPilot’s multicopter attitude,</div>
             <div class="line">navigation and motor control libraries and developed AutoTune.</div>
             <div class="line">Multirotor Tuning,Airframe design and performance optimisation</div>
             <div class="line">Navigation and attitude controller features,Flight mode design</div>
@@ -137,7 +137,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         <td><div class="first last line-block">
             <div class="line">David Buzz Bussenschutt, <a href="mailto:davidbuzz@gmail.com?Subject=ArduPilot%20commercial%20support" target="_top">davidbuzz@gmail.com</a></div>
             <div class="line"><br/></div>
-            <div class="line">Consultation Services, Customizations of Ardupilot code</div>
+            <div class="line">Consultation Services, Customizations of ArduPilot code</div>
             <div class="line">Microcontroller Development including Pixhawk (ARM Cortex),</div>
             <div class="line">RFD900/SiK (8051), esp8266 wifi, Web Software Development</div>
             <div class="line">Ground Control Station development, Vehicle Design.</div>
@@ -185,7 +185,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         <td><div class="first last line-block">
             <div class="line">Aerotech LLC, <a href="mailto:info@avia-technologies.com?Subject=ArduPilot%20commercial%20support" target="_top">info@avia-technologies.com</a></div>
             <div class="line"><br/></div>
-            <div class="line">Consultation Services, Customizations of Ardupilot code, Airframe</div>
+            <div class="line">Consultation Services, Customizations of ArduPilot code, Airframe</div>
             <div class="line">Custom electronics and mechanical design and manufacturing,</div>
             <div class="line">Plane Setup, Training and testing, Groundstation systems design</div>
             <div class="line">Groundstation systems design and manufacturing</div>

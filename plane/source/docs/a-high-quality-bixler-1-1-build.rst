@@ -38,7 +38,7 @@ The Equipment List
 #. Y-servo-cable to connect both aileron servos together to one flight controller output.
 
 
-.. note:: This flight controller is no longer supported. See the current flight controller :ref:`list<common-autopilots>` . OmnibusF4 Pro V3 is an inexpensive alternative. Any UBLOX MN-8 class GPS works well, such as a BN-220. A compass (gps/compass combo parts are available) is not necessary for Ardupilot on planes.
+.. note:: This flight controller is no longer supported. See the current flight controller :ref:`list<common-autopilots>` . OmnibusF4 Pro V3 is an inexpensive alternative. Any UBLOX MN-8 class GPS works well, such as a BN-220. A compass (gps/compass combo parts are available) is not necessary for ArduPilot on planes.
 
 Getting Started
 ===============
