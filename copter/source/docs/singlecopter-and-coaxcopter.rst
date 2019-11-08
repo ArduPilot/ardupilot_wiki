@@ -31,14 +31,14 @@ By default the flight controller should be mounted similar to a "plus" quad.  Th
 As with other vehicles the board should be placed close to the center of gravity of the vehicle.
 If it is more convenient to mount the flight controller pointing up, set :ref:`AHRS_ORIENTATION <AHRS_ORIENTATION>` to 25 (Pitch270).
 
-Connect the servos to the flight controller's RC Outputs:
+Connect the servos to the flight controller's outputs, normally used in Copter for motors, and assigned in  their SERVOx_FUNCTION as Motor 1 through Motor 6:
 
-- RC Output 1 : Forward Flap
-- RC Output 2 : Right Flap
-- RC Output 3 : Back Flap (optional for CoaxCopter)
-- RC Output 4 : Left Flap (optional for CoaxCopter)
-- RC Output 5 : Upper (CCW) Motor
-- RC Output 6 : Lower (CW) Motor (CW, only for CoaxCopter)
+- Motor 1 : Forward Flap
+- Motor 2 : Right Flap
+- Motor 3 : Back Flap (optional for CoaxCopter)
+- Motor 4 : Left Flap (optional for CoaxCopter)
+- Motor 5 : Upper (CCW) Motor
+- Motor 6 : Lower (CW) Motor (CW, only for CoaxCopter)
 
 Loading the Firmware
 --------------------
