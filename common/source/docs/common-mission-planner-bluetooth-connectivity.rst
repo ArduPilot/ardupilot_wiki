@@ -243,11 +243,11 @@ Change the Device Name
 ----------------------
 
 This example show you how to change the name of the Bluetooth module to
-Ardupilot: In the terminal program, send the command (case sensitive):
+ArduPilot: In the terminal program, send the command (case sensitive):
 
 ::
 
-    AT+NAMEArdupilot
+    AT+NAMEArduPilot
 
 The Bluetooth should reply:
 

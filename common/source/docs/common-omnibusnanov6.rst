@@ -88,7 +88,7 @@ Telem is available at UART 1
 
 The shared UART3/I2C pins are enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.
 
-RC input is via pad marked LED on the board and is compatible all RX serial protocols supported by Ardupilot.
+RC input is via pad marked LED on the board and is compatible all RX serial protocols supported by ArduPilot.
 The Buzzer output pad has no functionality.
 
 Battery monitoring

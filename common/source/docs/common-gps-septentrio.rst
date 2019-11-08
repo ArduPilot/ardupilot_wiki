@@ -37,7 +37,7 @@ If you want to inject RTCM corrections to both GPS1 and GPS2 then use:
 - GPS_INJECT_TO,127
 
 Note:
-Baud rate is auto-negotiated by the Ardupilot firmware, and might get set to something different than the 115200 baud.
+Baud rate is auto-negotiated by the ArduPilot firmware, and might get set to something different than the 115200 baud.
 
 Video including setup instructions
 ==================================

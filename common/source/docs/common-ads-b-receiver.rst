@@ -137,7 +137,7 @@ value is how many vehicles per second to be streamed. If using telem1 the stream
 flexibility is useful to conserve bandwidth on data links but also allow maximum update rate for high-speed links
 such as an on-board companion computer.
 
-Ardupilot's SITL includes the simulation of ADS-B enabled aircraft.
+ArduPilot's SITL includes the simulation of ADS-B enabled aircraft.
 To enable this you must have pymavlink v1.1.70 or greater. If you have
 an older version, use:
 

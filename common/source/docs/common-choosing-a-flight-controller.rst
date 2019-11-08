@@ -38,7 +38,6 @@ Factors to consider are:
 -  If redundant sensors are not required, many inexpensive controllers originally targeted for mini-quadcopter use are now supported by ArduPilot and are also listed in :ref:`AutoPilot Hardware Options <common-autopilots>`.
 
 
-
 [site wiki="copter, plane" heading="off"]
 
 .. note::

@@ -127,10 +127,10 @@ Set up directories/paths and extra packages in Cygwin
 
     pip2 install empy pyserial pymavlink
 
-Download Ardupilot Source
+Download ArduPilot Source
 =========================
 
-The Ardupilot source files then need to be downloaded to your local Cygwin filesystem by cloning the git repository and updating the submodules. Enter the following commands into the Cygwin terminal to download the source files:
+The ArduPilot source files then need to be downloaded to your local Cygwin filesystem by cloning the git repository and updating the submodules. Enter the following commands into the Cygwin terminal to download the source files:
 
 ::
 

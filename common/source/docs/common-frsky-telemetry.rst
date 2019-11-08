@@ -292,7 +292,7 @@ The following SmartPort sensors are available from FrSky:
     :height: 200pt
 
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| Image           |  Sensor Name   |                     Description                     |                                        Useful with Ardupilot?                                       |
+| Image           |  Sensor Name   |                     Description                     |                                        Useful with ArduPilot?                                       |
 +=================+================+=====================================================+=====================================================================================================+
 | |flvss|         | FLVSS          | LiPo cell voltage sensor with OLED screen           | Yes, as individual cell voltages are not available in ArduPilot.                                    |
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
@@ -549,7 +549,7 @@ Requirements
 .. _djt:  https://www.frsky-rc.com/product/djt-2/
 .. _the documentation: http://openrcforums.com/forum/viewtopic.php?f=122&t=5575#p79483
 
-Configuring Ardupilot
+Configuring ArduPilot
 ---------------------
 
 Ensure that you have the appropriate ``SERIAL#_PROTOCOL`` parameter

@@ -89,7 +89,7 @@ Where to Buy
 
 Firmware handling
 =================
-Ardupilot supports Revolution and RevoMini in Stable releases. Firmware files can be found `here <http://firmware.ardupilot.org/>`__
+ArduPilot supports Revolution and RevoMini in Stable releases. Firmware files can be found `here <http://firmware.ardupilot.org/>`__
 
 First time flashing ArduPilot requires to boot your device in DFU mode to flash an ArduPilot compatible bootloader and firmware file.
 

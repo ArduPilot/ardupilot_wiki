@@ -32,7 +32,7 @@ the "Git Shell" or "Git Bash" utility that should already be :ref:`installed <gi
 
        git checkout topic-branch
 
-   If you want to create a new branch to work on which you would like to rebase on top of the Ardupilot master branch,
+   If you want to create a new branch to work on which you would like to rebase on top of the ArduPilot master branch,
 
    ::
 

@@ -23,7 +23,7 @@ In the interest of fostering an open and welcoming environment, we as developers
 - Endeavour to make participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 - Endeavour to understand the intent of development activities they undertake, where there may be reason to think that the vehicle may be used as a weapon or in an application where it is effectively in control of human life.
 - Not knowingly support or facilitate the weaponization of systems using ArduPilot
-- Ardupilot is NOT certified for use in applications where ArduPilot is effectively in control of human lives. Members of the development team must not knowingly assist in projects where ArduPilot will be in control of human lives.  “In control of human lives” includes but isn’t limited to manned aircraft.
+- ArduPilot is NOT certified for use in applications where ArduPilot is effectively in control of human lives. Members of the development team must not knowingly assist in projects where ArduPilot will be in control of human lives.  “In control of human lives” includes but isn’t limited to manned aircraft.
  
 Our Standards
 -------------

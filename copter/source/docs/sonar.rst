@@ -29,7 +29,7 @@ The Maxbotix recommended Sonar for Multicopter use is the `MaxBotix XL-EZ4 <http
 (aka MB1240) which has a 7.65m max range and a narrow beam which helps
 reduce the chance of interference from other sources of sound at the same frequency.
 
-It is definitely worth reading the `Interfacing an Ultrasonic Sensor with a Pixhawk or Ardupilot Mega <https://www.maxbotix.com/articles/ultrasonic-sensors-pixhawk-ardupilot.htm>`__ article by Maxbotix.
+It is definitely worth reading the `Interfacing an Ultrasonic Sensor with a Pixhawk or ArduPilot Mega <https://www.maxbotix.com/articles/ultrasonic-sensors-pixhawk-ardupilot.htm>`__ article by Maxbotix.
 
 These other sonar are also supported:
 
@@ -221,4 +221,4 @@ Sonar is susceptible to "noise" from a variety of sources and several
 
 .. note::
 
-   Please read this tutorial for a comprehensive review: `Interfacing an Ultrasonic Sensor with a Pixhawk or Ardupilot Mega <https://www.maxbotix.com/articles/ultrasonic-sensors-pixhawk-ardupilot.htm>`__. 
+   Please read this tutorial for a comprehensive review: `Interfacing an Ultrasonic Sensor with a Pixhawk or ArduPilot Mega <https://www.maxbotix.com/articles/ultrasonic-sensors-pixhawk-ardupilot.htm>`__. 

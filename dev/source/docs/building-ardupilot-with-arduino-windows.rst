@@ -8,7 +8,7 @@ Archived: Building ArduPilot for APM2.x on Windows with Arduino
 
    **ARCHIVED ARTICLE**
 
-   Ardupilot no longer supports Arduino or AVR.
+   ArduPilot no longer supports Arduino or AVR.
 
 This article shows how to build ArduPilot for APM2.x targets on Windows,
 using the Arduino toolchain.

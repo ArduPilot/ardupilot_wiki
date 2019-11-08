@@ -1,7 +1,7 @@
 .. _style-guide:
 
 =====================
-Ardupilot Style Guide
+ArduPilot Style Guide
 =====================
 
 In order to improve the readability of the ArduPilot code and help new

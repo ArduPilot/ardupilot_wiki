@@ -161,12 +161,12 @@ First launch AirSim, after that launch the ArduPilot SITL using
 
 .. note::
 
-    Initially, the editor will hang after pressing the Play button if the Ardupilot SITL hasn't been started (this is due to Lock-Step Scheduling). Run `sim_vehicle.py` and it should go back to normal.
+    Initially, the editor will hang after pressing the Play button if the ArduPilot SITL hasn't been started (this is due to Lock-Step Scheduling). Run `sim_vehicle.py` and it should go back to normal.
 
-For closing, first stop the AirSim simulation by pressing the Stop button, then close Ardupilot.
-If Ardupilot is closed first, then UE hangs and you'll need to force close it.
+For closing, first stop the AirSim simulation by pressing the Stop button, then close ArduPilot.
+If ArduPilot is closed first, then UE hangs and you'll need to force close it.
 
-You can restart by just pressing the Play button and then start the Ardupilot side, no need to close the Editor completely and then start it again.
+You can restart by just pressing the Play button and then start the ArduPilot side, no need to close the Editor completely and then start it again.
 
 Using Lidar
 ^^^^^^^^^^^
@@ -343,7 +343,7 @@ A ROS wrapper has also been added. See `airsim_ros_pkgs <https://github.com/micr
 Run on different machines
 +++++++++++++++++++++++++
 
-#. Change ``UdpIp`` in the ``settings.json`` file to the IP address of the machine running Ardupilot
+#. Change ``UdpIp`` in the ``settings.json`` file to the IP address of the machine running ArduPilot
 
 #. Use ``-A`` option to pass the next arguments to the SITL instance, followed by ``--sim-address`` to specify Airsim's IP address
 
@@ -357,7 +357,7 @@ An example-
 Using different ports
 ^^^^^^^^^^^^^^^^^^^^^
 
-``UdpPort`` denotes the port no. which Ardupilot receives the sensor data on (i.e. the port that Airsim sends the data to)
+``UdpPort`` denotes the port no. which ArduPilot receives the sensor data on (i.e. the port that Airsim sends the data to)
 
 ``SitlPort`` assigns the motor control port on which Airsim receives the rotor control message
 

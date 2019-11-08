@@ -8,7 +8,7 @@ Archived: Building for Pixhawk on Windows with Make
 
    **ARCHIVED ARTICLE**
 
-   Ardupilot no longer supports make.
+   ArduPilot no longer supports make.
 
 This article shows how to build ArduPilot for The Cube, Pixhawk, PixRacer on Windows with *Make*.  These instructions assume you have already :ref:`setup the build environment <building-setup-windows>`
 

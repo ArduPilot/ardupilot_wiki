@@ -34,7 +34,7 @@ ground station.
 .. note::
 
    We do not yet have an recommended affordable 3-axis gimbal for use
-   with the VRGimbal.  Testing by the Ardupilot dev team has so far been
+   with the VRGimbal.  Testing by the ArduPilot dev team has so far been
    limited to using a Tarot 2-axis gimbal.
 
 Connecting the VRGimbal to the Pixhawk

@@ -8,7 +8,7 @@ Archived: Building ArduPilot for APM2.x on MacOS with Arduino
 
    **ARCHIVED ARTICLE**
 
-   Ardupilot no longer supports Arduino or AVR.
+   ArduPilot no longer supports Arduino or AVR.
 
 .. warning::
 

@@ -4,12 +4,12 @@
 Fuel Flow and Level Sensors
 ===========================
 
-In firmware versions 4.0 and later, Ardupilot provides the ability to use fuel flow and level sensors, in addition to battery monitors. Both pulse output fuel flow sensors and PWM output fuel level sensors are supported. Like an analog battery monitor provides current flow measurements with capacity status being computed by the autopilot, these sensors provide fuel use or level status measurements to enable the same reporting and monitoring for liquid fuel systems.
+In firmware versions 4.0 and later, ArduPilot provides the ability to use fuel flow and level sensors, in addition to battery monitors. Both pulse output fuel flow sensors and PWM output fuel level sensors are supported. Like an analog battery monitor provides current flow measurements with capacity status being computed by the autopilot, these sensors provide fuel use or level status measurements to enable the same reporting and monitoring for liquid fuel systems.
 
 Fuel Flow Sensors
 =================
 
-Fuel flow sensors which provide a pulse for each unit of consumed fuel, such as `this <https://www.btflowmeter.com/en/flow-meter-products/flow-meters-lowflow-flowmeters-low-flow-turbine-flow-meter-fuel-flow-meters-diesel-fuel-flow-meter-watermeters-paddlewheel-flow-meter-oil-flow-meter-oilflowmeter-waterflowmeter-water-meters-turbineflowmeter-oilflowmeter/mini-flowmeter-fch-mini-pp-series-chemical/fch-m-pp-30-lpm-97478169-lc.html>`__ , shown below, can be used just like a battery would be in Ardupilot, with monitoring, display, failsafes, etc.
+Fuel flow sensors which provide a pulse for each unit of consumed fuel, such as `this <https://www.btflowmeter.com/en/flow-meter-products/flow-meters-lowflow-flowmeters-low-flow-turbine-flow-meter-fuel-flow-meters-diesel-fuel-flow-meter-watermeters-paddlewheel-flow-meter-oil-flow-meter-oilflowmeter-waterflowmeter-water-meters-turbineflowmeter-oilflowmeter/mini-flowmeter-fch-mini-pp-series-chemical/fch-m-pp-30-lpm-97478169-lc.html>`__ , shown below, can be used just like a battery would be in ArduPilot, with monitoring, display, failsafes, etc.
 
 .. image:: ../../../images/fuelflow-sensor.jpg
     :target: ../_images/fuelflow-sensor.jpg

@@ -95,7 +95,7 @@ ArduPilot dev team.
    `here <https://diydrones.com/forum/topics/mavlink-tutorial-for-absolute-dummies-part-i?groupUrl=arducopterusergroup>`__.
 -  `UAVCAN* <http://uavcan.org>`__ -
    Lightweight protocol designed for reliable communication in aerospace and robotic 
-   applications via CAN bus. Ardupilot is using the `Libuavcan <http://uavcan.org/Implementations/Libuavcan/>`__,
+   applications via CAN bus. ArduPilot is using the `Libuavcan <http://uavcan.org/Implementations/Libuavcan/>`__,
    which is a portable, cross-platform library written in C++ with minimal dependency on the C++ standard library.
 
 How the team works

@@ -57,8 +57,8 @@ USA
   - **Description:** four courses:
      - Intro to RPAS (history, applications, and regulations leading to the FAA part 107 certificate), Lab: build and fly RC airplane, program and drive APM:Rover
      - RPAS Operations (system architecture, control theory, and operational considerations), Lab: flight training with APM:Copter and APM:Plane
-     - Flight Control Systems (systems engineering: discussion of robotic flight control and payload integration, MavLink UDP), Lab: Ardupilot test and integration into new airframes; advanced payload integration
-     - Operations in the National Airspace System (real-world application of prior courses; data management/processing/analysis, geotagging, etc), Lab: use of Ardupilot vehicles used in prior courses to pursue data collection projects that benefit the community
+     - Flight Control Systems (systems engineering: discussion of robotic flight control and payload integration, MavLink UDP), Lab: ArduPilot test and integration into new airframes; advanced payload integration
+     - Operations in the National Airspace System (real-world application of prior courses; data management/processing/analysis, geotagging, etc), Lab: use of ArduPilot vehicles used in prior courses to pursue data collection projects that benefit the community
   - **Courses** `here <https://catalog.letu.edu/preview_program.php?catoid=13&poid=4687&returnto=1119>`__
 
 South Korea
@@ -76,7 +76,7 @@ South Korea
 Books
 =====
 
-- `Designing Purpose-Built Drones for Ardupilot Pixhawk 2.1: Build drones with ArduPilot <https://www.amazon.in/Designing-Purpose-Built-Drones-Ardupilot-Pixhawk/dp/1786469162>`__
+- `Designing Purpose-Built Drones for ArduPilot Pixhawk 2.1: Build drones with ArduPilot <https://www.amazon.in/Designing-Purpose-Built-Drones-ArduPilot-Pixhawk/dp/1786469162>`__
 
 
 .. note::

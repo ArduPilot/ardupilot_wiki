@@ -24,7 +24,7 @@ Connecting the gimbal to the Flight Controller
 
 Although the SimpleBGC can be connected using PWM (similar to the Tarot gimbal) we recommend using the serial interface connected to one of the flight controller's Serial/Telemetry ports like Telem2 as shown above.
 
-In Ardupilot/APM Planner/Mission planner set the following variables:
+In ArduPilot/APM Planner/Mission planner set the following variables:
 
 - :ref:`MNT_TYPE <MNT_TYPE>` to 4 / "Mount Type (None, Servo or MavLink)"
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 1 / "MavLink" (Notee "SERIAL2" should be "SERIAL1" if using Telem1 port, SERIAL4 if using Serial4/5, etc)

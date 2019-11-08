@@ -7,7 +7,7 @@ Vehicle Types Supported by ArduPilot
 Overview
 ========
 
-Ardupilot is capable of controlling many vehicles.
+ArduPilot is capable of controlling many vehicles.
 
 This document attempts to enumerate these options.  It is a work in progress and is nowhere near complete.
 

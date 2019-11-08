@@ -28,7 +28,7 @@ Gear backlash is a problem with many geared dc motors and this can badly affect 
 
 Motor Drivers/ESC
 =================
-For a full list of Ardupilot supported brushed motor drives/ESCs, refer the :ref:`brushed motors<common-brushed-motors>` page.
+For a full list of ArduPilot supported brushed motor drives/ESCs, refer the :ref:`brushed motors<common-brushed-motors>` page.
 
 Wheel Encoders
 ==============

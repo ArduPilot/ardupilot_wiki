@@ -4,7 +4,7 @@
 Balance Bots
 =================
 
-Ardupilot Rover(version 3.5+) includes support for Self Balancing Robots or Balance Bots. This section provides instructions for configuring Rover to run on Balance Bots. 
+ArduPilot Rover(version 3.5+) includes support for Self Balancing Robots or Balance Bots. This section provides instructions for configuring Rover to run on Balance Bots. 
 
 ..  youtube:: EmhTBPNDpWw
     :width: 100%
@@ -21,7 +21,7 @@ Supported Control Modes:
 - Auto
 - RTL
 
-.. note:: New or inexperienced Ardupilot users are recommended to go through the Rover :ref:`Intoduction<gettit>`, :ref:`Setup<apmrover-setup>` and :ref:`First drive<rover-first-drive>` sections before proceeding with this section.
+.. note:: New or inexperienced ArduPilot users are recommended to go through the Rover :ref:`Intoduction<gettit>`, :ref:`Setup<apmrover-setup>` and :ref:`First drive<rover-first-drive>` sections before proceeding with this section.
 
 Before you proceed:
 -------------------

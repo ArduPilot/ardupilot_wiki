@@ -8,7 +8,7 @@ Archived: Building ArduPilot for Pixhawk on Windows or Linux with QtCreator
 
    **ARCHIVED ARTICLE**
 
-   Ardupilot no longer supports Qt Creator.
+   ArduPilot no longer supports Qt Creator.
 
 
 This article shows how you can set up Qt Creator for editing ArduPilot code

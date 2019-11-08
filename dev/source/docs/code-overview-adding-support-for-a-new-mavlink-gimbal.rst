@@ -60,7 +60,7 @@ Messages the gimbal should support
       respond to this by setting the internal variable to the value in
       the "param_value" field.
 
-#. Ardupilot will send angle requests to the gimbal via MAVLink which
+#. ArduPilot will send angle requests to the gimbal via MAVLink which
    will arrive as
    `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__
    messages with the "command" field set to MAV_CMD_DO_MOUNT_CONTROL

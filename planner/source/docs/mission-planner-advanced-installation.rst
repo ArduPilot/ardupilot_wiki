@@ -47,12 +47,12 @@ Here is how you "install" a version into a different folder:
    run that version of MP in the new folder.
 
    -  You can run this version by double clicking on the
-      ArdupilotMegaPlanner10.exe file in the folder's root.
+      ArduPilotMegaPlanner10.exe file in the folder's root.
    -  Be sure to answer "no" to the upgrade notice if you want to stay
       with the version you are using in that folder.
    -  To create a desktop icon for that version do this:
 
-      -  Find the fileArdupilotMegaPlanner10.exe in the folder's root.
+      -  Find the fileArduPilotMegaPlanner10.exe in the folder's root.
       -  Right click and hold the file name and drag it to your desktop
       -  Select the 'Create a shortcut here" option when you release the
          mouse button.

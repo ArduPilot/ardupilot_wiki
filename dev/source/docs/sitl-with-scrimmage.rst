@@ -12,7 +12,7 @@ low-fidelity motion models or tens of aircraft with high-fidelity motion models 
 Installing SCRIMMAGE
 ====================
 
-To install SRIMMAGE for use in Ardupilot follow the build instructions in the
+To install SRIMMAGE for use in ArduPilot follow the build instructions in the
 `SCRIMMAGE README on Github. <https://github.com/gtri/scrimmage/blob/master/README.md>`__
 
 

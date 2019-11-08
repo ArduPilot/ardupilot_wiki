@@ -5,13 +5,13 @@ Compatible RC Transmitter and Receiver Systems
 ==============================================
 
 This article provides an overview of the RC Transmitter and Receiver
-Systems that can be used with Ardupilot flight controllers along with guidance on
+Systems that can be used with ArduPilot flight controllers along with guidance on
 how they are connected.
 
 Overview
 ========
 
-Ardupilot flight controllers are compatible with 
+ArduPilot flight controllers are compatible with 
     #. PPM-Sum receivers
     #. S.Bus receivers 
     #. IBUS recievers
@@ -23,9 +23,9 @@ For traditional single-wire-per-channel (PWM) receivers, a `PPM encoder <http://
 Connecting the receiver
 =======================
 
-Ardupilot auto-detects the protocol of the RC receiver system. For most flight controllers there is a pin labeled RCin to which the output from the receiver is connected. On many closed source flight controllers, other pins are used and are detailed in their board documentation, linked from the :ref:`Ardupilot Hardware<common-autopilots>` page.
+ArduPilot auto-detects the protocol of the RC receiver system. For most flight controllers there is a pin labeled RCin to which the output from the receiver is connected. On many closed source flight controllers, other pins are used and are detailed in their board documentation, linked from the :ref:`ArduPilot Hardware<common-autopilots>` page.
 
-In addition, beginning with Ardupilot firmware releases 4.0 and later, any UART RX input will auto-detect the RC receiver, if attached.
+In addition, beginning with ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect the RC receiver, if attached.
 
 To connect a PPM-Sum receiver or an S.Bus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. The following S.Bus receivers have been tested and are known to work: FrSky `X8R <http://www.frsky-rc.com/product/pro.php?pro_id=105>`__, FrSky `XSR <http://www.frsky-rc.com/product/pro.php?pro_id=154>`__, Futaba R2008SB, Futaba R6008SB.
 
