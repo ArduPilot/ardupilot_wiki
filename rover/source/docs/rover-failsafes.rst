@@ -61,3 +61,8 @@ Hold Mode Failsafes
 -------------------
 
 The :ref:`FS_OPTIONS<FS_OPTIONS>` bitmask parameter determines if failsafes will be recognized while in HOLD Mode. If bit 0 is set, then failsafes will be recognized and acted upon. If not, failsafes will be ignored in HOLD mode (default).
+
+Independent Watchdog
+--------------------
+
+See :ref:`common-watchdog` for details.
