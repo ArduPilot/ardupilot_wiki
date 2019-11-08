@@ -4,7 +4,7 @@
 UAVCAN Setup
 ============
 
-This article provides guidance to setup UAVCAN protocol on Ardupilot.
+This article provides guidance to setup UAVCAN protocol on ArduPilot.
 
 .. tip::
 

@@ -68,7 +68,7 @@ Notes
 The F-35 has ability to have the middle rail for M1/M2 to be independent of that of the S1-S6 slots, which are supplied by the internal 5V regulator, or to have it tied to them, via board jumper pads. The WingFC10 is isolated with no pad option. The internal regulators can only supply two or three standard servos (3A).
 It is generally recommended that servos be powered independent of on-board regulators to avoid noise injection issues. For both boards this means either cutting traces or externally powering the servos.
 
-Both boards have an onboard compass, however, since there is an on-board current sensor, if used, the compass cannot be accurately used and should be disabled in Ardupilot. For plane use, not having a compass is a non-issue, but compass is required for Copter/Quadplane. Since these boards have no external I2C pinouts, external compass is not an option. So, currently, this board is only applicable to Plane applications. (Using Compass_Motor_Compensation for copter/quadplane may be viable,but it has not been shown yet)
+Both boards have an onboard compass, however, since there is an on-board current sensor, if used, the compass cannot be accurately used and should be disabled in ArduPilot. For plane use, not having a compass is a non-issue, but compass is required for Copter/Quadplane. Since these boards have no external I2C pinouts, external compass is not an option. So, currently, this board is only applicable to Plane applications. (Using Compass_Motor_Compensation for copter/quadplane may be viable,but it has not been shown yet)
 
 Either rssi or analog airspeed can be input on the AIR pin. Either must be first enabled in the params, params refreshed, and then pin "13" set for the input, and type set.
 

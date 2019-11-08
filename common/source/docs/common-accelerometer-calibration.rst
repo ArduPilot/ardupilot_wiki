@@ -11,7 +11,7 @@ This article shows how to perform basic accelerometer calibration (using
 
 .. note::
 
-   Accelerometer calibration is mandatory in Ardupilot.
+   Accelerometer calibration is mandatory in ArduPilot.
 
 Calibration steps
 =================

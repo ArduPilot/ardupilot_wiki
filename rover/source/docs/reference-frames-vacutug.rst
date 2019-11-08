@@ -7,7 +7,7 @@ Overview
 .. image:: ../images/vacutug.jpg
     
   
-The `Vac-U-Tug <http://www.vac-u-boat.com/Vacutug.htm>`__ is an ideal candidate for a first ArduRover Boat project. Its roomy, has comprehensive  build instructions targeted for inexperienced builders, and does not usually require extensive waterproofing of the Ardupilot electronic components. Its definitely not a speed boat, but is a great long duration lake/pond cruiser.
+The `Vac-U-Tug <http://www.vac-u-boat.com/Vacutug.htm>`__ is an ideal candidate for a first ArduRover Boat project. Its roomy, has comprehensive  build instructions targeted for inexperienced builders, and does not usually require extensive waterproofing of the ArduPilot electronic components. Its definitely not a speed boat, but is a great long duration lake/pond cruiser.
 
 Parts List
 ----------

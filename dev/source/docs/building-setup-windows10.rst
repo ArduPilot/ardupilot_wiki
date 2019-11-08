@@ -36,7 +36,7 @@ Setup steps
 
     - ``sudo apt-get update && sudo apt-get upgrade``
     
-#. Copy the Ardupilot source files to your local Ubuntu filesystem by cloning the git repository and updating the submodules. (Accessing the source files on your Windows filesystem won't work because the must be kept on the native WSl filesystem)
+#. Copy the ArduPilot source files to your local Ubuntu filesystem by cloning the git repository and updating the submodules. (Accessing the source files on your Windows filesystem won't work because the must be kept on the native WSl filesystem)
 
     - ``git clone https://github.com/ardupilot/ardupilot.git``
     - ``cd ardupilot``

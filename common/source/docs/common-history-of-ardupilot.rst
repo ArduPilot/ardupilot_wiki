@@ -1,7 +1,7 @@
 .. _history-of-ardupilot:
 
 ====================
-History of Ardupilot
+History of ArduPilot
 ====================
 
 .. image:: ../../../images/APM-history.jpg

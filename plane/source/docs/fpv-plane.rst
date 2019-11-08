@@ -159,7 +159,7 @@ and rebooting/reconnecting to the FC.
 
 -  Receiver RSSI
 
-Ardupilot supports either analog RSSI or PWM RSSI (also known as "Digital RSSI") embedded in an RC channel. For
+ArduPilot supports either analog RSSI or PWM RSSI (also known as "Digital RSSI") embedded in an RC channel. For
 analog (voltage-type), set RSSI_TYPE =1 and reboot, for PWM set RSSI_TYPE =2. The remaining RSSI
 parameters will not appear until this parameter is set and saved and your FC rebooted.
 
@@ -182,7 +182,7 @@ For PWM adjust these parameters:
     
 - Failsafe
 
-Ardupilot has many options for initiating failsafe. The only one of concern for this guide
+ArduPilot has many options for initiating failsafe. The only one of concern for this guide
 is receiver failsafe. Failsafe will always be entered if the RC input signal to the FC is lost. 
 In addition, for Sbus-type receivers, radio failsafe will be triggered by specific failsafe bits sent in the Sbus output stream. For PPM-type receivers, you set the RX's failsafe to use either throttle failsafe or no signal output ( DON'T USE HOLD!). Setting up throttle failsafe is described `here <apms-failsafe-function.html>`__.
 
@@ -269,7 +269,7 @@ This allows the SERVO_AUTO_TRIM function to adjust the servo trims accordingly. 
 
 Then check all the other flight modes one by one. Check FS behaviour also.
 
-At this point the plane should be flyable and well trimmed. Now you can explore all the other features of Ardupilot and tweak your setup to personal preferences. If you elect to use AUTOTUNE, be sure to read its `documentation <automatic-tuning-with-autotune.html>`__ thoroughly. Failing to run the autotune procedures as recommended bears the risk to decrease , rather than increase, your airframe's flight handling characteristics.
+At this point the plane should be flyable and well trimmed. Now you can explore all the other features of ArduPilot and tweak your setup to personal preferences. If you elect to use AUTOTUNE, be sure to read its `documentation <automatic-tuning-with-autotune.html>`__ thoroughly. Failing to run the autotune procedures as recommended bears the risk to decrease , rather than increase, your airframe's flight handling characteristics.
 
 Mind that the default settings do work fairly well for most standard sized aircraft.
 
