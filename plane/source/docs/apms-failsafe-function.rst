@@ -254,3 +254,9 @@ ground testing.
    </tr>
    </tbody>
    </table>
+
+Independent Watchdog
+--------------------
+
+See :ref:`common-watchdog` for details.
+

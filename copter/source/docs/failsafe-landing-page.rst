@@ -21,3 +21,4 @@ The main failsafe topics are listed below.
     Crash Check <crash_check>
     Parachute <parachute>
     ADSB Avoidance of manned aircraft <common-ads-b-receiver>
+    Independent Watchdog <common-watchdog>
