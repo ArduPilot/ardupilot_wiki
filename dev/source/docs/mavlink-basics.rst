@@ -31,10 +31,10 @@ High Level Message Flow
     :width: 450px
 
 - Once a connection is opened each device (aka "System") sends the `HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ message at 1hz
-- The ground station or companion computer requests the data it wants (and the rate) by sending messages of the following types
+- The ground station or companion computer :ref:`requests the data <mavlink-requesting-data>` it wants (and the rate) by sending messages of the following types
 
    - `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ supports setting the rate of groups of messages
-   - `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ containing a `SET_MESSAGE_INTERVAL <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL>`__ command provides precise control of which messages are sent (and their rate) but is only supported on very recent versions of ArduPilot (Copter-4.0, Plane-3.10, Rover-3.5 and higher)
+   - `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ containing a `SET_MESSAGE_INTERVAL <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL>`__ command provides precise control of which messages are sent (and their rate) but is only supported on ArduPilot 4.0 and higher
 
 - Ground station or companion computer send commands to the vehicle.  Details of the supported commands are :ref:`here for copter <copter-commands-in-guided-mode>` and :ref:`plane <plane-commands-in-guided-mode>`
 

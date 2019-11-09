@@ -10,6 +10,7 @@ ArduPilot supports the MAVLink protocol for communication with Ground Stations a
     :maxdepth: 1
 
     MAVLink Basics <mavlink-basics>
+    Requesting Data From The AutoPilot <mavlink-requesting-data>
     Copter Commands (Guided Mode) <copter-commands-in-guided-mode>
     Plane Commands (Guided Mode) <plane-commands-in-guided-mode>
     MAVLink Routing <mavlink-routing-in-ardupilot>
