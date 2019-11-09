@@ -6,11 +6,12 @@ Requesting Data From The Autopilot
 
 The ground station or companion computer can request the data it wants (and the rate) using one of the following methods:
 
-   - Set the ``SRx_`` parameters to cause the autopilot to pro-actively send groups of messages on start-up.  This method is easy to set-up for a small number of drones but is not recommended for most applications.
+   - Set the ``SRx_`` parameters to cause the autopilot to pro-actively send groups of messages on start-up.  This method is easy to set-up for a small number of drones but is not recommended for most applications
    - Send `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ messages to set the rate for groups of messages
-   - Send a `SET_MESSAGE_INTERVAL <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to precisely control the rate of an individual message.  Note this is only support on ArduPilot 4.0 and higher
+   - Send a `SET_MESSAGE_INTERVAL <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to precisely control the rate of an individual message.  Note this is only supported on ArduPilot 4.0 and higher
+   - Send a `_REQUEST_MESSAGE <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to request a single instance of a message.  Note this is only supported on ArduPilot 4.0 and higher
 
-More details of these methods can be found below
+More details of these methods can be found below.
 
 Using SRx Parameters
 --------------------
@@ -96,7 +97,7 @@ Setting the ``SRx_`` parameters (and then rebooting the autopilot) will cause th
 
       - `SERVO_OUTPUT_RAW <https://mavlink.io/en/messages/common.html#SERVO_OUTPUT_RAW>`__
       - `RC_CHANNELS <https://mavlink.io/en/messages/common.html#RC_CHANNELS>`__
-      - `RC_CHANNELS_RAW  <https://mavlink.io/en/messages/common.html#RC_CHANNELS_RAW>`__ (only sent on a mavlink1 links)
+      - `RC_CHANNELS_RAW  <https://mavlink.io/en/messages/common.html#RC_CHANNELS_RAW>`__ (only sent on mavlink1 links)
 
 Using REQUEST_DATA_STREAM
 -------------------------
@@ -128,7 +129,7 @@ Send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`_
 
 .. warning::
 
-   If the telemetry link is shared (i.e. multiple GCSs or a GCS and a companion computer) there can be conflicting requests.  The most common example is the Mission Planner using the REQUEST_DATA_STREAM method while a companion copmuter uses SET_MESSAGE_INTERVAL method.  Mission Planner at least allows turning off the REQUEST_DATA_STREAM requests by setting the rates to "-1" (see `Setting the datarate here <http://ardupilot.org/copter/docs/common-mission-planner-telemetry-logs.html#setting-the-datarate>`__)
+   If the telemetry link is shared (i.e. multiple GCSs or a GCS and a companion computer) there can be conflicting requests.  The most common example is the Mission Planner using the REQUEST_DATA_STREAM method while a companion copmuter uses SET_MESSAGE_INTERVAL method.  Mission Planner at least allows turning off the REQUEST_DATA_STREAM requests by setting the rates to "-1" (see `Setting the datarate here <http://ardupilot.org/copter/docs/common-mission-planner-telemetry-logs.html#setting-the-datarate>`__).  MAVProxy users can ``set messagerate -1``.
 
 Checking The Message Rates
 --------------------------
@@ -144,3 +145,24 @@ If using Mission Planner:
 .. image:: ../images/mavlink-mp-mavlink-inspector.png
     :target: ../_images/mavlink-mp-mavlink-inspector.png
     :width: 450px
+
+If using MAVProxy:
+
+ - module load messagerate
+ - messagerate status
+
+
+Using REQUEST_MESSAGE
+---------------------
+
+A GCS can poll for a single instance of a message from the autopilot.
+
+Send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the following fields
+
+- target_system : the mavlink system id of the vehicle (normally "1")
+- target_components : normally "0"
+- command: 512 (for `MAV_CMD_REQUEST_MESSAGE <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__)
+- confirmation: 0
+- param1: desired mavlink message's id (i.e. 33 for `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__)
+- param2: depends on message requested; see that message's definition for details.
+- param3 to param7: 0 (not used)
