@@ -4,15 +4,15 @@
 Tailsitter Planes
 =================
 
-In ArduPilot tail-sitters are any VTOL aircraft type that rotates the
+In ArduPilot tailsitters are any VTOL aircraft type that rotates the
 fuselage (and autopilot) when moving between forward flight and hover.
 
-Despite the name, not all tails-sitters land on their tails. Some are
+Despite the name, not all tailsitters land on their tails. Some are
 "belly landers", where they lie down flat for landing to improve
 takeoff and landing stability in wind. Some may have an undercarriage
 for wheeled takeoff and others may have a stand or other landing aid.
 
-All tails-sitters are considered types of QuadPlanes in ArduPilot. You
+All tailsitters are considered types of QuadPlanes in ArduPilot. You
 should start off by reading the :ref:`QuadPlane documentation
 <quadplane-support>` before moving onto this tailsitter specific
 documentation.
@@ -20,7 +20,7 @@ documentation.
 Vectored and non-Vectored
 =========================
 
-ArduPilot sub-divides tail-sitters into two broad categories:
+ArduPilot sub-divides tailsitters into two broad categories:
 
 - vectored tailsitters can tilt their rotors independently of the
   movement of the fuselage, giving them vectored thrust
@@ -61,10 +61,6 @@ tailsitter are:
 - when in fixed wing flight the nose of the aircraft will try to point
   forward for "level" flight
   
-:ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>` defines the maximum throttle scaling that will be applied
-to the control surfaces, this should be reduced if oscillations are seen 
-at throttles bellow hover throttle.
-
 :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` allows the roll limit angle limit to be set differently from
 :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. If left at zero both pitch and roll are limited by :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. If :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` is nonzero roll angle will be limited and pitch max angle will still be :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`.
 This should be set if your tailsitter can achieve much larger pitch angle than 
@@ -76,6 +72,15 @@ So a value of e.g. 60 degrees results in switching from copter to plane controll
 :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>`, the later the switch from one controller to the other.
 
 :ref:`Q_TRANSITION_MS<Q_TRANSITION_MS>` specifies a timeout for transition from VTOL to FW flight. Even if the angle specified by :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` has not been reached before this interval has elapsed, the transition will be considered complete. The timeout for back transitions (from FW to VTOL flight) is hardcoded to 2 seconds.
+
+PID gain scheduling
+===================
+
+:ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`:
+
+- If greater than 1: defines the maximum boost that will be applied to the control surfaces when throttle is below hover, this should be reduced if oscillations are seen at low throttle. 
+
+- If less than 1: then instead of boosting control surface deflection below hover throttle, deflection is reduced at high airspeeds (if an airspeed sensor is available and enabled) or at high tilt angles and high throttle levels. The maximum attenuation is currently hardwired to 0.2, so control surface deflection is reduced by a factor of 0.2 when airspeed exceeds ARSPD_FBW_MAX, or if airspeed is not available, when tilt reaches 90 degrees from vertical or at max throttle.
 
 Orientation
 ===========
@@ -182,4 +187,4 @@ The center of gravity for a tailsitter is important in an extra
 dimension. When hovering it is important that there is not too much
 weight in the belly of the plane or on its back, so that it leans
 forward or back. This is particularly important for non-vectored
-tail-sitters.
+tailsitters.
