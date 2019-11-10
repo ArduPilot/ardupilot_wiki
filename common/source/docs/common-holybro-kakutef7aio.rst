@@ -118,7 +118,7 @@ The PWM is in 3 groups:
  - PWM 4 and 5 in group2
  - PWM 6 in group3
 
-Channels within the same group need to use the same output rate. If
+Channels within the same group need to use the same output rate, whether PWM or Dshot. If
 any channel in a group uses DShot then all channels in the group need
 to use DShot.
 
