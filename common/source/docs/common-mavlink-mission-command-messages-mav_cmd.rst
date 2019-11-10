@@ -2076,18 +2076,18 @@ MAV_CMD_NAV_LOITER_TO_ALT
 
 Supported by: Plane (not Copter or Rover).
 
-Begin loiter at the specified Latitude and Longitude. If Lat=Lon=0, then
-loiter at the current position. Don't consider the navigation command
-complete (don't leave loiter) until the altitude has been reached.
-Additionally, if the Heading Required parameter is non-zero the aircraft
-will not leave the loiter until heading toward the next waypoint.
+Loiter while climbing/descending to an altitude
 
 [site wiki="plane" heading="off"]
 
 Plane
 ~~~~~
 
-This command enables auto-tuning on Plane.
+Begin loiter at the specified Latitude and Longitude. If Lat=Lon=0, then
+loiter at the current position. Don't consider the navigation command
+complete (don't leave loiter) until the altitude has been reached.
+Additionally, if the Heading Required parameter is non-zero the aircraft
+will not leave the loiter until heading toward the next waypoint.
 
 **Command parameters**
 
