@@ -30,8 +30,11 @@ If the SERIAL4/5 port on a Pixhawk is being used then the following parameters s
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
--  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 (Benewake TFmini)
--  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 30
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 (Benewake TFmini/Plus-Serial)
+
+.. note:: :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 also works for TFminiPlus via its UART connection, if connected via I2C to the flight controller, use :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 25 (Benewake TFmini/Plus-I2C)
+
+-  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 30 for TFmini, =10 for TFminiPlus
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **1000** for indoor use OR **600** for outdoors.  *This is the distance in centimeters that the rangefinder can reliably read.*
 -  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
