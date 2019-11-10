@@ -27,6 +27,8 @@ Airspeed Sensor Type
 
 Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the flight controller, while digital sensors connect to the flight controller's external I2C bus using the SDA and SCL external digital I/O pins. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, and supported digital sensors by other numbers. If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value if no sensor is present.
 
+.. warning:: Many airspeed sensors are sensitive to light. Unless you are certain that the particular sensor used is not light sensitive, in order to avoid measurement errors, the sensor should be shielded from light.
+
 Pixhawk Digital Airspeed Pin
 ============================
 
