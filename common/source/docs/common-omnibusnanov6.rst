@@ -62,7 +62,7 @@ Serial protocols can be adjusted to personal preferences.
 Dshot capability
 ================
 
-All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output group that must be the same (PWM or Dshot, when configured as a normal servo/motor output) is: 1/2 and 3/4.
+All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output group that must be the same (same PWM rate or Dshot, when configured as a normal servo/motor output) is: 1/2 and 3/4.
 
 Logging
 =======
