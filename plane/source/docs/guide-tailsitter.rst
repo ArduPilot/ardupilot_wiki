@@ -173,7 +173,7 @@ For example, if you are learning how to fly 3D aircraft, and you want
 some assistance learning how to best control the rudder, then you can
 set:
 
-- :ref:`Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>` =8 (for rudder)
+- :ref:`Q_TAILSIT_MASK<Q_TAILSIT_MASK>` =8 (for rudder)
 - :ref:`Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>` =7
 
 then when channel 7 goes above 1700 the pilot will be given full
