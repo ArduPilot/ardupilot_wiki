@@ -21,6 +21,10 @@ This article explains how to perform basic compass calibration.
 Calibration first steps
 =======================
 
+
+.. warning:: Do not calibrate the compasses near any metallic or magnetic field producing object (computers, cell phones, metal desks, power supplies, etc.) or incorrect calibration will occur.
+
+
 - Under **Initial Setup \| Mandatory Hardware** select **Compass**.
 - Select your flight controler configuration to automatically enter the most important configuration information for your board:
 
@@ -41,6 +45,8 @@ Onboard Calibration
 ===================
 
 Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibration" meaning that the calibration routine runs on the flight controller.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
+
+.. note:: A big advantage of using Onboard Calibration is that the orientation of external compasses is automatically determined during the process, as well as verification of the orientation of onboard compasses. Calibration could fail if the onboard compasses are not oriented as set by the :ref:`flight controller board orientation<AHRS_ORIENTATION>` parameter.
 
    .. figure:: ../../../images/CompassCalibration_Onboard.png
       :target: ../_images/CompassCalibration_Onboard.png
