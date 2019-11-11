@@ -49,6 +49,7 @@ Closed hardware
     Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>
     Mateksys F405-STD and variants <common-matekf405>
     Mateksys F405-Wing <common-matekf405-wing>
+    Mateksys F765-Wing <common-matekf765-wing>
     mRo ControlZero F7 <https://store.mrobotics.io/mRo-Control-Zero-F7-p/mro-ctrl-zero-f7.htm>
     Omnibus F4 AIO/Pro <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
