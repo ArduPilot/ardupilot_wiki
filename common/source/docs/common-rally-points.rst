@@ -45,7 +45,7 @@ The following steps are for specifying Rally Points in Mission Planner:
     
 #. The Rally loiter altitudes need to be specified (note that the
    default altitude for Rally Points is the default waypoint altitude
-   value):
+   value and is relative to the home location):
 
    .. image:: ../../../images/mp_rally_altitude_dialog.jpg
        :target: ../_images/mp_rally_altitude_dialog.jpg
