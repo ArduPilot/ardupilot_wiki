@@ -66,7 +66,7 @@ def create_list_of_files(initial_path, pattern):
 
     return list_of_files
 
-def fetch_links(uri):
+def fetch_links_on_html(uri):
         """
         Fetch links from a file
 
@@ -96,20 +96,27 @@ def fetch_links(uri):
             lParser.close()
             return links
 
-# def fetch_links_v2(file):
-#     """
-#     Fetch links from a file
+def fetch_links_on_rst(file_to_check):
+    """
+    Fetch links from a file
 
-#     """
-#     links = []
-    
-#     rx = re.compile(r'^(?P<email>[^|\n]+)', re.MULTILINE)
-#     with open(file, 'r', encoding="utf8") as text:
-#         raw_data = text.read()
-#         emails = [match.group('email') for match in rx.finditer(raw_data)]
-#         print emails
+    """
+    links = []
 
-#     return links
+    regex = re.compile("\<http(.*?)\>`__")
+    with open(file_to_check, 'r', encoding="utf8") as file:
+        for line in file:
+            result = regex.findall(line)
+            
+            if len(result)>0:
+                print("http" + str(result[2:-1]))
+                links.append("http" + str(result[2:-1]))
+ 
+
+    for line in links:
+        print(line)
+
+    return links
     
 
 def filter_for_external_links(links_to_check):
@@ -145,11 +152,11 @@ def get_links(files):
     all_links = {}
 
     for file in tqdm.tqdm(files, desc="Progress: ", ncols=80):
-        links_from_a_file = fetch_links(file)
+        links_from_a_file = fetch_links_on_rst(file)
         cleanned_links = filter_for_external_links(links_from_a_file)
         for link in cleanned_links:
             all_links.update({file:link})
-    
+
     return all_links
 
 
