@@ -55,6 +55,7 @@ Specifications
 -  **Other**
 
   -  Weight: 64g
+  -  Builtin IMU heater for temperature stability
   -  Dimensions: 80mm x 45mm x 20.5mm
   -  Operating temperature: -40 ~ 85°c（claimed）
 
