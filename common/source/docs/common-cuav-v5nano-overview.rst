@@ -57,10 +57,17 @@ Specifications
   -  Operating temperature: -20 ~ 80°c（Measured value）
 
 
+Unboxing and Review Video
+=========================
+
+..  youtube:: DM3oL41DXAc
+    :width: 100%
+
+
 Where to Buy
 ============
 
-Order from `here <https://store.cuav.net/index.php>`__.
+Order from `here <https://store.cuav.net/index.php>`__. or from `here <https://store.jdrones.com/>`__
 Official retailers are listed `here  <https://leixun.aliexpress.com/>`__.
 
 Quick Start
