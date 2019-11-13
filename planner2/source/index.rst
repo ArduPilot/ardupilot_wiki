@@ -25,7 +25,7 @@ APM Planner 2 Home
     <td width="54%">
 
 APM Planner 2.0 is an open-source ground station application for
-`MAVlink <http://qgroundcontrol.org/mavlink/start>`__ based autopilots
+`MAVlink <https://mavlink.io/en/>`__ based autopilots
 including APM and PX4/Pixhawk that can be run on Windows, Mac OSX, and
 Linux.
 
@@ -41,7 +41,7 @@ Linux.
     <tr>
     <td width="27%">
 
-Configure and calibrate your APM or PX4 autopilot for autonomous vehicle
+Configure and calibrate your ArduPilot or PX4 autopilot for autonomous vehicle
 control.
 
 ..  raw:: html
@@ -121,7 +121,7 @@ Quick Start Guide
 #. Install APM Planner :ref:`for Mac OSX, <mac-install>`
    :ref:`Windows <install-windows>` and :ref:`Linux <installation-for-linux>`.
 
-#. To setup your APM, PX4, or Pixhawk autopilot, complete the topics in
+#. To setup your ArduPilot, PX4, or Pixhawk autopilot, complete the topics in
    the :ref:`Autopilot Setup section <autopilot-setup>`. If your autopilot has
    already been configured using *Mission Planner*, there is no need to
    redo calibration.
