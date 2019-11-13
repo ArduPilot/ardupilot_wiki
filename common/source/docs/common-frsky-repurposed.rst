@@ -50,7 +50,7 @@ The following script was made specifically for ArduPilot with telemetry protocol
 
 for additional information, see:
 
-* `LuapPilot use for plane discussion <https://discuss.ardupilot.org/t/lua-script-for-apm-plane-quadplane/16202>`__
+* `LuaPilot use for plane discussion <https://discuss.ardupilot.org/t/lua-script-for-apm-plane-quadplane/16202>`__
 
 
 
@@ -102,7 +102,7 @@ This example shows how to assign a switch on the Taranis to enable/disable vario
 .. image:: ../../../images/OpenTX_VarioSwitch.png
  :target: ../_images/OpenTX_VarioSwitch.png
 
-For a more detailed video of how to setup the variometer, you may check out this `video <http://open-txu.org/2-6-02-frsky-variometer-sensor-andrew-newton-02272015-2/>`__
+For a more detailed video of how to setup the variometer, you may check out this `video <https://youtu.be/oe_LIWRJ37w>`__
 ArduPilot already provides variometer values through the FrSky telemetry link, so the FrSky variometer sensor is not necessary.
 
 GPS
