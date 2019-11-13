@@ -5,7 +5,7 @@
     
     It gets links from every .html files in subfolders and test its links for errors. 
   
-    It still a draft... TO-DO: would be better parse only .rst files.
+    It still a draft... TO-DO: improve false positivies and parallel processing.
 
 """
 
@@ -16,19 +16,20 @@ import pandas as pd
 from html.parser import HTMLParser
 import urllib.request
 import requests
-import tqdm     # fancy progress bar
+import tqdm     
 import time
 import re
-# TO-DO from multiprocessing import Pool
-
 
 parser = OptionParser("python3 search_for_broken_links.py [options]")
 parser.add_option("-v", "--verbose", dest='verbose', action='store_true', default=False, help="show debugging output")
-# TO-DO parser.add_option("-p", "--parallel", dest='parallel', action='store_true', default=False, help="do a parallel processing")
+parser.add_option("-b", "--built", dest='file_type_rst', action='store_false', default=False, help="parse an already built wiki, looking .HTML files")
+parser.add_option("-s", "--source", dest='file_type_rst', action='store_true', default=True, help="parse the source of a wiki, looking .RST files")
+# TO-DO parser.add_option("-p", "--parallel", dest='parallel', action='store_true', default=False, help="do a parallel url fetching")
 (opts, args) = parser.parse_args()
 
 
-FILE_TYPE = "*.html" 
+FILE_TYPE_HTML = "*.html" 
+FILE_TYPE_RST = "*.rst" 
 root = "."
 
 error_count = 0
@@ -48,12 +49,16 @@ def error(str_to_print):
     error_count += 1
     print(str_to_print)
 
-
-def create_list_of_files(initial_path, pattern):
+def create_list_of_files(initial_path):
     """
     Fetch all files based on provided path and pattern
 
     """    
+    if opts.file_type_rst:
+        pattern = FILE_TYPE_RST
+    else:
+        pattern = FILE_TYPE_HTML
+
     list_of_files = []
     for path, subdirs, files in os.walk(initial_path):
         for name in files:
@@ -67,34 +72,38 @@ def create_list_of_files(initial_path, pattern):
     return list_of_files
 
 def fetch_links_on_html(uri):
-        """
-        Fetch links from a file
+    """
+    Fetch links from a file
 
-        """
-        links = []
-        #Define HTML Parser
-        class parseText(HTMLParser):
-            def handle_starttag(self, tag, attrs):
-                if tag != 'a':
-                    return
-                attr = dict(attrs)
-                links.append(attr)
-                global n_found_links 
-                n_found_links += 1
-        #Create instance of HTML parser
-        lParser = parseText()
-        #Feed HTML file into parsers
-        try:
-            debug("Fetching for links on " + uri)
-            with open(uri, 'r', encoding="utf8") as file:
-                lParser.feed(file.read())
-        except:
-            error("An exception occurred: search from links on the address:" + uri)
-            #sys.exit(1)    
-        finally:
-            lParser.links = []
-            lParser.close()
-            return links
+    """
+    links = []
+    #Define HTML Parser
+    class parseText(HTMLParser):
+        def handle_starttag(self, tag, attrs):
+            if tag != 'a':
+                return
+            attr = dict(attrs)
+            links.append(attr)
+            global n_found_links 
+            n_found_links += 1
+    #Create instance of HTML parser
+    lParser = parseText()
+    #Feed HTML file into parsers
+    try:
+        debug("Fetching for links on " + uri)
+        with open(uri, 'r', encoding="utf8") as file:
+            lParser.feed(file.read())
+    except:
+        error("An exception occurred: search from links on the address:" + uri)
+    finally:
+        lParser.links = []
+        lParser.close()
+    
+    links_as_strings = []
+    for item in links:
+        links_as_strings.append(item.popitem()[-1])
+
+    return links_as_strings
 
 def fetch_links_on_rst(file_to_check):
     """
@@ -107,18 +116,15 @@ def fetch_links_on_rst(file_to_check):
     with open(file_to_check, 'r', encoding="utf8") as file:
         for line in file:
             result = regex.findall(line)
-            
             if len(result)>0:
-                print("http" + str(result[2:-1]))
-                links.append("http" + str(result[2:-1]))
+                for item in result:
+                    debug("File: " + file_to_check + "  Found a link: http" + str(item))
+                    links.append("http" + str(item))
+                    global n_found_links 
+                    n_found_links += 1
  
-
-    for line in links:
-        print(line)
-
     return links
     
-
 def filter_for_external_links(links_to_check):
     """
     Filter links for no Ardupilot Wiki internal references
@@ -126,7 +132,7 @@ def filter_for_external_links(links_to_check):
     """
     external_links = []
     for links in links_to_check:
-        canditate_link = links.popitem()[-1] # Looks messy: Gets the last field from the dict of each array position
+        canditate_link = links 
         if (
             'http' in canditate_link and                                                # remove relative links
             'ardupilot.org' not in canditate_link and                                  # remove internal resources such as the firmware links and shop
@@ -141,7 +147,6 @@ def filter_for_external_links(links_to_check):
 
     return external_links
 
-
 def get_links(files):
     """
     Iteract over all files and links to generate a dictionay with all links
@@ -152,13 +157,15 @@ def get_links(files):
     all_links = {}
 
     for file in tqdm.tqdm(files, desc="Progress: ", ncols=80):
-        links_from_a_file = fetch_links_on_rst(file)
+        if opts.file_type_rst:
+            links_from_a_file = fetch_links_on_rst(file)
+        else:
+            links_from_a_file = fetch_links_on_html(file)
         cleanned_links = filter_for_external_links(links_from_a_file)
         for link in cleanned_links:
             all_links.update({file:link})
 
     return all_links
-
 
 def check_link_errors(pages_and_links):
 
@@ -166,15 +173,18 @@ def check_link_errors(pages_and_links):
     for page, link in tqdm.tqdm(pages_and_links.items(),  desc="Progress: ", ncols=80):
         debug("Checking " + link)
         try:
-            http_return = requests.head(link, timeout=10).status_code
+            headers_to_avoid_filters = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+            http_return = requests.get(link, timeout=10, headers=headers_to_avoid_filters).status_code
         except requests.exceptions.ConnectionError:
-            http_return = 404
+            http_return = 404                           # Offline as page not found
         except requests.exceptions.Timeout:
+            print()
             error("Timeout occurred fetching " + link)
         except Exception as e:
-           error(e)
+           print()
+           error(e)                                     # Did not happen so far
         finally:
-            if http_return >= 400: # 3xx codes for redirection, 4xx for Client errors and 5xx for Server errors
+            if http_return >= 400:                      # 3xx codes for redirection, 4xx for Client errors and 5xx for Server errors
                 links_with_errors.update({page:link})
                 debug("File " + page + " has a possible broken link (code " + str(http_return) + "): " + link  )
 
@@ -183,31 +193,31 @@ def check_link_errors(pages_and_links):
 
     return links_with_errors
 
-
-
 print("Looking for local files...")
-files_to_look_for_links = create_list_of_files(root, FILE_TYPE)
-print("Found " + str(len(files_to_look_for_links)) + " files to process.")
+files_to_look_for_links = create_list_of_files(root)
+print("Found " + str(len(files_to_look_for_links)) + " files to proccess.")
 print()
 
 print("Getting links from local files... ")
 external_links_to_check = get_links(files_to_look_for_links)
+print()
 print("Found a total of " + str(n_found_links) + " links.")
 print("Picked " + str(n_selected_links) + " links to fetch.")
 print()
 
 
-print("Getting each remote link at time... (it could take a while because there are 10 seconds of timeout for link to crawl)")
-print("Is necessary to check the links manually to avoid \"false positive\" alerts. (Note that errors on common files just need to be correct once)") 
+print("Getting each remote link at time... (it could take a while because there are 10 seconds of timeout for each test.")
+print("Is necessary to check the links manually to avoid \"false positive\" alerts. ")
 print()
 external_probaby_broken = check_link_errors(external_links_to_check)
+print()
 
-for file, link in external_probaby_broken.items():
-    print("File " + file + " has a possible broken link: " + link  )
+for source_file, link in external_probaby_broken.items():
+    print("File " + source_file + " has a possible broken link: " + link  )
 
 print()
-print("Found " + str(n_checked_links) + " links to check manually.")
-print("Is necessary to check the links manually to avoid \"false positive\" alerts. (Note that errors on common files just need to be correct once)") 
+print("Found " + str(len(external_probaby_broken)) + " links to re-check manually. ")
+print("Is necessary to check the links manually to avoid \"false positive\" alerts. ") 
 print()
 
     
