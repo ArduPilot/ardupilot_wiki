@@ -8,14 +8,14 @@ Setup Guide for MakeFlyEasy Believer
     :width: 100%
 
 
-The `MakeFlyEasy Believer <http://makeflyeasy.com/>`__ is a relatively low-cost dual motor plane which makes it easy to launch and/or carry a significant payload.
+The `MakeFlyEasy Believer <http://www.makeflyeasy.com/>`__ is a relatively low-cost dual motor plane which makes it easy to launch and/or carry a significant payload.
 
 This page provides details on how to assemble and configure this vehicle or you may choose to buy a ready-to-fly Believer from `KG aviation <http://kgaviation.com/store/p13/The_Believer_.html>`__
 
 Parts List
 ==========
 
-The manufacturer recommended parts can be found by clicking the bottom left icon on the `MakeFlyEasy <http://makeflyeasy.com/>`__ home page but this list is also expanded upon below.
+The manufacturer recommended parts can be found by clicking the bottom left icon on the `MakeFlyEasy <http://www.makeflyeasy.com/>`__ home page but this list is also expanded upon below.
 
 - Believer 1960mm frame is available from many retailers
 - 2x Sunny Sky 2814 KV900 motor
