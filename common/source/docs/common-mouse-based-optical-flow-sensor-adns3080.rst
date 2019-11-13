@@ -167,4 +167,4 @@ Acknowledgements:
    position hold with mouse sensor
 
 #. research paper re `optical flow for position hold <http://www.araa.asn.au/acra/acra2007/papers/paper181final.pdf>`__
-#. research paper re `optical flow for object avoidance <http://www.mecatronica.eesc.usp.br/wiki/upload/0/0a/2006_Thesis_Remote_Terrain_Navigation_for_Unmanned_Air_Vehicles.pdf>`__
+#. research paper re `optical flow for object avoidance <https://www.scribd.com/document/241321239/2006-Thesis-Remote-Terrain-Navigation-for-Unmanned-Air-Vehicles>`__
