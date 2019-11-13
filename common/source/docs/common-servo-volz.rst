@@ -24,7 +24,7 @@ Connection and Configuration
     :target: ../_images/servo-volz-pixhawk.png
     :width: 450px
 
-image courtesy of the `Volz DA-26 servo datasheet <https://www.volz-servos.com/English/resources/Downloads/DataSheets/DA-26_Datasheet_uni.pdf>`__
+image courtesy of the `Volz DA-26 servo datasheet <https://volz-servos.com/resources/Downloads/Datasheets/DA-26_Datasheet_uni.pdf>`__
 
 - Use a BEC to provide power to the servo as shown above
 - Connect the servo's TTL pin to a 5V-to-3V level shifter and then to one of the flight controller's serial port's TX pins.  The diagram above shows the servo connected to a Pixhawk's Serial4 port but other serial ports can also be used
