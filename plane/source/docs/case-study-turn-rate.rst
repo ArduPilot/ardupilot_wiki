@@ -21,7 +21,7 @@ was maintaining 100% despite being set to 75%.
 -  `Jakkur Auto take off and land text file <http://firmware.ardupilot.org/downloads/wiki/other_files/Jakkur-Auto-take-off-and-land.txt>`__
 
 By analyzing this data using
-**`Mavgraph <http://qgroundcontrol.org/mavlink/mavproxy_startpage#mavgraphpy>`__**,
+**`Mavgraph <https://ardupilot.github.io/MAVProxy/html/analysis/mavtools.html#mavgraph-py>`__**,
 Tridge was able to provide the following insight.
 
 ***May 29, 2013 DIYDrones; posted to Plane 2.x Software forum:***
