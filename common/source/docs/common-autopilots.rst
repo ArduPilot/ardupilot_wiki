@@ -12,8 +12,8 @@ Open hardware
 .. toctree::
     :maxdepth: 1
 
-    BBBMini <https://github.com/mirkix/BBBMINI>
-    Beagle Bone Blue <common-beagle-bone-blue>
+    BBBMini* (Linux) <https://github.com/mirkix/BBBMINI>
+    Beagle Bone Blue (Linux) <common-beagle-bone-blue>
     CUAV V5 Plus <common-cuav-v5plus-overview>
     CUAV V5 Nano <common-cuav-v5nano-overview>
     Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
@@ -28,8 +28,10 @@ Open hardware
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/mro-x2.1rv2-mr.htm>
     mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/mro-x2.1-777-mr.htm>
     OpenPilot Revolution <common-openpilot-revo-mini>
-    PocketPilot <https://github.com/PocketPilot/PocketPilot>
+    PocketPilot* (Linux) <https://github.com/PocketPilot/PocketPilot>
     TauLabs Sparky2 <common-taulabs-sparky2>
+
+\* these devices are sensor add-on boards for a Beagle Bone microcomputer. See board links for details 
 
 Closed hardware
 ---------------
@@ -38,7 +40,7 @@ Closed hardware
     :maxdepth: 1
 
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
-    Emlid NAVIO2 <common-navio2-overview>
+    Emlid NAVIO2 (Linux) <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Holybro Durandal H7 <common-durandal-overview>
     Holybro Kakute F4 <common-holybro-kakutef4>
@@ -59,6 +61,8 @@ Closed hardware
     SpeedyBee F4 <common-speedybeef4>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
+
+.. note:: For more information on using ArduPilot on Linux based boards, see :ref:`building-the-code`
 
 Discontinued boards
 -------------------

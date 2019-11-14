@@ -123,6 +123,8 @@ More Information
 
 CUAV V5 Plus PDF Manual `here <http://manual.cuav.net/V5-Plus.pdf>`__
 
+`Schematics <https://github.com/ArduPilot/Schematics/tree/master/CUAV>`__
+
 More Images
 ===========
 

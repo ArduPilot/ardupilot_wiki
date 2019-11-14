@@ -87,6 +87,8 @@ Where to Buy
 
 - Available from many retailers including `HobbyKing <https://hobbyking.com/en_us/openpilot-cc3d-revolution-revo-32bit-flight-controller-w-integrated-433mhz-oplink.html>`__.
 
+`Schematics <https://github.com/ArduPilot/Schematics/tree/master/OpenPilot-Revolution>`__
+
 Firmware handling
 =================
 ArduPilot supports Revolution and RevoMini in Stable releases. Firmware files can be found `here <http://firmware.ardupilot.org/>`__

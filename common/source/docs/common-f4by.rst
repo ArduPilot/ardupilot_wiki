@@ -53,6 +53,8 @@ Specifications
    -  micro SD card (for logs)
    -  Fram memory for parameters
 
+`Schematics <https://github.com/ArduPilot/Schematics/tree/master/F4BY>`__
+
 Where to Buy
 ============
 

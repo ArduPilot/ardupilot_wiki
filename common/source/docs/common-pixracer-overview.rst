@@ -440,4 +440,6 @@ See also
    `pixhawk.org <https://pixhawk.org/>`__,
    `docs.px4.io <https://docs.px4.io/en/flight_controller/pixracer.html>`__ and the
    `mRobotics shop <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__
-   
+
+`Schematics <https://github.com/ArduPilot/Schematics/tree/master/mRobotics>`__
+

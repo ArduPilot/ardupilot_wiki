@@ -424,7 +424,7 @@ More Information
 
 see  `www.proficnc.com  <http://www.proficnc.com>`__
 
-The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, this serve as a starting point for designers to design their own system based on The Cube flight controller.
+The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, or `here <https://github.com/ArduPilot/Schematics/tree/master/ProfiCNC>`__ ,this serve as a starting point for designers to design their own system based on The Cube flight controller.
 
 More Images
 ===========
