@@ -18,7 +18,7 @@ ADS-B (aka `Automatic Dependent Surveillance Broadcast <https://en.wikipedia.org
 
 .. warning::
 
-   The avoidance features are new features still under development and should be used with caution.
+   The avoidance features are new features still under development and should be used with caution. It is highly recommended that the RCx_OPTION =38 (ADSB Avoidance En) feature be setup if ADSB avoidance is enabled to allow easy disabling while airborne, if so desired.
 
 Required Hardware
 =================
@@ -83,7 +83,8 @@ To test the system you can compare with flights shown on
 Enabling Manned Vehicle Avoidance
 =================================
 
-Copter-3.4 (and higher) and very recent versions of Plane include a new flight mode AVOID_ADSB that attempts to avoid manned vehicles based on the ADS-B sensor's output.
+Copter-3.4 (and higher) and very recent versions of Plane include a new flight mode AVOID_ADSB that attempts to avoid manned vehicles based on the ADS-B sensor's output. Entry into this mode is automatic when avoidance is necessary based on the parameters below. Exit is also automatic when the threat has passed.
+
 To enable this feature connect with a Ground Station and set the following parameters:
 
 -  :ref:`AVD_ENABLE <AVD_ENABLE>` : set to "1" to enable ADS-B based avoidance (param refresh may be necessary after setting this)
@@ -95,13 +96,16 @@ To enable this feature connect with a Ground Station and set the following param
 
 Note: there are equivalent "Warn" parameters (i.e. AVD_W_DIST_XY) that can be used to adjust when warnings to the pilot will appear on the ground station.
 
+In ArduPilot firmware versions 4.0 and later, the entry into this mode can be enabled or disabled via an RC channel switch by setting the channel's RCx_OPTION = 38 (ADSB Avoidance En). If the RC PWM is >1800us, then entry into this mode is enabled if a threat presents.
+
 .. warning::
 
    The avoidance features are still under development and should be used with caution.  They may not yet be useful for real-life manned vehicle avoidance.
 
    ..  youtube:: quomxCIPP74
     :width: 100%
-   
+
+
 Older version of ADS-B based avoidance in Plane-3.5
 ===================================================
 
