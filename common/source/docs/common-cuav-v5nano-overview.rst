@@ -118,6 +118,8 @@ More Information
 
 CUAV V5 Nano PDF `here <http://manual.cuav.net/V5-nano.pdf>`__
 
+`Schematics <https://github.com/ArduPilot/Schematics/tree/master/CUAV>`__
+
 More Images
 ===========
 

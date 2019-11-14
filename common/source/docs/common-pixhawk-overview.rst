@@ -746,6 +746,8 @@ explains both simple and advanced power-supply options for the Pixhawk.
 See also
 ========
 
+`Schematics <https://github.com/ArduPilot/Schematics/tree/master/3DR>`__ 
+
 .. toctree::
     :maxdepth: 1
 
