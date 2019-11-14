@@ -5,7 +5,7 @@ Rangefinders (landing page)
 ===========================
 
 Copter/Plane/Rover support a number of different rangefinders including
-Maxbotix Sonar and Pulsed Light LED range finders.
+Maxbotix Sonar and Pulsed Light LED range finders. Rangefinders are used to provide precise altitude information when close to the ground and/or provide proximity sensing for object avoidance.
 
 [site wiki="plane"]
 .. tip::
@@ -50,6 +50,7 @@ based upon your set-up.
     Sonar Sensors <sonar-sensors>
 [/site]
 
+    Aerotenna US-D1 Radar Altimeter <common-aerotenna-usd1>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Benewake TF02 / TF03 <common-benewake-tf02-lidar>
     Benewake TFmini / TFmini Plus <common-benewake-tfmini-lidar>
