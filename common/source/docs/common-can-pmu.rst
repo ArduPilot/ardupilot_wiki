@@ -1,6 +1,8 @@
-# CAN PMU Power detection module
+.. _common-can-pmu:
 
---------------------------------
+==============================
+CAN PMU Power detection module
+==============================
 
 ![CAN PMU](../assets/can-pmu.jpg)
 
