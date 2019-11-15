@@ -14,6 +14,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Bask Aerospace <https://baskaerospace.com.au/>`__
 * `BlueRobotics <https://www.bluerobotics.com/store/>`__
 * `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules)
+* `CUAV <https://store.cuav.net/>`__
 * `Drotek <https://drotek.com/>`__
 * `Emlid <https://store.emlid.com/>`__
 * `EnRoute LAB <http://elab.co.jp/>`__
