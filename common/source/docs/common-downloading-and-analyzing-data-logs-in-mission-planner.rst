@@ -263,7 +263,7 @@ a mission):**
 | ThO     | Final throttle output sent to the motors (from 0 ~ 1000). Normally equal to ThrI+ABst while        |
 |         | in stabilize mode.                                                                                 |
 +---------+----------------------------------------------------------------------------------------------------+
-| ThH     | ?                                                                                                  |
+| ThH     | Estimated throttle required to hover throttle in the range 0 ~ 1                                   |
 +---------+----------------------------------------------------------------------------------------------------+
 | DAlt    | The Desired Altitude while in AltHold, Loiter, RTL or Auto flight modes.                           |
 |         | It is influenced by EKF origin, which in 3.5.X is corrected by GPS altitude. This is behaviour is  |
@@ -273,12 +273,12 @@ a mission):**
 +---------+----------------------------------------------------------------------------------------------------+
 | BAlt    | Barometer Altitude: The altitude above ground according to the barometer                           |
 +---------+----------------------------------------------------------------------------------------------------+
-| DSAlt   | Not used? (Only visible of Sonar is available)                                                     |
+| DSAlt   | Desired distance in cm from ground or ceiling (only visible if Sonar is available)                 |
 +---------+----------------------------------------------------------------------------------------------------+
 | SAlt    | Sonar Altitude: the altitude above ground according to the sonar                                   |
 |         | (Only visible of Sonar is available)                                                               |
 +---------+----------------------------------------------------------------------------------------------------+
-| TAlt    | Not used?                                                                                          |
+| TAlt    | Terrain altitude (not used by default)                                                             |
 +---------+----------------------------------------------------------------------------------------------------+
 | CRate   | Climb Rate: Accelerometer + baro estimate in cm/s                                                  |
 +---------+----------------------------------------------------------------------------------------------------+
