@@ -19,6 +19,8 @@ The links below have information about the most commonly used power modules
     Mauch Power Modules <common-mauch-power-modules>
     Smart Batteries <common-smart-battery>
     Fuel Monitors <common-fuel-sensors>
+    Can PMU<common-can-pmu>
+    HV PM<common-hv-pm>
 
 Power modules provide these benefits:
 
