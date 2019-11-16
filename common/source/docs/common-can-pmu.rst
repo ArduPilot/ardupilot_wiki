@@ -4,7 +4,8 @@
 CAN PMU Power detection module
 ==============================
 
-![CAN PMU](../assets/can-pmu.jpg)
+.. image:: ../../../images/can-pmu/can-pmu.jpg
+    :target: ../_images/can-pmu/can-pmu.jpg
 
 ========
 Overview
@@ -61,15 +62,19 @@ Buy
 Pinouts
 =======
 
-![CAN PMU](../assets/can-pmu-pinouts-en.png)  
-![CAN PMU](../assets/can-pmu-pinouts-en2.png)
+.. image:: ../../../images/can-pmu/can-pmu-pinouts-en.png
+    :target: ../_images/can-pmu/can-pmu-pinouts-en.png
 
+.. image:: ../../../images/can-pmu/can-pmu-pinouts-en2.png
+    :target: ../_images/can-pmu/can-pmu-pinouts-en2.png
+    
 ==========
 Connection
 ==========
 
-![CAN PMU](../assets/can-pmu-connection-en.png)
-
+.. image:: ../../../images/can-pmu/can-pmu-connection-en.png
+    :target: ../_images/can-pmu/can-pmu-connection-en.png
+    
 **Connection method:**
 
 * Connect the flight control CAN1/2 and the module CAN interface.
@@ -84,7 +89,8 @@ Set the following parameters in the Mission planner's full parameter list and re
 * CAN\_P2\_DRIVER=1 
 * BATT\_MONITOR=8（If using monitor 1）
 
-![MP set](../assets/mp-set.png)
+.. image:: ../../../images/can-pmu/mp-set.png
+    :target: ../_images/can-pmu/mp-set.png
 
 >**Note: Please use the firmware of AC3.6/AP3.9 (included) or higher.
 
