@@ -86,7 +86,9 @@ Set the following parameters in the Mission planner's full parameter list and re
 .. image:: ../../../images/can-pmu/mp-set.png
     :target: ../_images/can-pmu/mp-set.png
 
->**Note** Please use the firmware of AC3.6/AP3.9 (included) or higher.
+.. note::
+
+ Please use the firmware of AC3.6/AP3.9 (included) or higher.
 
 More information
 ================
