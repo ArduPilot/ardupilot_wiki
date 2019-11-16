@@ -24,7 +24,7 @@ Enable HV PM
 
 * Monitor：Anglog Voltage and Current
 * Sensor：CUAV HV PM
-* APM Ver：CUAV v5 or APM1(V5 series flight control selects CUAV v5)
+* APM Ver：CUAV v5 or Pixhawk4(V5 series flight control selects CUAV v5)
 * Click on other interface to write parameters
 * Restart mp ground station and flight control
 
