@@ -17,9 +17,9 @@ The CUAV HV_PM module is a new high voltage voltage power module independently d
 * Max output current(ESC/MOTOR PORT): 60A
 
 Enable HV PM
-=============================
+============
 
-![HV PM](../assets/pm/hv_pm.png) 
+.. image:: ../../../images/hv_pm.png
 
 * Monitor：Anglog Voltage and Current
 * Sensor：CUAV HV PM
