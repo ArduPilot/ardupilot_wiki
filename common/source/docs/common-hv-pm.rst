@@ -30,3 +30,7 @@ Enable HV PM
 
 You can also enable it by setting the following parameters.
 
+- :ref:`BATT\_MONITOR` to 4 to Set to analog voltage and current.
+- :ref:`BATT\_VOLT\_PIN` to 0.
+- :ref:`BATT\_CURR\_PIN` to 1.
+- Restart mp ground station and flight control
