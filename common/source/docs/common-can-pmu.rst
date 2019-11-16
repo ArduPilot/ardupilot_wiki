@@ -93,6 +93,6 @@ More information
 
 [CAN PMU Manual](http://manual.cuav.net/power-module/CAN-PMU.pdf)
 
-[CUAV docs](Doc.cuav.net/power-module/can-pmu)
+[CUAV docs](http://doc.cuav.net/power-module/can-pmu)
 
 [UAV CAN](https://new.uavcan.org/)
