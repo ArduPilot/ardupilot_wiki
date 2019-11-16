@@ -6,11 +6,15 @@ CAN PMU Power detection module
 
 ![CAN PMU](../assets/can-pmu.jpg)
 
-## Overview
+========
+Overview
+========
 
 CAN PMU is a drone power management module with built-in STM32F4 processor; running CUAV ITT compensation algorithm, can accurately measure the voltage and current of the drone; support 6~62V voltage input, and the POWER port can output 5V/ 8A. It uses advanced CAN bus communication and supports the standard [UAVCAN](https://new.uavcan.org/) protocol; each PMU uses factory-level calibration to ensure good consistency and high accuracy.
 
-## Quick Summary
+=============
+Quick Summary
+=============
 
 * **processor** 
   * STM32F412
@@ -46,17 +50,23 @@ CAN PMU is a drone power management module with built-in STM32F4 processor; runn
   * Size:46.5mm \* 38.5mm \* 22.5mm
   * Weight:76g
 
-## Buy
+===
+Buy
+===
 
 [CUAV store](https://store.cuav.net/index.php)
 [Aliexpress](https://www.aliexpress.com/item/4000369700535.html)
 
-## Pinouts
+=======
+Pinouts
+=======
 
 ![CAN PMU](../assets/can-pmu-pinouts-en.png)  
 ![CAN PMU](../assets/can-pmu-pinouts-en2.png)
 
-## Connection
+==========
+Connection
+==========
 
 ![CAN PMU](../assets/can-pmu-connection-en.png)
 
@@ -65,7 +75,9 @@ CAN PMU is a drone power management module with built-in STM32F4 processor; runn
 * Connect the flight control CAN1/2 and the module CAN interface.
 * Connect the V5 series power cable to the V5 Flight Control Power2 (if other flight controllers are connect to the Power interface) and the module Power  interface.
 
-## Enable CAN PMU
+==============
+Enable CAN PMU
+==============
 
 Set the following parameters in the Mission planner's full parameter list and restart after writing:
 * CAN\_P1\_DRIVER=1 
@@ -76,7 +88,9 @@ Set the following parameters in the Mission planner's full parameter list and re
 
 >**Note: Please use the firmware of AC3.6/AP3.9 (included) or higher.
 
-## More information
+================
+More information
+================
 
 [CAN PMU Manual](http://manual.cuav.net/power-module/CAN-PMU.pdf)
 
