@@ -19,7 +19,8 @@ The CUAV HV_PM module is a new high voltage voltage power module independently d
 Enable HV PM
 ============
 
-.. image:: ../../../images/hv_pm.png
+.. image:: ../../../images/hv-pm.jpg
+:target: ../_images/hv-pm.jpg
 
 * Monitor：Anglog Voltage and Current
 * Sensor：CUAV HV PM
