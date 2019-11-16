@@ -81,7 +81,7 @@ Enable CAN PMU
 Set the following parameters in the Mission planner's full parameter list and restart after writing:
 * CAN\_P1\_DRIVER=1 
 * CAN\_P2\_DRIVER=1 
-* BATT\_MONITOR=8（If using monitor 1）
+* BATT\_MONITOR=8（If using Battery monitor 1）
 
 .. image:: ../../../images/can-pmu/mp-set.png
     :target: ../_images/can-pmu/mp-set.png
