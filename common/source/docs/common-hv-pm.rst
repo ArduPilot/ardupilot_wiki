@@ -28,3 +28,5 @@ Enable HV PM
 * Click on other interface to write parameters
 * Restart mp ground station and flight control
 
+You can also enable it by setting the following parameters.
+
