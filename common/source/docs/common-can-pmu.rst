@@ -80,8 +80,8 @@ Enable CAN PMU
 
 Set the following parameters in the Mission planner's full parameter list and restart after writing:
 
-- :ref:`CAN\_P1\_DRIVER` to 1 to enable CAN bus1
-- :ref:`CAN\_P2\_DRIVER` to 1 to enable CAN bus1
+- :ref:`CAN\_P1\_DRIVER` to 1 to enable CAN bus1.
+- :ref:`CAN\_P2\_DRIVER` to 1 to enable CAN bus1.
 - :BATT\_MONITOR` to 8(If using Battery monitor 1）to Set the battery monitor type to uavcan.
 
 .. image:: ../../../images/can-pmu/mp-set.png
