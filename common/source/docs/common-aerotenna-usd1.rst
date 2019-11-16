@@ -1,8 +1,8 @@
 .. _common-aerotenna-usd1:
 
-==============================
+===============================
 Aerotenna US-D1 Radar Altimeter
-==============================
+===============================
 
 The `Aerotenna US-D1 Radar Altimeter <https://aerotenna.com/shop/%ce%bclanding-lite-microwave-radar-altimeter-device-only/>`__ has a range of 50m, an update rate of 82hz and weighs only 110g.
 
