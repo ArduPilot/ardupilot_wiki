@@ -70,7 +70,9 @@ After your VS installation is complete:
 
 -   Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Summary ( right of screen) -> then tick the tickbox labeled ".Net Core 2.0 development tools" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete.
 -   Also, Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Windows ( left of screen) -> then tick the tickbox labeled ".Net desktop development tools" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete. If it's already ticked, leave it as-is, that's already fine.  :-) 
--  you might like to test your installation on a simple "Hello World" application, or the "SimpleExample" described below.
+-   Also, Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Windows ( left of screen) -> then tick the tickbox labeled "mobile developement with .NET" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete. If it's already ticked, leave it as-is, that's already fine.  :-) 
+- You may need to install dotnet core 2.2 if you are upgrading from a previous version of mission planner. (https://dotnet.microsoft.com/download/dotnet-core/2.2) 2.2.108 works fine with MP 1.3.68
+-  You might like to test your installation on a simple "Hello World" application, or the "SimpleExample" described below.
 -  TIP: By default it is installed here: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\"  
 
 Getting the Mission Planner source code from Github into your computer
