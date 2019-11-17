@@ -4,15 +4,17 @@
 Power Module Configuration in Mission Planner
 =============================================
 
-A power module can be used to measure the battery voltage and current for use in the battery failsafe and also to provide a stable power supply to the flight controller
+A power module can be used to measure the battery voltage and current for use in the battery failsafe and also to provide a stable power supply to the flight controller.
 
 ArduPilot is :ref:`compatible with a number of power modules <common-powermodule-landingpage>`.
+
+.. note:: Boards with integrated power modules have their parameters setup by default.
 
 Mission Planner Setup
 =====================
 
 Battery measurement is primarily set up in the *Mission Planner*'s
-**INITIAL SETUP \| Optional Hardware \| Battery Monitor** screen.
+**INITIAL SETUP \| Optional Hardware \| Battery Monitor** screen. Note that currently Mission Planner only supports the first two Battery Monitors in the system (a total of 10 are available in firmware versions 4.0 and later). More would need to be configured directly by directly setting their parameters in the **CONFIG/TUNNING\|Full Parameter List** screen.
 
 .. figure:: ../../../images/MissionPlanner_BatteryMonitorConfiguration.png
    :target: ../_images/MissionPlanner_BatteryMonitorConfiguration.png
@@ -115,10 +117,9 @@ Connecting power module to alternative pins
 The power module is generally plugged into the default port on the
 flight controller (ie. Pixhawk). If you wish to change where the power
 module is plugged into the controller, the pins used can be modified
-using the BATT_VOLT_PIN and BATT_CURR_PIN parameters.
+using the ``BATT_VOLT_PIN`` and ``BATT_CURR_PIN`` parameters.
 
 The list of available analog input pins that can be used are listed on
-the Hardware Options page for each board
-(:ref:`Pixhawk <common-pixhawk-overview_pixhawk_analog_input_pins>`,
-:ref:`APM2 <common-apm25-and-26-overview_analog_input_pins>`).
+the Hardware Options page for the :ref:`Pixhawk <common-pixhawk-overview_pixhawk_analog_input_pins>`  board or its board description linked from the :ref:`common-autopilots` page
+
 
