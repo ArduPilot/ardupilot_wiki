@@ -82,6 +82,11 @@ point-and-click interaction with your hardware, custom scripting, and simulation
 
 --------------
 
+Documentaton:
+=============
+
+See sidebar for links to ArduPilot documents
+
 Regulations:
 ============
 
