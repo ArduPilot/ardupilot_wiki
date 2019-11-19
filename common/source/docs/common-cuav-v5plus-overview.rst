@@ -5,7 +5,7 @@ CUAV V5 Plus Overview
 =====================
 
 .. image:: ../../../images/cuav_autopilot/v5plus/v5plus_01.png
-    :target: ../_images/cuav_autopilot/v5plus/v5plus_01.png
+    :target: ../_images/v5plus_01.png
     :width: 360px
 
 The CUAV v5 Plus is an advanced STM32F765 autopilot designed and made by CUAV.
