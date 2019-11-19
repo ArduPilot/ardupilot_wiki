@@ -3,7 +3,7 @@ Holybro Durandal
 ================
 
 .. image:: ../../../images/holybro_durandal/durandal_iso.png
-    :target: ../_images/holybro_durandal/durandal_iso.png
+    :target: ../_images/durandal_iso.png
     :width: 360px
 
 Durandal is the latest update to the successful family of Holybro flight controllers.
