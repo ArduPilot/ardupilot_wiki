@@ -35,10 +35,8 @@ The key parameter to make a plane a tailsitter is to set
 VTOL backend.
 
 The tailsitter backend is a bit unusual, as it is the only
-:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` setting that doesn't have any motors associated with
-it. The way the backend works is that it provides roll, pitch, yaw and
-thrust values to the fixed wing control code. These values then
-control your ailerons, elevons, elevators, rudder and motors.
+:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` setting that may not have any multicopter-style motors associated with
+it. If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero (the default), meaning no multicopter-like motors, it provides roll, pitch, yaw and thrust (Throttle, Throttle Left, Throttle Right) values to the fixed wing control code. These values then control your ailerons, elevons, elevators, rudder and forward motors.
 
 This has a nice benefit when setting up the tailsitter that you can
 follow the normal fixed wing setup guide in MANUAL and FBWA modes, and
@@ -46,8 +44,17 @@ then when you switch to hover all of your control directions will be
 correct.
 
 It also means that you can fly any fixed wing aircraft that is capable
-of 3D flight as a tailsitter, and fly it in modes like QSTABILIZE,
+of 3D flight as a single or dual motor tailsitter, and fly it in modes like QSTABILIZE,
 QHOVER and QLOITER.
+
+.. youtube:: bMsfjwUAfkM
+    :width: 100%
+
+However, it can also have copter-like motors, like a conventional QuadPlane if :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is non-zero. Then this parameter determines which motors remain active in normal forward flight (plane modes). If non-zero, then use the :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` parameter to configure the multicopter motor style, and the appropriate MOTORx outputs will be activated.
+
+.. youtube:: cfqP9-2IWtQ
+    :width: 100%
+
 
 The key differences between fixed wing flight and hovering for a
 tailsitter are:
@@ -77,6 +84,7 @@ PID gain scheduling
 ===================
 
 :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`:
+
 
 - If greater than 1: defines the maximum boost that will be applied to the control surfaces when throttle is below hover, this should be reduced if oscillations are seen at low throttle. 
 
@@ -132,6 +140,10 @@ with control from your elevon mixing gain (controlled by :ref:`MIXING_GAIN<MIXIN
 By adjusting the relative values of :ref:`Q_TAILSIT_VHGAIN<Q_TAILSIT_VHGAIN>`, :ref:`Q_TAILSIT_VFGAIN<Q_TAILSIT_VFGAIN>`
 and MIXING_GAIN you can adjust how much control you have from elevons
 and thrust vectoring in each flight mode.
+
+.. youtube:: s2KLOAdS_HY
+    :width: 100%
+
 
 Tailsitter Input
 ================
