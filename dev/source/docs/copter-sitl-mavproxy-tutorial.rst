@@ -246,7 +246,7 @@ Setting a GeoFence
 
 A GeoFence is is a virtual barrier that Copter uses to constrain the
 movement of the vehicle. Copter uses a simple "tin can border" as
-described in :ref:`Simple GeoFence <copter:ac2_simple_geofence>`.
+described in :ref:`Simple GeoFence <common-ac2_simple_geofence>`.
 When the radius or maximum altitude is breached, Copter returns to the
 launch point and/or lands.
 

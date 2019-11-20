@@ -93,10 +93,10 @@ GPS related failures:
 
 **GPS Glitch** : the :ref:`GPS is glitching <gps-failsafe-glitch-protection>` and the vehicle
 is in a flight mode that requires GPS (i.e. Loiter, PosHold, etc) and/or
-the :ref:`circular fence <ac2_simple_geofence>` is enabled.
+the :ref:`cylindrical fence <common-ac2_simple_geofence>` is enabled.
 
 **Need 3D Fix** : the GPS does not have a 3D fix and the vehicle is in a
-flight mode that requires the GPS and/or the :ref:`circular fence <ac2_simple_geofence>` is enabled.
+flight mode that requires the GPS and/or the :ref:`cylindrical fence <common-ac2_simple_geofence>` is enabled.
 
 **Bad Velocity** : the vehicle's velocity (according to inertial
 navigation system) is above 50cm/s.  Issues that could lead to this
@@ -105,7 +105,7 @@ calibration, GPS updating at below the expected 5hz.
 
 **High GPS HDOP** : the GPS's HDOP value (a measure of the position
 accuracy) is above 2.0 and the vehicle is in a flight mode that requires
-GPS and/or the :ref:`circular fence <ac2_simple_geofence>` is enabled. 
+GPS and/or the :ref:`cylindrical fence <common-ac2_simple_geofence>` is enabled. 
 This may be resolved by simply waiting a few minutes, moving to a
 location with a better view of the sky or checking sources of GPS
 interference (i.e. FPV equipment) are moved further from the GPS. 
