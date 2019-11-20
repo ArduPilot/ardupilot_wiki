@@ -47,29 +47,13 @@ Notes:
 - UAVCAN requires termination, terminator included in UAVCAN cable set.
 
 
-Firmware setup
-==============
-
-.. note::
-
-    Auto mission using PWM works with current Copter release, this step may be skipped. 
-    UAVCAN support requires Copter-3.4A or later.
-
-At the moment Copter 3.4A is not released. It can be `built from the master <http://ardupilot.org/dev/docs/building-the-code.html>`__.  or: 
-
-#. Download APM firmware `here: <https://files.zubax.com/3rdparty/APM/uavcan_epm/>`__.
-#. Upload custom firmware via Mission Planner or QGC.
-
-
 Parameter setup
 ===============
 
-#. Set BRD_CAN_ENABLE = 2 (Enable support for dynamic node ID allocation and firmware update).
-   Save and restart the board. 
-   After about 5 seconds the RED CAN LED on the EPM will start blinking. This indicates that CAN frames are being received.
+   
+#. You need to enable the UAVCAN. The :ref:`UAVCAN setup page is here <common-uavcan-setup-advanced>`. You also may check the configurations of the parameters :ref:`GRIP_UAVCAN_ID <GRIP_UAVCAN_ID>` and :ref:`GRIP_TYPE <GRIP_TYPE>` to set gripper ID and type.
 
-   .. image:: ../../../images/OpenGrabEPMV3_3.jpg
-       :target: ../_images/OpenGrabEPMV3_3.jpg
+#. Save the configurations and restart the boards. After about 5 seconds the RED CAN LED on the EPM will start blinking. This indicates that CAN frames are being received.
     
 #. Set CH7_OPT: Channel 7 option = 19 (EPM) (Channel 7 - 12 maybe used) 
 
