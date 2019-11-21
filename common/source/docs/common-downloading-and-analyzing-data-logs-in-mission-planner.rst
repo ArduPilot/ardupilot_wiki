@@ -280,11 +280,11 @@ a mission):**
 +---------+----------------------------------------------------------------------------------------------------+
 | TAlt    | Terrain altitude (not used by default)                                                             |
 +---------+----------------------------------------------------------------------------------------------------+
-| CRate   | Climb Rate: Accelerometer + baro estimate in cm/s                                                  |
+| DCRt    | Desired Climb Rate in cm/s                                                                         |
 +---------+----------------------------------------------------------------------------------------------------+
-| DCRate  | Desired Climb Rate in cm/s                                                                         |
+| CRt     | Climb Rate in cm/s                                                                                 |
 +---------+----------------------------------------------------------------------------------------------------+
-| CRate   | Climb Rate in cm/s                                                                                 |
+| N       | Harmonic notch current center frequency for gyro in Hz                                             |
 +---------+----------------------------------------------------------------------------------------------------+
 
 **D32, DU32 (single data values which are either signed 32bit integers
