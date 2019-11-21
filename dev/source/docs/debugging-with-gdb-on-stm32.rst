@@ -4,13 +4,7 @@
 Debugging with GDB on STM32
 ===========================
 
-This page describes how to setup GDB on Linux to debug issues on STM32. The specific commands were tested on Ubuntu 13.10. GDB can
-also be set-up on Windows but `there is an issue passing the Ctrl-C command to GDB <http://stackoverflow.com/questions/711086/in-gdb-on-mingw-how-to-make-ctrl-c-stop-the-program>`__
-which makes it difficult to use effectively.
-
-.. warning::
-
-    This page has not be maintained from some time, if something is wrong please contact us on `Gitter/ArduPilot <https://gitter.im/ArduPilot/ardupilot>`__.
+This page describes how to setup GDB on Linux to debug issues on STM32. The specific commands were tested on Ubuntu 18.10.
 
 Introduction
 ============
@@ -29,12 +23,25 @@ on your machine following the instructions for
 
 A `BlackMagic probe <http://www.blacksphere.co.nz/main/index.php/blackmagic>`__ or `ST-Link V2 JST debugger <https://www.ebay.com/itm/ST-Link-V2-Stlink-Emulator-Downloader-Programming-Mini-Unit-STM8-STM32-KK/223056820813>`__ is
 also required.  A BlackMagic probe can be purchased in the US from `Transition Robotics <http://transition-robotics.com/products/black-magic-probe-mini>`__,
-`Tag-Connect <http://www.tag-connect.com/BLACK-SPHERE-DBG>`__ or `1 Bit Squared <http://1bitsquared.com/collections/frontpage/products/black-magic-probe>`__
+`1 Bit Squared <http://1bitsquared.com/collections/frontpage/products/black-magic-probe>`__
 or in NewZealand from
 `Greenstage <http://shop.greenstage.co.nz/product/black-magic-debug-probe>`__.
 
-Connecting the probe to the Pixhawk
-===================================
+A small plug (`FTSH-105-04-L-DV <https://au.element14.com/samtec/ftsh-105-04-l-dv/connector-header-1-27mm-smt-10way/dp/2308438?scope=partnumberlookahead&ost=FTSH-105-04-L-DV&searchref=searchlookahead&exaMfpn=true&ddkey=https%3Aen-AU%2FElement14_Australia%2Fw%2Fsearch>`__) may be required to solder on to the JTAG port of the flight controller.
+
+
+Compiling the Firmware
+======================
+
+Build and upload the debug variant of the firmware:
+
+```
+./waf configure --board=Pixhawk1-1M --debug --enable-asserts
+./waf --target=examples/UART_test --upload
+```
+
+Connecting the BlackMagic probe to the Pixhawk
+==============================================
 
 .. image:: ../images/DebuggingWithGDB_PixhawkBlackMagicProbe.jpg
     :target: ../_images/DebuggingWithGDB_PixhawkBlackMagicProbe.jpg
@@ -46,6 +53,9 @@ interferes with the case.
 
 Connecting the ST-Link V2 JTAG debugger to the STM32
 ====================================================
+
+.. image:: ../images/stlink-pixhawk-debugger.jpeg
+    :target: ../_images/stlink-pixhawk-debugger.jpeg
 
 The ST-Link debugger should be connected to the STM32's JTAG connector
 using the JTAG breakout cable. Connect the
@@ -71,44 +81,35 @@ arm-none-eabi-gdb.
 Installing OpenOCD
 ==================
 
-You will need to install OpenOCD if you are using the ST-Link debugger.
+You will need to install OpenOCD if you are using the ST-Link debugger:
 
-OpenOCD requires libusb which you can install using
-``sudo apt-get install libusb-1.0-0-dev libusb-1.0-0``.
+``sudo apt-get install openocd``.
 
-Next, download OpenOCD from the `project's SourceForge page <https://sourceforge.net/projects/openocd/>`__.
-Make sure you just install version 0.10 as other versions may not be compatible.
-Unpack the file, and navigate to the folder from the command line.
-Next, execute the following commands
+Before OpenOCD and GDB are run, their configuration files need to be copied to the build folder. Note that the build folder name is the same at the board name.
 
-::
+Go to the ``./Tools/debug`` folder and copy ``openocd.cfg`` to ``./build/<boardname>/bin``, 
+if not done so previously
 
-    ./configure
-    make
-    sudo make install
+Type ``openocd`` in your terminal in the ``bin`` directory above.
 
-Download this `openocd.cfg <https://gist.github.com/d-v/cdec6b5295c9914d76f4d6bf8b3556cb>`__
- to the directory where you have built the arducopter.elf file.
+.. image:: ../images/openocd.png
+    :target: ../_images/openocd.png
 
-Now, to start gdb. First, type ``openocd`` in your terminal in the directory where you downloaded the openocd.cfg file.
 Note: there are 2 versions of the ST-link debugger on eBay, so if
 the command does not work, change the first line to ``source [find interface/stlink-v2-1.cfg]``.
 
-In another window, type ``arm-none-eabi-gdb arducopter.elf``. Next,
-type ``target extended-remote :3333``. Now you have connected to the gdb
-debugging session and can use the commands from the next section.
 
 Starting GDB and running some commands
 ======================================
 
-GDB requires both the firmware file that's been uploaded to the board
-(i.e. arducopter.apj) which can normally be found in Copter, Plane or
-APMRover2 directory and the firmware.elf file that can be found in
-the build directory.
+Copy ``.gdbinit`` to ``./build/<boardname>/bin`` and
+edit ``~/.gdbinit`` to have the following text: ``set auto-load safe-path /``,
+if not done so previously.
 
-Change to your firmware directory and type the following:
-
-``arm-none-eabi-gdb build/fmuv3/bin/arducopter``
+In another window, type ``arm-none-eabi-gdb arducopter`` in the 
+``./build/<boardname>/bin`` folder. Now you have
+connected to the gdb debugging session and can use the commands from
+the next section.
 
 .. image:: ../images/DebuggingWithGDB-startGBD.png
     :target: ../_images/DebuggingWithGDB-startGBD.png
@@ -131,6 +132,8 @@ etc
 
 ``info line * <address>`` -- shows c++ line for a given address (i.e.
 from show interrupted-thread)
+
+``info threads`` -- show status of all threads
 
 ``disassemble <address>`` -- converts given address into assembler code
 
