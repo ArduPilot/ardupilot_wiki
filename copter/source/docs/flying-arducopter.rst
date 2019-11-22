@@ -27,5 +27,4 @@ Please follow each of the links below.
     Measuring Vibration <common-measuring-vibration>
     Setting Hover Throttle <ac_throttlemid>
     Save Trim & Auto Trim <autotrim>
-    Failsafe Mechanisms <failsafe-landing-page>
     Pre-Flight Checklist <checklist>
