@@ -30,6 +30,9 @@ tuning options for the vehicle.
 [site wiki="copter"]
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
 [/site]
+[site wiki="plane"]
+    Crash Detection <crash-detect>
+[/site]
     Extended Kalman Filter (EKF) <common-apm-navigation-extended-kalman-filter-overview>
 [site wiki="copter,plane,rover"]
     Flight Time Recorder <common-flight-time-recorder>
