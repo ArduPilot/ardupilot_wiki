@@ -4,18 +4,18 @@
 Plane Failsafe Function
 =======================
 
-Plane has a limited failsafe function which is designed to do three
+Plane has a limited failsafe function which is designed to do four
 things:
 
 #. Detect complete loss of RC signal (if the RC receiver is able to
-   generate a predictable signal-loss behavior) and initiate a defined
-   auto-mode response, such as returning to home. Some RC equipment can
+   generate a predictable signal-loss behavior) or throttle below the minimum value (Throttle Failsafe),
+   and initiate a defined response, such as returning to home. Some RC equipment can
    do this, and some can't (see below for details on how to use it if
    yours supports this function).
-#. Detect loss of telemetry for more than FS_LONG_TIMEOUT sec and switch to return to
-   launch (RTL) mode (GCS Failsafe).
+#. Optionally, detect loss of telemetry (GCS Failsafe) and take an programmable action, such as switching to return to launch (RTL) mode.
 #. Detect loss of GPS for more than 20 seconds and switch into Dead
    Reckoning mode until GPS signal is regained.
+#. Optionally, detect low battery conditions (voltage/remaining capacity) and initiate a programmable response, such as returning to home. ArduPilot supports this on multiple batteries.
 
 Here's what the failsafe **will not do**:
 
@@ -23,10 +23,12 @@ Here's what the failsafe **will not do**:
 #. Detect if you're flying too far away or are about to hit the ground
 #. Detect autopilot hardware failures, such as low-power brownouts or in-air reboots
 #. Detect if the Plane software is not operating correctly
-#. Detect other problems with the aircraft, such as motor failures or
-   low battery situations (although the latter can be set up through the
-   main code if you have the right voltage/current sensor)
+#. Detect other problems with the aircraft, such as motor failures 
 #. Otherwise stop you from making setup or flight mistakes
+
+
+.. note:: See :ref:`advanced-failsafe-configuration` for extended failsafe configurations.
+
 
 Plane Failsafe Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,7 +45,9 @@ being its neutral position. When you start your radio calibration on the
 mission planner, all your values will be at 1500. By moving your sticks,
 knobs and switches you will set your PWM range for each channel. The
 autopilot monitors your throttle channel and if it notices a drop lower
-than THR_FS_VALUE (Default is 950) it will go into failsafe mode.
+than :ref:`THR_FS_VALUE<THR_FS_VALUE>` (Default is 950) it will go into failsafe mode.
+
+.. note: ArduPilot can also detect if the RC Receiver becomes disconnected or dead (no PWM pulses), if the PWM values are grossly out of range (RC Reciever failure), or if the failsafe bit in an SBus receivers data stream is set, and will initiate a Failsafe
 
 RC transmitters usually have a default range for each channel that goes
 from -100% to 100%, however most transmitters will allow you to extend
@@ -57,19 +61,19 @@ Meaning that when flying, our throttle values will range between 1100 -
 
 -  If we lose RC communication, the receiver if set up properly, will
    drop to the lowest known throttle value of ~900. This value falls
-   bellow the THR_FS_VALUE and will trigger the autopilot to go into
+   bellow the :ref:`THR_FS_VALUE<THR_FS_VALUE>` and will trigger the autopilot to go into
    failsafe mode.
--  First the autopilot will go into short failsafe (FS_SHORT_ACTN,
-   0=Disabled, 1=Enabled) when it detects loss of signal for more than
-   FS_SHORT_TIMEOUT sec. The default setting for short failsafe is Circle mode.
+-  First the autopilot will go into short failsafe (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` ),
+   when it detects loss of signal for more than :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` sec. The default setting for short failsafe is Circle mode.
 -  If the RC signal is regained during the short failsafe, the flight
-   will return to auto mode.
--  If the loss of signal is longer than FS_LONG_TIMEOUT sec the autopilot will go
-   into long failsafe (FS_LONG_ACTN, 0=Disabled, 1=Enabled).
+   will return to the previous mode.
+-  If the loss of signal is longer than :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec the autopilot will go into long failsafe :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` .
 -  The default setting for long failsafe is RTL (Return to Launch).
--  Once the long failsafe (RTL mode) has been entered at the conclusion
-   of the short failsafe the RTL mode will continue even if your RC
-   signal is reacquired.
+
+
+.. note:: Once the long failsafe has been entered at the conclusion
+   of the short failsafe the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`  mode will continue even if your RC
+   signal is reacquired. Once reacquired, the mode can only be exited via a mode change. In addition, other failsafes, such as battery failsafe, can also change the mode, if they occur subsequently.
 
 
 ::
@@ -84,7 +88,7 @@ Meaning that when flying, our throttle values will range between 1100 -
 
 **Setup.**
 
-#. Enable throttle failsafe by setting THR_FS_Value to 1 (0=Disabled,
+#. Enable throttle failsafe by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` to 1 (0=Disabled,
    1=Enabled).
 #. First turn on your transmitter and enable the throttle range to
    extend past -100%, we want to extend the throttle range past its low
@@ -100,21 +104,17 @@ Meaning that when flying, our throttle values will range between 1100 -
 #. Turn off the transmitter. You should see the value drop
    significantly. This will be the PWM value relayed to the autopilot in
    the event RC link was lost during flight.
-#. Make sure THR_FS_VALUE is an adequate number to trigger the
+#. Make sure :ref:`THR_FS_VALUE<THR_FS_VALUE>` is an adequate number to trigger the
    failsafe function on the autopilot.
-#. Make sure FS_SHORT_ACTN and FS_LONG_ACTN are both enabled (set to
-   1).
+#. Make sure :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` or :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` , or both are enabled (set to a non-zero value).
 #. Connect on the mission planner with your RC transmitter on. Verify on
    the bottom right corner of the HUD that you are “flying” in a non
    auto mode (Manual, Stabilize, FBW are ok).
-#. Turn off your transmitter. After S_SHORT_TIMEOUT sec the flight mode should
-   switch to Circle. After FS_LONG_TIMEOUT sec the flight mode should switch to RTL.
+#. Turn off your transmitter. After :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` sec , if enabled, the flight mode should
+   switch to :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>`. After :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec, if enabled, the flight mode should switch to :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`.
    If you observe this behavior, your failsafe function has been set up
    correctly.
 
-.. note::
-
-   One can also use this function to command failsafe actions (CIRCLE then RTL) if a transmitter switch is configured to force the throttle channel to the THR_FS_VALUE. This allows the RTL mode to be evoked without using a mode channel switch position. If this is implemented, be careful if a radio calibration is ever redone, that it is not activated during the procedure, since the incorrect value for throttle minimum will be captured.
 
 **Transmitter Tutorials:**
 
@@ -126,36 +126,72 @@ GCS Failsafe
 **How it works.** When flying while using telemetry on the GCS, the
 autopilot can be programmed to trigger into failsafe mode if it loses
 telemetry. In the event that the autopilot stops receiving MAVlink
-(telemetry protocol) heartbeat messages for more than FS_LONG_TIMEOUT sec, the GCS
-failsafe (FS_GCS_ENABL, 0=Disabled, 1=Enabled) will trigger the
-autopilot to go into long failsafe and change the flight mode to RTL.
+(telemetry protocol) heartbeat messages. :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` apply just in the case of a Throttle Failsafe.
 
 **Setup.**
 
-#. Set FS_GCS_ENABL to 1 to enable it.
+#. Set :ref:`FS_GCS_ENABL<FS_GCS_ENABL>` to 1 to enable it.
 #. Connect to the Mission Planner via telemetry. Verify on the bottom
    right corner of the HUD that you are “flying” in a non auto mode
    (Manual, Stabilize, FBW are ok).
 #. Unplug one of the telemetry radios. After a few minutes power off
-   your autopilot. (Remember the autopilot will not go into failsafe
-   until FS_LONG_TIMEOUT seconds of MAVlink inactivity have passed).
+   your autopilot. (Remember the autopilot will not go fully into failsafe
+   until :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds of MAVlink inactivity have passed).
 #. Connect your autopilot to the mission planner and pull the logs.
-   Verify on the log that the autopilot went into RTL after FS_LONG_TIMEOUT sec of
-   MAVlink inactivity.
+   Verify on the log that the autopilot went into RTL after :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec of MAVlink inactivity.
 
-Failsafe Parameters and their meanings
+Battery Failsafe
+~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This failsafe requires the vehicle have a working :ref:`Power Module <common-powermodule-landingpage>`.
+
+.. note:: ArduPilot firmware versions 4.0 and later support up to 10 batteries/power monitors. All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
+
+When the failsafe will trigger
+------------------------------
+
+If enabled and set-up correctly the battery failsafe will trigger if the main battery's
+
+-  voltage drops below the voltage held in the :ref:`BATT_LOW_VOLT <BATT_LOW_VOLT>` parameter (or FS_BATT_VOLTAGE in older versions) for more than 10 seconds. If set to zero (the Plane default value) the voltage based trigger will be disabled.
+-  remaining capacity falls below the :ref:`BATT_LOW_MAH <BATT_LOW_MAH>` parameter (or FS_BATT_MAH in older versions) 20% of the battery's full capacity is a good choice (i.e. "1000" for a 5000mAh battery).  If set to zero the capacity based trigger will be disabled (i.e. only voltage will be used)
+
+What will happen
+----------------
+
+When the failsafe is triggered:
+
+-  Buzzer will play a loud low-battery alarm
+-  LEDs will flash yellow
+-  A warning message will be displayed on the ground station's HUD (if telemetry is connected)
+-  :ref:`BATT_FS_LOW_ACT<BATT_FS_LOW_ACT>`  will be executed
+
+Two-Stage Battery Failsafe
+--------------------------
+
+Plane 3.9 (and higher) includes a two-layer battery failsafe.  This allows setting up a follow-up action if the battery voltage or remaining capacity falls below an even lower threshold.
+
+- :ref:`BATT_CRT_VOLT <BATT_CRT_VOLT>` - holds the secondary (lower) voltage threshold.  Set to zero to disable. Default is zero.
+- :ref:`BATT_CRT_MAH <BATT_CRT_MAH>` - holds the secondary (lower) capacity threshold.  Set to zero to disable. Default is zero.
+- :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` - holds the secondary action to take.  A reasonable setup would be to have :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` = 2 (RTL) and :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` = 1 (Land)
+
+Advanced Battery Failsafe Settings
+----------------------------------
+
+- :ref:`BATT_FS_VOLTSRC <BATT_FS_VOLTSRC>` allows configuring whether the raw battery voltage or a sag corrected voltage is used
+- :ref:`BATT_LOW_TIMER <BATT_LOW_TIMER>` can configure how long the voltage must be below the threshold for the failsafe to trigger
+- ``BATTx_`` parameters can be setup to trigger the failsafe on other batteries
+
+Failsafe Parameters and their Meanings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Short failsafe action (Plane:FS_SHORT_ACTN)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Short failsafe action (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` )
+------------------------------------------------------------
 
-The action to take on a short (FS_SHORT_TIMEOUT seconds) failsafe event in AUTO,
-GUIDED or LOITER modes. A short failsafe event in plane stabilization modes
-will always cause a change to CIRCLE mode, or to QLAND or QRTL, dependent upon which Q_OPTION is selected), in Quadplane stabilization modes.
-In AUTO mode you can choose whether it will RTL (ReturnToLaunch) or continue with the mission. If
-FS_SHORT_ACTN is 0 then it will continue with the mission, if it is 1
-then it will enter CIRCLE mode, and then enter RTL if the failsafe
-condition persists for FS_LONG_TIMEOUT seconds.
+The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which Q_OPTION is selected.
+
+In AUTO, LOITER and GUIDED modes you can also choose for it continue with the mission and ignore the short failsafe. If :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` is 0 then it will continue with the mission, if it is 1 then it will enter CIRCLE mode.
 
 .. raw:: html
 
@@ -173,20 +209,23 @@ condition persists for FS_LONG_TIMEOUT seconds.
    <td>1</td>
    <td>Circle/ReturnToLaunch</td>
    </tr>
+   <tr>
+   <td>2</td>
+   <td>FBWA</td>
+   </tr>
+   <tr>
+   <td>3</td>
+   <td>Disabled</td>
+   </tr>
    </tbody>
    </table>
 
-Long failsafe action (Plane:FS_LONG_ACTN)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Long failsafe action (:ref:`FS_LONG_ACTN<FS_LONG_ACTN>` )
+---------------------------------------------------------
 
-The action to take on a long (FS_LONG_TIMEOUT second) failsafe event in AUTO, GUIDED
-or LOITER modes. A long failsafe event in plane stabilization modes will
-always cause an RTL (ReturnToLaunch) or a QLAND or QRTL, dependent upon which Q_OPTION is selected), if in copter stabilization modes in a Quadplane. In AUTO modes you can choose whether it will RTL or continue with the mission. If FS_LONG_ACTN is 0
-then it will continue with the mission, if it is 1 then it will enter
-RTL mode. Note that if FS_SHORT_ACTN is 1, then the aircraft will
-enter CIRCLE mode after FS_SHORT_TIMEOUT seconds of failsafe, and will always enter
-RTL after FS_LONG_TIMEOUT seconds of failsafe, regardless of the FS_LONG_ACTN
-setting.
+The action to take on a long (:ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds) failsafe event. If the aircraft was in a stabilization or manual mode when failsafe started and a long failsafe occurs then it will change to RTL mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is 0 or 1, and will change to FBWA  and idle the throttle if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 2.
+
+If the aircraft was in an auto mode (such as AUTO or GUIDED) when the failsafe started then it will continue in the auto mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 0, will change to RTL mode if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 1 and will change to FBWA mode and idle the throttle if :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 2. If :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` is set to 3, the parachute will be deployed (make sure the chute is configured and enabled).
 
 .. raw:: html
 
@@ -204,37 +243,28 @@ setting.
    <td>1</td>
    <td>ReturnToLaunch</td>
    </tr>
+   <tr>
+   <td>2</td>
+   <td>FBWA Glide</td>
+   </tr>
+   <tr>
+   <td>3</td>
+   <td>Deploy Parachute</td>
+   </tr>
    </tbody>
    </table>
 
-Failsafe battery voltage (Plane:FS_BATT_VOLTAGE)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In a QuadPlane, if in VTOL operation in modes others than AUTO or GUIDED, the action taken will be either a QRTL or QLAND, depending on the :ref:`Q_RTL_MODE<Q_RTL_MODE>` bit mask setting for bit 5. And if in fixed-wing operation, and the long or short failsafe action is a mode change to RTL, then the :ref:`Q_RTL_MODE<Q_RTL_MODE>` will determine behavior at the end of that RTL, just as in the case of a regular mode change to RTL.
 
-Battery voltage to trigger failsafe. Set to 0 to disable battery voltage
-failsafe. If the battery voltage drops below this voltage then the plane
-will RTL
-
--  Units: Volts
-
-Failsafe battery milliAmpHours (Plane:FS_BATT_MAH)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Battery capacity remaining to trigger failsafe. Set to 0 to disable
-battery remaining failsafe. If the battery remaining drops below this
-level then the plane will RTL
-
--  Units: mAh
-
-GCS failsafe enable (Plane:FS_GCS_ENABL)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GCS failsafe enable (:ref:`FS_GCS_ENABL<FS_GCS_ENABL>` )
+--------------------------------------------------------
 
 Enable ground control station telemetry failsafe. Failsafe will trigger
-after FS_SHORT_TIMEOUT and / or FS_LONG_TIMEOUT seconds of no MAVLink heartbeat messages. WARNING: Enabling
-this option opens up the possibility of your plane going into failsafe
-mode and running the motor on the ground it it loses contact with your
-ground station. If this option is enabled on an electric plane then
-either use a separate motor arming switch or remove the propeller in any
-ground testing.
+after :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` and/or :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds of no MAVLink heartbeat or RC Override messages.
+
+.. warning:: Enabling this option opens up the possibility of your plane going into failsafe mode and running the motor on the ground if it loses contact with your ground station. While the code attempts to verify that the plane is indeed flying and not on the ground before entering this failsafe, it is safer if this option is enabled on an electric plane, to either use a separate motor arming switch or remove the propeller in any ground testing, if possible.
+
+There are three possible enabled settings. Seeing :ref:`FS_GCS_ENABL<FS_GCS_ENABL>` to 1 means that GCS failsafe will be triggered when the aircraft has not received a MAVLink HEARTBEAT message. Setting :ref:`FS_GCS_ENABL<FS_GCS_ENABL>` to 2 means that GCS failsafe will be triggered on either a loss of HEARTBEAT messages, or a RADIO_STATUS message from a MAVLink enabled telemetry radio indicating that the ground station is not receiving status updates from the aircraft, which is indicated by the RADIO_STATUS.remrssi field being zero (this may happen if you have a one way link due to asymmetric noise on the ground station and aircraft radios).Setting :ref:`FS_GCS_ENABL<FS_GCS_ENABL>` to 3 means that GCS failsafe will be triggered by Heartbeat(like option one), but only in AUTO mode. WARNING: Enabling this option opens up the possibility of your plane going into failsafe mode and running the motor on the ground it it loses contact with your ground station. If this option is enabled on an electric plane then you should enable :ref:`ARMING_REQUIRE<ARMING_REQUIRE>` .
 
 .. raw:: html
 
@@ -250,7 +280,15 @@ ground testing.
    </tr>
    <tr>
    <td>1</td>
-   <td>Enabled</td>
+   <td>Heartbeat</td>
+   </tr>
+   <tr>
+   <td>2</td>
+   <td>Heartbeat and REMRSSI</td>
+   </tr>
+   <tr>
+   <td>3</td>
+   <td>Heartbeat and AUTO</td>
    </tr>
    </tbody>
    </table>
