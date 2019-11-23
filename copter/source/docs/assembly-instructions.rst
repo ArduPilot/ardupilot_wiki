@@ -13,9 +13,9 @@ instructions for adding other hardware are covered in
     :maxdepth: 1
 
     Mounting the Flight Controller <common-mounting-the-flight-controller>
-    Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>
-    NAVIO2 Wiring QuickStart <common-navio2-wiring-and-quick-start>
+    Flight Controller Wiring <common-flight-controller-wiring>
+    NAVIO2 (Linux based) Wiring QuickStart <common-navio2-wiring-and-quick-start>
     ESCs and Motors <connect-escs-and-motors>
-    GPS+Compass Module <common-installing-3dr-ublox-gps-compass-module>
+    Installing GPS+Compass Module <common-installing-3dr-ublox-gps-compass-module>
     Vibration Damping <common-vibration-damping>
     Magnetic Interference <common-magnetic-interference>
