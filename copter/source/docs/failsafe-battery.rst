@@ -10,6 +10,8 @@ The battery failsafe can be configured to automatically switch the vehicle into 
 
     This failsafe requires the vehicle have a working :ref:`Power Module <common-powermodule-landingpage>`.
 
+.. note:: ArduPilot firmware versions 4.0 and later support up to 10 batteries/power monitors. All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
+
 When the failsafe will trigger
 ------------------------------
 
@@ -88,4 +90,4 @@ Advanced Settings
 
 - :ref:`BATT_FS_VOLTSRC <BATT_FS_VOLTSRC>` allows configuring whether the raw battery voltage or a sag corrected voltage is used
 - :ref:`BATT_LOW_TIMER <BATT_LOW_TIMER>` can configure how long the voltage must be below the threshold for the failsafe to trigger
-- ``BATT2_`` parameters can be setup to trigger the failsafe on a second battery
+- ``BATTx_`` parameters can be setup to trigger the failsafe on other batteries
