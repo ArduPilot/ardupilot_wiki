@@ -14,6 +14,7 @@ positioning technologies:
 .. toctree::
     :maxdepth: 1
     
+    Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
     CUAV C-RTK 9P RTK Receiver<common-cuav-c-rtk-9p-gps>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
     Hex Here+ RTK Receiver <common-here-plus-gps>
