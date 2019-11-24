@@ -16,9 +16,6 @@ The main failsafe topics are listed below.
     GCS Failsafe <gcs-failsafe>
     EKF Failsafe <ekf-inav-failsafe>
     Vibration Failsafe <vibration-failsafe>
-    Cylindrical GeoFence <common-ac2_simple_geofence>
-    Polygon GeoFence <common-polygon_fence>
     Crash Check <crash_check>
     Parachute <parachute>
-    ADSB Avoidance of manned aircraft <common-ads-b-receiver>
     Independent Watchdog <common-watchdog>
