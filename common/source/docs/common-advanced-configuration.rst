@@ -52,7 +52,7 @@ tuning options for the vehicle.
 [site wiki="copter,rover"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
-[site wiki="copter"]
+[site wiki="copter,plane"]
     Notch Filter Configuration <common-imu-notch-filtering>
 [/site]
     Object Avoidance <common-object-avoidance-landing-page>
