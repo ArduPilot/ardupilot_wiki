@@ -27,16 +27,19 @@ ArduPilot sub-divides tailsitters into two broad categories:
 - non-vectored tailsitters have fixed rotor orientation relative to
   the fuselage, and rely on large control surfaces for hover authority
 
+  - Within non-vectored are two sub-categories: Single/Dual Motor and CopterMotor. The first uses one or two motors and can employ only differential thrust , while the second uses three, four, or more motors and operates in a more copter-like fashion.
+
+.. note:: Currently all CopterMotor style Quadplanes do not use any yaw torque control. Roll (with respect to plane body) is only controlled by the flying surface (ailerons or elevons)
+
 Tailsitter Configuration
 ========================
 
-The key parameter to make a plane a tailsitter is to set
+The key parameter to make a  single or dual motor QuadPlane a tailsitter is to set
 :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10. That tells the QuadPlane code to use the tailsitter
 VTOL backend.
 
 The tailsitter backend is a bit unusual, as it is the only
-:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` setting that may not have any multicopter-style motors associated with
-it. If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero (the default), meaning no multicopter-like motors, it provides roll, pitch, yaw and thrust (Throttle, Throttle Left, Throttle Right) values to the fixed wing control code. These values then control your ailerons, elevons, elevators, rudder and forward motors.
+:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` setting that may not have any multicopter-style motors associated with it. If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero (the default), meaning no multicopter-like motors, it provides roll, pitch, yaw and thrust (Throttle, Throttle Left, Throttle Right) values to the fixed wing control code. These values then control your ailerons, elevons, elevators, rudder and forward motors.
 
 This has a nice benefit when setting up the tailsitter that you can
 follow the normal fixed wing setup guide in MANUAL and FBWA modes, and
@@ -50,7 +53,52 @@ QHOVER and QLOITER.
 .. youtube:: bMsfjwUAfkM
     :width: 100%
 
-However, it can also have copter-like motors, like a conventional QuadPlane if :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is non-zero. Then this parameter determines which motors remain active in normal forward flight (plane modes). If non-zero, then use the :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` parameter to configure the multicopter motor style, and the appropriate MOTORx outputs will be activated.
+
+However, it can also have copter-like motors, like a conventional QuadPlane if :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is non-zero. Then this parameter determines which motors remain active in normal forward flight (plane modes). If non-zero, then use the :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` parameter to configure the multicopter motor style, and the appropriate MOTORx outputs will be activated.
+
+.. note:: Currently, only the following combinations are supported for CopterMotor tailsitters:
+
++------------------------+------------------------------------+----------------------------------+
+| Motors                 |:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` |:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` |
++------------------------+------------------------------------+----------------------------------+
+|  Quad                  | 1                                  | 0, 1                             |
++------------------------+------------------------------------+----------------------------------+
+|  Tri                   | 7                                  | ignored                          |
++------------------------+------------------------------------+----------------------------------+
+
+Motor Rotation and Layout
+=========================
+
+(looking down on nose from above)
+
+Single/Dual Motor Tailsitter
+----------------------------
+
+Motors are controlled by the Throttle, Throttle Left, Throttle Right outputs:
+
+.. image:: ../images/tailsit-motors.jpg
+
+
+QUAD PLUS Motor Tailsitter
+--------------------------
+Motors are controlled by the M1-M4 outputs:
+
+.. image:: ../images/plus-copter-quadplane.jpg
+
+
+QUAD X Motor Tailsitter
+-----------------------
+Motors are controlled by the M1-M4 outputs:
+
+.. image:: ../images/x-copter-quadplane.jpg
+
+
+Tricopter Tailsitter
+--------------------
+Motors are controller by the M1/M2/M4 outputs:
+
+.. image:: ../images/tri-copter-quadplane.jpg
+
 
 .. youtube:: cfqP9-2IWtQ
     :width: 100%
