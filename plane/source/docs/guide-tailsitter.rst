@@ -51,7 +51,7 @@ of 3D flight as a single or dual motor tailsitter, and fly it in modes like QSTA
 QHOVER and QLOITER.
 
 .. youtube:: bMsfjwUAfkM
-    :width: 100%
+    :width: 450px
 
 
 However, it can also have copter-like motors, like a conventional QuadPlane if :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is non-zero. Then this parameter determines which motors remain active in normal forward flight (plane modes). If non-zero, then use the :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` parameter to configure the multicopter motor style, and the appropriate MOTORx outputs will be activated.
@@ -77,13 +77,14 @@ Single/Dual Motor Tailsitter
 Motors are controlled by the Throttle, Throttle Left, Throttle Right outputs:
 
 .. image:: ../images/tailsit-motors.jpg
-
+  :width: 450px
 
 QUAD PLUS Motor Tailsitter
 --------------------------
 Motors are controlled by the M1-M4 outputs:
 
 .. image:: ../images/plus-copter-quadplane.jpg
+  :width: 450px
 
 
 QUAD X Motor Tailsitter
@@ -91,6 +92,7 @@ QUAD X Motor Tailsitter
 Motors are controlled by the M1-M4 outputs:
 
 .. image:: ../images/x-copter-quadplane.jpg
+  :width: 450px
 
 
 Tricopter Tailsitter
@@ -98,10 +100,10 @@ Tricopter Tailsitter
 Motors are controller by the M1/M2/M4 outputs:
 
 .. image:: ../images/tri-copter-quadplane.jpg
-
+    :width: 450px
 
 .. youtube:: cfqP9-2IWtQ
-    :width: 100%
+
 
 
 The key differences between fixed wing flight and hovering for a
