@@ -68,8 +68,16 @@ layout
 Tailsitter
 ----------
 
-Tailsitters (:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10) are a special case. Since this can be used on a conventional single motor plane for "3D" style flying, the standard single motor configuration with the Throttle (motor) output on SERVO3 is automatically configured. If you are using twin engines, then you may want to manually configure two outputs for Throttle Left and Throttle Right, instead of Throttle, if you want differential thrust. If you are using a twin, vectored thrust tailsitter, then you will need to manually configure four outputs for Throttle Left, Throttle Right, Left Motor Tilt and Right Motor Tilt. See :ref:`Tailsitter <guide-tailsitter>` section for more information
+Tailsitters mount the VTOL motors facing up when the QuadPlane's nose is pointing straight up, hence the name Tailsitter.
 
+Copter Tailsitter
+----------------- 
+
+Copter Tailsitters :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` is the same as a normal QuadPlane, but the  :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` bitmask is non-zero, which sets which VTOL motors are active in normal Plane modes, but also indicates that it is a Copter Tailsitter frame. See :ref:`Tailsitter <guide-tailsitter>` section for more information
+
+Single/ Dual Motor Tailsitter
+------------------------------
+Single/ Dual Motor Tailsitters (:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10) are a special case. Since this can be used on a conventional single motor plane for "3D" style flying, the standard single motor configuration with the Throttle (motor) output on SERVO3 is automatically configured. If you are using twin engines, then you may want to manually configure two outputs for Throttle Left and Throttle Right, instead of Throttle, if you want differential thrust. If you are using a twin, vectored thrust tailsitter, then you will need to manually configure four outputs for Throttle Left, Throttle Right, Left Motor Tilt and Right Motor Tilt. See :ref:`Tailsitter <guide-tailsitter>` section for more information
 
 Using different channel mappings
 --------------------------------
