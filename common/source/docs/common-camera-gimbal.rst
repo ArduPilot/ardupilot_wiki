@@ -181,9 +181,7 @@ ground is a good place to start, but more dramatic viewpoints can be
 achieved with angles other than vertical. Mount about 40 degrees
 deviation from vertical to obtain mainly ground photos but with oblique
 view. About 70 degrees off vertical will give you a lot more sky giving
-scenic photos
-(from `Draganfly <http://www.draganfly.com/blog/rc-aerial-photography-get-great-pictures-tutorial/>`__).
-ArduPilot will stabilise the gimbal to whatever position you set.
+scenic photos. ArduPilot will stabilise the gimbal to whatever position you set.
 
 Shutter configuration
 =====================
