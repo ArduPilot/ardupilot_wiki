@@ -5,6 +5,7 @@ Typical Flight Controller Wiring Connections
 ============================================
 
 .. image:: ../../../images/fc-io.jpg
+  :width: 450px
 
 This topic covers the wiring/connection of basic/mandatory peripherals to the flight controller. For detailed explanations about each flight controller port/connector, see :ref:`common-flight-controller-io`
 
@@ -14,7 +15,7 @@ GPS/Compass
 GPS is mandatory in all vehicles. Compass is mandatory for Copter and Rover and QuadPlane types of Plane, but not for Conventional Planes, however it is highly recommended.
 
 .. image:: ../../../images/gps-connection.jpg
-
+  :width: 450px
 
 .. note:: TX and RX are swapped from flight controller to GPS module.
 
@@ -28,7 +29,8 @@ RC input
 Radio Control Receivers are normally used for pilot control. While exclusive pilot control via ground stations using telemetry is possible, it is not recommended.
 
 .. image:: ../../../images/rx-connection.jpg
-
+  :width: 450px
+  
 Ardupilot autodetects the following serial RC receiver protocols:
 
    #. PPM remote control (R/C) receivers
@@ -47,7 +49,8 @@ can be used to convert the receiver outputs to PPM-SUM.
 
 .. figure:: ../../../images/FRSkyTaranis.jpg
    :target: ../_images/FRSkyTaranis.jpg
-
+   :width: 450px
+  
    FRSky Taranis Transmitter
 
 Motor/Servo Connections
@@ -68,12 +71,14 @@ Often these outputs are provided on 3 pin connector strips supplying or distribu
 An connection example for Rover
 
 .. image:: ../../../images/servo-motor-connection.jpg
+  :width: 450px
 
 An example for Copters using only motors. In this case, only ESC signal lines are being connected.
 
 .. image:: ../../../images/pixhawk_motor_outputs.jpg
     :target: ../_images/pixhawk_motor_outputs.jpg
-
+    :width: 450px
+    
 [site wiki="copter"]
 For Copter see :ref:`Connect ESCs and Motors <copter:connect-escs-and-motors>`.
 
@@ -114,6 +119,7 @@ Connect buzzer and safety switch
 The buzzer and safety switch button are optional but recommended, if the flight controller provides those connections (many closed source flight controllers do not). Connect to the BUZZER and SWITCH ports as shown.
 
 .. image:: ../../../images/safetysw-connection.jpg
+  :width: 450px
 
 .. warning::
 
