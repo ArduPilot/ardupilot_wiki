@@ -5,32 +5,28 @@ Communicating with Raspberry Pi via MAVLink
 ===========================================
 
 This page explains how to connect and configure a Raspberry Pi (RPi) so
-that it is able to communicate with a Pixhawk flight controller using
+that it is able to communicate with a flight controller using
 the MAVLink protocol over a serial connection. This can be used to
 perform additional tasks such as image recognition which simply cannot
-be done by the Pixhawk due to the memory requirements for storing
+be done by the flight controller due to the memory requirements for storing
 images.
 
-Connecting the Pixhawk and RPi
-==============================
+Connecting the Flight controller and RPi
+========================================
 
 .. image:: ../images/RaspberryPi_Pixhawk_wiring1.jpg
     :target: ../_images/RaspberryPi_Pixhawk_wiring1.jpg
 
-Connect the Pixhawk's TELEM2 port to the RPi's Ground, TX and RX pins as
+Connect the flight controller's TELEM2 port to the RPi's Ground, TX and RX pins as
 shown in the image above. More details on the individual RPi's pin
 functions can be found
 `here <http://elinux.org/RPi_Low-level_peripherals>`__.
 
-The RPi can be powered by connecting the red V+ cable to the +5V pin (as
-shown above) **or** from USB in (for example, using a separate 5V BEC
-hooked up to the USB power).
+The RPi can be powered by connecting +5V source to the +5V pin  **or** from USB in.
 
 .. tip::
 
-   Powering via USB is recommended as it is typically safer - because
-   the input is regulated. If powering via USB, do not also connect the +5V
-   pin as shown (still connect common ground).
+   Depending on the model of RPi used and internal/external peripherals used, +5V power requirements can vary from 80mA to close to 2A. The power budget for the particular system configuration should be assessed to determine the requirements for the +5V supply current. It is usually not recommended that +5v be supplied via the flight controller's TELEM port connector.
 
 .. _raspberry-pi-via-mavlink_setup_the_rpi:
 
@@ -50,13 +46,13 @@ The easiest way to setup the RPi is to flash one of the existing :ref:`APSync <a
 
    When extracting the contents of the compressed file on Mac you may get into an infinite loop of extraction (.xz to .cpgz and vice versa) using the default Archiver. In order to correctly extract the .img file you will need to use the Unarchiver (http://unarchiver.c3.cx/unarchiver).
 
-Setting up the Pixhawk
-======================
+Setting up the flight controller
+================================
 
-Connect to the Pixhawk with a ground station (i.e. Mission Planner) and set the following parameters:
+Connect to the flight controller with a ground station (i.e. Mission Planner) and set the following parameters:
 
 -  :ref:`SERIAL2_PROTOCOL <copter:SERIAL2_PROTOCOL>` = 1 (the default) to enable MAVLink on the serial port.
--  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the Pixhawk can communicate with the RPi at 921600 baud.
+-  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the flight controller can communicate with the RPi at 921600 baud.
 -  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the RPi
 
 .. _raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client:
@@ -194,8 +190,8 @@ Reboot the Raspberry Pi when you are done.
 Testing the connection
 ======================
 
-To test the RPi and Pixhawk are able to communicate with each other
-first ensure the RPi and Pixhawk are powered, then in a console on the
+To test the RPi and flight controller are able to communicate with each other
+first ensure the RPi and flight controller are powered, then in a console on the
 RPi type:
 
 ::
@@ -264,16 +260,16 @@ just before the final "exit 0" line:
     ) > /tmp/rc.log 2>&1
     exit 0
 
-Whenever the RPi connects to the Pixhawk, three files will be created in
+Whenever the RPi connects to the flight controller, three files will be created in
 the /home/pi/MyCopter/logs/YYYY-MM-DD directory:
 
 -  **mav.parm** : a text file with all the parameter values from the
-   Pixhawk
+   flight controller
 -  **flight.tlog** : a telemetry log including the vehicles altitude,
    attitude, etc which can be opened using the mission planner (and a
    number of other tools)
 -  **flight.tlog.raw** : all the data in the .tlog mentioned above plus
-   any other serial data received from the Pixhawk which might include
+   any other serial data received from the flight controller which might include
    non-MAVLink formatted messages like startup strings or debug output
 
 If you wish to connect to the MAVProxy application that has been
@@ -286,10 +282,10 @@ automatically started you can log into the RPi and type:
 To learn more about using MAVProxy please read the `MAVProxy documentation <http://ardupilot.github.io/MAVProxy/>`__.
 
 It is also worth noting that MAVProxy can do a lot more than just
-provide access to your Pixhawk. By writing python extension modules for
+provide access to your flight controller. By writing python extension modules for
 MAVProxy you can add sophisticated autonomous behaviour to your vehicle.
 A MAVProxy module has access to all of the sensor information that your
-Pixhawk has, and can control all aspects of the flight. To get started
+flight controller has, and can control all aspects of the flight. To get started
 with MAVProxy modules please have a look at the `existing modules <https://github.com/tridge/MAVProxy/tree/master/MAVProxy/modules>`__
 in the MAVProxy source code.
 
@@ -333,7 +329,7 @@ script is located and start an example:
 Connecting with the Mission Planner
 ===================================
 
-The Pixhawk will respond to MAVLink commands received through Telemetry
+The flight controller will respond to MAVLink commands received through Telemetry
 1 and Telemetry 2 ports (see image at top of this page) meaning that
 both the RPi and the regular ground station (i.e. Mission planner, etc)
 can be connected. In addition it is possible to connect the Mission
