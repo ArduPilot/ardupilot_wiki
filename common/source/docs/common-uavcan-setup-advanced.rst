@@ -25,8 +25,38 @@ Detailed description of protocol can be found at https://uavcan.org/
 **UAVCAN driver for Aurdupilot do not support auto node numbering in
 current version. All nodes should have the ID explicitly set.**
 
-Configuration settings
-======================
+UAVCAN Peripheral Types Supported
+=================================
+
+Ardupilot currently supports the following types of UAVCAN peripherals:
+
++---------------------+--------------------+-------------------+
+|GPS                  |Compass             |Barometer          |
++---------------------+--------------------+-------------------+
+|Rangefinder          |ADSB Receiver       |Power Module       |
++---------------------+--------------------+-------------------+
+|LED                  |Buzzer              |Airspeed           |
++---------------------+--------------------+-------------------+
+|Safety Switch/LED    |                    |                   |
++---------------------+--------------------+-------------------+
+|UAVCAN Adapter Node                                           |
++---------------------+--------------------+-------------------+
+
+UAVCAN device type is selected by:
+
+-  GPS,Compass, Barometer, ADSB Receiver, LED, Buzzer, Safety Switch/LED, and Airspeed devices are automatically identified in the UAVCAN protocol
+-  Rangefinder: ``RNGFNDx_TYPE`` = 24
+-  Power Module: :ref:`BATT_MONITOR<BATT_MONITOR>` or ``BATTx_MONITOR`` = 8
+
+
+UAVCAN Adapter Node
+===================
+
+These devices are general purpose UAVCAN nodes with I/O ports that allow the attachment of non-UAVCAN ArduPilot peripherals to the UAVCAN bus via UART ports, I2C, SPI, and/or GPIOs. See :ref:`UAVCAN Adapter Nodes<common-uavcan-adapter-node>` .
+
+UAVCAN ESC and Servo Configuration settings
+===========================================
+See :ref:`common-uavcan-escs` for information on UAVCAN ESCs.
 
 There are three parameters present at the moment in CAN category of setting:
 
@@ -36,7 +66,7 @@ There are three parameters present at the moment in CAN category of setting:
 
 .. image:: ../../../images/uavcan-main-settings.png
     :target: ../_images/uavcan-main-settings.png
-    
+
 In a bitmap mask, each position in the binary number represents an ESC or servo ID
 that the command will be generated for. In case of copters, usually the ESC bitmask
 should be filled and in case of planes - main one is for servo, though any mix is
@@ -59,9 +89,4 @@ The **TYPE** parameter should be set to 9 for corresponding GNSS receiver in aut
 
 .. image:: ../../../images/uavcan-gnss-settings.png
     :target: ../_images/uavcan-gnss-settings.png
-    
 
-   
-   
-
-    
