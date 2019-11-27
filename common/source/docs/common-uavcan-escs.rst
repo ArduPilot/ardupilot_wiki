@@ -20,6 +20,8 @@ List of CAN ESCs
 +===============================================================================================+============================================================================================+=================================================================================================================+
 + `Zubax Orel 20 <https://files.zubax.com/products/io.px4.sapog/Zubax_Orel_20_Datasheet.pdf>`__ + `Yes <https://titaneliteinc.com/titanoc/index.php?route=product/product&product_id=995>`__ + Yes                                                                                                             +
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
++ `Holybro Kotleta20 <http://www.holybro.com/product/kotleta20/>`__                             + Yes                                                                                        + Yes                                                                                                             +
++-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 + `AutoQuad ESC32 <http://autoquad.org/esc32/>`__                                               + No                                                                                         + No                                                                                                              +
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 + `VESC <http://vedder.se/2015/01/vesc-open-source-esc/>`__                                     + `Yes <https://www.ollinboardcompany.com/product/vedder-s-speed-controller>`__              + No (`proposal <https://discuss.ardupilot.org/t/next-gen-esc-validation-and-integration-vesc-declined/12534>`__) +
@@ -29,13 +31,13 @@ List of CAN ESCs
 + `ESC Velocity <https://www.currawongeng.com/servos-escs/esc-velocity/>`__                     + Yes                                                                                        + No                                                                                                              +
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
-Connecting to the Pixhawk
-=========================
+Connecting to the Flight Controller
+===================================
 
 .. image:: ../../../images/Pixhawk_UAVCAN_ESC.jpg
     :target: ../_images/Pixhawk_UAVCAN_ESC.jpg
 
-One ESC (it does not matter which) should be connected to the Pixhawk's
+One ESC (it does not matter which) should be connected to the flight controller's
 CAN port using a 4-pin DF13 to 4-pin UAVCAN adapter cable. Each
 subsequent ESC should be connected to the previous using a 4-pin
 UAVCAN cable.  The final ESC should have a CAN bus terminator plugged
