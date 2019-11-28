@@ -11,6 +11,7 @@ tuning options for the vehicle.
     :maxdepth: 1
 
 [site wiki="copter"]
+    Autopilot Output Mapping <common-rcoutput-mapping>
     AutoTune <autotune>
     Auxiliary Function Switches <common-auxiliary-functions>
     Auxiliary Function Switches (3.6 and earlier) <channel-7-and-8-options>
@@ -18,11 +19,13 @@ tuning options for the vehicle.
     Boat mode <boat-mode>
 [/site]
 [site wiki="rover"]
+    Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
     Boats with Vectored Thrust <rover-vectored-thrust>
 [/site]
 [site wiki="plane"]
     Advanced Failsafe <advanced-failsafe-configuration>
+    Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
 [/site]
     CAN Bus Setup <common-canbus-setup-advanced>
@@ -63,7 +66,6 @@ tuning options for the vehicle.
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
     RC Input Channel Mapping (RCMAP) <common-rcmap>
-    Flight Controller Output Mapping <common-rcoutput-mapping>
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
     Serial Port to Port Passthrough <common-serial-passthrough>
