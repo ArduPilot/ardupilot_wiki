@@ -52,13 +52,12 @@ I/O Port Types
 USB
 ---
 
-USB is provided as the primary port for configuration of the flight controller. I always appears as the first Serial port (0) to the flight controller. See Serial Ports (*topic to be added soon*).
+USB is provided as the primary port for configuration of the flight controller. I always appears as the first Serial port (0) to the flight controller. See :ref:`Serial Port Configuration <common-serial-options>` 
 
 UART
 ----
 
-Usually several UART ports are provided. These provide connections to Telemetry radios, GPS, Rangefinders, and even SBUS servos. In addition,as of firmware versions 4.0, serial RC receiver inputs can be connected to any UART. See Serial Ports (*topic to be added soon*).
-
+Usually several UART ports are provided. These provide connections to Telemetry radios, GPS, Rangefinders, and even SBUS servos. In addition,as of firmware versions 4.0, serial RC receiver inputs can be connected to any UART. See :ref:`Serial Port Configuration <common-serial-options>` 
 Signals
 +++++++
 
