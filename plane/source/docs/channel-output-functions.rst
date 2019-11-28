@@ -1,8 +1,10 @@
 .. _channel-output-functions:
 
-========================
-Channel Output Functions
-========================
+=================================
+Archived:Channel Output Functions
+=================================
+
+This page superseded by :ref:`common-rcoutput-mapping`
 
 All servo outputs may be mapped to any function supported by
 ArduPilot. The default settings are for the first 4 channels to be

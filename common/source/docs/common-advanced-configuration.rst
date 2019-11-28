@@ -63,7 +63,7 @@ tuning options for the vehicle.
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
     RC Input Channel Mapping (RCMAP) <common-rcmap>
-    RC Output Channel Mapping <common-rcoutput-mapping>
+    Flight Controller Output Mapping <common-rcoutput-mapping>
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
     Serial Port to Port Passthrough <common-serial-passthrough>
