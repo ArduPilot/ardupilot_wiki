@@ -67,7 +67,7 @@ tuning options for the vehicle.
 [site wiki="rover"]
     Steering Input Type and Reversing Behaviour <rover-steering-input-type-and-reversing-behaviour>
 [/site]
-    Telemetry / Serial Port Setup <common-telemetry-port-setup-for-apm-px4-and-pixhawk>
+    Telemetry Port Setup <common-telemetry-port-setup>
 [site wiki="copter,planner"]
     Terrain Following (Non-Autonomous modes) <terrain-following-manual-modes>
     Tuning <common-tuning>
