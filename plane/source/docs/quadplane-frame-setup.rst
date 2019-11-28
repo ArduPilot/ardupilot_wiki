@@ -83,7 +83,7 @@ Using different channel mappings
 --------------------------------
 
 You can remap what output channels the quad motors are on by setting
-values for SERVOn_FUNCTION. This follows the same approach as :ref:`other output functions <channel-output-functions>`.
+values for SERVOn_FUNCTION. This follows the same approach as :ref:`other output functions <common-rcoutput-mapping>`.
 
 .. note::
    Note that you do not need to set any of the SERVOn_FUNCTION values unless

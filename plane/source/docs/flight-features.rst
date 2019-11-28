@@ -18,5 +18,4 @@ a full set of features see the :doc:`full parameter list <parameters>` and the `
     Stall Prevention <stall-prevention>
     Geo-Fencing in Plane <geofencing>
     Terrain Following <common-terrain-following>
-    Channel Output Functions <channel-output-functions>
     Soaring <soaring>
