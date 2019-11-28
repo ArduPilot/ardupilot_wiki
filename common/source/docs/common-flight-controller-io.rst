@@ -139,7 +139,7 @@ The primary outputs for controlling motors (via ESCs) and servos are provided by
 
 Those controllers with MAIN/AUX output labels usually indicate that a IOMCU co-processor is being employed. These provide outputs intended for use as the motor/servo outputs and provide a redundant means of control via RC if the main flight controller fails. The MAIN outputs come from this co-processor, while the AUX designated outputs are controlled directly from the flight controller. Most board level flight controllers do not use an IOMCU and have outputs only labeled OUTPUTx or Mx.
 
-This distinction is important, since AUX outputs(and OUTPUTs from flight controllers without an IOMCU) can be used as GPIOs as well as PWM or Dshot. While MAIN outputs can only be used for PWM. See the GPIOs topic (*to be added soon*)
+This distinction is important, since AUX outputs(and OUTPUTs from flight controllers without an IOMCU) can be used as GPIOs as well as PWM or Dshot. While MAIN outputs can only be used for PWM. See :ref:`GPIOs <common-gpios>`
 
 .. note:: A few flight controllers that do NOT use an IOMCU label their outputs as MAIN, so actually do have the capability of use as GPIOs and/or Dshot ESC control on these outputs. CUAV V5 Nano and Holybro Pixhawk 4 Mini are examples.
 
