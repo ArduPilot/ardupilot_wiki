@@ -1,8 +1,8 @@
 .. _common-rcoutput-mapping:
 
-========================
-Channel Output Functions
-========================
+==================================
+Flight Controller Output Functions
+==================================
 
 All autopilot servo/motor outputs may be mapped to any output function supported by
 ArduPilot. This page describes how to configure these output channels and what each
