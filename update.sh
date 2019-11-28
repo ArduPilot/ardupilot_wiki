@@ -83,6 +83,7 @@ git fetch origin
 git submodule update
 git reset --hard origin/master
 git clean -f -f -x -d -d
+./insert_last_updated_date.sh 4
 popd
 
 echo "Updating sphinx_rtd_theme"
