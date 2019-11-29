@@ -210,10 +210,10 @@ Some signs that Autotune has been successful are:
 
 Autotune will attempt to tune each axis as tight as the aircraft can tolerate. In some aircraft this can be unnecessarily responsive. A guide for most aircraft:
 
-- :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>` should be reduced from 6 to 10
-- :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>` should be reduced from 6 to 10
-- :ref:`ATC_ANG_YAW_P <ATC_ANG_YAW_P>` should be reduced from 6 to 10
-- :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` should be reduced from 0.5 to 1
+- :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>` should be reduced from 10 to 6
+- :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>` should be reduced from 10 to 6
+- :ref:`ATC_ANG_YAW_P <ATC_ANG_YAW_P>` should be reduced from 10 to 6
+- :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` should be reduced from 1 to 0.5
 - :ref:`ATC_RAT_YAW_I <ATC_RAT_YAW_I__AC_AttitudeControl_Multi>` = :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` x 0.1
 
 These values should only be changed if Autotune produces higher values. Small aerobatic aircraft may prefer to keep these values as high as possible.
