@@ -18,8 +18,8 @@ When the failsafe will trigger
 
 If enabled and set-up correctly the radio failsafe will trigger if:
 
--  The pilot turns off the RC transmitter
--  The vehicle travels outside of RC range
+-  The pilot turns off the RC transmitter for more than 0.5 second
+-  The vehicle travels outside of RC range and signal is lost for more than 0.5 second
 -  The pilot forces the throttle channel below :ref:`FS_THR_VALUE<FS_THR_VALUE>` from the transmitter
 -  The receiver loses power (unlikely)
 -  The wires connecting the receiver to the autopilot are broken

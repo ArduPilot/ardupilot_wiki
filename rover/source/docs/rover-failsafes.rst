@@ -21,7 +21,7 @@ This failsafe is triggered if the connection between the user's transmitter and 
 
 - set :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` to "1" to enable this failsafe
 - if :ref:`FS_ACTION <FS_ACTION>` is "1", the vehicle will :ref:`RTL <rtl-mode>` to home, if "2" the vehicle will :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.
-- once the transmitter/receiver connection is restored, the user may use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode)
+- once the transmitter/receiver connection is restored, the user must use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode)
 
 Battery Failsafe
 ----------------
@@ -45,7 +45,7 @@ This failsafe is triggered if the vehicle stops receiving `heartbeat messages <h
 
 - set :ref:`FS_GCS_ENABLE <FS_GCS_ENABLE>` to "1" to enable this failsafe
 - if :ref:`FS_ACTION <FS_ACTION>` is "1", the vehicle will :ref:`RTL <rtl-mode>` to home, if "2" the vehicle will :ref:`Hold <hold-mode>`
-- use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode)
+- you must use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode), or change modes via the GCS iself, if communication is re-established.
 
 Crash Check
 -----------
