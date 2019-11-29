@@ -4,7 +4,7 @@
 GPIOs
 =====
 
-General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of relays, actuators, LEDs, camera triggers, etc. These are provided by re-configuring the PWM outputs. The parameter :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` determines how many of the PWM outputs are used for controlling motors/servos, and how many can be re-purposed and used as GPIO-style outputs.
+General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:`relays<common-relay>` , actuators, LEDs, :ref:`camera triggers<common-camera-shutter-with-servo>` , :ref:`Start Button<startstop-switch>` etc. These are provided by re-configuring the PWM outputs. The parameter :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` determines how many of the PWM outputs are used for controlling motors/servos, and how many can be re-purposed and used as GPIO-style outputs.
 
 If a flight controller has **X** outputs, then the number of available outputs that can be assigned via the ``SERVOx_FUNCTION`` parameter to be a relay, LED, etc. output is ( **X** - :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` ). These GPIO outputs begin at the highest output number and proceed downward. So, for example, if the total outputs is 6 and :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` = 4, then output 5/6 can be used for GPIO type functions.
 
