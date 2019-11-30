@@ -6,7 +6,7 @@ Archived:Loading ChibiOS firmware onto Pixhawk
 
 .. figure:: ../../../images/chibios-logo.png
 
-These instructions explain how to download and install the beta ArduPilot with ChibiOS firmware onto a pixhawk flight controller.
+These instructions explain how to download and install the beta ArduPilot with ChibiOS firmware onto a pixhawk autopilot.
 
 In tests the development team has found using ChibiOS (in place of NuttX) results in a smaller firmware with faster loop rates and less timing jitter.
 ChibiOS builds have less testing and a few `missing features <https://github.com/ArduPilot/ardupilot/issues/8109>`__ however.
@@ -30,7 +30,7 @@ Download the appropriate beta firmware from `firmware.ardupilot.org <http://firm
 Uploading as Custom Firmware
 ============================
  
-- connect the ground station PC to the flight controller using a USB cable
+- connect the ground station PC to the autopilot using a USB cable
 - select the COM port and baud rate (normally 115200) for the board.  If using the Mission Planner these are selected on the top right of the screen.  Do **not** press the Connect button
 - go to the GCS's firmware install screen.  If using the Mission Planner select "Initial Setup >> Install Firmware"
 - click the "Load custom firmware" link and select the .apj file downloaded above.  If using the Mission Planner and the "Load custom firmware" link is not visible select "Config/Tuning >> Planner" and set the "Layout" drop-down to "Advanced".
@@ -50,6 +50,6 @@ Testing
 - press the **Connect** button
 - after parameters are downloaded, the HUD should update as you tilt the board
 
-More details on connecting a GCS to the flight controller are described :ref:`here <common-connect-mission-planner-autopilot>`.
+More details on connecting a GCS to the autopilot are described :ref:`here <common-connect-mission-planner-autopilot>`.
 
 [copywiki destination="copter,plane,rover,planner"]

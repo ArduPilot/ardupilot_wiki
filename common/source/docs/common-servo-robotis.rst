@@ -6,7 +6,7 @@ Robotis Servos
 
 .. image:: ../../../images/servo-robotis.jpg
 
-Robotis Dynamixel servos are relatively expensive but high-end "smart actuators" that can be controlled by ArduPilot once connected to the flight controller's serial port.
+Robotis Dynamixel servos are relatively expensive but high-end "smart actuators" that can be controlled by ArduPilot once connected to the autopilot's serial port.
 
 Robotis servos using the "Robotis Protocol version 2.0" are supported.  Look for "Half duplex Asynchronous Serial Communication" in the "H/W SPECS" section of each servo.  The `XM430-W350-T <http://www.robotis-shop-en.com/?act=shop_en.goods_view&GS=2923&keyword=XM430-W350-T>`__ in particular is known to work correctly with ArduPilot.
 
@@ -39,9 +39,9 @@ Connecting and Configuring
 .. image:: ../../../images/servo-robotis-pixhawk.jpg
     :target: ../_images/servo-robotis-pixhawk.jpg
 
--  Connect one of the servos to any serial port on the flight controller.  In this example SERIAL4 is used but any serial port should work
+-  Connect one of the servos to any serial port on the autopilot.  In this example SERIAL4 is used but any serial port should work
 -  Additional servos should be connected to the first by daisy chaining them as shown above
--  Set the following parameters on the flight controller
+-  Set the following parameters on the autopilot
 
   - :ref:`SERIAL4_PROCOTOL <SERIAL4_PROTOCOL>` = 19 ("RobotisServo")
   - :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 57 (57600 baud)

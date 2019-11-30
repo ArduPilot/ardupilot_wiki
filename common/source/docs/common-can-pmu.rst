@@ -31,7 +31,7 @@ Specifications
 - **Connector Types:**
 
   - 8mm female bullet power connectors (XT-90 battery and ESC cables provided)
-  - Flight Controller Power: Molex 6 pin 1.5mm #5025850670 (CUAV V5 cable provided)
+  - Autopilot Power: Molex 6 pin 1.5mm #5025850670 (CUAV V5 cable provided)
   - CAN: 4 pin JST-GH (cable provided)
 - **Physcial Dimensions:**
 
@@ -61,8 +61,8 @@ Connecting to the System
     :target: ../_images/can-pmu/can-pmu-connection-en.png
 
 
-* Connect the flight controller's UAVCAN port the module's CAN interface.
-* Using a CUAV V5 series power cable, connect the module's Power interface to one of the V5 Flight Controller's power interfaces.
+* Connect the autopilot's UAVCAN port the module's CAN interface.
+* Using a CUAV V5 series power cable, connect the module's Power interface to one of the V5 Autopilot's power interfaces.
 
 Enable CAN PMU
 ==============

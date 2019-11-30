@@ -110,7 +110,7 @@ Connect to Others
 	
 .. note::
        
-         If you use a different flight controller, please select the V5+ version kit, which contains a 6 pin to 6pin cable that you can connect to the flight control GPS/GPS2/UART4 interface (it can be connected to Pixhawk2.1, Pixhawk 3 pro, etc).
+         If you use a different autopilot, please select the V5+ version kit, which contains a 6 pin to 6pin cable that you can connect to the flight control GPS/GPS2/UART4 interface (it can be connected to Pixhawk2.1, Pixhawk 3 pro, etc).
 
 Port and LED
 ============

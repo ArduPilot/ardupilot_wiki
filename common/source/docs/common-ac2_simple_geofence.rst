@@ -41,7 +41,7 @@ Enabling the Fence in Mission Planner
 
 The Fence can be set-up by doing the following:
 
--  Connect your flight controller to the Mission Planner
+-  Connect your autopilot to the Mission Planner
 -  Go to the **Config/Tuning \| GeoFence** screen
 -  Click the **Enable** button
 -  Leave the "Type" as "Altitude and Circle" (unless you want only an

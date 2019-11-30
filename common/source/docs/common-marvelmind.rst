@@ -32,10 +32,10 @@ Marvelmind Settings
 - The height of every stationary beacon, from the ground, must be set on the dashboard.
 - The hedge should be set to output Marvelmind Protocol at baud rate of 115200.
 
-Connecting to a flight controller
+Connecting to a autopilot
 =================================
 
-- Ensure that Copter-3.6 (or higher) or Rover-3.3 is loaded onto the flight controller and connect with a Ground Station (i.e. Mission Planner).
+- Ensure that Copter-3.6 (or higher) or Rover-3.3 is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).
 - Enable the :ref:`EKF3 as described here <common-apm-navigation-extended-kalman-filter-overview>`
 - Set :ref:`EK3_ALT_SOURCE <EK3_ALT_SOURCE>` to 3 (means using Marvelmind for altitude)
 - Set :ref:`EK3_GPS_TYPE <EK3_GPS_TYPE>` to 3 (means Inhibit GPS use)
@@ -51,7 +51,7 @@ Connecting to a flight controller
 Ground Testing
 ==============
 
-- Connect the Flight Controller to a ground station
+- Connect the Autopilot to a ground station
 - Click on 'freeze map' on the dashboard
 - After about 1 minute the vehicle's position should jump to the latitude, longitude you input during the configuration step (above)
 - Check that the vehicle's position is relatively stable (i.e. moving around less than one meter)

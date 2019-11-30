@@ -25,7 +25,7 @@ Required Hardware
 Setup
 =====
 
-- connect the flight controller and TX1 as shown on the `NVidia TX1 as a Companion Computer <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html>`__ wiki page
+- connect the autopilot and TX1 as shown on the `NVidia TX1 as a Companion Computer <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html>`__ wiki page
 - flash the TX1 as described in the `Setup the TX1 <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-tx1>`__ section of the above wiki page but use the apsync-tx1-openkai image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/beta/>`__
 - mount the ZED camera upside-down and using vibration dampeners to the front of the vehicle.  
   It can be mounted right-side-up after `connecting with ssh <http://ardupilot.org/dev/docs/apsync-intro.html#connecting-with-ssh>`__ and then modify `~/src/OpenKAI/kiss/apmCopter.kiss <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss#L60>`__ so "bFlip" is `1`.
@@ -40,9 +40,9 @@ Setup
 Configuration through the Ground Station 
 ========================================
 
-Ensure that Copter-3.5 (or higher) is loaded onto the flight controller and connect with a Ground Station (i.e. Mission Planner).
+Ensure that Copter-3.5 (or higher) is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).
 
-- enable communication between the TX1 and flight controller using the `Setup the Pixhawk instructions from the tx1 setup wiki page <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-pixhawk>`__
+- enable communication between the TX1 and autopilot using the `Setup the Pixhawk instructions from the tx1 setup wiki page <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-pixhawk>`__
 - set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 3 (means use EKF3)
 - set :ref:`EK2_ENABLE <EK2_ENABLE>` to 0 (disable EKF2)
 - set :ref:`EK3_ENABLE <EK3_ENABLE>` to 1 (enable EKF3)
@@ -59,9 +59,9 @@ Optionally you may also:
 Ground Testing
 ==============
 
-- Plug in the vehicle's LiPo battery so that both the TX1 and flight controller are powered
-- Connect the flight controller to a ground station using a USB cable
-- If you are using Mission Planner as your ground station, once messages are successfully passing from the ZED/TX1 to the flight controller:
+- Plug in the vehicle's LiPo battery so that both the TX1 and autopilot are powered
+- Connect the autopilot to a ground station using a USB cable
+- If you are using Mission Planner as your ground station, once messages are successfully passing from the ZED/TX1 to the autopilot:
   - a proximity viewer should appear showing the distance to objects ahead of the vehicle (if :ref:`PRX_TYPE <PRX_TYPE>` was enabled above) 
   - "Bad Vision Position" message should disappear from the HUD
 - Set the home position from the ground station map (from MP's Flight Data screen, right-mouse-button-click on the map and select "Set EKF Origin Here").  The vehicle should appear on the map.

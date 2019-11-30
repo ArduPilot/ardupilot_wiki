@@ -42,7 +42,7 @@ Below is a list of the cables offered by Seagull UAV:
 -  Sigma: CR-31
 -  Apple: IOS
 
-The 3-pin servo connector should be connected to the flight controller's rear servor rail.  You can connect to any of Pixhawk's usable AUX ports, as discussed in :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter-with-servo>`.
+The 3-pin servo connector should be connected to the autopilot's rear servor rail.  You can connect to any of Pixhawk's usable AUX ports, as discussed in :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter-with-servo>`.
 
 On the opposite side of the MAP2, is a 2.5mm jack for connecting the cable for your specific camera.
 

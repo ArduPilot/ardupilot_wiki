@@ -20,15 +20,15 @@ Where to Buy
 
 The sensor can be purchased directly from `openmv.io <https://openmv.io/collections/cams>`__
 
-Connection to Flight Controller
--------------------------------
+Connection to Autopilot
+-----------------------
 
 .. image:: ../../../images/openmv-pixhawk.jpg
    :target: ../_images/openmv-pixhawk.jpg
    :width: 450px
 
-- The camera should be mounted on the underside of the copter with the camera lens pointing downwards.  The camera edge with the lens should be towards the front of the vehicle.  The image above is incorrect because the flight controller's arrow is pointing down while the sensor's lens is close to the top
-- Connect the camera's P4, VIN and GND pins to one of the flight controller's serial ports as shown above.  In the image above the sensor is connected to a Pixhawk's Telem2 port
+- The camera should be mounted on the underside of the copter with the camera lens pointing downwards.  The camera edge with the lens should be towards the front of the vehicle.  The image above is incorrect because the autopilot's arrow is pointing down while the sensor's lens is close to the top
+- Connect the camera's P4, VIN and GND pins to one of the autopilot's serial ports as shown above.  In the image above the sensor is connected to a Pixhawk's Telem2 port
 - Set :ref:`FLOW_TYPE <FLOW_TYPE>` = 5 (MAVLink)
 - Set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 1 (MAVLink) if using Serial2/Telem2, if connected to another serial port use the corresponding SERIALx_PROTOCOL parameter
 - Set :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115

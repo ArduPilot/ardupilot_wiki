@@ -41,7 +41,7 @@ In a nutshell, the 6-DOF pose data (**position** and **orientation**) and **conf
 
 - Perform necessary matrix transformation to align the frames of the Realsense T265 and NED frame as well as other processing steps.
 
-- Pack pose data into MAVLink message `VISION_POSITION_ESTIMATE <https://mavlink.io/en/messages/common.html#VISION_POSITION_ESTIMATE>`__ and confidence level data into a dummy message, then send them to ArduPilot at a predetermined frequency so as to not `flood` the Flight Controller with incoming data.
+- Pack pose data into MAVLink message `VISION_POSITION_ESTIMATE <https://mavlink.io/en/messages/common.html#VISION_POSITION_ESTIMATE>`__ and confidence level data into a dummy message, then send them to ArduPilot at a predetermined frequency so as to not `flood` the Autopilot with incoming data.
 
 - Automatically set EKF home for simple setup and flying.
 
@@ -65,7 +65,7 @@ For RPi running Ubuntu, the installation process for ``librealsense`` has been d
 Configure ArduPilot
 ===================
 
-Connect to the flight controller with a ground station (i.e. Mission Planner) and check that the following parameters are set as shown below:
+Connect to the autopilot with a ground station (i.e. Mission Planner) and check that the following parameters are set as shown below:
 
 - `AHRS_EKF_TYPE <http://ardupilot.org/copter/docs/parameters.html#ahrs-ekf-type>`__ = 2 (the default) to use EKF2 (as of this writing, EKF3 is **not** supported for handling external navigation data)
 - `EK2_ENABLE <http://ardupilot.org/copter/docs/parameters.html#ek2-enable>`__ = 1 (the default)
@@ -78,7 +78,7 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 - MAG_ENABLE = 0,  `COMPASS_USE <http://ardupilot.org/copter/docs/parameters.html#compass-use-use-compass-for-yaw>`__ = 0, `COMPASS_USE2 <http://ardupilot.org/copter/docs/parameters.html#compass-use2>`__ = 0, `COMPASS_USE3 <http://ardupilot.org/copter/docs/parameters.html#compass-use3>`__ = 0 to disable the EKF’s use of the compass and instead rely on the heading from external navigation data.
 - Configure serial port to connect to companion computer with ``SERIALx_BAUD`` and ``SERIALx_PROTOCOL = 1``.
 
-After the parameters are modified, reboot the flight controller.
+After the parameters are modified, reboot the autopilot.
 
 Python Packages Installation
 ============================
@@ -205,7 +205,7 @@ Ground Test
 
 - During the test, view the confidence level and verify tracking performance. For most applications you should trust the full 6dof pose only in **high** confidence. If you only need the rotation (3dof), lower confidence poses can be used.
 
-- If the external navigation data is lost for any reason (tracking lost, script is interrupted etc.), reboot the Flight Controller.
+- If the external navigation data is lost for any reason (tracking lost, script is interrupted etc.), reboot the Autopilot.
 
 .. tip::
 

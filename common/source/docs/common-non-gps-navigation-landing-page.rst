@@ -27,4 +27,4 @@ These are the available options that allow a vehicle to estimate its position wi
 
 .. note::
 
-   The low cost IMUs (accelerometers, gyros, compass) used in most flight controllers drift too quickly to allow position estimation without an external velocity or position source.  In other words, low-cost IMUs on their own are not sufficient for estimating position
+   The low cost IMUs (accelerometers, gyros, compass) used in most autopilots drift too quickly to allow position estimation without an external velocity or position source.  In other words, low-cost IMUs on their own are not sufficient for estimating position

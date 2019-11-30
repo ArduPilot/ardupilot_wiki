@@ -40,7 +40,7 @@ following parameters if its the first rangefinder in the system (this can be don
 
 If you instead were using the Telem2 port on the Pixhawk then you would set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9, and :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to 115 (115200 baud) or 19 (19200 baud)
 
-Note that you may need to use a separate 5V power supply for the Lidar on some flight boards. Refer to the power consumption in the manual for the Lidar and the limits for peripheral power on your flight controller.
+Note that you may need to use a separate 5V power supply for the Lidar on some flight boards. Refer to the power consumption in the manual for the Lidar and the limits for peripheral power on your autopilot.
 
 I2C connection
 --------------

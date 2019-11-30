@@ -24,14 +24,14 @@ Each script is run in its own sandboxed environment.
 This allows each script to manipulate any global variables it wants to without causing other scripts problems, and allows the script to persist state between calls to its callback.
 A side effect of this however is that heavy memory usage in a script can cause other scripts to be short on memory.
 
-This page describes how to setup scripts on your flight controller, the scripting API and some examples to help get started.
+This page describes how to setup scripts on your autopilot, the scripting API and some examples to help get started.
 
 This feature will be released with Copter-4.0, Rover-3.6 and Plane-3.11.
 
 Requirements
 ============
 
-- Flight controller with at least 2 MB’s of flash available
+- Autopilot with at least 2 MB’s of flash available
 - At least 32 KB of free memory
 
 How to Enable Scripting

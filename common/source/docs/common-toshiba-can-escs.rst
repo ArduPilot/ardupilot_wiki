@@ -37,7 +37,7 @@ Connection and Configuration
     :target: ../_images/toshiba-can-esc-pixhawk.jpg
     :width: 400px
 
-- ESCs should be daisy chained together using CAN splitter boards and then one 4-pin CAN cable should be connected to the flight controller's CAN port.  Note that the last splitter board has a terminator (i.e. no port) on one side.
+- ESCs should be daisy chained together using CAN splitter boards and then one 4-pin CAN cable should be connected to the autopilot's CAN port.  Note that the last splitter board has a terminator (i.e. no port) on one side.
 
 .. warning::
 
@@ -47,7 +47,7 @@ Connection and Configuration
     :target: ../_images/toshiba-can-esc-dip-switches.png
     :width: 400px
 
-- Set the dip switches on each ESC to specify its unique number.  This number also maps the ESC to an equivalent PWM output on the back of the flight controller.  For example ESC 1 will react just like a normal PWM ESC connected to the flight controller's MAIN OUT 1.  By default this mapping also matches the :ref:`motor order diagrams <Copter:connect-escs-and-motors>`.
+- Set the dip switches on each ESC to specify its unique number.  This number also maps the ESC to an equivalent PWM output on the back of the autopilot.  For example ESC 1 will react just like a normal PWM ESC connected to the autopilot's MAIN OUT 1.  By default this mapping also matches the :ref:`motor order diagrams <Copter:connect-escs-and-motors>`.
 - Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 3 (ToshibaCAN)
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver) to specify that the ESCs are connected to the CAN1 port
 [site wiki="copter,rover"]

@@ -4,12 +4,12 @@
 Serial Port Configuration Options
 =================================
 
-This page describes the configuration options for the serial ports. Currently, some of these options are supported only on specific flight controllers.
+This page describes the configuration options for the serial ports. Currently, some of these options are supported only on specific autopilots.
 
 Logical Serial Port to Physical UART Assignment
 ===============================================
 
-ArduPilot Serialx Port numbering is logical, rather than physical. Which UART or USART port is assigned to a Serial Port is determined by the flight controller's hardware definition file. 
+ArduPilot Serialx Port numbering is logical, rather than physical. Which UART or USART port is assigned to a Serial Port is determined by the autopilot's hardware definition file. 
 Serial Port 0 is always assigned to the USB port, but others can vary. Check its  :ref:`description page <common-autopilots>`
 
 .. note:: more serial ports may be shown in the parameters than exist on a given controller. Check its  :ref:`description page<common-autopilots>` 
@@ -36,7 +36,7 @@ By default the protocols/expected peripheral for each port is shown below:
 |Serial 7         | USER port, disabled                |
 +-----------------+------------------------------------+
 
-Often cased flight controllers will have the designation "TELEM1", "GPS", etc. marked on the case, otherwise, the flight controller :ref:`description page<common-autopilots>`  should provide the mapping to SERIALx Port
+Often cased autopilots will have the designation "TELEM1", "GPS", etc. marked on the case, otherwise, the autopilot :ref:`description page<common-autopilots>`  should provide the mapping to SERIALx Port
 
 SERIALx_PROTOCOL
 ================
@@ -302,4 +302,4 @@ Bitmask Options
 - if bit 2 is set, then HalfDuplex operation using the TX pin is implemented.
 - if bit 3 is set, then the TX and RX pins are effectively swapped internally.
 
-.. note:: HalfDuplex is supported on all ChiBiOS based flight controllers, but all other options are only supported on boards with F7 or H7 microprocessors.
+.. note:: HalfDuplex is supported on all ChiBiOS based autopilots, but all other options are only supported on boards with F7 or H7 microprocessors.

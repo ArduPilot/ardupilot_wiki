@@ -81,7 +81,7 @@ Mission Planner supports automatic configuration of almost all
 parameters for the most common autopilot boards. All you need to do is
 select the button corresponding to your autopilot controller:
 
--  For most modern flight controller, select the button **Pixhawk/PX4**. You may be prompted for a specific ArduPilot version.
+-  For most modern autopilot, select the button **Pixhawk/PX4**. You may be prompted for a specific ArduPilot version.
 -  For APM 2.6, select **APM with External Compass**.
 
 If your external compass is in a non-standard orientation, you must manually 
@@ -114,7 +114,7 @@ The *general settings* apply to all compasses connected to the autopilot
 controller:
 
 -  **Enable compasses**: determines whether whether (any) compasses are
-   enabled. If enabled the flight controller will use the primary
+   enabled. If enabled the autopilot will use the primary
    compass for heading data, otherwise the heading will be estimated
    from GPS. Enabling this checkbox corresponds to setting parameter
    ``MAG_ENABLE=1``.
@@ -154,9 +154,9 @@ Some settings are only visible when the compass is enabled.
 
 -  **Externally mounted**: Set whether or not a particular compass is
    externally mounted (corresponds to ``COMPASS_EXTERNAL=1``). If the
-   compass is internal it uses the flight controller’s orientation
+   compass is internal it uses the autopilot’s orientation
    (``AHRS_ORIENTATION``). If the compass is external, the orientation
-   may differ from the flight controller (set using the selection list
+   may differ from the autopilot (set using the selection list
    discussed next)
 -  **Compass orientation**: sets the compass orientation for externally
    mounted compasses. The value is saved as a ``COMPASS_ORIENTx``
@@ -247,7 +247,7 @@ Please follow these instructions:
 -  Secure the copter (perhaps with tape) so that it does not move
 -  Turn on your transmitter and keep throttle at zero
 -  Connect your vehicle's LiPo battery
--  Connect your flight controller to your computer with the usb cable
+-  Connect your autopilot to your computer with the usb cable
 -  **If using AC3.2:**
 
    -  Open the **Initial Setup \| Optional Hardware \| Compass/Motor

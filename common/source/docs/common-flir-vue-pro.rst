@@ -26,7 +26,7 @@ Connecting and Configuring
     :target: ../_images/flir-vue-pro-pixhawk.png
     :width: 450px
 
-Plug one end of the accessory cable into the camera's 7-pin DF13 connector (found next to the micro USB port) and then the other 6-pin connector to one of the flight controller's telemetry ports.  In this example Telem2 is used.
+Plug one end of the accessory cable into the camera's 7-pin DF13 connector (found next to the micro USB port) and then the other 6-pin connector to one of the autopilot's telemetry ports.  In this example Telem2 is used.
 
 Set the following parameters on the autopilot (assuming Telem2/Serial2 is used):
 
@@ -34,7 +34,7 @@ Set the following parameters on the autopilot (assuming Telem2/Serial2 is used):
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 57 (57200 baud)
 -  :ref:`SR2_POSITION <SR2_POSITION>` = 5 to send the vehicle's position to the camera at 5hz
 
-To allow triggering the taking of pictures during a mission or from a transmitter's auxiliary switch connect the "P3" 3-pin servo connector to the one of the flight controller's servo outputs.  In this example AUX OUT 1 (aka SERVO9) is used.  Then set the following parameters
+To allow triggering the taking of pictures during a mission or from a transmitter's auxiliary switch connect the "P3" 3-pin servo connector to the one of the autopilot's servo outputs.  In this example AUX OUT 1 (aka SERVO9) is used.  Then set the following parameters
 
 - :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` = 10 (Camera Trigger)
 - :ref:`CAM_SERVO_ON <CAM_SERVO_ON>` = 1900
@@ -53,9 +53,9 @@ Configure the Phone
 Testing
 -------
 
-- Power up the camera and flight controller in a location where the vehicle can get a GPS lock.
+- Power up the camera and autopilot in a location where the vehicle can get a GPS lock.
 - Connect with a ground station (like Mission Planner) and check that the vehicle appears on the map
-- If the serial connection between the flight controller and camera is working then shortly after the camera is powered on, it will begin sending heartbeats to the flight controller and ground station which, if using the Mission Planner, will make it appear as "CAMERA" in the top-right drop-down.  Selecting the CAMERA will not work though because the camera does not respond to requests for parameters
+- If the serial connection between the autopilot and camera is working then shortly after the camera is powered on, it will begin sending heartbeats to the autopilot and ground station which, if using the Mission Planner, will make it appear as "CAMERA" in the top-right drop-down.  Selecting the CAMERA will not work though because the camera does not respond to requests for parameters
 
 .. image:: ../../../images/flir-vue-pro-mp.png
     :target: ../_images/flir-vue-pro-mp.png

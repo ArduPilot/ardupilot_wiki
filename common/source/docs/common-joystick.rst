@@ -97,7 +97,7 @@ To check the above controls move in the correct direction:
 
 -  Click the **Enable** button on the Joystick setup screen to enable
    sending messages to the vehicle
--  Connect your flight controller to the computer with a USB cable
+-  Connect your autopilot to the computer with a USB cable
 -  Push the Mission Planner's **Connect** button
 -  Go to the **Initial Setup \| Mandatory Hardware \| Radio
    Calibration** screen and ensure the green bars all move in the

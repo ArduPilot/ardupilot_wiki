@@ -759,6 +759,6 @@ See also
 [site wiki="planner"]
     Pixhawk Wiring Quick Start <common-pixhawk-wiring-and-quick-start>
     Powering the Pixhawk <common-powering-the-pixhawk>
-    Mounting the Flight Controller <common-mounting-the-flight-controller>
+    Mounting the Autopilot <common-mounting-the-flight-controller>
     Compatible RC Transmitter and Receiver Systems (Pixhawk) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>
 [/site]

@@ -6,7 +6,7 @@ Barometer (external)
 .. image:: ../../../images/baro-top-image.png
     :width: 450px
 
-Most flight controllers include a barometer directly on the flight controller but attaching an external barometer can be useful in order to place the barometer away from air pressure disturbances.  It can also allow monitoring the environmental or an internal component's temperature within a typical range of -40 - +85°C.
+Most autopilots include a barometer directly on the autopilot but attaching an external barometer can be useful in order to place the barometer away from air pressure disturbances.  It can also allow monitoring the environmental or an internal component's temperature within a typical range of -40 - +85°C.
 
 .. warning::
 
@@ -25,7 +25,7 @@ Where to Buy
 Connecting and Configuring
 --------------------------
 
-Connect the barometer to the flight controller's I2C port as shown below
+Connect the barometer to the autopilot's I2C port as shown below
 
 .. image:: ../../../images/baro-ms5611-pixhawk.jpg
     :target: ../_images/baro-ms5611-pixhawk.jpg
@@ -37,7 +37,7 @@ On the top of the Drotek MS5611 board, the "I2C" jumper should be soldered.  Loo
     :target: ../_images/baro-bmp280-pixhawk.jpg
     :width: 450px
 
-- :ref:`GND_PROBE_EXT <GND_PROBE_EXT>` to 4 for the Drotek MS5611 or 2 for the Adafruit BMP280.  Reboot the flight controller after changing this parameter.
+- :ref:`GND_PROBE_EXT <GND_PROBE_EXT>` to 4 for the Drotek MS5611 or 2 for the Adafruit BMP280.  Reboot the autopilot after changing this parameter.
 - :ref:`GND_PRIMARY <GND_PRIMARY>` to 1 to use the external barometer as the primary
 
 Testing

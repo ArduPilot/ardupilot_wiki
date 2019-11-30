@@ -4,15 +4,15 @@
 Loading Firmware
 ================
 
-These instructions will show you how to download the latest firmware onto the flight controller using the Mission Planner ground station.
+These instructions will show you how to download the latest firmware onto the autopilot using the Mission Planner ground station.
 
 [copywiki destination="copter,plane,rover,planner"]
 
-Connect flight controller to computer
-=====================================
+Connect autopilot to computer
+=============================
 
 Once you've :ref:`installed a ground station <common-install-gcs>` on your computer, connect
-the flight controller using the micro USB cable as shown
+the autopilot using the micro USB cable as shown
 below. Use a direct USB port on your computer (not a USB hub).
 
 .. figure:: ../../../images/pixhawk_usb_connection.jpg

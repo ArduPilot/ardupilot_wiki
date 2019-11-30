@@ -1,13 +1,13 @@
 .. _common-flight-controller-wiring:
 
-============================================
-Typical Flight Controller Wiring Connections
-============================================
+====================================
+Typical Autopilot Wiring Connections
+====================================
 
 .. image:: ../../../images/fc-io.jpg
   :width: 450px
 
-This topic covers the wiring/connection of basic/mandatory peripherals to the flight controller. For detailed explanations about each flight controller port/connector, see :ref:`common-flight-controller-io`
+This topic covers the wiring/connection of basic/mandatory peripherals to the autopilot. For detailed explanations about each autopilot port/connector, see :ref:`common-flight-controller-io`
 
 GPS/Compass
 -----------
@@ -17,11 +17,11 @@ GPS is mandatory in all vehicles. Compass is mandatory for Copter and Rover and 
 .. image:: ../../../images/gps-connection.jpg
   :width: 450px
 
-.. note:: TX and RX are swapped from flight controller to GPS module.
+.. note:: TX and RX are swapped from autopilot to GPS module.
 
-.. note:: Usually GPS is attached to the logical Serial Port 3 by default in ArduPilot. However, which  physical UART is assigned to ArduPilot's Serial Port 3 on the flight controller is documented in the flight controllers :ref:`documentation <common-autopilots>`
+.. note:: Usually GPS is attached to the logical Serial Port 3 by default in ArduPilot. However, which  physical UART is assigned to ArduPilot's Serial Port 3 on the autopilot is documented in the autopilots :ref:`documentation <common-autopilots>`
 
-As an wiring example, the topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module_connecting_to_pixhawk>` shows how to connect to a Pixhawk flight controller and includes additional configuration and mounting information.
+As an wiring example, the topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module_connecting_to_pixhawk>` shows how to connect to a Pixhawk autopilot and includes additional configuration and mounting information.
 
 RC input
 --------
@@ -56,17 +56,17 @@ can be used to convert the receiver outputs to PPM-SUM.
 Motor/Servo Connections
 -----------------------
 
-Motor ESCs and/or PWM Servos are attached to the PWM outputs of the flight controller.
+Motor ESCs and/or PWM Servos are attached to the PWM outputs of the autopilot.
 
 They are labeled either as MAIN/AUX outputs or just as OUTPUTs. These outputs provide the PWM or Dshot signals for motor ESC or servo control of flight surfaces. They can also be sometimes used as general purpose I/O pins for controlling relays, parachutes, grippers, etc.
 
-Those controllers with MAIN/AUX output labels usually indicate that a IOMCU co-processor is being employed. These provide outputs intended for use as the motor/servo outputs and provide a redundant means of control via RC if the main flight controller fails. The MAIN outputs come from this co-processor, while the AUX designated outputs are controlled directly from the flight controller. Most board level flight controllers do not use an IOMCU and have outputs only labeled OUTPUTx or Mx.
+Those controllers with MAIN/AUX output labels usually indicate that a IOMCU co-processor is being employed. These provide outputs intended for use as the motor/servo outputs and provide a redundant means of control via RC if the main autopilot fails. The MAIN outputs come from this co-processor, while the AUX designated outputs are controlled directly from the autopilot. Most board level autopilots do not use an IOMCU and have outputs only labeled OUTPUTx or Mx.
 
-This distinction is important, since AUX outputs(and OUTPUTs from flight controllers without an IOMCU) can be used as GPIOs as well as PWM or Dshot. While MAIN outputs can only be used for PWM.
+This distinction is important, since AUX outputs(and OUTPUTs from autopilots without an IOMCU) can be used as GPIOs as well as PWM or Dshot. While MAIN outputs can only be used for PWM.
 
-.. note:: A few flight controllers that do NOT use an IOMCU label their outputs as MAIN, so actually do have the capability of use as GPIOs and/or Dshot ESC control outputs. CUAV V5 Nano and Holybro Pixhawk 4 Mini are examples.
+.. note:: A few autopilots that do NOT use an IOMCU label their outputs as MAIN, so actually do have the capability of use as GPIOs and/or Dshot ESC control outputs. CUAV V5 Nano and Holybro Pixhawk 4 Mini are examples.
 
-Often these outputs are provided on 3 pin connector strips supplying or distributing servo power and ground, in addition to the individual output signals. This power is usually provided externally, such as by the ESC or a BEC, although some flight controllers provide this power from internal regulators.
+Often these outputs are provided on 3 pin connector strips supplying or distributing servo power and ground, in addition to the individual output signals. This power is usually provided externally, such as by the ESC or a BEC, although some autopilots provide this power from internal regulators.
 
 An connection example for Rover
 
@@ -110,13 +110,13 @@ signal pins:
 -  Pin 3 = Throttle
 -  Pin 1 = Steering
 
-The skid-steer parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The parameters are: SKID_STEER_OUT and SKID_STEER_IN. When enabled, flight controller's output RC1 is used for the left track control, and output RC3 is used for right track control.
+The skid-steer parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The parameters are: SKID_STEER_OUT and SKID_STEER_IN. When enabled, autopilot's output RC1 is used for the left track control, and output RC3 is used for right track control.
 [/site]
 
 Connect buzzer and safety switch
 ================================
 
-The buzzer and safety switch button are optional but recommended, if the flight controller provides those connections (many closed source flight controllers do not). Connect to the BUZZER and SWITCH ports as shown.
+The buzzer and safety switch button are optional but recommended, if the autopilot provides those connections (many closed source autopilots do not). Connect to the BUZZER and SWITCH ports as shown.
 
 .. image:: ../../../images/safetysw-connection.jpg
   :width: 450px
@@ -134,7 +134,7 @@ Depending on your hardware there may be any number of other peripherals
 attached, including sensors, cameras, grippers etc. These can be found
 as sub-pages of the topic :ref:`Optional Hardware <common-optional-hardware>`.
 
-Information about connecting these peripherals to the flight controller is found in
+Information about connecting these peripherals to the autopilot is found in
 those respective pages.
 
 Related information
@@ -143,7 +143,7 @@ Related information
 .. toctree::
     :maxdepth: 1
 
-    Flight Controller I/O <common-flight-controller-io>
+    Autopilot I/O <common-flight-controller-io>
     Wiring Example using Pixhawk <common-pixhawk-wiring-and-quick-start>
     Powering the Pixhawk <common-powering-the-pixhawk>
     Compatible RC Tx/Rx Systems <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>

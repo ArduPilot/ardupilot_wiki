@@ -41,7 +41,7 @@ Where to Buy
 ============
 
 - Available from many retailers including `Holybro <https://shop.holybro.com/kakute-f4-all-in-one-v2_p1072.html>`__ and `HobbyKing <https://hobbyking.com/en_us/holybro-kakute-f4-a10-v2-flight-controller-with-osd-and-bmp280-barometer.html?___store=en_us>`__
-- This flight controller is also included in the `Kopis1 drone <https://shop.holybro.com/kopis-1_p1041.html>`__ but note that for the moment, this vehicle will be delivered with a different open source flight code (see instructions below on loading ArduPilot)
+- This autopilot is also included in the `Kopis1 drone <https://shop.holybro.com/kopis-1_p1041.html>`__ but note that for the moment, this vehicle will be delivered with a different open source flight code (see instructions below on loading ArduPilot)
 
 Pinout
 ======

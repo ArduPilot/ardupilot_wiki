@@ -10,7 +10,7 @@ Overview
 ========
 
 Companion Computers travel on the vehicle and communicate with (and
-control) the flight controller. The Companion Computer gets all the
+control) the autopilot. The Companion Computer gets all the
 MAVLink data produced by the autopilot (including GPS data) and can use
 it to make intelligent decisions during flight. This enables a broad
 range of functionality, from computer mediated flight paths, though to

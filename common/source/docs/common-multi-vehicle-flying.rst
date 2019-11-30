@@ -39,13 +39,13 @@ Pre-Flight Setup
    of each pair of radios to a unique number.  I.e. if controlling 3
    vehicles, set the ``NetID`` of one pair to "23", the 2nd pair to
    "24", the 3rd pair to "25".
--  Connect one of each radio pairs to the vehicle flight controllers
+-  Connect one of each radio pairs to the vehicle autopilots
    (i.e. Pixhawk) using Telem1 or Telem2.
 -  Connect the other pairs to the Tracker's controller (i.e. Pixhawk)
    using Telem1, Telem2 and Serial 4/5 ports.
 -  If using Serial 4/5 set the Tracker's ``SERIAL4_PROTOCOL`` to "1" to
    enable MAVLink communication on that port.
--  Connect to each vehicle's flight controller and the tracker and set
+-  Connect to each vehicle's autopilot and the tracker and set
    the ``SYSID_THISMAV`` to a unique number (i.e. "1" for first vehicle,
    "2" for second vehicle, "3" for third, "9" for the tracker).
 -  On the GCS, :ref:`reduce data rate <common-mission-planner-telemetry-logs_setting_the_datarate>`

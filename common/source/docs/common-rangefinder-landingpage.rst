@@ -34,7 +34,7 @@ Copter/Plane/Rover support a number of different rangefinders including Lidars (
 .. warning::
    
    RNGFND_MAX_CM must be set to a tested, appropriate value.  If RNGFND_MAX_CM is set to a value
-   greater than the range of the sensor, the flight controller will not respond correctly to the 
+   greater than the range of the sensor, the autopilot will not respond correctly to the 
    data provided.
 
 Follow the links below (or in sidebar) for configuration information

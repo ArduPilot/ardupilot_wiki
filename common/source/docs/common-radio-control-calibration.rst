@@ -17,9 +17,9 @@ Check the Transmitter's Setup
 -----------------------------
 
 - Ensure the battery is disconnected (this is important because it is possible to accidentally arm the vehicle during the RC calibration process)
-- Ensure the RC receiver is connected to the flight controller
+- Ensure the RC receiver is connected to the autopilot
 - Turn on your RC transmitter and if it has "trim tabs" ensure they are in the middle
-- Connect the flight controller to the PC using a USB cable
+- Connect the autopilot to the PC using a USB cable
 - On the Mission Planner press the "Connect" button and open Mission Planner's **INITIAL SETUP \| Mandatory Hardware \| Radio Calibration** screen
 - Some green bars should appear showing the ArduPilot is receiving input from the Transmitter/Receiver. If no bars appear check the receiver's LED:
 

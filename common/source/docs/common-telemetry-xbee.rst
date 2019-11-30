@@ -22,13 +22,13 @@ robotics stores globally.  Generally you will need two XBee radiios (one
 for the ground station and one for the vehicle) along with two different
 adapter boards.  `One with a USB connection <https://www.sparkfun.com/products/11812>`__ for the ground
 station computer and `another with a serial connection <https://www.sparkfun.com/products/11373>`__ which can be
-connected to the flight controller as shown above.
+connected to the autopilot as shown above.
 
 Configuration
 =============
 
 Click on the diagram at the top of this page to see the individual wire
-connections that must be made between the flight controller and Xbee
+connections that must be made between the autopilot and Xbee
 module.  Note that in the diagram above only 4 wires are connected (GND,
 5V, Transmit, Receiver).  The CTS and RTS (Ready-to-send) pins are left
 unconnected because although connecting them should improve the data
@@ -37,7 +37,7 @@ successfully connect.
 
 With the CTS and RTS pins disconnected the BRD_SER1_RTSCTS (if using
 Telem1) or BRD_SER2_RTSCTS (if using Telem2) should be set to zero
-(after making the change the flight controller will need to be
+(after making the change the autopilot will need to be
 restarted).
 
 .. image:: ../../../images/Telemetry_XBee_MPSetup.jpg

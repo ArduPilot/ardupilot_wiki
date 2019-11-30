@@ -72,7 +72,7 @@ For a reliable RPM signal the hall effect pick-up should be mounted very close t
     :target: ../_images/Installed_Hall_Effect_Sensor.jpg
     :width: 240px
 
-The three wires should then be plugged into flight controller.  This is commonly done using a standard servo plug.  Ground to Gnd, Vcc to 5V, and the signal line 
+The three wires should then be plugged into autopilot.  This is commonly done using a standard servo plug.  Ground to Gnd, Vcc to 5V, and the signal line 
 needs to be attached to a GPIO pin.  On most smaller boards this will be any one of the PWM pins on the servo rail.  On a Pixhawk this must be one of the AUX ports.  
 For reasons explained later it is recommended to use the highest number pin first.  E.g. AUX 6 on a Pixhawk Cube or PWM 9 on an F405-Wing.
 
@@ -80,9 +80,9 @@ For reasons explained later it is recommended to use the highest number pin firs
 
 First the board needs to be configured to allow PWM pins to be set for GPIO.  This is done using the parameter BRD_PWM_COUNT.  Reduce the PWM count to free up a pin to 
 be used for GPIO.  On non-Pixhawk boards the PWM count will include all PWM outputs.  On Pixhawk boards this parameter only affects AUX pins.  Write the parameter 
-and reboot the flight controller.
+and reboot the autopilot.
 
-Now the flight controller needs to be told which pin to find the RPM signal on.  To do this you will need to find the pin number in the hwdef.dat file for you 
+Now the autopilot needs to be told which pin to find the RPM signal on.  To do this you will need to find the pin number in the hwdef.dat file for you 
 board.  These can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__.  Within the file for your board you will 
 need to find where the GPIO(*) definition is.  The below example is an excerpt from the hwdef.dat file for the cube: ::
 

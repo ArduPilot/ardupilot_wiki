@@ -6,11 +6,11 @@ Barometer Temperature Compensation
 
 .. image:: ../../../images/baro-temp-comp.png
 
-Some small flight controllers with very tightly packed components can suffer from bad altitude control if the barometer suffers from significant changes in reported pressure as the temperature changes.  The barometer temperature compensation feature can be used to partially correct this issue.
+Some small autopilots with very tightly packed components can suffer from bad altitude control if the barometer suffers from significant changes in reported pressure as the temperature changes.  The barometer temperature compensation feature can be used to partially correct this issue.
 
 .. warning::
 
-   This feature is not useful for most flight controllers including the Pixracer and Pixhawk family of boards
+   This feature is not useful for most autopilots including the Pixracer and Pixhawk family of boards
 
 .. note::
 

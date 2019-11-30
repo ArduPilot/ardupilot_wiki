@@ -23,7 +23,7 @@ but is also used in many other contexts.
 All nodes are connected to each other through a two wire bus. The wires are
 120 Ω nominal twisted pair.
 
-Most flight controllers that run ArduPilot have either one or two CAN interfaces
+Most autopilots that run ArduPilot have either one or two CAN interfaces
 for connection of different devices.
 The setup of the interfaces can be made in a way that will provide redundancy or
 maximum throughput or a mix of both.
