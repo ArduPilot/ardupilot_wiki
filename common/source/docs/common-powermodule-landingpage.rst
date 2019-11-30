@@ -24,6 +24,6 @@ The links below have information about the most commonly used power modules
 
 Power modules provide these benefits:
 
-- Provides a stable power supply to the flight controller and reduces the chance of a brown-out
+- Provides a stable power supply to the autopilot and reduces the chance of a brown-out
 - Allows real-time monitoring of the battery’s voltage and current and triggering a low battery failsafe
 - Allows compensating for the interference on the compass from the motors using the COMPASS_MOT_x and COMPASS_PMOT_x parameters, see :ref:`common-compass-setup-advanced` .

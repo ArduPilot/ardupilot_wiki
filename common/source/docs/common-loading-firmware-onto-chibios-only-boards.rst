@@ -4,10 +4,10 @@
 Loading Firmware onto ChibiOS-only boards
 =========================================
 
-Recent versions of ArduPilot (Copter-3.6, Plane-3.9, Rover-3.5) run on relatively small, non-Pixhawk, flight controllers using the ChibiOS operating system.
+Recent versions of ArduPilot (Copter-3.6, Plane-3.9, Rover-3.5) run on relatively small, non-Pixhawk, autopilots using the ChibiOS operating system.
 Examples of these boards include the :ref:`OpenPilot RevoMini <common-openpilot-revo-mini>`, :ref:`Mateksys F405-Wing <common-matekf405-wing>` and :ref:`Omnibus F4 Pro <common-omnibusf4pro>`.
 
-Installing ArduPilot to these flight controller involves:
+Installing ArduPilot to these autopilot involves:
 
 - Installing the required driver and flashing tool
 - Downloading the appropriate ArduPilot firmware
@@ -15,7 +15,7 @@ Installing ArduPilot to these flight controller involves:
 
 .. note::
 
-   Instructions for ArduPilot using ChibiOS to Pixhawk flight controllers can be found :ref:`here <common-loading-chibios-firmware-onto-pixhawk>`.
+   Instructions for ArduPilot using ChibiOS to Pixhawk autopilots can be found :ref:`here <common-loading-chibios-firmware-onto-pixhawk>`.
 
 [copywiki destination="copter,plane,rover,planner"]
 
@@ -47,7 +47,7 @@ Download the ArduPilot firmware
   - open `firmware.ardupilot.org <http://firmware.ardupilot.org/>`__
   - select click on the link for your vehicle type (i.e. `Plane <http://firmware.ardupilot.org/Plane/>`__, `Copter <http://firmware.ardupilot.org/Copter/>`__, `Rover <http://firmware.ardupilot.org/Rover/>`__, `Sub <http://firmware.ardupilot.org/Sub/>`__ or `Antenna Tracker <http://firmware.ardupilot.org/AntennaTracker/>`__)
   - select "beta" or "stable"
-  - look for the directory with the name that most closely matches the flight controller
+  - look for the directory with the name that most closely matches the autopilot
   - download the "arduXXX_with_bl.hex" file
 
 Upload ArduPilot to the board

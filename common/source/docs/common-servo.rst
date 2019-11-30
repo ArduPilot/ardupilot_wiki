@@ -29,7 +29,7 @@ Connecting the servo to a Pixhawk
    :ref:`Relays <common-relay>`.  These pins can changed to Servo
    outputs by setting the BRD_PWM_COUNT parameter to 6 and setting
    RELAY_PIN and RELAY_PIN2 to -1.
--  The Pixhawk flight controller cannot provide power to the servos so
+-  The Pixhawk autopilot cannot provide power to the servos so
    an external BEC or ESC that can provide 5V should be used.
 
 Controlling the servo as a camera shutter
@@ -61,7 +61,7 @@ Controlling the servo as a servo
 The traditional way to control a servo only works as part of a mission
 (i.e. AUTO mode).  Follow these instructions:
 
--  Connect to your flight controller from the ground station
+-  Connect to your autopilot from the ground station
 -  On the Config/Tuning > Full Parameter List page, ensure that the SERVOx_FUNCTION (or RCx_FUNCTION) is set to zero for the servo (i.e. :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` = 0 if the servo is connected a Pixhawks AUX OUT2).
 -  Press the Write Params button
 

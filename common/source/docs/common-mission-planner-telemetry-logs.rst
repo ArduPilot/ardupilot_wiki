@@ -18,7 +18,7 @@ When and where tlogs are created
 ================================
 
 Tlogs are recordings of the MAVLink telemetry messages sent between the
-flight controller and the ground station and are automatically created the moment
+autopilot and the ground station and are automatically created the moment
 you press the connect button on the ground station.
 
 If using the Mission Planner, files of the
@@ -35,7 +35,7 @@ planner.  but cannot be parsed or played back so they should be ignored.
 Setting the datarate
 ====================
 
-The desired rate at which data is sent from the flight controller to the ground station can be controlled through the mission planner's Config/Tuning > Planner screen's Telemetry drop-downs.  Because all data sent over the telemetry link is also recorded in the tlog, this also controls the rate of data saved to the tlogs.
+The desired rate at which data is sent from the autopilot to the ground station can be controlled through the mission planner's Config/Tuning > Planner screen's Telemetry drop-downs.  Because all data sent over the telemetry link is also recorded in the tlog, this also controls the rate of data saved to the tlogs.
 
 Note that due to bandwidth limitations, the actual rate of the data sent and saved may be lower than the rate requested.
 
@@ -119,7 +119,7 @@ tlog.  This file is tab separated and contains a full list of parameters
 during the flight.  This can be opened in excel or a text editor.
 
 Extract WPs will create one or more .txt files containing any missions
-uploaded to the flight controller.  These files can be opened in the Mission
+uploaded to the autopilot.  These files can be opened in the Mission
 Planner by switching to the Flight Plan screen, right-mouse-button
 clicking on the map and selecting "File Load/Save", "Load WP File".
 

@@ -10,7 +10,7 @@ position and GPS) are working properly.
 Checking the main sensors
 =========================
 
-With *Mission Planner* connected, move the flight controller board and
+With *Mission Planner* connected, move the autopilot board and
 you should see the artificial horizon move accordingly.
 
 .. note::

@@ -24,7 +24,7 @@ Moreover, some RC transmitters such as the Taranis can be configured to play sou
 
 .. note::
 
-    FrSky telemetry packages including Taranis, X-receiver, LiPo cell voltage sensor and flight controller specific telemetry cable for the Pixhawk, Cube, PixRacer and Pixhack are available from `Craft and Theory <http://www.craftandtheoryllc.com/store/>`__.
+    FrSky telemetry packages including Taranis, X-receiver, LiPo cell voltage sensor and autopilot specific telemetry cable for the Pixhawk, Cube, PixRacer and Pixhack are available from `Craft and Theory <http://www.craftandtheoryllc.com/store/>`__.
 
 **Pages Related to FrSky Telemetry**
 
@@ -40,11 +40,11 @@ Moreover, some RC transmitters such as the Taranis can be configured to play sou
 Protocol Information
 ====================
 
-ArduPilot has FrSky telemetry drivers to natively output flight controller information through the serial ports. It comes in two flavors:
+ArduPilot has FrSky telemetry drivers to natively output autopilot information through the serial ports. It comes in two flavors:
 
 a) :ref:`Repurposed FrSky telemetry <common-frsky-repurposed>` (D and SmartPort) (available since AC3.2), which reuses FrSky data IDs to transmit basic flight control information to the RC transmitter (e.g. T2 temperature message reused to transmit the number of GPS satellites and GPS status); and
 
-b) :ref:`Passthrough telemetry <common-frsky-passthrough>` (SmartPort) (available since AC3.4), which leverages the new passthrough FrSky data IDs to send an extensive amount of flight controller specific information to the RC transmitter.
+b) :ref:`Passthrough telemetry <common-frsky-passthrough>` (SmartPort) (available since AC3.4), which leverages the new passthrough FrSky data IDs to send an extensive amount of autopilot specific information to the RC transmitter.
 
 FrSky telemetry is also possible through the use of a :ref:`MAVLink to FrSky converter <common-frsky-mavlink>`.
 
@@ -128,7 +128,7 @@ The following table summarizes the information available using each protocol:
 Hardware Selection Guide
 ========================
 
-The following equipment is required to enable FrSky telemetry on an ArduPilot-compatible flight controller:
+The following equipment is required to enable FrSky telemetry on an ArduPilot-compatible autopilot:
 
 .. _ersky9x: http://www.er9x.com/
 
@@ -154,7 +154,7 @@ The following equipment is required to enable FrSky telemetry on an ArduPilot-co
 
       SmartPort telemetry is available on X-series receivers. It uses 32 bit data frames, supports two-way communication; and enables other SmartPort sensors to be connected without a hub.
 
-* :ref:`A telemetry cable <frsky_cables>` to connect your flight controller to your FrSky receiver.
+* :ref:`A telemetry cable <frsky_cables>` to connect your autopilot to your FrSky receiver.
 
 In addition to the required hardware, a selection of :ref:`FrSky sensors <frsky_sensors>` can be added. (see below)
 
@@ -181,7 +181,7 @@ Telemetry capable FrSky receivers
 
 .. tip::
 
-  SBUS signal output is highly recommended as it features 16 RC channels and can be directly plugged into the flight controller (e.g., RCIN on Pixhawk/Cube)
+  SBUS signal output is highly recommended as it features 16 RC channels and can be directly plugged into the autopilot (e.g., RCIN on Pixhawk/Cube)
 
 .. _frsky_cables:
 
@@ -359,14 +359,14 @@ To install, connect the telemetry cable between the autopilot and the FLVSS/MLVS
 FrSky Telemetry Configuration in Mission Planner
 ================================================
 
-To enable FrSky Telemetry on one of the serial ports, connect with **Mission Planner** and set the corresponding ``SERIAL#_PROTOCOL`` parameter to the desired value depending on the flight controller and the port that the cable is plugged in:
+To enable FrSky Telemetry on one of the serial ports, connect with **Mission Planner** and set the corresponding ``SERIAL#_PROTOCOL`` parameter to the desired value depending on the autopilot and the port that the cable is plugged in:
 
 - Standard D telemetry: **3**
 - Standard SmartPort telemetry: **4**
 - Passthrough SmartPort telemetry: **10**
 
 +-------------------------------------------------------------+--------------------------------+------------------------+
-|                      Flight Controller                      |           Port used            |     Parameter name     |
+|                      Autopilot                              |           Port used            |     Parameter name     |
 +=============================================================+================================+========================+
 | The Cube                                                    | TELEM1                         | SERIAL1_PROTOCOL       |
 |                                                             +--------------------------------+------------------------+

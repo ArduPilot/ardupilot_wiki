@@ -17,7 +17,7 @@ Where to Buy
 
 - The `Attollo Engineering online store <https://www.attolloengineering.com/store/p14/WASP-200_Laser_Rangefinder.html>`__ sells the lidar directly
 
-Connecting to the Flight Controller
+Connecting to the Autopilot
 -----------------------------------
 
 For a serial connection you can use any spare Serial/UART port.  The diagram below shows how to connect to SERIAL4.

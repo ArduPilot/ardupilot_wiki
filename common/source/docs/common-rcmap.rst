@@ -27,7 +27,7 @@ These can be changed by setting the :ref:`RCMAP_ROLL <RCMAP_ROLL>`, :ref:`RCMAP_
 .. image:: ../../../images/RCMAP_MPSetup.png
     :target: ../_images/RCMAP_MPSetup.png
 
-After changing any of these parameters the flight controller should be
+After changing any of these parameters the autopilot should be
 rebooted.
 
 [site wiki="copter"]

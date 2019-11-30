@@ -16,8 +16,8 @@ Tarot Gimbal
 
     The instructions below recommend using `Tarot Gimbal Firmware v1.5 <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ZYX-BMGC-EN_V1.5.zip>`__
 
-Connecting to the Flight Controller
------------------------------------
+Connecting to the Autopilot
+---------------------------
 
 .. image:: ../../../images/Gimbal_Pixhawk_Tarot.jpg
     :target: ../_images/Gimbal_Pixhawk_Tarot.jpg

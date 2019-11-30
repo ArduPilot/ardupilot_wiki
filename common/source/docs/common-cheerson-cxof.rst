@@ -31,15 +31,15 @@ This similar flow sensor is not supported (yet):
 
 - `UPIXELS UP-Flow sensor <https://www.aliexpress.com/item/UPIXELS-UP-FLOW-Optical-Flow-Module-FPV-Drone-Hovering-Altitude-Hold-Control-Optical-Flow-Sensor-For/32969297064.html>`__
 
-Connection to Flight Controller
+Connection to Autopilot
 -------------------------------
 
 .. image:: ../../../images/cheerson-cxof-pixhawk.jpg
    :target: ../_images/cheerson-cxof-pixhawk.jpg
    :width: 450px
 
-- The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards.  The side of the sensor with the "V2.0" label should be towards the front of the vehicle.  The image above is incorrect because the flight controller's arrow is pointing down while the sensor's "V2.0" label is close to the top.
-- Connect the sensor's TX and VSS (aka GND) pins to one of the flight controller's serial ports.  In the image above the sensor is connected to a Pixhawk's Telem2 port
+- The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards.  The side of the sensor with the "V2.0" label should be towards the front of the vehicle.  The image above is incorrect because the autopilot's arrow is pointing down while the sensor's "V2.0" label is close to the top.
+- Connect the sensor's TX and VSS (aka GND) pins to one of the autopilot's serial ports.  In the image above the sensor is connected to a Pixhawk's Telem2 port
 - Connect the sensor's VDD (aka VCC or 3.3V) to a 3.3V power source.  In the above diagram the Pixhawk's Switch port is used but another alternative would be the SPKT/DSM port's power pin
 - Set :ref:`FLOW_ENABLE <FLOW_ENABLE>` = 1
 - Set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 18 if using Serial2/Telem2, if connected to another serial port use the corresponding SERIALx_PROTOCOL parameter

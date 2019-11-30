@@ -16,13 +16,13 @@ Where to Buy
 
 The SimpleBGC controller and accompanying 2-axis and 3-axis gimbals can be purchased from `basecamelectronics.com <https://www.basecamelectronics.com/>`__ and many other retailers.
 
-Connecting the gimbal to the Flight Controller
-==============================================
+Connecting the gimbal to the Autopilot
+======================================
 
 .. image:: ../../../images/simplebgc-gimbal-pixhawk.png
     :target: ../_images/simplebgc-gimbal-pixhawk.png
 
-Although the SimpleBGC can be connected using PWM (similar to the Tarot gimbal) we recommend using the serial interface connected to one of the flight controller's Serial/Telemetry ports like Telem2 as shown above.
+Although the SimpleBGC can be connected using PWM (similar to the Tarot gimbal) we recommend using the serial interface connected to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
 
 In ArduPilot/APM Planner/Mission planner set the following variables:
 
@@ -39,12 +39,12 @@ If you wish to control the pitch angle manually you can set:
 
 .. warning::
 
-    If you connect the gimbal as shown in the above diagram, it is NOT possible to establish a connection to the GUI on a PC via USB and have it connected simultaneously to the flight controller. It happens because the UART1 ("serial" in the picture above) is "paralleled to the onboard USB-UART converter (excepting the "Tiny" boards that has a dedicated USB). If you accidentally connect both the GUI via USB and a flight controller via UART1, you might end up with corrupt data on the flash of the gimbal. It can result in unexpected motor movement! The reason details, please check the `link <https://www.basecamelectronics.com/files/v3/SimpleBGC_32bit_manual_2_6x_eng.pdf>`__ . 
+    If you connect the gimbal as shown in the above diagram, it is NOT possible to establish a connection to the GUI on a PC via USB and have it connected simultaneously to the autopilot. It happens because the UART1 ("serial" in the picture above) is "paralleled to the onboard USB-UART converter (excepting the "Tiny" boards that has a dedicated USB). If you accidentally connect both the GUI via USB and a autopilot via UART1, you might end up with corrupt data on the flash of the gimbal. It can result in unexpected motor movement! The reason details, please check the `link <https://www.basecamelectronics.com/files/v3/SimpleBGC_32bit_manual_2_6x_eng.pdf>`__ . 
 
 Setup through the Ground Station
 ================================
 
-Set the following parameters through your ground station and then reboot the flight controller:
+Set the following parameters through your ground station and then reboot the autopilot:
 
 - :ref:`MNT_TYPE <MNT_TYPE>` to 3 / "AlexMos-Serial"
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 7 / "AlexMos Gimbal Serial"  (Notee "SERIAL2" should be "SERIAL1" if using Telem1 port, SERIAL4 if using Serial4/5, etc)
@@ -71,11 +71,11 @@ For a 3-axis gimbal with 360 degrees of yaw set:
 Using Gimbal GUI and MavLink Connection
 =======================================
 
-To use the gimbal GUI and the flight controller with MavLinkis necessary to use of the Gimbal firmware version 2.60 or above is also needed. 
+To use the gimbal GUI and the autopilot with MavLinkis necessary to use of the Gimbal firmware version 2.60 or above is also needed. 
 
 The following instructions present how to wire the components:
 
-- Connect the flight controller as shown above but connect the RX wire (orange) to the RC-R and the TX wire (green) to the RC-Y pin on the gimbal
+- Connect the autopilot as shown above but connect the RX wire (orange) to the RC-R and the TX wire (green) to the RC-Y pin on the gimbal
 - Connect the ground wire (black) to any GND pin.
 
 In this setup you have to take care of the following options in the GUI: 

@@ -14,7 +14,7 @@ Log Types (Dataflash vs tlogs)
 There are two ways to record your flight data. With some exceptions, the
 two methods record very similar data but in different ways:
 
--  :ref:`Dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>` are recorded on the flight controller (often to the SD card) so they must be downloaded from the flight controller after a flight
+-  :ref:`Dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>` are recorded on the autopilot (often to the SD card) so they must be downloaded from the autopilot after a flight
 -  :ref:`Telemetry logs <planner:common-mission-planner-telemetry-logs>` (also known as "tlogs") are recorded by the ground station (i.e. Mission Planner) on the local PC when the autopilot is connected via a :ref:`telemetry link <common-telemetry-landingpage>`
 
 If you are not yet familiar with the basics of these log files, first review the introductory pages to understand where these logs are stored and how you can download and view the information held within them.
@@ -29,7 +29,7 @@ Common mechanical failures include a motor or ESC failure (`including ESC sync f
 .. image:: ../../../images/DiagnosingWithLogs_RollInVsRoll.png
     :target: ../_images/DiagnosingWithLogs_RollInVsRoll.png
 
-In the example above the vehicle's actual roll ("Roll") closely follows the desired roll ("DesRoll") for the first part of the log but then suddenly diverges.  The flight controller wanted the roll to remain level ("Roll" = 0) but it was unable to likely meaning there was a mechanical failure.  This is very different from a software failure in which the flight controller freaked out and for some strange reason suddenly wanted the copter up-side-down because in such cases the DesRoll would be also be crazy and actual Roll would follow.
+In the example above the vehicle's actual roll ("Roll") closely follows the desired roll ("DesRoll") for the first part of the log but then suddenly diverges.  The autopilot wanted the roll to remain level ("Roll" = 0) but it was unable to likely meaning there was a mechanical failure.  This is very different from a software failure in which the autopilot freaked out and for some strange reason suddenly wanted the copter up-side-down because in such cases the DesRoll would be also be crazy and actual Roll would follow.
 
 Tlogs contain the same data.  Compare NAV_CONTROLLER_OUTPUT's nav_roll (desired roll) and nav_pitch (desired pitch) to ATTITUDE.roll (actual roll) and pitch (actual pitch).
 
@@ -62,7 +62,7 @@ Tlog's VIBRATION **vibration_x**, **vibration_y** and **vibration_z** can also b
 Compass interference
 ====================
 
-Interference from the power distribution board, motors, battery, ESCs and other electrical devices near the flight controller can throw off the compass heading which can lead to circling (aka "toilet bowling") or even the copter flying off in completely the wrong direction.  Graphing the tlog's mag_field (found under "CUSTOM") and throttle (found under VFR_HUD) is the easiest way to quickly see the amount of interference.
+Interference from the power distribution board, motors, battery, ESCs and other electrical devices near the autopilot can throw off the compass heading which can lead to circling (aka "toilet bowling") or even the copter flying off in completely the wrong direction.  Graphing the tlog's mag_field (found under "CUSTOM") and throttle (found under VFR_HUD) is the easiest way to quickly see the amount of interference.
 
 The graph below shows an acceptable amount of magnetic interference with mag_field fluctuations of only 10% to 20% when the throttle is raised.  Below 30% interference is acceptable.  Between 30% ~ 60% is in the grey zone where it might be OK (some users are OK, some are not) and really bad magnetic interference will show up as jumps of over 60% when the throttle is raised.
 
@@ -98,7 +98,7 @@ See the :ref:`EKF failsafe <copter:ekf-inav-failsafe>` wiki page for more detail
 Power Problems (BrownOuts, etc)
 ===============================
 
-:ref:`Power Modules <common-powermodule-landingpage>` provide a reliable power supply to the flight controller but brown-outs do still occasionally occur.  They can normally be recognised by the logs suddenly ending while the vehicle is still in the air (i.e. barometer or EKF altitude is still reporting the vehicle's altitude is well above zero).
+:ref:`Power Modules <common-powermodule-landingpage>` provide a reliable power supply to the autopilot but brown-outs do still occasionally occur.  They can normally be recognised by the logs suddenly ending while the vehicle is still in the air (i.e. barometer or EKF altitude is still reporting the vehicle's altitude is well above zero).
 
 Try graphing the:
 
@@ -110,7 +110,7 @@ Try graphing the:
 .. image:: ../../../images/DiagnosingWithLogs_BrownOut.png
     :target: ../_images/DiagnosingWithLogs_BrownOut.png
 
-Changes in the board voltage can also be a sign of a power problem.  Variations of 0.10 to 0.15 volts are normal.  Beyond that could be a sign that other devices sharing the power source with the flight controller are causing ripples in the power supply that could lead to a brown-out.  The board voltage can be graphed using:
+Changes in the board voltage can also be a sign of a power problem.  Variations of 0.10 to 0.15 volts are normal.  Beyond that could be a sign that other devices sharing the power source with the autopilot are causing ripples in the power supply that could lead to a brown-out.  The board voltage can be graphed using:
 
 -  Dataflash POWR message's VCC
 -  Tlog HWSTATUS's Vcc
@@ -126,7 +126,7 @@ In the image directly below shows the board voltage sinking by 0.15V when the th
 Unexpected ERRORS including Failsafes
 =====================================
 
-When unexpected behaviour from the flight controller occurs (especially when the user complains that the copter no longer responded to their input) it is often caused by one of the :ref:`failsafes <copter:failsafe-landing-page>` being triggered.
+When unexpected behaviour from the autopilot occurs (especially when the user complains that the copter no longer responded to their input) it is often caused by one of the :ref:`failsafes <copter:failsafe-landing-page>` being triggered.
 
 The easiest way to find these is to look in the dataflash logs and filter the first column by "ERR".  If using the Mission Planner, the errors will also appear in red markers at the top of the graphing area.
 

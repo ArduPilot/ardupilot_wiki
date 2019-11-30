@@ -8,7 +8,7 @@ Camera Trigger Setup for Pixhawk
     :width: 450px
 
 This guide is intended to help you modify a remote shutter release cable
-for use with APM/Pixhawk Flight Controllers and setup the flight
+for use with APM/Pixhawk Autopilots and setup the flight
 controller for triggering the camera. This method eliminates the need
 (and costs) for 3\ :sup:`rd` party triggering devices. In this specific
 example, we will use a Sony Alpha 6000 (A6000) camera. This procedure
@@ -19,7 +19,7 @@ Items Required
 ==============
 
 -  Sony A6000 (or other camera with wire shutter release)
--  ArduPilot compatible flight controller
+-  ArduPilot compatible autopilot
 -  Remote Shutter Release Cable (`see here for an affordable solution <https://www.amazon.com/SHOOT-DSC-RX100M3-DSC-RX100M20-DSC-RX100II-DSC-RX100III/dp/B00ME7N6P8/ref=sr_1_1?ie=UTF8&qid=1496578319&sr=8-1&keywords=Sony+A6000+Shutter+Release+Cable>`__)
 -  Servo Pins (`link <https://www.digikey.com/products/en?keywords=952-2157-1-ND>`__)
 -  Servo Pin Crimper (`link <https://www.servocity.com/pin-crimpers>`__)
@@ -92,10 +92,10 @@ will be on the GROUND side of the Auxiliary port.
 .. image:: ../../../images/CTimage10.png
     :width: 450px
 
-**Step 2:** Setting up your Pixhawk/APM flight controller to trigger
+**Step 2:** Setting up your Pixhawk/APM autopilot to trigger
 your camera via the Shutter Release Cable
 
-a) Connect to your Flight Controller via Mission Planner either through direct USB connection or wireless telemetry link.
+a) Connect to your Autopilot via Mission Planner either through direct USB connection or wireless telemetry link.
 
 b) Connect your modified shutter release cable to AUX 1 on the Pixhawk
        (CH9 on APM) making sure to maintain the correct orientation for
@@ -112,7 +112,7 @@ c) Connect the shutter release cable to your camera and power the camera on
 Since we have shorted the FOCUS and GROUND wires, the camera should
 automatically pull focus. As of now, I have not found a way to connect
 the SHUTTER, FOCUS and GROUND wires individually to the Pixhawk/APM and
-have the flight controller pull the camera focus and trigger the camera
+have the autopilot pull the camera focus and trigger the camera
 in sequence. To get around this, the camera settings are set so that the
 camera has the following features activated:
 
@@ -129,7 +129,7 @@ NOTE: You can play around with the “Duration” values to increase or
 decrease the responsiveness of the shutter command. With the Sony A6000,
 a duration of 1/10\ :sup:`th` of a Second functions perfectly.
 
-e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission Planner and change the CH7 OPT to “Camera Trigger”. This will be necessary if you intend to use your remote controls CH7 to trigger the camera in addition to having the flight controller trigger the camera.
+e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission Planner and change the CH7 OPT to “Camera Trigger”. This will be necessary if you intend to use your remote controls CH7 to trigger the camera in addition to having the autopilot trigger the camera.
 
 .. image:: ../../../images/CTimage14.png
     :width: 450px
@@ -149,7 +149,7 @@ h) Now that the required parameters have been changed, click on “WRITE PARAMS�
 .. image:: ../../../images/CTimage17.png
     :width: 450px
 
-**Step 3:** Testing the Remote Shutter Cable and Flight Controller
+**Step 3:** Testing the Remote Shutter Cable and Autopilot
 
 Now that the cable has been modified and connected to the Pixhawk/APM
 which has been setup to trigger the camera via relay, let’s test it.
@@ -162,7 +162,7 @@ a) Navigate back to the FLIGHT DATA Screen and right click on the map to select 
 Once clicked, you should hear or see the camera expose. If the camera
 does not expose, check the following:
 
--  Correct Orientation of cables (ie, Shutter Wire is connected to the SIGNAL pin on the correct port of the flight controller and Ground is connected to Ground)
+-  Correct Orientation of cables (ie, Shutter Wire is connected to the SIGNAL pin on the correct port of the autopilot and Ground is connected to Ground)
 -  Camera is On and not in an Error State
 -  Camera lens is not too close to an object which may cause it to be unable to autofocus and expose
 
@@ -171,7 +171,7 @@ above-mentioned check points are not a problem, then you may want to
 adjust the Shutter Duration mentioned in Step 2 Part D.
 
 If your camera took a picture, congratulations! You are all set to take
-pictures using the Pixhawk/APM flight controller without needing third
+pictures using the Pixhawk/APM autopilot without needing third
 party hardware!
 
 Many thanks to Oliver Volkmann and `*www.microaerialprojects.com* <http://www.microaerialprojects.com/>`__

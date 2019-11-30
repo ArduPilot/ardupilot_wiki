@@ -219,9 +219,9 @@ May 2018 - Rover-3.3.0 released including circle and polygon fences, simple obje
 
 Jun 2018 - Rover-3.4.0 released including "Lane based speed control", Loiter for boats, omni rovers, vision based position estimates from ROS
 
-Aug 2018 - Plane 3.9.0 released with ChibiOS support, support for many smaller flight controller, better VTOL support
+Aug 2018 - Plane 3.9.0 released with ChibiOS support, support for many smaller autopilot, better VTOL support
 
-Oct 2018 - Copter-3.6.0 released with ChibiOS support, support for many smaller flight controllers, DShot ESCS, Follow mode
+Oct 2018 - Copter-3.6.0 released with ChibiOS support, support for many smaller autopilots, DShot ESCS, Follow mode
 
 Feb 2019 - Rover-3.5.0 released including Sailboat support, Follow and Simple modes
 

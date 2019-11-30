@@ -5,7 +5,7 @@ SiK Telemetry Radio
 ===================
 
 A *SiK Telemetry Radio* is one of the easiest ways to setup a telemetry
-connection between your Flight Controller and a ground station. This article
+connection between your Autopilot and a ground station. This article
 provides a basic user guide for how to connect and configure your radio.
 
 .. figure:: ../../../images/3dr_radio_v2.jpg
@@ -96,7 +96,7 @@ use them as a pair but it does not matter which one goes on the vehicle
 and which remains on the ground.
 
 The radio has a micro-USB port, and a DF13 six-position port. The
-following sections explain how to connect these to flight controllers
+following sections explain how to connect these to autopilots
 and ground stations.
 
 .. image:: ../../../images/3dr_radio_v2.jpg

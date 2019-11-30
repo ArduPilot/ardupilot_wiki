@@ -4,7 +4,7 @@
 Channel Output Functions
 ========================
 
-All flight controller servo/motor outputs may be mapped to any output function supported by
+All autopilot servo/motor outputs may be mapped to any output function supported by
 ArduPilot. This page describes how to configure these output channels and what each
 of the available functions is.
 

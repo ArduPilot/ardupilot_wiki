@@ -35,11 +35,11 @@ The Lowrance HST-WSBL pins should be connected to the pins on the right side of 
 
 The DST-2 requires a 10V to 28V power source, meaning it can be powered from a 3S or 4S lipo battery.
 
-Next pins on the left side of the DST-2 (serial and RS-232 output) should be connected to the flight controller's telemetry/serial input. The easiest connection method is to connect the DST-2's 5V serial output directly to the telemetry port of the flight controller's Tx, Rx, and common ground.  It is best to check the DST-2 docs before connecting but below shows how the telemetry pins from a Pixhawk (or another flight controller) should be connected to the pins on the left side of the DST-2.
+Next pins on the left side of the DST-2 (serial and RS-232 output) should be connected to the autopilot's telemetry/serial input. The easiest connection method is to connect the DST-2's 5V serial output directly to the telemetry port of the autopilot's Tx, Rx, and common ground.  It is best to check the DST-2 docs before connecting but below shows how the telemetry pins from a Pixhawk (or another autopilot) should be connected to the pins on the left side of the DST-2.
 
 .. image:: ../../../images/underwater-sonar-analog-wiring.png
 
-Connect with a ground station to the flight controller and set the following parameters (these settings assume the first sensor is connected to Telem2/Serial2)
+Connect with a ground station to the autopilot and set the following parameters (these settings assume the first sensor is connected to Telem2/Serial2)
 
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 4 (4800 baud)

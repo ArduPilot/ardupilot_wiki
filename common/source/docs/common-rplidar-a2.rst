@@ -4,7 +4,7 @@
 RPLidar A2 360 degree lidar
 ===========================
 
-The `RPLidar A2 <https://www.slamtec.com/en/Lidar/A2>`__ can be used for object avoidance in Copter-3.6 (and higher) and Rover-3.3 (and higher).  This page describes how to connect it directly to your flight controller.
+The `RPLidar A2 <https://www.slamtec.com/en/Lidar/A2>`__ can be used for object avoidance in Copter-3.6 (and higher) and Rover-3.3 (and higher).  This page describes how to connect it directly to your autopilot.
 See separate wiki pages on object avoidance for Copter and Rover for more details on how to setup the avoidance feature.
 
    .. image:: ../../../images/rplidar-a2.jpg
@@ -36,7 +36,7 @@ Connecting and Configuring
 The lidar should be mounted horizontally on the top or bottom of the vehicle with the black cable pointing towards the rear of the vehicle.
 Ensure the sensor's view is not obstructed by any portion of the vehicle including GPS mast, vehicle legs etc.
 
-The lidar can be connected to the flight controller's serial input as shown above.
+The lidar can be connected to the autopilot's serial input as shown above.
 If using a Pixhawk/Pixhawk2 Telem1 (aka Serial1) should be used because it is more capable of providing the required 1.5A.
 
 - :ref:`SERIAL1_PROTOCOL <SERIAL4_PROTOCOL>` = "11" ("Lidar360") if using Serial1

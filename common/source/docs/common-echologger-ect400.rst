@@ -27,7 +27,7 @@ Connecting and Configuring
 
 The ECT400 provides distance measurements using the NMEA protocol over serial at 115200 baud.
 
-The sensor can be connected to any available serial/uart port on the flight controller.  In the diagram below the first sensor is connected to SERIAL2.
+The sensor can be connected to any available serial/uart port on the autopilot.  In the diagram below the first sensor is connected to SERIAL2.
 
 .. image:: ../../../images/echologger-ect400-pixhawk.png
     :target: ../_images/echologger-ect400-pixhawk.png

@@ -17,7 +17,7 @@ Overview
 ========
 
 The *3DR Radio* is the easiest way to setup a telemetry connection
-between your flight controller and a ground station.
+between your autopilot and a ground station.
 
 There are two versions of the 3DR Radio (version 2 is more recent). The
 radios have slightly different form factors and connections (v2 comes
@@ -45,7 +45,7 @@ Connecting the radio
    can get the D2XX FTDI driver
    `here. <http://www.ftdichip.com/Drivers/D2XX.htm>`__
 -  The 'aircraft' module has a FTDI six pin header, allowing it to be
-   directly connected to your Flight Controller's telemetry port as shown
+   directly connected to your Autopilot's telemetry port as shown
    in the following sections.
 
 Connecting to Pixhawk
@@ -70,7 +70,7 @@ and on the 3DR radio side, plug the connector with the red cable on the
 
    You cannot connect via the radios when your APM 2.x is also
    connected via USB (they share the same port) so make sure you disconnect
-   your USB cable from the flight controller before attempting a wireless
+   your USB cable from the autopilot before attempting a wireless
    connection.
 
 .. image:: ../../../images/APM2_telemcable.jpg

@@ -4,14 +4,14 @@
 Measuring Vibration with IMU Batch Sampler
 ==========================================
 
-The IMU BatchSampler can be used to record high-frequency data from the IMU sensors to the dataflash log on the flight controller.  This data can be analysed post-flight to diagnose vibration issues using graphs created from Fast Fourier Transforms (FFT) of the data.
+The IMU BatchSampler can be used to record high-frequency data from the IMU sensors to the dataflash log on the autopilot.  This data can be analysed post-flight to diagnose vibration issues using graphs created from Fast Fourier Transforms (FFT) of the data.
 
 FFT transforms data from the time domain into the frequency domain.  Put another way, accelerometer data recorded over time (i.e. a flight) can be converted into a graph showing the frequencies of the vibration.  A frequent feature of these graphs is a spike at the propeller's "blade passage frequency" (the frequency at which the blade crosses over the arms) which causes an acceleration in the aircraft body.  FFT has the following limitations:
 
 - FFT cannot show you frequencies above half your sensor's sampling rate
 - The smallest frequency that can be shown is half your sample size divided by your sample rate
 
-Samples are typically taken at the same rate as gyro updates provided to the flight controller. For example if you are using :ref:`INS_FAST_SAMPLE <INS_FAST_SAMPLE>` on an MPU9250 sensor (fairly typical on modern Pixhawk class flight controllers) then samples will be take at 8KHz. If you are not using fast sampling then sample rates of 1KHz are typical.
+Samples are typically taken at the same rate as gyro updates provided to the autopilot. For example if you are using :ref:`INS_FAST_SAMPLE <INS_FAST_SAMPLE>` on an MPU9250 sensor (fairly typical on modern Pixhawk class autopilots) then samples will be take at 8KHz. If you are not using fast sampling then sample rates of 1KHz are typical.
 
 Pre-Flight Setup
 ================
@@ -46,7 +46,7 @@ Advanced Configuration and Analysis
 - :ref:`INS_LOG_BAT_LGIN <INS_LOG_BAT_LGIN>` interval between pushing samples to the dataflash log, in ms.  Increase this to reduce the time taken to flush data to the dataflash log, reducing cycle time.  This will be at the expense of increased system load and possibly choking up the dataflash log for other messages
 - :ref:`INS_LOG_BAT_LGCT <INS_LOG_BAT_LGCT>` Number of samples to push to count every :ref:`INS_LOG_BAT_LGIN <INS_LOG_BAT_LGIN>` ms.  Increase this to push more samples each time they are sent to the dataflash log.  Increasing this may cause timing jitter, and possibly choke up the dataflash log for other messages
 
-The following two graphs are from the same flight on a PixRacer flight controller.  Accel[0] on the right is the InvenseSense IMU and shows higher frequencies than the slower IMU on the left
+The following two graphs are from the same flight on a PixRacer autopilot.  Accel[0] on the right is the InvenseSense IMU and shows higher frequencies than the slower IMU on the left
 
 .. image:: ../../../images/imu-batchsampling-fft-sensorrate-pixracer.png
     :target:  ../_images/imu-batchsampling-fft-sensorrate-pixracer.png

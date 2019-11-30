@@ -27,7 +27,7 @@ Connection and Configuration
     :target: ../_images/kde-can-esc-cube.jpg
     :width: 400px
 
-- ESCs should be daisy chained together using the KDECAN Wire Kit.  One 4-pin CAN cable should be connected to the flight controller's CAN port.  The CAN terminator (the 4-pin connector with a black loop) should be connected to the last ESC in the chain
+- ESCs should be daisy chained together using the KDECAN Wire Kit.  One 4-pin CAN cable should be connected to the autopilot's CAN port.  The CAN terminator (the 4-pin connector with a black loop) should be connected to the last ESC in the chain
 
 .. warning::
 

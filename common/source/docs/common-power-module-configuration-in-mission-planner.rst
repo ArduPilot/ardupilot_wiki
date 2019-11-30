@@ -4,7 +4,7 @@
 Power Module Configuration in Mission Planner
 =============================================
 
-A power module can be used to measure the battery voltage and current for use in the battery failsafe and also to provide a stable power supply to the flight controller.
+A power module can be used to measure the battery voltage and current for use in the battery failsafe and also to provide a stable power supply to the autopilot.
 
 ArduPilot is :ref:`compatible with a number of power modules <common-powermodule-landingpage>`.
 
@@ -25,11 +25,11 @@ Enable voltage and current sensing
 ----------------------------------
 
 Enter the properties your module can measure, the type of module, the
-type of flight controller, and the battery capacity:
+type of autopilot, and the battery capacity:
 
 -  **Monitor:** *Voltage and Current* or *Battery Volts*
 -  **Sensor:** Supported power module, or "Other"
--  **APM ver:** Flight controller (e.g. Pixhawk )
+-  **APM ver:** Autopilot (e.g. Pixhawk )
 -  **Battery Capacity:** Battery capacity in mAh
 
 The **Sensor** selection list offers a number of Power Modules
@@ -115,7 +115,7 @@ Connecting power module to alternative pins
 ===========================================
 
 The power module is generally plugged into the default port on the
-flight controller (ie. Pixhawk). If you wish to change where the power
+autopilot (ie. Pixhawk). If you wish to change where the power
 module is plugged into the controller, the pins used can be modified
 using the ``BATT_VOLT_PIN`` and ``BATT_CURR_PIN`` parameters.
 

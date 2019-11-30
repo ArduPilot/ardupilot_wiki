@@ -21,7 +21,7 @@ Where to Buy
 
 - the `Benewake.com Agents <http://www.benewake.com/en/agent.html>`__ page provides the full list of retailers including `3DXR <https://www.3dxr.co.uk/product/benewake-tf02-lidar-22m-100hz-tof/>`__ and `Unmanned Tech UK <https://www.unmannedtechshop.co.uk/benewake-tf02-lidar-rangefinder-ip65-22m/>`__.
 
-Connecting to the Flight Controller
+Connecting to the Autopilot
 -----------------------------------
 
 For a serial connection you can use any spare Serial/UART port.  The diagram below shows how to connect to SERIAL4.

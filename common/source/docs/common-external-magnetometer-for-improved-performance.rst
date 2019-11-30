@@ -18,7 +18,7 @@ Overview
 ========
 
 The 3DR external compass should only be used with the APM series of
-flight controllers, its 5 volt signal output is not compatible with Pixhawk which require 3.3 volts. 
+autopilots, its 5 volt signal output is not compatible with Pixhawk which require 3.3 volts. 
 For the Pixhawk use the :ref:`3DR combination GPS / Magnetometer module <common-installing-3dr-ublox-gps-compass-module>`.
 
 .. image:: ../../../images/Magnetometer1.jpg
@@ -52,9 +52,9 @@ For the Pixhawk use the :ref:`3DR combination GPS / Magnetometer module <common-
 -  You will need to set the Magnetometer Orientation Parameter
    (COMPASS_ORIENT) in the Mission Planner Advanced Parameter List
    correctly to accommodate the Magnetometer's orientation.
--  If the Flight controller board is used in an alternate orientation
+-  If the Autopilot board is used in an alternate orientation
    (or upside down), the (COMPASS_ORIENT) parameter will need to also
-   be adjusted to accommodate the Flight controller boards orientation
+   be adjusted to accommodate the Autopilot boards orientation
    as well as it's own. (They are additive).
 -  It can be confusing, but all orientations in 45 degree increments and
    even upside down can be accommodated.
@@ -119,7 +119,7 @@ and ESCs.**
 -  The GPS modules antenna must be on top.
 -  In the picture below, we've mounted the board “components up with
    pins forward”.
--  Flight controller board orientation and magnetometer orientation must
+-  Autopilot board orientation and magnetometer orientation must
    be used to calculate the COMPASS_ORIENT parameter.
 
 .. image:: ../../../images/Quad_Top_View.jpg

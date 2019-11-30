@@ -16,7 +16,7 @@ Where to Buy
 - This sensor can be purchased directly from `BlueRobotics <https://bluerobotics.com/store/sensors-sonars-cameras/sonar/ping-sonar-r2-rp/>`__
 - Optionally the `BLUART USB to Serial RS485 adapter <https://bluerobotics.com/store/comm-control-power/tether-interface/bluart-r1-rp/>`__ allows connecting the sensor to a PC for testing
 
-Connecting to the Flight Controller
+Connecting to the Autopilot
 -----------------------------------
 
 For a serial connection you can use any spare Serial/UART port.  The diagram below shows how to connect to SERIAL2.
@@ -24,7 +24,7 @@ For a serial connection you can use any spare Serial/UART port.  The diagram bel
 .. image:: ../../../images/bluerobotics-ping-pixhawk.jpg
     :width: 450px
 
-If the SERIAL2 port on the flight controller is being used then the following parameters should be set:
+If the SERIAL2 port on the autopilot is being used then the following parameters should be set:
 
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 baud)

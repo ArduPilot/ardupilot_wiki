@@ -20,7 +20,7 @@ The pilot will notice a pre-arm check failure because he/she will be
 unable to arm the vehicle and the notification LED, if available, will be flashing yellow.  To
 determine exactly which check has failed:
 
-#. Connect the Flight Controller to the ground station using a USB cable
+#. Connect the Autopilot to the ground station using a USB cable
    or :ref:`Telemetry <common-telemetry-landingpage>`.
 #. Ensure the GCS is connected to the vehicle (i.e. on Mission
    Planner and push the "Connect" button on the upper right).
@@ -54,7 +54,7 @@ unhealthy which is normally a sign of a hardware failure.
 **Alt disparity** : the barometer altitude disagrees with the inertial
 navigation (i.e. Baro + Accelerometer) altitude estimate by more than 2
 meters.  This message is normally short-lived and can occur when the
-flight controller is first plugged in or if it receives a hard jolt
+autopilot is first plugged in or if it receives a hard jolt
 (i.e. dropped suddenly).  If it does not clear the :ref:`accelerometers may need to be calibrated <common-accelerometer-calibration>` or there may
 be a barometer hardware issue.
 
@@ -158,7 +158,7 @@ or above 5.8 Volts.
 
 If powered through a USB cable (i.e. while on the bench) this can be
 caused by the desktop computer being unable to provide sufficient
-current to the flight controller - try replacing the USB cable.
+current to the autopilot - try replacing the USB cable.
 
 If powered from a battery this is a serious problem and the power system
 (i.e. Power Module, battery, etc) should be carefully checked before
@@ -244,7 +244,7 @@ This can also be configured using Mission Planner:
     :target: ../_images/MP_PreArmCheckDisable.png
 
 
--  Connecting your Flight Controller to the Mission Planner
+-  Connecting your Autopilot to the Mission Planner
 -  Go to Mission Planner's Config/Tuning >> Standard Params screen
 -  set the Arming Check drop-down to "Disabled" or one of the "Skip"
    options which more effectively skips the item causing the failure.
