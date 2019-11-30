@@ -59,7 +59,7 @@ If a mission ends on a waypoint, then it will switch to a mode determined by the
 Resuming or Restarting a Mission
 --------------------------------
 
-If a mission is interrupted (for example if the user switches the vehicle out of Auto mode before it has completed the mission) the last command executed is stored and when the vehicle is next returned to Auto mode it will resume the mission from this command.  Note: disarming the vehicle or rebooting the flight controller will reset the mission back to the first command.
+If a mission is interrupted (for example if the user switches the vehicle out of Auto mode before it has completed the mission) the last command executed is stored and when the vehicle is next returned to Auto mode it will resume the mission from this command.  Note: disarming the vehicle or rebooting the autopilot will reset the mission back to the first command.
 
 If you would prefer the mission was always restarted from the beginning, set the :ref:`MIS_RESTART <MIS_RESTART>` parameter to "1".
 

@@ -39,7 +39,7 @@ The vehicle drifts off in one direction
 ---------------------------------------
 
 **1) Accelerometer Calibration** :
-This can happen because the accelerometer calibration is invalid. Disturbing the flight controller, changing connections, crashes etc can disturb the acceleromter calibration. Do the accelerometer calibration again. Often, a one axis acccelerometer trim can fix this. 
+This can happen because the accelerometer calibration is invalid. Disturbing the autopilot, changing connections, crashes etc can disturb the acceleromter calibration. Do the accelerometer calibration again. Often, a one axis acccelerometer trim can fix this. 
 
 **2) Pitch trim** :
 The center of mass of the vehicle be slightly displaced from the zero pitch position. Hence the vehicle is not in equilibrium at 0 degrees pitch. This can be offset by :ref:`setting the pitch trim <balance_bot-tuning-pitch-trim>` parameter.

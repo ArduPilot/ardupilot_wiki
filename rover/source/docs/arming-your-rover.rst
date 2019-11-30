@@ -12,7 +12,7 @@ Before the rover's motors will move it must be armed.  Arming is required for tw
 How to Arm
 ==========
 
-Before arming you should normally wait for the LED on the flight controller to become flashing blue
+Before arming you should normally wait for the LED on the autopilot to become flashing blue
 (if you only intend to use :ref:`Manual <manual-mode>`) or flashing green (for all other modes).
 If the LEDs never become blue or green please see the "Pre-Arm Checks" section below.
 
@@ -47,7 +47,7 @@ calibration, configuration or bad sensor data.  These checks help prevent sudden
 motor startups and drive-aways but they can also be disabled by setting the
 :ref:`ARMING_CHECK <ARMING_CHECK>` parameter if necessary.
 
-The reason for the failure can be seen by connecting the flight controller to
+The reason for the failure can be seen by connecting the autopilot to
 a ground station (using telemetry or a USB cable), after attempting to arm
 the reason should be displayed on the HUD in red letters.
 
@@ -121,5 +121,5 @@ The PWM value output to the servos and motors while the vehicle is disarmed can 
 -  if :ref:`MOT_SAFE_DISARM <MOT_SAFE_DISARM>` is 1 no PWM pulses will be sent while disarmed.
    Note that some ESCs beep to complain that they are powered on without a control signal
 
-Note that if the flight controller is a Pixhawk and a safety switch is enabled,
+Note that if the autopilot is a Pixhawk and a safety switch is enabled,
 no PWM output will be sent until the safety switch is put in the ON position.

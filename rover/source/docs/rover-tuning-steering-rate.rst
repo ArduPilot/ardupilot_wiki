@@ -30,7 +30,7 @@ Real-Time viewing of Steering PIDs
 
 The desired vs actual (aka achieved) turn rate, along with the individual contributions to the steering output from the FF, P, I and D components can be seen in real-time by doing the following:
 
-- connect the Mission Planner to the vehicle's flight controller using a telemetry radio
+- connect the Mission Planner to the vehicle's autopilot using a telemetry radio
 - set the :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 1 (Steering)
 - on the Flight Data screen, check the "Tuning" checkbox (bottom middle) and select "pidachieved", "piddesired"
 - change the desired turn rate of the vehicle (perhaps using the transmitter's steering stick) and see how well the "achieved" follows the "desired"

@@ -12,7 +12,7 @@ setting :ref:`WNDVN_SPEED_TYPE <WNDVN_SPEED_TYPE>` to 2.
     :width: 50%
 
 This should be powered by between 10V and 12V and the OUT and TMP pins connected to two 3.3V ADC pins. The speed output pin labeled OUT should connected to 
-the flight controller ADC pin defined by :ref:`WNDVN_SPEED_PIN <WNDVN_SPEED_PIN>`. The TMP pin of the sensor should be connected to the flight controller ADC
+the autopilot ADC pin defined by :ref:`WNDVN_SPEED_PIN <WNDVN_SPEED_PIN>`. The TMP pin of the sensor should be connected to the autopilot ADC
 pin defined by :ref:`WNDVN_TEMP_PIN <WNDVN_TEMP_PIN>`. If only a single ADC pin is available the TMP output may be omitted, :ref:`WNDVN_TEMP_PIN <WNDVN_TEMP_PIN>`
 should be set to -1 in this case. The code will then assume room temperature; this will slightly reduce the accuracy of the wind speed reading.
 

@@ -43,7 +43,7 @@ Recommended steps for tuning this controller are:
 
 The desired speed vs achieved speed, along with the individual contributions to the throttle output from P, I and D gains can be seen in real-time by doing the following:
 
-- connect the Mission Planner to the vehicle's flight controller using a telemetry radio
+- connect the Mission Planner to the vehicle's autopilot using a telemetry radio
 - set the :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 2 (Throttle)
 - on the Flight Data screen, check the "Tuning" checkbox (bottom middle) and select "pidachieved", "piddesired"
 - increase and decrease the desired speed of the vehicle and see how well the "achieved" follows the "desired"
