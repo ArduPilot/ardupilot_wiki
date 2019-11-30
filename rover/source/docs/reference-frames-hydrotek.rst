@@ -16,7 +16,7 @@ Parts List
 
 - `HobbyKing Hydrotek <https://hobbyking.com/en_us/h-king-marine-hydrotek-f1-tunnel-hull-racing-boat-arr-1.html>`__
 - 3S battery with high discharge and no more than 11cm in length like the `Turnigy 2200mAh 3S 40C <https://hobbyking.com/en_us/turnigy-2200mah-3s-40c-lipo-pack.html>`__
-- Small flight controller like the `mRobotics Pixracer including GPS and telemetry radio <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/mro-pxrcr-r14-kit-mr.htm>`__
+- Small autopilot like the `mRobotics Pixracer including GPS and telemetry radio <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/mro-pxrcr-r14-kit-mr.htm>`__
 - any 8 channel (or more) transmitter like the `Futaba T10J <https://www.futabarc.com/systems/futk9200-10j/index.html>`__
 
 .. image:: ../images/reference-frame-hydrotek-inside.jpg

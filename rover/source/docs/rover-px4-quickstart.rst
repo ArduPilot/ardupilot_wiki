@@ -87,7 +87,7 @@ Test MANUAL mode
 ----------------
 
 To test the Manual mode, put the Rover up on blocks, to prevent a
-runaway, turn on the R/C transmitter, power up the flight controller
+runaway, turn on the R/C transmitter, power up the autopilot
 (depressing the safety button on the PX4FMU for 5 seconds to disengage the
 safety lock (LED solid on)), and when a 3D lock has been obtained
 

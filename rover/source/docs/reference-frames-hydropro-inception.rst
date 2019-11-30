@@ -20,7 +20,7 @@ Parts List
 
 The inside of the vehicle becomes a bit wet during operation so it is important to take steps to keep the electronics dry.
 
-For this build a 3cm x 10cm rectangular hole was cut on the underside of the removable cover which stretches from the blacked out windscreen at the front to the black hook-like knob at the back.  The RC receiver, flight controller, GPS and telemetry radio were inserted through the hole and then attached using 3M double sided adhesive foam. The 3cm x 10cm hole was then closed using duct tape.
+For this build a 3cm x 10cm rectangular hole was cut on the underside of the removable cover which stretches from the blacked out windscreen at the front to the black hook-like knob at the back.  The RC receiver, autopilot, GPS and telemetry radio were inserted through the hole and then attached using 3M double sided adhesive foam. The 3cm x 10cm hole was then closed using duct tape.
 
 The battery power module was left in the main open area of the frame but partially protected from getting wet using a red balloon that came with the set (intended for use with the RC receiver).
 
