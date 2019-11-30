@@ -19,8 +19,8 @@ to the wind speed the more important this is, See :ref:`wind vane <wind-vane>`.
 
 Flight Controllers
 ------------------
-Sailing vehicles are supported by any flight controller, however if a wind vane is to be fitted one analogue ADC input
+Sailing vehicles are supported by any autopilot, however if a wind vane is to be fitted one analogue ADC input
 must be available. On newer beta-flight style controllers this is typically labelled as RSSI. In order to fit a hot wire
 type wind speed sensor two more analogue inputs are required, although just a single additional input can be used with a
 small loss in accuracy. Alternatively a pressure based airspeed sensor can be used (link to optional hardware airspeed).
-Ideally a sail vehicle flight controller would have three analogue inputs. Pixhawk1 and the CUBE both fit this criteria.
+Ideally a sail vehicle autopilot would have three analogue inputs. Pixhawk1 and the CUBE both fit this criteria.

@@ -16,7 +16,7 @@ Parts List
 
 - `ArduRoller 3D printed frame from Thingiverse.com <https://www.thingiverse.com/thing:810998>`__
 - `4" clear platic globe <https://www.amazon.com/gp/product/B0044SEKA0>`__ (optional)
-- `mRobotics Pixhawk flight controller <https://store.mrobotics.io/Genuine-PixHawk-Flight-Controller-p/mro-pixhawk1-minkit-mr.htm>`__.  :ref:`Other flight controllers <common-autopilots>` may also work but they must have GPIO input pins to support the :ref:`wheel encoders <wheel-encoder>`.
+- `mRobotics Pixhawk autopilot <https://store.mrobotics.io/Genuine-PixHawk-Flight-Controller-p/mro-pixhawk1-minkit-mr.htm>`__.  :ref:`Other autopilots <common-autopilots>` may also work but they must have GPIO input pins to support the :ref:`wheel encoders <wheel-encoder>`.
 - `RoboClaw 2x7A motor controller <https://www.pololu.com/product/3284>`__
 - `Pololu 12V 2.1A 34:1 motors with encoders <https://www.pololu.com/product/3240>`__
 - `Wild Thumber Wheels with 4mm shaft adapters <https://www.pololu.com/product/1557>`__
@@ -38,7 +38,7 @@ Connection and Setup
     :width: 450px
 
 - Connect the yellow and white wires from the wheel encoders to the AUX OUT 3,4,5,6 pins as described on the :ref:`wheel encoder wiki page <wheel-encoder>`
-- Connect the flight controller, motor driver and motors as shown below
+- Connect the autopilot, motor driver and motors as shown below
 
 .. image:: ../images/reference-frame-arduroller-pixhawk-roboclaw.png
     :target: ../_images/reference-frame-arduroller-pixhawk-roboclaw.png

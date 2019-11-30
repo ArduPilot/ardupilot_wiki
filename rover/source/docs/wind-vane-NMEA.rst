@@ -23,4 +23,4 @@ is recommended to buy from a reputable supplier, clone MAX3232 are common. Note 
 .. image:: ../../../images/wind-vane-NMEA-wiring.png
     :target: ../_images/wind-vane-NMEA-wiring.png
 
-.. tip:: Although not required for normal operation on some NMEA devices have receive inputs, these can be connected to the flight controller via the logic translator. This allows ArduPilot to act as a :ref:`NMEA to USB adapter <common-serial-passthrough>` for use with the manufacturers tools for updating the wind vanes' firmware or configuration.  
+.. tip:: Although not required for normal operation on some NMEA devices have receive inputs, these can be connected to the autopilot via the logic translator. This allows ArduPilot to act as a :ref:`NMEA to USB adapter <common-serial-passthrough>` for use with the manufacturers tools for updating the wind vanes' firmware or configuration.  

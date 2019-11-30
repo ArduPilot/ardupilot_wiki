@@ -5,7 +5,7 @@ Motor and Servo Configuration
 =============================
 
 This page describes the few parameters that should be set in order to support the steering and throttle method being used.
-This page is closely related to the :ref:`Motor and Servo Connections <rover-motor-and-servo-connections>` page which describes the physical connections between the flight controller, motors and servos.
+This page is closely related to the :ref:`Motor and Servo Connections <rover-motor-and-servo-connections>` page which describes the physical connections between the autopilot, motors and servos.
 
 Separate Steering and Throttle
 ------------------------------
@@ -51,7 +51,7 @@ For Omni vehicles (that can move left-to-right without changing heading) these p
 Motor Driver Types
 ------------------
 
-At least three different Motor Driver (aka ESC) types are supported which allows using ArduPilot with most motor drivers.  The :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` parameter should be used to ensure the output from the flight controller board matches the input required by the motor driver.
+At least three different Motor Driver (aka ESC) types are supported which allows using ArduPilot with most motor drivers.  The :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` parameter should be used to ensure the output from the autopilot board matches the input required by the motor driver.
 
 - "Normal" is the most common and involves sending PWM values normally between 1000 and 2000 (1ms ~ 2ms)
 - "Brushed With Relay" is for brushed motor drivers that use a :ref:`relay pin <common-relay>` to indicate whether it should rotate forwards or backwards.
