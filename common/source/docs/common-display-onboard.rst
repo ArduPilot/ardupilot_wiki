@@ -4,7 +4,7 @@
 Onboard Display
 ===============
 
-This article explains how to connect a small onboard display to a flight controller which can be useful for displaying a small amount of vehicle information before takeoff.
+This article explains how to connect a small onboard display to a autopilot which can be useful for displaying a small amount of vehicle information before takeoff.
 
 .. image:: ../../../images/common-display-pixhawk.png
     :target: ../_images/common-display-pixhawk.png
@@ -34,9 +34,9 @@ These boards have been confirmed to work:
 - `Diymall 1.3 inch from Amazon <https://www.amazon.com/gp/product/B016HVG0MM/ref=od_aui_detailpages00?ie=UTF8&psc=1>`__
 
 
-Connecting to a Flight Controller
+Connecting to a Autopilot
 =================================
 
-Connect the display to the flight controller's I2C port as shown in the image above
+Connect the display to the autopilot's I2C port as shown in the image above
 
 set :ref:`NTF_DISPLAY_TYPE <NTF_DISPLAY_TYPE>` to 1 if using an SSD1306, 2 if using the SH1106 and reboot the board.

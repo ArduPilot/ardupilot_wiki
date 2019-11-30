@@ -13,22 +13,22 @@ DROTAG x for Geotagging
 -   Images are geotagged with the vehicle's Latitude, Longitude and Altitude (above sea level) at the moment the photo was taken.  These value can be viewed with any EXIF viewer
 -   Two text files are also created which include the image name, lat, lon, alt above home, altitude above sea level, roll, pitch and yaw
 -   Captures picture every 1.6 seconds
--   Includes a Hotshoe which connects between the flight controller and your camera's flash to improve the accuracy of the geo-tagging
+-   Includes a Hotshoe which connects between the autopilot and your camera's flash to improve the accuracy of the geo-tagging
 
 More details can be found in the official DrotagX manual (`web <https://www.airborneprojects.com/doc/drotagx/>`__, `pdf <https://www.airborneprojects.com/docs/drotagx_manual.pdf>`__) including pre-flight checklists, detailed explanations for diagnosis and other tips.
 
 Setup, Configuration
 --------------------
 
-- Connect the Drotag's 6-pin JST connector to one of the flight controller's serial ports
+- Connect the Drotag's 6-pin JST connector to one of the autopilot's serial ports
 - Connect the micro USB connector to the Sony camera's "MultiPort"
-- Set the following parameters in ArduPilot (assuming the Drotag is connect to Serial port 1) and then reboot the flight controller
+- Set the following parameters in ArduPilot (assuming the Drotag is connect to Serial port 1) and then reboot the autopilot
 
   - SERIAL1_BAUD : 115
   - SERIAL1_PROTOCOL : 1
 
 - Turn on the camera
-- Power the flight controller and Drotag
+- Power the autopilot and Drotag
 - If all goes well the following will happen:
 
   - Drotag's red LED should blink twice quickly about once per second

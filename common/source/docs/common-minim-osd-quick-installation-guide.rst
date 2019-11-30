@@ -6,7 +6,7 @@ Minim OSD Quick Installation Guide
 
 `MinimOSD <https://code.google.com/archive/p/arducam-osd/wikis/minimosd.wiki>`__
 "On-Screen Display" is a small circuit board that pulls telemetry data
-from your APM or Pixhawk flight controller and over-lays it on your
+from your APM or Pixhawk autopilot and over-lays it on your
 :ref:`First Person View <common-fpv-first-person-view>` monitor.
 
 This article provides brief instructions for how to connect the board.
@@ -83,7 +83,7 @@ MWOSD
 * The support thread is located `here <https://fpvlab.com/forums/showthread.php?34250-MWOSD-for-BETAFLIGHT-CLEANFLIGHT-RACEFLIGHT-PIXHAWK-KISS-DRONIN-INAV-and-others>`__.
 
 
-MWOSD is a very popular OSD which has been around for many years initially supporting the muiltiwii based flight controllers - iNav, betaflight, etc. Recent versions now provides full support for ArduPilot based FC.
+MWOSD is a very popular OSD which has been around for many years initially supporting the muiltiwii based autopilots - iNav, betaflight, etc. Recent versions now provides full support for ArduPilot based FC.
 
 MWOSD has an easy to use GUI configurator which has the added advantage of being able to flash firmware versions directly from within the GUI. Arduino or third party software is no longer required.
 

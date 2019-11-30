@@ -70,7 +70,7 @@ In order to use QgroundControl, PX4Flow and ArduPilot, you will need to complete
 #. Download and unzip the `PX4Flow-KLT firmware <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
    (`source code here <https://github.com/priseborough/px4flow/tree/klt_flow>`__)
 #. Unplug the sensor, click on the "Firmware" tab and replug the sensor.
-#. On the right hand side, click on the firmware version dropdown, and select "Custom firmware file".  Click "OK".  Then select the firmware downloaded above.  QGroundControl should now flash a firmware compatible with ArduPilot.  QGroundControl will now think that the sensor is a Pixhawk.  Dont worry.  Unplug it, and connect it to your flight controller.
+#. On the right hand side, click on the firmware version dropdown, and select "Custom firmware file".  Click "OK".  Then select the firmware downloaded above.  QGroundControl should now flash a firmware compatible with ArduPilot.  QGroundControl will now think that the sensor is a Pixhawk.  Dont worry.  Unplug it, and connect it to your autopilot.
 
 Connect to the Pixhawk
 ======================
@@ -105,7 +105,7 @@ Enabling the sensor
 .. image:: ../../../images/OptFlow_MPSetup.png
     :target: ../_images/OptFlow_MPSetup.png
 
-The sensor can be enabled by connecting to the flight controller with the Mission Planner and
+The sensor can be enabled by connecting to the autopilot with the Mission Planner and
 then on the **Initial Setup \| Optional Hardware \| Optical Flow** page
 check the **Enable** checkbox.  Alternatively the :ref:`FLOW_ENABLE <copter:FLOW_ENABLE>`
 parameter should be set to "1" through the full parameters list.  The
@@ -114,14 +114,14 @@ sensor will be initialised once the Pixhawk board is rebooted.
 Testing the sensor
 ==================
 
-With the sensor connected to the flight controller's I2C port, connect to the flight controller with the Mission Planner and open the Flight Data screen's Status tab.  If the sensor is operating you should see non-zero opt_m_x, opt_m_y and an opt_qua values.
+With the sensor connected to the autopilot's I2C port, connect to the autopilot with the Mission Planner and open the Flight Data screen's Status tab.  If the sensor is operating you should see non-zero opt_m_x, opt_m_y and an opt_qua values.
 
 .. image:: ../../../images/PX4Flow_CheckForData_MP.png
     :target: ../_images/PX4Flow_CheckForData_MP.png
 
 Calibrating the sensor
 ======================
-#. Connect to your flight controller and ensure that logging while disarmed is enabled (In Copter-3.3 set :ref:`LOG_BITMASK <copter:LOG_BITMASK>` to 131071, In Copter-3.4 :ref:`LOG_DISARMED <copter:LOG_DISARMED>` to 1)
+#. Connect to your autopilot and ensure that logging while disarmed is enabled (In Copter-3.3 set :ref:`LOG_BITMASK <copter:LOG_BITMASK>` to 131071, In Copter-3.4 :ref:`LOG_DISARMED <copter:LOG_DISARMED>` to 1)
 #. Find a location with a textured surface and good lighting (natural light or strong incandescent)
 #. Remove Propellers (safety first)
 #. Power on the vehicle and hold level away from your body and at eye level
@@ -179,7 +179,7 @@ optical flow is enabled, an additional pre-arm check is enforced.
 
 **While the vehicle is disarmed you should lift the vehicle straight up
 to at least 50cm but no higher than 2m** (if the rangefinder sees a
-distance of over 2m you will need to restart the flight controller).
+distance of over 2m you will need to restart the autopilot).
 
 The error message when arming fails this check is "PreArm: check range
 finder"

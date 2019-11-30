@@ -23,7 +23,7 @@ Enabling the Fence in Mission Planner
 ..  youtube:: SEm4nVfbg00
     :width: 100%
 
--  Connect your Flight controller to the Mission Planner
+-  Connect your Autopilot to the Mission Planner
 -  Go to the **Config/Tuning \| GeoFence** screen
 -  Click "Enable" and set Type to "All" or another option that includes "Polygon"
 

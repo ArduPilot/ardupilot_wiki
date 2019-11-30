@@ -10,7 +10,7 @@ Intel Aero RTF
 The `Intel Aero RTF vehicle <https://software.intel.com/en-us/aero/drone-kit>`__ includes the :ref:`Intel Aero compute board <common-intel-aero-overview>`,
 `Vision Accessory Kit <https://software.intel.com/en-us/aero/vision-kit>`__ and a `Spektrum DXe transmitter <http://spektrumrc.com/Products/Default.aspx?ProdId=SPM1000>`__.
 
-Within the vehicle is an STM32F427V flight controller board which can run ArduPilot (replacing the pre-loaded non-ArduPilot software).
+Within the vehicle is an STM32F427V autopilot board which can run ArduPilot (replacing the pre-loaded non-ArduPilot software).
 In this way, the higher powered :ref:`Intel Aero compute board <common-intel-aero-overview>` is used as a `companion computer <http://ardupilot.org/dev/docs/companion-computers.html>`__.
 
 ..  youtube:: DZm9S0lxiEg
@@ -30,7 +30,7 @@ Upgrading the vehicle's software
 ================================
 
 The Aero RTF may not have the last BIOS and Linux operating system. The Linux distro on Aero needs to be updated to version 1.2
-in order for the flight controller to be flashed with ArduPilot.
+in order for the autopilot to be flashed with ArduPilot.
 
 `Official Setup Instuctions from Intel <https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-setup>`__ should be followed which will ask you to:
 
@@ -43,7 +43,7 @@ The final step is to copy the **arducopter.px4** firmware to the Aero compute bo
 
 - Download the latest aero-fc ArduPilot firmware from `firmware.ardupilot.org <http://firmware.ardupilot.org/Copter/latest/>`__ 
 - Copy the above firmware to the Aero compute board in much the same way the BIOS's .rpm file was copied
-- `Flash the flight controller board <https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-setup#flashing-the-flight-controller-rtf-only>`__ with the **ardupilot.px4** firmware
+- `Flash the autopilot board <https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-setup#flashing-the-flight-controller-rtf-only>`__ with the **ardupilot.px4** firmware
 
 If you are developing ArduPilot, you can flash directly from the command line after compiling. Refer to `Build instructions <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ for more detailed instructions, but it's basically the following commands:
 

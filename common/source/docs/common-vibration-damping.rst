@@ -4,7 +4,7 @@
 Vibration Damping
 =================
 
-Flight Control boards have accelerometers that are sensitive to vibrations.
+Autopilots have accelerometers that are sensitive to vibrations.
 These accelerometer values are combined with barometer and
 GPS data to estimate the vehicle's position. With excessive
 vibrations, the estimate can be thrown off and lead to very bad
@@ -19,9 +19,9 @@ vibrations while still allowing low frequency actual board movement to
 take place in concert with the airframe.
 
 Double sided foam tape or Velcro has traditionally been used to attach
-the flight controller to the frame. In many cases foam tape or Velcro
+the autopilot to the frame. In many cases foam tape or Velcro
 does not provide adequate vibration isolation because the mass of the
-flight control board is so small.
+autopilot is so small.
 
 .. note::
 
@@ -31,23 +31,23 @@ flight control board is so small.
 3M, Du-Bro or HobbyKing Foam
 ----------------------------
 
-One of the following three types of foam should be cut into small 1cm ~ 2cm cubes and attached to each of the four corners of the flight controller as described on the :ref:`Mounting the Flight Controller wiki page <common-mounting-the-flight-controller>`:
+One of the following three types of foam should be cut into small 1cm ~ 2cm cubes and attached to each of the four corners of the autopilot as described on the :ref:`Mounting the Autopilot wiki page <common-mounting-the-flight-controller>`:
 
-- `3M foam sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ is sticky on both sides and comes pre-cut so that individual cubes can be easily attached to the flight controller
+- `3M foam sold by mRobotics <https://store.mrobotics.io/product-p/mro-pxfoams-mr.htm>`__ is sticky on both sides and comes pre-cut so that individual cubes can be easily attached to the autopilot
 - `Du-Bro 1/4" R/C foam <https://www.dubro.com/products/r-c-protective-foam-rubber>`__
 - `HobbyKing orange foam <https://hobbyking.com/en_us/anti-vibration-foam-orange-latex-190mm-x-140mm-x-6mm.html?___store=en_us>`__ (discontinued)
 
-For the last two options "carpet fixing tape" will be required to attach the foam to the flight controller and vehicle frame
+For the last two options "carpet fixing tape" will be required to attach the foam to the autopilot and vehicle frame
 
 .. image:: ../../../images/Vibration_3MFoam.jpg
     :target: ../_images/Vibration_3MFoam.jpg
 
-For vehicles with :ref:`internal combustion engines <common-ice>`, the flight controller should be mounted on an intermediate plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass
+For vehicles with :ref:`internal combustion engines <common-ice>`, the autopilot should be mounted on an intermediate plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass
 
 Gel pads
 --------
 
-#. Cut one of the recommended gels into 1cm ~ 2cm cubes and attach to each corner of the flight controller.  Possible gels include:
+#. Cut one of the recommended gels into 1cm ~ 2cm cubes and attach to each corner of the autopilot.  Possible gels include:
 
    -  `Kyosho Zeal Gel Tape <https://www.amainhobbies.com/kyosho-zeal-vibration-absorption-gyro-reciever-mounting-gel-1-sheet-kyoz8006/p19713>`__ performs best and is available from Amazon, E-Bay and A-Main Hobbies
    -  `United States Silicone Gel Tape and Pads (V10Z62MGT5 tape recommended) <http://www.vibrationmounts.com/RFQ/VM08010.htm>`__
@@ -58,11 +58,11 @@ Gel pads
       to fail in heat above 100 degrees Fahrenheit so it should be used
       cautiously.
 
-#. Secure the flight controller to the frame with 1cm) wide velcro retaining
+#. Secure the autopilot to the frame with 1cm) wide velcro retaining
    strap or a rubber band. Be careful the strap does not hold down the
    controller so securely that it interferes with the damping of the
    pads. Consider putting a layer of soft foam between the strap and the
-   flight controller.
+   autopilot.
 
    .. figure:: ../../../images/Flamewheel330PX4onZeal2.jpg
       :target: ../_images/Flamewheel330PX4onZeal2.jpg
@@ -99,14 +99,13 @@ Anti-vibration with Navio2 mounted on frame:
 O-ring Suspension Mount
 -----------------------
 
-#. Create a platform upon which to mount your flight control board with
-   holes or screws on the four corners. Mount your flight controller on
+#. Create a platform upon which to mount your autopilot with
+   holes or screws on the four corners. Mount your autopilot on
    this board with double sided foam tape.
 #. Mount 4 standoffs on the top of your frame spaced 1/10" to 1/8"
    further apart than the width of the platform upon which the control
    board has been mounted.
-#. Insert 1/16" nylon O-rings through each corner of the flight control
-   board and the standoffs so that the flight controller has no hard
+#. Insert 1/16" nylon O-rings through each corner of the autopilot and the standoffs so that the autopilot has no hard
    connections to the frame. 
    Link `(Here!) <http://www.oringwarehouse.com/>`__
 
@@ -141,17 +140,17 @@ Ear Plug Mount
 
 #. Purchase slow response silicon or urethane foam or PVC foam earplugs
    such as `these from 3M <https://www.3m.com/3M/en_US/company-us/all-3m-products/~/3M-E-A-R-Classic-Earplugs-390-1000-Uncorded-Value-Pack-2000-Pair-Case/?N=5002385+3294755285&rt=rud>`__
-#. Create a platform upon which to mount your flight control board with
+#. Create a platform upon which to mount your autopilot with
    holes at the four corners. The holes should be large enough to allow
    the ear plugs to be inserted into them but not so loose that the
    board comes loose during hard landings. Ensure the holes are smooth
    so they do not cut into the ear plugs. Also keep the holes near the
    corners of your electronic module plate as possible to minimize
    unnecessary module movement.
-#. Mount your flight controller on this board with double sided foam
+#. Mount your autopilot on this board with double sided foam
    tape. Extra mass added to the board may improve vibration damping.
 #. Squeeze the earplugs through existing holes in the frame (or cut new
-   holes) and the holes in the board upon which the flight controller is
+   holes) and the holes in the board upon which the autopilot is
    mounted. "Tuning" is possible by varying the amount of earplug left
    exposed in the middle.
 
@@ -180,7 +179,7 @@ Bulb Damper + Ear Plug Vibration Mount
        :target: ../_images/vibration_flamewheel_clone_closeup.jpg
        :width: 450px
 
-#. The flight controller is also mounted on anti-vibration grommets available from `McMaster Carr <https://www.mcmaster.com/vibration-damping-grommets>`__ (package of 25 each part #9311K64 recommended).
+#. The autopilot is also mounted on anti-vibration grommets available from `McMaster Carr <https://www.mcmaster.com/vibration-damping-grommets>`__ (package of 25 each part #9311K64 recommended).
 #. The 100G bulb type gimbal vibration dampers can be ordered direct
    from a variety of vendors: \ `copter-rc.com <http://copter-rc.com/en/accessories/36-100g-av-ball-tension-damper.html>`__
 
@@ -221,9 +220,9 @@ Summary of the vibrations that should be damped
    airframe's normal flight maneuvering.
 #. Since excellent broad frequency range, high damping materials are
    available our biggest concern will be to use the proper amount of
-   them to optimally damp our flight control board (too much is just as
+   them to optimally damp our autopilot (too much is just as
    bad as too little).
-#. Combining the Flight control board and receiver onto a separate
+#. Combining the autopilot and receiver onto a separate
    vibration damped electronics module "plate" or enclosure can increase
    the mass of the module making it easier to damp effectively as well
    as reducing the interconnecting wiring and making the whole system
@@ -236,14 +235,14 @@ Additional Vibration Reduction Considerations
    can provide sufficient or supplemental vibration reduction
 #. Significant gains in vibration isolation can also be realized by
    using a high flex wire and strain relief approach to all wires
-   connected to the Flight control board (and using the minimum number
+   connected to the autopilot (and using the minimum number
    of wires necessary as well.)
 #. Some frames have lower than normal vibration characteristics due to
    frame stiffness / flex and isolated centralized mass can greatly
    influence motor/prop vibration transfer to the central fight
    controller.
 #. Isolation and damping can be improved somewhat by sandwiching the
-   flight control board / enclosure between damping pads on both sides
+   autopilot / enclosure between damping pads on both sides
    in about twenty percent compression. 30 durometer Sorbothane is
    actually specified at 15 to 20 percent compression for optimal
    damping.
@@ -288,20 +287,20 @@ Additional Vibration Reduction Considerations
 #. At this point in time it seems that the more rigid the frame the
    better because frame flex introduces undesirable mechanical delay
    (hysteresis) in translating motor induced actions to the centrally
-   located flight control board. (Do NOT shock mount the motor Arms).
+   located autopilot. (Do NOT shock mount the motor Arms).
 #. The amount and type of damping medium needs to be carefully matched
    to the weight (mass) of the item we are trying to isolate as well as
    the frequency and amplitude of the vibrations we are seeking to
-   damp. We are trying to isolate a flight control board that weighs
+   damp. We are trying to isolate a autopilot that weighs
    less than 2 ounces and this is a very small mass.
 #. Virtually all off the shelf solutions (either pad or stud type) are
    designed for an isolated mass that would weigh at least 5 to 10 times
-   what an average flight controller weighs for optimal effectiveness. This
+   what an average autopilot weighs for optimal effectiveness. This
    includes all pre-made Sorbothane, Alpha gel, EAR, memory foam or
    other silicone or urethane gel or foam mounts as well as Lord Micro
    mounts.
 #. A threaded stud or sleeve type mount gel mount properly designed for
-   the mass of our flight control board or electronics module undergoing
+   the mass of our autopilot or electronics module undergoing
    the stress's of normal flight would be a much better long term
    solution.
 

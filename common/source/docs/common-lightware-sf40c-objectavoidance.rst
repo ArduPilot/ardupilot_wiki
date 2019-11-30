@@ -22,13 +22,13 @@ Mounting the SF40c
 
 The SF40c should be mounted on the top or bottom of the vehicle so that the rotating portion scans horizontally and its view is not obstructed by any portion of the vehicle including GPS mast, vehicle legs etc.  The round gold and black lightware logo should be facing forward.
     
-Connecting to the Flight Controller
------------------------------------
+Connecting to the Autopilot
+---------------------------
 
    .. image:: ../../../images/lightware-sf40c-pixhawk.png
        :target: ../_images/lightware-sf40c-pixhawk.png
 
-The diagram above shows how the SF40c can be connected to the flight controller's serial input.  The above pictures shows use of Serial4 but any free serial port can be used.
+The diagram above shows how the SF40c can be connected to the autopilot's serial input.  The above pictures shows use of Serial4 but any free serial port can be used.
 
 Configuration through the Ground Station
 ----------------------------------------

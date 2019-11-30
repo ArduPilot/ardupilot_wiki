@@ -23,7 +23,7 @@ Overview
 ========
 
 The `Pixracer <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__ is the
-common name for the FMUv4 generation of Pixhawk flight controllers. It has been
+common name for the FMUv4 generation of Pixhawk autopilots. It has been
 designed primarily for the demanding requirements of small multicopters, but of course can be used on planes and other
 vehicles which require no more than 6 pwm outputs for controlling escs
 and motors. Pixracer is available from the `mRobotics <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__

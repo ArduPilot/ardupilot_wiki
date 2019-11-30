@@ -56,7 +56,7 @@ Mount the Pozyx tag on the top of the Arduino Uno and then mount on the vehicle.
 Configuration through the Ground Station 
 ========================================
 
-Ensure that Copter-3.5 (or higher) is loaded onto the flight controller and connect with a Ground Station (i.e. Mission Planner).
+Ensure that Copter-3.5 (or higher) is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).
 
 - set :ref:`BCN_TYPE <BCN_TYPE>` to 1 (means using Pozyx system)
 - set :ref:`BCN_LATITUDE <BCN_LATITUDE>`, :ref:`BCN_LONGITUDE <BCN_LONGITUDE>` and :ref:`BCN_ALT <BCN_ALT>` to match your actual location.  Getting these values exactly correct is not particularly important although getting it close is required in order for the compass's declination to be correctly looked up from the small database held within ArduPilot.
@@ -70,7 +70,7 @@ Ensure that Copter-3.5 (or higher) is loaded onto the flight controller and conn
 Ground Testing
 ==============
 
-- Connect the Flight Controller to a ground station.  You may need to connect the Lipo battery as well because some computers are unable to provide enough power through their USB port for the combined Pixhawk+Pozyx+Uno.
+- Connect the Autopilot to a ground station.  You may need to connect the Lipo battery as well because some computers are unable to provide enough power through their USB port for the combined Pixhawk+Pozyx+Uno.
 - Press the UNO's white or red reset button which can be found next to the USB port (see image above)
 - After about 1 minute the vehicle's position should jump to the lattitude, longitude you input during the configuration step (above).  If it does not, connect a USB cable to the UNO's USB port and open the Arduino IDE's serial monitor and look for errors.
 - Check that the vehicle's position is relatively stable (i.e. moving around less than one meter)

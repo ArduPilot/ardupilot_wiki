@@ -8,7 +8,7 @@ This article explains how to perform basic compass calibration.
 
 .. note::
 
-   This article assumes that you are using the most common configuration — a flight controller and compass mounted with the arrow on each facing toward the front of the vehicle. If you're using a different configuration see :ref:`Advanced Compass Setup <common-compass-setup-advanced>`.
+   This article assumes that you are using the most common configuration — a autopilot and compass mounted with the arrow on each facing toward the front of the vehicle. If you're using a different configuration see :ref:`Advanced Compass Setup <common-compass-setup-advanced>`.
 
 [site wiki="rover"]
 .. tip::
@@ -26,9 +26,9 @@ Calibration first steps
 
 
 - Under **Initial Setup \| Mandatory Hardware** select **Compass**.
-- Select your flight controler configuration to automatically enter the most important configuration information for your board:
+- Select your autopilot configuration to automatically enter the most important configuration information for your board:
 
-   -  For any modern flight controller (Pixhawk, NAVIO2, etc) select the button **Pixhawk/PX4**.
+   -  For any modern autopilot (Pixhawk, NAVIO2, etc) select the button **Pixhawk/PX4**.
    -  For APM 2.6, select **APM with External Compass**.
 
    .. figure:: ../../../images/MissionPlanner_CompassCalibration_MainScreen.png
@@ -44,9 +44,9 @@ Calibration first steps
 Onboard Calibration
 ===================
 
-Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibration" meaning that the calibration routine runs on the flight controller.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
+Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibration" meaning that the calibration routine runs on the autopilot.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
 
-.. note:: A big advantage of using Onboard Calibration is that the orientation of external compasses is automatically determined during the process, as well as verification of the orientation of onboard compasses. Calibration could fail if the onboard compasses are not oriented as set by the :ref:`flight controller board orientation<AHRS_ORIENTATION>` parameter.
+.. note:: A big advantage of using Onboard Calibration is that the orientation of external compasses is automatically determined during the process, as well as verification of the orientation of onboard compasses. Calibration could fail if the onboard compasses are not oriented as set by the :ref:`autopilot board orientation<AHRS_ORIENTATION>` parameter.
 
    .. figure:: ../../../images/CompassCalibration_Onboard.png
       :target: ../_images/CompassCalibration_Onboard.png
@@ -54,7 +54,7 @@ Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibrati
 To perform the onboard calibration:
 
 - click the "Onboard Mag Calibration" section's "Start" button
-- if your flight controller has a buzzer attached you should hear a single tone followed by short beep once per second
+- if your autopilot has a buzzer attached you should hear a single tone followed by short beep once per second
 - hold the vehicle in the air and rotate it so that each side (front, back, left, right, top and bottom) points down towards the earth for a few seconds in turn
 
    .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg
@@ -73,11 +73,11 @@ If calibration fails:
 
 Onboard Calibration using Stick Gestures (no GCS)
 =================================================
-Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the flight controller with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
+Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the autopilot with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
 
 - requires RC calibration first
 - to start compass calibration hold throttle stick full up and full right yaw for 2 seconds
-- if your flight controller has a buzzer attached you should hear a single tone followed by short beep once per second
+- if your autopilot has a buzzer attached you should hear a single tone followed by short beep once per second
 - hold the vehicle in the air and rotate it so that each side (front, back, left, right, top and bottom) points down towards the earth for a few seconds in turn
 
    .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg

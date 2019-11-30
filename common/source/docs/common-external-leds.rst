@@ -4,10 +4,10 @@
 External LEDs
 =============
 
-An external LED can be added by connecting it to the flight controller's
+An external LED can be added by connecting it to the autopilot's
 I2C port or, in 4.0 and later versions, via a GPIO capable pin using the SERVOx_FUNCTION for that output.
 
-.. note:: On Pixhawk style architecture flight controllers which use an IOMCU for the PWM1-8 outputs, only the "AUX" outputs are GPIO capable. 
+.. note:: On Pixhawk style architecture autopilots which use an IOMCU for the PWM1-8 outputs, only the "AUX" outputs are GPIO capable. 
 
 Connection
 ==========

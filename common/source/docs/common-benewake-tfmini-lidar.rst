@@ -19,7 +19,7 @@ Where to Buy
 
 - the `Benewake.com Agents <http://en.benewake.com/agent>`__ page provides the full list of retailers.
 
-Connecting to the Flight Controller
+Connecting to the Autopilot
 -----------------------------------
 
 For a serial connection you can use any spare Serial/UART port.  The diagram below shows how to connect to SERIAL4.
@@ -32,7 +32,7 @@ If the SERIAL4/5 port on a Pixhawk is being used then the following parameters s
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 (Benewake TFmini/Plus-Serial)
 
-.. note:: :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 also works for TFminiPlus via its UART connection, if connected via I2C to the flight controller, use :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 25 (Benewake TFmini/Plus-I2C)
+.. note:: :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 also works for TFminiPlus via its UART connection, if connected via I2C to the autopilot, use :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 25 (Benewake TFmini/Plus-I2C)
 
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 30 for TFmini, =10 for TFminiPlus
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **1000** for indoor use OR **600** for outdoors.  *This is the distance in centimeters that the rangefinder can reliably read.*

@@ -4,8 +4,8 @@
 Telemetry / Serial Port Setup
 =============================
 
-This article shows how to configure the telemetry ports (aka serial ports) on the flight controller.
-The instructions use the Pixhawk but they apply for most flight controllers.
+This article shows how to configure the telemetry ports (aka serial ports) on the autopilot.
+The instructions use the Pixhawk but they apply for most autopilots.
 
 Overview
 ========

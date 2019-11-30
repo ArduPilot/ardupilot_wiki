@@ -6,7 +6,7 @@ SBus Servos
 .. image:: ../../../images/servo-sbus-topimage.png
     :width: 450px
 
-`Futaba SBus/SBus2 servos <https://www.futabarc.com/servos/sbus.html>`__ accept the serial `SBus protocol <https://www.futabarc.com/sbus/>`__ and can be controlled by ArduPilot once connected to the flight controller's "SB" port or any other serial port.  Up to 16 servos can be daisy chained together meaning that instead of each servo being directly connected to the flight controller, only a single serial connection from the flight controller is required.
+`Futaba SBus/SBus2 servos <https://www.futabarc.com/servos/sbus.html>`__ accept the serial `SBus protocol <https://www.futabarc.com/sbus/>`__ and can be controlled by ArduPilot once connected to the autopilot's "SB" port or any other serial port.  Up to 16 servos can be daisy chained together meaning that instead of each servo being directly connected to the autopilot, only a single serial connection from the autopilot is required.
 
 The transmission rate is 100K baud.
 
@@ -31,21 +31,21 @@ Each servo's ID needs to be set to a number from 1 to 16.  The number chosen sho
 
 *image courtesy of Futaba.com*
 
-Connecting Servos to a Flight Controller
-----------------------------------------
+Connecting Servos to a Autopilot
+--------------------------------
 
 .. image:: ../../../images/servo-sbus-pixhawk.png
     :target: ../_images/servo-sbus-pixhawk.png
     :width: 450px
 
-If using a Pixhawk connect the servo to the "SB" port on the back of the flight controller.  For Cube autopilots use the "SBUSo" port.  For other autopilots without these connectors see the instructions below
+If using a Pixhawk connect the servo to the "SB" port on the back of the autopilot.  For Cube autopilots use the "SBUSo" port.  For other autopilots without these connectors see the instructions below
 
 :ref:`SERVO_SBUS_RATE <SERVO_SBUS_RATE>` controls the update rate to the servos.  The default is 50 Hz but can be set to any value in the range of 25 Hz to 250 Hz
 
 Connecting Servos to a Serial Port
 ----------------------------------
 
-SBus servos can also be controlled from any of the flight controller's serial ports. The protocol uses inverted logic levels (unidirectional: output only) meaning an inverting cable is required when using a standard serial port. Below is a diagram showing a simple NPN transistor inverter which will suffice:
+SBus servos can also be controlled from any of the autopilot's serial ports. The protocol uses inverted logic levels (unidirectional: output only) meaning an inverting cable is required when using a standard serial port. Below is a diagram showing a simple NPN transistor inverter which will suffice:
 
 .. image:: ../../../images/sbus/sbus_inverter.png
 

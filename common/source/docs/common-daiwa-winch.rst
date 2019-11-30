@@ -20,7 +20,7 @@ The Daiwa winch is a high quality winch specially designed for drone delivery.  
 
 .. note::
 
-    ArduPilot does not yet include a special driver for this winch but it can be controlled using the flight controller's servo outputs which allows the winch to be operated from the pilot's transmitter and/or DO_SET_SERVO mission commands
+    ArduPilot does not yet include a special driver for this winch but it can be controlled using the autopilot's servo outputs which allows the winch to be operated from the pilot's transmitter and/or DO_SET_SERVO mission commands
 
 Where To Buy
 ------------
@@ -30,7 +30,7 @@ Where To Buy
 Connection and Configuration
 ----------------------------
 
-Connect the winch to the flight controller as shown below
+Connect the winch to the autopilot as shown below
 
 .. image:: ../../../images/daiwa-winch-pixhawk.png
     :target: ../_images/daiwa-winch-pixhawk.png

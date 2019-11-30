@@ -22,7 +22,7 @@ Connection and Configuration
 ----------------------------
 
 
-The engine's ignition power switch and (optional) starter should be connected to the flight controller's servo outputs, ``Ignition`` and ``Starter`` (see ICE section in :ref:`common-rcoutput-mapping`).
+The engine's ignition power switch and (optional) starter should be connected to the autopilot's servo outputs, ``Ignition`` and ``Starter`` (see ICE section in :ref:`common-rcoutput-mapping`).
 
 [site wiki="plane"]
 - Set :ref:`ICE_ENABLE <ICE_ENABLE>` = 1 to enable the ICE feature (you may need to reload parameters after setting this in order to see below parameters)
@@ -68,7 +68,7 @@ A variety of parameters are available for configuring the engine start routine. 
 [site wiki="copter,rover"]
 To allow the pilot to directly control the ignition and (optional) starter from the transmitter, RC pass through should be set-up:
 
-- Set ``SERVOx_FUNCTION`` (where "x" is the flight controller's output channel connected to the ignition or starter) to ``RCINy`` (where "y" is the transmitter channel).  For example set :ref:`SERVO8_FUNCTION <SERVO8_FUNCTION>` = 59/"RCIN9" to allow the transmitter's channel 9 to control the flight controller Output 8
+- Set ``SERVOx_FUNCTION`` (where "x" is the autopilot's output channel connected to the ignition or starter) to ``RCINy`` (where "y" is the transmitter channel).  For example set :ref:`SERVO8_FUNCTION <SERVO8_FUNCTION>` = 59/"RCIN9" to allow the transmitter's channel 9 to control the autopilot Output 8
 
 Be sure to check the engine's behavior when the transmitter is turned off to simulate what will happen during an RC failsafe.
 [/site]
@@ -101,4 +101,4 @@ To stop the motor with RC control:
 Vibration isolation
 -------------------
 
-The high vibration from internal combustion engines means that :ref:`vibration dampening <common-vibration-damping>` is critical.  It is often necessary to mount the flight controller on an plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.
+The high vibration from internal combustion engines means that :ref:`vibration dampening <common-vibration-damping>` is critical.  It is often necessary to mount the autopilot on an plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.

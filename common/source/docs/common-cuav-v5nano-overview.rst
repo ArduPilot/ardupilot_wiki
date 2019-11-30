@@ -32,7 +32,7 @@ Specifications
    -  Operating power: 4.3~5.4V
    -  USB Input: 4.75~5.25V
    -  High-power servo rail, up to 36V
-      (servo rail does not power the flight controller)
+      (servo rail does not power the autopilot)
    -  Dual voltage and current monitor inputs
    -  CUAV v5 nano can be dual redundant if power is provided
       to Power 1 and USB inputs
@@ -80,7 +80,7 @@ Interfaces
     +------------------+--------------------------------------------------------------+
     | Main Interface   | Function                                                     |
     +==================+==============================================================+
-    | Power 1          |Primary power module. Flight controller power, V & I monitor  |
+    | Power 1          |Primary power module. Autopilot power, V & I monitor          |
     +------------------+--------------------------------------------------------------+
     |PM2               | 2 x ADC, ie second V & I monitor.  Does not provide power    |
     +------------------+--------------------------------------------------------------+

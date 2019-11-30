@@ -88,7 +88,7 @@ The actual port used for the shutter is set and configured in the
 Enhanced camera trigger logging
 ===============================
 
-ArduPilot logs TRIG messages when it *triggers* the camera.  You can additionally set up ArduPilot to log CAM messages when the camera has actually fired, by connecting a :ref:`digital input pin <common-pixhawk-overview_pixhawk_digital_outputs_and_inputs_virtual_pins_50-55>` on the flight controller to the camera's hot shoe (consider using `Seagulls SYNC2 Shoe Horn Adapter <https://www.seagulluav.com/product/seagull-sync2/>`__).  This more accurately logs the exact time that pictures are recorded.
+ArduPilot logs TRIG messages when it *triggers* the camera.  You can additionally set up ArduPilot to log CAM messages when the camera has actually fired, by connecting a :ref:`digital input pin <common-pixhawk-overview_pixhawk_digital_outputs_and_inputs_virtual_pins_50-55>` on the autopilot to the camera's hot shoe (consider using `Seagulls SYNC2 Shoe Horn Adapter <https://www.seagulluav.com/product/seagull-sync2/>`__).  This more accurately logs the exact time that pictures are recorded.
 
 You will need to configure one of the AUX pins as a digital
 output/input, and connect it to the camera flash hotshoe (a universal

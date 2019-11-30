@@ -5,7 +5,7 @@ UAVCAN ESCs
 ===========
 
 Copter, Plane and Rover support `UAVCAN <https://uavcan.org>`__ Electronic Speed Controllers
-(ESCs) that allow two-way communication with the flight controller
+(ESCs) that allow two-way communication with the autopilot
 enabling potentially easier setup and in-flight monitoring of ESC and
 motor health.
 

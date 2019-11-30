@@ -33,7 +33,7 @@ Specifications
    -  Operating power: 4.3~5.4V
    -  USB Input: 4.75~5.25V
    -  High-power servo rail, up to 36V
-      (servo rail does not power the flight controller)
+      (servo rail does not power the autopilot)
    -  Dual voltage and current monitor inputs
    -  CUAV v5 can be triple redundant if power is provided
       to both battery monitor inputs and the USB port

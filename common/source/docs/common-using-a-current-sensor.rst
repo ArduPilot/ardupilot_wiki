@@ -5,7 +5,7 @@
 Archived Topic: Attopilot 180A Voltage and Current Sensor
 =========================================================
 
-In general it is best to use a power module specifically designed to work with flight controllers but for cases where you need to measure over the voltage limit (i.e. > 18V) or current limit (i.e. > 90Amps) of the available power modules you may wish to use an `AttoPilot 180A current and voltage module <https://www.sparkfun.com/products/10644>`__ which can be purchased from `Sparkfun <https://www.sparkfun.com/products/10644>`__.
+In general it is best to use a power module specifically designed to work with autopilots but for cases where you need to measure over the voltage limit (i.e. > 18V) or current limit (i.e. > 90Amps) of the available power modules you may wish to use an `AttoPilot 180A current and voltage module <https://www.sparkfun.com/products/10644>`__ which can be purchased from `Sparkfun <https://www.sparkfun.com/products/10644>`__.
 
 Connection to Pixhawk
 =====================

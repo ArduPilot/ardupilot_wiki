@@ -2450,7 +2450,7 @@ is ignored.
    <td><strong>param3</strong></td>
    <td>Dir 1=CW</td>
    <td>If <code>param4=1</code> (relative) only: [-1 = CCW, +1 = CW]. This denotes
-   whether the flight controller should add (CW) or subtract (CCW) the
+   whether the autopilot should add (CW) or subtract (CCW) the
    degrees (``param1``) from the current heading to calculate the target heading.
    </td>
    </tr>

@@ -17,7 +17,7 @@ SF10/C (100m) and
 Connecting to the Pixhawk
 =========================
 
-The diagram below shows the sensor output pins and a conveniently colour-coded cable (normally included or `see spec here <http://documents.lightware.co.za/LW%20000_135%20-%20Main%20cable%20type%201%20assembly%20-%20Rev%200.pdf>`__) which is used to connect to the flight controller. :ref:`Serial <sf10-serial-connection>`, :ref:`I2C <sf10-i2c-connection>` and :ref:`Analog <sf10-analog-connection>` connections are possible but we recommended using :ref:`Serial <sf10-serial-connection>` if possible especially if using cables that are 30cm or longer.
+The diagram below shows the sensor output pins and a conveniently colour-coded cable (normally included or `see spec here <http://documents.lightware.co.za/LW%20000_135%20-%20Main%20cable%20type%201%20assembly%20-%20Rev%200.pdf>`__) which is used to connect to the autopilot. :ref:`Serial <sf10-serial-connection>`, :ref:`I2C <sf10-i2c-connection>` and :ref:`Analog <sf10-analog-connection>` connections are possible but we recommended using :ref:`Serial <sf10-serial-connection>` if possible especially if using cables that are 30cm or longer.
 
 .. tip::
 

@@ -431,7 +431,7 @@ induced failures. APM2 should never be connected directly to a battery
 of any type.
 
 Power source problems are common and can be insidious and frustrating.
-Be meticulous. Any autopilot or flight controller is useless and
+Be meticulous. Any autopilot or autopilot is useless and
 potentially dangerous without good clean power source.
 
 The picture below is of APM 2; but the concept is applicable to APM

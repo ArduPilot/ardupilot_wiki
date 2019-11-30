@@ -27,7 +27,7 @@ Required/Compatible Hardware
 
 Common FrSky Telemetry Setup with Taranis RC transmitter running :ref:`FlightDeck <common-frsky-flightdeck>`.
 
-* An ArduPilot compatible flight controler from this list:
+* An ArduPilot compatible autopilot from this list:
 	
 	- Pixhawk
 	- Pixhawk derivatives (clones)

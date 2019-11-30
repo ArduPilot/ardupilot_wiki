@@ -4,7 +4,7 @@
 Relay Switch
 ============
 
-A "Relay" is an digital output pin on the flight controller that can be switched between 0 volts and either 3.3V or 5V.  Similar to a servo it allows the flight controller to invoke some action from another device on the vehicle.  Up to 4 pins can be defined as relays in Copter, and 6 in Plane and Rover.
+A "Relay" is an digital output pin on the autopilot that can be switched between 0 volts and either 3.3V or 5V.  Similar to a servo it allows the autopilot to invoke some action from another device on the vehicle.  Up to 4 pins can be defined as relays in Copter, and 6 in Plane and Rover.
 
 Relay pins on the Pixhawk
 =========================
@@ -21,7 +21,7 @@ Defining the relay pins through the Mission Planner
 
 The First ~ Fourth relay pins can be defined most easily using the Mission Planner's Config/Tuning screen's Standard Params list as shown below for the Pixhawk.  For other boards, if you know the exactly pin number to use, the :ref:`RELAY_PIN <RELAY_PIN>` parameter can be set directly.
 
-These are usually defined in the flight controller's hwdef.dat file `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ .
+These are usually defined in the autopilot's hwdef.dat file `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ .
 
 .. image:: ../../../images/Relay_SetupWithMP.png
     :target: ../_images/Relay_SetupWithMP.png

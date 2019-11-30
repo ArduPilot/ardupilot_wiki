@@ -19,7 +19,7 @@ enables measurements from optional sensors such as optical flow and
 laser range finders to be used to assist navigation.
 
 Current stable version of ArduPilot use the EKF2 as their primary attitude and position estimation source with DCM running quietly in the background.
-If the flight controller has two (or more) IMUs available, two EKF "cores" (i.e. two instances of the EKF) will run in parallel, each using a different IMU.
+If the autopilot has two (or more) IMUs available, two EKF "cores" (i.e. two instances of the EKF) will run in parallel, each using a different IMU.
 At any one time, only the output from a single EKF core is ever used, that core being the one that reports the best health which is determined by the consistency of its sensor data.
 
 Most user should not need to modify any EKF parameters but the information below provides some information on those parameters that are most commonly changed.

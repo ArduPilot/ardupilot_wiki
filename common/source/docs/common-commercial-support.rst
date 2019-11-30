@@ -152,7 +152,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             <div class="line">More than just consulting, offers complete end-to-end solutions</div>
             <div class="line">Autopilot/Airframe/Electronics design and manufacturing,</div>
             <div class="line">Mechanical engineering/consulting, Systems engineering/consulting</div>
-            <div class="line">Software engineering for flight controllers, Application dev</div>
+            <div class="line">Software engineering for autopilots, Application dev</div>
             </div>
         </td>
     </tr>

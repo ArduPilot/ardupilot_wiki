@@ -4,7 +4,7 @@
 Autopilot Hardware Options
 ==========================
 
-This section provides information about ArduPilot Flight Controller Hardware options.  The list below is sorted by manufacturer and product name.
+This section provides information about ArduPilot Autopilot Hardware options.  The list below is sorted by manufacturer and product name.
 
 Open hardware
 -------------

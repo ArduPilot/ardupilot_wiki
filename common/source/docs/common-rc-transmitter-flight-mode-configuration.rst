@@ -41,7 +41,7 @@ the following:
 
 
 -  Turn on your RC transmitter
--  Connect the Pixhawk (or other flight controller) to the *Mission Planner*
+-  Connect the Pixhawk (or other autopilot) to the *Mission Planner*
 -  Go to the **Initial Setup \| Mandatory Hardware \| Flight Modes** screen
 
    .. note::

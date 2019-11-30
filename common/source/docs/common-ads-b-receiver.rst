@@ -35,7 +35,7 @@ The uAvionix Ping sensor can be purchased directly from `uAvionix <https://uavio
 The full reseller list can be found at `uAvionix <https://uavionix.com/resellers/>`__
 
 
-Connecting to the flight controller
+Connecting to the autopilot
 ===================================
 
 .. image:: ../../../images/adsb_and_pixhawk.png

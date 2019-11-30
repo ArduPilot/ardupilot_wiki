@@ -4,7 +4,7 @@
 Downloading and Analyzing Data Logs in Mission Planner
 ======================================================
 
-Dataflash logs are stored on the flight controller's onboard dataflash memory
+Dataflash logs are stored on the autopilot's onboard dataflash memory
 and can be download after a flight. On Plane and Rover dataflash logs are
 created soon after start-up. On Copter they are created after you first
 arm the copter. This topic explains how to configure and access
@@ -683,7 +683,7 @@ but the most common are:
 +------------+----------------------------------------------------------------------------------------------------+
 | RelAlt     | Accelerometer + Baro altitude in meters                                                            |
 +------------+----------------------------------------------------------------------------------------------------+
-| Alt        | GPS reported altitude (not used by the flight controller)                                          |
+| Alt        | GPS reported altitude (not used by the autopilot)                                                  |
 +------------+----------------------------------------------------------------------------------------------------+
 | SPD        | Horizontal ground speed in m/s                                                                     |
 +------------+----------------------------------------------------------------------------------------------------+
@@ -768,13 +768,13 @@ but the most common are:
 
 **RCOUT (pwm output to individual RC outputs):**
 
-RC1, RC2, etc : pwm command sent from flight controller to the
+RC1, RC2, etc : pwm command sent from autopilot to the
 esc/motor/RC output
 
 Viewing KMZ FILES
 =================
 
-When you download the dataflash log files from the flight controller it will
+When you download the dataflash log files from the autopilot it will
 automatically create a KMZ file (file with extension .kmz). This file
 can be opened with Google Earth (just double click the file) to view
 your flight in Google Earth. Please see the instructions on the

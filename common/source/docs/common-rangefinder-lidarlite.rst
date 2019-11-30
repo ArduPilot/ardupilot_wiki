@@ -65,7 +65,7 @@ Connecting via I2C
 
    Lidar-Lites manufactured before Feb 2015 have I2C interface communications issues.  For these lidar please connect using PWM.
 
-The connector cable has a 6-pin CLIK Mate connector on one end and tinned leads on the other.  The leads should be soldered to a DF13 or JST connector and connected to the flight controller's I2C port as shown below
+The connector cable has a 6-pin CLIK Mate connector on one end and tinned leads on the other.  The leads should be soldered to a DF13 or JST connector and connected to the autopilot's I2C port as shown below
 
 The power to the rangefinder should be supplied from a separate external BEC as shown in the diagram below.
 
@@ -84,7 +84,7 @@ Connecting via PWM
 
 The PWM interface is recommended because it avoids a number of issues with the I2C interface.
 
-Connect the Lidar to the rear servo rail of the flight controller and BEC or ESC (to provide power) as shown below:
+Connect the Lidar to the rear servo rail of the autopilot and BEC or ESC (to provide power) as shown below:
 
 .. image:: ../../../images/lidar-lite-pixhawk-pwm.png
     :target: ../_images/lidar-lite-pixhawk-pwm.png

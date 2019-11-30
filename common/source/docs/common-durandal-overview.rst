@@ -6,7 +6,7 @@ Holybro Durandal
     :target: ../_images/durandal_iso.png
     :width: 360px
 
-Durandal is the latest update to the successful family of Holybro flight controllers.
+Durandal is the latest update to the successful family of Holybro autopilots.
 It was designed and developed by Holybro, optimized to run the latest ArduPilot firmware.
 It features the STM32H743 microprocessor, the latest advanced processor technology from STMicroelectronics®,
 plus sensor technology from Bosch® and InvenSense®, and a ChibiOS real-time operating system, delivering incredible
@@ -34,7 +34,7 @@ Specifications
    -  Operating power: 4.9~5.5V (6v max input)
    -  USB Input: 4.75~5.25V
    -  High-power servo rail, up to 36V
-      (servo rail does not power the flight controller)
+      (servo rail does not power the autopilot)
    -  Dual voltage and current monitor inputs
 
 -  **Interfaces**

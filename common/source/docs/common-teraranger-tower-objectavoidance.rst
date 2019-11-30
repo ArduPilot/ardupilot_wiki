@@ -18,8 +18,8 @@ Mounting the Sensor
 
 The TeraRanger Tower should be mounted on the top of the vehicle so that sensors scans horizontally and its view is not obstructed by any portion of the vehicle including GPS mast, vehicle legs etc.
 
-Connecting to the Flight Controller
------------------------------------
+Connecting to the Autopilot
+---------------------------
 
   .. image:: ../../../images/teraranger-tower-serial.png
       :target: ../_images/teraranger-tower-serial.png

@@ -5,17 +5,17 @@ Received Signal Strength Indication (RSSI)
 ==========================================
 
 This article shows how to get the Received Signal Strength Indication
-(RSSI) to your flight controller.
+(RSSI) to your autopilot.
 
 .. image:: ../../../images/mp_hud_rssi.jpg
     :target: ../_images/mp_hud_rssi.jpg
     :width: 400px
 
-Setting up RSSI on your flightcontroller
-========================================
+Setting up RSSI on your autopilot
+=================================
 
 RSSI can be specifically set up by a collapsible set of parameters. By default, it is required to first set 
-``RSSI_TYPE`` according to how the RC receiver's signal strength indication will be fed to the flightcontroller:
+``RSSI_TYPE`` according to how the RC receiver's signal strength indication will be fed to the autopilot:
 
 +---+--------------------+---------------------------------------------------------------------------------------------+
 | Value                  | Function                                                                                    |
@@ -35,7 +35,7 @@ RSSI can be specifically set up by a collapsible set of parameters. By default, 
 
 After setting RSSI_TYPE to a value other than 0 you will have to save and refresh your parameters to uncollapse a set of subordinate parameters that allow to further specify RSSI handling. 
 
-There are four basic options for feeding RSSI to your flightcontroller:
+There are four basic options for feeding RSSI to your autopilot:
 
 ``RSSI_TYPE = 1`` Analog voltage type RSSI fed to a dedicated pin
  ``RSSI_ANA_PIN`` specifies the pin used to read RSSI voltage. This parameter defaults to the correct pin number on most boards when using current chibios firmware.
@@ -76,11 +76,11 @@ There are four basic options for feeding RSSI to your flightcontroller:
 Displaying the RC receiver's RSSI value in MissionPlanner's HUD
 ===============================================================
 
-Once you have set up RSSI correctly on your flightcontroller, the corresponding values will be sent to your groundstation within the telemetry stream and can be displayed on your GCS. Additionally, your RC receiver's RSSI will be logged and can be displayed on your onboard or standalone OSD.
+Once you have set up RSSI correctly on your autopilot, the corresponding values will be sent to your groundstation within the telemetry stream and can be displayed on your GCS. Additionally, your RC receiver's RSSI will be logged and can be displayed on your onboard or standalone OSD.
 
 To display RC receiver's RSSI on MP's HUD:
 
-- Open Mission Planner and connect to the flight controller
+- Open Mission Planner and connect to the autopilot
 - On the Flight Data screen, right-mouse-button click on the HUD and select "User Items"
 - On the "Display this" window that appears, check "rxrssi"
 
@@ -103,9 +103,9 @@ Below are examples of typical RC receiver RSSI connection schemes:
 RSSI embedded in a collective PPM / sum signal's channel
 --------------------------------------------------------
 
-It is common practice to feed all RC channels from your RC receiver to your flightcontroller using a cPPM or sBus type sum signal on a single signal wire. Most UHF type RC systems like EZUHF, OpenLRS, Crossfire or DragonLink support embedding RSSI into a dedicated channel within this collective / sum signal stream. As per ArduPilot default channels 1-4 are used as input for primary control (roll, pitch, throttle, yaw), any channel number above 4 can be used to embed RSSI. Usually, these systems use a GUI to assign RSSI to a dedicated channel slot on your RC receiver, or have it set to a standard channel by default. See your respective system's user manual for reference.
+It is common practice to feed all RC channels from your RC receiver to your autopilot using a cPPM or sBus type sum signal on a single signal wire. Most UHF type RC systems like EZUHF, OpenLRS, Crossfire or DragonLink support embedding RSSI into a dedicated channel within this collective / sum signal stream. As per ArduPilot default channels 1-4 are used as input for primary control (roll, pitch, throttle, yaw), any channel number above 4 can be used to embed RSSI. Usually, these systems use a GUI to assign RSSI to a dedicated channel slot on your RC receiver, or have it set to a standard channel by default. See your respective system's user manual for reference.
 
-If there is an existing RC receiver connection to your flightcontroller, no additional wiring is required for using embedded RSSI:
+If there is an existing RC receiver connection to your autopilot, no additional wiring is required for using embedded RSSI:
 
 .. image:: ../../../images/embed_rssi.jpg
     :target: ../_images/embed_rssi.jpg
@@ -115,7 +115,7 @@ The example below shows how to assign channel 5 to embed RSSI on a DragonLink RC
 .. image:: ../../../images/DL_rssi.jpg
     :target: ../_images/DL_rssi.jpg
 
-RSSI values will be output both within the PPM stream on signal pin 1 as well as within the sBus stream on pin 4. Either can be fed to your flightcontroller's RCInput pin.
+RSSI values will be output both within the PPM stream on signal pin 1 as well as within the sBus stream on pin 4. Either can be fed to your autopilot's RCInput pin.
 
 Now set your RSSI parameters accordingly:
 
@@ -142,14 +142,14 @@ At strongest reception, Ch5 shows a PWM value of 1904 us. With the transmitter s
 Analog voltage type RSSI fed to a dedicated pin
 -----------------------------------------------
 
-If your RC receiver outputs an analog voltage range type RSSI, you can feed this to your flightcontroller's analog RSSI input pin. Typical voltage range is 0 - 3,3V or 0 - 5V. See your RC system's manual for detail or check using a multimeter.
+If your RC receiver outputs an analog voltage range type RSSI, you can feed this to your autopilot's analog RSSI input pin. Typical voltage range is 0 - 3,3V or 0 - 5V. See your RC system's manual for detail or check using a multimeter.
 
 
 .. note::
-    Mind that though most flightcontrollers' input pins theoretically are 5V tolerant, most ADCs will only measure up to 3,3 - 3,6 V unless equipped with voltage dividers to scale down higher input voltages. Check your RC receiver's RSSI voltage as well as your flightcontroller's specifications to ensure compatibility.
+    Mind that though most autopilots' input pins theoretically are 5V tolerant, most ADCs will only measure up to 3,3 - 3,6 V unless equipped with voltage dividers to scale down higher input voltages. Check your RC receiver's RSSI voltage as well as your autopilot's specifications to ensure compatibility.
 
 
-If there is an existing RC receiver connection to your flightcontroller that includes supply voltage and ground, only one additional signal wire is required. The example below shows how to connect a receiver's analog voltage type RSSI to a pixhawk flightcontroller's sBus output pin:
+If there is an existing RC receiver connection to your autopilot that includes supply voltage and ground, only one additional signal wire is required. The example below shows how to connect a receiver's analog voltage type RSSI to a pixhawk autopilot's sBus output pin:
 
 .. image:: ../../../images/volt_type_rssi.jpg
     :target: ../_images/volt_type_rssi.jpg
@@ -173,7 +173,7 @@ Now set your RSSI parameters accordingly:
 PWM type RSSI fed to a dedicated pin
 ------------------------------------
 
-If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can feed this to one of your flightcontroller's GPIO pins. Use parameter ``BRD_PWM_COUNT`` to set PWM output pins as GPIO. On pixahwk type hardware, this refers to the AUX pins as they are connected to the board's MCU, bypassing the IOMCU co-processer.
+If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can feed this to one of your autopilot's GPIO pins. Use parameter ``BRD_PWM_COUNT`` to set PWM output pins as GPIO. On pixahwk type hardware, this refers to the AUX pins as they are connected to the board's MCU, bypassing the IOMCU co-processer.
 
 +----------------------+-------------------------+
 | HW Pin (AUX) number  | alternative GPIO number |
@@ -193,7 +193,7 @@ If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can fee
 
 In the above example, setting ``BRD_PWM_COUNT`` to 4 will set pins 1-4 for use as PWM output and free the remaining pins 5 and 6 for use as GPIO 54 and 55.
 
-If there is an existing RC receiver connection to your flightcontroller that includes supply voltage and ground, only one additional signal wire is required. The example below shows how to connect a receiver's PWM type RSSI output to a pixhawk flightcontroller's AUX 6 pin set for use as GPIO 55:
+If there is an existing RC receiver connection to your autopilot that includes supply voltage and ground, only one additional signal wire is required. The example below shows how to connect a receiver's PWM type RSSI output to a pixhawk autopilot's AUX 6 pin set for use as GPIO 55:
 
 .. image:: ../../../images/PWM_type_rssi.jpg
     :target: ../_images/PWM_tpye_rssi.jpg
@@ -217,7 +217,7 @@ Special use cases
 Converting Non-standard PWM type RSSI to analog voltage
 -------------------------------------------------------
 
-For non-standard RSSI types like some FrSky receivers' high frequency PWM RSSI, an RC filter can be used to level the signal, rendering it useable for the flightcontroller's analog RSSI input pin:
+For non-standard RSSI types like some FrSky receivers' high frequency PWM RSSI, an RC filter can be used to level the signal, rendering it useable for the autopilot's analog RSSI input pin:
 
 **A 4.7k resistor and 10uF capacitor are used to filter out the pulses
 from the receiver's RSSI output.**
@@ -227,8 +227,8 @@ from the receiver's RSSI output.**
 
 
 
-How to utilize Futaba S.BUS2 "Frame Error Rate" information to be used as RSSI in your flight controller
---------------------------------------------------------------------------------------------------------
+How to utilize Futaba S.BUS2 "Frame Error Rate" information to be used as RSSI in your autopilot
+------------------------------------------------------------------------------------------------
 
 The **Frame Error Rate (FER)** indicates, if the receiver has trouble decoding a received data package sent by the transmitter. The value is similar to RSSI. 
 

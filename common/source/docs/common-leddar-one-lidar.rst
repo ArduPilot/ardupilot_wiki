@@ -20,7 +20,7 @@ The `Leddar One Lidar <https://leddartech.com/modules/leddarone/>`__ is a light 
 Connecting to the Pixhawk
 =========================
 
-The sensor's serial connection can be connected to any spare serial port (i.e. Telem1, Teleme2, Serial4) on the flight controller.  Connect the lidar's RX line to the flight controller's UART TX line, the lidar's TX line to the UART's RX then also connect the GND and 5V lines.  The image below shows how the sensor output pins can be connected to a Pixhawk's Serial4 port.
+The sensor's serial connection can be connected to any spare serial port (i.e. Telem1, Teleme2, Serial4) on the autopilot.  Connect the lidar's RX line to the autopilot's UART TX line, the lidar's TX line to the UART's RX then also connect the GND and 5V lines.  The image below shows how the sensor output pins can be connected to a Pixhawk's Serial4 port.
 
 .. figure:: ../../../images/leddar-one-pixhawk.jpg
    :target: ../_images/leddar-one-pixhawk.jpg

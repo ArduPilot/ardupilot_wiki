@@ -16,7 +16,7 @@ This page provides an overview of the Pixhawk Flight Management Unit.
 Pixhawk (FMUv2) and PX4FMU (FMUv1)
 ==================================
 
-The Pixhawk (FMUv2) single board flight controller evolved from the original "PX4 system", 
+The Pixhawk (FMUv2) single board autopilot evolved from the original "PX4 system", 
 which consists of the PX4FMU and various piggyback boards including the PX4IO and PX4IOAR.
 
 The Pixhawk incorporates several additional features to provide

@@ -21,7 +21,7 @@ Where to Buy
 
 Units can be purchased thru `Aerotenna <https://aerotenna.com/shop/>`__
 
-Connecting to the Flight Controller
+Connecting to the Autopilot
 -----------------------------------
 
 For a serial connection you can use any spare Serial/UART port.  The example below shows how to connect to SERIAL4 as the first rangefinder.

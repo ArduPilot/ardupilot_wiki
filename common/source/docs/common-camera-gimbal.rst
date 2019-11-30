@@ -5,7 +5,7 @@ Camera Gimbal with Servos
 =========================
 
 This article explains how to connect a camera gimbal with servos to a
-flight controller and configure it for use with ArduPilot (in Mission
+autopilot and configure it for use with ArduPilot (in Mission
 Planner).
 
 Overview

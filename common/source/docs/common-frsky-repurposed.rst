@@ -81,7 +81,7 @@ for how to display values from the FrSky telemetry feed on the RC transmitter's 
 .. image:: ../../../images/Telemetry_FrSky_TXSetup.png
     :target: ../_images/Telemetry_FrSky_TXSetup.png
 
-FrSky telemetry data consists of 16 or 32bit unsigned integers recognized by OpenTX. Standard FrSky telemetry does not include flight controller messages natively. Therefore, less important telemetry data messages (temperature, variometer…) have been repurposed to carry more useful information such as flight mode.
+FrSky telemetry data consists of 16 or 32bit unsigned integers recognized by OpenTX. Standard FrSky telemetry does not include autopilot messages natively. Therefore, less important telemetry data messages (temperature, variometer…) have been repurposed to carry more useful information such as flight mode.
 
 Using telemetry values in OpenTX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

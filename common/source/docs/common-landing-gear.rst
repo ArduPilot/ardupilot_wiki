@@ -19,11 +19,11 @@ In addition, the landing gear/ camera mount can automatically deploy or retract 
 .. image:: ../../../images/LandingGear_HobbyKing.jpg
     :target: ../_images/LandingGear_HobbyKing.jpg
 
-Connecting to the Flight Controller
+Connecting to the Autopilot
 ===================================
 
 Most retractable landing gear will require just a single PWM cable to be
-connected to one of the flight controller outputs, selected using the SERVOx_FUNCTION set to 29 for that output.
+connected to one of the autopilot outputs, selected using the SERVOx_FUNCTION set to 29 for that output.
 
 Setup through the Mission Planner
 =================================

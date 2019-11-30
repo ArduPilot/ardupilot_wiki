@@ -11,7 +11,7 @@ The Snapdragon Flight platform is a high performance CPU autopilot with a two on
 
 .. warning::
 
-   Numerous developers have reported this board is difficult to get working perhaps because of a lack of documentation or issues with underlying software on the board. If you are looking for a high performance Linux flight controller, you may wish to consider the :ref:`Navio2 <common-navio2-overview>` instead.
+   Numerous developers have reported this board is difficult to get working perhaps because of a lack of documentation or issues with underlying software on the board. If you are looking for a high performance Linux autopilot, you may wish to consider the :ref:`Navio2 <common-navio2-overview>` instead.
 
 Overview
 ========
@@ -375,9 +375,9 @@ Record and display live video
 =============================
 
 Recording and viewing live video from either of the two cameras is
-possible using the qcamvid application on the flight controller.
+possible using the qcamvid application on the autopilot.
 
--  Connect the ground station computer to the flight controller's wifi
+-  Connect the ground station computer to the autopilot's wifi
    network (normally appears as *Atlanticus_XXXX*)
 -  Use an ssh program such as
    `Putty <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`__

@@ -39,7 +39,7 @@ and necessary supporting hardware, and a software programming
 environment based on the C-like Processing language. Official site
 is \ `here <http://www.arduino.cc/en/>`__.
 
-**APM (AutoPilot Mega)**: Flight Controller providing capabilities for
+**APM (AutoPilot Mega)**: Autopilot providing capabilities for
 stabilized flight, position maintenance and automated mission (waypoint)
 path following.
 
@@ -143,7 +143,7 @@ over short periods of time), while gyros drift over time. The data from
 both types of sensors must be combined in software to determine true
 aircraft attitude and movement to create an AHRS (see above). One
 technique for doing this is the Kalman filter (see below). Now
-superseded by Flight controllers which include CPU and sensors in one
+superseded by Autopilots which include CPU and sensors in one
 unit.
 
 **Inner loop/Outer loop**: Usually used to refer to the stabilization
@@ -191,7 +191,7 @@ $GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,\ **47**
 **Oilpan**: An arduino style shield meant to be paired with the
 ArduPilotMega. Contained the majority of the sensors (gyos,
 accelerometers, barometer, etc) that allow the ArduPilotMega to function
-as an autopilot, now superseded by subsequent Flight controllers that
+as an autopilot, now superseded by subsequent Autopilots that
 incorporate CPU and sensors in one board.
 
 **OSD**: On-screen display. A way to integrate data (often telemetry
@@ -235,7 +235,7 @@ signal and only provide PWM signals for each channel.
 control to drive servos and speed controllers. There is one PWM signal
 for each channel. The width varies from 1000 to 2000 microseconds, depending on the RC manufacturer.
 
-**PX4FMU/PX4IO**: First version of Pixhawk-series flight controllers (FMUv1). Discontinued.
+**PX4FMU/PX4IO**: First version of Pixhawk-series autopilots (FMUv1). Discontinued.
 
 **RTL**: Return to Launch. Fly back to the "home" location where the aircraft took off.
 

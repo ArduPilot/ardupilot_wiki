@@ -12,15 +12,15 @@ The ESP8266 wifi module is an inexpensive programmable wifi modules available fr
 Where to Buy
 ------------
 
-The `adafruit HUZZAH ESP8266 breakout board <https://www.adafruit.com/product/2471>`__ is recommended because it can be connected to a flight controller without the need for 3.3V regulator or level shifters.
+The `adafruit HUZZAH ESP8266 breakout board <https://www.adafruit.com/product/2471>`__ is recommended because it can be connected to a autopilot without the need for 3.3V regulator or level shifters.
 
-Connecting to a flight controller
+Connecting to a autopilot
 ---------------------------------
 
 .. image:: ../../../images/esp8266-telemetry-pixhawk.jpg
     :target: ../_images/esp8266-telemetry-pixhawk.jpg
 
-If connected to Serial1/Telem1 these parameters should be set on the flight controller (if using another telemetry port, replace the "1" in the parameter name with the telemetry port's number):
+If connected to Serial1/Telem1 these parameters should be set on the autopilot (if using another telemetry port, replace the "1" in the parameter name with the telemetry port's number):
 
 - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 2 (MAVLink2) or 1 (MAVLink1)
 - :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 921 (921600 baud)

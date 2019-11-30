@@ -6,7 +6,7 @@ Hex HereFlow Optical Flow Sensor
 
 [copywiki destination="copter"]
 
-The `HereFlow optical flow sensor <http://www.proficnc.com/all-products/185-pixhawk2-suite.html>`__ is a lightweight optical flow sensor including a short range lidar which uses the CAN protocol to communicate with the flight controller.  This can be used to improve horizontal position control especially in GPS denied environments.
+The `HereFlow optical flow sensor <http://www.proficnc.com/all-products/185-pixhawk2-suite.html>`__ is a lightweight optical flow sensor including a short range lidar which uses the CAN protocol to communicate with the autopilot.  This can be used to improve horizontal position control especially in GPS denied environments.
 
 ..  youtube:: MKJB_7cA_0s
     :width: 100%
@@ -18,15 +18,15 @@ Where to Buy
 
 The sensor is available from `Hex resellers <http://www.proficnc.com/stores>`__
 
-Connection to Flight Controller
--------------------------------
+Connection to Autopilot
+-----------------------
 
 .. image:: ../../../images/hereflow-pixhawk.jpg
    :target: ../_images/hereflow-pixhawk.jpg
    :width: 450px
 
-- The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards.  The side of the sensor with the lens should be towards the front of the vehicle.  The image above is incorrect because the flight controller's arrow is pointing down while the sensor's "V2.0" label is close to the top.
-- Connect the sensor to the flight controllers' CAN port (if using a Cube note that pre-Apr 2019 boards have CAN1 and CAN2 swapped)
+- The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards.  The side of the sensor with the lens should be towards the front of the vehicle.  The image above is incorrect because the autopilot's arrow is pointing down while the sensor's "V2.0" label is close to the top.
+- Connect the sensor to the autopilots' CAN port (if using a Cube note that pre-Apr 2019 boards have CAN1 and CAN2 swapped)
 - Set :ref:`FLOW_TYPE <FLOW_TYPE>` = 6 (UAVCAN)
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 to enable UAVCAN
 - Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 1 (UAVCAN)

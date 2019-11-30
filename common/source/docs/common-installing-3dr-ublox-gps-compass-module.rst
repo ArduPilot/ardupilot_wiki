@@ -4,7 +4,7 @@
 UBlox GPS + Compass Module
 ==========================
 
-The UBlox GPS + Compass module is the most commonly used GPS for ArduPilot compatible flight controllers.
+The UBlox GPS + Compass module is the most commonly used GPS for ArduPilot compatible autopilots.
 There are many versions of these modules available from various manufacturers, the recommended models are :ref:`here <common-positioning-landing-page>`.
 
 ArduPilot automatically configures the GPS soon after startup so there is no need for any GPS related calibration.  The :ref:`compass must be calibrated <common-compass-calibration-in-mission-planner>` however.

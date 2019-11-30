@@ -25,7 +25,7 @@ Connecting the vehicle and base station GPSs
 
 The Here+ GPS kit comes with a larger round GPS (also knows as the "Rover") that should be mounted on the vehicle so that the round button is on the top and the faint arrow is pointing forwards.
 
-This GPS is connected to the flight controller using the supplied 8-pin clickmate connector (if using a Cube) or an optional 4pin+6pin DF13 connector (if using Pixhawk).
+This GPS is connected to the autopilot using the supplied 8-pin clickmate connector (if using a Cube) or an optional 4pin+6pin DF13 connector (if using Pixhawk).
 
 A smaller GPS (also known as the "base station") labelled "here+" is also included along with it's external antenna.  This GPS is connected to the ground station PC using the supplied USB cable.
 
@@ -77,7 +77,7 @@ When upgrading the base station module, use the USB cable to connect the base st
 .. image:: ../../../images/HERE+_Connect_trough_Usb1.png
 	:target: ../_images/HERE+_Connect_trough_Usb1.png
 
-When upgrading a Rover module, use a hexagonal screwdriver to open the case. The rover module has a USB interface connector identical to the base module, you can use the base module USB cable to connect rover to computer. In addition, during the firmware upgrading process, the rover module needs to be powered by connecting to flight controller, as shown in the following figure: 
+When upgrading a Rover module, use a hexagonal screwdriver to open the case. The rover module has a USB interface connector identical to the base module, you can use the base module USB cable to connect rover to computer. In addition, during the firmware upgrading process, the rover module needs to be powered by connecting to autopilot, as shown in the following figure: 
 
 .. image:: ../../../images/HERE+_Connect_trough_Usb2.png
 	:target: ../_images/HERE+_Connect_trough_Usb2.png
@@ -127,7 +127,7 @@ To use HERE+ on a UAV, you need the following hardware:
 .. image:: ../../../images/HERE+_hardware_connected_properly.png
 	:target: ../_images/HERE+_hardware_connected_properly.png
 	
-- Before using, make sure the hardware is connected correctly: The base station module is connected to the computer port through USB; a telemetry module is connected to another USB port of the same computer. For UAV, HERE + rover module is connected to the flight controller GPS connector, telemetry module is connected to the TELEM interface. 
+- Before using, make sure the hardware is connected correctly: The base station module is connected to the computer port through USB; a telemetry module is connected to another USB port of the same computer. For UAV, HERE + rover module is connected to the autopilot GPS connector, telemetry module is connected to the TELEM interface. 
 
 .. image:: ../../../images/HERE+_hardware_connected_properly2.png
 	:target: ../_images/HERE+_hardware_connected_properly2.png
@@ -138,7 +138,7 @@ To use HERE+ on a UAV, you need the following hardware:
 .. image:: ../../../images/HERE+_sufficient_sky_coverage.png
 	:target: ../_images/HERE+_sufficient_sky_coverage.png
 
-- Connect to the vehicle's flight controller (i.e. Pixhawk, Cube, etc) using Mission Planner
+- Connect to the vehicle's autopilot (i.e. Pixhawk, Cube, etc) using Mission Planner
 - Open the Initial Setup >> Optional Hardware >> RTK GPS Inject screen
 - For first time setup in a new location, click the Enter Base Position button, make sure the dialog box shows empty location information, as shown below:
 
@@ -175,8 +175,8 @@ To store the current location in the Mission Planner: Click Save Current Pos, en
 .. image:: ../../../images/HERE+_Mission_planner_4.png
 	:target: ../_images/HERE+_Mission_planner_4.png
 
-Rover Module and Flight Controller Setup 
-========================================
+Rover Module and Autopilot Setup
+================================
 After the base station is set up, you can turn on the UAV. Using the same Mission Planner to connect the telemetry module, the base station data will be transmitted through telemetry module to the HERE + rover module on the UAV. In the Mission Planner main page, you can see the current GPS status displayed as RTK Float / RTK Fixed / 3D RTK, indicating that the positioning of the UAV has entered the RTK mode. RTK Float is a floating-point solution; RTK Fixed is a fixed solution. RTK Fixed mode has a higher accuracy and requires better signal strength. 3D RTK is unified saying of RTK Float / RTK in the Mission Planner Chinese version. 
 
 .. image:: ../../../images/HERE+_Disarmed.png
