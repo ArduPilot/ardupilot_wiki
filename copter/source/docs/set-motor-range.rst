@@ -17,7 +17,7 @@ Measuring the deadzone
 
 -  Remove the propellers from the vehicle
 -  Connect the LiPo battery
--  Connect the flight controller to the Mission Planner using a USB cable or telemetry
+-  Connect the autopilot to the Mission Planner using a USB cable or telemetry
 -  Open the Mission Planner's Initial Setup >> Optional Hardware >> Motor Test page
 
    .. image:: ../images/MissionPlanner_MotorTest.png

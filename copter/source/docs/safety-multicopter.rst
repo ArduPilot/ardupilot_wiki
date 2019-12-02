@@ -91,7 +91,7 @@ MultiCopter Safety
       and while they are almost indestructible - you are not.
 
 #. **Important primary response to a crash, inadequate landing or
-   unknown flight controller state.**
+   unknown autopilot state.**
 
    #. The first thing to do is throw a towel over your copters
       propellers (Propellers may start spinning unexpectedly).

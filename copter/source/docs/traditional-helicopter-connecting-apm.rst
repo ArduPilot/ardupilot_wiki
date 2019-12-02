@@ -4,27 +4,27 @@
 Traditional Helicopter — Connecting and Calibrating the System
 ==============================================================
 
-Flight Controller Info
-======================
+Autopilot Info
+==============
 
 .. image:: ../images/pixhackv5.jpg
     :target: ../_images/pixhackv5.jpg
 
-A flight controller with internally damped IMU's is highly recommended for 
+A autopilot with internally damped IMU's is highly recommended for 
 helicopters. Experience has shown the tuning, handling and stability 
 performance of your helicopter will be greatly improved over the first 
 generation Pixhawk.
 
 Before you begin connecting the system it is recommended to review the docs for
-the flight controller you select.
+the autopilot you select.
 
 Overview of servo, and RX connection
 ====================================
 
-The RC input for many ardupilot compatible flight controllers is either PPM SUM
+The RC input for many ardupilot compatible autopilots is either PPM SUM
 (8 channels) or S.Bus (up to 18 channels).  Some controllers also accept Spektrum
 satellite receivers.  If you have a receiver that outputs only PWM, you will need
-a PPM encoder to connect to your flight controller.
+a PPM encoder to connect to your autopilot.
 
 The default RC input and SERVO output mapping is as follows:
 
@@ -61,11 +61,11 @@ If you are using a DDVP (Direct Drive Variable Pitch) tail rotor, the tail motor
 ESC connects to pin 7. The throttle servo or ESC for the main rotor motor
 connects to pin 8.
 
-Check the docs for your selected flight controller but most require a separate 
+Check the docs for your selected autopilot but most require a separate 
 power supply to the servo rail to power your servos at their appropriate rated 
 voltage. 
 
-Connect telemetry radios, GPS/compass module, power to flight controller itself,
+Connect telemetry radios, GPS/compass module, power to autopilot itself,
 and any other peripherals as per the instructions in the owners manual for the unit.
 
 RC Calibration
@@ -73,12 +73,12 @@ RC Calibration
 
 .. warning::
 
-   Before powering the flight controller and servo rail for the first time, 
+   Before powering the autopilot and servo rail for the first time, 
    disconnect the rudder linkage from the tail servo or bellcrank on the tail 
    gearbox. If you have a piston engine helicopter, also disconnect the throttle
    servo linkage. 
 
-The RC MUST be calibrated before proceeding once the flight controller is powered up.
+The RC MUST be calibrated before proceeding once the autopilot is powered up.
 RC calibration is identical to all other vehicles. With helicopters using the
 ArduPilot system there can be no mixes in the RC radio. All the outputs must be
 "pure", i.e. use either airplane mode in your radio, or helicopter mode with H1

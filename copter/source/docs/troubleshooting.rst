@@ -250,7 +250,7 @@ My Copter Moves In a Direction even though the Stick is Centered
    #. If they are not recalibrate the radio.
    #. The HS1 Trim value must match the Live stick centered Roll value
       and the HS2 Trim value must match the live stick centered Pitch
-      value or the Flight Controller will think your stick is not
+      value or the autopilot will think your stick is not
       centered when it is.
 
 #. Make sure the CG (center of gravity) of the copter is dead center.
@@ -562,12 +562,12 @@ products such as \ `DuBro foam <https://www.dubro.com/products/r-c-protective-fo
 As of version 2.9 of Copter, inertial navigation is used to maintain
 altitude and in 2.9.2 horizontal position as well so vibration truly
 needs to be minimized. A small pad (1/2 to 1") of Kyosho Zeal tape under
-each corner of the Flight Control board should get vibration low enough.
+each corner of the autopilot should get vibration low enough.
 
 Or you can use a standoff with an extending screw 1/10" outboard of each
-corner of the flight control board and suspend it with four 1/16"
+corner of the autopilot and suspend it with four 1/16"
 O-rings of appropriate diameter such that when folded over through the
-flight control board they just hold the board without movement, but also
+autopilot they just hold the board without movement, but also
 not in much tension.
 
 When a flight log is checked in RAW mode, X,Y and Z hovering ACCELs

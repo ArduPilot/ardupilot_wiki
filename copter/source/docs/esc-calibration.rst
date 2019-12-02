@@ -127,11 +127,11 @@ Manual ESC-by-ESC Calibration
 Semi Automatic ESC-by-ESC Calibration
 =====================================
 
-#. Connect to the flight controller from a ground station such as the Mission Planner and set the :ref:`ESC_CALIBRATION <ESC_CALIBRATION>` parameter to 3
-#. Disconnect the battery and USB cable so the flight controller powers down
+#. Connect to the autopilot from a ground station such as the Mission Planner and set the :ref:`ESC_CALIBRATION <ESC_CALIBRATION>` parameter to 3
+#. Disconnect the battery and USB cable so the autopilot powers down
 #. Connect the battery
 #. The arming tone will be played (if the vehicle has a buzzer attached)
-#. If using a flight controller with a safety button (like the Pixhawk) press it until it displays solid red
+#. If using a autopilot with a safety button (like the Pixhawk) press it until it displays solid red
 #. You will hear a musical tone then two beeps
 #. A few seconds later you should hear a number of beeps (one for each battery cell you're using) and finally a single long beep indicating the end points have been set and the ESC is calibrated
 #. Disconnect the battery and power up again normally and test as described below

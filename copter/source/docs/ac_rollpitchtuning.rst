@@ -30,7 +30,7 @@ transmitter's channel 6 tuning knob by following these instructions:
 .. image:: ../images/RollPitchTuning.png
     :target: ../_images/RollPitchTuning.png
 
-#. Connect your Flight Controller to Mission Planner
+#. Connect your autopilot to Mission Planner
 #. On Mission Planner, select Config/Tuning >> Copter Pids
 #. Set the CH6 Opt to "Rate Roll/Pitch kP"
 #. Set Min to 0.08, Max to 0.20 (most copters ideal gain is within this
@@ -45,12 +45,12 @@ transmitter's channel 6 tuning knob by following these instructions:
 #. Move the CH6 knob back to the middle
 #. Arm and fly your copter in Stabilize mode adjusting the ch6 knob
    until you get a copter that is responsive but not wobbly
-#. After the flight, disconnect your LiPo battery and reconnect the flight controller to the mission planner
+#. After the flight, disconnect your LiPo battery and reconnect the autopilot to the mission planner
 #. With the CH6 knob in the position that gave the best performance,
    return to the Copter Pids screen and push the "Refresh Params" button
 #. In the Rate Roll P and Rate Pitch P fields re-type the value that you
    see but just slightly modified so that the mission planner recongises
-   that it's changed and resends to the flight controller (Note: if you re-type
+   that it's changed and resends to the autopilot (Note: if you re-type
    exactly the same number as what appears in Rate Roll P it won't be
    updated).  So for example if the Rate Roll P appears as "0.1213" make
    it "0.1200"

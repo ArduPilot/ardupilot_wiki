@@ -61,7 +61,7 @@ The :ref:`FS_OPTIONS<FS_OPTIONS>` parameter (Copter 4.0 and later) is a bitmask 
 
 .. note::
 
-    Once the battery failsafe has triggered, it cannot be reset until the flight controller is rebooted.
+    Once the battery failsafe has triggered, it cannot be reset until the autopilot is rebooted.
 
 Setting up using Mission Planner
 --------------------------------
