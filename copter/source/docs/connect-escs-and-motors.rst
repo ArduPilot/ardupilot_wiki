@@ -4,10 +4,10 @@
 Connect ESCs and Motors
 =======================
 
-This article explains how to connect the ESCs, motors and propellers to a flight controller.  The Pixhawk is used as an example but other flight controllers are connected in a similar way.
+This article explains how to connect the ESCs, motors and propellers to a autopilot.  The Pixhawk is used as an example but other autopilots are connected in a similar way.
 
 Connect the power (+), ground (-), and signal (s) wires for each ESC to
-the flight controller's main output pins by motor number. Find your frame type
+the autopilot's main output pins by motor number. Find your frame type
 below to determine the assigned order of the motors.
 
 .. figure:: ../images/Pixhwak_outputs.jpg
@@ -19,7 +19,7 @@ Motor order diagrams
 ====================
 
 The diagrams below show motor order for each frame type.
-The numbers indicate which output pin from the flight controller shoould be connected to each motor/propeller.
+The numbers indicate which output pin from the autopilot shoould be connected to each motor/propeller.
 The propeller direction is shown in green (clockwise, CW) or blue (counter-clockwise, CCW)
 
 .. figure:: ../images/MOTORS_CW_CCWLegend.jpg
@@ -237,16 +237,16 @@ Using a Power Distribution Board
     :target: ../_images/3dr_power_distribution_board.jpg
 
 There are two methods of connecting the motor outputs.  Either connect the
-electronic speed controllers (ESCs) directly to the flight controller OR use a power distribution board (PDB).
+electronic speed controllers (ESCs) directly to the autopilot OR use a power distribution board (PDB).
 
 When using a PDB, connect the power (+), ground (-), and signal (s)
 wires for each ESC to the PDB according to motor number. Find your frame
 type below to determine the assigned order of the motors. Then connect
 the signal wires from the PDB to the main output signal pins on the
-flight controller  (ensuring that the motor order numbers match the
+autopilot  (ensuring that the motor order numbers match the
 main output pin numbers on the controller). If you are using a power
 module, it is optional to connect the power and ground wires from the
-PDB to the flight controller board. If you would like to use these
+PDB to the autopilot board. If you would like to use these
 cables in addition to or instead of the power module or as a common
 point for low current servos, connect the ground (-) wire to a main
 output ground (-) pin and the power (+) wire to a main output power (+) pin.

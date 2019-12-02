@@ -16,6 +16,6 @@ Copter 3.6 (and higher) and QuadPlanes support additional motors placed in the m
 Configuration
 -------------
 
--  Connect the booster motor's ESCs to one of the flight controller's RC Output ports (i.e. MAIN OUT 1 ~ 8 or AUX OUT 1 ~ 6)
+-  Connect the booster motor's ESCs to one of the autopilot's RC Output ports (i.e. MAIN OUT 1 ~ 8 or AUX OUT 1 ~ 6)
 -  Set SERVOx_FUNCTION = 81 for "Boost Throttle" (where "x" is the servo output number)
 -  Optionally set :ref:`MOT_BOOST_SCALE <MOT_BOOST_SCALE>` to a value between 0 to 5 to scale the output for the booster based on the average output throttle sent to the standard motors.  A higher scaling factor will put more of the load on the booster motor.  1 will set the BoostThrottle equal to the main throttle.  The output to the main motor will always be between the ``SERVOx_MIN`` and ``SERVOx_MAX`` values (where "x" is the servo output number)

@@ -18,7 +18,7 @@ The following situations can cause a loss of GCS mavlink heartbeat, triggering a
 -  The operator turns off or otherwise disconnects the GCS
 -  The copter travels beyond the range of the  GCS telemetry radios
 -  The GCS telemetry radio on either end loses power
--  Wires connecting the GCS telemetry radio to the flight controller or ground equipment become disconnected
+-  Wires connecting the GCS telemetry radio to the autopilot or ground equipment become disconnected
 
 What will happen
 ================

@@ -29,8 +29,8 @@ options are discussed in the topic :ref:`Compatible RC Transmitter and Receiver 
 .. image:: ../../../images/spektrum-dx8.jpg
     :target: ../_images/spektrum-dx8.jpg
 
-Flight Controller board (Autopilot hardware)
-============================================
+Autopilot (Autopilot hardware)
+==============================
 
 Copter's autopilot board determines its capabilities for autonomous
 flight. At time of writing (December 2015)
@@ -40,7 +40,7 @@ use.
 Developers creating UAV vision applications should consider using a
 separate Companion Computer, or a Linux based autopilot board.
 
-For more options, see the topic :ref:`Choosing a Flight Controller <common-choosing-a-flight-controller>`.
+For more options, see the topic :ref:`Choosing an Autopilot <common-choosing-a-flight-controller>`.
 
 GPS module
 ==========
@@ -67,7 +67,7 @@ Ground Control Station
 ======================
 
 The (free and open source) :ref:`Mission Planner <planner:home>` is required if you're going
-to be loading new versions of Copter onto the flight controller, and for
+to be loading new versions of Copter onto the autopilot, and for
 first-flight tuning and calibration. It runs on a PC and can also be
 used for planning missions.
 

@@ -33,8 +33,9 @@ parachute vendors:
 -  `Opale Paramodels <https://www.opale-paramodels.com/fr/57-parachutiste-rc>`__
 -  `Mars Mini <http://1uas.com/Gears/Parachutes-Protection-System/Mars-Mini>`__
 
-Connecting to the Flight Controller
-===================================
+Connecting to the Autopilot
+===========================
+
 
 The parachute release mechanism can be triggered from either a Relay or a PWM (i.e. Servo) but because of `an issue with the Relay pins being pulled high at start-up <https://github.com/ArduPilot/ardupilot/issues/1239>`__, 
 we recommend using PWM, in particular any of the Pixhawk's AUX OUT 1 to 4 pins.

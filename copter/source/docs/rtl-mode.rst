@@ -31,7 +31,7 @@ Copter, it will return to the location where it was armed.
 
 .. warning::
 
-   In RTL mode the flight controller uses a barometer which
+   In RTL mode the autopilot uses a barometer which
    measures air pressure as the primary means for determining altitude
    ("Pressure Altitude") and if the air pressure is changing in your flight
    area, the copter will follow the air pressure change rather than actual

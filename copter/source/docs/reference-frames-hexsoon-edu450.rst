@@ -12,14 +12,14 @@ Parts List
 ----------
 
 - The frame will be available for purchase from late 2019 onwards from many `Hex retailers <http://www.proficnc.com/stores>`__
-- :ref:`Cube autopilot <common-thecube-overview>` or any other :ref:`ArduPilot compatible flight controller <common-autopilots>`
+- :ref:`Cube autopilot <common-thecube-overview>` or any other :ref:`ArduPilot compatible autopilot <common-autopilots>`
 - 3300mAh to 5300mAh 3S battery
 - RC transmitter with at least 6 channels like the Futaba T10J
 
 Connection and Setup
 --------------------
 
-- Connect the four ESC wires to the back of the flight controller as shown in the :ref:`QuadX configuration <connect-escs-and-motors>`
+- Connect the four ESC wires to the back of the autopilot as shown in the :ref:`QuadX configuration <connect-escs-and-motors>`
 - Mount the GPS/compass unit on the front of the frame slight elevated if possible to increase the distance between the ESC wires
 
 Firmware used: Copter-4.0

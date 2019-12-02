@@ -4,7 +4,7 @@
 Radio Failsafe
 ==============
 
-Copter supports several configurable failsafe options in cases where contact between the Pilot's RC transmitter and the flight controller's receiver is lost.  This page explains this failsafe's setup and testing.  Note the "Radio failsafe" was previously called "Throttle failsafe" because of the way in which some receivers use the throttle channel to signal the loss of contact.
+Copter supports several configurable failsafe options in cases where contact between the Pilot's RC transmitter and the autopilot's receiver is lost.  This page explains this failsafe's setup and testing.  Note the "Radio failsafe" was previously called "Throttle failsafe" because of the way in which some receivers use the throttle channel to signal the loss of contact.
 
 .. image:: ../images/RadioFailsafe_Intro.jpg
     :target: ../_images/RadioFailsafe_Intro.jpg
@@ -22,7 +22,7 @@ If enabled and set-up correctly the radio failsafe will trigger if:
 -  The vehicle travels outside of RC range
 -  The pilot forces the throttle channel below :ref:`FS_THR_VALUE<FS_THR_VALUE>` from the transmitter
 -  The receiver loses power (unlikely)
--  The wires connecting the receiver to the flight controller are broken
+-  The wires connecting the receiver to the autopilot are broken
    (unlikely).
 
 What will happen
@@ -40,7 +40,7 @@ If the failsafe clears (i.e. transmitter and receiver regain contact) the copter
 Receiver Configuration
 ======================
 
-By default, most newly purchased receivers will simply not output pulses if contact with the transmitter is lost. However, some low end receivers will be set-up to simply hold all channels at their last known position.  This is not good because the flight controller has no way to know that the Pilot has lost control of the vehicle.  Instead the receiver must be set-up to signal to the flight controller it has lost contact and there are two ways that it can do this (the method depends upon the receiver). Each brand of Transmitter/Receiver is slightly different so please refer to your transmitter's user manual to determine which method is available and how to set it up.
+By default, most newly purchased receivers will simply not output pulses if contact with the transmitter is lost. However, some low end receivers will be set-up to simply hold all channels at their last known position.  This is not good because the autopilot has no way to know that the Pilot has lost control of the vehicle.  Instead the receiver must be set-up to signal to the autopilot it has lost contact and there are two ways that it can do this (the method depends upon the receiver). Each brand of Transmitter/Receiver is slightly different so please refer to your transmitter's user manual to determine which method is available and how to set it up.
 
 Receiver configuration for low-throttle method
 ----------------------------------------------
@@ -54,7 +54,7 @@ Many receivers allow for the failsafe positions to be set either by simply press
 
 Receiver configuration for No-Signal method
 -------------------------------------------
-**"No Signal" method** - the receiver stops sending signals to the flight controller.  This is the preferred method and is how most modern FrSky receivers operate. Below is the setup method for a FlySky 9 channel transmitter with FrSky D4R-II receiver which uses the "No Signal" method.
+**"No Signal" method** - the receiver stops sending signals to the autopilot.  This is the preferred method and is how most modern FrSky receivers operate. Below is the setup method for a FlySky 9 channel transmitter with FrSky D4R-II receiver which uses the "No Signal" method.
 
 ..  youtube:: FhKREgqjCpM
     :width: 100%
@@ -149,16 +149,16 @@ Test #5 (optional) : removing power from the receiver
 -  Switch to stabilize mode, arm your motors and keep your throttle
    above zero.
 -  Carefully disconnect the power wires connecting the receiver to the
-   flight controller
+   autopilot
 -  The Flight Mode should switch to RTL or LAND as described in Test #3
 
-.. warning:: Unplug the flight controller so that it is powered down before reattaching
+.. warning:: Unplug the autopilot so that it is powered down before reattaching
    the receiver's power
 
 Using the receiver to set the flight mode (not recommended)
 ===========================================================
 
-Instead of setting up the receiver and flight controller as described
+Instead of setting up the receiver and autopilot as described
 above (i.e. "Low-Throttle" and "No Signal" methods) the receiver can be
 set-up to set channel 5 (flight mode channel) to a :ref:`flight mode <flight-modes>` slot that has
 been set to RTL.  For example the receiver could be setup to move ch5's
@@ -168,5 +168,5 @@ Flight Modes screen.
 
 Although this mostly works it is not recommended because it will not
 trigger if the receiver loses power or if the wires between the receiver
-and flight controller are broken.
+and autopilot are broken.
 

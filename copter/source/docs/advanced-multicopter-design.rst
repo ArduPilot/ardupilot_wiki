@@ -867,7 +867,7 @@ A Small Quadcopter Optimised to Use High Efficiency Lithium Batteries
    current.
 -  This quadcopter design uses carefully selected T-Motor MT2206 1200 KV
    30 gram motors and 10" props with a light carbon fiber frame.
--  It includes a 2S 2P 6600mah lithium battery, flight controller,
+-  It includes a 2S 2P 6600mah lithium battery, autopilot,
    receiver and even an FPV camera and transmitter.
 -  It weighs about a pound and since the battery is 2 parallel it can
    provide 13.2 amps of current (max current is less than 10 amps.)
@@ -993,10 +993,10 @@ Conclusion and Additional Design Considerations
       frame arm but then there are frame design and clearance issues.
 
 -  Try to keep the weight centralized as much as possible and keep the
-   flight controller near the horizontal center if possible.
+   autopilot near the horizontal center if possible.
 
    -  So that the copter tends to roll and pitch as though pivoting
-      around the center of mass and around the flight controller.
+      around the center of mass and around the autopilot.
    -  However it is not as critical as some people have made it out to
       be because the stabilizing throttles will automatically
       compensate.

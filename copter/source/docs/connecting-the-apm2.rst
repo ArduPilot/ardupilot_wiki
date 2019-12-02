@@ -23,7 +23,7 @@ receiver, ESC, GPS and even a camera gimbal.
 .. image:: ../images/QuadHookUp800B.jpg
     :target: ../_images/QuadHookUp800B.jpg
 
-Powering the flight controller
+Powering the autopilot
 ==============================
 
 The easiest way to power the APM2.x is using a :ref:`3DR Power Module <common-3dr-power-module>` with

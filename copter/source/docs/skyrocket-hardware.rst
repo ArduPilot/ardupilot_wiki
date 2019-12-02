@@ -4,7 +4,7 @@
 SkyRocket Hardware
 ==================
 
-- STM32 Flight Controller
+- STM32 Autopilot
 - Sonix board containing the WIFI, SD card, APWeb, and OmniVision OV9732 video sensor
 - UBlox M8 GPS
 

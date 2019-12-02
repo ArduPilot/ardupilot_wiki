@@ -66,7 +66,7 @@ Common Problems
 #. The vehicle `circles (aka "toiletbowls") <https://www.youtube.com/watch?v=a-3G9ZvXHhk>`__.  This
    is normally caused by a compass problem the most likely being
    :ref:`magnetic interference <common-diagnosing-problems-using-logs_compass_interference>`
-   from the power cables under the flight controller.  Running
+   from the power cables under the autopilot.  Running
    :ref:`compassmot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`
    or purchasing a :ref:`GPS+compass module <common-installing-3dr-ublox-gps-compass-module>` normal
    resolves this.  Other possibilities include bad compass offsets set

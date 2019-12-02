@@ -266,7 +266,7 @@ OR the change in heading (in degrees) when "rel/abs" field is "1"
 as the vehicle turns to the desired heading
 
 **Dir (1=CW, -1=CCW)** - Used only when relative heading is specified
-(i.e. "rel/abs" = "1") denotes whether the flight controller should add
+(i.e. "rel/abs" = "1") denotes whether the autopilot should add
 (CW) or subtract (CCW) the degrees (Deg) from the current heading to
 calculate the target heading. The vehicle will always turn in direction
 that most quickly gets it to the new target heading regardless if CW or

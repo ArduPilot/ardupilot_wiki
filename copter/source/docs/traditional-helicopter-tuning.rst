@@ -37,7 +37,7 @@ used to determine the requested rate required to achieve the desired response
 that is fed to the rate controller.
  
 The attitude controller is used to ensure the actual attitude of the aircraft
-matches the predicted attitude of the flight controller. It uses the
+matches the predicted attitude of the autopilot. It uses the
 ATC_ANG_PIT_P in pitch and the ATC_ANG_RLL_P in roll to determine a rate that is
 fed to the rate controller that will drive the aircraft to the predicted
 attitude. 
@@ -321,14 +321,14 @@ rotor helicopters with a torque-compensating tail rotor hover either right skid
 low or left skid low, depending on which way the main rotor turns. The 
 ArduCopter software has a parameter, ATC_HOVR_RLL_TRIM, to compensate for this 
 phenomenon. Longitudinal CG location will affect the trim attitude in the pitch
-axis.  There is no parameter to tell the flight controller what pitch attitude 
+axis.  There is no parameter to tell the autopilot what pitch attitude 
 the aircraft hovers with no drift. It always targets zero deg pitch as measured
-by the flight controller. Therefore the actual pitch attitude the aircraft 
-hovers may be 5 deg nose high but the flight controller AHRS Trim value is set
+by the autopilot. Therefore the actual pitch attitude the aircraft 
+hovers may be 5 deg nose high but the autopilot AHRS Trim value is set
 to make it think the attitude is zero deg. 
 
 In order to trim the aircraft, set the ATC_HOVR_RLL_TRIM parameter to zero. 
-During the initial setup of the flight controller, the AHRS_TRIM values are set 
+During the initial setup of the autopilot, the AHRS_TRIM values are set 
 during the accelerometer calibration on the last step that has you level the 
 aircraft. For that step you should have made certain that the shaft was 
 perfectly straight up in pitch and roll. For this trim procedure, it is 
@@ -337,14 +337,14 @@ recommended that you check it and using the method below.
 Measure the actual frame angle (on a portion of the frame that is perpendicular
 to the mainshaft) in pitch and roll with your digital pitch gauge. Connected to
 your ground station software with MavLink, note the pitch and roll angle the
-flight controller is "seeing". Adjust the AHRS_TRIM_X and AHRS_TRIM_Y values so
-the flight controller "sees" the identical frame angle you measured with the
+autopilot is "seeing". Adjust the AHRS_TRIM_X and AHRS_TRIM_Y values so
+the autopilot "sees" the identical frame angle you measured with the
 digital pitch gauge. You can use the Level Horizon function in your ground station
 to level the horizon with the helicopter at actual level. That function will
 make the adjustments to the AHRS_TRIM's for you.
 
 The above is necessary so we can accurately measure the roll angle to set the
-ATC_HOVR_RLL_TRIM. The flight controller now "knows" when the mainshaft is
+ATC_HOVR_RLL_TRIM. The autopilot now "knows" when the mainshaft is
 perfectly vertical.
 
 Load the helicopter with its normal payload, and hover the helicopter

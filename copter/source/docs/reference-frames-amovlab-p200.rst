@@ -18,7 +18,7 @@ Parts List
 Connection and Setup
 --------------------
 
-- Mount the RC receiver to the frame and connect to the flight controller's "RC IN" port.  Note that the white wire should be at the bottom
+- Mount the RC receiver to the frame and connect to the autopilot's "RC IN" port.  Note that the white wire should be at the bottom
 
 Firmware used: Copter-4.0
 

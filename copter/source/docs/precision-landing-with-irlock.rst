@@ -74,7 +74,7 @@ Setup through Mission Planner
 =============================
 
 Set the following parameters through the Mission Planner (or other GCS)
-to enable the precision landing feature and then Reboot the flight controller.
+to enable the precision landing feature and then Reboot the autopilot.
 
 -  :ref:`PLND_ENABLED <PLND_ENABLED>` = 1
 -  :ref:`PLND_TYPE <PLND_TYPE>` = 2

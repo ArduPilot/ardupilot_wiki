@@ -33,7 +33,7 @@ Key features include:
 Getting started
 ===============
 
-The first thing that you will need is a multicopter with an :ref:`ArduPilot compatible flight controller <common-autopilots>`.
+The first thing that you will need is a multicopter with an :ref:`ArduPilot compatible autopilot <common-autopilots>`.
 Here is a list of :ref:`ready-to-fly vehicles <common-rtf>` to get started with quickly or you may choose to build your own.
 
 If you're using Copter on a :ref:`ready-to-fly vehicle <common-rtf>` then it should come pre-configured and tuned, ready for your first flight.
@@ -47,7 +47,7 @@ Then after :ref:`installing the ground station <common-install-gcs>` you can lik
    warnings.
 
 If you plan on building your own multicopter, the following pages will get your started.
-Please start by reading this section in order to understand what a multicopter can do, and how to select a frame, flight controller board,
+Please start by reading this section in order to understand what a multicopter can do, and how to select a frame, autopilot board,
 and other essential components.
 Then proceed to :ref:`First Time Setup <initial-setup>` to learn how to assemble your Copter and then :ref:`First Flight <flying-arducopter>` to learn how to configure and tune it.
 
@@ -63,7 +63,7 @@ please see the topics below:
 
     How Multicopters Work <what-is-a-multicopter-and-how-does-it-work>
     Choosing a MultiCopter Frame <choosing-a-frame>
-    Choosing a Flight Controller <common-choosing-a-flight-controller>
+    Choosing an Autopilot <common-choosing-a-flight-controller>
     Choosing a Ground Station <common-choosing-a-ground-station>
     Building Your Own Frame <what-you-need>
     MultiCopter Safety <safety-multicopter>

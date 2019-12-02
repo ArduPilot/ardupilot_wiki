@@ -27,7 +27,7 @@ Connecting and Configuring
     :width: 500px
 
 - each servo should be connected using the same outputs that would be used for motors on a regular multicopter (:ref:`see order here <connect-escs-and-motors>`)
-- the motor's ESC should be connected to the flight controller's channel 8 output
+- the motor's ESC should be connected to the autopilot's channel 8 output
 - :ref:`traditional helicopter firmware <traditional-helicopters>` should be loaded onto the vehicle.
 
 If using the `WLToys Assassin V383 a parameter file is available here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/WLToys_V383_HeliQuad.param>`__ and can be used to set all parameters immediately.

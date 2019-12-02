@@ -57,7 +57,7 @@ features:
 
 -  This is easily verified by looking at the Altimeter reading in your
    logs and seeing if it spikes or oscillates when near the ground.
--  If this is a problem, move the flight controller out of prop wash
+-  If this is a problem, move the autopilot out of prop wash
    effect or shield it with an appropriately ventilated enclosure.
 -  Success can be verified by flight test and by log results.
 

@@ -26,7 +26,7 @@ Additional Failsafes that may be set to switch to SmartRTL are: :ref:`BATT_FS_CR
 
 -  :ref:`RTL_SPEED <RTL_SPEED>` can be used to set the speed (in meters/second) at which the vehicle will return to home.  By default this parameter is zero meaning the :ref:`WPNAV_SPEED <WPNAV_SPEED>`  parameter value will be used.
 -  :ref:`SRTL_ACCURACY <SRTL_ACCURACY>` controls the accuracy (in meters) of the simplification and pruning performed.  The simplify algorithm will turn curved paths into straight lines but the line should never be more than this distance from the original path.  The pruning algorithm will cut paths that come within this many meters of each other.
--  :ref:`SRTL_POINTS <SRTL_POINTS>` controls the maximum number of points that can be stored.  Each additional 100 points requires about 3k of RAM and the image below shows how to check the flight controller's available memory (most flight controllers have enough memory for 500 points). If the maximum number of points is exhausted, "SmartRTL deactivated: buffer full" will be sent to the ground station and the user will not be able to switch into SmartRTL.
+-  :ref:`SRTL_POINTS <SRTL_POINTS>` controls the maximum number of points that can be stored.  Each additional 100 points requires about 3k of RAM and the image below shows how to check the autopilot's available memory (most autopilots have enough memory for 500 points). If the maximum number of points is exhausted, "SmartRTL deactivated: buffer full" will be sent to the ground station and the user will not be able to switch into SmartRTL.
 
 .. image:: ../images/smartrtl-freemem.jpg
     :target: ../_images/smartrtl-freemem.jpg
