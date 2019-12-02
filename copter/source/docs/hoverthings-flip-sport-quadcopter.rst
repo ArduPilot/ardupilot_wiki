@@ -61,7 +61,7 @@ What to get
    for $24.00 each.
 #. A 20 or 25 Amp four in one ESC from `Off the Grid Water <http://mymobilemms.com/OFFTHEGRIDWATER.CA/ESC/4-in-1-Speed-Control-Quad-HOBBYWING-Quattro-Skywalker-25A-X-41?cPath=2_4>`__
    for $40.00.
-#. A :ref:`Pixhawk <common-pixhawk-overview>` compatible flight controller.
+#. A :ref:`Pixhawk <common-pixhawk-overview>` compatible autopilot.
 #. A :ref:`GPS and Compass Module <common-positioning-landing-page>` module.
 #. Two `normal <https://www.rcdude.com/product-p/gf-1045-c.htm>`__
    and two `reverse <https://www.rcdude.com/product-p/gf-1045r-blk.htm>`__
@@ -117,7 +117,7 @@ Assembling the frame
 .. image:: ../images/FlipSportMotProp.jpg
     :target: ../_images/FlipSportMotProp.jpg
 
-Installing the Pixhawk flight controller
+Installing the Pixhawk autopilot
 ========================================
 
 #. If you are using a Pixhawk, mount the 4 remaining 7/8" long
@@ -155,7 +155,7 @@ Installing the Pixhawk flight controller
 #. Mount the GPS module to the top center of the top frame plate using
    double sided tape.
 
-Installing the PX4FMU/PX4IO flight controller
+Installing the PX4FMU/PX4IO autopilot
 =============================================
 
 #. If you are using a PX4 we can't use the top frame plate but can

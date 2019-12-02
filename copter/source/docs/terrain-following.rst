@@ -46,7 +46,7 @@ One common problem reported by users is the vehicle immediately disarms when the
 Terrain Spacing and Accuracy
 ----------------------------
 
-The :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter controls the size of the grid used when requesting terrain altitude from the Ground Station (it is not used if using a Lidar). This is 100m by default but reducing to 30 may provide better accuracy at the expense of more telemetry traffic between the GCS and Flight controller.  It is recommended that you use a :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` of at least 30 meters.
+The :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter controls the size of the grid used when requesting terrain altitude from the Ground Station (it is not used if using a Lidar). This is 100m by default but reducing to 30 may provide better accuracy at the expense of more telemetry traffic between the GCS and autopilot.  It is recommended that you use a :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` of at least 30 meters.
 
 If the ground station does not have terrain data available at the resolution requested by the aircraft then the ground station will interpolate as necessary to provide the requested grid size.
 

@@ -17,14 +17,14 @@ There are Lots of Ways you Can Put Together a MultiCopter
 #. For your first MultiCopter, DO NOT initially try to build a Photo /
    Video or First Person View copter, just build a good QuadCopter.
 #. Even if you know that's what you really want to do, it will take you
-   some time to come up to speed on our copters and flight controllers.
+   some time to come up to speed on our copters and autopilots.
 #. If you just want to get a taste and have a lot of fun, try one of the
    little inexpensive, safe, sturdy, ready to use Micro-QuadCopters
    below.
 #. If you know you're serious, try the **Flamewheel ARF Build** or if
    you just want to fly and can afford it get the high end \ **Iris**
    QuadCopter.
-#. The Iris includes a top end \ **Pixhawk** flight controller and both
+#. The Iris includes a top end \ **Pixhawk** autopilot and both
    the Iris and the Flamewheel can do **FPV** or **Video** when you are
    ready.
 #. Don't start with a \ **Frame Up Build** unless you have a complete
@@ -53,7 +53,7 @@ Chinese Imports Good Deal / Bad Deal?
 #. As you gain experience, you will learn which import items are
    serviceable, if you try to do it at the beginning things will not go
    well.
-#. I recommend you always get the main electronics (Flight Controller)
+#. I recommend you always get the main electronics (autopilot)
    from the primary source, in our case the Pixhawk from 3DRobotics.
 #. You will also want to get the electronic accessories (GPS,
    magentometer, telemetry and OSD if used) from 3DRobotics as well.
@@ -165,7 +165,7 @@ all inclusive kit is definitely the best place to start.
 
 #. The innovative `Iris QuadCopter <https://www.amazon.com/3DRobotics-3DR0171-3DR-IRIS-Quadcopter/dp/B00NWXY076>`__ is
 actually \ **Ready To Fly** and comes with the top of the line
-**Pixhawk** flight controller. However, these are no longer produced/sold by 3DR.
+**Pixhawk** autopilot. However, these are no longer produced/sold by 3DR.
 
     #. It is capable of fully autonomous flight and includes the RC
        transmitter, the battery and even telemetry, at $750.00 it is a real
@@ -263,7 +263,7 @@ Frame Kit
       than the DJI F450 Flamewheel - inexpensively.
    #. Although it's a small copter the Flip is powerful and agile enough
       to use FPV video and/or a GoPro Camera and brushless gimbal.
-   #. Here is a link to the :ref:`Hoverthings Flip Sport Quadcopter Wiki Build Page <hoverthings-flip-sport-quadcopter>` using a Pixhawk flight controller.
+   #. Here is a link to the :ref:`Hoverthings Flip Sport Quadcopter Wiki Build Page <hoverthings-flip-sport-quadcopter>` using a Pixhawk autopilot.
 
       .. image:: ../images/FlipPX41.jpg
           :target: ../_images/FlipPX41.jpg
@@ -356,11 +356,11 @@ A few words about the **Brand Name** Ready To Fly QuadCopters like the
 #. Within the scope of their capabilities these are generally well made
    and often a reasonable bargain for what they do.
 #. But they are also not easily modified or improved on and are not easy
-   to upgrade to a more powerful flight controller like the Pixhawk.
+   to upgrade to a more powerful autopilot like the Pixhawk.
 #. So although they are a moderately capable one stop solution, they can
    also be a bit of a costly dead end.
 #. You can put together a **Flamewheel ARF kit** with a top end
-   **Pixhawk flight controller** for about the same money and be way
+   **Pixhawk autopilot** for about the same money and be way
    ahead.
 
 Which Approach is Right for You
@@ -393,9 +393,9 @@ Which Approach is Right for You
 #. There are expensive, high end Multicopters, which are generally
    oriented to commercial photo or video use and outside our scope here.
 #. All of the Copters I have and will be putting together incorporate
-   a :ref:`Pixhawk <common-pixhawk-overview>` flight controller
+   a :ref:`Pixhawk <common-pixhawk-overview>` autopilot
 
-   #. These are the best and most capable flight controllers available
+   #. These are the best and most capable autopilots available
       and they have great **DIYDrones** community support.
    #. Beware of clones and counterfeits, they often have small
       differences that end up making them completely unusable.

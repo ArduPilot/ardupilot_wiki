@@ -15,7 +15,7 @@ Archived: Quick Start Guide for Ready-to-Fly Vehicles
 This page is a quick start guide for users who have purchased a *3DRobotics Ready-to-Fly (RTF) multicopter*
 including a Pixhawk preloaded with the latest Copter firmware.  
 All other users should skip to the :ref:`First Time Setup <initial-setup>` section which
-includes the full flight controller set-up and calibration instructions.
+includes the full autopilot set-up and calibration instructions.
 
 Install Mission Planner
 =======================

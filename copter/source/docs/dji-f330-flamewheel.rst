@@ -29,10 +29,9 @@ The DJI F450 Flamewheel is an excellent larger alternative to the F330
 -  The F450 is well suited to carrying a GoPro camera, brushless gimbal,
    landing gear and a larger battery for longer flights.
 -  The F330 and F450 FlameWheel are excellent platforms for the PX4 and
-   PixHawk Flight controllers as well as the APM.
+   PixHawk autopilots as well as the APM.
 
-   -  I  have, in fact, converted my personal F330 to use the PX4 flight
-      controller with great success.
+   -  I  have, in fact, converted my personal F330 to use the PX4 autopilot with great success.
 
 -  I strongly recommend the F330 and F450 ARF kits, they are reliable,
    rugged and inexpensive and are suitable for many uses.
@@ -45,7 +44,7 @@ The DJI F450 Flamewheel is an excellent larger alternative to the F330
 Components required in addition to the Flamewheel ARF kit
 =========================================================
 
--  A Flight Control Board (APM 2.6, PX4FMU + PX4IO or Pixhawk) with
+-  An autopilot (APM 2.6, PX4FMU + PX4IO or Pixhawk) with
    UBlox GPS module and power supply module.
 -  RC equipment: RC transmitter and a 5+ channel radio receiver (PPM-SUM
    compatible for PX4 or Pixhawk).
@@ -144,16 +143,15 @@ ESC Installation and Soldering the Power Distribution Board
 .. image:: ../images/FlameWheel330Oring800.jpg
     :target: ../_images/FlameWheel330Oring800.jpg
 
-Reduced Vibration Installation of the Flight Control Board
-==========================================================
+Reduced Vibration Installation of the Autopilot
+===============================================
 
--  The Flight controllers require special attention be paid to removing
-   as much vibration from the flight control board as possible.
+-  The autopilots require special attention be paid to removing
+   as much vibration from the autopilot as possible.
 
    -  This F330 FlameWheel has a special anti-vibration suspension
-      mounting of the APM flight controller.
-   -  It uses a folded over 1/16" O-ring at each corner of the flight
-      control board around a screw sticking out of a small standoff.
+      mounting of the APM autopilot.
+   -  It uses a folded over 1/16" O-ring at each corner of the autopilot around a screw sticking out of a small standoff.
    -  If you choose to use this method leave 1/10" to 1/8" clearance
       from each board corner for proper short coupled spacing.
    -  The F330 requires minor surgery with a Dremel tool on each frame
@@ -163,8 +161,8 @@ Reduced Vibration Installation of the Flight Control Board
    alternative to the O-ring suspension method.
 
    -  Simply put a 3/4 inch square of adhesive backed Kyosho Zeal Gel
-      under each corner of the flight controller.
-   -  And secure the flight controller with a Velcro strap over 1/2" of
+      under each corner of the autopilot.
+   -  And secure the autopilot with a Velcro strap over 1/2" of
       soft foam in light tension. (Do NOT over tighten!).
 
 -  Either the Kyosho Zeal Gel or the O-ring suspension method will allow
@@ -172,7 +170,7 @@ Reduced Vibration Installation of the Flight Control Board
 -  Anti-vibration techniques, methods and "tuning" are covered in
    greater detail in the :ref:`Anti-Vibration section of the Wiki <common-vibration-damping>`
 -  Compensation for compass interference from the motors is :ref:`covered here! <common-magnetic-interference>`
--  Correct wiring of The Flight Control Board board and configuration
+-  Correct wiring of the autopilot and configuration
    for flight are covered extensively elsewhere in the Wiki.
 
 .. image:: ../images/FlameWheel330OringMountEnd800.jpg
@@ -233,7 +231,7 @@ Getting Ready to Fly
    instructed elsewhere in this Wiki.
 
    -  You will then need to use Mission Planner to load the QuadCopter
-      firmware to your flight controller.
+      firmware to your autopilot.
    -  And you will then need to set up various flight parameters for
       your FlameWheel in the Mission Planner.
    -  (Do Not Attempt to Calibrate the DJI Opto ESCs and Do Not install
@@ -242,7 +240,7 @@ Getting Ready to Fly
 -  To prepare to fly place your copter on your takeoff location, turn
    your transmitter on and plug in the copter's battery.
 
-   -  (If you have a PX4 or Pixhawk flight controller depress the start
+   -  (If you have a PX4 or Pixhawk autopilot depress the start
       button for five seconds).
    -  The ESC's should emit a short series of musical notes and then be
       quiet.
