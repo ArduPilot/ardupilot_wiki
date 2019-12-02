@@ -17,8 +17,8 @@ to the wind speed the more important this is, See :ref:`wind vane <wind-vane>`.
 .. image:: ../images/sailboat-windvane.png
     :target: ../_images/sailboat-windvane.png
 
-Flight Controllers
-------------------
+Autopilots
+----------
 Sailing vehicles are supported by any autopilot, however if a wind vane is to be fitted one analogue ADC input
 must be available. On newer beta-flight style controllers this is typically labelled as RSSI. In order to fit a hot wire
 type wind speed sensor two more analogue inputs are required, although just a single additional input can be used with a

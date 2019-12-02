@@ -29,7 +29,7 @@ A good way to change the weight distribution is to move up/down the position of 
 
 
 **3) Minimum Throttle** : 
-If the minimum throttle sent to the motors from the Flight Controller is **too low** to turn on the motors, then the Balance Bot will move back and forth struggling to keep balance. Sometimes this issue can also cause it to drift off in one direction and topple. If the minimum throttle value is **too high** then the Balance Bot will be able maintain balance, but will be very wobbly. Refer to this guide to set the :ref:`minimum throttle <balance_bot-configure-throttle>` value correctly.
+If the minimum throttle sent to the motors from the autopilot is **too low** to turn on the motors, then the Balance Bot will move back and forth struggling to keep balance. Sometimes this issue can also cause it to drift off in one direction and topple. If the minimum throttle value is **too high** then the Balance Bot will be able maintain balance, but will be very wobbly. Refer to this guide to set the :ref:`minimum throttle <balance_bot-configure-throttle>` value correctly.
 
 **4) PID tuning** : 
 Improper PID tuning, especially high P or I gains can cause the vehicle to become wobbly. An insufficient D gain can also make the vehicle wobbly, but a very high D gain can cause very fast wobbling.
