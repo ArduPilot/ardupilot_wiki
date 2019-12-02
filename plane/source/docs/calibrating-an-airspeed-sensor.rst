@@ -19,7 +19,7 @@ If you have an airspeed sensor installed then it is critical that you do
 pre-flight checks to ensure that it is working correctly, and ensure
 that it is correctly zeroed.
 
-After you start up the flight controller on your aircraft you should wait at least 1
+After you start up the autopilot on your aircraft you should wait at least 1
 minute for your electronics to warm up, preferably longer, and then do a
 pre-flight calibration of your airspeed sensor. Your ground station
 software should have a menu for doing this, usually called "Preflight
@@ -49,7 +49,7 @@ on you having your airspeed sensor well placed on your aircraft, and
 some users may find they need to calibrate their airspeed sensor by
 changing :ref:`ARSPD_RATIO <ARSPD_RATIO>`.
 You will find an "Airspeed ratio" setting in the configuration page of
-the flight controller in your ground station.
+the autopilot in your ground station.
 
 Adjusting
 :ref:`ARSPD_RATIO <ARSPD_RATIO>` can be done automatically using the automatic calibration feature available
@@ -60,13 +60,13 @@ Automatic calibration
 =====================
 
 1. Ensure you have Plane 2.76 or later loaded
-2. Go to Mission Planner => CONFIG/TUNING => Full Parameter List, change :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1 and click 'Write Params' to send the value to the flight controller.
+2. Go to Mission Planner => CONFIG/TUNING => Full Parameter List, change :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1 and click 'Write Params' to send the value to the autopilot.
 3. Take-off and fly a repeated circuit or circular loiter for 5 minutes. This can be done in any mode, but if the autopilot is already tuned
    sufficiently well, this can be achieved by leaving it in loiter or RTL
    for 5 minutes. The change in :ref:`ARSPD_RATIO <ARSPD_RATIO>` value can be checked in-flight
    by going to Mission Planner => CONFIG/TUNING => Full Parameter List, and
    clicking 'Refresh Params'. Note that when the calibration is active, an
-   updated :ref:`ARSPD_RATIO <ARSPD_RATIO>` value is only saved in the flight controller's non-volatile
+   updated :ref:`ARSPD_RATIO <ARSPD_RATIO>` value is only saved in the autopilot's non-volatile
    memory every two minutes, and only if the value has changed by more than
    5% from the last saved value.
 4. Land,  go to Mission Planner => CONFIG/TUNING => Full Parameter List

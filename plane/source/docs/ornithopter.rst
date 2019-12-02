@@ -24,10 +24,10 @@ The 3D-printable parts need to be combined with the fuselage of other kits (more
 You can also try to build an ornithopter from scratch. `Ornithopter.org <http://www.ornithopter.org>`__ has info on how to do this. There's also an `ornithopter gearbox for sale by Birdkit <http://www.birdkit.com/models.gbx.html>`__, and some ornithopter gearboxes can also be found at `shapeways <https://www.shapeways.com/product/M926URRWW/functional-ornithopter>`__.
 
 At least two ornithopters (GosHawk25iV made by Kazuhiko, and Robird by Clear Flight Solutions) are
-known to work with an ardupilot flight controller. The `GosHawk25iV <https://discuss.ardupilot.org/t/ardupilot-on-ornithopter/13871>`__, and the `proprietary Robird <http://essay.utwente.nl/66500/1/Straatman_MA_EEMCS.pdf>`__, so in theory, many ornithopters could be made to work with it.
+known to work with an ardupilot autopilot. The `GosHawk25iV <https://discuss.ardupilot.org/t/ardupilot-on-ornithopter/13871>`__, and the `proprietary Robird <http://essay.utwente.nl/66500/1/Straatman_MA_EEMCS.pdf>`__, so in theory, many ornithopters could be made to work with it.
 
-Flight Controller Setup Differences
------------------------------------
+Autopilot Setup Differences
+---------------------------
 Fixed wing aircraft generally use 4 control ouputs: aileron, elevator, throttle and rudder.
 
 In Orinthopters, these primary controls are:
