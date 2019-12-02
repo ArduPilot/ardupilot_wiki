@@ -214,7 +214,7 @@ mode. The way you do this is to set the :ref:`FBWA_TDRAG_CHAN <FBWA_TDRAG_CHAN>`
 an RC input channel on your transmitter for a switch (usually a
 momentary switch, such as the trainer switch). When this RC channel goes
 high while you are on the runway waiting for takeoff in FBWA mode the
-autpilot will check if you have configured the :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` and
+autopilot will check if you have configured the :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` and
 :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` parameters. If they have been set to non-zero
 values then the elevator will be controlled in FBWA in an identical
 manner to how it is controller for an AUTO takeoff. The elevator will go

@@ -35,10 +35,10 @@ The Equipment List
 #. APM 2.6 with separate GPS/compass. (see note below)
 #. Radio: Spektrum DX8 and RX or any other 5 channel or higher system.
 #. Prop: APC 8x4E . Pusher or puller may be used since motor direction is easily changed just by swapping wires.
-#. Y-servo-cable to connect both aileron servos together to one flight controller output.
+#. Y-servo-cable to connect both aileron servos together to one autopilot output.
 
 
-.. note:: This flight controller is no longer supported. See the current flight controller :ref:`list<common-autopilots>` . OmnibusF4 Pro V3 is an inexpensive alternative. Any UBLOX MN-8 class GPS works well, such as a BN-220. A compass (gps/compass combo parts are available) is not necessary for ArduPilot on planes.
+.. note:: This autopilot is no longer supported. See the current autopilot :ref:`list<common-autopilots>` . OmnibusF4 Pro V3 is an inexpensive alternative. Any UBLOX MN-8 class GPS works well, such as a BN-220. A compass (gps/compass combo parts are available) is not necessary for ArduPilot on planes.
 
 Getting Started
 ===============
@@ -57,7 +57,7 @@ About using an external SBEC: I chose to do this because I am an RC heli guy, an
 Programming the ESC
 ===================
 
-#. Using the ESC's setup instructions, set the ESC's low voltage cutoff to its lowest setting to allow   the flight controller battery level failsafe feature do its job. (be sure to enable it!)
+#. Using the ESC's setup instructions, set the ESC's low voltage cutoff to its lowest setting to allow   the autopilot battery level failsafe feature do its job. (be sure to enable it!)
 #. Don't worry about motor direction; you can just switch two of the motor
    wires if the motor spins backwards.
 #. Follow the :ref:`ESC setup guide <guide-esc-calibration>` to calibrate the ESC
@@ -89,20 +89,20 @@ If you do not use an external SBEC, skip to the last step.
 .. image:: ../images/Bixler-build-12.jpg
     :target: ../_images/Bixler-build-12.jpg
 
-Setting up the Flight Controller, sensors, and optional equipment
-=================================================================
+Setting up the Autopilot, Sensors, and Optional Equipment
+=========================================================
 
 The purpose of this article is to detail the aircraft build, not the APM. There
 are many documents in the wiki covering the APM, sensors, and tuning.
 `Airplane walk-through <http://ardupilot.org/plane/docs/arduplane-setup.html>`_ .
 
-Mount the Flight Controller and install the wiring
+Mount the autopilot and install the wiring
 ==================================================
 
-#. Make a 45 x 100 mm mounting plate for the flight controller using 5mm plywood (or
+#. Make a 45 x 100 mm mounting plate for the autopilot using 5mm plywood (or
    plastic or fiberglass board).
 #. Use a 1" square of Kyosho Zeal Gel or Dubro foam under each corner of
-   the flight controller to provide vibration suppression.
+   the autopilot to provide vibration suppression.
 #. Zeal has high strength double sided adhesive, but if your pads do
    not, consider using "Welders Glue" available at Amazon or Lowes.
 #. Re Welder's Glue: it is contact cement. Lightly cover each surface
@@ -112,7 +112,7 @@ Mount the Flight Controller and install the wiring
 #. I will also use Welder's Glue for assembling the foam air frame
    and building an access door in the fuselage.
 
-**The APM flight controller mounted on the plate: (Pictured are the stock cables to the
+**The APM autopilot mounted on the plate: (Pictured are the stock cables to the
 GPS. I actually used longer 30cm cables)**
 
 .. image:: ../images/Bixler-build-11.jpg
@@ -227,7 +227,7 @@ COMPONENT Installation Details
 Complete The Construction
 =========================
 
-#. Use a Y servo splitter cable for the ailerons, although using separate flight controller outputs would allow the use of :ref:`flaperons<flaperons-on-plane>`.
+#. Use a Y servo splitter cable for the ailerons, although using separate autopilot outputs would allow the use of :ref:`flaperons<flaperons-on-plane>`.
 #. I am quite happy with this setup because you can get the CG perfect
    with Zippy 3s 2200mAh Lipo batteries. I was able to use up to 3000 mAh batts.
 #. I mounted the GPS/Compass on the right wing after removing just a

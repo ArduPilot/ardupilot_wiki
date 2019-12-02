@@ -49,7 +49,7 @@ Common Problems
 #. The vehicle `circles (aka "toiletbowls") <https://www.youtube.com/watch?v=a-3G9ZvXHhk>`__.  This
    is normally caused by a compass problem the most likely being
    :ref:`magnetic interference <common-diagnosing-problems-using-logs_compass_interference>`
-   from the power cables under the flight controller. Other possibilities include bad compass offsets set during the :ref:`live calibration process <common-compass-calibration-in-mission-planner>` or
+   from the power cables under the autopilot. Other possibilities include bad compass offsets set during the :ref:`live calibration process <common-compass-calibration-in-mission-planner>` or
    incorrect compass orientation.
 #. The vehicle takes off in the wrong direction as soon as QLOITER is engaged.  The cause is the same as #1 except that the compass error is greater than 90deg.  Please try the suggestions above to resolve this.
 #. The vehicle is QLOITERing normally and then suddenly takes off in the
