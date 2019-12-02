@@ -20,7 +20,7 @@ motionless on the ground until the :ref:`LEDs <common-leds-pixhawk>` stop flashi
 Disengage the safety switch (if present)
 ========================================
 
-If the flight controller has a :ref:`safety switch <common-safety-switch-pixhawk>` connected, it must be disengaged before the vehicle can be :ref:`armed <arming-your-plane>`.
+If the autopilot has a :ref:`safety switch <common-safety-switch-pixhawk>` connected, it must be disengaged before the vehicle can be :ref:`armed <arming-your-plane>`.
 
 -  **Safety Switch LED Indications:**
 
@@ -29,7 +29,7 @@ If the flight controller has a :ref:`safety switch <common-safety-switch-pixhawk
    -  Slow Blinking indicates: Safe condition. Safety can be disengaged
       by depressing Safety Button for 5 seconds.
    -  LED Continuously on indicates: Safety has been disengaged. The
-      flight controller may be armed with Throttle down and to the
+      autopilot may be armed with Throttle down and to the
       right.
    -  When the LED is continuously on indicating Safety Disengaged it
       may be toggled back to a Safety engaged condition by depressing
@@ -54,7 +54,7 @@ If the vehicle has an :ref:`airspeed sensor <airspeed>` then the :ref:`pre-fligh
 Wait for GPS lock
 =================
 
-You should wait for GPS lock before flying which is normally indicated by the flight controller's :ref:`LEDs <common-leds-pixhawk>` becoming green.
+You should wait for GPS lock before flying which is normally indicated by the autopilot's :ref:`LEDs <common-leds-pixhawk>` becoming green.
 If you do not wait for GPS lock the barometric altimeter calibration will be incorrect and :ref:`RTL <rtl-mode>`, :ref:`Loiter <loiter-mode>`, :ref:`Auto <auto-mode>` and any other GPS dependent modes will not work properly.
 
 For Plane the home position is initially established at the time the

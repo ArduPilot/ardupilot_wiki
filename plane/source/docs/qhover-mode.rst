@@ -23,7 +23,7 @@ information here pertains to those modes as well.
 
 .. note::
 
-   The flight controller uses a barometer which measures air pressure
+   The autopilot uses a barometer which measures air pressure
    as the primary means for determining altitude ("Pressure Altitude") and
    if the air pressure is changing in your flight area due to extreme
    weather, the QuadPlane will follow the air pressure change rather than
@@ -102,7 +102,7 @@ Common Problems
 #. Momentary altitude loss of 1m ~ 2m when the QuadPlane levels out after a
    high speed forward flight.  This is caused by an aerodynamic effect
    which leads to a momentary low pressure bubble forming on the top of
-   the QuadPlane where the flight controller is mounted which leads the
+   the QuadPlane where the autopilot is mounted which leads the
    QHOVER controller to believe it is climbing so it responds by
    descending.  There is no cure for this behaviour at the moment
    although increasing the ``EK2_ALT_M_NSE`` parameter reduces 
@@ -112,7 +112,7 @@ Common Problems
 #. Altitude hold becomes erratic when the vehicle is close to the ground
    or during landing.  This can be caused by the barometer being
    affected by pressure changes created by prop-wash.  The solution is
-   to move the flight controller out of the prop wash effect or shield
+   to move the autopilot out of the prop wash effect or shield
    it within an appropriately ventilated enclosure.
 #. Sudden altitude changes caused by light striking the barometer. 
    Assuring sunlight cannot hit the baro will cure this.

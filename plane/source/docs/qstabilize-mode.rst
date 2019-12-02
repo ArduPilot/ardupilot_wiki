@@ -60,7 +60,7 @@ Common Problems
 -  QuadPlane flips immediately upon take-off.  This is usually caused
    by the motor order being incorrect or spinning in the wrong direction
    or using an incorrect propeller (clockwise vs counter-clockwise). 
-   Check the rc connections for your flight controller.
+   Check the rc connections for your autopilot.
 -  QuadPlane wobbles on roll or pitch axis.  This usually means the Rate P
    values are incorrect.  See Copter Tuning section for some hints as to
    how to adjust the Q_A_xxx parameters.

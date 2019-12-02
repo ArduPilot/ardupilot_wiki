@@ -74,7 +74,7 @@ When calibrating your RC input you should also be careful to set the
 minimum value of the throttle (usually RC3_MIN) to the minimum value
 when in normal flight control. Don't set it to the value used by your
 transmitter when in throttle failsafe or you won't be able to arm using
-the rudder as the flight controller will think you are at a non-zero throttle level.
+the rudder as the autopilot will think you are at a non-zero throttle level.
 
 How to Arm
 ==========
@@ -103,7 +103,7 @@ pilots while flying so there are additional requirements prior to disarm:
 -  You need to allow rudder disarming by changing **ARMING_RUDDER**
    parameter to 2 (ArmOrDisarm) or use the ARM/DISARM switch function provided by 
    setting an RC channel's RCx_OPTION to 41.
--  The flight controller needs to make sure that you are not actually
+-  The autopilot needs to make sure that you are not actually
    flying. There is an algorithm for this that uses the **airspeed sensor**
    readings. So you need this source available and giving values lower
    enough (in a windy day you might not be able to disarm even landed

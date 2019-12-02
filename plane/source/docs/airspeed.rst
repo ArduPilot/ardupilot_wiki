@@ -9,8 +9,7 @@ conditions, slow flight and autonomous landings. It is not recommended
 for most new users, however, as it does require additional tuning and
 adds one more layer of control to set up.
 
-The following sections explain how to wire sensors to the flight
-controller. After you install an airspeed sensor don't forget to
+The following sections explain how to wire sensors to the autopilot. After you install an airspeed sensor don't forget to
 :ref:`calibrate it <calibrating-an-airspeed-sensor>`!
 
 .. image:: ../images/BR-0004-03-2T1.jpg
@@ -20,12 +19,12 @@ controller. After you install an airspeed sensor don't forget to
 ARSPD_USE
 =========
 
-:ref:`ARSPD_USE<ARSPD_USE>` enables airspeed use for automatic throttle modes instead of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` . The flight controller continues to display and log airspeed if set to 0, but only airspeed sensor readings for control if set to 1. It will only use airspeed sensor readings when throttle is idle, if set to 2 (useful for gliders with airspeed sensors behind propellers).
+:ref:`ARSPD_USE<ARSPD_USE>` enables airspeed use for automatic throttle modes instead of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` . The autopilot continues to display and log airspeed if set to 0, but only airspeed sensor readings for control if set to 1. It will only use airspeed sensor readings when throttle is idle, if set to 2 (useful for gliders with airspeed sensors behind propellers).
 
 Airspeed Sensor Type
 ====================
 
-Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the flight controller, while digital sensors connect to the flight controller's external I2C bus using the SDA and SCL external digital I/O pins. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, and supported digital sensors by other numbers. If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value if no sensor is present.
+Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the autopilot, while digital sensors connect to the autopilot's external I2C bus using the SDA and SCL external digital I/O pins. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, and supported digital sensors by other numbers. If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value if no sensor is present.
 
 .. warning:: Many airspeed sensors are sensitive to light. Unless you are certain that the particular sensor used is not light sensitive, in order to avoid measurement errors, the sensor should be shielded from light.
 
@@ -121,11 +120,11 @@ For the Pixhawk
    -  For Pixhawk v4, set the :ref:`ARSPD_PIN <ARSPD_PIN>` parameter to 4 in the Advanced Parameter
       List and select "Write Parameters". 
 
-For other Flight Controllers
+For other  autopilots:
 
 - Many have an analog RSSI input pin that can serve as the analog airspeed sensor input.
 
-.. note:: Most analog sensors output a signal from 0 to 5V, but most RSSI inputs are 3.3V maximum. If you will never exceed ~60% of the sensor's maximum speed output (normally ~ 200mph for 5V), you will not exceed that rating. However, if you might or just want to be absolutely safe, you can use a 2:1 resistive voltage divider on the signal before applying to the flight controller RSSI input pin.
+.. note:: Most analog sensors output a signal from 0 to 5V, but most RSSI inputs are 3.3V maximum. If you will never exceed ~60% of the sensor's maximum speed output (normally ~ 200mph for 5V), you will not exceed that rating. However, if you might or just want to be absolutely safe, you can use a 2:1 resistive voltage divider on the signal before applying to the autopilot RSSI input pin.
 
 APM 2
 -----
@@ -219,8 +218,7 @@ the value of ARSPD_AUTOCAL to 1.
 Using a different pin for the airspeed sensor
 =============================================
 
--  To assign the airspeed sensor to a specific pin, hook up your flight
-   controller to your PC via USB. Start Mission Planner and select the
+-  To assign the airspeed sensor to a specific pin, hook up your autopilot to your PC via USB. Start Mission Planner and select the
    **Connect** button on the upper right of the page.
 -  Select the *Configuration* tab then **Advanced Params** and then the
    **Adv Parameter List**. Scroll down the list to the :ref:`ARSPD_PIN <ARSPD_PIN>`

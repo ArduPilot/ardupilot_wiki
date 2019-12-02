@@ -53,7 +53,7 @@ Parts List
 #. ESC: 40-60A, no BEC required
 #. Prop: APC-E or Aeronaut folding 9X7 for Cobra, 8x6 for Sunnysky motor
 #. Servos: 4- 9g to 12g mini servos. EMAX ES08MA, for example.
-#. Flight Controller: MatekF405-Wing
+#. Autopilot: MatekF405-Wing
 #. GPS: Any UBLOX MN-8 class GPS with or without compass (Compass is optional). BN-220 is an example.
 #. Receiver: Any 6 Channel TX/RX system. For long range, 433 or 900 Mhz systems (Dragonlink, TBS, etc.) are appropriate, short range 2.4GHz (FRSky, Futaba, Spektrum,etc.).
 #. Telemetry (optional): 3DR or  radio systems, or via the receiver if it has that capability, like Dragonlink (bi-directional) or FRSky (downlink only).
@@ -81,7 +81,7 @@ Before gluing the fuselage halves, set up the motor mount plate with APC prop bu
 .. image:: ../images/MT-mtrmnt3.jpg
     :target: ../_images/MT-mtrmnt3.jpg
 
-After gluing in the motor mount, glue in the center structure. Optionally, add some cable guides to each side and some velcro lock to hold the Receiver. The center structure does not come with a floor in the kit to allow mounting the flight controller. Either add a ply plate to the bottom, or 3D print one of Mark Qvale's mounting plates from his `website <https://itsqv.com>`_.
+After gluing in the motor mount, glue in the center structure. Optionally, add some cable guides to each side and some velcro lock to hold the Receiver. The center structure does not come with a floor in the kit to allow mounting the autopilot. Either add a ply plate to the bottom, or 3D print one of Mark Qvale's mounting plates from his `website <https://itsqv.com>`_.
 
 .. image:: ../images/MT-fcmnt2.jpg
     :target: ../_images/MT-fcmnt2.jpg
@@ -110,7 +110,7 @@ The provides straight pushrods to the Vtail surfaces. However, there is high mis
 Power Train
 ===========
 
-Its important to keep the leads from the Flight Controller ESC power terminals short (<4-5inchs)to the ESC. If long leads are unavoidable, you will need to add low-ESR capacitors to the ESC input to prevent possible damage. Some ESCs already have these capacitors.
+Its important to keep the leads from the autopilot's ESC power terminals short (<4-5inchs)to the ESC. If long leads are unavoidable, you will need to add low-ESR capacitors to the ESC input to prevent possible damage. Some ESCs already have these capacitors.
 
 Long leads from the ESC to the motor are acceptable.
 
@@ -138,7 +138,7 @@ The images below illustrate the typical component placement.
 .. image:: ../images/MT-fc.jpg
     :target: ../_images/MT-fc.jpg
 
-As shown, the GPS and Telemetry connections are compatible with the serial port defaults loaded when the firmware for the Matek flight controller is programmed.
+As shown, the GPS and Telemetry connections are compatible with the serial port defaults loaded when the firmware for the Matek autopilot is programmed.
 
 The SERVOx_FUNCTIONS will have to be set such that the following is assigned:
 
@@ -170,7 +170,7 @@ See :ref:`FPV Plane <basic-setup>` for information on software setup.
 FPV Equipment
 =============
 
-Choices for FPV cameras and transmitters are numerous and increase daily. Be sure that both camera and video transmitter can operate at 9V, since the MatekF405-Wing flight controller provides this supply for video. Optionally, the video supply can be changed from 9V to 12V via a solder jumper on the back of the flight controller.
+Choices for FPV cameras and transmitters are numerous and increase daily. Be sure that both camera and video transmitter can operate at 9V, since the MatekF405-Wing autopilot provides this supply for video. Optionally, the video supply can be changed from 9V to 12V via a solder jumper on the back of the autopilot.
 
 For long range operation, the video transmitter should operate on 1.2Ghz or 1.3Ghz . For distances of 2Km or less, 5.8GHz transmission is usually used.
 
@@ -184,7 +184,7 @@ Options
 Airspeed Sensor
 ---------------
 
-With the additional of a digital airspeed sensor, precision airspeed control can be obtained during cruise portions of flight, and can be attached to the MatekF405-Wing flight controller's CL1/DA1 or CL2/DA2 pins. However, this is optional and ArduPlane flies extremely well without this addtion. See the :ref:`Airspeed sensor <airspeed>` section for more information.
+With the additional of a digital airspeed sensor, precision airspeed control can be obtained during cruise portions of flight, and can be attached to the MatekF405-Wing autopilot's CL1/DA1 or CL2/DA2 pins. However, this is optional and ArduPlane flies extremely well without this addtion. See the :ref:`Airspeed sensor <airspeed>` section for more information.
 
 .. image:: ../images/MT-arspd1.jpg
     :target: ../_images/MT-arspd1.jpg
@@ -195,7 +195,7 @@ With the additional of a digital airspeed sensor, precision airspeed control can
 Compass
 -------
 
-Similarly, a compass can be added by attaching to the flight controller's CL1/DA1 or CL2/DA2 pins. This is also optional and provides marginally better navigation tracking in CRUISE and AUTO modes.
+Similarly, a compass can be added by attaching to the autopilot's CL1/DA1 or CL2/DA2 pins. This is also optional and provides marginally better navigation tracking in CRUISE and AUTO modes.
 
 
 Gimbles

@@ -9,7 +9,7 @@ Introduction
 ------------
 
 With ArduPilot (AP) it is possible to use a fully functional, powerful autonomous flight system on inexpensive, highly
-integrated flight controller boards, including onboard battery monitoring and an onboard OSD. Due to ArduPilot's 
+integrated autopilot boards, including onboard battery monitoring and an onboard OSD. Due to ArduPilot's 
 multitude of options and parameters, a first time setup may seem daunting. 
 This guide attempts to provide the necessary instructions to get airborn on a typical ArduPlane setup with autonomous 
 flight fleatures and is intentionally focussing only a small part of what ArduPilot has to offer. 
@@ -133,7 +133,7 @@ Go to the Initial Configuration -> Mandatory Hardware -> Accelerometer Calibrati
 perform the full calibration. For the level position carefully level the wings laterally, and have the wing chord 
 set a few degrees (~ 3 deg) nose up, since this is the normal cruise attitude for level flight for most planes.
 This can be reset using the LEVEL only calibration button at any time. Also check that the orientation of the 
-flight controller is correct. Moving the plane should be correctly reflected in the HUD display of MP. 
+autopilot is correct. Moving the plane should be correctly reflected in the HUD display of MP. 
 Otherwise, you will need to manually change the AHRS_ORIENTATION parameter appropriately.
 
 -  Servo Functions
@@ -152,7 +152,7 @@ Reverse the sevos with the reverse box for a servo if needed. If you have correc
 
 -  OSD
 
-For flight controllers with integrated OSDs, this should be automatically enabled. You
+For autopilots with integrated OSDs, this should be automatically enabled. You
 can use the Onboard OSD subtab in MP Initial Setup tab to setup the display configuration.
 Note that the elements of each OSD screen are visible only after having enabled that screen
 and rebooting/reconnecting to the FC.
@@ -231,7 +231,7 @@ good basic performance. In order to display this in the OSD, you will need to se
 4. If you have a small flying wing (like Z-84), it might be required to decrease your default PTCH2SRV_P value if it is too aggressive and causes flutter. In that case, reduce the default by half.
 
 
-5. ARMING: Leave all arming parameters at default. There is no reason to disable these safety checks. You should be able to get a GPS lock even indoors with modern GPS units. Inability to arm due to one of these checks failing means something has to be corrected. This adds noticeable safety by keeping you from accidentally starting your flight without your flight controller being in a fully functional state.
+5. ARMING: Leave all arming parameters at default. There is no reason to disable these safety checks. You should be able to get a GPS lock even indoors with modern GPS units. Inability to arm due to one of these checks failing means something has to be corrected. This adds noticeable safety by keeping you from accidentally starting your flight without your autopilot being in a fully functional state.
 
 All other parameters can be left to default. However, after you get some flights, you might want to play with:
 LIM_PITCH_MAX, LIM_ROLL_CD, and FBWB_CLIMB_RATE. These are pretty docile at default values.

@@ -40,7 +40,7 @@ Alternatively, you may :ref:`configure the plane to return to a Rally Point <com
 
 .. warning::
 
-   In QRTL mode the flight controller uses a barometer which
+   In QRTL mode the autopilot uses a barometer which
    measures air pressure as the primary means for determining altitude
    ("Pressure Altitude") and if the air pressure is changing in your flight
    area, the copter will follow the air pressure change rather than actual

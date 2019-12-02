@@ -150,7 +150,7 @@ using a target descent rate. Once the flare is started the throttle is
 "disabled" - set to some value between :ref:`THR_MIN <THR_MIN>` and
 zero.
 
-The main job of the flight controller in the flare is to try to achieve
+The main job of the autopilot in the flare is to try to achieve
 the descent rate specified in the
 :ref:`TECS_LAND_SINK <TECS_LAND_SINK>` parameter. That defaults to 0.25 meters/second, which is a reasonable
 touchdown vertical speed for most models. To achieve that speed the TECS
@@ -397,7 +397,7 @@ The key parameters that control reverse thrust landing in addition to the ones :
 -  :ref:`SERVO3_TRIM <SERVO3_TRIM>`
 -  :ref:`THR_MIN <THR_MIN>`
 
-Most important is to set the ::ref:`SERVO3_TRIM <SERVO3_TRIM>` (assuming the esc/motor is attached to output 3)to the point that the ESC is idle, usually around mid-range (1500us) to create an output curve that has :ref:`SERVO3_MAX<SERVO3_MAX>` for full forward thrust, and :ref:`SERVO3_MAX<SERVO3_MIN>` for full reverse thrust. This should be done AFTER the RC Calibrations setup step. The maximum amount of reverse thrust used in flight controller throttle controlled modes is set by :ref:`THR_MIN <THR_MIN>`. A value of -100 provides the maximum, while -20 would provide 20% of  maximum, and so on.
+Most important is to set the ::ref:`SERVO3_TRIM <SERVO3_TRIM>` (assuming the esc/motor is attached to output 3)to the point that the ESC is idle, usually around mid-range (1500us) to create an output curve that has :ref:`SERVO3_MAX<SERVO3_MAX>` for full forward thrust, and :ref:`SERVO3_MAX<SERVO3_MIN>` for full reverse thrust. This should be done AFTER the RC Calibrations setup step. The maximum amount of reverse thrust used in autopilot throttle controlled modes is set by :ref:`THR_MIN <THR_MIN>`. A value of -100 provides the maximum, while -20 would provide 20% of  maximum, and so on.
 
 The :ref:`USE_REV_THRUST <USE_REV_THRUST>` parameter is a bit mask that allows the setting of when reverse thrust can be activated, as when autolanding, or in other throttle controlled modes.
 

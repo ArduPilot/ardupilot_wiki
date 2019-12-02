@@ -23,5 +23,5 @@ The manufacturer recommended parts can be found by clicking the bottom left icon
 - 4x Yingyan ES3054 Servos
 - 2x APC1170 forward and backward propeller (if using 4S battery) OR 2x APC1260 forward and backward propeller (for 6S)
 - 20,000mAh 4S battery OR 16,000mAh 6S
-- :ref:`ArduPilot compatible flight controller <common-autopilots>`
+- :ref:`ArduPilot compatible autopilot <common-autopilots>`
 - :ref:`Telemetry system <common-telemetry-landingpage>`

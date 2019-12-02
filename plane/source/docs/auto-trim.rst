@@ -12,7 +12,7 @@ SERVO_AUTO_TRIM
 
 By setting :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` to 1, ArduPlane will constantly monitor how much it needs to correct the flying trim to maintain level AHRS pitch and roll while in the aforementioned modes. Every 10 seconds, it will store this trim into the appropriate SERVOx_TRIM values for outputs assigned to control roll and pitch (ie Aileron/Elevator, Elevons, etc.). This includes flaperon and differential spoiler configurations. After a minute or so of flight, the trims will be adjusted such that minor trim errors will be canceled out when switching back to MANUAL and ACRO modes.
 
-The amount that can be trimmed is limited to about 25% of the throw, so very radical out-of-trim conditions are not correctable. Also, it will not be updated unless there is no pilot input, the plane is being controlled by the flight controller to be in generally level flight, and the plane is flying above 8m/s ground speed.
+The amount that can be trimmed is limited to about 25% of the throw, so very radical out-of-trim conditions are not correctable. Also, it will not be updated unless there is no pilot input, the plane is being controlled by the autopilot to be in generally level flight, and the plane is flying above 8m/s ground speed.
 
 .. note:: This does not substitute for having an incorrect CG. It will compensate for minor trim issues with small CG variations, but a badly located CG will still make the Plane uncontrollable and crashes inevitable.
 
