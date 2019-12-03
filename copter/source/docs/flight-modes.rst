@@ -10,7 +10,7 @@ for Copter.
 Overview
 ========
 
-Copter has 20 flight built-in flight modes, 10 of which are regularly
+Copter has 22 flight built-in flight modes, 10 of which are regularly
 used. There are modes to support different levels/types of flight
 stabilization, a sophisticated autopilot, a follow-me system etc.
 
@@ -39,8 +39,9 @@ companion computer.
    <tr><td>RTL</td><td>A</td><td>A</td><td>Y</td><td>Retruns above takeoff location, may aslo include landing</td></tr>
    <tr><td>Simple/Super Simple</td><td></td><td></td><td>Y</td><td>An add-on to flight modes to use pilot's view instead of yaw orientation</td></tr>
    <tr><td>SmartRTL</td><td>A</td><td>A</td><td>Y</td><td>RTL, but traces path to get home</td></tr>
-   <tr><td>Stabilize</td><td>-</td><td>+</td><td></td><td>Self-levels the roll and pitch axis</td></tr>
    <tr><td>Sport</td><td>s</td><td>s</td><td></td><td>Alt-hold, but holds pitch & roll when sticks centered</td></tr>
+   <tr><td>Stabilize</td><td>-</td><td>+</td><td></td><td>Self-levels the roll and pitch axis</td></tr>
+   <tr><td>SysID</td><td>-</td><td>+</td><td></td><td>Special diagnostic/modeling mode</td></tr>
    <tr><td>Throw</td><td>A</td><td>A</td><td>Y</td><td>Holds position after a throwing takeoff</td></tr>
    <tr><td>ZigZag</td><td>A</td><td>A</td><td>Y</td><td>Useful for crop spraying</td></tr>
    </table>
@@ -89,6 +90,7 @@ Additional flight modes:
 -  :ref:`Follow Me <ac2_followme>`
 -  :ref:`Simple and Super Simple <simpleandsuper-simple-modes>`
 -  :ref:`Smart RTL (Return-to-Launch) <smartrtl-mode>`
+-  :ref:`SysID (System Identificaton) <systemid-mode>`
 -  :ref:`ZigZag <zigzag-mode>`
 -  :ref:`Avoid_ADSB <common-ads-b-receiver>` for ADS-B based avoidance of manned aircraft.  Should not be set-up as a pilot selectable flight mode.
 
@@ -125,6 +127,7 @@ Do not require GPS lock:
 -  :ref:`Alt Hold <altholdmode>`
 -  :ref:`Stabilize <stabilize-mode>`
 -  :ref:`Sport <sport-mode>`
+-  :ref:`SysID <systemid-mode>`
 -  :ref:`Land <land-mode>`
 
 Full list of flight modes
@@ -153,5 +156,6 @@ Full list of flight modes
     Smart RTL (Return-to-Launch) <smartrtl-mode>
     Sport <sport-mode>
     Stabilize <stabilize-mode>
+    System Identification <systemid-mode>
     Throw <throw-mode>
     ZigZag <zigzag-mode>
