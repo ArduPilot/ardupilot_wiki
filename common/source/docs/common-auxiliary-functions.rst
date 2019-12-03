@@ -611,6 +611,17 @@ This three position switch determines if surface tracking via rangefinder is tow
    </td>
    </tr>
    <tr>
+   <tr>
+   <td><strong>Standby</strong></td>
+   <td>
+
+This puts the autopilot control loops into a soft standby mode so that a parallel, redundant autopilot or companion computer can assume control of the vehicle. The PID loops, position, altitude controllers are modified such that the autopilot can smoothly resume control of the vehicle when standby is subsequently disabled. Switching of outputs or other peripherals must be done by external circuitry.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
    <td><strong>Mainsail</strong></td>
    <td>
 
