@@ -1,15 +1,12 @@
 .. _home:
 
-.. image:: /images/ArduPilot.png
-    :target: _images/ArduPlane.png
-
+==========
+Plane Home
+==========
 
 .. image:: /images/home_plane.jpg
     :target: _images/home_plane.jpg
 
-==========
-Plane Home
-==========
 
 The free Plane firmware running on a compatible controller board gives
 any fixed-wing aircraft full autonomous capability. VTOL fixed-wing aircraft that 
