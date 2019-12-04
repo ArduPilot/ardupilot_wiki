@@ -31,7 +31,7 @@ QLAND Mode attempts to bring the QuadPlane straight down at the position the veh
     In any mode based on using the barometer: QLAND, QLOITER, QHOVER, QRTL, if your QuadPlanes     operation becomes erratic when you
     are close to the ground or landing (and also if any auto landing
     procedure results in bouncing or failure to turn off motors properly
-    after landing) you probably have the fight controller situated such that
+    after landing) you probably have the autopilot situated such that
     it's barometer (altimeter) is being affected by the pressure created by
     the QuadPlanes prop-wash against the ground.
 
