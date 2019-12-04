@@ -280,11 +280,11 @@ For simulating 2 copters, an example script has been added which will create 2 c
     }
 
 Press Play, cd to ardupilot directory then run the script to launch 2 copter instances.
-You can specify the IP address of the computer with the GCS, if everything is on the same computer, use 127.0.0.1
+You can optionally specify the IP address of the computer with the GCS as the first argument, by default it'll be 127.0.0.1, meaning everything is on the same computer.
 
 ::
 
-    libraries/SITL/examples/Airsim/follow-copter.sh 127.0.0.1
+    libraries/SITL/examples/Airsim/follow-copter.sh <IP>
 
 To attach MAVProxy -
 
@@ -296,11 +296,38 @@ This will bring up the map but with only a single vehicle, use the ``vehicle`` c
 
 Now, you can have the first vehicle (i,e with SYSID 1) flying in Guided or Auto Mission, and then takeoff the second vehicle and put it in Follow mode, after which the second copter will follow the first one.
 
-For increasing the number of simulated vehicles, just modify the ``seq`` number in the script and add the settings for each individual vehicle in the ``settings.json``.
+For increasing the number of simulated vehicles, just modify the ``NCOPTERS`` variable in the script and add the settings for each individual vehicle in the ``settings.json``.
+
+.. note::
+
+    There can be certain problems while working on multi-vehicle simulation due to networking differences between platforms such as Linux, WSL, Cygwin, etc. `This Discuss thread <https://discuss.ardupilot.org/t/simulating-2-drones-with-sitl-airsim-in-windows-cygwin-wont-work/49292>`__ could be helpful in such cases.
 
 .. note::
 
     The difference of 10 between the ports is important since the script is launching the vehicles using the ``instance`` option which increases the ports from ArduPilot's side by 10. For using different ports, modify the script as required following the instructions at the end of the page for specifying the ports.
+
+ROS with Multi-Vehicle Simulation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Using ROS for multi-vehicle tasks is a common usecase and Mavros is used for working with Mavlink-based vehicles. There are some example scripts demonstrating how to use Mavros with multiple vehciles in ArduPilot.
+
+First is the `multi_vehicle.sh script <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Airsim/multi_vehicle.sh>`__ which launches multiple ArduCopter binaries with different SYSIDs and ports for each vehicle. Usage is similar to the above script -
+
+::
+
+    libraries/SITL/examples/Airsim/multi_vehicle.sh <IP>
+
+
+The `multi_uav_ros_sitl.launch file <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Airsim/multi_uav_ros_sitl.launch>`__ demonstrates how to write a launch file controlling multiple vehicles with Mavros. It creates a different namespace for each drone and each drone has a seperate SYSID and ports according to how the script sets the variables.
+Launching the file -
+::
+
+    roslaunch libraries/SITL/examples/Airsim/multi_uav_ros_sitl.launch
+
+Seperate MAVProxy instance can be launched for each drone by connecting to the TCP ports opened by the script for each drone. The UDP ports can't be used for this if Mavros is already running since Mavros will use the UDP ports.
+
+The ``multi_vehicle.sh`` script doesn't enable the Follow Mode, but if this is also needed and if all the vehicles are to be displayed on the same GCS, then multicast and the Follow parameters as done in the ``follow-copter.sh`` script can be added.
+
 
 Custom Environment
 ++++++++++++++++++
