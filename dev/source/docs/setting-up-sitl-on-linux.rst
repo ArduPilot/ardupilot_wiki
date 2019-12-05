@@ -5,7 +5,7 @@ Setting up SITL on Linux
 ========================
 
 This page describes how to setup the :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` on Linux. The specific
-commands were tested on Ubuntu from 12.10 to 16.04.
+commands were tested on Ubuntu from 12.10 to 18.04.
 
 Overview
 ========
