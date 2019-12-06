@@ -7,7 +7,7 @@ Configuration and Setup
 1) Connections, Firmware and Calibration
 ========================================
 
-#. Refer to :ref:`assembly instructions <rover-assembly-instructions>` for making connections between the autopilot board and each of these components:
+#. Refer to :ref:`autopilot system assembly instructions <rover-autopilot-assembly-instructions>` for making connections between the autopilot board and each of these components:
 
     - Power Module
     - ESC/Motor Drive
