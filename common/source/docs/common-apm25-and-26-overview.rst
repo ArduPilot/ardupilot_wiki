@@ -18,9 +18,9 @@ APM 2.5
    The APM2.6 board is no longer supported for Copter. From Copter
    3.3 firmware (and later) no longer fits on APM boards. The last firmware
    builds that can be installed (AC v3.2.1) can be downloaded from here:
-   `APM2.x <https://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
+   `APM2.x <https://download.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
    and
-   `AMP1.x <https://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
+   `AMP1.x <https://download.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
 
 .. warning::
 

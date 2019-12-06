@@ -15,8 +15,8 @@ Archived: Building ArduPilot for APM2.x on MacOS with Arduino
    Copter 3.3 firmware (and later) no longer fits on APM boards.
    The last firmware builds that can be installed (v3.2.1) can be
    downloaded from here:
-   `APM2.x <https://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
-   and `APM 1.0 <https://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__.
+   `APM2.x <https://download.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
+   and `APM 1.0 <https://download.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__.
 
    Plane, Rover and AntennaTracker builds can still be installed.
 

@@ -35,12 +35,12 @@ should also be attached to the vehicle.
    
 Install Drivers (Windows only)
 =====================================   
-On a Windows machine a "PX4Flow" device should appear in Connection drop-down of the Mission Planner (and the Windows Device Manager), or be automatically recognized by QGroundControl.  If it does not you may need to download, unzip and manually install the `px4flow windows driver <https://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow_win_driver.zip>`__ which may in turn require allowing installing unsigned drivers.   
+On a Windows machine a "PX4Flow" device should appear in Connection drop-down of the Mission Planner (and the Windows Device Manager), or be automatically recognized by QGroundControl.  If it does not you may need to download, unzip and manually install the `px4flow windows driver <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow_win_driver.zip>`__ which may in turn require allowing installing unsigned drivers.   
 
 Using MissionPlanner
 ====================
 
-#. Download and unzip the `PX4Flow-KLT firmware <https://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
+#. Download and unzip the `PX4Flow-KLT firmware <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
    (`source code here <https://github.com/priseborough/px4flow/tree/klt_flow>`__)
 
 #. Connect the PX4Flow sensor to your computer using a micro USB cable.  
@@ -67,7 +67,7 @@ In order to use QgroundControl, PX4Flow and ArduPilot, you will need to complete
 #. Check the "Standard Version (stable)" is selected in the ride hand pane. Click "OK". QGroundControl will flash a firmware that can be used to focus the lens.
 #. Unplug and replug the sensor. Two extra tabs should appear: "PX4Flow" and "Parameters".
 #. Click "PX4Flow", remove the lens cap and point the camera at a high contrast object at least 3m away.  Remove the small screw that stops the lens from turning and adjust the focus until the image appears clearly.  This will focus the device to infinity.  Refit the screw.
-#. Download and unzip the `PX4Flow-KLT firmware <https://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
+#. Download and unzip the `PX4Flow-KLT firmware <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
    (`source code here <https://github.com/priseborough/px4flow/tree/klt_flow>`__)
 #. Unplug the sensor, click on the "Firmware" tab and replug the sensor.
 #. On the right hand side, click on the firmware version dropdown, and select "Custom firmware file".  Click "OK".  Then select the firmware downloaded above.  QGroundControl should now flash a firmware compatible with ArduPilot.  QGroundControl will now think that the sensor is a Pixhawk.  Dont worry.  Unplug it, and connect it to your autopilot.

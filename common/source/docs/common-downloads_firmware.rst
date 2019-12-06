@@ -37,7 +37,7 @@ ArduCopter APM 2.x Firmware
 
 ArduCopter v3.2.1 firmware for APM 2.x. This is the **last build** of ArduCopter that still fits on the **APM 2.x** boards.
 
-* `ArduCopter_APM_2.0_Firmware_3.2.1.zip <https://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
+* `ArduCopter_APM_2.0_Firmware_3.2.1.zip <https://download.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
 
 
 ArduCopter APM 1.0 Firmware
@@ -45,7 +45,7 @@ ArduCopter APM 1.0 Firmware
 
 ArduCopter v3.2.1 firmware for APM 1.0. This is the last build of ArduCopter that still fits on the **APM 1.0** boards.
 
-* `ArduCopter_APM_1.0_Firmware_3.2.1.zip <https://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
+* `ArduCopter_APM_1.0_Firmware_3.2.1.zip <https://download.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
 
 
 Bootloader

@@ -22,14 +22,14 @@ PPM Encoder (v2) now uses the ArduPPM firmware, replacing the previously
 used Paparazzi PPM Encoder firmware. The new ArduPPM firmware has been
 designed from scratch to enhance performance and robustness, and to
 better accommodate our product needs now and in the future. Firmware for
-Plane (and Rover) can be `downloaded here <https://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega328p_for_ArduPlane.hex_.zip>`__.
-Firmware for Copter can be `downloaded here <https://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega328p_for_ArduCopter.hex_.zip>`__.
+Plane (and Rover) can be `downloaded here <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega328p_for_ArduPlane.hex_.zip>`__.
+Firmware for Copter can be `downloaded here <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega328p_for_ArduCopter.hex_.zip>`__.
 (The source code, while not necessary if using the compiled code, \ `can be found here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/ArduPPM/Libraries/PPM_Encoder.h>`__.)
 
 Setup Manual
 ============
 
-The `Manual <https://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/PPM-Encoder-3DR-Manual-v2.3.16.pdf>`__
+The `Manual <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/PPM-Encoder-3DR-Manual-v2.3.16.pdf>`__
 shows how to solder and wire the PPM Encoder and explains the different
 failsafe modes.
 
@@ -39,7 +39,7 @@ Version 3
 The third version of the PPM Encoder features a smaller form factor and
 DF13 connector ports. To set up, connect the three-wire cable to the
 autopilot and the 10-wire cable to a PWM receiver. For more
-instructions, `view the manual here <https://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/PPM-Encoder-V3-Manual.pdf>`__.
+instructions, `view the manual here <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/PPM-Encoder-V3-Manual.pdf>`__.
 
 .. image:: ../../../images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
     :target: ../_images/jDrones_PPM_Encoder_V21_Above_with_numbers_500px.jpg
