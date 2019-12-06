@@ -103,7 +103,7 @@ to take pictures automatically at intervals during flight. We'll do this
 by adding an `intervalometer <https://en.wikipedia.org/wiki/Intervalometer>`__ script
 to the SD card. Our friends at `Drone Mapper <https://dronemapper.com/>`__ have created a great CHDK
 intervalometer script that can be found in Drone Mapper's \ `CHDK documentation <https://s3.amazonaws.com/DroneMapper_US/documentation/DroneMapper_CHDK.pdf>`__
-or `viewed by clicking here <https://firmware.ardupilot.org/downloads/wiki/other_files/DM-Intervalometer.txt>`__. Copy
+or `viewed by clicking here <https://download.ardupilot.org/downloads/wiki/other_files/DM-Intervalometer.txt>`__. Copy
 the intervalometer script into a text editor and save the file as **DM_interval.bas**.
 
 This script will measure time intervals for five minutes and trigger the
@@ -326,7 +326,7 @@ When channel 7 is set to the mid position, CHDK will set zoom to 30
 When channel 7 is set to the down position, CHDK will set zoom to 100
 (extended position).
 
-`Click here to view the above script <https://firmware.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__,
+`Click here to view the above script <https://download.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__,
 copy into a text editor, and save as \ **3DR_Shoot.bas**. Now that
 you're familiar with how the script works, you can easily change the
 commands of each function. For example, you can add a **shoot** command
@@ -409,7 +409,7 @@ Creating a composite image
 One of our favorite applications of CHDK is creating a map of an area by
 stitching automatically-captured pictures into a composite image. We'll
 use the same
-`3DR_Shoot.bas <https://firmware.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__\ script
+`3DR_Shoot.bas <https://download.ardupilot.org/downloads/wiki/other_files/3DR_Shoot.txt>`__\ script
 that we used in the previous section. The process is similar to setting
 shutter triggers at waypoints, only to make sure we capture the entire
 area we need more frequent, more regular waypoints. We’ll do this
@@ -578,7 +578,7 @@ the rightmost column.
 
 To verify that your transmitter behaves similarly, you may want to
 perform a test to ensure that a valid USB power value is returned for
-each switch position. View the `3DR CHDK Tester script here <https://firmware.ardupilot.org/downloads/wiki/other_files/3DRCHDKTester.txt>`__.
+each switch position. View the `3DR CHDK Tester script here <https://download.ardupilot.org/downloads/wiki/other_files/3DRCHDKTester.txt>`__.
 Copy the contents into a text editor and save as **3DRCHDKTester.bas**.
 Load into your (unlocked) SD card by copying the file into the
 **Scripts** folder (in the **CHDK** folder).

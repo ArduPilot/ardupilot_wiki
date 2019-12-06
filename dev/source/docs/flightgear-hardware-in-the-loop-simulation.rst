@@ -74,7 +74,7 @@ How to make it work
 .. note::
 
    If you used the file
-   "`system.fgfsrc <https://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/windows_parameter_file_for_flightgear_HIL_simulator_system.fgfsrc.zip>`__\ "
+   "`system.fgfsrc <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/windows_parameter_file_for_flightgear_HIL_simulator_system.fgfsrc.zip>`__\ "
    then you can just increase your throttle to fly the Rascal plane. If you
    didn't and are flying the default Cessna, hold down 's' on the keyboard
    to start the plane's engine, then advance your throttle to take

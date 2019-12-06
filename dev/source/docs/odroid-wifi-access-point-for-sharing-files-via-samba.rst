@@ -110,7 +110,7 @@ Try starting hostapd:
     hostapd /etc/hostapd/hostapd.conf
 
 If this fails try replacing the /usr/sbin/hostapd and hostapd_cli files
-with the version found in `the downloads area <https://firmware.ardupilot.org/downloads/wiki/developer_tools/hostapd_OdroidU3_Ubuntu1404.zip>`__.
+with the version found in `the downloads area <https://download.ardupilot.org/downloads/wiki/developer_tools/hostapd_OdroidU3_Ubuntu1404.zip>`__.
 
 You will also need to install the libnl-dev package:
 
