@@ -66,7 +66,7 @@ MissionPlanner, from v1.3.48 onwards (and hopefully other ground stations in the
 .. image:: ../images/code-overview-object-avoidance4.png
     :target: ../_images/code-overview-object-avoidance4.png
 
-This window can be opened by going to the Flight Data screen, press Ctrl-F and push the Proximity button.  Values will will appear if the `PRX_TYPE <http://ardupilot.org/copter/docs/parameters.html#prx-type>`__ parameter is set to enable a sensor, and messages are being received.
+This window can be opened by going to the Flight Data screen, press Ctrl-F and push the Proximity button.  Values will will appear if the `PRX_TYPE <https://ardupilot.org/copter/docs/parameters.html#prx-type>`__ parameter is set to enable a sensor, and messages are being received.
 
 .. image:: ../images/code-overview-object-avoidance-show-radar-view.png
     :target: ../_images/code-overview-object-avoidance-show-radar-view.png

@@ -184,7 +184,7 @@ The mavlink telemetry logs are present in the "buildlogs" directory.  This direc
 Correlation of Output Files with the autotest server
 ....................................................
 
-`ArduPilot's autotest server <http://autotest.ardupilot.org/>`__ displays the results of the most recent AutoTest run.  If a test is failing on the autotest server, it should be possible to replicate that failure locally using ``autotest.py``
+`ArduPilot's autotest server <https://autotest.ardupilot.org/>`__ displays the results of the most recent AutoTest run.  If a test is failing on the autotest server, it should be possible to replicate that failure locally using ``autotest.py``
 
 AutoTest's "Test Results" section reflects ``autotest.py``'s return value for each of the steps.
 

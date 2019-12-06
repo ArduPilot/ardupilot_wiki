@@ -67,15 +67,15 @@ Configure ArduPilot
 
 Connect to the autopilot with a ground station (i.e. Mission Planner) and check that the following parameters are set as shown below:
 
-- `AHRS_EKF_TYPE <http://ardupilot.org/copter/docs/parameters.html#ahrs-ekf-type>`__ = 2 (the default) to use EKF2 (as of this writing, EKF3 is **not** supported for handling external navigation data)
-- `EK2_ENABLE <http://ardupilot.org/copter/docs/parameters.html#ek2-enable>`__ = 1 (the default)
-- `EK3_ENABLE <http://ardupilot.org/copter/docs/parameters.html#ek3-enable>`__ = 0 (the default)
-- `GPS_TYPE <http://ardupilot.org/copter/docs/parameters.html#gps-type>`__ = 0 to disable the GPS
-- `EK2_GPS_TYPE <http://ardupilot.org/copter/docs/parameters.html#ek2-gps-type>`__ = 3 to disable the EKF’s use of the GPS
-- `EK2_POSNE_M_NSE <http://ardupilot.org/copter/docs/parameters.html#ek2-posne-m-nse-gps-horizontal-position-measurement-noise-m>`__ = 0.1            
-- `EK2_VELD_M_NSE <http://ardupilot.org/copter/docs/parameters.html#ek2-veld-m-nse-gps-vertical-velocity-measurement-noise-m-s>`__ = 0.1             
-- `EK2_VELNE_M_NSE <http://ardupilot.org/copter/docs/parameters.html#ek2-velne-m-nse-gps-horizontal-velocity-measurement-noise-m-s>`__ = 0.1
-- MAG_ENABLE = 0,  `COMPASS_USE <http://ardupilot.org/copter/docs/parameters.html#compass-use-use-compass-for-yaw>`__ = 0, `COMPASS_USE2 <http://ardupilot.org/copter/docs/parameters.html#compass-use2>`__ = 0, `COMPASS_USE3 <http://ardupilot.org/copter/docs/parameters.html#compass-use3>`__ = 0 to disable the EKF’s use of the compass and instead rely on the heading from external navigation data.
+- `AHRS_EKF_TYPE <https://ardupilot.org/copter/docs/parameters.html#ahrs-ekf-type>`__ = 2 (the default) to use EKF2 (as of this writing, EKF3 is **not** supported for handling external navigation data)
+- `EK2_ENABLE <https://ardupilot.org/copter/docs/parameters.html#ek2-enable>`__ = 1 (the default)
+- `EK3_ENABLE <https://ardupilot.org/copter/docs/parameters.html#ek3-enable>`__ = 0 (the default)
+- `GPS_TYPE <https://ardupilot.org/copter/docs/parameters.html#gps-type>`__ = 0 to disable the GPS
+- `EK2_GPS_TYPE <https://ardupilot.org/copter/docs/parameters.html#ek2-gps-type>`__ = 3 to disable the EKF’s use of the GPS
+- `EK2_POSNE_M_NSE <https://ardupilot.org/copter/docs/parameters.html#ek2-posne-m-nse-gps-horizontal-position-measurement-noise-m>`__ = 0.1            
+- `EK2_VELD_M_NSE <https://ardupilot.org/copter/docs/parameters.html#ek2-veld-m-nse-gps-vertical-velocity-measurement-noise-m-s>`__ = 0.1             
+- `EK2_VELNE_M_NSE <https://ardupilot.org/copter/docs/parameters.html#ek2-velne-m-nse-gps-horizontal-velocity-measurement-noise-m-s>`__ = 0.1
+- MAG_ENABLE = 0,  `COMPASS_USE <https://ardupilot.org/copter/docs/parameters.html#compass-use-use-compass-for-yaw>`__ = 0, `COMPASS_USE2 <https://ardupilot.org/copter/docs/parameters.html#compass-use2>`__ = 0, `COMPASS_USE3 <https://ardupilot.org/copter/docs/parameters.html#compass-use3>`__ = 0 to disable the EKF’s use of the compass and instead rely on the heading from external navigation data.
 - Configure serial port to connect to companion computer with ``SERIALx_BAUD`` and ``SERIALx_PROTOCOL = 1``.
 
 After the parameters are modified, reboot the autopilot.

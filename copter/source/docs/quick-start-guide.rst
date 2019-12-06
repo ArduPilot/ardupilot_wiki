@@ -20,7 +20,7 @@ includes the full autopilot set-up and calibration instructions.
 Install Mission Planner
 =======================
 
-`Download the most recent Mission Planner MSI from here <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__.
+`Download the most recent Mission Planner MSI from here <https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__.
 
 Open the Microsoft installer file (.msi) and select **Run** to run the
 installation utility.

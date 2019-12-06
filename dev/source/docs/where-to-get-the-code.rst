@@ -23,7 +23,7 @@ For developers who wish to **download** and **build** the latest code:
 - "clone" the project to download "master" to your local computer
 - :ref:`build/compile the firmware <building-the-code>` using waf or make
 
-Note that the latest firmware is built automatically and can be directly downloaded from `firmware.ardupilot.org <http://firmware.ardupilot.org>`__. 
+Note that the latest firmware is built automatically and can be directly downloaded from `firmware.ardupilot.org <https://firmware.ardupilot.org>`__. 
 
 For developers who wish to **download**, **compile**, **edit** and then **contribute** code
 back to ArduPilot, the following steps should be followed:

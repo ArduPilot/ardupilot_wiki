@@ -28,7 +28,7 @@ The Flight Controller and the Raspberry Pi 3 on the quadcopter are connected via
 Components of the system
 ========================
 
-- A small quadcopter equipped with `Pixhack Autopilot <http://www.helipal.com/pixhack-autopilot-kit.html>`__, `CUAV PX4FLOW <https://store.cuav.net/index.php?id_product=52&id_product_attribute=0&rewrite=cuav-px4flow-21-optical-flow-sensor-smart-camera-for-px4-pixhawk-flight-control-without-sonar-or-with-sonar&controller=product&id_lang=3>`__, `TeraRanger One <http://ardupilot.org/copter/docs/common-teraranger-one-rangefinder.html>`__. With this setup, you can follow the wiki to achieve `non-GPS flight with PX4FLOW <http://ardupilot.org/copter/docs/common-px4flow-overview.html>`__.
+- A small quadcopter equipped with `Pixhack Autopilot <http://www.helipal.com/pixhack-autopilot-kit.html>`__, `CUAV PX4FLOW <https://store.cuav.net/index.php?id_product=52&id_product_attribute=0&rewrite=cuav-px4flow-21-optical-flow-sensor-smart-camera-for-px4-pixhawk-flight-control-without-sonar-or-with-sonar&controller=product&id_lang=3>`__, `TeraRanger One <https://ardupilot.org/copter/docs/common-teraranger-one-rangefinder.html>`__. With this setup, you can follow the wiki to achieve `non-GPS flight with PX4FLOW <https://ardupilot.org/copter/docs/common-px4flow-overview.html>`__.
 
 - `Raspberry Pi 3 Model B <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>`__ with a 16GB micro SD card running `Ubuntu Mate 16.04 <https://ubuntu-mate.org/>`__, connected to a `USB camera <https://www.tindie.com/products/exlene/8mp-usb-camera-module-for-linuxwind7wind8/>`__ down-facing to the ground, with the x-axis of the camera to the right.
 
@@ -184,7 +184,7 @@ Some Useful links
 
 - Original `blog post <https://discuss.ardupilot.org/t/indoor-non-gps-flight-using-apriltags-ros-based/42878>`__.
 
-- Indoor autonomous flight with Arducopter, ROS and Aruco Boards - :ref:`wiki page <ros-aruco-detection>` and `blog post <http://ardupilot.org/dev/docs/ros-aruco-detection.html>`__.
+- Indoor autonomous flight with Arducopter, ROS and Aruco Boards - :ref:`wiki page <ros-aruco-detection>` and `blog post <https://ardupilot.org/dev/docs/ros-aruco-detection.html>`__.
 
 - Indoor Autonomous Flight with Cube, ROS and Aruco Board - `blog post <https://discuss.cubepilot.org/t/indoor-autonomous-flight-with-cube-ros-and-aruco-board-ongoing/351>`__.
 

@@ -13,7 +13,7 @@ It is impossible to list them all but if you wish to see at least some of the pe
 - `Most active Support Forum users <https://discuss.ardupilot.org/u?order=post_count&period=quarterly>`__
 - `Mission Planner GCS contributors <https://github.com/ArduPilot/MissionPlanner/graphs/contributors>`__
 - `AP Planner 2.0 GCS contributors <https://github.com/ArduPilot/apm_planner/graphs/contributors>`__
-- `Partners who contribute financially <http://ardupilot.org/about/Partners>`__
+- `Partners who contribute financially <https://ardupilot.org/about/Partners>`__
 
 Collaboration with other projects
 ---------------------------------

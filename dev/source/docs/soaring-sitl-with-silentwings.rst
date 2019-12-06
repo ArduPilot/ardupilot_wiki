@@ -55,10 +55,10 @@ Prerequisites
   The output_udp_rate = 90 value works well for screen_refresh = 60. When adjusting the latter, you will probably want to adjust the former as well for smoother control.
 
 
-- **Install** `Mission Planner <http://ardupilot.org/planner/docs/mission-planner-installation.html>`_, **a ground control station (GCS) software.** Other ArduPilot GCS software may work as well.
+- **Install** `Mission Planner <https://ardupilot.org/planner/docs/mission-planner-installation.html>`_, **a ground control station (GCS) software.** Other ArduPilot GCS software may work as well.
 
 
-- **Build the SITL flavor of ArduPlane.** To do so, first `install and configure Cygwin as described here <http://ardupilot.org/dev/docs/building-setup-windows-cygwin.html#building-setup-windows-cygwin>`_. For the purposes of the soaring SITL, you don’t need to perform the steps in the *Set up directories/paths in Cygwin* and *Install Required Python Packages* sections of that wiki, but doing them won’t hurt. Then:
+- **Build the SITL flavor of ArduPlane.** To do so, first `install and configure Cygwin as described here <https://ardupilot.org/dev/docs/building-setup-windows-cygwin.html#building-setup-windows-cygwin>`_. For the purposes of the soaring SITL, you don’t need to perform the steps in the *Set up directories/paths in Cygwin* and *Install Required Python Packages* sections of that wiki, but doing them won’t hurt. Then:
     
     a) Open a Cygwin terminal (or reopen it if you have one already open). 
 
@@ -114,7 +114,7 @@ Running Silent Wings SITL
 	  
    |br|
 
-#. **Launch Mission Planner, connect a joystick, and** `set up the joystick in Mission Planner <http://ardupilot.org/copter/docs/common-joystick.html>`_ to configure its roll, pitch, and yaw axes (other axes will be ignored by Silent Wings).
+#. **Launch Mission Planner, connect a joystick, and** `set up the joystick in Mission Planner <https://ardupilot.org/copter/docs/common-joystick.html>`_ to configure its roll, pitch, and yaw axes (other axes will be ignored by Silent Wings).
 
    .. tip::
       Unfortunately, Mission Planner appears to forget joystick settings when it is shut down, so this step has to be redone every time Mission Planner is restarted or the joystick is reconnected. Alternatively, you can try controlling the plane using your keyboard.

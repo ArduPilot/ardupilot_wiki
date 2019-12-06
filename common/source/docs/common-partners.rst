@@ -206,7 +206,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Hexsoon.jpg
             :width: 250px
             :align: center
-            :target: http://ardupilot.org/about/Partners
+            :target: https://ardupilot.org/about/Partners
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Micro_Aerial_Projects.png
@@ -239,7 +239,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Tiho_Aviation.png
             :width: 250px
             :align: center
-            :target:  http://ardupilot.org/about/Partners
+            :target:  https://ardupilot.org/about/Partners
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Freespace.png

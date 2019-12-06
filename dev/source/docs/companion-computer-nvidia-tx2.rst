@@ -110,7 +110,7 @@ Flashing the APSync image to the TX2
 ------------------------------------
 
 - connect a USB cable from the Ubuntu 16 machine to the TX2 development board, power on the TX2 and put the TX2 into bootloader mode (see instructions above)
-- On the Ubuntu 16 machine, download the latest APSync image for the TX2 from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/beta>`__ (look for images that contain "tx2" like "apsync-tx2-201804270923.img.xy").
+- On the Ubuntu 16 machine, download the latest APSync image for the TX2 from `firmware.ardupilot.org <https://firmware.ardupilot.org/Companion/apsync/beta>`__ (look for images that contain "tx2" like "apsync-tx2-201804270923.img.xy").
 - uncompress the downloaded image (i.e. open a file explorer, right-mouse-button click on the file and select "Extract Here")
 - on the Ubuntu machine, from the directory where you installed JetPack (i.e. ~/Desktop/JetPack-3.3)
 - cd 64_TX2/Linux_for_Tegra_64_tx2/bootloader

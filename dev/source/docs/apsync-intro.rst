@@ -37,7 +37,7 @@ Once connected to the WiFi network is possible to connect to these two URLs:
 - http://10.0.1.128  (Configurations page)
 
 Dataflash logs are streamed to the companion computer via mavlink and stored on the companion computer's filesystem (as well as on the pixhawk's dataflash).
-Dataflash log files can then be quickly downloaded (over wifi) using a script (Windows users may use `apsync-download-logs <http://firmware.ardupilot.org/Companion/apsync/apsync-download-logs-latest.zip>`__) or you may pull the SD card out of the companion computer.
+Dataflash log files can then be quickly downloaded (over wifi) using a script (Windows users may use `apsync-download-logs <https://firmware.ardupilot.org/Companion/apsync/apsync-download-logs-latest.zip>`__) or you may pull the SD card out of the companion computer.
 
 Data Syncronisation with Web server or Corporate server
 =======================================================
@@ -88,7 +88,7 @@ This allows more reliable and flexible streaming as the ground station can disco
 Installing APSync
 =================
 
-Images for the supported boards can be found in `firmware.ardupilot.org <http://firmware.ardupilot.org/Companion/apsync>`__.
+Images for the supported boards can be found in `firmware.ardupilot.org <https://firmware.ardupilot.org/Companion/apsync>`__.
 
 Please follow the instructions for installing these images on the wiki page for each board (:ref:`RPi3 <raspberry-pi-via-mavlink>`, :ref:`NVidia TX1 <companion-computer-nvidia-tx1>` and :ref:`Intel Edison <intel-edison>`).
 

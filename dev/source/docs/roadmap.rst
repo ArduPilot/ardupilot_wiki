@@ -8,7 +8,7 @@ RoadMap for 2019/2020
        :width: 40%
 
 This roadmap shows the direction of the ArduPilot team in 2019 and beyond.  The purpose of this roadmap
-is not to guarantee exactly when features will be added but instead to help the team, `Partners <http://ardupilot.org/about/Partners>`__
+is not to guarantee exactly when features will be added but instead to help the team, `Partners <https://ardupilot.org/about/Partners>`__
 and independent developers to spot areas for cooperation.  There will also undoubtedly be developments that are not on this list.
 
 The main point of contact for each area is provided so that those looking to join in or sponsor the development
@@ -52,7 +52,7 @@ Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
 - Copter & Rover back away from objects
 - Proximity data (i.e. obstacles) recorded in Earth coordinates
 - On-board Path Planning around obstacles
-- Improve Off-Board SLAM + Object Avoidance (`dev wiki link <http://ardupilot.org/dev/docs/ros-cartographer-slam.html>`__)
+- Improve Off-Board SLAM + Object Avoidance (`dev wiki link <https://ardupilot.org/dev/docs/ros-cartographer-slam.html>`__)
 
 Copter (Randy / Leonard / Tridge)
 ---------------------------------

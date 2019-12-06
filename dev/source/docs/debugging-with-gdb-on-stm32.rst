@@ -59,7 +59,7 @@ Connecting the ST-Link V2 JTAG debugger to the STM32
 
 The ST-Link debugger should be connected to the STM32's JTAG connector
 using the JTAG breakout cable. Connect the
-SWDIO and SWCLK (see `Debug port pinout <http://ardupilot.org/copter/docs/common-pixracer-overview.html#debug-port-jst-sm06b-connector>`__
+SWDIO and SWCLK (see `Debug port pinout <https://ardupilot.org/copter/docs/common-pixracer-overview.html#debug-port-jst-sm06b-connector>`__
 for reference) to the corresponding SWDIO and SWCLK pins on the ST-Link debugger.
 
 Installing GDB
@@ -67,7 +67,7 @@ Installing GDB
 
 If using Ubuntu, GDB is likely already installed on your machine and it
 will likely work although we recommend using the version available for
-download here `http://firmware.ardupilot.org/Tools/STM32-tools <http://firmware.ardupilot.org/Tools/STM32-tools>`__
+download here `https://firmware.ardupilot.org/Tools/STM32-tools <https://firmware.ardupilot.org/Tools/STM32-tools>`__
 
 The gcc-arm-none-eabi*-linux.tar.bz2 file contains both the
 recommended compiler and the recommended version of gdb.

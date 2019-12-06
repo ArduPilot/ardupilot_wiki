@@ -370,7 +370,7 @@ Deploys or Retracts :ref:`Landing Gear <common-landing-gear>`
    <td><strong>Lost Vehicle Alarm</strong></td>
    <td>
 
-Plays the `lost copter alarm <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__ though the buzzer
+Plays the `lost copter alarm <https://firmware.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__ though the buzzer
 
 .. raw:: html
 

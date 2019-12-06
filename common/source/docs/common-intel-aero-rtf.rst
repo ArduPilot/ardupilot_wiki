@@ -11,7 +11,7 @@ The `Intel Aero RTF vehicle <https://software.intel.com/en-us/aero/drone-kit>`__
 `Vision Accessory Kit <https://software.intel.com/en-us/aero/vision-kit>`__ and a `Spektrum DXe transmitter <http://spektrumrc.com/Products/Default.aspx?ProdId=SPM1000>`__.
 
 Within the vehicle is an STM32F427V autopilot board which can run ArduPilot (replacing the pre-loaded non-ArduPilot software).
-In this way, the higher powered :ref:`Intel Aero compute board <common-intel-aero-overview>` is used as a `companion computer <http://ardupilot.org/dev/docs/companion-computers.html>`__.
+In this way, the higher powered :ref:`Intel Aero compute board <common-intel-aero-overview>` is used as a `companion computer <https://ardupilot.org/dev/docs/companion-computers.html>`__.
 
 ..  youtube:: DZm9S0lxiEg
     :width: 100%
@@ -41,7 +41,7 @@ in order for the autopilot to be flashed with ArduPilot.
 
 The final step is to copy the **arducopter.px4** firmware to the Aero compute board and then flash it to the flight board:
 
-- Download the latest aero-fc ArduPilot firmware from `firmware.ardupilot.org <http://firmware.ardupilot.org/Copter/latest/>`__ 
+- Download the latest aero-fc ArduPilot firmware from `firmware.ardupilot.org <https://firmware.ardupilot.org/Copter/latest/>`__ 
 - Copy the above firmware to the Aero compute board in much the same way the BIOS's .rpm file was copied
 - `Flash the autopilot board <https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-setup#flashing-the-flight-controller-rtf-only>`__ with the **ardupilot.px4** firmware
 

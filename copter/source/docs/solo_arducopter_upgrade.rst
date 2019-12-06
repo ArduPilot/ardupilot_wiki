@@ -53,7 +53,7 @@ There are several great resources online for modification ideas,vendors, beta te
 -  `Solo Mod Club Facebook group <https://www.facebook.com/groups/3DRSOLOModClub/>`_
 -  `Solex Users Facebook group <https://www.facebook.com/groups/176789056089526/>`_
 -  `ArduPilot Discuss Forums <https://discuss.ardupilot.org/c/arducopter/copter-3-5>`_
--  `ArduPilot copter Wiki <http://ardupilot.org/copter/docs/common-advanced-configuration.html>`_
+-  `ArduPilot copter Wiki <https://ardupilot.org/copter/docs/common-advanced-configuration.html>`_
 -  `3DR Pilots Forum <https://3drpilots.com/>`_ 
 -  :ref:`Solo Battery Calibration Process <solo_battery_calibration>`
 

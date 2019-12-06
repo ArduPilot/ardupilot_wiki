@@ -49,7 +49,7 @@ Setting up the Edison
 
 The easiest way to get started is to flash the Edison with the :ref:`APSync <apsync-intro>` image recommended by the ArduPilot team:
 
--  Download the `latest image from firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__. Look for the file starting with "apsync-edison".
+-  Download the `latest image from firmware.ardupilot.org <https://firmware.ardupilot.org/Companion/apsync/>`__. Look for the file starting with "apsync-edison".
 -  Extract/Unzip the image (a "toFlash" directory should appear):
 
    - Windows users can use `7-zip <http://www.7-zip.org/>`__

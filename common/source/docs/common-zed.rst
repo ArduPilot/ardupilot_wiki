@@ -25,10 +25,10 @@ Required Hardware
 Setup
 =====
 
-- connect the autopilot and TX1 as shown on the `NVidia TX1 as a Companion Computer <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html>`__ wiki page
-- flash the TX1 as described in the `Setup the TX1 <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-tx1>`__ section of the above wiki page but use the apsync-tx1-openkai image from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/beta/>`__
+- connect the autopilot and TX1 as shown on the `NVidia TX1 as a Companion Computer <https://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html>`__ wiki page
+- flash the TX1 as described in the `Setup the TX1 <https://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-tx1>`__ section of the above wiki page but use the apsync-tx1-openkai image from `firmware.ardupilot.org <https://firmware.ardupilot.org/Companion/apsync/beta/>`__
 - mount the ZED camera upside-down and using vibration dampeners to the front of the vehicle.  
-  It can be mounted right-side-up after `connecting with ssh <http://ardupilot.org/dev/docs/apsync-intro.html#connecting-with-ssh>`__ and then modify `~/src/OpenKAI/kiss/apmCopter.kiss <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss#L60>`__ so "bFlip" is `1`.
+  It can be mounted right-side-up after `connecting with ssh <https://ardupilot.org/dev/docs/apsync-intro.html#connecting-with-ssh>`__ and then modify `~/src/OpenKAI/kiss/apmCopter.kiss <https://github.com/yankailab/OpenKAI/blob/master/kiss/apmCopter.kiss#L60>`__ so "bFlip" is `1`.
 - in order to download the ZED camera's calibration parameters from stereolabs.com, connect the TX1 to the Internet with an Ethernet cable during powerup (this procedure is only required once)
 - disable APSync's video streaming (so that OpenKai can use the camera) by connecting your computer to APSync's access point (``ssid=ardupilot``, pw=ardupilot), then open a browser to ``http://10.0.1.128:8000`` and click the red **Disable Auto Streaming** button (button should turn green) and reboot the TX1.
 
@@ -42,7 +42,7 @@ Configuration through the Ground Station
 
 Ensure that Copter-3.5 (or higher) is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).
 
-- enable communication between the TX1 and autopilot using the `Setup the Pixhawk instructions from the tx1 setup wiki page <http://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-pixhawk>`__
+- enable communication between the TX1 and autopilot using the `Setup the Pixhawk instructions from the tx1 setup wiki page <https://ardupilot.org/dev/docs/companion-computer-nvidia-tx1.html#setup-the-pixhawk>`__
 - set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 3 (means use EKF3)
 - set :ref:`EK2_ENABLE <EK2_ENABLE>` to 0 (disable EKF2)
 - set :ref:`EK3_ENABLE <EK3_ENABLE>` to 1 (enable EKF3)

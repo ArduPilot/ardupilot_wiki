@@ -94,7 +94,7 @@ Setting up the Autopilot, Sensors, and Optional Equipment
 
 The purpose of this article is to detail the aircraft build, not the APM. There
 are many documents in the wiki covering the APM, sensors, and tuning.
-`Airplane walk-through <http://ardupilot.org/plane/docs/arduplane-setup.html>`_ .
+`Airplane walk-through <https://ardupilot.org/plane/docs/arduplane-setup.html>`_ .
 
 Mount the autopilot and install the wiring
 ==================================================

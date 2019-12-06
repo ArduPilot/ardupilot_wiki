@@ -92,7 +92,7 @@ the key steps required:
       in C:\\Users\\Public\\Documents\\ardupilot-Copter-3.1.3.
 
       Get the latest released code zip files "Plane x.x.x"
-      `here <http://firmware.ardupilot.org/>`__ or use :ref:`Git Hub <where-to-get-the-code>` to
+      `here <https://firmware.ardupilot.org/>`__ or use :ref:`Git Hub <where-to-get-the-code>` to
       create a clone of the current code. If you want a specific release
       version go to the `ardupilot <https://github.com/ArduPilot/ardupilot>`__ repository,
       select the desired ardupilot branch, then click download zip.

@@ -19,7 +19,7 @@ This provides an easy method to develop integrated UAVCAN peripherals which can 
 Firmware
 ========
 
-`Firmware <http://firmware.ardupilot.org/AP_Periph/>`__ is provided in the AP_Periph folder for several UAVCAN devices based on this concept including versions for a typical UAVCAN Adapter Node itself, manufactured by `mRobotics <https://store.mrobotics.io/product-p/mro10042.htm>`__. 
+`Firmware <https://firmware.ardupilot.org/AP_Periph/>`__ is provided in the AP_Periph folder for several UAVCAN devices based on this concept including versions for a typical UAVCAN Adapter Node itself, manufactured by `mRobotics <https://store.mrobotics.io/product-p/mro10042.htm>`__. 
 
 .. image:: ../../../images/mRo-can-node.jpg
 

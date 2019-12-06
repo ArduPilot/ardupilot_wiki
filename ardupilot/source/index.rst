@@ -41,7 +41,7 @@ devices such as ESC's, servos, gimbals, etc.
     <td width="27%">
 
 :ref:`Firmware <common-downloads_firmware>`- is the code running on the controller.
-You choose the firmware to match your vehicle and mission: :ref:`Copter <copter:home>`, `Plane <http://ardupilot.org/plane/index.html>`__,
+You choose the firmware to match your vehicle and mission: :ref:`Copter <copter:home>`, `Plane <https://ardupilot.org/plane/index.html>`__,
 :ref:`Rover <rover:home>`, Sub, or :ref:`Antenna Tracker <antennatracker:home>`.
 
 The choice is yours -- one autopilot for any mission.
@@ -117,8 +117,8 @@ Developer Community:
 `Developers Chat <https://gitter.im/ArduPilot/ardupilot>`__
 Working on the code?  Ask questions of the team in Gitter.
 
-`Developers Guide <http://ardupilot.org/dev/index.html>`__
-All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the Developer Guide. ie. `meeting times <http://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__, and `on the forums <http://discuss.ardupilot.org/>`__
+`Developers Guide <https://ardupilot.org/dev/index.html>`__
+All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the Developer Guide. ie. `meeting times <https://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__, and `on the forums <https://discuss.ardupilot.org/>`__
 
 
 
@@ -182,16 +182,16 @@ Features:
 .. toctree::
    :hidden:
 
-   Home <http://www.ardupilot.org>
-   Copter <http://ardupilot.org/copter/index.html>
-   Plane <http://ardupilot.org/plane/index.html>
-   Rover <http://ardupilot.org/rover/index.html>
+   Home <https://ardupilot.org>
+   Copter <https://ardupilot.org/copter/index.html>
+   Plane <https://ardupilot.org/plane/index.html>
+   Rover <https://ardupilot.org/rover/index.html>
    Sub <http://ardusub.com/>
-   AntennaTracker <http://ardupilot.org/antennatracker/index.html>
-   Mission Planner <http://ardupilot.org/planner/index.html>
-   APM Planner 2 <http://ardupilot.org/planner2/index.html>
-   Companion Computers <http://ardupilot.org/dev/docs/companion-computers.html>
-   Developers <http://ardupilot.org/dev/index.html>
+   AntennaTracker <https://ardupilot.org/antennatracker/index.html>
+   Mission Planner <https://ardupilot.org/planner/index.html>
+   APM Planner 2 <https://ardupilot.org/planner2/index.html>
+   Companion Computers <https://ardupilot.org/dev/docs/companion-computers.html>
+   Developers <https://ardupilot.org/dev/index.html>
    Firmware Downloads <docs/common-downloads_firmware>
    The ArduPilot Team <docs/common-team>
    The History of ArduPilot<docs/common-history-of-ardupilot>

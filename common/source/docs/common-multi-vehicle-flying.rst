@@ -19,7 +19,7 @@ single ground station. Although this capability has been demonstrated
 Equipment you will need
 =======================
 
--  Multiple `Planes <http://ardupilot.org/plane/index.html>`_ or
+-  Multiple `Planes <https://ardupilot.org/plane/index.html>`_ or
    :ref:`Copters <copter:home>` or
    :ref:`Rovers <rover:home>`
 -  An :ref:`Antenna Tracker <antennatracker:home>`\ (a.k.a. Tracker)

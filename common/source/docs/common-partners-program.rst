@@ -16,7 +16,7 @@ ArduPilot is a free and open-source software project that includes:
 
 - Embedded firmware that is designed to serve as the control system for autonomous vehicles, and supports many different hardware targets listed on the Supported Hardware page
 - A number of Ground Control Station software applications that allow management of vehicles running ArduPilot firmware, e.g. more convenient settings editing on an often more comfortable interface, firmware download and transfer, upgrading and conversion of settings between different devices and versions, fleet management, operations monitoring and more
-- The http://ardupilot.org website, http://discuss.ardupilot.org forum and this wiki
+- The https://ardupilot.org website, https://discuss.ardupilot.org forum and this wiki
 - Server infrastructure dedicated to distributing software and firmware, and testing/building/distributing of the different variants for all the different supported platforms and options
 - A global community of users with an enormous variety of goals and expectations
 - A global team of developers with varying degrees of knowledge of the different aspects of the project’s code and of its management

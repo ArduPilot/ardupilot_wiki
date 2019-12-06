@@ -50,7 +50,7 @@ modem attached to your laptop as we will need that info later.
 Step 2: Install MAVProxy
 ========================
 
-Install MAVProxy from http://firmware.ardupilot.org/Tools/MAVProxy
+Install MAVProxy from https://firmware.ardupilot.org/Tools/MAVProxy
 
 Step 3: Ready to run
 ====================

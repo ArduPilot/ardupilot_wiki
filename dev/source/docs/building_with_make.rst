@@ -21,7 +21,7 @@ Windows, Mac and Linux.
    off the master branch (you will need to build off a supported release
    branch).
 
-   The last Copter firmware that can be built on APM 2.x `can be downloaded from here <http://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__.
+   The last Copter firmware that can be built on APM 2.x `can be downloaded from here <https://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__.
 
 Overview
 ========

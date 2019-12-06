@@ -119,7 +119,7 @@ Install MHV_AVR_Tools to its default location
 =============================================
 
 #. Download and install the MHV_AVR Tools:
-   `http://firmware.ardupilot.org/Tools/Arduino/MHV_AVR_Tools_20121007.exe <http://firmware.ardupilot.org/Tools/Arduino/MHV_AVR_Tools_20131101.exe>`__
+   `https://firmware.ardupilot.org/Tools/Arduino/MHV_AVR_Tools_20121007.exe <https://firmware.ardupilot.org/Tools/Arduino/MHV_AVR_Tools_20131101.exe>`__
 
    .. image:: ../images/mhv_avr_tools_installer_welcome.jpg
        :target: ../_images/mhv_avr_tools_installer_welcome.jpg
@@ -149,7 +149,7 @@ Install ArduPilot-Arduino
 =========================
 
 Download and unzip the ArduPilot Arduino package:
-http://firmware.ardupilot.org/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip
+https://firmware.ardupilot.org/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip
 
 This can be unzipped directly to the **C:** drive or **C:\\Program
 Files\\**

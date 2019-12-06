@@ -17,8 +17,8 @@ code 2.73. He described an issue with auto take off where his throttle
 was maintaining 100% despite being set to 75%.
 
 -  5/26/2013 tlog file (803 KB) - Downloaded from original blog
-   post \ `**here** <https://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1264198>`__. - `x8 throttle slew rate 100 param file <http://firmware.ardupilot.org/downloads/wiki/other_files/x8throttleslewrate100.param>`__
--  `Jakkur Auto take off and land text file <http://firmware.ardupilot.org/downloads/wiki/other_files/Jakkur-Auto-take-off-and-land.txt>`__
+   post \ `**here** <https://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1264198>`__. - `x8 throttle slew rate 100 param file <https://firmware.ardupilot.org/downloads/wiki/other_files/x8throttleslewrate100.param>`__
+-  `Jakkur Auto take off and land text file <https://firmware.ardupilot.org/downloads/wiki/other_files/Jakkur-Auto-take-off-and-land.txt>`__
 
 By analyzing this data using
 **`Mavgraph <https://ardupilot.github.io/MAVProxy/html/analysis/mavtools.html#mavgraph-py>`__**,

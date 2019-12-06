@@ -5,7 +5,7 @@ Bootloader
 ==========
 
 The source code for the bootloaders can be found in `AP_Bootloader <https://github.com/ArduPilot/ardupilot/tree/master/Tools/AP_Bootloader>`__
-but pre-compiled binaries are available for many boards in the `Tools/Bootloaders <http://firmware.ardupilot.org/Tools/Bootloaders>`__ directory on our
+but pre-compiled binaries are available for many boards in the `Tools/Bootloaders <https://firmware.ardupilot.org/Tools/Bootloaders>`__ directory on our
 firmware server.  Please refer to the `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.txt>`__ to see if one of the existing bootloaders is compatible for the new board.
 
 

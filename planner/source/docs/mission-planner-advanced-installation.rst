@@ -27,8 +27,8 @@ Download the most recent Mission Planner ZIP Files
 --------------------------------------------------
 
 You can find all the different versions of Mission Planner zip (and MSI)
-files `here <http://firmware.ardupilot.org/Tools/MissionPlanner/>`__.
-The most recent version of the zip file can be `downloaded from here <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.zip>`__.
+files `here <https://firmware.ardupilot.org/Tools/MissionPlanner/>`__.
+The most recent version of the zip file can be `downloaded from here <https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.zip>`__.
 
 Download and save the zip file to your computer.
 

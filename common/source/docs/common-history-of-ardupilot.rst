@@ -90,7 +90,7 @@ April 2011 - Laser Navigation made the first piece of 32 bit hardware capable of
 
 2011 - APM2 released by 3D Robotics
 
-Nov 2011 - `AutoTester <http://autotest.ardupilot.org/>`__ is created by
+Nov 2011 - `AutoTester <https://autotest.ardupilot.org/>`__ is created by
 Tridge
 
 2012 - APM2.5/2.6 released by 3D Robotics

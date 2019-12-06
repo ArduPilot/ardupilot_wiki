@@ -73,7 +73,7 @@ Build instructions
    4.8.2 and Eclipse "Luna".
 
    -  Download the installation zip:
-      `ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip <http://firmware.ardupilot.org/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip>`__
+      `ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip <https://firmware.ardupilot.org/Tools/Arduino/ArduPilot-Arduino-1.0.3-gcc-4.8.2-windows.zip>`__
    -  Unzip the file to the root of the C drive
 
       .. note::
@@ -83,7 +83,7 @@ Build instructions
                system where the tools are located.
 
 #. Download and install the *PX4 toolchain* by running the
-   `px4_toolchain_installer_v14_win.exe <http://firmware.ardupilot.org/Tools/STM32-tools/px4_toolchain_installer_v14_win.exe>`__
+   `px4_toolchain_installer_v14_win.exe <https://firmware.ardupilot.org/Tools/STM32-tools/px4_toolchain_installer_v14_win.exe>`__
 #. Open the *PX4Console* and navigate to the target vehicle directory:
 
    -  Start the *PX4Console*. This can be found under **Start \| All

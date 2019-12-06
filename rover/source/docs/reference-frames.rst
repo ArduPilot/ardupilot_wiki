@@ -6,7 +6,7 @@ Reference Frames
 
 .. image:: ../images/reference-frame-top-image.png
 
-This section includes details on tested frames to speed up DIY builds of rovers and boats.  If you are looking for a completely ready-to-use vehicle please see our `RTF wiki page <http://ardupilot.org/ardupilot/docs/common-rtf.html>`__.
+This section includes details on tested frames to speed up DIY builds of rovers and boats.  If you are looking for a completely ready-to-use vehicle please see our `RTF wiki page <https://ardupilot.org/ardupilot/docs/common-rtf.html>`__.
 
 .. toctree::
     :maxdepth: 1

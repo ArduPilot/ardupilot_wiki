@@ -15,11 +15,11 @@ introduced a reproducible bug.
    other debug techniques. 
 
 Firmware builds are available from
-`firmware.ardupilot.org <http://firmware.ardupilot.org/>`__ for each
-vehicle-type: \ `Copter <http://firmware.ardupilot.org/Copter/>`__,
-`Plane <http://firmware.ardupilot.org/Plane/>`__,
-`Rover <http://firmware.ardupilot.org/Rover>`__,
-`AntennaTracker <http://firmware.ardupilot.org/AntennaTracker/>`__. To
+`firmware.ardupilot.org <https://firmware.ardupilot.org/>`__ for each
+vehicle-type: \ `Copter <https://firmware.ardupilot.org/Copter/>`__,
+`Plane <https://firmware.ardupilot.org/Plane/>`__,
+`Rover <https://firmware.ardupilot.org/Rover>`__,
+`AntennaTracker <https://firmware.ardupilot.org/AntennaTracker/>`__. To
 perform a bisection search:
 
 #. First test the firmware build half-way between the known working and

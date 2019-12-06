@@ -70,7 +70,7 @@ def fetchparameters(site=args.site):
         pass
 
     for key, value in PARAMETER_SITE.items():
-        fetchurl='http://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
+        fetchurl='https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
         targetfile='./%s/source/docs/parameters.rst' % key
         if args.cached_parameter_files:
             if not os.path.exists(targetfile):

@@ -321,7 +321,7 @@ Switch pulled low turns off the fourth :ref:`relay <common-relay>`, pulled high 
    <td><strong>Lost Copter Alarm</strong></td>
    <td>
 
-Plays the `lost copter alarm <http://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__
+Plays the `lost copter alarm <https://firmware.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__
 though the buzzer (AC3.3 and higher)
 
 .. raw:: html
