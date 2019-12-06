@@ -72,7 +72,7 @@ Step #2 - Start the VM for the first time
 #. Enter your password when the login screen appears
 #. Say "no" to any options to upgrade versions
 #. Open firefox and make sure it can access some web page like
-   www.ardupilot.org
+   ardupilot.org
 
    .. |Ubuntu_TestNetworkWithFirefox| image:: ../images/ubuntu_test_network_with_firefox.jpg
        :target: ../_images/ubuntu_test_network_with_firefox.jpg
