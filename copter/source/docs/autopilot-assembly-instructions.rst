@@ -1,8 +1,8 @@
-.. _assembly-instructions:
+.. _autopilot-assembly-instructions:
 
-=====================
-Assembly Instructions
-=====================
+======================================
+Autopilot System Assembly Instructions
+======================================
 
 This section contains the instructions for assembling the "essential
 components" of Copter on Pixhawk and other autopilots. The

@@ -24,7 +24,7 @@ within the sections) see the topics below:
     :maxdepth: 1
 
     Install Ground Station Software <common-install-gcs>
-    Assembly <assembly-instructions>
+    Autopilot System Assembly <autopilot-assembly-instructions>
     Loading Firmware to Pixhawk boards <common-loading-firmware-onto-pixhawk>
     Loading Firmware to ChibiOS-only boards <common-loading-firmware-onto-chibios-only-boards>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
