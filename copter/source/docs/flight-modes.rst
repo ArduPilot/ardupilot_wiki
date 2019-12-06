@@ -23,6 +23,7 @@ companion computer.
    <table border="1" class="docutils">
    <tr><th>Mode</th><th>Alt Ctrl</th><th>Pos Ctrl</th><th>GPS</th><th>Summary</th></tr>
    <tr><td>Acro</td><td>-</td><td>-</td><td></td><td>Holds attitude, no self-level</td></tr>
+   <tr><td>Airmode</td><td>-</td><td>-/+</td><td></td><td>Actually not a mode, but a feature,see below</td></tr>
    <tr><td>Alt Hold</td><td>s</td><td>+</td><td></td><td>Holds altitude and self-levels the roll & pitch</td></tr>
    <tr><td>Auto</td><td>A</td><td>A</td><td>Y</td><td>Executes pre-defined mission</td></tr>
    <tr><td>AutoTune</td><td>s</td><td>A</td><td>Y</td><td>Automated pitch and bank procedure to improve control loops</td></tr>
@@ -75,6 +76,7 @@ for more details):
 Additional flight modes:
 
 -  :ref:`Acro <acro-mode>`
+-  :ref:`AirMode <airmode>`
 -  :ref:`AutoTune <autotune>`
 -  :ref:`Brake <brake-mode>`
 -  :ref:`Circle <circle-mode>`
@@ -124,6 +126,7 @@ Requires GPS lock prior to takeoff:
 Do not require GPS lock:
 
 -  :ref:`Acro <acro-mode>`
+-  :ref:`AirMode<airmode>`
 -  :ref:`Alt Hold <altholdmode>`
 -  :ref:`Stabilize <stabilize-mode>`
 -  :ref:`Sport <sport-mode>`
@@ -138,6 +141,7 @@ Full list of flight modes
 
     Acro <acro-mode>
     Altitude Hold <altholdmode>
+    AirMode<airmode>
     Auto <auto-mode>
     Brake <brake-mode>
     Circle <circle-mode>
