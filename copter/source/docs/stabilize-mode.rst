@@ -36,7 +36,8 @@ Overview
    constant adjustment of the throttle is required to maintain
    altitude.  If the pilot puts the throttle completely down the motors
    will go to their minimum rate (MOT_SPIN_ARMED) and if the vehicle
-   is flying it will lose attitude control and tumble.
+   is flying it will lose attitude control and tumble. However, this behavior can be changed
+   by enabling :ref:`airmode` 
 -  The throttle sent to the motors is automatically adjusted based on
    the tilt angle of the vehicle (i.e. increased as the vehicle tilts
    over more) to reduce the compensation the pilot must do as the
@@ -47,6 +48,11 @@ Overview
    Always switch into a manual mode such as stabilize if the
    autopilot fails to control the vehicle. Maintaining control of your
    copter is your responsibility.
+
+AirMode
+=======
+
+Stabilize mode can be setup to provide full stabilization at idle throttle. See :ref:`airmode` 
 
 .. _stabilize-mode_tuning:
 
