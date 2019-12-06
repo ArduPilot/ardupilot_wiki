@@ -1,8 +1,8 @@
-.. _assembly-instructions:
+.. _autopilot-assembly-instructions:
 
-===============================
-Assembly Instructions for Plane
-===============================
+================================================
+Autopilot System Assembly Instructions for Plane
+================================================
 
 
 This section contains the wiring instructions for assembling the autopilot and other *essential components* of Plane (for several autopilots):
