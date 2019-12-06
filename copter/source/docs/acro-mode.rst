@@ -15,7 +15,8 @@ Overview
 
 -  The throttle is completely manual with no compensation for tilt angle
    of the vehicle. If the pilot puts the throttle completely down the
-   motors will go to their minimum rate.
+   motors will go to their minimum rate and stabilization will cease.However, this behavior
+   can be changed by enabling :ref:`airmode` 
 -  AC3.1 and higher include an Acro Trainer functionality that can be
    turned on/off to make learning to fly Acro easier.
 -  Stick inputs are interpreted in the "body frame" (as opposed to Sport
@@ -40,6 +41,12 @@ Overview
 
 The above video was filmed with a Pixhawk running AC3.2 in ACRO mode
 using :ref:`FPV goggles <common-fpv-first-person-view>`.
+
+
+AirMode
+=======
+
+Acro mode can be setup to provide full stabilization at idle throttle. See :ref:`airmode` 
 
 .. _acro-mode_acro_trainer:
 
