@@ -1,8 +1,8 @@
-.. _rover-assembly-instructions:
+.. _rover-autopilot-assembly-instructions:
 
-===========================
-Rover Assembly Instructions
-===========================
+============================================
+Rover Autopilot System Assembly Instructions
+============================================
 
 This section contains the wiring instructions for assembling the autopilot and other *essential components* of Rover (for several autopilots):
 
