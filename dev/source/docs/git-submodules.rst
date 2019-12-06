@@ -59,7 +59,7 @@ If you have an existing config.mk you may get an error like this:
 
 ::
 
-    ../mk/px4_targets.mk:8: *** NUTTX_SRC found in config.mk - Please see http://ardupilot.org/dev/docs/git-submodules.html. Stop.
+    ../mk/px4_targets.mk:8: *** NUTTX_SRC found in config.mk - Please see https://ardupilot.org/dev/docs/git-submodules.html. Stop.
 
 That happens because you have previously built with an external
 PX4Firmware and PX4NuttX tree, and you need to convert to using
@@ -105,9 +105,9 @@ You may get warnings like these in your build:
 
 ::
 
-    ../mk/px4_targets.mk:23: *** You have an old PX4Firmware tree - see http://ardupilot.org/dev/docs/git-submodules.html
-    ../mk/px4_targets.mk:26: *** You have an old PX4NuttX tree - see http://ardupilot.org/dev/docs/git-submodules.html
-    ../mk/px4_targets.mk:29: *** You have an old uavcan tree - see http://ardupilot.org/dev/docs/git-submodules.html
+    ../mk/px4_targets.mk:23: *** You have an old PX4Firmware tree - see https://ardupilot.org/dev/docs/git-submodules.html
+    ../mk/px4_targets.mk:26: *** You have an old PX4NuttX tree - see https://ardupilot.org/dev/docs/git-submodules.html
+    ../mk/px4_targets.mk:29: *** You have an old uavcan tree - see https://ardupilot.org/dev/docs/git-submodules.html
 
 This indicates that you have old PX4Firmware or PX4NuttX directories in
 ../PX4Firmware or ../PX4NuttX. The warning is harmless and won't prevent

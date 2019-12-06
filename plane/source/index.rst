@@ -39,7 +39,7 @@ System components
 ~~~~~~~~~~~~~~~~~
 
 -  :ref:`Autopilot <common-autopilots>` loaded with the latest
-   version of `Plane firmware <http://firmware.ardupilot.org/>`__
+   version of `Plane firmware <https://firmware.ardupilot.org/>`__
 -  :ref:`Ground Control Station <common-choosing-a-ground-station>`
    with software that gives you an easy point-and-click setup/configuration, along
    with a full-featured interface.

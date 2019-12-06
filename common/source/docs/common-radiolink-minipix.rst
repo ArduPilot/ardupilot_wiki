@@ -60,7 +60,7 @@ Serial protocols can be adjusted to personal preferences.
 Firmware handling
 =================
 
-This hardware comes preflashed with a RadioLink-branded version of ArduCopter and an ArduPilot-compatible bootloader. To use non-branded ChibiOS-based ArduPilot firmware versions, download the required vehicle firmware .apj file from http://firmware.ardupilot.org/ and flash your board using MissionPlanner's "custom firmware" option.
+This hardware comes preflashed with a RadioLink-branded version of ArduCopter and an ArduPilot-compatible bootloader. To use non-branded ChibiOS-based ArduPilot firmware versions, download the required vehicle firmware .apj file from https://firmware.ardupilot.org/ and flash your board using MissionPlanner's "custom firmware" option.
 
 In case a bootloader re-installation is required, you can boot your board to DFU-mode using the following solder-points:
 

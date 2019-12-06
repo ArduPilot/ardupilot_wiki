@@ -727,7 +727,7 @@ SD Card Image file
 
 If you don't want to configure your own RPi, you can download this image
 file and restore it to an SD Card to use it on your own RPi from this
-`link <http://firmware.ardupilot.org/Tools/MavStation/>`__.
+`link <https://firmware.ardupilot.org/Tools/MavStation/>`__.
 
 To restore **this image** to an SD Card you will need an SD Card with at
 least 16GB of space, just follow the same steps described in the section

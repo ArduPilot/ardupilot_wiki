@@ -26,30 +26,30 @@ A demo of AirSim running with ArduPilot SITL
 
 A list of topics for easier navigation in the page-
 
-#. `Install AirSim <http://ardupilot.org/dev/docs/sitl-with-airsim.html#installing-airsim>`__
+#. `Install AirSim <https://ardupilot.org/dev/docs/sitl-with-airsim.html#installing-airsim>`__
 
-   * `Build on Windows <http://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-windows>`__
-   * `Build on Linux <http://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-linux>`__
+   * `Build on Windows <https://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-windows>`__
+   * `Build on Linux <https://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-linux>`__
 
-#. `Setup Unreal Environment <http://ardupilot.org/dev/docs/sitl-with-airsim.html#setup-unreal-environemt>`__
+#. `Setup Unreal Environment <https://ardupilot.org/dev/docs/sitl-with-airsim.html#setup-unreal-environemt>`__
 
-#. `Using AirSim with ArduPilot <http://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-with-ardupilot>`__
+#. `Using AirSim with ArduPilot <https://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-with-ardupilot>`__
 
-#. `Launch Copter SITL <http://ardupilot.org/dev/docs/sitl-with-airsim.html#launch-copter-sitl>`__
+#. `Launch Copter SITL <https://ardupilot.org/dev/docs/sitl-with-airsim.html#launch-copter-sitl>`__
 
-#. `Using Lidar <http://ardupilot.org/dev/docs/sitl-with-airsim.html#using-lidar>`__
+#. `Using Lidar <https://ardupilot.org/dev/docs/sitl-with-airsim.html#using-lidar>`__
 
-#. `Manual Flying using RC <http://ardupilot.org/dev/docs/sitl-with-airsim.html#manual-flying-using-rc>`__
+#. `Manual Flying using RC <https://ardupilot.org/dev/docs/sitl-with-airsim.html#manual-flying-using-rc>`__
 
-#. `Multi-Vehicle Simulation <http://ardupilot.org/dev/docs/sitl-with-airsim.html#multi-vehicle-simulation>`__
+#. `Multi-Vehicle Simulation <https://ardupilot.org/dev/docs/sitl-with-airsim.html#multi-vehicle-simulation>`__
 
-#. `Custom Environment <http://ardupilot.org/dev/docs/sitl-with-airsim.html#custom-environment>`__
+#. `Custom Environment <https://ardupilot.org/dev/docs/sitl-with-airsim.html#custom-environment>`__
 
-#. `Using AirSim APIs <http://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-apis>`__
+#. `Using AirSim APIs <https://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-apis>`__
 
-#. `Run on Different Machines <http://ardupilot.org/dev/docs/sitl-with-airsim.html#run-on-different-machines>`__
+#. `Run on Different Machines <https://ardupilot.org/dev/docs/sitl-with-airsim.html#run-on-different-machines>`__
 
-#. `Debugging and Development Workflow <http://ardupilot.org/dev/docs/sitl-with-airsim.html#development-workflow>`__
+#. `Debugging and Development Workflow <https://ardupilot.org/dev/docs/sitl-with-airsim.html#development-workflow>`__
 
 
 Installing AirSim

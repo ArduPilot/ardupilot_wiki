@@ -6,7 +6,7 @@ Installing Mission Planner (Windows)
 
 The below instructions show how to install *Mission Planner* on Windows. These instructions will be suitable for most users.  For advanced users and non-standard installations, instructions are found :ref:`here: <mission-planner-advanced-installation>`.  A useful video guide for advanced installation of *Mission Planner* is located `here <https://youtu.be/cw7adeD1yeg>`__.    
 
-- Download the `latest Mission Planner installer from here <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__
+- Download the `latest Mission Planner installer from here <https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__
 - Double click on the downloaded **.msi** file to run the installer
 
   .. image:: ../images/mp_installation.png

@@ -6,14 +6,14 @@ Welcome to the ArduPilot Development Site
 
 .. tip::
 
-    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
+    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 :ref:`ArduPilot <ardupilot:home>` (sometimes known as APM) is the leading open source autopilot
 system supporting multi-copters, traditional helicopters, fixed wing aircraft, rovers, submarines and antenna trackers.
 
 We pride ourselves on being **versatile** (rich in features with support for a large number of flight controllers, sensors and frame types), **trusted** (reliable and predictable) and **open** (both in terms of software and in our team's organisation and governance).
 
-The source code is developed by a group of voluteer and profession (i.e. paid) developers who, along with our users and `Partners <http://ardupilot.org/about/Partners>`__, make up the `ArduPilot Community <http://ardupilot.org>`__.
+The source code is developed by a group of voluteer and profession (i.e. paid) developers who, along with our users and `Partners <https://ardupilot.org/about/Partners>`__, make up the `ArduPilot Community <https://ardupilot.org>`__.
 
 Getting Involved
 ================
@@ -41,7 +41,7 @@ The :ref:`Autopilot Hardware Options <common-autopilots>` page provides an overv
 :ref:`Pixhawk <common-pixhawk-overview>`, :ref:`The Cube <common-thecube-overview>`,
 :ref:`Pixracer <common-pixracer-overview>`, :ref:`NAVIO2 <common-navio2-overview>`, :ref:`Bebop2 <copter:parrot-bebop-autopilot>`, etc.
 
-To get going quickly please consider purchasing one of the :ref:`ready-to-fly vehicles <common-rtf>` including the very low-cost `SkyRocket/SkyViper drone <http://ardupilot.org/copter/docs/skyrocket.html>`__.
+To get going quickly please consider purchasing one of the :ref:`ready-to-fly vehicles <common-rtf>` including the very low-cost `SkyRocket/SkyViper drone <https://ardupilot.org/copter/docs/skyrocket.html>`__.
 
 The ArduPilot source code includes the `AP-HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__
 hardware abstraction layer, making it relatively easy to port the code to a
@@ -68,7 +68,7 @@ ArduPilot dev team.
 -  Sub (`wiki <https://www.ardusub.com/>`__,
    `code <https://github.com/ArduPilot/ardupilot>`__) - autopilot for
    submersible vehicles
--  Antenna Tracker (`wiki <http://ardupilot.org/antennatracker/index.html>`__,
+-  Antenna Tracker (`wiki <https://ardupilot.org/antennatracker/index.html>`__,
    `code <https://github.com/ArduPilot/ardupilot>`__) - for automatically aiming an antenna at a vehicle
 -  Mission Planner (`wiki <http://planner.ardupilot.com/>`__,
    `code <https://github.com/ArduPilot/MissionPlanner>`__) - the most
@@ -103,9 +103,9 @@ How the team works
 
 -  Our annual developers conference is held in Feb/March in Canberra Australia (`2018 annoucement <https://discuss.ardupilot.org/t/developer-meetup-in-canberra-february-2018>`__).
 -  The source code for ArduPilot is managed using git on https://github.com/ArduPilot/ardupilot
--  Pre-compiled firmware for supported autopilot boards is available from http://firmware.ardupilot.org
+-  Pre-compiled firmware for supported autopilot boards is available from https://firmware.ardupilot.org
 -  User support is available on the `forums <https://discuss.ardupilot.org/>`__.
--  The ArduPilot `automatic test system <http://autotest.ardupilot.org/>`__ shows the test status of each commit. It's described `here <https://diydrones.com/profiles/blogs/ardupilot-automatic-testing-system>`__.
+-  The ArduPilot `automatic test system <https://autotest.ardupilot.org/>`__ shows the test status of each commit. It's described `here <https://diydrones.com/profiles/blogs/ardupilot-automatic-testing-system>`__.
 -  Bug tracking and open issues are tracked using the `github issues system <https://github.com/ArduPilot/ardupilot/issues>`__
 -  Vehicle onboard parameter documentation for :ref:`copter <copter:parameters>`, :ref:`plane <plane:parameters>` and :ref:`rover <rover:parameters>` is auto-generated from the source code
 

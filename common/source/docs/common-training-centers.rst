@@ -81,7 +81,7 @@ Books
 
 .. note::
 
-     If your school would like to be added to this list, please send an email to partners@ardupilot.org.  Please send your company information including a logo to and express your desire to be added to the Training centers page.  Please include any evidence you can provide of the types of training provided.We ask that you consider supporting ArduPilot by becoming a `Partner <http://ardupilot.org/about/Partners>`__
+     If your school would like to be added to this list, please send an email to partners@ardupilot.org.  Please send your company information including a logo to and express your desire to be added to the Training centers page.  Please include any evidence you can provide of the types of training provided.We ask that you consider supporting ArduPilot by becoming a `Partner <https://ardupilot.org/about/Partners>`__
 
 
 

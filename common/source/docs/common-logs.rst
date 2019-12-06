@@ -32,8 +32,8 @@ Tools for log handling and analysis
     :maxdepth: 1
     
     
-    MAVExplorer <http://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html>
-    MissionPLanner <http://ardupilot.org/planner/>
+    MAVExplorer <https://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html>
+    MissionPLanner <https://ardupilot.org/planner/>
     QGroundControl <http://qgroundcontrol.com/>
     Dronee Plotter <https://plot.dron.ee/>
     

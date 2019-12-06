@@ -54,10 +54,10 @@ follow `this straight forward procedure to load ArduPilot on your board for the 
 -  Mission Planner
 
 Mission Planner (MP) is a ground control station for AP, but also, the primary tool for firmware updates and, most importantly, parameters configuration. MP can be downloaded here:
-http://ardupilot.org/planner/docs/mission-planner-overview.html
+https://ardupilot.org/planner/docs/mission-planner-overview.html
 
 There are alternatives,for non-PC users:
-http://ardupilot.org/planner2/index.html
+https://ardupilot.org/planner2/index.html
 
 Once the firmware is installed and you are connected to MP or its alternatives, software setup can be begin. 
 Parameters may be changed manually using the Configuration / Tuning Tabs.

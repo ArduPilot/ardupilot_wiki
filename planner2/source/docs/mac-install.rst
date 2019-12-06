@@ -16,7 +16,7 @@ Download
 
 Download the installer .dmg file for your macOS (OSX) machine from 
 
-`firmware.ardupilot.org/Tools/APMPlanner <http://firmware.ardupilot.org/Tools/APMPlanner/>`__
+`firmware.ardupilot.org/Tools/APMPlanner <https://firmware.ardupilot.org/Tools/APMPlanner/>`__
 
 And also check the discussion forum for lastest info
 

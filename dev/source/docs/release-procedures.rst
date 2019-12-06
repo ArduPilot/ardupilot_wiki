@@ -11,7 +11,7 @@ This page outlines the steps that are normally followed for a Copter release.  L
 Alpha Testing
 =============
 
-The `AutoTester <http://autotest.ardupilot.org/>`__ runs after each
+The `AutoTester <https://autotest.ardupilot.org/>`__ runs after each
 commit and highlights issues that it has been setup to test.
 
 Developers and some Alpha testers perform intermittent tests of master
@@ -22,7 +22,7 @@ Releasing Beta Versions / Release Candidates
 
 Beta Testing / Release candidates are made available to beta testers through the
 mission planner's "Beta firmwares" link.  The Mission Planner "Beta
-firmware" link pulls the firmware from the `Copter/beta directory of firmware.ardupilot.org. <http://firmware.ardupilot.org/Copter/beta/>`__
+firmware" link pulls the firmware from the `Copter/beta directory of firmware.ardupilot.org. <https://firmware.ardupilot.org/Copter/beta/>`__
 
 .. image:: ../images/ReleaseProcedures_MPBetaFirmwares.jpg
     :target: ../_images/ReleaseProcedures_MPBetaFirmwares.jpg

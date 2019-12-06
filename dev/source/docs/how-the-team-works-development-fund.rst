@@ -4,7 +4,7 @@
 Funding Committee
 =================
 
-ArduPilot collects funds through donations from :ref:`individuals <common-donation>` and `Partners <http://ardupilot.org/about/Partners>`__ and these are held within SPI.
+ArduPilot collects funds through donations from :ref:`individuals <common-donation>` and `Partners <https://ardupilot.org/about/Partners>`__ and these are held within SPI.
 Some of these funds go to pay for fixed costs including servers (i.e. build servers, wiki servers, etc) and are billed directly to ArduPilot's account within SPI.
 
 Each month SPI publishes an in-month and year-to-date financial report on the Treasurer `page <https://spi-inc.org/treasurer/>`__.  Annual Reports, containing a high level summary, are published `here <https://spi-inc.org/corporate/annual-reports/>`__

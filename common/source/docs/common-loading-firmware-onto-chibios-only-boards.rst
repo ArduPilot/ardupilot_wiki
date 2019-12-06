@@ -42,10 +42,10 @@ Download and Install Zadig (Windows only)
 Download the ArduPilot firmware
 -------------------------------
 
-- Download the ArduPilot firmware for your board from `firmware.ardupilot.org <http://firmware.ardupilot.org/>`__.  You can normally find the appropriate firmware by doing the following:
+- Download the ArduPilot firmware for your board from `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__.  You can normally find the appropriate firmware by doing the following:
 
-  - open `firmware.ardupilot.org <http://firmware.ardupilot.org/>`__
-  - select click on the link for your vehicle type (i.e. `Plane <http://firmware.ardupilot.org/Plane/>`__, `Copter <http://firmware.ardupilot.org/Copter/>`__, `Rover <http://firmware.ardupilot.org/Rover/>`__, `Sub <http://firmware.ardupilot.org/Sub/>`__ or `Antenna Tracker <http://firmware.ardupilot.org/AntennaTracker/>`__)
+  - open `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__
+  - select click on the link for your vehicle type (i.e. `Plane <https://firmware.ardupilot.org/Plane/>`__, `Copter <https://firmware.ardupilot.org/Copter/>`__, `Rover <https://firmware.ardupilot.org/Rover/>`__, `Sub <https://firmware.ardupilot.org/Sub/>`__ or `Antenna Tracker <https://firmware.ardupilot.org/AntennaTracker/>`__)
   - select "beta" or "stable"
   - look for the directory with the name that most closely matches the autopilot
   - download the "arduXXX_with_bl.hex" file

@@ -6,7 +6,7 @@ AntennaTracker Home
 
 .. tip::
 
-    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
+    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 The *AntennaTracker* Project delivers firmware which allows you to use a
 supported flight controller board (Pixhawk, APM2, etc.) as the

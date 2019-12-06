@@ -103,7 +103,7 @@ Flashing Firmware
 ========================
 Usually these boards are sold pre-flashed with betaflight / INav firwares and require both firmware and bootloader to be updated if you want to use ArduPilot, as an ArduPilot-compatible bootloader is required for subsequent ArduPilot firmware-upgrade handling.
 
-Firmware files can be found `here <http://firmware.ardupilot.org/>`__.
+Firmware files can be found `here <https://firmware.ardupilot.org/>`__.
 Use omnibusf4pro firmware for the OmnibusF4Pro boards and omnibusf4 firmware for the AIO versions. The pro version will be used in the following examples.
 Besides the .apj files for firmware flashing via MissionPlanner, there's also .hex files for use with various utilities like dfu-util or betaflight / iNav GUIs. You will also find a _bl.hex that contains the firmware plus the ArduPilot compatible bootloader in case it is not already present on your board. 
 
@@ -148,7 +148,7 @@ Install dfu-util
 Flash Bootloader
 ----------------
 
-Bootloader binaries for the current targets can be found `here <http://firmware.ardupilot.org/Tools/Bootloaders>`__.
+Bootloader binaries for the current targets can be found `here <https://firmware.ardupilot.org/Tools/Bootloaders>`__.
 
 Download omnibusf4pro_bl.bin for this board type. With your board connected via USB and put into DFU mode, open a terminal and flash the new bootloader with the following command line:
 
@@ -178,7 +178,7 @@ Congratulations! You're now running ArduPilot on your omnibusF4. You can use thi
 Compile ArduPilot
 -----------------
 To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
-`Building the Code <http://ardupilot.org/dev/docs/building-the-code.html>`__
+`Building the Code <https://ardupilot.org/dev/docs/building-the-code.html>`__
 
 
 Configuration

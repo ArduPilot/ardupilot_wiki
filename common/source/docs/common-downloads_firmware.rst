@@ -4,13 +4,13 @@
 DOWNLOADS: Firmware
 ===================
 
-The latest firmware for all of the vehicles is available from the `firmware server <http://firmware.ardupilot.org/>`__.
+The latest firmware for all of the vehicles is available from the `firmware server <https://firmware.ardupilot.org/>`__.
 This includes:
 
-* `Copter <http://firmware.ardupilot.org/Copter>`__ 
-* `Plane <http://firmware.ardupilot.org/Plane>`__ 
-* `Rover <http://firmware.ardupilot.org/Rover>`__ 
-* `AntennaTracker <http://firmware.ardupilot.org/AntennaTracker>`__ 
+* `Copter <https://firmware.ardupilot.org/Copter>`__ 
+* `Plane <https://firmware.ardupilot.org/Plane>`__ 
+* `Rover <https://firmware.ardupilot.org/Rover>`__ 
+* `AntennaTracker <https://firmware.ardupilot.org/AntennaTracker>`__ 
 
 This page provides additional links to a number of specific builds that are considered "significant" - for example, the last builds of 
 Copter to fit on the APM2.x board.
@@ -19,11 +19,11 @@ Copter to fit on the APM2.x board.
 
     The firmware server additionally hosts GCS installers and other tools:
     
-    * `Mission Planner <http://firmware.ardupilot.org/Tools/MissionPlanner>`__ 
-    * `APM Planner 2.0 <http://firmware.ardupilot.org/Tools/APMPlanner>`__ 
-    * `RadioSiK <http://firmware.ardupilot.org/SiK>`__ 
-    * `Developer Builds <http://firmware.ardupilot.org/devbuild>`__ 
-    * `Build and Development Tools <http://firmware.ardupilot.org/Tools>`__ 
+    * `Mission Planner <https://firmware.ardupilot.org/Tools/MissionPlanner>`__ 
+    * `APM Planner 2.0 <https://firmware.ardupilot.org/Tools/APMPlanner>`__ 
+    * `RadioSiK <https://firmware.ardupilot.org/SiK>`__ 
+    * `Developer Builds <https://firmware.ardupilot.org/devbuild>`__ 
+    * `Build and Development Tools <https://firmware.ardupilot.org/Tools>`__ 
     * `Companion Computers and associated example code <https://github.com/ArduPilot/companion>`__ 
 
 
@@ -37,7 +37,7 @@ ArduCopter APM 2.x Firmware
 
 ArduCopter v3.2.1 firmware for APM 2.x. This is the **last build** of ArduCopter that still fits on the **APM 2.x** boards.
 
-* `ArduCopter_APM_2.0_Firmware_3.2.1.zip <http://download.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
+* `ArduCopter_APM_2.0_Firmware_3.2.1.zip <https://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_2.0_Firmware_3.2.1.zip>`__
 
 
 ArduCopter APM 1.0 Firmware
@@ -45,7 +45,7 @@ ArduCopter APM 1.0 Firmware
 
 ArduCopter v3.2.1 firmware for APM 1.0. This is the last build of ArduCopter that still fits on the **APM 1.0** boards.
 
-* `ArduCopter_APM_1.0_Firmware_3.2.1.zip <http://download.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
+* `ArduCopter_APM_1.0_Firmware_3.2.1.zip <https://firmware.ardupilot.org/downloads/wiki/firmware/ArduCopter_APM_1.0_Firmware_3.2.1.zip>`__
 
 
 Bootloader
@@ -58,8 +58,8 @@ APM2.x Autopilot
 
 Bootloader for APM2.x autopilot series
 
-* Bootloader for: `32u2 MCU <http://download.ardupilot.org/downloads/bootloader/Arduino-usbdfu.hex>`__
-* Bootloader for: `2560 MCU <http://download.ardupilot.org/downloads/bootloader/stk500boot_v2_mega2560.hex>`__
+* Bootloader for: `32u2 MCU <https://firmware.ardupilot.org/downloads/bootloader/Arduino-usbdfu.hex>`__
+* Bootloader for: `2560 MCU <https://firmware.ardupilot.org/downloads/bootloader/stk500boot_v2_mega2560.hex>`__
 
 You need AVR programmer with ISP connector to burn these boot loaders. 
 

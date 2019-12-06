@@ -24,7 +24,7 @@ Planner*, *APM Planner 2*, *MAVProxy*, *QGroundControl* and *UgCS*. For Tablet/S
 *Tower* (DroidPlanner 3), *MAVPilot*, *AndroPilot* and *SidePilot* that can be
 used to communicate with ArduPilot (i.e.
 :ref:`Copter <copter:home>`,
-`Plane <http://ardupilot.org/plane/index.html>`_,
+`Plane <https://ardupilot.org/plane/index.html>`_,
 :ref:`Rover <rover:home>`,
 :ref:`AntennaTracker <antennatracker:home>`).
 
@@ -59,7 +59,7 @@ Full featured and widely used GCS.
 .. image:: ../../../images/MP-FP-Screen.jpg
     :target: ../_images/MP-FP-Screen.jpg
 
--  `Download <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__
+-  `Download <https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__
 -  :ref:`Wiki <planner:home>`
 -  `Support Forum <https://discuss.ardupilot.org/c/ground-control-software/mission-planner>`__
 -  `Issues List <https://github.com/ArduPilot/MissionPlanner/issues>`__

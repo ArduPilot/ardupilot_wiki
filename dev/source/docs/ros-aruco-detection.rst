@@ -71,7 +71,7 @@ On the Raspberry Pi 3 on quadcopter
 
 - Connect the serial port with one telemetry port on the Flight Controller
 - Connect to the PC using WiFi following the `instructions <https://learn.ubiquityrobotics.com/connect_network>`__ on Ubiquity Robotics site
-- Edit mavros configuration file apm_config.yaml to syncronize the flight controller and companion computer (Raspberry Pi) clocks using MAVLink’s SYSTEM_TIME and TIMESYNC messages as in this `wiki <http://ardupilot.org/dev/docs/ros-timesync.html>`__
+- Edit mavros configuration file apm_config.yaml to syncronize the flight controller and companion computer (Raspberry Pi) clocks using MAVLink’s SYSTEM_TIME and TIMESYNC messages as in this `wiki <https://ardupilot.org/dev/docs/ros-timesync.html>`__
 - Calibrate the camera following the instructions in this `wiki <http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration>`__
 - Clone this fork of `aruco_gridboard <https://github.com/anbello/aruco_gridboard>`__ in ~/catkin_ws/src
 - Build all

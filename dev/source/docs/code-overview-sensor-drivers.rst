@@ -105,7 +105,7 @@ UART/Serial Back-End Example
 ============================
 
 Next is the update method of the `LightWare back-end <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp>`__ using the serial protocol.
-As described on the `user wiki <http://ardupilot.org/copter/docs/common-lightware-sf10-lidar.html#serial-connection>`__ the serial range finder can be connected to any of the flight controller's serial ports but the user must specify which serial port, and what baud rate is used by setting the SERIALX_BAUD and SERIALX_PROTOCOL parameters.
+As described on the `user wiki <https://ardupilot.org/copter/docs/common-lightware-sf10-lidar.html#serial-connection>`__ the serial range finder can be connected to any of the flight controller's serial ports but the user must specify which serial port, and what baud rate is used by setting the SERIALX_BAUD and SERIALX_PROTOCOL parameters.
 
 .. image:: ../images/code-overview-sensor-driver-uart1.png
 

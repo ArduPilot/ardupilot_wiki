@@ -439,7 +439,7 @@ ANTENNA TRACKER FUNCTIONS
 Tracker Yaw/Pitch
 +++++++++++++++++
 
-These outputs control the pitch and yaw servos for an `Antenna Tracker <http://ardupilot.org/antennatracker/index.html>`__.
+These outputs control the pitch and yaw servos for an `Antenna Tracker <https://ardupilot.org/antennatracker/index.html>`__.
 
 CAMERA/GIMBAL FUNCTIONS
 -----------------------

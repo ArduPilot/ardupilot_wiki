@@ -30,7 +30,7 @@ Receive from FCU
     - Plane >= 3.8.0 (Planned)
 
 By default, ArduPilot will send distance sensors message for each rangefinder connected on FCU on Rover and only downward oriented (PITCH_270) on Copter and Plane.
-Example : launch SITL and add a analog rangefinder, see `SITL instruction here <http://ardupilot.org/dev/docs/using-sitl-for-ardupilot-testing.html#adding-a-virtual-rangefinder>`__.
+Example : launch SITL and add a analog rangefinder, see `SITL instruction here <https://ardupilot.org/dev/docs/using-sitl-for-ardupilot-testing.html#adding-a-virtual-rangefinder>`__.
 Launch MAVROS with default config. You should have rangefinder data in /mavros/distance_sensor/rangefinder_pub.
 
 .. code-block:: none

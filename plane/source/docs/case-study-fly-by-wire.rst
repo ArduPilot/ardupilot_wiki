@@ -19,7 +19,7 @@ the flight starts off with a couple laps around a course of tightly set
 waypoints, and FBW-B doesn't start until 77.2% through the log.
 
 -  5/23/2013 tlog file (1.9 MB) - Download from original blog
-   post \ `**here** <https://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1265467>`__. - `X8 Parameters spreadsheet file download (14 KB) <http://firmware.ardupilot.org/downloads/wiki/other_files/X8Parameters.xlsx>`__
+   post \ `**here** <https://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1265467>`__. - `X8 Parameters spreadsheet file download (14 KB) <https://firmware.ardupilot.org/downloads/wiki/other_files/X8Parameters.xlsx>`__
 
 By analyzing this data
 using \ **`Mavgraph <http://qgroundcontrol.org/mavlink/mavproxy_startpage#mavgraphpy>`__**,

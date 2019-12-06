@@ -99,7 +99,7 @@ Flashing the APSync image to the TX1
 ------------------------------------
 
 - connect a USB cable from the Ubuntu 16 machine to the TX1 development board, power on the TX1 and put the TX1 into bootloader mode (see instructions above)
-- On the Ubuntu 16 machine, download the latest `APSync image for the tx1 <http://firmware.ardupilot.org/Companion/apsync/apsync-tx1-latest-img.xz>`__ from `firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync/>`__ (look for images starting with "tx1").
+- On the Ubuntu 16 machine, download the latest `APSync image for the tx1 <https://firmware.ardupilot.org/Companion/apsync/apsync-tx1-latest-img.xz>`__ from `firmware.ardupilot.org <https://firmware.ardupilot.org/Companion/apsync/>`__ (look for images starting with "tx1").
 - uncompress the downloaded image (i.e. open a file explorer, right-mouse-button click on the file and select "Extract Here")
 - on the Ubuntu machine, from the directory where you installed JetPack (i.e. ~/Desktop/JetPack-3.1)
 - cd 64_TX1/Linux_for_Tegra_64_tx1/bootloader

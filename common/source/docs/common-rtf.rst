@@ -9,7 +9,7 @@ These vehicles come pre-configured with everything required to fly, drive or swi
 
 .. note::
 
-   We recommend, when possible, to purchase from our `Partners <http://ardupilot.org/about/Partners>`__ because they directly support ArduPilot and we are more confident that users can upgrade the firmware on the vehicle.
+   We recommend, when possible, to purchase from our `Partners <https://ardupilot.org/about/Partners>`__ because they directly support ArduPilot and we are more confident that users can upgrade the firmware on the vehicle.
 
 Vehicles from Partners
 ======================

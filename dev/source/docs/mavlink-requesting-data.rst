@@ -102,7 +102,7 @@ Setting the ``SRx_`` parameters (and then rebooting the autopilot) will cause th
 Using REQUEST_DATA_STREAM
 -------------------------
 
-Most ground stations including the Mission Planner use this method.  See "Setting the datarate" section of the `Telemetry Logs wiki page <http://ardupilot.org/copter/docs/common-mission-planner-telemetry-logs.html#setting-the-datarate>`__.
+Most ground stations including the Mission Planner use this method.  See "Setting the datarate" section of the `Telemetry Logs wiki page <https://ardupilot.org/copter/docs/common-mission-planner-telemetry-logs.html#setting-the-datarate>`__.
 
 Send a `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ message with the following fields
 
@@ -129,7 +129,7 @@ Send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`_
 
 .. warning::
 
-   If the telemetry link is shared (i.e. multiple GCSs or a GCS and a companion computer) there can be conflicting requests.  The most common example is the Mission Planner using the REQUEST_DATA_STREAM method while a companion copmuter uses SET_MESSAGE_INTERVAL method.  Mission Planner at least allows turning off the REQUEST_DATA_STREAM requests by setting the rates to "-1" (see `Setting the datarate here <http://ardupilot.org/copter/docs/common-mission-planner-telemetry-logs.html#setting-the-datarate>`__).  MAVProxy users can ``set messagerate -1``.
+   If the telemetry link is shared (i.e. multiple GCSs or a GCS and a companion computer) there can be conflicting requests.  The most common example is the Mission Planner using the REQUEST_DATA_STREAM method while a companion copmuter uses SET_MESSAGE_INTERVAL method.  Mission Planner at least allows turning off the REQUEST_DATA_STREAM requests by setting the rates to "-1" (see `Setting the datarate here <https://ardupilot.org/copter/docs/common-mission-planner-telemetry-logs.html#setting-the-datarate>`__).  MAVProxy users can ``set messagerate -1``.
 
 Using REQUEST_MESSAGE
 ---------------------

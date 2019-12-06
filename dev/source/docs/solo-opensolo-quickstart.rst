@@ -132,7 +132,7 @@ Set a parameter to a nonsense value which will reset all parameters:
 
 That's for MAVProxy; use you GCS of choice to get the same effect.
 
-Load the default parameters file (which can be found here:  http://autotest.ardupilot.org/Tools/SoloBinaries/Solo_AC350_Params.param  )
+Load the default parameters file (which can be found here:  https://autotest.ardupilot.org/Tools/SoloBinaries/Solo_AC350_Params.param  )
 
 ::
 

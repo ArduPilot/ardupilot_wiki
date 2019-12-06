@@ -73,7 +73,7 @@ Loading a bootloader
 
 The current bootloaders suitable for ArduPilot on STM32 are here:
 
-  `http://firmware.ardupilot.org/Tools/Bootloaders <http://firmware.ardupilot.org/Tools/Bootloaders>`__
+  `https://firmware.ardupilot.org/Tools/Bootloaders <https://firmware.ardupilot.org/Tools/Bootloaders>`__
 
 download the px4fmuv2_bl.bin and run this:
 

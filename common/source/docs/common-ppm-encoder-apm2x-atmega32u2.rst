@@ -34,7 +34,7 @@ What you need
 -  Windows XP/Vista/7
 -  USB cable
 -  Download and install Flip,
-   click \ `**here**. <http://www.atmel.com/tools/FLIP.aspx>`__ - The firmware (HEX file) you want to load can be `downloaded here <http://download.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega32U2.hex_.zip>`__.
+   click \ `**here**. <http://www.atmel.com/tools/FLIP.aspx>`__ - The firmware (HEX file) you want to load can be `downloaded here <https://firmware.ardupilot.org/downloads/wiki/advanced_user_tools/ArduPPM_v2.3.16_ATMega32U2.hex_.zip>`__.
 -  *(The source code, while not necessary if using the compiled code,
    `**can be found
    here** <https://github.com/ArduPilot/ardupilot/blob/master/Tools/ArduPPM/Libraries/PPM_Encoder.h>`__.)*

@@ -28,7 +28,7 @@ Installing MAVExplorer on Windows
 
 To install MAVExplorer on Windows download the pre-built MAVProxy package here:
 
-http://firmware.ardupilot.org/Tools/MAVProxy/
+https://firmware.ardupilot.org/Tools/MAVProxy/
 
 That package includes both MAVProxy and MAVExplorer. 
 

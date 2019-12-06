@@ -6,7 +6,7 @@ Rover Home
 
 .. tip::
 
-   Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
+   Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 .. image:: /images/home_rover.jpg
     :target: _images/home_rover.jpg

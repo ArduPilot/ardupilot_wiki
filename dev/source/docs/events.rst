@@ -4,7 +4,7 @@
 Events for 2019
 ===============
 
-This is a list of events where ArduPilot developers and/or their `Partners <http://ardupilot.org/about/Partners>`__ can be found
+This is a list of events where ArduPilot developers and/or their `Partners <https://ardupilot.org/about/Partners>`__ can be found
 
 Planned Events
 --------------

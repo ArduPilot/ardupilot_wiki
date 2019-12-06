@@ -19,7 +19,7 @@ What you need
 
 #. `Download Flightgear 2.x.x here <http://www.flightgear.org/download/>`__
 
-#. `Download the latest APM Mission Planner here <http://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__.
+#. `Download the latest APM Mission Planner here <https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.msi>`__.
 
 #. In the Mission Planner > 'Configuration tab \| Adv Parameter List'
    save your current parameters so you can reload them after the

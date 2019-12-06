@@ -5,7 +5,7 @@
 ArduPilot Pre-Built Binaries
 ============================
 
-The ArduPilot firmware server at http://firmware.ardupilot.org has pre-built binaries for many common flight boards.
+The ArduPilot firmware server at https://firmware.ardupilot.org has pre-built binaries for many common flight boards.
 
 Build Categories
 ----------------

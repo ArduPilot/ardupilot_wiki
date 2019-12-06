@@ -25,7 +25,7 @@ Note that alternative firmwares are use **at your own risk** and probably void y
 As of early 2018 there are two versions of the firmware available:
 
 - the `official firmware from skyrocket <http://firmware.sky-viper.com/latest/>`__ (see file ending with ".abin") is the safest firmware to use.
-- the `latest firmware from ArduPilot <http://firmware.ardupilot.org/Copter/latest/skyviper-v2450/>`__ includes some new features (i.e. :ref:`SmartRTL <smartrtl-mode>`) but is also missing some features (i.e. ability to control vehicle during RTL).
+- the `latest firmware from ArduPilot <https://firmware.ardupilot.org/Copter/latest/skyviper-v2450/>`__ includes some new features (i.e. :ref:`SmartRTL <smartrtl-mode>`) but is also missing some features (i.e. ability to control vehicle during RTL).
 
 **Uploading using the SD card**
 

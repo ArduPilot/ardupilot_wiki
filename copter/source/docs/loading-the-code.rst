@@ -12,10 +12,10 @@ do on the bench before installation. For desktop PC's the following ground
 station software applications can be used to load firmware:
 
 1. `Mission Planner (Windows only)
-<http://ardupilot.org/planner/>`_
+<https://ardupilot.org/planner/>`_
 
 2. `APM Planner2 (Windows, Mac or Linux)
-<http://ardupilot.org/planner2/>`_
+<https://ardupilot.org/planner2/>`_
 
 3. `QGroundControl (Windows, Mac or Linux)
 <http://qgroundcontrol.com/>`_

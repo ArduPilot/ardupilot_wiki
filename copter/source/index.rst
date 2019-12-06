@@ -6,7 +6,7 @@ Copter Home
 
 .. tip::
 
-    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <http://ardupilot.org/>`__
+    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 
 .. image:: /images/home_copter.jpg
@@ -73,7 +73,7 @@ System components
 
 -  A Pixhawk or :ref:`other autopilot <common-autopilots>` 
    loaded with the latest version of
-   the `Copter firmware <http://firmware.ardupilot.org/>`__.
+   the `Copter firmware <https://firmware.ardupilot.org/>`__.
 -  :ref:`Mission Planner software <planner:home>` -- gives
    you an easy point-and-click setup/configuration, and a full-featured
    ground control interface.
@@ -142,7 +142,7 @@ Rotor Craft types
 
 Because of its open design, Copter also supports more unusual frame
 types including the :ref:`Single and Coax-Copters <singlecopter-and-coaxcopter>`.  Put this together
-with `Plane <http://ardupilot.org/plane/index.html>`__,
+with `Plane <https://ardupilot.org/plane/index.html>`__,
 :ref:`Rover <rover:home>` and :ref:`Antenna Tracker <antennatracker:home>` and you have a system
 of robotic vehicles that can be controlled through very similar
 interfaces to accomplish a wide variety of tasks.
@@ -159,7 +159,7 @@ Getting more info
 -  Continue to the :ref:`Introduction section of this wiki <introduction>`.
 -  Use the `ArduPilot Discuss Server Forums <https://discuss.ardupilot.org/c/arducopter>`__
    to ask support questions and advice.
--  To get involved with the development of the software platform, visit the `ArduPilot development guide <http://ardupilot.org/dev/index.html>`__.
+-  To get involved with the development of the software platform, visit the `ArduPilot development guide <https://ardupilot.org/dev/index.html>`__.
 
 
 .. tip::

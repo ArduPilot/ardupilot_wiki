@@ -13,15 +13,15 @@ Most ground stations (aka GCS) provide an editable list of parameters to the use
 +---------------+-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 | Vehicle       | Human readable                                                    | Machine Readable                                                                      |
 +===============+===================================================================+=======================================================================================+
-|AntennaTracker |`html <http://ardupilot.org/antennatracker/docs/parameters.html>`__|`apm.pdef.xml <http://autotest.ardupilot.org/Parameters/AntennaTracker/apm.pdef.xml>`__|
+|AntennaTracker |`html <https://ardupilot.org/antennatracker/docs/parameters.html>`__|`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/AntennaTracker/apm.pdef.xml>`__|
 +---------------+-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-|Copter         |`html <http://ardupilot.org/copter/docs/parameters.html>`__        |`apm.pdef.xml <http://autotest.ardupilot.org/Parameters/ArduCopter/apm.pdef.xml>`__    |
+|Copter         |`html <https://ardupilot.org/copter/docs/parameters.html>`__        |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduCopter/apm.pdef.xml>`__    |
 +---------------+-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-|Plane          |`html <http://ardupilot.org/plane/docs/parameters.html>`__         |`apm.pdef.xml <http://autotest.ardupilot.org/Parameters/ArduPlane/apm.pdef.xml>`__     |
+|Plane          |`html <https://ardupilot.org/plane/docs/parameters.html>`__         |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduPlane/apm.pdef.xml>`__     |
 +---------------+-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-|Rover          |`html <http://ardupilot.org/rover/docs/parameters.html>`__         |`apm.pdef.xml <http://autotest.ardupilot.org/Parameters/APMrover2/apm.pdef.xml>`__     |
+|Rover          |`html <https://ardupilot.org/rover/docs/parameters.html>`__         |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/APMrover2/apm.pdef.xml>`__     |
 +---------------+-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-|Submarine      | unavailable                                                       |`apm.pdef.xml <http://autotest.ardupilot.org/Parameters/ArduSub/apm.pdef.xml>`__       |
+|Submarine      | unavailable                                                       |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduSub/apm.pdef.xml>`__       |
 +---------------+-------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 Retrieving All Parameters

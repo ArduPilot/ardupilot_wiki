@@ -18,7 +18,7 @@ Installation steps
 ==================
 
 - Install Cygwin as described :ref:`here <building-setup-windows-cygwin>`
-- `Download MAVProxy for Windows <http://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe>`__ (latest build), install the executable including accepting the license and all default installation options
+- `Download MAVProxy for Windows <https://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe>`__ (latest build), install the executable including accepting the license and all default installation options
 
 .. tip::
 
@@ -286,7 +286,7 @@ Updating MAVProxy
    must first delete the old directory: C\ **:\\Program Files
    (x86)\\MAVProxy\\**.
 
-`Download and Install MAVProxy for Windows <http://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe>`__ (this link always points to the latest version!)
+`Download and Install MAVProxy for Windows <https://firmware.ardupilot.org/Tools/MAVProxy/MAVProxySetup-latest.exe>`__ (this link always points to the latest version!)
 
 
 .. _sitl-native-on-windows_next_steps:

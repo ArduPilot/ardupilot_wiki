@@ -163,7 +163,7 @@ Linux then make sure pip is installed and run::
   $ pip install --upgrade pymavlink mavproxy
   
 If you are on Windows then download and install MAVProxy from
-http://firmware.ardupilot.org/Tools/MAVProxy/
+https://firmware.ardupilot.org/Tools/MAVProxy/
 
 Then do a git checkout of ArduPilot master and change directory to the
 ArduPlane directory. I like to create a sub-directory for each

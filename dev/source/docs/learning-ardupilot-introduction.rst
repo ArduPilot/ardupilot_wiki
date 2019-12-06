@@ -57,7 +57,7 @@ Tools directories
 
 The tools directories are miscellaneous support directories. For
 examples, tools/autotest provides the autotest infrastructure behind the
-`autotest.ardupilot.org <http://autotest.ardupilot.org/>`__ site and
+`autotest.ardupilot.org <https://autotest.ardupilot.org/>`__ site and
 tools/Replay provides our log replay utility.
 
 External support code

@@ -36,7 +36,7 @@ Setup the RPi
 The easiest way to setup the RPi is to flash one of the existing :ref:`APSync <apsync-intro>` images:
 
 - purchase a formatted 8GB or 16GB SD card (16GB is better because some 8GB cards will not be quite large enough to fit the image) and insert into your laptop/desktop computer's SD card slot
-- download the latest `image from firmware.ardupilot.org <http://firmware.ap.ardupilot.org/Companion/apsync>`__.  Look for the file starting with "apsync-rpi".
+- download the latest `image from firmware.ardupilot.org <https://firmware.ardupilot.org/Companion/apsync>`__.  Look for the file starting with "apsync-rpi".
 - extract the image.  On Windows you may use `7-zip <http://www.7-zip.org/>`__.
 - For Windows download and install Win32DiskImager and follow the `instructions here <https://www.raspberrypi.org/documentation/installation/installing-images/windows.md>`__.
 - For `Linux follow these instructions <https://www.raspberrypi.org/documentation/installation/installing-images/linux.md>`__.

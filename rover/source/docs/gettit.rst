@@ -43,7 +43,7 @@ Autopilot Hardware
 
 The list of supported autopilots is on the :ref:`Choosing a Flight Controller <common-choosing-a-flight-controller>` wiki page.  The :ref:`Pixhawk <common-pixhawk-overview>` family is the most common choice.
 
-Developers creating robot vision applications should consider a Linux based autopilot board (e.g. :ref:`Emlid Edge <common-emlid-edge>`) or adding a separate `Companion Computer <http://ardupilot.org/dev/docs/companion-computers.html>`__.
+Developers creating robot vision applications should consider a Linux based autopilot board (e.g. :ref:`Emlid Edge <common-emlid-edge>`) or adding a separate `Companion Computer <https://ardupilot.org/dev/docs/companion-computers.html>`__.
 
 .. note::
 
