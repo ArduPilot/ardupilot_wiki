@@ -43,9 +43,11 @@ Ardupilot autodetects the following serial RC receiver protocols:
 For traditional single-wire-per-channel (PWM) receivers a PPM encoder
 can be used to convert the receiver outputs to PPM-SUM. 
 
+.. tip:: As of Ardupilot 4.0 versions of firmware, any autopilot UART may be used as an input for an RC receiver, instead of the designated RCIN pin, by setting that port's ``SERIALx_PROTOCOL`` to 23. However, some serial protocols require inversion (SBUS) and the UART must be capable of using the ``SERIALx_OPTIONS`` parameter to invert the RX input, otherwise, an external inverter will be required. This also allows a second RC receiver to be attached to the autopilot for redundancy. If the first receiver (first detected valid after boot) fails, then the second will be used. Note that whatever RC input ranges and trims were calibrated will be used for the second when it becomes active. Both receivers MUST be set to send no pulses in failsafe for this to work properly.
+
 .. tip::
 
-   Information about compatible receivers and how they are connected can be found in :ref:`Compatible RC Transmitter and Receiver Systems <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`.
+   Information about compatible receivers and how they are connected can be found in :ref:`Compatible RC Transmitter and Receiver Systems <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`. Also see :ref:`common-multiple-rx` for use of multiple RC receivers
 
 .. figure:: ../../../images/FRSkyTaranis.jpg
    :target: ../_images/FRSkyTaranis.jpg
