@@ -72,6 +72,8 @@ the throttle level on all your motors at once. While in this mode you
 can use a laser tachometer to test your motor speeds at different
 throttle levels if you have one.
 
+.. warning:: Be sure to set Q_ESC_CAL back to zero after calibrating for normal operation
+
 
 Old ESC Calibration Procedure (3.5.3 and earlier)
 -------------------------------------------------
