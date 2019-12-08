@@ -7,7 +7,7 @@ External LEDs
 An external LED can be added by connecting it to the autopilot's
 I2C port or, in 4.0 and later versions, via a GPIO capable pin using the SERVOx_FUNCTION for that output.
 
-.. note:: On Pixhawk style architecture autopilots which use an IOMCU for the PWM1-8 outputs, only the "AUX" outputs are GPIO capable. 
+.. note:: On Pixhawk style architecture autopilots which use an IOMCU for the PWM1-8 outputs, only the "AUX" outputs are GPIO capable. See :ref:`common-gpios`. Note that the same grouping restrictions which apply to setting outputs to different PWM rates and/or DShot, apply to LEDs also since the timer associated with each group of outputs cannot be used for different rates. See also  :ref:`common-dshot` 
 
 Connection
 ==========
@@ -17,7 +17,7 @@ Usually, using the I2C port requires an LED driver chip connected to the LEDs. B
 .. image:: ../../../images/ExternalLED_PixhawkLED.jpg
     :target: ../_images/ExternalLED_PixhawkLED.jpg
 
-A "NeoPixel" style (WS2812B compatible) RGB LED can be attached to any GPIO capable output by setting its SERVOx_FUNCTION to one of the ``NeoPixelx`` output functions and setting :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixel``. Multiple ``NeoPixelx`` output functions are provided for future expansion, but currently they all behave exactly the same.
+A "NeoPixel" style (WS2812B compatible) RGB LED can be attached to any GPIO capable output by setting its SERVOx_FUNCTION to one of the ``NeoPixelx`` output functions and setting :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixel``. Multiple ``NeoPixelx`` output functions are provided for using multiple strings, but currently they all behave exactly the same. See :ref:`common-lua-scripts` for more use examples.
 
 LED Meaning
 ===========
