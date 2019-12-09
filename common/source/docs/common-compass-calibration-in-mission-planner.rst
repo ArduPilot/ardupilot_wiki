@@ -35,7 +35,7 @@ Calibration first steps
    You normally shouldn't need to change any of the "General Compass Settings" or compass specific values (i.e. "Compass #1" section), but you might want
    to confirm that the \ **Enable compasses** and **Obtain declination automatically** boxes are checked.
 
-   You may wish to disable Compass #2 (the internal compass) if you are seeing the dreaded "inconsistent compasses" pre-arm message often and you are sure that the external compass's orientation is correct.
+   You may wish to disable Compass #2 (the internal compass) if you are consistently seeing the "inconsistent compasses" pre-arm message often and you are sure that the external compass is calibrated and the orientation is correct.
 
 Onboard Calibration
 ===================
@@ -51,7 +51,7 @@ To perform the onboard calibration:
 
 - click the "Onboard Mag Calibration" section's "Start" button
 - if your autopilot has a buzzer attached you should hear a single tone followed by short beep once per second
-- hold the vehicle in the air and rotate it so that each side (front, back, left, right, top and bottom) points down towards the earth for a few seconds in turn
+- hold the vehicle in the air and rotate it so that each side (front, back, left, right, top and bottom) points down towards the earth for a few seconds in turn. Consider a full 360-degree turn with each turn pointing a different direction of the vehicle to the ground. It will result in 6 full turns plus possibly some additional time and turns to confirm the calibration or retry if it initially does not pass.
 
    .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg
       :target: ../_images/accel-calib-positions-e1376083327116.jpg
@@ -63,9 +63,11 @@ To perform the onboard calibration:
 
 If calibration fails:
 
-- you will hear a failure tone and the green bars may reset to the left and the calibration routine may restart (depending upon the ground station)
-- if, after multiple attempts, you are unable to calibrate the compass, Press the "Cancel" button and change the "Fitness" drop-down to a more relaxed setting and try again.
+- you will hear an "unhappy" failure tone, the green bars may reset to the left, and the calibration routine may restart (depending upon the ground station). Mission Planner will automatically retry, so continue to rotate the vehicle as instructed above.
+- if a compass is not calibrating, consider moving to a different area away from magnetic disturbances, and remove electronics from your pockets.
+- if, after multiple attempts, the compass has not passed the calibration, Press the "Cancel" button and change the "Fitness" drop-down to a more relaxed setting and try again.
 - if compass calibration still fails it may help to raise :ref:`COMPASS_OFFS_MAX <COMPASS_OFFS_MAX>` from 850 to 2000 or even 3000
+- finally, if a single compass is not calibrating and you trust the others, disable it.
 
 Onboard Calibration using Stick Gestures (no GCS)
 =================================================
