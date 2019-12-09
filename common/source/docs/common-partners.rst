@@ -132,7 +132,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target: https://carbonix.com.au
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_enRoute.jpg
+      - .. image:: ../../../images/supporters/supporters_logo_enRoute.png
             :width: 250px
             :align: center
             :target:  https://enroute.co.jp
