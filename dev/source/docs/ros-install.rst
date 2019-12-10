@@ -3,7 +3,9 @@
 Installing ROS
 --------------
 
-General instructions for `installing ROS Kinetic can be found here <http://wiki.ros.org/kinetic/Installation>`__.  Ubuntu users should follow `these instructions <http://wiki.ros.org/kinetic/Installation/Ubuntu>`__.
+General instructions for `installing ROS Kinetic can be found here <http://wiki.ros.org/kinetic/Installation>`__.  Ubuntu users should follow `these instructions <http://wiki.ros.org/kinetic/Installation/Ubuntu>`__. (only for Ubuntu 16.04)
+
+Ubuntu 18.04 users will need to install ROS Melodic. General instructions are available `here <http://wiki.ros.org/melodic/Installation>`__. Replace ``kinetic`` with ``melodic`` in the instructions below.
 
  - if installing on a desktop PC, install ROS Desktop-Full, on a companion computer ROS-Base is enough
  - add ROS tool to your shell as stated in ROS wiki
