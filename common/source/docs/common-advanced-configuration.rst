@@ -44,6 +44,7 @@ tuning options for the vehicle.
     Fly-By-Wire Low Altitude Limit <fly-by-wire-low-altitude-limit>
 [/site]
     GPIOs <common-gpios>
+    Ground Control Station Only Operation <common-gcs-only-operation>
 [site wiki="copter"]
     Ground Effect Compensation <ground-effect-compensation>
 [/site]
