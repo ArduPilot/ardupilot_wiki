@@ -25,8 +25,8 @@ requires that your vehicle is providing GPS telemetry, and you will also
 need a Servo Controller card in order to drive the servos from Mission
 Planner.
 
-.. image:: http://api.ning.com/files/CLn6cdxUhdPm8nxJuCkTd0tj9-5rIzALp1MnEFZR0XwjhUADZL5*u*WQa9PFB-01zZPuCYUa4phDLsGohYeD8A__/IMG_0415.JPG?width=750
-    :target: ../_images/IMG_0415.JPG?width=750
+.. image:: ../../../images/mp_gps_antennatracker_01.jpg
+    :target: ../_images/mp_gps_antennatracker_01.jpg
 
 Parts
 =====
@@ -229,26 +229,26 @@ should weigh around 7 lbs max, probably less depending on what you use.
 Picture gallery
 ===============
 
-.. image:: http://api.ning.com/files/mrMXxvGZGzST*uu2Bd1zOqNaIBfZfT*HoX6Q-rROLkYZ8ptm2k6dm5Ety9ssodpiSPcWy8B9v5UCK-Vrf95bzg__/IMG_0416.JPG?width=300
-    :target: ../_images/IMG_0416.JPG?width=300
+.. image:: ../../../images/mp_gps_antennatracker_02.jpg
+    :target: ../_images/mp_gps_antennatracker_02.jpg
 
-.. image:: http://api.ning.com/files/Gr*Od0iYSA10sL2QFgAz-s1e1si4xN-pQ06XLkuhuSlHXBQShEMs*la*enI5GJ6E8QphZ4tFi4XwZKE6bA5XYA__/IMG_0417.JPG?width=300
-    :target: ../_images/IMG_0417.JPG?width=300
+.. image:: ../../../images/mp_gps_antennatracker_03.jpg
+    :target: ../_images/mp_gps_antennatracker_03.jpg
 
-.. image:: http://api.ning.com/files/UZIdHUiUcaaMRS3ZfPMMe7*mYmUBrlizO5NoGSQWMC2fKMUaDO3D5*K9yK5tdtT1fOamlS6WEDON2UeGG09lpA__/IMG_0418.JPG?width=300
-    :target: ../_images/IMG_0418.JPG?width=300
+.. image:: ../../../images/mp_gps_antennatracker_04.jpg
+    :target: ../_images/mp_gps_antennatracker_04.jpg
 
-.. image:: http://api.ning.com/files/6DLnZfDv*8JaH9FWOlG8H**legwY9qlUmR7aSVuWhpMawU3oJ5MEXN6-VJd7JDEG8vczRa4TnpzqdHstHusjJA__/top.jpg?width=300
-    :target: ../_images/top.jpg?width=300
+.. image:: ../../../images/mp_gps_antennatracker_05.jpg
+    :target: ../_images/mp_gps_antennatracker_05.jpg
 
-.. image:: http://api.ning.com/files/mNgXdkeMUzvXspzluWq-JjGPHf6oiED8RUbJEXc-GOVKU2xzNBCRDoll2L0lkCXZlYv9RdKeRmUL3i2592jHxQ__/IMG_0420.JPG?width=325
-    :target: ../_images/IMG_0420.JPG?width=325
+.. image:: ../../../images/mp_gps_antennatracker_06.jpg
+    :target: ../_images/mp_gps_antennatracker_06.jpg
 
-.. image:: http://api.ning.com/files/CLn6cdxUhdPqsT3jq*1vCBGJED8hNOr*rBHR25ZuvlD8L2nD1grj1Y7o60ybnO2pn480Lwp8jIck01KTK095tQ__/IMG_0422.JPG?width=350
-    :target: ../_images/IMG_0422.JPG?width=350
+.. image:: ../../../images/mp_gps_antennatracker_07.jpg
+    :target: ../_images/mp_gps_antennatracker_07.jpg
 
-.. image:: http://api.ning.com/files/rSTp3gcLPnlLGEGAOYzsLHHSD4StNS0JJO09xoCOGKEfk3LYsO5AyVrhXmvZ4GePKo*gv5BWYb4UsBiVLzicOQ__/IMG_0421.JPG?width=350
-    :target: ../_images/IMG_0421.JPG?width=350
+.. image:: ../../../images/mp_gps_antennatracker_08.jpg
+    :target: ../_images/mp_gps_antennatracker_08.jpg
 
 Connecting the parts
 ====================
@@ -344,23 +344,23 @@ lock on the APM. After that I'll set my plane in front of the antenna
 tracker and zoom in REALLY tightly in Mission Planner under the Flight
 Planner window. I'll then right click and say Tracker Home -> Set here.
 
-.. image:: http://api.ning.com:80/files/swLlbX5ug5Z0JCNDh0emK-4-SfTHcg1mwErmmX9yMCmi2EVaiOWZmOLCowUwXl4nJ7i5WeBl12XQFo9TmWUe9SL*hk4Eqlyj/SetPointhere.png?width=750
-    :target:  http://api.ning.com:80/files/swLlbX5ug5Z0JCNDh0emK-4-SfTHcg1mwErmmX9yMCmi2EVaiOWZmOLCowUwXl4nJ7i5WeBl12XQFo9TmWUe9SL*hk4Eqlyj/SetPointhere.png
+.. image:: ../../../images/mp_gps_antennatracker_09.png
+    :target: ../_images/mp_gps_antennatracker_09.png
 
 *Then I'll drag the antenna tracker pin right on top of home and drop
 it. That should get me pretty close to where my antenna tracker is
 placed.*
 
-.. image:: http://api.ning.com:80/files/swLlbX5ug5bzxpImRqGvlcbJCEIE9wq94fY3B-dy8ATNZlk7LGYyB3YmmnmuXIfqe8dnTyq-WXks6GSSJAGWR0FyCVr4RVXI/ATTrackerunderHome.JPG
-    :target:  http://api.ning.com:80/files/swLlbX5ug5bzxpImRqGvlcbJCEIE9wq94fY3B-dy8ATNZlk7LGYyB3YmmnmuXIfqe8dnTyq-WXks6GSSJAGWR0FyCVr4RVXI/ATTrackerunderHome.JPG
+.. image:: ../../../images/mp_gps_antennatracker_10.png
+    :target: ../_images/mp_gps_antennatracker_10.png
 
 *After that I'll flip over to the Initial Setup tab under Antenna
 Tracker and pull down the COM port for the Pololu servo controller and
 go with 9600 baud. When that's set I hit connect. At that point the
 tracker should go into motion.*
 
-.. image:: http://api.ning.com:80/files/swLlbX5ug5YE1oWEx2oES9bQCXfE3g9oLyrvuHqsrtab7*5Dj3BvAhri1rz*GsBO9GE8KyZI*pGPXuyHIB82j6PPgxKNDmbQ/ATSettings.JPG?width=750
-    :target:  http://api.ning.com:80/files/swLlbX5ug5YE1oWEx2oES9bQCXfE3g9oLyrvuHqsrtab7*5Dj3BvAhri1rz*GsBO9GE8KyZI*pGPXuyHIB82j6PPgxKNDmbQ/ATSettings.JPG
+.. image:: ../../../images/mp_gps_antennatracker_11.jpg
+    :target: ../_images/mp_gps_antennatracker_11.jpg
 
 *You should be able to move the plane a few meters in front of the
 antenna tracker should move with it. If you need to reverse the
@@ -378,8 +378,8 @@ Maestro CC. Be careful NOT to go beyond the recommended travel! On the
 Servo City gear boxes you'll hear the POT start to click and the servo
 will just spin. At that point you get to play the servo centering game.*
 
-.. image:: http://api.ning.com:80/files/swLlbX5ug5ZHZ9v8F8jtVI3mMQQo0FEPP81xO*b2-3NXC3GxjedVGmZ92Piqgxtt4V6OnhfFcHdu-FIHedLRwAfPSdfY0Q79/Capture.PNG?width=750
-    :target:  http://api.ning.com:80/files/swLlbX5ug5ZHZ9v8F8jtVI3mMQQo0FEPP81xO*b2-3NXC3GxjedVGmZ92Piqgxtt4V6OnhfFcHdu-FIHedLRwAfPSdfY0Q79/Capture.PNG
+.. image:: ../../../images/mp_gps_antennatracker_12.png
+    :target: ../_images/mp_gps_antennatracker_12.png
 
 *One thing to note with the Pololu board is you may have to set it into
 USB Dual Port under Serial Settings. This allows you to connect to the
