@@ -267,7 +267,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_D_Makers.png
             :width: 250px
             :align: center
-            :target:  http://itmakers.co.kr
+            :target:  https://www.dmakers.co.kr
 
       - .. image:: ../../../images/supporters/supporters_logo_Hitec.png
             :width: 250px
