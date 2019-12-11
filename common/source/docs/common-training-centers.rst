@@ -37,8 +37,8 @@ Japan
 France
 ======
 
-`Drones Center France <http://www.drones-center.com/>`__
---------------------------------------------------------
+`Drones Center France <https://www.drones-center.com/>`__
+---------------------------------------------------------
 
   - **Location:** 30min from Paris, France
   - **Languages:** French, English
@@ -49,8 +49,8 @@ France
 USA
 ===
 
-`LeTourneau University (LETU) <http://www.letu.edu/_Academics/Aero-Science/degrees/Remotely_Piloted_Aircraft_Systems/index.html>`__
----------------------------------------------------------------------------------------------------------------------------------------------------
+`LeTourneau University (LETU) <https://www.letu.edu/>`__
+--------------------------------------------------------
 
   - **Location:** Longview, TX, USA
   - **Language:** English
@@ -64,14 +64,14 @@ USA
 South Korea
 ===========
 
-`D-Makers <http://itmakers.co.kr>`__
-------------------------------------
+`D-Makers <https://www.dmakers.co.kr>`__
+----------------------------------------
 
   - **Location:** Sangju-si or Incheon, South Korea
   - **Languages:** Korean, English
   - **Description:** Supplies education programs about making and operating drones using ArduPilot and Pixhawk.
   - **Schedule:** One-on-one or group training to fit your schedule.
-  - **Contact:** `itmakers.co.kr <http://itmakers.co.kr>`__
+  - **Contact:** `dmakers.co.kr <https://www.dmakers.co.kr>`__
 
 Books
 =====
