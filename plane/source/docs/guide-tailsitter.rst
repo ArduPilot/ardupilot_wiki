@@ -147,6 +147,18 @@ The AHRS_ORIENTATION, the accelerometer calibration and AHRS trim
 should all be done for fixed wing flight. Fixed wing flight is
 considered "normal" orientation for a tailsitter.
 
+Transitions
+===========
+
+Tailsitter transitions are a little different than other QuadPlane transitions. 
+
+Transition from VTOL (nose pointing up modes) to Fixed Wing (FW) normal plane modes begins by rotating the nose toward earth horizon and linearly ramping from nose up toward the :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` using the VTOL motors and control surfaces. The time is determined by :ref:`Q_TRANSITION_MS<Q_TRANSITION_MS>`  divided by 2. For example, if :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` =35, with :ref:`Q_TRANSITION_MS<Q_TRANSITION_MS>` = 5000 (5sec), then the VTOL pitch will change from nose up to -45 deg from vertical over 2.5 seconds. Once the nose has reached  :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` degrees from vertical , transition to FW is complete, the vehicle will switch from the VTOL controller to the FW controller and all motors will be on. The AHRS horizon will switch from VTOL reference (where approximately nose vertical is "level") to the FW reference (where "level" is usually close to the horizon).
+
+Transitioning back to VTOL from FW will immediately switch the active motors to VTOL hover throttle, and rotate the vehicle nose up toward :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` + 5  degrees (with 55 degrees nose up being the minimum target) from the horizon using the control surfaces while under fixed wing stabilization. Transition will be complete when this :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` is reached, or when 2 seconds has elapsed. The vehicle will then be in full VTOL mode with the AHRS horizon reference switched to approximately vertical, and all VTOL motors active.
+
+.. note:: During transitions, pilot input is disabled and vehicle attitude is controlled totally by the autopilot.
+
+
 Vectored Thrust
 ===============
 
@@ -218,8 +230,9 @@ interpreted using the :ref:`Q_TAILSIT_INPUT<Q_TAILSIT_INPUT>` parameter. The cho
   as types 0 and 1, respectively. This is accomplished by splitting the roll and
   yaw command inputs into bodyframe roll and yaw components as a function of Euler pitch.
 
-**Note:** 
-Due to the rotation of the tailsitter body frame with respect to the multicopter body frame, the roll limits are set by parameter :ref:`Q_YAW_RATE_MAX<Q_YAW_RATE_MAX>` (in degrees), and the yaw rate limits are set by parameter :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` (in deg/sec).  The pitch limit is set by parameter :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` (in centidegrees), and this also serves as the yaw rate limit if :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` is zero. If any rate limit is too high for the airframe, you may experience glitches in attitude control at high rates.
+.. note:: Due to the rotation of the tailsitter body frame with respect to the multicopter body frame, the roll limits are set by parameter :ref:`Q_YAW_RATE_MAX<Q_YAW_RATE_MAX>` (in degrees), and the yaw rate limits are set by parameter :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` (in deg/sec).  The pitch limit is set by parameter :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>` (in centidegrees), and this also serves as the yaw rate limit if :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` is zero. If any rate limit is too high for the airframe, you may experience glitches in attitude control at high rates.
+
+.. note:: :ref:`Q_TAILSIT_INPUT<Q_TAILSIT_INPUT>` is ignored in QACRO modes. All inputs are body-frame referenced.
 
 Tailsitter Input Mask
 =====================
