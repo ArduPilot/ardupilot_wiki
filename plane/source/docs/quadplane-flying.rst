@@ -39,8 +39,20 @@ The one exception to the forward motor stopping in QuadPlane VTOL
 modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non-zero
 value. In that case the forward motor will be used to hold the
 aircraft level in a wind. See the description of :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>`.
- 
-Assisted fixed-wing flight
+
+Tailsitter Transitions
+======================
+
+Tailsitter transitions are slightly different. See :ref:`Tailsitter Section <guide-tailsitter>` for details.
+
+VTOL vs Fixed-Wing Level Trim
+=============================
+
+Often fixed wing "level" trim, which is the pitch attitude stabilization modes attempt to maintain, is set to be several degrees positive with respect to the wing chord line in order to provide lift while cruising. This is accomplished either by running the accelerometer calibration level position set in this attitude, or after by using the "Calibrate Level" button in Mission Planner or by adjusting :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` parameter.
+
+However, when in VTOL modes, this can result in the vehicle leaning "backward" a few degrees, building in a tendency to drift backwards. This can be eliminated by setting the :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` parameter to correct this. This can also be used to correct minor CG imbalances caused by VTOL motor placement not being exactly balanced around the CG.
+
+Assisted Fixed-Wing Flight
 ==========================
 
 The QuadPlane code can also be configured to provide assistance to the
@@ -181,7 +193,7 @@ for an altitude set by :ref:`Q_RTL_ALT <Q_RTL_ALT>`.
 Once the return point is reached the aircraft begins to descend and
 land, exactly as described in the VTOL RTL mode above.
 
-What will happen?
+What Will Happen?
 =================
 
 Understanding hybrid aircraft can be difficult at first, so below are
@@ -251,7 +263,7 @@ Radio or Throttle Failsafe
 If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter settings (see Plane Failsafe Function). Quadplanes can be set such that instead of normal plane behviour on Failsafe induced RTLs, to transistion to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1.
 If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bit 5, is set.
 
-Typical flight
+Typical Flight
 ==============
 
 A typical test flight would be:
