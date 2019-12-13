@@ -39,7 +39,12 @@ The one exception to the forward motor stopping in QuadPlane VTOL
 modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non-zero
 value. In that case the forward motor will be used to hold the
 aircraft level in a wind. See the description of :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>`.
- 
+
+Tailsitter Transitions
+======================
+
+Tailsitter transitions are slightly different. See :ref:`Tailsitter Section <guide-tailsitter>` for details.
+
 Assisted fixed-wing flight
 ==========================
 
