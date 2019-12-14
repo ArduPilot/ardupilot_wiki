@@ -10,6 +10,7 @@ tuning options for the vehicle.
 .. toctree::
     :maxdepth: 1
 
+    Advanced Power Monitor Configuration<common-advanced-battery-setup>
 [site wiki="copter"]
     Autopilot Output Mapping <common-rcoutput-mapping>
     AutoTune <autotune>
