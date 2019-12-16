@@ -107,6 +107,8 @@ An additional tag is created including the patch release number:
 - ``git tag Copter-3.6.0``
 - ``git push origin Copter-3.6.0``
 
+Announcements are done in much the same way as beta releases, namely an announcement is made on ArduPilot's discuss forums and on ArduPilot's facebook page.  Mission Planner will also show a pop-up informing users that a new version is available.
+
 Didn't find what you are looking for?
 =====================================
 
