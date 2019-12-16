@@ -10,13 +10,9 @@ This article explains how to perform basic compass calibration.
 
    This article assumes that you are using the most common configuration — a autopilot and compass mounted with the arrow on each facing toward the front of the vehicle. If you're using a different configuration see :ref:`Advanced Compass Setup <common-compass-setup-advanced>`.
 
-[site wiki="rover"]
 .. tip::
 
-   It's often better to do this test with the vehicle's motor running,
-   to ensure that any magnetic interference from the motor is included in
-   the compass calibration.
-[/site]
+   It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "declination database" which allows converting the location's magnetic North to true North without recalibrating.  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff.
 
 Calibration first steps
 =======================
