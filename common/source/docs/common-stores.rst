@@ -18,7 +18,6 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Drotek <https://drotek.com/>`__
 * `Emlid <https://store.emlid.com/>`__
 * `EnRoute LAB <http://elab.co.jp/>`__
-* `Erle Robotics <https://erlerobotics.com/blog/shop-index/>`__
 * `Event38 <https://event38.com/shop/>`__
 * `Foxtech <https://www.foxtechfpv.com>`__
 * `Harris Aerial <https://www.harrisaerial.com/shop/>`__
