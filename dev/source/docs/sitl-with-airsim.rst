@@ -157,7 +157,7 @@ First launch AirSim, after that launch the ArduPilot SITL using
 
 ::
 
-    sim_vehicle.py -v ArduCopter -f airsim-copter --add-param-file=libraries/SITL/examples/Airsim/quadX.parm --console --map
+    sim_vehicle.py -v ArduCopter -f airsim-copter --console --map
 
 .. note::
 
