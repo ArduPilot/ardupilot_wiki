@@ -84,7 +84,7 @@ For commonly used messages, especially those which are output at a relatively hi
        }
 
 - add the log message's name, `units <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L42>`__,
-  `multiplier <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L86>`__ and `format <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L6>`__ strings into the `vehicle's LogStructure array <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Log.cpp#L390>`__ or `AP_Logger/LogStructure.h's LOG_EXTRA_STRUCTURES array <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L1360>`__
+  `multiplier <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L86>`__ and `format <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L6>`__ strings into the `vehicle's LogStructure array <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Log.cpp#L454>`__ or `AP_Logger/LogStructure.h's LOG_EXTRA_STRUCTURES array <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/LogStructure.h#L1360>`__
 - add a new method to the vehicle code or AP_Logger library called Write_<something-or-other> which fills in the structure and then calls `AP_Logger/WriteBlock() <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L197>`__
 
    .. code-block:: python
