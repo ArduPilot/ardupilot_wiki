@@ -53,3 +53,5 @@ failure
 **Solid Red**: Error
 
 **Solid Red with** `SOS tone sequence <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/NoSDCard_short.wav>`__ : SD Card missing (or other SD error like bad format etc.)
+
+**Flashing Red, Blue and Green**: Copter ESC Calibration mode entered. See :ref:`esc-calibration` 
