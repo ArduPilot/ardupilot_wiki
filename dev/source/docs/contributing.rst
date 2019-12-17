@@ -11,4 +11,5 @@ procedures and contributing to the ArduPilot project.
     :maxdepth: 1
 
     Submitting Patches Back to Master <submitting-patches-back-to-master>
+    Editing Someone Else's PR <editing-prs>
     Style Guide <style-guide>
