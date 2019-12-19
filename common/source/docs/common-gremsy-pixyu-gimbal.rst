@@ -30,7 +30,6 @@ Connect with a ground station and set the following parameters:
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 10
 - :ref:`SR2_POSITION <SR2_POSITION>` to 10
-- :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` to 0 to disable flow control on Serial2 (this is normally not necessary)
 
 The gimbal's maximum angles can be set using these parameters:
 
@@ -46,6 +45,8 @@ To control the gimbal's lean angles from a transmitter set:
 - :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` to 6 to control the gimbal's tilt (aka pitch angle) with the transmitter's Ch6 tuning knob
 - :ref:`MNT_RC_IN_ROLL <MNT_RC_IN_ROLL>` to some input channel number to control the gimbal's roll angle
 - :ref:`MNT_RC_IN_PAN <MNT_RC_IN_PAN>` to some input channel number to control the gimbals' heading
+
+For reference, `Gremsy's setup instructions can be found here <https://support.gremsy.com/support/solutions/articles/36000189926-how-to-setup-gremsy-gimbal-with-pixhawk-cube>`__
 
 Configuring the Gimbal
 ----------------------
