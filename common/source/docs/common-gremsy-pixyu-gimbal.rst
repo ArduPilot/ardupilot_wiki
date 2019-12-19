@@ -1,0 +1,70 @@
+.. _common-gremsy-pixyu-gimbal:
+
+===========================
+Gremsy Pixy U 3-Axis Gimbal
+===========================
+
+The Gremsy Pixy U is a 3-axis gimbal that can communicate with the flight controller using the MAVLink protocol, weighs 465g, and is compatible with a range of cameras for real-time video or mapping purposes.  More specifications can be found `here on the Gremsy website <https://gremsy.com/pixy-u-spec/>`__.  The user manual is `here <https://gremsy.com/pixy-u-manual/>`__.
+
+.. image:: ../../../images/gremsy-pixyu-gimbal.png
+    :target: https://store.gremsy.com/product/pixy-u/
+
+Where to Buy
+============
+
+The Pixy U can be purchased from the `Gremsy store <https://store.gremsy.com/product/pixy-u/>`__
+
+Connecting to the Autopilot
+===========================
+
+.. image:: ../../../images/gremsy-pixyu-autopilot.png
+    :target: ../_images/gremsy-pixyu-autopilot.png
+    :width: 450px
+
+We recommend connecting the Gimbals's COM2 port to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
+
+Connect with a ground station and set the following parameters:
+
+- :ref:`MNT_TYPE <MNT_TYPE>` to "4" for "SToRM32 MavLink"
+- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "57" for 57600 bps
+- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 1 for "MAVLink" (Note "SERIAL2" can be changed to any serial port, "SERIAL1", etc)
+- :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 10
+- :ref:`SR2_POSITION <SR2_POSITION>` to 10
+- :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` to 0 to disable flow control on Serial2 (this is normally not necessary)
+
+The gimbal's maximum angles can be set using these parameters:
+
+- :ref:`MNT_ANGMIN_ROL <MNT_ANGMIN_ROL>` to -3000 to allow leaning left up to 30deg
+- :ref:`MNT_ANGMAX_ROL <MNT_ANGMAX_ROL>` to 3000 to allow leaning right up to 30deg
+- :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>` to -9000 to allow pointing 90deg down
+- :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` to 3000 to allow pointing 30deg up
+- :ref:`MNT_ANGMIN_PAN <MNT_ANGMIN_PAN>` to -18000 to allow turning around to the left
+- :ref:`MNT_ANGMAX_PAN <MNT_ANGMAX_PAN>` to 18000 to allow turning around to the right
+
+To control the gimbal's lean angles from a transmitter set:
+
+- :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` to 6 to control the gimbal's tilt (aka pitch angle) with the transmitter's Ch6 tuning knob
+- :ref:`MNT_RC_IN_ROLL <MNT_RC_IN_ROLL>` to some input channel number to control the gimbal's roll angle
+- :ref:`MNT_RC_IN_PAN <MNT_RC_IN_PAN>` to some input channel number to control the gimbals' heading
+
+Testing Controlling the Gimbal from RC
+--------------------------------------
+
+- Powerup the vehicle and gimbal
+- Move the transmitter's channel 6 tuning knob to its minimum position, the camera should point straight down
+- Move the ch6 knob to maximum and the gimbal should point upwards
+
+.. note::
+
+   The RC's channel 6 input can be checked from Mission Planner's Radio calibration page
+
+Testing ROI
+-----------
+
+The ROI feature points the vehicle and/or camera to point at a target.  This can be tested by doing the following:
+
+- Ensure the vehicle has GPS lock
+- If using the Mission Planner, go to the Flight Data screen and right-mouse-button-click on a point about 50m ahead of the vehicle (the orange and red lines show the vehicle's current heading), select **Point Camera Here** and input an altitude of -50 (meters).  The camera should point forward and then tilt down at about 45 degrees
+
+.. image:: ../../../images/Tarot_BenchTestROI.jpg
+    :target: ../_images/Tarot_BenchTestROI.jpg
