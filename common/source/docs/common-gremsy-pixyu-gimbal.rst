@@ -26,8 +26,8 @@ We recommend connecting the Gimbals's COM2 port to one of the autopilot's Serial
 Connect with a ground station and set the following parameters:
 
 - :ref:`MNT_TYPE <MNT_TYPE>` to "4" for "SToRM32 MavLink"
-- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "57" for 57600 bps
-- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 1 for "MAVLink" (Note "SERIAL2" can be changed to any serial port, "SERIAL1", etc)
+- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
+- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 10
 - :ref:`SR2_POSITION <SR2_POSITION>` to 10
 - :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` to 0 to disable flow control on Serial2 (this is normally not necessary)
@@ -46,6 +46,16 @@ To control the gimbal's lean angles from a transmitter set:
 - :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` to 6 to control the gimbal's tilt (aka pitch angle) with the transmitter's Ch6 tuning knob
 - :ref:`MNT_RC_IN_ROLL <MNT_RC_IN_ROLL>` to some input channel number to control the gimbal's roll angle
 - :ref:`MNT_RC_IN_PAN <MNT_RC_IN_PAN>` to some input channel number to control the gimbals' heading
+
+Configuring the Gimbal
+----------------------
+
+The gimbal should work without any additional configuration but to improve performance you may need to adjust the gimbal's gains to match the camera's weight
+
+- Download, install and run the `gTune setup application <https://github.com/Gremsy/gTuneDesktop/releases>`__)
+- Connect the gimbal to your Desktop PC using a USB cable
+- Push the "CONNECTION" button on the left side of the window, then select the COM port and press "Connect"
+- Select the "STIFFNESS" tab and adjust the Tilt, Roll and Pan gains so that the gimbal holds the camera in position without shaking
 
 Testing Controlling the Gimbal from RC
 --------------------------------------
