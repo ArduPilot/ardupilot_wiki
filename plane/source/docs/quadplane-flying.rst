@@ -40,6 +40,8 @@ modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non
 value. In that case the forward motor will be used to hold the
 aircraft level in a wind. See the description of :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>`.
 
+.. warning:: During transitions from VTOL to fixed wing mode, all motors can be running at very high levels. Battery sag below minimum levels (3.0V/cell for LiPo batteries) and resulting battery damage is possible. Extreme cases may even result in a crash due to VTOL motor output being too low. This is especially true when using high capacity, low C rating flight batteries common for long duration setups. This can be managed somewhat with manual throttle control when manually transitioning, but in AUTO mode, a VTOL to fixed wing transition is currently done with :ref:`THR_MAX<THR_MAX>`  on the forward motor until transition is complete, so very high currents can be experienced. Whether or not this will be an issue can be determined by examining the battery voltage during a manually initiated transition from the flight log. If too much voltage sag is seen, the best solutions are to use a higher C rating flight battery, or use separate batteries for forward motors and the VTOL motors, or to use :ref:`BATT_WATT_MAX<BATT_WATT_MAX>` and other parameters to limit excessive current draw during transitions. (See :ref:`Limiting Excessive Battery Power Draw <batt-watt-max>` )
+
 Tailsitter Transitions
 ======================
 
