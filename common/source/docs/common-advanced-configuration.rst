@@ -49,6 +49,9 @@ tuning options for the vehicle.
     Ground Effect Compensation <ground-effect-compensation>
 [/site]
     Independent Watchdog <common-watchdog>
+[site wiki="plane"]
+    Limiting Maximum Power Draw <batt-watt-max>
+[/site]
     LUA Scripting <common-lua-scripts>
     Magnetic Interference <common-magnetic-interference>
 [site wiki="rover"]
