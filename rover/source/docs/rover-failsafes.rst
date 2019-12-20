@@ -24,19 +24,47 @@ This failsafe is triggered if the connection between the user's transmitter and 
 - once the transmitter/receiver connection is restored, the user must use the transmitter's mode switch to re-take control of the vehicle in :ref:`Manual <manual-mode>` (or any other mode)
 
 Battery Failsafe
+~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This failsafe requires the vehicle have a working :ref:`Power Module <common-powermodule-landingpage>`.
+
+.. note:: ArduPilot firmware versions 4.0 and later support up to 10 batteries/power monitors. All the  discussion below applies to those optional batteries also. Each can trigger a failsafe and each can have different actions and setup values. In addition, a group of batteries can be treated as a single unit, see ``BATTx_MONITOR`` = 10.
+
+When the failsafe will trigger
+------------------------------
+
+If enabled and set-up correctly the battery failsafe will trigger if the main battery's
+
+-  voltage drops below the voltage held in the :ref:`BATT_LOW_VOLT <BATT_LOW_VOLT>` parameter (or FS_BATT_VOLTAGE in older versions) for more than 10 seconds. If set to zero (the default value) the voltage based trigger will be disabled.
+-  remaining capacity falls below the :ref:`BATT_LOW_MAH <BATT_LOW_MAH>` parameter (or FS_BATT_MAH in older versions) 20% of the battery's full capacity is a good choice (i.e. "1000" for a 5000mAh battery).  If set to zero (the default) the capacity based trigger will be disabled (i.e. only voltage will be used)
+
+What will happen
 ----------------
 
-The battery failsafe is triggered if a :ref:`battery monitor <common-powermodule-landingpage>` has been enabled and the battery voltage and/or the estimated remaining power has crossed a configurable threshold for at least 10 seconds.
+When the failsafe is triggered:
 
-- set :ref:`BATT_LOW_VOLT <BATT_LOW_VOLT>` to the minimum voltage (i.e. 10.5V)
-- optionally set :ref:`BATT_LOW_MAH <BATT_LOW_MAH>` to the minimum battery capacity (i.e. 300mAh)
-- :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` configures the failsafe action to take.  "0" to take no action, "1" to change into :ref:`RTL <rtl-mode>`, "2" to change to :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.  "5" will disarm the vehicle.
-- :ref:`BATT_LOW_TIMER <BATT_LOW_TIMER>` allows configuring how many seconds the low voltage or low capacity must continue for the failsafe action to be executed (default is 10seconds)
+-  Buzzer will play a loud low-battery alarm
+-  LEDs will flash yellow
+-  A warning message will be displayed on the ground station's HUD (if telemetry is connected)
+-  :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` configures the failsafe action to take.  "0" to take no action (default), "1" to change into :ref:`RTL <rtl-mode>`, "2" to change to :ref:`Hold <hold-mode>`, if "3" or "4" the vehicle will attempt to use :ref:`SmartRTL <smartrtl-mode>` but if this mode cannot be engaged the vehicle will :ref:`RTL <rtl-mode>` or :ref:`Hold <hold-mode>` respectively.  "5" will disarm the vehicle.
 
-A two stage failsafe is possible by setting the :ref:`BATT_CRT_VOLT <BATT_CRT_VOLT>`, :ref:`BATT_CRT_MAH <BATT_CRT_MAH>` and :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>`.
-The second stage failsafe action will be taken once the battery falls below these limits for :ref:`BATT_LOW_TIMER <BATT_LOW_TIMER>` seconds.
+Two-Stage Battery Failsafe
+--------------------------
 
-An independent battery failsafe can also be configured for a second battery using the ``BATT2_`` parameters
+Rover also includes a two-layer battery failsafe.  This allows setting up a follow-up action if the battery voltage or remaining capacity falls below an even lower threshold.
+
+- :ref:`BATT_CRT_VOLT <BATT_CRT_VOLT>` - holds the secondary (lower) voltage threshold.  Set to zero to disable. Default is zero.
+- :ref:`BATT_CRT_MAH <BATT_CRT_MAH>` - holds the secondary (lower) capacity threshold.  Set to zero to disable. Default is zero.
+- :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` - holds the secondary action to take. It has the same options and default as :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` .
+
+Advanced Battery Failsafe Settings
+----------------------------------
+
+- :ref:`BATT_FS_VOLTSRC <BATT_FS_VOLTSRC>` allows configuring whether the raw battery voltage or a sag corrected voltage is used
+- :ref:`BATT_LOW_TIMER <BATT_LOW_TIMER>` can configure how long the voltage must be below the threshold for the failsafe to trigger (10 sec default)
+- ``BATTx_`` parameters can be setup to trigger the failsafe on other batteries
 
 GCS Failsafe (aka Telemetry Failsafe)
 -------------------------------------
