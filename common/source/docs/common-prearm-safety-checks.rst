@@ -181,10 +181,12 @@ the Stabilize Pitch P value.  This could lead to the pilot being unable
 to control the lean angle in ACRO mode because the :ref:`Acro Trainer stabilization <acro-mode_acro_trainer>` would overpower the pilot's
 input.
 
-Battery:
---------
+Battery/Power Monitor:
+----------------------
 
-If a flight battery voltage is below its failsafe voltage, this check will fail.
+If a power monitor voltage is below its failsafe low or critical voltages or failsafe remaining capacity low or critical set points, this check will fail and indicate which set point it is below. It will also fail if these set points are inverted, ie critical point is higher than low point. See :ref:`failsafe-battery` for Copter, :ref:`apms-failsafe-function` for Plane, or :ref:`rover-failsafes` for Rover for more information on these.
+
+In addition, minimum arming voltage and remaining capacity parameters for each battery/power monitor can be set, for example :ref:`BATT_ARM_VOLT<BATT_ARM_VOLT>` and :ref:`BATT_ARM_MAH<BATT_ARM_MAH>` for the first battery, to provide a check that the battery is not only above failsafe levels, but also has enough capacity for operation.
 
 Airspeed:
 ---------
