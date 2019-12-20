@@ -63,6 +63,7 @@ Detail topics
 .. toctree::
     :maxdepth: 1
 
+    Gremsy Pixy U Gimbal <common-gremsy-pixyu-gimbal>
     Servo Gimbal <common-camera-gimbal>
     SimpleBGC Gimbal Controller <common-simplebgc-gimbal>
     SToRM32 Gimbal Controller <common-storm32-gimbal>
