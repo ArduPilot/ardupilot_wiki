@@ -8,7 +8,7 @@ Camera Trigger Setup for Pixhawk
     :width: 450px
 
 This guide is intended to help you modify a remote shutter release cable
-for use with APM/Pixhawk Autopilots and setup the flight
+for use with Ardupilot autopilots and setup the flight
 controller for triggering the camera. This method eliminates the need
 (and costs) for 3\ :sup:`rd` party triggering devices. In this specific
 example, we will use a Sony Alpha 6000 (A6000) camera. This procedure
@@ -19,7 +19,7 @@ Items Required
 ==============
 
 -  Sony A6000 (or other camera with wire shutter release)
--  ArduPilot compatible autopilot
+-  ArduPilot compatible autopilot with a free GPIO pin. See :ref:`common-gpios` for more information
 -  Remote Shutter Release Cable (`see here for an affordable solution <https://www.amazon.com/SHOOT-DSC-RX100M3-DSC-RX100M20-DSC-RX100II-DSC-RX100III/dp/B00ME7N6P8/ref=sr_1_1?ie=UTF8&qid=1496578319&sr=8-1&keywords=Sony+A6000+Shutter+Release+Cable>`__)
 -  Servo Pins (`link <https://www.digikey.com/products/en?keywords=952-2157-1-ND>`__)
 -  Servo Pin Crimper (`link <https://www.servocity.com/pin-crimpers>`__)
@@ -84,7 +84,7 @@ e) Insert the Servo Pins into a Servo connector, one pin on each side of the mid
 .. image:: ../../../images/CTimage9.png
     :width: 450px
 
-The cable is now ready for connection to your Pixhawk or APM Flight
+The cable is now ready for connection to your Pixhawk
 Controller. Note that the Shutter Pin (in this case the RED wire) will
 be on the SIGNAL side of the Auxiliary port while the WHITE/YELLOW wire
 will be on the GROUND side of the Auxiliary port.
@@ -92,17 +92,12 @@ will be on the GROUND side of the Auxiliary port.
 .. image:: ../../../images/CTimage10.png
     :width: 450px
 
-**Step 2:** Setting up your Pixhawk/APM autopilot to trigger
+**Step 2:** Setting up your  autopilot to trigger
 your camera via the Shutter Release Cable
 
 a) Connect to your Autopilot via Mission Planner either through direct USB connection or wireless telemetry link.
 
-b) Connect your modified shutter release cable to AUX 1 on the Pixhawk
-       (CH9 on APM) making sure to maintain the correct orientation for
-       polarity.
-
-.. image:: ../../../images/CTimage11.png
-    :width: 450px
+b) Connect your modified shutter release cable to a free GPIO capable pin on the autopilot making sure to maintain the correct orientation for polarity. For example, by default on the Pixhawk, AUX5 or AUX6 is configured to be a GPIO.
 
 c) Connect the shutter release cable to your camera and power the camera on
 
@@ -111,7 +106,7 @@ c) Connect the shutter release cable to your camera and power the camera on
 
 Since we have shorted the FOCUS and GROUND wires, the camera should
 automatically pull focus. As of now, I have not found a way to connect
-the SHUTTER, FOCUS and GROUND wires individually to the Pixhawk/APM and
+the SHUTTER, FOCUS and GROUND wires individually to the autopilot and
 have the autopilot pull the camera focus and trigger the camera
 in sequence. To get around this, the camera settings are set so that the
 camera has the following features activated:
@@ -133,13 +128,16 @@ e) Proceed to the CONFIG/TUNING -> EXTENDED TUNING screen in Mission Planner and
 
 .. image:: ../../../images/CTimage14.png
     :width: 450px
+    
+.. note:: As of 4.0 firmware versions, any GPIO can be assigned as the Camera Trigger pin via its ``SERVOx_FUNCTION`` parameter, and any RC channel can be assigned to control that trigger via its ``RCx_OPTION`` parameter.
 
-f) Navigate to the FULL PARAMETER LIST under the main CONFIG/TUNING tab and locate the “CAM\_TRIG\_TYPE” parameter. This parameter must show as 1 for “RELAY”. If it is not set to 1, change this parameter to 1 before proceeding to the next step.
+
+f) Navigate to the FULL PARAMETER LIST under the main CONFIG/TUNING tab and locate the :ref:`CAM_TRIGG_TYPE<CAM_TRIGG_TYPE>` parameter. This parameter must show as 1 for “RELAY”. If it is not set to 1, change this parameter to 1 before proceeding to the next step.
 
 .. image:: ../../../images/CTimage15.png
     :width: 450px
 
-g) Scroll down through the parameters until you get to “RELAY\_PIN”. Here you will want to set the “RELAY\_PIN” parameter to match the AUX Port you have connected the shutter release cable to. Since we have connected the cable to AUX1 on a Pixhawk, we need to change the “RELAY\_PIN” parameter to “50” (50:Pixhawk AUXOUT1). If you are connecting to an APM, then you will need to change this parameter to “13”.
+g) Scroll down through the parameters until you get to :ref:`RELAY_PIN<RELAY_PIN>` (for the first relay pin...there can be up to 6) . Here you will want to set the :ref:`RELAY_PIN<RELAY_PIN>`  parameter to match the GPIO pin you have connected the shutter release cable to. Since we have connected the cable to AUX6 on a Pixhawk, we need to change the :ref:`RELAY_PIN<RELAY_PIN>`  parameter to “56” (56:Pixhawk AUXOUT6).
 
 .. image:: ../../../images/CTimage16.png
     :width: 450px
@@ -151,7 +149,7 @@ h) Now that the required parameters have been changed, click on “WRITE PARAMS�
 
 **Step 3:** Testing the Remote Shutter Cable and Autopilot
 
-Now that the cable has been modified and connected to the Pixhawk/APM
+Now that the cable has been modified and connected to the autopilot
 which has been setup to trigger the camera via relay, let’s test it.
 
 a) Navigate back to the FLIGHT DATA Screen and right click on the map to select “TRIGGER CAMERA NOW”
@@ -171,7 +169,7 @@ above-mentioned check points are not a problem, then you may want to
 adjust the Shutter Duration mentioned in Step 2 Part D.
 
 If your camera took a picture, congratulations! You are all set to take
-pictures using the Pixhawk/APM autopilot without needing third
+pictures using the autopilot without needing third
 party hardware!
 
 Many thanks to Oliver Volkmann and `*www.microaerialprojects.com* <http://www.microaerialprojects.com/>`__
