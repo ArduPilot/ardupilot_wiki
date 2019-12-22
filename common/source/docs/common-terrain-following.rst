@@ -19,8 +19,8 @@ How it works
 
 Terrain following works by maintaining a terrain database on the microSD
 card on the autopilot which gives the terrain height in meters above sea
-level for a grid of geographic locations. On the Pixhawk this database
-is stored in the APM\\TERRAIN directory on the microSD card.
+level for a grid of geographic locations. On the autopilot this database
+is stored in the APM\TERRAIN directory on the microSD card.
 
 The database is populated automatically by the autopilot requesting
 terrain data from the ground station over a MAVLink telemetry link. This
@@ -56,9 +56,9 @@ In Plane terrain following is available in the following flight modes:
 -  AUTO - fully autonomous missions
 
 Use of terrain following in RTL, LOITER, CRUISE, FBWB and GUIDED modes
-is controlled by the TERRAIN_FOLLOW parameter. That parameter defaults
+is controlled by the :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` parameter. That parameter defaults
 to off, so no terrain following will be used in those modes. Set
-TERRAIN_FOLLOW to 1 to enable terrain following in those modes.
+:ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` to 1 to enable terrain following in those modes.
 
 Use of terrain following in AUTO missions is controlled on a waypoint by
 waypoint basis using the reference frame of the waypoint. Normal (non
@@ -87,7 +87,7 @@ Sources of terrain data
 
 The ground station is responsible for providing the raw terrain data
 which is sent to the aircraft via MAVLink. Right now only MissionPlanner
-(version 1.3.9 or later) and MAVProxy support the required TERRAIN_DATA
+(version 1.3.9 or later) and MAVProxy support the required ``TERRAIN_DATA``
 and ``TERRAIN_REQUEST`` messages needed for terrain following support. If
 you are using a different ground station then to load terrain data you
 will need to connect using one of the two support ground stations to
@@ -107,9 +107,9 @@ Terrain Spacing
 ---------------
 
 The ArduPilot terrain code has a user settable parameter called
-TERRAIN_SPACING which controls the grid spacing which is used for
+:ref:`TERRAIN_SPACING<TERRAIN_SPACING>` which controls the grid spacing which is used for
 requests for terrain data from the aircraft to the ground station. The
-default TERRAIN_SPACING is 100 meters, but users may set a different
+default :ref:`TERRAIN_SPACING<TERRAIN_SPACING>` is 100 meters, but users may set a different
 grid spacing for specialist applications.
 
 Note that the amount of terrain data kept in memory is directly related
@@ -141,7 +141,7 @@ steps
 -  make sure you have Plane 3.0.4 or later loaded
 -  make sure you have the latest MissionPlanner installed (version 1.3.9
    or later)
--  set TERRAIN_ENABLE to 1 and TERRAIN_FOLLOW to 1
+-  set :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` to 1 and :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` to 1
 -  connect to your vehicle over USB when you have GPS lock
 -  check the FlightData->Status page in MissionPlanner and look for the
    terrain status data:
@@ -154,19 +154,19 @@ When the autopilot has finished loading terrain data you should see
 showing up in "ter_alt". The "ter_pend" value is the number of terrain
 blocks that the autopilot is waiting to load from the ground station.
 
-Terrain Lookahead
------------------
+Terrain Look-ahead
+------------------
 
 The terrain following code "looks ahead" of the current position along
 the flight path to try to ensure that the aircraft climbs soon enough to
-avoid upcoming terrain. The amount of lookahead is controlled by the
-``TERRAIN_LOOKAHD`` parameter, which defaults to 2000 meters. The lookahead
+avoid upcoming terrain. The amount of look-ahead is controlled by the
+:ref:`TERRAIN_LOOKAHD<TERRAIN_LOOKAHD>` parameter, which defaults to 2000 meters. The look-ahead
 is also limited by the distance to the next waypoint in AUTO mode, so
 you need to ensure that you don't have any legs of your mission which
 include climb rates your aircraft cannot achieve.
 
-The climb rate used in the terrain look ahead is based on the
-``TECS_MAX_CLIMB`` parameter, combined with your current ground speed.
+The climb rate used in the terrain look-ahead is based on the
+ :ref:`TECS_CLMB_MAX<TECS_CLMB_MAX>` parameter, combined with your current ground speed.
 
 
 [copywiki destination="plane"]
