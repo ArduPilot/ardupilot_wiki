@@ -37,8 +37,12 @@ Ground Testing
 ==============
 
 The RPM of the two wheels can be seen as "rpm1" and "rpm2" in the ground station.
-
 If using the Mission Planner these values can be seen in the Flight Data screen's Status tab.
+
+Another way to check operation on Rover 4.0 and later versions is to monitor the Wheel_Distance MAVLink messages as shown below. This can be done in Mission Planner by using the MAVLink Inspector panel which can be accessed by pressing Ctrl-F and selecting it, which will display real-time decoding of MAVLink messages.
+
+.. image:: ../images/Mavlink-Inspector.jpg
+
 
 DataFlash logging
 =================
