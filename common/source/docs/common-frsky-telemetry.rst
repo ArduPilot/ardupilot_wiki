@@ -137,9 +137,10 @@ The following equipment is required to enable FrSky telemetry on an ArduPilot-co
 
   - FrSky Taranis Q X7
   - FrSky Taranis X9D
-  - FrSky Taranis X9D Plus (recommended)
+  - FrSky Taranis X9D Plus
   - FrSky Taranis X9E
   - FrSky Horus X12S
+  - Jumper T16 with multi protocol module
   - Turnigy 9XR Pro (running ErSky9x_ version 211 or later)
   - A number of DIY solutions are also available
 
