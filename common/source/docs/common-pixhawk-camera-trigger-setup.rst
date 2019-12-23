@@ -19,7 +19,7 @@ Items Required
 ==============
 
 -  Sony A6000 (or other camera with wire shutter release)
--  ArduPilot compatible autopilot with a free GPIO pin. See :ref:`common-gpios` for more information
+-  ArduPilot compatible autopilot with a free GPIO pin to be used as a relay pin. See :ref:`common-gpios` for more information
 -  Remote Shutter Release Cable (`see here for an affordable solution <https://www.amazon.com/SHOOT-DSC-RX100M3-DSC-RX100M20-DSC-RX100II-DSC-RX100III/dp/B00ME7N6P8/ref=sr_1_1?ie=UTF8&qid=1496578319&sr=8-1&keywords=Sony+A6000+Shutter+Release+Cable>`__)
 -  Servo Pins (`link <https://www.digikey.com/products/en?keywords=952-2157-1-ND>`__)
 -  Servo Pin Crimper (`link <https://www.servocity.com/pin-crimpers>`__)
@@ -97,7 +97,7 @@ your camera via the Shutter Release Cable
 
 a) Connect to your Autopilot via Mission Planner either through direct USB connection or wireless telemetry link.
 
-b) Connect your modified shutter release cable to a free GPIO capable pin on the autopilot making sure to maintain the correct orientation for polarity. For example, by default on the Pixhawk, AUX5 or AUX6 is configured to be a GPIO.
+b) Connect your modified shutter release cable to a free GPIO capable pin on the autopilot making sure to maintain the correct orientation for polarity. For example, by default on the Pixhawk, AUX5 or AUX6 is configured to be a GPIO and can be used as a Relay output.
 
 c) Connect the shutter release cable to your camera and power the camera on
 
