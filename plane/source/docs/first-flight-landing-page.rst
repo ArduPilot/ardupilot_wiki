@@ -15,6 +15,7 @@ its first flight, and includes an explanation of the main :ref:`Flight Modes <fl
     Pre-Arm Safety Checks <common-prearm-safety-checks>
     Arming Plane <arming-your-plane>
     Flight Modes <flight-modes>
+    Takeoff <takeoff-landingpage>
     Automatic Tuning <automatic-tuning-with-autotune>
     Tuning Quickstart <tuning-quickstart>
     Manual Tuning <common-tuning>
