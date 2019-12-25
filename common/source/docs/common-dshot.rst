@@ -103,7 +103,7 @@ For using DShot on non-multirotor motors like traditional fixed wings' main moto
   - When using more than the first 4 Aux ports for DShot ESC's, set :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` to 6.
 
 
-.. note:: When an output is configured for DShot, the ``SERVOx_MIN/MAX/TRIM`` parameters for that output will always be reset to 1000/2000/1500, respectively, upon every boot, since DShot does not use these parameters and they can affect scaling in other sections of the code.
+.. note:: When an output is configured for DShot, the ``SERVOx_MIN/MAX`` parameters for that output will always be reset to 1000/2000, respectively, upon every boot, since DShot does not use these parameters and they can affect scaling in other sections of the code. The ``SERVOx_TRIM``  value will be reset to 1000 if its a reversible output, or 1500 if normal output setup in DShot.
 
 BLHeli_32 Pass-Through Support
 ==============================
