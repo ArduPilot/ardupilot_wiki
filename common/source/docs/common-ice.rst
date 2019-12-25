@@ -56,7 +56,7 @@ If you are using a quadplane and would like the ICE engine to be disabled during
 
 Advanced Starter Configuration
 ------------------------------
-A variety of parameters are available for configuring the engine start routine. The auto-start functionality will attempt to start the engine any time the vehicle is armed, the engine is enabled, and the measured RPM is below the :ref:`ICE_RPM_THRESH <ICE_RPM_THRESH>`. If the engine is not successfully started within a configurable amount of time, the program will wait for a configurable dealy before attempting to start again. It is important to remember that the starter will run in pulses. DO NOT approach the engine between failed start attempts as the starter will attempt to start again if the engine is still enabled.
+A variety of parameters are available for configuring the engine start routine. The auto-start functionality will attempt to start the engine any time the vehicle is armed, the engine is enabled, and the measured RPM is below the :ref:`ICE_RPM_THRESH <ICE_RPM_THRESH>`. If the engine is not successfully started within a configurable amount of time, the program will wait for a configurable delay before attempting to start again. It is important to remember that the starter will run in pulses. DO NOT approach the engine between failed start attempts as the starter will attempt to start again if the engine is still enabled.
 
 - :ref:`ICE_START_PCT <ICE_START_PCT>` overrides the throttle setting during start. 
 - :ref:`ICE_START_TIME <ICE_STARTER_TIME>` controls the maximum amount of time the starter will run in each start attempt.
@@ -96,7 +96,11 @@ To stop the motor with RC control:
 - Lower the transmitter's starter switch
 - Disarm the vehicle
 
+Quadplanes can also automatically stop the engine once the final phase of a VTOL landing is entered by setting the :ref:`Q_LAND_ICE_CUT<Q_LAND_ICE_CUT>` parameter to 1.
+
 [/site]
+
+.. note:: The engine can be started and stopped in autonomous missions by using the ``DO_ENGINE_CONTROL`` mission command. This useful preceding NAV_VTOL_TAKEOFF or NAV_VTOL_LAND to start or stop the engine to prevent prop strikes while landing in wind with a low clearance prop. See :ref:`common-mavlink-mission-command-messages-mav_cmd` section. 
 
 Vibration isolation
 -------------------
