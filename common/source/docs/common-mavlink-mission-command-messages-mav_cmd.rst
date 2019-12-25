@@ -250,6 +250,8 @@ This list of commands was inferred from the command handler in
 
 :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
 
+:ref:`MAV_CMD_DO_ENGINE_CONTROL <mav_cmd_do_engine_control>`
+
 :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
 
 :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
@@ -4204,6 +4206,71 @@ This command sets the Plane to
    <td>param3</td>
    <td></td>
    <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+[/site]
+
+.. _mav_cmd_do_engine_control:
+
+MAV_CMD_DO_ENGINE_CONTROL
+-------------------------
+
+Supported by: Plane (not Copter or Rover).
+
+Stop or start internal combustion engine (ICE)
+
+[site wiki="plane" heading="off"]
+
+Plane
+~~~~~
+
+This command can be used to start or stop the ICE before a NAV_VTOL_LAND or after a NAV_VTOL_TAKEOFF command for a Quadplane to avoid potential prop strikes in the wind. It should be placed before either of those commands.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>?</td>
+   <td>Start/Stop ICE (1: start, 0:stop)</td>
+   </tr>
+   <td><strong>param2</strong></td>
+   <td></td>
+   <td>Cold Start (1: enables choke, currently not implemented)</td>
+   </tr>
+   <td><strong>param3</strong></td>
+   <td></td>
+   <td>Altitude in cm. Altitude at which action is taken.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
