@@ -91,7 +91,7 @@ Vehicle Code and Front-End Example
 The example below shows how the Copter vehicle code pulls data from range finder (aka sonar, lidar) drivers.
 The Copter code's `scheduler <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.cpp#L107>`__ calls the vehicle's read_rangefinder() method at 20Hz.
 Below is a picture of this method, the latest version can be seen in the `sensors.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/sensors.cpp>`__ file.
-The rangefinder.update() and rangefinder.distance_cm() methods are calls into the driver's front-end.
+The rangefinder.update() method is a call into the driver's front-end.
 
 .. image:: ../images/code-overview-sensor-driver1.png
 
