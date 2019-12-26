@@ -18,7 +18,7 @@ ArduPilot autopilots are compatible with
     #. Spektrum DSM, DSM2, and DSM-X Satellite receivers
     #. MULTIPLEX SRXL version 1 and version 2 receivers
 
-For traditional single-wire-per-channel (PWM) receivers, a `PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be used to convert the receiver outputs to PPM-Sum.
+All of the above methods utilize a single signal transmission wire for all channels. For traditional single-wire-per-channel (PWM) receivers, a `PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be used to convert the receiver outputs to PPM-Sum.
 
 Connecting the receiver
 =======================
@@ -33,7 +33,7 @@ To connect a PPM-Sum receiver or an S.Bus receiver to a Pixhawk, for example, pl
     :target: ../_images/RCIN_connection.jpg
 
 For a **Spektrum DSM**, **DSM2**, or **DSM-X Satellite** receiver,
-connect to the **SPKT/DSM** port.
+connect to the **SPKT/DSM** port, or for the cube mini carrier board, cut and modify the solder bridges.
 
 .. image:: ../../../images/pixhawk_spektrum_connection.jpg
     :target: ../_images/pixhawk_spektrum_connection.jpg
@@ -62,19 +62,26 @@ This section list radio systems that support PPM-Sum or S.Bus directly.
 
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems_frsky_taranis_ppm-sum_compatible_transmitter:
 
-FrSky Taranis X9D Plus and Taranis Q X7 RC Transmitters
+FrSky Taranis X9D Plus, QX7, and X-Lite RC Transmitters
 -------------------------------------------------------
 
 .. tip::
 
    These transmitters are **highly recommended** for all RC uses.
 
+.. figure:: ../../../images/FrSky_Taranis_Xlite.jpg
+    :target: ../_images/FrSky_Taranis_Xlite.jpg
+    :width: 60 %
+    :align: center
+
+    Taranis X-Lite
+
 .. figure:: ../../../images/FrSky_Taranis_X7white.jpg
     :target: ../_images/FrSky_Taranis_X7white.jpg
     :width: 60 %
     :align: center
 
-    New and even more affordable Taranis Q X7
+    Taranis QX7
 
 .. figure:: ../../../images/FrSky_Taranis9XD_Plus.jpg
     :target: ../_images/FrSky_Taranis9XD_Plus.jpg
@@ -85,33 +92,33 @@ FrSky Taranis X9D Plus and Taranis Q X7 RC Transmitters
 
 .. note::
 
-   Theses transmitters are a real bargain. You can buy them from different locations e.g. `Craft and Theory <http://www.craftandtheoryllc.com/packageq>`__, `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ .
+   Theses transmitters are feature packed for their price. You can buy them from different locations e.g. `Craft and Theory <http://www.craftandtheoryllc.com/packageq>`__, `Aloft Hobbies <https://alofthobbies.com/catalogsearch/result/?cat=0&q=X9D>`__ .
 
 The `FrSky Taranis RC Transmitter <https://www.frsky-rc.com/product/taranis-q-x7-2/>`__ is a
 high quality `OpenTX <http://www.open-tx.org/downloads.html>`__ (open source firmware) enabled RC Transmitter that is compatible with a wide variety of high quality FrSky PPM-Sum and S.Bus compatible receivers. 
 
 One of the major advantages of the Taranis is that it can receive and display telemetry data **directly from ArduPilot** and on-board FrSky telemetry sensors, such as flight mode, GPS status, current drawn and cell voltages, and even ArduPilot messages, that can be added to your vehicle. For more information, see :ref:`FrSky telemetry <common-frsky-telemetry>`.
 
-Both the Taranis X9D Plus and the Taranis Q X7 have integrated ACCST 2.4GHz transmitters that are compatible with X series FrSky receivers such as the very popular X8R or the newer and lighter XSR receivers. *This means that an additional JR type transmitter module is not required.* If needed, both the Taranis X9D Plus and the Taranis Q X7 have JR module bays for external radio transmitters.
+The Taranis transmitters have integrated ACCST 2.4GHz transmitters that are compatible with X series FrSky receivers such as the very popular X8R or the newer and lighter XSR receivers. *This means that an additional JR type transmitter module is not required.* If needed, both the Taranis X9D Plus and the Taranis QX7 have JR module bays for external radio transmitters.
 
-Features that we like are:
+Advantages of the FrSky systems:
 
 * 2.4GHz ACCST frequency hopping radio transmitter with range that is sufficient for most VLOS applications
 * Quad Ball Bearing Gimbals
 * Audio Speech Outputs (values, alarms, settings, etc.)
 * Vibration Alerts
 * Receiver Signal Strength Indicator (RSSI) Alerts
-* Open source firmware OpenTx
+* Open source firmware OpenTx, and a significant user base
 * Flash via USB
 * High visibility LCD screen
-* Very reliable and low latency telemetry with matched FrSky receiver
+* Reliable and low latency telemetry with matched FrSky receiver
 * Removable MicroSD card to store sounds, voices, models and custom scripts
 
-The Taranis X9D and Taranis Q X7 can run the :ref:`FlightDeck <common-frsky-flightdeck>` telemetry user interface.
+The Taranis transmitters can run the :ref:`Yappu Telemetry <common-frsky-yappu>` or :ref:`FlightDeck <common-frsky-flightdeck>` telemetry user interface.
 
 .. image:: ../../../images/FD-X9-1.jpg
     :target: http://www.craftandtheoryllc.com/feature
-    :width: 60 %
+    :width: 40 %
     :align: center
 
 FrSky X Receivers
@@ -229,22 +236,22 @@ These include:
 Spektrum Satellite Receivers Operate on PPM-Sum
 ===============================================
 
--  It is feasible to use a single `Spektrum Satellite Receiver <http://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM9645>`__
-   to act as a DSM receiver with Pixhawk.
+`Spektrum Satellite Receivers <http://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM9645>`__
+work as a DSM receiver with Pixhawk. Spektrum satellite receivers do not have buttons to bind, so
+there are two ways to bind them to a transmitter.
 
-   -  Simply pre-bind the Spektrum Satellite to your transmitter using a
-      conventional Spektrum receiver with satellite attached.
-   -  Then connect the tiny Spektrum Satellite receiver to the special
-      "Spektrum" connector on the Pixhawk.
-
--  The satellite receiver can be bound to transmitter with Mission Planner.
-   This functionality is located in Radio Calibration screen on
-   Initial Setup.
+-  Pre-bind the Spektrum Satellite to your transmitter using a
+   conventional Spektrum receiver with satellite attached, then
+   disconnect the satellite from the conventional receiver, and
+   connect it to the Spektrum port on autopilot
+-  Bind the satellite receiver using Mission Planner to initiate
+   the bind. This functionality is located in Radio Calibration 
+   screen on Initial Setup.
 
 .. image:: ../../../images/dsm_bind.png
     :target: ../_images/dsm_bind.png
 
--  Being a satellite, range is limited with this configuration and the
+-  Being a satellite, range may be limited and the
    preceding receivers and methods may provide greater range.
 
 .. image:: ../../../images/spm9645.jpg
@@ -252,6 +259,11 @@ Spektrum Satellite Receivers Operate on PPM-Sum
 
 .. image:: ../../../images/PX4SpektrumSatellite1.jpg
     :target: ../_images/PX4SpektrumSatellite1.jpg
+
+.. note::
+
+   Although binding may be successful, Spektrum satellite receivers only provide the correct signal to ardupilot if bound using the 11ms Frame Rate. Adjust this value using the transmitter.
+
 
 PPM encoder and telemetry radio
 ===============================
