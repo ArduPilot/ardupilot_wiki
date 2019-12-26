@@ -4,18 +4,11 @@
 Advanced Compass Setup
 ======================
 
-This article provides advanced guidance for how to setup and calibrate
-the compass (magnetometer). 
+This article provides advanced guidance for how to setup the system compass(es) and advanced compass related features.
 
 .. tip::
 
-   Users with who have selected the :ref:`UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>`
-   (recommended) and have mounted it in the default orientation can
-   usually perform a simple "Onboard Calibration" as described in :ref:`Compass Calibration <common-compass-calibration-in-mission-planner>`).
-
-   This topic provides a more complete overview of compass calibration. It
-   will be useful if the compass is mounted in a non-standard orientation
-   or if you need additional calibration support.
+   Users who have only internal compasses or an external compass using the :ref:`UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` (recommended) and have mounted it in the default orientation can usually perform a simple "Onboard Calibration" as described in :ref:`Compass Calibration <common-compass-calibration-in-mission-planner>`).
 
 Overview
 ========
@@ -28,32 +21,12 @@ LOITER, PosHold, RTL, etc). This can lead to circling (aka
 
 ArduPilot currently allows up to three compasses to be connected. Only
 one compass (specified using the ``COMPASS_PRIMARY`` parameter) is used
-for navigation. While many autopilots have an internal compass, most
+for navigation. While many autopilots have an internal compass or compasses, many
 will instead use an external compass. This provides more reliable data
 than an internal compass because of the separation from other
-electronics.
+electronics. See :ref:`common-autopilots` for details about the specific autopilot to determine how many built-in compasses the autopilot may have, if any.
 
-Standard configurations for the main autopilot boards are shown in the
-table below:
-
-+-------------------------------------------+--------------+-----------------+
-| Configuration                             | Compass #1   | Compass #2      |
-+===========================================+==============+=================+
-| Pixhawk + Compass                         | External     | Internal        |
-+-------------------------------------------+--------------+-----------------+
-| Pixhawk (no external compass used)        | Internal     | Available       |
-+-------------------------------------------+--------------+-----------------+
-| APM2.6                                    | External     | Not supported   |
-+-------------------------------------------+--------------+-----------------+
-| APM2.5                                    | Internal     | Not supported   |
-+-------------------------------------------+--------------+-----------------+
-| APM2.5 trace cut, external compass used   | External     | Not supported   |
-+-------------------------------------------+--------------+-----------------+
-
-Most users will only need to select their autopilot/compass
-configuration and perform the :ref:`Live Calibration <common-compass-setup-advanced_live_calibration_of_offsets>` but details are also given on the less-used  :ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>` and Manual Declination.  
-Most of this configuration can be performed from the *Mission Planner*'s **Initial Setup \| Mandatory
-Hardware \| Compass** screen.  
+Most users will only need to select compass configuration and perform the :ref:`Basic Compass Calibration<common-compass-calibration-in-mission-planner>` but details are also given on the less-used  :ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>` and Manual Declination. Most of this configuration can be performed from the *Mission Planner*'s **Initial Setup \| Mandatory Hardware \| Compass** screen.  
 Other ground stations may have similar features.
 
 .. tip::
@@ -74,27 +47,25 @@ parameters.
 
    Mission Planner: Compass Calibration
 
-Quick configuration
--------------------
+Quick configuration for Pixhawk
+-------------------------------
 
 Mission Planner supports automatic configuration of almost all
-parameters for the most common autopilot boards. All you need to do is
-select the button corresponding to your autopilot controller:
+parameters for the Pixhawk autopilot boards. If it is a Pixhawk autopilot, select the button **Pixhawk/PX4**. You may be prompted for a specific ArduPilot version.
 
--  For most modern autopilot, select the button **Pixhawk/PX4**. You may be prompted for a specific ArduPilot version.
--  For APM 2.6, select **APM with External Compass**.
+Configuration for non-Pixhawk Autopilots
+----------------------------------------
 
-If your external compass is in a non-standard orientation, you must manually 
-select the orientation in the combo box (change from ``ROTATION_NONE``). 
-When externally connected the COMPASS_ORIENT option operates independently 
-of the AHRS_ORIENTATION board orientation option.
+- First determine how many on-board compasses the autopilot includes and enable those compasses. For example, if two compasses are integrated on-board, check the "Use this compass" box for Compass 1 and 2, and make sure that "External compass" boxes are unchecked. If you chose not use one of the internal compasses, then do not check its "Use this compass" box.
+- If using an external compass, check the appropriate the appropriate "Use this compass" box. It should be the one following the internal compasses, whether being used, or not. If your external compass is in a non-standard orientation, you can manually select the orientation (aligned with IMU orientation)in the combo box (change from ``ROTATION_NONE``). See the Checking Compass Orientation Section below. However, ArduPilot 4.0 and later firmware versions will automatically determine orientation when the Onboard Mag Calibration routine is run. When externally connected, the :ref:`COMPASS_ORIENT<COMPASS_ORIENT>` parameter is independent of the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` board orientation option.
+- The :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` must be set correctly for the compass calibration to be successful. In addition,the Accelerometer Calibration should be completed before the Compass Calibration.
 
-Most users will then only need to press the **Live Calibration** button
-and perform a :ref:`Live Calibration <common-compass-setup-advanced_live_calibration_of_offsets>`.
+Most users will then only need to press the **OnBoard Mag Calibration** button
+and perform a :ref:`Onboard Calibration <onboard_calibration>`.
 
 Checking Compass Orientation
 ----------------------------
--  Ensure your AHRS_ORIENT parameter is correct.  This will ensure that your internal compass' orientation will be correct
+-  Ensure your :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` parameter is correct.  This will ensure that your internal compass' orientation will be correct
 -  When rotating your aircraft through all axes each of the compasses should move in the same direction, and should be of approximately the same values
 
 - Northern Hemisphere:
@@ -106,6 +77,8 @@ Checking Compass Orientation
   - Z-component should be *negative*
   - when pitching the vehicle down, the X component should *decrease* in value
   - when rolling the vehicle right, the Y component should *decrease* in value
+
+These should be correct for any on-board compasses, since the orientation is defined in the autopilots definition file for the firmware.
 
 General settings
 ----------------
@@ -344,12 +317,12 @@ In the 4.0 releases of ArduPilot, an automatic offset learning feature is availa
 
 .. note:: Setting :ref:`COMPASS_LEARN<COMPASS_LEARN>` to 1 or 2 is not recommended. These modes are deprecated and are either non-functional, or still in development.
 
-  The procedure for COMPASS_LEARN = 3 is:
+  The procedure for :ref:`COMPASS_LEARN<COMPASS_LEARN>` = 3 is:
 
-  1. set COMPASS_LEARN = 3. The message “CompassLearn: Initialised” will appear on the MP’s message tab (it does not appear in red letters on the HUD).
+  1. set :ref:`COMPASS_LEARN<COMPASS_LEARN>` = 3. The message “CompassLearn: Initialised” will appear on the MP’s message tab (it does not appear in red letters on the HUD).
   2. “Bad Compass” will appear but this is nothing to be worried about. We will hopefully make this disappear before the final release.
   3. Arm and drive/fly the vehicle around in whatever mode you like, do some turns “CompassLearn: have earth field” should appear on MP’s message tab and then eventually “CompassLearn: finished”.
-  4. If you want you can check the COMPASS_LEARN parameter has been set back to zero (you may need to refresh parameters to see this) and the COMPASS_OFS_X/Y/Z values will have changed.
+  4. If you want you can check the :ref:`COMPASS_LEARN<COMPASS_LEARN>` parameter has been set back to zero (you may need to refresh parameters to see this) and the COMPASS_OFS_X/Y/Z values will have changed.
   5. This method can also be evoked using the RCxOPTION for "Compass Learn". It will activate when the channel goes above 1800uS and automatically complete and save.
 
 .. note: These methods do not fully calibrate the compass, like Onboard Calibration does, setting the scales and (in 4.0 vehicle releases) automatically determining the compass orientation.
