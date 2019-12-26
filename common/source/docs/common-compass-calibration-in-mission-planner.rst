@@ -4,15 +4,11 @@
 Compass Calibration
 ===================
 
-This article explains how to perform basic compass calibration.
-
-.. note::
-
-   This article assumes that you are using the most common configuration — a autopilot and compass mounted with the arrow on each facing toward the front of the vehicle. If you're using a different configuration see :ref:`Advanced Compass Setup <common-compass-setup-advanced>`.
+This article explains how to perform basic compass calibration. It assumes that you have at least one compass, either internally or externally in the system, and it has been enabled. See :ref:`Advanced Compass Setup <common-compass-setup-advanced>` for more information and to setup other compass related features.
 
 .. tip::
 
-   It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "declination database" which allows converting the location's magnetic North to true North without recalibrating.  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff.
+   It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "world magnetic model" which allows converting the location's magnetic North to true North without recalibrating if using the option "Obtain declination automatically".  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff.
 
 Calibration first steps
 =======================
@@ -22,20 +18,17 @@ Calibration first steps
 
 
 - Under **Initial Setup \| Mandatory Hardware** select **Compass**.
-- Select your autopilot configuration to automatically enter the most important configuration information for your board:
-
-   -  For any modern autopilot (Pixhawk, NAVIO2, etc) select the button **Pixhawk/PX4**.
-   -  For APM 2.6, select **APM with External Compass**.
 
    .. figure:: ../../../images/MissionPlanner_CompassCalibration_MainScreen.png
       :target: ../_images/MissionPlanner_CompassCalibration_MainScreen.png
 
       Mission Planner: Compass Calibration
 
-   You normally shouldn't need to change any of the "General Compass Settings" or compass specific values (i.e. "Compass #1" section), but you might want
-   to confirm that the \ **Enable compasses** and **Obtain declination automatically** boxes are checked.
+   You normally shouldn't need to change any of the "General Compass Settings" or compass specific values (i.e. "Compass #1" section), but you might want to confirm that the \ **Enable compasses** and **Obtain declination automatically** boxes are checked.
 
-   You may wish to disable Compass #2 (the internal compass) if you are consistently seeing the "inconsistent compasses" pre-arm message often and you are sure that the external compass is calibrated and the orientation is correct.
+   You may wish to disable any internal compasses if you are consistently seeing the "inconsistent compasses" pre-arm message often and you are sure that the external compass is calibrated and the orientation is correct.
+
+.. _onboard_calibration:
 
 Onboard Calibration
 ===================
@@ -125,8 +118,7 @@ Older versions of ArduPilot rely on the ground station to calculate the compass 
 Additional information
 ======================
 
-More information about compass configuration can be found in :ref:`Advanced Compass Setup <common-compass-setup-advanced>`. This includes
-instructions for how to set up additional compasses, :ref:`automatic setting of offsets<automatic-compass-offset-calibration>`, non-standard compass alignments, :ref:`compassmot <copter:common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`, etc.
+More information about compass configuration can be found in :ref:`Advanced Compass Setup <common-compass-setup-advanced>`. This includes instructions for how to set up additional compasses, :ref:`automatic setting of offsets<automatic-compass-offset-calibration>`, non-standard compass alignments, :ref:`compassmot <copter:common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`, etc.
 
 General discussion on magnetic interference and ways to reduce it can be
 found in :ref:`Magnetic Interference <common-magnetic-interference>`.
