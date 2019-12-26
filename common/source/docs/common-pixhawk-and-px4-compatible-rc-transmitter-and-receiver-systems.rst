@@ -14,18 +14,19 @@ Overview
 ArduPilot autopilots are compatible with 
     #. PPM-Sum receivers
     #. S.Bus receivers 
-    #. IBUS recievers
+    #. IBUS receivers
     #. Spektrum DSM, DSM2, and DSM-X Satellite receivers
     #. MULTIPLEX SRXL version 1 and version 2 receivers
+    #. Graupner SUM-D
 
-All of the above methods utilize a single signal transmission wire for all channels. For traditional single-wire-per-channel (PWM) receivers, a `PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be used to convert the receiver outputs to PPM-Sum.
+All of the above methods utilize a single serial signal transmission wire for all channels. For traditional single-wire-per-channel (PWM) receivers, a `PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be used to convert the receiver outputs to PPM-Sum.
 
 Connecting the receiver
 =======================
 
 ArduPilot auto-detects the protocol of the RC receiver system. For most autopilots there is a pin labeled RCin to which the output from the receiver is connected. On many closed source autopilots, other pins are used and are detailed in their board documentation, linked from the :ref:`ArduPilot Hardware<common-autopilots>` page.
 
-In addition, beginning with ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect the RC receiver, if attached.
+In addition, beginning with ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect the RC receiver, if the serial port protocol to 23 (for example :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART is used).
 
 To connect a PPM-Sum receiver or an S.Bus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. The following S.Bus receivers have been tested and are known to work: FrSky `X8R <http://www.frsky-rc.com/product/pro.php?pro_id=105>`__, FrSky `XSR <http://www.frsky-rc.com/product/pro.php?pro_id=154>`__, Futaba R2008SB, Futaba R6008SB.
 
@@ -33,7 +34,7 @@ To connect a PPM-Sum receiver or an S.Bus receiver to a Pixhawk, for example, pl
     :target: ../_images/RCIN_connection.jpg
 
 For a **Spektrum DSM**, **DSM2**, or **DSM-X Satellite** receiver,
-connect to the **SPKT/DSM** port, or for the cube mini carrier board, cut and modify the solder bridges.
+connect to the **SPKT/DSM** port (some boards, such as the CUBE mini carrier board, require you to modify solder bridges. See the autopilot board's documentation)
 
 .. image:: ../../../images/pixhawk_spektrum_connection.jpg
     :target: ../_images/pixhawk_spektrum_connection.jpg
@@ -114,12 +115,18 @@ Advantages of the FrSky systems:
 * Reliable and low latency telemetry with matched FrSky receiver
 * Removable MicroSD card to store sounds, voices, models and custom scripts
 
-The Taranis transmitters can run the :ref:`Yappu Telemetry <common-frsky-yappu>` or :ref:`FlightDeck <common-frsky-flightdeck>` telemetry user interface.
+The Taranis transmitters can run the :ref:`Yappu Telemetry <common-frsky-yaapu>` 
+
+.. image:: ../../../images/x9d.png
+    :target: ../_images/x9d.png
+     :width: 450px
+
+or :ref:`FlightDeck <common-frsky-flightdeck>` telemetry user interface.
 
 .. image:: ../../../images/FD-X9-1.jpg
     :target: http://www.craftandtheoryllc.com/feature
-    :width: 40 %
-    :align: center
+    :width: 450px
+
 
 FrSky X Receivers
 -----------------
@@ -321,13 +328,13 @@ Using a Standard RC Radio Receiver with 3DR PPM Encoder
    female servo jumpers.**
 
    -  Connect the PPM-SUM output of the Encoder with a 3 wire cable to
-      the PX4IO boards PPM sum input (1x3 connector).
+      the autpilot's PPM sum input (1x3 connector).
 
 .. note::
 
    If you are using this PPM Encoder it is important to know that
-   when you are calibrating your transmitter you will quite likely need
-   to hook up your flight battery to the PX4IO because the USB port
+   when you are calibrating your transmitter you may need
+   to hook up your flight battery to the autopilot because the USB port
    alone can't supply enough power.
 
 
