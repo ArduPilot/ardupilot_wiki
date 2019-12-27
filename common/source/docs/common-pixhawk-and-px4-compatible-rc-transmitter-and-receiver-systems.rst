@@ -209,10 +209,6 @@ The list of supported receivers is given below:
 -  FrSky FASST compatible S.BUS compatible TFR8 SB 8ch 2.4Ghz Receiver
    (`HobbyKing <https://hobbyking.com/en_us/frsky-tfr8-sb-8ch-2-4ghz-s-bus-receiver-fasst-compatible.html?___store=en_us>`__)
 
-.. note::
-
-   The list above is from `pixhawk.org here <https://pixhawk.org/peripherals/radio-control/futaba/start?s[]=sbus#sbussbus_2>`__.
-
 .. image:: ../../../images/FutabaT8FG.jpg
     :target: ../_images/FutabaT8FG.jpg
 
@@ -238,14 +234,15 @@ These include:
 .. tip::
 
    The parameter to enable the SBUS output from the PixHawk is
-   BRD_SBUS_OUT.
+   BRD_SBUS_OUT. This is only to pass SBUS externally to other devices, like servos. Not to connect a receiver to RCin or SBus In.
 
-Spektrum Satellite Receivers Operate on PPM-Sum
-===============================================
+Spektrum Satellite Receivers 
+============================
 
 `Spektrum Satellite Receivers <http://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM9645>`__
 work as a DSM receiver with Pixhawk. Spektrum satellite receivers do not have buttons to bind, so
-there are two ways to bind them to a transmitter.
+there are two ways to bind them to a transmitter. They are connected as if they were PPM-SUM or SBus output devices.
+ArduPilot automatically discovers the serial protocol being used.
 
 -  Pre-bind the Spektrum Satellite to your transmitter using a
    conventional Spektrum receiver with satellite attached, then
@@ -272,11 +269,11 @@ there are two ways to bind them to a transmitter.
    Although binding may be successful, Spektrum satellite receivers only provide the correct signal to ardupilot if bound using the 11ms Frame Rate. Adjust this value using the transmitter.
 
 
-PPM encoder and telemetry radio
-===============================
+PPM encoders
+============
 
 A `PPM Encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ will
-allow you to use any conventional RC receiver. Both the new and previous
+allow you to use any conventional RC receiver with only outputs for each channel. Both the new and previous
 versions of the *3DR PPM-Sum encoder* (the linked encoder is compatible) are shown
 below:
 
