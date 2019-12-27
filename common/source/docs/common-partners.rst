@@ -308,7 +308,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  https://www.flytrex.com
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_VimDrones.jpg
+      - .. image:: ../../../images/supporters/supporters_logo_VimDrones.png
             :width: 250px
             :align: center
             :target:  https://vimdrones.com
