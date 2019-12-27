@@ -23,6 +23,8 @@ Step 2 - create a hwdef.dat file for the board
 - make a subdir in `libraries/AP_HAL_ChibiOS/hwdef <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ for your board (i.e. “new-board”).  This directory name will eventually be used during the build process (i.e. “waf configure --board new-board”) so keep the name relatively short.
 - copy/rename an existing template hwdef.dat that is similar to the CPU for your board into the directory created above.  For example, if the board has a STMF40x chip copy the `f405-min/hwdef.dat <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/f405-min>`__ file into the new directory.
 
+.. tip:: The `FMUV3 board <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/fmuv3/hwdef.dat>`__ is commented heavily and contains most of the HAL directives used in hardware definition files. Also, the `scripts directory <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ contains pin function assignments for the supported microprocessors for reference.
+
 Step 3 - configure and build a minimal firmware for the board
 -------------------------------------------------------------
 
