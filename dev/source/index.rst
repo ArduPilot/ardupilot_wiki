@@ -157,5 +157,6 @@ Full Table of Contents
     Training Centers <docs/common-training-centers>
     GSoC 2019 project ideas <docs/gsoc-ideas-list>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
+    USB IDs <docs/USB-IDs>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
