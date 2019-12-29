@@ -76,7 +76,7 @@ If Mission planner is unable to connect:
    exists in the Windows Device Manager's list of serial ports.
 -  If your autopilot has an F7 or H7 processor and has CAN ports, then see the section below, :ref:`Troubleshooting Composite Connections <troubleshooting-composite-connections>` 
 -  If using a USB port, try a different physical USB port
--  If using a UDP or TCP connection, check that your firewall is not
+-  If using a UDP or TCP connection, check that your firewall is not blocking IP traffic
 
 You should also ensure that the autopilot controller board has
 appropriate ArduPilot firmware installed and has booted correctly (on
