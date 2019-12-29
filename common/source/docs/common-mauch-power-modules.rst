@@ -1,12 +1,12 @@
 .. _common-mauch-power-modules:
 
 ===================
-MAUCH Power Modules
+MAUCH Power Monitor
 ===================
 
 This page explains how to set up the
 `MAUCH <https://www.mauch-electronic.com/#webs-bin-563c137b7add4cb229080f55>`__
-power modules HS-050-xx\* (50A), HS-100-xx (100A) and HS-200-xx\* (200A)
+power monitors HS-050-xx\* (50A), HS-100-xx (100A) and HS-200-xx\* (200A)
 to measure battery voltage and current consumption.  For information on purchasing, please see the `MAUCH Electronics <https://www.mauch-electronic.com/apps/webstore/>`__ website.
 
 (\*xx is the indicator for: LV = Vow Voltage 2-6S, maximum 28V HV = High
@@ -14,7 +14,7 @@ Voltage 4-14S, maximum 60V).
 
 .. tip::
 
-   These modules use a
+   These monitors use a
    `hall-effect <https://en.wikipedia.org/wiki/Hall_effect>`__ current
    sensor. These are much more accurate across the whole current range than
    sensors using a shunt resistor, consume very little power, and are
@@ -34,7 +34,7 @@ HS-200-V2 (without any time limit). The maximum burst current is
    :target: ../_images/mauch_power_module.jpg
    :width: 450px
 
-   MAUCH Power Module
+   MAUCH Power Monitor
 
 **Sensor Board:**
 
@@ -87,7 +87,7 @@ Connecting the PM to a autopilot board
 Setup through Mission Planner
 =============================
 
-:ref:`Power Module Configuration in Mission Planner <common-power-module-configuration-in-mission-planner>`
+:ref:`Power Monitor Configuration in Mission Planner <common-power-module-configuration-in-mission-planner>`
 explains in more detail how to configure a Power Module and get low
 battery alerts from Mission Planner.
 
@@ -111,4 +111,4 @@ calibration values for voltage and current measurement.
 .. figure:: ../../../images/MissionPlanner_BatteryConfigurationMauch.jpg
    :target: ../_images/MissionPlanner_BatteryConfigurationMauch.jpg
 
-   MissionPlanner: Battery Monitor Configuration for MAUCH Power Module
+   MissionPlanner: Battery Monitor Configuration for MAUCH Power Monitor

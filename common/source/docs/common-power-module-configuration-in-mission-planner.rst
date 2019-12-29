@@ -1,14 +1,14 @@
 .. _common-power-module-configuration-in-mission-planner:
 
-=============================================
-Power Module Configuration in Mission Planner
-=============================================
+=====================================================
+Power Monitor/Module Configuration in Mission Planner
+=====================================================
 
-A power module can be used to measure the battery voltage and current for use in the battery failsafe and also to provide a stable power supply to the autopilot.
+A power monitor can be used to measure the battery voltage and current for use in the battery failsafe and a power module can also provide a stable power supply to the autopilot.
 
-ArduPilot is :ref:`compatible with a number of power modules <common-powermodule-landingpage>`.
+ArduPilot is :ref:`compatible with a number of power modules/monitors <common-powermodule-landingpage>`.
 
-.. note:: Boards with integrated power modules have their parameters setup by default.
+.. note:: Boards with integrated power monitors have their parameters setup by default.
 
 Mission Planner Setup
 =====================
@@ -24,7 +24,7 @@ Battery measurement is primarily set up in the *Mission Planner*'s
 Enable voltage and current sensing
 ----------------------------------
 
-Enter the properties your module can measure, the type of module, the
+Enter the properties your monitor can measure, the type of monitor, the
 type of autopilot, and the battery capacity:
 
 -  **Monitor:** *Voltage and Current* or *Battery Volts*
@@ -35,7 +35,7 @@ type of autopilot, and the battery capacity:
 The **Sensor** selection list offers a number of Power Modules
 (including popular models from 3DR and AttoPilot) which you can select
 to automatically configure your module. If your PM is not on the list
-then you can select **Other**, and then 
+then you can select **Other**, enter its recommended values, or 
 :ref:`perform a manual calibration <common-power-module-configuration-in-mission-planner_calibration>` as described below.
 
 
@@ -48,7 +48,7 @@ The bottom section of the the *Battery Monitor* screen allows you to
 calibrate the voltage/current measurement in order to verify that the
 measured voltage of the battery is correct. You can also set the
 **Sensor** selection list to **Other** and use the calibration process
-to configure an "unknown" power module.
+to configure an "unknown" power monitor/module.
 
 To calibrate the voltage reading:
 
@@ -82,7 +82,7 @@ results displayed in the Mission Planner.
 .. note::
 
    Most current sensors are not very accurate at low currents (less
-   than 3Amps). Typically you should perform current calibration at around
+   than 3 Amps). Typically you should perform current calibration at around
    10A. The exception is PMs that use hall-effect sensors, like :ref:`those from Mauch <common-mauch-power-modules>`.
 
 This video shows the voltage and current calibration process using a
@@ -111,12 +111,12 @@ of remaining current.
     :target: ../_images/MP_battery_alarm_003.png
 
 
-Connecting power module to alternative pins
-===========================================
+Connecting power monitor to alternative pins
+============================================
 
-The power module is generally plugged into the default port on the
+The power monitor is generally plugged into the default port on the
 autopilot (ie. Pixhawk). If you wish to change where the power
-module is plugged into the controller, the pins used can be modified
+monitor is plugged into the controller, the pins used can be modified
 using the ``BATT_VOLT_PIN`` and ``BATT_CURR_PIN`` parameters.
 
 The list of available analog input pins that can be used are listed on
