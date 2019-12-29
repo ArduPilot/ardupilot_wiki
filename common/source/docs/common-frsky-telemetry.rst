@@ -301,7 +301,7 @@ The following SmartPort sensors are available from FrSky:
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | |rpm|           | RPM            | RPM and temperature sensors                         | Yes, for traditional heli rpm and monitoring motors/battery temperature                             |
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| |fas40s|        | FAS40S/FAS150s | 40A/150A current sensor                             | Mostly no. Information already provided by ArduPilot if equipped with a power module                |
+| |fas40s|        | FAS40S/FAS150s | 40A/150A current sensor                             | Mostly no. Information already provided by ArduPilot if equipped with a power monitor               |
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | |gps|           | GPS            | GPS receiver                                        | No. Information already provided by ArduPilot.                                                      |
 +-----------------+----------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------------------+
@@ -404,7 +404,7 @@ To enable FrSky Telemetry on one of the serial ports, connect with **Mission Pla
 Additional configuration in Mission Planner
 -------------------------------------------
 
-For FrSky telemetry to transmit the correct battery information to the RC transmitter, ArduPilot must be configured for the power module and battery pack used.
+For FrSky telemetry to transmit the correct battery information to the RC transmitter, ArduPilot must be configured for the power monitor and battery pack used.
 
 Configuring the Power Module via Mission Planner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -412,11 +412,11 @@ Configuring the Power Module via Mission Planner
 .. image:: ../../../images/MP_FrSky_PowerModuleConfig.png
    :target: ../_images/MP_FrSky_PowerModuleConfig.png
 
-Perform the steps in the following tutorial if you've never configured or must reconfigure your power module: :ref:`power module configuration in mission planner <common-power-module-configuration-in-mission-planner>`
+Perform the steps in the following tutorial if you've never configured or must reconfigure your power monitor: :ref:`power monitor configuration in mission planner <common-power-module-configuration-in-mission-planner>`
 
 .. warning::
 
-  It is highly recommended to configure the power module (both voltage and current), otherwise the voltage, current, battery consumption (Ah) and battery percentage reported in Mission Planner and via FrSky telemetry will not be accurate!!!
+  It is highly recommended to configure the power monitor (both voltage and current), otherwise the voltage, current, battery consumption (Ah) and battery percentage reported in Mission Planner and via FrSky telemetry will not be accurate!!!
 
 Battery Capacity Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
