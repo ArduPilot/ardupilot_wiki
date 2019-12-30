@@ -224,22 +224,20 @@ for left tilt and SERVOn_FUNCTION=76 for right tilt.
 Non-Vectored Yaw
 ================
 
-Non-Vectored yaw aircraft (Q_TILT_TYPE 0 or 1) needs a tilt servo for the rear
-motor for yaw control.
+Non-Vectored yaw aircraft (Q_TILT_TYPE 0 or 1) needs a tilt servo for yaw control.
 
-You need to setup your two front tilt servos both with SERVOn_FUNCTION=41
-and also your rear servo for yaw control with SERVOn_FUNCTION=39. 
-FUNCTION=39 is normally the servofunction for motor 7. Ony in non-vectored
+You need to setup your front tilt servos with SERVOn_FUNCTION=41
+and also your servo for yaw control with SERVOn_FUNCTION=39. 
+FUNCTION=39 is normally the servo function for motor 7. Ony in non-vectored
 tri-copter the yaw servo is controlled via SERVOn_FUNCTION 39.
 
-Note that if you want to use BLHELI ESCs with telemetry in non-vectored tri-copter,
-you must not set BLHELI to 1. Set instead SERVO_BLH_MASK to the output-bitmask
+If you wish to setup BLEHeli esc telemetry, you need to set Q_M_PWM_TYPE to 4 (DShot 150).
+Note that if you want to use BLHeli esc telemetry in a non-vectored yaw tricopter,
+you must not set SERVO_BLH_AUTO to 1. Set instead SERVO_BLH_MASK to the output-bitmask
 of the servo-channels actually connected BLHELI-ESCs.
 
 For example if your motors are conntected to servo 9,10,11 (the first three aux-outputs of a pixhawk1), 
 set SERVO_BLH_MASK to 1792. 
-
-You also need to setup Q_M_PWM_TYPE to 4 (DShot 150).
 
 Pre Flight Checks
 =================
