@@ -176,6 +176,7 @@ Getting more info
    AutoPilot Hardware Options <docs/common-autopilots>
    First Time Setup <docs/initial-setup>
    First Flight <docs/flying-arducopter>
+   If A Problem Arises <docs/common-when-problems-arise>
    Advanced Configuration <docs/common-advanced-configuration>
    Mission Planning <docs/common-mission-planning>
    Logs <docs/common-logs>
