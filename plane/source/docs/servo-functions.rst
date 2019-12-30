@@ -114,14 +114,12 @@ setup your :ref:`RC inputs <rc-throw-trim>`.
     Four Channel Planes <guide-four-channel-plane>
     Elevon Planes <guide-elevon-plane>
     VTail Planes <guide-vtail-plane>
-    Quadplanes <quadplane-support>
-    Tailsitters <guide-tailsitter>
-    Tilt-Rotors <guide-tilt-rotor>
     Orinthopter <ornithopter>
 
-Note that you can combine setups for more complex aircraft. So for
-example, you could setup a vtail tiltrotor quadplane by combining
-functions from the guides above.
+For Quadplanes, including Tailsitters and Tilt-Rotors, see these sections: :ref:`quadplane-support` , :ref:`guide-tailsitter` , :ref:`guide-tilt-rotor` 
+
+.. note:: You can combine setups for more complex aircraft. So for example, you could setup a vtail tiltrotor quadplane by combining functions from the guides above.
+
 
 Auxiliary Flying Surfaces
 -------------------------

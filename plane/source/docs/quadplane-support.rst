@@ -16,6 +16,8 @@ multicopter aircraft, also known as a "QuadPlane".
     Overview <quadplane-overview>
     Building a QuadPlane <quadplane-building>
     Frame Setup <quadplane-frame-setup>
+    Tilt-Rotors <guide-tilt-rotor>
+    Tailsitters <guide-tailsitter>
     ESC Calibration <quadplane-esc-calibration>
     Parameter Setup <quadplane-parameters>
     Flight Modes <quadplane-flight-modes>
