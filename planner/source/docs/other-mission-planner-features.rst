@@ -58,3 +58,4 @@ the menu:
     Geotagging Images with Mission Planner <common-geotagging-images-with-mission-planner>
     Using Python Scripts in Mission Planner <using-python-scripts-in-mission-planner>
     Swarming <swarming>
+    Advanced Tools <common-mp-tools>
