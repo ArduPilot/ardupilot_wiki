@@ -32,6 +32,7 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
     Autopilot Hardware Options <docs/common-autopilots>
     First Time Setup <docs/apmrover-setup>
     First Drive <docs/rover-first-drive>
+    If A Problem Arises <docs/common-when-problems-arise>
     Advanced Configuration <docs/common-advanced-configuration>
     Mission Planning <docs/common-mission-planning>
     Logs <docs/common-logs>
