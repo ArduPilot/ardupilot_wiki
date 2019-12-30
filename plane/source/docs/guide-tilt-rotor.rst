@@ -224,20 +224,18 @@ for left tilt and SERVOn_FUNCTION=76 for right tilt.
 Non-Vectored Yaw
 ================
 
-Non-Vectored yaw aircraft (Q_TILT_TYPE 0 or 1) needs a tilt servo for yaw control.
+Non-Vectored yaw aircraft (:ref:`Q_TILT_TYPE<Q_TILT_TYPE>` = 0 or 1) needs a tilt servo for yaw control.
 
-You need to setup your front tilt servos with SERVOn_FUNCTION=41
-and also your servo for yaw control with SERVOn_FUNCTION=39. 
-FUNCTION=39 is normally the servo function for motor 7. Ony in non-vectored
-tri-copter the yaw servo is controlled via SERVOn_FUNCTION 39.
+You need to setup your front tilt servos with ``SERVOn_FUNCTION=41``
+and also your servo for yaw control with ``SERVOn_FUNCTION=39``. ``SERVO_FUNCTION=39`` is normally the servo function for motor 7, but in a non-vectored yaw tri-copter, the yaw servo is controlled via ``SERVOn_FUNCTION 39``.
 
-If you wish to setup BLEHeli esc telemetry, you need to set Q_M_PWM_TYPE to 4 (DShot 150).
-Note that if you want to use BLHeli esc telemetry in a non-vectored yaw tricopter,
-you must not set SERVO_BLH_AUTO to 1. Set instead SERVO_BLH_MASK to the output-bitmask
+If you wish to setup BLEHeli esc telemetry, you need to set :ref:`Q_M_PWM_TYPE<Q_M_PWM_TYPE>` to 4 (DShot 150), connect the telemetry signal to a SERIAL port, and set its ``SERIALn_PROTOCOL`` to 23.
+
+Note that if you want to use BLHeli passthru setup or telemetry in a non-vectored yaw tricopter,
+you must not set ref:`SERVO_BLH_AUTO<SERVO_BLH_AUTO>` to 1. Instead, set :ref:`SERVO_BLH_MASK<SERVO_BLH_MASK>` to the output-bitmask
 of the servo-channels actually connected BLHELI-ESCs.
 
-For example if your motors are conntected to servo 9,10,11 (the first three aux-outputs of a pixhawk1), 
-set SERVO_BLH_MASK to 1792. 
+For example if your motors are connected to servo 9,10,11 (the first three aux-outputs of a pixhawk1), set :ref:`SERVO_BLH_MASK<SERVO_BLH_MASK>` to 1792.
 
 Pre Flight Checks
 =================
