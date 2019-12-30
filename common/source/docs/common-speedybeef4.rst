@@ -4,6 +4,8 @@
 Speedy Bee F4
 =============
 
+.. warning:: This board's operation has not been verified. It requires an external I2C barometer in order to be ArduPilot compatible. Currently, this has not been re-verified as functional.
+
 .. image:: ../../../images/speedybeef4.jpg
     :target: ../_images/speedybeef4.jpg
 
