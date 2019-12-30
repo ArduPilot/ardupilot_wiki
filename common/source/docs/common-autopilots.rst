@@ -59,7 +59,7 @@ Closed hardware
 [/site]
     Parrot C.H.U.C.K <common-CHUCK-overview>
     RadioLink MiniPix <common-radiolink-minipix>
-    SpeedyBee F4 <common-speedybeef4>
+    SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
 
