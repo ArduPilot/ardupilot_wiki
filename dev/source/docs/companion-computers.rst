@@ -12,23 +12,41 @@ decisions during flight. For example, "take a photo when the vehicle is
 at these GPS co-ordinates", gather and pre-process information from advanced
 sensors or actuate lights, auxiliary servos or any other interfaces.
 
-Related topics on this wiki include:
+There are two major parts to Companion Computers - hardware and software.
+
+The Companion Computer hardware refers to the specific computer hardware being used.
+This is typically a small ARM-based Single Board Computer. Specific tutorials for 
+popular Companion Computer hardware are listed below.
+
+.. toctree::
+    :maxdepth: 1
+
+    Arduino family <https://discuss.ardupilot.org/t/mavlink-and-arduino-step-by-step/25566/1>
+    Intel Edison <intel-edison>
+    LYCHEE (Cube Carrier Board for Raspberry Pi Compute Module) <https://dronee.aero/pages/lychee>
+    NVidia TX1 <companion-computer-nvidia-tx1>
+    NVidia TX2 <companion-computer-nvidia-tx2>
+    ODroid <odroid-via-mavlink>
+    Raspberry Pi <raspberry-pi-via-mavlink>
+
+The Companion Computer software refers to the programs and tools that run on the Companion
+Computer. They will take in MAVLink telemetry from the Flight Controller and can route and 
+process the telemetry data. Specific tutorials for popular Companion Computer software 
+tools/suites are listed below.
 
 .. toctree::
     :maxdepth: 1
 
     APSync <apsync-intro>
-    Arduino family <https://discuss.ardupilot.org/t/mavlink-and-arduino-step-by-step/25566/1>
-    BeaglePilot Project <beaglepilot>
-    DroneKit Tutorial <droneapi-tutorial>
+    DroneKit <droneapi-tutorial>
     FlytOS <flytos>
-    Intel Edison <intel-edison>
-    LYCHEE - Carrier board for Cube flight controller with built in Raspberry Pi Compute Module 3+ <https://dronee.aero/pages/lychee>
     Maverick <https://goodrobots.github.io/maverick/#/>
-    NVidia TX1 <companion-computer-nvidia-tx1>
-    NVidia TX2 <companion-computer-nvidia-tx2>
-    ODroid <odroid-via-mavlink>
-    Raspberry Pi <raspberry-pi-via-mavlink>
     ROS <ros>
+
+A number of vendors also offer turnkey systems. See the below link for details.
+
+.. toctree::
+    :maxdepth: 1
+
     Turnkey Companion Computer Solutions <turnkey-companion-computer-solutions>
 
