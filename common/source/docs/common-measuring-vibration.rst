@@ -78,7 +78,7 @@ Looking for "The Leans"
 **The Leans** occurs when the vehicle's attitude estimate becomes incorrect causing it to lean significantly even though the pilot is commanding level flight.  The cause of the problem is often accelerometer aliasing which can be confirmed by comparing the Roll and Pitch attitude estimates from each of the estimation systems (i.e. each AHRSs or EKFs).  The attitude estimates should be within a few degrees of each other
 
 - Download the dataflash log and open in the ground station's log viewer
-- Compare the AHRS2.Roll, NKF1.Roll and NKF6.Roll
+- Compare the AHRS2.Roll, NKF1[0].Roll and NKF1[1].Roll
 
 The image below shows a typical log in which the attitudes match well
 
