@@ -84,6 +84,7 @@ value to users with old hardware.
     Building for Navio on RPI 2<building-for-navio-on-rpi2>
     Intel Edison <intel-edison>
     BeaglePilot Project <beaglepilot>
+    Making a Mavlink WiFi bridge using the Raspberry Pi <making-a-mavlink-wifi-bridge-using-the-raspberry-pi>
 
 [/site]
 
