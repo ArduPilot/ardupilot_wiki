@@ -1,8 +1,12 @@
 .. _intel-edison:
 
-====================================
-Intel Edison as a Companion Computer
-====================================
+==============================================
+Archived: Intel Edison as a Companion Computer
+==============================================
+
+.. warning::
+
+    The Intel Edison has been discontinued
 
 This page explains how to setup and use the `Intel Edison <http://www.intel.com/content/www/us/en/do-it-yourself/edison.html>`__ as a companion computer primarily for use with the `The Cube <http://www.proficnc.com/content/13-pixhawk2>`__.
 

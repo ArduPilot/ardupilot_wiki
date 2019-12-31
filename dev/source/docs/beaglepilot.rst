@@ -1,8 +1,8 @@
 .. _beaglepilot:
 
-===================
-BeaglePilot Project
-===================
+=============================
+Archived: BeaglePilot Project
+=============================
 
 .. warning::
 
