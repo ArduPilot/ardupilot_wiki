@@ -22,7 +22,6 @@ popular Companion Computer hardware are listed below.
     :maxdepth: 1
 
     Arduino family <https://discuss.ardupilot.org/t/mavlink-and-arduino-step-by-step/25566/1>
-    Intel Edison <intel-edison>
     LYCHEE (Cube Carrier Board for Raspberry Pi Compute Module) <https://dronee.aero/pages/lychee>
     NVidia TX1 <companion-computer-nvidia-tx1>
     NVidia TX2 <companion-computer-nvidia-tx2>

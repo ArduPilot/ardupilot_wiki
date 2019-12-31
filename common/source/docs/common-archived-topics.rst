@@ -82,6 +82,8 @@ value to users with old hardware.
     Building for Erle-Brain 2 <building-for-erle-brain-2>
     Building for Erle-Brain <building-for-erle-brain>
     Building for Navio on RPI 2<building-for-navio-on-rpi2>
+    Intel Edison <intel-edison>
+    BeaglePilot Project <beaglepilot>
 
 [/site]
 
