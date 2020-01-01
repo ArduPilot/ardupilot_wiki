@@ -15,12 +15,8 @@ Inexpensive, light, Dual Mode GPS and GPS/Compass using UBLOX M8N module
 - Concurrent GNSS : 1Hz-10Hz
 - BN-880 Compass IC: HMC5883L
 
-BN-220
-------
 
-.. image:: ../../../images/bn220.png
 
-BN-880
-------
+.. image:: ../../../images/bn220.jpg
 
-.. image:: ../../../images/bn880.png
+
