@@ -36,7 +36,7 @@ Flaperon setup
       the flaps. You can configure any unused input channel for this
       however we are going to use servo output channel 5.  Configure your transmitter to
       use Channel 5 for flaps (either a switch or a rotary button) and
-      set :ref:`FLAP_IN_CHANNEL <FLAP_IN_CHANNEL>` to 5.
+      set ``FLAP_IN_CHANNEL`` to 5.
    -  Move your ailerons to 2 spare output channels on the autopilot
       that you aren't using.  In this example we are using channels 5
       and 6.
@@ -77,7 +77,7 @@ Tuning
 -  Adjust `FLAP_x_PERCNT|SPEED` as desired for auto modes - see `Automatic Flaps <automatic-flaps>`. Note you can ignore the
    comment on that page saying "parameter for the channel function for
    the channel you are using for flaps to a value of 3".
-   :ref:`FLAP_IN_CHANNEL <FLAP_IN_CHANNEL>` is already set for this. - Have a look at :ref:`TKOFF_FLAP_PCNT <TKOFF_FLAP_PCNT>`
+   ``FLAP_IN_CHANNEL`` is already set for this. - Have a look at :ref:`TKOFF_FLAP_PCNT <TKOFF_FLAP_PCNT>`
    and :ref:`LAND_FLAP_PERCNT <LAND_FLAP_PERCNT>` if they are relevant to you.
 -  When you are flying in manual mode, it can be helpful to setup an
    elevator down mix on your TX when you set flaps i.e. the more flaps
