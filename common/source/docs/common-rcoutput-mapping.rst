@@ -206,7 +206,7 @@ planes.
 Flap
 ++++
 
-When a channel is set as a flap it's value comes from the :ref:`FLAP_IN_CHANNEL<FLAP_IN_CHANNEL>` . The reason you
+When a channel is set as a flap it's value comes from the ``FLAP_IN_CHANNEL`` . The reason you
 may want to use this instead of a RCPassThru is that you can setup
 multiple flap channels with different trims and ranges, and you may want
 to take advantage of the :ref:`FLAP_SLEWRATE<FLAP_SLEWRATE>` to limit the speed of flap
@@ -220,7 +220,7 @@ can also accept automatic flap output control from the :ref:`TKOFF_FLAP_PCNT<TKO
 :ref:`LAND_FLAP_PERCNT<LAND_FLAP_PERCNT>` parameters, as well as the :ref:`FLAP_1_SPEED <FLAP_1_SPEED>`,
 :ref:`FLAP_1_PERCNT<FLAP_1_PERCNT>`, :ref:`FLAP_2_SPEED<FLAP_2_SPEED>` and :ref:`FLAP_2_PERCNT<FLAP_2_PERCNT>` parameters. in addition to manual control.
 
-If you have both a :ref:`FLAP_IN_CHANNEL<FLAP_IN_CHANNEL>` set and the Automatic Flaps
+If you have both a ``FLAP_IN_CHANNEL`` set and the Automatic Flaps
 function set then the amount of flap applied is the higher of the two.
 
 Flaperons
