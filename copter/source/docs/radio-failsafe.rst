@@ -8,7 +8,7 @@ Copter supports several configurable failsafe options in cases where contact bet
 
 .. warning::
 
-   For Single Helicopter, Dual Helicopter and Quad Helicopter frames, Copter 3.6 and earlier in any RSC mode or Copter 4.0 in the Passthrough RSC mode requires the RC receiver channel 8 to hold last value when transmitter signal is lost.  If the receiver sends no signal or does not hold the RC channel 8 value, the motor will be shutdown and the helicopter will crash.  
+   For Single Helicopter, Dual Helicopter and Quad Helicopter frames, Copter 3.6 and earlier in any :ref:`RSC Mode<H_RSC_MODE>` or Copter 4.0 in the RC Passthrough :ref:`RSC Mode<H_RSC_MODE>` requires the RC receiver channel 8 to hold last value when transmitter signal is lost.  If the receiver sends no signal or does not hold the RC channel 8 value, the motor will be shutdown and the helicopter will crash.  
 
 .. image:: ../images/RadioFailsafe_Intro.jpg
     :target: ../_images/RadioFailsafe_Intro.jpg
