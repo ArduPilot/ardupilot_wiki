@@ -99,20 +99,19 @@ Using EKF2
 EKF2 Log Data
 =============
 
-The data for EKF2 can be found in the NKF1 to NKF9 log packets.
+The data for EKF2 can be found in the NKF1 to NKF5 log packets.
 
-Packets NKF1 to NKF 4 contain information for the first EKF instance.
-Packets NKF6 to NKF9 contain the same information, for the second
-instance if enabled using the EK2_IMU_MASK parameter. Packet NKF5
+Packets NKF1 to NKF4 contain information for each EKF instance with
+the instance number given by the value of field PI.
+The number of instances enabled is set by the EK2_IMU_MASK parameter. Packet NKF5
 contains optical flow information for the EKF instance that is the
 primary for flight control.
 
-The available EKF2 available log data is listed below.  Some plots
+The available EKF2 log data is listed below.  Some plots
 showing example flight data have been included. This data was
 logged using a Pixhawk on a 3DR Iris+ quadcopter with the following
 parameter changes followed by a reboot:
 
--  EKF_ENABLE = 0 (turns off the legacy EKF)
 -  EK2_ENABLE = 1 (turns on EKF2)
 -  EK2_IMU_MASK = 3 (Instructs EKF2 to run two instances, one for IMU1
    (MPU6000) and one for IMU2 (LDG20H + LSM303D)
@@ -124,7 +123,7 @@ parameter changes followed by a reboot:
 Filter State Estimates
 ----------------------
 
-**NKF1** (and **NKF6** if a second IMU is being used) contain the
+**NKF1[0]** (and **NKF1[1]** if a second IMU is being used) contain the
 outputs used by the flight control system
 
 -  TimeUS - time stamp (uSec)
@@ -153,7 +152,7 @@ outputs used by the flight control system
 
    |EKF2 - gyro rate bias|
 
-**NKF2** (and **NKF7** if a second IMU is being used) contains
+**NKF2[0]** (and **NKF2[1]** if a second IMU is being used) contains
 additional state information
 
 -  TimeUS - time stamp (uSec)
@@ -183,7 +182,7 @@ additional state information
 Filter Innovations
 ------------------
 
-**NKF3** (and **NKF8** if a second IMU is being used) contain
+**NKF3[0]** (and **NKF3[1]** if a second IMU is being used) contain
 information on the filter innovations. An innovation is the difference
 between the measurement value predicted byEKF2 and the value returned by
 the sensor. Smaller innovations indicate smaller sensor errors. Because
@@ -221,7 +220,7 @@ large innovations for all measurements.
 Filter Health and Status
 ------------------------
 
-**NKF4** (and **NKF9** if a second IMU is being used) contain
+**NKF4[0]** (and **NKF4[1]** if a second IMU is being used) contain
 information on the innovation variance test ratios. A value of less than
 1 indicates that that measurement has passed its checks and is
 being used by the EKF2. A value of more than 1 indicates that the

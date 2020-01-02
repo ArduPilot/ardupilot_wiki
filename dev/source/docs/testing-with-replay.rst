@@ -62,7 +62,7 @@ Use mavgraph.py to graph the data
 
 .. code-block:: bash
 
-    mavgraph.py MyLogFile.BIN GPA.SAcc NKF4.SV
+    mavgraph.py MyLogFile.BIN GPA.SAcc NKF4[0].SV
 
 
 .. image:: ../images/Replay_GPSSAcc_NKF4SV.png
