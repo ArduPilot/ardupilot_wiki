@@ -6,6 +6,12 @@ Radio Failsafe
 
 Copter supports several configurable failsafe options in cases where contact between the Pilot's RC transmitter and the autopilot's receiver is lost.  This page explains this failsafe's setup and testing.  Note the "Radio failsafe" was previously called "Throttle failsafe" because of the way in which some receivers use the throttle channel to signal the loss of contact.
 
+.. warning::
+
+   For Copter 3.6 and earlier in any RSC mode or Copter 4.0 in the Passthrough RSC mode, Single Helicopter, Dual Helicopter and 
+Quad Helicopter frames require RC receiver channel 8 to hold last value when transmitter signal is lost.  If the receiver sends 
+no signal or does not hold the RC channel 8 value, the motor will be shutdown and the helicopter will crash.  
+
 .. image:: ../images/RadioFailsafe_Intro.jpg
     :target: ../_images/RadioFailsafe_Intro.jpg
 
