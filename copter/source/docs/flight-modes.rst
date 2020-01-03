@@ -10,7 +10,7 @@ for Copter.
 Overview
 ========
 
-Copter has 22 flight built-in flight modes, 10 of which are regularly
+Copter has 23 flight built-in flight modes, 10 of which are regularly
 used. There are modes to support different levels/types of flight
 stabilization, a sophisticated autopilot, a follow-me system etc.
 
@@ -26,6 +26,7 @@ companion computer.
    <tr><td>Airmode</td><td>-</td><td>-/+</td><td></td><td>Actually not a mode, but a feature,see below</td></tr>
    <tr><td>Alt Hold</td><td>s</td><td>+</td><td></td><td>Holds altitude and self-levels the roll & pitch</td></tr>
    <tr><td>Auto</td><td>A</td><td>A</td><td>Y</td><td>Executes pre-defined mission</td></tr>
+   <tr><td>Autonomous Autorotation</td><td>A</td><td>A</td><td>Y</td><td>Used for emergencies in traditional helicopters. Helicopter only.  Currently SITL only.</td></tr>
    <tr><td>AutoTune</td><td>s</td><td>A</td><td>Y</td><td>Automated pitch and bank procedure to improve control loops</td></tr>
    <tr><td>Brake</td><td>s</td><td>A</td><td>Y</td><td>Brings copter to an immediate stop</td></tr>
    <tr><td>Circle</td><td>s</td><td>A</td><td>Y</td><td>Automatically circles a point in front of the vehicle</td></tr>
@@ -77,6 +78,7 @@ Additional flight modes:
 
 -  :ref:`Acro <acro-mode>`
 -  :ref:`AirMode <airmode>`
+-  :ref:`Autonomous Autorotation <traditional-helicopter-autorotation-mode>` for traditional helicopters only.
 -  :ref:`AutoTune <autotune>`
 -  :ref:`Brake <brake-mode>`
 -  :ref:`Circle <circle-mode>`
@@ -111,6 +113,7 @@ of GPS dependency for Copter flight modes.
 Requires GPS lock prior to takeoff:
 
 -  :ref:`Auto <auto-mode>`
+-  :ref:`Autonomous Autorotation <traditional-helicopter-autorotation-mode>`
 -  :ref:`Circle <circle-mode>`
 -  :ref:`Drift <drift-mode>`
 -  :ref:`Follow <follow-mode>`
@@ -143,6 +146,7 @@ Full list of flight modes
     Altitude Hold <altholdmode>
     AirMode<airmode>
     Auto <auto-mode>
+    Autonomous Autorotation <traditional-helicopter-autorotation-mode>
     Brake <brake-mode>
     Circle <circle-mode>
     Drift <drift-mode>
