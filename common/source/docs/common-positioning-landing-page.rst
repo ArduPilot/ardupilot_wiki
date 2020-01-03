@@ -15,7 +15,8 @@ positioning technologies:
     :maxdepth: 1
     
     Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
-    CUAV C-RTK 9P RTK Receiver<common-cuav-c-rtk-9p-gps>
+    CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
+    CUAV Neo v2 Pro UAVCAN GPS <common-cuav-neo-v2-pro>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
     Hex Here+ RTK Receiver <common-here-plus-gps>
     JDrones GPS Options <http://store.jdrones.com/GPS_s/193.htm>
