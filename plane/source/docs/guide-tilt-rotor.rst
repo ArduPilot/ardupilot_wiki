@@ -227,7 +227,10 @@ Non-Vectored Yaw
 Non-Vectored yaw aircraft (:ref:`Q_TILT_TYPE<Q_TILT_TYPE>` = 0 or 1) needs a tilt servo for yaw control.
 
 You need to setup your front tilt servos with ``SERVOn_FUNCTION=41``
-and also your servo for yaw control with ``SERVOn_FUNCTION=39``. ``SERVO_FUNCTION=39`` is normally the servo function for motor 7, but in a non-vectored yaw tri-copter, the yaw servo is controlled via ``SERVOn_FUNCTION 39``.
+and also your servo for yaw control with ``SERVOn_FUNCTION=39``. You have to set up yaw servo’s maximum lean angle in degrees with :ref:`Q_M_YAW_SV_ANGLE<Q_M_YAW_SV_ANGLE>`.
+
+Note:
+``SERVO_FUNCTION=39`` is normally the servo function for motor 7, but in a non-vectored yaw tri-copter, the yaw servo is controlled via ``SERVOn_FUNCTION 39``.
 
 If you wish to setup BLEHeli esc telemetry, you need to set :ref:`Q_M_PWM_TYPE<Q_M_PWM_TYPE>` to 4 (DShot 150), connect the telemetry signal to a SERIAL port, and set its ``SERIALn_PROTOCOL`` to 23.
 
