@@ -17,10 +17,9 @@ First, set the RSC Mode parameter (:ref:`H_RSC_MODE <H_RSC_MODE>`). The RSC mode
     Setting the RSC mode to RC passthrough requires configuring the RC receiver to hold last value for the Motor Interlock channel (default is channel 8). If the receiver loses connection to the transmitter and receiver is not configured correctly, the motor will shutdown and the helicopter will crash!
 
 * RSC setpoint - this mode is used for helicopters utilizing either an electronic speed controller or an external governor for internal combustion engines. The PWM passed to the Heli RSC channel is determined from the External Motor Governor Setpoint (:ref:`H_RSC_SETPOINT <H_RSC_SETPOINT>`) parameter. The output PWM is calculated by the following equation:
-PWM output = RSC_SETPOINT * 0.01 * (SERVO_MAX - SERVO_MIN) + SERVO_MIN
+    PWM output = RSC_SETPOINT * 0.01 * (SERVO_MAX - SERVO_MIN) + SERVO_MIN
 
-* Throttle curve - This mode is an open loop control of the heliRSC servo. Users will need to fine-tune the throttle curve to maintain the desired rotor speed throughout the flight envelope. The throttle curve is a five point spline curve fit. It is used to determine the HeliRSC servo output 
-based on the collective (throttle stick) on the RC transmitter. 
+* Throttle curve - This mode is an open loop control of the heliRSC servo. Users will need to fine-tune the throttle curve to maintain the desired rotor speed throughout the flight envelope. The throttle curve is a five point spline curve fit. It is used to determine the HeliRSC servo output based on the collective (throttle stick) on the RC transmitter. 
 
 * Governor - The governor is designed to maintain a user specified rotor speed using the throttle curve as the feedforward control. This feature requires a rotor speed sensor.
 
