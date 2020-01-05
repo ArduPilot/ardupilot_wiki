@@ -30,7 +30,8 @@ VID=0x0483 PID=0x5740
 =====================
 
 This ID is one from ST Microelectronics, and was used by ArduPilot in
-the initial ChibiOS port. It is a non-composite serial ID.
+the initial ChibiOS port until January 2020. It is a non-composite
+serial ID.
 
 VID=0x1209 PID=0x5740
 =====================
@@ -43,9 +44,10 @@ for boards capable of composite USB devices.
 VID=0x1209 PID=0x5741
 =====================
 
-This ID is pending a pull request for http://pid.codes/ as of
-December 2019.  Once accepted it will be a non-composite serial ID and
-will replace 0x0483/0x5740.
+This ID is one from http://pid.codes/, and is used by ArduPilot since
+January 2020. It is a non-composite serial ID. It is the default USB
+ID for boards non-composite USB devices, including bootloaders and all
+F4 based boards.
 
 VID=0x16D0 PID=0x0E65
 =====================
