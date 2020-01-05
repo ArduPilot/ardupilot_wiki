@@ -391,8 +391,7 @@ Stops motors immediately
    <td><strong>Motor Interlock</strong></td>
    <td>
 
-Opposite of Emergency stop (above) in that switch must be ON for motors
-to spin (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
+Motor Interlock controls the way the heliRSC (motor throttle control) output is generated in Traditional Helicopters and Multicopters. If > 1200us, it enables the Motor Interlock function, below its is disabled. When <1200us, it is similar to what is sometimes referred to as Throttle Hold in RC Helicopter terminology for Traditional Helicopters and HeliQuads. For Mulit-copters it is used as a motor stop function. (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
 
 .. raw:: html
 
