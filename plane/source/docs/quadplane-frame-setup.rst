@@ -17,24 +17,24 @@ except that the default output channel numbers start at 5 instead of 1.
 For example, with the default Quad-X frame the motors are on outputs
 5 to 8. The arrangement is:
 
--  **Channel 5:** Front right motor, counter-clockwise
--  **Channel 6:** Rear left motor, counter-clockwise
--  **Channel 7:** Front left motor, clockwise
--  **Channel 8:** Rear right motor, clockwise
+-  **Output 5:** Front right motor, counter-clockwise
+-  **Output 6:** Rear left motor, counter-clockwise
+-  **Output 7:** Front left motor, clockwise
+-  **Output 8:** Rear right motor, clockwise
 
 You can remember the clockwise/counter-clockwise rule by "motors turn
 in towards the fuselage", except for the H configuration, there all directions are inverted!
    
 Another common setup is an octa-quad, which uses the following ordering
 
--  **Channel 5:** Front right top motor, counter-clockwise
--  **Channel 6:** Front left top motor, clockwise
--  **Channel 7:** Rear left top motor, counter-clockwise
--  **Channel 8:** Rear right top motor, clockwise
--  **Channel 9:** Front left bottom motor, counter-clockwise
--  **Channel 10:** Front right bottom motor, clockwise
--  **Channel 11:** Rear right bottom motor, counter-clockwise
--  **Channel 12:** Rear left bottom motor, clockwise
+-  **Output 5:** Front right top motor, counter-clockwise
+-  **Output 6:** Front left top motor, clockwise
+-  **Output 7:** Rear left top motor, counter-clockwise
+-  **Output 8:** Rear right top motor, clockwise
+-  **Output 9:** Front left bottom motor, counter-clockwise
+-  **Output 10:** Front right bottom motor, clockwise
+-  **Output 11:** Rear right bottom motor, counter-clockwise
+-  **Output 12:** Rear left bottom motor, clockwise
 
 You can remember the clockwise/counter-clockwise rule for an octa-quad
 by "top motors turn in towards the fuselage, bottom motors turn out
@@ -70,6 +70,11 @@ layout
 -  2 for V frame
 -  3 for H frame
 -  11 for FireFly6Y6 (for Y6 only)
+
+Tricopter
+---------
+
+Frame Type 7 is Tricopter and can be either non-Tiltrotor configuration, or :ref:`Tiltrotor<guide-tilt-rotor>` configured using either Vectored or Non-Vectored yaw control. If using non-Tiltrotor or Non-Vectored Yaw Tilt-rotor, the yaw control output is setup as Motor 7 (``SERVOn_FUNCTION`` = 39) using a tilt mechanism for the yaw motor, Motor 4. You should set up the yaw servo’s maximum lean angle in degrees with :ref:`Q_M_YAW_SV_ANGLE<Q_M_YAW_SV_ANGLE>`. This lean angle assumes that ``SERVOn_MIN`` and ``SERVOn_MAX``, represent +/- 90 degrees, with ``SERVOn_TRIM`` representing 0 degrees lean.
 
 Tailsitter
 ----------
