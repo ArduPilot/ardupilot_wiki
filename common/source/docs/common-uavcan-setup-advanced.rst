@@ -88,8 +88,23 @@ The **TYPE** parameter should be set to 9 for corresponding GNSS receiver in aut
 .. image:: ../../../images/uavcan-gnss-settings.png
     :target: ../_images/uavcan-gnss-settings.png
 
+
 UAVCAN LED configuration
 ========================
 
 UAVCAN LEDs are enabled by setting bit 5 in the :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bitmask.
+
+SLCAN
+=====
+
+Ardupilot and UAVCAN provides a means to directly communicate with UAVCAN devices on the CAN BUS attached to the autopilot: SLCAN. Enabling SLCAN and communicating with the UAVCAN devices is dependent on the autopilot's processor. F7/H7 processors use one method and F4, a different method.
+
+.. toctree::
+    :maxdepth: 1
+
+    SLCAN Access on F4 Based Autopilots <common-slcan-f4>
+    SLCAN Access on F7/H7 Based Autopilots <common-slcan-f7h7>
+    Mission Planner SLCAN <common-mp-slcan>
+    UAVCAN GUI <common-uavcan-gui>
+
 
