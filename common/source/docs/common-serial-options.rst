@@ -277,7 +277,7 @@ MegaSquirt EFI, see `MegaSquirt EFI <http://megasquirt.info/>`__
    <td>25</td>
    <td>
 
-LTM Telemetry
+LTM Telemetry, see :ref:`LTM Telemetry <common-ltm-telemetry>` 
 
 .. raw:: html
 
