@@ -36,13 +36,11 @@ After making the above changes the autopilot should be rebooted
 Ground Testing
 ==============
 
-The RPM of the two wheels can be seen as "rpm1" and "rpm2" in the ground station.
-If using the Mission Planner these values can be seen in the Flight Data screen's Status tab.
-
-Another way to check operation on Rover 4.0 and later versions is to monitor the Wheel_Distance MAVLink messages as shown below. This can be done in Mission Planner by using the MAVLink Inspector panel which can be accessed by pressing Ctrl-F and selecting it, which will display real-time decoding of MAVLink messages.
+If using Rover 4.0 (or later), the WHEEL_DISTANCE MAVLink message shows the total distance travelled by each wheel in real time.  Mission Planner's MAVLink Inspector can be used which can be opened by pressing Ctrl-F and then pushing the "MAVLink Inspector" button.
 
 .. image:: ../images/Mavlink-Inspector.jpg
 
+If using Rover-3.5 (or earlier) the RPM of the two wheels can be seen as "rpm1" and "rpm2" in the ground station.  If using the Mission Planner these values can be seen in the Flight Data screen's Status tab.
 
 DataFlash logging
 =================
