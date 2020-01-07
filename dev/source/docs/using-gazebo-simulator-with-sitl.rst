@@ -11,7 +11,8 @@ Overview
 ========
 
 Gazebo is a well-known and respected robotics simulator, and is also the official DARPA Virtual Robotics Simulator.
-No current release has built-in support for ArduPilot,  however. (Previous PRs for built-in support were not merged as of April-2017).
+Built-in support for ArduPilot is available starting with gazebo8.
+If you are using gazebo8 or above, you should skip the following Plugin installation section.
 
 .. warning::
 
@@ -85,7 +86,13 @@ In a terminal window start Gazebo:
 
 ::
 
-    gazebo --verbose worlds/iris_arducopter_runway.world
+    gazebo --verbose worlds/iris_arducopter_demo.world
+
+.. warning::
+   If you are using the manually installed plugin, the command will be
+   ::
+   
+      gazebo --verbose worlds/iris_arducopter_runway.world
 
 
 In another terminal window, enter the ArduCopter directory and start the SITL simulation:
