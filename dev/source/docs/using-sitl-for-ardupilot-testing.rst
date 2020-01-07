@@ -64,7 +64,16 @@ For example, to start Copter in *Ballarat* (a named location in
    location regularly then consider adding it to the project via a pull
    request.
 
-   
+Simulating On-Board OSD
+=======================
+
+When starting SITL, you can have it display a simulation of the integated OSD, if the autopilot includes one. Add the ``--osd`` option when starting SITL:
+
+::
+
+    sim_vehicle.py -v ArduPlane --console --map --osd
+
+
 .. _using-sitl-for-ardupilot-testing_loading_a_parameter_set:
 
 Loading a parameter set
@@ -321,9 +330,9 @@ be a real RC transmitter with a USB dongle for the trainer port, or
 something like the RealFlight interlink controller or a wide range of
 other joystick devices.
 
-Before you use the joystick support you need to remove a debug
+Before you use the joystick support you may need to remove debug
 statements from the python-pygame joystick driver on Linux. If you don't
-then you will see lots of debug output like this:
+then you may see lots of debug output like this:
 
 ::
 
@@ -336,7 +345,7 @@ To remove this debug line run this command:
     sudo sed -i 's/SDL_JoystickGetAxis value/\x00DL_JoystickGetAxis value/g' /usr/lib/python2.7/dist-packages/pygame/joystick.so
 
 note that this needs to be one long command line. Ignore the line
-wrapping in the wiki.
+wrapping in the wiki. If you have installed the joystick support using the instructions on setting up the ArduPilot code building environment, then this will probably NOT be required.
 
 Then to use the joystick run:
 
@@ -344,8 +353,7 @@ Then to use the joystick run:
 
     module load joystick
 
-If you want to add support for a new joystick type then you need to edit
-the `mavproxy_joystick module <https://github.com/tridge/MAVProxy/blob/master/MAVProxy/modules/mavproxy_joystick.py>`__
+If you want to add support for a new joystick type then you need to add a file for it following these `instructions <https://github.com/ArduPilot/MAVProxy/blob/master/docs/JOYSTICKS.md>`__ . Note that you can also use this information to customize the operation of your joystick if it already supported. Just modify it file appropriately.
 
 Using real serial devices
 =========================
