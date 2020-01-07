@@ -35,9 +35,9 @@ Typical use-case is antenna tracking when serial telemetry data from Flight Cont
   - GPS fix data type uses only 2 bits - list of possible values is *0* (No GPS fix), *1* (2D fix), *2* (3D fix). GPS fix values above 2 are mapped to value *2*.
 
 **Links related to LTM telemetry**
-  - GhettoStation antenna tracker: https://github.com/KipK/Ghettostation
-  - iNAV documentation for LTM protocol: https://github.com/iNavFlight/inav/wiki/Lightweight-Telemetry-(LTM)
-  - Protocol overview at quadmeup.com: https://quadmeup.com/ltm-light-telemetry-protocol/
+  - GhettoStation antenna tracker: `https://github.com/KipK/Ghettostation <https://github.com/KipK/Ghettostation>`_
+  - iNAV documentation for LTM protocol: `https://github.com/iNavFlight/inav/wiki/Lightweight-Telemetry-(LTM) <https://github.com/iNavFlight/inav/wiki/Lightweight-Telemetry-(LTM)>`_
+  - Protocol overview at quadmeup.com: `https://quadmeup.com/ltm-light-telemetry-protocol/ <https://quadmeup.com/ltm-light-telemetry-protocol>`_
 
 -------------
 Configuration
@@ -69,7 +69,7 @@ Usage example with FPV video transmitter
 FSK modem example with TCM3105
 ------------------------------
 
-One of the possibilities for FSK modem is to use chip TCM3105. Eagle files for modem schematics and board can be found at https://github.com/kh4/FSK_modem
+One of the possibilities for FSK modem is to use chip TCM3105. Eagle files for modem schematics and board can be found at `https://github.com/kh4/FSK_modem <https://github.com/kh4/FSK_modem>`_
 
 This modem can work at 1200 or 2400 bauds, baud rate depends on used oscillator.
 
