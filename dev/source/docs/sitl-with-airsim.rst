@@ -227,7 +227,9 @@ Launch Copter with Lidar using
 
 ::
 
-    sim_vehicle.py -v ArduCopter -f airsim-copter --add-param-file=libraries/SITL/examples/Airsim/quadX_lidar.parm --console --map
+    sim_vehicle.py -v ArduCopter -f airsim-copter --add-param-file=libraries/SITL/examples/Airsim/lidar.parm --console --map
+
+By default, :ref:`BendyRuler Object Avoidance <copter:common-oa-bendyruler>` is used with the Lidar, the related parameters can be seen on the Wiki page and should be modified as required in the ``lidar.parm`` file.
 
 Manual Flying using RC
 ^^^^^^^^^^^^^^^^^^^^^^
