@@ -4,7 +4,22 @@
 
     <h1 style="text-align:center;">ArduPilot</h1>
 
-    <p style="text-align:left;">ArduPilot aims to enable the creation and use of trusted, autonomous, unmanned vehicle systems for the peaceful benefit of all. ArduPilot provides a comprehensive suite of tools suitable for almost any vehicle and application. As an open source project, it is constantly evolving and being developed. The Development Team works with the community and commercial partners to add functionality to ArduPilot that benefits everyone. Although ArduPilot does not manufacture any hardware, ArduPilot firmware works on many different boards (hardware) to control unmanned vehicles of all types. Coupled with ground control software, unmanned vehicles running ArduPilot can have advanced functionality including real-time communication with operators. ArduPilot has a huge online community dedicated to helping users with questions, problems, and solutions</p>
+    <p style="text-align:left;">
+
+    ArduPilot enables the creation and use of trusted, autonomous,
+    unmanned vehicle systems for the peaceful benefit of
+    all. ArduPilot provides a comprehensive suite of tools suitable
+    for almost any vehicle and application. As an open source project,
+    it is constantly evolving based on rapid feedback from a large
+    community of users. The Development Team works with the community
+    and commercial partners to add functionality to ArduPilot that
+    benefits everyone. Although ArduPilot does not manufacture any
+    hardware, ArduPilot firmware works on a wide variety of different
+    hardware to control unmanned vehicles of all types. Coupled with
+    ground control software, unmanned vehicles running ArduPilot can
+    have advanced functionality including real-time communication with
+    operators. ArduPilot has a huge online community dedicated to
+    helping users with questions, problems, and solutions </p>
 
     <p style="text-align:center;">Copter -- Plane -- Rover -- Sub -- Antenna Tracker</p>
 
@@ -20,14 +35,14 @@
 
 
 :ref:`Hardware <stores>`  is the peripheral sensors, controller, and output
-devices that act as the vehicle's eyes, ears, brain, arms etc.
+devices that act as the vehicle's eyes, ears, brain and arms.
 
 Almost any mobile machine can be transformed into an autonomous vehicle,
 by simply integrating a small hardware package into it. Hardware
 packages begin with a controller.
 
 Using inputs from sensors, the controller is able to send outputs to
-devices such as ESC's, servos, gimbals, etc.
+devices such as ESC's, servos, gimbals and other peripherals.
 
 .. image:: ../../images/pixhawk_small.jpg
     :target: _images/pixhawk_small.jpg
@@ -82,18 +97,18 @@ point-and-click interaction with your hardware, custom scripting, and simulation
 
 --------------
 
-ArduPilot Documentation:
-========================
+ArduPilot Documentation
+=======================
 
 See sidebar for links to ArduPilot documents
 
-Regulations:
-============
+Regulations
+===========
 
 Every country has different regulations governing the operation of remote controlled and/or autonomous vehicles. `This database <https://droneregulations.info>`__  has country specific information, but it is every operator's responsibility to be seek out and be aware of local, regional, and federal regulations.
 
-Community:
-==========
+Community
+=========
 .. tip::
 
    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://discuss.ardupilot.org/c/blog>`__
@@ -111,8 +126,8 @@ Community is what really sets ArduPilot apart from many other offerings in the m
 .. image:: ../../images/main/FaceBookArduPilot.png
     :target: https://www.facebook.com/groups/ArduPilot.org/
 
-Developer Community:
-====================
+Developer Community
+===================
 
 `Developers Chat <https://gitter.im/ArduPilot/ardupilot>`__
 Working on the code?  Ask questions of the team in Gitter.
@@ -122,16 +137,18 @@ All things for those who want to get into the nuts and bolts of ArduPilot develo
 
 
 
-History:
-========
+History
+=======
+
 The DIYDrones community provided an initial home for ArduPilot.
 From those hobbyist beginnings, ArduPilot led the professionalisation of the Open Source drone community by creating DroneCode.
 Since leaving DroneCode in 2016 ArduPilot has grown further to stand as an independent, open, global project.
 The comprehensive and ever growing list of ArduPilot features are continually born from the
 needs of the community - be they hobbyists, commercial users, academics, or the largest of enterprises.
 See the :ref:`history-of-ardupilot` for more information.
-Features:
-=========
+
+Features
+========
 
 
 ..  raw:: html
@@ -140,7 +157,7 @@ Features:
     <tr>
     <td width="48%">
 
--  Thorough documentation of the basic features backed by a community
+-  Thorough documentation of the available features backed by a community
    to help you set up any vehicle to fit your needs
 -  Many command modes to fit every type of vehicle: Acro, Stabilize, Loiter,
    Alt-hold, Return To Launch, Land, Follow Me,
@@ -163,6 +180,9 @@ Features:
    including GPS position, battery status, and other live information.
 -  Full data logging for comprehensive post mission analysis, with
    graphing and Google Earth mapping tools
+-  Industry leading control algorithms for vehicles of all types, with
+   robust sensor compensation algorithms, filtering and tuning
+   capabilities
 -  No dead ends -- Advanced users will find endless options for
    customization and expanded mission capabilities
 
