@@ -26,25 +26,25 @@ Short Range (<10KM)
     SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
     SiK Radio advanced configuration <common-3dr-radio-advanced-configuration-and-technical-information>
     XBee <common-telemetry-xbee>
-    
+
 Long Range
 ==========
 
 .. toctree::
     :maxdepth: 1
-    
+
+    LTM telemetry <common-ltm-telemetry>
     RFD900 <common-rfd900>
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>
     SPL Satellite Telemetry <https://discuss.ardupilot.org/t/stretching-comm-links-from-indoors-to-the-globe/45896>
     UAVCast 3G/4G Cellular <common-uavcast-telemetry>
-	LTM telemetry <common-ltm-telemetry>	
 
 Applications and Info
 =====================
 
 .. toctree::
     :maxdepth: 1
-    
+
     FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
     Repeater for Wireless Ground Station Connections <common-wireless-gcs-repeater>
     Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
