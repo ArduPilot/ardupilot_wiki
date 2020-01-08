@@ -12,7 +12,7 @@ Overview
 
 Gazebo is a well-known and respected robotics simulator, and is also the official DARPA Virtual Robotics Simulator.
 Built-in support for ArduPilot is available starting with gazebo8.
-If you are using gazebo8 or above, you should skip the following Plugin installation section.
+If you are using gazebo8 or above, you should skip the following Plugin Installation section.
 
 .. warning::
 
@@ -55,7 +55,7 @@ The first time gazebo is executed requires the download of some models and it co
 
 It should open an empty world.
 
-Plugin installation
+Plugin Installation
 ===================
 
 The following plugin is a pure Gazebo plugin, so ROS is not needed to use it. You can still use ROS with Gazebo with normal gazebo-ros packages.
