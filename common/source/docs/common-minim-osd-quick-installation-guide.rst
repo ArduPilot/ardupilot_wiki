@@ -182,7 +182,7 @@ The minimOSD w/ KV team mod is adds extra analogue/digital IO pins for direct vo
 
 The Micro MinimOSD board is only 15mm x 15mm and is ideal for micro UAV projects.
 
-The AEROMAX is slightly smaller than tradional minimOSD, has the additional KV mods,further I/O pins, a more efficient power consumption and a hardware IC that is far more resilient to power fluctuations providing a cleaner imnage.
+The AEROMAX is slightly smaller than tradional minimOSD, has the additional KV mods,further I/O pins, a more efficient power consumption and a hardware IC that is far more resilient to power fluctuations providing a cleaner image.
 
 .. image:: ../../../images/MinimOSD_Micro.jpg
     :target: ../_images/MinimOSD_Micro.jpg
