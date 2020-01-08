@@ -58,6 +58,7 @@ It should open an empty world.
 Plugin Installation
 ===================
 
+This section can be skipped if you are using gazebo8 or above, however these plugins can be used instead of the built-in plugin.
 The following plugin is a pure Gazebo plugin, so ROS is not needed to use it. You can still use ROS with Gazebo with normal gazebo-ros packages.
 We have  two version of the plugin : khancyr and SwiftGust one's.
 The one from `khancyr <https://github.com/khancyr/ardupilot_gazebo>`__ is the original one. It is stable and only has necessary file to work.
