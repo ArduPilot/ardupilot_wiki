@@ -44,6 +44,7 @@ Examples of unacceptable behavior by contributors include:
 - Publishing others’ private information, such as a physical or electronic address, without explicit permission
 - Modifying ArduPilot code to intentionally support weaponization
 - Knowingly designing, testing or using weaponized systems running ArduPilot
+- Knowingly designing, testing, or supporting manned aircraft running Ardupilot
 - Other conduct which could reasonably be considered inappropriate in a public or professional setting
 
 Our Responsibilities
