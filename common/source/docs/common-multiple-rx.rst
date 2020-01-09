@@ -28,4 +28,4 @@ If all receivers become inactive (no pulses), then the normal radio failsafe han
 Inversion
 =========
 
-Some protocols, like SBus, require that the signal be inverted . Autopilots using H7 cpus have the ability to invert the RX input via its ``SERIALx_OPTIONS`` bitmask. Otherwise an external inverter must be used between the receiver data output and the Serial Port's RX input.
+Some protocols, like SBus, require that the signal be inverted . Autopilots using F7/H7 cpus have the ability to invert the RX input via its ``SERIALx_OPTIONS`` bitmask. Otherwise an external inverter must be used between the receiver data output and the Serial Port's RX input.
