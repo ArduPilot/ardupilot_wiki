@@ -31,6 +31,17 @@
 # Vagrant
 /.vagrant
 
+# Parameters multiversioning
+/copter/source/docs/parameters-Copter-*.rst
+/plane/source/docs/parameters-Plane-*.rst
+/rover/source/docs/parameters-Rover-*.rst
+/antennatracker/source/docs/parameters-AntennaTracker-*.rst
+/copter/source/_static/parameters-*.json
+/plane/source/_static/parameters-*.json
+/rover/source/_static/parameters-*.json
+/antennatracker/source/_static/parameters-*.json
+
+
 # Parameters files
 /copter/source/docs/parameters.rst
 /plane/source/docs/parameters.rst
