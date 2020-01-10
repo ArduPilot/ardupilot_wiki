@@ -85,8 +85,8 @@ packages:
    The packages are :ref:`mostly the same as when setting up SITL <setting-up-sitl-on-windows>`. Reply Reply 'y' when
    prompted re additional disk space.
 
-Disable the OS control of the serial port
------------------------------------------
+Configure the serial port (UART)
+--------------------------------
 
 Use the Raspberry Pi configuration utility for this.
 
@@ -96,26 +96,25 @@ Type:
 
     sudo raspi-config
 
-And in the utility, select "Advanced Options":
+And in the utility, select "Interfacing Options":
 
-.. figure:: ../images/dev_RasPi_Config_Utility_SerialSetting_AdvancedOptions.png
-   :target: ../_images/dev_RasPi_Config_Utility_SerialSetting_AdvancedOptions.png
+.. figure:: ../images/RaspberryPi_Serial1.png
+   :target: ../_images/RaspberryPi_Serial1.png
 
-   RasPiConfiguration Utility: Serial Settings: Advanced Options
+   RasPiConfiguration Utility
 
-And then "Serial" to disable OS use of the serial connection:
+And then "Serial":
 
-.. image:: ../images/dev_RasPi_Config_Utility_SerialSetting_Capture2-300x78.png
-    :target: ../_images/dev_RasPi_Config_Utility_SerialSetting_Capture2-300x78.png
+.. image:: ../images/RaspberryPi_Serial2.png
+    :target: ../_images/RaspberryPi_Serial2.png
 
+When prompted, select ``no`` to "Would you like a login shell to be accessible over serial?".
 
-.. note::
-
-   In the latest Rapbian Stretch, these settings will be found in  "Interfacing Options"
-   
-   You may disable the ``serial login shell`` and keep ``serial interface`` enabled
+When prompted, select ``yes`` to "Would you like the serial port hardware to be enabled?".
 
 Reboot the Raspberry Pi when you are done.
+
+The Raspberry Pi's serial port will now be usable on ``/dev/serial0``.
 
 Testing the connection
 ----------------------
