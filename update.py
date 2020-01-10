@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This program updates and rebuilds wiki sources from Github and from parameters on the test server.
+This script updates and rebuilds wiki sources from Github and from parameters on the test server.
 
 It is intended to be run on the main wiki server or
 locally within the project's Vagrant environment.
@@ -32,6 +32,8 @@ from codecs import open
 import subprocess
 import multiprocessing
 import shutil
+import glob
+import filecmp
 import time
 
 
@@ -49,10 +51,26 @@ parser.add_argument('--clean', action='store_true', help="Does a very clean buil
 parser.add_argument('--cached-parameter-files', action='store_true', help="Do not re-download parameter files")
 parser.add_argument('--parallel', type=int, help="limit parallel builds, -1 for unlimited", default=1)
 parser.add_argument('--destdir', default="/var/sites/wiki/web", help="Destination directory for compiled docs")
+parser.add_argument('--paramversioning', action='store_true', default=False, help="Build multiple parameters pages for each vehicle based on its firmware repo.")
+parser.add_argument('--verbose', dest='verbose', action='store_false', default=True, help="show debugging output")
 args = parser.parse_args()
 #print(args.site)
 #print(args.clean)
 
+PARAMETER_SITE={'rover':'APMrover2', 'copter':'ArduCopter','plane':'ArduPlane','antennatracker':'AntennaTracker' }
+error_count = 0
+
+def debug(str_to_print):
+    """Debug output if verbose is set."""
+    if args.verbose:
+        print(str_to_print)
+
+
+def error(str_to_print):
+    """Show and count the errors."""
+    global error_count
+    error_count += 1
+    print(str_to_print)
 
 
 def fetchparameters(site=args.site):
@@ -62,7 +80,6 @@ def fetchparameters(site=args.site):
 
     This is always run as part of a build (i.e. no checking to see if parameters have changed.)
     """
-    PARAMETER_SITE={'rover':'APMrover2', 'copter':'ArduCopter','plane':'ArduPlane','antennatracker':'AntennaTracker' }
     # remove any parameters files in root
     try:
         subprocess.check_call(["rm", 'Parameters.rst'])
@@ -86,6 +103,12 @@ def fetchparameters(site=args.site):
             subprocess.check_call(["mv", 'Parameters.rst', targetfile])
 
 
+
+def build_one(wiki):
+    '''build one wiki'''
+    print('make and clean: %s' % wiki)
+    subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
+    subprocess.check_call(["nice", "make", "html"], cwd=wiki)
 
 def build_one(wiki):
     '''build one wiki'''
@@ -124,8 +147,6 @@ def sphinx_make(site):
                 p.join()
                 procs.remove(p)
         time.sleep(0.1)
-
-
 
 def copy_build(site):
     """
@@ -178,6 +199,7 @@ def copy_build(site):
         except:
             #print("no delete of olddir")
             pass
+
 
 def generate_copy_dict(start_dir=COMMON_DIR):
     """
@@ -285,7 +307,6 @@ def strip_content(content, site):
     return newText
 
 
-
 def logmatch_code(matchobj, prefix):
 
     try:
@@ -331,8 +352,181 @@ def logmatch_code(matchobj, prefix):
         print("%s: except m8" % prefix)
 
 
-fetchparameters(args.site)
+def fetch_versioned_parameters(site=args.site):
+    """
+    It relies on "build_parameters.py" be executed before the "update.py"     
+    
+    Once the generated files are on ../new_params_mversion it tut all parameters and JSON files in their destinations.
+    
+    """
+
+    for key, value in PARAMETER_SITE.items():
+        
+        if site==key or site==None:
+            # Remove old param single file
+            single_param_file='./%s/source/docs/parameters.rst' % key
+            debug("Erasing " + single_param_file)
+            try: 
+                subprocess.check_call(["rm", single_param_file])
+            except Exception as e:
+                error(e)
+                pass
+             
+            # Remove old versioned param files
+            if key is 'antennatracker': # To main the original script approach instead of the build_parameters.py approach.
+                old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,value)
+            else:
+                old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,key.title()) 
+            try:  
+                old_parameters_files = [f for f in glob.glob(old_parameters_mask + "*.rst")]
+                for filename in old_parameters_files:
+                    debug("Erasing " + filename)
+                    os.remove(filename)    
+            except Exception as e:
+                error(e)
+                pass
+
+            # Remove old json file
+            if key is 'antennatracker': # To main the original script approach instead of the build_parameters.py approach.
+                target_json_file='./%s/source/_static/parameters-%s.json' % (key,value)
+            else:
+                target_json_file='./%s/source/_static/parameters-%s.json' % (value,key.title())
+            debug("Erasing " + target_json_file)
+            try:
+                subprocess.check_call(["rm", target_json_file])
+            except Exception as e:
+                error(e)
+                pass
+
+            # Moves the updated JSON file  
+            if key is 'antennatracker':  # To main the original script approach instead of the build_parameters.py approach. 
+                vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (key,value)
+            else: 
+                vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value,key.title())   
+            new_file = key + "/source/_static/" + vehicle_json_file[str(vehicle_json_file).rfind("/")+1:] 
+            try:  
+                debug("Moving " + vehicle_json_file)
+                #os.rename(vehicle_json_file, new_file)
+                shutil.copy2(vehicle_json_file, new_file)
+            except Exception as e:
+                error(e)
+                pass
+
+            # Copy all parameter files to vehicle folder IFF it is new
+            try:
+                new_parameters_folder = os.getcwd() + '/../new_params_mversion/%s/' % value
+                new_parameters_files = [f for f in glob.glob(new_parameters_folder + "*.rst")]
+            except Exception as e:
+                error(e)
+                pass
+            for filename in new_parameters_files:
+                # Check possible cached version
+                try:
+                    new_file = key + "/source/docs/" + filename[str(filename).rfind("/")+1:]
+                    if os.path.isfile(filename.replace("new_params_mversion","old_params_mversion")):                   # The cached file exists?
+                        if ("latest" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.
+                            debug("Overwriting " + new_file)                               
+                            shutil.copy2(filename, new_file)
+                            create_latest_parameter_redirect(filename[str(filename).rfind("/")+1:], key)               # Piggyback this moment to create a redirect file called "parameters.rst" that pointer to the latest parameter file.  
+                        else:
+                            debug("Ignoring " + new_file)                               
+                    else:                                                                                               # If not cached, build it anyway.
+                        debug("Creating " + new_file)
+                        shutil.copy2(filename, new_file)
+                        create_latest_parameter_redirect(filename[str(filename).rfind("/")+1:], key)
+
+                except Exception as e:
+                    error(e)
+                    pass
+
+
+def create_latest_parameter_redirect(default_param_file, vehicle):
+    """
+    For a given vehicle create a file called parameters.rst that redirects to the latest parameters file.(Create to maintaim retro compatibility.)
+    
+    """
+    out_line = "=====================\nAutomatic redirection\n=====================\n"
+    out_line += "\n.. raw:: html\n\n"
+    out_line += "   <script>location.replace(\"" + default_param_file[:-3] + "html" + "\")</script>"
+    out_line += "\n\n"
+
+    filename = vehicle + "/source/docs/parameters.rst"
+    with open(filename, "w") as text_file:
+        text_file.write(out_line)
+
+
+def cache_parameters_files(site=args.site):
+    """
+    For each vechile: put new_params_mversion/ content in old_params_mversion/ folders and .html built files as well.
+    
+    """
+    for key, value in PARAMETER_SITE.items():
+        if site==key or site==None:
+            try:
+                debug("Cleaning old_params_mversion/%s/" % value)
+                old_parameters_folder = os.getcwd() + '/../old_params_mversion/%s/' % value
+                old_parameters_files = [f for f in glob.glob(old_parameters_folder + "*.*")]
+                for file in old_parameters_files:
+                    os.remove(file)
+
+                debug("Caching files from new_params_mversion/%s/ " % value)
+                new_parameters_folder = os.getcwd() + '/../new_params_mversion/%s/' % value
+                new_parameters_files = [f for f in glob.glob(new_parameters_folder + "*.rst")]
+                for filename in new_parameters_files:
+                    shutil.copy2(filename, old_parameters_folder)
+
+                debug("Caching built HTML files from /%s/build/html/docs/" % value)
+                built_folder = os.getcwd() + "/" + key + "/build/html/docs/" 
+                built_parameters_files = [f for f in glob.glob(built_folder + "parameters-*.html")]
+                for built in built_parameters_files:
+                    shutil.copy2(built, old_parameters_folder)
+
+            except Exception as e:
+                error(e)
+                pass
+
+
+def put_cached_parameters_files_in_sites(site=args.site):
+    """
+    For each vechile: put built .html files in site folder
+    
+    """
+    for key, value in PARAMETER_SITE.items():
+        if site==key or site==None:
+            try:
+                built_folder = os.getcwd() + '/../old_params_mversion/%s/' % value
+                built_parameters_files = [f for f in glob.glob(built_folder + "parameters-*.html")]
+                vehicle_folder = os.getcwd() + "/" + key + "/build/html/docs/" 
+                debug("Getting previously built files from " + built_folder)
+                for built in built_parameters_files:
+                    if ("latest" not in built):  # latest parameters files must be built every time
+                        debug("Reusing " + built)
+                        shutil.copy(built, vehicle_folder)
+            except:
+                pass
+
+
+
+
+
+
+###############################################################################################################
+
+
+
+
+if args.paramversioning:                
+    fetch_versioned_parameters(args.site)   # Parameters for all versions availble on firmware.ardupilot.org    
+else:
+    fetchparameters(args.site)              # Single parameters file. Just present the latest parameters.
+
 generate_copy_dict()
 sphinx_make(args.site)
 copy_build(args.site)
 
+if args.paramversioning:                
+    put_cached_parameters_files_in_sites(args.site)
+    cache_parameters_files(args.site)
+
+
+# To navigate locally and view versioning script for parameters working is necessary run Chrome as "chrome --allow-file-access-from-files". Otherwise it will appear empty locally and working once is on the server.
