@@ -107,7 +107,7 @@ Enabling the sensor
 
 The sensor can be enabled by connecting to the autopilot with the Mission Planner and
 then on the **Initial Setup \| Optional Hardware \| Optical Flow** page
-check the **Enable** checkbox.  Alternatively the :ref:`FLOW_ENABLE <copter:FLOW_ENABLE>`
+check the **Enable** checkbox.  Alternatively the :ref:`FLOW_TYPE <copter:FLOW_TYPE>`
 parameter should be set to "1" through the full parameters list.  The
 sensor will be initialised once the Pixhawk board is rebooted.
 
