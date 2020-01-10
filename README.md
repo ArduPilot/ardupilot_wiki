@@ -3,9 +3,9 @@
 
 ## ArduPilot Wiki Editing Guide
 
-Main Wiki - http://ardupilot.org/ardupilot
+Main Wiki - https://ardupilot.org/ardupilot
 
-Editing Guide - http://ardupilot.org/dev/docs/common-wiki_editing_guide.html
+Editing Guide - https://ardupilot.org/dev/docs/common-wiki_editing_guide.html
 
 Gitter IM Chat - [![Join the chat at https://gitter.im/ArduPilot/ardupilot_wiki](https://badges.gitter.im/ArduPilot/ardupilot_wiki.svg)](https://gitter.im/ArduPilot/ardupilot_wiki?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -19,4 +19,4 @@ GitHub account [__Join HERE__](https://github.com/join)
 
 This link provides everything you need to help the wiki grow!
 
-See the [Wiki Editing Guide](http://ardupilot.org/dev/docs/common-wiki_editing_guide.html)
+See the [Wiki Editing Guide](https://ardupilot.org/dev/docs/common-wiki_editing_guide.html)
