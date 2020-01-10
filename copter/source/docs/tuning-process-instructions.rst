@@ -35,13 +35,25 @@ PID Controller Initial Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` -  10Hz to 20Hz
 - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` - 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
-- :ref:`ATC_RAT_PIT_FILT <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_RLL_FILT <ATC_RAT_RLL_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_YAW_FILT <ATC_RAT_YAW_FILT__AC_AttitudeControl_Multi>` - 2
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` - 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` - 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
 - :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` - 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
 - :ref:`ACRO_YAW_P <ACRO_YAW_P>` - 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500
+
+For Copter-4.0 (and later):
+
+- :ref:`ATC_RAT_PIT_FLTD <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_PIT_FLTT <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_RLL_FLTD <ATC_RAT_RLL_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_RLL_FLTT <ATC_RAT_RLL_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_YAW_FLTE <ATC_RAT_YAW_FILT__AC_AttitudeControl_Multi>` - 2
+- :ref:`ATC_RAT_YAW_FLTT <ATC_RAT_YAW_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+
+For Copter-3.6 (and earlier):
+
+- :ref:`ATC_RAT_PIT_FILT <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_RLL_FILT <ATC_RAT_RLL_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_YAW_FILT <ATC_RAT_YAW_FILT__AC_AttitudeControl_Multi>` - 2
 
 .. image:: ../images/tuning-process-instructions-2.hires.png
     :target: ../_images/tuning-process-instructions-2.hires.png
