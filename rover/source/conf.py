@@ -19,6 +19,8 @@ import os
 sys.path.insert(0,'../..')
 import common_conf
 
+# Parameter multi-versioning needs at least 3000. Setting 5000 to make room for the next versions.
+sys.setrecursionlimit(5000)
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the

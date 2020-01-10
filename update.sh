@@ -76,7 +76,7 @@ A wiki build failed
 EOF
 }
 
-echo "Updating ardupilot_wiki"
+echo "[Buildlog] Updating ardupilot_wiki at $(date '+%Y-%m-%d-%H-%M-%S')"
 pushd ardupilot_wiki
 git checkout -f master
 git fetch origin
@@ -85,7 +85,7 @@ git reset --hard origin/master
 git clean -f -f -x -d -d
 popd
 
-echo "Updating sphinx_rtd_theme"
+echo "[Buildlog] Updating sphinx_rtd_theme at $(date '+%Y-%m-%d-%H-%M-%S')"
 pushd sphinx_rtd_theme
 git checkout -f master
 git fetch origin
@@ -95,6 +95,14 @@ git clean -f -f -x -d -d
 pip install --user -U .
 popd
 
-cd ardupilot_wiki && python update.py --clean --parallel 4
+echo "[Buildlog] Starting do build multiple parameters pages at $(date '+%Y-%m-%d-%H-%M-%S')"
+
+cd ardupilot_wiki && python3 build_parameters.py
+
+echo "[Buildlog] Starting do build the wiki at $(date '+%Y-%m-%d-%H-%M-%S')"
+
+python update.py --clean --parallel 4 # Single parameters file style, as in use for a long time and should be used for most of users/wiki editors.
+
+# python update.py --clean --paramversioning # Enables parameters versioning, should be used only on the wiki server
 
 ) >> update.log 2>&1
