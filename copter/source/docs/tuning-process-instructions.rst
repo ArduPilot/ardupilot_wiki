@@ -13,9 +13,9 @@ Battery setting
 ^^^^^^^^^^^^^^^
 Parameters used to linearise your motor thrust curve.
 
-- :ref:`MOT_BAT_VOLT_MAX <MOT_BAT_VOLT_MAX>` - 4.2v x No. Cells
-- :ref:`MOT_BAT_VOLT_MIN <MOT_BAT_VOLT_MIN>` - 3.3v x No. Cells
-- :ref:`MOT_THST_EXPO <MOT_THST_EXPO>` - 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props. This parameter should be derived by thrust stand measurements for best results (don’t trust manufacturer data).
+- :ref:`MOT_BAT_VOLT_MAX <MOT_BAT_VOLT_MAX>` : 4.2v x No. Cells
+- :ref:`MOT_BAT_VOLT_MIN <MOT_BAT_VOLT_MIN>` : 3.3v x No. Cells
+- :ref:`MOT_THST_EXPO <MOT_THST_EXPO>` : 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props. This parameter should be derived by thrust stand measurements for best results (don’t trust manufacturer data).
 
 .. image:: ../images/tuning-process-instructions-1.hires.png
     :target: ../_images/tuning-process-instructions-1.hires.png
@@ -24,36 +24,36 @@ Motors setup
 ^^^^^^^^^^^^
 Parameters used to define the output range sent to the ESC.
 
-- :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` - Check ESC manual for fixed range or 2000us
-- :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` - Check ESC manual for fixed range or 1000us
-- :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` - use the motor test feature :ref:`Checking the motor numbering with the Mission Planner Motor test <connect-escs-and-motors_testing_motor_spin_directions>`
-- :ref:`MOT_SPIN_MAX <MOT_SPIN_MAX>` - 0.95
-- :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` - use the motor test feature :ref:`Checking the motor numbering with the Mission Planner Motor test <connect-escs-and-motors_testing_motor_spin_directions>`
-- :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` - 0.25 or below the expected hover thrust percentage (low is safe)
+- :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` : Check ESC manual for fixed range or 2000us
+- :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` : Check ESC manual for fixed range or 1000us
+- :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` : use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
+- :ref:`MOT_SPIN_MAX <MOT_SPIN_MAX>` : 0.95
+- :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>` : use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
+- :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` : 0.25 or below the expected hover thrust percentage (low is safe)
 
 PID Controller Initial Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` -  10Hz to 20Hz
-- :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` - 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
-- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` - 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
-- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` - 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
-- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` - 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
-- :ref:`ACRO_YAW_P <ACRO_YAW_P>` - 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500
+- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` :  10Hz to 20Hz
+- :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` : 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
+- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
+- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
+- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` : 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
+- :ref:`ACRO_YAW_P <ACRO_YAW_P>` : 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500
 
 For Copter-4.0 (and later):
 
-- :ref:`ATC_RAT_PIT_FLTD <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_PIT_FLTT <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_RLL_FLTD <ATC_RAT_RLL_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_RLL_FLTT <ATC_RAT_RLL_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_YAW_FLTE <ATC_RAT_YAW_FILT__AC_AttitudeControl_Multi>` - 2
-- :ref:`ATC_RAT_YAW_FLTT <ATC_RAT_YAW_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_PIT_FLTD <ATC_RAT_PIT_FLTD>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_PIT_FLTT <ATC_RAT_PIT_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_RLL_FLTD <ATC_RAT_RLL_FLTD>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_RLL_FLTT <ATC_RAT_RLL_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_YAW_FLTE <ATC_RAT_YAW_FLTE>` : 2
+- :ref:`ATC_RAT_YAW_FLTT <ATC_RAT_YAW_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 
 For Copter-3.6 (and earlier):
 
-- :ref:`ATC_RAT_PIT_FILT <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_RLL_FILT <ATC_RAT_RLL_FILT__AC_AttitudeControl_Multi>` - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_YAW_FILT <ATC_RAT_YAW_FILT__AC_AttitudeControl_Multi>` - 2
+- ATC_RAT_PIT_FILT : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- ATC_RAT_RLL_FILT : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- ATC_RAT_YAW_FILT : 2
 
 .. image:: ../images/tuning-process-instructions-2.hires.png
     :target: ../_images/tuning-process-instructions-2.hires.png
@@ -86,7 +86,7 @@ There are several things that the pilot can do to minimise the risk during the e
 - :ref:`MOT_THST_HOVER <MOT_THST_HOVER>` to 0.25 (or lower than the expected hover throttle)
 
 5. Use a radio and calibrate the radio correctly (see :ref:`common-radio-control-calibration`).
-6. Configure a Emergency Stop Motors switch and test it (see :ref:`channel-7-and-8-options`).
+6. Configure an Emergency Stop Motors switch and test it (see :ref:`Auxiliary Functions <common-auxiliary-functions>`).
 7. Do tuning flights in low-wind condition and normal weather (no rain and between 15°C/59°F and 25°C/77°F).
 8. Practice STABILIZE flight in simulator or on a low-end drone first, you should be confident to be able to takeoff and land with your untuned aircraft.
 
@@ -98,7 +98,7 @@ The first take off is the most dangerous time for any multirotor. Care must be t
 
 - **Ensure that all spectators are at a safe distance**.
 - **Ensure the pilot is at a safe distance and position**.
-- The pilot should refresh themselves on the method used to disarm the aircraft (using the AUXSW_MOTOR_INTERLOCK or AUXSW_ARMDISARM may be beneficial, see :ref:`channel-7-and-8-options`)
+- The pilot should refresh themselves on the method used to disarm the aircraft (using :ref:`Auxiliary Functions <common-auxiliary-functions>` for Motor Interlock or Arm/Disarm may be beneficial).
 
 This flight will allow to setup your aircraft in a "flyable for tuning" state.
 
@@ -226,7 +226,7 @@ Autotune will attempt to tune each axis as tight as the aircraft can tolerate. I
 - :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>` should be reduced from 10 to 6
 - :ref:`ATC_ANG_YAW_P <ATC_ANG_YAW_P>` should be reduced from 10 to 6
 - :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` should be reduced from 1 to 0.5
-- :ref:`ATC_RAT_YAW_I <ATC_RAT_YAW_I__AC_AttitudeControl_Multi>` = :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` x 0.1
+- :ref:`ATC_RAT_YAW_I <ATC_RAT_YAW_I__AC_AttitudeControl_Multi>` : :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` x 0.1
 
 These values should only be changed if Autotune produces higher values. Small aerobatic aircraft may prefer to keep these values as high as possible.
 
@@ -237,12 +237,12 @@ Arducopter has a set of parameters that define the way the aircraft feels to fly
 
 The most important of these parameters is:
 
-- :ref:`ACRO_YAW_P <ACRO_YAW_P>` - yaw rate x 45 degrees/s
-- :ref:`ANGLE_MAX <ANGLE_MAX>` -  maximum lean angle
-- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` - Pitch rate acceleration
-- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` - Roll rate acceleration
-- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` - Yaw rate acceleration
-- :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>` - Aircraft smoothing time
+- :ref:`ACRO_YAW_P <ACRO_YAW_P>` : yaw rate x 45 degrees/s
+- :ref:`ANGLE_MAX <ANGLE_MAX>` :  maximum lean angle
+- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` : Pitch rate acceleration
+- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` : Roll rate acceleration
+- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` : Yaw rate acceleration
+- :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>` : Aircraft smoothing time
 
 Autotune will set the :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` and :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` parameters to their maximum based on measurements done during the Autotune tests. These values should not be increased beyond what Autotune suggests without careful testing. In most cases pilots will want to reduce these values significantly.
 
