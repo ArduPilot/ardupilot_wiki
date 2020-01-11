@@ -71,8 +71,8 @@ normally.  First kill the sim_vehicle.py you are running using Ctrl-C.  Then:
 
 .. tip::
 
-   If the map titles don't load, you can temporary change the map provider in the map window by clicking View/Service.
-   To keep the new map service between launch, add the following lines to the end of your ".bashrc" (change MicrosoftHyb by the provider you want):
+   If the map tiles don't load, you can temporarily change the map provider in the map window by clicking View/Service.
+   To keep the new map service between launches, add the following lines to the end of your ".bashrc" (change MicrosoftHyb to the provider you want):
 
    ::
 
