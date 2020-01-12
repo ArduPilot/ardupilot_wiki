@@ -39,8 +39,6 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 -  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the flight controller can communicate with the RPi at 921600 baud.
 -  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the RPi
 
-.. _raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client:
-
 Setup the RPi Software (Automatic)
 ==================================
 
@@ -61,10 +59,15 @@ This section shows how to configure the RPi as a minimal server to read
 and route telemetry from the autopilot. It does not install the full
 APSync software.
 
+.. _raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client:
+
 Connecting to RPi with an SSH/Telnet client
 -------------------------------------------
 
 See the `RPi Documentation <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__
+
+
+.. _raspberry-pi-via-mavlink_install_the_required_packages_on_the_raspberry_pi:
 
 Install the required packages on the Raspberry Pi
 -------------------------------------------------
@@ -194,6 +197,7 @@ Installing DroneKit on RPi
 
 The most up-to-date instructions for `Installing DroneKit <https://dronekit-python.readthedocs.io/en/latest/guide/quick_start.html>`__ on Linux are in the DroneKit-Python documentation.
 
+.. _raspberry-pi-via-mavlink_connecting_with_the_mission_planner:
 
 Connecting with the Mission Planner
 ===================================
