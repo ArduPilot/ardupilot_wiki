@@ -14,8 +14,6 @@ high-precision barometer and a 3-axis compass.
 
    Zubax GNSS 2: GPS, Compass and Barometer
 
-The Zubax website has all the documentation needed to use Zubax GNSS 2
-with ArduPilot:
+In order to use the module with ArduPilot, simply follow the instructions on enabling the CANBUS in the :ref:`common-canbus-setup-advanced` page, followed by :ref:`common-uavcan-setup-advanced` steps. Be sure to set the :ref:`GPS_TYPE<GPS_TYPE>` or :ref:`GPS_TYPE2<GPS_TYPE2>` parameter to 9 to enable use of the UAVCAN GPS.
 
--  `Zubax GNSS tutorials <https://kb.zubax.com/display/MAINKB/Zubax+GNSS>`__.
 -  `Product page <https://zubax.com/products/gnss_2>`__ for general information about the device.
