@@ -90,3 +90,8 @@ The **TYPE** parameter should be set to 9 for corresponding GNSS receiver in aut
 .. image:: ../../../images/uavcan-gnss-settings.png
     :target: ../_images/uavcan-gnss-settings.png
 
+UAVCAN LED configuration
+========================
+
+UAVCAN LEDs are enabled by setting bit 5 in the :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bitmask.
+
