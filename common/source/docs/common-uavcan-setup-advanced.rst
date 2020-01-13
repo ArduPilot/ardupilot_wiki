@@ -22,8 +22,6 @@ parameter needs to be set for basic setup.
 
 Detailed description of protocol can be found at https://uavcan.org/
 
-**UAVCAN driver for Aurdupilot do not support auto node numbering in
-current version. All nodes should have the ID explicitly set.**
 
 UAVCAN Peripheral Types Supported
 =================================
