@@ -264,7 +264,7 @@ From time to time parameters need to be altered or renamed. ArduPilot has capabi
 
     * Set the AP_PARAM_KEY_DUMP definition to "1" [here in AP_Param.h](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Param/AP_Param.h#L36)
 
-    * Change the delay here from 1ms to 2ms [here in AP_Param::show_all](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Param/AP_Param.cpp#L2338)
+    * Change the delay here from 1ms to 2ms [here in AP_Param::show_all](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Param/AP_Param.cpp#L2414)
 
     * Remove the #if / #endif from [here in Copter's system.cpp](https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/system.cpp#L262)
 
