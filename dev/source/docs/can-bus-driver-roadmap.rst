@@ -7,7 +7,7 @@ CAN bus driver implementation roadmap
 The base for hardware CAN bus support is located in AP_HAL library and
 consist of two classes:
 
-- CAN class that is responsible for representation of one physical interface on board.
+- CANHal class that is responsible for representation of one physical interface on board.
   This class manages opening, setup and operation of the interface and is a main connection
   point between software and hardware
   
@@ -15,10 +15,10 @@ consist of two classes:
   It does enumeration of interfaces, provides access to them and also holds connection
   point for accessing UAVCAN managing class.
 
-CAN class
+CANHal class
 =========
 
-New class should be based on AP_HAL::CAN class.
+New class should be based on AP_HAL::CANHal class.
 
 The class is responsible for managing the hardware and also managing of RX and TX queues.
 Apart from this also the time management is provided.
