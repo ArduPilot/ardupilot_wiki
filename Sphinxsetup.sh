@@ -7,6 +7,7 @@ if [ "$UID" -gt 0 ]; then
      exit 1
 fi
 
+add-apt-repository universe
 apt-get -y update
 apt-get install -y unzip git imagemagick mercurial curl wget make
 
