@@ -376,7 +376,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
         # Run param_parse.py tool from Autotest set in the desidered commit id
         try:
             os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
-            os.system("python ./param_parse.py --vehicle " + vehicle_new_to_old_name[vehicle])  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found
+            os.system("python3 ./param_parse.py --vehicle " + vehicle_new_to_old_name[vehicle])  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found
             
             # create a filename for new parameters file
             filename = "parameters-" + vehicle 
