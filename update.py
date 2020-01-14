@@ -35,6 +35,7 @@ import shutil
 import glob
 import filecmp
 import time
+import sys
 
 
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
@@ -63,14 +64,14 @@ error_count = 0
 def debug(str_to_print):
     """Debug output if verbose is set."""
     if args.verbose:
-        print(str_to_print)
+        print("[update.py] " + str_to_print)
 
 
 def error(str_to_print):
     """Show and count the errors."""
     global error_count
     error_count += 1
-    print(str_to_print)
+    print("[update.py][error]: " + str(str_to_print))
 
 
 def fetchparameters(site=args.site):
@@ -374,7 +375,7 @@ def fetch_versioned_parameters(site=args.site):
              
             # Remove old versioned param files
             if key is 'antennatracker': # To main the original script approach instead of the build_parameters.py approach.
-                old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,value)
+                old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,"AntennTracker")
             else:
                 old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,key.title()) 
             try:  
@@ -425,14 +426,16 @@ def fetch_versioned_parameters(site=args.site):
                     new_file = key + "/source/docs/" + filename[str(filename).rfind("/")+1:]
                     if os.path.isfile(filename.replace("new_params_mversion","old_params_mversion")):                   # The cached file exists?
                         if ("latest" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.
-                            debug("Overwriting " + new_file)                               
+                            debug("Overwriting %s with %s" % (filename, new_file))                               
                             shutil.copy2(filename, new_file)
-                            create_latest_parameter_redirect(filename[str(filename).rfind("/")+1:], key)               # Piggyback this moment to create a redirect file called "parameters.rst" that pointer to the latest parameter file.  
+                            #create_latest_parameter_redirect(filename[str(filename).rfind("/")+1:], key)               # Piggyback this moment to create a redirect file called "parameters.rst" that pointer to the latest parameter file.  
                         else:
                             debug("Ignoring " + new_file)                               
                     else:                                                                                               # If not cached, build it anyway.
-                        debug("Creating " + new_file)
+                        debug("Creating %s with %s" % (filename, new_file))                               
                         shutil.copy2(filename, new_file)
+
+                    if ("latest" in filename):   
                         create_latest_parameter_redirect(filename[str(filename).rfind("/")+1:], key)
 
                 except Exception as e:
@@ -453,6 +456,8 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
     filename = vehicle + "/source/docs/parameters.rst"
     with open(filename, "w") as text_file:
         text_file.write(out_line)
+    
+    debug("Created html automatic redirection from parameters.html to %shtml" % default_param_file[:-3])
 
 
 def cache_parameters_files(site=args.site):
@@ -463,22 +468,22 @@ def cache_parameters_files(site=args.site):
     for key, value in PARAMETER_SITE.items():
         if site==key or site==None:
             try:
-                debug("Cleaning old_params_mversion/%s/" % value)
                 old_parameters_folder = os.getcwd() + '/../old_params_mversion/%s/' % value
                 old_parameters_files = [f for f in glob.glob(old_parameters_folder + "*.*")]
                 for file in old_parameters_files:
+                    debug("Removing %s" % file)
                     os.remove(file)
 
-                debug("Caching files from new_params_mversion/%s/ " % value)
                 new_parameters_folder = os.getcwd() + '/../new_params_mversion/%s/' % value
                 new_parameters_files = [f for f in glob.glob(new_parameters_folder + "*.rst")]
                 for filename in new_parameters_files:
+                    debug("Copying %s to %s" % (filename, old_parameters_folder))
                     shutil.copy2(filename, old_parameters_folder)
 
-                debug("Caching built HTML files from /%s/build/html/docs/" % value)
                 built_folder = os.getcwd() + "/" + key + "/build/html/docs/" 
                 built_parameters_files = [f for f in glob.glob(built_folder + "parameters-*.html")]
                 for built in built_parameters_files:
+                    debug("Copying %s to %s" % (built, old_parameters_folder))
                     shutil.copy2(built, old_parameters_folder)
 
             except Exception as e:
@@ -497,22 +502,17 @@ def put_cached_parameters_files_in_sites(site=args.site):
                 built_folder = os.getcwd() + '/../old_params_mversion/%s/' % value
                 built_parameters_files = [f for f in glob.glob(built_folder + "parameters-*.html")]
                 vehicle_folder = os.getcwd() + "/" + key + "/build/html/docs/" 
-                debug("Getting previously built files from " + built_folder)
+                debug("Site %s getting previously built files from %s" % (site,built_folder))
                 for built in built_parameters_files:
                     if ("latest" not in built):  # latest parameters files must be built every time
-                        debug("Reusing " + built)
+                        debug("Reusing built %s in %s " % (built, vehicle_folder))
                         shutil.copy(built, vehicle_folder)
-            except:
+            except Exception as e:
+                error(e)
                 pass
 
 
-
-
-
-
 ###############################################################################################################
-
-
 
 
 if args.paramversioning:                

@@ -75,14 +75,14 @@ vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with o
 def debug(str_to_print):
     """Debug output if verbose is set."""
     if args.verbose:
-        print(str_to_print)
+        print("[build_parameters.py] " + str_to_print)
 
 
 def error(str_to_print):
     """Show and count the errors."""
     global error_count
     error_count += 1
-    print("error: " + str_to_print)
+    print("[build_parameters.py][error]: " + str_to_print)
 
 
 def check_temp_folders():
