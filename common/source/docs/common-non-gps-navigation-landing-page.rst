@@ -18,12 +18,14 @@ These are the available options that allow a vehicle to estimate its position wi
 [site wiki="copter"]
 	Optical Flow <common-optical-flow-sensors-landingpage>
     OptiTrack motion capture system <common-optitrack>
-[/site]	
+[/site]
     Pozyx Beacons <common-pozyx>
     Vicon Positioning System <common-vicon-for-nongps-navigation>
     Visual Odometry with OpenKai and ZED <common-zed>
     Visual Odometry with VIO tracking camera <common-vio-tracking-camera>
-
+[site wiki="rover"]
+    Wheel Encoders <wheel-encoder>
+[/site]
 
 .. note::
 
