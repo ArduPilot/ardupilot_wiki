@@ -522,11 +522,11 @@ else:
 
 generate_copy_dict()
 sphinx_make(args.site)
-copy_build(args.site)
 
 if args.paramversioning:                
     put_cached_parameters_files_in_sites(args.site)
     cache_parameters_files(args.site)
 
+copy_build(args.site)
 
 # To navigate locally and view versioning script for parameters working is necessary run Chrome as "chrome --allow-file-access-from-files". Otherwise it will appear empty locally and working once is on the server.
