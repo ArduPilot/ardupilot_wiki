@@ -155,7 +155,7 @@ Full Table of Contents
     How The Team Works <docs/how-the-team-works>
     Events <docs/events>
     Training Centers <docs/common-training-centers>
-    GSoC 2019 project ideas <docs/gsoc-ideas-list>
+    GSoC 2020 project ideas <docs/gsoc-ideas-list>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     USB IDs <docs/USB-IDs>
     Appendix <docs/common-appendix>

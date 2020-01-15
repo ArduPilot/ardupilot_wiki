@@ -39,8 +39,6 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 -  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the flight controller can communicate with the RPi at 921600 baud.
 -  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the RPi
 
-.. _raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client:
-
 Setup the RPi Software (Automatic)
 ==================================
 
@@ -61,10 +59,15 @@ This section shows how to configure the RPi as a minimal server to read
 and route telemetry from the autopilot. It does not install the full
 APSync software.
 
+.. _raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client:
+
 Connecting to RPi with an SSH/Telnet client
 -------------------------------------------
 
 See the `RPi Documentation <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__
+
+
+.. _raspberry-pi-via-mavlink_install_the_required_packages_on_the_raspberry_pi:
 
 Install the required packages on the Raspberry Pi
 -------------------------------------------------
@@ -85,8 +88,8 @@ packages:
    The packages are :ref:`mostly the same as when setting up SITL <setting-up-sitl-on-windows>`. Reply Reply 'y' when
    prompted re additional disk space.
 
-Disable the OS control of the serial port
------------------------------------------
+Configure the serial port (UART)
+--------------------------------
 
 Use the Raspberry Pi configuration utility for this.
 
@@ -96,26 +99,25 @@ Type:
 
     sudo raspi-config
 
-And in the utility, select "Advanced Options":
+And in the utility, select "Interfacing Options":
 
-.. figure:: ../images/dev_RasPi_Config_Utility_SerialSetting_AdvancedOptions.png
-   :target: ../_images/dev_RasPi_Config_Utility_SerialSetting_AdvancedOptions.png
+.. figure:: ../images/RaspberryPi_Serial1.png
+   :target: ../_images/RaspberryPi_Serial1.png
 
-   RasPiConfiguration Utility: Serial Settings: Advanced Options
+   RasPiConfiguration Utility
 
-And then "Serial" to disable OS use of the serial connection:
+And then "Serial":
 
-.. image:: ../images/dev_RasPi_Config_Utility_SerialSetting_Capture2-300x78.png
-    :target: ../_images/dev_RasPi_Config_Utility_SerialSetting_Capture2-300x78.png
+.. image:: ../images/RaspberryPi_Serial2.png
+    :target: ../_images/RaspberryPi_Serial2.png
 
+When prompted, select ``no`` to "Would you like a login shell to be accessible over serial?".
 
-.. note::
-
-   In the latest Rapbian Stretch, these settings will be found in  "Interfacing Options"
-   
-   You may disable the ``serial login shell`` and keep ``serial interface`` enabled
+When prompted, select ``yes`` to "Would you like the serial port hardware to be enabled?".
 
 Reboot the Raspberry Pi when you are done.
+
+The Raspberry Pi's serial port will now be usable on ``/dev/serial0``.
 
 Testing the connection
 ----------------------
@@ -195,6 +197,7 @@ Installing DroneKit on RPi
 
 The most up-to-date instructions for `Installing DroneKit <https://dronekit-python.readthedocs.io/en/latest/guide/quick_start.html>`__ on Linux are in the DroneKit-Python documentation.
 
+.. _raspberry-pi-via-mavlink_connecting_with_the_mission_planner:
 
 Connecting with the Mission Planner
 ===================================
