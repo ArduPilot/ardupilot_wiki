@@ -13,6 +13,8 @@ Before the autopilot can be connected, SLCAN mode must be operational. See :ref:
 
 Start UAVCAN GUI and select the correct USB port for the SLCAN interface. The default CAN bus bit rate of 1,000,000 wont  need to be changed unless the :ref:`CAN_P1_BITRATE<CAN_P1_BITRATE>` or :ref:`CAN_P2_BITRATE<CAN_P2_BITRATE>` (if using the second autopilot CAN port) has been changed. The Adapter baud rate should match the autopilot's SERIALx port baud rate. The default value of 115.2KBaud should be correct.
 
+.. note:: Almost all ArduPilot autopilots use VCP USB connections and Adapter port baud rate value is irrelevant and can be any value.
+
 .. image:: ../../../images/can_uavcan_gui_baud.png
 
 UAVCAN_GUI tool will start with an interface as the image below.
@@ -26,6 +28,9 @@ uploaded. ``MAINTENANCE`` will be displayed. Firmware can be found `here <https:
 .. image:: ../../../images/can_uavcan_gui_upd.png
 
 The following pop up window will appear. Click on update firmware and select the correct file for the node connected.
+
+.. note:: If you have trouble updating firmware, trying renaming the firmware filename to something very short, such as "a.bin". Longer filenames sometimes have difficulty loading.
+
 
 .. image:: ../../../images/can_uavcan_gui_pop.png
 
