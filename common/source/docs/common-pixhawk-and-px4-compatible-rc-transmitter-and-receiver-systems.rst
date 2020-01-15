@@ -28,7 +28,7 @@ ArduPilot auto-detects the protocol of the RC receiver system. For most autopilo
 
 In addition, beginning with ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect the RC receiver, if the serial port protocol to 23 (for example :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART is used).
 
-To connect a PPM-Sum receiver or an S.Bus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. The following S.Bus receivers have been tested and are known to work: FrSky `X8R <http://www.frsky-rc.com/product/pro.php?pro_id=105>`__, FrSky `XSR <http://www.frsky-rc.com/product/pro.php?pro_id=154>`__, Futaba R2008SB, Futaba R6008SB.
+To connect a PPM-Sum receiver or an S.Bus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. The following S.Bus receivers have been tested and are known to work: FrSky `XSR <https://www.frsky-rc.com/product/r-xsr/>`__ , FrSky `RX8 <https://www.frsky-rc.com/product/g-rx8/>`__, Futaba R2008SB, Futaba R6008SB.
 
 .. image:: ../../../images/RCIN_connection.jpg
     :target: ../_images/RCIN_connection.jpg
@@ -59,7 +59,7 @@ These **MULTIPLEX SRXL** receivers have been tested and are known to work:
 Radio systems that support PPM-Sum or S.Bus directly
 ====================================================
 
-This section list radio systems that support PPM-Sum or S.Bus directly.
+This section list radio systems that support PPM-Sum or S.Bus directly. It is not exhaustive and new receivers are introduced often.
 
 .. _common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems_frsky_taranis_ppm-sum_compatible_transmitter:
 
@@ -201,11 +201,11 @@ Futaba S.BUS2 receivers are supported since Copter/Plane 3.2.
 
 The list of supported receivers is given below:
 
--  Futaba / Ripmax `R7008SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7675>`__ S.BUS 2 Receiver
--  Futaba / Ripmax `R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__ S.BUS Receiver
+-  Futaba / Ripmax R7008SB S.BUS 2 Receiver
+-  Futaba / Ripmax R6303SB  S.BUS Receiver
 -  FrSky TFR4 SB 3/16ch 2.4Ghz S.BUS Receiver FASST Compatible
    (`HobbyKing <https://hobbyking.com/en_us/frsky-tfr4-sb-3-16ch-2-4ghz-s-bus-receiver-fasst-compatible.html?___store=en_us>`__)
--  Futaba FASST S.BUS `2.4 GHz Receiver R6303SB <http://www.gpdealera.com/cgi-bin/wgainf100p.pgm?I=FUTL7661>`__
+-  Futaba FASST S.BUS 2.4 GHz Receiver R6303SB
 -  FrSky FASST compatible S.BUS compatible TFR8 SB 8ch 2.4Ghz Receiver
    (`HobbyKing <https://hobbyking.com/en_us/frsky-tfr8-sb-8ch-2-4ghz-s-bus-receiver-fasst-compatible.html?___store=en_us>`__)
 
@@ -216,9 +216,7 @@ Further notes on S-Bus / S-Bus 2 compatibility
 ----------------------------------------------
 
 In addition to the receivers discussed in the :ref:`Futaba Transmitter Compatible With Futaba S-Bus Receivers <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems_futaba_transmitter_compatible_with_futaba_s-bus_receivers>`
-section above, we have anecdotal information that a number of other
-receivers are also compatible (see discussion `Current state of SBus compatibility? <https://groups.google.com/forum/#!topic/drones-discuss/OpbxcBxkk8c>`__
-on drones-discuss mailing list).
+section above, many other receivers are also compatible.
 
 These include:
 
@@ -233,8 +231,8 @@ These include:
 
 .. tip::
 
-   The parameter to enable the SBUS output from the PixHawk is
-   BRD_SBUS_OUT. This is only to pass SBUS externally to other devices, like servos. Not to connect a receiver to RCin or SBus In.
+   The parameter to enable the SBUS output from the PixHawk style autopilots is
+   :ref:`BRD_SBUS_OUT<BRD_SBUS_OUT>` . This is only to pass SBUS externally to other devices, like servos. Not to connect a receiver to RCin or SBus In.
 
 Spektrum Satellite Receivers 
 ============================
