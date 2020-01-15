@@ -1,10 +1,10 @@
 .. _gsoc-ideas-list:
     
 ========================================
-List of Suggested Projects for GSoC 2019
+List of Suggested Projects for GSoC 2020
 ========================================
 
-This is a list of projects suggested by ArduPilot developers for `GSoC 2019 <https://summerofcode.withgoogle.com/>`__. These are only suggestions, and if you have your own ideas then please discuss them on the `ArduPilot GSOC gitter channel <https://gitter.im/ArduPilot/GSoC>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2019.
+This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <https://summerofcode.withgoogle.com/>`__. These are only suggestions, and if you have your own ideas then please discuss them on the `ArduPilot GSOC gitter channel <https://gitter.im/ArduPilot/GSoC>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2020.
 
 - `ROS integration with Copter and Rover <https://ardupilot.org/dev/docs/ros.html>`__ for non-GPS navigation and `object avoidance <https://ardupilot.org/dev/docs/code-overview-object-avoidance.html>`__
 - `Optical flow <https://ardupilot.org/copter/docs/common-optical-flow-sensors-landingpage.html>`__ position hold performance improvements for multicopters
@@ -26,7 +26,7 @@ See lower down on this page for more details for some of the projects listed abo
 Timeline
 ========
 
-The timeline for `GSoC 2019 is here <https://summerofcode.withgoogle.com/how-it-works/#timeline>`__
+The timeline for `GSoC 2020 is here <https://summerofcode.withgoogle.com/how-it-works/#timeline>`__
 
 How to improve your chances of being accepted
 =============================================
@@ -119,12 +119,21 @@ MathWorks SimuLink
 
 Projects Completed in past years
 --------------------------------
+In 2019, 5 students successfully completed the following projects:
+
+- AirSim Simulator Support for Ardupilot SITL
+- Development of Autonomous Autorotations for Traditional Helicopters
+- Further Development of Rover Sailboat Support
+- Integration of ArduPilot and VIO tracking camera for GPS-less localization and navigation
+- MAVProxy GUI and module development
 
 In 2018, students successfully completed these projects:
 
 - `BalanceBot <https://ardupilot.org/rover/docs/balance_bot-home.html>`__
-- RedTail integration with ArduPilot
+- Complex Autonomous Tasks Onboard a UAV using Monocular Cameras
+- Mapping and Planning for obstacle avoidance
 - Live video improvements for APSync
+- UAVCAN Drivers and Documentation Update
 
 In 2017, 3 student successfully completed these projects:
 
