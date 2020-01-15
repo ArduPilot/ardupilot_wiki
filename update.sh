@@ -103,6 +103,6 @@ echo "[Buildlog] Starting do build the wiki at $(date '+%Y-%m-%d-%H-%M-%S')"
 
 # python update.py --clean --parallel 4 # Build without versioning for parameters
 
-python update.py --clean --paramversioning --parallel 2 # Enables parameters versioning, should be used only on the wiki server
+python update.py --clean --paramversioning --parallel 4 # Enables parameters versioning, should be used only on the wiki server
 
 ) >> update.log 2>&1
