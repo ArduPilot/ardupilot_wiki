@@ -99,11 +99,11 @@ See :ref:`common-canbus-setup-advanced` and :ref:`common-uavcan-setup-advanced` 
 
 Set the following parameters in all parameter tables of Mission planner and restart after writing
 
-- :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>`  set to 1.
-- :ref:`CAN_P2_DRIVER<CAN_P2_DRIVER>`  set to 1.
-- :ref:`CAN_1_PROTOCOL<CAN_1_PROTOCOL>`set to 1.
-- :ref:`CAN_2_PROTOCOL<CAN_2_PROTOCOL>`set to 1.
-- :ref:`NTF_LED_TYPES<NTF_LED_TYPES>`  set to 231.
+- :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>`   set to 1.
+- :ref:`CAN_P2_DRIVER<CAN_P2_DRIVER>`   set to 1.
+- :ref:`CAN_1_PROTOCOL<CAN_1_PROTOCOL>` set to 1.
+- :ref:`CAN_2_PROTOCOL<CAN_2_PROTOCOL>` set to 1.
+- :ref:`NTF_LED_TYPES<NTF_LED_TYPES>`   set to 231.
 - :ref:`GPS_TYPE<GPS_TYPE>`  set to 9.
 
 .. image:: ../../../images/cuav-neo-v2-pro/fc-set.png
