@@ -25,8 +25,11 @@ is stored in the APM\TERRAIN directory on the microSD card.
 The database is populated automatically by the autopilot requesting
 terrain data from the ground station over a MAVLink telemetry link. This
 can happen either during flight planning when the autopilot is connected
-over USB, or during flight when connected over a radio link. Once the
-terrain data is sent from the GCS to the autopilot it is stored on the
+over USB, or during flight when connected over a radio link.
+
+.. note:: The data is only transferred if the autopilot has a GPS lock. So to make sure your missions have the terrain data prior to flight (in case the ground station is not connected during the flight and/or does not have internet connection to obtain the data), be sure that GPS lock is in effect when loading the mission to the autopilot.
+
+Once the terrain data is sent from the GCS to the autopilot it is stored on the
 microSD card so that it is available even when the GCS is not connected.
 This makes it possible for the autopilot to use terrain data to perform
 a terrain following RTL (Return To Launch) even when it is not able to
