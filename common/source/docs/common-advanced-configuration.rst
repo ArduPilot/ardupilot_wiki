@@ -63,6 +63,7 @@ tuning options for the vehicle.
 [site wiki="copter,rover"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
+    Notification Devices (LEDs,Buzzer,etc.) <common-ntf-devices>
 [site wiki="copter,plane"]
     Notch Filter Configuration <common-imu-notch-filtering>
 [/site]
