@@ -43,7 +43,10 @@ First, the active buzzer can simply replace the passive piezo, paying attention 
 
 Alternatively, you can set the :ref:`NTF_BUZZ_PIN<NTF_BUZZ_PIN>` to a GPIO pin, like those used for :ref:`relay control <common-relay>` , and attach an active buzzer to that pin with its negative lead, and apply power (usually +5V) to the buzzer's positive lead.
 
+If an active buzzer is used, the :ref:`NTF_BUZZ_ON_LVL<NTF_BUZZ_ON_LVL>` parameter determines the pin level needed to activate it.
+
 .. note:: For many boards, the GPIO pin numbers are assigned to PWM outputs for alternate use can only be found by looking at that board's hwdef.dat file `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ .
+
 
 Mounting the buzzer
 ===================
@@ -57,3 +60,5 @@ Silencing the buzzer
 Some autopilots (like the HobbyKing PixRacer) have built-in buzzers.  We recommend disabling the these buzzers by setting the following parameter:
 
 - set :ref:`NTF_BUZZ_ENABLE <NTF_BUZZ_ENABLE>` = 0 to disable the buzzer
+
+In addition, :ref:`NTF_BUZZ_VOLUME<NTF_BUZZ_VOLUME>` can be used to control the volume.
