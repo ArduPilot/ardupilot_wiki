@@ -10,7 +10,7 @@ Overview
 Copter 3.4 (and higher) supports Precision Landing using the `IR-LOCK sensor <https://irlock.com/collections/frontpage/products/ir-lock-sensor-precision-landing-kit>`__ and a :ref:`sonar or lidar <common-rangefinder-landingpage>`.
 Using this system, when the vehicle enters LAND mode (and has GPS lock) it is possible to reliably land within 30cm of an IR beacon that is moving at less than 1m/s.
 
-Copter 3.5 (and higher) additionally supports Precision Loiter which allows a vehicle to maintain its position above a target while in Loiter mode.  The Pilot can enable this using one of the transmitter's :ref:`auxiliary function switches <channel-7-and-8-options>`.
+Copter 3.5 (and higher) additionally supports Precision Loiter which allows a vehicle to maintain its position above a target while in Loiter mode.  The Pilot can enable this using one of the transmitter's :ref:`auxiliary function switches <common-auxiliary-functions>` (in versions prior to Copter-4.0, CH7_OPT or CH_8_OPT would be used).
 
 ..  youtube:: rGFO73ZxADY
     :width: 100%
@@ -79,9 +79,9 @@ to enable the precision landing feature and then Reboot the autopilot.
 -  :ref:`PLND_ENABLED <PLND_ENABLED>` = 1
 -  :ref:`PLND_TYPE <PLND_TYPE>` = 2
 
-To enable Precision Loiter, an :ref:`Auxiliary Function Switch <channel-7-and-8-options>` must be set to "Precision Loiter":
+To enable Precision Loiter, an :ref:`Auxiliary Function Switch <common-auxiliary-functions>` must be set to 39 to enable "Precision Loiter"
 
--  :ref:`CH7_OPT <CH7_OPT>` = 39 (or alternatively set :ref:`CH8_OPT <CH8_OPT>` to :ref:`CH12_OPT <CH12_OPT>`)
+-  in versions prior to  Copter-4.0, a CHx_OPT parameter could be set via Mision Planner to 39 for this enable.
 
 Flying and Testing
 ==================

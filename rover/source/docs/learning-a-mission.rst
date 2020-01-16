@@ -12,7 +12,7 @@ Missions can be created by driving the vehicle around intermittently recording t
 
 If using version 3.2 (or higher) this can be accomplished by doing the following:
 
-- set the :ref:`Auxiliary Function Switch <common-auxiliary-functions>` to "Save Waypoint" by setting :ref:`CH7_OPTION <CH7_OPTION>` to "1"
+- set the :ref:`Auxiliary Function Switch <common-auxiliary-functions>` to "Save Waypoint" by setting and RCx_OPTION for a channel to 1. (Prior to version 4.0, CH7_OPTION was used)
 - wait for a good position estimate (i.e. LED will turn green)
 - drive the vehicle around in any mode except Auto.
 - when the vehicle is at a position that you would like to record as a waypoint, toggle the auxiliary function switch high (and then return to low)
