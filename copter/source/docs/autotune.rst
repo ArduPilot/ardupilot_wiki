@@ -22,7 +22,7 @@ Setup before flying
 #. Remove the camera gimbal or any other parts of the frame that could wobble in flight
 #. Select which combination of axis (roll, pitch, yaw) you wish to tune using the :ref:`AUTOTUNE_AXES <AUTOTUNE_AXES>` parameter
 #. Set the autotune's aggressiveness using the :ref:`AUTOTUNE_AGGR <AUTOTUNE_AGGR>` parameter (0.1=agressive, 0.075=medium, 0.050=weak), normally start with the default 0.1.
-#. For large copters (with props at least 13inch or 33cm diameter) set the Rate Roll and Pitch filters to 10hz (in Copter-3.3 these are RATE_RLL_FILT_HZ and RATE_PIT_FILT_HZ, in Copter-3.4 they are :ref:`ATC_RAT_RLL_FILT <ATC_RAT_RLL_FILT__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_PIT_FILT <ATC_RAT_PIT_FILT__AC_AttitudeControl_Multi>`)
+#. For large copters (with props at least 13inch or 33cm diameter) set the Rate Roll and Pitch filters to 10hz, these are: :ref:`ATC_RAT_RLL_FLTT <ATC_RAT_RLL_FLTT>`, :ref:`ATC_RAT_RLL_FLTD<ATC_RAT_RLL_FLTD>`, :ref:`ATC_RAT_PIT_FLTT <ATC_RAT_PIT_FLTT>`, :ref:`ATC_RAT_PIT_FLTD <ATC_RAT_PIT_FLTD>` , (in Copter-3.4 they are ATC_RAT_RLL_FILT and ATC_RAT_PIT_FILT) 
 #. It is recommended to enable :ref:`battery voltage scaling of PID gains <current-limiting-and-voltage-scaling>`
 
 How to invoke AutoTune
@@ -91,18 +91,18 @@ Additional Notes
 
 -   The full list of parameters that may be updated by AutoTune
 
-        - Roll angular P gain :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>` (in AC3.3: STB_RLL_P)
-        - Roll rate P, I and D gains :ref:`ATC_RAT_RLL_P <ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_RLL_I <ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_RLL_D <ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`  (in AC3.3: RATE_RLL_P, RATE_RLL_I, RATE_RLL_D)
+        - Roll angular P gain :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>` 
+        - Roll rate P, I and D gains :ref:`ATC_RAT_RLL_P <ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_RLL_I <ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_RLL_D <ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`  
         - Roll max acceleration :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`
-        - Pitch angular P gain :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>` (in AC3.3: STB_PIT_P)
-        - Pitch rate P, I and D gains :ref:`ATC_RAT_PIT_P <ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_PIT_I <ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_PIT_D <ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`  (in AC3.3: RATE_PIT_P, RATE_PIT_I, RATE_PIT_D)
+        - Pitch angular P gain :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>` 
+        - Pitch rate P, I and D gains :ref:`ATC_RAT_PIT_P <ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_PIT_I <ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_PIT_D <ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`  
         - Pitch max acceleration :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`
-        - Yaw angular P gain :ref:`ATC_ANG_YAW_P <ATC_ANG_YAW_P>` (in AC3.3: STB_YAW_P)
-        - Yaw rate P, I gain :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_YAW_I <ATC_RAT_YAW_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_YAW_D <ATC_RAT_YAW_D__AC_AttitudeControl_Multi>` (in AC3.3: RATE_YAW_P, RATE_YAW_I, RATE_YAW_D)
-        - Yaw rate filter :ref:`ATC_RAT_YAW_FILT <ATC_RAT_YAW_FILT__AC_AttitudeControl_Multi>` (in AC3.3: RATE_YAW_FILT_HZ)
+        - Yaw angular P gain :ref:`ATC_ANG_YAW_P <ATC_ANG_YAW_P>`
+        - Yaw rate P, I gain :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_YAW_I <ATC_RAT_YAW_I__AC_AttitudeControl_Multi>`, :ref:`ATC_RAT_YAW_D <ATC_RAT_YAW_D__AC_AttitudeControl_Multi>`
+        - Yaw rate filter :ref:`ATC_RAT_YAW_FLTT <ATC_RAT_YAW_FLTT>` , :ref:`ATC_RAT_YAW_FLTE <ATC_RAT_YAW_FLTE>` (in AC3.6: ATC_RAT_YAW_FLT)
         - Yaw max acceleration :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`
         - Roll and pitch axis rate feed-forward is enabled (:ref:`ATC_RATE_FF_ENAB <ATC_RATE_FF_ENAB>`)
--   After you have a good tune, you may wish to increase :ref:`ATC_THR_MIX_MAX <ATC_THR_MIX_MAX>` (or MOT_THR_MIX_MAX in Copter-3.3) to 0.9 (default is 0.5) to increase prioritisation of attitude control over throttle.  This can reduce the pitch overshoot sometimes seen (especially on copters with large propellers) in AltHold if the vehicle suddenly slows after performing fast forward flight.  In this situation wind catches under the propellers providing lift but also disturbs the vehicle's attitude leading to a conflict between throttle and attitude control.  The danger in increasing this parameter's value is that if the rate gains are later raised so high that the vehicle oscillates badly it may be difficult for the vehicle to descend (because it will prioritise trying to correct the attitude oscillations and never reduce throttle sufficiently).
+-   After you have a good tune, you may wish to increase :ref:`ATC_THR_MIX_MAX <ATC_THR_MIX_MAX>`  to 0.9 (default is 0.5) to increase prioritization of attitude control over throttle.  This can reduce the pitch overshoot sometimes seen (especially on copters with large propellers) in AltHold if the vehicle suddenly slows after performing fast forward flight.  In this situation wind catches under the propellers providing lift but also disturbs the vehicle's attitude leading to a conflict between throttle and attitude control.  The danger in increasing this parameter's value is that if the rate gains are later raised so high that the vehicle oscillates badly it may be difficult for the vehicle to descend (because it will prioritize trying to correct the attitude oscillations and never reduce throttle sufficiently).
 -   AutoTune can **request very large and fast changes in output**\ s to the motors which can cause ESC sync issues especially when using SimonK firmware and/or low KV motors (under 500KV). See this `video showing a test <https://www.youtube.com/watch?v=hBUBbeyLe0Q>`__ which recreates a sync problem.
 -   AutoTune is sometimes unable to find a good tune for frames with very soft vibration dampening of the autopilot or very flexible arms.
 -   For best results the copter shouldn't be allowed to build up too much horizontal speed. This can be prevented by applying a quick correction between tests (twitches) to stop the vehicle from flying too fast.
