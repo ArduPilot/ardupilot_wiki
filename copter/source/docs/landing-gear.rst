@@ -52,8 +52,7 @@ following parameters:
 
 -  If using AC3.5 (or higher) set ``SERVOn_FUNCTION to 29`` "Landing Gear", where **n** is the number for
    the connected servo (e.g. :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` for AUX1, :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` for AUX2 etc.)
--  If using AC3.4.6 (or lower) set ``RCn_FUNCTION to 29`` "Landing Gear", where **n** is the number for
-   the connected servo (e.g. ``RC9_FUNCTION <RC9_FUNCTION>`` for AUX1, ``RC10_FUNCTION <RC10_FUNCTION>`` for AUX2 etc.)
+-  If using AC3.4.6 (or lower) set ``RCn_FUNCTION to 29`` "Landing Gear", where **n** is the number for the connected servo (e.g. ``RC9_FUNCTION <RC9_FUNCTION>`` for AUX1, ``RC10_FUNCTION <RC10_FUNCTION>`` for AUX2 etc.)
 -  ``LGR_SERVO_DEPLOY <LGR_SERVO_DEPLOY>``
    — servo PWM value required to deploy the landing gear.
 -  ``LGR_SERVO_RTRACT <LGR_SERVO_RTRACT>``
@@ -64,7 +63,7 @@ following parameters:
 
    MissionPlanner: Landing Gear Configuration
 
-Set an :ref:`auxiliary switch <channel-7-and-8-options>` to "Landing Gear" in order to enable manual control (i.e. set :ref:`CH7_OPT <CH7_OPT>` or :ref:`CH8_OPT <CH8_OPT>` to "29")
+Set an :ref:`auxiliary switch <channel-7-and-8-options>` to "Landing Gear" in order to enable manual control (i.e. set CH7_OPT or CH8_OPT to "29")
 
 When the switch is in the "low" position the gear will be deployed, "high" will be retracted, "middle" is a neutral position that will not change the gear's state.
 

@@ -12,8 +12,8 @@ Configuration
 
 By default the auxiliary switches are disabled but you can assign
 features using the *Mission Planner*'s **Config/Tuning \| Extended
-Tuning** screen or by setting the :ref:`CH7_OPT <CH7_OPT>`, :ref:`CH8_OPT <CH8_OPT>`, :ref:`CH9_OPT <CH9_OPT>`,
-:ref:`CH10_OPT <CH10_OPT>`, :ref:`CH11_OPT <CH11_OPT>`, or :ref:`CH12_OPT <CH12_OPT>` parameters directly.
+Tuning** screen or by setting the CH7_OPT,  CH8_OPT, CH9_OPT,
+CH10_OPT , CH11_OPT, or CH12_OPT parameters directly.
 
 .. image:: ../images/MPchan7options.jpg
     :target: ../_images/MPchan7options.jpg
