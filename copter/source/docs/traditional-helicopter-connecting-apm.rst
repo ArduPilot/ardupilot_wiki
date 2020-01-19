@@ -17,7 +17,7 @@ Before you begin connecting the system it is recommended to review the docs for 
 Overview of servo, and RX connection
 ====================================
 
-The RC input for many ardupilot compatible autopilots is either PPM SUM (8 channels) or S.Bus (up to 18 channels).  Some controllers also accept Spektrum satellite receivers.  For receivers that only output PWM, a PPM encoder is required to connect to the autopilot.  For all helicopter frames,the RC radio requires at least 6 channels.  Traditional helicopter and quadheli frames require the flight controller have at least 5 channels. The dual helicopter frame requires the flight controller have at least 7 channels. 
+The RC input for many ardupilot compatible autopilots is either PPM SUM (8 channels) or S.Bus (up to 18 channels).  Some controllers also accept Spektrum satellite receivers.  For receivers that only output PWM, a PPM encoder is required to connect to the autopilot however this is not recommended.  For all helicopter frames, an RC radio that has at least 6 channels is required.  For flight controllers, traditional helicopter and quadheli frames require one that has at least 5 output channels. The dual helicopter frame requires the flight controller have at least 7 output channels. 
 
 The default receiver channel to ArduCopter RC input function mapping is as follows:
 
