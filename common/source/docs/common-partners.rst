@@ -334,6 +334,17 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :width: 250px
             :align: center
             :target: https://www.dualrc.com/
+            
+      - .. image:: ../../../images/supporters/supporters_logo_davwings.png
+            :width: 250px
+            :align: center
+            :target: https://www.davwings.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_frsky.png
+            :width: 250px
+            :align: center
+            :target: https://www.frsky-rc.com/
 
       - .. image:: ../../../images/supporters/supporters_logo_blank.png
             :align: center
