@@ -5,9 +5,9 @@ External LEDs
 =============
 
 An external LED or LED Display can be added by connecting it to the autopilot's
-I2C port or, in 4.0 and later versions, if a serially programmed device, via a GPIO capable pin using the SERVOx_FUNCTION for that output. UAVCAN LEDs on the CANBUS are also supported (See :ref:`UAVCAN Setup <common-uavcan-setup-advanced>` ).
+I2C port or, in 4.0 and later versions, if a serially programmed device, via an output using the SERVOx_FUNCTION for that output. UAVCAN LEDs on the CANBUS are also supported (See :ref:`UAVCAN Setup <common-uavcan-setup-advanced>` ).
 
-.. note:: On Pixhawk style architecture autopilots which use an IOMCU for the PWM1-8 outputs, only the "AUX" outputs are GPIO capable. See :ref:`common-gpios`. Note that the same grouping restrictions which apply to setting outputs to different PWM rates and/or DShot, apply to LEDs also since the timer associated with each group of outputs cannot be used for different rates. See also  :ref:`common-dshot` 
+.. note:: Note that the same grouping restrictions which apply to setting outputs to different PWM rates and/or DShot, apply to LEDs also since the timer associated with each group of outputs cannot be used for different rates. See also  :ref:`common-dshot` 
 
 RGB LEDs/Displays with I2C Connection
 =====================================
@@ -20,7 +20,7 @@ RGB LEDs/drivers supported are:
 - PCA9685 driver
 - NCP5623 driver
 
-OLED Displays supported are SSH1106 and SSD1306 with 128x64 pixel displays.
+OLED Displays supported are SSH1106 and SSD1306 with 128x64 pixel displays. See :ref:`common-display-onboard` for more information.
 
 .. image:: ../../../images/ssh1106.jpg
     :width: 450px
@@ -39,9 +39,9 @@ Currently, Ardupilot supports the Neopixel style RGB LED and strings. They can b
 
 .. image:: ../../../images/neopixel-string.jpg
 
-A "NeoPixel" style (WS2812B compatible) RGB LED can be attached to any GPIO capable output by setting its SERVOx_FUNCTION to one of the ``NeoPixelx`` output functions and setting :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixel``. Multiple ``NeoPixelx`` output functions are provided for connecting multiple strings (up to 4).
+A "NeoPixel" style (WS2812B compatible) RGB LED can be attached to any PWM output by setting its SERVOx_FUNCTION to one of the ``NeoPixelx`` output functions and setting :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixel``. Multiple ``NeoPixelx`` output functions are provided for connecting multiple strings (up to 4).
 
-.. note:: Be sure to configure the output as a GPIO instead of a PWM output. See :ref:`common-gpios`
+.. note:: Be sure the output is configures as normal PWM instead of a GPIO output. See :ref:`common-gpios`
 
 If used for notification purposes, be sure to set :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` to "Neopixel" (8).
 
