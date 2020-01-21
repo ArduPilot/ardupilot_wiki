@@ -41,7 +41,7 @@ Currently, Ardupilot supports the Neopixel style RGB LED and strings. They can b
 
 A "NeoPixel" style (WS2812B compatible) RGB LED can be attached to any GPIO capable output by setting its SERVOx_FUNCTION to one of the ``NeoPixelx`` output functions and setting :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixel``. Multiple ``NeoPixelx`` output functions are provided for connecting multiple strings (up to 4).
 
-.. note:: Be sure to configure the output as a GPIO instead of a PWM output. See :ref:`common-gpios`
+.. note:: Be sure the output is configured as PWM instead of GPIO. See :ref:`common-gpios`
 
 If used for notification purposes, be sure to set :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` to "Neopixel" (8).
 
