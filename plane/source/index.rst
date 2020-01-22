@@ -109,7 +109,7 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
     QuadPlane Support <docs/quadplane-support>
     Mission Planning <docs/common-mission-planning>
     Logs <docs/common-logs>
-    Optional Hardware <docs/common-optional-hardware>
+    Peripheral Hardware <docs/common-optional-hardware>
     Use-Cases and Applications <docs/common-use-cases-and-applications>
     Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>

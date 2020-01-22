@@ -1,8 +1,8 @@
 .. _common-optional-hardware:
 
-=================
-Optional Hardware
-=================
+===================
+Peripheral Hardware
+===================
 
 This section groups hardware that may (or may not be) present on your
 frame, including rangefinders, camera mounts, telemetry radios etc. For
@@ -63,6 +63,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="copter"]
     Precision Landing and Loiter (IRLock) <precision-landing-with-irlock>
 [/site]
+    Radio Control Systems <common-rc-systems>
     Rangefinders (Sonar, Lidar) <common-rangefinder-landingpage>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Relay Switch <common-relay>
