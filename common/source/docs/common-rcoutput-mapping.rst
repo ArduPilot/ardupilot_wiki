@@ -511,6 +511,13 @@ Ignition/Starter/Choke
 
 For control of an internal combustion engine's spark plug/igniter, starter motor, and choke. See :ref:`common-ice` .
 
+NEOPIXEL LED STRINGS
+--------------------
+
+Neopixel LEDs/Strings can be controlled using ``Function IDs 120-124``, thereby supporting up to four strings independtly controlled. These may be used for ArduPilot notifications and warnings (See :ref:`common-ntf-devices` ) or controlled via LUA scripting (See :ref:`common-lua-scripts`.
+This is available in all vehicles.
+
+
 MISCELLANEOUS FUNCTIONS
 -----------------------
 
@@ -535,6 +542,28 @@ Sprayer Pump/Mixer
 ++++++++++++++++++
 
 These outputs are controlling a :ref:`sprayer` .
+
+GENERAL PURPOSE LUA SCRIPTING OUTPUTS
+-------------------------------------
+
+:ref:`Lua Scripts <common-lua-scripts>` can also directly control autopilot outputs. Using ``Function IDs 94-106`` provides the ability to configure up to 16 of these outputs, if the autopilot is capable. This is available in all vehicles.
+
+INTERNAL CONTROLLER ACCESS
+--------------------------
+
++--------------------------------+-----+---------------------------------------+
+|       Function                 | ID  |        Available in:                  |
++--------------------------------+-----+---------------------------------------+
+|      RateRoll                  | 124 |    Copter                             |
++--------------------------------+-----+---------------------------------------+
+|      RatePitch                 | 125 |     Copter                            |
++--------------------------------+-----+---------------------------------------+
+|      RateThrust                | 126 |     Copter                            |
++--------------------------------+-----+---------------------------------------+
+|      RateYaw                   | 127 |     Copter                            |
++--------------------------------+-----+---------------------------------------+
+
+These outputs provide the FeedForward terms from the attitude control loops, scaled by the ATC_RAT_X_FF PID parameter values for use with external vehicle controllers.
 
 DEFAULT VALUES
 --------------
