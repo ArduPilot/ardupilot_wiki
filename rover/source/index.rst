@@ -36,7 +36,7 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
     Advanced Configuration <docs/common-advanced-configuration>
     Mission Planning <docs/common-mission-planning>
     Logs <docs/common-logs>
-    Optional Hardware <docs/common-optional-hardware>
+    Peripheral Hardware <docs/common-optional-hardware>
     Boats <docs/boat-configuration>
     Balance Bots <docs/balance_bot-home>
     Sailboats <docs/sailboat-home>

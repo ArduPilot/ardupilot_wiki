@@ -180,7 +180,7 @@ Getting more info
    Advanced Configuration <docs/common-advanced-configuration>
    Mission Planning <docs/common-mission-planning>
    Logs <docs/common-logs>
-   Optional Hardware <docs/common-optional-hardware>
+   Peripheral Hardware <docs/common-optional-hardware>
    Traditional Helicopters <docs/traditional-helicopters>
    Tricopter <docs/tricopter>
    SingleCopter and CoaxCopter <docs/singlecopter-and-coaxcopter>
