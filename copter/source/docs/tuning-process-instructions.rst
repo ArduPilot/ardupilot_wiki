@@ -42,12 +42,12 @@ PID Controller Initial Setup
 
 For Copter-4.0 (and later):
 
-- :ref:`ATC_RAT_PIT_FLTD <ATC_RAT_PIT_FLTD>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_PIT_FLTT <ATC_RAT_PIT_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_RLL_FLTD <ATC_RAT_RLL_FLTD>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_RLL_FLTT <ATC_RAT_RLL_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`ATC_RAT_YAW_FLTE <ATC_RAT_YAW_FLTE>` : 2
-- :ref:`ATC_RAT_YAW_FLTT <ATC_RAT_YAW_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_PIT_FLTD <ATC_RAT_PIT_FLTD__AC_AttitudeControl_Multi>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_PIT_FLTT <ATC_RAT_PIT_FLTT__AC_AttitudeControl_Multi>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_RLL_FLTD <ATC_RAT_RLL_FLTD__AC_AttitudeControl_Multi>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_RLL_FLTT <ATC_RAT_RLL_FLTT__AC_AttitudeControl_Multi>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`ATC_RAT_YAW_FLTE <ATC_RAT_YAW_FLTE__AC_AttitudeControl_Multi>` : 2
+- :ref:`ATC_RAT_YAW_FLTT <ATC_RAT_YAW_FLTT__AC_AttitudeControl_Multi>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 
 For Copter-3.6 (and earlier):
 
