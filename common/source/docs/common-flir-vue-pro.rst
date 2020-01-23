@@ -38,7 +38,7 @@ To allow triggering the taking of pictures during a mission or from a transmitte
 
 - :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` = 10 (Camera Trigger)
 - :ref:`CAM_SERVO_ON <CAM_SERVO_ON>` = 1900
-- :ref:`CH8_OPT <CH8_OPT>` or :ref:`RC8_OPTION <RC8_OPTION>` = 9 (Camera Trigger) to enable triggering from transmitter switch 8
+- `CH8_OPT`` or :ref:`RC8_OPTION <RC8_OPTION>` = 9 (Camera Trigger) to enable triggering from transmitter switch 8
 
 Configure the Phone
 -------------------

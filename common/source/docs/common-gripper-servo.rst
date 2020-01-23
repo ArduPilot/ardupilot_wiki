@@ -36,11 +36,13 @@ Configuration
 Controlling Gripper from the transmitter
 ========================================
 
-The transmitter's auxiliary switch can control the gripper.  If using the mission planner, select Config/Tuning > Extended Tuning and set the Ch7 Opt or Ch8 Opt drop-down to "EPM" or "Gripper".
+The transmitter's auxiliary switch can control the gripper.
+
+If using a firmware version prior to 4.0. CH7_OPT or CH8_OPT can be used to control the gripper by setting it to 19. If using the mission planner, select Config/Tuning > Extended Tuning and set the Ch7 Opt or Ch8 Opt drop-down to "EPM" or "Gripper".
 
 .. image:: ../../../images/gripper_servo_auxswitch.png
 
-- or directly set :ref:`CH7_OPT <CH7_OPT>` or :ref:`CH8_OPT <CH8_OPT>` to 19
+- In firmware versions 4.0 later, use an RC channel for control by setting is ``RCx_OPTION`` parameter to 19.
 
 Controlling Gripper during a mission
 ====================================

@@ -36,7 +36,7 @@ For other builds these are the standard params that should be set:
 - :ref:`FRAME_CLASS <FRAME_CLASS>` to 13 (HeliQuad)
 - :ref:`FRAME_TYPE <FRAME_CLASS>` to 1 ("X" if front right motors spins counter clockwise) or 3 ("H" if front right motor spins clockwise)
 
-Similar to a :ref:`traditional helicopter <traditional-helicopters>` an :ref:`auxiliary switch <channel-7-and-8-options>` should be set to "Motor Interlock" to turn on/off the motor.  Normally this is channel 8 so you could set :ref:`CH8_OPT <CH8_OPT>` to 32.
+Similar to a :ref:`traditional helicopter <traditional-helicopters>` an :ref:`auxiliary switch <common-auxiliary-functions>` should be set to "Motor Interlock" to turn on/off the motor.  Normally this is channel 8 so you could set :ref:`RC8_OPTION<RC8_OPTION>` to 32.
 
 Videos
 ======
