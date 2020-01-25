@@ -187,7 +187,7 @@ This tells us that we can connect *Mission Planner* to either UDP port
 
    ::
 
-       GUIDED> output add 1: 127.0.0.1:14553
+       GUIDED> output add 127.0.0.1:14553
 
 *Mission Planner* can then be used to control the simulated vehicle in
 exactly the same way as though it were a real vehicle. We can reproduce
