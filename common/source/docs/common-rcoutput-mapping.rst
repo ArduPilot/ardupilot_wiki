@@ -554,7 +554,7 @@ INTERNAL CONTROLLER ACCESS
 +--------------------------------+-----+---------------------------------------+
 |       Function                 | ID  |        Available in:                  |
 +--------------------------------+-----+---------------------------------------+
-|      RateRoll                  | 124 |    Copter                             |
+|      RateRoll                  | 124 |     Copter                            |
 +--------------------------------+-----+---------------------------------------+
 |      RatePitch                 | 125 |     Copter                            |
 +--------------------------------+-----+---------------------------------------+
@@ -563,7 +563,7 @@ INTERNAL CONTROLLER ACCESS
 |      RateYaw                   | 127 |     Copter                            |
 +--------------------------------+-----+---------------------------------------+
 
-These outputs provide the FeedForward terms from the attitude control loops, scaled by the ATC_RAT_X_FF PID parameter values for use with external vehicle controllers.
+These outputs provide the FeedForward terms from the attitude control loops, scaled by the ATC_RAT_X_FF PID parameter values for roll/pitch/yaw for use with external vehicle controllers.
 
 DEFAULT VALUES
 --------------
