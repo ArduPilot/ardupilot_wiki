@@ -17,7 +17,7 @@ Before you begin connecting the system it is recommended to review the docs for 
 Overview of servo, and RX connection
 ====================================
 
-The RC input for many ardupilot compatible autopilots is either PPM SUM (8 channels) or S.Bus (up to 18 channels).  Some controllers also accept Spektrum satellite receivers.  For receivers that only output PWM, a PPM encoder is required to connect to the autopilot however this is not recommended.  For all helicopter frames, an RC radio that has at least 6 channels is required.  For flight controllers, traditional helicopter and quadheli frames require one that has at least 5 output channels. The dual helicopter frame requires the flight controller have at least 7 output channels. 
+The RC input for many ardupilot compatible autopilots is either PPM SUM (8 channels) or S.Bus (up to 18 channels).  Some controllers also accept Spektrum satellite receivers.  For receivers that only output PWM, a PPM encoder is required to connect to the autopilot, however this is not recommended for applications requiring minimum possible latency.  For all helicopter frames, an RC radio that has at least 6 channels is required.  For flight controllers, traditional helicopter and quadheli frames require one that has at least 5 output channels. The dual helicopter frame requires the flight controller have at least 7 output channels. 
 
 The default receiver channel to ArduCopter RC input function mapping is as follows:
 
@@ -42,6 +42,7 @@ The default receiver channel to ArduCopter RC input function mapping is as follo
 | 8 (Aux 3)    | Motor Interlock |
 |              | (throttle)      |
 +--------------+-----------------+
+
 Note: Functions are already mapped by RCMAP parameters. 
 
 The output on most controllers for SERVO's 1 thru 8 are labled Main Out:
@@ -49,7 +50,7 @@ The output on most controllers for SERVO's 1 thru 8 are labled Main Out:
 .. image:: ../images/PH21_2.jpg
     :target: ../_images/PH21_2.jpg
 
-The :ref:`autopilot output functions wiki <common-rcoutput-mapping>` shows the complete list of servo output functions.  The default swashplate is H3-120 where Motor 1 (servo function 33) left front servo, goes to output 1; Motor 2 (servo function 34), right front servo goes to output 2; and Motor 3 (servo function 35), rear (elevator) servo goes to output 3. See the :ref:`swashplate setup wiki <traditional-helicopter-swashplate-setup>` for more details.
+The :ref:`autopilot output functions wiki <common-rcoutput-mapping>` shows the complete list of servo output functions.  The default swashplate is H3-120 where Motor 1 (servo function 33) left front servo, goes to output 1; Motor 2 (output function 34), right front servo goes to output 2; and Motor 3 (output function 35), rear (elevator) servo goes to output 3. See the :ref:`swashplate setup wiki <traditional-helicopter-swashplate-setup>` for more details.
 
 Tail servo is designated as Motor 4 (servo function 36) and is defaulted to output 4. Direct Drive Fixed Pitch (DDFP) tail rotors will also be connected to Motor 4 and the tail type parameter (:ref:`H_TAIL_TYPE <H_TAIL_TYPE>`) set to DDFP.  Direct Drive Variable Pitch (DDVP) tail rotors will use Motor 4 (defaulted to output 4) to control tail rotor pitch and the tail ESC (servo function 32) connection is defaulted to output 7. This is automatically configured as tail RSC for the servo 7 function when the tail type parameter (:ref:`H_TAIL_TYPE <H_TAIL_TYPE>`) is set to DDVP. 
  
@@ -81,5 +82,5 @@ It is recommended to calibrate the compasses at this time as well. This is the s
 
 Accelerometer Calibration
 -------------------------
-If the accelerometers were not calibrated on the bench prior to installation it must be calibrated before proceeding.
+If the accelerometers were not calibrated on the bench prior to installation it must be calibrated before proceeding.(It is usually easier to calibrate on the bench and then re-calibrate only the level position, if required, once installed.)
 :ref:`See this topic <common-accelerometer-calibration>`.
