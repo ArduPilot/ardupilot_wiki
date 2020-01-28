@@ -26,7 +26,6 @@ companion computer.
    <tr><td>Airmode</td><td>-</td><td>-/+</td><td></td><td>Actually not a mode, but a feature,see below</td></tr>
    <tr><td>Alt Hold</td><td>s</td><td>+</td><td></td><td>Holds altitude and self-levels the roll & pitch</td></tr>
    <tr><td>Auto</td><td>A</td><td>A</td><td>Y</td><td>Executes pre-defined mission</td></tr>
-   <tr><td>Autonomous Autorotation</td><td>A</td><td>A</td><td>Y</td><td>Used for emergencies in traditional helicopters. Helicopter only.  Currently SITL only.</td></tr>
    <tr><td>AutoTune</td><td>s</td><td>A</td><td>Y</td><td>Automated pitch and bank procedure to improve control loops</td></tr>
    <tr><td>Brake</td><td>s</td><td>A</td><td>Y</td><td>Brings copter to an immediate stop</td></tr>
    <tr><td>Circle</td><td>s</td><td>A</td><td>Y</td><td>Automatically circles a point in front of the vehicle</td></tr>
@@ -35,6 +34,7 @@ companion computer.
    <tr><td>FlowHold</td><td>s</td><td>A</td><td></td><td>Position control using Optical Flow</td></tr>
    <tr><td>Follow</td><td>s</td><td>A</td><td>Y</td><td>Follows another vehicle</td></tr>
    <tr><td>Guided</td><td>A</td><td>A</td><td>Y</td><td>Navigates to single points commanded by GCS</td></tr>
+    <tr><td>Heli_Autorotate</td><td>A</td><td>A</td><td>Y</td><td>Used for emergencies in traditional helicopters. Helicopter only.  Currently SITL only.</td></tr>
    <tr><td>Land</td><td>A</td><td>s</td><td>(Y)</td><td>Reduces altitude to ground level, attempts to go straight down</td></tr>
    <tr><td>Loiter</td><td>s</td><td>s</td><td>Y</td><td>Holds altitude and position, uses GPS for movements</td></tr>
    <tr><td>PosHold</td><td>s</td><td>+</td><td>Y</td><td>Like loiter, but manual roll and pitch when sticks not centered</td></tr>
@@ -78,7 +78,7 @@ Additional flight modes:
 
 -  :ref:`Acro <acro-mode>`
 -  :ref:`AirMode <airmode>`
--  :ref:`Autonomous Autorotation <traditional-helicopter-autorotation-mode>` for traditional helicopters only.
+-  :ref:`Heli_Autorotate <traditional-helicopter-autorotation-mode>` for traditional helicopters only.
 -  :ref:`AutoTune <autotune>`
 -  :ref:`Brake <brake-mode>`
 -  :ref:`Circle <circle-mode>`
@@ -113,7 +113,7 @@ of GPS dependency for Copter flight modes.
 Requires GPS lock prior to takeoff:
 
 -  :ref:`Auto <auto-mode>`
--  :ref:`Autonomous Autorotation <traditional-helicopter-autorotation-mode>`
+-  :ref:`Heli_Autorotate <traditional-helicopter-autorotation-mode>`
 -  :ref:`Circle <circle-mode>`
 -  :ref:`Drift <drift-mode>`
 -  :ref:`Follow <follow-mode>`
@@ -146,7 +146,6 @@ Full list of flight modes
     Altitude Hold <altholdmode>
     AirMode<airmode>
     Auto <auto-mode>
-    Autonomous Autorotation <traditional-helicopter-autorotation-mode>
     Brake <brake-mode>
     Circle <circle-mode>
     Drift <drift-mode>
@@ -155,6 +154,7 @@ Full list of flight modes
     Follow <follow-mode>
     Follow Me (GSC Enabled) <ac2_followme>
     Guided <ac2_guidedmode>
+    Heli_Autorotate <traditional-helicopter-autorotation-mode>
     Land <land-mode>
     Loiter <loiter-mode>
     PosHold <poshold-mode>
