@@ -58,7 +58,8 @@ based upon your set-up.
     Benewake TF02 / TF03 <common-benewake-tf02-lidar>
     Benewake TFmini / TFmini Plus <common-benewake-tfmini-lidar>
     Garman Lidar-Lite <common-rangefinder-lidarlite>
-    Leddar One Lidar <common-leddar-one-lidar>
+    LeddarTech Leddar One <common-leddar-one-lidar>
+    LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
     LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
