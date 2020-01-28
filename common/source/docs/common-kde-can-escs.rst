@@ -39,3 +39,26 @@ Connection and Configuration
 - Set :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` = 2000 so ArduPilot uses an output range that matches the ESCs input range
 [/site]
 - Set ``SERVOx_MIN`` = 1000 and ``SERVOx_MAX`` = 2000 for each ESC connected (``x`` corresponds to the ESC number) so ArduPilot uses an output range that matches the ESCs input range
+
+Logging and Reporting
+---------------------
+
+KDECAN ESCs provide information back to the autopilot which is recorded in the autopilot's onboard log's ESCn messages and can be viewed in any :ref:`ArduPilot compatible log viewer <common-logs>`.  This information includes:
+
+- RPM
+- Voltage
+- Current
+- ESC Temperature
+- Total Current
+
+The RCOU messages are also written to the onboard logs which hold the requested speed sent to the ESCs expressed as a number from 1000 (meaning stopped) to 2000 (meaning full speed).
+
+This information can also be viewed in real-time using a ground station.  If using the Mission Planner go to the Flight Data screen's status tab and look for esc1_rpm.
+
+.. image:: ../../../images/dshot-realtime-esc-telem-in-mp.jpg
+    :target: ../_images/dshot-realtime-esc-telem-in-mp.jpg
+    :width: 450px
+
+.. note::
+
+   Sending ESC data to the GCS requires using MAVLink2.  Please check the appropriate SERIALx_PROTOCOL parameter is 2 (where "x" is the serial port number used for the telemetry connection).

@@ -92,6 +92,22 @@ The steps required are:
 .. image:: ../../../images/ESC_cli_setup.png
     :target: ../_images/ESC_cli_setup.png
 
+Logging and Reporting
+---------------------
+
+UAVCAN ESCs provide information back to the autopilot which is recorded in the autopilot's onboard log's CESC messages and can be viewed in any :ref:`ArduPilot compatible log viewer <common-logs>`.  This information includes:
+
+- Error Count
+- Voltage
+- Current
+- Temperature
+- RPM
+- Power (as a percentage)
+
+The RCOU messages are also written to the onboard logs which hold the requested speed sent to the ESCs expressed as a number from 1000 (meaning stopped) to 2000 (meaning full speed).
+
+Unlike other CAN ESCs, this information cannot be viewed in real-time through the ground station but this will likely be added in the future (`see this issue <https://github.com/ArduPilot/ardupilot/issues/13396>`__)
+
 Additional information
 ======================
 

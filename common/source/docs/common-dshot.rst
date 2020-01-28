@@ -151,13 +151,18 @@ Set the following parameters to enable BLHeli_32 telemetry feedback to a autopil
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors. Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
 
-The flight board requests telemetry from only one ESC at a time, cycling between them. The following data is logged in the ESCn log messages in your dataflash log. This can be viewed in any ArduPilot dataflash log viewer.
+Logging and Reporting
+---------------------
+
+The autopilot requests status information from one ESC at a time, cycling between them. This information is logged to the onboard log's ESCn messages and can be viewed in any :ref:`ArduPilot compatible log viewer <common-logs>`.
 
 - RPM
 - Voltage
 - Current
 - Temperature
 - Total Current
+
+The RCOU messages are also written to the onboard logs which hold the requested speed sent to the ESCs expressed as a number from 1000 (meaning stopped) to 2000 (meaning full speed).
 
 This data can also be viewed in real-time using a ground station.  If using the Mission Planner go to the Flight Data screen's status tab and look for esc1_rpm.
 
@@ -166,6 +171,7 @@ This data can also be viewed in real-time using a ground station.  If using the 
     :width: 450px
 
 .. note::
-   Sending BLHeli_32 telemetry data to your GCS requires using mavlink2 on your GCS connection. While on current ArduPilot firmware the USB port defaults to mavlink2, it might require adjusting the protocol setting when using a different port for GCS connection.
+
+   Sending BLHeli_32 telemetry data to the GCS requires the telemetry connection use MAVLink2.  ArduPilot uses MAVLink2 by default on the USB port but if another port is used it may be necessary to set the SERIALx_PROTOCOL parameter to 2 (where "x" is the serial port number used for the telemetry connection).
 
 In addition, some telemetry values can be displayed on the integrated :ref:`on-board OSD <common-osd-overview>`, if your autopilot has one.
