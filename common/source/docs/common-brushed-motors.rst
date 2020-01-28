@@ -19,7 +19,7 @@ Verified Motor Drivers
 ----------------------
 
 - `Pololu G2 High-Power Motor Driver <https://www.pololu.com/product/2991>`__ support "BrushedWithRelay"
-- `RoboteQ brushless motor controllers <https://www.roboteq.com/index.php/roboteq-products-and-services/brushless-dc-motor-controllers>`__ support "Brushed BiPolar" and "BrushedWithRelay"
+- `RoboClaw 2x7A Motor Controller <https://www.pololu.com/product/3284>`__ supports "Brushed BiPolar"
 - :ref:`SkyRocket <copter:skyrocket>` drones use "Brushed" motors
 
 Connection and Configuration
