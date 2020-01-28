@@ -34,6 +34,7 @@ Long Range
 .. toctree::
     :maxdepth: 1
 
+    DragonLink <common-dragonlink-rc>
     LTM telemetry <common-ltm-telemetry>
     RFD900 <common-rfd900>
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>
