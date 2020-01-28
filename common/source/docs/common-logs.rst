@@ -4,8 +4,8 @@
 Logs
 ====
 
-Topics related to mission logging and analysis
-----------------------------------------------
+Topics related to logging and analysis
+--------------------------------------
 
 .. toctree::
     :maxdepth: 1
@@ -25,8 +25,8 @@ Topics related to mission logging and analysis
     Measuring Vibration <common-measuring-vibration>
 [/site]
 
-Tools for log handling and analysis
------------------------------------
+Tools for log analysis
+----------------------
     
 .. toctree::
     :maxdepth: 1
