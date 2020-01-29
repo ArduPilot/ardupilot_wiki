@@ -11,9 +11,6 @@ These setup instructions describe how to setup `Cygwin <http://www.cygwin.com/>`
 
       There is a pre-built script at `/ardupilot/Tools/environment_install/install-prereqs-windows.ps1 <https://github.com/ArduPilot/ardupilot/tree/master/Tools/environment_install/install-prereqs-windows.ps1>`__ that will automatically perform all of the below steps.
 
-.. note::
-
-      There have been user reports that recent (> Jan 2019) versions of Cygwin are not able to compile the ARM-based builds. It is recommended that Windows users instead use :ref:`WSL <building-setup-windows10>` for compiling ARM-based builds.
 
 
 Install Cygwin
