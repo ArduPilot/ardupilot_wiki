@@ -44,7 +44,7 @@ Typical use-case is antenna tracking when serial telemetry data from Flight Cont
 Configuration
 -------------
 
-Parameter **SERIALX_PROTOCOL** has to be set to value *25* to enable LTM output from FC on given serial port. Note that only one LTM ouptut port is supported. If you set multiple serial ports to output LTM, only the first one found during serial driver initialisation will actually be assigned to output LTM telemetry.
+Parameter **SERIALX_PROTOCOL** has to be set to value *25* to enable LTM output from FC on given serial port. Note that only one LTM output port is supported. If you set multiple serial ports to output LTM, only the first one found during serial driver initialisation will actually be assigned to output LTM telemetry.
 
 .. figure:: ../../../images/ltm-ardupilot-conf-mission-planner.png
     :target: ../_images/ltm-ardupilot-conf-mission-planner.png
@@ -56,7 +56,7 @@ Parameter **SERIALX_PROTOCOL** has to be set to value *25* to enable LTM output 
 
     Don't forget to set your LTM telemetry port's baud rate to an appropriate value. If you are using FSK modems, baud rate value depends on capability of modems. 
     
-    Additionally, not all of your flight controller's serial ports support the lowest possible baud rate setting of 1 ( = 1200 baud). On STM32F4xx and F7xx based autopilots, these typically are USARTs 1 and 6 that run on the full system clock. If set to 1200 baud, these ports will default to 19200 baud instead. If you have issues getting correct LTM telemetry output at 1200 baud, try using a serial port other that USART 1 or 6. Check your flightcontroller's hardware page for further reference on UART to SERIALn mapping.
+    Additionally, not all of your flight controller's serial ports support the lowest possible baud rate setting of 1 ( = 1200 baud). On STM32F4xx and F7xx based autopilots, these typically are USARTs 1 and 6 that run on the full system clock. If set to 1200 baud, these ports will default to 19200 baud instead. If you have issues getting correct LTM telemetry output at 1200 baud, try using a serial port other that USART 1 or 6 or opt for 2400 baud instead. On STM32H7-based boards, 2400 baud is lowest supported UART baudrate. Check your flightcontroller's hardware page for further reference on UART to SERIALn mapping.
 
 
 ----------------------------------------
