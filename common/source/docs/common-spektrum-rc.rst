@@ -40,7 +40,4 @@ ArduPilot automatically discovers the serial protocol being used.
 .. image:: ../../../images/PX4SpektrumSatellite1.jpg
     :target: ../_images/PX4SpektrumSatellite1.jpg
 
-.. note::
-
-   Although binding may be successful, Spektrum satellite receivers only provide the correct signal to ardupilot if bound using the 11ms Frame Rate. Adjust this value using the transmitter.
 
