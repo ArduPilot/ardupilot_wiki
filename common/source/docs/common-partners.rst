@@ -338,7 +338,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_davwings.png
             :width: 250px
             :align: center
-            :target: https://www.davwings.com/
+            :target: http://www.davwings.com/
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_frsky.png
