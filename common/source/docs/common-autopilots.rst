@@ -45,6 +45,7 @@ Closed hardware
     Holybro Durandal H7 <common-durandal-overview>
     Holybro Kakute F4 <common-holybro-kakutef4>
     Holybro Kakute F7 AIO <common-holybro-kakutef7aio>
+    Holybro Kakute F7 Mini <common-holybro-kakutef7mini>
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
     Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>
     Mateksys F405-STD and variants <common-matekf405>
