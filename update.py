@@ -36,7 +36,7 @@ import glob
 import filecmp
 import time
 import sys
-
+import hashlib
 
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
 ALL_WIKIS =['copter', 'plane', 'rover','antennatracker','dev','planner','planner2','ardupilot']
@@ -104,12 +104,6 @@ def fetchparameters(site=args.site):
             subprocess.check_call(["mv", 'Parameters.rst', targetfile])
 
 
-
-def build_one(wiki):
-    '''build one wiki'''
-    print('make and clean: %s' % wiki)
-    subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
-    subprocess.check_call(["nice", "make", "html"], cwd=wiki)
 
 def build_one(wiki):
     '''build one wiki'''
@@ -353,6 +347,19 @@ def logmatch_code(matchobj, prefix):
         print("%s: except m8" % prefix)
 
 
+def is_the_same_file(file1, file2):
+    """ Compare two files using their SHA256 hashes"""
+    digests = []
+    for filename in [file1, file2]:
+        hasher = hashlib.sha256()
+        with open(filename, 'rb') as f:
+            buf = f.read()
+            hasher.update(buf)
+            a = hasher.hexdigest()
+            digests.append(a)
+
+    return(digests[0] == digests[1])
+
 def fetch_versioned_parameters(site=args.site):
     """
     It relies on "build_parameters.py" be executed before the "update.py"     
@@ -375,7 +382,7 @@ def fetch_versioned_parameters(site=args.site):
              
             # Remove old versioned param files
             if key is 'antennatracker': # To main the original script approach instead of the build_parameters.py approach.
-                old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,"AntennTracker")
+                old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,"AntennaTracker")
             else:
                 old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,key.title()) 
             try:  
@@ -424,19 +431,21 @@ def fetch_versioned_parameters(site=args.site):
                 # Check possible cached version
                 try:
                     new_file = key + "/source/docs/" + filename[str(filename).rfind("/")+1:]
-                    if os.path.isfile(filename.replace("new_params_mversion","old_params_mversion")):                   # The cached file exists?
-                        if ("latest" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.
-                            debug("Overwriting %s with %s" % (filename, new_file))                               
-                            shutil.copy2(filename, new_file)
-                            #create_latest_parameter_redirect(filename[str(filename).rfind("/")+1:], key)               # Piggyback this moment to create a redirect file called "parameters.rst" that pointer to the latest parameter file.  
-                        else:
-                            debug("Ignoring " + new_file)                               
-                    else:                                                                                               # If not cached, build it anyway.
-                        debug("Creating %s with %s" % (filename, new_file))                               
-                        shutil.copy2(filename, new_file)
+                    if os.path.isfile(filename.replace("new_params_mversion","old_params_mversion")): # The cached file exists?
+                        
+                        # Temporary debug messages to help with cache tasks.
+                        debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion","old_params_mversion")))
+                        debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion")))
+                        debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion","old_params_mversion")))
 
-                    if ("latest" in filename):   
-                        create_latest_parameter_redirect(filename[str(filename).rfind("/")+1:], key)
+                        if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.
+                            debug("Overwriting %s to %s" % (filename, new_file))                               
+                            shutil.copy2(filename, new_file)
+                        else:
+                            debug("It will reuse the last build of " + new_file)                               
+                    else:   # If not cached, build it anyway.
+                        debug("Creating %s to %s" % (filename, new_file))                               
+                        shutil.copy2(filename, new_file)
 
                 except Exception as e:
                     error(e)
@@ -448,7 +457,7 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
     For a given vehicle create a file called parameters.rst that redirects to the latest parameters file.(Create to maintaim retro compatibility.)
     
     """
-    out_line = "=====================\nAutomatic redirection\n=====================\n"
+    out_line = "======================\nParameters List (Full)(\n======================\n"
     out_line += "\n.. raw:: html\n\n"
     out_line += "   <script>location.replace(\"" + default_param_file[:-3] + "html" + "\")</script>"
     out_line += "\n\n"
@@ -475,7 +484,7 @@ def cache_parameters_files(site=args.site):
                     os.remove(file)
 
                 new_parameters_folder = os.getcwd() + '/../new_params_mversion/%s/' % value
-                new_parameters_files = [f for f in glob.glob(new_parameters_folder + "*.rst")]
+                new_parameters_files = [f for f in glob.glob(new_parameters_folder + "parameters-*.rst")]
                 for filename in new_parameters_files:
                     debug("Copying %s to %s" % (filename, old_parameters_folder))
                     shutil.copy2(filename, old_parameters_folder)

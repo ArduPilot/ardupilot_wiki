@@ -48,7 +48,7 @@ error_count = 0
 ## Parameters
 COMMITFILE = "git-version.txt"
 BASEURL = "https://firmware.ardupilot.org/"
-ALLVEHICLES =  ["AntennaTracker", "Copter" ,  "Plane", "Rover"] # Tested with "Sub" but inused 
+ALLVEHICLES =  ["AntennaTracker", "Copter" ,  "Plane", "Rover"] 
 VEHICLES = ALLVEHICLES
 
 BASEPATH = ""
@@ -75,14 +75,14 @@ vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with o
 def debug(str_to_print):
     """Debug output if verbose is set."""
     if args.verbose:
-        print("[build_parameters.py] " + str_to_print)
+        print("[build_parameters.py] " + str(str_to_print))
 
 
 def error(str_to_print):
     """Show and count the errors."""
     global error_count
     error_count += 1
-    print("[build_parameters.py][error]: " + str_to_print)
+    print("[build_parameters.py][error]: " + str(str_to_print))
 
 
 def check_temp_folders():
@@ -114,6 +114,9 @@ def setup():
     if args.single_vehicle in ALLVEHICLES:
         global VEHICLES
         VEHICLES = [args.single_vehicle]
+        print("[build_parameters.py] Running only for " + str(args.single_vehicle))
+    else:
+        print("[build_parameters.py] Vehicle %s not recognized, running for all vehicles." % str(args.single_vehicle))
 
     try:
         ## Goes to ardupilot folder and clean it and update to make sure that is the most recent one.
@@ -317,27 +320,31 @@ def generate_rst_files(commits_to_checkout_and_parse):
         """
         file_in = open(source_file, "r")
         file_out = open(dest_file, "w")
-        adjust_title_mark = 0
+        found_original_title = False
+        #adjust_title_mark = 0
         for line in file_in:
-            if (re.match("(^.. _)(.*):$", line))  and ("latest" not in filename):
+            if (re.match("(^.. _)(.*):$", line))  and ("latest" not in version_tag):
                 file_out.write(line[0:-2] + version_tag + ":\n")  # renames the anchors, but leave latest anchors  "as-is" to maintaim compatibility with all links across the wiki
            
             elif "Complete Parameter List" in line:
                 # Adjusting the page title
-                out_line = "\n.. raw:: html\n\n"
-                out_line += "   <h1>Complete Parameter List of " + version_tag[1:].replace("-"," ") + "</h1>\n\n"  # rename the page identifier to insert the version
+                out_line = "Complete Parameter List\n=======================\n\n"
+                out_line += "\n.. raw:: html\n\n"
+                out_line += "   <h2>Full Parameter List of " + version_tag[1:].replace("-"," ") + "</h2>\n\n"  # rename the page identifier to insert the version
                 
                 # Pigbacking and inserting the javascript selector
                 out_line += "\n.. raw:: html\n   :file: ../_static/parameters_versioning_script.inc\n\n"
-
                 file_out.write(out_line)
-                adjust_title_mark = len(out_line) -1
+            #     adjust_title_mark = len(out_line) -1
             
-            elif adjust_title_mark > 0: # adjust the size of horizontal '==========' bar
-                out_line = "=" * adjust_title_mark
-                out_line += "\n"
-                file_out.write(out_line)
-                adjust_title_mark = 0
+            # elif adjust_title_mark > 0: # adjust the size of horizontal '==========' bar
+            #     out_line = "=" * adjust_title_mark
+            #     out_line += "\n"
+            #     file_out.write(out_line)
+            #     adjust_title_mark = 0
+
+            elif ("=======================" in line) and (not found_original_title): # Ignores the original mark
+                found_original_title = True 
             
             else:
                 file_out.write(line)
@@ -365,7 +372,6 @@ def generate_rst_files(commits_to_checkout_and_parse):
         # Checkout an Commit ID in order to get its parameters
         try:
             debug("Git checkout on " + vehicle + " version " + version + " id " + commit_id )
-            
             os.system("git checkout --force " + commit_id)
             
         except Exception as e:
@@ -427,7 +433,9 @@ def generate_json(vehicles):
             if ("beta" in filename or "rc" in filename): # Plane uses BETA, Copter and Rover uses RCn 
                 json_lines.append(",\"" +  vehicle + " beta " + filename[(len("parameters-" + vehicle + "-beta")+1):-4] + "\" : \"" + filename[:-3] + "html\"" )
             elif ("latest" in filename):
-                json_lines.append(",\"" +  vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + filename[:-3] + "html\"" )
+                #json_lines.append(",\"" +  vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + filename[:-3] + "html\"" )
+                json_lines.append(",\"" +  vehicle + " latest " + filename[(len("parameters-" + vehicle + "-latest")+1):-4] + "\" : \"" + ("parameters.html\"") )   # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.
+
             else:    
                 json_lines.append(",\"" +  vehicle + " stable " + filename[(len("parameters-" + vehicle + "-stable")+1):-4] + "\" : \"" + filename[:-3] + "html\"" )
 
@@ -473,8 +481,11 @@ def move_results(vehicles):
             # Moving files.
             files_to_move = [f for f in glob.glob("parameters-" + vehicle + "*")]
             for file in files_to_move:
-                os.rename(file, folder + file)
-                
+                if ("latest" not in file):      # Trying to re-enable toc list on the left bar on the wiki by forcing latest file name.
+                    os.rename(file, folder + file)
+                else:
+                    os.rename(file, str((folder + "parameters.rst"))) 
+
         except Exception as e:
             error("Error while moving result files of vehicle " +  vehicle + " pwd: " + str(os.getcwd()))
             error(e)
@@ -506,6 +517,3 @@ generate_json(VEHICLES)
 move_results(VEHICLES)
 
 #sys.exit(error_count)
-
-
-
