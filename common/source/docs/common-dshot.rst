@@ -162,7 +162,7 @@ The autopilot requests status information from one ESC at a time, cycling betwee
 - Temperature
 - Total Current
 
-The RCOU messages are also written to the onboard logs which hold the requested speed sent to the ESCs expressed as a number from 1000 (meaning stopped) to 2000 (meaning full speed).
+The RCOU messages are also written to the onboard logs which hold the requested output level sent to the ESCs expressed as a number from 1000 (meaning stopped) to 2000 (meaning full output).
 
 This data can also be viewed in real-time using a ground station.  If using the Mission Planner go to the Flight Data screen's status tab and look for esc1_rpm.
 
