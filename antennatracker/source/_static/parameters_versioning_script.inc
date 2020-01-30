@@ -4,7 +4,7 @@
 <select class="selectpicker" onChange="window.document.location.href=this.options[this.selectedIndex].value;"></select>
 
 <script type="text/javascript">
-jQuery.getJSON("../_static/parameters-Antennatracker.json", {}, function(json) {
+jQuery.getJSON("../_static/parameters-AntennaTracker.json", {}, function(json) {
     $.each(json, function(key, value) {
         $('.selectpicker').append('<option value="' + json[key] + '">' + key + '</option>');
     });
