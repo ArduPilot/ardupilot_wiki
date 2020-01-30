@@ -38,7 +38,9 @@ Connecting Servos to a Autopilot
     :target: ../_images/servo-sbus-pixhawk.png
     :width: 450px
 
-If using a Pixhawk connect the servo to the "SB" port on the back of the autopilot.  For Cube autopilots use the "SBUSo" port.  For other autopilots without these connectors see the instructions below
+If using a Pixhawk connect the servo to the "SB" port on the back of the autopilot.  For Cube autopilots use the "SBUSo" port.  For other autopilots without these connectors see the instructions below. The :ref:`BRD_SBUS_OUT<BRD_SBUS_OUT>` parameter must be enabled (=1).
+
+.. note:: On some autopilots, this pin has a shared function with analog RSSI input by setting :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` to this pin. These functions cannot be used simultaneously.
 
 :ref:`SERVO_SBUS_RATE <SERVO_SBUS_RATE>` controls the update rate to the servos.  The default is 50 Hz but can be set to any value in the range of 25 Hz to 250 Hz
 
