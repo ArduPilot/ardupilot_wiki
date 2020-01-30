@@ -20,6 +20,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <htt
 - `AirSim drone simulator <https://github.com/Microsoft/AirSim/>`__ support for ArduPilot SITL
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
 - Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Adding a parameter editor module, improving waypoint editor. Requires strong python skills.
+- Swift Package for MAVLink communications.
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -107,6 +108,11 @@ MathWorks SimuLink
 ------------------
 
 `MathWorks SimuLink <https://www.mathworks.com/products/simulink.html>`__ is a popular model based control algorithm design program.  The purpose of this project would be to allow SimuLink to create attitude control algorithm code (in C++) that can then be compiled into ArduPilot and flown in the simulator or on a real vehicle.
+
+Swift Package for Mavlink
+-------------------------
+
+`Swift Packages <https://developer.apple.com/documentation/swift_packages>`__ are Apples solution for creating reusable components that can be used in iOS and Mac applications. MAVlink currently has several attempts to create a communications package for iOS, but they are currently not compatible with ArduPilot. The goal for this project would be to either create our own universal Mavlink package or adapt one of the existing ones (`MAVSDK Swift <https://github.com/mavlink/MAVSDK-Swift>`__, `pymavlink Swift Generator <https://github.com/ArduPilot/pymavlink/blob/master/generator/swift/MAVLink.swift>`__)to work with ArduPilot and be easily deployable as a Swift package so that any one who wants to use it to create their own iOS based app can integrate it.
 
 Projects Completed in past years
 --------------------------------
