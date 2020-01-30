@@ -21,6 +21,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <htt
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
 - Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Adding a parameter editor module, improving waypoint editor. Requires strong python skills.
 - Improve helicopter throttle handling for internal combustion engines for autonomous operations.
+- Swift Package for MAVLink communications.
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -114,6 +115,10 @@ Improve helicopter throttle handling for internal combustion engines for autonom
 
 The helicopter code manages the throttle for all propulsion types through the rotor speed controller.  This controller provides very basic throttle control for internal combustion engines through rotor run-up and shutdown sequence.  It ramps the throttle from the idle setting to the bottom of the throttle curve.  It does not provide any warm up or cool down period for autonomous operations.  The goal of this project would be to incorporate an automated rotor startup sequence after engine start and rotor shutdown, engine cooldown and engine cut to support fully autonomous operations.  Similar work has been conducted in this area with an off-shoot of ardupilot but it relies on pilot interaction although it incorporates a torque limited rotor spool up which would be a great to incorporate in arducopter RSC.  Details of the rotor speed controller can be found in the `traditional helicopter RSC setup wiki <https://ardupilot.org/copter/docs/traditional-helicopter-rsc-setup.html>`__.  A heli with an internal combustion engine is not necessarily required to complete this project but would be helpful.  The RealFlight simulation linked with ardupilot SITL is required to do initial testing and proof of concept. This setup is described in the  `Using SITL with Realflight wiki <https://ardupilot.org/dev/docs/sitl-with-realflight.html>`__.
 
+Swift Package for Mavlink
+-------------------------
+
+`Swift Packages <https://developer.apple.com/documentation/swift_packages>`__ are Apples solution for creating reusable components that can be used in iOS and Mac applications. MAVlink currently has several attempts to create a communications package for iOS, but they are currently not compatible with ArduPilot. The goal for this project would be to either create our own universal Mavlink package or adapt one of the existing ones (`MAVSDK Swift <https://github.com/mavlink/MAVSDK-Swift>`__, `pymavlink Swift Generator <https://github.com/ArduPilot/pymavlink/blob/master/generator/swift/MAVLink.swift>`__)to work with ArduPilot and be easily deployable as a Swift package so that any one who wants to use it to create their own iOS based app can integrate it.
 
 Projects Completed in past years
 --------------------------------
