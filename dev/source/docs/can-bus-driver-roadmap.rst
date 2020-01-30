@@ -16,7 +16,7 @@ consist of two classes:
   point for accessing UAVCAN managing class.
 
 CANHal class
-=========
+============
 
 New class should be based on AP_HAL::CANHal class.
 
