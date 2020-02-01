@@ -135,7 +135,6 @@ For using ArduCopter, the settings are as follows-
 
     {
       "SettingsVersion": 1.2,
-      "LocalHostIp": "127.0.0.1",
       "LogMessagesVisible": true,
       "SimMode": "Multirotor",
       "OriginGeopoint": {
@@ -147,7 +146,7 @@ For using ArduCopter, the settings are as follows-
         "Copter": {
           "VehicleType": "ArduCopter",
           "UseSerial": false,
-          "DefaultVehicleState": "Disarmed",
+          "LocalHostIp": "127.0.0.1",
           "UdpIp": "127.0.0.1",
           "UdpPort": 9003,
           "ControlPort": 9002
@@ -191,7 +190,6 @@ After this, you'll have to rebuild the AirSim plugin using `build.sh` or `build.
 
     {
       "SettingsVersion": 1.2,
-      "LocalHostIp": "127.0.0.1",
       "SimMode": "Car",
       "OriginGeopoint": {
         "Latitude": -35.363261,
@@ -202,7 +200,7 @@ After this, you'll have to rebuild the AirSim plugin using `build.sh` or `build.
         "Rover": {
           "VehicleType": "ArduRover",
           "UseSerial": false,
-          "DefaultVehicleState": "Disarmed",
+          "LocalHostIp": "127.0.0.1",
           "UdpIp": "127.0.0.1",
           "UdpPort": 9003,
           "ControlPort": 9002,
@@ -242,7 +240,6 @@ Current `settings.json` file for launching ArduCopter with Lidar
 
     {
       "SettingsVersion": 1.2,
-      "LocalHostIp": "127.0.0.1",
       "SimMode": "Multirotor",
       "OriginGeopoint": {
         "Latitude": -35.363261,
@@ -253,7 +250,7 @@ Current `settings.json` file for launching ArduCopter with Lidar
         "Copter": {
           "VehicleType": "ArduCopter",
           "UseSerial": false,
-          "DefaultVehicleState": "Disarmed",
+          "LocalHostIp": "127.0.0.1",
           "UdpIp": "127.0.0.1",
           "UdpPort": 9003,
           "ControlPort": 9002,
@@ -316,7 +313,6 @@ For simulating 2 copters, an example script has been added which will create 2 c
 
     {
       "SettingsVersion": 1.2,
-      "LocalHostIp": "127.0.0.1",
       "SimMode": "Multirotor",
       "OriginGeopoint": {
         "Latitude": -35.363261,
@@ -327,7 +323,7 @@ For simulating 2 copters, an example script has been added which will create 2 c
         "Copter1": {
           "VehicleType": "ArduCopter",
           "UseSerial": false,
-          "DefaultVehicleState": "Disarmed",
+          "LocalHostIp": "127.0.0.1",
           "UdpIp": "127.0.0.1",
           "UdpPort": 9003,
           "ControlPort": 9002
@@ -335,7 +331,7 @@ For simulating 2 copters, an example script has been added which will create 2 c
         "Copter2": {
           "VehicleType": "ArduCopter",
           "UseSerial": false,
-          "DefaultVehicleState": "Disarmed",
+          "LocalHostIp": "127.0.0.1",
           "UdpIp": "127.0.0.1",
           "UdpPort": 9013,
           "ControlPort": 9012,
@@ -435,7 +431,11 @@ A ROS wrapper has also been added. See `airsim_ros_pkgs <https://github.com/micr
 Run on different machines
 +++++++++++++++++++++++++
 
-#. Change ``UdpIp`` in the ``settings.json`` file to the IP address of the machine running ArduPilot
+#. Change the following in the ``settings.json`` file-
+
+    #. ``UdpIp`` to the IP address of the machine running ArduPilot (Can be found using ``ipconfig`` on Windows, ``ifconfig`` on Linux.)
+    #. ``LocalHostIp`` to the IP address of the current machine which is running AirSim, specific to the network adapter being used such as Ethernet or WiFi. Can be set to ``0.0.0.0`` to receive messages on all networks
+
 
 #. Use ``-A`` argument in ``sim_vehicle.py`` (passes the arguments following it to the SITL instance), followed by ``--sim-address`` to specify Airsim's IP address
 
@@ -444,6 +444,10 @@ An example-
 ::
 
     sim_vehicle.py -v ArduCopter -f airsim-copter --console --map -A --sim-address=127.0.0.1
+
+.. note::
+
+    If using Windows, you might need to disable Windows Firewall to receive messages
 
 
 Using different ports
@@ -456,7 +460,11 @@ Using different ports
 - ``--sim-port-in`` should be equal to sensor port i.e. port specified in ``UdpPort``
 - ``--sim-port-out`` should be equal to motor control port i.e. port specified in ``ControlPort``
 
-Similar to changing the IP address as mentioned above, use ``-A`` to pass the arguments to the SITL instance.
+Similar to changing the IP address as mentioned above, use ``-A`` to pass the arguments to the SITL instance. Example-
+
+::
+
+    sim_vehicle.py -v ArduCopter -f airsim-copter --console --map -A "--sim-port-in=9003 --sim-port-out=9002"
 
 Development Workflow
 ++++++++++++++++++++
