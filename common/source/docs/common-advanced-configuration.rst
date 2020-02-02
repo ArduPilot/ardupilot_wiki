@@ -36,6 +36,7 @@ tuning options for the vehicle.
 [site wiki="plane"]
     Crash Detection <crash-detect>
 [/site]
+    Brushless ESCs <common-dshot>
     Extended Kalman Filter (EKF) <common-apm-navigation-extended-kalman-filter-overview>
 [site wiki="copter,plane,rover"]
     Flight Time Recorder <common-flight-time-recorder>
