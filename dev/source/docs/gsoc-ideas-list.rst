@@ -12,16 +12,18 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <htt
 - `Precision Landing <https://ardupilot.org/copter/docs/precision-landing-with-irlock.html>`__ accuracy improvements using `JeVois camera <http://www.jevois.org/>`__ (or similar) for multicopters
 - Automatic docking for cars and boats using `JeVois camera <http://www.jevois.org/>`__ (or similar)
 - Lane following or visual follow-me for Copter, Rover or Boat
+- Rover Autotune
 - Walking robot support
 - 3D aerobatic support for fixed wing aircraft
 - Improve :ref:`Morse simulator <sitl-with-morse>` integration including setup to move camera with vehicles
 - Create new vehicle models for the Morse simulator, including boats, planes and copters
+- Improve :ref:`Gazebo simulator <using-gazebo-simulator-with-sitl>` integration including json protocol, Gazebo9, and new sensors set
 - `MathWorks SimuLink <https://www.mathworks.com/products/simulink.html>`__ interface to ArduPilot SITL
-- `AirSim drone simulator <https://github.com/Microsoft/AirSim/>`__ support for ArduPilot SITL
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
-- Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Adding a parameter editor module, improving waypoint editor. Requires strong python skills.
+- Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Better multivehicle support, performance improvement. Requires strong python skills.
 - Improve helicopter throttle handling for internal combustion engines for autonomous operations.
 - Swift Package for MAVLink communications.
+- Unified performance counter on ArduPilot
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -64,7 +66,8 @@ Precision Landing accuracy improvements for Multicopters
 ArduPilot supports `Precision Landing <https://ardupilot.org/copter/docs/precision-landing-with-irlock.html>`__ using the IRLock sensor or companion computer.  This project could involve:
 
 - Add support for the `JeVois camera <http://www.jevois.org/>`__ (or similar) to recognise AprilTags and then provide the target to the autopilot via mavlink
-- Improve the reliability and accuracy of the small EKF used to estimate the landing target's relative position and velocity.  In particular adding protection against large lag in the readings leading to unreasonable results.
+- Improve the reliability and accuracy of the small EKF used to estimate the landing target's relative position and velocity. In particular adding protection against large lag in the readings leading to unreasonable results.
+- Add a landing state machine for landing retry and failure handling
 
 Lane following or visual follow-me for Copter, Rover or Boat
 ------------------------------------------------------------
@@ -78,6 +81,13 @@ This project involves using machine vision and/or machine learning to add lane f
 - Document the implementation
 
 Expenses for purchasing the companion computer and camera will be covered by ArduPilot
+
+Rover Autotune
+--------------
+
+This project would involve adding an autotune feature for rover and boat like for copter.
+The autotune should be able to learn and set most of the rover parameters for autonomous behavior.
+This will need a good understanding of control theory.
 
 Walking robot support
 ---------------------
@@ -104,6 +114,12 @@ Improve ArduPilot's integration with :ref:`Morse simulator <sitl-with-morse>` so
 
 - Adding support for boats and ROVs with simulated waves to test ArduPilot controls
 - Default camera view to follow the vehicle
+
+Unified performance counter on ArduPilot
+----------------------------------------
+
+This project would involve adding unified support for performance accross our HAL.
+Currently, Linux board get the most performant performance counter, but we should be able to some on Chibios and SITL to allow better profiling of the code.
 
 MathWorks SimuLink
 ------------------
