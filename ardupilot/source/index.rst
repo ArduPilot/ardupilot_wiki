@@ -100,7 +100,16 @@ point-and-click interaction with your hardware, custom scripting, and simulation
 ArduPilot Documentation
 =======================
 
-See sidebar for links to ArduPilot documents
+See sidebar for links to ArduPilot documents.
+
+Quickstart
+==========
+
+- Select your vehicle type to the left
+- Select your "AutoPilot Hardware" and "Peripheral Hardware" for your application
+- Follow vehicle's "First Time Setup"  for installing the firmware and Ground Station software, connecting the components, and calibration steps
+- Prepare for "First Flight(/Drive)" completing setup prior to first flight/drive
+- Advanced Configuration offers setup of more advanced features of the firmware and hardware peripherals
 
 Regulations
 ===========
