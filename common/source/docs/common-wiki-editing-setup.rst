@@ -137,6 +137,7 @@ A combination of two Windows tools can help you previewing your modifications:
   	
 * `Notepad++ plugin for RST files <https://github.com/steenhulthin/reStructuredText_NPP>`__
 * `restview (on-the-fly renderer for RST files) <https://mg.pov.lt/restview/>`__
+* `PyCharm <https://www.jetbrains.com/pycharm/>`__
 
 The Notepad++ plugin helps you with code completion and syntax highlighting during modification.
 Restview renders RST files on-the-fly, i.e. each modification on the RST file can be immediately
@@ -164,7 +165,7 @@ If you are in the root folder of your local Wiki repository:
 RST rendering on Linux
 ----------------------
 
-`ReText <https://github.com/retext-project/retext>`__ is a Linux tool that provides
+* `ReText <https://github.com/retext-project/retext>`__ is a Linux tool that provides
 syntax highlighting and basic on-the-fly rendering in a single application.
 
 .. note:: 
@@ -172,5 +173,6 @@ syntax highlighting and basic on-the-fly rendering in a single application.
     Although the tool is Python based, don't try it on Windows as it very prone to crashes (this is 
     also stated by the website).
 
+* `PyCharm <https://www.jetbrains.com/pycharm/>`__
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
