@@ -7,7 +7,10 @@ if [ "$UID" -gt 0 ]; then
      exit 1
 fi
 
-add-apt-repository universe
+DISTRIBUTION_CODENAME=$(lsb_release -i -s)
+if [ ${DISTRIBUTION_CODENAME} == 'Ubuntu' ]; then
+  add-apt-repository universe
+fi
 apt-get -y update
 apt-get install -y unzip git imagemagick mercurial curl wget make
 
