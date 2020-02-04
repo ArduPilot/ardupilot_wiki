@@ -8,9 +8,10 @@ Wiki Editing - Setting Up the Environment
 
 Before submitting large changes to the wiki it is best to check the pages are rendered correctly including checking all images and links appear correctly.  This page explains how to "build" the wiki (i.e. convert the rst files and image files into a set of html pages) on your local machine so that you can perform these checks.
 
-There are two methods to setup a local build environment:
+There are several methods to setup a local build environment:
 
-#. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a Linux virtual machine with all the necessary packages installed.  This is the preferred and supported method
+#. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a Linux virtual machine with all the necessary packages installed.  This is the preferred and supported method.
+#. Use the `Dockerfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Dockerfile>`__ in the root of the repo to create a Linux container with all the necessary packages installed.
 #. Or simply install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine. To do this, run the following command:
 
    .. code-block:: bash
@@ -97,6 +98,28 @@ With your favourite web browser, open the locally built wiki which should be nea
 - For Plane look for ``ardupilot_wiki/plane/build/html/index.html``
 - For Rover look for ``ardupilot_wiki/rover/build/html/index.html``
 - For Developer look for ``ardupilot_wiki/dev/build/html/index.html``
+
+Setup with docker
+-----------------
+
+#. Download and install Docker according to their `official documentation <https://docs.docker.com/install/>`__ .
+
+#. Open a command prompt in the root of the ardupilot_wiki repo and build the docker container for the wiki:
+
+   .. code-block:: bash
+
+       cd ardupilot_wiki
+       docker build . -t ardupilot_wiki
+
+This will build a docker image with all package setup to build the wiki and name it ``ardupilot_wiki``.
+
+#. Use the container to build the wiki with a shared volume to get the build result on your computer:
+
+   .. code-block:: bash
+
+       docker run --rm -it -v "${PWD}:/ardupilot_wiki" -u "$(id -u):$(id -g)" ardupilot_wiki python update.py
+
+That will build the wiki with the ``update.py`` similary as in `Build the Wiki`_. The `-v` is used to share the content of the current directory, that hold all the documentation, to the container. The `-u` is used to make docker use the same permission as your current user. With those two command the resulting build is accessible as in `Check the Results`_
 
 RST editing/previewing
 ======================
