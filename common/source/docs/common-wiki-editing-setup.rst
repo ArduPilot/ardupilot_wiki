@@ -91,7 +91,8 @@ The update.py script will copy the common files into each wiki subdirectory and 
 Check the Results
 -----------------
 
-With your favourite web browser, open the locally built wiki which should be near where the ardupilot_wiki repo was cloned to
+With your favourite web browser, open the locally built wiki which should be near where the ardupilot_wiki repo was cloned to.
+For instance, open the url file:///C:/Users/your-windows-user-name/ardupilot_wiki/copter/build/html/index.html for Copter if you earlier used git for windows.
 
 - For Copter look for ``ardupilot_wiki/copter/build/html/index.html``
 - For Plane look for ``ardupilot_wiki/plane/build/html/index.html``
