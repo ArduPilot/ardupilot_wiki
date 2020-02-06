@@ -240,15 +240,19 @@ PID gains. The rate PID controller provides stability to reject disturbances and
 keep the actual aircraft following the software predicted rates.
  
 Start with the D gain.  Use the tuning feature of ArduCopter which is linked to
-channel 6 on your radio.  Make the following parameter changes.
+channel 6 on your radio.  Make the following parameter changes:
 
-+---------------------+---------+
-| TUNING              | 21      |
-+---------------------+---------+
-| TUNING_LOW          | 0       |
-+---------------------+---------+
-| TUNING_HIGH         | 30*     |
-+---------------------+---------+
++---------------------------+---------+
+| TUNE                      | 21      |
++---------------------------+---------+
+| TUNE_LOW (prior to 4.0)   | 0       |
++---------------------------+---------+
+| TUNE_MIN (4.0 and later)  | 0       |
++---------------------------+---------+
+| TUNE_HIGH (prior to 4.0)  | 30      |
++---------------------------+---------+
+| TUNE_MAX (4.0 and later)  | 0.030*  |
++---------------------------+---------+
 
 *for futaba radios this equates to one increment in the knob to 0.001*
 
@@ -261,15 +265,19 @@ that value in half and enter it as the final tuning value for ATC_RAT_RLL_D and
 ATC_RAT_PIT_D.  Test hover the heli and make some rapid stick movements in both
 pitch and roll to make sure it's stable.
 
-Now tune the P gains.  Make the following tuning parameter changes.
+Now tune the P gains.  Make the following tuning parameter changes:
 
-+---------------------+---------+
-| TUNING              | 4       |
-+---------------------+---------+
-| TUNING_LOW          | 0       |
-+---------------------+---------+
-| TUNING_HIGH         | 300*    |
-+---------------------+---------+
++---------------------------+---------+
+| TUNE                      | 4       |
++---------------------------+---------+
+| TUNE_LOW (prior to 4.0)   | 0       |
++---------------------------+---------+
+| TUNE_MIN (4.0 and later)  | 0       |
++---------------------------+---------+
+| TUNE_HIGH (prior to 4.0)  | 300     |
++---------------------------+---------+
+| TUNE_MAX (4.0 and later)  | 0.3*    |
++---------------------------+---------+
 
 *for futaba radios this equates to one increment in the knob to 0.01*
 
