@@ -30,8 +30,8 @@ Circle Control Option
 
 When enabled, the :ref:`CIRCLE_CONTROL<CIRCLE_CONTROL>` parameter allows the adjustment of the circle's radius and angular velocity.
 
-- Pitch stick up (positive) reduces the radius until it reaches zero.
-- Pitch stick down (negative) increases the radius
+- Pitch stick up (reducing RC pwm) reduces the radius until it reaches zero. Think moving forward from an FPV perspective.
+- Pitch stick down (increasing RC pwm) increases the radius. Think moving back from an FPV perspective.
 - Roll stick right (think clockwise) will increase the speed while moving clockwise, or decrease the speed while moving counterclockwise until reaching zero, at which point it will stop.
 - Roll stick left (think counterclockwise) will increase the speed while moving counterclockwise, or decrease the speed while moving clockwise until reaching zero, at which point it will stop. Once stopped (rate 0), releasing the roll stick and pushing it again in either direction will begin moving again in the desired direction. So yes, this allows you to completely change the direction on the fly.
 - Roll stick rate changes are inhibited when CH6 tuning knob is set for circle rate.
