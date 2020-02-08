@@ -88,5 +88,5 @@ You should now be able to start the "Ubuntu" application from your Windows Start
    
 .. tip::
 
-    Windows 10 includes "Windows Defender" virus scanner. It will slow down WSL quite a bit. Disabling greatly improves disk performance but increases your risk to viruses so disable at your own risk. Here is one of many resources/videos that show you how to disable it: https://www.youtube.com/watch?v=FmjblGay3AM
+    Windows 10 includes "Windows Defender" virus scanner. It will slow down WSL quite a bit. Disabling it greatly improves disk performance but increases your risk to viruses so disable at your own risk. Here is one of many resources/videos that show you how to disable it: https://www.youtube.com/watch?v=FmjblGay3AM
     
