@@ -45,7 +45,7 @@ Specifications
    -  8 - 14 PWM servo outputs (6 IOMCU, 8 FMU)
    -  3 dedicated PWM/Capture inputs on FMU
    -  S.Bus servo output
-   -  PPM connector supports all RC protocols (including SBUS, DSM, ST24, SRXL and PPM)
+   -  PPM connector supports only PPM
    -  SBUS/DSM/RSSI connector supports all RC protocols (including SBUS, DSM, ST24, SRXL and PPM)
    -  Analog / PWM RSSI input
    -  5x general purpose serial ports
@@ -69,6 +69,8 @@ Official retailers are listed `here  <https://leixun.aliexpress.com/>`__.
 
 Quick Start
 ===========
+
+.. note:: PPM/RCIN input only supports PPM, Use side port for SBUS and other serial digital protocols.
 
 .. image:: ../../../images/cuav_autopilot/v5plus/v5plus_pinouts.png
     :target: ../_images/cuav_autopilot/v5plus/v5plus_pinouts.png
