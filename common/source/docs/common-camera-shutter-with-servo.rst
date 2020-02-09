@@ -100,7 +100,7 @@ The main steps are:
 #. Open *Mission Planner* and then click on **CONFIG/TUNING \| Full
    Parameters List**
 #. Set at least two of the AUX pins as digital output/inputs using the
-   BRD_PWM_COUNT parameter, as described in 
+   :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` parameter, as described in 
    :ref:`digital outputs <common-pixhawk-overview_pixhawk_digital_outputs_and_inputs_virtual_pins_50-55>`.
 #. Set :ref:`CAM_FEEDBACK_PIN <CAM_FEEDBACK_PIN>`
    to the pin number connected to the hotshoe.

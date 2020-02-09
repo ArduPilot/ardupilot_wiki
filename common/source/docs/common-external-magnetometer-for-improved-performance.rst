@@ -43,17 +43,17 @@ For the Pixhawk use the :ref:`3DR combination GPS / Magnetometer module <common-
 
 -  If the Magnetometer board is mounted in its forward facing direction
    (Drone logo on the tab facing forward and in the opposite direction
-   of the Y arrow) the (COMPASS_ORIENT) parameter will need to be set
+   of the Y arrow) the (:ref:`COMPASS_ORIENT<COMPASS_ORIENT>` ) parameter will need to be set
    to (Normal) or "0".
 
    -  If you have the Y arrow pointing to the front (Drone on tab
-      pointing to the back), set (COMPASS_ORIENT) to (Yaw 180).
+      pointing to the back), set (:ref:`COMPASS_ORIENT<COMPASS_ORIENT>` ) to (Yaw 180).
 
 -  You will need to set the Magnetometer Orientation Parameter
-   (COMPASS_ORIENT) in the Mission Planner Advanced Parameter List
+   (:ref:`COMPASS_ORIENT<COMPASS_ORIENT>` ) in the Mission Planner Advanced Parameter List
    correctly to accommodate the Magnetometer's orientation.
 -  If the Autopilot board is used in an alternate orientation
-   (or upside down), the (COMPASS_ORIENT) parameter will need to also
+   (or upside down), the (:ref:`COMPASS_ORIENT<COMPASS_ORIENT>` ) parameter will need to also
    be adjusted to accommodate the Autopilot boards orientation
    as well as it's own. (They are additive).
 -  It can be confusing, but all orientations in 45 degree increments and
@@ -61,15 +61,15 @@ For the Pixhawk use the :ref:`3DR combination GPS / Magnetometer module <common-
 
    #. This **Quick Setup Procedure** will always work and allow you to
       set up your compass even if you use a non-3DR magnetometer.
-   #. Set the (COMPASS_ORIENT) **Yaw** parameter so the direction your
+   #. Set the (:ref:`COMPASS_ORIENT<COMPASS_ORIENT>` ) **Yaw** parameter so the direction your
       airframe is currently pointing agrees with the **HUD** in Mission
       Planner.
    #. Now turn your air frame right or left and if the compass correctly
       follows the direction it is pointed you are done.
    #. If the compass turned in the opposite direction of your airframe
-      set (COMPASS_ORIENT) **Roll** to **180** (flips the compass
+      set (:ref:`COMPASS_ORIENT<COMPASS_ORIENT>` ) **Roll** to **180** (flips the compass
       over).
-   #. If you need to set **Roll** to **180** (COMPASS_ORIENT) will also
+   #. If you need to set **Roll** to **180** (:ref:`COMPASS_ORIENT<COMPASS_ORIENT>` ) will also
       need to include the **Yaw** from **B.** above **(Example: Yaw 180
       Roll 180)**.
 
@@ -120,7 +120,7 @@ and ESCs.**
 -  In the picture below, we've mounted the board “components up with
    pins forward”.
 -  Autopilot board orientation and magnetometer orientation must
-   be used to calculate the COMPASS_ORIENT parameter.
+   be used to calculate the :ref:`COMPASS_ORIENT<COMPASS_ORIENT>` parameter.
 
 .. image:: ../../../images/Quad_Top_View.jpg
     :target: ../_images/Quad_Top_View.jpg
