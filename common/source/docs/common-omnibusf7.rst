@@ -62,15 +62,15 @@ BATT_MONITOR=4
 
 Then reboot.
 
-BATT_VOLT_PIN 13
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 13
 
-BATT_AMP_OFFSET 0.008
+:ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET>` 0.008
 
-BATT_CURR_PIN 12
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 12
 
-BATT_VOLT_MULT 10.925
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 10.925
 
-BATT_AMP_PERVLT 58.0 (note, this value is valid if using Matek Systems FCHUB A5 current sensor)...will need to be calibrated to match actual current if using any other make of PDB board)
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 58.0 (note, this value is valid if using Matek Systems FCHUB A5 current sensor)...will need to be calibrated to match actual current if using any other make of PDB board)
 
 Dshot capability
 ================

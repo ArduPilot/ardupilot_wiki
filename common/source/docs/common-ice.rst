@@ -44,7 +44,7 @@ In order to configure an RPM sensor, the following parameters must be set:
 - Set the remaining 'RPM_*' parameters as appropriate for your system.
 - Set :ref:`ICE_RPM_CHAN <ICE_RPM_CHAN>` to 1.
 
-Throttle control for an ICE engine is similar to controlling a standard brushless ESC. The throttle servo can be connected to any servo output with a SERVOX_FUNCTION set to 70 (Channel 3 is configured this way by default). It is important to set the Min and Max PWM values on this servo output to be within the mechanical limits of your throttle assembly (using SEVOX_MIN and SERVOX_MAX). While doing this, also verify that the servo moves in the correct direction with respect to a manual throttle input. Note that the throttle servo will not move unless the vehicle is armed. It is recommended to arm the vehicle with ignition power disconnected in order to test the throttle servo.
+Throttle control for an ICE engine is similar to controlling a standard brushless ESC. The throttle servo can be connected to any servo output with a ``SERVOx_FUNCTION`` set to 70 (Channel 3 is configured this way by default). It is important to set the Min and Max PWM values on this servo output to be within the mechanical limits of your throttle assembly (using ``SERVOx_MIN`` and ``SERVOx_MAX``). While doing this, also verify that the servo moves in the correct direction with respect to a manual throttle input. Note that the throttle servo will not move unless the vehicle is armed. It is recommended to arm the vehicle with ignition power disconnected in order to test the throttle servo.
 
 After configuring the limits of your throttle servo, the following parameters must be set:
 
