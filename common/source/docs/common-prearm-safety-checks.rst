@@ -65,7 +65,7 @@ Compass failures:
 unhealthy which is a sign of a hardware failure.
 
 **Compass not calibrated** : the :ref:`compass(es) has not been calibrated <common-compass-calibration-in-mission-planner>`.  the
-COMPASS_OFS_X, Y, Z parameters are zero or the number or type of
+``COMPASS_OFS_X, _Y, _Z`` parameters are zero or the number or type of
 compasses connected has been changed since the last compass calibration
 was performed.
 
@@ -85,7 +85,7 @@ calculated good offsets and should be repeated.
 
 **Compasses inconsistent** : the internal and external compasses are
 pointing in different directions (off by >45 degrees).  This is normally
-caused by the external compasses orientation (i.e. COMPASS_ORIENT
+caused by the external compasses orientation (i.e. :ref:`COMPASS_ORIENT<COMPASS_ORIENT>`
 parameter) being set incorrectly.
 
 GPS related failures:
@@ -109,7 +109,7 @@ GPS and/or the :ref:`cylindrical fence <common-ac2_simple_geofence>` is enabled.
 This may be resolved by simply waiting a few minutes, moving to a
 location with a better view of the sky or checking sources of GPS
 interference (i.e. FPV equipment) are moved further from the GPS. 
-Alternatively the check can be relaxed by increasing the GPS_HDOP_GOOD
+Alternatively the check can be relaxed by increasing the :ref:`GPS_HDOP_GOOD<GPS_HDOP_GOOD>`
 parameter to 2.2 or 2.5.  Worst case the pilot may disable the fence and
 take-off in a mode that does not require the GPS (i.e. Stabilize,
 AltHold) and switch into Loiter after arming but this is not
@@ -171,12 +171,12 @@ Parameter checks:
 
 **Check FS_THR_VALUE**: the :ref:`radio failsafe pwm value <radio-failsafe>` has been set too close to the throttle channels (i.e. ch3) minimum.
 
-**Check ANGLE_MAX**: the ANGLE_MAX parameter which controls the
+**Check ANGLE_MAX**: the :ref:`ANGLE_MAX<ANGLE_MAX>` parameter which controls the
 vehicle's maximum lean angle has been set below 10 degrees (i.e. 1000)
 or above 80 degrees (i.e. 8000).
 
-**ACRO_BAL_ROLL/PITCH**: the ACRO_BAL_ROLL parameter is higher than
-the Stabilize Roll P and/or ACRO_BAL_PITCH parameter is higher than
+**ACRO_BAL_ROLL/PITCH**: the :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` parameter is higher than
+the Stabilize Roll P and/or :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameter is higher than
 the Stabilize Pitch P value.  This could lead to the pilot being unable
 to control the lean angle in ACRO mode because the :ref:`Acro Trainer stabilization <acro-mode_acro_trainer>` would overpower the pilot's
 input.
