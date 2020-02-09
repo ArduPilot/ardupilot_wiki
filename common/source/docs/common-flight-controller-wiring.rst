@@ -88,10 +88,10 @@ For Copter see :ref:`Connect ESCs and Motors <copter:connect-escs-and-motors>`.
 In overview, for copters connect each signal wire from the PDB to the
 main output signal (S) pins by motor number:
 
--  Pin 1 = Motor 1 - - Pin 5 = Motor 5
--  Pin 2 = Motor 2 - - Pin 6 = Motor 6
--  Pin 3 = Motor 3 - - Pin 7 = Motor 7
--  Pin 4 = Motor 4 - - Pin 8 = Motor 8
+-  Output 1 = Motor 1 - - Output 5 = Motor 5
+-  Output 2 = Motor 2 - - Output 6 = Motor 6
+-  Output 3 = Motor 3 - - Output 7 = Motor 7
+-  Output 4 = Motor 4 - - Output 8 = Motor 8
 
 [/site]
 
@@ -99,21 +99,21 @@ main output signal (S) pins by motor number:
 For planes connect the control channel wires to the main output signal
 pins:
 
--  Pin 1 = Aileron
--  Pin 2 = Elevator
--  Pin 3 = Throttle
--  Pin 4 = Rudder
+-  Output 1 = Aileron
+-  Output 2 = Elevator
+-  Output 3 = Throttle
+-  Output 4 = Rudder
 
 [/site]
 
 [site wiki="rover"]
 For Rovers connect the throttle and steering wires to the main output
-signal pins:
+signal pins. The default settings are:
 
--  Pin 3 = Throttle
--  Pin 1 = Steering
+-  Output 3 = Throttle
+-  Output 1 = Steering
 
-The skid-steer parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The parameters are: SKID_STEER_OUT and SKID_STEER_IN. When enabled, autopilot's output RC1 is used for the left track control, and output RC3 is used for right track control.
+The skid-steer output function parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (ie. do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The SERVOx_FUNCTION for the outputs used for each side's motor are set using the ``Throttle Left`` and ``Throttle Right`` output functions. See :ref:`Rover Motor Functions <rover-motor-and-servo-configuration>` 
 [/site]
 
 Connect buzzer and safety switch
