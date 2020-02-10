@@ -15,7 +15,7 @@ Setting up RSSI on your autopilot
 =================================
 
 RSSI can be specifically set up by a collapsible set of parameters. By default, it is required to first set 
-``RSSI_TYPE`` according to how the RC receiver's signal strength indication will be fed to the autopilot:
+ :ref:`RSSI_TYPE<RSSI_TYPE>`  according to how the RC receiver's signal strength indication will be fed to the autopilot:
 
 +---+--------------------+---------------------------------------------------------------------------------------------+
 | Value                  | Function                                                                                    |
@@ -33,36 +33,36 @@ RSSI can be specifically set up by a collapsible set of parameters. By default, 
 +---+--------------------+---------------------------------------------------------------------------------------------+
 
 
-After setting RSSI_TYPE to a value other than 0 you will have to save and refresh your parameters to uncollapse a set of subordinate parameters that allow to further specify RSSI handling. 
+After setting :ref:`RSSI_TYPE<RSSI_TYPE>` to a value other than 0 you will have to save and refresh your parameters to uncollapse a set of subordinate parameters that allow to further specify RSSI handling. 
 
 There are four basic options for feeding RSSI to your autopilot:
 
-``RSSI_TYPE = 1`` Analog voltage type RSSI fed to a dedicated pin
- ``RSSI_ANA_PIN`` specifies the pin used to read RSSI voltage. This parameter defaults to the correct pin number on most boards when using current chibios firmware.
+ :ref:`RSSI_TYPE<RSSI_TYPE>` = 1  Analog voltage type RSSI fed to a dedicated pin
+  :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  specifies the pin used to read RSSI voltage. This parameter defaults to the correct pin number on most boards when using current chibios firmware.
  
- ``RSSI_PIN_HIGH`` voltage received on the RSSI_ANA_PIN when the signal is the strongest. 
+  :ref:`RSSI_PIN_HIGH<RSSI_PIN_HIGH>`  voltage received on the :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` when the signal is the strongest. 
  
- ``RSSI_PIN_LOW`` voltage received on the RSSI_ANA_PIN when the signal is the weakest.
+  :ref:`RSSI_PIN_LOW<RSSI_PIN_LOW>`  voltage received on the :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` when the signal is the weakest.
 
 
-``RSSI_TYPE = 2`` PWM Channel type RSSI embedded in a collective PPM / sum signal (sBus)
- ``RSSI_CHANNEL`` Channel number the radio receiver will use to embed RSSI if collective / sum signal is used (channel 5 and up).
+ :ref:`RSSI_TYPE<RSSI_TYPE>` = 2  PWM Channel type RSSI embedded in a collective PPM / sum signal (sBus)
+  :ref:`RSSI_CHANNEL<RSSI_CHANNEL>`  Channel number the radio receiver will use to embed RSSI if collective / sum signal is used (channel 5 and up).
  
- ``RSSI_CHAN_HIGH`` PWM value the radio receiver will output when the signal is the strongest.
+  :ref:`RSSI_CHAN_HIGH<RSSI_CHAN_HIGH>`  PWM value the radio receiver will output when the signal is the strongest.
  
- ``RSSI_CHAN_LOW`` PWM value the radio receiver will output when the signal is the weakest.
+  :ref:`RSSI_CHAN_LOW<RSSI_CHAN_LOW>`  PWM value the radio receiver will output when the signal is the weakest.
 
 
-``RSSI_TYPE = 3`` digital receiver protocols' signal quality or dropped packts information (SUMD / ST24)
+ :ref:`RSSI_TYPE<RSSI_TYPE>` = 3  digital receiver protocols' signal quality or dropped packts information (SUMD / ST24)
  Scaled internally, no further adjustments required.
  
 
-``RSSI_TYPE = 4`` PWM type RSSI fed to a dedicated GPIO pin
- ``RSSI_ANA_PIN`` Specifies the GPIO pin to read PWM type RSSI from. On boards with IOMCU these are the AUX pins that can be used as PWM output by default or alternatively set to be used as GPIO using the ``BRD_PWM_COUNT`` parameter.
+ :ref:`RSSI_TYPE<RSSI_TYPE>` = 4  PWM type RSSI fed to a dedicated GPIO pin
+  :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  Specifies the GPIO pin to read PWM type RSSI from. On boards with IOMCU these are the AUX pins that can be used as PWM output by default or alternatively set to be used as GPIO using the  :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>`  parameter.
  
- ``RSSI_CHAN_HIGH`` PWM value the radio receiver will output when the signal is the strongest.
+  :ref:`RSSI_CHAN_HIGH<RSSI_CHAN_HIGH>`  PWM value the radio receiver will output when the signal is the strongest.
  
- ``RSSI_CHAN_LOW`` PWM value the radio receiver will output when the signal is the weakest.
+  :ref:`RSSI_CHAN_LOW<RSSI_CHAN_LOW>`  PWM value the radio receiver will output when the signal is the weakest.
 
 
 .. note::
@@ -70,7 +70,7 @@ There are four basic options for feeding RSSI to your autopilot:
 
 
 .. note::
-    To read analog voltage type RSSI, ``RSSI_ANA_PIN`` can be set to any free ADC pin available. On pixhawk / cube type boards, this includes the sBus out / RSSI input pin (103). When using dedicated ADC pins, the corresponding pin number usually matches the ADC1 channel used on that pin. See the DMA1 map in the `resepective processor's alternative function table <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ for further reference.
+    To read analog voltage type RSSI,  :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  can be set to any free ADC pin available. On pixhawk / cube type boards, this includes the sBus out / RSSI input pin (103). When using dedicated ADC pins, the corresponding pin number usually matches the ADC1 channel used on that pin. See the DMA1 map in the `resepective processor's alternative function table <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/scripts>`__ for further reference.
 
 
 Displaying the RC receiver's RSSI value in MissionPlanner's HUD
@@ -90,7 +90,7 @@ To display RC receiver's RSSI on MP's HUD:
 
 
 .. note::
-    It is crucial to select ``rxrssi`` to display the RC link's rssi, while the items ``rssi`` and ``remrssi`` are used to display a radio modem's ground- and remote-transceiver's signal strength indication.
+    It is crucial to select  rxrssi  to display the RC link's rssi, while the items  rssi  and  remrssi  are used to display a radio modem's ground- and remote-transceiver's signal strength indication.
 
 
 
@@ -119,20 +119,20 @@ RSSI values will be output both within the PPM stream on signal pin 1 as well as
 
 Now set your RSSI parameters accordingly:
 
-``RSSI_TYPE`` = 2 (requires parameter reload if set to default 0 previously)
+ :ref:`RSSI_TYPE<RSSI_TYPE>`  = 2 (requires parameter reload if set to default 0 previously)
 
-``RSSI_CHANNEL`` = the channel used to embed RSSI on your RC receiver (Ch5 in the above example)
+ :ref:`RSSI_CHANNEL<RSSI_CHANNEL>`  = the channel used to embed RSSI on your RC receiver (Ch5 in the above example)
 
-``RSSI_CHAN_HIGH`` = channel value at strongest reception
+ :ref:`RSSI_CHAN_HIGH<RSSI_CHAN_HIGH>`  = channel value at strongest reception
 
-``RSSI_CHAN_LOW`` = channel value at weakest reception
+ :ref:`RSSI_CHAN_LOW<RSSI_CHAN_LOW>`  = channel value at weakest reception
 
-Displaying ``rxssi`` alongside with the respective RC channel's input value in your GCS helps to adjust the value range to match a 0 - 100% RSSI scale:
+Displaying  rxssi  alongside with the respective RC channel's input value in your GCS helps to adjust the value range to match a 0 - 100% RSSI scale:
 
 .. image:: ../../../images/hud_rssi_ch.jpg
     :target: ../_images/hud_rssi_ch.jpg
 
-At strongest reception, Ch5 shows a PWM value of 1904 us. With the transmitter switched off, it will drop to 1093 us. Setting ``RSSI_CHAN_HIGH`` and ``RSSI_CHAN_LOW`` respectively allows to scale the used PWM range to 0 - 100 % with optimal resolution.
+At strongest reception, Ch5 shows a PWM value of 1904 us. With the transmitter switched off, it will drop to 1093 us. Setting  :ref:`RSSI_CHAN_HIGH<RSSI_CHAN_HIGH>`  and  :ref:`RSSI_CHAN_LOW<RSSI_CHAN_LOW>`  respectively allows to scale the used PWM range to 0 - 100 % with optimal resolution.
 
 .. note::
     Certain sBus protocol variances may lead to channel values not being updated during receiver failsafe conditions. In this case, you will see the last valid RSSI value displayed during a failsafe. As the received signal strength usually gradually decreases under flight conditions, this will likely not have any negative effects. However, during setup and testing it might be confusing to see RSSI freezed at a compareably high value while your RC transmitter is actually switched off.
@@ -157,13 +157,13 @@ If there is an existing RC receiver connection to your autopilot that includes s
 
 Now set your RSSI parameters accordingly:
 
-``RSSI_TYPE`` = 1 (requires parameter reload if set to default 0 previously)
+ :ref:`RSSI_TYPE<RSSI_TYPE>`  = 1 (requires parameter reload if set to default 0 previously)
 
-``RSSI_ANA_PIN`` = 103 (PixHawk SBUS output / RSSI input pin)
+ :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  = 103 (PixHawk SBUS output / RSSI input pin)
  
-``RSSI_PIN_HIGH`` voltage received on the RSSI_ANA_PIN when the signal is the strongest, usually 3,3V.
+ :ref:`RSSI_PIN_HIGH<RSSI_PIN_HIGH>`  voltage received on the :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` when the signal is the strongest, usually 3,3V.
  
-``RSSI_PIN_LOW`` voltage received on the RSSI_ANA_PIN when the signal is the weakest, usually 0V
+ :ref:`RSSI_PIN_LOW<RSSI_PIN_LOW>`  voltage received on the :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>` when the signal is the weakest, usually 0V
 
 .. note::
     RSSI type options depend on your individual RC system's specifications. Some systems require additional workarounds or additional hardware conversion of non-standard proprietary protocols.
@@ -173,7 +173,7 @@ Now set your RSSI parameters accordingly:
 PWM type RSSI fed to a dedicated pin
 ------------------------------------
 
-If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can feed this to one of your autopilot's GPIO pins. Use parameter ``BRD_PWM_COUNT`` to set PWM output pins as GPIO. On pixahwk type hardware, this refers to the AUX pins as they are connected to the board's MCU, bypassing the IOMCU co-processer.
+If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can feed this to one of your autopilot's GPIO pins. Use parameter  :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>`  to set PWM output pins as GPIO. On pixahwk type hardware, this refers to the AUX pins as they are connected to the board's MCU, bypassing the IOMCU co-processer.
 
 +----------------------+-------------------------+
 | HW Pin (AUX) number  | alternative GPIO number |
@@ -191,7 +191,7 @@ If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can fee
 | 6                    | 55                      |
 +----------------------+-------------------------+
 
-In the above example, setting ``BRD_PWM_COUNT`` to 4 will set pins 1-4 for use as PWM output and free the remaining pins 5 and 6 for use as GPIO 54 and 55.
+In the above example, setting  :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>`  to 4 will set pins 1-4 for use as PWM output and free the remaining pins 5 and 6 for use as GPIO 54 and 55.
 
 If there is an existing RC receiver connection to your autopilot that includes supply voltage and ground, only one additional signal wire is required. The example below shows how to connect a receiver's PWM type RSSI output to a pixhawk autopilot's AUX 6 pin set for use as GPIO 55:
 
@@ -201,13 +201,13 @@ If there is an existing RC receiver connection to your autopilot that includes s
 
 Now set your RSSI parameters accordingly:
 
-``RSSI_TYPE`` = 4 (requires parameter reload if set to default 0 previously)
+ :ref:`RSSI_TYPE<RSSI_TYPE>`  = 4 (requires parameter reload if set to default 0 previously)
 
-``RSSI_ANA_PIN`` = GPIO pin number used (55 in the above example)
+ :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  = GPIO pin number used (55 in the above example)
  
-``RSSI_CHAN_HIGH`` = PWM value at strongest reception
+ :ref:`RSSI_CHAN_HIGH<RSSI_CHAN_HIGH>`  = PWM value at strongest reception
 
-``RSSI_CHAN_LOW`` = PWM value at weakest reception
+ :ref:`RSSI_CHAN_LOW<RSSI_CHAN_LOW>`  = PWM value at weakest reception
 
 
 Special use cases

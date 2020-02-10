@@ -22,7 +22,7 @@ Copter/Plane/Rover support a number of different rangefinders including Lidars (
 
    Downward facing rangefinders are automatically used in flight modes which have height control, such
    as Altitude Hold, Loiter and PosHold Mode.  The data from the sensor
-   will be used until you exceed RNGFND_MAX_CM, after that it switches to
+   will be used until you exceed ``RNGFNDx_MAX_CM``, after that it switches to
    the barometer.
 
    Copter-3.4 (and higher) includes support for :ref:`Terrain Following <terrain-following>` in Auto mode.
@@ -33,7 +33,7 @@ Copter/Plane/Rover support a number of different rangefinders including Lidars (
    
 .. warning::
    
-   RNGFND_MAX_CM must be set to a tested, appropriate value.  If RNGFND_MAX_CM is set to a value
+   ``RNGFNDx_MAX_CM`` must be set to a tested, appropriate value.  If ``RNGFNDx_MAX_CM`` is set to a value
    greater than the range of the sensor, the autopilot will not respond correctly to the 
    data provided.
 
