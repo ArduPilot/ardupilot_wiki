@@ -25,6 +25,16 @@ Clone ArduPilot repository
     :start-after: inclusion-marker-do-not-remove
     :end-before: Cloning with the GitHub GUI (Windows or MAC)
 
+
+.. note:: in case some firewalls do not allow ssh access which can cause the above submodule updates to fail, in this instance you can tell git to unilaterally use https through the following command:
+
+    ::
+
+         git config --global url."https://" 
+
+    to use https protocols instead of the default git:// prefix.
+
+
 Install some required packages
 ------------------------------
 
