@@ -128,9 +128,9 @@ Data screen's Status tab.  Look closely for "sonarrange".
 Its best to place the Lidar several known distances (1m, 3m, 5m) from
 a large flat wall to test it.  If the Lidar is constantly reading
 wrong by a fixed offset e.g. its always 50cm out at each distance then
-adjust the RNGFND_OFFSET parameter by the correct amount.  If however
+adjust the ``RNGFNDx_OFFSET`` parameter by the correct amount.  If however
 it gets the distance wrong each time by a different amount then the
-RNGFND_SCALING parameter needs changing.  Update it (maybe 1.1 or 0.9)
+``RNGFNDx_SCALING`` parameter needs changing.  Update it (maybe 1.1 or 0.9)
 and test again and repeat until its correct.
 
 .. image:: ../../../images/mp_rangefinder_lidarlite_testing.jpg

@@ -13,22 +13,20 @@ The SERVOn_FUNCTION parameters
 ------------------------------
 
 In the advanced parameter view of your GCS you will find that each
-SERVO output channel has a SERVOn_FUNCTION parameter. For example,
-SERVO5_FUNCTION controls the output function of channel 5,
-SERVO6_FUNCTION controls the output function of channel 6 and so on.
+SERVO output channel has a ``SERVOn_FUNCTION`` parameter. For example, :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>`  controls the output function of channel 5, :ref:`SERVO6_FUNCTION<SERVO6_FUNCTION>` controls the output function of channel 6 and so on.
 
 Not all the functions are available in each vehicle. Defaults are set to 0 when firmware for a vehicle type is first loaded. Choosing a frame
 configuration in Mission Planner during initial setup will set the outputs to the basic typical functions for that frame type. For example,
 fixed wing plane will set the first four outputs, SERVO1-SERVO4 to Aileron, Elevator, Throttle, and Rudder functions, respectively.
 
 All of these functions may be used on multiple channels. So if you
-want 3 elevator channels for some reason you can set SERVOn_FUNCTION
+want 3 elevator channels for some reason you can set ``SERVOn_FUNCTION``
 to 19 on 3 of your output channels.
 
 Configuration
 -------------
 
-Configuration can be done using the SERVO tab of Mission Planner or by directly setting the SERVOx_FUNCTION parameter for an output.
+Configuration can be done using the SERVO tab of Mission Planner or by directly setting the ``SERVOx_FUNCTION`` parameter for an output.
 
 .. image:: ../../../images/rcoutput-mapping.png
     :target: ../_images/rcoutput-mapping.png
@@ -563,7 +561,7 @@ INTERNAL CONTROLLER ACCESS
 |      RateYaw                   | 127 |     Copter                            |
 +--------------------------------+-----+---------------------------------------+
 
-These outputs provide the FeedForward terms from the attitude control loops, scaled by the ATC_RAT_X_FF PID parameter values for roll/pitch/yaw for use with external vehicle controllers.
+These outputs provide the FeedForward terms from the attitude control loops, scaled by the ATC_RAT_x_FF PID parameter values for roll/pitch/yaw for use with external vehicle controllers.
 
 DEFAULT VALUES
 --------------
