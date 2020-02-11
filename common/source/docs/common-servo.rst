@@ -27,8 +27,8 @@ Connecting the servo to a Pixhawk
    MAIN OUT or AUX OUT 1 ~ 4 may be used.
 -  AUX OUT 5 and 6 cannot be used by default because they are setup as
    :ref:`Relays <common-relay>`.  These pins can changed to Servo
-   outputs by setting the BRD_PWM_COUNT parameter to 6 and setting
-   RELAY_PIN and RELAY_PIN2 to -1.
+   outputs by setting the :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` parameter to 6 and setting
+   :ref:`RELAY_PIN<RELAY_PIN>` and :ref:`RELAY_PIN2<RELAY_PIN2>` to -1.
 -  The Pixhawk autopilot cannot provide power to the servos so
    an external BEC or ESC that can provide 5V should be used.
 
