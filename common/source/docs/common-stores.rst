@@ -34,6 +34,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Skeyetech <http://www.skeyetech-shop.fr/>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <https://uavionix.com/>`__
+* `UAV Systems International <https://uavsystemsinternational.com/collections/all>`__
 * `VirtualRobotix <http://www.virtualrobotix.it/index.php/en/shop>`__
 * `3DXR <https://www.3dxr.co.uk/>`__
 
