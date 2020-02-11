@@ -18,12 +18,12 @@ The following example provides schematics to install a triducer on a Pixhawk and
 
 Parameters for this particular hawdware:
 
-- RNGFND_MAXCM = 700
-- RNGFND_MIN_CM = 50
-- RNGFND_ORIENT = 25
-- RNDFND_TYPE = 17
-- SERIAL2_PROTOCOL = 9
-- SERIAL2_BAUD = 4
+- :ref:`RNGFND1_MAX_CM<RNGFND1_MAX_CM>` = 700
+- :ref:`RNGFND1_MIN_CM<RNGFND1_MIN_CM>` = 50
+- :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = 25
+- :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 17
+- :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 9
+- :ref:`SERIAL2_BAUD<SERIAL2_BAUD>` = 4
 
 .. image:: ../../../images/pixhawk_triducer.jpeg
     :target: ../_images/pixhawk_triducer.jpeg
