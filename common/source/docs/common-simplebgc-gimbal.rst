@@ -71,7 +71,7 @@ For a 3-axis gimbal with 360 degrees of yaw set:
 Using Gimbal GUI and MavLink Connection
 =======================================
 
-To use the gimbal GUI and the autopilot with MavLinkis necessary to use of the Gimbal firmware version 2.60 or above is also needed. 
+To use the gimbal GUI and the autopilot with MavLink its necessary to use  Gimbal firmware version 2.60 or above. 
 
 The following instructions present how to wire the components:
 

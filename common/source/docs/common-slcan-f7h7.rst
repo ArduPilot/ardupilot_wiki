@@ -6,7 +6,7 @@ SLCAN Access on F7/H7 Based Autopilots
 
 Enabling SLCAN allows the autopilot to connect to CANBUS through USB on PC.
 It allows viewing, configuration and software updates of devices connected to the CANBUS.
-There are two different applications for using SLCAN to modify UAVCAN device parameters: UAVCAN_GUI or Mission Planner. But first, the SLCAN interface must be enabled.
+There are two different applications for using SLCAN to modify UAVCAN device parameters: UAVCAN GUI or Mission Planner. But first, the SLCAN interface must be enabled.
 
 SLCAN Interface
 ===============
