@@ -1,5 +1,6 @@
 .. _common-transmitter-tuning:
 
+[copywiki destination="plane"]
 ========================
 Transmitter Based Tuning
 ========================
@@ -63,43 +64,43 @@ Setting up for tuning
 To setup your vehicle for tuning you need to set the following
 parameters:
 
-- TUNE_CHAN: the RC input channel associated with your chosen tuning
+- :ref:`TUNE_CHAN<TUNE_CHAN>` : the RC input channel associated with your chosen tuning
   knob
-- TUNE_CHAN_MIN: the minimum PWM values produced on TUNE_CHAN
-- TUNE_CHAN_MAX: the maximum PWM values produced on TUNE_CHAN
-- TUNE_PARAM: the parameter or set of parameters you will be tuning
-- TUNE_SELECTOR: the RC input channel associated with your chosen
+- :ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>` : the minimum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
+- :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>` : the maximum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
+- :ref:`TUNE_PARAM<TUNE_PARAM>` : the parameter or set of parameters you will be tuning
+- :ref:`TUNE_SELECTOR<TUNE_SELECTOR>` : the RC input channel associated with your chosen
   selector switch (optional)
-- TUNE_RANGE: the scaling range which the tuning knob covers
+- :ref:`TUNE_RANGE<TUNE_RANGE>` : the scaling range which the tuning knob covers
 
-The TUNE_PARAM parameter selects the parameter or set of parameters you
-will be tuning. Values of TUNE_PARAM less than 100 correspond to
+The :ref:`TUNE_PARAM<TUNE_PARAM>` parameter selects the parameter or set of parameters you
+will be tuning. Values of :ref:`TUNE_PARAM<TUNE_PARAM>` less than 100 correspond to
 individual tunable parameters whereas values of 101 or higher
 correspond to sets of related parameters that can be tuned one after
 the other in a flight.
 
 Use your ground stations parameter interface to see see the full list
-of tunable parameters and parameter sets available for TUNE_PARAM. For
-APM:Plane most of the parameters are associated with tuning the
+of tunable parameters and parameter sets available for :ref:`TUNE_PARAM<TUNE_PARAM>` . For
+Plane most of the parameters are associated with tuning the
 QuadPlane VTOL motors as those are the most difficult to tune. You can
 also tune some fixed wing parameters, although most people find the
 automatic tuning with AUTOTUNE mode is the best option for fixed wing
 flight.
 
-If you want to tune a set of parameters (by choosing a TUNE_PARAM value
+If you want to tune a set of parameters (by choosing a :ref:`TUNE_PARAM<TUNE_PARAM>` value
 over 100) you must have a selector switch configured with the
-TUNE_SELECTOR parameter.
+:ref:`TUNE_SELECTOR<TUNE_SELECTOR>` parameter.
 
 Using the tuning knob
 =====================
 
 The basic operation of the tuning knob is very simple. If the tuning
 knob is at the bottom of its range then the parameter being tuned is
-set to the initial value divided by the TUNE_RANGE. If the tuning knob
+set to the initial value divided by the :ref:`TUNE_RANGE<TUNE_RANGE>` . If the tuning knob
 is at the top of its range then the parameter being tuned will be set
-to the initial value multiplied by TUNE_RANGE.
+to the initial value multiplied by :ref:`TUNE_RANGE<TUNE_RANGE>` .
 
-So with a default value for TUNE_RANGE of 2 you will be able to change
+So with a default value for :ref:`TUNE_RANGE<TUNE_RANGE>` of 2 you will be able to change
 the parameter in a range from half its initial value to 2x the initial
 value. This is a good range for many tuning tasks.
 
@@ -109,8 +110,8 @@ Activating the tuning knob
 When you first start tuning a parameter you will find the tuning knob
 is not yet active. This is because the knob does not activate until it
 passes the "mid-point value", defined as half way between
-TUNE_CHAN_MIN and TUNE_CHAN_MAX. Activating the tuning knob in this
-way ensures that you don't accidentially take off with a large change
+:ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>` and :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>` . Activating the tuning knob in this
+way ensures that you don't accidentally take off with a large change
 in tuning value. You are guaranteed to start the tune with a value
 very close to your current value for the parameter.
 
@@ -121,7 +122,7 @@ tuning has been activated.
 Re-centering the tuning knob
 ----------------------------
 
-It is quite common to find that the TUNE_RANGE is not wide enough to
+It is quite common to find that the :ref:`TUNE_RANGE<TUNE_RANGE>` is not wide enough to
 move the tuning value to the ideal point for your vehicle. For
 example, you may have started the tune with a P gain for some axis of
 0.7, and when you move the tuning knob up all the way the vehicle
@@ -138,21 +139,21 @@ prevents you getting a jump in the tuning value when you re-center.
 Tuning multiple parameters
 ==========================
 
-You can tune multiple parameters in one flight by setting TUNE_PARAM to
-one of the "tuning set" parameters. For example, if you set TUNE_PARAM
+You can tune multiple parameters in one flight by setting :ref:`TUNE_PARAM<TUNE_PARAM>` to
+one of the "tuning set" parameters. For example, if you set :ref:`TUNE_PARAM<TUNE_PARAM>`
 to 101 then you will have 4 different stages to your tune:
 
-- RATE_RLL_D
-- RATE_RLL_PI
-- RATE_PITCH_D
-- RATE_PITCH_PI
+- ``RATE_RLL_D``
+- ``RATE_RLL_PI``
+- ``RATE_PITCH_D``
+- ``RATE_PITCH_PI``
 
 notice that RATE_RLL_PI is actually two parameters in one, controlling
 both the P gain and the I gain for roll. This follows the normal
 advice for MultiCopters that you should keep the P and I values equal
 when doing a manual tune.
 
-When you choose a tuning set with TUNE_PARAM then you will initially be
+When you choose a tuning set with :ref:`TUNE_PARAM<TUNE_PARAM>` then you will initially be
 tuning the first parameter in the set. Once you have adjusted that
 parameter as much as you need to you can move to the next parameter in
 the set by holding the selector switch for more than 2 seconds. It is
@@ -199,12 +200,12 @@ case.
 Setting up
 ----------
 
-To setup for tuning your rate PIDs you should set TUNE_CHAN to your
-tuning channel, TUNE_SELECTOR to your selector switch and TUNE_PARAM
+To setup for tuning your rate PIDs you should set :ref:`TUNE_CHAN<TUNE_CHAN>` to your
+tuning channel, :ref:`TUNE_SELECTOR<TUNE_SELECTOR>` to your selector switch and :ref:`TUNE_PARAM<TUNE_PARAM>`
 to 101 (which is the "rate roll and pitch PIDs tuning set").
 
 Then takeoff and switch the vehicle to a comfortable flight mode for
-rate tuning. ALT_HOLD or LOITER in copters works well. For a quadplane
+rate tuning. For a quadplane
 QHOVER or QLOITER are the best choices.
 
 The first parameter you will be tuning will be RateRollD. To tune that
@@ -227,7 +228,7 @@ should follow this process:
   selector switch, then move it to the mid-point to activate it, and
   then lower the tuning knob all the way down. That will move the
   tuning value to half of the value that just stopped the
-  oscillation (assuming a TUNE_RANGE of 2). Moving to half of that value will give you enough
+  oscillation (assuming a :ref:`TUNE_RANGE<TUNE_RANGE>` of 2). Moving to half of that value will give you enough
   margin in your tune to ensure your vehicle can handle a wide range
   of flight conditions.
 
@@ -245,8 +246,6 @@ the 5 seconds is up when you hear the distinctive rapid
 bup-bip-bup-bip sound from the buzzer.
 
 At that point you can land the vehicle, or just enjoy flying it.
-
-[copywiki destination="plane"]
 
 The first time you do a full tune in this way it will probably take
 about five minutes of flight time to do a tune. With some practice you
