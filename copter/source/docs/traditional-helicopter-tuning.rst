@@ -29,16 +29,16 @@ controllers (attitude and rate) that work together to ensure the actual aircraft
 is following the software’s predicted pitch and roll rates and attitudes.
  
 The pilot’s commands are limited by the amount of acceleration that can be
-commanded through the ATC_ACCEL_P_MAX for pitch and ATC_ACCEL_R_MAX for roll.
+commanded through the :ref:`ATC_ACCEL_P_MAX<ATC_ACCEL_P_MAX>` for pitch and :ref:`ATC_ACCEL_R_MAX<ATC_ACCEL_R_MAX>` for roll.
 The initial responsiveness (crispness/sluggishness) of the aircraft to the pilot
-input can be adjusted through the ATC_INPUT_TC parameter (in AC 3.5 or earlier,
+input can be adjusted through the :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter (in AC 3.5 or earlier,
 this parameter was called RC_FEEL). The pilot input and these parameters are
 used to determine the requested rate required to achieve the desired response
 that is fed to the rate controller.
  
 The attitude controller is used to ensure the actual attitude of the aircraft
 matches the predicted attitude of the autopilot. It uses the
-ATC_ANG_PIT_P in pitch and the ATC_ANG_RLL_P in roll to determine a rate that is
+:ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>` in pitch and the :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>` in roll to determine a rate that is
 fed to the rate controller that will drive the aircraft to the predicted
 attitude. 
 
@@ -47,7 +47,7 @@ from the pilot input and the rate from the attitude controller and determines
 the swashplate commands required to achieve the input rate. The rate controller
 uses a PID control algorithm and a feed forward path to control the aircraft and
 achieve the input rate. The feed forward path uses the input rate and applies
-the ATC_RAT_PIT_FF gain for pitch and ATC_RAT_RLL_FF gain for roll to
+the :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>` gain for pitch and :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` gain for roll to
 determine its portion of the swashplate command. The PID algorithm uses the
 error between the actual rate and input rate to determine its portion of the
 swashplate command. These are summed and sent to the mixing unit where the servo
@@ -63,10 +63,10 @@ should be, then any error between the requested and actual rates will result in
 attitude error. So there is a feature called the integrator that continually
 sums the rate errors which effectively calculates the error in attitude.  The
 I gain is multiplied by the integrator and summed with the other outputs of the
-rate controller.  The integrator is limited by the ATC_RAT_RLL_IMAX in roll and
-ATC_RAT_PIT_IMAX in pitch.  When ground speed is less than 5 m/s, the
+rate controller.  The integrator is limited by the :ref:`ATC_RAT_RLL_IMAX<ATC_RAT_RLL_IMAX__AC_AttitudeControl_Heli>` in roll and
+:ref:`ATC_RAT_PIT_IMAX<ATC_RAT_PIT_IMAX__AC_AttitudeControl_Heli>` in pitch.  When ground speed is less than 5 m/s, the
 integrator is leaked off (reduced at a specified rate) and another parameter, 
-ATC_RAT_RLL_ILMI and ATC_RAT_PIT_ILMI, only lets it leak off so much.  If the 
+:ref:`ATC_RAT_RLL_ILMI<ATC_RAT_RLL_ILMI__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_ILMI <ATC_RAT_PIT_ILMI__AC_AttitudeControl_Heli>`, only lets it leak off so much.  If the 
 ILMI, or integrator leak minimum, is zero then the integrator will not be 
 allowed to grow and the attitude will not be driven to exactly match the 
 software’s predicted attitude.  However, if this is non zero or large enough for
@@ -87,47 +87,47 @@ the tail. The helicopter will be easily controllable with just the FF set to
 0.15 on pitch and roll in the event that you need to modify the tail settings
 from the defaults.  
 
-+---------------------+---------+
-| ATC_ACCEL_P_MAX     | 110000  |
-+---------------------+---------+
-| ATC_ACCEL_R_MAX     | 110000  |
-+---------------------+---------+
-| ATC_ANG_PIT_P       | 4.5     |
-+---------------------+---------+
-| ATC_ANG_RLL_P       | 4.5     |
-+---------------------+---------+
-| ATC_RAT_PIT_D       | 0       |
-+---------------------+---------+
-| ATC_RAT_PIT_FILT/   | 20      |
-| ATC_RAT_PIT_FLTE ** |         |
-+---------------------+---------+
-| ATC_RAT_PIT_I       | 0       |
-+---------------------+---------+
-| ATC_RAT_PIT_ILMI    | 0       |
-+---------------------+---------+
-| ATC_RAT_PIT_IMAX    | 0.40    |
-+---------------------+---------+
-| ATC_RAT_PIT_P       | 0       |
-+---------------------+---------+
-| ATC_RAT_PIT_FF      | 0.15    |
-+---------------------+---------+
-| ATC_RAT_RLL_D       | 0       |
-+---------------------+---------+
-| ATC_RAT_RLL_FILT/   | 20      |
-| ATC_RAT_RLL_FLTE ** |         |
-+---------------------+---------+
-| ATC_RAT_RLL_I       | 0       |
-+---------------------+---------+
-| ATC_RAT_RLL_ILMI    | 0       |
-+---------------------+---------+
-| ATC_RAT_RLL_IMAX    | 0.40    |
-+---------------------+---------+
-| ATC_RAT_RLL_P       | 0       |
-+---------------------+---------+
-| ATC_RAT_RLL_FF      | 0.15    |
-+---------------------+---------+
-| ATC_INPUT_TC        | 0.15    |
-+---------------------+---------+
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_ACCEL_P_MAX<ATC_ACCEL_P_MAX>`                              | 110000  |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_ACCEL_R_MAX<ATC_ACCEL_R_MAX>`                              | 110000  |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>`                                  | 4.5     |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>`                                  | 4.5     |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Heli>`         | 0       |
++----------------------------------------------------------------------+---------+
+| ATC_RAT_PIT_FILT/                                                    | 20      |
+| :ref:`ATC_RAT_PIT_FLTE<ATC_RAT_PIT_FLTE__AC_AttitudeControl_Heli>` **|         |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>`         | 0       |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_PIT_ILMI<ATC_RAT_PIT_ILMI__AC_AttitudeControl_Heli>`   | 0       |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_PIT_IMAX<ATC_RAT_PIT_IMAX__AC_AttitudeControl_Heli>`   | 0.40    |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`         | 0       |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>`       | 0.15    |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Heli>`         | 0       |
++----------------------------------------------------------------------+---------+
+| ATC_RAT_RLL_FILT/                                                    | 20      |
+| :ref:`ATC_RAT_RLL_FLTE<ATC_RAT_RLL_FLTE__AC_AttitudeControl_Heli>` **|         |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>`         | 0       |
+++---------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_RLL_ILMI<ATC_RAT_RLL_ILMI__AC_AttitudeControl_Heli>`   | 0       |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_RLL_IMAX<ATC_RAT_RLL_IMAX__AC_AttitudeControl_Heli>`   | 0.40    |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>`         | 0       |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>`       | 0.15    |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_INPUT_TC<ATC_INPUT_TC>`                                    | 0.15    |
++----------------------------------------------------------------------+---------+
 
 ** This param name changed in ArduPilot 4.0 and later.
 
@@ -140,45 +140,45 @@ with tuning pitch and roll.
 usually be running low headspeed and higher disc loading. With a mechanically
 driven tail this also means lower than normal tail speed and reduced tail
 authority. If your helicopter meets this description, it is recommended to set
-ATC_RAT_YAW_FF to 0.05 before the first test hover.
+:ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>` to 0.05 before the first test hover.
 
 Below are the current default settings for yaw. Spool up the heli and hover it
 no more than .25 meters above ground in Stabilize flight mode and test the
 starting tail settings. If the tail seems "loose" and doesn't want to hold
-increase the ATC_RAT_YAW_P. If the tail rapidly shakes side to side reduce the
-ATC_ANG_YAW_P.
+increase the :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>`. If the tail rapidly shakes side to side reduce the
+:ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>`.
 
-In all cases it is not recommended to adjust ATC_ANG_YAW_P below 3.5 or
-ATC_RAT_YAW_P above 0.38. If your helicopter cannot seem to achieve a solid tail
+In all cases it is not recommended to adjust :ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>` below 3.5 or
+:ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>` above 0.38. If your helicopter cannot seem to achieve a solid tail
 within those limits you likely have a mechanical problem with the tail - either
 excessive "slop" or play in the linkage, binding of the linkage or a servo
 problem. Correct the problem before proceeding with roll and pitch tuning.
 
-+---------------------+---------+
-| ATC_ACCEL_Y_MAX     | 27000   |
-+---------------------+---------+
-| ATC_ANG_YAW_P       | 4.5     |
-+---------------------+---------+
-| ATC_RAT_YAW_D       | 0.003   |
-+---------------------+---------+
-| ATC_RAT_YAW_FILT/   | 20      |
-| ATC_RAT_YAW_FLTE ** |         |
-+---------------------+---------+
-| ATC_RAT_YAW_I       | 0.12    |
-+---------------------+---------+
-| ATC_RAT_YAW_ILMI    | 0       |
-+---------------------+---------+
-| ATC_RAT_YAW_IMAX    | 0.33    |
-+---------------------+---------+
-| ATC_RAT_YAW_P       | 0.18    |
-+---------------------+---------+
-| ATC_RAT_YAW_FF      | 0.024   |
-+---------------------+---------+
++---------------------------------------------------------------------+----------+
+| :ref:`ATC_ACCEL_Y_MAX<ATC_ACCEL_Y_MAX>`                             | 27000    |
++---------------------------------------------------------------------+----------+
+| :ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>`                                 |  4.5     |
++---------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_D<ATC_RAT_YAW_D__AC_AttitudeControl_Heli>`        | 0.003    |
++---------------------------------------------------------------------+----------+
+| ATC_RAT_YAW_FILT/                                                   |  20      |
+| :ref:`ATC_RAT_YAW_FLTE<ATC_RAT_YAW_FLTE__AC_AttitudeControl_Heli>` *|          |
++---------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_I<ATC_RAT_YAW_I__AC_AttitudeControl_Heli>`        | 0.12     |
++---------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_ILMI<ATC_RAT_YAW_ILMI__AC_AttitudeControl_Heli>`  | 0        |
++---------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_IMAX<ATC_RAT_YAW_IMAX__AC_AttitudeControl_Heli>`  | 0.33     |
++---------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>`        | 0.18     |
++---------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>`      | 0.024    |
++---------------------------------------------------------------------+----------+
 
-** This param name changed in ArduPilot 4.0 and later.
+* This param name changed in ArduPilot 4.0 and later.
 
-Setting FF and ACCEL_MAX for Desired Pitch and Roll Response
-============================================================
+Setting _FF and ACCEL_x_MAX Parameters for Desired Pitch and Roll Response
+==========================================================================
 In both pitch and roll axes, the FF gain is set so that the actual aircraft
 rate matches the desired rate. To do this, the RATE message in the log is
 required to compare the P.des and P signals for pitch and the R.des and R
@@ -191,7 +191,7 @@ and actual rates are offset by some amount it means that your swash was not
 properly leveled in the setup or the CG is not right.  In this case, just make
 sure the change in rate is similar between desired and actual.  If you get the
 rates to match and they feel like they are too fast, then reduce the
-ATC_ACCEL_MAX parameter and repeat the process above to match the desired and
+``ATC_ACCEL_x_MAX`` parameter and repeat the process above to match the desired and
 actual rates. 
 
 If while tuning the FF gain the aircraft starts to oscillate, reduce the 
@@ -205,12 +205,12 @@ unless you have really really slow servos or slow linkage rate. With all
 helicopters, the FF gain compensates for differences in servo and linkage
 speed. 
 
-The final setting for ATC_ACCEL_MAX parameters will depend on the size of the
+The final setting for ``ATC_ACCEL_x_MAX`` parameters will depend on the size of the
 helicopter.  Large 800-900 class machines will typically be in the 36000-52000 
 range; smaller 450-500 class machines will typically be in the 90000-110000 
-range. You may want to experiment with the ATC_INPUT_TC parameter as well to get
+range. You may want to experiment with the :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter as well to get
 the initial aircraft response the way you like it.  It is recommended to keep the
-ATC_INPUT_TC parameter between 0.15 and 0.25 (for RC_FEEL with AC 3.5 or earlier,
+:ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter between 0.15 and 0.25 (for ``RC_FEEL`` with AC 3.5 or earlier,
 the recommended range was 25 to 50).  Once this process is complete, the aircraft
 should have the desired feel in snappiness and rate.
 
@@ -226,10 +226,10 @@ mechanical version of the rate PID loop. So flybar is tuned using only FF in
 pitch and roll. The rate D and P gains mentioned in the next topic below are
 left set to zero for flybar. I-gain, IMAX, and ILMI are tuned just like FBL.
 Below is a plot of beginning a tune on a flybar helicopter using the starting
-setting of ATC_RAT_RLL_FF = 0.22. The graph shows the aircraft's response to
+setting of :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` = 0.22. The graph shows the aircraft's response to
 the rate request of the attitude controller is low, meaning the FF value must
 be increased to achieve proper rate response. For all flybar helicopters be sure
-to set H_FLYBAR_MODE = 1
+to set :ref:`H_FLYBAR_MODE<H_FLYBAR_MODE>` = 1
 
 .. image:: ../images/TradHeli_tuning_example3_1.png
 
@@ -242,58 +242,58 @@ keep the actual aircraft following the software predicted rates.
 Start with the D gain.  Use the tuning feature of ArduCopter which is linked to
 channel 6 on your radio.  Make the following parameter changes:
 
-+---------------------------+---------+
-| TUNE                      | 21      |
-+---------------------------+---------+
-| TUNE_LOW (prior to 4.0)   | 0       |
-+---------------------------+---------+
-| TUNE_MIN (4.0 and later)  | 0       |
-+---------------------------+---------+
-| TUNE_HIGH (prior to 4.0)  | 30      |
-+---------------------------+---------+
-| TUNE_MAX (4.0 and later)  | 0.030*  |
-+---------------------------+---------+
++--------------------------------------------+---------+
+| :ref:`TUNE<TUNE>`                          | 21      |
++--------------------------------------------+---------+
+| ``TUNE_LOW`` (prior to 4.0)                | 0       |
++--------------------------------------------+---------+
+| :ref:`TUNE_MIN<TUNE_MIN>` (4.0 and later)  | 0       |
++--------------------------------------------+---------+
+| ``TUNE_HIGH`` (prior to 4.0)               | 30      |
++--------------------------------------------+---------+
+| :ref:`TUNE_MAX<TUNE_MAX>` (4.0 and later)  | 0.030*  |
++--------------------------------------------+---------+
 
 *for futaba radios this equates to one increment in the knob to 0.001*
 
-Adjust the tuning knob until the ATC_RAT_RLL_D and ATC_RAT_PIT_D gains are
+Adjust the tuning knob until the :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Heli>` gains are
 0.001. Lift into a hover and make some sharp stick inputs in roll.  Most
 helicopters will see roll oscillations before they see pitch oscillations.
 That is why roll inputs are suggested.  If it doesn't shake, increase the gain
 by 0.001 and try it again. At the value where you get the rapid shaking, cut
-that value in half and enter it as the final tuning value for ATC_RAT_RLL_D and
-ATC_RAT_PIT_D.  Test hover the heli and make some rapid stick movements in both
+that value in half and enter it as the final tuning value for :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Heli>` and
+:ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Heli>`.  Test hover the heli and make some rapid stick movements in both
 pitch and roll to make sure it's stable.
 
 Now tune the P gains.  Make the following tuning parameter changes:
 
-+---------------------------+---------+
-| TUNE                      | 4       |
-+---------------------------+---------+
-| TUNE_LOW (prior to 4.0)   | 0       |
-+---------------------------+---------+
-| TUNE_MIN (4.0 and later)  | 0       |
-+---------------------------+---------+
-| TUNE_HIGH (prior to 4.0)  | 300     |
-+---------------------------+---------+
-| TUNE_MAX (4.0 and later)  | 0.3*    |
-+---------------------------+---------+
++--------------------------------------------+---------+
+| :ref:`TUNE<TUNE>`                          | 4       |
++--------------------------------------------+---------+
+| ``TUNE_LOW`` (prior to 4.0)                | 0       |
++--------------------------------------------+---------+
+| :ref:`TUNE_MIN<TUNE_MIN>` (4.0 and later)  | 0       |
++--------------------------------------------+---------+
+| ``TUNE_HIGH`` (prior to 4.0)               | 300     |
++--------------------------------------------+---------+
+| :ref:`TUNE_MAX<TUNE_MAX>` (4.0 and later)  | 0.3*    |
++--------------------------------------------+---------+
 
 *for futaba radios this equates to one increment in the knob to 0.01*
 
-Adjust the tuning knob until the ATC_RAT_RLL_P and ATC_RAT_PIT_P  gains are
+Adjust the tuning knob until the :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`  gains are
 0.05. Lift into a hover and roll aggressively from side to side.  If it doesn't
 shake, increase the gain by 0.01 and try it again. At the value where you get
 the rapid shaking, cut that value in half and enter it as the final tuning value
-for ATC_RAT_RLL_P and ATC_RAT_PIT_P.  Test hover the heli and make some rapid
+for :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`.  Test hover the heli and make some rapid
 stick movements in both pitch and roll to make sure it's stable.  
 
 After tuning the P and D gain the aircraft should feel much smoother.
 
 Setting the I gain, IMAX, and ILMI
 ==================================
-It is recommended to set the ATC_RAT_PIT_I gain equal to the ATC_RAT_PIT_FF
-gain and the ATC_RAT_RLL_I gain equal to the ATC_RAT_RLL_FF gain.  The IMAX
+It is recommended to set the :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>`
+gain and the :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` gain.  The IMAX
 value limits amount of integrator error that can be stored to counter large
 disturbances in attitude.  In the pitch axis this is set by the integrator error
 required to hold the aircraft attitude at high forward speeds.  The starting
@@ -334,7 +334,7 @@ aircraft from drifting in modes like Stabilize and Althold.  The trim attitude
 in the roll axis is affected by the tail rotor thrust.  All conventional single-
 rotor helicopters with a torque-compensating tail rotor hover either right skid 
 low or left skid low, depending on which way the main rotor turns. The 
-ArduCopter software has a parameter, ATC_HOVR_RLL_TRIM, to compensate for this 
+ArduCopter software has a parameter, :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>`, to compensate for this 
 phenomenon. Longitudinal CG location will affect the trim attitude in the pitch
 axis.  There is no parameter to tell the autopilot what pitch attitude 
 the aircraft hovers with no drift. It always targets zero deg pitch as measured
@@ -342,8 +342,8 @@ by the autopilot. Therefore the actual pitch attitude the aircraft
 hovers may be 5 deg nose high but the autopilot AHRS Trim value is set
 to make it think the attitude is zero deg. 
 
-In order to trim the aircraft, set the ATC_HOVR_RLL_TRIM parameter to zero. 
-During the initial setup of the autopilot, the AHRS_TRIM values are set 
+In order to trim the aircraft, set the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` parameter to zero. 
+During the initial setup of the autopilot, the ``AHRS_TRIM_x`` values are set 
 during the accelerometer calibration on the last step that has you level the 
 aircraft. For that step you should have made certain that the shaft was 
 perfectly straight up in pitch and roll. For this trim procedure, it is 
@@ -352,20 +352,20 @@ recommended that you check it and using the method below.
 Measure the actual frame angle (on a portion of the frame that is perpendicular
 to the mainshaft) in pitch and roll with your digital pitch gauge. Connected to
 your ground station software with MavLink, note the pitch and roll angle the
-autopilot is "seeing". Adjust the AHRS_TRIM_X and AHRS_TRIM_Y values so
+autopilot is "seeing". Adjust the :ref:`AHRS_TRIM_X<AHRS_TRIM_X>` and :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` values so
 the autopilot "sees" the identical frame angle you measured with the
 digital pitch gauge. You can use the Level Horizon function in your ground station
 to level the horizon with the helicopter at actual level. That function will
 make the adjustments to the AHRS_TRIM's for you.
 
 The above is necessary so we can accurately measure the roll angle to set the
-ATC_HOVR_RLL_TRIM. The autopilot now "knows" when the mainshaft is
+:ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>`. The autopilot now "knows" when the mainshaft is
 perfectly vertical.
 
 Load the helicopter with its normal payload, and hover the helicopter
 in no-wind conditions in Stabilize flight mode. Land it and pull the log, noting
 the roll angle that you had to hold with the stick to keep the helicopter from
-drifting. Enter this value in the ATC_HOVR_RLL_TRIM parameter in centidegrees.
+drifting. Enter this value in the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` parameter in centidegrees.
 For a CW turning main rotor if it took 3.5 degrees of right roll to compensate,
 enter 350. Negative values are for a CCW turning main rotor that requires left
 roll to compensate.
@@ -373,11 +373,11 @@ roll to compensate.
 **Important Note** - do not use the radio trims at all. Make sure they are
 centered. 
 
-After setting the ATC_HOVR_RLL_TRIM now hover the helicopter again. If it still
-drifts make small adjustments to the SERVO1_TRIM, SERVO2_TRIM and SERVO3_TRIM.
+After setting the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` now hover the helicopter again. If it still
+drifts make small adjustments to the :ref:`SERVO1_TRIM<SERVO1_TRIM>` , :ref:`SERVO2_TRIM<SERVO2_TRIM>` and :ref:`SERVO3_TRIM<SERVO3_TRIM>` .
 The chances of getting the swashplate perfectly level during bench setup is very
 low and this dynamic tuning is needed to trim the helicopter. If it requires
-large deviation from your original SERVOx_TRIM values it is likely you have a CG
+large deviation from your original ``SERVOx_TRIM`` values it is likely you have a CG
 problem, or your initial setup when leveling the swashplate was not very
 accurate.
 
@@ -392,7 +392,7 @@ helicopter, preferably in a figure-8 pattern to make both right and left turns,
 at a speed of 6 m/s. Fly the helicopter on this mission, pull the logs from the
 microSD card and look at the AHRS desired vs actual pitch, roll and yaw
 attitudes in dynamic flight. They should track within 1-2 degrees. If they do
-not, increase the ATC_RAT_xxx_I value for that axis until they do.
+not, increase the ``ATC_RAT_xxx_I`` value for that axis until they do.
 
 Now, fly the same mission, but at higher speed of 9-10 m/s, and analyze the logs
 the same way. Make further adjustments to the I-gains and IMAX values as
