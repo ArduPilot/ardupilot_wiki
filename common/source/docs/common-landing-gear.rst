@@ -11,7 +11,7 @@ The output which controls the servo for landing gear/ camera mount is set by the
 
 During startup, the status of the landing gear/ camera mount is determined by the :ref:`LGR_STARTUP<LGR_STARTUP>`  parameter. Starting either in deployed or retracted state can be selected, or to wait for pilot input, which prevents PWM signals from being active on the outputs whose SERVOx_FUNCTION = 29 (Landing Gear). This prevents the current position of those outputs from changing until the pilot or automatic operation commands a change.
 
-For Copter, the landing gear/ camera mount will automatically deploy when the flight mode is changed to Land, during the final landing phase of RTL mode, and when a Land command is executed in AUTO mode. For Plane, it will deploy after a Takeoff is completed in AUTO mode, during the final glide phase of a LAND in AUTO mode, or final descent phase of a VTOL landing.
+For Copter, the landing gear/ camera mount will automatically deploy when the flight mode is changed to Land, during the final landing phase of RTL mode, and when a Land command is executed in AUTO mode. For Plane, it will retract after a Takeoff is completed in AUTO mode, and deploy during the final glide phase of a LAND in AUTO mode, or final descent phase of a VTOL landing.
 
 In addition, the landing gear/ camera mount can automatically deploy or retract based on altitude, using the :ref:`LGR_DEPLOY_ALT<LGR_DEPLOY_ALT>` for automatic deployment below this altitude, and automatic retraction if above the :ref:`LGR_RETRACT_ALT<LGR_RETRACT_ALT>`. If these are set to 0, then these functions are not active.
 
