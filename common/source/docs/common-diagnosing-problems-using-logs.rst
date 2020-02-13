@@ -133,7 +133,7 @@ The easiest way to find these is to look in the dataflash logs and filter the fi
 .. image:: ../../../images/DiagnosingWithLogs_FilterForErrors.png
     :target: ../_images/DiagnosingWithLogs_FilterForErrors.png
 
-The Subsys (aka Sub-system) gives the area that generated the error and the ECode (aka Error Code) tells you what the error was specifically.  The list of subsystems and error codes can be found at the bottom of the Copter `defines.h file <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L339>`__.
+The Subsys (aka Sub-system) gives the area that generated the error and the ECode (aka Error Code) tells you what the error was specifically.  The list of subsystems and error codes can be found in the AP_Logger library `AP_Logger.h file <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L33>`__.
 
 .. raw:: html
 
@@ -224,7 +224,7 @@ The Subsys (aka Sub-system) gives the area that generated the error and the ECod
 
 Vehicle was unable to enter the desired flight mode normally because of a bad position estimate
 
-See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L34>`__
+See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h#L14>`__ for Copter, `Plane modes here <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/mode.h#L15>`__, and `Rover modes here <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.h#L19>`__
 
 .. raw:: html
 
