@@ -15,7 +15,7 @@ There are many different kinds of rangefinders: Lidar (using laser or infra-red 
    :ref:`common-object-avoidance-landing-page` features are new and should be used with caution.
    
 
-Up to 10 Rangefinders can be used in the system. :ref:`Object Avoidance <common-object-avoidance-landing-page>` can use a single 360 degree Lidar, or up to 9 unidirectional rangefinders: 8 arranged in a circle covering 45 degree wide segments, plus an upward facing rangefinder. And a downward facing rangefinder used for low altitude height above ground measurements.
+Up to 10 Rangefinders can be used in the system (1 thru A). :ref:`Object Avoidance <common-object-avoidance-landing-page>` can use a single 360 degree Lidar, or up to 9 unidirectional rangefinders: 8 arranged in a circle covering 45 degree wide segments, plus an upward facing rangefinder. And a downward facing rangefinder used for low altitude height above ground measurements.
 
 Connecting and Configuring the Rangefinder
 ==========================================
