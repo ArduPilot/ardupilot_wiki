@@ -86,7 +86,7 @@ is complete. Some users have reported leaving :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>
 time. While this may work it may lead to significant variation is
 calibration if wind speed varies over a flight.
 
-.. note:: For those users chasing increased accuracy, between steps 2) and 3), the value of GND_TEMP can be set to the current air temperature at the take-off location. By default the calibration algorithm uses the board temperature at power on as an approximation to the ambient air temperature, but due to solar and electrical heating, this nearly always reads high. This step may be worthwhile if operating in extreme temperature conditions.
+.. note:: For those users chasing increased accuracy, between steps 2) and 3), the value of :ref:`GND_TEMP<GND_TEMP>`  can be set to the current air temperature at the take-off location. By default the calibration algorithm uses the board temperature at power on as an approximation to the ambient air temperature, but due to solar and electrical heating, this nearly always reads high. This step may be worthwhile if operating in extreme temperature conditions.
 
 .. note:: You do not have to have :ref:`ARSPD_USE<ARSPD_USE>` enabled to do automatic airspeed calibration. You can set :ref:`ARSPD_USE<ARSPD_USE>` = 0 if you would prefer not to use the sensor until it is calibrated.
 
