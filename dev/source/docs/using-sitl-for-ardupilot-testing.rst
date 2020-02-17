@@ -60,9 +60,14 @@ For example, to start Copter in *Ballarat* (a named location in
 .. note::
 
    You can add your own locations to the file. The order is Lat,Lng,Alt,Heading where alt is MSL and in meters, and heading is degrees.
-   If you need to use a
-   location regularly then consider adding it to the project via a pull
-   request.
+   If the flying location is well-used then consider adding it to the project via a pull request.
+
+.. note::
+
+   You can add your own private locations to a local locations.txt
+   file, in the same format as the main file.  On linux the file is
+   located in ``$HOME/.config/ardupilot/locations.txt`` - you will
+   need to create this file using your favourite text editor.
 
 Simulating On-Board OSD
 =======================
