@@ -189,7 +189,7 @@ Failsafe Parameters and their Meanings
 Short failsafe action (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` )
 ------------------------------------------------------------
 
-The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which Q_OPTION is selected.
+The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which :ref:`Q_OPTIONS<Q_OPTIONS>` is selected.
 
 In AUTO, LOITER and GUIDED modes you can also choose for it continue with the mission and ignore the short failsafe. If :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` is 0 then it will continue with the mission, if it is 1 then it will enter CIRCLE mode.
 

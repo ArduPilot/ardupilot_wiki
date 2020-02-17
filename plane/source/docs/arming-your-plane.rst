@@ -13,7 +13,7 @@ before flight has two purposes:
    fly
 
 In past releases of ArduPlane, arming was optional, and the requirement
-to arm (controlled by the ARMING_REQUIRED parameter) was disabled by
+to arm (controlled by the :ref:`ARMING_REQUIRE<ARMING_REQUIRE>` parameter) was disabled by
 default. This was changed for the 3.3.0 release to require arming by
 default.
 
@@ -21,9 +21,7 @@ The key thing that arming does is to enable the motor. You will not be
 able to start the motor (ie. control the throttle) until the aircraft is
 armed.
 
-**Note**: If you have AHRS_EKF_USE enabled (you are using the EKF)
-then it is particularly important that you have arming enabled with
-arming checks enabled. Flying EKF without arming checks may cause a
+**Note**: If you have :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` set to 2 or 3 (you are using one of the EKFs) then it is particularly important that you have arming checks enabled for INS. Flying EKF without arming checks may cause a
 crash.
 
 .. warning::
@@ -115,7 +113,7 @@ following methods:
 -  use a ground station to issue a disarm command
 -  use the safety switch on your aircraft (on Pixhawk)
 -  after an auto-landing the plane will automatically disarm after 20
-   seconds if still on the ground (controlled by LAND_DISARMDELAY
+   seconds if still on the ground (controlled by :ref:`LAND_DISARMDELAY<LAND_DISARMDELAY>`
    parameter)
 
 Visual and Audible signals
