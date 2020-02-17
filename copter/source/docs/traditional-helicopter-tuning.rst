@@ -47,7 +47,7 @@ from the pilot input and the rate from the attitude controller and determines
 the swashplate commands required to achieve the input rate. The rate controller
 uses a PID control algorithm and a feed forward path to control the aircraft and
 achieve the input rate. The feed forward path uses the input rate and applies
-the :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>` gain for pitch and :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` gain for roll to
+the :ref:`ATC_RAT_PIT_VFF<ATC_RAT_PIT_VFF__AC_AttitudeControl_Heli>` gain for pitch and :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF__AC_AttitudeControl_Heli>` gain for roll to
 determine its portion of the swashplate command. The PID algorithm uses the
 error between the actual rate and input rate to determine its portion of the
 swashplate command. These are summed and sent to the mixing unit where the servo
@@ -109,7 +109,7 @@ from the defaults.
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`         | 0       |
 +----------------------------------------------------------------------+---------+
-| :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>`       | 0.15    |
+| :ref:`ATC_RAT_PIT_VFF<ATC_RAT_PIT_VFF__AC_AttitudeControl_Heli>`     | 0.15    |
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Heli>`         | 0       |
 +----------------------------------------------------------------------+---------+
@@ -124,7 +124,7 @@ from the defaults.
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>`         | 0       |
 +----------------------------------------------------------------------+---------+
-| :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>`       | 0.15    |
+| :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF__AC_AttitudeControl_Heli>`     | 0.15    |
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_INPUT_TC<ATC_INPUT_TC>`                                    | 0.15    |
 +----------------------------------------------------------------------+---------+
@@ -140,7 +140,7 @@ with tuning pitch and roll.
 usually be running low headspeed and higher disc loading. With a mechanically
 driven tail this also means lower than normal tail speed and reduced tail
 authority. If your helicopter meets this description, it is recommended to set
-:ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>` to 0.05 before the first test hover.
+:ref:`ATC_RAT_YAW_VFF<ATC_RAT_YAW_VFF__AC_AttitudeControl_Heli>` to 0.05 before the first test hover.
 
 Below are the current default settings for yaw. Spool up the heli and hover it
 no more than .25 meters above ground in Stabilize flight mode and test the
@@ -172,7 +172,7 @@ problem. Correct the problem before proceeding with roll and pitch tuning.
 +---------------------------------------------------------------------+----------+
 | :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>`        | 0.18     |
 +---------------------------------------------------------------------+----------+
-| :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>`      | 0.024    |
+| :ref:`ATC_RAT_YAW_VFF<ATC_RAT_YAW_VFF__AC_AttitudeControl_Heli>`    | 0.024    |
 +---------------------------------------------------------------------+----------+
 
 * This param name changed in ArduPilot 4.0 and later.
@@ -226,7 +226,7 @@ mechanical version of the rate PID loop. So flybar is tuned using only FF in
 pitch and roll. The rate D and P gains mentioned in the next topic below are
 left set to zero for flybar. I-gain, IMAX, and ILMI are tuned just like FBL.
 Below is a plot of beginning a tune on a flybar helicopter using the starting
-setting of :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` = 0.22. The graph shows the aircraft's response to
+setting of :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF__AC_AttitudeControl_Heli>` = 0.22. The graph shows the aircraft's response to
 the rate request of the attitude controller is low, meaning the FF value must
 be increased to achieve proper rate response. For all flybar helicopters be sure
 to set :ref:`H_FLYBAR_MODE<H_FLYBAR_MODE>` = 1
@@ -292,8 +292,8 @@ After tuning the P and D gain the aircraft should feel much smoother.
 
 Setting the I gain, IMAX, and ILMI
 ==================================
-It is recommended to set the :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>`
-gain and the :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` gain.  The IMAX
+It is recommended to set the :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_PIT_VFF<ATC_RAT_PIT_VFF__AC_AttitudeControl_Heli>`
+gain and the :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF__AC_AttitudeControl_Heli>` gain.  The IMAX
 value limits amount of integrator error that can be stored to counter large
 disturbances in attitude.  In the pitch axis this is set by the integrator error
 required to hold the aircraft attitude at high forward speeds.  The starting
