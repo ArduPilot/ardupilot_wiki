@@ -165,14 +165,13 @@ If you are in the root folder of your local Wiki repository:
 RST rendering on Linux
 ----------------------
 
-* `ReText <https://github.com/retext-project/retext>`__ is a Linux tool that provides
-syntax highlighting and basic on-the-fly rendering in a single application.
+* `ReText <https://github.com/retext-project/retext>`__ is a Linux tool that provides syntax highlighting and basic on-the-fly rendering in a single application.
 
-.. note:: 
 
-    Although the tool is Python based, don't try it on Windows as it very prone to crashes (this is 
-    also stated by the website).
+.. note:: Although the tool is Python based, don't try it on Windows as it very prone to crashes (this is also stated by the website).
 
 * `PyCharm <https://www.jetbrains.com/pycharm/>`__
+
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
