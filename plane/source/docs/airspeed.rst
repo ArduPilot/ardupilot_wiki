@@ -16,7 +16,7 @@ The following sections explain how to wire sensors to the autopilot. After you i
     :target: ../_images/BR-0004-03-2T1.jpg
 
 
-ARSPD_USE
+ARSPD USE
 =========
 
 :ref:`ARSPD_USE<ARSPD_USE>` enables airspeed use for automatic throttle modes instead of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` . The autopilot continues to display and log airspeed if set to 0, but only airspeed sensor readings for control if set to 1. It will only use airspeed sensor readings when throttle is idle, if set to 2 (useful for gliders with airspeed sensors behind propellers).
@@ -205,15 +205,15 @@ a loose fitting cover over the pitot tube that shields the front hole
 and the four small side holes from the wind. This cover should be fitted
 prior to power on and removed before flight. If you forget to do this,
 you can always place the cover and repeat the airspeed auto-zero using
-the Mission Planner's PREFLIGHT_CALIBRATE => Do Action.
+the Mission Planner's PREFLIGHT CALIBRATE => Do Action.
 
-The airspeed reading scale factor is adjusted using the ARSPD_RATIO
+The airspeed reading scale factor is adjusted using the :ref:`ARSPD_RATIO<ARSPD_RATIO>`
 parameter. Plane has an automatic calibration function that will adjust
-the value of ARSPD_RATIO automatically provided the plane is flown with
+the value of :ref:`ARSPD_RATIO<ARSPD_RATIO>` automatically provided the plane is flown with
 frequent direction changes. A normal model flying field circuit pattern
 or loiter will achieve the required direction changes, cross-country
 flying will not. To enable automatic airspeed sensor calibration, set
-the value of ARSPD_AUTOCAL to 1.
+the value of :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1.
 
 Using a different pin for the airspeed sensor
 =============================================
