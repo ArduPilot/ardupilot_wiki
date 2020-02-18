@@ -21,7 +21,7 @@ The most important step to setting up the plane is having the correct inputs,
 outputs, and reversals. Inputs are covered on the :ref:`RC input setup page <rc-throw-trim>`. 
 After the RC inputs are configured, configure the outputs.
 
-.. warning:: Make sure the AHRS_ORIENT is set correctly for the autopilot. If it is incorrect, 
+.. warning:: Make sure the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` is set correctly for the autopilot. If it is incorrect, 
              this setup will fail, and the plane may crash upon entry into any stabilize mode.
              
 Servo cables can be connected to any output of the autopilot,
@@ -78,10 +78,10 @@ If the any of the control surfaces do not respond correctly, reverse the
 output by changing the corresponding SERVOn_REVERSED setting (from 0 to 1, 
 or from 1 to 0).
 
-.. note:: KFF_RDDRMIX mut not be set to 0 for rudder setup. If the 
+.. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` mut not be set to 0 for rudder setup. If the 
           plane actually needs 0, then reset it after this setup.
 
-          KFF_RDDRMIX should cause the tail surfaces point away from the 
+          :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` should cause the tail surfaces point away from the 
           direction of the lowered aileron. This corrects adverse yaw caused
           by the additional drag of a lowered aileron.
 

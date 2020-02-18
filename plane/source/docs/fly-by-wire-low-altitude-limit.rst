@@ -29,7 +29,7 @@ How to setup Alt Limit
 ======================
 
 Using your APM Mission Planner you will have to set parameter
-ALT_HOLD_FBWCM to the desired alt **in centimeters!** If it
+:ref:`ALT_HOLD_FBWCM<ALT_HOLD_FBWCM>` to the desired alt **in centimeters!** If it
 is **0** then it is turned off.
 
 Choosing the right altitude
