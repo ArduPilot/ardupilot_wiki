@@ -4,6 +4,10 @@
 Building Mission Planner with Visual Studio
 ===========================================
 
+.. warning::
+
+    This page is outdated and instructions should be adapted to make it work.
+
 Introduction
 ============
 
