@@ -138,12 +138,12 @@ PID gain scheduling
 
 - If greater than 1: defines the maximum boost that will be applied to the control surfaces when throttle is below hover, this should be reduced if oscillations are seen at low throttle. 
 
-- If less than 1: then instead of boosting control surface deflection below hover throttle, deflection is reduced at high airspeeds (if an airspeed sensor is available and enabled) or at high tilt angles and high throttle levels. The maximum attenuation is currently hardwired to 0.2, so control surface deflection is reduced by a factor of 0.2 when airspeed exceeds ARSPD_FBW_MAX, or if airspeed is not available, when tilt reaches 90 degrees from vertical or at max throttle.
+- If less than 1: then instead of boosting control surface deflection below hover throttle, deflection is reduced at high airspeeds (if an airspeed sensor is available and enabled) or at high tilt angles and high throttle levels. The maximum attenuation is currently hardwired to 0.2, so control surface deflection is reduced by a factor of 0.2 when airspeed exceeds :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>`, or if airspeed is not available, when tilt reaches 90 degrees from vertical or at max throttle.
 
 Orientation
 ===========
 
-The AHRS_ORIENTATION, the accelerometer calibration and AHRS trim
+The :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>`, the accelerometer calibration and AHRS trim
 should all be done for fixed wing flight. Fixed wing flight is
 considered "normal" orientation for a tailsitter.
 
@@ -210,7 +210,7 @@ control to vectored thrust in forward flight. This control is combined
 with control from your elevon mixing gain (controlled by :ref:`MIXING_GAIN<MIXING_GAIN>`).
 
 By adjusting the relative values of :ref:`Q_TAILSIT_VHGAIN<Q_TAILSIT_VHGAIN>`, :ref:`Q_TAILSIT_VFGAIN<Q_TAILSIT_VFGAIN>`
-and MIXING_GAIN you can adjust how much control you have from elevons
+and :ref:`MIXING_GAIN<MIXING_GAIN>` you can adjust how much control you have from elevons
 and thrust vectoring in each flight mode.
 
 .. youtube:: s2KLOAdS_HY

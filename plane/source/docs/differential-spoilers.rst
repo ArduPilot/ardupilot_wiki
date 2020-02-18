@@ -53,7 +53,7 @@ using :ref:`DSPOILER_CROW_W1 <DSPOILER_CROW_W1>` and :ref:`DSPOILER_CROW_W2 <DSP
 Differential Spoiler options
 ============================
 :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` parameter gives several options that can be used to tailor the dspoiler 
-functionality to your aircraft. They can be used to setup a 'full house' wing on a glider. DSPOILER_OPTS is 
+functionality to your aircraft. They can be used to setup a 'full house' wing on a glider. :ref:`DSPOILER_OPTS<DSPOILER_OPTS>` is 
 a bit-mask each, bit enables different functionality. 
 
 +-------+-----------------------------------------------------------------------------------------------+
