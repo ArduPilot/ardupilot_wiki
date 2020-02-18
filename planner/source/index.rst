@@ -39,6 +39,7 @@ Full Table of Contents
    docs/common-connect-mission-planner-autopilot
    docs/common-mission-planning
    docs/mission-planner-features
+   docs/mission-planner-building
    docs/common-appendix
    docs/common-table-of-contents
     
