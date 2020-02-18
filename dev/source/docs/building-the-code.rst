@@ -43,7 +43,7 @@ Windows users have 3 or 4 options for setting up the build environment. All of t
 Mission Planner
 ---------------
 
-- :ref:`Building Mission Planner with Visual Studio <buildin-mission-planner>`
+- :ref:`Building Mission Planner with Visual Studio <building-mission-planner>`
 
 
 
@@ -65,6 +65,6 @@ Links to current build pages
     Building for Bebop 2 <building-for-bebop-2>
     Building for Bebop on Linux <building-for-bebop-on-linux>
     Building for BeagleBone Black <building-for-beaglebone-black-on-linux>
-    Building Mission Planner with Visual Studio <buildin-mission-planner>
+    Building Mission Planner with Visual Studio <building-mission-planner>
     ArduPilot Pre-Built Binaries <pre-built-binaries>
 
