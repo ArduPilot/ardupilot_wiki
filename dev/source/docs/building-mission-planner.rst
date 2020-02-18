@@ -1,4 +1,4 @@
-.. _buildin-mission-planner:
+.. _building-mission-planner:
 
 ===========================================
 Building Mission Planner with Visual Studio
