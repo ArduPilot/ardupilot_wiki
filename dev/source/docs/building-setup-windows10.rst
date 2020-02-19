@@ -5,7 +5,7 @@
 Setting up the waf Build Environment on Windows10 using WSL
 ===========================================================
 
-These setup instructions describe how to setup "Bash on Ubuntu on Windows" (aka "Windows Subsystem for Linux") which allows building with waf.  Alternative setup instructions for building with **make** are :ref:`here <building-setup-windows>`.
+These setup instructions describe how to setup "Bash on Ubuntu on Windows" (aka "Windows Subsystem for Linux") which allows building with waf.
 
 .. image:: ../images/build-on-windows10-top-image.jpg
     :target: ../_images/build-on-windows10-top-image.jpg
@@ -19,7 +19,11 @@ Setup steps
 
 #. Enable Ubuntu on Windows which includes the following steps (original `How-To Geek's instructions here <http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>`__):
 
-   - Under Control Panel >> Programs >> Turn Windows features on or off, enable "Windows Subsystem for Linux
+    .. note::
+
+        In case of trouble, please refer to the official documentation from Microsoft : `<https://docs.microsoft.com/en-us/windows/wsl/install-win10>`__
+
+   - Under Control Panel >> Programs >> Turn Windows features on or off, enable "Windows Subsystem for Linux" and restart your computer when asked.
 
        .. image:: ../images/build-on-windows10-subsys-for-linux.png
            :width: 70%
@@ -31,37 +35,16 @@ Setup steps
        .. image:: ../images/build-on-windows10-usernamepwd.png
            :width: 70%
            :target: ../_images/build-on-windows10-usernamepwd.png
-           
+
+    .. warning::
+
+        Be careful not to lose your Linux password because it is often required, including when installing new packages. Also note Linux will not display any characters as you type your password
+
 #. From withing the Ubuntu bash terminal, update your system to the latest packages:
 
-    - ``sudo apt-get update && sudo apt-get upgrade``
+    - ``sudo apt update && sudo apt upgrade && sudo apt full-upgrade``
     
-#. Copy the ArduPilot source files to your local Ubuntu filesystem by cloning the git repository and updating the submodules. (Accessing the source files on your Windows filesystem won't work because the must be kept on the native WSl filesystem)
-
-    - ``git clone https://github.com/ardupilot/ardupilot.git``
-    - ``cd ardupilot``
-    - ``git submodule update --init --recursive``
-
-#.  run the Tools/environment_install/install-prereqs-ubuntu.sh script:
-
-    - ``./Tools/environment_install/install-prereqs-ubuntu.sh -y``
-    - You will be asked for your Ubuntu root password which is the password provided in step 1 (above).  Respond with "Y" if it asks if you wish to install a package.
-
-    - If you do not have permission or receive permission denied use ``chmod +x install-prereqs-ubuntu.sh``.
-
-    .. image:: ../images/build-on-windows10-prereqs.png
-       :target: ../_images/build-on-windows10-prereqs.png
-       
-Build with Waf
-==============
-
-You should now be able to start the "Ubuntu" application from your Windows Start menu and build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
-
-   .. image:: ../images/build-on-windows10-configure.jpg
-       :target: ../_images/build-on-windows10-configure.jpg
-
-   .. image:: ../images/build-on-windows10-compile.jpg
-        :target: ../_images/build-on-windows10-compile.jpg
+#. Congratulations, you now have a working Ubuntu subsystem under Windows, you can now use our :ref:`Ubuntu instructions to install ArduPilot development environment <building-setup-linux>`
 
 .. note::
 
