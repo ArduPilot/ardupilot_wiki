@@ -161,14 +161,14 @@ flight. If all of your available GPS receivers lose position lock then
 this initiates a GPS failure failsafe.
 
 When a GPS failure occurs (which is defined as loss of GPS lock for 3
-seconds) the AFS system will look at the :ref:`AFS_GPS_LOSS<AFS_GPS_LOSS>` parameter.
+seconds) the AFS system will look at the :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` parameter.
 This parameter species a waypoint number in your mission to use when a
-GPS failure occurs. If :ref:`AFS_GPS_LOSS<AFS_GPS_LOSS>` is non-zero the aircraft will
-change current waypoint to the waypoint number specified in :ref:`AFS_GPS_LOSS<AFS_GPS_LOSS>` . You should setup your mission so that the aircraft
+GPS failure occurs. If :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` is non-zero the aircraft will
+change current waypoint to the waypoint number specified in :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` . You should setup your mission so that the aircraft
 will perform whatever actions you want on GPS loss. For example, you
 could have a set of waypoints starting at number 10 which first loiter
 on the spot for 30 seconds, and then proceed back to the airfield. You
-would then set ::ref:`AFS_GPS_LOSS<AFS_GPS_LOSS>` to 10 to enable that part of the
+would then set ::ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` to 10 to enable that part of the
 mission on loss of GPS lock.
 
 When setting up mission items for GPS lock it is sometimes useful to
@@ -313,7 +313,7 @@ settings:
 -  :ref:`AFS_ENABLE<AFS_ENABLE>` : 1
 -  :ref:`AFS_WP_COMMS<AFS_WP_COMMS>` : waypoint number for OBC comms hold followed by two
    minute loiter, then return to airfield home
--  :ref:`AFS_GPS_LOSS<AFS_GPS_LOSS>` : waypoint number to loiter in place for 30
+-  :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` : waypoint number to loiter in place for 30
    seconds, followed by return to airfield home
 -  :ref:`AFS_TERM_ACTION<AFS_TERM_ACTION>` : 42
 -  :ref:`AFS_AMSL_LIMIT<AFS_AMSL_LIMIT>` : 914
