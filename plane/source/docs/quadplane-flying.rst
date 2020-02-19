@@ -147,7 +147,7 @@ point is defined) and circle as a fixed wing aircraft about that
 point. The VTOL motors will not be used unless the aircraft drops below
 the airspeed defined in :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>`. The altitude the aircraft
 will circle at will be the altitude in the rally point, or the
-ALT_HOLD_RTL altitude if a rally point is not being used.
+:ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` altitude if a rally point is not being used.
 
 VTOL RTL (QRTL)
 ---------------
@@ -187,8 +187,8 @@ good for many QuadPlanes. This should be greater than or equal to the
 :ref:`Q_RTL_ALT <Q_RTL_ALT>` values.
 
 The distance from the return point at which the aircraft switches from
-fixed wing to VTOL flight is set using the RTL_RADIUS parameter, or
-if that is not set then the WP_LOITER_RAD parameter is used. The
+fixed wing to VTOL flight is set using the :ref:`RTL_RADIUS<RTL_RADIUS>` parameter, or
+if that is not set then the :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` parameter is used. The
 aircraft will then slow down as it approaches the return point, aiming
 for an altitude set by :ref:`Q_RTL_ALT <Q_RTL_ALT>`.
 

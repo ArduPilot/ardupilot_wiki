@@ -86,4 +86,4 @@ Hover Throttle
 
 Usually, it is desired to hover in any mode at mid-stick on throttle, so that transitions between modes is easily accomplished without throttle position changes. This can be adjusted using the :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` parameter, or automatically learned in QHOVER or QLOITER modes by enabling :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>`.
 
-.. note:: If :ref:`Q_THROTTLE_EXPO<Q_THROTTLE_EXPO>` = 0 in QACRO and QSTABILIZE modes, then :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>`, whether set manually or learned via Q_M_HOVER_LEARN, is not applied, and the throttle is determined directly from the RC input.
+.. note:: If :ref:`Q_THROTTLE_EXPO<Q_THROTTLE_EXPO>` = 0 in QACRO and QSTABILIZE modes, then :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>`, whether set manually or learned via :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>` , is not applied, and the throttle is determined directly from the RC input.

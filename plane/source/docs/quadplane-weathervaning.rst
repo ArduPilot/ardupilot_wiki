@@ -34,7 +34,7 @@ roll". If the aircraft needs to roll to the right in order to hold
 position then it will turn in that direction on the assumption that
 the right roll is needed in order to hold against the wind.
 
-How quickly the aircraft turns is given by the Q_WVANE_GAIN
+How quickly the aircraft turns is given by the :ref:`Q_WVANE_GAIN<Q_WVANE_GAIN>`
 parameter. A good value to start with is 0.1. Higher values will make
 the aircraft turn into the roll more quickly. If the value is too high
 then you can get instability and oscillation in yaw.
@@ -64,12 +64,12 @@ The way it works is to look at two factors:
 -  the difference between the desired forward velocity and the actual
    forward velocity
 
-These are combined with the Q_VFWD_GAIN to ramp up and down the
+These are combined with the :ref:`Q_VFWD_GAIN<Q_VFWD_GAIN>` to ramp up and down the
 throttle on the forward motor in order to minimize the attitude pitch
 of the aircraft. That keeps the area of wing exposed to the wind
 minimized which can reduce VTOL motor load.
 
-A good value to start with for Q_VFWD_GAIN is 0.05. Higher values will
+A good value to start with for :ref:`Q_VFWD_GAIN<Q_VFWD_GAIN>` is 0.05. Higher values will
 use the forward motor more aggressively. If the value is too high you
 can get severe pitch oscillations.
 
