@@ -13,7 +13,7 @@ Overview
 ========
 
 When QRTL mode is selected, the QuadPlane will return to the home location.
-The QuadPlane will immediately navigate towards the home location at Q_WP_SPEED, climbing or descending towards the Q_RTL_ALT altitude. Once arriving within Q_WP_RAD distance of home, it will begin descending at Q_WP_SPEED_DN rate, until it reaches Q_LAND_FINAL_ALT at which point it will descend at Q_LAND_SPEED until landing.
+The QuadPlane will immediately navigate towards the home location at :ref:`Q_WP_SPEED<Q_WP_SPEED>`, climbing or descending towards the :ref:`Q_RTL_ALT<Q_RTL_ALT>` altitude. Once arriving within :ref:`Q_WP_RADIUS<Q_WP_RADIUS>` distance of home, it will begin descending at :ref:`Q_WP_SPEED_DN<Q_WP_SPEED_DN>` rate, until it reaches :ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>` at which point it will descend at :ref:`Q_LAND_SPEED<Q_LAND_SPEED>` until landing.
 
 .. image:: ../images/QRTL.jpg
     :target: ../_images/QRTL.jpg

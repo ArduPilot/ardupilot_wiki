@@ -25,8 +25,8 @@ QuadPlane support is in APM:Plane releases from 3.5.0 onwards. The
 normal instructions for installing the Plane firmware apply.
 
 When you install the plane firmware and look in the parameter list you
-will see a Q_ENABLE parameter. That defaults to zero, which disables
-QuadPlane support. Setting Q_ENABLE to 1 will enable QuadPlane
+will see a :ref:`Q_ENABLE<Q_ENABLE>` parameter. That defaults to zero, which disables
+QuadPlane support. Setting :ref:`Q_ENABLE<Q_ENABLE>` to 1 will enable QuadPlane
 support. You then need to refresh your parameter list to see all the
 other QuadPlane options. All QuadPlane specific parameters start with
 \Q_.

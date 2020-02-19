@@ -13,11 +13,11 @@ flight paths both for waypoints and loiter than the previous crosstrack
 and PID controller.
 
 Tuning the navigation controller usually involves adjusting one key
-parameter, called NAVL1_PERIOD. The default is 20, which results in
+parameter, called :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` . The default is 20, which results in
 reasonable turns for most R/C airframes. A smaller value for
-NAVL1_PERIOD will lead to more aggressive navigation (sharper corners).
+:ref:`NAVL1_PERIOD<NAVL1_PERIOD>` will lead to more aggressive navigation (sharper corners).
 A larger value will lead to gentler navigation. You can additionally
-adjust the NAVL1_DAMPING and WP_RADIUS for further tuning.
+adjust the NAVL1_DAMPING and :ref:`WP_RADIUS<WP_RADIUS>` for further tuning.
 
 Steps to tuning the L1 controller
 =================================
@@ -25,7 +25,7 @@ Steps to tuning the L1 controller
 -  Make sure you have already tuned the roll and pitch controller,
    correctly trimmed your plane, and have ensured the plane does not
    gain or lose altitude in turns
--  Make sure you have setup LIM_ROLL_CD to an appropriate value for
+-  Make sure you have setup :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` to an appropriate value for
    the bank angle you are comfortable with your plane flying without
    stalling. For slow flying electric gliders a value of around 5000 (50
    degrees) is a good start. For fast flying aerobatic planes you may
@@ -34,15 +34,15 @@ Steps to tuning the L1 controller
    repeats the mission continuously. Ensure that the size of the mission
    is small enough that you will have a good view of the aircraft at all
    times
--  Set NAVL1_PERIOD to the default value of 20, and NAVL1_DAMPING to
-   the default value of 0.75. Set WP_RADIUS to the distance your plane
+-  Set :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` to the default value of 20, and NAVL1_DAMPING to
+   the default value of 0.75. Set :ref:`WP_RADIUS<WP_RADIUS>` to the distance your plane
    would fly in 2 seconds at cruise speed.
 -  Takeoff and put the plane in AUTO using your transmitter switch
 -  Observe the behaviour of the plane in the turns. If it turns too
-   slowly then reduce NAVL1_PERIOD by 5. If it is "weaving" after a
-   turn then increase NAVL1_PERIOD by 1 or 2
+   slowly then reduce :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` by 5. If it is "weaving" after a
+   turn then increase :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` by 1 or 2
 -  If you are tuning for maximum performance, once you have completed
-   the tuning of NAVL1_PERIOD you can increment NAVL1_PERIOD by 1 and
+   the tuning of :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` you can increment :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` by 1 and
    then modify NAVL1_DAMPING in steps of 0.05 to get the
    response you want. Do not decrease NAVL1_DAMPING too much - it is
    unlikely you will need a value below 0.6.
@@ -52,13 +52,13 @@ Tuning waypoint transition behaviour
 
 To control whether Plane flies through a waypoint, then turns afterwards
 or turns before the waypoint so that it neatly lines up for the next leg
-of the mission you should adjust the waypoint radius via the WP_RADIUS
+of the mission you should adjust the waypoint radius via the :ref:`WP_RADIUS<WP_RADIUS>`
 parameter. If you want Plane to fly through the waypoint then set the
-WP_RADIUS to a small number, perhaps 10 meters. If you want Plane to
+:ref:`WP_RADIUS<WP_RADIUS>` to a small number, perhaps 10 meters. If you want Plane to
 turn before the waypoint so that it lines up with the next leg of the
-mission then set WP_RADIUS to a larger number. A good starting value is
+mission then set :ref:`WP_RADIUS<WP_RADIUS>` to a larger number. A good starting value is
 to set it equal to the turn radius your aircraft can easily achieve.
-This will normally be the same as your loiter radius WP_LOITER.
+This will normally be the same as your loiter radius :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` .
 
 L1 Controller Background & Description
 ======================================
@@ -98,11 +98,11 @@ following changes:
    LOITER modes was modified to use a modified PD control law rather
    than the L1 control law. This was necessary to enable small loiter
    radius’ to be flown in combination with larger values of
-   NAVL1_PERIOD.
+   :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`.
 -  The distance from the next waypoint to start the turn onto the next
    track segment was modified to use the L1 length dynamically
    calculated by the algorithm, but constrained to be no greater than
-   WP_RADIUS. This enabled the user to select whether they would rather
+   :ref:`WP_RADIUS<WP_RADIUS>` . This enabled the user to select whether they would rather
    fly through the waypoint and then turn, or turn early and smoothly
    intercept the next track.
 

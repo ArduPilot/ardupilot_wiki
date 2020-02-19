@@ -30,9 +30,9 @@ described :ref:`here <quadplane-flying>`.
 
 .. tip::
 
-   There is also a difference in throttle channel parameters from Copter: instead of THR_DZ for setting the deadzone, QuadPlane uses RCn_DZ (where n is the channel mapped to throttle input). 
+   There is also a difference in throttle channel parameters from Copter: instead of :ref:`THR_DZ<THR_DZ>` for setting the deadzone, QuadPlane uses RCn_DZ (where n is the channel mapped to throttle input). 
    The default for throttle channel deadzone is 60 (+/- 6%).
-   If your Quadplane does not hover at mid-stick (+/- 6%) in QSTABILIZE, you will need to center it using Q_M_THST_HOVER to set the throttle percentage applied at mid-stick in QSTABILIZE such that switching to QHOVER or QLOITER does not result in an altitude change. This value can be automatically learned and applied during QLOITER and QHOVER modes, by enabling Q_M_HOVER_LEARN.
+   If your Quadplane does not hover at mid-stick (+/- 6%) in QSTABILIZE, you will need to center it using :ref:`Q_M_THST_HOVER<Q_M_THST_HOVER>` to set the throttle percentage applied at mid-stick in QSTABILIZE such that switching to QHOVER or QLOITER does not result in an altitude change. This value can be automatically learned and applied during QLOITER and QHOVER modes, by enabling :ref:`Q_M_HOVER_LEARN<Q_M_HOVER_LEARN>` .
 
 .. tip::
 
