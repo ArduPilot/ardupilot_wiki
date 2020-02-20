@@ -363,8 +363,10 @@ Supported Vehicles
 + Sim  | Yes                                             + + X frame biwing                                 +
 +------+-------------------------------------------------+                                                  +
 + R/W  | Yes                                             + .. youtube:: cfqP9-2IWtQ                         +
-+                                                        + + X frame biwing QACRO demo                      +
-+                                                        + .. youtube:: 3nS2AodrGPQ                         +
++      |                                                 +                                                  +
++      |                                                 + + X frame biwing QACRO demo                      +
++      |                                                 +                                                  +
++      |                                                 + .. youtube:: 3nS2AodrGPQ                         +
 +------+-------------------------------------------------+                                                  +
 + Code | Plane                                           + + Plus frame                                     +
 +------+-------------------------------------------------+                                                  +
