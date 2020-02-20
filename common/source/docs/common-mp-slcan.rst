@@ -20,7 +20,7 @@ UAVCAN nodes connected.
 .. image:: ../../../images/can-slcan-mpc.png
 
 If the node has bootloader only installed, then firmware will need to be
-uploaded. ``MAINTENANCE`` will be displayed. Click on update firmware. Firmware can be found `here <https://firmware.ardupilot.org/AP_Periph/>`__ and downloaded for the node.
+uploaded. ``MAINTENANCE`` will be displayed. Click on update firmware. AP_Periph firmware can be found `here <https://firmware.ardupilot.org/AP_Periph/>`__ and downloaded for the node.  UAVCAN firmware for Hex products (Here GPS, HereFlow) can be downloaded from `here <https://firmware.cubepilot.org/UAVCAN/>`__.
 
 .. image:: ../../../images/can-slcan-mp-maint.png
 
