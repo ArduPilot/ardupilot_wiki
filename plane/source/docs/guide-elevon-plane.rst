@@ -67,14 +67,14 @@ PROVIDING RC INPUT is:
 If your movements are incorrect then you need to adjust which servo
 output is left/right and the reversals of each elevon.
 
-The parameters you should adjust are SERVO1_REVERSED, SERVO2_REVERSED,
-SERVO1_FUNCTION and SERVO2_FUNCTION.
+The parameters you should adjust are :ref:`SERVO1_REVERSED<SERVO1_REVERSED>` , :ref:`SERVO2_REVERSED<SERVO2_REVERSED>` ,
+:ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` and :ref:`SERVO2_FUNCTION<SERVO2_FUNCTION>` .
 
 If your left elevon on servo 1 is moving the wrong way for both pitch and
-roll corrections, set SERVO1_REVERSED to 1.
+roll corrections, set :ref:`SERVO1_REVERSED<SERVO1_REVERSED>` to 1.
 
 If your left elevon on servo 1 responds correctly to pitch, but incorrectly
-to roll, change the SERVO1_FUNCTION.
+to roll, change the :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` .
 
 Repeat the servo reversal or function change for the right elevon.
 

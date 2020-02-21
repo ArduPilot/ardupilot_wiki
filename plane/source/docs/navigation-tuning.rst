@@ -17,7 +17,7 @@ parameter, called :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` . The default is 20, which r
 reasonable turns for most R/C airframes. A smaller value for
 :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` will lead to more aggressive navigation (sharper corners).
 A larger value will lead to gentler navigation. You can additionally
-adjust the NAVL1_DAMPING and :ref:`WP_RADIUS<WP_RADIUS>` for further tuning.
+adjust the :ref:`NAVL1_DAMPING<NAVL1_DAMPING>` and :ref:`WP_RADIUS<WP_RADIUS>` for further tuning.
 
 Steps to tuning the L1 controller
 =================================
@@ -34,7 +34,7 @@ Steps to tuning the L1 controller
    repeats the mission continuously. Ensure that the size of the mission
    is small enough that you will have a good view of the aircraft at all
    times
--  Set :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` to the default value of 20, and NAVL1_DAMPING to
+-  Set :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` to the default value of 20, and :ref:`NAVL1_DAMPING<NAVL1_DAMPING>` to
    the default value of 0.75. Set :ref:`WP_RADIUS<WP_RADIUS>` to the distance your plane
    would fly in 2 seconds at cruise speed.
 -  Takeoff and put the plane in AUTO using your transmitter switch
@@ -43,8 +43,8 @@ Steps to tuning the L1 controller
    turn then increase :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` by 1 or 2
 -  If you are tuning for maximum performance, once you have completed
    the tuning of :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` you can increment :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` by 1 and
-   then modify NAVL1_DAMPING in steps of 0.05 to get the
-   response you want. Do not decrease NAVL1_DAMPING too much - it is
+   then modify :ref:`NAVL1_DAMPING<NAVL1_DAMPING>` in steps of 0.05 to get the
+   response you want. Do not decrease :ref:`NAVL1_DAMPING<NAVL1_DAMPING>` too much - it is
    unlikely you will need a value below 0.6.
 
 Tuning waypoint transition behaviour
@@ -85,7 +85,7 @@ following changes:
    tuning parameter to be related to the time required to roll the
    aircraft and measure its response.
 -  The guidance gain was changed from a fixed value of 2 to be
-   calculated based on the NAVL1_DAMPING value set by the user. This
+   calculated based on the :ref:`NAVL1_DAMPING<NAVL1_DAMPING>` value set by the user. This
    enabled additional damping to be specified to compensate for delays
    in the velocity measurement and aircraft roll response.
 -  A complementary filter fusing GPS velocities, airspeed and aircraft
