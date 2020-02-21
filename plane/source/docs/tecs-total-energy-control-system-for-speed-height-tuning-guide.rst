@@ -45,7 +45,7 @@ perform well.
 The following instructions are based around taking a series of
 measurements, whilst the plane is being flown at the speed set by :ref:`TRIM_ARSPD_CM <TRIM_ARSPD_CM>`
 which represents the speed that you are most likely going to be flying
-at. Flying these tests at ``TRIM_ARSPD_CM`` is impractical unless you
+at. Flying these tests at :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` is impractical unless you
 have an assistant calling out airspeed, so where these instructions ask
 for the plane to be flown at :ref:`TRIM_ARSPD_CM <TRIM_ARSPD_CM>`, fly at a speed in the middle zone between your :ref:`ARSPD_FBW_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_min>` and
 :ref:`ARSPD_FBW_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_max>` and that will be good enough for
@@ -55,28 +55,28 @@ can dial the numbers in over a number of flights, using the log data.
 #. Set the maximum throttle percentage :ref:`THR_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_max>`. The
    maximum throttle should be set to a value that enables the aircraft
    to climb at its maximum pitch angle (default value of 20 degrees) at
-   ``TRIM_ARSPD_CM``. The default value of 75% should be OK for
+   :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` . The default value of 75% should be OK for
    moderately powered aircraft. Low powered aircraft will need to
    increase it to 100%, high powered models (capable of vertical climbs)
    will need to reduce it.
 #. Set the throttle percentage required to fly level at
-   ``TRIM_ARSPD_CM`` by adjusting the :ref:`TRIM_THROTTLE <tecs-total-energy-control-system-for-speed-height-tuning-guide_trim_throttle>` parameter. This can be determined
+   :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` by adjusting the :ref:`TRIM_THROTTLE <tecs-total-energy-control-system-for-speed-height-tuning-guide_trim_throttle>` parameter. This can be determined
    initially by testing different throttle settings in FBWA mode.
 #. Set the maximum and minimum airspeed limits (in metres/second) using
-   the ``ARSPD_FBW_MAX`` and ``ARSPD_FBW_MIN`` parameters.
-   ``ARSPD_FBW_MAX`` should be set to the maximum speed your aircraft is
-   capable of in level flight with the throttle set to ``THR_MAX``.
-   ``ARSPD_FBW_MIN`` should be set to the slowest speed your aircraft
+   the :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` and :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` parameters.
+   :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` should be set to the maximum speed your aircraft is
+   capable of in level flight with the throttle set to :ref:`THR_MAX<THR_MAX>` .
+   :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` should be set to the slowest speed your aircraft
    can safely fly without stalling in level flight.
 #. Set the maximum pitch angle :ref:`LIM_PITCH_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_lim_pitch_max>` (in
    centi-degrees) your aircraft can fly with the throttle set to
-   ``THR_MAX``. This can be determined by performing maximum pitch angle
+   :ref:`THR_MAX<THR_MAX>` . This can be determined by performing maximum pitch angle
    climbs in FBWA with the throttle set to the maximum and checking the
-   airspeed during climb. If the airspeed rises above TRIM_ARSPD during
-   the climb, then either increase ``LIM_PITCH_MAX`` or
-   reduce ``THR_MAX``. If it falls below ``ARSPD_FBW_MIN`` during
-   climb then either reduce ``LIM_PITCH_MAX`` or
-   increase ``THR_MAX``. Make sure you allow some margin for reduction
+   airspeed during climb. If the airspeed rises above :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` during
+   the climb, then either increase :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` or
+   reduce :ref:`THR_MAX<THR_MAX>` . If it falls below :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` during
+   climb then either reduce :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` or
+   increase :ref:`THR_MAX<THR_MAX>`  . Make sure you allow some margin for reduction
    in power due to reduced battery voltage or other effects. Remember
    that the amount of power from an electric power system at the end of
    flight will only be 80% of what you have at the start.
@@ -86,21 +86,21 @@ can dial the numbers in over a number of flights, using the log data.
    aircraft.
 #. Set the maximum climb rate :ref:`TECS_CLMB_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_clmb_max>` (in
    metres/second). This is the best climb rate that the aircraft can
-   achieve with the throttle set to ``THR_MAX`` and flying at
-   ``TRIM_ARSPD_CM``. For electric aircraft make sure this number can be
+   achieve with the throttle set to :ref:`THR_MAX<THR_MAX>` and flying at
+   :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` . For electric aircraft make sure this number can be
    achieved towards the end of flight when the battery voltage has
    reduced. This can be measured in FBWA mode by performing climbs to
    height with the throttle set to :ref:`THR_MAX <THR_MAX>`.
 #. Set the minimum sink rate :ref:`TECS_SINK_MIN <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_sink_min>` (in
    metres/second). This is the sink rate of the aircraft with the
-   throttle set to ``THR_MIN`` and flown at ``TRIM_ARSPD_CM``. This can
+   throttle set to :ref:`THR_MIN<THR_MIN>` and flown at :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` . This can
    be measured by closing the throttle in FBWA and gliding the aircraft
    down from height.
-#. Set the maximum sink rate \ :ref:`TECS_SINK_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_sink_max>` (in
+#. Set the maximum sink rate  :ref:`TECS_SINK_MAX <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_sink_max>` (in
    metres/second). If this value is too large, the aircraft can
    over-speed on descent. This should be set to a value that can be
    achieved without exceeding the lower pitch angle limit and without
-   exceeding ``ARSPD_FBW_MAX``.
+   exceeding :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` .
 
 Flight Testing
 ==============
@@ -115,42 +115,42 @@ Flight Testing
    indicates a problem with the pitch to servo loop tuning or the
    settings of the pitch angle and climb rate limits.
 
-#. Verify that ``THR_MAX``, ``LIM_PITCH_MAX`` and ``TECS_CLMB_MAX``
+#. Verify that :ref:`THR_MAX<THR_MAX>` , :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` and :ref:`TECS_CLMB_MAX<TECS_CLMB_MAX>`
    are set correctly. The setting of these parameters can be checked by
    commanding a positive altitude change of no less than 50m in loiter,
    RTL or guided mode. The objective is to set these parameters such
-   that the throttle required to climb is about 80% of ``THR_MAX``,
+   that the throttle required to climb is about 80% of :ref:`THR_MAX<THR_MAX>` ,
    the aircraft is maintaining airspeed, and the demanded pitch angle is
-   about 5 degrees below ``LIM_PITCH_MAX``.
+   about 5 degrees below :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` .
 
    #. If speed drops below the desired value, and the throttle increases
-      to and stays on ``THR_MAX``, then either ``TECS_CLMB_MAX`` should
-      be reduced or ``THR_MAX`` increased.
+      to and stays on :ref:`THR_MAX<THR_MAX>` , then either :ref:`TECS_CLMB_MAX<TECS_CLMB_MAX>` should
+      be reduced or :ref:`THR_MAX<THR_MAX>` increased.
    #. If the demanded pitch angle is constantly at the limit set
-      by ``LIM_PITCH_MAX``, then either the pitch angle
-      limit ``LIM_PITCH_MAX`` needs to be increased or the maximum
-      climb rate ``TECS_CLMB_MAX`` needs to be reduced.
+      by :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` , then either the pitch angle
+      limit :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` needs to be increased or the maximum
+      climb rate :ref:`TECS_CLMB_MAX<TECS_CLMB_MAX>` needs to be reduced.
 
-#. Verify ``LIM_PITCH_MIN`` and ``TECS_SINK_MAX`` are set correctly. The
+#. Verify :ref:`LIM_PITCH_MIN<LIM_PITCH_MIN>` and :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` are set correctly. The
    setting of these parameters can be checked by commanding a negative
    altitude change of no less than 50m in loiter, RTL or guided mode. The
    objective is to set these parameters such that the throttle is on
-   ``THR_MIN``, the airspeed is below ``ARSPD_FBW_MAX`` (or visually
+   :ref:`THR_MIN<THR_MIN>` , the airspeed is below :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` (or visually
    confirm that model is not gaining too much speed if an airspeed sensor
    is not being used), and the demanded pitch angle is about 5 degrees
-   above ``LIM_PITCH_MIN``.
+   above :ref:`LIM_PITCH_MIN<LIM_PITCH_MIN>` .
 
-   #. If the speed is too high, then ``TECS_SINK_MAX`` should be reduced.
+   #. If the speed is too high, then :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` should be reduced.
    #. If the demanded pitch angle is constantly at the limit set
-      by ``LIM_PITCH_MIN``, then either the pitch angle
-      limit ``LIM_PITCH_MIN`` needs to be reduced (become more negative)
-      or the maximum sink rate ``TECS_SINK_MAX`` needs to be reduced.
+      by :ref:`LIM_PITCH_MIN<LIM_PITCH_MIN>` , then either the pitch angle
+      limit :ref:`LIM_PITCH_MIN<LIM_PITCH_MIN>` needs to be reduced (become more negative)
+      or the maximum sink rate :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` needs to be reduced.
 
 If the height response oscillates you can try increasing the value of
 `TECS_PTCH_DAMP <#TECS_PTCH_DAMP>`__ in increments of 0.1 (don't go
 above 0.5 unless you know how to check for excessive noise in the
 nav_pitch signal using the mission planner tuning window) and then try
-increasing the value of ``TECS_TIME_CONST`` in increments of 1.0.
+increasing the value of :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` in increments of 1.0.
 
 .. note::
 
@@ -160,12 +160,12 @@ increasing the value of ``TECS_TIME_CONST`` in increments of 1.0.
    properly or your model could have a significant thrust line misalignment
    where throttle changes cause noticeable pitch angle changes. Ideally you
    should improve your pitch loop tuning first, before adjusting
-   ``TECS_PTCH_DAMP`` and ``TECS_TIME_CONST`` as described here.
+   :ref:`TECS_PTCH_DAMP<TECS_PTCH_DAMP>` and :ref:`TECS_TIME_CONST<TECS_TIME_CONST>` as described here.
 
-If using airspeed sensing, adjust the value of ``TRIM_THROTTLE`` so
+If using airspeed sensing, adjust the value of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` so
 that it matches the average amount of throttle required by the
 controller during constant height loiter. If not using airspeed sensing,
-adjust ``TRIM_THROTTLE`` to achieve a level flight speed you are happy
+adjust :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` to achieve a level flight speed you are happy
 with.
 
 
@@ -276,7 +276,7 @@ Complete Parameter List
 :ref:`THR_MAX <THR_MAX>`:
 This is the maximum throttle % that can be used by the controller. For
 overpowered aircraft, this should be reduced to a value that provides
-sufficient thrust to climb at the maximum pitch angle PTCH_MAX.
+sufficient thrust to climb at the maximum pitch angle :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` .
 
 .. _tecs-total-energy-control-system-for-speed-height-tuning-guide_thr_min:
 
@@ -302,9 +302,9 @@ speed.
 This is the maximum airspeed (in metres/second) that the autopilot will
 use in auto-throttle modes. It should be set to the highest speed that
 the aircraft can achieve in level flight with the throttle set to
-``THR_MAX``. It must be sufficiently above the ``ARSPD_FBW_MIN`` value
+:ref:`THR_MAX<THR_MAX>` . It must be sufficiently above the :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` value
 to allow the autopilot to accurately control altitude using airspeed (at
-least 50% above ``ARSPD_FBW_MIN`` is recommended). For electric
+least 50% above :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` is recommended). For electric
 aircraft, make sure this number is achievable at the end of flight when
 the battery voltage has reduced.
 
@@ -319,16 +319,16 @@ stalling.
 
 :ref:`TECS_CLMB_MAX <TECS_CLMB_MAX>`: 
 This is the best climb rate (in metres/second) that the aircraft can achieve
-with the throttle set to ``THR_MAX`` and the airspeed set to the default
+with the throttle set to :ref:`THR_MAX<THR_MAX>` and the airspeed set to the default
 value. For electric aircraft make sure this number can be achieved
 towards the end of flight when the battery voltage has reduced. The
 setting of this parameter can be checked by commanding a positive
 altitude change of 100m in loiter, RTL or guided mode. If the throttle
-required to climb is close to ``THR_MAX`` and the aircraft is
+required to climb is close to :ref:`THR_MAX<THR_MAX>` and the aircraft is
 maintaining airspeed, then this parameter is set correctly. If
 the airspeed starts to reduce, then the parameter is set to high, and if
 the throttle demand required to climb and maintain speed is noticeably
-less than ``THR_MAX``, then either `:ref:`TECS_CLMB_MAX`` should be increased or ``THR_MAX`` reduced. 
+less than :ref:`THR_MAX<THR_MAX>` , then either `:ref:`TECS_CLMB_MAX should be increased or :ref:`THR_MAX<THR_MAX>` reduced. 
 
 
 
@@ -336,7 +336,7 @@ less than ``THR_MAX``, then either `:ref:`TECS_CLMB_MAX`` should be increased or
 
 :ref:`TECS_SINK_MIN <TECS_SINK_MIN>`: 
 This is the sink rate of the aircraft (in metres/second) with the throttle
-set to ``THR_MIN`` and flown at the same airspeed as used to measure
+set to :ref:`THR_MIN<THR_MIN>` and flown at the same airspeed as used to measure
 :ref:`TECS_CLMB_MAX`. 
 
 
@@ -370,7 +370,7 @@ whilst maintaining airspeed with the throttle set to :ref:`THR_MAX`.
 :ref:`LIM_PITCH_MIN <LIM_PITCH_MIN>`:
 This is the minimum pitch angle (in centidegrees) that the controller
 will demand. It should be set to a value that the aircraft can achieve
-without over-speeding with the throttle set to `:ref:`THR_MIN``. `TECS_RLL2THR <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_rll2thr>` (definition above)
+without over-speeding with the throttle set to `:ref:`THR_MIN . `TECS_RLL2THR <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_rll2thr>` (definition above)
 
 :ref:`TECS_SPDWEIGHT <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_spdweight>` (definition above)
 
@@ -443,13 +443,13 @@ gravitational potential to kinetic energy or vice-versa.
 
 How much weighting is placed on kinetic energy or speed errors vs
 potential energy or height errors is controlled by the
-``TECS_SPDWEIGHT`` parameter. At the default setting of 1.0, even weight
-is placed on speed and height errors. If \ ``TECS_SPDWEIGHT`` is set to
+:ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` parameter. At the default setting of 1.0, even weight
+is placed on speed and height errors. If  :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` is set to
 0.0 then the pitch angle demand will respond 100% to height errors and
 ignore speed and if set to 2.0 will respond 100% to speed errors and
 ignore height.
 
 If the airspeed measurement is not used (as selected by
-setting TECS_USE_ASPD = 0), then the pitch angle will be used 100% to
+setting :ref:`ARSPD_USE<ARSPD_USE>` and :ref:`ARSPD2_USE<ARSPD2_USE>`  = 0), then the pitch angle will be used 100% to
 control height and the throttle will be calculated from the demanded
 pitch angle.
