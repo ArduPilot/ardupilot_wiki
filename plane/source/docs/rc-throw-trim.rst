@@ -4,8 +4,8 @@
 Controlling Input Throw, Trim and Reversal
 ==========================================
 
-Where the parameters starting with \SERVOn_ control the servo outputs,
-the parameters starting with \RCn_ control the input side, related to
+Where the parameters starting with ``SERVOn_`` control the servo outputs,
+the parameters starting with ``RCn_`` control the input side, related to
 pilot stick movement.
 
 For the 3.8 firmware and above the input side and the output side are
@@ -13,9 +13,9 @@ completely separated, allowing you to have completely different PWM
 ranges, reversal and trim on your transmitter input as compared to the
 servo output.
 
-In addition to the \RCn_ parameters for RC input range, trim and
+In addition to the ``RCn_`` parameters for RC input range, trim and
 reversal, you also can choose the function of the first 4 input
-channels using the \RCMAP_ parameters. The defaults are:
+channels using the ``RCMAP_`` parameters. The defaults are:
 
 .. raw:: html
 
@@ -49,7 +49,7 @@ For example, if you have:
    </table>
    
 then channel 1 input will be roll (mapping to aileron), with a minimum
-PWM of 1100, a maximum of 1900 and a trim of 1500. The RC1_REVERSED
+PWM of 1100, a maximum of 1900 and a trim of 1500. The :ref:`RC1_REVERSED<RC1_REVERSED>` 
 value of zero means it is not reversed.
 
 .. note:: The process of doing :ref:`Radio Control Calibration <common-radio-control-calibration>` actually will set the TRIM,MIN,and MAX values of each RC input channel to match your Transmitter's output, so these values rarely need to be manually adjusted.
@@ -94,11 +94,11 @@ means your transmitter is setup incorrectly. Having a reversed
 throttle output is much more common for internal combustion motors. In
 firmware version 3.8 and later you do not need to reverse throttle
 input just because your output is reversed (ie. you can set
-RC3_REVERSED separately from SERVO3_REVERSED).
+:ref:`RC3_REVERSED<RC3_REVERSED>` separately from :ref:`SERVO3_REVERSED<SERVO3_REVERSED>` ).
 
 If you do need to use a reversed throttle input then you need to be be
 very careful with your throttle failsafe settings. The plane parameter
-THR_FS_VALUE is normally the throttle value below which the autopilot
+:ref:`THR_FS_VALUE<THR_FS_VALUE>` is normally the throttle value below which the autopilot
 will consider your transmitter to be in RC failsafe. If you have a
 reversed throttle input then that value will need to be a high value,
 and will be the value above which you are in RC failsafe.

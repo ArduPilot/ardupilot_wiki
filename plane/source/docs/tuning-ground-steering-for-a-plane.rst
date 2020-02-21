@@ -18,7 +18,7 @@ on the ground.
 Controlling steering
 ~~~~~~~~~~~~~~~~~~~~
 
-To enable ground steering you need to set the GROUND_STEER_ALT
+To enable ground steering you need to set the :ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>`
 parameter to something above zero. This is the barometric altitude above
 the initial altitude at which the steering changes from ground steering
 of a wheel to rudder steering for aerodynamic control. It is recommended
@@ -89,15 +89,15 @@ To start the tuning process set the following values:
 These are conservative values that should give you reasonable behaviour
 for most PLANES.
 
-STEP 2: SETTING THE STEER2SRV_P
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+STEP 2: SETTING THE :ref:`STEER2SRV_P<STEER2SRV_P>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To set your STEER2SRV_P parameter you need to measure the diameter of
+To set your :ref:`STEER2SRV_P<STEER2SRV_P>` parameter you need to measure the diameter of
 the turning circle of your plane.
 
 With your motor off put your plane into MANUAL mode, and put the rudder
 hard over to one side. Then slowly push your plane in a circle. Use a
-tape measure to measure the diameter of that circle and set STEER2SRV_P
+tape measure to measure the diameter of that circle and set :ref:`STEER2SRV_P<STEER2SRV_P>`
 to that value in meters. Most planes have a turning diameter of around 4
 meters. If your turning diameter is a long way from 4 then you may have
 the rates or throw on your rudder set incorrectly.
@@ -112,7 +112,7 @@ several possible reasons for this happening.
 The first thing you need to work out is if the problem is confined to
 low speed or also affects higher speed driving. If the problem only
 happens at very low speed then the most likely problem is that
-STEER2SRV_MINSPD is too low. The default is 1.0 m/s, which is quite
+:ref:`STEER2SRV_MINSPD<STEER2SRV_MINSPD>` is too low. The default is 1.0 m/s, which is quite
 low, and if your GPS heading isn't very reliable at low speed then you
 may need to raise that number. Try 2.0 and see if that helps with low
 speed weaving.
@@ -120,14 +120,14 @@ speed weaving.
 In the steering controller there are 3 key parameters that will control
 weaving:
 
--  A smaller STEER2SRV_P will reduce weaving, try reducing it by 0.1 at
+-  A smaller :ref:`STEER2SRV_P<STEER2SRV_P>` will reduce weaving, try reducing it by 0.1 at
    a time
--  A larger STEER2SRV_D will "damp" the weaving, but if you make it too
+-  A larger :ref:`STEER2SRV_D<STEER2SRV_D>` will "damp" the weaving, but if you make it too
    large then you will get high speed oscillation. For example you may
    find that a value of 0.1 reduces the damping, but a value of 0.2
    could cause a high speed oscillation in the steering servo. If you
-   get fast oscillation then reduce the STEER2SRV_D value by 50%.
--  A larger STEER2SRV_TCONST will slow down the steering controller,
+   get fast oscillation then reduce the :ref:`STEER2SRV_D<STEER2SRV_D>` value by 50%.
+-  A larger :ref:`STEER2SRV_TCONST<STEER2SRV_TCONST>` will slow down the steering controller,
    which will reduce weaving. Try raising it in steps of 0.1.
 
 With the current controller system you do need to experiment a bit with
@@ -141,7 +141,7 @@ the tuning in FBWA mode, and only change to auto-takeoff once you can
 takeoff in FBWA mode without overriding the steering at all (ie. takeoff
 without using the rudder stick).
 
-It can also be very helpful to use the FBWA_TDRAG_CHAN option to setup
+It can also be very helpful to use the :ref:`FBWA_TDRAG_CHAN<FBWA_TDRAG_CHAN>` option to setup
 the same automated elevator behaviour as is used in auto-takeoff when in
 FBWA mode. That helps keep tail wheels on the ground in taildragger
 aircraft (and can also be used to keep nose wheels on the ground in
