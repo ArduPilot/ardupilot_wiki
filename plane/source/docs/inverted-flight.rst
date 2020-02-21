@@ -16,7 +16,7 @@ and setup your transmitter to give a PWM value larger than 1750 when a
 previously unused 2 position switch is enabled, and a value below 1200
 when it is not enabled.
 
-For example, if channel 7 is currently unused, and you set RC7_OPTION
+For example, if channel 7 is currently unused, and you set :ref:`RC7_OPTION<RC7_OPTION>`
 to InvertedFlight (which has value 43) then if your transmitter sends
 1900 on channel 7 the plane will flip upside down and continue flying
 in whatever mode it is in, but with the plane inverted.
@@ -52,6 +52,6 @@ Here are some general tips about inverted flight
   inverted flight. Depending on your airframe, you could lose a lot of
   height while flipping over, and it may be that your airframe
   struggles to maintain height while inverted
-- make sure your PTCH2SRV_I value and PTCH2SRV_IMAX is high
+- make sure your :ref:`PTCH2SRV_I<PTCH2SRV_I>` value and :ref:`PTCH2SRV_IMAX<PTCH2SRV_IMAX>` is high
   enough. Planes commonly need more pitch trim while inverted to hold
   height.

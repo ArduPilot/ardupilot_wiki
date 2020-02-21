@@ -19,8 +19,8 @@ The SERVOn_FUNCTION parameters
 
 In the advanced parameter view of your GCS you will find that each
 SERVO output channel has a SERVOn_FUNCTION parameter. For example,
-SERVO5_FUNCTION controls the output function of channel 5,
-SERVO6_FUNCTION controls the output function of channel 6 and so on.
+:ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` controls the output function of channel 5,
+:ref:`SERVO6_FUNCTION<SERVO6_FUNCTION>` controls the output function of channel 6 and so on.
 
 The values you can set these parameters to are shared with copters and
 rovers, and not all of them have been implemented on fixed wing
@@ -88,7 +88,7 @@ aircraft. The ones that are implemented on fixed wing are listed below:
 The default values for the first 4 channels are Aileron, Elevator,
 Throttle and Rudder. The default for all other channels s is 0,
 meaning disabled. A disabled channel will output the trim value for
-that channel (for example, if SERVO5_FUNCTION is 0 then channel 5 will
+that channel (for example, if :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` is 0 then channel 5 will
 output SERVO5_TRIM) unless it is overridden by a mission command.
 
 All of these functions may be used on multiple channels. So if you
@@ -114,7 +114,7 @@ RCPassThru
 
 Setting a channel to RCPassThru means it will output the value that is
 coming into the board from the corresponding input channel. For example,
-if SERVO5_FUNCTION is 1 (meaning RCPassThru) then channel 5 output will
+if :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` is 1 (meaning RCPassThru) then channel 5 output will
 always be equal to channel 5 input.
 
 You can also map individual channels to any output channel by using the specific channel mapping functions. These are numbered starting at value 51, for RCInputChannel1. So you can for example set SERVO11_FUNCTION=53 which will map RC input channel 3 to output channel 11.
@@ -125,10 +125,10 @@ Flap
 ----
 
 When a channel is set as a flap it's value comes from the flap input
-channel (controlled by the FLAP_IN_CHANNEL parameter). The reason you
+channel (controlled by the ``RCn_OPTION`` = 208 parameter). The reason you
 may want to use this instead of a RCPassThru is that you can setup
 multiple flap channels with different trims and ranges, and you may want
-to take advantage of the FLAP_SLEWRATE to limit the speed of flap
+to take advantage of the :ref:`FLAP_SLEWRATE<FLAP_SLEWRATE>` to limit the speed of flap
 movement.
 
 .. _channel-output-functions_flap_auto:
@@ -137,11 +137,11 @@ Flap_auto
 ---------
 
 The flap auto output function behaves like the Flap output, except it
-can also accept automatic flap output from the TKOFF_FLAP_PCNT and
-LAND_FLAP_PERCNT parameters, as well as the FLAP_1\_SPEED,
+can also accept automatic flap output from the :ref:`TKOFF_FLAP_PCNT<TKOFF_FLAP_PCNT>` and
+:ref:`LAND_FLAP_PERCNT<LAND_FLAP_PERCNT>` parameters, as well as the FLAP_1\_SPEED,
 FLAP_1\_PERCNT, FLAP_2\_SPEED and FLAP_2\_PERCNT parameters.
 
-If you have both a FLAP_IN_CHANNEL set and a Flap_auto output
+If you have both a FLAP RC input channel set and a Flap_auto output
 function set then the amount of flap applied is the higher of the two.
 
 Aileron
@@ -150,7 +150,7 @@ Aileron
 The aileron output function adds additional aileron outputs, with
 separate per-channel trim and range. This is useful when you want to
 trim each aileron separately, or if your main aileron is setup as an
-elevon mixer (using the ELEVON_OUTPUT option), and you also want some
+elevon mixer (using the ``SERVOn_FUNCTION`` ), and you also want some
 normal ailerons.
 
 Mount_pan, Mount_tilt and Mount_roll
@@ -174,7 +174,7 @@ Elevator
 The elevator output function adds additional elevator outputs, with
 separate per-channel trim and range. This is useful when you want to
 trim each elevator separately, or if your main elevator is setup as an
-elevon mixer (using the ELEVON_OUTPUT option), and you also want some
+elevon mixer (using the ``SERVOn_FUNCTION`` ), and you also want some
 normal elevator.
 
 Rudder
@@ -191,7 +191,7 @@ GroundSteering
 
 The GroundSteering output function acts much like the rudder output
 function except that it only acts when the aircraft is below
-GROUND_STEER_ALT altitude. At altitudes above GROUND_STEER_ALT the
+:ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>` altitude. At altitudes above :ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>` the
 output will be the trim value for the channel.
 
 .. _channel-output-functions_flaperons:

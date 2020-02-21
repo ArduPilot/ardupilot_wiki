@@ -24,7 +24,7 @@ Software configuration
 
 The first step in setting up flaps is to set the parameter for the
 channel function for the channel you are using for flaps to a value of
-3. For example, if you have flaps on channel 5 then set SERVO5_FUNCTION to
+3. For example, if you have flaps on channel 5 then set :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` to
 3.
 
 Next set the parameters for your two flap speeds and flap values. These
@@ -38,7 +38,7 @@ is stored as the trim (default) position.
 That is basically all the setup required for flaps. If you find that
 your flaps are moving backwards from what you expect, change the
 reversing parameter for your flap channel, for example
-SERVO5_REVERSED. Set it to 1 to reverse the flaps, set to 0 for normal
+:ref:`SERVO5_REVERSED<SERVO5_REVERSED>` . Set it to 1 to reverse the flaps, set to 0 for normal
 operation.
 
 Using flaps

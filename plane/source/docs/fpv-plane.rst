@@ -228,7 +228,7 @@ good basic performance. In order to display this in the OSD, you will need to se
 
 3. Set :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` to the expected cruise throttle. Usually a little below midthrottle.
 
-4. If you have a small flying wing (like Z-84), it might be required to decrease your default PTCH2SRV_P value if it is too aggressive and causes flutter. In that case, reduce the default by half.
+4. If you have a small flying wing (like Z-84), it might be required to decrease your default :ref:`PTCH2SRV_P<PTCH2SRV_P>` value if it is too aggressive and causes flutter. In that case, reduce the default by half.
 
 
 5. ARMING: Leave all arming parameters at default. There is no reason to disable these safety checks. You should be able to get a GPS lock even indoors with modern GPS units. Inability to arm due to one of these checks failing means something has to be corrected. This adds noticeable safety by keeping you from accidentally starting your flight without your autopilot being in a fully functional state.
