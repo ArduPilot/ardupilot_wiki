@@ -148,7 +148,7 @@ to 101 then you will have 4 different stages to your tune:
 - ``RATE_PITCH_D``
 - ``RATE_PITCH_PI``
 
-notice that RATE_RLL_PI is actually two parameters in one, controlling
+notice that ``RATE_RLL_PI`` is actually two parameters in one, controlling
 both the P gain and the I gain for roll. This follows the normal
 advice for MultiCopters that you should keep the P and I values equal
 when doing a manual tune.

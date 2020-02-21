@@ -86,7 +86,7 @@ Disabled
 ++++++++
 
 For normal operation, the Disabled output function sets the output value
-of the channel to the trim value (for example, if SERVO5_FUNCTION is 0 then channel 5 will
+of the channel to the trim value (for example, if :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` is 0 then channel 5 will
 output SERVO5_TRIM). The exception to this is when a
 MAVLink override of the channel or a mission servo set is used. So in
 some ways "disabled" could be called "mission-controlled".
@@ -102,7 +102,7 @@ RCPassThru
 
 Setting a channel to RCPassThru means it will output the value that is
 coming into the board from the corresponding input channel. For example,
-if SERVO5_FUNCTION is 1 (meaning RCPassThru) then channel 5 output will
+if :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` is 1 (meaning RCPassThru) then channel 5 output will
 always be equal to channel 5 input.
 
 .. note:: The servo output will exactly match the RC input source's PWM value. RCx_TRIM/_MIN/_MAX and SERVOx_TRIM/_MIN/_MAX has no affect in this mode.
@@ -110,7 +110,7 @@ always be equal to channel 5 input.
 RCPassThru1 to RCPassThru16
 +++++++++++++++++++++++++++
 
-This operates the same as RCPassThru explained above. However, instead of the ``SERVOx`` output being controlled by the ``RCx`` input, any RC input can be assigned to control this output. For example RCPassThru 1 (51) would assign RC Channel 1 input to control the output. So, for output 1, assigning 51 to the SERVO1_FUNCTION is identical to assigning  the value of 1 passing RC Channel 1 to the output.
+This operates the same as RCPassThru explained above. However, instead of the ``SERVOx`` output being controlled by the ``RCx`` input, any RC input can be assigned to control this output. For example RCPassThru 1 (51) would assign RC Channel 1 input to control the output. So, for output 1, assigning 51 to the :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` is identical to assigning  the value of 1 passing RC Channel 1 to the output.
 
 PLANE FUNCTIONS (Also applies to QuadPlanes)
 --------------------------------------------

@@ -83,7 +83,7 @@ internal compass).
 If using Copter 3.3 or higher or recent versions of Plane/Rover then
 this parameter should also be set:
 
--  SERIAL4_PROTOCOL = 5
+-  :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` = 5
 
 .. note::
 

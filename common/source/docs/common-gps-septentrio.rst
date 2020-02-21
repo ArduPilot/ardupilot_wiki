@@ -22,16 +22,16 @@ To setup this using GPS1 input (serial3) configure these parameters:
 - GPS_INJECT_TO,0
 - GPS_RATE_MS,100
 - GPS_TYPE,10
-- SERIAL3_BAUD,115
-- SERIAL3_PROTOCOL,5
+- :ref:`SERIAL3_BAUD<SERIAL3_BAUD>` ,115
+- :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` ,5
 
 To setup this using GPS2 input (serial4) configure these parameters:
 
 - GPS_INJECT_TO,1
 - GPS_RATE_MS2,100
 - GPS_TYPE2,10
-- SERIAL4_BAUD,115
-- SERIAL4_PROTOCOL,5
+- :ref:`SERIAL4_BAUD<SERIAL4_BAUD>` ,115
+- :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` ,5
 
 If you want to inject RTCM corrections to both GPS1 and GPS2 then use:
 - GPS_INJECT_TO,127

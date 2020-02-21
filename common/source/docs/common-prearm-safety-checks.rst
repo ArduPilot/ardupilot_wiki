@@ -41,7 +41,7 @@ RC failures:
 -------------------------------------------------
 
 **RC not calibrated** : the :ref:`radio calibration <common-radio-control-calibration>` has not been
-performed.  RC3_MIN and RC3_MAX must have been changed from their
+performed.  :ref:`RC3_MIN<RC3_MIN>` and :ref:`RC3_MAX<RC3_MAX>` must have been changed from their
 default values (1100 and 1900), and for channels 1 to 4, MIN value must be 1300 or less, and MAX value 1700 or more.
 
 

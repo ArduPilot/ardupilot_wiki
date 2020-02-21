@@ -24,8 +24,8 @@ Setup, Configuration
 - Connect the micro USB connector to the Sony camera's "MultiPort"
 - Set the following parameters in ArduPilot (assuming the Drotag is connect to Serial port 1) and then reboot the autopilot
 
-  - SERIAL1_BAUD : 115
-  - SERIAL1_PROTOCOL : 1
+  - :ref:`SERIAL1_BAUD<SERIAL1_BAUD>` : 115
+  - :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` : 1
 
 - Turn on the camera
 - Power the autopilot and Drotag
