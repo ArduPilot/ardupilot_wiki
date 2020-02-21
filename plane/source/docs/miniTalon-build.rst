@@ -142,15 +142,15 @@ As shown, the GPS and Telemetry connections are compatible with the serial port 
 
 The SERVOx_FUNCTIONS will have to be set such that the following is assigned:
 
-+--------------------+------------------------------------+
-|  SERVO1_FUNCTION   |  Throttle                          |
-+--------------------+------------------------------------+
-|  SERVO3_FUNCTION   |  Both Ailerons via Y-servo cable   |
-+--------------------+------------------------------------+
-|  SERVO4_FUNCTION   |  VTail Left                        |
-+--------------------+------------------------------------+
-|  SERVO5_FUNCTION   |  VTail Right                       |
-+--------------------+------------------------------------+
++--------------------+------------------------------------------------------------+
+|  :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>`   |  Throttle                          |
++--------------------+------------------------------------------------------------+
+|  :ref:`SERVO3_FUNCTION<SERVO3_FUNCTION>`   |  Both Ailerons via Y-servo cable   |
++--------------------+------------------------------------------------------------+
+|  :ref:`SERVO4_FUNCTION<SERVO4_FUNCTION>`   |  VTail Left                        |
++--------------------+------------------------------------------------------------+
+|  :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>`   |  VTail Right                       |
++--------------------+------------------------------------------------------------+
 
 .. tip:: If the aileron servos are  attached to separate PWM outputs the :ref:`flaperons<flaperons-on-plane>` function can be implemented. However, since the MiniTalon does not use full length ailerons, the flap effect will be limited and can even be detrimental, causing increased sensitivity to "tip stalls".
 

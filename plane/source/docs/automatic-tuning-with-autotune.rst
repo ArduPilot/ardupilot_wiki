@@ -138,9 +138,9 @@ designed to cope with badly tuned airframes. It controls how sharply the
 aircraft will turn in automatic modes (such as AUTO, RTL and LOITER).
 Most aircraft should use a significantly lower value. Once you have
 completed a successful autotune of roll and pitch values you should drop
-NAVL1_PERIOD to 18 if you have not tuned it yet. To tune beyond that
+:ref:`NAVL1_PERIOD<NAVL1_PERIOD>` to 18 if you have not tuned it yet. To tune beyond that
 level you should fly a rectangular mission in AUTO mode and adjust
-NAVL1_PERIOD down by 1 at a time until the aircraft turns at a rate you
+:ref:`NAVL1_PERIOD<NAVL1_PERIOD>` down by 1 at a time until the aircraft turns at a rate you
 are happy with, and does not "wag its tail" in flight.
 
 PTCH2SRV_RLL: This parameter controls how much elevator to add in turns
@@ -148,9 +148,9 @@ to keep the nose level. Many aircraft require a small change to this
 parameter from the default of 1.0. To see if you need to tune this value
 you should hold a tight circle in FBWA mode by holding the aileron stick
 hard over while not giving any elevator input. If the plane gains
-altitude then you should lower PTCH2SRV_RLL by a small amount (try
+altitude then you should lower :ref:`PTCH2SRV_RLL<PTCH2SRV_RLL>` by a small amount (try
 lowering to 0.95 initially). If the plane loses altitude while circling
-then try raising PTCH2SRV_RLL by a small amount (try 1.05 initially).
+then try raising :ref:`PTCH2SRV_RLL<PTCH2SRV_RLL>` by a small amount (try 1.05 initially).
 If you need to go above 1.3 or below 0.8 then there is probably a
 problem with your setup (such as incorrect center of gravity, poor
 thrust line, poor airspeed calibration, too soft a tune on the pitch

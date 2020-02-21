@@ -56,14 +56,14 @@ Flaperon setup
 -  Switch to FBWA or CRUISE.  Roll your plane back and forth and make
    sure the ailerons move in the correct direction (aileron goes down on
    the wing that you roll down). If they don't then use
-   SERVO5_REVERSED and SERVO6_REVERSED to reverse channels as needed.
+   :ref:`SERVO5_REVERSED<SERVO5_REVERSED>` and :ref:`SERVO6_REVERSED<SERVO6_REVERSED>` to reverse channels as needed.
 -  Once this works, try your flaps control on your transmitter and make
    sure flaps go down and not up. If they go the wrong way you will
    need to swap the two output channels and correct the reversals.
 -  Confirm that when in FBWA and your roll the plane the ailerons move
    in the correct direction, and that your flaps go down.
 -  Now try the ailerons stick on your transmitter. If they go the wrong
-   way, you can use RC1_REVERSED to change the direction of the input channel. If you
+   way, you can use :ref:`RC1_REVERSED<RC1_REVERSED>` to change the direction of the input channel. If you
    put your stick left, the left aileron should go up.
 
 Tuning
