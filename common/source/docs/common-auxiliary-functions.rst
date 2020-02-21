@@ -172,6 +172,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        207           | Mainsail (Sailboat)        |          |         |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        208           | Flaps                      |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 
 
 Description of Features
@@ -626,6 +628,16 @@ This puts the autopilot control loops into a soft standby mode so that a paralle
 
 This RC channel will drive the output of the MainSail output ( ``SERVOx_FUNCTION`` = 89) instead of being 
 set from the Throttle Input channel (useful if it has an auxiliary motor using that input). See Sailboat :ref:`sailboat-configure` for more information about the main sail setup.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Flaps</strong></td>
+   <td>
+
+This RC channel provides manual control the amount of FLAP deflection and can also be used in conjunction with :ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>` . (Replaces the old FLAP_IN_CHANNEL parameter)
 
 .. raw:: html
 
