@@ -78,8 +78,8 @@ to set the following parameters to enable support for FrSky S.PORT. It
 has built-in inverters and a diode to allow for operation from a single
 pin with no special adapters.
 
-  - SERIAL2_PROTOCOL 4 or 10
-  - SERIAL2_OPTIONS 0
+  - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` 4 or 10
+  - :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` 0
 
 OSD Support
 ===========
