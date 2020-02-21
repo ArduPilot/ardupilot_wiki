@@ -99,8 +99,8 @@ FrSky Telemetry
  
 FrSky Telemetry is supported using the T6 pin (UART6 transmit). You need to set the following parameters to enable support for FrSky S.PORT
  
-  - SERIAL6_PROTOCOL 10
-  - SERIAL6_OPTIONS 7
+  - :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` 10
+  - :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` 7
   
 OSD Support
 ===========
