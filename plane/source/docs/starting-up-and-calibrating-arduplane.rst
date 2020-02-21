@@ -152,5 +152,5 @@ List** and adjusting the parameters as shown in the screenshot below.
 
    These parameters are in radians (every 0.01 is about 0.6 of a
    degree) so adjust in increments of 0.01 initially. If the plane turns to
-   the left, AHRS_TRIM_X should be increased. If the plane loses height
-   with mid throttle, AHRS_TRIM_Y should be increased.
+   the left, :ref:`AHRS_TRIM_X<AHRS_TRIM_X>` should be increased. If the plane loses height
+   with mid throttle, :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` should be increased.
