@@ -66,7 +66,7 @@ The :ref:`ACRO_TRAINER <ACRO_TRAINER>` parameter can be set to:
 -  2 (Default) = automatic leveling and lean angle limited. Includes the
    automatic leveling as option #1 but in addition the vehicle will not
    lean more than 45 degrees (this angle can be configured with the
-   ANGLE_MAX parameter).
+   :ref:`ANGLE_MAX<ANGLE_MAX>` parameter).
 
 The trainer can be enabled/disabled using the Ch7/Ch8 switches or a channel setup via its ``RCx_OPTION`` parameter.  With a
 3 position switch the off position (i.e. PWM < 1200) will disable the
@@ -87,7 +87,7 @@ The Virtual Flybar will add decay term to the attitude controller to bleed off a
 
 Values for :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` and :ref:`ACRO_BAL_PITCH<ACRO_BAL_PITCH>` parameters ~ 2, will usually give good results.
 
-.. note:: This feature is not active when ACRO_TRAINER is active
+.. note:: This feature is not active when :ref:`ACRO_TRAINER<ACRO_TRAINER>` is active
 
 Tuning Parameters
 =================
@@ -121,7 +121,7 @@ modes, not just ACRO.
    :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`: Maximum
    acceleration in roll/pitch axis measured in Centi-degres/sec/sec.
    Let's say you have a highly nimble quadcopter and you have your
-   ACRO_RP_P parameter set to 9, which translates to a roll request of
+   :ref:`ACRO_RP_P<ACRO_RP_P>` parameter set to 9, which translates to a roll request of
    ~400deg/sec. The copter is not physically capable of going from
    0deg/sec to 400deg/sec without a brief moment of acceleration. During
    that time, error is building up in the controller in order to get you
