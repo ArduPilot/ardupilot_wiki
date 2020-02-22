@@ -68,8 +68,7 @@ Tricopter
 .. note::
 
    If the direction of your tail servo is going the wrong way in
-   response to yaw then either the RC7_REV or MOT_YAW_SV_REV parameter
-   should be set to -1 (from 1), See :ref:`TriCopter setup page <tricopter>` for
+   response to yaw then either the ``RCn_REVERSE`` RC input direction or the tilt servo's ``SERVOn_REVERSE`` parameter should be set to 1 (from 0), See :ref:`TriCopter setup page <tricopter>` for
    details.)
 
 Bicopter
