@@ -51,9 +51,9 @@ floor or ceiling.
 Safe Indoor Flying Dos
 ----------------------
 
--  Disable GPS in non-auto\*\* modes - set AHRS_GPS_USE to 0
+-  Disable GPS in non-auto\*\* modes - set :ref:`AHRS_GPS_USE<AHRS_GPS_USE>` to 0
 -  Disable GPS_FAILSAFE
--  Enable Battery_failsafe to LAND only or disable (not RTL) - set :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` parameter from Copter-3.6 or higher (for Copter-3.5 and lower use the FS_BATT_ENABLE parameter)
+-  Enable Battery_failsafe to LAND only or disable (not RTL) - set :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` parameter from Copter-3.6 or higher (for Copter-3.5 and lower use the :ref:`FS_BATT_ENABLE<FS_BATT_ENABLE>` parameter)
 -  Enable Throttle Failsafe to LAND only or disable (not RTL or continue) - set :ref:`FS_THR_ENABLE <FS_THR_ENABLE>` = 0 or 3
 -  Disable FENCE - set :ref:`FENCE_ENABLE <FENCE_ENABLE>` = 0
 -  Use Sonar (if available)
