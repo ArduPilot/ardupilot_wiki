@@ -46,9 +46,9 @@ before proceeding to the next command
 
 **Hit Rad** - not supported - meant to hold the distance (in meters)
 from the target point that will qualify the waypoint as complete. This
-command is not supported. Instead the WPNAV_RADIUS parameter should be
+command is not supported. Instead the :ref:`WPNAV_RADIUS<WPNAV_RADIUS>` parameter should be
 used (see "WP Radius" field in above screen shot or adjust through the
-Standard Parameters List).  Even the WPNAV_RADIUS is only used when the
+Standard Parameters List).  Even the :ref:`WPNAV_RADIUS<WPNAV_RADIUS>` is only used when the
 waypoint has a Delay. With no delay specified the waypoint will be
 considered complete when the virtual point that the vehicle is chasing
 reaches the waypoint. This can be 10m (or more) ahead of the vehicle
@@ -108,7 +108,7 @@ Loiter_Turns
 
 The mission equivalent of the :ref:`Circle flight mode <circle-mode>`.  The vehicle will fly a circle around the
 specified lat, lon and altitude (in meters).  The radius of the circle
-is controlled by the CIRCLE_RADIUS parameter (i.e. cannot be set as
+is controlled by the :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>` parameter (i.e. cannot be set as
 part of the mission).
 
 **Turn** - the number of full rotations to complete around the point.
@@ -145,7 +145,7 @@ Return-To-Launch
 
 Mission equivalent of the :ref:`RTL flight mode <rtl-mode>`.  As
 described on the RTL flight mode wiki page, the vehicle will first climb
-to the RTL_ALT parameter's specified altitude (default is 15m) before
+to the :ref:`RTL_ALT<RTL_ALT>` parameter's specified altitude (default is 15m) before
 returning home.  The home location is where the vehicle was last armed.
 
 This command takes no parameters and generally should be the last
@@ -397,7 +397,7 @@ Repeatedly move a :ref:`servo <common-servo>` back and forth between
 it's mid position and a specified PWM value. In the example above, the
 servo attached to output channel 8 would be moved to PWM 1700, then
 after 4 second, back to mid (default is 1500 which is held in the
-RC8_TRIM parameter), after another 4 seconds it would be moved to 1700
+:ref:`RC8_TRIM<RC8_TRIM>` parameter), after another 4 seconds it would be moved to 1700
 again, then finally after 4 more seconds it would be moved back to mid.
 
 **Ser No** : the output channel the servo is attached to
