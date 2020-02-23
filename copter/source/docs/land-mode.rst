@@ -9,14 +9,14 @@ features:
 
 -  descends to 10m (or until the sonar senses something below the
    copter) using the regular Altitude Hold controller which will descend
-   at the speed held in the WPNAV_SPEED_DN parameter which can be
+   at the speed held in the :ref:`WPNAV_SPEED_DN<WPNAV_SPEED_DN>` parameter which can be
    modified on the Mission Planner's Config/Tuning > Copter Pids screen.
 
    .. image:: ../images/Land_DescentSpeed1.png
        :target: ../_images/Land_DescentSpeed1.png
 
 -  below 10m the copter should descend at the rate specified in the
-   LAND_SPEED parameter which defaults to 50cm/s.
+   :ref:`LAND_SPEED<LAND_SPEED>` parameter which defaults to 50cm/s.
 
    .. image:: ../images/Land_DescentSpeed2.png
        :target: ../_images/Land_DescentSpeed2.png
@@ -34,7 +34,7 @@ features:
 
 -  If the copter appears to bounce or balloon back up a couple of times
    before settling down and turning the props off, try lowering the
-   LAND_SPEED parameter a bit.
+   :ref:`LAND_SPEED<LAND_SPEED>` parameter a bit.
 -  If the vehicle has GPS lock the landing controller will attempt to
    control it's horizontal position but the pilot can adjust the target
    horizontal position just as in Loiter mode.
