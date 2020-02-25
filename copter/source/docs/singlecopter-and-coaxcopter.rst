@@ -51,7 +51,7 @@ This means the quad (or other multicopter) firmware should be loaded onto the au
 Setting up the flaps
 ====================
 
-The neutral position, direction of movement, minimum and maximum deflection of each flap can be configured with the SERVOX_TRIM, SERVOX_REVERSED, SERVOX_MIN and SERVOX_MAX parameters (where "X" is the RC output number).  For example these are the parameters for the forward flap/servo which is connected to RC output 1:
+The neutral position, direction of movement, minimum and maximum deflection of each flap can be configured with the SERVOx_TRIM, SERVOx_REVERSED, SERVOx_MIN and SERVOx_MAX parameters (where "x" is the RC output number).  For example these are the parameters for the forward flap/servo which is connected to RC output 1:
 
 - :ref:`SERVO1_MIN <SERVO1_MIN>`: the forward flap/servo's lowest PWM value before it hits its physical limits.
 - :ref:`SERVO1_MAX <SERVO1_MAX>`: the forward flap/servo's highest PWM value before it hits its physical limits.

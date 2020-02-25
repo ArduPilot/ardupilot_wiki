@@ -21,5 +21,5 @@ Overview
 -  The altitude is maintained with the altitude hold controller so the
    vehicle will attempt to hold it's current altitude when the sticks
    are placed with 10% of mid-throttle. It will climb or descend at up
-   to 2.5m/s (this speed is adjustable with the PILOT_VELZ_MAX
-   parameter)
+   to 2.5m/s (this speed is adjustable with the :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>` and :ref:`PILOT_SPEED_DN<PILOT_SPEED_DN>`
+   parameters)

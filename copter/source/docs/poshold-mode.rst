@@ -29,7 +29,7 @@ with the control sticks.
 
 -  Horizontal location can be adjusted with the the Roll and Pitch
    control sticks with the default maximum lean angle being 45 degrees
-   (angle can be adjusted with the ANGLE_MAX parameter). When the pilot
+   (angle can be adjusted with the :ref:`ANGLE_MAX<ANGLE_MAX>` parameter). When the pilot
    releases the sticks the copter will lean back to bring the vehicle to
    a stop.
 -  Altitude can be controlled with the Throttle control stick just as in
@@ -48,8 +48,8 @@ large grid of checkboxes.
 .. image:: ../images/Loiter_DisplayHDOP.jpg
     :target: ../_images/Loiter_DisplayHDOP.jpg
 
--  The maximum brake-angle can be set with the PHLD_BRAKE_ANGLE
+-  The maximum brake-angle can be set with the :ref:`PHLD_BRAKE_ANGLE<PHLD_BRAKE_ANGLE>`
    parameter (i.e. 3000 = the vehicle will lean back up to 30degrees)
 -  The speed the vehicle rotates back to the maximum angle can be set
-   with the PHLD_BRAKE_RATE parameter (i.e. 8 = rotates back at 8
+   with the :ref:`PHLD_BRAKE_RATE<PHLD_BRAKE_RATE>` parameter (i.e. 8 = rotates back at 8
    degrees per second))

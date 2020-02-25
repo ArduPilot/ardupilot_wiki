@@ -82,7 +82,7 @@ The :ref:`FS_THR_VALUE<FS_THR_VALUE>`  parameter can be set in the Mission Plann
 -  At least 10 PWM lower than your channel 3's PWM value when the throttle stick is fully down and the transmitter is **on**
 -  Above 910 PWM
 
-The :ref:`FS_OPTIONS<FS_OPTIONS>`  parameter (Copter 4.0 and later) is a bitmask parameter to select one or more options that modify the standard actions of the radio, GCS, and battery failsafe. In the Mission Planner full parameter list or full parameter tree, the handy checkbox popup window is an easy what to set this (and any other bitmask) parameter. Be sure to go to Help > Check Beta Updates to pull the latest parameter definitions first while connected to the internet. The FS_OPTIONS bits are as follows:
+The :ref:`FS_OPTIONS<FS_OPTIONS>`  parameter (Copter 4.0 and later) is a bitmask parameter to select one or more options that modify the standard actions of the radio, GCS, and battery failsafe. In the Mission Planner full parameter list or full parameter tree, the handy checkbox popup window is an easy what to set this (and any other bitmask) parameter. Be sure to go to Help > Check Beta Updates to pull the latest parameter definitions first while connected to the internet. The :ref:`FS_OPTIONS<FS_OPTIONS>` bits are as follows:
 
 - bit 0 set: Continue if in auto mode on :ref:`Radio Failsafe <radio-failsafe>`
 - bit 1 set: Continue if in auto mode on :ref:`Ground Control Station Failsafe<gcs-failsafe>`
