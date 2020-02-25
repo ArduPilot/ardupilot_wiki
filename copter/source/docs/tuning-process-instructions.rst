@@ -51,9 +51,9 @@ For Copter-4.0 (and later):
 
 For Copter-3.6 (and earlier):
 
-- ATC_RAT_PIT_FILT : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- ATC_RAT_RLL_FILT : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- ATC_RAT_YAW_FILT : 2
+- ``ATC_RAT_PIT_FILT`` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- ``ATC_RAT_RLL_FILT`` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- ``ATC_RAT_YAW_FILT`` : 2
 
 .. image:: ../images/tuning-process-instructions-2.hires.png
     :target: ../_images/tuning-process-instructions-2.hires.png
