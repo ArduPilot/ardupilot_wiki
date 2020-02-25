@@ -17,8 +17,8 @@ When the failsafe will trigger
 
 If enabled and set-up correctly the battery failsafe will trigger if the main battery's
 
--  voltage drops below the voltage held in the :ref:`BATT_LOW_VOLT <BATT_LOW_VOLT>` parameter (or :ref:`FS_BATT_VOLTAGE<FS_BATT_VOLTAGE>` in older versions) for more than 10 seconds.  The default voltage is 10.5 volts.  If set to zero the voltage based trigger will be disabled.
--  remaining capacity falls below the :ref:`BATT_LOW_MAH <BATT_LOW_MAH>` parameter (or :ref:`FS_BATT_MAH<FS_BATT_MAH>` in older versions) 20% of the battery's full capacity is a good choice (i.e. "1000" for a 5000mAh battery).  If set to zero the capacity based trigger will be disabled (i.e. only voltage will be used)
+-  voltage drops below the voltage held in the :ref:`BATT_LOW_VOLT <BATT_LOW_VOLT>` parameter (or FS_BATT_VOLTAGE in older versions) for more than 10 seconds.  The default voltage is 10.5 volts.  If set to zero the voltage based trigger will be disabled.
+-  remaining capacity falls below the :ref:`BATT_LOW_MAH <BATT_LOW_MAH>` parameter (or FS_BATT_MAH in older versions) 20% of the battery's full capacity is a good choice (i.e. "1000" for a 5000mAh battery).  If set to zero the capacity based trigger will be disabled (i.e. only voltage will be used)
 
 What will happen
 ----------------
@@ -33,7 +33,7 @@ Then one of the following will happen:
 
 -  **Nothing** if the vehicle is already disarmed or executing RTL or Land
 -  **Disarm motors** if the vehicle is in Stabilize or Acro mode and the throttle is at zero OR the vehicle is landed
--  The user configurable action held in the :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` parameter from Copter-3.6 or higher (for Copter-3.5 and lower use the :ref:`FS_BATT_ENABLE<FS_BATT_ENABLE>` parameter)
+-  The user configurable action held in the :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` parameter from Copter-3.6 or higher (for Copter-3.5 and lower use the FS_BATT_ENABLE parameter)
 
   - **0** : None - no action will be taken
   - **1** : Land - the vehicle will switch to :ref:`Land <land-mode>` mode
