@@ -143,7 +143,7 @@ instructions:
 The Xbee modules ship with a default of 9600bps, which you must change
 to match the APM's serial speed of 57600 bps; set your Xbee modules to
 match this speed. (If you want to use a different speed, you can change
-that by entering the following line in the APM_Config.h file: ``#define SERIAL3_BAUD [whatever baud rate you want]``)
+that by entering the following line in the APM_Config.h file: ``#define :ref:`SERIAL3_BAUD<SERIAL3_BAUD>` [whatever baud rate you want]``)
 
 Connect each one of the them to the USB adapter board, plug the USB
 cable into your PC, and use Digi's X-CTU utility (Mac/Linux users see
