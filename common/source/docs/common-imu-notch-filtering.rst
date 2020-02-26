@@ -21,10 +21,10 @@ Setup
 Pre-Flight Setup
 ================
 
-ArduPilot allows you to select the mechanism used for controlling the harmonic notch frequency. By default this mechanism is :ref:`throttle-based<common-imu-notch-filtering-throttle-based-setup>` since that will work on all Copters/QuadPlanes. However, for Copters with an rpm sensor or :ref:`BLHeli ESC telemetry support<common-dshot-blheli-telemetry>`, setup can be radically simpler:
+ArduPilot allows you to select the mechanism used for controlling the harmonic notch frequency. By default this mechanism is :ref:`throttle-based<common-imu-notch-filtering-throttle-based-setup>` since that will work on all Copters/QuadPlanes. However, for Copters with an rpm sensor or :ref:`BLHeli ESC telemetry support<common-dshot-blheli32-telemetry>`, setup can be radically simpler:
 
 - Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 2 to use the RPM sensor to set the harmonic notch frequency. This is primarily used in :ref:`Helicopters<common-imu-notch-filtering-helicopter-setup>`
-- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 3 to use BLHeli ESC telemetry support to set the harmonic notch frequency. This requires that your ESCs are configured correctly to support BLHeli telemetry via :ref:`a serial port<common-dshot-blheli-telemetry>`
+- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 3 to use BLHeli ESC telemetry support to set the harmonic notch frequency. This requires that your ESCs are configured correctly to support BLHeli telemetry via :ref:`a serial port<common-dshot-blheli32-telemetry>`
 - Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` = 1 to set the harmonic notch reference value, which for ESC telemetry generally means no scaling
 
 .. _common-imu-notch-filtering-throttle-based-setup:
