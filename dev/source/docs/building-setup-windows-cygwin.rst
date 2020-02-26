@@ -69,7 +69,7 @@ Or, for a stepped install:
    +-----------------+----------------------------------------------------------------------------------+
    | python27-devel  | Python \| python27-devel: Python2 language interpreter                           |
    +-----------------+----------------------------------------------------------------------------------+
-   | python27-future  | Python \| python27-future: Clean single-source support for Python 3 and 2         |
+   | python27-future | Python \| python27-future: Clean single-source support for Python 3 and 2        |
    +-----------------+----------------------------------------------------------------------------------+
    | python27-libxml2| Python \| python27-libxml2: Gnome XML Library (Python bindings)                  |
    +-----------------+----------------------------------------------------------------------------------+
