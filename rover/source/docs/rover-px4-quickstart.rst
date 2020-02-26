@@ -21,7 +21,7 @@ Mounting the PX4FMU / PX4IO board stack
 It is recommended that you mount the PX4FMU / PX4IO board stack upside
 down with the PX4IO board on top to provide unrestricted access to the
 connectors on the PX4IO board. If you do mount the PX4IO board on top
-you will need to specify the AHRS_BOARD_ORIENTATON as number 8 or roll
+you will need to specify the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` as number 8 or roll
 180 in the Mission Planner Advanced Parameter list.
 
 See also :ref:`Mounting the Flight Controller <common-mounting-the-flight-controller>`.
