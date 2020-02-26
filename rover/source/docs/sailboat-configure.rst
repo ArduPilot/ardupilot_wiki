@@ -39,7 +39,7 @@ is within the no go zone. Note: this angle will be used whatever the wind streng
 that in mind.
 
 :ref:`WP_OVERSHOOT <WP_OVERSHOOT>` defines the maximum cross track error in auto mode that is allowed before
-the vehicle will tack. This keeps the vehicle within a corridor of width 2* SAIL_MAX_XTRACK. If set to zero
+the vehicle will tack. This keeps the vehicle within a corridor of width 2* :ref:`SAIL_XTRACK_MAX<SAIL_XTRACK_MAX>` . If set to zero
 the vehicle will ignore the cross track error and only tack once it can reach its destination.
 
 :ref:`PIVOT_TURN_RATE <PIVOT_TURN_RATE>` defines the maximum rate used for tacking, a lower value will result
@@ -52,13 +52,13 @@ the vehicle will keep moving and tack back towards the loiter point once it reac
 If the heel is larger than this angle the PID controller will target this angle however if the heel is less the
 controller will not try and reach it. i.e. only sheet out, don't sheet in.
 
-Heel control PIDs values are set using :ref:`ATC_SAIL <ATC_SAIL_P>` paramiters. The effect of changing the value
+Heel control PIDs values are set using :ref:`ATC_SAIL <ATC_SAIL_P>` parameters. The effect of changing the value
 can be seen in ACRO mode by manually heeling the vehicle. Most control should be do using the P and I terms. D gain
 is usually too quick for the relatively slow response of the sail winch servos so should be left at zero. The PID
-values can be sent via Mavlink useing :ref:`GCS_PID_MASK <GCS_PID_MASK>`.
+values can be sent via Mavlink using :ref:`GCS_PID_MASK <GCS_PID_MASK>`.
 
 Tacking in ACRO and AUTO mode while traveling upwind can be triggered through the use of an aux switch. This can
-be setup by setting the RCxOption parameter to function 63 – sailboat tack.
+be setup by setting the RCx_OPTION parameter to function 63 – sailboat tack.
 
 Tuning
 ------

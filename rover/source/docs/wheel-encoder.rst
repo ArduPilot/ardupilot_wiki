@@ -37,7 +37,7 @@ After making the above changes the autopilot should be rebooted
 Ground Testing
 ==============
 
-If using Rover 4.0 (or later), the WHEEL_DISTANCE MAVLink message shows the total distance travelled by each wheel in real time.  Mission Planner's MAVLink Inspector can be used which can be opened by pressing Ctrl-F and then pushing the "MAVLink Inspector" button.
+If using Rover 4.0 (or later), the ``WHEEL_DISTANCE`` MAVLink message shows the total distance travelled by each wheel in real time.  Mission Planner's MAVLink Inspector can be used which can be opened by pressing Ctrl-F and then pushing the "MAVLink Inspector" button.
 
 .. image:: ../images/Mavlink-Inspector.jpg
 
