@@ -4,6 +4,8 @@
 Sonar Sensors
 =============
 
+**ARCHIVED**
+
 Sonar sensors can provide obstacle avoidance functionality for Rover.
 This page provides instructions for installing, configuring, and testing
 single and double sonar setups.

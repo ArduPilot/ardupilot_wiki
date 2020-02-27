@@ -52,6 +52,9 @@ value to users with old hardware.
     [/site]
 [site wiki="rover"]
     Pre-4.0 Rover Avoidance <rover-object-avoidance>
+    Sonar Sensors <sonar-sensors>
+    Tuning Steering and Navigation (ver 3.1 and older) <tuning-steering-and-navigation-for-a-rover>
+    Tuning Waypoint Turn Speed (ver 3.1 and older) <speed-turn-parameter-tuning>
 [/site]
 
 [site wiki="plane"]

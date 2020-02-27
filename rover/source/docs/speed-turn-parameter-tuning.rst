@@ -4,6 +4,7 @@
 Tuning Waypoint Turn Speed (ver 3.1 and older)
 ==============================================
 
+**ARCHIVED**
 .. note::
 
    These instructions are relevant for Rover-3.1 and older.
