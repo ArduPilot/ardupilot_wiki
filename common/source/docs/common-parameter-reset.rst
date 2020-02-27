@@ -30,7 +30,7 @@ Option #2: Change the SYSID_SW_MREV parameter
 =============================================
 
 On any Ground Control Station (that can write parameters) you can reset
-parameters by setting the ``SYSID_SW_MREV`` parameter to zero. After
+parameters by setting the :ref:`FORMAT_VERSION<FORMAT_VERSION>`  parameter to zero. After
 writing the parameter, reboot the board.
 
 Option #3: Load another vehicle's firmware
