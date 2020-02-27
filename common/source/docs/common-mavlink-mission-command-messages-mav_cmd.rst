@@ -1892,7 +1892,7 @@ the external control.
 Copter
 ~~~~~~
 
-Enable ``GUIDED`` mode to hand over control to an external controller. See :ref:`Guided Mode <copter:ac2_guidedmode>`for more information.
+Enable ``GUIDED`` mode to hand over control to an external controller. See :ref:`Guided Mode <copter:ac2_guidedmode>` for more information.
 
 
 **Command parameters**
