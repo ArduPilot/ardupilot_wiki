@@ -49,9 +49,7 @@ based upon your set-up.
 
     Rangefinder Setup Overview <common-rangefinder-setup>
 
-[site wiki="rover"]
-    Sonar Sensors <sonar-sensors>
-[/site]
+
 
     Aerotenna US-D1 Radar Altimeter <common-aerotenna-usd1>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
