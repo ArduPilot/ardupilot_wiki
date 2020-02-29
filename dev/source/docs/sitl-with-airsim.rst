@@ -62,6 +62,8 @@ Installing AirSim
 Using the precompiled environments won't work, only environments whose source code is available such as Blocks or any other environments which you download from the Unreal Marketplace will work.
 Using the precompiled environemnts will be possible once AirSim has it's next stable release.
 
+ArduPilot also maintains it's own `fork of AirSim <https://github.com/ArduPilot/AirSim>`__ for faster development and usage of new features. All fixes and additions to ArduPilot's repo are contributed to the main AirSim repository as PRs.
+
 Build on Windows
 ----------------
 
@@ -69,9 +71,26 @@ The main page for Windows setup is `here <https://github.com/microsoft/AirSim/bl
 
 #. `Install Unreal Engine <https://github.com/microsoft/AirSim/blob/master/docs/build_windows.md#install-unreal-engine>`__
 
-#. Build AirSim - Follow the `steps on AirSim Setup <https://github.com/microsoft/AirSim/blob/master/docs/build_windows.md#build-airsim>`__ for Visual Studio packages and clone AirSim.
+#. **Build AirSim**
 
-Run ``build.cmd`` from the command line. This will create ready to use plugin bits in the ``Unreal\Plugins`` folder that can be dropped into any Unreal project.
+  #. Install Visual Studio 2017. Make sure to select VC++ and Windows SDK 8.1 while installing VS 2017.
+
+  #. Start ``x64 Native Tools Command Prompt for VS 2017``
+
+  #. Clone the repo:
+
+     ::
+
+         git clone https://github.com/ArduPilot/AirSim.git
+
+  #. Change to the Airsim directory and build it-
+
+     ::
+
+         cd AirSim
+         build.cmd
+
+This will create ready to use plugin bits in the ``Unreal\Plugins`` folder that can be dropped into any Unreal project.
 
 
 Build on Linux
@@ -85,17 +104,17 @@ AirSim's page on Linux Setup is `here <https://github.com/microsoft/AirSim/blob/
 
   #. Clone the repository
 
-        ::
+     ::
 
-            git clone https://github.com/Microsoft/AirSim.git
+         git clone https://github.com/ArduPilot/AirSim.git
 
   #. Build it
 
-        ::
+     ::
 
-            cd AirSim
-            ./setup.sh
-            ./build.sh
+         cd AirSim
+         ./setup.sh
+         ./build.sh
 
 
 Setup Unreal Environemt
@@ -176,14 +195,6 @@ You can restart by just pressing the Play button and then start the ArduPilot si
 
 Launch Rover SITL
 +++++++++++++++++
-For using ArduRover with AirSim, there are a couple of extra things which need to be done. First, you'll need to use a seperate branch of AirSim until the `PR <https://github.com/microsoft/AirSim/pull/2383>`__ gets merged. Run the following commands from the AirSim directory to fetch the checkout the branch -
-
-::
-
-    git fetch https://github.com/rajat2004/AirSim.git pr-ardurover3:<local-branch-name>
-    git checkout <local-branch-name>
-
-After this, you'll have to rebuild the AirSim plugin using `build.sh` or `build.cmd` as applicable, and setup the Unreal environment as described above.
 
 ``settings.json`` for using ArduRover-
 
@@ -421,9 +432,9 @@ Using AirSim APIs
 
 `AirSim's APIs document <https://github.com/microsoft/AirSim/blob/master/docs/apis.md>`__ explains the different APIs available and their usage.
 
-Currently, ArduCopter vehicle doesn't support controlling the drone through the AirSim APIs, however any method of controlling the movement which connects directly to ArduPilot rather than using AirSim’s API work, examples include DroneKit & ROS with Mavros
+Currently, Ardupilot vehicles don't support controlling the vehicle through the AirSim APIs, however any method of controlling the movement which connects directly to ArduPilot rather than using AirSim’s API work, examples include DroneKit & ROS with Mavros
 
-The `Image APIs <https://github.com/microsoft/AirSim/blob/master/docs/image_apis.md>`__ have been tested to work with Copter, for some ready-to-run sample codes, see the files in ``PythonClient/multirotor`` such as ``opencv_show.py``.
+The `Image APIs <https://github.com/microsoft/AirSim/blob/master/docs/image_apis.md>`__ have been tested to work with Ardupilot, for some ready-to-run sample codes, see the files in ``PythonClient/multirotor`` such as ``opencv_show.py``.
 
 A ROS wrapper has also been added. See `airsim_ros_pkgs <https://github.com/microsoft/AirSim/tree/master/ros/src/airsim_ros_pkgs>`__ for the ROS API, and `airsim_tutorial_pkgs <https://github.com/microsoft/AirSim/tree/master/ros/src/airsim_tutorial_pkgs>`__ for tutorials.
 
