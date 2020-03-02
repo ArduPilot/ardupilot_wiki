@@ -20,7 +20,7 @@ The vibration failsafe will trigger if all of the following are true for at leas
 
 - EKF’s vertical velocity innovations are positive (see onboard log's NKF4.IVD value)
 - EKF's vertical position innovations are positive (see NKF4.IPD)
-- EKF's velocity variance is less than 1 (see NKF4.SV)
+- EKF's velocity variance is 1 or higher (see NKF4.SV)
 
 .. note:: An ``Innovation`` is the difference between the predicted value and the latest (non-IMU) value. A ``Variance`` is the EKF’s reported confidence in its estimate. 0 is very good, >1 is bad.
 
