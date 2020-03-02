@@ -64,7 +64,7 @@ can dial the numbers in over a number of flights, using the log data.
    initially by testing different throttle settings in FBWA mode.
 #. Set the maximum and minimum airspeed limits (in metres/second) using
    the :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` and :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` parameters.
-   :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` should be set to the maximum speed your aircraft is
+   :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` should be set to just slightly less than the maximum speed your aircraft is
    capable of in level flight with the throttle set to :ref:`THR_MAX<THR_MAX>` .
    :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` should be set to the slowest speed your aircraft
    can safely fly without stalling in level flight.
@@ -328,7 +328,7 @@ required to climb is close to :ref:`THR_MAX<THR_MAX>` and the aircraft is
 maintaining airspeed, then this parameter is set correctly. If
 the airspeed starts to reduce, then the parameter is set to high, and if
 the throttle demand required to climb and maintain speed is noticeably
-less than :ref:`THR_MAX<THR_MAX>` , then either `:ref:`TECS_CLMB_MAX should be increased or :ref:`THR_MAX<THR_MAX>` reduced. 
+less than :ref:`THR_MAX<THR_MAX>` , then either :ref:`TECS_CLMB_MAX<TECS_CLMB_MAX>` should be increased or :ref:`THR_MAX<THR_MAX>` reduced. 
 
 
 
@@ -370,7 +370,9 @@ whilst maintaining airspeed with the throttle set to :ref:`THR_MAX`.
 :ref:`LIM_PITCH_MIN <LIM_PITCH_MIN>`:
 This is the minimum pitch angle (in centidegrees) that the controller
 will demand. It should be set to a value that the aircraft can achieve
-without over-speeding with the throttle set to `:ref:`THR_MIN . `TECS_RLL2THR <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_rll2thr>` (definition above)
+without over-speeding with the throttle set to :ref:`THR_MIN<THR_MIN>` .
+
+:ref:`TECS_RLL2THR <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_integ_gain>` (definition above)
 
 :ref:`TECS_SPDWEIGHT <tecs-total-energy-control-system-for-speed-height-tuning-guide_tecs_spdweight>` (definition above)
 
