@@ -228,14 +228,52 @@ the pitch control to simultaneously control height and speed.
 
 .. note::
 
-   This parameter has no effect if an airspeed sensor is not being
-   used.
+   This parameter is has no effect if the TECS has no airspeed estimate, in which
+   case a value of 0.0 will be used. To provide an airspeed estimate an airspeed
+   sensor must be installed, or :ref:`TECS_SYNAIRSPEED <TECS_SYNAIRSPEED>` must be
+   set to 1.
 
 .. note::
 
    **Glider Pilots**: Set this parameter to 2.0 (The glider will
    adjust its pitch angle to maintain airspeed, ignoring changes in
    height).
+
+.. note::
+   When the :ref:`soaring<soaring>` feature is in use and is requesting the TECS shut off
+   throttle to glide, a value of 2.0 will automatically be used providing an airspeed
+   estimate is available.
+
+:ref:`TECS_PTCH_FF_K <TECS_PTCH_FF_K>`:
+This parameter can be used together with :ref:`TECS_PTCH_FF_V0<TECS_PTCH_FF_V0>` to provide a 
+feedforward gain between demanded airspeed and pitch attitude. This is best
+used with :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` set to 2.0. As noted above, this is appropriate for
+gliders, and setting :ref:`TECS_PTCH_FF_K <TECS_PTCH_FF_K>` can improve the responsiveness to changes
+in speed demand.
+
+.. note::
+
+   The units of this parameter are radians of pitch per metre per second between
+   current demanded airspeed and TECS_PTCH_FF_V0. Appropriate values are negative
+   (pitch down with increasing speed demand). Sensible starting values are -0.04
+   for gliders and -0.08 for draggy airframes.
+
+To tune this parameter, either use FBWB to manually input speed demand changes,
+or set up a mission involving DO_CHANGE_SPEED items. Set TECS_PTCH_FF_V0 to the
+normal flight speed of your aircraft. This should also be the speed it glides at
+with no pitch input in FBWA mode (i.e. when flying at a pitch attitude specified
+by the STAB_PTCH_DOWN parameter). When reviewing the log from such a flight, look
+at the TECS pitch integrator item (TECS.iph) in the onboard logs. Usually this 
+reduces (becomes more negative) to trim the aircraft nose-down for a higher airspeed,
+and vice versa. The goal is to use the feed-forward gain to reduce the required 
+changes in this integrator value to trim the aircraft to a new airspeed. If the
+TECS.iph value becomes more negative when the demanded airspeed increases, make the
+:ref:`TECS_PTCH_FF_K <TECS_PTCH_FF_K>` more negative. If the TECS.iph value becomes 
+more positive when the demanded aispeed increases, make the :ref:`TECS_PTCH_FF_K <TECS_PTCH_FF_K>`
+value more positive. When this process in complete and the feed-forward gain is providing 
+most of the pitch attitude change needed, the TECS.iph value doesn't need to change much.
+This gives better tracking of changes in demanded airspeed.
+
 
 Advanced Parameters
 ===================
