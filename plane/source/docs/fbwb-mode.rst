@@ -39,9 +39,11 @@ airspeed in the range :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` to :ref:`ARSPD_FBW_MAX
 throttle is minimum then the plane will try to fly at :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` .
 If it is maximum it will try to fly at :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` .
 
-If you don't have an airspeed sensor then the throttle will set the
-target throttle of the plane, and Plane will adjust the throttle around
-that setting to achieve the desired altitude hold. The throttle stick
+If you don't have an airspeed sensor then the throttle input will set the
+target throttle of the plane, which is :ref:`TRIM_THROTTLE<TRIM_THROTTLE>`, at throttle midstick and lower positions, and Plane will adjust the throttle around
+that value to achieve the desired altitude hold while trying to maintain the pitch generally at its calibrated LEVEL setting, although the autopilot will primarily use pitch for climbing and descending, and manage throttle to maintain airspeed. 
+
+Increasing the throttle stick above mid-stick
 can be used to push the target throttle up beyond what it calculates is
 needed, to fly faster.
 
@@ -50,5 +52,5 @@ auto control for turn coordination.
 
 You should also have a look at CRUISE mode, as it is generally better
 than FBWB, especially if there is significant wind. In CRUISE mode the
-aircraft will hold a ground track as opposed to just levelling the wings
+aircraft will hold a ground track as opposed to just leveling the wings
 when you don't input any roll with the aileron stick.
