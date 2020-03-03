@@ -27,6 +27,8 @@ reached the aircraft will move to the next waypoint, transitioning to
 fixed wing flight as needed. The latitude and longitude of the
 NAV_VTOL_TAKEOFF command is ignored.
 
+If a NAV_VTOL_TAKEOFF is executed when already flying, the vehicle will enter VTOL mode and climb the amount given in the altitude parameter, above its current altitude. This behavior can be modified by using the "respect takeoff frames" bit of the :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask which will skip to the next command if already at or above the altitude set in the parameter, or climb to it.
+
 AUTO VTOL Landing
 -----------------
 
