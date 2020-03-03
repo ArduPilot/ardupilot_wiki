@@ -396,7 +396,7 @@ def fetch_versioned_parameters(site=args.site):
 
             # Remove old json file
             if key is 'antennatracker': # To main the original script approach instead of the build_parameters.py approach.
-                target_json_file='./%s/source/_static/parameters-%s.json' % (key,value)
+                target_json_file='./%s/source/_static/parameters-%s.json' % (key,"AntennaTracker")
             else:
                 target_json_file='./%s/source/_static/parameters-%s.json' % (value,key.title())
             debug("Erasing " + target_json_file)
@@ -408,7 +408,7 @@ def fetch_versioned_parameters(site=args.site):
 
             # Moves the updated JSON file  
             if key is 'antennatracker':  # To main the original script approach instead of the build_parameters.py approach. 
-                vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (key,value)
+                vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (key,"AntennaTracker")
             else: 
                 vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value,key.title())   
             new_file = key + "/source/_static/" + vehicle_json_file[str(vehicle_json_file).rfind("/")+1:] 
