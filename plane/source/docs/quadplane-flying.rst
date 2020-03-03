@@ -54,6 +54,8 @@ Often fixed wing "level" trim, which is the pitch attitude stabilization modes a
 
 However, when in VTOL modes, this can result in the vehicle leaning "backward" a few degrees, building in a tendency to drift backwards. This can be eliminated by setting the :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` parameter to correct this. This can also be used to correct minor CG imbalances caused by VTOL motor placement not being exactly balanced around the CG.
 
+.. _assisted_fixed_wing_flight:
+
 Assisted Fixed-Wing Flight
 ==========================
 
