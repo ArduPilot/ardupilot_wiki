@@ -25,4 +25,5 @@ multicopter aircraft, also known as a "QuadPlane".
     Weathervaning <quadplane-weathervaning>
     AUTO Missions <quadplane-auto-mode>
     Simulation <quadplane-simulation>
+    Hints and Tips<quadplane-tips>
     
