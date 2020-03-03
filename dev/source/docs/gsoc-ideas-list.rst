@@ -8,10 +8,6 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <htt
 
 - :ref:`Non-GPS navigation improvements using Intel RealSense cameras <common-vio-tracking-camera>`
 - :ref:`Object avoidance <common-object-avoidance-landing-page>` improvements for Multicopters and/or Rovers
-- `Optical flow <https://ardupilot.org/copter/docs/common-optical-flow-sensors-landingpage.html>`__ position hold performance improvements for multicopters
-- `Precision Landing <https://ardupilot.org/copter/docs/precision-landing-with-irlock.html>`__ accuracy improvements using `JeVois camera <http://www.jevois.org/>`__ (or similar) for multicopters
-- Automatic docking for cars and boats using `JeVois camera <http://www.jevois.org/>`__ (or similar)
-- Lane following or visual follow-me for Copter, Rover or Boat
 - Rover Autotune
 - Walking robot support
 - 3D aerobatic support for fixed wing aircraft
@@ -51,36 +47,16 @@ Intel Realsense cameras can already be used with ArduPilot but there is still ro
 - Provide obstacle data from an Intel Realsense camera to ardupilot using the mavlink `OBSTACLE_DISTANCE <https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE>`__ message
 - Prepare `APSync <https://ardupilot.org/dev/docs/apsync-intro.html>`__ images to ease user setup
 
-Optical flow position hold performance improvements for multicopters
---------------------------------------------------------------------
-
-ArduPilot supports `Optical flow sensors <https://ardupilot.org/copter/docs/common-optical-flow-sensors-landingpage.html>`__ but the setup, accuracy and reliability could be improved:
-
-- Multicopters should not trigger an EKF failsafe on loss of GPS if a working optical flow sensor is available (`issue <https://github.com/ArduPilot/ardupilot/issues/9919>`__, `possible fix <https://github.com/ArduPilot/ardupilot/pull/12482>`__)
-- Create an easy to use sensor calibration routine so that the sensor's pixel movements are accurately converted to rotation rates
-- Verify the EKF's integration of sensor data is correct (i.e. check rotation rate data, sensor's defined position, sensor's update rate and lag are all properly used in the final position and velocity estimates)
-
-Precision Landing accuracy improvements for Multicopters
---------------------------------------------------------
-
-ArduPilot supports `Precision Landing <https://ardupilot.org/copter/docs/precision-landing-with-irlock.html>`__ using the IRLock sensor or companion computer.  This project could involve:
-
-- Add support for the `JeVois camera <http://www.jevois.org/>`__ (or similar) to recognise AprilTags and then provide the target to the autopilot via mavlink
-- Improve the reliability and accuracy of the small EKF used to estimate the landing target's relative position and velocity. In particular adding protection against large lag in the readings leading to unreasonable results.
-- Add a landing state machine for landing retry and failure handling
-
-Lane following or visual follow-me for Copter, Rover or Boat
+Object Avoidance improvements for Multicopters and/or Rovers
 ------------------------------------------------------------
 
-This project involves using machine vision and/or machine learning to add lane following or visual follow-me to ArduPilot's Copter or Rover firmware
+ArduPilot supports three methods for object avoidance, `Bendy Ruler <https://ardupilot.org/copter/docs/common-oa-bendyruler.html>`__, `Dijkstra's <https://ardupilot.org/copter/docs/common-oa-dijkstras.html>`__ and `Simple avoidance <https://ardupilot.org/copter/docs/common-simple-object-avoidance.html>`__ but there is room for improvement in each of them:
 
-- Either a low-cost `JeVois camera <http://www.jevois.org/>`__ or a high powered `companion computer <https://ardupilot.org/dev/docs/companion-computers.html>`__ like the NVidia TX2 could be used
-- Recognise the road or user using machine vision or learning (User could have an AprilTag on their clothing)
-- Send velocity commands (probably using the `SET_GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__ message) to move the vehicle in the correct direction
-- Add solution to `APSync <https://ardupilot.org/dev/docs/apsync-intro.html>`__
-- Document the implementation
-
-Expenses for purchasing the companion computer and camera will be covered by ArduPilot
+- BendyRuler should work in 3D (`issue <https://github.com/ArduPilot/ardupilot/issues/13215>`__)
+- BendyRuler can be hesitant about which direction to choose (`issue <https://github.com/ArduPilot/ardupilot/issues/11961>`__)
+- Rover's using BendyRuler may impact the fence after clearing obstacles (`issue <https://github.com/ArduPilot/ardupilot/issues/11565>`__)
+- Dijkstra's should work with Spline waypoints (`issue <https://github.com/ArduPilot/ardupilot/issues/12691>`__)
+- Simple avoidance should backaway from objects (`issue <https://github.com/ArduPilot/ardupilot/issues/7706>`__)
 
 Rover Autotune
 --------------
