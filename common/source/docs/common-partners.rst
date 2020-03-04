@@ -346,6 +346,15 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: https://www.frsky-rc.com/
 
+      - .. image:: ../../../images/supporters/supporters_logo_TaiwanDrone100.png
+            :width: 250px
+            :align: center
+            :target: https://taiwandrone100.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_blank.png
+            :align: center
+
       - .. image:: ../../../images/supporters/supporters_logo_blank.png
             :align: center
 
