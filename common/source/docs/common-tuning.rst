@@ -35,6 +35,7 @@ parameters. The following topics shown you how.
     Automatic Tuning with AUTOTUNE <automatic-tuning-with-autotune>
     Roll, Pitch and Yaw Controller Tuning <roll-pitch-controller-tuning>
     Navigation Tuning <navigation-tuning>
+    Cruise Speed Tuning <tuning-cruise>
     TECS (Total Energy Control System) for Speed & Height – Tuning Guide <tecs-total-energy-control-system-for-speed-height-tuning-guide>
     Calibrating an Airspeed Sensor <calibrating-an-airspeed-sensor>
     Tuning Ground Steering for a Plane <tuning-ground-steering-for-a-plane>
