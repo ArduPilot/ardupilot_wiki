@@ -388,7 +388,7 @@ def fetch_versioned_parameters(site=args.site):
             try:  
                 old_parameters_files = [f for f in glob.glob(old_parameters_mask + "*.rst")]
                 for filename in old_parameters_files:
-                    debug("Erasing " + filename)
+                    debug("Erasing rst " + filename)
                     os.remove(filename)    
             except Exception as e:
                 error(e)
@@ -399,7 +399,7 @@ def fetch_versioned_parameters(site=args.site):
                 target_json_file='./%s/source/_static/parameters-%s.json' % (key,"AntennaTracker")
             else:
                 target_json_file='./%s/source/_static/parameters-%s.json' % (value,key.title())
-            debug("Erasing " + target_json_file)
+            debug("Erasing json " + target_json_file)
             try:
                 subprocess.check_call(["rm", target_json_file])
             except Exception as e:
@@ -408,7 +408,7 @@ def fetch_versioned_parameters(site=args.site):
 
             # Moves the updated JSON file  
             if key is 'antennatracker':  # To main the original script approach instead of the build_parameters.py approach. 
-                vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (key,"AntennaTracker")
+                vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker","AntennaTracker")
             else: 
                 vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value,key.title())   
             new_file = key + "/source/_static/" + vehicle_json_file[str(vehicle_json_file).rfind("/")+1:] 
