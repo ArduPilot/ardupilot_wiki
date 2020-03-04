@@ -34,9 +34,10 @@ Configuration through the Ground Station
 ----------------------------------------
 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = "11" ("Lidar360") if using Serial4.
-- :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` =  "115" if using Serial4.
-- :ref:`PRX_TYPE <PRX_TYPE>` = "1" to enable the SF40c (or 0 to disable).
+- :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` =  "921" if using Serial4.
+- :ref:`PRX_TYPE <PRX_TYPE>` = "7" (LightwareSF40c) or "1" (LightwareSF40C-legacy) if using a very old version of the sensor
 - :ref:`PRX_ORIENT <PRX_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
-- :ref:`PRX_YAW_CORR <PRX_YAW_CORR>` allows adjusting the forward direction of the SF40c.  Even with the sensor's lightware logo pointed forwards, in testing the lidar has reported objects 20 ~ 30degrees off from their actual direction.  The best way to determine this value is to place an object in front of the sensor, connect a PC to the sensor using a USB cable, then open the Lightware Terminal application and enter "?TS,90,0" (search light, 90 degree wide beam directly forward).  The sensor should return two numbers, an angle and a distance.  The negative of the angle should be entered into the :ref:`PRX_YAW_CORR <PRX_YAW_CORR>` parameter.
+- :ref:`PRX_YAW_CORR <PRX_YAW_CORR>` allows adjusting the forward direction of the SF40c.  One way to determine this angle is to use the Mission Planner's Setup >> Advanced, Proximity viewer and then walk around the vehicle and ensure that the sector distances shorten appropriately.
+- :ref:`PRX_IGN_ANG1 <PRX_IGN_ANG1>` and :ref:`PRX_IGN_WID1 <PRX_IGN_WID1>` parameters allow defining zones around the vehicle that should be ignored.  For example to avoid a 20deg area behind the vehicle, set :ref:`PRX_IGN_ANG1 <PRX_IGN_ANG1>` to 180 and :ref:`PRX_IGN_WID1 <PRX_IGN_WID1>` to 10.
 
 More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
