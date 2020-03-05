@@ -18,7 +18,8 @@ Connection to the autopilot is via any UART port's TX input, although one withou
 
 To enable HOTT telemetry, for example on the first TELEM port SERIAL1:
 
-- :ref:`SERIAL1_BAUD<SERIAL1_BAUD>`  set to 19 (for 19.2KBaud)
-- :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>`  set to 27 (HOTT)
-- :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>`   set to 4 (Half Duplex)
+- :ref:`SERIAL1_BAUD <SERIAL1_BAUD>`  set to 19 (for 19.2KBaud)
+- :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` set to 27 (HOTT)
+- :ref:`SERIAL1_OPTIONS <SERIAL1_OPTIONS>` set to 4 (Half Duplex)
+- :ref:`BRD_SER1_RTSCTS <BRD_SER1_RTSCTS>` set to 0 to disable flow control (optional)
 
