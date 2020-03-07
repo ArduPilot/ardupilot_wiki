@@ -72,6 +72,8 @@ Harmonic Notch Configuration
 - Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` = *hover_freq* to set the harmonic notch reference frequency
 - Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` = *hover_freq* / 2 to set the harmonic notch bandwidth
 
+.. _common-imu-notch-filtering-post-configuration-flight-and-post-flight-analysis:
+
 Post Configuration Flight and Post-Flight Analysis
 ==================================================
 

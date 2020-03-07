@@ -20,6 +20,7 @@ parameters. The following topics shown you how.
     Advanced Tuning <tuning>
     Transmitter Based Tuning <common-transmitter-tuning>
     Configuring Notch Filtering <common-imu-notch-filtering>
+    Configuring In-Flight FFT <common-imu-fft>
 
 -----
 
