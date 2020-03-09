@@ -56,6 +56,7 @@ the output signal into the form expected by your particular camera:
 -  :ref:`Camera Triggering Configuration <common-camera-shutter-with-servo>`
 -  :ref:`Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>`
 -  :ref:`Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>` (non-standard integration)
+-  :ref:`RunCam Camera Control <common-camera-runcam>`
 
 Detail topics
 =============
@@ -81,4 +82,4 @@ Detail topics
     Camera Triggering Configuration <common-camera-shutter-with-servo>
     Camera Triggering using CHDK <common-apm-to-chdk-camera-link-tutorial>
     Camera Triggering using CHDK Tutorial <common-chdk-camera-control-tutorial>
-
+    RunCam Camera Control <common-camera-runcam>
