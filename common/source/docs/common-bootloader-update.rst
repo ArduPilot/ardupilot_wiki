@@ -9,7 +9,11 @@ A Bootloader is a small piece of code that runs (normally just for a few seconds
 Nearly all autopilots ship with a bootloader pre-installed and most users will never need to upgrade it but there are some advantages to upgrading to the latest ArduPilot specific bootloader:
 
 - Bug fixes like the "Parameter Reset" issue fix included with Copter-4.0.4, Plane-4.0.6
-- The COM port name includes "ArduPilot" which makes it more recognisable
+- The COM port name may be more recognisable.  For example it may include "ArduPilot"
+
+.. warning::
+
+   Updating the bootloader can potentially "brick" the board (i.e. make it unresponsive and unable to upload new firmwares).  Be careful not to power down the autopilot during the update process
 
 Where can I download the latest bootloader?
 -------------------------------------------
@@ -32,6 +36,8 @@ Upgrading using Mission Planner
 
   .. image:: ../../../images/bootloader-update-MP.png
      :width: 450px
+
+- Reboot the autopilot
 
 Upgrading using QGC
 -------------------
