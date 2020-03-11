@@ -58,3 +58,6 @@ Extra Information
 - Developer specific information on Bootloaders can be found `here <https://ardupilot.org/dev/docs/bootloader.html>`__
 - The source code for the bootloaders can be found in `Tools/AP_Bootloader <https://github.com/ArduPilot/ardupilot/tree/master/Tools/AP_Bootloader>`__
 - Pre-compiled binaries can be found on `firmware.ardupilot.org/Tools/Bootloaders <https://firmware.ardupilot.org/Tools/Bootloaders/>`__
+
+..  youtube:: oxThS6CGd6I
+    :width: 100%
