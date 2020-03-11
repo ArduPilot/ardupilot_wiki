@@ -16,6 +16,9 @@ Where can I download the latest bootloader?
 
 The ArduPilot specific bootloader is included within the ArduPilot firmware but it lies dormant by default.  A special command must be sent to the main ArduPilot firmware to install the new bootloader.
 
+  .. image:: ../../../images/bootloader-file-description.png
+     :width: 450px
+
 Upgrading using Mission Planner
 -------------------------------
 
@@ -35,8 +38,8 @@ Upgrading using QGC
 
 The process is similar to using Mission Planner (see above) except the "Flash ChibiOS Bootloader" button is found on the Configuration (Gear icon), Firmware page
 
-.. image:: ../../../images/bootloader-update-QGC.png
-   :width: 450px
+  .. image:: ../../../images/bootloader-update-QGC.png
+     :width: 450px
 
 Upgrading with MAVProxy
 -----------------------
