@@ -24,7 +24,7 @@ ArduPilot firmware already include the bootloader. You can flash it using the ma
 Mavproxy
 ........
 
-In Mavproxy terminal, type : ``long MAV_CMD_FLASH_BOOTLOADER 0 0 0 0 290876``
+In Mavproxy terminal, type : flashbootloader
 
 .. TODO: add picture
 
