@@ -39,6 +39,8 @@ This section contains articles about creating missions that will run when the ve
     Terrain Following <terrain-following>
 [/site]
 
+    Rewind-on-resume <common-mission-rewind>
+
 
 [copywiki destination="copter,plane,rover,planner"]
 
