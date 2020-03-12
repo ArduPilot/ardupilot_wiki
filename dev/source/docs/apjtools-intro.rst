@@ -23,7 +23,7 @@ How to update the Defaults
 
     # Default parameter file for vehicleX
     MOT_PWM_MIN 1000
-    ATC_RAT_RLL_P 0.100 @ReadOnly   # users will not be able to modify this parameter
+    ATC_RAT_RLL_P 0.100 @READONLY   # users will not be able to modify this parameter
 
 - Embed the parameter defaults in the .apj firmware with this command
 
