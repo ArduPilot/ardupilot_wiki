@@ -13,6 +13,10 @@ Copter and Rover 4.0 (and higher) support `Dijkstra's <https://en.wikipedia.org/
 
    Dijkstra's does not support avoiding objects sensed with lidar or proximity sensors
 
+.. warning::
+
+   Dijkstra's does not support Spline Waypoints. 
+   
 .. image:: ../../../images/oa-dijkstras.png
 
 Configuration
