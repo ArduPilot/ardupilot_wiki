@@ -29,7 +29,7 @@ How to update the Defaults
 
 ::
 
-    python apj_tool.py --set-set param-defaults.parm arducopter.apj
+    python apj_tool.py --set-file param-defaults.parm arducopter.apj
 
 - Check the defaults have been applied correctly with this command
 
@@ -50,5 +50,5 @@ Additional Info
 
 - The parameters will be the new default values only if the user has not modified them
 - If all parameters are reset to their defaults, they will return to the values specified in the file
-- The @ReadOnly modifier will stop users from modifying the parameter as long as they use this particular firmware.  The users can get around this though if they go to the extra effort of loading the standard ArduPilot to the autopilot
-
+- The @READONLY modifier will stop users from modifying the parameter as long as they use this particular firmware.  The users can get around this though if they go to the extra effort of loading the standard ArduPilot firmware to the autopilot
+- The new parameter default file can be a maximum of 8k including comments
