@@ -17,7 +17,8 @@ More details on both these lidar can be found in the `benewake.com's downloads a
 Where to Buy
 ------------
 
-- the `Benewake.com Agents <http://en.benewake.com/agent>`__ page provides the full list of retailers.
+- `Benewake.com Agents <http://en.benewake.com/agent>`__
+- `Benewake's store on Alibaba.com <https://benewake.en.alibaba.com/?spm=a2700.icbuShop.88.19.66976e38pCbzVV>`__
 
 Connecting to the Autopilot
 -----------------------------------
