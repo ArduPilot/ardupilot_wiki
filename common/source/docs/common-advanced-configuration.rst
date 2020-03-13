@@ -23,11 +23,13 @@ tuning options for the vehicle.
     Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
     Boats with Vectored Thrust <rover-vectored-thrust>
+    Bootloader Update <common-bootloader-update>
 [/site]
 [site wiki="plane"]
     Advanced Failsafe <advanced-failsafe-configuration>
     Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
+    Bootloader Update <common-bootloader-update>
 [/site]
     CAN Bus Setup <common-canbus-setup-advanced>
     Compass Setup (Advanced) <common-compass-setup-advanced>
