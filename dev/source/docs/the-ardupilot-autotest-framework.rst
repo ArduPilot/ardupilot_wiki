@@ -105,7 +105,7 @@ Complex Invocation
 
 ::
 
-   ./Tools/autotest/autotest.py --no-clean build.ArduCopter fly.ArduCopter build.APmrover2 drive.APmrover2 drive.balancebot build.ArduPlane fly.ArduPlane fly.Quadplane build.AntennaTracker build.ArduSub dive.ArduSub build.Helicopter fly.CopterAVC build.AntennaTracker test.AntennaTracker
+   ./Tools/autotest/autotest.py --no-clean build.ArduCopter fly.ArduCopter build.APMrover2 drive.APMrover2 drive.balancebot build.ArduPlane fly.ArduPlane fly.Quadplane build.AntennaTracker build.ArduSub dive.ArduSub build.Helicopter fly.CopterAVC build.AntennaTracker test.AntennaTracker
 
 At time of writing, these invoke all the vehicle tests.  Expect these to take about 40 minutes to run.
 
