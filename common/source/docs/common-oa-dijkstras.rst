@@ -9,6 +9,8 @@ Object Avoidance with Dijkstra's
 
 Copter and Rover 4.0 (and higher) support `Dijkstra's <https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm>`__ for path planning around fences and stay-out zones.  This well known algorithm internally builds up a list of "safe areas" calculated from the fence and stay-out zones and then finds the shortest path to the destination.
 
+.. image:: ../../../images/oa-dijkstras.png
+
 .. warning::
 
    Dijkstra's does not support avoiding objects sensed with lidar or proximity sensors
@@ -16,8 +18,6 @@ Copter and Rover 4.0 (and higher) support `Dijkstra's <https://en.wikipedia.org/
 .. warning::
 
    Dijkstra's does not support Spline Waypoints. 
-   
-.. image:: ../../../images/oa-dijkstras.png
 
 Configuration
 -------------
