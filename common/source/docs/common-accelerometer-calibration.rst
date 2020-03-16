@@ -13,6 +13,10 @@ This article shows how to perform basic accelerometer calibration (using
 
    Accelerometer calibration is mandatory in ArduPilot.
 
+.. note::
+
+   Accelerometer calibration cannot be performed while vehicle is armed
+
 Calibration steps
 =================
 
