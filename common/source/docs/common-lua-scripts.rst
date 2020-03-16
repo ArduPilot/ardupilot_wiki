@@ -1,46 +1,53 @@
 .. _common-lua-scripts:
 
- [copywiki destination="plane,copter,rover,dev"]
+[copywiki destination="plane,copter,rover,dev"]
+
 ===========
 Lua Scripts
 ===========
 
 ArduPilot has introduced experimental support for `Lua <https://www.lua.org/>`_ scripting.
-The scripting layer provides a safe, sandboxed environment for new behaviors to be added to the autopilot.
-Lua scripts are run in parallel with the flight code on the autopilot. Lua is a garbage collected, imperative programming language. Scripts are stored on the SD card of the autopilot.
+Scripting provides a safe, "sandboxed" environment for new behaviours to be added to the autopilot without modifying the core flight code.
+Scripts are stored on the SD card and run in parallel with the flight code.
 
-What can scripts currently do:
+This page describes how to setup scripts on your autopilot, the scripting API and some examples to help get started.
+
+.. note::
+
+    Lua scripting support was released with Copter-4.0, Rover-4.0 and Plane-3.11.
+
+Getting Started
+===============
+
+- Ensure your autopilot has at least 2 MB’s of flash and 70KB of memory.  High powered autopilots like the Hex Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`
+- Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot to see all SCR_ parameters)
+- Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder.  If using Mission Planner this can be done using MAVFTP.  If using a simulator the ``scripts`` folder is in the directory the simulator was started from.
+
+  .. image:: ../../../images/scripting-MP-mavftp.png
+      :target: ../_images/scripting-MP-mavftp.png
+      :width: 450px
+
+- Sample scripts can be found `here for stable Plane <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/examples>`__, `Copter <https://github.com/ArduPilot/ardupilot/tree/ArduCopter-stable/libraries/AP_Scripting/examples>`__ and `Rover <https://github.com/ArduPilot/ardupilot/tree/APMrover2-stable/libraries/AP_Scripting/examples>`__.  The latest development scripts can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__
+- When the autopilot is powered on it will load and start all scripts
+- Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab
+- :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts.  The default of 43KB is sufficient for small scripts, and fits onto most autopilots.  The autopilot's free memory depends highly upon which features and peripherals are enabled.  If this parameter is set too low, scripts may fail to run.  If set too high other autopilot features including Terrain Following may fail to initialise.
+
+What Scripts Can Do
+===================
 
 - Multiple scripts can be run at once
 - Monitor the vehicle state
 - Start to manipulate vehicle state
 
-Scripts are run at a low priority on the system, which allows the RTOS to ensure that the core flight code will continue to execute even if a script is taking a long time to process.
+Lua is a garbage collected, imperative programming language.
+Scripts are run at a low priority on the system, which ensures that the core flight code will continue to execute even if a script is taking a long time to process.
 In order to allow multiple scripts to be run, each script is allocated a fixed time chunk (measured in VM instructions) in which it is expected to complete it’s processing.
 The script is allowed to specify a new callback function and time at which it should be called, which allows it to be run continuously.
 While this serves to bound the worst case execution time safely, scripts are not guaranteed to be run on a reliable schedule.
 
-Each script is run in its own sandboxed environment.
+Each script is run in its own "sandboxed" environment.
 This allows each script to manipulate any global variables it wants to without causing other scripts problems, and allows the script to persist state between calls to its callback.
 A side effect of this however is that heavy memory usage in a script can cause other scripts to be short on memory.
-
-This page describes how to setup scripts on your autopilot, the scripting API and some examples to help get started.
-
-This feature will be released with Copter-4.0, Rover-3.6 and Plane-3.11.
-
-Requirements
-============
-
-- Autopilot with at least 2 MB’s of flash available. Even some autopilots using the STMF7xx processor family may not include 2MB of flash. Check the specifications of your autopilot.
-- At least 32 KB of free memory
-
-How to Enable Scripting
-=======================
-
-- Use a recent build of master, or compile ArduPilot for yourself
-- Set the :ref:`SCR_ENABLE<SCR_ENABLE>` parameter to 1 to enable scripting
-- The :ref:`SCR_HEAP_SIZE<SCR_HEAP_SIZE>` parameter can be adjusted to increase or decrease the amount of memory available for scripting. The amount of free memory is highly dependent upon what hardware and peripherals you have, and to test the amount of memory scripts require it is important to ensure you have all the hardware connected and enabled you expect to use with the vehicle. This defaults to 32KB which is sufficient to start with small scripts, and generally seems to fit onto embedded boards.
-- When the vehicle is started it will automatically load and start all scripts (files with extension .lua) in the ``scripts`` folder. With the simulator the ``scripts`` folder is expected to be found in whatever directory the simulation is running in, on real hardware it’s expected to be inside the ``APM`` folder on the micro SD card.
 
 A Sample Script
 ===============
@@ -74,13 +81,13 @@ After a check to ensure that the distance is never measured as more then 1 kilom
 The final line in the function is used to reschedule this function to be run again in 1000 milliseconds from the current time.
 The last line of the script is also used to schedule the function to be run for the first time in 1000 milliseconds from the time at which it's loaded.
 
-Script Crashes and Errors:
-==========================
+Script Crashes and Errors
+=========================
 If scripts run out of memory (or panic for any reason) all currently running scripts are terminated, and the scripting engine will restart, and reload all scripts from the disk.
 This is allowed to happen at all flight stages, even while the vehicle is armed and flying.
 
-API Documentation:
-==================
+API Documentation
+=================
 
 The API documentation described here is not a complete list, but rather a work in progress. This list will be expanded upon in the near future. For a full list of the methods currently available, the `binding generator <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`_ source is the best reference currently available.
 
