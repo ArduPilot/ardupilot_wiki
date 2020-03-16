@@ -45,3 +45,4 @@ MAVLink1 vs MAVLink2
 - MAVLink2 is backwards compatible with MAVLink1 meaning that if a device understands MAVlink2 messages it certainly understands MAVLink1 messages
 - If a device only capable of understanding MAVLink1 receives a message that includes additional fields (added under MAVLink2) the device will only see the original fields.  I.e. the device will be able to read the message but will not "see" the additional fields
 - A flight controller's serial port (presumably connected to a telemetry radio) can be set to use MAVLink2 by setting the ``SERIALx_PROTOCOL`` parameter to "2" (where "x" is the serial port number on the flight controller)
+-  See `Mavlink2 Documentation <https://mavlink.io/en/guide/mavlink_2.html>`__ for more information (especially on message extensions)
