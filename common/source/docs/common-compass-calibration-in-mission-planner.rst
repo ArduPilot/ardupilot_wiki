@@ -9,6 +9,11 @@ This article explains how to perform basic compass calibration. It assumes that 
 .. tip::
 
    It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "world magnetic model" which allows converting the location's magnetic North to true North without recalibrating if using the option "Obtain declination automatically".  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff.
+   
+.. note::
+
+   Compass calibration cannot be performed while vehicle is armed.
+
 
 Calibration first steps
 =======================
