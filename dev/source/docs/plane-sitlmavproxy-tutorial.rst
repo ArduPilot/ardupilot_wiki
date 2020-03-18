@@ -41,7 +41,7 @@ using the ``--map`` and ``--console`` options:
 .. note::
 
    If you wish to start the simulation at a different map location or use a different frame type
-   (quadplane,plane-elevon,etc.) than a standard aileron/elevator/rudder/throttle plane, see
+   (-f option for quadplane,firefly,etc.) than a standard aileron/elevator/rudder/throttle plane, see
    :ref:`SITL Advance Testing <using-sitl-for-ardupilot-testing>`. A complete list of startup
    options for the simulator can be found using the --help option:
 

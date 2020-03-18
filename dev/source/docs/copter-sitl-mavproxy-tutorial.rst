@@ -38,6 +38,18 @@ using the ``--map`` and ``--console`` options:
     cd ~/ardupilot/ArduCopter
     ../Tools/autotest/sim_vehicle.py --map --console
 
+.. note::
+
+   If you wish to start the simulation at a different map location or use a different frame type
+   (-f option for hexa,tri,octa,heli,etc.) than a standard + layout quadcopter, see
+   :ref:`SITL Advance Testing <using-sitl-for-ardupilot-testing>`. A complete list of startup
+   options for the simulator can be found using the --help option:
+
+::
+
+    sim_vehicle.py --help
+
+
 The *MAVProxy Command Prompt*, *Console* and *Map* should be arranged
 conveniently so you can observe the status and send commands at the same
 time.
