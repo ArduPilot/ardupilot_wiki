@@ -45,6 +45,51 @@ The frame type can also be changed with the ``-f`` parameter.
     sim_vehicle.py -v ArduPlane -f quadplane --console --map
     
 
+Frame Types:
+------------
+
+A partial listing of frame types is show below. For a current list, just type:
+
+::
+
+    sim_vehicle.py --help
+
+
++--------------------------+------------------------+
++          Vehicle         +       Frame Type       +
++--------------------------+------------------------+
++                          + plane (default if -f   +
++                          + is not used)           +
++                          +------------------------+
++ Plane                    + quadplane              +
++                          + firefly plane-dspoilers+
++                          + plane-elevon plane-jet +
++                          + plane-tailsitter plane-+
++                          + vtail quadplane-cl84   +
++                          + quadplane-tilthvec     +
++                          + quadplane-tilttri      +
++                          + quadplane-tilttrivec   +
++                          + quadplane-tri          +
++--------------------------+------------------------+
++                          + quad (default if -f    +
++                          + is not used)           +
++                          +------------------------+
++                          + coaxcopter  dodeca-hexa+
++ Copter                   + heli heli-compound     +
++                          + heli-dual hexa hexa-cwx+
++                          + hexa-dji octa octa-cwx +
++                          + octa-dji octa-quad     +
++                          + octaquad-cwx  tri  cwx +
++                          + singlecopter  y6 djix  +
++--------------------------+------------------------+
++                          + rover (default if -f   +
++  Rover                   + is not used)           +
++                          +------------------------+
++                          + balancebot rover-skid  +
++                          + sailboat sailboat-motor+
++--------------------------+------------------------+
+
+
 Setting vehicle start location
 ==============================
 
