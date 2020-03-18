@@ -37,6 +37,9 @@ There are a number of way of using Git/Github - including a number of different 
        git fetch upstream
        git rebase upstream/master
 
+     .. note:: Be sure to repeat these first steps if you make new changes in the future, to assure that your local repo is up to date
+
+
 #. Create a branch in your local clone for your changes
 
    .. code-block:: bash
@@ -84,7 +87,7 @@ All changes to the wiki are `reviewed <https://github.com/ArduPilot/ardupilot_wi
 
 .. tip::
 
-   To update your fork of the repository, you may repeat the last three steps of section one and then push the master branch. It means:
+   To update your fork of the repository, both locally and on GitHub, you may repeat the first three steps of section one and then push the master branch:
 
    #. git remote add upstream https://github.com/ArduPilot/ardupilot_wiki.git  (If you never did before)
    #. git checkout master
