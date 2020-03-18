@@ -22,18 +22,27 @@ ground station to command a mode change.
 
 -  If you transition to :ref:`MANUAL <manual-mode>` then the VTOL motors
    will immediately stop. In the case of a tilt-rotor, the motors will immediately rotate to foward flight orientation.
+
+.. warning:: If you do not have sufficient airspeed, an immediate stall will occur! Since MANUAL mode is often setup as a reflex driven "bail-out", some users move, or remove this mode, and substitute QSTABLIZE or QLOITER as an alternative "bail-out" for a QuadPlane
+ 
 -  If you transition to any other fixed wing mode then the VTOL motors will
    continue to supply lift and stability until you have reached the
-   :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>` airspeed (or airspeed estimate if no airspeed sensor). In the case of tilt-rotors, the motors will tilt to :ref:`Q_TILT_MAX<Q_TILT_MAX>` to begin building forward airspeed for the transistion.
+   :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>` airspeed (or airspeed estimate if no airspeed sensor). In the case of tilt-rotors, the motors will tilt to :ref:`Q_TILT_MAX<Q_TILT_MAX>` to begin building forward airspeed for the transition. The VTOL motors will behave similar to that in QHOVER and will try to maintain present altitude through the transition. The forward thrust is controlled by the throttle stick in a manner similar to whatever fixed wing mode was entered. In FBWA, it is directly controlled, ie low stick is zero thrust and the QuadPlane will just hover. For tilt-rotors, stick positions below mid-stick will proportionately rotate VTOL motors back towards vertical, since that controls the forward thrust component. In FBWB/CRUISE, throttle stick controls forward thrust as in that mode, as a speed or throttle value, depending on whether or not an airspeed sensor is in use. 
+
+.. note:: Unless the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 0 is set, pulling back on elevator will not only pitch the nose up but also increase the VTOL motor output to assist in climbing during the transition airspeed wait phase.
+ 
 -  Once that airspeed is reached the quad motors will slowly drop in
    power over :ref:`Q_TRANSITION_MS <Q_TRANSITION_MS>` milliseconds (default is 5000, so 5
    seconds) and will switch off after that. And tilt-rotors will slowly rotate to full forward thrust configuration.
+
+.. note:: Usually by this time the VTOL motor contribution is already very low, since the QuadPlane is already flying, providing lift or climbing, and the VTOL contribution is aiding attitude stabilization.
+
 -  If :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` is not zero, then exceeding this time before reaching  :ref:`ARSPD_FBW_MIN <ARSPD_FBW_MIN>` airspeed will cancel the transition and the aircraft will immediately change to QLAND. The default is 0, which disables this timeout.
 
 If you transition from a fixed wing mode to a QuadPlane mode then the
-forward motor will immediately stop, but the control surfaces will
+forward motor/thrust will immediately stop, but the control surfaces will
 continue to provide stability while the plane slows down. This allows
-for transitions to QuadPlane modes while flying at high speed. Tilt-rotors will immediately move to VTOL position.
+for transitions to QuadPlane modes while flying at high speed. Tilt-rotors will, therefore, immediately move to VTOL position.
 
 The one exception to the forward motor stopping in QuadPlane VTOL
 modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non-zero
@@ -203,12 +212,10 @@ What Will Happen?
 Understanding hybrid aircraft can be difficult at first, so below are
 some scenarios and how the ArduPilot code will handle them.
 
-I am hovering in QHOVER and switch to FBWA mode
------------------------------------------------
+I am hovering in QHOVER/QLOITER and switch to FBWA mode
+-------------------------------------------------------
 
-The aircraft will continue to hover, waiting for pilot input. If you
-take your hands off the sticks at zero throttle the aircraft will
-continue to hold the current height and hold itself level. It will drift
+The aircraft will continue to hover, setting forward thrust/throttle at whatever the throttle stick position dictates and gaining speed. If you zero throttle during the transition, the aircraft will continue to hold the current height and hold itself level, slowing to a halt. It will drift
 with the wind as it is not doing position hold.
 
 If you advance the throttle stick then the forward motor will throttle-up and
