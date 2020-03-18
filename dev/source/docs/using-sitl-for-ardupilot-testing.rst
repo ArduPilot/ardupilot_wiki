@@ -1,8 +1,8 @@
 .. _using-sitl-for-ardupilot-testing:
 
-=====================
-SITL Advanced Testing
-=====================
+==========
+Using SITL
+==========
 
 This article describes how :ref:`SITL <sitl-simulator-software-in-the-loop>`
 and :ref:`MAVProxy <mavproxy-developer-gcs>` can be used to change the environment,
