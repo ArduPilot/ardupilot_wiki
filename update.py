@@ -381,10 +381,11 @@ def fetch_versioned_parameters(site=args.site):
                 pass
              
             # Remove old versioned param files
-            if key is 'antennatracker': # To main the original script approach instead of the build_parameters.py approach.
+            if 'antennatracker' in key.lower(): # To main the original script approach instead of the build_parameters.py approach.
                 old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,"AntennaTracker")
             else:
                 old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,key.title()) 
+
             try:  
                 old_parameters_files = [f for f in glob.glob(old_parameters_mask + "*.rst")]
                 for filename in old_parameters_files:
@@ -395,11 +396,11 @@ def fetch_versioned_parameters(site=args.site):
                 pass
 
             # Remove old json file
-            if key is 'antennatracker': # To main the original script approach instead of the build_parameters.py approach.
+            if 'antennatracker' in key.lower(): # To main the original script approach instead of the build_parameters.py approach.
                 target_json_file='./%s/source/_static/parameters-%s.json' % (key,"AntennaTracker")
             else:
                 target_json_file='./%s/source/_static/parameters-%s.json' % (value,key.title())
-            debug("Erasing json " + target_json_file)
+            debug("Erasing json (key: " + key + ") " + target_json_file)
             try:
                 subprocess.check_call(["rm", target_json_file])
             except Exception as e:
@@ -407,13 +408,14 @@ def fetch_versioned_parameters(site=args.site):
                 pass
 
             # Moves the updated JSON file  
-            if key is 'antennatracker':  # To main the original script approach instead of the build_parameters.py approach. 
+            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach. 
                 vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker","AntennaTracker")
             else: 
                 vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value,key.title())   
+
             new_file = key + "/source/_static/" + vehicle_json_file[str(vehicle_json_file).rfind("/")+1:] 
             try:  
-                debug("Moving " + vehicle_json_file)
+                debug("Moving json (key: " + key + ") " + vehicle_json_file)
                 #os.rename(vehicle_json_file, new_file)
                 shutil.copy2(vehicle_json_file, new_file)
             except Exception as e:
