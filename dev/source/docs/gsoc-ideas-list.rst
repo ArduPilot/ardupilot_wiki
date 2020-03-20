@@ -8,6 +8,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <htt
 
 - :ref:`Non-GPS navigation improvements using Intel RealSense cameras <common-vio-tracking-camera>`
 - :ref:`Object avoidance <common-object-avoidance-landing-page>` improvements for Multicopters and/or Rovers
+- Lane following or automatic docking for cars and boats using `JeVois camera <http://www.jevois.org/>`__ (or similar)
 - Rover Autotune
 - Walking robot support
 - 3D aerobatic support for fixed wing aircraft
@@ -57,6 +58,17 @@ ArduPilot supports three methods for object avoidance, `Bendy Ruler <https://ard
 - Rover's using BendyRuler may impact the fence after clearing obstacles (`issue <https://github.com/ArduPilot/ardupilot/issues/11565>`__)
 - Dijkstra's should work with Spline waypoints (`issue <https://github.com/ArduPilot/ardupilot/issues/12691>`__)
 - Simple avoidance should backaway from objects (`issue <https://github.com/ArduPilot/ardupilot/issues/7706>`__)
+
+Lane following or automatic docking for cars and boats
+------------------------------------------------------
+
+This project involves using machine vision to add lane following or automatic docking to to ArduPilot's Rover firmware
+
+- Either a low-cost `JeVois camera <http://www.jevois.org/>`__ or a high powered `companion computer <https://ardupilot.org/dev/docs/companion-computers.html>`__ could be used
+- Recognise the road or docking target using machine vision or learning (for docking an AprilTag could be used)
+- Either create a new control mode to control the vehicle or send velocity commands (probably using the `SET_GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__ message) to move the vehicle in the correct direction
+- If a companion computer is used, add the solution to `APSync <https://ardupilot.org/dev/docs/apsync-intro.html>`__
+- Document the implementation
 
 Rover Autotune
 --------------
