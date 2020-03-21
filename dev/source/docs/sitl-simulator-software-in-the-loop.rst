@@ -65,6 +65,5 @@ port numbers depending on your environment.
     :maxdepth: 1
 
     Setting Up SITL <SITL-setup-landingpage>
-    Starting SITL <starting-sitl>
     Using SITL <using-sitl-for-ardupilot-testing>
-
+    Examples of using SITL by Vehicle <sitl-examples>
