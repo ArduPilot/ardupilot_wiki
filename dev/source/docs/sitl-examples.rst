@@ -1,10 +1,10 @@
-.. _starting-sitl:
+.. _sitl-examples:
 
-=============
-Starting SITL
-=============
+=================================
+Examples of using SITL by Vehicle
+=================================
 
-These documents discuss how to start SITL for specific vehicles and any vehicle specific SITL information
+These documents discuss how to start and basic operation of SITL for specific vehicles and any vehicle specific SITL information
 
 .. toctree::
     :maxdepth: 1
