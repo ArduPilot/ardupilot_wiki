@@ -60,16 +60,11 @@ time.
 Taking off
 ==========
 
-To take off with Plane you should use a mission (AUTO mode) that
+To take off with Plane you can use a mission (AUTO mode) that
 contains the
 :ref:`MAV_CMD_NAV_TAKEOFF <plane:mav_cmd_nav_takeoff>`
-command. If it's a quadplane, you can also takeoff in ``GUIDED`` mode using the takeoff console command. Once you are airborne you can switch to other :ref:`flight modes <plane:flight-modes>`.
+command, or use the TAKEOFF mode. If it's a quadplane, you can also takeoff in a VTOL mode such as QLOITER, QHOVER, or QSTABILIZE, by raising the throttle above mid-stick (using normal defaults, RC 3 1600 command for example). Once you are airborne you can switch to other :ref:`flight modes <plane:flight-modes>` (be sure your throttle is set at an appropriate value for that mode).
 
-.. note::
-
-   At time of writing, Plane only supports takeoff in
-   in ``AUTO`` mode as part of a mission. A quadplane may also takeoff in ``GUIDED`` mode by issuing
-   a console ```takeoff <height>``` command.
 
 First load the **CMAC-circuit.txt** test mission using the ``wp load``
 command as shown below (this mission contains the takeoff command):
