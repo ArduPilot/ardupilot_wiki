@@ -327,10 +327,16 @@ downloaded waypoints and rally points.
 Graphing vehicle state
 ======================
 
-*MAVProxy* allows you to create graphs of vehicle state. Numerous
-aliases have been created for useful graph types in the *MAVProxy*
-initialisation file (**mavinit.scr**). These all start with "g" and
-include ``gtrackerror``, ``gaccel`` etc.
+MAVProxy allows you to create graphs of inputs, outputs, internal variables, etc. by loading the ``graph`` module.  You can then create graphs of vehicle state using the graph command. For example, to graph the RC channel 3 input during the simulation:
+
+::
+
+    graph RC_CHANNELS.channel3_raw
+
+As with most commands, you can type ``graph`` and then double tab to see available completions. In the example above the `RC_CHANNELS` group contains the 16 rc channels, so typing ``graph RC_CHANNELS``, then double tab would show those.
+
+Since these are rather long to type, MAVProxy allows for the creation of shorter aliases.  There have been many aliases created in a file present in the ArduPilot source tree in the Tools/vagrant sub-directory called **mavinit.scr**. If this file is copied and placed in your home directory and renamed to **.mavinit.scr**, it will be used upon *MAVProxy's* initialization.  Common ones are: *g* for graph, *grc* to graph the RC inputs, *gservo8* to graph the first 8 output channels instead of typing long item names eight times, etc. Using this alias initialization file also has the advantage of automatically loading the graph module upon startup, so you will not have to load it.
+
 
 Using a joystick
 ================
