@@ -48,7 +48,7 @@ Running SITL
 
 The ArduPilot SITL environment has been developed to run natively on both
 Linux and Windows. For setup instructions see :ref:`Setting Up SITL <SITL-setup-landingpage>`
-for more information. For starting SITL for a particular vehicle see :ref:`Starting SITL <starting-sitl>`, while environment setup and how to use SITL is explained in :ref:`Using SITL <using-sitl-for-ardupilot-testing>`
+for more information. Using SITL is explained in :ref:`Using SITL <using-sitl-for-ardupilot-testing>`. For examples of starting and using SITL for a particular vehicle see :ref:`sitl-examples` . 
 
 SITL Architecture
 =================
