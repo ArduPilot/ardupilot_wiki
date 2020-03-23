@@ -4,7 +4,7 @@
 Measuring Vibration
 ===================
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,dev,planner"]
 
 Autopilots have accelerometers that are sensitive to vibrations.
 These accelerometer values are combined with barometer and

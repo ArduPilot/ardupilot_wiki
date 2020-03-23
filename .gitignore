@@ -51,3 +51,9 @@
 /plane/source/docs/parameters.rst
 /rover/source/docs/parameters.rst
 /antennatracker/source/docs/parameters.rst
+
+# Log messages files
+/copter/source/docs/logmessages.rst
+/plane/source/docs/logmessages.rst
+/rover/source/docs/logmessages.rst
+/antennatracker/source/docs/logmessages.rst
