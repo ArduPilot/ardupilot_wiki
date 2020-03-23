@@ -59,6 +59,7 @@ args = parser.parse_args()
 #print(args.clean)
 
 PARAMETER_SITE={'rover':'APMrover2', 'copter':'ArduCopter','plane':'ArduPlane','antennatracker':'AntennaTracker' }
+LOGMESSAGE_SITE={'rover':'Rover', 'copter':'Copter','plane':'Plane','antennatracker':'Tracker' }
 error_count = 0
 
 def debug(str_to_print):
@@ -103,6 +104,29 @@ def fetchparameters(site=args.site):
             #copy in new file
             subprocess.check_call(["mv", 'Parameters.rst', targetfile])
 
+
+def fetchlogmessages(site=args.site):
+    """
+    Fetches the parameters for all the sites from the autotest server and
+    copies them to the correct location.
+
+    This is always run as part of a build (i.e. no checking to see if logmessages have changed.)
+    """
+    for key, value in LOGMESSAGE_SITE.items():
+        fetchurl='https://autotest.ardupilot.org/LogMessages/%s/LogMessages.rst' % value
+        targetfile='./%s/source/docs/logmessages.rst' % key
+        if args.cached_parameter_files:
+            if not os.path.exists(targetfile):
+                raise(Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,)))
+            continue
+        if site==key or site==None:
+            subprocess.check_call(["wget", fetchurl])
+            try: #Remove target file if it exists
+                subprocess.check_call(["rm", targetfile])
+            except:
+                pass
+            #copy in new file
+            subprocess.check_call(["mv", 'LogMessages.rst', targetfile])
 
 
 def build_one(wiki):
@@ -528,6 +552,8 @@ if args.paramversioning:
     fetch_versioned_parameters(args.site)   # Parameters for all versions availble on firmware.ardupilot.org    
 else:
     fetchparameters(args.site)              # Single parameters file. Just present the latest parameters.
+
+fetchlogmessages(args.site)                 # Fetch most recent LogMessage metadata from autotest
 
 generate_copy_dict()
 sphinx_make(args.site)
