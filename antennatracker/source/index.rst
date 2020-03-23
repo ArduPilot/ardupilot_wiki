@@ -48,6 +48,7 @@ This manual will guide you through setup and configuration process.
     Configuration <docs/configuration>
     docs/parameters
     Connecting with GCS <docs/connecting-with-gcs>
+    docs/common-logs
     How to Operate <docs/how-to-operate>
     docs/common-appendix
     docs/common-table-of-contents
