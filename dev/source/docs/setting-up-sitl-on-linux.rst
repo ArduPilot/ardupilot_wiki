@@ -40,12 +40,11 @@ There is also a linked video below showing how to do the setup.
 Start SITL simulator
 --------------------
 
-To start the simulator first change directory to the vehicle directory.
-For example, for the multicopter code change to **ardupilot/ArduCopter**:
+To start the simulator first change directory to **ardupilot/Tools/autotest**.
 
 ::
 
-   cd ardupilot/ArduCopter
+   cd ardupilot/Tools/autotest
 
 Then start the simulator using **sim_vehicle.py**. The first time you
 run it you should use the -w option to wipe the virtual EEPROM and load
