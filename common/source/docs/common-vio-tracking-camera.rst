@@ -1,69 +1,42 @@
 .. _common-vio-tracking-camera:
 
-==========================================
-VIO tracking camera for Non-GPS Navigation
-==========================================
+====================
+Intel RealSense T265
+====================
 
 [copywiki destination="copter,rover"]
-
-This article explains how a `VIO tracking camera <https://www.intelrealsense.com/visual-inertial-tracking-case-study/>`__ such as the `Intel Realsense T265 <https://store.intelrealsense.com/buy-intel-realsense-tracking-camera-t265.html?_ga=2.225595998.511560227.1566178471-459370638.1562639781>`__ can be used with ArduPilot as a substitude for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto. We will demonstrate how to make a MAVLink bridge between the Intel Realsense T265 and ArduPilot in Python, without the use of `ROS <https://www.ros.org/>`__. 
-
-.. note::
-
-   The choice of Python is optional, and you can use any `other wrappers supported by librealsense <https://github.com/IntelRealSense/librealsense/tree/master/wrappers#wrappers-for-intel-realsense-technology>`__.
-   ROS users can find the equivalent article :ref:`here <ros-vio-tracking-camera>`.
-
-
-Video
-=====
 
 ..  youtube:: HCyTt0xK8CQ
     :width: 100%
 
+This article explains how to setup an `Intel Realsense T265 <https://store.intelrealsense.com/buy-intel-realsense-tracking-camera-t265.html?_ga=2.225595998.511560227.1566178471-459370638.1562639781>`__ for use with ArduPilot as a substitude for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto to work. This method uses a python script running on an RPI companion computer to send position information to ArduPilot without the use of `ROS <https://www.ros.org/>`__.
 
-Hardware Requirements
-=====================
-- Sensor: `Intel RealSense Tracking Camera T265 <https://www.intelrealsense.com/tracking-camera-t265/>`__
-- Companion computer: `Raspberry Pi 3 Model B <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>`__ 
+What to Buy
+-----------
+
+- `Intel RealSense Tracking Camera T265 <https://www.intelrealsense.com/tracking-camera-t265/>`__
+- `Raspberry Pi 4 <https://www.raspberrypi.org/products/raspberry-pi-4-model-b/>`__ (recommended) or `Raspberry Pi 3 <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>`__
+- 16GB (or larger) SD card
+- `PiConnectLite <https://www.rpanion.com/product/pi-connect-lite/>`__ to connect the RPI to the autopilot (optional)
 
 .. note::
-    Depends on what you need from the T265, the companion computer should have USB2 (**pose** data only) or USB3 (**pose** + **image** data). For localization and navigation, we only need to capture pose data, so RPi 3B is sufficient for the task.
 
-System Overview
-===============
+    The RPI4 supports USB3 which allows both **pose** + **image** data to be captured from the camera.  The slower RPI3 only has USB2 meaning only **pose** data can be captured although this is sufficient for most users.
+
+Hardware Setup
+--------------
 
 .. image:: ../../../dev/source/images/ros-vio-connection.png
-    :target: ../../../dev/source/images/ros-vio-connection.png
+    :target: ../_images/ros-vio-connection.png
 
-In a nutshell, the 6-DOF pose data (**position** and **orientation**) and **confidence level** obtained from the Realsense T265 will be processed by our script and send to ArduPilot through MAVLink. Overall, the script will do the following tasks:
-
-- Obtain 6-DOF pose data and tracking confidence level data using relevant APIs from ``pyrealsense2``, which is the Python wrapper for ``librealsense``.
-
-- Perform necessary matrix transformation to align the frames of the Realsense T265 and NED frame as well as other processing steps.
-
-- Pack pose data into MAVLink message `VISION_POSITION_ESTIMATE <https://mavlink.io/en/messages/common.html#VISION_POSITION_ESTIMATE>`__ and confidence level data into a dummy message, then send them to ArduPilot at a predetermined frequency so as to not `flood` the Autopilot with incoming data.
-
-- Automatically set EKF home for simple setup and flying.
-
-.. note::
-    For the sake of brevity, explanation of the system will be kept short. More in-depth discussion can be found in the following blog posts: `part 4 <https://discuss.ardupilot.org/t/integration-of-ardupilot-and-vio-tracking-camera-part-4-non-ros-bridge-to-mavlink-in-python/44001>`__, `part 5 <https://discuss.ardupilot.org/t/integration-of-ardupilot-and-vio-tracking-camera-part-5-camera-position-offsets-compensation-scale-calibration-and-compass-north-alignment-beta/44984>`__.
-
-Install ``librealsense`` and ``pyrealsense2``
-=============================================
-
-The Realsense T265 is supported via `librealsense <https://github.com/IntelRealSense/librealsense>`__ on Windows and Linux. Installation process varies widely for different systems, hence refer to `the official github page <https://github.com/IntelRealSense/librealsense>`__ for instructions for your specific system:
-
-- `Ubuntu <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md>`__,
-- `Jetson <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md>`__, 
-- `Odroid <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_odroid.md>`__, 
-- `Windows <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_windows.md>`__, 
-- `Raspbian <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_raspbian.md>`__.
-
-For RPi running Ubuntu, the installation process for ``librealsense`` has been detailed in :ref:`this wiki <ros-vio-tracking-camera>`. Follow the instructions to install ``librealsense`` and ``pyrealsense2``. Since we are **not** using ROS, ``realsense-ros`` is not required.
-
+- Download the latest APSync Ubuntu image (`found here <https://firmware.ardupilot.org/Companion/apsync/apsync-rpi-ubuntu-t265-latest.img.xz>`__) to your PC and then flash it to the 16GB (or larger) SD card using a tool such as `Etcher <https://www.balena.io/etcher/>`__ or `Win32DiskImager <https://sourceforge.net/projects/win32diskimager/>`__ and then insert it into the RPI's SD Card slot
+- Mount the Intel RealSense T265 on the vehicle facing forward (see below for information other orientations)
+- Connect the Intel RealSense T265's USB cable to one of the RPI4's blue USB3 port
+- Connect the PiConnectLite's power cable to the battery (7V to 30V)
+- Connect the PiConnectLite's serial cable to one of the autopilot's telemetry ports (i.e. Telem1, Telem2)
 
 Configure ArduPilot
-===================
+-------------------
 
 Connect to the autopilot with a ground station (i.e. Mission Planner) and check that the following parameters are set as shown below:
 
@@ -75,10 +48,46 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 - :ref:`EK2_POSNE_M_NSE<EK2_POSNE_M_NSE>`  = 0.1
 - :ref:`EK2_VELD_M_NSE<EK2_VELD_M_NSE>`  = 0.1
 - :ref:`EK2_VELNE_M_NSE<EK2_VELNE_M_NSE>`  = 0.1
-- :ref:`COMPASS_USE<COMPASS_USE>` = 0,  :ref:`COMPASS_USE2<COMPASS_USE2>`  = 0, :ref:`COMPASS_USE3<COMPASS_USE3>`  = 0 to disable the EKF’s use of the compass and instead rely on the heading from external navigation data.
-- Configure serial port to connect to companion computer with ``SERIALx_BAUD`` and ``SERIALx_PROTOCOL = 1``.
+- :ref:`COMPASS_USE<COMPASS_USE>` = 0,  :ref:`COMPASS_USE2<COMPASS_USE2>`  = 0, :ref:`COMPASS_USE3<COMPASS_USE3>`  = 0 to disable the EKF’s use of the compass and instead rely on the heading from external navigation data
+- Configure serial port to connect to companion computer with ``SERIALx_BAUD`` and ``SERIALx_PROTOCOL = 1``
 
-After the parameters are modified, reboot the autopilot.
+After the parameters are modified, reboot the autopilot.  After about 1 minute the vehicle should appear on the ground station map in central Africa.
+
+System Overview
+===============
+
+.. image:: ../../../dev/source/images/ros-vio-connection.png
+    :target: ../_images/ros-vio-connection.png
+
+In a nutshell, the 6-DOF pose data (**position** and **orientation**) and **confidence level** obtained from the Realsense T265 will be processed by our python script and send to ArduPilot through MAVLink. Overall, the script will do the following tasks:
+
+- Obtain 6-DOF pose data and tracking confidence level data using relevant APIs from ``pyrealsense2``, which is the Python wrapper for ``librealsense``.
+- Perform necessary matrix transformation to align the frames of the Realsense T265 and NED frame as well as other processing steps.
+- Pack pose data into MAVLink message `VISION_POSITION_ESTIMATE <https://mavlink.io/en/messages/common.html#VISION_POSITION_ESTIMATE>`__ and confidence level data into a dummy message, then send them to ArduPilot at a predetermined frequency so as to not `flood` the Autopilot with incoming data.
+- Automatically set EKF home for simple setup and flying.
+
+.. note::
+
+   The choice of Python is optional, and you can use any `other wrappers supported by librealsense <https://github.com/IntelRealSense/librealsense/tree/master/wrappers#wrappers-for-intel-realsense-technology>`__.
+   ROS users can find the equivalent article :ref:`here <ros-vio-tracking-camera>`.
+
+.. note::
+
+    For the sake of brevity, explanation of the system will be kept short. More in-depth discussion can be found in the following blog posts: `part 4 <https://discuss.ardupilot.org/t/integration-of-ardupilot-and-vio-tracking-camera-part-4-non-ros-bridge-to-mavlink-in-python/44001>`__, `part 5 <https://discuss.ardupilot.org/t/integration-of-ardupilot-and-vio-tracking-camera-part-5-camera-position-offsets-compensation-scale-calibration-and-compass-north-alignment-beta/44984>`__.
+
+Install ``librealsense`` and ``pyrealsense2``
+---------------------------------------------
+
+The Realsense T265 is supported via `librealsense <https://github.com/IntelRealSense/librealsense>`__ on Windows and Linux. Installation process varies widely for different systems, hence refer to `the official github page <https://github.com/IntelRealSense/librealsense>`__ for instructions for your specific system:
+
+- `Ubuntu <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md>`__
+- `Jetson <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md>`__
+- `Odroid <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_odroid.md>`__
+- `Windows <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_windows.md>`__
+- `Raspbian <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_raspbian.md>`__
+
+For RPi running Ubuntu, the installation process for ``librealsense`` has been detailed in :ref:`this wiki <ros-vio-tracking-camera>`. Follow the instructions to install ``librealsense`` and ``pyrealsense2``. Since we are **not** using ROS, ``realsense-ros`` is not required.
+
 
 Python Packages Installation
 ============================
