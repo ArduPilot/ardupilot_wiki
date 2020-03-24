@@ -405,8 +405,8 @@ def fetch_versioned_parameters(site=args.site):
                 pass
              
             # Remove old versioned param files
-            if key is 'antennatracker': # To main the original script approach instead of the build_parameters.py approach.
-                old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,"AntennaTracker")
+            if 'antennatracker' in key.lower(): # To main the original script approach instead of the build_parameters.py approach.
+                old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % ("AntennaTracker","AntennaTracker")
             else:
                 old_parameters_mask = os.getcwd() + '/%s/source/docs/parameters-%s-' % (key,key.title()) 
             try:  
@@ -419,8 +419,8 @@ def fetch_versioned_parameters(site=args.site):
                 pass
 
             # Remove old json file
-            if key is 'antennatracker': # To main the original script approach instead of the build_parameters.py approach.
-                target_json_file='./%s/source/_static/parameters-%s.json' % (key,"AntennaTracker")
+            if 'antennatracker' in key.lower(): # To main the original script approach instead of the build_parameters.py approach.
+                target_json_file='./%s/source/_static/parameters-%s.json' % ("AntennaTracker","AntennaTracker")
             else:
                 target_json_file='./%s/source/_static/parameters-%s.json' % (value,key.title())
             debug("Erasing json " + target_json_file)
@@ -431,7 +431,7 @@ def fetch_versioned_parameters(site=args.site):
                 pass
 
             # Moves the updated JSON file  
-            if key is 'antennatracker':  # To main the original script approach instead of the build_parameters.py approach. 
+            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach. 
                 vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker","AntennaTracker")
             else: 
                 vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value,key.title())   
