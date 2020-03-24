@@ -4,7 +4,7 @@
 APSync
 ======
 
-APSync is a project sponsored by `eLab <http://elab.co.jp/>`__ which simplifies the setup of companion computers so that they can be used to provide additional functionality to ArduPilot and also to ease integration with internet services.
+APSync simplifies the setup of companion computers so that they can be used to provide additional functionality to ArduPilot and also to ease integration with internet services.
 
 The current release automatically creates a Wifi Access Point on startup, allows DataFlash logging to the companion computer and "simple" real-time video streaming from a camera on the drone to the ground station.
 
@@ -29,29 +29,15 @@ Wifi Access Point & DataFlash logging
 
 On start-up an access point is created with name "ardupilot".  The default password is also "ardupilot".
 
-The user can connect to this access point and then easily connect to ardupilot running on the flight controller by setting their ground station (including Mission Planner) to connect using "UDP", port 14550.
+The user can connect to this access point and then easily connect to ArduPilot running on the autopilot by setting their ground station (including Mission Planner) to connect using "UDP", port 14550.
 
 Once connected to the WiFi network is possible to connect to these two URLs:
 
+- http://10.0.1.128  (Configuration pages)
 - http://10.0.1.128:8000   (Which shows a video streaming on/off button)
-- http://10.0.1.128  (Configurations page)
 
 Dataflash logs are streamed to the companion computer via mavlink and stored on the companion computer's filesystem (as well as on the pixhawk's dataflash).
 Dataflash log files can then be quickly downloaded (over wifi) using a script (Windows users may use `apsync-download-logs <https://firmware.ardupilot.org/Companion/apsync/apsync-download-logs-latest.zip>`__) or you may pull the SD card out of the companion computer.
-
-Data Syncronisation with Web server or Corporate server
-=======================================================
-
-.. image:: ../images/apsync-wifiap-datasync.png
-    :target: ../_images/apsync-wifiap-datasync.png
-
-The contents of a configurable list of directories will be automatically uploaded to a configurable web server address.
-
-This should allow the pilot to simply bring the vehicle back in range of a trusted wifi access point, reboot the vehicle and have it automatically connect and upload all datafiles including logs, pictures, videos.
-
-.. warning::
-
-   This Data Syncronisation portion is not implemented (yet).
 
 Simple Configuration Web page
 =============================
@@ -59,29 +45,21 @@ Simple Configuration Web page
 .. image:: ../images/apsync-configurator.png
     :target: ../_images/apsync-configurator.png
 
-A light weight webserver runs on the companion computer (using CherryPy).
-The user can connect to the drone using a known URL (``http://10.0.1.128:8000``) and change configuration information including:
+A light weight webserver runs on the companion computer which allows the user to connect to the drone using a known URL (``http://10.0.1.128`` or ``http://10.0.1.128:8000``) and do the following:
 
-- wifi access point name and password
-- list of trusted wifi access points
-- list of log file directories and web server url (i.e. upload target)
+- View and modify parameters
+- View sensor information and trigger some calibrations
+- Modify the Wifi access point name and password
+- View and download log files if they are stored on the companion computer
 
-.. warning::
-
-   This Simple Configuration portion is partially implemented allows starting and stopping the simple video stream.
-
-Flexible Video
-==============
+Simple Video
+============
 
 .. image:: ../images/apsync-flexible-video.png
     :target: ../_images/apsync-flexible-video.png
+    :width: 450px
 
-A video manager will run on the companion computer that informs the ground station of which video streams are available.  The live video is streamed from the vehicle to the ground station using UDP to a port specified by the ground station.
-This allows more reliable and flexible streaming as the ground station can discover valid formats and control where the stream is sent.
-
-.. warning::
-
-   This Flexible Video portion is not implemented yet.  Currently a single video stream is sent to the IP address of the first ground station that requests telemetry data.
+A single video stream is sent to the IP address of the first ground station that requests telemetry data.
 
 .. _apsync-intro-installing-apsync:
 
