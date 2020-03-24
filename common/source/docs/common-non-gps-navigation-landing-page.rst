@@ -22,7 +22,7 @@ These are the available options that allow a vehicle to estimate its position wi
     Pozyx Beacons <common-pozyx>
     Vicon Positioning System <common-vicon-for-nongps-navigation>
     Visual Odometry with OpenKai and ZED <common-zed>
-    Visual Odometry with VIO tracking camera <common-vio-tracking-camera>
+    Intel RealSense T265 <common-vio-tracking-camera>
 [site wiki="rover"]
     Wheel Encoders <wheel-encoder>
 [/site]
