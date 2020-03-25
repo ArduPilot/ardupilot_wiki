@@ -24,6 +24,11 @@ It also explains how to :ref:`connect to different GCSs <using-sitl-for-ardupilo
    describe a GCS-specific UI layout). Many of these operations can also
    be performed in *Mission Planner* (through the *Full Parameters List*) or any other GCS.
 
+..  youtube:: Ewh0fKGEJL4
+    :width: 100%
+
+
+
 Selecting a vehicle/frame type
 ==============================
 
