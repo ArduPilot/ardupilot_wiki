@@ -87,6 +87,9 @@ tuning options for the vehicle.
     Terrain Following (Non-Autonomous modes) <terrain-following-manual-modes>
     Tuning <common-tuning>
 [/site]
+[site wiki="plane"]
+    Transmitter Based Tuning <common-transmitter-tuning>
+[/site]
     UAVCAN Setup <common-uavcan-setup-advanced>
 [site wiki="copter,plane,rover,planner"]
     UBlox GPS Configuration <common-ublox-gps>
@@ -94,6 +97,4 @@ tuning options for the vehicle.
 [site wiki="plane,planner,rover"]
     Vibration Damping <common-vibration-damping>
 [/site]
-[site wiki="plane"]
-    Transmitter Based Tuning <common-transmitter-tuning>
-[/site]
+
