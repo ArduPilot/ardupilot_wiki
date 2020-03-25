@@ -201,6 +201,8 @@ ArduPilot tilt-rotor code:
 - once a forward transition is completed then the motors will cover
   any remaining angle at 90 degrees per second.
 
+.. note:: For Binary type tilt servos these rates should be set at the actual measured rate of the servo since its independent of ArudPilot control.
+
 Vectored Yaw
 ============
 
@@ -238,6 +240,17 @@ you must not set :ref:`SERVO_BLH_AUTO<SERVO_BLH_AUTO>` to 1. Instead, set :ref:`
 of the servo-channels actually connected BLHELI-ESCs.
 
 For example if your motors are connected to servo 9,10,11 (the first three aux-outputs of a pixhawk1), set :ref:`SERVO_BLH_MASK<SERVO_BLH_MASK>` to 1792.
+
+
+Tilt Rotor Movement Setup
+=========================
+
+.. toctree::
+    :maxdepth: 1
+
+    Tilt Rotor Setup <tilt-rotor-tips>
+
+
 
 Pre Flight Checks
 =================
