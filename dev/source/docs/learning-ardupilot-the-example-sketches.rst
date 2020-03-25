@@ -53,6 +53,24 @@ connect to a Pixhawk on Linux:
 Using the --setup option puts mavproxy into raw serial mode, instead of
 processed MAVLink mode. That is what you need for the example sketches.
 
+Running Examples in SITL
+========================
+
+Certain sketches can also be run in SITL. For example to run the protocol decoder sketch:
+
+::
+
+    cd $ARDUPILOT_HOME # the top-level of an AruPilot repository
+    ./waf configure --board sitl
+    ./waf build --target examples/RCProtocolDecoder
+    
+To start the sketch, run it directly:
+
+::
+
+     ./build/sitl/examples/RCProtocolDecoder -M quad -C
+     
+
 Understanding the example sketch code
 =====================================
 
