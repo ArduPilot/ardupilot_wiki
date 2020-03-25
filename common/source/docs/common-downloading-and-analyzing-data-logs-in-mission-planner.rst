@@ -125,6 +125,9 @@ The :ref:`LOG_BITMASK <LOG_BITMASK>` parameter controls what messages are record
 Message Details (Copter specific)
 =================================
 
+.. note:: Many messages are detailed in the :ref:`logmessages` page in each vehicle's wiki section.
+
+
 **ATT (attitude information):**
 
 +-----------+--------------------------------------------------------------------------------------------------------+
