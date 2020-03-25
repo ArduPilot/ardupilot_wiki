@@ -186,7 +186,8 @@ Reverting the tune
 If you are not happy with your tuning results or the vehicle becomes
 unstable you should change flight mode. Any change of flight mode will
 immediately revert all of the parameters you are tuning to the last
-saved value.
+saved value. However, you can prevent this reversion upon flight mode change by setting 
+the :ref:`TUNE_MODE_REVERT<TUNE_MODE_REVERT>` parameter to 0.
 
 The tuning process
 ==================
