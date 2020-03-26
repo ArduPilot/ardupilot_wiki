@@ -42,36 +42,10 @@ The thrust stands listed below can be used to measure the PWM signal vs thrust o
 - `RCbenchmark.com thrust stands <https://www.rcbenchmark.com/pages/series-1580-thrust-stand-dynamometer>`__
 - `Turnigy thrust stand <https://hobbyking.com/en_us/turnigy-thrust-stand-and-power-analyser-v3.html>`__
 
-MatLab example code
-===================
+Parameter Calculation
+=====================
 
-This MatLab example code can be used to calculate the appropriate value
-for ``MOT_THST_EXPO`` based on measured thrust values.
+A copy of this spreadsheet can be used to calculate the appropriate values from the thrust stand data above:
 
-Fill in the ``thrust`` array with the actual measured thrust values from
-the vehicle.  When Run, the ``MOT_THST_EXPO`` value will be printed.
-
-::
-
-    throttle_pwm = [1000; 1100; 1200; 1300; 1400; 1500; 1600; 1700; 1800; 1900; 2000];
-    thrust = [0; 68.9; 203.1; 441.0; 785.8; 1177.3; 1655.0; 2118.8; 2673.0; 3153.8; 3490.2];
-    % Set MOT_THST_MAX to 90% to remove saturated top end
-    working_range = 1:9;
-    thrust = thrust(working_range);
-
-    % Normalise the throttle and thrust
-    throttle_normalised = (throttle_pwm(working_range) - min(throttle_pwm(working_range)))./(max(throttle_pwm(working_range))-min(throttle_pwm(working_range)));
-    thrust_normalised = thrust./max(thrust);
-    % Perform a least squares fit to solve for a in thrust = (1-a)*throttle + a*throttle^2
-    mdl = @(a,x)((1-a(1))*x + a(1)*x.^2);
-    startingVals = [0.5];
-    coefEsts = nlinfit(throttle_normalised, thrust_normalised, mdl, startingVals);
-    disp(['MOT_THST_EXPO is : ', num2str(coefEsts)]);
-    figure(2)
-    hold on;
-    plot(throttle_normalised, thrust_normalised, '*');
-    xgrid = linspace(0,1,100);
-    line(xgrid, mdl(coefEsts, xgrid), 'Color','g','LineWidth',4);
-    xlabel('Normalised Throttle');
-    ylabel('Normalised Thrust');
+https://docs.google.com/spreadsheets/d/1_75aZqiT_K1CdduhUe4-DjRgx3Alun4p8V2pt6vM5P8/edit#gid=0
 
