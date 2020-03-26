@@ -79,6 +79,8 @@ threshold. This can be used to allow flying at very low speeds in
 :ref:`FBWA <fbwa-mode>` mode for example, or for assisted automatic fixed
 wing takeoffs.
 
+.. warning:: If you are not using an airspeed sensor, airspeed will be determined by the synthetic airspeed generated internally as a backup in case of airspeed sensor failure. This estimate can be very inaccurate at times. You may want to consider not enabling  Assisted Fixed Wing Flight if not using an airspeed sensor to prevent false activations when airspeed really  is above the threshold, but is being misrepresented by the internal airspeed.
+
 It is suggested that you do initial flights with
 :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` set to zero
 just to test the basic functionality and tune the airframe. Then try
