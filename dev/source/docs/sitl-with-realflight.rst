@@ -14,7 +14,7 @@ or version 9. Note that RealFlight-X does not work with ArduPilot. If
 you are installing for the first time then RealFlight version 9 is
 recommended.
 
-The quickest way to get started it to buy `RealFlight 9 <https://store.steampowered.com/app/1070820/RealFlight_9/>` in `Steam <https://store.steampowered.com/>`.
+The quickest way to get started it to buy `RealFlight 9 <https://store.steampowered.com/app/1070820/RealFlight_9/>`__ in `Steam <https://store.steampowered.com/>`__.
 
 Enabling RealFlight Link Feature
 ================================
