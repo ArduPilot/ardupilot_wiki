@@ -175,14 +175,6 @@ You can restart by just pressing the Play button and then start the ArduPilot si
 
 Launch Rover SITL
 +++++++++++++++++
-For using ArduRover with AirSim, there are a couple of extra things which need to be done. First, you'll need to use a seperate branch of AirSim until the `PR <https://github.com/microsoft/AirSim/pull/2383>`__ gets merged. Run the following commands from the AirSim directory to fetch the checkout the branch -
-
-::
-
-    git fetch https://github.com/rajat2004/AirSim.git pr-ardurover3:<local-branch-name>
-    git checkout <local-branch-name>
-
-After this, you'll have to rebuild the AirSim plugin using `build.sh` or `build.cmd` as applicable, and setup the Unreal environment as described above.
 
 ``settings.json`` for using ArduRover-
 
