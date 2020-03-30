@@ -37,7 +37,7 @@ Specifications
 -  **Interfaces**
 
    -  6x UARTS
-   -  9x PWM outputs (2 for motors, 7 for servos)
+   -  10x PWM outputs
    -  1x RC input PWM/PPM, SBUS
    -  I2C port for external compass and airspeed sensor
    -  USB port
@@ -67,7 +67,19 @@ Serial protocols can be adjusted to personal preferences.
 Dshot capability
 ================
 
-All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output groups that must be the same (PWM rate or Dshot, when configured as a normal servo/motor output) are: 1/2, 3/4, 5/6,  or 7/8/9.
+All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output groups that must be the same (PWM rate or Dshot, when configured as a normal servo/motor output) are: 1/2, 3/4, 5/6, 7/8/9 , and 10.
+
+Outputs
+=======
+
+The first 8 servo/motor outputs are marked on the board: M1,M2,S3-S8 . S9 is a solder pad on the board, and S10 is connected to the pin marked LED in ArduPilot's definition. This allows the easy grouping for odd numbers of motors with a common DShot or PWM frequency without sacrificing the use of an output for servo use due to rate issues (see above Dshot discussion).
+
+RC Input
+========
+
+The SBUS pin can be used for all ArduPilot supported receiver protocols. However, there is an alternate board configuration selectable by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "1". In this case, the UART2 RX input (marked RX2 on the board) is used for the receiver input. This is to provide support for FPort in the future, since it requires a true UART. 
+
+.. note:: In the alternate 1 configuration, SBUS would need an external inverter before connection to RX2. (and FPort will require a bidirectional inverter circuit, like SPort requires)
 
 Where to Buy
 ============
