@@ -56,11 +56,12 @@ Default UART order
 
 - SERIAL0 = console = USB
 - SERIAL1 = Telemetry1 = USART1
-- SERIAL2 = empty, USART2 used for RCInput
+- SERIAL2 = empty
 - SERIAL3 = GPS1 = USART3
 - SERIAL4 = GPS2 = UART4
 - SERIAL5 = USER = UART5
 - SERIAL6 = USER = USART6
+- SERIAL7 = USER = USART2 (only if BRD_ALT_CONFIG =1)
 
 Serial protocols can be adjusted to personal preferences.
 
@@ -72,14 +73,16 @@ All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and nor
 Outputs
 =======
 
-The first 8 servo/motor outputs are marked on the board: M1,M2,S3-S8 . S9 is a solder pad on the board, and S10 is connected to the pin marked LED in ArduPilot's definition. This allows the easy grouping for odd numbers of motors with a common DShot or PWM frequency without sacrificing the use of an output for servo use due to rate issues (see above Dshot discussion).
+The first 8 servo/motor outputs are marked on the board: M1,M2,S3-S8 . S9 is a solder pad on the board, and S10 is connected to the pin marked LED in ArduPilot's definition. Using S10 allows the easy grouping for odd numbers of motors with a common DShot or PWM frequency without sacrificing the use of an output for servo use due to rate issues (see above Dshot discussion).
+
 
 RC Input
 ========
 
-The SBUS pin can be used for all ArduPilot supported receiver protocols. However, there is an alternate board configuration selectable by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "1". In this case, the UART2 RX input (marked RX2 on the board) is used for the receiver input. This is to provide support for FPort in the future, since it requires a true UART. 
+The SBUS pin can be used for all ArduPilot supported receiver protocols. However, there is an alternate board configuration selectable by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "1". In this case, the UART2 RX input (marked RX2 on the board) is used for the receiver input and is mapped to SERIAL7. This is to provide support for FPort in the future, since it requires a true UART. 
 
-.. note:: In the alternate 1 configuration, SBUS would need an external inverter before connection to RX2. (and FPort will require a bidirectional inverter circuit, like SPort requires)
+.. note:: In the alternate configuration, SBUS would need an external inverter before connection directly to RX2, but it can be still attached to the SBUS pin on the board since that is connected to an on-board inverter which is then connected to RX2. (and FPort will require an external bidirectional inverter circuit, like SPort requires)
+
 
 Where to Buy
 ============
