@@ -57,10 +57,10 @@ A list of topics for easier navigation in the page-
 Installing AirSim
 =================
 
-`Binaries <https://microsoft.github.io/AirSim/docs/use_precompiled/>`__ are available for AirSim, **but since this is a very recent development, you'll have to build it yourself (on Windows as well as Linux).**
+`Binaries <https://github.com/microsoft/AirSim/releases>`__ are available for AirSim for Windows and Linux platforms, ``v1.3.0`` and later have support for Copter and Rover included. Binaries are a quick and easy way to test out the features without installing Unreal Engine, etc. Just download the precompiled environments and run to get started immediately. Many different types of environments are available, some notable ones include LandscapeMountains, City and Neighbourhood.
 
-Using the precompiled environments won't work, only environments whose source code is available such as Blocks or any other environments which you download from the Unreal Marketplace will work.
-Using the precompiled environemnts will be possible once AirSim has it's next stable release.
+For development and testing out new features, you'll have to build AirSim from source. The setup instructions for building from source are described below.
+
 
 Build on Windows
 ----------------
@@ -113,11 +113,11 @@ For using another environment, check the information at the end of the page.
 Using AirSim with ArduPilot
 ---------------------------
 
-Make sure that you have setup ArduPilot SITL, completed the Unreal Environment setup and verified that both are working individually before proceeding.
+Make sure that you have setup ArduPilot SITL, completed the Unreal Environment setup or have the binaries downloaded and verified that both are working individually before proceeding.
 
 .. note::
 
-    Go to ``Edit->Editor Preferences``, in the ``Search`` box type ``CPU`` and ensure that the ``Use Less CPU when in Background`` is unchecked.
+    Running in UE Editor: Go to ``Edit->Editor Preferences``, in the ``Search`` box type ``CPU`` and ensure that the ``Use Less CPU when in Background`` is unchecked.
 
 
 `AirSim's settings.json file <https://github.com/microsoft/AirSim/blob/master/docs/settings.md>`__ specifies the vehicle and it's various properties. See the page for the options available.
