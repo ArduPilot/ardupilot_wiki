@@ -38,6 +38,20 @@ test -n "$FORCEBUILD" || {
         fi
     done
     
+    LOGMESSAGESITES="Plane Copter Tracker Rover"
+    mkdir -p old_logmessages new_logmessages
+    for site in $LOGMESSAGESITES; do
+        wget "https://autotest.ardupilot.org/LogMessages/$site/LogMessages.rst" -O new_logmessages/$site.rst 2> /dev/null
+    done
+
+    for site in $LOGMESSAGESITES; do
+        if ! cmp new_logmessages/$site.rst old_logmessages/$site.rst; then
+            echo "$site.rst has changed"
+            cp new_logmessages/$site.rst old_logmessages/$site.rst
+            changed=1
+        fi
+    done
+
     [ $changed = 1 ] || exit 0
 }
 
