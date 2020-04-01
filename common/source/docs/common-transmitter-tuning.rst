@@ -32,7 +32,7 @@ Key features of transmitter based tuning are:
 - Save the new parameters in flight
 
 - Receive audible feedback from the flight board buzzer and the GCS on
-  tuning progress    
+  tuning progress
 
 
 Concepts
@@ -171,6 +171,26 @@ When you have cycled through all of the parameters in the tuning set
 you have chosen it will wrap back around to the first parameter in the
 set.
 
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++:ref:`TUNE_PARAM<TUNE_PARAM>`+  Set Name         +       Params Tuned                                                                                                  +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    101                      + Set_RateRollPitch +     :ref:`Q_A_RAT_RLL_D<Q_A_RAT_RLL_D>`/:ref:`Q_A_RAT_RLL_PI<Q_A_RAT_RLL_P>` & :ref:`Q_A_RAT_RLL_I<Q_A_RAT_RLL_I>`/ +
++                             +                   +     :ref:`Q_A_RAT_PIT_D<Q_A_RAT_PIT_D>`/:ref:`Q_A_RAT_PIT_P<Q_A_RAT_PIT_P>` & :ref:`Q_A_RAT_RLL_I<Q_A_RAT_PIT_I>`   +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    102                      + Set_RateRoll      +     :ref:`Q_A_RAT_RLL_D<Q_A_RAT_RLL_D>` / :ref:`Q_A_RAT_RLL_PI<Q_A_RAT_RLL_P>` & :ref:`Q_A_RAT_RLL_I<Q_A_RAT_RLL_I>`+
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    103                      + Set_RatePitch     +     :ref:`Q_A_RAT_PIT_D<Q_A_RAT_PIT_D>` / :ref:`Q_A_RAT_PIT_P<Q_A_RAT_PIT_P>` & :ref:`Q_A_RAT_RLL_I<Q_A_RAT_PIT_I>` +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    104                      + Set_RateYaw       +     :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>` / :ref:`Q_A_RAT_YAW_I<Q_A_RAT_YAW_I>` / :ref:`Q_A_RAT_YAW_D<Q_A_RAT_YAW_D>` +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    105                      + Set_AngleRollPitch+     :ref:`Q_A_ANG_RLL_P<Q_A_ANG_RLL_P>` / :ref:`Q_A_ANG_PIT_P<Q_A_ANG_PIT_P>`                                       +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    106                      + Set_VelXY         +     :ref:`Q_P_VELXY_P<Q_P_VELXY_P>`  / :ref:`Q_P_VELXY_I<Q_P_VELXY_I>`                                              +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
++    107                      + Set_AccelZ        +     :ref:`Q_P_ACCZ_P<Q_P_ACCZ_P>` /  :ref:`Q_P_ACCZ_I<Q_P_ACCZ_I>` / :ref:`Q_P_ACCZ_D<Q_P_ACCZ_D>`                  +
++-----------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------+
+
+
 Saving the tuning results
 =========================
 
@@ -206,7 +226,7 @@ tuning channel, :ref:`TUNE_SELECTOR<TUNE_SELECTOR>` to your selector switch and 
 to 101 (which is the "rate roll and pitch PIDs tuning set").
 
 Then takeoff and switch the vehicle to a comfortable flight mode for
-rate tuning. For a quadplane
+rate tuning. For a QuadPlane
 QHOVER or QLOITER are the best choices.
 
 The first parameter you will be tuning will be RateRollD. To tune that
