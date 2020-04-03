@@ -94,6 +94,12 @@ UAVCAN LED configuration
 
 UAVCAN LEDs are enabled by setting bit 5 in the :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bitmask.
 
+UAVCAN Rangefinder configuration
+================================
+
+Set ``RNGFNDx_TYPE`` = 24 to enable UAVCAN rangefinder type. Rangefinder data received over UAVCAN will only be used if the received sensor_id matches the parameter ``RNGFNDx_ADDR``. For AP_Periph firmware based adaptor nodes, this value is 0, so ``RNGFNDx_ADDR`` must be set to 0. Other UAVCAN rangefinders may differ. See also :ref:`UAVCAN Adaptor Node<common-uavcan-adapter-node>` instructions.
+
+
 SLCAN
 =====
 
