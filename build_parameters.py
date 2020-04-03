@@ -425,6 +425,8 @@ def generate_json(vehicles):
 
         # Creates the JSON lines from available rst files
         parameters_files = [f for f in glob.glob("parameters-" + vehicle + "*.rst")]
+        parameters_files.sort(reverse=True)
+
         json_lines = []
         json_lines.append("{")
         json_lines.append("\"Click here to change\" : \"\"")
