@@ -28,3 +28,48 @@ The f103-GPS firmware enables its UART interface for GPS and provides I2C compas
 
 `Schematic <https://github.com/ArduPilot/Schematics/blob/master/mRobotics/mRo_CANnode_V1_R1.pdf>`__
 
+
+Features
+=========
+
+The AP_Periph firmware can be configured to enable a wide range of
+UAVCAN sensor types. Support is included for:
+
+ - GPS modules (including RTK GPS)
+ - Magnetometers (SPI or I2C)
+ - Barometers (SPI or I2C)
+ - Airspeed sensors (I2C)
+ - Rangefinders (UART or I2C)
+ - ADSB (Ping ADSB receiver on UART)
+ - LEDs (GPIO, I2C or WS2812 serial)
+ - Safety LED and Safety Switch
+ - Buzzer (tonealarm or simple GPIO)
+
+An AP_Periph UAVCAN firmware supports these UAVCAN features:
+
+ - dynamic or static CAN node allocation
+ - firmware upload
+ - automatically generated bootloader
+ - parameter storage in flash
+ - easy bootloader update
+ - high resiliance features using watchdog, CRC and board checks
+ - firmware update via MissionPlanner or uavcan-gui-tool
+
+
+Setup
+======
+
+Rangefinder
+------------
+
+ To use rangefinders, follow the instructions at  :ref:`UAVCAN Setup Advanced<common-uavcan-setup-advanced>` to set up the Ardupilot parameters. Using MissionPlanner or UAVCAN Gui, set the parameters on the adaptor node following the instructions for the relevant rangefinder.
+
+ .. note::
+
+ 	The orientation of the rangefinder (RNGFND1_ORIENT) must be set to 0 on the adaptor node.
+
+
+ .. note::
+
+ 	The RNGFNDx_ADDR Ardupilot parameter must be set to 0.
+
