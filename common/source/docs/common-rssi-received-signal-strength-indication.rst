@@ -53,7 +53,7 @@ There are four basic options for feeding RSSI to your autopilot:
   :ref:`RSSI_CHAN_LOW<RSSI_CHAN_LOW>`  PWM value the radio receiver will output when the signal is the weakest.
 
 
- :ref:`RSSI_TYPE<RSSI_TYPE>` = 3  digital receiver protocols' signal quality or dropped packts information (SUMD / ST24)
+ :ref:`RSSI_TYPE<RSSI_TYPE>` = 3  digital receiver protocols' signal quality or dropped packets information (SUMD / ST24 /FPort)
  Scaled internally, no further adjustments required.
  
 

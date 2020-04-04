@@ -13,7 +13,8 @@ Overview
 
 ArduPilot autopilots are compatible with 
     #. PPM-Sum receivers
-    #. S.Bus receivers 
+    #. S.Bus receivers
+    #. FPort receivers 
     #. IBUS receivers
     #. Spektrum DSM, DSM2, and DSM-X Satellite receivers
     #. MULTIPLEX SRXL version 1 and version 2 receivers
@@ -131,7 +132,7 @@ or :ref:`FlightDeck <common-frsky-flightdeck>` telemetry user interface.
 FrSky X Receivers
 -----------------
 
-FrSky X receivers are compatible with the FrSky Taranis and XJT transmitter modules. They support S.Bus and bidirectional S.Port telemetry. For more information about FrSky X receivers, refer to the :ref:`receiver section on the FrSky telemetry page <frsky_receivers>`.
+FrSky X receivers are compatible with the FrSky Taranis and XJT transmitter modules. They support S.Bus and bidirectional S.Port telemetry. For more information about FrSky X receivers, refer to the :ref:`receiver section on the FrSky telemetry page <frsky_receivers>`. Some are capable of using FPort which combines S.Bus and S.Port style telemetry on a single connection to the receiver, see :ref:`common-FPort-receivers` 
 
 .. figure:: ../../../images/FrSky_x8r.jpg
     :scale: 20 %
@@ -334,10 +335,11 @@ Using a Standard RC Radio Receiver with 3DR PPM Encoder
 
 
 
-SRXL R/C Receivers
-==================
+Additional R/C Receiver Information
+===================================
 
 .. toctree::
     :maxdepth: 1
 
     common-srxl-receivers
+    common-FPort-receivers
