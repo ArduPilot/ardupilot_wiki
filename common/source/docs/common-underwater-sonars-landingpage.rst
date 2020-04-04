@@ -13,5 +13,6 @@ Follow the links below (or in the sidebar) for configuration information based u
 
     BlueRobotics Ping <common-bluerobotics-ping>
     EchoLogger ECT400 <common-echologger-ect400>
+    Kogger Sonar <common-kogger-sonar>
     Underwater Sonar (Analog) <common-underwater-sonar-analog>
     Triducer <common-underwater-triducer>
