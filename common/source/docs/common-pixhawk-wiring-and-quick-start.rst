@@ -43,7 +43,8 @@ Connect remote control inputs
 
 Pixhawk is compatible with 
    #. PPM remote control (R/C) receivers
-   #. Futaba S.Bus receivers
+   #. SBus receivers
+   #. FPort receivers
    #. Spektrum DSM and DSM2 receivers
    #. Spektrum DSM-X Satellite receivers
    #. IBUS receivers

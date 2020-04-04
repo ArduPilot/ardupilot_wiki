@@ -36,6 +36,7 @@ Ardupilot autodetects the following serial RC receiver protocols:
 
    #. PPM remote control (R/C) receivers
    #. SBus receivers
+   #. FPort receivers
    #. Spektrum DSM and DSM2 receivers
    #. Spektrum DSM-X Satellite receivers
    #. IBUS receivers
