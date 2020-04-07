@@ -17,7 +17,7 @@ Recommended Hardware
 
 Configuring the echosounder module
 ----------------------------------
-The module should be configured before it is connected to the Ardupilot. You need the Android device and GUI installed for configuring the KOGGER Sonar module.
+The module should be configured before it is connected to the ArduPilot. You need the Android device and GUI installed for configuring the KOGGER Sonar module.
 The GUI is opensource `Kogger Android <https://github.com/koggertech/Kogger-Android/>`__.
 The APK can be downloaded from here: `Kogger Android Releases <https://github.com/koggertech/Kogger-Android/releases/>`__.
 
@@ -36,7 +36,7 @@ The APK can be downloaded from here: `Kogger Android Releases <https://github.co
 
 That’s it. The module is ready to use with autopilot.
 
-Connecting to the Ardupilot hardware
+Connecting to the ArduPilot hardware
 ------------------------------------
 The KOGGER Sonar provides distance measurements using the NMEA protocol over serial/uart.
 
