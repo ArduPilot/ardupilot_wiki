@@ -206,7 +206,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Hexsoon.jpg
             :width: 250px
             :align: center
-            :target: https://ardupilot.org/about/Partners
+            :target: https://www.hexsoon.com
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Micro_Aerial_Projects.png
