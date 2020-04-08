@@ -5,6 +5,8 @@ export PYTHONUNBUFFERED=1
 
 cd $HOME/build_wiki || exit 1
 
+START=`date +%s`
+
 test -n "$FORCEBUILD" || {
     (cd ardupilot_wiki && git fetch > /dev/null 2>&1)
     (cd sphinx_rtd_theme && git fetch > /dev/null 2>&1)
@@ -109,14 +111,27 @@ git clean -f -f -x -d -d
 pip install --user -U .
 popd
 
+echo "[Buildlog] Time to reset Repos: $((($(date +%s)-$START)/60)) minutes"
+
 echo "[Buildlog] Starting do build multiple parameters pages at $(date '+%Y-%m-%d-%H-%M-%S')"
+
+PARAM_VERSIONING_START=`date +%s`
 
 cd ardupilot_wiki && python3 build_parameters.py
 
+echo "[Buildlog] Time to run build_parameters.py: $((($(date +%s)-$PARAM_VERSIONING_START)/60)) minutes"
+
 echo "[Buildlog] Starting do build the wiki at $(date '+%Y-%m-%d-%H-%M-%S')"
+
+BUILD_START=`date +%s`
 
 # python update.py --clean --parallel 4 # Build without versioning for parameters
 
 python update.py --clean --paramversioning --parallel 4 # Enables parameters versioning, should be used only on the wiki server
+
+echo "[Buildlog] Time to build the wiki itself: $((($(date +%s)-$BUILD_START)/60)) minutes"
+
+echo "[Buildlog] Time run the full script: $((($(date +%s)-$START)/60)) minutes"
+
 
 ) >> update.log 2>&1
