@@ -14,6 +14,11 @@ the above image and some content courtesy of `mateksys.com <http://www.mateksys.
 
    Support for this board is available with Copter-3.6.0 (and higher)
 
+.. note::
+
+	Due to flash memory limitations, this board does not include all ArduPilot features.
+        See :ref:`Firmware Limitations <common-autopilots_limited_firmware>` for details.
+
 Specifications
 ==============
 

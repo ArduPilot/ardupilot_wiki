@@ -4,6 +4,13 @@
 Pixhawk Overview
 ================
 
+.. note::
+
+	Older versions of Pixhawk use an early version of the STM32F427 chip (RevA, RevY and Rev1).
+        A hardware bug is present in these chips that limit the flash memory to 1 MB. Any boards
+        containing this chip cannot include all ArduPilot features due to this limitation. See
+        :ref:`Firmware Limitations <common-autopilots_limited_firmware>` for details.
+
 Specifications
 ==============
 
