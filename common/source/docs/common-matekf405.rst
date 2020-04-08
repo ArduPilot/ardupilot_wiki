@@ -14,6 +14,11 @@ Mateksys F405-STD and variants
 
 the above images and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f405-std>`__
 
+.. note::
+
+	Due to flash memory limitations, this board does not include all ArduPilot features.
+        See :ref:`Firmware Limitations <common-autopilots_limited_firmware>` for details.
+
 Specifications
 ==============
 

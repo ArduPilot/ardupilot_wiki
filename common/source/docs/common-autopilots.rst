@@ -29,9 +29,11 @@ Open hardware
     mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/mro-x2.1-777-mr.htm>
     OpenPilot Revolution <common-openpilot-revo-mini>
     PocketPilot* (Linux) <https://github.com/PocketPilot/PocketPilot>
-    TauLabs Sparky2 <common-taulabs-sparky2>
+    TauLabs Sparky2** <common-taulabs-sparky2>
 
 \* these devices are sensor add-on boards for a Beagle Bone microcomputer. See board links for details 
+
+\** due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-autopilots_limited_firmware>` for details.
 
 Closed hardware
 ---------------
@@ -44,17 +46,17 @@ Closed hardware
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Holybro Durandal H7 <common-durandal-overview>
     Holybro Kakute F4 <common-holybro-kakutef4>
-    Holybro Kakute F7 AIO <common-holybro-kakutef7aio>
-    Holybro Kakute F7 Mini <common-holybro-kakutef7mini>
+    Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
+    Holybro Kakute F7 Mini* <common-holybro-kakutef7mini>
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
     Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>
-    Mateksys F405-STD and variants <common-matekf405>
-    Mateksys F405-Wing <common-matekf405-wing>
+    Mateksys F405-STD and variants* <common-matekf405>
+    Mateksys F405-Wing* <common-matekf405-wing>
     Mateksys F765-Wing <common-matekf765-wing>
     mRo ControlZero F7 <https://store.mrobotics.io/mRo-Control-Zero-F7-p/mro-ctrl-zero-f7.htm>
-    Omnibus F4 AIO/Pro <common-omnibusf4pro>
+    Omnibus F4 AIO/Pro* <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
-    Omnibus F7V2 <common-omnibusf7>
+    Omnibus F7V2* <common-omnibusf7>
 [site wiki="copter"]
     Parrot Bebop Autopilot <parrot-bebop-autopilot>
 [/site]
@@ -63,6 +65,8 @@ Closed hardware
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
+
+\* due to flash memory limitations, these boards do not include all ArduPilot features. See :ref:`Firmware Limitations <common-autopilots_limited_firmware>` for details.
 
 .. note:: For more information on using ArduPilot on Linux based boards, see :ref:`building-the-code`
 
@@ -87,5 +91,98 @@ available if you're still working on those platforms:
    NAVIO+ 
    PX4FMU
    Qualcomm Snapdragon Flight Kit
+
+.. _common-autopilots_limited_firmware:
+
+Firmware Limitations on Selected Hardware
+-----------------------------------------
+
+The ArduPilot firmware in some configurations exceeds 1 MB in size. Some autopilots may not have enough
+flash memory to store the full firmware.
+
+For the affected autopilots, a reduced firmware is generated. This firmware omits less-commonly used features
+in order to reduce the firmware size to less than 1 MB.
+
+The missing features are listed below.
+
+
+-  **KakuteF7, KakuteF7 Mini, OmnibusF7V2, sparky2 and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)**
+
+   -  **Common to all vehicles**
+
+      -  Aux function for testing IMU failover (KILL_IMU)
+      -  LTM, Devo and Hott telemetry formats
+      -  Piccolo CAN
+      -  Oreo LED lights
+      -  NCP5623 LED lights
+      -  NMEA output format
+      -  Solo Gimbal
+      -  DSP support
+      -  MTK, SIRF GPS support
+      -  EFI engine support
+      -  AK09916 on ICM20948 compass
+      -  Runcam
+      -  External I2C barometers
+      -  DLVR Airspeed sensors
+
+
+   -  **Copter only**
+
+      -  Sprayer
+      -  Visual Odometry
+      -  Gripper
+      -  RPM
+      -  ADSB
+      -  Guided, Follow, Sport, SystemID, Zigzag and Autorotate modes
+      -  Beacon
+      -  OAPathPlanner
+      -  Optical Flow
+
+
+   -  **Plane Only**
+
+      -  HIL
+      -  Gripper
+      -  Soaring
+      -  Landing Gear
+      -  Qautotune mode
+
+
+   -  **Rover Only**
+
+      -  N/A
+
+
+   -  **Sub Only**
+
+      -  N/A
+
+
+-  **Matek F405**
+
+   -  SMBUS battery
+   -  Parachute
+   -  Sprayer
+
+
+-  **Matek F405-Wing**
+
+   -  SMBUS battery
+   -  Parachute
+   -  Sprayer
+   -  EKF2
+
+
+-  **OmnibusF4 & F4Pro**
+
+   -  SMBUS battery
+   -  Parachute
+   -  Sprayer
+
+
+-  **SuccexF4**
+
+   -  Parachute
+   -  Sprayer
 
 
