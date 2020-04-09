@@ -115,13 +115,11 @@ END_UPDATES=$(date +%s)
 UPDATE_TIME=$(echo "($END_UPDATES - $START)/60" | bc -l)
 echo "[Buildlog] Time to reset Repos: $UPDATE_TIME minutes"
 
-
 echo "[Buildlog] Starting to build multiple parameters pages at $(date '+%Y-%m-%d-%H-%M-%S')"
 cd ardupilot_wiki && python3 build_parameters.py
 END_BUILD_MPARAMS=$(date +%s)
 MPARAMS_TIME=$(echo "($END_BUILD_MPARAMS - $END_UPDATES)/60" | bc -l)
 echo "[Buildlog] Time to run build_parameters.py: $MPARAMS_TIME minutes"
-
 
 echo "[Buildlog] Starting to build the wiki at $(date '+%Y-%m-%d-%H-%M-%S')"
 # python update.py --clean --parallel 4 # Build without versioning for parameters. It is better for editing wiki
