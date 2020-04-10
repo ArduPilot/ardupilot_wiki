@@ -352,6 +352,15 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target: https://taiwandrone100.com/
 
     *
+      - .. image:: ../../../images/supporters/supporters_logo_Kraus_Aerospace.png
+            :width: 250px
+            :align: center
+            :target: https://www.krausaerospace.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_blank.png
+            :align: center
+
+    *
       - .. image:: ../../../images/supporters/supporters_logo_blank.png
             :align: center
 
