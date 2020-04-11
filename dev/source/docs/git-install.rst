@@ -21,6 +21,9 @@ Linux/Ubuntu users can install with apt :
  - ``sudo apt-get install git``
  - ``sudo apt-get install gitk git-gui``
 
+.. youtube:: G1Kc-1aF8HI
+
+
 Other Systems
 +++++++++++++
 

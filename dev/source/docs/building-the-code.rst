@@ -25,6 +25,8 @@ In most cases the build dependencies described for **waf** and **make** are the 
 
 - Linux and MacOSX users should build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
+.. youtube:: lNSvAPZOM_o
+
 **Windows users:**
 
 Windows users have 3 or 4 options for setting up the build environment. All of the below options will allow building of native (SITL) and Pixhawk-based boards.
