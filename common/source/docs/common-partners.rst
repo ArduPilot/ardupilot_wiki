@@ -30,7 +30,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_mRobotics.png
             :width: 250px
             :align: center
-            :target:  http://mrobotics.io
+            :target:  https://mrobotics.io
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Emlid.png
@@ -52,7 +52,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_LightWare.png
             :width: 250px
             :align: center
-            :target:  https://lightware.co.za
+            :target:  https://lightwarelidar.com
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_SpektreWorks.png
@@ -121,7 +121,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  https://skeyetech.fr
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_3DRX.jpg
+      - .. image:: ../../../images/supporters/supporters_logo_3DXR.jpg
             :width: 250px
             :align: center
             :target: https://3dxr.co.uk
@@ -140,7 +140,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Drones_Center.png
             :width: 250px
             :align: center
-            :target:  http://drones-center.com
+            :target:  https://drones-center.com
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Wurzbach_Electronics.png
@@ -201,7 +201,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Makeflyeasy.jpg
             :width: 250px
             :align: center
-            :target:  http://makeflyeasy.com
+            :target:  http://www.makeflyeasy.com
 
       - .. image:: ../../../images/supporters/supporters_logo_Hexsoon.jpg
             :width: 250px
@@ -228,7 +228,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Mateksys.png
             :width: 250px
             :align: center
-            :target:  http://mateksys.com
+            :target:  http://www.mateksys.com
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Tiho_Aviation.png
@@ -239,13 +239,13 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_Freespace.png
             :width: 250px
             :align: center
-            :target:  https://freespace.solutions
+            :target:  https://freespacesolutions.com.au
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Holybro.png
             :width: 250px
             :align: center
-            :target:  http://holybro.com
+            :target:  http://www.holybro.com
 
       - .. image:: ../../../images/supporters/supporters_logo_ASW.png
             :width: 250px
@@ -261,7 +261,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_D_Makers.png
             :width: 250px
             :align: center
-            :target:  https://www.dmakers.co.kr
+            :target:  https://dmakers.co.kr
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Hitec.png
@@ -294,13 +294,13 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_ALTI.jpg
             :width: 250px
             :align: center
-            :target:  https://www.altiuas.com
+            :target:  https://altiuas.com
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Flytrex.png
             :width: 250px
             :align: center
-            :target:  https://www.flytrex.com
+            :target:  https://flytrex.com
 
       - .. image:: ../../../images/supporters/supporters_logo_VimDrones.png
             :width: 250px
@@ -316,39 +316,39 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_UAVEX.png
             :width: 250px
             :align: center
-            :target:  https://www.uavex.com
+            :target:  https://uavex.com
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Geodrones_Australia.png
             :width: 250px
             :align: center
-            :target:  https://www.geodronesaustralia.com.au
+            :target:  https://geodronesaustralia.com.au
 
       - .. image:: ../../../images/supporters/supporters_logo_dualrc.png
             :width: 250px
             :align: center
-            :target: https://www.dualrc.com/
+            :target: https://dualrc.com
             
     *
       - .. image:: ../../../images/supporters/supporters_logo_davwings.png
             :width: 250px
             :align: center
-            :target: http://www.davwings.com/
+            :target: http://davwings.com
 
       - .. image:: ../../../images/supporters/supporters_logo_frsky.png
             :width: 250px
             :align: center
-            :target: https://www.frsky-rc.com/
+            :target: https://frsky-rc.com
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_TaiwanDrone100.png
             :width: 250px
             :align: center
-            :target: https://taiwandrone100.com/
+            :target: https://taiwandrone100.com
 
       - .. image:: ../../../images/supporters/supporters_logo_Kraus_Aerospace.png
             :width: 250px
             :align: center
-            :target: https://www.krausaerospace.com/
+            :target: https://krausaerospace.com
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
