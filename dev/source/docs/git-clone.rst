@@ -32,6 +32,8 @@ Cloning with the command line
        cd ardupilot
        git submodule update --init --recursive
 
+.. youtube:: kAli2y2-n-M
+
    or the main project repo:
 
    ::
