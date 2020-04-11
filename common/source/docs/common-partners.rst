@@ -220,151 +220,135 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  https://longrangefpv.com
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_Eagle_Pride.png
-            :width: 250px
-            :align: center
-            :target:  https://eaglepridedrones.com
-
       - .. image:: ../../../images/supporters/supporters_logo_Qifei.png
             :width: 250px
             :align: center
             :target:  https://agrobot.en.alibaba.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Mateksys.png
             :width: 250px
             :align: center
             :target:  http://mateksys.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Tiho_Aviation.png
             :width: 250px
             :align: center
             :target:  https://ardupilot.org/about/Partners
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Freespace.png
             :width: 250px
             :align: center
             :target:  https://freespace.solutions
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Holybro.png
             :width: 250px
             :align: center
             :target:  http://holybro.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_ASW.png
             :width: 250px
             :align: center
             :target:  https://aerosystemswest.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Bask_Aerospace.jpg
             :width: 250px
             :align: center
             :target:  https://baskaerospace.com.au
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_D_Makers.png
             :width: 250px
             :align: center
             :target:  https://www.dmakers.co.kr
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Hitec.png
             :width: 250px
             :align: center
             :target:  https://hitecnology.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_AeroScanTech.png
             :width: 250px
             :align: center
             :target:  https://aeroscantech.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Quaternium.png
             :width: 250px
             :align: center
             :target:  https://quaternium.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_NP_UAS_TS.png
             :width: 250px
             :align: center
             :target:  http://npuasts.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_AION_ROBOTICS.png
             :width: 250px
             :align: center
             :target:  https://aionrobotics.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_ALTI.jpg
             :width: 250px
             :align: center
             :target:  https://www.altiuas.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Flytrex.png
             :width: 250px
             :align: center
             :target:  https://www.flytrex.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_VimDrones.png
             :width: 250px
             :align: center
             :target:  https://vimdrones.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_UAV_Systems_International.jpg
             :width: 250px
             :align: center
             :target:  https://uavsystemsinternational.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_UAVEX.png
             :width: 250px
             :align: center
             :target:  https://www.uavex.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Geodrones_Australia.png
             :width: 250px
             :align: center
             :target:  https://www.geodronesaustralia.com.au
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_dualrc.png
             :width: 250px
             :align: center
             :target: https://www.dualrc.com/
             
+    *
       - .. image:: ../../../images/supporters/supporters_logo_davwings.png
             :width: 250px
             :align: center
             :target: http://www.davwings.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_frsky.png
             :width: 250px
             :align: center
             :target: https://www.frsky-rc.com/
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_TaiwanDrone100.png
             :width: 250px
             :align: center
             :target: https://taiwandrone100.com/
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Kraus_Aerospace.png
             :width: 250px
             :align: center
             :target: https://www.krausaerospace.com/
-
-      - .. image:: ../../../images/supporters/supporters_logo_blank.png
-            :align: center
-
-    *
-      - .. image:: ../../../images/supporters/supporters_logo_blank.png
-            :align: center
-
-      - .. image:: ../../../images/supporters/supporters_logo_blank.png
-            :align: center
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
