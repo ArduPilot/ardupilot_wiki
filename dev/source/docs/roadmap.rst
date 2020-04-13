@@ -1,98 +1,58 @@
 .. _roadmap:
     
 =====================
-RoadMap for 2019/2020
+RoadMap for 2020/2021
 =====================
 
    .. image:: ../images/roadmap-topimage.jpg
        :width: 40%
 
-This roadmap shows the direction of the ArduPilot team in 2019 and beyond.  The purpose of this roadmap
+This roadmap shows the direction of the ArduPilot team in 2020 and beyond.  The purpose of this roadmap
 is not to guarantee exactly when features will be added but instead to help the team, `Partners <https://ardupilot.org/about/Partners>`__
 and independent developers to spot areas for cooperation.  There will also undoubtedly be developments that are not on this list.
 
 The main point of contact for each area is provided so that those looking to join in or sponsor the development
 know who to contact (see :ref:`Contact Us <common-contact-us>` for a list of ways to contact the devs).
 
-Hardware & OS support (Tridge / PeterB)
----------------------------------------
-
-- CAN ecosystem ramp-up  (Tridge)
-- Add FDCAN support (Tridge)
-- Sensor re-ordering (Tridge)
-- Increase max number of sensors (Tridge)
-- Log synthetic airpseed (Tridge)
-- Bi-directional D-shot support (Tridge)
-- HAL file operation abstractions (PeterB)
-
-Scripting (MichaelDB)
----------------------
-
-- add Lua scripting to ArduPilot (`video <https://www.youtube.com/watch?v=ZUNOZMxOwsI>`_ from 2019 un-conference)
-
-EKF (PaulR / Randy)
--------------------
-
-- Robust yaw estimator for Copters
-- SLAM integration for position estimation
-
-Plane (Tridge / MichaelDB)
---------------------------
-
-- Takeoff mode
-- Automatic Taxiing
-- Increase QuadPlane landing approach options
-- Plane architectural improvements (aka "the onion")
-- QuadPlane flat/spoiler control (MichaelDB)
-
-Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
--------------------------------------------------------------------------
-
-- Add support for Intel RealSense T265, D435 (ROS & non-ROS)
-- Copter & Rover back away from objects
-- Proximity data (i.e. obstacles) recorded in Earth coordinates
-- On-board Path Planning around obstacles
-- Improve Off-Board SLAM + Object Avoidance (`dev wiki link <https://ardupilot.org/dev/docs/ros-cartographer-slam.html>`__)
 
 Copter (Randy / Leonard / Tridge)
 ---------------------------------
 
-- ESC feedback handling
-- Flight Mode Improvements
-
-  - System identification mode
-  - 4kHz+ loop rate PIDs
-  - Stand-By mode
+- ESC feedback handling (Randy)
+- 4kHz+ loop rate PIDs (Tridge, Leonard)
 
 - Attitude controller
 
-  - Separate FF and PID input for correct scaling
-  - Rate loop updates
-  - Enable rate loop saturation from external sources
-  - SI unit input
+  - Enable rate loop saturation from external sources (Leonard)
+  - SI unit input (Leonard)
 
 - Position Controller
 
-  - Update Z to XY feed forward architecture
-  - Include position error limits based on velocity saturation
-  - Include velocity error limits based on accel saturation
-  - Handle EKF reset for position correctly
-
+  - Update Z to XY feed-forward architecture (Leonard)
+  - Include position error limits based on velocity saturation (Leonard)
+  - Include velocity error limits based on accel saturation (Leonard)
+  - Handle EKF reset for the position correctly (Leonard)
+  - Baseline Velocity input (Leonard)
+  
+- S-Curve
+  - Concept demonstrator done. Implementation needed. (Leonard)
+		
+- Guided Mode
+  - Input shaped using FF (Leonard)
+		
 - AutoTune
+  - Add tuning type to PID object (Bill Geyer)
+  
+  
+Plane (Tridge / MichaelDB)
+--------------------------
 
-  - Add tuning type to PID object
-
-Trad Heli (Bill Geyer, Chris Olson)
------------------------------------
-
-- Closed loop rotor speed governor for gas and turbine engine helicopters
-- Automatic engine failure identification and autorotation entry
-- Autonomous Autorotation
-- L1 navigation and speed/height controller for helicopter high speed autonomous missions
-- Improve ground handling and ground/air transitions
-- Improve rotor speed control library architecture
-- Tie motor spool states to measured rotor speed when measurement is available
-- Virtual flybar option for acro flight mode
+- Automatic Taxing (Tridge)
+- Better RealFlight quadplane model
+- Increase QuadPlane landing approach options
+- Plane architectural improvements (aka “the onion” v2)
+- QuadPlane flat/spoiler control (MichaelDB)
+  
 
 Rover & Boat
 ------------
@@ -100,21 +60,59 @@ Rover & Boat
 - S-Curve navigation (`video from 2019 un-conference <https://www.youtube.com/watch?v=LHq5o9zgNWk>`__) (Leonard/Randy)
 - Stick Mixing in Auto (TomP)
 - Underwater mapping with scanning sonar (Randy/PeterB)
-- Precision Docking (using marker on shore) (Randy)
-- 3G/LTE telemetry (Randy)
-- APSync to support connecting to external Wifi access point (Randy/Peter)
+- Precision Docking (using marker onshore) (Randy)
+- high speed sailing inprovements (Randy)
+- Roll and pitch control for boats (Randy)
+- AIS (i.e., ADSB for boats) (Randy)
 
-Documentation (Randy / PierreK)
--------------------------------
 
-- Complete MAVLink interface section of developer wiki
+Trad Heli (Bill Geyer, Chris Olson)
+-----------------------------------
 
-ChrisB
-------
+- Automated handling of engine throttle for autonomous operations (Bill Geyer, GSoC)
+- Automatic engine failure identification and autorotation entry (Matt Kear)
+- Autonomous Autorotation (Matt Kear)
+- Handling of manual autorotation (Matt Kear)
+- Heli Autotune (Bill Geyer)
+- Improve ground handling and ground/air transitions (Bill Geyer/Matt Kear)
+- Improve high-speed autonomous maneuvering (Bill Geyer, GSoC)
+- Improved shaping functions in the attitude controller (Bill Geyer, GSoC)
+- Tie motor spool states to measured rotor speed when a measurement is available (Bill Geyer)
 
-- FrSky Sensors to act as battery monitor, airspeed sensor, etc (ChrisB)
-- Black Magic Cinema Camera Pocket 4K control via bluetooth BLE interface for full camera control (ChrisB)
-- Improved detection of a failed airspeed sensor (using synthetic airspeed, wind estimation and through a KF) (ChrisB)
+
+EKF (PaulR / Randy)
+-------------------
+
+- Bring the missing features from EKF2 into EKF3 to remove EKF2 (Paul)
+- EKF3 External Nav support
+- Fixing replay (PeterB)
+- Kill EKF2 after feature capability of EKF3
+- Possibly switch to copter PID controllers
+- Robust yaw estimator for Copters
+
+
+Hardware & OS support (Tridge / PeterB)
+---------------------------------------
+
+- Add FDCAN support (Sid)
+- Bi-directional D-shot support (Tridge)
+- CAN GPS moving baseline yaw (Tridge)
+- CAN IMUs (Phil K for HW)
+- CAN SITL Support (Sid)
+- CAN ecosystem ramp-up (Sid, Tridge)
+- Easier AirSim with the complex environment (Ryan, Rajat)
+- Extend maximum mission size	(Tridge)
+- Fast mission upload (Tridge)
+- Filter params for fixed-wing PIDs (Tridge)
+- Fix performance regressions (Tridge)
+- High-performance IMUs (ADIS) (Sid)
+- High-speed USB support - Nora (Tridge)
+- Improve USB performance	(Sid, Michael O.)
+- Increase max number of sensors (Tridge)
+- Log synthetic airspeed (Tridge)
+- Mission VFS download (Tridge)
+- Sensor (GPS, Baro, RFND, etc.) re-ordering (Sid, Tridge)
+
 
 Hardware (PhilipR, JeffW)
 -------------------------
@@ -125,16 +123,95 @@ Hardware (PhilipR, JeffW)
 - Reference multicopter frame (PhilipR)
 - Intel Open Drone ID setup (JeffW)
 
-Logging (PeterB)
-----------------
 
-- Support adding information about messages and fields to Onboard logs
+Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
+-------------------------------------------------------------------------
 
-Organisational (Randy / Tridge)
+- 3D Bendy Ruler & Object Database (Randy)
+- Add support for Intel RealSense D435 (ROS & non-ROS) (Patrick, GSoC)
+- Bendy Ruler try re-implementing bendy ruler as Lua (Tridge)
+- Copter & Rover back away from objects (Randy)
+- Improve Off-Board SLAM and Object Avoidance (:ref:`dev wiki link<ros-cartographer-slam>`) (Randy, Jaime)
+- Improve reliability of T265 integration (reset handling, failsafe testing) (Randy, Jaime)
+- Seamless GPS <-> Non-GPS transitioning (Randy)
+- T265 image output to external VO (Tridge)
+
+
+Scripting (MichaelDB)
+---------------------
+
+- All mission features available in Lua (MichaelDB)
+- Figure flight mode in Plane as a script (MichaelDB)
+- Scripts creation parameter trees (MichaelDB)
+- Sprayer moved out of C++, into Lua (MichaelDB)
+
+
+Documentation (Randy / PierreK)
 -------------------------------
 
-- Find Wiki maintainer
+- Complete MAVLink interface section of developer wiki (Randy)
+- Dual GPS for Yaw setup (Henry, Tridge, Randy)
+- Frsky Telem Update (Alex, Henry)
+- Scripting Documentation (MichaelDB)
+- Substitute C5 (Bruno?)
+- Translation support (Bruno?)
+- Tuning/Fltr Copter to QuadPlane (Henry)
+
+
+Miscellaneous 
+-------------
+
+- FrSky Sensors to act as a battery monitor, airspeed sensor, etc (ChrisB)
+- Black Magic Cinema Camera Pocket 4K control via Bluetooth BLE interface for full camera control (ChrisB)
+- Improved detection of a failed airspeed sensor (using synthetic airspeed,wind estimation and through a KF) (ChrisB)
+- Support adding information about messages and fields to Onboard logs (PeterB)
+- Support OpenDroneID (Tom)
+
+
+Organizational (Randy / Tridge)
+-------------------------------
+
 - Assist Ready-To-Fly manufacturers get their products to market
+- Find new BugMaster and support roles (Tridge, Randy, James, MIchaelDB)
+- Governance structure (James)
+
+
+---------------------------------------------
+
+=======================
+Items completed in 2019
+=======================
+
+Below is a list of Roadmap items completed in 2019.  There were many more projects completed, as well!
+
+
+- 3G/LTE telemetry for Rover & Boat (Randy)
+- APSync to support connecting to an external Wifi access point for Rover & Boat (Randy/Peter)
+- Add tuning type to PID object in AutoTune for Copter
+- Closed-loop rotor speed governor for gas and turbine engine helicopters for Tradi Heli
+- HAL file operation abstractions
+- Improve Off-Board SLAM + Object Avoidance (`dev wiki link ros-cartographer-slam`__)
+- Improve rotor speed control library architecture for Tradi Heli
+- L1 navigation and speed/height controller for helicopter high-speed autonomous missions for Tradi Heli
+- Proximity data (i.e., obstacles) recorded in Earth coordinates
+- Rate loop updates for Copter
+- SLAM integration for position estimation
+- Separate FF and PID input for correct scaling for Copter
+- Stand-By mode for Copter
+- Virtual flybar option for acro flight mode for Tradi Heli
+- 
+- 
+- 
+- Add Lua scripting to ArduPilot -- **COMPLETE!**
+- Add support for Intel RealSense T265 (ROS & non-ROS) -- **COMPLETE!**
+- Copter & Rover back away from objects -- **COMPLETE!**
+- ESC feedback handling for Copter -- **COMPLETE!**
+- Find Wiki maintainer -- **COMPLETE!**
+- On-board Path Planning around obstacles -- **COMPLETE!**
+- Plane architectural improvements (aka "the onion") -- **COMPLETE!**
+- System identification mode -- **COMPLETE!**
+- Takeoff mode -- **COMPLETE!**
+
 
 ---------------------------------------------
 
