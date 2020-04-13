@@ -34,30 +34,23 @@ Because most users use an external :ref:`GPS and Compass module <common-position
 Serially Connected Devices
 ==========================
 
-Currently, Ardupilot supports the Neopixel style RGB LED and strings. They can be used for NTF notifications from the autopilot on status and warnings like other RGB LEDs, or be programmed in unlimited ways using LUA scripts on the autopilot's SD card. See :ref:`common-lua-scripts` for more use examples using LUA scripts.
+Currently, Ardupilot supports Neopixel and ProfiLED RGB LED strings. They can be used for NTF notifications from the autopilot on status and warnings like other RGB LEDs, or be programmed in unlimited ways using LUA scripts on the autopilot's SD card. For use with scripting the output function must be set to a scripting output function (94 - 109) the script then assignees this output to LEDs. See :ref:`common-lua-scripts` for more use examples using LUA scripts.
 
+..  youtube:: ytW538e_cQw
 
-.. image:: ../../../images/neopixel-string.jpg
+Serial LEDs require a whole pwm group, more information about your flight controllers PWM groups can be found on it's :ref:`hardware page<common-autopilots>`. To check that the desired outputs have been setup correctly look for the PWM types message in your GCS's messages tab. See :ref:`common-gpios`
 
-A "NeoPixel" style (WS2812B compatible) RGB LED can be attached to any PWM output by setting its SERVOx_FUNCTION to one of the ``NeoPixelx`` output functions and setting :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixel``. Multiple ``NeoPixelx`` output functions are provided for connecting multiple strings (up to 4).
+.. toctree::
+    :maxdepth: 1
 
-.. note:: Be sure the output is configures as normal PWM instead of a GPIO output. See :ref:`common-gpios`
+    NeoPixel <common-serial-led-neopixel>
+    ProfiLED <common-serial-led-ProfiLED>
 
-If used for notification purposes, be sure to set :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` to "Neopixel" (8).
+.. note:: Be sure the output is configures as normal PWM instead of a GPIO output. Flight controllers with a IOMCU can only use the AUX outputs for connecting serial LEDs. To check that the desired outputs have been setup correctly look for the PWM types message in your GCS's messages tab. See :ref:`common-gpios`
 
-.. warning:: Most WS2812 style LED and strings will operate correctly when connected to the autopilot. However, if you get intermittent or non-operation, you may need to implement one of the configurations below. This is due to the fact that the autopilot outputs swing to 3.3V but the worst case input signal high spec for the LED is 4.3V at a 5V supply. So at extremes of tolerance/manufacturing spec, you can get a combination which will not work correctly. In that case the easiest solution is to lower the LED supply as shown below.
-
-
-.. image:: ../../../images/neopixel-fix.png
-
-But this causes a small loss in LED brilliance. An easy way to avoid this, if an LED can be isolated in the string, is to use an LED to level shift the signal for you so that the rest of the string can be powered by the full 5V.
-
-.. image:: ../../../images/ws-levelshift.png
-
-LED Meaning
-===========
+NTF LED Meaning
+===============
 
 The meaning of the colors and flash patterns are shown in :ref:`common-leds-pixhawk` if the ``standard`` default protocol is set for :ref:`NTF_LED_OVERRIDE<NTF_LED_OVERRIDE>`. 
 
-The brightness of the LED can be controlled by modifying the :ref:`NTF_LED_BRIGHT <NTF_LED_BRIGHT>`
-
+The brightness and number of LEDs can be controlled by modifying the :ref:`NTF_LED_BRIGHT <NTF_LED_BRIGHT>` and :ref:`NTF_LED_LEN <NTF_LED_LEN>`
