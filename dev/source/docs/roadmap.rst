@@ -15,7 +15,7 @@ The main point of contact for each area is provided so that those looking to joi
 know who to contact (see :ref:`Contact Us <common-contact-us>` for a list of ways to contact the devs).
 
 
-Copter (Randy / Leonard / Tridge)
+Copter
 ---------------------------------
 
 - ESC feedback handling (Randy)
@@ -44,7 +44,7 @@ Copter (Randy / Leonard / Tridge)
   - Add tuning type to PID object (Bill Geyer)
   
   
-Plane (Tridge / MichaelDB)
+Plane
 --------------------------
 
 - Automatic Taxing (Tridge)
@@ -67,8 +67,8 @@ Rover & Boat
 - AIS (i.e., ADSB for boats) (Peter Hall)
 
 
-Trad Heli (Bill Geyer)
------------------------------------
+Trad Heli
+---------
 
 - Automated handling of engine throttle for autonomous operations (Bill Geyer, GSoC)
 - Automatic engine failure identification and autorotation entry (Matt Kear)
@@ -81,8 +81,8 @@ Trad Heli (Bill Geyer)
 - Tie motor spool states to measured rotor speed when a measurement is available (Bill Geyer)
 
 
-EKF (PaulR / Randy)
--------------------
+EKF
+---
 
 - Bring the missing features from EKF2 into EKF3 to remove EKF2 (Paul)
 - EKF3 External Nav support
@@ -91,8 +91,8 @@ EKF (PaulR / Randy)
 - Robust yaw estimator for Copters
 
 
-Hardware & OS support (Tridge / PeterB)
----------------------------------------
+Hardware & OS support
+---------------------
 
 - Add FDCAN support (Sid)
 - Bi-directional D-shot support (Tridge)
@@ -114,8 +114,8 @@ Hardware & OS support (Tridge / PeterB)
 - Sensor (GPS, Baro, RFND, etc.) re-ordering (Sid, Tridge)
 
 
-Hardware (PhilipR, JeffW)
--------------------------
+Hardware
+--------
 
 - CAN hardware (PhilipR)
 - ADSB inclusion (PhilipR)
@@ -124,8 +124,8 @@ Hardware (PhilipR, JeffW)
 - Intel Open Drone ID setup (JeffW)
 
 
-Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
--------------------------------------------------------------------------
+Non-GPS Navigation, Avoidance and Path Planning
+-----------------------------------------------
 
 - 3D Bendy Ruler & Object Database (Randy, Patrick Poirier)
 - Add support for Intel RealSense D435 (ROS & non-ROS) (Patrick, GSoC)
@@ -137,8 +137,8 @@ Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
 - T265 image output to external VO (Tridge)
 
 
-Scripting (MichaelDB, Randy)
----------------------
+Scripting
+---------
 
 - All mission features available in Lua (MichaelDB)
 - Figure flight mode in Plane as a script (Randy)
@@ -146,15 +146,15 @@ Scripting (MichaelDB, Randy)
 - Sprayer moved out of C++, into Lua (Randy)
 
 
-Documentation (Randy / PierreK)
--------------------------------
+Documentation
+-------------
 
 - Complete MAVLink interface section of developer wiki (Randy)
 - Dual GPS for Yaw setup (Henry, Tridge, Randy)
 - Frsky Telem Update (Alex, Henry)
 - Scripting Documentation (MichaelDB)
-- Substitute C5 (Bruno?)
-- Translation support (Bruno?)
+- Substitute C5 (Bruno)
+- Translation support (Bruno)
 - Tuning/Fltr Copter to QuadPlane (Henry)
 
 
@@ -168,8 +168,8 @@ Miscellaneous
 - Support OpenDroneID (Tom)
 
 
-Organizational (Randy / Tridge)
--------------------------------
+Organizational
+--------------
 
 - Assist Ready-To-Fly manufacturers get their products to market
 - Find new BugMaster and support roles (Tridge, Randy, James, MIchaelDB)
@@ -190,7 +190,7 @@ Below is a list of Roadmap items completed in 2019.  There were many more projec
 - Add tuning type to PID object in AutoTune for Copter
 - Closed-loop rotor speed governor for gas and turbine engine helicopters for Tradi Heli
 - HAL file operation abstractions
-- Improve Off-Board SLAM + Object Avoidance (`dev wiki link ros-cartographer-slam`__)
+- Improve Off-Board SLAM + Object Avoidance (:ref:`dev wiki link<ros-cartographer-slam>`)
 - Improve rotor speed control library architecture for Tradi Heli
 - L1 navigation and speed/height controller for helicopter high-speed autonomous missions for Tradi Heli
 - Proximity data (i.e., obstacles) recorded in Earth coordinates
@@ -199,9 +199,6 @@ Below is a list of Roadmap items completed in 2019.  There were many more projec
 - Separate FF and PID input for correct scaling for Copter
 - Stand-By mode for Copter
 - Virtual flybar option for acro flight mode for Tradi Heli
-- 
-- 
-- 
 - Add Lua scripting to ArduPilot -- **COMPLETE!**
 - Add support for Intel RealSense T265 (ROS & non-ROS) -- **COMPLETE!**
 - Copter & Rover back away from objects -- **COMPLETE!**
