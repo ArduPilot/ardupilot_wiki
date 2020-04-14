@@ -51,6 +51,7 @@ Plane (Tridge / MichaelDB)
 - Better RealFlight quadplane model
 - Increase QuadPlane landing approach options
 - Plane architectural improvements (aka “the onion” v2)
+- Possibly switch to copter PID controllers
 - QuadPlane flat/spoiler control (MichaelDB)
   
 
@@ -61,12 +62,12 @@ Rover & Boat
 - Stick Mixing in Auto (TomP)
 - Underwater mapping with scanning sonar (Randy/PeterB)
 - Precision Docking (using marker onshore) (Randy)
-- high speed sailing inprovements (Randy)
-- Roll and pitch control for boats (Randy)
-- AIS (i.e., ADSB for boats) (Randy)
+- High speed sailing inprovements (Peter Hall)
+- Roll and pitch control for boats (Peter Hall)
+- AIS (i.e., ADSB for boats) (Peter Hall)
 
 
-Trad Heli (Bill Geyer, Chris Olson)
+Trad Heli (Bill Geyer)
 -----------------------------------
 
 - Automated handling of engine throttle for autonomous operations (Bill Geyer, GSoC)
@@ -86,8 +87,7 @@ EKF (PaulR / Randy)
 - Bring the missing features from EKF2 into EKF3 to remove EKF2 (Paul)
 - EKF3 External Nav support
 - Fixing replay (PeterB)
-- Kill EKF2 after feature capability of EKF3
-- Possibly switch to copter PID controllers
+- Set EKF3 as the default
 - Robust yaw estimator for Copters
 
 
@@ -127,23 +127,23 @@ Hardware (PhilipR, JeffW)
 Non-GPS Navigation, Avoidance and Path Planning (Randy / Patrick Poirier)
 -------------------------------------------------------------------------
 
-- 3D Bendy Ruler & Object Database (Randy)
+- 3D Bendy Ruler & Object Database (Randy, Patrick Poirier)
 - Add support for Intel RealSense D435 (ROS & non-ROS) (Patrick, GSoC)
-- Bendy Ruler try re-implementing bendy ruler as Lua (Tridge)
-- Copter & Rover back away from objects (Randy)
-- Improve Off-Board SLAM and Object Avoidance (:ref:`dev wiki link<ros-cartographer-slam>`) (Randy, Jaime)
-- Improve reliability of T265 integration (reset handling, failsafe testing) (Randy, Jaime)
+- Bendy Ruler try re-implementing bendy ruler as Lua (Tridge, Patrick Poirier)
+- Copter & Rover back away from objects (Randy, Patrick Poirier)
+- Improve Off-Board SLAM and Object Avoidance (:ref:`dev wiki link<ros-cartographer-slam>`) (Randy, Jaime, Patrick Poirier)
+- Improve reliability of T265 integration (reset handling, failsafe testing) (Randy, Jaime, Patrick Poirier)
 - Seamless GPS <-> Non-GPS transitioning (Randy)
 - T265 image output to external VO (Tridge)
 
 
-Scripting (MichaelDB)
+Scripting (MichaelDB, Randy)
 ---------------------
 
 - All mission features available in Lua (MichaelDB)
-- Figure flight mode in Plane as a script (MichaelDB)
-- Scripts creation parameter trees (MichaelDB)
-- Sprayer moved out of C++, into Lua (MichaelDB)
+- Figure flight mode in Plane as a script (Randy)
+- Scripts creation parameter trees (Randy)
+- Sprayer moved out of C++, into Lua (Randy)
 
 
 Documentation (Randy / PierreK)
