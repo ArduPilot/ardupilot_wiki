@@ -10,9 +10,14 @@ If a autopilot has **X** outputs, then the number of available outputs that can 
 
 The exception is autopilots using an IOMCU co-processor. These autopilots normally have 8 MAIN outputs, and several AUX outputs. Only the AUX outputs can be re-purposed as GPIOs, and the :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` parameter only applies to this group of outputs.
 
-For example, the Pixhawk has 8 MAIN outputs for motors/servos, and 6 AUX outputs. The default value for :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` for this controller is 4, so AUX OUTPUT 5 & 6 can be used. More can be enabled for use as GPIO type output functions by increasing :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>`.
+For example, the Pixhawk has 8 MAIN outputs for motors/servos, and 6 AUX outputs. The default value for :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` for this controller is 4, so AUX OUTPUT 5 & 6 can be used. More can be enabled for use as GPIO type output functions by decreasing :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>`.
 
 .. image:: ../../../images/Relay_Pixhawk.jpg
+
+Everytime the autopilot initializes, it sends a log message to the ground control station, showing which outputs are PWM/Oneshot/or DShot. The remaining higher numbered outputs are assigned as GPIOs.
+
+.. image:: ../../../images/RCOutbanner.jpg
+
 
 GPIO "PIN" NUMBER
 =================
