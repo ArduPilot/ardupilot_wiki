@@ -55,7 +55,7 @@ BASEPATH = ""
 
 ## Dicts for name replacing
 vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old names
-    "Rover": "APMrover2",
+    "Rover": "Rover",
     "Sub": "ArduSub",
     "Copter":"ArduCopter",
     "Plane":"ArduPlane",
@@ -63,12 +63,13 @@ vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old name
 }
 
 vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with old names
+    "Rover":"Rover",
     "APMrover2":"Rover",
     "ArduRover":"Rover",
     "ArduSub":"Sub",
     "ArduCopter":"Copter",
     "ArduPlane":"Plane",
-    "AntennaTracker":"AntennaTracker",  # firmware server calls Tracker as AntennaTracker
+    "AntennaTracker":"AntennaTracker",  # firmware server calls Tracker/atennatracker as AntennaTracker
 }
 
 
