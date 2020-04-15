@@ -58,7 +58,7 @@ args = parser.parse_args()
 #print(args.site)
 #print(args.clean)
 
-PARAMETER_SITE={'rover':'APMrover2', 'copter':'ArduCopter','plane':'ArduPlane','antennatracker':'AntennaTracker' }
+PARAMETER_SITE={'rover':'Rover', 'copter':'ArduCopter','plane':'ArduPlane','antennatracker':'AntennaTracker' }
 LOGMESSAGE_SITE={'rover':'Rover', 'copter':'Copter','plane':'Plane','antennatracker':'Tracker' }
 error_count = 0
 
