@@ -101,6 +101,7 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
    
     Introduction <docs/introduction>
     AutoPilot Hardware <docs/common-autopilots>
+    Firmware Limitations on AutoPilot Hardware <docs/common-limited-firmware>
     First Time Setup <docs/arduplane-setup>
     First Flight <docs/first-flight-landing-page>
     If A Problem Arises <docs/common-when-problems-arise> 
