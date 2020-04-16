@@ -16,7 +16,7 @@ Holybro Kakute F7 and KAKUTE F7 AIO
 .. note::
 
 	Due to flash memory limitations, this board does not include all ArduPilot features.
-        See :ref:`Firmware Limitations <common-autopilots_limited_firmware>` for details.
+        See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
 Specifications
 ==============
