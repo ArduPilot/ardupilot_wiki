@@ -39,6 +39,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="plane"]
      Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
 [/site]
+    First Person View Video <ommon-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
     GPS/Compass <common-positioning-landing-page>
     Grippers <common-gripper-landingpage>
