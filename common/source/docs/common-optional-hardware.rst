@@ -39,7 +39,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="plane"]
      Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
 [/site]
-    First Person View Video <ommon-fpv-first-person-view>
+    First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
     GPS/Compass <common-positioning-landing-page>
     Grippers <common-gripper-landingpage>
@@ -76,7 +76,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
     UAVCAN Adapter Node <common-uavcan-adapter-node>
-    High Defintion Video <common-video-landingpage>
+    Video (High Defintion) <common-video-landingpage>
 [site wiki="copter"]
     Winch <common-daiwa-winch>
 [/site]
