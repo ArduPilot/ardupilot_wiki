@@ -111,8 +111,11 @@ git clean -f -f -x -d -d
 pip install --user -U .
 popd
 
+cd ardupilot_wiki
+find -name "parameters*rst" -delete # Clean possible built and cached parameters files
+
 echo "[Buildlog] Starting to build multiple parameters pages at $(date '+%Y-%m-%d-%H-%M-%S')"
-cd ardupilot_wiki && python3 build_parameters.py
+python3 build_parameters.py
 END_BUILD_MPARAMS=$(date +%s)
 MPARAMS_TIME=$(echo "($END_BUILD_MPARAMS - $END_UPDATES)" | bc)
 echo "[Buildlog] Time to run build_parameters.py: $MPARAMS_TIME seconds"
@@ -125,7 +128,7 @@ python update.py --clean --paramversioning --parallel 4 # Enables parameters ver
 END_BUILD_WIKI=$(date +%s)
 WIKI_TIME=$(echo "($END_BUILD_WIKI - $END_BUILD_MPARAMS)/60" | bc)
 echo "[Buildlog] Time to build the wiki itself: $WIKI_TIME minutes"
-SCRIPT_TIME=$(echo "($END_BUILD_WIKI - $START)/60" | bc -l)
+SCRIPT_TIME=$(echo "($END_BUILD_WIKI - $START)/60" | bc)
 echo "[Buildlog] Time to run the full script: $SCRIPT_TIME minutes"
 
 

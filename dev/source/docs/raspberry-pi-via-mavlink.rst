@@ -24,6 +24,9 @@ functions can be found
 
 The RPi can be powered by connecting +5V source to the +5V pin  **or** from USB in.
 
+Addon boards such as the `Pi-Connect <https://www.rpanion.com/product/pi-connect-lite/>`__
+can simplify the connection of the RPi by providing a power supply and telemetry port. 
+
 .. tip::
 
    Depending on the model of RPi used and internal/external peripherals used, +5V power requirements can vary from 80mA to close to 2.5A. The power budget for the particular system configuration should be assessed to determine the requirements for the +5V supply current. It is usually not recommended that +5v be supplied via the flight controller's TELEM port connector.

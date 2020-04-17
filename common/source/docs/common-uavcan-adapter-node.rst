@@ -1,5 +1,6 @@
 .. _common-uavcan-adapter-node:
 
+===================
 UAVCAN Adapter Node
 ===================
 
