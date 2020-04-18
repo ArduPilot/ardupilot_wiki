@@ -88,7 +88,7 @@ Default UART order
 
 - SERIAL0 = console = USB
 - SERIAL1 = Telemetry1 = USART1
-- SERIAL2 = not assigned
+- SERIAL2 = not assigned (Telemetry2 = USART3 if BD_ALT_CONFIG =1)
 - SERIAL3 = GPS1 = USART6
 - SERIAL4 = not assigned
 - SERIAL5 = not assigned
