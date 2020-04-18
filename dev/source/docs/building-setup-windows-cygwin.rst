@@ -22,7 +22,7 @@ Install Cygwin
 
 ::
 
-    setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python27,python27-future,python27-libxml2,python27-pip,libxslt-devel,python27-devel,procps-ng,zip,gdb,ddd
+    setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python36,python36-future,python36-lxml,python36-pip,libxslt-devel,python36-devel,procps-ng,zip,gdb,ddd
     
 Or, for a stepped install:
 
@@ -65,15 +65,15 @@ Or, for a stepped install:
    +-----------------+----------------------------------------------------------------------------------+
    | libxslt-devel   | Libs \| libxslt-devel: XML template library (development files)                  |
    +-----------------+----------------------------------------------------------------------------------+
-   | python27        | Python \| python27: Python2 language interpreter                                 |
+   | python36        | Python \| python36: Python2 language interpreter                                 |
    +-----------------+----------------------------------------------------------------------------------+
-   | python27-devel  | Python \| python27-devel: Python2 language interpreter                           |
+   | python36-devel  | Python \| python36-devel: Python3 language interpreter                           |
    +-----------------+----------------------------------------------------------------------------------+
-   | python27-future | Python \| python27-future: Clean single-source support for Python 3 and 2        |
+   | python36-future | Python \| python36-future: Clean single-source support for Python 3 and 2        |
    +-----------------+----------------------------------------------------------------------------------+
-   | python27-libxml2| Python \| python27-libxml2: Gnome XML Library (Python bindings)                  |
+   | python36-libxml2| Python \| python36-lxml: Gnome XML Library (Python bindings)                     |
    +-----------------+----------------------------------------------------------------------------------+
-   | python27-pip    | Python \| python27-pip: Python package installation tool                         |
+   | python36-pip    | Python \| python36-pip: Python package installation tool                         |
    +-----------------+----------------------------------------------------------------------------------+
    | procps-ng       | System \| procps-ng: System and process monitoring utilities (required for pkill)|
    +-----------------+----------------------------------------------------------------------------------+
@@ -123,11 +123,13 @@ Set up directories/paths and extra packages in Cygwin
 
 #. open and then close the "Cygwin64 Terminal" application from the desktop or start menu icon.  This creates initialisation files for the user in the Cygwin home directory.
 
-#. open the "Cygwin64 Terminal" application from the desktop or start menu icon.  Enter the following command to install additional Python packages:
+#. open the "Cygwin64 Terminal" application from the desktop or start menu icon.  Enter the following command to set Python 3.6 to be the default Python and then install additional Python packages:
 
 ::
 
-    pip2 install empy pyserial pymavlink
+    ln -s /usr/bin/python3.6 /usr/bin/python
+    ln -s /usr/bin/pip3.6 /usr/bin/pip
+    pip install empy pyserial pymavlink
 
 Download ArduPilot Source
 =========================
