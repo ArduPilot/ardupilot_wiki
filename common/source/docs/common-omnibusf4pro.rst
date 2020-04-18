@@ -49,11 +49,13 @@ There have been many versions of this board and many clones. Best results, with 
 
 Board Connections
 ==================
-GPS is attached to UART6
+GPS is attached to UART6 (SERIAL3)
 
-Telem is available at UART 1
+Telem is available at UART 1 (SERIAL1)
 
-The shared UART3/I2C pins are enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.If at least one device attached externally, does not have pull-up resistors, then 2K ohm pull-up resistors will need to be added externally.
+The shared UART3/I2C pins are ,by default, enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.If at least one device attached externally, does not have pull-up resistors, then 2K ohm pull-up resistors will need to be added externally.
+
+However, by setting :ref:`BD_ALT_CONFIG<BD_ALT_CONFIG>` to 1, the external I2C connection is disabled, so that UART3 may be used as a normal UART. It is SERIAL2 in the parameters listings.
 
 The board's RSSI pad can be used as an analog RSSI input. Use pin "0" as the RSSI input pin in Mission Planner. Mission planner default values for battery voltage and current scales are provided, however since many variations of this board are available, these may needed to be manually calibrated.
 
