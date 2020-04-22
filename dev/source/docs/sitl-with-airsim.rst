@@ -119,6 +119,10 @@ Make sure that you have setup ArduPilot SITL, completed the Unreal Environment s
 
     Running in UE Editor: Go to ``Edit->Editor Preferences``, in the ``Search`` box type ``CPU`` and ensure that the ``Use Less CPU when in Background`` is unchecked.
 
+.. note::
+
+    If you're using Windows Subsystem for Linux 2 to run ArduPilot and AirSim under Windows, please see https://discuss.ardupilot.org/t/gsoc-2019-airsim-simulator-support-for-ardupilot-sitl-part-ii/46395/5 on how to connect them.
+
 
 `AirSim's settings.json file <https://github.com/microsoft/AirSim/blob/master/docs/settings.md>`__ specifies the vehicle and it's various properties. See the page for the options available.
 
