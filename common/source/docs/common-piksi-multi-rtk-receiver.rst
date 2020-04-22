@@ -32,4 +32,4 @@ However, RTK GPS can only calculate centimeter-accurate positions once an intege
 ArduPilot Integration
 =====================
 
-See the `ArduPilot Integration Guide for Piksi Multi <https://support.swiftnav.com/customer/portal/articles/2803651-piksi-multi-ardupilot-integration-guide>`__ supplied by Swift Navigation.
+See the `ArduPilot Integration Guide for Piksi Multi <https://support.swiftnav.com/support/solutions/articles/44001850784-piksi-multi-ardupilot-integration-guide>`__ supplied by Swift Navigation.
