@@ -431,9 +431,26 @@ To use a real serial device you can use a command like this:
 
 what that does it pass the --uartB argument to the ardupilot code,
 telling it to use /dev/ttyUSB0 instead of the normal internal simulated
-GPS for the 2nd UART.
+GPS for the 2nd UART. You can find the SITL serial port mappings :ref:`here <sitl-serial-mapping>`
 
 Any of the 5 UARTs can be configured in this way, using uartA to uartE.
+The standard serial ports SERIAL1 and SERIAL2 are uartC and uartD respectively.
+
+Typically serial devices can be connected to a computer's USB port through
+an FTDI adapter, but note that these generally do not support half-duplex.
+In order to communicate with devices in this way you should make sure your 
+user has appropriate access on linux-type systems to the dialout group. On
+WSL it is also usually necessary to setup the port once the device has been connected
+before trying to interact with it through SITL. For instance for COM22:
+
+::
+   stty -F /dev/ttyS22 raw 115200
+
+You can set additional parameters on the uart in the connection string, so for instance
+to use a device on SERIAL1 at 115k baud only, specify:
+
+::
+   sim_vehicle.py -v ArduCopter -A "--uartC=uart:/dev/ttyUSB0:115200" --console --map
 
 Similar to this if you were running a vehicle in SITL via Cygwin on
 Microsoft Windows and you wanted to send the MAVLink output through a
