@@ -337,7 +337,7 @@ Notify (notify:)
 - :code:`play_tune( tune )` - Plays a MML tune through the buzzer on the vehicle. The tune is provided as a string.
 
 
-Vehicle (vehicle)
+Vehicle (vehicle:)
 ~~~~~~~~~~~~~~~~~
 
 - :code:`set_mode( mode_number )` - Attempts to change vehicle (in this example Plane) mode to mode_number. Returns true if successful, false if mode change is not successful.
