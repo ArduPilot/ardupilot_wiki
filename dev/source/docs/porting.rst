@@ -143,7 +143,7 @@ The key things you must have in your hwdef-bl.dat are:
 
 - You must set FLASH_BOOTLOADER_LOAD_KB to the location in kilobytes where the main code will start. This should be the same as FLASH_RESERVE_START_KB from your main hwdef.dat.
 - you must set FLASH_RESERVE_START_KB to zero (so the bootloader is placed at the start of flash)
-- Your UART_ORDER will control what ports the bootloader will be active on. Just having OTG1 for USB is fine, or you can list some serial UARTs.
+- Your SERIAL_ORDER will control what ports the bootloader will be active on. Just having OTG1 for USB is fine, or you can list some serial UARTs.
 
 To build the bootloader you do the following:
 

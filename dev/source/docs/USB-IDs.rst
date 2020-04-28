@@ -14,7 +14,7 @@ Composite Devices
 In the information below some IDs are marked as being for composite
 USB devices. These are for boards which will present two serial
 interfaces for one USB connection. Boards that use composite IDs will
-have both OTG1 and OTG2 in their UART_ORDER declaration in the
+have both OTG1 and OTG2 in their SERIAL_ORDER declaration in the
 hwdef.dat for the board. These devices should have a different USB
 VID/PID pair from non-composite boards to allow the correct driver to
 be loaded on Microsoft Windows.
