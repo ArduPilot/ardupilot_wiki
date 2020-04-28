@@ -338,7 +338,7 @@ Notify (notify:)
 
 
 Vehicle (vehicle:)
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 - :code:`set_mode( mode_number )` - Attempts to change vehicle (in this example Plane) mode to mode_number. Returns true if successful, false if mode change is not successful.
 
