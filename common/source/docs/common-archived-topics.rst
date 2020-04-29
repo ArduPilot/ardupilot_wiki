@@ -49,6 +49,7 @@ value to users with old hardware.
     Copter Project News <project-news>
     Troubleshooting <troubleshooting>
     Landing Gear <landing-gear>
+    ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     [/site]
 [site wiki="rover"]
     Pre-4.0 Rover Avoidance <rover-object-avoidance>
@@ -62,6 +63,7 @@ value to users with old hardware.
     Mandatory Hardware Configuration <first-time-apm-setup>
     Normal/Elevon/VTail Mode & Reversing Servos <reversing-servos-and-setting-normalelevon-mode>
     Channel Output Functions <channel-output-functions>
+    ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
 [/site]
 [site wiki="dev"]
 .. toctree::

@@ -4,7 +4,7 @@
 Hex HereFlow Optical Flow Sensor
 ================================
 
-[copywiki destination="copter"]
+[copywiki destination="copter,plane"]
 
 The `HereFlow optical flow sensor <http://www.proficnc.com/all-products/185-pixhawk2-suite.html>`__ is a lightweight optical flow sensor including a short range lidar which uses the CAN protocol to communicate with the autopilot.  This can be used to improve horizontal position control especially in GPS denied environments.
 
@@ -45,3 +45,8 @@ Additional Notes
 
 - As with the :ref:`PX4Flow sensor <common-px4flow-overview>` a range finder is required to use the sensor for autonomous modes including :ref:`Loiter <loiter-mode>` and :ref:`RTL <rtl-mode>`
 - :ref:`FlowHold <flowhold-mode>` does not require the use of a rangefinder
+
+Testing and Setup
+-----------------
+
+See :ref:`common-optical-flow-sensor-setup`

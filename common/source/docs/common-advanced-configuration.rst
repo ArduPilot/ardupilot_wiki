@@ -73,6 +73,7 @@ tuning options for the vehicle.
     Notch Filter Configuration <common-imu-notch-filtering>
 [/site]
     Object Avoidance <common-object-avoidance-landing-page>
+    Optical Flow Sensor <common-optical-flow-sensor-setup>
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
     RC Input Channel Mapping (RCMAP) <common-rcmap>

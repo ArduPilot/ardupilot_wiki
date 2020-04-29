@@ -4,7 +4,7 @@
 OpenMV for Optical Flow
 =======================
 
-[copywiki destination="copter"]
+[copywiki destination="copter,plane"]
 
 The `OpenMV camera <https://openmv.io/>`__ is a programmable camera which includes support for optical flow.
 
@@ -62,3 +62,8 @@ Additional Notes
 - As with the :ref:`PX4Flow sensor <common-px4flow-overview>` a range finder is required to use the sensor for autonomous modes including :ref:`Loiter <loiter-mode>` and :ref:`RTL <rtl-mode>`
 - :ref:`FlowHold <flowhold-mode>` does not require the use of a rangefinder
 - The sensor has been successfully tested to altitudes of about 10m
+
+Testing and Setup
+-----------------
+
+See :ref:`common-optical-flow-sensor-setup`

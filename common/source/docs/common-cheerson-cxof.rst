@@ -4,7 +4,7 @@
 Cheerson CX-OF Optical Flow
 ===========================
 
-[copywiki destination="copter"]
+[copywiki destination="copter,plane"]
 
 The Cheerson CX-OF optical flow sensor is a lightweight and low cost optical flow sensor which can be used to improve horizontal position control especially in GPS denied environments.
 
@@ -53,3 +53,8 @@ Additional Notes
 - :ref:`FlowHold <flowhold-mode>` does not require the use of a rangefinder
 - The sensor has been successfully tested to altitudes of about 40m
 - Uncheck the :ref:`ARMING_CHECK <ARMING_CHECK>` parameter's "Parameters" bit to remove the need to manually lift the vehicle to 1m once before takeoff (this pre-arm check is designed to ensure the range finder is working)
+
+Testing and Setup
+-----------------
+
+See :ref:`common-optical-flow-sensor-setup`
