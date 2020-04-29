@@ -1,8 +1,10 @@
 .. _common-mouse-based-optical-flow-sensor-adns3080:
 
-==========================================
-Mouse-based Optical Flow Sensor (ADNS3080)
-==========================================
+===================================================
+ARCHIVED:Mouse-based Optical Flow Sensor (ADNS3080)
+===================================================
+
+.. note:: This page is archived and the device is no longer supported in ArduPilot software
 
 [copywiki destination="copter,plane"]
 
