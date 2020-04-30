@@ -68,7 +68,7 @@ There are three key types of noise that are likely to affect your
 radios:
 
 -  Noise from the electronics in your aircraft (such as your motor, ESC,
-   APM etc)
+   autopilot etc)
 -  Noise from your ground station computer, especially its USB bus
 -  Noise from other people operating radios nearby that are on the same
    frequency as your radios
@@ -129,8 +129,9 @@ Serial and air rates 'one byte form'
 ====================================
 
 The ``SERIAL_SPEED`` and ``AIR_SPEED`` parameters are in the same form
-that APM uses for the ``SERIAL3_SPEED`` EEPROM parameter. It is the rate
-in kbps, truncated to an integer. So '9' means 9600 baud, '38' means
+that ArduPilot uses for the ``SERIAL3_SPEED`` parameter. If the number is
+greater than 2000, it is the baud rate.  Otherwise, it is the rate in
+kbps, truncated to an integer. So '9' means 9600 baud, '38' means
 38400, '115' means 115200 etc.
 
 Choosing the air data rate
@@ -142,7 +143,7 @@ of over a kilometre with small omni antennas. The lower you set the
 ``AIR_SPEED`` the longer your range, although lowering the ``AIR_SPEED``
 also lowers how much data you can send over the link.
 
-The radio firmware can only support 13 possible air date rates, which
+The radio firmware can only support 13 possible air data rates, which
 are 2, 4, 8, 16, 19, 24, 32, 48, 64, 96, 128, 192 and 250. If your
 application needs a different air rate for some reason then we can
 potentially add it to the register tables. If you choose an unsupported
@@ -155,7 +156,6 @@ What air data rate you choose will depend on the following factors:
 -  What data rate you will be sending
 -  Whether you primarily send in one direction, or both
 -  Whether you have ECC enabled
--  Whether you have an APM firmware with adaptive flow control
 
 For most telemetry applications you will primarily be sending data
 mostly in one direction, from the aircraft to the ground station. For
@@ -175,16 +175,15 @@ CRC to detect transmission errors. In that case your radio will be able
 to support data transfers in one direction of around 90% of the
 ``AIR_SPEED``.
 
-If you enable ECC (which is highly recommended), then the data rate you
+If you enable ECC, then the data rate you
 can support is halved. The ECC system doubles the size of the data sent
 by the radios. It is worth it however, as the bit error rate will drop
 dramatically, and you are likely to get a much more reliable link at
 longer ranges.
 
-If you have the latest APM firmware (Plane 2.33 or later, or Copter 2.54
-or later) then the APM will automatically adapt its telemetry rates to
+ArduPilot will automatically adapt its telemetry rates to
 what the radio can handle, by using MAVLink RADIO packets injected into
-the MAVLink streams by the radios firmware. That allows you to
+the MAVLink streams by the radio's firmware. That allows you to
 'oversubscribe' your link, by setting up a ``SERIAL_SPEED`` larger than
 what the radios can actually handle.
 
@@ -196,7 +195,7 @@ other radio takes just a few seconds at high air data rates, but gets
 slower for low air data rates.
 
 For most amateur UAV applications the default ``AIR_SPEED`` of 64 with
-ECC enabled will be good.
+no ECC enabled will be good.
 
 Error correction
 ================
@@ -209,7 +208,7 @@ and allows the radio to correct bit errors of up to 3 bits in every 12
 bits send (i.e. 25% bit error rate).
 
 The downside of the ECC option is that it halves your available data
-bandwidth, but in most cases this is worth it, as you are able to
+bandwidth.  In some cases this is worth it, as you are able to
 sustain a reliable link over longer ranges. You will also get a lot less
 'noise' in the serial stream.
 
@@ -217,7 +216,7 @@ MAVLink framing
 ===============
 
 If you set the MAVLINK option to 1 or 2 then the radio will do 'MAVLink
-framing'. The MAVLink protocol is used by APM for transmitting telemetry
+framing'. The MAVLink protocol is used by ArduPilot for transmitting telemetry
 date to a ground station. When MAVLink framing is used, the radio will
 try to align radio packets with MAVLink packet boundaries. This means
 that if a packet is lost you don't end up with half a MAVLink packet
@@ -251,9 +250,9 @@ station or aircraft to take action in case the link quality falls too
 low.
 
 The RADIO packets also contain information about error rates, and how
-full the serial transmit buffer is (as a percentage). The latest APM
-firmware can use this information to automatically adapt the telemetry
-stream rates to the data rate that the radios can sustain.
+full the serial transmit buffer is (as a percentage). ArduPilot can
+use this information to automatically adapt the telemetry stream rates
+to the data rate that the radios can sustain.
 
 Power levels
 ============
@@ -480,11 +479,11 @@ below 10%.
 When you set a duty cycle below 100% then your available bandwidth will
 be reduced, so you will find it will only work well for telemetry at
 higher baud rates. It is still quite practical to get good telemetry
-from an APM with a 10% duty cycle, as telemetry traffic is quite
+from ArduPilot with a 10% duty cycle, as telemetry traffic is quite
 'bursty', so the average transmit time is not generally high anyway.
 
 For example, you can easily receive all telemetry streams at 2Hz with
-``AIR_SPEED`` set to 128, ECC enabled and a ``DUTY_CYCLE`` set to 10.
+``AIR_SPEED`` set to 128, ECC enabled and ``DUTY_CYCLE`` set to 10.
 
 You can also set a radio to receive only by setting the ``DUTY_CYCLE``
 to 0. That will work best if you set ``NUM_CHANNELS`` to a low number,
@@ -559,8 +558,7 @@ Upgrading radio firmware
 ========================
 
 The firmware for the radios is `open source <https://github.com/ArduPilot/SiK>`__, and new features are
-regularly added. You should check for new releases regularly to get the
-most from your radios.
+sometimes added.
 
 The easiest way to upgrade is to:
 
@@ -633,8 +631,8 @@ If that approach doesn't work do the following:
 
 #. To verify wireless telemetry:
 
-   -  Remove the FTDI to USB cable from APM
-   -  Connect the air radio to APM & LIPO
+   -  Remove the FTDI to USB cable from the autopilot
+   -  Connect the air radio to the autopilot & LIPO
    -  In **MP \| Flight Data** tab select the ground radio COM port then
       click on **Connect**
 
@@ -726,7 +724,7 @@ algorithm then works as follows:
    buffered in a 2048 byte buffer
 -  to prevent the buffer from getting too much data (which increases
    latency and risks overflow) the radios send information on how full
-   the buffer is to the connected device. The APM code adapts its
+   the buffer is to the connected device. ArduPilot adapts its
    telemetry rates by small amounts to keep the amount of buffered data
    reasonable.
 -  The TDM algorithm is also adaptive, in the sense that when it is the
