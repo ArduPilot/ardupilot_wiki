@@ -16,3 +16,35 @@ What to do if you have an issue
 2. If this does not help you resolve the issue, then seek help on the `Discuss Forum <https://discuss.ardupilot.org/>`__ section appropriate to your vehicle or ground station. Do not enter issues on the GitHub software repositories or Gitter Developer Channels unless it has been confirmed as an actual issue in the code or documentation. Support will be given in the appropriate Discuss Forum.
 
 3. Having a :Ref:`dataflash log <common-diagnosing-problems-using-logs>` will help you, or someone helping you, to diagnose the issue.
+
+[site wiki="copter"]
+
+
+Copter Common Problems
+======================
+
+-  new copter flips immediately upon take-off.  This is usually caused
+   by the motor order being incorrect or spinning in the wrong direction
+   or using an incorrect propeller (clockwise vs counter-clockwise). 
+   Check the rc connections for your autopilot.
+-  copter wobbles on roll or pitch axis.  This usually means the Rate P
+   values are incorrect.  See :ref:`common-tuning` section for some hints as to
+   how to adjust these gains.
+-  copter wobbles when descending quickly.  This is caused by the copter
+   falling through it's own props wash and is nearly impossible to  tune
+   out although raising the Rate Roll/Pitch P values may help.
+-  copter yaw right or left 15degrees on take-off.  Some motors may not
+   be straight or the :ref:`ESCs have not been calibrated <esc-calibration>`.
+-  copter always tends to fly in one direction even in a windless
+   environment.  Try :ref:`SaveTrim or AutoTrim <autotrim>` to level the
+   copter.
+-  copter climbs rapidly even if the pilot pulls the throttle down. This is likely caused by high vibrations. See https://ardupilot.org/copter/docs/common-vibration-damping.html for methods to improve vibration isolation.
+-  occasional twitches in roll or pitch.  Normally caused by some kind
+   of interference on the receiver (for example FPV equipment placed too
+   close to the receiver) or by ESC problems that may be resolved by
+   :ref:`calibrating them <esc-calibration>`.
+-  sudden flips during flight.  This is nearly always caused by
+   :ref:`mechanical failures <common-diagnosing-problems-using-logs_mechanical_failures>`
+   of the motor or ESCs.
+
+[/site]
