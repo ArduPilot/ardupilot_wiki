@@ -69,3 +69,17 @@ Video of in-flight tuning
 
 ..  youtube:: NOQPrTdrQJM#t=145
     :width: 100%
+
+Verifying performance with dataflash logs
+=========================================
+
+Viewing the stabilize mode performance is best done by downloading a
+dataflash log from your flight, then open it with the mission planner
+and graph the ATT message’s Roll-In or DesRoll (pilot desired roll
+angle) vs Roll (actual roll) and Pitch-In or DesPitch (desired pitch
+angle) vs Pitch (actual pitch angle). These two should track well as
+shown below.
+
+.. image:: ../images/Tuning_StabilizeCheck.png
+    :target: ../_images/Tuning_StabilizeCheck.png
+
