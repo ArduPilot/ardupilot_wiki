@@ -84,9 +84,9 @@ The first 8 servo/motor outputs are marked on the board: M1,M2,S3-S8 . S9 is a s
 RC Input
 ========
 
-The SBUS pin can be used for all ArduPilot supported receiver protocols. However, there is an alternate board configuration selectable by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "1". In this case, the UART2 RX input (marked RX2 on the board) is used for the receiver input and is mapped to SERIAL7. This is to provide support for FPort in the future, since it requires a true UART. 
+The SBUS pin can be used for all ArduPilot supported receiver protocols. However, there is an alternate board configuration selectable by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "1". In this case, the UART2 RX input (marked RX2 on the board) is used for the receiver input and is mapped to SERIAL7. This is to provide support for FPort in firmware 4.1 and later, since it requires a true UART. 
 
-.. note:: In the alternate configuration, SBUS would need an external inverter before connection directly to RX2, but it can be still attached to the SBUS pin on the board since that is connected to an on-board inverter which is then connected to RX2. (and FPort will require an external bidirectional inverter circuit, like SPort requires)
+.. note:: In the alternate configuration, SBUS would need an external inverter before connection directly to RX2, but it can be still attached to the SBUS pin on the board since that is connected to an on-board inverter which is then connected to RX2. (and FPort will require an external bidirectional inverter circuit, like SPort requires, See  :ref:`FPort<common-FPort-receivers>` section.
 
 
 Where to Buy

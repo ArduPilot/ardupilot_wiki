@@ -64,13 +64,13 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
 - SERIAL2 -> UART2 (Telem2)
 - SERIAL3 -> UART3 (GPS)
 - SERIAL4 -> UART4
-- SERIAL6 -> UART6 (Transmit only, FrSky)
+- SERIAL6 -> UART6 (TX only unless :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, then RX available also)
 - SERIAL7 -> UART7 (Receive only, ESC Telemetry)
 
 RC Input
 ========
  
-RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols.
+RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for Fport  :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` should be set to 1 and configured as described in :ref:`FPort<common-FPort-receivers>` section.
  
 FrSky Telemetry
 ===============

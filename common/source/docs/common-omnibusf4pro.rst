@@ -58,11 +58,13 @@ GPS is attached to UART6 (SERIAL3)
 
 Telem is available at UART 1 (SERIAL1)
 
-The shared UART3/I2C pins are ,by default, enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.If at least one device attached externally, does not have pull-up resistors, then 2K ohm pull-up resistors will need to be added externally.
+The shared USART3/I2C pins are ,by default, enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.If at least one device attached externally, does not have pull-up resistors, then 2K ohm pull-up resistors will need to be added externally.
 
-However, by setting :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to 1, the external I2C connection is disabled, so that UART3 may be used as a normal UART. It is SERIAL2 in the parameters listings.
+However, by setting :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to 1, the external I2C connection is disabled, so that USART3 may be used as a normal UART. It is SERIAL2 in the parameters listings.
 
 The board's RSSI pad can be used as an analog RSSI input. Use pin "0" as the RSSI input pin in Mission Planner. Mission planner default values for battery voltage and current scales are provided, however since many variations of this board are available, these may needed to be manually calibrated.
+
+The RSSI pad can be re-purposed to be the TX output of UART4 instead of analog RSSI input, if the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` param is set to 2 or 3. And if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` param is set to 3, then PWM output pin 5 becomes instead, the RX pin of UART4 to provide a full addition UART.
 
 If you want to power the servos from the ESC BEC via the board's center rail for the servo outputs, then you should remove the diode as per here: https://www.rcgroups.com/forums/showthread.php?2874687, otherwise, independently power the servos directly from the ESC or independent BEC with no connection to the board's servo output center rail. The VCC pin next to the RX in pin is a 5V output only and not affected by this modification.
 
@@ -95,7 +97,7 @@ Default UART order
 - SERIAL1 = Telemetry1 = USART1
 - SERIAL2 = not assigned (Telemetry2 = USART3 if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` =1)
 - SERIAL3 = GPS1 = USART6
-- SERIAL4 = not assigned
+- SERIAL4 = GPS2 = UART4 (if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 2 or 3)
 - SERIAL5 = not assigned
 - SERIAL6 = not assigned
 
