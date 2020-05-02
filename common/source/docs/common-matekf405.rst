@@ -71,8 +71,14 @@ Default UART order
 - SERIAL2 = Telemetry2 = UART4
 - SERIAL3 = GPS1 = USART1
 - SERIAL4 = GPS2 = UART5
+- SEIRAL5 = User = USART2 (TX only unless :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, then RX is available)
 
 Serial protocols can be adjusted to personal preferences.
+
+Receiver input
+==============
+
+RC input is configured on the SBUS pin, which has an inverter driving USART2 RX. It supports all RC protocols, however for FPort, :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` should be set to 1 and configured as described in :ref:`FPort<common-FPort-receivers>` section, and directly use the UART2 pins instead of SBUS input.
 
 Dshot capability
 ================

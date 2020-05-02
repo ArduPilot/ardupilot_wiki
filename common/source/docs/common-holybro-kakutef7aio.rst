@@ -75,9 +75,9 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
    -  SERIAL3 -> UART3 (GPS)
    -  SERIAL4 -> UART4
    -  SERIAL5 -> UART7
-   -  SERIAL6 -> UART6 (Transmit only, FrSky)
+   -  SERIAL6 -> UART6 (TX only unless :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, then RX available also)
 
-The SERIAL5 port (UART7) is for ESC telemetry, and has a R7 pad on
+The SERIAL5 port (UART7) is normally for ESC telemetry, and has an R7 pad on
 each of the four corners of the KakuteF7 AIO board.
 
 
@@ -92,12 +92,11 @@ The PWM outputs are marked M1-M6 in the above pinouts. The corresponding servo o
     - M4 -> Servo Output 3
     - M5 -> Servo Output 5
     - M6 -> Servo Output 6
-    
 
 RC Input
 ========
  
-RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols.
+RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for FPort  :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` should be set to 1 and configured as described in :ref:`FPort<common-FPort-receivers>` section.
  
 FrSky Telemetry
 ===============
