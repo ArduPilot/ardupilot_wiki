@@ -15,9 +15,10 @@ parameters. The following topics shown you how.
 
     Tuning Process Instructions <tuning-process-instructions>
     AutoTune <autotune>
-    Roll and Pitch Tuning <ac_rollpitchtuning>
-    Advanced Tuning <tuning>
+    Manual Roll and Pitch Tuning <ac_rollpitchtuning>
     Basic Tuning <basic-tuning>
+    Advanced Tuning <tuning>
+    Transmitter Based Tuning <common-transmitter-tuning>
     Configuring Notch Filtering <common-imu-notch-filtering>
 
 -----

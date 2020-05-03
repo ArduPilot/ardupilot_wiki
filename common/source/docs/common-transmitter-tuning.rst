@@ -1,14 +1,15 @@
 .. _common-transmitter-tuning:
 
-[copywiki destination="plane"]
+[copywiki destination="plane,copter"]
 ========================
 Transmitter Based Tuning
 ========================
 
 You can perform extensive parameter tuning in flight using your R/C
 transmitter. This is meant for advanced users who are unable to use
-the autotune features or wish to do fine tuning with full manual
+the Autotune features or wish to do fine tuning with full manual
 tuning control of each parameter
+
 
 Overview
 ========
@@ -17,6 +18,8 @@ Transmitter based tuning allows you to tune a single parameter or a
 set of parameters while flying. The basic idea is to link the tuning
 value of a parameter to a knob or slider on your transmitter then to
 adjust the parameter in flight by moving the knob.
+
+[site wiki="plane"]
 
 Key features of transmitter based tuning are:
 
@@ -271,3 +274,145 @@ At that point you can land the vehicle, or just enjoy flying it.
 The first time you do a full tune in this way it will probably take
 about five minutes of flight time to do a tune. With some practice you
 can do a full tune in a bit over a minute.
+
+[/site]
+[site wiki="copter"]
+
+With transmitter based tuning you can tune a single or multiple parameters in flight using Channel 6 of the transmitter.
+
+The :ref:`TUNE<TUNE>` parameter determines which parameter is being tuned.
+
+The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the parameter when the channel is at :ref:`RC6_MAX<RC6_MAX>`, while the :ref:`TUNE_MIN<TUNE_MIN>` parameter determines the value when RC channle 6 is at :ref:`RC6_MIN<RC6_MIN>`.
+
+:ref:`TUNE<TUNE>` Values
+========================
+
++--------+-------------------------+----------------------------------------------------------------------+
+|Value	 |Meaning                  | Parameter                                                            |
++========+=========================+======================================================================+
+|0       |         None            |                                                                      |
++--------+-------------------------+----------------------------------------------------------------------+
+|1       |Stab Roll/Pitch kP       |  :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>` ,                               |
+|        |                         |  :ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>`                                 |
++--------+-------------------------+----------------------------------------------------------------------+
+|4       |Rate Roll/Pitch kP       |  :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Multi>` ,     |
+|        |                         |  :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`       |
++--------+-------------------------+----------------------------------------------------------------------+
+|5       |Rate Roll/Pitch kI       |  :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Multi>` ,     |
+|        |                         |  :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`       |
++--------+-------------------------+----------------------------------------------------------------------+
+|21      |Rate Roll/Pitch kD       |  :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>` ,     |
+|        |                         |  :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`       |
++--------+-------------------------+----------------------------------------------------------------------+
+|3       |Stab Yaw kP              |  :ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>`                                 |
++--------+-------------------------+----------------------------------------------------------------------+
+|6       |Rate Yaw kP              |  :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Multi>`       |
++--------+-------------------------+----------------------------------------------------------------------+
+|26      |Rate Yaw kD              |  :ref:`ATC_RAT_YAW_D<ATC_RAT_YAW_D__AC_AttitudeControl_Multi>`       |
++--------+-------------------------+----------------------------------------------------------------------+
+|56      |Rate Yaw Filter          |  :ref:`ATC_RAT_YAW_FLTE<ATC_RAT_YAW_FLTE__AC_AttitudeControl_Multi>` |
++--------+-------------------------+----------------------------------------------------------------------+
+|55      |Motor Yaw Headroom       |  :ref:`MOT_YAW_HEADROOM<MOT_YAW_HEADROOM>`                           |
++--------+-------------------------+----------------------------------------------------------------------+
+|14      |AltHold kP               |  :ref:`PSC_POSZ_P<PSC_POSZ_P>`                                       |
++--------+-------------------------+----------------------------------------------------------------------+
+|7       |Throttle Rate kP         |  :ref:`PSC_VELZ_P<PSC_VELZ_P>`                                       |
++--------+-------------------------+----------------------------------------------------------------------+
+|34      |Throttle Accel kP        |  :ref:`PSC_ACCZ_P<PSC_ACCZ_P>`                                       |
++--------+-------------------------+----------------------------------------------------------------------+
+|3       |Throttle Accel kI        |  :ref:`PSC_ACCZ_I<PSC_ACCZ_I>`                                       |
++--------+-------------------------+----------------------------------------------------------------------+
+|36      |Throttle Accel kD        |  :ref:`PSC_ACCZ_I<PSC_ACCZ_I>`                                       |
++--------+-------------------------+----------------------------------------------------------------------+
+|12      |Loiter Pos kP            |  :ref:`PSC_POSXY_P<PSC_POSXY_P>`                                     |
++--------+-------------------------+----------------------------------------------------------------------+
+|22      |Velocity XY kP           |  :ref:`PSC_POSXY_P<PSC_POSXY_P>`                                     |
++--------+-------------------------+----------------------------------------------------------------------+
+|28      |Velocity XY kI           |  :ref:`PSC_VELXY_I<PSC_VELXY_I>`                                     |
++--------+-------------------------+----------------------------------------------------------------------+
+|10      |WP Speed                 |  :ref:`WPNAV_SPEED<WPNAV_SPEED>`                                     |
++--------+-------------------------+----------------------------------------------------------------------+
+|25      |Acro RollPitch kP        | :ref:`ACRO_RP_P<ACRO_RP_P>`                                          |
++--------+-------------------------+----------------------------------------------------------------------+
+|40      |Acro Yaw kP              | :ref:`ACRO_YAW_P<ACRO_YAW_P>`                                        |
++--------+-------------------------+----------------------------------------------------------------------+
+|45      |RC Feel                  | :ref:`ATC_INPUT_TC<ATC_INPUT_TC>`                                    |
++--------+-------------------------+----------------------------------------------------------------------+
+|13      |Heli Ext Gyro            | :ref:`H_GYR_GAIN<H_GYR_GAIN>`                                        |
++--------+-------------------------+----------------------------------------------------------------------+
+|38      |Declination              | :ref:`COMPASS_DEC<COMPASS_DEC>`                                      |
++--------+-------------------------+----------------------------------------------------------------------+
+|39      |Circle Rate              | :ref:`CIRCLE_RATE<CIRCLE_RATE>`                                      |
++--------+-------------------------+----------------------------------------------------------------------+
+|41      |RangeFinder Gain         |  :ref:`RNGFND_GAIN<RNGFND_GAIN>`                                     |
++--------+-------------------------+----------------------------------------------------------------------+
+|46      |Rate Pitch kP            | :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`        |
++--------+-------------------------+----------------------------------------------------------------------+
+|47      |Rate Pitch kI            | :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`        |
++--------+-------------------------+----------------------------------------------------------------------+
+|48      |Rate Pitch kD            | :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`        |
++--------+-------------------------+----------------------------------------------------------------------+
+|49      |Rate Roll kP             | :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`        |
++--------+-------------------------+----------------------------------------------------------------------+
+|50      |Rate Roll kI             | :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`        |
++--------+-------------------------+----------------------------------------------------------------------+
+|51      |Rate Roll kD             | :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`        |
++--------+-------------------------+----------------------------------------------------------------------+
+|52      |Rate Pitch FF            | :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF>` (heli only)                    |
++--------+-------------------------+----------------------------------------------------------------------+
+|53      |Rate Roll FF             | :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF>` (heli only)                    |
++--------+-------------------------+----------------------------------------------------------------------+
+|54      |Rate Yaw FF              | :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF>` (heli only)                    |
++--------+-------------------------+----------------------------------------------------------------------+
+|57      |Winch                    | :ref:`WINCH__RATE_MAX<WINCH__RATE_MAX>`                              |
++--------+-------------------------+----------------------------------------------------------------------+
+|58      |SysID Magnitude          | :ref:`SIDS_MAGNITUDE<SID_MAGNITUDE>`                                 |
++--------+-------------------------+----------------------------------------------------------------------+
+
+
+These values can be either set manually or using Mission Planner
+
+
+Setting with Mission Planner
+============================
+
+Rate Roll P and Rate Pitch P will be used in the following example procedure
+
+.. image:: ../images/RollPitchTuning.png
+    :target: ../_images/RollPitchTuning.png
+
+#. Connect your autopilot to Mission Planner
+#. On Mission Planner, select Config/Tuning >> Copter Pids
+#. Set the CH6 Opt to "Rate Roll/Pitch kP"
+#. Set Min to 0.08, Max to 0.20 (most copters ideal gain is within this
+   range although from a small number of copter the Max can be as high
+   as 0.25)
+#. Push the "Write Params" button
+#. Turn your transmitter's CH6 tuning knob to the minimum position,
+   press the "Refresh Params" button and ensure that the Rate Roll P and
+   Rate Pitch P values become 0.08 (or something very close)
+#. Turn the CH6 knob to it's maximum position, press "Refresh Params"
+   and ensure the Rate Roll P moves to 0.20
+#. Move the CH6 knob back to the middle
+#. Arm and fly your copter in Stabilize mode adjusting the ch6 knob
+   until you get a copter that is responsive but not wobbly
+#. After the flight, disconnect your LiPo battery and reconnect the autopilot to the mission planner
+#. With the CH6 knob in the position that gave the best performance,
+   return to the Copter Pids screen and push the "Refresh Params" button
+#. In the Rate Roll P and Rate Pitch P fields re-type the value that you
+   see but just slightly modified so that the mission planner recongises
+   that it's changed and resends to the autopilot (Note: if you re-type
+   exactly the same number as what appears in Rate Roll P it won't be
+   updated).  So for example if the Rate Roll P appears as "0.1213" make
+   it "0.1200"
+#. Set Ch6 Opt back to "None" and push "Write Params"
+#. Push the Disconnect button on the top right, and the Connect
+#. Ensure that the Rate Roll P value is the value that you retyped in
+   step #12
+
+Note: while you are moving the tuning knob the values update at 3 times
+per second.  The need to press the Refresh button in the mission planner
+in steps #6 and #7 above is just because the Copter is not sending the
+updates to the mission planner in real-time.
+
+[/site]

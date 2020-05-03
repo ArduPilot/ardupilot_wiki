@@ -239,8 +239,7 @@ Once you have the heli responding nicely with the rate FF gain, now tune the
 PID gains. The rate PID controller provides stability to reject disturbances and
 keep the actual aircraft following the software predicted rates.
  
-Start with the D gain.  Use the tuning feature of ArduCopter which is linked to
-channel 6 on your radio.  Make the following parameter changes:
+Start with the D gain.  Use the :ref:`Transmitter based tuning<common-transmitter-tuning>` feature of ArduCopter.  Make the following parameter changes:
 
 +--------------------------------------------+---------+
 | :ref:`TUNE<TUNE>`                          | 21      |

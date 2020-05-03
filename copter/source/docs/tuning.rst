@@ -124,17 +124,7 @@ parameters including the horizontal speed.
 In-flight tuning
 ================
 
-A single parameter's value can be tuned in flight using the
-transmitter's Ch6 tuning knob.  A specific example for tuning the Rate
-Roll/Pitch P values can be found on the :ref:`Rate Roll and Pitch P tuning wiki page <ac_rollpitchtuning_in-flight_tuning>`.
-Please see the Ch6 Opt drop-down on the Mission Planner's
-**Config/Tuning \| Copter Pids**'s screen for a full list of parameters
-that can be tuned.
-
-After setting the Ch6 Opt value, the Min and Max should also be set to
-reasonable values (i.e. non-zero and also not unreasonably high) and
-then the "Refresh screen" button should be pushed by tuning the Ch6 knob
-to ensure that the parameter is updating correctly.
+See the :ref:`Transmitter based tuning<common-transmitter-tuning>` page for details.
 
 Filter tuning
 =============

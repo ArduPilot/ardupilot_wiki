@@ -194,16 +194,16 @@ When oscillations start do not make large or sudden stick inputs. Reduce the thr
 5. Reduce the P term in steps of 10% until the oscillation disappears
 6. Reduce the P term by a further 25%
 
-Each time the P term is changed set the I term equal to the P term. Those parameters can be changed on ground and preferably disarmed. A confident pilot could set them in flight with GCS or CH6 tuning knob.
+Each time the P term is changed set the I term equal to the P term. Those parameters can be changed on ground and preferably disarmed. A confident pilot could set them in flight with GCS or transmitter tuning knob (see :ref:`Transmitter based tuning<common-transmitter-tuning>` section).
 
-The ch6 tuning knob may be used to make these adjustments. If this is done set the minimum value of the tuning range to the current safe value and the upper range to approximately 4 times the current value. Be careful not to move the slider before the parameter list is refreshed to recover the set value. Ensure the ch6 tuning is switched off before setting the parameter value or the tuning may immediately overwrite it.
+If using :ref:`Transmitter based tuning<common-transmitter-tuning>` , set the minimum value of the tuning range to the current safe value and the upper range to approximately 4 times the current value. Be careful not to move the slider before the parameter list is refreshed to recover the set value. Ensure the transmitter tuning is switched off before setting the parameter value or the tuning may immediately overwrite it.
 
 Autotune
 --------
 
 If the aircraft appears stable enough to attempt autotune follow the instructions in the autotune page.
 
-There a number of problems that can prevent Autotune from providing a good tune. Some of the reason autotune can fail are:
+There a number of problems that can prevent Autotune from providing a good tune. Some of the reasons Autotune can fail are:
 
 - High levels of gyro noise.
 - Incorrect value of :ref:`MOT_THST_EXPO <MOT_THST_EXPO>`.
