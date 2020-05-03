@@ -13,16 +13,12 @@ non-linear thrust output of most ESCs and motors.
     Normally the parameters should not be adjusted unless the vehicle’s actual 
     thrust curve has been measured.
 
-.. note::
-
-    Motor thrust scaling was introduced in Copter 3.3.
-
 Thrust Curves
 =============
 
 The curve is controlled by two parameters:
 
--  **MOT_THST_EXPO** controls the shape of the thrust curve with "0"
+-  :ref:`MOT_THST_EXPO<MOT_THST_EXPO>` controls the shape of the thrust curve with "0"
    meaning a completely linear curve and "1.0" being very curved (see
    pictures below).  The default is "0.65" (the image below incorrectly
    states the default is 0.5).
@@ -30,7 +26,7 @@ The curve is controlled by two parameters:
 .. image:: ../images/MotThstExpo_graphs2.png
     :target: ../_images/MotThstExpo_graphs2.png
 
--  **MOT_THST_MAX** controls the point at which the thrust flattens
+-  :ref:`MOT_SPIN_MAX<MOT_SPIN_MAX>` controls the point at which the thrust flattens
    out near it's maximum.  By default this is 0.95 meaning 95% of full
    throttle.
 
@@ -45,7 +41,7 @@ The thrust stands listed below can be used to measure the PWM signal vs thrust o
 Parameter Calculation
 =====================
 
-A copy of this spreadsheet can be used to calculate the appropriate values from the thrust stand data above:
+A copy of `this spreadsheet <https://docs.google.com/spreadsheets/d/1_75aZqiT_K1CdduhUe4-DjRgx3Alun4p8V2pt6vM5P8/edit#gid=0>`__ can be used to calculate the appropriate values from the thrust stand data above.
 
-https://docs.google.com/spreadsheets/d/1_75aZqiT_K1CdduhUe4-DjRgx3Alun4p8V2pt6vM5P8/edit#gid=0
+
 
