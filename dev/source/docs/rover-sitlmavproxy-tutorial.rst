@@ -53,15 +53,14 @@ so you can observe the status and send commands at the same time.
 
 Starting
 ========
-Arm the rover by entering the following on the mavproxy console
+
+Change the rover into Guided mode and then arm it by entering the following on the mavproxy console
 ::
 
+    GUIDED
     arm throttle
 
-**Right-click** on the map at your target destination, select **Fly
-to**, and enter an altitude (which is ignored). Rover will change to
-``GUIDED`` mode, drive to the location, and then pause (still in GUIDED
-mode).
+**Right-click** on the map at your target destination, select **Fly to**, and enter an altitude (which is ignored). Rover should drive to the location, and then pause (still in Guided mode).
 
 .. figure:: ../images/MAVProxyRover_Guided_Menu.jpg
    :target: ../_images/MAVProxyRover_Guided_Menu.jpg
