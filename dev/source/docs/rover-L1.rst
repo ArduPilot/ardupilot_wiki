@@ -13,16 +13,16 @@ Overview
 .. image:: ../images/rover-navigation-overview.png
     :target: ../_images/rover-navigation-overview.png
 
--  on every iteration of the main loop (50hz) a call is made to the active mode's update method (`here is RTL's update function <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode_rtl.cpp#L37>`__).
-   While in Auto, Guide, RTL and SmartRTL mode, the update calls into the Mode class's `calc_steering_to_waypoint <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.cpp#L303>`__ method.
+-  on every iteration of the main loop (50hz) a call is made to the active mode's update method (`here is RTL's update function <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_rtl.cpp#L37>`__).
+   While in Auto, Guide, RTL and SmartRTL mode, the update calls into the Mode class's `calc_steering_to_waypoint <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp#L303>`__ method.
 
--  Mode's `calc_steering_to_waypoint <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.cpp#L303>`__ then call's the AP_L1_controller library's `update_waypoint method <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_L1_Control/AP_L1_Control.cpp#L198>`__ providing it the location that the rover should drive towards.
+-  Mode's `calc_steering_to_waypoint <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp#L303>`__ then call's the AP_L1_controller library's `update_waypoint method <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_L1_Control/AP_L1_Control.cpp#L198>`__ providing it the location that the rover should drive towards.
 
--  The AP_L1_controller's `update_waypoint method <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_L1_Control/AP_L1_Control.cpp#L198>`__ returns a desired lateral acceleration which is passed into Mode's `calc_steering_from_lateral_acceleration <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.cpp#L331>`__
+-  The AP_L1_controller's `update_waypoint method <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_L1_Control/AP_L1_Control.cpp#L198>`__ returns a desired lateral acceleration which is passed into Mode's `calc_steering_from_lateral_acceleration <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp#L331>`__
 
--  Mode's `calc_steering_from_lateral_acceleration <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.cpp#L331>`__ sends the desired acceleration to `APM_Control/AR_AttitudeControl's get_steering_out_lat_accel <https://github.com/ArduPilot/ardupilot/blob/master/libraries/APM_Control/AR_AttitudeControl.cpp#L158>`__ which uses a PID controller to calculate a steering output
+-  Mode's `calc_steering_from_lateral_acceleration <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp#L331>`__ sends the desired acceleration to `APM_Control/AR_AttitudeControl's get_steering_out_lat_accel <https://github.com/ArduPilot/ardupilot/blob/master/libraries/APM_Control/AR_AttitudeControl.cpp#L158>`__ which uses a PID controller to calculate a steering output
 
--  The steering output is sent into the AP_MotorsUGV library using the `set_steering  <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/AP_MotorsUGV.cpp#L146>`__ method
+-  The steering output is sent into the AP_MotorsUGV library using the `set_steering  <https://github.com/ArduPilot/ardupilot/blob/master/Rover/AP_MotorsUGV.cpp#L146>`__ method
 
 L1 Controller
 -------------

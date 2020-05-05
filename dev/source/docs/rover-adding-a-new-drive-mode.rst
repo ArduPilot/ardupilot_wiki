@@ -11,7 +11,7 @@ As a reference the diagram below provides a high level view of Rover's architect
 .. image:: ../images/rover_architecture.png
     :target: ../_images/rover_architecture.png
 
-#. Pick a name for the new mode (i.e. "NEW_MODE") and add it to the mode enum in `mode.h <https://github.com/ardupilot/ardupilot/blob/master/APMrover2/mode.h#L21>`__ as "NEW_MODE" has been added below.
+#. Pick a name for the new mode (i.e. "NEW_MODE") and add it to the mode enum in `mode.h <https://github.com/ardupilot/ardupilot/blob/master/Rover/mode.h#L21>`__ as "NEW_MODE" has been added below.
 
    ::
 
@@ -30,7 +30,7 @@ As a reference the diagram below provides a high level view of Rover's architect
         };
 
 #. Define a new class for the mode in
-   `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.h>`__.
+   `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.h>`__.
    It is probably easiest to copy a similar existing mode's class definition and just change the class name (i.e. copy and rename "class ModeAcro" to "class ModeNewMode").
    The new class must implement the ``mode_number()``, ``name4()`` and ``update()`` methods.
 
@@ -63,12 +63,12 @@ As a reference the diagram below provides a high level view of Rover's architect
         virtual bool auto_throttle() { return is_autopilot_mode(); }
 
 #. Create a new mode_<new flight mode>.cpp file based on a similar mode such as
-   `mode_acro.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode_acro.cpp>`__
+   `mode_acro.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_acro.cpp>`__
    or
-   `mode_steering.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode_steering.cpp>`__.
+   `mode_steering.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_steering.cpp>`__.
    This new file should implement the ``update()`` method which will be called 50 times per second.  This function's main responsibility is to decode the user's input, create new heading and steering targets and then call the steering and throttle controllers.
 
-   Below is an excerpt from `mode_acro.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode_acro.cpp>`__ that demonstrates how the pilot's input is converted into target speed (in meters/second) and a target turn rate.
+   Below is an excerpt from `mode_acro.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_acro.cpp>`__ that demonstrates how the pilot's input is converted into target speed (in meters/second) and a target turn rate.
 
    ::
 
@@ -82,8 +82,8 @@ As a reference the diagram below provides a high level view of Rover's architect
         // convert pilot steering input to desired turn rate in radians/sec
         float target_turn_rate = (desired_steering / 4500.0f) * radians(g2.acro_turn_rate);
 
-   Near the bottom of `mode_acro.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode_acro.cpp>`__ you will see how these targets are sent to the steering and throttle controllers.
-   The steering and throttle controller interfaces can be found in the `APM_Control/AR_AttitudeControl library <https://github.com/ArduPilot/ardupilot/blob/master/libraries/APM_Control/AR_AttitudeControl.h>`__.  The parent Mode class also provides some navigation methods that are defined in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.h#L69>`__ (search for "navigation methods").
+   Near the bottom of `mode_acro.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_acro.cpp>`__ you will see how these targets are sent to the steering and throttle controllers.
+   The steering and throttle controller interfaces can be found in the `APM_Control/AR_AttitudeControl library <https://github.com/ArduPilot/ardupilot/blob/master/libraries/APM_Control/AR_AttitudeControl.h>`__.  The parent Mode class also provides some navigation methods that are defined in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.h#L69>`__ (search for "navigation methods").
 
    ::
 
@@ -92,7 +92,7 @@ As a reference the diagram below provides a high level view of Rover's architect
         g2.motors.set_steering(steering_out * 4500.0f);
         calc_throttle(target_speed, false);
 
-#. Instantiate the new mode class in `Rover.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/Rover.h#L382>`__ by searching for "ModeAcro" and then adding the new mode somewhere below.
+#. Instantiate the new mode class in `Rover.h <https://github.com/ArduPilot/ardupilot/blob/master/Rover/Rover.h#L382>`__ by searching for "ModeAcro" and then adding the new mode somewhere below.
 
    ::
 
@@ -121,7 +121,7 @@ As a reference the diagram below provides a high level view of Rover's architect
             friend class ModeManual;
             friend class ModeRTL;
 
-#. In `mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.cpp>`__ add the new mode to the ``mode_from_mode_num()`` function to create the mapping between the mode's number and the instance of the class.
+#. In `mode.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.cpp>`__ add the new mode to the ``mode_from_mode_num()`` function to create the mapping between the mode's number and the instance of the class.
 
    ::
 
@@ -139,7 +139,7 @@ As a reference the diagram below provides a high level view of Rover's architect
                 ret = &mode_steering;
                 break;
 
-#. Add the new flight mode to the list of valid ``@Values`` for the ``MODE1 ~ MODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/Parameters.cpp#L242>`__ (Search for "MODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.  Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the MODE1 (or MODE2, etc) parameters to the number of the new mode.
+#. Add the new flight mode to the list of valid ``@Values`` for the ``MODE1 ~ MODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/Parameters.cpp#L242>`__ (Search for "MODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.  Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the MODE1 (or MODE2, etc) parameters to the number of the new mode.
 
    ::
 
@@ -163,5 +163,5 @@ As a reference the diagram below provides a high level view of Rover's architect
     :target: ../_images/rover_controllers.png
 
 - the L1 controller converts an origin and destination (each expressed as a latitude, longitude) into a lateral acceleration to make the vehicle travel along the path from the origin to the destination.  This lateral acceleration is then passed into the steering controller.
-- the steering controller can convert a desired lateral acceleration, a angle error or a desired turn rate into a steering output command (expressed as a number in the range -4500 to +4500) that should be fed into the motor library (see `AR_MotorsUGV.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/AP_MotorsUGV.h>`__)
-- the throttle controller can convert a desired speed into a throttle command (expressed as a number from -100 to +100) that should be fed into the motor library (see `AR_MotorsUGV.h <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/AP_MotorsUGV.h>`__)
+- the steering controller can convert a desired lateral acceleration, a angle error or a desired turn rate into a steering output command (expressed as a number in the range -4500 to +4500) that should be fed into the motor library (see `AR_MotorsUGV.h <https://github.com/ArduPilot/ardupilot/blob/master/Rover/AP_MotorsUGV.h>`__)
+- the throttle controller can convert a desired speed into a throttle command (expressed as a number from -100 to +100) that should be fed into the motor library (see `AR_MotorsUGV.h <https://github.com/ArduPilot/ardupilot/blob/master/Rover/AP_MotorsUGV.h>`__)

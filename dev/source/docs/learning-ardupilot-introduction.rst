@@ -27,7 +27,7 @@ Vehicle Code
 ------------
 
 The vehicle directories are the top level directories that define the
-firmware for each vehicle type.  Currently there are 4 vehicle types: Plane, Copter, APMrover2 and AntennaTracker.
+firmware for each vehicle type.  Currently there are 5 vehicle types: Plane, Copter, Rover, Sub and AntennaTracker.
 Although There are a lot of common elements between different vehicle types, they are each different. For now we only have a :ref:`detailed description of the code structure for the Copter code <apmcopter-code-overview>`.
 
 Along with the \*.cpp files, each vehicle directory contains a make.inc

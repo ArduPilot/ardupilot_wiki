@@ -4,7 +4,7 @@
 Balance Bot SITL/MAVProxy Tutorial
 ==================================
 
-If you are new to using SITL, please follow these :ref:`instructions<setting-up-sitl-on-linux>` to setup SITL. For executing SITL balance bot, navigate to the ardupilot/APMrover2 directory on terminal and execute the command:
+If you are new to using SITL, please follow these :ref:`instructions<setting-up-sitl-on-linux>` to setup SITL. For executing SITL balance bot, navigate to the ardupilot/Rover directory on terminal and execute the command:
 
 :: 
 

@@ -105,7 +105,7 @@ Complex Invocation
 
 ::
 
-   ./Tools/autotest/autotest.py --no-clean build.ArduCopter fly.ArduCopter build.APMrover2 drive.APMrover2 drive.balancebot build.ArduPlane fly.ArduPlane fly.Quadplane build.AntennaTracker build.ArduSub dive.ArduSub build.Helicopter fly.CopterAVC build.AntennaTracker test.AntennaTracker
+   ./Tools/autotest/autotest.py --no-clean build.Copter fly.Copter build.Rover drive.Rover drive.balancebot build.Plane fly.Plane fly.Quadplane test.Tracker build.Sub dive.Sub build.Helicopter test.Helicopter build.Tracker test.Tracker
 
 At time of writing, these invoke all the vehicle tests.  Expect these to take about 40 minutes to run.
 
@@ -147,7 +147,7 @@ AutoTest can run the ArduPilot binary under the Valgrind memcheck tool.  This is
 
 ::
 
-   ./Tools/autotest/autotest.py --no-clean --valgrind --debug build.APMrover2 drive.APMrover2
+   ./Tools/autotest/autotest.py --no-clean --valgrind --debug build.Rover drive.Rover
 
 Special log files (e.g. ``arducopter-+-valgrind.log``) are created by autotest when run with this tool.  They should always be empty at the end of an autotest run.
 
@@ -176,7 +176,7 @@ The mavlink telemetry logs are present in the "buildlogs" directory.  This direc
 ::
 
    pbarker@bluebottle:~/rc/ardupilot(master)$ ls -l ../buildlogs/*tlog
-   -rw-r--r-- 2 pbarker pbarker 2541216 Jul 27 12:11 ../buildlogs/APMrover2-test.tlog
+   -rw-r--r-- 2 pbarker pbarker 2541216 Jul 27 12:11 ../buildlogs/Rover-test.tlog
    pbarker@bluebottle:~/rc/ardupilot(master)$
 
 .. note::

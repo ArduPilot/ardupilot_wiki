@@ -43,4 +43,4 @@ Tuning** page:
 
    All parameters may be adjusted in the "Advanced Parameter List" in
    Mission Planner). All the Rover user settable parameters are listed in
-   :doc:`APMrover2 Parameters <parameters>`.
+   :doc:`Rover Parameters <parameters>`.

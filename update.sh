@@ -26,7 +26,7 @@ test -n "$FORCEBUILD" || {
         changed=1
     }
 
-    PARAMSITES="ArduPlane ArduCopter AntennaTracker APMrover2"
+    PARAMSITES="ArduPlane ArduCopter AntennaTracker Rover"
     mkdir -p old_params new_params
     for site in $PARAMSITES; do
         wget "https://autotest.ardupilot.org/Parameters/$site/Parameters.rst" -O new_params/$site.rst 2> /dev/null

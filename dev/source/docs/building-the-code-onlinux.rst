@@ -66,7 +66,7 @@ Build for Rover:
 
 ::
 
-    cd ardupilot/APMrover2
+    cd ardupilot/Rover
     make
 
 Build for Antenna Tracker:
