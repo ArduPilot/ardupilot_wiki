@@ -6,7 +6,7 @@ Bootloader
 
 The source code for the bootloaders can be found in `AP_Bootloader <https://github.com/ArduPilot/ardupilot/tree/master/Tools/AP_Bootloader>`__
 but pre-compiled binaries are available for many boards in the `Tools/Bootloaders <https://firmware.ardupilot.org/Tools/Bootloaders>`__ directory on our
-firmware server.  Please refer to the `README.txt <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.txt>`__ to see if one of the existing bootloaders is compatible for the new board.
+firmware server.  Please refer to the `README text <https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/README.md>`__ to see if one of the existing bootloaders is compatible for the new board.
 
 
 Flash the bootloader
@@ -19,7 +19,7 @@ We have currently two ways to flash the ArduPilot bootloader :
 With MavLink
 ------------
 
-ArduPilot firmware already include the bootloader. You can flash it using the mavlink command : MAV_CMD_FLASH_BOOTLOADER with parameter 5 at 290876
+ArduPilot firmware already include the bootloader. You can flash it using the mavlink long command : MAV_CMD_FLASH_BOOTLOADER with parameter 5 at 290876
 
 Mavproxy
 ........
