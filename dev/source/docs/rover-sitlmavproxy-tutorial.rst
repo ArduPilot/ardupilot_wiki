@@ -42,7 +42,7 @@ using the ``--map`` and ``--console`` options:
 
 ::
 
-    cd ~/ardupilot/APMrover2
+    cd ~/ardupilot/Rover
     sim_vehicle.py --map --console
 
 Arrange the *MAVProxy Command Prompt*, *Console* and *Map* conveniently

@@ -63,7 +63,7 @@ The following steps will get you running with the Skid Rover example.
 
 ::
 
-   Tools/autotest/sim_vehicle.py -v APMrover2 --model morse-skid --add-param-file=libraries/SITL/examples/Morse/rover_skid.parm --console --map
+   Tools/autotest/sim_vehicle.py -v Rover --model morse-skid --add-param-file=libraries/SITL/examples/Morse/rover_skid.parm --console --map
 
 - A window like below should appear:
 
@@ -82,7 +82,7 @@ The following steps will get you running with the Separate Steering and Throttle
 
 ::
 
-   Tools/autotest/sim_vehicle.py -v APMrover2 --model morse-rover --add-param-file=libraries/SITL/examples/Morse/rover.parm --console --map
+   Tools/autotest/sim_vehicle.py -v Rover --model morse-rover --add-param-file=libraries/SITL/examples/Morse/rover.parm --console --map
 
 
 - Use the ArduPilot SITL console to control the vehicle (i.e. "arm throttle" to arm the vehicle, "rc 1 " to control steering "rc 3" to control throttle, etc)
@@ -129,7 +129,7 @@ Then start ArduPilot SITL, using the morse-skid simulation backend
 
 ::
 
-   Tools/autotest/sim_vehicle.py -v APMrover2 --model morse-skid --add-param-file=libraries/SITL/examples/Morse/rover_scanner.parm --console --map
+   Tools/autotest/sim_vehicle.py -v Rover --model morse-skid --add-param-file=libraries/SITL/examples/Morse/rover_scanner.parm --console --map
 
 That will give you something like this:
 

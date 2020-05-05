@@ -224,7 +224,7 @@ The Subsys (aka Sub-system) gives the area that generated the error and the ECod
 
 Vehicle was unable to enter the desired flight mode normally because of a bad position estimate
 
-See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h#L14>`__ for Copter, `Plane modes here <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/mode.h#L15>`__, and `Rover modes here <https://github.com/ArduPilot/ardupilot/blob/master/APMrover2/mode.h#L19>`__
+See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h#L14>`__ for Copter, `Plane modes here <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/mode.h#L15>`__, and `Rover modes here <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode.h#L19>`__
 
 .. raw:: html
 

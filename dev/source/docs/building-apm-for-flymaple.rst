@@ -84,7 +84,7 @@ How to build APM for Flymaple on Linux.
 
 ::
 
-    cd APMrover2
+    cd Rover
      make flymaple
      make upload
 

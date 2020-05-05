@@ -19,7 +19,7 @@ Most ground stations (aka GCS) provide an editable list of parameters to the use
 +---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 |Plane          |`html <https://ardupilot.org/plane/docs/parameters.html>`__         |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduPlane/apm.pdef.xml>`__     |
 +---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-|Rover          |`html <https://ardupilot.org/rover/docs/parameters.html>`__         |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/APMrover2/apm.pdef.xml>`__     |
+|Rover          |`html <https://ardupilot.org/rover/docs/parameters.html>`__         |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/Rover/apm.pdef.xml>`__     |
 +---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 |Submarine      | unavailable                                                        |`apm.pdef.xml <https://autotest.ardupilot.org/Parameters/ArduSub/apm.pdef.xml>`__       |
 +---------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+

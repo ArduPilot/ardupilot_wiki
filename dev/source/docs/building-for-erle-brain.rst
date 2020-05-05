@@ -77,7 +77,7 @@ file.
 .. note::
 
    If building for Plane, Rover or Antenna Tracker replace the above
-   "ArduCopter" with "ArduPlane", "APMrover2" or "AntennaTracker".
+   "ArduCopter" with "ArduPlane", "Rover" or "AntennaTracker".
 
 Move firmware to the executable directory
 -----------------------------------------

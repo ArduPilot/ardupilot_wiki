@@ -144,7 +144,7 @@ the plane or rover by changing the ``-v`` option:
 ::
 
     vagrant ssh -c "sim_vehicle.py -j 2 -v ArduPlane"
-    vagrant ssh -c "sim_vehicle.py -j 2 -v APMrover2"
+    vagrant ssh -c "sim_vehicle.py -j 2 -v Rover"
 
 .. tip::
 
