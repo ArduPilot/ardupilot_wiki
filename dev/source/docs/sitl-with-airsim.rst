@@ -13,15 +13,13 @@ It is open-source, cross-platform and provides excellent physically and visually
 
 Currently, support for Copter & Rover vehicles has been developed in AirSim & ArduPilot.
 
-.. note::
-
-    This has been tested with everything in single Linux machine with Ubuntu 16.04, 18.04 as well as with AirSim running in Windows 10 & ArduPilot inside WSL (Ubuntu 18.04)
+The integration been tested with both running on a single Linux machine and separate machines also with Ubuntu 16.04, 18.04 as well as with AirSim running in Windows 10 & ArduPilot inside WSL (Ubuntu 18.04). It is possible to run AirSim on MacOS, however integration with ArduPilot hasn't been tested on that.
 
 AirSim is an excellent platform for testing and developing systems based on Computer Vision, etc. on simulated vehicles. It's a very feature-rich simulator with detailed environments and APIs (Python, C++, ROS) for collecting data. See the `main Airsim Readme <https://github.com/microsoft/AirSim#welcome-to-airsim>`__ for details and the features available.
 
 A demo of AirSim running with ArduPilot SITL
 
-.. youtube:: 0kE6gc7pn8M
+.. youtube:: ElFAqtpEfKo
     :width: 100%
 
 A list of topics for easier navigation in the page-
@@ -29,9 +27,9 @@ A list of topics for easier navigation in the page-
 #. `Install AirSim <https://ardupilot.org/dev/docs/sitl-with-airsim.html#installing-airsim>`__
 
    * `Build on Windows <https://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-windows>`__
-   * `Build on Linux <https://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-linux>`__
+   * `Build on Linux, MacOS <https://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-linux-macos>`__
 
-#. `Setup Unreal Environment <https://ardupilot.org/dev/docs/sitl-with-airsim.html#setup-unreal-environemt>`__
+#. `Setup Unreal Environment <https://ardupilot.org/dev/docs/sitl-with-airsim.html#setup-unreal-environment>`__
 
 #. `Using AirSim with ArduPilot <https://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-with-ardupilot>`__
 
@@ -59,6 +57,8 @@ Installing AirSim
 
 `Binaries <https://github.com/microsoft/AirSim/releases>`__ are available for AirSim for Windows and Linux platforms, ``v1.3.0`` and later have support for Copter and Rover included. Binaries are a quick and easy way to test out the features without installing Unreal Engine, etc. Just download the precompiled environments and run to get started immediately. Many different types of environments are available, some notable ones include LandscapeMountains, City and Neighbourhood.
 
+If you're using the binaries, then you can directly skip to `Using AirSim with ArduPilot <https://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-with-ardupilot>`__ section. Also see `this Readme <https://github.com/microsoft/AirSim/blob/master/docs/use_precompiled.md#dont-have-good-gpu>`__ for some useful commandline options to improve the performance.
+
 For development and testing out new features, you'll have to build AirSim from source. The setup instructions for building from source are described below.
 
 
@@ -74,10 +74,10 @@ The main page for Windows setup is `here <https://github.com/microsoft/AirSim/bl
 Run ``build.cmd`` from the command line. This will create ready to use plugin bits in the ``Unreal\Plugins`` folder that can be dropped into any Unreal project.
 
 
-Build on Linux
---------------
+Build on Linux, MacOS
+---------------------
 
-AirSim's page on Linux Setup is `here <https://github.com/microsoft/AirSim/blob/master/docs/build_linux.md>`__, please see the FAQs if there are any problems
+AirSim's page on Linux & MacOS Setup is `here <https://github.com/microsoft/AirSim/blob/master/docs/build_linux.md>`__, please see the FAQs if there are any problems. Note that only MacOS **Catalina (10.15)** is supported.
 
 #. `Build Unreal Engine <https://github.com/microsoft/AirSim/blob/master/docs/build_linux.md#build-unreal-engine-and-airsim>`__ - After registering with Epic Games, you'll need to link your Github account with this, please see this `page <https://www.unrealengine.com/en-US/blog/updated-authentication-process-for-connecting-epic-github-accounts>`__ on how to link it.
 
@@ -98,8 +98,8 @@ AirSim's page on Linux Setup is `here <https://github.com/microsoft/AirSim/blob/
             ./build.sh
 
 
-Setup Unreal Environemt
------------------------
+Setup Unreal Environment
+------------------------
 
 Finally, you will need an Unreal project that hosts the environment for your vehicles. AirSim comes with a built-in "Blocks Environment" which you can use, or you can create your own.
 
@@ -113,7 +113,7 @@ For using another environment, check the information at the end of the page.
 Using AirSim with ArduPilot
 ---------------------------
 
-Make sure that you have setup ArduPilot SITL, completed the Unreal Environment setup or have the binaries downloaded and verified that both are working individually before proceeding.
+Make sure that you have :ref:`setup ArduPilot SITL <dev:building-the-code>`, completed the Unreal Environment setup or have the binaries downloaded and verified that both are working individually before proceeding. If you aren't familiar with SITL, see :ref:`Examples of using SITL <dev:sitl-examples>`.
 
 .. note::
 
@@ -160,7 +160,7 @@ For using ArduCopter, the settings are as follows-
 
 .. note::
 
-    Earlier, ``SitlPort`` was used in place of ``ControlPort`` in the settings. This change is applicable in the latest AirSim master. The update is backwards-compatible so even if you're using ``SitlPort``, it'll work.
+    Earlier, ``SitlPort`` was used in place of ``ControlPort`` in the settings. This change is applicable in the latest AirSim master & binaries `v1.3.0` and later. The update is backwards-compatible so even if you're using ``SitlPort``, it'll work.
 
 First launch AirSim, after that launch the ArduPilot SITL using
 
@@ -221,7 +221,7 @@ First launch AirSim, after that launch the ArduPilot SITL using
 
     sim_vehicle.py -v Rover -f airsim-rover --console --map
 
-The other features, etc. described in this page have settings, commands and files specific for Copter, but can be used for Rover as well. Certain files such as scripts and ``settings.json`` will need to be modified for Rover, seperate settings for Rover have not been added so as to keep the page managable and navigatable.
+The other features, etc. described in this page have settings, commands and files specific for Copter, but can be used for Rover as well. Certain files such as scripts and ``settings.json`` will need to be modified for Rover, separate settings for Rover have not been added so as to keep the page managable and navigatable.
 
 You might need to tune the vehicle for proper usage, the param files for AirSim vehicles in `Tools/autotest/default_params <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/default_params>`__ can be modified directly, or you can create a new param file and pass it's location to SITL using ``--add-param-file`` option in ``sim_vehicle.py``.
 
@@ -377,13 +377,13 @@ First is the `multi_vehicle.sh script <https://github.com/ArduPilot/ardupilot/tr
     libraries/SITL/examples/Airsim/multi_vehicle.sh <IP>
 
 
-The `multi_uav_ros_sitl.launch file <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Airsim/multi_uav_ros_sitl.launch>`__ demonstrates how to write a launch file controlling multiple vehicles with Mavros. It creates a different namespace for each drone and each drone has a seperate SYSID and ports according to how the script sets the variables.
+The `multi_uav_ros_sitl.launch file <https://github.com/ArduPilot/ardupilot/tree/master/libraries/SITL/examples/Airsim/multi_uav_ros_sitl.launch>`__ demonstrates how to write a launch file controlling multiple vehicles with Mavros. It creates a different namespace for each drone and each drone has a separate SYSID and ports according to how the script sets the variables.
 Launching the file -
 ::
 
     roslaunch libraries/SITL/examples/Airsim/multi_uav_ros_sitl.launch
 
-Seperate MAVProxy instance can be launched for each drone by connecting to the TCP ports opened by the script for each drone. The UDP ports can't be used for this if Mavros is already running since Mavros will use the UDP ports.
+Separate MAVProxy instance can be launched for each drone by connecting to the TCP ports opened by the script for each drone. The UDP ports can't be used for this if Mavros is already running since Mavros will use the UDP ports.
 
 The ``multi_vehicle.sh`` script doesn't enable the Follow Mode, but if this is also needed and if all the vehicles are to be displayed on the same GCS, then multicast and the Follow parameters as done in the ``follow-copter.sh`` script can be added.
 
