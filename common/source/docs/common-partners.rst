@@ -351,4 +351,12 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: https://krausaerospace.com
 
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_Argosdyne.png
+            :width: 250px
+            :align: center
+            :target: http://argosdyne.com/en
+
+      -
+
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
