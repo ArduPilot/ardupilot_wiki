@@ -129,7 +129,7 @@ Non-GPS Navigation, Avoidance and Path Planning
 
 - 3D Bendy Ruler & Object Database (Randy, Patrick Poirier)
 - Add support for Intel RealSense D435 (ROS & non-ROS) (Patrick, GSoC)
-- Bendy Ruler try re-implementing bendy ruler as Lua (Tridge, Patrick Poirier)
+- Bendy Ruler try re-implementing bendy ruler as Lua (Tridge)
 - Copter & Rover back away from objects (Randy, Patrick Poirier)
 - Improve Off-Board SLAM and Object Avoidance (:ref:`dev wiki link<ros-cartographer-slam>`) (Randy, Jaime, Patrick Poirier)
 - Improve reliability of T265 integration (reset handling, failsafe testing) (Randy, Jaime, Patrick Poirier)
