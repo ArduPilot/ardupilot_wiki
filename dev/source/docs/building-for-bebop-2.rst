@@ -39,19 +39,19 @@ Install armhf toolchain
 -----------------------
 
 #. Install Parrot's version of linaro *arm-linux-gnueabihf* toolchain that can be downloaded from
-   `here <https://github.com/Parrot-Developers/toolchains/blob/master/parrot-tools-linuxgnutools-2016.02-linaro_1.0.0-2_amd64.deb>`__
+   `here <https://firmware.parrot.com/Toolchains/parrot-tools-linuxgnutools-2016.02-linaro_1.0.0-5_amd64.deb>`__
 
 #. Install it (the toolchain will be extracted in /opt)
 
    ::
 
-       sudo dpkg -i parrot-tools-linuxgnutools-2016.02-linaro_1.0.0-2_amd64.deb
+       sudo dpkg -i parrot-tools-linuxgnutools-2016.02-linaro_1.0.0-5_amd64.deb
 
 #. Add the path to the toolchain to the PATH variable
 
    ::
 
-       export PATH=/opt/arm-2016.02-linaro/bin:$PATH
+       export PATH=/opt/arm-2016.05-linaro/bin:$PATH
 
 Download and compile ArduCopter
 -------------------------------
