@@ -3907,7 +3907,8 @@ MAV_CMD_DO_SET_CAM_TRIGG_DIST
 Supported by: Copter, Plane, Rover.
 
 Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` at
-regular distance intervals. This command is useful in :ref:`camera survey missions <common-camera-control-and-auto-missions-in-mission-planner>`.
+regular distance intervals. This command is useful in :ref:`camera survey missions <common-camera-control-and-auto-missions-in-mission-planner>`. 
+To trigger the camera once, immediately after passing the DO command, set param3 to 1.  Trigger immediately parameter3 is available from ArduPilot 4.1 onwards.
 
 .. note::
 
@@ -3937,11 +3938,9 @@ regular distance intervals. This command is useful in :ref:`camera survey missio
    <td></td>
    <td>Empty</td>
    </tr>
-   <tr style="color: #c0c0c0">
-   <td>param3</td>
-   <td>
-   </td>
-   <td>Empty</td>
+   <td><strong>param3</strong></td>
+   <td>?</td>
+   <td>Trigger once instantly. One is on, zero is off.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
