@@ -51,7 +51,7 @@ Install armhf toolchain
 
    ::
 
-       export PATH=/opt/arm-2016.05-linaro/bin:$PATH
+       export PATH=/opt/arm-2016.02-linaro/bin:$PATH
 
 Download and compile ArduCopter
 -------------------------------
