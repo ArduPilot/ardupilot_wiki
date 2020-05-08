@@ -29,7 +29,7 @@ released by Jordi/3DRobotics
 
 Nov 2009 - `ArduPilot code repository <https://code.google.com/p/ardupilot/>`__ created by Jordi
 
-Nov 2009 - first version of ArduIMU written by Jordi, Doug Weibel, Jose
+Nov 2009 - First version of ArduIMU written by Jordi, Doug Weibel, Jose
 Julio using DCM from William Premerlani
 
 Nov 2009 - Feb 2010 – ArduPilot rewritten from scratch (v2.5) by Jason
@@ -38,7 +38,7 @@ Loiter, Circle, Crosstrack correction, decent stabilization,
 Fly-By-Wire, system events, 4 channel RC output, and 2-way telemetry.
 (`Post <https://diydrones.com/profiles/blogs/ardupilot-25-final>`__)
 
-Dec 2009 - `first IMU based autonomous plane mission <https://diydrones.com/profiles/blogs/arduimupilot-flys-first>`__
+Dec 2009 - `First IMU based autonomous plane mission <https://diydrones.com/profiles/blogs/arduimupilot-flys-first>`__
 flown by Doug with modified ArduPilot v2.4.
 
 2010 - APM1 released by 3d Robotics
@@ -81,7 +81,7 @@ is released by Michael Oborne
 Aug 2010 - `TradHeli support <https://vimeo.com/14135066>`__\ added by
 Randy
 
-Dec 2010 - first successful fork of ArduPilot code as `MegaPirates group extends original CopterNG code <https://diydrones.com/profiles/blogs/arducopter-ng-taken-over-by>`__
+Dec 2010 - First successful fork of ArduPilot code as `MegaPirates group extends original CopterNG code <https://diydrones.com/profiles/blogs/arducopter-ng-taken-over-by>`__
 
 April 2011 – First fully autonomous Copter mission flown by Jason at
 `Sparkfun AVC <https://diydrones.com/profiles/blogs/acm-at-the-avc>`__
@@ -107,7 +107,7 @@ by \ `ETH (Lorenz Meier,MikeS) <https://pixhawk.org/>`__ / 3D Robotics
 Aug 2012 - Hardware Abstraction Layer (AP_HAL) by Pat Hickey simplifies
 adding support for other boards
 
-Oct 2012 - first `TradHeli autonomous mission <https://www.youtube.com/watch?v=Rugt1gYb-1M>`__ by Rob Lefebvre
+Oct 2012 - First `TradHeli autonomous mission <https://www.youtube.com/watch?v=Rugt1gYb-1M>`__ by Rob Lefebvre
 
 Oct 2012 - Tridge and CanberraUAV `win Outback Challenge with APM2 & Pandaboard <https://diydrones.com/profiles/blogs/canberrauav-outback-challenge-2012-debrief>`__
 
@@ -165,12 +165,12 @@ Oct 2014 - `DroneCode foundation <https://www.dronecode.org/>`__ is
 formed
 (`announcement <https://diydrones.com/profiles/blogs/introducing-the-dronecode-foundation>`__)
 
-Oct 2014 - first report of Plane being successfully used in search &
+Oct 2014 - First report of Plane being successfully used in search &
 rescue including finding a missing light plane in Florida.
 
 Feb 2015 - `Erle Robotics <http://erlerobotics.com>`__ launches DIY kits for Linux drones based on APM.
 
-May 2015 - first documented multi-vehicle flight using only a single
+May 2015 - First documented multi-vehicle flight using only a single
 ground station (`first
 three <https://diydrones.com/profiles/blogs/multi-vehicle-testing-with-apm-copter-tracker-and-mission-planner>`__,
 `then fifty! <https://diydrones.com/profiles/blogs/from-zero-to-fifty-planes-in-twenty-seven-minutes>`__).
