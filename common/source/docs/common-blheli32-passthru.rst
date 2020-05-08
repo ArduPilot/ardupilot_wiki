@@ -6,6 +6,8 @@ BLHeli_32 Pass-Through Support
 .. note::
    ArduPilot firmware supports the pass-through protocol with up-to-date BLHeli_32 firmware and BLHeliSuite32 only.
 
+.. warning:: For pass-through to function, the :ref:`motor protocol <MOT_PWM_TYPE>` (Copter,Rover) or :ref:`Q_M_PWM_TYPE<Q_M_PWM_TYPE>` (QuadPlane) must be set to a digital protocol, ie. one of the DShot protocols. If you wish to use one of the other protocols, just reset the motor protocol after using pass-through to change motor directions or set min/max values. The autopilot must be re-booted after a protocol change.
+
 BLHeli_32 pass-through protocol allows you to configure and upgrade your ESCs without having to disconnect them from your vehicle. You can plug a USB cable into your autopilot and run the BLHeliSuite32 software for Windows to configure your ESCs. ArduPilot firmware supports the pass-through protocol with BLHeli_32 only.
 
 The following section shows how to setup BLHeli_32 pass-through support:
