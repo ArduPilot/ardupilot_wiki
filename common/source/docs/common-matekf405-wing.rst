@@ -88,6 +88,23 @@ The SBUS pin can be used for all ArduPilot supported receiver protocols. However
 
 .. note:: In the alternate configuration, SBUS would need an external inverter before connection directly to RX2, but it can be still attached to the SBUS pin on the board since that is connected to an on-board inverter which is then connected to RX2. (and FPort will require an external bidirectional inverter circuit, like SPort requires, See  :ref:`FPort<common-FPort-receivers>` section.
 
+Battery Monitor Configuration
+=============================
+These settings are set as defaults when the firmware is loaded. However, if they are ever lost, you can manually set the parameters:
+
+Enable Battery monitor.
+
+:ref:`BATT_MONITOR<BATT_MONITOR>` =4
+
+Then reboot.
+
+:ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 10
+
+:ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 11
+
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
+
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 31.7 
 
 Where to Buy
 ============
