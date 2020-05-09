@@ -69,9 +69,9 @@ to AUTOTUNE once you have gained altitude.
 
 When you engage AUTOTUNE mode a few things will happen:
 
--  the autotune system will immediately setup some default values for
+-  the autotune system will immediately setup some values for
    your roll and pitch I and D gains, and your roll and pitch maximum
-   rates. These values depend on the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` .
+   rates. These values depend on the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` and current P value, from which it will start tuning.
 -  the autotune system will monitor your demanded roll and pitch rates
    (as determined by your transmitter stick movements). When the
    demanded roll or pitch rate exceeds 80% of the maximum rate the
@@ -110,9 +110,10 @@ for at least 20 iterations.
 
 If your initial tuning values were too low then you should notice the
 aircraft becomes progressively more responsive as you fly in AUTOTUNE
-mode. If the aircraft ever becomes unstable enough that you think it is
-dangerous to keep flying then you should change out of AUTOTUNE mode.
-That will restore the parameters you had from 10 seconds ago.
+mode. 
+
+.. note:: If the aircraft ever becomes unstable enough that you think it is dangerous to keep flying then you should change out of AUTOTUNE mode. That will restore the parameters you had from 10 seconds ago.
+
 
 Don't stop too early
 ~~~~~~~~~~~~~~~~~~~~
