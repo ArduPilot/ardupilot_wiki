@@ -17,7 +17,7 @@ Configuration and Setup
     - GPS(optional)
     - Telemetry(optional)
 
-#. :ref:`Install GCS<common-install-gcs>` (Mission Planner recommended) and :ref:`upload rover firmware<common-loading-firmware-onto-pixhawk>`
+#. :ref:`Install GCS<common-install-gcs>` (Mission Planner recommended) and :ref:`upload rover firmware<common-loading-firmware-onto-pixhawk>`, if ArduPilot firmware already is installed, or :ref:`Loading Firmware onto boards without existing ArduPilot firmware (first time only) <common-loading-firmware-onto-chibios-only-boards>`
 #. Perform all the :ref:`hardware calibration<rover-code-configuration>` steps for:
 
     - :ref:`Accelerometer<common-accelerometer-calibration>`

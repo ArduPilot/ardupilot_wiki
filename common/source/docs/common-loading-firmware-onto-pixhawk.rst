@@ -4,7 +4,7 @@
 Loading Firmware
 ================
 
-These instructions will show you how to download the latest firmware onto the autopilot using the Mission Planner ground station.
+These instructions will show you how to download the latest firmware onto the autopilot using the Mission Planner ground station,which already has ArduPilot firmware installed . See :ref:`common-loading-firmware-onto-chibios-only-boards` .
 
 [copywiki destination="copter,plane,rover,planner"]
 

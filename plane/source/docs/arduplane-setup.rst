@@ -15,8 +15,8 @@ give you a taste:
 
     Install Ground Station Software <common-install-gcs>
     Autopilot System Assembly <autopilot-assembly-instructions>
-    Loading Firmware to Pixhawk boards <common-loading-firmware-onto-pixhawk>
-    Loading Firmware to ChibiOS-only boards <common-loading-firmware-onto-chibios-only-boards>
+    Loading Firmware to boards with existing ArduPilot firmware <common-loading-firmware-onto-pixhawk>
+    Loading Firmware to boards without existing ArduPilot firmware <common-loading-firmware-onto-chibios-only-boards>
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Configuration <plane-configuration-landing-page>
     Airframe Specific Setup Guides <airframe-guides>

@@ -7,10 +7,7 @@ Loading the Firmware
 Before loading Firmware, you need to choose which :ref:`autopilot hardware <common-autopilots>` to use.
 All supported autopilots are suitable for use with AntennaTracker.
 The antenna tracker firmware can be loaded from the Mission Planner's
-**Initial Setup \| Install Firmware** very :ref:`much like Copter. <planner:common-loading-firmware-onto-pixhawk>`
-
-Use Mission Planner's Install Firmware screen to load the firmware
-==================================================================
+**Setup \| Install Firmware** very :ref:`much like any other vehicle <common-loading-firmware-onto-pixhawk>` if ArduPilot firmware is already loaded.
 
 .. image:: ../images/AntennaTracker_MP_LoadFirmware.jpg
     :target: ../_images/AntennaTracker_MP_LoadFirmware.jpg
@@ -23,6 +20,8 @@ Use Mission Planner's Install Firmware screen to load the firmware
    that appear and after a minute or so the firmware should be uploaded
    and you should be able to connect with the mission planner and see
    the Flight Data screen's HUD update.
+   
+If non-ArduPilot firmware is loaded on the autopilot, see :ref:`these instructions <common-loading-firmware-onto-chibios-only-boards>` for instructions to download a version of antennatracker_with_bl.hex firmware and install.
 
 .. note::
 
@@ -31,8 +30,3 @@ Use Mission Planner's Install Firmware screen to load the firmware
    installed on the board (i.e. Copter or Plane) it is likely the EEPROM
    will have been erased by the firmware upload.
 
-.. note::
-
-   Firmware for other boards (APM1, Flymaple, etc) cannot be loaded
-   directly from the mission planner but must be compiled and loaded onto
-   the board more manually.

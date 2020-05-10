@@ -36,6 +36,8 @@ Then you can either:
 - :ref:`Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>` in order to receive telemetry and control the vehicle OR
 - :ref:`Load Firmware <common-loading-firmware-onto-pixhawk>`
 
+.. note:: If ArduPilot firmware is not already installed on the autopilot, see :ref:`Loading Firmware to boards without existing ArduPilot firmware <common-loading-firmware-onto-chibios-only-boards>`.
+
 Updating Mission Planner
 ========================
 
