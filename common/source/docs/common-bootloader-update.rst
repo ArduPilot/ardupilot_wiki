@@ -26,7 +26,7 @@ The ArduPilot specific bootloader is included within the ArduPilot firmware but 
 Upgrading using Mission Planner
 -------------------------------
 
-- Install a recent version of ArduPilot to the autopilot (:ref:`Pixhawk family <common-loading-firmware-onto-pixhawk>`, :ref:`ChibiOS-only autopilots <common-loading-firmware-onto-chibios-only-boards>`)
+- Install a recent version of ArduPilot to the autopilot (:ref:`with existing ArduPilot firmware <common-loading-firmware-onto-pixhawk>`, :ref:`without existing ArduPilot firmware <common-loading-firmware-onto-chibios-only-boards>`)
 - Connect and check that the autopilot has at least 20k of free memory.  Open the Data screen's Quick tab, double click on any entry and the select "freemem".
 
   .. image:: ../../../images/bootloader-update-MP-memory-check.png

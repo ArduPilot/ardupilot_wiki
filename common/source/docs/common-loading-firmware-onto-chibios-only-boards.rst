@@ -1,11 +1,13 @@
 .. _common-loading-firmware-onto-chibios-only-boards:
 
-=========================================
-Loading Firmware onto ChibiOS-only boards
-=========================================
+================================================================
+Loading Firmware onto boards without existing ArduPilot firmware
+================================================================
 
 Recent versions of ArduPilot (Copter-3.6, Plane-3.9, Rover-3.5) run on relatively small, non-Pixhawk, autopilots using the ChibiOS operating system.
 Examples of these boards include the :ref:`OpenPilot RevoMini <common-openpilot-revo-mini>`, :ref:`Mateksys F405-Wing <common-matekf405-wing>` and :ref:`Omnibus F4 Pro <common-omnibusf4pro>`.
+
+Most often, these boards have another flight controller software pre-installed. (If the board has ArduPilot already installed, see :ref:`common-loading-firmware-onto-pixhawk` for firmware loading instructions.
 
 Installing ArduPilot to these autopilot involves:
 
