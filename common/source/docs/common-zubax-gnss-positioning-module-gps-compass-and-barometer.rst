@@ -9,8 +9,8 @@ positioning module for outdoor environments with doubly redundant `UAVCAN <https
 bus interface. It includes a state-of-the-art GPS/GLONASS receiver, a
 high-precision barometer and a 3-axis compass.
 
-.. figure:: ../../../images/Zubax-gnss-top-bottom.jpg
-   :target: ../_images/Zubax-gnss-top-bottom.jpg
+.. figure:: ../../../images/ZubaxGNSS2.jpg
+   :target: ../_images/ZubaxGNSS2.jpg
 
    Zubax GNSS 2: GPS, Compass and Barometer
 
