@@ -52,3 +52,4 @@ List of simulators (so they can appear in the menu):
     HITL Simulators <hitl-simulators>
     Autotest Framework <the-ardupilot-autotest-framework>
     SCRIMMAGE <sitl-with-scrimmage>
+    Webots <sitl-with-webots>
