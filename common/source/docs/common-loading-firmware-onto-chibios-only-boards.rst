@@ -50,7 +50,7 @@ Download the ArduPilot firmware
   - select click on the link for your vehicle type (i.e. `Plane <https://firmware.ardupilot.org/Plane/>`__, `Copter <https://firmware.ardupilot.org/Copter/>`__, `Rover <https://firmware.ardupilot.org/Rover/>`__, `Sub <https://firmware.ardupilot.org/Sub/>`__ or `Antenna Tracker <https://firmware.ardupilot.org/AntennaTracker/>`__)
   - select "beta" or "stable"
   - look for the directory with the name that most closely matches the autopilot
-  - download the "arduXXX_with_bl.hex" file
+  - download the "arduXXX_with_bl.hex" file by right clicking and using the "save link as.." menu item. Remember where you saved it!
 
 Upload ArduPilot to the board
 -----------------------------
@@ -59,7 +59,7 @@ Upload ArduPilot to the board
 
   - Select "Firmware Flasher" on the left side of the screen
   - Select DFU from the top right
-  - Push "Load Firmware [Local]" from the bottom right and select the arduXXX_with_bl.hex file downloaded above
+  - Push "Load Firmware [Local]" from the bottom right and select the arduXXX_with_bl.hex file you downloaded above.
   - Push "Flash Firmware" and after a few minutes the firmware should be loaded
 
   .. image:: ../../../images/loading-firmware-betaflight-configurator.png
