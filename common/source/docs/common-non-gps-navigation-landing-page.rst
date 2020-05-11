@@ -20,6 +20,7 @@ These are the available options that allow a vehicle to estimate its position wi
     OptiTrack motion capture system <common-optitrack>
 [/site]
     Pozyx Beacons <common-pozyx>
+    ROS with Google Cartographer (Developers only) <https://ardupilot.org/dev/docs/ros-cartographer-slam.html>
     Vicon Positioning System <common-vicon-for-nongps-navigation>
     Visual Odometry with OpenKai and ZED <common-zed>
     Intel RealSense T265 <common-vio-tracking-camera>
