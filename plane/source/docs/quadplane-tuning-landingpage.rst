@@ -13,3 +13,4 @@ QuadPlane's have independent tuning of VTOL modes stability, altitude, and posit
     QuadPlane VTOL Tuning Overview<quadplane-vtol-tuning>
     QuadPlane VTOL Tuning Process<quadplane-vtol-tuning-process>
     Motor Thrust Scaling <motor-thrust-scaling>
+    Notch Filter Configuration <common-imu-notch-filtering>
