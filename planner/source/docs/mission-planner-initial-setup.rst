@@ -4,9 +4,8 @@
 Mission Planner Initial Setup
 =============================
 
-DRAFT
 
-This section of Mission Planner, invoked by the Menu item Initial Setup
+This section of Mission Planner, invoked by the Menu item  ``Setup``
 at the top of Mission Planner, has several subsections. The subsection
 are where you set up and configure you auto pilot to prepare it for your
 particular vehicle. Typically these sections are "must do" actions that
@@ -22,44 +21,37 @@ Install Firmware
 You will see this menu item If the auto pilot is Not connected. If you
 have a new auto pilot or if you want to update the control software that
 resides in you autopilot, you must install (upload) the
-:ref:`firmware <common-glossary>` into it. Before you jump to the
-details for your auto pilot some basic information is important
+:ref:`firmware <common-glossary>` into it.
 
-Add words about where is the firmware, must have internet connection,
-how do you select the right version, beta version, what are the funny
-numbers you see in previous revisions - click one and you will see all
-the versions under each vehicle icon. .
+The firmware is located at `firmware.ardupilot.org <https://firmware.ardupilot.org>`__ .
+If the autopilot has ArduPilot firmware already installed, you can use this page to upload firmware for different vehicles or version. See this :ref:`Loading firmware <common-loading-firmware-onto-pixhawk>` page. Otherwise, you must use other methods than Mission Planner for getting ArduPilot installed for the first time, see this :ref:`section<common-loading-firmware-onto-chibios-only-boards>` . 
 
-Here are the details for each auto pilot: :ref:`Install Firmware <common-loading-firmware-onto-pixhawk>`
+From this screen you can also select "All Options" allowing you to select and load any variation of the firmware, or "Load custom firmware", most often used when a developer has trial code to load.
 
-3DR Radio
-~~~~~~~~~
+Install Firmware Legacy
+~~~~~~~~~~~~~~~~~~~~~~~
 
-You will see this menu item If the auto pilot is Not connected.  Here is
-what you can do in this section  TBD
+Yet another way load older versions of the firmware. Again, shown only when not connected.
 
-Antenna Tracker
-~~~~~~~~~~~~~~~
-
-You will see this menu item If the auto pilot is Not connected.  Here is
-what you can do in this section TBD
 
 Mandatory Hardware
 ~~~~~~~~~~~~~~~~~~
 
 You will see this menu item If the auto pilot IS connected.  Click this
-menu item to see the items you must complete before you attempt to
-operate your vehicle.  Specifics are located in the area of the web that
-covers you specific vehicle (Copter, Plane, Rover)
+menu item to see the items you must setup before you attempt to
+operate your vehicle.  Specifics are located in the Ardupilot.org documents which
+cover you specific vehicle (Copter, Plane, Rover).
 
-Here is what you can do in this section (TBD just an overview)
 
 Optional Hardware
 ~~~~~~~~~~~~~~~~~
 
-You will see this menu item If the auto pilot IS connected.  Click this
-menu item to see the items you may want to complete before you attempt
-to operate your vehicle.  Specifics are located in the area of the web
-that covers you specific vehicle (Copter, Plane, Rover)
+This submenu allows the configuration of optional devices, many of which can be configured while Mission Planner is unconnected. Programming of the Sik  Telemetry Radio, UAVCAN setup, PX4 Optical Flow sensor,Antenna Tracker can be done here, as well as setup of a joystick to be used in conjunction with Mission Planner.
 
-Here is what you can do in this section (TBD just an overview)
+
+When connected, peripherals such as Battery Monitors, Integrated OSD, Airspeed Sensors, and Rangefinders can be configured. Also, this submenu has a Motor Test function allowing you to test direction and order of Copter and Quadplane Motors.
+
+Advanced
+~~~~~~~~
+
+This section is for advanced users only.
