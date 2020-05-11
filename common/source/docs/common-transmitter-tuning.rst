@@ -382,8 +382,8 @@ Rate Roll P and Rate Pitch P will be used in the following example procedure
     :target: ../_images/RollPitchTuning.png
 
 #. Connect your autopilot to Mission Planner
-#. On Mission Planner, select Config/Tuning >> Copter Pids
-#. Set the CH6 Opt to "Rate Roll/Pitch kP"
+#. On Mission Planner, select CONFIG>>Extended Tuning
+#. Set the TUNE drop down box option to "Rate Roll/Pitch kP"
 #. Set Min to 0.08, Max to 0.20 (most copters ideal gain is within this
    range although from a small number of copter the Max can be as high
    as 0.25)
