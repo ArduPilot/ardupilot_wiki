@@ -48,6 +48,7 @@ Applications and Info
     :maxdepth: 1
 
     FlightDeck FrSky Transmitter App <common-frsky-flightdeck>
+    MAVLink2 Packet Signing (Security) <common-MAVLink2-signing>
     Repeater for Wireless Ground Station Connections <common-wireless-gcs-repeater>
     Telemetry Radio Regional Regulations <common-telemetry-radio-regional-regulations>
 
