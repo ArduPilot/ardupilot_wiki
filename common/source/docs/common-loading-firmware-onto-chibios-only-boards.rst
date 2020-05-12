@@ -51,7 +51,7 @@ Download the ArduPilot firmware
   - select "beta" or "stable"
   - look for the directory with the name that most closely matches the autopilot
   - download the "arduXXX_with_bl.hex" file clicking on it. It will usually be saved in your Downloads folder.
-  - 
+
 Upload ArduPilot to the board
 -----------------------------
 
