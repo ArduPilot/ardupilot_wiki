@@ -59,6 +59,7 @@ tuning options for the vehicle.
 [/site]
     LUA Scripting <common-lua-scripts>
     Magnetic Interference <common-magnetic-interference>
+    MAVLink2 Packet Signing (Security) <common-MAVLink2-signing>
 [site wiki="rover"]
     Motor Thrust Scaling <rover-motor-thrust-scaling>
 [/site]
@@ -73,7 +74,9 @@ tuning options for the vehicle.
     Notch Filter Configuration <common-imu-notch-filtering>
 [/site]
     Object Avoidance <common-object-avoidance-landing-page>
+[site wiki="copter,plane"]
     Optical Flow Sensor <common-optical-flow-sensor-setup>
+[/site]
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
     RC Input Channel Mapping (RCMAP) <common-rcmap>
