@@ -30,7 +30,6 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
    
     Introduction <docs/gettit>
     Autopilot Hardware Options <docs/common-autopilots>
-    Firmware Limitations on AutoPilot Hardware <docs/common-limited-firmware>
     First Time Setup <docs/apmrover-setup>
     First Drive <docs/rover-first-drive>
     If A Problem Arises <docs/common-when-problems-arise>

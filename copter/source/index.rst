@@ -174,7 +174,6 @@ Getting more info
    
    Introducing Copter <docs/introduction>
    AutoPilot Hardware Options <docs/common-autopilots>
-   Firmware Limitations on AutoPilot Hardware <docs/common-limited-firmware>
    First Time Setup <docs/initial-setup>
    First Flight <docs/flying-arducopter>
    If A Problem Arises <docs/common-when-problems-arise>
