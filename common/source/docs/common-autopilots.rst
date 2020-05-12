@@ -70,6 +70,17 @@ Closed hardware
 
 .. note:: For more information on using ArduPilot on Linux based boards, see :ref:`building-the-code`
 
+Firmware Limitations
+--------------------
+
+Some boards have features removed in order to fit the firmware into their memory capacity. See the section below:
+
+.. toctree::
+    :maxdepth: 1
+
+    Firmware Limitations <common-limited-firmware>
+    
+
 Discontinued boards
 -------------------
 The following boards are no longer produced, however documentation is still available in the wiki or online, and recent builds are still expected to work.  These boards are not recommended for new projects.
