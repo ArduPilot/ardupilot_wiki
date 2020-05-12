@@ -21,6 +21,59 @@ Installing ArduPilot to these autopilot involves:
 
 [copywiki destination="copter,plane,rover,planner"]
 
+Download driver and flashing tool
+---------------------------------
+
+The `STM32CubeProgrammer <https://www.st.com/en/development-tools/stm32cubeprog.html>`__ will install the required DFU (direct firmware upload) drivers and can be used to flash the firmware to autopilots in DFU mode. This is available for Windows, Linux, and MacOS systems. Download and install this program. You may be required to also install `JAVA <https://java.com/en/download/>`__ in order to setup this program.
+
+Download the ArduPilot firmware
+-------------------------------
+
+- Download the ArduPilot firmware for your board from `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__.  You can normally find the appropriate firmware by doing the following:
+
+  - open `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__
+  - select click on the link for your vehicle type (i.e. `Plane <https://firmware.ardupilot.org/Plane/>`__, `Copter <https://firmware.ardupilot.org/Copter/>`__, `Rover <https://firmware.ardupilot.org/Rover/>`__, `Sub <https://firmware.ardupilot.org/Sub/>`__ or `Antenna Tracker <https://firmware.ardupilot.org/AntennaTracker/>`__)
+  - select "beta" or "stable"
+  - look for the directory with the name that most closely matches the autopilot
+  - download the "arduXXX_with_bl.hex" file clicking on it. It will usually be saved in your Downloads folder.
+
+Upload the firmware to autopilot
+--------------------------------
+
+- Hold down the board's DFU button or temporarily bridge its "BOOT" pins, and plug in a USB cable (attached to your PC). Release button or unbridge once powered.
+- Open the windows device manager and look under "Universal Serial Bus devices" for "STM32 BOOTLOADER" to confirm that the board is in DFU mode.
+
+  .. image:: ../../../images/loading-firmware-device-manager.png
+      :target: ../_images/loading-firmware-device-manager.png
+      :width: 450px
+
+
+- Start the STM32CubeProgrammer
+
+.. image:: ../../../images/STM32CubeProgrammer1.jpg
+      :target: ../_images/STM32CubeProgrammer1.jpg
+
+
+#. Select the connection method: USB
+#. Make sure a USB port shows...that means the board is detected in DFU mode.
+#. Press "Connect"
+#. Then the boards cpu specifics will appear here.
+#. Press "Open file" to select the "arduXXX_with_bl.hex" file you downloaded.
+#. The file name will appear in the tab.
+
+.. image:: ../../../images/STM32CubeProgrammer2.jpg
+      :target: ../_images/STM32CubeProgrammer2.jpg
+
+
+7. Press "Download" to flash the file to the board.
+
+
+You may now reboot the board and :ref:`connect with your favourite ground station <common-connect-mission-planner-autopilot>` (Mission Planner, QGC, etc) and future firmware uploads should also be possible using the normal method for Pixhawk boards.
+
+Alternate method
+================
+
+
 Download and Install Zadig (Windows only)
 -----------------------------------------
 
@@ -32,14 +85,15 @@ Download and Install Zadig (Windows only)
       :target: ../_images/loading-firmware-zadig.png
       :width: 450px
 
-- Optionally you may wish to check the board is visible as a USB port:
+- Optionally, you may wish to check the board is visible as a USB port:
 
   - Hold down the board's DFU button and plug in a USB cable (attached to your PC)
-  - Open the windows device manager and look under "Universal Serial Bus devices" for "STM32 BOOTLOADER"
+  - Open the windows device manager and look under "Universal Serial Bus devices" for "STM32 BOOTLOADER" to confirm that the board is in DFU mode.
 
   .. image:: ../../../images/loading-firmware-device-manager.png
       :target: ../_images/loading-firmware-device-manager.png
       :width: 450px
+
 
 Download the ArduPilot firmware
 -------------------------------
@@ -66,8 +120,6 @@ Upload ArduPilot to the board
       :target: ../_images/loading-firmware-betaflight-configurator.png
       :width: 450px
 
-.. note::
 
-    We expect future versions of Mission Planner and QGroundControl will allow uploading firmware via DFU which will remove the requirement to use the Betaflight Configurator
 
 You may now reboot the board and :ref:`connect with your favourite ground station <common-connect-mission-planner-autopilot>` (Mission Planner, QGC, etc) and future firmware uploads should also be possible using the normal method for Pixhawk boards.
