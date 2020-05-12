@@ -50,8 +50,8 @@ Download the ArduPilot firmware
   - select click on the link for your vehicle type (i.e. `Plane <https://firmware.ardupilot.org/Plane/>`__, `Copter <https://firmware.ardupilot.org/Copter/>`__, `Rover <https://firmware.ardupilot.org/Rover/>`__, `Sub <https://firmware.ardupilot.org/Sub/>`__ or `Antenna Tracker <https://firmware.ardupilot.org/AntennaTracker/>`__)
   - select "beta" or "stable"
   - look for the directory with the name that most closely matches the autopilot
-  - download the "arduXXX_with_bl.hex" file by right clicking and using the "save link as.." menu item. Remember where you saved it!
-
+  - download the "arduXXX_with_bl.hex" file clicking on it. It will usually be saved in your Downloads folder.
+  - 
 Upload ArduPilot to the board
 -----------------------------
 
