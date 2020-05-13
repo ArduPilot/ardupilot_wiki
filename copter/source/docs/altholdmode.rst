@@ -53,7 +53,7 @@ throttle stick.
    10% above and below mid throttle (i.e. deadband extends from 40% to
    60% throttle stick position).
 
-AC3.1 and later allow arming and disarming in altitude hold mode. When
+Copter allows arming and disarming in altitude hold mode. When
 disarming, the copter may need to rest in the landing position for a few
 seconds to allow the "landing checker" to verify that the copter has
 landed before you are able to disarm.
@@ -96,11 +96,7 @@ barometer altitude, desired altitude and inertial navigation based
 altitude estimate.  This data is found in slight different columns
 depending upon the version and board.
 
-APM running AC3.1: graph CTUN's BarAlt (baro alt), WPAlt (desired
-altitude) and the GPS message's RelAlt (inertial nav alt estimate)
-
-APM running AC3.2 or Pixhawk running AC3.1 or AC3.2: CTUN's BarAlt (baro
-alt), DAlt (desired alt) and Alt (inertial nav alt estimate)
+CTUN's BAlt (baroalt), DAlt (desired alt) and Alt (inertial nav alt estimate)
 
 The three should track well as shown below.
 
