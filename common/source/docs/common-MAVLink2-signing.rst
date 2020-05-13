@@ -23,13 +23,11 @@ Configuration
 
 The dialog will show a list of all the passkeys already setup for Mission Planner. 
 
-- This dialog can be used to create new keys using the ``ADD`` button.A key may be removed from the list by selecting and pressing delete on the PC. You can also do this while unconnected.
+- This dialog can be used to create new keys using the ``ADD`` button.A key may be removed from the list by selecting and pressing delete on the PC and then the ``SAVE`` button5350. You can also do this while unconnected.
 
 - To setup the autopilot to use a key from the list, press the ``USE`` button on a key while connected.
 
 - To remove and disable signing for a connected autopilot, press the ``Disable Signing`` button.
-
-.. note:: there is an issue currently in Mission Planner that prevents connecting to an autopilot with signing already active. Currently, you must connect with signing disabled (except via USB) and disable signing if you wish to connect again over the air. QGC can connect, but is not enabled for signing, so only telemetry is shown.
 
 
 
