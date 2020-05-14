@@ -383,6 +383,9 @@ Servo Channels (SRV_Channels:)
 
 - :code:`get_output_pwm(output_function)` - Returns first servo output PWM value an output assigned output_function (See ``SERVOx_FUNCTION`` parameters ). False if none is assigned.
 
+- :code:`set_output_pwm_chan_timeout(channel, pwm, timeout)` - Sets servo channel to specified PWM for a time in ms. This overrides any commands from the autopilot until the timeout expires.
+
+
 Servo Output
 ~~~~~~~~~~~~
 
