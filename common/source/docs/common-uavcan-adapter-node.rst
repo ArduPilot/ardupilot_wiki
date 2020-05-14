@@ -64,10 +64,10 @@ AP_Periph f303-universal Firmware
 ---------------------------------
 
  The f303-Universal Firmware has the ability to be used for several devices but only one can be
- enabled to use the single uart.
- Once uploaded the default device is set to GPS, to use another device such as Rangefinder the
+ enabled to use the single UART.
+ Once Firmware is uploaded the default device connected to the UART port is set to GPS, to use another device such as Rangefinder the
  GPS has to be turned off and Rangefinder or other device enabled. To achieve this either use
- UAVCAN GUI or MissionPlanner SLCAN. (link here). Once connected set params i.e. for TFmini_S/Plus rangefinder
+ :ref:`UAVCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN.<common-mp-slcan>` Once connected set params i.e. for TFmini_S/Plus rangefinder
  you would set GPS_TYPE=0 and RNGFND1_TYPE=20, this allows the single serial port to connect to the rangefinder.
 
   Options for serial devices are:
@@ -78,8 +78,8 @@ AP_Periph f303-universal Firmware
  - RNGFND1_TYPE=0
  - ADSB_BAUDRATE=0
 
- The above settings would disable all of the devices, then you should enable just the ones you want,
- knowing that you can’t have two serial devices as there is just one uart.
+ The above settings would disable all of the devices, then you should enable just the one you want,
+ knowing that you can’t have two serial devices as there is just one UART.
 
   The Firmware can also be used for I2C peripherals.
 
@@ -89,7 +89,7 @@ AP_Periph f303-universal Firmware
  - NCP5623 LED
 
  Rangefinder
- ------------
+ -----------
 
  To use rangefinders, follow the instructions at  :ref:`UAVCAN Setup Advanced<common-uavcan-setup-advanced>` to set up the Ardupilot parameters. Using MissionPlanner or UAVCAN Gui, set the parameters on the adaptor node following the instructions for the relevant rangefinder.
 
