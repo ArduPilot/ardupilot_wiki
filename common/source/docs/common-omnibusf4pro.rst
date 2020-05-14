@@ -64,7 +64,7 @@ However, by setting :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to 1, the external I2C
 
 The board's RSSI pad can be used as an analog RSSI input. Use pin "0" as the RSSI input pin in Mission Planner. Mission planner default values for battery voltage and current scales are provided, however since many variations of this board are available, these may needed to be manually calibrated.
 
-The RSSI pad can be re-purposed to be the TX output of UART4 instead of analog RSSI input, if the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` param is set to 2 or 3. And if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` param is set to 3, then PWM output pin 5 becomes instead, the RX pin of UART4 to provide a full addition UART.
+The RSSI pad can be re-purposed to be the TX output of UART4 instead of analog RSSI input, if the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` param is set to 2 or 3. And if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` param is set to 3, then PWM output pin 5 becomes instead, the RX pin of UART4 to provide a full addition UART. Also, if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` param is set to 4, then both UART3 and UART4 are active and available.
 
 If you want to power the servos from the ESC BEC via the board's center rail for the servo outputs, then you should remove the diode as per here: https://www.rcgroups.com/forums/showthread.php?2874687, otherwise, independently power the servos directly from the ESC or independent BEC with no connection to the board's servo output center rail. The VCC pin next to the RX in pin is a 5V output only and not affected by this modification.
 
