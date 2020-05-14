@@ -14,13 +14,13 @@ GPS adapted to UAVCAN
 
 .. image:: ../../../images/uavcan-node-gps.jpg
    :width: 450px
-   
+
 This provides an easy method to develop integrated UAVCAN peripherals which can be used with ArduPilot or other UAVCAN systems.
 
 Firmware
 ========
 
-`Firmware <https://firmware.ardupilot.org/AP_Periph/>`__ is provided in the AP_Periph folder for several UAVCAN devices based on this concept including versions for a typical UAVCAN Adapter Node itself, manufactured by `mRobotics <https://store.mrobotics.io/product-p/mro10042.htm>`__. 
+`Firmware <https://firmware.ardupilot.org/AP_Periph/>`__ is provided in the AP_Periph folder for several UAVCAN devices based on this concept including versions for a typical UAVCAN Adapter Node itself, manufactured by `mRobotics <https://store.mrobotics.io/product-p/mro10042.htm>`__.
 
 .. image:: ../../../images/mRo-can-node.jpg
 
@@ -60,8 +60,36 @@ An AP_Periph UAVCAN firmware supports these UAVCAN features:
 Setup
 ======
 
-Rangefinder
-------------
+AP_Periph f303-universal Firmware
+---------------------------------
+
+ The f303-Universal Firmware has the ability to be used for several devices but only one can be
+ enabled to use the single uart.
+ Once uploaded the default device is set to GPS, to use another device such as Rangefinder the
+ GPS has to be turned off and Rangefinder or other device enabled. To achieve this either use
+ UAVCAN GUI or MissionPlanner SLCAN. (link here). Once connected set params i.e. for TFmini_S/Plus rangefinder
+ you would set GPS_TYPE=0 and RNGFND1_TYPE=20, this allows the single serial port to connect to the rangefinder.
+
+  Options for serial devices are:
+
+ - GPS_TYPE=0
+ - COMPASS_ENABLE=0
+ - BARO_ENABLE=0
+ - RNGFND1_TYPE=0
+ - ADSB_BAUDRATE=0
+
+ The above settings would disable all of the devices, then you should enable just the ones you want,
+ knowing that you can’t have two serial devices as there is just one uart.
+
+  The Firmware can also be used for I2C peripherals.
+
+ - COMPASS
+ - BARO
+ - AIRSPEED SENSOR
+ - NCP5623 LED
+
+ Rangefinder
+ ------------
 
  To use rangefinders, follow the instructions at  :ref:`UAVCAN Setup Advanced<common-uavcan-setup-advanced>` to set up the Ardupilot parameters. Using MissionPlanner or UAVCAN Gui, set the parameters on the adaptor node following the instructions for the relevant rangefinder.
 
@@ -72,5 +100,4 @@ Rangefinder
 
  .. note::
 
- 	The RNGFNDx_ADDR Ardupilot parameter must be set to 0.
-
+ 	The RNGFNDx_ADDR Ardupilot parameter must be set above 0 and be equal to the number set on the UAVCAN adapter node.
