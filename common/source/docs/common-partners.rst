@@ -14,7 +14,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_elab.png
             :width: 250px
             :align: center
-            :target:  http://elab.co.jp
+            :target:  https://eams-robo.co.jp/
 
       - .. image:: ../../../images/supporters/supporters_logo_jDrones.png
             :width: 250px
