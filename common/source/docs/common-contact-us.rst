@@ -22,6 +22,7 @@ Development
 ===========
 
 - `Mon/Tue Weekly Meetings on Mumble <https://ardupilot.org/dev/docs/ardupilot-mumble-server.html>`__
+- `ArduPilot Discord (live chat) <https://ardupilot.org/discord>`__ live chat for ArduPilot developers (not for support questions)
 - `ArduPilot Gitter (live chat) <https://gitter.im/ArduPilot/ardupilot>`__ the starting place to discuss ArduPilot development (not for support questions)
 - `ArduPilot Gitter General Chat <https://gitter.im/ArduPilot/GeneralChat>`__ for discussions not always directly related to ArduPilot development
 - `ArduPilot Gitter Mission Planner Chat <https://gitter.im/ArduPilot/MissionPlanner>`__ for discussion related to Mission Planner development
