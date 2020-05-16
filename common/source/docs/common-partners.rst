@@ -357,6 +357,10 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: http://argosdyne.com/en
 
-      -
+      - .. image:: ../../../images/supporters/supporters_logo_pdrl.png
+            :width: 250px
+            :align: center
+            :target: http://www.pdrl.in
+            
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
