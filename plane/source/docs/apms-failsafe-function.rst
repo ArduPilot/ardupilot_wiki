@@ -47,7 +47,7 @@ knobs and switches you will set your PWM range for each channel. The
 autopilot monitors your throttle channel and if it notices a drop lower
 than :ref:`THR_FS_VALUE<THR_FS_VALUE>` (Default is 950) it will go into failsafe mode.
 
-.. note: ArduPilot can also detect if the RC Receiver becomes disconnected or dead (no PWM pulses), if the PWM values are grossly out of range (RC Reciever failure), or if the failsafe bit in an SBus receivers data stream is set, and will initiate a Failsafe
+.. note: ArduPilot can also detect if the RC Receiver becomes disconnected or dead (no PWM pulses), if the PWM values are grossly out of range (RC Receiver failure), or if the failsafe bit in an SBus receivers data stream is set, and will initiate a Failsafe
 
 RC transmitters usually have a default range for each channel that goes
 from -100% to 100%, however most transmitters will allow you to extend
@@ -62,7 +62,7 @@ Meaning that when flying, our throttle values will range between 1100 -
 -  If we lose RC communication, the receiver if set up properly, will
    drop to the lowest known throttle value of ~900. This value falls
    bellow the :ref:`THR_FS_VALUE<THR_FS_VALUE>` and will trigger the autopilot to go into
-   failsafe mode.
+   failsafe mode.As noted above, it will also go into failsafe mode on no PWM pulses or SBUS FS bit is set.
 -  First the autopilot will go into short failsafe (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` ),
    when it detects loss of signal for more than :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` sec. The default setting for short failsafe is Circle mode.
 -  If the RC signal is regained during the short failsafe, the flight
