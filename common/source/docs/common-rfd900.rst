@@ -9,9 +9,8 @@ designed for long range serial communication.  Ranges of `15km and much higher h
 
 .. warning::
 
-   These modems are high-power RF devices. It is suggested to
-   provide separate +5 voltage to the modems. It is NOT suggested to power
-   these modems directly from Autopilots telemetry port.
+   Many common flight controllers have telemetry port current limits that prevent directly powering RFD900 radios at their full transmit power. You should power high power radios externally or limit their maximum transmit power to an acceptable level.All commonly used flight controllers should be able to handle transmit powers of 20dBm.  See the manual of your specific flight controller for the detailed power specifications of each telemetry port. To set the transmit (TX) power see :ref:`Configuring a Telemetry Radio using Mission Planner <common-configuring-a-telemetry-radio-using-mission-planner>`.
+
 
 .. image:: ../../../images/RFD900_telemetry_radio.jpg
     :target: ../_images/RFD900_telemetry_radio.jpg
@@ -46,7 +45,7 @@ JDrones
 
 .. image:: ../../../images/jDrones_RF900PlusSET_NoLogo.jpg
     :target: ../_images/jDrones_RF900PlusSET_NoLogo.jpg
-    
+
 Ready made set includes antennas, connecting cables for Pixhawk and APM
 2.x autopilots, usb cable for ground unit. FTDI adapter, power
 filtering, adapter PCBs and strong protective casing
