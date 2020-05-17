@@ -83,7 +83,8 @@ Or, for a stepped install:
    +-----------------+----------------------------------------------------------------------------------+
    | zip             | Archive \| zip: Info-ZIP compression utility                                     |
    +-----------------+----------------------------------------------------------------------------------+   
-
+   | xterm           | Shells, X11 \|  X11 terminal emulator                                            |
+   +-----------------+----------------------------------------------------------------------------------+   
    
 
 #. When all the packages are selected, click through the rest of the
@@ -153,3 +154,12 @@ You should now be able to start the "Cygwin64 Terminal" application from your Wi
       The build may fail if the file path to some files is too long.  If the build fails, please try :ref:`cloning <git-clone>` ArduPilot into a directory very high in the directory structure (i.e. ~/ardupilot).
       
       If during build process you get error of missing packet xyz, re-check that you have installed all cygwin packages listed above
+      
+Running SITL
+============
+
+You can run SITL just as you can with any other build environment. In order to see the terminal you should instal VcXsrv or other X server application. You must then tell Cygwin where to look for the display by setting the DISPLAY variable. 
+
+::
+
+      export DISPLAY=:0.0 
