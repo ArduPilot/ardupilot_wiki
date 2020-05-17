@@ -107,6 +107,7 @@ Additional Notes
 -   AutoTune is sometimes unable to find a good tune for frames with very soft vibration dampening of the autopilot or very flexible arms.
 -   For best results the copter shouldn't be allowed to build up too much horizontal speed. This can be prevented by applying a quick correction between tests (twitches) to stop the vehicle from flying too fast.
 -   Be advised that AutoTune will engage from Stabilize, so don't accidentally flip your AutoTune switch until you are in AltHold and ready to begin the procedure.
+-   As a general rule, for Pitch and Roll, P and I should be equal, and D should be 1/10th P. For Yaw, I should be 1/10th P and D = 0, in most cases.
 
 Common Problems
 ===============
@@ -125,6 +126,38 @@ Dataflash logging
 ATUN (auto tune overview) and ATDE (auto tune details) messages are
 written to the dataflash logs. Some details of the contents of those
 messages can be found on the :ref:`Downloading and Analyzing Data Logs in Mission Planner <common-downloading-and-analyzing-data-logs-in-mission-planner_message_details_copter_specific>` wiki page.
+
+Ground Control Station Messages
+===============================
+
+For each axis there are several phases to the tune. Rate PIDs are adjusted first, then ANGLE parameters. Progress messages during these phases are sent to the GCS (and recorded in the Dataflash logs).
+
+Typical sequence during tuning might be:
+
+::
+
+ 09:09:33	AutoTune: Twitch
+ 09:09:34	AutoTune: (P) Rate P Up\
+ 09:09:34	AutoTune: WFL (Rate(P)) (15.13040 > 10.00000)
+ 09:09:34	AutoTune: p=0.052298 d=0.005232
+ 09:09:34	AutoTune: success 1/4
+
+This is during Pitch Rate P adjustment, indicating a twitch is about to happen as the P is being tried at an increased value of 0.052298, but first it is waiting until it gets back to level from the last twitch (WFL= Waiting for level), and then it reports that the result of this twitch is within targets and successful. But this has to occur 4 times in a row, before moving on to the next phase.
+
+.. note:: During YAW rate phase of tuning, the messages will show a value for "d" that is not ATC_RAT_YAW_D, which is usually 0, but rather it's the value of ATC_RAT_YAW_FLTE, that is being changed.
+
+Anytime the process is interrupted by pilot stick movements, the
+:: 
+
+ 09:09:38	AUTOTUNE: pilot overrides active
+
+message appears.
+
+If you stopped the tune  and dis-armed while still in AUTOTUNE, and an axis tune has completed, you will get a message showing that the new gains have been saved for that axis. If there is not a message to this effect, but think you finished at least one axis, then you probably dis-armed while not in AUTOTUNE mode, and did not actually save them.
+::
+
+ 09:19:48	AutoTune: Saved gains for Pitch
+
 
 -----
 
