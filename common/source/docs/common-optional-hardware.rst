@@ -76,6 +76,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
     UAVCAN Adapter Node <common-uavcan-adapter-node>
+    UAVCAN Peripherals <common-uavcan-peripherals>
     Video (High Defintion) <common-video-landingpage>
 [site wiki="copter"]
     Winch <common-daiwa-winch>
