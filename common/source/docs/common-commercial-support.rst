@@ -9,7 +9,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
 
 .. tip::
 
-   This is for commercial support.  For unpaid support by volunteers please visit the `forums <https://discuss.ardupilot.org/>`__ 
+   This is for commercial support.  For unpaid support by volunteers please visit the `forums <https://discuss.ardupilot.org/>`__
 
 .. raw:: html
 
@@ -191,6 +191,16 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+    <tr class="row-odd">
+        <td><center><a class="first last reference external image-reference" href="https://www.aionrobotics.com"><img alt="AION ROBOTICS" src="../_images/aionrobotics_logo_275.png" style="width: 90px;" /></a><br/><br/>United States</center></td>
+        <td><div class="first last line-block">
+            <div class="line">AION ROBOTICS, <a href="mailto:info@aionrobotics.com" target="_top">info@aionrobotics.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">Largest manufacturer of professional ArduPilot ground vehicles.</div>
+            <div class="line">Provides commercial integration services, development and support.</div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
@@ -253,5 +263,7 @@ listed here will be active participants in the community.
 .. image:: ../../../images/logos/oxinarf.jpg
     :scale: 0%
 
+.. image:: ../../../images/logos/aionrobotics_logo_275.png
+    :scale: 0%
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
