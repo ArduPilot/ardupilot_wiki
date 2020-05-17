@@ -11,17 +11,37 @@ These vehicles come pre-configured with everything required to fly, drive or swi
 
    We recommend, when possible, to purchase from our `Partners <https://ardupilot.org/about/Partners>`__ because they directly support ArduPilot and we are more confident that users can upgrade the firmware on the vehicle.
 
-Vehicles from Partners
-======================
+Copters from Partners
+=====================
 
-* `BlueROV2 from Blue Robotics <https://bluerobotics.com/store/rov/bluerov2/>`__
-* `Event38 e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__ and `e386 Mapping Drones (fixed wing) <https://event38.com/fixed-wing/e386-mapping-drone/>`__
-* `Hitec HCS Xeno FX <https://hitecnology.com/drones/hcs-xeno-fx-fixed-wing-mapping-suas>`__ (fixed wing)
-* `Hitec SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__ (multicopter)
-* `mRobotics Nano Talon (fixed wing) <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-talon0318-mr>`__
-* `SkyRocket's Journey <http://sky-viper.com/journey/>`__
-* `TT Robotix Rhino 6x6 <http://www.ttrobotix.com/product/rhino6x6>`__ and `Base 1 Rover <http://www.ttrobotix.com/product/base1rover>`__
-* Bask Aerospace - `AeroDrone MR4 <http://www.baskaerospace.com.au/aerodrone/mr4>`__
+* `Bask Aerospace - AeroDrone MR4 <http://www.baskaerospace.com.au/aerodrone/mr4>`__
+* `Hitec - SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__
+* `SkyRocket - Journey <http://sky-viper.com/journey/>`__
+
+Planes from Partners
+====================
+
+* `Event38 - e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__
+* `Event38 - e386 Mapping Drones <https://event38.com/fixed-wing/e386-mapping-drone/>`__
+* `Hitec - HCS Xeno FX <https://hitecnology.com/drones/hcs-xeno-fx-fixed-wing-mapping-suas>`__
+* `mRobotics - Nano Talon <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-talon0318-mr>`__
+
+Rovers from Partners
+====================
+
+* `AION ROBOTICS - R1 UGV <https://www.aionrobotics.com/r1>`__
+* `AION ROBOTICS - R6 UGV <https://www.aionrobotics.com/r6>`__
+* `AION ROBOTICS - M6 UGV <https://www.aionrobotics.com/m6-commercial-ugv>`__
+* `TT Robotix - Rhino 6x6 <http://www.ttrobotix.com/product/rhino6x6>`__
+* `TT Robotix - Base 1 Rover <http://www.ttrobotix.com/product/base1rover>`__
+
+Subs from Partners
+==================
+
+* `Blue Robotics - BlueROV2 <https://bluerobotics.com/store/rov/bluerov2/>`__
+
+
+
 
 Vehicles from Non-Partners
 ==========================
