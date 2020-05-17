@@ -302,11 +302,11 @@ following commands:
 ::
 
     param set SIM_SONAR_SCALE 10
-    param set RNGFND_TYPE 1
-    param set RNGFND_SCALING 10
-    param set RNGFND_PIN 0
-    param set RNGFND_MAX_CM 5000
-    param set RNGFND_MIN_CM 0
+    param set RNGFND1_TYPE 1
+    param set RNGFND1_SCALING 10
+    param set RNGFND1_PIN 0
+    param set RNGFND1_MAX_CM 5000
+    param set RNGFND1_MIN_CM 0
 
     # Enable rangefinder for landing (Plane only!)
     param set RNGFND_LANDING 1
