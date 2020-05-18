@@ -8,16 +8,28 @@ AutoTune attempts to automatically tune the Stabilize P, Rate P and D, and maxim
 
 .. warning::
 
-   AutoTune is not always able to determine a good tune for the vehicle and may result in gains that lead to an unflyable vehicle that may crash.  Please follow the :ref:`Tuning Process Instructions <tuning-process-instructions>` before attempting to use AutoTune
+   AutoTune is not always able to determine a good tune for the vehicle and may result in gains that lead to an unflyable vehicle that may crash.  Please follow the :ref:`Tuning Process Instructions <tuning-process-instructions>` before attempting to use AutoTune. After following those instructions, and have :ref:`evaluated your initial tune <evaluating-the-aircraft-tune>`, should to try AutoTune.
 
 ..  youtube:: js2GzeRysAc
     :width: 100%
 
-Setup before flying
-===================
+
+There a number of problems that can prevent AutoTune from providing a good tune. Some of the reasons AutoTune can fail are:
+
+- High levels of gyro noise.
+- Incorrect value of :ref:`MOT_THST_EXPO <MOT_THST_EXPO>`.
+- Flexible frame or payload mount.
+- Overly flexible vibration isolation mount.
+- Non-linear ESC response.
+- Very low setting for :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`.
+- Overloaded propellers or motors.
+
+
+Setup before flying in AutoTune mode
+====================================
 #. Set up one flight mode switch position to be AltHold.
 #. Set an :ref:`Auxiliary Function Switch <channel-7-and-8-options>`
-   to Autotune to allow you to turn the auto tuning on/off with the a
+   to AutoTune to allow you to turn the auto tuning on/off with the a
    switch.\ |AutoTuneCh7Switch|
 #. Remove the camera gimbal or any other parts of the frame that could wobble in flight
 #. Select which combination of axis (roll, pitch, yaw) you wish to tune using the :ref:`AUTOTUNE_AXES <AUTOTUNE_AXES>` parameter
@@ -82,6 +94,26 @@ In Copter-3.5 (and higher) AutoTune performs a weak position hold if invoked fro
 - In order to twitch perpendicular to the wind direction, the vehicle may suddenly rotate in either direction up to 90 degrees as it drifts 5m (or more) from the target location.
 - If there is little or no wind, the vehicle's gentle position control may mean it moves back and forth, ping ponging around the target point changing yaw each time it strays more than 5m from the target.  In these cases it may be more comfortable to revert the simpler AltHold based AutoTune. 
 
+If AutoTune fails
+=================
+
+If AutoTune has failed you will need to do a manual tune.
+
+Some signs that AutoTune has been successful are (besides DataFlash logs and Ground Control Station messages):
+
+- An increase in the values of :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>` and :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>`.
+- :ref:`ATC_RAT_PIT_D <ATC_RAT_PIT_D__AC_AttitudeControl_Multi>` and :ref:`ATC_RAT_RLL_D <ATC_RAT_RLL_D__AC_AttitudeControl_Multi>` are larger than :ref:`AUTOTUNE_MIN_D <AUTOTUNE_MIN_D>`.
+
+AutoTune will attempt to tune each axis as tight as the aircraft can tolerate. In some aircraft this can be unnecessarily responsive. A guide for most aircraft:
+
+- :ref:`ATC_ANG_PIT_P <ATC_ANG_PIT_P>` should be reduced from 10 to 6
+- :ref:`ATC_ANG_RLL_P <ATC_ANG_RLL_P>` should be reduced from 10 to 6
+- :ref:`ATC_ANG_YAW_P <ATC_ANG_YAW_P>` should be reduced from 10 to 6
+- :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` should be reduced from 1 to 0.5
+- :ref:`ATC_RAT_YAW_I <ATC_RAT_YAW_I__AC_AttitudeControl_Multi>` : :ref:`ATC_RAT_YAW_P <ATC_RAT_YAW_P__AC_AttitudeControl_Multi>` x 0.1
+
+These values should only be changed if AutoTune produces higher values. Small aerobatic aircraft may prefer to keep these values as high as possible.
+
 Additional Notes
 ================
 
@@ -104,7 +136,6 @@ Additional Notes
         - Roll and pitch axis rate feed-forward is enabled (:ref:`ATC_RATE_FF_ENAB <ATC_RATE_FF_ENAB>`)
 -   After you have a good tune, you may wish to increase :ref:`ATC_THR_MIX_MAX <ATC_THR_MIX_MAX>`  to 0.9 (default is 0.5) to increase prioritization of attitude control over throttle.  This can reduce the pitch overshoot sometimes seen (especially on copters with large propellers) in AltHold if the vehicle suddenly slows after performing fast forward flight.  In this situation wind catches under the propellers providing lift but also disturbs the vehicle's attitude leading to a conflict between throttle and attitude control.  The danger in increasing this parameter's value is that if the rate gains are later raised so high that the vehicle oscillates badly it may be difficult for the vehicle to descend (because it will prioritize trying to correct the attitude oscillations and never reduce throttle sufficiently).
 -   AutoTune can **request very large and fast changes in output**\ s to the motors which can cause ESC sync issues especially when using SimonK firmware and/or low KV motors (under 500KV). See this `video showing a test <https://www.youtube.com/watch?v=hBUBbeyLe0Q>`__ which recreates a sync problem.
--   AutoTune is sometimes unable to find a good tune for frames with very soft vibration dampening of the autopilot or very flexible arms.
 -   For best results the copter shouldn't be allowed to build up too much horizontal speed. This can be prevented by applying a quick correction between tests (twitches) to stop the vehicle from flying too fast.
 -   Be advised that AutoTune will engage from Stabilize, so don't accidentally flip your AutoTune switch until you are in AltHold and ready to begin the procedure.
 -   As a general rule, for Pitch and Roll, P and I should be equal, and D should be 1/10th P. For Yaw, I should be 1/10th P and D = 0, in most cases.
