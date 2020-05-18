@@ -155,6 +155,8 @@ This test will allow to test the altitude controller and ensure the stability of
 
 AltHold starts to move up and down the position and velocity controllers may need to be reduced by 50%. These values are: :ref:`PSC_POSZ_P <PSC_POSZ_P>` and :ref:`PSC_VELZ_P <PSC_VELZ_P>`.
 
+.. _evaluating-the-aircraft-tune:
+
 Evaluating the aircraft tune
 ----------------------------
 
