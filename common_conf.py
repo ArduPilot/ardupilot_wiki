@@ -36,6 +36,8 @@ intersphinx_mapping = {'copter': (intersphinx_base_url % 'copter',
                                   None),
                        'ardupilot': (intersphinx_base_url % 'ardupilot',
                                   None),
+                       'mavproxy': (intersphinx_base_url % 'mavproxy',
+                                  None),
                                   }
 
 ############ PATCH REMOVE NON-LOCAL IMAGE WARNINGS
