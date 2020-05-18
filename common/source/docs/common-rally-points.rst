@@ -114,17 +114,13 @@ Appendix
 
 The RALLY fields present in a rally point file are as follows:
 
-Lat: Latitude of Rally Point
-Lon: Longitude of Rally Point
-Alt: AGL altitude of Rally Point as referenced from the point where the copter/plane got a GPS lock.
-Break Altitude: Specific to NPS fixed wings; the point at which to break out of a loiter and fly toward the landing waypoint. Also in AGL.
-Desired Heading: Whether to verify that the plane is going the correct heading before breaking out of the loiter (see break altitude).
-Flags:
- 
-1 = FAVORABLE_WIND.
-Flag set when requiring favorable winds for landing.  We never got around to implementing this at the Naval Postgraduate School, but basically whether or not we are required to land with the aircraft facing into the wind.
-
-2 = LAND_IMMEDIATELY
-Flag set when plane is to immediately descend to break altitude and land without GCS intervention.  Flag not set when plane is to loiter at Rally point until commanded to land.
+- Lat: Latitude of Rally Point
+- Lon: Longitude of Rally Point
+- Alt: AGL altitude of Rally Point as referenced from the point where the copter/plane got a GPS lock.
+- Break Altitude: Specific to NPS fixed wings; the point at which to break out of a loiter and fly toward the landing waypoint. Also in AGL.
+- Desired Heading: Whether to verify that the plane is going the correct heading before breaking out of the loiter (see break altitude).
+- Flags:
+    - 1 = FAVORABLE_WIND. Flag set when requiring favorable winds for landing.  We never got around to implementing this at the Naval Postgraduate School, but basically whether or not we are required to land with the aircraft facing into the wind.
+    - 2 = LAND_IMMEDIATELY. Flag set when plane is to immediately descend to break altitude and land without GCS intervention.  Flag not set when plane is to loiter at Rally point until commanded to land.
 
 
