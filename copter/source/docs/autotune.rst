@@ -6,9 +6,9 @@ AutoTune
 
 AutoTune attempts to automatically tune the Stabilize P, Rate P and D, and maximum rotational accelerations to provide the highest response without significant overshoot. Copter needs to be "basically" flyable in :ref:`AltHold mode <altholdmode>` before attempting to use AutoTune as the feature needs to be able to "twitch" the copter in the roll and pitch axis.
 
-.. note::
+.. warning::
 
-   Position Hold during AutoTune is available in Copter 3.5 (and higher).
+   AutoTune is not always able to determine a good tune for the vehicle and may result in gains that lead to an unflyable vehicle that may crash.  Please follow the :ref:`Tuning Process Instructions <tuning-process-instructions>` before attempting to use AutoTune
 
 ..  youtube:: js2GzeRysAc
     :width: 100%
