@@ -7,6 +7,7 @@
 /planner2/source/docs/common-*
 /antennatracker/source/docs/common-*
 /dev/source/docs/common-*
+/mavproxy/source/docs/common-*
 
 # Common CSS except under Common
 /ardupilot/source/_static/common_*
@@ -17,6 +18,7 @@
 /planner2/source/_static/common_*
 /antennatracker/source/_static/common_*
 /dev/source/_static/common_*
+/mavproxy/source/_static/common_*
 
 # Any build directory
 */build/*
