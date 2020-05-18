@@ -88,8 +88,8 @@ AP_Periph f303-universal Firmware
  - AIRSPEED SENSOR
  - NCP5623 LED
 
- Rangefinder
- -----------
+Rangefinder
+-----------
 
  To use rangefinders, follow the instructions at  :ref:`UAVCAN Setup Advanced<common-uavcan-setup-advanced>` to set up the Ardupilot parameters. Using MissionPlanner or UAVCAN Gui, set the parameters on the adaptor node following the instructions for the relevant rangefinder.
 
