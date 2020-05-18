@@ -381,6 +381,8 @@ Servo Channels (SRV_Channels:)
 
 - :code:`find_channel(output_function)` - Returns first servo output number -1 of an output assigned output_function (See ``SERVOx_FUNCTION`` parameters ). False if none is assigned.
 
+- :code:`get_output_pwm(output_function)` - Returns first servo output PWM value an output assigned output_function (See ``SERVOx_FUNCTION`` parameters ). False if none is assigned.
+
 Servo Output
 ~~~~~~~~~~~~
 
