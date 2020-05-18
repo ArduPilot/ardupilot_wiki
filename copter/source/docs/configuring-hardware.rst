@@ -19,6 +19,7 @@ camera gimbal, antenna tracker etc.
 
     Basic System Overview <common-basic-operation>
     Frame Type Configuration <frame-type-configuration>
+    Motor Numbering and Direction <connect-escs-and-motors>
     Radio Control Calibration <common-radio-control-calibration>
     Accelerometer Calibration <common-accelerometer-calibration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
