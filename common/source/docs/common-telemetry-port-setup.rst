@@ -45,6 +45,8 @@ MAVLink2 supports "signing" of packets which improves security and flexible leng
 
 As mentioned on the :ref:`Telemetry Logs page <common-mission-planner-telemetry-logs>` the rate messages are sent from the vehicle can be controlled using the ``SRx_*`` parameters (i.e. :ref:`SR1_POSITION <SR1_POSITION>`).
 
+SRx parameters do not directly correlate to the SERIALx port, but rather to the order of the ports which have MAVLink protocol active.
+
 The Mission Planner's **Config/Tuning |Planner** screen's **Telemetry Rates** drop-downs allow a convenient way to set these parameters.
 
 .. image:: ../../../images/mp_telemetry_rate.png
