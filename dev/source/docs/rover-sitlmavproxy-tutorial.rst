@@ -6,7 +6,7 @@ Rover SITL/MAVProxy Tutorial
 
 This tutorial provides a basic walk-through of how to use
 :ref:`SITL <sitl-simulator-software-in-the-loop>` and
-`MAVProxy <http://ardupilot.github.io/MAVProxy/>`__ for *Rover* testing.
+:ref:`MAVProxy<mavproxy:home>` for *Rover* testing.
 
 Overview
 ========
@@ -134,7 +134,7 @@ skip to the second waypoint, and *loop* the mission:
    Rover will only run :ref:`commands it supports <rover:common-mavlink-mission-command-messages-mav_cmd_commands_supported_by_rover>`
    (others are ignored). 
 
-The `MAVProxy Waypoints documentation <http://ardupilot.github.io/MAVProxy/html/uav_configuration/waypoints.html>`__
+The :ref:`MAVProxy Waypoints documentation <mavproxy:mavproxy-waypoints>`
 lists the full set of available commands (or you can get them using
 auto-completion by typing "wp" on the command line).
 

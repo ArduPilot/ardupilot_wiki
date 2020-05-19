@@ -77,7 +77,7 @@ ArduPilot dev team.
 -  APM Planner 2.0 (`wiki <http://planner2.ardupilot.com/>`__,
    `code <https://github.com/ArduPilot/apm_planner>`__) is a ground
    station specifically for APM written in C++ using the Qt libraries
--  `MAVProxy <http://ardupilot.github.io/MAVProxy/html/index.html>`__
+-  :ref:`MAVProxy <mavproxy:home>`
    - command line oriented and scriptable ground station (mostly used by developers)
 -  `DroneKit <http://dronekit.io/>`__ - APM SDK for apps running on vehicles, mobile devices and/or in the cloud.
 -  MinimOSD (`wiki <http://code.google.com/p/arducam-osd/wiki/minimosd>`__,

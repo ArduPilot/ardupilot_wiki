@@ -117,7 +117,7 @@ Install MAVProxy
 
 The MAVProxy GCS is required when running SITL. If you're not planning to run SITL, you can skip this step.
 
-#. To install MAVProxy on Windows follow the `MAVProxy's install instructions for Windows <https://ardupilot.github.io/MAVProxy/html/getting_started/download_and_installation.html#windows>`__
+#. To install MAVProxy on Windows follow the :ref:`MAVProxy documentation <mavproxy:mavproxy-downloadinstallwindows>`.
 
 Set up directories/paths and extra packages in Cygwin
 -----------------------------------------------------

@@ -6,6 +6,8 @@ Download and Installation
 
 The following instructions are for user that just want to run MAVProxy. Developers should look at the :ref:`Developer's Guide <mavproxy-development>` for setting up the development environment.
 
+.. _mavproxy-downloadinstallwindows:
+
 Windows
 =======
 
@@ -18,6 +20,7 @@ http://firmware.ardupilot.org/Tools/MAVProxy/.
     Windows package of MAVProxy. This is being investigated and will
     hopefully be fixed soon. See https://github.com/ArduPilot/MAVProxy/issues/129 for more details.
 
+.. _mavproxy-downloadinstalllinux:
 
 Linux
 =====
@@ -69,6 +72,8 @@ The user permissions may also need to be changed to allow access to serial devic
     sudo adduser <username> dialout    
 
 The system will need to be logged out and logged back in again to apply the above two changes.
+
+.. _mavproxy-downloadinstallmac:
 
 Mac
 ===

@@ -39,7 +39,7 @@ import sys
 import hashlib
 
 DEFAULT_COPY_WIKIS =['copter', 'plane', 'rover']
-ALL_WIKIS =['copter', 'plane', 'rover','antennatracker','dev','planner','planner2','ardupilot']
+ALL_WIKIS =['copter', 'plane', 'rover','antennatracker','dev','planner','planner2','ardupilot', 'mavproxy']
 COMMON_DIR='common'
 
 #GIT_REPO = ''
