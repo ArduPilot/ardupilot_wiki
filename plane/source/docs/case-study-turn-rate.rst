@@ -20,8 +20,7 @@ was maintaining 100% despite being set to 75%.
    post \ `**here** <https://diydrones.com/forum/topics/arduplane-2-73-released?commentId=705844%3AComment%3A1264198>`__. - `x8 throttle slew rate 100 param file <https://download.ardupilot.org/downloads/wiki/other_files/x8throttleslewrate100.param>`__
 -  `Jakkur Auto take off and land text file <https://download.ardupilot.org/downloads/wiki/other_files/Jakkur-Auto-take-off-and-land.txt>`__
 
-By analyzing this data using
-**`Mavgraph <https://ardupilot.github.io/MAVProxy/html/analysis/mavtools.html#mavgraph-py>`__**,
+By analyzing this data using :ref:`Mavgraph <mavproxy:mavproxy-mavgraph>`,
 Tridge was able to provide the following insight.
 
 ***May 29, 2013 DIYDrones; posted to Plane 2.x Software forum:***

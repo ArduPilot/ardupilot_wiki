@@ -116,8 +116,7 @@ Next start MAVProxy like this:
 
  - mavproxy.py --master :14550 --aircraft MyQuad --console --map
 
-For more details see the `MAVProxy documentation
-<http://ardupilot.github.io/MAVProxy/html/index.html>`
+For more details see the :ref:`MAVProxy documentation <mavproxy:home>`
 
 Key Parameters
 ==============

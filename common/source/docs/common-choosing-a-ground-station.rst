@@ -95,9 +95,9 @@ Python, and extensible via python modules.
    (GPLv3)
 
 .. image:: ../../../images/mavproxy_linux.jpg
-    :target:  http://ardupilot.github.io/MAVProxy/html/_images/mavproxy_linux.jpg
+    :target:  ../_images/mavproxy_linux.jpg
 
--  `Getting Started <http://ardupilot.github.io/MAVProxy/html/index.html>`__
+-   :ref:`Wiki <mavproxy:home>`
 -  `Issues List <https://github.com/ArduPilot/MAVProxy/issues>`__
 -  `Source Code <https://github.com/ArduPilot/MAVProxy>`__
 

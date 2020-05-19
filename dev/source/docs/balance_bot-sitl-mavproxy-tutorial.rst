@@ -12,4 +12,4 @@ If you are new to using SITL, please follow these :ref:`instructions<setting-up-
 
 The vehicle should start in Manual Mode. You can now move it around using the mavproxy's rc override commands. rc3 is throttle and rc1 is yaw.
 
-If you are not familiar with using mavproxy commands, please refer to the `mavproxy documentation <http://ardupilot.github.io/MAVProxy/html/index.html>`__ or this quick :ref:`guide<using-sitl-for-ardupilot-testing>`.
+If you are not familiar with using mavproxy commands, please refer to the :ref:`MAVProxy documentation <mavproxy:home>` or this quick :ref:`guide<using-sitl-for-ardupilot-testing>`.

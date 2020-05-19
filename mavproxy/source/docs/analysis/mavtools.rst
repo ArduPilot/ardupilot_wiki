@@ -5,6 +5,8 @@ Offline Tools
 There are a couple of offline tools within the MAVLink package that can
 be used for a postflight analysis.
 
+.. _mavproxy-mavgraph:
+
 mavgraph.py
 ===========
 
