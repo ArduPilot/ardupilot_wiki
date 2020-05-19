@@ -52,6 +52,7 @@ the menu:
     :maxdepth: 1
 
     Geotagging Images with Mission Planner <common-geotagging-images-with-mission-planner>
+    MAVLink2 Signing (security)<common-MAVLink2-signing>
     Using Python Scripts in Mission Planner <using-python-scripts-in-mission-planner>
     Swarming <swarming>
     Advanced Tools <common-mp-tools>

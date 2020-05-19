@@ -68,7 +68,7 @@ to **Disconnect** as shown:
 Troubleshooting
 ===============
 
-If Mission planner is unable to connect:
+If Mission Planner is unable to connect:
 
 -  Check that the correct baud rate is used for the selected method
    (115200 on USB or 57600 on Radio/Telemetry)
@@ -82,6 +82,8 @@ You should also ensure that the autopilot controller board has
 appropriate ArduPilot firmware installed and has booted correctly (on
 Pixhawk there are useful :ref:`LEDs <common-leds-pixhawk>` and
 :ref:`Sounds <common-sounds-pixhawkpx4>` which can tell you the state of the autopilot).
+
+If using a remoter link (not USB) and Mission Planner connects, but does not download parameters or you cannot get commands, like mode changes acted upon,then the autopilot probably has Singing turned on. See :ref:`common-MAVLink2-signing`.
 
 .. _troubleshooting-composite-connections:
 
@@ -120,4 +122,4 @@ Related topics
 
 :ref:`Mission Planner Bluetooth Connectivity <common-mission-planner-bluetooth-connectivity_detailed_connecting_with_mission_planner>`
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="plane,copter,rover,planner"]
