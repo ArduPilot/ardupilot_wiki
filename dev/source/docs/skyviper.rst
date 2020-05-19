@@ -109,7 +109,7 @@ Developing the Sonix Firmware
    cd Sonix/buildscript
    git submodule update --init --recursive
    make oldconfig
-   make clean && make mavlink && make && make install
+   make clean && make MAVLink && make && make install
    ls -l ../image/dashcam/FIRMWARE_660R.bin
 
 ``FIRMWARE_660R.bin`` can be uploaded using the web interface

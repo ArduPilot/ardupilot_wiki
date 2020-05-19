@@ -41,14 +41,14 @@ message.
 `common.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml>`__
 or
 `ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml>`__
-file in the mavlink submodule.
+file in the MAVLink submodule.
 
 If this command is generally useful, and will hopefully be added to the MAVLink protocol, then it
 should be added to the
 ../modules/mavlink/message_definitions/v1.0/common.xml
 file. If it is only for your personal use or only applicable to ArduPilot, then it should be added to the ardupilotmega.xml file.
 
-**Step #4:** Add functions to the main vehicle code to handle sending or receiving the command to/from the ground station. A compile will be needed (ie. ./waf copter) to generate the mavlink packet code so make sure to do that after editing the XML file. The mavlink generation happens first, so it doesn't matter if the project compilation is successful or not due to other source code changes.
+**Step #4:** Add functions to the main vehicle code to handle sending or receiving the command to/from the ground station. A compile will be needed (ie. ./waf copter) to generate the MAVLink packet code so make sure to do that after editing the XML file. The MAVLink generation happens first, so it doesn't matter if the project compilation is successful or not due to other source code changes.
 
 The top-level of this code will most likely be in the vehicle's
 `GCS_MAVLink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp>`__
@@ -113,7 +113,7 @@ so you will need to rebuild pymavlink to include your custom message.
             '''initialisation code'''
 
         def mavlink_packet(self, m):
-            'handle a mavlink packet'''
+            'handle a MAVLink packet'''
             if m.get_type() == 'MY_CUSTOM_PACKET':
                 print "My Int: %(x).2f" % \
                     {"x" : m.intField}
@@ -125,7 +125,7 @@ so you will need to rebuild pymavlink to include your custom message.
 
 .. warning::
 
-   If the message you added has an ID greater that 255 you will need to enable Mavlink 2 support. 
+   If the message you added has an ID greater that 255 you will need to enable MAVLink 2 support. 
    This can be done by setting the relevant ``SERIALn_PROTOCOL`` parameters (e.g. ``SERIAL1_PROTOCOL``) to 2 and starting Mavproxy with the ``--mav20`` argument.
 
 **Step #6:** Consider contributing your code back to the main code base.

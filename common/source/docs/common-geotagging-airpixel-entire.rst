@@ -8,7 +8,7 @@ Airpixel Entire for Geotagging
     :target: http://shop.airpixel.cz/product/air-commander-entire/
     :width: 450px
 
-`The Entire <http://photogrammetry.airpixel.cz/>`_ is a standalone device for GeoTagging of images in-camera SD card.  GPS data data is read from the autopilot's serial port (aka MAVlink bus) and is then saved directly into the photos using EXIF. The Entire can also trigger the camera shutter via MAVlink commands.
+`The Entire <http://photogrammetry.airpixel.cz/>`_ is a standalone device for GeoTagging of images in-camera SD card.  GPS data data is read from the autopilot's serial port (aka MAVLink bus) and is then saved directly into the photos using EXIF. The Entire can also trigger the camera shutter via MAVLink commands.
 
 - Photos are tagged (via EXIF) with the lat, lon and altitude within the camera
 - GPS position filtering and interpolation for higher accuracy

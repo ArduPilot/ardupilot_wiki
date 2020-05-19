@@ -436,7 +436,7 @@ GPS for the 2nd UART.
 Any of the 5 UARTs can be configured in this way, using uartA to uartE.
 
 Similar to this if you were running a vehicle in SITL via Cygwin on
-Microsoft Windows and you wanted to send the mavlink output through a
+Microsoft Windows and you wanted to send the MAVLink output through a
 connected radio on COM16 to AntennaTracker you can use a command like
 this - note under Cygwin comm ports are ttyS and they start at 0 so 15
 is equivalent to COM16:

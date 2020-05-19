@@ -1,7 +1,7 @@
 .. _making-a-mavlink-wifi-bridge-using-the-raspberry-pi:
 
 ===================================================
-Making a Mavlink WiFi bridge using the Raspberry Pi
+Making a MAVLink WiFi bridge using the Raspberry Pi
 ===================================================
 
 .. note::
@@ -603,7 +603,7 @@ Testing the MavProxy Connection
 Now we are ready to test the communication. To do this follow the
 instructions on the section `"Testing the
 Connection" <raspberry-pi-via-mavlink/#Testing_the_connection>`__ in the
-Raspberry Pi via Mavlink page.
+Raspberry Pi via MAVLink page.
 
 
 .. _making-a-mavlink-wifi-bridge-using-the-raspberry-pi_configuring_mavproxy_to_always_run_and_listen_to_incoming_connections:

@@ -74,7 +74,7 @@ Alfonce Remote Gateway - Companion Computer
 
 **It integrates :**
 
-* Mavlink proxy
+* MAVLink proxy
 * Cameras management
 * Media server with MJPEG video streams
 * Computer vision scripts

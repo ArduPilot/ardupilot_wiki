@@ -60,7 +60,7 @@ Tips for using the Flight Data screen
    is in the Manual position, you are no longer under autopilot control
    and no commands will take effect. You must be in one of the other
    positions (Stabilize, Fly-by-Wire, Auto or any other
-   autopilot-controlled mode) for MAVlink commands to take effect.
+   autopilot-controlled mode) for MAVLink commands to take effect.
 -  You can change the voice used in the speech synthesis in the Ease of
    Access center in Windows Control Panel. Go to the "Text to Speech"
    options.

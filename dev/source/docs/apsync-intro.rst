@@ -36,7 +36,7 @@ Once connected to the WiFi network is possible to connect to these two URLs:
 - http://10.0.1.128  (Configuration pages)
 - http://10.0.1.128:8000   (Which shows a video streaming on/off button)
 
-Dataflash logs are streamed to the companion computer via mavlink and stored on the companion computer's filesystem (as well as on the pixhawk's dataflash).
+Dataflash logs are streamed to the companion computer via MAVLink and stored on the companion computer's filesystem (as well as on the pixhawk's dataflash).
 Dataflash log files can then be quickly downloaded (over wifi) using a script (Windows users may use `apsync-download-logs <https://firmware.ardupilot.org/Companion/apsync/apsync-download-logs-latest.zip>`__) or you may pull the SD card out of the companion computer.
 
 Simple Configuration Web page

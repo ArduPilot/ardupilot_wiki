@@ -171,7 +171,7 @@ DataFlash files are available in the "logs" directory:
    -rw-r--r-- 1 pbarker pbarker    73728 Jul 27 12:05 00000001.BIN
    pbarker@bluebottle:~/rc/ardupilot(master)$
 
-The mavlink telemetry logs are present in the "buildlogs" directory.  This directory is typically created one-level-higher than the ArduPilot root directory.
+The MAVLink telemetry logs are present in the "buildlogs" directory.  This directory is typically created one-level-higher than the ArduPilot root directory.
 
 ::
 
@@ -185,7 +185,7 @@ The mavlink telemetry logs are present in the "buildlogs" directory.  This direc
 
 .. warning::
 
-   Not all mavlink traffic involved in the testing is present in the buildlogs tlog file.  Only traffic to/from MAVProxy itself (as opposed to additional MAVProxy --outputs) is present.  See AutoTest Structure for more information.
+   Not all MAVLink traffic involved in the testing is present in the buildlogs tlog file.  Only traffic to/from MAVProxy itself (as opposed to additional MAVProxy --outputs) is present.  See AutoTest Structure for more information.
 
 Correlation of Output Files with the autotest server
 ....................................................
@@ -236,7 +236,7 @@ self.mav
    A mavudp object connected to a --output port provided by MAVProxy.  Traffic to this connection is not logged in the tlog.
 
 self.mav.mav
-   The mavudp's mavlink object.  Can be used to send messages via mavlink to the SITL binary: ``self.mav.mav.system_time_send(time.time() * 1000000, 0)``
+   The mavudp's MAVLink object.  Can be used to send messages via MAVLink to the SITL binary: ``self.mav.mav.system_time_send(time.time() * 1000000, 0)``
 
 RC Overrides
 ............

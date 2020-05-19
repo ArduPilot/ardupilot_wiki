@@ -653,7 +653,7 @@ AutoTest Output
     ----------------------------------------------
     bin/arducopter  1883261  82926  66208  2032395
 
-    Submodule mavlink not updated: non-fastforward
+    Submodule MAVLink not updated: non-fastforward
     Build commands will be stored in build/sitl/compile_commands.json
     'build' finished successfully (45.254s)
     >>>> PASSED STEP: build.ArduCopter at Mon Mar 18 15:09:22 2019
@@ -878,7 +878,7 @@ AutoTest Output
     STAT_BOOTCNT = 2.0000000
     Received 1129 parameters
     AUTOTEST: Ready to start testing!
-    AUTOTEST: Waiting for a heartbeat with mavlink protocol 2.0
+    AUTOTEST: Waiting for a heartbeat with MAVLink protocol 2.0
     Connection on serial port 0
     bind port 5762 for 2
     Serial port 2 on TCP port 5762
@@ -35275,7 +35275,7 @@ AutoTest Output
     rc 9 2000
     STABILIZE> APM: Gripper load grabbing
     AUTOTEST: Received expected text : gripper load grabbing
-    AUTOTEST: Test gripper with Mavlink cmd
+    AUTOTEST: Test gripper with MAVLink cmd
     AUTOTEST: Releasing load
     AUTOTEST: Waiting for text : gripper load releas
     APM: Gripper load releasing

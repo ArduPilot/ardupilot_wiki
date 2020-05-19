@@ -9,7 +9,7 @@ Using the Command Line Interface to Configure Copter
    The CLI is being phased out on all platforms. The features were
    massively cut down with AC3.1.5 and then it was removed for the APM2
    completely anyway with AC3.2. All CLI functions are now available via
-   regular MAVlink commands in the GCSs. This article has been moved to the
+   regular MAVLink commands in the GCSs. This article has been moved to the
    dev wiki and may be considered deprecated.
 
 You don't need to use the Mission Planner to set up Copter (and there

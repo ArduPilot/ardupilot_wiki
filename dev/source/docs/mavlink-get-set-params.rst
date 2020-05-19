@@ -29,7 +29,7 @@ Retrieving All Parameters
 
 The most efficient way to receive all parameters is to send a `PARAM_REQUEST_LIST <https://mavlink.io/en/messages/common.html#PARAM_REQUEST_LIST>`__ message with the following fields:
 
-- **target_system** : the mavlink system id of the vehicle (normally "1")
+- **target_system** : the MAVLink system id of the vehicle (normally "1")
 - **target_components** : normally "1"
 
 The vehicle should respond with many individual `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ messages (one for each parameter in the system).  The fields of the `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__ messages are:
@@ -46,7 +46,7 @@ Retrieving a Parameter
 
 To retrieve just a single parameter send a `PARAM_REQUEST_READ <https://mavlink.io/en/messages/common.html#PARAM_REQUEST_READ>`__ message with the following fields:
 
-- **target_system** : the mavlink system id of the vehicle (normally "1")
+- **target_system** : the MAVLink system id of the vehicle (normally "1")
 - **target_components** : normally "1"
 - **param_id** : the human readable 16 character parameter name if known.  If not known, this field can be anything as long as the param_index is set to a non-negative number
 - **param_index** : the parameter index number or -1 if the "param_id" field should be used instead.  Note that it is better to use the param_id field because this index may change if "hidden" parameters are exposed (see below).
@@ -58,7 +58,7 @@ Setting a Parameter
 
 To set the value of a single parameter send a `PARAM_SET <https://mavlink.io/en/messages/common.html#PARAM_SET>`__ message with the following fields:
 
-- **target_system** : the mavlink system id of the vehicle (normally "1")
+- **target_system** : the MAVLink system id of the vehicle (normally "1")
 - **target_components** : normally "1"
 - **param_id** : the human readable 16 character parameter name
 - **param_value** : the new value for the parameter expressed as a float

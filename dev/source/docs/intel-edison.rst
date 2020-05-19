@@ -341,10 +341,10 @@ serial port connecting the Edison to The Cube):
 Done!  Now you can run your own custom DroneKit code on the Edison (see
 the tutorial or documentation for more information).
 
-Wifi mavlink bridging
+Wifi MAVLink bridging
 =====================
 
-The Edison can forward mavlink to other computers on your wifi lan (and
+The Edison can forward MAVLink to other computers on your wifi lan (and
 you can either run a traditional GCS on those computers or run DroneKit
 scripts on your PC).
 

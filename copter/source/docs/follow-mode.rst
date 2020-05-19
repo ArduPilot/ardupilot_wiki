@@ -16,7 +16,7 @@ When switched into Follow, the vehicle will attempt to follow another vehicle (o
 The following parameters can be used to tune FlowHold's performance:
 
 -  :ref:`FOLL_ENABLE <FOLL_ENABLE>` : set to 1 to enable follow mode and refresh parameters
--  :ref:`FOLL_SYSID <FOLL_SYSID>` : mavlink system id of lead vehicle ("0" means follow the first vehicle "seen")
+-  :ref:`FOLL_SYSID <FOLL_SYSID>` : MAVLink system id of lead vehicle ("0" means follow the first vehicle "seen")
 -  :ref:`FOLL_DIST_MAX <FOLL_DIST_MAX>` : if lead vehicle is more than this many meters away, give up on following and hold position
 -  :ref:`FOLL_OFS_X <FOLL_OFS_X>`, :ref:`FOLL_OFS_Y <FOLL_OFS_Y>`, :ref:`FOLL_OFS_Z <FOLL_OFS_Z>` : 3D offset (in meters) from the lead vehicle
 -  :ref:`FOLL_OFS_TYPE <FOLL_OFS_TYPE>` : set to 0 if offsets are North-East-Down, 1 if offsets are relative to lead vehicle's heading

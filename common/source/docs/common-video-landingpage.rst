@@ -28,11 +28,11 @@ Features
 --------
 * Android based smart device with 5.46 inch 1080P capacitive touch screen.
 * Integrated digital transmission system simultaneously transmitting video, telemetry and control. 
-* Custom Solex TX and QGC ground station software with Mavlink support for ArduPilot and PX4.
+* Custom Solex TX and QGC ground station software with MAVLink support for ArduPilot and PX4.
 * Dual hall effect self centering gimbals with removable sticks. 
 * 1080P HD video with dual digital video inputs. 
 * Dual S.bus signal output for simultaneous control of autopilot and pan/tilt cameras.
-* 6 customizable Mavlink buttons and Mavlink/Sbus hardware wheel. 
+* 6 customizable MAVLink buttons and Mavlink/Sbus hardware wheel. 
 * RC gimbal control on dedicated service independent from Solex TX / QGC. 
 * Tether and share video and telemetry via wifi ground station such as Mission Planner. 
 * Onboard Arm Cortex A53 & Cortex A53 SOC in both air and ground units for custom applications. 
@@ -55,12 +55,12 @@ DJI Ocusync Air System
 
 The DJI OcuSync Air System is an integrated high-resolution video transmission solution consisting of a camera, Air Unit module, three antennas, and other connectors. Working with DJI Goggles RE, the OcuSync Air System supports wireless transmission of video, images, and flight controller information. 
 
-The Air Unit can be attached to racing drones, model airplanes, RC cars, or unmanned enterprise vehicles used for rescue operations and inspections and supports both MSP and Mavlink telemetry input from firmware V01.05.00 and later.
+The Air Unit can be attached to racing drones, model airplanes, RC cars, or unmanned enterprise vehicles used for rescue operations and inspections and supports both MSP and MAVLink telemetry input from firmware V01.05.00 and later.
 
 
 Features
 --------
-- Mavlink & MSP Telemetry Input 
+- MAVLink & MSP Telemetry Input 
 - 2.4 GHz/5.8 GHz dual-frequency transmission
 - FHSS and up to 19 fixed channels
 - High-resolution video transmission up to 1280×960 at 50 fps
@@ -79,7 +79,7 @@ DJI Digital FPV System
 .. figure:: ../../../images/DJI_FPV.jpg
    :target: ../_images/DJI_FPV.jpg
    
-.. note:: This system is not directly compatible with Mavlink. However, there is an MSP to Mavlink Arduino converter maintained by D3NGIT that allows it to provide telemetry data via the custom OSD. See https://github.com/d3ngit/djihdfpv_mavlink_to_msp_V2.
+.. note:: This system is not directly compatible with Mavlink. However, there is an MSP to MAVLink Arduino converter maintained by D3NGIT that allows it to provide telemetry data via the custom OSD. See https://github.com/d3ngit/djihdfpv_mavlink_to_msp_V2.
 
 The DJI Digital FPV System was designed for the drone racing industry. It consists of the DJI FPV Air Unit Module, DJI FPV Camera, DJI FPV Goggles, and DJI FPV Remote Controller.
 
@@ -101,7 +101,7 @@ Sky-Drones Smartlink
 .. figure:: ../../../images/Sky_Link.png
    :target: ../_images/Sky_Link.png
 
-Smartlink is a broadband digital datalink with integrated onboard computer that supports up to Two HD video channels, Mavlink telemetry and control with ultra low latency and range up to 20 km. 
+Smartlink is a broadband digital datalink with integrated onboard computer that supports up to Two HD video channels, MAVLink telemetry and control with ultra low latency and range up to 20 km. 
 
 More info on Skydrones Smartlink `here <https://sky-drones.com/smartlink>`_
 
