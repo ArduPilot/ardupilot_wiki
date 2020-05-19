@@ -82,10 +82,9 @@ The following MAVLink parameters control Rally Point behavior:
    considered for an RTL event.  If all Rally Points are greater than
    this distance from the aircraft, then the Home location is used for
    RTL events (at altitude :ref:`ALT_HOLD_RTL <plane:ALT_HOLD_RTL>`)
-   **unless** Home is farther away than the nearest Rally Point -- in
-   which case the nearest Rally point is used.  This parameter is to
-   prevent fly offs if Rally Points have been specified for multiple
+   This parameter is to prevent fly offs if Rally Points have been specified for multiple
    flying fields. This parameter can be disabled if set to 0.
+#. :ref:`RALLY_INCL_HOME<RALLY_INCL_HOME>` allows Homr to be included in the RALLY points, allowing it to return to home if closer than any RALLY point.
 #. :ref:`RALLY_TOTAL <plane:RALLY_TOTAL>` is
    the number of Rally Points currently specified. This parameter will
    be set for you by your ground control station (e.g., Mission Planner)
