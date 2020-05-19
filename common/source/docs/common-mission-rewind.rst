@@ -51,7 +51,7 @@ be done in one of two ways:
 
 **2) Ground control station does not recognise the DO_SET_RESUME_DIST mission item**
 
-- Add an UNKNOWN mission item from the point in the mission that you wish to enable the feature and set the Mavlink ID to 215.
+- Add an UNKNOWN mission item from the point in the mission that you wish to enable the feature and set the MAVLink ID to 215.
 - Set the first data column to be the distance in meters that you want the mission to be rewound to, on resume.
 
 .. note::

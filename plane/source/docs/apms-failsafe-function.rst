@@ -136,9 +136,9 @@ telemetry. In the event that the autopilot stops receiving MAVlink
    (Manual, Stabilize, FBW are ok).
 #. Unplug one of the telemetry radios. After a few minutes power off
    your autopilot. (Remember the autopilot will not go fully into failsafe
-   until :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds of MAVlink inactivity have passed).
+   until :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds of MAVLink inactivity have passed).
 #. Connect your autopilot to the mission planner and pull the logs.
-   Verify on the log that the autopilot went into RTL after :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec of MAVlink inactivity.
+   Verify on the log that the autopilot went into RTL after :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec of MAVLink inactivity.
 
 Battery Failsafe
 ~~~~~~~~~~~~~~~~

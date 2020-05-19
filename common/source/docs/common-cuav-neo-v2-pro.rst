@@ -144,7 +144,7 @@ Modify the following parameters in the Full Parameter tab of Mission Planner.
 
 .. note::
 
-    STM32F4 does not support dual virtual USB ports, so  flight controllers using STM32F4 processor can only be used for SLCAN after the MAVlink connection on USB is closed; after writing the above settings, the USB interface becomes an SCLAN port; MAVlink connections can be made again after a reboot. Until then the USB connection can be used for SLCAN operations.
+    STM32F4 does not support dual virtual USB ports, so  flight controllers using STM32F4 processor can only be used for SLCAN after the MAVLink connection on USB is closed; after writing the above settings, the USB interface becomes an SCLAN port; MAVLink connections can be made again after a reboot. Until then the USB connection can be used for SLCAN operations.
 
 NEO-V2 Internal Configuration
 =============================

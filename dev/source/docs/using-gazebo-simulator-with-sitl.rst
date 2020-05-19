@@ -105,5 +105,5 @@ If all works well, you should see this:
 
     ROS is commonly used together with Gazebo, but this is out of the scope of this article. If you are using ROS,
     some packages to consider using are:
-    - *mavros* (for sending and receiving mavlink packets)
+    - *mavros* (for sending and receiving MAVLink packets)
     - *ros_gazebo_camera* (for publishing Gazebo's virtual camera stream to a ROS topic)

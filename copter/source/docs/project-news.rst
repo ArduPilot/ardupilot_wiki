@@ -163,7 +163,7 @@ releases/milestones.
 -  Oct 14, 2011: Copter 2.0.48 released. The PWM output has been set to
    400hz (to counter the low pass filter in most Turnigy PWMs). The
    DCM's Roll and Pitch gains were lowered to .03 (recommendation of
-   Hein Hollander). Mavlink has gotten a re-work for performance and
+   Hein Hollander). MAVLink has gotten a re-work for performance and
    memory savings.
 
 -  Oct 7, 2011: Copter 2.0.47 released. Fixed RTL overshooting bug.
@@ -232,7 +232,7 @@ releases/milestones.
    control on standard frame, shunk the mixing range for sonar from 3
    meters to 2 meters, added framework for Guided mode - not tested!
    removed pitch and roll deadzone, decoupled S, MPLE mode from LOITER
-   PIDs Synced Mavlink with APM, Logs report correct WP number now.
+   PIDs Synced MAVLink with APM, Logs report correct WP number now.
    Disabled Sonar spike filter.
 
 -  June 29, 2011: AC Beta 2.0.30 released. Minor bug fixes. Note that

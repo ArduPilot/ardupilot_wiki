@@ -33,7 +33,7 @@ Setup, Configuration
 
   - Drotag's red LED should blink twice quickly about once per second
   - The camera should switch to "mass storage" for about 30 seconds (or less) and then return to regular shooting mode
-  - If a Mavlink Inspector is used (available in MissionPlanner and QGC) a "Component 2" should appear and send heartbeats once every 3 seconds
+  - If a MAVLink Inspector is used (available in MissionPlanner and QGC) a "Component 2" should appear and send heartbeats once every 3 seconds
 
 .. image:: ../../../images/geotagging-drotagx-comp2.jpg
     :target: ../_images/geotagging-drotagx-comp2.jpg

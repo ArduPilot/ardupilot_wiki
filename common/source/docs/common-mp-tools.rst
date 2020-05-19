@@ -9,7 +9,7 @@ Mission Planner has many advanced tools which are normally hidden from the user.
 .. image:: ../../../images/mp-ctrl-f.jpg
     :target: ../_images/mp-ctrl-f.jpg
 
-Some useful utilities are: MAVLink Inspector, BootLoader Upgrade, Mavlink (Forwarding), and Warning Manager.
+Some useful utilities are: MAVLink Inspector, BootLoader Upgrade, MAVLink (Forwarding), and Warning Manager.
 
 MAVLink Inspector
 =================

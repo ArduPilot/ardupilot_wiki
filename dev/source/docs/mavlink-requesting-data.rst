@@ -106,7 +106,7 @@ Most ground stations including the Mission Planner use this method.  See "Settin
 
 Send a `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ message with the following fields
 
-- target_system : the mavlink system id of the vehicle (normally "1")
+- target_system : the MAVLink system id of the vehicle (normally "1")
 - target_components : normally "0"
 - req_stream_id : 0 to 12 corresponding to the group of messages (see `MAV_DATA_STREAM <https://mavlink.io/en/messages/common.html#MAV_DATA_STREAM>`__).  See the "Using SRx Parameters" section above to determine exactly which messages are in each group
 - req_message_rate : the rate (in hz) of the message
@@ -119,11 +119,11 @@ This method provides the most precise control and reduces bandwidth requirements
 
 Send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the following fields
 
-- target_system : the mavlink system id of the vehicle (normally "1")
+- target_system : the MAVLink system id of the vehicle (normally "1")
 - target_components : normally "0"
 - command: 511 (for `MAV_CMD_SET_MESSAGE_INTERVAL <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL>`__)
 - confirmation: 0
-- param1: desired mavlink message's id (i.e. 33 for `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__)
+- param1: desired MAVLink message's id (i.e. 33 for `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__)
 - param2: time interval between messages in microseconds (i.e. 100000 for 10hz, 1000000 for 1hz)
 - param3 to param7: 0 (not used)
 
@@ -138,11 +138,11 @@ A GCS can poll for a single instance of a message from the autopilot.
 
 Send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the following fields
 
-- target_system : the mavlink system id of the vehicle (normally "1")
+- target_system : the MAVLink system id of the vehicle (normally "1")
 - target_components : normally "0"
 - command: 512 (for `MAV_CMD_REQUEST_MESSAGE <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__)
 - confirmation: 0
-- param1: desired mavlink message's id (i.e. 33 for `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__)
+- param1: desired MAVLink message's id (i.e. 33 for `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__)
 - param2: depends on message requested; see that message's definition for details.
 - param3 to param7: 0 (not used)
 

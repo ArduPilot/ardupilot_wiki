@@ -19,7 +19,7 @@ We have currently two ways to flash the ArduPilot bootloader :
 With MavLink
 ------------
 
-ArduPilot firmware already include the bootloader. You can flash it using the mavlink long command : MAV_CMD_FLASH_BOOTLOADER with parameter 5 at 290876
+ArduPilot firmware already include the bootloader. You can flash it using the MAVLink long command : MAV_CMD_FLASH_BOOTLOADER with parameter 5 at 290876
 
 Mavproxy
 ........

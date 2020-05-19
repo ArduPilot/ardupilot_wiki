@@ -92,7 +92,7 @@ MWOSD continues to be actively developed and supported.
 
 * Modern GUI configurator with ability to flash hardware directly from within GUI
 * Drag / drop easy configurable screen layouts
-* Autoconfigures mavlink for highe rperformance
+* Autoconfigures MAVLink for highe rperformance
 * OSD also fully supports many different FC types other than ArduPilot
 * MAX7456 renew doing in VSYNC to get rid of "snow" on screen but on interrupt instead of SPI polling
 * 3 screens instead of 2

@@ -9,7 +9,7 @@ Indoor autonomous flight with Arducopter, ROS and Aruco Boards Detection
 
 
 This wiki page describes how to setup a system capable to realize indoor autonomous flight.
-The system is based on a quadcopter with a Raspberry Pi 3 and a Raspberry Pi Camera Module v2. Images from camera are used to calculate poses estimation on the Raspberry Pi and the result are sent as mavlink messages to the Flight Controller.
+The system is based on a quadcopter with a Raspberry Pi 3 and a Raspberry Pi Camera Module v2. Images from camera are used to calculate poses estimation on the Raspberry Pi and the result are sent as MAVLink messages to the Flight Controller.
 The camera is downward looking and on the floor there is an Aruco Boards like this:
 
 .. image:: ../images/ros-aruco-board.png
@@ -17,7 +17,7 @@ The camera is downward looking and on the floor there is an Aruco Boards like th
 
 The system uses `ROS <http://www.ros.org/>`__ for all the tasks it has to do. The images from Raspberry Pi Camera are captured by `raspicam_node <https://github.com/UbiquityRobotics/raspicam_node>`__, the poses estimation are calculated by a modified version of `aruco_gridboard <https://github.com/anbello/aruco_gridboard>`__ and the relevant messages are sent to the Flight Controller using `mavros <http://wiki.ros.org/mavros>`__. All this ROS packages, and other we will see later, runs on the Raspberry Pi 3.
 
-The ROS node raspicam_node publish camera/image and camera/camera_info topics, the node aruco_gridboard subscribes to these topics and publish a camera_pose message to the mavros/vision_pose/pose topic, mavros translates ROS messages in mavlink messages and send it to the Flight Controller.
+The ROS node raspicam_node publish camera/image and camera/camera_info topics, the node aruco_gridboard subscribes to these topics and publish a camera_pose message to the mavros/vision_pose/pose topic, mavros translates ROS messages in MAVLink messages and send it to the Flight Controller.
 
 The messages SET_GPS_GLOBAL_ORIGIN and a SET_HOME_POSITION are sent with a `script <https://github.com/anbello/aruco_gridboard/blob/master/script/set_origin.py>`__ before starting to use the system. 
 
@@ -112,7 +112,7 @@ On the desktop PC
     cd ~/catkin_ws
     catkin_make
 
-On PC you also have to run a GCS of your choice to configure the quadcopter, see telemetry data, see mavlink inspector, set flight modes and give commands. All of this things can be done also via ROS messages and services but in this way could be easier.
+On PC you also have to run a GCS of your choice to configure the quadcopter, see telemetry data, see MAVLink inspector, set flight modes and give commands. All of this things can be done also via ROS messages and services but in this way could be easier.
 
 Starting all ROS node
 =====================

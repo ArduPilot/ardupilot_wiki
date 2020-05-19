@@ -19,7 +19,7 @@ There are five modes that you can place the antenna tracker in:
 -  **Auto**: the tracker attempts to track the vehicle, scanning if it
    ever loses contact
 -  **Servo_Test**: the servos are moved to the pwm values specified by
-   a do-set-servo mavlink command.  Used by the mission planner's
+   a do-set-servo MAVLink command.  Used by the mission planner's
    extended tuning screen when the user pushes the "test" buttons.
 
 The operator can set the current mode from the Mission Planner's Flight

@@ -410,7 +410,7 @@ The meaning of the parameter is as follows:
 -  ``TXPOWER`` - this is the transmit power in dBm. The maximum is 20dBm
 -  ``ECC`` - this enables/disables the golay error correcting code
 -  ``MAVLINK`` - this controls MAVLink framing and reporting. 0=no
-   mavlink framing, 1=frame mavlink, 2=low latency mavlink
+   MAVLink framing, 1=frame mavlink, 2=low latency mavlink
 -  ``MIN_FREQ`` - minimum frequency in kHz
 -  ``MAX_FREQ`` - maximum frequency in kHz
 -  ``NUM_CHANNELS`` - number of frequency hopping channels
@@ -500,7 +500,7 @@ parameters you should set to enable this mode are as follows:
 
 -  Set ``MAVLINK`` to 2. This turns on special checking for the
    ``RC_OVERRIDE`` packets used in joystick control, to allow those
-   packets to always be sent first. If you are using mavlink (you
+   packets to always be sent first. If you are using MAVLink (you
    probably are) there are no downsides for choosing this setting.
 -  Change ``MAX_WINDOW`` from the default of 131 to 33. This will ensure
    that the GCS can send a packet to the vehicle at least once every 33

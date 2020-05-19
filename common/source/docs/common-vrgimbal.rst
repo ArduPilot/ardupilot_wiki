@@ -21,7 +21,7 @@ and
 available) began as a fork of the open source `Martinez 2-axis brushless gimbal controller <https://sourceforge.net/projects/brushless-gimbal-brugi/>`__
 to support the more powerful STM32 CPUs but since then has been mostly
 rewritten and includes significant enhancements including 3-axis support
-and Mavlink for serial communication with the autopilot or
+and MAVLink for serial communication with the autopilot or
 ground station.
 
 -  `Official quick start guide can be found here <https://vrgimbal.wordpress.com/quick-start-guide/>`__

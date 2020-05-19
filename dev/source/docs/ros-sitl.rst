@@ -67,8 +67,8 @@ Open it with your favorite editor, mine is gedit.
 
         <arg name="fcu_url" default="/dev/ttyACM0:57600" /> <!-- Port et baudrate of the connexion with Pixhawk -->
         <arg name="gcs_url" default="" /> <!-- Retransmission to a GCS like Mavproxy does -->
-        <arg name="tgt_system" default="1" /> <!-- Mavlink id of your drone, default is 1 -->
-        <arg name="tgt_component" default="1" /> <!-- Mavlink component id of your drone, default is 1 -->
+        <arg name="tgt_system" default="1" /> <!-- MAVLink id of your drone, default is 1 -->
+        <arg name="tgt_component" default="1" /> <!-- MAVLink component id of your drone, default is 1 -->
         <arg name="log_output" default="screen" /> <!-- Where ROS will ouput its message, screen is your current terminal -->
 
         <include file="$(find mavros)/launch/node.launch"> <!-- This launch file will launch another launch file -->

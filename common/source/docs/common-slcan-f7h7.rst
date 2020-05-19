@@ -11,7 +11,7 @@ There are two different applications for using SLCAN to modify UAVCAN device par
 SLCAN Interface
 ===============
 
-The ArduPilot firmware provides two software USB interfaces, accessed simultaneously from the single physical USB connector. In  Mission Planner, you will see two COM ports assigned to the autopilot (if not, see Troubleshooting section below). One is for the SLCAN interface, the other for the normal Mavlink based Ground Control Station (GCS) connection. 
+The ArduPilot firmware provides two software USB interfaces, accessed simultaneously from the single physical USB connector. In  Mission Planner, you will see two COM ports assigned to the autopilot (if not, see Troubleshooting section below). One is for the SLCAN interface, the other for the normal MAVLink based Ground Control Station (GCS) connection. 
 
 In firmware 4.0 and earlier, they will be indistinguishable in the Mission Planner COM port selection box until you try to connect to the GCS with the SLCAN port that has been enabled for SLCAN protocol. (In later firmware versions, together with using the latest `Mission Planner driver set <https://firmware.ardupilot.org/Tools/MissionPlanner/driver.msi>`__ , each port will be clearly labeled.)
 

@@ -4,7 +4,7 @@
 Indoor autonomous flight with ArduCopter, ROS and AprilTag Detection
 ========================================================================
 
-This wiki page describes how to setup a system capable to realize indoor autonomous flight. The system is based on a quadcopter with a Raspberry Pi 3 and a USB camera. Images from the camera are used to calculate poses estimation on the Raspberry Pi and the result are sent as mavlink messages to the Flight Controller.
+This wiki page describes how to setup a system capable to realize indoor autonomous flight. The system is based on a quadcopter with a Raspberry Pi 3 and a USB camera. Images from the camera are used to calculate poses estimation on the Raspberry Pi and the result are sent as MAVLink messages to the Flight Controller.
 The camera is downward looking and on the floor there is an AprilTag board like this:
 
 .. image:: ../images/ros-apriltag-board.png

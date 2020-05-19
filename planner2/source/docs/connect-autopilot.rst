@@ -47,6 +47,6 @@ below.
 3 Disconnect when installing firmware
 -------------------------------------
 
-The autopilot must be unconnected to MavLink (showing the red
+The autopilot must be unconnected to MAVLink (showing the red
 disconnected icon) to install firmware. Otherwise you will receive the
 warning shown above.

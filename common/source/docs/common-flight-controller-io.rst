@@ -9,7 +9,7 @@ All ArduPilot Autopilots provide inputs and outputs for connecting:
 - Control Inputs (Mandatory for vehicle operation):
 
  - Radio Control Receivers
- - Mavlink Data Streams, ie ground control stations or companion computers
+ - MAVLink Data Streams, ie ground control stations or companion computers
 
 - Sensor Inputs:
 
