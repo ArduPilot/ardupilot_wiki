@@ -158,7 +158,7 @@ You should now be able to start the "Cygwin64 Terminal" application from your Wi
 Running SITL
 ============
 
-You can run SITL just as you can with any other build environment. In order to see the terminal you should instal VcXsrv or other X server application. You must then tell Cygwin where to look for the display by setting the DISPLAY variable. 
+You can run SITL just as you can with any other build environment. In order to see the terminal you should install VcXsrv or other X server application. You must then tell Cygwin where to look for the display by setting the DISPLAY variable. 
 
 ::
 
