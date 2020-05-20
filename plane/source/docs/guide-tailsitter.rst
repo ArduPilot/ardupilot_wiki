@@ -133,9 +133,9 @@ So a value of e.g. 60 degrees results in switching from copter to plane controll
 PID gain scheduling
 ===================
 
-There are 3 parameters controlling gain scheduling:  :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_GSCMSK>` is a 3 bit mask with bit 0 enabling gain boost with maximum set by parameter :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`.
+There are 3 parameters controlling gain scheduling:  :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>` is a 3 bit mask with bit 0 enabling gain boost with maximum set by parameter :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`.
 This is the maximum boost that will be applied to the control surfaces when throttle is below hover, this should be reduced if oscillations are seen at low throttle.
-Bit 1 enables attitude/throttle based gain attenuation with minimum gain (maximum attenuation) set by parameter :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_GSCMIN>`. With this option, control surface deflection is reduced at high tilt angles and high throttle levels to prevent oscillation at high airspeeds.
+Bit 1 enables attitude/throttle based gain attenuation with minimum gain (maximum attenuation) set by parameter :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>`. With this option, control surface deflection is reduced at high tilt angles and high throttle levels to prevent oscillation at high airspeeds.
 .. Bit 2 enables airspeed based gain interpolation (not yet merged).
 
 Orientation
