@@ -192,7 +192,7 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         </td>
     </tr>
     <tr class="row-odd">
-        <td><center><a class="first last reference external image-reference" href="https://www.aionrobotics.com"><img alt="AION ROBOTICS" src="../_images/aionrobotics_logo_275.png" style="width: 90px;" /></a><br/><br/>United States</center></td>
+        <td><center><a class="first last reference external image-reference" href="https://www.aionrobotics.com"><img alt="AION ROBOTICS" src="../_images/aionrobotics.png" style="width: 90px;" /></a><br/><br/>United States</center></td>
         <td><div class="first last line-block">
             <div class="line">AION ROBOTICS, <a href="mailto:info@aionrobotics.com" target="_top">info@aionrobotics.com</a></div>
             <div class="line"><br/></div>
@@ -263,7 +263,7 @@ listed here will be active participants in the community.
 .. image:: ../../../images/logos/oxinarf.jpg
     :scale: 0%
 
-.. image:: ../../../images/logos/aionrobotics_logo_275.png
+.. image:: ../../../images/logos/aionrobotics.png
     :scale: 0%
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
