@@ -33,7 +33,7 @@ If the SERIAL4/5 port on a Pixhawk is being used then the following parameters s
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
--  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 19 (Benewake TF02)
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 19 (Benewake TF02) for TF02, =20 (Benewake-Serial) for TF03 if Copter 3.6.12, =27 (Benewake TF03) for TF03 for Copter 4.0 and later. Note: using type = 20 on a TF03 will restrict its maximum range to that of a TF02.
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 30
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>`: for TF02 use **2000** for indoor, **1000** for outdoor.  For TF03 use **3500** for indoor, **12000** for outdoor.  *This is the distance in centimeters that the rangefinder can reliably read.*
 -  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
