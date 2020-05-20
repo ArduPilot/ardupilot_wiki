@@ -31,9 +31,9 @@ If the SERIAL4/5 port on a Pixhawk is being used then the following parameters s
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
--  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 (Benewake TFmini/Plus-Serial)
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 (Benewake-Serial)
 
-.. note:: :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 also works for TFminiPlus via its UART connection, if connected via I2C to the autopilot, use :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 25 (Benewake TFmini/Plus-I2C) and also set :ref:`RNGFND1_ADDR<RNGFND1_ADDR>` = 16 (I2C Address of lidar in decimal). *The sensor’s default I2C address is 0x10 hexademical which is 16 in decimal.* 
+.. note:: :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 20 works for TFminiPlus or TFmini, via its UART connection. If TFminiPlus is connected via I2C to the autopilot, use :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 25 (Benewake TFminiPlus-I2C) and also set :ref:`RNGFND1_ADDR<RNGFND1_ADDR>` = 16 (I2C Address of lidar in decimal). *The sensor’s default I2C address is 0x10 hexademical which is 16 in decimal.* 
 
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 30 for TFmini, =10 for TFminiPlus
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **1000** for indoor use OR **600** for outdoors.  *This is the distance in centimeters that the rangefinder can reliably read.*
