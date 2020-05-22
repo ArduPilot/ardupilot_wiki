@@ -85,8 +85,8 @@ primary forums. The diydrones.com forum
 `here <https://diydrones.com/forum>`__ and the Arduilot forum
 `here <https://discuss.ardupilot.org/>`__. The diydrones forum has existed
 for years and has a very large community and numerous general topics.
-The ArduPilot forum is newer and is more specific to the ArduPilot and
-it vehicles.
+The ArduPilot forum is newer and is more specific to ArduPilot and
+its vehicles.
 
 **Reporting Issues:**
 

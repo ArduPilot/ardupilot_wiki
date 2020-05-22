@@ -65,6 +65,12 @@ to **Disconnect** as shown:
    The "select port" dropdown also contains TCP or UDP port options
    that can be used to connect to an autopilot over a network.
 
+The "Stats..." hotlink beneath the port selection box, if clicked, will give information about the connection, such as if :ref:`Signing security<common-MAVLink2-signing>` is active, link stats, etc. Sometimes this window pops up beneath the current screen and will have to be brought to the front to be seen.
+
+.. image:: ../../../images/MP-stats.png
+   :target: ../_images/MP-stats.png
+
+
 Troubleshooting
 ===============
 
@@ -72,6 +78,7 @@ If Mission Planner is unable to connect:
 
 -  Check that the correct baud rate is used for the selected method
    (115200 on USB or 57600 on Radio/Telemetry)
+-  If attaching via USB, be sure that a few seconds after power up have passed before attempting to connect. If you attempted to connect during the bootloader initialization time, Windows may get the wrong USB information. Connection attempts after this may require that the USB connection be  unplugged and re-plugged,then wait for bootloader to enter the main code ( few seconds), then attempt the connection. Occasionally, MP must be restarted if an attempt to connect is made while in the bootloader initialization period.
 -  If using a COM port on Windows, check that the connection's COM port
    exists in the Windows Device Manager's list of serial ports.
 -  If your autopilot has an F7 or H7 processor and has CAN ports, then see the section below, :ref:`Troubleshooting Composite Connections <troubleshooting-composite-connections>` 
@@ -83,7 +90,7 @@ appropriate ArduPilot firmware installed and has booted correctly (on
 Pixhawk there are useful :ref:`LEDs <common-leds-pixhawk>` and
 :ref:`Sounds <common-sounds-pixhawkpx4>` which can tell you the state of the autopilot).
 
-If using a remoter link (not USB) and Mission Planner connects, but does not download parameters or you cannot get commands, like mode changes acted upon,then the autopilot probably has Singing turned on. See :ref:`common-MAVLink2-signing`.
+If using a remote link (not USB) and Mission Planner connects, but does not download parameters or you cannot get commands, like mode changes acted upon,then the autopilot probably has Signing turned on. See :ref:`common-MAVLink2-signing`.
 
 .. _troubleshooting-composite-connections:
 
