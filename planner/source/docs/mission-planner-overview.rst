@@ -63,9 +63,11 @@ The "Check for Updates" button will check for available updates to
 Mission Planner manually. Mission Planner automatically checks for
 updates upon start up and notifies you if an update is available. Please
 always run the most current version of Mission Planner, although it is
-not necessary to check for updates more often than upon start up. The
-check box "Show Console Window (restart)" enables the console window
-during Mission Planner operation.  That window shows Mission Planner
+not necessary to check for updates more often than upon start up. 
+
+The "Check for BETA Updates" button will install the current development version of Mission Planner. This contains all the latest features and updates, but also might have bugs, since it does not have extensive community testing.
+
+At the bottom of the HELP screen is the check box "Show Console Window (restart)" , which enables the console window during Mission Planner operation.  That window shows Mission Planner
 activity and is primarily for diagnostic purposes.  It sometimes shows
 some interesting information. A restart of Mission Planner is required
 for the option to take effect.  (TBD need a link to console page TBD)
@@ -80,11 +82,11 @@ Next, try a search of the website.  If you still need help, then the
 community forums are the place to go. There you will find may friendly
 users, developers and often, even Michael will chime in.  There are two
 primary forums. The diydrones.com forum
-`here <https://diydrones.com/forum>`__ and the APM forum
+`here <https://diydrones.com/forum>`__ and the Arduilot forum
 `here <https://discuss.ardupilot.org/>`__. The diydrones forum has existed
 for years and has a very large community and numerous general topics.
-The APM forum is new and is more specific to the ardupilot and
-ardu-vehicles.
+The ArduPilot forum is newer and is more specific to the ArduPilot and
+it vehicles.
 
 **Reporting Issues:**
 
