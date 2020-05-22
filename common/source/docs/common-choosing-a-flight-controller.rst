@@ -1,8 +1,8 @@
 .. _common-choosing-a-flight-controller:
 
-====================
+=====================
 Choosing an Autopilot
-====================
+=====================
 
 ArduPilot runs on many different autopilot boards, the most
 important of which are linked from the topic :ref:`AutoPilot Hardware Options <common-autopilots>`.
