@@ -38,7 +38,7 @@ Set the Baud rate to **115200** as shown. Don't hit **Connect** just yet.
 Install firmware
 ================
 
-On the Mission Planner's **Initial Setup \| Install Firmware** screen
+On the Mission Planner's **SETUP \| Install Firmware** screen
 select the appropriate icon that matches your frame (i.e. Quad, Hexa). 
 Answer **Yes** when it asks you "Are you sure?".
 
@@ -47,25 +47,19 @@ Answer **Yes** when it asks you "Are you sure?".
 
    Mission Planner: Install FirmwareScreen
 
-After the GCS detects which board you are using it will ask you to unplug the board, plug it back in and then
-press **OK** within a few seconds (during this brief period the
-bootloader accepts requests to upload new firmware).
+Next it will try to detect which board you are using and it may ask you to unplug the board, press OK, and  plug it back in to detect the board type.
 
 .. figure:: ../../../images/Pixhawk_InstallFirmware2.png
    :target: ../_images/Pixhawk_InstallFirmware2.png
 
    Mission Planner: Install FirmwarePrompt
 
-Next you may be asked "Upload ChibiOS?".  Most users will not notice a significant difference regardless of how this is answered.
-
-  - "Yes" will load ArduPilot using the newer ChibiOS operating system which results in a smaller and more efficient firmware but has a few `missing features <https://github.com/ArduPilot/ardupilot/issues/8109>`__
-  - "No" will load ArduPilot using the older NuttX operating system.
-
-.. image:: ../../../images/loading-the-firmware-chibiOS-yes-no.png
 
 If all goes well you will see some status appear on the bottom right
 including the words, "erase...", "program...", "verify.." and "Upload
-Done".  The firmware has been succesfully uploaded to the board.
+Done".  The firmware has been successfully uploaded to the board.
+
+It usually takes a few seconds for the bootloader to exit and enter the main code after programming or a power-up. Wait to press CONNECT until this occurs.
 
 Testing
 =======
