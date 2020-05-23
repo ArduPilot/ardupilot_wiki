@@ -150,9 +150,9 @@ If there have been updates to some git submodules you may need to do a full clea
 
 ::
 
-    make px4-clean
+    ./waf clean
 
-that will remove the *PX4NuttX* archives so you can do a `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ from scratch
+that will remove the build artifacts so you can do a `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ from scratch
 
 
 Additional Steps for macOS mojave
