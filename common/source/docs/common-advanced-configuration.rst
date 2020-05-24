@@ -92,10 +92,12 @@ tuning options for the vehicle.
 [/site]
     Telemetry Port Setup <common-telemetry-port-setup>
 [site wiki="copter,planner"]
-    Terrain Following (Non-Autonomous modes) <terrain-following-manual-modes>
+    Surface Tracking  <terrain-following-manual-modes>
+    Terrain Following (Autonomous modes) <terrain-following>
     Tuning <common-tuning>
 [/site]
 [site wiki="plane"]
+    Terrain Following <common-terrain-following>
     Transmitter Based Tuning <common-transmitter-tuning>
 [/site]
     UAVCAN Setup <common-uavcan-setup-advanced>

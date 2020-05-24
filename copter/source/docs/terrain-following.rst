@@ -11,7 +11,7 @@ Copter 3.4 (and higher) support "terrain following" in nearly all modes includin
 
 .. note::
 
-   :ref:`Loiter <loiter-mode>`, :ref:`PosHold <poshold-mode>` and :ref:`AltHold <altholdmode>` modes also support terrain following.  Please refer to the :ref:`terrain following for non-autonomous modes <terrain-following-manual-modes>` wiki page.
+   :ref:`Loiter <loiter-mode>`, :ref:`PosHold <poshold-mode>` and :ref:`AltHold <altholdmode>` modes also support low altitude terrain following, called Surface Tracking.  Please refer to the :ref:`Surface Tracking <terrain-following-manual-modes>` wiki page.
 
 Setting up a Mission to use Terrain data
 ----------------------------------------
