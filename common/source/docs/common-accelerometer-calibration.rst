@@ -22,7 +22,7 @@ Calibration steps
 
 .. warning:: If the board is mounted in a non-standard orientation (i.e. arrow is not pointing forward) then please ensure the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>`  is properly set before doing the accelerometer calibration.
 
-#. Under **Initial Setup \| Mandatory Hardware**, select **Accel
+#. Under **Setup \| Mandatory Hardware**, select **Accel
    Calibration** from the left-side menu.
 
    .. figure:: ../../../images/mp_accelerometer_calibration.png
@@ -44,8 +44,6 @@ Calibration steps
 
       Accelerometer Calibration Positions (Copter)
 
-[/site]
-
    .. tip::
 
          -  It is important that the vehicle is kept still immediately after
@@ -54,6 +52,14 @@ Calibration steps
             size/shape of the vehicle makes this difficult.
          -  The level position is the most important to get right as this will
             be the attitude that your controller considers level while flying.
+
+[site wiki="plane"]
+    For planes, often the optimum "level" position is actually done with the nose raised a few degrees (but the wings perfectly level). This is explained in the diagrams below. Most planes fly with a few degrees of Angle of Attack (AOA)and while many planes will have some Angle of Incidence built in, some do not, and some need a little higher AOA to fly at lower cruise speeds. If the level step of calibration is done with the plane's fuselage line level, then first flights will be safe, but cruise may be a bit fast. You can either set a few extra degrees nose up when doing the level step of calibration, or  decide after first flights if AOA needs to be increased for your desired cruise speed/throttle. If so, then you may redo the level only step using the  ``Calibrate Level`` button on the page.
+
+    .. image:: ../../../images/AOA.jpg
+
+
+ [/site]
 
 #. Proceed through the required positions (it is not necessary to use
    the **Click When Done** button).
