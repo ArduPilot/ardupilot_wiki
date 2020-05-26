@@ -46,14 +46,17 @@ To control the gimbal's lean angles from a transmitter set:
 - :ref:`MNT_RC_IN_ROLL <MNT_RC_IN_ROLL>` to some input channel number to control the gimbal's roll angle
 - :ref:`MNT_RC_IN_PAN <MNT_RC_IN_PAN>` to some input channel number to control the gimbals' heading
 
-For reference, `Gremsy's setup instructions can be found here <https://support.gremsy.com/support/solutions/articles/36000189926-how-to-setup-gremsy-gimbal-with-pixhawk-cube>`__
+Gremsy's instructions can be found below:
+
+- `How to setup Gremsy gimbal with Pixhawk Cube <https://support.gremsy.com/support/solutions/articles/36000189926-how-to-setup-gremsy-gimbal-with-pixhawk-cube>`__
+- `Control Gremsy Gimbal with Herelink & Cube <https://support.gremsy.com/support/solutions/articles/36000222529-control-gremsy-gimbal-with-herelink-cube-pilot>`__
 
 Configuring the Gimbal
 ----------------------
 
 The gimbal should work without any additional configuration but to improve performance you may need to adjust the gimbal's gains to match the camera's weight
 
-- Download, install and run the `gTune setup application <https://github.com/Gremsy/gTuneDesktop/releases>`__)
+- Download, install and run the `gTune setup application <https://github.com/Gremsy/gTuneDesktop/releases>`__
 - Connect the gimbal to your Desktop PC using a USB cable
 - Push the "CONNECTION" button on the left side of the window, then select the COM port and press "Connect"
 - Select the "STIFFNESS" tab and adjust the Tilt, Roll and Pan gains so that the gimbal holds the camera in position without shaking
