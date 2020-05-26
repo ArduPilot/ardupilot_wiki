@@ -3987,10 +3987,6 @@ Supported by: Plane (not Copter or Rover).
 Mission command to enable the
 :ref:`GeoFence <plane:geofencing>`.
 
-.. note::
-
-   At time of writing (May 2015) this command is not available in
-   Mission Planner.
 
 **Command parameters**
 
