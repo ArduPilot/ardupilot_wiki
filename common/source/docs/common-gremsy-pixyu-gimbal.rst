@@ -59,6 +59,7 @@ The gimbal should work without any additional configuration but to improve perfo
 - Download, install and run the `gTune setup application <https://github.com/Gremsy/gTuneDesktop/releases>`__
 - Connect the gimbal to your Desktop PC using a USB cable
 - Push the "CONNECTION" button on the left side of the window, then select the COM port and press "Connect"
+- Select the "CONTROLS" tab and ensure "SYNC" is selected so the gimbal communicates with the autopilot using MAVLink
 - Select the "STIFFNESS" tab and adjust the Tilt, Roll and Pan gains so that the gimbal holds the camera in position without shaking
 
 Testing Controlling the Gimbal from RC
@@ -82,3 +83,5 @@ The ROI feature points the vehicle and/or camera to point at a target.  This can
 
 .. image:: ../../../images/Tarot_BenchTestROI.jpg
     :target: ../_images/Tarot_BenchTestROI.jpg
+
+Pilot control of the gimbal can be restored by setting up an :ref:`auxiliary function switch <common-auxiliary-functions>` to "Retract Mount" (i.e. RCx_OPTION = 27) and then move the switch to the lower position
