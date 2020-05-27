@@ -199,7 +199,7 @@ file extension to ".log" before opening in Mission Planner.
 Next steps
 ==========
 
-To get the most out of SITL we recommend you read the :ref:`MAVProxy documentation <mavproxy:home>`_.
+To get the most out of SITL we recommend you read the :ref:`MAVProxy documentation <mavproxy:home>`.
 
 The topic :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` explains how to use the
 simulator, and covers topics like how to use SITL with Ground Stations
