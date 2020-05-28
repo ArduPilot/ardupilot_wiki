@@ -9,12 +9,23 @@ Overview
 ========
 
 Copter and Rover include a simple "tin can" shaped fence centered
-on home that will attempt to stop your copter from flying too far away
-by stopping at the fence (BRAKE or HOLD), LANDing, or initiating an RTL.
-The maximum circular distance and altitude (altitude used by Copter only) and the vehicle behavior when the fence is reached can be configured using
-Mission Planner.
+on home that will attempt to stop your copter/rover from flying/driving too far away
+by stopping at the fence or executing a configurable action.
+The maximum circular distance and altitude (altitude used by Copter only) and the vehicle behavior when the fence is reached can be configured using Mission Planner.
 
-If the vehicle strays outside these borders it will execute the :ref:`FENCE_ACTION<FENCE_ACTION>`.
+Rover Actions
+-------------
+
+Rover has no altitude actions, but if it reaches the Cylndrical fence boundary in either Steering or Acro modes, it will simply stop and not move beyond it. These are the only modes affected by the fence.
+
+Copter Actions
+--------------
+
+Copter will stop increasing altitude at :ref:`FENCE_ALT_MAX<>` in Loiter, PosHold, and AltHold modes.
+
+In Loiter mode, it will stop at the horizontal boundaries.
+
+In other modes, it will execute the :ref:`FENCE_ACTION<FENCE_ACTION> below if the altitude or boundary is reached.
 
 +------------+--------------------+-------------------+
 +FENCE_ACTION|  Copter            | Rover             +
@@ -58,7 +69,7 @@ The Fence can be set-up by doing the following:
 -  Go to the **CONFIG/GeoFence** screen
 -  Enable the FENCE: :ref:`FENCE_ENABLE<FENCE_ENABLE>` =1.
 
-.. note:: The fence can be enabled/disabled by an RC channel, or Mission Command (DO_FENCE_EANBLE), be must be enabled with this parameter first.
+.. note:: The fence can be enabled/disabled by an RC channel, or Mission Command (DO_FENCE_EANBLE), but must be enabled with this parameter first.
 
 -  Set :ref:`FENCE_TYPE<FENCE_TYPE>` = default of "ALL" is fine and will allow you to set up an additional :ref:`common-polygon_fence` , unless you want only a cylindrical fence to be active if a polygon fence has also been loaded. Then  you could select "Altitude" or "Circle" or both.
 -  Set :ref:`FENCE_ACTION<FENCE_ACTION>` ="RTL or LAND" ,or whatever you wish for a breach action.
