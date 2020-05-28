@@ -418,6 +418,14 @@ Do-Digicam-Control
 Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>`
 once. This command takes no additional arguments.
 
+Do-Fence-Enable
+~~~~~~~~~~~~~~~~~~
+
+.. image:: ../../../images/MissionList_DoFenceEnable.png
+    :target: ../_images/MissionList_DoFenceEnable.png
+
+Enable(1) or Disable(0) the Copter :ref:`common-ac2_simple_geofence` and/or Copter :ref:`common-polygon_fence`. This command takes no additional arguments.
+
 Do-Mount-Control
 ~~~~~~~~~~~~~~~~
 

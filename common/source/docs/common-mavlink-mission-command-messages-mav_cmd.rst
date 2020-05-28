@@ -234,6 +234,8 @@ only)
 
 :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
 
+:ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
+
 [/site]
 
 [site wiki="plane"]
@@ -370,6 +372,8 @@ only)
 :ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
 
 :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+
+:ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 
 [/site]
 
@@ -3977,15 +3981,13 @@ after every 5m that the vehicle travels.
 
 .. _mav_cmd_do_fence_enable:
 
-[site wiki="plane" heading="off"]
 
 MAV_CMD_DO_FENCE_ENABLE
 -----------------------
 
-Supported by: Plane (not Copter or Rover).
+Supported by: Plane , Copter, Rover.
 
-Mission command to enable the
-:ref:`GeoFence <plane:geofencing>`.
+Mission commands to enable the Plane :ref:`GeoFence <plane:geofencing>`, Copter/Rover :ref:`common-ac2_simple_geofence` and/or :ref:`common-polygon_fence`.
 
 
 **Command parameters**
@@ -4002,7 +4004,7 @@ Mission command to enable the
    <tr>
    <td><strong>param1</strong></td>
    <td></td>
-   <td>Set GeoFence enable state (0=disable, 1=enable).</td>
+   <td>Set GeoFence enable state (0=disable, 1=enable, 2= disable only floor (Plane only)).</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
@@ -4037,7 +4039,6 @@ Mission command to enable the
    </tbody>
    </table>
 
-[/site]
 
 .. _mav_cmd_do_parachute:
 [site wiki="copter" heading="off"]
