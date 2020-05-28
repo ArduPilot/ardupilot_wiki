@@ -34,7 +34,7 @@ Specifications
 -  **Interfaces**
 
    -  UART, I2C, ADC for extensions
-   -  PWM/S.Bus input
+   -  PPM/S.Bus input
    -  14 PWM servo outputs
     
 -  **Dimensions**
