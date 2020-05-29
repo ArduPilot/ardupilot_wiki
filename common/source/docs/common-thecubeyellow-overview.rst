@@ -1,7 +1,7 @@
 .. _common-thecubeyellow-overview:
 
 =================
-The Cube Yellow
+The Cube Yellow Overview
 =================
 
 .. image:: ../../../images/Cube_yellow_module.jpg
