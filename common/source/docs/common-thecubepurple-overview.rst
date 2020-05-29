@@ -1,7 +1,7 @@
 .. _common-thecubepurple-overview:
 
 =================
-The Cube Overview
+The Cube Purple Overview
 =================
 
 .. image:: ../../../images/Cube_purple.jpg
