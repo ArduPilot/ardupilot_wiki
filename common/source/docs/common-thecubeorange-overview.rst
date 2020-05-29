@@ -35,7 +35,7 @@ Cube Orange Features
 -  2 sets of IMU are vibration-isolated mechanically, reducing the effect of frame vibration to state estimation
 -  IMUs are temperature-controlled by onboard heating resistors, allowing optimum working temperature of IMUs
 -  The entire flight management unit(FMU) and inertial management unit(IMU) are housed in a reatively small form factor (a cube). 
- - Cubepilot carrierboard ecosytem compatible. all inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suite their specific needs.
+-  Fully Cubepilot carrierboard compatible, all inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suite their specific needs now and in the future. 
 
 Specifications
 ==============
