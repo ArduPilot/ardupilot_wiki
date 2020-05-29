@@ -16,6 +16,9 @@ The Cube Orange autopilot is the latest and most powerful model in the Cubepilot
 
 The Cube Orange is available as a standalone module or as a package with a new updated version of the original carrier board that now includes an integrated ADS-B In module from uAvionics. 
 
+ADS-B Carrier Board
+==================
+
 The new ADS-B carrier boards overall footprint is identical to the standard versions and main changes compared to original carrier are as follows:
 
 -  Integration of uAvonix ADS-B IN Receiver on Serial 5
@@ -25,7 +28,7 @@ The new ADS-B carrier boards overall footprint is identical to the standard vers
 All other specification and external connections remain identical to the original board s listed on the Cube Black page.
 
 Cube Orange Features
-==============
+====================
 
 -  3 sets of IMU sensors for extra redundancy
 -  2 sets of IMU are vibration-isolated mechanically, reducing the effect of frame vibration to state estimation
