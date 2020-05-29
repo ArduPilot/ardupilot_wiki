@@ -1,11 +1,11 @@
-.. _common-thecube-overview:
+.. _common-thecubeorange-overview:
 
 =================
 The Cube Orange Overview
 =================
 
-.. image:: ../../../images/thecube/connect-to-com-port.jpg
-    :target: ../_images/connect-to-com-port.jpg
+.. image:: ../../../images/thecube/Cube_orange_adsb.jpg
+    :target: ../_images/Cube_orange_adsb.jpg
     :width: 360px
 
 System Features
