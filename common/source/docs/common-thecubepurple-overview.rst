@@ -1,4 +1,4 @@
-.. _common-thecube-overview:
+.. _common-thecubepurple-overview:
 
 =================
 The Cube Overview
