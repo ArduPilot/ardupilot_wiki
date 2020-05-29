@@ -37,16 +37,16 @@ Specifications
 
 -  **Processor**
 
-   -  STM32 H7 Cortex M4 core with FPU
+   -  STM32H743 Arm® Cortex®-M7 
    -  400 Mhz/1 MB RAM/2 MB Flash
    -  32-bit failsafe co-processor
 
 -  **Sensors**
 
    -  Three redundant IMUs (accels, gyros and compass)
-   -  InvenSense MPU9250, ICM20948 and/or ICM20648 as first and third IMU (accel and gyro)
-   -  ST Micro L3GD20+LSM303D or InvenSense ICM2076xx as backup IMU (accel and gyro)
-   -  Two redundant MS5611 barometers
+   -  MPU9250 or ICM 20649 integrated accelerometer / gyro, MS5611 Barometer on base board
+   -  InvenSense ICM20602,ICM20948, MS5611 Barometer on temperature controlled, vibration isolated board
+   -  All sensors connected via SPI.
 
 -  **Power**
 
@@ -78,22 +78,20 @@ The Cube connector pin assignments
 
 All other specification and external connections remain identical to the original board s listed on the Cube Black page.
 
+More Information
+================
+
+see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
+
+see  `www.proficnc.com  <http://www.proficnc.com>`__
+
+
+The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, or `here <https://github.com/ArduPilot/Schematics/tree/master/ProfiCNC>`__ ,this serve as a starting point for designers to design their own system based on The Cube autopilot.
+
 Where to Buy
 ============
 
 Official retailers are listed `here  <http://www.proficnc.com/stores>`__.
-
-Quick Start
-===========
-
-Use the :ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>` as a guide. The Cube update coming soon
-
-More Information
-================
-
-see  `www.proficnc.com  <http://www.proficnc.com>`__
-
-The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, or `here <https://github.com/ArduPilot/Schematics/tree/master/ProfiCNC>`__ ,this serve as a starting point for designers to design their own system based on The Cube autopilot.
 
 More Images
 ===========
