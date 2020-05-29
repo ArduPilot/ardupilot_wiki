@@ -56,3 +56,9 @@ Specifications
    -  High-power RGB LED (I2C driver compatible connected externally only)
    -  Safety switch / LED
    -  Optional carrier board for Intel Edison
+More Images
+===========
+
+.. image:: ../../../images/thecube/pixhawk2-overhead.jpg
+    :target: ../_images/pixhawk2-overhead.jpg
+    :width: 360px
