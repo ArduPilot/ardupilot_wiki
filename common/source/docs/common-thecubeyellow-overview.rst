@@ -1,4 +1,4 @@
-.. _common-thecubeorange-overview:
+.. _common-thecubeyellow-overview:
 
 =================
 The Cube Yellow
