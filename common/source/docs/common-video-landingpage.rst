@@ -44,6 +44,32 @@ More Info on Herelink can be found on
 -   `Cubepilot Support Forum <https://discuss.cubepilot.org>`_
 
 
+DJI Digital FPV System
+======================
+
+
+.. figure:: ../../../images/DJI_FPV.jpg
+   :target: ../_images/DJI_FPV.jpg
+   
+.. note:: This system is not directly compatible with Mavlink. However, there is an MSP to MAVLink Arduino converter maintained by D3NGIT that allows it to provide telemetry data via the custom OSD. See https://github.com/d3ngit/djihdfpv_mavlink_to_msp_V2.
+
+ukmook has put together a set of instructions on how to set this up here https://github.com/ukmook/qUark/tree/master/Mav-To-MSP#quark-flight-electronics
+
+Overview
+--------
+
+The DJI Digital FPV System was designed for the drone racing industry. It consists of the DJI FPV Air Unit Module, DJI FPV Camera, DJI FPV Goggles, and DJI FPV Remote Controller.
+
+Features
+--------
+- MSP Telemetary Input
+- 5 GHz 8 Channels
+- Low Latency Mode 720p/120fps: <28 ms
+- High-Quality Mode 720p/60fps: <40 ms
+- Max transmission range: Up to 4 km
+
+More Info on at `DJI <www.DJI.com>`_
+
 
 DJI Ocusync Air System 
 ======================
@@ -70,28 +96,6 @@ Features
 
 
 More Info at `DJI <www.DJI.com>`_
-
-
-DJI Digital FPV System
-======================
-
-
-.. figure:: ../../../images/DJI_FPV.jpg
-   :target: ../_images/DJI_FPV.jpg
-   
-.. note:: This system is not directly compatible with Mavlink. However, there is an MSP to MAVLink Arduino converter maintained by D3NGIT that allows it to provide telemetry data via the custom OSD. See https://github.com/d3ngit/djihdfpv_mavlink_to_msp_V2.
-
-The DJI Digital FPV System was designed for the drone racing industry. It consists of the DJI FPV Air Unit Module, DJI FPV Camera, DJI FPV Goggles, and DJI FPV Remote Controller.
-
-Features
---------
-- MSP Telemetary Input
-- 5 GHz 8 Channels
-- Low Latency Mode 720p/120fps: <28 ms
-- High-Quality Mode 720p/60fps: <40 ms
-- Max transmission range: Up to 4 km
-
-More Info on at `DJI <www.DJI.com>`_
 
  
 Sky-Drones Smartlink 
