@@ -16,7 +16,7 @@ The Cube Orange autopilot is the latest and most powerful model in the Cubepilot
 
 The Cube Orange is available as a standalone module or as a package with a new updated version of the original carrier board that now includes an integrated ADS-B In module from uAvionics. 
 
-The new carrier boards overall footprint is identical to the standard versions and main changes compared to original carrier are as follows:
+The new ADS-B carrier boards overall footprint is identical to the standard versions and main changes compared to original carrier are as follows:
 
 -  Integration of uAvonix ADS-B IN Receiver on Serial 5
 -  Built-In ADS-B Antenna 
@@ -101,6 +101,6 @@ Official retailers are listed `here  <http://www.proficnc.com/stores>`__.
 More Images
 ===========
 
-.. image:: ../../../images/thecube/pixhawk2-overhead.jpg
-    :target: ../_images/pixhawk2-overhead.jpg
+.. image:: ../../../images/Cube_orange_module.jpg
+    :target: ../_images/Cube_orange_module.jpg
     :width: 360px
