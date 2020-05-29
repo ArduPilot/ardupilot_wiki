@@ -42,15 +42,15 @@ Specifications
 
 -  **Processor**
 
-   -  STM32H743 Arm® Cortex®-M7 
+   -  32bit ARM® STM32H743 Cortex®-M7（with DP-FPU）
    -  400 Mhz/1 MB RAM/2 MB Flash
-   -  32-bit failsafe co-processor
+   -  32 bit STM32F103 failsafe co-processor
 
 -  **Sensors**
 
-   -  Three redundant IMUs (accels, gyros and compass)
-   -  MPU9250 or ICM 20649 integrated accelerometer / gyro, MS5611 Barometer on base board
-   -  InvenSense ICM20602,ICM20948, MS5611 Barometer on temperature controlled, vibration isolated board
+   - Three redundant IMUs (accels, gyros and compass)
+   -  ICM 20649 integrated accelerometer / gyro, MS5611 Barometer on base board
+   -  InvenSense ICM20602 IMU,ICM20948 IMU/MAG, MS5611 Barometer on temperature controlled, vibration isolated board
    -  All sensors connected via SPI.
 
 -  **Power**
