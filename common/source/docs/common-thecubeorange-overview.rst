@@ -74,7 +74,7 @@ Specifications
    -  High-powered piezo buzzer driver (on expansion board)
    -  High-power RGB LED (I2C driver compatible connected externally only)
    -  Safety switch / LED
-   -  Optional carrier board for Intel Edison
+   -  Optional carrier board for Intel Edison (now obsolete)
 
 
 
