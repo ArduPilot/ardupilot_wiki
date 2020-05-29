@@ -11,7 +11,8 @@ The Cube Purple Overview
 System Features
 ===============
 
-The Cube Purple autopilot is designed for ground based applications such as boat, car or rover. Based on the Cube Black main module
+The Cube Purple autopilot is designed for ground based applications such as boat, car or rover. 
+Based on the Cube Black main module the purple is a much smaller platform for use cases where sensor redundency is not required. 
 
 -  3 sets of IMU sensors for extra redundancy
 -  2 sets of IMU are vibration-isolated mechanically, reducing the effect of frame vibration to state estimation
