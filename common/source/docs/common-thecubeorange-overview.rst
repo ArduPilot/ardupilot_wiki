@@ -11,7 +11,7 @@ The Cube Orange With ADSB-In Overview
 System Features
 ===============
 
-The Cube Orange autopilot is the latest and most powerful model in the Cubepilot ecosystem. Designed for hobby users, commercial system integrators and UAS manufacturers the Cube Orange autopilot is part on a wide ecosystem of autopilot modules and carrier boards. Because all Cube models are compatible with all carriers this allows users to choose an off the shelf carrier board that best suits their needs. System designers are able to integrate the Cube directly into their designs via published carrier board specifications. 
+The Cube Orange autopilot is the latest and most powerful model in the Cubepilot ecosystem. Designed for hobby users, commercial system integrators and UAS manufacturers the Cube Orange autopilot is part of a wide ecosystem of autopilot modules and carrier boards. Because all Cube models are compatible with all carriers this allows users to choose an off the shelf carrier board that best suits their needs. System designers are able to integrate the Cube directly into their designs via published carrier board specifications. 
 
 
 The Cube Orange is available as a standalone module or as a package with a new updated version of the original carrier board that now includes an integrated ADS-B In module from uAvionics. 
