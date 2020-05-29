@@ -6,7 +6,7 @@ The Cube Purple Overview
 
 .. image:: ../../../images/Cube_purple.jpg
     :target: ../_images/Cube_purple.jpg
-    :width: 200px
+    :width: 360px
 
 System Features
 ===============
