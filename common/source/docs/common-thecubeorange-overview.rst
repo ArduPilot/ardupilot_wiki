@@ -4,7 +4,7 @@
 The Cube Orange Overview
 =================
 
-.. image:: ../../../images/thecube/Cube_orange_adsb.jpg
+.. image:: ../../../images/Cube_orange_adsb.jpg
     :target: ../_images/Cube_orange_adsb.jpg
     :width: 360px
 
