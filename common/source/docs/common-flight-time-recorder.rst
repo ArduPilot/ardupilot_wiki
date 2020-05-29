@@ -6,7 +6,7 @@
 Flight Time Recorder
 ====================
 
-Copter-3.5 (and higher) includes a flight time recorder which records the board's total flight time, total run time and number of times the board has been rebooted.  These are stored in user resettable parameters meaning they are not protected from being tampered with.
+ArduPilot includes a flight time recorder which records the board's total flight time, total run time and number of times the board has been rebooted.  These are stored in user resettable parameters meaning they are not protected from being tampered with.
 
 .. image:: ../../../images/flight_time_recorder.jpg
 
