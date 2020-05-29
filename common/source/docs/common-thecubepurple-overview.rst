@@ -4,8 +4,8 @@
 The Cube Overview
 =================
 
-.. image:: ../../../images/thecube/connect-to-com-port.jpg
-    :target: ../_images/connect-to-com-port.jpg
+.. image:: ../../../images/Cube_purple.jpg
+    :target: ../_images/Cube_purple.jpg
     :width: 360px
 
 System Features
