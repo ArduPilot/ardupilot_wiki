@@ -18,9 +18,9 @@ The Cube Orange is available as a standalone module or as a package with a new u
 
 The new carrier boards overall footprint is identical to the standard versions and main changes compared to original carrier are as follows:
 
-Integration of uAvonix ADS-B IN Receiver on Serial 5
-Built-In ADS-B Antenna 
-Removal of Intel Edison Bay and Debug USB Ports
+-  Integration of uAvonix ADS-B IN Receiver on Serial 5
+-  Built-In ADS-B Antenna 
+-  Removal of Intel Edison Bay and Debug USB Ports
 
 All other specification and external connections remain identical to the original board s listed on the Cube Black page.
 
