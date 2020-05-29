@@ -409,22 +409,33 @@ This section details the pin assignments of the standard carrier board of The Cu
 
 
 
+Cubepilot Ecosystem
+===================
+
+.. image:: ../../../images/Cubepilot_ecosystem.jpg
+    :target: ../_images/Cubepilot_ecosystem.jpg
+
+
+More Information
+================
+
+For more detials and instructions on the Cubepilot system see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
+
+For help and support see  `Cubepilot Forum  <https://discuss.cubepilot.org/>`__
+
+More info on Cubpilot see  `www.proficnc.com  <http://www.proficnc.com>`__
+
+
+Carrier Board Design
+====================
+
+The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, or `here <https://github.com/ArduPilot/Schematics/tree/master/ProfiCNC>`__ ,this serve as a starting point for designers to design their own system based on The Cube autopilot.
+
 Where to Buy
 ============
 
 Official retailers are listed `here  <http://www.proficnc.com/stores>`__.
 
-Quick Start
-===========
-
-Use the :ref:`Pixhawk Wiring QuickStart <common-pixhawk-wiring-and-quick-start>` as a guide. The Cube update coming soon
-
-More Information
-================
-
-see  `www.proficnc.com  <http://www.proficnc.com>`__
-
-The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, or `here <https://github.com/ArduPilot/Schematics/tree/master/ProfiCNC>`__ ,this serve as a starting point for designers to design their own system based on The Cube autopilot.
 
 More Images
 ===========
