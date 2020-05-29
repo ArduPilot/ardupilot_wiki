@@ -81,10 +81,15 @@ All other specification and external connections remain identical to the origina
 More Information
 ================
 
-see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
+For more detials and instructions on the Cubepilot system see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
 
-see  `www.proficnc.com  <http://www.proficnc.com>`__
+For help and support see  `Cubepilot Forum  <https://discuss.cubepilot.org/>`__
 
+More info on Cubpilot see  `www.proficnc.com  <http://www.proficnc.com>`__
+
+
+Carrier Board Design
+====================
 
 The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, or `here <https://github.com/ArduPilot/Schematics/tree/master/ProfiCNC>`__ ,this serve as a starting point for designers to design their own system based on The Cube autopilot.
 
