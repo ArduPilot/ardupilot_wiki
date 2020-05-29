@@ -83,6 +83,13 @@ The Cube connector pin assignments
 
 All other specification and external connections remain identical to the original board s listed on the Cube Black page.
 
+Cubepilot Ecosystem
+===================
+
+.. image:: ../../../images/Cubepilot_ecosystem.jpg
+    :target: ../_images/Cubepilot_ecosystem.jpg
+
+
 More Information
 ================
 
