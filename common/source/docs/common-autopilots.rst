@@ -19,10 +19,10 @@ Open hardware
     Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
     F4BY <common-f4by>
     Hex/ProfiCNC Cube Black <common-thecube-overview>
+    Hex/ProfiCNC Cube Orange <common-thecubeorange-overview>
+    Hex/ProfiCNC Cube Purple <ommon-thecubepurple-overview>
+    Hex/ProfiCNC Cube Yellow <common-thecubeyellow-overview>
     Hex/ProfiCNC Cube Green <http://www.proficnc.com/all-products/79-the-cube.html>
-    Hex/ProfiCNC Cube Orange <http://www.proficnc.com/all-products/188-the-cube.html>
-    Hex/ProfiCNC Cube Purple <http://www.proficnc.com/all-products/176-the-cube.html>
-    Hex/ProfiCNC Cube Yellow <http://www.proficnc.com/all-products/187-the-cube.html>
     mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/mro-x2.1rv2-mr.htm>
