@@ -32,28 +32,19 @@ Specifications
    -  1 x InvenSense MPU9250 (accel and gyro)
    -  1 x MS5611 barometers
 
--  **Power**
+Carrier Board Mini
+==================
 
-   -  Redundant power supply with automatic failover
-   -  Servo rail high-power (7 V) and high-current ready
-   -  All peripheral outputs over-current protected, all inputs ESD
-      protected
+.. image:: ../../../images/Carrier_mini.jpg
+    :target: ../_images/CCarrier_mini.jpg
+    :width: 360px
 
--  **Interfaces**
+Mini Carrier Board has the standardized DF17 connector which allows user to connect it to every version of the Cube flight controller. With smaller size and almost the same capability with standard carrier board, it can better fit-in to those applications which have size limits. Also, it can be equipped with the Cube Purple to better fulfil the requests from customers. Functionality of Carrier Board:
 
-   -  14x PWM servo outputs (8 from IO, 6 from FMU)
-   -  S.Bus servo output
-   -  R/C inputs for CPPM, Spektrum / DSM and S.Bus
-   -  Analogue / PWM RSSI input
-   -  5x general purpose serial ports, 2 with full flow control
-   -  2x I2C ports
-   -  SPI port (un-buffered, for short cables only not recommended for use)
-   -  2x CAN Bus interface
-   -  3x Analogue inputs (3.3V and 6.6V)
-   -  High-powered piezo buzzer driver (on expansion board)
-   -  High-power RGB LED (I2C driver compatible connected externally only)
-   -  Safety switch / LED
-   -  Optional carrier board for Intel Edison
+Dual power input (for redundant power, automatic switch to another power when one fails)
+Power distribution (limit the current at each connector, avoiding overloading when one device draws too large current)
+Voltage protection (over or under voltage protection, the circuit will be shut down if the voltage exceeds the limit)
+
 
 
 
