@@ -6,7 +6,7 @@
 Sensor Position Offset Compensation
 ===================================
 
-Copter-3.5 (and higher) includes compensation for sensor placement on the vehicle.  This page clarifies what parameters can be set and how they should be set.
+ArduPilot includes compensation for sensor placement on the vehicle.  This page clarifies what parameters can be set and how they should be set.
 
 .. note::
 
