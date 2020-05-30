@@ -147,7 +147,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 # DO NOT CHANGE. This is used by theme in "Edit on Github" links
-html_short_title = 'planner'
+html_short_title = 'mavproxy'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
