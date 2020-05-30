@@ -76,6 +76,13 @@ Tips for using the Flight Data screen
    Globalmapper, as this is currently one of the key steps in exporting
    in the required format for use in the planner.
 
+For more details on this screen, see:
+
+.. toctree::
+    :maxdepth: 1
+
+    Flight Data <mission-planner-flight-data>
+
 Guided Mode
 ===========
 
