@@ -4,8 +4,8 @@
 Mission Planner Ground Control Station
 ======================================
 
-The GCS Flight Data Screen
-==========================
+The GCS Flight Data Screen Overview
+===================================
 
 The screenshot below shows the main "Heads-up Display (HUD)" view of the
 Mission Planner Ground Station. Once you have connected to a vehicle
@@ -43,17 +43,6 @@ Tips for using the Flight Data screen
 -  Remember how artificial horizons work: when the aircraft tilts to the
    right, the horizon tilts to the left. (Just tilt your head and you'll
    see what I mean). This is normal! Please don't tell us it's reversed ;-)
--  For Plane status, the output meaning is as follows:
-
-   -  "WPDist" : Distance to next waypoint in meters
-   -  "Bearing ERR": How far your UAV is from the perfect line to the
-      next waypoint
-   -  "Alt ERR": How far your UAV is from the target altitude
-   -  "WP": Next waypoint to hit
-   -  "Mode": Current autopilot mode.
-
--  "Plane output" means the autopilot's outputs on the first four
-   channels
 -  You can issues mode changes and other action commands in the air with
    the Mission Planner and other GCSs, but note that you must be under
    autopilot control for them to take effect. When your RC toggle switch
@@ -66,15 +55,20 @@ Tips for using the Flight Data screen
    options.
 -  If you double-click the HUD it will popout, allowing you to run the
    HUD full screen on a second screen.
--  If you double-click on the Speed Guage you can modify the max scale
-   you want to display.
--  If you enable the Tuning checkbox and double-click tuning you can
-   graph any data that is available in the status tab. This means you
-   can have alt, attitude, or many other options in real time.
+-  Below the HUD are several buttons for actions, status,etc. See :ref:`Flight Data Screen Details<mission-planner-flight-data>`.
+-  If you enable the Tuning checkbox at the bottom of the map, and then double-click tuning window that appears,you can
+   graph any data that is available in the Status tab under the HUD. This means you
+   can have alt, attitude, or many other options shown in real time.
 -  You can use custom imagery instead of Google Maps. Press control-F.
    This allows you to upload your own orthophotos. Use will require
    Globalmapper, as this is currently one of the key steps in exporting
    in the required format for use in the planner.
+   +For more details on this screen, see:
+
+.. toctree::
+   :maxdepth: 1
+
+   Flight Data <mission-planner-flight-data>
 
 Guided Mode
 ===========
