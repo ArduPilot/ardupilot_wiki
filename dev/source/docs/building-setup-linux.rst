@@ -35,6 +35,7 @@ Clone ArduPilot repository
     to use https protocols instead of the default git:// prefix.
 
 
+
 Install some required packages
 ------------------------------
 
@@ -55,6 +56,23 @@ Now you should be able to build with waf as described in `BUILD.md <https://gith
 
 
 .. youtube:: 4B8BVskH0vc
+
+Cleaning
+========
+
+If there have been updates to some git submodules you may need to do a full clean build. To do that use:
+
+::
+
+    ./waf clean
+
+that will remove the build artifacts so you can do a `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ from scratch
+
+--------------------
+
+Setup for other Distributions Using the STM Toolchain
+=====================================================
+
 
 
 Add some directories to your search path (Facultative)
@@ -79,15 +97,13 @@ Then reload your PATH by using the "dot" command in a terminal
 ::
 
     . ~/.bashrc
-
-Setup for other Distributions
-=============================
-
+    
 .. warning::
 
     Do not use this if you have already use the ``install-prereqs-ubuntu.sh`` script !
 
-To build for a Cube/Pixhawk target on Linux you need the
+
+To build for a autopilot target on Linux you need the
 following tools and git repositories:
 
 -  The gcc-arm cross-compiler from `here <https://firmware.ardupilot.org/Tools/STM32-tools/>`__
@@ -100,6 +116,21 @@ Also, it's worth mentioning here that you want to ensure that the
 modemmanager package is not installed and the modem-manager process is
 not running.
 
+Compiler
+--------
+
+You need the specific gcc-arm cross-compiler linked above. You need to unpack it where you want, for now let's call this location TARGET_DIR:
+
+::
+
+    cd TARGET_DIR
+    tar -xjvf gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2
+
+and then add the bin directory from the tarball to your $PATH by editing
+the $HOME/.bashrc file and adding a line like this to the end. TARGET_DIR is the location choose previouly where you unpack the toolchain:
+
+``export PATH=$PATH:TARGET_DIR/gcc-arm-none-eabi-6-2017-q2/bin``
+
 Permissions
 -----------
 
@@ -111,25 +142,12 @@ You need to make your user a member of the dialout group:
 
 You will need to log out and then log back in for the group change to take effect.
 
-Compiler
---------
 
-You need the specific gcc-arm cross-compiler linked above. You need to unpack it where you want, for now let's call this location TARGET_DIR:
-
-::
-
-    cd TARGET_DIR
-    tar -xjvf gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
-
-and then add the bin directory from the tarball to your $PATH by editing
-the $HOME/.bashrc file and adding a line like this to the end. TARGET_DIR is the location choose previouly where you unpack the toolchain:
-
-``export PATH=$PATH:TARGET_DIR/gcc-arm-none-eabi-4_9-2015q3/bin``
 
 Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
 ccache for faster builds
-------------------------
+========================
 
 Installing *ccache* will speed up your builds a lot. Once you install it
 (for example with "sudo apt-get install ccache") you should link the
@@ -143,20 +161,10 @@ compiler into /usr/lib/ccache like this:
 
 Then add /usr/lib/ccache to the front of your $PATH
 
-Cleaning
---------
-
-If there have been updates to some git submodules you may need to do a full clean build. To do that use:
-
-::
-
-    ./waf clean
-
-that will remove the build artifacts so you can do a `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ from scratch
-
+---------
 
 Additional Steps for macOS mojave
----------------------------------
+=================================
 Due to some changes binutils installed via brew have stopped working for macOS mojave leading to crashing builds. So if installed, remove via following command:
 
 ::
@@ -168,7 +176,9 @@ Also you will need to install the c++ include headers to /usr/include to do that
 ::
 
     open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
-    
+
+---------
+
 Setup using Docker
 ==================
 
