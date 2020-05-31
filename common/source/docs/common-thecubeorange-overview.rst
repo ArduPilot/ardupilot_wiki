@@ -1,8 +1,8 @@
 .. _common-thecubeorange-overview:
 
-=================
+=====================================
 The Cube Orange With ADSB-In Overview
-=================
+=====================================
 
 .. image:: ../../../images/Cube_orange_adsb.jpg
     :target: ../_images/Cube_orange_adsb.jpg
@@ -11,21 +11,21 @@ The Cube Orange With ADSB-In Overview
 System Features
 ===============
 
-The Cube Orange autopilot is the latest and most powerful model in the Cubepilot ecosystem. Designed for hobby users, commercial system integrators and UAS manufacturers the Cube Orange autopilot is part of a wide ecosystem of autopilot modules and carrier boards. Because all Cube models are compatible with all carriers this allows users to choose an off the shelf carrier board that best suits their needs. System designers are able to integrate the Cube directly into their designs via published carrier board specifications. 
+The Cube Orange autopilot is the latest and most powerful model in the Cubepilot ecosystem. Designed for hobby users, commercial system integrators and UAS manufacturers the Cube Orange autopilot is part of a wide ecosystem of autopilot modules and carrier boards. All Cube models are compatible with all carriers which allows users to choose an off the shelf carrier board that best suits their needs. System designers are able to integrate the Cube directly into their designs via published carrier board specifications. 
 
 
 The Cube Orange is available as a standalone module or as a package with a new updated version of the original carrier board that now includes an integrated ADS-B In module from uAvionics. 
 
 ADS-B Carrier Board
-==================
+===================
 
-The new ADS-B carrier boards overall footprint is identical to the standard versions and main changes compared to original carrier are as follows:
+The new ADS-B carrier boards overall footprint is identical to the standard versions and the main changes compared to the original carrier are as follows:
 
 -  Integration of uAvonix ADS-B IN Receiver on Serial 5
 -  Built-In ADS-B Antenna 
 -  Removal of Intel Edison Bay and Debug USB Ports
 
-All other specification and external connections remain identical to the original board s listed on the Cube Black page.
+All other specification and external connections remain identical to the original board as listed on the Cube Black page.
 
 Cube Orange Features
 ====================
@@ -35,7 +35,7 @@ Cube Orange Features
 -  2 sets of IMU are vibration-isolated mechanically, reducing the effect of frame vibration to state estimation
 -  IMUs are temperature-controlled by onboard heating resistors, allowing optimum working temperature of IMUs
 -  The entire flight management unit(FMU) and inertial management unit(IMU) are housed in a reatively small form factor (a cube). 
--  Fully Cubepilot carrierboard compatible, all inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suite their specific needs now and in the future. 
+-  Fully Cubepilot carrierboard compatible, all inputs and outputs go through a 80-pin DF17 connector, allowing a plug-in solution for manufacturers of commercial systems. Manufacturers can design their own carrier boards to suit their specific needs now and in the future. 
 
 Specifications
 ==============
@@ -49,8 +49,8 @@ Specifications
 -  **Sensors**
 
    - Three redundant IMUs (accels, gyros and compass)
-   -  ICM 20649 integrated accelerometer / gyro, MS5611 Barometer on base board
-   -  InvenSense ICM20602 IMU,ICM20948 IMU/MAG, MS5611 Barometer on temperature controlled, vibration isolated board
+   -  ICM 20649 integrated accelerometer / gyro, MS5611 barometer on base board
+   -  InvenSense ICM20602 IMU,ICM20948 IMU/MAG, MS5611 barometer on temperature controlled, vibration isolated board
    -  All sensors connected via SPI.
 
 -  **Power**
@@ -81,7 +81,7 @@ Specifications
 The Cube connector pin assignments
 ==================================
 
-All other specification and external connections remain identical to the original board s listed on the Cube Black page.
+All other specification and external connections remain identical to the original board as listed on the Cube Black page.
 
 Cubepilot Ecosystem
 ===================
@@ -93,17 +93,17 @@ Cubepilot Ecosystem
 More Information
 ================
 
-For more detials and instructions on the Cubepilot system see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
+For more information and instructions on setting up and using the Cubepilot system see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
 
-For help and support see  `Cubepilot Forum  <https://discuss.cubepilot.org/>`__
+For technical help and support on the cubepilot system see  `Cubepilot Forum  <https://discuss.cubepilot.org/>`__
 
-More info on Cubpilot see  `www.proficnc.com  <http://www.proficnc.com>`__
+Company information on Cubpilot can be found at  `www.proficnc.com  <http://www.proficnc.com>`__
 
 
 Carrier Board Design
 ====================
 
-The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, or `here <https://github.com/ArduPilot/Schematics/tree/master/ProfiCNC>`__ ,this serve as a starting point for designers to design their own system based on The Cube autopilot.
+The reference design files of the standard carrier board are available in `github  <https://github.com/proficnc/The-Cube>`__, or `here <https://github.com/ArduPilot/Schematics/tree/master/ProfiCNC>`__ ,this serves as a starting point for designers to design their own system based on The Cube autopilot.
 
 Where to Buy
 ============
