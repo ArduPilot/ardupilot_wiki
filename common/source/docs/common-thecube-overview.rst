@@ -419,11 +419,11 @@ Cubepilot Ecosystem
 More Information
 ================
 
-For more detials and instructions on the Cubepilot system see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
+For more information and instructions on setting up and using the Cubepilot system see  `Cubepilot Docs  <https://docs.cubepilot.org/user-guides/>`__
 
-For help and support see  `Cubepilot Forum  <https://discuss.cubepilot.org/>`__
+For technical help and support on the cubepilot system see  `Cubepilot Forum  <https://discuss.cubepilot.org/>`__
 
-More info on Cubpilot see  `www.proficnc.com  <http://www.proficnc.com>`__
+Company information on Cubpilot can be found at  `www.proficnc.com  <http://www.proficnc.com>`__
 
 
 Carrier Board Design
