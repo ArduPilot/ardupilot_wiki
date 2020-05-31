@@ -71,7 +71,7 @@ Verifying altitude hold performance with dataflash logs
 Viewing the altitude hold performance is best done by :ref:`downloading a dataflash log <common-downloading-and-analyzing-data-logs-in-mission-planner>`
 from your flight, then open it with the mission planner and graph the
 barometer altitude, desired altitude and inertial navigation based
-altitude estimate:  CTUN's BarAlt (baro alt), DAlt (desired alt) and Alt (inertial nav alt estimate)
+altitude estimate:  QTUN's BarAlt (baro alt), DAlt (desired alt) and Alt (inertial nav alt estimate)
 
 The three should track well as shown below.
 
@@ -105,9 +105,9 @@ Common Problems
    the QuadPlane where the autopilot is mounted which leads the
    QHOVER controller to believe it is climbing so it responds by
    descending.  There is no cure for this behaviour at the moment
-   although increasing the ``EK2_ALT_M_NSE`` parameter reduces 
+   although increasing the ``EKx_ALT_M_NSE`` parameter reduces 
    the effect but increases the change of Common Problem #1
-   listed above. The ``EK2_ALT_M_NSE`` parameter has a range from 0.1 to
+   listed above. The ``EKx_ALT_M_NSE`` parameter has a range from 0.1 to
    10.0 and allows increments of 0.1.
 #. Altitude hold becomes erratic when the vehicle is close to the ground
    or during landing.  This can be caused by the barometer being
