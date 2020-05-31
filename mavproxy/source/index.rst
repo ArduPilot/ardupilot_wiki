@@ -6,9 +6,13 @@ MAVProxy
 
 **A UAV ground station software package for MAVLink based systems**
 
-MAVProxy is a fully-functioning GCS for UAV's. The intent is for a
-minimalist, portable and extendable GCS for any UAV supporting the
+MAVProxy is a fully-functioning GCS for UAV's, designed as a
+minimalist, portable and extendable GCS for any autonomous system supporting the
 MAVLink protocol (such as one using ArduPilot).
+MAVProxy is a powerful command-line based “developer” ground station software.  It can be extended via add-on modules, or complemented with another ground station, such as Mission Planner, APM Planner 2, QGroundControl etc, to provide a graphical user interface. 
+It has a number of key features, including the ability to forward the messages from your UAV over the network via UDP to multiple other ground station software on other devices.
+
+MAVProxy is commonly used by developers (especially with SITL) for testing new builds.
 
 MAVProxy was first developed by `CanberraUAV <http://www.canberrauav.org.au>`_,
 to enable the use of companion computing and multiple datalinks with 
