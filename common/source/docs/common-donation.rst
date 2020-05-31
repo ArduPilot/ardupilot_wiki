@@ -26,4 +26,4 @@ You can follow merchandise development on our discussion forums. New ideas are a
 - ArduPilot discussion forum: `merchandise thread <https://discuss.ardupilot.org/t/ardupilot-t-shirts-keychains-and-other-merchandise/9750>`__ 
 - ArduPilot discussion forum: `marketing category <https://discuss.ardupilot.org/c/marketing>`__ 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
