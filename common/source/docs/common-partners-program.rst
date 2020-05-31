@@ -46,5 +46,5 @@ I want a new feature, do I have to be a partner to get it?
 ==========================================================
 No.  ArduPilot is, and always will be, open source.  Contributions to the code base, wherever they come from, are accepted based on their technical merits.  If you're not in a position to make the changes yourself, please add it to the `Issues list <https://github.com/ArduPilot/ardupilot/issues>`__ or consider contracting one of the companies listed on the :ref:`Commercial Support page <common-commercial-support>` to make the change.
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
 
