@@ -1,0 +1,29 @@
+language: generic
+sudo: false
+
+dist: xenial
+addons:
+  apt:
+    packages:
+      - build-essential
+      - make
+
+cache:
+  ccache: false
+  directories:
+    - $HOME/opt
+
+before_install:
+  - echo 0 | sudo dd of=/proc/sys/kernel/yama/ptrace_scope
+  - mkdir /tmp/web
+  - sudo ./Sphinxsetup.sh
+
+script:
+  - ./update.py --parallel 4 --verbose --destdir=/tmp/web
+
+matrix:
+  fast_finish: true
+  include:
+    - if: type != cron
+      compiler: "Sphinx"
+      env: TEST="1"
