@@ -83,4 +83,3 @@ you might hold a Copter.
    :width: 400
    :height: 400
 
-[/site]
