@@ -78,14 +78,14 @@ The following autopilots have this capability using :ref:`BRD_ALT_CONFIG<BRD_ALT
 
 MatekF405
 --------------------------
-UART2 RX can now be tied to receiver FPort through external SPort/FPort bi-directional inverter.
+UART2 RX/TX can now be tied to receiver FPort through external SPort/FPort bi-directional inverter.
 
 - Configure SERIAL5 as above for F4 autopilots
 
 
 MatekF405-Wing
 --------------
-UART2 RX can now be tied to receiver FPort through external SPort/FPort bi-directional inverter.
+UART2 RX/TX can now be tied to receiver FPort through external SPort/FPort bi-directional inverter.
 
 - Configure SERIAL7 as above for F4 autopilots
 
