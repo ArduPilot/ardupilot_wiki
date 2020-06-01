@@ -1,11 +1,11 @@
 .. _mission-planner-initial-setup:
 
 =============================
-Mission Planner Initial Setup
+Mission Planner Initial SETUP
 =============================
 
 
-This section of Mission Planner, invoked by the Menu item  ``Setup``
+This section of Mission Planner, invoked by the Menu item  ``SETUP``
 at the top of Mission Planner, has several subsections. The subsection
 are where you set up and configure you auto pilot to prepare it for your
 particular vehicle. Typically these sections are "must do" actions that
@@ -42,6 +42,19 @@ menu item to see the items you must setup before you attempt to
 operate your vehicle.  Specifics are located in the Ardupilot.org documents which
 cover you specific vehicle (Copter, Plane, Rover).
 
+.. image:: ../../../images/MP-mandatory-hardware.png
+    :target: ../_images/MP-mandatory-hardware.png
+
+Before operating the vehicle, you must setup:
+
+- :ref:`Accel Calibration <common-accelerometer-calibration>`
+- :ref:`Compass (optional for Plane)<common-compass-calibration-in-mission-planner>`
+- :ref:`Radio Calibration<common-radio-control-calibration>`
+- Servo Output : configure each :ref:`output's function<common-rcoutput-mapping>`. Default values get loaded upon initial firmware install, but be sure to check them here.
+- :ref:`ESC Calibration<esc-calibration>` for Copter only (not required for ESCs running DShot protocol, but must be :ref:`configured <common-dshot>` in ArduPilot) Plane uses its own :ref:`guide-esc-calibration` technique, but is also a mandatory setup item.
+- Flight Modes: Refer to :ref:`Plane <plane:flight-modes>`, :ref:`Copter <copter:flight-modes>` or :ref:`Rover<rover-control-modes>` mode pages.
+- Failsafe: Refer to :ref:`Plane <apms-failsafe-function>`, :ref:`Copter <failsafe-landing-page>` or :ref:`Rover<rover-failsafes>` failsafe pages.
+
 
 Optional Hardware
 ~~~~~~~~~~~~~~~~~
@@ -54,4 +67,19 @@ When connected, peripherals such as Battery Monitors, Integrated OSD, Airspeed S
 Advanced
 ~~~~~~~~
 
-This section is for advanced users only.
+This section is for advanced users.
+
+.. image:: ../../../images/MP-advanced-setup.png
+
+
+- Warning Manager:You can create custom warning messages to be displayed on the HUD and in the messages tab of the DATA screen, based on values of the status items.
+- MAVLink Inspector: allows monitoring, real time, of the various MAVLink status messages being received.
+- Proximity: View the data from a 360 lidar, if equipped
+- Mavlink Signing: Allows you to setup :ref:`secure communications<common-MAVLink2-signing>` with the vehicle.
+- Mavlink mirror: allows you to forward the MAVLink traffic to another network connected location for monitoring. Also see :ref:`mavproxy-on-windows-7` for another method.
+- NMEA: Output the vehicle location as a NMEA GPS string over the network or to a COM port
+- Follow Me: If using an attached NEMA mode gps on a COM port to establish the MP GPS location, can send Guided Mode waypoints to the vehicle to follow the GCS.
+- Param Gen: Regenerates Mission Planners parameter list. Occasionally required if new firmware parameters are not being displayed.
+- Moving Base: if NMEA GPS is attaced to PC, shows PCs location as moving on the map display
+- Anon Log: Allows you to hide your location when sharing log files by creating a version with scrambled locations
+- FFT: Plot an FFT from a log that has IMU batch sampling enabled. See :ref:`common-imu-notch-filtering` for an example of its use.
