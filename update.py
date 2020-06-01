@@ -26,6 +26,7 @@ Parameters files are fetched from autotest using a Wget
 from __future__ import print_function, unicode_literals
 
 import argparse
+import errno
 import re
 import os
 from codecs import open
@@ -143,6 +144,7 @@ def sphinx_make(site):
     wikis = set(ALL_WIKIS[:])
     num_procs = 0
     procs = []
+    global error_count
 
     while len(done) != len(wikis):
         wiki = list(wikis.difference(done))[0]
@@ -159,18 +161,23 @@ def sphinx_make(site):
                 if p.exitcode is not None:
                     p.join()
                     procs.remove(p)
+                    if p.exitcode != 0:
+                        error_count += 1
             time.sleep(0.1)
     while len(procs) > 0:
         for p in procs[:]:
             if p.exitcode is not None:
                 p.join()
                 procs.remove(p)
+                if p.exitcode != 0:
+                    error_count += 1
         time.sleep(0.1)
 
 def copy_build(site):
     """
     Copies each site into the target location
     """
+    global error_count
     for wiki in ALL_WIKIS:
         if site=='common':
             continue
@@ -178,19 +185,16 @@ def copy_build(site):
             continue
         print('copy: %s' % wiki)
         targetdir = os.path.join(args.destdir, wiki)
-        # copy target directory to "old" folder
+
+        print("DEBUG: Creating backup")
         olddir = os.path.join(args.destdir, 'old')
-        try:
-            subprocess.check_call(['mkdir', olddir])
-        except:
-            pass
-        #print('DEBUG: mv %s %s' % (targetdir,olddir) )
-        try:
-            subprocess.check_call(['mv', targetdir, olddir])
-            #print("DEBUG: Yes - moved to olddir")
-        except:
-            #print("DEBUG: No move to olddir")
-            pass
+        print('DEBUG: recreating %s' % olddir )
+        if os.path.exists(olddir):
+            shutil.rmtree(olddir)
+        os.mkdir(olddir)
+        if os.path.exists(targetdir):
+            print('DEBUG: moving %s into %s' % (targetdir,olddir) )
+            shutil.move(targetdir, olddir)
 
         # copy new dir to targetdir
         #print("DEBUG: targetdir: %s" % targetdir)
@@ -204,20 +208,15 @@ def copy_build(site):
             subprocess.check_call(['mv', sourcedir, html_moved_dir])
             #Rename move! (single move to html/* failed)
             subprocess.check_call(['mv', html_moved_dir ,targetdir])
-            print("DEBUG: Copied to good output location")
+            print("DEBUG: Moved to %s" % targetdir)
         except:
-            print("DEBUG: FAIL moving output to website location")
-            pass
+            print("DEBUG: FAIL moving output to %s" % targetdir)
+            error_count += 1
 
 
         # delete the old directory
-        print('DEBUG: rm -fi %s' % olddir )
-        try:
-            subprocess.check_call(["rm", "-rf", olddir])
-            print("Deleted olddir")
-        except:
-            #print("no delete of olddir")
-            pass
+        print('DEBUG: removing %s' % olddir )
+        shutil.rmtree(olddir)
 
 
 def generate_copy_dict(start_dir=COMMON_DIR):
