@@ -1,8 +1,8 @@
 .. _mavproxy-on-windows-7:
 
-=====================
-MAVProxy on Windows 7
-=====================
+===================
+MAVProxy on Windows
+===================
 
 This guide shows how to set up MAVProxy to allow forwarding of messages
 via network interfaces.
