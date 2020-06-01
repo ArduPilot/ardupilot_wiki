@@ -2117,10 +2117,7 @@ mission, or it can be repeated indefinitely.
 
 .. note::
 
-   -  This command can be called a maximum number of 15 times in a mission,
-      after which new DO_JUMP commands are ignored. The maximum number
-      changed from 3 to 15 in AC 3.3.
-   -  The command was introduced in/works reliably from AC3.2
+   -  There can be a maximum of 15 jump commands in a mission after which new DO_JUMP commands are ignored.
 
 **Command parameters**
 
@@ -2462,10 +2459,6 @@ Supported by: Copter
 Start running the current mission. This allows a GCS/companion computer
 to start a mission in AUTO without raising the throttle.
 
-.. note::
-
-   This was introduced in AC3.3.
-
 Copter
 ~~~~~~
 
@@ -2558,10 +2551,6 @@ MAV_CMD_COMPONENT_ARM_DISARM
 Supported by: Copter
 
 Disarm the motors.
-
-.. note::
-
-   This was introduced in AC3.3. 
 
 Copter
 ~~~~~~
@@ -2714,13 +2703,6 @@ Copter
 Sets the desired maximum speed in meters/second (only). Both the
 speed-type and throttle settings are ignored.
 
-.. note::
-
-   In AC3.1.5 (and earlier) versions the speed change will only take
-   effect after the current navigation command (i.e. waypoint command)
-   completes. From AC3.2 onwards the vehicle speed will change
-   immediately.
-
 **Command parameters**
 
 .. raw:: html
@@ -2776,12 +2758,6 @@ speed-type and throttle settings are ignored.
    :target: ../_images/MissionList_DoChangeSpeed.png
 
    Copter: Mission Planner Settingsfor DO_CHANGE_SPEED command
-
-.. note::
-
-   From AC3.2 the speed parameter will be in the SECOND COLUMN, not
-   the first column as in previous releases and shown above (this is to
-   match the official MAVLINK protocol)
 
 [/site]
 
@@ -2925,14 +2901,6 @@ specified in the command.For SITL work, altitude input here needs to be with ref
       the command is only used if it is close to the EKF origin.
 
 [site wiki="copter" heading="off"]
-
-.. warning::
-
-   This command should not be used in AC3.2 `due to this issue <https://github.com/ArduPilot/ardupilot/issues/1677>`__.  Instead
-   :ref:`Rally Points <common-rally-points>` can be used to control the
-   position used for RETURN_TO_LAUNCH ("Home" is also used internally as
-   the "origin" for all navigation calculations). The command is fixed in
-   AC3.3.
 
 [/site]
 
@@ -3450,11 +3418,6 @@ another ROI. Clearing the ROI is achieved by setting a later
 DO_SET_ROI command with all zero for ``param5``-``param7`` (Lat, Lon
 and Alt).
 
-The above behaviour was implemented in AC3.2. In AC3.1.5 the
-camera/vehicle only tracks the ROI in the waypoint it is declared. A new
-ROI therefore needs to be set at every waypoint where tracking is
-required.
-
 **Command parameters**
 
 .. raw:: html
@@ -3514,18 +3477,6 @@ required.
 
 In the example above the nose and camera would be pointed at the red
 marker.
-
-If using AC3.1.5: The nose would point at the marker for only the period
-that the vehicle is flying from Waypoint #1 to Waypoint #3.  If you
-wanted the nose/camera to continue to point at the red marker as it
-flies from #3 to #4, a second DO_SET_ROI command would need to be
-entered after Waypoint #3.
-
-If using AC3.2: The nose would continue to point at the red marker until
-the end of the mission.  To "clear" the do-set-roi and cause the vehicle
-to return to it's default behaviour (i.e. pointing at the next waypoint)
-a second DO_SET_ROI command should be placed later in the mission with
-all zero for Lat, Lon and Alt.
 
 ..  youtube:: W8NCFHrEjfU
     :width: 100%
@@ -3748,16 +3699,11 @@ MAV_CMD_DO_DIGICAM_CONTROL
 
 Supported by: Copter, Plane, Rover.
 
-AC3.3: Control an on-board camera controller system (like the :ref:`3DR Camera Control Board <common-camera-control-board>`).
-
-Currently/BEFORE AC3.3: Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` once. This command takes
-no additional arguments.
+Trigger the :ref:`camera shutter <common-camera-shutter-with-servo>` once. This command takes no additional arguments.
 
 **Command parameters**
 
-The parameters below reflect the supported fields in AC3.3. In general
-if a command field is sent as 0 it is ignored. All parameters are
-ignored prior to AC3.3.
+In general if a command field is set to 0 it is ignored.
 
 .. raw:: html
 
@@ -3912,10 +3858,7 @@ To trigger the camera once, immediately after passing the DO command, set param3
 
 .. note::
 
-   In AC3.1.5 (and earlier) versions this command cannot be shut-off.
-   The camera will continue to be triggered repeatedly even after the
-   mission has been ended. In AC3.2 (and higher) providing a distance of
-   zero will stop the camera shutter from being triggered.
+   Providing a distance of zero will stop the camera shutter from being triggered.
 
 **Command parameters**
 
@@ -4198,9 +4141,8 @@ Mission command to operate EPM gripper.
 
 .. note::
 
-   This is supported from AC3.3. The :ref:`instructions for integrating Copter with gripper <common-electro-permanent-magnet-gripper>` are out
-   of date and use DO_SET_SERVO to activate the gripper (April
-   2015).
+   The :ref:`instructions for integrating Copter with gripper <common-electro-permanent-magnet-gripper>` are out
+   of date and use DO_SET_SERVO to activate the gripper (April 2015).
 
 **Command parameters**
 
