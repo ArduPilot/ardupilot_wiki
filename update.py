@@ -565,3 +565,9 @@ if args.paramversioning:
 copy_build(args.site)
 
 # To navigate locally and view versioning script for parameters working is necessary run Chrome as "chrome --allow-file-access-from-files". Otherwise it will appear empty locally and working once is on the server.
+
+if error_count > 0:
+    print("%u errors during Wiki build" % (error_count,))
+    sys.exit(1)
+
+sys.exit(0)
