@@ -11,4 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.name = "ArduPilot_wiki"
   end
   config.vm.provision "shell", path: "./Sphinxsetup.sh"
+  config.vm.provider "virtualbox" do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "2048"]
+  end
 end
