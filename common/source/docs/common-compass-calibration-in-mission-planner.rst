@@ -8,7 +8,7 @@ This article explains how to perform basic compass calibration. It assumes that 
 
 .. tip::
 
-   It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "world magnetic model" which allows converting the location's magnetic North to true North without recalibrating if using the option "Obtain declination automatically".  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff.
+   It is not necessary to recalibrate the compass when the vehicle is flown at a new location because ArduPilot includes a "world magnetic model" which allows converting the location's magnetic North to true North without recalibrating .  In addition the location's "inclination" is calibrated at startup and then again soon after takeoff.
    
 .. note::
 
@@ -22,30 +22,25 @@ Calibration first steps
 .. warning:: Do not calibrate the compasses near any metallic or magnetic field producing object (computers, cell phones, metal desks, power supplies, etc.) or incorrect calibration will occur.
 
 
-- Under **Initial Setup \| Mandatory Hardware** select **Compass**.
+- Under **SETUP\| Mandatory Hardware** select **Compass**.
 
-   .. figure:: ../../../images/MissionPlanner_CompassCalibration_MainScreen.png
-      :target: ../_images/MissionPlanner_CompassCalibration_MainScreen.png
+   .. figure:: ../../../images/CompassCalibration_Onboard.png
+      :target: ../_images/CompassCalibration_Onboard.png
 
       Mission Planner: Compass Calibration
 
-   You normally shouldn't need to change any of the "General Compass Settings" or compass specific values (i.e. "Compass #1" section), but you might want to confirm that the \ **Enable compasses** and **Obtain declination automatically** boxes are checked.
-
-   You may wish to disable any internal compasses if you are consistently seeing the "inconsistent compasses" pre-arm message often and you are sure that the external compass is calibrated and the orientation is correct.
+   You may wish to disable any internal compasses if you are consistently seeing the "inconsistent compasses" pre-arm message often and you are sure that the external compass is calibrated. 
 
 .. _onboard_calibration:
 
 Onboard Calibration
 ===================
 
-Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibration" meaning that the calibration routine runs on the autopilot.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
+"Onboard Calibration" is a calibration routine that runs on the autopilot.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling and orientation are also automatically determined.
 
-.. note:: A big advantage of using Onboard Calibration is that the orientation of external compasses is automatically determined during the process, as well as verification of the orientation of onboard compasses. Calibration could fail if the onboard compasses are not oriented as set by the :ref:`autopilot board orientation<AHRS_ORIENTATION>` parameter.
+.. note:: Calibration could fail for the onboard compasses if the :ref:`autopilot board orientation<AHRS_ORIENTATION>` parameter is not correct.
 
-   .. figure:: ../../../images/CompassCalibration_Onboard.png
-      :target: ../_images/CompassCalibration_Onboard.png
-
-To perform the onboard calibration:
+To perform the onboard calibration of all compasses:
 
 - click the "Onboard Mag Calibration" section's "Start" button
 - if your autopilot has a buzzer attached you should hear a single tone followed by short beep once per second
@@ -57,7 +52,6 @@ To perform the onboard calibration:
 - as the vehicle is rotated the green bars should extend further and further to the right until the calibration completes
 - upon successful completion three rising tones will be emitted and a "Please reboot the autopilot" window will appear and you will need to reboot the autopilot before it is possible to arm the vehicle.
 
-.. note: In Copter 3.6.0, Plane 3.9.0, and Rover 3.5.0 and later versions, the compass orientation is also automatically determined upon successful completion of Onboard Calibration.
 
 If calibration fails:
 
@@ -69,7 +63,7 @@ If calibration fails:
 
 Onboard Calibration using Stick Gestures (no GCS)
 =================================================
-Copter-3.4, Plane 3.4.0, and Rover 3.0.0 (and higher) support "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the autopilot with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
+ArduPilot supports "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the autopilot with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
 
 - requires RC calibration first
 - to start compass calibration hold throttle stick full up and full right yaw for 2 seconds
@@ -87,38 +81,15 @@ If calibration fails:
 - to cancel calibration at anytime hold throttle stick full up and full left yaw for 2 seconds
 - if, after multiple attempts, you are unable to calibrate the compass, Cancel with stick and use normal Onboard Calibration from GCS above
 
-Offboard Calibration (aka "Live Calibration")
-=============================================
+Large Vehicle MagCal
+====================
 
-.. note:: This method is not recommended if you are using a recent version of ArudPilot that supports the Onboard Calibration described above.
+Large or heavy vehicles are impractical to rotate on all axis. This feature allows a fairly accurate calibration if GPS lock is active on the autopilot and the vehicles actual heading is know, either using a landmark reference on the Mission Planner map, or using another compass (eg cell phone) and entering the vehicles heading.
 
-Older versions of ArduPilot rely on the ground station to calculate the compass offsets.  To use this older method:
+Compass Ordering
+================
 
-- Click the **Live Calibration** button.
-
-   A window should pop-up showing you the state of the live calibration.
-
-   .. figure:: ../../../images/MissionPlanner_CompassCalibration_LiveCalibrationScreen.png
-      :target: ../_images/MissionPlanner_CompassCalibration_LiveCalibrationScreen.png
-
-      Mission Planner: Live Compass Calibration
-
-- The aim is to rotate the vehicle so that the coloured trail hits each of the white dots.  One way to do this is to hold the vehicle in the air and rotate it slowly so that each side (front, back, left, right, top and bottom) points down towards the earth for a few seconds in turn.
-
-   .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg
-      :target: ../_images/accel-calib-positions-e1376083327116.jpg
-
-      Compass Calibration Positions (shown for Copter, but true for all vehicles)
-
-- The calibration will automatically complete when it has data for all the positions. At this point, another window will pop up telling you that it is saving the newly calculated offsets. These are displayed on the main screen below each associated compass.
-
-   .. note::
-
-      In Copter-3.2.1 and later offsets are considered acceptable
-         provided their combined "length" is less than 600 (i.e.
-         *sqrt(offset_x^2+offset_y^2+offset_Z^2) < 600*). Prior to Copter
-         3.2.1 the recommendation was that the absolute value of each offset
-         be less than 150 (i.e. *-150 < offset < 150*).
+At the top of the page, you can change the priority of the attached compasses, if desired.
 
 Additional information
 ======================
