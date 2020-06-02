@@ -133,8 +133,11 @@ def fetchlogmessages(site=args.site):
 def build_one(wiki):
     '''build one wiki'''
     print('make and clean: %s' % wiki)
-    subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
-    subprocess.check_call(["nice", "make", "html"], cwd=wiki)
+    some_env = os.environ.copy()
+    some_env["SPHINXOPTS"] = "-W"
+
+    subprocess.check_call(["nice", "make", "clean"], cwd=wiki, env=some_env)
+    subprocess.check_call(["nice", "make", "html"], cwd=wiki, env=some_env)
 
 def sphinx_make(site):
     """
