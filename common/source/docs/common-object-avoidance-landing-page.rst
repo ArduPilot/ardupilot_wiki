@@ -4,8 +4,9 @@
 Object Avoidance
 ================
 
-Ardupilot supports many kinds of object avoidance in vehicles. Airborne Vehicles (ADSB), Object Avoidance (Object/Ground/Ceiling), and Geo-Fences (Beacons, Exclusion zones, Fences).
-Supported types vary with vehicle. Some kinds of avoidance require external hardware, such as ADSB receivers or  Rangefinders.
+Ardupilot supports several kinds of object avoidance. Avoidance of Airborne Vehicles (ADSB) and Object Avoidance (Object/Ground/Ceiling).
+
+Supported types vary with vehicle (Plane only supports ADSB). Some kinds of avoidance require external hardware, such as ADSB receivers or  Rangefinders.
 
 Avoidance Strategies
 ====================
@@ -22,22 +23,19 @@ Avoidance Features
     Airborne Vehicles (ADSB) <common-ads-b-receiver>
 [site wiki="copter,rover"]
     Simple Object Avoidance <common-simple-object-avoidance>
-    Autonomous Mission Re-routing via Bendy Ruler <common-oa-bendyruler>
-    Autonomous Mission Re-routing via Dijkstras <common-oa-dijkstras>
-    Cylindrical Geo-Fencing Failsafe <common-ac2_simple_geofence>
-    Polygon Geo-Fencing Failsafe <common-polygon_fence>
+    Bendy Path Planning Around Obstacles <common-oa-bendyruler>
+    Dijkstras Path Planning Around Obstacles<common-oa-dijkstras>
 [/site]
-[site wiki="plane"]
-    Geo-Fencing Failsafes <geofencing>
-[/site]
+
+
+
 
 Hardware
 ========
 
 -  :ref:`ADS-B Receiver <common-ads-b-receiver>`
-[site wiki="copter,rover"]
 -  :ref:`Rangefinders <common-rangefinder-landingpage>`
--  :ref:`Fence Beacons (Non GPS navigation) <common-non-gps-navigation-landing-page>` 
-[/site]
+
+
 
 

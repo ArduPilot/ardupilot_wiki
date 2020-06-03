@@ -48,6 +48,7 @@ tuning options for the vehicle.
     Fly-By-Wire Low Altitude Limit <fly-by-wire-low-altitude-limit>
 [/site]
     FPort Setup <common-FPort-receivers>
+    GeoFencing Failsafe <common-geofencing-landing-page>
     GPIOs <common-gpios>
     Ground Control Station Only Operation <common-gcs-only-operation>
 [site wiki="copter"]
