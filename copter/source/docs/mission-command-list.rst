@@ -163,6 +163,10 @@ provided.  This is the mission equivalent of the :ref:`LAND flight mode <land-mo
 **Lat, Lon** - the latitude and longitude targets. If left as zero it
 will land at the current location.
 
+Please note that the LAND command changes wpnav_speed to 2m/s while executing. If you don't disarm after land
+but continue the mission with a takeoff command the wpnav_speed will stays at 2m/s.
+To solve this you have to add a CHANGE_SPEED command right after TAKEOFF.
+
 Delay
 ~~~~~
 
