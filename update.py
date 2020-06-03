@@ -222,9 +222,9 @@ def copy_build(site):
         shutil.rmtree(olddir)
 
 
-def generate_copy_dict(start_dir=COMMON_DIR):
+def copy_common_files(start_dir=COMMON_DIR):
     """
-    This creates a dict which indexes copy targets for all common docs.
+    Copy files from source common file into each of the wikis
     """
 
     #Clean existing common topics (easiest way to guarantee old ones are removed)
@@ -557,7 +557,7 @@ else:
 
 fetchlogmessages(args.site)                 # Fetch most recent LogMessage metadata from autotest
 
-generate_copy_dict()
+copy_common_files()
 sphinx_make(args.site)
 
 if args.paramversioning:                
