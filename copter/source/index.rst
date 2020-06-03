@@ -177,6 +177,7 @@ Getting more info
    First Time Setup <docs/initial-setup>
    First Flight <docs/flying-arducopter>
    If A Problem Arises <docs/common-when-problems-arise>
+   Flight Features <docs/copter-flight-features>
    Advanced Configuration <docs/common-advanced-configuration>
    Mission Planning <docs/common-mission-planning>
    Logs <docs/common-logs>
