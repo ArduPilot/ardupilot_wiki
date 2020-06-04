@@ -30,6 +30,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Jester's Drones <http://www.jestersdrones.org/store/>`__ (Solo addons, MAUCH power modules)
 * `Lightware <https://lightware.co.za/>`__
 * `mRobotics <http://mrobotics.io/>`__
+* `PDLR <https://pdrl.in/aerofc-autopilot/>`__
 * `ProfiCNC <http://www.proficnc.com/stores>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
