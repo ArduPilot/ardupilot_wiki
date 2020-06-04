@@ -27,7 +27,8 @@ Connecting and Configuring the Rangefinder
   - Exclusion zones are provided for 360 degree Lidars, since these may have obstructions in their field of view. Exclusion zones are set via the PRX_IGN_ANGx and PRX_IGN_WIDx parameters, specifying a direction and width the frame obstruction presents and will be ignored. Up to 6 exclusion sectors can be specified.
   - If a rangefinder is oriented facing up, then it will be used in the :ref:`common-simple-object-avoidance` operation as an upwards sensing proximity sensor in Copter LOITER, ALTHOLD, and POSHOLD modes.
 [/site]
-  - If a rangefinder is oriented facing down, it will automatically be used to for height above ground measurements when within its range for increased landing precision in Copter and Plane autolandings. In Copter, when landing and within 10m of the ground according to the range finder, the vehicle will slow it's descent to the :ref:`LAND_SPEED<LAND_SPEED>` (which defaults to 50cm/s). In Plane, see the "using a rangefinder" section of :ref:`automatic-landing`
+[site wiki="plane,copter"]
+  - If a rangefinder is oriented facing down, it will  be used to for height above ground measurements when within its range for increased landing precision in Copter, and in Plane autolandings if :ref:`RNGFND_LANDING<RNGFND_LANDING>` is enabled. In Copter, when landing and within 10m of the ground according to the range finder, the vehicle will slow it's descent to the :ref:`LAND_SPEED<LAND_SPEED>` (which defaults to 50cm/s). In Plane, see the "using a rangefinder" section of :ref:`automatic-landing`
 
   - If using a rangefinder for altitude measurements, be sure to read this page:
 
@@ -38,7 +39,7 @@ Connecting and Configuring the Rangefinder
 
 
 .. note:: Only downward facing rangefinders are supported in Plane currently.
-
+[/site]
 
 References
 ==========
