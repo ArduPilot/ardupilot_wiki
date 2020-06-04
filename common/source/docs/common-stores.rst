@@ -19,7 +19,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `CUAV <https://store.cuav.net/>`__
 * `Drotek <https://drotek.com/>`__
 * `Emlid <https://store.emlid.com/>`__
-* `EnRoute LAB <http://elab.co.jp/>`__
+* `EnRoute LAB <https://store.shopping.yahoo.co.jp/elab-store/>`__
 * `Event38 <https://event38.com/shop/>`__
 * `Foxtech <https://www.foxtechfpv.com>`__
 * `Harris Aerial <https://www.harrisaerial.com/shop/>`__
@@ -30,10 +30,8 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Jester's Drones <http://www.jestersdrones.org/store/>`__ (Solo addons, MAUCH power modules)
 * `Lightware <https://lightware.co.za/>`__
 * `mRobotics <http://mrobotics.io/>`__
-* `Northox <https://northox.myshopify.com/>`__
 * `ProfiCNC <http://www.proficnc.com/stores>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
-* `Skeyetech <http://www.skeyetech-shop.fr/>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <https://uavionix.com/>`__
 * `UAV Systems International <https://uavsystemsinternational.com/collections/all>`__
