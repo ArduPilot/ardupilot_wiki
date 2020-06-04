@@ -174,4 +174,4 @@ RST rendering on Linux
 
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

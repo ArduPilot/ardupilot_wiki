@@ -24,4 +24,4 @@ with some related projects, including:
 -  The `MatrixPilot team <https://github.com/MatrixPilot/MatrixPilot/wiki>`__
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

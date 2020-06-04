@@ -10,4 +10,4 @@ These days ArduPilot is financially supported by our `Partners <https://ardupilo
 
 We also want to acknowledge `Helpmonks <https://helpmonks.com>`__ for providing their Bliss plan free of cost. Managing e-mail in ArduPilot's team is now easier.
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev, ardupilot"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

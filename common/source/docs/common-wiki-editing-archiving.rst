@@ -40,4 +40,4 @@ Wiki pages can be deleted by removing them from github and any menu in which the
     Before deleting a wiki page it is important to ensure that it is not the 
     parent of other menu items (e.g. it does not contain a "toctree")
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

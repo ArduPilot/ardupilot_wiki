@@ -75,6 +75,8 @@ Full Table of Contents
    docs/modules/index
    docs/analysis/index
    docs/development/index
+   docs/common-appendix
+   Full Table of Contents <docs/common-table-of-contents>
 
 
 
