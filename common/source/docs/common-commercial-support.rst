@@ -266,4 +266,4 @@ listed here will be active participants in the community.
 .. image:: ../../../images/logos/aionrobotics.png
     :scale: 0%
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

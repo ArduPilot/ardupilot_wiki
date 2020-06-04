@@ -31,4 +31,4 @@ For more information see the Github Help topic: `Editing files in another user's
 
     Wiki home pages (named "index.html") do not have the **Edit on GitHub** link. You can still edit them by manually navigating to the desired page on Github.
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

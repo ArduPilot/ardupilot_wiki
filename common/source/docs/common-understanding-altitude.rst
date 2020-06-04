@@ -1,4 +1,4 @@
-hoving.. _common-understanding-altitude:
+.. _common-understanding-altitude:
 
 ===================================
 Understanding Altitude in ArduPilot

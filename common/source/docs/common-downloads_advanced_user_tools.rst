@@ -426,4 +426,4 @@ Since we want you to have a great experience, please make sure that you do all o
   The software and hardware we provide is only for use in unmanned vehicles.
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,mavproxy,ardupilot"]

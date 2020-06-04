@@ -96,4 +96,4 @@ All changes to the wiki are `reviewed <https://github.com/ArduPilot/ardupilot_wi
    #. git push -f origin master
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

@@ -20,4 +20,4 @@ manually set up a build environment (just inspect the Vagrantfile for dependenci
 
 The wikis use a `common theme <https://github.com/ArduPilot/sphinx_rtd_theme>`__ that provides the top menu bar. 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

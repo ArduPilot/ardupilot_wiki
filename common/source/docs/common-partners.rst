@@ -374,4 +374,4 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target: http://www.skydroid.xin/
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

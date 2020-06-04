@@ -55,4 +55,4 @@ the wiki.
 
 
 
-[copywiki destination="copter,plane,rover,planner,planner2,dev,antennatracker"]
+[copywiki destination="copter,plane,rover,planner,planner2,dev,antennatracker,mavproxy,ardupilot"]
