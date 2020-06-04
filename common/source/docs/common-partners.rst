@@ -4,7 +4,7 @@
 Corporate Partners
 ==================
 
-The ArduPilot Project is greatly appreciative of our Corporate Partners.  
+The ArduPilot Project is greatly appreciative of our Corporate Partners.
 Details on the Partners Program and how to join can be found on the :doc:`Partners Program <common-partners-program>` page.
 
 .. list-table::
@@ -328,7 +328,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :width: 250px
             :align: center
             :target: https://dualrc.com
-            
+
     *
       - .. image:: ../../../images/supporters/supporters_logo_davwings.png
             :width: 250px
@@ -361,6 +361,17 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :width: 250px
             :align: center
             :target: http://www.pdrl.in
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_RadioMaster.png
+            :width: 250px
+            :align: center
+            :target: https://www.radiomasterrc.com/
             
+      - .. image:: ../../../images/supporters/supporters_logo_Skydroid.png
+            :width: 250px
+            :align: center
+            :target: http://www.skydroid.xin/
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot"]
