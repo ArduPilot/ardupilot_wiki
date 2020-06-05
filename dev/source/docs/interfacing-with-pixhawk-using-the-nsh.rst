@@ -1,8 +1,8 @@
 .. _interfacing-with-pixhawk-using-the-nsh:
 
-======================================
-Interfacing with Pixhawk using the NSH
-======================================
+===============================================
+Archived:Interfacing with Pixhawk using the NSH
+===============================================
 
 This article explains how to communicate with a Pixhawk using the `NuttX Shell (NSH) <http://nuttx.org/Documentation/NuttShell.html>`__ using
 either a serial or remote connection.
