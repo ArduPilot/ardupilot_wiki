@@ -49,6 +49,7 @@ tuning options for the vehicle.
 [/site]
     FPort Setup <common-FPort-receivers>
     GPIOs <common-gpios>
+    GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
     Ground Control Station Only Operation <common-gcs-only-operation>
 [site wiki="copter"]
     Ground Effect Compensation <ground-effect-compensation>
