@@ -15,7 +15,7 @@ Volz Servos
 Where To Buy
 ------------
 
-- Various online retailers sell these servos or you can `contact Volz directly <https://www.volz-servos.com/English/Contact/>`__.  Check the datasheet of the servo to confirm it has the RS-422 serial interface
+- Various online retailers sell these servos or you can `contact Volz directly <https://volz-servos.com/contact/?lang=en>`__.  Check the datasheet of the servo to confirm it has the RS-422 serial interface
 
 Connection and Configuration
 ----------------------------
