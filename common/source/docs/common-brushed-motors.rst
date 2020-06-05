@@ -18,6 +18,7 @@ ArduPilot supports multiple methods to control brushed motors
 Verified Motor Drivers
 ----------------------
 
+- `Sabertooth Dual 32A Motor Driver  <https://www.dimensionengineering.com/products/sabertooth2x32>`__ support "Brushed BiPolar"
 - `Pololu G2 High-Power Motor Driver <https://www.pololu.com/product/2991>`__ support "BrushedWithRelay"
 - `RoboClaw 2x7A Motor Controller <https://www.pololu.com/product/3284>`__ supports "Brushed BiPolar"
 - :ref:`SkyRocket <copter:skyrocket>` drones use "Brushed" motors
