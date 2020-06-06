@@ -25,22 +25,21 @@ GCS Maintainers List
 
 We have a low-bandwidth mailing list where we announce significant changes to ArduPilot's GCS-facing functionality, usually to do with how we handle mavlink streams.
 
-`That forum <https://groups.google.com/forum/#!forum/ardupilot-gcs>`__ is currently on google groups. 
+That `forum <https://groups.google.com/forum/#!forum/ardupilot-gcs>`__ is currently on google groups. 
 
 
 SRTM Data
 ---------
 
-The entire SRTM database is available at <https://firmware.ardupilot.org/SRTM>.  This data gives approximate terrain height for most of the planet.
+The entire SRTM database is available at https://firmware.ardupilot.org/SRTM .  This data gives approximate terrain height for most of the planet.
 
 Firmware Manifest
 -----------------
 
-The firmware available to be downloaded from our firmware server is catalogued in a JSON file available from <https://http://autotest.ardupilot.org/manifest.json.gz>.
+The firmware available to be downloaded from our firmware server is catalogued in a JSON file available from `here <https://http://autotest.ardupilot.org/manifest.json.gz>`__.
 
-A sample of this:
+A sample of this::
 
-.. code-block:: json
 
         {
             "board_id": 121, 

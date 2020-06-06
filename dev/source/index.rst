@@ -151,6 +151,7 @@ Full Table of Contents
     Porting to a new Flight Controller <docs/porting>
     Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
+    Resources for GCS Developers <docs/gcs-resources>
     RTF Vehicle Developer Information <docs/ready-to-fly-rtf-vehicle-developer-information>
     How The Team Works <docs/how-the-team-works>
     Events <docs/events>
