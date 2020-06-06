@@ -22,15 +22,14 @@ Calibration steps
 
 .. warning:: If the board is mounted in a non-standard orientation (i.e. arrow is not pointing forward) then please ensure the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>`  is properly set before doing the accelerometer calibration.
 
-#. Under **Setup \| Mandatory Hardware**, select **Accel
-   Calibration** from the left-side menu.
+- Under **Setup \| Mandatory Hardware**, select **Accel Calibration** from the left-side menu.
 
    .. figure:: ../../../images/mp_accelerometer_calibration.png
       :target: ../_images/mp_accelerometer_calibration.png
 
       Mission Planner: Calibrate Acceleration
 
-#. Click **Calibrate Accel** to start the calibration.
+- Click **Calibrate Accel** to start the calibration.
 
    *Mission Planner* will prompt you to place the vehicle each
    calibration position. Press any key to indicate that the autopilot is
@@ -61,19 +60,12 @@ Calibration steps
 
  [/site]
 
-#. Proceed through the required positions (it is not necessary to use
-   the **Click When Done** button).
+- Proceed through the required positions ,using the the **Click when Done** button after each position is reached.
 
-   .. figure:: ../../../images/mp_accel_calibration_press_any_key.jpg
-      :target: ../_images/mp_accel_calibration_press_any_key.jpg
+- When you've completed the calibration process, Mission Planner will display "Calibration Successful!" as shown below.
 
-      Mission Planner: Accel Calibration - press any key
-
-#. When you've completed the calibration process, Mission Planner will
-   display "Calibration Successful!" as shown below.
-
-   .. figure:: ../../../images/mp_calibration_successful.jpg
-      :target: ../_images/mp_calibration_successful.jpg
+   .. figure:: ../../../images/mp_calibration_successful.png
+      :target: ../_images/mp_calibration_successful.png
 
       Mission Planner: Calibration Successful
 
