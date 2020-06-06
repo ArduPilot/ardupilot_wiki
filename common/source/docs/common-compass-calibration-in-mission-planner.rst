@@ -84,7 +84,7 @@ If calibration fails:
 Large Vehicle MagCal
 ====================
 
-Large or heavy vehicles are impractical to rotate on all axis. This feature allows a fairly accurate calibration if GPS lock is active on the autopilot and the vehicles actual heading is know, either using a landmark reference on the Mission Planner map, or using another compass (eg cell phone) and entering the vehicles heading.
+Large or heavy vehicles are impractical to rotate on all axis. This feature allows a fairly accurate calibration if GPS lock is active on the autopilot and the vehicles actual heading is known, either using a landmark reference on the Mission Planner map, or using another compass (eg cell phone) and entering the vehicles heading.
 
 Compass Ordering
 ================
