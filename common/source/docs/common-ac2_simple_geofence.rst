@@ -1,9 +1,9 @@
 .. _common-ac2_simple_geofence:
 
 [copywiki destination="copter,rover"]
-====================
-Cylindrical GeoFence
-====================
+=================
+Cylindrical Fence
+=================
 
 Overview
 ========

@@ -1,58 +1,63 @@
 .. _common-polygon_fence:
 
 [copywiki destination="copter,rover"]
-================
-Polygon GeoFence
-================
+==============================
+Inclusion and Exclusion Fences
+==============================
 
 Overview
 ========
 
-Copter and Rover includes support for a polygon geofence with up to 70 points.  The purpose of this fence is to attempt to stop your vehicle from flying out of the polygon by initiating an RTL or, if flying in Loiter mode, the vehicle will normally stop before breaching the fence.  This feature is an extension of the simpler :ref:`cylindrical fence <common-ac2_simple_geofence>`.
+Copter and Rover includes support for polygon fences with up to 70 points and circular fences.  Either may be selected to be inclusion or exclusion type. The purpose of these fences are to attempt to stop your vehicle from flying into (exclusion), or out of (inclusion), the fences by initiating a failsafe action like RTL or, if flying in Loiter mode, the vehicle will normally stop before breaching the fence.  This feature is an extension of the simpler :ref:`cylindrical fence <common-ac2_simple_geofence>` and can be combined with it.
+
+These fences are created and treated in a similar way to mission command lists and rally point lists and loaded into the autopilot.
 
 
 ..  youtube:: U3Z8bO3KbyM
     :width: 100%
 
-Enabling the Fence in Mission Planner
-=====================================
+Enabling Fences in Mission Planner
+==================================
 
 ..  youtube:: SEm4nVfbg00
     :width: 100%
 
 -  Connect your Autopilot to the Mission Planner
--  Go to the **CONFIG\|GeoFence** screen
--  Click "Enable" and set Type to "All" or another option that includes "Polygon"
+-  Go to the **CONFIG\| GeoFence** screen
+-  Click "Enable" and set Type to "All" or another option that includes "Polygon". Circle refers to the HOME centered, :ref:`cylindrical fence <common-ac2_simple_geofence>`. Altitude only, limits maximum altitude (everywhere).
+
 
    .. image:: ../../../images/polygon_fence_enable.png
        :target: ../_images/polygon_fence_enable.png
        :width: 500px
 
--  Select the Action . "RTL or Land" is recommended.
--  Go to the **PLAN** screen and select FENCE from the upper-rigth drop-down box.
--  Right-mouse-button click on the map and select "Draw Polygon" >> "Add Polygon Point"
--  Click on other points on the map to define the polygon
+-  Leave the Action as "RTL or Land". Although, you can select other failsafe actions.
+-  Go to the **PLAN** screen, and select ``FENCE`` from the dropdown box in the upper right part of the map display.
+-  For a circular fence, simply click on the map and a circular exclusion fence is added to the list. You can change its radius with the first parameter of the item. You can also change it from an exclusion fence to a circular inclusion fence, via the item's dropdown box.
+
+   .. image:: ../../../images/exclusion-zone.png
+       :target: ../_images/exclusion-zone.png
+       :width: 500px
+
+
+- For a polygonal fence, use the polygon tool on the left side of the map screen. Select "Draw a Polygon", and draw the boundary points with map clicks, then select if its an inclusion or exclusion fence type. It will be added to the fence point list.
 
    .. image:: ../../../images/polygon_add_point.png
        :target: ../_images/polygon_add_point.png
        :width: 500px
 
--  After the polygon has been defined you must Right-mouse-button click and "Draw Polygon" >> "Set Return Location".  This location is not actually used by Copter or Rover, but it must be set because the same underlying library is used as Plane.
+- Upload the fence(s) to the vehicle using "Write" button below the map. You can also read the fence list from the autopilot with the "Read" button.
 
-   .. image:: ../../../images/polygon_add_return_point.png
-       :target: ../_images/polygon_add_return_point.png
-       :width: 500px
+.. note:: You can define many inclusion and exclusion fences. However,multiple inclusions fences, including the :ref:`cylindrical fences <common-ac2_simple_geofence>` must overlap, since the vehicle can operate only within the complete overlap area of all of the inclusion fences. Exclusion fences may be placed within or outside of inclusion fences.
 
--  Upload the polygon geofence to the vehicle using WRITE button on the bottom.
 
-   .. image:: ../../../images/polygon_upload.png
-       :target: ../_images/polygon_upload.png
-       :width: 500px
+.. tip:: You can have both the :ref:`cylindrical fences <common-ac2_simple_geofence>` and inclusion/exclusion fences and choose to use just the HOME centerd "tin-can" for a flight by selecting only the "Circle" or "Altitude and Circle" for :ref:`FENCE_TYPE<FENCE_TYPE>`. You can chose to enable the :ref:`cylindrical fences <common-ac2_simple_geofence>`, these inclusion/exclusion fences, and/or altitude limit, in any combination, with this parameter.
 
 Combining with the Cylindrical Fence
 ====================================
 
-The polygon fence can be used in combination with the :ref:`cylindrical fences <common-ac2_simple_geofence>` and the :ref:`FENCE_ACTION<FENCE_ACTION>` (i.e. LAND, RTL,etc.) will trigger at whichever barrier the vehicle reaches first (i.e. the green line shown below)
+A polygon fence can be used in combination with the :ref:`cylindrical fences <common-ac2_simple_geofence>` and the failsafe behaviour (i.e. stop at the fence or RTL) will trigger at whichever barrier the vehicle reaches first (i.e. the green line shown below)
+
 
 .. image:: ../../../images/copter_polygon_circular_fence..png
     :target: ../_images/copter_polygon_circular_fence..png
