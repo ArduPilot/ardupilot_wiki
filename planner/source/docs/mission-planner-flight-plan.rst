@@ -54,9 +54,11 @@ Mission Planner has the ability to auto-generate numerous survey and grid type m
     - From SHP: Load polygon shape from a .shp file
     - Area: Displays area of drawn polygon
 
-Once drawn, many different surveys or waypoint grids can be generated with
+Once drawn, many different surveys,fences, or waypoint grids can be generated with:
 
-.. image:: ../../../images/MP-AutoWP.png
+- GeoFence (Plane only): Plane uses a different method for loading and reading its GeoFence to/from the autopilot, than Copter and Rover use, so this submenu is provided. See below, under Fence Creation, for details.
+
+- Rally Points (Plane only): Plane uses a different method for loading and reading its Rally points to/from the autopilot, than Copter and Rover use, so this submenu is provided. See below, under Rally Points Creation, for details.
 
 - Auto WP:
      - Create WP Circle: Creates a circle of waypoints
@@ -66,7 +68,7 @@ Once drawn, many different surveys or waypoint grids can be generated with
      - Create Circle Survey: Creates a circular survey. A survey is a set of spaced waypoints designed to allow a camera to take overlapping photos of the survey area. This does not require a drawn polygon.
      - Survey (Grid): Creats a survey mission based on drawn polygon.
      - Face Map: (in development)
-     - Survey(Gridv2): Creates a box survey misson with a different user interface. No pre-drawn polygon required.
+     - Survey(Gridv2): Creates a box survey mission with a different user interface. No pre-drawn polygon required.
      - Simple Grid: Creates a simple grid of waypoints within the drawn polygon.
 
 - Map Tools: Provides several map tools for measuring distances, pre-fetching map areas for off line use in the field, the ability to plot the mission altitude vs terrain, etc.
@@ -100,7 +102,7 @@ In the upper right of the map panel is a drop-down box, normally showing MISSION
 
 Fences can be circular, or polygons. In Plane only polygon fences are allowed. In Copter and Rover,  circular and polygon, or both superimposed, are possible. Also, exclusion zones (normally a fence is an inclusion zone), are possible.
 
-For Plane, the right click menu item, Auto WP, menu item is replaced with 
+For Plane, the right click menu item, has the GeoFence sub-menu:
 
 
 .. image:: ../../../images/MP-Fence-Plane-rightclick.png
@@ -115,25 +117,38 @@ For Plane, the right click menu item, Auto WP, menu item is replaced with
     - Save to File: Save the geo-fence points and return point to a file
     - Clear: Clear the geo-fence on the map. This **does clear** the fence in the autopilot as well as the map workspace.
 
-For Copter and Rover, the right-click menu remains unchanged. The polygon drawing icon in the upper left of the screen is used to create fences.
+For Copter and Rover, the polygon drawing icon in the upper left of the screen is used to create fences.
 
 .. image:: ../../../images/MP-Fence-tool.png
 
 
 This is an expanded version of the Polygon tools in the right click menu.
 
-To create a polygon fence, select "Draw a Polygon", and left click the points desired. Then select "Fence Inclusion". You will see a list of items in the mission list area. These are fence items and can be loaded to the autopilot with the WRITE button below like waypoint lists were. Similarly, they can be read from the autopilot, saved or loaded from a file.
+To create a polygon fence, select "Draw a Polygon", and left click the points desired. Then select "Fence Inclusion". You will see a list of items in the mission list area. These are fence items and can be loaded to the autopilot with the "Write" button below, like waypoint lists were. Similarly, they can be read from the autopilot, saved or loaded from a file.
 
 To create a circular fence, simply left click. An item will be placed in the mission list. You can adjust the radius of the zone. This may be either an inclusion zone, where flight is allowed, or an exclusion zone, where flight will be prevented.
 
-.. note:: These circular zones will only be shown as blue markers in the PLAN view, but will be fully visible in the flight DATA view.
+.. note:: These circular zones may only be shown as blue markers in the PLAN and DATA view at certain zoom levels.
 
-In Copter, various parameters of the fences can be set in the CONFIG/GeoFence screen. You can have different types of geo-fences loaded in the autopilot, but elect only to use combinations or altitude, circular, and/or polygon fences loaded by selecting the "Type" on this page.
+In Copter, various parameters of the fences can be set in the CONFIG/GeoFence screen. You can have different types of geo-fences loaded in the autopilot, but elect only to use combinations or altitude, circular, and/or polygon fences loaded by selecting the "Type" on this page. For Rover, these parameters must be set manually in the CONFIG/Full Parameter List screen
 
 Rally Points Creation
 =====================
 
 The third option in the MISSION/FENCES/RALLY drop-down box, RALLY, allows creation of a RALLY points list. For use of RALLY points, see :ref:`common-rally-points`.
 
-Left clicking will create a Rally Point at the cursor, and it will appear in the mission lilst to the right. Just like waypoints, these can be written to and read from, the autopilot, as well as being saved or loaded to/from a file.
-    
+Left clicking will create a Rally Point at the cursor, and it will appear in the mission list to the right. Just like waypoints, these can be written to and read from, the autopilot, as well as being saved or loaded to/from a file using the "Read", "Write", "Load File", and "Save File" buttons.
+
+In Plane only, saving and loading, is done from  the right-click menu:
+
+.. image:: ../../../images/MP-plan-rally-points.png
+
+- Rally Points:
+
+    - Set Rally Point: Create rally point at cursor location
+    - Download: Retrieve rally points from autopilot
+    - Upload: Save rally points to autopilot
+    - Clear Rally Points: Clear the rally points. This **does clear** the points in the autopilot as well as the map workspace.
+    - Save Rally to File: Save the rally points to a file
+    - Load Rally from File: Load the rally points from a file
+
