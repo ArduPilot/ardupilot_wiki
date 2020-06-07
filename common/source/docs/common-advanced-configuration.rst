@@ -41,14 +41,15 @@ tuning options for the vehicle.
 [/site]
     Brushless ESCs <common-dshot>
     Extended Kalman Filter (EKF) <common-apm-navigation-extended-kalman-filter-overview>
-[site wiki="copter,plane,rover"]
-    Flight Time Recorder <common-flight-time-recorder>
+[site wiki="copter,rover"]
+    Fence Failsafes  <common-geofencing-landing-page>
 [/site]
+    Flight Time Recorder <common-flight-time-recorder>
 [site wiki="plane"]
     Fly-By-Wire Low Altitude Limit <fly-by-wire-low-altitude-limit>
 [/site]
     FPort Setup <common-FPort-receivers>
-    GeoFencing Failsafe <common-geofencing-landing-page>
+    GeoFencing Failsafe  <common-geofencing-landing-page>
     GPIOs <common-gpios>
     GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
     Ground Control Station Only Operation <common-gcs-only-operation>
