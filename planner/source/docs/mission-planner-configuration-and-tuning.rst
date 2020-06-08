@@ -46,12 +46,12 @@ For all vehicles, this shows the relevant basic tuning parameters for that vehic
 Extended Tuning (Copter only)
 =============================
 
-For Copter, the Basic Tuning screen is very simple to enable an easy way for beginners to generally adjust roll and pitch tuning. But this screen is similar to the Basic Tuning screen for Plane adn Rover, showing the most common parameters for each control loop.
+For Copter, the Basic Tuning screen is very simple to enable an easy way for beginners to generally adjust roll and pitch tuning. But this screen is similar to the Basic Tuning screen for Plane and Rover, showing the most common parameters for each control loop.
 
 Standard Params
 ===============
 
-This screen provides access to parameters which are most commonly adjusted by users to alter the behaviour of the vehicle for each individual application.
+This screen provides access to parameters which are most commonly adjusted by users to alter the behavior of the vehicle for each individual application.
 
 Advanced Params
 ===============
@@ -66,7 +66,7 @@ Some autopilots have integrated On Sceen Display (OSD) capability. This provides
 MAVftp
 ======
 
-In firmware versions 4.1 and later, an integrated FTP (File Transfer Protocol) has been implemented to allow access to the SD card (if the autopilot has one) via Mission Planner. (It is not reccommended to use it for log download, use the DataFlash Logs button in the DATA screen, its faster).
+In firmware versions 4.1 and later, an integrated FTP (File Transfer Protocol) has been implemented to allow access to the SD card (if the autopilot has one) via Mission Planner. (It is not recommended to use it for log download, use the DataFlash Logs button in the DATA screen, its faster).
 
 User Params
 ===========
@@ -90,7 +90,7 @@ Displays every parameter of the connected vehicle. Allows any parameter to be ch
 .. note:: An important aspect of the Compare Params feature: After you select the file with the saved parameters you want to compare, you will get a window that lists every parameter that is different. At this point nothing has been changed, but if you check some items and then click Continue, those items will be changed in parameter screen of Mission Planner. You will then need to click the Write Params parameters button in the right hand panel to copy the changes to your autopilot.
 
 - Load Presaved: Many common vehicle platform typical parameters are available to load via the dropdown box. On loaded, they could be saved to the vehicle with the Write Params button
-- Reset to Default: CAUTION! this will immediately reset all parameters to the vehicle's default settings. Recalibraion and setup via the SETUP menu will be required or a restore of previously save parameters from a file.
+- Reset to Default: CAUTION! this will immediately reset all parameters to the vehicle's default settings. Recalibration and setup via the SETUP menu will be required or a restore of previously save parameters from a file.
 - Search: Allows a rapid search for parameters by name or included descriptions.
 - Modified: Will display only parameters currently modified and unsaved.
 
