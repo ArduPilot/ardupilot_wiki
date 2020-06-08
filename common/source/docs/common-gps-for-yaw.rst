@@ -12,7 +12,7 @@ GPSs do not have RTK fix.
 GPSs from ArduPilot Partners that are known to work include:
 
 - `CUAV C-RTK 9P <https://store.cuav.net/index.php?id_product=101&rewrite=c-rtk-9p&controller=product#/32-rtk-sky_end>`__
--  `ZED-F9 GPS <https://store.mrobotics.io/category-s/109.htm>`__
+- `mRobotics ZED-F9 GPS <https://store.mrobotics.io/category-s/109.htm>`__
 
 .. note::
 
