@@ -37,6 +37,8 @@ In order to use any of these, they must be selected using the :ref:`NTF_LED_TYPE
 +-------+---------------------------------------+
 |  8	| NeoPixel string **                    |
 +-------+---------------------------------------+
+|  9 	| ProfiLED                              |
++-------+---------------------------------------+
 
  ** Neopixel strings are attached via an output selected to have one of the Neopixel SERVOx_FUNCTIONs. Up to four outputs can be designated for Neopixel strings.
 
