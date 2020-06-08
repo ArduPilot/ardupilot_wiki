@@ -31,7 +31,7 @@ Configuration
 -------------
 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5 ("GPS") assuming the 2nd GPS is connected to serial port 4
-- :ref:`GPS_TYPE <GPS_TYPE2>` = 17 ("UBlox moving baseline base")
+- :ref:`GPS_TYPE <GPS_TYPE>` = 17 ("UBlox moving baseline base")
 - :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover")
 - Set the :ref:`GPS_POS1_X <GPS_POS1_X>`/Y/Z and :ref:`GPS_POS2_X <GPS_POS2_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
 - :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3 (to use EKF3)
