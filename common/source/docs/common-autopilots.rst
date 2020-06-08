@@ -53,6 +53,7 @@ Closed hardware
     Mateksys F405-STD and variants* <common-matekf405>
     Mateksys F405-Wing* <common-matekf405-wing>
     Mateksys F765-Wing <common-matekf765-wing>
+    Mateksys H743-Wing <common-matekh743-wing>
     mRo ControlZero F7 <https://store.mrobotics.io/mRo-Control-Zero-F7-p/mro-ctrl-zero-f7.htm>
     Omnibus F4 AIO/Pro* <common-omnibusf4pro>
     OmnibusNanoV6 <common-omnibusnanov6>
