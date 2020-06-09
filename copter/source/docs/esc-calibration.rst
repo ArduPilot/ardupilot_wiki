@@ -74,8 +74,7 @@ All at once calibration
     :target: ../_images/Connect-Battery.jpg
     :width: 400px
     
-#. For **PX4 or Pixhawk,** press and hold the safety button until it
-   displays solid red.
+#. For Autopilots with a safety switch, push it until the LED displays solid red
 #. The autopilot is now in ESC calibration mode. (On an APM you may
    notice the red and blue LEDs blinking alternatively on and off like a
    police car).
