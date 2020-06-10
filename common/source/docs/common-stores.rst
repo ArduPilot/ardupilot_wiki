@@ -10,7 +10,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 `ArduPilot SWAG <https://shop.ardupilot.org/>`__ ArduPilot SWAG, Support and fun merchandise
 
 * `AION ROBOTICS <https://www.aionrobotics.com>`__
-* `Air-Supply Aerial <https://www.airsupplyaerial.net/equipment>`__
+* `Air-Supply Aerial <https://www.airsupply.com>`__
 * `AltiGator <http://www.altigator.com/>`__
 * `Bask Aerospace <https://baskaerospace.com.au/>`__
 * `Benewake <https://benewake.en.alibaba.com/?spm=a2700.icbuShop.88.19.66976e38pCbzVV>`__
