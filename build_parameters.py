@@ -55,7 +55,7 @@ BASEPATH = ""
 
 ## Dicts for name replacing
 vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old names
-    "Rover": "Rover",
+    "Rover": "APMrover2",
     "Sub": "ArduSub",
     "Copter":"ArduCopter",
     "Plane":"ArduPlane",
@@ -63,7 +63,6 @@ vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old name
 }
 
 vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with old names
-    "Rover":"Rover",
     "APMrover2":"Rover",
     "ArduRover":"Rover",
     "ArduSub":"Sub",
@@ -322,7 +321,9 @@ def generate_rst_files(commits_to_checkout_and_parse):
         file_in = open(source_file, "r")
         file_out = open(dest_file, "w")
         found_original_title = False
-        #adjust_title_mark = 0
+        if "latest" not in version_tag:
+            file_out.write(':orphan:\n\n')
+
         for line in file_in:
             if (re.match("(^.. _)(.*):$", line))  and ("latest" not in version_tag):
                 file_out.write(line[0:-2] + version_tag + ":\n")  # renames the anchors, but leave latest anchors  "as-is" to maintaim compatibility with all links across the wiki
@@ -336,14 +337,8 @@ def generate_rst_files(commits_to_checkout_and_parse):
                 # Pigbacking and inserting the javascript selector
                 out_line += "\n.. raw:: html\n   :file: ../_static/parameters_versioning_script.inc\n\n"
                 file_out.write(out_line)
-            #     adjust_title_mark = len(out_line) -1
             
-            # elif adjust_title_mark > 0: # adjust the size of horizontal '==========' bar
-            #     out_line = "=" * adjust_title_mark
-            #     out_line += "\n"
-            #     file_out.write(out_line)
-            #     adjust_title_mark = 0
-
+            
             elif ("=======================" in line) and (not found_original_title): # Ignores the original mark
                 found_original_title = True 
             
@@ -383,7 +378,11 @@ def generate_rst_files(commits_to_checkout_and_parse):
         # Run param_parse.py tool from Autotest set in the desidered commit id
         try:
             os.chdir(BASEPATH + "/Tools/autotest/param_metadata")
-            os.system("python3 ./param_parse.py --vehicle " + vehicle_new_to_old_name[vehicle])  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found
+            if ('rover' in vehicle.lower()) and ('v3.' not in version.lower()) and ('v4.0' not in version.lower()): # Workaround the vehicle renaming (Rover, APMRover2 ArduRover...)
+                os.system("python3 ./param_parse.py --vehicle " + 'Rover')  
+            else: # regular case
+                os.system("python3 ./param_parse.py --vehicle " + vehicle_new_to_old_name[vehicle])  # option "param_parse.py --format rst" is not available in all commits where param_parse.py is found
+
             
             # create a filename for new parameters file
             filename = "parameters-" + vehicle 
@@ -409,7 +408,7 @@ def generate_rst_files(commits_to_checkout_and_parse):
             #sys.exit(1)
         debug("")
 
-    return 1
+    return 0
 
 
 def generate_json(vehicles):
