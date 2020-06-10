@@ -14,6 +14,8 @@ Open hardware
 
     BBBMini* (Linux) <https://github.com/mirkix/BBBMINI>
     Beagle Bone Blue (Linux) <common-beagle-bone-blue>
+    CUAV X7 Series <common-cuav-X7-overview>
+    CUAV Nora <common-cuav-nora-overview>
     CUAV V5 Plus <common-cuav-v5plus-overview>
     CUAV V5 Nano <common-cuav-v5nano-overview>
     Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
