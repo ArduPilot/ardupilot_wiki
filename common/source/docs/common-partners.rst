@@ -154,7 +154,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  http://ttrobotix.com
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_Air_Supply_Aerial.png
+      - .. image:: ../../../images/supporters/supporters_logo_Air-Supply-Aerial.png
             :width: 250px
             :align: center
             :target:  https://airsupply.com
