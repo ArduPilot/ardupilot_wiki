@@ -321,7 +321,10 @@ def generate_rst_files(commits_to_checkout_and_parse):
         file_in = open(source_file, "r")
         file_out = open(dest_file, "w")
         found_original_title = False
-        file_out.write(':orphan:\n\n')
+        
+        if "latest" not in version_tag:
+            file_out.write(':orphan:\n\n')
+        
         for line in file_in:
             if (re.match("(^.. _)(.*):$", line))  and ("latest" not in version_tag):
                 file_out.write(line[0:-2] + version_tag + ":\n")  # renames the anchors, but leave latest anchors  "as-is" to maintaim compatibility with all links across the wiki
