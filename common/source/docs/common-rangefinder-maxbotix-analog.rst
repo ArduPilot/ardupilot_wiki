@@ -10,11 +10,6 @@ inexpensive, short range (7m to 10m) range finder primarily designed for
 indoor use but which has been successfully used outdoors on Copter and
 Rover.  These are the predecessors to :ref:`I2C sonar <common-rangefinder-maxbotixi2c>`.
 
-[site wiki="copter"]
-These instructions are for Copter 3.2 and later
-versions of Plane, Rover.  Setup instructions for Copter-3.1.5 (and
-earlier) :ref:`can be found here <copter:sonar>`.
-[/site]
 
 The `EZ4 <https://www.maxbotix.com/Ultrasonic_Sensors/MB1240.htm>`__
 (recommended) has the narrowest beam providing the best noise resistance
