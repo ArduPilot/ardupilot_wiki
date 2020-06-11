@@ -209,6 +209,9 @@ The ahrs library represents the Attitude Heading Reference System computed by th
 
 - :code:`prearm_healthy()` - Returns a true if current pre-arm checks are passing.
 
+- :code:`airspeed_estimate()` - Returns current airspeed estimate in meters/second or nil.
+
+
 Arming (arming:)
 ~~~~~~~~~~~~~~~~
 
@@ -249,6 +252,9 @@ The battery library provides access to information about the currently connected
 - :code:`overpower_detected( instance )` - Returns true if too much power is being drawn from the battery being monitored.
 
 - :code:`get_temperature( instance )` - Returns the temperature of the battery in degrees Celsius if the battery supports temperature monitoring.
+
+- :code:`get_cycle_count( instance )` - Returns cycle count of the battery or nil if not available.
+
 
 GPS (gps:)
 ~~~~~~~~~~
@@ -292,6 +298,7 @@ The GPS library provides access to information about the GPS's on the vehicle.
 - :code:`get_antenna_offset( instance )` - Returns a Vector3f that contains the offsets of the GPS in meters in the body frame.
 
 - :code:`first_unconfigured_gps()` - Returns nil or the instance number of the first GPS that has not been fully configured. If all GPS's have been configured this returns 255 if all the GPS's have been configured.
+
 
 GCS (gcs:)
 ~~~~~~~~~~
@@ -340,9 +347,23 @@ Notify (notify:)
 Vehicle (vehicle:)
 ~~~~~~~~~~~~~~~~~~
 
-- :code:`set_mode( mode_number )` - Attempts to change vehicle (in this example Plane) mode to mode_number. Returns true if successful, false if mode change is not successful.
+- :code:`set_mode(mode_number)` - Attempts to change vehicle (in this example Plane) mode to mode_number. Returns true if successful, false if mode change is not successful.
+
+- :code:`get_mode()` - Returns current vehicle mode by mode_number.
 
 Mode numbers for each vehicle type can be `found here <https://mavlink.io/en/messages/ardupilotmega.html#PLANE_MODE>`__
+
+- :code:`get_likely_flying()` - Returns true if the autopilot thinks it is flying. Not guaranteed to be accurate.
+
+- :code:`get_flying_time_ms()` - Returns time in milliseconds since the autopilot thinks it started flying, or zero if not currently flying.
+
+- :code:`start_takeoff(altitude)` - Begins auto takeoff to given altitude above home in meters. Returns false if not available.
+
+- :code:`set_target_location(Location)` - Sets target location using a Location object. Returns false if not successful.
+
+- :code:`get_target_location()` - Returns Location object of the current target location. Returns false if not available.
+
+- :code:`set_target_velocity_NED()` - Sets the target velocity using a Vector3f object. Returns false if not available.
 
 
 Terrain (terrain:)
@@ -384,6 +405,62 @@ Servo Channels (SRV_Channels:)
 - :code:`get_output_pwm(output_function)` - Returns first servo output PWM value an output assigned output_function (See ``SERVOx_FUNCTION`` parameters ). False if none is assigned.
 
 - :code:`set_output_pwm_chan_timeout(channel, pwm, timeout)` - Sets servo channel to specified PWM for a time in ms. This overrides any commands from the autopilot until the timeout expires.
+
+
+RC Channels (rc:)
+~~~~~~~~~~~~~~~~~
+
+- :code:`get_pwm()` - Returns the RC input PWM value given a channel number. Note that channel here is indexed from 1. Returns false if channel is not available.
+
+
+Serial/UART (serial:)
+~~~~~~~~~~~~~~~~~~~~~
+
+- :code:`find_serial(protocol)` - Returns the first UART instance that allows the given protocol, or nil if not found.
+
+	- :code:`UART:begin(baud)` - Start serial connection at given baud rate.
+	- :code:`UART:read()` - Returns a sequence of bytes from UART instance.
+	- :code:`UART:write(number) - Writes a sequence of bytes to UART instance.
+	- :code:`UART:available() -  Returns integer of currently available bytes.
+	- :code:`UART:set_flow_control(flow_control)` - Sets flow control for UART instance.
+
+
+Barometer (baro:)
+~~~~~~~~~~~~~~~~~
+
+- :code:`get_pressure()` - Returns pressure in Pascal.
+
+- :code:`get_temperature()` - Returns temperature in degrees C.
+
+- :code:`get_external_temperature()` - Returns external temperature in degrees C.
+
+
+ESC Telemetry (esc_telem:)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :code:`get_usage_seconds(channel)` - Returns an individual ESC's usage time in seconds, or false if not available.
+
+
+Parameters (param:)
+~~~~~~~~~~~~~~~~~~~
+
+- :code:`get(parameter_name)` - Returns parameter value if available, or nil if not found.
+
+- :code:`set(parameter_name)` - Sets a parameter by name if available. Returns true if the parameter is found.
+
+- :code:`set_and_save(parameter_name)` Sets and saves a parameter by name if available. Returns true if the parameter is found.
+
+
+RPM (RPM:)
+~~~~~~~~~~
+
+- :code:`get_rpm(instance)` - Returns RPM of given instance, or nil if not available.
+
+
+Button (button:)
+~~~~~~~~~~~~~~~~
+
+- :code:`get_button_state(button_number)` - Returns button state if available. Buttons are 1 indexed.
 
 
 Servo Output
