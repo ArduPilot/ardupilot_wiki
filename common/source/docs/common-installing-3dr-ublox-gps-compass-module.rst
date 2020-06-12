@@ -42,27 +42,6 @@ Details on how to setup and use a 2nd GPS can be found on the :ref:`GPS Blending
 
    ArduPilot supports many attached compasses, but only up to 3 compasses can be used during operation. See :ref:`common-compass-setup-advanced` .
 
-Connecting to Erle-Brain2
--------------------------
-
--  Connect GPS 6 pin DF13 connector to the port labeled as "UART"
--  Connect Compass 4 pin DF13 connector to one of the ports labeled as
-   "I2C"
-
-.. image:: ../../../images/ErleBrain2_GPScompass.jpg
-    :target: ../_images/ErleBrain2_GPScompass.jpg
-
-An external compass is required (drivers are not yet available for the
-internal compass).
-
-This parameter should also be set:
-
--  :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` = 5
-
-.. note::
-
-   The baud rate is set by the UBlox driver (setting
-   ``SERIAL4_BAUD = 38`` is ignored).
 
 Mounting the GPS Module
 =======================
