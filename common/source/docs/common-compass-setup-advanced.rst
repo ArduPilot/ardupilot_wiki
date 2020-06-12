@@ -25,7 +25,7 @@ While many autopilots have an internal compass or compasses, many applications w
 than an internal compass because of the separation from other
 electronics. See :ref:`common-autopilots` for details about the specific autopilot to determine how many built-in compasses the autopilot may have, if any.
 
-Most users will only need to  perform the :ref:`Basic Compass Calibration<common-compass-calibration-in-mission-planner>` but details are also given on the less-used  :ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>` 
+Most users will only need to  perform the normal :ref:`Compass Calibration<common-compass-calibration-in-mission-planner>` but details are also given on the less-used  :ref:`CompassMot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>` 
 
 
 Compass Settings
