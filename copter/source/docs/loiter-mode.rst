@@ -60,8 +60,7 @@ Common Problems
    :ref:`compassmot <common-compass-setup-advanced_compassmot_compensation_for_interference_from_the_power_wires_escs_and_motors>`
    or purchasing a :ref:`GPS+compass module <common-installing-3dr-ublox-gps-compass-module>` normal
    resolves this.  Other possibilities include bad compass offsets set
-   during the :ref:`live calibration process <common-compass-calibration-in-mission-planner>` or
-   incorrect compass orientation.
+   during the :ref:`compass calibration process <common-compass-calibration-in-mission-planner>`.
 #. The vehicle takes off in the wrong direction as soon as loiter is engaged.  The cause is the same as #2 except that the compass error is greater than 90deg.  Please try the suggestions above to resolve this.
 
 
