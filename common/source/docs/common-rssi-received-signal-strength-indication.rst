@@ -31,6 +31,8 @@ RSSI can be specifically set up by a collapsible set of parameters. By default, 
 +---+--------------------+---------------------------------------------------------------------------------------------+
 | 4 | PWMInputPin        | allows to specify a GPIO pin to read PWM type RSSI input                                    |
 +---+--------------------+---------------------------------------------------------------------------------------------+
+| 5 | TelemetryRadioRSSI | signal strength reported by remote telemetry radio                                          |
++---+--------------------+---------------------------------------------------------------------------------------------+
 
 
 After setting :ref:`RSSI_TYPE<RSSI_TYPE>` to a value other than 0 you will have to save and refresh your parameters to uncollapse a set of subordinate parameters that allow to further specify RSSI handling. 
