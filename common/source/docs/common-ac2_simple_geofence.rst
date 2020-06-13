@@ -16,16 +16,16 @@ The maximum circular distance and altitude (altitude used by Copter only) and th
 Rover Actions
 -------------
 
-Rover has no altitude actions, but if it reaches the Cylndrical fence boundary in either Steering or Acro modes, it will simply stop and not move beyond it. These are the only modes affected by the fence.
+Rover has no altitude actions, but if it reaches the Cylindrical fence boundary in either Steering or Acro modes, it will simply stop and not move beyond it. These are the only modes affected by the fence.
 
 Copter Actions
 --------------
 
-Copter will stop increasing altitude at :ref:`FENCE_ALT_MAX<>` in Loiter, PosHold, and AltHold modes.
+Copter will stop increasing altitude at :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` in Loiter, PosHold, and AltHold modes.
 
 In Loiter mode, it will stop at the horizontal boundaries.
 
-In other modes, it will execute the :ref:`FENCE_ACTION<FENCE_ACTION> below if the altitude or boundary is reached.
+In other modes, it will execute the :ref:`FENCE_ACTION<FENCE_ACTION>` below if the altitude or boundary is reached.
 
 +------------+--------------------+-------------------+
 +FENCE_ACTION|  Copter            | Rover             +

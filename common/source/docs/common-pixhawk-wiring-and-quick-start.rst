@@ -89,7 +89,7 @@ I2C port with the four-position DF13 cable.
 
    3DR UBlox GPS + Compass Module
 
-The topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module_connecting_to_pixhawk>`
+The topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>`
 shows how to connect to Pixhawk and include additional configuration and
 mounting information.
 
