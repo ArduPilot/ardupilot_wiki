@@ -201,6 +201,16 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+    <tr class="row-odd">
+        <td><center><a class="first last reference external image-reference" href="https://www.uav-dev.com"><img alt="UAV-DEV GmbH" src="../_images/uavdev.png" style="width: 90px;" /></a><br/><br/>Germany</center></td>
+        <td><div class="first last line-block">
+            <div class="line">UAV-DEV GmbH, Mirko Denecke, <a href="mailto:info@uav-dev.com" target="_top">info@uav-dev.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">ArduPilot integration, setup, support and troubleshooting.</div>
+            <div class="line">Customizations of ArduPilot code, ArduPilot ROS integration.</div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
@@ -264,6 +274,9 @@ listed here will be active participants in the community.
     :scale: 0%
 
 .. image:: ../../../images/logos/aionrobotics.png
+    :scale: 0%
+
+.. image:: ../../../images/logos/uavdev.png
     :scale: 0%
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
