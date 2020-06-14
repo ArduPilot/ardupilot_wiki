@@ -46,7 +46,7 @@ Setup
 
 * In order to control start and stop of video recording from a radio transmitter set a free rc channel to ``RCx_OPTION`` = 78 to enable triggering from that RC input channel. If the switch is in the low position then video recording is stopped, if in the high position then video recording is started.
 
-* In order to control entering the OSD menu set a free rc channel to ``RCx_OPTION`` = 78. If the switch is in the low position then the OSD menu is exited, if in the high position then the OSD menu is entered. The OSD menu can also be entered by default through rolling hard right while disarmed.
+* In order to control entering the OSD menu set a free rc channel to ``RCx_OPTION`` = 79. If the switch is in the low position then the OSD menu is exited, if in the high position then the OSD menu is entered. The OSD menu can also be entered by default through rolling hard right while disarmed.
 
 OSD Menu Control
 ================
