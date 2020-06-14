@@ -24,7 +24,7 @@ Currently supported features in ArduPilot
 Setup
 =====
 
-* One free non-inverted UART on the FC is required (TX and RX). Connect TX to RX, RX to TX and GND to GND. Pinouts for serial ports on The Cube can be found :ref:`here <common-pixhawk-serial-mapping>`.
+* One free non-inverted UART on the FC is required (TX and RX). Connect TX to RX, RX to TX and GND to GND. Pinouts for serial ports on The Cube can be found :ref:`here <common-pixhawk-serial-mapping>`. Check the :ref:`board documentation<common-autopilots>` for other boards.
 
   .. image:: ../../../images/camera-runcam-fc-setup.jpg
     :target:  ../_images/camera-runcam-fc-setup.jpg
@@ -44,14 +44,14 @@ Setup
 
 * Some split-style cameras support three modes - video standby, video start and picture mode. It is not possible to tell from the RunCam device protocol whether this is the type of camera in use and so this must be configured. Set :ref:`CAM_RC_TYPE <CAM_RC_TYPE>` 2. All other cameras should be fine with the default.
 
-* In order to control start and stop of video recording from a radio transmitter set :ref:`RC8_OPTION <RC8_OPTION>` = 78 to enable triggering from RC input channel 8. Adjust the channel number for triggering on different switches. If the switch is in the low position then video recording is stopped, if in the high position then video recording is started.
+* In order to control start and stop of video recording from a radio transmitter set a free rc channel to ``RCx_OPTION`` = 78 to enable triggering from that RC input channel. If the switch is in the low position then video recording is stopped, if in the high position then video recording is started.
 
-* In order to control entering the OSD menu set :ref:`RC8_OPTION <RC8_OPTION>` = 79. Adjust the switch number for triggering the OSD menu on different switches. If the switch is in the low position then the OSD menu is exited, if in the high position then the OSD menu is entered. The OSD menu can also be entered by default through rolling hard right while disarmed.
+* In order to control entering the OSD menu set a free rc channel to ``RCx_OPTION`` = 78. If the switch is in the low position then the OSD menu is exited, if in the high position then the OSD menu is entered. The OSD menu can also be entered by default through rolling hard right while disarmed.
 
 OSD Menu Control
 ================
 
-A big part of the RunCam driver is support for the OSD menu. The OSD menu allows various properties of a connected camera to be controlled via RC stick gestures. The easiest way to enter the OSD menu is to push the stick for Roll hard right. This gesture is enabled by default but can be disabled by setting :ref:`CAM_RC_CONTROL <CAM_RC_CONTROL>`. Once in the menu, the Pitch stick will allow you to navigated between menu items and Roll right will usually allow you to select items or navigate into sub-menus. The OSD menu can only be entered while disarmed.
+A big part of the RunCam feature is support for the OSD menu. The OSD menu allows various properties of a connected camera to be controlled via RC stick gestures. The easiest way to enter the OSD menu is to push the stick for Roll hard right. This gesture is enabled by default but can be changed by setting :ref:`CAM_RC_CONTROL <CAM_RC_CONTROL>`. Once in the menu, the Pitch stick will allow you to navigated between menu items and Roll right will usually allow you to select items or navigate into sub-menus. The OSD menu can only be entered while disarmed.
 
 The transmitter sticks can be used to control the OSD menu as follows:
 
