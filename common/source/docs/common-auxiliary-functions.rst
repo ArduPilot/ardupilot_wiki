@@ -170,6 +170,18 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        77            | TAKEOFF mode               |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        78            | RunCam Control             |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        79            | RunCam OSD Control         |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        80            | Viso Align                 |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        81            | Disarm                     |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        82            | Q_Assist 3Pos Sw           |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        83            | ZIGZAG Auto                |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
 |        102           | Camera Mode Toggle         |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 
@@ -544,6 +556,15 @@ Clears currently loaded mission waypoints.
 
    </td>
    <tr>
+   <td><strong>ZigZag Mode Learn Waypoints</strong></td>
+   <td>
+
+Sets zigzag point A and B. See :ref:`zigzag-mode` .
+
+.. raw:: html
+
+   </td>
+   <tr>
    <td><strong>Compass Learn</strong></td>
    <td>
 
@@ -634,6 +655,70 @@ This puts the autopilot control loops into a soft standby mode so that a paralle
    </td>
    </tr>
    <tr>
+
+   <td><strong>RunCam Control</strong></td>
+   <td>
+
+Allows starting and stopping video recording of compatible RunCam cameras. See :ref:`common-camera-runcam`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>RunCam OSD Control</strong></td>
+   <td>
+
+Enables control of RunCam cameras OSDs. See :ref:`common-camera-runcam`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Viso Align</strong></td>
+   <td>
+
+Align T265 Visual Odometry camera attitude to vehicle's.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Disarm</strong></td>
+   <td>
+
+Disarm vehicle unconditionally and immediately. Unlike Emergency Stop Motors, which waits for :ref:`DISARM_DELAY<DISARM_DELAY>` in Copter.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Q_Assist 3Pos SW</strong></td>
+   <td>
+
+Low: disable Q_Assist entirely, Middle: Normal Q_Assist operation, High: Q_Assist active at all times. See Assisted Fixed Wing Flight section of :ref:`quadplane-flying`
+
+
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>ZigZag Mode Auto Enable</strong></td>
+   <td>
+
+Enable automatic zigzag and sprayer in ZIGZAG mode. See :ref:`zigzag-mode`
+
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
    <td><strong>Camera Mode Toggle</strong></td>
    <td>
 
@@ -646,6 +731,7 @@ Toggle camera mode (Photo/Video/etc.). Ideally, should be momentary switch since
    <tr>
    <td><strong>Mainsail</strong></td>
    <td>
+
 
 This RC channel will drive the output of the MainSail output ( ``SERVOx_FUNCTION`` = 89) instead of being 
 set from the Throttle Input channel (useful if it has an auxiliary motor using that input). See Sailboat :ref:`sailboat-configure` for more information about the main sail setup.
