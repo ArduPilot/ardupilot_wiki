@@ -96,7 +96,7 @@ UART6 RX can now be tied to receiver FPort. This board requires a unique configu
 - :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>`  =1
 - :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` =23
 - :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` =15
-- :ref:`RC_OPTIONS<RC_OPTIONS>` =8
+- :ref:`RC_OPTIONS<RC_OPTIONS>` =8 (depending on receiver and its firmware rev, this may not be necessary)
 - :ref:`RSSI_TYPE<RSSI_TYPE>` =3
 
 KakuteF7 and KakuteF7Mini
