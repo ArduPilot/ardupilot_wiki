@@ -48,6 +48,6 @@ Tools for log analysis
     MissionPLanner <https://ardupilot.org/planner/>
     QGroundControl <http://qgroundcontrol.com/>
     Dronee Plotter <https://plot.dron.ee/>
-    
+    UAV LogViewer <https://plot.ardupilot.org>
 
 [copywiki destination="copter,plane,rover,dev,antennatracker,planner"]
