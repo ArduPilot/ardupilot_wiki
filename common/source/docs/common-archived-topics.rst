@@ -93,6 +93,7 @@ value to users with old hardware.
     BeaglePilot Project <beaglepilot>
     Making a MAVLink WiFi bridge using the Raspberry Pi <making-a-mavlink-wifi-bridge-using-the-raspberry-pi>
     HITL Simulators <hitl-simulators>
+    Weekly meetings on Mumble Server <ardupilot-mumble-server>
 
 [/site]
 

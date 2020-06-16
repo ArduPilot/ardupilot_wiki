@@ -18,4 +18,4 @@ These pages are less about the software directly and more about the procedures a
     Roadmap <roadmap>
     Top Contributors <common-team>
     Voting <how-the-team-works-voting>
-    Weekly meetings on Mumble Server <ardupilot-mumble-server>
+    Weekly meetings on Discord <ardupilot-discord-server>
