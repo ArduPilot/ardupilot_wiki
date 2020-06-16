@@ -92,6 +92,7 @@ value to users with old hardware.
     Interfacing with Pixhawk Using the NSH <interfacing-with-pixhawk-using-the-nsh>
     BeaglePilot Project <beaglepilot>
     Making a MAVLink WiFi bridge using the Raspberry Pi <making-a-mavlink-wifi-bridge-using-the-raspberry-pi>
+    HITL Simulators <hitl-simulators>
 
 [/site]
 

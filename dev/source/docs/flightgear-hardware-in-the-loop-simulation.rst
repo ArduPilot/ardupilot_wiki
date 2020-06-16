@@ -4,6 +4,8 @@
 FlightGear Hardware-in-the-Loop Simulation
 ==========================================
 
+.. note:: Archived, no longer supported
+
 `FlightGear <http://www.flightgear.org/about/>`__ is an open-source free
 flight simulator. This article explains how to use this
 hardware-in-the-loop simulator with Plane (only).

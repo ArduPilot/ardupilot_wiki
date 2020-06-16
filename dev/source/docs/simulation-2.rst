@@ -29,7 +29,6 @@ Less often used simulators include:
 
 -  :ref:`Last Letter <using-last_letter-as-an-external-sitl-simulator>` is a simpler simulator (fixed wing only) with lower CPU requirements than most other simulators.
 -  :ref:`CRRCSim <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>` is a less commonly used simulator for fixed wing and helictopers.
--  :ref:`Hardware In the Loop <hitl-simulators>` (HITL) simulation runs ArduPilot on the flight controller using raw sensor data fed in from the simulated environment running on the desktop PC.  HITL is only supported for Plane.
 -  :ref:`SCRIMMAGE <sitl-with-scrimmage>` is an open-source vehicle simulator focused on collaborative robotics
 
 List of simulators (so they can appear in the menu):

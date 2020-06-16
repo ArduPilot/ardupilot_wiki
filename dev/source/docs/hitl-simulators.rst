@@ -4,6 +4,8 @@
 HITL Simulators
 ===============
 
+.. note:: Archived, no longer supported
+
 Hardware In The Loop (HITL) simulation replaces the vehicle and the
 environment with a simulator (the Simulator has a high-fidelity aircraft
 dynamics model and environment model for wind, turbulence, etc.) The
