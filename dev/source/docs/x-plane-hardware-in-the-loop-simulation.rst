@@ -4,6 +4,8 @@
 X-Plane Hardware in the Loop Simulation
 =======================================
 
+.. note:: Archived, no longer supported
+
 This article explains how to set up *X-Plane Hardware in the Loop
 Simulation*.
 
