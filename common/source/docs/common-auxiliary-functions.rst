@@ -624,7 +624,6 @@ This three position switch determines if surface tracking via rangefinder is tow
    </td>
    </tr>
    <tr>
-   <tr>
    <td><strong>Standby</strong></td>
    <td>
 
