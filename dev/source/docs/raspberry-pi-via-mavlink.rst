@@ -42,59 +42,11 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 -  :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` = 921 so the flight controller can communicate with the RPi at 921600 baud.
 -  :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` = 3 if you are using APSync to stream the dataflash log files to the RPi
 
-Setup the RPi Software (Automatic)
-==================================
-
-The easiest way to setup the RPi is to flash one of the existing :ref:`APSync <apsync-intro>` images:
-
-- purchase a formatted 8GB or 16GB SD card (16GB is better because some 8GB cards will not be quite large enough to fit the image) and insert into your laptop/desktop computer's SD card slot
-- download the latest `image from firmware.ardupilot.org <https://firmware.ardupilot.org/Companion/apsync>`__.  Look for the file starting with "apsync-rpi".
-- Use the `Etcher <https://www.balena.io/etcher/>`__ software to load the image onto the RPi's SD card.
-
-   .. note::
-
-    There is a more recent APSync build for the RPi in the `forums <https://discuss.ardupilot.org/t/new-apsync-build-for-raspberry-pi/49528>`__.
-
-Setup the RPi (Manual)
-======================
-
-This section shows how to configure the RPi as a minimal server to read
-and route telemetry from the autopilot. It does not install the full
-APSync software.
-
-.. _raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client:
-
-Connecting to RPi with an SSH/Telnet client
--------------------------------------------
-
-See the `RPi Documentation <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__
-
-
-.. _raspberry-pi-via-mavlink_install_the_required_packages_on_the_raspberry_pi:
-
-Install the required packages on the Raspberry Pi
--------------------------------------------------
-
-After the internet connection is confirmed to be working install these
-packages:
-
-::
-
-    sudo apt-get update    #Update the list of packages in the software center
-    sudo apt-get install python3-dev python3-opencv python3-wxgtk3.0 libxml2-dev python3-pip python3-matplotlib python3-lxml
-    sudo pip3 install future
-    sudo pip3 install pymavlink
-    sudo pip3 install mavproxy
-
-.. note::
-
-   The packages are :ref:`mostly the same as when setting up SITL <setting-up-sitl-on-windows>`. Reply Reply 'y' when
-   prompted re additional disk space.
-
 Configure the serial port (UART)
---------------------------------
+================================
 
-Use the Raspberry Pi configuration utility for this.
+If not already configured, the Raspberry Pi's serial port (UART)
+will need to be enabled. Use the Raspberry Pi configuration utility for this.
 
 Type:
 
@@ -111,7 +63,7 @@ And in the utility, select "Interfacing Options":
 
 And then "Serial":
 
-.. image:: ../images/RaspberryPi_Serial2.png
+.. figure:: ../images/RaspberryPi_Serial2.png
     :target: ../_images/RaspberryPi_Serial2.png
 
 When prompted, select ``no`` to "Would you like a login shell to be accessible over serial?".
@@ -122,8 +74,52 @@ Reboot the Raspberry Pi when you are done.
 
 The Raspberry Pi's serial port will now be usable on ``/dev/serial0``.
 
-Testing the connection
-----------------------
+Configure the Wifi
+==================
+
+If desired, the Raspberry Pi's Wifi can be configured to create a 
+Wifi access point. This will allow other clients to connect to
+the RPi and stream telemetry. See the `official RPi documention
+<https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md>`__
+for details.
+
+.. tip::
+
+   The built-in Wifi on the Raspberry Pi does not have a large range. If range is an
+   issue, consider a USB Wifi adapter with external antenna.
+
+Setup the RPi Software
+======================
+
+There are a few different software options for communicating with the flight controller. All use the MAVLink
+protocol for communication.
+
+APSync
+------
+
+The easiest way to setup the RPi is to flash one of the existing :ref:`APSync <apsync-intro>` images:
+
+- Purchase a formatted 8GB or 16GB SD card (16GB is better because some 8GB cards will not be quite large enough to fit the image) and insert into your laptop/desktop computer's SD card slot
+- Download the latest `image from firmware.ardupilot.org <https://firmware.ardupilot.org/Companion/apsync>`__.  Look for the file starting with "apsync-rpi".
+- Use the `Etcher <https://www.balena.io/etcher/>`__ software to load the image onto the micro SD card.
+- Insert the micro SD card into into the Pi's micro SD card slot
+
+   .. note::
+
+    There is a more recent APSync build for the RPi in the `forums <https://discuss.ardupilot.org/t/new-apsync-build-for-raspberry-pi/49528>`__.
+
+The APSync image will have the serial port (UART) already enabled.
+
+MAVProxy
+--------
+
+MAVProxy can be used to to send commands to the flight controller from the Pi. 
+It can also be used to route telemetry to other network endpoints.
+
+This assumes you have a SSH connection to the Pi. If not, see see the 
+the `RPi Documentation <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__.
+
+See the :ref:`MAVProxy Documentation<mavproxy:mavproxy-downloadinstalllinux>` for install instructions
 
 To test the RPi and flight controller are able to communicate with each other
 first ensure the RPi and flight controller are powered, then in a console on the
@@ -143,7 +139,7 @@ command to display the ``ARMING_CHECK`` parameters value
     param set ARMING_CHECK 0
     arm throttle
 
-.. image:: ../images/RaspberryPi_ArmTestThroughPutty.png
+.. figure:: ../images/RaspberryPi_ArmTestThroughPutty.png
     :target: ../_images/RaspberryPi_ArmTestThroughPutty.png
 
 .. note::
@@ -153,21 +149,14 @@ command to display the ``ARMING_CHECK`` parameters value
    accidentally assigned these files to another username, such as
    Root.
 
-Entering the following at the Linux command line will ensure that all
-files belong to the standard Pi login account:
-
-::
-
-    sudo chown -R pi /home/pi
-
-Installing mavlink-router
--------------------------
+Mavlink-router
+--------------
 
 Mavlink-router is used to route telemetry between the RPi's serial port
 and any network endpoints. See the `documentation <https://github.com/intel/mavlink-router>`__
 for install and running instructions.
 
-After installing, edit the mavlink-router config file's (``/etc/mavlink-router/config.d``)
+After installing, edit the mavlink-router config file's ``/etc/mavlink-router/main.conf``
 UART section to:
 
 ::
@@ -176,16 +165,9 @@ UART section to:
     Device = /dev/serial0
     Baud = 921600
 
-Configuring the Pi as a Wifi Access Point
------------------------------------------
-
-To configure the RPi to stream telemetry over it's own
-Wifi network, see the `official RPi documention
-<https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md>`__
-for details.
-
-If not already present, you will also need to add an additional
-UDP endpoint to the mavlink-router config file (``/etc/mavlink-router/config.d``).
+You will also need to add an additional UDP endpoint allow other ground stations on the same
+network to connect to the Pi. Edit the mavlink-router config file ``/etc/mavlink-router/main.conf``
+to include:
 
 ::
 
@@ -195,10 +177,26 @@ UDP endpoint to the mavlink-router config file (``/etc/mavlink-router/config.d``
     Port = 14550
     PortLock = 0
 
-Installing DroneKit on RPi
---------------------------
+DroneKit
+--------
 
 The most up-to-date instructions for `Installing DroneKit <https://dronekit-python.readthedocs.io/en/latest/guide/quick_start.html>`__ on Linux are in the DroneKit-Python documentation.
+
+Rpanion-server
+--------------
+
+`Rpanion-server <https://www.docs.rpanion.com/software/rpanion-server>`__ is
+a web-based GUI for configuring flight controller telemetry, logging,
+video streaming and network configuration.
+
+Installation is via a disk image:
+
+- Purchase a formatted 8GB (or larger) micro SD card and insert into your laptop/desktop computer's SD card slot
+- Download the latest `image <https://www.docs.rpanion.com/software/rpanion-server>`__.
+- Use the `Etcher <https://www.balena.io/etcher/>`__ software to load the image onto the micro SD card.
+- Insert the micro SD card into into the Pi's micro SD card slot
+
+The Rpanion-server image will have the serial port (UART) already enabled.
 
 .. _raspberry-pi-via-mavlink_connecting_with_the_mission_planner:
 
