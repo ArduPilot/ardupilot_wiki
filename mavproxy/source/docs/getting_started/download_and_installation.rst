@@ -20,50 +20,41 @@ http://firmware.ardupilot.org/Tools/MAVProxy/.
     Windows package of MAVProxy. This is being investigated and will
     hopefully be fixed soon. See https://github.com/ArduPilot/MAVProxy/issues/129 for more details.
 
+Alternatively, Windows Subsystem for Linux (WSL) can be used to run MAVProxy from a Linux environment
+within Windows. It generally provides better stability than the native Windows installer above.
+
+
 .. _mavproxy-downloadinstalllinux:
 
 Linux
 =====
 
-First, a few pre-requisite packages need to be installed.
+MAVProxy can be installed via package managers. Select the appropriate set of commands for your Linux variant below.
 
-For Debian based systems:
+For Debian based systems (including WSL):
 
 .. code:: bash
 
     sudo apt-get install python3-dev python3-opencv python3-wxgtk3.0 python3-pip python3-matplotlib python3-pygame python3-lxml python3-yaml
+    pip3 install mavproxy --user
+    echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
     
 For Fedora based systems:
 
 .. code:: bash
 
     sudo dnf install python3-devel python3-opencv wxPython python3-pip python3-matplotlib pygame python3-lxml python3-yaml redhat-rpm-config
-
-.. note::
-
-    On some Linux systems, ``python-wxgtk3.0`` and ``python3-wxgtk3.0`` may not exist.
-    Alternative for older systems is ``python-wxgtk2.8``.
-    For newer systems use ``python3-wxgtk4.0``.
-    
-.. note::
-
-    On Raspberry Pi (Raspian) systems, the ``libxml2-dev`` package is required to be installed too.
-        
-Then download and install MAVProxy via Pypi. Prerequisites will be
-automatically downloaded too. Note a sudo may be required in some
-circumstances if the install generates errors:
-
-.. code:: bash
-
-    pip install MAVProxy
-    
-Depending on user and system settings, there may be some extra configuration required.
-
-If not already set, MAVProxy needs to be on the system path:
-
-.. code:: bash
-
+    pip3 install mavproxy --user
     echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+
+For Raspian / Raspberry Pi OS:
+
+.. code:: bash
+
+    sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-pygame python3-lxml python3-yaml libxml2-dev
+    pip3 install mavproxy --user
+    echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+
 
 The user permissions may also need to be changed to allow access to serial devices:
    
@@ -71,7 +62,7 @@ The user permissions may also need to be changed to allow access to serial devic
 
     sudo adduser <username> dialout    
 
-The system will need to be logged out and logged back in again to apply the above two changes.
+The system will need to be logged out and logged back in again to apply the above change.
 
 .. _mavproxy-downloadinstallmac:
 
