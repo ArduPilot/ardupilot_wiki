@@ -30,3 +30,21 @@ When flown manually ZigZag uses :ref:`Loiter mode's <loiter-mode>`  parameters. 
 
 When autonomously flying from one side of the field to the other, the :ref:`Auto mode <auto-mode>` parameters are used.  For example the top speed can be configured with :ref:`WPNAV_SPEED <WPNAV_SPEED>`..
 
+Automatic Operation
+===================
+
+.. note:: this function must be enabled with :ref:`ZIGZ_AUTO_ENABLE<ZIGZ_AUTO_ENABLE>` = 1, and parameters reloaded, before any parameters are visible and the feature enabled.
+
+After the field's side points are registered, if you have an RC switch configured with ``RCx_OPTION`` = 83 (ZigZag Auto Mode), you can automatically cover the field side to side at a programmable distance interval, also enabling a sprayer, if equipped.
+
+.. image:: ../../../images/zigzag-auto.png
+     :target: ../_images/zigzag-auto.png
+
+To use:
+
+- Fly to one side of the field and register the ZigZagWP A, as above, then fly to ZigZagWP B and set it.
+- Then switch the ZigZag Auto Mode switch you had setup. The vehicle will proceed as shown in the diagram, automatically enabling a sprayer, if setup. See :ref:`sprayer` for instructions.
+- Upon activation, the vehicle will move in :ref:`ZIGZ_DIRECTION<ZIGZ_DIRECTION>` with respect to its heading for :ref:`ZIGZ_SIDE_DIST<ZIGZ_SIDE_DIST>`, then proceed to cross the field until the opposite ZigZagWP is reached. It will then wait for :ref:`ZIGZ_WP_DELAY<ZIGZ_WP_DELAY>` to allow sprayer to fully stop and then move :ref:`ZIGZ_SIDE_DIST<ZIGZ_SIDE_DIST>` down the side of the field again to proceed back across the area. It will do this for :ref:`ZIGZ_LINE_NUM<ZIGZ_LINE_NUM>` times (-1 = infinite until switched out of this mode, =0 will only move to the first field crossing position, but not proceed further).
+
+Moving the ZigZag Auto switch to the low position immediately stops this mode and returns to normal ZIGZAG mode.
+
