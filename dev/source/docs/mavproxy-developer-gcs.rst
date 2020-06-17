@@ -14,10 +14,4 @@ multiple other ground station software on other devices.
 MAVProxy is commonly used by developers (especially with SITL) :ref:`for testing new builds <using-sitl-for-ardupilot-testing>`.
 
 The :ref:`MAVProxy Documentation<mavproxy:home>` contains detailed
-information on how to use the tool. This section contains complementary
-articles and tutorials:
-
-.. toctree::
-    :maxdepth: 1
-
-    MAVProxy on Windows 7 <mavproxy-on-windows-7>
+information on how to use the tool.
