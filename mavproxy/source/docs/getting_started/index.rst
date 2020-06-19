@@ -10,6 +10,7 @@ This section contains basic topics to help you get started with MAVProxy.
     download_and_installation
     quickstart
     starting
+    forwarding
     mavinit
     logfiles
     settings

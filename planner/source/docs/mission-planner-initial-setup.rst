@@ -76,7 +76,7 @@ This section is for advanced users.
 - MAVLink Inspector: allows monitoring, real time, of the various MAVLink status messages being received.
 - Proximity: View the data from a 360 lidar, if equipped
 - Mavlink Signing: Allows you to setup :ref:`secure communications<common-MAVLink2-signing>` with the vehicle.
-- Mavlink mirror: allows you to forward the MAVLink traffic to another network connected location for monitoring. Also see :ref:`mavproxy-on-windows-7` for another method.
+- Mavlink mirror: allows you to forward the MAVLink traffic to another network connected location for monitoring. Also see :ref:`MAVProxy Forwarding<mavproxy:mavproxy-forwarding>` for another method.
 - NMEA: Output the vehicle location as a NMEA GPS string over the network or to a COM port
 - Follow Me: If using an attached NEMA mode gps on a COM port to establish the MP GPS location, can send Guided Mode waypoints to the vehicle to follow the GCS.
 - Param Gen: Regenerates Mission Planners parameter list. Occasionally required if new firmware parameters are not being displayed.
