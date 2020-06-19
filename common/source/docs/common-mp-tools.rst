@@ -33,11 +33,20 @@ This allows forwarding of your connected autopilots MAVLink stream via the inter
   :target: ../_images/mavlink-forwarding.jpg
 
 #. Select this tool
-#. Next a dialog will open with drop-downs to allow selection of communication port. For remote connections usually TCP will be chosen. For TCP or UDP, the baud rate selection box is unimportant.
+#. Next a dialog will open with drop-downs to allow selection of communication port. For remote connections usually UDP will be chosen. For TCP or UDP, the baud rate selection box is unimportant.
 #. Click this box if you want the remote party to be able to change parameters on you autopilot or control it remotely.
 #. When "Connect" is selected, depending on communications port, the public IP address of the recipient and port dialogs will open for input.
 
 After this, the remote site should start getting MAVLink packets from your autopilot. They can use whatever ground station they chose to receive them.
+
+.. note:: You can forward MAVLink packets to only one location.
+
+.. note:: UDP is usually recommended instead of TCP since TCP requires acknowledgment of packets and network delays can slow down Joystick response to the point of causing crashes. UDP will continue to send control commands without waiting for acknowledgment of previous data reception.
+
+Forwarding Locally
+------------------
+
+You can also forward locally so that multiple ground control stations can connect to the locally attached autopilot on the same PC. In this case just use the local PC's localhost ip address of 127.0.0.1. You then can connect another GCS like MAVProxy or QGC on the same PC. 
 
 Warning Manager
 ===============
