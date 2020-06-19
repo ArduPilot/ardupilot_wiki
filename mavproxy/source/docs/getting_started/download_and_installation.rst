@@ -11,8 +11,16 @@ The following instructions are for user that just want to run MAVProxy. Develope
 Windows
 =======
 
-A complete windows installer for MAVProxy is available at
-http://firmware.ardupilot.org/Tools/MAVProxy/.
+A complete windows installer (package) for MAVProxy is available at
+http://firmware.ardupilot.org/Tools/MAVProxy/. It is compatible
+with Windows 7 or later.
+
+A link to MAVProxy will be available on the start menu. MAVProxy can
+also be called from the commandline via mavproxy.exe
+
+.. note::
+    Any references to "mavproxy.py" in this documentation should be
+    replaced by "mavproxy.exe" on the Windows commandline.
 
 .. note::
 
@@ -20,7 +28,7 @@ http://firmware.ardupilot.org/Tools/MAVProxy/.
     Windows package of MAVProxy. This is being investigated and will
     hopefully be fixed soon. See https://github.com/ArduPilot/MAVProxy/issues/129 for more details.
 
-Alternatively, Windows Subsystem for Linux (WSL) can be used to run MAVProxy from a Linux environment
+Alternatively, Windows 10 users can use the Windows Subsystem for Linux (WSL) to run MAVProxy from a Linux environment
 within Windows. It generally provides better stability than the native Windows installer above.
 
 
@@ -35,7 +43,7 @@ For Debian based systems (including WSL):
 
 .. code:: bash
 
-    sudo apt-get install python3-dev python3-opencv python3-wxgtk3.0 python3-pip python3-matplotlib python3-pygame python3-lxml python3-yaml
+    sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-pygame python3-lxml python3-yaml
     pip3 install mavproxy --user
     echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
     
@@ -55,6 +63,11 @@ For Raspian / Raspberry Pi OS:
     pip3 install mavproxy --user
     echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
 
+
+.. note::
+
+    On older Linux installations, the ``python3-wxgtk3.0`` package will need to be installed if the 
+    ``python3-wxgtk4.0`` package does not exist.
 
 The user permissions may also need to be changed to allow access to serial devices:
    
