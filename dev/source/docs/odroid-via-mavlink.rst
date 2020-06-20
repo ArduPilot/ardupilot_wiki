@@ -155,16 +155,14 @@ Power connections are shown below:
 Connecting to ODroid with an SSH/Telnet client
 ==============================================
 
-**To-Do: confirm the RPi instructions for all sections below also work
-for the ODroid.**
-
-:ref:`Please refer to the instructions for the Raspberry Pi <raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client>`.
+`Please refer to the instructions for the Raspberry Pi <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__.
 
 Installing the required packages
 ================================
 
-:ref:`Please refer to the instructions for the Raspberry Pi <raspberry-pi-via-mavlink_install_the_required_packages_on_the_raspberry_pi>`
-but **skip** the "Disable the login prompt" section.
+This assumes you have a SSH connection to the Pi.
+
+See the :ref:`MAVProxy Documentation<mavproxy:mavproxy-downloadinstalllinux>` for install instructions
 
 Testing the connection
 ======================

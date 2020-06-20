@@ -67,7 +67,7 @@ You now have the Raspberry Pi ready to setup MavProxy and to set it up
 as an access point so you can use it to create a local WiFi network. To
 avoid having to continue using a keyboard and monitor it is convenient
 to connect to the RPi using an SSH client. You can follow the steps on
-the page :ref:`Connecting to RPi with an SSH/Telnet client <raspberry-pi-via-mavlink_connecting_to_rpi_with_an_sshtelnet_client>`
+the page `Connecting to RPi with an SSH/Telnet client <https://www.raspberrypi.org/documentation/remote-access/ssh/>`__
 in order to achieve this.
 
 Setting up the Raspberry Pi as an access point
