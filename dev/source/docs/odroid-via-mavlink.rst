@@ -7,7 +7,7 @@ Communicating with ODroid via MAVLink
 Overview
 ========
 
-This page introduces how to connect and configure an `ODROID U3 <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G138733896281>`__, \ `ODROID-C1+ <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G143703355573>`__ or `ORDOID-XU4 <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G143452239825>`__ so
+This page introduces how to connect and configure an `ODROID U3 <https://www.hardkernel.com/shop/odroid-u3/>`__ (*Discontinued*) , \ `ODROID-C1+ <https://www.hardkernel.com/shop/odroid-c1/>`__ or `ORDOID-XU4 <https://www.hardkernel.com/shop/odroid-xu4-special-price/>`__ so
 that it is able to communicate with a Pixhawk flight controller using
 the MAVLink protocol over a serial connection. The capabilities are very
 similar to the :ref:`Raspberry Pi <raspberry-pi-via-mavlink>` except
@@ -23,11 +23,11 @@ Recommended parts
 These parts are required:
 
 -  ODROID board
-   (`ODROID-C1+ <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G143703355573>`__, \ `ORDOID-XU4 <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G143452239825>`__ or `ODROID U3 <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G138733896281>`__)
--  `5V Power supply <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G134111972476>`__
--  `DC Plug and Cable Assembly <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G138960965859>`__
--  `8GB MicroSD Card <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G138750295761>`__
-   OR `8GB eMMC Module <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G138749987644>`__
+   (`ODROID-C1+ <https://www.hardkernel.com/shop/odroid-c1/>`__, \ `ORDOID-XU4 <https://www.hardkernel.com/shop/odroid-xu4-special-price/>`__ or `ODROID U3 <https://www.hardkernel.com/shop/odroid-u3/>`__ (*Discontinued*))
+-  `5V Power supply <https://www.hardkernel.com/shop/5v-2a-power-supply-asia-korea-round-plug/>`__
+-  `DC Plug and Cable Assembly <https://www.hardkernel.com/shop/dc-plug-cable-assembly-2-5mm/>`__
+-  `8GB MicroSD Card <https://www.hardkernel.com/shop/16gb-microsd-uhs-1-xu4-linux/>`__
+   OR `8GB eMMC Module <https://www.hardkernel.com/shop/8gb-emmc-module-c1-c0-linux/>`__
    preloaded with Linux (the EMMC module is about 4x faster which may be
    useful for image processing)
 -  `FTDI Cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__ or USB
@@ -45,13 +45,13 @@ These optional items may also be useful:
       (or perhaps 1280 x 720) because no official Linux driver has been
       written for this camera yet.
 
--  `Protective Case <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G138750628451>`__
--  `Micro HDMI cable <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G134112057897>`__
+-  Protective Case for `XU4 <https://www.hardkernel.com/shop/odroid-xu4-case-black/>`__ or `C1+ <https://www.hardkernel.com/shop/odroid-c2-c1-case-black/>`__
+-  `HDMI Type-A cable <https://www.hardkernel.com/shop/hdmi-1-4-cable-type-a-a/>`__
    in case you wish to connect the ODroid to a computer monitor
--  `Wifi module <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G137447734369>`__
+-  `Wifi module <https://www.hardkernel.com/shop/wifi-module-3/>`__
    if you wish to connect to the ODroid from your desktop computer using
    WiFi
--  `Serial Debug cable <http://www.hardkernel.com/main/products/prdt_info.php?g_code=G134111883934>`__
+-  `Serial Debug cable <https://www.hardkernel.com/shop/usb-uart-module-kit/>`__
    *if you wish to connect to the ODroid console with a direct
    connection to your desktop computer*
 -  Cat6 cable for connection while on the ground
