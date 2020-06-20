@@ -38,20 +38,45 @@ Hardware Setup
 Configure ArduPilot
 -------------------
 
-Connect to the autopilot with a ground station (i.e. Mission Planner) and check that the following parameters are set as shown below:
+Connect to the autopilot with a ground station (i.e. Mission Planner) and check that the following parameters are set:
 
-- :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 2 (the default) to use EKF2 (as of this writing, EKF3 is **not** supported for handling external navigation data)
+- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2).  Note this assumes the RPI4 is connected to AutoPilot "Telem2" port.
+- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 921 (921600 baud)
+
+For ArduPilot-4.0 (and earlier):
+
+- :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 2 (the default) to use EKF2
 - :ref:`EK2_ENABLE<EK2_ENABLE>` = 1 (the default)
 - :ref:`EK3_ENABLE<EK3_ENABLE>` = 0 (the default)
-- :ref:`GPS_TYPE<GPS_TYPE>`  = 0 to disable the GPS
 - :ref:`EK2_GPS_TYPE<EK2_GPS_TYPE>`  = 3 to disable the EKF’s use of the GPS
 - :ref:`EK2_POSNE_M_NSE<EK2_POSNE_M_NSE>`  = 0.1
 - :ref:`EK2_VELD_M_NSE<EK2_VELD_M_NSE>`  = 0.1
 - :ref:`EK2_VELNE_M_NSE<EK2_VELNE_M_NSE>`  = 0.1
+- :ref:`GPS_TYPE<GPS_TYPE>`  = 0 to disable the GPS
 - :ref:`COMPASS_USE<COMPASS_USE>` = 0,  :ref:`COMPASS_USE2<COMPASS_USE2>`  = 0, :ref:`COMPASS_USE3<COMPASS_USE3>`  = 0 to disable the EKF’s use of the compass and instead rely on the heading from external navigation data
-- Configure serial port to connect to companion computer with ``SERIALx_BAUD`` and ``SERIALx_PROTOCOL = 1``
 
 After the parameters are modified, reboot the autopilot.  After about 1 minute the vehicle should appear on the ground station map in central Africa.
+
+For ArduPilot-4.1 (and later):
+
+- :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3 (EKF3)
+- :ref:`EK2_ENABLE <EK2_ENABLE>` = 0 (disabled)
+- :ref:`EK3_ENABLE <EK3_ENABLE>` = 1 (enabled)
+- :ref:`EK3_GPS_TYPE <EK3_GPS_TYPE>`  = 3 to disable the EKF’s use of the GPS
+- :ref:`GPS_TYPE <GPS_TYPE>`  = 0 to disable the GPS
+- :ref:`VISO_TYPE <VISO_TYPE>` = 2 (IntelT265)
+
+If you wish to use the camera's heading:
+
+- :ref:`COMPASS_USE <COMPASS_USE>` = 0, :ref:`COMPASS_USE2 <COMPASS_USE2>` = 0, :ref:`COMPASS_USE3<COMPASS_USE3>` = 0 to disable all compasses
+- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 5 (Use external yaw sensor)
+
+If you wish to use the autopilot's compass for heading:
+
+- :ref:`COMPASS_USE <COMPASS_USE>` = 1 (the default)
+- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 0 (the default)
+
+After the parameters are modified, reboot the autopilot.  Connect with the ground station and (if using Mission Planner) right-mouse-button-click on the map, select "Set Home Here", "Set EKF Origin Here" to tell ArduPilot where the vehicle is and it should instantly appear on the map.
 
 System Overview
 ===============
