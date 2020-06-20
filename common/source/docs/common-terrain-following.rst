@@ -91,9 +91,9 @@ Sources of Terrain Data
 
 The ground station is normally responsible for providing the raw terrain data which is sent to the aircraft via MAVLink. Right now only Mission Planner and MAVProxy support the required TERRAIN_DATA and TERRAIN_REQUEST MAVLink messages needed for terrain following download support. If you are using a different ground station , in order to download terrain data you will need to connect using one of those two ground stations in order to allow ArduPilot to load terrain data onto your board on the ground or in flight.  Once it is loaded, it is saved permanently on the microSD card.
 
-Both MissionPlanner and MAVProxy support the global SRTM database for terrain data.  ArduPilot uses data from that database with a global grid spacing of 3 arc-seconds (around 100 meters).
+Both MissionPlanner and MAVProxy support the global SRTM database for terrain data.  The ArduPilot SRTM server used by MAVProxy and Mission Planner has 100m grid spacing. Unless the ground control station uses a different server with closer spacing, setting the :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter lower than 100m provides no better resolution, and only consumes more space on the SD card. 
 
-Terrain Data is downloaded any time you save a mission with these ground stations, or, if flying, the autopilot will request data if its flying into an area not already downloaded. Assuming the ground station can provide it. Usually an internet connection is required by the ground station.
+Terrain Data is downloaded any time you save or connect with a loaded mission with these ground stations, or, if flying, the autopilot will request data if its flying into an area not already downloaded, assuming the ground station can provide it. Usually an internet connection is required by the ground station.
 
 Alternatively, you can download a set of terrain data tiles for any anticipated flight area using this `web utility <https://terrain.ardupilot.org/>`__. 
 
@@ -117,13 +117,13 @@ grid spacing for specialist applications.
 Note that the amount of terrain data kept in memory is directly related
 to the grid spacing. If you decrease the ``TERRAIN_SPACING`` by a factor of
 2 then the amount of terrain area kept in memory is reduced by a factor
-of 4. It is recommended that you use a ``TERRAIN_SPACING`` of at least 30
+of 4. It is recommended that you use a ``TERRAIN_SPACING`` of 100
 meters to prevent the aircraft running off the side of a grid in flight
 and not having data available.
 
 If the ground station does not have terrain data available at the
 resolution requested by the aircraft then the ground station will
-interpolate as necessary to provide the requested grid size.
+interpolate as necessary to provide the requested grid size. Currently, MAVPRoxy and Mission Planner can only provide data down to 100m spacing.
 
 Terrain Accuracy
 ================
