@@ -152,7 +152,7 @@ Full list of flight modes
     Flip <flip-mode>
     FlowHold <flowhold-mode>
     Follow <follow-mode>
-    Follow Me (GSC Enabled) <ac2_followme>
+    Follow Me (GCS Enabled) <ac2_followme>
     Guided <ac2_guidedmode>
     Heli_Autorotate <traditional-helicopter-autorotation-mode>
     Land <land-mode>
