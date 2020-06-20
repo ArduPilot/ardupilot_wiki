@@ -13,7 +13,8 @@ These are the available options that allow a vehicle to estimate its position wi
 
 .. toctree::
     :maxdepth: 1
-  
+
+    Intel RealSense T265 <common-vio-tracking-camera>
     MarvelMind Beacons <common-marvelmind>
 [site wiki="copter"]
 	Optical Flow <common-optical-flow-sensors-landingpage>
@@ -23,7 +24,6 @@ These are the available options that allow a vehicle to estimate its position wi
     ROS with Google Cartographer (Developers only) <https://ardupilot.org/dev/docs/ros-cartographer-slam.html>
     Vicon Positioning System <common-vicon-for-nongps-navigation>
     Visual Odometry with OpenKai and ZED <common-zed>
-    Intel RealSense T265 <common-vio-tracking-camera>
 [site wiki="rover"]
     Wheel Encoders <wheel-encoder>
 [/site]
