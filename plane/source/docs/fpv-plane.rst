@@ -70,7 +70,8 @@ Setup
 -  GPS
 
 After connecting to MP, verify that your GPS is recognized and you eventually get a satellite fix. Number of sats and
-HDOP are shown in the Flight Data tab of MP. If no gps is detected, you will see a message in the HUD display stating "No GPS". 
+HDOP are shown in the Flight Data tab of MP. If no gps is detected, you will continue to see a message in the HUD display stating "No GPS". If it detects it, it will initially show "GPS: No Fix" until it obtains a lock.
+
 That means you have hardware debug to do!
 
 Possible issues:
@@ -87,7 +88,7 @@ Possible issues:
 
 -  Radio Calibration
 
-Go to Initial Setup and move to Mandatory Hardware's Radio Calibration tab. You should see
+Go to SETUP and move to Mandatory Hardware's Radio Calibration tab. You should see
 the respective bars respond accordingly to your TX stick movements for each input (pitch is opposite). 
 If not, you have hardware debug to do! 
 ArduPilot expects AETR on channels 1-4 by default. Adjust your TX channel assignments accordingly or alternatively
@@ -123,13 +124,13 @@ Lo   -  Mid  -  Stabilize (or FBWA)
   
 Lo   -  Lo   -  Manual (low on SW2 ALWAYS drives Manual - that's your bailout!)
 
-Set these up in the Flight Modes subtab under Initial Setup -> Mandatory Hardware.
+Set these up in the Flight Modes subtab under SETUP -> Mandatory Hardware.
 
 After initial flights and tuning, you can change modes to whatever are desired.
 
 -  Accel Calibration
 
-Go to the Initial Configuration -> Mandatory Hardware -> Accelerometer Calibration tab and
+Go to the SETUP -> Mandatory Hardware -> Accelerometer Calibration tab and
 perform the full calibration. For the level position carefully level the wings laterally, and have the wing chord 
 set a few degrees (~ 3 deg) nose up, since this is the normal cruise attitude for level flight for most planes.
 This can be reset using the LEVEL only calibration button at any time. Also check that the orientation of the 
@@ -143,7 +144,7 @@ SERVOx_FUNCTION params for however you want to connect your equipment to the FC
 outputs: normal plane, v-tail, elevons, etc.
 You should try to get the servo-arms centered when the channel driving it is in neutral
 position if possible. You can tweak this using the SERVOx_TRIM params. You can do this
-manually or via the Initial Configuration -> Mandatory Hardware -> Servo tab. You can also set the
+manually or via the SETUP -> Mandatory Hardware -> Servo tab. You can also set the
 output range in this tab. Default is 1100 to 1900uS. Depending on your individual airframe's requirements, these endpoints 
 can be adjusted. Values of 1000/2000uS usually provide full throws.
 
@@ -153,7 +154,7 @@ Reverse the sevos with the reverse box for a servo if needed. If you have correc
 -  OSD
 
 For autopilots with integrated OSDs, this should be automatically enabled. You
-can use the Onboard OSD subtab in MP Initial Setup tab to setup the display configuration.
+can use the Onboard OSD subtab in MP CONFIG tab to setup the display configuration.
 Note that the elements of each OSD screen are visible only after having enabled that screen
 and rebooting/reconnecting to the FC.
 
@@ -192,7 +193,7 @@ On the bench while connected to MP and with propellor removed, make sure that FS
 
 -  Battery Monitor
 
-Do NOT use the Initial Configuration tab to setup the Battery Monitor for the newer
+Do NOT use the SETUP tab to setup the Battery Monitor for the newer
 Chibios boards. These boards have the default configuration already loaded when installing
 the firmware.
 You will probably have to slightly adjust the :ref:`BATT_AMP_OFFSET<BATT_AMP_OFFSET>` and :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>`
@@ -207,11 +208,11 @@ using the following formula:
     this isn't 100% accurate due to several factors, but is close enough. You may have to iterate a few times. 
     Also be sure to set the :ref:`BATT_CAPACITY<BATT_CAPACITY>` parameter.
 
--  Compass
+- Compass
 
 Tradition fixed wing Arduplane does not need a compass for good performance,  as opposed to Copter or
-Quadplane which require a compass for yaw alignment. If you have a compass, disable it until you have
-everything else working. Then you can expand to it.
+Quadplane which require a compass for yaw alignment. Even if you have a compass, disable it until you have
+everything else working. Then you can expand to it. Uncheck "Use this compass" for every compass in Mission Planner's SETUP/Compass screen. If you have no compass, these should already be unchecked.
 
 - Airspeed
 
