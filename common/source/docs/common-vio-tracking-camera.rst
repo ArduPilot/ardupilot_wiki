@@ -74,7 +74,8 @@ If you wish to use the camera's heading:
 If you wish to use the autopilot's compass for heading:
 
 - :ref:`COMPASS_USE <COMPASS_USE>` = 1 (the default)
-- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 0 (the default)
+- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 3 (After first climb yaw reset, the default)
+- :ref:`RC7_OPTION <RC7_OPTION>` = 80 (Viso Align) to allow the pilot to re-align the camera's yaw with the AHRS/EKF yaw before flight with auxiliary switch 7.  Re-aligning yaw before takeoff is a good idea or loss of position control (aka "toilet bowling") may occur.
 
 After the parameters are modified, reboot the autopilot.  Connect with the ground station and (if using Mission Planner) right-mouse-button-click on the map, select "Set Home Here", "Set EKF Origin Here" to tell ArduPilot where the vehicle is and it should instantly appear on the map.
 
