@@ -90,12 +90,14 @@ tuning options for the vehicle.
     Sensor Testing <common-sensor-testing>
     Serial Port to Port Passthrough <common-serial-passthrough>
     Serial Port Configuration <common-serial-options>
+[site wiki="copter"]
+    Surface Tracking  <terrain-following-manual-modes>
+{/site]
 [site wiki="rover"]
     Steering Input Type and Reversing Behaviour <rover-steering-input-type-and-reversing-behaviour>
 [/site]
     Telemetry Port Setup <common-telemetry-port-setup>
 [site wiki="copter,planner"]
-    Surface Tracking  <terrain-following-manual-modes>
     Terrain Following (Autonomous modes) <terrain-following>
     Tuning <common-tuning>
 [/site]
