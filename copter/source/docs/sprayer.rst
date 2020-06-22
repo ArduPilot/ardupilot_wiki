@@ -4,7 +4,7 @@
 Crop Sprayer
 ============
 
-Copter 3.4 (and higher) include support for a crop sprayer.  This feature allows a autopilot connected to a PWM operated pump and (optionally) spinner to control the rate of flow of liquid fertilizer based on the vehicle speed.
+Copter includes support for a crop sprayer.  This feature allows a autopilot connected to a PWM operated pump and (optionally) spinner to control the rate of flow of liquid fertilizer based on the vehicle speed.
 
 ..  youtube:: O8ZnxkXMv6A
     :width: 100%
