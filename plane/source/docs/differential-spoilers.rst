@@ -22,6 +22,8 @@ has smooth yaw control via rudder input during take-off and landing as well as a
 | |4surfLeftYaw|                                | |4surfRightYaw|                                 |
 +-----------------------------------------------+-------------------------------------------------+
 
+The amount of rudder input into the differential spoilers is controlled by :ref:`DSPOILR_RUD_RATE<DSPOILR_RUD_RATE>`. A value of 0, totally disables this feature. The default is 100(%). Conventional planes and gliders will probably want to change this.
+
 Preparation
 ===========
 
@@ -72,7 +74,7 @@ a bit-mask each, bit enables different functionality.
 |       | flaps first then crow brakes                                                                  |
 +-------+-----------------------------------------------------------------------------------------------+
 
-Defaults are bit 0 and bit 1 set to 1.
+Defaults are bit 0 and bit 1 set to 1. Conventional planes and gliders will probably want to change bit 0 to "0".
 
 :ref:`DSPOILER_AILMTCH <DSPOILER_AILMTCH>` allows the downwards travel of the inner surfaces to be limited 
 to a percentage of their full downwards travel. This only affects the travel when the control surfaces are used 
