@@ -78,7 +78,12 @@ Size and Pinouts
     :target: ../_images/cuav_autopilot/x7/x7-size.jpg
     
 .. image:: ../../../images/cuav_autopilot/x7/x7-pinouts.jpg
-    :target: ../_images/cuav_autopilot/x7/x7-pinouts.jpg
+    :target: ../_images/cuav_autopilot/x7/x7-pinouts.jpg    
+
+Flight video
+============
+
+
     
 More Information
 ================
