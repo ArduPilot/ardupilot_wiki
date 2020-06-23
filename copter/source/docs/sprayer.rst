@@ -11,7 +11,7 @@ Copter includes support for a crop sprayer.  This feature allows a autopilot con
 
 Slightly out-of-date video showing a copter using the Sprayer feature (jump to 2:25 to see the sprayer in action).
 
-.. note:: Many boards with only 1MB of flash do not have this feature. See :ref:`common-limited-firmware` for a list of boards without this capability.
+.. note:: Many boards with only 1MB of flash do not have this feature. See :ref:` Firmware Limitations<common-limited-firmware>` for a list of boards without this capability.
 
 Required Hardware
 =================
