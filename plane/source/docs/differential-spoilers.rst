@@ -54,13 +54,13 @@ Differential Spoiler options
 ============================
 :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` parameter gives several options that can be used to tailor the dspoiler 
 functionality to your aircraft. They can be used to setup a 'full house' wing on a glider. :ref:`DSPOILER_OPTS<DSPOILER_OPTS>` is 
-a bit-mask each, bit enables different functionality. 
+a bit-mask each, bit enables different functionality.
 
 +-------+-----------------------------------------------------------------------------------------------+
 |**Bit**|                                    **Description**                                            |
 +-------+-----------------------------------------------------------------------------------------------+
 |   0   | Pitch control, this bit enables or disables pitch control output using the differential       |
-|       | spoilers. 0 uses elevons as source for use with a flying wing, 1 uses ailerons as source for  |
+|       | spoilers. 1 uses elevons as source for use with a flying wing, 0 uses ailerons as source for  |
 |       | use with a traditional plane                                                                  |
 +-------+-----------------------------------------------------------------------------------------------+
 |   1   | Full span ailerons, 1 uses both the inner and outer control surfaces for roll control         |
@@ -71,6 +71,8 @@ a bit-mask each, bit enables different functionality.
 |       | moved down then from 50% to 100% flap the outer surfaces are moved up, this gives traditional |
 |       | flaps first then crow brakes                                                                  |
 +-------+-----------------------------------------------------------------------------------------------+
+
+Defaults are bit 0 and bit 1 set to 1.
 
 :ref:`DSPOILER_AILMTCH <DSPOILER_AILMTCH>` allows the downwards travel of the inner surfaces to be limited 
 to a percentage of their full downwards travel. This only affects the travel when the control surfaces are used 
