@@ -84,6 +84,6 @@ Size and Pinouts
 More Information
 ================
 
-* [CUAV docs](http://doc.cuav.net/flight-controller/x7/en/x7.htmll)
+* [CUAV docs](http://doc.cuav.net/flight-controller/x7/en/x7-pro.html)
 
 * [x7 schematic](https://github.com/cuav/hardware/tree/master/X7_Autopilot)
