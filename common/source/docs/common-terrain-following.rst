@@ -95,7 +95,12 @@ Both MissionPlanner and MAVProxy support the global SRTM database for terrain da
 
 Terrain Data is downloaded any time you save or connect with a loaded mission with these ground stations, or, if flying, the autopilot will request data if its flying into an area not already downloaded, assuming the ground station can provide it. Usually an internet connection is required by the ground station.
 
-Alternatively, you can download a set of terrain data tiles for any anticipated flight area using this `web utility <https://terrain.ardupilot.org/>`__. 
+.. warning:: While the autopilot will request the terrain data around waypoints and home location, if it is not connected to a GCS that can supply enroute tiles, the autopilot just interpolates between waypoint's terrain elevation. See below:
+.. image:: ../../../images/terrain-warning.jpg
+
+If you are not flying with a GCS that can fetch and supply terrain data as the vehicles flies between waypoints, the you may need to load terrain data covering the flight route and/or area for RTL paths manually.
+
+You can download a set of terrain data tiles for any anticipated flight area using this `web utility <https://terrain.ardupilot.org/>`__. 
 
 .. image:: ../../../images/common-terrain-dl-utility.png
 
