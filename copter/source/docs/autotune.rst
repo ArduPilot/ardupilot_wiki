@@ -189,7 +189,7 @@ If you stopped the tune  and dis-armed while still in AUTOTUNE, and an axis tune
 
  09:19:48	AutoTune: Saved gains for Pitch
 
-.. tip:: If you do happen to accidentally discard a sessions AUTOTUNE values by disarming when not in AUTOTUNE, you can examine the dataflash log for the GCS messages it sent during tune and manually set them on the bench. This is handy also, if a tune did not complete, to allow it to restart where it had left off in another tuning session.
+.. tip:: If you do happen to accidentally discard a sessions AUTOTUNE values by disarming when not in AUTOTUNE, you can examine the dataflash log for the GCS messages it sent during tune and manually set them on the bench.
 
 
 -----
