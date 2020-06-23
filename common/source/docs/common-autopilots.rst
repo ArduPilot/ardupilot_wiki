@@ -18,7 +18,7 @@ Open hardware
     CUAV V5 Nano <common-cuav-v5nano-overview>
     CUAV Nora <common-cuav-nora-overview>
     CUAV X7 <common-cuav-x7-overview>
-    CUAV X7 <common-cuav-x7-pro-overview>
+    CUAV X7 Pro <common-cuav-x7-pro-overview>
     Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
     F4BY <common-f4by>
     Hex/ProfiCNC Cube Black <common-thecube-overview>
