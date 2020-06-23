@@ -25,9 +25,9 @@ Copter/Plane/Rover support a number of different rangefinders including Lidars (
    will be used until you exceed ``RNGFNDx_MAX_CM``, after that it switches to
    the barometer.
 
-   Copter-3.4 (and higher) includes support for :ref:`Terrain Following <terrain-following>` in Auto mode.
+   Copter includes support for :ref:`Terrain Following <terrain-following>` in Auto mode.
 
-   Copter-3.5 (and higher) and Rover-3.5 (and higher) can use rangefinders for :ref:`Object Avoidance <common-object-avoidance-landing-page>`.
+   Copter can also use rangefinders for :ref:`Object Avoidance <common-object-avoidance-landing-page>`.
 [/site]
 
    
@@ -56,6 +56,7 @@ based upon your set-up.
     Benewake TF02 / TF03 <common-benewake-tf02-lidar>
     Benewake TFmini / TFmini Plus <common-benewake-tfmini-lidar>
     Garman Lidar-Lite <common-rangefinder-lidarlite>
+    GY-US42 Sonar <common-gy-us42>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
