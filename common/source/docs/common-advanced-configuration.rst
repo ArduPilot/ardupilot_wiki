@@ -92,7 +92,7 @@ tuning options for the vehicle.
     Serial Port Configuration <common-serial-options>
 [site wiki="copter"]
     Surface Tracking  <terrain-following-manual-modes>
-{/site]
+[/site]
 [site wiki="rover"]
     Steering Input Type and Reversing Behaviour <rover-steering-input-type-and-reversing-behaviour>
 [/site]
