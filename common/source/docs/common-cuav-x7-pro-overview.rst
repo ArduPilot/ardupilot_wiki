@@ -1,4 +1,4 @@
-.. _common-cuav-x7-overview:
+.. _common-cuav-x7-pro-overview:
 
 ================
 CUAV X7 Pro Overview
