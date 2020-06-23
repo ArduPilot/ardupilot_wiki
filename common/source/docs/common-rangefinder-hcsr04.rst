@@ -28,17 +28,3 @@ To setup as the first rangefinder. Reboot after setting parameters:
 -  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “30" (HC-SR04 sonar)
 -  :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = "25" (Downward facing) if used for altitude control.
 
-.. _gy-us42:
- 
-Other Rangefinders Compatible with this Rangefinder Type
-========================================================
-
-In addition to the HC-SR04 sensor, this :ref:``RNGFNDx_TYPE`` = “30" (HC-SR04 sonar), can also be used with the inexpensive, but longer range, GY-US42, which is similar to the Maxbotix I2C sensor, but can be configured to not only use I2C (use the :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “2"), but also, as an Echo/Trigger sonar, if the center solder pad is shorted to the "L" pad. The  This device has a maximum useful range of 4m, so set -  :ref:`RNGFND1_MAX_CM<RNGFND1_MAX_CM>` = "400".
-
-Pinout:
-
-- "CR" pin is either the SCL (I2C mode) or Trigger input
-- "DT" pin is either the  SDA (I2C mode) or Echo output
-  
-
-.. image:: ../../../images/gy-us42.jpg
