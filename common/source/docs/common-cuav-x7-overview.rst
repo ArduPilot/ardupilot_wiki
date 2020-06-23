@@ -83,7 +83,8 @@ Size and Pinouts
 Flight video
 ============
 
-
+.. youtube:: KxN8nMHSi-0
+    :width: 100%
     
 More Information
 ================
