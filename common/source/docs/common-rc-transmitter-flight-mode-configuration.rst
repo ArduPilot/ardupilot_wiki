@@ -138,6 +138,13 @@ Here are some user-contributed tutorials for doing this (or adding more
 modes to RC units with just a two-position toggle) with various RC
 systems:
 
+-  **Any OpenTX based transmitter:**
+
+Simply select two switches (one must be three position) and add these mixes on the appropriate flight mode channel used for your vehicle. The example below shows it for a plane using Channel 8 for flight mode (default) and using switch SB selecting three flight modes with SA switch up , and selecting an additional three flight modes via SB when SA is not in the up position.
+
+.. image:: ../../../images/OpenTX-flight-mode-setup.jpg
+    :target: ../_images/OpenTX-flight-mode-setup.jpg
+
 -  `JR XG8 DMSS <https://www.diydrones.com/forum/topics/how-to-set-up-6-apm-flight-modes-on-1-channel-of-jr-xg8-rc>`__
 -  `JR9303 <https://diydrones.com/profiles/blogs/how-to-program-6-flight-modes>`__
 -  `JR X2720 <https://diydrones.com/forum/topics/six-flight-modes-can-be-done>`__
