@@ -30,6 +30,8 @@ When flown manually ZigZag uses :ref:`Loiter mode's <loiter-mode>`  parameters. 
 
 When autonomously flying from one side of the field to the other, the :ref:`Auto mode <auto-mode>` parameters are used.  For example the top speed can be configured with :ref:`WPNAV_SPEED <WPNAV_SPEED>`..
 
+.. _zigzag-auto:
+
 Automatic Operation
 ===================
 
