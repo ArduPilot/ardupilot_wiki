@@ -22,6 +22,9 @@ Connecting and Configuring the Rangefinder
 
 - Follow the instructions for each type of rangefinder described in its linked page on :ref:`common-rangefinder-landingpage`.
 - Set the RNGFNDx_ORIENT parameters (i.e. :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>`, :ref:`RNGFND2_ORIENT <RNGFND2_ORIENT>`, etc.) to specify the direction each range finder is pointing in. 
+
+..note:: Note that if the type of rangefinder is set or changed, a reboot will be required.
+
 [site wiki="copter,rover"]
   - For Copter and Rover, up to 8 rangefinders may placed around the vehicle to provide 360 degree coverage, or a single 360 degree Lidar. But only one forward facing rangefinder is required for :ref:`Object Avoidance <common-object-avoidance-landing-page>` .
   - Exclusion zones are provided for 360 degree Lidars, since these may have obstructions in their field of view. Exclusion zones are set via the PRX_IGN_ANGx and PRX_IGN_WIDx parameters, specifying a direction and width the frame obstruction presents and will be ignored. Up to 6 exclusion sectors can be specified.
