@@ -33,6 +33,8 @@ When autonomously flying from one side of the field to the other, the :ref:`Auto
 Automatic Operation
 ===================
 
+.. note:: This feature will be available in Copter-4.1.0
+
 .. note:: this function must be enabled with :ref:`ZIGZ_AUTO_ENABLE<ZIGZ_AUTO_ENABLE>` = 1, and parameters reloaded, before any parameters are visible and the feature enabled.
 
 After the field's side points are registered, if you have an RC switch configured with ``RCx_OPTION`` = 83 (ZigZag Auto Mode), you can automatically cover the field side to side at a programmable distance interval, also enabling a sprayer, if equipped.
