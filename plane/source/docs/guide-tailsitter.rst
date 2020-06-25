@@ -133,10 +133,18 @@ So a value of e.g. 60 degrees results in switching from copter to plane controll
 PID gain scheduling
 ===================
 
-There are 3 parameters controlling gain scheduling:  :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>` is a 3 bit mask with bit 0 enabling gain boost with maximum set by parameter :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`.
+:ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`:
+
+- If greater than 1: defines the maximum boost that will be applied to the control surfaces when throttle is below hover, this should be reduced if oscillations are seen at low throttle. 
+
+- If less than 1: then instead of boosting control surface deflection below hover throttle, deflection is reduced at high airspeeds (if an airspeed sensor is available and enabled) or at high tilt angles and high throttle levels. The maximum attenuation is currently hardwired to 0.2, so control surface deflection is reduced by a factor of 0.2 when airspeed exceeds :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>`, or if airspeed is not available, when tilt reaches 90 degrees from vertical or at max throttle.
+
+.. _4.1-gainscaling:
+
+In Plane 4.1 and later, the above parameter and gain scheduling will be changed to 3 parameters controlling gain scheduling:  :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>` is a 3 bit mask with bit 0 enabling gain boost with maximum set by parameter :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`.
 This is the maximum boost that will be applied to the control surfaces when throttle is below hover, this should be reduced if oscillations are seen at low throttle.
 Bit 1 enables attitude/throttle based gain attenuation with minimum gain (maximum attenuation) set by parameter :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>`. With this option, control surface deflection is reduced at high tilt angles and high throttle levels to prevent oscillation at high airspeeds.
-.. Bit 2 enables airspeed based gain interpolation (not yet merged).
+Bit 2 reserved for future enable of airspeed based gain interpolation (not yet in master, release date tbd).
 
 Orientation
 ===========
