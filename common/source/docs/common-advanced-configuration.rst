@@ -17,8 +17,8 @@ tuning options for the vehicle.
     Auxiliary Function Switches (3.6 and earlier) <channel-7-and-8-options>
     Baro Temperature Compensation <common-baro-temp-comp>
     Boat mode <boat-mode>
-[/site]
     Bootloader Update <common-bootloader-update>
+[/site]
 [site wiki="rover"]
     Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
@@ -29,6 +29,7 @@ tuning options for the vehicle.
     Advanced Failsafe <advanced-failsafe-configuration>
     Autopilot Output Mapping <common-rcoutput-mapping>
     Auxiliary Functions <common-auxiliary-functions>
+    Battery Voltage Compensation <battery-voltage-compensation>
     Bootloader Update <common-bootloader-update>
 [/site]
     CAN Bus Setup <common-canbus-setup-advanced>
