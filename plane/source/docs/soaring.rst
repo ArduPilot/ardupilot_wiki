@@ -42,6 +42,22 @@ functionality:
    CRUISE, and thermalling ended due to reaching :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>`, RTL will be
    triggered instead.
 
+
+Supported Boards
+==================
+
+Generally all board support soaring, *except* the following boards, which do *not* support soaring, due to flash constaints.
+
+ - KakuteF7Mini
+ - KakuteF7
+ - sparky2
+ - Pixhawk1-1M
+ - OMNIBUSF7V2
+ - fmuv2
+
+ This list is correct as of June 2020. For any boards added after this, it's best to ask on the `forum <https://discuss.ardupilot.org/t/soaring-gliding-for-planes/15323>`.
+
+
 Setting up soaring
 ==================
 
