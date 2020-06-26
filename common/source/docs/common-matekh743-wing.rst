@@ -1,7 +1,7 @@
 .. _common-matekh743-wing:
 
 ==================
-Mateksys F765-Wing
+Mateksys F743-Wing
 ==================
 
 .. image:: ../../../images/matekh743-wing.png
