@@ -4,7 +4,7 @@
 Items in Master Branch Only
 ===========================
 
-This lists features or changes merged in master and build in the "latest" firmware, but not in a stable or beta release yet. These items should be considered at the "alpha" test stage.
+This lists features or changes merged in master and build in the "latest" firmware, but not in a stable or beta release yet. They have passed all test suites and usually have already been flight tested. These items are considered in the broad flight testing stage and test users are encouraged. Eventually, they will released in a beta, then stable release.
 
 
 .. toctree::

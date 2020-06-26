@@ -192,6 +192,7 @@ Getting more info
    Use-Cases and Applications <docs/common-use-cases-and-applications>
    Antenna Tracking <docs/common-antenna-tracking>
    Simulation <docs/common-simulation>
+   Upcoming Features <docs/common-master-features>
    Appendix <docs/common-appendix>
    Full Table of Contents <docs/common-table-of-contents>
 

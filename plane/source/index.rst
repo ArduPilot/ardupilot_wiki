@@ -113,6 +113,7 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
     Use-Cases and Applications <docs/common-use-cases-and-applications>
     Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>
+    Upcoming Features <docs/common-master-features>
     Appendix <docs/common-appendix>
     Fixed Wing FAQ <docs/fixed-wing-faq>
     Full Table of Contents <docs/common-table-of-contents>
