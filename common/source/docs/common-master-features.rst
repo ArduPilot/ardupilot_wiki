@@ -1,4 +1,4 @@
-. _common-master-features:
+.. _common-master-features:
 
 ===========================
 Items in Master Branch Only
