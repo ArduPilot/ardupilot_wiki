@@ -54,8 +54,6 @@ non-supported boards include:
  - sparky2
  - Pixhawk1-1M
  - OMNIBUSF7V2
- - fmuv2
-
 
 Setting up soaring
 ==================
