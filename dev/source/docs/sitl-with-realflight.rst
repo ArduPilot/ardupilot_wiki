@@ -16,6 +16,8 @@ recommended.
 
 The quickest way to get started it to buy `RealFlight 9 <https://store.steampowered.com/app/1070820/RealFlight_9/>`__ in `Steam <https://store.steampowered.com/>`__.
 
+The following instructions assume that you have setup your Flight Control box method, using either the Interlink Controller normally sold with RealFlight, a joystick, or your OpenTX transmitter in joystick mode. See the last section on this page for setup instructions, if using an OpenTX transmitter. After installing RealFlight, familiarize yourself with its operation a bit before proceeding.
+
 Enabling RealFlight Link Feature
 ================================
 
@@ -26,7 +28,8 @@ Configure RealFlight
 ====================
 
   - Start RealFlight (it should look exactly like regular RealFlight, there is no way to visually determine the difference)
-  - Download the QuadcopterX from `ArduPilot/SITL_Models/RealFlight/Tridge/MultiRotors/QuadCopterX/Quadcopter X - direct throttles_AV.RFX <https://github.com/ArduPilot/SITL_Models/raw/master/RealFlight/Tridge/MultiRotors/QuadCopterX/Quadcopter%20X%20-%20direct%20throttles_AV.RFX>`__
+  - Download the QuadcopterX from `ArduPilot/SITL_Models/RealFlight/Tridge/MultiRotors/QuadCopterX/Quadcopter X - direct throttles_AV.RFX <https://github.com/ArduPilot/SITL_Models/raw/master/RealFlight/Tridge/MultiRotors/QuadCopterX/Quadcopter%20X%20-%20direct%20throttles_AV.RFX>`__.
+  - Download the `parameter file for this model <https://github.com/ArduPilot/SITL_Models/blob/master/RealFlight/Tridge/MultiRotors/QuadCopterX/QuadCopterX.param>`__. Be sure its saved in text format.This will be used later.
   - Select Simulation, Import, RealFlight Archive (RFX, G3X) and select the file QuadcopterX downloaded above.  A message, "..was successfully imported" should be displayed
   - Select Aircraft, Select Aircraft, open "Custom Aircraft" section and select "Quadcopter X - direct throttle".  In the current state, the RC inputs come straight from the stick so it is not flyable.
 
@@ -46,15 +49,18 @@ From within RealFlight, Reduce graphics options to improve performance:
 Connecting to Mission Planner's SITL
 ------------------------------------
 
-  - On Config/Tuning, Planner set the Layout drop-down to "Advanced"
-  - On the top menu bar, select Simulation
-  - From the "Model" drop-down, select "flightaxis" and push the Multirotor icon
-  - on the Full Parameter List or Tree screens, on the right-side select realflight-quad and press load parameters
+.. note:: On many older, yet Windows 10 compatible PCs, there may not be sufficient processing power to smoothly run the Mission Planner SITL simultaneously. See the next section on Dual PC setups, if you already have a Linux PC to split the processing loads.
+
+- On Config/Tuning, Planner set the Layout drop-down to "Advanced"
+- On the top menu bar, select Simulation
+- From the "Model" drop-down, select "flightaxis" and push the Multirotor icon
+- on the Full Parameter List or Tree screens, on the right-side select realflight-quad and press load parameters
 
   .. image:: ../images/realflight-mp-sitl.jpg
     :target: ../_images/realflight-mp-sitl.jpg
 
-On the real-flight controller press the red "reset" button to reset the vehicle's attitude and position and initialise the connection with SITL.
+On the real-flight controller press the red "reset" button, or PC's space bar, to reset the vehicle's attitude and position and initialize the connection with SITL.
+
 - the message "FlightAxis Controller Device has been activated." should appear and the motors should become quieter
 
 If the vehicle's position is not reset, from within RealFlight:
@@ -62,20 +68,30 @@ If the vehicle's position is not reset, from within RealFlight:
   - Aircraft, Select Aircraft
   - Custom Aircraft, QuadcopterX - direct throttles
   - press OK
-  - after the vehicles position is reset, press the transmitter's "Reset" button again
+  - after the vehicles position is reset, press the transmitter's "Reset" button or PC spacebar again
+
+At this point, load the parameter file for this "QuadCopterX - direct throttle" model via Mission Planner. You are now ready to arm and fly.
 
 Connecting to SITL running on a separate (or Virtual) machine:
 --------------------------------------------------------------
 
-  - determine the IP address of the Windows machine running RealFlight by opening a console and entering "ipconfig".
-    The result will likely be something like 192.168.x.x OR 127.0.0.1 if running sitl on a Windows machine using :ref:`cygwin <building-setup-windows-cygwin>` or :ref:`WSL <building-setup-windows10>`
-  - on the separate machine where SITL will run, start SITL with "-f flightaxis:192.168.x.x" or if using a tradition helicopter, "-f heli-dual --model flightaxis:192.168.x.x".
+This technique spreads the processing requirements between two PCs: one Windows machine running RealFlight and the physics/flight graphics, and another Linux PC or Linux VM running the SITL models. It also allows you to test and use locally generated code, rather than only the master branch, used by Mission Planner SITL.
+
+.. image:: ../images/dualPC-realflight.png
+
+
+- best performance is obtained using a direct Gigabit Ethernet connection between machines.
+- determine the IP address of the Windows machine running RealFlight by opening a console and entering "ipconfig".The result will likely be something like 192.168.x.x OR 127.0.0.1 if running sitl on a Windows machine using :ref:`cygwin <building-setup-windows-cygwin>` or :ref:`WSL <building-setup-windows10>`, or similar to 10.26.0.2 if using a direct ethernet connection.
+
+.. note:: be sure that there is no firewall preventing communication between the PCs. You should be able to "ping" one from the other.
+
+- on the separate machine where SITL will run, start SITL sim_vehicle.py with "-f flightaxis:192.168.x.x" or if using a tradition helicopter, "-f heli-dual --model flightaxis:192.168.x.x".
 
      - cd ArduCopter
-     - ../Tools/autotest/sim_vehicle -f flightaxis:192.168.x.x --map --console
-  - back on RealFlight push the red "RESET" button on the transmitter
-  - after about a minute, the vehicle should be visible on the SITL map
-  - the performance of the connection can be checked by opening the "ArduCopter" window (on the machine running SITL), the "FPS" (Frames Per Second) count needs to be over 150 for the vehicle to fly well
+     - sim_vehicle.py -f flightaxis:192.168.x.x --map --console
+- back on RealFlight push the red "RESET" button on the transmitter, or spacebar on PC
+- after about a minute, the vehicle should be visible on the SITL map
+- the performance of the connection can be checked by opening the "ArduCopter" window (on the machine running SITL), the "FPS" (Frames Per Second) count needs to be over 150 for the vehicle to fly well (the average can be lower)
 
 Using ready-made models
 -----------------------
@@ -100,3 +116,15 @@ To import one of these models:
   .. image:: ../images/realflight-import-parms.png
     :width: 70%
     :target: ../_images/realflight-import-parms.png
+
+OpenTX use with RealFlight and SITL
+-----------------------------------
+
+There are two approaches you can use. Minimal: which only setups up the AETR flight control axes, and Maximal: Which gets at least 7 channels to the SITL module, more closely emulating how you would really use the TX to fly the vehicle.
+
+Minimal: power up the TX, program a new plane model for use with the sim with the wizard, plug in USB, select joystick (later OpenTX versions allow permanent selection in the main radio setup page). Select Simulation-> Select controller in RealFlight. Select Taranis, and proceed to setup the aileron,elevator,rudder, and throttle and calibrate them. Now to change modes or set switches, you will need to use MAVProxy or Mission Planner commands.
+
+Maximal: Setup the TX model with switches or sliders/pots for channels 5,6,7, and 8. (It has been noted that, sometimes, not all channels can be assigned). Then add them for functions in the RealFlight controller setup. Do not be concerned about the function names, we just want them to be passed thru to the SITL model. Now you can assign ``RCx_OPTION`` functions to those channels in the model parameters.
+
+To setup a six position mode switch, you would do so just as explained :ref:`here<common-rc-transmitter-flight-mode-configuration>` for an OpenTX transmitter, but first calibrate the RealFlight  controller using a dual position switch on the mode channel. Then change the transmitter back to provide the six PWM levels. This required since RealFlight auto-scales from the calibration values, so if your six PWM levels are centered in the recognition ranges , then the channel's PWM extremes will not be used for calibration and the PWM levels will be altered by RealFlight before passing on to the SITL. 
+
