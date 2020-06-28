@@ -46,7 +46,7 @@ functionality:
 Supported Boards
 ==================
 
-Generally all boards support soaring, *except* those with firmware limitations referred to on :ref:`this page <common-limited-firmware>`. As of June 2020,
+Generally all boards support soaring, *except* those with firmware limitations referred to on :ref:`this page <common-limited_firmware>`. As of June 2020,
 non-supported boards include:
 
  - KakuteF7Mini
