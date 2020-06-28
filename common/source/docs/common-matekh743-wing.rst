@@ -111,7 +111,7 @@ A battery must be plugged in for power to be provided to the pins marked 5V on t
 Battery Monitor Settings
 ========================
 
-These should alread be set by default. However, if lost or changed:
+These should already be set by default. However, if lost or changed:
 
 Enable Battery monitor with these parameter settings :
 
