@@ -142,8 +142,11 @@ Developer Community
 Working on the code?  Ask questions of the team in Gitter.
 
 `Developers Guide <https://ardupilot.org/dev/index.html>`__
-All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the Developer Guide. ie. `meeting times <https://ardupilot.org/dev/docs/ardupilot-mumble-server.html#ardupilot-mumble-server>`__, and `on the forums <https://discuss.ardupilot.org/>`__
+All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the Developer Guide.
 
+We have weekly `meeting times <https://ardupilot.org/dev/docs/ardupilot-discord-server.html#ardupilot-discord-server>`__.
+
+We also have `forums <https://discuss.ardupilot.org/>`__
 
 
 History
