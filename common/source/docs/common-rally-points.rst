@@ -84,7 +84,7 @@ The following MAVLink parameters control Rally Point behavior:
    RTL events (at altitude :ref:`ALT_HOLD_RTL <plane:ALT_HOLD_RTL>`)
    This parameter is to prevent fly offs if Rally Points have been specified for multiple
    flying fields. This parameter can be disabled if set to 0.
-#. :ref:`RALLY_INCL_HOME<RALLY_INCL_HOME>` allows Homr to be included in the RALLY points, allowing it to return to home if closer than any RALLY point.
+#. :ref:`RALLY_INCL_HOME<RALLY_INCL_HOME>` allows Home to be included in the RALLY points, allowing it to return to home if closer than any RALLY point.
 #. :ref:`RALLY_TOTAL <plane:RALLY_TOTAL>` is
    the number of Rally Points currently specified. This parameter will
    be set for you by your ground control station (e.g., Mission Planner)
