@@ -96,7 +96,7 @@ Releasing Stable Versions
 
 Stable releases are done after weeks or months of beta testing and normally only after two weeks have passed with no unexplained crashes.
 
-The go-no-go decision on a stable release is discussed on the preceding :ref:`weekly development call <ardupilot-mumble-server>`.  This discussion normally includes a review of the outstanding issues.
+The go-no-go decision on a stable release is discussed on the preceding :ref:`weekly development call <ardupilot-discord-server>`.  This discussion normally includes a review of the outstanding issues.
 
 Releasing a stable version is the same as a beta version except the ``ArduCopter-stable`` and ``ArduCopter-stable-heli`` tags are used.
 
