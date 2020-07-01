@@ -8,7 +8,13 @@ Inclusion and Exclusion Fences
 Overview
 ========
 
-Copter and Rover includes support for polygon fences with up to 70 points and circular fences.  Either may be selected to be inclusion or exclusion type. The purpose of these fences are to attempt to stop your vehicle from flying into (exclusion), or out of (inclusion), the fences by initiating a failsafe action like RTL or, if flying in Loiter mode, the vehicle will normally stop before breaching the fence.  This feature is an extension of the simpler :ref:`cylindrical fence <common-ac2_simple_geofence>` and can be combined with it.
+Copter and Rover includes support for polygon fences with up to 70 points and circular fences.  Either may be selected to be inclusion or exclusion type. The purpose of these fences are to attempt to stop your vehicle from flying into (exclusion), or out of (inclusion), the fences by initiating a failsafe action like RTL or, if flying in Loiter mode, the vehicle will normally stop before breaching the fence
+
+This feature is an extension of the simpler :ref:`cylindrical fence <common-ac2_simple_geofence>` and can be combined with it.
+
+Like the :ref:`cylindrical fence <common-ac2_simple_geofence>`, Copter will stop increasing altitude at :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` in Loiter, PosHold, and AltHold modes. In other modes, it will execute the :ref:`FENCE_ACTION<FENCE_ACTION>` if the altitude limit is exceeded and active. 
+
+See :ref:`cylindrical fence <common-ac2_simple_geofence>` for fence parameters, which also apply to these polygonal fences.
 
 These fences are created and treated in a similar way to mission command lists and rally point lists and loaded into the autopilot.
 
