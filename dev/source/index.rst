@@ -8,12 +8,12 @@ Welcome to the ArduPilot Development Site
 
     Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
-:ref:`ArduPilot <ardupilot:home>` (sometimes known as APM) is the leading open source autopilot
+:ref:`ArduPilot <ardupilot:home>` is the leading open source autopilot
 system supporting multi-copters, traditional helicopters, fixed wing aircraft, rovers, submarines and antenna trackers.
 
 We pride ourselves on being **versatile** (rich in features with support for a large number of flight controllers, sensors and frame types), **trusted** (reliable and predictable) and **open** (both in terms of software and in our team's organisation and governance).
 
-The source code is developed by a group of voluteer and profession (i.e. paid) developers who, along with our users and `Partners <https://ardupilot.org/about/Partners>`__, make up the `ArduPilot Community <https://ardupilot.org>`__.
+The source code is developed by a group of volunteer and professional (i.e. paid) developers who, along with our users and `Partners <https://ardupilot.org/about/Partners>`__, make up the `ArduPilot Community <https://ardupilot.org>`__.
 
 Getting Involved
 ================
@@ -44,9 +44,8 @@ The :ref:`Autopilot Hardware Options <common-autopilots>` page provides an overv
 To get going quickly please consider purchasing one of the :ref:`ready-to-fly vehicles <common-rtf>` including the very low-cost `SkyRocket/SkyViper drone <https://ardupilot.org/copter/docs/skyrocket.html>`__.
 
 The ArduPilot source code includes the `AP-HAL <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL>`__
-hardware abstraction layer, making it relatively easy to port the code to a
-wide range of autopilot boards. See this `blog post <https://diydrones.com/profiles/blogs/lots-of-changes-to-apm-development>`__
-for more information on the move to AP-HAL.
+Hardware Abstraction Layer, making it relatively easy to port the code to a
+wide range of autopilot boards.
 
 Project List
 ============
