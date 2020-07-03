@@ -28,7 +28,7 @@ Some commonly used parameters are:
 
 - :ref:`LOG_BITMASK<LOG_BITMASK>` : Bitmask for what items are logged. Noramlly, use default value, or "0" to disable logging.
 - :ref:`LOG_DISARMED<LOG_DISARMED>` : Setting to one will start logging when power is applied, rather than at the first arming of the vehicle. Usefull when debugging pre-arm failures.
-- :ref:`LOG_DSRMROT<LOG_DSRMROT>` : Setting this bit will force the creation of a new log file after disarming, waiting 15 seconds, and then re-arming. Normally, a log will be one file for every power cycle of the autopilot, beginning upon first arm.
+- :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>` : Setting this bit will force the creation of a new log file after disarming, waiting 15 seconds, and then re-arming. Normally, a log will be one file for every power cycle of the autopilot, beginning upon first arm.
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_downloading_logs_via_mavlink:
 
