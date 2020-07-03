@@ -25,6 +25,7 @@ Open hardware
     Hex/ProfiCNC Cube Purple <common-thecubepurple-overview>
     Hex/ProfiCNC Cube Yellow <common-thecubeyellow-overview>
     Hex/ProfiCNC Cube Green <https://docs.cubepilot.org/user-guides/autopilot/the-cube-module-overview>
+    Holybro Pix32 v5 <common-holybro-pix32v5>
     mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/mro-x2.1rv2-mr.htm>
