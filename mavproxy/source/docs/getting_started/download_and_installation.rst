@@ -6,6 +6,9 @@ Download and Installation
 
 The following instructions are for user that just want to run MAVProxy. Developers should look at the :ref:`Developer's Guide <mavproxy-development>` for setting up the development environment.
 
+MAVProxy is distributed as a Python package (see `PyPI <https://pypi.org/project/MAVProxy/>`__) and can run under Python 2 or 3.
+A number of pre-requisite packages are required to run MAVProxy, as detailed in the individiual sections below.
+
 .. _mavproxy-downloadinstallwindows:
 
 Windows
@@ -37,45 +40,41 @@ within Windows. It generally provides better stability than the native Windows i
 Linux
 =====
 
-MAVProxy can be installed via package managers. Select the appropriate set of commands for your Linux variant below.
+MAVProxy runs within Python 2 or 3. If your operating system version is less than 2 years old, it
+is recommended to use the Python 3 environment. Otherwise use Python 2.
 
-For Debian based systems (including WSL):
+For Python 3 on Debian based systems (including Ubuntu, WSL, Raspian):
 
 .. code:: bash
 
-    sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-pygame python3-lxml python3-yaml
-    pip3 install mavproxy --user
+    sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame
+    pip3 install PyYAML mavproxy --user
+    echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+
+For Python 2 on Debian based systems (including Ubuntu, WSL, Raspian):
+
+.. code:: bash
+
+    sudo apt-get install python-dev python-opencv python-wxgtk4.0 python-pip python-matplotlib python-lxml python-pygame
+    pip install PyYAML mavproxy --user
     echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
     
-For Fedora based systems:
+For Python 3 on Fedora based systems:
 
 .. code:: bash
 
-    sudo dnf install python3-devel python3-opencv wxPython python3-pip python3-matplotlib pygame python3-lxml python3-yaml redhat-rpm-config
-    pip3 install mavproxy --user
+    sudo dnf install python3-devel python3-opencv python3-wxpython4 python3-pip python3-matplotlib python3-pygame python3-lxml python3-yaml redhat-rpm-config
+    pip3 install PyYAML mavproxy --user
     echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
 
-For Raspian / Raspberry Pi OS:
+If you get a "permission denied" error message when connecting to serial devices,
+the user permissions may need to be changed:
 
 .. code:: bash
 
-    sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-pygame python3-lxml python3-yaml libxml2-dev
-    pip3 install mavproxy --user
-    echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+    sudo usermod -a -G dialout <username>
 
-
-.. note::
-
-    On older Linux installations, the ``python3-wxgtk3.0`` package will need to be installed if the 
-    ``python3-wxgtk4.0`` package does not exist.
-
-The user permissions may also need to be changed to allow access to serial devices:
-   
-.. code:: bash
-
-    sudo adduser <username> dialout    
-
-The system will need to be logged out and logged back in again to apply the above change.
+The system will need to be restarted to apply the above change.
 
 .. _mavproxy-downloadinstallmac:
 
