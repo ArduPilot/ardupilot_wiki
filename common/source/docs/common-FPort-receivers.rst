@@ -72,6 +72,8 @@ Enhanced Configurations
 
 Since many autopilots have a UART tied to the normal RC input pin for that autopilot which has been disabled, partially or totally, to allow that pins use as a GPIO for RC protocol decodes, including the PWM based ones, several boards now have alternate pin assignment which can be selected with the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` parameter. This allows the use of those previously disabled UARTs for FPort, without consuming an additional UART.
 
+.. note:: The Pixhawk family of controllers (ie Pixhawkx, Cube, etc.) that use an IOMCU co-processor do not have alternate configurations allowing the use of the RCIN pin. A serial port must be used, as described above.
+
 .. note:: CUAVv5Nano can use its normal RCinput for FPort. Setup configuration for SERIAL5 for a normal F7/H7 autopilot, as above.
 
 The following autopilots have this capability using :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` =1 :
