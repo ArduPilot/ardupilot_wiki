@@ -41,6 +41,7 @@ Ardupilot autodetects the following serial RC receiver protocols:
    #. Spektrum DSM-X Satellite receivers
    #. IBUS receivers
    #. MULTIPLEX SRXL version 1 and version 2 receivers.
+   #. FPort (see :ref:`common-FPort-receivers` )
 
 For traditional single-wire-per-channel (PWM) receivers a PPM encoder
 can be used to convert the receiver outputs to PPM-SUM. 
