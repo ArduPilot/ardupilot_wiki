@@ -17,13 +17,14 @@ ArduPilot assume they will be assigned particular functions
 
 -  uartA - the console (usually USB, runs MAVLink telemetry)
 -  uartB - the first GPS
--  uartC - primary telemetry (telem1 on Pixhawk, 2nd radio on APM2)
--  uartD - secondary telemetry (telem2 on Pixhawk)
+-  uartC - primary telemetry (telem1 on most autopilots)
+-  uartD - secondary telemetry (telem2 on most autopilots)
 -  uartE - 2nd GPS
 -  uartF - User Configurable
 -  uartG - User Configurable
 -  uartH - User Configurable
 
+See also :ref:`sitl-serial-mapping`
 
 If you are writing your own sketch using the ArduPilot HAL then you can
 use these UARTs for any purpose you like, but if possible you should try

@@ -444,13 +444,15 @@ WSL it is also usually necessary to setup the port once the device has been conn
 before trying to interact with it through SITL. For instance for COM22:
 
 ::
-   stty -F /dev/ttyS22 raw 115200
+
+    stty -F /dev/ttyS22 raw 115200
 
 You can set additional parameters on the uart in the connection string, so for instance
 to use a device on SERIAL1 at 115k baud only, specify:
 
 ::
-   sim_vehicle.py -v ArduCopter -A "--uartC=uart:/dev/ttyUSB0:115200" --console --map
+
+    sim_vehicle.py -v ArduCopter -A "--uartC=uart:/dev/ttyUSB0:115200" --console --map
 
 Similar to this if you were running a vehicle in SITL via Cygwin on
 Microsoft Windows and you wanted to send the MAVLink output through a
