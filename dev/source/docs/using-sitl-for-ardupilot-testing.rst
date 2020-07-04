@@ -354,6 +354,18 @@ Then restart SITL. After setting it up try this:
 
 Go for a flight and see if you get reasonable data.
 
+Adding an RPM sensor
+====================
+
+You can add an RPM sensor like this:
+
+::
+
+    param set RPM_TYPE 1
+    
+This allows to display and log your virtual motor's rotational speed.
+
+
 Accessing log files
 ===================
 
