@@ -164,6 +164,47 @@ Disables IMU2 for testing (advanced users only!)
    </tbody>
    </table>
 
+Serial Options
+--------------
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Value</th>
+   <th>Protocol</th>
+   </tr>
+   
+   <tr>
+   <td>26</td>
+   <td>
+
+Runcam see :ref:`common-camera-runcam` 
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>28</td>
+   <td>
+
+Scripting see :ref:`common-lua-scripts` 
+
+.. raw:: html
+
+   </td>
+   </tr>
+   
+   </tbody>
+   </table>
+
+LUA Scripting (common-lua-scripts)
+----------------------------------
+
+see `Wiki PR #2839 <https://github.com/ArduPilot/ardupilot_wiki/pull/2839>`__
+
 ------------------------------------------------------
 
 PLANE
