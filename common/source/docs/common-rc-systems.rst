@@ -16,6 +16,8 @@ ArduPilot autopilots are compatible with:
     #. IBUS receivers
     #. Spektrum DSM, DSM2, and DSM-X Satellite receivers
     #. SRXL version 1 and version 2 receivers
+    #. SRXL2 receivers
+    #. CRSF receivers
     #. Graupner SUM-D
 
 All of the above methods utilize a single serial signal transmission wire for all channels. For traditional single-wire-per-channel (PWM) receivers, a `PPM encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ can be used to convert the receiver outputs to PPM-Sum.
@@ -26,6 +28,8 @@ Connecting the Receiver
 ArduPilot auto-detects the protocol of the RC receiver system. For most autopilots there is a pin labeled RCin or SBus input to which the output from the receiver is connected. On many closed source autopilots, other pins are used and are detailed in their board documentation, linked from the :ref:`ArduPilot Hardware<common-autopilots>` page.
 
 In addition, beginning with ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect the RC receiver, if the serial port protocol to 23 (for example :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART is used).
+
+Some protocols, most noticeably SRXL2, require a bi-directional, half-duplex UART connection. In addition protocols that provide telemetry also generally require a bi-directional half-duplex connection. For these protocols the TX output of the UART should be connected to the serial input of the receiver. It is also possible on F7 and H7 boards to connect to the UART RX input with some additional configuration.
 
 To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. 
 
@@ -60,6 +64,8 @@ With integrated telemetry:
     FRSky <common-frsky-rc>
     Graupner (HOTT) <common-graupner-rc>
     Multiplex (no support in Ardupilot for M-Link telemetry yet) <common-multiplex-rc>
+    Spektrum SRXL2 <common-spektrum-rc>
+    TBS CRSF <common-tbs-rc>
 
 Multi-Protocol:
 
