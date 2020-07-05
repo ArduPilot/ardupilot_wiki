@@ -39,6 +39,10 @@ These receivers are usually connected to the RCin or SBUS input pin on the autop
 
 To connect a PPM-Sum/SBus/IBus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RCin pin on the Pixhawk. 
 
+Some protocols, most noticeably SRXL2, require a bi-directional, half-duplex UART connection. In addition protocols that provide telemetry also generally require a bi-directional half-duplex connection. For these protocols the TX output of the UART should be connected to the serial input of the receiver. It is also possible on F7 and H7 boards to connect to the UART RX input with some additional configuration.
+
+To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plug the ground (black), power (red) and signal (usually white - orange in the diagram below) wires to the RC pins on the Pixhawk. 
+
 .. image:: ../../../images/RCIN_connection.jpg
     :target: ../_images/RCIN_connection.jpg
 
@@ -154,6 +158,8 @@ With integrated telemetry:
     FRSky <common-frsky-rc>
     Graupner (HOTT) <common-graupner-rc>
     Multiplex (no support in Ardupilot for M-Link telemetry yet) <common-multiplex-rc>
+    Spektrum SRXL2 <common-spektrum-rc>
+    TBS CRSF <common-tbs-rc>
 
 Multi-Protocol:
 
