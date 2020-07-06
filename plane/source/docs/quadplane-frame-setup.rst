@@ -63,7 +63,7 @@ To use a different frame type you can set :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` an
 -  10 for Tailsitter
 
 Within each of these frame classes the :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` chooses the motor
-layout
+layout. For Tri and Y6 this parameter is ignored.
 
 -  0 for plus frame
 -  1 for X frame
