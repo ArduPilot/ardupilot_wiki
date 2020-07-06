@@ -69,7 +69,7 @@ hovering. Currently supported tilt-rotor frame classes are:
 Once you have chosen your frame class you will need to get the
 :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` right. The :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` is the sub-type of frame. For
 example, for a quadcopter, a frame type of 1 is for a "X" frame and a
-frame type of 3 is for a "H" frame.
+frame type of 3 is for a "H" frame. For Tri and Y6, this parameter is ignored.
 
 Please see the ArduCopter setup guide for multi-copters for more
 information on choosing your frame type.
