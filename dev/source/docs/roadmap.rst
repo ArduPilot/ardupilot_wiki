@@ -194,8 +194,8 @@ Below is a list of Roadmap items completed in 2019.  There were many more projec
 - Rate loop updates for Copter
 - SLAM integration for position estimation
 - Separate FF and PID input for correct scaling for Copter
-- Stand-By mode for Copter
-- Virtual flybar option for acro flight mode for Tradi Heli
+- Stand-By mode for Copter -- **COMPLETE!**
+- Virtual flybar option for acro flight mode for Tradi Heli -- **COMPLETE!**
 - Add Lua scripting to ArduPilot -- **COMPLETE!**
 - Add support for Intel RealSense T265 (ROS & non-ROS) -- **COMPLETE!**
 - Copter & Rover back away from objects -- **COMPLETE!**
