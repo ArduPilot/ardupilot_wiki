@@ -14,6 +14,9 @@ On a Pixhawk there are a total of 5 serial ports.  The default use of each port 
 
 - The micro USB port (aka Serial0) is used to connect to the ground station using a USB cable.  This should not be connected in flight because the flight code assumes that if it is receiving power through this port that it is on the bench and some :ref:`failsafes <copter:failsafe-landing-page>` (i.e. battery failsafe) are disabled.
 - Telem1 (aka Serial1) is for MAVLink communication and supports flow control.  This should be used especially for high power devices (up to 1 amp) But NOT the :ref:`RFD900 telemetry radio <common-rfd900>`
+
+.. note:: Many non-Pixhawk style autopilots CANNOT supply even 1 amp on their port supply lines. Be sure to verify with autopilots specifications. If not specified, limit current to < 200 ma.
+
 - Telem2 (aka Serial2) is for MAVLink communication and supports flow control.
 - GPS (aka Serial3) is for connecting a GPS
 - Serial 4/5 contains two serial connections on a single port.  Serial4 is normally used for a :ref:`second GPS <common-gps-blending>`.  Serial5 is a :ref:`debug connection <dev:interfacing-with-pixhawk-using-the-nsh>`.
@@ -42,6 +45,8 @@ MAVLink1, MAVLink2 and Stream Rates
 For telemetry ports used for MAVLink communication you may select to use MAVLink1 by setting the ``SERIALx_PROTOCOL`` to "1" or MAVLink2 by setting ``SERIALx_PROTOCOL`` to "2".
 
 MAVLink2 supports "signing" of packets which improves security and flexible length messages so it should be used when possible but some older telemetry radios do not understand MAVLink2 so the default is MAVLink1.
+
+.. note:: MAVLink2 is required to upload and download complex fences in Copter and Rover from the Ground Control Station.
 
 As mentioned on the :ref:`Telemetry Logs page <common-mission-planner-telemetry-logs>` the rate messages are sent from the vehicle can be controlled using the ``SRx_*`` parameters (i.e. :ref:`SR1_POSITION <SR1_POSITION>`).
 
