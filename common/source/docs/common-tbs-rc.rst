@@ -13,20 +13,13 @@ CRSF Receivers
 
 If you wish to use telemetry then a TBS receiver can be connected to a UART utilizing the `CRSF <https://www.team-blacksheep.com/products/prod:crossfire_tx>`__ protocol.
 
-CRSF is a single-wire, half-duplex protocol that supports integrated telemetry and a number of other features. 
+CRSF is a full-duplex protocol that supports integrated telemetry and a number of other features. Connect the RX pin of the UART to the TX pin of the CRSF device and vice versa.
+Currently a full-duplex UART connection is required.
 
-In the configuration of the serial port select the RCIN protocol and set the serial options to half-duplex operation. So for example for serial port 4:
+In the configuration of the serial port select the RCIN protocol. So for example for serial port 4:
 
 - Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 23
-- Set :ref:`SERIAL4_OPTIONS <SERIAL4_OPTIONS>` = 4
 - Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 3
-
-Many single board flight controllers support RC input on serial port 6 only exposing the RX connection. For F7 flight controllers, such as the Kakute F7, it is necessary to swap the RX and TX pins in order to support CRSF. It is also necessary to support serial access on the UART by using the board's alternate configuration:
-
-- Set :ref:`SERIAL6_PROTOCOL <SERIAL6_PROTOCOL>` = 23
-- Set :ref:`SERIAL6_OPTIONS <SERIAL6_OPTIONS>` = 12
-- Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 3
-- Set :ref:`BRD_ALT_CONFIG <BRD_ALT_CONFIG>` = 1
 
 With the receiver connected and configured correctly proceed with RC calibration as normal.
 
