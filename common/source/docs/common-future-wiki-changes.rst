@@ -228,7 +228,7 @@ Changes to Assisted Fixed-Wing Flight:
 - remove: "The attitude assistance will only be used if Q_ASSIST_SPEED greater than zero."
 - add after Q_ASSIST_ALT paragraph: Assistance can also be enabled, disabled, or forced by setting an RC switch to ``RCx_OPTION`` = 82. If that channel is below  1200us (LOW), then assistance is unconditionally disabled, if above 1800us, (HIGH) then assistance is always enabled. Fot other RC values, assistance will be enabled as explained above.
 
-Assistance can also be forced active all the time by setting :ref:`Q_OPTIONS<>` bit 7 to "1".
+Assistance can also be forced active all the time by setting :ref:`Q_OPTIONS<Q_OPTIONS>` bit 7 to "1". For Tailsitters, assistance for tailsitters can be limited only to VTOL motors by by setting :ref:`Q_OPTIONS<Q_OPTIONS>` bit 8 to "1". This can increase stabiity during assistance by not using the copter style pid gains on the flying surfaces as well as the VTOL motors, or for use with copter tailsitters without servo controlled flying surfaces.
 
 - add .. note:: Assistance is available for all QuadPlane frame types except the single motor and non-tilt dual motor tailsitter frames.
 
