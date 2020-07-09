@@ -227,6 +227,9 @@ Changes to Assisted Fixed-Wing Flight:
 - change From: "To enable quad assistance you should set Q_ASSIST_SPEED parameter to the airspeed below which you want assistance." To : VTOL motor assistance is enabled if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>` , or :ref:`Q_ASSIST_ANGLE<Q_ASSIST_ANGLE>` are non-zero.
 - remove: "The attitude assistance will only be used if Q_ASSIST_SPEED greater than zero."
 - add after Q_ASSIST_ALT paragraph: Assistance can also be enabled, disabled, or forced by setting an RC switch to ``RCx_OPTION`` = 82. If that channel is below  1200us (LOW), then assistance is unconditionally disabled, if above 1800us, (HIGH) then assistance is always enabled. Fot other RC values, assistance will be enabled as explained above.
+
+Assistance can also be forced active all the time by setting :ref:`Q_OPTIONS<>` bit 7 to "1".
+
 - add .. note:: Assistance is available for all QuadPlane frame types except the single motor and non-tilt dual motor tailsitter frames.
 
 -----------------------------------------------------
