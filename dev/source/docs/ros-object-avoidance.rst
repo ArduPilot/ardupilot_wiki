@@ -63,8 +63,8 @@ Companion Computer Setup
 ::
 
     cd ~/catkin_ws
-    source devel
-    cakin build
+    source devel/setup.bash
+    catkin build
 
 Start ap_navigation
 -------------------
@@ -74,7 +74,7 @@ Start ap_navigation
 ::
 
     cd ~/catkin_ws
-    source devel
+    source devel/setup.bash
     roslaunch ap_navigation ap_nav.launch
 
 Sending Position Targets
