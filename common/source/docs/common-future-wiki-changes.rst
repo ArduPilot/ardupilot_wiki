@@ -232,6 +232,13 @@ Assistance can also be forced active all the time by setting :ref:`Q_OPTIONS<Q_O
 
 - add .. note:: Assistance is available for all QuadPlane frame types except the single motor and non-tilt dual motor tailsitter frames.
 
+On Terrain Following Page:
+--------------------------
+
+At the end of Flight Modes section:
+
+Terrain Following in CRUISE and FBWB modes can be disabled with an RC switch assigned ``RCx_OPTION`` = 86. When enabling (<1200us) or disabling (>1800us) terrain following with the switch, the present altitude will be the target set point either above terrain, or home, respectively. The target altitude can be changed as normal with elevator whether the altitude refernce being used is above home or above terrain.
+
 -----------------------------------------------------
 
 Copter
