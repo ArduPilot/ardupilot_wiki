@@ -40,7 +40,7 @@ RCx_OPTIONs on Auxillary Functions Page:
 |        105           | GPS Disable Yaw            |    X     |    X    |    X    |
 |                      | (testing only!)            |          |         |         |
 +----------------------+----------------------------+----------+---------+---------+
-|        209           | Froward Throttle           |          |    X    |         |
+|        209           | Forward Throttle           |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 
 .. raw:: html
