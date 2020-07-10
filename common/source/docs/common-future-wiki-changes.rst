@@ -240,12 +240,18 @@ Scripting see :ref:`common-lua-scripts`
 LUA Scripting (common-lua-scripts)
 ----------------------------------
 
-see `Wiki PR #2839 <https://github.com/ArduPilot/ardupilot_wiki/pull/2839>`__
+see `Wiki PR #2839 <https://github.com/ArduPilot/ardupilot_wiki/pull/2839>`__  many new bindings
 
 Logging (common-downloading-and-analyzing-data-logs-in-mission-planner)
 -----------------------------------------------------------------------
 
 :ref:`LOG_FILE_MB_FREE<LOG_FILE_MB_FREE>` : This parameter sets the minimum free space on the logging media before logging begins. If this is not available, then older logs will be deleted to provide it during initialization. Default is 500MB.
+
+Managing Gyro Noise with the Static Notch and Dynamic Harmonic Notch Filters(common-imu-notch-filtering)
+--------------------------------------------------------------------------------------------------------
+
+see `Wiki PR #2901 < <https://github.com/ArduPilot/ardupilot_wiki/pull/2901>`__ improved notch filtering operation
+
 
 ------------------------------------------------------
 
