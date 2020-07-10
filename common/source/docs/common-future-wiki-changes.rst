@@ -269,6 +269,13 @@ Assistance can also be forced active all the time by setting :ref:`Q_OPTIONS<Q_O
 
 - add .. note:: Assistance is available for all QuadPlane frame types except the single motor and non-tilt dual motor tailsitter frames.
 
+Add Section:
+
+Manual Forward Throttle in VTOL Modes
+=====================================
+
+By setting an RC channel option (``RCx_OPTION``) to "209", that channel can provide a separate throttle input to the forward motor(s) in QSTABILIZE, QACRO, and QHOVER VTOL modes. This allows forward movement without having to tilt the QuadPlane forward requiring throttle stick repositioning in QSTABILIZE and QACRO to maintain altitude, and present more forward flat plate resistance to forward movement in all modes.
+
 On Terrain Following Page:
 --------------------------
 
