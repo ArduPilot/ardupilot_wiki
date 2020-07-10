@@ -11,6 +11,7 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
 .. toctree::
     :maxdepth: 1
 
+    Brushless ESC Related Configuration <common-dshot>
 [site wiki="copter,rover"]
     Brushed motors <common-brushed-motors>
 [/site]
