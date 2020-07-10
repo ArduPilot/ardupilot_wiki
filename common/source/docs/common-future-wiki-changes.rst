@@ -28,12 +28,19 @@ RCx_OPTIONs on Auxillary Functions Page:
 +----------------------+----------------------------+----------+---------+---------+
 |        84            | AIRMODE(not a flight mode) |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        85            | Generator                  |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        86            | Non Auto Terrain Follow    |          |    x    |         |
+|                      | Disable                    |          |         |         |
++----------------------+----------------------------+----------+---------+---------+
 |        100           | Kill IMU1 (testing only!)  |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        101           | Kill IMU2 (testing only!)  |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        105           | GPS Disable Yaw            |    X     |    X    |    X    |
 |                      | (testing only!)            |          |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        209           | Froward Throttle           |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 
 .. raw:: html
@@ -141,6 +148,26 @@ Disables yaw for testing (advanced users only!)
 
    </td>
    </tr>
+      <tr>
+   <td><Generator</strong></td>
+   <td>
+
+Mode control for Richenpower Hybrid Power Generator
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Non Auto Terrain Follow Disable</strong></td>
+   <td>
+
+Disables Terrain Following in CRUISE and FBWB modes
+
+.. raw:: html
+
+   </td>
+   </tr>
    <tr>
    <td><strong>Kill IMU1 </strong></td>
    <td>
@@ -156,6 +183,16 @@ Disables IMU1 for testing (advanced users only!)
    <td>
 
 Disables IMU2 for testing (advanced users only!)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Forward Throttle </strong></td>
+   <td>
+
+Manual forward motor throttle in QSTABILIZE, QACRO, and QHOVER modes
 
 .. raw:: html
 
