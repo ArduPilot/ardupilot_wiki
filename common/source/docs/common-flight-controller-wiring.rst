@@ -50,7 +50,7 @@ can be used to convert the receiver outputs to PPM-SUM.
 
 .. tip::
 
-   Information about compatible receivers and how they are connected can be found in :ref:`Compatible RC Transmitter and Receiver Systems <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`. Also see :ref:`common-multiple-rx` for use of multiple RC receivers
+   Information about compatible receivers and how they are connected can be found in :ref:`common-rc-systems`. Also see :ref:`common-multiple-rx` for use of multiple RC receivers
 
 .. figure:: ../../../images/FRSkyTaranis.jpg
    :target: ../_images/FRSkyTaranis.jpg
@@ -151,7 +151,7 @@ Related information
     Autopilot I/O <common-flight-controller-io>
     Wiring Example using Pixhawk <common-pixhawk-wiring-and-quick-start>
     Powering the Pixhawk <common-powering-the-pixhawk>
-    Compatible RC Tx/Rx Systems <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>
+    Compatible RC Tx/Rx Systems <common-rc-systems>
 
 [site wiki="copter"]
     Advanced Pixhawk Quadcopter Wiring Chart <advanced-pixhawk-quadcopter-wiring-chart>

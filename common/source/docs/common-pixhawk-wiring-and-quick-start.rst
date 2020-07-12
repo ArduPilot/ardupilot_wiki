@@ -42,20 +42,21 @@ Connect remote control inputs
 =============================
 
 Pixhawk is compatible with 
-   #. PPM remote control (R/C) receivers
-   #. SBus receivers
-   #. FPort receivers
-   #. Spektrum DSM and DSM2 receivers
-   #. Spektrum DSM-X Satellite receivers
-   #. IBUS receivers
-   #. MULTIPLEX SRXL version 1 and version 2 receivers.
+
+    #. PPM-Sum receivers
+    #. SBus receivers 
+    #. IBUS receivers
+    #. :ref:`common-FPort-receivers`
+    #. :ref:`Spektrum DSM, DSM2, and DSM-X Satellite receivers<common-spektrum-rc>`
+    #. :ref:`SRXL version 1 and version 2 receivers<common-srxl-receivers>`
+    #. :ref:`Graupner SUM-D<common-graupner-rc>`
 
 For traditional single-wire-per-channel (PWM) receivers a PPM encoder
 can be used to convert the receiver outputs to PPM-SUM. 
 
 .. tip::
 
-   Information about compatible receivers and how they are connected can be found in :ref:`Compatible RC Transmitter and Receiver Systems (Pixhawk) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`.
+   Information about compatible receivers and how they are connected can be found in :ref:`common-rc-systems`
 
 .. figure:: ../../../images/FRSkyTaranis.jpg
    :target: ../_images/FRSkyTaranis.jpg
@@ -152,7 +153,7 @@ Related information
     :maxdepth: 1
 
     Powering the Pixhawk <common-powering-the-pixhawk>
-    Compatible RC Tx/Rx Systems (Pixhawk) <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>
+
 
 [site wiki="copter"]
     Advanced Pixhawk Quadcopter Wiring Chart <advanced-pixhawk-quadcopter-wiring-chart>
