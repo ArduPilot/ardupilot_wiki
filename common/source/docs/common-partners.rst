@@ -11,10 +11,10 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
     :class: partners-table
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_elab.png
+      - .. image:: ../../../images/supporters/supporters_logo_EAMS.png
             :width: 250px
             :align: center
-            :target:  https://eams-robo.co.jp/
+            :target:  https://eams-robo.co.jp
 
       - .. image:: ../../../images/supporters/supporters_logo_jDrones.png
             :width: 250px
@@ -154,7 +154,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  http://ttrobotix.com
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_Air-Supply-Aerial.png
+      - .. image:: ../../../images/supporters/supporters_logo_Air_Supply_Aerial.png
             :width: 250px
             :align: center
             :target:  https://airsupply.com
@@ -324,18 +324,18 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://geodronesaustralia.com.au
 
-      - .. image:: ../../../images/supporters/supporters_logo_dualrc.png
+      - .. image:: ../../../images/supporters/supporters_logo_Dual_RC.png
             :width: 250px
             :align: center
             :target: https://dualrc.com
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_davwings.png
+      - .. image:: ../../../images/supporters/supporters_logo_DAVWINGS.png
             :width: 250px
             :align: center
             :target: http://davwings.com
 
-      - .. image:: ../../../images/supporters/supporters_logo_frsky.png
+      - .. image:: ../../../images/supporters/supporters_logo_FrSky.png
             :width: 250px
             :align: center
             :target: https://frsky-rc.com
@@ -357,21 +357,21 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: http://argosdyne.com/en
 
-      - .. image:: ../../../images/supporters/supporters_logo_pdrl.png
+      - .. image:: ../../../images/supporters/supporters_logo_PDRL.png
             :width: 250px
             :align: center
-            :target: http://www.pdrl.in
+            :target: https://pdrl.in
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_RadioMaster.png
             :width: 250px
             :align: center
-            :target: https://www.radiomasterrc.com/
+            :target: https://radiomasterrc.com
             
       - .. image:: ../../../images/supporters/supporters_logo_Skydroid.png
             :width: 250px
             :align: center
-            :target: http://www.skydroid.xin/
+            :target: http://www.skydroid.xin
 
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
