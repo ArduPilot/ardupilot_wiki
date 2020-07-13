@@ -12,7 +12,7 @@ There are several methods to setup a local build environment:
 
 #. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a Linux virtual machine with all the necessary packages installed.  This is the preferred and supported method.
 #. Use the `Dockerfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Dockerfile>`__ in the root of the repo to create a Linux container with all the necessary packages installed.
-#. Or simply install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine, or under WSL in Windows (Win8 may need to add `this component <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_. 
+#. Or simply install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine, or under WSL in Windows (Win8 may need to add `this component <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_ ). 
 
 Fork and Clone the Wiki
 -----------------------
