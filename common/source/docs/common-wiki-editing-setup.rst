@@ -12,18 +12,12 @@ There are several methods to setup a local build environment:
 
 #. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a Linux virtual machine with all the necessary packages installed.  This is the preferred and supported method.
 #. Use the `Dockerfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Dockerfile>`__ in the root of the repo to create a Linux container with all the necessary packages installed.
-#. Or simply install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine. To do this, run the following command:
-
-   .. code-block:: bash
-
-       sudo ./Sphinxsetup.sh
-
-Then jump down to "Build the wiki".
+#. Or simply install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine, or under WSL in Windows (Win8 may need to add `this component <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_. 
 
 Fork and Clone the Wiki
 -----------------------
 
-The wiki should be forked and cloned much like :ref:`developers do for the flight code <dev:where-to-get-the-code>`.
+First, the wiki should be forked and cloned much like :ref:`developers do for the flight code <dev:where-to-get-the-code>`.
 
 - Create a `Github account <https://github.com/join>`__ if you do not have one already
 - :ref:`Install a Git Client <dev:git-install>`
@@ -36,6 +30,18 @@ The wiki should be forked and cloned much like :ref:`developers do for the fligh
    .. code-block:: bash
 
        git clone https://github.com/YOURID/ardupilot_wiki.git
+       
+Setup in Linux or Windows WSL
+-----------------------------
+
+Run the following command from the ardupilo_wiki directory you cloned:
+
+   .. code-block:: bash
+
+       sudo ./Sphinxsetup.sh
+
+Then jump down to "Build the wiki".
+
 
 Setup with Vagrant
 ------------------
