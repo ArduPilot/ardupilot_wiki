@@ -170,6 +170,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        77            | TAKEOFF mode               |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        88            | Soaring Mode Toggle        |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 |        102           | Camera Mode Toggle         |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 
@@ -628,6 +630,16 @@ This three position switch determines if surface tracking via rangefinder is tow
    <td>
 
 This puts the autopilot control loops into a soft standby mode so that a parallel, redundant autopilot or companion computer can assume control of the vehicle. The PID loops, position, altitude controllers are modified such that the autopilot can smoothly resume control of the vehicle when standby is subsequently disabled. Switching of outputs or other peripherals must be done by external circuitry.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Soaring Mode Toggle</strong></td>
+   <td>
+
+Selects the :ref:`soaring <soaring>` behaviour - disabled, enabled with manual mode changes, and enabled with automatic mode changes.
 
 .. raw:: html
 
