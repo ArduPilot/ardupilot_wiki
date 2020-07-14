@@ -149,7 +149,7 @@ Set up RC switch (Optional)
    Available in firmware revisions 4.1 and later.
 
 
-You can use a 3-position RC switch to control when the autopilot can use soaring. Set the parameter SOAR_ENABLE_CH to the corresponding channel number. The 3 positions have the following effect.
+You can use a 3-position RC switch to control when the autopilot can use soaring. Set the parameter RCX_OPTION parameter for the desired channel to SOAR (index 88) - see :ref:`Auxiliary Functions <common-auxiliary-functions>`. The 3 positions have the following effect.
 
  - Below 1500us. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal.
  
