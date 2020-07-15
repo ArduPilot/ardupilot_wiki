@@ -24,8 +24,8 @@ Specifications
 ==============
 
 -  **Processors**
-     - 32 Bit Arm è¢Ó Cortexè¢Ó -M7, 216MHz, 2MB memory, 512KB RAM
-     - 32 Bit Arm è¢Ó Cortexè¢Ó -M3 IO co-processor, 24MHz, 8KB SRAM
+     - 32 Bit Arm Cortex -M7, 216MHz, 2MB memory, 512KB RAM
+     - 32 Bit Arm Cortex -M3 IO co-processor, 24MHz, 8KB SRAM
 
 -  **Sensors**
      - Accel/Gyro: ICM-20689
