@@ -4,11 +4,11 @@
 Hardware Setup
 ==============
 
-Sailing vehicles require a rudder for boats or movable wheel(s) for land vehicles. This is setup in the normal way by assigning a servo output channel to function 26 (Ground Steering).
+Sailing vehicles require a rudder for boats or movable wheel(s) for land vehicles. This is setup in the normal way by assigning a servo output channel, ``SERVOx_FUNCTION``, to function 26 (Ground Steering).
 
 Sailing vehicles also require a method of controlling the sails. The servo must pull in and let out the sails in a symmetrical
 way. I.e. no change of servo position should be required to set the sails at the same angle on a new tack. This is typically 
-achieved through the use of a sail winch servo with a main sheet system. The sail winch is servo output function 89 - Main Sail.
+achieved through the use of a sail winch servo with a main sheet system. The sail winch is servo output function, ``SERVOx_FUNCTION``, 89 - Main Sail.
 
 Although not absolutely required for best results a wind vane should be fitted to allow the vehicle to sense the wind 
 direction. A further improvement can be gained by fitting a wind speed sensor, the faster your vehicle goes relative 
