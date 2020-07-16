@@ -318,4 +318,16 @@ On BendyRuler page:
     - :ref:`OA_BR_CONT_RATIO<OA_BR_CONT_RATIO>` : BendyRuler will avoid changing bearing unless ratio of previous margin from obstacle (or fence) to present calculated margin is atleast this much.
     - :ref:`OA_BR_CONT_ANGLE<OA_BR_CONT_ANGLE>` : BendyRuler will resist changing current bearing if the change in bearing is over this angle
 
+------------------------------------------------------
+
+Rover
+=====
+
+add Fence section to Sailboat configuration page:
+
+Fences
+------
+
+Sailboats behave in the same manner as other Rovers regarding fence operation and breach failsafe actions. However, unlike other Robers, which slow as they approach a fence boundary, Sailboats will just attempt to tack away from the boundary since they have no speed controller, as such.
+
 [copywiki destination="plane,copter,rover,dev"]
