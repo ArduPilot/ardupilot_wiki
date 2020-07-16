@@ -275,6 +275,8 @@ Assistance can also be forced active all the time by setting :ref:`Q_OPTIONS<Q_O
 
 - add .. note:: Assistance is available for all QuadPlane frame types except the single motor and non-tilt dual motor tailsitter frames.
 
+Assistance will be activated :ref:`Q_ASSIST_DELAY<Q_ASSIST_DELAY>` after any of the above enabling thresholds are reached.
+
 Add Section:
 
 Manual Forward Throttle in VTOL Modes
@@ -299,8 +301,8 @@ Crow Mode Switch
 If Differential Spoilers are used, setting an ``RCx_OPTIONS`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation. 
 
 - HIGH position: No change to CROW deflection amount or use of progressive crow.
-- MIDDLE position: force progressive crow, assuming :ref:`DSPOILR_CROW_W1<DSPOILR_CROW_W1>` is non-zero, even if :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` bit 2 is zero.
-- LOW position: effectively sets :ref:`DSPOILR_CROW_W1<DSPOILR_CROW_W1>` to zero. Only inner spoilers move with FLAP channel, ie normal flaps.
+- MIDDLE position: force progressive crow, assuming :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` is non-zero, even if :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` bit 2 is zero.
+- LOW position: effectively sets :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` to zero. Only inner spoilers move with FLAP channel, ie normal flaps.
 
 This allows live changes to CROW operation on approaches so that speed braking and descent rates can be changed during the approach.
 
