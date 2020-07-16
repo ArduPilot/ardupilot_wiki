@@ -12,7 +12,7 @@ ArduRover now supports sailing vehicles. Only sail boats have been tested so far
  
 Before you proceed:
 -------------------
-Sailboat support is new to ROVER as of November 2018, and is only avalable in master at this time. Please bear in mind that the new code may still have some issues. The more people try out and test sailing support the faster the bugs can be found and fixed. 
+Sailboat support is new to ROVER as of November 2018, and is avalable in Stable releases at this time. Please bear in mind that the code may still have some issues. The more people try out and test sailing support the faster the bugs can be found and fixed. 
 
 .. toctree::
   :titlesonly:
