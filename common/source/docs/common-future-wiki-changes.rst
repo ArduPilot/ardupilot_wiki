@@ -289,6 +289,22 @@ At the end of Flight Modes section:
 
 Terrain Following in CRUISE and FBWB modes can be disabled with an RC switch assigned ``RCx_OPTION`` = 86. When enabling (<1200us) or disabling (>1800us) terrain following with the switch, the present altitude will be the target set point either above terrain, or home, respectively. The target altitude can be changed as normal with elevator whether the altitude refernce being used is above home or above terrain.
 
+On Dspoiler PAge:
+
+Add at bottom of page:
+
+Crow Mode Switch
+================
+
+If Differential Spoilers are used, setting an ``RCx_OPTIONS`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation. 
+
+- HIGH position: No change to CROW deflection amount or use of progressive crow.
+- MIDDLE position: force progressive crow, assuming :ref:`DSPOILR_CROW_W1<DSPOILR_CROW_W1>` is non-zero, even if :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` bit 2 is zero.
+- LOW position: effectively sets :ref:`DSPOILR_CROW_W1<DSPOILR_CROW_W1>` to zero. Only inner spoilers move with FLAP channel, ie normal flaps.
+
+This allows live changes to CROW operation on approaches so that speed braking and descent rates can be changed during the approach.
+
+
 -----------------------------------------------------
 
 Copter
