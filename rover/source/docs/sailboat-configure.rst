@@ -4,8 +4,8 @@
 Configuration and Setup
 =======================
 
-The vehicle steering output channel should be set to servo function 26 – Ground steering. The sail
-output channel should be set to servo function 89 - Main Sail. 
+The vehicle steering output channel should be set to ``SERVOx_FUNCTION`` = 26 – Ground steering. The sail
+output channel should be set to ``SERVOx_FUNCTION`` = 89 - Main Sail. 
 
 All sailing parameters can be found by searching for the prefix  :ref:`SAIL <SAIL_ANGLE_MIN>`, the
 sailing code relies heavily on getting correct information on the wind direction and strength from
@@ -52,13 +52,13 @@ the vehicle will keep moving and tack back towards the loiter point once it reac
 If the heel is larger than this angle the PID controller will target this angle however if the heel is less the
 controller will not try and reach it. i.e. only sheet out, don't sheet in.
 
-Heel control PIDs values are set using :ref:`ATC_SAIL <ATC_SAIL_P>` parameters. The effect of changing the value
-can be seen in ACRO mode by manually heeling the vehicle. Most control should be do using the P and I terms. D gain
+Heel control PIDs values are set using ``ATC_SAIL_x`` parameters. The effect of changing the value
+can be seen in ACRO mode by manually heeling the vehicle. Most control should be do using the P (:ref:`ATC_SAIL_P<ATC_SAIL_P>`) and I(:ref:`ATC_SAIL_I<ATC_SAIL_I>`)terms. D gain (:ref:`ATC_SAIL_D<ATC_SAIL_D>`)
 is usually too quick for the relatively slow response of the sail winch servos so should be left at zero. The PID
 values can be sent via Mavlink using :ref:`GCS_PID_MASK <GCS_PID_MASK>`.
 
 Tacking in ACRO and AUTO mode while traveling upwind can be triggered through the use of an aux switch. This can
-be setup by setting the RCx_OPTION parameter to function 63 – sailboat tack.
+be setup by setting the ``RCx_OPTION`` parameter to function 63 – sailboat tack.
 
 Tuning
 ------
@@ -73,9 +73,9 @@ If the vehicle aggressively responds to changes in wind direction when traveling
 direction filter frequency can be reduced or the maximum straight line rate reduced. Note that reducing the
 filter frequency will also slow the response of the sails.
 
-The heel angle controller can be setup in two ways. A low I term can be used with a low max heel angle. In
+The heel angle controller can be setup in two ways. A low I term (:ref:`ATC_SAIL_I<ATC_SAIL_I>`) can be used with a low max heel angle. In
 this case the controller will never hold at the max heel angle but will progressively sheet out as heel is
-increased. Alternatively the heel angle can be set at the actual maximum desired heel and then higher gains
+increased. Alternatively the heel angle (:ref:`SAIL_HEEL_MAX <SAIL_HEEL_MAX>`) can be set at the actual maximum desired heel and then higher gains
 used to more aggressively let the sails out. In this case larger I and I max values should be used. Unlike
 the P and I terms the D term is always active however due to the slow response of typical sail winch servos
 it is unlikely to prove useful, vehicles with faster servos may benefit from a small amount of D gain.
