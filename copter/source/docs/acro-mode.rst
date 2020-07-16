@@ -4,9 +4,9 @@
 Acro Mode
 =========
 
-Acro mode (Rate mode) uses the RC sticks to control the angular velocity
-of the copter. Release the sticks and the vehicle will maintain its
-current attitude and will not return to level. Acro mode is useful for
+Acro mode uses the RC sticks to control the angular velocity
+of the copter in each axis. Release the sticks and the vehicle will maintain its
+current attitude and will not return to level (attitude hold). Acro mode is useful for
 aerobatics such as flips or rolls, or FPV when smooth and fast control
 is desired.
 
@@ -17,7 +17,7 @@ Overview
    of the vehicle. If the pilot puts the throttle completely down the
    motors will go to their minimum rate and stabilization will cease.However, this behavior
    can be changed by enabling :ref:`airmode` 
--  AC3.1 and higher include an Acro Trainer functionality that can be
+-  Copter includes an Acro Trainer functionality that can be
    turned on/off to make learning to fly Acro easier.
 -  Stick inputs are interpreted in the "body frame" (as opposed to Sport
    mode in which they are "earth frame"). The difference between "body
