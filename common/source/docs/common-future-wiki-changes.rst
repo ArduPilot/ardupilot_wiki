@@ -252,6 +252,13 @@ Managing Gyro Noise with the Static Notch and Dynamic Harmonic Notch Filters(com
 
 see `Wiki PR #2901 < <https://github.com/ArduPilot/ardupilot_wiki/pull/2901>`__ improved notch filtering operation
 
+SRXL2 and CRSF RX Protocol Additions
+------------------------------------
+
+see `Wiki PR #2905 <https://github.com/ArduPilot/ardupilot_wiki/pull/2905`__
+
+update Common-RC-Systems and Common-Autopilot-Wiring pages with links to new pages
+
 
 ------------------------------------------------------
 
