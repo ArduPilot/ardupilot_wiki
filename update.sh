@@ -122,7 +122,7 @@ echo "[Buildlog] Time to run build_parameters.py: $MPARAMS_TIME seconds"
 
 echo "[Buildlog] Starting to build the wiki at $(date '+%Y-%m-%d-%H-%M-%S')"
 # python update.py --clean --parallel 4 # Build without versioning for parameters. It is better for editing wiki
-python update.py --clean --paramversioning --parallel 4 # Enables parameters versioning, should be used only on the wiki server
+python update.py --clean --paramversioning --parallel 4 --enablebackups # Enables parameters versioning and backups, should be used only on the wiki server
 
 
 END_BUILD_WIKI=$(date +%s)
