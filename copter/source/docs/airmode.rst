@@ -12,3 +12,5 @@ What it is
 Normally, in Copter, if arming is setup via the rudder stick, if throttle is lowered to idle in ACRO or STABILIZE modes, the stabilization is removed. While this prevents movement due to vibration while on the ground at idle throttle, it prevents stabilization in flight for aerobatic movements or rapid descents.
 
 If an ``RCx_OPTION`` is enabled for switch ARM/DISARM (41) then stabilization at idle throttle is still fully active, which is often referred to as AIRMODE.
+
+.. note:: AIRMODE has no effect in Traditional Helicopter
