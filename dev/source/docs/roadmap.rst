@@ -110,6 +110,7 @@ Hardware & OS support
 - Log synthetic airspeed (Tridge)
 - Mission VFS download (Tridge)
 - Sensor (GPS, Baro, RFND, etc.) re-ordering (Sid, Tridge)
+- Ethernet (IP/TCP/UDP) support (Tom)
 
 
 Hardware
