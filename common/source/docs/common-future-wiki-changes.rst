@@ -33,6 +33,8 @@ RCx_OPTIONs on Auxillary Functions Page:
 |        86            | Non Auto Terrain Follow    |          |    x    |         |
 |                      | Disable                    |          |         |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        87            | CROW Mode Switch           |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 |        100           | Kill IMU1 (testing only!)  |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        101           | Kill IMU2 (testing only!)  |    X     |    X    |    X    |
@@ -169,6 +171,16 @@ Disables Terrain Following in CRUISE and FBWB modes
    </td>
    </tr>
    <tr>
+   <td><strong>CROW Mode Switch</strong></td>
+   <td>
+
+Selects between different CROW aileron operating modes
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
    <td><strong>Kill IMU1 </strong></td>
    <td>
 
@@ -255,7 +267,7 @@ see `Wiki PR #2901 < <https://github.com/ArduPilot/ardupilot_wiki/pull/2901>`__ 
 SRXL2 and CRSF RX Protocol Additions
 ------------------------------------
 
-see `Wiki PR #2905 <https://github.com/ArduPilot/ardupilot_wiki/pull/2905`__
+see `Wiki PR #2905 <https://github.com/ArduPilot/ardupilot_wiki/pull/2905>`__
 
 update Common-RC-Systems and Common-Autopilot-Wiring pages with links to new pages
 
@@ -326,6 +338,17 @@ On BendyRuler page:
 - add these params under configuration:
     - :ref:`OA_BR_CONT_RATIO<OA_BR_CONT_RATIO>` : BendyRuler will avoid changing bearing unless ratio of previous margin from obstacle (or fence) to present calculated margin is atleast this much.
     - :ref:`OA_BR_CONT_ANGLE<OA_BR_CONT_ANGLE>` : BendyRuler will resist changing current bearing if the change in bearing is over this angle
+
+On AIRMODE  page:
+-----------------
+
+AIRMODE can also be set to be active without using the ``RCx_OPTION`` ARM/DISARM switch to arm. Setting an RC channel to ``RCx_OPTION`` = 84, allows enabling or disabling AIRMODE in ACRO and STABILIZE modes directly. In addition, setting bit 0 of :ref:`ACRO_OPTIONS<ACRO_OPTIONS>` will activate AIRMODE in those modes all the time.
+
+On ACRO mode page:
+------------------
+
+in the first paragraph add:
+Pure Rate mode stabilization, utilizing only the gyros with no attitude feedback from the accelerometers, can be forced by setting bit 1 of :ref:`ACRO_OPTIONS<ACRO_OPTIONS>` to one. Attitude will still have an open loop correction applied in this mode, similar to "heading hold" tail gyros, but attitude can drift over time.
 
 ------------------------------------------------------
 
