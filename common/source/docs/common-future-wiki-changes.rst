@@ -213,8 +213,8 @@ Manual forward motor throttle in QSTABILIZE, QACRO, and QHOVER modes
    </tbody>
    </table>
 
-Serial Options
---------------
+Serial Port Protocol Options
+----------------------------
 
 .. raw:: html
 
@@ -296,7 +296,7 @@ Assistance can also be forced active all the time by setting :ref:`Q_OPTIONS<Q_O
 
 Assistance will be activated :ref:`Q_ASSIST_DELAY<Q_ASSIST_DELAY>` after any of the above enabling thresholds are reached.
 
-Add Section:
+Add section:
 
 Manual Forward Throttle in VTOL Modes
 =====================================
@@ -310,7 +310,7 @@ At the end of Flight Modes section:
 
 Terrain Following in CRUISE and FBWB modes can be disabled with an RC switch assigned ``RCx_OPTION`` = 86. When enabling (<1200us) or disabling (>1800us) terrain following with the switch, the present altitude will be the target set point either above terrain, or home, respectively. The target altitude can be changed as normal with elevator whether the altitude refernce being used is above home or above terrain.
 
-On Dspoiler PAge:
+On Dspoiler Page:
 
 Add at bottom of page:
 
@@ -360,6 +360,6 @@ add Fence section to Sailboat configuration page:
 Fences
 ------
 
-Sailboats behave in the same manner as other Rovers regarding fence operation and breach failsafe actions. However, unlike other Robers, which slow as they approach a fence boundary, Sailboats will just attempt to tack away from the boundary since they have no speed controller, as such.
+Sailboats behave in the same manner as other Rovers regarding fence operation and breach failsafe actions. However, unlike other Rovers, which slow as they approach a fence boundary, Sailboats will just attempt to tack away from the boundary since they have no speed controller, as such.
 
 [copywiki destination="plane,copter,rover,dev"]
