@@ -24,7 +24,7 @@ Specifications
 -  **Sensors**
 
    -  InvenSense MPU6000 IMU (accel, gyro) & ICM20602
-   -  BMP280 barometer
+   -  BMP280 barometer (later models use DPS310)
    -  Voltage & 132A current sensor
 
 
