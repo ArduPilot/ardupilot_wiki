@@ -211,6 +211,18 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+    <tr class="row-odd">
+        <td><center><a class="first last reference external
+        image-reference" href="mailto:BrandonM@west.net"><img
+        alt="ELECTRIC KITE" src="../_images/ElectricKite.png" style="width: 90px;" /></a><br/><br/>USA</center></td>
+        <td><div class="first last line-block">
+            <div class="line">ELECTRIC KITE, Brandon MacDougall, <a href="mailto:BrandonM@west.net" target="_top">BrandonM@west.net</a></div>
+            <div class="line"><br/></div>
+            <div class="line">3D organic designer/modeller, simulation for the ArduPilot community.</div>
+            <div class="line">Airframe building, testing and consulting, troubleshooting.</div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
@@ -279,4 +291,7 @@ listed here will be active participants in the community.
 .. image:: ../../../images/logos/uavdev.png
     :scale: 0%
 
+.. image:: ../../../images/logos/ElectricKite.png
+    :scale: 0%
+            
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
