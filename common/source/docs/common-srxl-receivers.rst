@@ -89,7 +89,7 @@ To do the configuration follow the following steps:
 - To complete the SRXL activation on B/D port click “Close” in the “RX Options”-Window and “Close” in the “RX/RF DataManager”-Window.
 - To reboot the receiver, disconnect PC-cable and power supply from the receiver.
 - Receiver is now configured for SRXL output.
-- Connect receivers to the PIXHAWK as described :ref:`here <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems-multiplex-srxl>`.
+- Connect receivers to the autopilot as described :ref:`here <common-rc-systems>`.
 - Test and adjust servo channel assignments in Mission planner if required. MULTIPLEX radios without free servo assignment (e.g. Cockpit SX) have the following standard servo assignment:
    
 .. image:: ../../../images/Multiplex_SRXL_Receivers_Standard_Servo_Assignment.jpg
