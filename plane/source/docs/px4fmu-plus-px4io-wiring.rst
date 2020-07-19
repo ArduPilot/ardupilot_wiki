@@ -236,7 +236,7 @@ PX4 is compatible with PPM remote control (RC) receivers, Futaba S.Bus
 receivers, and Spektrum DSM,DSM2, and DSM-X Satellite receivers. For
 traditional single-wire-per-channel (PWM) receivers a PPM encoder can be
 used to convert the receiver outputs to PPM-SUM.  Information about
-compatible receivers and how they are connected can be found in :ref:`this wiki page <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`.
+compatible receivers and how they are connected can be found in :ref:`this wiki page <common-rc-systems>`.
 
 .. figure:: ../../../images/FRSkyTaranis.jpg
    :target: ../_images/FRSkyTaranis.jpg

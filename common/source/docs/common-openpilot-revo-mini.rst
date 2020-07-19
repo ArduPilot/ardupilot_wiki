@@ -41,7 +41,7 @@ Specifications
    -  OPLink port on RevoMini. OPLink hardware is not supported by ArduPilot, but this port exposes external SPI pins (SCK, CS, MOSI, MISO) that can be used for supported SPI periphereals like SD card adapters or SPI OSD breakout boards (requires additions to hardware definition file and compiling a custom firmware).
    
 .. note::
-    Single channel PWM-type RC input is not supported on this hardware. See reference for :ref:`supported RC systems <common-pixhawk-and-px4-compatible-rc-transmitter-and-receiver-systems>`
+    Per channel PWM-type RC inputs are not supported on this hardware. See reference for :ref:`supported RC systems <common-rc-systems>`
 
 Default UART order
 ==================
