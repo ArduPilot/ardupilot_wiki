@@ -59,3 +59,10 @@
 /plane/source/docs/logmessages.rst
 /rover/source/docs/logmessages.rst
 /antennatracker/source/docs/logmessages.rst
+
+# Javascript files
+antennatracker/source/_static/useralerts.js
+copter/source/_static/useralerts.js
+dev/source/_static/useralerts.js
+plane/source/_static/useralerts.js
+rover/source/_static/useralerts.js
