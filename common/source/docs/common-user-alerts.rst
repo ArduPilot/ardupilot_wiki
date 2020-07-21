@@ -1,0 +1,35 @@
+.. _common-user-alerts:
+
+===========
+User Alerts
+===========
+
+A User Alert is a formal report of an ArduPilot issue that may affect the safe operation of a vehicle.
+
+All ArduPilot users are strongly encouraged to regularly check this page for any User Alerts that may affect their vehicles.
+
+User Alerts will only be for ArduPilot software issues. Manufacturer hardware will not be included at this stage, although this may be reviewed at a later date.
+
+The User Alert documentation is available on the :ref:`developer wiki <dev:user-alerts-developer>`.
+
+The following alerts are applicable:
+
+.. list-table::
+   :widths: 30 40 20 30 20 20
+   :header-rows: 1
+   :class: useralerts-list
+
+   * - Alert ID
+     - Boards Affected
+     - Versions Affected
+     - Description
+     - Mitigation
+     - Status
+
+   * - loading...
+     - loading...
+     - loading...
+     - loading...
+     - loading...
+     - loading...
+
