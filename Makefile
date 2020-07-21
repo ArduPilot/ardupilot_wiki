@@ -11,7 +11,7 @@ clean: $(ALL_CLEAN)
 
 %_common: %
 	echo "Copying common files to $</source/docs"
-	rsync -av common/source/docs/common-*rst $</source/docs/
+	rsync -av common/source/docs/common-*rst $</source/docs/ && rsync -av common/source/_static/*.js $</source/_static/
 
 %_clean: %
 	$(MAKE) -C $< clean
