@@ -158,6 +158,7 @@ Full Table of Contents
     GSoC 2020 project ideas <docs/gsoc-ideas-list>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     USB IDs <docs/USB-IDs>
+    User Alerts <docs/user-alerts-developer>
     Upcoming Features <docs/common-master-features>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>

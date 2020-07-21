@@ -1,0 +1,6 @@
+/* custom CSS for ArduPilot wiki */
+
+/* Table in user alerts page */
+table.useralerts-table td {
+    white-space: normal;
+}
