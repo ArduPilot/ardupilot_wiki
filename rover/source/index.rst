@@ -44,6 +44,7 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
     Use-Cases and Applications <docs/common-use-cases-and-applications>
     Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>
+    User Alerts <docs/common-user-alerts>
     Upcoming Features <docs/common-master-features>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
