@@ -193,6 +193,7 @@ Getting more info
    Antenna Tracking <docs/common-antenna-tracking>
    Simulation <docs/common-simulation>
    Upcoming Features <docs/common-master-features>
+   User Alerts <docs/common-user-alerts>
    Appendix <docs/common-appendix>
    Full Table of Contents <docs/common-table-of-contents>
 
