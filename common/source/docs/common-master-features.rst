@@ -10,7 +10,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
-[site wiki="copter"]
+[site wiki="copter,plane"]
     In-Flight FTT and filter control <common-imu-fft>
 [/site]
 [site wiki="copter,plane,rover"]
