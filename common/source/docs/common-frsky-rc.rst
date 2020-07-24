@@ -58,8 +58,8 @@ Advantages of the FrSky systems:
 
 The Taranis transmitters can run the :ref:`Yappu Telemetry <common-frsky-yaapu>` 
 
-.. image:: ../../../images/x9d.png
-    :target: ../_images/x9d.png
+.. image:: ../../../images/x9d-taranis.png
+    :target: ../_images/x9d-taranis.png
      :width: 450px
 
 or :ref:`FlightDeck <common-frsky-flightdeck>` telemetry user interface.

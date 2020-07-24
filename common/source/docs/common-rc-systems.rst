@@ -91,7 +91,7 @@ Telemetry
 
 FrSky Horus Transmitter running Yaapu LUA script
 
-.. image:: ../../../images/x10.png
+.. image:: ../../../images/x10-horus.png
 
 Some systems provide transparent radio modems to the telemetry from the autopilot, and others have proprietary protocols. Those with proprietary protocols often have means of displaying  telemetry data on the transmitter display itself, like FRSky or other `OpenTX <https://www.open-tx.org/>`__ based Transmitters.
 
