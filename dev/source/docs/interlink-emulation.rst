@@ -98,5 +98,3 @@ Notes:
 
 
 Pre-configured OpenTX .otx files for Taranis 9D, QX7, and Horus style transmitters are available `here <https://github.com/ArduPilot/ardupilot_wiki/tree/master/scripts/OpenTX_configs>`_.
-
-[copywiki destination="dev"]
