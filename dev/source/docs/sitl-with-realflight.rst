@@ -28,8 +28,8 @@ Configure RealFlight
 ====================
 
   - Start RealFlight (it should look exactly like regular RealFlight, there is no way to visually determine the difference)
-  - Download the QuadcopterX from `ArduPilot/SITL_Models/RealFlight/Tridge/MultiRotors/QuadCopterX/Quadcopter X - direct throttles_AV.RFX <https://github.com/ArduPilot/SITL_Models/raw/master/RealFlight/Tridge/MultiRotors/QuadCopterX/Quadcopter%20X%20-%20direct%20throttles_AV.RFX>`__.
-  - Download the `parameter file for this model <https://github.com/ArduPilot/SITL_Models/blob/master/RealFlight/Tridge/MultiRotors/QuadCopterX/QuadCopterX.param>`__. Be sure its saved in text format.This will be used later.
+  - Download the QuadcopterX from `ArduPilot/SITL_Models/RealFlight/Released_Models/MultiRotors/QuadCopterX/QuadcopterX-flightaxis_AV.RFX <https://github.com/ArduPilot/SITL_Models/blob/master/RealFlight/Released_Models/Multicopters/QuadCopterX/QuadcopterX-flightaxis_AV.RFX>`__.
+  - Download the `parameter file for this model <https://github.com/ArduPilot/SITL_Models/blob/master/RealFlight/Released_Models/Multicopters/QuadCopterX/QuadCopterX.param>`__. Be sure its saved in text format.This will be used later.
   - Select Simulation, Import, RealFlight Archive (RFX, G3X) and select the file QuadcopterX downloaded above.  A message, "..was successfully imported" should be displayed
   - Select Aircraft, Select Aircraft, open "Custom Aircraft" section and select "Quadcopter X - direct throttle".  In the current state, the RC inputs come straight from the stick so it is not flyable.
 
@@ -93,6 +93,8 @@ This technique spreads the processing requirements between two PCs: one Windows 
 - after about a minute, the vehicle should be visible on the SITL map
 - the performance of the connection can be checked by opening the "ArduCopter" window (on the machine running SITL), the "FPS" (Frames Per Second) count needs to be over 150 for the vehicle to fly well (the average can be lower)
 
+.. note:: the above was for a Copter. Change the directory to ArduPlane or ArduRover for those types of vehicles before beginning sim_vehicle.py or add the -v <vehicletype> directive when starting it.
+
 Using ready-made models
 -----------------------
 
@@ -102,16 +104,18 @@ A number of custom models have been created by ArduPilot developers and stored i
 You should be able to :ref:`clone <git-clone>` this repo using ``git clone https://github.com/ArduPilot/SITL_Models.git`` and then load the models into RealFlight.
 In the directory for each model there is a .parm file that can be loaded into SITL so that appropriate tunings parameters are set.
 
+The SITL_Models folder has a RealFlight directory with a WIP sub-directory for models in progress, and a Released_Models directory, which have models that have been tested to work with the InterLink controllers and have README.md files describing thier setup and special features.
+
 To import one of these models:
 
-  - on RealFlight select Simulation >> Import >> RealFlight Archive (RX, G3X) and select the model you're interested in
+  - on RealFlight select Simulation >> Import >> RealFlight Archive (RFX, G3X) and select the model you're interested in
   - select Aircraft >> Select Aircraft and select the model imported from the above step
 
   .. image:: ../images/realflight-import-model.png
     :width: 70%
     :target: ../_images/realflight-import-model.png
 
-  - from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model, i.e. ``param load ../../SITL_Models/RealFlight/Tridge/QuadPlane/BigStickQuadPlane.parm`` to load the quadplane parameters.  In some cases you may need to restart SITL in order for some parameters to take effect.
+  - from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model, as in the above example. You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And in some cases you may need to restart SITL in order for some parameters to take effect.
 
   .. image:: ../images/realflight-import-parms.png
     :width: 70%
@@ -120,11 +124,19 @@ To import one of these models:
 OpenTX use with RealFlight and SITL
 -----------------------------------
 
-There are two approaches you can use. Minimal: which only setups up the AETR flight control axes, and Maximal: Which gets at least 7 channels to the SITL module, more closely emulating how you would really use the TX to fly the vehicle.
+There are three approaches you can use. Minimal: which only setups up the AETR flight control axes, and Maximal: Which gets at least 7 channels to the SITL module, more closely emulating how you would really use the TX to fly the vehicle, and Interlink DX controller emulation.
 
 Minimal: power up the TX, program a new plane model for use with the sim with the wizard, plug in USB, select joystick (later OpenTX versions allow permanent selection in the main radio setup page). Select Simulation-> Select controller in RealFlight. Select Taranis, and proceed to setup the aileron,elevator,rudder, and throttle and calibrate them. Now to change modes or set switches, you will need to use MAVProxy or Mission Planner commands.
 
-Maximal: Setup the TX model with switches or sliders/pots for channels 5,6,7, and 8. (It has been noted that, sometimes, not all channels can be assigned). Then add them for functions in the RealFlight controller setup. Do not be concerned about the function names, we just want them to be passed thru to the SITL model. Now you can assign ``RCx_OPTION`` functions to those channels in the model parameters.
+Maximal: In additon to the above, setup the TX model with switches or sliders/pots for channels 5,6,7, and 8. Then add them for functions in the RealFlight controller setup. Do not be concerned about the function names, we just want them to be passed thru to the SITL model. Now you can assign ``RCx_OPTION`` functions to those channels in the model parameters.
+
+InterLink DX/Elite controller emulation: This closely mimics these Interlink  controllers, normally sold with RealFlight. This allows the use of a transmitter with normal RealFlight simulations as well as SITL which closely matches the physical layout of the Interlink controllers. See :ref:`interlink-emulation` for setup details.
 
 To setup a six position mode switch, you would do so just as explained :ref:`here<common-rc-transmitter-flight-mode-configuration>` for an OpenTX transmitter, but first calibrate the RealFlight  controller using a dual position switch on the mode channel. Then change the transmitter back to provide the six PWM levels. This required since RealFlight auto-scales from the calibration values, so if your six PWM levels are centered in the recognition ranges , then the channel's PWM extremes will not be used for calibration and the PWM levels will be altered by RealFlight before passing on to the SITL. 
+
+.. toctree::
+    :hidden:
+
+    Interlink Emulation <interlink-emulation>
+    Understanding SITL using RealFlight <flightaxis>
 
