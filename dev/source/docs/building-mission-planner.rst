@@ -12,14 +12,14 @@ Introduction
 ============
 
 Mission Planner (MP) is an open source ground station developed in C#
-primarily for use on Windows computers (although it can be run on Mac
+primarily for use on Windows/linux computers (although it can be run on Mac
 using mono).  This is the most commonly used ground station as it
 provides the most complete functionality for vehicle setup as well as
 pre-flight mission planner, in-flight monitoring and post flight log
 file analysis.
 
 This page provides instructions on how you can build the Mission Planner
-software on your own machine using MS Visual Studio 2017 which may be
+software on your own machine using MS Visual Studio 2019 which may be
 useful if you wish to make changes for your own use or improvements for
 the community.  Building the mission planner may also help as a guide in
 case you plan to build your own custom ground station development.
@@ -51,33 +51,27 @@ Here is what you will need.
 -  Sufficient disk space, memory, processor power to comfortably run
    Visual Studio (details below)
 -  An Internet connection.
--  Visual Studio 2017 community edition
+-  Visual Studio 2019 community edition
 
-Install Visual Studio and DirectX and Python
+Install Visual Studio
 ============================================
 
-The first step is to get `Microsoft Visual Studio Community 2017 <https://visualstudio.microsoft.com/>`__\ installed and working in your
+The first step is to get `Microsoft Visual Studio Community 2019 <https://visualstudio.microsoft.com/>`__\ installed and working in your
 Windows system.
 
--  Download and install MS Visual Studio 2017 Community Edition which
+-  Download and install MS Visual Studio 2019 Community Edition which
    can be found `here <https://visualstudio.microsoft.com/>`__.
--  During the install Process, you may be prompted to install optional "workloads", at this stage, you may select: ".NET desktop development" ( or you may install it later... such as when you open the .sln for the first time, you'll be prompted to do it).
+-  During the install Process, you will be prompted to install optional "workloads", at this stage, you must select: ".NET desktop development" "ASP.NET and web development" "Universal Windows Platform developement" "Mobile development with .NET" ".NET Core cross-platofrm developement"
 -  Reboot your PC
 -  Start Visual Studio from the Start Menu
-
-Install Python 2.7 (if not already installed) by downloading it
-`here <https://www.python.org/downloads/>`__.    We recommend you install this to the c:\\Python27\\ folder.
 
 
 After your VS installation is complete: 
 =======================================
 
--   Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Summary ( right of screen) -> then tick the tickbox labeled ".Net Core 2.0 development tools" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete.
--   Also, Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Windows ( left of screen) -> then tick the tickbox labeled ".Net desktop development tools" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete. If it's already ticked, leave it as-is, that's already fine.  :-) 
--   Also, Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Windows ( left of screen) -> then tick the tickbox labeled "mobile developement with .NET" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete. If it's already ticked, leave it as-is, that's already fine.  :-) 
-- You may need to install dotnet core 2.2 if you are upgrading from a previous version of mission planner. (https://dotnet.microsoft.com/download/dotnet-core/2.2) 2.2.108 works fine with MP 1.3.68
+-   Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Summary ( right of screen) -> then tick the tickbox labeled ".NET desktop development" "ASP.NET and web development" "Universal Windows Platform developement" "Mobile development with .NET" ".NET Core cross-platofrm developement" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete.
 -  You might like to test your installation on a simple "Hello World" application, or the "SimpleExample" described below.
--  TIP: By default it is installed here: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\"  
+-  TIP: By default it is installed here: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\"  
 
 Getting the Mission Planner source code from Github into your computer
 ======================================================================
@@ -104,13 +98,6 @@ Open the Mission Planner solution in Visual Studio
 -  (If you haven't already installed the ".NET desktop development" add-in, you will be prompted to do it now.)
 -  Set the "Solution Configuration" to "Debug" or "Release" (this can be
    found just below the Tools menu)
--  Set the "Solution Platforms" to "x86"
--  In the Solutions Explorer, right-mouse-button click on Mission
-   Planner and select Properties, Signing and uncheck "Sign the
-   ClickOnce manifests"
-
-.. image:: ../images/MPBuild_UncheckSigning.png
-    :target: ../_images/MPBuild_UncheckSigning.png
 
 -  Mission Planner is made up of several projects, you can see these by
    expanding the "MissionPlanner" and "ExtLibs" folders of the Solution
@@ -144,8 +131,7 @@ some .dll files that are not included in the Git repository.
 .. image:: ../images/MPBuild_BatchBuild.png
     :target: ../_images/MPBuild_BatchBuild.png
 
--  Select Build >> Batch Build..., "Select All" (to check all
-   checkboxes) and then press "Rebuild".  You will probably see errors
+-  Select Build >> Batch Build... and then press "Rebuild".  You will probably see errors
    on your first attempt to compile (build) Mission Planner so try a
    couple more times.
 
