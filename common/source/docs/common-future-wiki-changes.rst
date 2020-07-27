@@ -44,6 +44,8 @@ RCx_OPTIONs on Auxillary Functions Page:
 +----------------------+----------------------------+----------+---------+---------+
 |        209           | Forward Throttle           |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        300-307       | Scripting RC channels      |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
 
 .. raw:: html
 
@@ -210,6 +212,16 @@ Manual forward motor throttle in QSTABILIZE, QACRO, and QHOVER modes
 
    </td>
    </tr>
+   <tr>
+   <td><strong>Scripting RC channels </strong></td>
+   <td>
+
+Allows reading a dedicated RC channel for script inputs
+
+.. raw:: html
+
+   </td>
+   </tr>
    </tbody>
    </table>
 
@@ -253,6 +265,9 @@ LUA Scripting (common-lua-scripts)
 ----------------------------------
 
 see `Wiki PR #2839 <https://github.com/ArduPilot/ardupilot_wiki/pull/2839>`__  many new bindings
+
+add to "Getting Started": Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are avaliable: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
+
 
 Logging (common-downloading-and-analyzing-data-logs-in-mission-planner)
 -----------------------------------------------------------------------
