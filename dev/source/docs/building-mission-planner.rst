@@ -61,7 +61,12 @@ Windows system.
 
 -  Download and install MS Visual Studio 2019 Community Edition which
    can be found `here <https://visualstudio.microsoft.com/>`__.
--  During the install Process, you will be prompted to install optional "workloads", at this stage, you must select: ".NET desktop development" "ASP.NET and web development" "Universal Windows Platform developement" "Mobile development with .NET" ".NET Core cross-platofrm developement"
+-  During the install Process, you will be prompted to install optional "workloads", at this stage, you must select: 
+    - ".NET desktop development" 
+    - "ASP.NET and web development" 
+    - "Universal Windows Platform developement" 
+    - "Mobile development with .NET" 
+    - ".NET Core cross-platofrm developement"
 -  Reboot your PC
 -  Start Visual Studio from the Start Menu
 
