@@ -266,7 +266,10 @@ LUA Scripting (common-lua-scripts)
 
 see `Wiki PR #2839 <https://github.com/ArduPilot/ardupilot_wiki/pull/2839>`__  many new bindings
 
-add to "Getting Started": Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are avaliable: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
+add to "Getting Started": 
+
+- Scripts which require no user editing before use (Applets) can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these have an .md file of the same name detailing its capabilities, use and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter.
+- Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are avaliable: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
 
 
 Logging (common-downloading-and-analyzing-data-logs-in-mission-planner)
