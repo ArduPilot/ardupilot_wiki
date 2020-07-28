@@ -20,6 +20,8 @@ For this setup these parameters values should be set (they should actually be se
 - :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 26 (Ground Steering)
 - :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 70 (Throttle)
 
+.. _rover-motor-and-servo-connections-skid-steering:
+
 Skid Steering
 -------------
 
