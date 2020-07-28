@@ -4,7 +4,7 @@
 Tuning Navigation
 =================
 
-This page decribes how to tune the Navigation control including the "L1 controller".
+This page describes how to tune the Navigation control including the "L1 controller".
 
 .. image:: ../images/rover-tuning-navigation1.png
     :target: ../_images/rover-tuning-navigation1.png
@@ -16,12 +16,12 @@ The L1 one controller is the highest level steering controller.  It accepts posi
 
 Recommended steps for tuning the L1 controller:
 
-- connect the ground station to the vehicle using a telemetry radio
-- create an rectangular or back-and-forth mission (perhaps using the Mission Planner's Flight Plan screen) and upload to the vehicle
-- arm the vehicle (in :ref:`Manual <manual-mode>` or :ref:`Hold <hold-mode>`) and switch to :ref:`Auto <auto-mode>` mode.
-- if the rover weaves along the straights, then raise :ref:`NAVL1_PERIOD <NAVL1_PERIOD>` (aka "Lat Acc Cntrl Period") in increments of 0.5
-- if the rover does not turn sharply enough then lower :ref:`NAVL1_PERIOD <NAVL1_PERIOD>` (aka "Lat Acc Cntrl Period") in increments of 0.5
-- raise :ref:`NAVL1_DAMPING <NAVL1_DAMPING>` (aka "Lat Acc Cntrl Damp") by increments of 0.05 to improve navigation in tight courses
+- Connect the ground station to the vehicle using a telemetry radio
+- Create an rectangular or back-and-forth mission (perhaps using the Mission Planner's Flight Plan screen) and upload to the vehicle
+- Arm the vehicle (in :ref:`Manual <manual-mode>` or :ref:`Hold <hold-mode>`) and switch to :ref:`Auto <auto-mode>` mode.
+- If the rover weaves along the straights, then raise :ref:`NAVL1_PERIOD <NAVL1_PERIOD>` (aka "Lat Acc Cntrl Period") in increments of 0.5
+- If the rover does not turn sharply enough then lower :ref:`NAVL1_PERIOD <NAVL1_PERIOD>` (aka "Lat Acc Cntrl Period") in increments of 0.5
+- Raise :ref:`NAVL1_DAMPING <NAVL1_DAMPING>` (aka "Lat Acc Cntrl Damp") by increments of 0.05 to improve navigation in tight courses
 
 .. image:: ../images/rover-tuning-navigation-mission.png
     :target: ../_images/rover-tuning-navigation-mission.png

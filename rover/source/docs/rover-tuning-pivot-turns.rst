@@ -7,7 +7,7 @@ Tuning Pivot Turns
 ..  youtube:: NNmGw4cDsB0
     :width: 100%
 
-This page decribes how to tune the "pivot turn" feature on a Rover (or boat) with :ref:`skid-steering <rover-motor-and-servo-configuration>`.
+This page describes how to tune the "pivot turn" feature on a Rover (or boat) with :ref:`skid-steering <rover-motor-and-servo-configuration>`.
 
 A pivot turn involves the vehicle slowing or stopping, turning towards the destination and then continuing.  These turns are only triggered in :ref:`Auto <auto-mode>`, :ref:`Guided <guided-mode>`, :ref:`RTL <rtl-mode>` or :ref:`SmartRTL <smartrtl-mode>` modes.
 

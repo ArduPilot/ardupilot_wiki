@@ -4,7 +4,7 @@
 Tuning Speed and Throttle
 =========================
 
-This page decribes how a Rover's speed and throttle controls can be tuned.
+This page describes how a Rover's speed and throttle controls can be tuned.
 In general it is best to tune this controller before moving on to the steering controllers.
 
 .. image:: ../images/rover-throttle-and-speed1.png
@@ -17,11 +17,11 @@ The :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEE
 
 One way to set the value is to:
 
-- set the :ref:`Auxiliary Function Switch <common-auxiliary-functions>` to "Learn Cruise Speed"
-- arm the vehicle and switch to :ref:`Manual <manual-mode>`
-- drive the vehicle at a speed close to the speed you would normally drive it at (in Auto or other modes)
-- move the aux function switch to the high position for a few seconds and then back down to the low position
-- connect with a ground station and check that the :ref:`CRUISE_SPEED <CRUISE_SPEED>` and :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` values have been updated
+- Set the :ref:`Auxiliary Function Switch <common-auxiliary-functions>` to "Learn Cruise Speed"
+- Arm the vehicle and switch to :ref:`Manual <manual-mode>`
+- Drive the vehicle at between 50% and 80% throttle
+- Move the aux function switch to the high position for a few seconds and then back down to the low position
+- Connect with a ground station and check that the :ref:`CRUISE_SPEED <CRUISE_SPEED>` and :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` values have been updated
 
 The :ref:`CRUISE_SPEED <CRUISE_SPEED>` is also used as the default speed in :ref:`Auto <auto-mode>`, :ref:`Guided <guided-mode>`, :ref:`RTL <rtl-mode>` and :ref:`SmartRTL <smartrtl-mode>` modes although these can be overridden using the :ref:`WP_SPEED <WP_SPEED>` and/or :ref:`RTL_SPEED <RTL_SPEED>` parameters.
 
@@ -34,19 +34,19 @@ The Feed Forward, P, I and D gains for this controller are held in the :ref:`ATC
 
 Recommended steps for tuning this controller are:
 
-- connect the ground station to the vehicle using a telemetry radio
-- drive the vehicle in :ref:`Acro <acro-mode>` or :ref:`Steering <steering-mode>` mode
-- the :ref:`FF gain <ATC_SPEED_FF>` should be left at zero because the :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEED>` are used to calculate a base throttle output which removes the need for feed-forward.
-- the :ref:`P gain <ATC_SPEED_P>` is the most important and should be tuned first.  If the vehicle's speed is jerky and unstable then this parameter should be reduced.  If the vehicle is slow to get up to speed, this parameter should be increased.
-- the :ref:`I gain <ATC_SPEED_I>` corrects for long-term error.  If the vehicle never achieves the desired speed, then this parameter should be increased.  If the vehicle's speed is slowly oscillating between too fast and too slow, this parameter should be reduced.
-- the :ref:`D gain <ATC_SPEED_D>` is meant to stablize the output by fighting against short-term changes in speed.  This gain can normally be left at zero.
+- Connect the ground station to the vehicle using a telemetry radio
+- Drive the vehicle in :ref:`Acro <acro-mode>` mode
+- The :ref:`FF gain <ATC_SPEED_FF>` should be left at zero because the :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEED>` are used to calculate a base throttle output which removes the need for feed-forward.
+- The :ref:`P gain <ATC_SPEED_P>` is the most important and should be tuned first.  If the vehicle's speed is jerky and unstable then this parameter should be reduced.  If the vehicle is slow to get up to speed, this parameter should be increased.
+- The :ref:`I gain <ATC_SPEED_I>` corrects for long-term error.  If the vehicle never achieves the desired speed, then this parameter should be increased.  If the vehicle's speed is slowly oscillating between too fast and too slow, this parameter should be reduced.
+- The :ref:`D gain <ATC_SPEED_D>` is meant to stablize the output by fighting against short-term changes in speed.  This gain can normally be left at zero.
 
 The desired speed vs achieved speed, along with the individual contributions to the throttle output from P, I and D gains can be seen in real-time by doing the following:
 
-- connect the Mission Planner to the vehicle's autopilot using a telemetry radio
-- set the :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 2 (Throttle)
-- on the Flight Data screen, check the "Tuning" checkbox (bottom middle) and select "pidachieved", "piddesired"
-- increase and decrease the desired speed of the vehicle and see how well the "achieved" follows the "desired"
+- Connect the Mission Planner to the vehicle's autopilot using a telemetry radio
+- Set the :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 2 (Throttle)
+- On the Flight Data screen, check the "Tuning" checkbox (bottom middle) and select "pidachieved", "piddesired"
+- Increase and decrease the desired speed of the vehicle and see how well the "achieved" follows the "desired"
 
 .. image:: ../images/rover-throttle-and-speed2.png
     :target: ../_images/rover-throttle-and-speed2.png
