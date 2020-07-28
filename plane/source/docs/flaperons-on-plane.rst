@@ -74,7 +74,7 @@ Tuning
    them) so that your flaps move all the way ( :ref:`SERVO1_TRIM <SERVO1_TRIM>` should also be set to 1500). - Setting the :ref:`FLAP_SLEWRATE <FLAP_SLEWRATE>`
    to 100 allows moving flaps from 0 to 100% in one second.  Lower this
    to make your flaps move more slowly.
--  Adjust `FLAP_x_PERCNT|SPEED` as desired for auto modes - see `Automatic Flaps <automatic-flaps>`. Note you can ignore the
+-  Adjust `FLAP_x_PERCNT|SPEED` as desired for auto modes - see `automatic-flaps`. Note you can ignore the
    comment on that page saying "parameter for the channel function for
    the channel you are using for flaps to a value of 3".
    ``FLAP_IN_CHANNEL`` is already set for this. - Have a look at :ref:`TKOFF_FLAP_PCNT <TKOFF_FLAP_PCNT>`
