@@ -11,8 +11,10 @@ way. I.e. no change of servo position should be required to set the sails at the
 achieved through the use of a sail winch servo with a main sheet system. The sail winch is servo output function, ``SERVOx_FUNCTION``, 89 - Main Sail.
 
 Although not absolutely required for best results a wind vane should be fitted to allow the vehicle to sense the wind 
-direction. A further improvement can be gained by fitting a wind speed sensor, the faster your vehicle goes relative 
-to the wind speed the more important this is, See :ref:`wind vane <wind-vane>`. 
+direction. See :ref:<wind-vane>. If a wind vane sensor is not used, then assumed wind direction must be input using these methods: :ref:`wind-vane-home-heading`.
+
+A further improvement can be gained by fitting a wind speed sensor, the faster your vehicle goes relative 
+to the wind speed the more important this is. See :ref:`wind vane <wind-vane>`. 
 
 .. image:: ../images/sailboat-windvane.png
     :target: ../_images/sailboat-windvane.png
