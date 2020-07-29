@@ -24,9 +24,10 @@ Follow the instructions on the :ref:`Tuning Speed and Throttle <rover-tuning-thr
 
 2. Test and adjust the speed controller gains in real-time while driving in Acro mode
 
-    a. Set :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 2 (Throttle) to send PID information to the ground station
-    b. On the ground station graph the "piddesired" and "pidachieved" values
-    c. Drive the vehicle at various speeds in Acro mode and compare how well pidachieved follows piddesired.  The most important parameter to get right is :ref:`ATC_SPEED_FF <ATC_SPEED_FF>`
+    - Set :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 2 (Throttle) to send PID information to the ground station
+    - On the ground station graph the "piddesired" and "pidachieved" values
+    - Drive the vehicle at various speeds in Acro mode and compare how well pidachieved follows piddesired
+    - Adjust :ref:`ATC_SPEED_P <ATC_SPEED_P>`, :ref:`ATC_SPEED_I <ATC_SPEED_I>` up or down so that piddesired follows pidachieved
 
 3. If the vehicle accelerates too quickly or too slowly adjust the :ref:`ATC_ACCEL_MAX <ATC_ACCEL_MAX>`
 
@@ -37,9 +38,9 @@ Follow the instructions on the :ref:`Tuning Steering Rate <rover-tuning-steering
 
 1. Test and adjust the turn rate controller gains in real-time while driving in Acro mode
 
-    a. Set :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 1 (Steering) to send PID information to the ground station
-    b. On the ground station graph the "piddesired" and "pidachieved" values
-    c. Drive the vehicle in Acro mode at a medium speed making various wide and tight turns and compare how well pidachieved follows piddesired.  The most important parameter to get right is :ref:`ATC_STR_RAT_FF <ATC_STR_RAT_FF>`
+    - Set :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 1 (Steering) to send PID information to the ground station
+    - On the ground station graph the "piddesired" and "pidachieved" values
+    - Drive the vehicle in Acro mode at a medium speed making various wide and tight turns and compare how well pidachieved follows piddesired.  The most important parameter to get right is :ref:`ATC_STR_RAT_FF <ATC_STR_RAT_FF>`
 
 Configure Pivot Turns (Skid Steering vehicles only)
 ---------------------------------------------------
