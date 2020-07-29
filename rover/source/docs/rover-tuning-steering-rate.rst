@@ -37,6 +37,11 @@ Recommended steps for tuning this controller are:
 - The :ref:`I gain <ATC_STR_RAT_I>` corrects for long-term error.  If the vehicle never achieves the desired turn rate, then this parameter should be increased.  If the vehicle's turn rate slowly oscillates then this parameter should be reduced.  This :ref:`I gain <ATC_STR_RAT_I>` should always be lower than then :ref:`FF gain <ATC_STR_RAT_FF>`.
 - The :ref:`D gain <ATC_STR_RAT_D>` is meant to stabilize the output by fighting against short-term changes in turn rate.  This gain can normally be left at zero.
 
+Finally set :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` to the :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>` value and optionally reduce :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>`.  The difference between these two parameters is:
+
+- :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>` controls how the pilot's input is converted to a desired turn rate in Acro mode.  This parameter can be reduced to make turns in Acro mode more docile for the driver
+- :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` is the maximum turn rate that the vehicle will ever attempt in any mode.  This should normally be kept close to the vehicle's performance limits so the vehicle remains agile
+
 Video
 -----
 

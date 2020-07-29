@@ -36,11 +36,14 @@ Tune the Turn Rate Controller
 
 Follow the instructions on the :ref:`Tuning Steering Rate <rover-tuning-steering-rate>` page.  The high level steps are:
 
-1. Test and adjust the turn rate controller gains in real-time while driving in Acro mode
+1. Set the :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>` parameter to be roughly what the vehicle's maximum turn rate is in deg/sec
+2. Test and adjust the turn rate controller gains in real-time while driving in Acro mode
 
     - Set :ref:`GCS_PID_MASK <GCS_PID_MASK>` to 1 (Steering) to send PID information to the ground station
     - On the ground station graph the "piddesired" and "pidachieved" values
     - Drive the vehicle in Acro mode at a medium speed making various wide and tight turns and compare how well pidachieved follows piddesired.  The most important parameter to get right is :ref:`ATC_STR_RAT_FF <ATC_STR_RAT_FF>`
+
+3. Set :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` to the :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>` value and optionally reduce :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>`
 
 Configure Pivot Turns (Skid Steering vehicles only)
 ---------------------------------------------------
