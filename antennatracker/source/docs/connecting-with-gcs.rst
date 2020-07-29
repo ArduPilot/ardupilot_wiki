@@ -32,8 +32,7 @@ Connect with a USB cable
     :target: ../_images/AntennaTracker_ConnectToGCS_USBCable.jpg
 
 If the antenna controller is a Pixhawk you can simply connect your
-ground station computer to the Pixhawk using a long micro USB cable
-(`like these from ebay <http://www.ebay.com/sch/i.html?_odkw=long+micro+usb+cable&_osacat=0&_from=R40&_from=R40&_trksid=p2045573.m570.l1313.TR0.TRC0.H0.X3m+micro+usb+cable&_nkw=3m+micro+usb+cable&_sacat=0>`__).
+ground station computer to the Pixhawk using a long micro USB cable.
 
 On an APM2 the micro USB port and Telemetry port cannot be used at the
 same time which means that to connect with a USB cable, the radio must
@@ -48,10 +47,12 @@ Connect a 2nd pair of radios
 
 A second pair of radios (or even a :ref:`bluetooth data link <copter:common-mission-planner-bluetooth-connectivity>`)
 can be used to connect the Antenna Tracker controller to the PC running
-the ground station.  If using a :ref:`SIK radio <copter:common-sik-telemetry-radio>`
+the ground station.  
+
+If using a :ref:`SIK radio <copter:common-sik-telemetry-radio>`
 the Net IDs of the radios connecting the Antenna Tracker to the PC
-should be different to the Net IDs for the radio connecting the vehicle
-to the Antenna Tracker.
+should be different than the Net IDs for the radio connecting the vehicle
+to the Antenna Tracker. Net IDs can be changed by :ref:'configuring <common-configuring-a-telemetry-radio-using-mission-planner>' them in Mission Planner.
 
 Connect one more radio and use multi-point SiK radio software
 =============================================================
