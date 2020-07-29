@@ -20,7 +20,7 @@ The Daiwa winch is a high quality winch specially designed for drone delivery.  
 
 .. note::
 
-    ArduPilot does not yet include a special driver for this winch but it can be controlled using the autopilot's servo outputs which allows the winch to be operated from the pilot's transmitter and/or DO_SET_SERVO mission commands
+    The driver for this winch will be released with Copter-4.1.0.  For earlier versions the winch can be controlled using the autopilot's servo outputs which allows the winch to be operated from the pilot's transmitter and/or from DO_SET_SERVO mission commands
 
 Where To Buy
 ------------
@@ -36,14 +36,35 @@ Connect the winch to the autopilot as shown below
     :target: ../_images/daiwa-winch-pixhawk.png
     :width: 400px
 
-- A 5V BEC is required to provide power to the electronics within the winch
+- Connect the 3-pin Winch Control wire (red cable tie) to AUX OUT 1 (aka Servo9)
+- Connect the 3-pin Winch Clutch wire (yellow cable tie) to AUX OUT 2 (aka Servo10)
+- Connect the 3-pin Winch Telemetry wire (blue cable tie) to the Autopilot's Telem2 (or any other telemetry port)
+- The Zero Reset (green cable tie) used to calibrate the winch should be left disconnected
 - A 7.2V to 22.2V power supply is required to power the motors
-- Four separate 3-pin RC connectors can be used to control the winch.  Each has a different colour of cable tie on it
+- A 5V BEC can optionally be connected to the autopilot's servo rail to provide power to the winch electronics.  This is not required if the Telemetry wire is connected
 
-   - Winch control (which controls the upward or downward speed of the winch) has a red cable tie and can be connected to AuxOut 10 or any other PWM output
-   - Clutch (which prevents the cable slipping) has a yellow cable tie and can be connected to AuxOut 9 or any other PWM output
-   - Zero Reset (used to calibrate the winch's estimate of how much line remains) has a green cable tie and can be left disconnected
-   - SBUS2 has a blue cable tie and can be left disconnected
+Set the following parameters
+
+- :ref:`WINCH_TYPE <WINCH_TYPE>` = 2 (Daiwa)
+- :ref:`SERVO9_FUNCTION <SERVO9_FUNCTION>` = 88 (Winch)
+- :ref:`SERVO9_MIN <SERVO9_MIN>` = 1000
+- :ref:`SERVO9_TRIM <SERVO9_TRIM>` = 1500
+- :ref:`SERVO9_MAX <SERVO9_MAX>` = 2000
+- :ref:`SERVO10_FUNCTION <SERVO10_FUNCTION>` = 133 (Winch Clutch)
+- :ref:`SERVO10_MIN <SERVO10_MIN>` = 1000
+- :ref:`SERVO10_TRIM <SERVO10_TRIM>` = 1500
+- :ref:`SERVO10_MAX <SERVO10_MAX>` = 2000
+- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 31 (Winch).  Note this assumes the Winch's telemetry is connected to Serial2/Telem2
+- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115
+- :ref:`RC6_OPTION <RC6_OPTION>` = 45 (Winch Control) to allow controlling the winch speed from the transmitter's channel 6 knob
+- :ref:`RC6_DZ <RC6_DZ>` = 30.  This deadzone is used to detect whether the pilot has moved the winch control knob to retake control from autonomous operation
+- :ref:`RC6_TRIM <RC6_TRIM>` = The mid value between :ref:`RC6_MIN <RC6_MIN>` and :ref:`RC6_MAX <RC6_MAX>` which is normally close to 1500
+- :ref:`RC8_OPTION <RC8_OPTION>` = 46 (Winch Enable) to allow relaxing the winch by pulling the transmitter's channel 8 switch low
+
+Controlling during Missions
+---------------------------
+
+The Winch can be controlled during Autonomous missions using the DO_WINCH mission command.
 
 Video
 -----
