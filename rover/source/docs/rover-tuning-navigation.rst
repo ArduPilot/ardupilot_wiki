@@ -29,7 +29,7 @@ Recommended steps for tuning the L1 controller:
 Other Parameters
 ----------------
 
-- :ref:`TURN_MAX_G <TURN_MAX_G>` defines the maximum lateral acceleration (in Gs = 9.81m/s/s) the controllers will attempt during cornering.  Most vehicles cannot achieve more than 0.3m/s/s.  To more precisely measure the vehicle's maximum possible lateral acceleration:
+- :ref:`TURN_MAX_G <TURN_MAX_G>` defines the maximum lateral acceleration (in Gs = 9.81m/s/s) the controllers will attempt during cornering.  Most vehicles cannot achieve more than 0.3G.  To more precisely measure the vehicle's maximum possible lateral acceleration:
 
     - On Mission Planner's Flight Data screen, check the "Tuning" checkbox (bottom middle), double click on the graph and select "ay" (Acceleration Y-axis)
     - Drive the vehicle in Manual mode at a high speed making very sharp turns
