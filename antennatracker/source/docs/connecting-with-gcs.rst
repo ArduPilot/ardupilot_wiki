@@ -52,7 +52,7 @@ the ground station.
 If using a :ref:`SIK radio <copter:common-sik-telemetry-radio>`
 the Net IDs of the radios connecting the Antenna Tracker to the PC
 should be different than the Net IDs for the radio connecting the vehicle
-to the Antenna Tracker. Net IDs can be changed by :ref:'configuring <common-configuring-a-telemetry-radio-using-mission-planner>' them in Mission Planner.
+to the Antenna Tracker. Net IDs can be changed by :ref:`configuring <common-configuring-a-telemetry-radio-using-mission-planner>` them in Mission Planner.
 
 Connect one more radio and use multi-point SiK radio software
 =============================================================
