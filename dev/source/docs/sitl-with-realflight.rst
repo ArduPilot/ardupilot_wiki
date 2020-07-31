@@ -31,7 +31,7 @@ Configure RealFlight
   - Download the QuadcopterX from `ArduPilot/SITL_Models/RealFlight/Released_Models/MultiRotors/QuadCopterX/QuadcopterX-flightaxis_AV.RFX <https://github.com/ArduPilot/SITL_Models/blob/master/RealFlight/Released_Models/Multicopters/QuadCopterX/QuadcopterX-flightaxis_AV.RFX>`__.
   - Download the `parameter file for this model <https://github.com/ArduPilot/SITL_Models/blob/master/RealFlight/Released_Models/Multicopters/QuadCopterX/QuadCopterX.param>`__. Be sure its saved in text format.This will be used later.
   - Select Simulation, Import, RealFlight Archive (RFX, G3X) and select the file QuadcopterX downloaded above.  A message, "..was successfully imported" should be displayed
-  - Select Aircraft, Select Aircraft, open "Custom Aircraft" section and select "Quadcopter X - direct throttle".  In the current state, the RC inputs come straight from the stick so it is not flyable.
+  - Select Aircraft, Select Aircraft, open "Custom Aircraft" section and select "QuadcopterX-flightaxis".  In the current state, the RC inputs come straight from the stick so it is not flyable.
 
   .. image:: ../images/realflight-select-aircraft.png
     :target: ../_images/realflight-select-aircraft.png
@@ -70,7 +70,7 @@ If the vehicle's position is not reset, from within RealFlight:
   - press OK
   - after the vehicles position is reset, press the transmitter's "Reset" button or PC spacebar again
 
-At this point, load the parameter file for this "QuadCopterX - direct throttle" model via Mission Planner. You are now ready to arm and fly.
+At this point, load the parameter file for this "QuadCopterX-flightaxis" model via Mission Planner. You are now ready to arm and fly.
 
 Connecting to SITL running on a separate (or Virtual) machine:
 --------------------------------------------------------------
@@ -91,6 +91,7 @@ This technique spreads the processing requirements between two PCs: one Windows 
      - sim_vehicle.py -f flightaxis:192.168.x.x --map --console
 - back on RealFlight push the red "RESET" button on the transmitter, or spacebar on PC
 - after about a minute, the vehicle should be visible on the SITL map
+- from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model. You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And, in some cases, you may even need to restart SITL in order for some new parameters to take effect.
 - the performance of the connection can be checked by opening the "ArduCopter" window (on the machine running SITL), the "FPS" (Frames Per Second) count needs to be over 150 for the vehicle to fly well (the average can be lower)
 
 .. note:: the above was for a Copter. Change the directory to ArduPlane or ArduRover for those types of vehicles before beginning sim_vehicle.py or add the -v <vehicletype> directive when starting it.
