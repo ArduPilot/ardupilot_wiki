@@ -133,7 +133,7 @@ You control that with 3 possible servo function values.
 .. raw:: html
 
    <table border="1" class="docutils">
-   <tr><th>SERVOn_FUNCTION</th><th>Value</th><th>Value</th></tr>
+   <tr><th>SERVOn_FUNCTION</th><th>Value</th></tr>
    <tr><td>41</td><td>Motor tilt</td></tr>
    <tr><td>75</td><td>Left Motor tilt</td></tr>
    <tr><td>76</td><td>Right Motor tilt</td></tr>
