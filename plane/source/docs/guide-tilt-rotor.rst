@@ -133,13 +133,13 @@ You control that with 3 possible servo function values.
 .. raw:: html
 
    <table border="1" class="docutils">
-   <tr><th>SERVOn_FUNCTION</th><th>Value</th></tr>
-   <tr><td>41</td><td>Motor tilt</td></tr>
-   <tr><td>75</td><td>Left Motor tilt</td></tr>
-   <tr><td>76</td><td>Right Motor tilt</td></tr>
+   <tr><th>Tilt Control</th><th>SERVOn_FUNCTION</th></tr>
+   <tr><td>Motor tilt</td><td>41</td></tr>
+   <tr><td>Left Motor tilt</td><td>75</td></tr>
+   <tr><td>Right Motor tilt</td><td>76</td></tr>
    </table>
 
-You should choose normal motor tilt unless you are configuring a
+You should choose normal ``Motor tilt`` unless you are configuring a
 vectored yaw aircraft and have set :ref:`Q_TILT_TYPE<Q_TILT_TYPE>` to 2.
 
 For example, if you have a single servo which tilts your rotors
