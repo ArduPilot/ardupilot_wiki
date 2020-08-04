@@ -65,6 +65,7 @@ The gimbal should work without any additional configuration but to improve perfo
 Testing Controlling the Gimbal from RC
 --------------------------------------
 
+- Disconnect the USB cable connecting your PC to the gimbal
 - Powerup the vehicle and gimbal
 - Move the transmitter's channel 6 tuning knob to its minimum position, the camera should point straight down
 - Move the ch6 knob to maximum and the gimbal should point upwards
