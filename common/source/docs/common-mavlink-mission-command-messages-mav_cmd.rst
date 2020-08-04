@@ -929,7 +929,7 @@ Plane
 Fly to the specified location and then loiter there indefinitely — where
 loiter means "circle the waypoint". If zero is specified for a
 latitude/longitude/altitude parameter then the current location value
-for the parameter will be used. YOu can also specify the radius and
+for the parameter will be used. You can also specify the radius and
 direction for the loiter.
 
 The mission will not proceed past this command while in AUTO mode. In
