@@ -16,7 +16,11 @@ recommended.
 
 The quickest way to get started it to buy `RealFlight 9 <https://store.steampowered.com/app/1070820/RealFlight_9/>`__ in `Steam <https://store.steampowered.com/>`__.
 
-The following instructions assume that you have setup your Flight Control box method, using either the Interlink Controller normally sold with RealFlight, a joystick, or your OpenTX transmitter in joystick mode. See the last section on this page for setup instructions, if using an OpenTX transmitter. After installing RealFlight, familiarize yourself with its operation a bit before proceeding.
+The following instructions assume that you have setup your Flight Control box method, using either the Interlink Controller normally sold with RealFlight, a joystick, or your OpenTX transmitter in joystick mode.
+
+.. note:: Realflight will not start unless a joystick device is present. If you wish to only simulate AUTO missions, or things not requiring a lot of joystick/controller input, you can install a virtual joystick like `vJoy <http://vjoystick.sourceforge.net/site/index.php/download-a-install/download>`_. This will allow you to start Realflight uses this controller and control the vehicle via the Ground Control Station or even by the virtual screen joystick ("vJoy Feeder"program which is  installed at the same time the virtual device driver is installed).
+
+See the last section on this page for setup instructions, if using an OpenTX transmitter. After installing RealFlight, familiarize yourself with its operation a bit before proceeding.
 
 Enabling RealFlight Link Feature
 ================================
