@@ -86,8 +86,7 @@ Disabled
 ++++++++
 
 For normal operation, the Disabled output function sets the output value
-of the channel to the trim value (for example, if :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` is 0 then channel 5 will
-output SERVO5_TRIM). The exception to this is when a
+of the channel to 0, ie no PWM pulses being sent. The exception to this is when a
 MAVLink override of the channel or a mission servo set is used. So in
 some ways "disabled" could be called "mission-controlled".
 
