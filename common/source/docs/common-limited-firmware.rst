@@ -72,7 +72,7 @@ The missing features are listed below.
    -  Sprayer
 
 
--  **Matek F405-Wing**
+-  **Matek F405-Wing/ F405-SE**
 
    -  SMBUS battery
    -  Parachute
