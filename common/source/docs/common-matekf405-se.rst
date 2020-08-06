@@ -1,60 +1,63 @@
-.. _common-matekf405-wing:
+.. _common-matekf405-se:
 
-==================
-Mateksys F405-Wing
-==================
+================
+Mateksys F405-SE
+================
 
-.. image:: ../../../images/matekf405-wing.png
-    :target: ../_images/matekf405-wing.png
+.. image:: ../../../images/matekf405-se.jpg
+    :target: ../_images/matekf405-se.jpg
     :width: 450px
 
-the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f405-wing>`__
 
-.. note::
-
-   Support for this board is available with Copter-3.6.0 (and higher)
+the above images and some content courtesy of `mateksys.com <http://www.mateksys.com/>`__
 
 .. note::
 
 	Due to flash memory limitations, this board does not include all ArduPilot features.
         See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
+This board uses the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`_
+
 Specifications
 ==============
-
 -  **Processor**
 
-   -  STM32F405RGT6 ARM (168MHz)
+   -  STM32F405RET6 ARM (168MHz)
 
 
 -  **Sensors**
 
    -  InvenSense MPU6000 IMU (accel, gyro)
-   -  BMP280 barometer (later models use DPS310)
-   -  Voltage & current sensor
+   -  DPS310 Barometer
+   -  Voltage & 184A current sensor
 
 
 -  **Power**
 
-   -  9V ~ 30V DC input power
+   -  6V ~ 36V DC input power
+   -  5V, 2A BEC
 
 
 -  **Interfaces**
 
    -  6x UARTS
-   -  10x PWM outputs
+   -  10x PWM outputs, (LED output used as PWM10)
    -  1x RC input PWM/PPM, SBUS
-   -  I2C port for external compass and airspeed sensor
+   -  2x I2C port for external compass and airspeed sensor
    -  USB port
    -  Built-in OSD
+   -  3x ADC (Vbat, Current, RSSI)
+   -  Micro SD slot
 
 
 -  **Size and Dimensions**
 
-   - 56mm x 36mm x 15mm
-   - 25g
+   - 46mm x 36mm (30.5mm spaced square mounting holes)
+   - 10g
 
-See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f405-wing#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-wing#tab-id-3>`__.
+This board used the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`__.
+
+See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f405-se#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-se#tab-id-4>`__.
    
 Default UART order
 ==================
@@ -65,7 +68,7 @@ Default UART order
 - SERIAL3 = GPS1 = USART3
 - SERIAL4 = GPS2 = UART4
 - SERIAL5 = USER = UART5
-- SERIAL6 = USER = USART6 RX only (for ESC Telemetry, use SERIAL6_PROTOCOL= 16)
+- SERIAL6 = USER = USART6 (RX only; for ESC telemetry, use SERIAL6_PROTOCOL=16)
 - SERIAL7 = USER = USART2 (only if BRD_ALT_CONFIG =1)
 
 Serial protocols can be adjusted to personal preferences.
@@ -73,7 +76,7 @@ Serial protocols can be adjusted to personal preferences.
 Dshot capability
 ================
 
-All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output groups that must be the same (PWM rate or Dshot, when configured as a normal servo/motor output) are: 1/2, 3/4, 5/6, 7/8/9 , and 10.
+All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output groups that must be the same (PWM rate or Dshot, when configured as a normal servo/motor output) are: 1/2, 3/4, 5/6, 7/8, 9 , and 10.
 
 Outputs
 =======
@@ -90,7 +93,7 @@ The SBUS pin can be used for all ArduPilot supported receiver protocols. However
 
 Battery Monitor Configuration
 =============================
-These settings are set as defaults when the firmware is loaded (except :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` which needs to be changed from the default value). However, if they are ever lost, you can manually set the parameters:
+These settings are set as defaults when the firmware is loaded, except  :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` which needs to be changed from 31.7 to 55.9 . However, if they are ever lost, you can manually set the parameters:
 
 Enable Battery monitor.
 
@@ -104,7 +107,7 @@ Then reboot.
 
 :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 55.9 
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 55.9
 
 Where to Buy
 ============
@@ -114,7 +117,7 @@ Where to Buy
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected as shown below in order for autonomous modes to function.
+This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected for autonomous modes to function. Compass is not required for normal Plane mode operation, but is for Copter, QuadPlane, and Rover.
 
 
 .. note:: A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules.
