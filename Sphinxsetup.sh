@@ -12,7 +12,7 @@ if [ ${DISTRIBUTION_CODENAME} == 'Ubuntu' ]; then
   add-apt-repository universe
 fi
 apt-get -y update
-apt-get install -y unzip git imagemagick mercurial curl wget make
+apt-get install -y unzip git imagemagick curl wget make
 
 # Get pip through the official website to get the lastest release
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py && rm -f get-pip.py
@@ -27,13 +27,7 @@ pip install git+https://github.com/ArduPilot/sphinx_rtd_theme.git -UI
 pip install git+https://github.com/sphinx-contrib/youtube.git -UI
 
 # and a vimeo plugin:
-hg clone https://bitbucket.org/jdouglass/sphinxcontrib.vimeo
-pushd sphinxcontrib.vimeo
-python setup.py build
-python setup.py install
-popd
-# remove vimeo plugin source as they belong to root
-rm -rf sphinxcontrib.vimeo
+pip install git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git -UI
 
 # Say that we finish
 echo "Setup completed successfully !"
