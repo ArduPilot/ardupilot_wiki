@@ -15,7 +15,7 @@ Windows
 =======
 
 A complete windows installer (package) for MAVProxy is available at
-http://firmware.ardupilot.org/Tools/MAVProxy/. It is compatible
+http://firmware.ardupilot.org/Tools/MAVProxy/. The latest version is: ``MAVProxySetup-latest.exe``. It is compatible
 with Windows 7 or later.
 
 A link to MAVProxy will be available on the start menu. MAVProxy can
