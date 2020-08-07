@@ -25,7 +25,7 @@ The Daiwa winch is a high quality winch specially designed for drone delivery.  
 Where To Buy
 ------------
 
-- These winches can be purchased from the Japanese branch of Okaya (`japanese site <https://www.okaya.co.jp/>`__, `english site <https://www.okaya.co.jp/en/index.html>`__)
+- These winches are manufactured by Okaya (`japanese site <https://www.okaya.co.jp/>`__, `english site <https://www.okaya.co.jp/en/index.html>`__) and can be purchased `here <https://www.ipros.jp/product/detail/2000434011/>`__ (Japanese language only).
 
 Connection and Configuration
 ----------------------------
