@@ -116,8 +116,8 @@ Connecting a GPS/Compass module
 
 This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected as shown below in order for autonomous modes to function.
 
--.. image:: ../../../images/matekf405-wing-with-gps.png
--    :target: ../_images/matekf405-wing-with-gps.png
--    :width: 450px
+.. image:: ../../../images/matekf405-wing-with-gps.png
+    :target: ../_images/matekf405-wing-with-gps.png
+    :width: 450px
 
 .. note:: A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules.
