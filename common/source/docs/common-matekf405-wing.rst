@@ -65,7 +65,7 @@ Default UART order
 - SERIAL3 = GPS1 = USART3
 - SERIAL4 = GPS2 = UART4
 - SERIAL5 = USER = UART5
-- SERIAL6 = USER = USART6 RX only (for ESC Telemetry, use SERIAL6_PROTOCOL= 16)
+- SERIAL6 = USER = USART6
 - SERIAL7 = USER = USART2 (only if BRD_ALT_CONFIG =1)
 
 Serial protocols can be adjusted to personal preferences.
@@ -104,7 +104,7 @@ Then reboot.
 
 :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 55.9 
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 31.7 
 
 Where to Buy
 ============
@@ -116,5 +116,8 @@ Connecting a GPS/Compass module
 
 This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected as shown below in order for autonomous modes to function.
 
+-.. image:: ../../../images/matekf405-wing-with-gps.png
+-    :target: ../_images/matekf405-wing-with-gps.png
+-    :width: 450px
 
 .. note:: A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules.
