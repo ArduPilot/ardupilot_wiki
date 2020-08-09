@@ -11,7 +11,7 @@ disable_non_local_image_warnings=True
 #wiki_base_url='https://dl.dropboxusercontent.com/u/3067678/share2/wiki'
 #intersphinx_base_url=wiki_base_url+'/%s/build/html/'
 
-wiki_base_url='http://ardupilot.org/'
+wiki_base_url='https://ardupilot.org/'
 intersphinx_base_url=wiki_base_url+'%s/'
 
 
