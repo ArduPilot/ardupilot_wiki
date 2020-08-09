@@ -128,6 +128,12 @@ Again you can TAB complete, for example:
 You can do this for multiple fields in one graph, allowing you to
 construct complex graphs quickly.
 
+Some messages have ``Instance`` fields, for storing data of multiple instances of sensors, e.g. the ``RFND`` log message. In such cases, an instance number must be specified while graphing, else values from all the instances will be combined in a single graph.
+
+::
+
+    graph RFND[0].Dist
+
 Modifying pre-defined graphs
 ----------------------------
 
