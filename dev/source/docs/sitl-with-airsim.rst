@@ -24,33 +24,38 @@ A demo of AirSim running with ArduPilot SITL
 
 A list of topics for easier navigation in the page-
 
-#. `Install AirSim <https://ardupilot.org/dev/docs/sitl-with-airsim.html#installing-airsim>`__
+#. :ref:`Install AirSim <sitl-with-airsim-install>`
 
-   * `Build on Windows <https://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-windows>`__
-   * `Build on Linux, MacOS <https://ardupilot.org/dev/docs/sitl-with-airsim.html#build-on-linux-macos>`__
+    * :ref:`Build on Windows <sitl-with-airsim-build-windows>`
+    * :ref:`Build on Linux, MacOS <sitl-with-airsim-build-linux>`
 
-#. `Setup Unreal Environment <https://ardupilot.org/dev/docs/sitl-with-airsim.html#setup-unreal-environment>`__
+#. :ref:`Setup Unreal Environment <sitl-with-airsim-setup-unreal>`
 
-#. `Using AirSim with ArduPilot <https://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-with-ardupilot>`__
+#. :ref:`Using AirSim with ArduPilot <sitl-with-airsim-usage>`
 
-#. `Launch Copter SITL <https://ardupilot.org/dev/docs/sitl-with-airsim.html#launch-copter-sitl>`__
+#. :ref:`Launch Copter SITL <sitl-with-airsim-copter-sitl>`
 
-#. `Launch Rover SITL <https://ardupilot.org/dev/docs/sitl-with-airsim.html#launch-rover-sitl>`__
+#. :ref:`Launch Rover SITL <sitl-with-airsim-rover-sitl>`
 
-#. `Using Lidar <https://ardupilot.org/dev/docs/sitl-with-airsim.html#using-lidar>`__
+#. :ref:`Using Lidar <sitl-with-airsim-lidar>`
 
-#. `Manual Flying using RC <https://ardupilot.org/dev/docs/sitl-with-airsim.html#manual-flying-using-rc>`__
+#. :ref:`Using Rangefinder <sitl-with-airsim-rangefinder>`
 
-#. `Multi-Vehicle Simulation <https://ardupilot.org/dev/docs/sitl-with-airsim.html#multi-vehicle-simulation>`__
+#. :ref:`Manual Flying using RC <sitl-with-airsim-manual-rc>`
 
-#. `Custom Environment <https://ardupilot.org/dev/docs/sitl-with-airsim.html#custom-environment>`__
+#. :ref:`Multi-Vehicle Simulation <sitl-with-airsim-multi-vehicle>`
 
-#. `Using AirSim APIs <https://ardupilot.org/dev/docs/sitl-with-airsim.html#using-airsim-apis>`__
+#. :ref:`ROS with Multiple Vehicles <sitl-with-airsim-ros-multi-vehicle>`
 
-#. `Run on Different Machines <https://ardupilot.org/dev/docs/sitl-with-airsim.html#run-on-different-machines>`__
+#. :ref:`Custom Environment <sitl-with-airsim-custom-env>`
 
-#. `Debugging and Development Workflow <https://ardupilot.org/dev/docs/sitl-with-airsim.html#development-workflow>`__
+#. :ref:`Using AirSim APIs <sitl-with-airsim-apis>`
 
+#. :ref:`Run on Different Machines <sitl-with-airsim-separate-machines>`
+
+#. :ref:`Debugging and Development Workflow <sitl-with-airsim-dev-workflow>`
+
+.. _sitl-with-airsim-install:
 
 Installing AirSim
 =================
@@ -61,6 +66,7 @@ If you're using the binaries, then you can directly skip to `Using AirSim with A
 
 For development and testing out new features, you'll have to build AirSim from source. The setup instructions for building from source are described below.
 
+.. _sitl-with-airsim-build-windows:
 
 Build on Windows
 ----------------
@@ -73,6 +79,7 @@ The main page for Windows setup is `here <https://github.com/microsoft/AirSim/bl
 
 Run ``build.cmd`` from the command line. This will create ready to use plugin bits in the ``Unreal\Plugins`` folder that can be dropped into any Unreal project.
 
+.. _sitl-with-airsim-build-linux:
 
 Build on Linux, MacOS
 ---------------------
@@ -97,6 +104,7 @@ AirSim's page on Linux & MacOS Setup is `here <https://github.com/microsoft/AirS
             ./setup.sh
             ./build.sh
 
+.. _sitl-with-airsim-setup-unreal:
 
 Setup Unreal Environment
 ------------------------
@@ -109,6 +117,7 @@ See AirSim's `Blocks Setup page <https://github.com/microsoft/AirSim/blob/master
 
 For using another environment, check the information at the end of the page.
 
+.. _sitl-with-airsim-usage:
 
 Using AirSim with ArduPilot
 ---------------------------
@@ -129,6 +138,8 @@ Make sure that you have :ref:`setup ArduPilot SITL <dev:building-the-code>`, com
 It's stored in at the following places- Windows: ``Documents\AirSim``, Linux: ``~/Documents/AirSim``
 
 The file is in usual JSON format. On the first startup, AirSim would create ``settings.json`` file with no settings.
+
+.. _sitl-with-airsim-copter-sitl:
 
 Launch Copter SITL
 ++++++++++++++++++
@@ -176,6 +187,8 @@ For closing, first stop the AirSim simulation by pressing the Stop button, then 
 If ArduPilot is closed first, then UE hangs and you'll need to force close it.
 
 You can restart by just pressing the Play button and then start the ArduPilot side, no need to close the Editor completely and then start it again.
+
+.. _sitl-with-airsim-rover-sitl:
 
 Launch Rover SITL
 +++++++++++++++++
@@ -225,6 +238,8 @@ The other features, etc. described in this page have settings, commands and file
 
 You might need to tune the vehicle for proper usage, the param files for AirSim vehicles in `Tools/autotest/default_params <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/default_params>`__ can be modified directly, or you can create a new param file and pass its location to SITL using ``--add-param-file`` option in ``sim_vehicle.py``.
 
+.. _sitl-with-airsim-lidar:
+
 Using Lidar
 ^^^^^^^^^^^
 
@@ -271,7 +286,8 @@ Current `settings.json` file for launching ArduCopter with Lidar
               "VerticalFOVLower": 0,
               "HorizontalFOVStart": 0,
               "HorizontalFOVEnd": 359,
-              "DataFrame": "SensorLocalFrame"
+              "DataFrame": "SensorLocalFrame",
+              "ExternalController": true
             }
           }
         }
@@ -289,6 +305,64 @@ By default, :ref:`BendyRuler Object Avoidance <copter:common-oa-bendyruler>` is 
 
 You can enable the visualisation of Lidar points in the AirSim viewport by setting ``DrawDebugPoints`` to ``true`` in the Lidar sensor settings. Note that this can reduce FPS by a lot and maybe even cause memory problems and crash in releases ``v1.3.1`` and earlier.
 
+
+.. _sitl-with-airsim-rangefinder:
+
+Using Rangefinder
+^^^^^^^^^^^^^^^^^
+
+Rangefinders in ArduPilot are called Distance Sensors in AirSim. See `AirSim's Sensors page <https://github.com/microsoft/AirSim/blob/master/docs/sensors.md#distance-sensor>`__ for details, and :ref:`Rangefinder Setup <copter:common-rangefinder-landingpage>` for ArduPilot side information.
+
+Some example settings and parameters are shown below, to create a forward and downward-facing rangefinder. Note that only sensor settings are present, which can be easily inserted inplace of the ``Sensors`` element in the Lidar example above.
+
+::
+
+    "Sensors": {
+        "Imu": {
+          "SensorType": 2,
+          "Enabled": true
+        },
+        "Gps": {
+          "SensorType": 3,
+          "Enabled": true
+        },
+        "Distance1": {
+            "SensorType": 5,
+            "Enabled": true,
+            "DrawDebugPoints": true,
+            "Yaw": 0, "Pitch": -90, "Roll": 0,
+            "ExternalController": true
+        },
+        "Distance2": {
+            "SensorType": 5,
+            "Enabled": true,
+            "DrawDebugPoints": true,
+            "ExternalController": true
+        }
+      }
+
+Details on the settings fields are present in the `AirSim Sensor page <https://github.com/microsoft/AirSim/blob/master/docs/sensors.md#distance-sensor>`__. ``DrawDebugPoints`` is set to ``true`` here since it can help in figuring out problems in orientation. Set ``ExternalController`` to ``false`` to disable sending the particular sensor data to AP while still having the sensor present. This can be useful in cases where you want to use your own avoidance system separate from the available ones, this setting is available for Lidars and Rangefinders.
+
+To enable Rangefinder, ``RNGFNDx_TYPE`` should be set to 100 (SITL). Parameters to enable both Rangefinders -
+
+::
+
+    # First Rangefinder (Distance Sensor in AirSim), facing down
+    RNGFND1_TYPE 100
+    RNGFND1_MIN_CM 0
+    RNGFND1_MAX_CM 4000
+    RNGFND1_ORIENT 25
+
+    # Second one, facing forward
+    RNGFND2_TYPE 100
+    RNGFND2_MIN_CM 0
+    RNGFND2_MAX_CM 4000
+    RNGFND2_ORIENT 0
+
+Rangefinders can be used for Obstacle Avoidance, precise altitude measurement. Currently ArduPilot supports upto 10 rangefinders.
+
+.. _sitl-with-airsim-manual-rc:
+
 Manual Flying using RC
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -299,6 +373,8 @@ Just plug the device in the computer and it should work. See `AirSim's Remote Co
 .. note::
 
     This feature hasn't been tested properly as of now so you might need to modify the Joystick file as mentioned in the page or set some RC parameters, especially if using a different controller.
+
+.. _sitl-with-airsim-multi-vehicle:
 
 Multi-Vehicle Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -365,6 +441,8 @@ For increasing the number of simulated vehicles, just modify the ``NCOPTERS`` va
 
     The difference of 10 between the ports is important since the script is launching the vehicles using the ``instance`` option which increases the ports from ArduPilot's side by 10. For using different ports, modify the script as required following the instructions at the end of the page for specifying the ports.
 
+.. _sitl-with-airsim-ros-multi-vehicle:
+
 ROS with Multi-Vehicle Simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -387,6 +465,7 @@ Separate MAVProxy instance can be launched for each drone by connecting to the T
 
 The ``multi_vehicle.sh`` script doesn't enable the Follow Mode, but if this is also needed and if all the vehicles are to be displayed on the same GCS, then multicast and the Follow parameters as done in the ``follow-copter.sh`` script can be added.
 
+.. _sitl-with-airsim-custom-env:
 
 Custom Environment
 ++++++++++++++++++
@@ -410,21 +489,24 @@ When Unreal Engine prompts for opening or creating project, select Browse and se
 
     You'll have to delete the extra ``Player Start`` objects and leave one which has to be moved to near the ground. See this excellent video by one of the AirSim developers - `Unreal AirSim Setup <https://youtu.be/1oY8Qu5maQQ>`__, specifically at 5:00 where it's demonstrated how to delete the objects and to move the position.
 
+.. _sitl-with-airsim-apis:
+
 Using AirSim APIs
 +++++++++++++++++
 
 `AirSim's APIs document <https://github.com/microsoft/AirSim/blob/master/docs/apis.md>`__ explains the different APIs available and their usage.
 
-Currently, ArduCopter vehicle doesn't support controlling the drone through the AirSim APIs, however any method of controlling the movement which connects directly to ArduPilot rather than using AirSim’s API work, examples include DroneKit & ROS with Mavros
+Currently, ArduPilot vehicles don't support controlling the movement through the AirSim APIs, however any method of controlling the movement which connects directly to ArduPilot rather than using AirSim’s API work, examples include DroneKit & ROS with Mavros.
 
-The `Image APIs <https://github.com/microsoft/AirSim/blob/master/docs/image_apis.md>`__ have been tested to work with Copter, for some ready-to-run sample codes, see the files in ``PythonClient/multirotor`` such as ``opencv_show.py``.
+The `Image APIs <https://github.com/microsoft/AirSim/blob/master/docs/image_apis.md>`__ have been tested to work with Copter, for some ready-to-run sample codes, see the files in ``PythonClient/multirotor`` such as ``opencv_show.py``. Also, any APIs which are are used to fetch information about the environment, and interact with it, or even collect sensor information will work.
 
-A ROS wrapper has also been added. See `airsim_ros_pkgs <https://github.com/microsoft/AirSim/tree/master/ros/src/airsim_ros_pkgs>`__ for the ROS API, and `airsim_tutorial_pkgs <https://github.com/microsoft/AirSim/tree/master/ros/src/airsim_tutorial_pkgs>`__ for tutorials.
+A ROS wrapper has also been added. See `airsim_ros_pkgs <https://github.com/microsoft/AirSim/blob/master/docs/airsim_ros_pkgs.md>`__ for the ROS API, and `airsim_tutorial_pkgs <https://github.com/microsoft/AirSim/blob/master/docs/airsim_tutorial_pkgs.md>`__ for tutorials. Note that limitations of controlling vehicle movement exist here as well.
 
 .. note::
 
     Not all the APIs have been tested with Copter, if you find things that don't work or would like to have them supported, please let us know
 
+.. _sitl-with-airsim-separate-machines:
 
 Run on different machines
 +++++++++++++++++++++++++
@@ -447,6 +529,7 @@ An example-
 
     If using Windows, you might need to disable Windows Firewall to receive messages
 
+.. _sitl-with-airsim-different-ports:
 
 Using different ports
 ^^^^^^^^^^^^^^^^^^^^^
@@ -463,6 +546,8 @@ Similar to changing the IP address as mentioned above, use ``-A`` to pass the ar
 ::
 
     sim_vehicle.py -v ArduCopter -f airsim-copter --console --map -A "--sim-port-in=9003 --sim-port-out=9002"
+
+.. _sitl-with-airsim-dev-workflow:
 
 Development Workflow
 ++++++++++++++++++++
