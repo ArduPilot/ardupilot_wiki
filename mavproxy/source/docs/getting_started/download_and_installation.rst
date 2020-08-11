@@ -25,12 +25,6 @@ also be called from the commandline via mavproxy.exe
     Any references to "mavproxy.py" in this documentation should be
     replaced by "mavproxy.exe" on the Windows commandline.
 
-.. note::
-
-    Please note that the "missionedit" module does not currently run on the
-    Windows package of MAVProxy. This is being investigated and will
-    hopefully be fixed soon. See https://github.com/ArduPilot/MAVProxy/issues/129 for more details.
-
 Alternatively, Windows 10 users can use the Windows Subsystem for Linux (WSL) to run MAVProxy from a Linux environment
 within Windows. It generally provides better stability than the native Windows installer above.
 
