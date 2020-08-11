@@ -16,7 +16,7 @@ and :ref:`ACRO_PITCH_RATE <ACRO_PITCH_RATE>`.
 These default to 180 degrees/second, and control how responsive your
 plane will be about each axis.
 
-When flying in ACRO the aircraft will try to hold it's existing attitude
+When flying in ACRO the aircraft will try to hold its existing attitude
 if you have no stick input. So if you roll the plane to a 30 degree bank
 angle with 10 degrees pitch and then let go of the sticks, the plane
 should hold that attitude. This applies upside down as well, so if you
@@ -34,7 +34,7 @@ The plane will apply elevator correction to try to hold your pitch while
 rolling, including applying inverse elevator while inverted.
 
 In the current implementation the controller won't use rudder while the
-plane is on it's side to hold pitch, which means horizontal rolls won't
+plane is on its side to hold pitch, which means horizontal rolls won't
 be as smooth as a good manual pilot, but that should be fixed in a
 future release. This also means that it won't hold knife-edge flight.
 

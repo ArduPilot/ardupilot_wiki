@@ -8,7 +8,7 @@ accelcal
 ========
 
 Initiates the accelerometer calibration routines. This is the "place the
-UAV on it's left side..." routine.
+UAV on its left side..." routine.
 
 accelcalsimple
 ==============

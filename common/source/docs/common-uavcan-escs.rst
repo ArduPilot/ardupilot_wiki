@@ -45,7 +45,7 @@ One ESC (it does not matter which) should be connected to the flight controller'
 CAN port using a 4-pin DF13 to 4-pin UAVCAN adapter cable. Each
 subsequent ESC should be connected to the previous using a 4-pin
 UAVCAN cable.  The final ESC should have a CAN bus terminator plugged
-into one of it's 4-pin UAVCAN ports.
+into one of its 4-pin UAVCAN ports.
 
 The FTDI Cable connection is only required for the one-time set-up
 discussed below.
@@ -56,7 +56,7 @@ ESC setup using CLI
 ===================
 
 Each ESC must go through a one-time manual setup using an `FTDI cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__
-to define it's UAVCAN Node Id and motor number.  In future versions of
+to define its UAVCAN Node Id and motor number.  In future versions of
 ArduPilot this will be replaced with a setup procedure using the mission
 planner (and other GCSs).
 

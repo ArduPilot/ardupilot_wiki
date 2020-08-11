@@ -24,7 +24,7 @@ Overview
    frame" and "earth frame" is most obvious when the vehicle is leaned
    over. For example when pitched forward at 45 degrees, when left yaw
    is applied if using an earth frame controller (i.e. Sport mode) the
-   copter will maintain it's pitch and roll angles as it's heading
+   copter will maintain its pitch and roll angles as its heading
    changes. With a body frame controller like Acro it will rotate about
    the vehicle's vertical axis meaning the pitch angle will become the
    roll angle and the roll angle will become the pitch angle.

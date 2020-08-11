@@ -115,7 +115,7 @@ Within the serial driver's `backend code <https://github.com/ArduPilot/ardupilot
 
 Each time the driver's back-end update() method is called it calls the get_reading method which checks if new characters have arrived from the sensor and then decodes them.
 
-As mentioned above, because the serial protocol implements it's own buffering, the processing of any data (see get_reading method) from the sensor is run here in the main thread.
+As mentioned above, because the serial protocol implements its own buffering, the processing of any data (see get_reading method) from the sensor is run here in the main thread.
 I.e. there is no "register_periodic_callback" like you will see in I2C and SPI drivers.
 
 .. image:: ../images/code-overview-sensor-driver3.png
@@ -129,7 +129,7 @@ In this case, the front-end gets the I2C bus and passes it to the back-end durin
 
 .. image:: ../images/code-overview-sensor-driver5.png
 
-The back-end's init method then registers it's "timer" method to be called at 20hz.  Within the timer method (not shown) the get_reading() method is called which reads bytes from the sensor and converts the distance to centimeters.
+The back-end's init method then registers its "timer" method to be called at 20hz.  Within the timer method (not shown) the get_reading() method is called which reads bytes from the sensor and converts the distance to centimeters.
 
 SPI Back-End Example
 ====================

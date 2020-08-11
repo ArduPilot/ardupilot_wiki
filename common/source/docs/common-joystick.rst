@@ -148,7 +148,7 @@ no failover to regular transmitter):
    by checking "ch3in" is very high (around 1900 usually)
 #. On the Joystick screen push the **Disable** button and check the
    "ch3in" has dropped to a mid value (around 1500)
-#. The vehicle should remain in it's current flight mode (Stabilize) but
+#. The vehicle should remain in its current flight mode (Stabilize) but
    controls have been returned to the transmitter.  The pilot's inputs
    should be reflected in the "ch1in" ~ "ch8in" values.  Switch the
    vehicle to AltHold mode by moving the flight mode switch.

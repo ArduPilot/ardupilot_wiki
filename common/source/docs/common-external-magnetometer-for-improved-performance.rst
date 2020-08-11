@@ -37,7 +37,7 @@ For the Pixhawk use the :ref:`3DR combination GPS / Magnetometer module <common-
    wires together where possible.
 #. It is also important to keep the magnetometer distanced from magnetic
    metallic objects (use nylon or non magnetic stainless screws and
-   hardware in it's vicinity and use aluminum or nylon standoffs.).
+   hardware in its vicinity and use aluminum or nylon standoffs.).
 
 **Notes:**
 
@@ -55,7 +55,7 @@ For the Pixhawk use the :ref:`3DR combination GPS / Magnetometer module <common-
 -  If the Autopilot board is used in an alternate orientation
    (or upside down), the (:ref:`COMPASS_ORIENT<COMPASS_ORIENT>` ) parameter will need to also
    be adjusted to accommodate the Autopilot boards orientation
-   as well as it's own. (They are additive).
+   as well as its own. (They are additive).
 -  It can be confusing, but all orientations in 45 degree increments and
    even upside down can be accommodated.
 

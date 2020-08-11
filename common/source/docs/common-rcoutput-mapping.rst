@@ -203,7 +203,7 @@ planes.
 Flap
 ++++
 
-When a channel is set as a flap it's value comes from the ``FLAP_IN_CHANNEL`` . The reason you
+When a channel is set as a flap its value comes from the ``FLAP_IN_CHANNEL`` . The reason you
 may want to use this instead of a RCPassThru is that you can setup
 multiple flap channels with different trims and ranges, and you may want
 to take advantage of the :ref:`FLAP_SLEWRATE<FLAP_SLEWRATE>` to limit the speed of flap

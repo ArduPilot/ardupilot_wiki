@@ -145,7 +145,7 @@ Controlling the flare
 
 The final stage of the landing is called the "flare". During the flare
 the aircraft tries to retain a course along the line between the last
-waypoint and the landing waypoint, and it controls it's height solely
+waypoint and the landing waypoint, and it controls its height solely
 using a target descent rate. Once the flare is started the throttle is
 "disabled" - set to some value between :ref:`THR_MIN <THR_MIN>` and
 zero.
@@ -424,7 +424,7 @@ Hardware configuration
 
    Remove propeller while configuring ESCs and thrust parameters
 
-Configure your ESC for reverse thrust by changing it's neutral point.
+Configure your ESC for reverse thrust by changing its neutral point.
 Many ESC require custom firmware to accomplish this. Search Google or your ESC's mfgr for instructions on how to configure your particular ESC.
 
 Set  Minimum PWM to 1000, mid to 1500, and maximum to 2000, corresponding to maximum reverse thrust,idle, and maximum positive thrust from the ESC/Motor.

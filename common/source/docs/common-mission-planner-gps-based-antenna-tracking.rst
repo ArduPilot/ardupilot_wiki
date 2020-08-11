@@ -283,7 +283,7 @@ power to your Video Rx.
 connected).
 
 8) Use a bunch of zip-ties to secure and bundle all the wires. This is
-important. If you do a bad job here your AT will bind while it's tracking
+important. If you do a bad job here your AT will bind while its tracking
 and down goes aircraft.
 
 9) add VELCRO AND ZIP-TIES to hold everything together

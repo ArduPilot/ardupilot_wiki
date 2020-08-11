@@ -7,7 +7,7 @@ Using SITL with AirSim
 .. youtube:: -WfTr1-OBGQ
    :width: 100%
 
-`AirSim <https://github.com/microsoft/AirSim>`__ is a simulator for drones, cars and more, built on Unreal Engine (they also have experimental support for Unity, but right now it's hasn't been implemented with ArduPilot)
+`AirSim <https://github.com/microsoft/AirSim>`__ is a simulator for drones, cars and more, built on Unreal Engine (they also have experimental support for Unity, but right now it hasn't been implemented with ArduPilot)
 
 It is open-source, cross-platform and provides excellent physically and visually realistic simulations. It has been developed to become a platform for AI research to experiment with deep learning, computer vision and reinforcement learning algorithms for autonomous vehicles.
 
@@ -124,7 +124,7 @@ Make sure that you have :ref:`setup ArduPilot SITL <dev:building-the-code>`, com
     If you're using Windows Subsystem for Linux 2 to run ArduPilot and AirSim under Windows, please see https://discuss.ardupilot.org/t/gsoc-2019-airsim-simulator-support-for-ardupilot-sitl-part-ii/46395/5 on how to connect them.
 
 
-`AirSim's settings.json file <https://github.com/microsoft/AirSim/blob/master/docs/settings.md>`__ specifies the vehicle and it's various properties. See the page for the options available.
+`AirSim's settings.json file <https://github.com/microsoft/AirSim/blob/master/docs/settings.md>`__ specifies the vehicle and its various properties. See the page for the options available.
 
 It's stored in at the following places- Windows: ``Documents\AirSim``, Linux: ``~/Documents/AirSim``
 
@@ -223,12 +223,12 @@ First launch AirSim, after that launch the ArduPilot SITL using
 
 The other features, etc. described in this page have settings, commands and files specific for Copter, but can be used for Rover as well. Certain files such as scripts and ``settings.json`` will need to be modified for Rover, separate settings for Rover have not been added so as to keep the page managable and navigatable.
 
-You might need to tune the vehicle for proper usage, the param files for AirSim vehicles in `Tools/autotest/default_params <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/default_params>`__ can be modified directly, or you can create a new param file and pass it's location to SITL using ``--add-param-file`` option in ``sim_vehicle.py``.
+You might need to tune the vehicle for proper usage, the param files for AirSim vehicles in `Tools/autotest/default_params <https://github.com/ArduPilot/ardupilot/tree/master/Tools/autotest/default_params>`__ can be modified directly, or you can create a new param file and pass its location to SITL using ``--add-param-file`` option in ``sim_vehicle.py``.
 
 Using Lidar
 ^^^^^^^^^^^
 
-See `Lidar Settings <https://github.com/Microsoft/AirSim/blob/master/docs/lidar.md>`__ for info on Lidar and it's properties in AirSim.
+See `Lidar Settings <https://github.com/Microsoft/AirSim/blob/master/docs/lidar.md>`__ for info on Lidar and its properties in AirSim.
 
 Current `settings.json` file for launching ArduCopter with Lidar
 

@@ -13,7 +13,7 @@ antenna tracker. Below are the details of this set-up.
 Setting the AHRS orientation
 ============================
 
-If the flight controller board could not be mounted so that it's forward
+If the flight controller board could not be mounted so that its forward
 direction aligned with the antenna (as mentioned on the :ref:`Assembling a frame page <frame-assembly>`) the AHRS_ORIENTATION parameter should
 be set from the Mission Planner's Config/Tuning >> Advanced Params
 screen.
@@ -116,7 +116,7 @@ do this is to:
 -  Put the slider all the way to the left (if the Reverse checkbox is
    unchecked) or right (if the Reverse checkbox is checked) and push the
    Test button
--  Rotate the tracker so that it's heading (on the MP's Flight Data
+-  Rotate the tracker so that its heading (on the MP's Flight Data
    screen) shows close to "0" (i.e. North)
 -  Return to the extended tuning page, push the slider all the way to
    the other extreme and push Test

@@ -123,7 +123,7 @@ Natural and Artificial Magnetic Anomalies Warning
 .. note::
 
    The following information has not been objectively tested to
-   determine it's impact on a vehicle's compass accuracy in flight.
+   determine its impact on a vehicle's compass accuracy in flight.
 
 #. Many things can distort the earth's magnetic field in the area you
    are flying:

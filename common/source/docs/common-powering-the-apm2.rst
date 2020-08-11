@@ -60,7 +60,7 @@ All of the components on the board take power from various points on
 these rails, so it is necessary for both "sides" to be receiving +5V
 (within the specs below) for the board to function.
 
-These positive-rails can be joined together by placing JP1 in it's
+These positive-rails can be joined together by placing JP1 in its
 position on the board. This connects all the positive-rails ands
 provides power to both sides of the board, so that low-level power can
 be distributed to peripheral sensors and devices: 3DR Radios, sonar, RC
@@ -86,7 +86,7 @@ adequate voltage-regulator to provide power directly to the Output
 power-rails, all servo power leads will attach to these same rails (the
 signal wires can connect on the Analog "S" pins in the case of a camera
 gimbal). Since JP1 is removed in this scenario, the other "side" of the
-board will need power provided to it's power-rails directly.
+board will need power provided to its power-rails directly.
 
 Alternative ways to power your board
 ====================================
@@ -404,7 +404,7 @@ margin. However, if servos or other power consuming devices are being
 driven by the same power source you must consider the power requirements
 for those devices as well and provide plenty of margin to prevent
 disastrous "brown-outs". For instance, a single digital servo can easily
-draw 1-5 amps depending on it's size and performance. (Note: ESCs do not
+draw 1-5 amps depending on its size and performance. (Note: ESCs do not
 consume power from the APM) If you experience spurious resets or other
 odd behavior it is most likely due to noisy or insufficient power to the
 APM. As with all logic boards, electrical noise from the motors, servos,

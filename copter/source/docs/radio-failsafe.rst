@@ -48,7 +48,7 @@ By default, most newly purchased receivers will simply not output pulses if cont
 
 Receiver configuration for low-throttle method
 ----------------------------------------------
-The **"Low-Throttle" method** pulls the throttle channel (normally channel 3) to a value below the bottom of it's normal range (normally below 1000us).  This method is used by Futaba systems and many older systems.  Below is the setup method for a Futaba T7C Transmitter with R617FS or TFR4-B receiver which uses the "low throttle" method.
+The **"Low-Throttle" method** pulls the throttle channel (normally channel 3) to a value below the bottom of its normal range (normally below 1000us).  This method is used by Futaba systems and many older systems.  Below is the setup method for a Futaba T7C Transmitter with R617FS or TFR4-B receiver which uses the "low throttle" method.
 
 ..  youtube:: qf8YinLKQww
     :width: 100%
@@ -113,7 +113,7 @@ channel drops with loss of radio contact**
 #. Ensure your RC transmitter is on and connected with the throttle all
    the way down and flight mode set to Stabilize
 #. The throttle (channel 3) PWM value should be approximately as in
-   first illustration below.  It's value may be higher or lower but it
+   first illustration below.  Its value may be higher or lower but it
    should definitely be at least 10 higher than the value held in the FS
    PWM field
 #. Turn the transmitter off and the throttle PWM value should drop to be

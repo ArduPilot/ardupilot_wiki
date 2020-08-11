@@ -10,7 +10,7 @@ This is an improved antenna tracker, where the APM is mounted on an
 antenna tracker (with a GPS module) which in turn is connected to the
 ground station. Using the positions of the APM on the UAV and the APM on
 the antenna, this module will send commands to the antenna APM to alter
-it's azimuth/elevation (via servos on the APM) to maintain tracking with
+its azimuth/elevation (via servos on the APM) to maintain tracking with
 the UAV.
 
 Use ``tracker set port <portname.``` and ``tracker set baudrate <n>``` to 

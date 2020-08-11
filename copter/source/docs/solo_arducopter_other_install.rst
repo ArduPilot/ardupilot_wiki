@@ -13,7 +13,7 @@ These instructions use `WinSCP <https://winscp.net/eng/download.php>`_ for movin
  .. image:: ../images/solo_winscp_settings.jpg
  .. image:: ../images/solo_winscp_directories.jpg
 
-These instructions use :ref:`The Mission Planner <planner:install-mission-planner>` ground station application for Windows. The necessary settings for Mission Planner are pictured below. They are in the *Config/Tuning > Planner* section. You need the *layout drop down* set for advanced and the *connection drop* down set for UDP. To connect to the Solo, your PC must be connected to the Solo's WiFi. To connect with Mission Planner, press the connect button in upper right once you're ready. Mission Planner will connect to the Solo's Pixhawk and download all it's parameters. Once connected, you will get many more options in config/tuning.
+These instructions use :ref:`The Mission Planner <planner:install-mission-planner>` ground station application for Windows. The necessary settings for Mission Planner are pictured below. They are in the *Config/Tuning > Planner* section. You need the *layout drop down* set for advanced and the *connection drop* down set for UDP. To connect to the Solo, your PC must be connected to the Solo's WiFi. To connect with Mission Planner, press the connect button in upper right once you're ready. Mission Planner will connect to the Solo's Pixhawk and download all its parameters. Once connected, you will get many more options in config/tuning.
 
  .. image:: ../images/solo_mp_settings.jpg
 
@@ -58,7 +58,7 @@ These instructions use :ref:`The Mission Planner <planner:install-mission-planne
 
         .. note:: If the Solo doesn't seem to complete the firmware installations after about 5 minutes, power off the Solo and power it back on.  A few people have experienced this. It took a few power cycles to get it go through. It is unknown why this happens.  But in those cases, power cycling 1-4 times got it to go.
 
-**10) Reset parameters:** Connect with Mission Planner as described in the beginning. Go to Config/Tuning > Full Parameter List. Press the *Reset To Defaults* button and acknowledge any prompts.  The Pixhawk will reboot.  Shortly after, the controller will reconnect. You may need to reconnect Mission Planner if it does not reconnect on it's own.
+**10) Reset parameters:** Connect with Mission Planner as described in the beginning. Go to Config/Tuning > Full Parameter List. Press the *Reset To Defaults* button and acknowledge any prompts.  The Pixhawk will reboot.  Shortly after, the controller will reconnect. You may need to reconnect Mission Planner if it does not reconnect on its own.
 
         .. image:: ../images/solo_mp_parameters.jpg
 

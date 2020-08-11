@@ -91,7 +91,7 @@ Step #2 - Start the VM for the first time
 Step #3 - Setting up shared partition with Windows & Ubuntu Virtual Machine
 ===========================================================================
 
-1. Ensure the VM is powered down by select it's name, then select the
+1. Ensure the VM is powered down by selecting its name, then select the
 drop-down beside the green play button and select "Power Off" if it's
 not greyed
 

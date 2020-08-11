@@ -31,9 +31,9 @@ Copter Common Problems
    values are incorrect.  See :ref:`common-tuning` section for some hints as to
    how to adjust these gains.
 -  copter wobbles when descending quickly.  This is caused by the copter
-   falling through it's own props wash and is nearly impossible to  tune
+   falling through its own prop wash and is nearly impossible to  tune
    out although raising the Rate Roll/Pitch P values may help.
--  copter yaw right or left 15degrees on take-off.  Some motors may not
+-  copter yaws right or left 15degrees on take-off.  Some motors may not
    be straight or the :ref:`ESCs have not been calibrated <esc-calibration>`.
 -  copter always tends to fly in one direction even in a windless
    environment.  Try :ref:`SaveTrim or AutoTrim <autotrim>` to level the

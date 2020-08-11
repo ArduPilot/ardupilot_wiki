@@ -11,7 +11,7 @@ Following" while in Loiter or Alt Hold modes.  In these modes, the
 copter will attempt to maintain a constant distance from the ground. 
 The sonar is also used during
 :ref:`LAND <land-mode>` mode.  The copter
-will slow it's descent to 50cm/s (configurable with LAND_SPEED
+will slow its descent to 50cm/s (configurable with LAND_SPEED
 parameter) when the sonar detects something below the vehicle.
 
 .. image:: ../images/XLMaxsonarEZ4.jpg
@@ -135,7 +135,7 @@ Tuning the gain
 If when flying you find that your copter bobs up and down it is possible
 that the default SONAR_GAIN is too high for your copter.  Go to the
 mission planner's Config/Tuning > Full Parameter List and reduce the
-SONAR_GAIN parameter from it's default of 0.2 to 0.1 or even 0.05 and
+SONAR_GAIN parameter from its default of 0.2 to 0.1 or even 0.05 and
 press "Write Params".
 
 Sonar Maximum Altitude
@@ -146,7 +146,7 @@ Sonar Maximum Altitude
 -  Sonar Maximum Altitude is calculated as 60 percent of the factory
    specified maximum Sonar range for the Sonar type selected.
 -  Sonar is used for determining altitude only when the Sonar itself is
-   detecting the ground and is below it's Sonar Maximum Altitude.
+   detecting the ground and is below its Sonar Maximum Altitude.
 
    -  XL-EZ4 or XL-EZ0 have a Maximum range of 7.65 meters and a Sonar
       Maximum Altitude of 4.59 meters.

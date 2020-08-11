@@ -81,7 +81,7 @@ to set the following parameters to enable support for FrSky S.PORT.
   - :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` 4 or 10
   - :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` 7
 
-.. note:: FrSky Telemetry is supported on all UARTs, UART6 TX is suggested as it's RX input is already being used for RC input and avoids consuming another UART.
+.. note:: FrSky Telemetry is supported on all UARTs, UART6 TX is suggested as its RX input is already being used for RC input and avoids consuming another UART.
 
 
 OSD Support

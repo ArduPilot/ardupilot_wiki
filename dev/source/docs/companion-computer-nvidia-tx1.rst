@@ -13,7 +13,7 @@ Connecting the Pixhawk and TX1
 
 Connect the Pixhawk's TELEM2 port to the J120's UART2 port's Ground, TX and RX pins as shown in the image above.
 
-The Pixhawk and TX1 should be powered separately (the J120/TX1 through it's 12V power input port, the Pixhawk through it's POWER port).  They should be powered on at about the same time or the TX1 powered on first to avoid the Pixhawk interrupting the TX1's bootloader.
+The Pixhawk and TX1 should be powered separately (the J120/TX1 through its 12V power input port, the Pixhawk through its POWER port).  They should be powered on at about the same time or the TX1 powered on first to avoid the Pixhawk interrupting the TX1's bootloader.
 
 Setup the Pixhawk
 =================

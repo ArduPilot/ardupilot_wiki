@@ -78,7 +78,7 @@ requires much tuning.
 
 Similar to roll and pitch if either Stabilize Yaw P or Rate Yaw P is too
 high the copter's heading will oscillate. If they are too low the copter
-may be unable to maintain it's heading.
+may be unable to maintain its heading.
 
 As mentioned on the :ref:`Stabilize mode's tuning section <stabilize-mode_tuning>`,
 the ACRO_YAW_P parameter controls how quickly copter rotates based on
@@ -95,7 +95,7 @@ the screen shot above.
 The Altitude Hold P is used to convert the altitude error (the
 difference between the desired altitude and the actual altitude) to a
 desired climb or descent rate.  A higher rate will make it more
-aggressively attempt to maintain it's altitude but if set too high leads
+aggressively attempt to maintain its altitude but if set too high leads
 to a jerky throttle response.
 
 The Throttle Rate (which normally requires no tuning) converts the

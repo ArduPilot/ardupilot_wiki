@@ -76,7 +76,7 @@ Assembly
 #. **Mount the GPS facing up with an unobstructed "view" of the sky.**
 
    #. Connect the GPS cable to the GPS connector on the PX4FMU board.
-   #. The GPS must be positioned so that it's cable will connect without
+   #. The GPS must be positioned so that its cable will connect without
       strain to the PX4FMU's GPS connector.
    #. The GPS can be mounted on a short riser to give it the widest
       satellite access.

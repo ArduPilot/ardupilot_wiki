@@ -49,7 +49,7 @@ We greatly appreciate those companies and individuals who incorporate this softw
 
 To both individual developers and companies we also ask that when making
 derivative works, the original credits listing all the individuals that
-contributed to getting the software to it's current form are left in
+contributed to getting the software to its current form are left in
 place.
 
 Why did we pick this license over others?

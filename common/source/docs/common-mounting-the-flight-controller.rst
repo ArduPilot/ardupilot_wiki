@@ -51,7 +51,7 @@ possible orientations can be seen and set through the Mission Planner
 
 For Roll values, positive means roll right (i.e. "Roll90" means board is
 rolled right 90 degrees so the white arrow still points forward but the
-board is standing on it's right edge).
+board is standing on its right edge).
 
 For Pitch values, positive numbers indicate pitch back (i.e. "Pitch90"
 means the board's nose is pitched up 90 degrees so the arrow points

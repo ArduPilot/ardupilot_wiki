@@ -20,7 +20,7 @@ Mounting the RPLidar and Pixhawk
 .. image:: ../images/ros-pixhawk-rplidara2-orientation.png
     :target: ../_images/ros-pixhawk-rplidara2-orientation.png
 
-The RPLidar shoulid be oriented so that it's USB cable wire is pointing forward in the same direction as the arrow on the flight controller.
+The RPLidar shoulid be oriented so that its USB cable wire is pointing forward in the same direction as the arrow on the flight controller.
 
 The USB cable should be plugged into a USB port on the companion computer running ROS.
 

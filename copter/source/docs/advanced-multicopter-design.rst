@@ -75,7 +75,7 @@ There are several popular frame layouts for MultiCopters
          (provides better camera exposure between motors among other
          things).
       -  I recommend the standard X frame design because it is strong
-         and simple and it's natural symmetry balances flying forces
+         and simple and its natural symmetry balances flying forces
          better.
 
    -  A humming bird sized `Estes Proto X <http://www.estesrockets.com/helis-quads/quadcopters/004606-proto-x>`__
@@ -116,7 +116,7 @@ There are several popular frame layouts for MultiCopters
 
    -  Since they tend to a single ducted body for either the one or two
       motor/propeller units they tend to be self protected indoors.
-   -  The coax copter which relies on variable thrust on each of it's 2
+   -  The coax copter which relies on variable thrust on each of its 2
       props for rotation is functionally simpler than the single copter.
    -  The side profile of the ducted body makes these copters more
       susceptible to winds outdoors requiring more effort to compensate.
@@ -188,7 +188,7 @@ help you pick the best components for your copter.
       -  This has meant an unnecessarily high failure rate and very poor
          survival in wet or dusty conditions.
       -  The cheapest possible Chinese motor is never a good choice for
-         something that literally hangs in the air by it's motor.
+         something that literally hangs in the air by its motor.
 
    -  Some of the best motors have 2 or better 3 easily replaceable
       ABEC-7 bearings, RCTiger-Motor Pro series and KDE for instance.
@@ -316,7 +316,7 @@ Professional Grade Power System for large Quadcopters (28" Propellers)
    excessive and hazardous for most uses and needs.
 -  This combination will work well for a Quadcopter with a total weight
    of up to 24 pounds and can achieve 40 minute flight times.
--  This is a copter designed for very serious uses that demand it's
+-  This is a copter designed for very serious uses that demand its
    heavy lift and long endurance capabilities and is not for amateurs.
 -  Disaster relief, search and rescue, fire spotting, surveillance,
    ecological and geographical survey and mapping are appropriate uses.
@@ -381,7 +381,7 @@ A Hyper Efficient Medium Small Professional Grade Motor For Long Endurance
 -  This is the only motor in this size that can get G/W efficiencies
    over 17 at 50 percent throttle.
 -  If you want to build a 4-8 pound copter for maximum endurance this is the motor to use with a 4 cell LiPo.
--  Because of it's extremely high efficiency in it's hover range it is also a candidate for high efficiency lithium batteries.
+-  Because of its extremely high efficiency in its hover range it is also a candidate for high efficiency lithium batteries.
 -  Panasonic or LG's high power Lithium batteries have about twice the energy density of the LiPos we normally use.
 -  But maximum discharge is only 2C so low current draw is required, the high efficiency of these motors can provide that.
 -  Carbon fiber 14" to 16" propellers will be required.
@@ -600,7 +600,7 @@ it is strong and light and easily manufactured.
    can work with up to 17" propellers.
 
    -  It features folding arms and landing gear.
-   -  It's ability to support pancake motors and 17" props means it can
+   -  Its ability to support pancake motors and 17" props means it can
       provide long flight times.
    -  Some people have said the quality of construction is not as good
       as it could be but for $125.00 it is an amazing bargain.
@@ -695,7 +695,7 @@ Using manufactured Plastic and Fiberglass Components in Your Own Frames.
 -  Although often not reasonable to make yourself some parts can be used
    effectively in your own designs.
 -  There are retrofit kits like the Team Blacksheep FPV subframe for a
-   DJI Flamewheel quadcopter that reuse it's plastic frame arms.
+   DJI Flamewheel quadcopter that reuse its plastic frame arms.
 -  And there are many cases where components from various frames can be
    used to good effect in our own designs.
 -  Clearly it is necessary to research your individual design to assure
@@ -831,7 +831,7 @@ Specific Building Examples and Techinques
       be removed for transport or folding arms could be incorporated.
    -  This frame will be very light and strong and it will allow lots of
       latitude in how it is set up and it will be easy to upgrade.
-   -  It's ability to accept larger props even with an inexpensive power
+   -  Its ability to accept larger props even with an inexpensive power
       system will provide much better than average flight times.
 
    -  The copters capabilities will be according to the power system

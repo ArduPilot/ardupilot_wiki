@@ -105,5 +105,5 @@ waypoint command includes a delay of 1 second or more.  Without a delay
 the waypoint is considered a "fast waypoint" and the copter will begin
 towards the next waypoint once the intermediate target that it is
 chasing has reached the waypoint.  This intermediate target can be 10m
-or more ahead of the copter (it's distance ahead of the copter increases
+or more ahead of the copter (its distance ahead of the copter increases
 with the Speed parameter).

@@ -124,7 +124,7 @@ You can also map individual channels to any output channel by using the specific
 Flap
 ----
 
-When a channel is set as a flap it's value comes from the flap input
+When a channel is set as a flap its value comes from the flap input
 channel (controlled by the ``RCn_OPTION`` = 208 parameter). The reason you
 may want to use this instead of a RCPassThru is that you can setup
 multiple flap channels with different trims and ranges, and you may want
