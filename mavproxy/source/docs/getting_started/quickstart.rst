@@ -4,7 +4,7 @@
 Quickstart
 ==========
 
-In it's simplest form, MAVProxy only needs the address of the USB port
+In its simplest form, MAVProxy only needs the address of the USB port
 or network address to connect to.
 
 Over USB

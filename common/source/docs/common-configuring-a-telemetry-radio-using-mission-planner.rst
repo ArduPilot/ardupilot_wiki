@@ -64,7 +64,7 @@ Other parameters you may choose to update:
    Latency" if using a joystick or an android tablet's virtual joystick
    to manually fly the vehicle. Note that information on the radio
    signal strength (rssi) and error rate is only sent if this parameter
-   is set to it's default, "MAVLink".
+   is set to its default, "MAVLink".
 -  **Tx Power** (default 20) : the transmission power where
    1=1.3milliWats, 2=1.5mW, 5=3.2mW, 8=6.3mW,11=12.5mW, 14=25mW,
    17=50mW, 20=100mW. This should be set to conform with your local
@@ -80,7 +80,7 @@ Other parameters you may choose to update:
    transmit time is not generally high. When you set a duty cycle below
    100% then your available bandwidth will be reduced, so you will find
    it will only work well for telemetry at higher air speeds. A radio
-   can be set to receive only by setting it's Duty Cycle to zero.
+   can be set to receive only by setting its Duty Cycle to zero.
 -  **Max Window** (default 33) : ensure the GCS can send a packet to the
    vehicle ever 33msec. This should be kept as a low number (like 33)
    when the "MAVLink" setting is "Low Latency"

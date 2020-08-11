@@ -241,7 +241,7 @@ Return version information about MAVProxy.
 
 Controls the level of debugging output displayed on the console. Default is 0
 (no debug output). A value of 3 is useful for debugging crashes or errors in
-MAVProxy and it's modules.
+MAVProxy and its modules.
 
 -\\-default-modules
 ===================

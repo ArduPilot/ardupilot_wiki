@@ -254,7 +254,7 @@ Setup and additions
 
    #. An FPV camera may easily be mounted in front of the battery
       between the 2 front tabs.
-   #. If you use FPV keep it's transmitter and antenna well away from
+   #. If you use FPV keep its transmitter and antenna well away from
       the GPS.
 
 #. The Flip has more than adequate power to support a GoPro camera with

@@ -213,7 +213,7 @@ when things go wrong.
 To fly in circle mode take off in LOITER and then move so you are 1m
 from the center of the room, pointing towards the middle of the
 room. Then switch to Circle mode and the vehicle should start
-circling, keeping it's nose pointed at the center of the circle. You
+circling, keeping its nose pointed at the center of the circle. You
 can try pushing up CIRCLE_RATE to higher values (in degrees/second) as
 you get more confident. The video at the top of this page has
 CIRCLE_RATE=150 for a 150 degree/second circle.

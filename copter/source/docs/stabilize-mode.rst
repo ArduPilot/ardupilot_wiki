@@ -30,7 +30,7 @@ Overview
 -  Pilot will need to regularly input roll and pitch commands to keep
    the vehicle in place as it is pushed around by the wind.
 -  Pilot's yaw input controls the rate of change of the heading.  When
-   the pilot releases the yaw stick the vehicle will maintain it's
+   the pilot releases the yaw stick the vehicle will maintain its
    current heading.
 -  Pilot's throttle input controls the average motor speed meaning that
    constant adjustment of the throttle is required to maintain

@@ -14,7 +14,7 @@ The *EPM688* (from NicaDrone.com) is a small (less than 4cm x 4cm x 2cm)
 Electro Permanent Magnet gripper capable of 7kg of force meaning it can
 hold about 1kg of cargo.  The gripping and releasing of the cargo if
 accomplished by delivering a short pulse to an electromagnet which
-reverses it's field.  Objects that it grips onto should be metal or have
+reverses its field.  Objects that it grips onto should be metal or have
 the included `thin steel target square <http://nicadrone.com/index.php?id_product=15&controller=product>`__
 attached to them.
 
@@ -113,7 +113,7 @@ control through the ground station.
     :target: ../_images/EPM_SetupMissionControlMP.png
 
 Connect with the mission planner. Go to the Config/Tuning >> Full
-Parameters List and set the :ref:`SERVO9_FUNCTION<SERVO9_FUNCTION>` (or RC9_FUNCTION) to "0" (it's default value).
+Parameters List and set the :ref:`SERVO9_FUNCTION<SERVO9_FUNCTION>` (or RC9_FUNCTION) to "0" (its default value).
 Note that if the EPM is connected to Pixhawk's AUX OUT 2 then
 :ref:`SERVO10_FUNCTION<SERVO10_FUNCTION>` (or RC10_FUNCTION) should be set instead, etc.
 

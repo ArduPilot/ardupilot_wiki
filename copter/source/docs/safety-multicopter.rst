@@ -221,7 +221,7 @@ MultiCopter Safety
       problem.
    #. A motor could be turning the wrong direction.
    #. Or a wrong direction prop could be installed.
-   #. If it tries to rotate on it's axis or fly off in some direction.
+   #. If it tries to rotate on its axis or fly off in some direction.
    #. The transmitter or RC setup in Mission Planner may be incorrect.
    #. A motor or ESC may not be performing properly.
    #. The wrong props may be on the wrong motors.

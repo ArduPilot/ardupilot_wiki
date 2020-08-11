@@ -12,7 +12,7 @@ top of the tail drive case, or even on the side of the frame (very popular).
 Below is a possible method to mount a full-size autopilot on a smaller sized
 helicopter. The Pixracer is popular on smaller frames that have less mounting options.
 
--  Separate the helicopter's main body from it's landing gear
+-  Separate the helicopter's main body from its landing gear
 -  Attach one carbon fibre plate to the body, the other to the landing
    gear
 -  Drill holes in the upper and lower mounting plates so that the plates

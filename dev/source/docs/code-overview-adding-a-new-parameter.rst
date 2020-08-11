@@ -224,7 +224,7 @@ then it would have been accessible to the main code as well as
 opposed to an existing class like AP_Compass), it should be added to
 the main vehicle's var_info table in the
 `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp>`__
-file (it's order in the var_info table is not important).  Below in red
+file (its order in the var_info table is not important).  Below in red
 where the Compass class appears.
 
 ::

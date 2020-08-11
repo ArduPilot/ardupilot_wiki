@@ -31,7 +31,7 @@ Configuration
 - :ref:`GRIP_TYPE <GRIP_TYPE>` to 1 to enable the servo gripper and reboot the autopilot
 - :ref:`GRIP_GRAB <GRIP_GRAB>` to the pwm value (i.e. 1000 ~ 2000) for the gripper's closed position
 - :ref:`GRIP_RELEASE <GRIP_RELEASE>` to the pwm value for the gripper's open position
-- :ref:`GRIP_NEUTRAL <GRIP_NEUTRAL>` to the pwm value for the gripper's neutral position (often the same as it's closed position)
+- :ref:`GRIP_NEUTRAL <GRIP_NEUTRAL>` to the pwm value for the gripper's neutral position (often the same as its closed position)
 
 Controlling Gripper from the transmitter
 ========================================

@@ -24,7 +24,7 @@ Takeoff
 .. image:: ../../../images/TakeOff.jpg
     :target: ../_images/TakeOff.jpg
 
-The vehicle will climb straight up from it's current location to the
+The vehicle will climb straight up from its current location to the
 altitude specified (in meters). This should be the first command of
 nearly all missions. If the mission is begun while the copter is already
 flying, the vehicle will climb straight up to the specified altitude, if
@@ -157,7 +157,7 @@ Land
 .. image:: ../../../images/MissionList_Land.png
     :target: ../_images/MissionList_Land.png
 
-Vehicle will land at it's current location or at the lat/lon coordinates
+Vehicle will land at its current location or at the lat/lon coordinates
 provided.  This is the mission equivalent of the :ref:`LAND flight mode <land-mode>`.
 
 **Lat, Lon** - the latitude and longitude targets. If left as zero it
@@ -171,11 +171,11 @@ Delay
 
 Support for the Delay command was added in Copter-3.4.
 
-Vehicle will remain at it's current location until the specified number of seconds has passed or the absolute time is reached.
+Vehicle will remain at its current location until the specified number of seconds has passed or the absolute time is reached.
 The first column ("Seconds") holds the number of seconds to delay.  Set to -1 if this field should be ignored.
 The "hour UTC", "minute UTC" and "second UTC" fields can be used to specify an absolute time (`UTC <https://en.wikipedia.org/wiki/Coordinated_Universal_Time>`__).  The example above will cause the vehicle to take-off at 1:30pm UTC.  Note that the hour and/or minute field can also be ignored by setting them to -1.
 
-This is a video made during the development of this feature.  Note in the video CONDITION_DELAY command is used but in it's final version this DELAY command should be used.
+This is a video made during the development of this feature.  Note in the video CONDITION_DELAY command is used but in its final version this DELAY command should be used.
 
 ..  youtube:: 9VK3yjIyCSo
     :width: 100%
@@ -394,7 +394,7 @@ Do-Repeat-Servo
     :target: ../_images/MissionList_DoRepeatServo.png
 
 Repeatedly move a :ref:`servo <common-servo>` back and forth between
-it's mid position and a specified PWM value. In the example above, the
+its mid position and a specified PWM value. In the example above, the
 servo attached to output channel 8 would be moved to PWM 1700, then
 after 4 second, back to mid (default is 1500 which is held in the
 :ref:`RC8_TRIM<RC8_TRIM>` parameter), after another 4 seconds it would be moved to 1700

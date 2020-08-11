@@ -50,7 +50,7 @@ function as a callback argument (bundling up the object context with the
 function pointer).
 
 When a piece of code wants something to happen at less than 1kHz then it
-should maintain it's own "last_called" variable and return immediately
+should maintain its own "last_called" variable and return immediately
 if not enough time has passed. You can use the hal.scheduler->millis()
 and hal.scheduler->micros() functions to get the time since boot in
 milliseconds and microseconds to support this.

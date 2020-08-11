@@ -24,7 +24,7 @@ Messages the gimbal should support
 
    This heart beat will contain the vehicle's system-id and
    component-id.  The gimbal should adopt the same system-id but should
-   use a component-id of MAV_COMP_ID_GIMBAL (i.e. 154) for all it's
+   use a component-id of MAV_COMP_ID_GIMBAL (i.e. 154) for all its
    future messages.  In fact, any unique component-id can be used as
    long as it's not zero nor the component id of the vehicle or any
    other device on the vehicle.
@@ -51,7 +51,7 @@ Messages the gimbal should support
       `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__
       message which contains the value of the parameter specified by the
       "param_id" field (simply an enum, the gimbal can assign whatever
-      enum it wishes to each of it's internal paramters)
+      enum it wishes to each of its internal paramters)
    -  `PARAM_REQUEST_LIST <https://mavlink.io/en/messages/common.html#PARAM_REQUEST_LIST>`__
       - respond to this message by sending a
       `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__

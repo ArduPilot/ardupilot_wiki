@@ -31,7 +31,7 @@ If the measured current exceeds this limit the maximum throttle will be
 reduced to a safe level in 1 to 5 seconds (depending upon how far over
 the limit it is).  Because the limit can be exceeded for short periods
 of time, the limit should be set somewhere between the battery's burst
-limit and it's absolute upper limit.
+limit and its absolute upper limit.
 
 
 Voltage scaling

@@ -191,7 +191,7 @@ When the aircraft is on the ground in a mode where it is doing attitude
 stabilization (such as FBWA mode) the servos often move about a small
 amount, even though the aircraft is not moving.
 
-The reason this happens is the attitude estimation code is doing it's
+The reason this happens is the attitude estimation code is doing its
 best to estimate the attitude of the aircraft, and it is getting a small
 amount of false input. The sources of the false input are:
 

@@ -34,7 +34,7 @@ Overview
 -  Pilot will need to regularly input roll and pitch commands to keep
    the vehicle in place as it is pushed around by the wind.
 -  Pilot's yaw input controls the rate of change of the heading.  When
-   the pilot releases the yaw stick the vehicle will maintain it's
+   the pilot releases the yaw stick the vehicle will maintain its
    current heading.
 -  Pilot's throttle input controls the average motor speed meaning that
    constant adjustment of the throttle is required to maintain
@@ -65,9 +65,9 @@ Common Problems
    values are incorrect.  See Copter Tuning section for some hints as to
    how to adjust the Q_A_xxx parameters.
 -  QuadPlane wobbles when descending quickly.  This is caused by the copter
-   falling through it's own props wash and is nearly impossible to  tune
+   falling through its own prop wash and is nearly impossible to  tune
    out although raising the Rate Roll/Pitch P values may help.
--  QuadPlane yaw right or left 15degrees on take-off.  Some motors may not
+-  QuadPlane yaws right or left 15degrees on take-off.  Some motors may not
    be straight or the escs need calibration :ref:`QuadPlane ESC Calibration <QuadPlane-esc-calibration>`.
 -  QuadPlane does not maintain altitude or does not stay perfectly still in
    the air.  As mentioned above this is a manual flight mode and

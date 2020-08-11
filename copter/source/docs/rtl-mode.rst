@@ -68,7 +68,7 @@ Options (User Adjustable Parameters)
    -  0 = Never change Yaw.
    -  1 = Face Next Waypoint including facing home during RTL.
    -  2 = Face Next Waypoint except for RTL (i.e. during RTL vehicle
-      will remain pointed at it's last heading)
+      will remain pointed at its last heading)
 
 -  :ref:`LAND_SPEED <LAND_SPEED>`:
    The descent speed for the final stage of landing in centimeters per

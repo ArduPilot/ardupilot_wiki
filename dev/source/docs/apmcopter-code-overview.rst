@@ -6,7 +6,7 @@ Code Overview (Copter)
 
 The `code <https://github.com/ArduPilot/ardupilot>`__ is made up
 of `the main Copter code <https://github.com/ArduPilot/ardupilot/tree/master/ArduCopter>`__ which
-resides in it's own directory, and `the libraries <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__ which
+resides in its own directory, and `the libraries <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__ which
 are shared with Plane and Rover.
 
 Below is a highlevel view of the ardupilot architecture.

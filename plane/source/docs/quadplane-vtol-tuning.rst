@@ -49,7 +49,7 @@ Yaw Tuning
 
 The Angle Yaw and Rate Yaw parameters control the yaw response. With QuadPlanes, these often need tuning to get the desired YAW response, since configurations vary widely.
 
-Similar to roll and pitch, if either :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>` or :ref:`Q_A_ANG_YAW_P<Q_A_RAT_YAW_P>` is too high the QuadPlane's heading will oscillate. If they are too low, the QuadPlane may be unable to maintain it's heading.
+Similar to roll and pitch, if either :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>` or :ref:`Q_A_ANG_YAW_P<Q_A_RAT_YAW_P>` is too high the QuadPlane's heading will oscillate. If they are too low, the QuadPlane may be unable to maintain its heading.
 
 The :ref:`Q_A_ANG_YAW_P<Q_A_ANG_YAW_P>` is the gain on the error between the autopilots desired heading and actual heading which is fed into the Rate controller to demand a rotation rate. The :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>` is the gain applied to the difference between demanded rotation rate and actual.
 

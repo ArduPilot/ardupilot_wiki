@@ -6,7 +6,7 @@ Archived: Improving the Capabilities of Your Multicopter
 
 This page describes one of our members (Euan Ramasy's) highly advanced
 photographic quadcopter. It illustrates the incremental improvements he
-has been and is making to better optimize it's performance and
+has been and is making to better optimize its performance and
 usefulness and serves as an excellent example for how to properly
 undertake development and improvement of your own copter for your own
 uses.

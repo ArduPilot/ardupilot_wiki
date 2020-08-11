@@ -10,7 +10,7 @@ QLAND Mode attempts to bring the QuadPlane straight down at the position the veh
 .. note::
 
     QuadPlane will recognize that it has landed if the motors are at
-    minimum but it's climb rate remains between -20cm/s and +20cm/s for one
+    minimum but its climb rate remains between -20cm/s and +20cm/s for one
     second.  It does not use the altitude to decide whether to shut off the
     motors except that the QuadPlane must also be below 10m above the home
     altitude.
@@ -19,7 +19,7 @@ QLAND Mode attempts to bring the QuadPlane straight down at the position the veh
    before settling down and turning the props off, try lowering the
    ``Q_LAND_SPEED`` parameter a bit.
 -  If the vehicle has GPS lock the landing controller will attempt to
-   control it's horizontal position but the pilot can adjust the target
+   control its horizontal position but the pilot can adjust the target
    horizontal position just as in QLOITER mode.
 -  If the vehicle does not have GPS lock the horizontal control will be
    as in QSTABILIZE mode so the pilot can control the roll and pitch lean
@@ -32,7 +32,7 @@ QLAND Mode attempts to bring the QuadPlane straight down at the position the veh
     are close to the ground or landing (and also if any auto landing
     procedure results in bouncing or failure to turn off motors properly
     after landing) you probably have the autopilot situated such that
-    it's barometer (altimeter) is being affected by the pressure created by
+    its barometer (altimeter) is being affected by the pressure created by
     the QuadPlanes prop-wash against the ground.
 
 

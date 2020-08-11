@@ -144,7 +144,7 @@ To connect the radios:
    between the COM port and Connect buttons) to 57600.
 -  Press the **Connect** button and if the two radios connect
    successfully you should be able to lean your vehicle left and right
-   and see it's attitude update on the MP's Flight Data screen's
+   and see its attitude update on the MP's Flight Data screen's
    artificial horizon.
 
 Connecting to an Android tablet

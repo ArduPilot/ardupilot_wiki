@@ -26,10 +26,10 @@ Test leaning the helicopter in Stabilize mode
 -  Pitch the helicopter up (i.e. nose up). The swash plate should lean
    forwards.
 -  Rotate the helicopter quickly clockwise - the tail servo should move
-   as if you had pushed the rudder control left (i.e. it's should try to
+   as if you had pushed the rudder control left (i.e. it should try to
    fight against the rotation)
 -  Rotate the helicopter quickly counter-clockwise - the tail servo
-   should move as if you had pushed the rudder control right (i.e. it's
+   should move as if you had pushed the rudder control right (i.e. it
    should try to fight against the rotation)
 -  Next rotate the helicopter slowly. You should find that in a certain
    direction the rudder stays in the middle.

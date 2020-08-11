@@ -42,7 +42,7 @@ advantage of this set-up is:
 -  the servo can be triggered from the ch7 or ch8 auxiliary switch on
    Copter
 -  if you wish the servo to move to one position, delay for a moment
-   then return to it's original position this can all be accomplished
+   then return to its original position this can all be accomplished
    with a single mission command
 -  the location and attitude of the copter will be recorded to the
    dataflash each time the servo is triggered

@@ -253,7 +253,7 @@ competition, but it certainly adequate for sport flying.
 Many maneuvers have been fully tested, loops, rolls, inverted flight,
 etc.  Caution should be exercised if aggressive 3D type maneuvers are
 attempted, such as tic-tocs, etc.  While the control algorithms are
-fine, it's unproven if the system is able to maintain it's orientation
+fine, it's unproven if the system is able to maintain its orientation
 relative the ground.  In other FBL controllers, if this were to happen,
 the controller would simply turn off the self-leveling function but the
 acrobatic flight can continue as normal.  But with APM:Copter, this
