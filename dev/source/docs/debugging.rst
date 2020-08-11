@@ -78,3 +78,4 @@ This output appears on the console.  For ChibiOS-based boards this is the first-
     Finding the Particular Commit which Introduced a Bug <finding-the-particular-commit-which-introduced-a-bug>
     Debugging with GDB <debugging-with-gdb>
     LTTng Tracing <using-linux-trace-toolkit-ng-lttng-to-trace-ardupilot-in-realtime>
+    Static Analysis <static-analysis>
