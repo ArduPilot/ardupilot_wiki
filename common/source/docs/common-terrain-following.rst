@@ -93,7 +93,7 @@ The ground station is normally responsible for providing the raw terrain data wh
 
 Both MissionPlanner and MAVProxy support the global SRTM database for terrain data.  The ArduPilot SRTM server used by MAVProxy and Mission Planner has 100m grid spacing. Unless the ground control station uses a different server with closer spacing, setting the :ref:`TERRAIN_SPACING <TERRAIN_SPACING>` parameter lower than 100m provides no better resolution, and only consumes more space on the SD card. 
 
-Terrain Data is downloaded any time you save or connect with a loaded mission with these ground stations, or, if flying, the autopilot will request data if its flying into an area not already downloaded, assuming the ground station can provide it. Usually an internet connection is required by the ground station.
+Terrain Data is downloaded any time you save or connect with a loaded mission with these ground stations, or, if flying, the autopilot will request data if it's flying into an area not already downloaded, assuming the ground station can provide it. Usually an internet connection is required by the ground station.
 
 .. warning:: While the autopilot will request the terrain data around waypoints and home location, if it is not connected to a GCS that can supply enroute tiles, the autopilot just interpolates between waypoint's terrain elevation. See below:
 .. image:: ../../../images/terrain-warning.jpg
@@ -108,7 +108,7 @@ It will create tiles for the specified radius around a geographic location. Then
 
 You can also download .zip files for entire continents, or individual tiles from `here <https://terrain.ardupilot.org/data/>`__.
 
-.. warning:: A long standing bug in the downloaded terrain data files, which occasionally caused terrain data to be missing, even though supposedly downloaded, was fixed in Plane 4.0.6, Copter 4.0.4, and Rover 4.1. It will automatically be re-downloaded when connected to a compatible GCS. However, if you are relying on SD terrain data for an area and don't plan on being connected to a GCS when flying over it, or its not part of a mission, you should download the area data using the utility above, or linked tiles data repository and place on your SD card in the Terrain directory.
+.. warning:: A long standing bug in the downloaded terrain data files, which occasionally caused terrain data to be missing, even though supposedly downloaded, was fixed in Plane 4.0.6, Copter 4.0.4, and Rover 4.1. It will automatically be re-downloaded when connected to a compatible GCS. However, if you are relying on SD terrain data for an area and don't plan on being connected to a GCS when flying over it, or it's not part of a mission, you should download the area data using the utility above, or linked tiles data repository and place on your SD card in the Terrain directory.
 
 Terrain Spacing
 ===============

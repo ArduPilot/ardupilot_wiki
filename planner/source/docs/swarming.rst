@@ -81,7 +81,7 @@ with two quadcopters about 20 m apart to test, and work up from there.
    we use guided mode, if you do the quad will just sit at the last
    commanded location.)
 -  The main map interface will show both quads.
--  If you drag the quad around the grid screen, while its active. the
+-  If you drag the quad around the grid screen, while it's active. the
    quad should actually move as well.
 -  Increase the position stream rate in the mp. config>planner>position.
    to say 5, from the default of 3. to reduce the latency

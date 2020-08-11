@@ -201,7 +201,7 @@ ArduPilot tilt-rotor code:
 - once a forward transition is completed then the motors will cover
   any remaining angle at 90 degrees per second.
 
-.. note:: For Binary type tilt servos these rates should be set at the actual measured rate of the servo since its independent of ArudPilot control.
+.. note:: For Binary type tilt servos these rates should be set at the actual measured rate of the servo since it's independent of ArudPilot control.
 
 Vectored Yaw
 ============

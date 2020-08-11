@@ -7,7 +7,7 @@ Overview
 .. image:: ../images/vacutug.jpg
     
   
-The `Vac-U-Tug <http://www.vac-u-boat.com/Vacutug.htm>`__ is an ideal candidate for a first ArduRover Boat project. Its roomy, has comprehensive  build instructions targeted for inexperienced builders, and does not usually require extensive waterproofing of the ArduPilot electronic components. Its definitely not a speed boat, but is a great long duration lake/pond cruiser.
+The `Vac-U-Tug <http://www.vac-u-boat.com/Vacutug.htm>`__ is an ideal candidate for a first ArduRover Boat project. It's roomy, has comprehensive  build instructions targeted for inexperienced builders, and does not usually require extensive waterproofing of the ArduPilot electronic components. It's definitely not a speed boat, but is a great long duration lake/pond cruiser.
 
 Parts List
 ----------
@@ -61,7 +61,7 @@ Setup Steps
 #. Install the firmware
 #. Set :ref:`FRAME_TYPE<FRAME_TYPE>` = 2 for boat.
 #. Connect steering servo to PWM output 1 and ESC to output 3.
-#. Set :ref:`AHRS_ORIENTATIONM<AHRS_ORIENTATION>` orientation (in this build its 6 for USB connector facing forward)
+#. Set :ref:`AHRS_ORIENTATIONM<AHRS_ORIENTATION>` orientation (in this build it's 6 for USB connector facing forward)
 #. Do Accelerometer, Compass, and RC calibrations.
 #. Set control modes. In this build, Manual, HOLD, Loiter, Steering, Acro,and Auto were used.
 #. Set up throttle failsafe and low battery failsafe, if desired. Set desired failsafe action.
