@@ -82,6 +82,8 @@ individual tunable parameters whereas values of 101 or higher
 correspond to sets of related parameters that can be tuned one after
 the other in a flight.
 
+.. note:: Most of the tuneable parameters apply to the VTOL operation of QuadPlanes. Only :ref:`TUNE_PARAM<TUNE_PARAM>` values in the 50-57 range are for fixed wing operation.
+
 Use your ground stations parameter interface to see see the full list
 of tunable parameters and parameter sets available for :ref:`TUNE_PARAM<TUNE_PARAM>` . For
 Plane most of the parameters are associated with tuning the
