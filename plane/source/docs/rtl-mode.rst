@@ -12,7 +12,7 @@ mixing (assuming the RTL was not a result of RC failsafe).
 
 The target altitude for RTL mode is set using the :ref:`ALT_HOLD_RTL <ALT_HOLD_RTL>` parameter in centimeters. When initiated below :ref:`ALT_HOLD_RTL <ALT_HOLD_RTL>`, Plane will immediately climb at maximum allowable rate to reach that altitude, if above, it will descend in a linear manner versus distance to home, reaching that altitude at the home loiter point.
 
-The loiter radius at home is determined by :ref:`RTL_RADIUS<RTL_RADIUS>`, if its non-zero, otherwise :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` is used. Clock-wise or Counter-Clock-wise circling can be set by positive or negative values for the radius.
+The loiter radius at home is determined by :ref:`RTL_RADIUS<RTL_RADIUS>`, if it's non-zero, otherwise :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` is used. Clock-wise or Counter-Clock-wise circling can be set by positive or negative values for the radius.
 
 Additionally, in firmware versions 4.0.6 and later, by setting :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` to a non-zero value, the plane will climb that amount of meters, limited in bank angle by :ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>` degrees until the additional altitude is reached, then begin the above return to home action from that altitude.
 

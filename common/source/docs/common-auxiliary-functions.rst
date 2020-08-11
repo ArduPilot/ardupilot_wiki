@@ -405,7 +405,7 @@ Stops motors immediately
    <td><strong>Motor Interlock</strong></td>
    <td>
 
-Motor Interlock controls the way the heliRSC (motor throttle control) output is generated in Traditional Helicopters and HeliQuads. If > 1200us, it enables the Motor Interlock function, below its is disabled. When <1200us, it is similar to what is sometimes referred to as Throttle Hold in RC Helicopter terminology for Traditional Helicopters and HeliQuads. For Mulit-copters, it is used as a motor stop function when <1200us. (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
+Motor Interlock controls the way the heliRSC (motor throttle control) output is generated in Traditional Helicopters and HeliQuads. If > 1200us, it enables the Motor Interlock function, below it is disabled. When <1200us, it is similar to what is sometimes referred to as Throttle Hold in RC Helicopter terminology for Traditional Helicopters and HeliQuads. For Mulit-copters, it is used as a motor stop function when <1200us. (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
 
 .. raw:: html
 
@@ -467,7 +467,7 @@ indicated by the ch5 flight mode switch.
    <td><strong>ADSB-Avoidance</strong></td>
    <td>
 
-When switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of manned aircraft) is enabled, otherwise its disabled
+When switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of manned aircraft) is enabled, otherwise it's disabled
 
 .. raw:: html
 

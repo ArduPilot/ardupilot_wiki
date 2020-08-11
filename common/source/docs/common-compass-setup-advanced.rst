@@ -59,7 +59,7 @@ Orientation
 
 The :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` must be set correctly for the compass calibration to be successful. In addition,the :ref:`common-accelerometer-calibration` should be completed before the Compass Calibration.
 
-The setting of the orientation of external compasses is no longer required. Its determined automatically during calibration now.
+The setting of the orientation of external compasses is no longer required. It's determined automatically during calibration now.
 
 However, if the need to double-check the orientation of a compass should arise:
 

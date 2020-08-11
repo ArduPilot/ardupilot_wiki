@@ -104,8 +104,8 @@ Python, and extensible via python modules.
 QGroundControl
 --------------
 
-QGroundControl work with MAVLink capable autopilots including ArduPilot.
-Its unique among the GCS offerings as it runs on all platforms desktop and mobile.
+QGroundControl works with MAVLink capable autopilots including ArduPilot.
+It's unique among the GCS offerings as it runs on all platforms desktop and mobile.
 
 -  **Platform**: Windows, Mac OS X, Linux, Android and iOS
 -  **Licence**: `Open Source <http://www.qgroundcontrol.org/license>`__

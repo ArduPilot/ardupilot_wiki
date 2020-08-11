@@ -21,7 +21,7 @@ If Vehicle A or B requires Ground Station Control, an additional Telemetry radio
 .. image:: ../images/Follow2.jpg
    :target: ../_images/Follow2.jpg
 
-In the case of QGroundControl, all that is required is to switch to FOLLOW Mode once its is connected to QGroundControl. It will then follow the computer/phone running QGC.
+In the case of QGroundControl, all that is required is to switch to FOLLOW Mode once it is connected to QGroundControl. It will then follow the computer/phone running QGC.
 
 .. note::
 

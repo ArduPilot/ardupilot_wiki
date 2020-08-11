@@ -92,7 +92,7 @@ After gluing in the motor mount, glue in the center structure. Optionally, add s
 Optional Front Skid
 -------------------
 
-The kit comes with a front wheel. This breaks quickly, so its suggested that it not be used. Either tape the area with re-enforced packing tape or 3D print or fabricate a ply skid as shown below.
+The kit comes with a front wheel. This breaks quickly, so it's suggested that it not be used. Either tape the area with re-enforced packing tape or 3D print or fabricate a ply skid as shown below.
 
 .. image:: ../images/MT-skid.jpg
     :target: ../_images/MT-skid.jpg
@@ -110,7 +110,7 @@ The provides straight pushrods to the Vtail surfaces. However, there is high mis
 Power Train
 ===========
 
-Its important to keep the leads from the autopilot's ESC power terminals short (<4-5inchs)to the ESC. If long leads are unavoidable, you will need to add low-ESR capacitors to the ESC input to prevent possible damage. Some ESCs already have these capacitors.
+It's important to keep the leads from the autopilot's ESC power terminals short (<4-5inchs)to the ESC. If long leads are unavoidable, you will need to add low-ESR capacitors to the ESC input to prevent possible damage. Some ESCs already have these capacitors.
 
 Long leads from the ESC to the motor are acceptable.
 
