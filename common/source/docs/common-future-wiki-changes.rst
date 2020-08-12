@@ -261,6 +261,21 @@ Scripting see :ref:`common-lua-scripts`
    </tbody>
    </table>
 
+RC Options Page
+---------------
+
+Add to table:
+
+=================================       =========
+:ref:`RC_OPTIONS<RC_OPTIONS>` bit       Function
+=================================       =========
+4                                       Log RC raw RC input bytes for serial protocols
+5                                       Require Throttle input at idle position in order to arm
+6                                       Allows arming if the rudder,elevator, or aileron
+                                        stick is not neutral
+7                                       Allow Aux Switches to honor the ``RCx_REVERSED`` parameter
+=================================       =========
+
 LUA Scripting (common-lua-scripts)
 ----------------------------------
 
