@@ -43,7 +43,7 @@ SITL Using the FlightAxis Interface
 
 Using SITL to run the ArduPilot software basically is inserting an autopilot between the simulation controller and the vehicle, just like in real flight. This is done by tying a running SITL simulation  into RealFlight and using its Physics models and Graphics for the simulation. The interface between SITL and RealFlight is called FlightAxis.
 
-When enabled in RealFlight, it exports the vehicle's predicted attitude, velocities, position to SITL, as well as the outputs of the software radio of the vehicle model its using. SITL uses these as RC ans sensor inputs in its sim and outputs servo functions  to RealFlight which it now interprets as the RX channel radio outputs used by the model for its actuator inputs.
+When enabled in RealFlight, it exports the vehicle's predicted attitude, velocities, position to SITL, as well as the outputs of the software radio of the vehicle model its using. SITL uses these as RC and sensor inputs in its sim and outputs servo functions  to RealFlight which it now interprets as the RX channel radio outputs used by the model for its actuator inputs.
 
 This is illustrated below:
 
