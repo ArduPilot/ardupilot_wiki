@@ -24,7 +24,7 @@ Where to Buy
 Connecting to the Autopilot
 -----------------------------------
 
-Connect the VCC, GND, SDA ans SCL lines of the lidar to the I2C port on the autopilot as shown below for the first rangefinder.
+Connect the VCC, GND, SDA and SCL lines of the lidar to the I2C port on the autopilot as shown below for the first rangefinder.
 
 .. image:: ../../../images/vl53l0x-pixhawk.jpg
 
