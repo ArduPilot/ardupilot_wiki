@@ -47,6 +47,7 @@ tuning options for the vehicle.
 [/site]
     Flight Time Recorder <common-flight-time-recorder>
 [site wiki="plane"]
+    Flight Options <flight-options>
     Fly-By-Wire Low Altitude Limit <fly-by-wire-low-altitude-limit>
 [/site]
     FPort Setup <common-FPort-receivers>
