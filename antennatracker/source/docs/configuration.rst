@@ -14,7 +14,7 @@ Setting the AHRS orientation
 ============================
 
 If the flight controller board could not be mounted so that its forward
-direction aligned with the antenna (as mentioned on the :ref:`Assembling a frame page <frame-assembly>`) the AHRS_ORIENTATION parameter should
+direction is aligned with the antenna (as mentioned on the :ref:`Assembling a frame page <frame-assembly>`) the AHRS_ORIENTATION parameter should
 be set from the Mission Planner's Config/Tuning >> Advanced Params
 screen.
 
