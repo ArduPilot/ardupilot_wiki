@@ -59,7 +59,7 @@ Set the following parameters
 - :ref:`RC6_OPTION <RC6_OPTION>` = 45 (Winch Control) to allow controlling the winch speed from the transmitter's channel 6 knob
 - :ref:`RC6_DZ <RC6_DZ>` = 30.  This deadzone is used to detect whether the pilot has moved the winch control knob to retake control from autonomous operation
 - :ref:`RC6_TRIM <RC6_TRIM>` = The mid value between :ref:`RC6_MIN <RC6_MIN>` and :ref:`RC6_MAX <RC6_MAX>` which is normally close to 1500
-- :ref:`RC8_OPTION <RC8_OPTION>` = 46 (Winch Enable) to allow relaxing the winch by pulling the transmitter's channel 8 switch low
+- :ref:`RC8_OPTION <RC8_OPTION>` = 44 (Winch Enable) to allow relaxing the winch by pulling the transmitter's channel 8 switch low
 
 Controlling during Missions
 ---------------------------
