@@ -1,5 +1,7 @@
 .. _common-user-alerts:
 
+[copywiki destination="copter,plane,rover,antennatracker"]
+
 ===========
 User Alerts
 ===========
