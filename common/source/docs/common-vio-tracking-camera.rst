@@ -9,13 +9,13 @@ Intel RealSense T265
 ..  youtube:: HCyTt0xK8CQ
     :width: 100%
 
-This article explains how to setup an `Intel Realsense T265 <https://store.intelrealsense.com/buy-intel-realsense-tracking-camera-t265.html?_ga=2.225595998.511560227.1566178471-459370638.1562639781>`__ for use with ArduPilot as a substitude for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto to work. This method uses a python script running on an RPI companion computer to send position information to ArduPilot without the use of `ROS <https://www.ros.org/>`__.
+This article explains how to setup an `Intel Realsense T265 <https://store.intelrealsense.com/buy-intel-realsense-tracking-camera-t265.html?_ga=2.225595998.511560227.1566178471-459370638.1562639781>`__ for use with ArduPilot as a substitude for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto to work. This method uses a python script running on an RPI companion computer to send position information to ArduPilot without the use of `ROS <https://www.ros.org/>`__.  The `setup using ROS is here <https://ardupilot.org/dev/docs/ros-vio-tracking-camera.html>`__.
 
 What to Buy
 -----------
 
 - `Intel RealSense Tracking Camera T265 <https://www.intelrealsense.com/tracking-camera-t265/>`__
-- `Raspberry Pi 4 <https://www.raspberrypi.org/products/raspberry-pi-4-model-b/>`__ (recommended) or `Raspberry Pi 3 <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>`__
+- `Raspberry Pi 4 <https://www.raspberrypi.org/products/raspberry-pi-4-model-b/>`__ (2GB or 4GB recommended, 8GB has issues) or `Raspberry Pi 3 <https://www.raspberrypi.org/products/raspberry-pi-3-model-b/>`__
 - 16GB (or larger) SD card
 - `PiConnectLite <https://www.rpanion.com/product/pi-connect-lite/>`__ to connect the RPI to the autopilot (optional)
 
@@ -26,12 +26,13 @@ What to Buy
 Hardware Setup
 --------------
 
-.. image:: ../../../dev/source/images/ros-vio-connection.png
-    :target: ../_images/ros-vio-connection.png
+.. image:: ../../../images/t265-rpi4-pixhawk.png
+    :target: ../_images/t265-rpi4-pixhawk.png
+    :width: 500px
 
 - Download the latest APSync Ubuntu image (`found here <https://firmware.ardupilot.org/Companion/apsync/apsync-rpi-ubuntu-t265-latest.img.xz>`__) to your PC and then flash it to the 16GB (or larger) SD card using a tool such as `Etcher <https://www.balena.io/etcher/>`__ or `Win32DiskImager <https://sourceforge.net/projects/win32diskimager/>`__ and then insert it into the RPI's SD Card slot
-- Mount the Intel RealSense T265 on the vehicle facing forward (see below for information other orientations)
-- Connect the Intel RealSense T265's USB cable to one of the RPI4's blue USB3 port
+- Mount the Intel RealSense T265 on the vehicle facing forward (see below for information other orientations) using thick double sided tape to better isolate the camera from vibrations
+- Connect the Intel RealSense T265's USB cable to one of the RPI4's blue USB3 ports
 - Connect the PiConnectLite's power cable to the battery (7V to 30V)
 - Connect the PiConnectLite's serial cable to one of the autopilot's telemetry ports (i.e. Telem1, Telem2)
 
