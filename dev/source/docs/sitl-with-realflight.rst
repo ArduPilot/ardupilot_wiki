@@ -70,7 +70,7 @@ On the real-flight controller press the red "reset" button, or PC's space bar, t
 If the vehicle's position is not reset, from within RealFlight:
 
   - Aircraft, Select Aircraft
-  - Custom Aircraft, QuadcopterX - direct throttles
+  - Custom Aircraft, QuadcopterX-flightaxis
   - press OK
   - after the vehicles position is reset, press the transmitter's "Reset" button or PC spacebar again
 
@@ -89,10 +89,10 @@ This technique spreads the processing requirements between two PCs: one Windows 
 
 .. note:: be sure that there is no firewall preventing communication between the PCs. You should be able to "ping" one from the other.
 
-- on the separate machine where SITL will run, start SITL sim_vehicle.py with "-f flightaxis:192.168.x.x" or if using a tradition helicopter, "-f heli-dual --model flightaxis:192.168.x.x".
+- on the separate machine where SITL will run, start SITL sim_vehicle.py with "-f flightaxis:192.168.x.x" or if using a traditional helicopter, "-f heli - -model flightaxis:192.168.x.x".
 
-     - cd ArduCopter
-     - sim_vehicle.py -f flightaxis:192.168.x.x --map --console
+     - cd ArduCopter (See Note below)
+     - sim_vehicle.py -f flightaxis:192.168.x.x - -map - -console
 - back on RealFlight push the red "RESET" button on the transmitter, or spacebar on PC
 - after about a minute, the vehicle should be visible on the SITL map
 - from within SITL type ``param load <filename>``  to load the parameter found in the same directory as the model. You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And, in some cases, you may even need to restart SITL in order for some new parameters to take effect.
