@@ -11,7 +11,7 @@ Holybro Kakute F7 Mini
 
 .. note::
 
-   Support for this board is available with ArduPilot-4.0 (and higher)
+   Support for this board is available with ArduPilot-4.0 (and higher). Only the V1 adn V2 boards are supported. The V3 board changed microporcessor type and is no longer capable of running ArduPilot.
 
 .. note::
 
