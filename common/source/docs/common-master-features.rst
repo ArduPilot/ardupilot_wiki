@@ -9,7 +9,9 @@ This lists features or changes merged in master and build in the "latest" firmwa
 
 .. toctree::
     :maxdepth: 1
-
+[site wiki="plane"]
+    Airmode <airmode>
+[/site]
 [site wiki="copter,plane"]
     In-Flight FTT and filter control <common-imu-fft>
 [/site]
