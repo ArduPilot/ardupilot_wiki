@@ -44,6 +44,39 @@ More Info on Herelink can be found on
 -   `Cubepilot Support Forum <https://discuss.cubepilot.org>`_
 
 
+CUAV H16 series HD Video Transmission and remote control system
+===============================================================
+
+.. figure:: ../../../images/cuav-video/h16.jpg
+   :target: ../_images/cuav-video/h16.jpg
+     
+Overview
+--------
+
+The H16 Smart Remote Control is a UAV communication link that integrates remote control, data transmission, and HD video transmission. It runs the Android operating system and supports mainstream ground stations such as QGC; Like an Android phone, you can install other Android applications as desired .
+
+
+Features
+--------
+
+* Runs Android OS 
+* 7-inch color LCD screen.
+* Integrated digital transmission system that can transmit high-definition video, drone data, and radio control signals at the same time.
+* It can run the QGC (QGround Control)ground station, and any version of QGC can be installed, without waiting for release of a customized ground control station.
+* Four, three-position switches and two knobs better suits the needs of industrial applications; you can control auxiliary equipment on the UAV easily.
+* 1080P HD video
+* 2000 nt (nit) brightness high-definition display, allowing data displayed to be clearly visible in the sun.
+* Telemetry and video sharing to other devices via WIFI.
+* Similar to a smart phone; you can install a large number of Android applications.
+* You can connect an MIPI camera and an HDMI camera at the same time.
+* 30km, ultra long-distance transmission.
+
+For more information, please click the link below:
+
+- `CUAV docs <doc.cuav.com>`_
+- `CUAV store <https://store.cuav.net/index.php?id_product=125&rewrite=cuav-h16-pro-hd-video-transmission-system&controller=product>`_
+
+
 DJI Digital FPV System
 ======================
 
