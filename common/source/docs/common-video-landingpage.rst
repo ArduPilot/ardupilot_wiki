@@ -63,7 +63,9 @@ Features
 * Integrated digital transmission system can transmit high-definition video, drone data, and radio control signals at the same time.
 * It can run a general QGC ground station, and any version of GQC ground station can be installed, without waiting for the factory to release a customized QGC.
 * Four three-position switches and two knobs are more in line with the needs of industrial applications; you can control more mission equipment.
-* 1080P HD video* 2000nit high-definition display, the data is still clearly visible in the sun.* Telemetry and video sharing via WIFI.
+* 1080P HD video
+* 2000nit high-definition display, the data is still clearly visible in the sun.
+* Telemetry and video sharing via WIFI.
 * More like a smart phone; you can install a large number of applications.
 * You can connect MIPI camera and HDMI camera at the same time.
 * 30km ultra long-distance transmission.
