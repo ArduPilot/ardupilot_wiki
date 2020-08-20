@@ -386,6 +386,27 @@ You can test two virtual wheel encoders like this:
 
 The restart SITL and right mouse button click on the map and select "Set Origin (with height)" and the vehicle should appear on the map.  It may also be useful to enter "map set showsimpos 1" to make the vehicle's actual position visible.
 
+Adding Range Beacons
+====================
+
+You can test a virtual range beacons by setting the following parameters
+
+::
+
+    param set AHRS_EKF_TYPE 3
+    param set EK2_ENABLE 0
+    param set EK3_ENABLE 1
+    param fetch
+    param set EK3_GPS_TYPE 3
+    param set GPS_TYPE 0
+    param set BCN_TYPE 10
+    param fetch
+    param set BCN_LATITUDE -35.363261
+    param set BCN_LONGITUDE 149.165230
+    param set BCN_ALT 584
+
+The restart SITL and the vehicle should appear on the map.  After perhaps 30seconds it should shift to its normal starting position.
+
 Accessing log files
 ===================
 
