@@ -6,7 +6,7 @@ Downloading and Analyzing Data Logs in Mission Planner
 
 Dataflash logs are stored on the autopilot's onboard dataflash memory
 and can be download after a flight. By default, they are created after you first
-arm the vehicel. This topic explains how to configure and access
+arm the vehicle. This topic explains how to configure and access
 Dataflash logs.
 
 [copywiki destination="copter,plane,rover,dev,planner"]
