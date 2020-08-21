@@ -102,6 +102,7 @@ Second Flight
 
 #. Set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 3 to make the EKF ignore GPS and use the flow sensor
 #. Ensure you have a loiter and hover mode available on you transmitter.
+#. Set "EKF Origin" on Ground Control Station map. In Mission Planner, right click, select "Set Home here", and choose to set "set EKF origin here".
 #. Take-off in loiter and bring the Copter/Quadplane to about 1m height
 #. If the vehicle starts to accelerate away or there is erratic pitch or roll
    movement, then switch to hover and land. You will need to
