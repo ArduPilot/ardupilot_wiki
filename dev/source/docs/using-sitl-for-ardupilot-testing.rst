@@ -350,7 +350,7 @@ Then restart SITL. After setting it up try this:
 ::
 
     module load graph
-    graph OPTICAL_FLOW.flow_x OPTICAL_FLOW.flow_y
+    graph OPTICAL_FLOW.flow_comp_m_x OPTICAL_FLOW.flow_comp_m_y
 
 Go for a flight and see if you get reasonable data.
 
