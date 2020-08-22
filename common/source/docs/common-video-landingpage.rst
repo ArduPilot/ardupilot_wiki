@@ -142,6 +142,30 @@ Smartlink is a broadband digital datalink with integrated onboard computer that 
 
 More info on Skydrones Smartlink `here <https://sky-drones.com/smartlink>`_
 
+SIYI AK28
+=========
+
+.. image:: ../../../images/SIYI_AK28.png
+
+A 2.4Ghz HD video/radio control/telemetry system based on Android OS, allowing many Android applications to be loaded and used in addition to the normal ground control station programs, such as QGC.
+
+In addition to normal RC control, the system can also control additional equipment on the vehicle with provide auxiliary control paths.
+
+For more information, including manuals, see `SIYI site <http://en.siyi.biz/en/ak28/overview>`__
+
+Where to buy
+------------
+
+`RC Hobby Japan <https://www.rchobby-jp.com/index.php?main_page=product_info&cPath=67&products_id=4455>`__
+
+`Holybro <http://www.holybro.com/product/siyi-ak28-android-smart-remote-controller/>`_
+
+Unboxing video
+--------------
+
+.. youtube:: DPHKe86SiqI
+
+
 Other Systems
 =============
 
