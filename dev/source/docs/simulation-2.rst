@@ -6,11 +6,26 @@ Simulation
 
 .. image:: ../images/simulation-landingpage.jpg
 
-Simulation allows for safe testing of experimental code and settings and crashing virtual vehicles is a lot cheaper than crashing real ones!
+Simulation allows for the safe testing of experimental code and settings. Crashing virtual vehicles is a lot cheaper than crashing real ones!
+
+Overview
+========
+
+Simulation is implemented by using a Flight Dynamics Model (FDM) of the vehicle to simulate the physics involved with vehicle movement. It receives inputs from a SITL (Software in the Loop) program running the ArduPilot firmware (which are the firmware's servo/motor outputs) and outputs vehicle status,position, velocities, etc. that result from those inputs back to the firmware simulation. Just as sensors would in the real world case.
+
+Pilot control is implemented either by joystick, dedicated simulation controller box(like Interlink), or by MAVLink commands from a Ground Control Station program (GCS), like MAVProxy or Mission Planner.
+
+This is illustrated below:
+
+.. image:: ../images/SITL.png
+
+ArduPilot provides a native firmware simulator + FDM program (all launched by sim_vehicle.py), often simply referred to as ``SITL``, which is usually used with its developer GCS, MAVProxy. ArduPilot's firmware simulator and FDM can also be used by Mission Planner for SITL simulations.
+
+In addition, the ArduPilot firmware simulator element can also be interfaced to other FDM/Graphics programs that are normally used as stand-alone flight/vehicle simulators in order to get more realistic physics models and/or high definition vehicle graphics, such as RealFlight or X-Plane.
 
    .. tip::
 
-      We recommend starting with :ref:`Software In The Loop (SITL) <sitl-simulator-software-in-the-loop>` because the setup is easiest, it does not require a flight controller, and all vehicle types are supported.
+      We recommend starting with ArduPilot's native :ref:`Software In The Loop (SITL) <sitl-simulator-software-in-the-loop>` because the setup is easiest, it does not require a flight controller, and all vehicle types are supported.
 
 The most commonly used simulators are:
 
