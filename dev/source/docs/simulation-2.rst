@@ -24,6 +24,10 @@ The most commonly used simulators are:
 -  :ref:`JSBSim <sitl-with-jsbsim>` is a sophisticated open-source plane and multicopter simulator with no graphical interface. It can be used with a wide variety of airframes.
 -  :ref:`AirSim <sitl-with-airsim>` is an open-source, cross-platform simulator for drones & cars, built on Unreal Engine for physically and visually realistic simulations
 -  :ref:`Silent Wings Soaring<soaring-sitl-with-silentwings>` 
+-  :ref:`MATLAB and Simulink<sitl-with-MATLAB>` are numerical computing environments used for developing algorithms and plotting data developed by `MathWorks <https://www.mathworks.com/>`__.
+-  :ref:`JSON interface<sitl-with-JSON>` The JSON interface is a generic interface protocol designed to be easy to implement for those developing physics backend. There are Python and MATLAB examples.
+-  :ref:`Webots <sitl-with-webots>` is a simulator mainly used for robotics. It is easy to build many vehicles using it. ArduPilot has Rover, Quadcopter, and Tricopters examples that have been built especially for this simulator.
+
 
 Less often used simulators include:
 
@@ -52,3 +56,5 @@ List of simulators (so they can appear in the menu):
     Autotest Framework <the-ardupilot-autotest-framework>
     SCRIMMAGE <sitl-with-scrimmage>
     Webots <sitl-with-webots>
+    MATLAB and Simulink <sitl-with-MATLAB>
+    JSON interface <sitl-with-JSON>
