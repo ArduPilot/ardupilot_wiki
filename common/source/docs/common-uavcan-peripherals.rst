@@ -12,6 +12,7 @@ UAVCAN Peripherals
     Avionics Anonymous GNSS/Mag: GNSS + Compass <common-avanon-laserint>
     Avionics Anonymous LIDAR Interface <common-avanon-mag>
     CUAV Neo v2 Pro UAVCAN GPS <common-cuav-neo-v2-pro>
+    Hitec UAVCAN Servos <common-hitec-uavcan-servos>
     jDrones UAVCAN Starter kit <https://store.jdrones.com/uc4g_slcan_v11_p/uc4hcmb01.htm>
     jDrones UAVCAN General Node <https://store.jdrones.com/uc4g_geneneral_node_v21_p/uc4hgnode21.htm>
     Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
