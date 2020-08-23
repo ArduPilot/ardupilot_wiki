@@ -33,6 +33,9 @@
 # Vagrant
 /.vagrant
 
+# VSCode
+/.vscode
+
 # Parameters multiversioning
 /copter/source/docs/parameters-Copter-*.rst
 /plane/source/docs/parameters-Plane-*.rst
@@ -66,3 +69,8 @@ copter/source/_static/useralerts.js
 dev/source/_static/useralerts.js
 plane/source/_static/useralerts.js
 rover/source/_static/useralerts.js
+ardupilot/source/_static/useralerts.js
+mavproxy/source/_static/useralerts.js
+planner/source/_static/useralerts.js
+planner2/source/_static/useralerts.js
+
