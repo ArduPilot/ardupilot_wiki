@@ -49,3 +49,10 @@ model than the default Rascal110 by specifying the model name using the
 
 The model should be in the **Tools/autotest/aircraft/** directory.
 
+Data Flow using JSBSim + Flightgear
+===================================
+
+
+.. image:: ../images/JBSim.png
+  :target: ../images/JBSim.png
+
