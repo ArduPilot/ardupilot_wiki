@@ -2,6 +2,7 @@
 Script for downloading and displaying User Alerts in the common-user-alerts.rst page
 Requires a table with the css class "useralerts-list"
 Written by Stephen Dade (stephen_dade@hotmail.com)
+[copywiki destination="copter,plane,rover,antennatracker"]
 */
 $(document).ready(function() {
     $.getScript("https://firmware.ardupilot.org/userAlerts/manifest.js", function() {
