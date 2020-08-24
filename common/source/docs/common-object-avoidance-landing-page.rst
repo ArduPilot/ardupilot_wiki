@@ -35,6 +35,7 @@ Hardware
 
 -  :ref:`ADS-B Receiver <common-ads-b-receiver>`
 -  :ref:`Rangefinders <common-rangefinder-landingpage>`
+-  :ref:`Realsense Depth Camera <common-realsense-depth-camera>`
 
 
 
