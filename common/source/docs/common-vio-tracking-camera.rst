@@ -152,7 +152,7 @@ Python Packages Installation
     # Install serial packages for serial connection
     sudo pip3 install pyserial
 
-- Download the script `t265_to_mavlink.py <https://github.com/hoangthien94/vision_to_mavros/blob/master/scripts/t265_to_mavlink.py>`__. In case you have downloaded the `vision_to_mavros <https://github.com/hoangthien94/vision_to_mavros>`__ package, it can be found in the script folder.
+- Download the script `t265_to_mavlink.py <https://github.com/thien94/vision_to_mavros/blob/master/scripts/t265_to_mavlink.py>`__. In case you have downloaded the `vision_to_mavros <https://github.com/thien94/vision_to_mavros>`__ package, it can be found in the script folder.
 
 .. code-block:: bash
 
@@ -160,7 +160,7 @@ Python Packages Installation
     cd ~/path/to/the/script/
 
     # Download the script if you haven’t already:
-    wget https://raw.githubusercontent.com/hoangthien94/vision_to_mavros/master/scripts/t265_to_mavlink.py
+    wget https://raw.githubusercontent.com/thien94/vision_to_mavros/master/scripts/t265_to_mavlink.py
 
     chmod +x t265_to_mavlink.py
 
@@ -178,7 +178,7 @@ How to run
     cd ~/path/to/the/script/
 
     # Download and run a test script, you should see a short stream of pose data coming from the T265 on the terminal
-    wget https://raw.githubusercontent.com/hoangthien94/vision_to_mavros/master/scripts/t265_test_streams.py
+    wget https://raw.githubusercontent.com/thien94/vision_to_mavros/master/scripts/t265_test_streams.py
     chmod +x t265_test_streams.py
     python3 t265_test_streams.py
 
@@ -292,7 +292,7 @@ The script can be run automatically at boot time.
 
 .. code-block:: bash
 
-    wget https://raw.githubusercontent.com/hoangthien94/vision_to_mavros/master/scripts/t265.sh
+    wget https://raw.githubusercontent.com/thien94/vision_to_mavros/master/scripts/t265.sh
 
     nano t265.sh
 
