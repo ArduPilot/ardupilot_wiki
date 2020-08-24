@@ -1,5 +1,10 @@
 /* custom CSS for ArduPilot wiki */
 
+/* Table in user alerts page */
+table.useralerts-table td {
+    white-space: normal;
+}
+
 /* CSS for Partners logo list */
 table.partners-table {
     width: 100%;
