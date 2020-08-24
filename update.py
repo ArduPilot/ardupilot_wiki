@@ -341,9 +341,23 @@ def generate_copy_dict(start_dir=COMMON_DIR):
                     destination_file = open(targetfile, 'w', 'utf-8')
                     destination_file.write(content)
                     destination_file.close()
-            elif file.endswith(".css") or file.endswith(".js"):
+            elif file.endswith(".css"):
                 for wiki in ALL_WIKIS:
                     shutil.copy2(os.path.join(root, file), '%s/source/_static/' % wiki)
+            elif file.endswith(".js"):
+                source_file_path=os.path.join(root, file)
+                source_file = open(source_file_path, 'r', 'utf-8')
+                source_content=source_file.read()
+                source_file.close()
+                targets=get_copy_targets(source_content)
+                #print("JS: " + str(targets))
+                for wiki in targets:
+                    content = strip_content(source_content, wiki)
+                    targetfile='%s/source/_static/%s' % (wiki,file)
+                    print(targetfile)
+                    destination_file = open(targetfile, 'w', 'utf-8')
+                    destination_file.write(content)
+                    destination_file.close()
 
 
 def get_copy_targets(content):
