@@ -79,7 +79,7 @@ how the filter works:
    These include gyro biases, Z accelerometer bias, wind velocities,
    compass biases and the earth's magnetic field. These other states
    aren't modified directly by the 'State Prediction' step but can be
-   modified by measurements a described later.
+   modified by measurements as described later.
 #. Estimated gyro and accelerometer noise (``EKF_GYRO_NOISE``
    and ``EKF_ACC_NOISE``) are used to estimate the growth in error in
    the angles, velocities and position calculated using IMU data. Making
