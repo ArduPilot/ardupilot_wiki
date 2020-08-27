@@ -7,14 +7,10 @@ Plane Failsafe Function
 Plane has a limited failsafe function which is designed to do four
 things:
 
-#. Detect complete loss of RC signal (if the RC receiver is able to
-   generate a predictable signal-loss behavior) or throttle below the minimum value (Throttle Failsafe),
-   and initiate a defined response, such as returning to home. Some RC equipment can
-   do this, and some can't (see below for details on how to use it if
-   yours supports this function).
+#. Detect a complete loss of RC signal and initiate a defined response, such as returning to home. 
+Detection is either by lack of data/pulses from the receiver, the throttle channel PWM value falling below a certain point set by :ref:`THR_FS_VALUE<THR_FS_VALUE>`, or the receiver sets a FS bit in its data stream for those protocols supporting this. Detection of these must be enabled by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 1 or 2.
 #. Optionally, detect loss of telemetry (GCS Failsafe) and take an programmable action, such as switching to return to launch (RTL) mode.
-#. Detect loss of GPS for more than 20 seconds and switch into Dead
-   Reckoning mode until GPS signal is regained.
+#. Detect loss of GPS for more than 20 seconds and switch into Dead Reckoning mode until GPS signal is regained.
 #. Optionally, detect low battery conditions (voltage/remaining capacity) and initiate a programmable response, such as returning to home. ArduPilot supports this on multiple batteries.
 
 Here's what the failsafe **will not do**:
@@ -39,15 +35,15 @@ Throttle Failsafe
 ~~~~~~~~~~~~~~~~~
 
 **How it works.** Your RC transmitter outputs a PWM signal that is
-captured by your receiver and relayed to the autopilot. Each channel on
+captured by your receiver and relayed to the autopilot, either as a pulse width or data in a serial data stream. Each channel on
 your transmitter has a PWM range usually between 1100 - 1900 with 1500
 being its neutral position. When you start your radio calibration on the
 mission planner, all your values will be at 1500. By moving your sticks,
 knobs and switches you will set your PWM range for each channel. The
 autopilot monitors your throttle channel and if it notices a drop lower
-than :ref:`THR_FS_VALUE<THR_FS_VALUE>` (Default is 950) it will go into failsafe mode.
+than :ref:`THR_FS_VALUE<THR_FS_VALUE>` (Default is 950) it will go into Throttle Failsafe mode.
 
-.. note: ArduPilot can also detect if the RC Receiver becomes disconnected or dead (no PWM pulses), if the PWM values are grossly out of range (RC Receiver failure), or if the failsafe bit in an SBus receivers data stream is set, and will initiate a Failsafe
+.. note: ArduPilot can also detect if the RC Receiver becomes disconnected or dead (no PWM pulses), if the PWM values are grossly out of range (RC Receiver failure), or if the failsafe bit in an receiver's data stream is set, and will initiate a Failsafe.
 
 RC transmitters usually have a default range for each channel that goes
 from -100% to 100%, however most transmitters will allow you to extend
@@ -59,22 +55,21 @@ achieve is to let your receiver know that the throttle can go as low as
 Meaning that when flying, our throttle values will range between 1100 -
 1900.
 
--  If we lose RC communication, the receiver if set up properly, will
+-  If we lose RC communication, and the receiver is capable and set up properly, it will
    drop to the lowest known throttle value of ~900. This value falls
    bellow the :ref:`THR_FS_VALUE<THR_FS_VALUE>` and will trigger the autopilot to go into
-   failsafe mode.As noted above, it will also go into failsafe mode on no PWM pulses or SBUS FS bit is set.
--  First the autopilot will go into short failsafe (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` ),
+   an RC failsafe mode, know as Throttle Failsafe. Alternatively, if communication from the receiver is lost, either by its sending no pulses during signal loss, or by wiring disconnection, it will also go into RC failsafe mode . Finally, if the :ref:`RC_OPTIONS<RC_OPTIONS>` bit 2 is not set, and the receiver protocol has a failsafe bit, it can trigger the RC failsafe. Receiver protocols which have this bit are: Sbus, SXRL, SXRL2, SumD, FPort, and iBUS.
+-  When failsafe is entered, all RC inputs (except throttle in the case of throttle initiated failsafe), are ignored as the autopilot takes its failsafe actions.
+-  First, the autopilot will go into short failsafe (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` ),
    when it detects loss of signal for more than :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` sec. The default setting for short failsafe is Circle mode.
 -  If the RC signal is regained during the short failsafe, the flight
    will return to the previous mode.
 -  If the loss of signal is longer than :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec the autopilot will go into long failsafe :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` .
 -  The default setting for long failsafe is RTL (Return to Launch).
 
-
 .. note:: Once the long failsafe has been entered at the conclusion
    of the short failsafe the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`  mode will continue even if your RC
    signal is reacquired. Once reacquired, the mode can only be exited via a mode change. In addition, other failsafes, such as battery failsafe, can also change the mode, if they occur subsequently.
-
 
 ::
 
@@ -88,8 +83,8 @@ Meaning that when flying, our throttle values will range between 1100 -
 
 **Setup.**
 
-#. Enable throttle failsafe by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` to 1 (0=Disabled,
-   1=Enabled).
+#. Enable RC failsafe by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` to 1 (0=Disabled,
+   1=Enabled, 2=Enabled, No Failsafe action undertaken).
 #. First turn on your transmitter and enable the throttle range to
    extend past -100%, we want to extend the throttle range past its low
    threshold.
@@ -120,6 +115,7 @@ Meaning that when flying, our throttle values will range between 1100 -
 
 `Spektrum Setup <https://diydrones.com/profiles/blogs/spektrum-dx8-and-ar8000-failsafe-setup>`__
 
+
 GCS Failsafe
 ~~~~~~~~~~~~
 
@@ -139,6 +135,19 @@ telemetry. In the event that the autopilot stops receiving MAVlink
    until :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds of MAVLink inactivity have passed).
 #. Connect your autopilot to the mission planner and pull the logs.
    Verify on the log that the autopilot went into RTL after :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec of MAVLink inactivity.
+
+Configuring for Ground Control Station Control beyond RC range
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the telemetry range exceeds the RC transmitter range, then it may be desired to prevent loss of RC signal from initiating a failsafe. Reliance on the above GCS failsafe would be then be used to provide failsafe protection. In order to prevent the RC system from interfering with GCS operation, set :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 2. This prevents the RC failsafe action from being taken, but still detects the failsafe condition and ignores the RC inputs, preventing possible interference to Ground Control Station control of the vehicle. Control via the RC system can be resumed once back into its range.
+
+Configuring for valid RC outputs while in RC Failsafe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Normally, the RC channels are ignored when in RC Failsafe (except the throttle channel, but for failsafe detection exit only). Sometimes it is desirable to allow the preset signal loss values( for receivers capable of this ), to be used in the event of an RC failsafe. For example, parachute activation, or other controls via RC passthrough (see :ref:`common-auxiliary-functions`) could be desired when in RC failsafe. For receivers with this capability and which use a FS data bit, setting :ref:`RC_OPTIONS<RC_OPTIONS>` bit 2 to "1", can accomplish this. In this case, the FS bit is ignored. Upon RC signal loss the receiver would go to its pre-set channel outputs values, but a failsafe action would not be taken by ArduPilot, since the receiver is still outputting valid data as far as ArduPilot can detect. The fixed RC channel values would processed as normal by ArduPilot.
+
+
+.. note:: In this setup, it is usually necessary to make sure that the flight mode channel will force an RTL or AUTO mission to return the vehicle when the receiver loses RC signal, since no failsafe action will be taken, otherwise. The values of the flight control channels for Roll, Pitch, Yaw and Throttle need to be appropriately set also (usually neutral positions).
 
 Battery Failsafe
 ~~~~~~~~~~~~~~~~
