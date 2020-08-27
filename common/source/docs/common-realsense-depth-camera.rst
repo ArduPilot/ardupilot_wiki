@@ -100,7 +100,6 @@ Install pip for Python3 `(pip3) <https://linuxize.com/post/how-to-install-pip-on
     pip3 install dronekit
     pip3 install apscheduler
     pip3 install pyserial # For serial connection
-    pip3 install numba
     pip3 install opencv-python
     sudo apt -y install python3-gst-1.0 gir1.2-gst-rtsp-server-1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly libx264-dev
 
@@ -199,7 +198,7 @@ As the performance of the depth camera varies in different setting/environment, 
 
 - When the vehicle is on the ground, it is possible that a large portion of the depth image will see the ground. In such cases, within the ``d4xx_to_mavlink.py`` script, reduce the ``obstacle_line_height_ratio`` parameter (closer to zero) to move the obstacle detection line up.
 
-- If the depth data is noisy, increase the thickness of the obstacle line by modify the ``obstacle_line_thickness_pixel`` param in the script. At the time of this writing, the idea is to process a group of pixels within a certain boundary (defined by this parameter) and find the lowest value to use as indicator to the object. This can change in the future if a better scheme is found.
+- If the depth data is noisy, increase the thickness of the obstacle line by modify the ``obstacle_line_thickness_pixel`` param in the script. At the time of this writing, the idea is to process a group of pixels within a certain boundary (defined by this parameter) and find the lowest value to use as indicator to the object. This can change in the future if a better scheme is developed.
 
 
 .. tip::
