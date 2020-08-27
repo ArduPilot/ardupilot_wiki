@@ -34,8 +34,9 @@ cables separately or by getting ready made telemetry set (as seen below).
 
 The radio and antennas as separate units are available:
 
--  `RFDesign Store, 900Mhz <http://store.rfdesign.com.au/rfd-900p-modem/>`__
--  `RFDesign Store, 868Mhz <http://store.rfdesign.com.au/rfd-868-modem/>`__
+-  `RFDesign Store, 900Mhz <http://store.rfdesign.com.au/rfd-900x-modem/>`__
+-  `RFDesign Store, 868Mhz <http://store.rfdesign.com.au/rfd-868x-modem/>`__
+-  `ProfiCNC Store <http://www.proficnc.com/52-online-sales>`_
 
 Ready made Sets
 ---------------
@@ -62,6 +63,11 @@ They offer two different variants that meet the needs of the ground and airside 
 -  `AeroLink RFD Adapater Board <https://baskaerospace.com.au/store/telemetry/aerolink-rfd-adapter-board/>`__
 
 The AeroLink RFD Adapter Board makes it easy to power your RFD modem from a seperate 5V BEC as recommended above.
+
+ProfiCNC
+++++++++
+
+- `ProfiCNC Store <http://www.proficnc.com/52-online-sales>`_
 
 Key Features
 ============
