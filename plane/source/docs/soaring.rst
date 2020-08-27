@@ -20,7 +20,7 @@ This picture shows the different phases of flight when using the soaring
 functionality:
 
 #. If modes AUTO, FBWB or CRUISE are entered, and Soaring is enabled, the throttle is set to zero provided the aircraft is above :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` altitude and the aircraft then begins gliding.
-#. In AUTO, if the aircraft descends to :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` altitude, throttle is re-enabled and the aircraft will begin to climb to the altitude of the next waypoint. If that waypoint altitude is less than :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, then Soaring can not begin before reaching the waypoint. If it is above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, then Soaring can occur once that altitude has been reached. In FBWB or CRUISE modes, if  :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` altitude is reached, an RTL will be initiated, so the pilot must disable Soaring, or change to a mode other than FBWB or CRUISE to climb back above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` to begin gliding again and prevent an RTL beginning.
+#. If the aircraft descends to :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` altitude, throttle is re-enabled and the aircraft will begin to climb to the altitude of the next waypoint. If that waypoint altitude is less than :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, then Soaring can not begin before reaching the waypoint. If it is above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, then Soaring can occur once that altitude has been reached.
 #. When the aircraft reaches :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, throttle is set to zero again.
 #. If, during gliding flight, the air is estimated to be rising at more than
    :ref:`SOAR_VSPEED<SOAR_VSPEED>` and the :ref:`RC switch position<soaring_rc-switch>` allows it, the aircraft will automatically enter LOITER mode. While in LOITER mode the aircraft will adjust the loiter position to better centre the thermal.
@@ -34,9 +34,7 @@ functionality:
    - The aircraft drifts more than :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` - see :ref:`Limit maximum distance from home<soaring_maximum-distance-from-home>`
 
    The flight mode will be returned to whatever it was before LOITER was 
-   triggered, with the following exception: If the previous mode was FBWB or 
-   CRUISE, and thermalling ended due to reaching :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>`, RTL will be
-   triggered instead.
+   triggered.
 
 
 Non Supported Boards
@@ -147,23 +145,26 @@ Set up RC switch (Optional)
 
 You can use a 3-position RC switch to control when the autopilot can use soaring. Set the parameter RCX_OPTION parameter for the desired channel to SOAR (index 88) - see :ref:`Auxiliary Functions <common-auxiliary-functions>`. The 3 positions have the following effect.
 
- - Below 1500us. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
+ - Low. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
  
- - 1500us to 1700us. Soaring will have control over throttle. The mode will not automatically change to LOITER based on detected rising air. However, when manually set to LOITER mode using RC controller or GCS, the autopilot will try to follow rising air currents. It will still restore the previous mode if the aircraft is not climbing, or if it drifts too far (see below). Switching to this position from the one below,  while LOITERing in a thermal has no effect until the thermal is exited.
+ - Mid. Soaring will have control over throttle. The mode will not automatically change to LOITER based on detected rising air. However, when manually set to LOITER mode using RC controller or GCS, the autopilot will try to follow rising air currents. It will still restore the previous mode if the aircraft is not climbing, or if it drifts too far (see below).
  
- - Above 1700us. Fully automatic mode changes to LOITER from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
+ - High. Fully automatic mode changes to LOITER from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
 
-+----------------+---------------+-------------------+------------------+-------------------+
-| PWM Value      | Auto throttle |  Tracking thermal | Automatic change | Automatic change  | 
-|                | cutoff        |  updrafts         | back from LOITER | to LOITER         |
-+----------------+---------------+-------------------+------------------+-------------------+
-| < 1500 us      |       N       |       N           |       N          |       N           | 
-+----------------+---------------+-------------------+------------------+-------------------+
-| 1500 - 1700 us |       Y       |       Y           |       Y          |       N           |
-+----------------+---------------+-------------------+------------------+-------------------+
-| > 1700 us      |       Y       |       Y           |       Y          |       Y           |
-+----------------+---------------+-------------------+------------------+-------------------+
++----------+----------------+---------------+-------------------+------------------+-------------------+
+| Position | PWM Value      | Auto throttle |  Tracking thermal | Automatic change | Automatic change  | 
+|          |                | cutoff        |  updrafts         | back from LOITER | to LOITER         |
++----------+----------------+---------------+-------------------+------------------+-------------------+
+|  Low     | < 1500 us      |       N       |       N           |       N          |       N           | 
++----------+----------------+---------------+-------------------+------------------+-------------------+
+|  Mid     | 1500 - 1700 us |       Y       |       Y           |       Y          |       N           |
++----------+----------------+---------------+-------------------+------------------+-------------------+
+|  High    | > 1700 us      |       Y       |       Y           |       Y          |       Y           |
++----------+----------------+---------------+-------------------+------------------+-------------------+
 
+When thermalling in LOITER mode with soaring active, changing the switch position between Mid and High positions commands exiting thermalling and restoring the previous mode.
+
+When climbing back to altitude under throttle, changing the switch position to Low and back aborts the climb and starts gliding.
 
 Set limits
 ===========
