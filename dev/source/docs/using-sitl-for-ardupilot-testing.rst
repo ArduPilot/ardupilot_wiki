@@ -27,6 +27,11 @@ It also explains how to :ref:`connect to different GCSs <using-sitl-for-ardupilo
 ..  youtube:: Ewh0fKGEJL4
     :width: 100%
 
+A startup script, ```sim_vehicle.py`` is provided to automatically build the SITL firmware version for the current code branch, load the simulation models, start the simulator, setup environment and vehicle parameters, and start the MAVProxy GCS. Many script start-up parameters can be specified, type this for a full list:
+
+::
+
+    sim_vehicle.py --help
 
 
 Selecting a vehicle/frame type
@@ -88,6 +93,8 @@ A partial listing of frame types is show below. For a current list, just type:
 +                          + balancebot rover-skid  +
 +                          + sailboat sailboat-motor+
 +--------------------------+------------------------+
+
+.. note:: It is important to select the proper frame type. This not only loads the correct parameter set, but also selects the correct physics model. In real life, for example, you can configure and setup the ArduPlane firmware for any Quadplane, but you cannot do that in SITL without having selected the exact QuadPlane frame type for the simulation to get the correct physics model.
 
 
 Setting vehicle start location
