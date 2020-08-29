@@ -12,6 +12,7 @@ in order to reduce the firmware size to less than 1 MB.
 
 The missing features are listed below.
 
+.. note:: The new LUA scripting feature requires a 2MB board, so none of the boards below have that capability.
 
 -  **KakuteF7, KakuteF7 Mini, OmnibusF7V2, sparky2 and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)**
 
