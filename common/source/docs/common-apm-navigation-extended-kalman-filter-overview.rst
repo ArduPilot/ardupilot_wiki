@@ -61,6 +61,11 @@ inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.
 
    Using the parameters above it is possible to run up to 5 AHRSs in parallel at the same time (DCMx1, EKF2x2, EKF3x2) but this can result in performance problems so if running EKF2 and EKF3 in parallel, set the IMU_MASK to reduce the total number of cores.
 
+Affinity and Lane Switching
+----------------------------
+
+EKF3 provides the feature of sensor affinity which allows the EKF cores to also use non-primary instances of sensors, specifically, Airspeed - Barometer - Compass (Magnetometer) - GPS. This allows the vehicle to better manage good quality sensors and be able to switch lanes accordingly to use the best-performing one for state estimation. For more details and configuration, refer :ref:`EKF3 Affinity and Lane Switching <dev:ek3-affinity-lane-switching>`.
+
 Commonly modified parameters
 ----------------------------
 
