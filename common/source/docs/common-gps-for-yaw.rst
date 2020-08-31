@@ -77,3 +77,9 @@ choice. That choice will be in the 4.1.x releases. Using EK3_MAG_CAL=6
 allows the EKF to learn a set of compass offsets while flying which
 allows your compass to be a backup for if your GPS yaw fails in
 flight.
+
+Video Demo
+----------
+
+.. youtube:: NjaIKyrInpg
+
