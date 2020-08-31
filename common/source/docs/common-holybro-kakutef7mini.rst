@@ -102,6 +102,21 @@ The PWM is in 3 groups:
 
 Channels within the same group need to use the same output rate. If any channel in a group uses DShot then all channels in the group need to use DShot.
 
+Battery Monitoring
+==================
+
+The board has a built-in voltage sensor. The voltage
+sensor can handle up to 6S LiPo batteries. An external current
+sensor can be attached to pin 4 on the ESC connector.
+
+The correct battery setting parameters are:
+
+ - :ref:`BATT_MONITOR<BATT_MONITOR>` 4, if external sensor used; 3 for voltage only
+ - :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` 13
+ - :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 12 , if external sensor used.
+ - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 10.9
+ - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` should be set to match external current sensor, if used.
+ 
 Compass
 =======
 
