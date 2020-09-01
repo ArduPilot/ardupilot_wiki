@@ -6,7 +6,7 @@ Walking Robots
 
 ArduPilot Rover 4.1 (and higher) includes basic support for four legged walking robots.  More details can be found in `this GSoC 2020 blog post <https://discuss.ardupilot.org/t/gsoc-2020-walking-robot-support-for-ardupilot/57080>`__
 
-..  youtube:: TrwFPPqd1b8
+..  youtube:: 07C-O9GdTkY
     :width: 100%
 
 .. warning::
