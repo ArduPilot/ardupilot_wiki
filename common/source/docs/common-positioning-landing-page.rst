@@ -23,6 +23,7 @@ positioning technologies:
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
     Holybro Pixhawk 4 GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
+    Holybro RTK F9P Family <common-holybro-rtk-f9p>
     JDrones GPS Options <http://store.jdrones.com/GPS_s/193.htm>
     mRo GPS, GPS+Compass,RTK, and UAVCAN modules <https://store.mrobotics.io/category-s/109.htm>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
