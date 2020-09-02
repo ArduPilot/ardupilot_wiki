@@ -264,8 +264,8 @@ To see other wind parameters do:
     param show sim_wind*
 
 
-Adding a virtual gimbal
-=======================
+Adding a Gimbal
+===============
 
 SITL can simulate a virtual gimbal.
 
@@ -299,8 +299,8 @@ Then stop and re-launch SITL with the ``-M`` flag:
 
     sim_vehicle.py -M
 
-Adding a virtual rangefinder
-============================
+Adding a Rangefinder
+====================
 
 SITL can simulate an analog rangefinder, which is very useful for
 developing flight modes that can use a rangefinder. To set it up use the
@@ -342,10 +342,10 @@ distance.
    -  ``grangev`` - rangefinder voltage
    -  ``grange`` - graph "rangefinder_roll"
 
-Adding a virtual optical flow sensor
-====================================
+Adding an Optical Flow sensor
+=============================
 
-You can add a virtual optical flow sensor like this:
+A virtual optical flow sensor can be added enabling a RangeFinder (see "Adding a Rangefinder" above) and then setting these parameters:
 
 ::
 
@@ -413,6 +413,31 @@ You can test a virtual range beacons by setting the following parameters
     param set BCN_ALT 584
 
 The restart SITL and the vehicle should appear on the map.  After perhaps 30seconds it should shift to its normal starting position.
+
+Adding a Vicon for Non-GPS position estimation
+==============================================
+
+A simulated vicon system can be added by setting the following parameters:
+
+::
+
+    param set AHRS_EKF_TYPE 3
+    param set EK2_ENABLE 0
+    param set EK3_ENABLE 1
+    param fetch
+    param set EK3_GPS_TYPE 3
+    param set GPS_TYPE 0
+    param set VISO_TYPE 1
+    param set SERIAL5_PROTOCOL 2
+    param fetch
+
+The restart SITL using then run the command below from the ArduCopter directory:
+
+::
+
+    ../Tools/autotest/sim_vehicle.py --map --console -A "--uartC=sim:vicon:"
+
+If using MAVProxy, right-mouse-button-click on the map and "Set Origin (with Height)" and the vehicle should appear on the map.
 
 Accessing log files
 ===================
