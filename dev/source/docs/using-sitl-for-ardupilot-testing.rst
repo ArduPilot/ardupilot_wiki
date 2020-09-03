@@ -414,31 +414,6 @@ You can test a virtual range beacons by setting the following parameters
 
 The restart SITL and the vehicle should appear on the map.  After perhaps 30seconds it should shift to its normal starting position.
 
-Adding a Vicon for Non-GPS position estimation
-==============================================
-
-A simulated vicon system can be added by setting the following parameters:
-
-::
-
-    param set AHRS_EKF_TYPE 3
-    param set EK2_ENABLE 0
-    param set EK3_ENABLE 1
-    param fetch
-    param set EK3_GPS_TYPE 3
-    param set GPS_TYPE 0
-    param set VISO_TYPE 1
-    param set SERIAL5_PROTOCOL 2
-    param fetch
-
-The restart SITL using then run the command below from the ArduCopter directory:
-
-::
-
-    ../Tools/autotest/sim_vehicle.py --map --console -A "--uartC=sim:vicon:"
-
-If using MAVProxy, right-mouse-button-click on the map and "Set Origin (with Height)" and the vehicle should appear on the map.
-
 Accessing log files
 ===================
 
@@ -757,9 +732,8 @@ Choose the youngest, then:
    mavlogdump --type PL logs/<youngest>
 
 
-
-Testing Visual Positioning
---------------------------
+Testing Vicon (aka Vision Positioning)
+--------------------------------------
 
 Start SITL, wiping parameters:
 
@@ -771,16 +745,21 @@ Disable GPS, indicate to ArduPilot that instead of a GPS on SERIAL3 it should ex
 
 ::
 
-   param set GPS_TYPE 0
-   param set EK2_GPS_TYPE 3
-   param set SERIAL3_PROTOCOL 1
-   param set DISARM_DELAY 60
+    param set AHRS_EKF_TYPE 3
+    param set EK2_ENABLE 0
+    param set EK3_ENABLE 1
+    param fetch
+    param set EK3_GPS_TYPE 3
+    param set GPS_TYPE 0
+    param set VISO_TYPE 1
+    param set SERIAL5_PROTOCOL 2
+    param fetch
 
-Restart the simulation, attaching a simulated VICON system to uartB (which corresponds to ``SERIAL3``:
+Restart the simulation, attaching a simulated Vicon system to uartC (which corresponds to ``SERIAL5``:
 
 ::
 
-   ./Tools/autotest/sim_vehicle.py -v ArduCopter --gdb --debug -A "--uartB=sim:vicon:" --map --console
+   ../Tools/autotest/sim_vehicle.py --map --console -A "--uartC=sim:vicon:"
 
 The console should indicate no GPS is present:
 
@@ -800,14 +779,12 @@ You should also receive a startup message from the EKF:
 
 ::
 
-   APM: EKF2 IMU0 is using external nav data
-   APM: EKF2 IMU0 initial pos NED = 0.0,0.0,-0.1 (m)
-   APM: EKF2 IMU1 is using external nav data
-   APM: EKF2 IMU1 initial pos NED = 0.0,0.0,-0.1 (m)
+   APM: EKF3 IMU0 is using external nav data
+   APM: EKF3 IMU0 initial pos NED = 0.0,0.0,-0.1 (m)
+   APM: EKF3 IMU1 is using external nav data
+   APM: EKF3 IMU1 initial pos NED = 0.0,0.0,-0.1 (m)
 
 Use MAVProxy's right-click context menu item to ``Set Origin (with alt)``
-
-Use MAVProxy's right-click context menu item to ``Set Home (with alt)``
 
 Arm in stabilize, switch to loiter:
 
