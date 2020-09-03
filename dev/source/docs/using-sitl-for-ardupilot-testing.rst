@@ -741,7 +741,7 @@ Start SITL, wiping parameters:
 
    ./Tools/autotest/sim_vehicle.py -v ArduCopter --gdb --debug -w
 
-Disable GPS, indicate to ArduPilot that instead of a GPS on SERIAL3 it should expect MAVLink (e.g. simulating a 900MHz radio):
+Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vision-position-estimate and vision-speed-estimate messages:
 
 ::
 
@@ -755,7 +755,7 @@ Disable GPS, indicate to ArduPilot that instead of a GPS on SERIAL3 it should ex
     param set SERIAL5_PROTOCOL 2
     param fetch
 
-Restart the simulation, attaching a simulated Vicon system to uartC (which corresponds to ``SERIAL5``:
+Restart the simulation, attaching a simulated Vicon system to uartC (which corresponds to ``SERIAL5``):
 
 ::
 
