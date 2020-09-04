@@ -1,14 +1,14 @@
-.. _common-4g-lte-link:
+.. _common-xbstation-telemetry:
 
-======================================
+===========
 4G LTE Link
-======================================
+===========
 
 This section covers cellular systems which can allow operators to control and monitor their drones using a 4G LTE connection.
 
 
 XBStation 4G LTE BVLOS Kit
-=====================================
+==========================
 
 .. figure:: https://xbstation.com/images/XBStation4GBVLOSLTEKit.png
    :target:  https://xbstation.com
@@ -28,7 +28,7 @@ Features
 * Automatic APN detection.
 * Video/telemetry Streaming sharing to the viewer's browser.
 * Gimbal control from pilot/consumers.
-* AES-256 data encrytion.
+* AES-256 data encryption.
 * Multiple vehicles control.
 * Cellular RSSI (Received signal strength indication), system monitoring.
 * Adapt to all carriers and bands.
