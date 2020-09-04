@@ -81,6 +81,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     UAVCAN Adapter Node <common-uavcan-adapter-node>
     UAVCAN Peripherals <common-uavcan-peripherals>
     Video (High Defintion) <common-video-landingpage>
+    4G LTE Link <common-4g-lte-link>
 [site wiki="copter"]
     Winch <common-daiwa-winch>
 [/site]
