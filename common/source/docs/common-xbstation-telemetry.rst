@@ -1,11 +1,5 @@
 .. _common-xbstation-telemetry:
 
-===========
-4G LTE Link
-===========
-
-This section covers cellular systems which can allow operators to control and monitor their drones using a 4G LTE connection.
-
 
 XBStation 4G LTE BVLOS Kit
 ==========================
@@ -18,7 +12,7 @@ XBStation 4G LTE BVLOS Kit
 Overview
 --------
 
-`XBStation <https://xbstation.com>`__ Kit is a plug and play hardware to transmites drone data and videos to ground stations or monitoring centers for BVLOS remote operations based on real-time internet connectivity.
+`XBStation <https://xbstation.com>`__ Kit is a plug and play hardware to transmites drone data and videos to ground stations or monitoring centers for BVLOS remote operations based on real-time 4G LTE connectivity.
 
 Features
 --------
