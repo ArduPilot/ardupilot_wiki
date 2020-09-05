@@ -134,6 +134,8 @@ When starting SITL, you can have it display a simulation of the integated OSD, i
 ::
 
     sim_vehicle.py -v ArduPlane --console --map --osd
+    
+.. note:: the OSD emulation displays OSD panel items and locations, but it does not allow multiple screens, nor units other than metric
 
 
 .. _using-sitl-for-ardupilot-testing_loading_a_parameter_set:
