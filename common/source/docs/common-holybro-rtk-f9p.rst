@@ -1,4 +1,4 @@
-.. _common_holybro_rtk_f9p:
+.. _common-holybro-rtk-f9p:
 
 ======================
 Holybro H-RTK F9P GNSS
