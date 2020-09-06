@@ -6,9 +6,8 @@ Holybro H-RTK M8P GNSS
 
 .. image:: ../../../images/rtk_holybro_h-rtk-m8p_all_label.jpg
     :target: ../_images/rtk_holybro_h-rtk-m8p_all_label.jpg
-    :width: 450px
 
-The `Holybro H-RTK M8P GNSS <http://www.holybro.com/product/h-rtk-m8p-rover-lite/>`_  is an RTK GNSS module for mass market by Holybro. This family is similar to the :ref:`common-holybro-rtk-f9p` family but uses the smaller, lighter, and less expensive M8P Ublox RTK GNSS module which still provides far superior position resolution than previous generations.
+The `Holybro H-RTK M8P GNSS <http://www.holybro.com/product/h-rtk-m8p-rover-lite/>`_  is an RTK GNSS module for mass market by Holybro. This family is similar to the :ref:`H-RTK F9P GNSS<common-holybro-rtk-f9p>` family but uses the smaller, lighter, and less expensive M8P Ublox RTK GNSS module which still provides far superior position resolution than previous generations.
  
 Using RTK allows ArduPilot to get its position with centimeter-level accuracy, which is much more accurate than can be provided by a normal GPS.
 
@@ -16,14 +15,14 @@ There are three models of Holybro H-RTK M8P to choose from, each with different 
 
 .. image:: ../../../images/rtk_holybro_h-rtk-m8p_spec.png
     :target: ../_images/rtk_holybro_h-rtk-m8p_spec.png
-    :width: 450px
+    :width: 600px
 
 Pin Map
 =======
 
 .. image:: ../../../images/rtk_holybro_h-rtk-m8p_pinmap.jpg
     :target: ../_images/rtk_holybro_h-rtk-m8p_pinmap.jpg
-    :width: 450px
+    :width: 600px
 
 Wiring and Connections
 ======================
@@ -41,7 +40,7 @@ GPS Accessories
 ===============
 
 .. image:: ../../../images/rtk_holybro_h-rtk_mount_3.png
-   :width: 450px
+   :width: 600px
 
 Where to Buy
 ============
