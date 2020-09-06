@@ -6,7 +6,6 @@ Holybro H-RTK F9P GNSS
 
 .. image:: ../../../images/rtk_holybro_h-rtk-f9p_all_label.jpg
     :target: ../_images/rtk_holybro_h-rtk-f9p_all_label.jpg
-    :width: 450px
 
 The `Holybro H-RTK F9P GNSS <http://www.holybro.com/product/h-rtk-f9p/>`_ is an multi-band high-precision RTK GPS series by Holybro. This system provides multi-band RTK with fast convergence times and reliable performance, concurrent reception of GPS, GLONASS, Galileo and BeiDou, and fast update rate for highly dynamic and high volume applications with centimeter-accuracy. It uses a UBLOX F9P module, an IST8310 compass, and a tri-colored NTF LED indicator. It also has a integrated safety switch for simple and convenient operation.
 
@@ -16,14 +15,14 @@ There are three models of Holybro H-RTK F9P to choose from, each with different 
 
 .. image:: ../../../images/rtk_holybro_h-rtk-f9p_spec.png
     :target: ../_images/rtk_holybro_h-rtk-f9p_spec.png
-    :width: 450px
+    :width: 600px
 
 Pin Map
 =======
 
 .. image:: ../../../images/rtk_holybro_h-rtk-f9p_pinmap.jpg
     :target: ../_images/rtk_holybro_h-rtk-f9p_pinmap.jpg
-    :width: 450px
+    :width: 600px
 
 Wiring and Connections
 ======================
@@ -41,7 +40,7 @@ GPS Accessories
 ===============
 
 .. image:: ../../../images/rtk_holybro_h-rtk_mount_3.png
-   :width: 450px
+   :width: 600px
 
 Where to Buy
 ============
