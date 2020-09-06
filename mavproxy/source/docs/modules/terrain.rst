@@ -14,9 +14,9 @@ ground.
 
 By default, it uses the freely available `SRTM
 dataset <https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission>`_.
-For the purposes of this module, a copy of this dataset hosted by
-`DIYDrones <http://firmware.diydrones.com/SRTM/>`_ at level 1
-resolution is used.
+For the purposes of this module, a copy of this dataset is hosted
+`here <https://firmware.ardupilot.org/SRTM/>`_ Level 1
+resolution (90m) is used.
 
 Whilst this module does require an Internet connection to download the
 nearby SRTM tiles, it will cache them on the local hard drive for

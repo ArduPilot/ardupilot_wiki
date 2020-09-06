@@ -11,4 +11,4 @@ annoucements throughout the flight using the system default sound harware.
 
 .. note::
 
-    On some Linux systems, the "python-espeak" package may be required
+    On some systems, the "python-espeak" or "python3-speechd" package may be required.
