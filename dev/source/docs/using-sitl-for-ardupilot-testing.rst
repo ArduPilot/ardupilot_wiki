@@ -569,6 +569,9 @@ SITL can connect to multiple ground stations by using *MAVProxy* to
 forward UDP packets to the GCSs network address. Alternatively SITL can
 connect to a GCS over TCP/IP without using *MAVProxy*.
 
+To start SITL without starting MAVProxy use the ``--no-mavproxy`` option. SITL will be
+listening for a GGS station to connect via UDP port 14550 or TCP port 5760.
+
 .. _using-sitl-for-ardupilot-testing_sitl_with_mavproxy_udp:
 
 SITL with MAVProxy (UDP)
