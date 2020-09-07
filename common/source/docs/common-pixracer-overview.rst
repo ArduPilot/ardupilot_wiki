@@ -72,7 +72,7 @@ Specifications
    -  GPS (serial + I2C)
    -  TELEM1/TELEM2
    -  Wifi serial
-   -  FrSky Telemetry serial
+   -  FrSky Telemetry serial(see note)
    -  Debug connector (serial + SWD)
    -  Connectors: GPS+I2C, RC-IN, PPM-IN, RSSI, SBus-IN, Spektrum-IN,
       USART3 (TxD, RxD, CTS, RTS), USART2 (TxD, RxD, CTS, RTS),
@@ -80,10 +80,15 @@ Specifications
       SERVO1-SERVO6, USART7 (TxD, RxD), JTAG (SWDIO, SWCLK), POWER-BRICK
       (VDD, Voltage, Current, GND), BUZZER-LED_BUTTON.
 
+
 -  **Dimensions**
 
    -  Weight ?
    -  36 x 36mm with 30.5 x 30.5mm hole grid with 3.2mm holes
+
+
+.. note:: The FrSky telemetry port is implemented using a 74LVC2G86 NOR gate as a programmable inverter to both the RX and TX lines. See below for use information.
+
 
 Connector pin assignments
 =========================
@@ -214,6 +219,10 @@ FrSky Telemetry / SERIAL4
    </tr>
    </tbody>
    </table>
+
+This port has built in inverters on the TX and RX lines and shunt resistors which allow them to be tied together and connected to an FrSky receiver's SPort input for telemetry. It is on by default, and only :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` needs to be set to "10" for FrSky passthrough telemetry to be sent to the receiver. See :ref:`common-frsky-telemetry` for more information.
+
+The operation of the TX/RX path inverter can be disabled by setting the :ref:`SERIAL4_OPTIONS<SERIAL4_OPTIONS>` parameter to "2" to "invert" the TX , which will turn off the inversion for both the TX and RX pins. This will allow normal UART operation, if desired.
 
 RC Input (accepts PPM / S.BUS / Spektrum / SUMD / ST24)
 -------------------------------------------------------
@@ -442,4 +451,3 @@ See also
    `mRobotics shop <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__
 
 `Schematics <https://github.com/ArduPilot/Schematics/tree/master/mRobotics>`__
-
