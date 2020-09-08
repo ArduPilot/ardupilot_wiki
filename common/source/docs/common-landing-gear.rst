@@ -24,6 +24,8 @@ Connecting to the Autopilot
 
 Most retractable landing gear will require just a single PWM cable to be
 connected to one of the autopilot outputs, selected using the SERVOx_FUNCTION set to 29 for that output.
+If the retractable landing gear operation appears to be flipped (retracted when it should be deployed) you can change this using the SERVOx_REVERSED parameter.
+Reversed operation seems to be necessary with Tarot retractable landing gear legs without the Tarot control box.
 
 Setup through the Mission Planner
 =================================
