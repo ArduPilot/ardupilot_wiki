@@ -47,9 +47,9 @@ class, with hooks for initialisation and reading Mavlink packets:
       def mavlink_packet(self, m):
         '''handle a mavlink packet'''
         
-      def init(mpstate):
-        '''initialise module'''
-        return TestModule(mpstate)           ``
+    def init(mpstate):
+      '''initialise module'''
+      return TestModule(mpstate)           ``
 
 The initialisation section defines commands and module-wide variables.
 To add a command:
