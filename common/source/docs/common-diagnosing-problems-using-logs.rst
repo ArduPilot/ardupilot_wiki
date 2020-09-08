@@ -81,7 +81,7 @@ Extra Notes:
 GPS glitches
 ============
 
-When in autonomous modes (Loiter, RTL, Auto, etc) position errors from the GPS can cause the vehicle to think that it is suddenly in the wrong place and lead to aggressive flying to correct the perceived error.  These "glitches" show up in both the tlogs and dataflash logs as an decrease in the number of satellites visible and an increase in the `hdop <https://en.wikipedia.org/wiki/Dilution_of_precision_%28GPS%29>`__.
+When in autonomous modes (Loiter, RTL, Auto, etc) position errors from the GPS can cause the vehicle to think that it is suddenly in the wrong place and lead to aggressive flying to correct the perceived error.  These "glitches" show up in both the tlogs and dataflash logs as a decrease in the number of satellites visible and an increase in the `hdop <https://en.wikipedia.org/wiki/Dilution_of_precision_%28GPS%29>`__.
 
 Graph the Dataflash log's GPS message's "HDop" and "NSats" values.  Hdop values below 1.5 are very good, values over 2.0 could indicate the GPS positions are not good.  The number of satellites falling below 12 is also bad.  A significant change in these two values often accompanies a GPS position change.
 
