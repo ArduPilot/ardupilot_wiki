@@ -14,6 +14,8 @@ positioning technologies:
 .. toctree::
     :maxdepth: 1
     
+    Avionics Anonymous GNSS + Compass<common-avanon-gnss-mag>
+    Avionics Anonymous Compass<common-avanon-mag>
     Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV Neo v2 Pro UAVCAN GPS <common-cuav-neo-v2-pro>
