@@ -4,13 +4,17 @@
 UAVCAN Peripherals
 ==================
 
+.. toctree::
+    :maxdepth: 1
 
-- `CUAV NEO V2Pro GPS+LED+Safety Switch <http://www.cuav.net/en/neo-v2-pro-2/>`__
-- `jDrones UAVCAN Starter kit <https://store.jdrones.com/uc4g_slcan_v11_p/uc4hcmb01.htm>`__
-- `jDrones UAVCAN General Node <https://store.jdrones.com/uc4g_geneneral_node_v21_p/uc4hgnode21.htm>`__
-- `Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <http://www.mateksys.com/?portfolio=m8q-can>`__
-- `mRo UAVCAN Universal Adapter <https://store.mrobotics.io/product-p/mro10042.htm>`__
-- `mRo Location One GPS GPS+Compass+LED+Safety Switch <https://store.mrobotics.io/product-p/mro10070b.htm>`__
-- `mRo KitCAN M10025 UAVCAN Adapter+Baro+Compass <https://store.mrobotics.io/product-p/mro10025.htm>`__
-- :ref:`UAVCAN ESCs <common-uavcan-escs>`
-- `Zubax GNSS 2 GPS+Compass+Baro <https://zubax.com/products/gnss_2>`__
+    Avionics Anonymous Airspeed +Temp <common-avanon-adc>
+    Avionics Anonymous GNSS + Compass <common-avanon-gnss-mag>
+    Avionics Anonymous GNSS/Mag: GNSS + Compass <common-avanon-laserint>
+    Avionics Anonymous LIDAR Interface <common-avanon-mag>
+    CUAV Neo v2 Pro UAVCAN GPS <common-cuav-neo-v2-pro>
+    jDrones UAVCAN Starter kit <https://store.jdrones.com/uc4g_slcan_v11_p/uc4hcmb01.htm>
+    jDrones UAVCAN General Node <https://store.jdrones.com/uc4g_geneneral_node_v21_p/uc4hgnode21.htm>
+    Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <http://www.mateksys.com/?portfolio=m8q-can>`
+    mRo GPS, GPS+Compass,RTK, and UAVCAN modules <https://store.mrobotics.io/category-s/109.htm>
+    UAVCAN ESCs <common-uavcan-escs>
+    Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>

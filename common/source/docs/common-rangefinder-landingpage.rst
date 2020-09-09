@@ -53,6 +53,7 @@ based upon your set-up.
 
     Aerotenna US-D1 Radar Altimeter <common-aerotenna-usd1>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
+    Avionics Anonymous UAVCAN LIDAR Interface <common-avanon-laserint>
     Benewake TF02 / TF03 <common-benewake-tf02-lidar>
     Benewake TFmini / TFmini Plus / TF-Luna <common-benewake-tfmini-lidar>
     Garman Lidar-Lite <common-rangefinder-lidarlite>
