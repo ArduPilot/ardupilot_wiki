@@ -147,13 +147,13 @@ V6.x revision has an additional ADC available for external current sensor hardwa
 
 :ref:`BATT_CURR_PIN <BATT_CURR_PIN>` = 11
 
-:ref:`BATT_CURR_SCALE <BATT_CURR_SCALE>` = 18.2
+:ref:`BATT_AMP_PERVLT <BATT_AMP_PERVLT>` = 18.2
 
 Set :ref:`BATT_MONITOR <BATT_MONITOR>` to 4 (= analog voltage and current) and reboot for full battery monitoring support.
 
 .. note::
    
-   Current pin defaults to pin 11 in ardupilot runtime. Alternatively, it can be used for analog RSSI input or connecting an analog airspeed sensor. Adjust :ref:`BATT_CURR_SCALE <BATT_CURR_SCALE>` default of 18.2 as required by the individual current sensor hardware used.
+   Current pin defaults to pin 11 in ardupilot runtime. Alternatively, it can be used for analog RSSI input or connecting an analog airspeed sensor. Adjust :ref:`BATT_AMP_PERVLT <BATT_AMP_PERVLT>` default of 18.2 as required by the individual current sensor hardware used.
 
 
 Flashing Firmware
