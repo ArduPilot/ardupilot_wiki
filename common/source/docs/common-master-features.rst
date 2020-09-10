@@ -21,12 +21,14 @@ This lists features or changes merged in master and build in the "latest" firmwa
     MSP (MultiWii Serial Protocol) <common-msp-overview>
     RunCam Control <common-camera-runcam>
 [/site]
+    Velocity ESCs <common-velocity-can-escs>
     Other wiki changes <common-future-wiki-changes>
-
+    
 [site wiki="plane"]
 - :ref:`Change to PID scaling in QuadPlane Tailsitters <4.1-gainscaling>`
 [/site]
 - :ref:`Camera Trigger MAV Command change <mav_cmd_do_set_cam_trigg_dist>`
+   
 
 
 
