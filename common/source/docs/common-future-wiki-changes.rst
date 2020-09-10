@@ -313,7 +313,7 @@ EKF3 provides the feature of sensor affinity which allows the EKF cores to also 
 Firmware Limitations Section (common-autopilots.rst)
 ----------------------------------------------------
 
-include in the note that OSD-base parameter editing requires 2MB boards.
+include in the note that OSD-base parameter editing not available on KakuteF7 and OmnibusF7V2 boards.
 
 PLANE
 =====
