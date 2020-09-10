@@ -112,6 +112,6 @@ PRs are more likely to be merged quickly if:
 
 - The PR clearly states what changes in behaviour are expected
 - Good testing evidence is provided.  This could be graphs of logs recorded before and after the change
-- The PR is discussed on the :ref:`weekly dev call <ardupilot-discord-server>`.  To get the PR discussed add the "DevCallTopic" label.  If you are unable to add the label ping one of the developers on the `ArduPilot Gitter channel <https://gitter.im/ArduPilot/ardupilot>`__
+- The PR is discussed on the :ref:`weekly dev call <ardupilot-discord-server>`.  To get the PR discussed add the "DevCallTopic" label.  If you are unable to add the label ping one of the developers on `ArduPilot Discord <https://ardupilot.org/discord>`__
 
 It is very common, especially for large changes, for the core developers to ask you to modify the pull request to fit in better with the existing code base or resolve some knock-on impact that you may not have known about. Please don't take this the wrong way, we're definitely not trying to make your life difficult!
