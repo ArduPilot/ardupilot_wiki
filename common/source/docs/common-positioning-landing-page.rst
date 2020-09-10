@@ -29,6 +29,7 @@ positioning technologies:
     JDrones GPS Options <http://store.jdrones.com/GPS_s/193.htm>
      Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     mRo GPS, GPS+Compass,RTK, and UAVCAN modules <https://store.mrobotics.io/category-s/109.htm>
+    mRo Locaton One UAVCAN GPS/Compass <common-mrobotics-location-one-gps>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
     Trimble BD930 RTK GPS <common-gps-trimble>
