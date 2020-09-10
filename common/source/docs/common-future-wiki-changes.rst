@@ -370,7 +370,7 @@ This allows live changes to CROW operation on approaches so that speed braking a
 On Soaring page:
 ----------------
 
-see `WIKI PR #2914 <https://github.com/ArduPilot/ardupilot_wiki/pull/2914>`_
+see `WIKI PR #3013 <https://github.com/ArduPilot/ardupilot_wiki/pull/3013>`_
 
 
 -----------------------------------------------------
