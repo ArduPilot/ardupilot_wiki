@@ -4,14 +4,14 @@
 FlowHold Mode
 =============
 
-FlowHold mode uses an :ref:`optical flow sensor <common-optical-flow-sensors-landingpage>` to hold position without the need for a GPS nor a downward facing Lidar.
+FlowHold mode uses an :ref:`optical flow sensor <common-optical-flow-sensors-landingpage>` to hold position without the need for a GPS nor a downward facing Lidar.  Better performance can be achieved by attaching a :ref:`rangefinder <common-rangefinder-landingpage>` and using regular :ref:`Loiter <loiter-mode>` mode instead
 
 ..  youtube:: SSISkG58cDk?t=70
     :width: 100%
 
-.. note::
+.. warning::
 
-   FlowHold is available in Copter-3.6 (and higher)
+   With many vehicles this mode results in wobbling and unstable position hold.  If possible we recommend attaching a :ref:`rangefinder <common-rangefinder-landingpage>` and using regular :ref:`Loiter <loiter-mode>` instead
 
 FlowHold mode is similar to PosHold mode in that the pilot directly controls the vehicle's lean angles with the roll and pitch sticks.  When the user releases the sticks, the optical flow sensor is used by the autopilot to bring the vehicle to a stop.
 
