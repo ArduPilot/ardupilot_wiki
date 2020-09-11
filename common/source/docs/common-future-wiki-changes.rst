@@ -315,6 +315,14 @@ Firmware Limitations Section (common-autopilots.rst)
 
 include in the note that OSD-base parameter editing not available on KakuteF7 and OmnibusF7V2 boards.
 
+MSP Protocol and OSD
+--------------------
+
+Add link to MSP (MultiWii Serial Protocol) <common-msp-overview> on Telemetry Landing Page, and add to OSD page:
+
+"MSP protocol allows MSP compatible goggles (like the DJI Air system) to overlay telemetry data directly in the goggle display."
+and link in TOC to : MSP OSD <common-msp-osd-overview>
+
 PLANE
 =====
 
