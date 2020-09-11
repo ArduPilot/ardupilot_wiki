@@ -17,6 +17,8 @@ This lists features or changes merged in master and build in the "latest" firmwa
 [/site]
 [site wiki="copter,plane,rover"]
     Hott Telem (already in Plane release) <common-hott-telemetry>
+    MSP OSD <common-msp-osd-overview>
+    MSP (MultiWii Serial Protocol) <common-msp-overview>
     RunCam Control <common-camera-runcam>
 [/site]
     Other wiki changes <common-future-wiki-changes>
