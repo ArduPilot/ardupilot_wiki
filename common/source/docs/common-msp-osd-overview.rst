@@ -74,21 +74,13 @@ Each OSD panel item uses a set of three variables to be set:
 Testing OSD with SITL
 =====================
 
-OSD functionality can be tested and panel items adjusted without autopilot or video hardware using the :ref:`Software In The Loop (SITL) simulator <dev:sitl-simulator-software-in-the-loop>` setup. Follow those SITL-Instructions to setup a simulation environment. Run the simulator on current source code using ``--osd`` option to build the OSD code into the simulator. For example, for a plane simulation:
+OSD functionality can be tested and panel items adjusted without autopilot or video hardware using the :ref:`Software In The Loop (SITL) simulator <dev:sitl-simulator-software-in-the-loop>` setup. Follow those SITL-Instructions to setup a simulation environment. Run the simulator on current source code using ``--osdmsp`` option to build the OSD code into the simulator. For example, for a plane simulation:
 
 ::
 
-    sim_vehicle.py -v ArduPlane --console --osd
+    sim_vehicle.py -v ArduPlane --console --osdmsp
 
-A graphical OSD simulation (for the internal OSD, not MSP OSD) in a separate window will be opened with the other simulation windows.
-
-Then the above parameters can be loaded to switch to MSP OSD protocol, and the OSD elements customized by their parameters using an MSP OSD emulation program to visualize the OSD. Alternatively, you can load the following parameter file which will set those up and load a typical OSD panel layout, using this MAVProxy command (assuming that you are running the simulation in the arudpilot base directory):
-
-
-:: 
-
-    param load libraries/AP_MSP/Tools/osdtest.parm
-    reboot
+A graphical DJI style MSP OSD simulation in a separate window will be opened with the other simulation windows using a typical set of OSD panel parameters, located at libraries/AP_MSP/Tools/osdtest.parm . Then the OSD elements can be customized by their parameters using the  MSP OSD emulation program to visualize the OSD. 
 
 .. note:: You could also use these parameters to initially setup the MSP OSD configuration for use with goggles, but you may have to change the ``SERIALx_PROTOCOL`` parameter to match the actual serial port that you will be using.
 
@@ -98,13 +90,7 @@ Then the above parameters can be loaded to switch to MSP OSD protocol, and the O
 .. image:: ../../../images/msp_osd_python.png
    :target: ../_images/msp_osd_python.png
 
-In order the start the above emulator, in a separate terminal window, running at the same ardupilot base directory, run:
-
-::
-
-    libraries/AP_MSP/Tools/msposd.py
-
-By changing the OSD panel items parameters, a live update on their placement can be seen in this emulator.
+By changing the OSD panel items' parameters, a live update on their placement can be seen in this emulator.
 
 Using Mission Planner to Configure the Layout
 =============================================
