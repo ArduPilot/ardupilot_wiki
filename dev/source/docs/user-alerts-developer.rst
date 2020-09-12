@@ -93,7 +93,7 @@ The json files themselves will each have the below fields. There are examples in
      - Date that this User Alert was raised.
 
    * - affectedFirmware
-     - String array containing ``["all"]`` OR individual firmwares. For example: ``["copter", "sub", "tracker", "AP_Periph"]``
+     - String array containing ``["all"]`` OR individual firmwares: ``["copter", "sub", "antenna", "plane", "rover", "AP_Periph"]``
      - Which ArduPilot firmware is affected. Use comma separated value to specify multiple vehicles if "all" does not work.
 
    * - hardwareLimited
@@ -118,23 +118,23 @@ The json files themselves will each have the below fields. There are examples in
 
    * - linkedIssue
      - ``string``
-     - URL to Issue in ArduPilot GitHub repo. Optional
+     - URL to Issue in ArduPilot GitHub repository. Optional.
 
    * - linkedInfo
      - String array of URLs
-     - URLs to any supporting information about the issue, such as forum posts. Optional
+     - URLs to any supporting information about the issue, such as forum posts. Optional.
 
    * - linkedPR
      - ``string``
      - URL to the fix PR in ArduPilot GitHub repo. Blank if there is not PR yet.
 
    * - versionFrom
-     - Dict of firmware=version. For example: ``{"copter": "4.0.1", "plane": "4.0.5"}``
+     - Dict of firmware versions. For example: ``{"copter": "4.0.1", "plane": "4.0.5"}``
      - ArduPilot release which introduced the issue, if known.  Empty assumes all previous versions. The dict must cover all firmwares listed in "Affected firmware".
 
    * - versionFixed
-     - Dict of firmware=version. FOr example: ``{"copter": "4.0.1", "plane": "4.0.5"}``
-     - ArduPilot release which contains fix. List must cover all firmwares listed in "Affected firmware". It is assumed that all versions between VersionFrom and this are affected by the User Alert. This field is an empty dict if there is no fixed version yet
+     - Dict of firmware=version. For example: ``{"copter": "4.0.1", "plane": "4.0.5"}``
+     - ArduPilot release which contains fix. List must cover all firmwares listed in "Affected firmware". It is assumed that all versions between VersionFrom and this are affected by the User Alert. This field is an empty if there is no fixed version yet.
 
 
 Application Ingestion
