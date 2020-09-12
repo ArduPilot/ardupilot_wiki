@@ -109,3 +109,8 @@ Rangefinder
  .. note::
 
  	The RNGFNDx_ADDR Ardupilot parameter must be set above 0 and be equal to the number set on the UAVCAN adapter node.
+
+UAVCAN Adapter Nodes
+====================
+
+:ref:`mRo UAVCAN Adapter Node <common-mro-uavcan-adapter-node>`
