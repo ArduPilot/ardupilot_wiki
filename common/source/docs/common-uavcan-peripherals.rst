@@ -17,5 +17,6 @@ UAVCAN Peripherals
     Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     mRobotics KitCAN CAN/UAVCAN Adapter Node+Compass+Baro <common-mro-kitcan>
     mRo GPS, GPS+Compass,RTK, and UAVCAN modules <https://store.mrobotics.io/category-s/109.htm>
+    mRo UAVCAN Adapter Node <common-mro-uavcan-adapter-node>
     UAVCAN ESCs <common-uavcan-escs>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
