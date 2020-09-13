@@ -77,7 +77,7 @@ Each OSD panel item uses a set of three variables to be set:
    
     The typical MAXChip based OSD screen has a visible matrix of 30 horizontal x 13 vertical chars in NTSC standard, while PAL standard has 16 vertical chars. The OSD code enables auto-detection of NTSC vs. PAL to match input signal properties.
     
-.. note::    ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :rerf:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value as the airspeed item, if no sensor is present.
+.. note::    ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value as the airspeed item, if no sensor is present.
     
 User Programmable Warnings
 ============================
