@@ -30,13 +30,13 @@ To set the units used to display, use parameter ``OSD_UNITS``:
 
 To set vertical and horizontal display offset (space at top and left side of screen), use parameters ``OSD_H_OFFSET``, ``OSD_V_OFFSET``.
 
-Several options can be set using ``OSD_OPTIONS`` (bitmask selection):
+Several options can be set using :ref:`OSD_OPTIONS<OSD_OPTIONS>` (bitmask selection):
 
 - bit0 = Enable use of compact number+decimal point fonts
-- bit1 = Invert wind direction indicator
+- bit1 = Invert wind direction indicator (to point to the direction its blowing from instead of toward)
 - bit2 = Invert horizon roll direction
      
-Several font sets are included and can be changed during runtime (and those who can build the software can customize or add additional font sets....see libraries/AP_OSD/fonts/README.md) - ``OSD_FONT``:
+Several font sets are included and can be changed during runtime (and those who can build the software can customize or add additional font sets....see libraries/AP_OSD/fonts/README.md) - :ref:`OSD_FONT<OSD_FONT>`:
 
 - ``0`` = Clarity (default). A clearly visible large font
 - ``1`` = Clarity Medium. Good visibility, less dominant than clarity default
@@ -59,7 +59,7 @@ There are different switch-method options to meet individual RC systems switch l
 These can be set by parameter: :ref:`OSD_SW_METHOD<OSD_SW_METHOD>`.
 The options are:
 
-- 0 = switches to next screen if the set RC channel's (:ref:`OSD_CH<OSD_CH>`) value is changed
+- 0 = switches to next screen if the set RC channel's (:ref:`OSD_CHAN<OSD_CHAN>`) value is changed
 - 1 = directly selects a screen based on the set pwm limits for each respective screen. RC channel value must change for new pwm value to be recognized.
 - 2 = toggles screens on a low to high transition of set RC channel. keeps toggling to next screen every 1s while channel value is kept high
 
@@ -77,15 +77,15 @@ Each OSD panel item uses a set of three variables to be set:
    
     The typical MAXChip based OSD screen has a visible matrix of 30 horizontal x 13 vertical chars in NTSC standard, while PAL standard has 16 vertical chars. The OSD code enables auto-detection of NTSC vs. PAL to match input signal properties.
     
-.. note::    ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. ARSPD_TYPE must be set to zero in order to display this value as the airspeed item, if no sensor is present.
+.. note::    ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :rerf:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value as the airspeed item, if no sensor is present.
     
 User Programmable Warnings
 ============================
 Several user defined warnings can be set which will flash the respective osd panel item when warning level is reached or exceeded
 
-- ``OSD_W_BATVOLT`` - Blinks battery voltage panel if less than this value. 0-100V with up tenth volt precision
-- ``OSD_W_RSSI`` - Blinks rssi panel if less than this integet percentage value. 0-99%
-- ``OSD_W_NSAT`` - Blinks #Sat panel if less than this number. 0-30
+- :ref:`OSD_W_BATVOLT<OSD_W_BATVOLT>` - Blinks battery voltage panel if less than this value. 0-100V with up tenth volt precision
+- :ref:`OSD_W_RSSI<OSD_W_RSSI>` - Blinks rssi panel if less than this integet percentage value. 0-99%
+- :ref:`OSD_W_NSAT<OSD_W_NSAT>` - Blinks #Sat panel if less than this number. 0-30
 
 Testing OSD with SITL
 =====================
