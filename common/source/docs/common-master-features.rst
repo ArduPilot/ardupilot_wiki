@@ -20,8 +20,9 @@ This lists features or changes merged in master and build in the "latest" firmwa
     MSP OSD <common-msp-osd-overview>
     MSP (MultiWii Serial Protocol) <common-msp-overview>
     RunCam Control <common-camera-runcam>
-[/site]
     Velocity ESCs <common-velocity-can-escs>
+[/site]
+    
     Other wiki changes <common-future-wiki-changes>
     
 [site wiki="plane"]
