@@ -14,9 +14,8 @@ where transition between hover and forward flight is accomplished by
 tilting one or more rotors so that it provides forward thrust instead
 of upward thrust.
 
-This is distinct from :ref:`tailsitters <guide-tailsitter>` where the
-autopilot and main fuselage change orientation when moving between
-hover and forward flight.
+.. note:: This is distinct from :ref:`tailsitters <guide-tailsitter>` where the autopilot and main fuselage change orientation when moving between hover and forward flight. Do  not use the information below for a Tailsitter, some parameters are shared, but use the  instructions in the :ref:`guide-tailsitter`.
+
 
 Types of Tilt-Rotors
 ====================
@@ -66,9 +65,11 @@ hovering. Currently supported tilt-rotor frame classes are:
    <tr><td>Tricopter</td><td>7</td></tr>
    </table>
 
+.. note: the BiCopter tilt-rotor QuadPlane is a special case. It requires that :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` be set to 10 which is reserved for Tailsitter configurations only, normally. See :ref:`BiCopter <bicopter>`  below.
+
 Once you have chosen your frame class you will need to get the
 :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` right. The :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` is the sub-type of frame. For
-example, for a quadcopter, a frame type of 1 is for a "X" frame and a
+example, for a Quadcopter, a frame type of 1 is for a "X" frame and a
 frame type of 3 is for a "H" frame. For Tri and Y6, this parameter is ignored.
 
 Please see the ArduCopter setup guide for multi-copters for more
@@ -120,7 +121,9 @@ parameter. Valid values are:
    <tr><td>Continuous</td><td>0</td></tr>
    <tr><td>Binary</td><td>1</td></tr>
    <tr><td>Vectored</td><td>2</td></tr>
+   <tr><td>BiCopter</td><td>3</td></tr>
    </table>
+
 
 Tilt Servos
 ===========
@@ -241,6 +244,28 @@ of the servo-channels actually connected BLHELI-ESCs.
 
 For example if your motors are connected to servo 9,10,11 (the first three aux-outputs of a pixhawk1), set :ref:`SERVO_BLH_MASK<SERVO_BLH_MASK>` to 1792.
 
+.. _bicopter:
+
+BiCopter Tilt-Rotor
+===================
+
+This is a special case of tilt-rotor QuadPlane. Setup is a bit different, but the configuration is actually a normal QuadPlane and performs QuadPlane transitions. In order to setup this vehicle configuration:
+
+- :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` = 10 (Tailsitter, even though this is not a tailsitter!)
+- :ref:`Q_TILT_TYPE<Q_TILT_TYPE>` = 3 (BiCopter)
+
+Motor and Tilt Setup
+--------------------
+
+For motors and tilt servos,you should set the SERVOn_FUNCTION values for your two tilt servos for the left and right motors, and for the left and right motor throttles.
+
+The tilt servo limits are setup a bit differently than other Tilt Rotors. To setup, a normal tilt rotor range, you would set the :ref:`Q_TILT_YAW_ANGLE<Q_TILT_YAW_ANGLE>`, then the tilt servo's MIN and MAX output range to get vertical in QSTABLIZE and horizontal in MANUAL on the bench.The TRIM value is ignored.
+
+With this frame type, the tilt servo's MIN sets horizontal position, TRIM the vertical position, and MAX the full rearward (max  VTOL yaw). In this case, the user must set the :ref:`Q_TILT_YAW_ANGLE<Q_TILT_YAW_ANGLE>` for the amount of forward yaw from vertical (should match the rearward angle to prevent asymmetric yaw authority in one direction).
+
+.. note:: MIN and MAX may be swapped if the tilt servo had to be reversed to get proper directions.
+
+Otherwise, this frame type conforms to the normal vectored yaw tilt-rotor QuadPlane transitions, and parameters.
 
 Tilt Rotor Movement Setup
 =========================
@@ -255,7 +280,7 @@ Tilt Rotor Movement Setup
 Pre Flight Checks
 =================
 
-In addition to the normal pre-flight checks for a quadplane, you
+In addition to the normal pre-flight checks for a QuadPlane, you
 should check your tilt-rotor transition by changing between MANUAL and
 QSTABILIZE modes on the ground. Make sure that your tilt moves
 smoothly and that the servos are trimmed correctly for the right rotor
