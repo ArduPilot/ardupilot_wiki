@@ -44,6 +44,7 @@ Several font sets are included and can be changed during runtime (and those who 
 - ``3`` = Bold. A bolder version of Betaflight
 - ``4`` = Digital. 80's LED clock radio style
  
+.. _screen-switching:
 
 Screens and screen switching 
 ============================
@@ -55,11 +56,11 @@ For multiple screen layouts, each parameter's "OSD" part is trailed by a number,
 * Set parameters ``OSDn_CHAN_MIN`` and ``OSDn_CHAN_MAX`` to adjust RC channel pwm limits to use for switching to a respective screen.
 
 There are different switch-method options to meet individual RC systems switch layout requirements. 
-These can be set by parameter: ``OSD_SW_METHOD``.
+These can be set by parameter: :ref:`OSD_SW_METHOD<OSD_SW_METHOD>`.
 The options are:
 
-- 0 = switches to next screen if the set RC channel's value is changed
-- 1 = directly selects a screen based on the set pwm limits for each respective screen
+- 0 = switches to next screen if the set RC channel's (:ref:`OSD_CH<OSD_CH>`) value is changed
+- 1 = directly selects a screen based on the set pwm limits for each respective screen. RC channel value must change for new pwm value to be recognized.
 - 2 = toggles screens on a low to high transition of set RC channel. keeps toggling to next screen every 1s while channel value is kept high
 
 
