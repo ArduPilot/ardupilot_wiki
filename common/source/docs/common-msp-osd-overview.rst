@@ -107,5 +107,5 @@ Mission Planner(MP) has a tab in its CONFIG menu to configure the on-board OSD m
 Video
 =====
 
-.. youtube:: RAoQ9clSX1o
+.. youtube:: hgT4R3E_7Z_0
 
