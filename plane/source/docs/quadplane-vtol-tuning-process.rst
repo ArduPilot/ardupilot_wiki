@@ -4,25 +4,85 @@
 Tuning Process Instructions
 ===========================
 
-Setting the aircraft up ready for tuning
-----------------------------------------
+Setting the aircraft up to be ready for tuning
+==============================================
 
 The following parameters should be set correctly based on the specifications of your aircraft.
 
-Battery setting
-^^^^^^^^^^^^^^^
-Parameters used to linearize your motor thrust curve.
+Step 1: Battery and expo settings
+---------------------------------
 
-- :ref:`Q_M_BAT_VOLT_MAX <Q_M_BAT_VOLT_MAX>` : 4.2v x No. Cells
-- :ref:`Q_M_BAT_VOLT_MIN <Q_M_BAT_VOLT_MIN>` : 3.3v x No. Cells
-- :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` : 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props. This parameter can be derived by thrust stand measurements for optimum results (don’t trust manufacturer data). See :ref:`motor-thrust-scaling` for details
+It is very important to ensure that the thrust curve of your VTOL
+motors is as linear as possible. A linear thrust curve means that
+changes in the actual thrust produced by a motor is directly
+proportional to the thrust being demanded by ArduPilot. If your thrust
+curve is badly non-linear then you will never produce a good tune, and
+in some cases may end up with such a bad tune that your vehicle can
+become completely unstable and crash.
+
+There are 3 common causes of a non-linear thrust curve.
+
+ - voltage sag as throttle is increased or the forward motor is engaged. This is very common in QuadPlanes
+ - incorrect end-point setup in the PWM range you use to your ESCs (see "Motors setup" below)
+ - non-linearity in the thrust produced by your propeller, ESC and motor combination
+
+Start with setting up the voltage range to cope with voltage sag.
+
+- :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>` : index of the battery to use for voltage measurements on VTOL power system. Zero is the first battery, one for 2nd battery etc
+- :ref:`Q_M_BAT_VOLT_MAX <Q_M_BAT_VOLT_MAX>` : 4.2v x No. Cells for LiPo
+- :ref:`Q_M_BAT_VOLT_MIN <Q_M_BAT_VOLT_MIN>` : 3.3v x No. Cells for LiPo
+
+Note that :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>` needs to be for the correct
+battery for your VTOL motors. If you have a separate battery for
+forward motors and VTOL motors then make sure you use the right one.
+
+Next setup the thrust expo. If you are setting up a professional
+aircraft then you should invest in a thrust stand so you can
+accurately measure the true thrust for your motor/ESC/propeller
+combination as you vary the throttle. Then you will adjust the expo
+value along with the endpoints (given by motors setup below) so that
+you use the region of the thrust curve which is as linear as
+possible. Do not trust manufacturer data for the thrust curve as they
+are frequently inaccurate. See :ref:`motor-thrust-scaling` for
+details on thrust scaling.
+
+If you are setting up a hobby grade vehicle then you should use the
+graph below to estimate the correct :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` value for your aircraft.
+
+- :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` : 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props.
 
 .. image:: ../images/tuning-process-instructions-1.hires.png
     :target: ../_images/tuning-process-instructions-1.hires.png
 
-Motors setup
-^^^^^^^^^^^^
-Parameters used to define the output range sent to the ESC.
+Step 2: Motors setup
+--------------------
+
+The motor parameters define the PWM output range sent to the
+ESCs. This is critical to ensure that the entire range of throttle
+values used in flight is within the linear range of your propulsion
+system.
+
+For standard PWM based ESCs you should adjust :ref:`Q_M_PWM_MIN
+<Q_M_PWM_MIN>` until it is approximately 20 microseconds below the
+minimum value that causes the motors to just start spinning. If you
+are using digital motor outputs (such as DShot) then this is not
+necessary and the default of 1000 should be used.
+
+You should then adjust :ref:`Q_M_PWM_MAX <Q_M_PWM_MAX>` to the value
+where the ESCs stop producing more thrust. Note that this is commonly
+a bit below the default maximum of 2000. To find the value you should
+test with propellers removed, and use the motor test facility of your
+GCS to find the lowest PWM value which produces the motors maximum
+RPM. You should be able to tell at what PWM the motors stop producing
+more thrust by listening to the sound made at different PWM values, or
+you can use a tachometer.
+
+The :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>` :ref:`Q_M_SPIN_MAX
+<Q_M_SPIN_MAX>` values are used to select a sub-range of the outputs
+to your motors which is linear. For hobby users the defaults are
+usually good, but for professional vehicles you should use the thrust
+stand data to determine the right range to produce linear thrust after
+the expo is applied.
 
 - :ref:`Q_M_PWM_MAX <Q_M_PWM_MAX>` : Check ESC manual for fixed range or 2000us
 - :ref:`Q_M_PWM_MIN <Q_M_PWM_MIN>` : Check ESC manual for fixed range or 1000us
@@ -31,8 +91,13 @@ Parameters used to define the output range sent to the ESC.
 - :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>` : use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
 - :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>` : 0.25, or below the expected hover thrust percentage (low is safe)
 
-PID Controller Initial Setup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 3: PID Controller Initial Setup
+------------------------------------
+
+The settings below are meant to get your PID controller acceleration
+and filter settings into the right approximate range for your
+vehicle. These parameters are critical to the tuning process.
+
 - :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` :  10Hz to 20Hz
 - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` : 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
 - :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
@@ -59,10 +124,10 @@ PID Controller Initial Setup
 .. image:: ../images/tuning-process-instructions-4.hires.png
     :target: ../_images/tuning-process-instructions-4.hires.png
 
-The initial tune of the aircraft should be done **in the aircrafts most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
+The initial tune of the aircraft should be done **in the aircraft's most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
 
-Pilot's preparation for first flight
-------------------------------------
+Step 4: Pilot's preparation for first flight
+--------------------------------------------
 
 The first takeoff of an untuned VTOL vehicle is the most dangerous seconds of the aircraft’s life. This is where the aircraft could be very unstable causing a sudden increase in power when then results in the aircraft jumping into the air, or it may be so poorly tuned that you have insufficient control over the aircraft once it is airborne. The pilot should be extremely diligent during the tuning flights to avoid a situation that could result in injury or damage.
 
@@ -85,9 +150,11 @@ There are several things that the pilot can do to minimize the risk during the e
 7. Do tuning flights in low-wind condition and normal weather (no rain and between 15°C/59°F and 25°C/77°F).
 8. Practice QSTABILIZE flight in simulator or on a low-end drone first. You should be confident to be able to takeoff and land with your untuned aircraft.
 
+Tuning Processs
+===============
 
-First Flight
-------------
+Step 5: First Flight
+--------------------
 
 The first take off is the most dangerous time for any QuadPlane. Care must be taken to ensure the aircraft is not destroyed in the first seconds of flight and nobody is injured.
 
@@ -111,8 +178,8 @@ This flight will allow to setup your aircraft in a "flyable for tuning" state.
 
 Next section will explain how to remove the oscillations.
 
-Initial aircraft tune
----------------------
+Step 6: Initial aircraft tune
+-----------------------------
 
 The first priority when tuning a QuadPlane is to establish a stable tune, free of oscillations, that can be used to do further tests.
 
@@ -134,8 +201,8 @@ If the aircraft has very long or flexible landing gear then you may need to leav
 
 Be aware that in this state the aircraft may be very slow to respond to large control inputs and disturbances. The pilot should be extremely careful to put minimal stick inputs into the aircraft to avoid the possibility of a crash.
 
-Test QHOVER
------------
+Step 7: Test QHOVER
+-------------------
 
 This test will allow to test the altitude controller and ensure the stability of your aircraft.
 
@@ -150,37 +217,85 @@ This test will allow to test the altitude controller and ensure the stability of
 
  If the QuadPlane in QHOVER starts to move up and down, the vertical position and velocity controllers may need to be reduced by 50%. These values are: :ref:`Q_P_POSZ_P <Q_P_POSZ_P>` and :ref:`Q_P_VELZ_P <Q_P_POSZ_P>`.
 
-Evaluating the aircraft tune
-----------------------------
+Step 8: Yaw Bias
+----------------
 
-Most pilots will look to move to :ref:`QAUTOTUNE<qautotune-mode>` as quickly as possible once their aircraft can hover safely in QHOVER. Before QAUTUTUNE mode is run, the pilot should ensure that the current tune is good enough to recover from the repeated tests run in QAUTOTUNE mode. To test the current state of tune:
+A common problem in QuadPlanes is excessive amount of VTOL power being
+used to maintain yaw. This can be caused by:
 
-1. Take off in QHOVER or QSTABILIZE
-2. Apply small roll and pitch inputs. Start with 5 degree inputs and releasing the stick to centre, pitch, left, right, roll forward back, then all 4 points on the diagonal
-3. Increase inputs gradually to full stick deflection
-4. Go to full stick deflection, quickly momentarily, and let the sticks spring back to centre
+ - small misalignment of the VTOL motors
+ - frame twist (often caused by wing twist) as thrust is applied
 
-If the aircraft begins to overshoot significantly or oscillate after the stick input, halt the tests before the situation begins to endanger the aircraft. The aircraft may require manual tuning described below before QAUTOTUNE can be run.
+If too much power is needed to maintain yaw then the aircraft could
+lose yaw control during transitions, or could lose roll and pitch
+stability. For larger quadplanes it is common to need to deliberately
+tilt the motors by a couple of degrees to increase yaw authority.
 
-To test the stabilization loops independent of the input shaping, set the parameter: :ref:`Q_A_RATE_FF_ENAB <Q_A_RATE_FF_ENAB>` to 0.
+You should check the amount of thrust being used to maintain yaw by
+looking at the RATE YOut value in your hover logs. If it is over 10%
+(a value of 0.1) when hovering in no wind then you have a problem with
+yaw asymmetry that should be fixed.
 
-1. Take off in QHOVER or QSTABILIZE
-2. Hold a roll or pitch input
-3. Release the stick and observe the overshoot as the aircraft levels itself
-4. Gradually increase the stick deflection to 100%
+Note that some QuadPlanes will benefit from being setup as H frames
+instead of X frames. Which works best depends on the way the motor
+mounts twist when under thrust. If you have a persistent problem with
+yaw control then consider trying to change the frame type between X
+and H.
 
-Halt the tests if the aircraft overshoots level significantly or if the aircraft oscillates, the aircraft may require manual tuning (:ref:`see next section <ac_rollpitchtuning>`) before QAUTOTUNE can be run.
+Step 9: Notch Filtering
+-----------------------
 
-Set :ref:`Q_A_RATE_FF_ENAB <Q_A_RATE_FF_ENAB>` to 1 after the tests are complete.
+After your have QHOVER flying without oscillations the next step is to
+get get a good notch filter setup to reduce noise to the VTOL PID
+controllers. A good set of notch filtering parameters is critical to a
+good tune.
 
-Manual tuning of Roll and Pitch
--------------------------------
+To get a notch filter setup you need to hover your quadplane for 2
+minutes with no pilot input and with :ref:`INS_LOG_BAT_MASK
+<INS_LOG_BAT_MASK>` set to 1. This will enable FFT logging which will
+guide the correct setup of the notch filters. You should then
+carefully read the :ref:`common-imu-notch-filtering` documentation and
+setup a harmonic notch to remove the noise from your gyros.
 
-Manual tuning may be required to provide a stable tune before QAUTOTUNE is run, or if QAUTOTUNE does not produce an acceptable tune. The process below can be done on roll and pitch at the same time for a quick manual tune provided the aircraft is symmetrical. If the aircraft is not symmetrical then the process should be repeated for both roll and pitch individually.
+When setting up your filtering you should consider the cause of any
+oscillation you find. On most aircraft the vibrations you find will be
+directly caused by a multiple of the RPM, but on some aircraft a frame
+resonance or resonance in the flight controller mount may be the
+cause. Understanding the cause of any resonances is critical to
+reducing noise enough to get a good tune.
 
-The pilot should be especially careful to ensure that :ref:`Q_A_THR_MIX_MAN <Q_A_THR_MIX_MAN>` and :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>` are set correctly before manual tuning is started.
+Step 10: Manual tuning of Roll and Pitch
+----------------------------------------
 
-When oscillations start do not make large or sudden stick inputs. Reduce the throttle smoothly to land the aircraft while using very slow and small roll and pitch inputs to control the aircraft position.
+While you may be tempted to jump straight to QAUTOTUNE mode, this is
+not recommended. Most quadplanes need some manual tuning of roll and
+pitch before they can handle a QAUTOTUNE. If you jump straight to a
+QAUTOTUNE then your aircraft may become unstable enough to crash. A
+good manual tune will also reduce the amount of time a QAUTOTUNE will
+take, which can be critical given the small VTOL hover times of many
+quadplanes.
+
+Before starting the manual tune you should go back and check you have
+fully completed the steps above, and ensure you have a good notch
+filter setup to remove noise from the gyros.
+
+Hover the aircraft in QSTABILIZE or QHOVER modes, in low wind, with
+good sky view and good GPS lock. You should adjust the rate gains as
+described below, using small "twitches" on the sticks after each
+change to try to trigger oscillation.
+
+If oscillations start do not make large or sudden stick inputs. Reduce
+the throttle smoothly to land the aircraft while using very slow and
+small roll and pitch inputs to control the aircraft position.
+
+The parameters you will be adjusting are:
+
+- :ref:`Q_A_RAT_RLL_D <Q_A_RAT_RLL_D>`
+- :ref:`Q_A_RAT_RLL_P <Q_A_RAT_RLL_P>` and :ref:`Q_A_RAT_RLL_I <Q_A_RAT_RLL_I>`
+- :ref:`Q_A_RAT_PIT_D <Q_A_RAT_PIT_D>`
+- :ref:`Q_A_RAT_PIT_P <Q_A_RAT_PIT_P>` and :ref:`Q_A_RAT_PIT_I <Q_A_RAT_PIT_I>`
+
+Start with the roll parameters, then move onto the pitch.
 
 1. Increase the D term in steps of 50% until oscillation is observed
 2. Reduce the D term in steps of 10% until the oscillation disappears
@@ -189,14 +304,66 @@ When oscillations start do not make large or sudden stick inputs. Reduce the thr
 5. Reduce the P term in steps of 10% until the oscillation disappears
 6. Reduce the P term by a further 25%
 
-Each time the P term is changed set the I term equal to the P term. Those parameters can be changed on ground and preferably disarmed. A confident pilot could set them in flight with GCS.
+Each time the P term is changed in the above steps you should set the
+corresponding I term equal to the P term. Those parameters can be
+changed on ground and preferably disarmed. Alternatively, a confident
+pilot could set them in flight with a GCS, or use the transmitter
+tuning option. See :ref:`common-transmitter-tuning`
 
-The transmitter can be used to do these in the air. See :ref:`common-transmitter-tuning`
+Note that it is common that once you have properly setup notch
+filtering that you will be able to increase the D value a lot from the
+default value. Increases of 10x over the default are not
+uncommon. Being able to use a larger D gain is one of the main
+advantages of good notch filtering, and can produce a much better
+tune.
 
-QAUTOTUNE
----------
+After you have gone through the above steps you should carefully look
+at your logs to ensure you don't have a hidden oscillation. The
+structure of quadplanes sometimes means that oscillations may not be
+externally visible. You should use the RATE, PIQR and PIQP messages to
+look for oscillations.
 
-If the aircraft appears stable enough to attempt QAUTOTUNE, follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page.
+Step 11: Evaluating the aircraft tune
+-------------------------------------
+
+You need to evaluate the aircraft's tune to see if the previous steps
+have resulted in a tune which is good enough for a transition flight
+or for QAUTOTUNE.
+
+1. Take off in QHOVER or QSTABILIZE
+2. Apply small roll and pitch inputs. Start with 5 degree inputs and releasing the stick to centre, pitch, left, right, roll forward back, then all 4 points on the diagonal
+3. Increase inputs gradually to full stick deflection
+4. Go to full stick deflection, quickly momentarily, and let the sticks spring back to centre
+
+If the aircraft begins to overshoot significantly or oscillate after
+the stick input, halt the tests before the situation begins to
+endanger the aircraft. The aircraft may require more manual tuning before QAUTOTUNE can be run.
+
+To test the stabilization loops independent of the input shaping, set the parameter: :ref:`Q_A_RATE_FF_ENAB <Q_A_RATE_FF_ENAB>` to 0.
+
+1. Take off in QHOVER or QSTABILIZE
+2. Hold a roll or pitch input
+3. Release the stick and observe the overshoot as the aircraft levels itself
+4. Gradually increase the stick deflection to 100%
+
+Halt the tests if the aircraft overshoots level significantly or if
+the aircraft oscillates and go back to manual tuning.
+
+Set :ref:`Q_A_RATE_FF_ENAB <Q_A_RATE_FF_ENAB>` to 1 after the tests are complete.
+
+Step 12: QAUTOTUNE
+------------------
+
+If the aircraft appears stable enough to attempt QAUTOTUNE and you
+have sufficient battery to last through a QAUTOTUNE then you can
+follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page.
+
+You should use QAUTOTUNE on one axis at a time (setting
+:ref:`Q_AUTOTUNE_AXES <Q_AUTOTUNE_AXES>` for the axis you want to
+tune). An autotune of a single axis will typically take 5 to 8
+minutes, but will take longer if your manual tune is not good
+enough. If you do not have enough battery for at least 8 minutes of
+vertical flight then QAUTOTUNE is not recommended.
 
 There a number of problems that can prevent QAUTOTUNE from providing a good tune. Some of the reason QAUTOTUNE can fail are:
 
@@ -225,8 +392,8 @@ QAUTOTUNE will attempt to tune each axis as tight as the aircraft can tolerate. 
 
 These values should only be changed if QAUTOTUNE produces higher values. Small aerobatic aircraft may prefer to keep these values as high as possible.
 
-Setting the input shaping parameters
-------------------------------------
+Step 13: Setting the input shaping parameters
+---------------------------------------------
 
 QuadPlane has a set of parameters that define the way the aircraft feels to fly. This allows the aircraft to be set up with a very aggressive tune but still feel like a very docile and friendly aircraft to fly.
 
