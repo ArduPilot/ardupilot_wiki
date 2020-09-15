@@ -70,7 +70,7 @@ to take pictures at regular intervals) when the condition completes.
 .. note::
 
    CONDITION and DO commands are associated with the preceding NAV
-   command: if the UAV reaches the waypoint before these commands are
+   command: if the UAV reaches the next waypoint before these commands are
    executed, the next NAV command is loaded and they will be
    skipped.
 
