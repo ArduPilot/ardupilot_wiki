@@ -23,8 +23,8 @@ functionality:
 #. If the aircraft descends to :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` altitude, throttle is re-enabled and the aircraft will begin to climb to the altitude of the next waypoint, in AUTO, or to :ref:SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF> altitude in CRUISE or FBWB. In AUTO, if the waypoint altitude is less than :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, then Soaring can not begin before reaching the waypoint. If it is above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, then Soaring can occur once that altitude has been reached.
 #. When the aircraft reaches :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` altitude, throttle is set to zero again.
 #. If, during gliding flight, the air is estimated to be rising at more than
-   :ref:`SOAR_VSPEED<SOAR_VSPEED>` and the :ref:`RC switch position<soaring_rc-switch>` allows it, the aircraft will automatically enter LOITER mode. While in LOITER mode the aircraft will adjust the loiter position to better centre the thermal.
-#. LOITER mode is exited under the following conditions:
+   :ref:`SOAR_VSPEED<SOAR_VSPEED>` and the :ref:`RC switch position<soaring_rc-switch>` allows it, the aircraft will automatically enter THERMAL mode. While in THERMAL mode the aircraft will adjust the circling position to better centre the thermal.
+#. THERMAL mode is exited under the following conditions:
 
    - :ref:`SOAR_ALT_MAX<SOAR_ALT_MAX>` is reached.
    - :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` is reached.
@@ -33,7 +33,7 @@ functionality:
      thermalling has lasted at least :ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` seconds.
    - The aircraft drifts more than :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` - see :ref:`Limit maximum distance from home<soaring_maximum-distance-from-home>`
 
-   The flight mode will be returned to whatever it was before LOITER was 
+   The flight mode will be returned to whatever it was before THERMAL was 
    triggered.
 
 
@@ -60,7 +60,7 @@ few steps involved in setting a plane up for soaring:
 #. Tune the TECS.
 #. Estimate aircraft drag.
 #. Set up the soaring parameters.
-#. Set loiter radius and bank angle limit.
+#. Set thermalling radius and bank angle limit.
 
 Mission Setup
 =============
@@ -114,22 +114,22 @@ Set up the Soaring Parameters
 =============================
 
 Change the :ref:`SOAR_VSPEED<SOAR_VSPEED>` parameter back to a sensible value. Remember, 
-this parameter controls when the mode will be changed to LOITER and thermalling 
+this parameter controls when the mode will be changed to THERMAL and thermalling 
 starts. Change :ref:`SOAR_ALT_MAX<SOAR_ALT_MAX>` to the altitude you want the autopilot to stop 
 thermalling.
 
-Set loiter radius and bank angle limit
+Set thermalling radius and bank angle limit
 ======================================
 
-The parameter :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` sets how tight the loiter circle is. For thermalling it is usually
-best to have the aircraft fly at a 30 - 45 degree bank angle. The corresponding loiter radius can be calculated as 
+The parameter :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` sets how tight the thermalling circle is. It is usually
+best to have the aircraft fly at a 30 - 45 degree bank angle. The corresponding radius can be calculated as 
 about airspeed squared over ~10 (for 45 degrees) or ~6 (for 30 degrees), from the equation
 
 .. raw:: html
 
    <a href="https://www.codecogs.com/eqnedit.php?latex=r&space;=&space;\frac{v^2}{g&space;\tan&space;\phi}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?r&space;=&space;\frac{v^2}{g&space;\tan&space;\phi}" title="r = \frac{v^2}{g \tan \phi}" /></a>
 
-The tanget is for the desired bank angle, the result will be in meters for the radius,with g  = 9.81 m/s/s, velocity (v) is in m/s. For example, if the airspeed in loiter is 20m/s, then the :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` should be 40 for a 45 degree bank, assuming that :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set at 4500 or higher.
+The tanget is for the desired bank angle, the result will be in meters for the radius,with g  = 9.81 m/s/s, velocity (v) is in m/s. For example, if the airspeed is 20m/s, then the :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` should be 40 for a 45 degree bank, assuming that :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set at 4500 or higher.
 
 You should make sure that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set a bit larger to give some room for manoeuvring.
 
@@ -147,22 +147,22 @@ You can use a 3-position RC switch to control when the autopilot can use soaring
 
  - Low. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
  
- - Mid. Soaring will have control over throttle. The mode will not automatically change to LOITER based on detected rising air. However, when manually set to LOITER mode using RC controller or GCS, the autopilot will try to follow rising air currents. It will still restore the previous mode if the aircraft is not climbing, or if it drifts too far (see below).
+ - Mid. Soaring will have control over throttle. The mode will not automatically change to THERMAL based on detected rising air. However, when manually set to THERMAL mode using RC controller or GCS, the autopilot will try to follow rising air currents. It will still restore the previous mode if the aircraft is not climbing, or if it drifts too far (see below).
  
- - High. Fully automatic mode changes to LOITER from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
+ - High. Fully automatic mode changes to THERMAL from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
 
-+----------+----------------+---------------+-------------------+------------------+-------------------+
-| Position | PWM Value      | Auto throttle |  Tracking thermal | Automatic change | Automatic change  | 
-|          |                | cutoff        |  updrafts         | back from LOITER | to LOITER         |
-+----------+----------------+---------------+-------------------+------------------+-------------------+
-|  Low     | < 1500 us      |       N       |       N           |       N          |       N           | 
-+----------+----------------+---------------+-------------------+------------------+-------------------+
-|  Mid     | 1500 - 1700 us |       Y       |       Y           |       Y          |       N           |
-+----------+----------------+---------------+-------------------+------------------+-------------------+
-|  High    | > 1700 us      |       Y       |       Y           |       Y          |       Y           |
-+----------+----------------+---------------+-------------------+------------------+-------------------+
++----------+----------------+---------------+-------------------+-------------------+-------------------+
+| Position | PWM Value      | Auto throttle |  Tracking thermal | Automatic change  | Automatic change  |
+|          |                | cutoff        |  updrafts         | back from THERMAL | to THERMAL        |
++----------+----------------+---------------+-------------------+-------------------+-------------------+
+|  Low     | < 1500 us      |       N       |       N           |       N           |       N           |
++----------+----------------+---------------+-------------------+-------------------+-------------------+
+|  Mid     | 1500 - 1700 us |       Y       |       Y           |       Y           |       N           |
++----------+----------------+---------------+-------------------+-------------------+-------------------+
+|  High    | > 1700 us      |       Y       |       Y           |       Y           |       Y           |
++----------+----------------+---------------+-------------------+-------------------+-------------------+
 
-When thermalling in LOITER mode with soaring active, changing the switch position between Mid and High positions commands exiting thermalling and restoring the previous mode.
+When thermalling in THERMAL mode with soaring active, changing the switch position between Mid and High positions commands exiting thermalling and restoring the previous mode.
 
 When climbing back to altitude under throttle, changing the switch position to Low and back aborts the climb and starts gliding.
 
@@ -179,12 +179,12 @@ Limit maximum drift
    Available in firmware revisions 4.1 and later.
 
 
-The parameter :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` can be used to limit how far (in metres) the aircraft can drift while in LOITER mode. If the airfraft reaches this limit in LOITER mode, it will revert to the original flight mode.
+The parameter :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` can be used to limit how far (in metres) the aircraft can drift while in THERMAL mode. If the airfraft reaches this limit in THERMAL mode, it will revert to the original flight mode.
 
-If the original flight mode was FBWB or CRUISE mode, the drift distance is measured from the location LOITER was entered.
+If the original flight mode was FBWB or CRUISE mode, the drift distance is measured from the location THERMAL was entered.
 
 If the original flight mode was AUTO mode, the drift distance is measured from the closest point on the mission segment 
-to where LOITER was entered. Drift sideways or backwards, but not along the original mission track, is counted. This allows
+to where THERMAL was entered. Drift sideways or backwards, but not along the original mission track, is counted. This allows
 thermalling to continue if the wind is moving the aircraft in the direction of the next waypoint.
 
 The image below shows a scenerio where the mission track is north to south and the wind is causing thermals to drift east to west. The aircraft will follow them but will respect :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>`. Note that sometimes it will go a little beyond  :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` as it lines up its heading to the next waypoint before reverting to AUTO mode.
@@ -202,8 +202,7 @@ Limit maximum distance from home
    Available in firmware revisions 4.1 and later.
 
 
-If using FBWB or CRUISE mode, the parameter :ref:`SOAR_MAX_RADIUS<SOAR_MAX_RADIUS>` can be used to trigger RTL if the aircraft is more than this distance from home when thermalling while in LOITER mode. Note that this parameter won't stop the aircraft from exceeding this distance before it enters LOITER mode.
-
+If using FBWB or CRUISE mode, the parameter :ref:`SOAR_MAX_RADIUS<SOAR_MAX_RADIUS>` can be used to trigger RTL if the aircraft is more than this distance from home when thermalling while in THERMAL mode. Note that this parameter won't stop the aircraft from exceeding this distance before it enters THERMAL mode.
 
 Time limits
 -----------
@@ -212,9 +211,9 @@ Time limits
 
    Available in firmware revisions 4.1 and later.
 
-:ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` : Minimum time to remain in LOITER once entered for a thermal before exiting due to low lift or altitude limits.
+:ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` : Minimum time to remain in THERMAL once entered for a thermal before exiting due to low lift or altitude limits.
 
-:ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>` : Minimum time to remain in glide after exiting LOITER due to low lift or altitude limits before entering LOITER mode again, or when entering Soaring initially.
+:ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>` : Minimum time to remain in glide after exiting THERMAL due to low lift or altitude limits before entering THERMAL mode again, or when entering Soaring initially.
 
 Use geofence
 ------------
