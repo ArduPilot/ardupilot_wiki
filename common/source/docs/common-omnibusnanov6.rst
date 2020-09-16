@@ -158,73 +158,29 @@ Set :ref:`BATT_MONITOR <BATT_MONITOR>` to 4 (= analog voltage and current) and r
 
 Flashing Firmware
 =================
-Usually these boards are sold pre-flashed with betaflight / INav firwares and require both firmware and bootloader to be updated if you want to use ArduPilot, as an ArduPilot-compatible bootloader is required for subsequent ArduPilot firmware-upgrade handling.
+Usually these boards are sold pre-flashed with Betaflight / iNav firmwares. In order to use ArduPilot, first time flashing requires both the bootloader and the firmware to be updated. Subsequent ArduPilot firmware updates do not require updating the bootloader again. 
 
-Firmware files can be found `here <https://firmware.ardupilot.org/>`__
-Besides the .apj files for firmware flashing via MissionPlanner, there's also .hex files for use with various utilities like dfu-util or betaflight / iNav GUIs. You will also find a _bl.hex that contains the firmware plus the ArduPilot compatible bootloader in case it is not already present on your board. 
+First time flashing
+---------------
 
-The provided _with_bl.hex file can be flashed using BF or iNav GUI, likely the most convenient way to get ArduPilot on your board the first time.
+Follow the instructions `here <https://ardupilot.org/plane/docs/common-loading-firmware-onto-chibios-only-boards.html>`__ using the "arduXXX_with_bl.hex" file for the "OmnibusNanoV6" target.
 
-Alternatively, the bootloader can be flashed separately. This requires the board to be put into DFU mode. Tools like dfu-util can be used to flash the bootlader. Once the bootlader is present, all subsequent firmware updates can be done using MissionPlanner's firmware functions.
-
-Enter DFU Mode
---------------
-To do this, you'll need to locate the DFU button / jumper pads on your board. Keep push button pressed / jumper pads shorted while connecting your board to your PC via USB:
-
+When instructed to enter DFU mode, locate the DFU button / jumper pads and keep the button pressed / jumper pads shorted while connecting the board to your computer via USB. If done successfully, the red power LED should light solid while the blue activity LED should not light at all.
 
 .. image:: ../../../images/OmnibusF4NanoV6_DFU.jpg
     :target: ../_images/OmnibusF4NanoV6_DFU.jpg
 
-Install dfu-util
-----------------
-* Linux (Ubuntu)
-
-  sudo apt-get install dfu-util
-    
-* OS X
-
-
-  brew install dfu-util
-    
-* Windows
-
-  Download the `dfu-util <http://dfu-util.sourceforge.net/releases/dfu-util-0.8-binaries/win32-mingw32/dfu-util-static.exe>`__ to your local system, e.g., under `D:\dfu-util`.
-
-  Rename it to `dfu-util.exe`
-
-  Append the path of the `dfu-util.exe` to the system environment variable `Path`: "My Computer" > "Properties" > "Advanced" > "Environment Variables" > "Path". Please note that paths in the variable `Path` are seperated by semicolon `;`. This will allow dfu-util to be executed globally in command prompt.
-
-Flash Bootloader
-----------------
-
-Bootloader binaries for the current targets can be found `here <https://firmware.ardupilot.org/Tools/Bootloaders>`__.
-
-Download omnibusf4pro_bl.bin for this board type. With your board connected via USB and put into DFU mode, open a terminal and flash the new bootloader with the following command line:
-
-::
-
-    sudo dfu-util -d 0483:df11 -c 1 -i 0  -a 0  -D omnibusf4pro_bl.bin  -s 0x08000000
-
-Once the flashing is complete, power cycle the board and you should see a solid power LED and a rapidly blinking blue LED.
-
-.. note::
-   Alternatively, board-specific bootloaders can be built from source with ./waf using the --bootloader option.
-
-Flash ArduPilot
+Subsequent firmware updates
 ---------------
-Open Mission Planner and go to the Initial Setup tab. Verify that the COM port in the top right is the same as in Device Manager.
 
-.. image:: ../../../images/openpilot-revo-mini-com-ports.png
-    :target: ../_images/openpilot-revo-mini-com-ports.png
-
-Choose "Load Custom Firmware" and browse to the respective .apj file. After the flash is complete, power cycle the device.
+Follow the instructions `here <https://ardupilot.org/plane/docs/common-loading-firmware-onto-pixhawk.html>`__ but choose "Load Custom Firmware" and browse to the respective "arduXXX.apj" file for the "OmnibusNanoV6" target, or your own .apj file if building your own firmware.
 
 .. image:: ../../../images/openpilot-revo-mini-load-firmware.png
     :target: ../_images/openpilot-revo-mini-load-firmware.png
 
-Congratulations! You're now running ArduPilot on your omnibusF4. You can use this same process to upgrade to newer versions of ArduPilot. Either use MP's firmware update functionality or compile your own desired vehicle firmware from source and upload the .apj file to the board.
 
 Compile ArduPilot
 -----------------
+
 To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
 `Building the Code <https://ardupilot.org/dev/docs/building-the-code.html>`__
