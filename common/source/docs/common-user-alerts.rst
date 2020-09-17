@@ -14,6 +14,12 @@ User Alerts will only be for ArduPilot software issues. Manufacturer hardware wi
 
 The User Alert documentation is available on the :ref:`developer wiki <dev:user-alerts-developer>`.
 
+
+.. note::
+
+   All User Alerts reported from 16/09/2020 (or later) are in the User Alert database. There is no guarantee
+   that the database holds all User Alerts reported before this date.
+   
 The following alerts are applicable:
 
 .. list-table::
