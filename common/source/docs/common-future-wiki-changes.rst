@@ -305,10 +305,9 @@ see `Wiki PR #2905 <https://github.com/ArduPilot/ardupilot_wiki/pull/2905>`__
 update Common-RC-Systems and Common-Autopilot-Wiring pages with links to new pages
 
 
-Affinity and Lane Switching (common-apm-navigation-extended-kalman-filter-overview.rst)
----------------------------------------------------------------------------------------
-
-EKF3 provides the feature of sensor affinity which allows the EKF cores to also use non-primary instances of sensors, specifically, Airspeed - Barometer - Compass (Magnetometer) - GPS. This allows the vehicle to better manage good quality sensors and be able to switch lanes accordingly to use the best-performing one for state estimation. For more details and configuration, refer :ref:`EKF3 Affinity and Lane Switching <dev:ek3-affinity-lane-switching>`.
+Advanced Setup Page
+-------------------
+Add link to :ref:`EKF3 Affinity and Lane Switching <dev:ek3-affinity-lane-switching>`.
 
 Firmware Limitations Section (common-autopilots.rst)
 ----------------------------------------------------
