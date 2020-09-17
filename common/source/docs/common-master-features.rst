@@ -19,7 +19,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
     Hott Telem (already in Plane release) <common-hott-telemetry>
     MSP OSD <common-msp-osd-overview>
     MSP (MultiWii Serial Protocol) <common-msp-overview>
-    OSD Parameter Editor <common-paramsod>
+    OSD Parameter Editor <common-paramosd>
     RunCam Control <common-camera-runcam>
     Velocity ESCs <common-velocity-can-escs>
 [/site]
