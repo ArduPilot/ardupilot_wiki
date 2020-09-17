@@ -4,14 +4,29 @@
 OSD based parameter menu
 ========================
 
-.. image:: ../../../images/paramscreen.jpg
-    :target: ../_images/paramscreen.jpg
-    :width: 450px
-
 This allows to set and adjust parameters using the ArduPilot onboard OSD and an RC transmitter's stick input. 
 There's two additional OSD screens available (OSD5 and OSD6), with 9 "slots" each to hold parameters. The screens 
 display a default set of paramaters to start with. Additionally, it is possible to change the parameter used in a 
 respective slot directly (on-screen) using stick inputs, or using MAVProxy's osd-module command-line setup. 
+
+
+
+Copter default screens:
+-----------------------
+
+.. image:: ../../../images/paramscreens_copter.jpg
+    :target: ../_images/paramscreens_copter.jpg
+    :width: 450px
+
+
+
+Plane default screens:
+----------------------
+
+.. image:: ../../../images/paramscreens_plane.jpg
+    :target: ../_images/paramscreens_plane.jpg
+    :width: 450px
+
 
 The RC transmitter's roll and pitch stick input is used to navigate through the screen, pick 
 a parameter and adjust the parameter value. Parameter values can be adjusted in disarmed state only. 
