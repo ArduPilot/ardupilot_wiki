@@ -161,7 +161,7 @@ Flashing Firmware
 Usually these boards are sold pre-flashed with Betaflight / iNav firmwares. In order to use ArduPilot, first time flashing requires both the bootloader and the firmware to be updated. Subsequent ArduPilot firmware updates do not require updating the bootloader again. 
 
 First time flashing
----------------
+-------------------
 
 Follow the instructions `here <https://ardupilot.org/plane/docs/common-loading-firmware-onto-chibios-only-boards.html>`__ using the "arduXXX_with_bl.hex" file for the "OmnibusNanoV6" target.
 
@@ -171,7 +171,7 @@ When instructed to enter DFU mode, locate the DFU button / jumper pads and keep 
     :target: ../_images/OmnibusF4NanoV6_DFU.jpg
 
 Subsequent firmware updates
----------------
+---------------------------
 
 Follow the instructions `here <https://ardupilot.org/plane/docs/common-loading-firmware-onto-pixhawk.html>`__ but choose "Load Custom Firmware" and browse to the respective "arduXXX.apj" file for the "OmnibusNanoV6" target, or your own .apj file if building your own firmware.
 
