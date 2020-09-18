@@ -33,17 +33,28 @@ Compass Settings
 
 The *Mission Planner Compass Setup screen* can be found in menu
 **Setup \| Mandatory Hardware \| Compass** in the sidebar. This
-screen is used for setting compass priority and use. No other settings are required for normal use.
+screen is used for setting compass ordering, priority, calibration, and use. No other settings are required for normal use.
 
 .. figure:: ../../../images/CompassCalibration_Onboard.png
    :target: ../_images/CompassCalibration_Onboard.png
 
-   Mission Planner: Compass Calibration
+   Mission Planner: Advanced Compass Setup and Calibration
 
-Compass Priority
-----------------
 
-All the attached compasses that the autopilot discovered during initialization are shown in the upper area of the page. You can determine the ordering, from primary on down, by using the arrow keys next to the compass. The first in the list is will be the one used, unless there is a problem. In which case, either the second or third listed, if enabled, will be used, automatically determined by the autopilot as to which is giving the best readings.
+Compass Ordering and Priority
+-----------------------------
+
+During boot, ArduPilot automatically detects the compasses present in the system, adds them to a list, and assigns the first three a priority (1-3) linked to their DEV ID (``COMPASS_PRIOx_ID``), according to the order in which they are discovered. This priority determines which compass is used by the EKF lanes. The primary compass (highest priority, 1) will be used by all lanes, and fallback to the next viable compass in the first three priorities, if the primary becomes unhealthy.
+
+The list of discovered compasses and their priority is maintained across boots.
+
+If a user wishes to change to a different compass for one of the three priorities, he can change the ``COMPASS_PRIOx_ID`` to that compass's ``COMPASS_DEV_IDx`` ID value. If a ``COMPASS_PRIOx_ID`` is set to zero, the compasses will be moved up contiguously, in order, to fill that priority slot on the next reboot. This is easily done in Mission Planner with the arrows on the right side.
+
+.. warning:: never change a compass's ``COMPASS_DEV_IDx`` ID value manually and then reboot!
+
+If a previously discovered compass is missing or not detected on boot, and is in one of the three priority positions, a pre-arm failure will occur warning the user. The user will need to either remove the compass from the priority position, or correct the problem in order to prevent the pre-arm failure. Mission Planner provides a button to remove an undetected compass on the above screen.
+
+.. note:: Compasses not present or detected during a calibration will automatically be removed.
 
 Compass Enables
 ---------------
