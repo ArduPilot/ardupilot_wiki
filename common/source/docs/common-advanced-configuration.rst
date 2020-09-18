@@ -51,7 +51,9 @@ tuning options for the vehicle.
     Fly-By-Wire Low Altitude Limit <fly-by-wire-low-altitude-limit>
 [/site]
     FPort Setup <common-FPort-receivers>
+[site wiki="plane"]
     GeoFencing Failsafe  <common-geofencing-landing-page>
+[/site]
     GPIOs <common-gpios>
     GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
     Ground Control Station Only Operation <common-gcs-only-operation>
