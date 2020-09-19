@@ -80,6 +80,9 @@ MSP Firmware Update
 
 Prior to September 2020, MSP connection was not supported. However, you may update to the new firmware by following the guide `here <http://www.mateksys.com/?portfolio=m8q-can#tab-id-8>`_.
 
+Where to Buy
+============
 
+`Matek M8Q-CAN <http://www.mateksys.com/?portfolio=m8q-can>`_
 
 
