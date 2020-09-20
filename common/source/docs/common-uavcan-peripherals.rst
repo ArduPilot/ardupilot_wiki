@@ -15,8 +15,9 @@ UAVCAN Peripherals
     jDrones UAVCAN Starter kit <https://store.jdrones.com/uc4g_slcan_v11_p/uc4hcmb01.htm>
     jDrones UAVCAN General Node <https://store.jdrones.com/uc4g_geneneral_node_v21_p/uc4hgnode21.htm>
     Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
-    mRobotics KitCAN CAN/UAVCAN Adapter Node+Compass+Baro <common-mro-kitcan>
+    Matek UAVCAN DLVR-10 Airspeed Sensor <common-matek-uavcan-dlvr>
     mRo GPS, GPS+Compass,RTK, and UAVCAN modules <https://store.mrobotics.io/category-s/109.htm>
+    mRo KitCAN CAN/UAVCAN Adapter Node+Compass+Baro <common-mro-kitcan>
     mRo Location One GPS GPS+Compass+LED+Safety Switch <common-mrobotics-location-one-gps>
     mRo UAVCAN Adapter Node <common-mro-uavcan-adapter-node>
     UAVCAN ESCs <common-uavcan-escs>
