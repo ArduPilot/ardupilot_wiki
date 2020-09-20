@@ -40,13 +40,11 @@ Next setup the thrust expo. If you are setting up a professional
 aircraft then you should invest in a thrust stand so you can
 accurately measure the true thrust for your motor/ESC/propeller
 combination as you vary the throttle. Then you will adjust the expo
-value along with the endpoints (given by motors setup below) so that
-you use the region of the thrust curve which is as linear as
-possible. Do not trust manufacturer data for the thrust curve as they
+value along with the endpoints (given by motors setup below) so that the thrust between the endpoints is as linear as possible. Do not trust manufacturer data for the thrust curve as they 
 are frequently inaccurate. See :ref:`motor-thrust-scaling` for
 details on thrust scaling.
 
-If you are setting up a hobby grade vehicle then you should use the
+If you are setting up a hobby grade vehicle then you can use the
 graph below to estimate the correct :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` value for your aircraft.
 
 - :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` : 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props.
