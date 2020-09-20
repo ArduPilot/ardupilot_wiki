@@ -30,7 +30,6 @@ The uAvionix Ping sensor can be purchased directly from `uAvionix <https://uavio
    -  U.K.: `Unmanned Tech <http://www.unmannedtech.co.uk/>`__
    -  Germany: `UAV Store <http://www.uav-store.de/ads-b-receivers/>`__
    -  Asia: `jDrones pingRX <http://store.jdrones.com/ping_ads_b_receiver_p/adsbping01.htm>`__
-   -  Japan: `Japan Drones <http://japandrones.com/shopdetail/000000000124/004/X/page1/order/>`__
 
 The full reseller list can be found at `uAvionix <https://uavionix.com/resellers/>`__
 
