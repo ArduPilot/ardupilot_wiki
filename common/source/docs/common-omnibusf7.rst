@@ -56,8 +56,28 @@ GPS is attached to UART6
 
 Telem is available at UART 1
 
-The shared UART3/I2C pins are enabled only for I2C operation to allow external compass or digital airspeed sensor attachment.If at least one device attached externally, does not have pull-up resistors, then 2K ohm pull-up resistors will need to be added externally.
+The shared UART3/I2C pins are enabled by default only for I2C operation to allow external compass or digital airspeed sensor attachment.If at least one device attached externally does not have pull-up resistors, then 2K ohm pull-up resistors will need to be added externally to these pins.
 
+By setting :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to 2, those pins change from I2C to UART3 TX and RX pins.
+
+.. image:: ../../../images/omnibusf7-pinout.jpg
+
+Default UART order
+==================
+
+- SERIAL0 = console = USB
+- SERIAL1 = Telemetry1 = USART1
+- SERIAL2 = Telemetry2 = USART3 if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 2, otherwise these pins are used for I2C pins
+- SERIAL3 = GPS1 = USART6
+- SERIAL4 = GPS2 = USART2 (RX only if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, otherwise this pin is used for RC input labeled SBUS on board)
+- SERIAL5 = USER = UART7 (RX only, in V2 only)
+- SERIAL6 = not assigned
+
+Serial protocols can be adjusted to personal preferences.
+
+RC Input
+========
+RC input is configured on the SBUS (UART2_RX) pin. It supports all RC protocols, however for FPort  :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` should be set to 1 and configured as described in :ref:`FPort<common-FPort-receivers>` section.
 
 Configuration
 =============
@@ -75,7 +95,7 @@ Then reboot.
 
 :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 10.925
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 58.0 (note, this value is valid if using Matek Systems FCHUB A5 current sensor)...will need to be calibrated to match actual current if using any other make of PDB board)
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 58.0 (note, this value is valid if using Matek Systems FCHUB A5 current sensor)...will need to be calibrated to match actual current if using another make of PDB board)
 
 Dshot capability
 ================
