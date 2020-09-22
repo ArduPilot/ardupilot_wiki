@@ -103,7 +103,10 @@ If the attached sensor is not an MS5525 type with I2C address 0x76, then you mus
 
 Then reboot.
 
+Firmware
+========
 
+This device uses the "f303-M100025" firmware located at https://firmware.ardupilot.org/AP_Periph. See the :ref:`SLCAN section of UAVCAN advanced setup<common-uavcan-setup-advanced>` for downloading instructions, if changes are desired or updates become available.
 
 Where to Buy
 ============
