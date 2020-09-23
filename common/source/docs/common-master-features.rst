@@ -10,6 +10,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 [site wiki="plane"]
+    Airbrakes <airbrakes-on-plane>
     Airmode <airmode>
 [/site]
 [site wiki="copter,plane,rover"]

@@ -124,7 +124,7 @@ For Quadplanes, including Tailsitters and Tilt-Rotors, see these sections: :ref:
 Auxiliary Flying Surfaces
 -------------------------
 
-In addition, auxiliary control surfaces, such as flaps and spoilers can be configured:
+In addition, auxiliary control surfaces, such as flaps, spoilers and airbrakes can be configured:
 
 .. toctree::
     :maxdepth: 1
@@ -132,3 +132,4 @@ In addition, auxiliary control surfaces, such as flaps and spoilers can be confi
     Differential Spoilers & Full House Wing <differential-spoilers>
     Flaperons <flaperons-on-plane>
     Automatic Flaps <automatic-flaps>
+    Airbrakes <airbrakes-on-plane>

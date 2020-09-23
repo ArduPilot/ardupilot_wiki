@@ -44,6 +44,8 @@ RCx_OPTIONs on Auxillary Functions Page:
 +----------------------+----------------------------+----------+---------+---------+
 |        209           | Forward Throttle           |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        210           | Airbrakes                  |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 |        300-307       | Scripting RC channels      |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 
@@ -207,6 +209,16 @@ Disables IMU2 for testing (advanced users only!)
    <td>
 
 Manual forward motor throttle in QSTABILIZE, QACRO, and QHOVER modes
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Airbrakes </strong></td>
+   <td>
+
+Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`
 
 .. raw:: html
 
@@ -390,6 +402,14 @@ On Soaring page:
 ----------------
 
 see `WIKI PR #3013 <https://github.com/ArduPilot/ardupilot_wiki/pull/3013>`_
+
+On Automatic Landing page:
+--------------------------
+
+- add note in Reverse-Thrust Landing section: 
+
+.. note:: Airbrakes can also be automatically deployed during reverse thrust operation. See :ref:`Airbrakes<airbrakes-on-plane>`.
+
 
 
 -----------------------------------------------------
