@@ -313,6 +313,7 @@ Firmware Limitations Section (common-autopilots.rst)
 ----------------------------------------------------
 
 include in the note that OSD-base parameter editing not available on KakuteF7 and OmnibusF7V2 boards.
+include in the note that ADSB is not included in 1MB boards.
 
 MSP Protocol and OSD
 --------------------
