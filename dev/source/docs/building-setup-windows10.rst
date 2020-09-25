@@ -69,6 +69,12 @@ Setup steps
        
    You can make a direct access to "lxss" folder on your desktop for a quick navigation.
    
+   WSL 2 uses a Virtual Hardware Disk (VHD) to store your Linux files, Hence there is no "lxss" folder on WSL 2. As described `Here <https://docs.microsoft.com/en-us/windows/wsl/compare-versions>`__ .Instead open (\\\\wsl$\\Ubuntu-20.04) in the explorer or the Run widget (Cmd+R).
+   
+   .. code-block:: python
+     
+       \\wsl$\Ubuntu-20.04
+   
 .. tip::
 
     Windows 10 includes "Windows Defender" virus scanner. It will slow down WSL quite a bit. Disabling it greatly improves disk performance but increases your risk to viruses so disable at your own risk. Here is one of many resources/videos that show you how to disable it: https://www.youtube.com/watch?v=FmjblGay3AM
