@@ -96,3 +96,5 @@ List of Modules
     tracker
     tuneopt
     ublox
+    useralerts
+
