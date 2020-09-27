@@ -95,7 +95,7 @@ List** page):
 
 .. warning::
 
-    The default I2C address was 0x55 on older LightWare rangefinders.
+    The default I2C address was 85 (0x55 in hexadecimal) on older LightWare rangefinders.
     This was changed to prevent conflict with another device on ArduPilot.
     Please check your rangefinder system settings to determine what your I2C address is.
 
