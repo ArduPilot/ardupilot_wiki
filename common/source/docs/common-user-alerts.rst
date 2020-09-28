@@ -14,6 +14,9 @@ User Alerts will only be for ArduPilot software issues. Manufacturer hardware wi
 
 The User Alert documentation is available on the :ref:`developer wiki <dev:user-alerts-developer>`.
 
+For more information about a specific User Alert, see the `User Alert
+Database <https://firmware.ardupilot.org/userAlerts/alerts.html>`_.
+
 
 .. note::
 
