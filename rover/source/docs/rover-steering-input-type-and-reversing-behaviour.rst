@@ -17,7 +17,7 @@ Once enabled, raising RC input 1 channel high is like controlling the left motor
 
 .. note::
 
-   In Rover-3.1 (and earlier) Two Paddle Input was enabled by setting the SKID_STEER_IN parameter to "1".
+   Most users of skid steering vehicles should leave the :ref:`PILOT_STEER_TYPE <PILOT_STEER_TYPE>` parameter at the default of "0" meaning the pilot controls the vehicle using one RC input for throttle and another for steering.
 
 Reversing Behaviour
 -------------------
