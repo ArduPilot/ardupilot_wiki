@@ -93,6 +93,12 @@ List** page):
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **2500** (for SF10A), **5000** (for SF10B), **10000** (for SF10C) or **12000** (for SF11C).  *This is the distance in centimeters that the rangefinder can reliably read. The value depends on the model of the lidar.*
 -  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
+It may be necessary to enable the sensor's "I2C compatibility mode (Pixhawk)".  This can be done by connecting the lidar to your PC using a USB cable, then download `Lightware Studio <https://lightwarelidar.com/pages/lightware-studio>`__, connect and check the checkbox shown below
+
+.. image:: ../../../images/lightware-sf11c-studio.png
+   :target: ../_images/lightware-sf11c-studio.png
+   :width: 450px
+
 .. warning::
 
     The default I2C address was 85 (0x55 in hexadecimal) on older LightWare rangefinders.
