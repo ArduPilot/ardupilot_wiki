@@ -60,7 +60,7 @@ Lon can be entered by clicking on the map. Altitude is relative to your
 launch altitude/home position, so if you set 100m, for example, it will
 fly 100m above you.
 
-**Default Alt** is the default altitude when entering new waypoints.
+**Default Alt** is the default altitude when entering new waypoints. See :ref:`common-understanding-altitude` for altitude definitions.
 
 **Verify height** means that the Mission Planner will use Google Earth
 topology data to adjust your desired altitude at each waypoint to
