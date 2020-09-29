@@ -12,6 +12,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
 [site wiki="plane"]
     Airmode <airmode>
 [/site]
+    Compass-less Operation<common-compassless>
 [site wiki="copter,plane"]
     In-Flight FTT and filter control <common-imu-fft>
 [/site]
