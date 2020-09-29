@@ -70,6 +70,8 @@ altitudes are specified relative to the home location. Terrain following
 waypoints have a "Terrain" reference frame, and altitudes are relative
 to the ground level given in the terrain database.
 
+See :ref:`<common-understanding-altitude>` for altitude definitions.
+
 Uses of Terrain Following
 =========================
 
