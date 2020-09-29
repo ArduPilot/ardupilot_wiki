@@ -8,6 +8,8 @@ Copter 3.4 (and higher) support "terrain following" in nearly all modes includin
 
 ..  youtube:: mT67QOAxuG8
     :width: 100%
+    
+See :ref:`common-understanding-altitude` for altitude definitions.    
 
 .. note::
 
