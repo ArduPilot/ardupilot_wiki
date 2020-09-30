@@ -60,8 +60,8 @@ The default airspeed sensor is expected to be a "DLVR-L10D" type , if not then y
 
 if using an:
 
-- MS4525    set ARSP_TYPE -> 4,
-- MS5525    set ARSP_TYPE -> 3
+- MS4525    set ARSP_TYPE -> 1,
+- MS5525    set ARSP_TYPE -> 5 (note: only an MS5525 with address 0x77 can be used to avoid conflict with DPS310 barometer.)
 - SDP3X     set ARSP_TYPE -> 6
 - DLVR-L10D set ARSP_TYPE -> 9
 - the Write, and reboot
