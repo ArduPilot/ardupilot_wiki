@@ -46,7 +46,7 @@ throttle stick.
    the vehicle will descend or climb depending upon the deflection of
    the stick.  When the stick is completely down the copter will descend
    at 2.5m/s and if at the very top it will climb by 2.5m/s.  These
-   speeds can be adjusted with the ``PILOT_VELZ_MAX`` parameter.
+   speeds can be adjusted with the :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>` and :ref:`PILOT_SPEED_DN<PILOT_SPEED_DN>` parameters.
 -  The size of the deadband can be adjusted with the :ref:`THR_DZ<THR_DZ>` parameter
    (AC3.2 and higher only).  This params value should be between "0" and
    "400" with "0" meaning no deadband.  "100" would produce a deadband
