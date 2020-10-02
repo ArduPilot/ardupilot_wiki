@@ -2695,7 +2695,7 @@ MAV_CMD_DO_CHANGE_SPEED
 
 Supported by: Copter, Plane, Rover.
 
-Change the target horizontal speed and/or throttle of the vehicle. The
+Change the target horizontal speed and/or throttle of the vehicle. In most cases, the
 changes will be used until they are explicitly changed again or the
 device is rebooted.
 
@@ -2771,7 +2771,9 @@ Plane
 ~~~~~
 
 Change the target horizontal speed (airspeed or groundspeed) and/or the
-vehicle's throttle.
+vehicle's throttle. If airspeed, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM>` parameter during the flight until reboot or mode is changed to CRUISE or FBWB. If groundspeed option is used, then :ref:`MIN_GNDSPD<MIN_GNDSPD_CM>` parameter is changed to this value until rebooted or changed by this command again. If the throttle field is non-zero and equal to or below 100, then the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is changed  until reboot or changed by this command again.
+
+.. note:: Speed changes only have effect if an airspeed sensor is present, healthy, and in use. :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` changes impacts only flight with airspeed sensor not in use.
 
 **Command parameters**
 
