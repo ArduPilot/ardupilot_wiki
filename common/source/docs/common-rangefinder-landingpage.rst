@@ -61,10 +61,10 @@ based upon your set-up.
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
-    LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
+    LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
-    Lightware SF40c (360 degree) <common-lightware-sf40c-objectavoidance>
+    Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
     Lightware SF45/B (350 degree) <common-lightware-sf45b>
     Maxbotix I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotix Analog Sonar <common-rangefinder-maxbotix-analog>
