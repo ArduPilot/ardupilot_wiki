@@ -1,5 +1,6 @@
 @ECHO OFF
-
+// The amazing c program
+// Nice project 
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (
