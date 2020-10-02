@@ -65,6 +65,7 @@ based upon your set-up.
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
     Lightware SF40c (360 degree) <common-lightware-sf40c-objectavoidance>
+    Lightware SF45/B (350 degree) <common-lightware-sf45b>
     Maxbotix I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotix Analog Sonar <common-rangefinder-maxbotix-analog>
     RPLidar A2 360 degree laser scanner <common-rplidar-a2>
