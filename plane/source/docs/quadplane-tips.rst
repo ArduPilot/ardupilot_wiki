@@ -59,6 +59,25 @@ Copter Motors vs Servos
 
 If you are using a configuration where there are copter motors involved (almost all QuadPlanes do except single/dual motor tailsitters), the motor outputs are assigned as PWM unless changed (see :ref:`common-dshot` ). But the PWM is at a 400Hz update rate, not 50Hz. If a servo is used in an  output group sharing the same timer as one of the motor outputs, then it too will be operating at 400HZ and must be able to tolerate that. Most analog servos will overheat or burn up. Most digital servos can tolerate that rate. Check your autopilot's :ref:`hardware description <common-autopilots>` page for the DShot output groups, which indicates which outputs share the same timer.
 
+.. _tilt-rotor-setup:
+
+Tilt Rotor Servo Setup
+======================
+
+Adjustment of the tilt servo's max,min,trim output values for conventional and tailsitter tilt-rotors are show below. Whether an endpoint is adjusted by SERVOx_MAX or MIN, depends on if it has been reversed to get proper directional operation.
+
+.. image:: ../../../images/tiltrotor-setup.jpg
+
+--------------------------------------------------------------
+
+.. image:: ../../../images/tailsitter-tilt-setup.jpg
+
+--------------------------------------------------------------
+
+.. image:: ../../../images/Bicopter-tilt-setup.jpg
+
+
+
 Battery Sag
 ===========
 
