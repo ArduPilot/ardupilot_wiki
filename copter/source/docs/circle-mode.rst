@@ -23,12 +23,12 @@ desired rate if this requires the acceleration towards the center of the
 circle to surpass the maximum acceleration held in the :ref:`WPNAV_ACCEL<WPNAV_ACCEL>`
 parameter (units are cm/s/s).
 
-The circle rate set above can be dynamically adjusted in flight by two methods. The first is the use of RC Channel 6 if the :ref:`TUNE<TUNE>` option is set to 39, allowing decreasing the rate 50% or increasing it by 100%, at the channel min and max. The other is by enabling the :ref:`CIRCLE_CONTROL<CIRCLE_CONTROL>` parameter to allow stick adjustment of radius and speed.
+The circle rate set above can be dynamically adjusted in flight by two methods. The first is the use of RC Channel 6 if the :ref:`TUNE<TUNE>` option is set to 39, allowing decreasing the rate 50% or increasing it by 100%, at the channel min and max. The other is by enabling the ``CIRCLE_CONTROL<CIRCLE_CONTROL>`` parameter to allow stick adjustment of radius and speed.
 
 Circle Control Option
 =====================
 
-When enabled, the :ref:`CIRCLE_CONTROL<CIRCLE_CONTROL>` parameter allows the adjustment of the circle's radius and angular velocity.
+When enabled, the ``CIRCLE_CONTROL<CIRCLE_CONTROL>`` parameter allows the adjustment of the circle's radius and angular velocity.
 
 - Pitch stick up (reducing RC pwm) reduces the radius until it reaches zero. Think moving forward from an FPV perspective.
 - Pitch stick down (increasing RC pwm) increases the radius. Think moving back from an FPV perspective.
