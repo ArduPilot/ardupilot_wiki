@@ -273,7 +273,10 @@ Tilt Rotor Movement Setup
 .. toctree::
     :maxdepth: 1
 
-    Tilt Rotor Setup <tilt-rotor-tips>
+    Tilt Rotor Setup Tips<tilt-rotor-tips>
+
+Also:
+    :ref:`Tilt Rotor Servo Setup<tilt-rotor-setup>`
 
 
 
