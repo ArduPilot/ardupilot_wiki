@@ -26,11 +26,12 @@ Database <https://firmware.ardupilot.org/userAlerts/alerts.html>`_.
 The following alerts are applicable:
 
 .. list-table::
-   :widths: 30 40 20 30 20 20
+   :widths: 30 20 40 20 30 20 20
    :header-rows: 1
    :class: useralerts-list
 
    * - Alert ID
+     - Criticality
      - Boards Affected
      - Versions Affected
      - Description
@@ -38,6 +39,7 @@ The following alerts are applicable:
      - Status
 
    * - loading...
+     - loading...
      - loading...
      - loading...
      - loading...
