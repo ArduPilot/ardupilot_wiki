@@ -109,6 +109,11 @@ The json files themselves will each have the below fields. There are examples in
      - ``string``
      - Textual description of the User Alert. Should be understandable by an average user.
 
+   * - criticality
+     - ``int`` of value 1,2,3 or 4.
+     - An assessment of the likelihood of the issue occurring. 1 = CRITICAL - Likely to be encountered by all vehicle configurations. 2 = CRITICAL - Likely to be encountered by specific vehicle configurations, 3 = MAJOR - possible to be encountered. 4 = MINOR - unlikely to be encountered.
+
+     
    * - mitigation
      - ``string``
      - Textual description of any mitigations that a user can take to prevent the issue from occurring BEFORE a patched ArduPilot is released. Should be understandable by an average user.
