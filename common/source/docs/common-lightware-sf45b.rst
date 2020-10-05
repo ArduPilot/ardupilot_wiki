@@ -9,9 +9,6 @@ The `Lightware SF45/B lidar <https://lightwarelidar.com/products/sf45-b>`__ is a
 .. image:: ../../../images/lightware-sf45b.png
    :target: ../_images/lightware-sf45b.png
 
-.. note::
-
-   Support for this lidar is included in ArduPilot 4.1 (and higher)
 
 Mounting the SF40c
 ------------------
