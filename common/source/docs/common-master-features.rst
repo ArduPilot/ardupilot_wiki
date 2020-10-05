@@ -20,6 +20,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
 [/site]
 [site wiki="copter,plane,rover"]
     Hott Telem (already in Plane release) <common-hott-telemetry>
+    Lightware SF45/B (350 degree) <common-lightware-sf45b>
     MSP OSD <common-msp-osd-overview>
     MSP (MultiWii Serial Protocol) <common-msp-overview>
     OSD Parameter Editor <common-paramosd>
