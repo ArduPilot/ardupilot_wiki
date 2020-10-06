@@ -33,6 +33,8 @@ The uAvionix Ping sensor can be purchased directly from `uAvionix <https://uavio
 
 The full reseller list can be found at `uAvionix <https://uavionix.com/resellers/>`__
 
+The Sagetech transceivers can be purchased by contacting `Sagetech Avionics <https://www.sagetech.com/>`___
+
 
 Connecting to the autopilot
 ===================================
@@ -60,9 +62,10 @@ Pixhawk you would set:
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` 57 (meaning 57600)
 
 
-For the Ping2020 you'll need to set the _PROTOCOL value to 2. For example, when connected to Telem2 you would set:
+For the Ping2020 you'll need to set the _PROTOCOL value to 2. For Sagetech you'll need value 34. For example, when connected to Telem2 you would set:
 
--  :ref:`SERIAL2_PROTOCOL <SERIAL4_PROTOCOL>` to 2 (meaning MAVLink v2.0)
+-  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2  (meaning MAVLink v2.0)
+-  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 34 (meaning Sagetech)
 
 You will need to reboot your board after making those changes.
 
