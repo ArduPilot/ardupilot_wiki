@@ -2,10 +2,10 @@
 
 
 ==============
-ADS-B Receiver
+ADS-B
 ==============
 
-This article describes how to attach and configure the MAVLink enabled `uAvionix ADS-B PING™ <https://uavionix.com/products/pingrx/>`__ sensor so that the pilot is aware of nearby manned aircraft and optionally to allow the vehicle to automatically avoid near misses.
+This article describes how to attach and configure an ADS-B module so that your aircraft can be aware of, and/or transmit to, other aircraft and air-traffic control nearby. This also allows the pilot on the ground to be aware of nearby manned aircraft and optionally to allow the vehicle to automatically avoid them.
 
    ..  youtube:: boe-25OI4bM
     :width: 100%
@@ -78,6 +78,26 @@ station map.
 
 To test the system you can compare with flights shown on
 `flightradar24.com <https://www.flightradar24.com/>`__.
+
+ADSB-out configuration
+======================================
+
+.. warning::
+
+   Ensure you have the correct permissions to be using ADSB hardware that is capable of transmitting. You will be showing up on air-traffic controller airport radar!
+   
+The following parameters are used to configure ADS-B out:
+
+-  :ref:`ADSB_ICAO_ID <ADSB_ICAO_ID>` : ICAO_ID unique vehicle identification number of this aircraft. This is a integer limited to 24bits. If set to 0 then one will be randomly generated. If set to -1 then static information is not sent, transceiver is assumed pre-programmed.
+-  :ref:`ADSB_EMIT_TYPE <ADSB_EMIT_TYPE>` : ADSB classification for the type of vehicle emitting the transponder signal. Default value is 14 (UAV).
+-  :ref:`ADSB_LEN_WIDTH <ADSB_LEN_WIDTH>` : Aircraft length and width dimension options in Length and Width in meters. In most cases, use a value of 1 for smallest size.
+-  :ref:`ADSB_OFFSET_LAT <ADSB_OFFSET_LAT>` : GPS antenna lateral offset. This describes the physical location offest from center of the GPS antenna on the aircraft.
+-  :ref:`ADSB_OFFSET_LON <ADSB_OFFSET_LON>` : GPS antenna longitudinal offset. This is usually set to 1, Applied By Sensor
+-  :ref:`ADSB_RF_SELECT <ADSB_RF_SELECT>` : Transceiver RF selection for Rx enable and/or Tx enable. This only effects devices that can Tx and/or Rx. Rx-only devices override this to always be Rx-only.
+-  :ref:`ADSB_SQUAWK <ADSB_SQUAWK>` : Squawk/Transponder (Mode 3/A) code that is braodcasted to ATC that is usually assigned by your ATC for a given flight. In the USA/Canada the default squawk code is for VFR which is 1200. Most parts of Europe and Australia use 7000. If an invalid octal number is set then it will be reset to 1200.
+
+In many cases the defaults are OK and you don't need to change any of these except `ADSB_RF_SELECT <ADSB_RF_SELECT>` which is needed to turn on the transmitter. The ADSB_RF_SELECT transmit bit is cleared on boot to ensure you're only trsnamitting when intentionally enabled.
+There are additional MAVLink messages for ADSB in uavionix.xml to allow a GCS to set all of these options. Namely, msg UAVIONIX_ADSB_OUT_CFG and UAVIONIX_ADSB_OUT_DYNAMIC where the _cfg is the only place where you can assign a custom callsign.
 
 Enabling Manned Vehicle Avoidance
 =================================
