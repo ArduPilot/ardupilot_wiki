@@ -34,7 +34,7 @@ firmware installation in complete.
 
 After the firmware installation is complete, power cycle your vehicle by
 disconnecting and reconnecting the USB. Listen for the tone! If you hear
-a musical tone, your firmware installation is complete. If you here a
+a musical tone, your firmware installation is complete. If you hear a
 tone followed by three beeps, disconnect the USB. Reconnect the USB
 while holding down the safety button. You will hear several tone
 sequences followed by two beeps. This indicates your firmware
