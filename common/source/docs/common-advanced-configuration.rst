@@ -90,6 +90,9 @@ tuning options for the vehicle.
     Parameter Reset <common-parameter-reset>
     RC Input Channel Mapping (RCMAP) <common-rcmap>
     RC Options <common-rc-options>
+[site wiki="plane"]
+    Reverse Thrust Setup<reverse-thrust-setup>
+[/site]
     RunCam Camera Configuration and Control <common-camera-runcam>
     Sensor Position Offset Compensation <common-sensor-offset-compensation>
     Sensor Testing <common-sensor-testing>
