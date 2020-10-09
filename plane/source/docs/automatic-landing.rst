@@ -364,20 +364,8 @@ Once an abort land has completed, by either reaching the target altitude or swit
 Reverse Thrust Setup
 ====================
 
-Some ESC's allow for reversing motor direction. When using reverse on the propeller it will generate a negative thrust which can be used to reduce your airspeed. During a steep landing approach this method can be used to maintain a stable and low airspeed allowing you to land much more softly and precisely. Reverse thrust can also be automatically used during automatic landings (see below) or during other throttle controlled modes to steepen descents. In which throttle controlled modes it is utilized, is determined by the :ref:`USE_REV_THRUST<USE_REV_THRUST>` bitmask.
-
-Reverse thrust is enabled by either setting the THR_MIN percentage to a negative value, or by setting an RC channels RCx_OPTION to "64".
-
-The impacts of the various throttle parameters as shown below for the normal case and when reverse thrust is enabled.
-
-
-.. image:: ../../../images/thr-min-positive.jpg
-    :width: 450px
-
-----------------------------------------------------------
-
-.. image:: ../../../images/thr-min-negative.jpg
-    :width: 450px
+Some ESC's allow for reversing motor direction. When using reverse on the propeller it will generate a negative thrust which can be used to reduce your airspeed. During a steep landing approach this method can be used to maintain a stable and low airspeed allowing you to land much more softly and precisely. Reverse thrust can also be automatically used during automatic landings (see below) or during other throttle controlled modes to steepen descents. 
+See  :ref:`Reverse Thrust Setup<reverse-thrust-setup>` for details on setting up reverse thrust.
 
 .. warning:: enabling reverse thrust automatically sets the SERVOx_TRIM value to LOW throttle stick for the throttle output servo. SERVOx_TRIM is normally ignored, and low stick is SERVOx_MIN! Arming in this condition with an ESC not properly setup will spin-up the motor, possibly dramatically!
 
@@ -410,7 +398,7 @@ The maximum amount of reverse thrust used in autopilot throttle controlled modes
 
 The :ref:`USE_REV_THRUST <USE_REV_THRUST>` parameter is a bit mask that allows the setting of when reverse thrust can be activated, as when autolanding, or in other throttle controlled modes.
 
-If an RC channel's ``RCx_OPTION`` auxiliary function has been set to "64", then activating the switch will also provide access to the reverse thrust capability in non-throttle controlled modes, as shown in the figures above.
+If an RC channel's ``RCx_OPTION`` auxiliary function has been set to "64", then activating the switch will also provide access to the reverse thrust capability in non-throttle controlled modes, as shown in the :ref:`Reverse Thrust Setup<reverse-thrust-setup>` section.
 
 
 ESC (Electronic Speed Controller)
