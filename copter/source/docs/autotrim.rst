@@ -40,7 +40,7 @@ With auto trim the roll and pitch trim are captured as you fly in a stable hover
 
 1. Find a wind free environment with sufficient space to fly your copter without crashing into something
 
-2. Put the vehicle in Stabilize or AltHold mode
+2. Put the vehicle in Stabilize mode
 
 3. Hold throttle down and rudder right for 15seconds or until you see the small red, blue and yellow leds flash in a cyclic pattern
 
