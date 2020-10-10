@@ -24,8 +24,8 @@ Linux/Ubuntu users can install with apt :
 .. youtube:: G1Kc-1aF8HI
 
 
-Other Systems
-+++++++++++++
+Windows and other Systems
++++++++++++++++++++++++++
 
  - download and install from `git-scm.com's download page <http://git-scm.com/downloads>`__
 
