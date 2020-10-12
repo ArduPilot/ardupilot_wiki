@@ -14,7 +14,7 @@ Overview
 ========
 
 The MAVLink protocol defines a large number of
-`MAV_CMD <https://github.com/mavlink/mavlink/blob/master/message_definitions/v1.0/common.xml#L531>`__
+`MAV_CMD <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L1008>`__
 waypoint command types (sent in a ``MAVLink_mission_item_message``).
 ArduPilot implements handling for the subset of these commands and
 command-parameters that are *most relevant* and meaningful for each of
@@ -23,9 +23,9 @@ autopilot will simply be dropped.
 
 This article lists and describes the commands and command-parameters
 that are supported on each of the vehicle types. Any parameter that is
-"grey" is not supported by the autopilot and will be ignored (they are
+"grey" is not supported by the autopilot and will be ignored. They are
 still documented to make it clear which properties that are supported by
-the `MAV_CMD protocol <https://github.com/mavlink/mavlink/blob/master/message_definitions/v1.0/common.xml#L531>`__
+the `MAV_CMD protocol <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L1008>`__
 are not implemented by the vehicle.
 
 Some commands and command-parameters are not implemented because they
@@ -34,7 +34,7 @@ are not relevant for particular vehicle types (for example
 not Rover, and the pitch parameter only makes sense for Plane). There
 are also some potentially useful command-parameters that are not handled
 because there is a limit to the message size, and a decision has been
-made to prioritise some parameters over others.
+made to prioritize some parameters over others.
 
 .. note::
 
@@ -98,7 +98,7 @@ defined in a terrain database).
 .. note::
 
    The other frame types defined in the MAVLink protocol (see
-   `MAV_FRAME <https://github.com/mavlink/mavlink/blob/master/message_definitions/v1.0/common.xml#L434>`__)
+   `MAV_FRAME <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/common.xml#L795>`__)
    are not supported for mission commands.
 
 How accurate is the information?
