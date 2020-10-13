@@ -97,6 +97,9 @@ The transmitter must emit PWM signals in the correct range to allow us
 to map a mode to a switch position.
 
 .. note::
+ |   Generally the range is between 1000 to 2000 us (1.0 to 2.0 ms).
+ |   ms = millisecond
+ |   us = microsecond
 
    The correct PWM ranges for selectable modes are shown alongside
    each mode selection dropdown in the *Mission Planner Flight Mode* screen
@@ -104,11 +107,11 @@ to map a mode to a switch position.
 
 If you want to just support three modes (using a three position switch)
 then you would configure the transmitter to produce PWM pulse widths of
-1165, 1425, and 1815 microseconds for the respective switch positions.
+1165, 1425, and 1815 us for the respective switch positions.
 
 If you want to support 6 modes then the transmitter will need to emit
 PWM widths of around 1165, 1295, 1425, 1555, 1685, and 1815
-milliseconds. Typically this is achieved by configuring the transmitter
+us. Typically this is achieved by configuring the transmitter
 to mix a two position switch and a three position switch (giving 6 modes
 in total). You can also do this with an analog dial if one is available,
 but it’s hard to reliably turn a dial to just the right position for six
@@ -204,15 +207,15 @@ Modes setup to monitor the Current PWM for these adjustments.
    controlled by the Gear Switch)
 
    This will be the values with no mixing - F Mode switch in the 0
-   position and sets the lowest pulse width to 1165 ms (mode 1) and
-   highest to 1815 ms (mode 6)
+   position and sets the lowest pulse width to 1165 us (mode 1) and
+   highest to 1815 us (mode 6)
 
 -  Click the roller bar, scroll down to Servo Setup, Select the Gear
    channel, Select Sub Trim.
 -  Set sub trim to 0
 -  Select Travel.
--  Set travel (left, position 0) for 1165 ms pulse  (~90%).
--  Set travel (right, position 1 for 1815 ms pulse (~74%).
+-  Set travel (left, position 0) for 1165 us pulse  (~90%).
+-  Set travel (right, position 1 for 1815 us pulse (~74%).
 -  Set up Mix 1 to change the Gear Pulse width when F Mode is in
    position 1
 
@@ -225,15 +228,15 @@ Modes setup to monitor the Current PWM for these adjustments.
    -  Set SW = FM 1
    -  Set the F Mode switch on the transmitter to position 1.
    -  Set the Gear switch on the transmitter to position 0.
-   -  Set top Rate for pulse width of 1290 ms for mode 2  (~-35%)
+   -  Set top Rate for pulse width of 1290 us for mode 2  (~-35%)
 
-      (change = 400 ms \* -90% \* -35% = 126 ms. Result = 1165 ms + 126
-      ms = 1251 ms = mode 2)
+      (change = 400 us \* -90% \* -35% = 126 us. Result = 1165 us + 126
+      us = 1251 us = mode 2)
    -  Set the Gear switch on the transmitter to position 1.
-   -  Set bottom Rate for pulse width of 1685 ms for mode 5  (~– 45%)
+   -  Set bottom Rate for pulse width of 1685 us for mode 5  (~– 45%)
 
-      (change = 400 ms \* +73% \*- 45% = -131 ms. Result = 1815 ms - 131
-      ms = 1684 ms = mode 5)
+      (change = 400 us \* +73% \*- 45% = -131 us. Result = 1815 us - 131
+      us = 1684 us = mode 5)
 
 -  Set up a mix 2 to change the Gear Pulse width when F Mode is in
    position 2
@@ -244,13 +247,13 @@ Modes setup to monitor the Current PWM for these adjustments.
    -  Set SW = FM2
    -  Set the F Mode switch on the transmitter to position 2
    -  Set the Gear switch on the transmitter to position 0.
-   -  Rate top Rate for pulse width of 1425 ms for mode 3  (~–72%)
-      (change = 400 ms \* –90% \* – 72% = 259 ms.  Result = 1165 ms +
-      259 ms = 1424 ms = mode 3)
+   -  Rate top Rate for pulse width of 1425 us for mode 3  (~–72%)
+      (change = 400 us \* –90% \* – 72% = 259 us.  Result = 1165 us +
+      259 us = 1424 us = mode 3)
    -  Set the Gear switch on the transmitter to position 1.
-   -  Set bottom Rate for pulse width of 1550 ms for mode 4  (~–89%)
-      (change = 400 ms \* +73% \* – 89% = -262 ms.  Result = 1815 ms -
-      262 ms = 1553 ms = mode 4)
+   -  Set bottom Rate for pulse width of 1550 us for mode 4  (~–89%)
+      (change = 400 us \* +73% \* – 89% = -262 us.  Result = 1815 us -
+      262 us = 1553 us = mode 4)
 
       
 [copywiki destination="copter,plane,rover,planner"]
