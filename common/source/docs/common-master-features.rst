@@ -24,9 +24,10 @@ This lists features or changes merged in master and build in the "latest" firmwa
     Lightware SF45/B (350 degree) <common-lightware-sf45b>
     MSP OSD <common-msp-osd-overview>
     MSP (MultiWii Serial Protocol) <common-msp-overview>
-[site wii="copter,rovver"]
+[site wiki="copter,rover"]
     Nooploop Beacons <common-nooploop>
 [/site]
+[site wiki="copter,plane,rover"]
     OSD Parameter Editor <common-paramosd>
     RunCam Control <common-camera-runcam>
     Velocity ESCs <common-velocity-can-escs>
