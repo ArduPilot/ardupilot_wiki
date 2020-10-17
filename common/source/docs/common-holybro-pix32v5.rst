@@ -7,8 +7,8 @@
 Pix32 v5
 =================
 
-.. image:: ../../../images/holybro-pix32v5/holybro-pix32v5.png
-    :target: ../_images/holybro-pix32v5.png
+.. image:: ../../../images/holybro-pix32v5/Pix32-v5-Family.jpg
+    :target: ../_images/Pix32-v5-Family.jpg
     :width: 450px
 
 System Features
@@ -20,6 +20,8 @@ scheme, which can be regarded as a variant version of 'Pixhawk4'.
 The Pix32 v5 is comprised of a separate flight controller and carrier board which are
 connected by a 100pin connector. It is designed for those pilots who need a high power,
 flexible and customizable flight control system.
+
+Holybro offers two variations of the carrier board, including an ultra compact "Mini" version.
 
 Manufacturers can design  carrier boards to suit their specific needs.
 
@@ -69,7 +71,12 @@ Specifications
 
 Carrier board pin assignments
 =============================
-This section details the pin assignments of the standard carrier board. OEMs can design their own carrier board, as needed for specific requirements. Design schematics, module conenctor and pinout, 3D printer files, etc. are located `here <https://github.com/ArduPilot/Schematics/tree/master/Holybro-PIX32-V5>`__.
+This section details the pin assignments of the standard and mini carrier board. OEMs can design their own carrier board, as needed for specific requirements. Design schematics, module conenctor and pinout, 3D printer files, etc. are located `here <https://github.com/ArduPilot/Schematics/tree/master/Holybro/Pix32-V5>`__.
+
+.. note:: VDD_5V_RC is provided when either the USB or Power Module supply is attached. The power module will supply all 5V outputs except the VDD_SERVO which should be provided from a separate source, like an ESC or standalone BEC.
+
+Standard
+--------
 
 .. image:: ../../../images/holybro-pix32v5/holybro-pinouts-1.png
     :target: ../_images/holybro-pinouts-1.png
@@ -91,10 +98,35 @@ This section details the pin assignments of the standard carrier board. OEMs can
     :target: ../_images/holybro-pinouts-5.png
     :width: 450px
 
+Mini
+----
+
+.. image:: ../../../images/holybro-pix32v5/holybro-mini-pinouts-1.png
+    :target: ../_images/holybro-mini-pinouts-1.png
+    :width: 450px
+
+.. image:: ../../../images/holybro-pix32v5/holybro-mini-pinouts-2.png
+    :target: ../_images/holybro-mini-pinouts-2.png
+    :width: 450px
+
+.. image:: ../../../images/holybro-pix32v5/holybro-mini-pinouts-3.png
+    :target: ../_images/holybro-mini-pinouts-3.png
+    :width: 450px
+
+.. image:: ../../../images/holybro-pix32v5/holybro-mini-pinouts-4.png
+    :target: ../_images/holybro-mini-pinouts-4.png
+    :width: 450px
+
+.. image:: ../../../images/holybro-pix32v5/holybro-mini-pinouts-5.png
+    :target: ../_images/holybro-mini-pinouts-5.png
+    :width: 450px
+
 Where to Buy
 ============
 
-Official retailers are listed `here  <https://shop.holybro.com/art/distributors_a0050.html>`__.
+ `Holybro <https://shop.holybro.com/pix32-v5_p1218.html>`__ .
+
+
 
 
 
