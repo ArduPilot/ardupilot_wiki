@@ -10,116 +10,49 @@ Intel RealSense Depth Camera
     :width: 100%
 
 
-This article explains how to setup an `Intel Realsense Depth Camera <https://www.intelrealsense.com/stereo-depth/>`__ to be used with ArduPilot for obstacle avoidance. This method uses a Python script (non `ROS <https://www.ros.org/>`__) running on a companion computer to send necessary information to ArduPilot.
+This article explains how to setup an `Intel Realsense Depth Camera <https://www.intelrealsense.com/stereo-depth/>`__ to be used with ArduPilot for :ref:`obstacle avoidance <common-object-avoidance-landing-page>`. This method uses a Python script (non `ROS <https://www.ros.org/>`__) running on a companion computer to send distance information to ArduPilot.
 
+What to Buy
+-----------
 
-Prerequisite
-============
+- `Intel RealSense 435 <https://www.intelrealsense.com/depth-camera-d435/>`__ or `D435i <https://www.intelrealsense.com/depth-camera-d435i/>`__ depth camera.  Other `Intel depth cameras <https://www.intelrealsense.com/stereo-depth/>`__ may also work
+- `UP Squared companion computer <https://up-shop.org/up-squared-series.html>`__ (Celeron 2GB and ATOM are known to work). Other companion computers including the `RPi4 <https://www.raspberrypi.org/products/raspberry-pi-4-model-b/>`__ are not supported although it may be possible to manually set them up (see Configure Companion Computer section below)
+- Two USB flash drives (8GB or more)
 
-Hardware
---------
+Hardware Connections
+--------------------
 
-- `Intel RealSense Depth Camera <https://www.intelrealsense.com/stereo-depth/>`__. The system has been tested with the `D435 <https://www.intelrealsense.com/depth-camera-d435/>`__.
+- Mount the camera on the vehicle facing **forward** (other orientation are not yet supported) and provide isolation from vibrations if possible. Connect the camera USB cable to one of the UP2 board's blue USB3 ports
+- Connect the UP Squared's serial port to one of the autopilot's telemetry ports (i.e. Telem1, Telem2) as shown below
 
-- `UP2 board <https://up-board.org/upsquared/specifications/>`__ as the companion computer. For other boards that are not x86-based CPU such as the `Raspberry Pi 4 <https://www.raspberrypi.org/products/raspberry-pi-4-model-b/>`__, the installation step for supporting packages might not work and have to be modified for your specific system.
+.. image:: ../../../images/intel-realsense-435-pixhawk.jpg
+    :target: ../_images/intel-realsense-435-pixhawk.jpg
+    :width: 450px
 
-- Mount the camera on the vehicle facing **forward** (other orientation are not yet supported) and provide isolation from vibrations if possible. Connect the camera USB cable to one of the UP2 board blue USB3 ports.
+Setup the UP Squared
+--------------------
 
-- Provide serial connection between the companion computer to one of the autopilot's telemetry ports (i.e. Telem1, Telem2).
+Install APSync to the UP Squared:
 
-Software
---------
-For the companion computer:
+- Download the latest APSync image (`look for "apsync-up2-d435i-yyyymmdd.tar.xz here <https://firmware.ardupilot.org/Companion/apsync/beta/>`__) and copy to one of the USB flash drives
+- `Download Tuxboot <https://tuxboot.org/download/>`__
+- Format a second USB flash drive and use Tuxboot to install `Clonezilla <https://clonezilla.org/>`__ onto it
+- Insert this second USB flash drive into the UP Squared's USB port and then power up the UP Squared board
+- The CloneZilla boot menu should appear, Press enter to select the first option
+- In CloneZilla:
 
-- **OS**: **Ubuntu 18.04** (highly recommended as this release is the most up-to-date with the required libraries).
-
-- **Python 3.6** and above, which is also the standard for Ubuntu 18.04. Check ther version with ``$ python3 -V``, you should see ``Python 3.6.9`` or higher.
-
-- `librealsense <https://github.com/IntelRealSense/librealsense>`__: download or install from the `official source <https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md>`__.
-
-
-System Overview
-===============
-
-In a nutshell, the script will convert the depth image provided by the Realsense depth camera into distances to obstacles in front. AP supports `DISTANCE_SENSOR <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ and `OBSTACLE_DISTANCE <https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE>`__ MAVLink messages, with the former carries a single distance and the latter carries an array of distances. ``OBSTACLE_DISTANCE`` allows us to send up to 72 distances at once, so it will be used.
-
-- Firstly, it is important to apply some form of filters on the **raw** depth image to avoid black holes, noises and generally improve the data to obtain more stable results. Here is full `list of filters <https://github.com/IntelRealSense/librealsense/blob/master/doc/post-processing-filters.md>`__ that are included in the script, which you can enable individually. To test the settings for different filters, you can use the `rs-depth-quality <https://github.com/IntelRealSense/librealsense/tree/master/tools/depth-quality>`__ example provided by ``librealsense`` or run the example ``opencv_depth_filtering.py`` script. The following picture demonstrates the raw (left) and filtered (right) depth image, with the horizontal line as the position where we compute the distances to the obstacles.
-
-.. image:: ../../../images/example-depth-camera-filtered-image.png
-    :target: ../_images/example-depth-camera-filtered-image.png
-    :width: 500px
-
-- Next, from the input/processed depth image, the distances need to be on the same **horizontal** line (depicted in the right image) since the message contains no field to distinguish different pitch angles. We devide the horizontal field of view of the camera into 72 evenly spaced rays. Along each ray, we select the pixel corresponding to the end of the ray and pick out the depth value.
-
-- Subsequently, the obstacle line will be kept "fixed" when the vehicle pitches up and down by compensating for the current pitch of the vehicle which is provided by the `ATTITUDE <https://mavlink.io/en/messages/common.html#ATTITUDE>`__  MAVLink message.
-
-- Finally, the message should be sent at 10Hz or higher, depends on how fast the vehicle is moving.
-
-
-Configure companion computer
-============================
-
-Install ``librealsense`` and ``pyrealsense2``
----------------------------------------------
-
-The Realsense depth camera is supported via `librealsense <https://github.com/IntelRealSense/librealsense>`__ on Windows and Linux. Installation process varies widely for different systems, hence refer to `the official github page <https://github.com/IntelRealSense/librealsense>`__ for instructions for your specific system:
-
-- `Ubuntu <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md>`__
-- `Jetson <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md>`__
-- `Odroid <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_odroid.md>`__
-- `Windows <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_windows.md>`__
-- `Raspbian <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_raspbian.md>`__
-
-Establish serial connection with ArduPilot
-------------------------------------------
-
-You can follow the wiki to :ref:`connect to ArduPilot with MAVLink <raspberry-pi-via-mavlink>`.
-
-Install supporting packages
----------------------------
-
-First install `Python3 for Ubuntu <https://realpython.com/installing-python/#ubuntu>`__ (not necessary for Ubuntu 18.04 and above). You should be able to then run the examples provided by Intel can be found in the folder ``~/librealsense/wrappers/python/examples`` with Python3 command.
-
-.. code-block:: bash
-
-    # Update the PYTHONPATH environment variable to add the path to the pyrealsense2 library
-    export PYTHONPATH=$PYTHONPATH:/usr/local/lib
-
-    cd ~/librealsense/wrappers/python/examples
-
-    # You should see a stream of depth data coming from the D4xx camera.
-    python3 python-tutorial-1-depth.py
-
-Install pip for Python3 `(pip3) <https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/#installing-pip-for-python-3>`__ and other supporting packages:
-
-.. code-block:: bash
-
-    sudo apt-get install python3-pip
-    pip3 install pyrealsense2
-    pip3 install transformations
-    pip3 install dronekit
-    pip3 install apscheduler
-    pip3 install pyserial # For serial connection
-    pip3 install opencv-python
-    sudo apt -y install python3-gst-1.0 gir1.2-gst-rtsp-server-1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly libx264-dev
-
-    # Only necessary if you installed the minimal version of Ubuntu
-    sudo apt install python3-opencv
-
-
-Download the main script `d4xx_to_mavlink.py <https://github.com/thien94/vision_to_mavros/blob/master/scripts/d4xx_to_mavlink.py>`__ or clone the `vision_to_mavros <https://github.com/thien94/vision_to_mavros>`__ repository and find the script folder.
-
-.. code-block:: bash
-
-    cd /path/to/download # Or ROS workspace ~/catkin_ws/src
-    git clone https://github.com/thien94/vision_to_mavros.git
-    cd vision_to_mavros/script
-    chmod +x d4xx_to_mavlink.py
-    chmod +x opencv_depth_filtering.py  # Useful to test the filtering options
-
-
-- The main script to be used with AP is ``d4xx_to_mavlink.py``. The second script ``opencv_depth_filtering.py`` can be used to test out different filtering options at your own leisure.
-
+  - Press enter to accept default keyboard layout
+  - Press enter to start clonezilla
+  - Press enter to select device-image
+  - Press enter for local_dev
+  - Insert the second USB stick which has the APSync image copied onto it
+  - Press enter to continue and detect USB devices
+  - When device is detected, use ctrl-c to exit detection screen
+  - Use the cursor keys to select the device that contains the APSync image
+  - Select the apsync directory which contains the image
+  - Use tab to move the “cursor” over “Done” and press enter
+  - Press enter to acknowledge disk space usage
+  - Press enter to select Beginner mode
 
 Configure ArduPilot
 ===================
@@ -245,3 +178,86 @@ DataFlash logging
 - The relevant messages for the depth camera are ``PRX.CAn`` and ``PRX.CDist``, which stand for angle and distance of the closest object, respectively.
 
 - You can also view the distance data in each quadrant (D0, D45, and D315 - or 0 degree, 45 degree and 315 degree). Note that the range of value for CAn is 360 degrees while for CDist and the other Dangle only a few meters, so you might need to view them separately.
+
+System Overview
+===============
+
+In a nutshell, the script will convert the depth image provided by the Realsense depth camera into distances to obstacles in front. AP supports `DISTANCE_SENSOR <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ and `OBSTACLE_DISTANCE <https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE>`__ MAVLink messages, with the former carries a single distance and the latter carries an array of distances. ``OBSTACLE_DISTANCE`` allows us to send up to 72 distances at once, so it will be used.
+
+- Firstly, it is important to apply some form of filters on the **raw** depth image to avoid black holes, noises and generally improve the data to obtain more stable results. Here is full `list of filters <https://github.com/IntelRealSense/librealsense/blob/master/doc/post-processing-filters.md>`__ that are included in the script, which you can enable individually. To test the settings for different filters, you can use the `rs-depth-quality <https://github.com/IntelRealSense/librealsense/tree/master/tools/depth-quality>`__ example provided by ``librealsense`` or run the example ``opencv_depth_filtering.py`` script. The following picture demonstrates the raw (left) and filtered (right) depth image, with the horizontal line as the position where we compute the distances to the obstacles.
+
+.. image:: ../../../images/example-depth-camera-filtered-image.png
+    :target: ../_images/example-depth-camera-filtered-image.png
+    :width: 500px
+
+- Next, from the input/processed depth image, the distances need to be on the same **horizontal** line (depicted in the right image) since the message contains no field to distinguish different pitch angles. We devide the horizontal field of view of the camera into 72 evenly spaced rays. Along each ray, we select the pixel corresponding to the end of the ray and pick out the depth value.
+
+- Subsequently, the obstacle line will be kept "fixed" when the vehicle pitches up and down by compensating for the current pitch of the vehicle which is provided by the `ATTITUDE <https://mavlink.io/en/messages/common.html#ATTITUDE>`__  MAVLink message.
+
+- Finally, the message should be sent at 10Hz or higher, depends on how fast the vehicle is moving.
+
+
+Manually Setup the Companion Computer
+=====================================
+
+These steps are only required if you have not already installed APSync to the companion computer.
+
+For the companion computer:
+
+- **OS**: **Ubuntu 18.04** (highly recommended as this release is the most up-to-date with the required libraries).
+- **Python 3.6** and above, which is also the standard for Ubuntu 18.04. Check ther version with ``$ python3 -V``, you should see ``Python 3.6.9`` or higher.
+- `librealsense <https://github.com/IntelRealSense/librealsense>`__: download or install from the `official source <https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md>`__.
+- ``pyrealsense2`` is also required
+
+The installation process varies widely for different systems, hence refer to `the official github page <https://github.com/IntelRealSense/librealsense>`__ for instructions for your specific system:
+
+- `Ubuntu <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md>`__
+- `Jetson <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md>`__
+- `Odroid <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_odroid.md>`__
+- `Windows <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_windows.md>`__
+- `Raspbian <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_raspbian.md>`__
+
+Install supporting packages
+---------------------------
+
+First install `Python3 for Ubuntu <https://realpython.com/installing-python/#ubuntu>`__ (not necessary for Ubuntu 18.04 and above). You should be able to then run the examples provided by Intel can be found in the folder ``~/librealsense/wrappers/python/examples`` with Python3 command.
+
+.. code-block:: bash
+
+    # Update the PYTHONPATH environment variable to add the path to the pyrealsense2 library
+    export PYTHONPATH=$PYTHONPATH:/usr/local/lib
+
+    cd ~/librealsense/wrappers/python/examples
+
+    # You should see a stream of depth data coming from the D4xx camera.
+    python3 python-tutorial-1-depth.py
+
+Install pip for Python3 `(pip3) <https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/#installing-pip-for-python-3>`__ and other supporting packages:
+
+.. code-block:: bash
+
+    sudo apt-get install python3-pip
+    pip3 install pyrealsense2
+    pip3 install transformations
+    pip3 install dronekit
+    pip3 install apscheduler
+    pip3 install pyserial # For serial connection
+    pip3 install opencv-python
+    sudo apt -y install python3-gst-1.0 gir1.2-gst-rtsp-server-1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly libx264-dev
+
+    # Only necessary if you installed the minimal version of Ubuntu
+    sudo apt install python3-opencv
+
+
+Download the main script `d4xx_to_mavlink.py <https://github.com/thien94/vision_to_mavros/blob/master/scripts/d4xx_to_mavlink.py>`__ or clone the `vision_to_mavros <https://github.com/thien94/vision_to_mavros>`__ repository and find the script folder.
+
+.. code-block:: bash
+
+    cd /path/to/download # Or ROS workspace ~/catkin_ws/src
+    git clone https://github.com/thien94/vision_to_mavros.git
+    cd vision_to_mavros/script
+    chmod +x d4xx_to_mavlink.py
+    chmod +x opencv_depth_filtering.py  # Useful to test the filtering options
+
+
+- The main script to be used with AP is ``d4xx_to_mavlink.py``. The second script ``opencv_depth_filtering.py`` can be used to test out different filtering options at your own leisure.
