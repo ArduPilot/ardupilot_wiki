@@ -65,10 +65,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Precision Landing and Loiter (IRLock) <precision-landing-with-irlock>
 [/site]
     Radio Control Systems <common-rc-systems>
-    Rangefinders (Sonar, Lidar) <common-rangefinder-landingpage>
-[site wiki="copter,rover"]
-    Realsense Depth Camera <common-realsense-depth-camera>
-[/site]
+    Rangefinders (Sonar, Lidar, Depth Cameras) <common-rangefinder-landingpage>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Relay Switch <common-relay>
     RPM Sensor <common-rpm>

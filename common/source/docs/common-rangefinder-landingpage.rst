@@ -59,6 +59,9 @@ based upon your set-up.
     Garman Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
+[site wiki="copter,rover"]
+    Intel Realsense Depth Camera <common-realsense-depth-camera>
+[/site]
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
