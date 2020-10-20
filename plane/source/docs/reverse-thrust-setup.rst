@@ -65,7 +65,7 @@ Reverse Thrust: AutoPilot Controlled
 
 Reverse thrust can also be used by the autopilot to steepen descents without overspeeding automatically, in automatic throttle controlled modes, including during automatic landings, by setting the :ref:`USE_REV_THRUST<USE_REV_THRUST>` parameter, as shown in the above diagrams.
 
-In order to actually use this,an airspeed sensor must be in use, and the :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` must be set such that :ref:`TECS_PITCH_MIN<TECS_PITCH_MIN>` and :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` would be exceeded otherwise. The autopilot will use reverse thrust up to :ref:`THR_MIN<THR_MIN>` in order to obtain that maximum sink rate when required by the autopilot. Typical configurations also have :ref:`TECS_APPR_SMAX<TECS_APPR_SMAX>` set higher than :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` for smoother cruising ,while allowing steeper and more aggressive slopes for landing.
+In order to actually use this,an airspeed sensor must be in use, and the :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` must be set such that :ref:`TECS_PITCH_MIN<TECS_PITCH_MIN>` and :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` would be exceeded otherwise. The autopilot will use reverse thrust up to :ref:`THR_MIN<THR_MIN>` in order to obtain that maximum sink rate when required by the autopilot. Typical configurations also have :ref:`TECS_APPR_SMAX<TECS_APPR_SMAX>` set higher than :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` for smoother cruising, while allowing steeper and more aggressive slopes for landing.
 
 Use with pilot controlled forward thrust only
 +++++++++++++++++++++++++++++++++++++++++++++
