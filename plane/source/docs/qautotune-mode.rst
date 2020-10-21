@@ -15,6 +15,8 @@ Configuration
 Operation
 =========
 
+.. note:: QAUTOTUNE mode cannot be entered while disarmed, unlike many other QuadPlane modes.
+
 As an QAUTOTUNE can take quite a long time (3 to 5 minutes per axis is common) you may wish to tune one axis at a time. Choose whether you want position hold support while tuning. If you enter QAUTOTUNE mode from QLOITER then it will use a loose position hold, preventing wind from carrying it away while tuning. If you start from QHOVER then it will not hold position, and you may need to reposition while tuning, but it will only do tuning (“twitching” to measure responses) while the sticks are centered.
 
 You may need to increase the deadzone (``RCx_DZ``) on your input channels or re-calibrate your RC channels to ensure it can start the tune. Once you start the tune it will “twitch” on the axis it is tuning. So if it is tuning roll, then it does small sharp roll movements to measure response.
