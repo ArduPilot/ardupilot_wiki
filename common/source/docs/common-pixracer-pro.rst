@@ -99,9 +99,11 @@ PIN    SIGNAL       VOLTAGE/TOLERANCE
 1       +5V             +5V
 2       TX1             +3.3V/5V
 3       RX1             +3.3V/5V
-4       TX7             +3.3V/5V
-5       RX7             +3.3V/5V
-6       GND             GND
+4       GND             GND
+5       +5V             +5V
+6       TX7             +3.3V/5V
+7       RX7             +3.3V/5V
+8       GND             GND
 ===    ======       =================
 
 USART4 (GPS+I2C) connector
