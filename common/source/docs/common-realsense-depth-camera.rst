@@ -53,6 +53,17 @@ Install APSync to the UP Squared:
   - Use tab to move the “cursor” over “Done” and press enter
   - Press enter to acknowledge disk space usage
   - Press enter to select Beginner mode
+  - Use the cursor keys to select "restoredisk" and press enter
+  - Select the image file to restore and again press enter
+  - Choose the target disk to be overwritten. Any data on that disk will be overwritten with the APSync image. Press enter
+  - Select "Yes check the image before restoring" and press enter. This will ensure the image you copied onto USB is healthy.
+  - Select "-p choose" . Press enter to any prompt till restoration begins
+  - Installation progress should be visible now, wait a few minutes
+  - Enter "Y" when prompted for overwriting all data to selected disk
+  - After the cloning process is finished, there will be a prompt declaring success, press enter to continue.
+  - Press enter on "power off"
+  - Remove all USB sticks from the board. You can also remove your monitor input. 
+  - Reboot 
 
 Configure ArduPilot
 ===================
@@ -83,27 +94,16 @@ Example of specifics for ``Loiter`` and ``AltHold`` mode:
 After the parameters are modified, reboot the autopilot.
 
 
-Ground Test
-===========
+Ground Test: Pre-Flight Verification
+====================================
 
-If you don't have a monitor plugged in, disable the debug option in the script ``d4xx_to_mavlink.py`` by setting ``debug_enable_default = False`` or add the argument ``--debug_enable 0`` when running the script:
-
-- Run the script with:
-
-.. code-block:: bash
-
-  cd /path/to/script
-  python3 d4xx_to_mavlink.py
-
-- If the debugging option is enabled, wait until the input and processed depth images are shown. The processing speed (fps) can be seen in the top right corner. The horizontal line on the output image (right) indicates the line on which we find the distances to the obstacles in front of the camera.
-
-To verify that ArduPilot is receiving ``OBSTACLE_DISTANCE`` messages, on Mission Planner: press ``Ctrl+F`` and click on “Mavlink Inspector”, you should be able to see data coming in:
+To verify that the APSync image is working and everything has been correctly configured ensure ArduPilot is receiving ``OBSTACLE_DISTANCE`` messages, on Mission Planner: press ``Ctrl+F`` and click on “Mavlink Inspector”, you should be able to see data coming in:
 
 .. image:: ../../../images/copter-object-avoidance-show-radar-view.png
     :target: ../_images/copter-object-avoidance-show-radar-view.png
     :width: 500px
 
-- If you have a stable telemetry connection, the data frequency for ``OBSTACLE_DISTANCE`` message should be close to ``obstacle_distance_msg_hz_default``. If not, use a USB cable to connect AP and GCS to make sure that the obstacle avoidance data is being received as intended by AP before moving on.
+- If you have a stable telemetry connection, the data frequency for ``OBSTACLE_DISTANCE`` message should be close to ``15 hz``. If not, use a USB cable to connect AP and GCS to make sure that the obstacle avoidance data is being received as intended by AP before moving on.
 
 Within Mission Planner, open the ``Proximity view`` (``Ctrl-F`` > ``Proximity``):
 
@@ -114,30 +114,6 @@ Within Mission Planner, open the ``Proximity view`` (``Ctrl-F`` > ``Proximity``)
     :width: 500px
 
 - The proximity view will group every distances within 45-degrees arc together (in total 8 quadrants around the vehicle), so at most only 3 **nearest** obstacles will be shown at any one time on the Proximity window (since the camera's FOV is less then 90 degrees).
-
-Setup video feed of the RGB image from the camera:
-
-- The script ``d4xx_to_mavlink.py`` has an option ``RTSP_STREAMING_ENABLE``. If enabled (``True``), a video stream of the RGB image from the Realsense camera will be available at ``rtsp://<ip-address>:8554/d4xx`` with ``<ip-address>`` of the UP2 / companion computer.
-
-- In Mission Planner: right-click the HUD > Video > Set GStreamer Source, which will open the Gstreamer url window. Pass the following example pipeline into the Gstreamer url window. Change the ``<ip-address>`` accordingly:
-
-.. code-block:: bash
-
-    rtspsrc location=rtsp://<ip-address>:8554/d4xx caps=“application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264” latency=100 ! queue ! rtph264depay ! avdec_h264 ! videoconvert ! video/x-raw,format=BGRA ! appsink name=outsink
-
-- The latency of the video feed depends on the network as well as pipeline configuration, so feel free to tune/modify the parameters.
-
-As the performance of the depth camera varies in different setting/environment, it is recommended to further tune the settings of the script before actual flight. Below are some improvements based on real experiments with the system:
-
-- When the vehicle is on the ground, it is possible that a large portion of the depth image will see the ground. In such cases, within the ``d4xx_to_mavlink.py`` script, reduce the ``obstacle_line_height_ratio`` parameter (closer to zero) to move the obstacle detection line up.
-
-- If the depth data is noisy, increase the thickness of the obstacle line by modify the ``obstacle_line_thickness_pixel`` param in the script. At the time of this writing, the idea is to process a group of pixels within a certain boundary (defined by this parameter) and find the lowest value to use as indicator to the object. This can change in the future if a better scheme is developed.
-
-
-.. tip::
-    
-    The depth camera can be used together with the :ref:`Realsense T265 Tracking camera for non-GPS navigation <common-vio-tracking-camera>`. There are supporting `scripts <https://github.com/thien94/vision_to_mavros/tree/master/scripts>`__ available to simplify the usage of multiple cameras simultaneously.
-
 
 Flight Test
 ===========
@@ -261,3 +237,40 @@ Download the main script `d4xx_to_mavlink.py <https://github.com/thien94/vision_
 
 
 - The main script to be used with AP is ``d4xx_to_mavlink.py``. The second script ``opencv_depth_filtering.py`` can be used to test out different filtering options at your own leisure.
+
+Making Changes to the Script
+============================
+
+If you don't have a monitor plugged in, disable the debug option in the script ``d4xx_to_mavlink.py`` by setting ``debug_enable_default = False`` or add the argument ``--debug_enable 0`` when running the script:
+
+- Run the script with:
+
+.. code-block:: bash
+
+  cd /path/to/script
+  python3 d4xx_to_mavlink.py
+
+- If the debugging option is enabled, wait until the input and processed depth images are shown. The processing speed (fps) can be seen in the top right corner. The horizontal line on the output image (right) indicates the line on which we find the distances to the obstacles in front of the camera.
+
+Setup video feed of the RGB image from the camera:
+
+- The script ``d4xx_to_mavlink.py`` has an option ``RTSP_STREAMING_ENABLE``. If enabled (``True``), a video stream of the RGB image from the Realsense camera will be available at ``rtsp://<ip-address>:8554/d4xx`` with ``<ip-address>`` of the UP2 / companion computer.
+
+- In Mission Planner: right-click the HUD > Video > Set GStreamer Source, which will open the Gstreamer url window. Pass the following example pipeline into the Gstreamer url window. Change the ``<ip-address>`` accordingly:
+
+.. code-block:: bash
+
+    rtspsrc location=rtsp://<ip-address>:8554/d4xx caps=“application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264” latency=100 ! queue ! rtph264depay ! avdec_h264 ! videoconvert ! video/x-raw,format=BGRA ! appsink name=outsink
+
+- The latency of the video feed depends on the network as well as pipeline configuration, so feel free to tune/modify the parameters.
+
+As the performance of the depth camera varies in different setting/environment, it is recommended to further tune the settings of the script before actual flight. Below are some improvements based on real experiments with the system:
+
+- When the vehicle is on the ground, it is possible that a large portion of the depth image will see the ground. In such cases, within the ``d4xx_to_mavlink.py`` script, reduce the ``obstacle_line_height_ratio`` parameter (closer to zero) to move the obstacle detection line up.
+
+- If the depth data is noisy, increase the thickness of the obstacle line by modify the ``obstacle_line_thickness_pixel`` param in the script. At the time of this writing, the idea is to process a group of pixels within a certain boundary (defined by this parameter) and find the lowest value to use as indicator to the object. This can change in the future if a better scheme is developed.
+
+
+.. tip::
+    
+    The depth camera can be used together with the :ref:`Realsense T265 Tracking camera for non-GPS navigation <common-vio-tracking-camera>`. There are supporting `scripts <https://github.com/thien94/vision_to_mavros/tree/master/scripts>`__ available to simplify the usage of multiple cameras simultaneously.
