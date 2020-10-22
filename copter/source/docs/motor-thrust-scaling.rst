@@ -23,6 +23,8 @@ The curve is controlled by two parameters:
    pictures below).  The default is "0.65" (the image below incorrectly
    states the default is 0.5).
 
+.. warning:: Some ESCs (T-Motor Alpha and some Flame series, and possibly others) have built-in linearizing curves and the default EXPO value of "0.65" will cause stability issues, requiring thrust stand measurements to adjust the EXPO. Typically, values of "0" to "0.2" will result.
+
 .. image:: ../images/MotThstExpo_graphs2.png
     :target: ../_images/MotThstExpo_graphs2.png
 
@@ -33,7 +35,7 @@ The curve is controlled by two parameters:
 Thrust Stands
 =============
 
-The thrust stands listed below can be used to measure the PWM signal vs thrust output for a vehicle's specific motor, esc and battery
+The thrust stands listed below can be used to measure the PWM signal vs thrust output for a vehicle's specific motor, esc and battery. Be sure to use the ESCs rated input PWM range when measuring these values.
 
 - `RCbenchmark.com thrust stands <https://www.rcbenchmark.com/pages/series-1580-thrust-stand-dynamometer>`__
 - `Turnigy thrust stand <https://hobbyking.com/en_us/turnigy-thrust-stand-and-power-analyser-v3.html>`__
