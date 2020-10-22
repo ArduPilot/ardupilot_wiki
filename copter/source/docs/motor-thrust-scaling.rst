@@ -43,5 +43,10 @@ Parameter Calculation
 
 A copy of `this spreadsheet <https://docs.google.com/spreadsheets/d/1_75aZqiT_K1CdduhUe4-DjRgx3Alun4p8V2pt6vM5P8/edit#gid=0>`__ can be used to calculate the appropriate values from the thrust stand data above.
 
+WARNING FOR T-MOTOR ESC USERS:
 
+*T-Motor Alpha series ESCs have interal thrust linearisation and this forces users to measure the thrust curve for the particular motor used.
+The MOT_THST_EXPO for these ESCs range from 0 to 0.2. Make sure to use MOT_PWM_MAX and MIN values as 1940μs and 1100μs respectively while conducting the motor test.
+
+*Some Flame series ESCs do the internal thrust linearisation and some don't. Make sure to check the motor and ESC on bench before using them with stock EXPO value.
 
