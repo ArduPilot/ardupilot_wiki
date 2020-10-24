@@ -174,3 +174,14 @@ Compass error messages
 -  **Compass Offsets High**: One of your compass offsets exceeds 600,
    indicating likely magnetic interference. Check for sources of
    interference and try calibrating again.
+
+Refining Calibration Parameters using a Flight Log
+==================================================
+
+The compass offsets, scales, diagonals, and even motor compensation can be determined from a flight dataflash log of the vehicle using an analysis utility. 
+
+
+.. toctree::
+    :maxdepth: 1
+
+    Magfit Python Utility <common-magfit>
