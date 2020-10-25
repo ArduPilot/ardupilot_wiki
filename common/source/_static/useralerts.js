@@ -5,7 +5,7 @@ Written by Stephen Dade (stephen_dade@hotmail.com)
 [copywiki destination="copter,plane,rover,antennatracker"]
 */
 $(document).ready(function() {
-    $.getScript("https://firmware.ardupilot.org/userAlerts/manifest.js", function() {
+    $.getScript("https://firmware.ardupilot.org/useralerts/manifest.js", function() {
     // figure out which vehicle's wiki we are in
     var url = window.location.href;
     if (url.search("copter") !== -1) {
