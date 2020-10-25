@@ -146,6 +146,9 @@ The json files themselves will each have the below fields. There are examples in
      - Dict of firmware=version. For example: ``{"copter": "4.0.1", "plane": "4.0.5"}``
      - ArduPilot release which contains fix. List must cover all firmwares listed in "Affected firmware". It is assumed that all versions between VersionFrom and this are affected by the User Alert. This field is an empty if there is no fixed version yet.
 
+   * - lastmodified
+     - ``string``
+     - Date and time that this User Alert was modified, in ISO8601 format. This field is automatically added by the CI and does not need to be manually added.
 
 Application Ingestion
 =====================
@@ -154,6 +157,7 @@ To make application ingestion easier, there will be a generated manifest file li
 
 There are URL's for both an example manifest (for testing purposes) and the actual user alerts manifest:
 
-- URL for example User Alerts: https://firmware.ardupilot.org/userAlerts/exampleManifest.json
-- URL for User Alerts: https://firmware.ardupilot.org/userAlerts/manifest.json
+- URL for example User Alerts: https://firmware.ardupilot.org/useralerts/examplemanifest.json
+- URL for User Alerts: https://firmware.ardupilot.org/useralerts/manifest.json
 
+There is also a timestamp of the last date and time that the manifests were uploaded in https://firmware.ardupilot.org/useralerts/lastmodified.txt, in ISO8601 format.
