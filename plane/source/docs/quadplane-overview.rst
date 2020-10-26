@@ -1,5 +1,6 @@
 .. _quadplane-overview:
 
+==================
 QuadPlane Overview
 ==================
 
