@@ -58,7 +58,7 @@ Meaning that when flying, our throttle values will range between 1100 -
 -  If we lose RC communication, and the receiver is capable and set up properly, it will
    drop to the lowest known throttle value of ~900. This value falls
    bellow the :ref:`THR_FS_VALUE<THR_FS_VALUE>` and will trigger the autopilot to go into
-   an RC failsafe mode, know as Throttle Failsafe. Alternatively, if communication from the receiver is lost, either by its sending no pulses during signal loss, or by wiring disconnection, it will also go into RC failsafe mode . Finally, if the :ref:`RC_OPTIONS<RC_OPTIONS>` bit 2 is not set, and the receiver protocol has a failsafe bit, it can trigger the RC failsafe. Receiver protocols which have this bit are: Sbus, SXRL, SXRL2, SumD, FPort, and iBUS.
+   an RC failsafe mode, know as Throttle Failsafe. Alternatively, if communication from the receiver is lost, either by its sending no pulses during signal loss, or by wiring disconnection, it will also go into RC failsafe mode . Finally, if the :ref:`RC_OPTIONS<RC_OPTIONS>` bit 2 is not set, and the receiver protocol has a failsafe bit, it can trigger the RC failsafe. Receiver protocols which have this bit are: Sbus, SXRL, SXRL2, SumD, FPort, FPort2, and iBUS.
 -  When failsafe is entered, all RC inputs (except throttle in the case of throttle initiated failsafe), are ignored as the autopilot takes its failsafe actions.
 -  First, the autopilot will go into short failsafe (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` ),
    when it detects loss of signal for more than :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` sec. The default setting for short failsafe is Circle mode.
