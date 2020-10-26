@@ -4,7 +4,7 @@
 FPort Receivers
 ===============
 
-Support for FPort will be in firmware revs 4.1 and later.
+Support for FPort/FPort2 will be in firmware revs 4.1 and later.
 
 FPort protocol combines SBus RC control information being sent to the autopilot with bi-directional telemetry information to/from the autopilot on a single wire high baud rate bus.
 

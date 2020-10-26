@@ -56,8 +56,10 @@ For autopilots that do not provide a separate ``DSM`` input, these can be connec
 .. image:: ../../../images/pixhawk_spektrum_connection.jpg
 
 
-FPort
------
+FPort/FPort2
+------------
+
+(future feature, see :ref:`Upcoming features <common-master-features>` )
 
 FPort is a bi-directional protocol, using SBus RC in one direction, and serial telemetry in the other. The RC portion can be decoded when attached to an autopilot as if it were SBus, but the embedded telemetry would be lost. See the :ref:`FPort setup documentation<common-FPort-receivers>` for details on connection to one of the autopilots Serial Ports.
 
@@ -65,7 +67,7 @@ FPort is a bi-directional protocol, using SBus RC in one direction, and serial t
 SRXL2/CRSF
 -----------
 
-(future feature)
+(future feature, see :ref:`Upcoming features <common-master-features>` )
 
 These bi-directional protocols require the use of a Serial Port. See links below for setup and connections.
 
