@@ -15,14 +15,8 @@ multicopter aircraft, also known as a "QuadPlane".
 
     Overview <quadplane-overview>
     Building a QuadPlane <quadplane-building>
-    Frame Setup <quadplane-frame-setup>
-    Tilt-Rotors <guide-tilt-rotor>
-    Tailsitters <guide-tailsitter>
-    ESC Calibration <quadplane-esc-calibration>
-    Parameter Setup <quadplane-parameters>
-    Flight Modes <quadplane-flight-modes>
-    Flying a QuadPlane <quadplane-flying>
-    VTOL Mode Tuning <quadplane-tuning-landingpage>
+    First Time Setup <quadplane-setup>
+    First Flight <quadplane-first-flight>
     Weathervaning <quadplane-weathervaning>
     AUTO Missions <quadplane-auto-mode>
     Simulation <quadplane-simulation>
