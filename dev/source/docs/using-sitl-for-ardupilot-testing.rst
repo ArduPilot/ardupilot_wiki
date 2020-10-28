@@ -235,7 +235,7 @@ To test losing GPS lock, use ``SIM_GPS_DISABLE``:
 
     param set SIM_GPS_DISABLE 1
 
-You can also enable/disable a 2nd GPS using ``SIM_GPS2_ENABLE``.
+You can also enable/disable a 2nd GPS using ``SIM_GPS2_DISABLE``.
 
 Testing the effects of vibration
 ================================
