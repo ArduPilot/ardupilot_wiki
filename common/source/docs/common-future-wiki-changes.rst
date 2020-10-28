@@ -35,6 +35,10 @@ RCx_OPTIONs on Auxillary Functions Page:
 +----------------------+----------------------------+----------+---------+---------+
 |        87            | CROW Mode Switch           |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        88            | Soaring Enable             |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        89            | Force Flare                |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 |        100           | Kill IMU1 (testing only!)  |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        101           | Kill IMU2 (testing only!)  |    X     |    X    |    X    |
@@ -179,6 +183,26 @@ Disables Terrain Following in CRUISE and FBWB modes
    <td>
 
 Selects between different CROW aileron operating modes
+
+.. raw:: html
+
+   </td>
+   </tr>
+      <tr>
+   <td><strong>Soaring Enable</strong></td>
+   <td>
+
+Enables Soaring function operating modes
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Force Flareh</strong></td>
+   <td>
+
+Moves tilt motors to upright position and optionally sets pitch for flare when landing Tilt Rotor Quadplanes
 
 .. raw:: html
 
@@ -410,6 +434,12 @@ On Automatic Landing page:
 
 .. note:: Airbrakes can also be automatically deployed during reverse thrust operation. See :ref:`Airbrakes<airbrakes-on-plane>`.
 
+On Tilt Rotors and Tailsitters pages:
+------------------------------------
+
+add note:
+
+For landing in fixed wing, manual throttle controlled modes, there is an ``RCx_OPTION`` (89) that will force the tilt servos upright, force idle throttle, and optionally force the pitch to target :ref:`LAND_PITCH_CD<LAND_PITCH_CD>` for flaring to the normal fixed wing landing. This allows intentional or emergency fixed wing landings in MANUAL, ACRO, STABILIZE, and FBWA modes without the risk of a prop strike in configurations where this could occur otherwise.
 
 
 -----------------------------------------------------
