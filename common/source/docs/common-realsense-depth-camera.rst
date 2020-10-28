@@ -34,7 +34,7 @@ Setup the UP Squared
 
 Install APSync to the UP Squared:
 
-- Download the latest APSync image (`look for "apsync-up2-d435i-yyyymmdd.tar.xz here <https://firmware.ardupilot.org/Companion/apsync/beta/>`__) and copy to one of the USB flash drives
+- Download the latest APSync image (`look for apsync-up2-d435i-yyyymmdd.tar.xz here <https://firmware.ardupilot.org/Companion/apsync/beta/>`__) and copy to one of the USB flash drives
 - `Download Tuxboot <https://tuxboot.org/download/>`__
 - Format a second USB flash drive and use Tuxboot to install `Clonezilla <https://clonezilla.org/>`__ onto it
 - Insert this second USB flash drive into the UP Squared's USB port and then power up the UP Squared board
