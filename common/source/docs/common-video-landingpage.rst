@@ -80,7 +80,6 @@ For more information, please click the link below:
 DJI Digital FPV System
 ======================
 
-
 .. figure:: ../../../images/DJI_FPV.jpg
    :target: ../_images/DJI_FPV.jpg
    
