@@ -101,6 +101,13 @@ Pinouts
 
 .. image:: ../../../images/cuav_autopilot/nora/nora-pinouts.jpg
     :target: ../_images/cuav_autopilot/nora/nora-pinouts.jpg
+    
+Flight video
+================
+  
+.. youtube:: Kh_6TynYqEI&t=7s
+    :width: 100%
+
 
 More Information
 ================
