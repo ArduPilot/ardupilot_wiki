@@ -97,13 +97,13 @@ Order from `here <https://store.cuav.net/index.php>`__.
 Official retailers are listed `here  <https://leixun.aliexpress.com/>`__.
 
 Pinouts
-================
+=======
 
 .. image:: ../../../images/cuav_autopilot/nora/nora-pinouts.jpg
     :target: ../_images/cuav_autopilot/nora/nora-pinouts.jpg
     
 Flight video
-================
+============
   
 .. youtube:: Kh_6TynYqEI&t=7s
     :width: 100%
