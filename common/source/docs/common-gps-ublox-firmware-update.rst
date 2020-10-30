@@ -38,3 +38,12 @@ Firmware Upgrade Procedure
   .. image:: ../../../images/gps-ublox-f9p-firmware-update.png
       :target: ../_images/gps-ublox-f9p-firmware-update.png
       :width: 450px
+
+Configure Satellite Constellations
+----------------------------------
+
+ArduPilot does not automatically configure the F9's enabled constellations so this should be set manually using u-center as shown below
+
+  .. image:: ../../../images/gps-ublox-f9p-satellite-config.png
+      :target: ../_images/gps-ublox-f9p-satellite-config.png
+      :width: 450px
