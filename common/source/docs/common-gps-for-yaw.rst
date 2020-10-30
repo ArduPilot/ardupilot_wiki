@@ -16,7 +16,8 @@ GPSs from ArduPilot Partners that are known to work include:
 
 .. note::
 
-   This feature is available in Copter 4.0.4 (and higher), Plane 4.0.6 (and higher) and Rover 4.1.0 (and higher)
+   This feature is available in Copter 4.0.4 (and higher), Plane 4.0.6 (and higher) and Rover 4.1.0 (and higher);Ublox F9p must run firmware version 1.13 or higher.
+
 
 Hardware Setup
 --------------
