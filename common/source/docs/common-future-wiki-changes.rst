@@ -435,7 +435,7 @@ On Automatic Landing page:
 .. note:: Airbrakes can also be automatically deployed during reverse thrust operation. See :ref:`Airbrakes<airbrakes-on-plane>`.
 
 On Tilt Rotors and Tailsitters pages:
-------------------------------------
+-------------------------------------
 
 add note:
 
