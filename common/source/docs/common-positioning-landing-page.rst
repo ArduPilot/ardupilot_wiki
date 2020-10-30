@@ -44,3 +44,4 @@ Advanced Uses
     GPS Blending (aka Dual GPS) <common-gps-blending>
     GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
     GPS – How it Works <common-gps-how-it-works>
+    U-Blox F9P Firmware Update Procedure <common-gps-ublox-firmware-update>
