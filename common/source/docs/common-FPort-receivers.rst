@@ -56,44 +56,6 @@ F7/H7 based autopilots can directly connect to the TX pin of any UART and use th
 
 .. note:: Some F7/H7 autopilots have level/shifters on their UARTs that cause a delay in Half Duplex operation, like CubeOrange. If the above configuration does not, try setting :ref:`RC_OPTIONS<RC_OPTIONS>` = 8 which will add padding in the protocol to accomodate this. However, using this option when not required will break operation.
 
-Configuration
-=============
-
-Configuration depends on the autopilot and connection method.
-
-.. note:: Any configuration change to a UART requires a re-boot to take effect. Reminder: UART numbers do not necessarily map to SERIALx numbers. Check the :ref:`board's description<common-autopilots>`
-
-
-In general, F4 based autopilots using an external bi-directional inverter can use any UART with the following configuration:
-
--   ``SERIALx_PROTOCOL`` =23
--   ``SERIALx_OPTIONS`` =160 (enable pull-up/pull-downs on TX and RX pins for those external inverter circuits that may require it)
--   ``RSSI_TYPE`` =3
-
-F4 based autopilots using an "inverted FPort" output from the receiver can connect it to any  UART's TX pin with the configuration:
-
--   ``SERIALx_PROTOCOL`` =23
--   ``SERIALx_OPTIONS`` = 4 (Half Duplex) 
--   ``RSSI_TYPE`` =3
-
-.. note:: F4 based autopilots cannot use the RX pin with an "inverted FPort" output since the SWAP capability is only available in F7/H7 based autopilots.
-
-
-F7/H7 based autopilots can directly connect to the TX pin of any UART and use this configuration:
-
--   ``SERIALx_PROTOCOL`` =23
--   ``SERIALx_OPTIONS`` =  7 (invert TX/RX,Half Duplex)
--   ``RSSI_TYPE`` =3
-
-    OR to the RX pin:
-
--   ``SERIALx_PROTOCOL`` =23
--   ``SERIALx_OPTIONS`` =  15 (invert TX/RX,Half Duplex, SWAP TX/RX pins)
--   ``RSSI_TYPE`` =3
-
-
-.. note:: Some F7/H7 autopilots have level/shifters on their UARTs that cause a delay in Half Duplex operation, like CubeOrange. If the above configuration does not, try setting :ref:`RC_OPTIONS<RC_OPTIONS>` = 8 which will add padding in the protocol to accomodate this. However, using this option when not required will break operation.
-
 
 Enhanced Configurations
 =======================
