@@ -19,18 +19,18 @@ This page describes how to setup scripts on your autopilot, the scripting API an
 Getting Started
 ===============
 
-- Ensure your autopilot has at least 2 MB’s of flash and 70KB of memory.  High powered autopilots like the Hex Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`
-- Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot to see all ``SCR_`` parameters)
+- Ensure your autopilot has at least 2 MB of flash and 70 kB of memory.  High powered autopilots like the Hex Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`.
+- Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot to see all ``SCR_`` parameters).
 - Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder (if this folder does not exist please create it).  If using Mission Planner this can be done using MAVFTP.  If using a simulator the ``scripts`` folder is in the directory the simulator was started from.
 
   .. image:: ../../../images/scripting-MP-mavftp.png
       :target: ../_images/scripting-MP-mavftp.png
       :width: 450px
 
-- Sample scripts can be found `here for stable Plane <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/examples>`__, `Copter <https://github.com/ArduPilot/ardupilot/tree/ArduCopter-stable/libraries/AP_Scripting/examples>`__ and `Rover <https://github.com/ArduPilot/ardupilot/tree/APMrover2-stable/libraries/AP_Scripting/examples>`__.  The latest development scripts can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__
-- When the autopilot is powered on it will load and start all scripts
-- Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab
-- :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts.  The default of 43KB is sufficient for small scripts, and fits onto most autopilots.  The autopilot's free memory depends highly upon which features and peripherals are enabled.  If this parameter is set too low, scripts may fail to run.  If set too high other autopilot features including Terrain Following may fail to initialise.
+- Sample scripts can be found `here for stable Plane <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/examples>`__, `Copter <https://github.com/ArduPilot/ardupilot/tree/ArduCopter-stable/libraries/AP_Scripting/examples>`__ and `Rover <https://github.com/ArduPilot/ardupilot/tree/APMrover2-stable/libraries/AP_Scripting/examples>`__.  The latest development scripts can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__.
+- When the autopilot is powered on it will load and start all scripts.
+- Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab.
+- :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts. The default of 43 kB is sufficient for small scripts, and fits onto most autopilots. The autopilot's free memory depends highly upon which features and peripherals are enabled. If this parameter is set too low, scripts may fail to run. If set too high other autopilot features such as Terrain Following or even the EKF may fail to initialise. On autopilots with a STM32F4 microcontroller Smart RTL and Terrain Following need to be nearly always disabled (they are usally enabled by default, set :ref:`SRTL_POINTS <SRTL_POINTS>` = 0, :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` = 0).
 
 What Scripts Can Do
 ===================
