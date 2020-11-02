@@ -168,7 +168,7 @@ Ardupilot supports the use of GPS heading information to reduce malfunctions cau
 
 
 
-.. youtube:: Kh_6TynYqEI&t=7s
+.. youtube:: Kh_6TynYqEI
     :width: 100%
 
 .. |image3| image:: http://hyperphysics.phy-astr.gsu.edu/%E2%80%8Chbase/magnetic/imgmag/loopa3.gif
