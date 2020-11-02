@@ -102,6 +102,8 @@ A Location userdata object supports the following calls:
 
 - :code:`lng( [new_lng] )` - If called with no arguments, returns the current longitude in degrees * 1e7 as an integer. If called with one argument it will assign the value to the longitude.
 
+- :code:`alt( [new_alt] )` - If called with no arguments, returns the current altitude in cm as an integer. If called with one argument it will assign the value to the altitude.
+
 - :code:`relative_alt( [is_relative] )` - If called with no arguments returns true if the location is planned as relative to home. If called with a boolean value this will set the relative altitude.
 
 - :code:`terrain_alt( [is_terrain] )` - If called with no arguments returns true if the location is planned as relative to terrain. If called with a boolean value this will flag if the altitude should be relative to terrain.
