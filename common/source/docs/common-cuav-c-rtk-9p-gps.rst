@@ -133,7 +133,7 @@ PWR status:solid(power input),off( not power  input or vcc is not healthy).
 C-RTK 9P estimated Yaw
 ======================
 
-.. youtube:: Kh_6TynYqEI&t=7s
+.. youtube:: Kh_6TynYqEI
     :width: 100%
 
 More information
