@@ -105,7 +105,7 @@ Pinouts
 Flight video
 ============
   
-.. youtube:: Kh_6TynYqEI&t=7s
+.. youtube:: Kh_6TynYqEI
     :width: 100%
 
 
