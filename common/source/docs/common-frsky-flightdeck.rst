@@ -32,7 +32,7 @@ With the turnkey package, FlightDeck can be run in 3 easy steps:
 
 1. Plug in the telemetry cable with the Pixhawk off;
 
-2. Set the ``SERIAL#_PROTOCOL`` to ``10`` using your favorite GCS application as exlpained :ref:`here <common-frsky-configMP>`;
+2. Set the ``SERIAL#_PROTOCOL`` to ``10`` using your favorite GCS application.
 
 3. Launch FlightDeck! Turn on your Taranis and ``long press on the PAGE button``.
 

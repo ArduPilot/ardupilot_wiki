@@ -10,7 +10,7 @@ FPort protocol combines SBus RC control information being sent to the autopilot 
 
 Many FRSky X series and R series receivers have this capability, either natively or with firmware upgrade.
 
-Connection to the autopilot and configuration varies from autopilot to autopilot since their UART capabilities vary. Most F4 cpu based autopilots do not have controllable inverters in front of the UART TX and RX, and require either an external bi-directional inverter, as SPort connections do (see :ref:`frsky_cables` ), or the use of the "uninverted FPort pad/pin" some receivers provide since the FPort protocol has opposite signaling levels than normal UART operation.
+Connection to the autopilot and configuration varies from autopilot to autopilot since their UART capabilities vary. Most F4 cpu based autopilots do not have controllable inverters in front of the UART TX and RX, and require either an external bi-directional inverter, as SPort connections do or the use of the "uninverted FPort pad/pin" some receivers provide since the FPort protocol has opposite signaling levels than normal UART operation.
 Most F7 and H7 autopilots, on the other hand, have internal inverters, and can be directly connected from the receiver's FPort to their UARTs TX input line.
 
 Connection Diagrams
