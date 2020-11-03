@@ -64,7 +64,7 @@ In order to use QgroundControl, PX4Flow and ArduPilot, you will need to complete
  
 #. Select the Vehicle Setup page, and click the Firmware tab.
 #. Connect the PX4Flow sensor to your computer using a micro USB cable. 
-#. Check the "Standard Version (stable)" is selected in the ride hand pane. Click "OK". QGroundControl will flash a firmware that can be used to focus the lens.
+#. Check the "Standard Version (stable)" is selected in the right hand pane. Click "OK". QGroundControl will flash a firmware that can be used to focus the lens.
 #. Unplug and replug the sensor. Two extra tabs should appear: "PX4Flow" and "Parameters".
 #. Click "PX4Flow", remove the lens cap and point the camera at a high contrast object at least 3m away.  Remove the small screw that stops the lens from turning and adjust the focus until the image appears clearly.  This will focus the device to infinity.  Refit the screw.
 #. Download and unzip the `PX4Flow-KLT firmware <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow-klt-06Dec2014.zip>`__
