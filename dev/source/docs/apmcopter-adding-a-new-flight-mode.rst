@@ -4,8 +4,7 @@
 Adding a New Flight Mode to Copter
 ==================================
 
-This section covers the basics of how to create a new high level flight
-mode (i.e. equivalent of Stabilize, Loiter, etc) in Copter-3.6 (and higher).
+This section covers the basics of how to create a new high level flight mode (i.e. equivalent of Stabilize, Loiter, etc)
 
 As a reference the diagram below provides a high level view of Copter's architecture.
 
@@ -41,7 +40,9 @@ As a reference the diagram below provides a high level view of Copter's architec
         FLOWHOLD  =    22,  // FLOWHOLD holds position with optical flow without rangefinder
         FOLLOW    =    23,  // follow attempts to follow another vehicle or ground station
         ZIGZAG    =    24,  // ZIGZAG mode is able to fly in a zigzag manner with predefined point A and point B
-        NEW_MODE =     25,  // your new flight mode
+        SYSTEMID  =    25,  // System ID mode produces automated system identification signals in the controllers
+        AUTOROTATE =   26,  // Autonomous autorotation
+        NEW_MODE =     27,  // your new flight mode
     };
 
 #. Define a new class for the mode in `mode.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode.h>`__.
@@ -96,7 +97,7 @@ As a reference the diagram below provides a high level view of Copter's architec
         }
 
 
-   Below is an excerpt from `mode_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp>`__'s update method (called 400 times per second) that decodes the user's input, then sends new targets to the attitude controller.
+   Below is an excerpt from `mode_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp>`__'s run method (called 400 times per second) that decodes the user's input, then sends new targets to the attitude controller.
 
    ::
 
@@ -117,7 +118,7 @@ As a reference the diagram below provides a high level view of Copter's architec
             // output pilot's throttle
             attitude_control->set_throttle_out(get_pilot_desired_throttle(), true, g.throttle_filt);
 
-#. Instantiate the new mode class in `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h#L852>`__ by searching for "ModeAcro" and then adding the new mode somewhere below.
+#. Instantiate the new mode class in `Copter.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Copter.h#L894>`__ by searching for "ModeAcro" and then adding the new mode somewhere below.
 
    ::
 
@@ -143,7 +144,7 @@ As a reference the diagram below provides a high level view of Copter's architec
    ::
 
         // return the static controller object corresponding to supplied mode
-        Mode *Copter::mode_from_mode_num(const uint8_t mode)
+        Mode *Copter::mode_from_mode_num(const Mode::Number mode)
         {
             Mode *ret = nullptr;
 
@@ -156,7 +157,7 @@ As a reference the diagram below provides a high level view of Copter's architec
                     ret = &mode_stabilize;
                     break;
 
-#. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L255>`__ (Search for "FLTMODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.
+#. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L262>`__ (Search for "FLTMODE1").  Once committed to master, this will cause the new mode to appear in the ground stations list of valid modes.
    Note that even before being committed to master, a user can setup the new flight mode to be activated from the transmitter's flight mode switch by directly setting the FLTMODE1 (or FLTMODE2, etc) parameters to the number of the new mode.
 
    ::
@@ -175,4 +176,4 @@ As a reference the diagram below provides a high level view of Copter's architec
         // @User: Standard
         GSCALAR(flight_mode2, "FLTMODE2",               FLIGHT_MODE_2),
 
-#. Optionally you may wish to add the flight mode to the ``COPTER_MODE`` enum within the `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L957>`__ because some ground stations may use this to automatically populate the list of available flight modes.
+#. Optionally you may wish to add the flight mode to the ``COPTER_MODE`` enum within the `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L1027>`__ because some ground stations may use this to automatically populate the list of available flight modes.
