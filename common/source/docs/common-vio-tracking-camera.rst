@@ -108,7 +108,7 @@ Install ``librealsense`` and ``pyrealsense2``
 The Realsense T265 is supported via `librealsense <https://github.com/IntelRealSense/librealsense>`__ on Windows and Linux. Installation process varies widely for different systems, hence refer to `the official github page <https://github.com/IntelRealSense/librealsense>`__ for instructions for your specific system:
 
 - `Ubuntu <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md>`__
-- `Jetson <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md>`__
+- `Jetson <https://github.com/IntelRealSense/librealsense/blob/master/wrappers/python/readme.md>`__ (Compiling from source is needed to get the Python wrapper ``pyrealsense2``)
 - `Odroid <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_odroid.md>`__
 - `Windows <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_windows.md>`__
 - `Raspbian <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_raspbian.md>`__
