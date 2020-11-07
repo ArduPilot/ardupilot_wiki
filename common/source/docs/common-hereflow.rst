@@ -29,7 +29,7 @@ Connection to Autopilot
    :target: ../_images/hereflow-pixhawk.jpg
    :width: 450px
 
-- The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards.  The side of the sensor with the lens should be towards the front of the vehicle.  The image above is incorrect because the autopilot's arrow is pointing down while the sensor's lens is close to the top.
+- The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards.  The side of the sensor with the lens should be towards the front of the vehicle.
 - Connect the sensor to the autopilots' CAN port (if using a Cube note that pre-Apr 2019 boards have CAN1 and CAN2 swapped)
 - Set :ref:`FLOW_TYPE <FLOW_TYPE>` = 6 (UAVCAN)
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 to enable UAVCAN
