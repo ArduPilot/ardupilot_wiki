@@ -21,7 +21,7 @@ Getting Started
 
 - Ensure your autopilot has at least 2 MB of flash and 70 kB of memory.  High powered autopilots like the Hex Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`.
 - Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot to see all ``SCR_`` parameters).
-- Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder (if this folder does not exist please create it).  If using Mission Planner this can be done using MAVFTP.  If using a simulator the ``scripts`` folder is in the directory the simulator was started from.
+- Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder (if this folder does not exist please create it. set SCR_ENABLE to 1 and reboot.).  If using Mission Planner this can be done using MAVFTP.  If using a simulator the ``scripts`` folder is in the directory the simulator was started from.
 
   .. image:: ../../../images/scripting-MP-mavftp.png
       :target: ../_images/scripting-MP-mavftp.png
