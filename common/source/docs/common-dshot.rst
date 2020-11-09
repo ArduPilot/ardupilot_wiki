@@ -45,7 +45,7 @@ The DShot protocol can run at different speeds. ArduPilot supports four speeds:
 
 We recommend using the lowest baud rate, DShot150, as it is the most reliable protocol (lower baudrates are less susceptible to noise on cables). Higher values will be beneficial once ArduPilot's main loop rate is capable of speeds above 1kHz.
 
-.. note:: When an output is configured for DShot, the ``SERVOx_MIN/MAX`` parameters for that output will always be reset to 1000/2000, respectively, upon every boot, since DShot does not use these parameters and they can affect scaling in other sections of the code. The ``SERVOx_TRIM``  value will be reset to 1000 if its a reversible output, or 1500 if normal output setup in DShot.
+.. note:: When an output is configured for DShot, the ``SERVOx_MIN/MAX`` parameters for that output will always be reset to 1000/2000, respectively, upon every boot, since DShot does not use these parameters and they can affect scaling in other sections of the code. The ``SERVOx_TRIM``  value will be reset to 1500 if it's a reversible output, or 1000 if normal output setup in DShot.
 
 Autopilot Output Capabilities
 =============================
