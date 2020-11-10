@@ -14,7 +14,7 @@ The missing features are listed below.
 
 .. note:: The new LUA scripting feature requires a 2MB board, so none of the boards below have that capability.
 
--  ** Sparky2 and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)**
+-  **Sparky2 and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)**
 
    -  **Common to all vehicles**
 
