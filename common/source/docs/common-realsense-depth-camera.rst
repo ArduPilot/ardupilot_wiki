@@ -65,6 +65,18 @@ Install APSync to the UP Squared:
   - Remove all USB sticks from the board. You can also remove your monitor input. 
   - Reboot 
 
+Upgrade the Camera's Firmware
+-----------------------------
+
+Check the camera's firmware is version 5.12.8.200 or later.  This can be done using the `Firmware Update Tool (Windows only) <https://dev.intelrealsense.com/docs/firmware-update-tool>`__ or the `Intel Realsense Viewer <https://www.intelrealsense.com/sdk-2/>`__
+
+- If using the `Firmware Update Tool <https://dev.intelrealsense.com/docs/firmware-update-tool>`__ the `latest camera firmware can be found here <https://downloadcenter.intel.com/product/128255/Intel-RealSense-Depth-Camera-D435>`__
+- If using the `Intel RealSense Viewer <https://www.intelrealsense.com/sdk-2/>`__ after downloading and installing, connect the camera to your PC with a USB3 cable.  The firmware upgrade can be triggered via a pop-up on the top right of the application or from the "More" menu as shown below
+
+.. image:: ../../../images/intel-realsense-435-firmware-upgrade.png
+    :target: ../_images/intel-realsense-435-firmware-upgrade.png
+    :width: 450px
+
 Configure ArduPilot
 ===================
 
