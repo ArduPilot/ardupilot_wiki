@@ -78,7 +78,7 @@ Check the camera's firmware is version 5.12.8.200 or later.  This can be done us
     :width: 450px
 
 Configure ArduPilot
-===================
+-------------------
 
 Connect to the autopilot with a ground station (i.e. Mission Planner) and check that the following parameters are set:
 
@@ -107,7 +107,7 @@ After the parameters are modified, reboot the autopilot.
 
 
 Ground Test: Pre-Flight Verification
-====================================
+------------------------------------
 
 To verify that the APSync image is working and everything has been correctly configured ensure ArduPilot is receiving ``OBSTACLE_DISTANCE`` messages, on Mission Planner: press ``Ctrl+F`` and click on “Mavlink Inspector”, you should be able to see data coming in:
 
@@ -128,7 +128,7 @@ Within Mission Planner, open the ``Proximity view`` (``Ctrl-F`` > ``Proximity``)
 - The proximity view will group every distances within 45-degrees arc together (in total 8 quadrants around the vehicle), so at most only 3 **nearest** obstacles will be shown at any one time on the Proximity window (since the camera's FOV is less then 90 degrees).
 
 Flight Test
-===========
+-----------
 
 For your first flight:
 
@@ -147,7 +147,7 @@ If everything works as expected, the next step is to test out the safety margins
 
 
 Experiments
-===========
+-----------
 
 - First manual tests: confirm the expected behavior when obstacle is present, as well as the FOV and safety margins for my vehicle + camera. The flights were conducted in Loiter:
 
@@ -161,14 +161,14 @@ Experiments
 
 
 DataFlash logging
-=================
+-----------------
 
 - The relevant messages for the depth camera are ``PRX.CAn`` and ``PRX.CDist``, which stand for angle and distance of the closest object, respectively.
 
 - You can also view the distance data in each quadrant (D0, D45, and D315 - or 0 degree, 45 degree and 315 degree). Note that the range of value for CAn is 360 degrees while for CDist and the other Dangle only a few meters, so you might need to view them separately.
 
 System Overview
-===============
+---------------
 
 In a nutshell, the script will convert the depth image provided by the Realsense depth camera into distances to obstacles in front. AP supports `DISTANCE_SENSOR <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ and `OBSTACLE_DISTANCE <https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE>`__ MAVLink messages, with the former carries a single distance and the latter carries an array of distances. ``OBSTACLE_DISTANCE`` allows us to send up to 72 distances at once, so it will be used.
 
@@ -186,7 +186,7 @@ In a nutshell, the script will convert the depth image provided by the Realsense
 
 
 Manually Setup the Companion Computer
-=====================================
+-------------------------------------
 
 These steps are only required if you have not already installed APSync to the companion computer.
 
@@ -206,7 +206,7 @@ The installation process varies widely for different systems, hence refer to `th
 - `Raspbian <https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_raspbian.md>`__
 
 Install supporting packages
----------------------------
+===========================
 
 First install `Python3 for Ubuntu <https://realpython.com/installing-python/#ubuntu>`__ (not necessary for Ubuntu 18.04 and above). You should be able to then run the examples provided by Intel can be found in the folder ``~/librealsense/wrappers/python/examples`` with Python3 command.
 
