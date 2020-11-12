@@ -760,11 +760,11 @@ Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vis
     param set SERIAL5_PROTOCOL 2
     param fetch
 
-Restart the simulation, attaching a simulated Vicon system to uartC (which corresponds to ``SERIAL5``):
+Restart the simulation, attaching a simulated Vicon system to uartF (which corresponds to ``SERIAL5``):
 
 ::
 
-   ../Tools/autotest/sim_vehicle.py --map --console -A "--uartC=sim:vicon:"
+   ../Tools/autotest/sim_vehicle.py --map --console -A "--uartF=sim:vicon:"
 
 The console should indicate no GPS is present:
 
