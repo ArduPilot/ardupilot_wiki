@@ -210,7 +210,7 @@ System:
 
 **Param storage failed**: A check of reading the parameter storage area failed.
 
-**Internal errors (0xx)**: An internal error has occurred. Try rebooting.
+**Internal errors (0xx)**: An internal error has occurred. Report to ArduPilot development team.
 
 **KDECAN Failed**: KDECAN system failure.
 
