@@ -1,0 +1,31 @@
+name: test wiki
+
+on: [push, pull_request]
+# paths:
+# - "*"
+# - "!README.md" <-- don't rebuild on doc change
+env: 
+  TEST: "1"
+jobs:
+
+  build:
+
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false  # don't cancel if a job from the matrix fails
+      matrix:
+        python-version: [3.8]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Setting environement
+        run: |
+          mkdir /tmp/web
+          sudo ./Sphinxsetup.sh
+      - name: Test build
+        run: |
+          ./update.py --parallel 4 --verbose --destdir=/tmp/web
