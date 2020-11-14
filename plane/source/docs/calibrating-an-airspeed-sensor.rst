@@ -27,6 +27,8 @@ Calibration". You need to loosely cover your airspeed sensor to stop
 wind from affecting the result, then press the button. The calibration
 will take a couple of seconds.
 
+.. warning:: It is very important to cover the pitot tube during power up, or when you wait and then re-calibrate as above. An inaccurate static calibration can result in the airspeed being reported too high, causing auto-throttle controlled modes to use very low throttle and potentially cause a crash.
+
 .. image:: ../images/preflight.jpg
     :target: ../_images/preflight.jpg
 
