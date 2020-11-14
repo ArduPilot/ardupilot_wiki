@@ -199,7 +199,7 @@ Enables Soaring function operating modes
    </td>
    </tr>
    <tr>
-   <td><strong>Force Flareh</strong></td>
+   <td><strong>Force Flare</strong></td>
    <td>
 
 Moves tilt motors to upright position and optionally sets pitch for flare when landing Tilt Rotor Quadplanes
@@ -391,13 +391,16 @@ By setting an RC channel option (``RCx_OPTION``) to "209", that channel can prov
 On QuadPlane Parameters page:
 -----------------------------
 
--add to Q_OPTIONS
+-add to Q_OPTIONS description:
+
 -  bit 6, if set, will enforce the ICE idle governor even in MANUAL mode.
 -  bit 7, if set, will force QASSIST to be active at all times in VTOL modes. See :ref:`Assisted Fixed-Wing Flight<assisted_fixed_wing_flight>`.
 -  bit 8, if set, QASSIST will only affect VTOL motors. If not set, QAssist will also use flying surfaces to stabilize(:ref:`Assisted Fixed-Wing Flight<assisted_fixed_wing_flight>` ).
 -  bit 9, if set, will enable AirMode (:ref:`airmode`) if armed via an RC switch. See :ref:`Auxiliary Functions<common-auxiliary-functions>` option value 41.
 -  bit 10, if set, will allow the tilt servos to move with rudder input in vectored tilt setups while disarmed to determine range of motion.
 -  bit 11, if set, will delay VTOL motor spin up until 2 seconds after arming.
+-  bit 12, if set, disable speed based Qassist when using synthetic airspeed
+-  bit 13, if set, will disable Ground Effect Compensation
 
 On Terrain Following Page:
 --------------------------
@@ -441,6 +444,12 @@ add note:
 
 For landing in fixed wing, manual throttle controlled modes, there is an ``RCx_OPTION`` (89) that will force the tilt servos upright, force idle throttle, and optionally force the pitch to target :ref:`LAND_PITCH_CD<LAND_PITCH_CD>` for flaring to the normal fixed wing landing. This allows intentional or emergency fixed wing landings in MANUAL, ACRO, STABILIZE, and FBWA modes without the risk of a prop strike in configurations where this could occur otherwise.
 
+On Tailsitters page, under Vectored Thrust:
+-------------------------------------------
+
+add note:
+
+To allow vectored thrust QuadPlanes to land in the Fixed Wing (FW) stance in non-throttled controlled modes (in case of low battery level or emergency), an RC channel option, ``RCx_OPTION = 89``. This forces up the motor's tilts while still in FW non-throttled control modes (FBWA, MANUAL, STABILIZE, and ACRO) to avoid prop strikes upon ground contact when landing.
 
 -----------------------------------------------------
 
