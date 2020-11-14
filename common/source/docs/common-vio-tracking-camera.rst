@@ -34,7 +34,7 @@ Hardware Setup
 - Mount the Intel RealSense T265 on the vehicle facing forward (see below for information other orientations) using thick double sided tape to better isolate the camera from vibrations
 - Connect the Intel RealSense T265's USB cable to one of the RPI4's blue USB3 ports
 - Connect the PiConnectLite's power cable to the battery (7V to 30V)
-- Connect the PiConnectLite's serial cable to one of the autopilot's telemetry ports (i.e. Telem1, Telem2)
+- Connect the PiConnectLite's serial cable to one of the autopilot's telemetry ports (i.e. Telem1, Telem2). The only signals used in this cable are TX, RX and GND. The other signals are NC.
 
 Configure ArduPilot
 -------------------
