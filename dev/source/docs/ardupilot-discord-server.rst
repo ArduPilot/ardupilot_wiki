@@ -21,11 +21,13 @@ When you first join the server it will ask you to choose a username. Please choo
 Weekly dev calls
 ----------------
 
-The weekly development call is held on Discord in the "Weekly Dev Call" channel.
-Time of the meeting is: 2300 UTC
-A calendar with the meeting can be found at https://calendar.google.com/calendar/embed?src=rgdbom27tb1vlo62kjjnmt8va4%40group.calendar.google.com which will show the correct time for you timezone.
+The weekly development call is held on Discord in the "Weekly Dev Call" channel.  The agenda and minutes are normally sent to discuss.ardupilot.org.
+Time of the meeting is: 2300 UTC each Monday.
 
-The agenda and minutes are normally sent to discuss.ardupilot.org.
+A second development call is held at a time more convenient for the European community.
+This meeting is held each Wednesday at 0700 UTC.
+
+A calendar with the meetings can be found at https://calendar.google.com/calendar/embed?src=rgdbom27tb1vlo62kjjnmt8va4%40group.calendar.google.com which will show the correct time for your timezone.
 
 Prefer Typing?
 --------------
