@@ -61,3 +61,61 @@ For example, to change the EKF I gate value to 1,000, run the command:
 .. code-block:: bash
 
     build/sitl/tools/Replay --parm EK2_VEL_I_GATE=1000 log_1.bin
+
+Checking that new code has no effect on the EKF
+===============================================
+
+When modifying the EKF code it can be useful to confirm your changes have no impact on the EKF's estimates in some situations.  This can be done by following the procedure below:
+
+- Start SITL with a vehicle of your choice, using "master"
+- Set these parameters and optionally some sensor position parameters (i.e GPS_POS_X,Y,Z) to non-zero values
+
+.. code-block:: bash
+
+    param set LOG_DISARMED 1
+    param set LOG_REPLAY 1
+    param set GPS_POS1_Y 0.1
+    param set SIM_GPS_POS1_Y 0.1
+
+- Fly the vehicle for a short flight which includes fast forward flight and turns
+- Land the vehicle and download the onboard log (i.e. 00000001.BIN)
+- Build Replay (see "Building Replay" above)
+
+.. code-block:: bash
+
+    cd ardupilot
+    ./waf replay
+
+- Process the onboard log with Replay (see "Using Replay" above):
+
+.. code-block:: bash
+
+    build/sitl/tools/Replay 00000001.BIN
+
+- Move the resulting log file to a safe place
+
+.. code-block:: bash
+
+    mv logs/00000001.BIN replay-00000001.BIN
+
+- Checkout the new branch
+
+.. code-block:: bash
+
+    git checkout <new-branch>
+
+- Build Replay again (see "Building Replay" above)
+
+- Use the check_replay.py script to check that there are no changes:
+
+.. code-block:: bash
+
+    ../Tools/Replay/check_replay.py replay-00000001.BIN
+
+- if nothing has changed a message like below will be displayed
+
+.. code-block:: bash
+
+    Processing log replay-00000001.BIN
+    Processed 30166/30166 messages, 0 errors
+    Passed
