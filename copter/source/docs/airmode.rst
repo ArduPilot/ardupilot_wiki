@@ -14,3 +14,5 @@ Normally, in Copter, if arming is setup via the rudder stick, if throttle is low
 If an ``RCx_OPTION`` is enabled for switch ARM/DISARM (41) then stabilization at idle throttle is still fully active, which is often referred to as AIRMODE.
 
 .. note:: AIRMODE has no effect in Traditional Helicopter
+
+.. note:: It isn't sufficient to just enable arming on an RCn_OPTION switch, you *also* have to actually use it for arming. So if you have it on a switch but then use rudder-arming then you won't get "airmode". 
