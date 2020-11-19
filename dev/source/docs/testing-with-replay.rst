@@ -79,32 +79,31 @@ When modifying the EKF code it can be useful to confirm your changes have no imp
 
 - Fly the vehicle for a short flight which includes fast forward flight and turns
 - Land the vehicle and download the onboard log (i.e. 00000001.BIN)
-- Build Replay (see "Building Replay" above)
+- Move the log to a safe place
 
 .. code-block:: bash
 
-    cd ardupilot
-    ./waf replay
+    mv logs/00000001.BIN test-00000001.BIN
 
-- Process the onboard log with Replay (see "Using Replay" above):
-
-.. code-block:: bash
-
-    build/sitl/tools/Replay 00000001.BIN
-
-- Move the resulting log file to a safe place
-
-.. code-block:: bash
-
-    mv logs/00000001.BIN replay-00000001.BIN
-
-- Checkout the new branch
+- Checkout the new branch and build Replay (see "Building Replay" above)
 
 .. code-block:: bash
 
     git checkout <new-branch>
+    cd ardupilot
+    ./waf replay
 
-- Build Replay again (see "Building Replay" above)
+- Process the onboard log with Replay (see "Using Replay" above)
+
+.. code-block:: bash
+
+    build/sitl/tools/Replay test-00000001.BIN
+
+- Move the resulting log file to a safe place.  This new log contains all the information of the original log plus what the new-branch's EKF would have produced
+
+.. code-block:: bash
+
+    mv logs/00000001.BIN replay-00000001.BIN
 
 - Use the check_replay.py script to check that there are no changes:
 
