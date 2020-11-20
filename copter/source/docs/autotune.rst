@@ -28,9 +28,7 @@ There a number of problems that can prevent AutoTune from providing a good tune.
 Setup before flying in AutoTune mode
 ====================================
 #. Set up one flight mode switch position to be AltHold.
-#. Set an :ref:`Auxiliary Function Switch <channel-7-and-8-options>`
-   to AutoTune to allow you to turn the auto tuning on/off with the a
-   switch.\ |AutoTuneCh7Switch|
+#. Set an RC channel :ref:`Auxiliary Function <common-auxiliary-functions>` switch or an :ref:`Auxiliary Function Switch <channel-7-and-8-options>` (prior to version 4.0) to AutoTune to allow you to turn the auto tuning on/off with the a switch.
 #. Remove the camera gimbal or any other parts of the frame that could wobble in flight
 #. Select which combination of axis (roll, pitch, yaw) you wish to tune using the :ref:`AUTOTUNE_AXES <AUTOTUNE_AXES>` parameter
 #. Set the autotune's aggressiveness using the :ref:`AUTOTUNE_AGGR <AUTOTUNE_AGGR>` parameter (0.1=agressive, 0.075=medium, 0.050=weak), normally start with the default 0.1.
@@ -83,7 +81,7 @@ If the vehicle feels sloppy after the AutoTune, try increasing the :ref:`AUTOTUN
 Invoke AutoTune with Position Hold
 ==================================
 
-In Copter-3.5 (and higher) AutoTune performs a weak position hold if invoked from Loiter or PosHold flight modes (as opposed to AltHold).
+In Copter-3.5 (and higher) AutoTune performs a weak position hold if invoked from Loiter or PosHold flight modes (as opposed to AltHold) while doing an autotune.
 
    .. image:: ../images/autotune_from_loiter.png
        :target: ../_images/autotune_from_loiter.png
