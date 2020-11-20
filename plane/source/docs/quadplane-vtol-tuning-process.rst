@@ -372,6 +372,7 @@ There a number of problems that can prevent QAUTOTUNE from providing a good tune
 - Non-linear ESC response.
 - Very low setting for :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>`.
 - Overloaded propellers or motors.
+- Autotuning a Tailsitter's pitch or yaw axis, since they require feed-forward.
 
 If QAUTOTUNE has failed you will need to do a manual tune.
 
@@ -437,5 +438,4 @@ The full list of input shaping parameters are:
 - :ref:`Q_LOIT_BRK_DELAY <Q_LOIT_BRK_DELAY>`
 - :ref:`Q_LOIT_BRK_JERK <Q_LOIT_BRK_JERK>`
 - :ref:`Q_LOIT_SPEED <Q_LOIT_SPEED>`
-
 
