@@ -22,7 +22,8 @@ of a NAV_TAKEOFF command for a fixed wing takeoff you instead use a
 NAV_VTOL_TAKEOFF command for a VTOL takeoff.
 
 The only parameter to a NAV_VTOL_TAKEOFF is the altitude above the
-takeoff point where the takeoff is complete. Once that altitude is
+takeoff point where the takeoff is complete. When executed, the aircraft will
+start climbing at :ref:`Q_WP_SPEED_UP<Q_WP_SPEED_UP>`. Once that altitude is
 reached the aircraft will move to the next waypoint, transitioning to
 fixed wing flight as needed. The latitude and longitude of the
 NAV_VTOL_TAKEOFF command is ignored.
