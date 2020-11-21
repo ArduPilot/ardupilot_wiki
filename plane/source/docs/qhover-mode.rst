@@ -40,7 +40,7 @@ throttle stick.
 
 -  Outside of the mid-throttle deadzone the vehicle will descend or climb depending upon the deflection of
    the stick.  When the stick is completely down the QuadPlane will descend
-   at :ref:`Q_WP_SPEED_DN <Q_WP_SPEED_DN>` and if at the very top it will climb by :ref:`Q_WP_SPEED_UP <Q_WP_SPEED_UP>`.
+   at :ref:`Q_VELZ_MAX <Q_VELZ_MAX>` and if at the very top it will climb by :ref:`Q_VELZ_MAX <Q_VELZ_MAX>`.
 
 
 
