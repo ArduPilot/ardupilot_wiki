@@ -70,6 +70,33 @@ the user permissions may need to be changed:
 
 The system will need to be restarted to apply the above change.
 
+Updating
+--------
+
+To update an existing installation with the current release on Python 3 based systems:
+
+.. code:: bash
+
+    pip3 install mavproxy --user --upgrade
+
+or for Python 2 systems:
+
+.. code:: bash
+
+    pip install mavproxy --user --upgrade
+
+To update an existing installation with the current development version (ie, from its master branch) for Python 3 systems:
+
+.. code:: bash
+
+    pip3 install mavproxy --user git+https://github.com/ArduPilot/mavproxy.git@master
+
+or for Python 2 systems:
+
+.. code:: bash
+
+    pip install mavproxy --user git+https://github.com/ArduPilot/mavproxy.git@master
+
 .. _mavproxy-downloadinstallmac:
 
 Mac
