@@ -66,7 +66,7 @@ Default UART order
 - SERIAL1 = Telemetry1 = USART1 (only available on original V6 version)
 - SERIAL2 = Telemetry2 = USART4 (RX only for ESC telemetry)
 - SERIAL3 = GPS1 = USART6
-- SERIAL4 = USART3 available in :ref:`BRD_ALT_CONFIG <BRD_ALT_CONFIG>` = 1
+- SERIAL4 = USART3 available in :ref:`BRD_ALT_CONFIG <BRD_ALT_CONFIG>` = 1 (firmware 4.1 or later)
 - SERIAL5 = not assigned
 - SERIAL6 = not assigned
 
