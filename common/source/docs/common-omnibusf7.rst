@@ -67,7 +67,7 @@ Default UART order
 
 - SERIAL0 = console = USB
 - SERIAL1 = Telemetry1 = USART1
-- SERIAL2 = Telemetry2 = USART3 if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 2, otherwise these pins are used for I2C pins
+- SERIAL2 = Telemetry2 = USART3 if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 2, otherwise these pins are used for I2C pins (firmware 4.1 or later)
 - SERIAL3 = GPS1 = USART6
 - SERIAL4 = GPS2 = USART2 (RX only if :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, otherwise this pin is used for RC input labeled SBUS on board)
 - SERIAL5 = USER = UART7 (RX only, in V2 only)
