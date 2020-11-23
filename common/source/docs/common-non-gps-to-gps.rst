@@ -23,7 +23,7 @@ Up to three "sets" of sensor sources are supported.  Normally the primary set sh
 - :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 3 (Primary vertical velocity from GPS)
 - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 1 (Primary yaw/heading from compass)
 
-The secondary sensor source set should be configured for the non-GPS environment.  Please refer to the setup instructions for the :ref:`non-GPS sensor <common-non-gps-navigation-landing-page>` you plan to use.  Below is the setup if using the :ref:`Intel Realsense T265 <common-vio-tracking-camera>`__:
+The secondary sensor source set should be configured for the non-GPS environment.  Please refer to the setup instructions for the :ref:`non-GPS sensor <common-non-gps-navigation-landing-page>` you plan to use.  Below is the setup if using the :ref:`Intel Realsense T265 <common-vio-tracking-camera>`:
 
 - :ref:`EK3_SRC2_POSXY <EK3_SRC2_POSXY>` = 6 (Secondary horizontal position from External Nav)
 - :ref:`EK3_SRC2_VELXY <EK3_SRC2_VELXY>` = 6 (Secondary horizontal velocity from External Nav)
