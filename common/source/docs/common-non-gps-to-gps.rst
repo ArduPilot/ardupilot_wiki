@@ -23,7 +23,7 @@ Up to three "sets" of sensor sources are supported.  Normally the primary set sh
 - :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 3 (Primary vertical velocity from GPS)
 - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 1 (Primary yaw/heading from compass)
 
-The secondary sensor source set should be configured for the non-GPS environment.  Please refer to the setup instructions for the :ref:`non-GPS sensor <common-non-gps-navigation-landing-page>` you plan to use.  Below is the setup if using the :ref:`Intel Realsense T265 <https://ardupilot.org/copter/docs/common-vio-tracking-camera.html>`:
+The secondary sensor source set should be configured for the non-GPS environment.  Please refer to the setup instructions for the :ref:`non-GPS sensor <common-non-gps-navigation-landing-page>` you plan to use.  Below is the setup if using the :ref:`Intel Realsense T265 <common-vio-tracking-camera>`__:
 
 - :ref:`EK3_SRC2_POSXY <EK3_SRC2_POSXY>` = 6 (Secondary horizontal position from External Nav)
 - :ref:`EK3_SRC2_VELXY <EK3_SRC2_VELXY>` = 6 (Secondary horizontal velocity from External Nav)
@@ -44,7 +44,7 @@ First perform a bench test, using the auxiliary switch to manually switch betwee
 
 - Connect with a ground station and confirm that after switching sources, text messages appear indicating that the EKF has changed sources.  If using Mission Planner these messages will appear in on the Data screen's Messages tab
 - After changing sources wait 10 seconds to confirm the EKF remains healthy. If using Mission Planner the EKF label on the HUD should remain white
-- Check the vehicle's horizontal position, altitude and heading using the ground station.  If using GPS with the :ref:`Intel Realsense T265 <https://ardupilot.org/copter/docs/common-vio-tracking-camera.html>` you should notice a jump when switching from the T265 to GPS but not when switching from GPS to T265.  This is because the "ExternalNav" position is always updated to match the GPS when the GPS is the primary source set
+- Check the vehicle's horizontal position, altitude and heading using the ground station.  If using GPS with the :ref:`Intel Realsense T265 <common-vio-tracking-camera>` you should notice a jump when switching from the T265 to GPS but not when switching from GPS to T265.  This is because the "ExternalNav" position is always updated to match the GPS when the GPS is the primary source set
 
 Next perform a flight test in a safe environment, manually switching between sources.  Be prepared to re-take control in a manual mode such as Stabilize.
 
