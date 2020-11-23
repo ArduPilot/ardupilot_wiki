@@ -63,22 +63,27 @@ For ArduPilot-4.1 (and later):
 - :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3 (EKF3)
 - :ref:`EK2_ENABLE <EK2_ENABLE>` = 0 (disabled)
 - :ref:`EK3_ENABLE <EK3_ENABLE>` = 1 (enabled)
-- :ref:`EK3_GPS_TYPE <EK3_GPS_TYPE>`  = 3 to disable the EKF’s use of the GPS
+- :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 6 (ExternalNav)
+- :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 6 (ExternalNav)
+- :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 1 (Baro which is safer because of the camera's weakness to high vibrations)
+- :ref:`EK3_SRC1_POSZ <EK3_SRC1_VELZ>` = 6 (ExternalNav)
 - :ref:`GPS_TYPE <GPS_TYPE>`  = 0 to disable the GPS
 - :ref:`VISO_TYPE <VISO_TYPE>` = 2 (IntelT265)
 
 If you wish to use the camera's heading:
 
 - :ref:`COMPASS_USE <COMPASS_USE>` = 0, :ref:`COMPASS_USE2 <COMPASS_USE2>` = 0, :ref:`COMPASS_USE3<COMPASS_USE3>` = 0 to disable all compasses
-- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 5 (Use external yaw sensor)
+- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 (External)
 
 If you wish to use the autopilot's compass for heading:
 
 - :ref:`COMPASS_USE <COMPASS_USE>` = 1 (the default)
-- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 3 (After first climb yaw reset, the default)
+- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 1 (Compass)
 - :ref:`RC7_OPTION <RC7_OPTION>` = 80 (Viso Align) to allow the pilot to re-align the camera's yaw with the AHRS/EKF yaw before flight with auxiliary switch 7.  Re-aligning yaw before takeoff is a good idea or loss of position control (aka "toilet bowling") may occur.
 
 After the parameters are modified, reboot the autopilot.  Connect with the ground station and (if using Mission Planner) right-mouse-button-click on the map, select "Set Home Here", "Set EKF Origin Here" to tell ArduPilot where the vehicle is and it should instantly appear on the map.
+
+If you wish to switch between GPS and T265 see the :ref:`GPS/Non-GPS Transitions <common-non-gps-to-gps>` wiki page
 
 System Overview
 ===============
