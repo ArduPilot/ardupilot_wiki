@@ -27,6 +27,7 @@ These are the available options that allow a vehicle to estimate its position wi
 [site wiki="rover"]
     Wheel Encoders <wheel-encoder>
 [/site]
+    GPS/Non-GPS Transitions <common-non-gps-to-gps>
 
 .. note::
 
