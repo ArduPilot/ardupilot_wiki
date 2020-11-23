@@ -37,8 +37,8 @@ Connecting to a autopilot
 
 - Ensure that Copter-3.6 (or higher) or Rover-3.3 is loaded onto the autopilot and connect with a Ground Station (i.e. Mission Planner).
 - Enable the :ref:`EKF3 as described here <common-apm-navigation-extended-kalman-filter-overview>`
-- Set :ref:`EK3_ALT_SOURCE <EK3_ALT_SOURCE>` to 3 (means using Marvelmind for altitude)
-- Set :ref:`EK3_GPS_TYPE <EK3_GPS_TYPE>` to 3 (means Inhibit GPS use)
+- Set ``EK3_ALT_SOURCE`` to 3 (means using Marvelmind for altitude)
+- Set ``EK3_GPS_TYPE`` to 3 (means Inhibit GPS use)
 - Set :ref:`BCN_TYPE <BCN_TYPE>` to 2 (means using Marvelmind system)
 - Set :ref:`BCN_LATITUDE <BCN_LATITUDE>`, :ref:`BCN_LONGITUDE <BCN_LONGITUDE>` and :ref:`BCN_ALT <BCN_ALT>` to match your actual location.  Getting these values exactly correct is not particularly important although getting it close is required in order for the compass's declination to be correctly looked up from the small database held within ArduPilot.
 - Set :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>` to the heading from the origin beacon to the 2nd beacon.  One way to capture this value is to stand at the origin holding the vehicle so that it's nose points towards the second beacon.  Read the vehicle's heading from the HUD and enter this value into :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>`
