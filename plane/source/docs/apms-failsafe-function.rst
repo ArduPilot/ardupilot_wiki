@@ -15,7 +15,7 @@ Detection is either by lack of data/pulses from the receiver, the throttle chann
 
 Here's what the failsafe **will not do**:
 
-#. Detect if one more more individual RC channel has failed or become disconnected
+#. Detect if one or more individual RC channel has failed or become disconnected
 #. Detect if you're flying too far away or are about to hit the ground
 #. Detect autopilot hardware failures, such as low-power brownouts or in-air reboots
 #. Detect if the Plane software is not operating correctly
