@@ -12,7 +12,7 @@ if [ ${DISTRIBUTION_CODENAME} == 'Ubuntu' ]; then
   add-apt-repository universe
 fi
 apt-get -y update
-apt-get install -y unzip git imagemagick curl wget make
+apt-get install -y unzip git imagemagick curl wget make python
 
 # Get pip through the official website to get the lastest release
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py && rm -f get-pip.py
