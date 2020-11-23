@@ -15,8 +15,8 @@ This lists features or changes merged in master and build in the "latest" firmwa
 [/site]
 [site wiki="copter,plane,rover"]
     Compass-less Operation<common-compassless>
-[/site]
     GPS/Non-GPS Transitions <common-non-gps-to-gps>
+[/site]
 [site wiki="copter,plane"]
     In-Flight FTT and filter control <common-imu-fft>
 [/site]
