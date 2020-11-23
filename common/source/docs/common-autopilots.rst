@@ -105,7 +105,7 @@ The following boards are no longer produced, however documentation is still avai
 The following boards are no longer supported. The documentation is :ref:`archived<common-archived-topics>`, but
 available if you're still working on those platforms:
 
-   APM 2.x (APM 2.6 and later) are no longer supported for Copter, Plane or Rover. The last firmware builds that fit on this board are Copter 3.2.1, and Plane 3.3.0, and Rover 2.5.1. 
+   APM 2.x (APM 2.6 and later) are no longer supported for Copter, Plane or Rover. The last firmware builds that fit on this board are Copter 3.2.1, and Plane 3.4.0, and Rover 2.5.1. 
    NAVIO+ 
    PX4FMU
    Qualcomm Snapdragon Flight Kit
