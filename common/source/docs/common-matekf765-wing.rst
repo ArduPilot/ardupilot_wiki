@@ -81,7 +81,7 @@ Default UART order
 - SERIAL6 = USER = UART4
 - SERIAL7 = USER = UART6 (TX only unless :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, then RX available also)
 
-RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for FPort  :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` should be set to 1 and configured as described in :ref:`FPort<common-FPort-receivers>` section.
+RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for FPort the receiver should be connected to T6 and SERIAL7 configured as described in :ref:`FPort<common-FPort-receivers>` section.
 
 Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences.
 
