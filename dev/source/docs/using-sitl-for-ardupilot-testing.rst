@@ -385,13 +385,16 @@ You can test two virtual wheel encoders like this:
     param set EK2_ENABLE 0
     param set EK3_ENABLE 1
     param fetch
-    param set EK3_GPS_TYPE 3
+    param set EK3_SRC1_POSXY 0
+    param set EK3_SRC1_VELXY 7
+    param set EK3_SRC1_VELZ 0
     param set GPS_TYPE 0
     param set WENC_TYPE 10
     param fetch
     param set WENC_POS_Y 0.075
     param set WENC2_TYPE 10
     param set WENC2_POS_Y -0.075
+    param set ARMING_CHECK 60918 (to disable GPS checks)
 
 The restart SITL and right mouse button click on the map and select "Set Origin (with height)" and the vehicle should appear on the map.  It may also be useful to enter "map set showsimpos 1" to make the vehicle's actual position visible.
 
