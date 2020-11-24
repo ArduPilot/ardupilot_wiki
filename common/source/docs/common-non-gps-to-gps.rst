@@ -32,6 +32,7 @@ The secondary sensor source set should be configured for the non-GPS environment
 - :ref:`EK3_SRC2_YAW <EK3_SRC2_YAW>` = 2 (Secondary yaw/heading from External Nav)
 
 The fusing of all velocities should be disabled by unchecking the :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` parameter's "FuseAllVelocities" bit:
+
 - :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` = 0
 
 The pilot can manually switch between the source sets using a 3-position :ref:`auxiliary switch <common-auxiliary-functions>` configured for "EKF Pos Source" (90).  When the switch is pulled low, the primary source set will be used.  Middle position is for the secondary source set and High is for the tiertiary source set.  If the transmitter's channel 8 switch is to be used set:
