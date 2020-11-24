@@ -70,8 +70,8 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
 RC Input
 ========
  
-RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for Fport  :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` should be set to 1 and configured as described in :ref:`FPort<common-FPort-receivers>` section.
- 
+RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for FPort the receiver should be connected to T6 and SERIAL6 configured as described in :ref:`FPort<common-FPort-receivers>` section.
+
 FrSky Telemetry
 ===============
 
