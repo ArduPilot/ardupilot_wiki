@@ -379,6 +379,11 @@ Add link to MSP (MultiWii Serial Protocol) <common-msp-overview> on Telemetry La
 "MSP protocol allows MSP compatible goggles (like the DJI Air system) to overlay telemetry data directly in the goggle display."
 and link in TOC to : MSP OSD <common-msp-osd-overview>
 
+Integrated OSD page
+-------------------
+
+OSD enhancements : `OSD Call Sign and Fonts <https://github.com/ArduPilot/ardupilot_wiki/pull/3173>`_
+
 PLANE
 =====
 
