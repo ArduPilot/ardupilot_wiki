@@ -33,6 +33,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
     OSD Parameter Editor <common-paramosd>
     RunCam Control <common-camera-runcam>
     Velocity ESCs <common-velocity-can-escs>
+    Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
 [/site]
     
     Other wiki changes <common-future-wiki-changes>
