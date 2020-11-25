@@ -39,6 +39,10 @@ RCx_OPTIONs on Auxillary Functions Page:
 +----------------------+----------------------------+----------+---------+---------+
 |        89            | Force Flare                |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        90            | EKF Position Source        |     X    |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        91            | Airspeed Ratio Calibrate   |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 |        100           | Kill IMU1 (testing only!)  |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        101           | Kill IMU2 (testing only!)  |    X     |    X    |    X    |
@@ -203,6 +207,26 @@ Enables Soaring function operating modes
    <td>
 
 Moves tilt motors to upright position and optionally sets pitch for flare when landing Tilt Rotor Quadplanes
+
+.. raw:: html
+
+   </td>
+   </tr>
+      <tr>
+   <td><strong>EKF Position Source</strong></td>
+   <td>
+
+Allows switching between up to three source sets manually for EKF3 (only). See :ref:`common-non-gps-to-gps`
+
+.. raw:: html
+
+   </td>
+   </tr>
+      <tr>
+   <td><strong>Airspeed Ratio Calibrate</strong></td>
+   <td>
+
+Activates calibration of airspeed ratio in flight. Best results occur while executing course changes over 360 degrees over time, as in LOITER mode. See :ref:`calibrating-an-airspeed-sensor`.
 
 .. raw:: html
 
