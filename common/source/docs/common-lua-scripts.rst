@@ -338,6 +338,8 @@ Notify (notify:)
 
 - :code:`play_tune( tune )` - Plays a MML tune through the buzzer on the vehicle. The tune is provided as a string.
 
+An online `tune tester can be found here <https://firmware.ardupilot.org/Tools/ToneTester/>`__
+
 
 Vehicle (vehicle:)
 ~~~~~~~~~~~~~~~~~~
