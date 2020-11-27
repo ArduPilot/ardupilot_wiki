@@ -29,7 +29,7 @@ ArduPilot sub-divides tailsitters into two broad categories:
 
   - Within non-vectored are two sub-categories: Single/Dual Motor and CopterMotor. The first uses one or two motors and can employ only differential thrust , while the second uses three, four, or more motors and operates in a more copter-like fashion.
 
-.. note:: Currently all CopterMotor style Quadplanes do not use any yaw torque control. Roll (with respect to plane body) is only controlled by the flying surface (ailerons or elevons). Future releases will add this.
+.. note:: Currently all CopterMotor style Tailsitters do not use any yaw torque control. Roll (with respect to plane body) is only controlled by the flying surface (ailerons or elevons). Future releases will add this.
 
 Tailsitter Configuration
 ========================
@@ -65,6 +65,7 @@ However, it can also have copter-like motors, like a conventional QuadPlane if :
 +------------------------+------------------------------------+----------------------------------+
 |  Tri                   | 7                                  | ignored                          |
 +------------------------+------------------------------------+----------------------------------+
+
 
 Motor Rotation and Layout
 =========================
