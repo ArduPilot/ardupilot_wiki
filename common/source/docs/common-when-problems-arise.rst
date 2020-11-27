@@ -17,6 +17,9 @@ What to do if you have an issue
 
 3. Having a :Ref:`dataflash log <common-diagnosing-problems-using-logs>` will help you, or someone helping you, to diagnose the issue.
 
+.. note:: WatchDog resets ("WDG:") should be reported `on this page <https://github.com/ArduPilot/ardupilot/issues/15915>`_ , Internal Errors ("Internal Error:") should be reported `here <https://github.com/ArduPilot/ardupilot/issues/15916>`_
+
+
 [site wiki="copter"]
 
 
