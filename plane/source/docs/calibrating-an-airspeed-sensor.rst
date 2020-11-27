@@ -61,9 +61,8 @@ are presented below.
 Automatic calibration
 =====================
 
-1. Ensure you have Plane 2.76 or later loaded
-2. Go to Mission Planner => CONFIG/TUNING => Full Parameter List, change :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1 and click 'Write Params' to send the value to the autopilot.
-3. Take-off and fly a repeated circuit or circular loiter for 5 minutes. This can be done in any mode, but if the autopilot is already tuned
+1. Go to Mission Planner => CONFIG/TUNING => Full Parameter List, change :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1 and click 'Write Params' to send the value to the autopilot.
+2. Take-off and fly a repeated circuit or circular loiter for 5 minutes. This can be done in any mode, but if the autopilot is already tuned
    sufficiently well, this can be achieved by leaving it in loiter or RTL
    for 5 minutes. The change in :ref:`ARSPD_RATIO <ARSPD_RATIO>` value can be checked in-flight
    by going to Mission Planner => CONFIG/TUNING => Full Parameter List, and
@@ -71,22 +70,18 @@ Automatic calibration
    updated :ref:`ARSPD_RATIO <ARSPD_RATIO>` value is only saved in the autopilot's non-volatile
    memory every two minutes, and only if the value has changed by more than
    5% from the last saved value.
-4. Land,  go to Mission Planner => CONFIG/TUNING => Full Parameter List
+3. Land,  go to Mission Planner => CONFIG/TUNING => Full Parameter List
    and change :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` back to 0 to prevent further changes.
-5. In Mission Planner => CONFIG/TUNING => Full Parameter List, click
+4. In Mission Planner => CONFIG/TUNING => Full Parameter List, click
    'Refresh Params' and check the value of :ref:`ARSPD_RATIO <ARSPD_RATIO>`. Normally it will
    be in the range between 1.5 and 3.0. If it is outside this range and you
    have checked for leaks, then if practical, you should consider
    relocating the pitot tube to reduce the aerodynamic interference from
    adjacent fuselage, wings, etc.
 
-Note: The calculation automatically compensates for the effects of
-altitude on air density.
+.. note:: The calculation automatically compensates for the effects of altitude on air density.
 
-Note: It is recommend that you disable :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` after calibration
-is complete. Some users have reported leaving :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` on all the
-time. While this may work it may lead to significant variation is
-calibration if wind speed varies over a flight.
+.. note:: If you do not anticipate that the wind speed will vary rapidly or dramatically during flights, and you are not flying over terrain that would cause bad wind speed estimates (ie alongside steep hills or canyons), you may leave :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` enabled. But since the ratio should not vary once calibrated, doing a calibration flight and then disabling is usually recommended.
 
 .. note:: For those users chasing increased accuracy, between steps 2) and 3), the value of :ref:`GND_TEMP<GND_TEMP>`  can be set to the current air temperature at the take-off location. By default the calibration algorithm uses the board temperature at power on as an approximation to the ambient air temperature, but due to solar and electrical heating, this nearly always reads high. This step may be worthwhile if operating in extreme temperature conditions.
 
