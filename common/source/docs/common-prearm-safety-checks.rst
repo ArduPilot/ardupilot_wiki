@@ -210,7 +210,7 @@ System:
 
 **Param storage failed**: A check of reading the parameter storage area failed.
 
-**Internal errors (0xx)**: An internal error has occurred. Report to ArduPilot development team.
+**Internal errors (0xx)**: An internal error has occurred. Report to ArduPilot development team `here <https://github.com/ArduPilot/ardupilot/issues/15916>`_
 
 **KDECAN Failed**: KDECAN system failure.
 
@@ -251,5 +251,4 @@ This can also be configured using Mission Planner:
 -  set the Arming Check drop-down to "Disabled" or one of the "Skip"
    options which more effectively skips the item causing the failure.
 -  Push the "Write Params" button
-
 
