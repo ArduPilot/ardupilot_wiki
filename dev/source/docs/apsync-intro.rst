@@ -74,7 +74,7 @@ Please follow the instructions for installing these images on the wiki page for 
 The flight controller (i.e. Pixhawk or similar) should be configured to communicate with the companion computer by setting the following parameters and then reboot the board:
 
 - :ref:`SERIAL2_BAUD <copter:SERIAL2_BAUD>` 921 (for RPi3, TX1 and Edison) or 1500 (for TX2)
-- :ref:`SERIAL2_PROTOCOL <copter:SERIAL2_PROTOCOL>` 1
+- :ref:`SERIAL2_PROTOCOL <copter:SERIAL2_PROTOCOL>` 2
 - :ref:`LOG_BACKEND_TYPE <copter:LOG_BACKEND_TYPE>` 3
 
 Connecting with SSH
