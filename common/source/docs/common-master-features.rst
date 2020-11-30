@@ -34,10 +34,9 @@ This lists features or changes merged in master and build in the "latest" firmwa
     RunCam Control <common-camera-runcam>
     Velocity ESCs <common-velocity-can-escs>
     Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
-[/site]
-    
+
     Other wiki changes <common-future-wiki-changes>
-    
+[/site]
 [site wiki="plane"]
 - :ref:`Change to PID scaling in QuadPlane Tailsitters <4.1-gainscaling>`
 [/site]
