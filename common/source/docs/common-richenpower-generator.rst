@@ -11,7 +11,7 @@ The RichenPower H2 Hybrid and H2plus Hybrid generators can be used to extend a v
 A transmitter's auxiliary switch can be used to control the generator's speed (stop, idle or run).
 
 Where to Buy
------------
+------------
 
 The H2 Hybrid and H2plus Hybrid generators can be purchased directly from the `RichenPower webstore <https://www.richenpower.com/shop>`__
 
@@ -33,7 +33,7 @@ Connect to the autopilot with a ground station and set the following parameters:
 Controlling the Generator
 -------------------------
 
-Please refer to the generator manual for operating insturctions but in short:
+Please refer to the generator manual for operating instructions but in short:
 
 - The generator can only be started by pulling the ripcord
 - The transmitter's auxiliary switch can change the speed of the generator:
@@ -45,7 +45,7 @@ Please refer to the generator manual for operating insturctions but in short:
 Monitoring from the GCS
 -----------------------
 
-Mission Planner has a generator monitor window that appears as soon as GENERATOR mavlink messages arrive.
+Mission Planner has a generator monitor window that appears as soon as GENERATOR MAVLink messages arrive.
 
 .. image:: ../../../images/richenpower-monitor.png
    :width: 350px
