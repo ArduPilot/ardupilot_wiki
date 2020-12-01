@@ -31,6 +31,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
 [/site]
 [site wiki="copter,plane,rover"]
     OSD Parameter Editor <common-paramosd>
+    RichenPower Generator <common-richenpower-generator>
     RunCam Control <common-camera-runcam>
     Velocity ESCs <common-velocity-can-escs>
     Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
