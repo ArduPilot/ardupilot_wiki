@@ -118,3 +118,45 @@ When modifying the EKF code it can be useful to confirm your changes have no imp
     Processing log replay-00000001.BIN
     Processed 30166/30166 messages, 0 errors
     Passed
+
+
+Ensuring EKF changes have had no effect on its output
+=====================================================
+
+Often changes to the EKF are expected to have no functional change.  Refactoring, removing dead code, adding comments, rearranging parameters, changing function names and the like.
+
+If you are making such a change, ``Tools/Replay/check_replay_branch.py`` is provided to ensure your current branch does not change the EKF's output, as tested by the autotest suite's Replay tests.
+
+It:
+  - generates a Replayable log on the master branch
+  - compiles and runs Replay on your branch
+  - uses ``Tools/Replay/check_replay.py`` to ensure the EKF output has not changed
+
+e.g.
+
+.. code-block:: bash
+
+    pbarker@bluebottle:~/rc/ardupilot(pr/move-gsf-logging-ekf2)$ ./Tools/Replay/check_replay_branch.py
+    chdir (/home/pbarker/rc/ardupilot)
+    lckfile='/home/pbarker/rc/buildlogs/autotest.lck'
+    step=build.Copter
+    step=test.Copter.Replay
+    Running: ("git rev-parse HEAD") in (/home/pbarker/rc/ardupilot)
+    >>>> RUNNING STEP: build.Copter at Tue Dec  1 13:26:32 2020
+    Running: ("/bin/rm -f logs/*.BIN logs/LASTLOG.TXT") in (.)
+    'build' finished successfully (4m26.874s)
+    .
+    .
+    .
+    >>>> PASSED STEP: build.Copter at Tue Dec  1 13:31:03 2020
+    >>>> RUNNING STEP: test.Copter.Replay at Tue Dec  1 13:31:03 2020
+    Running: ("/bin/rm -f logs/*.BIN logs/LASTLOG.TXT") in (.)
+    step=test.Copter.Replay
+    .
+    .
+    .
+    AT-0298.3: Stopping SITL
+    >>>> PASSED STEP: test.Copter.Replay at Tue Dec  1 13:36:01 2020
+    Processing log logs/00000004.BIN
+    Processed 66495/66495 messages, 0 errors
+    pbarker@bluebottle:~/rc/ardupilot(pr/move-gsf-logging-ekf2)$ 
