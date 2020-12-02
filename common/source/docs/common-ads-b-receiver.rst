@@ -48,7 +48,7 @@ vertically.
 Setup through the ground station
 ================================
 
-Set the :ref:`ADSB_ENABLE <ADSB_ENABLE>` parameter to "1" to enable receiving data from the ADSB sensor
+Set the :ref:`ADSB_TYPE <ADSB_TYPE>` parameter to "1" to enable receiving data from the Uavonix ADSB sensor.
 
 If you are using one of the UARTs on your board which defaults to MAVLink (i.e. Telem1, Telem2 on a Pixhawk) then the default settings will work fine for the PingRx. Alternatively you
 can connect the Ping to one of the other UARTs, such as the GPS UART (if it is unused) or the serial4/5 UART. In that case you will need to configure the UART as MAVLink at a baudrate of 57600.
@@ -102,7 +102,7 @@ There are additional MAVLink messages for ADSB in uavionix.xml to allow a GCS to
 Enabling Manned Vehicle Avoidance
 =================================
 
-Copter-3.4 (and higher) and very recent versions of Plane include a new flight mode AVOID_ADSB that attempts to avoid manned vehicles based on the ADS-B sensor's output. Entry into this mode is automatic when avoidance is necessary based on the parameters below. Exit is also automatic when the threat has passed.
+ArduPilot includes a flight mode, AVOID_ADSB, that attempts to avoid manned vehicles based on the ADS-B sensor's output. Entry into this mode is automatic when avoidance is necessary based on the parameters below. Exit is also automatic when the threat has passed.
 
 To enable this feature connect with a Ground Station and set the following parameters:
 
@@ -123,21 +123,6 @@ In ArduPilot firmware versions 4.0 and later, the entry into this mode can be en
 
    ..  youtube:: quomxCIPP74
     :width: 100%
-
-
-Older version of ADS-B based avoidance in Plane-3.5
-===================================================
-
-Plane's earlier version of ADS-B based avoidance used these different parameters:
-
--  ADSB_BEHAVIOR=0, NONE. Objects are detected and the GCS is notified but no action is taken.
--  ADSB_BEHAVIOR=1, LOITER. If another vehicle is nearby, switch from AUTO to LOITER mode. When the vehicle leaves, switch back to AUTO and resume.
--  ADSB_BEHAVIOR=2, LOITER_AND_DESCEND. Same as (1) but decrease the altitude 1 m/s. If the other vehicle location persists, you will eventually loiter into the ground.
-
-The older behavior was to check the detected vehicle list once per second
-and determine if any other aircraft were within 200m. The altitude was
-ignored. At that point, a behavior is performed in an effort to avoid
-it. The behavior persists until no vehicles are within 400m.
 
 Vehicle Database
 ================
