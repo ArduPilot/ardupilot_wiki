@@ -58,7 +58,7 @@ Closed hardware
     Mateksys F405-Wing* <common-matekf405-wing>
     Mateksys F765-Wing <common-matekf765-wing>
     Mateksys H743-Wing <common-matekh743-wing>
-    mRo ControlZero F7 <https://store.mrobotics.io/mRo-Control-Zero-F7-p/mro-ctrl-zero-f7.htm>
+    mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
     Omnibus F4 AIO/Pro* <common-omnibusf4pro>
