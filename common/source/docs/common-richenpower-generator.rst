@@ -18,9 +18,11 @@ The H2 Hybrid and H2plus Hybrid generators can be purchased directly from the `R
 Connection and Configuration
 ----------------------------
 
-The generator's serial output ("#5 wire") should be connected to one of the autopilot serial ports (i.e. Telem2)
+.. image:: ../../../images/richenpower-generator-pixhawk.png
 
-One of the autopilot's servo outputs (i.e. "AUX OUT1", aka servo output9) should be connected to the generator's pwm input
+The generator's serial output ("#5") should be connected to one of the autopilot serial ports (i.e. Telem2)
+
+The generator's PWM input ("#6") should be connected to one of the autopilot's servo outputs (i.e. "AUX OUT1", aka servo output9)
 
 Connect to the autopilot with a ground station and set the following parameters:
 
@@ -41,6 +43,41 @@ Please refer to the generator manual for operating instructions but in short:
     - Low position stops the generator
     - Middle position for idle
     - High position for run (to charge the battery)
+
+Start-up procedure:
+
+- Connect battery to generator
+- Connect battery for autopilot
+- Start Ground Station and connect telemetry
+
+  - H2 generator light should be off
+  - GCS HUD should display, "PreArm: Generator: requested state is not Run"
+
+- Move auxiliary switch to high position to switch generator to "run"
+
+  - H2 relay should click
+  - H2 Light should be green
+  - GCS HUD should display, "PreArm: Generator: warming up (0%)"
+  - If using Mission Planner, the generator display should show "Run Status off"
+
+- Check motor is primed by manually pushing the plastic bulb to pump petrol from the tank into the carburetor
+- Pull ripcord to start generator
+
+   - Motor should run at low RPM
+   - If using Mission Planner, the generator display should show "Run Status WarmingUp"
+   - GCS HUD should display, "PreArm: Generator: warming up (100%)"
+   - If using Mission Planner, the generator display should show "Run Status Generating"
+   - Generator should increase to full throttle 
+
+- Arm and takeoff
+
+Shutdown procedure:
+
+- Move auxiliary switch to low position to switch generator to "off"
+- If using Mission Planner, the generator display should show "Run Status Idle"
+- Generator should shut down after about 30 seconds
+- If using Mission Planner, the generator display should show "Run Status Off"
+- Unplug battery from generator
 
 Monitoring from the GCS
 -----------------------
