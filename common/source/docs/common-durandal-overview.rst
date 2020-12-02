@@ -63,8 +63,7 @@ Specifications
 Where to Buy
 ============
 
- - Order from `Holybro <https://shop.holybro.com/>`__.
- - Direct link for `beta hardware release <https://shop.holybro.com/durandalbeta_p1189.html>`__.
+ - Order from `Holybro <https://shop.holybro.com/durandalbeta_p1189.html>`__.
  - Holybro distributors are listed `here <https://shop.holybro.com/art/distributors_a0050.html>`__.
 
 
