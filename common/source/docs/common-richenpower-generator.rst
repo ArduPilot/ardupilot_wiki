@@ -1,7 +1,7 @@
 .. _common-richenpower-generator:
 
 =====================
-RichenPower Geneartor
+RichenPower Generator
 =====================
 
 .. image:: ../../../images/richenpower-generator.png
@@ -20,13 +20,13 @@ Connection and Configuration
 
 .. image:: ../../../images/richenpower-generator-pixhawk.png
 
-The generator's serial output ("#5") should be connected to one of the autopilot serial ports (i.e. Telem2)
+The generator's serial output ("#5") should be connected to one of the autopilot serial ports (e.g. Telem2)
 
-The generator's PWM input ("#6") should be connected to one of the autopilot's servo outputs (i.e. "AUX OUT1", aka servo output9)
+The generator's PWM input ("#6") should be connected to one of the autopilot's servo outputs (e.g. "AUX OUT1", aka servo output9)
 
-Connect to the autopilot with a ground station and set the following parameters:
+Connect to the autopilot with a ground station and set the following parameters and then reboot the autopilot:
 
-- :ref:`GEN_TYPE <GEN_TYPE>` = 3 (and reboot the autopilot)
+- :ref:`GEN_TYPE <GEN_TYPE>` = 3 (RichenPower)
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 30 (Generator)
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 9 (9600)
 - :ref:`RC9_OPTION <RC9_OPTION>` = 85 (Generator)
