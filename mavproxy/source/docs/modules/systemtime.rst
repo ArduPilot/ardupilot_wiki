@@ -23,3 +23,4 @@ interval_timesync    How often to send a timesync message (seconds)   10
 interval             How often to send the system time (seconds)      10
 ==================   ===============================================  ===============================
 
+Note: you will need to set the `BRD_RTC_TYPES <https://ardupilot.org/copter/docs/parameters.html#brd-rtc-types-allowed-sources-of-rtc-time>`__ = 2 on the autopilot to enable updates from ``SYSTEM_TIME`` messages.
