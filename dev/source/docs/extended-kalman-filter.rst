@@ -73,7 +73,7 @@ how the filter works:
 #. Velocity is integrated to calculate the position
 
    This process from 1) to 4) is referred to as 'State Prediction'. A
-   'state' is a variables we are trying to estimate like roll,pitch yaw,
+   'state' is a variables we are trying to estimate like roll, pitch, yaw, 
    height, wind speed, etc. The filter has other states besides
    position, velocity and angles that are assumed to change slowly.
    These include gyro biases, Z accelerometer bias, wind velocities,
@@ -166,7 +166,7 @@ EKF_ACC_PNOISE
 ----------------
 
 This noise controls the growth of estimated error due to accelerometer
-measurement errors excluding bias. Increasing it makes the flter trust
+measurement errors excluding bias. Increasing it makes the filter trust
 the accelerometer measurements less and other measurements more.
 
 .. _extended-kalman-filter_ekf_alt_noise:
