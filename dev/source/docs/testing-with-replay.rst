@@ -8,12 +8,12 @@ Introduction
 ============
 
 Replay is a program that takes a dataflash log file and replays it
-through the latest master code allowing for state estimation issues to
-be analysed with new code.
+through any branch's code allowing for state estimation issues to
+be analyzed using that branch's code instead of the code used while generating the dataflash log.
 
-It is recommended that if a problem is reproducible that the log be
-generated with both the `LOG_REPLAY` and `LOG_DISARMED` parameters set
-to 1.
+.. note:: The log structure of the firmware used to create the log and the branch to be tested with it must be the same.
+
+.. note:: In order to use Replay the log must be generated with `LOG_REPLAY` set to 1. And it is preferred to also have `LOG_DISARMED` also set to 1, to obtain the most information in the log.
 
 .. image:: ../images/Replay_EKFVsINAV.png
     :target: ../_images/Replay_EKFVsINAV.png
@@ -21,11 +21,11 @@ to 1.
 Building Replay
 ===============
 
-On your Linux or Ubuntu machine, from the root directory of an ArduPilot repository:
+On your Linux or Ubuntu machine, from the root directory of an ArduPilot repository, using the branch you wish to replay the log through:
 
 .. code-block:: bash
 
-    ./waf configure --board=sitl --debug
+    ./waf configure --board=sitl --debug   //--debug is optional but allows using a debugger, if desired when analyzing issues
     ./waf replay
 
 This will create a file called ``build/sitl/tools/Replay``.
@@ -45,9 +45,11 @@ Run a log through Replay to generate the plot and EKF data files:
 
     build/sitl/tools/Replay MyLogFile.BIN
 
-This will produce an output file 1.BIN in the folder "./logs"
+This will produce an output file xxx.BIN in the folder "./logs", which will be the highest numbered log since it was just created.
 
-Use MAVExplorer to graph the data
+Use MAVExplorer to graph the data. Both the original and Replay generated EKF messages will be included in the log data. For example, instead of possible graphs for IMU0 and IMU1's EKF2- NKF2 message items:  "NKF2, NKF2[0], and NKF2[1]", there will also be "NKF2[100] adn NKF2][101]" graph groups for the replay generated log messages.
+
+.. note:: if using WSL, do not reference the log file via the external Windows WSL path since this will be extremely slow. Instead copy the log from the Windows file system directly into the WSL environment and execute Replay on it within that environment.
 
 Changing parameters
 ===================
