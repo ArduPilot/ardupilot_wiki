@@ -50,6 +50,18 @@ Finally, the last panel, is used to show two things. The Mag Yaw change shows ho
 
 The ATT Yaw change shows how much the EKF yaw estimate would be changed. Since the compass was not badly calibrated, one would expect the changes would not greatly impact the EKF, whose job is to not only take the magnetometer data to determine heading, but also use GPS heading, projections from velocity and position history, etc. In this case, the EKF was doing a good job of compensating for the small errors from compass calibration, so the changes in the EKF yaw estimate are much smaller than the improvements (Mag yaw change) to the compass fields (and implied heading) themselves. Changing the compass calibration parameters from the analysis, in this case, is nice and would slightly improve performance, but is not critical for a plane. A copter could benefit from the change.
 
+Using MAVExplorer's integrated Magfit utility
+=============================================
+
+Now MAVExplorer has a Tools menu which includes this utility and allows it to be applied to any portion of the log by simply opening any Graph and zooming (magnifying glass icon) to the area to be analyzed. If no graph is opened, and area selected, then the entire log will be used.
+
+Below is a video of the process.
+
+.. note:: selecting CMOT No Change box, will calculate the CMOT correction values, but not apply them to the corrected graph.
+
+.. youtube:: K7Gn-tXdJSE
+
+
 Hints and Tips
 --------------
 
