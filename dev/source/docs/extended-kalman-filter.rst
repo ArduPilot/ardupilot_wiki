@@ -73,7 +73,7 @@ how the filter works:
 #. Velocity is integrated to calculate the position
 
    This process from 1) to 4) is referred to as 'State Prediction'. A
-   'state' is a variables we are trying to estimate like roll,pitch yaw,
+   'state' is a variables we are trying to estimate like roll,pitch, yaw,
    height, wind speed, etc. The filter has other states besides
    position, velocity and angles that are assumed to change slowly.
    These include gyro biases, Z accelerometer bias, wind velocities,
