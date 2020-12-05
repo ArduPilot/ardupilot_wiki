@@ -14,6 +14,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
     Airmode <airmode>
 [/site]
 [site wiki="copter,plane,rover"]
+    Button Inputs <common-buttons>
     Compass-less Operation<common-compassless>
     GPS/Non-GPS Transitions <common-non-gps-to-gps>
 [/site]
