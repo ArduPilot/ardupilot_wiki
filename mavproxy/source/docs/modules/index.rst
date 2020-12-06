@@ -87,6 +87,7 @@ List of Modules
     ppp
     rcsetup
     relay
+    sail
     sensors
     serial
     signing
