@@ -32,4 +32,4 @@ A calendar with the meetings can be found at https://calendar.google.com/calenda
 Prefer Typing?
 --------------
 
-If you prefer text chat, please join us on `gitter <https://gitter.im/ArduPilot/ardupilot>`__
+If you prefer text chat, please join us on `Discord <https://ardupilot.org/discord>`__
