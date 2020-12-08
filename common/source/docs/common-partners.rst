@@ -357,10 +357,28 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: http://www.skydroid.xin
 
-      - .. image:: ../../../images/supporters/supporters_logo_asylon.png
+      - .. image:: ../../../images/supporters/supporters_logo_Asylon.png
             :width: 250px
             :align: center
-            :target: http://www.dronecore.us
- 
+            :target: https://dronecore.us
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_Watts_Innovation.png
+            :width: 250px
+            :align: center
+            :target: https://wattsinnovations.com
+
+      - .. image:: ../../../images/supporters/supporters_logo_Exyn.png
+            :width: 250px
+            :align: center
+            :target: https://exyn.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_Telluraves_Aerospace.jpg
+            :width: 250px
+            :align: center
+            :target: https://telluraves.co.za
+
+      -
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
