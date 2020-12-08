@@ -71,8 +71,8 @@ MSP
 
 - ``SERIALx_PROTOCOL``                      = 32  (MSP) where x is the SERIAL port used for connection on autopilot
 - :ref:`GPS_TYPE<GPS_TYPE>`                 = 19 (MSP)
-- :ref:`GND_PROBE_EXT<GND_PROBE_EXT>`       = 4096  (MSP Baro)
-- :ref:`GND_PRIMARY<GND_PRIMARY>`           = 1  (If you want to use MSP baro as primary baro, otherwise leave as default)
+- :ref:`BARO_PROBE_EXT<BARO_PROBE_EXT>`     = 4096  (MSP Baro)
+- :ref:`BARO_PRIMARY<BARO_PRIMARY>`         = 1  (If you want to use MSP baro as primary baro, otherwise leave as default)
 - :ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` = 0 (or make sure MSP bit is not checked)
 
 MSP Firmware Update
