@@ -139,7 +139,21 @@ Sky-Drones Smartlink
 
 Smartlink is a broadband digital datalink with integrated onboard computer that supports up to Two HD video channels, MAVLink telemetry and control with ultra low latency and range up to 20 km. 
 
-More info on Skydrones Smartlink `here <https://sky-drones.com/smartlink>`_
+Features
+--------
+- MAVLink compatible 
+- 2.4 GHz / up to 1000 mW configurable
+- 2 HDMI, full HD up to 1080p / 60fps 
+- Transmission range: 20 km FCC / 10 km
+- LTE connectivity as an option
+- Satellite connectivity as an option
+
+More info on Sky-Drones `website <https://sky-drones.com/smartlink>`_
+
+Unboxing video `here <https://www.youtube.com/watch?v=2qtE4nuTXKU>`_ 
+
+Purchase `online <https://sky-drones.com/telemetry/smartlink-set.html>`_ 
+
 
 SIYI AK28
 =========
