@@ -41,7 +41,7 @@ Description belows how to creat a form from scratch, alternatively you can use `
   - push the Send button
   - set the "Email To" field to "ardupilot-dev-team@googlegroups.com"
   - fill in the Subject and Message fields
-  - to allow others to see the responses (including ardupilot.devel@gmail.com), click the "Collaborators" link and add their email in the "Invite people" field.  If you are submitting the vote as yourself, include 
+  - to allow others to see the responses (including ardupilot.devel@gmail.com), click the "Collaborators" link and add their email in the "Invite people" field
   - check "Include form in email" and press "Send"
 
 Normally the vote should be open for 1 week and be discussed at the weekly development call.
