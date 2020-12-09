@@ -33,6 +33,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `PDRL AeroFC <https://pdrl.in/aerofc-autopilot/>`__
 * `ProfiCNC <http://www.proficnc.com/stores>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
+* `Sky-Drones <https://sky-drones.com/store>`__
 * `UnmannedTech UK <https://www.unmannedtechshop.co.uk/>`__
 * `uAvionix <https://uavionix.com/>`__
 * `UAV Systems International <https://uavsystemsinternational.com/collections/all>`__
