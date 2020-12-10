@@ -257,3 +257,26 @@ Adding a Test
    The autotest script is in flux.  This documentation may be out of date.
 
 The git commit e045f61473afa800afc241819cf890591fbecd5a in ArduPilot master's history is a reasonable example of adding an entirely new test to the ArduPilot suite.
+
+
+Conducting an automated git bisect with an autotest
+===================================================
+
+`Tools/autotest/bisect-helper.py` can be used as the script argument to `git bisect run`.  It can run an autotest test - by name - and tell you which commit broke that test.
+
+To accomplish this:
+
+    - make sure you're not already running a bisect - `git bisect reset`
+    - create a topic branch for your new test (based on master) which fails now but you know would have passed at some stage in the past
+    - write your test - which should fail on your topic branch, and commit it
+    - you can test your branch by creating a branch at some stage in the past and cherry-picking your test into that branch.  This may not be trivial depending on what changes have been made in the autotest framework
+    - `cp Tools/autotest/bisect-helper.py /tmp`  # always use modern helper
+    - `git bisect reset`
+    - `git bisect start`
+    - `git bisect bad`  - we know the test fails where it was written
+    - `git bisect good HEAD~1024`  - this is where we know the test passes
+    - `time git bisect run /tmp/bisect-helper.py --autotest --autotest-vehicle=Plane --autotest-test=NeedEKFToArm --autotest-branch=wip/bisection-using-named-test`
+
+In the last command you need to specify the vehicle, new test name and the name of the topic branch which contains your new test.
+
+After this has run you should know which commit broke the functionality being tested.  And you also have a new test for the regression suite which you should PR!
