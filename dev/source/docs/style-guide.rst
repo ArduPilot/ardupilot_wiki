@@ -410,7 +410,6 @@ Parameter with multiple words should have the words ordered from left to right b
 Re-use words from other parameters if possible instead of creating new words.  For example we use "MIN" and "MAX" so these should be used instead of equivalent words like "TOP" and "BOTTOM".
 
 Parameters should be in the standard unit (meters for distances, degrees for angles) but in cases where they are not the unit may (optionally) be appended to the end.  This is definitely not a requirement but is up to the developer.
-Re-use words from other parameters if possible instead of creating new words.  For eample we use "MIN" and "MAX" so these should be used instead of equivalent words like "TOP" and "BOTTOM".
 
 The total length of the parameter name must be 16 characters or less.
 
