@@ -15,6 +15,11 @@ Most F7 and H7 autopilots, on the other hand, have internal inverters, and can b
 
 .. note:: ArduPilot supports both 16 and 24 channels FPort2 but telemetry is enabled only for 16 channels mode.
 
+Telemetry protocol
+==================
+
+Only the :ref:`Passthrough telemetry <common-frsky-passthrough>` protocol is supported. To get sensors to show up in OpenTX you have to install and enable :ref:`Yaapu FrSky Telemetry Script for OpenTX<common-frsky-yaapu>`. Otherwise the only sensor discovered would be GPS.
+
 Connection Diagrams
 ===================
 
