@@ -277,7 +277,7 @@ a mission):**
 | ThH     | Estimated throttle required to hover throttle in the range 0 ~ 1                                   |
 +---------+----------------------------------------------------------------------------------------------------+
 | DAlt    | The Desired Altitude while in AltHold, Loiter, RTL or Auto flight modes.                           |
-|         | It is influenced by EKF origin, which in 3.5.X is corrected by GPS altitude. This is behaviour is  |
+|         | It is influenced by EKF origin, which in 3.5.X is corrected by GPS altitude. This behaviour is     |
 |         | turned off in 3.6.X and can be turned on with EKF_OGN_HGT_MASK.                                    |
 +---------+----------------------------------------------------------------------------------------------------+
 | Alt     | The current EKF Altitude                                                                           |
