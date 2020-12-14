@@ -419,6 +419,137 @@ You can test a virtual range beacons by setting the following parameters
 
 The restart SITL and the vehicle should appear on the map.  After perhaps 30seconds it should shift to its normal starting position.
 
+Testing Precision Landing
+-------------------------
+
+.. note::
+
+   These instructions are written assuming ArduCopter
+
+Enable Precision Landing, and set the precision landing backend type to SITL:
+
+::
+
+   param set PLND_ENABLED 1
+   param fetch
+   param set PLND_TYPE 4
+
+A rangefinder is currently required for precision landing.  Enable a simulated rangefinder:
+
+::
+
+   param set RNGFND_TYPE 1
+   param set RNGFND_MIN_CM 0
+   param set RNGFND_MAX_CM 4000
+   param set RNGFND_PIN 0
+   param set RNGFND_SCALING 12.12
+
+Restart the simulation.
+   
+Takeoff and fly a bit, then switch into land:
+
+::
+
+   arm throttle
+   rc 3 1800
+   mode land
+   rc 3 1500
+
+Check the logs for precision landing messages:
+
+::
+
+   ls -lt logs
+
+Choose the youngest, then:
+
+::
+
+   mavlogdump --type PL logs/<youngest>
+
+
+Testing Vicon (aka Vision Positioning)
+--------------------------------------
+
+Start SITL, wiping parameters:
+
+::
+
+   ./Tools/autotest/sim_vehicle.py -v ArduCopter --gdb --debug -w
+
+Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vision-position-estimate and vision-speed-estimate messages:
+
+::
+
+    param set AHRS_EKF_TYPE 3
+    param set EK2_ENABLE 0
+    param set EK3_ENABLE 1
+    param fetch
+    param set EK3_GPS_TYPE 3
+    param set GPS_TYPE 0
+    param set VISO_TYPE 1
+    param set SERIAL5_PROTOCOL 2
+    param fetch
+
+Restart the simulation, attaching a simulated Vicon system to uartF (which corresponds to ``SERIAL5``):
+
+::
+
+   ../Tools/autotest/sim_vehicle.py --map --console -A "--uartF=sim:vicon:"
+
+The console should indicate no GPS is present:
+
+::
+
+   GPS: 0 (0)
+
+Vision position estimates should now be being fed into ArduCopter:
+
+::
+
+   STABILIZE> status VICON_POSITION_ESTIMATE
+   STABILIZE> 43371: VICON_POSITION_ESTIMATE {usec : 38380000, x : 0.0, y : 0.0, z : -0.0999755859375, roll : 0.0, pitch : 0.0, yaw : -0.122173137963}
+
+
+You should also receive a startup message from the EKF:
+
+::
+
+   APM: EKF3 IMU0 is using external nav data
+   APM: EKF3 IMU0 initial pos NED = 0.0,0.0,-0.1 (m)
+   APM: EKF3 IMU1 is using external nav data
+   APM: EKF3 IMU1 initial pos NED = 0.0,0.0,-0.1 (m)
+
+Use MAVProxy's right-click context menu item to ``Set Origin (with alt)``
+
+Arm in stabilize, switch to loiter:
+
+::
+
+   mode stabilize
+   arm throttle
+   mode loiter
+
+Take off, then fly somewhere:
+
+::
+
+   rc 3 1800
+   rc 2 1400
+
+
+Wait a while, note vehicle moving on map.
+
+Now RTL:
+
+::
+
+   rc 3 1500
+   rc 2 1500
+   mode rtl
+
+Note vehicle returning to home
+
 Accessing log files
 ===================
 
@@ -689,135 +820,3 @@ used just as before.
    :target: ../_images/MissionPlanner_ConnectTCP.jpg
 
    Mission Planner: Connecting toSITL using TCP
-
-
-Testing Precision Landing
--------------------------
-
-.. note::
-
-   These instructions are written assuming ArduCopter
-
-Enable Precision Landing, and set the precision landing backend type to SITL:
-
-::
-
-   param set PLND_ENABLED 1
-   param fetch
-   param set PLND_TYPE 4
-
-A rangefinder is currently required for precision landing.  Enable a simulated rangefinder:
-
-::
-
-   param set RNGFND_TYPE 1
-   param set RNGFND_MIN_CM 0
-   param set RNGFND_MAX_CM 4000
-   param set RNGFND_PIN 0
-   param set RNGFND_SCALING 12.12
-
-Restart the simulation.
-   
-Takeoff and fly a bit, then switch into land:
-
-::
-
-   arm throttle
-   rc 3 1800
-   mode land
-   rc 3 1500
-
-Check the logs for precision landing messages:
-
-::
-
-   ls -lt logs
-
-Choose the youngest, then:
-
-::
-
-   mavlogdump --type PL logs/<youngest>
-
-
-Testing Vicon (aka Vision Positioning)
---------------------------------------
-
-Start SITL, wiping parameters:
-
-::
-
-   ./Tools/autotest/sim_vehicle.py -v ArduCopter --gdb --debug -w
-
-Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vision-position-estimate and vision-speed-estimate messages:
-
-::
-
-    param set AHRS_EKF_TYPE 3
-    param set EK2_ENABLE 0
-    param set EK3_ENABLE 1
-    param fetch
-    param set EK3_GPS_TYPE 3
-    param set GPS_TYPE 0
-    param set VISO_TYPE 1
-    param set SERIAL5_PROTOCOL 2
-    param fetch
-
-Restart the simulation, attaching a simulated Vicon system to uartF (which corresponds to ``SERIAL5``):
-
-::
-
-   ../Tools/autotest/sim_vehicle.py --map --console -A "--uartF=sim:vicon:"
-
-The console should indicate no GPS is present:
-
-::
-
-   GPS: 0 (0)
-
-Vision position estimates should now be being fed into ArduCopter:
-
-::
-
-   STABILIZE> status VICON_POSITION_ESTIMATE
-   STABILIZE> 43371: VICON_POSITION_ESTIMATE {usec : 38380000, x : 0.0, y : 0.0, z : -0.0999755859375, roll : 0.0, pitch : 0.0, yaw : -0.122173137963}
-
-
-You should also receive a startup message from the EKF:
-
-::
-
-   APM: EKF3 IMU0 is using external nav data
-   APM: EKF3 IMU0 initial pos NED = 0.0,0.0,-0.1 (m)
-   APM: EKF3 IMU1 is using external nav data
-   APM: EKF3 IMU1 initial pos NED = 0.0,0.0,-0.1 (m)
-
-Use MAVProxy's right-click context menu item to ``Set Origin (with alt)``
-
-Arm in stabilize, switch to loiter:
-
-::
-
-   mode stabilize
-   arm throttle
-   mode loiter
-
-Take off, then fly somewhere:
-
-::
-
-   rc 3 1800
-   rc 2 1400
-
-
-Wait a while, note vehicle moving on map.
-
-Now RTL:
-
-::
-
-   rc 3 1500
-   rc 2 1500
-   mode rtl
-
-Note vehicle returning to home
