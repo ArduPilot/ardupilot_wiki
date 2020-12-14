@@ -499,3 +499,62 @@ Use multiplication rather than division where possible:
    const float foo_m = foo_cm / 100;
 
 Multiplications typically take fewer cycles to compute than divisions.
+
+
+ArduPilot Design Decisions
+==========================
+
+Several design decisions have been in the ArduPilot codebase to accomodate its embedded nature which may surprise some programmers.
+
+Implicit Zeroing of Memory
+--------------------------
+
+Implicitly zeroing of memory gives us more consistent (even-if-bad) behaviour, and saves us flash space as most places in the code don't need to initialise the memory they've allocated.  The only memory you MUST zero is stack-stored variables - locals, asprintf and the like.
+
+   - new and malloc both zero their memory
+   - bss-stored data does not need to be zeroed (so no members in a singleton object need to be zeroed
+   - Vectors are special and zero themelves - even on the stack
+
+
+Bit fields are generally frowned upon
+-------------------------------------
+
+Using bit fields reduces RAM usage but can considerably increase flash usage, as to extract a boolean truth value from a bit field requires more machine instructions.  If the variable is frequently accessed then this can be a LOT of flash.
+
+Initialise member variables in header files rather than in constructors
+-----------------------------------------------------------------------
+
+Where a member isn't dependent on a constructor parameter, we prefer to do in-class-definition initialisation.
+
+**Not preferred:**
+
+::
+
+    Foo::Foo() :
+      bar(37),
+      baz(BAZ_DEFAULT)
+    {
+      ...
+    }
+
+**Preferred:**
+
+::
+
+   class Foo() {
+   public:
+   ...
+   private:
+     uint8_t bar = 37;
+     float baz = BAZ_DEFAULT;
+   };
+
+
+No Standard Library
+-------------------
+
+For efficiency reasons, ArduPilot doesn't use the C standard library (``std::``).  We also prefer to use functions which are consistent across platforms to ease support (not using 64-bit maths on platforms that support it is useful, for example).
+
+This means no ``std::vector`` and no ``std::string``, for example.
+
+If you really want to go that way, including the header to get these isn't sufficient - you will need to fiddle with the build system to link ``std`` in.
