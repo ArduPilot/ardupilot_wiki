@@ -514,6 +514,7 @@ Implicitly zeroing of memory gives us more consistent (even-if-bad) behaviour, a
    - new and malloc both zero their memory
    - bss-stored data does not need to be zeroed (so no members in a singleton object need to be zeroed
    - Vectors are special and zero themelves - even on the stack
+   - static variables within a function (which we generally frown upon) do not need to be zeroed
 
 
 Bit fields are generally frowned upon
