@@ -521,6 +521,27 @@ Bit fields are generally frowned upon
 
 Using bit fields reduces RAM usage but can considerably increase flash usage, as to extract a boolean truth value from a bit field requires more machine instructions.  If the variable is frequently accessed then this can be a LOT of flash.
 
+**Not preferred:**
+
+::
+
+   class Foo() {
+   private:
+       bool should_fly  : 1;
+       bool should_grow : 1;
+   };
+
+**Preferred:**
+
+::
+
+   class Foo() {
+   private:
+       bool should_fly;
+       bool should_grow;
+   };
+
+
 Initialise member variables in header files rather than in constructors
 -----------------------------------------------------------------------
 
@@ -557,4 +578,24 @@ For efficiency reasons, ArduPilot doesn't use the C standard library (``std::``)
 
 This means no ``std::vector`` and no ``std::string``, for example.
 
-If you really want to go that way, including the header to get these isn't sufficient - you will need to fiddle with the build system to link ``std`` in.
+We try to avoid library calls that handle their own allocations - but if you really want to go that way, including the header to get these isn't sufficient - you will need to fiddle with the build system to link ``std`` in.
+
+Alternatives to ``std::vector``
+...............................
+
+Most of the time fixed-length arrays are used.
+
+``AP_ExpandingArray`` may be an option for you - but expanding in-flight might be a bad thing.
+
+Linked lists are used on some places.
+
+
+Alternatives to ``std::string``
+...............................
+
+``asprintf`` is used in some places.  Generally simply using ``char*`` is adequate.
+
+No Dead Code
+------------
+
+We don't keep dead code in ArduPilot.  If code is unused, it should be removed - not just commented out.  This is a general rule and not universally adhered to.
