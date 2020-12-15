@@ -577,7 +577,7 @@ No Standard Library
 
 For efficiency reasons, ArduPilot doesn't use the C standard library (``std::``).  We also prefer to use functions which are consistent across platforms to ease support (not using 64-bit maths on platforms that support it is useful, for example).
 
-This means no ``std::vector`` and no ``std::string``, for example.
+This means no ``std::vector``, no ``std::string`` and no ``std::unordered_map``, for example.
 
 We try to avoid library calls that handle their own allocations - but if you really want to go that way, including the header to get these isn't sufficient - you will need to fiddle with the build system to link ``std`` in.
 
@@ -595,6 +595,15 @@ Alternatives to ``std::string``
 ...............................
 
 ``asprintf`` is used in some places.  Generally simply using ``char*`` is adequate.
+
+Alternatives to ``std::unordered_map``
+...............................
+
+Create an array of structs and iterate it.  This is done when turning a mavlink id into an ap_message id, for example.
+
+Create an ordered array of structs and bisect-search it.
+
+Create an array of structs with a perfect hash.
 
 No Dead Code
 ------------
