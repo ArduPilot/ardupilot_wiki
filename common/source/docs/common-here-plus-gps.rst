@@ -11,10 +11,6 @@ These instructions focus on the setup using Mission Planner on Windows, but HERE
 .. image:: ../../../images/here-plus-gps.png
 	:target: ../_images/here-plus-gps.png
 
-.. note::
-
-     Here+ RTK GPS is supported in Copter-3.5 (and higher), Plane 3.8.0 (and higher)
-
 Where to buy
 ============
 
