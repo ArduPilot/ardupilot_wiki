@@ -85,7 +85,7 @@ You can connect to the companion computer with a terminal emulator such as `Putt
 How flight controller data is routed to various programs
 ========================================================
 
-By default APsync uses "mavlink-router" to allow multiple programs running on the companion computer to talk to the flight controller.  This programs configuration can is held in ~/start_mavlink-router/mavlink-router.conf and defines the following connections:
+By default APsync uses "mavlink-router" to allow multiple programs running on the companion computer to talk to the flight controller.  This programs configuration is held in ~/start_mavlink-router/mavlink-router.conf and defines the following connections:
 
 - /dev/ttyTHS1 at baud 1500000 to communicate with the flight controller (on TX1/TX2)
 - UDP 127.0.0.1:14655 for MavProxy running on the companion computer
