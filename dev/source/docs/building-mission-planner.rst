@@ -51,7 +51,7 @@ Here is what you will need.
 -  Sufficient disk space, memory, processor power to comfortably run
    Visual Studio (details below)
 -  An Internet connection.
--  Visual Studio 2019 community edition
+-  Visual Studio 2019 community edition (You must use version 16.8.x older versions have problems building/editing)
 
 Install Visual Studio
 ============================================
@@ -85,6 +85,8 @@ The Mission Planner source code is stored in GitHub.  In general you can
 follow the instructions :ref:`for the ardupilot flight code <where-to-get-the-code>` except that you should use the
 **https://github.com/ArduPilot/MissionPlanner** repository in place of the ardupilot repository.  
 You could clone the git repo to (for example) c:\\MissionPlanner\\  but the exact folder is not critical.
+After cloned the repo, don't forget to update submodules. Go to the folder where you cloned the repo and issue a 
+**git submodule update --init --recursive** command.
 
 Open the Mission Planner solution in Visual Studio
 ==================================================
