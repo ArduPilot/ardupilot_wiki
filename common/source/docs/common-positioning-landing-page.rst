@@ -26,8 +26,7 @@ positioning technologies:
     Holybro Pixhawk 4 GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
-    JDrones GPS Options <http://store.jdrones.com/GPS_s/193.htm>
-     Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
+    Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     mRo GPS, GPS+Compass,RTK, and UAVCAN modules <https://store.mrobotics.io/category-s/109.htm>
     mRo Locaton One UAVCAN GPS/Compass <common-mrobotics-location-one-gps>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
