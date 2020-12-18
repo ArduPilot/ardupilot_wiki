@@ -11,8 +11,8 @@ GPSs do not have RTK fix.
 
 GPSs from ArduPilot Partners that are known to work include:
 
-- `CUAV C-RTK 9P <common-cuav-c-rtk-gps>`
-- `Holybro H-RTK F9P GNSS <common-holybro-rtk-f9p>`
+- :ref:`CUAV C-RTK 9P <common-cuav-c-rtk-gps>`
+- :ref:`Holybro H-RTK F9P GNSS <common-holybro-rtk-f9p>`
 - `mRobotics ZED-F9 GPS <https://store.mrobotics.io/category-s/109.htm>`__
 
 .. note::
