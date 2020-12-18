@@ -11,10 +11,8 @@ This description uses the Mission Planner for setup, but you can also use Qgroun
 .. image:: ../../../images/c-rtk-9p/c-rtk-9p.jpg
 	:target: ../images/c-rtk-9p/c-rtk-9p.jpg
 
-.. note::
+.. note:: ArduPilot does not currently configure UBlox F9P GPS constellations. User must assure that the GPS is properly configured for his region and application. See :ref:`common-gps-ublox-firmware-update`
 
-     C- RTK 9P GPS is supported in Copter-3.6.10 (and higher), Plane 3.9.9 (and higher)
-     
 Key Features
 ============
 
