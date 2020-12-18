@@ -597,7 +597,7 @@ Alternatives to ``std::string``
 ``asprintf`` is used in some places.  Generally simply using ``char*`` is adequate.
 
 Alternatives to ``std::unordered_map``
-...............................
+......................................
 
 Create an array of structs and iterate it.  This is done when turning a mavlink id into an ap_message id, for example.
 
