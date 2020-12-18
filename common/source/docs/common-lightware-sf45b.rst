@@ -11,7 +11,7 @@ The `Lightware SF45/B lidar <https://lightwarelidar.com/products/sf45-b>`__ is a
 
 
 Mounting the SF45/B
-------------------
+-------------------
 
 The SF45/B should be mounted on the top or bottom of the vehicle so that the lidar scans horizontally.  Ideally the number of vehicle parts (GPS mast, vehicle legs, etc) that obstruct the lidar's view should be reduced to a minimum
     
