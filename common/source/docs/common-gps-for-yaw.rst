@@ -11,12 +11,13 @@ GPSs do not have RTK fix.
 
 GPSs from ArduPilot Partners that are known to work include:
 
-- `CUAV C-RTK 9P <https://store.cuav.net/index.php?id_product=101&rewrite=c-rtk-9p&controller=product#/32-rtk-sky_end>`__
+- `CUAV C-RTK 9P <common-cuav-c-rtk-gps>`
+- `Holybro H-RTK F9P GNSS <common-holybro-rtk-f9p>`
 - `mRobotics ZED-F9 GPS <https://store.mrobotics.io/category-s/109.htm>`__
 
 .. note::
 
-   This feature is available in Copter 4.0.4 (and higher), Plane 4.0.6 (and higher) and Rover 4.1.0 (and higher);Ublox F9p must run firmware version 1.13 or higher.
+   This feature is available in Copter 4.0.4 (and higher), Plane 4.0.6 (and higher) and Rover 4.1.0 (and higher); **Ublox F9p must run firmware version 1.13 or higher**.
 
 
 Hardware Setup
