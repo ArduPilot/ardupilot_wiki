@@ -302,6 +302,95 @@ There are three possible enabled settings. Seeing :ref:`FS_GCS_ENABL<FS_GCS_ENAB
    </tbody>
    </table>
 
+Failsafe Diagnosis in Logs or GCS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GCSs will often display text indicating the type of failsafe encountered. Refer to this table if you failsafe displays as a TYPE=X, REASON=X
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>TYPE</th>
+   <th>MEANING</th>
+   </tr>
+   <tr>
+   <td>0</td>
+   <td>None</td>
+   </tr>
+   <tr>
+   <td>1</td>
+   <td>Short Failsafe</td>
+   </tr>
+   <tr>
+   <td>2</td>
+   <td>Long Failsafe</td>
+   </tr>
+   <tr>
+   <td>3</td>
+   <td>GCS Failsafe</td>
+   </tr>
+   </tbody>
+   </table>
+   
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>REASON</th>
+   <th>MEANING</th>
+   </tr>
+   <tr>
+   <td>0</td>
+   <td>Unknown</td>
+   </tr>
+   <tr>
+   <td>1</td>
+   <td>RC Command</td>
+   </tr>
+   <tr>
+   <td>2</td>
+   <td>GCS Command</td>
+   </tr>
+   <tr>
+   <td>3</td>
+   <td>Radio Failsafe</td>
+   </tr>
+   <tr>
+   <td>4</td>
+   <td>GCS Failsafe</td>
+   </tr>
+   <tr>
+   <td>5</td>
+   <td>EKF Failsafe</td>
+   </tr>
+   <tr>
+   <td>6</td>
+   <td>GPS Glitch</td>
+   </tr>
+   <tr>
+   <td>9</td>
+   <td>Fence Breached</td>
+   </tr>
+   <tr>
+   <td>10</td>
+   <td>Terrain</td>
+   </tr>
+   <tr>
+   <td>18</td>
+   <td>Crash</td>
+   </tr>
+   </tbody>
+   </table>
+   <tr>
+   <td>25+</td>
+   <td>General unspecific</td>
+   </tr>
+
+
 Independent Watchdog
 --------------------
 
