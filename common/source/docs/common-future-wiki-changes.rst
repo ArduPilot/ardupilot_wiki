@@ -319,6 +319,20 @@ Scripting see :ref:`common-lua-scripts`
    </tbody>
    </table>
 
+Output Mapping Page under QuadPlane Functions
+---------------------------------------------
+
++--------------------------------+----+-----------------------------------------------------------------+
+|      Tilt Motor Rear           | 45 |    QuadPlane                                                    |
++--------------------------------+----+-----------------------------------------------------------------+
+|      Tilt Motor Rear Left      | 46 |    QuadPlane                                                    |
++--------------------------------+----+-----------------------------------------------------------------+
+|      Tilt Motor Rear Right     | 47 |    QuadPlane                                                    |
++--------------------------------+----+-----------------------------------------------------------------+
+
+- change title of explanations from "Motor Tilt/ Tilt Motor Left/ Tilt Motor Right" to "Tilt Motor/ Tilt Motor Left/ Tilt Motor Right/ Tilt Motor Rear/ Tilt Motor Rear Left/ Tilt Motor Rear Right"
+
+
 RC Options Page
 ---------------
 
@@ -470,6 +484,25 @@ On Tilt Rotors and Tailsitters pages:
 add note:
 
 For landing in fixed wing, manual throttle controlled modes, there is an ``RCx_OPTION`` (89) that will force the tilt servos upright, force idle throttle, and optionally force the pitch to target :ref:`LAND_PITCH_CD<LAND_PITCH_CD>` for flaring to the normal fixed wing landing. This allows intentional or emergency fixed wing landings in MANUAL, ACRO, STABILIZE, and FBWA modes without the risk of a prop strike in configurations where this could occur otherwise.
+
+On Tilt Rotors page:
+--------------------
+
+- add note and change table to:
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tr><th>Tilt Control</th><th>SERVOn_FUNCTION</th></tr>
+   <tr><td>Tilt Motors Rear</td><td>45</td></tr>
+   <tr><td>Tilt Motor Rear Left</td><td>46</td></tr>
+   <tr><td>Tilt Motor Rear Right</td><td>47</td></tr>
+   <tr><td>Tilt Motor</td><td>41</td></tr>
+   <tr><td>Tilt Motor Left</td><td>75</td></tr>
+   <tr><td>Tilt Motor Right</td><td>76</td></tr>
+   </table>
+
+.. note:: For vectored yaw applications, the right and left tilt servos would be used for front and/or back.
 
 On Tailsitters page, under Vectored Thrust:
 -------------------------------------------
