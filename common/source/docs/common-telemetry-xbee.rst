@@ -48,7 +48,8 @@ The
 application can be used to configure the XBee modules.  In particular
 they should be set to transmit at 57600 baud.
 
-This is example of xbee setting parameters.(if. PC's MAC:0013A2004567EFGH , Pixhawk's xbee MAC:0013A2004567WXYZ)
+The following parameters can be set in the XCTU application. In addition, it has a track record of use in XBee ZB（S2C）.
+Example of xbee setting parameters.(if. PC's MAC:0013A2004567EFGH , Pixhawk's xbee MAC:0013A2004567WXYZ)
 
 +-------------------+--------------------------------------------+---------------------------------------------+
 |                   |                                   Setting Parameter                                      |
