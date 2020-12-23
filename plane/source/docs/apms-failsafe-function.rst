@@ -305,7 +305,7 @@ There are three possible enabled settings. Seeing :ref:`FS_GCS_ENABL<FS_GCS_ENAB
 Failsafe Diagnosis in Logs or GCS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-GCSs will often display text indicating the type of failsafe encountered. Refer to this table if you failsafe displays as a TYPE=X, REASON=X
+GCSs will often display text indicating the type of failsafe encountered, such as "Failsafe Short event on: type=1/reason=3". Type and Reason can be determined using the table below:
 
 
 .. raw:: html
@@ -395,4 +395,3 @@ Independent Watchdog
 --------------------
 
 See :ref:`common-watchdog` for details.
-
