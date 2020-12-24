@@ -134,7 +134,7 @@ So a value of e.g. 60 degrees results in switching from copter to plane controll
 PID gain scheduling
 ===================
 
-PID gains can be scaled for fixed wing control surfaces while in VTOL flight modes for Tailsitters by setting :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`.
+PID gains can be scaled for fixed wing control surfaces while in VTOL flight modes for Tailsitters by setting ``Q_TAILSIT_THSCMX``.
 
 - If greater than 1: defines the maximum boost that will be applied to the fixed wing control surfaces when throttle is below hover in VTOL modes, this should be reduced if oscillations are seen at low throttle. Default is 5, providing a lot of boost to control surfaces.
 
@@ -143,7 +143,7 @@ PID gains can be scaled for fixed wing control surfaces while in VTOL flight mod
 .. _4.1-gainscaling:
 
 In Plane 4.1 and later, the above parameter and gain scheduling is changed to 3 parameters controlling gain scaling via :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>`, which is a 3 bit mask allowing several options:
-    - Bit 0 enables gain boost with maximum set by parameter :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`. This is the maximum boost that will be applied to the control surfaces when throttle is below hover, this should be reduced if oscillations are seen at low throttle.
+    - Bit 0 enables gain boost with maximum set by parameter ``Q_TAILSIT_THSCMX``. This is the maximum boost that will be applied to the control surfaces when throttle is below hover, this should be reduced if oscillations are seen at low throttle.
     - Bit 1 enables attitude/throttle based gain attenuation with minimum gain (maximum attenuation) set by parameter :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>`. With this option, control surface deflection is reduced at high tilt angles and high throttle levels to prevent oscillation at high airspeeds.
     - Bit 2 is reserved for future enable of airspeed sensor based gain interpolation .
 
