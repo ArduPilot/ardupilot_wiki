@@ -76,7 +76,7 @@ These bi-directional protocols require the use of a Serial Port. See links below
 RC input to Serial Port
 -----------------------
 
-.. note:: ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect all the protocols, if the serial port protocol to 23 (for example :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART is used)
+.. note:: ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect all the protocols, if the serial port protocol is set to 23 (for example :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART is used)
 
 Radio System Selection
 ======================
