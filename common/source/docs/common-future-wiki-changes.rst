@@ -504,6 +504,13 @@ In order to help prevent Airspeed sensor use when its been miscalibrated either 
 
 You can also send a warning to the Ground Control Station if the apparent wind exceeds :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>`. This can be used instead of, or together with the above.
 
+On Quadplane Tips Page:
+-----------------------
+
+Under Tilt Rotor Servo Setup, add:
+
+Note that setting :ref:`Q_OPTIONS<Q_OPTIONS>` bit 10 (Disarmed Yaw Tilt) allows the motors to tilt in response to rudder input while disarmed to facilitate adjustment of parameters.
+
 -----------------------------------------------------
 
 Copter
