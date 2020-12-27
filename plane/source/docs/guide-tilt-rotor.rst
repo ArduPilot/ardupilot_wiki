@@ -87,7 +87,7 @@ The most important parameter for a tilt-rotor is the tilt-mask, in the
 The :ref:`Q_TILT_MASK<Q_TILT_MASK>` is a bitmask of what motors can tilt on your
 vehicle. The bits you need to enable correspond to the motor ordering
 of the standard ArduCopter motor map for your chosen frame class and
-frame type.
+frame type, ie. bit 0 corresponds to Motor 1.
 
 For example, if you have a tilt-tricopter where the front two motors
 tilt, then you should set :ref:`Q_TILT_MASK<Q_TILT_MASK>` to 3, which is 2+1.
@@ -137,12 +137,12 @@ You control that with 3 possible servo function values.
 
    <table border="1" class="docutils">
    <tr><th>Tilt Control</th><th>SERVOn_FUNCTION</th></tr>
-   <tr><td>Motor tilt</td><td>41</td></tr>
-   <tr><td>Left Motor tilt</td><td>75</td></tr>
-   <tr><td>Right Motor tilt</td><td>76</td></tr>
+   <tr><td>Tilt Front Motors</td><td>41</td></tr>
+   <tr><td>Tilt Front Left Motor</td><td>75</td></tr>
+   <tr><td>Tilt Front Right Motor</td><td>76</td></tr>
    </table>
 
-You should choose normal ``Motor tilt`` unless you are configuring a
+You should choose normal ``Tilt Front Motors`` unless you are configuring a
 vectored yaw aircraft and have set :ref:`Q_TILT_TYPE<Q_TILT_TYPE>` to 2.
 
 For example, if you have a single servo which tilts your rotors
@@ -224,7 +224,7 @@ then your :ref:`Q_TILT_YAW_ANGLE<Q_TILT_YAW_ANGLE>` would be 20, as that is the 
 degrees that the tilt mechanism can go.
 
 You also need to setup your two tilt servos with ``SERVOn_FUNCTION`` =75
-for left tilt and ``SERVOn_FUNCTION`` =76 for right tilt.
+for left front tilt and ``SERVOn_FUNCTION`` =76 for right front tilt.
 
 Non-Vectored Yaw
 ================
