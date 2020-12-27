@@ -55,7 +55,7 @@ This is quite different from Loiter mode in which the pilot cannot force the veh
 
 .. note::
 
-   The vehicle will also stop before hitting barriers above it there is an upward facing range finder.
+   The vehicle will also stop before hitting barriers above it if there is an upward facing range finder.
    Currently this range finder's distance must be sent to ardupilot using the `DISTANCE_SENSOR <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ message with the orientation field set to 24 (upwards).
 
 Reporting to the Ground Station
