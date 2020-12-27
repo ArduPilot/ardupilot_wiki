@@ -306,7 +306,7 @@ is called every 50 times (ie. once a second) and the
 five_second_call() is called every 250 times (ie. once every 5
 seconds).
 
-The third number is the maximum time that the function is expected to
+The second number is the maximum time that the function is expected to
 take. This is used to avoid making the call unless there is enough time
 left in this scheduling run to run the function. When scheduler.run() is
 called it is passed the amount of time (in microseconds) available for
