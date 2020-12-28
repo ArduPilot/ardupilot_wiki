@@ -68,6 +68,10 @@ In order to upgrade to this version:
 
        telnet 192.168.42.1
 
+   .. note::
+
+      A telnet error here indicates the Bebop's current firmware does not have the correct port open. Manually reboot the Bebop to complete the update.
+
 #. Sync and reboot
 
    ::
