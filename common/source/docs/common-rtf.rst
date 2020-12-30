@@ -15,6 +15,7 @@ Copters from Partners
 =====================
 
 * `Bask Aerospace - AeroDrone MR4 <http://www.baskaerospace.com.au/aerodrone/mr4>`__
+* `CUAV - Xunwing X4 <https://store.cuav.net/shop/xunwing-x4/>`__
 * `Hitec - SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__
 * `SkyRocket - Journey <http://sky-viper.com/journey/>`__
 * `TT Robotix - X-1300 EagleEyes Quadcopter <http://www.ttrobotix.com/products/detail/923.html>`__
