@@ -26,5 +26,11 @@ Purchase
 
 `CUAV Store <https://store.cuav.net/shop/xunwing-x4/>`__
 
+Connection and Setup
+--------------------
 
+- Mount the RC receiver to the frame and connect to the autopilot's "RC IN" port. Note that the white wire should be at the bottom
 
+Firmware used: Copter-4.0
+
+Parameter file: `cuav-xunwing-x4.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/cuav-xunwing-x4.param>`__
