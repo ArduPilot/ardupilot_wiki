@@ -13,6 +13,7 @@ This section includes details on tested frames to speed up DIY builds of multico
 
     Hexsoon EDU450 <reference-frames-hexsoon-edu450>
     AmovLab P200 <reference-frames-amovlab-p200>
+    CUAV xunwing X4<reference-frames-xunwing-x4>
 
 .. note::
 
