@@ -26,6 +26,7 @@ Copter to fit on the APM2.x board.
     * `Developer Builds <https://firmware.ardupilot.org/devbuild>`__ 
     * `Build and Development Tools <https://firmware.ardupilot.org/Tools>`__ 
     * `Companion Computers and associated example code <https://github.com/ArduPilot/companion>`__ 
+    * `AP Peripherals <https://firmware.ardupilot.org/AP_Periph>`__ 
 
 
 Firmware
