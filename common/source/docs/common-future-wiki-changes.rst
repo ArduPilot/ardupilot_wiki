@@ -518,7 +518,7 @@ change note about Copter Tailsitters to read:
 On Tailsitters page, under Tailsitter Configuration:
 ----------------------------------------------------
 
-add frame types 16 and 17 to table of supported frame types for CopterMotor Tailsitters and add new diagrams with motor rotation matching Copter for yaw torque controlled plus (0) and X (1) frames.
+add frame types 16 and 17 to table of supported frame types for CopterMotor No Yaw Torque Tailsitters and add new diagrams with motor rotation matching Copter for yaw torque controlled plus (0) and X (1) frames.
 
 add note:
 
