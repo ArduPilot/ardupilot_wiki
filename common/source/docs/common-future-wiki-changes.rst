@@ -520,6 +520,10 @@ On Tailsitters page, under Tailsitter Configuration:
 
 add frame types 16 and 17 to table of supported frame types for CopterMotor No Yaw Torque Tailsitters and add new diagrams with motor rotation matching Copter for yaw torque controlled plus (0) and X (1) frames.
 
+.. image:: ../images/x-copter-yawtorque-quadplane.jpg
+
+.. image:: ../images/plus-copter-yawtorque-quadplane.jpg
+
 add note:
 
 .. note:: it is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, all Copter motors would be set to be active in fixed wing modes via :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` and :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask would have bit 7 (Force QASSIST) set to have QASSIST active in all modes.
