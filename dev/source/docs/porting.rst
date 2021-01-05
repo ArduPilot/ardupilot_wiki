@@ -6,7 +6,7 @@ Porting to a new flight controller board
 
 ArduPilot :ref:`supports a wide variety of flight controllers <common-autopilots>` with new controllers being added all the time.  This page spells out the steps to port ArduPilot to a new board with an emphasis on porting to STM32 based boards (the most common type) using `ChibiOS <http://www.chibios.org/dokuwiki/doku.php>`__.
 
-Consider joining the `ArduPilot/ChibiOS gitter channel <https://gitter.im/ArduPilot/ChibiOS>`__ to speak with other developers about this topic.
+Consider joining the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ to speak with other developers about this topic.
 
 ..  youtube:: y2KCB0a3xMg
     :width: 100%
@@ -14,7 +14,7 @@ Consider joining the `ArduPilot/ChibiOS gitter channel <https://gitter.im/ArduPi
 Step 1 - getting started
 ------------------------
 
-- determine which microcontroller the new flight controllers uses.  if it is a CPU we already support (STM32F42x, STM32F40x STM32F41x, STM32F745, STM32F765 or STM32F777 where “x” can be any number), then the port should be relatively straight forward.  If it is another CPU, ping us on the `ArduPilot/ChibiOS gitter channel <https://gitter.im/ArduPilot/ChibiOS>`__ for advice on how to proceed.
+- determine which microcontroller the new flight controllers uses.  if it is a CPU we already support (STM32F42x, STM32F40x STM32F41x, STM32F745, STM32F765 or STM32F777 where “x” can be any number), then the port should be relatively straight forward.  If it is another CPU, ping us on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ for advice on how to proceed.
 - determine the crystal frequency (normally 8Mhz or 24Mhz).  refer to the schematic or read the writing on the crystal which is normally a small silver square.
 
 Step 2 - create a hwdef.dat file for the board
@@ -155,6 +155,6 @@ To build the bootloader you do the following:
 Next Steps
 ----------
 
-If you have gotten this far, congratulations you have ported ArduPilot to a new board!  Please reach out to the other developers on the `ArduPilot/ChibiOS gitter channel <https://gitter.im/ArduPilot/ChibiOS>`__ to announce your success.
+If you have gotten this far, congratulations you have ported ArduPilot to a new board!  Please reach out to the other developers on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ to announce your success.
 
 For widely available boards it is very likely we will help you get the board on the official list of supported boards including automatic firmware builds, easy uploading through the ground stations and onto our wiki!  In any case, we welcome new ports so please contact us.
