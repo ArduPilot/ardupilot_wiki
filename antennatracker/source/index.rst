@@ -22,7 +22,7 @@ the range over which signals can be both sent and received from
 a ground station.
 
 If your a developer wanting to work on AntennaTracker please join the
-ArduPilot gitter chat channel which can be found in the Community menu
+ArduPilot Discord chat channel which can be found in the Community menu
 above.
 
 If your a user looking for support on the AntennaTracker please go to
