@@ -23,20 +23,7 @@ Development
 
 - `Mon/Tue Weekly Meetings on Discord <https://ardupilot.org/dev/docs/ardupilot-discord-server.html>`__
 - `ArduPilot Discord (live chat) <https://ardupilot.org/discord>`__ live chat for ArduPilot developers (not for support questions)
-- `ArduPilot Gitter (live chat) <https://gitter.im/ArduPilot/ardupilot>`__ the starting place to discuss ArduPilot development (not for support questions)
-- `ArduPilot Gitter General Chat <https://gitter.im/ArduPilot/GeneralChat>`__ for discussions not always directly related to ArduPilot development
-- `ArduPilot Gitter Mission Planner Chat <https://gitter.im/ArduPilot/MissionPlanner>`__ for discussion related to Mission Planner development
-- `ArduPilot Gitter APSync and Companion Computer chat <https://gitter.im/ArduPilot/companion>`__ for chat on companion computer development
-- `ArduPilot Gitter APM Planner 2.0 chat <https://gitter.im/ArduPilot/apm_planner>`__ for discussion related to APM Planner 2.0
-- `ArduPilot Gitter CANBUS protocol chat <https://gitter.im/ArduPilot/CANBUS>`__
-- `ArduPilot Gitter Google-Summer-Of-Code chat <https://gitter.im/ArduPilot/GSoC>`__ for potential students and mentors
-- `ArduPilot Gitter Hardware <https://gitter.im/ArduPilot/Hardware>`__
-- `ArduPilot Gitter MAVProxy chat <https://gitter.im/ArduPilot/MAVProxy>`__ discussion related to the MAVProxy ground station
-- `ArduPilot Gitter MQTT protocol chat <https://gitter.im/ArduPilot/MQTT>`__
-- `ArduPilot Gitter pymavlink chat <https://gitter.im/ArduPilot/pymavlink>`__
-- `ArduPilot Gitter Research chat <https://gitter.im/ArduPilot/Research>`__ discussion of academic and industry research using ArduPilot
-- `ArduPilot Gitter Vision Projects <https://gitter.im/ArduPilot/VisionProjects>`__ for ROS, OpenCV and other image processing related development
-- `ArduPilot Gitter Wiki chat <https://gitter.im/ArduPilot/ardupilot_wiki>`__ for discussion of wiki enhancements
+
 
 Facebook
 ========
