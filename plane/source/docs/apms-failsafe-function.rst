@@ -7,10 +7,9 @@ Plane Failsafe Function
 Plane has a limited failsafe function which is designed to do four
 things:
 
-#. Detect a complete loss of RC signal and initiate a defined response, such as returning to home. 
-Detection is either by lack of data/pulses from the receiver, the throttle channel PWM value falling below a certain point set by :ref:`THR_FS_VALUE<THR_FS_VALUE>`, or the receiver sets a FS bit in its data stream for those protocols supporting this. Detection of these must be enabled by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 1 or 2.
+#. Detect a complete loss of RC signal and initiate a defined response, such as returning to home. Detection is either by lack of data/pulses from the receiver, the throttle channel PWM value falling below a certain point set by :ref:`THR_FS_VALUE<THR_FS_VALUE>`, or the receiver sets a FS bit in its data stream for those protocols supporting this. Detection of these must be enabled by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 1 or 2.
 #. Optionally, detect loss of telemetry (GCS Failsafe) and take an programmable action, such as switching to return to launch (RTL) mode.
-#. Detect loss of GPS for more than 20 seconds and switch into Dead Reckoning mode until GPS signal is regained.
+#. Detect loss of GPS for more than 20 seconds and switch into Dead Reckoning mode until GPS signal is regained. See https://youtu.be/0VMx2u8MlUU for a demo.
 #. Optionally, detect low battery conditions (voltage/remaining capacity) and initiate a programmable response, such as returning to home. ArduPilot supports this on multiple batteries.
 
 Here's what the failsafe **will not do**:
