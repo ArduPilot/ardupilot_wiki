@@ -116,4 +116,4 @@ Future Steps
 - improve integration with ROS (`issue here <https://github.com/ArduPilot/ardupilot/issues/5608>`__)
 - implement a simple occupancy grid for cases where we cannot (or do not want to) implement ROS on the vehicle (`issue here <https://github.com/ArduPilot/ardupilot/issues/5609>`__)
 
-If you would like to get involved with the development of this area, please consider posting in the issues listed above or chatting with the developers on `Gitter/ArduPilot <https://gitter.im/ArduPilot/ardupilot>`__.
+If you would like to get involved with the development of this area, please consider posting in the issues listed above or chatting with the developers on `ArduPilot Discord <https://ardupilot.org/discord>`__.
