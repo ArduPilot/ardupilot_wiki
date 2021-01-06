@@ -8,10 +8,6 @@ This very simple flight mode simply stops the vehicle as soon as
 possible using the Loiter controller.  Once invoked, this mode does not
 accept any input from the pilot. This mode requires GPS.
 
-.. note::
-
-   The Brake flight mode was introduced in AC3.3.
-
 Overview
 ========
 
