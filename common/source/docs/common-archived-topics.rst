@@ -51,6 +51,7 @@ value to users with old hardware.
     Landing Gear <landing-gear>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     Analog Sonar (AC3.1) <sonar>
+    Tricopter Setup <archived-tricopter>
     [/site]
 [site wiki="rover"]
     Pre-4.0 Rover Avoidance <rover-object-avoidance>
