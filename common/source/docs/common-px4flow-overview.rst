@@ -13,7 +13,7 @@ This article describes how to setup the `PX4FLOW (Optical Flow) Sensor <https://
 
 .. warning::
 
-   The PX4FLOW is supported from Copter 3.3 and higher. It is not yet supported in Plane or Rover.
+   The PX4FLOW is not yet supported in Plane or Rover.
 
 Overview
 ========

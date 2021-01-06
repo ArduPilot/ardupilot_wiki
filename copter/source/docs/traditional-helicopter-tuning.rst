@@ -4,10 +4,8 @@
 Traditional Helicopter – Tuning
 ===============================
 
-This tuning guide is applicable to all versions of ArduCopter for traditional
-helicopters. However, it is written for Copter 3.4 and newer. Since the names of
-parameters, and scaling, were changed from Copter 3.3 to 3.4 the
-:ref:`old tuning guide is archived here <traditional-helicopter-archived-tuning>`
+This tuning guide is applicable to current versions of ArduCopter for traditional
+helicopters. See the :ref:`old tuning guide which is archived here <traditional-helicopter-archived-tuning>` for old versions.
 
 For making setting changes to traditional helicopters, users are reminded to 
 use only the Full or Complete Parameter List in your ground station software. 

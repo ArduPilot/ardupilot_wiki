@@ -6,11 +6,6 @@ LIDAR-Lite Rangefinder
 
 The `Garmin / PulsedLight LIDAR-Lite <https://support.garmin.com/support/manuals/manuals.htm?partNo=010-01722-00>`__ rangefinder is a low-cost optical distance measurement solution with a 40m range under most operating conditions, low power consumption, and small form factor.  This sensor can be purchased from many online retailers including `Sparkfun <https://www.sparkfun.com/products/14032>`__.  Technical info can be found `here <https://support.garmin.com/support/manuals/manuals.htm?partNo=010-01722-00>`__.
 
-.. note::
-
-   Support was added in Copter 3.3, Plane 3.3, and Rover 2.49.
-   ArduPilot supports LIDAR-Lite v1 (aka "Black Label"), v2 (aka "Blue Label") and v3.
-
 ..  youtube:: 3I06AOwIQVY
     :width: 100%
 
