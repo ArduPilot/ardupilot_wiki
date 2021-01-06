@@ -1612,7 +1612,7 @@ control the landing are provided in :ref:`LAND flight mode <plane:land-mode>`.
    <tr>
    <td><strong>param1</strong></td>
    <td>Abort Alt</td>
-   <td>Altitude to climb to if landing is aborted (From Plane 3.4)</td>
+   </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
@@ -1740,7 +1740,7 @@ Move to the next command when the desired altitude is reached.
 
 .. note::
 
-   In Plane 3.4 (and later) the ``param1`` value sets how close the
+   The ``param1`` value sets how close the
    vehicle altitude must be to target altitude for command
    completion.
 
@@ -1761,7 +1761,7 @@ Move to the next command when the desired altitude is reached.
    <td>Climb or Descend (0 = Neutral, command completes when within 5m of this
    command's altitude, 1 = Climbing, command completes when at or above
    this command's altitude, 2 = Descending, command completes when at or
-   below this command's altitude. Introduced in Plane 3.4.
+   below this command's altitude.
    </td>
    </tr>
    <tr style="color: #c0c0c0">
@@ -3786,10 +3786,6 @@ This command allows you to specify a roll, pitch and yaw angle which
 will be sent to the :ref:`camera gimbal <common-cameras-and-gimbals>`. This
 can be used to point the camera in specific directions at various times
 in the mission.
-
-.. note::
-
-   Supported from AC3.3, Plane 3.4
 
 **Command parameters**
 
