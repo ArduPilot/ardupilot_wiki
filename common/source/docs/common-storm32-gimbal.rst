@@ -20,7 +20,7 @@ gimbal has been tested with a `DYS 3-axis brushless gimbal <https://hobbyking.co
 
 .. note::
 
-   Support for this gimbal is included in Copter 3.3 (and higher) for
+   Support for this gimbal is included for
    gimbals running
    `v067e <http://www.olliw.eu/storm32bgc-wiki/Downloads>`__ (or higher). 
 

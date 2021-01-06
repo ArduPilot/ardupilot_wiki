@@ -7,10 +7,6 @@ SimpleBGC Gimbal (aka AlexMos gimbal)
 The SimpleBGC is a popular brushless gimbal controller that can communicate with ArduPilot (Copter, Plane, and Rover) using a custom serial protocol.
 More details on the capabilities of this gimbal can be found at `basecamelectronics.com <https://www.basecamelectronics.com/>`__
 
-.. note::
-
-   Support for this gimbal is included in Copter 3.4 (and higher). 
-
 Where to Buy
 ============
 

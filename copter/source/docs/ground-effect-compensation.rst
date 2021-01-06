@@ -4,13 +4,9 @@
 Ground Effect Compensation
 ==========================
 
-Copter 3.4 (and higher) includes ground effect compensation which reduces the weighting of the barometer (in favour of the accelerometers) when the vehicle is likely taking off or landing.  This reduces the bounce sometimes seen when landing vehicles with short legs compared to the length of their propellers.
+Copter includes ground effect compensation which reduces the weighting of the barometer (in favour of the accelerometers) when the vehicle is likely taking off or landing.  This reduces the bounce sometimes seen when landing vehicles with short legs compared to the length of their propellers.
 
 If your vehicle is not suffering from the bounce on landing it's best to leave this feature disabled because it slightly increases the risk of high vibration levels upsetting the altitude estimate.
-
-.. note::
-
-    Ground Effect compensation was introduced in Copter 3.4.
 
 Setup
 =====
