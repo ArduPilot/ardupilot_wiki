@@ -7,7 +7,7 @@ Generators
 .. figure:: ../../../images/generators.png
    :target: ../_images/generators.png
 
-ArduPilot 4.1 (and higher) supports generators for powering your vehicle.  Some generators can be controlled from ArduPilot, others are telemetry only.  Within ArduPilot the term generator is used to broadly group all devices that convert some form of fuel into electrical power.
+ArduPilot supports generators for powering your vehicle.  Some generators can be controlled from ArduPilot, others are telemetry only.  Within ArduPilot the term generator is used to broadly group all devices that convert some form of fuel into electrical power.
 
 The following are all currently supported within ArduPilot:
 
