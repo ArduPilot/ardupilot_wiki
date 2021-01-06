@@ -7,7 +7,7 @@ TRAINING Mode
 TRAINING mode is ideal for teaching students manual R/C control. It
 gives users complete control over the rudder and throttle, but clips the
 maximum roll and maximum/minimum pitch to certain limits which cannot be
-exceeded. Starting from Plane 3.4, TRAINING mode also restricts plane
+exceeded. TRAINING mode also restricts plane
 roll to the :ref:`Stall Prevention <stall-prevention>` roll limits.
 
 More specifically:
