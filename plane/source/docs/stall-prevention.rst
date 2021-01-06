@@ -69,7 +69,7 @@ prevention code:
 -  CRUISE
 -  LOITER
 -  GUIDED
--  TRAINING (from Plane 3.4)
+-  TRAINING
 
 In each of these modes the aircraft is either calculating a desired bank
 angle for the navigation code, or the user is inputting a desired bank

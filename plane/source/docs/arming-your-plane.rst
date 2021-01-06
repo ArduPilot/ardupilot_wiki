@@ -73,7 +73,7 @@ How to Arm
 ==========
 
 When you are ready to fly you can ask Plane to arm. This can be done in
-two ways:
+three ways:
 
 -  **Rudder Arming**. Hold the rudder stick fully to the right and the
    throttle stick fully down for 2 seconds.
@@ -92,7 +92,7 @@ How to Disarm
 
 .. warning:: This is **UNCONDITIONAL**. If done while in flight, all motors disarm and you must have throttle at idle before re-arming can occur!
 
-Since ArduPlane 3.4.0 it is possible to disarm using the transmitter.
+It is also possible to disarm using the transmitter.
 This is done holding throttle at minimum and rudder to the left for 2
 seconds. In ArduPlane this condition could be accidentally triggered by
 pilots while flying so there are additional requirements prior to disarm:
