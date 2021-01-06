@@ -5,7 +5,6 @@ Auxiliary Function Switches (3.6 and earlier)
 =============================================
 
 This article shows how to set up which features are invoked from the transmitter's auxiliary function switches prior to Copter-4.0.
-AC3.2.1 and earlier allowed channels 7 and 8 to be used as auxiliary switches.  AC3.3 and higher supports channels 7 to 12.
 
 Configuration
 =============
@@ -75,23 +74,6 @@ inputs. See details `here <autotrim>`__.
    mission. If in AUTO mode no waypoint will be saved, instead the vehicle will RTL</td>
    </tr>
    <tr>
-   <td><strong>Multi Mode</strong></td>
-   <td>
-   
-This option has been removed from AC3.3 (and higher).
-
-Ch6 tuning knob position controls which of the following 3 functions is
-invoked when ch7 or ch8 switch put in the on position.
-
--  Ch6 <1200 : Flip
--  Ch6 1201 ~ 1799 : RTL
--  Ch6 > 1800 : Save Waypoint
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
    <td><strong>Camera Trigger</strong></td>
    <td>
 
@@ -115,15 +97,6 @@ Camera shutter will be activated. See more details
    <tr>
    <td><strong>Fence</strong></td>
    <td>Fence is disabled when switch is in low position, enabled when it high position.</td>
-   </tr>
-   <tr>
-   <td><strong>ResetToArmedYaw</strong></td>
-   <td>
-   This option has been removed from AC3.3 (and higher).
-
-   Vehicle will turn to face the same direction that it was facing when it
-   was first armed (e.g. at take-off). An alternative to simple mode when
-   you've lost orientation and need to bring the craft home.</td>
    </tr>
    <tr>
    <td><strong>Super Simple Mode</strong></td>
@@ -315,14 +288,15 @@ Switch pulled low turns off the fourth :ref:`relay <common-relay>`, pulled high 
 .. raw:: html
 
    </td>
-   <td>Retracts/Deploys landing gear. (AC3.3 and higher)</td>
+   <td>Retracts/Deploys landing gear. 
+   </td>
    </tr>
    <tr>
    <td><strong>Lost Copter Alarm</strong></td>
    <td>
 
 Plays the `lost copter alarm <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__
-though the buzzer (AC3.3 and higher)
+though the buzzer
 
 .. raw:: html
 
@@ -333,7 +307,7 @@ though the buzzer (AC3.3 and higher)
    <td>
 
 Stops motors immediately
-(`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__). (AC3.3 and higher)
+(`video <https://www.youtube.com/watch?v=-Db4u8LJE5w>`__).
 
 .. raw:: html
 
@@ -344,7 +318,7 @@ Stops motors immediately
    <td>
 
 Opposite of Emergency stop (above) in that switch must be ON for motors
-to spin (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__). (AC3.3 and higher)
+to spin (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__).
 
 .. raw:: html
 
@@ -356,7 +330,7 @@ to spin (`video <https://youtu.be/-Db4u8LJE5w?t=51>`__). (AC3.3 and higher)
 
 Invokes the :ref:`Brake flight mode <brake-mode>` when switch goes high.
 Bringing switch back to low will return the vehicle to the mode
-indicated by the ch5 flight mode switch. (AC3.3 and higher)
+indicated by the ch5 flight mode switch.
 
 .. raw:: html
 
@@ -368,7 +342,7 @@ indicated by the ch5 flight mode switch. (AC3.3 and higher)
 
 Invokes the :ref:`Throw flight mode <throw-mode>` when switch goes high.
 Bringing switch back to low will return the vehicle to the mode
-indicated by the ch5 flight mode switch. (AC3.4 and higher)
+indicated by the ch5 flight mode switch.
 
 .. raw:: html
 
@@ -378,7 +352,7 @@ indicated by the ch5 flight mode switch. (AC3.4 and higher)
    <td><strong>ADSB-Avoidance</strong></td>
    <td>
 
-When switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of manned aircraft) is enabled, when switch is low, disabled. (AC3.4 and higher)
+When switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of manned aircraft) is enabled, when switch is low, disabled.
 
 .. raw:: html
 
@@ -388,7 +362,7 @@ When switch is high, :ref:`ADSB avoidance <common-ads-b-receiver>` (avoidance of
    <td><strong>Precision Loiter</strong></td>
    <td>
 
-Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`.  I.e. holding position above a target in Loiter mode using IR-Lock sensor. (AC3.5 and higher)
+Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`.  I.e. holding position above a target in Loiter mode using IR-Lock sensor. 
 
 .. raw:: html
 
@@ -398,7 +372,7 @@ Turns on/off :ref:`Precision Loiter <precision-landing-with-irlock>`.  I.e. hold
    <td><strong>Object Avoidance</strong></td>
    <td>
 
-When switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>` or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`. (AC3.4 and higher)
+When switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware-sf40c-objectavoidance>` or :ref:`TeraRanger Tower<common-teraranger-tower-objectavoidance>`.
 
 .. raw:: html
 
@@ -409,7 +383,7 @@ When switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware
    <td>
 
 Arms the vehicle if the switch goes high (subject to arming checks).
-Disarms the vehicle if brought low. (AC3.5 and higher)
+Disarms the vehicle if brought low.
 
 .. raw:: html
 

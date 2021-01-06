@@ -14,13 +14,9 @@ resistance while the EZ0 has the widest beam and highest sensitivity.
 `The datasheet can be found here <https://www.maxbotix.com/documents/I2CXL-MaxSonar-EZ_Datasheet.pdf>`__. 
 Additional information on the similar :ref:`analog version of this sonar can be found here <copter:sonar>`.
 
-.. note::
 
-   This rangefinder is only supported on the Pixhawk running AC3.2 or
-   higher or recent versions of Plane and Rover.
-   
 .. warning::
-   
+
    ``RNGFNDx_MAX_CM`` must be set to a tested, appropriate value.  If ``RNGFNDx_MAX_CM`` is set to a value
    greater than the range of the sensor, the autopilot will not respond correctly to the 
    data provided.

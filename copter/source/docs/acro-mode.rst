@@ -39,7 +39,7 @@ Overview
 .. youtube:: tC0mF-N5z0Q
     :width: 100%
 
-The above video was filmed with a Pixhawk running AC3.2 in ACRO mode
+The above video was filmed in ACRO mode
 using :ref:`FPV goggles <common-fpv-first-person-view>`.
 
 

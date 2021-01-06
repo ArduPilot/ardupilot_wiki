@@ -9,10 +9,6 @@ control. This means that, in position mode, the copter maintains a
 consistent location and heading, while allowing the operator to control
 the throttle manually.
 
-.. warning::
-
-   This mode is not available in AC3.2 and higher.
-
 .. image:: ../images/position.jpg
     :target: ../_images/position.jpg
 
