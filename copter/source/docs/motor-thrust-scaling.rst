@@ -23,7 +23,7 @@ The curve is controlled by two parameters:
    pictures below).  The default is "0.65" (the image below incorrectly
    states the default is 0.5).
 
-.. warning:: Some ESCs (T-Motor Alpha and some Flame series, and possibly others) have built-in linearizing curves and the default EXPO value of "0.65" will cause stability issues, requiring thrust stand measurements to adjust the EXPO. Typically, values of "0" to "0.2" will result.
+.. warning:: Some ESCs have built-in linearizing curves and the default EXPO value of "0.65" will cause stability issues, requiring thrust stand measurements to adjust the EXPO. Typically, values of "0" to "0.2" will result.
 
 .. image:: ../images/MotThstExpo_graphs2.png
     :target: ../_images/MotThstExpo_graphs2.png
