@@ -203,10 +203,6 @@ Limit maximum distance from home
 
 If using FBWB or CRUISE mode, the parameter :ref:`SOAR_MAX_RADIUS<SOAR_MAX_RADIUS>` can be used to trigger RTL if the aircraft is more than this distance from home when thermalling while in LOITER mode. Note that this parameter won't stop the aircraft from exceeding this distance before it enters LOITER mode.
 
-If Soaring is enabled when beyond this :ref:`SOAR_MAX_RADIUS<SOAR_MAX_RADIUS>`, it will not begin any Loitering in thermals, ie the same effect as if the middle RC switch option for Soaring was used. 
-
-.. warning:: If altitude is below :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>`, when Soaring is enabled beyond this limit, it will begin gliding, but not climb or RTL, nor LOITER in a thermal, and will glide to the ground! 
-
 
 Time limits
 -----------
