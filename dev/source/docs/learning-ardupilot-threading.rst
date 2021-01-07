@@ -79,8 +79,8 @@ what threads are created and what the realtime priority of each thread
 is.
 
 If you have a Pixhawk then you should also now setup a debug console
-cable and attach to the nsh console (the serial5 port). Connect at
-57600. When you have connected, try the "ps" command ad you will get
+cable and attach it to the nsh console (the serial5 port). Connect at
+57600. When you have connected, try the "ps" command and you will get
 something like this:
 
 ::
