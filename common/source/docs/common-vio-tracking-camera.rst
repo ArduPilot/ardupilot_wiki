@@ -73,7 +73,7 @@ For ArduPilot-4.1 (and later):
 If you wish to use the camera's heading:
 
 - :ref:`COMPASS_USE <COMPASS_USE>` = 0, :ref:`COMPASS_USE2 <COMPASS_USE2>` = 0, :ref:`COMPASS_USE3<COMPASS_USE3>` = 0 to disable all compasses
-- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 (External)
+- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 6 (ExternalNav)
 
 If you wish to use the autopilot's compass for heading:
 

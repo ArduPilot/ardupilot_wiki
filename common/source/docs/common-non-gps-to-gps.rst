@@ -29,7 +29,7 @@ The secondary sensor source set should be configured for the non-GPS environment
 - :ref:`EK3_SRC2_VELXY <EK3_SRC2_VELXY>` = 6 (Secondary horizontal velocity from External Nav)
 - :ref:`EK3_SRC2_POSZ <EK3_SRC2_POSZ>` = 1 (Secondary vertical position from barometer)
 - :ref:`EK3_SRC2_VELZ <EK3_SRC2_VELZ>` = 6 (Secondary vertical velocity from External Nav)
-- :ref:`EK3_SRC2_YAW <EK3_SRC2_YAW>` = 2 (Secondary yaw/heading from External Nav)
+- :ref:`EK3_SRC2_YAW <EK3_SRC2_YAW>` = 6 (Secondary yaw/heading from External Nav)
 
 The fusing of all velocities should be disabled by unchecking the :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` parameter's "FuseAllVelocities" bit:
 
