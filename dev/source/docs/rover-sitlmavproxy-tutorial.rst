@@ -124,7 +124,7 @@ skip to the second waypoint, and *loop* the mission:
 
 ::
 
-    wp load ..\Tools\autotest\CMAC-circuit.txt
+    wp load ..\Tools\autotest\Generic_Missions\CMAC-circuit.txt
     mode auto
     wp set 2
     wp loop
