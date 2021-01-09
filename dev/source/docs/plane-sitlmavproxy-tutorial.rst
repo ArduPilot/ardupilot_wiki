@@ -71,7 +71,7 @@ command as shown below (this mission contains the takeoff command):
 
 ::
 
-    wp load ..\Tools\autotest\CMAC-circuit.txt
+    wp load ..\Tools\autotest\Generic_Missions\CMAC-circuit.txt
     wp list
 
 Once the mission is loaded you can take off by arming the throttle and
@@ -141,7 +141,7 @@ skip to the second waypoint using ``wp set n``, and *loop* the mission:
 
 ::
 
-    wp load ..\Tools\autotest\CMAC-circuit.txt
+    wp load ..\Tools\autotest\Generic_Missions\CMAC-circuit.txt
     mode auto
     wp set 2
     wp loop
