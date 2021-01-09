@@ -1,11 +1,15 @@
 .. _common-matekf405-se:
 
-================
-Mateksys F405-SE
-================
+====================
+Mateksys F405-SE/WSE
+====================
 
 .. image:: ../../../images/matekf405-se.jpg
     :target: ../_images/matekf405-se.jpg
+    :width: 450px
+
+.. image:: ../../../images/matekf405-wse.jpg
+    :target: ../_images/matekf405-wse.jpg
     :width: 450px
 
 
@@ -16,13 +20,13 @@ the above images and some content courtesy of `mateksys.com <http://www.mateksys
 	Due to flash memory limitations, this board does not include all ArduPilot features.
         See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
-This board uses the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`_
+These boards use the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`_
 
 Specifications
 ==============
 -  **Processor**
 
-   -  STM32F405RET6 ARM (168MHz)
+   -  STM32F405RGT6 ARM (168MHz)
 
 
 -  **Sensors**
@@ -35,12 +39,14 @@ Specifications
 -  **Power**
 
    -  6V ~ 36V DC input power
-   -  5V, 2A BEC
+   -  5V, 2A BEC for FC & Peripherals (GPS/Compass/etc.)
+   -  BEC Vx 5A for servos, 5V/ 6V option (WSE 0nly)
+   -  BEC 8V 1.5A for VTX and camera (WSE 0nly)
 
 
 -  **Interfaces**
 
-   -  6x UARTS
+   -  VCP & 6x UARTS
    -  10x PWM outputs, (LED output used as PWM10)
    -  1x RC input PWM/PPM, SBUS
    -  2x I2C port for external compass and airspeed sensor
@@ -52,12 +58,17 @@ Specifications
 
 -  **Size and Dimensions**
 
-   - 46mm x 36mm (30.5mm spaced square mounting holes)
-   - 10g
+   - SE:
+       - 46mm x 36mm (30.5mm spaced square mounting holes)
+       - 10g
 
-This board used the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`__.
+   - WSE:
+       - 44mm x 29mm x 10mm (25mm x25mm mounting, 2mm holes)
+       - 20g with bottom plate and remoter USB/buzzer board
 
-See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f405-se#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-se#tab-id-4>`__.
+These boards use the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`__.
+
+See mateksys.com for SE `detailed specifications <http://www.mateksys.com/?portfolio=f405-se#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-se#tab-id-4>`__ and WSE `detailed specifications <http://www.mateksys.com/?portfolio=f405-wse#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-wse#tab-id-4>`__
    
 Default UART order
 ==================
@@ -117,7 +128,7 @@ Where to Buy
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected for autonomous modes to function. Compass is not required for normal Plane mode operation, but is for Copter, QuadPlane, and Rover.
+This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected for autonomous modes to function. Compass is not required for normal Plane mode operation, but is for typical Copter, QuadPlane, and Rover operation.
 
 
 .. note:: A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules.
