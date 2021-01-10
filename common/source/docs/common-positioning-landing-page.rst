@@ -23,6 +23,7 @@ positioning technologies:
     Hex Here+ RTK Receiver <common-here-plus-gps>
     Hex Here 2 UAVCAN GPS/Gyro/IMU/Baro <http://www.proficnc.com/all-products/152-gps-module.html>
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
+    Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
     Holybro Pixhawk 4 GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
