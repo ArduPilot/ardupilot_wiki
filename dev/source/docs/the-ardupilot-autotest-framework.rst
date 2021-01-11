@@ -81,7 +81,7 @@ Help is available:
 
 ::
 
-    ./Tools/autotest/autotest.py build.ArduCopter fly.ArduCopter
+    ./Tools/autotest/autotest.py build.Copter test.Copter
 
 This command is valid in the root directory of an ArduPilot checkout.  It instructs AutoTest to build the ArduCopter SITL binary, start that binary, test it and then kill it.  The output (:ref:`sample <autotest-verbose>`) is extremely verbose, but a summary is given once all steps have been run.
 
@@ -89,8 +89,13 @@ This command is valid in the root directory of an ArduPilot checkout.  It instru
     :maxdepth: 1
 
      AutoTest Sample Output <autotest-verbose>
-     
-A list of available steps is available with ``--list``.
+
+.. note:: 
+   Older versions of ``autotest.py`` used these steps: ``build.ArduPlane build.ArduCopter build.APMrover2 build.ArduSub build.AntennaTracker fly.ArduCopter   
+   fly.ArduCopter fly.ArduPlane fly.QuadPlane dive.ArduSub drive.APMrover2 drive.BalanceBot drive.balancebot fly.CopterAVC``
+   
+.. note::
+   ``--list`` : list available steps (build, test, defaults, examples)
 
 .. note::
 
@@ -105,7 +110,7 @@ Complex Invocation
 
 ::
 
-   ./Tools/autotest/autotest.py --no-clean build.Copter fly.Copter build.Rover drive.Rover drive.balancebot build.Plane fly.Plane fly.Quadplane test.Tracker build.Sub dive.Sub build.Helicopter test.Helicopter build.Tracker test.Tracker
+   ./Tools/autotest/autotest.py --no-clean build.Copter test.Copter build.Rover test.Rover test.Balancebot build.Plane test.Plane test.Quadplane build.Sub test.Sub build.Helicopter test.Helicopter build.Tracker test.Tracker
 
 At time of writing, these invoke all the vehicle tests.  Expect these to take about 40 minutes to run.
 
@@ -116,7 +121,7 @@ To run a specific sub-test just add the test name with a '.' between the test an
 
 ::
 
-  ./Tools/autotest/autotest.py build.ArduPlane fly.ArduPlane.ThrottleFailsafe
+  ./Tools/autotest/autotest.py build.Plane test.Plane.ThrottleFailsafe
 
 
 Using with GDB
@@ -126,7 +131,7 @@ AutoTest can run the ArduPilot binary under gdb:
 
 ::
 
-   ./Tools/autotest/autotest.py --no-clean --gdb --debug build.ArduCopter fly.ArduCopter
+   ./Tools/autotest/autotest.py --no-clean --gdb --debug build.Copter test.Copter
 
 In an X Windowing System environment, an xterm window will contain the GDB terminal; stderr from the ArduPilot binary will also appear in this window.  Where X is not available but `GNU screen <https://www.gnu.org/software/screen/>`__ is, a detached screen will be created with the same content.
 
@@ -147,7 +152,7 @@ AutoTest can run the ArduPilot binary under the Valgrind memcheck tool.  This is
 
 ::
 
-   ./Tools/autotest/autotest.py --no-clean --valgrind --debug build.Rover drive.Rover
+   ./Tools/autotest/autotest.py --no-clean --valgrind --debug build.Rover test.Rover
 
 Special log files (e.g. ``arducopter-+-valgrind.log``) are created by autotest when run with this tool.  They should always be empty at the end of an autotest run.
 
