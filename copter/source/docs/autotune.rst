@@ -14,16 +14,15 @@ AutoTune attempts to automatically tune the Stabilize P, Rate P and D, and maxim
     :width: 100%
 
 
-There a number of problems that can prevent AutoTune from providing a good tune. Some of the reasons AutoTune can fail are:
+There a number of problems that can prevent AutoTune from providing a good tune including:
 
-- High levels of gyro noise.
-- Incorrect value of :ref:`MOT_THST_EXPO <MOT_THST_EXPO>`.
-- Flexible frame or payload mount.
-- Overly flexible vibration isolation mount.
-- Non-linear ESC response.
-- Very low setting for :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`.
-- Overloaded propellers or motors.
-
+- Strong wind
+- High levels of gyro noise
+- Non-linear ESC response caused by incorrect value of :ref:`MOT_THST_EXPO <MOT_THST_EXPO>`
+- Flexible frame or payload mount
+- Overly flexible vibration isolation mount
+- Very low setting for :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`
+- Overloaded propellers or motors
 
 Setup before flying in AutoTune mode
 ====================================
