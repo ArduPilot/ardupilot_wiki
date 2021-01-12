@@ -20,4 +20,4 @@ The following are all currently supported within ArduPilot:
     Intelligent Energy 2.4kW Hydrogen Fuel Cell <common-ie24-fuelcell>
 [/site]
 
-[copywiki destination="plane,copter,rover,dev"]
+[copywiki destination="plane,copter,rover"]
