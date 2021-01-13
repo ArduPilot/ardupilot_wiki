@@ -80,7 +80,11 @@ If the vehicle feels sloppy after the AutoTune, try increasing the :ref:`AUTOTUN
 Invoke AutoTune with Position Hold
 ==================================
 
-In Copter-3.5 (and higher) AutoTune performs a weak position hold if invoked from Loiter or PosHold flight modes (as opposed to AltHold) while doing an autotune.
+.. warning::
+
+   A better tune can often be achieved by invoking AutoTune from AltHold as described above instead of from Loiter or PosHold as described below
+   
+AutoTune performs a weak position hold if invoked from Loiter or PosHold flight modes (as opposed to AltHold) while doing an autotune.
 
    .. image:: ../images/autotune_from_loiter.png
        :target: ../_images/autotune_from_loiter.png
