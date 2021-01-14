@@ -239,7 +239,7 @@ Arducopter has a set of parameters that define the way the aircraft feels to fly
 
 The most important of these parameters is:
 
-- :ref:`ACRO_YAW_P <ACRO_YAW_P>` : yaw rate x 45 degrees/s
+- :ref:`ACRO_YAW_P <ACRO_YAW_P>` : desired maximum yaw rate / 45 degrees/s
 - :ref:`ANGLE_MAX <ANGLE_MAX>` :  maximum lean angle
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` : Pitch rate acceleration
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` : Roll rate acceleration
