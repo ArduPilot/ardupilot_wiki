@@ -110,7 +110,7 @@ You can also disarm without using the transmitter with one of the
 following methods:
 
 -  use a ground station to issue a disarm command
--  use the safety switch on your aircraft (if using a :ref:`<common-safety-switch-pixhawk>`)
+-  use the safety switch on your aircraft (if using a :ref:`common-safety-switch-pixhawk`)
 -  after an auto-landing (either via mission or QLAND in QuadPlane) the plane will automatically disarm after 20
    seconds if still on the ground (controlled by :ref:`LAND_DISARMDELAY<LAND_DISARMDELAY>`
    parameter)
