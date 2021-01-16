@@ -51,3 +51,18 @@ Copter Common Problems
    of the motor or ESCs.
 
 [/site]
+
+H7 AutoPilot Will Not Initialize
+================================
+
+AutoPilots utilizing the H7 series of processors can, on rare occasions, get into a state where they will no longer complete initialization. Symptoms are: never exiting the bootloader (rapidly flashing led right after power application never stops) or the autopilot freezes during initialization, and connection to it is impossible. 
+
+It is believed that this may be a memory corruption problem which can be caused by interrupting a flash memory write (as when changing parameters). Unfortunately, due to the processor's architecture, there is no way in the firmware to correct this automatically. If the autopilot  seems "bricked", try this to completely reset the autopilot to a fully un-programmed state. This should allow the firmware to be installed and the corruption issue resolved.
+
+- First, program the entire 2MB flash space with zeros by loading `this file <https://firmware.ardupilot.org/Tools/STM32-tools/2MByte_allzero.bin>`_ which contains all zero data. Use the instructions :ref:`here <common-loading-firmware-onto-chibios-only-boards>` but use the above file.
+
+- Next, download the ArduPilot bootloader for your AutoPilot from `here <https://firmware.ardupilot.org/Tools/Bootloaders/>`__. Then repeat the above step using that bootloader file. This will place the bootloader on the autopilot. Cycle the power on the autopilot. At this point it will power up and remain in the bootloader until operational firmware is installed.
+
+- Finally, use Mission Planner's SETUP/Install Firmware tab or the `Uploader <https://raw.githubusercontent.com/ArduPilot/ardupilot/master/Tools/scripts/uploader.py>`__ python script, to load the desired ArduPilot firmware revision. 
+
+This should resolve issues caused by memory corruption and normal operation will resume.
