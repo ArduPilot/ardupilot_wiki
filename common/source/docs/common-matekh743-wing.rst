@@ -133,3 +133,5 @@ Then reboot.
 
 :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` 11.0
 
+
+.. note:: If you experience issues with the device ceasing to initialize after power up, see :ref:`common-when-problems-arise` section for H7 based autopilots for a possible solution.
