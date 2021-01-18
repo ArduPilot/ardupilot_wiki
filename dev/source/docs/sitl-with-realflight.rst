@@ -140,7 +140,7 @@ InterLink DX/Elite controller emulation: This closely mimics these Interlink  co
 To setup a six position mode switch, you would do so just as explained :ref:`here<common-rc-transmitter-flight-mode-configuration>` for an OpenTX transmitter, but first calibrate the RealFlight  controller using a dual position switch on the mode channel. Then change the transmitter back to provide the six PWM levels. This required since RealFlight auto-scales from the calibration values, so if your six PWM levels are centered in the recognition ranges , then the channel's PWM extremes will not be used for calibration and the PWM levels will be altered by RealFlight before passing on to the SITL. 
 
 .. toctree::
-    :hidden:
+    :maxdepth: 1
 
     Interlink Emulation <interlink-emulation>
     Understanding SITL using RealFlight <flightaxis>
