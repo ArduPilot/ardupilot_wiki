@@ -135,6 +135,7 @@ Full Table of Contents
    :titlesonly:
    
     License (GPLv3) <docs/license-gplv3>
+    AP_Peripheral Devices <docs/ap-peripheral-landing-page>
     Downloading the code / Using Git <docs/where-to-get-the-code>
     Building the code <docs/building-the-code>
     Editors & IDEs <docs/code-editing-tools-and-ides>
