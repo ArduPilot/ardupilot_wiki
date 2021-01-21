@@ -42,14 +42,15 @@ and be able to :ref:`build it with Arduino <building-ardupilot-with-arduino-wind
 Step #1 - Install VMWare and create an Ubuntu Virtual Machine
 =============================================================
 
-1. Download and install `VMware <https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0>`__ (look for VMware Player and VMware Player Plus for Windows)
+1. Download and install `VMware <https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0>`__ (look for VMware Workstation Player for Windows)
 
 2. Download the `Ubuntu iso <http://www.ubuntu.com/download/desktop/thank-you?country=--&version=14.04.2&architecture=amd64>`__
 
 3. Start VMware and create new ubuntu machine by selecting Player > File
 > New Virtual Machine
 
--  Enter your Full name, user name and password for the virtual machine.
+-  Select the iso you just downloaded
+-  Enter your Full name, User name and Password for the virtual machine.
    you will use these later when you log onto this virtual machine
 -  Name your virtual machine (i.e. Copter-SITL)
 -  Specify Disk Capacity - leave Max disk size as default 20GB, and
@@ -101,10 +102,11 @@ not greyed
 2.On VMware Player select Player > Manage > Virtual Machine Settings...
 > Options Tab > Shared Folders
 
--  check "Always enabled", Add
--  "Host Path" to folder one level above where you have installed
+-  Check "Always enabled", 
+-  Click "Add..."
+-  Set "Host Path" to folder one level above where you have installed
    ardupilot software
--  check "Enable this share"
+-  Check "Enable this share"
 
 .. image:: ../images/Ubuntu_VMSettings_SetupSharedFolder.png
     :target: ../_images/Ubuntu_VMSettings_SetupSharedFolder.png
@@ -174,7 +176,7 @@ prompt.
     :target: ../_images/SITL_ipconfig.png
 
 So for this example the following would then be entered into the
-terminal on the Ubuntu VM:
+terminal on the Ubuntu VM while in the ardupilot directory:
 
 ::
 
