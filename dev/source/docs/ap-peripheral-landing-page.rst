@@ -44,3 +44,5 @@ Firmware
 Firmware for existing device definitions are posted `here <https://firmware.ardupilot.org/AP_Periph/>`__. Their hardware definition files are in the ArudPilot Github repository, `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__
 
 To create firmware for a new design, follow the same instructions as for porting to a new autopilot board, as explained in the Wiki section :ref:`porting` .
+
+Additional information is available in the AP_Periph readme `here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/AP_Periph/README.md>`__
