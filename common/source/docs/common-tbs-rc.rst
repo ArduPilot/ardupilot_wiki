@@ -23,6 +23,33 @@ In the configuration of the serial port select the RCIN protocol. So for example
 
 With the receiver connected and configured correctly proceed with RC calibration as normal.
 
+Ardupilot supports two types of crossfire telemetry:
+
+- CRSF standard telemetry (default)
+- CRSF passthrough telemetry
+
+CRSF standard telemetry
+======================
+
+Crossfire standard telemetry requires the CRSF protocol and exposes to OpenTX a wide range of telemetry data as discoverable sensors, please refer to the `TBS manual <https://www.team-blacksheep.com/tbs-crossfire-manual.pdf>`__ for more details.
+Crossfire standard telemetry is the default telemetry type for the CRSF protocol and is enabled by the following parameters:
+
+- Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 23
+- Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 3
+
+CRSF passthrough telemetry
+=========================
+
+Crossfire passthrough telemetry requires the use of the CRSF protocol and has to be manually enabled by setting the following parameters:
+
+- Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 23
+- Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 3
+- Set :ref:`RC_OPTIONS <RC_OPTIONS>` += 256 (RC_OPTIONS is a bitmask, to enable set bit 8 "enable passthrough telemetry" to 1)
+
+This configuration will send ArduPilot specific telemetry over the crossfire link using the :ref:`passthrough protocol <common-frsky-passthrough>` while retaining standard telemetry at a much lower refresh rate.
+Telemetry sensors will be discoverable under OpenTX in the standard way but in order to take full advantage of ArduPilot's extended telemetry data a script such as the `Yaapu Telemetry Script or Widget <https://github.com/yaapu/FrskyTelemetryScript>`__ is required.
+Passthrough telemetry over crossfire is functionally equivalent to passthrough telemetry over FRSky.
+
 CRSF Video Transmitters
 =======================
 
