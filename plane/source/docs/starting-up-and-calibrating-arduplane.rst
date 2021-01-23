@@ -126,13 +126,13 @@ Level Adjustment
 
 You may find after flying your plane in FBWA that it has a tendency to
 turn in one direction and/or gains or loses height on a mid throttle
-setting with the transmitter sticks centred. If this happens, perform
+setting with the transmitter sticks centered. If this happens, perform
 the following:
 
 1) With your autopilot powered on the ground and connected to your
 mission planner, select FBWA on your transmitter, select the FLIGHT DATA
 tuning window and plot the nav_roll and nav_pitch data. With your
-transmitter sticks centred, these should both be zero as shown in this
+transmitter sticks centered, these should both be zero as shown in this
 screenshot. If they are not, you need to repeat your RC calibration or
 adjust your transmitter trims and repeat the FBWA flight test
 
@@ -154,3 +154,5 @@ List** and adjusting the parameters as shown in the screenshot below.
    degree) so adjust in increments of 0.01 initially. If the plane turns to
    the left, :ref:`AHRS_TRIM_X<AHRS_TRIM_X>` should be increased. If the plane loses height
    with mid throttle, :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` should be increased.
+
+.. note:: this can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more up pitch is needed (in the case that the autopilot is mounted slightly downward, for example), then you can use :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to further increase the "level" pitch value of the plane.
