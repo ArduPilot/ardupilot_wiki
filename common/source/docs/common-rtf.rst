@@ -32,10 +32,12 @@ Helicopters from Partners
 Planes from Partners
 ====================
 
+* `Dual RC - Elanus Duo <https://www.dualrc.com/elanus-duo/rtf/>`__
 * `Event38 - e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__
 * `Event38 - e386 Mapping Drones <https://event38.com/fixed-wing/e386-mapping-drone/>`__
 * `Hitec - HCS Xeno FX <https://hitecnology.com/drones/hcs-xeno-fx-fixed-wing-mapping-suas>`__
 * `mRobotics - Nano Talon <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-talon0318-mr>`__
+
 
 Rovers from Partners
 ====================
