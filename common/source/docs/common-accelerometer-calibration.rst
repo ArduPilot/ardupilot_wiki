@@ -46,7 +46,10 @@ Calibration steps
    .. tip::
 
          -  It is important that the vehicle is kept still immediately after
-            pressing the key for each step.
+            pressing the key for each step. This is more important than getting the
+            angle exactly right, ie. left being 90deg to horizontal,etc. Except for the 
+            first "LEVEL", the positions can be within 20 degs of being exact. Being still in
+            each position as you press the key is much more important.
          -  You may need to calibrate the board before it is mounted if the
             size/shape of the vehicle makes this difficult.
          -  The level position is the most important to get right as this will
@@ -56,6 +59,8 @@ Calibration steps
     For planes, often the optimum "level" position is actually done with the nose raised a few degrees (but the wings perfectly level). This is explained in the diagrams below. Most planes fly with a few degrees of Angle of Attack (AOA)and while many planes will have some Angle of Incidence built in, some do not, and some need a little higher AOA to fly at lower cruise speeds. If the level step of calibration is done with the plane's fuselage line level, then first flights will be safe, but cruise may be a bit fast. You can either set a few extra degrees nose up when doing the level step of calibration, or  decide after first flights if AOA needs to be increased for your desired cruise speed/throttle. If so, then you may redo the level only step using the  ``Calibrate Level`` button on the page.
 
     .. image:: ../../../images/AOA.jpg
+
+.. note:: this can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more is needed (in the case that the autopilot is mounted slightly downward, for example), then you can use :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to alter the AOA manually.
 
 
  [/site]

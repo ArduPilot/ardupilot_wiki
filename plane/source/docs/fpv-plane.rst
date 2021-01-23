@@ -133,9 +133,12 @@ After initial flights and tuning, you can change modes to whatever are desired.
 Go to the SETUP -> Mandatory Hardware -> Accelerometer Calibration tab and
 perform the full calibration. For the level position carefully level the wings laterally, and have the wing chord 
 set a few degrees (~ 3 deg) nose up, since this is the normal cruise attitude for level flight for most planes.
-This can be reset using the LEVEL only calibration button at any time. Also check that the orientation of the 
-autopilot is correct. Moving the plane should be correctly reflected in the HUD display of MP. 
-Otherwise, you will need to manually change the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` parameter appropriately.
+This can be reset using the LEVEL only calibration button at any time.
+
+.. note:: this can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more is needed (in the case that the autopilot is mounted slightly downward, for example), then you can use :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to alter the AOA manually.
+
+Also check that the orientation of the autopilot is correct. Moving the plane should be correctly reflected in the HUD display of MP. 
+Otherwise, you will need to manually change the :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>` parameter appropriately and re-calibrate. A reboot is required after changing this parameter.
 
 -  Servo Functions
 
