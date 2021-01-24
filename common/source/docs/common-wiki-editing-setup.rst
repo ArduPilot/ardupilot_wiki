@@ -14,7 +14,7 @@ There are several methods to setup a local build environment:
 #. Use the `Dockerfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Dockerfile>`__ in the root of the repo to create a Linux container with all the necessary packages installed.
 #. Or simply install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine, or under WSL in Windows (Win8 may need to add `this component <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_ ). 
 
-Fork and Clone the Wiki
+Fork, Clone, and Update the Wiki
 -----------------------
 
 First, the wiki should be forked and cloned much like :ref:`developers do for the flight code <dev:where-to-get-the-code>`.
@@ -30,6 +30,17 @@ First, the wiki should be forked and cloned much like :ref:`developers do for th
    .. code-block:: bash
 
        git clone https://github.com/YOURID/ardupilot_wiki.git
+
+- Update your fork of the repository, both locally and on GitHub
+
+   .. code-block:: bash
+
+       git remote add upstream https://github.com/ArduPilot/ardupilot_wiki.git
+       git checkout master
+       git fetch upstream
+       git rebase upstream/master
+       git push -f origin master
+
        
 Setup in Linux or Windows WSL
 -----------------------------
