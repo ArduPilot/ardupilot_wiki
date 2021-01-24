@@ -31,7 +31,7 @@ First, the wiki should be forked and cloned much like :ref:`developers do for th
 
        git clone https://github.com/YOURID/ardupilot_wiki.git
 
-Next, update your fork of the repository, both locally and on GitHub
+Be sure to keep your fork of the repository updated, both locally, and on GitHub both as you install and as you develop new contributions. Be sure to create a working branch locally when you start to make changes, pushing that branch up to your GitHub repo, and then making a PR (pull-request from there to the Wiki repo), in a manner similar to making :ref:`code PRs <submitting-patches-back-to-master>`
 
    .. code-block:: bash
 
