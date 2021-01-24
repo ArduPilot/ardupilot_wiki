@@ -18,16 +18,16 @@ apt-get install -y unzip git imagemagick curl wget make python
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py && rm -f get-pip.py
 
 # Install sphinx
-pip install -U sphinx==1.8.3
+pip install -U sphinx==1.8.3 || pip3 install -U sphinx==1.8.3
 
 # Install sphinx theme from ArduPilot repository
-pip install git+https://github.com/ArduPilot/sphinx_rtd_theme.git -UI
+pip install git+https://github.com/ArduPilot/sphinx_rtd_theme.git -UI ||  pip3 install git+https://github.com/ArduPilot/sphinx_rtd_theme.git -UI
 
 # and a youtube plugin:
-pip install git+https://github.com/sphinx-contrib/youtube.git -UI
+pip install git+https://github.com/sphinx-contrib/youtube.git -UI ||  pip3 install git+https://github.com/sphinx-contrib/youtube.git -UI
 
 # and a vimeo plugin:
-pip install git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git -UI
+pip install git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git -UI ||  pip3 install git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git -UI
 
 # Say that we finish
 echo "Setup completed successfully !"
