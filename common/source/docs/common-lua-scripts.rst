@@ -6,7 +6,7 @@
 Lua Scripts
 ===========
 
-ArduPilot has introduced experimental support for `Lua <https://www.lua.org/>`_ scripting.
+ArduPilot has introduced support for `Lua <https://www.lua.org/>`_ scripting.
 Scripting provides a safe, "sandboxed" environment for new behaviours to be added to the autopilot without modifying the core flight code.
 Scripts are stored on the SD card and run in parallel with the flight code.
 
