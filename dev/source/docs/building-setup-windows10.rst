@@ -29,8 +29,8 @@ WSL Setup steps
 
 .. tip::
 
-  You can run XWindows applications (including SITL) by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_  on Windows. You will need to set the DISPLAY variable to point to your display: in WSL it is 127.0.0.1:0, in WSL2 it will be the ip address of the PC's network port and can be set by using the code below. Also in WSL2 you may have to disable the firewall for public networks, or create an exception in order for VcXsrv to communicate with WSL2:
-
+  You can run XWindows applications (graphical programs, including SITL) by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows. You will need to set the DISPLAY variable to point to your display: in WSL it is 127.0.0.1:0, in WSL2 it will be the ip address of the PC's network port and can be set by using the code below. For more information regarding configuring your XLaunch Software , you can take reference from `here <https://itservices.cas.unt.edu/software/windows-x-server-vcxsrv>`_. Also in WSL2 you may have to disable the firewall for public networks, or create an exception in order for VcXsrv to communicate with WSL2:
+                                                                          
 ::
 
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
@@ -62,7 +62,9 @@ From within Windows, the WSL distribution's files are located at (type in window
    e.g.
    \\wsl$\Ubuntu-20.04
 
+.. note::
 
+    When trying to run your Ground Control Station software on wsl, if the application returns an error "fuse: device not found, try 'modprobe fuse' first" then it will be better to either use `MAVProxy <https://ardupilot.org/copter/docs/common-choosing-a-ground-station.html#mavproxy>`_ or `MissionPlanner <https://ardupilot.org/copter/docs/common-choosing-a-ground-station.html#mission-planner>`_ as your default ground control station because wsl does not support fuse(for more information check : https://github.com/Microsoft/WSL/issues/17 ). As of now, this error has been seen while using `QGroundControl <https://ardupilot.org/copter/docs/common-choosing-a-ground-station.html#qgroundcontrol>`_ on WSL running Ubuntu 16.04.
 
 
 
