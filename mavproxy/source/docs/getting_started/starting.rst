@@ -247,7 +247,7 @@ MAVProxy and its modules.
 ===================
 
 A comma separated list of the modules to load on startup by default. The default 
-value of this parameter is ``log,signing,wp,rally,fence,param,relay,tuneopt,arm,mode,calibration,rc,auxopt,misc,cmdlong,battery,terrain,output,adsb``
+value of this parameter is ``log,signing,wp,rally,fence,param,relay,tuneopt,arm,mode,calibration,rc,auxopt,misc,cmdlong,`` ``battery,terrain,output,adsb``
 
 -\\-non-interactive
 ===================
