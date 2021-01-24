@@ -4,8 +4,9 @@
 Ready-To-Use & Easy-To-Buy vehicles
 ===================================
 
-The following is a list of ready-to-use vehicles that run ArduPilot that can be easily purchased over the internet.
-These vehicles come pre-configured with everything required to fly, drive or swim right out of the box.
+The following is a list of vehicles that run ArduPilot that can be easily purchased over the internet.
+These vehicles may come pre-configured with everything required to fly, drive or swim right out of the box, or be a complete kit requiring some assembly.
+Please check with the vendor prior to purchase.
 
 .. note::
 
@@ -20,6 +21,8 @@ Copters from Partners
 * `TT Robotix - X-1300 EagleEyes Quadcopter <http://www.ttrobotix.com/products/detail/923.html>`__
 * `TT Robotix - H2-X6 Phoenix H6 Multirotor <http://www.ttrobotix.com/products/detail/926.html>`__
 * `TT Robotix - X-450 Scout Quadcopter <http://www.ttrobotix.com/products/detail/928.html>`__
+* Various from `UAVSystems <https://uavsystemsinternational.com/pages/heavy-lift-payload-drones/>`__
+* Vim Drones `Mazzy Star Drone - Light Show RTF <https://vimdrones.com/products/e5586543-cf6d-452d-9e6b-f4ea43eabb52--Mazzy-Star-Drone>`__
 
 Helicopters from Partners
 =========================
@@ -36,8 +39,17 @@ Planes from Partners
 * `Event38 - e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__
 * `Event38 - e386 Mapping Drones <https://event38.com/fixed-wing/e386-mapping-drone/>`__
 * `Hitec - HCS Xeno FX <https://hitecnology.com/drones/hcs-xeno-fx-fixed-wing-mapping-suas>`__
+* `MakeFLyEasy - Believer <https://www.aliexpress.com/item/30000002380639.html?spm=a2g0o.store_home.productList_1076398524.pic_4>`__
+* `MakeFLyEasy - Fighter <https://www.aliexpress.com/item/10000223175280.html?spm=a2g0o.store_home.productList_1076398524.pic_1>`__
 * `mRobotics - Nano Talon <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-talon0318-mr>`__
+* Various from `UAVSystems <https://uavsystemsinternational.com/collections/fixed-wing-long-range-drones>`__
 
+VTOL/QuadPlanes from Partners
+=============================
+
+* `MakeFLyEasy - Fighter VTOL <https://www.aliexpress.com/item/10000223165284.html?spm=a2g0o.store_home.productList_1076398524.pic_0>`__
+* `MakeFLyEasy - Freeman 2300 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_3>`__
+* `MakeFLyEasy - Freeman 2100 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_2>`__
 
 Rovers from Partners
 ====================
@@ -54,25 +66,17 @@ Subs from Partners
 * `Blue Robotics - BlueROV2 <https://bluerobotics.com/store/rov/bluerov2/>`__
 
 
-
-
 Vehicles from Non-Partners
 ==========================
 
 * `Anaconda <http://kgaviation.com/store/p11/anaconda>`__, `Believer <http://kgaviation.com/store/p13/The_Believer_.html>`__, `Stratosurfer <http://kgaviation.com/store/p16/stratosurfer>`__ and `Skyhunter <http://kgaviation.com/store/p10/skyhunter>`__ fixed-wing from `KG aviation <http://kgaviation.com/index.html>`__ (`video <https://www.youtube.com/watch?v=Yx1k8VgpHlU>`__)
 * `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
-* Cheerson CX-20 from `Amazon <https://www.amazon.com/Cheerson-CX-20-CX20-Auto-Pathfinder-Quadcopter/dp/B00J7OGX9C>`__ (uses now-unsupported APM2 compatible controller)
 * DRONEE  Easy to Use Mapping Plane Drone `DRONEE PLANE <https://dronee.aero/pages/droneeplane>`__
-* `FireFly6 PRO from BirdsEyeView <https://www.birdseyeview.aero/products/firefly6>`__ (non-standard version of ArduPlane)
-* HobbyKing Aperture Hexacopter (`mode1 <https://hobbyking.com/en_us/aperture-rtf-m1.html?___store=en_us>`__, `mode2 <https://hobbyking.com/en_us/aperture-rtf-m2.html?___store=en_us>`__)
 * `MotoDoro Farm Mapper (Plane) <https://motodoro.com/blog/detail/00005-farm-mapper-vtol.html>`__
-* `R1 Rover <https://store.aionrobotics.com/products/r1-ardupilot?variant=429602832411>`__ from `Aion Robotics <https://www.aionrobotics.com/>`__
 * `UAV Mapper from TuffWing <http://www.tuffwing.com/products/drone_mapper.html>`__
-* Walkera Scout X4 from `Amazon <https://www.amazon.com/gp/product/B00TY464GC/ref=s9_dcacsd_dcoop_bw_c_x_7_w>`__ (uses non-standard version of ArduPilot)
-* 3DR Aero from `UAVSystems <https://www.uavsystemsinternational.com/product/3d-robotics-aero-m/>`__
-* 3DR IRIS from `Northox <https://northox.myshopify.com/collections/frontpage/products/iris-drone>`__
 * 3DR Quad from `DroneFever <http://dronefever.com/product.php?productid=38>`__
 * 3DR Solo from `Amazon <https://www.amazon.com/3DR-Solo-Quadcopter-No-Gimbal/dp/B00ZPM7BOG>`__
+
 
 
 .. note::
