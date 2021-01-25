@@ -118,21 +118,18 @@ this parameter controls when the mode will be changed to THERMAL and thermalling
 starts. Change :ref:`SOAR_ALT_MAX<SOAR_ALT_MAX>` to the altitude you want the autopilot to stop 
 thermalling.
 
-Set thermalling radius and bank angle limit
-======================================
 
-The parameter :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` sets how tight the thermalling circle is. It is usually
-best to have the aircraft fly at a 30 - 45 degree bank angle. The corresponding radius can be calculated as 
-about airspeed squared over ~10 (for 45 degrees) or ~6 (for 30 degrees), from the equation
+Set bank angle
+==============
 
-.. raw:: html
+The parameter :ref:`SOAR_THML_BANK<SOAR_THML_BANK>` sets the bank angle when thermalling. 30 - 45 degrees works well depending on the size of the thermals in your area.
 
-   <a href="https://www.codecogs.com/eqnedit.php?latex=r&space;=&space;\frac{v^2}{g&space;\tan&space;\phi}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?r&space;=&space;\frac{v^2}{g&space;\tan&space;\phi}" title="r = \frac{v^2}{g \tan \phi}" /></a>
+If the aircraft is not achieving this average bank angle when thermalling, you should check - 
 
-The tanget is for the desired bank angle, the result will be in meters for the radius,with g  = 9.81 m/s/s, velocity (v) is in m/s. For example, if the airspeed is 20m/s, then the :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` should be 40 for a 45 degree bank, assuming that :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set at 4500 or higher.
+ - that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set a bit larger than SOAR_THML_BANK (note the units are different) to give some room for manoeuvring;
 
-You should make sure that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set a bit larger to give some room for manoeuvring.
-
+ - that the navigation parameter NAVL1_PERIOD is no larger than the time needed for a complete turn at the specified bank angle.
+ 
 .. _soaring_rc-switch:
 
 Set up RC switch (Optional)
