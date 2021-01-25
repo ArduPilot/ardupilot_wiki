@@ -50,6 +50,9 @@ VTOL/QuadPlanes from Partners
 * `MakeFLyEasy - Fighter VTOL <https://www.aliexpress.com/item/10000223165284.html?spm=a2g0o.store_home.productList_1076398524.pic_0>`__
 * `MakeFLyEasy - Freeman 2300 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_3>`__
 * `MakeFLyEasy - Freeman 2100 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_2>`__
+* `SpektreWorks - Cobalt 55 E-VTOL <https://www.spektreworks.com/cobalt>`__
+* `SpektreWorks - Cobalt 55 G-VTOL <https://www.spektreworks.com/cobalt>`__
+* `SpektreWorks - Cobalt 110 G-VTOL <https://www.spektreworks.com/cobalt>`__
 
 Rovers from Partners
 ====================
