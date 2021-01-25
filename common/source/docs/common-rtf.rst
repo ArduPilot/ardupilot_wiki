@@ -22,7 +22,7 @@ Copters from Partners
 * `TT Robotix - H2-X6 Phoenix H6 Multirotor <http://www.ttrobotix.com/products/detail/926.html>`__
 * `TT Robotix - X-450 Scout Quadcopter <http://www.ttrobotix.com/products/detail/928.html>`__
 * Various from `UAVSystems <https://uavsystemsinternational.com/pages/heavy-lift-payload-drones/>`__
-* Vim Drones `Mazzy Star Drone - Light Show RTF <https://vimdrones.com/products/e5586543-cf6d-452d-9e6b-f4ea43eabb52--Mazzy-Star-Drone>`__
+* VimDrones `Mazzy Star Drone - Light Show RTF <https://vimdrones.com/products/e5586543-cf6d-452d-9e6b-f4ea43eabb52--Mazzy-Star-Drone>`__
 
 Helicopters from Partners
 =========================
