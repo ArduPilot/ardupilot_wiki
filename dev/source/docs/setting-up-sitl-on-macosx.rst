@@ -4,7 +4,7 @@
 Setting up SITL on Mac OS X
 ===========================
 
-This page describes how to setup the :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` on Mac OS X. The specific commands were tested on macOS Catalina 10.15.7
+This page describes how to setup the :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` on Mac OS X. The specific commands were tested on macOS Catalina 10.15.7 and macOS Big Sur 11.1.
 
 Overview
 ========
@@ -25,9 +25,6 @@ Install steps
 
 This guide assumes that a build environment is already setup for Ardupilot. If that is not the case please follow the available guides to setup the build environment for Mac OSX. The following step provide a condensed versions of the steps to take.
 
-.. warning::
-
-	The python version used in this guide is a beta version. Please consider carefully if you want to install this. To limit the impact the guide assumes that you are using pyenv to manage python frameworks.
 
 Prerequisites
 -------------
@@ -37,16 +34,18 @@ The following tools need to be installed to complete the installation. Between b
  * Xcode (12.4)
  * Xcode commandline tools (12.4)
  * Homebrew (2.7.5)
- * pyenv (1.2.20)
+ * pyenv (1.2.22)
 
 Preparing Python
 ----------------
 
+Install the required python version using pyenv and activate it. This assumes pyenv is setup and initialized with 'pyenv init'.
+
 ::
 
 	brew install readline openssl@1.1
-	env PYTHON_CONFIGURE_OPTS="--enable-framework CC=clang" pyenv install 3.9.0b5
-	pyenv shell 3.9.0b5
+	env PYTHON_CONFIGURE_OPTS="--enable-framework CC=clang" pyenv install 3.9.1
+	pyenv shell 3.9.1
 	pip install wheel
 	pip install future pymavlink mavproxy
 
@@ -68,7 +67,7 @@ Then select the correct python environment
 
 ::
 	
-	pyenv shell 3.9.0b5
+	pyenv shell 3.9.1
 
 Then start the simulator using **sim_vehicle.py**. The first time you
 run it you should use the -w option to wipe the virtual EEPROM and load
@@ -108,10 +107,6 @@ Learn MAVProxy
 To get the most out of SITL you really need to learn to use MAVProxy.
 Have a read of the :ref:`MAVProxy documentation <mavproxy:home>`. Enjoy flying!
 
-FlightGear 3D View (Optional)
------------------------------
-
-This has not been attempted on Mac OSX yet. Please refer to the instructions :ref:`Setting up SITL on Linux <setting-up-sitl-on-linux>` for information on FlightGear if you want to try this. And please update this page if you have any new information.
 
 Next steps
 ==========
