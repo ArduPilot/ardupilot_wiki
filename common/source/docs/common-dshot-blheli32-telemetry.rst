@@ -1,12 +1,12 @@
 .. _common-dshot-blheli32-telemetry:
 
-BLHeli_32 ESC Telemetry
-=======================
+BLHeli_32 and BLHeli_S ESC Telemetry
+====================================
 
 If the ESC has this capability, it allows monitoring and logging of performance data that previously required additional sensors (like power modules and RPM sensors). The detailed data provided by every ESC allows real-time decisions and individual ESC or motor performance tuning and failure analysis. 
 
 
-.. note:: ArduPilot does not currently support bi-directional Dshot reporting of telemetry via the ESC signal wire, nor does it support the polling of the ESCs for telemetry data via throttle idle messages over the signal line in non DShot protocols.
+.. note:: ArduPilot does not currently support the polling of the ESCs for telemetry data via throttle idle messages over the signal line in non DShot protocols.
 
 
 Connecting your ESCs for use with Dshot protocol and BLHeli_32 features
@@ -61,5 +61,27 @@ Use as Battery Monitor
 ======================
 
 By setting a battery monitor instance to BLHeli32 ESC  type (for example :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 9), all connected BLHeli32 ESCs with connected telemetry wiring to the configured autopilot serial port, will be aggregated as a single source. The voltages reported will be averaged, the currents totaled, and the consumed current accumulated.
+
+Bi-directional Dshot
+====================
+
+Newer versions of BLHeli_32 (32.7) and BLHeli_S (16.73) support returning motor RPM values over the Dshot signal line. Supporting bi-directional Dshot requires exclusive use of one or more DMA channels and thus not all versions of ArduPilot support it. Versions that support bi-directional Dshot natively are `BeastH7`, `BeastF7` and `KakuteF7Mini`, other firmware versions end in "-bdshot" to indicate support for bi-directional Dshot.
+
+Setup
+-----
+
+First ensure that you have an appropriate version of BLHeli_32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli_32 supports bi-directional Dshot. Official versions of BLHeli_S do not support bi-directional Dshot, you will need to either buy a version from `JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use the unofficial version from `JazzMaverick <https://github.com/JazzMaverick/BLHeli/tree/JazzMaverick-patch-1/BLHeli_S%20SiLabs/Hex%20files%20%2016.73)>`__. If you try and enable bi-directional Dshot with the wrong firmware version then unpredictable motor operation can occur.
+
+Set the following parameters to enable BLHeli_32 and BLHeli_S bi-directional Dshot:
+
+- :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` = 1 to enable automatic mapping of multirotor motors for BLHeli_32 pass-through and telemetry support. for most multirotor and quadplane users this will do the right thing. If using BLHeli_32 ESCs on non-multirotor motors with the respective SERVOn_FUNCTION set to 70 (=throttle), 73 (=throttle left) or 74 (=throttle right), you will need to further specify the used outputs as follows:
+
+#. :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` : a bitmap used to enable BLHeli_32 pass-through and telemetry support on non-multirotor motors and / or exactly specify which servo outputs you want to enable pass-through and telemetry on (if available in ESC).
+
+#. :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>` : a bitmap used to enable BLHeli_32 pr BLHeli_S bi-directional Dshot support. On flight controllers without IOMCU this would normally be set to 15 to indicate four active channels. On flight controllers with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional Dshot will only work on the AUX outputs). The BeastH7 only supports channels 1 and 4 for bi-directional dshot (mask set to 9).
+
+#. :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` : This needs to be set to the protocol being used for the DShot protocol being used on those additional outputs if not the same as the normal copter style motor outputs.
+
+- :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors. Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM (small motors might have 12 poles).
 
 
