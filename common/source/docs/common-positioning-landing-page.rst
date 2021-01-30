@@ -19,6 +19,8 @@ positioning technologies:
     Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV Neo v2 Pro UAVCAN GPS <common-cuav-neo-v2-pro>
+    CUAV Neo 3 Pro UAVCAN GPS <common-cuav-neo-3-pro>
+    CUAV Neo 3（M9N) GPS <common-cuav-neo-3>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
     Hex Here+ RTK Receiver <common-here-plus-gps>
     Hex Here 2 UAVCAN GPS/Gyro/IMU/Baro <http://www.proficnc.com/all-products/152-gps-module.html>
