@@ -485,10 +485,15 @@ Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vis
     param set EK2_ENABLE 0
     param set EK3_ENABLE 1
     param fetch
-    param set EK3_GPS_TYPE 3
-    param set GPS_TYPE 0
-    param set VISO_TYPE 1
+    param set EK3_SRC1_POSXY 6
+    param set EK3_SRC1_POSZ 6
+    param set EK3_SRC1_VELXY 6
+    param set EK3_SRC1_VELZ 6
+    param set EK3_SRC1_YAW 6
+    param set VISO_TYPE 2
     param set SERIAL5_PROTOCOL 2
+    param set GPS_TYPE 0 (optional)
+    param set ARMING_CHECK 388598 (optional, to disable GPS checks)
     param fetch
 
 Restart the simulation, attaching a simulated Vicon system to uartF (which corresponds to ``SERIAL5``):
@@ -522,33 +527,20 @@ You should also receive a startup message from the EKF:
 
 Use MAVProxy's right-click context menu item to ``Set Origin (with alt)``
 
-Arm in stabilize, switch to loiter:
+Arm in loiter, takeoff and fly somewhere:
 
 ::
 
-   mode stabilize
+   loiter
    arm throttle
-   mode loiter
-
-Take off, then fly somewhere:
-
-::
-
    rc 3 1800
    rc 2 1400
 
-
-Wait a while, note vehicle moving on map.
-
-Now RTL:
+Other SITL vicon settings are hel in SIM_VICON_ parameters:
 
 ::
 
-   rc 3 1500
-   rc 2 1500
-   mode rtl
-
-Note vehicle returning to home
+   param show SIM_VICON*
 
 Accessing log files
 ===================
