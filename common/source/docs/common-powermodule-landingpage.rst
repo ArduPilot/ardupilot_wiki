@@ -17,7 +17,6 @@ The links below have information about the most commonly used power monitors/mod
     Common Power Module <common-3dr-power-module>
     AirbotPower Power Module <common-airbotpower-power-module>
     Mauch Power Monitor <common-mauch-power-modules>
-    Smart Batteries <common-smart-battery>
     Fuel Monitors <common-fuel-sensors>
     Can PMU<common-can-pmu>
     HV PM<common-hv-pm>
