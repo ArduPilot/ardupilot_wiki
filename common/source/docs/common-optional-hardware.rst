@@ -22,7 +22,6 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="plane"]
     Airspeed Sensor <airspeed>
 [/site]
-    Battery Monitors (aka Power Modules) <common-powermodule-landingpage>
     Barometer (external) <common-baro-external>
 [site wiki="copter,plane,rover"]
     Buzzer <common-buzzer>
@@ -59,6 +58,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="copter"]
     Parachute <parachute>
 [/site]
+    Power Modules <common-powermodule-landingpage>
     Power Tether <common-power-tether>
     PPM Encoder <common-ppm-encoder>
 [site wiki="copter"]
@@ -71,6 +71,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     RPM Sensor <common-rpm>
     Safety Switch <common-safety-switch-pixhawk>
     Servos <common-servo-landingpage>
+    Smart Batteries <common-smart-battery-landingpage>
 [site wiki="rover"]
     Start/Stop Switch <startstop-switch>
 [/site]
