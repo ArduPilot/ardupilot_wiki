@@ -237,6 +237,44 @@ To test losing GPS lock, use ``SIM_GPS_DISABLE``:
 
 You can also enable/disable a 2nd GPS using ``SIM_GPS2_DISABLE``.
 
+Testing GPS-for-Yaw
+===================
+
+To test GPS-for-Yaw using two simulated UBlox GPSs:
+
+::
+
+    param set EK3_SRC1_YAW 2
+    param set GPS_TYPE 17
+    param set GPS_TYPE2 18
+    param set GPS_POS1_Y -0.2
+    param set GPS_POS2_Y 0.2
+    param set SIM_GPS_POS_Y -0.2
+    param set SIM_GPS2_POS_Y 0.2
+    param set SIM_GPS2_DISABLE 0
+    param set SIM_GPS2_HDG 1
+
+Reboot SITL and the heading should be visible in the GPS2_RAW message's yaw field:
+
+::
+
+    status GPS2_RAW
+
+To test using a single NMEA GPS:
+
+::
+
+    param set EK3_SRC1_YAW 2
+    param set GPS_TYPE 5
+    param set SIM_GPS_TYPE 5
+    param set SIM_GPS_HDG 1
+
+Reboot SITL and the heading should be visible in the GPS_RAW_INT message's yaw field:
+
+::
+
+    status GPS_RAW_INT
+
 Testing the effects of vibration
 ================================
 
