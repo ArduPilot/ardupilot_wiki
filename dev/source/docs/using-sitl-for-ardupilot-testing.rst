@@ -245,6 +245,7 @@ To test GPS-for-Yaw using two simulated UBlox GPSs:
 ::
 
     param set EK3_SRC1_YAW 2
+    param set GPS_AUTO_CONFIG 0
     param set GPS_TYPE 17
     param set GPS_TYPE2 18
     param set GPS_POS1_Y -0.2
