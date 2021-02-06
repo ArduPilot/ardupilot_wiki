@@ -4,7 +4,7 @@
 Understanding Altitude in ArduPilot
 ===================================
 
-ArduPilot documentation uses the word "altitude" often and in many different ways and contexts. Not all "altitudes" mean the same thing, and an good understanding of what altitude means in any given context is important to understand expected operation and behavior.
+ArduPilot documentation uses the word "altitude" often and in many different ways and contexts. Not all "altitudes" mean the same thing, and a good understanding of what altitude means in any given context is important to understand expected operation and behavior.
 
 
 .. image:: ../../../images/altitudes.jpg
