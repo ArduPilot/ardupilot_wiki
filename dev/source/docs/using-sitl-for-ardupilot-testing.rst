@@ -575,7 +575,7 @@ Arm in loiter, takeoff and fly somewhere:
    rc 3 1800
    rc 2 1400
 
-Other SITL vicon settings are hel in SIM_VICON_ parameters:
+Other SITL vicon settings are hel in SIM_VICON_xx parameters:
 
 ::
 
