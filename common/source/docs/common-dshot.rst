@@ -45,7 +45,14 @@ The DShot protocol can run at different speeds. ArduPilot supports four speeds:
 
 We recommend using the lowest baud rate, DShot150, as it is the most reliable protocol (lower baudrates are less susceptible to noise on cables). Higher values will be beneficial once ArduPilot's main loop rate is capable of speeds above 1kHz.
 
-.. note:: When an output is configured for DShot, the ``SERVOx_MIN/MAX`` parameters for that output will always be reset to 1000/2000, respectively, upon every boot, since DShot does not use these parameters and they can affect scaling in other sections of the code. The ``SERVOx_TRIM``  value will be reset to 1500 if it's a reversible output, or 1000 if normal output setup in DShot.
+.. note:: When an output is configured for DShot, the ``SERVOx_MIN/MAX/TRIM`` parameters for that output will always be ignored since DShot does not use these parameters. The trim  value used will be  1500 if it's a reversible output, or 1000 if normal output setup in DShot, and the output range always be 1000-2000.
+
+Reversible DShot ESCs
+---------------------
+
+Currently, only BLHeli32 style reversible DShot ESCs are supported. In order to use one, the output which drives it must be designated with the appropriate bit in the :ref:`SERVO_BLH_REMASK<SERVO_BLH_REMASK>` bitmask parameter. This will map the outputs 1000-1500-2000 values to the correct digital values for the ESC to provide FullReverse-Idle-FullForward range operation, respectively.
+
+.. note:: Currently, ArduPilot only supports the use of reversible ESCs for Plane and Rover, not Copter.
 
 Autopilot Output Capabilities
 =============================
