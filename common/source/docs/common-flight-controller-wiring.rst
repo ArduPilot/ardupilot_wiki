@@ -21,7 +21,7 @@ GPS is mandatory in all vehicles. Compass is mandatory for Copter and Rover and 
 
 .. note:: Usually GPS is attached to the logical Serial Port 3 by default in ArduPilot. However, which  physical UART is assigned to ArduPilot's Serial Port 3 on the autopilot is documented in the autopilots :ref:`documentation <common-autopilots>`
 
-As an wiring example, the topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` shows how to connect to a Pixhawk autopilot and includes additional configuration and mounting information.
+As a wiring example, the topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` shows how to connect to a Pixhawk autopilot and includes additional configuration and mounting information.
 
 RC input
 --------
@@ -72,7 +72,7 @@ This distinction is important, since AUX outputs(and OUTPUTs from autopilots wit
 
 Often these outputs are provided on 3 pin connector strips supplying or distributing servo power and ground, in addition to the individual output signals. This power is usually provided externally, such as by the ESC or a BEC, although some autopilots provide this power from internal regulators.
 
-An connection example for Rover
+A connection example for Rover
 
 .. image:: ../../../images/servo-motor-connection.jpg
   :width: 450px
