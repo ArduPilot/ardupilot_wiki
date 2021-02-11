@@ -10,7 +10,7 @@ This is not exhaustive, nor complete, but attempts to help users decode the use 
 Aliases
 =======
 
-Most methods have an alias defined to specify its binding group. For example, the calls bound from the AP_Arming library, have an alias defined as "ahrs" by the description line in its group:
+Most methods have an alias defined to specify its binding group. For example, the calls bound from the AP_AHRS library, have an alias defined as "ahrs" by the description line in its group:
 
 ``singleton AP_AHRS alias ahrs``
 
@@ -108,4 +108,3 @@ In order to see how this would be used:
       end
 
 note that velVar could have a value of 0 and still the ``if`` statement test would be true in the LUA script.
-
