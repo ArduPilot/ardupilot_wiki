@@ -89,7 +89,7 @@ This is allowed to happen at all flight stages, even while the vehicle is armed 
 API Documentation
 =================
 
-The API documentation described here is not a complete list, but rather a work in progress. This list will be expanded upon in the near future. For a full list of the methods currently available, the `binding generator <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`_ source is the best reference currently available.
+The API documentation described here is not a complete list, but rather a work in progress. This list will be expanded upon in the near future. For a full list of the methods currently available, the `binding generator <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`_ source is the best reference currently available. See :ref:`Binding Description Method Syntax<common-lua-binding-syntax>` for more information on how to decode the methods shown there.
 
 Location
 ~~~~~~~~
@@ -413,7 +413,11 @@ To give Lua scripts access to more features of ArduPilot the API can be extended
 
 Further Information
 ===================
+.. toctree::
+    :hidden: 
 
+    Bindings <common-lua-binding-syntax>
+    
 For more background on technical decisions made before this point you can reference the presentation from the 2019 ArduPilot Unconference.
 
 ..  youtube:: ZUNOZMxOwsI
