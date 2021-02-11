@@ -1,4 +1,4 @@
-.. _soaring:
+.. _soaring-upcoming:
 
 =======
 Soaring
@@ -135,11 +135,6 @@ If the aircraft is not achieving this average bank angle when thermalling, you s
 Set up RC switch (Optional)
 ===========================
 
-.. note::
-
-   Available in firmware revisions 4.1 and later. 
-
-
 You can use a 3-position RC switch to control when the autopilot can use soaring. Set the parameter RCX_OPTION parameter for the desired channel to SOAR (index 88) - see :ref:`Auxiliary Functions <common-auxiliary-functions>`. The 3 positions have the following effect.
 
  - Low. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
@@ -171,11 +166,6 @@ Because the soaring feature can follow rising air as required to gain altitude, 
 Limit maximum drift
 -------------------
 
-.. note::
-
-   Available in firmware revisions 4.1 and later.
-
-
 The parameter :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` can be used to limit how far (in metres) the aircraft can drift while in THERMAL mode. If the airfraft reaches this limit in THERMAL mode, it will revert to the original flight mode.
 
 If the original flight mode was FBWB or CRUISE mode, the drift distance is measured from the location THERMAL was entered.
@@ -194,19 +184,10 @@ The image below shows a scenerio where the mission track is north to south and t
 Limit maximum distance from home
 --------------------------------
 
-.. note::
-
-   Available in firmware revisions 4.1 and later.
-
-
 If using FBWB or CRUISE mode, the parameter :ref:`SOAR_MAX_RADIUS<SOAR_MAX_RADIUS>` can be used to trigger RTL if the aircraft is more than this distance from home when thermalling while in THERMAL mode. Note that this parameter won't stop the aircraft from exceeding this distance before it enters THERMAL mode.
 
 Time limits
 -----------
-
-.. note::
-
-   Available in firmware revisions 4.1 and later.
 
 :ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` : Minimum time to remain in THERMAL once entered for a thermal before exiting due to low lift or altitude limits.
 
