@@ -73,14 +73,9 @@ above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` .
 
 Tune the TECS
 =============
-
-.. note::
-
-   In firmware revisions before 4.1, it was necessary to set :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` to 2.0 when using soaring.
-   This is now handled automatically.
  
 For best results the TECS needs to be set up to fly the aircraft at a consistent airspeed when 
-gliding. To achieve this, set :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and set
+gliding. To achieve this, :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` to 2.0, :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and set
 :ref:`SOAR_VSPEED<SOAR_VSPEED>` to a large number, say 50.0, or use the :ref:`RC switch<soaring_rc-switch>`
 to inhibit mode changes. This means that the aircraft will
 glide but will never begin thermalling. Set :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` to an altitude you
@@ -140,16 +135,9 @@ You should make sure that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>
 Set up RC switch (Optional)
 ===========================
 
-.. note::
+You can use a 2-position RC switch to control when the autopilot can use soaring. Set the parameter SOAR_ENABLE_CH to the corresponding channel number. The 3 positions have the following effect.
 
-   Available in firmware revisions 4.1 and later. 
-
-
-You can use a 3-position RC switch to control when the autopilot can use soaring. Set the parameter SOAR_ENABLE_CH to the corresponding channel number. The 3 positions have the following effect.
-
- - Below 1500us. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
- 
- - 1500us to 1700us. Soaring will have control over throttle. The mode will not automatically change to LOITER based on detected rising air. However, when manually set to LOITER mode using RC controller or GCS, the autopilot will try to follow rising air currents. It will still restore the previous mode if the aircraft is not climbing, or if it drifts too far (see below). Switching to this position from the one below,  while LOITERing in a thermal has no effect until the thermal is exited.
+ - Below 1700us. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
  
  - Above 1700us. Fully automatic mode changes to LOITER from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
 
@@ -157,9 +145,7 @@ You can use a 3-position RC switch to control when the autopilot can use soaring
 | PWM Value      | Auto throttle |  Tracking thermal | Automatic change | Automatic change  | 
 |                | cutoff        |  updrafts         | back from LOITER | to LOITER         |
 +----------------+---------------+-------------------+------------------+-------------------+
-| < 1500 us      |       N       |       N           |       N          |       N           | 
-+----------------+---------------+-------------------+------------------+-------------------+
-| 1500 - 1700 us |       Y       |       Y           |       Y          |       N           |
+| < 1700 us      |       N       |       N           |       N          |       N           | 
 +----------------+---------------+-------------------+------------------+-------------------+
 | > 1700 us      |       Y       |       Y           |       Y          |       Y           |
 +----------------+---------------+-------------------+------------------+-------------------+
@@ -170,55 +156,19 @@ Set limits
 
 Because the soaring feature can follow rising air as required to gain altitude, it is important to set limits to avoid it leaving the original flight area completetly. This is especially important in windy conditions as the autopilot will try to follow thermals downwind. There are three ways to set limits.
 
-Limit maximum drift
--------------------
-
-.. note::
-
-   Available in firmware revisions 4.1 and later.
-
-
-The parameter :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` can be used to limit how far (in metres) the aircraft can drift while in LOITER mode. If the airfraft reaches this limit in LOITER mode, it will revert to the original flight mode.
-
-If the original flight mode was FBWB or CRUISE mode, the drift distance is measured from the location LOITER was entered.
-
-If the original flight mode was AUTO mode, the drift distance is measured from the closest point on the mission segment 
-to where LOITER was entered. Drift sideways or backwards, but not along the original mission track, is counted. This allows
-thermalling to continue if the wind is moving the aircraft in the direction of the next waypoint.
-
-The image below shows a scenerio where the mission track is north to south and the wind is causing thermals to drift east to west. The aircraft will follow them but will respect :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>`. Note that sometimes it will go a little beyond  :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` as it lines up its heading to the next waypoint before reverting to AUTO mode.
-
-.. image:: ../../../images/SOAR_MAX_DRIFT.png
-
-
-.. _soaring_maximum-distance-from-home:
-
-Limit maximum distance from home
---------------------------------
-
-.. note::
-
-   Available in firmware revisions 4.1 and later.
-
-
-If using FBWB or CRUISE mode, the parameter :ref:`SOAR_MAX_RADIUS<SOAR_MAX_RADIUS>` can be used to trigger RTL if the aircraft is more than this distance from home when thermalling while in LOITER mode. Note that this parameter won't stop the aircraft from exceeding this distance before it enters LOITER mode.
-
 
 Time limits
 -----------
-
-.. note::
-
-   Available in firmware revisions 4.1 and later.
 
 :ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` : Minimum time to remain in LOITER once entered for a thermal before exiting due to low lift or altitude limits.
 
 :ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>` : Minimum time to remain in glide after exiting LOITER due to low lift or altitude limits before entering LOITER mode again, or when entering Soaring initially.
 
-Use geofence
-------------
 
-:ref:`Geofence <geofencing>` can be used as a last line of defence. Set it up in the usual way.
+Spatial limits
+--------------
+
+:ref:`Geofence <geofencing>` can be used to constrain the physical flight area used. Set it up in the usual way.
 
 
 Use of TECS synthetic airspeed
