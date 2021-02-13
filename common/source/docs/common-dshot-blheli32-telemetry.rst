@@ -9,8 +9,8 @@ If the ESC has this capability, it allows monitoring and logging of performance 
 .. note:: ArduPilot does not currently support the polling of the ESCs for telemetry data via throttle idle messages over the signal line in non DShot protocols.
 
 
-Connecting your ESCs for use with Dshot protocol and BLHeli_32 features
-=======================================================================
+Connecting your ESCs for use with Dshot protocol and BLHeli_32/BLHeli_S features
+================================================================================
 
 .. image:: ../../../images/dshot-pixhawk.jpg
     :target: ../_images/dshot-pixhawk.jpg
@@ -22,9 +22,9 @@ Set the following parameters to enable BLHeli_32 telemetry feedback to a autopil
 
 - :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` = 1 to enable automatic mapping of multirotor motors for BLHeli_32 pass-through and telemetry support. for most multirotor and quadplane users this will do the right thing. If using BLHeli_32 ESCs on non-multirotor motors with the respective SERVOn_FUNCTION set to 70 (=throttle), 73 (=throttle left) or 74 (=throttle right), you will need to further specify the used outputs as follows:
 
-#. :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` : a bitmap used to enable BLHeli_32 pass-through and telemetry support on non-multirotor motors and / or exactly specify which servo outputs you want to enable pass-through and telemetry on (if available in ESC).
+- :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` : a bitmap used to enable BLHeli_32 pass-through and telemetry support on non-multirotor motors and / or exactly specify which servo outputs you want to enable pass-through and telemetry on (if available in ESC).
 
-#. :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` : This needs to be set to the protocol being used for the DShot protocol being used on those additional outputs if not the same as the normal copter style motor outputs.
+- :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` : This needs to be set to the protocol being used for the DShot protocol being used on those additional outputs if not the same as the normal copter style motor outputs.
 
 - :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` 16 (= ESC telemetry). This assumes serial port 5 is used. Adjust the serial port's protocol parameter to 16 , for the serial port whose RX input is connected to the ESC(s) telemetry pad. The correlation between serial port numbering and UART physical ports for you autopilot should be documented in its description page linked :ref:`here <common-autopilots>`.
 
@@ -76,11 +76,11 @@ Set the following parameters to enable BLHeli_32 and BLHeli_S bi-directional Dsh
 
 - :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` = 1 to enable automatic mapping of multirotor motors for BLHeli_32 pass-through and telemetry support. for most multirotor and quadplane users this will do the right thing. If using BLHeli_32 ESCs on non-multirotor motors with the respective SERVOn_FUNCTION set to 70 (=throttle), 73 (=throttle left) or 74 (=throttle right), you will need to further specify the used outputs as follows:
 
-#. :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` : a bitmap used to enable BLHeli_32 pass-through and telemetry support on non-multirotor motors and / or exactly specify which servo outputs you want to enable pass-through and telemetry on (if available in ESC).
+- :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` : a bitmap used to enable BLHeli_32 pass-through and telemetry support on non-multirotor motors and / or exactly specify which servo outputs you want to enable pass-through and telemetry on (if available in ESC).
 
-#. :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>` : a bitmap used to enable BLHeli_32 pr BLHeli_S bi-directional Dshot support. On flight controllers without IOMCU this would normally be set to 15 to indicate four active channels. On flight controllers with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional Dshot will only work on the AUX outputs). The BeastH7 only supports channels 1 and 4 for bi-directional dshot (mask set to 9).
+- :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>` : a bitmap used to enable BLHeli_32 or BLHeli_S bi-directional Dshot support. On flight controllers without IOMCU this would normally be set to 15 to indicate four active channels. On flight controllers with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional Dshot will only work on the AUX outputs). The BeastH7 only supports channels 1 and 4 for bi-directional dshot (mask set to 9).
 
-#. :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` : This needs to be set to the protocol being used for the DShot protocol being used on those additional outputs if not the same as the normal copter style motor outputs.
+- :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` : This needs to be set to the protocol being used for the DShot protocol being used on those additional outputs if not the same as the normal copter style motor outputs.
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors. Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM (small motors might have 12 poles).
 
