@@ -16,4 +16,4 @@ RC Options
 3                                       Add delay bytes in FPort protocol, needed by some systems, see :ref:`FPort Setup<common-FPort-receivers>`
 =================================       =========
 
-for example, to set this option to ignore receiver failsafe bits, you would set bit 2, or a value of "8". This may be usefull when using ground station control beyond the range of the RC system which can set its receiver's outputs to trim values upon RC signal loss, but still has a failsafe bit in the protocol which would otherwise force an RC failsafe to occur.
+for example, to set this option to ignore receiver failsafe bits, you would set bit 2, or a value of "4" (2^2=4). This may be usefull when using ground station control beyond the range of the RC system which can set its receiver's outputs to trim values upon RC signal loss, but still has a failsafe bit in the protocol which would otherwise force an RC failsafe to occur.
