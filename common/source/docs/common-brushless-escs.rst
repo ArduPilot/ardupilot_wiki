@@ -17,6 +17,9 @@ PWM ESCs use a periodic input pulse of width typically between 1000uS and 2000uS
 
 .. note:: be sure of the capabilities of your ESC before selecting a higher frame rate to avoid damage to the ESC.
 
+OneShot
+=======
+
 An even faster PWM protocol is OneShot125 (sometimes shortened to just OneShot). If the ESC has this capability, then the pulse widths are divided by a factor of 8 for even faster communication from the autopilot to the ESC since the commands get to the ESC 8 times faster at any given frame rate. In addition, the capability to increase the frame rate up to 490Hz is allowed.
 
 .. note:: OneShot (vs OneShot125) is an older protocol that uses the same pulse widths as Normal PWM, but has a higher fixed frame rate equal to the autopilot main loop rate. It has been replaced by OneShot125.
@@ -41,6 +44,7 @@ While DShot is available on many ESCs, those with BLHeli32 capability, offer the
 .. note::
    Recently there is a growing number of proprietary and non-proprietary 16 / 32 bit ESCs with firmware that support DShot and other digital ESC protocols, but not BLHeli_32-specific features like passthrough and telemetry. See your ESC's manual for further detail on supported features.
 
+
 Where to buy
 ============
 
@@ -51,3 +55,9 @@ A `search for "BLHeli32 shopping" <https://www.google.com/search?q=blheli32&tbm=
 
 *image courtesy of holybro.com*
 
+OneWire
+=======
+
+This is a half duplex serial protocol with a 2Mbit/s Baudrate created by Felix Niessen (former Flyduino KISS developer) from `FETtec <https://fettec.net/>`. For example, you can connect a 4in1 ESC with only 1 signal wire and 1 GND wire to your flight controller. The OneWire protocol is limited to 24 ESCs per OneWire bus.
+It supports ESC telemetry, so information from the ESC status can be sent back to the flight controller.
+See :ref:`common-fettec-onewire` section for more information.
