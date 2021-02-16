@@ -17,6 +17,7 @@ Ardupilot supports several communication protocols with brushless motor ESCs:
 - DShot300 at 300kbaud
 - DShot600 at 600kbaud
 - DShot1200 at 1200kbaud
+- OneWire at 2000kbaud
 
 These are selected by the :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` parameter on Copter or :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` on QuadPlanes for copter function motors. On Plane, other motors use Normal (PWM) protocol.
 
@@ -80,3 +81,9 @@ Ardupilot is compatible with BLHeli32 Passthrough and ESC Telemetry Functions:
 
     BLHeli32 Passthrough <common-blheli32-passthru>
     BLHeli32 ESC Telemetry <common-dshot-blheli32-telemetry>
+    
+OneWire
+=======
+
+This protocol uses a half-duplex serial connection and therefore requires a free serial (UART) port.
+To configure it refer to the <common-fettec-onewire> page.
