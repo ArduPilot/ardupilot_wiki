@@ -1,21 +1,19 @@
 .. _gsoc-ideas-list:
     
 ========================================
-List of Suggested Projects for GSoC 2020
+List of Suggested Projects for GSoC 2021
 ========================================
 
 This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <https://summerofcode.withgoogle.com/>`__. These are only suggestions, and if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2020.
 
-- :ref:`Non-GPS navigation improvements using Intel RealSense cameras <common-vio-tracking-camera>`
-- :ref:`Object avoidance <common-object-avoidance-landing-page>` improvements for Multicopters and/or Rovers
-- Lane following or automatic docking for cars and boats using `JeVois camera <http://www.jevois.org/>`__ (or similar)
-- Rover Autotune
-- Walking robot support
+- :ref:`Optical flow <common-optical-flow-sensor-setup>` calibration improvements
+- :ref:`Object avoidance <common-object-avoidance-landing-page>` support for `MYNT EYE depth camera <https://www.mynteye.com/pages/products>`__
+- Integrate with ROS for off-board path-planning
+- Rover AutoTune
 - 3D aerobatic support for fixed wing aircraft
 - Improve :ref:`Morse simulator <sitl-with-morse>` integration including setup to move camera with vehicles
 - Create new vehicle models for the Morse simulator, including boats, planes and copters
 - Improve :ref:`Gazebo simulator <using-gazebo-simulator-with-sitl>` integration including json protocol, Gazebo9, and new sensors set
-- `MathWorks SimuLink <https://www.mathworks.com/products/simulink.html>`__ interface to ArduPilot SITL
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
 - Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Better multivehicle support, performance improvement. Requires strong python skills.
 - Improve helicopter throttle handling for internal combustion engines for autonomous operations.
@@ -27,7 +25,7 @@ See lower down on this page for more details for some of the projects listed abo
 Timeline
 ========
 
-The timeline for `GSoC 2020 is here <https://summerofcode.withgoogle.com/how-it-works/#timeline>`__
+The timeline for `GSoC 2021 is here <https://summerofcode.withgoogle.com/how-it-works/#timeline>`__
 
 How to improve your chances of being accepted
 =============================================
@@ -39,54 +37,41 @@ When making the difficult decision about which students to accept, we look for:
 - Experience contributing to ArduPilot or other open source projects
 - Understanding of Git and/or GitHub
 
-Non-GPS navigation improvements using Intel RealSense cameras
--------------------------------------------------------------
+Optical Flow Calibration Improvements
+-------------------------------------
 
-Intel Realsense cameras can already be used with ArduPilot but there is still room for improvement including:
+:ref:`Optical Flow <common-optical-flow-sensors-landingpage>` can provide accurate non-GPS position estimation if the user correctly calibrates the sensor but `this calibration procedure <https://ardupilot.org/copter/docs/common-optical-flow-sensor-setup.html>`__ is difficult to get right.
 
-- Allow vehicles to move seamlessly between GPS environments and non-GPS environments.  This will likely require enhancements to ArduPilot's EKF.
-- Provide obstacle data from an Intel Realsense camera to ardupilot using the MAVLink `OBSTACLE_DISTANCE <https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE>`__ message
-- Prepare `APSync <https://ardupilot.org/dev/docs/apsync-intro.html>`__ images to ease user setup
+This project involves adding an in-flight calibration procedure in which the user enables both GPS and optical flow.  The EKF should then be able to estimate the expected flow measurements, compare them with the actual flow measurements and then calculate the best scaling values.
 
-Object Avoidance improvements for Multicopters and/or Rovers
-------------------------------------------------------------
+See `Issue #16631 <https://github.com/ArduPilot/ardupilot/issues/16631>`__.
 
-ArduPilot supports three methods for object avoidance, `Bendy Ruler <https://ardupilot.org/copter/docs/common-oa-bendyruler.html>`__, `Dijkstra's <https://ardupilot.org/copter/docs/common-oa-dijkstras.html>`__ and `Simple avoidance <https://ardupilot.org/copter/docs/common-simple-object-avoidance.html>`__ but there is room for improvement in each of them:
+Object Avoidance support for the MYNT EYE depth camera
+-----------------------------------------------------
 
-- BendyRuler should work in 3D (`issue <https://github.com/ArduPilot/ardupilot/issues/13215>`__)
-- BendyRuler can be hesitant about which direction to choose (`issue <https://github.com/ArduPilot/ardupilot/issues/11961>`__)
-- Rover's using BendyRuler may impact the fence after clearing obstacles (`issue <https://github.com/ArduPilot/ardupilot/issues/11565>`__)
-- Dijkstra's should work with Spline waypoints (`issue <https://github.com/ArduPilot/ardupilot/issues/12691>`__)
-- Simple avoidance should backaway from objects (`issue <https://github.com/ArduPilot/ardupilot/issues/7706>`__)
+ArduPilot already supports :ref:`object avoidance using the Intel RealSense 435 and 455 depth cameras <common-realsense-depth-camera>`. We should extend support to the `MYNT EYE depth cameras <https://www.mynteye.com/pages/products>`__.
 
-Lane following or automatic docking for cars and boats
-------------------------------------------------------
+This project involves:
 
-This project involves using machine vision to add lane following or automatic docking to to ArduPilot's Rover firmware
+- Writing a python script (similar to `this script for the Intel T435 <https://github.com/thien94/vision_to_mavros/blob/master/scripts/d4xx_to_mavlink.py>`__) to pull the data from the depth camera and package them into OBSTACLE_DISTANCE and/or OBSTACLE_DISTANCE_3D mavlink messages which will then be consumed by ArduPilot's AP_Proximity library
+- Creating an :ref:`APSync <apsync-intro>` image for at least one companion computer (RPI4?) that can run the above script
 
-- Either a low-cost `JeVois camera <http://www.jevois.org/>`__ or a high powered `companion computer <https://ardupilot.org/dev/docs/companion-computers.html>`__ could be used
-- Recognise the road or docking target using machine vision or learning (for docking an AprilTag could be used)
-- Either create a new control mode to control the vehicle or send velocity commands (probably using the `SET_GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__ message) to move the vehicle in the correct direction
-- If a companion computer is used, add the solution to `APSync <https://ardupilot.org/dev/docs/apsync-intro.html>`__
-- Document the implementation
+See `Issue #16632 <https://github.com/ArduPilot/ardupilot/issues/16632>`__.
+
+Integrate with ROS for off-board path-planning
+----------------------------------------------
+
+ArduPilot can be :ref:`integrated with ROS <ros>` in several ways including for Non-GPS position estimation and object avoidance.  This project aims to allow ROS's path planning routines to be used by ArduPilot while still leaving the mission input in ArduPilot.
+
+- `Randy's video using ROS for path planning around obstacles <https://www.youtube.com/watch?v=u99qwQSl9Z4>`__
+- `mavros PR to allow ROS to accept set-position-target-global-int messages <https://github.com/mavlink/mavros/pull/1184>`__ from ArduPilot to be fed into ROS's navigation algorithm
 
 Rover Autotune
 --------------
 
-This project would involve adding an autotune feature for rover and boat like for copter.
-The autotune should be able to learn and set most of the rover parameters for autonomous behavior.
-This will need a good understanding of control theory.
+This project involves adding an AutoTune mode to the Rover firmware similar to `Copter's AutoTune mode <https://ardupilot.org/copter/docs/autotune.html>`__ but simpler.  The focus should be on finding the best `turn rate <https://ardupilot.org/rover/docs/rover-tuning-steering-rate.html>`__ and `speed controller <https://ardupilot.org/rover/docs/rover-tuning-throttle-and-speed.html>`__ parameters.  The likely solution will be to provide turn rate or speed targets to the controllers for a short period, measure the response of the vehicle, adjust the gains and repeat until acceptable gains are found.
 
-Walking robot support
----------------------
-
-This project would involve adding basic support for four legged walking robots and could involve:
-
-- Identifying a reasonably priced four legged robot frame
-- Control system improvements to allow the frame to stand and walk
-- Documentation of the setup
-
-Expenses for purchasing the frame and autopilot will be covered by ArduPilot.
+This project probably requires a good understanding of PID objects and control.
 
 Improve fixed-wing 3D aerobatics support in ArduPilot
 -----------------------------------------------------
