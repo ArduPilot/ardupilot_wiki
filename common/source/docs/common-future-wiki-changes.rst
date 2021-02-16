@@ -407,7 +407,7 @@ Integrated OSD page
 OSD enhancements : `OSD Call Sign and Fonts <https://github.com/ArduPilot/ardupilot_wiki/pull/3173>`_
 
 BiDirectional DSHOT and BLHeli_S Passthrough
--------------------------------------------
+--------------------------------------------
 
 See `Bi-Directional DShot <https://github.com/ArduPilot/ardupilot_wiki/pull/3329/files>`__
 
