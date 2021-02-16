@@ -1,5 +1,9 @@
 .. _soaring:
 
+.. note::
+
+  Refer to :ref:`this page <soaring-upcoming>` if you're using version 4.1 or later.
+
 =======
 Soaring
 =======
@@ -34,16 +38,17 @@ functionality:
    - The aircraft drifts more than :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` - see :ref:`Limit maximum distance from home<soaring_maximum-distance-from-home>`
 
    The flight mode will be returned to whatever it was before LOITER was 
-   triggered, with the following exception: If the previous mode was FBWB or 
-   CRUISE, and thermalling ended due to reaching :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>`, RTL will be
-   triggered instead.
+   triggered. As an exception to this, if the previous mode was FBWB or 
+   CRUISE, and thermalling ended due to reaching :ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>`,
+   RTL will be triggered instead.
 
+Hardware
+========
 
-Non Supported Boards
-====================
+To use your plane for soaring, it should ideally be a glider type aircraft with 
+a good lift to drag ratio and be equipped with an airspeed sensor.
 
-Generally all boards support soaring, *except* those with firmware limitations referred to on :ref:`this page <common-limited_firmware>`. As of June 2020,
-non-supported boards include:
+Generally all boards support soaring, *except* those with firmware limitations referred to on :ref:`this page <common-limited_firmware>`. As of June 2020, non-supported boards include:
 
  - KakuteF7Mini
  - KakuteF7
@@ -51,47 +56,82 @@ non-supported boards include:
  - Pixhawk1-1M
  - OMNIBUSF7V2
 
-Setting up soaring
-==================
+Setup
+=====
 
-To use your plane for soaring, it should ideally be a glider type aircraft with 
-a good lift to drag ratio and be equipped with an airspeed sensor. There are a 
-few steps involved in setting a plane up for soaring:
-
-#. Set up a suitable mission.
-#. Tune the TECS.
-#. Estimate aircraft drag.
-#. Set up the soaring parameters.
-#. Set loiter radius and bank angle limit.
-
-Mission Setup
-=============
+Mission 
+-------
 
 The main requirement for a mission is that it take the aircraft above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>`
 so that gliding flight is initiated. To achieve this, set the waypoints' altitude(s)
 above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` . 
 
-Tune the TECS
-=============
+TECS
+----
  
-For best results the TECS needs to be set up to fly the aircraft at a consistent airspeed when 
-gliding. To achieve this, :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` to 2.0, :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and set
-:ref:`SOAR_VSPEED<SOAR_VSPEED>` to a large number, say 50.0, or use the :ref:`RC switch<soaring_rc-switch>`
-to inhibit mode changes. This means that the aircraft will
-glide but will never begin thermalling. Set :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` to an altitude you
-feel comfortable with. It should be high enough to allow a good length of time to
-be spent gliding. 
-Launch the aircraft and put it in AUTO mode. It should climb to :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` 
-and then begin a gliding descent.
-Watch the telemetry graphs or look at the Dataflash logs. Is the aircraft maintaining
-the demanded airspeed? The actual and demanded airspeed can be seen in the onboard log as 
-``TECS.sp`` and ``TECS.spdem``, and via telemetry you can use ``NAV_CONTROLLER_OUTPUT.aspd_error``. You will 
-probably need to increase :ref:`PTCH2SRV_IMAX<PTCH2SRV_IMAX>` and :ref:`TECS_INTEG_GAIN<TECS_INTEG_GAIN>` to achieve good airspeed
-tracking in gliding flight.
+Set :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` to 2.0. This makes sure the aircraft will glide correctly with motor off.
 
-Estimate Aircraft Drag
-======================
+Soaring Parameters
+------------------
 
+.. _soaring_rc-switch:
+
+RC switch (Optional)
+~~~~~~~~~~~~~~~~~~~~
+
+You can use a 2-position RC switch to control when the autopilot can use soaring. Set the parameter SOAR_ENABLE_CH to the corresponding channel number. The 2 positions have the following effect.
+
+ - Below 1700us. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
+ 
+ - Above 1700us. Fully automatic mode changes to LOITER from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
+
+
+Loiter radius 
+~~~~~~~~~~~~~
+
+The parameter :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` sets how tight the loiter circle is. For thermalling it is usually
+best to have the aircraft fly at a 30 - 45 degree bank angle. The corresponding loiter radius can be calculated as 
+about airspeed squared over ~10 (for 45 degrees) or ~6 (for 30 degrees), from the equation
+
+.. raw:: html
+
+   <a href="https://www.codecogs.com/eqnedit.php?latex=r&space;=&space;\frac{v^2}{g&space;\tan&space;\phi}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?r&space;=&space;\frac{v^2}{g&space;\tan&space;\phi}" title="r = \frac{v^2}{g \tan \phi}" /></a>
+
+The tangent is for the desired bank angle. The resulting radius will be in meters. Use g  = 9.81 m/s/s, and velocity (v) is in m/s. For example, if the airspeed in loiter is 20m/s, then the :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` should be 40m for a 45 degree bank.
+
+You should make sure that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set a bit larger than the desired bank angle to give some room for manoeuvring.
+
+
+Set limits
+----------
+
+Because the soaring feature can follow rising air as required to gain altitude, it is important to set limits to avoid it leaving the original flight area completetly. This is especially important in windy conditions as the autopilot will try to follow thermals downwind.
+
+Altitude limits
+~~~~~~~~~~~~~~~
+
+:ref:`SOAR_ALT_MAX<SOAR_ALT_MAX>` sets the altitude you want the autopilot to stop thermalling.
+:ref:`SOAR_ALT_MIN<SOAR_ALT_MIN>` sets the minimum altitude you want the autopilot to descend to while gliding.
+
+
+Spatial limits
+~~~~~~~~~~~~~~
+
+:ref:`Geofence <geofencing>` can be used to constrain the physical flight area used. Set it up in the usual way.
+
+
+Tuning
+======
+
+Triggering lift
+---------------
+
+:ref:`SOAR_VSPEED<SOAR_VSPEED>` controls when the mode will be changed to LOITER to begin thermalling. The default of 0.7m/s
+may be too low if you fly in strong conditions. Increasing this value makes the aircraft more "picky" about the lift it will
+try to circle in.
+
+Drag Polar
+----------
 To work out how fast the air is rising or sinking the autopilot needs to know the
 aircraft's sink rate for a given airspeed in still air. This is related to the 
 drag polar of the plane.
@@ -106,80 +146,43 @@ following formula:
 :ref:`SOAR_POLAR_K<SOAR_POLAR_K>` = 703*Weight/Area
 (weight in oz, area in inches squared).
 
+Time hysteresis
+---------------
 
-Set up the Soaring Parameters
-=============================
-
-Change the :ref:`SOAR_VSPEED<SOAR_VSPEED>` parameter back to a sensible value. Remember, 
-this parameter controls when the mode will be changed to LOITER and thermalling 
-starts. Change :ref:`SOAR_ALT_MAX<SOAR_ALT_MAX>` to the altitude you want the autopilot to stop 
-thermalling.
-
-Set loiter radius and bank angle limit
-======================================
-
-The parameter :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` sets how tight the loiter circle is. For thermalling it is usually
-best to have the aircraft fly at a 30 - 45 degree bank angle. The corresponding loiter radius can be calculated as 
-about airspeed squared over ~10 (for 45 degrees) or ~6 (for 30 degrees), from the equation
-
-.. raw:: html
-
-   <a href="https://www.codecogs.com/eqnedit.php?latex=r&space;=&space;\frac{v^2}{g&space;\tan&space;\phi}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?r&space;=&space;\frac{v^2}{g&space;\tan&space;\phi}" title="r = \frac{v^2}{g \tan \phi}" /></a>
-
-The tanget is for the desired bank angle, the result will be in meters for the radius,with g  = 9.81 m/s/s, velocity (v) is in m/s. For example, if the airspeed in loiter is 20m/s, then the :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` should be 40 for a 45 degree bank, assuming that :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set at 4500 or higher.
-
-You should make sure that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>` is set a bit larger to give some room for manoeuvring.
-
-.. _soaring_rc-switch:
-
-Set up RC switch (Optional)
-===========================
-
-You can use a 2-position RC switch to control when the autopilot can use soaring. Set the parameter SOAR_ENABLE_CH to the corresponding channel number. The 3 positions have the following effect.
-
- - Below 1700us. Soaring is disabled (equivalent to setting SOAR_ENABLE = 0). Throttle will be used as normal. Switching to this from either of the positions below, will disable Soaring and maintain the current flight mode.
- 
- - Above 1700us. Fully automatic mode changes to LOITER from AUTO, FBWB or CRUISE modes in response to detected rising air, and following of rising air currents.
-
-+----------------+---------------+-------------------+------------------+-------------------+
-| PWM Value      | Auto throttle |  Tracking thermal | Automatic change | Automatic change  | 
-|                | cutoff        |  updrafts         | back from LOITER | to LOITER         |
-+----------------+---------------+-------------------+------------------+-------------------+
-| < 1700 us      |       N       |       N           |       N          |       N           | 
-+----------------+---------------+-------------------+------------------+-------------------+
-| > 1700 us      |       Y       |       Y           |       Y          |       Y           |
-+----------------+---------------+-------------------+------------------+-------------------+
-
-
-Set limits
-===========
-
-Because the soaring feature can follow rising air as required to gain altitude, it is important to set limits to avoid it leaving the original flight area completetly. This is especially important in windy conditions as the autopilot will try to follow thermals downwind. There are three ways to set limits.
-
-
-Time limits
------------
+Adding hysteresis can reduce the frequency of mode changes.
 
 :ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` : Minimum time to remain in LOITER once entered for a thermal before exiting due to low lift or altitude limits.
 
 :ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>` : Minimum time to remain in glide after exiting LOITER due to low lift or altitude limits before entering LOITER mode again, or when entering Soaring initially.
 
+TECS Tuning
+------------
+For best results the TECS needs to be set up to fly the aircraft at a consistent airspeed when 
+gliding.
 
-Spatial limits
---------------
+If your aircraft has trouble maintaining airspeed accurately you can tune it by confirming that 
+:ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` is set to to 2.0, :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and set
+:ref:`SOAR_VSPEED<SOAR_VSPEED>` to a large number, say 50.0, or use the :ref:`RC switch<soaring_rc-switch>`
+to inhibit mode changes. This means that the aircraft will
+glide but will never begin thermalling. Set :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` to an altitude high enough to
+allow a good length of time to be spent gliding. 
 
-:ref:`Geofence <geofencing>` can be used to constrain the physical flight area used. Set it up in the usual way.
+Launch the aircraft and put it in AUTO mode. It should climb to :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` 
+and then begin a gliding descent. Watch the telemetry graphs or look at the Dataflash logs after the flight. Is the aircraft maintaining the demanded airspeed? The actual and demanded airspeed can be seen in the onboard log as 
+``TECS.sp`` and ``TECS.spdem``, and via telemetry you can use ``NAV_CONTROLLER_OUTPUT.aspd_error``. Problems can usually be fixed
+by increasing :ref:`PTCH2SRV_IMAX<PTCH2SRV_IMAX>` and :ref:`TECS_INTEG_GAIN<TECS_INTEG_GAIN>` to achieve good airspeed
+tracking in gliding flight.
 
-
-Use of TECS synthetic airspeed
-==============================
-
-If your plane can't accommodate an airspeed sensor, it is possible to use the TECS synthetic airspeed estimate :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>`.
-Make sure you read the warning regarding this feature before deciding to use it. To use this feature, set the parameter :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>` to 1.
-
+Notes
+=======
 
 MAVLINK Telemetry
-=================
+-------------------
 
 Currently, the only effect on telemetry is that when soaring is active the climb rate item (VFR_HUD.climb) is altered. Rather that the estimated vertical speed of the aircraft, the estimated vertical speed of the air mass is sent. This field is used by Mission Planner and OpenTX radios to produce vario audio output.
 
+Use of TECS synthetic airspeed
+-------------------------------
+
+If your plane can't accommodate an airspeed sensor, it is possible to use the TECS synthetic airspeed estimate :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>`.
+Make sure you read the warning regarding this feature before deciding to use it. To use this feature, set the parameter :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>` to 1.
