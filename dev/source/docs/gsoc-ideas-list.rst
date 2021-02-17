@@ -4,7 +4,7 @@
 List of Suggested Projects for GSoC 2021
 ========================================
 
-This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <https://summerofcode.withgoogle.com/>`__. These are only suggestions, and if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2020.
+This is a list of projects suggested by ArduPilot developers for `GSoC 2021 <https://summerofcode.withgoogle.com/>`__. GSoC has changed the format of its 2021 edition to reduce the number of hours per project from 350hr down to 174hrs, the list bellow contains project suggestions that should meet this criteria depending also on the skill level of the participant. These are only suggestions, and if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2021.
 
 - :ref:`Optical flow <common-optical-flow-sensor-setup>` calibration improvements
 - :ref:`Object avoidance <common-object-avoidance-landing-page>` support for `MYNT EYE depth camera <https://www.mynteye.com/pages/products>`__
@@ -19,6 +19,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <htt
 - Improve helicopter throttle handling for internal combustion engines for autonomous operations.
 - Swift Package for MAVLink communications.
 - Unified performance counter on ArduPilot
+- ROS2 MAVROS support for Ardupilot.
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -108,6 +109,11 @@ Swift Package for Mavlink
 -------------------------
 
 `Swift Packages <https://developer.apple.com/documentation/swift_packages>`__ are Apples solution for creating reusable components that can be used in iOS and Mac applications. MAVLink currently has several attempts to create a communications package for iOS, but they are currently not compatible with ArduPilot. The goal for this project would be to either create our own universal MAVLink package or adapt one of the existing ones (`MAVSDK Swift <https://github.com/mavlink/MAVSDK-Swift>`__, `pymavlink Swift Generator <https://github.com/ArduPilot/pymavlink/blob/master/generator/swift/MAVLink.swift>`__)to work with ArduPilot and be easily deployable as a Swift package so that any one who wants to use it to create their own iOS based app can integrate it.
+
+ROS2 MAVROS support for Ardupilot
+---------------------------------
+
+Currently there is no MAVROS equivalent for ROS2, with `OSRF <https://www.openrobotics.org>`__ quickly moving to make ROS2 the standard version of ROS, supporting it has becomed a growing interest in our comunity. An initial port of the basic features of MAVROS would be a big step towards integrating Ardupilot and ROS2.
 
 Projects Completed in past years
 --------------------------------
