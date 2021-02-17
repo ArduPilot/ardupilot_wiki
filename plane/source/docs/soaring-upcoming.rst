@@ -67,7 +67,13 @@ above :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` .
 Soaring Parameters
 ------------------
 
-.. _soaring_rc-switch:
+Enable
+~~~~~~
+
+Set the parameter :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and refresh the parameters. This will allow the other SOAR parameters
+to appear in the GCS.
+
+.. _soaring_rc-switch-upcoming:
 
 RC switch (Optional)
 ~~~~~~~~~~~~~~~~~~~~
@@ -177,7 +183,7 @@ Adding hysteresis can reduce the frequency of mode changes.
 :ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>` : Minimum time to remain in glide after exiting LOITER due to low lift or altitude limits before entering LOITER mode again, or when entering Soaring initially.
 
 TECS Tuning
-------------
+-----------
 
 .. note::
 
@@ -189,7 +195,7 @@ gliding.
 
 If your aircraft has trouble maintaining airspeed accurately you can tune it by confirming that 
 :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` is set to to 2.0, :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and set
-:ref:`SOAR_VSPEED<SOAR_VSPEED>` to a large number, say 50.0, or use the :ref:`RC switch<soaring_rc-switch>`
+:ref:`SOAR_VSPEED<SOAR_VSPEED>` to a large number, say 50.0, or use the :ref:`RC switch<soaring_rc-switch-upcoming>`
 to inhibit mode changes. This means that the aircraft will
 glide but will never begin thermalling. Set :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` to an altitude high enough to
 allow a good length of time to be spent gliding. 
@@ -201,15 +207,15 @@ by increasing :ref:`PTCH2SRV_IMAX<PTCH2SRV_IMAX>` and :ref:`TECS_INTEG_GAIN<TECS
 tracking in gliding flight.
 
 Notes
-=======
+=====
 
 MAVLINK Telemetry
--------------------
+-----------------
 
 Currently, the only effect on telemetry is that when soaring is active the climb rate item (VFR_HUD.climb) is altered. Rather that the estimated vertical speed of the aircraft, the estimated vertical speed of the air mass is sent. This field is used by Mission Planner and OpenTX radios to produce vario audio output.
 
 Use of TECS synthetic airspeed
--------------------------------
+------------------------------
 
 If your plane can't accommodate an airspeed sensor, it is possible to use the TECS synthetic airspeed estimate :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>`.
 Make sure you read the warning regarding this feature before deciding to use it. To use this feature, set the parameter :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>` to 1.
