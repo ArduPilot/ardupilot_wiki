@@ -74,6 +74,12 @@ Set :ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` to 2.0. This makes sure the aircraft w
 Soaring Parameters
 ------------------
 
+Enable
+~~~~~~
+
+Set the parameter :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and refresh the parameters. This will allow the other SOAR parameters
+to appear in the GCS.
+
 .. _soaring_rc-switch:
 
 RC switch (Optional)
@@ -156,7 +162,7 @@ Adding hysteresis can reduce the frequency of mode changes.
 :ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>` : Minimum time to remain in glide after exiting LOITER due to low lift or altitude limits before entering LOITER mode again, or when entering Soaring initially.
 
 TECS Tuning
-------------
+-----------
 For best results the TECS needs to be set up to fly the aircraft at a consistent airspeed when 
 gliding.
 
@@ -174,15 +180,15 @@ by increasing :ref:`PTCH2SRV_IMAX<PTCH2SRV_IMAX>` and :ref:`TECS_INTEG_GAIN<TECS
 tracking in gliding flight.
 
 Notes
-=======
+=====
 
 MAVLINK Telemetry
--------------------
+-----------------
 
 Currently, the only effect on telemetry is that when soaring is active the climb rate item (VFR_HUD.climb) is altered. Rather that the estimated vertical speed of the aircraft, the estimated vertical speed of the air mass is sent. This field is used by Mission Planner and OpenTX radios to produce vario audio output.
 
 Use of TECS synthetic airspeed
--------------------------------
+------------------------------
 
 If your plane can't accommodate an airspeed sensor, it is possible to use the TECS synthetic airspeed estimate :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>`.
 Make sure you read the warning regarding this feature before deciding to use it. To use this feature, set the parameter :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>` to 1.
