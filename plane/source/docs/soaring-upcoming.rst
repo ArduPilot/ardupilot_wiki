@@ -114,7 +114,7 @@ You can use a 3-position RC switch to control when the autopilot can use soaring
 |  High    | > 1700 us      |       Y       |       Y           |       Y           |       Y           |
 +----------+----------------+---------------+-------------------+-------------------+-------------------+
 
-When thermalling in THERMAL mode with soaring active, changing the switch position between Mid and High positions commands exiting thermalling and restoring the previous mode.
+When in THERMAL mode, changing the switch position between Mid and High positions commands exiting thermalling and restoring the previous mode.
 
 When climbing back to altitude under throttle, changing the switch position to Low and back aborts the climb and starts gliding.
 
@@ -147,7 +147,7 @@ The image below shows a scenerio where the mission track is north to south and t
 .. image:: ../../../images/SOAR_MAX_DRIFT.png
 
 
-If using FBWB or CRUISE mode, the parameter :ref:`SOAR_MAX_RADIUS<SOAR_MAX_RADIUS>` can be used to trigger RTL if the aircraft is more than this distance from home when thermalling while in THERMAL mode. Note that this parameter won't stop the aircraft from exceeding this distance before it enters THERMAL mode.
+If using FBWB or CRUISE mode, the parameter :ref:`SOAR_MAX_RADIUS<SOAR_MAX_RADIUS>` can be used to trigger RTL if the aircraft is more than this distance from home when in THERMAL mode. Note that this parameter won't stop the aircraft from exceeding this distance before it enters THERMAL mode.
 
 :ref:`Geofence <geofencing>` can be used as a last line of defence. Set it up in the usual way.
 
@@ -159,7 +159,7 @@ Tuning
 Triggering lift
 ---------------
 
-:ref:`SOAR_VSPEED<SOAR_VSPEED>` controls when the mode will be changed to LOITER to begin thermalling. The default of 0.7m/s
+:ref:`SOAR_VSPEED<SOAR_VSPEED>` controls when the mode will be changed to THERMAL. The default of 0.7m/s
 may be too low if you fly in strong conditions. Increasing this value makes the aircraft more "picky" about the lift it will
 try to circle in.
 
@@ -186,9 +186,9 @@ Time hysteresis
 
 Adding hysteresis can reduce the frequency of mode changes.
 
-:ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` : Minimum time to remain in LOITER once entered for a thermal before exiting due to low lift or altitude limits.
+:ref:`SOAR_MIN_THML_S<SOAR_MIN_THML_S>` : Minimum time to remain in THERMAL once entered for a thermal before exiting due to low lift or altitude limits.
 
-:ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>` : Minimum time to remain in glide after exiting LOITER due to low lift or altitude limits before entering LOITER mode again, or when entering Soaring initially.
+:ref:`SOAR_MIN_CRSE_S<SOAR_MIN_CRSE_S>` : Minimum time to remain in glide after exiting THERMAL due to low lift or altitude limits before entering mode again, or when entering Soaring initially.
 
 TECS Tuning
 -----------
