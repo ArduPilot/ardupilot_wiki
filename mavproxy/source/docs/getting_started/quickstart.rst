@@ -76,8 +76,8 @@ Over Network
 ============
 
 Specify the IP address and port containing a mavlink stream. The address
-to connect to must be your own IP address or loopback address. Alternatively
-the if the local IP address is not known, use 0.0.0.0 for MAVProxy find and use
+to connect to must be your own IP address or loopback address. Alternatively,
+if the local IP address is not known, use 0.0.0.0 for MAVProxy find and use
 the local IP address. The type of stream (tcp or udp) should also be specified.
 
 .. code:: bash
