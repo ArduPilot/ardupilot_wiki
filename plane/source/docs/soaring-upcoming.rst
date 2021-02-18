@@ -73,6 +73,23 @@ Enable
 Set the parameter :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and refresh the parameters. This will allow the other SOAR parameters
 to appear in the GCS.
 
+Drag Polar
+~~~~~~~~~~~
+
+To work out how fast the air is rising or sinking the autopilot needs to know the
+aircraft's sink rate for a given airspeed in still air. This is related to the 
+drag polar of the plane and is specified using the SOAR_POLAR parameters.
+:ref:`SOAR_POLAR_K<SOAR_POLAR_K>` is the most important one to set initially and is calculated
+using the following formula:
+
+:ref:`SOAR_POLAR_K<SOAR_POLAR_K>` = 16*Weight/Area
+(weight in kg, area in metres squared).
+
+:ref:`SOAR_POLAR_K<SOAR_POLAR_K>` = 703*Weight/Area
+(weight in oz, area in inches squared).
+
+Calculating the other parameters is explained under tuning.
+
 .. _soaring_rc-switch-upcoming:
 
 RC switch (Optional)
@@ -159,19 +176,10 @@ If the aircraft is not achieving this average bank angle when thermalling, you s
 
 Drag Polar
 ----------
-To work out how fast the air is rising or sinking the autopilot needs to know the
-aircraft's sink rate for a given airspeed in still air. This is related to the 
-drag polar of the plane.
-Estimating the polar can be a little involved. If you have an airframe reasonably
-similar to a Parkzone Radian, it is reasonable to leave the :ref:`SOAR_POLAR_B<SOAR_POLAR_B>` and
-:ref:`SOAR_POLAR_CD0<SOAR_POLAR_CD0>` unchanged. You should adjust :ref:`SOAR_POLAR_K<SOAR_POLAR_K>` for your plane using the
-following formula:
 
-:ref:`SOAR_POLAR_K<SOAR_POLAR_K>` = 16*Weight/Area
-(weight in kg, area in metres squared).
-
-:ref:`SOAR_POLAR_K<SOAR_POLAR_K>` = 703*Weight/Area
-(weight in oz, area in inches squared).
+While the default settings for :ref:`SOAR_POLAR_B<SOAR_POLAR_B>` and :ref:`SOAR_POLAR_CD0<SOAR_POLAR_CD0>`
+should be OK for most foamie-style glider aircraft, improving the accuracy of these parameters will improve how
+your aircraft detects and centres lift. You can use `this spreadsheet <https://docs.google.com/spreadsheets/d/1WA9CXRSPBc6mFydhQ3O_2SeDrQoFH1UrdiXd0PJ-zE4/edit?usp=sharing>`__ to calculate better values from glide tests.
 
 Time hysteresis
 ---------------
