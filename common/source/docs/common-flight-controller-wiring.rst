@@ -12,7 +12,7 @@ This topic covers the wiring/connection of basic/mandatory peripherals to the au
 GPS/Compass
 -----------
 
-GPS is mandatory in all vehicles. Compass is mandatory for Copter and Rover and QuadPlane types of Plane, but not for Conventional Planes, however it is highly recommended.
+GPS is mandatory in all vehicles. Compass is mandatory for Copter and Rover and QuadPlane types of Plane, but not for Conventional Planes, however it is highly recommended. Multiple GPS and/or Compasses can be used in the system, see :ref:`common-gps-blending`, :ref:`common-compass-setup-advanced`, and :ref:`dev:ek3-affinity-lane-switching` for more information
 
 .. image:: ../../../images/gps-connection.jpg
   :width: 450px
@@ -21,7 +21,7 @@ GPS is mandatory in all vehicles. Compass is mandatory for Copter and Rover and 
 
 .. note:: Usually GPS is attached to the logical Serial Port 3 by default in ArduPilot. However, which  physical UART is assigned to ArduPilot's Serial Port 3 on the autopilot is documented in the autopilots :ref:`documentation <common-autopilots>`
 
-.. note:: While it is possible to use multiple GPSes in a system (See :ref:`<ek3-affinity-lane-switching>`), most use only one. It is important that it be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
+.. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
 
 
 As a wiring example, the topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` shows how to connect to a Pixhawk autopilot and includes additional configuration and mounting information.
