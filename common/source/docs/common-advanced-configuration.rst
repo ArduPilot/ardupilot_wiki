@@ -75,6 +75,7 @@ tuning options for the vehicle.
 [site wiki="copter"]
     Motor Thrust Scaling <motor-thrust-scaling>
 [/site]
+    Multiple Sensors & EKF Affinity <common-ek3-affinity-lane-switching>
 [site wiki="copter,rover"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
