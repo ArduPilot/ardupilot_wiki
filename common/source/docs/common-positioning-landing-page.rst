@@ -37,6 +37,9 @@ positioning technologies:
     Trimble BD930 RTK GPS <common-gps-trimble>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
 
+
+.. note:: While it is possible to use multiple GPSes in a system (See :ref:`<ek3-affinity-lane-switching>`), most use only one. It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS(es) during bootup if not found on the first port configured for GPS protocol.
+
 Advanced Uses
 =============
 
