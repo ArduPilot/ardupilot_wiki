@@ -477,11 +477,6 @@ If Differential Spoilers are used, setting an ``RCx_OPTIONS`` channel to "87" wi
 
 This allows live changes to CROW operation on approaches so that speed braking and descent rates can be changed during the approach.
 
-On Soaring page:
-----------------
-
-see `WIKI PR #3013 <https://github.com/ArduPilot/ardupilot_wiki/pull/3013>`_
-
 On Automatic Landing page:
 --------------------------
 
