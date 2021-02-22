@@ -11,4 +11,4 @@ Please follow the links below to learn more about ArduPilot's sophisticated atti
 
     Extended Kalman Filter Tuning <extended-kalman-filter>
     EKF2 Estimation System <ekf2-estimation-system>
-    EKF3 Affinity and Lane Switching <ek3-affinity-lane-switching>
+    EKF3 Affinity and Lane Switching <common-ek3-affinity-lane-switching>
