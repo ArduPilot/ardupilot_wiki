@@ -48,7 +48,7 @@ This project involves adding an in-flight calibration procedure in which the use
 See `Issue #16631 <https://github.com/ArduPilot/ardupilot/issues/16631>`__.
 
 Object Avoidance support for the MYNT EYE depth camera
------------------------------------------------------
+------------------------------------------------------
 
 ArduPilot already supports :ref:`object avoidance using the Intel RealSense 435 and 455 depth cameras <common-realsense-depth-camera>`. We should extend support to the `MYNT EYE depth cameras <https://www.mynteye.com/pages/products>`__.
 
