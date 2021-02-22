@@ -15,8 +15,8 @@ KDECAN ESCs are high-end ESCs that allow control and feedback using a custom CAN
 Where To Buy
 ------------
 
-- `KDE-UAS125UVC <https://www.kdedirect.com/collections/uas-multi-rotor-electronics/products/kde-uas125uvc>`__ and `KDE-UAS85UVC <https://www.kdedirect.com/collections/uas-multi-rotor-electronics/products/kde-uas85uvc>`__ can be purchased from `KDEDirect.com <https://www.kdedirect.com/collections/uas-multi-rotor-electronics>`__ (other KDE ESCs may also support CAN, check the images of the ESC, those with "CAN" written on the side should work).
-- `KDECAN Wire Kit <https://www.kdedirect.com/collections/kdecan-bus-cables/products/kdecan-ph-kit>`__ is also required
+- `KDE-UAS125UVC-HE <https://www.kdedirect.com/collections/uas-multi-rotor-electronics/products/kde-uas125uvc-he>`__ and `KDE-UAS85UVC <https://www.kdedirect.com/collections/uas-multi-rotor-electronics/products/kde-uas85uvc>`__ can be purchased from `KDEDirect.com <https://www.kdedirect.com/collections/uas-multi-rotor-electronics>`__ (other KDE ESCs may also support CAN, check the images of the ESC, those with "CAN" written on the side should work).
+- `KDECAN Wire Kit <https://www.kdedirect.com/collections/kdecan-bus-cables/products/kdecan-kit-jst-ghr-wire-kit>`__ is also required
 
 Connection and Configuration
 ----------------------------
