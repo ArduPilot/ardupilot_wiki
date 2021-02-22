@@ -12,6 +12,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
 [site wiki="plane"]
     Airbrakes <airbrakes-on-plane>
     Airmode <airmode>
+    Soaring <soaring-upcoming>
 [/site]
 [site wiki="copter,plane,rover"]
     Button Inputs <common-buttons>
