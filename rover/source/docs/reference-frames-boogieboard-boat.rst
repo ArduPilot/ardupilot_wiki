@@ -46,4 +46,6 @@ Parts List
 - `Firefly 8SE action camera <https://www.banggood.com/Hawkeye-Firefly-8SE-4K-90-Degree-170-Degree-Touch-Screen-FPV-Action-Camera-Ver2_1-p-1334168.html>`__
 - `Slim HDMI cable <http://www.8sinn.com/index.php/extrathin-micro-hdmi-micro-hdmi-cable-80cm.html>`__
 
+Parameters: `boogie-board-boat.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/boogie-board-boat.param>`__
+
 Firmware used: Rover-3.6.0
