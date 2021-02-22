@@ -1,5 +1,6 @@
 .. _common-ek3-affinity-lane-switching:
 
+[copywiki destination="copter,plane,rover,dev"]
 ================================
 EKF3 Affinity and Lane Switching
 ================================
