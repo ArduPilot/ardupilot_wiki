@@ -106,8 +106,6 @@ UAVCAN ESCs provide information back to the autopilot which is recorded in the a
 
 The RCOU messages are also written to the onboard logs which hold the requested output level sent to the ESCs expressed as a number from 1000 (meaning stopped) to 2000 (meaning full output).
 
-Unlike other CAN ESCs, this information cannot be viewed in real-time through the ground station but this will likely be added in the future (`see this issue <https://github.com/ArduPilot/ardupilot/issues/13396>`__)
-
 Additional information
 ======================
 
