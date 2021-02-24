@@ -385,7 +385,7 @@ update Common-RC-Systems and Common-Autopilot-Wiring pages with links to new pag
 
 Advanced Setup Page
 -------------------
-Add link to :ref:`EKF3 Affinity and Lane Switching <dev:ek3-affinity-lane-switching>`.
+Add link to :ref:`EKF3 Affinity and Lane Switching <common-ek3-affinity-lane-switching>`.
 
 Firmware Limitations Section (common-autopilots.rst)
 ----------------------------------------------------
