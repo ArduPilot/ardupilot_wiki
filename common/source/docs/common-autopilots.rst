@@ -28,8 +28,8 @@ Open hardware
     Holybro Pix32 v5 <common-holybro-pix32v5>
     mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
-    mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/mro-x2.1rv2-mr.htm>
-    mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/mro-x2.1-777-mr.htm>
+    mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
+    mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/m10022a.htm>
     OpenPilot Revolution <common-openpilot-revo-mini>
     PocketPilot* (Linux) <https://github.com/PocketPilot/PocketPilot>
     TauLabs Sparky2** <common-taulabs-sparky2>
