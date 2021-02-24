@@ -64,7 +64,7 @@ inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.
 Affinity and Lane Switching
 ----------------------------
 
-EKF3 provides the feature of sensor affinity which allows the EKF cores to also use non-primary instances of sensors, specifically, Airspeed, Barometer, Compass (Magnetometer) and GPS. This allows the vehicle to better manage good quality sensors and be able to switch lanes accordingly to use the best-performing one for state estimation. For more details and configuration, refer :ref:`EKF3 Affinity and Lane Switching <dev:ek3-affinity-lane-switching>`.
+EKF3 provides the feature of sensor affinity which allows the EKF cores to also use non-primary instances of sensors, specifically, Airspeed, Barometer, Compass (Magnetometer) and GPS. This allows the vehicle to better manage good quality sensors and be able to switch lanes accordingly to use the best-performing one for state estimation. For more details and configuration, refer :ref:`EKF3 Affinity and Lane Switching <common-ek3-affinity-lane-switching>`.
 
 GPS / Non-GPS Transitions
 -------------------------
