@@ -32,5 +32,6 @@ Inclusion and Exclusion Fences are defined easily in Mission Planner under the P
     Inclusion/Exclusion Fence Failsafe <common-polygon_fence>
 [/site]
 [site wiki="plane"]
-    Geo-Fencing Failsafes <geofencing>
+    Geo-Fencing Failsafes (Plane versions below 4.1.x) <geofencing>
+    AC_Fence Library in Plane (Plane versions 4.1.x and above) <common-lib-fence>
 [/site]
