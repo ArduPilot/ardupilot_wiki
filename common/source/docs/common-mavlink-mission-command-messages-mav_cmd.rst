@@ -2718,17 +2718,17 @@ speed-type and throttle settings are ignored.
    <tr style="color: #c0c0c0">
    <td><strong>param1</strong></td>
    <td>speed m/s</td>
-   <td>Speed type (0=Airspeed, 1=Ground Speed).</td>
+   <td>Speed type (0,1=Ground Speed,  2=Climb Speed, 3=Descent Speed).</td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
-   <td>speed m/s</td>
+   <td>speed in m/s</td>
    <td>Target speed (m/s).</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
-   <td>Throttle as a percentage (0-100%). A value of -1 indicates no change.</td>
+   <td>Trim throttle as a percentage (0-100%). A value of -1 indicates no change.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
@@ -2831,8 +2831,6 @@ Rover
 
 Change the target horizontal speed and/or the vehicle's throttle.
 
-The value of ``param1`` is ignored from v2.50 (earlier versions should
-set to 0).
 
 **Command parameters**
 
@@ -2847,8 +2845,8 @@ set to 0).
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param1</strong></td>
-   <td>Type (0=as 1=gs)</td>
-   <td>Speed type (0=Airspeed, 1=Ground Speed). Set to 0 before v2.50, otherwise ignored.</td>
+   <td></td>
+   <td>Empty</td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
