@@ -13,12 +13,14 @@ This lists features or changes merged in master and build in the "latest" firmwa
     Airbrakes <airbrakes-on-plane>
     Airmode <airmode>
     Soaring Enhancements <soaring-upcoming>
+    Utilizes common AC_Fence Library <common-lib-fence>
 [/site]
 [site wiki="copter,plane,rover"]
     Button Inputs <common-buttons>
     Compass-less Operation<common-compassless>
     GPS/Non-GPS Transitions <common-non-gps-to-gps>
     IMU Temperature Calibration <common-imutempcal>
+    Enhancements to AC_Fence library <common-lib-fence>
 [/site]
 [site wiki="copter,plane"]
     In-Flight FTT and filter control <common-imu-fft>

@@ -7,7 +7,9 @@ Fence
 Overview
 ========
 
-
+Rover and Copter will attempt to stop your vehicle from flying/driving too far away
+by stopping at the fence. Plane will execute a configurable :ref:`FENCE_ACTION<FENCE_ACTION>`
+after breaching this fence.
 
 Fence Types
 ===========
@@ -15,29 +17,40 @@ Fence Types
 Simple
 ------
 
-Tin Can
-^^^^^^^
+Simple Circular (Tin Can)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The simple "tin can" fence is a circular fence centered on home, with a radius defined by
+:ref:`FENCE_RADIUS<FENCE_RADIUS>` .
 
 Maximum Altitude
 ^^^^^^^^^^^^^^^^
 
+The `Maximum Altitude` fence defines the maximum altitude above home that the vehicle can
+operate at before executing the configurable :ref:`FENCE_ACTION<FENCE_ACTION>` .
+
 Minimum Altitude
 ^^^^^^^^^^^^^^^^
 
-Advanced
---------
+The `Minimum Altitude` fence defines the minimum altitude above home that the vehicle can
+operate at before executing the configurable :ref:`FENCE_ACTION<FENCE_ACTION>` .
 
-Inclusion Circle
-^^^^^^^^^^^^^^^^
+Polygon Fences
+--------------
 
-Inclusion Polygon
-^^^^^^^^^^^^^^^^^
+Copter, Rover and Plane include support for polygon fences with up to 70 points and circular fences.
+Either may be selected to be inclusion or exclusion type.
 
-Exclusion Polygon
-^^^^^^^^^^^^^^^^^
+The purpose of these fences are to attempt to stop your vehicle from flying into (exclusion), or out of (inclusion),
+the fences by initiating a failsafe action like RTL or, if flying in Loiter mode, the vehicle will normally stop before breaching the fence
 
-Exclusion Circle
-^^^^^^^^^^^^^^^^
+These fences are an extension of the simpler Tin Can fence, and can be combined with it.
+
+These fences are created and treated in a similar way to mission command lists and rally point lists and loaded into the autopilot.
+
+
+..  youtube:: U3Z8bO3KbyM
+    :width: 100%
 
 Fence Actions
 =============
@@ -45,7 +58,7 @@ Fence Actions
 The :ref:`FENCE_ACTION<FENCE_ACTION>` parameter defines the action to take when the fence has been breached.
 
 At the moment the fence is breached a backup fence is erected 20m
-further out (or up).  If the vehicle breaches this backup fence (for
+further out (or up). If the vehicle breaches this backup fence (for
 example if the the vehicle is not set up correctly or the operator takes
 control but is unable to bring the vehicle back towards home), the vehicle
 will execute the :ref:`FENCE_ACTION<FENCE_ACTION>` again (and another backup fence an additional
@@ -89,6 +102,24 @@ An ``RCx_OPTION`` can be set via the Config/Tuning > Full Parameter List screen:
 -  holding the switch high (i.e. PWM > 1800) will enable the fence, low
    (under 1800) will disable the fence.
 
+Notes:
+======
+
+.. note:: You can define many inclusion and exclusion fences. However,multiple inclusions fences,
+   including the simple circular fence must overlap, since the vehicle can operate only within the
+   complete overlap area of all of the inclusion fences. Exclusion fences may be placed within or
+   outside of inclusion fences.
+
+.. note:: In order to upload or download these fences from Mission Planner the connected link must
+   be using MAVLink2 protocol. Normally, since the USB conenction is used, this protocol is default.
+   However, radio linked connections may use MAVLink1 by default and would need to be changed to MAVLink2
+   in order to upload and download across them.
+
+.. tip:: You can have both the simple circular fence and inclusion/exclusion fences and choose to use
+   just the HOME centerd "tin-can" for a flight by selecting only the "Circle" or "Altitude and Circle"
+   for :ref:`FENCE_TYPE<FENCE_TYPE>`. You can chose to enable the simple circular fence, these
+   inclusion/exclusion fences, and/or altitude limit, in any combination, with this parameter.
+
 
 Warnings:
 =========
@@ -120,3 +151,13 @@ Video overview of the Fence setup and Operation
 
 ..  youtube:: HDnGdo54o-4
     :width: 100%
+
+
+Combining with the Cylindrical Fence
+====================================
+
+A polygon fence can be used in combination with the :ref:`cylindrical fences <common-ac2_simple_geofence>` and the failsafe behaviour (i.e. stop at the fence or RTL) will trigger at whichever barrier the vehicle reaches first (i.e. the green line shown below)
+
+.. note::
+   .. image:: ../../../images/copter_polygon_circular_fence..png
+      :target: ../_images/copter_polygon_circular_fence..png
