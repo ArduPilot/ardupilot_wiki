@@ -87,6 +87,35 @@ Here is an example from the same 5" quad with the harmonic notch configured:
     :target:  ../_images/post-tune-fft.png
     :width: 450px
 
+Step by step guide for Throttle-based Setup
+===========================================
+Based on: flat octocopter, Cube Orange, 6s Batteries, 16" Propellers, copter weight around 9kg.
+
+1. Check the parameters in Mission Planner and change them to:
+- Set :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` = 1
+- Set :ref:`LOG_BITMASK <LOG_BITMASK>` (without RAW IMU)
+- Set :ref:`INS_HNTCH_ENABLE <INS_HNTCH_ENABLE>` = 1
+- Set :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` = 7
+- Set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 1
+- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 1
+
+2. Do the gentle hover flight at least for 30 seconds.
+
+3. Analyze the flight log in Mission Planner (Cntrl+F) FFT option and select new DF log (load your .bin file log from this gentle flight)
+
+4. Check the value of first high peak and remember the value. In my case it was 70Hz
+
+5. Change the parameters in Mission Planner to:
+- Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` = 70(is the noise frequency for the first hamornic so 70 in my case)
+- Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` = 0,22 (is the throttle scaling usually the same as MOT_THST_HOVER so 0.22… in my case)
+- Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` = 35 (is best set as half the frequency = 70/2 = 35 in my case)
+- Set :ref:`INS_LOG_BAT_OPT=2 INS_LOG_BAT_OPT>`
+
+6. Do the next gentle hover flight at least for 30 seconds.
+
+7. Again Upload the log from this flight to FFT option in Mission Planner. Check the values and peak they should be much lower. Also the vibration in log should be much lower:
+https://ardupilot.org/copter/docs/common-measuring-vibration.html#vibe-dataflash-log-message
+
 Notch Frequency Scaling
 =======================
 
