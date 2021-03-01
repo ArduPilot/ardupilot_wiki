@@ -27,8 +27,8 @@ also be used to see how ArduPilot handles unusual aircraft and to
 develop support for aircraft features that may not be available in
 other simulator backends.
 
-Setup of X-Plane 10
-===================
+Setup of X-Plane 10/11
+======================
 
 Before starting SITL the only thing you need to setup on X-Plane is
 the network data to send the sensor data to the IP address of the
