@@ -53,6 +53,7 @@ Closed hardware
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
     Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>
+    Mamba F405 MK2* <common-mamba405-mk2>
     Mateksys F405-SE <common-matekf405-se>
     Mateksys F405-STD and variants* <common-matekf405>
     Mateksys F405-Wing* <common-matekf405-wing>
