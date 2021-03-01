@@ -2,7 +2,7 @@
 
 =============================
 Using SITL with X-Plane 10/11
-============================
+=============================
 
 .. figure:: ../images/xplane-pt60.jpg
    :target: ../_images/xplane-pt60.jpg
