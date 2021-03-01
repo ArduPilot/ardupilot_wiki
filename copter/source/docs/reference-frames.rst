@@ -12,6 +12,7 @@ This section includes details on tested frames to speed up DIY builds of multico
     :maxdepth: 1
 
     Hexsoon EDU450 <reference-frames-hexsoon-edu450>
+    Hexsoon EDU650 <reference-frames-hexsoon-td650>
     AmovLab P200 <reference-frames-amovlab-p200>
 
 .. note::
