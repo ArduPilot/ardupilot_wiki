@@ -11,8 +11,8 @@ The Hexsoon TD-650 is a carbon fiber frame including motors, ESCs and propellers
 Required Parts
 --------------
 
-- The frame will is available for from many `Hex retailers <http://www.proficnc.com/stores>`__
-- :ref:`Cube autopilot <common-thecube-overview>` or any other :ref:`ArduPilot compatible autopilot <common-autopilots>`
+- The frame will is available from many `CubePilot distributors <https://cubepilot.org/>`__
+- Compatible with the :ref:`Cube autopilot <common-thecube-overview>` with direct mounting screws for the standard carrier board.
 - 8000mAh to 12000mAh 6S battery
 - RC transmitter with at least 6 channels
 
