@@ -262,7 +262,7 @@ If the aircraft was in an auto mode (such as AUTO or GUIDED) when the failsafe s
    </tbody>
    </table>
 
-In a QuadPlane, if in VTOL operation in modes others than AUTO or GUIDED, the action taken will be either a QRTL or QLAND, depending on the :ref:`Q_RTL_MODE<Q_RTL_MODE>` bit mask setting for bit 5. And if in fixed-wing operation, and the long or short failsafe action is a mode change to RTL, then the :ref:`Q_RTL_MODE<Q_RTL_MODE>` will determine behavior at the end of that RTL, just as in the case of a regular mode change to RTL.
+In a QuadPlane, if in VTOL operation in modes others than AUTO or GUIDED, the action taken will be either a QRTL or QLAND, depending on the :ref:`Q_OPTIONS<Q_OPTIONS>` bit mask setting for bit 5. And if in fixed-wing operation, and the long or short failsafe action is a mode change to RTL, then the :ref:`Q_RTL_MODE<Q_RTL_MODE>` will determine behavior at the end of that RTL, just as in the case of a regular mode change to RTL.
 
 GCS failsafe enable (:ref:`FS_GCS_ENABL<FS_GCS_ENABL>` )
 --------------------------------------------------------
