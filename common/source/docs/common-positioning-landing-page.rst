@@ -14,6 +14,7 @@ positioning technologies:
 .. toctree::
     :maxdepth: 1
     
+    ArduSimple RTK GPS <common-gps-ardusimple>
     Avionics Anonymous GNSS + Compass<common-avanon-gnss-mag>
     Avionics Anonymous Compass<common-avanon-mag>
     Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
