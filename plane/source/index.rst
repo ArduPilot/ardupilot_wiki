@@ -110,6 +110,7 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
     Mission Planning <docs/common-mission-planning>
     Logs <docs/common-logs>
     Peripheral Hardware <docs/common-optional-hardware>
+    OEM Customization <docs/common-oem-customizations>
     Use-Cases and Applications <docs/common-use-cases-and-applications>
     Antenna Tracking <docs/common-antenna-tracking>
     Simulation <docs/common-simulation>

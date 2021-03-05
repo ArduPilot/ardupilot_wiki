@@ -149,6 +149,7 @@ Full Table of Contents
     ROS <docs/ros>
     Lua Scripts <docs/common-lua-scripts>
     Porting to a new Flight Controller <docs/porting>
+    OEM Customization <docs/common-oem-customizations>
     Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     Resources for GCS Developers <docs/gcs-resources>
