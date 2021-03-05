@@ -1,5 +1,9 @@
 .. _editing-the-code-with-eclipse:
 
+.. warning::
+
+   ArduPilot no longer supports make.  The following article should be referencing our new build system, `waf` and needs updating.
+
 ========================================
 Editing/Building with Eclipse on Windows
 ========================================
