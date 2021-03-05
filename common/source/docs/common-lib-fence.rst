@@ -73,7 +73,8 @@ Copter/Rover
 ------------
 
 If the vehicle eventually proceeds 100m outside the configured fence
-distance, despite the backup fences, the vehicle will switch into LAND mode (HOLD for Rover).  The idea being that it's clearly impossible to get the vehicle home so best to just bring it
+distance, despite the backup fences, the vehicle will switch into LAND mode (HOLD for Rover).
+The idea being that it's clearly impossible to get the vehicle home so best to just bring it
 down/stop it.  The pilot can still retake control of course with the flight mode
 switches.  Like with the earlier fences, another fence is erected 20m
 out which will again switch the vehicle to LAND (HOLD for Rover), if it continues away from
@@ -83,9 +84,7 @@ Plane
 -----
 
 If the vehicle proceeds outside the configured fence distance, the vehicle will reinitiate the Fence Action.
-The pilot can retake control of course with the flight mode switches.  Like with the earlier fences, another
-fence is erected 20m out which will again change mode according to the fence action, if it continues away from
-home.
+If the pilot takes control of the vehicle during a fence breach, the fence action will retrigger.
 
 Configuring Fence
 ==============
@@ -93,7 +92,7 @@ Configuring Fence
 Manual Configuration
 --------------------
 
--  Set :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` to the action which will auto-enable the fence.
+-  Set :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` to the action which will auto-enable the fence. This is unavailable in Rover and Copter.
 -  Set :ref:`FENCE_TYPE<FENCE_TYPE>` = default of "ALL" is fine and will allow you to set up an
    additional :ref:`common-polygon_fence` , unless you want only a cylindrical fence to be active if
    a polygon fence has also been loaded. Then you could select "Max Altitude", "Min Altitude" or "Circle"
@@ -108,8 +107,9 @@ Manual Configuration
 -  Set :ref:`FENCE_RET_ALT<FENCE_RET_ALT>` to the altitude the vehicle will transit to when fence breach occurs.
 [/site]
 
-.. note:: :ref:`FENCE_TYPE<FENCE_TYPE>` =8 (Minimum Altitude) will only enable when fence is enabled via RC Aux Switch,
-          MAVLink command or auto-enable action.
+.. note:: :ref:`FENCE_TYPE<FENCE_TYPE>` =8 (Minimum Altitude) will only enable when fence is enabled via 
+   RC Aux Switch, MAVLink command, Mission command (`MAV_CMD_DO_FENCE_ENABLE`) or auto-enable action (only available
+   in Plane).
 
 
 Enabling Fence
