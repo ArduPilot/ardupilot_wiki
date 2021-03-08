@@ -56,6 +56,15 @@ Optional: Add the following to the either .bashrc or .zshrc to enable this versi
 
   export PATH="$(brew --prefix)/opt/python/libexec/bin":$PATH
 
+
+Optional: Install sfml (used by sitl for audio and osd)
+
+::
+
+  brew install sfml
+
+Note that not all sfml features work on Mac OSX currently. The following error can appear `Cannot create a window from a worker thread. (OS X limitation)`, this is a result of Mac OSX specifics that haven't been catered for in the sitl code yet.
+
 Start SITL simulator
 --------------------
 
