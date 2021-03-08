@@ -33,21 +33,28 @@ The following tools need to be installed to complete the installation. Between b
 
  * Xcode (12.4)
  * Xcode commandline tools (12.4)
- * Homebrew (2.7.5)
- * pyenv (1.2.22)
+ * Homebrew (3.0.4-52-gbc37074)
 
 Preparing Python
 ----------------
 
-Install the required python version using pyenv and activate it. This assumes pyenv is setup and initialized with 'pyenv init'.
+Install the required python 3 version using homebrew and activate it. If you are familiar with pyenv or virtualenv it might be better to use one of those to setup the environment. This limits potential problems with other tools that require specific versions of python. How to do that is beyond the scope of this document.
+
+The following steps install python version 3.9.x for system wide usage.
 
 ::
 
-	brew install readline openssl@1.1
-	env PYTHON_CONFIGURE_OPTS="--enable-framework CC=clang" pyenv install 3.9.1
-	pyenv shell 3.9.1
+	brew install python@3.9
+  export PATH="$(brew --prefix)/opt/python/libexec/bin":$PATH
+	
 	pip install wheel
 	pip install future pymavlink mavproxy
+
+Optional: Add the following to the either .bashrc or .zshrc to enable this version of python be default
+
+::
+
+  export PATH="$(brew --prefix)/opt/python/libexec/bin":$PATH
 
 Start SITL simulator
 --------------------
@@ -63,11 +70,18 @@ For example, for the multicopter code change to **ardupilot/ArduCopter**:
 
    cd ardupilot/ArduCopter
 
-Then select the correct python environment
+The sim_vehicle script checks several environment variables to determine the OS it's running on. For Mac OSX it
+requires that DISPLAY is set.
+
+::
+
+  export DISPLAY=:0.0
+
+Then select the correct python environment (if not enabled by default)
 
 ::
 	
-	pyenv shell 3.9.1
+	export PATH="$(brew --prefix)/opt/python/libexec/bin":$PATH
 
 Then start the simulator using **sim_vehicle.py**. The first time you
 run it you should use the -w option to wipe the virtual EEPROM and load
