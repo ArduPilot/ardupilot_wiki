@@ -76,6 +76,9 @@ If the vehicle's position is not reset, from within RealFlight:
 
 At this point, load the parameter file for this "QuadCopterX-flightaxis" model via Mission Planner. You are now ready to arm and fly.
 
+.. note:: as with a real vehicle, sometimes loading parameters "enables" other groups of parameters which will not be set during the first load. If you get a message when loading parameters that you have enabled others, reload the parameter file to change those newly revealed parameter groups.
+
+
 Connecting to SITL running on a separate (or Virtual) machine:
 --------------------------------------------------------------
 
