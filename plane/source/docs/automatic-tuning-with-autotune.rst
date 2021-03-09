@@ -59,6 +59,9 @@ Other things to check:
    your transmitter with your plane on the ground (and propeller removed
    or made safe) and check how the plane reacts
 -  setup a rally point for a safe place to RTL if needed
+-  make sure that the maximum roll and pitch rates can be achieved by your aircraft at 
+   normal flight speeds. In particular, the default roll rates can be too large for
+   aircraft with large wing spans. These often have a maximum roll rate of 30 - 40 degrees per second.
 
 Flying in AUTOTUNE
 ~~~~~~~~~~~~~~~~~~
