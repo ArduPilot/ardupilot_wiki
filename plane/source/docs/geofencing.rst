@@ -76,7 +76,7 @@ To setup geo-fencing in Plane you need to configure several things:
 #. the minimum and maximum altitude of the fenced area
 #. what RC channel on your transmitter you will use to enable
    geo-fencing (if any)
-#. an optional setting (FENCE_AUTOENABLE) when you want to configure
+#. an optional setting (:ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>`) when you want to configure
    the fence to automatically enable after an autonomous takeoff and
    automatically disable after an autonomous landing
 #. how you want to take back control after a fence breach
@@ -113,11 +113,11 @@ geo-fencing behaviour:
    breach to the GCS but take no other action.  Set to 3 to have the
    plane head to the return point on breach, but the pilot will maintain
    manual throttle control in this case.
-#. :ref:`FENCE_MINALT<FENCE_MINALT>` - the minimum altitude in meters. If this is zero then
+#. ``FENCE_MINALT`` - the minimum altitude in meters. If this is zero then
    you will not have a minimum altitude.
-#. :ref:`FENCE_MAXALT<FENCE_MAXALT>` - the maximum altitude in meters. If this is zero then
+#. ``FENCE_MAXALT`` - the maximum altitude in meters. If this is zero then
    you will not have a maximum altitude.
-#. :ref:`FENCE_CHANNEL<FENCE_CHANNEL>` - the RC input channel to watch for enabling the
+#. ``FENCE_CHANNEL<FENCE_CHANNEL>`` - the RC input channel to watch for enabling the
    geo-fence. This defaults to zero, which disables geo-fencing. You
    should set it to a spare RC input channel that is connected to a two
    position switch on your transmitter. Fencing will be enabled when
@@ -128,12 +128,12 @@ geo-fencing behaviour:
 #. :ref:`FENCE_TOTAL<FENCE_TOTAL>` - the number of points in your fence (the return point
    plus the enclosed boundary). This should be set for you by the
    planner when you create the fence.
-#. :ref:`FENCE_RETALT<FENCE_RETALT>` - the altitude the aircraft will fly at when flying to
+#. ``FENCE_RETALT`` - the altitude the aircraft will fly at when flying to
    the return point and when loitering at the return point (in meters). 
    Note that when :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` is set to 1 this parameter is
    ignored and the loiter altitude of the closest :ref:`Rally Point <common-rally-points>` is
    used instead.  If this parameter is zero and :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` is
-   also zero, the midpoint of the :ref:`FENCE_MAXALT<FENCE_MAXALT>` and :ref:`FENCE_MINALT<FENCE_MINALT>`
+   also zero, the midpoint of the `FENCE_MAXALT`` and ``FENCE_MINALT``
    parameters is used as the return altitude.
 #. :ref:`FENCE_AUTOENABLE<FENCE_AUTOENABLE>` - if set to 1, the aircraft will boot with the
    fence disabled.  After an autonomous takeoff completes the fences
@@ -149,7 +149,7 @@ geo-fencing behaviour:
 
    A Rally Point can be outside of the geofence but this is NOT
    recommended.  If you have a rally point outside the geofence you
-   will need to disable the geofence using :ref:`FENCE_CHANNEL<FENCE_CHANNEL>` before you
+   will need to disable the geofence using ``FENCE_CHANNEL`` before you
    can control the plane again otherwise the plane will stay in GUIDED
    mode FOREVER circling the rally point.  Once the geofence is disabled
    you should fly the plane back inside the geofence and then re-enable
@@ -165,7 +165,7 @@ APM that you want to take control. You can do that in one of 3 ways:
 #. changing modes using the APM mode switch on your transmitter, or
    changing modes via the Mission Planner GCS (e.g., change from GUIDED
    mode to AUTO mode).
-#. disabling and re-enabling geo-fencing using the :ref:`FENCE_CHANNEL<FENCE_CHANNEL>`
+#. disabling and re-enabling geo-fencing using the ``FENCE_CHANNEL``
    channel
 #. set the :ref:`RST_SWITCH_CH<RST_SWITCH_CH>` MAVLink parameter to another two-position
    channel that is attached to a spring loaded switch. The
@@ -240,25 +240,25 @@ Altitude of the return point
 If you set the :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` parameter to 1, then the return
 altitude will be **the same as the loiter altitude of the nearest Rally
 Point**.  If the :ref:`FENCE_RET_RALLY<FENCE_RET_RALLY>` is set to 0, then you may set the
-return altitude in meters above the Home Point with the :ref:`FENCE_RETALT<FENCE_RETALT>`
+return altitude in meters above the Home Point with the ``FENCE_RETALT``
 parameter.  **Otherwise**:
 
-If you set :ref:`FENCE_MINALT<FENCE_MINALT>` and :ref:`FENCE_MAXALT<FENCE_MAXALT>` to other than zero (and have
-:ref:`FENCE_MAXALT<FENCE_MAXALT>` greater than FENCE_MINALT) then the return point altitude
-will be half way between :ref:`FENCE_MINALT<FENCE_MINALT>` and :ref:`FENCE_MAXALT<FENCE_MAXALT>`.
+If you set ``FENCE_MINALT`` and ``FENCE_MAXALT`` to other than zero (and have
+``FENCE_MAXALT`` greater than FENCE_MINALT) then the return point altitude
+will be half way between ``FENCE_MINALT`` and ``FENCE_MAXALT``.
 
-If you don't setup :ref:`FENCE_MINALT<FENCE_MINALT>` and :ref:`FENCE_MAXALT<FENCE_MAXALT>` (ie. leave them at
+If you don't setup ``FENCE_MINALT`` and ``FENCE_MAXALT`` (ie. leave them at
 zero) then the return point altitude will be given by the :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>`
 parameter, which is also used for RTL mode. Note that :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` is
-in centimetres, whereas :ref:`FENCE_MINALT<FENCE_MINALT>` and :ref:`FENCE_MAXALT<FENCE_MAXALT>` are in meters.
+in centimetres, whereas ``FENCE_MINALT`` and ``FENCE_MAXALT`` are in meters.
 
 If your flying club and local flying rules don't set a maximum altitude
 then we recommend you use a maximum altitude of at most 122 meters
 (which is around 400 feet). Beyond that altitude it becomes quite
 difficult to keep good eye contact with your model.
 
-With :ref:`FENCE_MINALT<FENCE_MINALT>` set at 30 meters (to allow for some dive momentum)
-and :ref:`FENCE_MAXALT<FENCE_MAXALT>` set to 122 meters, the return point will be 76 meters,
+With ``FENCE_MINALT`` set at 30 meters (to allow for some dive momentum)
+and ``FENCE_MAXALT`` set to 122 meters, the return point will be 76 meters,
 which is quite a good altitude to leave the plane loitering while you
 are getting ready to have another go.
 
@@ -309,7 +309,7 @@ I'd also recommend you test it gently at first. Try slowly approaching a
 fence boundary and ensure it correctly 'bounces' off the virtual wall
 and returns to the return point OK. Then after taking control again, try
 slowly approaching the minimum altitude and ensure it bounces off the
-:ref:`FENCE_MINALT<FENCE_MINALT>` you have set.
+``FENCE_MINALT`` you have set.
 
 While developing geo-fencing I found that combining it with MANUAL mode
 is the most fun. It gives you all of the excitement of manual flight
@@ -332,7 +332,7 @@ MANUAL mode. The plane would not have survived without the geo-fence!
 
 Notice that the geo-fence in this example runs along the middle of the
 runway. This is to conform to my local club rules. The takeoff and
-landing were done with the fence disabled. I had :ref:`FENCE_CHANNEL<FENCE_CHANNEL>` set to
+landing were done with the fence disabled. I had ``FENCE_CHANNEL`` set to
 7, and :ref:`RST_SWITCH_CH<RST_SWITCH_CH>` set to 6. That allowed me to enable the fence
 after takeoff using one switch, then to take back control after a breach
 using the spring loaded trainer switch.
