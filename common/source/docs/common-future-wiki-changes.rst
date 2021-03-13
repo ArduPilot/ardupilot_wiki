@@ -54,6 +54,8 @@ RCx_OPTIONs on Auxillary Functions Page:
 +----------------------+----------------------------+----------+---------+---------+
 |        210           | Airbrakes                  |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        211           | Walking Robot Height       |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 |        300-307       | Scripting RC channels      |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 
@@ -277,6 +279,16 @@ Manual forward motor throttle in QSTABILIZE, QACRO, and QHOVER modes
    <td>
 
 Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`
+
+.. raw:: html
+
+   </td>
+   </tr>
+  <tr>
+   <td><strong>Walking Robot Height </strong></td>
+   <td>
+
+Input channel for Walking Robot Height. See :ref:`walking-robots`.
 
 .. raw:: html
 
