@@ -45,6 +45,8 @@ RCx_OPTIONs on Auxillary Functions Page:
 +----------------------+----------------------------+----------+---------+---------+
 |        92            | FBWA Mode                  |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        94            | VTX Power                  |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
 |        105           | GPS Disable Yaw            |    X     |    X    |    X    |
 |                      | (testing only!)            |          |         |         |
 +----------------------+----------------------------+----------+---------+---------+
@@ -220,11 +222,21 @@ Allows switching between up to three source sets manually for EKF3 (only). See :
 
    </td>
    </tr>
-      <tr>
+   <tr>
    <td><strong>Airspeed Ratio Calibrate</strong></td>
    <td>
 
 Activates calibration of airspeed ratio in flight. Best results occur while executing course changes over 360 degrees over time, as in LOITER mode. See :ref:`calibrating-an-airspeed-sensor`.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>VTX Power</strong></td>
+   <td>
+
+Allows reading up to a 6 position switch for controlling Video Transmitter Power. See Smart Audio page (to be provided in the future)
 
 .. raw:: html
 
