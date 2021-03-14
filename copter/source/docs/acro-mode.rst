@@ -6,7 +6,7 @@ Acro Mode
 
 Acro mode uses the RC sticks to control the angular velocity
 of the copter in each axis. Release the sticks and the vehicle will maintain its
-current attitude and will not return to level (attitude hold). Acro mode is useful for
+current altitude and will not return to level (altitude hold). Acro mode is useful for
 aerobatics such as flips or rolls, or FPV when smooth and fast control
 is desired.
 
