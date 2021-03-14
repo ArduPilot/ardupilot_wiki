@@ -267,7 +267,7 @@ For iOS devices, you will need:
 
   See iOS App Vendors for more details.
 
-Desktop PCs (Windows/Mac/Linux
+Desktop PCs (Windows/Mac/Linux)
 ------------------------------
 
 For Desktop devices you will need:
