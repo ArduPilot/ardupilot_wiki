@@ -16,7 +16,6 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2021 <htt
 - Improve :ref:`Gazebo simulator <using-gazebo-simulator-with-sitl>` integration including json protocol, Gazebo9, and new sensors set
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
 - Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Better multivehicle support, performance improvement. Requires strong python skills.
-- Improve helicopter throttle handling for internal combustion engines for autonomous operations.
 - Swift Package for MAVLink communications.
 - Unified performance counter on ArduPilot
 - ROS2 MAVROS support for Ardupilot.
