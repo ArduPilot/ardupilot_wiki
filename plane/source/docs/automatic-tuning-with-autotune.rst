@@ -36,6 +36,13 @@ then you could choose level 7, which will result in a bit sharper tune
 have done an initial tune with a lower level. Levels above 8 should only
 be used by very experienced pilots.
 
+:ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` also sets the target pitch and roll rates. It is
+important to set a level appropriate for the rates that the aircraft can physically achieve.
+This is because excessive target rates will prevent the autotune from adjusting the gains.
+In particular, the level 6 roll rates can be too large for slow aircraft with large wing spans,
+like gliders. These often have a maximum roll rate of 30 - 40 degrees per second and should use
+level 2 or 3. See :ref:`automatic-tuning-with-aututune_level-settings` for the rates.
+
 You also need to make sure that all of the basic settings for your
 airframe are correct. In particular, ensure that all surface reversals
 are correct and that you have a reasonable value set for the minimum
@@ -59,9 +66,6 @@ Other things to check:
    your transmitter with your plane on the ground (and propeller removed
    or made safe) and check how the plane reacts
 -  setup a rally point for a safe place to RTL if needed
--  make sure that the maximum roll and pitch rates can be achieved by your aircraft at 
-   normal flight speeds. In particular, the default roll rates can be too large for
-   aircraft with large wing spans. These often have a maximum roll rate of 30 - 40 degrees per second.
 
 Flying in AUTOTUNE
 ~~~~~~~~~~~~~~~~~~
@@ -226,3 +230,35 @@ lower throttle settings and airspeeds.
 If you adjust the I gain manually, then this also changes the value for
 P that is required to maintain the correct response, so adjusting the I
 gain is only recommended for advanced users.
+
+.. _automatic-tuning-with-aututune_level-settings:
+
+AUTOTUNE_LEVEL settings
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------+----------------+
+| Level         | Rate [deg/s]   |
+|               |                |
++---------------+----------------+
+|  1            |   20           |
++---------------+----------------+
+|  2            |   30           |
++---------------+----------------+
+|  3            |   40           |
++---------------+----------------+
+|  4            |   50           |
++---------------+----------------+
+|  5            |   60           |
++---------------+----------------+
+|  6 (default)  |   75           |
++---------------+----------------+
+|  7            |   90           |
++---------------+----------------+
+|  8            |  120           |
++---------------+----------------+
+|  9            |  160           |
++---------------+----------------+
+|  10           |  210           |
++---------------+----------------+
+|  11           |  300           |
++---------------+----------------+
