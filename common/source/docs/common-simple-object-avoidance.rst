@@ -51,10 +51,9 @@ Configuring Simple Avoidance for Copter
 =======================================
 
 - set :ref:`AVOID_ENABLE <AVOID_ENABLE>` = 7 ("All") to use all sources of barrier information including "Proximity" sensors
+- set :ref:`PRX_TYPE <PRX_TYPE>` to a 360 deg Lidar type being used or = 4, to enable using range finders as "proximity sensors"
+- in :ref:`Loiter <loiter-mode>`  
 
-- in :ref:`Loiter <loiter-mode>`
-- 
-  -  set :ref:`PRX_TYPE <PRX_TYPE>` to a 360 deg Lidar type being used or = 4, to enable using range finders as "proximity sensors"
   - :ref:`AVOID_MARGIN <AVOID_MARGIN>` controls how many meters from the barrier the vehicle will attempt to stop or try to slide along it
   - :ref:`AVOID_BEHAVE <AVOID_BEHAVE>` allows setting whether the vehicle should simply Stop in front of the barrier or Slide around it. This parameter only affects Copter, since Rover always stops.
 
