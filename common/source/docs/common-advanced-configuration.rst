@@ -41,7 +41,8 @@ tuning options for the vehicle.
     Crash Detection <crash-detect>
 [/site]
     Brushless ESCs <common-dshot>
-    Extended Kalman Filter (EKF) <common-apm-navigation-extended-kalman-filter-overview>
+    EKF (Extended Kalman Filter) <common-apm-navigation-extended-kalman-filter-overview>
+    EKF Affinity & Lane Switching <common-ek3-affinity-lane-switching>
 [site wiki="copter,rover"]
     Fence Failsafes  <common-geofencing-landing-page>
 [/site]
@@ -75,7 +76,6 @@ tuning options for the vehicle.
 [site wiki="copter"]
     Motor Thrust Scaling <motor-thrust-scaling>
 [/site]
-    Multiple Sensors & EKF Affinity <common-ek3-affinity-lane-switching>
 [site wiki="copter,rover"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
