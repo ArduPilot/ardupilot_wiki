@@ -210,7 +210,7 @@ Testing Ground Takeoff in FBWA mode
 ===================================
 
 It is sometimes useful to test the takeoff code using the FBWA flight
-mode. The way you do this is to set the :ref:`FBWA_TDRAG_CHAN <FBWA_TDRAG_CHAN>` parameter to
+mode. The way you do this is to set the ``FBWA_TDRAG_CHAN`` parameter to
 an RC input channel on your transmitter for a switch (usually a
 momentary switch, such as the trainer switch). When this RC channel goes
 high while you are on the runway waiting for takeoff in FBWA mode the
