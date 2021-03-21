@@ -90,10 +90,13 @@ This command is valid in the root directory of an ArduPilot checkout.  It instru
 
      AutoTest Sample Output <autotest-verbose>
 
-.. note:: 
-   Older versions of ``autotest.py`` used these steps: ``build.ArduPlane build.ArduCopter build.APMrover2 build.ArduSub build.AntennaTracker fly.ArduCopter   
-   fly.ArduCopter fly.ArduPlane fly.QuadPlane dive.ArduSub drive.APMrover2 drive.BalanceBot drive.balancebot fly.CopterAVC``
+.. note::
+   Older versions of ``autotest.py`` used these steps:
    
+    ::
+
+      build.ArduPlane build.ArduCopter build.APMrover2 build.ArduSub build.AntennaTracker fly.ArduCopter fly.ArduPlane fly.QuadPlane dive.ArduSub drive.APMrover2 drive.BalanceBot drive.balancebot fly.CopterAVC
+
 .. note::
    ``--list`` : list available steps (build, test, defaults, examples)
 
