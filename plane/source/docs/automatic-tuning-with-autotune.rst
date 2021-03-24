@@ -41,7 +41,7 @@ important to set a level appropriate for the rates that the aircraft can physica
 This is because excessive target rates will prevent the autotune from adjusting the gains.
 In particular, the level 6 roll rates can be too large for slow aircraft with large wing spans,
 like gliders. These often have a maximum roll rate of 30 - 40 degrees per second and should use
-level 2 or 3. See :ref:`automatic-tuning-with-aututune_level-settings` for the rates.
+level 2 or 3. See :ref:`automatic-tuning-with-autotune_level-settings` for the rates.
 
 You also need to make sure that all of the basic settings for your
 airframe are correct. In particular, ensure that all surface reversals
@@ -231,7 +231,7 @@ If you adjust the I gain manually, then this also changes the value for
 P that is required to maintain the correct response, so adjusting the I
 gain is only recommended for advanced users.
 
-.. _automatic-tuning-with-aututune_level-settings:
+.. _automatic-tuning-with-autotune_level-settings:
 
 AUTOTUNE_LEVEL settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
