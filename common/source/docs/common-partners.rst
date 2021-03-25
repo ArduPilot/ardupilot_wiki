@@ -384,5 +384,13 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: https://www.ardusimple.com
 
+    *        
+      - .. image:: ../../../images/supporters/supporters_logo_qiotek.jpg
+            :width: 250px
+            :align: center
+            :target: https://www.qio-tek.com
+
+      -
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
