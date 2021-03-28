@@ -65,5 +65,5 @@ Using Mission Planner
 Using MAVProxy
 --------------
 
-Simply type "forcecal" will force the autopilot into a calibrated state. Be sure you have valid compass and IMU calibration values alread loaded.
+Simply type "forcecal" will force the autopilot into a calibrated state. Be sure you have valid compass and IMU calibration values already loaded.
 
