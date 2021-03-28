@@ -53,7 +53,7 @@ If the heel is larger than this angle the PID controller will target this angle 
 controller will not try and reach it. i.e. only sheet out, don't sheet in.
 
 Heel control PIDs values are set using ``ATC_SAIL_x`` parameters. The effect of changing the value
-can be seen in ACRO mode by manually heeling the vehicle. Most control should be do using the P (:ref:`ATC_SAIL_P<ATC_SAIL_P>`) and I(:ref:`ATC_SAIL_I<ATC_SAIL_I>`)terms. D gain (:ref:`ATC_SAIL_D<ATC_SAIL_D>`)
+can be seen in ACRO mode by manually heeling the vehicle. Most control should be done using the P (:ref:`ATC_SAIL_P<ATC_SAIL_P>`) and I(:ref:`ATC_SAIL_I<ATC_SAIL_I>`)terms. D gain (:ref:`ATC_SAIL_D<ATC_SAIL_D>`)
 is usually too quick for the relatively slow response of the sail winch servos so should be left at zero. The PID
 values can be sent via Mavlink using :ref:`GCS_PID_MASK <GCS_PID_MASK>`.
 
