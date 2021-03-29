@@ -159,7 +159,7 @@ movement. For example, if :ref:`MIXING_GAIN<MIXING_GAIN>` is 0.5, then the follo
 are used:
 
 - LEFT_VTAIL = (yaw+pitch)*0.5
-- RIGHT_VTAIL = (yaw-pitch)*0.5
+- RIGHT_VTAIL = (-yaw+pitch)*0.5
 
 Adjusting the :ref:`MIXING_GAIN<MIXING_GAIN>` controls the percentabe of throws from pitch vs yaw.
 
