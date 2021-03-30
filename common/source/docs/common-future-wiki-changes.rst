@@ -493,6 +493,11 @@ On QuadPlane Parameters page:
 -  bit 12, if set, disable speed based Qassist when using synthetic airspeed
 -  bit 13, if set, will disable Ground Effect Compensation
 
+On QHOVER mode page:
+--------------------
+
+under Controls section: change - "When the stick is completely down the QuadPlane will descend at :ref:`Q_VELZ_MAX<Q_VELZ_MAX>` and if at the very top it will climb by :ref:`Q_VELZ_MAX<Q_VELZ_MAX>`." to "When the stick is completely down the QuadPlane will descend at :ref:`Q_VELZ_MAX_DN<Q_VELZ_MAX_DN>` and if at the very top it will climb by :ref:`Q_VELZ_MAX<Q_VELZ_MAX>`."
+
 On Terrain Following Page:
 --------------------------
 
@@ -579,10 +584,10 @@ On Airspeed Calibration Page
 
 Add section at end:
 
-Miscalibration Safeguards
+Miss-calibration Safeguards
 ===========================
 
-In order to help prevent Airspeed sensor use when its been miscalibrated either during ground static calibration during the power up sequence, or by accidental parameter changes to offset or ratio, three parameters are available. If the ground speed is consistently lower than the reported airspeed for a few seconds by :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>`, i.e. the apparent wind speed is greater than that amount, the sensor can be disabled to avoid erroneous reporting. It can be allowed to re-enable if the apparent wind falls back below that value. These actions are controlled by :ref:`ARSPD_OPTIONs<ARSPD_OPTIONs>`.
+In order to help prevent Airspeed sensor use when its been miss-calibrated either during ground static calibration during the power up sequence, or by accidental parameter changes to offset or ratio, three parameters are available. If the ground speed is consistently lower than the reported airspeed for a few seconds by :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>`, i.e. the apparent wind speed is greater than that amount, the sensor can be disabled to avoid erroneous reporting. It can be allowed to re-enable if the apparent wind falls back below that value. These actions are controlled by :ref:`ARSPD_OPTIONs<ARSPD_OPTIONs>`.
 
 You can also send a warning to the Ground Control Station if the apparent wind exceeds :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>`. This can be used instead of, or together with the above.
 
