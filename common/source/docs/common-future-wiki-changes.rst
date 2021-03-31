@@ -378,6 +378,20 @@ Add section at end:
 
 There is also an :ref:`RC_PROTOCOLS<RC_PROTOCOLS>` bitmask that can be used to restrict which RC protocols are detected and used. This is useful in cases where the RC protocol autodetection fails and an incorrect RC protocol handler is chosen. This is rare, but if you do find it happens then you can lock in a single RC protocol that can be detected and used with this parameter.
 
+Autopilot Output Mapping
+------------------------
+
+add to MISC Functions table:
++--------------------------------+----+---------------------------------------+
+|       Function                 | ID |        Available in:                  |
++--------------------------------+----+---------------------------------------+
+| Output SERVOn_MIN PWM value    |134 |    Plane, Copter, Rover               |
++--------------------------------+----+---------------------------------------+
+| Output SERVOn_TRIM PWM value   |135 |    Plane, Copter, Rover               |
++--------------------------------+----+---------------------------------------+
+| Output SERVOn_MAX PWM value    |136 |    Plane, Copter, Rover               |
++--------------------------------+----+---------------------------------------+
+
 LUA Scripting (common-lua-scripts)
 ----------------------------------
 
