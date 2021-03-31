@@ -7,7 +7,7 @@ Follow Mode
 ..  youtube:: _g9SkK0IhRk
     :width: 100%
 
-When switched into Follow, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.  The vehicle lead vehicle's position must be published to the vehicle in Follow mode using a telemetry system as shown below. QGroundControl's application (QGC) for Android phones and computers has this feature in beta testing also, so instead of following a vehicle, it will follow the ground control station, similar to FOLLOW ME mode in Copter.
+When switched into Follow, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.  The lead vehicle's position must be published to the vehicle in Follow mode using a telemetry system as shown below. QGroundControl's application (QGC) for Android phones and computers has this feature in beta testing also, so instead of following a vehicle, it will follow the ground control station, similar to FOLLOW ME mode in Copter.
 
 In its simplest form, each vehicle has a telemetry radio with the same NETID, on one of their telemetry ports.
 
