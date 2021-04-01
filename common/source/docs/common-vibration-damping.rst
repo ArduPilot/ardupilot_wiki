@@ -192,7 +192,7 @@ For copters the largest source of vibration is normally the blades passing over 
    vibration, Frame arms should be as rigid as possible.
 
    -  Original DJI Flamewheel copters have sufficiently rigid injection molded arms, the many clones do not
-   -  Aluminum or carbon fibre arms twist and best less which reduces vibrations
+   -  Aluminum or carbon fibre arms twist and bend less which reduces vibrations
    -  Copters with injection molded exoskeletons or arms like the Iris are sufficiently rigid
    -  Cheap, light frames tend to flex more than high quality stronger ones and the heavier you load the copter the more flex it gets (not good)
 
