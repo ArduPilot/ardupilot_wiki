@@ -111,6 +111,8 @@ check the **Enable** checkbox.  Alternatively the :ref:`FLOW_TYPE <copter:FLOW_T
 parameter should be set to "1" through the full parameters list.  The
 sensor will be initialised once the Pixhawk board is rebooted.
 
+If the sensor is reported to be unhealthy, it may help to set :ref:`BRD_BOOT_DELAY <BRD_BOOT_DELAY>` to 600 (0.6 seconds) and reboot the autopilot.  This will give more time for the sensor to start-up before the autopilot probes for it on the I2C bus.
+
 Testing and Setup
 =================
 
