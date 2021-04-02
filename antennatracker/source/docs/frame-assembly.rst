@@ -28,7 +28,7 @@ Mounting the flight controller board
 .. image:: ../images/AntennaTracker_Mounting.jpg
     :target: ../_images/AntennaTracker_Mounting.jpg
 
-The flight controller board (i.e. Pixhawk, APM2, etc) should be mounted
+The flight controller board should be mounted
 on the moving part of the antenna tracker.
 
 If possible align the front of the flight controller so that it points

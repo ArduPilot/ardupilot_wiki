@@ -9,7 +9,7 @@ AntennaTracker Home
     Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
 
 The *AntennaTracker* Project delivers firmware which allows you to use a
-supported flight controller board (Pixhawk, APM2, etc.) as the
+supported flight controller board as the
 controller for an Antenna Tracker.
 
 The tracker calculates the position of a remote vehicle using its own

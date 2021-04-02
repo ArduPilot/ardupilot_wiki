@@ -34,11 +34,6 @@ Connect with a USB cable
 If the antenna controller is a Pixhawk you can simply connect your
 ground station computer to the Pixhawk using a long micro USB cable.
 
-On an APM2 the micro USB port and Telemetry port cannot be used at the
-same time which means that to connect with a USB cable, the radio must
-be moved to use UART2 (aka Serial2).  The UART2's TX, RX 5V and GND pins
-are on the right side of the APM2 as shown on \ :ref:`this wiki page <copter:common-apm25-and-26-overview_explanation_of_solder_jumper_options_on_the_bottom_of_the_board>`.
-
 Connect a 2nd pair of radios
 ============================
 
