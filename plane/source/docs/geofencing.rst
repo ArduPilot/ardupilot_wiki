@@ -167,13 +167,13 @@ APM that you want to take control. You can do that in one of 3 ways:
    mode to AUTO mode).
 #. disabling and re-enabling geo-fencing using the ``FENCE_CHANNEL``
    channel
-#. set the :ref:`RST_SWITCH_CH<RST_SWITCH_CH>` MAVLink parameter to another two-position
+#. set the ``RST_SWITCH_CH`` MAVLink parameter to another two-position
    channel that is attached to a spring loaded switch. The
-   :ref:`RST_SWITCH_CH<RST_SWITCH_CH>` parameter defaults to zero which disables it. If you
+   ``RST_SWITCH`` parameter defaults to zero which disables it. If you
    set it to a channel then you can use this channel switch to take back
    control after a fence breach.
 
-If not flying completely autonomously, I find that using :ref:`RST_SWITCH_CH<RST_SWITCH_CH>`
+If not flying completely autonomously, I find that using ``RST_SWITCH_CH``
 is the best option for geo-fencing as it means that the APM has fencing
 enabled throughout the flight, and you don't get any behaviour change by
 switching modes. It does take up another channel though, so some people
@@ -333,7 +333,7 @@ MANUAL mode. The plane would not have survived without the geo-fence!
 Notice that the geo-fence in this example runs along the middle of the
 runway. This is to conform to my local club rules. The takeoff and
 landing were done with the fence disabled. I had ``FENCE_CHANNEL`` set to
-7, and :ref:`RST_SWITCH_CH<RST_SWITCH_CH>` set to 6. That allowed me to enable the fence
+7, and ``RST_SWITCH_CH`` set to 6. That allowed me to enable the fence
 after takeoff using one switch, then to take back control after a breach
 using the spring loaded trainer switch.
 
