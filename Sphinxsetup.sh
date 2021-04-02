@@ -12,10 +12,10 @@ if [ ${DISTRIBUTION_CODENAME} == 'Ubuntu' ]; then
   add-apt-repository universe
 fi
 apt-get -y update
-apt-get install -y unzip git imagemagick curl wget make python
+apt-get install -y unzip git imagemagick curl wget make python3 python-is-python3
 
 # Get pip through the official website to get the lastest release
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python get-pip.py && rm -f get-pip.py
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py && rm -f get-pip.py
 
 # Install sphinx
 pip install -U sphinx==1.8.3 || pip3 install -U sphinx==1.8.3
