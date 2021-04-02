@@ -4,6 +4,9 @@
 GPS / Non-GPS Transitions
 =========================
 
+..  youtube:: MbILnbbWqDg
+    :width: 100%
+
 ArduPilot 4.1 (and higher) support in-flight transitions between GPS and Non-GPS environments.
 
 Setup
