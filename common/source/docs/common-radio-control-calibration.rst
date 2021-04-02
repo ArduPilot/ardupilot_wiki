@@ -36,10 +36,10 @@ Check the Transmitter's Setup
   - Pitch stick should control channel 2
   - Throttle stick should control channel 3
   - Yaw stick should control channel 4
-[site wiki="plane"]
+[site wiki="copter,rover"]
   - A 3 position switch (to control the flight mode) should be setup to control Channel 5 (if using Copter) or Channel 8 (if using Rover or Plane).  This channel can be moved by setting :ref:`MODE_CH <MODE_CH>` parameter
 [/site]
-[site wiki="copter, rover"]
+[site wiki="plane"]
   - A 3 position switch (to control the flight mode) should be setup to control Channel 5 (if using Copter) or Channel 8 (if using Rover or Plane).  This channel can be moved by setting the :ref:`FLTMODE_CH <FLTMODE_CH>` parameter
 [/site]
   - On Copter, a tuning knob should control Channel 6
