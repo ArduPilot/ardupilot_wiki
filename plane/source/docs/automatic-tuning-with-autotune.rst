@@ -60,7 +60,7 @@ Other things to check:
 -  check your center of gravity, making sure it is correct according to
    the manual for your aircraft. In general it is safer to be a bit more
    nose heavy than tail heavy.
--  check your surface trims. You may wish to use the :ref:`SERVO_AUTOTRIM<SERVO_AUTOTRIM>` option
+-  check your surface trims. You may wish to use the :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` option
    after reading the documentation for that option.
 -  make sure your failsafe settings are setup correctly. Try turning off
    your transmitter with your plane on the ground (and propeller removed
