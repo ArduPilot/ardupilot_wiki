@@ -6,7 +6,7 @@ ArduPilot Unit Tests
 
 ArduPilot's Unit Test suite allows for the creation of repeatable tests
 which help prevent regressions in ArduPilot's internal functions.  It is based
-on Google's `GTest Framework <https://https://github.com/google/googletest>`__.
+on Google's `GTest Framework <https://github.com/google/googletest>`__.
 
 Using ArduPilot's Unit Tests can:
 
