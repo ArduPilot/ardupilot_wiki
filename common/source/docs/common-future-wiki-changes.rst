@@ -510,9 +510,14 @@ Until Return to Launch section, add: Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 2 
 On Terrain Following Page:
 --------------------------
 
+In Flight Modes Section change:
+
+"Set :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` to 1 to enable terrain following in those modes." to read "Setting the bitmask in :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` determines which altitude controlled modes terrain following is active. For example, setting it to "10" enables following in FBWB and AUTO."
+
+
 At the end of Flight Modes section:
 
-Terrain Following in CRUISE and FBWB modes can be disabled with an RC switch assigned ``RCx_OPTION`` = 86. When enabling (<1200us) or disabling (>1800us) terrain following with the switch, the present altitude will be the target set point either above terrain, or home, respectively. The target altitude can be changed as normal with elevator whether the altitude refernce being used is above home or above terrain.
+Terrain Following in CRUISE and FBWB modes can be disabled with an RC switch assigned ``RCx_OPTION`` = 86. When enabling (<1200us) or disabling (>1800us) terrain following with the switch, the present altitude will be the target set point either above terrain, or home, respectively. The target altitude can be changed as normal with elevator whether the altitude reference being used is above home or above terrain.
 
 On Dspoiler Page:
 -----------------
