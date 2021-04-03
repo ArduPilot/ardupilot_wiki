@@ -47,8 +47,20 @@ RCx_OPTIONs on Auxillary Functions Page:
 +----------------------+----------------------------+----------+---------+---------+
 |        94            | VTX Power                  |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        95            | FBWA_TAILDRAGGER           |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        96            | MODE_SWITCH_RESET          |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
 |        105           | GPS Disable Yaw            |    X     |    X    |    X    |
 |                      | (testing only!)            |          |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        201           | ROLL Input                 |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        202           | PTCH Input                 |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        203           | THROTTLE Input             |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        204           | YAW Input                  |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        207           | Mainsail                   |          |         |    X    |
 +----------------------+----------------------------+----------+---------+---------+
@@ -58,7 +70,7 @@ RCx_OPTIONs on Auxillary Functions Page:
 +----------------------+----------------------------+----------+---------+---------+
 |        210           | Airbrakes                  |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
-|        211           | Walking Robot Height       |          |    X    |         |
+|        211           | Walking Robot Height       |          |         |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        300-307       | Scripting RC channels      |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
@@ -76,17 +88,6 @@ RCx_OPTIONs on Auxillary Functions Page:
 
    </td>
    <tr>
-   <td><strong>ZigZag Mode Learn Waypoints</strong></td>
-   <td>
-
-Sets zigzag point A and B. See :ref:`zigzag-mode` .
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-
    <td><strong>RunCam Control</strong></td>
    <td>
 
@@ -107,10 +108,10 @@ Enables control of RunCam cameras OSDs. See :ref:`common-camera-runcam`
    </td>
    </tr>
    <tr>
-   <td><strong>Viso Align</strong></td>
+   <td><strong>VISO Align</strong></td>
    <td>
 
-Align T265 Visual Odometry camera attitude to vehicle's.
+NEEDS DESCRIPTION!
 
 .. raw:: html
 
@@ -131,8 +132,6 @@ Disarm vehicle unconditionally and immediately. Unlike Emergency Stop Motors, wh
    <td>
 
 Low: disable Q_Assist entirely, Middle: Normal Q_Assist operation, High: Q_Assist active at all times. See Assisted Fixed Wing Flight section of :ref:`quadplane-flying`
-
-
 
 .. raw:: html
 
@@ -159,17 +158,7 @@ Enables and disables AIRMODE feature. See :ref:`airmode`
    </td>
    </tr>
    <tr>
-   <td><strong>GPS Disable Yaw</strong></td>
-   <td>
-
-Disables yaw for testing (advanced users only!)
-
-.. raw:: html
-
-   </td>
-   </tr>
-      <tr>
-   <td><Generator</strong></td>
+   <td><strong>Generator</strong></td>
    <td>
 
 Mode control for Richenpower Hybrid Power Generator
@@ -177,7 +166,6 @@ Mode control for Richenpower Hybrid Power Generator
 .. raw:: html
 
    </td>
-   </tr>
    <tr>
    <td><strong>Non Auto Terrain Follow Disable</strong></td>
    <td>
@@ -248,21 +236,91 @@ Allows reading up to a 6 position switch for controlling Video Transmitter Power
 
    </td>
    </tr>
-   <tr>
-   <td><strong>Kill IMU1 </strong></td>
+      <tr>
+   <td><strong>FBWA_TAILDRAGGER</strong></td>
    <td>
 
-Disables IMU1 for testing (advanced users only!)
+Enables FBWA taildragger takeoff mode holding elevator and tail on ground until airspeed is reached
+
+.. raw:: html
+
+   </td>
+   </tr>
+      <tr>
+   <td><strong>MODE_SWITCH_RESET</strong></td>
+   <td>
+
+Forces mode switch to be re-read.
 
 .. raw:: html
 
    </td>
    </tr>
    <tr>
-   <td><strong>Kill IMU2 </strong></td>
+   <td><strong>GPS Disable Yaw</strong></td>
    <td>
 
-Disables IMU2 for testing (advanced users only!)
+Disables yaw for testing (advanced users only!)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>ROLL Input</strong></td>
+   <td>
+
+ROLL input channel. (replaces RCMAP)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>PITCH Input</strong></td>
+   <td>
+
+PITCH input channel. (replaces RCMAP)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>THROTTLE Input</strong></td>
+   <td>
+
+THROTTLE input channel. (replaces RCMAP)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>YAW Input</strong></td>
+   <td>
+
+YAW input channel. (replaces RCMAP)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Mainstail</strong></td>
+   <td>
+
+Mainsail control input channel.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>FLAP Control</strong></td>
+   <td>
+
+Input channel for flaps control.
 
 .. raw:: html
 
