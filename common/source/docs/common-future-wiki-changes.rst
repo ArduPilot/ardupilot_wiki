@@ -50,6 +50,10 @@ RCx_OPTIONs on Auxillary Functions Page:
 |        105           | GPS Disable Yaw            |    X     |    X    |    X    |
 |                      | (testing only!)            |          |         |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        207           | Mainsail                   |          |         |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        208           | Flap Control               |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 |        209           | Forward Throttle           |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 |        210           | Airbrakes                  |          |    X    |         |
@@ -606,6 +610,15 @@ On Quadplane Tips Page:
 Under Tilt Rotor Servo Setup, add:
 
 Note that setting :ref:`Q_OPTIONS<Q_OPTIONS>` bit 10 (Disarmed Yaw Tilt) allows the motors to tilt in response to rudder input while disarmed to facilitate adjustment of parameters.
+
+On Flight Options Page:
+ add to table
+
+=====================================   ======================
+:ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>`   Function
+=====================================   ======================
+4                                       Climb to :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` altitude before turning toward home in RTL
+=====================================   ======================
 
 -----------------------------------------------------
 
