@@ -412,6 +412,12 @@ To give Lua scripts access to more features of ArduPilot the API can be extended
 - For releases before Copter/Rover/Plane 4.1: Open a command line prompt and cd to the `/libraries/AP_Scripting/generator <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/generator>`__ directory and type "make run". 
 - For 4.1 onwards, clean the distribution (./waf distclean) and restart compilation from there as usual.
 
+Include Lua scripts in firmware directly
+========================================
+
+Lua scripts may be directly embedded in firmware binaries, rather than being placed on an external SD card. This is useful for manufacturer's to provide the scripts for included peripherals or when the autopilot does not support an SD card. Instructions to do so are on `this link <https://ardupilot.org/dev/docs/common-oem-customizations.html#>`__.
+
+
 Further Information
 ===================
 .. toctree::
