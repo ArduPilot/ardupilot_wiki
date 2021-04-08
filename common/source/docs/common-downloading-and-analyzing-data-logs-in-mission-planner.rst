@@ -628,7 +628,7 @@ See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/maste
    </table>
 
 **EV: (an event number)**. The full list of possible events can be found
-in `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L281>`__
+in `AP_Logger.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L94>`__
 but the most common are:
 
 +------------+----------------------------------------------------------------------------------------------------+
