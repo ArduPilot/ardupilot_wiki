@@ -184,4 +184,5 @@ Other Systems
 
 -    `SkyViper video <https://discuss.arduPilot.org/t/using-the-skyviper-sonix-board-with-any-pixhawk/23932>`_
 -    `Wifi Broadcast <https://github.com/bortek/EZ-WifiBroadcast/wiki>`_
+-    `SkyDriod T12 <https://www.heliengadin.com/products/skydroid-t12-remote-controller-with-digital-video>`_
 
