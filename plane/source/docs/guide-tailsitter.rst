@@ -22,12 +22,12 @@ Vectored and non-Vectored
 
 ArduPilot sub-divides tailsitters into two broad categories:
 
-- vectored tailsitters can tilt their rotors independently of the
+- Vectored tailsitters can tilt their rotors independently of the
   movement of the fuselage, giving them vectored thrust
-- non-vectored tailsitters have fixed rotor orientation relative to
-  the fuselage, and rely on large control surfaces for hover authority
+- Non-vectored tailsitters have fixed rotor orientation relative to
+  the fuselage, and rely on large control surfaces for hover authority (although dual motor versions can use differential thrust for body frame yaw control also)
 
-  - Within non-vectored are two sub-categories: Single/Dual Motor and CopterMotor. The first uses one or two motors and can employ only differential thrust , while the second uses three, four, or more motors and operates in a more copter-like fashion.
+  - Within Non-vectored are two sub-categories: Single/Dual Motor and CopterMotor. The first uses one or two motors and can employ only differential thrust if dual motor , while the second uses three, four, or more motors and operates in a more copter-like fashion. Single motor tailsitters are similar to normal 3D planes that can hover using large control surfaces exposed to the single motor prop wash for control, but with ArduPilot providing the control stability for hovering, loitering, and VTOL mission navigation. Dual Motor add differential thrust to assist in body frame yaw control, while copter motor tailsitters are almost the same as a multicopter when in VTOL stance with flying surfaces, if present, adding to the control.
 
 .. note:: Currently all CopterMotor style Tailsitters do not use any yaw torque control. Roll (with respect to plane body) is only controlled by the flying surface (ailerons or elevons). Future releases will add this.
 
