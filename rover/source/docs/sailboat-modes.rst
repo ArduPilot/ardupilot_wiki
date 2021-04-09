@@ -25,7 +25,7 @@ Loiter
 The vehicle will keep moving within the :ref:`loiter radius <LOIT_RADIUS>`.
 
 
-RLT
+RTL
 ---
 The vehicle will tack upwind back to the home location if required.
 
