@@ -4,8 +4,12 @@
 Copter Attitude Control
 =======================
 
-Below is a high level diagram showing how the attitude control is done for each axis.
-The control is done using a P controller to convert the angle error (the difference between the target angle and actual angle) into a desired rotation rate followed by a PID controller to convert the rotate rate error into a high level motor command. 
+Below is a high level diagram showing how the attitude control is done.
+
+.. image:: ../images/copter-v4-small-attitude-PIDs.png
+    :target: ../_images/copter-v4-small-attitude-PIDs.png
+
+Below describes what is done for each axis.  A P controller converts the angle error (the difference between the target angle and actual angle) into a desired rotation rate followed by a PID controller to convert the rotate rate error into a high level motor command.
 The "square root controller" portion of the diagram shows the curved used with the angle control's P controller.
 
 .. image:: ../images/Copter_CodeOverview_AttitudeControlPID.png
