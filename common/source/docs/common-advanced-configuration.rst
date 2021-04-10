@@ -119,6 +119,7 @@ tuning options for the vehicle.
     Transmitter Based Tuning <common-transmitter-tuning>
 [/site]
     UAVCAN Setup <common-uavcan-setup-advanced>
+    Video Transmitter Control <common-vtx>
 [site wiki="copter,plane,rover,planner"]
     UBlox GPS Configuration <common-ublox-gps>
 [/site]
