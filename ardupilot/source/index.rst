@@ -223,6 +223,7 @@ Features
    Mission Planner <https://ardupilot.org/planner/index.html>
    APM Planner 2 <https://ardupilot.org/planner2/index.html>
    MAVProxy <https://ardupilot.org/mavproxy/index.html>
+   Open Mission Controller <docs/omc-user-manual>
    Companion Computers <https://ardupilot.org/dev/docs/companion-computers.html>
    Developers <https://ardupilot.org/dev/index.html>
    Firmware Downloads <docs/common-downloads_firmware>
