@@ -8,7 +8,7 @@ Daiwa Winch
 .. image:: ../../../images/daiwa-winch.png
     :target: ../_images/daiwa-winch.png
 
-The Daiwa winch is a high quality winch specially designed for drone delivery.  The winch includes a "thread end detector switch" that protects against pulling the line in too tightly and thus straining the device or breaking the thread.  The gripper includes a spring mechanism that automatically releases the package when it touches the ground.
+The `Daiwa winch <http://www.ele.okaya.co.jp/index_en.html>`__ is a high quality winch specially designed for drone delivery.  The winch includes a "thread end detector switch" that protects against pulling the line in too tightly and thus straining the device or breaking the thread.  The gripper includes a spring mechanism that automatically releases the package when it touches the ground.
 
 - Weight: 630g
 - Size: W:110mm H:82mm D:72mm
@@ -25,7 +25,7 @@ The Daiwa winch is a high quality winch specially designed for drone delivery.  
 Where To Buy
 ------------
 
-- These winches are manufactured by Okaya (`japanese site <https://www.okaya.co.jp/>`__, `english site <https://www.okaya.co.jp/en/index.html>`__) and can be purchased `here <https://www.ipros.jp/product/detail/2000434011/>`__ (Japanese language only).
+- These winches are manufactured by Okaya (`japanese site <https://www.okaya.co.jp/>`__, `english site <https://www.okaya.co.jp/en/index.html>`__) and can be purchased `here (English) <http://www.ele.okaya.co.jp/index_en.html>`__ or `here (Japanese) <https://www.ipros.jp/product/detail/2000434011/>`__.
 
 Connection and Configuration
 ----------------------------
