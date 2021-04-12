@@ -46,3 +46,39 @@ Firmware for existing device definitions are posted `here <https://firmware.ardu
 To create firmware for a new design, follow the same instructions as for porting to a new autopilot board, as explained in the Wiki section :ref:`porting` .
 
 Additional information is available in the AP_Periph readme `here <https://github.com/ArduPilot/ardupilot/blob/master/Tools/AP_Periph/README.md>`__
+
+Parameters List
+===============
+
+With the exception of the following parameters, AP_Periph parameters are simply those of the included driver libraries for the peripheral firmware.
+
+- :ref:`FORMAT_VERSION<FORMAT_VERSION>`
+- :ref:`CAN_NODE<CAN_NODE>`
+- :ref:`CAN_BAUDRATE<CAN_BAUDRATE>`
+- :ref:`FLASH_BOOTLOADER<FLASH_BOOTLOADER>`
+- :ref:`DEBUG<DEBUG>`
+- :ref:`BRD_SERIAL_NUM<BRD_SERIAL_NUM>`
+
+And, depending on driver library included, several parameters needed in addition to those included normally in those libraries:
+
+- :ref:`BUZZER_VOLUME<BUZZER_VOLUME>`
+- :ref:`BARO_ENABLE<BARO_ENABLE>`
+- :ref:`LED_BRIGHTNESS<LED_BRIGHTNESS>`
+- :ref:`RNGFND_BAUDRATE<RNGFND_BAUDRATE>`
+- :ref:`RNGFND_PORT<RNGFND_PORT>`
+- :ref:`ADSB_BAUDRATE<ADSB_BAUDRATE>`
+- :ref:`ADSB_PORT<ADSB_PORT>`
+- :ref:`HARDPOINT_ID<HARDPOINT_ID>`
+- :ref:`HARDPOINT_RATE<HARDPOINT_RATE>`
+- :ref:`ESC_NUMBER<ESC_NUMBER>`
+- :ref:`ESC_PWM_TYPE<ESC_PWM_TYPE>`
+- :ref:`MSP_PORT<MSP_PORT>`
+
+List of all parameters for possible drivers which can be included:
+
+.. toctree::
+   :maxdepth: 1
+
+    Full Parameter List <AP_Periph-Parameters>
+
+
