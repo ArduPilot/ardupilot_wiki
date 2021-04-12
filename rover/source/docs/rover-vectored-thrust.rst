@@ -9,10 +9,14 @@ Vectored Thrust
 
 *above image is of a Sprint F3 boat from HobbyKing* (`link <https://hobbyking.com/en_us/sprint-f3-fiberglass-tunnel-hull-brushless-racing-boat-w-motor-630mm.html>`__)
 
-Rover-3.3.1 (and higher) supports "vectored thrust" which improves steering control for :ref:`boats <boat-configuration>` and hovercraft that use the steering servo to aim the motor.
-This feature should not be used on cars or boats with a rudder positioned away from the motors.
+The "Vectored thrust" feature improves steering control for :ref:`boats <boat-configuration>` and hovercraft that use a steering servo to aim the motor.
+This feature should not be used on cars or boats with a rudder that is controlled separately from the motors.
 
-To enable this features set the ``MOT_VEC_THR_BASE`` parameter to a value between 10 and 30 (normally 20 works well).
+In Rover-4.1.0 (and higher) the feature is enabled by setting :ref:`MOT_VEC_ANGLEMAX <MOT_VEC_ANGLEMAX>` to the angle of deflection of the motor when the steering servo is at its maximum position.
+
+.. image:: ../images/vectored-thrust-anglemax.jpg
+
+In 4.0 (and earlier) this features was enabled by setting the ``MOT_VEC_THR_BASE`` parameter to a value between 10 and 30 (normally 20 works well).
 This parameter specifies:
 
 - the throttle level above which the steering servo will be scaled towards the center.  I.e. if set to 20%, the steering response will be unrestricted between 0% and 20% throttle but above 20% throttle it will be scaled towards the center more and more as throttle increases.
