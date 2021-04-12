@@ -47,6 +47,7 @@ Closed hardware
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
+    Flywoo F745 AIO BL_32 <common-flywoo-f745>
     Holybro Durandal H7 <common-durandal-overview>
     Holybro Kakute F4 <common-holybro-kakutef4>
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
