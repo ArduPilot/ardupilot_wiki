@@ -158,6 +158,7 @@ Full Table of Contents
     Events <docs/events>
     Training Centers <docs/common-training-centers>
     GSoC 2021 project ideas <docs/gsoc-ideas-list>
+    2021 Developers Conference<docs/2021-conference>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     USB IDs <docs/USB-IDs>
     User Alerts <docs/user-alerts-developer>
