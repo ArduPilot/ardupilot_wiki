@@ -66,7 +66,7 @@ Some autopilots have integrated On Sceen Display (OSD) capability. This provides
 MAVftp
 ======
 
-In firmware versions 4.1 and later, an integrated FTP (File Transfer Protocol) has been implemented to allow access to the SD card (if the autopilot has one) via Mission Planner. (It is not recommended to use it for log download, use the DataFlash Logs button in the DATA screen, it's faster).
+In firmware versions 4.1 and later, an integrated FTP (File Transfer Protocol) has been implemented to allow access to the SD card (if the autopilot has one) and internal flash file systems (See :ref:`dev:filesystems`) via Mission Planner. (It is not recommended to use it for log download, use the DataFlash Logs button in the DATA screen, it's faster).
 
 User Params
 ===========

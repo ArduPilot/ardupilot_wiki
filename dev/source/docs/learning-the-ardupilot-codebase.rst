@@ -30,6 +30,7 @@ Tutorial steps
     UARTs and the Console <learning-ardupilot-uarts-and-the-console>
     RC Input and Output <learning-ardupilot-rc-input-output>
     Storage and EEPROM management <learning-ardupilot-storage-and-eeprom-management>
+    Filesystems <filesystems>
     EKF <ekf>
     Copter - Vehicle Code introduction <apmcopter-code-overview>
     Copter - Attitude Control <apmcopter-programming-attitude-control-2>
