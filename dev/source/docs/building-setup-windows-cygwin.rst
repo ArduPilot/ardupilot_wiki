@@ -16,19 +16,19 @@ These setup instructions describe how to setup `Cygwin <http://www.cygwin.com/>`
 Install Cygwin
 --------------
 
-#. Open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and download  "setup-x86_64.exe"
+#. Open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and download  "setup-x86.exe"
 
-#. Paste the  following command at a DOS prompt (press window and R key then enter cmd) in the directory where you downloaded "Run setup-x86_64.exe"
+#. Paste the  following command at a DOS prompt (press window and R key then enter cmd) in the directory where you downloaded "Run setup-x86.exe"
 
 ::
 
-    setup-x86_64.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python36,python36-future,python36-lxml,python36-pip,libxslt-devel,python36-devel,procps-ng,zip,gdb,ddd,xterm
+    setup-x86.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python36,python36-future,python36-lxml,python36-pip,libxslt-devel,python36-devel,procps-ng,zip,gdb,ddd,xterm
     
 Or, for a stepped install:
 
-#. open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and run setup-x86_64.exe"
+#. open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and run setup-x86.exe"
 
-#. accept the all the prompts (including default file locations) until
+#. accept all the prompts (including default file locations) until
    you reach the *Select Packages* dialog.
    
 #. Select the required packages from the thousands of available packages.
@@ -108,7 +108,7 @@ Install the GCC compiler
     - accept the license
     - install to the default location
     - accept the ssl certificate
-    - check option to "Add path to environment variable"
+    - check the option to "Add path to environment variable"
 
 .. image:: ../images/building-setup-windows-cygwin-gcc.png
 
@@ -122,9 +122,9 @@ The MAVProxy GCS is required when running SITL. If you're not planning to run SI
 Set up directories/paths and extra packages in Cygwin
 -----------------------------------------------------
 
-#. open and then close the "Cygwin64 Terminal" application from the desktop or start menu icon.  This creates initialisation files for the user in the Cygwin home directory.
+#. open and then close the "Cygwin Terminal" application from the desktop or start menu icon.  This creates initialization files for the user in the Cygwin home directory.
 
-#. open the "Cygwin64 Terminal" application from the desktop or start menu icon.  Enter the following command to set Python 3.6 to be the default Python and then install additional Python packages:
+#. open the "Cygwin Terminal" application from the desktop or start menu icon.  Enter the following command to set Python 3.6 to be the default Python and then install additional Python packages:
 
 ::
 
@@ -147,19 +147,28 @@ The ArduPilot source files then need to be downloaded to your local Cygwin files
 Build with Waf
 ==============
 
-You should now be able to start the "Cygwin64 Terminal" application from your Windows Start menu and build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
+You should now be able to start the "Cygwin Terminal" application from your Windows Start menu and build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
    .. warning::
 
       The build may fail if the file path to some files is too long.  If the build fails, please try :ref:`cloning <git-clone>` ArduPilot into a directory very high in the directory structure (i.e. ~/ardupilot).
       
-      If during build process you get error of missing packet xyz, re-check that you have installed all cygwin packages listed above
+      If during the build process you get an error of missing packet xyz, re-check that you have installed all Cygwin packages listed above
       
 Running SITL
 ============
 
-You can run SITL just as you can with any other build environment. In order to see the terminal you should install VcXsrv or other X server application. You must then tell Cygwin where to look for the display by setting the DISPLAY variable. 
+You can run SITL just as you can with any other build environment. To see the terminal, you should install VcXsrv or another X server application for Windows. You must then tell Cygwin where to look for the display by setting the DISPLAY variable. 
 
 ::
 
-      export DISPLAY=:0.0 
+      export DISPLAY=:0.0
+      
+Build SITL binaries for Windows
+===============================
+
+You can build 32-bit binaries to be run outside of Cygwin with a small set of companion files. This can be useful when used in conjunction with Mission Planner to run SITL with a stable release build rather than a build from the development branch of ArduPilot. This can be done by compiling using the command below in Cygwin and copying the binary the "sitl" folder typically found at C:\Users\user\Documents\Mission Planner\sitl. Mission Planner will download the required files during the first time running SITL. After the initial run, the vehicle-specific binary file can be replaced with the file you built.
+
+::
+
+      ./waf --board sitl configure
