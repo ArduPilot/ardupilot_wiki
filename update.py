@@ -33,6 +33,7 @@ from __future__ import print_function, unicode_literals
 
 import argparse
 import distutils
+import errno
 import filecmp
 import glob
 import hashlib
@@ -154,6 +155,14 @@ def error(str_to_print):
     print("[update.py][error]: " + str(str_to_print))
 
 
+def remove_if_exists(filepath):
+    try:
+        os.remove(filepath)
+    except OSError as e:
+        if e.errno != errno.ENOENT:
+            raise e
+
+
 def fetchparameters(site=args.site):
     """Fetches the parameters for all the sites from the test server and
     copies them to the correct location.
@@ -163,10 +172,7 @@ def fetchparameters(site=args.site):
 
     """
     # remove any parameters files in root
-    try:
-        subprocess.check_call(["rm", 'Parameters.rst'])
-    except Exception:  # FIXME: narrow exception type
-        pass
+    remove_if_exists('Parameters.rst')
 
     for key, value in PARAMETER_SITE.items():
         fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value  # noqa
@@ -179,12 +185,8 @@ def fetchparameters(site=args.site):
             continue
         if site == key or site is None:
             subprocess.check_call(["wget", fetchurl])
-            try:  # Remove target file if it exists
-                subprocess.check_call(["rm", targetfile])
-            except Exception:  # FIXME: narrow exception type
-                pass
-            # copy in new file
-            subprocess.check_call(["mv", 'Parameters.rst', targetfile])
+            # move in new file
+            os.rename('Parameters.rst', targetfile)
 
 
 def fetchlogmessages(site=args.site):
@@ -204,12 +206,8 @@ def fetchlogmessages(site=args.site):
             continue
         if site == key or site is None:
             subprocess.check_call(["wget", fetchurl])
-            try:  # Remove target file if it exists
-                subprocess.check_call(["rm", targetfile])
-            except Exception:  # FIXME: narrow exception type
-                pass
-            # copy in new file
-            subprocess.check_call(["mv", 'LogMessages.rst', targetfile])
+            # move in new file
+            os.rename('LogMessages.rst', targetfile)
 
 
 def build_one(wiki):
@@ -288,9 +286,9 @@ def copy_build(site):
 
         html_moved_dir = os.path.join(args.destdir, 'html')
         try:
-            subprocess.check_call(['mv', sourcedir, html_moved_dir])
+            shutil.move(sourcedir, html_moved_dir)
             # Rename move! (single move to html/* failed)
-            subprocess.check_call(['mv', html_moved_dir, targetdir])
+            shutil.move(html_moved_dir, targetdir)
             print("DEBUG: Moved to %s" % targetdir)
         except Exception:  # FIXME: narrow exception type
             print("DEBUG: FAIL moving output to %s" % targetdir)
@@ -332,10 +330,8 @@ def copy_and_keep_build(site):
                 'html')
             html_moved_dir = os.path.join(args.destdir, 'html')
             try:
-                # subprocess.check_call(['mv', sourcedir, html_moved_dir])
                 shutil.move(sourcedir, html_moved_dir)
                 # Rename move! (single move to html/* failed)
-                # subprocess.check_call(['mv', html_moved_dir ,targetdir])
                 shutil.move(html_moved_dir, targetdir)
                 debug("Moved to %s" % targetdir)
             except Exception:  # FIXME: narrow exception type
@@ -569,11 +565,7 @@ def fetch_versioned_parameters(site=args.site):
             # Remove old param single file
             single_param_file = './%s/source/docs/parameters.rst' % key
             debug("Erasing " + single_param_file)
-            try:
-                subprocess.check_call(["rm", single_param_file])
-            except Exception as e:
-                error(e)
-                pass
+            remove_if_exists(single_param_file)
 
             # Remove old versioned param files
             if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
@@ -602,11 +594,7 @@ def fetch_versioned_parameters(site=args.site):
                 target_json_file = ('./%s/source/_static/parameters-%s.json' %
                                     (value, key.title()))
             debug("Erasing json " + target_json_file)
-            try:
-                subprocess.check_call(["rm", target_json_file])
-            except Exception as e:
-                error(e)
-                pass
+            remove_if_exists(target_json_file)
 
             # Moves the updated JSON file
             if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
