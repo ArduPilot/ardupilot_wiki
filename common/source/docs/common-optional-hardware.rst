@@ -41,6 +41,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
+[site wiki="copter"]
+    Generators <common-generators>
+[/site]
     GPS/Compass <common-positioning-landing-page>
     Grippers <common-gripper-landingpage>
     Joystick or Gamepad <common-joystick>
