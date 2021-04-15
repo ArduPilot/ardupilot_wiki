@@ -90,6 +90,7 @@ tuning options for the vehicle.
 [site wiki="copter,plane"]
     Optical Flow Sensor <common-optical-flow-sensor-setup>
 [/site]
+    OSD Parameter Editor <common-paramosd>
     Parameter List (Full) <parameters>
     Parameter Reset <common-parameter-reset>
     RC Input Channel Mapping (RCMAP) <common-rcmap>
