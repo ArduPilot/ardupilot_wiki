@@ -16,3 +16,4 @@ Some autopilot board have an OSD integrated, OSD can be via an external MAVLink 
     Onboard OSD for FPV and simulation <common-osd-overview>
     Minim OSD <common-minim-osd-quick-installation-guide>
     MSP OSD <common-msp-osd-overview>
+    OSD Parameter Editor <common-paramosd>
