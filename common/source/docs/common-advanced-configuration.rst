@@ -62,13 +62,13 @@ tuning options for the vehicle.
     Ground Control Station Only Operation <common-gcs-only-operation>
 [site wiki="copter"]
     Ground Effect Compensation <ground-effect-compensation>
-    In-Flight FFT Configuration <common-imu-fft>
+    In-Flight FTT and filter control <common-imu-fft>
 [/site]
     IMU Temperature Calibration <common-imutempcal>
     Independent Watchdog <common-watchdog>
 [site wiki="plane"]
-     In-Flight FFT Configuration <common-imu-fft>
-     Limiting Maximum Power Draw <batt-watt-max>
+    In-Flight FTT and filter control <common-imu-fft>
+    Limiting Maximum Power Draw <batt-watt-max>
 [/site]
     LUA Scripting <common-lua-scripts>
     Magnetic Interference <common-magnetic-interference>
