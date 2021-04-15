@@ -273,11 +273,121 @@ MegaSquirt EFI, see `MegaSquirt EFI <http://megasquirt.info/>`__
 
    </td>
    </tr>
-      <tr>
+   <tr>
    <td>25</td>
    <td>
 
 LTM Telemetry, see :ref:`LTM Telemetry <common-ltm-telemetry>` 
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>26</td>
+   <td>
+
+Runcam see :ref:`common-camera-runcam` 
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>27</td>
+   <td>
+
+HOTT Telem see :ref:`common-hott-telemetry`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>28</td>
+   <td>
+
+Scripting see :ref:`common-lua-scripts` 
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>29</td>
+   <td>
+
+Crossfire Receiver :ref:`common-tbs-rc`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>30</td>
+   <td>
+
+Generator see :ref:`common-richenpower-generator`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>31</td>
+   <td>
+
+Winch
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>32</td>
+   <td>
+
+MSP Telemetry see :ref:`common-msp-overview`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>33</td>
+   <td>
+
+DJI FPV telemetry see :ref:`common-msp-osd-overview`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>34</td>
+   <td>
+
+Serial Airspeed sensor
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>35</td>
+   <td>
+
+Serial ADSB receiver
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>36</td>
+   <td>
+
+External AHRS
 
 .. raw:: html
 
