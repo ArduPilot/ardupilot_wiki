@@ -22,6 +22,7 @@ Short Range (<10KM)
     ESP8266 wifi telemetry <common-esp8266-telemetry>
     FrSky telemetry <common-frsky-telemetry>
     HOTT telemetry <common-hott-telemetry>
+    MSP (MultiWii Serial Protocol) <common-msp-overview>
     SiK Radio v1 <common-3dr-radio-v1>
     SiK Radio v2 <common-sik-telemetry-radio>
     SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
