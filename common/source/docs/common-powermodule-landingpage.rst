@@ -20,6 +20,7 @@ The links below have information about the most commonly used power monitors/mod
     Fuel Monitors <common-fuel-sensors>
     Can PMU<common-can-pmu>
     HV PM<common-hv-pm>
+    Rotoye BatMon Smart Battery <common-smart-battery-rotoye.rst>
     SmartAP Power Distribution Board<common-smartap-pdb>
 
 Power modules provide these benefits:
