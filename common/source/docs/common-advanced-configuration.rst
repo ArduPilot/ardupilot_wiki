@@ -34,6 +34,7 @@ tuning options for the vehicle.
 [/site]
     CAN Bus Setup <common-canbus-setup-advanced>
     Compass Setup (Advanced) <common-compass-setup-advanced>
+    Compass-less Operation<common-compassless>
 [site wiki="copter"]
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
 [/site]
