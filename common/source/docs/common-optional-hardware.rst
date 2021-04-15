@@ -24,6 +24,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Barometer (external) <common-baro-external>
 [site wiki="copter,plane,rover"]
+    Button Inputs <common-buttons>
     Buzzer <common-buzzer>
 [/site]
     Cameras & Gimbals <common-cameras-and-gimbals>
