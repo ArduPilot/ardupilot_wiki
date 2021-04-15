@@ -15,31 +15,6 @@ This lists features or changes merged in master and build in the "latest" firmwa
     Soaring Enhancements <soaring-upcoming>
 [/site]
 [site wiki="copter,plane,rover"]
-    Button Inputs <common-buttons>
-    Compass-less Operation<common-compassless>
-    GPS/Non-GPS Transitions <common-non-gps-to-gps>
-    IMU Temperature Calibration <common-imutempcal>
-[/site]
-[site wiki="copter,plane"]
-    In-Flight FTT and filter control <common-imu-fft>
-[/site]
-[site wiki="copter,plane,rover"]
-    Hott Telem (already in Plane release) <common-hott-telemetry>
-    Lightware SF45/B (350 degree) <common-lightware-sf45b>
-    MSP OSD <common-msp-osd-overview>
-    MSP (MultiWii Serial Protocol) <common-msp-overview>
-[/site]
-[site wiki="copter,rover"]
-    Nooploop Beacons <common-nooploop>
-[/site]
-[site wiki="copter,plane,rover"]
-    OSD Parameter Editor <common-paramosd>
-    Generators <common-generators>
-    Rotoye BatMon Smart Battery <common-smart-battery-rotoye.rst>
-    RunCam Control <common-camera-runcam>
-    Velocity ESCs <common-velocity-can-escs>
-    Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
-
     Other wiki changes <common-future-wiki-changes>
 [/site]
 [site wiki="plane"]
