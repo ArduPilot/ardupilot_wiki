@@ -64,6 +64,7 @@ tuning options for the vehicle.
     Ground Effect Compensation <ground-effect-compensation>
     In-Flight FFT Configuration <common-imu-fft>
 [/site]
+    IMU Temperature Calibration <common-imutempcal>
     Independent Watchdog <common-watchdog>
 [site wiki="plane"]
      In-Flight FFT Configuration <common-imu-fft>
