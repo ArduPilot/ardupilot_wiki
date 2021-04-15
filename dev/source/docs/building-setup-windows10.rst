@@ -101,7 +101,7 @@ Windows Terminal enables multiple tabs that can switch between many Linux termin
     * The default starting directory can be changed by adding the ``startingDirectory`` line below to your preferred location by following the example below.
     * Note a similar code block to one shown below will be automatically generated based upon the version and distribution of Linux installed.
 
-    .. code-block:: json
+    .. code-block::
 
         {
         "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
