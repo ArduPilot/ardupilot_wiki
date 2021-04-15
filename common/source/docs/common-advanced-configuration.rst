@@ -58,6 +58,7 @@ tuning options for the vehicle.
 [/site]
     GPIOs <common-gpios>
     GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
+    GPS/Non-GPS Transitions <common-non-gps-to-gps>
     Ground Control Station Only Operation <common-gcs-only-operation>
 [site wiki="copter"]
     Ground Effect Compensation <ground-effect-compensation>
