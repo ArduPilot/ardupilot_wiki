@@ -37,13 +37,11 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Display (Onboard) <common-display-onboard>
     ESCs and Motors <common-escs-and-motors>
 [site wiki="plane"]
-     Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
+    Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
 [/site]
     First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
-[site wiki="copter"]
     Generators <common-generators>
-[/site]
     GPS/Compass <common-positioning-landing-page>
     Grippers <common-gripper-landingpage>
     Joystick or Gamepad <common-joystick>
