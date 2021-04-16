@@ -19,52 +19,6 @@ Output Mapping Page under QuadPlane Functions
 - change title of explanations from "Motor Tilt/ Tilt Motor Left/ Tilt Motor Right" to "Tilt Motor/ Tilt Motor Left/ Tilt Motor Right/ Tilt Motor Rear/ Tilt Motor Rear Left/ Tilt Motor Rear Right"
 
 
-RC Options Page
----------------
-
-Add to table:
-
-=================================       =========
-:ref:`RC_OPTIONS<RC_OPTIONS>` bit       Function
-=================================       =========
-4                                       Log RC raw RC input bytes for serial protocols
-5                                       Require Throttle input at idle position in order to arm
-6                                       Allows arming if the rudder,elevator, or aileron
-                                        stick is not neutral
-7                                       Allow Aux Switches to honor the ``RCx_REVERSED`` parameter
-=================================       =========
-
-
-Add section at end:
-
-
-There is also an :ref:`RC_PROTOCOLS<RC_PROTOCOLS>` bitmask that can be used to restrict which RC protocols are detected and used. This is useful in cases where the RC protocol autodetection fails and an incorrect RC protocol handler is chosen. This is rare, but if you do find it happens then you can lock in a single RC protocol that can be detected and used with this parameter.
-
-Autopilot Output Mapping
-------------------------
-
-add to MISC Functions table:
-
-+--------------------------------+----+---------------------------------------+
-|       Function                 | ID |        Available in:                  |
-+--------------------------------+----+---------------------------------------+
-| Output SERVOn_MIN PWM value    |134 |    Plane, Copter, Rover               |
-+--------------------------------+----+---------------------------------------+
-| Output SERVOn_TRIM PWM value   |135 |    Plane, Copter, Rover               |
-+--------------------------------+----+---------------------------------------+
-| Output SERVOn_MAX PWM value    |136 |    Plane, Copter, Rover               |
-+--------------------------------+----+---------------------------------------+
-
-LUA Scripting (common-lua-scripts)
-----------------------------------
-
-see `Wiki PR #2839 <https://github.com/ArduPilot/ardupilot_wiki/pull/2839>`__  many new bindings
-
-add to "Getting Started": 
-
-- Scripts which require no user editing before use (Applets) can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these have an .md file of the same name detailing its capabilities, use and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter.
-- Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are avaliable: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
-
 
 Logging (common-downloading-and-analyzing-data-logs-in-mission-planner)
 -----------------------------------------------------------------------
@@ -76,17 +30,7 @@ Managing Gyro Noise with the Static Notch and Dynamic Harmonic Notch Filters(com
 
 see `Wiki PR #2901 < <https://github.com/ArduPilot/ardupilot_wiki/pull/2901>`__ improved notch filtering operation
 
-SRXL2 and CRSF RX Protocol Additions
-------------------------------------
 
-see `Wiki PR #2905 <https://github.com/ArduPilot/ardupilot_wiki/pull/2905>`__
-
-update Common-RC-Systems and Common-Autopilot-Wiring pages with links to new pages
-
-
-Advanced Setup Page
--------------------
-Add link to :ref:`EKF3 Affinity and Lane Switching <common-ek3-affinity-lane-switching>`.
 
 Firmware Limitations Section (common-autopilots.rst)
 ----------------------------------------------------
@@ -102,15 +46,6 @@ Add link to MSP (MultiWii Serial Protocol) <common-msp-overview> on Telemetry La
 "MSP protocol allows MSP compatible goggles (like the DJI Air system) to overlay telemetry data directly in the goggle display."
 and link in TOC to : MSP OSD <common-msp-osd-overview>
 
-Integrated OSD page
--------------------
-
-OSD enhancements : `OSD Call Sign and Fonts <https://github.com/ArduPilot/ardupilot_wiki/pull/3173>`_
-
-BiDirectional DSHOT and BLHeli_S Passthrough
---------------------------------------------
-
-See `Bi-Directional DShot <https://github.com/ArduPilot/ardupilot_wiki/pull/3329/files>`__
 
 PLANE
 =====

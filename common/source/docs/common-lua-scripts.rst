@@ -28,6 +28,8 @@ Getting Started
       :width: 450px
 
 - Sample scripts can be found `here for stable Plane <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/examples>`__, `Copter <https://github.com/ArduPilot/ardupilot/tree/ArduCopter-stable/libraries/AP_Scripting/examples>`__ and `Rover <https://github.com/ArduPilot/ardupilot/tree/APMrover2-stable/libraries/AP_Scripting/examples>`__.  The latest development scripts can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__.
+- - Scripts which require no user editing before use (Applets) can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these have an .md file of the same name detailing its capabilities, use and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter.
+- Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are avaliable: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
 - When the autopilot is powered on it will load and start all scripts.
 - Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab.
 - :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts. The default of 43 kB is sufficient for small scripts, and fits onto most autopilots. The autopilot's free memory depends highly upon which features and peripherals are enabled. If this parameter is set too low, scripts may fail to run. If set too high other autopilot features such as Terrain Following or even the EKF may fail to initialise. On autopilots with a STM32F4 microcontroller Smart RTL and Terrain Following need to be nearly always disabled (they are usally enabled by default, set :ref:`SRTL_POINTS <SRTL_POINTS>` = 0, :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` = 0).
@@ -410,6 +412,60 @@ Servo Channels (SRV_Channels:)
 
 - :code:`set_output_pwm_chan_timeout(channel, pwm, timeout)` - Sets servo channel to specified PWM for a time in ms. This overrides any commands from the autopilot until the timeout expires.
 
+RC Channels (rc:)
+~~~~~~~~~~~~~~~~~
+
+- :code:`get_pwm()` - Returns the RC input PWM value given a channel number. Note that channel here is indexed from 1. Returns false if channel is not available.
+
+
+Serial/UART (serial:)
+~~~~~~~~~~~~~~~~~~~~~
+
+- :code:`find_serial(protocol)` - Returns the first UART instance that allows the given protocol, or nil if not found.
+
+	- :code:`UART:begin(baud)` - Start serial connection at given baud rate.
+	- :code:`UART:read()` - Returns a sequence of bytes from UART instance.
+	- :code:`UART:write(number)` - Writes a sequence of bytes to UART instance.
+	- :code:`UART:available()` -  Returns integer of currently available bytes.
+	- :code:`UART:set_flow_control(flow_control)` - Sets flow control for UART instance.
+
+
+Barometer (baro:)
+~~~~~~~~~~~~~~~~~
+
+- :code:`get_pressure()` - Returns pressure in Pascal.
+
+- :code:`get_temperature()` - Returns temperature in degrees C.
+
+- :code:`get_external_temperature()` - Returns external temperature in degrees C.
+
+
+ESC Telemetry (esc_telem:)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :code:`get_usage_seconds(channel)` - Returns an individual ESC's usage time in seconds, or false if not available.
+
+
+Parameters (param:)
+~~~~~~~~~~~~~~~~~~~
+
+- :code:`get(parameter_name)` - Returns parameter value if available, or nil if not found.
+
+- :code:`set(parameter_name)` - Sets a parameter by name if available. Returns true if the parameter is found.
+
+- :code:`set_and_save(parameter_name)` Sets and saves a parameter by name if available. Returns true if the parameter is found.
+
+
+RPM (RPM:)
+~~~~~~~~~~
+
+- :code:`get_rpm(instance)` - Returns RPM of given instance, or nil if not available.
+
+
+Button (button:)
+~~~~~~~~~~~~~~~~
+
+- :code:`get_button_state(button_number)` - Returns button state if available. Buttons are 1 indexed.
 
 RC Channels (rc:)
 ~~~~~~~~~~~~~~~~~
