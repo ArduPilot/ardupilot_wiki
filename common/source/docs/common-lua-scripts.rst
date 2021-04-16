@@ -480,8 +480,8 @@ Serial/UART (serial:)
 
 	- :code:`UART:begin(baud)` - Start serial connection at given baud rate.
 	- :code:`UART:read()` - Returns a sequence of bytes from UART instance.
-	- :code:`UART:write(number) - Writes a sequence of bytes to UART instance.
-	- :code:`UART:available() -  Returns integer of currently available bytes.
+	- :code:`UART:write(number)' - Writes a sequence of bytes to UART instance.
+	- :code:`UART:available()' -  Returns integer of currently available bytes.
 	- :code:`UART:set_flow_control(flow_control)` - Sets flow control for UART instance.
 
 
