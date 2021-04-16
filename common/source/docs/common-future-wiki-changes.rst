@@ -189,17 +189,3 @@ On Flight Options Page:
 4                                       Climb to :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` altitude before turning toward home in RTL
 =====================================   ======================
 
------------------------------------------------------
-
-Copter
-======
-
-On BendyRuler page:
--------------------
-
-- replace OA_LOOKAHEAD label with :ref:`OA_BR_LOOKAHEAD<OA_BR_LOOKAHEAD>`
-- add these params under configuration:
-    - :ref:`OA_BR_CONT_RATIO<OA_BR_CONT_RATIO>` : BendyRuler will avoid changing bearing unless ratio of previous margin from obstacle (or fence) to present calculated margin is atleast this much.
-    - :ref:`OA_BR_CONT_ANGLE<OA_BR_CONT_ANGLE>` : BendyRuler will resist changing current bearing if the change in bearing is over this angle
-
-
