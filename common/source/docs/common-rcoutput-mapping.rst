@@ -534,6 +534,12 @@ MISCELLANEOUS FUNCTIONS
 +--------------------------------+----+---------------------------------------+
 |      Sprayer Mixer             | 23 |     Copter                            |
 +--------------------------------+----+---------------------------------------+
+| Output SERVOn_MIN PWM value    |134 |    Plane, Copter, Rover               |
++--------------------------------+----+---------------------------------------+
+| Output SERVOn_TRIM PWM value   |135 |    Plane, Copter, Rover               |
++--------------------------------+----+---------------------------------------+
+| Output SERVOn_MAX PWM value    |136 |    Plane, Copter, Rover               |
++--------------------------------+----+---------------------------------------+
 
 Gripper
 +++++++
@@ -544,6 +550,11 @@ Sprayer Pump/Mixer
 ++++++++++++++++++
 
 These outputs are controlling a :ref:`sprayer` .
+
+Output SERVOn MAX/MIN/TRIM
+++++++++++++++++++++++++++
+
+Continuously outputs the parameter value set for that output. Used in button detection. See  :ref:`common-buttons`
 
 GENERAL PURPOSE LUA SCRIPTING OUTPUTS
 -------------------------------------
