@@ -12,7 +12,7 @@ in order to reduce the firmware size to less than 1 MB.
 
 The missing features are listed below.
 
-.. note:: The LUA scripting and external (non-GPS) navigation features require a board with more than 1MB of flash. This affects the below listed boards plus the KakuteF4, BeastF4, F35Lightning, F4BY, MambaF405v2, MazzyStarDrone, OmnibusNanoV6, VRBrain-v51, VRBrain-v52, VRCore-v10, VRUBrain-v51, airbotf4, crazyflie2, mini-pix, revo-mini, skyviper, speedybeef4
+.. note:: The LUA scripting, ADSB, and external (non-GPS) navigation features require a board with more than 1MB of flash. This affects the below listed boards plus the KakuteF4, BeastF4, F35Lightning, F4BY, MambaF405v2, MazzyStarDrone, OmnibusNanoV6, VRBrain-v51, VRBrain-v52, VRCore-v10, VRUBrain-v51, airbotf4, crazyflie2, mini-pix, revo-mini, skyviper, speedybeef4.
 
 -  **Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)**
 
