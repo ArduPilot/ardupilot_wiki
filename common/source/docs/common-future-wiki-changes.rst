@@ -18,35 +18,6 @@ Output Mapping Page under QuadPlane Functions
 
 - change title of explanations from "Motor Tilt/ Tilt Motor Left/ Tilt Motor Right" to "Tilt Motor/ Tilt Motor Left/ Tilt Motor Right/ Tilt Motor Rear/ Tilt Motor Rear Left/ Tilt Motor Rear Right"
 
-
-
-Logging (common-downloading-and-analyzing-data-logs-in-mission-planner)
------------------------------------------------------------------------
-
-:ref:`LOG_FILE_MB_FREE<LOG_FILE_MB_FREE>` : This parameter sets the minimum free space on the logging media before logging begins. If this is not available, then older logs will be deleted to provide it during initialization. Default is 500MB.
-
-Managing Gyro Noise with the Static Notch and Dynamic Harmonic Notch Filters(common-imu-notch-filtering)
---------------------------------------------------------------------------------------------------------
-
-see `Wiki PR #2901 < <https://github.com/ArduPilot/ardupilot_wiki/pull/2901>`__ improved notch filtering operation
-
-
-
-Firmware Limitations Section (common-autopilots.rst)
-----------------------------------------------------
-
-include in the note that OSD-base parameter editing not available on KakuteF7 and OmnibusF7V2 boards.
-include in the note that ADSB is not included in 1MB boards.
-
-MSP Protocol and OSD
---------------------
-
-Add link to MSP (MultiWii Serial Protocol) <common-msp-overview> on Telemetry Landing Page, and add to OSD page:
-
-"MSP protocol allows MSP compatible goggles (like the DJI Air system) to overlay telemetry data directly in the goggle display."
-and link in TOC to : MSP OSD <common-msp-osd-overview>
-
-
 PLANE
 =====
 
