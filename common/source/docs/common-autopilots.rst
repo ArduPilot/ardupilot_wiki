@@ -25,7 +25,9 @@ Open hardware
     Hex/ProfiCNC Cube Purple <common-thecubepurple-overview>
     Hex/ProfiCNC Cube Yellow <common-thecubeyellow-overview>
     Hex/ProfiCNC Cube Green <https://docs.cubepilot.org/user-guides/autopilot/the-cube-module-overview>
+    Holybro Durandal H7 <common-durandal-overview>
     Holybro Pix32 v5 <common-holybro-pix32v5>
+    Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
     mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
@@ -48,11 +50,9 @@ Closed hardware
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Flywoo F745 AIO BL_32 <common-flywoo-f745>
-    Holybro Durandal H7 <common-durandal-overview>
     Holybro Kakute F4 <common-holybro-kakutef4>
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
-    Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
     Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>
     Mamba F405 MK2* <common-mamba405-mk2>
     Mateksys F405-SE <common-matekf405-se>
