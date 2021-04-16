@@ -79,3 +79,8 @@ increased. Alternatively the heel angle (:ref:`SAIL_HEEL_MAX <SAIL_HEEL_MAX>`) c
 used to more aggressively let the sails out. In this case larger I and I max values should be used. Unlike
 the P and I terms the D term is always active however due to the slow response of typical sail winch servos
 it is unlikely to prove useful, vehicles with faster servos may benefit from a small amount of D gain.
+
+Fences
+------
+
+Sailboats behave in the same manner as other Rovers regarding fence operation and breach failsafe actions. However, unlike other Rovers, which slow as they approach a fence boundary, Sailboats will just attempt to tack away from the boundary since they have no speed controller, as such.
