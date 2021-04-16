@@ -1,4 +1,4 @@
-.. _common_buttons:
+.. _common-buttons:
 
 =======
 Buttons
