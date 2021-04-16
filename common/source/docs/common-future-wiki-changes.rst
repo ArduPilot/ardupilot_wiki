@@ -5,43 +5,6 @@ Future Wiki Changes (in Master branch now)
 ==========================================
 
 
-
-Serial Port Protocol Options
-----------------------------
-
-.. raw:: html
-
-   <table border="1" class="docutils">
-   <tbody>
-   <tr>
-   <th>Value</th>
-   <th>Protocol</th>
-   </tr>
-   
-   <tr>
-   <td>26</td>
-   <td>
-
-Runcam see :ref:`common-camera-runcam` 
-
-.. raw:: html
-
-   </td>
-   </tr>
-   <tr>
-   <td>28</td>
-   <td>
-
-Scripting see :ref:`common-lua-scripts` 
-
-.. raw:: html
-
-   </td>
-   </tr>
-   
-   </tbody>
-   </table>
-
 Output Mapping Page under QuadPlane Functions
 ---------------------------------------------
 
