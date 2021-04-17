@@ -31,6 +31,7 @@ Circle Control Option
 When enabled, the ``CIRCLE_CONTROL`` parameter allows the adjustment of the circle's radius and angular velocity, in firmware versions prior to 4.1. In 4.1 and later, the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` bitmask parameter controls what actions the pilot can adjust with his sticks and circle mode operation.
 
 When bit 0 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the pilot can adjust circle's radius and angular velocity with the control sticks:
+
 - Pitch stick up (reducing RC pwm) reduces the radius until it reaches zero. Think moving forward from an FPV perspective.
 - Pitch stick down (increasing RC pwm) increases the radius. Think moving back from an FPV perspective.
 - Roll stick right (think clockwise) will increase the speed while moving clockwise, or decrease the speed while moving counterclockwise until reaching zero, at which point it will stop.
