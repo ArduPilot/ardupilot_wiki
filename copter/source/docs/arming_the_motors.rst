@@ -12,7 +12,7 @@ clear of the propellers. Then do the following:
 
    You can only arm or disarm in Stabilize, ACRO, AltHold, Loiter,
    and PosHold modes.  You cannot arm your copter in AUTO
-   mode.
+   mode. The :ref:`AUTO_OPTIONS<AUTO_OPTIONS>` parameter can be used to alter this behaviour, allowing arming while in AUTO mode, and/or, allowing a mission takeoff command to start upon AUTO mode entry, even if the throttle has not been raised.
 
 #. Turn on your transmitter.
 #. Plug in the LiPo battery.  The red and blue lights should flash for a few seconds as the gyros are calibrated (do not move the copter)
