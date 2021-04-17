@@ -21,7 +21,6 @@ ArduPilot autopilots are compatible with the following receiver output protocols
     #. :ref:`common-FPort-receivers`
     #. :ref:`Spektrum SRXL2,DSM, DSM2, and DSM-X Satellite receivers<common-spektrum-rc>`
     #. :ref:`Multiplex SRXL version 1 and version 2 receivers<common-srxl-receivers>`
-    #. SRXL2 receivers
     #. :ref:`CRSF receivers <common-tbs-rc>`
     #. :ref:`Graupner SUM-D<common-graupner-rc>`
     #. Parallel PWM outputs encoded to PPM-Sum using an external encoder (see below)
@@ -49,7 +48,7 @@ To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plu
    :ref:`BRD_SBUS_OUT<BRD_SBUS_OUT>` . This is only to pass SBus externally to other devices, like servos. Not to connect a receiver to RCin or SBus In.
 
 
-DSM/DSM2/DSM-X/SRXL1/SUM-D
+DSM/DSM2/DSM-X/SRXL/SUM-D
 --------------------------
 
 For autopilots that do not provide a separate ``DSM`` input, these can be connected as above. However, for performance reasons on autopilots that use an IOMCU (The Pixhawk/Cube family), the autopilot's ``DSM`` input connection is highly recommended.
@@ -119,11 +118,11 @@ Below is a table with some commonly  available systems showing these elements. N
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Graupner               |Short |    Yes   |    Medium  |   yes     |  SUM-D       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|Multiplex              |Short |     No   |      -     |    -      | SRXL1        |        |
+|Multiplex              |Short |     No   |      -     |    -      |   SRXL       |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Spektrum               |Short |    No    |     -      |   -       |  DSM/DSM2    |        |
 |                       |      |          |            |           |  DSM-X/      |        |
-|                       |      |          |            |           |  SRXL1       |        |
+|                       |      |          |            |           |  SRXL        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 
 Note 1: DragonLink provides a 56Kbaud transparent link for telemetry, allowing full MAVLink telemetry to/from the vehicle from the transmitter module. Dragonlink is an add-on module to the transmitter, such as an FRSky Taranis or RadioMaster T16. See :ref:`common-dragonlink-rc`
