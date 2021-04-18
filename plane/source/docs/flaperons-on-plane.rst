@@ -20,8 +20,8 @@ another.
 
 Flaperons are the classic example of a setup where input and output
 channels do not map directly.  The autopilot will use the input from
-the aileron (INPUT channel 1) AND the input from the flap channel
-(INPUT channel 5 - in the example below) and "mix" them to calculate
+the aileron (rc channel 1, by default) AND the input from the flap channel
+(set by RCx_OPTION =208 for channel x in firmware versions 4.1 and later, or ``FLAP_IN_CH`` in perevious versions) and "mix" them to calculate
 how the flaperons on the plane should move. The result is sent out to
 each flaperon OUTPUT channel (channels 5 and 6 in the example below).
 
@@ -35,10 +35,10 @@ Flaperon setup
    -  You need to add an input channel on your transmitter to control
       the flaps. You can configure any unused input channel for this
       however we are going to use servo output channel 5.  Configure your transmitter to
-      use Channel 5 for flaps (either a switch or a rotary button) and
-      set ``FLAP_IN_CHANNEL`` to 5.
+      use Channel 5 for flaps and
+      set ``FLAP_IN_CHANNEL`` to 5 or :ref:`RC5_OPTION<RC5_OPTION>` = 208 (firmware 4.1 or later).
    -  Move your ailerons to 2 spare output channels on the autopilot
-      that you aren't using.  In this example we are using channels 5
+      that you aren't using.  In this example we are using outputs 5
       and 6.
 
 -  OUTPUTS:
@@ -74,10 +74,7 @@ Tuning
    them) so that your flaps move all the way ( :ref:`SERVO1_TRIM <SERVO1_TRIM>` should also be set to 1500). - Setting the :ref:`FLAP_SLEWRATE <FLAP_SLEWRATE>`
    to 100 allows moving flaps from 0 to 100% in one second.  Lower this
    to make your flaps move more slowly.
--  Adjust `FLAP_x_PERCNT|SPEED` as desired for auto modes - see `automatic-flaps`. Note you can ignore the
-   comment on that page saying "parameter for the channel function for
-   the channel you are using for flaps to a value of 3".
-   ``FLAP_IN_CHANNEL`` is already set for this. - Have a look at :ref:`TKOFF_FLAP_PCNT <TKOFF_FLAP_PCNT>`
+-  Adjust the :ref:`FLAP_1_PERCNT<FLAP_1_PERCNT>`, :ref:`FLAP_2_PERCNT<FLAP_2_PERCNT>`, :ref:`FLAP_1_SPEED<FLAP_1_SPEED>`, :ref:`FLAP_2_SPEED<FLAP_2_SPEED>` as desired for auto modes - see :ref:`automatic-flaps`. Also, have a look at :ref:`TKOFF_FLAP_PCNT <TKOFF_FLAP_PCNT>`
    and :ref:`LAND_FLAP_PERCNT <LAND_FLAP_PERCNT>` if they are relevant to you.
 -  When you are flying in manual mode, it can be helpful to setup an
    elevator down mix on your TX when you set flaps i.e. the more flaps
