@@ -35,19 +35,23 @@ Configuring Arming
 
 There are three parameters which control how arming works:
 
--  **ARMING_REQUIRE**: this controls whether an arming step is
+-  :ref:`ARMING_REQUIRE<ARMING_REQUIRE>`: this controls whether an arming step is
    required. The default is 1, meaning that arming is required before
    takeoff. If set to 0 then arming is not required (the plane starts
    off armed).
--  **ARMING_CHECK**: this controls what checks the autopilot does
+-  :ref:`ARMING_CHECK<ARMING_CHECK>`: this controls what checks the autopilot does
    before arming is allowed. The default is 1, meaning all checks are
    done. Most users should leave it at 1, as the arming checks are
    important to ensure the autopilot is ready. See below.
--  **ARMING_RUDDER**: This parameter allows you to configure rudder
+-  :ref:`ARMING_RUDDER<ARMING_RUDDER>`: This parameter allows you to configure rudder
    based arming/disarming. The default is 1, meaning you are able to
    arm with right rudder. If you set this to 2 you can also disarm
    with left rudder. If you set this to 0 then you will only be able
    to arm/disarm via a ground station or RC channel input using its RCx_OPTION.
+   
+.. warning:: if :ref:`ARMING_RUDDER<ARMING_RUDDER>` is set to 2, then held left rudder can disarm the 
+vehicle in ANY mode, if the autopilot judges that the vehicle is not flying. This flying check CAN be incorrect
+under certain extreme circumstances, and disarming of the vehicle while still in flight, while rare, could occur.
 
 Arming Checks
 =============
