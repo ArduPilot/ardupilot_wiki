@@ -117,7 +117,7 @@ geo-fencing behaviour:
    you will not have a minimum altitude.
 #. ``FENCE_MAXALT`` - the maximum altitude in meters. If this is zero then
    you will not have a maximum altitude.
-#. ``FENCE_CHANNEL<FENCE_CHANNEL>`` - the RC input channel to watch for enabling the
+#. ``FENCE_CHANNEL<FENCE_CHANNEL>`` (revs previous to 4.1), ``RCx_OPTION`` = 11 - the RC input channel to watch for enabling the
    geo-fence. This defaults to zero, which disables geo-fencing. You
    should set it to a spare RC input channel that is connected to a two
    position switch on your transmitter. Fencing will be enabled when
@@ -165,8 +165,8 @@ APM that you want to take control. You can do that in one of 3 ways:
 #. changing modes using the APM mode switch on your transmitter, or
    changing modes via the Mission Planner GCS (e.g., change from GUIDED
    mode to AUTO mode).
-#. disabling and re-enabling geo-fencing using the ``FENCE_CHANNEL``
-   channel
+#. disabling and re-enabling geo-fencing using the rc
+   channel setup for fence control above.
 #. set the ``RST_SWITCH_CH`` MAVLink parameter to another two-position
    channel that is attached to a spring loaded switch. The
    ``RST_SWITCH`` parameter defaults to zero which disables it. If you
@@ -336,6 +336,9 @@ landing were done with the fence disabled. I had ``FENCE_CHANNEL`` set to
 7, and ``RST_SWITCH_CH`` set to 6. That allowed me to enable the fence
 after takeoff using one switch, then to take back control after a breach
 using the spring loaded trainer switch.
+
+.. note :: in firmware versions 4.1 and later, ``FENCE_CHANNEL`` is replaced by setting a channel's ``RCx_OPTION`` to 208,
+and ``RST_SWITCH_CH`` is replaced by setting a channel's ``RCx_OPTION`` to 96.
 
 MAVLink support
 ===============
