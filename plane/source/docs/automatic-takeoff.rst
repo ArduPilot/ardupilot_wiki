@@ -210,10 +210,8 @@ Testing Ground Takeoff in FBWA mode
 ===================================
 
 It is sometimes useful to test the takeoff code using the FBWA flight
-mode. The way you do this is to set the ``FBWA_TDRAG_CHAN`` parameter to
-an RC input channel on your transmitter for a switch (usually a
-momentary switch, such as the trainer switch). When this RC channel goes
-high while you are on the runway waiting for takeoff in FBWA mode the
+mode. The way you do this is to set the ``FBWA_TDRAG_CHAN`` parameter (versions prior to 4.1) or  to an RC input channel on your transmitter for a switch (usually a
+momentary switch, such as the trainer switch), or the channel's ``RCx_OPTION`` to 95 for versions 4.1 and later. When this RC channel goes high while you are on the runway waiting for takeoff in FBWA mode the
 autopilot will check if you have configured the :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` and
 :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` parameters. If they have been set to non-zero
 values then the elevator will be controlled in FBWA in an identical

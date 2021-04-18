@@ -34,31 +34,31 @@ enabled.
 THE KEY PARAMETERS
 ~~~~~~~~~~~~~~~~~~
 
--  **STEER2SRV_P**: This tells the code what the turning circle (as a
+-  :ref:`STEER2SRV_P<STEER2SRV_P>`: This tells the code what the turning circle (as a
    diameter in meters) is for your plane. It is critical that you get
    this parameter right, as it tells the code what steering angle to
    choose to achieve a desired turn rate.
--  **STEER2SRV_I**:This is the gain from the integral of steering
+-  :ref:`STEER2SRV_I<STEER2SRV_I>`: This is the gain from the integral of steering
    angle. Increasing this gain causes the controller to trim out steady
    offsets due to an out of trim vehicle..
--  **STEER2SRV_D**: This adjusts the damping of the steering control
+-  :ref:`STEER2SRV_D<STEER2SRV_D>`: This adjusts the damping of the steering control
    loop. This gain helps to reduce steering jitter with vibration. It
    should be increased in 0.01 increments as too high a value can lead
    to a high frequency steering oscillation that could overstress the
    vehicle.
--  **STEER2SRV_IMAX**: This limits the number of degrees of steering in
+-  :ref:`STEER2SRV_IMAX<STEER2SRV_IMAX>`: This limits the number of degrees of steering in
    centi-degrees over which the integrator will operate. At the default
    setting of 1500 centi-degrees, the integrator will be limited to +-
    15 degrees of servo travel. The maximum servo deflection is +- 45
    centi-degrees, so the default value represents a 1/3rd of the total
    control throw which is adequate unless the vehicle is severely out of
    trim.
--  **STEER2SRV_MINSPD**: This is the minimum assumed ground speed in
+-  :ref:`STEER2SRV_MINSPD<STEER2SRV_MINSPD>`: This is the minimum assumed ground speed in
    meters/second for steering. Having a minimum speed prevents
    oscillations when the vehicle first starts moving. The vehicle can
    still driver slower than this limit, but the steering calculations
    will be done based on this minimum speed.
--  **STEER2SRV_TCONST**: This controls the time constant in seconds
+-  :ref:`STEER2SRV_TCONST<STEER2SRV_TCONST>`: This controls the time constant in seconds
    from demanded to achieved steering angle. A value of 0.75 is a good
    default and will work with nearly all rovers. Ground steering in
    aircraft needs a bit smaller time constant, and a value of 0.5 is
@@ -68,9 +68,9 @@ THE KEY PARAMETERS
    Advanced users may want to reduce this time to obtain a faster
    response but there is no point setting a time less than the vehicle
    can achieve.
--  **GROUND_STEER_ALT**: Altitude at which to use the ground steering
-   controller on the rudder. If non-zero then the STEER2SRV controller
-   will be used to control the rudder for altitudes within this limit of
+-  :ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>`: Altitude at which to use the ground steering
+   controller on the rudder. If non-zero, then the STEER2SRV controller
+   will be used to control the rudder for altitudes below this limit with respect to
    the home altitude.
 
 STEP 1: SETTING INITIAL PARAMETERS
