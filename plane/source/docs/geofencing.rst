@@ -337,8 +337,7 @@ landing were done with the fence disabled. I had ``FENCE_CHANNEL`` set to
 after takeoff using one switch, then to take back control after a breach
 using the spring loaded trainer switch.
 
-.. note :: in firmware versions 4.1 and later, ``FENCE_CHANNEL`` is replaced by setting a channel's ``RCx_OPTION`` to 208,
-and ``RST_SWITCH_CH`` is replaced by setting a channel's ``RCx_OPTION`` to 96.
+.. note :: in firmware versions 4.1 and later, ``FENCE_CHANNEL`` is replaced by setting a channel's ``RCx_OPTION`` to 208, and ``RST_SWITCH_CH`` is replaced by setting a channel's ``RCx_OPTION`` to 96.
 
 MAVLink support
 ===============
