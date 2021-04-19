@@ -206,6 +206,13 @@ ArduPilot tilt-rotor code:
 
 .. note:: For Binary type tilt servos these rates should be set at the actual measured rate of the servo since it's independent of ArudPilot control.
 
+Tilt Stabilization Assist in Fixed Wing Flight
+==============================================
+
+It is possible to use the tilt motors (if not the BINARY tilt type) to aid in fixed wing roll and pitch control. This is activated if the :ref:`Q_TILT_FIX_GAIN<Q_TILT_FIX_GAIN>` is greater than zero, which determines how much control demand results in tilting of the motors. The maximum tilt angle achievable is determined by the :ref:`Q_TILT_FIX_ANGLE<Q_TILT_FIX_ANGLE>` parameter. It is recommended to start with 0.1 for the :ref:`Q_TILT_FIX_GAIN<Q_TILT_FIX_GAIN>` and work your way up to desired the response.
+
+In order to setup the ranges of the servo movement, see :ref:`tilt-rotor-setup`.
+
 Vectored Yaw
 ============
 
@@ -225,6 +232,8 @@ degrees that the tilt mechanism can go.
 
 You also need to setup your two tilt servos with ``SERVOn_FUNCTION`` =75
 for left front tilt and ``SERVOn_FUNCTION`` =76 for right front tilt.
+
+In order to setup the ranges of the servo movement, see :ref:`tilt-rotor-setup`.
 
 Non-Vectored Yaw
 ================
