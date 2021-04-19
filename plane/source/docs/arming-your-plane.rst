@@ -49,9 +49,7 @@ There are three parameters which control how arming works:
    with left rudder. If you set this to 0 then you will only be able
    to arm/disarm via a ground station or RC channel input using its RCx_OPTION.
    
-.. warning:: if :ref:`ARMING_RUDDER<ARMING_RUDDER>` is set to 2, then held left rudder can disarm the 
-vehicle in ANY mode, if the autopilot judges that the vehicle is not flying. This flying check CAN be incorrect
-under certain extreme circumstances, and disarming of the vehicle while still in flight, while rare, could occur.
+.. warning:: if :ref:`ARMING_RUDDER<ARMING_RUDDER>` is set to 2, then held left rudder can disarm the vehicle in ANY mode, if the autopilot judges that the vehicle is not flying. This flying check CAN be incorrect under certain extreme circumstances, and disarming of the vehicle while still in flight, while rare, could occur.
 
 Arming Checks
 =============
