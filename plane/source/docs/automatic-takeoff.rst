@@ -223,3 +223,8 @@ aircraft reaches a ground speed of :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` me
 This provides a convenient way to test auto takeoff in FBWA mode, and
 also is a nice way to get better ground steering in FBWA mode in
 general.
+
+Speed Scaling Issues with no Airspeed Sensor
+============================================
+
+Since control effectiveness varies with airspeed, ArduPilot automatically scales the control gains in stabilized modes with airspeed to allow stability at low speeds and to avoid oscillations at high airspeeds. However, when an airspeed sensor is not used, an estimated airspeed based on GPS speed, accelerometer inputs, and position changes is used. During takeoffs into strong head wind, this estimate can be wrong and the gains scaled up, resulting in oscillations during the climb into the wind. Setting :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 7 to 1, the speed scaling will be limited during the takeoff phase of automatic takeoffs to eliminate oscillations, particularly on tightly tuned vehicles.
