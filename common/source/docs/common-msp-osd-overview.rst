@@ -56,7 +56,6 @@ Panel Items Currently Supported
 - Clock
 - Gps_latitude
 - Gps_longitude
-- Distance Traveled
 - Arming status
 
 
