@@ -561,96 +561,104 @@ def fetch_versioned_parameters(site=args.site):
 
     for key, value in PARAMETER_SITE.items():
 
-        if site == key or site is None:
-            # Remove old param single file
-            single_param_file = './%s/source/docs/parameters.rst' % key
-            debug("Erasing " + single_param_file)
-            remove_if_exists(single_param_file)
+        if key == 'AP_Periph': # workaround until create a versioning for AP_Periph in firmware server
+            fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value  # noqa
+            subprocess.check_call(["wget", fetchurl])
+            targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
+            os.rename('Parameters.rst', targetfile)
 
-            # Remove old versioned param files
-            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
-                old_parameters_mask = (os.getcwd() +
-                                       '/%s/source/docs/parameters-%s-' %
-                                       ("AntennaTracker", "AntennaTracker"))
-            else:
-                old_parameters_mask = (os.getcwd() +
-                                       '/%s/source/docs/parameters-%s-' %
-                                       (key, key.title()))
-            try:
-                old_parameters_files = [
-                    f for f in glob.glob(old_parameters_mask + "*.rst")]
-                for filename in old_parameters_files:
-                    debug("Erasing rst " + filename)
-                    os.remove(filename)
-            except Exception as e:
-                error(e)
-                pass
+        else: #regular versining 
 
-            # Remove old json file
-            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
-                target_json_file = ('./%s/source/_static/parameters-%s.json' %
-                                    ("AntennaTracker", "AntennaTracker"))
-            else:
-                target_json_file = ('./%s/source/_static/parameters-%s.json' %
-                                    (value, key.title()))
-            debug("Erasing json " + target_json_file)
-            remove_if_exists(target_json_file)
+            if site == key or site is None:
+                # Remove old param single file
+                single_param_file = './%s/source/docs/parameters.rst' % key
+                debug("Erasing " + single_param_file)
+                remove_if_exists(single_param_file)
 
-            # Moves the updated JSON file
-            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
-                vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker", "AntennaTracker")  # noqa
-            else:
-                vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value,key.title())  # noqa
-            new_file = (
-                key +
-                "/source/_static/" +
-                vehicle_json_file[str(vehicle_json_file).rfind("/")+1:])
-            try:
-                debug("Moving " + vehicle_json_file)
-                # os.rename(vehicle_json_file, new_file)
-                shutil.copy2(vehicle_json_file, new_file)
-            except Exception as e:
-                error(e)
-                pass
-
-            # Copy all parameter files to vehicle folder IFF it is new
-            try:
-                new_parameters_folder = (os.getcwd() +
-                                         '/../new_params_mversion/%s/' % value)
-                new_parameters_files = [
-                    f for f in glob.glob(new_parameters_folder + "*.rst")
-                ]
-            except Exception as e:
-                error(e)
-                pass
-            for filename in new_parameters_files:
-                # Check possible cached version
+                # Remove old versioned param files
+                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
+                    old_parameters_mask = (os.getcwd() +
+                                        '/%s/source/docs/parameters-%s-' %
+                                        ("AntennaTracker", "AntennaTracker"))
+                else:
+                    old_parameters_mask = (os.getcwd() +
+                                        '/%s/source/docs/parameters-%s-' %
+                                        (key, key.title()))
                 try:
-                    new_file = (key +
-                                "/source/docs/" +
-                                filename[str(filename).rfind("/")+1:])
-                    if os.path.isfile(filename.replace("new_params_mversion","old_params_mversion")): # The cached file exists?  # noqa
-
-                        # Temporary debug messages to help with cache tasks.
-                        debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
-                        debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
-                        debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
-
-                        if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa
-                            debug("Overwriting %s to %s" %
-                                  (filename, new_file))
-                            shutil.copy2(filename, new_file)
-                        else:
-                            debug("It will reuse the last build of " +
-                                  new_file)
-                    else:   # If not cached, build it anyway.
-                        debug("Creating %s to %s" %
-                              (filename, new_file))
-                        shutil.copy2(filename, new_file)
-
+                    old_parameters_files = [
+                        f for f in glob.glob(old_parameters_mask + "*.rst")]
+                    for filename in old_parameters_files:
+                        debug("Erasing rst " + filename)
+                        os.remove(filename)
                 except Exception as e:
                     error(e)
                     pass
+
+                # Remove old json file
+                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
+                    target_json_file = ('./%s/source/_static/parameters-%s.json' %
+                                        ("AntennaTracker", "AntennaTracker"))
+                else:
+                    target_json_file = ('./%s/source/_static/parameters-%s.json' %
+                                        (value, key.title()))
+                debug("Erasing json " + target_json_file)
+                remove_if_exists(target_json_file)
+
+                # Moves the updated JSON file
+                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
+                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker", "AntennaTracker")  # noqa
+                else:
+                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value,key.title())  # noqa
+                new_file = (
+                    key +
+                    "/source/_static/" +
+                    vehicle_json_file[str(vehicle_json_file).rfind("/")+1:])
+                try:
+                    debug("Moving " + vehicle_json_file)
+                    # os.rename(vehicle_json_file, new_file)
+                    shutil.copy2(vehicle_json_file, new_file)
+                except Exception as e:
+                    error(e)
+                    pass
+
+                # Copy all parameter files to vehicle folder IFF it is new
+                try:
+                    new_parameters_folder = (os.getcwd() +
+                                            '/../new_params_mversion/%s/' % value)
+                    new_parameters_files = [
+                        f for f in glob.glob(new_parameters_folder + "*.rst")
+                    ]
+                except Exception as e:
+                    error(e)
+                    pass
+                for filename in new_parameters_files:
+                    # Check possible cached version
+                    try:
+                        new_file = (key +
+                                    "/source/docs/" +
+                                    filename[str(filename).rfind("/")+1:])
+                        if os.path.isfile(filename.replace("new_params_mversion","old_params_mversion")): # The cached file exists?  # noqa
+
+                            # Temporary debug messages to help with cache tasks.
+                            debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
+                            debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
+                            debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
+
+                            if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa
+                                debug("Overwriting %s to %s" %
+                                    (filename, new_file))
+                                shutil.copy2(filename, new_file)
+                            else:
+                                debug("It will reuse the last build of " +
+                                    new_file)
+                        else:   # If not cached, build it anyway.
+                            debug("Creating %s to %s" %
+                                (filename, new_file))
+                            shutil.copy2(filename, new_file)
+
+                    except Exception as e:
+                        error(e)
+                        pass
 
 
 def create_latest_parameter_redirect(default_param_file, vehicle):
@@ -678,7 +686,7 @@ def cache_parameters_files(site=args.site):
     old_params_mversion/ folders and .html built files as well.
     """
     for key, value in PARAMETER_SITE.items():
-        if site == key or site is None:
+        if (site == key or site is None) and (key != 'AP_Periph'):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
             try:
                 old_parameters_folder = (os.getcwd() +
                                          '/../old_params_mversion/%s/' % value)
@@ -720,7 +728,7 @@ def put_cached_parameters_files_in_sites(site=args.site):
 
     """
     for key, value in PARAMETER_SITE.items():
-        if site == key or site is None:
+        if (site == key or site is None) and (key != 'AP_Periph'): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
             try:
                 built_folder = (os.getcwd() +
                                 '/../old_params_mversion/%s/' % value)
