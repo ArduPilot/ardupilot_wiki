@@ -37,7 +37,7 @@ talk to the ground station.
 
 During flight the ArduPilot code automatically pages in the needed
 terrain data from the microSD card into memory as the aircraft
-approaches a new area. It maintains an area of about 7km by 8km in
+approaches a new area. It maintains an area of about 7km to 8km in
 memory if the default terrain grid spacing is used.
 
 In addition to any terrain data for the immediate vicinity of the
