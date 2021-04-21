@@ -37,9 +37,8 @@ The missing features are listed below.
       -  Generator
       -  GPS moving baseline
       -  INS temperature calibration
-      -  OSD
-
-
+       
+       
    -  **Copter only**
 
       -  Sprayer
