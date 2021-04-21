@@ -4,7 +4,7 @@
 Terrain Following
 =================
 
-As of Plane 3.0.4 you can use automatic terrain following for fixed wing
+You can use automatic terrain following for fixed wing
 aircraft if you have an autopilot board with local storage (such as the
 Pixhawk). This page explains how terrain following works, how to enable
 it and what its limitations are.
@@ -20,12 +20,14 @@ How it works
 Terrain following works by maintaining a terrain database on the microSD
 card on the autopilot which gives the terrain height in meters above sea
 level for a grid of geographic locations. On the autopilot this database
-is stored in the APM\TERRAIN directory on the microSD card.
+is stored in the APM/TERRAIN directory on the microSD card.
 
 The database is populated automatically by the autopilot requesting
 terrain data from the ground station over a MAVLink telemetry link. This
 can happen either during flight planning when the autopilot is connected
 over USB, or during flight when connected over a radio link.
+
+.. note:: One can directly download terrain data via PC to the SD card using the this `web utility <https://terrain.ardupilot.org/>`__. See below.
 
 .. note:: The data is only transferred if the autopilot has a GPS lock. So to make sure your missions have the terrain data prior to flight (in case the ground station is not connected during the flight and/or does not have internet connection to obtain the data), be sure that GPS lock is in effect when loading the mission to the autopilot.
 
