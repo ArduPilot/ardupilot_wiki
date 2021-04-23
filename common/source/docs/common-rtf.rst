@@ -17,8 +17,8 @@ Copters from Partners
 
 * `Bask Aerospace - AeroDrone MR4 <http://www.baskaerospace.com.au/aerodrone/mr4>`__
 * `Hitec - SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__
-* `Holybro - S500 V2 Kit<https://shop.holybro.com/s500-v2-kitmotor2216-880kv-propeller1045_p1153.html>`__
-* `Holybro - X500 Kit<https://shop.holybro.com/x500-kit_p1180.html>`__
+* `Holybro - S500 V2 Kit <https://shop.holybro.com/s500-v2-kitmotor2216-880kv-propeller1045_p1153.html>`__
+* `Holybro - X500 Kit <https://shop.holybro.com/x500-kit_p1180.html>`__
 * `SkyRocket - Journey <http://sky-viper.com/journey/>`__
 * `TT Robotix - X-1300 EagleEyes Quadcopter <http://www.ttrobotix.com/products/detail/923.html>`__
 * `TT Robotix - H2-X6 Phoenix H6 Multirotor <http://www.ttrobotix.com/products/detail/926.html>`__
