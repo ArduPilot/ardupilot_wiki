@@ -40,8 +40,10 @@ In other modes, it will execute the :ref:`FENCE_ACTION<FENCE_ACTION>` below if t
 +------------+--------------------+-------------------+
 +     4      | BRAKE/LAND         |SmartRTL/RTL/HOLD  +
 +------------+--------------------+-------------------+
++     5      | SmartRTL or  LAND  | not applicable    +
++------------+--------------------+-------------------+
 
-.. note:: RTL/HOLD,etc. means it will attempt RTL first, but if it cant' switch to that mode (ie for RTL, GPS lock is lost), it will attempt to switch to the next,in this case HOLD.
+.. note:: RTL/HOLD,etc. means it will attempt RTL first, but if it can't switch to that mode (ie for RTL, GPS lock is lost), it will attempt to switch to the next,in this case HOLD.
 
 At the moment the fence is breached a backup fence is erected 20m
 further out (or up).  If the vehicle breaches this backup fence (for
