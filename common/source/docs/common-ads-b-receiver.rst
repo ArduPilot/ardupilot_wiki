@@ -12,9 +12,6 @@ This article describes how to attach and configure an ADS-B module so that your 
 
 ADS-B (aka `Automatic Dependent Surveillance Broadcast <https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_%E2%80%93_broadcast>`__) is an air traffic surveillance technology that enables aircraft to be accurately tracked by air traffic controllers and other pilots without the need for conventional radar.
 
-.. note::
-
-   uAvionix ADS-B Ping support was introduced in Plane-3.5 and Copter-3.4. Simple avoidance was added to Plane-3.5 and a more advanced avoidance was added to Plane-3.7 and Copter-3.4.
 
 .. warning::
 
@@ -127,19 +124,14 @@ In ArduPilot firmware versions 4.0 and later, the entry into this mode can be en
 Vehicle Database
 ================
 
-When enabled, the ADS-B library will store information for up to 50 vehicles
-detected by the ADS-B receiver but can be further limited using the
-``ADSB_LIST_SIZE`` parameter. Due to some experimental work
-in other features, such as EKF2, available RAM may be limited. It is
-important to note that when ADS-B is disabled (ADSB_ENABLE=0) then the
-memory is released, effectively freeing up about 1KB of RAM. When
-enabled, the detected vehicle list is checked once per second for
-potential conflicts.
+When enabled, the ADS-B library will store information for up to 50 vehicles detected by the ADS-B receiver but can be further limited using the :ref:`ADSB_LIST_MAX<ADSB_LIST_MAX>` parameter. Due to some experimental work
+in other features, such as EKF2, available RAM may be limited. It is important to note that when ADS-B is disabled (:ref:`ADSB_TYPE<ADSB_TYPE>` = 0) then the memory is released, effectively freeing up about 1KB of RAM. When
+enabled, the detected vehicle list is checked once per second for potential conflicts.
 
 Developer information including Simulation
 ==========================================
 The data is transmitted via the `ADSB_VEHICLE message <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`__. When
-received by ArduPilot, it is streamed out using the SRx_ADSB value where x is the telemetry port number and the
+received by ArduPilot, it is streamed out using the ``SRx_ADSB`` value where x is the telemetry port number and the
 value is how many vehicles per second to be streamed. If using telem1 the streamrate param would be ``SR1_ADSB``. The list will not repeat any faster than 1 second. This
 flexibility is useful to conserve bandwidth on data links but also allow maximum update rate for high-speed links
 such as an on-board companion computer.
@@ -153,7 +145,7 @@ an older version, use:
     sudo pip install --upgrade pymavlink MAVProxy
 
 Set the number of aircraft to simulate using the ``SIM_ADSB_COUNT`` parameter. Ping2020 simulation support
-can be enabled by setting parameter ``SIM_ADSB_TX``. Other simulation options for ADS-B are present, all
+can be enabled by setting parameter `'SIM_ADSB_TX``. Other simulation options for ADS-B are present, all
 starting with ``SIM_ADSB_``.
 
 Plugging in a hardware ADS-B receiver to your computer using a USB-to-Serial converter, or using the PingUSB, will allow you to overlay real ADS-B
@@ -167,6 +159,6 @@ Where SERIAL_DEVICE might be /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A4008ZND
 
 ::
 
-   SERIAL3_PROTOCOL 1
-   SERIAL3_BAUD 57600
+   :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` 1
+   :ref:`SERIAL3_BAUD<SERIAL3_BAUD>` 57600
 
