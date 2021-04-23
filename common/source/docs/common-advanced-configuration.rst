@@ -70,6 +70,7 @@ tuning options for the vehicle.
     In-Flight FTT and filter control <common-imu-fft>
     Limiting Maximum Power Draw <batt-watt-max>
 [/site]
+    Limit Cycle Prevention <common-servo-limit-cycle-detection>
     LUA Scripting <common-lua-scripts>
     Magnetic Interference <common-magnetic-interference>
     MAVLink2 Packet Signing (Security) <common-MAVLink2-signing>
