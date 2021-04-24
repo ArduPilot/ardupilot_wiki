@@ -32,6 +32,6 @@ and landing:
 
 ::
 
-    wp load ../Tools/autotest/ArduPlane-Missions/KSFO-VTOL.txt
+    wp load ../Tools/autotest/Generic-Missions/KSFO-VTOL.txt
 
 As usual you can edit the mission using "module load misseditor"
