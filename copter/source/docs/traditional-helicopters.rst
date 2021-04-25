@@ -34,6 +34,7 @@ Canberra Team in Australia.
     Suggested Parts List <traditional-heli-parts-list>
     Loading the Firmware <loading-the-code>
     Mounting the Pixhawk <trad-heli-mounting>
+    Helicopter Parameter List at a Glance <traditional-helicopter-parameter-list>
     Connecting and Calibration <traditional-helicopter-connecting-apm>
     Swashplate Setup <traditional-helicopter-swashplate-setup>
     Rotor Speed Control Setup <traditional-helicopter-rsc-setup>
