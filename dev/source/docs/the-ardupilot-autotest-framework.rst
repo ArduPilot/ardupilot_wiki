@@ -7,23 +7,23 @@ Autotest Framework
 .. image:: ../images/autotest.jpg
 
 ArduPilot's AutoTest suite allows for the creation of repeatable tests
-which help prevent regressions in ArduPilot's behaviour.  It is based
+which help prevent regressions in ArduPilot's behavior.  It is based
 on ArduPilot's :ref:`SITL <using-sitl-for-ardupilot-testing>`
 architecture - i.e. a fully-software-based solution.
 
 Using ArduPilot's AutoTest can:
 
    - make your development process more efficient by reducing time spent repeatedly running the same scenario in ``sim_vehicle.py``
-   - allow you to repeatedly replicate bad behaviour in ArduPilot, and possibly ship that test to a developer capable of fixing the issue ("test-driven-development")
-   - reduce the chances of a regression in ArduPilot's behaviour by locking in tests for that behaviour
+   - allow you to repeatedly replicate bad behavior in ArduPilot, and possibly ship that test to a developer capable of fixing the issue ("test-driven-development")
+   - reduce the chances of a regression in ArduPilot's behavior by locking in tests for that behavior
 
 Overview
 ========
 
 The AutoTest suite is run on ArduPilot's autotest server on most
-commits to the master branch, but can be run locally to vet software
-changes.  Adding tests is straight-forward and encouraged to show how
-patches improve flight behaviour.
+commits to the master branch but can be run locally to vet software
+changes.  Adding tests is straightforward and encouraged to show how
+patches improve flight behavior.
 
 
 Running AutoTest
@@ -33,14 +33,14 @@ Running AutoTest
 
    Don't run autotest.py with no parameters - unless you know what you are doing or like cleaning up large messes.
 
-AutoTest requires a valid SITL environment to run.  Use the SITL instructions (:ref:`SITL <using-sitl-for-ardupilot-testing>`) to obtain a valid environment.  It is suggested the ArduPilot Vagrant virtual machine configuration files be used to obtain a working environement.
+AutoTest requires a valid SITL environment to run.  Use the SITL instructions (:ref:`SITL <using-sitl-for-ardupilot-testing>`) to obtain a valid environment.  It is suggested the ArduPilot Vagrant virtual machine configuration files be used to obtain a working environment.
 
 Invocation
 ----------
 
 .. note::
 
-   running autotest with high-levels of ``--speedup`` can result in enough network traffic that MAVProxy can't keep up.  Error such as "Set RC override timeout" or the vehicle entering GCS failsafe are typical of these failures.  Re-running will often allow the tests to pass.  Reducing the ``--speedup`` factor is typically sufficient to avoid this problem.
+   running autotest with high-levels of ``--speedup`` can result in enough network traffic that MAVProxy can't keep up.  An error such as "Set RC override timeout" or the vehicle entering GCS failsafe are typical of these failures.  Re-running will often allow the tests to pass.  Reducing the ``--speedup`` factor is typically sufficient to avoid this problem.
 
 
 Help is available:
@@ -112,7 +112,7 @@ Complex Invocation
 
    ./Tools/autotest/autotest.py --no-clean build.Copter test.Copter build.Rover test.Rover test.Balancebot build.Plane test.Plane test.Quadplane build.Sub test.Sub build.Helicopter test.Helicopter build.Tracker test.Tracker
 
-At time of writing, these invoke all the vehicle tests.  Expect these to take about 40 minutes to run.
+At the time of writing, these invoke all the vehicle tests.  Expect these to take about 40 minutes to run.
 
 Running a specific sub-test
 ...........................
@@ -144,11 +144,11 @@ You can insert a Python method call into your test to cause the autopilot to ent
 Using with Valgrind
 ...................
 
-AutoTest can run the ArduPilot binary under the Valgrind memcheck tool.  This is useful for finding reading of uninitialised memory and the like.
+AutoTest can run the ArduPilot binary under the Valgrind memcheck tool.  This is useful for finding the reading of uninitialised memory and the like.
 
 .. warning::
 
-   ArduPilot initialises most of its dynamically-allocated memory to zero by overriding the ``new`` function.  Some versions of Valgrind do not understand this.  The supplied xenial32 Vagrant virtual machine contains a version of Valgrind which does not suffer from this issue.
+   ArduPilot initializes most of its dynamically-allocated memory to zero by overriding the ``new`` function.  Some versions of Valgrind do not understand this.  The supplied xenial32 Vagrant virtual machine contains a version of Valgrind which does not suffer from this issue.
 
 ::
 
@@ -186,7 +186,7 @@ The MAVLink telemetry logs are present in the "buildlogs" directory.  This direc
 
 .. note::
 
-   On the Vagrant virtual machine, the ArduPilot root directory is mounted on /vagrant.  The "vagrant" user has no permission to create the "buildlogs" directory in "/", so instead the buildlogs directory appears at /tmp/buildlogs
+   On the Vagrant virtual machine, the ArduPilot root directory is mounted on /vagrant.  The "vagrant" user has no permission to create the "buildlogs" directory in "/", so instead, the buildlogs directory appears at /tmp/buildlogs
 
 .. warning::
 
@@ -212,20 +212,24 @@ File Structure
 
 Tools/autotest/autotest.py
     the main entry point to the autotest suite
+Tools/autotest/antennatracker.py
+    contains tests for AntennaTracker
 Tools/autotest/arducopter.py
     contains tests for ArduCopter in both multicopter and helicopter form
-Tools/autotest/apmrover2.py
+Tools/autotest/rover.py
     contains tests for ArduRover
 Tools/autotest/ardusub.py
     contains tests for ArduSub
 Tools/autotest/arduplane.py
     contains tests for ArduPlane
+Tools/autotest/balancebot.py
+    contains tests for Balance Bots/Self Balancing Robots 
 Tools/autotest/quadplane.py
     contains tests for ArduPlane's Quadplane code
 Tools/autotest/pysim/util.py
     various utility functions used by AutoTest
 Tools/autotest/common.py
-    Contains a base class inheritted by the per-vehicle testing routines
+    Contains a base class inherited by the per-vehicle testing routines
 
 Network Structure
 -----------------
@@ -282,6 +286,6 @@ To accomplish this:
     - `git bisect good HEAD~1024`  - this is where we know the test passes
     - `time git bisect run /tmp/bisect-helper.py --autotest --autotest-vehicle=Plane --autotest-test=NeedEKFToArm --autotest-branch=wip/bisection-using-named-test`
 
-In the last command you need to specify the vehicle, new test name and the name of the topic branch which contains your new test.
+In the last command, you need to specify the vehicle, new test name, and the name of the topic branch which contains your new test.
 
 After this has run you should know which commit broke the functionality being tested.  And you also have a new test for the regression suite which you should PR!
