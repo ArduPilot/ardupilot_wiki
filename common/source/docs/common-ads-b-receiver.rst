@@ -1,9 +1,9 @@
 .. _common-ads-b-receiver:
+[copywiki destination="plane,copter"]
 
-
-==============
+=====
 ADS-B
-==============
+=====
 
 This article describes how to attach and configure an ADS-B module so that your aircraft can be aware of, and/or transmit to, other aircraft and air-traffic control nearby. This also allows the pilot on the ground to be aware of nearby manned aircraft and optionally to allow the vehicle to automatically avoid them.
 
