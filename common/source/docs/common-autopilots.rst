@@ -28,7 +28,6 @@ Open hardware
     Holybro Durandal H7 <common-durandal-overview>
     Holybro Pix32 v5 <common-holybro-pix32v5>
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
-    IFlight BeastH7 AIO <common-iflight-beasth7AIO>
     mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
@@ -56,6 +55,7 @@ Closed hardware
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
     Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>
     IFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
+    IFlight BeastH7 AIO <common-iflight-beasth7AIO>
     Mamba F405 MK2* <common-mamba405-mk2>
     Mateksys F405-SE <common-matekf405-se>
     Mateksys F405-STD and variants* <common-matekf405>
