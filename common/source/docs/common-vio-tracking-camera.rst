@@ -56,7 +56,7 @@ For ArduPilot-4.0 (and earlier):
 - :ref:`GPS_TYPE<GPS_TYPE>`  = 0 to disable the GPS
 - :ref:`COMPASS_USE<COMPASS_USE>` = 0,  :ref:`COMPASS_USE2<COMPASS_USE2>`  = 0, :ref:`COMPASS_USE3<COMPASS_USE3>`  = 0 to disable the EKF’s use of the compass and instead rely on the heading from external navigation data
 
-After the parameters are modified, reboot the autopilot.  After about 1 minute the vehicle should appear on the ground station map in central Africa.
+After the parameters are modified, reboot the autopilot.  Connect with the ground station and (if using Mission Planner) right-mouse-button-click on the map, select "Set Home Here", "Set EKF Origin Here" to tell ArduPilot where the vehicle is and it should instantly appear on the map.
 
 For ArduPilot-4.1 (and later):
 
