@@ -13,30 +13,38 @@ Avoidance Strategies
 
 Various strategies are employed and vary depending on vehicle, mode, and/or object to be avoided. Re-routing, slide, stop, or failsafe style actions are the most common ones. See the particular Avoidance Feature below for details.
 
+[site wiki="copter,plane"]
 
-Avoidance Features
-==================
+ADSB Avoidance
+===============
 
-.. toctree::
-    :maxdepth: 1
+- :ref:`Airborne Vehicles (ADSB)<common-ads-b-receiver>`
 
-    Airborne Vehicles (ADSB) <common-ads-b-receiver>
-[site wiki="copter,rover"]
-    Simple Object Avoidance <common-simple-object-avoidance>
-    Bendy Path Planning Around Obstacles <common-oa-bendyruler>
-    Dijkstras Path Planning Around Obstacles<common-oa-dijkstras>
 [/site]
 
+[site wiki="copter,rover"]
+Path Planning and Obstacle Avoidance Features
+=============================================
 
+These methods are used for avoiding proximity sensor detected obstacles as well as GCS set fences.
 
+Hardware Setup
+--------------
 
-Hardware
-========
-
--  :ref:`ADS-B Receiver <common-ads-b-receiver>`
+-  :ref:`Proximity Sensors<common-proximity-landingpage>`
 -  :ref:`Rangefinders <common-rangefinder-landingpage>`
 -  :ref:`Realsense Depth Camera <common-realsense-depth-camera>`
 
 
+Avoidance Types
+---------------
 
+.. toctree::
+    :maxdepth: 1
+
+    Simple Object Avoidance <common-simple-object-avoidance>
+    BendyRuler Path Planning Around Obstacles and Fences <common-oa-bendyruler>
+    Dijkstra's Path Planning Around Fences<common-oa-dijkstras>
+    Dijkstra's with BendyRuler Path Planning Around Obstacles and Fences<common-oa-dijkstrabendyruler>
+[/site]
 
