@@ -38,7 +38,7 @@ In other modes, it will execute the :ref:`FENCE_ACTION<FENCE_ACTION>` below if t
 +------------+--------------------+-------------------+
 +     3      |  SmartRTL/RTL/LAND | SmartRTL/RTL/HOLD +
 +------------+--------------------+-------------------+
-+     4      | BRAKE/LAND         |SmartRTL/RTL/HOLD  +
++     4      | BRAKE/LAND         |SmartRTL/HOLD      +
 +------------+--------------------+-------------------+
 +     5      | SmartRTL or  LAND  | not applicable    +
 +------------+--------------------+-------------------+
