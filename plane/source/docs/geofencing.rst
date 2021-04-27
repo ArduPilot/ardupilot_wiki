@@ -4,9 +4,8 @@
 Geo-Fencing in Plane
 ====================
 
-The Geo-Fencing support in Plane allows you to set a virtual 'fence'
-around the area you want to fly in, specified as an enclosed polygon of
-GPS positions plus a minimum and maximum altitude.
+The Geo-Fencing support in Plane firmware versions prior to 4.1, allows you to set a virtual 'fence' around the area you want to fly in, specified as an enclosed polygon of
+GPS positions plus a minimum and maximum altitude. For firmware versions 4.1 and later, Plane uses the either a home centered Cylindrical Fence, see :ref:`common-ac2_simple_geofence` and/or Inclusion/Exclusion Fences, see :ref:`common-polygon_fence`.
 
 .. note::
 
