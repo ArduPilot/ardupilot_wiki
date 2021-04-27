@@ -35,7 +35,7 @@ parameters. The following topics shown you how.
 
     Tuning QuickStart <tuning-quickstart>
     Automatic Tuning with AUTOTUNE <automatic-tuning-with-autotune>
-    Manual Roll, Pitch and Yaw Controller Tuning(firmware 4.1 and after) <new-roll-pitch-controller-tuning>
+    Manual Roll, Pitch and Yaw Controller Tuning(firmware 4.1 and after) <new-roll-and-pitch-tuning>
     Manual Roll, Pitch and Yaw Controller Tuning(firmware before 4.1) <roll-pitch-controller-tuning>
     Navigation Tuning <navigation-tuning>
     Cruise Speed Tuning <tuning-cruise>
