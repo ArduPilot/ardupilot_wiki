@@ -29,7 +29,7 @@ values needed).
    to get your aircraft flying before doing further tuning.
 
    If AUTOTUNE doesn't work with your plane, a fully manual approach is
-   described in the :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-pitch-controller-tuning>` or :ref:`here for firmaware versions before 4.1 <roll-pitch-controller-tuning>`.
+   described in the :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-and-pitch-tuning>` or :ref:`here for firmaware versions before 4.1 <roll-pitch-controller-tuning>`.
 
 After tuning the Roll, Pitch (and optionally yaw) you should tune the
 height controller using the :ref:`TECS tuning guide <tecs-total-energy-control-system-for-speed-height-tuning-guide>`
@@ -41,7 +41,7 @@ Information on how to tune other aspects of Plane are linked from the
 Mission Planner configuration screens
 =====================================
 
-.. note:: this section applies only to firmware versions prior to 4.1. This section will be updated in the future for 4.1 and later releases. You can configure the new parameters (See :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-pitch-controller-tuning>`) directly in the Mission Planner CONFIG->Full Parameter List tab.
+.. note:: this section applies only to firmware versions prior to 4.1. This section will be updated in the future for 4.1 and later releases. You can configure the new parameters (See :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-and-pitch-tuning>`) directly in the Mission Planner CONFIG->Full Parameter List tab.
 
 The *Mission Planner* provides access to all configuration and tuning
 parameters through the CONFIG/TUNING section. The column on the left
@@ -110,4 +110,4 @@ attitude can be canceled out, without undue oscillation.
    A simple configuration can just specify a P term (I and D is zero
    and ``INT_MAX`` is not used when I is zero) in firmware versions before 4.1. And FF/P term with I=FF for firmware versions 4.1 and later, with D=0.
 
-Refer to :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-pitch-controller-tuning>` or :ref:`here for firmaware versions before 4.1 <roll-pitch-controller-tuning>`. for more information
+Refer to :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-and-pitch-tuning>` or :ref:`here for firmaware versions before 4.1 <roll-pitch-controller-tuning>`. for more information
