@@ -1,3 +1,12 @@
+Archived: 'auth' command in ardupilot
+Warning: This tool is old, depreciated, and retired, and these instructions no longer work.  The are only here for historical reference. When they worked, many, many moons ago, they required Nuttx, and parts of the PX4 subsystem.
+
+
+https://github.com/davidbuzz/Firmware/commits/auth 
+of particular note:
+https://github.com/davidbuzz/Firmware/blob/auth/src/modules/systemlib/otp.c
+https://github.com/davidbuzz/Firmware/blob/auth/src/systemcmds/auth/auth.c
+
 .. _how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity:
 
 ===========================================================================================
