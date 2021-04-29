@@ -26,9 +26,9 @@ happens:
 -  the top level flight-mode.cpp's "update_flight_mode()" function is
    called.  This function checks the vehicle's flight mode (ie.
    "control_mode" variable) and then calls the appropriate <flight mode>_run() function (i.e.
-   `stabilize_run <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp#L20>`__
+   `stabilize_run <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp#L9>`__
    for stabilize mode,
-   `rtl_run <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_rtl.cpp#L23>`__
+   `rtl_run <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_rtl.cpp#L49>`__
    for RTL mode, etc).  The <flight mode>_run() function can be found
    in the appropriately named mode_<flight mode>.cpp file (i.e.
    `mode_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp>`__,
