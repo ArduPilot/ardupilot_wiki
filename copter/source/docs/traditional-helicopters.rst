@@ -38,6 +38,7 @@ Canberra Team in Australia.
     Connecting and Calibration <traditional-helicopter-connecting-apm>
     Swashplate Setup <traditional-helicopter-swashplate-setup>
     Rotor Speed Control Setup <traditional-helicopter-rsc-setup>
+    Internal Rotor Speed Governor <traditional-helicopter-internal-rsc-governor>
     ArduPilot Helicopter Ground School <traditional-helicopter-configuration>
     Pre-Flight Testing <trad-heli-preflight-testing>
     Tuning <traditional-helicopter-tuning>
