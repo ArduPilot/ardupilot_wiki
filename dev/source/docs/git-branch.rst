@@ -25,11 +25,11 @@ Creating a Branch
 #. the new branch will be a copy of the current branch so ensure your :ref:`clone's <git-clone>` master branch is up-to-date with (aka :ref:`rebased on <git-rebase>`) `ArduPilot/master <https://github.com/ArduPilot/ardupilot>`__.
    If you have just :ref:`forked <git-fork>` and :ref:`cloned <git-clone>` your repo then it should already be up-to-date.
 
-#. decide on a branch name and create the new branch.  The name is up to you but it can be helpful to choose a short descriptive name. The branch name used for this tutorial is "apm_git_tutorial".
+#. decide on a branch name and create the new branch.  The name is up to you but it can be helpful to choose a short descriptive name. The branch name used for this tutorial is "ardupilot_git_tutorial".
 
    ::
 
-       git checkout -b apm_git_tutorial
+       git checkout -b ardupilot_git_tutorial
 
 #. Change some code. For this tutorial, open the
    **Tools/GIT_Test/GIT_Success.txt** in your preferred text editor,
@@ -59,7 +59,7 @@ Creating a Branch
 
    ::
 
-       git push origin HEAD:apm_git_tutorial
+       git push origin HEAD:ardupilot_git_tutorial
 
 Congratulations! This is bulk of the normal process you'd follow when
 working on code to submit back to the official project. The next step is
@@ -78,8 +78,8 @@ branch and commit it.
    .. image:: ../images/APM-Git-Github-Windows-Branch.jpg
        :target: ../_images/APM-Git-Github-Windows-Branch.jpg
 
-   Enter 'apm_git_tutorial' and click the "+ create branch:
-   apm_git_tutorial" dropdown.
+   Enter 'ardupilot_git_tutorial' and click the "+ create branch:
+   ardupilot_git_tutorial" dropdown.
 
    .. figure:: ../images/GitHubForWindowsClient_CreateBranch.png
       :target: ../_images/GitHubForWindowsClient_CreateBranch.png
@@ -107,7 +107,7 @@ branch and commit it.
          to be integrated into the official releases (this will include a much
          more detailed commit message). 
 
-#. Commit your work to the branch by pressing the **Commit to apm_git_tutorial** link.
+#. Commit your work to the branch by pressing the **Commit to ardupilot_git_tutorial** link.
 
 #. Push your local branch to GitHub (pushing branches is a precondition
    for collaborating with others on GitHub or for submitting patches
