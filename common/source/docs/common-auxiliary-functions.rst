@@ -207,6 +207,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        96            | MODE_SWITCH_RESET          |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        97            | WindVane home dii offset   |          |         |    X    |
++----------------------+----------------------------+----------+---------+---------+
 |        102           | Camera Mode Toggle         |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        105           | GPS Disable Yaw            |    X     |    X    |    X    |
@@ -854,6 +856,16 @@ Enables FBWA taildragger takeoff mode holding elevator and tail on ground until 
    <td>
 
 Forces mode switch to be re-read.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>WindVane home direction offset</strong></td>
+   <td>
+
+This is a continuous input channel providing a -45 to +45 degree offset the the initial wind direction when using :ref:`WNDVN_TYPE<WNDVN_TYPE>` = 2.
 
 .. raw:: html
 
