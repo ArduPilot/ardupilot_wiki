@@ -75,8 +75,8 @@ macOS:
 Over Network
 ============
 
-Specify the IP address and port containing a mavlink stream. The address
-to connect to must be your own IP address or loopback address. Alternatively,
+Specify the IP address and port that are the target of a mavlink stream. The address
+must be your own IP address or loopback address. Alternatively,
 if the local IP address is not known, use 0.0.0.0 for MAVProxy find and use
 the local IP address. The type of stream (tcp or udp) should also be specified.
 
@@ -86,7 +86,7 @@ the local IP address. The type of stream (tcp or udp) should also be specified.
     mavproxy.py --master=udp:127.0.0.1:14550
     mavproxy.py --master=tcp:0.0.0.0:14550
     
-If connecting to a remote IP address, the udpout or tcpout arguments should be used:
+If connecting to a remote IP address that distributes telemetry, the udpout or tcpout arguments should be used:
 
 .. code:: bash
 
