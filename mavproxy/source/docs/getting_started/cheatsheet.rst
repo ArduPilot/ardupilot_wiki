@@ -21,7 +21,7 @@ fence disable            Disable geofence
 arm throttle             Arm vehicle
 disarm                   Disarm vehicle
 disarm force             Force vehicle disarm (heli)
-Engage auto mode         auto
+auto                     Engage auto mode
 wp set N                 Set current auto waypoint to N
 setspeed N               Override auto speed to N m/s
 param show X             Show current value of parameter X
