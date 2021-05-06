@@ -36,7 +36,7 @@ then you could choose level 7, which will result in a bit sharper tune
 have done an initial tune with a lower level. Levels above 8 should only
 be used by very experienced pilots.
 
-Autotune tunes the FF (feedforward), P, I, and D terms at each :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`, which determines the maximum/target slew rates used for the tuning process (:ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>`,:ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>`,:ref:`RLL2SRV_RMAX<RLL2SRV_RMAX>`) and the gain from desired attitude angle to demanded angular rate (:ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>` and :ref:`RLL2SRV_TCONST<RLL2SRV_TCONST>`).
+Autotune tunes the FF (feedforward), P, I, and D terms at each :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`, which determines the maximum/target slew rates used for the tuning process ( :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>`, :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>`, :ref:`RLL2SRV_RMAX<RLL2SRV_RMAX>`) and the gain from desired attitude angle to demanded angular rate ( :ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>` and :ref:`RLL2SRV_TCONST<RLL2SRV_TCONST>`).
 
 It is important to set a level appropriate for the rates that the aircraft can physically achieve.
 This is because excessive target rates will prevent the autotune from adjusting the gains.
