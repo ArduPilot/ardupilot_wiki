@@ -44,7 +44,9 @@ Several font sets are included and can be changed during runtime (and those who 
 - ``3`` = Bold. A bolder version of Betaflight
 - ``4`` = Digital. 80's LED clock radio style
 
-.. note::    In firmware 4.1 and above, onboard font options might be limited on 1 MB boards to save memory for other features. However, font upload from SD card is supported. This allows the user to choose from up to 10 font files (named "font0.bin" - "font9.bin") placed in the root directory of your SD card. Additionally, this allows the user to easily add individualized and/or customized language charsets for the onboard OSD without the need to compile  individual firmware. Runtime font changing using the parameter :ref:`OSD_FONT<OSD_FONT>` is unaffected. MAVftp might be a convenient option to upload files to your SD card without having to physically remove it from your flight controller. Font files, font editor, and utlities to convert to a .bin file from .mcm are :ref:`here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts>`.
+.. note::    In firmware 4.1 and above, onboard font options might be limited on 1 MB boards to save memory for other features. However, font upload from SD card is supported. This allows the user to choose from up to 10 font files (named "font0.bin" - "font9.bin") placed in the root directory of your SD card. Additionally, this allows the user to easily add individualized and/or customized language charsets for the onboard OSD without the need to compile  individual firmware. Runtime font changing using the parameter :ref:`OSD_FONT<OSD_FONT>` is unaffected. 
+
+MAVftp might be a convenient option to upload files to your SD card without having to physically remove it from your flight controller. Font files, font editor, and utlities to convert to a .bin file from .mcm are `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts>`__.
 
 
 .. _screen-switching:
