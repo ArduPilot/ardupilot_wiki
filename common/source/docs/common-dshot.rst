@@ -50,7 +50,7 @@ We recommend using the lowest baud rate, DShot150, as it is the most reliable pr
 Reversible DShot ESCs
 ---------------------
 
-Currently, only BLHeli32 style reversible DShot ESCs are supported. In order to use one, the output which drives it must be designated with the appropriate bit in the :ref:`SERVO_BLH_REMASK<SERVO_BLH_REMASK>` bitmask parameter. This will map the outputs 1000-1500-2000 values to the correct digital values for the ESC to provide FullReverse-Idle-FullForward range operation, respectively.
+Currently, only BLHeli32 style reversible DShot ESCs are supported. In order to use one, the output which drives it must be designated with the appropriate bit in the :ref:`SERVO_BLH_RVMASK<SERVO_BLH_RVMASK>` bitmask parameter. This will map the outputs 1000-1500-2000 values to the correct digital values for the ESC to provide FullReverse-Idle-FullForward range operation, respectively.
 
 .. note:: Currently, ArduPilot only supports the use of reversible ESCs for Plane and Rover, not Copter.
 
