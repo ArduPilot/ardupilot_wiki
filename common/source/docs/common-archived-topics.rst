@@ -95,7 +95,7 @@ value to users with old hardware.
     Making a MAVLink WiFi bridge using the Raspberry Pi <making-a-mavlink-wifi-bridge-using-the-raspberry-pi>
     HITL Simulators <hitl-simulators>
     Weekly meetings on Mumble Server <ardupilot-mumble-server>
-
+    How to sign a Pixhawk with your Certificate of Authenticity <how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity>
 [/site]
 
 
