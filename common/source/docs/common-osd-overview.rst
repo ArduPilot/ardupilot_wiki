@@ -36,7 +36,9 @@ Several options can be set using :ref:`OSD_OPTIONS<OSD_OPTIONS>` (bitmask select
 - bit1 = Invert wind direction indicator (to point to the direction its blowing from instead of toward)
 - bit2 = Invert horizon roll direction
      
-Several font sets are included and can be changed during runtime (and those who can build the software can customize or add additional font sets....see libraries/AP_OSD/fonts/README.md) - :ref:`OSD_FONT<OSD_FONT>`:
+Several font sets are included and can be changed during runtime (and those who can build the software can customize or add additional font sets....see libraries/AP_OSD/fonts/README.md)
+
+- :ref:`OSD_FONT<OSD_FONT>`:
 
 - ``0`` = Clarity (default). A clearly visible large font
 - ``1`` = Clarity Medium. Good visibility, less dominant than clarity default
