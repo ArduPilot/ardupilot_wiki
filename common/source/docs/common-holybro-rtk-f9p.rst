@@ -32,6 +32,8 @@ All H-RTK GNSS models come with a GH 10-pin connector/cable that is compatible w
 
 .. note:: The cables/connectors may be modified to connect to other flight controller boards, using the Pin Map information provided above.
 
+For Pixhawk Cube 2.1 variant that does not come with a 10-way GPS port and hence requires connector re-termination, note that the RX port on the GPS module should feed into the port labelled GPS_RX (TX of autopilot board) on the flight controller board. Also, the GPS1 port is 8-way only, which can be circumvented by leaving 3v3 and buzzer lines out.
+
 Configuration
 =============
 
