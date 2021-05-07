@@ -46,9 +46,28 @@ copter, and from the GCS to your Vicon server. The recommened method
 is to use ethernet to the Vicon server and use a ESP8266 WiFi link
 running `mavest8266 <common-esp8266-telemetry>`_ on the copter.
 
-You will also need to calibrate your Vicon, and ensure you have 4 good
-reflective markers on the vehicle positioned to give a good lock in
-the Vicon.
+Vicon System Setup
+==================
+
+- The Vicon system should be correctly calibrated. The origin should be set using the calibration wand. In the Vicon Tracker software, the Z-axis (shown in blue) of the Vicon system world frame should point up. We will call the X-axis (red) as North, and the Y-axis (green) as West.
+- The UAV should have a minimum of 4 reflective markers to ensure an accurate fix. Any reflective surfaces on the UAV should be covered with masking tape to avoid spurious detections.
+- Place the UAV in the Vicon space so that the forward direction of the flight controller is facing 'North'. (Figure 1)
+- In the Vicon Tracker, select all of the markers and create a new object for the UAV. The coordinate frame of the UAV should then be aligned with the Vicon world frame, so that X is forward, Y is Left and Z is up. (Figure 2)
+
+.. figure:: ../../../images/vicon-frame-reference.jpg
+    :target: ../_images/vicon-frame-reference.jpg
+    
+    Figure 1: Example of how UAV should be positioned when creating the Vicon Object. The forward direction is aligned with the X-axis.
+
+.. figure:: ../../../images/vicon-alignment.png
+    :target: ../_images/vicon-alignment.png
+
+    Figure 2: Screenshot from Vicon Tracker software, showing world coordinate frame (bottom left) aligned with UAV coordinate frame. The origin of the object frame should be approximately where the flight controller is located.
+
+
+.. warning::
+
+    These coordinate frame conventions apply to MAVProxy version 1.8.36 and above. Ensure you are using an up-to-date version.
 
 Software Setup
 ==============
@@ -92,7 +111,7 @@ You will need a pymavlink version of at least 2.3.8. Install with:
 MAVProxy Setup
 ==============
 
-You will need MAVProxy version of at least 1.8.11. Install with:
+You will need MAVProxy version of at least 1.8.36. Install with:
 
 .. code:: bash
 

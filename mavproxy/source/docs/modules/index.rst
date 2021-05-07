@@ -98,4 +98,5 @@ List of Modules
     tuneopt
     ublox
     useralerts
+    vicon
 
