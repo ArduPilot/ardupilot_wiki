@@ -22,7 +22,7 @@ Rover supports two forms of object avoidance which can be enabled separately or 
 
 -  One or two range finders should be mounted facing forward as described on the :ref:`range finder wiki pages <common-rangefinder-landingpage>`
 -  RNGFND_TRIGGR_CM specifies the distance in cm at which the vehicle will begin turning.  I.e. 100 will mean the vehicle will begin turning 1m from the object. Set this value to 0 if you want the vehicle to stop instead of going around the obstacle.
--  RNGFND_TURN_ANGL controls the direction and aggressiveness of the turn.  Large positive or negative values (i.e. -450 or 450) cause turns up to the vehicle's maximum lateral acceleration (i.e. :ref:`TURN_MAX_G <TURN_MAX_G>`) while values near zero cause gentle turns.  Negative values cause the vehicle to turn left, positive causes a turn right.
+-  RNGFND_TURN_ANGL controls the direction and aggressiveness of the turn.  Large positive or negative values (i.e. -450 or 450) cause turns up to the vehicle's maximum lateral acceleration (i.e. :ref:`ATC_TURN_MAX_G <ATC_TURN_MAX_G>`) while values near zero cause gentle turns.  Negative values cause the vehicle to turn left, positive causes a turn right.
 -  RNGFND_TURN_TIME controls how many seconds the vehicle will continue turning after the object has gone out of view.
 -  RNGFND_DEBOUNCE specifies how many consecutive readings are required to trigger the turn response.  A higher number reduces false positives but also adds a small lag in the response.
 
