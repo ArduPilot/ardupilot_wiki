@@ -36,11 +36,18 @@ Configuration
 - :ref:`GPS_TYPE <GPS_TYPE>` = 17 ("UBlox moving baseline base")
 - :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover")
 - Set the :ref:`GPS_POS1_X <GPS_POS1_X>`/Y/Z and :ref:`GPS_POS2_X <GPS_POS2_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
+- :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
 - :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3 (to use EKF3)
 - :ref:`EK2_ENABLE <EK2_ENABLE>` = 0 (to disable EKF2)
 - :ref:`EK3_ENABLE <EK3_ENABLE>` = 1 (to enable EKF3)
+
+If using 4.0
+
 - :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 5 ("Use external yaw sensor") or 6 ("External yaw sensor with compass fallback")
-- :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
+
+If using 4.1 (or higher)
+
+- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 ("GPS") or 3 ("GPS with Compass Fallback")
 
 The above configuration assumes that you want the RTCMv3 data between
 the two GPS modules to go via the flight controller board. You may instead
