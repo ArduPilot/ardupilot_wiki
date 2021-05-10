@@ -11,7 +11,11 @@ AP_Periph
 
 AP_Periph is an abbreviation for ArduPilot Peripheral, ie. an ArduPilot peripheral device based on the existing ArduPilot autopilot code. It takes peripheral device driver libraries of ArduPilot and adapts them to run on stand-alone peripheral devices, which communicate to the main autopilot via CAN, MSP, or other peripheral bus protocols.
 
-The Peripheral device usually uses an STMF103 or STMF303 processor, but it is also being ported to use normal autopilot boards to be configured instead as a peripheral. Both sensors (distance sensor, GNSS, IMU, Barometer, etc.) and output ports (I2C, SPI, PWM, UART, ESC, LED, etc.) can be used to build new peripherals, as well as providing bus expansion for CAN, MSP, I2C,SPI, etc. 
+The Peripheral device supports a wide range of STM32 processors,
+including F103, F303, F4xx, F7xx, G4xx and H7. Both sensors (distance
+sensor, GNSS, IMU, Barometer, battery, etc.) and output ports (I2C,
+SPI, PWM, UART, ESC, LED, etc.) can be used to build new peripherals,
+as well as providing bus expansion for CAN, MSP, I2C,SPI, etc.
 
 The software uses the same build system as ArduPilot for autopilot boards. All the firmware build configuration for an AP_Periph board done using a single configuration file (hwdef.dat) defines the inputs / outputs of the device and what device drivers will be included, in the same manner as an autopilot board. This makes it possible, for example, to define a AP_Periph device for UAVCAN with only a micro-controller of the STM32F103 type and 128 KB of flash memory, although processors with larger memory will be required depending on the number of drivers.
 
