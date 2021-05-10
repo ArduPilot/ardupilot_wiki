@@ -16,75 +16,74 @@ These setup instructions describe how to setup `Cygwin <http://www.cygwin.com/>`
 Install Cygwin
 --------------
 
-#. Open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and download  "setup-x86.exe"
-
-#. Paste the  following command at a DOS prompt (press window and R key then enter cmd) in the directory where you downloaded "Run setup-x86.exe"
+#. Open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and download  "setup-x86_64.exe"
+#. Paste the  following command at a DOS prompt (press window and R key then enter cmd) in the directory where you downloaded "Run setup-x86_64.exe"
 
 ::
 
-    setup-x86.exe -P autoconf,automake,ccache,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python36,python36-future,python36-lxml,python36-pip,libxslt-devel,python36-devel,procps-ng,zip,gdb,ddd,xterm
+    setup-x86_64.exe -P autoconf,automake,ccache,cygwin32-gcc-g++,gcc-g++,git,libtool,make,gawk,libexpat-devel,libxml2-devel,python37,python37-future,python37-lxml,python37-pip,libxslt-devel,python37-devel,procps-ng,zip,gdb,ddd
     
 Or, for a stepped install:
 
-#. open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and run setup-x86.exe"
+#. Open a web browser to `www.cygwin.com/install.html <https://www.cygwin.com/install.html>`__ and run setup-x86_64.exe"
 
-#. accept all the prompts (including default file locations) until
+#. Accept the prompts (including default file locations) until
    you reach the *Select Packages* dialog.
    
 #. Select the required packages from the thousands of available packages.
    Refer to the list below and enter each package "Name" into the Search field as shown below.
-   When you have found the package click on the **Skip** button to change it to a version number and then move onto the next package:
+   When you have found the package, click on the **Skip** button to change it to a version number and then move onto the next package:
 
    .. figure:: ../images/Cygwin-select-install-gpp.png
       :target: ../_images/Cygwin-select-install-gpp.png
 
       Cygwin Installer: Select Package Dialog
 
-   +-----------------+----------------------------------------------------------------------------------+
-   | Package Name    | Category / Name / Description                                                    |
-   +=================+==================================================================================+
-   | autoconf        | Devel \| autoconf: Wrapper scripts for autoconf commands                         |
-   +-----------------+----------------------------------------------------------------------------------+
-   | automake        | Devel \| automake: Wrapper scripts for automake and aclocal                      |
-   +-----------------+----------------------------------------------------------------------------------+
-   | ccache          | Devel \| ccache: A C compiler cache for improving recompilation                  |
-   +-----------------+----------------------------------------------------------------------------------+
-   | gcc-g++         | Devel \| gcc-g++ GNU Compiler Collection (C++)                                   |
-   +-----------------+----------------------------------------------------------------------------------+
-   | git             | Devel \| git: Distributed version control system                                 |
-   +-----------------+----------------------------------------------------------------------------------+
-   | libtool         | Devel \| libtool: Generic library support script                                 |
-   +-----------------+----------------------------------------------------------------------------------+
-   | make            | Devel \| make: The GNU version of the 'make' utility                             |
-   +-----------------+----------------------------------------------------------------------------------+
-   | gawk            | Interpreters \| gawk: GNU awk, a pattern scanning and processing language        |
-   +-----------------+----------------------------------------------------------------------------------+
-   | libexpat-devel  | Libs \| libexpat-devel: Expat XML parser library (development files)             |
-   +-----------------+----------------------------------------------------------------------------------+
-   | libxml2-devel   | Libs \| libxml2-devel: Gnome XML library (development)                           |
-   +-----------------+----------------------------------------------------------------------------------+
-   | libxslt-devel   | Libs \| libxslt-devel: XML template library (development files)                  |
-   +-----------------+----------------------------------------------------------------------------------+
-   | python36        | Python \| python36: Python2 language interpreter                                 |
-   +-----------------+----------------------------------------------------------------------------------+
-   | python36-devel  | Python \| python36-devel: Python3 language interpreter                           |
-   +-----------------+----------------------------------------------------------------------------------+
-   | python36-future | Python \| python36-future: Clean single-source support for Python 3 and 2        |
-   +-----------------+----------------------------------------------------------------------------------+
-   | python36-libxml2| Python \| python36-lxml: Gnome XML Library (Python bindings)                     |
-   +-----------------+----------------------------------------------------------------------------------+
-   | python36-pip    | Python \| python36-pip: Python package installation tool                         |
-   +-----------------+----------------------------------------------------------------------------------+
-   | procps-ng       | System \| procps-ng: System and process monitoring utilities (required for pkill)|
-   +-----------------+----------------------------------------------------------------------------------+
-   | gdb             | Devel \| gdb: The GNU Debugger                                                   |
-   +-----------------+----------------------------------------------------------------------------------+
-   | ddd             | Devel \| ddd: DDD, the data display debugger                                     |
-   +-----------------+----------------------------------------------------------------------------------+
-   | zip             | Archive \| zip: Info-ZIP compression utility                                     |
-   +-----------------+----------------------------------------------------------------------------------+   
-   | xterm           | Shells, X11 \|  X11 terminal emulator                                            |
-   +-----------------+----------------------------------------------------------------------------------+   
+   +------------------+----------------------------------------------------------------------------------+
+   | Package Name     | Category / Name / Description                                                    |
+   +==================+==================================================================================+
+   | autoconf         | Devel \| autoconf: Wrapper scripts for autoconf commands                         |
+   +------------------+----------------------------------------------------------------------------------+
+   | automake         | Devel \| automake: Wrapper scripts for automake and aclocal                      |
+   +------------------+----------------------------------------------------------------------------------+
+   | ccache           | Devel \| ccache: A C compiler cache for improving recompilation                  |
+   +------------------+----------------------------------------------------------------------------------+
+   | cygwin32-gcc-g++ + Devel \| GCC for Cygwin 32bit toolchain (C++)                                    |
+   +------------------+----------------------------------------------------------------------------------+
+   | gcc-g++          | Devel \| gcc-g++ GNU Compiler Collection (C++)                                   |
+   +------------------+----------------------------------------------------------------------------------+
+   | git              | Devel \| git: Distributed version control system                                 |
+   +------------------+----------------------------------------------------------------------------------+
+   | libtool          | Devel \| libtool: Generic library support script                                 |
+   +------------------+----------------------------------------------------------------------------------+
+   | make             | Devel \| make: The GNU version of the 'make' utility                             |
+   +------------------+----------------------------------------------------------------------------------+
+   | gawk             | Interpreters \| gawk: GNU awk, a pattern scanning and processing language        |
+   +------------------+----------------------------------------------------------------------------------+
+   | libexpat-devel   | Libs \| libexpat-devel: Expat XML parser library (development files)             |
+   +------------------+----------------------------------------------------------------------------------+
+   | libxml2-devel    | Libs \| libxml2-devel: Gnome XML library (development)                           |
+   +------------------+----------------------------------------------------------------------------------+
+   | libxslt-devel    | Libs \| libxslt-devel: XML template library (development files)                  |
+   +------------------+----------------------------------------------------------------------------------+
+   | python37         | Python \| python37: Python3 language interpreter                                 |
+   +------------------+----------------------------------------------------------------------------------+
+   | python37-devel   | Python \| python37-devel: Python3 language interpreter                           |
+   +------------------+----------------------------------------------------------------------------------+
+   | python37-future  | Python \| python37-future: Clean single-source support for Python 3 and 2        |
+   +------------------+----------------------------------------------------------------------------------+
+   | python37-lxml    | Python \| python37-lxml: Gnome XML Library (Python bindings)                     |
+   +------------------+----------------------------------------------------------------------------------+
+   | python37-pip     | Python \| python37-pip: Python package installation tool                         |
+   +------------------+----------------------------------------------------------------------------------+
+   | procps-ng        | System \| procps-ng: System and process monitoring utilities (required for pkill)|
+   +------------------+----------------------------------------------------------------------------------+
+   | gdb              | Devel \| gdb: The GNU Debugger                                                   |
+   +------------------+----------------------------------------------------------------------------------+
+   | ddd              | Devel \| ddd: DDD, the data display debugger                                     |
+   +------------------+----------------------------------------------------------------------------------+
+   | zip              | Archive \| zip: Info-ZIP compression utility                                     |
+   +------------------+----------------------------------------------------------------------------------+   
    
 
 #. When all the packages are selected, click through the rest of the
@@ -94,8 +93,8 @@ Or, for a stepped install:
 
    .. warning::
 
-      Sometimes the installation can stall because of anti-virus protection software is running.
-      If this occurs, shutdown all other programs on your PC including the anti-virus protection and try again.
+      Sometimes the installation can stall because anti-virus protection software is running.
+      If this occurs, shutdown all other programs on your PC including the anti-virus protection, and try again.
 
 Install the GCC compiler
 -------------------------
@@ -104,11 +103,11 @@ Install the GCC compiler
 
       This step is only required if you intend to compile for ARM-based boards.
 
-- download and install the gcc-arm-non-eabi compiler from `firmware.ardupilot.org/Tools/STM32-tools <https://firmware.ardupilot.org/Tools/STM32-tools>`__ (`quick link is here <https://firmware.ardupilot.org/Tools/STM32-tools/gcc-arm-none-eabi-6-2017-q2-update-win32-sha2.exe>`__)
-    - accept the license
-    - install to the default location
-    - accept the ssl certificate
-    - check the option to "Add path to environment variable"
+#. Download and install the gcc-arm-non-eabi compiler from `firmware.ardupilot.org/Tools/STM32-tools <https://firmware.ardupilot.org/Tools/STM32-tools>`__ (`quick link is here <https://firmware.ardupilot.org/Tools/STM32-tools/gcc-arm-none-eabi-6-2017-q2-update-win32-sha2.exe>`__)
+#. Accept the license
+#. Install to the default location
+#. Accept the SSL certificate
+#. Check the option to "Add path to environment variable"
 
 .. image:: ../images/building-setup-windows-cygwin-gcc.png
 
