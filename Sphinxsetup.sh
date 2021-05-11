@@ -24,7 +24,9 @@ if [ ${DISTRIBUTION_CODENAME} == 'bionic' ]; then
 elif [ ${DISTRIBUTION_CODENAME} == 'focal' ]; then
   apt-get install -y python-is-python3
 else
-  apt-get install -y python-is-python3
+    if [ ${DISTRIBUTION_ID} == 'Ubuntu' ]; then
+        apt-get install -y python-is-python3
+    fi
 fi
 
 # Get pip through the official website to get the lastest release
@@ -33,16 +35,16 @@ python3 get-pip.py
 rm -f get-pip.py
 
 # Install sphinx
-pip3 install --upgrade sphinx==1.8.3
+python3 -m pip install --upgrade sphinx==1.8.3
 
 # Install sphinx theme from ArduPilot repository
-pip3 install git+https://github.com/ArduPilot/sphinx_rtd_theme.git --upgrade
+python3 -m pip install git+https://github.com/ArduPilot/sphinx_rtd_theme.git --upgrade
 
 # and a youtube plugin:
-pip3 install git+https://github.com/sphinx-contrib/youtube.git --upgrade
+python3 -m pip install git+https://github.com/sphinx-contrib/youtube.git --upgrade
 
 # and a vimeo plugin:
-pip3 install git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git --upgrade
+python3 -m pip install git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git --upgrade
 
 # Say that we finish
 echo "Setup completed successfully !"
