@@ -5,7 +5,7 @@
 Setting up the Build Environment on Windows10 using WSL1 or WSL2
 ================================================================
 
-These setup instructions describe how to setup "Bash on Ubuntu on Windows" (aka "Windows Subsystem for Linux") which allows building with waf.
+These setup instructions describe how to setup "Windows Subsystem for Linux" which allows building with waf.
 
 .. image:: ../images/build-on-windows10-top-image.jpg
     :target: ../_images/build-on-windows10-top-image.jpg
@@ -14,30 +14,21 @@ It involves enabling the built-in Windows Linux environment (WSL) in Windows10, 
 
 Upon completion, you will be able to build ArduPilot binaries and run the native ArduPilot SITL simulator, including the MAVProxy developer Ground Control Station. 
 
-WSL1 vs WSL2
-------------
-WSL2 is the latest version of the Windows10 Subsystem for Linux. It is many times faster than WSL1 and is therefore preferred for building the code in terms of compilation speed. It can also run MAVProxy and native SITL.
-
-However, it does not support the following yet:
-
-    * USB: uploading code or connecting to the autopilot is not possible
-    * Running Realflight on the same or a remote PC
-
-Once installed, you can switch between WSL1 or WSL2 versions as you prefer using PowerShell.
-
-    ::
-
-        wsl --list --verbose
-
-    ::
-
-        wsl --set-version <distribution name> <versionNumber>
-
 WSL Setup Steps
 ---------------
-#. First, follow the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_. Usually, installing the latest LTS version of Ubuntu is preferred.
+#. The official instructions are `here <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ but the steps are also listed below
 
-#. Congratulations, you now have a working Ubuntu subsystem under Windows, you can now use our :ref:`Ubuntu instructions to install ArduPilot development environment <building-setup-linux>`
+#. Enable WSL by opening "Control Panel", "Programs", "Turn Windows features on or off" and selecting "Windows Subsystem for Linux" and press OK
+
+  .. image:: ../images/build-on-windows10-wsl-install.png
+      :target: ../_images/build-on-windows10-wsl-install.png
+
+#. From a web browser open `https://aka.ms/wslstore <https://aka.ms/wslstore>`_ which should open the Microsoft store to allow installing Ubuntu. Then Launch Ubuntu and fill in a usernane and login
+
+  .. image:: ../images/build-on-windows10-wsl-install-part2.png
+      :target: ../_images/build-on-windows10-wsl-install-part2.png
+
+#. From the Start menu, start the "Ubuntu" application and then follow the :ref:`Ubuntu instructions to install ArduPilot development environment <building-setup-linux>`
 
     .. note::
 
@@ -47,7 +38,7 @@ WSL Setup Steps
 
 #. Install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows.
 
-#. Add the following in WSL at the end of ``~/.bashrc``. Be sure to comment and uncomment the appropriate lines depending on if you are using WSL1 or WSL2
+#. Open the "Ubuntu" application and add the following to the end of ``~/.bashrc``. Be sure to comment and uncomment the appropriate lines depending on if you are using WSL1 or WSL2 (if in doubt, WSL2 is the default)
 
 .. code-block:: bash
 
@@ -71,6 +62,24 @@ WSL Setup Steps
         memory=8GB # Limits VM memory in WSL to 8 GB
         processors=16 # Makes the WSL 2 VM use 8 virtual processors
         swap=8GB
+
+WSL1 vs WSL2
+------------
+WSL2 is the latest version of the Windows10 Subsystem for Linux. It is many times faster than WSL1 and is therefore preferred for building the code in terms of compilation speed. It can also run MAVProxy and native SITL.  However, it does not support the following yet:
+
+    * USB: uploading code or connecting to the autopilot is not possible
+    * Running Realflight on the same or a remote PC
+
+Once installed, you can switch between WSL1 or WSL2 versions as you prefer using PowerShell.
+
+    ::
+
+        wsl --list --verbose
+
+    ::
+
+        wsl --set-version Ubuntu 2
+		wsl --set-version Ubuntu 1
 
 Using SITL with WSL and XWindows
 --------------------------------
