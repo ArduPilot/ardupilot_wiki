@@ -27,8 +27,8 @@ are more comfortable with the reverse you can set :ref:`FBWB_ELEV_REV<FBWB_ELEV_
 and the elevator will be reversed in FBWB mode.
 
 Note that the elevator stick does not control pitch, it controls target
-altitude. The amount of pitch that will be used to achieve the requested
-climb or descent rate depends on your TECS tuning settings, but in
+climb or descent rate. The amount of pitch that will be used to achieve this
+rate depends on your TECS tuning settings, but in
 general the autopilot will try to hold the plane fairly level in pitch,
 and will primarily climb or descend by raising or lowering the throttle.
 This can be disconcerting for people used to flying in FBWA mode, where
