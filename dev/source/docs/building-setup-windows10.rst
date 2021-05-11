@@ -78,8 +78,8 @@ Once installed, you can switch between WSL1 or WSL2 versions as you prefer using
 
     ::
 
+        wsl --set-version Ubuntu 1
         wsl --set-version Ubuntu 2
-		wsl --set-version Ubuntu 1
 
 Using SITL with WSL and XWindows
 --------------------------------
