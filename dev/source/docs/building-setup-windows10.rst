@@ -20,13 +20,13 @@ WSL Setup Steps
 
 #. Enable WSL by opening "Control Panel", "Programs", "Turn Windows features on or off" and selecting "Windows Subsystem for Linux" and press OK
 
-  .. image:: ../images/build-on-windows10-wsl-install.png
-      :target: ../_images/build-on-windows10-wsl-install.png
+    .. image:: ../images/build-on-windows10-wsl-install.png
+        :target: ../_images/build-on-windows10-wsl-install.png
 
 #. From a web browser open `https://aka.ms/wslstore <https://aka.ms/wslstore>`_ which should open the Microsoft store to allow installing Ubuntu. Then Launch Ubuntu and fill in a usernane and login
 
-  .. image:: ../images/build-on-windows10-wsl-install-part2.png
-      :target: ../_images/build-on-windows10-wsl-install-part2.png
+    .. image:: ../images/build-on-windows10-wsl-install-part2.png
+        :target: ../_images/build-on-windows10-wsl-install-part2.png
 
 #. From the Start menu, start the "Ubuntu" application and then follow the :ref:`Ubuntu instructions to install ArduPilot development environment <building-setup-linux>`
 
@@ -40,13 +40,13 @@ WSL Setup Steps
 
 #. Open the "Ubuntu" application and add the following to the end of ``~/.bashrc``. Be sure to comment and uncomment the appropriate lines depending on if you are using WSL1 or WSL2 (if in doubt, WSL2 is the default)
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    # Export Display for XWindows
-    # For WSL2
-    export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0
-    # For WLS1
-    # export DISPLAY=0:0
+        # Export Display for XWindows
+        # For WSL2
+        export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0
+        # For WLS1
+        # export DISPLAY=0:0
 
 #. If desired, change default WSL parameters as described `at this link <https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig>`_. These parameters allow you to set for example the amount of memory and number of processors used by WSL.
 
