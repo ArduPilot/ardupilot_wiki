@@ -43,10 +43,11 @@ Configuration
 
 If using 4.0
 
-- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 5 ("Use external yaw sensor") or 6 ("External yaw sensor with compass fallback")
+- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 5 ("Use external yaw sensor")
 
 If using 4.1 (or higher)
 
+- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` is not used for this feature so it can be left at its default value ("0" for Plane, "3" for Copter, "2" for Rover)
 - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 ("GPS") or 3 ("GPS with Compass Fallback")
 
 The above configuration assumes that you want the RTCMv3 data between
@@ -77,15 +78,6 @@ validates that the fix is good enough in several ways:
  - that the reported heights of the two GPS modules match the attitude
    of the vehicles is within 20% of the distance between the two GPS
    modules
-
-Firmware Versions
------------------
-
-The 4.0 ArduPilot firmware versions don't support the EK3_MAG_CAL=6
-choice. That choice will be in the 4.1.x releases. Using EK3_MAG_CAL=6
-allows the EKF to learn a set of compass offsets while flying which
-allows your compass to be a backup for if your GPS yaw fails in
-flight.
 
 Video Demo
 ----------
