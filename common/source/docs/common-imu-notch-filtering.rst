@@ -98,6 +98,39 @@ The harmonic notch is designed to match the motor noise frequency as it changes 
 
 .. _common-imu-notch-filtering-helicopter-setup:
 
+ESC based setup
+===============
+
+If ESCs with telemetry are used (either via a separate telemety wire or bi-directional dshot) then the harmonic notch reference frequency can be set dynamically using ESC telemetry.  The harmonic notch reference frequency parameter, :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>`, is used to indicate the lowest motor speed for which the ESC telemetry should be used to dynamically set the harmonic notch reference frequency.  It is recommended that this be set to below the hover frequency but above the :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` frequency.
+
+Set the :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` parameter to 1, which will disable scaling of the harmonic notch, and set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` to 3 to select ESC telemetry.
+
+- Set :ref:`INS_HNTCH_ENABLE <INS_HNTCH_ENABLE>` = 1 to enable the harmonic notch
+- Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` = 1 to set the harmonic notch reference value to unscaled
+- Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` = below the hover frequency - you can easily determine this by performing a gentle hover and looking at the ESC telemetry data
+- Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` = half of INS_HNTCH_FREQ
+
+Dynamic Harmonics
+-----------------
+
+By default the ESC based harmonic notch will use an average of the individual motor frequencies in order to drive the center frequency of the notch, this average is then used as the first harmonic and other harmonic notches are added at higher frequency multiples of the first harmonic. It is also possible to configure the harmonics to instead be first harmonics per motor. This gives four notches - one for each motor - that exactly tracks the motor speed. In dynamic flight this can give much better noise attenuation.
+
+To configure this option set :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` to 2
+
+Double-notch
+------------
+
+The software notch filters used are very "spikey" being relatively narrow but good at attenuation at their center. On larger copters the noise profile of the motors is quite dirty covering a broader range of frequencies than can be covered by a single notch filter. In order to address this situation it is possible to configure the harmonic notches as double notches that gives a wider spread of significant attenuation. To utilize this feature set :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` to 1.
+
+.. note:: Each notch has some CPU cost so if you configure both dynamic harmonics and double notches (:ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` set to 3) you will end up with 8 notches on your aircraft per IMU. On flight controllers with 3 IMUs, this totals 24 notches which is computationally significant and could impact operation. For example, with F4 cpus with one IMU, using :ref:`INS_GYRO_RATE<INS_GYRO_RATE>` =0 (1khz) this is safe, as is 3 IMUs running with fast sampling (:ref:`INS_GYRO_RATE<INS_GYRO_RATE>` =1 (2khz) on H7 cpus.
+
+Note also that with a double-notch the maximum attenuation is either side of the center frequency so on smaller aircraft with a very pronounced peak their use is usually counter productive.
+
+In-flight FFT
+-------------
+
+Please see :ref:`FFT setup<common-imu-fft>`
+
 ----------------------------
 Traditional Helicopter Setup
 ----------------------------
