@@ -7,27 +7,42 @@ if [ "$UID" -gt 0 ]; then
      exit 1
 fi
 
-DISTRIBUTION_CODENAME=$(lsb_release -i -s)
-if [ ${DISTRIBUTION_CODENAME} == 'Ubuntu' ]; then
-  add-apt-repository universe
+DISTRIBUTION_ID=$(lsb_release -i -s)
+if [ ${DISTRIBUTION_ID} == 'Ubuntu' ]; then
+  DISTRIBUTION_CODENAME=$(lsb_release -c -s)
+  if [ ${DISTRIBUTION_CODENAME} == 'focal' ] || [ ${DISTRIBUTION_CODENAME} == 'bionic' ]; then
+    add-apt-repository universe
+  fi
 fi
+
 apt-get -y update
-apt-get install -y unzip git imagemagick curl wget make python3 python-is-python3
+apt-get install -y unzip git imagemagick curl wget make python3
+
+# Install packages release specific
+if [ ${DISTRIBUTION_CODENAME} == 'bionic' ]; then
+  apt-get install -y python3-distutils
+elif [ ${DISTRIBUTION_CODENAME} == 'focal' ]; then
+  apt-get install -y python-is-python3
+else
+  apt-get install -y python-is-python3
+fi
 
 # Get pip through the official website to get the lastest release
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py && rm -f get-pip.py
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+rm -f get-pip.py
 
 # Install sphinx
-pip install -U sphinx==1.8.3 || pip3 install -U sphinx==1.8.3
+pip3 install --upgrade sphinx==1.8.3
 
 # Install sphinx theme from ArduPilot repository
-pip install git+https://github.com/ArduPilot/sphinx_rtd_theme.git -UI ||  pip3 install git+https://github.com/ArduPilot/sphinx_rtd_theme.git -UI
+pip3 install git+https://github.com/ArduPilot/sphinx_rtd_theme.git --upgrade
 
 # and a youtube plugin:
-pip install git+https://github.com/sphinx-contrib/youtube.git -UI ||  pip3 install git+https://github.com/sphinx-contrib/youtube.git -UI
+pip3 install git+https://github.com/sphinx-contrib/youtube.git --upgrade
 
 # and a vimeo plugin:
-pip install git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git -UI ||  pip3 install git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git -UI
+pip3 install git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git --upgrade
 
 # Say that we finish
 echo "Setup completed successfully !"
