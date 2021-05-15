@@ -138,3 +138,4 @@ In addition, auxiliary control surfaces, such as flaps, spoilers and airbrakes c
     Flaperons <flaperons-on-plane>
     Automatic Flaps <automatic-flaps>
     Airbrakes <airbrakes-on-plane>
+    Rudder, Yaw, and Yaw Control <yaw-in-plane>
