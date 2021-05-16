@@ -10,6 +10,8 @@ is activated in all modes except MANUAL, and when properly tuned it
 makes it much easier to keep a plane on a straight track along the
 runway for takeoff and landing.
 
+Ground steering may be implemented either by using a wheel coupled to a RUDDER output (``SERVOx_FUNCTION`` =21), either mechanically or with an second servo, or with the dedicated GroundSteering output (``SERVOx_FUNCTION`` =26). If the GroundSteering output is assigned, then it operates independently of the RUDDER output, otherwise, the Ground Steering controller's output controls the RUDDER when below :ref:`GROUND_STEER_ALT<GROUND_STEER_ALT>`.
+
 When setting up ground steering for a plane there are 4 key parameters
 you need to get right. This guide provides a set of steps to get those
 parameters right, so that your plane will accurately track down a runway
