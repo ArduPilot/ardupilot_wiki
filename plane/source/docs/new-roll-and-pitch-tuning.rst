@@ -221,6 +221,8 @@ PID Controller Flow Diagram
 
 .. image:: ../../../images/PID-controller.jpg
 
+.. _yaw-controller-tuning:
+
 Yaw Controller Tuning
 =====================
 
