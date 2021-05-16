@@ -308,7 +308,6 @@ Tuning tips
    should be reduced, whereas a value of less than 0.5 would indicate
    that ``RLL2SRV_P`` should be increased.
    
-.. _yaw-controller-tuning:
 
 Yaw Controller Tuning
 =====================
