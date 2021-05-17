@@ -30,9 +30,8 @@ The vehicle directories are the top level directories that define the
 firmware for each vehicle type.  Currently there are 6 vehicle types: Plane, Copter, Rover, Sub, Blimp and AntennaTracker.
 Although There are a lot of common elements between different vehicle types, they are each different. For now we only have a :ref:`detailed description of the code structure for the Copter code <apmcopter-code-overview>`.
 
-Along with the \*.cpp files, each vehicle directory contains a make.inc
-file which lists library dependencies. The Makefiles read this to create
-the -I and -L flags for the build.
+Along with the \*.cpp files, each vehicle directory contains a wscript
+file which lists library dependencies.
 
 Libraries
 ---------
