@@ -54,7 +54,7 @@ There are two methods to allow these to be restored.
 Using Mission Planner
 ---------------------
 
-#. In the  **CONFIG \| Full Parameter List** or **Full Parameter Tree** page, find the ``COMPASS_DEV_IDx`` (s) corresponding to the system's attached compasses. For each compass, copy  the current device id, then write the ``COMPASS_DEV_IDx`` to "0", and then write the original id back again.Do this for every compass attached and calibrated.
+#. In the  **CONFIG/Full Parameter Tree** page, find the ``COMPASS_DEV_IDx`` (s) corresponding to the system's attached compasses. For each compass, copy  the current device id, then write the ``COMPASS_DEV_IDx`` to "0", and then write the original id back again.Do this for every compass attached and calibrated.
  
 #. Next, find the ``INS_ACC_IDx`` (s) corresponding to the system's attached accelerometers. For each one, copy  the current device id, then write the id to "0", and then write the original id back again.Do this for every accelerometer attached and calibrated.
 
