@@ -74,6 +74,8 @@ Calibration steps
 
       Mission Planner: Calibration Successful
 
+.. note:: If your autopilot has a built-in IMU heater, then it is recommended that the :ref:`common-imutempcal` also be done.
+
 
 Video demonstration (Copter)
 ============================
