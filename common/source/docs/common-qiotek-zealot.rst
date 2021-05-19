@@ -50,7 +50,7 @@ Specifications
 
 -  **Dimensions**
 
-   -  Weight ?
+   -  Weight 65g
    -  Size 42mm x 65mm x 25mm
 
 
@@ -482,8 +482,8 @@ Default UART order
 ==================
 
 - SERIAL0 = console = USB
-- SERIAL1 = Telemetry1 = USART2
-- SERIAL2 = Telemetry2 = USART1
+- SERIAL1 = Telemetry1 = USART1
+- SERIAL2 = Telemetry2 = USART2
 - SERIAL3 = GPS1 = USART3
 - SERIAL4 = GPS2 = UART4
 - SERIAL5 = USER = UART5
@@ -509,7 +509,7 @@ Then reboot.
 
 :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 12
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 17.5
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 20
 
 :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 17
 
@@ -517,7 +517,7 @@ Then reboot.
 
 :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` 8
 
-:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` 17.5
+:ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` 20
 
 :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` 17
 
@@ -526,3 +526,4 @@ Where to Buy
 ============
 
 `QIOTEK <http://www.Qio-Tek.com>`_
+`Banggood <https://www.banggood.com/Qiotek-Zealot-F427-PIXHAWK-Autopilot-Ardupilot-Firmware-Flight-Controller-for-VTOL-Drone-Airplane-Multirotor-p-1828905.html?cur_warehouse=CN&rmmds=search>`_
