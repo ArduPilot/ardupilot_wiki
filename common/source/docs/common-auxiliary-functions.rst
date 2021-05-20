@@ -207,7 +207,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        96            | MODE_SWITCH_RESET          |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
-|        97            | WindVane home dii offset   |          |         |    X    |
+|        97            | WindVane home dir offset   |          |         |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        102           | Camera Mode Toggle         |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
@@ -835,7 +835,7 @@ Activates calibration of airspeed ratio in flight. Best results occur while exec
    <td><strong>VTX Power</strong></td>
    <td>
 
-Allows reading up to a 6 position switch for controlling Video Transmitter Power. See Smart Audio page (to be provided in the future)
+Allows reading up to a 6 position switch for controlling Video Transmitter Power. See :ref:`common-vtx`.
 
 .. raw:: html
 
