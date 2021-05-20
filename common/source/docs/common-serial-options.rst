@@ -393,6 +393,16 @@ External AHRS
 
    </td>
    </tr>
+    <tr>
+   <td>37</td>
+   <td>
+
+Smart Audio
+
+.. raw:: html
+
+   </td>
+   </tr>
    </tbody>
    </table>
 
