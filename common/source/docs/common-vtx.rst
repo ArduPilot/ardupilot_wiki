@@ -39,7 +39,7 @@ Video transmitter settings
 - Set :ref:`VTX_CHANNEL <VTX_CHANNEL>` to modify the VTX channel.
 - Set :ref:`VTX_FREQ <VTX_FREQ>` to modify the VTX frequency. Band/channel and frequency are mutually exclusive, if you set band and/or channel then the frequency will be automatically updated. If you set the frequency then the band/channel will be automatically updated. Not all frequencies, channels and bands are supported unless the transmitter is unlocked. Please consult local regulations before doing this. If you select an unsupported frequency then the current frequency will not be changed.
 - Set :ref:`VTX_POWER <VTX_POWER>` to modify the VTX power in mw. Not all transmitters support all power values. In particular in Europe only 25mw is allowed by default. To allow other values the transmitter must be unlocked. If you select a power level that is unsupported by the transmitter then the actual power value will not be changed.
-- Set :ref:`VTX_MAX_POWER <VTX_MAX_POWER>` to set the maximum VTX power allowed in mw. This is used by RC function 94 which allows the VTX power to be change on a switch or dial.
+- Set :ref:`VTX_MAX_POWER <VTX_MAX_POWER>` to set the maximum VTX power allowed in mw. This is used by ``RCx_OPTION`` = 94 which allows the VTX power to be changed via a switch or dial.
 - Set :ref:`VTX_OPTIONS <VTX_OPTIONS>` to set options on the VTX. The most common option is 1 which puts the VTX into pit mode if supported. Option 2 can be used to unlock the transmitter, but note this is a one-way operation than cannot be undone through software. Other options allow pit mode to be set on disarming.
 
 .. note:: "unlocking" can be done differently, depending on transmitter brand. Also, using unlocked frequencies/power levels may violate local laws and restrictions. 
@@ -50,6 +50,7 @@ Setting video transmitter settings
 Video transmitter settings can be changed in multiple ways but always go via the ``VTX_x`` parameters. So any option which advertises VTX control will be setting a ``VTX_x`` parameter which in turn will interface with the protocol backends. Here are the current ways that video transmitter settings can be modified:
 
 - Parameter modification through your ground station
+- Transmitter power via RC switch (``RCx_OPTION`` = 94).
 - Parameter modification via the OSD (See :ref:`common-paramosd`)
 - Parameter modification via CRSF OpenTX lua scripts (or OpenTX AgentX lua scripts) - CRSF only
 - Spektrum VTX support. VTX settings on your Spektrum transmitter will be translated by either the DSMX or SRXL2 drivers and the appropriate VTX settings updated
