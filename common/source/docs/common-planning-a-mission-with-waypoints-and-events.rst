@@ -156,6 +156,16 @@ the corresponding *Mission Planner* column headings.
 There is also a Copter-specific :ref:`Copter Mission Command List <copter:mission-command-list>`.
 [/site]
 
+Mission Reset
+=============
+
+One can set an ``RCx_OPTION`` switch function ("24") to reset the mission item pointer to the beginning of the mission list at any time.
+
+Mission Re-Wind
+===============
+
+The behavior of returning to a mission sequence when interrupted by a mode change is described in the :ref:`common-mission-rewind` section.
+
 How to prefetch a stored Mission Map
 ====================================
 
