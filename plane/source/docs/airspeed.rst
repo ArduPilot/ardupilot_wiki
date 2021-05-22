@@ -207,6 +207,23 @@ or loiter will achieve the required direction changes, cross-country
 flying will not. To enable automatic airspeed sensor calibration, set
 the value of :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1.
 
+Failure
+=======
+
+A failing airspeed sensor can lead to the aircraft stalling or over-speeding, this is something that is hard for ArduPilot to detect. Likewise, accidentally miss-calibrating the offset during ground initialization can occur if the pitot tube is not covered to prevent wind upsetting the calibration, and can result in wildly inaccurate readings. The parameters below can be used to help detect these conditions and warn of, and/or disable, a failed sensor.
+
+:ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>` can be used to set the maximum expected wind speed the vehicle should ever see. This is then be used
+in combination with the GPS ground speed to detect a airspeed sensor error. :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>` can be set to a lower speed to give 
+some warning to the operator before the airspeed sensor is disabled. :ref:`ARSPD_OPTIONS<ARSPD_OPTIONS>` can be set to allow sensors to be disabled
+based on this wind speed metric, a second option bit allows then to be re-enabled if the speed error is resolved.
+
+:ref:`AHRS_WIND_MAX<AHRS_WIND_MAX>` sets the maximum allowable airspeed and ground speed difference that will ever be used for navigation.
+
+By default, these functions are disabled.
+
+:ref:`EKF3 affinity and lane switching <common-ek3-affinity-lane-switching>` is another option for dealing with airspeed sensor failure.
+
+
 Using a different pin for the airspeed sensor
 =============================================
 
