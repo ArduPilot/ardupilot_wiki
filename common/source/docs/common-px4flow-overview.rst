@@ -95,8 +95,8 @@ angular angular vibration that could blur the image.
 .. note::
 
    The default mounting orientation is different to that shown on
-   the \ `ETH PX4FLOW wiki <http://pixhawk.org/modules/px4flow>`__. If you
-   mount the board as shown in the \ `ETH PX4FLOW wiki <http://pixhawk.org/modules/px4flow>`__, you will need to set
+   the \ `PX4FLOW wiki <https://docs.px4.io/master/en/sensor/px4flow.html>`__. If you
+   mount the board as shown in the \ `PX4FLOW wiki <https://docs.px4.io/master/en/sensor/px4flow.html>`__, you will need to set
    :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` to -9000.
 
 Enabling the sensor
