@@ -28,3 +28,4 @@ Please follow each of the links below.
     Setting Hover Throttle <ac_throttlemid>
     Save Trim & Auto Trim <autotrim>
     Pre-Flight Checklist <checklist>
+    Thrust Loss and Yaw Imbalance Warnings <thrust_loss_yaw_imbalance>
