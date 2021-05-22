@@ -126,14 +126,6 @@ For other  autopilots:
 
 .. note:: Most analog sensors output a signal from 0 to 5V, but most RSSI inputs are 3.3V maximum. If you will never exceed ~60% of the sensor's maximum speed output (normally ~ 200mph for 5V), you will not exceed that rating. However, if you might or just want to be absolutely safe, you can use a 2:1 resistive voltage divider on the signal before applying to the autopilot RSSI input pin.
 
-APM 2
------
-
-Plug it into the pins on the "A0" port, as shown:
-
-.. image:: ../images/analog_airspeed_sensor_to_apm2x_connection.jpg
-    :target: ../_images/analog_airspeed_sensor_to_apm2x_connection.jpg
-
 Software configuration
 ======================
 
