@@ -40,6 +40,24 @@ positioning technologies:
 
 .. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
 
+When using two GPS units there are a number of switching options that can be selected with :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>`.
+
+- 0: Use Primary
+    Always use the primary GPS, this can be either the first or second as set with :ref:`GPS_PRIMARY <GPS_PRIMARY>`
+
+- 1: Use best
+    Automatically select the best GPS, this is done based on GPS fix status (2D / 3D / rtk) if both GPSs have the same fix status the one with the larger number of satellites is used.
+
+- 2: Blend
+    Blend is best suited for use with two identical GPS units, see :ref:`GPS blending<common-gps-blending>`
+
+- 4: Use primary if 3D fix or better
+    Use primary GPS as set with :ref:`GPS_PRIMARY <GPS_PRIMARY>` if it has a 3D fix or better. This should be used when two dissimilar GPS units are used, one high quality primary unit, and a secondary less accurate unit. In this case the 
+    high quality GPS will often have a better quality fix even if it has fewer satellites. Using 'Use best' in this case would result in using the poorer quality GPS and result in more switching between GPS units. Unlike 'Use Primary' this option 
+    still allows falling back to the secondary GPS if 3D fix is lost on the primary.
+
+An additional variation with GPS switching is :ref:`EKF3 affinity and lane switching <common-ek3-affinity-lane-switching>`. An EKF lane can be setup to use either GPS and the whole EKF lane is then switched based on its health. If the :ref:`GPS_PRIMARY <GPS_PRIMARY>` is used for a lane, and :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` is enabled, then the lane will use GPS info as determined by the :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` setting.
+
 Advanced Uses
 =============
 
