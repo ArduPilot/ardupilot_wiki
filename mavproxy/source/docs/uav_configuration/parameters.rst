@@ -2,7 +2,7 @@
 Parameters
 ==========
 
-Parameters refer to the settings and configuration of the APM. The
+Parameters refer to the settings and configuration of the autopilot. The
 following commands can be used to view and change the parameters:
 
 Any specific parameter can be tab-completed. Otherwise, a list of
@@ -11,7 +11,7 @@ possible parameters is shown.
 param show
 ==========
 
-View all current parameters on the APM.
+View all current parameters on the autopilot.
 
 param set
 =========
@@ -25,7 +25,7 @@ Change a specified parameter to a particular value.
 param save
 ==========
 
-Save all current parameters on the APM to file.
+Save all current parameters on the autopilot to file.
 
 .. code:: bash
 
@@ -34,7 +34,7 @@ Save all current parameters on the APM to file.
 param load
 ==========
 
-Load parameters from file to the APM. Only the parameters in the file
+Load parameters from file to the autopilot. Only the parameters in the file
 will be overwritten.
 
 .. code:: bash
@@ -45,7 +45,7 @@ param diff
 ==========
 
 View the differences between the parameters in a file and what is
-currently on the APM.
+currently on the autopilot.
 
 .. code:: bash
 
