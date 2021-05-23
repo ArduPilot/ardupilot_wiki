@@ -4,34 +4,11 @@
 Configuration and Setup
 =======================
 
-The vehicle steering output channel should be set to ``SERVOx_FUNCTION`` = 26 – Ground steering. The sail
-output channel should be set to ``SERVOx_FUNCTION`` = 89 - Main Sail. 
-
-All sailing parameters can be found by searching for the prefix  :ref:`SAIL <SAIL_ANGLE_MIN>`, the
+All sailing parameters can be found by searching for the prefix  :ref:`SAIL <SAIL_ENABLE>`, the
 sailing code relies heavily on getting correct information on the wind direction and strength from
 the :ref:`wind vane <wind-vane>`.
 
-Setting up sail range
----------------------
-This can be tested by arming in manual mode; the throttle will directly control the sail position.
-Throttle stick down (towards you) should result in the sail being sheeted in towards the centre line.
-If the sail is sheeted out the servo should be reversed. The servo min and max parameters can then be
-used to set up the range of travel. The min and max values should be set such that the boom is brought
-in towards the centre line of the boat but not pulled down tightly. The boom should be able to be let
-out until it reaches the shrouds; if no shrouds are fitted the boom shouldn’t go too far past 90 degrees
-to the boat centre line. 
-
-The sail angle :ref:`min <SAIL_ANGLE_MIN>` and :ref:`max <SAIL_ANGLE_MAX>` parameters should be set
-to the angle to boom is to the centre line at each extreme of its travel. This allows the angle of the
-boom to be calculated at any point between. 
-
-The :ref:`ideal sail angle to the wind <SAIL_ANGLE_IDEAL>` should then be set. This defines the angle
-between the boom and the wind direction as reported by the wind vane. An angle of zero here would result
-in the boom staying parallel to the wind vane. The boom will keep this angle to the wind until it reaches
-either its minimum or maximum limit. If the sails are too loose this number should be increased. This can
-be tested in ACRO mode. 
-
-Other usefull parameters
+Other useful parameters
 ------------------------
 :ref:`SAIL_NO_GO_ANGLE <SAIL_NO_GO_ANGLE>` defines the no go zone into witch the sailing vehicle cannot
 travel. In auto heading modes the vehicle will tack at this angle into the true wind If the desired heading
