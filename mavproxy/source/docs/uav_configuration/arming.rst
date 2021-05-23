@@ -7,7 +7,7 @@ The UAV can be remotely armed and disarmed.
 Arming
 ======
 
-The APM can be armed by:
+The autopilot can be armed by:
 
 .. code:: bash
 
@@ -16,7 +16,7 @@ The APM can be armed by:
 Disarming
 =========
 
-The APM can be disarmed by:
+The autopilot can be disarmed by:
 
 .. code:: bash
 
