@@ -76,7 +76,7 @@ provide the same level of precise camera positioning.
 
 For longer missions and more payload, a fixed-wing is your best
 choice. But for keeping a camera in one place or moving slowly, consider 
-switching to a copter instead. The same APM autopilot can control that 
+switching to a copter instead. The same autopilot can control that 
 equally well by simply loading the :ref:`Copter <copter:home>` code.
 
 
