@@ -34,12 +34,12 @@ manoeuvres that would normally be too likely to end in a crash, trusting
 the APM to 'bounce' the plane off the geo-fence before the flight ends
 in disaster.
 
-Geo-fencing can be combined with any APM flight mode. So for a raw
+Geo-fencing can be combined with any flight mode. So for a raw
 beginner, you would combine it with one of the stabilised flight modes
 (such as STABILIZE or FBWA). Once the pilot has gained some confidence
 you could combine it with MANUAL mode, which gives direct control of the
 plane and allows for the most interesting aerobatic manoeuvres. When
-used in this way the APM stays out of your way completely, just passing
+used in this way the autopilot stays out of your way completely, just passing
 the controls to the servos directly, and only takes control if you go
 outside the fenced area or outside the defined altitude range.
 
@@ -80,7 +80,7 @@ To setup geo-fencing in Plane you need to configure several things:
    automatically disable after an autonomous landing
 #. how you want to take back control after a fence breach
 
-These can all be setup using the APM Mission Planner.
+These can all be setup using Mission Planner.
 
 There are a few rules that you must follow when setting up your fence
 boundary:
@@ -161,7 +161,7 @@ mode and fly back to the return point (or the nearest Rally Point, if
 boundary you are able to take control again, and you need to tell the
 APM that you want to take control. You can do that in one of 3 ways:
 
-#. changing modes using the APM mode switch on your transmitter, or
+#. changing modes using the mode switch on your transmitter, or
    changing modes via the Mission Planner GCS (e.g., change from GUIDED
    mode to AUTO mode).
 #. disabling and re-enabling geo-fencing using the rc
@@ -264,7 +264,7 @@ are getting ready to have another go.
 Stick-mixing on fence breach
 ============================
 
-The APM enables 'stick mixing' by default when in auto modes. This means
+ArduPilot enables 'stick mixing' by default when in auto modes. This means
 that you can change the path of a loiter, for example, by using your
 transmitter sticks.
 
@@ -341,7 +341,7 @@ using the spring loaded trainer switch.
 MAVLink support
 ===============
 
-The APM will report the fence status via the MAVLink GCS protocol. The
+ArduPilot will report the fence status via the MAVLink GCS protocol. The
 key status packet is called FENCE_STATUS, and is defined in
 "ardpilotmega.xml". A typical FENCE_STATUSpacket looks like this:
 
