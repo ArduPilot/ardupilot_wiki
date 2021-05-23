@@ -155,6 +155,16 @@ DodecaHexacopter
 
 .. _connect-escs-and-motors_attach_propellers:
 
+Custom Frames
+-------------
+
+It is possible to configure custom frame types using up-to 12 motors using :ref:`lua scripting<common-lua-scripts>`. The roll, pitch and yaw factors for each motor must be calculated and loaded from a script.
+This is enabled by setting :ref:`FRAME_CLASS <copter:FRAME_CLASS>` to 15 - Scripting Matrix. See: `plus quad example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_setup.lua>`__ 
+and `fault tolerant hex example <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/MotorMatrix_fault_tolerant_hex.lua>`__.
+
+.. note::
+    Not all flight controllers support scripting see: :ref:`firmware limitations <common-limited_firmware>`.
+
 Recognizing clockwise and counterclockwise propellers
 -----------------------------------------------------
 
