@@ -41,4 +41,6 @@ Canberra Team in Australia.
     Internal Rotor Speed Governor <traditional-helicopter-internal-rsc-governor>
     ArduPilot Helicopter Ground School <traditional-helicopter-configuration>
     Pre-Flight Testing <trad-heli-preflight-testing>
+    First Flight Tests <traditional-helicopter-first-flight-tests>
     Tuning <traditional-helicopter-tuning>
+    Tips <traditional-helicopter-tips>
