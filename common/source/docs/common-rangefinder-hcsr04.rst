@@ -4,8 +4,8 @@
 HC-SR04 Sonar Rangefinder
 =========================
 
-The HC-SR04 Sonar is a very inexpensive, short range (up to 2m) range finder primarily designed for
-indoor use but which has been successfully used outdoors on Copter. It does provide more consistent height control below 2m than many barometers.
+The HC-SR04 sonar is an inexpensive but short range (only up to 2m) range finder primarily designed for
+indoor use but which has been successfully used outdoors on Copter. The very short range makes it of limited use.
 
 
 .. image:: ../../../images/hcsr04.jpg
