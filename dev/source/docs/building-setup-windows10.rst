@@ -38,15 +38,15 @@ WSL Setup Steps
 
 #. Install an XWindows application to run graphical programs such as SITL by installing `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`_, `Cygwin X <https://x.cygwin.com/>`_ or `Xming <https://sourceforge.net/projects/xming/>`_ on Windows.
 
-#. Open the "Ubuntu" application and add the following to the end of ``~/.bashrc``. Be sure to comment and uncomment the appropriate lines depending on if you are using WSL1 or WSL2 (if in doubt, WSL2 is the default)
+#. Open the "Ubuntu" application and add the following to the end of ``~/.bashrc``. Be sure to comment and uncomment the appropriate lines depending on if you are using WSL1 or WSL2 (if in doubt, WSL1 is the default)
 
     .. code-block:: bash
 
         # Export Display for XWindows
-        # For WSL2
-        export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0
         # For WLS1
-        # export DISPLAY=0:0
+        export DISPLAY=0:0
+        # For WSL2
+        # export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0
 
 #. If desired, change default WSL parameters as described `at this link <https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig>`_. These parameters allow you to set for example the amount of memory and number of processors used by WSL.
 
