@@ -25,6 +25,7 @@ Key to the dynamic notch filter operation is control of its center frequency. Th
 #. :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 2. RPM sensor based, where an external :ref:`RPM sensor <common-rpm>` is used to determine the motor frequency and hence primary vibration source's frequency for the notch. Often used in Traditional Helicopters using the ArduPilot Head Speed Governor feature.
 #. :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 3. ESC Telemetry based, where the ESC provides motor RPM information which is used to set the center frequency.
 #. :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 4. In-Flight FFT, where a running FFT is done in flight to determine the primary noise frequency and adjust the notch's center frequency to match. This probably the best mode if the autopilot is capable of running this feature. Currently, this is restricted to 2MB flash memory autopilots.
+
 -----
 Setup
 -----
