@@ -199,6 +199,8 @@ prior to power on and removed before flight. If you forget to do this,
 you can always place the cover and repeat the airspeed auto-zero using
 the Mission Planner's PREFLIGHT CALIBRATE => Do Action.
 
+.. note:: the ``DLVR`` type airspeed sensors do not require calibration at initialization and allow :ref:`ARSPD_SKIP_CAL<ARSPD_SKIP_CAL>` to be set to "1", avoiding the need to cover the pitot during initialization.
+
 The airspeed reading scale factor is adjusted using the :ref:`ARSPD_RATIO<ARSPD_RATIO>`
 parameter. Plane has an automatic calibration function that will adjust
 the value of :ref:`ARSPD_RATIO<ARSPD_RATIO>` automatically provided the plane is flown with
