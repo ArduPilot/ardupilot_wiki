@@ -9,6 +9,14 @@ Glossary
    The glossary is not indexed. It is in alphabetical order so just
    scroll down to find the topic of interest.
 
+.. note::
+
+   A `set of flashcards <https://www.darigovresearch.com/ardupilot-glossary-flashcards>`_
+   based on this glossary has been put into a form which can be easily
+   learnt/revised using `Anki <https://apps.ankiweb.net/>`__
+   an open source, cross platform app specifically designed for long term 
+   knowledge retention. 
+
 **2.4 Ghz**: The frequency used by digital (spread spectrum) radio
 communications in our applications, including 2.4Ghz RC, Bluetooth and
 some video transmission equipment. This is a different band than the
