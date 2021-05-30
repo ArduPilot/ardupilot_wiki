@@ -12,7 +12,7 @@ I2C port or, in 4.0 and later versions, if a serially programmed device, via an 
 RGB LEDs/Displays with I2C Connection
 =====================================
 
-Two types of I2C devices are supported: IC2 connected RGB LEDS using an LED driver chip and OLED displays.
+Two types of I2C devices are supported: I2C connected RGB LEDS using an LED driver chip and OLED displays.
 
 RGB LEDs/drivers supported are:
 
