@@ -139,7 +139,7 @@ Setting Collective Pitch Range and Zero Thrust Point
 
 Use the servo manual setting (:ref:`H_SV_MAN <H_SV_MAN>` ) to move the swashplate between min, mid and max positions.
 At each position use the blade pitch gauge to set the desired blade pitch.  A typical collective 
-blade pitch range is -2° to +10°.  
+blade pitch range is -2° to +10°. Fully aerobatic setups would use -12° to +12°. For initial tests, the less wide range is recommended.
 
 Set :ref:`H_SV_MAN <H_SV_MAN>` to 2 to have swashplate move to maximum position.  Adjust :ref:`H_COL_MAX <H_COL_MAX>` until blade pitch 
 angle mesures the desired maximum collective blade pitch.  
@@ -152,12 +152,48 @@ collective pitch limit for modes that use altitude hold in the vertical axis.  T
 from driving collective to low resulting in ground resonance. The :ref:`H_COL_MID <H_COL_MID>` parameter is set to zero 
 degree collective blade pitch or, if you have non-symmetrical blades, then set it to the blade pitch 
 that produces zero thrust. In Copter 3.6 and ealier, the minimum collective pitch that the autopilot 
-could command was done with the parameter ``H_COL_LAND_MIN``. 
+could command was done with the parameter ``H_COL_LAND_MIN``.
 
 Set :ref:`H_SV_MAN <H_SV_MAN>` to 3 to have the swashplate move to the mid position.  Adjust :ref:`H_COL_MID <H_COL_MID>` until the blade
-pitch angle measures the desired collective blade pitch that corresponds to zero thrust.  
+pitch angle measures the desired collective blade pitch that corresponds to zero thrust.
+
+.. note:: Overall collective measurements must be made using the :ref:`H_SV_MAN <H_SV_MAN>` parameter since these would be impacted and inaccurate if the autopilot stabilization was active.
+
+STABILIZED Collective Curve
+===========================
+
+ArduPilot provides a programmable curve for STABILIZE mode to allow "softening" of the curve to provide smoother pilot control. This curve is set by the ``IM_STB_COL_x`` parameters as shown in the graph below. All other modes use the collective extremes and straight line curve that were setup above.
+
+.. image:: ../images/collective_curves.png
+   :target: ../_images/collective_curves.png
+
+By default, these settings mirror the full straight line curve, and are satisfactory if the -2° to +10° range is setup. This will give the following values:
+
+==============      =====
+Throttle Stick      Pitch
+==============      =====
+Low                 -2
+Center              +4 (close to hover)
+High                +10
+==============      =====
 
 
+However, if the extremes were setup for full aerobatic, the defaults for ``IM_STB_COL_x`` would yield:
+
+==============      =====
+Throttle Stick      Pitch
+==============      =====
+Low                 -12
+Center              +0
+High                +12
+==============      =====
+
+which may be sensitive for some pilots. Therefore, it is recommended to change the values from default to something like in this case:
+
+- :ref:`IM_STB_COL_1<IM_STB_COL_1>` = 42
+- :ref:`IM_STB_COL_2<IM_STB_COL_2>` = 62
+- :ref:`IM_STB_COL_3<IM_STB_COL_3>` = 80
+- :ref:`IM_STB_COL_4<IM_STB_COL_4>` = 92
 
 Setting Maximum Cyclic Pitch
 ============================
