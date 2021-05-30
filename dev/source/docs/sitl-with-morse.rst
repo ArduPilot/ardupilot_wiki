@@ -34,8 +34,8 @@ As mentioned above, Morse relies on the Blender Game Engine for rendering the si
 .. note::
 
   Blender **v2.74** - **v2.79** are also valid versions, as these versions also provide access to a stable Blender Game Engine. The below image shows Ardupilot's quadcopter Morse simulation running with Blender 2.76. 
-.. image:: ../images/morse-with-blender.png
-    :target: ../_images/morse-with-blender.png
+.. image:: ../images/morse-with-blender.jpg
+    :target: ../_images/morse-with-blender.jpg
 
 
 
