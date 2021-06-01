@@ -25,6 +25,7 @@ Setup
 
 .. figure:: ../../../images/serial-passthrough-gps-baud.png
    :target: ../_images/serial-passthrough-gps-baud.png
+   :width: 300px
 
 - The default for :ref:`SERIAL_PASS1<SERIAL_PASS1>` (the first serial port to be interconnected) defaults to SERIAL0, the primary USB port.
 - Set :ref:`SERIAL_PASSTIMO <SERIAL_PASSTIMO>` to a length of time (in seconds) that gives you enough time to connect with the sensor's configuration software.  30 to 60 seconds is a good choice
