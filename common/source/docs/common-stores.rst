@@ -32,6 +32,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `mRobotics <http://mrobotics.io/>`__
 * `PDRL AeroFC <https://pdrl.in/aerofc-autopilot/>`__
 * `ProfiCNC <http://www.proficnc.com/stores>`__
+* `Qiotek <http://www.qio-tek.com/>`__
 * `RF Design <http://store.rfdesign.com.au/>`__
 * `Rotoye <https://rotoye.com/>`__ (Smart Batteries)
 * `Sky-Drones <https://sky-drones.com/store>`__
