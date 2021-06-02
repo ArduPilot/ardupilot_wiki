@@ -21,7 +21,7 @@ Setup
 .. note::  On most F7 and H7 boards, a second USB virtual serial port also appears when you connect via USB to the autopilot and is assigned the last SERIALx port in ArduPilot for SLCAN use. This can also be used for serial device configuration by changing :ref:`SERIAL_PASS1<SERIAL_PASS1>` to that port's number. This allows the autopilot to remain connected to a Ground Control Station, and still use passthrough to a sensor for configuration simultaneously on the PC via its configuration program.
 
 - Disable the sensor driver's use of the serial port by setting ``SERIALx_PROTOCOL`` to -1 ("None").
-- Be sure to set each port's baud rate appropriately using the ``SERIALx_BAUD`` parameters. The rates may be different for each port. ArduPilot will do the buffering.  For example, if attempting passthrough to the first GPS, :ref:`SERIAL3_BAUD <SERIAL3_BAUD>` should normally be set to 230400 but you may check the GPS driver's "autobauding" by looking at the ground stations Message window soon after starup.
+- Be sure to set each port's baud rate appropriately using the ``SERIALx_BAUD`` parameters. The rates may be different for each port. ArduPilot will do the buffering.  For example, if attempting passthrough to the first GPS, :ref:`SERIAL3_BAUD <SERIAL3_BAUD>` should normally be set to 230400 but you may check the GPS driver's "autobauding" by looking at the ground stations Message window soon after startup.
 
 .. figure:: ../../../images/serial-passthrough-gps-baud.png
    :target: ../_images/serial-passthrough-gps-baud.png
