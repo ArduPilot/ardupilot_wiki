@@ -17,6 +17,7 @@ minimal use of the motor (soaring). Its full technical description is available 
 
 *S. Tabor, I. Guilliard, A. Kolobov.* `ArduSoar: an Open-Source Thermalling Controller for Resource-Constrained Autopilots <https://arxiv.org/abs/1802.08215/>`_. *International Conference on Intelligent Robots and Systems (IROS), 2018.*
 
+.. note:: Use of an airspeed sensor is strongly recommended in order to obtain optimum performance. Use without a sensor could yield unsatisfactory results. Consistent operation without an airspeed sensor is a pending future development.
 
 .. image:: ../../../images/thermalling.jpg
 
