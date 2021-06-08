@@ -139,7 +139,7 @@ Now vehicle can be flown again to start trimming P and D. Starting with D and P 
 Roll to Pitch Compensation
 ==========================
 
-Another tuning parameter is P:ref:`PTCH2SRV_RLL<PTCH2SRV_RLL>` which compenstates pitch in turns to avoid altitude loss due to loss of lift caused by the roll. To set this:
+Another tuning parameter is :ref:`PTCH2SRV_RLL<PTCH2SRV_RLL>` which compenstates pitch in turns to avoid altitude loss due to loss of lift caused by the roll. To set this:
 
 Roll the model to maximum bank in each direction. The nose should
 stay fairly level during the turns without significant gain or loss
