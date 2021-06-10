@@ -10,6 +10,14 @@ as you can point the plane at a distant object and it will accurately
 track to that object, automatically controlling altitude, airspeed and
 heading.
 
+.. warning::
+
+   CRUISE mode is not suitable for flight close to the ground. The
+   time constants for height control in CRUISE mode are the ones from
+   TECS, which are quite slow. When you are close to the ground CRUISE
+   mode does not give you the agility needed in pitch control to avoid
+   hitting the ground.
+
 The way it works is this:
 
 -  if you have any aileron or rudder input then it flies just like
@@ -38,7 +46,8 @@ feature you want to head towards. Then when you let go of the rudder it
 will head straight for that point.
 
 Note that you can configure CRUISE mode to do terrain following on
-PX4/Pixhawk. See the :ref:`terrain following documentation <common-terrain-following>`.
+flight controllers with microSD storage available. See the
+:ref:`terrain following documentation <common-terrain-following>`.
 
 .. warning::
 
