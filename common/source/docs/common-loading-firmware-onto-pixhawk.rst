@@ -61,6 +61,8 @@ Done".  The firmware has been successfully uploaded to the board.
 
 It usually takes a few seconds for the bootloader to exit and enter the main code after programming or a power-up. Wait to press CONNECT until this occurs.
 
+.. note:: Updating the firmware to a newer version does not alter existing parameters unless the firmware is for a different vehicle, in which case parameters are reset to their default values for that vehicle. However, it is always a good idea to save your parameters to a file using the "Save to File" button on the Mission Planner's **CONFIG/Full Parameter Tree** tab before any firmware updates, just in case of any issues while updating.
+
 Using Beta and Developer Versions
 =================================
 
