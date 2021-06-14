@@ -18,4 +18,4 @@ a full set of features see the :doc:`full parameter list <parameters>` and the `
     Stall Prevention <stall-prevention>
     Geo-Fencing in Plane <common-geofencing-landing-page>
     Terrain Following <common-terrain-following>
-    Soaring <soaring>
+    Soaring <soaring-4_1>
