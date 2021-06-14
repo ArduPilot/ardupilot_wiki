@@ -313,6 +313,12 @@ COPTER / QUADPLANE FUNCTIONS
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Tilt Motor Right          | 76 |    Copter, QuadPlane                                            |
 +--------------------------------+----+-----------------------------------------------------------------+
+|      Tilt Motor Rear           | 45 |    QuadPlane                                                    |
++--------------------------------+----+-----------------------------------------------------------------+
+|      Tilt Motor Rear Left      | 46 |    QuadPlane                                                    |
++--------------------------------+----+-----------------------------------------------------------------+
+|      Tilt Motor Rear Right     | 47 |    QuadPlane                                                    |
++--------------------------------+----+-----------------------------------------------------------------+
 |      Boost Engine Throttle     | 81 |    Copter, QuadPlane                                            |
 +--------------------------------+----+-----------------------------------------------------------------+
 |      Motor Enable Switch       | 30 |    Copter, QuadPlane                                            |
@@ -350,8 +356,8 @@ Throttle Left/ Right
 In Plane, these outputs are for differential thrust in twin engine aircraft and the amount of yaw affecting the base throttle value is determined by :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>`. Also, in Plane's vectored Tailsitters, these are the motor outputs. In Rover, these outputs are for control of the steering motors in :ref:`Skid-Steering Rovers <rover-motor-and-servo-configuration-skid>`. In Copter, theses outputs are used for the Bicopter motors.
 
 
-Motor Tilt/ Tilt Motor Left/ Tilt Motor Right
-+++++++++++++++++++++++++++++++++++++++++++++
+Tilt Motor/ Tilt Motor Left/ Tilt Motor Right/ Tilt Motor Rear/ Tilt Motor Rear Left/ Tilt Motor Rear Right
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 These outputs control the tilt servos for :ref:`guide-tilt-rotor` in Plane and Bicopters in Copter.
 
