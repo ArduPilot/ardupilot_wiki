@@ -7,34 +7,6 @@ Future Wiki Changes (in Master branch now)
 PLANE
 =====
 
-On Quadplane Flying Page:
--------------------------
-
-
-Under the Hybrid RTL section:
-
-change this sentence: "To enable this type of hybrid RTL mode you need to set the :ref:`Q_RTL_MODE<Q_RTL_MODE>` parameter to 1." to "To enable this type of hybrid RTL mode you need to set the :ref:`Q_RTL_MODE<Q_RTL_MODE>` parameter to 1 or 2." and add a trailing subheader: Q_RTL_MODE=1. Then at the end of the section, add a subhead: Q_RTL_MODE=2 and this - "Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 2 resuls in behaviour similar to above, but with the vehicle returning like normal fixed wing RTL until it reaches :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>`, then loitering in fixed wing mode to :ref:`Q_RTL_ALT<Q_RTL_ALT>` altitude, and then exiting facing the wind and executing a QRTL to the home position. Be sure the loiter portion is set up to clear any obstacles."
-
-Add section:
-
-Manual Forward Throttle in VTOL Modes
-=====================================
-
-By setting an RC channel option (``RCx_OPTION``) to "209", that channel can provide a separate throttle input to the forward motor(s) in QSTABILIZE, QACRO, and QHOVER VTOL modes. This allows forward movement without having to tilt the QuadPlane forward requiring throttle stick repositioning in QSTABILIZE and QACRO to maintain altitude, and present more forward flat plate resistance to forward movement in all modes.
-
-On QuadPlane Parameters page:
------------------------------
-
--add to Q_OPTIONS description:
-
--  bit 6, if set, will enforce the ICE idle governor even in MANUAL mode.
--  bit 7, if set, will force QASSIST to be active at all times in VTOL modes. See :ref:`Assisted Fixed-Wing Flight<assisted_fixed_wing_flight>`.
--  bit 8, if set, QASSIST will only affect VTOL motors. If not set, QAssist will also use flying surfaces to stabilize(:ref:`Assisted Fixed-Wing Flight<assisted_fixed_wing_flight>` ).
--  bit 9, if set, will enable AirMode (:ref:`airmode`) if armed via an RC switch. See :ref:`Auxiliary Functions<common-auxiliary-functions>` option value 41.
--  bit 10, if set, will allow the tilt servos to move with rudder input in vectored tilt setups while disarmed to determine range of motion.
--  bit 11, if set, will delay VTOL motor spin up until 2 seconds after arming.
--  bit 12, if set, disable speed based Qassist when using synthetic airspeed
--  bit 13, if set, will disable Ground Effect Compensation
 
 On QHOVER mode page:
 --------------------
