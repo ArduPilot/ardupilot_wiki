@@ -4,20 +4,6 @@
 Future Wiki Changes (in Master branch now)
 ==========================================
 
-
-Output Mapping Page under QuadPlane Functions
----------------------------------------------
-
-+--------------------------------+----+-----------------------------------------------------------------+
-|      Tilt Motor Rear           | 45 |    QuadPlane                                                    |
-+--------------------------------+----+-----------------------------------------------------------------+
-|      Tilt Motor Rear Left      | 46 |    QuadPlane                                                    |
-+--------------------------------+----+-----------------------------------------------------------------+
-|      Tilt Motor Rear Right     | 47 |    QuadPlane                                                    |
-+--------------------------------+----+-----------------------------------------------------------------+
-
-- change title of explanations from "Motor Tilt/ Tilt Motor Left/ Tilt Motor Right" to "Tilt Motor/ Tilt Motor Left/ Tilt Motor Right/ Tilt Motor Rear/ Tilt Motor Rear Left/ Tilt Motor Rear Right"
-
 PLANE
 =====
 
