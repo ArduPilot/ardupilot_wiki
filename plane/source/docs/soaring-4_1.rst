@@ -1,4 +1,4 @@
-.. _soaring-upcoming:
+.. _soaring-4_1:
 
 .. note::
 
@@ -228,3 +228,10 @@ Use of TECS synthetic airspeed
 
 If your plane can't accommodate an airspeed sensor, it is possible to use the TECS synthetic airspeed estimate :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>`.
 Make sure you read the warning regarding this feature before deciding to use it. To use this feature, set the parameter :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>` to 1.
+
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Soaring (version prior to 4.1) <soaring>

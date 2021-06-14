@@ -2,7 +2,7 @@
 
 .. note::
 
-  Refer to :ref:`this page <soaring>` if you're using version 4.0.
+  Refer to :ref:`this page <soaring-4_1>` if you're using version 4.1.
 
 =======
 Soaring
