@@ -8,12 +8,11 @@ TeraBee TOF RangeFinders
 .. image:: ../../../images/terabee-evo.jpg
 
 
-The TeraBee EVO family of rangefinders are 
-lightweight, high-performance distance measurement sensors based on
-infrared Time-of-Flight (TOF) technology. They are much faster than
-ultrasound and far smaller and lighter than laser-based systems. Their
-small size, high performance and low power consumption make it ideal for
-modern robotic applications, drone operations and automation.
+The TeraBee EVO family of rangefinders are lightweight distance measurement sensors based on infrared Time-of-Flight (TOF) technology. They are much faster than ultrasound and smaller, lighter and require less power than laser-based lidar but also have a shorter outdoor range.
+
+.. note::
+
+    Feedback from users and developers indicates the manufacturer's range estimates are probably based on indoor use.  If used outdoors (especially with bright sunlight) the actual range is much shorter.  For example the Evo 60's reliable outdoor range may be less than 10m.
 
 More technical information about these senors can be found below:
 
