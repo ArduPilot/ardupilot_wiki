@@ -62,7 +62,7 @@ modes is if you have the :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter set to a non
 value. In that case the forward motor will be used to hold the
 aircraft position in a wind. See the description of :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>`.
 
-.. warning:: During transitions from VTOL to fixed wing mode, all motors can be running at very high levels. Battery sag below minimum levels (3.0V/cell for LiPo batteries) and resulting battery damage is possible. Extreme cases may even result in a crash due to VTOL motor output being too low. This is especially true when using high capacity, low C rating flight batteries common for long duration setups. This can be managed somewhat with manual throttle control when manually transitioning, but in AUTO mode, a VTOL to fixed wing transition is currently done with :ref:`THR_MAX<THR_MAX>`  on the forward motor until transition is complete, so very high currents can be experienced. Whether or not this will be an issue can be determined by examining the battery voltage during a manually initiated transition from the flight log. If too much voltage sag is seen, the best solutions are to use a higher C rating flight battery, or use separate batteries for forward motors and the VTOL motors, or to use :ref:`BATT_WATT_MAX<BATT_WATT_MAX>` and other parameters to limit excessive current draw during transitions. (See :ref:`Limiting Excessive Battery Power Draw <batt-watt-max>` )
+.. warning:: During transitions from VTOL to fixed wing mode, all motors can be running at very high levels. Battery sag below minimum levels (3.0V/cell for LiPo batteries) and resulting battery damage is possible. Extreme cases may even result in a crash due to VTOL motor output being too low. This is especially true when using high capacity, low C rating flight batteries common for long duration setups. This can be managed somewhat with manual throttle control when manually transitioning, but in AUTO mode, a VTOL to fixed wing transition is currently done with :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` on the forward motor until transition is complete, so very high currents can be experienced. Whether or not this will be an issue can be determined by examining the battery voltage during a manually initiated transition from the flight log. If too much voltage sag is seen, the best solutions are to use a higher C rating flight battery, or use separate batteries for forward motors and the VTOL motors, or to use :ref:`BATT_WATT_MAX<BATT_WATT_MAX>` and other parameters to limit excessive current draw during transitions. (See :ref:`Limiting Excessive Battery Power Draw <batt-watt-max>` )
 
 Tailsitter Transitions
 ----------------------
@@ -82,8 +82,7 @@ Assisted Fixed-Wing Flight
 ==========================
 
 The QuadPlane code can also be configured to provide assistance to the
-fixed wing code in any flight mode except :ref:`MANUAL <manual-mode>` or :ref:`ACRO <acro-mode>`. To enable quad assistance you should set :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` parameter to the
-airspeed below which you want assistance.
+fixed wing code in any flight mode except :ref:`MANUAL <manual-mode>` or :ref:`ACRO <acro-mode>`. VTOL motor assistance is enabled if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>` , or :ref:`Q_ASSIST_ANGLE<Q_ASSIST_ANGLE>` are non-zero.
 
 When :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` is non-zero then the quad motors will assist with
 both stability and lift whenever the airspeed drops below that
@@ -103,10 +102,17 @@ From the 3.7.0 release an additional assistance type is available
 based on attitude error. If :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` is
 non-zero then this parameter gives an attitude error in degrees above
 which assistance will be enabled even if the airspeed is above
-:ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`. The attitude assistance will only be used if
-:ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` greater than zero.
+:ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`. 
 
 And as of Plane-4.0 and later, a third trigger to provide assistance is :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>` . This is the altitude below which QuadPlane assistance will be triggered. This acts the same way as :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` and :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, but triggers if the aircraft drops below the given altitude while the VTOL motors are not running. A value of zero disables this feature. The altutude is calculated as being above ground level. The height above ground is given from a Lidar used if available and :ref:`RNGFND_LANDING<RNGFND_LANDING>` =1 or from terrain data if :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` =1, or comes from height above home otherwise.
+
+Assistance will be activated :ref:`Q_ASSIST_DELAY<Q_ASSIST_DELAY>` after any of the above enabling thresholds are reached.
+
+Assistance can also be enabled, disabled, or forced by setting an RC switch to ``RCx_OPTION`` = 82. If that channel is below  1200us (LOW), then assistance is unconditionally disabled, if above 1800us, (HIGH) then assistance is always enabled. For other RC values, assistance will be enabled as explained above.
+
+Assistance can also be forced active all the time by setting :ref:`Q_OPTIONS<Q_OPTIONS>` bit 7 to "1". For Tailsitters, assistance for tailsitters can be limited only to VTOL motors by by setting :ref:`Q_OPTIONS<Q_OPTIONS>` bit 8 to "1". This can increase stabiity during assistance by not using the copter style pid gains on the flying surfaces as well as the VTOL motors, or for use with copter tailsitters without servo controlled flying surfaces.
+
+.. note:: Assistance is available for all QuadPlane frame types except the single motor and non-tilt dual motor tailsitter frames.
 
 What assistance the quad motors provides depends on the fixed wing
 flight mode. If you are flying in an autonomous or semi-autonomous
@@ -201,11 +207,14 @@ Hybrid RTL
 The final option for RTL in a QuadPlane is to fly as a fixed wing
 aircraft until it is close to the return point at which time it
 switches to a VTOL RTL as described above. To enable this type of
-hybrid RTL mode you need to set the :ref:`Q_RTL_MODE <Q_RTL_MODE>` parameter to 1.
+hybrid RTL mode you need to set the :ref:`Q_RTL_MODE <Q_RTL_MODE>` parameter to 1, 2, or 3.
+
+:ref:`Q_RTL_MODE <Q_RTL_MODE>` = 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The initial altitude that will be aimed for in the fixed wing portion
 of the hybrid RTL is the same as for a fixed wing RTL. You should set
-your rally point altitude and ALT\_HOLD_RTL options appropriately to
+your rally point altitude and :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` parameters appropriately to
 ensure that the aircraft arrives at a reasonable altitude for a
 vertical landing. A landing approach altitude of about 15 meters is
 good for many QuadPlanes. This should be greater than or equal to the
@@ -220,6 +229,30 @@ for an altitude set by :ref:`Q_RTL_ALT <Q_RTL_ALT>`.
 Once the return point is reached the aircraft begins to descend and
 land, exactly as described in the VTOL RTL mode above.
 
+:ref:`Q_RTL_MODE <Q_RTL_MODE>` = 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 2 results in behavior similar to above, but with the vehicle returning like normal fixed wing RTL until it reaches :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>`, then loitering in fixed wing mode down to :ref:`Q_RTL_ALT<Q_RTL_ALT>` altitude, and then exiting facing the wind and executing a QRTL to the home position. Be sure the loiter portion is set up to clear any obstacles.
+
+:ref:`Q_RTL_MODE <Q_RTL_MODE>` = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 3 results in behavior similar to above, but with the vehicle returning like normal fixed wing RTL until it reaches a point about 5X the :ref:`RTL_RADIUS<RTL_RADIUS>`
+distance, then starting a descent towards :ref:`Q_RTL_ALT<Q_RTL_ALT>`. As it approaches the landing position, ArduPilot starts an "airbraking" phase to slow the vehicle and once slowed enters full VTOL mode and proceeds to execute a QRTL. This behavior is also used by default for the QRTL mode unless :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to prevent the Hybrid operation above. In effect, this enables the QRTL mode for any RTL actuation: failsafe actions, mode change to QRTL, completion of a mission (unless the last mission item prevents RTL).
+
+.. note:: This mode is used by default in all mission VTOL_LANDINGs unless the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to disable it. This allows the item to be used without needing to setting up approach waypoints to reduce alitutde and get close enough to proceed in VTOL mode toward the landing point. If disabled by bit 16, the vehicle will instantly transition to VTOL mode upon that mission items execution, and navigate to its landing point before doing a QLAND. This means that you should be very close to the landing site if the FW approach mode is disabled in a mission since it will proceed in VTOL flight to the land point.
+
+Manual Forward Throttle in VTOL Modes
+=====================================
+
+By setting an RC channel option (``RCx_OPTION``) to "209", that channel can provide a separate throttle input to the forward motor(s) in QSTABILIZE, QACRO, and QHOVER VTOL modes. This allows forward movement without having to tilt the QuadPlane forward requiring throttle stick repositioning in QSTABILIZE and QACRO to maintain altitude, and present more forward flat plate resistance to forward movement in all modes.
+
+Radio or Throttle Failsafe
+==========================
+
+If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter settings (see Plane Failsafe Function). Quadplanes can be set such that instead of normal plane behviour on Failsafe induced RTLs, to transistion to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1. If :ref:`Q_RTL_MODE<Q_RTL_MODE>` =2, then a fixed wing approach followed by a loiter to alt and QRTL will be executed, similar to that described in the "AUTO VTOL Landing" section of :ref:`quadplane-auto-mode`.
+
+If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bit 5, is set.
 What Will Happen?
 =================
 
@@ -282,12 +315,11 @@ setup then the aircraft will do a fixed wing landing.
 If you set :ref:`Q_RTL_MODE <Q_RTL_MODE>` to 1 then the aircraft will switch to a VTOL
 landing when it gets close to return point.
 
-Radio or Throttle Failsafe
-==========================
+I switch into QRTL close to HOME
+--------------------------------
 
-If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter settings (see Plane Failsafe Function). Quadplanes can be set such that instead of normal plane behviour on Failsafe induced RTLs, to transistion to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1. If :ref:`Q_RTL_MODE<Q_RTL_MODE>` =2, then a fixed wing approach followed by a loiter to alt and QRTL will be executed, similar to that described in the "AUTO VTOL Landing" section of :ref:`quadplane-auto-mode`.
+If closer than 1.5X the larger of either :ref:`RTL_RADIUS<RTL_RADIUS>` or :ref:`WP_LOITER_RAD<RTL_RADIUS>`, then the vehicle will proceed toward home in VTOL mode and land. If greater, it will transition to fixed wing, climbing toward :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` and executing a normal QRTL. Depending on how far from home, the vehicle may only briefly climb and then switch back to approach or airbrake phases. The further away, the higher the climb as it flies back toward home. If the approach behavior has ben disabled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16, then it will just switch to VTOL (if not already in that mode, navigate to home and land).
 
-If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bit 5, is set.
 
 Typical Flight
 ==============
