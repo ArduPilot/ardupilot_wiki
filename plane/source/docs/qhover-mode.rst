@@ -39,8 +39,7 @@ throttle stick.
 -  If the throttle stick is in the middle deadzone set by ``RCn_DZ`` (where n is the channel mapped to throttle input) the vehicle will maintain the current altitude. The default for throttle channel deadzone is 60 (+/- 6%).
 
 -  Outside of the mid-throttle deadzone the vehicle will descend or climb depending upon the deflection of
-   the stick.  When the stick is completely down the QuadPlane will descend
-   at :ref:`Q_VELZ_MAX <Q_VELZ_MAX>` and if at the very top it will climb by :ref:`Q_VELZ_MAX <Q_VELZ_MAX>`.
+   the stick.  When the stick is completely down the QuadPlane will descend at :ref:`Q_VELZ_MAX_DN<Q_VELZ_MAX_DN>` and if at the very top it will climb by :ref:`Q_VELZ_MAX<Q_VELZ_MAX>`.
 
 
 
