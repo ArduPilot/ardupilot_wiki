@@ -70,7 +70,7 @@ Newer versions of BLHeli_32 (32.7) and BLHeli_S (16.73) support returning motor 
 Setup
 -----
 
-First ensure that you have an appropriate version of BLHeli_32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli_32 supports bi-directional Dshot. Official versions of BLHeli_S do not support bi-directional Dshot, you will need to either buy a version from `JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use the unofficial version from `JazzMaverick <https://github.com/JazzMaverick/BLHeli/tree/JazzMaverick-patch-1/BLHeli_S%20SiLabs/Hex%20files%20%2016.73)>`__. If you try and enable bi-directional Dshot with the wrong firmware version then unpredictable motor operation can occur.
+First ensure that you have an appropriate version of BLHeli_32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli_32 supports bi-directional Dshot. Official versions of BLHeli_S do not support bi-directional Dshot, you will need to either buy a version from `JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use the unofficial version from `JazzMaverick <https://github.com/JazzMaverick/BLHeli/tree/JazzMaverick-patch-1/BLHeli_S%20SiLabs/Hex%20files%20%2016.73>`__. If you try and enable bi-directional Dshot with the wrong firmware version then unpredictable motor operation can occur.
 
 Set the following parameters to enable BLHeli_32 and BLHeli_S bi-directional Dshot:
 
