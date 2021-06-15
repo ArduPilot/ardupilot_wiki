@@ -8,15 +8,6 @@ PLANE
 =====
 
 
-On QHOVER mode page:
---------------------
-
-under Controls section: change - "When the stick is completely down the QuadPlane will descend at :ref:`Q_VELZ_MAX<Q_VELZ_MAX>` and if at the very top it will climb by :ref:`Q_VELZ_MAX<Q_VELZ_MAX>`." to "When the stick is completely down the QuadPlane will descend at :ref:`Q_VELZ_MAX_DN<Q_VELZ_MAX_DN>` and if at the very top it will climb by :ref:`Q_VELZ_MAX<Q_VELZ_MAX>`."
-
-On QuadPlane Auto Mode page:
-----------------------------
-
-Until Return to Launch section, add: Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 2 resuls in behaviour similar to the option for MAV_NAV_VTOL_LAND above, with the vehicle returning like normal fixed wing RTL until it reaches :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>`, then loitering to :ref:`Q_RTL_ALT<Q_RTL_ALT>`  altitude, and then exiting facing the wind and executing a QRTL to the home position. Be sure the loiter portion is set up to clear any obstacles.
 
 On Terrain Following Page:
 --------------------------
