@@ -20,6 +20,7 @@ extra modes. Most are identical to equivalent Copter modes:
 
 ** not actually a flight mode, but rather a feature of QACRO and QSTABILIZE
 
+.. note:: RTL mode can behave differently than a normal fixed wing RTL, depending on the setting of the :ref:`Q_RTL_MODE<Q_RTL_MODE>` parameter. See :ref:`Hybrid RTLs <hybrid_rtl>`.
 .. tip::
 
    You may need to set the ``FLTMODE*`` parameters for these
