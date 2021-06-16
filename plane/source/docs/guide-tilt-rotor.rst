@@ -131,22 +131,21 @@ Tilt Servos
 Next you need to configure which servo outputs will control tilt of
 the tiltable rotors.
 
-You control that with 3 possible servo function values.
+You control that with the following servo function values.
 
 .. raw:: html
 
    <table border="1" class="docutils">
    <tr><th>Tilt Control</th><th>SERVOn_FUNCTION</th></tr>
-   <tr><td>Tilt Front Motors</td><td>41</td></tr>
-   <tr><td>Tilt Front Left Motor</td><td>75</td></tr>
-   <tr><td>Tilt Front Right Motor</td><td>76</td></tr>
+   <tr><td>TiltMotorsFront</td><td>41</td></tr>
+   <tr><td>TiltMotorFrontLeft</td><td>75</td></tr>
+   <tr><td>TiltMotorFrontRight</td><td>76</td></tr>
+   <tr><td>TiltMotorsRear</td><td>45</td></tr>
+   <tr><td>TiltMotorRearLeft</td><td>46</td></tr>
+   <tr><td>TiltMotorRearRight</td><td>47</td></tr>
    </table>
 
-You should choose normal ``Tilt Front Motors`` unless you are configuring a
-vectored yaw aircraft and have set :ref:`Q_TILT_TYPE<Q_TILT_TYPE>` to 2.
-
-For example, if you have a single servo which tilts your rotors
-attached to servo output 11, then you should set :ref:`SERVO11_FUNCTION<SERVO11_FUNCTION>` =41.
+.. note:: For Vectored Yaw applications, the right and left tilt servos would be used for front and/or back. You should choose normal ``TiltMotorsFront`` and/or ``TiltMotorsRear`` otherwise.
 
 Tilt Reversal and Range
 =======================
