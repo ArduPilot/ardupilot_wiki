@@ -86,3 +86,15 @@ travel can still be utilized for full span ailerons. Upwards travel of the contr
 
 .. |4surfRightYaw| image:: ../images/4surfRightYaw.jpg
     :target: ../_images/4surfRightYaw.jpg
+
+Crow Mode Switch
+================
+
+If Differential Spoilers are used, setting an ``RCx_OPTIONS`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation. 
+
+- HIGH position: No change to CROW deflection amount or use of progressive crow.
+- MIDDLE position: force progressive crow, assuming :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` is non-zero, even if :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` bit 2 is zero.
+- LOW position: effectively sets :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` to zero. Only inner spoilers move with FLAP channel, ie normal flaps.
+
+This allows live changes to CROW operation on approaches so that speed braking and descent rates can be changed during the approach.
+
