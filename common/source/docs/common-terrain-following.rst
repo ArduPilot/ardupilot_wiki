@@ -62,8 +62,9 @@ In Plane terrain following is available in the following flight modes:
 
 Use of terrain following in RTL, LOITER, CRUISE, FBWB and GUIDED modes
 is controlled by the :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` parameter. That parameter defaults
-to off, so no terrain following will be used in those modes. Set
-:ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` to 1 to enable terrain following in those modes.
+to off, so no terrain following will be used in those modes. Setting the bitmask in :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` determines which altitude controlled modes terrain following is active. For example, setting it to "10" enables following in FBWB and AUTO.
+
+Terrain Following in CRUISE and FBWB modes can be disabled with an RC switch assigned ``RCx_OPTION`` = 86. When enabling (<1200us) or disabling (>1800us) terrain following with the switch, the present altitude will be the target set point either above terrain, or home, respectively. The target altitude can be changed as normal with elevator whether the altitude reference being used is above home or above terrain.
 
 Use of terrain following in AUTO missions is controlled on a waypoint by
 waypoint basis using the reference frame of the waypoint. Normal (non
@@ -73,6 +74,7 @@ waypoints have a "Terrain" reference frame, and altitudes are relative
 to the ground level given in the terrain database.
 
 See :ref:`common-understanding-altitude` for altitude definitions.
+
 
 Uses of Terrain Following
 =========================
