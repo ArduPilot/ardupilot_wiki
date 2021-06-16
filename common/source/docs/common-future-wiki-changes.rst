@@ -8,42 +8,6 @@ PLANE
 =====
 
 
-
-On Terrain Following Page:
---------------------------
-
-In Flight Modes Section change:
-
-"Set :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` to 1 to enable terrain following in those modes." to read "Setting the bitmask in :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` determines which altitude controlled modes terrain following is active. For example, setting it to "10" enables following in FBWB and AUTO."
-
-
-At the end of Flight Modes section:
-
-Terrain Following in CRUISE and FBWB modes can be disabled with an RC switch assigned ``RCx_OPTION`` = 86. When enabling (<1200us) or disabling (>1800us) terrain following with the switch, the present altitude will be the target set point either above terrain, or home, respectively. The target altitude can be changed as normal with elevator whether the altitude reference being used is above home or above terrain.
-
-On Dspoiler Page:
------------------
-
-Add at bottom of page:
-
-Crow Mode Switch
-================
-
-If Differential Spoilers are used, setting an ``RCx_OPTIONS`` channel to "87" will allow the control of CROW aileron (outer spoilers) operation. 
-
-- HIGH position: No change to CROW deflection amount or use of progressive crow.
-- MIDDLE position: force progressive crow, assuming :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` is non-zero, even if :ref:`DSPOILER_OPTS <DSPOILER_OPTS>` bit 2 is zero.
-- LOW position: effectively sets :ref:`DSPOILER_CROW_W1<DSPOILER_CROW_W1>` to zero. Only inner spoilers move with FLAP channel, ie normal flaps.
-
-This allows live changes to CROW operation on approaches so that speed braking and descent rates can be changed during the approach.
-
-On Automatic Landing page:
---------------------------
-
-- add note in Reverse-Thrust Landing section: 
-
-.. note:: Airbrakes can also be automatically deployed during reverse thrust operation. See :ref:`Airbrakes<airbrakes-on-plane>`.
-
 On Tilt Rotors and Tailsitters pages:
 -------------------------------------
 
