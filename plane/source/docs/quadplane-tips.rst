@@ -77,6 +77,7 @@ Adjustment of the tilt servo's max,min,trim output values for conventional and t
 .. image:: ../../../images/Bicopter-tilt-setup.jpg
 
 
+.. note:: Setting :ref:`Q_OPTIONS<Q_OPTIONS>` bit 10 (Disarmed Yaw Tilt) allows the motors to tilt in response to rudder input while disarmed to facilitate adjustment of parameters.
 
 Battery Sag
 ===========
