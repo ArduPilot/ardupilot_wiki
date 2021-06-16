@@ -34,31 +34,6 @@ On Tilt Rotors page:
 
 .. note:: For vectored yaw applications, the right and left tilt servos would be used for front and/or back.
 
-On Tailsitters page, under Vectored Thrust:
--------------------------------------------
-
-add note:
-
-To allow vectored thrust QuadPlanes to land in the Fixed Wing (FW) stance in non-throttled controlled modes (in case of low battery level or emergency), an RC channel option, ``RCx_OPTION = 89``. This forces up the motor's tilts while still in FW non-throttled control modes (FBWA, MANUAL, STABILIZE, and ACRO) to avoid prop strikes upon ground contact when landing.
-
-change note about Copter Tailsitters to read:
-
-.. note:: in firmware versions previous to 4.1, CopterMotor Tailsitters did not use any yaw torque control. Roll (with respect to plane body) is only controlled by the flying surface (ailerons or elevons). Now QUAD PLUS and X frames have yaw control via motors, and frame types 16 and 17 are added that have no torque yaw control, as previous versions of PLUS and X did.
-
-On Tailsitters page, under Tailsitter Configuration:
-----------------------------------------------------
-
-add frame types 16 and 17 to table of supported frame types for CopterMotor No Yaw Torque Tailsitters and add new diagrams with motor rotation matching Copter for yaw torque controlled plus (0) and X (1) frames.
-
-.. image:: ../../../plane/source/images/x-copter-yawtorque-quadplane.jpg
-
-.. image:: ../../../plane/source/images/plus-copter-yawtorque-quadplane.jpg
-
-add note:
-
-.. note:: it is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, all Copter motors would be set to be active in fixed wing modes via :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` and :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask would have bit 7 (Force QASSIST) set to have QASSIST active in all modes.
-
-
 On Airspeed Calibration Page
 ----------------------------
 

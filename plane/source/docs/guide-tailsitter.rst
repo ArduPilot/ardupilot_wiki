@@ -59,14 +59,20 @@ However, it can also have copter-like motors, like a conventional QuadPlane if :
 Motor Layout
 ============
 
+Copter Tailsitters
+------------------
 All the copter motor layouts are supported as CopterMotor tailsitters if :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is non-zero . See :ref:`Copter's Motor Layout Section <copter:connect-escs-and-motors>`. If non-zero, then use the :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` parameter to configure the multicopter motor style, and the appropriate MOTORx outputs will be activated.
 
-In addition, two tailsitter specific configurations are available which provide No Yaw Torque (NYT) control to the copter style motors: :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 15 (Plus) and =16 (X).
+.. note:: in firmware versions previous to 4.1, CopterMotor Tailsitters did not use any yaw torque control. Roll (with respect to plane body) is only controlled by the flying surface (ailerons or elevons). Now QUAD PLUS and X frames have yaw control via motors, and frame types 16 and 17 are added that have no torque yaw control, as previous versions of PLUS and X did.
+
+.. note:: it is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, all Copter motors would be set to be active in fixed wing modes via :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` and :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask would have bit 7 (Force QASSIST) set to have QASSIST active in all modes.
+
+In addition, two Copter tailsitter specific configurations are available which provide No Yaw Torque (NYT) control to the copter style motors: :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 15 (Plus) and =16 (X).
 
 (looking down on nose from above)
 
 NYT QUAD PLUS Motor Tailsitter
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Motors are controlled by the M1-M4 outputs:
 
 .. image:: ../images/plus-copter-quadplane.jpg
@@ -74,19 +80,18 @@ Motors are controlled by the M1-M4 outputs:
 
 
 NYT QUAD X Motor Tailsitter
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Motors are controlled by the M1-M4 outputs:
 
 .. image:: ../images/x-copter-quadplane.jpg
   :width: 450px
 
 
-If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero and :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10, then the Single/Dual Motor configuration is used and the motor layout is shown below:
-
-(looking down on nose from above)
-
 Single/Dual Motor Tailsitter
 ----------------------------
+If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero and :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10, then the Single/Dual Motor configuration is used. Motors may also be vectored using tilt servos, which gives much higher control authority. If not vectored, these frames rely on large control surfaces, exposed to the prop flow, in order to maintain control. The motor layouts are shown below:
+
+(looking down on nose from above)
 
 Motors are controlled by the Throttle, Throttle Left, Throttle Right outputs:
 
@@ -148,9 +153,19 @@ You also need to set the right ``SERVOn_REVERSED`` values, and the correct
 .. caution:: When disarmed, switching to QHOVER or QLOITER will force the motors forward into fixed wing orientation. If armed in this position, a prop strike could occur for Belly Sitter configurations. Tilt will be raised to VTOL position when throttle is raised above idle, but the strike will have already occurred. The solution is to momentarily raise the throttle above idle, allowing the tilts to raise, return throttle stick to idle, then arm. This needs to be done also for AUTO mode takeoffs, which should be started from QSTABILIZE with motors raised, armed, and then change to AUTO for the takeoff.
 
 Tilt Rotor Movement Setup
--------------------------
+=========================
 See :ref:`Tilt Rotor Setup Tips<tilt-rotor-tips>` and :ref:`Tilt Rotor Servo Setup<tilt-rotor-setup>`
 
+TVBS (Thrust Vectored Belly Sitter)
+===================================
+
+TVBS are just dual motor vectored thrust tailsitters that don't sit on their tails, but rather their belly. Aside from making sure props clear (ie sufficient throw on tilt servos) when in the horizontal stance, nothing special is required to make it take off from a horizontal stance. 
+
+At least 45 degree throw, either side of neutral (fixed wing flight position) is required, with 60 degrees being most desireable. Otherwise, the vehicle will "skid" along the ground a bit when you raise the throttle to bring it vertical on takeoff. Takeoffs, required a decisive move of throttle to hover or above to reduce the "skid".
+
+.. youtube:: s2KLOAdS_HY
+
+For landing in fixed wing, manual throttle controlled modes, there is an ``RCx_OPTION`` (89) that will force the tilt servos upright at idle throttle, and optionally force the pitch to target :ref:`LAND_PITCH_CD<LAND_PITCH_CD>` for flaring to the normal fixed wing landing. This allows intentional or emergency fixed wing landings in MANUAL, ACRO, STABILIZE, and FBWA modes without the risk of a prop strike in configurations where this could occur otherwise.
 
 Vectored Gains
 ==============
