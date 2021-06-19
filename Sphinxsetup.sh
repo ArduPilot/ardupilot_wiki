@@ -37,6 +37,9 @@ rm -f get-pip.py
 # Install sphinx
 python3 -m pip install --upgrade sphinx==1.8.3
 
+# install a specific version of docutils to avoid __name__ attribute error
+python3 -m pip install --upgrade docutils==0.16
+
 # Install sphinx theme from ArduPilot repository
 python3 -m pip install git+https://github.com/ArduPilot/sphinx_rtd_theme.git --upgrade
 
