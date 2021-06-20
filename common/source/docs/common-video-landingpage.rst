@@ -178,6 +178,26 @@ Unboxing video
 
 .. youtube:: DPHKe86SiqI
 
+XBLink 4G LTE Transmission System
+=================================
+.. figure:: https://xbstation.com/assets/images/xblink.png
+   :target:  https://xbstation.com/store/xblink
+   
+Overview
+--------
+XBLink is a Plug and Play hardware for BVLOS Flight based on Real time 4G LTE connective. Perfect fit with Cube.
+
+Features
+--------
+* Control UAV via MissionPlanner and QGroundControl
+* Platform supported: MacOS, WindowsOS, AndroidOS
+* MAVLink compatible
+* HD video streaming
+* AES 256 encryption
+* HTTPS, WebSockets over SSL/TLS
+* Video and telemetry streaming sharing
+
+More info about XBLink can be found on `XBStation <https://xbstation.com/store/xblink>`_
 
 Other Systems
 =============
@@ -185,4 +205,3 @@ Other Systems
 -    `SkyViper video <https://discuss.arduPilot.org/t/using-the-skyviper-sonix-board-with-any-pixhawk/23932>`_
 -    `Wifi Broadcast <https://github.com/bortek/EZ-WifiBroadcast/wiki>`_
 -    `SkyDriod T12 <https://www.heliengadin.com/products/skydroid-t12-remote-controller-with-digital-video>`_
-
