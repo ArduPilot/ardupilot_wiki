@@ -135,7 +135,7 @@ Goto Build > Build Solution
 and to debug
 Goto Debug > Start Debugging
 
-By default visual studio will compile all projects and there dependancys as part of a build.
+By default visual studio will compile all projects and their dependencies as part of a build.
 
 Building the SimpleExample
 ==========================
