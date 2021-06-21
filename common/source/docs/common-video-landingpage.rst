@@ -43,6 +43,7 @@ More Info on Herelink can be found on
 -   `Hex HereLink Website <http://www.proficnc.com/all-products/211-gps-module.html>`_
 -   `Cubepilot Support Forum <https://discuss.cubepilot.org>`_
 
+------------------------------------------------
 
 CUAV H16 series HD Video Transmission and remote control system
 ===============================================================
@@ -76,6 +77,7 @@ For more information, please click the link below:
 - `CUAV docs <doc.cuav.com>`_
 - `CUAV store <https://store.cuav.net/index.php?id_product=125&rewrite=cuav-h16-pro-hd-video-transmission-system&controller=product>`_
 
+-------------------------------------------------------
 
 DJI Digital FPV System
 ======================
@@ -102,6 +104,7 @@ Features
 
 More Info on at `DJI <www.DJI.com>`_
 
+---------------------------------------------------------------
 
 DJI Ocusync Air System 
 ======================
@@ -129,7 +132,8 @@ Features
 
 More Info at `DJI <www.DJI.com>`_
 
- 
+------------------------------------------------------
+
 Sky-Drones Smartlink 
 =====================
 
@@ -154,6 +158,7 @@ Unboxing video `here <https://www.youtube.com/watch?v=2qtE4nuTXKU>`_
 
 Purchase `online <https://sky-drones.com/telemetry/smartlink-set.html>`_ 
 
+--------------------------------------------------------
 
 SIYI AK28
 =========
@@ -177,6 +182,8 @@ Unboxing video
 --------------
 
 .. youtube:: DPHKe86SiqI
+
+--------------------------------------------------------
 
 XBLink 4G LTE Transmission System
 =================================
