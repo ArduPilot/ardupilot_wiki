@@ -137,7 +137,7 @@ Default pin values:
 
 :ref:`BATT_VOLT_MULT <BATT_VOLT_MULT>` = 11
 
-Optionally add voltage and / or current monitoring using BLHeli_32-capable ESCs. See instructions :ref:`here <common-dshot>` for setting up BLHeli_32 ESC telemetry.
+Optionally add voltage and / or current monitoring using ESC telemetry capable ESCs. See instructions :ref:`here <esc-telemetry>`.
 
 
 V6.x revision

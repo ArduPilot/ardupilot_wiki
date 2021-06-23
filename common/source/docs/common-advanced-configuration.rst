@@ -41,7 +41,7 @@ tuning options for the vehicle.
 [site wiki="plane"]
     Crash Detection <crash-detect>
 [/site]
-    Brushless ESCs <common-dshot>
+    BLHeli ESCs <common-blheli32-passthru>
     EKF (Extended Kalman Filter) <common-apm-navigation-extended-kalman-filter-overview>
     EKF Affinity & Lane Switching <common-ek3-affinity-lane-switching>
 [site wiki="copter,rover"]
