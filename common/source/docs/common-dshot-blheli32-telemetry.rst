@@ -1,5 +1,6 @@
 .. _common-dshot-blheli32-telemetry:
 
+====================================
 BLHeli_32 and BLHeli_S ESC Telemetry
 ====================================
 

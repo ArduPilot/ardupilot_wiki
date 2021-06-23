@@ -111,8 +111,10 @@ Electrical Commutation Sensors
 ==============================
 
 Electrical commutation RPM sensors can be added retrospectively using something like the Hobbywing brushless RPM sensor.  Some ESCs, such as the Castle Creations Edge 
-series, that have an auxiliary output, can be configured to output a pulse per commutation.  For clarification, this is not the same as the RPM that can be passed 
-via serial telemetry with BL Heli ESCs.  For information on how to set up RPM logging with BL Heli see the :ref:`BL Heli page <copter:common-dshot>`.
+series, that have an auxiliary output, can be configured to output a pulse per commutation.
+
+For clarification, this is not the same as the RPM that can be passed 
+via serial telemetry with ESCs.  For information on how to set up RPM reporting with capable  ESCs, see the :ref:`ESC Telemetry<esc-telemetry>`.
 
 The setup for electrical commutation RPM sensors is much the same as hall effect sensors, so the steps above are applicable.  The only difference is the scaling value 
 to be entered in the :ref:`RPM_SCALING<RPM_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 

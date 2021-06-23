@@ -57,7 +57,7 @@ However, there is a better way. If mechanically possible, trim each motor to be 
 Copter Motors vs Servos
 =======================
 
-If you are using a configuration where there are copter motors involved (almost all QuadPlanes do except single/dual motor tailsitters), the motor outputs are assigned as PWM unless changed (see :ref:`common-dshot` ). But the PWM is at a 400Hz update rate, not 50Hz. If a servo is used in an  output group sharing the same timer as one of the motor outputs, then it too will be operating at 400HZ and must be able to tolerate that. Most analog servos will overheat or burn up. Most digital servos can tolerate that rate. Check your autopilot's :ref:`hardware description <common-autopilots>` page for the DShot output groups, which indicates which outputs share the same timer.
+If you are using a configuration where there are copter motors involved (almost all QuadPlanes do except single/dual motor tailsitters), the motor outputs are assigned as PWM protocol unless changed (see :ref:`common-brushless-escs` ). But the PWM is at a 400Hz update rate, not 50Hz. If a servo is used in an  output group sharing the same timer as one of the motor outputs, then it too will be operating at 400HZ and must be able to tolerate that. Most analog servos will overheat or burn up. Most digital servos can tolerate that rate. Check your autopilot's :ref:`hardware description <common-autopilots>` page for the DShot output groups, which indicates which outputs share the same timer.
 
 .. _tilt-rotor-setup:
 
