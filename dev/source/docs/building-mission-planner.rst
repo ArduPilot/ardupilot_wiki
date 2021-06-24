@@ -129,7 +129,7 @@ Open the Mission Planner solution in Visual Studio
    -  ZedGraph
 
 Building the MissionPlanner
-==========================
+===========================
 
 Goto Build > Build Solution
 and to debug
