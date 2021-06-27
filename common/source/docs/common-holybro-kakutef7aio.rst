@@ -162,7 +162,7 @@ Where to Buy
 ============
 
 
-- Available from many retailers including `Holybro Kakute F7 AIO <https://shop.holybro.com/kakute-f7-aio_p1105.html>`__ and `Holybro Kakute F7 <https://shop.holybro.com/kakute-f7_p1104.html>`__
+- Available from many retailers including `Holybro Kakute F7 AIO <https://shop.holybro.com/kakute-f7-aio-v15_p1173.html>`__ , `Holybro Kakute F7 V1.5 <https://shop.holybro.com/kakute-f7-v15-stacks_p1224.html>`__ and `Holybro Kakute F7 HDV <https://shop.holybro.com/kakute-f7-hdv-stacks_p1220.html>`__
 
 
 
