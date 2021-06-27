@@ -14,7 +14,7 @@ bottom of the page, or in the sidebar, for helicopter specific information.
 
 ==============================================================================
 
-Demonstation of a real-world commercial flight with a Trex 600 helicopter flown
+Demonstration of a real-world commercial flight with a Trex 600 helicopter flown
 with the ArduPilot system, including additional add-on RC telemetry and FPV.
 
 ..  youtube:: FWTb2-sdNW8
@@ -39,8 +39,10 @@ Canberra Team in Australia.
     Swashplate Setup <traditional-helicopter-swashplate-setup>
     Rotor Speed Control Setup <traditional-helicopter-rsc-setup>
     Internal Rotor Speed Governor <traditional-helicopter-internal-rsc-governor>
-    ArduPilot Helicopter Ground School <traditional-helicopter-configuration>
     Pre-Flight Testing <trad-heli-preflight-testing>
     First Flight Tests <traditional-helicopter-first-flight-tests>
     Tuning <traditional-helicopter-tuning>
+    Advanced Tuning <traditional-helicopter-advanced-tuning>
+    Helicopter Attitude Control System Description <traditional-helicopter-control-system>
     Tips <traditional-helicopter-tips>
+    ArduPilot Helicopter Ground School <traditional-helicopter-configuration>
