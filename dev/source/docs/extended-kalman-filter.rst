@@ -38,8 +38,8 @@ significant errors so that the vehicle becomes less susceptible to
 faults that affect a single sensor.
 
 Another feature of the EKF algorithm is that it is able to estimate
-offsets in the vehicles compass readings and also estimate the earth's
-magnetic field for both plane, copter and rover applications. This makes
+offsets in the vehicle's compass readings and also estimate the earth's
+magnetic field for both plane and copter as well as rover applications. This makes
 it less sensitive to compass calibration errors than current DCM and
 INAV algorithms.
 
