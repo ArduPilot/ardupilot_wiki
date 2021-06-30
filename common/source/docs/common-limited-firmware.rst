@@ -26,7 +26,7 @@ Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older v
 - Airspeed Drag Compensation
 - Plus Code Location Support
 - Object Avoidance and Proximity Sensors
-- CRSF Telemetry
+- CRSF Text Display (Telemetry is included)
 - Bootloader inclusion in main code base
 - EKF2 (EKF3 only)
 - LUA scripting support
