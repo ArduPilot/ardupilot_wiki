@@ -188,7 +188,7 @@ SBus Servo, See :ref:`common-sbus-output`
    <td>16</td>
    <td>
 
-ESC Telemetry, See :ref:`common-dshot` 
+ESC Telemetry, See :ref:`common-dshot-blheli32-telemetry` 
 
 .. raw:: html
 
