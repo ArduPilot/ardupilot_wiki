@@ -61,8 +61,8 @@ Rovers from Partners
 * `AION ROBOTICS - R1 UGV <https://www.aionrobotics.com/r1>`__
 * `AION ROBOTICS - R6 UGV <https://www.aionrobotics.com/r6>`__
 * `AION ROBOTICS - M6 UGV <https://www.aionrobotics.com/m6-commercial-ugv>`__
-* `TT Robotix - Rhino 6x6 <http://www.ttrobotix.com/product/rhino6x6>`__
-* `TT Robotix - Base 1 Rover <http://www.ttrobotix.com/product/base1rover>`__
+* `TT Robotix - Rhino 6x6 <http://www.ttrobotix.com/products/detail/906.html>`__
+* `TT Robotix - Base 1 Rover <http://www.ttrobotix.com/products/detail/907.html>`__
 
 Subs from Partners
 ==================
