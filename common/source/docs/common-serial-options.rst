@@ -36,6 +36,7 @@ By default the protocols/expected peripheral for each port is shown below:
 |Serial 7         | USER port, disabled                |
 +-----------------+------------------------------------+
 
+
 Often cased autopilots will have the designation "TELEM1", "GPS", etc. marked on the case, otherwise, the autopilot :ref:`description page<common-autopilots>`  should provide the mapping to SERIALx Port
 
 SERIALx_PROTOCOL
@@ -421,5 +422,12 @@ Bitmask Options
 - if bit 1 is set, the TX data is inverted before outputting.
 - if bit 2 is set, then HalfDuplex operation using the TX pin is implemented.
 - if bit 3 is set, then the TX and RX pins are effectively swapped internally.
+- if bit 4 is set, then the RX pin has a weak pull down resistor activated.
+- if bit 5 is set, then the TX pin has a weak pull down resistor activated.
+- if bit 6 is set, then the RX pin has a weak pull up resistor activated.
+- if bit 7 is set, then the TX pin has a weak pull up resistor activated.
+- if bit 8 is set, then the RX has no DMA activated (assuming DMA is available on this UART)
+- if bit 9 is set, then the TX has no DMA activated (assuming DMA is available on this UART)
+- if bit 10 is set, then MAVLink forwarding will not be active on this UART port.
 
 .. note:: HalfDuplex is supported on all ChiBiOS based autopilots, but all other options are only supported on boards with F7 or H7 microprocessors.
