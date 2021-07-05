@@ -230,7 +230,7 @@ Verification before testing
   - To enable speech in Mission Planner: Tab Config/Tuning > Planner > Speech > tick on "Enable speech".
   - If there are some messages constantly displayed on the HUD, you might not be able to see / hear the confidence level notification.
   - If telemetry is slow, notification might be dropped. You can still see the latest message in MAVLink Inspector, message ``STATUSTEXT``.
-  - If telemetry is very slow, it may be flooded by VISION_POSITION_ESTIMATE messages. You can disable message forwarding by setting bit 10 in SERIALx_OPTIONS. Be aware you will not receive VISION_POSITION_ESTIMATE in GCS anymore.
+  - If telemetry is very slow, it may be flooded by VISION_POSITION_ESTIMATE messages. You can disable message forwarding by setting bit 10 in ``SERIALx_OPTIONS``. Be aware you will not receive VISION_POSITION_ESTIMATE in GCS anymore.
 
 
 Ground Test
