@@ -35,7 +35,7 @@ python3 get-pip.py
 rm -f get-pip.py
 
 # Install sphinx
-python3 -m pip install --upgrade sphinx==1.8.3
+python3 -m pip install --upgrade sphinx==3.5.4
 
 # install a specific version of docutils to avoid __name__ attribute error
 python3 -m pip install --upgrade docutils==0.16
