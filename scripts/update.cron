@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# this script is suitable for installing on the ArduPilot Wiki server as a cronjob.  Typically that would be:
+
+# */5 * * * * $HOME/cron/update.cron
+
+# exit 0
+
+export PATH=/usr/local/bin:/usr/bin:/bin
+cd $HOME/build_wiki
+cp $HOME/build_wiki/ardupilot_wiki/update.sh $HOME/cron
+chmod +x $HOME/cron
+$HOME/cron/update.sh
+touch /tmp/.wikido
