@@ -25,7 +25,7 @@ jobs:
       - name: Setting environement
         run: |
           mkdir /tmp/web
-          sudo ./Sphinxsetup.sh
+          ./Sphinxsetup.sh
       - name: Test build
         run: |
           ./update.py --parallel 4 --verbose --destdir=/tmp/web
