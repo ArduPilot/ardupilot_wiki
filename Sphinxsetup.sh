@@ -23,6 +23,7 @@ if [ ${DISTRIBUTION_CODENAME} == 'bionic' ]; then
   apt-get install -y python3-distutils
 elif [ ${DISTRIBUTION_CODENAME} == 'focal' ]; then
   apt-get install -y python-is-python3
+  apt-get install -y python3-distutils
 else
     if [ ${DISTRIBUTION_ID} == 'Ubuntu' ]; then
         apt-get install -y python-is-python3
