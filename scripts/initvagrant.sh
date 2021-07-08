@@ -5,7 +5,7 @@ set -x
 
 echo "---------- $0 start ----------"
 
-/vagrant/Sphinxsetup.sh
+sudo -H -u vagrant /vagrant/Sphinxsetup.sh
 OUTDIR=/var/sites/wiki/web
 OUTDIR_OLD=/var/sites/wiki/web/old
 mkdir -p "$OUTDIR_OLD"
