@@ -18,7 +18,6 @@ Short Range (<10KM)
     :maxdepth: 1
 
     Bluetooth <common-mission-planner-bluetooth-connectivity>
-    CRSF Telemetry <common-crsf-telemetry>
     CUAV PW-Link <common-cuav-pwlink>
     ESP8266 wifi telemetry <common-esp8266-telemetry>
     FrSky telemetry <common-frsky-telemetry>
@@ -37,6 +36,7 @@ Long Range
 .. toctree::
     :maxdepth: 1
 
+    CRSF Telemetry <common-crsf-telemetry>
     DragonLink <common-dragonlink-rc>
     LTM telemetry <common-ltm-telemetry>
     RFD900 <common-rfd900>
