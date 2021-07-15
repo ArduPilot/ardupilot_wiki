@@ -10,7 +10,7 @@ Mamba F405 MK2 Flight Controller
 The Mamba F405 MK2 is a flight controller produced by
 `Diatone <https://www.diatone.us>`__.
 
-.. warning:: This autopilot does not have a barometer. Operation without a barometer (or other altitude sensor, like rangefinder for indoor use),is not currently supported by ArduPilot. An external barometer supported by Ardupilot, must be added before use.
+.. warning:: This autopilot does not have a barometer. An external barometer can be added, or operation with an alternate altitude sensor, such as GPS for outdoor use or rangefinder for indoor applications is supported, with caveats. In Plane, if GPS is lost, then the user should switch to a non-navigation, non-altitude holding mode immediately. In Copter, operation is allowed using GPS, but not recommended, due to the imprecision in altitude hold modes. Bear in mind if GPS fails and the vehicle is using it for altitude information, a crash can eventually result due to lack of accurate altitude information.See :ref:`common-gps-for-alt` for more information.
 
 Features
 ========
