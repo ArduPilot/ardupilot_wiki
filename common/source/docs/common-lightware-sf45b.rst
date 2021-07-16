@@ -4,7 +4,7 @@
 LightWare SF45/B 350 Lidar
 ==========================
 
-The `Lightware SF45/B lidar <https://lightwarelidar.com/products/sf45-b>`__ is a small (about 50g) scanning lidar (up to 350 deg) with a 50m range
+The `Lightware SF45/B lidar <https://lightwarelidar.com/collections/lidar-rangefinders/products/copy-of-sf45-b-50m>`__ is a small (about 50g) scanning lidar (up to 350 deg) with a 50m range
 
 .. image:: ../../../images/lightware-sf45b.png
    :target: ../_images/lightware-sf45b.png
