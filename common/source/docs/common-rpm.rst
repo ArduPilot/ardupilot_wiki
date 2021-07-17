@@ -115,6 +115,7 @@ series, that have an auxiliary output, can be configured to output a pulse per c
 
 For clarification, this is not the same as the RPM that can be passed 
 via serial telemetry with ESCs.  For information on how to set up RPM reporting with capable  ESCs, see the :ref:`ESC Telemetry<esc-telemetry>`.
+For information on how to set up RPM logging with BL Heli see the :ref:`BLHeli Telemetry<common-dshot-blheli32-telemetry>`.
 
 The setup for electrical commutation RPM sensors is much the same as hall effect sensors, so the steps above are applicable.  The only difference is the scaling value 
 to be entered in the :ref:`RPM_SCALING<RPM_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 
