@@ -651,8 +651,8 @@ def fetch_versioned_parameters(site=args.site):
                             else:
                                 debug("It will reuse the last build of " +
                                     new_file)
-                        else:   # If not cached, build it anyway.
-                            debug("Creating %s to %s" %
+                        else:   # If not cached, copy it anyway.
+                            debug("Copying %s to %s" %
                                 (filename, new_file))
                             shutil.copy2(filename, new_file)
 
