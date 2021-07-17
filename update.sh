@@ -114,6 +114,8 @@ popd
 cd ardupilot_wiki
 find -name "parameters*rst" -delete # Clean possible built and cached parameters files
 
+END_UPDATES=$(date +%s)
+
 echo "[Buildlog] Starting to build multiple parameters pages at $(date '+%Y-%m-%d-%H-%M-%S')"
 python3 build_parameters.py
 END_BUILD_MPARAMS=$(date +%s)
