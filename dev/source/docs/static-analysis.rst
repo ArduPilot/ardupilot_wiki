@@ -20,7 +20,7 @@ You can do your own static analysis using autotest:
 
    You may need to install clang for this to work.
 
-   On Ubuntu, "sudo apt-get install clang"
+   On Ubuntu, `sudo apt-get install clang clang-tools`
 
    On Windows see https://clang.llvm.org/get_started.html
 
