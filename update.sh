@@ -1,4 +1,8 @@
 #!/bin/bash
+
+set -e
+set -x
+
 # check for changes in docs and run sphinx
 
 export PYTHONUNBUFFERED=1
