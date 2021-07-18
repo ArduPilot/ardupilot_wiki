@@ -37,6 +37,9 @@ rm -f get-pip.py
 # Install sphinx
 python3 -m pip install --user --upgrade sphinx
 
+# lxml for parameter parsing:
+python3 -m pip install --user --upgrade lxml
+
 # Install sphinx theme from ArduPilot repository
 python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinx_rtd_theme.git
 
