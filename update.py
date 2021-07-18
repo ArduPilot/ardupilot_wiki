@@ -309,7 +309,7 @@ def copy_and_keep_build(site):
             continue
         if site is not None and site != wiki:
             continue
-        debug('coping: %s' % wiki)
+        debug('copying: %s' % wiki)
         targetdir = os.path.join(args.destdir, wiki)
         distutils.dir_util.mkpath(targetdir)
 
