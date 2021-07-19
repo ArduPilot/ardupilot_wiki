@@ -52,7 +52,7 @@ Barometer failures:
 unhealthy which is normally a sign of a hardware failure.
 
 **Alt disparity** : the barometer altitude disagrees with the inertial
-navigation (i.e. Baro + Accelerometer) altitude estimate by more than 2
+navigation (i.e. Baro + Accelerometer) altitude estimate by more than 1
 meters.  This message is normally short-lived and can occur when the
 autopilot is first plugged in or if it receives a hard jolt
 (i.e. dropped suddenly).  If it does not clear the :ref:`accelerometers may need to be calibrated <common-accelerometer-calibration>` or there may
