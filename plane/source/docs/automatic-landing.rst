@@ -281,6 +281,8 @@ with a shallow pitch (in ``LAND_PITCH_CD``) and set a slightly higher
 altitude to flare at. That will only work if your stall speed is low
 enough that gliding for a while will work reliably.
 
+.. _do_land_start:
+
 Using DO_LAND_START
 ===================
 
