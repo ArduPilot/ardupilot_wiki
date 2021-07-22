@@ -20,6 +20,11 @@ To prevent the vehicle from turning until the return atlitude is reached, if bel
 
 Alternatively, you may :ref:`configure the plane to return to a Rally Point <common-rally-points>`, rather than the home location.
 
+RTL_AUTOLAND
+============
+
+It is possible to setup an :ref:`automatic-landing` to be executed when entering RTL. See :ref:`do_land_start` for details. You must have setup your vehicle to properly do a automatic landing, of course.
+
 .. warning::
 
    "Home" position is always supposed to be your Plane's actual
