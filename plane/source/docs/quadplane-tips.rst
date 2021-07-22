@@ -41,18 +41,18 @@ For H mixing, simply tilt all the motors inward toward the plane by 2-3 degrees,
 
 .. note:: be aware that Quadplanes rarely have the same yaw authority as multicopters due to the greater mass and surface area to wind that a plane presents. Expect to be only able to face into the wind if it's not relatively calm.
 
-AHRS "LEVEL" Trim
-=================
+"LEVEL" Trim
+============
 
-When you setup a Plane, the "level" calibration should be done with the plane in its normal cruising attitude (ie angle of attack of the wings). If the vertical position of the VTOL motors is not 90 degrees to this attitude, then the QuadPlane will tend to move forward or backward when hovering, requiring stick input to modify pitch. 
+When you setup a QuadPlane, the "level" calibration should be done with the plane in its normal cruising attitude (ie angle of attack of the wings). In a non-tailsitter quadplane, if the vertical position of the VTOL motors is not 90 degrees to this attitude, then the QuadPlane will tend to move forward or backward when hovering, requiring stick input to modify pitch. Or, in a tailsitter, if the "trim" position of the motors, and/or vertical CG is not through the thrust line when vertical, it will also drift.
 
-Fortunately, there is a parameter which allows the independent adjustment of the VTOL AHRS "level" attitude. This is :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` . 
+Fortunately, there is a parameter which allows the independent adjustment of the VTOL AHRS "level" attitude. This is :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` in degrees to be added, negative or positive, to the AHRS "level" . 
 
-.. note:: this parameter is set in radians. 1 degree = 0.0174533 radians.
-
-However, there is a better way. If mechanically possible, trim each motor to be vertical when the QuadPlane is in fixed wing "level" mode, so that using :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` is not required. Usually this requires 3-5 degrees of forward tilt. This has the advantage of having the wings generate lift while hovering in the wind, reducing the load on the VTOL motors and preventing sudden pitch changes during transitions back to VTOL mode from fixed wing flight.
+However, there is a better way for non-tailsitter QuadPlanes. If mechanically possible, trim each motor to be vertical when the QuadPlane is in fixed wing "level" mode, so that using :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` is not required. Usually this requires 3-5 degrees of forward tilt. This has the advantage of having the wings generate lift while hovering in the wind, reducing the load on the VTOL motors and preventing sudden pitch changes during transitions back to VTOL mode from fixed wing flight.
 
 .. note:: those fabricating their mounts via a 3D printer, this is very easy to do, as well as tilt for yaw enhancement discussed above.
+
+.. note:: fixed wing pitch "level" trim is set by the AHRS "level" done during accelerometer calibration, which adjusts the :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` values, PLUS any :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` (in centidegrees).
 
 Copter Motors vs Servos
 =======================
