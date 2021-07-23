@@ -49,6 +49,9 @@ The unit tests are compiled using the `waf` build tool:
     Scripting runtime checks                       : enabled 
     Checking for program 'rsync'                   : /usr/bin/rsync 
     'configure' finished successfully (1.085s)
+
+::
+
     pbarker@bluebottle:~/rc/ardupilot(master)$ ./waf tests
     Waf: Entering directory `/home/pbarker/rc/ardupilot/build/linux'
     Waf: Leaving directory `/home/pbarker/rc/ardupilot/build/linux'
@@ -61,7 +64,6 @@ The unit tests are compiled using the `waf` build tool:
 
     Build commands will be stored in build/linux/compile_commands.json
     'tests' finished successfully (2.249s)
-    pbarker@bluebottle:~/rc/ardupilot(master)$  
 
 You can then simply run the test from the build directory:
 
@@ -90,7 +92,6 @@ You can then simply run the test from the build directory:
     [----------] Global test environment tear-down
     [==========] 7 tests from 1 test suite ran. (0 ms total)
     [  PASSED  ] 7 tests.
-    pbarker@bluebottle:~/rc/ardupilot(master)$ 
 
 
 Using with GDB
