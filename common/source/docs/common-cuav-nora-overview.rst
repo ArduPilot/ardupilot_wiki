@@ -70,10 +70,10 @@ Default UART Order
 ==================
 
 - SERIAL0 = console = USB
-- SERIAL1 = Telemetry1 = USART1
-- SERIAL2 = Telemetry2 = USART6
-- SERIAL3 = GPS1 = USART1
-- SERIAL4 = GPS2 = UART4
+- SERIAL1 = Telemetry1 = USART2 (TELEM1)
+- SERIAL2 = Telemetry2 = USART6 (TELEM2)
+- SERIAL3 = GPS1 = USART1 (GPS)
+- SERIAL4 = GPS2 = UART4 (UART4)
 - SERIAL5 = USER = UART8 
 - SERIAL6 = USER = UART7 (DEBUG TX/RX)
 
