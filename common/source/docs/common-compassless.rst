@@ -47,4 +47,7 @@ Afterwards, flight and navigation should be acceptable.
 
 If any problems are experienced, please post logs on the https://discuss.ardupilot.org forum.
 
+Video
+-----
 
+..  youtube:: 3xW9hj-lxNU
