@@ -79,7 +79,7 @@ By default a NAV_VTOL_LAND will remain in fixed mode at the current altitude, un
 
 If :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to disable the fixed wing approach phase, then it will immediately transition to VTOL when the command is executed and navigate to the landing point in VTOL mode. This requires the careful setup of the last waypoint before this command to avoid a long path to the landing point while in VTOL mode.
 
-If :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is set, then even if bit 16 is set, the vehicle will execute the fixed wing approach and loiter to altitude, described above in the previous section, before changing to VTOL mode.
+If :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is set, then even if bit 16 is set, the vehicle will execute the fixed wing approach and loiter to altitude, described above in the previous section, before changing to VTOL mode. If bit 16 is also set, then when the vehicle switches to VTOL mode, it will attempt to do the airbrake maneuver and QLAND for that final sement.
 
 Return to Launch
 ----------------
