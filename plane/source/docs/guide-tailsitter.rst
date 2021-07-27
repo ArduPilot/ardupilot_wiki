@@ -123,7 +123,7 @@ tailsitter are:
 - when in fixed wing flight the fixed wing PID gains will be used (the
   ``RLL_RATE_x`` and ``PTCH_RATE_x`` gains)
 - :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` allows the roll limit angle limit to be set differently from :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. If left at zero, both pitch and roll are limited by :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. If :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` is nonzero roll angle will be limited and pitch max angle will still be :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. This should be set if your tailsitter can achieve much larger pitch angle than would be safe for roll (some airframes can't recover from high-speed knife-edge flight using only yaw control).
-- :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` can be used to account for any offset in hovering pitch angle due to the thrust line not being through the CG, or to counter fixed wing AHRS trim used to set angle of attack in cruise, instead of using :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>`. Set this such that the the vehicle does not drift forwards or backwards in QSTABILIZE or QHOVER with no pilot inputs.
+- :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` can be used to account for any offset in hovering pitch angle due to the thrust line not being through the CG, or to counter fixed wing AHRS trim used to set angle of attack in cruise, instead of using :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` for adjusting the trim since it is only in fixed modes and AHRS trim affects all modes. Set this such that the the vehicle does not drift forwards or backwards in QSTABILIZE or QHOVER with no pilot inputs.
 
 Vectored Thrust
 ===============
