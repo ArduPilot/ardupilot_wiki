@@ -11,8 +11,34 @@ OpenTx will discover the native CRSF Telemetry sensors, which then can be displa
 
 .. image:: ../../../images/crossfire-telemetry-meaning.jpg
 
+These values can be displayed on OpenTX transmitters in several ways:
+
+- Using the built-in telemetry screens:
+
+.. image:: ../../../images/x9d-telem-screen.jpg
+
+- Using LUA scripts, like the ones developed for `iNav <https://luatelemetry.readthedocs.io/>`__ :
+
+.. image:: ../../../images/inav-telem-lua-screen.png
+
 In addition, by setting :ref:`RC_OPTIONS<RC_OPTIONS>` bit 8,
 additional ArduPilot telemetry items are transferred which allows use of the :ref:`common-frsky-yaapu` on OpenTX transmitters. Limitations and additional information is shown `here <https://discuss.ardupilot.org/t/passthrough-telemetry-over-crsf-crossfire>`__.
 
-Finally, several OpenTX scripts are normally provided for adjusting CRSF system parameters as well as providing ArduPilot parameter adjustment, similar in function to ArduPilot's :ref:`common-paramosd` feature.
+Several OpenTX scripts are normally provided for adjusting CRSF TX and RX system parameters. They are accessed by long pressing the SYS button.
 
+ArduPilot Parameter Editor
+==========================
+
+In  addition, the ArduPilot CRSF implementation provides for ArduPilot parameter adjustment, similar in function to ArduPilot's :ref:`common-paramosd` feature.
+
+If the autopilot has an active integrated OSD, this feature is automatically enabled. If not, then selecting :ref:`OSD_TYPE<OSD_TYPE>` = 4 (TX only) will enable it.
+
+Selecting the Crossfire Configuration LUA script in the transmitter will show:
+
+.. image:: ../../../images/crsf-config-screen.png
+
+And selecting the ArduPilot vehicle shown in that list will activate the :ref:`common-paramosd` with a list of all parameters which have been setup for both OSD screens. 
+
+.. image:: ../../../images/crsf-param-editor.png
+
+.. note:: Some autopilots will not display the parameter values that have text names, as text, but rather as a number, in order to save flash space. See :ref:`common-limited-firmware` for those without CRSF TEXT capability.

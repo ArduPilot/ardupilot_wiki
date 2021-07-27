@@ -23,6 +23,8 @@ In the configuration of the serial port select the RCIN protocol. So for example
 
 With the receiver connected and configured correctly proceed with RC calibration as normal.
 
+See :ref:`common-crsf-telemetry` for information about telemetry data sent, display scripts for OpenTX transmitters, and adjustment of ArduPilot parameters via CRSF.
+
 CRSF Video Transmitters
 =======================
 
