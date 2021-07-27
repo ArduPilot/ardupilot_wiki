@@ -21,6 +21,7 @@ Specifications
 
    -  MCU - STM32F427VIT6 
    -  16KB FRAM - FM25V01
+   -  AT7456E OSD
 
 -  **Sensors**
 
@@ -43,6 +44,7 @@ Specifications
    -  MicroSD card reader
    -  Micro USB or remote USB via a JST_GH connector
    -  Builtin RGB LED
+   -  Camera Input and Video Output
    -  External Buzzer interface
    -  2, 6.6V tolerant ADC inputs for RSSI, Analog Airspeed, etc.
    -  5 UARTs
