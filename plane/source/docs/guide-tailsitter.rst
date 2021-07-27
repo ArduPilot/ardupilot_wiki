@@ -17,6 +17,8 @@ should start off by reading the :ref:`QuadPlane documentation
 <quadplane-support>` before moving onto this tailsitter specific
 documentation.
 
+.. note:: On 4.1.dev and later tailsitters must be enabled with :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>`, once this is set the remaining `Q_TAILSIT_` parameters will appear after a reboot.
+
 Vectored and non-Vectored
 =========================
 
