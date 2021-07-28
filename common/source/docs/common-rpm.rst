@@ -78,7 +78,7 @@ For reasons explained later it is recommended to use the highest number pin firs
 
 **Parameter Setup**
 
-First the board needs to be configured to allow PWM pins to be set for GPIO.  This is done using the parameter :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` .  Reduce the PWM count to free up a pin to 
+First the board needs to be configured to allow PWM pins to be set for GPIO.  This is done using the parameter ``BRD_PWM_COUNT`` .  Reduce the PWM count to free up a pin to 
 be used for GPIO.  On non-Pixhawk boards the PWM count will include all PWM outputs.  On Pixhawk boards this parameter only affects AUX pins.  Write the parameter 
 and reboot the autopilot.
 

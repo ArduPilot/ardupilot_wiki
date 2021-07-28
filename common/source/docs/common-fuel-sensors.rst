@@ -22,9 +22,9 @@ Connecting to the Autopilot
 ---------------------------
 
 Any GPIO capable pin on the :ref:`autopilot<common-autopilots>` can be used to connect to the sensor's output. If it is an open-collector output, a 10Kohm external resistor pull-up to 3.3V will be required. For Pixhawk style controllers, any AUX pin can be used, and for most of the other autopilots, an upper PWM output can be used.
-In either case, it must be freed up from use as a PWM output by setting the :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` lower than the total number of outputs available for PWM use. 
+In either case, it must be freed up from use as a PWM output by setting the ``BRD_PWM_COUNT`` lower than the total number of outputs available for PWM use. 
 
-For example, if the board provides 6 outputs normally, setting :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` to 5 would make PWM output 6 available for use as a GPIO.
+For example, if the board provides 6 outputs normally, setting ``BRD_PWM_COUNT`` to 5 would make PWM output 6 available for use as a GPIO.
 The pin number assigned to that output when used as a GPIO needs to be determined from its hwdef.dat file, located `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ as shown below, where PWM6 is assigned as GPIO pin 55 when used as such:
 
 .. image:: ../../../images/gpio.png

@@ -615,7 +615,7 @@ GPIOs
 
 The 8 AUX PWM ports can be used as GPIOs (relays, buttons, RPM etc). To
 use them you need to limit the number of these pins that is used for
-PWM by setting the :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` to a number less than 8. For example
+PWM by setting the ``BRD_PWM_COUNT`` to a number less than 8. For example
 if you set it to 6 then PWM7 and PWM8 will be available for
 use as GPIOs.
 
