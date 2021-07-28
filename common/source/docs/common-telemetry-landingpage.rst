@@ -8,6 +8,8 @@ Copter/Plane/Rover support sharing information with a ground station (or
 transmitter) using telemetry. Follow the links below for configuration
 information based upon your set-up.
 
+.. note:: Some RC systems incorporate telemetry in addition to RC control
+
 .. image:: ../../../images/Telemetry_LandingImage.jpg
     :target: ../_images/Telemetry_LandingImage.jpg
 
