@@ -41,4 +41,4 @@ And selecting the ArduPilot vehicle shown in that list will activate the :ref:`c
 
 .. image:: ../../../images/crsf-param-editor.png
 
-.. note:: Some autopilots will not display the parameter values that have text names, as text, but rather as a number, in order to save flash space. See :ref:`common-limited-firmware` for those without CRSF TEXT capability.
+.. note:: Some autopilots will not display the parameter values that have text names, as text, but rather as a number, in order to save flash space. See  :ref:`common-limited-firmware` for those without CRSF TEXT capability.
