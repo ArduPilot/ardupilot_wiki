@@ -12,9 +12,7 @@ The TeraBee EVO family of rangefinders are lightweight distance measurement sens
 
 .. note::
 
-    Specifications are derived from tests in controlled conditions. Bright sunlight, target surface reflectivity and other variables will affect
-sensor performance. The combination of very bright sunshine and low reflectivity targets (such as grass) can reduce maximum range to
-10m or less. For additional information, please find the following <https://terabee.b-cdn.net/wp-content/uploads/2019/04/TeraRanger-Evo-60m-Test-Results-Report-Outdoor.pdf>`__
+    Specifications are derived from tests in controlled conditions. Bright sunlight, target surface reflectivity and other variables will affect sensor performance. The combination of very bright sunshine and low reflectivity targets (such as grass) can reduce maximum range to 10m or less. For additional information, please find the following <https://terabee.b-cdn.net/wp-content/uploads/2019/04/TeraRanger-Evo-60m-Test-Results-Report-Outdoor.pdf>`__
 
 More technical information about these senors can be found below:
 
