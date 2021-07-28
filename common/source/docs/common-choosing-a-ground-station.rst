@@ -53,7 +53,7 @@ Mission Planner
 Full featured and widely used GCS.
 
 -  **Platform**: Windows, Mac OS X (Using Mono)
--  **Licence**: `Open source <https://github.com/ArduPilot/MissionPlanner/blob/master/COPYING.txt>`__
+-  **License**: `Open source <https://github.com/ArduPilot/MissionPlanner/blob/master/COPYING.txt>`__
    (GPLv3)
 
 .. image:: ../../../images/MP-FP-Screen.jpg
@@ -72,7 +72,7 @@ The best autopilot for use on MAC and Linux platforms. It has a smaller
 user base and a reduced feature set when compared with Mission Planner.
 
 - **Platform**: Windows, Mac OS X, Linux
-- **Licence**: `Open source <https://github.com/ArduPilot/apm_planner/blob/master/license.txt>`__
+- **License**: `Open source <https://github.com/ArduPilot/apm_planner/blob/master/license.txt>`__
    (GPLv3)
 
    .. image:: ../../../images/planner2_choose_agcs.jpg
@@ -91,7 +91,7 @@ interface with graphical modules for map and mission editing. Written in
 Python, and extensible via python modules.
 
 -  **Platform**: Linux
--  **Licence**: `Open source <https://github.com/tridge/MAVProxy/blob/master/COPYING.txt>`__
+-  **License**: `Open source <https://github.com/tridge/MAVProxy/blob/master/COPYING.txt>`__
    (GPLv3)
 
 .. image:: ../../../images/mavproxy_linux.jpg
@@ -108,7 +108,7 @@ QGroundControl works with MAVLink capable autopilots including ArduPilot.
 It's unique among the GCS offerings as it runs on all platforms desktop and mobile.
 
 -  **Platform**: Windows, Mac OS X, Linux, Android and iOS
--  **Licence**: `Open Source <http://www.qgroundcontrol.org/license>`__
+-  **License**: `Open Source <http://www.qgroundcontrol.org/license>`__
    (GPLv3)
 
 .. image:: ../../../images/QGroundControlTabletImage.jpg
@@ -134,7 +134,7 @@ UgCS comes with in-built no-fly zones around all major airports as well as the a
 Supports multi-node installation, meaning that it is possible to connect multiple pilots with UgCS laptops in the field to a central ground control server.
 
 -  **Platform**: Windows, Mac OS X, Ubuntu
--  **Licence**: Proprietary with a free licence available as well (UgCS Open)
+-  **License**: Proprietary with a free licence available as well (UgCS Open)
 
 .. image:: https://www.ugcs.com/files/2016-04/1459769168_elevation-profile.jpeg
     :target:  https://www.ugcs.com/files/2016-04/1459769168_elevation-profile.jpeg
@@ -155,7 +155,7 @@ features like follow-me, “dronies” (i.e. “selfies” but taken with a
 drone) and special missions for 3D mapping.
 
 -  **Platform**: Android Phones and Tablets
--  **Licence**: `Open source <https://github.com/DroidPlanner/Tower/blob/develop/LICENSE.md>`__
+-  **License**: `Open source <https://github.com/DroidPlanner/Tower/blob/develop/LICENSE.md>`__
    (GPLv3)
 
 .. image:: ../../../images/tower_droid_planner3_structure_scan.jpg
@@ -184,7 +184,7 @@ A GCS in your pocket that supports predominantly ArduPilot autopilot on iPhone/i
 See website for how-to on how connect it to your autopilot
 
 -  **Platform**: iPhone, iPad
--  **Licence**: Proprietary
+-  **License**: Proprietary
 
 .. image:: ../../../images/MAVPilot_1.4.png
     :target: ../_images/MAVPilot_1.4.png
@@ -202,7 +202,7 @@ ArduPilot compatible GCS that runs on iPhone/iPad.
 See website for how-to on how connect it to your autopilot
 
 -  **Platform**: iPhone, iPad
--  **Licence**: Proprietary
+-  **License**: Proprietary
 
 .. image:: ../../../images/sidepilot.jpg
     :target: ../_images/sidepilot.jpg
@@ -223,7 +223,7 @@ Android GCS intended for enthusiasts.
 
 
 -  **Platform**: Android Phones and Tablets
--  **Licence**: `Open Source <https://github.com/geeksville/arduleader/blob/master/LICENSE.md>`__
+-  **License**: `Open Source <https://github.com/geeksville/arduleader/blob/master/LICENSE.md>`__
    (GPLv3)
 
 .. image:: ../../../images/Andropilot_-_Android_Apps_on_Google_Play.jpg
