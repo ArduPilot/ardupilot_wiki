@@ -681,14 +681,14 @@ servo connectors on the end of the board. They are marked as AUX servo
 pins 1 - 6 on the silkscreen as seen above.
 
 To set the number of these pins that are available as digital
-inputs/outputs, set the :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` parameter. On Pixhawk this
+inputs/outputs, set the ``BRD_PWM_COUNT`` parameter. On Pixhawk this
 defaults to 4, which means the first 4 AUX connectors are for servos
 (PWM) and the last 2 are for digital inputs/outputs. If you set
-:ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` to 0 then you would have 6 virtual digital pins and
+``BRD_PWM_COUNT`` to 0 then you would have 6 virtual digital pins and
 still have 8 PWM outputs on the rest of the connector.
 
 The 6 possible pins are available for PIN variables as pin numbers 50 to
-55 inclusive. So if you have :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` at the default value of 4,
+55 inclusive. So if you have ``BRD_PWM_COUNT`` at the default value of 4,
 then the two digital output pins will be pin numbers 54 and 55.
 
 In summary:

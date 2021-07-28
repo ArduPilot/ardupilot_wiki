@@ -94,7 +94,7 @@ Set the following parameters:
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MAX_CM>` = 20 (the mininum range the lidar can accurately report in cm)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1 ("0.8" may produce more accurate readings for some units)
 -  :ref:`RNGFND1_OFFSET <RNGFND1_OFFSET>` = 0
--  :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` = 4 (ensures AUX5 is not used as a servo output)
+-  ``BRD_PWM_COUNT`` = 4 (ensures AUX5 is not used as a servo output)
 
 Optional Power Saving
 ---------------------

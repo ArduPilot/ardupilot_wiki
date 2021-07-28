@@ -16,9 +16,9 @@ For example, the Pixhawk default defines set up AUX OUT 5 (pin 54) and AUX OUT 6
 .. image:: ../../../images/Relay_Pixhawk.jpg
     :target: ../_images/Relay_Pixhawk.jpg
 
-The number of available Relays can be increased to a maximum of 6 by reducing the number of AUX pins used as :ref:`Servo <common-servo>` outputs.  This can be accomplished by reducing the :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` from 4 to 2 or 0.
+The number of available Relays can be increased to a maximum of 6 by reducing the number of AUX pins used as :ref:`Servo <common-servo>` outputs.  This can be accomplished by reducing the ``BRD_PWM_COUNT`` from 4 to 2 or 0.
 
-Likewise, on other controllers which have only PWM outputs and no IOMCU, setting :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` to a lower number will free up their higher numbered outputs for use as GPIOs for controlling relays.
+Likewise, on other controllers which have only PWM outputs and no IOMCU, setting ``BRD_PWM_COUNT`` to a lower number will free up their higher numbered outputs for use as GPIOs for controlling relays.
 
 Defining the relay pins through the Mission Planner
 ===================================================
