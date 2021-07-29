@@ -15,7 +15,9 @@ This lists features or changes merged in master and build in the "latest" firmwa
 [site wiki="copter,plane,rover"]
     Other wiki changes <common-future-wiki-changes>
 [/site]
-
+[site wiki="rover"]
+    Torqeedo motor <common-torqeedo>
+[/site]
 - :ref:`Camera Trigger MAV Command change <mav_cmd_do_set_cam_trigg_dist>`
    
 
