@@ -67,3 +67,5 @@ By default "TRQD" messages are written to the onboard log including
 - ErrCnt : the number of bytes or messages that were corrupted or could not be processed (this should be a relatively low number)
 
 This same information can be sent to the ground station at 1hz by setting TRQD_DEBUG = 2 (Logging and GCS)
+[copywiki destination="rover"]
+
