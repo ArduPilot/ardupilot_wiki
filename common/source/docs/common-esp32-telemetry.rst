@@ -6,17 +6,16 @@ ESP32 WiFi telemetry
 
 The ESP32 are readily available Wi-Fi modules with full TCP/IP stack and
 microcontroller capability. They offer dedicated UART, SPI and I2C
-interfaces. They can be used with any Pixhawk series controller.
+interfaces. They can be used with any ArduPilot autopilot controller.
 
 DroneBridge for ESP32
 ---------------------
 
 | **DroneBridge for ESP32 offers a transparent and bi-directional serial
   to WiFi bridge.**
-| Despite the original DroneBridge (for Raspberry Pi) it uses the WiFi
-  protocol. Therefore, it can not offer the same range as the other
+| Using WiFi protocol does not offer the same range as the other
   DroneBridge implementations. Typical WiFi range is ~50m-200m depending
-  on the antennas. High gain directional antennas might offer even more
+  on the antennas. High gain directional antennas would offer even more
   range.
 
 .. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/master/wiki/db_ESP32_setup.png
@@ -29,9 +28,8 @@ Almost every ESP32 development board is capable to run DroneBridge for
 ESP32. Boards and modules with an external antenna connector are
 recommended, since those will offer more range.
 
-**Most modules support 3.3V input (only), while some flight controllers (e.g. Pixhawk 4) output
-at 5V (you will need to check compatibility and step down the voltage if
-needed).** 
+.. warning:: Most modules support 3.3V input (only), while some autopilots serial ports provide only 5V . You will need to check compatibility and step down the voltage if needed. It is not generally recommended to use the autopilot's 3.3V supply unless you are certain it can provide enough current for the ESP32 board you are using.
+
 Some examples for modules and DevKits that accept 3.3V supply:
 
 -  AZDelivery DevKit C
@@ -45,7 +43,7 @@ Some examples for modules and DevKits that accept 3.3V supply:
 .. note::
   NodeMCU style DevKit Boards with an IPEX port for an external antenna
   often also offer an onboard antenna that is activated by default. You
-  may need to resolder a resistor to activate the external antenna port.
+  may need to re-solder a resistor to activate the external antenna port.
 
 Downloading and Flashing the Firmware
 -------------------------------------
@@ -111,8 +109,8 @@ Wiring
 ======
 
 Wiring is very simple and mostly the same for all devices connected to
-the TELEM1/2 ports of a Pixhawk. That is why this guide does not go into
-detail here.
+any serial port (eg TELEM1 or TELEM2) of the autopilot. This guide does not go into
+detail here, but provides an outline for wiring below.
 
 -  Connect UART of ESP32 to a UART of your flight controller (e.g. TELEM
    1 or TELEM 2 port). Make sure the voltage levels match! Most ESP32
@@ -122,16 +120,15 @@ detail here.
    -  RX to TX
    -  GND to GND
    -  Stable 3.3V or 5V power supply to the ESP32 (depending on the
-      available inputs of your DevKit)
+      available inputs of your DevKit and capabilities of the autopilot)
 
--  Set the flight controller port to the desired protocol.
+-  Set the flight controller port to MAVLINK 1 or 2 protocol.
 
 Some manufacturers of ESP32 DevKits have wrong labels for the
 pins on their products. Make sure that the PINs on your board are
 labeled correctly if you encounter issues.
 
-Make sure to always follow the instructions of the ESP32 board manufacturer when it comes to wiring. 
-Especially the power supply.
+Make sure to always follow the instructions of the ESP32 board manufacturer when it comes to wiring. Especially the power supply.
 
 .. image:: https://raw.githubusercontent.com/DroneBridge/ESP32/master/wiki/Pixhawk_wiring.png
    :alt: Example wiring of flight controller to ESP32
@@ -143,9 +140,9 @@ ArduPilot configuration
 Configure the UART of the flight controller that is wired to the ESP32. The default configuration of DroneBridge is:
 
 -  Protocol: MAVLink (v1 or v2)
--  Baudrate: 115200 bps
+-  Baudrate: 115200 baud
 
-If connected to Serial2/Telem2 these parameters should be set on the autopilot (if using another telemetry port, replace the "2" in the parameter name with the telemetry port's number):
+If connected to Serial2 these parameters should be set on the autopilot (if using another serial port, replace the "2" in the parameter name with the serial port's number):
 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 2 (MAVLink2) or 1 (MAVLink1)
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 baud)
@@ -153,8 +150,8 @@ If connected to Serial2/Telem2 these parameters should be set on the autopilot (
 If you have problems connecting, it may help to set :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` = 0 to disable flow control although this is not normally necessary
 
 
-Connecting to GCS
-=================
+Connecting to the GCS
+=====================
 
 The following connection options are available:
 
