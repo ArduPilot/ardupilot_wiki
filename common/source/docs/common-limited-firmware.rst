@@ -1,4 +1,4 @@
-.. _common-limited-firmware:
+.. _common-limited_firmware:
 
 ==========================================
 Firmware Limitations on AutoPilot Hardware
