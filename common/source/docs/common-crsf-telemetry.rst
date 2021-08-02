@@ -17,12 +17,12 @@ These values can be displayed on OpenTX transmitters in several ways:
 
 .. image:: ../../../images/x9d-telem-screen.jpg
 
-- Using LUA scripts, like the ones developed for `iNav <https://luatelemetry.readthedocs.io/>`__ :
-
-.. image:: ../../../images/inav-telem-lua-screen.png
-
 In addition, by setting :ref:`RC_OPTIONS<RC_OPTIONS>` bit 8,
 additional ArduPilot telemetry items are transferred which allows use of the :ref:`common-frsky-yaapu` on OpenTX transmitters. Limitations and additional information is shown `here <https://discuss.ardupilot.org/t/passthrough-telemetry-over-crsf-crossfire>`__.
+
+.. image:: ../../../images/x10-horus.png
+
+.. warning:: when using :ref:`RC_OPTIONS<RC_OPTIONS>` bit 8 for passthru, be sure no SERIAL port is setup to use ``SERIALx_PROTOCOL`` = 10 (Passthrough) to avoid a conflict and unreliable operation.
 
 Several OpenTX scripts are normally provided for adjusting CRSF TX and RX system parameters. They are accessed by long pressing the SYS button.
 
@@ -41,4 +41,4 @@ And selecting the ArduPilot vehicle shown in that list will activate the :ref:`c
 
 .. image:: ../../../images/crsf-param-editor.png
 
-.. note:: Some autopilots will not display the parameter values that have text names, as text, but rather as a number, in order to save flash space. See  :ref:`common-limited-firmware` for those without CRSF TEXT capability.
+.. note:: Some autopilots will not display the parameter values that have text names, as text, but rather as a number, in order to save flash space. See  :ref:`common-limited_firmware` for those without CRSF TEXT capability.
