@@ -12,7 +12,6 @@ Indoor Flying, and Web Applications.
     :maxdepth: 1
 
     3d Mapping <common-3d-mapping>
-    Web Apps <common-web-apps>
     First Person View (FPV) <common-fpv-first-person-view>
     Multi-Vehicle Flying <common-multi-vehicle-flying>
 
