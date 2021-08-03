@@ -70,10 +70,10 @@ The following script is used to change a servo output based on the aircraft's di
        servo.set_output_pwm(96, 1000 + distance) -- set the servo assigned function 96 (scripting3) to a proportional value
      end
    
-     return update, 1000 -- request to be rerun again 1000 milliseconds (1 second) from now
+     return update, 1000 -- request "update" to be rerun again 1000 milliseconds (1 second) from now
    end
 
-   return update, 1000   -- request to be rerun again 1000 milliseconds (1 second) from now 
+   return update, 1000   -- request "update" to be the first time 1000 milliseconds (1 second) after script is loaded
 
 This script begins by defining the update function, which will be called periodically.
 This function fetches the vehicles current position and home position, and stores them within the local variables current_pos and home.
