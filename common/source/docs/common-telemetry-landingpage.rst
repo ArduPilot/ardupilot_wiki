@@ -41,6 +41,7 @@ Long Range
 
     CRSF Telemetry <common-crsf-telemetry>
     DragonLink <common-dragonlink-rc>
+    Holybro 900Mhz XBP9X Telemetry Radio <https://shop.holybro.com/xbp9x-radio_p1268.html>
     LTM telemetry <common-ltm-telemetry>
     RFD900 <common-rfd900>
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>
