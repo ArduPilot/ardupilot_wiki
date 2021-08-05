@@ -4,10 +4,12 @@
 Downloading and Analyzing Data Logs in Mission Planner
 ======================================================
 
-Dataflash logs are stored on the autopilot's onboard dataflash memory
+Dataflash logs are stored on the autopilot
 and can be download after a flight. By default, they are created after you first
 arm the vehicle. This topic explains how to configure and access
 Dataflash logs.
+
+Depending on the autopilot type and configuration, the dataflash logs may be saved on a SD card, dataflash chip or streamed over MAVLink telemetry ports. The MAVLink option does require a high-speed telemetry port, typically 921600 baud.
 
 [copywiki destination="copter,plane,rover,dev,planner"]
 
@@ -26,6 +28,7 @@ Logging Parameters
 
 Some commonly used parameters are:
 
+- :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>` : Bitmask for where to save logs to. Common values are "0" to disable logging, "1" to log to SD card file, "2" to stream over MAVLink and "4" to log to board dataflash memory, if equipped.
 - :ref:`LOG_BITMASK<LOG_BITMASK>` : Bitmask for what items are logged. Normally, use default value, or "0" to disable logging.
 - :ref:`LOG_DISARMED<LOG_DISARMED>` : Setting to one will start logging when power is applied, rather than at the first arming of the vehicle. Usefull when debugging pre-arm failures.
 - :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>` : Setting this bit will force the creation of a new log file after disarming, waiting 15 seconds, and then re-arming. Normally, a log will be one file for every power cycle of the autopilot, beginning upon first arm.
