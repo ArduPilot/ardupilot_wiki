@@ -27,7 +27,7 @@ value to users with old hardware.
     AttoPilot Current/Voltage Sensor <common-using-a-current-sensor>
     Erle-Brain2 Wiring Quick Start <common-erle-brain2-wiring-quick-start>
     PXFmini Wiring Quick Start <common-pxfmini-wiring-quick-start>
-    Web Apps <commmon-web-apps>
+    Web Apps <common-web-apps>
 
 [/site]
 [site wiki="copter,plane,rover"]
