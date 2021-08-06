@@ -22,9 +22,9 @@ Setup through Mission Planner
     :target: ../_images/smart-battery-setup-mission-planner.png
 
 Set :ref:`BATT_MONITOR <BATT_MONITOR>` to appropriate Smart Battery model
-Set :ref:`BATT_BUS <BATT_BUS>` to the appropriate bus number
+Set :ref:`BATT_I2C_BUS <BATT_I2C_BUS>` to the appropriate bus number
 
-For adding more batteries, set :ref:`BATT2_MONITOR <BATT2_MONITOR>` & :ref:`BATT2_BUS <BATT2_BUS>`, :ref:`BATT3_MONITOR <BATT3_MONITOR>` & :ref:`BATT3_BUS <BATT3_BUS>`
+For adding more batteries, set :ref:`BATT2_MONITOR <BATT2_MONITOR>` & :ref:`BATT2_I2C_BUS <BATT2_I2C_BUS>`, :ref:`BATT3_MONITOR <BATT3_MONITOR>` & :ref:`BATT3_I2C_BUS <BATT3_I2C_BUS>`,etc.
 
 Restart the board and connect with a ground station and check the battery voltage appears.
 The :ref:`BATT_CAPACITY <BATT_CAPACITY>` parameter should be automatically updated to the batteries actual capacity in mAh.
