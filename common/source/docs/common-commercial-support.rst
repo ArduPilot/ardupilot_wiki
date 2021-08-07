@@ -235,6 +235,20 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
+	    <tr class="row-odd">
+        <td><center><a class="first last reference external image-reference" href="https://www.Event38.com/"><img alt="Event 38 Unmanned Systems" src="../_images/Event38.png" style="width: 90px;" /></a><br/><br/>USA</center></td>
+        <td><div class="first last line-block">
+            <div class="line">Event38 Unmanned Systems, <a href="mailto:help@event38.com" target="_top">help@event38.com</a></div>
+            <div class="line"><br/></div>
+            <div class="line">Consulting services include but are not limited to:</div>
+            <div class="line">Customizations of any part of ArduPilot code</div>
+            <div class="line">Airframe design and manufacturing</div>
+            <div class="line">Systems integration</div>
+			<div class="line">Aircraft Tuning</div>
+			<div class="line">Companion Computers and offboard navigation</div>
+            </div>
+        </td>
+    </tr>
     </tbody>
     </table>
 
@@ -308,5 +322,8 @@ listed here will be active participants in the community.
             
 .. image:: ../../../images/logos/KHUnmanned_logo.png
     :scale: 0%
+
+.. image:: ../../../images/logos/Event38.png
+    :scale: 0%	
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
