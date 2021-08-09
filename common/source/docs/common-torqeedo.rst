@@ -47,7 +47,7 @@ Configuration
 
 Please set the following parameters
 
-- :ref:`TRQD_ENABLE <TRQD_ENABLE>` = 1 (Enable)
+- :ref:`TRQD_TYPE <TRQD_TYPE>` = 1 (Tiller) if the autopilot will be connected to the tiller connector or 2 (Motor) if connected to the motor connector
 - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 39 (Torqeedo) if the Torqeedo is connected to serial port 1.  If another serial port is used please set the appropriate SERIALx_PROTOCOL parameter
 - :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 19 (19200 bps) if using serial port 1.  If another serial port is used please set the appropriate SERIALx_BAUD parameter instead
 
