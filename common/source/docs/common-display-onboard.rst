@@ -27,12 +27,14 @@ SSD1306
 -------
 
 `Amazon <https://www.amazon.com/s?k=ssd1306&ref=nb_sb_noss_1>__`
+
 `Ebay <https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=ssd1306&_sacat=0>__`
 
 SSH1106
 -------
 
 `Amazon <https://www.amazon.com/s?k=ssh1106&ref=nb_sb_noss_1>__`
+
 `Ebay <https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=ssh1106&_sacat=0&LH_TitleDesc=0&_odkw=ssd1306&_osacat=0>__`
 
 Connecting to a Autopilot
