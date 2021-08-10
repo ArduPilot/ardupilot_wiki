@@ -32,7 +32,7 @@ These boards have been confirmed to work:
 - `SSD1306 module from SunFounder on Amazon Spain <https://www.amazon.es/gp/product/B014KUB1SA/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1>`__
 - `CRIUS display from rctimer <http://rctimer.com/product-797.html>`__
 - `Diymall 1.3 inch from Amazon <https://www.amazon.com/gp/product/B016HVG0MM/ref=od_aui_detailpages00?ie=UTF8&psc=1>`__
-
+- `Joy-IT 0.96 OLED Display <https://joy-it.net/en/products/SBC-OLED01>`__
 
 Connecting to a Autopilot
 =================================
