@@ -329,10 +329,10 @@ gimbal mount:
     param set MNT_TYPE 1
 
     # Set RC output 6 as pan servo:
-    param set RC6_FUNCTION 6
+    param set SERVO6_FUNCTION 6
 
     # Set RC output 8 as roll servo:
-    param set RC7_FUNCTION 8
+    param set SERVO7_FUNCTION 8
 
 Then stop and re-launch SITL with the ``-M`` flag:
 
