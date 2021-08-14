@@ -8,9 +8,9 @@ if [ "$UID" -eq 0 ]; then
 fi
 
 DISTRIBUTION_ID=$(lsb_release -i -s)
-if [ ${DISTRIBUTION_ID} == 'Ubuntu' ]; then
+if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
   DISTRIBUTION_CODENAME=$(lsb_release -c -s)
-  if [ ${DISTRIBUTION_CODENAME} == 'focal' ] || [ ${DISTRIBUTION_CODENAME} == 'bionic' ]; then
+  if [ ${DISTRIBUTION_CODENAME} = 'focal' ] || [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
     sudo add-apt-repository universe
   fi
 fi
@@ -19,12 +19,12 @@ sudo apt-get -y update
 sudo apt-get install -y unzip git imagemagick curl wget make python3
 
 # Install packages release specific
-if [ ${DISTRIBUTION_CODENAME} == 'bionic' ]; then
+if [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
   sudo apt-get install -y python3-distutils
-elif [ ${DISTRIBUTION_CODENAME} == 'focal' ]; then
+elif [ ${DISTRIBUTION_CODENAME} = 'focal' ]; then
   sudo apt-get install -y python-is-python3
 else
-    if [ ${DISTRIBUTION_ID} == 'Ubuntu' ]; then
+    if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
         sudo apt-get install -y python-is-python3
     fi
 fi
