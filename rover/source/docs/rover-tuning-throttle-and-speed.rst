@@ -28,7 +28,7 @@ Desired Speed to Throttle PID Tuning
 
 The Desired-Speed-to-Throttle controller attempts to achieve the desired speed (set by the pilot or autopilot) using a PID controller.  All modes except :ref:`Hold <hold-mode>` and :ref:`Manual <manual-mode>` use this controller.
 
-The P, I and D gains for this controller are held in :ref:`ATC_SPEED_P <ATC_SPEED_P>`, :ref:`ATC_SPEED_I <ATC_SPEED_I>` and :ref:`ATC_SPEED_D <ATC_SPEED_D>` parameters respectively.  :ref:`ATC_SPEED_FF <ATC_SPEED_FF>` is not used.
+The P, I and D gains for this controller are held in :ref:`ATC_SPEED_P <ATC_SPEED_P>`, :ref:`ATC_SPEED_I <ATC_SPEED_I>` and :ref:`ATC_SPEED_D <ATC_SPEED_D>` parameters respectively.  :ref:`ATC_SPEED_FF <ATC_SPEED_FF>` is should be left at zero.
 
 Recommended steps for tuning this controller are:
 
