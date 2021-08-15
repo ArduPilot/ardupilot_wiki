@@ -82,20 +82,21 @@ First the board needs to be configured to allow PWM pins to be set for GPIO.  Th
 be used for GPIO.  On non-Pixhawk boards the PWM count will include all PWM outputs.  On Pixhawk boards this parameter only affects AUX pins.  Write the parameter 
 and reboot the autopilot.
 
+Now the RPM library must be enabled.  Set the parameter :ref:`RPMx_TYPE<RPM1_TYPE>` to 1 for a GPIO pin based sensor.  Write the parameter to ArduPilot then refresh/fetch the 
+parameters.  You will now find that the instance of RPM (e.g. RPM1) has a number of other parameters available for editing, allowing you to complete your setup.
+
 Now the autopilot needs to be told which pin to find the RPM signal on.  To do this you will need to find the pin number in the hwdef.dat file for you 
 board.  These can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__.  Within the file for your board you will 
 need to find where the GPIO(*) definition is.  The below example is an excerpt from the hwdef.dat file for the cube: ::
 
     PD13 TIM4_CH2 TIM4 PWM(5) GPIO(54)
 
-Here, pin 54 corresponds to AUX port 5.  Therefore, 54 must be entered into the parameter :ref:`RPM_PIN<RPM_PIN>` if using AUX 5 for the RPM sensor.
+Here, pin 54 corresponds to AUX port 5.  Therefore, 54 must be entered into the parameter :ref:`RPMx_PIN<RPM1_PIN>` if using AUX 5 for the RPM sensor.
 
-The parameter :ref:`RPM_SCALING<RPM_SCALING>` will correspond to the number magnets used.  Most commonly only one magnet is used and this parameter is set to 1.  Some installations use 
+The parameter :ref:`RPMx_SCALING<RPM1_SCALING>` will correspond to the number magnets used.  Most commonly only one magnet is used and this parameter is set to 1.  Some installations use 
 2 magnets, 180 degrees out of phase.  In this case this parameter should be set to 0.5.
 
-The parameter :ref:`RPM_TYPE<RPM_TYPE>` should be set to 2 when using the AUX pins on Pixhawk type boards.  It should be set to 1 in all other instances.
-
-Initially, it is recommended to leave the parameters :ref:`RPM_MIN<RPM_MIN>` , :ref:`RPM_MAX<RPM_MAX>` , and :ref:`RPM_MIN_QUAL<RPM_MIN_QUAL>` as their defaults.  If an RPM signal exceeds any of these limits then the 
+Initially, it is recommended to leave the parameters :ref:`RPMx_MIN<RPM1_MIN>` , :ref:`RPMx_MAX<RPM1_MAX>` , and :ref:`RPMx_MIN_QUAL<RPM1_MIN_QUAL>` as their defaults.  If an RPM signal exceeds any of these limits then the 
 value reported in the ground station and the logs is zero.  Therefore, only adjust these values once you have confirmed that your RPM sensor is working as expected, 
 otherwise it can make it more difficult to debug if nothing is getting reported.
 
@@ -118,12 +119,12 @@ via serial telemetry with ESCs.  For information on how to set up RPM reporting 
 For information on how to set up RPM logging with BL Heli see the :ref:`BLHeli Telemetry<common-dshot-blheli32-telemetry>`.
 
 The setup for electrical commutation RPM sensors is much the same as hall effect sensors, so the steps above are applicable.  The only difference is the scaling value 
-to be entered in the :ref:`RPM_SCALING<RPM_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 
+to be entered in the :ref:`RPMx_SCALING<RPM1_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 
 poles.  E.g. A 4 pole motor will need a scaling value of 0.25.
 
 Optical Sensors
 ===============
 
-Again, the setup of optical sensors is much the same as the hall effect sensor.  The only difference is the scaling value.  :ref:`RPM_SCALING<RPM_SCALING>` should be set to be the reciprocal 
-of the number of reflective obstacles that pass the sensor in a single rotation. 
+Again, the setup of optical sensors is much the same as the hall effect sensor.  The only difference is the scaling value.  :ref:`RPMx_SCALING<RPM1_SCALING>` should be set to be the reciprocal 
+of the number of reflective obstacles that pass the sensor in a single rotation.
 
