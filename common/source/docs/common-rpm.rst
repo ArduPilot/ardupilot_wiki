@@ -13,6 +13,7 @@ Common types or RPM sensor that can be used in ArduPilot:
 - Hall effect
 - Electrical commutation
 - Optical
+- ESC Telemetry
 
 Any RPM sensor that outputs a step-change in voltage as a function of RPM can be used with ArduPilot.  A brief explanation of how the RPM library works is given.  This is followed by 
 instructions for how to setup the different types of RPM sensor.  Up to two RPM sensors can be used.
@@ -128,3 +129,10 @@ Optical Sensors
 Again, the setup of optical sensors is much the same as the hall effect sensor.  The only difference is the scaling value.  :ref:`RPMx_SCALING<RPM1_SCALING>` should be set to be the reciprocal 
 of the number of reflective obstacles that pass the sensor in a single rotation.
 
+ESC Telemetry - Average Motor RPM
+=================================
+
+The RPM library can also be used to setup an 'RPM sensor' that computes and logs the average RPM for selected motors on the vehicle that are controlled by BLHeli_32 or BLHeli_S capable ESCs.  First the ESC telemetry will 
+need to be setup.  See :ref:`BLHeli Telemetry<common-dshot-blheli32-telemetry>` for details on how to do this.  Once complete set :ref:`RPMx_TYPE<RPM1_TYPE>` to 4 and write the parameters to ArduPilot.  Then refresh/fetch 
+the parameters.  You will find a number of additional parameters are now available for that instance.  Find and set :ref:`RPMx_ESC_MASK<RPM1_ESC_MASK>` to add which ESC channels you want to be included in the average.  
+:ref:`RPMx_ESC_MASK<RPM1_ESC_MASK>` is a bitmask, with each bit corresponding to a channel.  For example: if you wanted the average RPM for motors 1 to 4 you would set :ref:`RPMx_ESC_MASK<RPM1_ESC_MASK>` = 1 + 2 + 4 + 8 = 15.
