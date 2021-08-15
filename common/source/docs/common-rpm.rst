@@ -1,8 +1,8 @@
 .. _common-rpm:
 
-===========
-RPM Sensors
-===========
+===============
+RPM Measurement
+===============
 
 ArduPilot supports the use of numerous types of RPM sensors.  They are commonly used in traditional helicopters to measure main rotor speed and motor/engine RPM.  
 RPM sensors are mandatory for those who wish to use the closed-loop throttle governor functionality available to helicopters.  Additionally, vehicles that employ 
@@ -18,17 +18,19 @@ Common types or RPM sensor that can be used in ArduPilot:
 Any RPM sensor that outputs a step-change in voltage as a function of RPM can be used with ArduPilot.  A brief explanation of how the RPM library works is given.  This is followed by 
 instructions for how to setup the different types of RPM sensor.  Up to two RPM sensors can be used.
 
-How the RPM Sensor Library Works
-================================
+How the RPM Library Works (TYPE = AUXPIN)
+=========================================
 
-The RPM library in ArduPilot monitors the voltage of the designated signal pin.   The image below shows a typical output voltage of an RPM sensor:
+This section gives a brief overview of how the RPM library works when `RPMx_TYPE<RPM1_TYPE>` is set to AUXPIN.
+
+The RPM library in ArduPilot monitors the voltage of the designated signal pin.  The image below shows a typical output voltage of an RPM sensor:
 
 .. image:: ../../../images/Commutation_RPM_Sensor.png
     :target: ../_images/Autorotation_Wheel_Magnet.png
     :width: 450px
 
 As it can be seen the voltage oscillates between 0V and 5V.  The voltage drops are either caused by a magnet passing a hall effect sensor, or are the output of a 
-different type of sensor.  When a 'falling edge' is detected the time is stored.  When the voltage drops again the time difference between the falling edges can be 
+different type of sensor (e.g. optical).  When a 'falling edge' is detected the time is stored.  When the voltage drops again the time difference between the falling edges can be 
 calculated.  The time between the voltage drops is proportional to the RPM.  The scaling value that correlates the time between the falling edges and the RPM is 
 dependent upon the setup and device being used.  Device-specific advice on scaling parameters is given later in this guide. 
 
@@ -67,15 +69,15 @@ and is recommended.
    pull-up resistor to be added between the Vcc and signal lines.  In some cases, their Vcc, gnd, and signal lines won't match the colour coding of the wire.  Hence,
    it is advisable to experiment with the provided Arduino sketch and a bread board to be sure of the sensor pin orientation.
 
-For a reliable RPM signal the hall effect pick-up should be mounted very close to the magnet.  The image below shows an example mounting on helicopter.
+For a reliable RPM signal the hall effect pick-up should be mounted very close to the magnet.  The image below shows an example mounting on a helicopter.
 
 .. image:: ../../../images/Installed_Hall_Effect_Sensor.jpg
     :target: ../_images/Installed_Hall_Effect_Sensor.jpg
     :width: 240px
 
-The three wires should then be plugged into autopilot.  This is commonly done using a standard servo plug.  Ground to Gnd, Vcc to 5V, and the signal line 
+The three wires should then be plugged into the autopilot.  This is commonly done using a standard servo plug.  Ground to Gnd, Vcc to 5V, and the signal line 
 needs to be attached to a GPIO pin.  On most smaller boards this will be any one of the PWM pins on the servo rail.  On a Pixhawk this must be one of the AUX ports.  
-For reasons explained later it is recommended to use the highest number pin first.  E.g. AUX 6 on a Pixhawk Cube or PWM 9 on an F405-Wing.
+For reasons explained later it is recommended to use the highest number pin first.  E.g. AUX 6 on a Pixhawk/Cube or PWM 9 on an F405-Wing.
 
 **Parameter Setup**
 
@@ -116,7 +118,7 @@ Electrical commutation RPM sensors can be added retrospectively using something 
 series, that have an auxiliary output, can be configured to output a pulse per commutation.
 
 For clarification, this is not the same as the RPM that can be passed 
-via serial telemetry with ESCs.  For information on how to set up RPM reporting with capable  ESCs, see the :ref:`ESC Telemetry<esc-telemetry>`.
+via serial telemetry with ESCs.  For information on how to set up RPM reporting with capable ESCs, see the :ref:`ESC Telemetry<esc-telemetry>`.
 For information on how to set up RPM logging with BL Heli see the :ref:`BLHeli Telemetry<common-dshot-blheli32-telemetry>`.
 
 The setup for electrical commutation RPM sensors is much the same as hall effect sensors, so the steps above are applicable.  The only difference is the scaling value 
