@@ -123,6 +123,8 @@ Checking Harmonic Notch Effectiveness
 After setting up the harmonic notch, the effect on the control signal data can be checked using the instructions for Post Configuration Confirmation Flight and Post-Flight Analysis in the multicopter setup section above. While the log analysis required for the Throttle-based mode's setup are not required for RPM based mode, the logging and analysis done for the Confirmation flight in the above sections CAN be done in order to confirm the noise elimination.
 
 
+.. _esc-telemetry-based-dynamic-notch-filter:
+
 ---------------
 ESC-based Setup
 ---------------
