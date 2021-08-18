@@ -58,6 +58,8 @@ This data can also be viewed in real-time using a ground station.  If using the 
 
 In addition, some telemetry values can be displayed on the integrated :ref:`on-board OSD <common-osd-overview>`, if your autopilot has one.
 
+.. _esc-telemetry-based-battery-monitor:
+
 Use as Battery Monitor
 ======================
 
