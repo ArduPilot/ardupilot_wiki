@@ -80,6 +80,23 @@ This reflects the current state of the development branch of the ArduPilot code.
 
 This code must be manually downloaded from the `Firmware Downloads <firmware.ardupilot.org>`__ page as ``latest`` for your particular board, and then uploaded using Mission Planner's "Load Custom Firmware" option on its **Install Firmware Page**
 
+Custom Firmware Build Server
+----------------------------
+
+ArduPilot is currently experimentally testing a custom firmware build server that will allow users to generate firmware builds for their autopilots with selectable features. Since all 1MB flash sized boards now have feature restrictions to allow the code to fit, this will give a path to enable a user to select which features will or will not be included, giving some flexibility to users of 1MB autopilots.
+
+The server is located `here <https://custom.ardupilot.org>`__
+
+It allows creating a custom build, which can be downloaded, and flashed to the autopilot using Mission Planner's "Load Custom Firmware" option on its **Install Firmware Page**
+
+
+.. warning:: Caution, Experimental
+
+Current Limitations
+~~~~~~~~~~~~~~~~~~~
+
+- Most feature options are already necessary to be **not** included in the 1MB autopilots in order to built, but the list will be continuously expanded, allowing other large features to be dropped and currently restricted features re-added to the custom build. For example, not building in QuadPlane will be a large code space saving for Planes not requiring it. In the future, drivers and peripheral support may be individually selected, allowing only those used, to be in the code allowing other features to be included in the code build.
+- Current build is from the daily master branch only ("latest"). In the future, Stable and Beta branches will be selectable.
 
 Testing
 =======
