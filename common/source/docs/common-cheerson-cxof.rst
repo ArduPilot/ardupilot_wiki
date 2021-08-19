@@ -27,9 +27,6 @@ These alternatives may work but this has not been confirmed:
 
 - `JJRC H62 Flow sensor <https://www.banggood.com/JJRC-H62-RC-Quadcopter-Spare-Parts-Optical-Current-Board-H62-03-p-1302982.html>`__
 
-This similar flow sensor is not supported (yet):
-
-- `UPIXELS UP-Flow sensor <https://www.aliexpress.com/item/UPIXELS-UP-FLOW-Optical-Flow-Module-FPV-Drone-Hovering-Altitude-Hold-Control-Optical-Flow-Sensor-For/32969297064.html>`__
 
 Connection to Autopilot
 -------------------------------
