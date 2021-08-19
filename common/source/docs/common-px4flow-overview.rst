@@ -6,7 +6,7 @@ PX4FLOW Optical Flow Camera Board
 
 [copywiki destination="copter,plane"]
 
-This article describes how to setup the `PX4FLOW (Optical Flow) Sensor <https://northox.myshopify.com/collections/frontpage/products/px4flow>`__ which can be used in place of a GPS.
+This article describes how to setup the `PX4FLOW (Optical Flow) Sensor <https://shop.holybro.com/px4flow-kit_p1035.html>`__ which can be used in place of a GPS.
 
 ..  youtube:: LP8kl4hGfMw
     :width: 100%
@@ -18,7 +18,7 @@ This article describes how to setup the `PX4FLOW (Optical Flow) Sensor <https://
 Overview
 ========
 
-The `PX4FLOW (Optical Flow) Sensor <https://store.cuav.net/index.php?id_product=52&id_product_attribute=0&rewrite=cuav-px4flow-21-optical-flow-sensor-smart-camera-for-px4-pixhawk-flight-control-without-sonar-or-with-sonar&controller=product&id_lang=3>`__ is a
+The `PX4FLOW (Optical Flow) Sensor <https://shop.holybro.com/px4flow-kit_p1035.html>`__ is a
 specialized high resolution downward pointing camera module and a 3-axis gyro that uses
 the ground texture and visible features to determine aircraft ground velocity. 
 Although the sensor may be supplied with a built-in Maxbotix LZ-EZ4 sonar to measure 
