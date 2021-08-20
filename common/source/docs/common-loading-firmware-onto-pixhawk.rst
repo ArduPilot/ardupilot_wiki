@@ -95,7 +95,7 @@ It allows creating a custom build, which can be downloaded, and flashed to the a
 Current Limitations
 ~~~~~~~~~~~~~~~~~~~
 
-- Most feature options are already necessary to be **not** included in the 1MB autopilots in order to built, but the list will be continuously expanded, allowing other large features to be dropped and currently restricted features re-added to the custom build. For example, not building in QuadPlane will be a large code space saving for Planes not requiring it. In the future, drivers and peripheral support may be individually selected, allowing only those used, to be in the code allowing other features to be included in the code build.
+- All the feature options currently **not** included in the 1MB autopilots, in order to fit into the flash space, are in the list, but also many features currently included also. So it is possible to create a build that includes some of the currently excluded features. The list of feature options will be continuously expanded, allowing other large features to be dropped and more currently restricted features re-added to the custom build. For example, not building in QuadPlane will be a large code space saving for Planes not requiring it. In the future, drivers and peripheral support may be individually selected, allowing only those used, to be in the code allowing other features to be included in the code build.
 - Current build is from the daily master branch only ("latest"). In the future, Stable and Beta branches will be selectable.
 
 Testing
