@@ -224,19 +224,6 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
         </td>
     </tr>
     <tr class="row-odd">
-        <td><center><a class="first last reference external image-reference" href="https://www.hivebotics.fr"><img alt="Hivebotics" src="../_images/hivebotics.png" style="width: 90px;" /></a><br/><br/>France</center></td>
-        <td><div class="first last line-block">
-            <div class="line">Hivebotics, Pierre Kancir, <a href="mailto:pierre.kancir@hivebotics.fr" target="_top">pierre.kancir@hivebotics.fr</a></div>
-            <div class="line"><br/></div>
-            <div class="line">With several years of developpement with ArduPilot, Pierre</div>
-            <div class="line">provides consulting services focused on code customization,</div>
-            <div class="line">review and support.</div>
-            <div class="line">Experienced in testing both on real and simulation,</div>
-            <div class="line">he can help to bring an automated testing framework.</div>
-            </div>
-        </td>
-    </tr>
-    <tr class="row-odd">
         <td><center><a class="first last reference external image-reference" href="https://www.khunmanned.com/"><img alt="KH Unmanned" src="../_images/KHUnmanned_logo.png" style="width: 90px;" /></a><br/><br/>UK</center></td>
         <td><div class="first last line-block">
             <div class="line">KH Unmanned, Matthew Kear and Peter Hall, <a href="mailto:info@khunmanned.com" target="_top">info@khunmanned.com</a></div>
@@ -318,10 +305,8 @@ listed here will be active participants in the community.
 
 .. image:: ../../../images/logos/ElectricKite.png
     :scale: 0%
-    
-.. image:: ../../../images/logos/hivebotics.png
-    :scale: 0%
             
 .. image:: ../../../images/logos/KHUnmanned_logo.png
     :scale: 0%
+
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
