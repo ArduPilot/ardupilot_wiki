@@ -118,17 +118,17 @@ or loiter will achieve the required direction changes, cross-country
 flying will not. To enable automatic airspeed sensor calibration, set
 the value of :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1. See :ref:`calibrating-an-airspeed-sensor` for more details.
 
-Miss-calibration Safeguards
-===========================
+Miscalibration Safeguards
+=========================
 
-In order to help prevent Airspeed sensor use when its been miss-calibrated either during ground static calibration during the power up sequence, or by accidental parameter changes to offset or ratio, three parameters are available. If the ground speed is consistently lower than the reported airspeed for a few seconds by :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>`, i.e. the apparent wind speed is greater than that amount, the sensor can be disabled to avoid erroneous reporting. It can be allowed to re-enable if the apparent wind falls back below that value. These actions are controlled by :ref:`ARSPD_OPTIONs<ARSPD_OPTIONs>`.
+In order to help prevent Airspeed sensor use when its been miscalibrated either during ground static calibration during the power up sequence, or by accidental parameter changes to offset or ratio, three parameters are available. If the ground speed is consistently lower than the reported airspeed for a few seconds by :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>`, i.e. the apparent wind speed is greater than that amount, the sensor can be disabled to avoid erroneous reporting. It can be allowed to re-enable if the apparent wind falls back below that value. These actions are controlled by :ref:`ARSPD_OPTIONs<ARSPD_OPTIONs>`.
 
 You can also send a warning to the Ground Control Station if the apparent wind exceeds :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>`. This can be used instead of, or together with the above
 
 Failure
 =======
 
-A failing airspeed sensor can lead to the aircraft stalling or over-speeding, this is something that is hard for ArduPilot to detect. Likewise, accidentally miss-calibrating the offset during ground initialization can occur if the pitot tube is not covered to prevent wind upsetting the calibration, and can result in wildly inaccurate readings. The parameters below can be used to help detect these conditions and warn of, and/or disable, a failed sensor.
+A failing airspeed sensor can lead to the aircraft stalling or over-speeding, this is something that is hard for ArduPilot to detect. Likewise, accidentally miscalibrating the offset during ground initialization can occur if the pitot tube is not covered to prevent wind upsetting the calibration, and can result in wildly inaccurate readings. The parameters below can be used to help detect these conditions and warn of, and/or disable, a failed sensor.
 
 :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>` can be used to set the maximum expected wind speed the vehicle should ever see. This is then be used
 in combination with the GPS ground speed to detect a airspeed sensor error. :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>` can be set to a lower speed to give 
