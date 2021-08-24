@@ -37,8 +37,6 @@ Connection to Autopilot
 - Connect the sensor's VCC to a 3.3V or 5V power source.
 - Set :ref:`FLOW_TYPE <FLOW_TYPE>` = 8
 - Set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 18 if using Serial2/Telem2, if connected to another serial port use the corresponding SERIALx_PROTOCOL parameter
-- Set :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` = 10
-- Optionally set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 3 to force the EKF to only use the optical flow sensor and not use the GPS
 
 Additional Notes
 -----------------
@@ -50,4 +48,5 @@ Additional Notes
 Testing and Setup
 -----------------
 
-See :ref:`common-optical-flow-sensor-setup`
+- See :ref:`common-optical-flow-sensor-setup` for setup guides.
+- Note that recommended value for :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` or :ref:`EK3_FLOW_DELAY <EK3_FLOW_DELAY>` for this sensor is 10. 
