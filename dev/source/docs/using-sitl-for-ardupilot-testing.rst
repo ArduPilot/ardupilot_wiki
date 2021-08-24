@@ -291,7 +291,7 @@ Testing the effects of wind
 
 The wind direction, speed and turbulence can be changed to test their
 effect on flight behaviour. The following settings changes the wind so
-that it blows towards the South at a speed of 10 m/s.
+that it blows from the South at a speed of 10 m/s.
 
 ::
 
