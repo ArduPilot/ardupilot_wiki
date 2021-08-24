@@ -8,7 +8,7 @@ This article provides guidance to setup UAVCAN protocol on ArduPilot.
 
 .. tip::
 
-   The UAVCAN protocol should be enabled first. Please refer to the
+   The physical CAN port and its driver selected as UAVCAN protocol should be enabled first. Please refer to the
    :ref:`CAN Bus Setup <common-canbus-setup-advanced>`
 
 Overview
@@ -56,34 +56,35 @@ UAVCAN ESC and Servo Configuration settings
 ===========================================
 See :ref:`common-uavcan-escs` for information on UAVCAN ESCs.
 
-There are three parameters present at the moment in CAN category of setting:
+Each UAVCAN ESC or Servo will have an programmed ID or channel address corresponding to the autopilot's servo/motor output channel. These are set by switches on the ESC or via a setup/configuration program, depending on the ESC.
 
--  **CAN_DX_UC_NODE** - which is the node ID of the autopilot
--  **CAN_D1_UC_ESC_BM** - bitmask that enables sending of ESC commands
--  **CAN_D1_UC_SRV_BM** - bitmask that enables sending of servo commands
+There are three parameters that determine which autopilot servo/motor channels are sent to the CAN ESC and/or Servos:
+For the examples below, the values are shown for CAN driver #1.
+
+-  :ref:`CAN_D1_UC_NODE<CAN_D1_UC_NODE>` - which is the node ID of the autopilot sending the commands to the ESCs so that there can be differentiation between multiple sources on the CAN bus
+-  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the UAVCAN ESCs
+-  :ref:`CAN_D1_UC_ESC_SRV<CAN_D1_UC_SRV_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the Servos on UAVCAN Servos
 
 .. image:: ../../../images/uavcan-main-settings.png
     :target: ../_images/uavcan-main-settings.png
 
-In a bitmap mask, each position in the binary number represents an ESC or servo ID
-that the command will be generated for. In case of copters, usually the ESC bitmask
-should be filled and in case of planes - main one is for servo, though any mix is
-possible.
+In the bitmap mask, each bit position represents an ESC or servo ID number
+that the corresponding autopilot servo/motor channel command will be directed to. For example, 00001111 (15 decimal) would send commands to ESC or SERVO ID 0 through 3.
 
-To reduce bandwidth, the CAN_D1_UC_ESC_BM and CAN_D1_UC_SRV_BM params should be set
-to enable only the motor and servo channels you need CAN signals sent to.
+To reduce bandwidth, the :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` and :ref:`CAN_D1_UC_ESC_SRV<CAN_D1_UC_SRV_BM>` params should be set
+to enable only the motor and servo channels you need CAN signals to be sent to.
 
 -  Example: For a configuration of CAN servos on channels 1,2,4 and ESC motor on channel 3, set:
--  Example: **CAN_D1_UC_SRV_BM** = 0x0B
--  Example: **CAN_D1_UC_ESC_BM** = 0x04
+-  Example: :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` = 0x0B
+-  Example: :ref:`CAN_D1_UC_ESC_SRV<CAN_D1_UC_SRV_BM>` = 0x04
 
 
-GNSS receiver configuration settings
-====================================
+GPS configuration settings
+==========================
 
-If there is a GNSS connected to UAVCAN network, it has to be enabled in **GPS**
+If there is a UAVCAN GPS device, it has to be enabled in ``GPS``
 subgroup of parameters.
-The **TYPE** parameter should be set to 9 for corresponding GNSS receiver in autopilot.
+The ``TYPE`` parameter should be set to 9 for corresponding GPS receiver in autopilot.
 
 .. image:: ../../../images/uavcan-gnss-settings.png
     :target: ../_images/uavcan-gnss-settings.png

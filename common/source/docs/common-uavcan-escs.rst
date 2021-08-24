@@ -52,6 +52,16 @@ discussed below.
 
 Alternatively, the ESC can be configured via CAN bus using the `UAVCAN GUI Tool <https://uavcan.org/GUI_Tool/>`__.
 
+Autopilot Setup
+===============
+
+There are two parameters that determine which autopilot servo/motor channels are sent to the CAN escs:
+For the examples below, the values are shown for CAN driver #1.
+
+-  :ref:`CAN_D1_UC_NODE<CAN_D1_UC_NODE>` - which is the node ID of the autopilot sending the commands to the ESCs so that there can be differentiation between multiple sources on the CAN bus
+-  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the UAVCAN ESCs
+
+
 ESC setup using CLI
 ===================
 
