@@ -29,3 +29,4 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
     Trolling motors <trolling-motor>
 [/site]
     UAVCAN ESCs <common-uavcan-escs>
+    Velocity ESCs <common-velocity-can-escs>
