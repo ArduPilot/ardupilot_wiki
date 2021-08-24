@@ -20,5 +20,5 @@ UAVCAN Peripherals
     mRo KitCAN CAN/UAVCAN Adapter Node+Compass+Baro <common-mro-kitcan>
     mRo Location One GPS GPS+Compass+LED+Safety Switch <common-mrobotics-location-one-gps>
     mRo UAVCAN Adapter Node <common-mro-uavcan-adapter-node>
-    Velocity ESCs <common-velocity-can-escs>
+    UAVCAN ESCs <common-uavcan-escs>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
