@@ -40,6 +40,8 @@ positioning technologies:
 
 .. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
 
+.. note:: If the GPS is only capable of 115.2Kbaud serial data rates, set :re:`GPS_DRV_OPTION<GPS_DRV_OPTION>` bit 2 to enable its operation.
+
 When using two GPS units there are a number of switching options that can be selected with :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>`.
 
 - 0: Use Primary
