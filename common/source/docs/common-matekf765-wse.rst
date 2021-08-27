@@ -1,36 +1,36 @@
-.. _common-matekf765-wing:
+.. _common-matekf765-wse:
 
-==================
-Mateksys F765-Wing
-==================
+=================
+Mateksys F765-WSE
+=================
 
-.. image:: ../../../images/matekf765-wing.jpg
+.. image:: ../../../images/matekf765-wse.jpg
     
 
-the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f765-wing>`__
+the above image and some content courtesy of `mateksys.com <http://www.mateksys.com/?portfolio=f765-wse>`__
 
 .. note::
 
-   Support for this board is available with ArduPilot 4.0 and higher
+   Support for this board is available with ArduPilot 4.1 and higher
 
 Specifications
 ==============
 
 -  **Processor**
 
-   -  STM32F765VIT6  ARM (216MHz)
+   -  STM32F765VIH6  ARM (216MHz)
 
 
 -  **Sensors**
 
-   -  InvenSense MPU6000 IMU (accel, gyro) & ICM20602
-   -  BMP280 barometer (later models use DPS310)
-   -  Voltage & 132A current sensor
+   -  ICM-42688-P
+   -  DPS310
+   -  Voltage & 90A continuous, 220A peak current sensor
 
 
 -  **Power**
 
-   -  9V ~ 36V DC input power
+   -  6.8V ~ 30V DC input power
    -  5V 2A BEC for peripherals
    -  9/12V 2A BEC for video
    -  5/6/7.2V 8A BEC for servos
@@ -38,23 +38,25 @@ Specifications
 
 -  **Interfaces**
 
-   -  7x UARTS
+   -  6.5x UARTS
    -  12x PWM outputs
    -  1x RC input PWM/PPM, SBUS
    -  2x I2C ports for external compass, airspeed sensor, etc.
-   -  SPI4 port
+   -  CAN port
    -  USB port
    -  6 ADC
    -  Dual Switchable Camera inputs
-   -  Built-in OSD
+   -  Built-in OSD (AT7456E)
 
 
 -  **Size and Dimensions**
 
-   - 54mm x 36mm x 13mm
-   - 26g
+   - 44mm x 29mm x 14.5mm
+   - 22g
 
-See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f765-wing#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f765-wing#tab-id-4>`__ (ArduPilot connections may vary slightly due to different UART useage).
+See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f765-wse#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f765-wse#tab-id-4>`__ (ArduPilot connections may vary slightly due to different UART useage).
+
+ArduPilot Firmware: MatekF7656-SE
 
 Camera and Supply Switch
 ========================
@@ -78,7 +80,6 @@ Default UART order
 - SERIAL3 = GPS1 = USART2
 - SERIAL4 = GPS2 = USART3
 - SERIAL5 = USER = UART8
-- SERIAL6 = USER = UART4
 - SERIAL7 = USER = UART6 (TX only unless :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, then RX available also)
 - SERIAL8 = USER = UART5 (RX only, for ESC telemetry)
 
@@ -119,6 +120,6 @@ Then reboot.
 
 :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` 13
 
-:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 11.0
+:ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` 21.0
 
-:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 40 
+:ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 66.7 
