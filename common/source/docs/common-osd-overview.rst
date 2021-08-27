@@ -58,7 +58,7 @@ Screens and screen switching
 
 For multiple screen layouts, each parameter's "OSD" part is trailed by a number, starting with "1"
 
-* ``OSD1_PARAMETER`` - This number addresses the respective screen layout number, allowing to set individual items active on one screen but have them switched off on another screen. OSD settings default to 4 screens optionally available.
+* ``OSD1_<ITEM>`` - This number addresses the respective screen layout number, allowing to set individual items active on one screen but have them switched off on another screen. OSD settings default to 4 screens optionally available.
 
 * Set parameters ``OSDn_CHAN_MIN`` and ``OSDn_CHAN_MAX`` to adjust RC channel pwm limits to use for switching to a respective screen.
 
@@ -77,8 +77,8 @@ Panel items
 
 Each OSD panel item uses a set of three variables to be set: 
 
-- ``OSDn_ITEM_ENABLE`` - activates the respective item when set to 1.
-- ``OSDn_ITEM_X`` and ``OSDn_ITEM_Y`` set the horizontal and vertical position of the item, starting with ``X = 0`` and ``Y = 0`` in the upper left corner of your screen. 
+- ``OSDn_<ITEM>_EN`` - activates the respective item when set to 1.
+- ``OSDn_<ITEM>_X`` and ``OSDn_<ITEM>_Y`` set the horizontal and vertical position of the item, starting with ``X = 0`` and ``Y = 0`` in the upper left corner of your screen. 
 
 .. note::
    
