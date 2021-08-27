@@ -28,7 +28,7 @@ On your Linux or Ubuntu machine, from the root directory of an ArduPilot reposit
     ./waf configure --board=sitl --debug   //--debug is optional but allows using a debugger, if desired when analyzing issues
     ./waf replay
 
-This will create a file called ``build/sitl/tools/Replay``.
+This will create a file called ``build/sitl/tool/Replay``.
 
 Using Replay
 ============
@@ -37,13 +37,13 @@ Display the Replay help instructions:
 
 .. code-block:: bash
 
-    build/sitl/tools/Replay -h
+    build/sitl/tool/Replay -h
 
 Run a log through Replay to generate the plot and EKF data files:
 
 .. code-block:: bash
 
-    build/sitl/tools/Replay MyLogFile.BIN
+    build/sitl/tool/Replay MyLogFile.BIN
 
 This will produce an output file xxx.BIN in the folder "./logs", which will be the highest numbered log since it was just created.
 
