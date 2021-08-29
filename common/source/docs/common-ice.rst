@@ -39,8 +39,8 @@ If using an on-board starter, it is important to configure an RPM sensor for the
 
 In order to configure an RPM sensor, the following parameters must be set:
 
-- Set :ref:`RPM_TYPE <RPM_TYPE>` to 2 for a standard GPIO input pin. 
-- Set :ref:`RPM_PIN <RPM_PIN>` to the appropriate value for the auxiliary pin you are using.
+- Set :ref:`RPM1_TYPE <RPM1_TYPE>` to 2 for a standard GPIO input pin. 
+- Set :ref:`RPM1_PIN <RPM1_PIN>` to the appropriate value for the auxiliary pin you are using.
 - Set the remaining 'RPM_*' parameters as appropriate for your system.
 - Set :ref:`ICE_RPM_CHAN <ICE_RPM_CHAN>` to 1.
 
