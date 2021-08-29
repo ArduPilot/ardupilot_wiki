@@ -287,19 +287,22 @@ interpreted using the :ref:`Q_TAILSIT_INPUT<Q_TAILSIT_INPUT>` parameter. The cho
 Tailsitter Input Mask
 =====================
 
+..note:: Use of this feature is not recommended since it will be removed in a later firmware revision
+
+
 To support people with experience flying 3D aircraft and wanting to learn how to
-prop-hang manually, you can set the :ref:`Q_TAILSIT_MASK<Q_TAILSIT_MASK>` to determine which
+prop-hang manually, you can set the ``Q_TAILSIT_MASK<Q_TAILSIT_MASK>`` to determine which
 channels will have full manual input control without attitude stabilization while hovering in QHOVER and QSTABILIZE.
 
 The mask of manual channels is enabled using a transmitter input
-channel, specified with the :ref:`Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>` parameter.
+channel, specified with the ``Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>`` parameter.
 
 For example, if you are learning how to fly 3D aircraft, and you want
 some assistance learning how to best control the rudder, then you can
 set:
 
-- :ref:`Q_TAILSIT_MASK<Q_TAILSIT_MASK>` =8 (for rudder)
-- :ref:`Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>` =7
+- ``Q_TAILSIT_MASK<Q_TAILSIT_MASK>`` =8 (for rudder)
+- ``Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>`` =7
 
 then when channel 7 goes above 1700 the pilot will be given full
 manual control of rudder when hovering. This provides good 3D piloting
