@@ -131,6 +131,7 @@ PARAMETER_SITE = {
     'plane': 'ArduPlane',
     'antennatracker': 'AntennaTracker',
     'AP_Periph': 'AP_Periph',
+    'heli': 'Heli',
 }
 LOGMESSAGE_SITE = {
     'rover': 'Rover',
@@ -179,6 +180,8 @@ def fetchparameters(site=args.site):
         targetfile = './%s/source/docs/parameters.rst' % key
         if key == 'AP_Periph':
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
+        elif key == "heli":
+            targetfile = './copter/source/docs/heli-Parameters.rst'
         if args.cached_parameter_files:
             if not os.path.exists(targetfile):
                 raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))  # noqa
@@ -561,10 +564,13 @@ def fetch_versioned_parameters(site=args.site):
 
     for key, value in PARAMETER_SITE.items():
 
-        if key == 'AP_Periph': # workaround until create a versioning for AP_Periph in firmware server
+        if key in ['AP_Periph', 'heli']: # workaround until create a versioning for AP_Periph in firmware server
             fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value  # noqa
             subprocess.check_call(["wget", fetchurl])
-            targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
+            if key == 'AP_Periph':
+                targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
+            else:
+                targetfile = './dev/source/docs/heli-Parameters.rst'
             os.rename('Parameters.rst', targetfile)
 
         else: #regular versining 
@@ -686,7 +692,7 @@ def cache_parameters_files(site=args.site):
     old_params_mversion/ folders and .html built files as well.
     """
     for key, value in PARAMETER_SITE.items():
-        if (site == key or site is None) and (key != 'AP_Periph'):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
+        if (site == key or site is None) and (key not in ['AP_Periph', 'heli']):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
             try:
                 old_parameters_folder = (os.getcwd() +
                                          '/../old_params_mversion/%s/' % value)
@@ -728,7 +734,7 @@ def put_cached_parameters_files_in_sites(site=args.site):
 
     """
     for key, value in PARAMETER_SITE.items():
-        if (site == key or site is None) and (key != 'AP_Periph'): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
+        if (site == key or site is None) and (key not in ['AP_Periph', 'heli']): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
             try:
                 built_folder = (os.getcwd() +
                                 '/../old_params_mversion/%s/' % value)
