@@ -25,7 +25,8 @@ Setup
 
 Verify the following parameters are set on your autopilot via your ground station.
 
-- :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (assuming its on the first CAN bus of the autopilot)
+- :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (assuming its on the first CAN bus of the autopilot and will be using the first driver)
+- :ref:`CAN_D1_DRIVER<CAN_D1_PROTOCOL>` = 1 (UAVCAN)(assuming its the first driver)
 - :ref:`GPS_TYPE<GPS_TYPE>` = 9 (UAVCAN) or if it will be the secondary GPS, set instead
 - :ref:`GPS_TYPE2<GPS_TYPE2>` = 9 (UAVCAN)
 - Reboot
