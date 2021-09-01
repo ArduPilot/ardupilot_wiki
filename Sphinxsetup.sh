@@ -47,6 +47,11 @@ python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinx_
 python3 -m pip install --user --upgrade git+https://github.com/sphinx-contrib/youtube.git
 
 # and a vimeo plugin:
-python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git
+# python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git
+# we previously used this plugin, but the features are now included in the youtube plugin
+# remove if installed (will warn if not installed)
+if python3 -m pip show sphinxcontrib.vimeo > /dev/null 2>&1; then
+  python3 -m pip uninstall -y sphinxcontrib.vimeo
+fi
 
 echo "Setup completed successfully!"
