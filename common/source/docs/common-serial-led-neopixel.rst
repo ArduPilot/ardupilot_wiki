@@ -3,7 +3,7 @@
 NeoPixel
 ========
 
-.. image:: ../../../images/neopixel-string.jpg
+.. image:: ../../../images/neopixel-string.jpeg
 
 A "NeoPixel" style (WS2812B compatible) RGB LED can be attached to any PWM output by setting its SERVOx_FUNCTION to one of the ``NeoPixelx`` output functions and setting :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` parameter to ``NeoPixel``. Multiple ``NeoPixelx`` output functions are provided for connecting multiple strings (up to 4).
 
