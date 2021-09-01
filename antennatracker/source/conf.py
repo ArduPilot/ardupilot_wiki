@@ -43,7 +43,6 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube', #For youtube embedding
-    'sphinxcontrib.vimeo', #For vimeo embedding
 ]
 
 # Add any paths that contain templates here, relative to this directory.
