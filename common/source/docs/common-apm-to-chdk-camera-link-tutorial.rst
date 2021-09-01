@@ -29,10 +29,12 @@ instead of using the custom cable (please extend this list if you find another a
 
 The article covers both Pixhawk and APM2.x.
 
-.. figure:: ../../../images/CHDK_APM2_to_camera_connection.jpg
-   :target: ../_images/CHDK_APM2_to_camera_connection.jpg
+.. only:: html
 
-   APM Connected to aCanon SX260 HS using a custom cable
+   .. figure:: ../../../images/CHDK_APM2_to_camera_connection.jpeg
+      :target: ../_images/CHDK_APM2_to_camera_connection.jpeg
+
+      APM Connected to a Canon SX260 HS using a custom cable
 
 .. note::
 
@@ -84,15 +86,17 @@ rail) because the servo rail itself is not powered.
 
 1 x 220 ohm
 
-.. figure:: http://api.ning.com/files/6A05RJELsODapmzmxrkfVjh3WsYV3VM6gRNmnUfTqO8MDOtaCuWg6baF2UChPaKaq52lXT63W*i-uwbGNqEGfbEczIHGK3ER/3.3vto5vlogiclevelshifterwithtransistorsinproteus.jpg
-   :target:  https://diydrones.com/forum/topics/using-aux-pins-as-relays-for-chdk?commentId=705844%3AComment%3A1581209
+.. only:: html
 
-   3Vto 5V Shifter Circuit
+   .. figure:: http://api.ning.com/files/6A05RJELsODapmzmxrkfVjh3WsYV3VM6gRNmnUfTqO8MDOtaCuWg6baF2UChPaKaq52lXT63W*i-uwbGNqEGfbEczIHGK3ER/3.3vto5vlogiclevelshifterwithtransistorsinproteus.jpg
+      :target:  https://diydrones.com/forum/topics/using-aux-pins-as-relays-for-chdk?commentId=705844%3AComment%3A1581209
 
-.. figure:: http://api.ning.com/files/iAT0B9wCR3AoT2PagGiqpRaMPAUgnytMSGSeJ7sSKh9gtRNuhdzj01dCdTkRLM2*x0pN58LfGHlqFbKfTThHXPkyjaetHNu-/Pixhawk_35_diag.png
-   :target:  https://diydrones.com/forum/topics/using-aux-pins-as-relays-for-chdk?commentId=705844%3AComment%3A1594680
+      3Vto 5V Shifter Circuit
 
-   3V to5V Shifter (PCB)
+   .. figure:: http://api.ning.com/files/iAT0B9wCR3AoT2PagGiqpRaMPAUgnytMSGSeJ7sSKh9gtRNuhdzj01dCdTkRLM2*x0pN58LfGHlqFbKfTThHXPkyjaetHNu-/Pixhawk_35_diag.png
+      :target:  https://diydrones.com/forum/topics/using-aux-pins-as-relays-for-chdk?commentId=705844%3AComment%3A1594680
+
+      3V to5V Shifter (PCB)
 
 .. note::
 

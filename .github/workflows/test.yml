@@ -26,6 +26,9 @@ jobs:
         run: |
           mkdir /tmp/web
           ./Sphinxsetup.sh
+      - name: Check image formats
+        run: |
+          find ./images/ -exec file {} + | grep RIFF -vzq
       - name: Test build
         run: |
           ./update.py --parallel 4 --verbose --destdir=/tmp/web
