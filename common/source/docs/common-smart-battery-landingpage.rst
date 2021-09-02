@@ -4,9 +4,12 @@
 Smart Batteries
 ===============
 
-ArduPilot supports one type of "smart battery" that communicates using `SMBus <https://en.wikipedia.org/wiki/System_Management_Bus>`__:
+ArduPilot supports several types of "smart battery" that communicate using `SMBus <https://en.wikipedia.org/wiki/System_Management_Bus>`__:
 
 - the `Solo battery <https://www.amazon.com/Solo-Smart-Battery-Rechargeable-Lithium/dp/B01LWAAMV3>`__
+- Maxell
+- :ref:`Royote<common-smart-battery-rotoye>`
+- Generic support for SUI3 and SUI6 SMBus batteries
 
 While not yet very common, smart batteries are easier to attach and detach from the vehicle and are capable of providing more information on the state of the battery including capacity, individual cell voltages, temperature, etc.
 
