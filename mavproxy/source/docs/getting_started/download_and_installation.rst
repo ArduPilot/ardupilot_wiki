@@ -122,6 +122,7 @@ Install MAVProxy and its remaining dependencies from the public PyPi repository:
     sudo pip install gnureadline
     sudo pip install billiard
     sudo pip install numpy pyparsing
+    sudp pip install pathlib
     sudo pip install MAVProxy
 
 
