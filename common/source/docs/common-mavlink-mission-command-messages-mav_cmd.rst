@@ -2944,17 +2944,17 @@ specified in the command.For SITL work, altitude input here needs to be with ref
    <tr>
    <td><strong>param5</strong></td>
    <td>Lat</td>
-   <td>Target home latitude (if ``param1=2``)</td>
+   <td>Target home latitude (if <code>param1=0</code>)</td>
    </tr>
    <tr>
    <td><strong>param6</strong></td>
    <td>Lon</td>
-   <td>Target home longitude (if ``param1=2``)</td>
+   <td>Target home longitude (if <code>param1=0</code>)</td>
    </tr>
    <tr>
    <td><strong>param7</strong></td>
    <td>Alt</td>
-   <td>Target home altitude (if ``param1=2``)</td>
+   <td>Target home altitude (if <code>param1=0</code>)</td>
    </tr>
    </tbody>
    </table>
