@@ -8,6 +8,7 @@ The following stores are known to stock quality versions of the controllers, tel
 recommended for use with ArduPilot (in alphabetical order).  You may also want to check the list of :ref:`Ready-to-Use vehicles <common-rtf>`.
 
 * `AION ROBOTICS <https://www.aionrobotics.com>`__
+* `Ainstein AI <https://ainstein.ai/>`__ (Radar Altimeter)
 * `Air-Supply Aerial <https://www.airsupply.com>`__
 * `AltiGator <http://www.altigator.com/>`__
 * `Bask Aerospace <https://baskaerospace.com.au/>`__
