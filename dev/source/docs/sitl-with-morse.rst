@@ -14,6 +14,10 @@ environment to create a complete robotics platform.
 ArduPilot has a Morse SITL simulation backend that allows ArduPilot to
 control vehicles created within Morse.
 
+.. warning::
+
+    :ref:`AirSim <sitl-with-airsim>` is recommended over Morse because it supports "lock step scheduling" which provides better performance.  AirSim as a project is also more active.
+
 .. note::
 
     Morse has only been tested on Linux/Ubuntu environments
