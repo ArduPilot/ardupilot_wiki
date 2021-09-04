@@ -103,7 +103,7 @@ Install the GCC compiler
 
       This step is only required if you intend to compile for ARM-based boards.
 
-#. Download and install the gcc-arm-non-eabi compiler from `firmware.ardupilot.org/Tools/STM32-tools <https://firmware.ardupilot.org/Tools/STM32-tools>`__ (`quick link is here <https://firmware.ardupilot.org/Tools/STM32-tools/gcc-arm-none-eabi-6-2017-q2-update-win32-sha2.exe>`__)
+#. Download and install the latest gcc-arm-non-eabi compiler from `firmware.ardupilot.org/Tools/STM32-tools <https://firmware.ardupilot.org/Tools/STM32-tools>`__ (`quick link is here <https://firmware.ardupilot.org/Tools/STM32-tools/gcc-arm-none-eabi-10-2020-q4-major-win32.exe>`__)
 #. Accept the license
 #. Install to the default location
 #. Accept the SSL certificate
@@ -123,7 +123,7 @@ Set up directories/paths and extra packages in Cygwin
 
 #. open and then close the "Cygwin Terminal" application from the desktop or start menu icon.  This creates initialization files for the user in the Cygwin home directory.
 
-#. open the "Cygwin Terminal" application from the desktop or start menu icon.  Enter the following command to set Python 3.6 to be the default Python and then install additional Python packages:
+#. open the "Cygwin Terminal" application from the desktop or start menu icon.  Enter the following command to set Python 3.7 to be the default Python and then install additional Python packages:
 
 ::
 
