@@ -16,7 +16,7 @@ control vehicles created within Morse.
 
 .. warning::
 
-    :ref:`AirSim <sitl-with-airsim>` is recommended over Morse because it supports "lock step scheduling" which provides better performance.  AirSim as a project is also more active.
+    Morse is no longer maintained so we recommend developers use :ref:`AirSim <sitl-with-airsim>` or :ref:`Webots <sitl-with-webots>`.
 
 .. note::
 
