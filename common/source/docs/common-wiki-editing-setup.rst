@@ -48,7 +48,7 @@ Run the following command from the ardupilo_wiki directory you cloned:
 
    .. code-block:: bash
 
-       sudo ./Sphinxsetup.sh
+      ./Sphinxsetup.sh
 
 Then jump down to "Build the wiki".
 
