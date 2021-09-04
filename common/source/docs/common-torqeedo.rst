@@ -59,13 +59,13 @@ If a serial port with flow control pins (clear-to-send and ready-to-send) is use
 Logging and Reporting
 ---------------------
 
-By default "TRQD" messages are written to the onboard log including
+By default "TRQD" messages are written to the onboard log every 5 seconds including
 
 - Health : whether the autopilot is successfully controlling the motor
 - MotSpeed : the last desired speed sent to the motor as a number from -1000 to +1000
 - SuccCnt : the number of messages successfully consumed from the motor (this should rise steadily)
 - ErrCnt : the number of bytes or messages that were corrupted or could not be processed (this should be a relatively low number)
 
-This same information can be sent to the ground station at 1hz by setting TRQD_DEBUG = 2 (Logging and GCS)
+This same information can be sent to the ground station by setting :ref:`TRQD_OPTIONS <TRQD_OPTIONS>` = 3
 [copywiki destination="rover"]
 
