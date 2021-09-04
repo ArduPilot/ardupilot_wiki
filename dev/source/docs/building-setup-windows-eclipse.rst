@@ -41,7 +41,7 @@ Once Eclipse has been started import ArduPilot by doing the following:
     :width: 450px
 
 - In the Project Explorer tab on the top right, right-mouse-button-click on the "ardupilot" folder and select "Properties"
-- When the "Properties for ardupilot" window appears, under "C/C++ Build", uncheck "Use default build command" and enter ``c:\cygwin64\bin\python3.6m waf`` into the "Build command" field as shown below
+- When the "Properties for ardupilot" window appears, under "C/C++ Build", uncheck "Use default build command" and enter ``c:\cygwin64\bin\python3.7m waf`` into the "Build command" field as shown below
 
 .. image:: ../images/eclipse-install3.png
     :target: ../_images/eclipse-install3.png
