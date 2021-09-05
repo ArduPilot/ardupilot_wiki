@@ -51,6 +51,12 @@ from datetime import datetime
 # without the following import on old versions of Python:
 from distutils import dir_util  # noqa
 
+try:
+    import sphinxcontrib.vimeo
+    raise Exception("Module sphinxcontrib.vimeo was found. Please run python3 -m pip uninstall -y sphinxcontrib.vimeo")
+except ImportError: # change to ModuleNotFoundError when we only support python 3.6+
+    pass
+
 DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover']
 ALL_WIKIS = [
     'copter',
