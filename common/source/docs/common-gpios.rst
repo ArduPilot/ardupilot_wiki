@@ -26,7 +26,7 @@ GPIO "PIN" NUMBER
 
 Some GPIO-based functions require that the GPIO "pin number" to be entered into an associated parameter.This pin number is assigned in the autopilot's hardware definition file. Usually, the first GPIO capable output is assigned pin 50, the second 51, etc. So in the above case of the Pixhawk, AUX OUT 6 is pin 55.
 
-You can verify an output's GPIO pin number assignment easily. First, find its hwdef.dat file `here <ttps://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ and determine the GPIO pin number listed beside its output number, as shown below:
+You can verify an output's GPIO pin number assignment easily. First, find its hwdef.dat file `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ and determine the GPIO pin number listed beside its output number, as shown below:
 
 .. image:: ../../../images/GPIO_numbers.png
 
