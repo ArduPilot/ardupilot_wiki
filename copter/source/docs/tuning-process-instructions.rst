@@ -33,7 +33,7 @@ Parameters used to define the output range sent to the ESC.
 
 PID Controller Initial Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` :  10Hz to 20Hz
+- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` :  10Hz
 - :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` : 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props (or larger)
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
