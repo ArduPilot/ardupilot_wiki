@@ -42,6 +42,10 @@ An interface board should be assembled using the parts mentioned above and conne
       :target: ../_images/torqeedo-autopilot-connection.png
       :width: 400px
 
+.. warning::
+
+   If the motor connector method is used with non-torqeedo batteries, be sure to use batteries with built-in short circuit protection.  During early development and testing of this interface we managed to burn out a motor which resulted in a short circuit within the motor.  A short circuit especially with large batteries could lead to a fire and serious injury.
+
 Configuration
 -------------
 
@@ -67,5 +71,12 @@ By default "TRQD" messages are written to the onboard log every 5 seconds includ
 - ErrCnt : the number of bytes or messages that were corrupted or could not be processed (this should be a relatively low number)
 
 This same information can be sent to the ground station by setting :ref:`TRQD_OPTIONS <TRQD_OPTIONS>` = 3
+
+Introduction Video
+------------------
+
+.. youtube:: uq1okSejrUE
+    :width: 100%
+
 [copywiki destination="rover"]
 
