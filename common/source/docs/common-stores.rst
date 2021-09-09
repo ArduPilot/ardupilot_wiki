@@ -12,6 +12,7 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `AltiGator <http://www.altigator.com/>`__
 * `Bask Aerospace <https://baskaerospace.com.au/>`__
 * `Benewake <https://beixingguangzi.en.alibaba.com/>`__
+* `Beili Electronics <https://www.blicube.com/>`__
 * `BlueRobotics <https://www.bluerobotics.com/store/>`__
 * `BZB UAS <https://bzbuas.com/>`__
 * `Craft & Theory <http://www.craftandtheoryllc.com/store/>`__ (FrSky telemetry, MAUCH power modules)
