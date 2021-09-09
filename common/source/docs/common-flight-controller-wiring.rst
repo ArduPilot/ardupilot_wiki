@@ -124,7 +124,7 @@ The skid-steer output function parameters are used to configure vehicles that ha
 Connect buzzer and safety switch
 ================================
 
-The buzzer and safety switch button are optional but recommended, if the autopilot provides those connections (many closed source autopilots do not). Connect to the BUZZER and SWITCH ports as shown.
+The buzzer and safety switch button are optional, but useful for some configurations. Not all autopilots provide these connections. A BUZZER and SWITCH can be connected to their respective ports as shown.
 
 .. image:: ../../../images/safetysw-connection.jpg
   :width: 450px
