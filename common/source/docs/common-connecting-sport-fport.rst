@@ -14,7 +14,7 @@ In order to connect to these ports on the FrSky reciever, any UART on the autopi
 
 If the autopilot uses an F7 or H7 processor, then this can be done by appropriately configuring the UART port on the autopilot. However, most F4 based autopilots do not have this capability and required inverters externally. A few F4 autopilots have these on the boards themselves and label the port "FrSky Telem", but most do not. Those require an added :ref:`bi-directional inverter <frsky_cables>` connected between the autopilot and the receiver's SPort or FPort.
 
-.. note:: F4 autopilots with on-board inversion (Pixracer,MindPX V2) default to having the inversion on their ports designated for FRsky telem, only requiring that the TX and RX pins be tied together and connected to the Sport/Fport on the receiver and the appropriate ``SERIALx_PROTOCOL`` be set for that port. KakuteF4,MambaF405V2,Revo-mini
+.. note:: F4 autopilots with on-board inversion (Pixracer,MindPX V2) default to having the inversion on their ports designated for FRsky telem, only requiring that the TX and RX pins be tied together and connected to the Sport/Fport on the receiver and the appropriate ``SERIALx_PROTOCOL`` be set for that port. 
 
 In addition, some FrSky receivers provide an optional pad with the SPort or FPort already "inverted", so no external inversion is required if that is used. The various connection configurations are shown below (FPort is used in the diagrams, but just substitute SPort for the FPort labels in the images when using SPort connections):
 
