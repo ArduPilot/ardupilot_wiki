@@ -50,7 +50,8 @@ Closed hardware
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Flywoo F745 AIO BL_32 <common-flywoo-f745>
-    Holybro Kakute F4 <common-holybro-kakutef4>
+    Holybro Kakute F4* <common-holybro-kakutef4>
+    Holybro Kakute F4 Mini* <common-holybro-kakutef4-mini>
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
     Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>
