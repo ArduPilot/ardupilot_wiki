@@ -9,10 +9,6 @@ Holybro Kakute F4
 
 *above image and some content courtesy of* `Holybro <http://www.holybro.com/product/47>`__
 
-.. note::
-
-   Support for this board is available with Copter-3.6.0 (and higher)
-
 Specifications
 ==============
 
