@@ -19,12 +19,11 @@ The frame rate is controlled by :ref:`RC_SPEED<RC_SPEED>` for all PWM protocol m
 
 .. note:: be sure of the capabilities of your ESC before selecting a higher frame rate to avoid damage to the ESC.
 
-
-OneShot
-=======
+OneShot 125
+===========
 An even faster PWM protocol is OneShot125 (sometimes shortened to just OneShot). If the ESC has this capability, then the pulse widths are divided by a factor of 8 for even faster communication from the autopilot to the ESC since the commands get to the ESC 8 times faster at any given frame rate. In addition, the capability to increase the frame rate up to 490Hz is allowed.
 
-.. note:: OneShot (vs OneShot125) is an older protocol that uses the same pulse widths as Normal PWM, but has a higher fixed frame rate equal to the autopilot main loop rate. It has been replaced by OneShot125.
+.. note:: OneShot (vs OneShot125) is an older protocol that uses the same pulse widths as Normal PWM, but has a fixed frame rate equal to the autopilot main loop rate. It has been replaced by OneShot125.
 
 DShot
 =====
