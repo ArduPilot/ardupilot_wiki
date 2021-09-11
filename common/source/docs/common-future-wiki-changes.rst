@@ -4,7 +4,7 @@
 Future Wiki Changes (in Master branch now)
 ==========================================
 
-on :ref:`common-auxilary-functions` page:
+on :ref:`common-auxiliary-functions` page:
 
 +----------------------+----------------------------+----------+---------+---------+
 | **RCx_OPTION value** | **Feature Description**    |**Copter**|**Plane**|**Rover**|
@@ -40,6 +40,10 @@ in the :ref:`common-gpios` page, add the following note at the top:
 Plane
 =====
 
+on :ref:`quadplane-parameters` page, add:
+
+- bit 18, if set,will allow arming only if in a VTOL mode. Primarily used for tailsitters to prevent accidental immediate tip-over if armed in a fixed wing mode with assistance active.
+- 
 :ref:`guide-tailsitter` page:
 -----------------------------
 
