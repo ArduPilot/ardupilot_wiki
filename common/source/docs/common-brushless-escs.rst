@@ -76,6 +76,8 @@ On Plane, all other motors use Normal (PWM) protocol. However, in Plane, any mot
 
 .. note:: All mask-based configuration can only be changed at a PWM group level, please consult the documentation for your flight controller to ascertain which outputs are on different groups. See :ref:`Mixing ESC Protocols<mixing-escs>` section below.
 
+.. note:: In Plane, Oneshot (not Oneshot125) loop synchronization can be added to any motor running an normal PWM ESC using the :ref:`ONESHOT_MASK<ONESHOT_MASK>` bitmask. It will trigger pulses at the :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`, but no lower than at 250Hz. Be sure the ESCs can handle this rate.
+
 .. warning:: Be sure your ESC can support the configuration you select for it. Damage can occur otherwise. This includes frame rates discussed below. Also be careful when switching between digital and analogue output types without re-calibrating ESCs as this can lead to uncommanded motor output.
 
 DShot Update Rates
