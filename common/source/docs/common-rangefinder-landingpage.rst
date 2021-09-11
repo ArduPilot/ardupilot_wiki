@@ -60,7 +60,7 @@ Unidirectional Rangefinders
 .. toctree::
     :maxdepth: 1
 
-    Aerotenna US-D1 Radar Altimeter <common-aerotenna-usd1>
+    Aistein US-D1 Radar Altimeter <common-aerotenna-usd1>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Avionics Anonymous UAVCAN LIDAR Interface <common-avanon-laserint>
     Benewake TF02 / TF03 <common-benewake-tf02-lidar>
