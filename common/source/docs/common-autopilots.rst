@@ -32,9 +32,11 @@ Open hardware
     mRo Pixracer <common-pixracer-overview>
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
     mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/m10022a.htm>
+    Obal Board (Linux) <common-obal-overview>
     OpenPilot Revolution <common-openpilot-revo-mini>
     PocketPilot* (Linux) <https://github.com/PocketPilot/PocketPilot>
     TauLabs Sparky2** <common-taulabs-sparky2>
+    
 
 \* these devices are sensor add-on boards for a Beagle Bone microcomputer. See board links for details 
 
