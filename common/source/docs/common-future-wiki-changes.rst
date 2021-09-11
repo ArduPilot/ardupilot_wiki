@@ -43,7 +43,11 @@ Plane
 on :ref:`quadplane-parameters` page, add:
 
 - bit 18, if set,will allow arming only if in a VTOL mode. Primarily used for tailsitters to prevent accidental immediate tip-over if armed in a fixed wing mode with assistance active.
-- 
+
+change bit 15 to:
+
+bit 15, if set, will allow pilot to control descent during VTOL AUTO-LAND phases, similar to throttle stick action during QHOVER or QLOITER. However, this will not become active until the throttle stick is raised above 70% during the descent at least once.
+
 :ref:`guide-tailsitter` page:
 -----------------------------
 
