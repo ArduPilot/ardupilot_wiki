@@ -4,7 +4,35 @@
 Future Wiki Changes (in Master branch now)
 ==========================================
 
+on :ref:`common-auxilary-functions` page:
 
++----------------------+----------------------------+----------+---------+---------+
+| **RCx_OPTION value** | **Feature Description**    |**Copter**|**Plane**|**Rover**|
++----------------------+----------------------------+----------+---------+---------+
+|        106           | Disable Airspeed Use       |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Option</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>Disable Airspeed Use</strong></td>
+   <td>
+
+Forces Airspeed Use to be disabled for testing in the air.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   </tbody>
+   </table>
+   
 in the :ref:`common-gpios` page, add the following note at the top:
 
 .. note:: in firmware versions later than 4.1, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active.
@@ -29,7 +57,7 @@ Tailsitters and their parameters are enabled by setting :ref:`Q_TAILSIT_ENABLE<Q
 
 :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` **determines the number and layout of VTOL motors and** :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` **determines which motors are active when in fixed wing modes, except in the special case of the Copter Motor Only Tailsitter which keeps running the motors like a Copter mode even when flying in a fixed wing mode for control surface-less Copter tailsitters (ie always running the motors to provide attitude control, even at low throttle).**
 
-- Add table at end of this section:
+- Add table at end of the Tailsitter Configuration section:
 
 +-------------------+------+----------------+-------------+--------------+-----------------------+
 |Tailsitter Style   |ENABLE| CLASS          |  TYPE       |  MOTORMASK   | Motor Output Functions+
@@ -48,8 +76,9 @@ Tailsitters and their parameters are enabled by setting :ref:`Q_TAILSIT_ENABLE<Q
 |control surfaces   |      |                |             |modes         |                       |
 +-------------------+------+----------------+-------------+--------------+-----------------------+
 
-The ENABLE column refers to the :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` parameter, while CLASS,TYPE, and MOTORMASK refer to :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>`,:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>`, and :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>`, respectively.
+The ENABLE column refers to the :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` parameter, while CLASS,TYPE, and MOTORMASK refer to :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>`, :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>`, and :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>`, respectively.
 
 - under Copter Tailsitters change the note to read:
 
 .. note:: It is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, use :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2. :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is ignored in that case.
+
