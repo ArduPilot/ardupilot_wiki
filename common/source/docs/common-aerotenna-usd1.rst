@@ -1,10 +1,10 @@
 .. _common-aerotenna-usd1:
 
-===============================
-Aerotenna US-D1 Radar Altimeter
-===============================
+==============================
+Ainstein US-D1 Radar Altimeter
+==============================
 
-The `Aerotenna US-D1 Radar Altimeter <https://aerotenna.com/shop/%ce%bclanding-lite-microwave-radar-altimeter-device-only/>`__ has a range of 50m, an update rate of 82hz and weighs only 110g.
+The `Ainstein US-D1 Radar Altimeter <https://ainstein.ai/drone-makers-drone-service-providers/us-d1/>`__ has a range of 50m, an update rate of 82hz and weighs only 110g.
 
 .. warning:: currently the manufacturer warns that operation indoors can be problematic due to multi-path reflections...caution is advised
 
@@ -19,7 +19,7 @@ The user manual for this radar unit can be found `here <https://cdn.shopify.com/
 Where to Buy
 ------------
 
-Units can be purchased thru `Aerotenna <https://aerotenna.com/shop/>`__
+Units can be purchased thru `Ainstein <https://ainstein.ai/>`__
 
 Connecting to the Autopilot
 -----------------------------------
