@@ -49,6 +49,8 @@ From within RealFlight, Reduce graphics options to improve performance:
    
   .. image:: ../images/realflight-settings-graphics.png
     :target: ../_images/realflight-settings-graphics.png
+    
+ .. note:: Under RealFlight's Simulation menu, Physics submenu, be sure its set at "Realistic" for best physics modeling and refresh rates.
    
 Connecting to Mission Planner's SITL
 ------------------------------------
