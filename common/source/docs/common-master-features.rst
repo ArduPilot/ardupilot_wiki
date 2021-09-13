@@ -19,7 +19,6 @@ This lists features or changes merged in master and build in the "latest" firmwa
     AIS for boats <common-ais>
     Torqeedo motor <common-torqeedo>
 [/site]
-- :ref:`Camera Trigger MAV Command change <mav_cmd_do_set_cam_trigg_dist>`
    
 
 
