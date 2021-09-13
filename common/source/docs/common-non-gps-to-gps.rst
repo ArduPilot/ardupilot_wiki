@@ -66,6 +66,8 @@ Events will be logged each time the active source is changed
 - Event 86 = Source2 active
 - Event 87 = Source3 active
 
+The XKFS message's SS field shows the active source for each core (0=primary, 1=secondary, 2=tertiary)
+
 Future Improvements
 -------------------
 
