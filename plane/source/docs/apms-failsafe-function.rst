@@ -360,22 +360,26 @@ GCSs will often display text indicating the type of failsafe encountered, such a
    </tr>
    <tr>
    <td>4</td>
-   <td>GCS Failsafe</td>
+   <td>Battery Failsafe</td>
    </tr>
    <tr>
    <td>5</td>
-   <td>EKF Failsafe</td>
+   <td>GCS Failsafe</td>
    </tr>
    <tr>
    <td>6</td>
+   <td>EKF Failsafe</td>
+   </tr>
+   <tr>
+   <td>7</td>
    <td>GPS Glitch</td>
    </tr>
    <tr>
-   <td>9</td>
+   <td>8</td>
    <td>Fence Breached</td>
    </tr>
    <tr>
-   <td>10</td>
+   <td>9</td>
    <td>Terrain</td>
    </tr>
    <tr>
