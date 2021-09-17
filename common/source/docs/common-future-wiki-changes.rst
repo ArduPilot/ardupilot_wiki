@@ -4,6 +4,10 @@
 Future Wiki Changes (in Master branch now)
 ==========================================
 
+on :ref:`common-compass-calibration-in-mission-planner` page, add note at beginning of Onboard Calibration using Stick Gestures (no GCS) section:
+
+.. note:: This feature ahs been removed in firmware versions after 4.1.
+
 on :ref:`common-auxiliary-functions` page:
 
 +----------------------+----------------------------+----------+---------+---------+
@@ -90,8 +94,3 @@ The ENABLE column refers to the :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` parame
 
 .. note:: It is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, use :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2. :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is ignored in that case.
 
-
-Copter
-======
-
-on :ref:`common-compass-calibration-in-mission-planner` page, remove the entire Onboard Calibration using Stick Gestures (no GCS) section.
