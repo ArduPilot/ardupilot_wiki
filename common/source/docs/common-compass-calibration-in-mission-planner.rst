@@ -63,6 +63,9 @@ If calibration fails:
 
 Onboard Calibration using Stick Gestures (no GCS)
 =================================================
+
+.. note:: Triggering compass calibration via stick gestures has been removed in versions of ArduPilot past 4.1
+
 ArduPilot supports "Onboard Calibration using RC Controller stick gestures" meaning that the calibration routine runs on the autopilot with no GCS.  This method is more accurate than the older "Offboard Calibration" (aka "Live Calibration") which runs on the ground station because in addition to offsets, scaling is also calculated.
 
 - requires RC calibration first
