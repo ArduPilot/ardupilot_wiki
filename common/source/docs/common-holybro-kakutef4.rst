@@ -64,7 +64,7 @@ ESC telemetry input.
 RC Input
 ========
  
-RC input is configured on the R6 (UART3_RX) pin. It supports all RC protocols.
+RC input is configured on the R3 (UART3_RX) pin. It supports all RC protocols.
  
 FrSky Telemetry
 ===============
