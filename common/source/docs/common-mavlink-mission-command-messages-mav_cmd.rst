@@ -1012,7 +1012,7 @@ for the parameter will be used.
 
 The radius of the circle is controlled by the
 :ref:`CIRCLE_RADIUS <copter:CIRCLE_RADIUS>`
-parameter (i.e. cannot be set as part of the command).
+parameter and can also be set by the command.
 
 This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mode>`.
 
@@ -1037,7 +1037,7 @@ This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mo
    <td></td>
    <td>Empty</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param3</strong></td>
    <td>Radius</td>
    <td>Empty</td>
