@@ -6,15 +6,15 @@ Team Black Sheep RC Systems
 
 Any Crossfire compatible receiver can be used with ArduPilot. 
 
-If you do not wish to use telemetry then a **TBS Crossfire** receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`
+If you do not wish to use telemetry then a **TBS Crossfire** receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`. You must configure the Receiver to output SBUS, of course.
 
 CRSF Receivers 
 ==============
 
 If you wish to use telemetry then a TBS receiver can be connected to a UART utilizing the `CRSF <https://www.team-blacksheep.com/products/prod:crossfire_tx>`__ protocol.
 
-CRSF is a full-duplex protocol that supports integrated telemetry and a number of other features. Connect the RX pin of the UART to the TX pin of the CRSF device and vice versa.
-Currently a full-duplex UART connection is required.
+CRSF is a full-duplex protocol that supports integrated telemetry and a number of other features. Connect the RX pin of the UART to the CRSF TX pin of the CRSF device and vice versa.
+Currently a full-duplex UART connection is required. For best performance a UART with DMA capability on its RX port is desireable, but not required. A message will be displayed once on the GCS console, if connected to a UART without this capability.
 
 In the configuration of the serial port select the RCIN protocol. So for example for serial port 4:
 
@@ -24,6 +24,8 @@ In the configuration of the serial port select the RCIN protocol. So for example
 With the receiver connected and configured correctly proceed with RC calibration as normal.
 
 See :ref:`common-crsf-telemetry` for information about telemetry data sent, display scripts for OpenTX transmitters, and adjustment of ArduPilot parameters via CRSF.
+
+.. warning:: If the autopilot is rebooted via MAVLink, it will lose communication with the CRSF receiver until the receiver is power cycled. Also, the CRSF TX must be transmitting BEFORE the receiver is powered up.
 
 CRSF Video Transmitters
 =======================
