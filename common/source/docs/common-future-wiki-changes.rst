@@ -4,11 +4,14 @@
 Future Wiki Changes (in Master branch now)
 ==========================================
 
-on :ref:`common-compass-calibration-in-mission-planner` page, add note at beginning of Onboard Calibration using Stick Gestures (no GCS) section:
+:ref:`common-compass-calibration-in-mission-planner` page
+---------------------------------------------------------
+- add note at beginning of Onboard Calibration using Stick Gestures (no GCS) section:
 
 .. note:: This feature ahs been removed in firmware versions after 4.1.
 
-on :ref:`common-auxiliary-functions` page:
+:ref:`common-auxiliary-functions` page
+--------------------------------------
 
 +----------------------+----------------------------+----------+---------+---------+
 | **RCx_OPTION value** | **Feature Description**    |**Copter**|**Plane**|**Rover**|
@@ -37,18 +40,24 @@ Forces Airspeed Use to be disabled for testing in the air.
    </tbody>
    </table>
    
-in the :ref:`common-gpios` page, add the following note at the top:
+:ref:`common-gpios` page
+------------------------
+
+- add the following note at the top:
 
 .. note:: in firmware versions later than 4.1, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active.
 
 Plane
 =====
 
-on :ref:`quadplane-parameters` page, add:
+:ref:`quadplane-parameters` page
+--------------------------------
 
-- bit 18, if set,will allow arming only if in a VTOL mode. Primarily used for tailsitters to prevent accidental immediate tip-over if armed in a fixed wing mode with assistance active.
+- add:
 
-change bit 15 to:
+bit 18, if set,will allow arming only if in a VTOL mode. Primarily used for tailsitters to prevent accidental immediate tip-over if armed in a fixed wing mode with assistance active.
+
+- change bit 15 to:
 
 bit 15, if set, will allow pilot to control descent during VTOL AUTO-LAND phases, similar to throttle stick action during QHOVER or QLOITER. However, this will not become active until the throttle stick is raised above 70% during the descent at least once.
 
@@ -93,4 +102,6 @@ The ENABLE column refers to the :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` parame
 - under Copter Tailsitters change the note to read:
 
 .. note:: It is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, use :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` = 2. :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is ignored in that case.
+
+- Remove Tailsitter Input Mask section entirely
 
