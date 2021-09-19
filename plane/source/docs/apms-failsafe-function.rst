@@ -375,23 +375,23 @@ GCSs will often display text indicating the type of failsafe encountered, such a
    <td>GPS Glitch</td>
    </tr>
    <tr>
-   <td>8</td>
+   <td>10</td>
    <td>Fence Breached</td>
    </tr>
    <tr>
-   <td>9</td>
+   <td>11</td>
    <td>Terrain</td>
    </tr>
    <tr>
-   <td>18</td>
+   <td>19</td>
    <td>Crash</td>
    </tr>
-   </tbody>
-   </table>
    <tr>
    <td>25+</td>
    <td>General unspecific</td>
    </tr>
+   </tbody>
+   </table>
 
 
 Independent Watchdog
