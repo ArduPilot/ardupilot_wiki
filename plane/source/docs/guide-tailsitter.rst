@@ -287,7 +287,7 @@ interpreted using the :ref:`Q_TAILSIT_INPUT<Q_TAILSIT_INPUT>` parameter. The cho
 Tailsitter Input Mask
 =====================
 
-..note:: Use of this feature is not recommended since it will be removed in a later firmware revision
+.. note:: Use of this feature is not recommended since it will be removed in a later firmware revision
 
 
 To support people with experience flying 3D aircraft and wanting to learn how to
