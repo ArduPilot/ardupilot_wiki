@@ -346,8 +346,6 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 +--------+-------------------------+----------------------------------------------------------------------+
 |39      |Circle Rate              | :ref:`CIRCLE_RATE<CIRCLE_RATE>`                                      |
 +--------+-------------------------+----------------------------------------------------------------------+
-|41      |RangeFinder Gain         |  :ref:`RNGFND_GAIN<RNGFND_GAIN>`                                     |
-+--------+-------------------------+----------------------------------------------------------------------+
 |46      |Rate Pitch kP            | :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`        |
 +--------+-------------------------+----------------------------------------------------------------------+
 |47      |Rate Pitch kI            | :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`        |
