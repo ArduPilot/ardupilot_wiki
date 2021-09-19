@@ -4,6 +4,20 @@
 Future Wiki Changes (in Master branch now)
 ==========================================
 
+:ref:`common-rpm` page
+----------------------
+
+- under types list at top: add ESC Telemetry
+
+- add section:
+
+ESC Telemetry - Average Motor RPM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The RPM library can also be used to setup an 'RPM sensor' that computes and logs the average RPM for selected motors on the vehicle that are controlled by BLHeli_32 or BLHeli_S capable ESCs.  First the ESC telemetry will need to be setup.  See :ref:`BLHeli Telemetry<common-dshot-blheli32-telemetry>` for details on how to do this.  Once complete set ``RPMx_TYPE`` to 5 and write the parameters to ArduPilot.  Then refresh/fetch the parameters.  You will find a number of additional parameters are now available for that instance.  Find and set ``RPMx_ESC_MASK`` to add which ESC channels you want to be included in the average. For example for the second RPM instance:
+
+:ref:`RPM2_ESC_MASK<RPM2_ESC_MASK>` is a bitmask, with each bit corresponding to a channel. If you wanted the average RPM for motors 1 to 4 you would set :ref:`RPM2_ESC_MASK<RPM2_ESC_MASK>` = 1 + 2 + 4 + 8 = 15.
+
 :ref:`common-compass-calibration-in-mission-planner` page
 ---------------------------------------------------------
 - add note at beginning of Onboard Calibration using Stick Gestures (no GCS) section:
