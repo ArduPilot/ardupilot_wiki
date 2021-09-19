@@ -1,33 +1,35 @@
 .. _common-rpm:
 
-===========
-RPM Sensors
-===========
+===============
+RPM Measurement
+===============
 
 ArduPilot supports the use of numerous types of RPM sensors.  They are commonly used in traditional helicopters to measure main rotor speed and motor/engine RPM.  
 RPM sensors are mandatory for those who wish to use the closed-loop throttle governor functionality available to helicopters.  Additionally, vehicles that employ 
 2-stroke and 4-stroke Internal Combustion Engines (ICE) use RPM sensors are for ignition timing.  The same rpm sensor can be used to log engine RPM in ArduPilot.
 
-Common types or RPM sensor that can be used in ArduPilot:
+Common types of RPM sensor that can be used in ArduPilot:
 
 - Hall effect
 - Electrical commutation
 - Optical
 
+in addition, a pseudo RPM sensor which reports the center frequency of the dynamic harmonic notch filter is also an option.
+
 Any RPM sensor that outputs a step-change in voltage as a function of RPM can be used with ArduPilot.  A brief explanation of how the RPM library works is given.  This is followed by 
 instructions for how to setup the different types of RPM sensor.  Up to two RPM sensors can be used.
 
-How the RPM Sensor Library Works
-================================
+How the RPM Library Works (TYPE = AUXPIN)
+=========================================
 
-The RPM library in ArduPilot monitors the voltage of the designated signal pin.   The image below shows a typical output voltage of an RPM sensor:
+The RPM library in ArduPilot monitors the voltage of the designated signal pin. The image below shows a typical output voltage of an RPM sensor:
 
 .. image:: ../../../images/Commutation_RPM_Sensor.png
     :target: ../_images/Autorotation_Wheel_Magnet.png
     :width: 450px
 
 As it can be seen the voltage oscillates between 0V and 5V.  The voltage drops are either caused by a magnet passing a hall effect sensor, or are the output of a 
-different type of sensor.  When a 'falling edge' is detected the time is stored.  When the voltage drops again the time difference between the falling edges can be 
+different type of sensor(eg. optical).  When a 'falling edge' is detected the time is stored.  When the voltage drops again the time difference between the falling edges can be 
 calculated.  The time between the voltage drops is proportional to the RPM.  The scaling value that correlates the time between the falling edges and the RPM is 
 dependent upon the setup and device being used.  Device-specific advice on scaling parameters is given later in this guide. 
 
@@ -66,15 +68,15 @@ and is recommended.
    pull-up resistor to be added between the Vcc and signal lines.  In some cases, their Vcc, gnd, and signal lines won't match the colour coding of the wire.  Hence,
    it is advisable to experiment with the provided Arduino sketch and a bread board to be sure of the sensor pin orientation.
 
-For a reliable RPM signal the hall effect pick-up should be mounted very close to the magnet.  The image below shows an example mounting on helicopter.
+For a reliable RPM signal the hall effect pick-up should be mounted very close to the magnet.  The image below shows an example mounting on a helicopter.
 
 .. image:: ../../../images/Installed_Hall_Effect_Sensor.jpg
     :target: ../_images/Installed_Hall_Effect_Sensor.jpg
     :width: 240px
 
-The three wires should then be plugged into autopilot.  This is commonly done using a standard servo plug.  Ground to Gnd, Vcc to 5V, and the signal line 
+The three wires should then be plugged into the autopilot.  This is commonly done using a standard servo plug.  Ground to Gnd, Vcc to 5V, and the signal line 
 needs to be attached to a GPIO pin.  On most smaller boards this will be any one of the PWM pins on the servo rail.  On a Pixhawk this must be one of the AUX ports.  
-For reasons explained later it is recommended to use the highest number pin first.  E.g. AUX 6 on a Pixhawk Cube or PWM 9 on an F405-Wing.
+For reasons explained later it is recommended to use the highest number pin first.  E.g. AUX 6 on a Pixhawk/Cube or PWM 9 on an F405-Wing.
 
 **Parameter Setup**
 
@@ -82,22 +84,21 @@ First the board needs to be configured to allow PWM pins to be set for GPIO.  Th
 be used for GPIO.  On non-Pixhawk boards the PWM count will include all PWM outputs.  On Pixhawk boards this parameter only affects AUX pins.  Write the parameter 
 and reboot the autopilot.
 
-Now the autopilot needs to be told which pin to find the RPM signal is on.  To do this you will need to find the pin number in the hwdef.dat file for you 
+Now the RPM library must be enabled. In the following sections, we will use the second instance of RPM sensor for parameter examples.
+
+Set the parameter :ref:`RPM2_TYPE<RPM2_TYPE>` to 1 for a GPIO pin based sensor.  Write the parameter to ArduPilot then refresh/fetch the 
+parameters.  You will now find that the instance of RPM (e.g. RPM2) has a number of other parameters available for editing, allowing you to complete your setup.
+
+Now the autopilot needs to be told which pin to find the RPM signal on.  To do this you will need to find the pin number in the hwdef.dat file for your
 board.  These can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__.  Within the file for your board you will 
-need to find where the GPIO(*) definition is.  The below example is an excerpt from the hwdef.dat file for the cube: ::
+need to find where the GPIO(*) definition is.  The pin must have a timer assigned. Normally, these will be PWM servo/motor outputs that have been designated as a GPIO instead of PWM output. See :ref:`common-gpios`, for more information.
 
-    PD13 TIM4_CH2 TIM4 PWM(5) GPIO(54)
+for example, if we have set AUX port 5 to a GPIO and its GPIO numbering corresponds to pin 54, 54 must be entered into the parameter :ref:`RPM2_PIN<RPM2_PIN>` for the RPM sensor.
 
-Here, pin 54 corresponds to AUX port 5.  Therefore, 54 must be entered into the parameter :ref:`RPM1_PIN<RPM1_PIN>` if using AUX 5 for the first RPM sensor.
-
-The parameter :ref:`RPM_1SCALING<RPM1_SCALING>` will correspond to the number magnets used.  Most commonly only one magnet is used and this parameter is set to 1.  Some installations use 
+The parameter :ref:`RPM2SCALING<RPM2_SCALING>` will correspond to the number magnets used.  Most commonly only one magnet is used and this parameter is set to 1.  Some installations use 
 2 magnets, 180 degrees out of phase.  In this case this parameter should be set to 0.5.
 
-The parameter :ref:`RPM1_TYPE<RPM1_TYPE>` should be set to 2 when using the AUX pins on Pixhawk type boards.  It should be set to 1 in all other instances.
-
-Initially, it is recommended to leave the parameters :ref:`RPM1_MIN<RPM1_MIN>` , :ref:`RPM1_MAX<RPM1_MAX>` , and :ref:`RPM_MIN1_QUAL<RPM1_MIN_QUAL>` as their defaults.  If an RPM signal exceeds any of these limits then the 
-value reported in the ground station and the logs is zero.  Therefore, only adjust these values once you have confirmed that your RPM sensor is working as expected, 
-otherwise it can make it more difficult to debug if nothing is getting reported.
+Initially, it is recommended to leave the parameters :ref:`RPM2_MIN<RPM2_MIN>` , :ref:`RPM2_MAX<RPM2_MAX>` , and :ref:`RPM2_MIN_QUAL<RPM2_MIN_QUAL>` as their defaults.  If an RPM signal exceeds any of these limits then the value reported in the ground station and the logs is zero.  Therefore, only adjust these values once you have confirmed that your RPM sensor is working as expected, otherwise it can make it more difficult to debug if nothing is getting reported.
 
 .. note::
 
@@ -114,16 +115,21 @@ Electrical commutation RPM sensors can be added retrospectively using something 
 series, that have an auxiliary output, can be configured to output a pulse per commutation.
 
 For clarification, this is not the same as the RPM that can be passed 
-via serial telemetry with ESCs.  For information on how to set up RPM reporting with capable  ESCs, see the :ref:`ESC Telemetry<esc-telemetry>`.
+via serial telemetry with ESCs.  For information on how to set up RPM reporting with capable ESCs, see the :ref:`ESC Telemetry<esc-telemetry>`.
 For information on how to set up RPM logging with BL Heli see the :ref:`BLHeli Telemetry<common-dshot-blheli32-telemetry>`.
 
 The setup for electrical commutation RPM sensors is much the same as hall effect sensors, so the steps above are applicable.  The only difference is the scaling value 
-to be entered in the :ref:`RPM1_SCALING<RPM1_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 
+to be entered in the :ref:`RP2_SCALING<RPM2_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 
 poles.  E.g. A 4 pole motor will need a scaling value of 0.25.
 
 Optical Sensors
 ===============
 
-Again, the setup of optical sensors is much the same as the hall effect sensor.  The only difference is the scaling value.  :ref:`RPM1_SCALING<RPM1_SCALING>` should be set to be the reciprocal 
-of the number of reflective obstacles that pass the sensor in a single rotation. 
+Again, the setup of optical sensors is much the same as the hall effect sensor.  The only difference is the scaling value.  :ref:`RPM2_SCALING<RPM2_SCALING>` should be set to be the reciprocal 
+of the number of reflective obstacles that pass the sensor in a single rotation.
 
+
+Harmonic Notch Center Frequency
+===============================
+
+If ``RPMx_TYPE`` = 4, then the center frequency of the harmonic notch is reported.  See :ref:`common-imu-notch-filtering` for how this value is obtained.
