@@ -268,7 +268,7 @@ Adding a Test
 
    The autotest script is in flux.  This documentation may be out of date.
 
-The git commit e045f61473afa800afc241819cf890591fbecd5a in ArduPilot master's history is a reasonable example of adding an entirely new test to the ArduPilot suite.
+`This <https://github.com/ArduPilot/ardupilot/commit/e045f61473afa800afc241819cf890591fbecd5a>`__ git commit is a reasonable example of adding an entirely new test to the ArduPilot suite.
 
 
 Conducting an automated git bisect with an autotest
