@@ -264,10 +264,42 @@ From time to time parameters need to be altered or renamed. ArduPilot has capabi
 
     * Set the AP_PARAM_KEY_DUMP definition to "1" [here in AP_Param.h](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Param/AP_Param.h#L36)
 
-    * Change the delay here from 1ms to 2ms [here in AP_Param::show_all](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Param/AP_Param.cpp#L2414)
-
-    * Remove the #if / #endif from [here in Copter's system.cpp](https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/system.cpp#L262)
-
     * Start the old code in SITL and all the parameter names and their magic numbers will be displayed
 
     * Copy-paste from Copter's Parameters.cpp file's [existing parameter conversion tables like the ones done for the attitude controller's filters](https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L1219).
+
+Parameter Conversion Expiration
+===============================
+
+Parameter conversions are necessary to ensure continuity for users as they upgrade to newer versions of ArduPilot.  However, the conversion process does utilise some resources on boot and does add to the flash cost of the code. 
+Therefore we don't keep the conversion code forever more. To make it easier to find and remove the conversions, please add the following as a comment above any parameter conversion that you add:
+
+::
+
+    // PARAMETER_CONVERSION - Added: Aug-2021
+
+Please use the date format shown above to avoid ambiguity.  Please also keep the date on the same line as the key word "PARAMETER_CONVERSION" so that the date can be seen in the return, when grep-ing/searching the code.  When adding to an already existing AP_Param::ConversionInfo table, please add the conversions as a new block with the the conversion comment above the new block.  For example:
+
+.. code-block:: cpp
+
+    const AP_Param::ConversionInfo q_conversion_table[] = {
+        // PARAMETER_CONVERSION - Added: Jan-2018
+        { Parameters::k_param_quadplane, 4044, AP_PARAM_FLOAT, "Q_P_POSZ_P" },     //  Q_PZ_P
+        { Parameters::k_param_quadplane, 4045, AP_PARAM_FLOAT, "Q_P_POSXY_P"},     //  Q_PXY_P
+        { Parameters::k_param_quadplane, 4046, AP_PARAM_FLOAT, "Q_P_VELXY_P"},     //  Q_VXY_P
+        { Parameters::k_param_quadplane, 78,   AP_PARAM_FLOAT, "Q_P_VELXY_I"},     //  Q_VXY_I
+        { Parameters::k_param_quadplane, 142,  AP_PARAM_FLOAT, "Q_P_VELXY_IMAX"},  //  Q_VXY_IMAX
+
+        // PARAMETER_CONVERSION - Added: Aug-2021
+        { Parameters::k_param_quadplane, 206,  AP_PARAM_FLOAT, "Q_P_VELXY_FLTE"},  //  Q_VXY_FILT_HZ
+
+        // PARAMETER_CONVERSION - Added: Jan-2018
+        { Parameters::k_param_quadplane, 4047, AP_PARAM_FLOAT, "Q_P_VELZ_P"},      //  Q_VZ_P
+        { Parameters::k_param_quadplane, 4048, AP_PARAM_FLOAT, "Q_P_ACCZ_P"},      //  Q_AZ_P
+        { Parameters::k_param_quadplane, 80,   AP_PARAM_FLOAT, "Q_P_ACCZ_I"},      //  Q_AZ_I
+        { Parameters::k_param_quadplane, 144,  AP_PARAM_FLOAT, "Q_P_ACCZ_D"},      //  Q_AZ_D
+        { Parameters::k_param_quadplane, 336,  AP_PARAM_FLOAT, "Q_P_ACCZ_IMAX"},   //  Q_AZ_IMAX
+
+        // PARAMETER_CONVERSION - Added: Jun-2019
+        { Parameters::k_param_quadplane, 400,  AP_PARAM_FLOAT, "Q_P_ACCZ_FLTD"},   //  Q_AZ_FILT
+
