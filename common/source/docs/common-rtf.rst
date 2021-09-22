@@ -16,6 +16,7 @@ Copters from Partners
 =====================
 
 * `Bask Aerospace - AeroDrone MR4 <http://www.baskaerospace.com.au/aerodrone/mr4>`__
+* `CUAV - Xunwing X4 <https://store.cuav.net/shop/xunwing-x4/>`__
 * `Hitec - SUI Endurance <https://hitecnology.com/drones/sui-endurance-multipurpose-professional-multirotor>`__
 * `Holybro - S500 V2 Kit <https://shop.holybro.com/s500-v2-kitmotor2216-880kv-propeller1045_p1153.html>`__
 * `Holybro - X500 Kit <https://shop.holybro.com/x500-kit_p1180.html>`__
@@ -47,13 +48,14 @@ Planes from Partners
 
 VTOL/QuadPlanes from Partners
 =============================
+* `CUAV - Raefly <https://store.cuav.net/shop/raefly/>`__
 * `Event38 - E400 <https://event38.com/e400-vtol-drone/?v=0a10a0b3e53b>`__
 * `MakeFLyEasy - Fighter VTOL <https://www.aliexpress.com/item/10000223165284.html?spm=a2g0o.store_home.productList_1076398524.pic_0>`__
 * `MakeFLyEasy - Freeman 2300 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_3>`__
 * `MakeFLyEasy - Freeman 2100 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_2>`__
 * `SpektreWorks - Cobalt 55 E-VTOL <https://www.spektreworks.com/cobalt>`__
 * `SpektreWorks - Cobalt 55 G-VTOL <https://www.spektreworks.com/cobalt>`__
-* `SpektreWorks - Cobalt 110 G-VTOL <https://www.spektreworks.com/cobalt>`__
+* `SpektreWorks - Cobalt 110 G-VTOL <https://www.spektreworks.com/cobalt>`__  
 
 Rovers from Partners
 ====================
