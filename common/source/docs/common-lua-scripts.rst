@@ -14,7 +14,7 @@ This page describes how to setup scripts on your autopilot, the scripting API an
 
 .. note::
 
-    Lua scripting support was released with Copter-4.0, Rover-4.0 and Plane-3.11.
+    Lua scripting support was released with Copter-4.0, Rover-4.0 and Plane-3.9.11.
 
 Getting Started
 ===============
