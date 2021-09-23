@@ -4,7 +4,7 @@
 Multiwii Serial Protocol (MSP)
 ==============================
 
-ArduPilot supports the MSP protocol for telemetry and sensors via any of its serial ports. This allows ArduPilot to send its telemetry data to MSP compatible devices, such as DJI goggles, for On Screen Display (OSD) (See :ref:`common-msp-osd-overview`).
+ArduPilot supports the MSP protocol for telemetry and sensors via any of its serial ports. This allows ArduPilot to send its telemetry data to MSP compatible devices, such as DJI goggles, for On Screen Display (OSD) (See :ref:`common-msp-osd-overview`). It can also be used by external OSDS, such as MWOSD, when setup for MSP protocol (ie betaflight/Inav).
 
 Protocol overview
 -----------------
@@ -26,17 +26,17 @@ At the moment, the ArduPilot implementation supports only telemetry and sensor m
 Configuration
 -------------
 
-MSP requires a free serial port, and its speed defaults to 115200 baud.
+MSP requires a free serial port, and its speed defaults to 115200 baud. Below SERIAL2 is used for the examples.
 
 There are 2 MSP backends selected by serial protocol:
- - SERIAL_PROTOCOL = 33 is for DJI FPV or RE Goggles
- - SERIAL_PROTOCOL = 32 is for sensors or generic MSP telemetry usage
 
-.. note:: There are 2 different backends to try to maintain compatibility with DJI's evolving hardware.
+ - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 33 is for DJI FPV or RE Goggles
+ - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 32 is for sensors or generic MSP telemetry usage
 
-When SERIAL_PROTOCOL = 33 is selected the protocol decoder can work in polling mode (default) or in "telemetry push" mode.
-When working in polling mode, both TX and RX must be connected to the MSP telemetry transceiver. While in push mode only the TX line is used. To enable push mode, simply set MSP_OPTIONS bit 0 to "1"; to disable set it to "0" (default).
+.. note:: There are 2 different protocols to try to maintain compatibility with DJI's evolving hardware.
 
-MSP sensors such as the Matek 3901-L0X are supported by both backends.
+When :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 33 is selected the protocol decoder can work in polling mode (default) or in "telemetry push" mode. When working in polling mode, both TX and RX must be connected to the MSP telemetry transceiver. While in push mode only the TX line is used. To enable push mode, simply set :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 0 to "1"; to disable set it to "0" (default).
+
+MSP sensors such as the Matek 3901-L0X are supported by both protocols.
 
 
