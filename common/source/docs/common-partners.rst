@@ -22,10 +22,10 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  http://jdrones.com
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_ProfiCNC.png
+      - .. image:: ../../../images/supporters/supporters_logo_CubePilot.png
             :width: 250px
             :align: center
-            :target:  http://proficnc.com/stores
+            :target:  https://www.cubepilot.com/#/home
 
       - .. image:: ../../../images/supporters/supporters_logo_mRobotics.png
             :width: 250px
@@ -60,10 +60,10 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://spektreworks.com
 
-      - .. image:: ../../../images/supporters/supporters_logo_Hex.png
+      - .. image:: ../../../images/supporters/supporters_logo_CubePilot.png
             :width: 250px
             :align: center
-            :target:  http://hex.aero
+            :target:  https://www.cubepilot.com/#/home
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Dronebility.png
