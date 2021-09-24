@@ -4,7 +4,19 @@
 MSP OSD
 =======
 
-ArduPilot supports the MSP OSD protocol which allows displaying flight data on the DJI goggles, much like with external MAVLink OSDs or the internal integrated OSD in many flight controllers. It can also be used with external OSDs , such as the MWOSD, if its configured for MSP telemetry, as is used with iNav or Betaflight.
+Ardupilot supports 2 types of MSP OSDs:
+
+ - Telemetry based OSDs such as DJI FPV Goggles V1/V2, DJI Goggles RE, FatShark ByteFrost, FatShark SharkByte, MWOSD, etc
+ - DisplayPort (aka CANVAS MODE) based OSD's such as FatShark SharkByte (fw 09042021 and later) and MWOSD
+
+Telemetry based OSDs will render OSD panel items on screen with their own engine, so ArduPilot has no control of how the items look.
+Another limit of telemetry based OSDs is that there's no way for ArduPilot to add new panel items at will, it's the vendor's responsability to add new features by rolling out new firmware releases.
+
+DisplayPort, on the contrary, is an MSP protocol extension that allows to remotely draw text on compatible external OSDs, DisplayPort is also known as CANVAS MODE.
+Basically it’s a remote text only frame buffer that uses local fonts (local to the rendering engine i.e. the OSD hardware) to render strings sent via MSP.
+
+Telemetry based OSD
+===================
 
 DJI V1 FPV Goggles
 
@@ -18,7 +30,7 @@ DJI V1 FPV Goggles
     :target: ../_images/msp_dji_goggles_re.jpeg
  
 Features
-========
+--------
  
  - ArduPilot currently supports all of the OSD panel items provided by the V1 and V2 DJI FPV Goggles, details are given in the table below.
  - Changing display units other than metric and imperial are not currently supported.
@@ -27,7 +39,7 @@ Features
  - Warning levels for RSSI, Voltage, etc. currently not supported
 
 Configuration
-=============
+-------------
 
 To enable MSP OSD, set the following parameters ( example using SERIAL port 2 as the port to attach to the DJI Air unit using both TX and RX lines):
 
@@ -38,7 +50,7 @@ To enable MSP OSD, set the following parameters ( example using SERIAL port 2 as
 .. note:: DJI OSD must be enabled: in SETTINGS->DISPLAY->CUSTOM OSD menu of goggles
 
 OSD Panel Items
-===============================
+---------------
 
 +---------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | OSD Parameter | Notes                                                                                                                                                                                                                                                                                                |
@@ -102,7 +114,7 @@ OSD Panel Items
 
 
 OSD Panel Item Configuration
-============================
+----------------------------
 
 Each OSD panel item uses a set of three variables to be set: 
 
@@ -113,7 +125,7 @@ Each OSD panel item uses a set of three variables to be set:
     
 
 Screens and screen switching 
-============================
+----------------------------
 
 For multiple screen layouts, each screen's "OSD" parameter label is trailed by a number, starting with "1". For example,  ``OSDn_<ITEM>_x`` is a parameter "x" associated with screen 1's "ITEM" panel. 
 
@@ -129,7 +141,7 @@ The options are:
 - 2 = toggles screens on a low to high transition of set RC channel. keeps toggling to next screen every second while channel value is kept high
 
 Displaying statistics on a dedicated screen
-===========================================
+-------------------------------------------
 
 Displaying statistics on a dedicated screen requires enabling at least one extra screen by setting the respective ``OSDn_ENABLE`` to 1.
 By default, ArduPilot has only one screen active so in a typical setup one would set (:ref:`OSD2_ENABLE<OSD2_ENABLE>`) = 1 and then enabling the OSD stats panel on screen 2 by setting (:ref:`OSD2_STATS_EN<OSD2_STATS_EN>`) = 1.
@@ -143,7 +155,33 @@ When the OSD switches to this screen it will check the value of the :ref:`OSD2_S
  - OSDn_GSPEED will display max ground speed (or airspeed if ``OSDn_ASPEED_EN`` is set to 1)
  - OSDn_HOMEDIST will alternates max distance from home and total traveled distance every 2 seconds
  - OSDn_RSSI will display min rssi
- 
+
+DisplayPort OSD
+===============
+
+FatShark's SharkByte using ArduPilot custom fonts
+
+.. image:: ../../../images/msp_osd_displayport.jpg
+   :target: ../_images/msp_osd_displayport.jpg
+
+Features
+--------
+
+DisplayPort OSDs can render all the panel items supported by the ArduPilot's onboard OSD.
+Features such as multiple screen switching, multiple units and statistics are supported as well, please refer to the :ref:`onboard OSD documentation <common-osd-overview>`  for more info.
+
+By setting :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 3 to 1 one can force ArduPilot to impersonate betaflight and use a betaflight compatible font table on the remote OSD system.
+This is required if the remote OSD system does not have an ArduPilot compatible fonts table. MWOSD already supports custom fonts and therefore does not require this hack while FatShark's SharkByte will support custom fonts in a future release.
+Default behaviour is to use the ArduPilot fonts table.
+
+Configuration
+-------------
+
+To enable MSP DisplayPort OSD, set the following parameters (using SERIAL port 2 as the port to attach to the Air unit using both TX and RX lines):
+
+ - :ref:`OSD_TYPE<OSD_TYPE>` = 5
+ - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 42
+
 Testing OSD with SITL
 =====================
 
@@ -157,7 +195,7 @@ A graphical DJI style MSP OSD simulation in a separate window will be opened wit
 
 .. note:: You could also use these parameters to initially setup the MSP OSD configuration for use with goggles, but you may have to change the ``SERIALx_PROTOCOL`` parameter to match the actual serial port that you will be using.
 
-.. note:: The emulation supports multiple screens and stats
+.. note:: The emulation supports multiple screens and stats, but not yet Display Port
 
 .. note:: The emulation does not support units other than metric
 
