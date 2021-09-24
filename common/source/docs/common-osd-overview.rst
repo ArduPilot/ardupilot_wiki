@@ -56,11 +56,11 @@ MAVftp might be a convenient option to upload files to your SD card without havi
 Screens and screen switching 
 ============================
 
-For multiple screen layouts, each parameter's "OSD" part is trailed by a number, starting with "1"
+For multiple screen layouts, each parameter's "OSD" part is trailed by a number, starting with "1" for the screen number for which the parameter applies.
 
-* ``OSD1_PARAMETER`` - This number addresses the respective screen layout number, allowing to set individual items active on one screen but have them switched off on another screen. OSD settings default to 4 screens optionally available.
+* ``OSDn_<ITEM>_<PARAMETER>`` - n represents the screen number, ITEM the displayed data item, and PARAMETER, the enable and positions parameters for this display item. OSD settings default to allowing up to 4 screens available, each optionally enabled. Displayed data items can be shown on one screen and not on others by setting its ENABLE parameter for that screen.
 
-* Set parameters ``OSDn_CHAN_MIN`` and ``OSDn_CHAN_MAX`` to adjust RC channel pwm limits to use for switching to a respective screen.
+* Set parameters ``OSDn_CHAN_MIN`` and ``OSDn_CHAN_MAX`` are used to adjust RC channel pwm limits to use for switching to a respective screen. Be careful not to have overlapping PWM ranges for two screens.
 
 There are different switch-method options to meet individual RC systems switch layout requirements. 
 These can be set by parameter: :ref:`OSD_SW_METHOD<OSD_SW_METHOD>`.
@@ -77,8 +77,8 @@ Panel items
 
 Each OSD panel item uses a set of three variables to be set: 
 
-- ``OSDn_ITEM_ENABLE`` - activates the respective item when set to 1.
-- ``OSDn_ITEM_X`` and ``OSDn_ITEM_Y`` set the horizontal and vertical position of the item, starting with ``X = 0`` and ``Y = 0`` in the upper left corner of your screen. 
+- ``OSDn_<ITEM>EN`` - activates the respective item when set to 1.
+- ``OSDn_<ITEM>_X`` and ``OSDn_<ITEM>_Y`` set the horizontal and vertical position of the item, starting with ``X = 0`` and ``Y = 0`` in the upper left corner of your screen. 
 
 .. note::
    
