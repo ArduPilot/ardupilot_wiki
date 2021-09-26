@@ -55,7 +55,7 @@ Board: (`Board Gerber File <https://github.com/HefnySco/OBAL/blob/main/Hardware/
 
 
 More Information
-================F
+================
 
 `Schematics <https://oshwlab.com/mohammad.hefny/Ardupilot-OBAL-FCB>`__
 
