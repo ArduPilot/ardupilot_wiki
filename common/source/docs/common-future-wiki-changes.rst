@@ -4,6 +4,9 @@
 Future Wiki Changes (in Master branch now)
 ==========================================
 
+Common
+======
+
 :ref:`common-rpm` page
 ----------------------
 

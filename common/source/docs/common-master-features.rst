@@ -12,16 +12,17 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
-[site wiki="rover"]
+[site wiki="rover,dev"]
     AIS for boats <common-ais>
     Torqeedo motor <common-torqeedo>
 [/site]
     Multiple Screen And Display Port Support for MultiWii/DJI OSD <common-msp-osd-overview-4.2>
     MSP Telemetry Addition of Canvass Mode <common-msp-overview-4.2>
     Swan K-1 Copter Tailsitter <common-Swan-K1>
-[site wiki="copter,plane,rover"]
+
+
     Other wiki changes <common-future-wiki-changes>
-[/site]
+
 
 
 

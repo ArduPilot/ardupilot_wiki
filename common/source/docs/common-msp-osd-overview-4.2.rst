@@ -224,3 +224,4 @@ Video
 
 .. youtube:: gT4R3E_7Z_0
 
+[copywiki destination="plane,copter,rover,dev"]

@@ -65,4 +65,4 @@ The AIS_OPTIONS parameter specifies which AIS messages are logged.  These messag
 - ID : Sequential message ID for multi-sentence messages
 - Payload : Data payload
 
-[copywiki destination="rover"]
+[copywiki destination="rover,dev"]
