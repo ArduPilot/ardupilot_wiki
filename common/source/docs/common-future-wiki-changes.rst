@@ -122,4 +122,4 @@ The ENABLE column refers to the :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` parame
 
 - Remove Tailsitter Input Mask section entirely
 
-[copywiki destination= "plane,copter,rover,dev"]
+[copywiki destination="plane,copter,rover,dev"]
