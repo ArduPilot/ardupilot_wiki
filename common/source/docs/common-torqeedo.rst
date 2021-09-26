@@ -88,5 +88,5 @@ Introduction Video
 .. youtube:: uq1okSejrUE
     :width: 100%
 
-[copywiki destination="rover"]
+[copywiki destination="rover,dev"]
 

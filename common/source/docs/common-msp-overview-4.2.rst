@@ -41,3 +41,4 @@ When :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 33 is selected the protocol dec
 MSP sensors such as the Matek 3901-L0X are supported by both protocols.
 
 
+[copywiki destination="plane,copter,rover,dev"]
