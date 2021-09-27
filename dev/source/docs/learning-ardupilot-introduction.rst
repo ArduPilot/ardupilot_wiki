@@ -37,7 +37,7 @@ Libraries
 ---------
 
 The `libraries <https://github.com/ArduPilot/ardupilot/tree/master/libraries>`__ are
-shared amongst the four vehicle types Copter, Plane, Rover and AntennaTracker.  These libraries include sensor drivers, attitude and position estimation (aka :ref:`EKF <ekf>`) and control code (i.e. PID controllers).
+shared amongst all vehicle types.  These libraries include sensor drivers, attitude and position estimation (aka :ref:`EKF <ekf>`) and control code (i.e. PID controllers).
 See the :ref:`Library Description <apmcopter-programming-libraries>`, :ref:`Library Example Sketches <learning-ardupilot-the-example-sketches>` and :ref:`Sensor Drivers <code-overview-sensor-drivers>` pages for more details.
 
 AP_HAL
