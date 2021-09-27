@@ -201,7 +201,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
       - .. image:: ../../../images/supporters/supporters_logo_ARACE_UAS.png
             :width: 250px
             :align: center
-            :target:  https://longrangefpv.com
+            :target:  https://araceuas.com
 
       - .. image:: ../../../images/supporters/supporters_logo_Qifei.png
             :width: 250px
