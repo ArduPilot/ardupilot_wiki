@@ -27,7 +27,8 @@ positioning technologies:
     Hex Here 2 UAVCAN GPS/Gyro/IMU/Baro <http://www.proficnc.com/all-products/152-gps-module.html>
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
     Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
-    Holybro Pixhawk 4 GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
+    Holybro M8N (Pixhawk 4) GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
+    Holybro M9N GPS Module <http://www.holybro.com/product/holybro-m9n-gps/>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
     Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
