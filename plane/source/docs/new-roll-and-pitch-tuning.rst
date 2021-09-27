@@ -169,9 +169,9 @@ Tuning tips
 -  Although the autopilot will prevent the integrator from increasing if
    the maximum elevator is exceeded, there is additional protection
    provided by the :ref:`PTCH_RATE_IMAX<PTCH_RATE_IMAX>` parameter. This parameter sets the
-   maximum amount of elevator(in centi-degrees) that the integrator can
-   control. The default value of 1500 allows the integrator to trim up
-   to 1/3 of the total elevator travel. This should be enough to allow
+   maximum amount of elevator that the integrator can
+   control. The default value of 0.666 allows the integrator to trim up
+   to 2/3 of the total elevator travel. This should be enough to allow
    for the trim offset and variation in trim with speed for most models.
 -  WARNING : If :ref:`PTCH_RATE_IMAX<PTCH_RATE_IMAX>` is set too high, then there is a
    danger that in FBWA, if the model has been leveled so that zero
