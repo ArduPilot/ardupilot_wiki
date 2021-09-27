@@ -130,7 +130,7 @@ Now vehicle can be flown again to start trimming P and D. Starting with D and P 
    again without overshoot or any porpoising. 
 #. When you get pitch angle oscillation or overshoot, then you need to
    reduce P by 25-50%.
-#. Increase the D fgain in increments of 0.001 until it it starts
+#. Increase the D gain in increments of 0.001 until it it starts
    to oscillate, then halve it. Be sure to check the temperature of your servos when you
    land as in extreme cases turning up this gain can cause rapid servo
    movement and overheat the servos leading to premature failure.
