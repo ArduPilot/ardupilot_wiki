@@ -49,4 +49,7 @@ python3 -m pip install --user --upgrade git+https://github.com/sphinx-contrib/yo
 # and a vimeo plugin:
 python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git
 
+# and a parser to use getting posts from Discourse (forum) and insert in FrontEnd
+python3 -m pip install --user --upgrade beautifulsoup4
+
 echo "Setup completed successfully!"
