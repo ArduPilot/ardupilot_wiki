@@ -7,32 +7,38 @@ Lua Scripts
 ===========
 
 ArduPilot has introduced support for `Lua <https://www.lua.org/>`_ scripting.
-Scripting provides a safe, "sandboxed" environment for new behaviours to be added to the autopilot without modifying the core flight code.
+Scripting provides a safe, "sandboxed" environment for new behaviors to be added to the autopilot without modifying the core flight code.
 Scripts are stored on the SD card and run in parallel with the flight code.
 
-This page describes how to setup scripts on your autopilot, the scripting API and some examples to help get started.
+This page describes how to setup scripts on your autopilot, the scripting API, and some examples to help get started.
 
 .. note::
 
-    Lua scripting support was released with Copter-4.0, Rover-4.0 and Plane-3.9.11.
+    Lua scripting support was released with Copter-4.0, Rover-4.0, and Plane-3.9.11.
 
 Getting Started
 ===============
 
 - Ensure your autopilot has at least 2 MB of flash and 70 kB of memory.  High powered autopilots like the Hex Cube Orange and HolyBro Durandal will certainly work well but check the specifications of your :ref:`autopilot <common-autopilots>`.
 - Set :ref:`SCR_ENABLE <SCR_ENABLE>` to 1 to enable scripting (refresh or reboot to see all ``SCR_`` parameters).
-- Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder (if this folder does not exist you can create it by setting :ref:`SCR_ENABLE<SCR_ENABLE>` to 1 and rebooting).  If using Mission Planner, this can be done using MAVFTP.  If using a simulator, the ``scripts`` folder is in the directory the simulator was started from.
+- Upload scripts (files with extension .lua) to the autopilot's SD card's ``APM/scripts`` folder.
+
+  - If this folder does not exist, you can create it by setting :ref:`SCR_ENABLE<SCR_ENABLE>` to 1 and rebooting. This folder can also be created manually on the SD card. 
+  - If using Mission Planner, this can be done using MAVFTP.
+  - If using a simulator, the ``scripts`` folder is in the directory the simulator was started from. MAVFTP will work in this case as well.
 
   .. image:: ../../../images/scripting-MP-mavftp.png
       :target: ../_images/scripting-MP-mavftp.png
       :width: 450px
 
 - Sample scripts can be found `here for stable Plane <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/examples>`__, `Copter <https://github.com/ArduPilot/ardupilot/tree/ArduCopter-stable/libraries/AP_Scripting/examples>`__ and `Rover <https://github.com/ArduPilot/ardupilot/tree/APMrover2-stable/libraries/AP_Scripting/examples>`__.  The latest development scripts can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__.
-- - Scripts which require no user editing before use (Applets) can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these have an .md file of the same name detailing its capabilities, use and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter.
-- Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are avaliable: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
+
+  - Scripts which require no user editing before use (Applets) can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these has a .md file of the same name detailing its capabilities, use, and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter.
+
+- Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are available: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
 - When the autopilot is powered on it will load and start all scripts.
 - Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab.
-- :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts. The default of 43 kB is sufficient for small scripts, and fits onto most autopilots. The autopilot's free memory depends highly upon which features and peripherals are enabled. If this parameter is set too low, scripts may fail to run. If set too high other autopilot features such as Terrain Following or even the EKF may fail to initialise. On autopilots with a STM32F4 microcontroller Smart RTL (Rover, Copter) and Terrain Following (Plane, Copter) need to be nearly always disabled (they are usally enabled by default, set :ref:`SRTL_POINTS <SRTL_POINTS>` = 0, :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` = 0).
+- :ref:`SCR_HEAP_SIZE <SCR_HEAP_SIZE>` can be adjusted to increase or decrease the amount of memory available for scripts. The default of 43 kB is sufficient for small scripts and fits onto most autopilots. The autopilot's free memory depends highly upon which features and peripherals are enabled. If this parameter is set too low, scripts may fail to run. If set too high other autopilot features such as Terrain Following or even the EKF may fail to initialize. On autopilots with a STM32F4 microcontroller, Smart RTL (Rover, Copter) and Terrain Following (Plane, Copter) need to be nearly always disabled. These features are usually enabled by default, set :ref:`SRTL_POINTS <SRTL_POINTS>` = 0, :ref:`TERRAIN_ENABLE <TERRAIN_ENABLE>` = 0).
 
 What Scripts Can Do
 ===================
@@ -45,7 +51,7 @@ Lua is a garbage collected, imperative programming language.
 Scripts are run at a low priority on the system, which ensures that the core flight code will continue to execute even if a script is taking a long time to process.
 In order to allow multiple scripts to be run, each script is allocated a fixed time chunk (measured in VM instructions) in which it is expected to complete it’s processing.
 The script is allowed to specify a new callback function and time at which it should be called, which allows it to be run continuously.
-While this serves to bound the worst case execution time safely, scripts are not guaranteed to be run on a reliable schedule.
+While this serves to bound the worst-case execution time safely, scripts are not guaranteed to be run on a reliable schedule.
 
 Each script is run in its own "sandboxed" environment.
 This allows each script to manipulate any global variables it wants to without causing other scripts problems, and allows the script to persist state between calls to its callback.
@@ -91,7 +97,7 @@ This is allowed to happen at all flight stages, even while the vehicle is armed 
 API Documentation
 =================
 
-The API documentation described here is not a complete list, but rather a work in progress. This list will be expanded upon in the near future. For a full list of the methods currently available, the `binding generator <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`_ source is the best reference currently available. See :ref:`Binding Description Method Syntax<common-lua-binding-syntax>` for more information on how to decode the methods shown there.
+The API documentation described here is not a complete list, but rather a work in progress. This list will be expanded upon in the near future. For a full list of the methods currently available, the `binding generator <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`_ source is the best reference currently available. See :ref:`Binding Description Method Syntax<common-lua-binding-syntax>` for more information on how to decode the methods shown there. ArduPilot uses Lua version 5.3.5.
 
 Location
 ~~~~~~~~
@@ -100,11 +106,11 @@ Location is a userdata object that holds locations expressed as latitude, longit
 
 A Location userdata object supports the following calls:
 
-- :code:`lat( [new_lat] )` - If called with no arguments, returns the current latitude in degrees * 1e7 as an integer. If called with one argument it will assign the value to the latitude.
+- :code:`lat( [new_lat] )` - If called with no arguments, returns the current latitude in degrees * 1e7 as an integer. If called with one argument, it will assign the value to the latitude.
 
-- :code:`lng( [new_lng] )` - If called with no arguments, returns the current longitude in degrees * 1e7 as an integer. If called with one argument it will assign the value to the longitude.
+- :code:`lng( [new_lng] )` - If called with no arguments, returns the current longitude in degrees * 1e7 as an integer. If called with one argument, it will assign the value to the longitude.
 
-- :code:`alt( [new_alt] )` - If called with no arguments, returns the current altitude in cm as an integer. If called with one argument it will assign the value to the altitude.
+- :code:`alt( [new_alt] )` - If called with no arguments, returns the current altitude in cm as an integer. If called with one argument, it will assign the value to the altitude.
 
 - :code:`relative_alt( [is_relative] )` - If called with no arguments returns true if the location is planned as relative to home. If called with a boolean value this will set the relative altitude.
 
@@ -376,7 +382,7 @@ Terrain (terrain:)
 ~~~~~~~~~~~~~~~~~~
 
 
-The terrain library proivdes access to checking heights against a terrain database.
+The terrain library provides access to checking heights against a terrain database.
 
 - :code:`enabled()` - Returns true if terrain is enabled.
 
