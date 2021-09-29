@@ -10,6 +10,7 @@ The ground station or companion computer can request the data it wants (and the 
    - Send `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ messages to set the rate for groups of messages
    - Send a `SET_MESSAGE_INTERVAL <https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to precisely control the rate of an individual message.  Note this is only supported on ArduPilot 4.0 and higher
    - Send a `REQUEST_MESSAGE <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to request a single instance of a message.  Note this is only supported on ArduPilot 4.0 and higher
+   - create configuration files stored on SD card or in ROMFS specifying message stream rates on a per-channel basis
 
 More details of these methods can be found below.
 
@@ -145,6 +146,37 @@ Send a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`_
 - param1: desired MAVLink message's id (i.e. 33 for `GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#GLOBAL_POSITION_INT>`__)
 - param2: depends on message requested; see that message's definition for details.
 - param3 to param7: 0 (not used)
+
+Specifying Message Rates in a File
+----------------------------------
+
+At boot ArduPilot will populate the initial message intervals from files found in either ROMFS or in the filesystem.
+
+On ChibiOS-based boards the SD card will be searched for specially-named files in the APM subdirectory.
+
+Each mavlink channel is configured in a separate configuration file.  The first serial port configured as mavlink is channel 0, the second serial port channel 1 etc.
+
+An example filename is ``message-intervals-chan0.txt``
+
+The format is simple but strict.  There are two columns, separated by a single space and both containing numbers.  The first number is a mavlink message ID.  The second is the message interval, in milliseconds.  Each line must be terminated by either carriage-return *or* a line-feed.
+
+.. code-block::
+
+   30 50
+   28 100
+   29 200
+
+This sample file content will stream `ATTITUDE <https://mavlink.io/en/messages/common.html#ATTITUDE>`__ (ID=30) at 20Hz and `SCALED_PRESSURE <https://mavlink.io/en/messages/common.html#SCALED_PRESSURE>`__ (ID=29) at 5Hz.  Message ID 28 is RAW_PRESSURE which ArduPilot does not send - this line will be ignored.
+
+Configuration files can be included in ROMFS (i.e. compiled into the image) by specifying their path in the relevant board's hwdef file:
+
+.. code-block::
+
+   ROMFS message-intervals-chan0.txt libraries/AP_HAL_ChibiOS/hwdef/CubeOrange/message-intervals-chan0.txt
+
+The second parameter is a path relative to the ArduPilot checkout's root directory.
+
+Example use cases of this include locking telemetry rates on boards that can't run scripting, or before scripting can be run.
 
 Checking The Message Rates
 --------------------------
