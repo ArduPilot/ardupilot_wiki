@@ -31,6 +31,8 @@ For a serial connection you can use any spare Serial/UART port.  The diagram bel
 
 .. image:: ../../../images/benewake-tf02-pixhawk.png
 
+.. note:: TF-03 TX/RX UART wires are different color since it also has a CAN interface option. Consult manufacturer's data sheet.
+
 If the SERIAL4/5 port on a Pixhawk is being used then the following parameters should be set for the first rangefinder:
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
