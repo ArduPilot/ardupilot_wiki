@@ -12,7 +12,7 @@ understand. Please read the following sections carefully.
 .. toctree::
     :maxdepth: 1
 
-    Transitions: VTOL<->FW <quadplane-transitions>
+    Transitions: VTOL/FW <quadplane-transitions>
     Assisted Fixed Wing Flight <assisted_fixed_wing_flight>
     Return to Launch <quadplane_rtl>
 
