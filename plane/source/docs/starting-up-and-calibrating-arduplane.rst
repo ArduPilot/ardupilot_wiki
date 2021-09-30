@@ -151,4 +151,4 @@ List** and adjusting the parameters as shown in the screenshot below.
    degree) so adjust in increments of 0.01 initially. If the plane turns to
    the left, :ref:`AHRS_TRIM_X<AHRS_TRIM_X>` should be increased. If the nose of the plane is too low for a given throttle setting (ie flying too fast while holding altitude), :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` should be increased.
 
-.. note:: this can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more up pitch is needed (in the case that the autopilot is mounted slightly downward, for example), then you can use :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to further increase the "level" pitch value of the plane.
+.. note:: This can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more up pitch is needed (in the case that the autopilot is mounted slightly downward, for example), then you can use :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to further increase the "level" pitch value of the plane. See :ref:`common-accelerometer-calibration` and :ref:`tuning-cruise` for more details.
