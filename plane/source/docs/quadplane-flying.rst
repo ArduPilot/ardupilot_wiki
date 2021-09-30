@@ -19,7 +19,7 @@ understand. Please read the following sections carefully.
 VTOL vs Fixed-Wing Level Trim
 =============================
 
-Often fixed wing "level" trim, which is the pitch attitude stabilization modes attempt to maintain, is set to be several degrees positive with respect to the wing chord line in order to provide lift while cruising. This is accomplished either by running the accelerometer calibration level position set in this attitude, or after by using the "Calibrate Level" button in Mission Planner or by adjusting :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` parameter.
+Often fixed wing "level" trim, which is the pitch attitude stabilization modes attempt to maintain, is set to be several degrees positive with respect to the wing chord line in order to provide lift while cruising. See :ref:`common-accelerometer-calibration` and :ref:`tuning-cruise` for more details.
 
 However, when in VTOL modes, this can result in the vehicle leaning "backward" a few degrees, building in a tendency to drift backwards. This can be eliminated by setting the :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` parameter to correct this. This can also be used to correct minor CG imbalances caused by VTOL motor placement not being exactly balanced around the CG.
 
