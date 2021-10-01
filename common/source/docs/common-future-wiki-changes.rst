@@ -122,4 +122,25 @@ The ENABLE column refers to the :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` parame
 
 - Remove Tailsitter Input Mask section entirely
 
+:ref:`flight-options` page:
+---------------------------
+
+- add to table
+
+=====================================   ======================
+:ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>`   Function
+=====================================   ======================
+7                                       Enable default airspeed EKF fusion for takeoff (Advanced users only)
+8                                       Remove the TRIM_PITCH_CD on the GCS horizon to show flight controller attitude,not plane's
+9                                       Remove the TRIM_PITCH_CD on the OSD horizon to show flight controller attitude,not plane's
+10                                      Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL,instead of midway between MAX and MIN stick values
+=====================================   ======================
+
+:ref:`tuning-cruise` page: 
+--------------------------
+
+- add in appropriate place
+
+Using :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to adjust cruise attitude will also add an offset to the artificial horizon on a GCS or an OSD, but this can be disabled using the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bitmask.
+
 [copywiki destination="plane,copter,rover,dev"]
