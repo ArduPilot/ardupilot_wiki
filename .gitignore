@@ -22,6 +22,7 @@
 
 # Any build directory
 */build/*
+*/_build/*
 
 # Logs
 *.log
