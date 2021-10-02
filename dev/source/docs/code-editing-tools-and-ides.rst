@@ -9,7 +9,6 @@ This section contains topics related to code editing tools and IDEs that are com
 .. toctree::
     :maxdepth: 1
 
-    Eclipse on Windows <editing-the-code-with-eclipse>
     NotePad++ <editing-the-code-with-notepad>
     VSCode <editing-the-code-with-vscode>
     Atom <editing-the-code-with-atom>
