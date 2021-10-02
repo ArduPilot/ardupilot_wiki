@@ -51,6 +51,10 @@ Calibration steps
 [site wiki="plane"]
    .. tip:: For planes, the "level" angle for pitch is important for steady altitude flight. See :ref:`tuning-cruise` for more details.
 
+   The :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` parameter will add "nose-down" trim when the throttle stick is lowered in pilot throttle controlled and stabilized modes, such as FBWA, to prevent the autopilot from holding the nose up as the plane slows down and potentially causing a stall. This can be tested, at altitude, in FBWA mode by moving the throttle to idle and checking that there is sufficient airspeed in a turn to avoid stalling. Be prepared to recover from a stall! Increase the value of :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>`, if necessary.
+
+   .. tip:: For small planes or gliders, it is important that :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` be set correctly. It might be desirable to increase STAB_PITCH_DOWN more than the default value of 2 degrees.
+
  [/site]
 
 - Proceed through the required positions, using the **Click when Done** button once each position is reached and held still.
