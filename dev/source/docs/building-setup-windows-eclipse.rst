@@ -4,7 +4,7 @@
 Setup Eclipse on Windows
 ========================
 
-This page shows how to setup Eclipse on Windows to build using waf which allows building for all supported boards.  These instructions replace the :ref:`older method which relied on Make <editing-the-code-with-eclipse>`.
+This page shows how to setup Eclipse on Windows to build using waf which allows building for all supported boards.
 
 .. note::
 
