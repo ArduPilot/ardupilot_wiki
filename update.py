@@ -747,17 +747,9 @@ def put_cached_parameters_files_in_sites(site=args.site):
                 error(e)
                 pass
 
-def is_venv():
-    return (hasattr(sys, 'real_prefix') or
-            (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix))
 
 #######################################################################
 
-# Check if running in the correct venv
-if is_venv():
-    print('inside virtualenv or venv')
-else:
-    raise Exception("Please activate the venv. \"source env/ardupilot_wiki_env/bin/activate\"")
 
 now = datetime.now()
 building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
