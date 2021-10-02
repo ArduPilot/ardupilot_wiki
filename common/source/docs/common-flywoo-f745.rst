@@ -6,6 +6,8 @@ FlyWoo F745 AIO BL_32
 
 .. image:: ../../../images/flywooF745.png
    :target: ../_images/flywooF745.png
+   
+.. note:: This article also applies to other Flywoo GOKU F745 boards. Check `Flywoo website <https://flywoo.net>`__ for detailed pinouts. Use the FlywooF745 firmware on the `firmware server <https://firmware.ardupilot.org>`__ . For 16.5mm x 16.5mm F745 boards use the FlywooF745Nano firmware.
 
 Specifications
 ==============
