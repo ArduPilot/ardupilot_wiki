@@ -15,6 +15,8 @@ Except for very heavy, slow, or extremely nimble vehicles, Autotune should produ
    navigate as well and be sluggish, but are less likely to cause the aircraft
    to crash.
 
+.. note:: If you upgrade to 4.1 or later firmware from a previous version, the existing PID values will be converted automatically to the new system. Re-autotuning is still recommended as the new AUTOTUNE system produces a better tune in most cases. If you wish to manually convert your old PID values to the new system's values, you can use this `web based converter <https://uav.tridgell.net/convert_pid.html>`__
+
 
 Preconditions
 =============
