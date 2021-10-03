@@ -68,12 +68,27 @@ Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 2 results in behavior similar to above,
 :ref:`Q_RTL_MODE <Q_RTL_MODE>` = 3
 ----------------------------------
 
-Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 3 results in behavior similar to a normal :ref:`QRTL <qrtl-mode>`. The vehicle returns like normal fixed wing RTL until it reaches a point about 5X the :ref:`RTL_RADIUS<RTL_RADIUS>`
-distance, then starting a descent towards :ref:`Q_RTL_ALT<Q_RTL_ALT>`. As it approaches the landing position, ArduPilot starts an "airbraking" phase to slow the vehicle and once slowed enters full VTOL mode and proceeds to execute a QRTL. This behavior is also used by default for the :ref:`QRTL<qrtl-mode>` mode unless :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to prevent the Hybrid operation above.
+Setting :ref:`Q_RTL_MODE<Q_RTL_MODE>` to 3 results in behavior similar to a normal :ref:`QRTL <qrtl-mode>`. The vehicle will enter an "APPROACH" phase, and will return at :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` and at a calculated distance, start a descent towards :ref:`Q_RTL_ALT<Q_RTL_ALT>`. As it approaches the landing position, ArduPilot starts an "airbraking" phase in non-tailistters to slow the vehicle and once slowed enters full VTOL mode and proceeds to execute a VTOL landing. This behavior is also used by default for the :ref:`QRTL<qrtl-mode>` mode unless :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to prevent the Hybrid operation above.
 
-In effect, this enables the QRTL mode for any RTL actuation: failsafe actions, mode change to QRTL, completion of a mission (unless the last mission item prevents RTL).
+In effect, this enables the QRTL mode for any RTL actuation: failsafe actions, mode change to QRTL, or completion of a mission (unless the last mission item prevents RTL).
 
-.. note:: This mode is also used by default in all mission VTOL_LANDINGs unless the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to disable it. This allows the item to be used without needing to setting up approach waypoints to reduce alitutde and get close enough to proceed in VTOL mode toward the landing point. If disabled by bit 16, the vehicle will instantly transition to VTOL mode upon that mission items execution, and navigate to its landing point before doing a QLAND. This means that you should be very close to the landing site if the FW approach mode is disabled in a mission since it will proceed in VTOL flight to the land point.
+.. note:: This mode is also used by default in all mission VTOL_LANDINGs unless the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to disable it.
+
+This fixed wing "approach" allows VTOL landings to be used without needing to setting up approach waypoints to reduce altitude and get close enough to proceed in VTOL mode toward the landing point. If disabled by bit 16, the vehicle will instantly transition to VTOL mode upon that mission items execution, or upons mode changes to :ref:`QRTL <qrtl-mode>`, and navigate to its landing point in VTOL before doing a QLAND. This means that you should be very close to the landing site if the FW approach mode is disabled in a mission since it will proceed in VTOL flight to the land point.
+
+The image below details the phases of the approach and landing with the default setting of bit 16 (ie, not enabled):
+
+.. image:: ../../../images/approach.jpg
+    :target: ../_images/appraoch.jpg
+
+The phases of the approach are:
+
+- further than 2 times the greater of either :ref:`RTL_RADIUS<RTL_RADIUS>` or :ref:`WP_LOITER_RADS<WP_LOITER_RAD>` (MAXRAD) plus a calculated distance needed to descend from :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` to :ref:`Q_RTL_ALT<Q_RTL_ALT>`, the plane will attempt to climb or descend to :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>`. If within that range, it will attempt to climb/descend to a linear descent slope, meet it, and continue to descend, as shown above.
+- if started further than 2X "MAXRAD" but closer than above, at 2x MAXRAD it will continue in fixed wing mode at :ref:`Q_RTL_ALT<Q_RTL_ALT>`.
+- when it reaches a point that is within the VTOL stopping distance of the landing point (at the VTOL deceleration parameter limits and current speed), it will transition to VTOL mode and send a message that it is in "VTOL Position1" and continue moving to the land point. If the vehicle is NOT a tailsitter, an "AIRBRAKING" phase may occur before the VTOL transition, spinning up the VTOL motors to create additional braking.
+- once the QuadPlane is within 5 m of the land point and moving less than 2 m/s, it will semnd a GCS message declaring that it is in "VTOL Position2), and final position over the land point and begin its landing descent, which will also be indicated by GCS messages
+- if the approach is entered less than 1.5X MAXRAD, it will immediately move to VTOL Position1 state, and move toward the landing site attempting to obtain :ref:`Q_RTL_ALT<Q_RTL_ALT>` as it does so.
+- if in VTOL mode at greater than 1.5X MAXRAD, the plane will transition to fixed wing, and attempt to navigate to home, executing the approach. The climb and turn toward the landing point will occur at even low altitudes, just like normal non-Quadplane RTLs, so the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 4 for "Climb before turn in RTL" and/or :ref:`Q_OPTIONS<Q_OPTIONS>` bit 0 for "Level Transitions" might be worth considering.
 
 VTOL RTL (QRTL)
 ===============
