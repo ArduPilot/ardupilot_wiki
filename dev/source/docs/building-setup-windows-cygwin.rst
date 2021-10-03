@@ -166,8 +166,9 @@ You can run SITL just as you can with any other build environment. To see the te
 Build SITL binaries for Windows
 ===============================
 
-You can build 32-bit binaries to be run outside of Cygwin with a small set of companion files. This can be useful when used in conjunction with Mission Planner to run SITL with a stable release build rather than a build from the development branch of ArduPilot. This can be done by compiling using the command below in Cygwin and copying the binary the "sitl" folder typically found at C:\\Users\\user\\Documents\\Mission Planner\\sitl. Mission Planner will download the required files during the first time running SITL. After the initial run, the vehicle-specific binary file can be replaced with the file you built.
+You can build 32-bit binaries to be run outside of Cygwin with a small set of companion files. This can be useful when used in conjunction with Mission Planner to run SITL with a stable release build rather than a build from the development branch of ArduPilot. This can be done by compiling using the command below in Cygwin and copying the binary the "sitl" folder typically found at C:\\Users\\user\\Documents\\Mission Planner\\sitl. Mission Planner will download the required files during the first time running SITL. After the initial run, the vehicle-specific binary file can be replaced with the file you built. The custom SITL binaries should be located at /ardupilot/build/sitl.
+
 
 ::
 
-      ./waf --board sitl configure
+      ./waf configure --board=sitl --toolchain i686-pc-cygwin
