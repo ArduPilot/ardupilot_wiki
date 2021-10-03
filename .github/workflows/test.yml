@@ -31,5 +31,4 @@ jobs:
           find ./images/ -exec file {} + | grep RIFF -vzq
       - name: Test build
         run: |
-          source env/ardupilot_wiki_env/bin/activate
           ./update.py --parallel 4 --verbose --destdir=/tmp/web
