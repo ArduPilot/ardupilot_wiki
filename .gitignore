@@ -36,9 +36,6 @@
 # VSCode
 /.vscode
 
-# Python venv
-/env/*
-
 # Parameters multiversioning
 /copter/source/docs/parameters-Copter-*.rst
 /plane/source/docs/parameters-Plane-*.rst
