@@ -33,15 +33,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.customize ["modifyvm", :id, "--memory", "2048"]
     end
   end
-
-  config.vm.define "focal-server", autostart: true do |focal|
-    focal.vm.box = "ubuntu/focal64"
-    focal.vm.provider "virtualbox" do |vb|
-        vb.name = "ArduPilot_wiki (focal)"
-    end
-    focal.vm.provision "shell", path: "./scripts/initvagrant-server.sh"
-    focal.vm.provider "virtualbox" do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "2048"]
-    end
-  end
 end
