@@ -82,12 +82,19 @@ The main steps for building the docs are:
    .. code-block:: bash
 
        cd /vagrant
+       source env/ardupilot_wiki_env/bin/activate
        python update.py
 
 Build the Wiki
 --------------
 
-As shown in the last step of the vagrant instructions above, use update.py to build some or all of the wiki. You may need to prefix the python commands below with "sudo", especially when rebuilding.
+Before building, you will need to activate the virtual server environment that exactly matches the actual ArduPilot wiki web server.
+
+   .. code-block:: bash
+
+       source env/ardupilot_wiki_env/bin/activate
+
+Then, as shown in the last step of the vagrant instructions above, use update.py to build some or all of the wiki. You may need to prefix the python commands below with "sudo", especially when rebuilding.
 
    .. code-block:: bash
 
