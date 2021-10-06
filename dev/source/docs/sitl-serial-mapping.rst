@@ -1,8 +1,12 @@
 .. _sitl-serial-mapping:
 
-===================
-SITL Serial Mapping
-===================
+
+
+=============================
+Archived: SITL Serial Mapping
+=============================
+
+.. warning:: This topic is archived.
 
 This document attempts to supply information about the virtual serial ports present in ArduPilot's SITL.
 

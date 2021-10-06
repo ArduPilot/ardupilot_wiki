@@ -658,7 +658,7 @@ To use a real serial device you can use a command like this:
 
 what that does it pass the --uartB argument to the ardupilot code,
 telling it to use /dev/ttyUSB0 instead of the normal internal simulated
-GPS for the 2nd UART. You can find the SITL serial port mappings :ref:`here <sitl-serial-mapping>`
+GPS for the 2nd UART. You can find the SITL serial port mappings :ref:`here <learning-ardupilot-uarts-and-the-console>`
 
 Any of the 5 UARTs can be configured in this way, using uartA to uartE.
 The standard serial ports SERIAL1 and SERIAL2 are uartC and uartD respectively.

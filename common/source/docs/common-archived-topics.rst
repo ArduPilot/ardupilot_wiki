@@ -98,6 +98,7 @@ value to users with old hardware.
     HITL Simulators <hitl-simulators>
     Weekly meetings on Mumble Server <ardupilot-mumble-server>
     How to sign a Pixhawk with your Certificate of Authenticity <how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity>
+    SITL Serial Mapping <sitl-serial-mapping>
 [/site]
 
 
