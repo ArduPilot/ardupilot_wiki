@@ -108,7 +108,7 @@ git fetch origin
 git submodule update
 git reset --hard origin/master
 git clean -f -f -x -d -d
-pip install --user -U .
+python -m pip install --user -U .
 popd
 
 cd ardupilot_wiki
