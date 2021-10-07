@@ -50,7 +50,7 @@ Motor Driver Types
 At least three different Motor Driver (aka ESC) types are supported which allows using ArduPilot with most motor drivers.  The :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` parameter should be used to ensure the output from the autopilot board matches the input required by the motor driver.
 
 - "Normal" is the most common and involves sending PWM values normally between 1000 and 2000 (1ms ~ 2ms)
-- "Brushed With Relay" is for brushed motor drivers that use a :ref:`relay pin <common-relay>` to indicate whether it should rotate forwards or backwards.
+- ":ref:`Brushed With Relay <common-brushed-motors>`" is for brushed motor drivers that use a :ref:`relay pin <common-relay>` to indicate whether it should rotate forwards or backwards.
 - "Brushed BiPolar" is for brushed motor drivers that, a bit like "Normal" pwm interpret a low PWM values for reverse, a high PWM value for forward
 
 ESC Configuration
