@@ -40,6 +40,7 @@ Long Range
     :maxdepth: 1
 
     CRSF Telemetry <common-crsf-telemetry>
+    CUAV P8 Radio <common-cuav-p8>
     DragonLink <common-dragonlink-rc>
     Holybro 900Mhz XBP9X Telemetry Radio <https://shop.holybro.com/xbp9x-radio_p1268.html>
     Holybro Microhard P900 Radio Telemetry Radio <http://www.holybro.com/product/microhard-p900-radio/>
