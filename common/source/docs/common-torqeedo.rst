@@ -46,6 +46,16 @@ An interface board should be assembled using the parts mentioned above and conne
 
    If the motor connector method is used with non-torqeedo batteries, be sure to use batteries with built-in short circuit protection.  During early development and testing of this interface we managed to burn out a motor which resulted in a short circuit within the motor.  A short circuit especially with large batteries could lead to a fire and serious injury.
 
+Below are pictures of the modified throttle extension cable and `Running Electronics <http://www.runele.com/>`__ RS483-to-TTL converter board
+
+  .. image:: ../../../images/torqeedo-throttle-cable-pins.jpg
+      :target: ../_images/torqeedo-throttle-cable-pins.jpg
+      :width: 400px
+
+  .. image:: ../../../images/torqeedo-throttle-cable-running-electronics-adapter.jpg
+      :target: ../_images/torqeedo-throttle-cable-running-electronics-adapter.jpg
+      :width: 400px
+
 Below are pictures of the modified motor extension cable and `Running Electronics <http://www.runele.com/>`__ RS483-to-TTL converter board
 
   .. image:: ../../../images/torqeedo-motor-cable-small-annotated.jpg
