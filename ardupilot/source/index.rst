@@ -207,6 +207,7 @@ Features
 
 
 
+Last build: |today|
 
 --------------
 
