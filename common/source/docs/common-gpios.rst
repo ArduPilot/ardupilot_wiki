@@ -32,4 +32,6 @@ You can verify an output's GPIO pin number assignment easily. First, find its hw
 
 In the above case, you could set the ``BRD_PWM_COUNT`` down to 8, freeing PWM9 and PWM10 and use their GPIO numbers for GPIO functions.
 
+Also, the SERVOx_FUNCTION parameter for the desired output must be set to -1 to enable GPIO functionality.
+
 .. note:: Usually, changing any feature or function's GPIO pin assignment will require a reboot for it to take effect.
