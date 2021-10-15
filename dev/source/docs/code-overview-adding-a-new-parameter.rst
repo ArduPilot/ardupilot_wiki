@@ -127,6 +127,8 @@ characters.
 You're done!  The new parameter can be access from the main code (not
 the libraries) as g.my_new_parameter.
 
+.. note:: ArduPilot vehicle's global parameter classes are crowded. To avoid exceeding the maximum number of parameters in a vehicle's Parameter class, another class for global parameters (named 'ParametersG2') has been introduced. Adding parameters to this class is similar to adding parameters in libraries. The parameters added to this class can similarly be accessed from within the vehicle's main code.
+
 Adding a parameter to a library
 ===============================
 
