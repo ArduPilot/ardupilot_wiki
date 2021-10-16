@@ -35,7 +35,7 @@ Adjusting FBWB or CRUISE Mode Airspeed
 The autopilot's goal in automatic throttle modes is to obtain the correct combination of elevator and throttle to maintain constant altitude flight. How the autopilot does this is detailed in :ref:`tecs-total-energy-control-system-for-speed-height-tuning-guide`.
 
 When an Airspeed Sensor is Enabled
------------------------------
+----------------------------------
 
 In FBWB or CRUISE, the target airspeed can be directly controlled with the throttle stick position. Mid throttle will set the speed as halfway between :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` (high stick) and :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` (low stick). 
 
