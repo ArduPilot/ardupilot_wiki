@@ -133,7 +133,7 @@ The ENABLE column refers to the :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` parame
 7                                       Enable default airspeed EKF fusion for takeoff (Advanced users only)
 8                                       Remove the TRIM_PITCH_CD on the GCS horizon to show flight controller attitude,not plane's
 9                                       Remove the TRIM_PITCH_CD on the OSD horizon to show flight controller attitude,not plane's
-10                                      Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL,instead of midway between MAX and MIN stick values
+10                                      Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL,instead of midway between MAX and MIN stick values (note that the RCx_TRIM value for the throttle channel (x) MUST BE set to center stick value)
 =====================================   ======================
 
 :ref:`tuning-cruise` page: 
