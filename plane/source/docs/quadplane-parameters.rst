@@ -12,7 +12,7 @@ Key parameters are:
 
 -  To enable QuadPlane functionality you need to set the :ref:`Q_ENABLE<Q_ENABLE>`
    parameter to 1 and then refresh the parameter list
--  The :ref:`Q_THR_MIN_PWM<Q_THR_MIN_PWM>` and :ref:`Q_THR_MAX_PWM<Q_THR_MAX_PWM>` parameters used to set the
+-  The :ref:`Q_M_PWM_MIN<Q_M_PWM_MIN>` and :ref:`Q_M_PWM_MAX<Q_M_PWM_MAX>` parameters used to set the
    PWM range of the quad motors (this allows them to be different from
    the range for the forward motor). These need to be set to the range
    your ESCs expect.
