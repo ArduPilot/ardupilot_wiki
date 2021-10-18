@@ -19,7 +19,7 @@ Alternatively, a PWM signal can be used on the pin for switching, just like the 
 
 There is no MIDDLE position for the function, if it has one, using a button.
 
-The effective state of the button can be inverted by setting its ``BTN_OPTIONSx<BTN_OPTIONSx>`` parameter bit 1 (e.g. BTN_OPTIONSx = 2). This applies to both PWM and switch control of the pin.
+The effective state of the button can be inverted by setting its ``BTN_OPTIONSx<BTN_OPTIONSx>``  bitmask bit 1 (ie adding 2 to the decimal value of the parameter). This applies to both PWM and switch control of the pin.
 
 The function that will be controlled by the button is determined by its ``BTN_FUNCx`` parameter. If set to -1, no function is performed. Otherwise, the number corresponds to the :ref:`Auxiliary Function <common-auxiliary-functions>` number.
 
