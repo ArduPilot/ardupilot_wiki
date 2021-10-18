@@ -28,13 +28,8 @@ More detailed information can be found on the :ref:`developer EKF wiki page <dev
 Should the EKF2 or EKF3 be used?
 --------------------------------
 
-In general we recommend users stick with the EKF2 but there are some cases where the EKF3 should be used.  Below is a list of advantages of each:
+In general we recommend users stick with the EKF3, which is now the default. In addition, 1MB autopilots only have this option due to space limitations. EKF2 can still be used but does not have many of the enhancements of EKF3 such as newer sensor sources including Beacons, Wheel Encoders and Visual Odometry.
 
-- EKF2 is used by default for most users, has had the most testing and is considered the most stable
-- EKF2 can accept external position estimates from Vicon systems or ROS SLAM (HectorSLAM, Cartographer, etc).  EKF3 will get this feature once `this PR <https://github.com/ArduPilot/ardupilot/pull/8730>`__ is merged
-- EKF3 should be used on tailsitters or any other vehicle that spends a significant amount of time pointing directly up or down.  The reason is that the EKF2 only estimates accelerometer Z-axis offsets while EKF3 estimates for all 3 axis
-- EKF3 accepts some newer sensor sources including Beacons, Wheel Encoders and Visual Odometry
-- EKF2 estimates gyro scale factors but the EKF3 does not.  In general this is not important because gyro scale factors are nearly always very close to 1.0.  This may be important for vehicles that spin very rapidly
 
 Choosing the EKF and number of cores
 ------------------------------------
@@ -51,6 +46,8 @@ inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.
 -  1: starts a single EKF core using the first IMU
 -  2: starts a single EKF core using only the second IMU
 -  3: starts two separate EKF cores using the first and second IMUs respectively
+
+:ref:`EK3_PRIMARY<EK3_PRIMARY>`: selects which "core" or "lane" is used as the primary. A value of 0 selects the first IMU lane in the :ref:`EK3_IMU_MASK <EK3_IMU_MASK>`, 1 the second, etc. Be sure that the selected primary lane exists. See Affinity and Lane Switching below>
 
 .. note::
 
