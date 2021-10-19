@@ -22,7 +22,7 @@ Connecting and Configuring
 
 The sonar provides distance measurements using the NMEA protocol over serial at 9600 baud.  There should be a port on the back of the sonar labelled "NMEA" with a DB9 connector.
 
-The sonar's DB9 connector should be wired to the RS232-to-Serial converter board as shown below.  Note that the DB9's pin2 is connected to pin3 of the converter board.  The board's serial output can be connected to any available serial port on the autopilot.  In the diagram below the first sensor is connected to SERIAL2.
+The sonar's DB9 connector should be wired to the RS232-to-Serial converter board as shown below.  Note that the sonar's DB9 port's pin2 and pin3 are connected to the converter board's pin3 and pin2 (i.e. crossed).  The converter board's serial output can be connected to any available serial port on the autopilot.  In the diagram below the SERIAL2 is used.
 
 .. image:: ../../../images/hondex-autopilot.png
     :target: ../_images/hondex-autopilot.png
