@@ -49,3 +49,5 @@ Data screen's Status tab. Look closely for "sonarrange".
     :target: ../_images/mp_rangefinder_lidarlite_testing.jpg
 
 More info on NMEA message contents can be found `here <http://www.catb.org/gpsd/NMEA.html>`__
+
+[copywiki destination="rover,dev"]
