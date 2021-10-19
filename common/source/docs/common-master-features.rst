@@ -14,6 +14,7 @@ This lists features or changes merged in master and build in the "latest" firmwa
 
 [site wiki="rover,dev"]
     AIS for boats <common-ais>
+    Hondex Sonar <common-hondex-sonar>
     Torqeedo motor <common-torqeedo>
 [/site]
     Multiple Screen And Display Port Support for MultiWii/DJI OSD <common-msp-osd-overview-4.2>
