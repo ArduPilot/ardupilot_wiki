@@ -80,22 +80,38 @@ If a serial port with flow control pins (clear-to-send and ready-to-send) is use
 - :ref:`TRQD_ONOFF_PIN <TRQD_ONOFF_PIN>` = 54 (AUX5) and connect the autopilot's AUX5 pin to the interface's board's MOSFET
 - :ref:`TRQD_DE_PIN <TRQD_DE_PIN>` = 55 (AUX6) and connect the autopilot's AUX6 pin to the RS485<->TTL converter's DE and RE pins
 
+Battery voltage and current information are taken from the Torqeedo battery or motor by setting this parameter
+
+- :ref:`BATT_MONITOR <BATT_MONITOR>` = 23 (Torqeedo)
+
 Logging and Reporting
 ---------------------
 
-By default "TRQD" messages are written to the onboard log every 5 seconds including
+Motor RPM and temperature along with battery voltage and current are reported to the ground station in real-time using the ESC_TELEMETRY_1_TO_4 mavlink message.  If using Mission Planner (and perhaps other ground stations) these values can be seen on the "Data" screen's "Status" tab in the "esc3_curr", "esc3_rpm", etc fields.
+
+By default "TRQD" messages are written to the onboard log at 10hz seconds and include:
 
 - Health : whether the autopilot is successfully controlling the motor
-- MotSpeed : the last desired speed sent to the motor as a number from -1000 to +1000
+- DesMotSpeed : the latest desired motor from the pilot or autopilot expressed as a number from -1000 to +1000
+- MotSpeed : the latest requested speed sent to the motor as a number from -1000 to +1000
 - SuccCnt : the number of messages successfully consumed from the motor (this should rise steadily)
 - ErrCnt : the number of bytes or messages that were corrupted or could not be processed (this should be a relatively low number)
 
-This same information can be sent to the ground station by setting :ref:`TRQD_OPTIONS <TRQD_OPTIONS>` = 3
+The "TRST" log message (only available when using the "Tiller" connection) includes the Master error code, motor temperature, voltage, current, power (in Watts) and RPM along with the battery percentage state of charge, voltage and current.
 
-Introduction Video
-------------------
+The "TRSE" log message (only available when using the "Tiller" connection) includes the motor type, battery capacity and software versions.
+
+The "TRMP" log message (only available when using the "Motor" connection) includes the motor RPM, power (in Watts), voltage, current and temperature.
+
+This above log information can also be sent as text to the ground station by setting :ref:`TRQD_OPTIONS <TRQD_OPTIONS>` = 3
+
+Introduction Videos
+-------------------
 
 .. youtube:: uq1okSejrUE
+    :width: 100%
+
+.. youtube:: Wt7vfV4CcFc
     :width: 100%
 
 [copywiki destination="rover,dev"]
