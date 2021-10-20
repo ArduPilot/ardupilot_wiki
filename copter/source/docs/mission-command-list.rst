@@ -46,8 +46,8 @@ before proceeding to the next command
 
 **Hit Rad** - not supported - meant to hold the distance (in meters)
 from the target point that will qualify the waypoint as complete. This
-command is not supported. Instead the :ref:`WPNAV_RADIUS<WPNAV_RADIUS>` parameter should be
-used (see "WP Radius" field in above screen shot or adjust through the
+command is not supported. Instead, the :ref:`WPNAV_RADIUS<WPNAV_RADIUS>` parameter should be
+used (see "WP Radius" field in the above screenshot or adjust through the
 Standard Parameters List).  Even the :ref:`WPNAV_RADIUS<WPNAV_RADIUS>` is only used when the
 waypoint has a Delay. With no delay specified the waypoint will be
 considered complete when the virtual point that the vehicle is chasing
@@ -107,7 +107,7 @@ Loiter_Turns
     :target: ../_images/MissionList_LoiterTurns.png
 
 The mission equivalent of the :ref:`Circle flight mode <circle-mode>`.  The vehicle will fly a circle around the
-specified lat, lon and altitude (in meters).  The radius of the circle
+specified lat, lon, and altitude (in meters).  The radius of the circle
 is controlled by the :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>` parameter (i.e. cannot be set as
 part of the mission).
 
@@ -157,7 +157,7 @@ Land
 .. image:: ../../../images/MissionList_Land.png
     :target: ../_images/MissionList_Land.png
 
-Vehicle will land at its current location or at the lat/lon coordinates
+The vehicle will land at its current location or at the lat/lon coordinates
 provided.  This is the mission equivalent of the :ref:`LAND flight mode <land-mode>`.
 
 **Lat, Lon** - the latitude and longitude targets. If left as zero it
@@ -171,11 +171,11 @@ Delay
 
 Support for the Delay command was added in Copter-3.4.
 
-Vehicle will remain at its current location until the specified number of seconds has passed or the absolute time is reached.
+The vehicle will remain at its current location until the specified number of seconds has passed or the absolute time is reached.
 The first column ("Seconds") holds the number of seconds to delay.  Set to -1 if this field should be ignored.
 The "hour UTC", "minute UTC" and "second UTC" fields can be used to specify an absolute time (`UTC <https://en.wikipedia.org/wiki/Coordinated_Universal_Time>`__).  The example above will cause the vehicle to take-off at 1:30pm UTC.  Note that the hour and/or minute field can also be ignored by setting them to -1.
 
-This is a video made during the development of this feature.  Note in the video CONDITION_DELAY command is used but in its final version this DELAY command should be used.
+This is a video made during the development of this feature.  Note in the video CONDITION_DELAY command is used but in its final version, this DELAY command should be used.
 
 ..  youtube:: 9VK3yjIyCSo
     :width: 100%
@@ -188,8 +188,8 @@ Package Place
 
 Support for Package Place was added in Copter-3.5.
 
-Vehicle flies to the specified location and descends until it senses (using motor output) that the package has reached the ground.  The gripper is then released to unload the package.
-The first column ("Max Desc") hold the maximum descent (in meters) that the vehicle should descend.  If the package has still not reached the ground despite this descent, the package will not be released and the vehicle will advance to the next mission command.
+The vehicle flies to the specified location and descends until it senses (using motor output) that the package has reached the ground.  The gripper is then released to unload the package.
+The first column ("Max Desc") holds the maximum descent (in meters) that the vehicle should descend.  If the package has still not reached the ground despite this descent, the package will not be released and the vehicle will advance to the next mission command.
 
 ..  youtube:: m4GK4ALqluc
     :width: 100%
@@ -204,7 +204,7 @@ Do-Set-ROI
 
 Points the nose of the vehicle or :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region of interest".  In the example above the nose or camera would be pointed at the red marker.
 
-The nose will continue to point at the red marker until the end of the mission OR "clear" the do-set-roi and cause the vehicle to return to its default behaviour (i.e. pointing at the next waypoint) by adding a second DO_SET_ROI command later in the mission with all zero for Lat, Lon and Alt.
+The nose will continue to point at the red marker until the end of the mission OR "clear" the do-set-roi and cause the vehicle to return to its default behaviour (i.e. pointing at the next waypoint) by adding a second DO_SET_ROI command later in the mission with all zero for Lat, Lon, and Alt.
 
 **Lat, Lon** - the latitude and longitude targets.
 
@@ -396,7 +396,7 @@ Do-Repeat-Servo
 Repeatedly move a :ref:`servo <common-servo>` back and forth between
 its mid position and a specified PWM value. In the example above, the
 servo attached to output channel 8 would be moved to PWM 1700, then
-after 4 second, back to mid (default is 1500 which is held in the
+after 4 seconds, back to mid (default is 1500 which is held in the
 :ref:`RC8_TRIM<RC8_TRIM>` parameter), after another 4 seconds it would be moved to 1700
 again, then finally after 4 more seconds it would be moved back to mid.
 
