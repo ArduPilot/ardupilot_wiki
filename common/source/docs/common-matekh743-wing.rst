@@ -85,9 +85,22 @@ Default UART order
 - SERIAL6 = USER = UART4
 - SERIAL7 = USER = UART6 (TX only unless :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, then RX available also)
 
-RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for FPort the receiver should be connected to T6 and SERIAL7 configured as described in :ref:`FPort<common-FPort-receivers>` section.
-
 Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences.
+
+RC Input
+========
+
+RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for FPort the receiver should be connected to T6.
+
+You have to select an alternative hardware configuration by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "1".
+
+Generally, you should specify the protocol used by adjusting the :ref:`RC_PROTOCOLS<RC_PROTOCOLS>` (e.g. for SBUS: :ref:`RC_PROTOCOLS<RC_PROTOCOLS>`=2^3=8).
+
+Depending on the RC protocol used, additional parameters have to be changed:
+
+- FPort: Configure SERIAL7 as described in :ref:`FPort<common-FPort-receivers>`
+- SBUS: The RX must be inverted by setting :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>`=1 (:ref:`more info<learning-ardupilot-rc-input-output>`)
+- Spektrum: Configure the SERIAL7 as described in :ref:`Spektrum RC Systems<common-spektrum-rc>`
 
 Dshot capability
 ================
