@@ -782,6 +782,101 @@ method for connecting will be GCS specific (we show :ref:`how to connect for Mis
    
 .. _using-sitl-for-ardupilot-testing_sitl_without_mavproxy_tcp:
 
+Multi-Aircraft SITL with MAVProxy
+----------------------------------
+
+Multiple aircraft can be simulated in SITL with MAVProxy. This feature owes much to the prior work here: https://ardupilot.org/mavproxy/docs/getting_started/multi.html 
+
+To access this feature you make use of both the number (-n) or count (--count) as well as the auto-sysid (--auto-syid) features of sim_vehicle.py like so:
+
+::
+
+    sim_vehicle.py -v ArduPlane -n3 --auto-sysid
+
+Now MAVProxy will receive messages on the console from all aircraft. Verifying that you are connected to multiple vehicles is as simple as checking the MAVProxy console. ( https://ardupilot.org/mavproxy/docs/modules/console.html ). The following is an image of the console when you're connected to vehicle 2:
+
+.. figure:: ../images/mavproxy_multi_vehicle_link2_highlighted.png
+   :target: ../_images/mavproxy_multi_vehicle_link2_highlighted.png
+   :width: 450px
+
+Use vehicle <n> to set the active vehicle (using 1-based indexing). Use alllinks <cmd> to send <cmd> to all vehicles in turn. For example, alllinks mode rtl will set RTL mode on all vehicles.
+
+**Note** while the vehicles use 1-based indexing, the logs use 0-based. So your multi-vehicle plane that was labeled 1 at the MAVProxy prompt will be labeled 0 in the logs. Subdirectories for each vehicle will be formed based on where you started up MAVProxy. For example, my log directory for vehicle 0 looks like this:
+
+.. figure:: ../images/multiplane_uses_zero_based.png
+   :target: ../_images/multiplane_uses_zero_based.png
+   :width: 450px
+
+The eeprom.bin file contains a copy (among other things) of all the parameters for vehicle 0. The logs directory has all the dataflash logs for the vehicle, and terrain directory has all the Shuttle Radar Topograph Mission terrain tiles.
+
+You shoukd take a look at the MAVProxy map and missions before you takeoff with multi-vehicle. The map at the default airfield before we takeoff looks like this:
+
+.. figure:: ../images/mavproxy_multi_vehicle_pre_takeoff.png
+   :target: ../_images/mavproxy_multi_vehicle_pre_takeoff.png
+   :width: 450px
+
+You load missions for each aircraft before you takeoff. At the MAVProxy prompt be sure you are connected to vehicle 1 by entering:
+
+::
+
+    MANUAL> vehicle 1
+
+Note that I have staged what waypoints I want to use; you just load them as follows:
+
+::
+
+    MANUAL> wp load 0/vehicle1_waypoints.wp
+
+and you should see the waypoints load on the map:
+
+.. figure:: ../images/mavproxy_multi_vehicle1_mission.png
+   :target: ../_images/mavproxy_multi_vehicle1_mission.png
+   :width: 450px
+
+This is a sample mission that is just a takeoff waypoint followed by an unlimited loiter waypoint.
+
+Load the other two missions by setting the appropriate vehicle and their waypoint files. For example, my mission set for the other two vehicles looks like:
+
+.. figure:: ../images/mavproxy_multi_vehicle2_mission.png
+   :target: ../_images/mavproxy_multi_vehicle2_mission.png
+   :width: 450px
+
+.. figure:: ../images/mavproxy_multi_vehicle3_mission.png
+   :target: ../_images/mavproxy_multi_vehicle3_mission.png
+   :width: 450px
+
+**Please note this is for demonstration ONLY!!** The missions for all vehicles pass very close to each other and they are not altitude deconflicted either. If you are doing this on real aircraft you need to be much more careful about your multi-aircraft configuration.
+
+That said, you takeoff aircraft 1 by proceeding to AUTO mode:
+
+::
+    
+    MANUAL> vehicle 1
+
+::
+    
+    MANUAL> Set vehicle 1 (link 1)
+
+::
+    
+    MANUAL> arm throttle
+
+::
+    
+    MANUAL> AUTO
+
+Vehicle 1 should proceed to the unlimited loiter waypoint:
+
+.. figure:: ../images/mavproxy_multi_vehicle1_loiter.png
+   :target: ../_images/mavproxy_multi_vehicle1_loiter.png
+   :width: 450px
+
+All three vehicles loitering together:
+
+.. figure:: ../images/mavproxy_multi_vehicle3_loiter.png
+   :target: ../_images/mavproxy_multi_vehicle3_loiter.png
+   :width: 450px
+
 SITL without MAVProxy (TCP)
 ---------------------------
 
