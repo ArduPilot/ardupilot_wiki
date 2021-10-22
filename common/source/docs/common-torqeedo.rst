@@ -6,11 +6,7 @@ Torqeedo Electric Motors
 
 .. image:: ../../../images/torqeedo.jpg
 
-Rover-4.2.0 (and higher) support controlling a single `Torqeedo 1103 electric motor <https://www.torqeedo.com/en/products/outboards/travel/travel-1103-c/M-1151-00.html>`__ (and probably other torqeedo motors) using its custom serial RS485 protocol
-
-.. warning::
-
-   The torqeedo driver is a work-in-progress and the parameters and interface may change.  Currently only one motor can be controlled although this will likely be resolved before the official release.
+Rover-4.2.0 (and higher) supports controlling a single `Torqeedo Travel <https://www.torqeedo.com/en/products/outboards/travel>`__, `Ultralight <https://www.torqeedo.com/en/products/outboards/ultralight>`__ or `Cruise <https://www.torqeedo.com/en/products/outboards/cruise>`__ motor using its custom RS485 protocol.
 
 Some images from this page are courtesy of torqeedo.com
 
