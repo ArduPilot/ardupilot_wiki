@@ -13,6 +13,8 @@ Slightly out-of-date video showing a copter using the Sprayer feature (jump to 2
 
 .. note:: Many boards with only 1MB of flash do not have this feature. See :ref:`Firmware Limitations <common-limited_firmware>` for a list of boards without this capability.
 
+See also :ref:`Zig-Zag Mode <zigzag-mode>`
+
 Required Hardware
 =================
 
