@@ -407,7 +407,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target: https://rotorsandcams.com/
 
     *
-      -  .. image:: ../../../images/supporters/supporters_logo_blicube.png
+      -  .. image:: ../../../images/supporters/supporters_logo_blicube.jpg
             :width: 250px
             :align: center
             :target: https://www.blicube.com/
@@ -417,4 +417,11 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: https://www.modalai.com/
 
+    *
+      -  .. image:: ../../../images/supporters/supporters_logo_SYNEREX.png
+            :width: 250px
+            :align: center
+            :target: http://www.synerex.kr/
+
+      -
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
