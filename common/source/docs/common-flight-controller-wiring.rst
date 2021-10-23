@@ -12,7 +12,9 @@ This topic covers the wiring/connection of basic/mandatory peripherals to the au
 GPS/Compass
 -----------
 
-GPS is usually mandatory in all vehicles, except when some other position determining :ref:`sensor or system is used <common-non-gps-navigation-landing-page>` . Compass is also usually required for Copter and Rover and QuadPlane types of Plane (see :ref:`common-compassless` for compass alternatives), but not for Conventional Planes, however it is recommended. 
+GPS is usually mandatory in all vehicles, except when some other position determining :ref:`sensor or system is used <common-non-gps-navigation-landing-page>` . Compass is also usually required for Copter and Rover and QuadPlane types of Plane (see :ref:`common-compassless` for compass alternatives), but not for Conventional Planes, however it is recommended.
+
+.. note:: Some Copter and Rover modes can operate without GPS and Compass (see vehicle documentation for its flight modes).
 
 Multiple GPS and/or Compasses can be used in the system, see :ref:`common-gps-blending`, :ref:`common-compass-setup-advanced`, and :ref:`common-ek3-affinity-lane-switching` for more information
 
