@@ -134,13 +134,18 @@ Set up directories/paths and extra packages in Cygwin
 Download ArduPilot Source
 =========================
 
-The ArduPilot source files then need to be downloaded to your local Cygwin filesystem by cloning the git repository and updating the submodules. Enter the following commands into the Cygwin terminal to download the source files:
+.. include:: git-clone.rst
+    :start-after: inclusion-marker-do-not-remove
+    :end-before: Cloning with the GitHub GUI (Windows or MAC)
 
-::
 
-    git clone https://github.com/ardupilot/ardupilot.git
-    cd ardupilot
-    git submodule update --init --recursive
+.. note:: in case some firewalls do not allow ssh access which can cause the above submodule updates to fail, in this instance you can tell git to unilaterally use https through the following command:
+
+    ::
+
+         git config --global url."https://" 
+
+    to use https protocols instead of the default git:// prefix.
 
 
 Build with Waf
