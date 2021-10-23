@@ -59,6 +59,10 @@ Ensure that Copter-4.1 (or higher) is loaded onto the autopilot and connect with
 - set :ref:`BCN_LATITUDE <BCN_LATITUDE>`, :ref:`BCN_LONGITUDE <BCN_LONGITUDE>` and :ref:`BCN_ALT <BCN_ALT>` to match your actual location.  Getting these values exactly correct is not particularly important although getting them close is required in order for the compass's declination to be correctly looked up from the database held within ArduPilot.
 - set :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>` to the heading from the origin anchor to the 2nd anchor.  One way to capture this value is to stand at the origin holding the vehicle so that its nose points towards the second beacon.  Read the vehicle's heading from the HUD and enter this value into :ref:`BCN_ORIENT_YAW <BCN_ORIENT_YAW>`
 - set :ref:`EK3_BCN_DELAY <EK3_BCN_DELAY>` to 20
+- set :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` to 4 ("Beacon")
+- set :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` to 4 ("Beacon") to use NoopLoop for altitude or leave at "1" to use the barometer
+- set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` to 0 ("None")
+- set :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` to 0 ("None")
 - set :ref:`GPS_TYPE <GPS_TYPE>` to 0 to disable the GPS
 - set :ref:`ARMING_CHECK <ARMING_CHECK>` to -9 to disable the GPS arming check
 - set :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` to 921 to set SERIAL1's baud rate to 921600
