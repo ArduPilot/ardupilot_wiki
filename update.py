@@ -44,6 +44,7 @@ import shutil
 import subprocess
 import sys
 import time
+import requests
 
 from codecs import open
 from datetime import datetime
@@ -794,6 +795,10 @@ else:
 # Fetch most recent LogMessage metadata from autotest:
 fetchlogmessages(args.site)
 
+# download lua docs direct from github
+lua_docs_name = os.path.join(os.getcwd() ,'docs.lua')
+lua_docs_url = "https://raw.githubusercontent.com/ArduPilot/ardupilot/master/libraries/AP_Scripting/docs/docs.lua"
+open(lua_docs_name, 'wb').write(requests.get(lua_docs_url).content)
 
 copy_static_html_sites(args.site)
 generate_copy_dict()
