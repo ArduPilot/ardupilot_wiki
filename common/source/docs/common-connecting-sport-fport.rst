@@ -24,12 +24,29 @@ Connections
 .. image:: ../../../images/FPort-wiring-a.jpg
     :target: ../_images/FPort-wiring-a.jpg
 
+
+- Fport: ``SERIALx_PROTOCOL`` = 23
+- Sport: ``SERIALx_PROTOCOL`` = 10
+
+____________________________________________________________________
+
 .. image:: ../../../images/FPort-wiring-b.jpg
     :target: ../_images/FPort-wiring-b.jpg
+
+
+- Fport: ``SERIALx_PROTOCOL`` = 23, ``SERIALx_OPTIONS`` = 4
+- Sport: ``SERIALx_PROTOCOL`` = 10 (but connect to RX pin instead of TX)
+
+___________________________________________________________________
 
 .. image:: ../../../images/FPort-wiring-c.jpg
     :target: ../_images/FPort-wiring-c.jpg
 
+
+- Fport: ``SERIALx_PROTOCOL`` = 23, ``SERIALx_OPTIONS`` = 7
+- Sport: ``SERIALx_PROTOCOL`` = 10, ``SERIALx_OPTIONS`` = 15
+
+______________________________________________________________________
 
 .. note:: some boards can have the FPort connected to the UARTs RX pin instead of TX pin as shown above. See :ref:`common-Fport-receivers` for more information.
 
