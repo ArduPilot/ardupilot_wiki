@@ -63,6 +63,8 @@ Use as Battery Monitor
 
 By setting a battery monitor instance to BLHeli32 ESC  type (for example :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 9), all connected BLHeli32 ESCs with connected telemetry wiring to the configured autopilot serial port, will be aggregated as a single source. The voltages reported will be averaged, the currents totaled, and the consumed current accumulated.
 
+.. _bidir-dshot:
+
 Bi-directional Dshot
 ====================
 
