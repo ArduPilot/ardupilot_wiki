@@ -61,7 +61,7 @@ ESC telemetry input.
 
  - SERIAL0 -> USB
  - SERIAL1 -> USART1 (TX only for Frsky Telem, no ext inverter needed)
- - SERIAL3 -> USART3 (RC Input protocols by default. PPM not supported)
+ - SERIAL3 -> USART3 (RC Input protocols by default. PPM not supported.)
  - SERIAL4 -> UART4 (GPS/Telem1)
  - SERIAL5 -> UART5 (RX only, ESC Telemetry protocol by default)
  - SERIAL6 -> USART6 (GPS2/Telem2)
@@ -69,7 +69,17 @@ ESC telemetry input.
 RC Input
 ========
  
-RC input is configured on the R6 (UART3_RX) pin. It supports all RC protocols except PPM.
+RC input is configured on the R3 (UART3_RX) pin. It supports all RC protocols except PPM. See :ref:`common-rc-systems` for details for a specific RC system. :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` is set to "23", by default, to enable this.
+
+- SBUS/DSM/SRXL connects to the R6 pin.
+
+- SBUS FPort requires connection to T3 and an external bi-directional inverter, see :ref:`common-FPort-receivers` .
+
+- CRSF also requires a T3 connection, in addition to R6, and automatically provides telemetry. 
+
+- SRXL2 requires a connecton to R3 and T3 and automatically provides telemetry.  Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "4".
+
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
 ESC Telemetry
 =============
@@ -96,15 +106,14 @@ PWM Output
 ==========
 
 The KakuteF4 supports up to 5 PWM outputs. The pads for motor output
-M1 to M5 on the above diagram are for the 5 outputs. M1-4 outputs
-support DShot and Bi-Directional DShot, as well as all PWM types. The M5 is defaulted to support serial LEDs instead of PWM
-but can be changed by changing its default function using :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>`.
+M1 to M6 on the above diagram are for the 5 outputs. M1-4 outputs
+support DShot and :ref:`Bi-Directional DShot<bidir-dshot>` , as well as all PWM types. The M5 is defaulted to support serial LEDs instead of PWM but can be changed by changing its default function using :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` and supports Dshot.
 
 The PWM is in 2 groups:
 
  - PWM 1 and 2 in group 1
  - PWM 3 and 4 in group 2
- - PWM 5 in group 3
+ - PWM 5 in group 3 (defaulted as serial LED)
 
 Channels within the same group need to use the same output rate, whether PWM or Dshot. If
 any channel in a group uses DShot then all channels in the group need
@@ -133,6 +142,12 @@ Logging
 =======
 
 The KakuteF4 supports on-board data flash logging. Use :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>` = 2)
+
+Firmware
+========
+
+Firmware for this board can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+"KakuteF4Mini".
 
 Loading ArduPilot onto the board
 ================================
