@@ -4,7 +4,7 @@
 Setup Guide for MakeFlyEasy Striver Mini Hand Throw 
 ====================================
 
-..  youtube::t2l10DYtX4A
+..  youtube:: t2l10DYtX4A
     :width: 100%
 
 
