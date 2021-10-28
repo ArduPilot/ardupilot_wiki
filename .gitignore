@@ -30,6 +30,11 @@
 *.html
 *.pyc
 
+# static html pages
+!/frontend/*.html
+!/frontend/includes/*.html
+
+
 # Vagrant
 /.vagrant
 
