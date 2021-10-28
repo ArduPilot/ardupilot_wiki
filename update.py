@@ -62,6 +62,7 @@ ALL_WIKIS = [
     'planner2',
     'ardupilot',
     'mavproxy',
+    'frontend',
 ]
 COMMON_DIR = 'common'
 
@@ -224,12 +225,13 @@ def sphinx_make(site):
     done = set()
     wikis = set(ALL_WIKIS[:])
     procs = []
-    global error_count
 
     while len(done) != len(wikis):
         wiki = list(wikis.difference(done))[0]
         done.add(wiki)
-        if site == 'common':
+        if site == 'common' or site == 'frontend':
+            continue
+        if wiki == 'frontend'    :
             continue
         if site is not None and not site == wiki:
             continue
@@ -242,7 +244,7 @@ def sphinx_make(site):
                     p.join()
                     procs.remove(p)
                     if p.exitcode != 0:
-                        error_count += 1
+                        error('Erro making sphinx(1)')
             time.sleep(0.1)
     while len(procs) > 0:
         for p in procs[:]:
@@ -250,7 +252,7 @@ def sphinx_make(site):
                 p.join()
                 procs.remove(p)
                 if p.exitcode != 0:
-                    error_count += 1
+                    error('Erro making sphinx(2)')
         time.sleep(0.1)
 
 
@@ -258,15 +260,15 @@ def copy_build(site):
     """
     Copies each site into the target location
     """
-    global error_count
     for wiki in ALL_WIKIS:
         if site == 'common':
             continue
         if site is not None and not site == wiki:
             continue
+        if wiki == 'frontend':
+            continue            
         print('copy: %s' % wiki)
         targetdir = os.path.join(args.destdir, wiki)
-
         print("DEBUG: Creating backup")
         olddir = os.path.join(args.destdir, 'old')
         print('DEBUG: recreating %s' % olddir)
@@ -276,7 +278,6 @@ def copy_build(site):
         if os.path.exists(targetdir):
             print('DEBUG: moving %s into %s' % (targetdir, olddir))
             shutil.move(targetdir, olddir)
-
         # copy new dir to targetdir
         # print("DEBUG: targetdir: %s" % targetdir)
         # sourcedir='./%s/build/html/*' % wiki
@@ -292,7 +293,7 @@ def copy_build(site):
             print("DEBUG: Moved to %s" % targetdir)
         except Exception:  # FIXME: narrow exception type
             print("DEBUG: FAIL moving output to %s" % targetdir)
-            error_count += 1
+            error('Error moving output')
 
         # delete the old directory
         print('DEBUG: removing %s' % olddir)
@@ -303,12 +304,13 @@ def copy_and_keep_build(site):
     """
     Copies each site into target location and keep last "n" builds as backups
     """
-    global error_count
     for wiki in ALL_WIKIS:
         if site == 'common':
             continue
         if site is not None and site != wiki:
             continue
+        if wiki == 'frontend':
+            continue             
         debug('copying: %s' % wiki)
         targetdir = os.path.join(args.destdir, wiki)
         distutils.dir_util.mkpath(targetdir)
@@ -747,6 +749,35 @@ def put_cached_parameters_files_in_sites(site=args.site):
                 error(e)
                 pass
 
+def update_frotend_json():
+    """
+    Frontend get posts from Forum server and insert it into JSON
+    """
+    debug('Running script to get last posts from forum server.')
+    try:    
+        subprocess.check_call(["python3", "./frontend/scripts/get_discourse_posts.py"])
+    except Exception as e:
+        error(e)
+        pass
+
+def copy_static_html_sites(site):
+    """
+    Copy pure HMTL folder the same way that Sphinx builds it
+    """
+    debug('Copying static sites (only frontend so far).')
+
+    if (site == 'frontend') or (site is None):
+        update_frotend_json()
+        folder = 'frontend'
+        try:    
+            site_folder = os.getcwd() + "/" + folder
+            targetdir = os.path.join(args.destdir, folder)
+            shutil.rmtree(targetdir, ignore_errors=True)
+            shutil.copytree(site_folder, targetdir)
+        except Exception as e:
+            error(e)
+            pass
+
 
 #######################################################################
 
@@ -763,6 +794,8 @@ else:
 # Fetch most recent LogMessage metadata from autotest:
 fetchlogmessages(args.site)
 
+
+copy_static_html_sites(args.site)
 generate_copy_dict()
 sphinx_make(args.site)
 
