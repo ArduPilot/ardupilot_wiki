@@ -30,10 +30,4 @@ The Simulation uses the same SITL models as those used in the Linux ``sim_vehicl
     --home=-35.363261,149.165230,584,353
 
 
-.. note:: It is possible to use the current Stable branch (for Copter this includes the current Stable release candidate if one is pending) instead of the current development branch (master) for simulation. See the video below for instructions:
-
-
-Using Stable in Mission Planner SITL
-
-..  youtube:: d1D9--hgJxs
-    :width: 100%
+.. note:: Although not shown in the above video, current version of Mission Plannner will ask if you want to simulate using the Development(master aka "latest") or Stable version of the vehicle firmware when you click the vehicle to download the model and parameters and begin the simulation.
