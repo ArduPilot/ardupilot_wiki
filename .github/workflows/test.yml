@@ -33,3 +33,9 @@ jobs:
       - name: Test build
         run: |
           ./update.py --parallel 4 --verbose --destdir=/tmp/web
+      - name: Archive build output
+        uses: actions/upload-artifact@v2
+        with:
+           name: build
+           path: /tmp/web
+           retention-days: 5
