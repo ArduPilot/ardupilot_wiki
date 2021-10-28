@@ -4,7 +4,7 @@
 Setup Guide for  MakeFlyEasy Fighter Hand Throw
 ====================================
 
-..  youtube::GW1bqDLc0zs
+..  youtube:: GW1bqDLc0zs
     :width: 100%
 
 
