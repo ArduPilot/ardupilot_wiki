@@ -78,7 +78,7 @@ to roll, change the :ref:`SERVO1_FUNCTION<SERVO1_FUNCTION>` .
 
 Repeat the servo reversal or function change for the right elevon.
 
-.. note:: In rare instances, both servo 1 and 2 will indivicually respond
+.. note:: In rare instances, both servo 1 and 2 will individually respond
           correctly with the same FUNCTION. This is OK.
           
 .. note:: while rolling the aircraft the autopilot will automatically
