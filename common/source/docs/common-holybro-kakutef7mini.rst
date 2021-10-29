@@ -70,7 +70,18 @@ The UARTs are marked Rn and Tn in the above pinouts. The Rn pin is the receive p
 RC Input
 ========
  
-RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for FPort the receiver should be connected to T6 and SERIAL6 configured as described in :ref:`FPort<common-FPort-receivers>` section.
+RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols except PPM. See :ref:`common-rc-systems` for details for a specific RC system. :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` is set to "23", by default, to enable this.
+
+- SBUS/DSM/SRXL connects to the R6 pin but SBUS requires that the :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "3".
+
+- FPort requires connection to T6 and :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "7".
+
+- CRSF also requires a T6 connection, in addition to R6, and automatically provides telemetry. Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "0".
+
+- SRXL2 requires a connecton to T6 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
+
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
+ 
 
 FrSky Telemetry
 ===============
@@ -92,13 +103,14 @@ The KakuteF7 Mini supports OSD using :ref:`OSD_TYPE<OSD_TYPE>` 1 (MAX7456 driver
 PWM Output
 ==========
 
-TThe KakuteF7 Mini supports up to 6 PWM outputs. M1 to M4 are accessed via the connector. M5 and M6 are the pads shown on the above diagram. All 6 outputs support DShot as well as all PWM types.
+TThe KakuteF7 Mini supports up to 6 outputs. M1 to M4 are accessed via the connector and are :ref:`bi-directional<bidir-dshot>` capable. M5 and M6 are the pads shown on the above diagram. M1-4 and M6 outputs support DShot as well as all PWM types.M5 only supports PWM.
 
 The PWM is in 3 groups:
 
-- PWM 1, 2 and 3 in group1
-- PWM 4 and 5 in group2
-- PWM 6 in group3
+- PWM 1, 4 in group1
+- PWM 2 and 3 in group2
+- PWM 5 in group3
+- PWM 6 in group4
 
 Channels within the same group need to use the same output rate. If any channel in a group uses DShot then all channels in the group need to use DShot.
 
@@ -137,3 +149,8 @@ firmware, using your favourite DFU loading tool.
 Once the initial firmware is loaded you can update the firmware using
 any ArduPilot ground station software. Updates should be done with the xxxxxxxxxx.apj firmware files.
 
+Firmware
+========
+
+Firmware for this board can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+"KakuteF7Mini".
