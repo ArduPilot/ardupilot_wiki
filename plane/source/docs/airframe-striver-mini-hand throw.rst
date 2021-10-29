@@ -1,4 +1,4 @@
-.. _airframe-striver mini hand throw:
+.. _airframe-striver-mini-hand-throw:
 
 ====================================
 Setup Guide for MakeFlyEasy Striver Mini Hand Throw 
