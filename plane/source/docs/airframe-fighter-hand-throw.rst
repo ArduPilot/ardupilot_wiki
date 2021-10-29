@@ -1,4 +1,4 @@
-.. _airframe-fighter hand throw:
+.. _airframe-fighter-hand-throw:
 
 ====================================
 Setup Guide for  MakeFlyEasy Fighter Hand Throw
