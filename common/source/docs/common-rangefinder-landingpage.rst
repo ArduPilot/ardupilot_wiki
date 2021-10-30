@@ -68,6 +68,7 @@ Unidirectional Rangefinders
     Garman Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
+    JSN-SR04T Sonar <common-jsn-sr04t>
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
