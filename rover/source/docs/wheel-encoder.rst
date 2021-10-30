@@ -25,12 +25,14 @@ Connection and Setup
 - set :ref:`WENC2_POS_X <WENC2_POS_X>` and :ref:`WENC2_POS_Y <WENC2_POS_Y>` to define the second wheel's distance from the autopilot or COG
 - disable :ref:`relays <common-relay>` by setting :ref:`RELAY_PIN <RELAY_PIN>` and :ref:`RELAY_PIN2 <RELAY_PIN2>` to -1
 
-To enable position estimation using the wheel encoders the EKF3 must be set as the main AHRS:
+To enable position estimation using the wheel encoders the EKF3 must be used and configured as follows:
 
 - set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 3 (means use EKF3)
 - set :ref:`EK2_ENABLE <EK2_ENABLE>` to 0 (disable EKF2)
 - set :ref:`EK3_ENABLE <EK3_ENABLE>` to 1 (enable EKF3)
-- set ``EK3_GPS_TYPE`` to 3 (No GPS)
+- set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` to 7 ("WheelEncoder")
+- (optionally) set :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` to 0 ("None") to disable use of GPS for horizontal position
+- (optionally) set :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` to 0 ("None") to disable use of GPS for vertical velocity
 
 After making the above changes the autopilot should be rebooted
 
