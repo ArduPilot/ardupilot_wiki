@@ -11,7 +11,7 @@ The Hexsoon EDU450 is a relatively low cost frame including motors, ESCs and pro
 Parts List
 ----------
 
-- The frame will be available for purchase from late 2019 onwards from many `Hex retailers <http://www.proficnc.com/stores>`__
+- The frame is available from many `CubePilot retailers <https://www.cubepilot.com/#/reseller/list>`__
 - :ref:`Cube autopilot <common-thecube-overview>` or any other :ref:`ArduPilot compatible autopilot <common-autopilots>`
 - 3300mAh to 5300mAh 3S battery
 - RC transmitter with at least 6 channels like the Futaba T10J
