@@ -4,7 +4,7 @@
 Wheel Encoders
 ==============
 
-Rover 3.2 includes support for up to two AB wheel encoders like those in `this Pololu motor <https://www.pololu.com/product/1442>`__ which can be used to improve position estimation especially when no GPS is used.
+Rover supports up to two "AB" wheel encoders like those in `this Pololu motor <https://www.pololu.com/product/1442>`__ which can be used to improve position estimation especially when no GPS is used.
 
 ..  youtube:: eaLBRx7LYD8
     :width: 100%
@@ -37,11 +37,9 @@ After making the above changes the autopilot should be rebooted
 Ground Testing
 ==============
 
-If using Rover 4.0 (or later), the ``WHEEL_DISTANCE`` MAVLink message shows the total distance travelled by each wheel in real time.  Mission Planner's MAVLink Inspector can be used which can be opened by pressing Ctrl-F and then pushing the "MAVLink Inspector" button.
+The ``WHEEL_DISTANCE`` MAVLink message shows the total distance travelled by each wheel in real time.  Mission Planner's MAVLink Inspector can be used which can be opened by pressing Ctrl-F and then pushing the "MAVLink Inspector" button.
 
 .. image:: ../images/Mavlink-Inspector.jpg
-
-If using Rover-3.5 (or earlier) the RPM of the two wheels can be seen as "rpm1" and "rpm2" in the ground station.  If using the Mission Planner these values can be seen in the Flight Data screen's Status tab.
 
 DataFlash logging
 =================
