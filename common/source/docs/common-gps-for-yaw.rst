@@ -14,6 +14,7 @@ GPSs from ArduPilot Partners that are known to work include:
 - :ref:`CUAV C-RTK 9P <common-cuav-c-rtk-9p-gps>`
 - :ref:`Holybro H-RTK F9P GNSS <common-holybro-rtk-f9p>`
 - `mRobotics ZED-F9 GPS <https://store.mrobotics.io/category-s/109.htm>`__
+- :ref:`common-gps-ardusimple`
 
 .. note::
 
