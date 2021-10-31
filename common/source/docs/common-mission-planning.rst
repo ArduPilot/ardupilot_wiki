@@ -40,6 +40,7 @@ This section contains articles about creating missions that will run when the ve
 [/site]
 
     Rewind-on-resume <common-mission-rewind>
+    Continue Mission After Landing <common-continue-mission>
 
 
 [copywiki destination="copter,plane,rover,planner"]
