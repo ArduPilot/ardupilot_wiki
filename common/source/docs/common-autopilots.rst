@@ -56,7 +56,7 @@ Closed hardware
     Holybro Kakute F4 Mini* <common-holybro-kakutef4-mini>
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
-    Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>
+    Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
     IFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
     IFlight BeastH7 AIO <common-iflight-beasth7AIO>
     Mamba F405 MK2* <common-mamba405-mk2>
