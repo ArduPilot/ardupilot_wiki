@@ -65,4 +65,10 @@ The AIS_OPTIONS parameter specifies which AIS messages are logged.  These messag
 - ID : Sequential message ID for multi-sentence messages
 - Payload : Data payload
 
+User Videos
+-----------
+
+.. youtube:: pGluWMlIXho
+    :width: 100%
+
 [copywiki destination="rover,dev"]
