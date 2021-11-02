@@ -31,7 +31,7 @@ Connect to the autopilot with a ground station and set these parameters and then
 - AIS_TYPE = 1 (Enable)
 - :ref:`SERIAL1_PROTOCOL <SERIAL1_PROTOCOL>` = 40 (AIS) if the sensor is connected to serial port 1.  If another serial port is used please set the appropriate SERIALx_PROTOCOL parameter
 - :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` = 38 (38400 bps) if using serial port 1.  If another serial port is used please set the appropriate SERIALx_BAUD parameter instead
-- :ref:`SR0_ADSB <SR0_ADSB>` = 5 to enable sending AIS mavlink messages to the ground station over Serial0 (the USB port).  If a telemetry radio is used the SRx_ADSB param corresponding to its serial port should also be set to 5(hz).
+- :ref:`SR0_ADSB <SR0_ADSB>` = 5 to enable sending AIS mavlink messages to the ground station over Serial0 (the USB port).  If a telemetry radio is used the SRx_ADSB param corresponding to its serial port should also be set to 5(Hz).
 
 dAISy2 Configuration and Testing
 --------------------------------
