@@ -121,7 +121,7 @@ GCS Failsafe
 **How it works.** When flying while using telemetry on the GCS, the
 autopilot can be programmed to trigger into failsafe mode if it loses
 telemetry. In the event that the autopilot stops receiving MAVlink
-(telemetry protocol) heartbeat messages. :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` apply just in the case of a Throttle Failsafe.
+(telemetry protocol) heartbeat messages. :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` applies just in the case of a long Throttle Failsafe.
 
 **Setup.**
 
@@ -197,7 +197,7 @@ Failsafe Parameters and their Meanings
 Short failsafe action (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` )
 ------------------------------------------------------------
 
-The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which :ref:`Q_OPTIONS<Q_OPTIONS>` is selected.
+The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which :ref:`Q_OPTIONS<Q_OPTIONS>` is selected. Short failsafe only occurs on loss of RC, either RC loss or Throttle Failsafe.
 
 In AUTO, LOITER and GUIDED modes you can also choose for it continue with the mission and ignore the short failsafe. If :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` is 0 then it will continue with the mission, if it is 1 then it will enter CIRCLE mode.
 
@@ -268,7 +268,7 @@ GCS failsafe enable (:ref:`FS_GCS_ENABL<FS_GCS_ENABL>` )
 --------------------------------------------------------
 
 Enable ground control station telemetry failsafe. Failsafe will trigger
-after :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` and/or :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds of no MAVLink heartbeat or RC Override messages.
+after :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds of no MAVLink heartbeat or RC Override messages.
 
 .. warning:: Enabling this option opens up the possibility of your plane going into failsafe mode and running the motor on the ground if it loses contact with your ground station. While the code attempts to verify that the plane is indeed flying and not on the ground before entering this failsafe, it is safer if this option is enabled on an electric plane, to either use a separate motor arming switch or remove the propeller in any ground testing, if possible.
 
