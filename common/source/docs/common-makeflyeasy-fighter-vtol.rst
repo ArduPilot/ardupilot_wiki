@@ -1,4 +1,4 @@
-.. _airframe-fighter-vtol:
+.. _common-makeflyeasy-fighter-vtol:
 
 ========================================
 Setup Guide for MakeFlyEasy Fighter VTOL
@@ -36,3 +36,5 @@ Where to Buy
 ============
 
 `Aliexpress  <https://www.aliexpress.com/item/10000223165284.html>`__
+
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
