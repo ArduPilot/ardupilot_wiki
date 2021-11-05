@@ -1,4 +1,4 @@
-.. _airframe-striver-mini-vtol:
+.. _common-makeflyeasy-striver-mini-vtol:
 
 =============================
 MakeFlyEasy Striver Mini VTOL
@@ -36,3 +36,6 @@ Where to Buy
 ============
 
 `Aliexpress <https://www.aliexpress.com/item/1005002723289589.html>`__
+
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
+

@@ -42,8 +42,8 @@ Planes from Partners
 * `Event38 - e384 <https://event38.com/fixed-wing/e384-mapping-drone/>`__
 * `Hitec - HCS Xeno FX <https://hitecnology.com/drones/hcs-xeno-fx-fixed-wing-mapping-suas>`__
 * `MakeFLyEasy - Believer <https://www.aliexpress.com/item/30000002380639.html?spm=a2g0o.store_home.productList_1076398524.pic_4>`__
-* :ref:`MakeFLyEasy - Fighter <airframe-fighter-hand-throw>`
-* :ref:`MakeFLyEasy - Striver Mini <airframe-fighter-hand-throw>`
+* :ref:`MakeFLyEasy - Fighter <common-makeflyeasy-fighter-hand-throw>`
+* :ref:`MakeFLyEasy - Striver Mini <common-makeflyeasy-striver-mini-hand-throw>`
 * `mRobotics - Nano Talon <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-talon0318-mr>`__
 * Various from `UAVSystems <https://uavsystemsinternational.com/collections/fixed-wing-long-range-drones>`__
 
@@ -51,10 +51,10 @@ VTOL/QuadPlanes from Partners
 =============================
 * `CUAV - Raefly <https://store.cuav.net/shop/raefly/>`__
 * `Event38 - E400 <https://event38.com/e400-vtol-drone/?v=0a10a0b3e53b>`__
-* :ref:`MakeFLyEasy - Fighter VTOL <airframe-fighter-vtol>`
+* :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
 * `MakeFLyEasy - Freeman 2300 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_3>`__
 * `MakeFLyEasy - Freeman 2100 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_2>`__
-* :ref:`MakeFLyEasy - Striver Mini VTOL <airframe-striver-mini-vtol>`
+* :ref:`MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>`
 * `SpektreWorks - Cobalt 55 E-VTOL <https://www.spektreworks.com/cobalt>`__
 * `SpektreWorks - Cobalt 55 G-VTOL <https://www.spektreworks.com/cobalt>`__
 * `SpektreWorks - Cobalt 110 G-VTOL <https://www.spektreworks.com/cobalt>`__  
@@ -95,9 +95,9 @@ Vehicles from Non-Partners
 .. toctree::
    :hidden:
     
-   MakeFLyEasy - Fighter <airframe-fighter-hand-throw>
-   MakeFLyEasy - Striver Mini <airframe-striver-mini-hand-throw>
-   MakeFLyEasy - Fighter VTOL <airframe-fighter-vtol>
-   MakeFLyEasy - Striver Mini VTOL <airframe-striver-mini-vtol>
+   MakeFLyEasy - Fighter <common-makeflyeasy-fighter-hand-throw>
+   MakeFLyEasy - Striver Mini <common-makeflyeasy-striver-mini-hand-throw>
+   MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>
+   MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>
    
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

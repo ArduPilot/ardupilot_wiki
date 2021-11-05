@@ -1,4 +1,4 @@
-.. _airframe-fighter-hand-throw:
+.. _common-makeflyeasy-fighter-hand-throw:
 
 ==============================
 MakeFlyEasy Fighter Hand Throw
@@ -34,3 +34,5 @@ Where to Buy
 ============
 
 `Aliexpress <https://www.aliexpress.com/item/10000223175280.html>`__
+
+[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
