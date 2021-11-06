@@ -163,15 +163,15 @@ The MAVProxy commands to load the parameters for Copter, Rover and Plane
 
 ::
 
-    param load ..\Tools\autotest\default_params\copter.parm
+    param load ../Tools/autotest/default_params/copter.parm
 
 ::
 
-    param load ..\Tools\autotest\default_params\plane.parm
+    param load ../Tools/autotest/default_params/plane.parm
 
 ::
 
-    param load ..\Tools\autotest\default_params\rover.parm
+    param load ../Tools/autotest/default_params/rover.parm
 
 You can re-load the parameters later if you choose, or revert to the
 default parameters by starting SITL (**sim_vehicle.py**) with the
