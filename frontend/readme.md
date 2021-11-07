@@ -10,3 +10,10 @@ Then use the browser to access the index.html file.
 TO-DO: 
 How to create new pages 
 How to edit the menu.
+
+## Generating WebP images
+
+ Install cwebp utility and then :
+`for file in images/*; do cwebp -resize 920 480 "$file" -o "${file%.*}.webp"; done`
+
+Usage of Webp images : https://web.dev/serve-images-webp/
