@@ -55,7 +55,7 @@ html {
 }
 
 .carousel-inner img{
-    height: 480px;
+    max-height: 480px;
 }
 
 .carousel-control-next,
