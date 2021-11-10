@@ -102,7 +102,7 @@ Interfaces
     +------------------+--------------------------------------------------------------+
     | TELEM1 / TELEM2  | Serial ports (telemetry, peripherals, companion computer)    |
     +------------------+--------------------------------------------------------------+
-    | DSM/SBUS/RSSI    | RC Input (SBUS / DSM / ST24 / SRXL / PPM) or RSSI Input      |
+    | DSM/SBUS/RSSI    | RC Input (SBUS / DSM / ST24 / SRXL /PPM ), RSSI Input        |
     +------------------+--------------------------------------------------------------+
 
 .. image:: ../../../images/cuav_autopilot/v5-nano/v5-nano_quickstart_01.png
@@ -111,6 +111,70 @@ Interfaces
 
 .. image:: ../../../images/cuav_autopilot/v5-nano/v5-nano_quickstart_02.png
        :target: ../_images/cuav_autopilot/v5-nano/v5-nano_quickstart_02.png
+
+RC Input
+========
+
+The RC pin on the MAIN/AUX interface and the DSM/SBUS RC pin are tied together, which by default is mappped to a timer input, and can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true full UART connection. Bi-directional protocols which include telemetry, such as SRXL2 and FPort, can also provide telemetry if the correct parameters are set when using these protocols since these pins are also tied to the TX input of UART6 (SERIAL5).
+
+In order for SRXL2 and FPort to provide telemetry, :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` should be set to "23", enabling the UART6 TX function instead of the timer interrupt, and:
+
+- FPort: :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` = 7
+- SRXL2: :ref:`SERIAL5_OPTIONS<SERIAL5_OPTIONS>` = 4
+
+
+- CRSF requires a full UART connection, so should be connected to TELEM1(USART2) or TELEM2(USART3). Set the appropriate SERIAL1 or SERIAL2 options to 0.
+
+
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
+
+UART Mapping
+============
+
+ - SERIAL0 -> USB MAVLINK
+ - SERIAL1 -> USART2 (Telem1)
+ - SERIAL2 -> USART3 (Telem2)
+ - SERIAL3 -> USART1 (GPS)
+ - SERIAL4 -> UART4 (UART4)
+ - SERIAL5 -> UART6 (TX pin is tied to RC pin)
+ - SERIAL6 -> UART7 (Debug)
+ - SERIAL7 -> USB SLCAN
+
+The SERIAL1/2 port have RTS/CTS pins.
+
+PWM Output
+==========
+
+The CUAV v5 Nano supports up to 11 PWM outputs. All 11 outputs
+support all normal PWM output formats. All outputs except numbers 7
+and 8 support DShot. Bi-Directional DShot is not supported.
+
+.. note:: BLHeli Passthru is not supported on any outputs except 9,10, and 11.
+
+The first 8 outputs are labelled "MAIN OUT" on the case. The next 3
+outputs are labelled CAP1 to CAP3 on the case. The CAP4 pin cannot be
+used as a PWM output.
+
+
+The 11 PWM outputs are in 4 groups:
+
+ - PWM 1, 2, 3 and 4 in group1
+ - PWM 5 and 6 in group2
+ - PWM 7 and 8 in group3
+ - PWM 9, 10 and 11 in group4
+
+Channels within the same group need to use the same output rate. If
+any channel in a group uses DShot then all channels in the group need
+to use DShot.
+
+Loading Firmware
+================
+
+The board comes pre-installed with an ArduPilot compatible bootloader,
+allowing the loading of xxxxxx.apj firmware files with any ArduPilot
+compatible ground station.
+
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "CUAVv5Nano".
 
 
 More Information
