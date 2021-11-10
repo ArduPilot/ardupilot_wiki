@@ -79,3 +79,8 @@ ardupilot/source/_static/useralerts.js
 mavproxy/source/_static/useralerts.js
 planner/source/_static/useralerts.js
 planner2/source/_static/useralerts.js
+
+# Website
+frontend/blog_posts.json
+frontend/news_posts.json
+
