@@ -37,6 +37,8 @@ ____________________________________________________________________
 - Fport: ``SERIALx_PROTOCOL`` = 23, ``SERIALx_OPTIONS`` = 4
 - Sport: ``SERIALx_PROTOCOL`` = 10 (but connect to RX pin instead of TX)
 
+.. warning:: getting an "un-inverted" SPort or FPort signal from some receivers by tapping an internal connection may not provide enought drive for reliable operation on some autopilots having protection resistors in series with their UART pins. Contact the autopilot OEM for possible workarounds or use an normal FPort signal and exteranl bi-directional inverter as shown above
+
 ___________________________________________________________________
 
 .. image:: ../../../images/FPort-wiring-c.jpg
