@@ -85,7 +85,7 @@ EKF
 - Bring the missing features from EKF2 into EKF3 to remove EKF2 (Paul)
 - EKF3 External Nav support
 - Fixing replay (PeterB)
-- Set EKF3 as the default
+- Set EKF3 as the default -- **COMPLETE!**
 - Robust yaw estimator for Copters
 
 
@@ -151,7 +151,7 @@ Documentation
 - Dual GPS for Yaw setup (Henry, Tridge, Randy)
 - Frsky Telem Update (Alex, Henry)
 - Scripting Documentation (MichaelDB)
-- Substitute C5 (Bruno)
+- Substitute C5 (Bruno) -- **COMPLETE!**
 - Translation support (Bruno)
 - Tuning/Fltr Copter to QuadPlane (Henry)
 
@@ -170,7 +170,7 @@ Organizational
 --------------
 
 - Assist Ready-To-Fly manufacturers get their products to market
-- Find new BugMaster and support roles (Tridge, Randy, James, MichaelDB) -- Complete!
+- Find new BugMaster and support roles (Tridge, Randy, James, MichaelDB) -- **COMPLETE!**
 - Governance structure (James)
 
 
