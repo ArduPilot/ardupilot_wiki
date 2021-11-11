@@ -423,5 +423,21 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: http://www.synerex.kr/
 
-      -
+      -  .. image:: ../../../images/supporters/supporters_logo_Offshore_Aviation.png
+            :width: 250px
+            :align: center
+            :target: https://www.Offshoreaviation.com
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_logo_currawong.png
+            :width: 250px
+            :align: center
+            :target: https://www.currawongeng.com/
+
+      -  .. image:: ../../../images/supporters/supporters_logo_skyways.png
+            :width: 250px
+            :align: center
+            :target: https://skyways.com/
+
+
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
