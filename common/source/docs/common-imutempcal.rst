@@ -66,7 +66,7 @@ parameters:
    for any movement that may have disturbed the calibration process.
 
 For boards with a builtin IMU heater you may wish to raise
-:ref:`BRD_IMU_TARGTEMP <BRD_IMU_TARGTEMP>` to a higher than usual
+``BRD_IMU_TARGTEMP <BRD_IMU_TARGTEMP>`` to a higher than usual
 temperature. A value of 70 can be good for calibration. Make sure you
 change it back to a normal flight value (normally 45) when the
 calibration process is complete. A value is 70 is likely to be above
@@ -117,7 +117,7 @@ parameters will change to 1 for "enable" for each IMU. Once all your
 IMUs have completed calibration you can reboot the vehicle. You should
 also:
 
- - reset the :ref:`BRD_IMU_TARGTEMP <BRD_IMU_TARGTEMP>` back to its
+ - reset the ``BRD_IMU_TARGTEMP <BRD_IMU_TARGTEMP>`` back to its
    normal value (usually 45) if you changed it
 
  - disable :ref:`LOG_DISARMED <LOG_DISARMED>` if you had enabled it
