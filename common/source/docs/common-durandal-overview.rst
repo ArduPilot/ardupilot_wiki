@@ -649,7 +649,7 @@ IMU Heater
 ==========
 
 The IMU heater in the Durandal can be controlled with the
-:ref:`BRD_IMU_TARGTEMP<BRD_IMU_TARGTEMP>` parameter, which is in degrees C.
+:ref:`BRD_HEAT_TARG<BRD_HEAT_TARG>` parameter, which is in degrees C.
 
 Loading Firmware
 ================
