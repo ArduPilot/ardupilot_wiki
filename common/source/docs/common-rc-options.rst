@@ -20,6 +20,8 @@ RC Options
                                         stick is not neutral
 7                                       Allow Aux Switches to honor the ``RCx_REVERSED`` parameter
 8                                       Use Passthru extensions for CRSF telemetry (see :ref:`common-frsky-passthrough`)
+9                                       Suppress CRSF mode/rate messages for ELRS systems
+10                                      Enable multiple receiver support on autopilot
 =================================       =========
 
 for example, to set this option to ignore receiver failsafe bits, you would set bit 2, or a value of "4" (2^2=4). This may be usefull when using ground station control beyond the range of the RC system which can set its receiver's outputs to trim values upon RC signal loss, but still has a failsafe bit in the protocol which would otherwise force an RC failsafe to occur.

@@ -14,6 +14,8 @@ These are: SBus, DSM, DSM2, DSM-X, IBus, SUMD, and SRXL.
 
 For whichever Serial Port the receiver is attached, the ``SERIALx_PROTOCOL`` should be set to 23. The baud rate is ignored and auto-detected, as well as the type of the receiver.
 
+The :ref:`RC_OPTIONS<RC_OPTIONS>` bit 10 must be set.
+
 Failsafe and Changeover
 =======================
 
