@@ -7,8 +7,8 @@ v2.0 with a range of 25 to 450 cm.
 v3.0 with a range of 20 to 600 cm. Also more stable.
 The very short range makes it of limited use.
 
-.. image:: ../../../images/JSN-SR04T V2.jpg
-.. image:: ../../../images/JSN-SR04T V3.jpg
+.. image:: ../../../images/JSN-SR04TV2.jpg
+.. image:: ../../../images/JSN-SR04TV3.jpg
 .. image:: ../../../images/JSN-SR04T.jpg
     :target: ../_images/JSN-SR04T.jpg
 
