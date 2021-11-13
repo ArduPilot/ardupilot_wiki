@@ -10,7 +10,7 @@ Most BLHeli ESCs can autodetect if PWM or DShot is selected by the motor protoco
 .. note::
    ArduPilot firmware supports the pass-through protocol with up-to-date BLHeli_32 firmware and BLHeliSuite32, or BLHeli_S firmware and BLHeliSuite only.
 
-.. warning:: For pass-through to function, the :ref:`motor protocol <MOT_PWM_TYPE>` (Copter,Rover) or :ref:`Q_M_PWM_TYPE<Q_M_PWM_TYPE>` (QuadPlane) must be set to a digital protocol, ie. one of the DShot protocols. If you wish to use one of the other protocols, just reset the motor protocol after using pass-through to change motor directions or set min/max values. The autopilot must be re-booted after a protocol change.
+.. warning:: For pass-through to function, the :ref:`motor protocol <MOT_PWM_TYPE>` (Copter,Rover) or :ref:`Q_M_PWM_TYPE<Q_M_PWM_TYPE>` (QuadPlane) must be set to a digital protocol, ie. one of the DShot protocols. If you wish to use one of the other protocols, just reset the motor protocol after using pass-through to change motor directions or set min/max values. The autopilot must be re-booted after a protocol change. In addition, the safety switch, if used, must be pressed to allow the servo/motor outputs to be active.
 
 BLHeli pass-through setup and use:
 ----------------------------------
