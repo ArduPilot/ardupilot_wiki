@@ -87,11 +87,10 @@ When you engage AUTOTUNE mode a few things will happen:
    demanded roll or pitch rate exceeds 80% of the maximum rate (not 80% stick deflection, one must move stick quickly towards full throw) the
    autotune system will use the response of the aircraft to learn roll
    or pitch tuning values.
--  every 10 seconds the autotune system will save the parameters you had
-   10 seconds ago. This means that if autotune causes your aircraft to
-   become unstable you have 10 seconds to switch to another mode and
+-  the autotune system will save the parameters once the tune has been completed for an axis. This means that if autotune causes your aircraft to
+   become unstable switch to another mode and
    recover. When you switch out of AUTOTUNE mode the last saved
-   parameters are restored. Note that the SMAX params may hide an over-tuned condition, such
+   parameters are restored. Switching back into AUTOTUNE will resume the tune where it was stopped, unless a reboot occurs. Note that the SMAX params may hide an over-tuned condition, such
    that oscillations may appear as just "twitchy" behavior.
 -  If you are starting with the default parameters for roll and pitch
    you may find the plane is quite sluggish when you first enter
