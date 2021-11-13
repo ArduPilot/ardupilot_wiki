@@ -32,6 +32,7 @@ tuning options for the vehicle.
     Battery Voltage Compensation <battery-voltage-compensation>
     Bootloader Update <common-bootloader-update>
 [/site]
+    BLHeli ESCs <common-blheli32-passthru>
     CAN Bus Setup <common-canbus-setup-advanced>
     Compass Setup (Advanced) <common-compass-setup-advanced>
     Compass-less Operation<common-compassless>
@@ -41,7 +42,6 @@ tuning options for the vehicle.
 [site wiki="plane"]
     Crash Detection <crash-detect>
 [/site]
-    BLHeli ESCs <common-blheli32-passthru>
     EKF (Extended Kalman Filter) <common-apm-navigation-extended-kalman-filter-overview>
     EKF Affinity & Lane Switching <common-ek3-affinity-lane-switching>
 [site wiki="copter,rover"]
