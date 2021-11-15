@@ -473,68 +473,13 @@ Button (button:)
 
 - :code:`get_button_state(button_number)` - Returns button state if available. Buttons are 1 indexed.
 
-RC Channels (rc:)
-~~~~~~~~~~~~~~~~~
-
-- :code:`get_pwm()` - Returns the RC input PWM value given a channel number. Note that channel here is indexed from 1. Returns false if channel is not available.
-
-
-Serial/UART (serial:)
-~~~~~~~~~~~~~~~~~~~~~
-
-- :code:`find_serial(protocol)` - Returns the first UART instance that allows the given protocol, or nil if not found.
-
-	- :code:`UART:begin(baud)` - Start serial connection at given baud rate.
-	- :code:`UART:read()` - Returns a sequence of bytes from UART instance.
-	- :code:`UART:write(number)` - Writes a sequence of bytes to UART instance.
-	- :code:`UART:available()` -  Returns integer of currently available bytes.
-	- :code:`UART:set_flow_control(flow_control)` - Sets flow control for UART instance.
-
-
-Barometer (baro:)
-~~~~~~~~~~~~~~~~~
-
-- :code:`get_pressure()` - Returns pressure in Pascal.
-
-- :code:`get_temperature()` - Returns temperature in degrees C.
-
-- :code:`get_external_temperature()` - Returns external temperature in degrees C.
-
-
-ESC Telemetry (esc_telem:)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- :code:`get_usage_seconds(channel)` - Returns an individual ESC's usage time in seconds, or false if not available.
-
-
-Parameters (param:)
-~~~~~~~~~~~~~~~~~~~
-
-- :code:`get(parameter_name)` - Returns parameter value if available, or nil if not found.
-
-- :code:`set(parameter_name)` - Sets a parameter by name if available. Returns true if the parameter is found.
-
-- :code:`set_and_save(parameter_name)` Sets and saves a parameter by name if available. Returns true if the parameter is found.
-
-
-RPM (RPM:)
-~~~~~~~~~~
-
-- :code:`get_rpm(instance)` - Returns RPM of given instance, or nil if not available.
-
-
-Button (button:)
-~~~~~~~~~~~~~~~~
-
-- :code:`get_button_state(button_number)` - Returns button state if available. Buttons are 1 indexed.
-
-
 Servo Output
 ~~~~~~~~~~~~
 
 This method stands alone and is called directly as shown below.
 
 - :code:`servo.set_output (function_number, PWM)` -Sets servo outputs of type function_number to a PWM value (typically between 1000 and 2000)
+
 
 Examples
 ========
