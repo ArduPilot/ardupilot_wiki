@@ -152,5 +152,5 @@ any ArduPilot ground station software. Updates should be done with the xxxxxxxxx
 Firmware
 ========
 
-Firmware for this board can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "KakuteF7Mini".

@@ -146,7 +146,7 @@ The KakuteF4 supports on-board data flash logging. Use :ref:`LOG_BACKEND_TYPE<LO
 Firmware
 ========
 
-Firmware for this board can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "KakuteF4Mini".
 
 Loading ArduPilot onto the board

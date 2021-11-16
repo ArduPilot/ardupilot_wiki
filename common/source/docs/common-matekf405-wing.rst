@@ -141,7 +141,7 @@ This board does not include a GPS or compass so an :ref:`external GPS/compass <c
 Firmware
 ========
 
-Firmware for this board can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "MatekF405-Wing".
 
 
