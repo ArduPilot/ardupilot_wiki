@@ -131,7 +131,7 @@ The KakuteF4 supports on-board data flash logging.
 Firmware
 ========
 
-Firmware for this board can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "KakuteF4".
 
 Loading ArduPilot onto the board
