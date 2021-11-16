@@ -78,6 +78,22 @@ Specifications
    - LTE Antenna, 2x2 MIMO
    - Bands: Europe, North America, Australia, Japan, Other
 
+Set content
+===========
+
+   ..  youtube:: lex7axW8WQg
+    :width: 100%
+
+SmartAP AIRLink set includes everything needed to setup the system and get prepared for the flight. Standard set contains:
+   
+   - 1x AIRLink Enterprise unit
+   - 1x FPV camera with CSI cable
+   - 1x WiFi antenna with MMCX connector
+   - 2x LTE antenna with MMCX connector
+   - 1x HDMI to mini HDMI cable1x set of cables (7 cables for all connectors)
+   
+`AIRLink Telemetry  <https://sky-drones.com/sets/airlink-telemetry-set.html>`__ based on the Microhard LAN/IP-based RF micromodule is available as an add-on and is fully compatible with AIRLink.
+
 
 Editions
 ========
@@ -841,22 +857,129 @@ Rear side interfaces:
    - WiFi antenna socket (AP & Station modes)
 
 
-Set content
-===========
+UART Order
+==========
 
-   ..  youtube:: lex7axW8WQg
-    :width: 100%
+AIRLink has a large number of internal and external serial ports:
 
-SmartAP AIRLink set includes everything needed to setup the system and get prepared for the flight. Standard set contains:
-   
-   - 1x AIRLink Enterprise unit
-   - 1x FPV camera with CSI cable
-   - 1x WiFi antenna with MMCX connector
-   - 2x LTE antenna with MMCX connector
-   - 1x HDMI to mini HDMI cable1x set of cables (7 cables for all connectors)
-   
-`AIRLink Telemetry  <https://sky-drones.com/sets/airlink-telemetry-set.html>`__ based on the Microhard LAN/IP-based RF micromodule is available as an add-on and is fully compatible with AIRLink.
+.. raw:: html
 
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Serial </th>
+   <th>UART </th>
+   <th>Function </th>
+   </tr>
+   <tr>
+   <td>Serial 0</td>
+   <td>USB</td>
+   <td>Console</td>
+   </tr>
+   <tr>
+   <td>Serial 1</td>
+   <td>UART 7</td>
+   <td>Telemetry 1</td>
+   </tr>
+   <tr>
+   <td>Serial 2</td>
+   <td>UART 5</td>
+   <td>Telemetry 2 (used internally with Mission Computer)</td>
+   </tr>
+   <tr>
+   <td>Serial 3</td>
+   <td>USART 1</td>
+   <td>GPS 1</td>
+   </tr>
+   <tr>
+   <td>Serial 4</td>
+   <td>UART 8</td>
+   <td>GPS 2</td>
+   </tr>
+   <tr>
+   <td>Serial 5</td>
+   <td>USART 3</td>
+   <td>Debug console (internal connector)</td>
+   </tr>
+   <tr>
+   <td>Serial 6</td>
+   <td>USART 2</td>
+   <td>Telemetry 3</td>
+   </tr>
+   <tr>
+   <td>Serial 7</td>
+   <td>UART 4</td>
+   <td>External UART</td>
+   </tr>
+   </tbody>
+   </table>
+
+RC Input
+========
+
+.. image:: ../../../images/airlink/airlink-rc-input.jpg
+
+RC input is configured on the SBUS pin and is connected to IO MCU via an inverter internally. 
+For PPM receivers please use RC Connector PPM pin located on the left side of the unit. 
+
+Outputs
+=======
+
+AIRLink has 16 PWM ouputs. Main outputs 1-8 and connected to IO MCU. AUX outputs 1-8 are connected to FMU. 
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Output </th>
+   <th>Timer </th>
+   <th>Channel </th>
+   </tr>
+   <tr>
+   <td>AUX 1</td>
+   <td>Timer 1</td>
+   <td>Channel 4</td>
+   </tr>
+   <tr>
+   <td>AUX 2</td>
+   <td>Timer 1</td>
+   <td>Channel 3</td>
+   </tr>
+   <tr>
+   <td>AUX 3</td>
+   <td>Timer 1</td>
+   <td>Channel 2</td>
+   </tr>
+   <tr>
+   <td>AUX 4</td>
+   <td>Timer 1</td>
+   <td>Channel 1</td>
+   </tr>
+   <tr>
+   <td>AUX 5</td>
+   <td>Timer 4</td>
+   <td>Channel 2</td>
+   </tr>
+   <tr>
+   <td>AUX 6</td>
+   <td>Timer 4</td>
+   <td>Channel 3</td>
+   </tr>
+   <tr>
+   <td>AUX 7</td>
+   <td>Timer 12</td>
+   <td>Channel 1</td>
+   </tr>
+   <tr>
+   <td>AUX 8</td>
+   <td>Timer 12</td>
+   <td>Channel 2</td>
+   </tr>
+   </tbody>
+   </table>
+
+DShot capabiltiy can be used on the first four AUX pins.
 
 More Information
 ================
@@ -877,6 +1000,12 @@ Reference design
 AIRLink CAD model is available `here  <https://docs.sky-drones.com/airlink/cad-model>`__. 
 
 AIRLink Reference design can be provided by request. Get in touch at `Sky-Drones contact page  <https://sky-drones.com/contact-us>`__
+
+Firmware
+========
+
+Firmware for AIRLink can be found `here  <https://firmware.ardupilot.org/>`__ in sub-folders labeled “AIRLink”.
+
 
 Where to Buy
 ============
