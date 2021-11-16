@@ -408,4 +408,4 @@ Two other common mechanisms for communicating with PX4 drivers are:
 -  /dev/xxx read/write calls (see \_timer_tick in
    AP_HAL_PX4/RCOutput.cpp)
 
-Please talk to the ardupilot development team on the `ArduPilot Gitter General Chat <https://gitter.im/ArduPilot/GeneralChat>`__ if you are not sure which mechanism to use for new code.
+Please talk to the ardupilot development team on the `ArduPilot Discord Forum <https://ardupilot.org/discord>`__ if you are not sure which mechanism to use for new code.
