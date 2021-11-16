@@ -145,5 +145,5 @@ Then reboot.
 Firmware
 ========
 
-Firmware for this board can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "MatekF765-SE".

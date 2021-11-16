@@ -183,7 +183,7 @@ Where to Buy
 Firmware
 ========
 
-Firmware for this board can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "KakuteF7".
 
 Firmware for this board which supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "KakuteF7-bdshot". 

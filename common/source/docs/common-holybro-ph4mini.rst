@@ -437,7 +437,7 @@ The board comes pre-installed with an ArduPilot compatible bootloader,
 allowing the loading of xxxxxx.apj firmware files with any ArduPilot
 compatible ground station.
 
-Firmware for this board can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "PH4-mini".
 
 Acknowledgements

@@ -156,7 +156,7 @@ Then reboot.
 Firmware
 ========
 
-Firmware for these boards can be found `here <firmware.ardupilot.org>`_ in  sub-folders labeled
+Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "MatekH743".
 
 Firmware that supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "MatekH743-bdshot".
