@@ -16,7 +16,7 @@ With the sensor connected to the autopilot, connect to the autopilot with the Mi
 
 Calibrating the sensor
 ======================
-#. Connect to your autopilot and ensure that logging while disarmed is enabled (In Copter-3.3 set :ref:`LOG_BITMASK <copter:LOG_BITMASK>` to 131071.
+#. Connect to your autopilot and ensure that logging while disarmed is enabled by setting :ref:`LOG_DISARMED <copter:LOG_DISARMED>` to 1
 #. Find a location with a textured surface and good lighting (natural light or strong incandescent)
 #. Remove Propellers (safety first)
 #. Power on the vehicle and hold level away from your body and at eye level
