@@ -115,8 +115,7 @@ It's unique among the GCS offerings as it runs on all platforms desktop and mobi
     :target: ../_images/QGroundControlTabletImage.jpg
 
 -  `Website <http://qgroundcontrol.com/>`__
--  `Support Forum <https://groups.google.com/forum/#!forum/qgroundcontrol>`__
--  `Gitter <https://gitter.im/mavlink/qgroundcontrol>`__
+-  `Support Forum <https://discuss.px4.io/c/qgroundcontrol/15>`__
 
 UgCS - Universal Ground Control Station
 ---------------------------------------
