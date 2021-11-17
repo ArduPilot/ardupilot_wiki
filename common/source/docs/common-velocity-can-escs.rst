@@ -1,12 +1,12 @@
 .. _common-velocity-can-escs:
 
-=================
-Velocity CAN ESCs
-=================
+===========================
+Currawong Velocity CAN ESCs
+===========================
 
 .. image:: ../../../images/velocity-esc.jpg
 
-The `Velocity range of ESCs <https://www.currawongeng.com/servos-escs/esc-velocity/>`__ provide motor control for the aerospace sector, with a high degree of reliability.
+Currawong's `Velocity range of ESCs <https://www.currawongeng.com/servos-escs/velocity/>`__ provide motor control for the aerospace sector, with a high degree of reliability.
 
 Designed for driving extremely large motors for heavy-lift applications, the Velocity range of ESCs is available in power levels above 20kW
 
