@@ -57,6 +57,7 @@ Closed hardware
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
     Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
+    Horizon31 PixC4-Jetson <common-horizon31-pixc4-jetson>
     IFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
     IFlight BeastH7 AIO <common-iflight-beasth7AIO>
     Mamba F405 MK2* <common-mamba405-mk2>
