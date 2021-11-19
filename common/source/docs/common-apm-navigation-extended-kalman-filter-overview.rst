@@ -6,7 +6,7 @@ Extended Kalman Filter (EKF)
 
 .. image:: ../../../images/advanced-configuration-ekf.png
 
-Copter and Plane can use an Extended Kalman Filter (EKF) algorithm to
+An Extended Kalman Filter (EKF) algorithm is used to
 estimate vehicle position, velocity and angular orientation based on
 rate gyroscopes, accelerometer, compass, GPS, airspeed and barometric
 pressure measurements.
@@ -14,21 +14,21 @@ pressure measurements.
 The advantage of the EKF over the simpler complementary filter
 algorithms (i.e. "Inertial Nav"), is that by fusing all available measurements it is better
 able to reject measurements with significant errors. This makes the
-vehicle less susceptible to faults that affect a single sensor. EKF also
+vehicle less susceptible to faults that affect a single sensor. An EKF also
 enables measurements from optional sensors such as optical flow and
 laser range finders to be used to assist navigation.
 
-Current stable version of ArduPilot use the EKF2 as their primary attitude and position estimation source with DCM running quietly in the background.
+Current stable versions of ArduPilot use EKF3 as their primary attitude and position estimation source with DCM running quietly in the background.
 If the autopilot has two (or more) IMUs available, two EKF "cores" (i.e. two instances of the EKF) will run in parallel, each using a different IMU.
 At any one time, only the output from a single EKF core is ever used, that core being the one that reports the best health which is determined by the consistency of its sensor data.
 
-Most user should not need to modify any EKF parameters but the information below provides some information on those parameters that are most commonly changed.
+Most users should not need to modify any EKF parameters, but the information below provides some information on those parameters that are most commonly changed.
 More detailed information can be found on the :ref:`developer EKF wiki page <dev:extended-kalman-filter>`. 
 
 Should the EKF2 or EKF3 be used?
 --------------------------------
 
-In general we recommend users stick with the EKF3, which is now the default. In addition, 1MB autopilots only have this option due to space limitations. EKF2 can still be used but does not have many of the enhancements of EKF3 such as newer sensor sources including Beacons, Wheel Encoders and Visual Odometry.
+In general, we recommend users stick with the EKF3, which is now the default. In addition, 1MB autopilots only have this option due to space limitations. EKF2 can still be used but does not have many of the enhancements of EKF3 such as newer sensor sources including Beacons, Wheel Encoders and Visual Odometry.
 
 
 Choosing the EKF and number of cores
