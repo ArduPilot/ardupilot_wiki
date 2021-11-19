@@ -36,7 +36,8 @@ These setup the configuration of the swashplate and collective travel.
 - :ref:`H_SW_H3_ENABLE<H_SW_H3_ENABLE__AP_MotorsHeli_Single>`  Never manually set this parameter!
 - :ref:`H_COLYAW<H_COLYAW>`
 - :ref:`H_COL_MAX<H_COL_MAX>`
-- :ref:`H_COL_MID<H_COL_MID>`
+- :ref:`H_COL_HOVER<H_COL_HOVER>`
+- ``H_COL_MID``
 - :ref:`H_COL_MIN<H_COL_MIN>`
 - :ref:`H_SW_COL_DIR<H_SW_COL_DIR__AP_MotorsHeli_Single>`
 - :ref:`H_SW_LIN_SVO<H_SW_LIN_SVO__AP_MotorsHeli_Single>`
@@ -52,7 +53,7 @@ If Dual Heli frame type is selected, these additional parameters for the second 
 - :ref:`H_YAW_SCALER<H_YAW_SCALER>`
 - :ref:`H_COL2_MIN<H_COL2_MIN>`
 - :ref:`H_COL2_MAX<H_COL2_MAX>`
-- :ref:`H_COL2_MID<H_COL2_MID>`
+- ``H_COL2_MID``
 - :ref:`H_SW2_TYPE<H_SW2_TYPE>`
 - :ref:`H_SW2_COL_DIR<H_SW2_COL_DIR>`
 - :ref:`H_SW2_LIN_SVO<H_SW2_LIN_SVO>`
