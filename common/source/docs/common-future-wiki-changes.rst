@@ -27,36 +27,7 @@ The RPM library can also be used to setup an 'RPM sensor' that computes and logs
 
 .. note:: This feature ahs been removed in firmware versions after 4.1.
 
-:ref:`common-auxiliary-functions` page
---------------------------------------
 
-+----------------------+----------------------------+----------+---------+---------+
-| **RCx_OPTION value** | **Feature Description**    |**Copter**|**Plane**|**Rover**|
-+----------------------+----------------------------+----------+---------+---------+
-|        106           | Disable Airspeed Use       |    X     |    X    |    X    |
-+----------------------+----------------------------+----------+---------+---------+
-
-.. raw:: html
-
-   <table border="1" class="docutils">
-   <tbody>
-   <tr>
-   <th>Option</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td><strong>Disable Airspeed Use</strong></td>
-   <td>
-
-Forces Airspeed Use to be disabled for testing in the air.
-
-.. raw:: html
-
-   </td>
-   </tr>
-   </tbody>
-   </table>
-   
 :ref:`common-gpios` page
 ------------------------
 

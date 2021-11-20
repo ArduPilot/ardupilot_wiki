@@ -214,6 +214,8 @@ Supported Features
 |        105           | GPS Disable Yaw            |    X     |    X    |    X    |
 |                      | (testing only!)            |          |         |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        106           | Disable Airspeed Use       |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
 
 Intended as continuous PWM range control inputs:
 
@@ -892,7 +894,17 @@ Disables yaw for testing (advanced users only!)
 
    </td>
    </tr>
-      <tr>
+   <tr>
+   <td><strong>Disable Airspeed Use</strong></td>
+   <td>
+
+Forces Airspeed Use to be disabled for testing in the air.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
    <td><strong>ROLL Input</strong></td>
    <td>
 
