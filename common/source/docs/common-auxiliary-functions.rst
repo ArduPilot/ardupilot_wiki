@@ -216,6 +216,8 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        106           | Disable Airspeed Use       |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        107           | Enable Autotuning          |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
 
 Intended as continuous PWM range control inputs:
 
@@ -899,6 +901,16 @@ Disables yaw for testing (advanced users only!)
    <td>
 
 Forces Airspeed Use to be disabled for testing in the air.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Enable Autotuning</strong></td>
+   <td>
+
+Allows tuning without entering AUTOTUNE mode. ie place vehicle in LOITER/AUTO with stick mixing enabled, and can autotune while vehicle is loitering by using sticks.
 
 .. raw:: html
 
