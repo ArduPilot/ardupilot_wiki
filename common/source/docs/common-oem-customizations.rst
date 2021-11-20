@@ -51,4 +51,9 @@ This assumes that the OEM has setup the build environment (:ref:`building-the-co
 
 6. Now build as normal with OEM-MatekF405-Wing as the board name in the configuration. The defaults and scripts will be embedded appropriately.
 
+Alternative To Customizing hwdef.dat
+------------------------------------
+
+Instead of creating a separate branch and modifying the hwdef file, you can also insert LUA scripts or even informational files into the ROMFS of the build. Simply go to the local ardupilot repository's "build" folder and creating a sub-folder named "ROMFS_custom". Place your LUA scripts in a sub-folder in this directory, named "scripts" (i.e. the path ardupilot/build/ROMFS_custom/scripts). You can have other sub-folders for informational files and these will be included and view-able when examining the @ROMFS folder with MAVftp.
+
 [copywiki destination="plane,copter,rover,dev"]
