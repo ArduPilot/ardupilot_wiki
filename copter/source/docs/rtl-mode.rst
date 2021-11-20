@@ -114,4 +114,4 @@ Notes
    and maintain that altitude while returning.
 -  RTL uses :ref:`WPNAV_SPEED <WPNAV_SPEED>` to determine how fast it travels.
 -  Once the copter arrives at the home location the copter will pause
-   for ``RTL_LOIT_TIME`` miliseconds, timeout (AUTO_LAND), then land.
+   for ``RTL_LOIT_TIME`` milliseconds, timeout (AUTO_LAND), then land.
