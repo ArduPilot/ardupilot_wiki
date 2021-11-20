@@ -47,7 +47,7 @@ inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.
 -  2: starts a single EKF core using only the second IMU
 -  3: starts two separate EKF cores using the first and second IMUs respectively
 
-:ref:`EK3_PRIMARY<EK3_PRIMARY>`: selects which "core" or "lane" is used as the primary. A value of 0 selects the first IMU lane in the :ref:`EK3_IMU_MASK <EK3_IMU_MASK>`, 1 the second, etc. Be sure that the selected primary lane exists. See Affinity and Lane Switching below>
+:ref:`EK3_PRIMARY<EK3_PRIMARY>`: selects which "core" or "lane" is used as the primary. A value of 0 selects the first IMU lane in the :ref:`EK3_IMU_MASK <EK3_IMU_MASK>`, 1 the second, etc. Be sure that the selected primary lane exists. See Affinity and Lane Switching below.
 
 .. note::
 
