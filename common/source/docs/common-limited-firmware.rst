@@ -101,6 +101,11 @@ Additional exclusions for: Matek F405, Matek F405-Wing/F405-SE, OmnibusF4/F4Pro
 
       * enabled in OmnibusF4/F4Pro
 
+Also for MatekF405-Wing:
+
+   -  Wind Compensation
+   -  RunCam Control
+   -  Spektrum Telem
 
 Additional exclusions for: SuccexF4
 
