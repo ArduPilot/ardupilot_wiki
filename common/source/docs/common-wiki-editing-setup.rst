@@ -44,7 +44,7 @@ Be sure to keep your fork of the repository updated, both locally, and on GitHub
 Setup in Linux or Windows WSL
 -----------------------------
 
-Run the following command from the ardupilo_wiki directory you cloned:
+Run the following command from the ardupilot_wiki directory you cloned:
 
    .. code-block:: bash
 
