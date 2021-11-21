@@ -10,11 +10,14 @@ ArduPilot has introduced support for `Lua <https://www.lua.org/>`_ scripting.
 Scripting provides a safe, "sandboxed" environment for new behaviors to be added to the autopilot without modifying the core flight code.
 Scripts are stored on the SD card and run in parallel with the flight code.
 
-This page describes how to setup scripts on your autopilot, the scripting API, and some examples to help get started.
+This page describes how to setup scripts on your autopilot, the scripting API, scripting applets,and some examples to help get started.
+
+While scripting normally requires at least some LUA programming and editing, there are some **Applets** available which require no user editing and are ready to use. See links below.
 
 .. note::
 
     Lua scripting support was released with Copter-4.0, Rover-4.0, and Plane-3.9.11.
+
 
 Getting Started
 ===============
@@ -31,9 +34,9 @@ Getting Started
       :target: ../_images/scripting-MP-mavftp.png
       :width: 450px
 
-- Sample scripts can be found `here for stable Plane <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/examples>`__, `Copter <https://github.com/ArduPilot/ardupilot/tree/ArduCopter-stable/libraries/AP_Scripting/examples>`__ and `Rover <https://github.com/ArduPilot/ardupilot/tree/APMrover2-stable/libraries/AP_Scripting/examples>`__.  The latest development scripts can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__.
+- **Sample Scripts** can be found `here for stable Plane <https://github.com/ArduPilot/ardupilot/tree/ArduPlane-stable/libraries/AP_Scripting/examples>`__, `Copter <https://github.com/ArduPilot/ardupilot/tree/ArduCopter-stable/libraries/AP_Scripting/examples>`__ and `Rover <https://github.com/ArduPilot/ardupilot/tree/APMrover2-stable/libraries/AP_Scripting/examples>`__.  The latest development scripts can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples>`__.
 
-  - Scripts which require no user editing before use (Applets) can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these has a .md file of the same name detailing its capabilities, use, and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter.
+- **Applets** which are scripts that require no user editing before use, can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these has a .md file of the same name detailing its capabilities, use, and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter.
 
 - Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are available: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
 - When the autopilot is powered on it will load and start all scripts.
@@ -97,7 +100,13 @@ This is allowed to happen at all flight stages, even while the vehicle is armed 
 API Documentation
 =================
 
-The API documentation described here is not a complete list, but rather a work in progress. This list will be expanded upon in the near future. For a full list of the methods currently available, the `binding generator <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`_ source is the best reference currently available. See :ref:`Binding Description Method Syntax<common-lua-binding-syntax>` for more information on how to decode the methods shown there. ArduPilot uses Lua version 5.3.5.
+The API documentation described here is not a complete list, but rather some examples.  For a **full list of the methods** currently available, the LUA auto-generated document file is a complete list, It can be found `here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua>`__ and lists all the available bindings and their parameters.
+
+.. note:: If you use VScode for your editor, by installing `this <https://marketplace.visualstudio.com/items?itemName=sumneko.lua>`__ lua extension (version 2.4.1 only as of now), you can get this information integrated as suggestions and autocomplete in the editor. 
+
+For complete information on how a binding works the source can be found in the `binding generator descriptions <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/generator/description/bindings.desc>`_ .
+
+See :ref:`Binding Description Method Syntax<common-lua-binding-syntax>` for more information on how to decode the methods shown there. ArduPilot uses Lua version 5.3.5.
 
 Location
 ~~~~~~~~
