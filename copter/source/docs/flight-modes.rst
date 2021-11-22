@@ -161,7 +161,6 @@ Full list of flight modes
     Land <land-mode>
     Loiter <loiter-mode>
     PosHold <poshold-mode>
-    Position <ac2_positionmode>
     RTL <rtl-mode>
     Simple and Super Simple <simpleandsuper-simple-modes>
     Smart RTL (Return-to-Launch) <smartrtl-mode>

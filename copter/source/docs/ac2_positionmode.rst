@@ -1,8 +1,8 @@
 .. _ac2_positionmode:
 
-=============
-Position Mode
-=============
+=======================
+Archived: Position Mode
+=======================
 
 **Position mode** is the same as loiter mode, but with manual throttle
 control. This means that, in position mode, the copter maintains a
