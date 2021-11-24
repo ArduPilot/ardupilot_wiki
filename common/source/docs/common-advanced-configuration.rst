@@ -37,6 +37,7 @@ tuning options for the vehicle.
     Compass Setup (Advanced) <common-compass-setup-advanced>
     Compass-less Operation<common-compassless>
 [site wiki="copter"]
+    Copter Airspeed/Drag/Baro Compensation Estimation <airspeed-estimation>
     Current Limiting and Voltage Scaling <current-limiting-and-voltage-scaling>
 [/site]
 [site wiki="plane"]
