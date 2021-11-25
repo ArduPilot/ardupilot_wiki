@@ -45,6 +45,7 @@ tuning options for the vehicle.
 [/site]
     EKF (Extended Kalman Filter) <common-apm-navigation-extended-kalman-filter-overview>
     EKF Affinity & Lane Switching <common-ek3-affinity-lane-switching>
+    EKF Sources and Selection <common-ekf-sources>
 [site wiki="copter,rover"]
     Fence Failsafes  <common-geofencing-landing-page>
 [/site]
