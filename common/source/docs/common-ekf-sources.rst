@@ -25,4 +25,6 @@ Source Switching
 
 Three set of EKF position and velocity source parameters are provided which can be selected via an :ref:`RC switch <common-auxiliary-functions>` set to "90". Otherwise, the SRC1 set is used.
 
+This feature is especially helpful when using :ref:`common-non-gps-to-gps` .
+
 
