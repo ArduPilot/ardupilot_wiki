@@ -55,6 +55,7 @@ python3 -m pip install --user --upgrade beautifulsoup4
 # intall lua docs
 python3 -m pip install --user --upgrade luadoc
 python3 -m pip install --user --upgrade sphinxcontrib-luadomain
+python3 -m pip install --user --upgrade Jinja2
 cd modules/sphinx-lua
 python3 setup.py install --user
 cd ../..
