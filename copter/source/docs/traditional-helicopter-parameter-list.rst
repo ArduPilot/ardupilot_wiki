@@ -25,7 +25,7 @@ These set the cyclic max, allow bench testing of blade angle setup, and setting 
 - :ref:`H_SV_MAN<H_SV_MAN>`
 - :ref:`H_SV_TEST<H_SV_TEST>`
 - :ref:`H_HOVER_LEARN<H_HOVER_LEARN>`
-- :ref:`H_COLL_HOVER<H_COLL_HOVER>`
+- :ref:`H_COL_HOVER<H_COLL_HOVER>`
 
 Single Swashplate/Collective Setup
 ==================================
@@ -36,7 +36,6 @@ These setup the configuration of the swashplate and collective travel.
 - :ref:`H_SW_H3_ENABLE<H_SW_H3_ENABLE__AP_MotorsHeli_Single>`  Never manually set this parameter!
 - :ref:`H_COLYAW<H_COLYAW>`
 - :ref:`H_COL_MAX<H_COL_MAX>`
-- :ref:`H_COL_HOVER<H_COL_HOVER>`
 - ``H_COL_MID``
 - :ref:`H_COL_MIN<H_COL_MIN>`
 - :ref:`H_SW_COL_DIR<H_SW_COL_DIR__AP_MotorsHeli_Single>`
