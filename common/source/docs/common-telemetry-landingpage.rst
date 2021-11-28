@@ -39,7 +39,7 @@ Long Range
 .. toctree::
     :maxdepth: 1
 
-    Blicube RLINK P900 <https://github.com/ThomasVon2021/RLINK_P900>
+    Blicube RLINK P900 <common-blicube-rlink>
     CRSF Telemetry <common-crsf-telemetry>
     CUAV P8 Radio <common-cuav-p8>
     DragonLink <common-dragonlink-rc>
