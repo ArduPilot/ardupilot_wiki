@@ -174,3 +174,5 @@ Although this mostly works it is not recommended because it will not
 trigger if the receiver loses power or if the wires between the receiver
 and autopilot are broken.
 
+This will Cause rapid flight mode changes and a crash if you attempt to land beyond radio range. as the receiver looses signal it will change to RTL mode but as soon as it climbs and regains connection it will change back to your landing mode, it will rapidly cycle between the mode your attempting to land in and RTL until it runs out of battery or crashes.
+
