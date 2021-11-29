@@ -292,3 +292,36 @@ To accomplish this:
 In the last command, you need to specify the vehicle, new test name, and the name of the topic branch which contains your new test.
 
 After this has run you should know which commit broke the functionality being tested.  And you also have a new test for the regression suite which you should PR!
+
+
+Using with callgrind / kcachegrind
+==================================
+
+Valgrind is actually a collection of tools - mostly it is used with the "memcheck" tool to find memory read/write problems.
+
+Valgrind's callgrind tool allows for performance analysis.  autotest.py has built-in support for running ArduPilot under callgrind.
+
+::
+
+   pbarker@bluebottle:~/rc/ardupilot(tmp/kcachegrind)$ ./Tools/autotest/autotest.py build.Copter
+   lckfile='/home/pbarker/rc/buildlogs/autotest.lck'
+   step=build.Copter
+   Running: ("git rev-parse HEAD") in (/home/pbarker/rc/ardupilot)
+   .
+   .
+   bin/arducopter  4795907  173448  172104  5141459
+
+   Build commands will be stored in build/sitl/compile_commands.json
+   'build' finished successfully (15.974s)
+   pbarker@bluebottle:~/rc/ardupilot(tmp/kcachegrind)$ rm callgrind.out.*
+   pbarker@bluebottle:~/rc/ardupilot(tmp/kcachegrind)$ ./Tools/autotest/autotest.py --callgrind test.Copter.Callisto
+   lckfile='/home/pbarker/rc/buildlogs/autotest.lck'
+   step=test.Copter.Callisto
+   Running: ("git rev-parse HEAD") in (/home/pbarker/rc/ardupilot)
+   .
+   .
+   AT-0368.6: Stopping SITL
+   >>>> PASSED STEP: test.Copter.Callisto at Tue Nov 30 08:55:20 2021
+   pbarker@bluebottle:~/rc/ardupilot(tmp/kcachegrind)$ kcachegrind
+
+.. image:: ../images/kcachegrind.png
