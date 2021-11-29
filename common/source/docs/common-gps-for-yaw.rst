@@ -11,10 +11,15 @@ GPSs do not have RTK fix.
 
 GPSs from ArduPilot Partners that are known to work include:
 
-- :ref:`CUAV C-RTK 9P <common-cuav-c-rtk-9p-gps>`
+- :ref:`common-gps-ardusimple`
+- :ref:`common-cuav-c-rtk-9p-gps`
 - :ref:`Holybro H-RTK F9P GNSS <common-holybro-rtk-f9p>`
 - `mRobotics ZED-F9 GPS <https://store.mrobotics.io/category-s/109.htm>`__
-- :ref:`common-gps-ardusimple`
+- :ref:`common-synerex-mdu-2000`
+
+
+    Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
+    Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
 
 .. note::
 
