@@ -25,7 +25,7 @@ These set the cyclic max, allow bench testing of blade angle setup, and setting 
 - :ref:`H_SV_MAN<H_SV_MAN>`
 - :ref:`H_SV_TEST<H_SV_TEST>`
 - :ref:`H_HOVER_LEARN<H_HOVER_LEARN>`
-- :ref:`H_COL_HOVER<H_COLL_HOVER>`
+- :ref:`H_COL_HOVER<H_COL_HOVER>`
 
 Single Swashplate/Collective Setup
 ==================================
