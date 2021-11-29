@@ -242,10 +242,10 @@ The AutoTest network plumbing is complicated.
 From a test's perspective:
 
 self.mavproxy
-   An pexpect object used to interact with the MAVProxy process.  All MAVProxy commands are valid when sent to this object - e.g. ``set shownoise 0``
+   An pexpect object used to interact with the MAVProxy process.  All MAVProxy commands are valid when sent to this object - e.g. ``set shownoise 0``.  This is not always available - self.start_mavproxy() and self.stop_mavproxy() should be used by a test if it requires MAVProxy.
 
 self.mav
-   A mavudp object connected to a --output port provided by MAVProxy.  Traffic to this connection is not logged in the tlog.
+   A mavudp object connected to a the primary output port of the simulation (usually TCP port 5760).
 
 self.mav.mav
    The mavudp's MAVLink object.  Can be used to send messages via MAVLink to the SITL binary: ``self.mav.mav.system_time_send(time.time() * 1000000, 0)``
