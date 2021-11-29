@@ -19,7 +19,7 @@ equipment when you are using 2.4 Ghz onboard video transmitters, or use
 
 **AGL**: Altitude above ground level
 
-**AHRS**: Altitude Heading Reference System. An IMU (see below) plus the
+**AHRS**: Attitude Heading Reference System. An IMU (see below) plus the
 code to interpret the output from its sensors to establish a plane's XYZ
 and heading orientation.
 
