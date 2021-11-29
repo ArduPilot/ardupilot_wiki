@@ -11,33 +11,45 @@ positioning technologies:
    :target: ../_images/gps-landing-page.jpg
 
 
+GPS
+===
 .. toctree::
     :maxdepth: 1
     
-    ArduSimple RTK GPS <common-gps-ardusimple>
     Avionics Anonymous GNSS + Compass<common-avanon-gnss-mag>
     Avionics Anonymous Compass<common-avanon-mag>
     Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
-    CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV Neo v2 Pro UAVCAN GPS <common-cuav-neo-v2-pro>
     CUAV Neo 3 Pro UAVCAN GPS <common-cuav-neo-3-pro>
     CUAV Neo 3（M9N) GPS <common-cuav-neo-3>
-    Emlid Reach RTK Receiver <common-reach-rtk-receiver>
-    Hex Here+ RTK Receiver <common-here-plus-gps>
     Hex Here 2 UAVCAN GPS/Gyro/IMU/Baro <http://www.proficnc.com/all-products/152-gps-module.html>
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
     Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
     Holybro M8N (Pixhawk 4) GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
     Holybro M9N GPS Module <http://www.holybro.com/product/holybro-m9n-gps/>
-    Holybro RTK M8P Family <common-holybro-rtk-m8p>
-    Holybro RTK F9P Family <common-holybro-rtk-f9p>
     Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     mRo GPS, GPS+Compass,RTK, and UAVCAN modules <https://store.mrobotics.io/category-s/109.htm>
     mRo Locaton One UAVCAN GPS/Compass <common-mrobotics-location-one-gps>
+    Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
+
+RTK GPS
+=======
+
+These GPS can incorporate real time kinematic data, either internally generated or externally provided, to improve the precision of the position estimate from the normal GPS meter range down to the cenitmeter range. This increased precision also allows for "Moving Baseline" yaw estimates using two devices on a vehicle with certain RTK GPSes (F9P based). See :ref:`common-gps-for-yaw`.
+
+.. toctree::
+    :maxdepth: 1
+    
+    ArduSimple RTK GPS <common-gps-ardusimple>
+    CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
+    Emlid Reach RTK Receiver <common-reach-rtk-receiver>
+    Hex Here+ RTK Receiver <common-here-plus-gps>
+    Holybro RTK M8P Family <common-holybro-rtk-m8p>
+    Holybro RTK F9P Family <common-holybro-rtk-f9p>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
+    Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
     Trimble BD930 RTK GPS <common-gps-trimble>
-    Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
 
 .. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
 
