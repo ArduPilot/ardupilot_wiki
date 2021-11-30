@@ -34,7 +34,7 @@ Autopilot Connection
 
 Connect the solar panel, MPPT, battery and autopilot as shown above.
 
-Once the solar panels provide more than 12V the board's LED should flash green.  Initially it may be easiest to connect a 4S or 6S battery to the board's VIN port.
+Once the solar panel provides more than 12V the board's LED should flash green.  Initially it may be easiest to connect a 4S or 6S battery to the board's VIN port.
 
 Configuration
 -------------
@@ -55,6 +55,7 @@ Check the MPPT board's parameters by connecting through "SLCAN"
     :width: 450px
 
 - Press the "Menu" button to view or change some of the MPPT's settings
+
   - mppt.vout_set configures the maximum voltage from the VOUT pin.  This should be equal to the battery's voltage when fully charged.
   - mppt.dcdc_en configures the board's startup behaviour.  If "0" the MPPT will not charge the battery until the autopilot is armed.  If "1" the MPPT will always attempt to charge the battery
   - uavcan.node_id should normally be left at "0" to allow the autopilot to dynamically allocate the MPPT's UAVCAN node id but if multiple UAVCAN battery monitors or MPPTs are used you can manually set this to to some value between 0 and 127 (e.g. "50") and then set :ref:`BATT_SERIAL_NUM <BATT_SERIAL_NUM>` to the same number 
