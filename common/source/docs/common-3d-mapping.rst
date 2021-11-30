@@ -110,7 +110,7 @@ orthopotos, etc
 
 `Pix4d <https://www.pix4d.com/>`__ : 6500 euros or 260 euros per month
 
-`OpenDroneMap <http://opendronemap.github.io/odm/>`__ : open source and
+`OpenDroneMap <https://opendronemap.org/>`__ : open source and
 free! (`user intro video <https://www.youtube.com/watch?v=e2qp3o8caPs>`__)
 
 All of these software packages work in generally the same way in that
