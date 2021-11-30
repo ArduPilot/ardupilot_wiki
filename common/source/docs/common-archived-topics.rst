@@ -54,6 +54,8 @@ value to users with old hardware.
     Analog Sonar (AC3.1) <sonar>
     Tricopter Setup <archived-tricopter>
     Position mode <ac2_positionmode>
+    Advanced Tuning <tuning>
+    Basic Tuning <basic-tuning>
 [/site]
 [site wiki="rover"]
     Pre-4.0 Rover Avoidance <rover-object-avoidance>
