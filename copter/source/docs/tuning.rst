@@ -4,6 +4,10 @@
 Advanced Tuning
 ===============
 
+
+.. note:: this page has been superseded and is now ARCHIVED.
+
+
 This article provides an overview of how to tune various Copter parameters.
 
 Overview

@@ -4,6 +4,8 @@
 Basic Tuning
 ============
 
+.. note:: this page superseded and is now ARCHIVED
+
 This topic covers basic Roll and pitch and throttle tuning.
 
 Overview
