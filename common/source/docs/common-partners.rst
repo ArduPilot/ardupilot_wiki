@@ -445,6 +445,9 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: https://sky-drones.com/
 
-      -
+      -  .. image:: ../../../images/supporters/supporters_logo_sparkletech.jpg
+            :width: 250px
+            :align: center
+            :target: https://www.sparkleuav.com/
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
