@@ -19,26 +19,90 @@ ArduPilot is a free and open-source software project that includes:
 - The https://ardupilot.org website, https://discuss.ardupilot.org forum and this wiki
 - Server infrastructure dedicated to distributing software and firmware, and testing/building/distributing of the different variants for all the different supported platforms and options
 - A global community of users with an enormous variety of goals and expectations
-- A global team of developers with varying degrees of knowledge of the different aspects of the project’s code and of its management
+- A global team of developers with deep technical knowledge of the project’s code and of its management
 
-In order to continue providing, maintaining and improving the rich ArduPilot ecosystem, the Project relies heavily on generous donations of time from many people - but we also incur financial costs that must be covered.  Simplistically, meeting these costs is what the Partners Program achieves.
+In order to continue providing, maintaining and improving the rich
+ArduPilot ecosystem, the Project relies heavily on generous donations
+of time from many people - but we also incur financial costs that must
+be covered.  Simplistically, meeting these costs is what the Partners
+Program achieves.
+
+The partnerships we have with companies also help to guide the
+development of ArduPilot. We look to the partners to help us choose
+what features to prioritise, what documentation we need to work on and
+how we can best use the funds we have available to continue to make
+ArduPilot the best autopilot available.
+
+Partner Support
+===============
+
+One of the biggest benefits to a company of joining the partners
+program is the deep level of technical support that we can
+provide. For each partner we create a private discussion channel where
+the partner can ask questions, post logs for review or discuss
+features. We also have a shared channel that all partners can access
+to facilitate discussions between partners.
+
+The partners program funds 3 highly qualified support engineers to
+help support the needs of partners. These support engineers are not
+full time, but we do strive to provide very timely support for
+partners and we're proud of our track record of providing top quality
+support and technical advice.
+
+For more complex development tasks we may refer the partner to a dev
+team member who can provide more extensive paid consulting in a
+specialist area.
+
+Monthly Partners Call
+=====================
+
+In addition to the private partner support channel, we also hold a
+monthly meeting that all partners are invited to where the core
+development team presents an update on the development of ArduPilot
+and discusses priorities with partners. We use this meeting to hold
+in-depth technical discussions with partners on any topic of interest,
+plus it gives an opportunity for partners to announce new products.
 
 How does my company become a partner?
 =====================================
-We ask for an annual donation of at least `$1000 USD through PayPal <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BBF28AFAD58B2>`__  per year. For large companies or those who rely on ArduPilot as part of their core business, annual donations of `$5,000 <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BBF28AFAD58B2>`__ , `$10,000 <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BBF28AFAD58B2>`__  or more are greatly appreciated. If this is your first time, please email partners@ardupilot.org to express your desire to become a partner and include your company logo if you would like it to appear on :ref:`Partners page <common-partners>`.  We will send you a reminder in a year and if all goes well, you may choose to extend for another year.
 
-In some countries it is not possible to donate through PayPal in which case you can donate by Credit Card using `Click&Pledge <https://co.clickandpledge.com/advanced/default.aspx?wid=34115>`__.  Be sure to enter the amount in the ArduPilot section, other sections are for other `SPI projects <http://www.spi-inc.org/>`__. Other methods can be found on the `SPI donations page <http://www.spi-inc.org/donations/>`__.
+The first step in becoming a partner is to email the partners program
+coordinator at `partners@ardupilot.org
+<mailto:partners@ardupilot.org>`__ to start the application process.
 
-What do I get for becoming an ArduPilot Partner?
-================================================
-Beyond a warm feeling in your heart for helping a worthy project, we will coordinate an "Onboarding Meeting" and direct contact methods for the core Development Team members, so we can discuss your objectives, identify a unique engagement strategy for each Partner, and maintain good communication with you.  Your company can also attend the ArduPilot Partners monthly meeting.  This is a meeting held online, via our Mumble Server, on the first Wednesday or Thursday (depending upon your timezone) of each month.  It is attended by the core devs and presents an opportunity to get high-level updates on the project and influence how funds are spent (via proposals to the Funding Committee).  This update is recorded, and available to Partners shortly after it is held.  You may also find like-minded companies with whom you can cooperate in various ways.  
+You will receive a reply within a couple of days. After that the steps
+are:
+
+ - you will receive a link to a form to fill in giving details of your application
+ - you will need to agree to abide by the `ArduPilot Code of Conduct <https://ardupilot.org/dev/docs/developer-code-of-conduct.html>`__
+ - you will need to make a payment of a minimum of US$1000. For larger companies we strongly encourage larger contributions, with typical amounts of $5000 to $10000 for companies that rely on ArduPilot for their business. Details of payment methods are given below
+ - you will need to send a logo to put on our website, unless you specifically ask not to be included in the public list of partners
+ - once payment is received we will create the private support channel for your company (on `discord <https://ardupilot.org/discord>`__ or skype) and add you to the partners list
+ - the partners coordinator will setup a time to have an onboarding call to get to know you and to learn how we can best support your use of ArduPilot
+ - you can then add the `ArduPilot Partner logo <https://firmware.ardupilot.org/Tools/Logos/Partners/logos.html>`__ on your website to show your support for the ArduPilot project
+ - you will be added to the partners mailing list and partners discord channel
+ - you will receive an invitation to the monthly partners development call
+
+
+Payment Methods
+===============
+
+After you have filled in the partner application form the partners
+coordinator will ask you to make your payment. We can accept payments
+in a number of ways.
+
+ - the simplest and preferred method is via `paypal to the ArduPilot Foundation <https://ardupilot.org/donate>`__
+ - you can do a bank transfer directly to the ArduPilot Foundation Australian bank account. The partners coordinator can give you the bank account details on request
+ - if neither of the first two options are suitable, you can donate via the SPI click and pledge system at `Click&Pledge <https://co.clickandpledge.com/advanced/default.aspx?wid=34115>`__
+ - finally we can give you bank details for donating directly to our SPI US bank account
 
 How are collected funds spent?
 ==============================
-Funds are first used to cover fixed costs including servers to host the wiki, forum, autotest and build servers, other running expenses, plus a part-time employee who oversees code quality (amongst other things).
-Any remaining funds will be used to pay for documentation efforts, hardware/software costs for developers working on ArduPilot related enhancements, and subsidise the annual Developers Conference.  A Funding Committee of 3 people is voted on annually from within the Development Team to oversee and control financial matters. 
+Funds are first used to cover fixed costs including servers to host the wiki, forum, autotest and build servers and other running expenses. We also fund 3 part time highly qualified support engineers to help partners with support, and the partners coordinator position to ensure the partners program runs smoothly.
 
-I'm not a company, but I love your stuff, how can I help?
+A Funding Committee of 3 members is voted on annually from within the Development Team to oversee and control financial matters.
+
+I'm not a company, but I love your work, how can I help?
 =========================================================
 Please see our more general, :ref:`how-to-donate <common-donation>` page but in short, we accept donations of any amount from individuals as well.  Also please consider helping out with documentation, beta testing or code development.  Tell your friends and post videos of your successes with ArduPilot! 
 
