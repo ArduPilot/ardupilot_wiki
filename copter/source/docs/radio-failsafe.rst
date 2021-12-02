@@ -159,7 +159,7 @@ Test #5 (optional) : removing power from the receiver
 .. warning:: Unplug the autopilot so that it is powered down before reattaching
    the receiver's power
 
-Using the receiver to set the flight mode (not recommended)
+Using the receiver to set the flight mode (**DO NOT USE!**)
 ===========================================================
 
 Instead of setting up the receiver and autopilot as described
@@ -170,7 +170,5 @@ pwm value to 1700us which is "Flight Mode 5" which could then be set to
 RTL on the Mission Planner's Initial Setup >> Mandatory Hardware >>
 Flight Modes screen.
 
-Although this mostly works it is not recommended because it will not
-trigger if the receiver loses power or if the wires between the receiver
-and autopilot are broken.
+Although this appears to work it is strongly not recommended because it can result in situations that can lead to a crash. Since the autopilot has no way of knowing that an RC failsafe has occurred, undesired behavior can occur such as overriding other failsafes like low battery or GCS failsafes with mode changes.
 
