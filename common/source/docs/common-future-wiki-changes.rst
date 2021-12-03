@@ -40,6 +40,18 @@ The RPM library can also be used to setup an 'RPM sensor' that computes and logs
 
 change all ``BRD_IMU_TEMPTARG`` param names to :ref:`BRD_HEAT_TARG<BRD_HEAT_TARG>`
 
+:ref:`common-gps-for-yaw` page
+-----------------------
+under Hardware Setup change last bullet to read:
+
+- Serial GPS modules must be connected to ArduPilot via their UART1 connectors, UAVCAN modules via CAN, or interconnected per their manufacturer instructions.
+
+under Configuration change GPS type param bullets to read:
+
+- :ref:`GPS_TYPE <GPS_TYPE>` = 17 ("UBlox moving baseline base") or 22 (UAVCAN-MovingBaseline-Base), as appropriate.
+- :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover") or 23 (UAVCAN-MovingBaseline-Rover), as appropriate.
+
+
 Plane
 =====
 
@@ -107,9 +119,9 @@ The ENABLE column refers to the :ref:`Q_TAILSIT_ENABLE<Q_TAILSIT_ENABLE>` parame
 :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>`   Function
 =====================================   ======================
 7                                       Enable default airspeed EKF fusion for takeoff (Advanced users only)
-8                                       Remove TRIM_PITCH_CD offset on the GCS horizon to show pitch relative to AHRS trim (ie the attitude at which the flight controller was calibrated,unless manually changed)
-9                                       Remove TRIM_PITCH_CD on the OSD horizon to show pitch relative to AHRS trim (ie the attitude at which the flight controller was calibrated,unless manually changed)
-10                                      Adjust mid-throttle to be TRIM_THROTTLE in non-auto throttle modes except MANUAL,instead of midway between MAX and MIN stick values (note that the RCx_TRIM value for the throttle channel (x) MUST BE set to center stick value)
+8                                       Remove :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` offset on the GCS horizon to show pitch relative to AHRS trim (ie the attitude at which the flight controller was calibrated,unless manually changed)
+9                                       Remove :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` on the OSD horizon to show pitch relative to AHRS trim (ie the attitude at which the flight controller was calibrated,unless manually changed)
+10                                      Adjust mid-throttle to be :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` in non-auto throttle modes except MANUAL,instead of midway between MAX and MIN stick values (note that the RCx_TRIM value for the throttle channel (x) MUST BE set to center stick value)
 =====================================   ======================
 
 .. note:: Normally, TRIM_PITCH_CD is subtracted from the AHRS pitch so that the artificial horizon shows pitch as if the flight controller was calibrated with aircraft level position set at TRIM_PITCH_CD instead of flat.  This normally results in the artificial horizon indicating 0 pitch when in cruise at desired cruise speed. TRIM_PITCH_CD is the pitch trim that would be required in stabilized modes to maintain altitude at nominal cruise airspeed and throttle, and for most planes is 1-3 degrees positive, depending on the aircraft design (see :ref:`tuning-cruise`).
