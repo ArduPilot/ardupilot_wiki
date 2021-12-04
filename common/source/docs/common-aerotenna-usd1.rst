@@ -24,14 +24,25 @@ Units can be purchased thru `Ainstein <https://ainstein.ai/>`__
 Connecting to the Autopilot
 -----------------------------------
 
+The USD1 is available in serial and UAVCAN versions.
+
 For a serial connection you can use any spare Serial/UART port.  The example below shows how to connect to SERIAL4 as the first rangefinder.
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 38 (38400 baud)
--  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 11 (uLanding...this device's name as a prototype)
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 11 (USD1-Serial)
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 50
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 4500
--  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimetres from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+-  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimeters from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
+
+For the UAVCAN version, connect via UAVCAN to the autopilot and set the following parameters:
+
+-  :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` =  1 (first can port driver set to driver 1)
+-  :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>` =  7 (USD1 protocol for driver 1)
+-  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 33 (USD1_CAN)
+-  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 50
+-  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = 4500
+-  :ref:`RNGFND1_GNDCLEAR <RNGFND1_GNDCLEAR>` = 10 *or more accurately the distance in centimeters from the range finder to the ground when the vehicle is landed.  This value depends on how you have mounted the rangefinder.*
 
 
 Testing the sensor
