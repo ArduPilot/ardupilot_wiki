@@ -41,7 +41,8 @@ The RPM library can also be used to setup an 'RPM sensor' that computes and logs
 change all ``BRD_IMU_TEMPTARG`` param names to :ref:`BRD_HEAT_TARG<BRD_HEAT_TARG>`
 
 :ref:`common-gps-for-yaw` page
------------------------
+------------------------------
+
 under Hardware Setup change last bullet to read:
 
 - Serial GPS modules must be connected to ArduPilot via their UART1 connectors, UAVCAN modules via CAN, or interconnected per their manufacturer instructions.
