@@ -32,17 +32,59 @@ type of autopilot, and the battery capacity:
 -  **APM ver:** Autopilot (e.g. Pixhawk )
 -  **Battery Capacity:** Battery capacity in mAh
 
-The **Sensor** selection list offers a number of Power Modules
+The **Sensor** selection list offers a number of analog Power Modules
 (including popular models from 3DR and AttoPilot) which you can select
 to automatically configure your module. If your PM is not on the list
 then you can select **Other**, enter its recommended values, or 
 :ref:`perform a manual calibration <common-power-module-configuration-in-mission-planner_calibration>` as described below.
 
+Other Types of Power Modules/Smart Batteries
+--------------------------------------------
+
+In addition to normal analog voltage and current sensing modules, ArduPilot supports a wide range of SMBus, UAVCAN/CAN power modules and Smart Batteries. (In the following, the first monitor's parameters are shown. Each of the other monitors have their own parameters.)
+
+These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor. These can be set directly via the CONFIG/Parameter Tree tab for each battery monitor. Here are the monitor types supported:
+
+=================================     =============================
+:Ref:`BATT_MONITOR<BATT_MONITOR>`       TYPE
+=================================     =============================
+0 	                                    Disabled
+3 	                                    Analog Voltage Only
+4 	                                    Analog Voltage and Current
+5 	                                    Solo
+6 	                                    Bebop
+7 	                                    :ref:`SMBus-Generic<common-smart-battery-landingpage>`
+8 	                                    UAVCAN-BatteryInfo
+9 	                                    :ref:`ESC<common-dshot-blheli32-telemetry>`
+10 	                                    SumOfFollowing
+11 	                                    :ref:`FuelFlow <common-fuel-sensors>`
+12 	                                    :ref:`FuelLevelPWM <common-fuel-sensors>`
+13 	                                    :ref:`SMBUS-SUI3<common-smart-battery-landingpage>`
+14 	                                    :ref:`SMBUS-SUI6<common-smart-battery-landingpage>`
+15              	                    NeoDesign
+16              	                    SMBus-Maxell
+17 	                                    :ref:`Generator-Elec<common-ie650-fuelcell>`
+18 	                                    :ref:`Generator-Fuel<common-ie650-fuelcell>`
+19 	                                    :ref:`Rotoye<common-smart-battery-rotoye>`
+=================================     =============================
+
+Other Parameters
+----------------
+
+- :ref:`BATT_OPTIONS<BATT_OPTIONS>` bit 0, if set, will ignore the State Of Charge field in UAVCAN moniotrs, since some do not populate this field with meaningful data.
+- :ref:`BATT_SUM_MASK<BATT_SUM_MASK>` is used if the monitor is type "10" (SumofFollowing) to select which of the higher numbered monitors values will be summed and displayed for this monitor.
+- :ref:`BATT_ARM_VOLT<BATT_ARM_VOLT>` is the minimum voltage reported from this monitor that will allow arming to occur.
+- :ref:`BATT_ARM_MAH<BATT_ARM_MAH>` is the minimum capacity remaining reported from this monitor that will allow arming to occur.
+
+Failsafe
+--------
+
+Failsafes can be implemented for low battery/fuel conditions. For Plane see :ref:`plane:apms-failsafe-function`, for Copter see :ref:`copter:failsafe-battery`, or for Rover see :ref:`rover:rover-failsafes`
 
 .. _common-power-module-configuration-in-mission-planner_calibration:
 
-Calibration
------------
+Analog Monitor Calibration
+--------------------------
 
 The bottom section of the the *Battery Monitor* screen allows you to
 calibrate the voltage/current measurement in order to verify that the
