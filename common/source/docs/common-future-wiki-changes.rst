@@ -52,6 +52,20 @@ under Configuration change GPS type param bullets to read:
 - :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover") or 23 (UAVCAN-MovingBaseline-Rover), as appropriate.
 
 
+:ref:`common-power-module-configuration-in-mission-planner` page
+----------------------------------------------------------------
+
+Add to power monitors table:
+
+=================================     =============================
+:Ref:`BATT_MONITOR<BATT_MONITOR>`       TYPE
+=================================     =============================
+20 	                                    MPPT
+21 	                                    INA2XX
+22 	                                    LTC2946
+23 	                                    Torqeedo
+=================================     =============================
+
 Plane
 =====
 
