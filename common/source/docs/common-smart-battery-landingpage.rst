@@ -1,4 +1,4 @@
-.. _common-smartbattery-landingpage:
+.. _common-smart-battery-landingpage:
 
 ===============
 Smart Batteries
