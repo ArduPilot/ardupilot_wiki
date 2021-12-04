@@ -2,9 +2,9 @@
 
 [copywiki destination="copter,plane"]
 
-======================================
-Managing Gyro Noise with In-Flight FFT
-======================================
+========================================
+In-Flight FFT Based Harmonic Notch Setup
+========================================
 
 .. note:: This feature will be released in ArduPilot 4.1. Most likely, the feature will only be included in autopilots with 2MB of memory. Check your autopilot's :ref:`firmware limitations<common-limited_firmware>` after the release to determine if your autopilot has this feature.
 
