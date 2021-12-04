@@ -30,6 +30,7 @@ Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older v
 - Bootloader inclusion in main code base
 - EKF2 (EKF3 only)
 - LUA scripting support
+- In-Flight FFT control of Harmonic Notch
 
 Additional Exclusions
 =====================
