@@ -50,9 +50,8 @@ Preconditions
 
 .. warning::
 
-   You must use the newer
-         version for the git submodule init step. After that setp you can
-         use an older version.
+   -  You must use the newer version for the git submodule init step. 
+      After that step you can use an older version.
 
    -  Ensure that *git* is set to leave line endings untouched. Click on
       your new “Git Shell (or Bash)” Icon (the terminal was installed
