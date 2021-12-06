@@ -68,6 +68,10 @@ hal.console->printf(...);
 
 This output appears on the console.  For ChibiOS-based boards this is the first-defined SERIAL device.
 
+Catching memory overruns
+........................
+
+You can place guard regions around memory areas in the code to catch overruns by configuring the build using the ----enable-malloc-guard option on "waf configure" command prior to building the code for SITL
 
 .. toctree::
     :maxdepth: 1
