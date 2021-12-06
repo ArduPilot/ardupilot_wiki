@@ -37,6 +37,8 @@ You must arm your copter before you can engage AUTO mode. See
 :ref:`Arming the motors <arming_the_motors>` for details on how to arm
 your copter.
 
+.. note:: The :ref:`AUTO_OPTIONS<AUTO_OPTIONS>` parameter can be used to alter this behaviour, allowing arming while in AUTO mode, and/or, allowing a mission takeoff command to start upon AUTO mode entry, even if the throttle has not been raised.
+
 If starting the mission while the copter is on the ground the pilot
 should ensure the throttle is down, then switch to the Auto flight mode,
 then raise the throttle.  The moment that the throttle is raised above

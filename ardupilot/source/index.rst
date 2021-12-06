@@ -138,8 +138,8 @@ Community is what really sets ArduPilot apart from many other offerings in the m
 Developer Community
 ===================
 
-`Developers Chat <https://gitter.im/ArduPilot/ardupilot>`__
-Working on the code?  Ask questions of the team in Gitter.
+`Developers Chat <https://ardupilot.org/discord>`__
+Working on the code?  Ask questions of the team in Discord.
 
 `Developers Guide <https://ardupilot.org/dev/index.html>`__
 All things for those who want to get into the nuts and bolts of ArduPilot development can be found in the Developer Guide.

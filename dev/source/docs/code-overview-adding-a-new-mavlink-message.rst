@@ -129,7 +129,7 @@ so you will need to rebuild pymavlink to include your custom message.
    This can be done by setting the relevant ``SERIALn_PROTOCOL`` parameters (e.g. ``SERIAL1_PROTOCOL``) to 2 and starting Mavproxy with the ``--mav20`` argument.
 
 **Step #6:** Consider contributing your code back to the main code base.
-Discuss this with other developers on `Gitter <https://gitter.im/ardupilot/ardupilot>`__ and/or
+Discuss this with other developers on `Discord <https://ardupilot.org/discord>`__ and/or
 :ref:`raise a pull request <submitting-patches-back-to-master>`. If
 you raise a pull request it is best to separate the change into at least
 two separate commits. One commit for the changes to the .xml files

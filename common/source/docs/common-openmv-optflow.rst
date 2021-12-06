@@ -32,8 +32,6 @@ Connection to Autopilot
 - Set :ref:`FLOW_TYPE <FLOW_TYPE>` = 5 (MAVLink)
 - Set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 1 (MAVLink) if using Serial2/Telem2, if connected to another serial port use the corresponding SERIALx_PROTOCOL parameter
 - Set :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115
-- Set :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` = 80
-- Optionally set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 3 to force the EKF to only use the optical flow sensor and not use the GPS
 
 .. note::
 
@@ -66,4 +64,5 @@ Additional Notes
 Testing and Setup
 -----------------
 
-See :ref:`common-optical-flow-sensor-setup`
+- See :ref:`common-optical-flow-sensor-setup` for setup guides.
+- Note that recommended value for :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` or :ref:`EK3_FLOW_DELAY <EK3_FLOW_DELAY>` for this sensor is 80.

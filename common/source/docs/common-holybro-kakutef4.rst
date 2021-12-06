@@ -9,10 +9,6 @@ Holybro Kakute F4
 
 *above image and some content courtesy of* `Holybro <http://www.holybro.com/product/47>`__
 
-.. note::
-
-   Support for this board is available with Copter-3.6.0 (and higher)
-
 Specifications
 ==============
 
@@ -63,13 +59,18 @@ ESC telemetry input.
  - SERIAL2 -> UART1 (FrSky S.Port)
  - SERIAL3 -> UART4 (GPS)
  - SERIAL4 -> UART5 (ESC Telemetry, RX only)
- - SERIAL5 -> UART3 (spare, TX only)
+ - SERIAL5 -> UART3 (RX is used for RC input, TX only)
 
 RC Input
 ========
- 
-RC input is configured on the R6 (UART3_RX) pin. It supports all RC protocols.
- 
+
+The R3 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+
+- PPM/SBUS/DSM/SRXL attach to R3 pin.
+- FPort must use UART6 or UART4. See :ref:`common-FPort-receivers`.
+- CRSF must use UART6 or UART4 for RC and Telemetry. See :ref:`common-tbs-rc`.
+- SRXL2 must use UART6 or UART4 for both RC and Telemetry. See :ref:`common-spektrum-rc` .
+
 FrSky Telemetry
 ===============
 
@@ -126,6 +127,12 @@ Logging
 =======
 
 The KakuteF4 supports on-board data flash logging.
+
+Firmware
+========
+
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
+"KakuteF4".
 
 Loading ArduPilot onto the board
 ================================

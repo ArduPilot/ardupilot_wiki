@@ -8,7 +8,7 @@ software/hardware issues). If it breaches the fence the failsafe will be
 activated, returning it to the home point.
 
 It is represented as an arbitrary polygon of waypoints around the flying
-area in the fixed-wing APM. In Arducopter, it is a radius and altitude
+area in a fixed-wing vehicle. In Arducopter, it is a radius and altitude
 parameter(s) representing a cylinder around the flying area.
 
 A fence menu is available on the GUI console.
@@ -16,7 +16,7 @@ A fence menu is available on the GUI console.
 fence list
 ==========
 
-View the currently loaded geofence on the APM.
+View the currently loaded geofence on the autopilot.
 
 fence load
 ==========

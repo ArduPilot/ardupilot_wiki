@@ -32,7 +32,7 @@ Running the Examples
 
 .. warning::
 
-   It is always important to run Webots before ArduPilot's SITL , otherwise the socket connection will not establish.
+   It is important to run Webots before ArduPilot's SITL , otherwise the socket connection may not establish.
 
 
 
@@ -64,19 +64,7 @@ The following parameters are important to be set in WorldInfo
 
 - Field *"basicTimeStep"* = 1 or 2
 
-- Field *"northDirection"* needs to be updated when using `OpenStreetMap <https://cyberbotics.com/doc/doc/openstreetmap-importer>`__
-
 - Field *"physics"* is used to attach the physics plugin file *"sitl_physics_env"*  which is used to simulate wind and drag in a very simple way.
-
-
-Supervisor RobotSupervisor Robot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is a technical tweak in Webots. You need to make your robot as a supervisor to be able to retrieve important information such as *robot velocity*, and *northDirection*.
-So if you are using a single robot it is safe to make it the supervisor as in the vehicle example.
-For multiple robots you need to create a supervisor robot that collects this info for all robots and forwards it to each robot. This is done by creating a dummy robot that is named "supervisor_sync".
-
-Other vehicles in the examples use a dummy supervisor robot to allow you to easily add multiple robots in the world without any changes.
-So you can use this robot as it is, in any new world without changes.
 
 
 Vehicle Robot

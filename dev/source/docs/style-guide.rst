@@ -410,7 +410,6 @@ Parameter with multiple words should have the words ordered from left to right b
 Re-use words from other parameters if possible instead of creating new words.  For example we use "MIN" and "MAX" so these should be used instead of equivalent words like "TOP" and "BOTTOM".
 
 Parameters should be in the standard unit (meters for distances, degrees for angles) but in cases where they are not the unit may (optionally) be appended to the end.  This is definitely not a requirement but is up to the developer.
-Re-use words from other parameters if possible instead of creating new words.  For eample we use "MIN" and "MAX" so these should be used instead of equivalent words like "TOP" and "BOTTOM".
 
 The total length of the parameter name must be 16 characters or less.
 
@@ -500,3 +499,113 @@ Use multiplication rather than division where possible:
    const float foo_m = foo_cm / 100;
 
 Multiplications typically take fewer cycles to compute than divisions.
+
+
+ArduPilot Design Decisions
+==========================
+
+Several design decisions have been in the ArduPilot codebase to accomodate its embedded nature which may surprise some programmers.
+
+Implicit Zeroing of Memory
+--------------------------
+
+Implicitly zeroing of memory gives us more consistent (even-if-bad) behaviour, and saves us flash space as most places in the code don't need to initialise the memory they've allocated.  The only memory you MUST zero is stack-stored variables - locals, asprintf and the like.
+
+   - new and malloc both zero their memory
+   - bss-stored data does not need to be zeroed (so no members in a singleton object need to be zeroed
+   - Vectors are special and zero themelves - even on the stack
+   - static variables within a function (which we generally frown upon) do not need to be zeroed
+
+
+Bit fields are generally frowned upon
+-------------------------------------
+
+Using bit fields reduces RAM usage but can considerably increase flash usage, as to extract a boolean truth value from a bit field requires more machine instructions.  If the variable is frequently accessed then this can be a LOT of flash.
+
+**Not preferred:**
+
+::
+
+   class Foo() {
+   private:
+       bool should_fly  : 1;
+       bool should_grow : 1;
+   };
+
+**Preferred:**
+
+::
+
+   class Foo() {
+   private:
+       bool should_fly;
+       bool should_grow;
+   };
+
+
+Initialise member variables in header files rather than in constructors
+-----------------------------------------------------------------------
+
+Where a member isn't dependent on a constructor parameter, we prefer to do in-class-definition initialisation.
+
+**Not preferred:**
+
+::
+
+    Foo::Foo() :
+      bar(37),
+      baz(BAZ_DEFAULT)
+    {
+      ...
+    }
+
+**Preferred:**
+
+::
+
+   class Foo() {
+   public:
+   ...
+   private:
+     uint8_t bar = 37;
+     float baz = BAZ_DEFAULT;
+   };
+
+
+No Standard Library
+-------------------
+
+For efficiency reasons, ArduPilot doesn't use the C standard library (``std::``).  We also prefer to use functions which are consistent across platforms to ease support (not using 64-bit maths on platforms that support it is useful, for example).
+
+This means no ``std::vector``, no ``std::string`` and no ``std::unordered_map``, for example.
+
+We try to avoid library calls that handle their own allocations - but if you really want to go that way, including the header to get these isn't sufficient - you will need to fiddle with the build system to link ``std`` in.
+
+Alternatives to ``std::vector``
+...............................
+
+Most of the time fixed-length arrays are used.
+
+``AP_ExpandingArray`` may be an option for you - but expanding in-flight might be a bad thing.
+
+Linked lists are used on some places.
+
+
+Alternatives to ``std::string``
+...............................
+
+``asprintf`` is used in some places.  Generally simply using ``char*`` is adequate.
+
+Alternatives to ``std::unordered_map``
+......................................
+
+Create an array of structs and iterate it.  This is done when turning a mavlink id into an ap_message id, for example.
+
+Create an ordered array of structs and bisect-search it.
+
+Create an array of structs with a perfect hash.
+
+No Dead Code
+------------
+
+We don't keep dead code in ArduPilot.  If code is unused, it should be removed - not just commented out.  This is a general rule and not universally adhered to.

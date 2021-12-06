@@ -27,9 +27,6 @@ These alternatives may work but this has not been confirmed:
 
 - `JJRC H62 Flow sensor <https://www.banggood.com/JJRC-H62-RC-Quadcopter-Spare-Parts-Optical-Current-Board-H62-03-p-1302982.html>`__
 
-This similar flow sensor is not supported (yet):
-
-- `UPIXELS UP-Flow sensor <https://www.aliexpress.com/item/UPIXELS-UP-FLOW-Optical-Flow-Module-FPV-Drone-Hovering-Altitude-Hold-Control-Optical-Flow-Sensor-For/32969297064.html>`__
 
 Connection to Autopilot
 -------------------------------
@@ -41,10 +38,9 @@ Connection to Autopilot
 - The flow sensor should be mounted on the underside of the copter with the camera lens pointing downwards.  The side of the sensor with the "V2.0" label should be towards the front of the vehicle.  The image above is incorrect because the autopilot's arrow is pointing down while the sensor's "V2.0" label is close to the top.
 - Connect the sensor's TX and VSS (aka GND) pins to one of the autopilot's serial ports.  In the image above the sensor is connected to a Pixhawk's Telem2 port
 - Connect the sensor's VDD (aka VCC or 3.3V) to a 3.3V power source.  In the above diagram the Pixhawk's Switch port is used but another alternative would be the SPKT/DSM port's power pin
+
 - Set :ref:`FLOW_TYPE <FLOW_TYPE>` = 4
 - Set :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 18 if using Serial2/Telem2, if connected to another serial port use the corresponding SERIALx_PROTOCOL parameter
-- Set :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` = 80
-- Optionally set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` = 3 to force the EKF to only use the optical flow sensor and not use the GPS
 
 Additional Notes
 -----------------
@@ -57,4 +53,5 @@ Additional Notes
 Testing and Setup
 -----------------
 
-See :ref:`common-optical-flow-sensor-setup`
+- See :ref:`common-optical-flow-sensor-setup` for setup guides.
+- Note that recommended value for :ref:`EK2_FLOW_DELAY <EK2_FLOW_DELAY>` or :ref:`EK3_FLOW_DELAY <EK3_FLOW_DELAY>` for this sensor is 80. 

@@ -9,13 +9,13 @@ Accelerometer Calibration
 This article shows how to perform basic accelerometer calibration (using
 *Mission Planner*).
 
-.. note::
+.. attention::
 
    Accelerometer calibration is mandatory in ArduPilot.
 
-.. note::
+.. important::
 
-   Accelerometer calibration cannot be performed while vehicle is armed
+   Accelerometer calibration cannot be performed while vehicle is armed.
 
 Calibration steps
 =================
@@ -43,31 +43,30 @@ Calibration steps
 
       Accelerometer Calibration Positions (Copter)
 
-   .. tip::
+   It is important that the vehicle is kept still immediately after pressing the key for each step. This is more important than getting the angle exactly right, ie. left being 90deg to horizontal, etc. Except for the first "LEVEL", the positions can be within 20 degs of being exact. Being still in each position as you press the key is much more important.
 
-         -  It is important that the vehicle is kept still immediately after
-            pressing the key for each step.
-         -  You may need to calibrate the board before it is mounted if the
-            size/shape of the vehicle makes this difficult.
-         -  The level position is the most important to get right as this will
-            be the attitude that your controller considers level while flying.
+   -  You may need to calibrate the board before it is mounted if the size/shape of the vehicle makes this difficult.
+   -  The level position is the most important to get right as this will be the attitude that your controller considers level while flying.
 
 [site wiki="plane"]
-    For planes, often the optimum "level" position is actually done with the nose raised a few degrees (but the wings perfectly level). This is explained in the diagrams below. Most planes fly with a few degrees of Angle of Attack (AOA)and while many planes will have some Angle of Incidence built in, some do not, and some need a little higher AOA to fly at lower cruise speeds. If the level step of calibration is done with the plane's fuselage line level, then first flights will be safe, but cruise may be a bit fast. You can either set a few extra degrees nose up when doing the level step of calibration, or  decide after first flights if AOA needs to be increased for your desired cruise speed/throttle. If so, then you may redo the level only step using the  ``Calibrate Level`` button on the page.
+   .. tip:: For planes, the "level" angle for pitch is important for steady altitude flight. See :ref:`tuning-cruise` for more details.
 
-    .. image:: ../../../images/AOA.jpg
+   The :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` parameter will add "nose-down" trim when the throttle stick is lowered in pilot throttle controlled and stabilized modes, such as FBWA, to prevent the autopilot from holding the nose up as the plane slows down and potentially causing a stall. This can be tested, at altitude, in FBWA mode by moving the throttle to idle and checking that there is sufficient airspeed in a turn to avoid stalling. Be prepared to recover from a stall! Increase the value of :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>`, if necessary.
 
+   .. tip:: For small planes or gliders, :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` often needs to be set more than the default value of 2 degrees.
 
  [/site]
 
-- Proceed through the required positions ,using the the **Click when Done** button after each position is reached.
+- Proceed through the required positions, using the **Click when Done** button once each position is reached and held still.
 
-- When you've completed the calibration process, Mission Planner will display "Calibration Successful!" as shown below.
+- When you have completed the calibration process, Mission Planner will display "Calibration Successful!" as shown below.
 
    .. figure:: ../../../images/mp_calibration_successful.png
       :target: ../_images/mp_calibration_successful.png
 
       Mission Planner: Calibration Successful
+
+.. note:: If your autopilot has a built-in IMU heater, then it is recommended that the :ref:`common-imutempcal` also be done. Some autopilots have this calibration done at the factory in which case, this calibration need not be done.
 
 
 Video demonstration (Copter)

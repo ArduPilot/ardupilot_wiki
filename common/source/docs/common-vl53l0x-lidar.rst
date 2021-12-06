@@ -4,7 +4,7 @@
 ST VL53L0X / VL53L1X Lidar
 ==========================
 
-The `VL53L0X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__ lidar is a very small, affordable but relatively short range (2m range) time-of-flight lidar
+The `VL53L0X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html>`__ & `VL53L1X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html>`__ lidar are very small, affordable but relatively short range (2m for VL53L0X & 4m for VL53L1X) time-of-flight lidars
 
 .. image:: ../../../images/vl53l0x.jpg
 
@@ -13,7 +13,7 @@ The `VL53L0X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l0x.html
 .. note::
 
    Support for this lidar was first made available in available in Copter-3.6, Rover-3.3, and Plane-3.9.
-   Support the 4m `ST VL53L1X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html>`__ will be released with Copter-4.0.
+   Support the 4m `ST VL53L1X <https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html>`__ was released with Copter-4.0.
 
 
 .. note::
@@ -25,6 +25,7 @@ Where to Buy
 
 - `Pololu <https://www.pololu.com/product/2490>`__ (VL53L0X, 2m)
 - `Adafruit <https://www.adafruit.com/product/3317>`__ (VL53L0X, 2m)
+- `Holybro <http://www.holybro.com/product/vl53l1x/>`__ (VL53L1X, 4m)
 
 Connecting to the Autopilot
 -----------------------------------

@@ -12,7 +12,11 @@ This topic covers the wiring/connection of basic/mandatory peripherals to the au
 GPS/Compass
 -----------
 
-GPS is mandatory in all vehicles. Compass is mandatory for Copter and Rover and QuadPlane types of Plane, but not for Conventional Planes, however it is highly recommended.
+GPS is usually mandatory in all vehicles, except when some other position determining :ref:`sensor or system is used <common-non-gps-navigation-landing-page>` . Compass is also usually required for Copter and Rover and QuadPlane types of Plane (see :ref:`common-compassless` for compass alternatives), but not for Conventional Planes, however it is recommended.
+
+.. note:: Some Copter and Rover modes can operate without GPS and Compass (see vehicle documentation for its flight modes).
+
+Multiple GPS and/or Compasses can be used in the system, see :ref:`common-gps-blending`, :ref:`common-compass-setup-advanced`, and :ref:`common-ek3-affinity-lane-switching` for more information
 
 .. image:: ../../../images/gps-connection.jpg
   :width: 450px
@@ -21,7 +25,10 @@ GPS is mandatory in all vehicles. Compass is mandatory for Copter and Rover and 
 
 .. note:: Usually GPS is attached to the logical Serial Port 3 by default in ArduPilot. However, which  physical UART is assigned to ArduPilot's Serial Port 3 on the autopilot is documented in the autopilots :ref:`documentation <common-autopilots>`
 
-As an wiring example, the topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` shows how to connect to a Pixhawk autopilot and includes additional configuration and mounting information.
+.. note:: It is important that a GPS be connected to the first SERIALx port that has its ``SERIALx_PROTOCOL`` parameter set to "5" (GPS) since it will stop searching for GPS during bootup if not found on the first port configured for GPS protocol.
+
+
+As a wiring example, the topic :ref:`3DR UBlox GPS + Compass Module <common-installing-3dr-ublox-gps-compass-module>` shows how to connect to a Pixhawk autopilot and includes additional configuration and mounting information.
 
 RC input
 --------
@@ -37,6 +44,7 @@ Ardupilot autodetects the following serial RC receiver protocols:
    #. PPM remote control (R/C) receivers
    #. SBus receivers
    #. FPort receivers (see :ref:`common-FPort-receivers` )
+   #. Crossfire (CRSF) receivers (see :ref:`common-tbs-rc`, needs full UART connection for Telem)
    #. Spektrum DSM and DSM2 receivers
    #. Spektrum DSM-X Satellite receivers
    #. IBUS receivers
@@ -45,7 +53,7 @@ Ardupilot autodetects the following serial RC receiver protocols:
 For traditional single-wire-per-channel (PWM) receivers a PPM encoder
 can be used to convert the receiver outputs to PPM. 
 
-.. tip:: As of Ardupilot 4.0 versions of firmware, any autopilot UART may be used as an input for an RC receiver, instead of the designated RCin or SBUS input pin, by setting that port's ``SERIALx_PROTOCOL`` to 23. However, some serial protocols require inversion (SBUS,FPort) and the UART must be capable of using the ``SERIALx_OPTIONS`` parameter to invert the RX input, otherwise, an external inverter will be required. This also allows a second RC receiver to be attached to the autopilot for redundancy. If the first receiver (first detected valid after boot) fails, then the second will be used. Note that whatever RC input ranges and trims were calibrated will be used for the second when it becomes active. Both receivers MUST be set to send no pulses in failsafe for this to work properly.
+.. tip:: As of Ardupilot 4.0 versions of firmware, any autopilot UART may be used as an input for an RC receiver, instead of the designated RCin or SBUS input pin, by setting that port's ``SERIALx_PROTOCOL`` to 23. However, some serial protocols require inversion (SBUS,FPort) and the UART must be capable of using the ``SERIALx_OPTIONS`` parameter to invert the RX input, otherwise, an external inverter will be required. This also allows a second RC receiver to be attached to the autopilot for redundancy. If the first receiver (first detected valid after boot) fails, then the second will be used. Note that whatever RC input ranges and trims were calibrated will be used for the second when it becomes active. Both receivers MUST be set to send no pulses in failsafe for this to work properly. :ref:`RC_OPTIONS<RC_OPTIONS>` bit 10 must be set also.
 
 .. tip::
 
@@ -72,7 +80,7 @@ This distinction is important, since AUX outputs(and OUTPUTs from autopilots wit
 
 Often these outputs are provided on 3 pin connector strips supplying or distributing servo power and ground, in addition to the individual output signals. This power is usually provided externally, such as by the ESC or a BEC, although some autopilots provide this power from internal regulators.
 
-An connection example for Rover
+A connection example for Rover
 
 .. image:: ../../../images/servo-motor-connection.jpg
   :width: 450px
@@ -120,7 +128,7 @@ The skid-steer output function parameters are used to configure vehicles that ha
 Connect buzzer and safety switch
 ================================
 
-The buzzer and safety switch button are optional but recommended, if the autopilot provides those connections (many closed source autopilots do not). Connect to the BUZZER and SWITCH ports as shown.
+The buzzer and safety switch button are optional, but useful for some configurations. Not all autopilots provide these connections. A BUZZER and SWITCH can be connected to their respective ports as shown.
 
 .. image:: ../../../images/safetysw-connection.jpg
   :width: 450px

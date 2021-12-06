@@ -22,12 +22,12 @@ Installing ArduPilot to these autopilot involves:
 [copywiki destination="copter,plane,rover,planner"]
 
 Download driver and flashing tool
----------------------------------
+=================================
 
 The `STM32CubeProgrammer <https://www.st.com/en/development-tools/stm32cubeprog.html>`__ will install the required DFU (direct firmware upload) drivers and can be used to flash the firmware to autopilots in DFU mode. This is available for Windows, Linux, and MacOS systems. Download and install this program. You may be required to also install `JAVA <https://java.com/en/download/>`__ in order to setup this program.
 
 Download the ArduPilot firmware
--------------------------------
+===============================
 
 - Download the ArduPilot firmware for your board from `firmware.ardupilot.org <https://firmware.ardupilot.org/>`__.  You can normally find the appropriate firmware by doing the following:
 
@@ -37,8 +37,21 @@ Download the ArduPilot firmware
   - look for the directory with the name that most closely matches the autopilot
   - download the "arduXXX_with_bl.hex" file clicking on it. It will usually be saved in your Downloads folder.
 
+Using Beta and Developer Versions
+=================================
+
+Beta
+----
+
+Prior to ``Stable`` releases, a ``Beta`` version or versions get released. These may be used if you wish to try newer features or help the developers further flight test the code. Since they are "beta" versions, there possibly still may be bugs (although this is possible even in Stable firmware). However, it has been tested by the development team, and already flight tested. This release allows a wider user base to final test the firmware before its release as ``Stable``. Experienced ArduPilot users are encouraged to test fly this firmware and provide feedback.
+
+Latest Developer Version
+------------------------
+
+This reflects the current state of the development branch of the ArduPilot code. It has been reviewed by the development team, passed all automated test suites,  and in most cases, if significant changes have been made, test flown. This code gets built daily and is available for testing by experienced users. This corresponds to an "alpha" release, and may have bugs, although very rarely "crash inducing". Very shortly after an addition that changes or introduces a feature is added, the :ref:`Upcoming Features <common-master-features>` section of the Wiki is updated with information about the addition or change.
+
 Upload the firmware to autopilot
---------------------------------
+================================
 
 - Hold down the board's DFU button or temporarily bridge its "BOOT" pins, and plug in a USB cable (attached to your PC). Release button or unbridge once powered.
 - Open the windows device manager and look under "Universal Serial Bus devices" for "STM32 BOOTLOADER" to confirm that the board is in DFU mode.

@@ -36,6 +36,7 @@ By default the protocols/expected peripheral for each port is shown below:
 |Serial 7         | USER port, disabled                |
 +-----------------+------------------------------------+
 
+
 Often cased autopilots will have the designation "TELEM1", "GPS", etc. marked on the case, otherwise, the autopilot :ref:`description page<common-autopilots>`  should provide the mapping to SERIALx Port
 
 SERIALx_PROTOCOL
@@ -188,7 +189,7 @@ SBus Servo, See :ref:`common-sbus-output`
    <td>16</td>
    <td>
 
-ESC Telemetry, See :ref:`common-dshot` 
+ESC Telemetry, See :ref:`common-dshot-blheli32-telemetry` 
 
 .. raw:: html
 
@@ -273,11 +274,131 @@ MegaSquirt EFI, see `MegaSquirt EFI <http://megasquirt.info/>`__
 
    </td>
    </tr>
-      <tr>
+   <tr>
    <td>25</td>
    <td>
 
 LTM Telemetry, see :ref:`LTM Telemetry <common-ltm-telemetry>` 
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>26</td>
+   <td>
+
+Runcam see :ref:`common-camera-runcam` 
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>27</td>
+   <td>
+
+HOTT Telem see :ref:`common-hott-telemetry`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>28</td>
+   <td>
+
+Scripting see :ref:`common-lua-scripts` 
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>29</td>
+   <td>
+
+Crossfire Receiver :ref:`common-tbs-rc`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>30</td>
+   <td>
+
+Generator see :ref:`common-richenpower-generator`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>31</td>
+   <td>
+
+Winch
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>32</td>
+   <td>
+
+MSP Telemetry see :ref:`common-msp-overview`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>33</td>
+   <td>
+
+DJI FPV telemetry see :ref:`common-msp-osd-overview`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>34</td>
+   <td>
+
+Serial Airspeed sensor
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>35</td>
+   <td>
+
+Serial ADSB receiver
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td>36</td>
+   <td>
+
+External AHRS
+
+.. raw:: html
+
+   </td>
+   </tr>
+    <tr>
+   <td>37</td>
+   <td>
+
+Smart Audio
 
 .. raw:: html
 
@@ -301,5 +422,12 @@ Bitmask Options
 - if bit 1 is set, the TX data is inverted before outputting.
 - if bit 2 is set, then HalfDuplex operation using the TX pin is implemented.
 - if bit 3 is set, then the TX and RX pins are effectively swapped internally.
+- if bit 4 is set, then the RX pin has a weak pull down resistor activated.
+- if bit 5 is set, then the TX pin has a weak pull down resistor activated.
+- if bit 6 is set, then the RX pin has a weak pull up resistor activated.
+- if bit 7 is set, then the TX pin has a weak pull up resistor activated.
+- if bit 8 is set, then the RX has no DMA activated (assuming DMA is available on this UART)
+- if bit 9 is set, then the TX has no DMA activated (assuming DMA is available on this UART)
+- if bit 10 is set, then MAVLink forwarding will not be active on this UART port.
 
 .. note:: HalfDuplex is supported on all ChiBiOS based autopilots, but all other options are only supported on boards with F7 or H7 microprocessors.

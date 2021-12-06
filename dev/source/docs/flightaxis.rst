@@ -52,4 +52,4 @@ This is illustrated below:
 
 This basically inserts ArduPilot SITL simulation of the firmware between the pilot and RealFlights inputs.
 
-.. note:: Presently, FlightAxis can transfer the first 8 RX channels from RealFlight to SITL RC inputs, and the first 12 SERVO outputs from SITL to RealFlights RX channel inputs. This will be expanded to 12 RX channels from RealFlight in the future.
+.. note:: Presently, FlightAxis can transfer the first 12 RX channels from RealFlight to SITL RC inputs, and the first 12 SERVO outputs from SITL to RealFlights RX channel inputs.

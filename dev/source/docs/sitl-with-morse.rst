@@ -14,18 +14,34 @@ environment to create a complete robotics platform.
 ArduPilot has a Morse SITL simulation backend that allows ArduPilot to
 control vehicles created within Morse.
 
+.. warning::
+
+    Morse is no longer maintained so we recommend developers use :ref:`AirSim <sitl-with-airsim>` or :ref:`Webots <sitl-with-webots>`.
+
 .. note::
 
-    Morse has only been tested to on Linux/Ubuntu environments
+    Morse has only been tested on Linux/Ubuntu environments
 
 Installing Morse
 ================
 
-`Official instuctions can be found on openrobots.com <http://www.openrobots.org/morse/doc/stable/user/installation.html>`__ but for recent Ubuntu Linux installs all you need is
+`Official instructions can be found on openrobots.com <http://www.openrobots.org/morse/doc/stable/user/installation.html>`__. Morse uses the Blender Game Engine API to render the build scripts. If the user is installing Morse on Ubuntu 20.04 or later, install the software from the source(manual installation) as described on the Morse installation page(mentioned above). But for older Ubuntu  installs all you need is
 
 ::
 
    sudo apt install morse-simulator
+
+Checking the blender version
+----------------------------
+As mentioned above, Morse relies on the Blender Game Engine for rendering the simulations. Given the fact that the newer Blender versions (**v2.80** and above) have discontinued the support for the game engine, users are requested to ensure that the installed `Blender version <https://download.blender.org/release/>`__ ranges between **v2.65**  to **v2.73** (Official version limit stated by Morse).
+
+.. note::
+
+  Blender **v2.74** - **v2.79** are also valid versions, as these versions also provide access to a stable Blender Game Engine. The below image shows Ardupilot's quadcopter Morse simulation running with Blender 2.76. 
+.. image:: ../images/morse-with-blender.jpg
+    :target: ../_images/morse-with-blender.jpg
+
+
 
 Builder Scripts
 ===============

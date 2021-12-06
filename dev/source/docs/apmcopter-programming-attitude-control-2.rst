@@ -4,9 +4,13 @@
 Copter Attitude Control
 =======================
 
-Below is a high level diagram showing how the attitude control is done for each axis.
-The control is done using a P controller to convert the angle error (the difference between the target angle and actual angle) into a desired rotation rate followed by a PID controller to convert the rotate rate error into a high level motor command. 
-The "square root controller" portion of the diagram shows the curved used with the angle control's P controller.
+Below is a high level diagram showing how the attitude control is done.
+
+.. image:: ../images/copter-v4-small-attitude-PIDs.png
+    :target: ../_images/copter-v4-small-attitude-PIDs.png
+
+Below describes what is done for each axis.  A P controller converts the angle error (the difference between the target angle and actual angle) into a desired rotation rate followed by a PID controller to convert the rotate rate error into a high level motor command.
+The "square root controller" portion of the diagram shows the curve used with the angle control's P controller.
 
 .. image:: ../images/Copter_CodeOverview_AttitudeControlPID.png
     :target: ../_images/Copter_CodeOverview_AttitudeControlPID.png
@@ -22,19 +26,19 @@ happens:
 -  the top level flight-mode.cpp's "update_flight_mode()" function is
    called.  This function checks the vehicle's flight mode (ie.
    "control_mode" variable) and then calls the appropriate <flight mode>_run() function (i.e.
-   `stabilize_run <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_stabilize.cpp#L20>`__
+   `stabilize_run <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp#L9>`__
    for stabilize mode,
-   `rtl_run <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_rtl.cpp#L23>`__
+   `rtl_run <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_rtl.cpp#L49>`__
    for RTL mode, etc).  The <flight mode>_run() function can be found
-   in the appropriately named control_<flight mode>.cpp file (i.e.
-   `control_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_stabilize.cpp>`__,
-   `control_rtl.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_rtl.cpp>`__,
+   in the appropriately named mode_<flight mode>.cpp file (i.e.
+   `mode_stabilize.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_stabilize.cpp>`__,
+   `mode_rtl.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_rtl.cpp>`__,
    etc).
 -  the <flight mode>_run function is responsible for converting the
    user's input (found in g.rc_1.control_in, g.rc_2.control_in, etc)
    into a lean angle, rotation rate, climb rate, etc that is appropriate
    for this flight mode.  For example
-   `AltHold <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/control_althold.cpp#L22>`__
+   `AltHold <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_althold.cpp#L22>`__
    converts the user's roll and pitch input into lean angles (in
    degrees), the yaw input is converted into a rotation rate (in degrees
    per second) and the throttle input is converted to a climb rate (in

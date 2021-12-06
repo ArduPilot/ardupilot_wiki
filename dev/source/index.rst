@@ -21,7 +21,7 @@ Getting Involved
 New developers are always welcome! The best way to start is to:
 
 - read this wiki to learn the basics of the software and :ref:`how the team works <how-the-team-works>`
-- get involved with the other developers by posting on the `Developer Team Forum <https://discuss.ardupilot.org/c/development-team>`__, chat to us on `Gitter <https://gitter.im/ArduPilot/ardupilot>`__ or join the :ref:`weekly development call <ardupilot-discord-server>`.  You can also find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  :ref:`All channels <common-contact-us>` are open to all.  Lurk for a while to get a feel for it, then participate!
+- get involved with the other developers by posting on the `Developer Team Forum <https://discuss.ardupilot.org/c/development-team>`__, chat to us on `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or join the :ref:`weekly development call <ardupilot-discord-server>`.  You can also find a large number of users and some developers in the `ArduPilot facebook group <https://www.facebook.com/groups/ArduPilot.org>`__.  :ref:`All channels <common-contact-us>` are open to all.  Lurk for a while to get a feel for it, then participate!
 - find a specific bug you'd like to fix or a feature you'd like to add (check out the `good first issues <https://github.com/ArduPilot/ardupilot/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22>`__, recent `issues from Randy <https://github.com/ArduPilot/ardupilot/issues/created_by/rmackay9>`__ or our :ref:`roadmap <roadmap>` for ideas).
 - fix the bug in your own clone and :ref:`test <simulation-2>` that it's working
 - submit the change to the main code base :ref:`via a pull request <submitting-patches-back-to-master>`.
@@ -135,6 +135,7 @@ Full Table of Contents
    :titlesonly:
    
     License (GPLv3) <docs/license-gplv3>
+    AP_Peripheral Devices <docs/ap-peripheral-landing-page>
     Downloading the code / Using Git <docs/where-to-get-the-code>
     Building the code <docs/building-the-code>
     Editors & IDEs <docs/code-editing-tools-and-ides>
@@ -148,6 +149,7 @@ Full Table of Contents
     ROS <docs/ros>
     Lua Scripts <docs/common-lua-scripts>
     Porting to a new Flight Controller <docs/porting>
+    OEM Customization <docs/common-oem-customizations>
     Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     Resources for GCS Developers <docs/gcs-resources>
@@ -155,10 +157,12 @@ Full Table of Contents
     How The Team Works <docs/how-the-team-works>
     Events <docs/events>
     Training Centers <docs/common-training-centers>
-    GSoC 2020 project ideas <docs/gsoc-ideas-list>
+    GSoC <docs/gsoc>
+    2021 Developers Conference<docs/2021-conference>
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     USB IDs <docs/USB-IDs>
     User Alerts <docs/user-alerts-developer>
     Upcoming Features <docs/common-master-features>
+    Academic Works Involving ArduPilot <docs/acadamic-works>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>

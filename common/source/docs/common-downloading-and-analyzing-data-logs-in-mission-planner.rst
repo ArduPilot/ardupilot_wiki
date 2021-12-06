@@ -4,10 +4,12 @@
 Downloading and Analyzing Data Logs in Mission Planner
 ======================================================
 
-Dataflash logs are stored on the autopilot's onboard dataflash memory
+Dataflash logs are stored on the autopilot
 and can be download after a flight. By default, they are created after you first
 arm the vehicle. This topic explains how to configure and access
 Dataflash logs.
+
+Depending on the autopilot type and configuration, the dataflash logs may be saved on a SD card, dataflash chip or streamed over MAVLink telemetry ports. The MAVLink option does require a high-speed telemetry port, typically 921600 baud.
 
 [copywiki destination="copter,plane,rover,dev,planner"]
 
@@ -26,9 +28,11 @@ Logging Parameters
 
 Some commonly used parameters are:
 
-- :ref:`LOG_BITMASK<LOG_BITMASK>` : Bitmask for what items are logged. Noramlly, use default value, or "0" to disable logging.
+- :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>` : Bitmask for where to save logs to. Common values are "0" to disable logging, "1" to log to SD card file, "2" to stream over MAVLink and "4" to log to board dataflash memory, if equipped.
+- :ref:`LOG_BITMASK<LOG_BITMASK>` : Bitmask for what items are logged. Normally, use default value, or "0" to disable logging.
 - :ref:`LOG_DISARMED<LOG_DISARMED>` : Setting to one will start logging when power is applied, rather than at the first arming of the vehicle. Usefull when debugging pre-arm failures.
 - :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>` : Setting this bit will force the creation of a new log file after disarming, waiting 15 seconds, and then re-arming. Normally, a log will be one file for every power cycle of the autopilot, beginning upon first arm.
+- :ref:`LOG_FILE_MB_FREE<LOG_FILE_MB_FREE>` : This parameter sets the minimum free space on the logging media before logging begins. If this is not available, then older logs will be deleted to provide it during initialization. Default is 500MB.
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_downloading_logs_via_mavlink:
 
@@ -277,7 +281,7 @@ a mission):**
 | ThH     | Estimated throttle required to hover throttle in the range 0 ~ 1                                   |
 +---------+----------------------------------------------------------------------------------------------------+
 | DAlt    | The Desired Altitude while in AltHold, Loiter, RTL or Auto flight modes.                           |
-|         | It is influenced by EKF origin, which in 3.5.X is corrected by GPS altitude. This is behaviour is  |
+|         | It is influenced by EKF origin, which in 3.5.X is corrected by GPS altitude. This behaviour is     |
 |         | turned off in 3.6.X and can be turned on with EKF_OGN_HGT_MASK.                                    |
 +---------+----------------------------------------------------------------------------------------------------+
 | Alt     | The current EKF Altitude                                                                           |
@@ -628,7 +632,7 @@ See `flight mode numbers here <https://github.com/ArduPilot/ardupilot/blob/maste
    </table>
 
 **EV: (an event number)**. The full list of possible events can be found
-in `defines.h <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/defines.h#L281>`__
+in `AP_Logger.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Logger/AP_Logger.h#L94>`__
 but the most common are:
 
 +------------+----------------------------------------------------------------------------------------------------+
@@ -706,7 +710,7 @@ but the most common are:
 +------------------+----------------------------------------------------------------------------------------------+
 | FIELD            | DESCRIPTION                                                                                  |
 +------------------+----------------------------------------------------------------------------------------------+
-| GyrX, GyrY, GyrZ | The raw gyro rotation rates in degrees/second                                                |
+| GyrX, GyrY, GyrZ | The raw gyro rotation rates in radians/second                                                |
 +------------------+----------------------------------------------------------------------------------------------+
 | AccX, AccY, AccZ | The raw accelerometer values in m/s/s                                                        |
 +------------------+----------------------------------------------------------------------------------------------+

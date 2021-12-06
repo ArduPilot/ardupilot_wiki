@@ -59,7 +59,7 @@ the following:
 
 [site wiki="copter"]
 -  (Copter) Optionally check the :ref:`Simple Mode <copter:simpleandsuper-simple-modes_simple_mode>`
-   check-box for that switch position. If using AC3.1 or higher you can
+   check-box for that switch position. You can
    optionally set :ref:`Super Simple mode <copter:simpleandsuper-simple-modes_super_simple_mode>`.
    If both Simple mode and Super Simple mode checkboxes are checked
    Super Simple will be used.

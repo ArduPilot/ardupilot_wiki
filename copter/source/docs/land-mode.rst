@@ -26,11 +26,19 @@ features:
 
 .. note::
 
-    Copter will recognise that it has landed if the motors are at
-    minimum but its climb rate remains between -20cm/s and +20cm/s for one
-    second.  It does not use the altitude to decide whether to shut off the
+    Copter will recognise that it has landed if the motors are being commanded to be at low
+    level by the vertical position controller, its climb rate remains between -20cm/s and +20cm/s, and
+    is not accelerating for one second.  It does not use the altitude to decide whether to shut off the
     motors except that the copter must also be below 10m above the home
-    altitude.
+    altitude, unless a rangefinder is being used, in which case it must be within 2m of the ground.
+
+.. note:: For Traditional Heli, the low motor check in the above landing detection algorithm is replaced with a check that Collective output is below
+   mid-position (controlled by the vertical position controller, ie in descent). The rotor still may be at governor speed up until Motor Interlock is removed and  disarming occurs.
+
+.. note:: Using a Weight on Wheels (WoW) switch will increase the descent rate and
+    accelerometer ranges that are acceptable for landing detection. This
+    feature is enabled anytime the LGR_WOW_PIN is not disabled.
+
 
 -  If the copter appears to bounce or balloon back up a couple of times
    before settling down and turning the props off, try lowering the

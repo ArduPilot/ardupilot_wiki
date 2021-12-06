@@ -87,7 +87,7 @@ The most important parameter for a tilt-rotor is the tilt-mask, in the
 The :ref:`Q_TILT_MASK<Q_TILT_MASK>` is a bitmask of what motors can tilt on your
 vehicle. The bits you need to enable correspond to the motor ordering
 of the standard ArduCopter motor map for your chosen frame class and
-frame type.
+frame type, ie. bit 0 corresponds to Motor 1.
 
 For example, if you have a tilt-tricopter where the front two motors
 tilt, then you should set :ref:`Q_TILT_MASK<Q_TILT_MASK>` to 3, which is 2+1.
@@ -131,22 +131,21 @@ Tilt Servos
 Next you need to configure which servo outputs will control tilt of
 the tiltable rotors.
 
-You control that with 3 possible servo function values.
+You control that with the following servo function values.
 
 .. raw:: html
 
    <table border="1" class="docutils">
    <tr><th>Tilt Control</th><th>SERVOn_FUNCTION</th></tr>
-   <tr><td>Motor tilt</td><td>41</td></tr>
-   <tr><td>Left Motor tilt</td><td>75</td></tr>
-   <tr><td>Right Motor tilt</td><td>76</td></tr>
+   <tr><td>TiltMotorsFront</td><td>41</td></tr>
+   <tr><td>TiltMotorFrontLeft</td><td>75</td></tr>
+   <tr><td>TiltMotorFrontRight</td><td>76</td></tr>
+   <tr><td>TiltMotorsRear</td><td>45</td></tr>
+   <tr><td>TiltMotorRearLeft</td><td>46</td></tr>
+   <tr><td>TiltMotorRearRight</td><td>47</td></tr>
    </table>
 
-You should choose normal ``Motor tilt`` unless you are configuring a
-vectored yaw aircraft and have set :ref:`Q_TILT_TYPE<Q_TILT_TYPE>` to 2.
-
-For example, if you have a single servo which tilts your rotors
-attached to servo output 11, then you should set :ref:`SERVO11_FUNCTION<SERVO11_FUNCTION>` =41.
+.. note:: For Vectored Yaw applications, the right and left tilt servos would be used for front and/or back. You should choose normal ``TiltMotorsFront`` and/or ``TiltMotorsRear`` otherwise.
 
 Tilt Reversal and Range
 =======================
@@ -206,6 +205,13 @@ ArduPilot tilt-rotor code:
 
 .. note:: For Binary type tilt servos these rates should be set at the actual measured rate of the servo since it's independent of ArudPilot control.
 
+Tilt Stabilization Assist in Fixed Wing Flight
+==============================================
+
+It is possible to use the tilt motors (if not the BINARY tilt type) to aid in fixed wing roll and pitch control. This is activated if the :ref:`Q_TILT_FIX_GAIN<Q_TILT_FIX_GAIN>` is greater than zero, which determines how much control demand results in tilting of the motors. The maximum tilt angle achievable is determined by the :ref:`Q_TILT_FIX_ANGLE<Q_TILT_FIX_ANGLE>` parameter. It is recommended to start with 0.1 for the :ref:`Q_TILT_FIX_GAIN<Q_TILT_FIX_GAIN>` and work your way up to desired the response.
+
+In order to setup the ranges of the servo movement, see :ref:`tilt-rotor-setup`.
+
 Vectored Yaw
 ============
 
@@ -224,7 +230,9 @@ then your :ref:`Q_TILT_YAW_ANGLE<Q_TILT_YAW_ANGLE>` would be 20, as that is the 
 degrees that the tilt mechanism can go.
 
 You also need to setup your two tilt servos with ``SERVOn_FUNCTION`` =75
-for left tilt and ``SERVOn_FUNCTION`` =76 for right tilt.
+for left front tilt and ``SERVOn_FUNCTION`` =76 for right front tilt.
+
+In order to setup the ranges of the servo movement, see :ref:`tilt-rotor-setup`.
 
 Non-Vectored Yaw
 ================

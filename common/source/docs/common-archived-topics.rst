@@ -27,6 +27,7 @@ value to users with old hardware.
     AttoPilot Current/Voltage Sensor <common-using-a-current-sensor>
     Erle-Brain2 Wiring Quick Start <common-erle-brain2-wiring-quick-start>
     PXFmini Wiring Quick Start <common-pxfmini-wiring-quick-start>
+    Web Apps <common-web-apps>
 
 [/site]
 [site wiki="copter,plane,rover"]
@@ -51,7 +52,9 @@ value to users with old hardware.
     Landing Gear <landing-gear>
     ADNS3080 Mouse Sensor (no longer supported) <common-mouse-based-optical-flow-sensor-adns3080>
     Analog Sonar (AC3.1) <sonar>
-    [/site]
+    Tricopter Setup <archived-tricopter>
+    Position mode <ac2_positionmode>
+[/site]
 [site wiki="rover"]
     Pre-4.0 Rover Avoidance <rover-object-avoidance>
     Sonar Sensors <sonar-sensors>
@@ -79,6 +82,7 @@ value to users with old hardware.
     Building for Pixhawk on Windows with Make <building-px4-with-make>
     Building ArduPilot with Arduino for Windows <building-ardupilot-with-arduino-windows>
     Editing & Building with Atmel Studio or Visual Studio <building-ardupilot-apm-with-visual-studio-visual-micro>
+    Editing with Eclipse <editing-the-code-with-eclipse>
     Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>
     APM2.x on MacOS with Arduino <building-the-code-on-mac>
     APM2.x on Linux with Make <building-the-code-onlinux>
@@ -94,7 +98,8 @@ value to users with old hardware.
     Making a MAVLink WiFi bridge using the Raspberry Pi <making-a-mavlink-wifi-bridge-using-the-raspberry-pi>
     HITL Simulators <hitl-simulators>
     Weekly meetings on Mumble Server <ardupilot-mumble-server>
-
+    How to sign a Pixhawk with your Certificate of Authenticity <how-to-use-the-auth-command-to-sign-a-pixhawk-board-with-your-certificate-of-authenticity>
+    SITL Serial Mapping <sitl-serial-mapping>
 [/site]
 
 

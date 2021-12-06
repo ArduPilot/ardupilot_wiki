@@ -11,6 +11,7 @@ This includes:
 * `Plane <https://firmware.ardupilot.org/Plane>`__ 
 * `Rover <https://firmware.ardupilot.org/Rover>`__ 
 * `AntennaTracker <https://firmware.ardupilot.org/AntennaTracker>`__ 
+* `Sub <https://firmware.ardupilot.org/Sub>`__ 
 
 This page provides additional links to a number of specific builds that are considered "significant" - for example, the last builds of 
 Copter to fit on the APM2.x board.
@@ -25,6 +26,7 @@ Copter to fit on the APM2.x board.
     * `Developer Builds <https://firmware.ardupilot.org/devbuild>`__ 
     * `Build and Development Tools <https://firmware.ardupilot.org/Tools>`__ 
     * `Companion Computers and associated example code <https://github.com/ArduPilot/companion>`__ 
+    * `AP Peripherals <https://firmware.ardupilot.org/AP_Periph>`__ 
 
 
 Firmware

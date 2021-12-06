@@ -163,15 +163,15 @@ The MAVProxy commands to load the parameters for Copter, Rover and Plane
 
 ::
 
-    param load ..\Tools\autotest\default_params\copter.parm
+    param load ../Tools/autotest/default_params/copter.parm
 
 ::
 
-    param load ..\Tools\autotest\default_params\plane.parm
+    param load ../Tools/autotest/default_params/plane.parm
 
 ::
 
-    param load ..\Tools\autotest\default_params\rover.parm
+    param load ../Tools/autotest/default_params/rover.parm
 
 You can re-load the parameters later if you choose, or revert to the
 default parameters by starting SITL (**sim_vehicle.py**) with the
@@ -237,6 +237,45 @@ To test losing GPS lock, use ``SIM_GPS_DISABLE``:
 
 You can also enable/disable a 2nd GPS using ``SIM_GPS2_DISABLE``.
 
+Testing GPS-for-Yaw
+===================
+
+To test GPS-for-Yaw using two simulated UBlox GPSs:
+
+::
+
+    param set EK3_SRC1_YAW 2
+    param set GPS_AUTO_CONFIG 0
+    param set GPS_TYPE 17
+    param set GPS_TYPE2 18
+    param set GPS_POS1_Y -0.2
+    param set GPS_POS2_Y 0.2
+    param set SIM_GPS_POS_Y -0.2
+    param set SIM_GPS2_POS_Y 0.2
+    param set SIM_GPS2_DISABLE 0
+    param set SIM_GPS2_HDG 1
+
+Reboot SITL and the heading should be visible in the GPS2_RAW message's yaw field:
+
+::
+
+    status GPS2_RAW
+
+To test using a single NMEA GPS:
+
+::
+
+    param set EK3_SRC1_YAW 2
+    param set GPS_TYPE 5
+    param set SIM_GPS_TYPE 5
+    param set SIM_GPS_HDG 1
+
+Reboot SITL and the heading should be visible in the GPS_RAW_INT message's yaw field:
+
+::
+
+    status GPS_RAW_INT
+
 Testing the effects of vibration
 ================================
 
@@ -252,7 +291,7 @@ Testing the effects of wind
 
 The wind direction, speed and turbulence can be changed to test their
 effect on flight behaviour. The following settings changes the wind so
-that it blows towards the South at a speed of 10 m/s.
+that it blows from the South at a speed of 10 m/s.
 
 ::
 
@@ -290,10 +329,10 @@ gimbal mount:
     param set MNT_TYPE 1
 
     # Set RC output 6 as pan servo:
-    param set RC6_FUNCTION 6
+    param set SERVO6_FUNCTION 6
 
     # Set RC output 8 as roll servo:
-    param set RC7_FUNCTION 8
+    param set SERVO7_FUNCTION 8
 
 Then stop and re-launch SITL with the ``-M`` flag:
 
@@ -419,6 +458,129 @@ You can test a virtual range beacons by setting the following parameters
 
 The restart SITL and the vehicle should appear on the map.  After perhaps 30seconds it should shift to its normal starting position.
 
+Testing Precision Landing
+-------------------------
+
+.. note::
+
+   These instructions are written assuming ArduCopter
+
+Enable Precision Landing, and set the precision landing backend type to SITL:
+
+::
+
+   param set PLND_ENABLED 1
+   param fetch
+   param set PLND_TYPE 4
+
+A rangefinder is currently required for precision landing.  Enable a simulated rangefinder:
+
+::
+
+   param set RNGFND1_TYPE 1
+   param set RNGFND1_MIN_CM 0
+   param set RNGFND1_MAX_CM 4000
+   param set RNGFND1_PIN 0
+   param set RNGFND1_SCALING 12.12
+
+Restart the simulation.
+   
+Takeoff and fly a bit, then switch into land:
+
+::
+
+   arm throttle
+   rc 3 1800
+   mode land
+   rc 3 1500
+
+Check the logs for precision landing messages:
+
+::
+
+   ls -lt logs
+
+Choose the youngest, then:
+
+::
+
+   mavlogdump --type PL logs/<youngest>
+
+
+Testing Vicon (aka Vision Positioning)
+--------------------------------------
+
+Start SITL, wiping parameters:
+
+::
+
+   ./Tools/autotest/sim_vehicle.py -v ArduCopter --gdb --debug -w
+
+Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vision-position-estimate and vision-speed-estimate messages:
+
+::
+
+    param set AHRS_EKF_TYPE 3
+    param set EK2_ENABLE 0
+    param set EK3_ENABLE 1
+    param fetch
+    param set EK3_SRC1_POSXY 6
+    param set EK3_SRC1_POSZ 6
+    param set EK3_SRC1_VELXY 6
+    param set EK3_SRC1_VELZ 6
+    param set EK3_SRC1_YAW 6
+    param set VISO_TYPE 2
+    param set SERIAL5_PROTOCOL 2
+    param set GPS_TYPE 0 (optional)
+    param set ARMING_CHECK 388598 (optional, to disable GPS checks)
+    param fetch
+
+Restart the simulation, attaching a simulated Vicon system to uartF (which corresponds to ``SERIAL5``):
+
+::
+
+   ../Tools/autotest/sim_vehicle.py --map --console -A "--uartF=sim:vicon:"
+
+The console should indicate no GPS is present:
+
+::
+
+   GPS: 0 (0)
+
+Vision position estimates should now be being fed into ArduCopter:
+
+::
+
+   STABILIZE> status VICON_POSITION_ESTIMATE
+   STABILIZE> 43371: VICON_POSITION_ESTIMATE {usec : 38380000, x : 0.0, y : 0.0, z : -0.0999755859375, roll : 0.0, pitch : 0.0, yaw : -0.122173137963}
+
+
+You should also receive a startup message from the EKF:
+
+::
+
+   APM: EKF3 IMU0 is using external nav data
+   APM: EKF3 IMU0 initial pos NED = 0.0,0.0,-0.1 (m)
+   APM: EKF3 IMU1 is using external nav data
+   APM: EKF3 IMU1 initial pos NED = 0.0,0.0,-0.1 (m)
+
+Use MAVProxy's right-click context menu item to ``Set Origin (with alt)``
+
+Arm in loiter, takeoff and fly somewhere:
+
+::
+
+   loiter
+   arm throttle
+   rc 3 1800
+   rc 2 1400
+
+Other SITL vicon settings are hel in SIM_VICON_xx parameters:
+
+::
+
+   param show SIM_VICON*
+
 Accessing log files
 ===================
 
@@ -496,7 +658,7 @@ To use a real serial device you can use a command like this:
 
 what that does it pass the --uartB argument to the ardupilot code,
 telling it to use /dev/ttyUSB0 instead of the normal internal simulated
-GPS for the 2nd UART. You can find the SITL serial port mappings :ref:`here <sitl-serial-mapping>`
+GPS for the 2nd UART. You can find the SITL serial port mappings :ref:`here <learning-ardupilot-uarts-and-the-console>`
 
 Any of the 5 UARTs can be configured in this way, using uartA to uartE.
 The standard serial ports SERIAL1 and SERIAL2 are uartC and uartD respectively.
@@ -620,6 +782,109 @@ method for connecting will be GCS specific (we show :ref:`how to connect for Mis
    
 .. _using-sitl-for-ardupilot-testing_sitl_without_mavproxy_tcp:
 
+Multi-Aircraft SITL with MAVProxy
+----------------------------------
+
+Multiple aircraft can be simulated in SITL with MAVProxy. This feature owes much to prior work here: https://ardupilot.org/mavproxy/docs/getting_started/multi.html 
+
+To access this feature use both the number (-n) or count (--count) as well as the auto-sysid (--auto-syid) features of sim_vehicle.py like so:
+
+::
+
+    sim_vehicle.py -v ArduPlane -n3 --auto-sysid
+
+Now MAVProxy will receive messages on the console from all aircraft. Verifying a connection to multiple vehicles is as simple as checking the MAVProxy console -- https://ardupilot.org/mavproxy/docs/modules/console.html. The following is an image of the console when connected to vehicle 2:
+
+.. figure:: ../images/mavproxy_multi_vehicle_link2_highlighted.png
+   :target: ../_images/mavproxy_multi_vehicle_link2_highlighted.png
+   :width: 450px
+
+Use vehicle <n> to set the active vehicle (using 1-based indexing). Use alllinks <cmd> to send <cmd> to all vehicles in turn. For example, alllinks mode rtl will set RTL mode on all vehicles.
+
+**Note** while the vehicles use 1-based indexing, the logs use 0-based. So a multi-vehicle plane that was labeled 1 at the MAVProxy prompt will be labeled 0 in the logs. Subdirectories for each vehicle will be formed based on where you started up MAVProxy. For example, a log directory for vehicle 0 looks like this:
+
+.. figure:: ../images/multiplane_uses_zero_based.png
+   :target: ../_images/multiplane_uses_zero_based.png
+   :width: 450px
+
+The eeprom.bin file contains a copy (among other things) of all the parameters for vehicle 0. The logs directory has all the dataflash logs for the vehicle, and terrain directory has all the Shuttle Radar Topograph Mission terrain tiles.
+
+It is possible to specify the desired instance numbers (-i) to the sim_vehicle.py call, which results in precise log indexing:
+
+::
+
+    sim_vehicle.py -v ArduPlane -n3 --auto-sysid -i "1 2 3"
+
+Be sure to verify the MAVProxy map and missions before takeoff. An example map at the default airfield before we takeoff looks like this:
+
+.. figure:: ../images/mavproxy_multi_vehicle_pre_takeoff.png
+   :target: ../_images/mavproxy_multi_vehicle_pre_takeoff.png
+   :width: 450px
+
+Load missions for each aircraft before takeoff. At the MAVProxy prompt, verify a connection to vehicle 1 by entering:
+
+::
+
+    MANUAL> vehicle 1
+
+To use sample waypoints, just load them as follows:
+
+::
+
+    MANUAL> wp load 0/vehicle1_waypoints.wp
+
+The waypoints loaded on the map are as in the figure:
+
+.. figure:: ../images/mavproxy_multi_vehicle1_mission.png
+   :target: ../_images/mavproxy_multi_vehicle1_mission.png
+   :width: 450px
+
+This is a sample mission that is just a takeoff waypoint followed by an unlimited loiter waypoint.
+
+Load the other two missions by setting the appropriate vehicle and their waypoint files. For example, a mission set for the other two vehicles looks like:
+
+.. figure:: ../images/mavproxy_multi_vehicle2_mission.png
+   :target: ../_images/mavproxy_multi_vehicle2_mission.png
+   :width: 450px
+
+.. figure:: ../images/mavproxy_multi_vehicle3_mission.png
+   :target: ../_images/mavproxy_multi_vehicle3_mission.png
+   :width: 450px
+
+**Please note this is for demonstration ONLY!!** The missions for all vehicles pass very close to each other and they are not altitude deconflicted either. If this is meant for real aircraft then more care is needed to be certain about your multi-aircraft configuration!
+
+That said, takeoff aircraft 1 by proceeding to AUTO mode:
+
+::
+    
+    MANUAL> vehicle 1
+
+::
+    
+    MANUAL> Set vehicle 1 (link 1)
+
+::
+    
+    MANUAL> arm throttle
+
+::
+    
+    MANUAL> AUTO
+
+Vehicle 1 should proceed to the unlimited loiter waypoint:
+
+.. figure:: ../images/mavproxy_multi_vehicle1_loiter.png
+   :target: ../_images/mavproxy_multi_vehicle1_loiter.png
+   :width: 450px
+
+All three vehicles loitering together:
+
+.. figure:: ../images/mavproxy_multi_vehicle3_loiter.png
+   :target: ../_images/mavproxy_multi_vehicle3_loiter.png
+   :width: 450px
+
+Flight is also possible in non-auto modes (e.g., via the MAVProxy takeoff command) but that is left as an exercise to the reader.
+
 SITL without MAVProxy (TCP)
 ---------------------------
 
@@ -689,135 +954,3 @@ used just as before.
    :target: ../_images/MissionPlanner_ConnectTCP.jpg
 
    Mission Planner: Connecting toSITL using TCP
-
-
-Testing Precision Landing
--------------------------
-
-.. note::
-
-   These instructions are written assuming ArduCopter
-
-Enable Precision Landing, and set the precision landing backend type to SITL:
-
-::
-
-   param set PLND_ENABLED 1
-   param fetch
-   param set PLND_TYPE 4
-
-A rangefinder is currently required for precision landing.  Enable a simulated rangefinder:
-
-::
-
-   param set RNGFND_TYPE 1
-   param set RNGFND_MIN_CM 0
-   param set RNGFND_MAX_CM 4000
-   param set RNGFND_PIN 0
-   param set RNGFND_SCALING 12.12
-
-Restart the simulation.
-   
-Takeoff and fly a bit, then switch into land:
-
-::
-
-   arm throttle
-   rc 3 1800
-   mode land
-   rc 3 1500
-
-Check the logs for precision landing messages:
-
-::
-
-   ls -lt logs
-
-Choose the youngest, then:
-
-::
-
-   mavlogdump --type PL logs/<youngest>
-
-
-Testing Vicon (aka Vision Positioning)
---------------------------------------
-
-Start SITL, wiping parameters:
-
-::
-
-   ./Tools/autotest/sim_vehicle.py -v ArduCopter --gdb --debug -w
-
-Enable EKF3, disable GPS and set Serial5 protocol to mavlink so as to accept vision-position-estimate and vision-speed-estimate messages:
-
-::
-
-    param set AHRS_EKF_TYPE 3
-    param set EK2_ENABLE 0
-    param set EK3_ENABLE 1
-    param fetch
-    param set EK3_GPS_TYPE 3
-    param set GPS_TYPE 0
-    param set VISO_TYPE 1
-    param set SERIAL5_PROTOCOL 2
-    param fetch
-
-Restart the simulation, attaching a simulated Vicon system to uartF (which corresponds to ``SERIAL5``):
-
-::
-
-   ../Tools/autotest/sim_vehicle.py --map --console -A "--uartF=sim:vicon:"
-
-The console should indicate no GPS is present:
-
-::
-
-   GPS: 0 (0)
-
-Vision position estimates should now be being fed into ArduCopter:
-
-::
-
-   STABILIZE> status VICON_POSITION_ESTIMATE
-   STABILIZE> 43371: VICON_POSITION_ESTIMATE {usec : 38380000, x : 0.0, y : 0.0, z : -0.0999755859375, roll : 0.0, pitch : 0.0, yaw : -0.122173137963}
-
-
-You should also receive a startup message from the EKF:
-
-::
-
-   APM: EKF3 IMU0 is using external nav data
-   APM: EKF3 IMU0 initial pos NED = 0.0,0.0,-0.1 (m)
-   APM: EKF3 IMU1 is using external nav data
-   APM: EKF3 IMU1 initial pos NED = 0.0,0.0,-0.1 (m)
-
-Use MAVProxy's right-click context menu item to ``Set Origin (with alt)``
-
-Arm in stabilize, switch to loiter:
-
-::
-
-   mode stabilize
-   arm throttle
-   mode loiter
-
-Take off, then fly somewhere:
-
-::
-
-   rc 3 1800
-   rc 2 1400
-
-
-Wait a while, note vehicle moving on map.
-
-Now RTL:
-
-::
-
-   rc 3 1500
-   rc 2 1500
-   mode rtl
-
-Note vehicle returning to home

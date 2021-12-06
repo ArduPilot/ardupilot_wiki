@@ -1,4 +1,4 @@
-.. _common-cuav-neo-v2-pro-overview:
+.. _common-cuav-neo-v2-pro:
 
 ==============
 NEO V2 Pro GPS

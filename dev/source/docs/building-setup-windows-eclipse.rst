@@ -4,7 +4,7 @@
 Setup Eclipse on Windows
 ========================
 
-This page shows how to setup Eclipse on Windows to build using waf which allows building for all supported boards.  These instructions replace the :ref:`older method which relied on Make <editing-the-code-with-eclipse>`.
+This page shows how to setup Eclipse on Windows to build using waf which allows building for all supported boards.
 
 .. note::
 
@@ -41,10 +41,17 @@ Once Eclipse has been started import ArduPilot by doing the following:
     :width: 450px
 
 - In the Project Explorer tab on the top right, right-mouse-button-click on the "ardupilot" folder and select "Properties"
-- When the "Properties for ardupilot" window appears, under "C/C++ Build", uncheck "Use default build command" and enter ``c:\cygwin64\bin\python2.7 waf`` into the "Build command" field as shown below
+- When the "Properties for ardupilot" window appears, under "C/C++ Build", uncheck "Use default build command" and enter ``c:\cygwin64\bin\python3.7m`` into the "Build command" field as shown below
 
 .. image:: ../images/eclipse-install3.png
     :target: ../_images/eclipse-install3.png
+    :width: 450px
+
+- Click the "Behavior" tab, select "Use custom build arguments" enter ``waf``. Additional arguments such as ``-j 16`` may be added here. The argument ``-j 16`` configures Cygwin to use 16 logical processors of the 8 core machine in this example. 
+- Setting "Workbench Build Behavior" will alllow the use of built-in buttons for clean and build all targets. Note if you prefer to only build for a single vehicle type using these buttons change "build" to "copter".
+
+.. image:: ../images/eclipse-install3b.png
+    :target: ../_images/eclipse-install3b.png
     :width: 450px
 
 Setup Build Target

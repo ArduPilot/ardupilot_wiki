@@ -1,8 +1,16 @@
 .. _editing-the-code-with-eclipse:
 
-========================================
-Editing/Building with Eclipse on Windows
-========================================
+.. warning::
+
+   **ARCHIVED ARTICLE**
+   
+.. warning::
+
+   ArduPilot no longer supports make.  The following article should be referencing our new build system, `waf` and needs updating.
+
+=================================================
+ARCHIVED:Editing/Building with Eclipse on Windows
+=================================================
 
 This article shows how you can setup Eclipse for editing and building binaries for Pixhawk/STM32 boards.  It is not possible to build on Windows for other boards.
 

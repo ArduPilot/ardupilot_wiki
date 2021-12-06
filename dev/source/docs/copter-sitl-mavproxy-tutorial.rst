@@ -216,7 +216,7 @@ skip to the second waypoint, and *loop* the mission:
 
 ::
 
-    wp load ..\Tools\autotest\CMAC-circuit.txt
+    wp load ..\Tools\autotest\Generic_Missions\CMAC-circuit.txt
     mode auto
     wp set 2
     wp loop
@@ -300,5 +300,5 @@ and simulation using ``param show *``, and to set any parameter using:
 ``param set PARAM_NAME VALUE``. In addition to affecting the vehicle
 itself some parameters simulate the performance/failure of specific
 hardware components and the environment (for example, the wind). These
-can be listed using: `:ref:`param show sim*``. The topic `Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` explains more about how
+can be listed using: ``param show sim*``. The topic :ref:`Using SITL for ArduPilot Testing <using-sitl-for-ardupilot-testing>` explains more about how
 you can test using SITL.

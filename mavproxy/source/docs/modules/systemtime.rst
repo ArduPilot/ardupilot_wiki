@@ -23,3 +23,4 @@ interval_timesync    How often to send a timesync message (seconds)   10
 interval             How often to send the system time (seconds)      10
 ==================   ===============================================  ===============================
 
+Note: you will need to set bit 1 (MAVLINK_SYSTEM_TIME) in the :ref:`BRD_RTC_TYPES <BRD_RTC_TYPES>` bitmask on the autopilot to enable updates from ``SYSTEM_TIME`` messages.

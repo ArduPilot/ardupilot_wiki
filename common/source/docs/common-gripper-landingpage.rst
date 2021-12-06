@@ -16,3 +16,6 @@ Follow the links below (or in sidebar) for configuration information based upon 
     Electro Permanent Magnet v3 (EPMv3) <common-electro-permanent-magnet-V3>
     Electro Permanent Magnet v1 (EPM688) <common-electro-permanent-magnet-gripper>
     Servo Gripper  <common-gripper-servo>
+
+.. tip::
+    Grippers can be configured to release in a failsafe situation using :ref:`FS_OPTIONS<FS_OPTIONS>` (ArduCopter only)

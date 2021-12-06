@@ -7,11 +7,6 @@ RC Input Channel Mapping (RCMAP)
 This article shows how to set up a non-standard RC input channel mapping
 using the RCMAP feature.
 
-.. note::
-
-   This feature is available in AC3.2.1 and higher (and equivalent
-   Plane and Rover versions).
-
 Configuration
 =============
 

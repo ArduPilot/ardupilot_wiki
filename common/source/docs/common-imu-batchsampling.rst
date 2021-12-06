@@ -11,7 +11,13 @@ FFT transforms data from the time domain into the frequency domain.  Put another
 - FFT cannot show you frequencies above half your sensor's sampling rate
 - The smallest frequency that can be shown is half your sample size divided by your sample rate
 
-Samples are typically taken at the same rate as gyro updates provided to the autopilot. For example if you are using :ref:`INS_FAST_SAMPLE <INS_FAST_SAMPLE>` on an MPU9250 sensor (fairly typical on modern Pixhawk class autopilots) then samples will be take at 8KHz. If you are not using fast sampling then sample rates of 1KHz are typical.
+Samples are typically taken at the same rate as gyro updates provided to the autopilot. For example if you are using :ref:`INS_FAST_SAMPLE <INS_FAST_SAMPLE>` on an MPU9250 sensor (fairly typical on modern Pixhawk class autopilots) then samples will be take at 8KHz, but averaged and downsampled to 1KHz. If you are not using an autopilot with fast sampling capability, then the sample rate is 1KHz
+
+This 1KHz "backend" rate is the rate at which gyro filtering takes place, i.e. low-pass and notch filters, and on smaller copters 1Khz is not high enough to avoid aliasing from noise at higher frequencies. For example, a 3" copter might have a full throttle motor frequency of 600Hz. Since filters can only apply at half the sample frequency (the Nyquist limit)it is not possible to filter 600Hz noise when sampling at 1Khz and the noise will be aliased down to lower frequencies.
+
+In firmware versions 4.1 and later, the backend rate has been made configurable for IMUs that support fast sampling (i.e. Invensense sensors) so that higher rates can be supported. The backend rate can by configured by setting :ref:`INS_GYRO_RATE<INS_GYRO_RATE>`. The default 0 gives the same behaviour as previous firmware versions. A rate of N gives a backend rate of 2^N Khz, so for instance a value of 1 gives a backend rate of 2Khz ,etc.
+
+.. note:: This raises the rate at which all gyro filters are run and can be computationally expensive depending on the number of notches configured. Values above 0 are only recommend on F7 or H7 platforms and values above 1 should only be used with careful tuning. This is automatically done for those platforms. This allows capturing frequencies at 1KHz and below on these autopilots.
 
 Pre-Flight Setup
 ================

@@ -12,11 +12,6 @@ before flight has two purposes:
 -  prevent takeoff before the autopilot is fully configured and ready to
    fly
 
-In past releases of ArduPlane, arming was optional, and the requirement
-to arm (controlled by the :ref:`ARMING_REQUIRE<ARMING_REQUIRE>` parameter) was disabled by
-default. This was changed for the 3.3.0 release to require arming by
-default.
-
 The key thing that arming does is to enable the motor. You will not be
 able to start the motor (ie. control the throttle) until the aircraft is
 armed.
@@ -40,19 +35,21 @@ Configuring Arming
 
 There are three parameters which control how arming works:
 
--  **ARMING_REQUIRE**: this controls whether an arming step is
+-  :ref:`ARMING_REQUIRE<ARMING_REQUIRE>`: this controls whether an arming step is
    required. The default is 1, meaning that arming is required before
    takeoff. If set to 0 then arming is not required (the plane starts
    off armed).
--  **ARMING_CHECK**: this controls what checks the autopilot does
+-  :ref:`ARMING_CHECK<ARMING_CHECK>`: this controls what checks the autopilot does
    before arming is allowed. The default is 1, meaning all checks are
    done. Most users should leave it at 1, as the arming checks are
    important to ensure the autopilot is ready. See below.
--  **ARMING_RUDDER**: This parameter allows you to configure rudder
+-  :ref:`ARMING_RUDDER<ARMING_RUDDER>`: This parameter allows you to configure rudder
    based arming/disarming. The default is 1, meaning you are able to
    arm with right rudder. If you set this to 2 you can also disarm
    with left rudder. If you set this to 0 then you will only be able
    to arm/disarm via a ground station or RC channel input using its RCx_OPTION.
+   
+.. warning:: if :ref:`ARMING_RUDDER<ARMING_RUDDER>` is set to 2, then held left rudder can disarm the vehicle in ANY mode, if the autopilot judges that the vehicle is not flying. This flying check CAN be incorrect under certain extreme circumstances, and disarming of the vehicle while still in flight, while rare, could occur.
 
 Arming Checks
 =============
@@ -78,7 +75,7 @@ How to Arm
 ==========
 
 When you are ready to fly you can ask Plane to arm. This can be done in
-two ways:
+three ways:
 
 -  **Rudder Arming**. Hold the rudder stick fully to the right and the
    throttle stick fully down for 2 seconds.
@@ -93,7 +90,11 @@ two ways:
 How to Disarm
 =============
 
-Since ArduPlane 3.4.0 it is possible to disarm using the transmitter.
+-  If setup, you can use the **ARM/DISARM** RC_xOPTION switch.
+
+.. warning:: This is **UNCONDITIONAL**. If done while in flight, all motors disarm and you must have throttle at idle before re-arming can occur!
+
+It is also possible to disarm using the transmitter.
 This is done holding throttle at minimum and rudder to the left for 2
 seconds. In ArduPlane this condition could be accidentally triggered by
 pilots while flying so there are additional requirements prior to disarm:
@@ -111,8 +112,8 @@ You can also disarm without using the transmitter with one of the
 following methods:
 
 -  use a ground station to issue a disarm command
--  use the safety switch on your aircraft (on Pixhawk)
--  after an auto-landing the plane will automatically disarm after 20
+-  use the safety switch on your aircraft (if using a :ref:`common-safety-switch-pixhawk`)
+-  after an auto-landing (either via mission or QLAND in QuadPlane) the plane will automatically disarm after 20
    seconds if still on the ground (controlled by :ref:`LAND_DISARMDELAY<LAND_DISARMDELAY>`
    parameter)
 

@@ -6,19 +6,19 @@ PX4FLOW Optical Flow Camera Board
 
 [copywiki destination="copter,plane"]
 
-This article describes how to setup the `PX4FLOW (Optical Flow) Sensor <https://northox.myshopify.com/collections/frontpage/products/px4flow>`__ which can be used in place of a GPS.
+This article describes how to setup the PX4FLOW (Optical Flow) Sensor which can be used for :ref:`Non-GPS navigation <common-non-gps-navigation-landing-page>`.
 
 ..  youtube:: LP8kl4hGfMw
     :width: 100%
 
 .. warning::
 
-   The PX4FLOW is supported from Copter 3.3 and higher. It is not yet supported in Plane or Rover.
+   The PX4FLOW is not yet supported in Plane or Rover.
 
 Overview
 ========
 
-The `PX4FLOW (Optical Flow) Sensor <https://store.cuav.net/index.php?id_product=52&id_product_attribute=0&rewrite=cuav-px4flow-21-optical-flow-sensor-smart-camera-for-px4-pixhawk-flight-control-without-sonar-or-with-sonar&controller=product&id_lang=3>`__ is a
+The PX4FLOW (Optical Flow) Sensor is a
 specialized high resolution downward pointing camera module and a 3-axis gyro that uses
 the ground texture and visible features to determine aircraft ground velocity. 
 Although the sensor may be supplied with a built-in Maxbotix LZ-EZ4 sonar to measure 
@@ -30,9 +30,17 @@ should also be attached to the vehicle.
 
 .. warning::
 
-   To best use this flow sensor you will need to purchase a separate range
+   To use this flow sensor you will need to purchase a separate range
    finder like the :ref:`LightWare SF10b <common-lightware-sf10-lidar>`
-   
+
+Where to Buy
+============
+
+This sensor is available from numerous retailers including:
+
+- `CUAV PX4Flow <https://store.cuav.net/shop/flow-sensor/>`__
+- `Holybro PX4Flow <https://shop.holybro.com/px4flow-kit_p1035.html>`__
+
 Install Drivers (Windows only)
 =====================================   
 On a Windows machine a "PX4Flow" device should appear in Connection drop-down of the Mission Planner (and the Windows Device Manager), or be automatically recognized by QGroundControl.  If it does not you may need to download, unzip and manually install the `px4flow windows driver <https://download.ardupilot.org/downloads/wiki/advanced_user_tools/px4flow_win_driver.zip>`__ which may in turn require allowing installing unsigned drivers.   
@@ -95,8 +103,8 @@ angular angular vibration that could blur the image.
 .. note::
 
    The default mounting orientation is different to that shown on
-   the \ `ETH PX4FLOW wiki <http://pixhawk.org/modules/px4flow>`__. If you
-   mount the board as shown in the \ `ETH PX4FLOW wiki <http://pixhawk.org/modules/px4flow>`__, you will need to set
+   the \ `PX4FLOW wiki <https://docs.px4.io/master/en/sensor/px4flow.html>`__. If you
+   mount the board as shown in the \ `PX4FLOW wiki <https://docs.px4.io/master/en/sensor/px4flow.html>`__, you will need to set
    :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` to -9000.
 
 Enabling the sensor
@@ -110,6 +118,8 @@ then on the **Initial Setup \| Optional Hardware \| Optical Flow** page
 check the **Enable** checkbox.  Alternatively the :ref:`FLOW_TYPE <copter:FLOW_TYPE>`
 parameter should be set to "1" through the full parameters list.  The
 sensor will be initialised once the Pixhawk board is rebooted.
+
+If the sensor is reported to be unhealthy, it may help to set :ref:`BRD_BOOT_DELAY <BRD_BOOT_DELAY>` to 600 (0.6 seconds) and reboot the autopilot.  This will give more time for the sensor to start-up before the autopilot probes for it on the I2C bus.
 
 Testing and Setup
 =================

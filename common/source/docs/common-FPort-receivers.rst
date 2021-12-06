@@ -13,6 +13,13 @@ Many FRSky X series and R series receivers have this capability, either natively
 Connection to the autopilot and configuration varies from autopilot to autopilot since their UART capabilities vary. Most F4 cpu based autopilots do not have controllable inverters in front of the UART TX and RX, and require either an external bi-directional inverter, as SPort connections do or the use of the "uninverted FPort pad/pin" some receivers provide since the FPort protocol has opposite signaling levels than normal UART operation.
 Most F7 and H7 autopilots, on the other hand, have internal inverters, and can be directly connected from the receiver's FPort to their UARTs TX input line.
 
+.. note:: ArduPilot supports both 16 and 24 channels FPort2 but telemetry is enabled only for 16 channels mode.
+
+Telemetry protocol
+==================
+
+ArduPilot will send telemetry data to the receiver over Fport using the :ref:`Passthrough telemetry <common-frsky-passthrough>` protocol. To get sensors to show up in OpenTX you have to install and enable a script which can display Passthrough telemetry, such as  :ref:`Yaapu FrSky Telemetry Script for OpenTX<common-frsky-yaapu>`. Otherwise the only sensor that will be discovered would be GPS.
+
 Connection Diagrams
 ===================
 
@@ -99,4 +106,3 @@ The normal RC input, UART6 RX, can now be used for FPort with the following conf
 - :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` =23
 - :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` =15
 - :ref:`RSSI_TYPE<RSSI_TYPE>` =3
-

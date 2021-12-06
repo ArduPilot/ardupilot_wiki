@@ -23,12 +23,14 @@ desired rate if this requires the acceleration towards the center of the
 circle to surpass the maximum acceleration held in the :ref:`WPNAV_ACCEL<WPNAV_ACCEL>`
 parameter (units are cm/s/s).
 
-The circle rate set above can be dynamically adjusted in flight by two methods. The first is the use of RC Channel 6 if the :ref:`TUNE<TUNE>` option is set to 39, allowing decreasing the rate 50% or increasing it by 100%, at the channel min and max. The other is by enabling the ``CIRCLE_CONTROL<CIRCLE_CONTROL>`` parameter to allow stick adjustment of radius and speed.
+The circle rate set above can be dynamically adjusted in flight by two methods. The first is the use of RC Channel 6 if the :ref:`TUNE<TUNE>` option is set to 39, allowing decreasing the rate 50% or increasing it by 100%, at the channel min and max. The other is by enabling the ``CIRCLE_CONTROL`` parameter to allow stick adjustment of radius and speed.
 
 Circle Control Option
 =====================
 
-When enabled, the ``CIRCLE_CONTROL<CIRCLE_CONTROL>`` parameter allows the adjustment of the circle's radius and angular velocity.
+When enabled, the ``CIRCLE_CONTROL`` parameter allows the adjustment of the circle's radius and angular velocity, in firmware versions prior to 4.1. In 4.1 and later, the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` bitmask parameter controls what actions the pilot can adjust with his sticks and circle mode operation.
+
+When bit 0 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the pilot can adjust circle's radius and angular velocity with the control sticks:
 
 - Pitch stick up (reducing RC pwm) reduces the radius until it reaches zero. Think moving forward from an FPV perspective.
 - Pitch stick down (increasing RC pwm) increases the radius. Think moving back from an FPV perspective.
@@ -36,7 +38,10 @@ When enabled, the ``CIRCLE_CONTROL<CIRCLE_CONTROL>`` parameter allows the adjust
 - Roll stick left (think counterclockwise) will increase the speed while moving counterclockwise, or decrease the speed while moving clockwise until reaching zero, at which point it will stop. Once stopped (rate 0), releasing the roll stick and pushing it again in either direction will begin moving again in the desired direction. So yes, this allows you to completely change the direction on the fly.
 - Roll stick rate changes are inhibited when CH6 tuning knob is set for circle rate.
 - All stick changes are inhibited in radio failsafe.(ie if loiter turns was part of a mission that continues when in failsafe)
-- Does not actually change the stored circle_rate or circle_radius parameter. Upon rebooting, any stick changes to rate and radius are gone and it will use the parameter values. So users should not have any surprises with every new flight.
+- The above does not actually change the stored circle_rate or circle_radius parameter. Upon rebooting, any stick changes to rate and radius are gone and it will use the parameter values. So users should not have any surprises with every new flight.
+
+When bit 1 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the Copter will face the direction of travel as it circles, otherwise, the Copter will point its nose at the center of the circle as it orbits.
+When bit 2 is set of the :ref:`CIRCLE_OPTIONS<CIRCLE_OPTIONS>` parameter the circle's center position will set upon mode entry at the current location, rather than on the perimeter with the center in front of the Copter at the start.
 
 Other Notes
 ===========

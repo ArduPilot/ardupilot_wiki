@@ -38,7 +38,10 @@ simplest is to include a NAV_VTOL_LAND command in your mission. That
 command should use an altitude of zero, and have a latitude and
 longitude of the landing position.
 
-When using NAV_VTOL_LAND it is important to have the right horizontal
+Versions prior to 4.1
+~~~~~~~~~~~~~~~~~~~~~
+
+In firmware version prior to 4.1 ,when using NAV_VTOL_LAND it is important to have the right horizontal
 spacing between that waypoint and the previous one. As soon as the
 aircraft starts on the NAV_VTOL_LAND waypoint it will transition to
 VTOL flight, which means it will start flying much more slowly than it
@@ -60,7 +63,7 @@ waypoint to have an altitude of about 20 meters above the ground.
 
 If :ref:`Q_OPTIONS<Q_OPTIONS>` is set for "Use a fixed wing approach" (bit 4), then instead of transitioning to VTOL flight and doing a VTOL landing, it will remain in plane mode , and proceed to the landing position, climbing or descending to the altitude set in the NAV_VTOL_LAND waypoint. When it reaches within :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` of the landing location, it will perform a LOITER_TO_ALT to finish the climb or descent to that altitude set in the waypoint and using :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` for the loiter radius , then, turning into the wind, transition to VTOL mode and proceed to the landing location and land.
 
-Note that if :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` =0, the Waypoint loiter radius will be used. Be sure to set the VTOL_LAND waypoint altitude and :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` distance to avoid obstacles. Note also, that if this waypoint is reached while in VTOL mode, it will proceed as a normal VTOL_LAND command, even if the option is set.
+Note that if :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` = 0, the waypoint loiter radius will be used. Be sure to set the VTOL_LAND waypoint altitude and :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` distance to avoid obstacles. Note also, that if this waypoint is reached while in VTOL mode, it will proceed as a normal VTOL_LAND command, even if the option is set.
 
 .. note:: Be sure that the NAV_VTOL_LAND is placed with enough distance to reach the :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>`, plus at least a 90 degree turn, plus distance required to de-transition to VTOL mode.
 
@@ -68,6 +71,15 @@ Note that if :ref:`Q_FW_LND_APR_RAD<Q_FW_LND_APR_RAD>` =0, the Waypoint loiter r
     :target: ../_images/VTOL_LAND.jpg
 
 (figure courtesy of SRP AERO   https://srp.aero/)
+
+Versions 4.1 and later
+~~~~~~~~~~~~~~~~~~~~~~
+
+By default a NAV_VTOL_LAND will remain in fixed mode at the current altitude, until close to the landing point, execute an "airbraking" maneuver to reduce speed, then transition to VTOL, navigate precisely to the landing point, and descend as in QLAND to a landing. This allows setting the NAV_VTOL_LAND point any distant away from the last waypoint without having to worry about excessive time in VTOL mode.
+
+If :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16 is set to disable the fixed wing approach phase, then it will immediately transition to VTOL when the command is executed and navigate to the landing point in VTOL mode. This requires the careful setup of the last waypoint before this command to avoid a long path to the landing point while in VTOL mode.
+
+If :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is set, then even if bit 16 is set, the vehicle will execute the fixed wing approach and loiter to altitude, described above in the previous section, before changing to VTOL mode. If bit 16 is also set, then when the vehicle switches to VTOL mode, it will attempt to do the airbrake maneuver and QLAND for that final sement.
 
 Return to Launch
 ----------------

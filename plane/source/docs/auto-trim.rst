@@ -21,7 +21,7 @@ TRIM AUTO
 
 This function was used to allow easy trimming of ArduPlane in the earlier versions of the firmware, and is still included for backward compatibility, although not recommended for use since :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>`  is now available. It was intended to be used and then de-activated, since incorrect trim values could be captured if stick inputs were being accidentally applied when the switch out of MANUAL mode occurred.
 
-If :ref:`TRIM_AUTO<TRIM_AUTO>` is enabled, every time MANUAL mode is exited, the output values of the roll/pitch assigned outputs was captured as their input and output trim values. So the user could use the transmitter trim tabs to correct the aircraft roll and pitch trim, and it would be saved upon exit. The trim tabs would then be left in their non-neutral positions, yet not interfere with the other flight modes as unwanted pilot inputs. This feature may be deprecated in the future. Please use the safer :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` feature.
+If ``TRIM_AUTO<TRIM_AUTO>`` is enabled, every time MANUAL mode is exited, the output values of the roll/pitch assigned outputs was captured as their input and output trim values. So the user could use the transmitter trim tabs to correct the aircraft roll and pitch trim, and it would be saved upon exit. The trim tabs would then be left in their non-neutral positions, yet not interfere with the other flight modes as unwanted pilot inputs. This feature may be deprecated in the future. Please use the safer :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` feature.
 
 
 

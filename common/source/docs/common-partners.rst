@@ -22,10 +22,10 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  http://jdrones.com
 
     *
-      - .. image:: ../../../images/supporters/supporters_logo_ProfiCNC.png
+      - .. image:: ../../../images/supporters/supporters_logo_CubePilot.png
             :width: 250px
             :align: center
-            :target:  http://proficnc.com/stores
+            :target:  https://www.cubepilot.com/#/home
 
       - .. image:: ../../../images/supporters/supporters_logo_mRobotics.png
             :width: 250px
@@ -60,10 +60,10 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://spektreworks.com
 
-      - .. image:: ../../../images/supporters/supporters_logo_Hex.png
+      - .. image:: ../../../images/supporters/supporters_logo_CubePilot.png
             :width: 250px
             :align: center
-            :target:  http://hex.aero
+            :target:  https://www.cubepilot.com/#/home
 
     *
       - .. image:: ../../../images/supporters/supporters_logo_Dronebility.png
@@ -115,252 +115,339 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://event38.com
 
-      - .. image:: ../../../images/supporters/supporters_logo_Skeyetech.png
-            :width: 250px
-            :align: center
-            :target:  https://skeyetech.fr
-
-    *
       - .. image:: ../../../images/supporters/supporters_logo_3DXR.jpg
             :width: 250px
             :align: center
             :target: https://3dxr.co.uk
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Carbonix.png
             :width: 250px
             :align: center
             :target: https://carbonix.com.au
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_enRoute.png
             :width: 250px
             :align: center
             :target:  https://enroute.co.jp
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Drones_Center.png
             :width: 250px
             :align: center
             :target:  https://drones-center.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Wurzbach_Electronics.png
             :width: 250px
             :align: center
             :target:  https://wurzbachelectronics.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_TT_Robotix.jpg
             :width: 250px
             :align: center
             :target:  http://ttrobotix.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Air_Supply_Aerial.png
             :width: 250px
             :align: center
             :target:  https://airsupply.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_IR_Lock.jpg
             :width: 250px
             :align: center
             :target:  https://irlock.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Benewake.png
             :width: 250px
             :align: center
             :target:  http://en.benewake.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Foxtech.jpg
             :width: 250px
             :align: center
             :target:  https://foxtechfpv.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_BFD_Systems.jpg
             :width: 250px
             :align: center
             :target:  https://bfdsystems.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Rubidium_Light.jpg
             :width: 250px
             :align: center
             :target:  https://rubidiumlight.com.au/rubidium-rover
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Makeflyeasy.jpg
             :width: 250px
             :align: center
             :target:  http://www.makeflyeasy.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Hexsoon.jpg
             :width: 250px
             :align: center
             :target: http://www.hexsoon.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Micro_Aerial_Projects.png
             :width: 250px
             :align: center
             :target:  https://microaerialprojects.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_ARACE_UAS.png
             :width: 250px
             :align: center
-            :target:  https://longrangefpv.com
+            :target:  https://araceuas.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Qifei.png
             :width: 250px
             :align: center
             :target:  https://agrobot.en.alibaba.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Mateksys.png
             :width: 250px
             :align: center
             :target:  http://www.mateksys.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Freespace.png
             :width: 250px
             :align: center
             :target:  https://freespacesolutions.com.au
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Holybro.png
             :width: 250px
             :align: center
             :target:  http://www.holybro.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_ASW.png
             :width: 250px
             :align: center
             :target:  https://aerosystemswest.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Bask_Aerospace.jpg
             :width: 250px
             :align: center
             :target:  https://baskaerospace.com.au
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_D_Makers.png
             :width: 250px
             :align: center
             :target:  https://dmakers.co.kr
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Hitec.png
             :width: 250px
             :align: center
             :target:  https://hitecnology.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_AeroScanTech.png
             :width: 250px
             :align: center
             :target:  https://aeroscantech.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Quaternium.png
             :width: 250px
             :align: center
             :target:  https://quaternium.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_NP_UAS_TS.png
             :width: 250px
             :align: center
             :target:  http://npuasts.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_AION_ROBOTICS.png
             :width: 250px
             :align: center
             :target:  https://aionrobotics.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_ALTI.jpg
             :width: 250px
             :align: center
             :target:  https://altiuas.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Flytrex.png
             :width: 250px
             :align: center
             :target:  https://flytrex.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_VimDrones.png
             :width: 250px
             :align: center
             :target:  https://vimdrones.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_UAV_Systems_International.jpg
             :width: 250px
             :align: center
             :target:  https://uavsystemsinternational.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_UAVEX.png
             :width: 250px
             :align: center
             :target:  https://uavex.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Geodrones_Australia.png
             :width: 250px
             :align: center
             :target:  https://geodronesaustralia.com.au
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Dual_RC.png
             :width: 250px
             :align: center
             :target: https://dualrc.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_DAVWINGS.png
             :width: 250px
             :align: center
             :target: http://davwings.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_FrSky.png
             :width: 250px
             :align: center
             :target: https://frsky-rc.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_TaiwanDrone100.png
             :width: 250px
             :align: center
             :target: https://taiwandrone100.com
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Kraus_Aerospace.png
             :width: 250px
             :align: center
             :target: https://krausaerospace.com
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_Argosdyne.png
             :width: 250px
             :align: center
             :target: http://argosdyne.com/en
 
-    *
       - .. image:: ../../../images/supporters/supporters_logo_PDRL.png
             :width: 250px
             :align: center
             :target: https://pdrl.in
 
+    *
       - .. image:: ../../../images/supporters/supporters_logo_RadioMaster.png
             :width: 250px
             :align: center
             :target: https://radiomasterrc.com
             
-    *
       - .. image:: ../../../images/supporters/supporters_logo_Skydroid.png
             :width: 250px
             :align: center
             :target: http://www.skydroid.xin
 
-      - .. image:: ../../../images/supporters/supporters_logo_asylon.png
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_Asylon.png
             :width: 250px
             :align: center
-            :target: http://www.dronecore.us
- 
+            :target: https://dronecore.us
+
+      - .. image:: ../../../images/supporters/supporters_logo_Watts_Innovation.png
+            :width: 250px
+            :align: center
+            :target: https://wattsinnovations.com
+
+    *
+      - .. image:: ../../../images/supporters/supporters_logo_Exyn.png
+            :width: 250px
+            :align: center
+            :target: https://exyn.com
+
+      - .. image:: ../../../images/supporters/supporters_logo_Telluraves_Aerospace.jpg
+            :width: 250px
+            :align: center
+            :target: https://telluraves.co.za
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_logo_Ardusimple.png
+            :width: 250px
+            :align: center
+            :target: https://www.ardusimple.com
+
+      - .. image:: ../../../images/supporters/supporters_logo_qiotek.jpg
+            :width: 250px
+            :align: center
+            :target: https://www.qio-tek.com
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_logo_apd.png
+            :width: 250px
+            :align: center
+            :target: https://powerdrives.net
+
+      - .. image:: ../../../images/supporters/supporters_logo_BZB_UAS.png
+            :width: 250px
+            :align: center
+            :target: https://bzbuas.com/
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_logo_Ocius.jpg
+            :width: 250px
+            :align: center
+            :target: https://ocius.com.au/
+
+      -  .. image:: ../../../images/supporters/supporters_logo_RotorsAndCams.png
+            :width: 250px
+            :align: center
+            :target: https://rotorsandcams.com/
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_logo_blicube.jpg
+            :width: 250px
+            :align: center
+            :target: https://www.blicube.com/
+
+      - .. image:: ../../../images/supporters/supporters_logo_ModalAI.png
+            :width: 250px
+            :align: center
+            :target: https://www.modalai.com/
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_logo_SYNEREX.png
+            :width: 250px
+            :align: center
+            :target: http://www.synerex.kr/
+
+      -  .. image:: ../../../images/supporters/supporters_logo_Offshore_Aviation.png
+            :width: 250px
+            :align: center
+            :target: https://www.Offshoreaviation.com
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_logo_currawong.png
+            :width: 250px
+            :align: center
+            :target: https://www.currawongeng.com/
+
+      -  .. image:: ../../../images/supporters/supporters_logo_skyways.png
+            :width: 250px
+            :align: center
+            :target: https://skyways.com/
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_logo_Sky-Drones.png
+            :width: 250px
+            :align: center
+            :target: https://sky-drones.com/
+
+      -  .. image:: ../../../images/supporters/supporters_logo_sparkletech.jpg
+            :width: 250px
+            :align: center
+            :target: https://www.sparkleuav.com/
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]

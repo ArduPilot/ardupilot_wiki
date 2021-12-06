@@ -49,6 +49,8 @@ From within RealFlight, Reduce graphics options to improve performance:
    
   .. image:: ../images/realflight-settings-graphics.png
     :target: ../_images/realflight-settings-graphics.png
+    
+ .. note:: Under RealFlight's Simulation menu, Physics submenu, be sure its set at "Realistic" for best physics modeling and refresh rates.
    
 Connecting to Mission Planner's SITL
 ------------------------------------
@@ -75,6 +77,9 @@ If the vehicle's position is not reset, from within RealFlight:
   - after the vehicles position is reset, press the transmitter's "Reset" button or PC spacebar again
 
 At this point, load the parameter file for this "QuadCopterX-flightaxis" model via Mission Planner. You are now ready to arm and fly.
+
+.. note:: as with a real vehicle, sometimes loading parameters "enables" other groups of parameters which will not be set during the first load. If you get a message when loading parameters that you have enabled others, reload the parameter file to change those newly revealed parameter groups.
+
 
 Connecting to SITL running on a separate (or Virtual) machine:
 --------------------------------------------------------------
@@ -140,7 +145,7 @@ InterLink DX/Elite controller emulation: This closely mimics these Interlink  co
 To setup a six position mode switch, you would do so just as explained :ref:`here<common-rc-transmitter-flight-mode-configuration>` for an OpenTX transmitter, but first calibrate the RealFlight  controller using a dual position switch on the mode channel. Then change the transmitter back to provide the six PWM levels. This required since RealFlight auto-scales from the calibration values, so if your six PWM levels are centered in the recognition ranges , then the channel's PWM extremes will not be used for calibration and the PWM levels will be altered by RealFlight before passing on to the SITL. 
 
 .. toctree::
-    :hidden:
+    :maxdepth: 1
 
     Interlink Emulation <interlink-emulation>
     Understanding SITL using RealFlight <flightaxis>

@@ -9,7 +9,7 @@ essential for stable, accurate flight. To help with this it is highly
 recommended that you use the AUTOTUNE system described below.
 
 What AUTOTUNE does
-~~~~~~~~~~~~~~~~~~
+==================
 
 The AUTOTUNE mode is a flight mode that flies in the same way as FBWA,
 but uses changes in flight attitude input by the pilot to learn the key
@@ -20,7 +20,7 @@ attitude changes as possible so that the autotune code can learn how the
 aircraft responds.
 
 Setting up for AUTOTUNE
-~~~~~~~~~~~~~~~~~~~~~~~
+=======================
 
 To setup your aircraft for AUTOTUNE you need to select AUTOTUNE mode as
 one of the flight modes selectable with the flight mode switch on your
@@ -36,6 +36,14 @@ then you could choose level 7, which will result in a bit sharper tune
 have done an initial tune with a lower level. Levels above 8 should only
 be used by very experienced pilots.
 
+Autotune tunes the FF (feedforward), P, I, and D terms at each :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`, which determines the maximum/target slew rates used for the tuning process ( :ref:`PTCH2SRV_RMAX_UP<PTCH2SRV_RMAX_UP>`, :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>`, :ref:`RLL2SRV_RMAX<RLL2SRV_RMAX>`) and the gain from desired attitude angle to demanded angular rate ( :ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>` and :ref:`RLL2SRV_TCONST<RLL2SRV_TCONST>`).
+
+It is important to set a level appropriate for the rates that the aircraft can physically achieve.
+This is because excessive target rates will prevent the autotune from adjusting the gains.
+In particular, the level 6 roll rates can be too large for slow aircraft with large wing spans,
+like gliders. These often have a maximum roll rate of 30 - 40 degrees per second and should use
+level 2 or 3. See :ref:`automatic-tuning-with-autotune_level-settings` for the rates.
+
 You also need to make sure that all of the basic settings for your
 airframe are correct. In particular, ensure that all surface reversals
 are correct and that you have a reasonable value set for the minimum
@@ -46,6 +54,8 @@ airspeed estimate from other sensors. Also make sure you have done RC
 calibration, as AUTOTUNE will only work if you have full control
 movements with your transmitter sticks.
 
+In addition, ArduPilot will automatically scale the tuning gains versus airspeed, either measured or estimated (if no airspeed sensor is used), to compensate for the control surface effectiveness vs speed. The nominal center speed for this is :ref:`SCALING_SPEED<SCALING_SPEED>` and should be set to the approximate speed that will be used for tuning, ie the typical cruising speed. Once tuning is done with this speed set, do not change it since it directly scales the gains and will corrupt the tune.
+
 Other things to check:
 
 -  if you have an airspeed sensor fitted then make sure it is working
@@ -53,15 +63,15 @@ Other things to check:
 -  check your center of gravity, making sure it is correct according to
    the manual for your aircraft. In general it is safer to be a bit more
    nose heavy than tail heavy.
--  check your surface trims. You may wish to use the :ref:`TRIM_AUTO option <TRIM_AUTO>`
-   after reading the documentation for that option.
+-  check your surface trims. It is recommended to use the :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` option after reading the documentation for that option.
 -  make sure your failsafe settings are setup correctly. Try turning off
    your transmitter with your plane on the ground (and propeller removed
    or made safe) and check how the plane reacts
--  setup a rally point for a safe place to RTL if needed
+-  setup a rally point for a safe place to RTL if needed other than home
+-  make sure that the :ref:`PTCH_RATE_SMAX<PTCH_RATE_SMAX>` and :ref:`RLL_RATE_SMAX<RLL_RATE_SMAX>` parameters are appropriately set for your servos speeds. See :ref:`common-servo-limit-cycle-detection`. If these are set too low, then the tune will be impacted.
 
 Flying in AUTOTUNE
-~~~~~~~~~~~~~~~~~~
+==================
 
 Once you are all setup you can start flying in AUTOTUNE mode. You can
 either takeoff in AUTOTUNE mode, or takeoff in another mode and switch
@@ -70,25 +80,25 @@ to AUTOTUNE once you have gained altitude.
 When you engage AUTOTUNE mode a few things will happen:
 
 -  the autotune system will immediately setup some values for
-   your roll and pitch I and D gains, and your roll and pitch maximum
-   rates. These values depend on the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` and current P value, from which it will start tuning.
+   your roll and pitch maximum
+   rates and angle error to demanded rate gain. These values depend on the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` 
 -  the autotune system will monitor your demanded roll and pitch rates
    (as determined by your transmitter stick movements). When the
-   demanded roll or pitch rate exceeds 80% of the maximum rate the
+   demanded roll or pitch rate exceeds 80% of the maximum rate (not 80% stick deflection, one must move stick quickly towards full throw) the
    autotune system will use the response of the aircraft to learn roll
    or pitch tuning values.
--  every 10 seconds the autotune system will save the parameters you had
-   10 seconds ago. This means that if autotune causes your aircraft to
-   become unstable you have 10 seconds to switch to another mode and
+-  the autotune system will save the parameters once the tune has been completed for an axis. This means that if autotune causes your aircraft to
+   become unstable switch to another mode and
    recover. When you switch out of AUTOTUNE mode the last saved
-   parameters are restored.
+   parameters are restored. Switching back into AUTOTUNE will resume the tune where it was stopped, unless a reboot occurs. Note that the SMAX params may hide an over-tuned condition, such
+   that oscillations may appear as just "twitchy" behavior.
 -  If you are starting with the default parameters for roll and pitch
    you may find the plane is quite sluggish when you first enter
    AUTOTUNE. You will find that as the tune progresses this will get
    better. Make sure your flight area has plenty of room for long slow
    turns.
 
-The key to a successful autotune is to input rapid roll or pitch
+The key to a successful Autotune is to input rapid roll or pitch
 movements with the transmitter sticks. You should only do one of either
 roll or pitch at a time, and you should move the stick rapidly to the
 maximum deflection.
@@ -114,6 +124,8 @@ mode.
 
 .. note:: If the aircraft ever becomes unstable enough that you think it is dangerous to keep flying then you should change out of AUTOTUNE mode. That will restore the parameters you had from 10 seconds ago.
 
+-  Stop increasing the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` on successive autotune sessions when the desired feel and responsiveness is obtained, oscillations occur, or it becomes "twitchy" in an axis.
+
 
 Don't stop too early
 ~~~~~~~~~~~~~~~~~~~~
@@ -125,8 +137,14 @@ coping well with wind, or not holding altitude well. Keep flying in
 AUTOTUNE mode well past the point where you think the plane is flying
 well.
 
+Autotune Level 0
+================
+
+This is a special level that does not change the rates or time constant (ie like :ref:`RLL2SRV_RMAX<RLL2SRV_RMAX>` or :ref:`PTCH2SRV_TCONST<PTCH2SRV_TCONST>`) but tunes FF/P/I/D for the current values of those parameters. This may be useful when pitch is unstable at a lower :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` level than roll, for example. You can set the ROLL axis values at more agressive values than the pitch axis and proceed with a tune to re-optimize the FF/P/I/D values for that configuration.
+
+
 Completing the tune
-~~~~~~~~~~~~~~~~~~~
+===================
 
 Once you have learned reasonable roll and pitch tuning parameters with
 autotune you should complete the tune by manually tuning some other key
@@ -134,7 +152,7 @@ parameters.
 
 The parameters that are needed for most airframes are:
 
-NAVL1_PERIOD: This defaults to 25, which is a very conservative value
+:ref:`NAVL1_PERIOD<NAVL1_PERIOD>`: This defaults to 25, which is a very conservative value
 designed to cope with badly tuned airframes. It controls how sharply the
 aircraft will turn in automatic modes (such as AUTO, RTL and LOITER).
 Most aircraft should use a significantly lower value. Once you have
@@ -144,7 +162,7 @@ level you should fly a rectangular mission in AUTO mode and adjust
 :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` down by 1 at a time until the aircraft turns at a rate you
 are happy with, and does not "wag its tail" in flight.
 
-PTCH2SRV_RLL: This parameter controls how much elevator to add in turns
+:ref:`PTCH2SRV_RLL<PTCH2SRV_RLL>`: This parameter controls how much elevator to add in turns
 to keep the nose level. Many aircraft require a small change to this
 parameter from the default of 1.0. To see if you need to tune this value
 you should hold a tight circle in FBWA mode by holding the aileron stick
@@ -162,7 +180,7 @@ your aircraft, but these are the ones that most people need. Please read
 the normal manual tuning documentation for more information.
 
 AUTOTUNE Logging
-~~~~~~~~~~~~~~~~
+================
 
 The progress of the autotune is recorded in the dataflash log. If you
 are trying to debug autotune or are posting about autotune on the forums
@@ -194,15 +212,14 @@ autotune system only works while the pilot is demanding a rapid attitude
 change (above 80% of the maximum rate).
 
 Manual tuning versus AUTOTUNE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=============================
 
-For the very best performance with Plane you should perform a manual
-tune, perhaps starting with the values from autotune. The autotune
+For the very best performance with Plane you can perform a manual
+tune, perhaps starting with the values from Autotune. The Autotune
 system is designed as a conservative system to get reasonable values for
 most aircraft, it is not a "perfect tuner", and manual tuning can result
-in better performance if you put the time and effort in. Autotune tunes
-the P gain directly, but sets the D and I gain conservatively based on
-the  :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` and value of the P gain.
+in better performance if you put the time and effort in. But it requires using
+and analyzing log file results. 
 
 It is still recommended that everyone start out with AUTOTUNE however.
 Correctly tuning an aircraft is not easy, and AUTOTUNE does better than
@@ -223,3 +240,35 @@ lower throttle settings and airspeeds.
 If you adjust the I gain manually, then this also changes the value for
 P that is required to maintain the correct response, so adjusting the I
 gain is only recommended for advanced users.
+
+.. _automatic-tuning-with-autotune_level-settings:
+
+AUTOTUNE_LEVEL settings
+=======================
+
++---------------+----------------+
+| Level         | Rate [deg/s]   |
+|               |                |
++---------------+----------------+
+|  1            |   20           |
++---------------+----------------+
+|  2            |   30           |
++---------------+----------------+
+|  3            |   40           |
++---------------+----------------+
+|  4            |   50           |
++---------------+----------------+
+|  5            |   60           |
++---------------+----------------+
+|  6 (default)  |   75           |
++---------------+----------------+
+|  7            |   90           |
++---------------+----------------+
+|  8            |  120           |
++---------------+----------------+
+|  9            |  160           |
++---------------+----------------+
+|  10           |  210           |
++---------------+----------------+
+|  11           |  300           |
++---------------+----------------+

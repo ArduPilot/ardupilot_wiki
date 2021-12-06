@@ -4,7 +4,7 @@
 Modes
 =====
 
-This outlines the differences in sailboat behaviour from the standard Rover :ref:`modes <rover-control-modes>`.
+This outlines the differences in sailboat behavior from the standard Rover :ref:`modes <rover-control-modes>`.
 
 Manual
 ------
@@ -15,7 +15,9 @@ sails tight. If this is an issue disable :ref:`stick disarming <ARMING_RUDDER>`.
 ACRO
 ----
 The Sail is automatically trimmed to the wind direction using the wind vane. A tack can be triggered from an aux
-switch; the vehicle will match its current angle to the true wind on the new tack.
+switch; the vehicle will match its current angle to the true wind on the new tack. Note that the vehicle will only
+try to sail if the operator is requesting some forward speed with the throttle input. With 0 throttle input the vehicle 
+will let out its sail in a attempt to stop.
 
 Loiter
 ------
@@ -25,7 +27,7 @@ Loiter
 The vehicle will keep moving within the :ref:`loiter radius <LOIT_RADIUS>`.
 
 
-RLT
+RTL
 ---
 The vehicle will tack upwind back to the home location if required.
 

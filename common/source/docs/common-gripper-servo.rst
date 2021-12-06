@@ -21,7 +21,7 @@ Connecting the servo to a Pixhawk
     :target: ../_images/Servo_Pixhawk.jpg
 
 -  If using Copter, connect the servo to AUX OUT 1, 2, 3 or 4.  MAIN OUT 1 ~ 8 should be avoided because these update at 400hz.  If using Plane or Rover where all pins update at 50hz, any unused MAIN OUT or AUX OUT 1 ~ 4 may be used.
--  AUX OUT 5 and 6 cannot be used by default because they are setup as :ref:`Relays <common-relay>`.  These pins can changed to Servo outputs by setting the :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` parameter to 6 and setting :ref:`RELAY_PIN <RELAY_PIN>` and :ref:`RELAY_PIN2 <RELAY_PIN2>` to -1.
+-  AUX OUT 5 and 6 cannot be used by default because they are setup as :ref:`Relays <common-relay>`.  These pins can changed to Servo outputs by setting the ``BRD_PWM_COUNT`` parameter to 6 and setting :ref:`RELAY_PIN <RELAY_PIN>` and :ref:`RELAY_PIN2 <RELAY_PIN2>` to -1.
 -  The Pixhawk autopilot cannot provide power to the servos so an external BEC or ESC that can provide 5V should be used.
 
 Configuration

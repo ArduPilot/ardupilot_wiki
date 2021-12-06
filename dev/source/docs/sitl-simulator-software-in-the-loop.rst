@@ -50,6 +50,8 @@ The ArduPilot SITL environment has been developed to run natively on both
 Linux and Windows. For setup instructions see :ref:`Setting Up SITL <SITL-setup-landingpage>`
 for more information. Using SITL is explained in :ref:`Using SITL <using-sitl-for-ardupilot-testing>`. For examples of starting and using SITL for a particular vehicle see :ref:`sitl-examples` . 
 
+Mission Planner (Windows) also provides a simple means of running SITL for the master branch and stable branches of vehicles. See :ref:`planner:mission-planner-simulation`.
+
 SITL Architecture
 =================
 
@@ -67,5 +69,5 @@ port numbers depending on your environment.
     Setting Up SITL <SITL-setup-landingpage>
     Using SITL <using-sitl-for-ardupilot-testing>
     Examples of using SITL by Vehicle <sitl-examples>
-    SITL Serial Port Mapping <sitl-serial-mapping>
+    SITL Serial Ports <learning-ardupilot-uarts-and-the-console>
     SITL Parameter List <sitl-parameters>

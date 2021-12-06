@@ -281,6 +281,8 @@ with a shallow pitch (in ``LAND_PITCH_CD``) and set a slightly higher
 altitude to flare at. That will only work if your stall speed is low
 enough that gliding for a while will work reliably.
 
+.. _do_land_start:
+
 Using DO_LAND_START
 ===================
 
@@ -399,6 +401,8 @@ The maximum amount of reverse thrust used in autopilot throttle controlled modes
 The :ref:`USE_REV_THRUST <USE_REV_THRUST>` parameter is a bit mask that allows the setting of when reverse thrust can be activated, as when autolanding, or in other throttle controlled modes.
 
 If an RC channel's ``RCx_OPTION`` auxiliary function has been set to "64", then activating the switch will also provide access to the reverse thrust capability in non-throttle controlled modes, as shown in the :ref:`Reverse Thrust Setup<reverse-thrust-setup>` section.
+
+.. note:: Airbrakes can also be automatically deployed during reverse thrust operation. See :ref:`Airbrakes<airbrakes-on-plane>`.
 
 
 ESC (Electronic Speed Controller)

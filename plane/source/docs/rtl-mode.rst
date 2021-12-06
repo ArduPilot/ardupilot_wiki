@@ -16,7 +16,14 @@ The loiter radius at home is determined by :ref:`RTL_RADIUS<RTL_RADIUS>`, if it'
 
 Additionally, in firmware versions 4.0.6 and later, by setting :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>` to a non-zero value, the plane will climb that many meters, limited in bank angle by :ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>` degrees until the additional altitude is reached, then begin the above return to home action from that altitude.
 
+To prevent the vehicle from turning until the return atlitude is reached, if below that value(:ref:`ALT_HOLD_RTL <ALT_HOLD_RTL>` + :ref:`RTL_CLIMB_MIN<RTL_CLIMB_MIN>`), set bit 4 of the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bitmask.
+
 Alternatively, you may :ref:`configure the plane to return to a Rally Point <common-rally-points>`, rather than the home location.
+
+RTL_AUTOLAND
+============
+
+It is possible to setup an :ref:`automatic-landing` to be executed when entering RTL. See :ref:`do_land_start` for details. You must have setup your vehicle to properly do a automatic landing, of course.
 
 .. warning::
 

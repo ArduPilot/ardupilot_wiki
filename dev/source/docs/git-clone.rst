@@ -21,7 +21,7 @@ Instructions for commonly used tools are below but whichever tool is used, the U
 .. figure:: ../images/APM-Git-Github-Clone.jpg
 
 Cloning with the command line
------------------------------
+=============================
 
 -  open a terminal and navigate to the directory where you would like the clone to be stored
 -  clone your fork:
@@ -43,7 +43,7 @@ Cloning with the command line
        git submodule update --init --recursive
 
 Cloning with the GitHub GUI (Windows or MAC)
---------------------------------------------
+============================================
 
 - ensure you have installed the :ref:`GitHub for Desktop <git-install>`
 - open the `ArduPilot repo <https://github.com/ArduPilot/ardupilot>`__ in your favorite web browser

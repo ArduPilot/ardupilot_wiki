@@ -6,11 +6,6 @@ LIDAR-Lite Rangefinder
 
 The `Garmin / PulsedLight LIDAR-Lite <https://support.garmin.com/support/manuals/manuals.htm?partNo=010-01722-00>`__ rangefinder is a low-cost optical distance measurement solution with a 40m range under most operating conditions, low power consumption, and small form factor.  This sensor can be purchased from many online retailers including `Sparkfun <https://www.sparkfun.com/products/14032>`__.  Technical info can be found `here <https://support.garmin.com/support/manuals/manuals.htm?partNo=010-01722-00>`__.
 
-.. note::
-
-   Support was added in Copter 3.3, Plane 3.3, and Rover 2.49.
-   ArduPilot supports LIDAR-Lite v1 (aka "Black Label"), v2 (aka "Blue Label") and v3.
-
 ..  youtube:: 3I06AOwIQVY
     :width: 100%
 
@@ -99,7 +94,7 @@ Set the following parameters:
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MAX_CM>` = 20 (the mininum range the lidar can accurately report in cm)
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1 ("0.8" may produce more accurate readings for some units)
 -  :ref:`RNGFND1_OFFSET <RNGFND1_OFFSET>` = 0
--  :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>` = 4 (ensures AUX5 is not used as a servo output)
+-  ``BRD_PWM_COUNT`` = 4 (ensures AUX5 is not used as a servo output)
 
 Optional Power Saving
 ---------------------

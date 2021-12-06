@@ -4,13 +4,13 @@
 Traditional Helicopter – Mounting the Autopilot to the Frame
 ============================================================
 
-On larger helicopters of approximately 550-class or larger the APM, Pixhawk or
-Cube has been mounted in various locations such as on the FBL unit tray, on
+On larger helicopters of approximately 550-class or larger the autopilot has been mounted in various locations such as on the FBL unit tray, on
 top of the tail drive case, or even on the side of the frame (very popular).
 
 
 Below is a possible method to mount a full-size autopilot on a smaller sized
-helicopter. The Pixracer is popular on smaller frames that have less mounting options.
+helicopter. The Pixracer is popular on smaller frames that have less mounting options. All in one boards such as Matek F405-WSE are also good choices.
+Any ArduPilot supported autopilot with the required number of outputs for your configuration, and the abilitiy to attach a GPS and remotely mounted Compass (internal compasses sometimes have too much motor electrical interference, especially on boards with integrated current sensor) can be used.
 
 -  Separate the helicopter's main body from its landing gear
 -  Attach one carbon fibre plate to the body, the other to the landing

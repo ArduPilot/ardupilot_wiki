@@ -95,9 +95,25 @@ The PWM outputs are marked M1-M6 in the above pinouts. The corresponding servo o
 
 RC Input
 ========
- 
-RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for FPort the receiver should be connected to T6 and SERIAL6 configured as described in :ref:`FPort<common-FPort-receivers>` section.
- 
+
+The R6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the R6 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL6 port's RX input pin.
+
+With this option, :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` must be set to "23", and:
+
+- PPM is not supported.
+
+- SBUS/DSM/SRXL connects to the R6 pin, but SBUS requires that the :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "3".
+
+- FPort requires connection to T6 and :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` be set to "7".
+
+- CRSF also requires a T6 connection, in addition to R6, and automatically provides telemetry. Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "0".
+
+- SRXL2 requires a connection to T6 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
+
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
+
 FrSky Telemetry
 ===============
  
@@ -162,7 +178,14 @@ Where to Buy
 ============
 
 
-- Available from many retailers including `Holybro Kakute F7 AIO <https://shop.holybro.com/kakute-f7-aio_p1105.html>`__ and `Holybro Kakute F7 <https://shop.holybro.com/kakute-f7_p1104.html>`__
+- Available from many retailers including `Holybro Kakute F7 AIO <https://shop.holybro.com/kakute-f7-aio-v15_p1173.html>`__ , `Holybro Kakute F7 V1.5 <https://shop.holybro.com/kakute-f7-v15_p1161.html>`__ and `Holybro Kakute F7 HDV <https://shop.holybro.com/kakutef7-hdv_p1157.html>`__
 
+Firmware
+========
 
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
+"KakuteF7".
 
+Firmware for this board which supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "KakuteF7-bdshot". 
+
+.. note:: Output 5 is disabled in this firmware and Output 6 only supports normal Dshot and PWM.

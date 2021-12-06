@@ -14,7 +14,7 @@ APM MavLink to FrSky SmartPort Converter (MavLink_FrSkySPort)
 -------------------------------------------------------------
 
 There are several open source projects such that use small cpu boards, such as the Teensy USB Development board, to convert MAVLink
-messages to FrSkySmartPort format so that ArduPilot telemetry can be displayed on an FrSky transmitter.
+messages to FrSkySmartPort format so that ArduPilot telemetry can be displayed on an `OpenTX <https://www.open-tx.org/>`__ transmitter.
 
 Mav2PT Converter Project
 ------------------------

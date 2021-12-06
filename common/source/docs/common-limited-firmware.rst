@@ -12,49 +12,73 @@ in order to reduce the firmware size to less than 1 MB.
 
 The missing features are listed below.
 
-.. note:: The new LUA scripting feature requires a 2MB board, so none of the boards below have that capability.
+Common to all 1MB Boards
+========================
 
--  **Sparky2 and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)**
+Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip), BeastF4, F35Lightning, F4BY, MambaF405v2, MazzyStarDrone, OmnibusNanoV6, VRBrain-v51, VRBrain-v52, VRCore-v10, VRUBrain-v51, airbotf4, crazyflie2, mini-pix, revo-mini, skyviper, speedybeef4.
+
+- ADSB
+- EFI Controller Support
+- External AHRS
+- INS Temperature Calibration
+- SOLO Gimbal Support
+- Visual Odometry
+- Airspeed Drag Compensation
+- Plus Code Location Support
+- Object Avoidance and Proximity Sensors
+- CRSF Text Display (Telemetry is included)
+- Bootloader inclusion in main code base
+- EKF2 (EKF3 only)
+- LUA scripting support
+- In-Flight FFT control of Harmonic Notch
+
+Additional Exclusions
+=====================
+
+Additional Exclusions for: Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)
 
    -  **Common to all vehicles**
 
       -  Aux function for testing IMU failover (KILL_IMU)
-      -  LTM, Devo and Hott telemetry formats
+      -  LTM, MSP, CRSF, Spektrum, Devo and Hott telemetry formats
       -  Piccolo CAN
       -  Oreo LED lights
       -  NCP5623 LED lights
       -  NMEA output format
       -  Solo Gimbal
-      -  DSP support
+      -  In Flight FFT support
       -  MTK, SIRF GPS support
-      -  EFI engine support
       -  AK09916 on ICM20948 compass
-      -  Runcam
+      -  Runcam Control
       -  External I2C barometers
       -  DLVR Airspeed sensors
-
-
+      -  CAN Tester
+      -  KDE CAN
+      -  External AHRS
+      -  Generator
+      -  GPS moving baseline
+      -  MSP Rangefinders
+      -  Camera Mount Control
+      -  OSD Parameter Editor
+      -  Button
+      -  OAPathPlanner
+       
    -  **Copter only**
 
       -  Sprayer
-      -  Visual Odometry
       -  Gripper
       -  RPM
-      -  ADSB
-      -  Guided, Follow, Sport, SystemID, Zigzag and Autorotate modes
+      -  Guided, Follow, Sport, Guided_noGPS, SystemID, Zigzag and Autorotate modes
       -  Beacon
-      -  OAPathPlanner
       -  Optical Flow
-
 
    -  **Plane Only**
 
-      -  HIL
       -  Gripper
       -  Soaring
       -  Landing Gear
       -  Qautotune mode
-
+      -  Off-board Guided
 
    -  **Rover Only**
 
@@ -65,17 +89,30 @@ The missing features are listed below.
 
       -  N/A
 
--  **KakuteF7, KakuteF7 Mini, OmnibusF7V2, Matek F405, Matek F405-Wing/ F405-SE,OmnibusF4/ F4Pro** 
+Additional exclusions for: Matek F405, Matek F405-Wing/F405-SE, OmnibusF4/F4Pro
 
    -  SMBUS battery
+   -  Parachute 
+   -  Sprayer
+   -  OAPathPlanner
+   -  Generator
+   -  Precision Landing
+   -  Baro Wind Compensation *
+   -  Gripper *
+
+      * enabled in OmnibusF4/F4Pro
+
+Also for MatekF405-Wing:
+
+   -  Wind Compensation
+   -  RunCam Control
+   -  Spektrum Telem
+
+Additional exclusions for: SuccexF4
+
    -  Parachute
    -  Sprayer
 
-
--  **SuccexF4**
-
-   -  Parachute
-   -  Sprayer
 
 RAM Limitations
 ===============

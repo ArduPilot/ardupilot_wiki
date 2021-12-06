@@ -47,11 +47,14 @@ Restoring Calibrations after Resets
 
 The above will also reset the flag used to indicate that Accelerometer and Compasses have been calibrated, so that even if you restore your old parameters from a file, the calibrations would still need to be repeated.
 
-There is a method to allow these to be restored.
+There are two methods to allow these to be restored.
 
 .. warning:: **Only use this method if you are certain that the Accelerometer or Compass sensors have not changed in any manner since the parameters were stored in a file. Restoring inaccurate calibration data can lead to a crash!**
 
-#. In the  **CONFIG \| Full Parameter List** or **Full Parameter Tree** page, find the ``COMPASS_DEV_IDx`` (s) corresponding to the system's attached compasses. For each compass, copy  the current device id, then write the ``COMPASS_DEV_IDx`` to "0", and then write the original id back again.Do this for every compass attached and calibrated.
+Using Mission Planner
+---------------------
+
+#. In the  **CONFIG/Full Parameter Tree** page, find the ``COMPASS_DEV_IDx`` (s) corresponding to the system's attached compasses. For each compass, copy  the current device id, then write the ``COMPASS_DEV_IDx`` to "0", and then write the original id back again.Do this for every compass attached and calibrated.
  
 #. Next, find the ``INS_ACC_IDx`` (s) corresponding to the system's attached accelerometers. For each one, copy  the current device id, then write the id to "0", and then write the original id back again.Do this for every accelerometer attached and calibrated.
 
@@ -59,5 +62,8 @@ There is a method to allow these to be restored.
 
 .. youtube:: HhYF-Z0xFCQ
 
+Using MAVProxy
+--------------
 
+Simply type "forcecal" will force the autopilot into a calibrated state. Be sure you have valid compass and IMU calibration values already loaded.
 

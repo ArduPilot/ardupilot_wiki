@@ -1,11 +1,15 @@
 .. _common-matekf405-se:
 
-================
-Mateksys F405-SE
-================
+====================
+Mateksys F405-SE/WSE
+====================
 
 .. image:: ../../../images/matekf405-se.jpg
     :target: ../_images/matekf405-se.jpg
+    :width: 450px
+
+.. image:: ../../../images/matekf405-wse.jpg
+    :target: ../_images/matekf405-wse.jpg
     :width: 450px
 
 
@@ -16,13 +20,11 @@ the above images and some content courtesy of `mateksys.com <http://www.mateksys
 	Due to flash memory limitations, this board does not include all ArduPilot features.
         See :ref:`Firmware Limitations <common-limited_firmware>` for details.
 
-This board uses the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`_
-
 Specifications
 ==============
 -  **Processor**
 
-   -  STM32F405RET6 ARM (168MHz)
+   -  STM32F405RGT6 ARM (168MHz)
 
 
 -  **Sensors**
@@ -35,12 +37,14 @@ Specifications
 -  **Power**
 
    -  6V ~ 36V DC input power
-   -  5V, 2A BEC
+   -  5V, 2A BEC for FC & Peripherals (GPS/Compass/etc.)
+   -  BEC Vx 5A for servos, 5V/ 6V option (WSE 0nly)
+   -  BEC 8V 1.5A for VTX and camera (WSE 0nly)
 
 
 -  **Interfaces**
 
-   -  6x UARTS
+   -  VCP & 6x UARTS
    -  10x PWM outputs, (LED output used as PWM10)
    -  1x RC input PWM/PPM, SBUS
    -  2x I2C port for external compass and airspeed sensor
@@ -52,12 +56,17 @@ Specifications
 
 -  **Size and Dimensions**
 
-   - 46mm x 36mm (30.5mm spaced square mounting holes)
-   - 10g
+   - SE:
+       - 46mm x 36mm (30.5mm spaced square mounting holes)
+       - 10g
 
-This board used the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`__.
+   - WSE:
+       - 44mm x 29mm x 10mm (25mm x25mm mounting, 2mm holes)
+       - 20g with bottom plate and remoter USB/buzzer board
 
-See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f405-se#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-se#tab-id-4>`__.
+These boards use the MatekF405-Wing firmware `here <https://firmware.ardupilot.org>`__.
+
+See mateksys.com for SE `detailed specifications <http://www.mateksys.com/?portfolio=f405-se#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-se#tab-id-4>`__ and WSE `detailed specifications <http://www.mateksys.com/?portfolio=f405-wse#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f405-wse#tab-id-4>`__
    
 Default UART order
 ==================
@@ -87,9 +96,23 @@ The first 8 servo/motor outputs are marked on the board: M1,M2,S3-S8 . S9 is a s
 RC Input
 ========
 
-The SBUS pin can be used for all ArduPilot supported receiver protocols. However, there is an alternate board configuration selectable by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "1". In this case, the UART2 RX input (marked RX2 on the board) is used for the receiver input and is mapped to SERIAL7. This is to provide support for FPort in firmware 4.1 and later, since it requires a true UART. 
+The SBUS pin, is passed by an inverter to R2 (UART2 RX), which by default is mapped to a timer input instead of the UART, and can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
 
-.. note:: In the alternate configuration, SBUS would need an external inverter before connection directly to RX2, but it can be still attached to the SBUS pin on the board since that is connected to an on-board inverter which is then connected to RX2. (and FPort will require an external bidirectional inverter circuit, like SPort requires, See  :ref:`FPort<common-FPort-receivers>` section.
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the R2 pin can also be configured to be used as true UART2 RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL7 port's RX input pin.
+
+With this option, :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` must be set to "23", and:
+
+- PPM is not supported.
+
+- DSM/SRXL connects to the R2  pin, but SBUS would still be connected to SBUS.
+
+- FPort requires connection to T2 and R2 via a bi-directional inverter. See :ref:`common-FPort-receivers` .
+
+- CRSF also requires a T2 connection, in addition to R2, and automatically provides telemetry.
+
+- SRXL2 requires a connection to T2 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
+
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM (SBUS requires external inversion on other UARTs). See :ref:`common-rc-systems` for details.
 
 Battery Monitor Configuration
 =============================
@@ -117,7 +140,14 @@ Where to Buy
 Connecting a GPS/Compass module
 ===============================
 
-This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected for autonomous modes to function. Compass is not required for normal Plane mode operation, but is for Copter, QuadPlane, and Rover.
+This board does not include a GPS or compass so an :ref:`external GPS/compass <common-positioning-landing-page>` should be connected for autonomous modes to function. Compass is not required for normal Plane mode operation, but is for typical Copter, QuadPlane, and Rover operation.
 
 
 .. note:: A battery must be plugged in for power to be provided to the 5V pins supplying the GPS/compass modules.
+
+Firmware
+========
+
+Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
+"MatekF405-Wing".
+

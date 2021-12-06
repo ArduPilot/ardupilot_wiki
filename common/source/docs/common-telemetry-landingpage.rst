@@ -8,6 +8,8 @@ Copter/Plane/Rover support sharing information with a ground station (or
 transmitter) using telemetry. Follow the links below for configuration
 information based upon your set-up.
 
+.. note:: Some RC systems incorporate telemetry in addition to RC control
+
 .. image:: ../../../images/Telemetry_LandingImage.jpg
     :target: ../_images/Telemetry_LandingImage.jpg
 
@@ -20,8 +22,11 @@ Short Range (<10KM)
     Bluetooth <common-mission-planner-bluetooth-connectivity>
     CUAV PW-Link <common-cuav-pwlink>
     ESP8266 wifi telemetry <common-esp8266-telemetry>
+    ESP32 wifi telemetry <common-esp32-telemetry>
     FrSky telemetry <common-frsky-telemetry>
+    Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
     HOTT telemetry <common-hott-telemetry>
+    MSP (MultiWii Serial Protocol) <common-msp-overview>
     SiK Radio v1 <common-3dr-radio-v1>
     SiK Radio v2 <common-sik-telemetry-radio>
     SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
@@ -34,7 +39,12 @@ Long Range
 .. toctree::
     :maxdepth: 1
 
+    Blicube RLINK P900 <common-blicube-rlink>
+    CRSF Telemetry <common-crsf-telemetry>
+    CUAV P8 Radio <common-cuav-p8>
     DragonLink <common-dragonlink-rc>
+    Holybro 900Mhz XBP9X Telemetry Radio <https://shop.holybro.com/xbp9x-radio_p1268.html>
+    Holybro Microhard P900 Radio Telemetry Radio <http://www.holybro.com/product/microhard-p900-radio/>
     LTM telemetry <common-ltm-telemetry>
     RFD900 <common-rfd900>
     Robsense SwarmLink <common-telemetry-robsense-swarmlink>

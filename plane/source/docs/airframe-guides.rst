@@ -10,5 +10,5 @@ make a airframe specific setup guide worthwhile.
 .. toctree::
     :maxdepth: 1
 
-    Parrot Disco <airframe-disco>
     MakeFlyEasy Believer <airframe-believer>
+    Parrot Disco <airframe-disco>

@@ -6,7 +6,7 @@ Battery Management
 
     module load battery
     
-The battery module provides warnings to the user if any of the APM power 
+The battery module provides warnings to the user if any of the power 
 sources reach a critical level.
 
 Status

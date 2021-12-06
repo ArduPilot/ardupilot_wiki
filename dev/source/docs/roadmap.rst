@@ -85,7 +85,7 @@ EKF
 - Bring the missing features from EKF2 into EKF3 to remove EKF2 (Paul)
 - EKF3 External Nav support
 - Fixing replay (PeterB)
-- Set EKF3 as the default
+- Set EKF3 as the default -- **COMPLETE!**
 - Robust yaw estimator for Copters
 
 
@@ -93,8 +93,8 @@ Hardware & OS support
 ---------------------
 
 - Add FDCAN support (Sid)
-- Bi-directional D-shot support (Tridge)
-- CAN GPS moving baseline yaw (Tridge)
+- Bi-directional D-shot support (Tridge) -- **COMPLETE**
+- CAN GPS moving baseline yaw (Tridge) -- **COMPLETE**
 - CAN IMUs (Phil K for HW)
 - CAN SITL Support (Sid)
 - CAN ecosystem ramp-up (Sid, Tridge)
@@ -126,13 +126,13 @@ Hardware
 Non-GPS Navigation, Avoidance and Path Planning
 -----------------------------------------------
 
-- 3D Bendy Ruler & Object Database (Randy, GSoC)
+- 3D Bendy Ruler & Object Database (Randy, GSoC) -- **COMPLETE**
 - Add support for Intel RealSense D435 (ROS & non-ROS) (Patrick, GSoC)
 - Bendy Ruler try re-implementing bendy ruler as Lua (Tridge)
 - Copter & Rover back away from objects (Randy, Peter Hall)
 - Improve Off-Board SLAM and Object Avoidance (:ref:`dev wiki link<ros-cartographer-slam>`) (Randy, Jaime, Patrick Poirier)
 - Improve reliability of T265 integration (reset handling, failsafe testing) (Randy, Jaime, Patrick Poirier)
-- Seamless GPS <-> Non-GPS transitioning (Randy)
+- Seamless GPS <-> Non-GPS transitioning (Randy) -- **COMPLETE**
 - T265 image output to external VO (Tridge)
 
 
@@ -148,12 +148,12 @@ Documentation
 -------------
 
 - Complete MAVLink interface section of developer wiki (Randy)
-- Dual GPS for Yaw setup (Henry, Tridge, Randy)
-- Frsky Telem Update (Alex, Henry)
+- Dual GPS for Yaw setup (Henry, Tridge, Randy) -- **COMPLETE**
+- Frsky Telem Update (Alex, Henry) -- **COMPLETE**
 - Scripting Documentation (MichaelDB)
-- Substitute C5 (Bruno)
+- Substitute C5 (Bruno) -- **COMPLETE!**
 - Translation support (Bruno)
-- Tuning/Fltr Copter to QuadPlane (Henry)
+- Tuning/Fltr Copter to QuadPlane (Henry) -- **COMPLETE**
 
 
 Miscellaneous 
@@ -170,7 +170,7 @@ Organizational
 --------------
 
 - Assist Ready-To-Fly manufacturers get their products to market
-- Find new BugMaster and support roles (Tridge, Randy, James, MichaelDB) -- Complete!
+- Find new BugMaster and support roles (Tridge, Randy, James, MichaelDB) -- **COMPLETE!**
 - Governance structure (James)
 
 

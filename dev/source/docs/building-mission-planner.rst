@@ -51,7 +51,7 @@ Here is what you will need.
 -  Sufficient disk space, memory, processor power to comfortably run
    Visual Studio (details below)
 -  An Internet connection.
--  Visual Studio 2019 community edition
+-  Visual Studio 2019 community edition (You must use version 16.8.x older versions have problems building/editing)
 
 Install Visual Studio
 ============================================
@@ -66,7 +66,7 @@ Windows system.
     - "ASP.NET and web development" 
     - "Universal Windows Platform developement" 
     - "Mobile development with .NET" 
-    - ".NET Core cross-platofrm developement"
+    - ".NET Core cross-platform developement"
 -  Reboot your PC
 -  Start Visual Studio from the Start Menu
 
@@ -85,6 +85,8 @@ The Mission Planner source code is stored in GitHub.  In general you can
 follow the instructions :ref:`for the ardupilot flight code <where-to-get-the-code>` except that you should use the
 **https://github.com/ArduPilot/MissionPlanner** repository in place of the ardupilot repository.  
 You could clone the git repo to (for example) c:\\MissionPlanner\\  but the exact folder is not critical.
+After cloned the repo, don't forget to update submodules. Go to the folder where you cloned the repo and issue a 
+**git submodule update --init --recursive** command.
 
 Open the Mission Planner solution in Visual Studio
 ==================================================
@@ -126,62 +128,14 @@ Open the Mission Planner solution in Visual Studio
    -  SharpKml
    -  ZedGraph
 
-Building Mission Planner - Use the Batch Build Feature
-======================================================
+Building the MissionPlanner
+===========================
 
-Before you attempt to build (compile) Mission Planner you must also have
-the official version installed on your PC.  This is because there are
-some .dll files that are not included in the Git repository.
+Goto Build > Build Solution
+and to debug
+Goto Debug > Start Debugging
 
-.. image:: ../images/MPBuild_BatchBuild.png
-    :target: ../_images/MPBuild_BatchBuild.png
-
--  Select Build >> Batch Build... and then press "Rebuild".  You will probably see errors
-   on your first attempt to compile (build) Mission Planner so try a
-   couple more times.
-
-If errors persist try some of the following:
-
--  For errors related to missing dlls:
-
-   -  In the Solution Explorer right click the MissionPlanner project,
-      Properties, Reference Paths
-   -  In the Folder entry, browse to and select the location of the
-      "installed" Mission Planner which is probably:
-      *C:\\Program Files (x86)\\Mission Planner* OR *C:\\Program
-      Files\\Mission Planner*
-   -  Click the Add Folder button to put the path to the installed MP
-      into the Reference paths box.
-   -  Click (select)  Build Events.  Remove all pre-build and post build
-      options.
-   -  Click (select)  Build.
-   -  If any of the sub-projects says "(incompatible)" next to it 
-      inside Solution Explorer, then right-click that sub-project 
-      and choose "reload", that should fix it. 
-
-For  errors about missing references, you will see the name of the
-project for each error listed. Select Properties for each project with
-such errors and add the location of the Installed Mission Planner like
-you did above for MissionPlanner project.  That should reduce the
-errors.
-
-If you see an error in project BSE.Windows.Forms "..could not locate the
-Code Analysis tool at ''.  You can eliminate this by un-checking the
-Enable Code Analysis box in Code Analysis  in the BSE.Windows.Forms
-properties.
-
-Some optional help in resolving build errors:
-
--  In VS, Select menu items [BUILD] [Configuration Manager] This will
-   show you which projects are compiled (built) each time you do a build
-   or re-build solution.
--  Check 'Build' for any that are not checked:
-
-   (I.E. 3DRRadio, Updater, wix)
--  Do [Build], [Clean Solution] then [Build], [Rebuild solution].
--  All projects should build without errors.
-
--  When you build without errors, you are ready to begin browsing or editing.
+By default visual studio will compile all projects and their dependencies as part of a build.
 
 Building the SimpleExample
 ==========================

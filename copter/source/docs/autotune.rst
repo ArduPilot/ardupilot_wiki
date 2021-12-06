@@ -14,16 +14,15 @@ AutoTune attempts to automatically tune the Stabilize P, Rate P and D, and maxim
     :width: 100%
 
 
-There a number of problems that can prevent AutoTune from providing a good tune. Some of the reasons AutoTune can fail are:
+There a number of problems that can prevent AutoTune from providing a good tune including:
 
-- High levels of gyro noise.
-- Incorrect value of :ref:`MOT_THST_EXPO <MOT_THST_EXPO>`.
-- Flexible frame or payload mount.
-- Overly flexible vibration isolation mount.
-- Non-linear ESC response.
-- Very low setting for :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`.
-- Overloaded propellers or motors.
-
+- Strong wind
+- High levels of gyro noise
+- Non-linear ESC response caused by incorrect value of :ref:`MOT_THST_EXPO <MOT_THST_EXPO>`
+- Flexible frame or payload mount
+- Overly flexible vibration isolation mount
+- Very low setting for :ref:`MOT_SPIN_MIN <MOT_SPIN_MIN>`
+- Overloaded propellers or motors
 
 Setup before flying in AutoTune mode
 ====================================
@@ -81,7 +80,11 @@ If the vehicle feels sloppy after the AutoTune, try increasing the :ref:`AUTOTUN
 Invoke AutoTune with Position Hold
 ==================================
 
-In Copter-3.5 (and higher) AutoTune performs a weak position hold if invoked from Loiter or PosHold flight modes (as opposed to AltHold) while doing an autotune.
+.. warning::
+
+   A better tune can often be achieved by invoking AutoTune from AltHold as described above instead of from Loiter or PosHold as described below
+   
+AutoTune performs a weak position hold if invoked from Loiter or PosHold flight modes (as opposed to AltHold) while doing an autotune.
 
    .. image:: ../images/autotune_from_loiter.png
        :target: ../_images/autotune_from_loiter.png

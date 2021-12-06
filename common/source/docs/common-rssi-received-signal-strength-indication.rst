@@ -60,7 +60,7 @@ There are four basic options for feeding RSSI to your autopilot:
  
 
  :ref:`RSSI_TYPE<RSSI_TYPE>` = 4  PWM type RSSI fed to a dedicated GPIO pin
-  :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  Specifies the GPIO pin to read PWM type RSSI from. On boards with IOMCU these are the AUX pins that can be used as PWM output by default or alternatively set to be used as GPIO using the  :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>`  parameter.
+  :ref:`RSSI_ANA_PIN<RSSI_ANA_PIN>`  Specifies the GPIO pin to read PWM type RSSI from. On boards with IOMCU these are the AUX pins that can be used as PWM output by default or alternatively set to be used as GPIO using the  ``BRD_PWM_COUNT``  parameter.
  
   :ref:`RSSI_CHAN_HIGH<RSSI_CHAN_HIGH>`  PWM value the radio receiver will output when the signal is the strongest.
  
@@ -175,7 +175,7 @@ Now set your RSSI parameters accordingly:
 PWM type RSSI fed to a dedicated pin
 ------------------------------------
 
-If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can feed this to one of your autopilot's GPIO pins. Use parameter  :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>`  to set PWM output pins as GPIO. On pixahwk type hardware, this refers to the AUX pins as they are connected to the board's MCU, bypassing the IOMCU co-processer.
+If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can feed this to one of your autopilot's GPIO pins. Use parameter  ``BRD_PWM_COUNT``  to set PWM output pins as GPIO. On pixahwk type hardware, this refers to the AUX pins as they are connected to the board's MCU, bypassing the IOMCU co-processer.
 
 +----------------------+-------------------------+
 | HW Pin (AUX) number  | alternative GPIO number |
@@ -193,7 +193,7 @@ If your RC receiver outputs PWM type RSSI on a dedicated pin or pad, you can fee
 | 6                    | 55                      |
 +----------------------+-------------------------+
 
-In the above example, setting  :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>`  to 4 will set pins 1-4 for use as PWM output and free the remaining pins 5 and 6 for use as GPIO 54 and 55.
+In the above example, setting  ``BRD_PWM_COUNT``  to 4 will set pins 1-4 for use as PWM output and free the remaining pins 5 and 6 for use as GPIO 54 and 55.
 
 If there is an existing RC receiver connection to your autopilot that includes supply voltage and ground, only one additional signal wire is required. The example below shows how to connect a receiver's PWM type RSSI output to a pixhawk autopilot's AUX 6 pin set for use as GPIO 55:
 

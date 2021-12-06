@@ -4,6 +4,10 @@
 How to use the "auth" command to sign a Pixhawk Board with your Certificate of Authenticity
 ===========================================================================================
 
+
+``ARCHIVED: this topic is archived. It's out of date and no longer works``
+
+
 The essence of this process is an RSA private/public key pair and a
 signing process that uses these keys to put some unique information onto
 every Pixhawk board.

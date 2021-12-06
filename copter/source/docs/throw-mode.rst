@@ -11,10 +11,6 @@ Once in the air, this mode does not accept any input from the pilot.  This mode 
 
    Use with caution!  It is dangerous to get close to an armed multicopter as is required to throw the vehicle.  It is recommended to takeoff normally instead of using throw mode whenever possible.
 
-.. note::
-
-   The Throw flight mode was introduced in AC3.4.
-
 ..  youtube:: JIPMpDJqdJ8
     :width: 100%
 

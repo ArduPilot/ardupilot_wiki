@@ -11,12 +11,19 @@ GPSs do not have RTK fix.
 
 GPSs from ArduPilot Partners that are known to work include:
 
-- `CUAV C-RTK 9P <https://store.cuav.net/index.php?id_product=101&rewrite=c-rtk-9p&controller=product#/32-rtk-sky_end>`__
+- :ref:`common-gps-ardusimple`
+- :ref:`common-cuav-c-rtk-9p-gps`
+- :ref:`Holybro H-RTK F9P GNSS <common-holybro-rtk-f9p>`
 - `mRobotics ZED-F9 GPS <https://store.mrobotics.io/category-s/109.htm>`__
+- :ref:`common-synerex-mdu-2000`
+
+
+    Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
+    Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
 
 .. note::
 
-   This feature is available in Copter 4.0.4 (and higher), Plane 4.0.6 (and higher) and Rover 4.1.0 (and higher);Ublox F9p must run firmware version 1.13 or higher.
+   This feature is available in Copter 4.0.4 (and higher), Plane 4.0.6 (and higher) and Rover 4.1.0 (and higher); **Ublox F9p must run firmware version 1.13 or higher and constellations configured**. See :ref:`common-gps-ublox-firmware-update`.
 
 
 Hardware Setup
@@ -35,11 +42,19 @@ Configuration
 - :ref:`GPS_TYPE <GPS_TYPE>` = 17 ("UBlox moving baseline base")
 - :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover")
 - Set the :ref:`GPS_POS1_X <GPS_POS1_X>`/Y/Z and :ref:`GPS_POS2_X <GPS_POS2_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
+- :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
 - :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3 (to use EKF3)
 - :ref:`EK2_ENABLE <EK2_ENABLE>` = 0 (to disable EKF2)
 - :ref:`EK3_ENABLE <EK3_ENABLE>` = 1 (to enable EKF3)
-- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 5 ("Use external yaw sensor") or 6 ("External yaw sensor with compass fallback")
-- :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
+
+If using 4.0
+
+- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` = 5 ("Use external yaw sensor")
+
+If using 4.1 (or higher)
+
+- :ref:`EK3_MAG_CAL <EK3_MAG_CAL>` is not used for this feature so it can be left at its default value ("0" for Plane, "3" for Copter, "2" for Rover)
+- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 ("GPS") or 3 ("GPS with Compass Fallback")
 
 The above configuration assumes that you want the RTCMv3 data between
 the two GPS modules to go via the flight controller board. You may instead
@@ -70,17 +85,16 @@ validates that the fix is good enough in several ways:
    of the vehicles is within 20% of the distance between the two GPS
    modules
 
-Firmware Versions
------------------
-
-The 4.0 ArduPilot firmware versions don't support the EK3_MAG_CAL=6
-choice. That choice will be in the 4.1.x releases. Using EK3_MAG_CAL=6
-allows the EKF to learn a set of compass offsets while flying which
-allows your compass to be a backup for if your GPS yaw fails in
-flight.
-
 Video Demo
 ----------
 
 .. youtube:: NjaIKyrInpg
+
+
+Using Moving Baseline Yaw to Reject Magnetic Disturbances
+---------------------------------------------------------
+
+.. youtube:: MmnfHUYLTeQ
+
+
 

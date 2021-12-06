@@ -10,11 +10,6 @@ In `tests by the development team <https://diydrones.com/profiles/blogs/testing-
 the sensor has produced very reliable distance measurements for long and
 short ranges even on fast moving vehicles.
 
-.. warning::
-
-   This rangefinder is only supported on the Pixhawk running AC3.2
-   or higher or recent versions of Plane and Rover using the sensor's
-   analog output much like an analog sonar.
 
 Connecting to the Pixhawk
 =========================

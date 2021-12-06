@@ -22,9 +22,11 @@ Please follow each of the links below.
     Flight Modes <flight-modes>
     Pre-arm Safety Check <common-prearm-safety-checks>
     Arming and Disarming <arming_the_motors>
+    Pre-Flight Checklist <checklist>
     Getting Off the Ground – Tips for New Operators <ac_tipsfornewpilots>
     Tuning <common-tuning>
     Measuring Vibration <common-measuring-vibration>
     Setting Hover Throttle <ac_throttlemid>
     Save Trim & Auto Trim <autotrim>
-    Pre-Flight Checklist <checklist>
+    Thrust Loss and Yaw Imbalance Warnings <thrust_loss_yaw_imbalance>
+    Indoor Flying <indoor-flying>

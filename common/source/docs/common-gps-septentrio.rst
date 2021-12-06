@@ -1,17 +1,16 @@
 .. _common-gps-septentrio:
 
-=================================================
-Septentrio AsteRx-m UAS and AsteRx-m2 UAS RTK GPS
-=================================================
+================================
+Septentrio AsteRx UAS GPS Family
+================================
 
-The Septentrio `AsteRx-m UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m-uas/>`__ and `AsteRx-m2 UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m2-uas/>`__ RTK GPS are relatively expensive but also highly accurate RTK GPS.
+The Septentrio `AsteRx-m2 UAS <http://www.septentrio.com/products/gnss-receivers/rover-base-receivers/oem-receiver-boards/asterx-m2-uas/>`__ RTK GPS and other AsteRX-m RTK GPS are relatively expensive but also highly accurate RTK GPS.
 
 .. image:: ../../../images/gps-septrino.png
 	:target: ../_images/gps-septrino.png
 
 .. note::
 
-     This GPS is supported in Copter-3.4 (and higher), Plane 3.7.0 (and higher) and Rover 3.0.1 (and higher).
      Mission Planner GCS is the only GCS to support this feature currently.
 
 Setup instructions

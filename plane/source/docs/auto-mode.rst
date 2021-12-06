@@ -5,9 +5,9 @@ AUTO Mode
 =========
 
 In AUTO mode Plane will follow a mission (a set of GPS waypoints and other
-commands) set by your ground station. When entering AUTO
+commands) set by your ground station. When re-entering AUTO
 mode Plane will continue from whatever mission item it was last doing,
-unless you have reset the mission.
+unless you have reset the mission. If the mission ends with an item that does not continue indefinitely (like LOITER UNLIMITED), an RTL will be executed.
 
 When in AUTO Plane will by default allow the pilot to influence the
 flight of the plane by using "stick mixing", which allows for aileron,

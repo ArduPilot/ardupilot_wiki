@@ -28,8 +28,7 @@ channel function for the channel you are using for flaps to a value of
 3.
 
 Next set the parameters for your two flap speeds and flap values. These
-parameters are FLAP_1\_PERCNT, FLAP_1\_SPEED, FLAP_2\_PERCNT,
-FLAP_2\_SPEED.
+parameters are :ref:`FLAP_1_PERCNT<FLAP_1_PERCNT>`, :ref:`FLAP_2_PERCNT<FLAP_2_PERCNT>`, :ref:`FLAP_1_SPEED<FLAP_1_SPEED>`, :ref:`FLAP_2_SPEED<FLAP_2_SPEED>` 
 
 Redo your radio calibration. Be sure to set the flap switch to the zero
 flap position before finishing the radio calibration so that zero flaps

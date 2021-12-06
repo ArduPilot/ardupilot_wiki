@@ -301,7 +301,7 @@ Additional tips for AFS failsafe users
 
 You need to ensure that your geofence is enabled before takeoff. This
 can either be done as part of your preflight checklist, or you could set
-a :ref:`FENCE_CHANNEL<FENCE_CHANNEL>` and enable it from within your transmitter.  This ensures
+a `FENCE_CHANNEL`` and enable it from within your transmitter.  This ensures
 that if your transmitter is out of range that the fence remains enabled.
 
 Settings for Outback Challenge 2014

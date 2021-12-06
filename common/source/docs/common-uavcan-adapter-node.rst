@@ -77,6 +77,8 @@ F303 Based
 F303-Universal Firmware Setup
 =============================
 
+.. note:: Be sure to enable the autopilot's CAN port and set it up for UAVCAN protocol. See : :ref:`common-uavcan-setup-advanced`
+
 The f303-Universal firmware has the ability to be used for several serial devices but only one can be enabled to use the single UART. Once Firmware is uploaded the default device connected to the UART port is set to GPS, to use another device such as Rangefinder the GPS has to be turned off and Rangefinder or other device enabled.
 
 To achieve this, either use :ref:`UAVCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN.<common-mp-slcan>` Once connected, set the appropriate params, i.e. for TFmini_S/Plus rangefinder you would set GPS_TYPE=0 and RNGFND1_TYPE=20, this allows the single serial port to connect to the rangefinder.

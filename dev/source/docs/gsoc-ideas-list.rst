@@ -1,33 +1,31 @@
 .. _gsoc-ideas-list:
     
 ========================================
-List of Suggested Projects for GSoC 2020
+List of Suggested Projects for GSoC 2021
 ========================================
 
-This is a list of projects suggested by ArduPilot developers for `GSoC 2020 <https://summerofcode.withgoogle.com/>`__. These are only suggestions, and if you have your own ideas then please discuss them on the `ArduPilot GSOC gitter channel <https://gitter.im/ArduPilot/GSoC>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2020.
+This is a list of projects suggested by ArduPilot developers for `GSoC 2021 <https://summerofcode.withgoogle.com/>`__. GSoC has changed the format of its 2021 edition to reduce the number of hours per project from 350hr down to 174hrs, the list below contains project suggestions that should meet these criteria depending also on the skill level of the participant. These are only suggestions, and if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2021.
 
-- :ref:`Non-GPS navigation improvements using Intel RealSense cameras <common-vio-tracking-camera>`
-- :ref:`Object avoidance <common-object-avoidance-landing-page>` improvements for Multicopters and/or Rovers
-- Lane following or automatic docking for cars and boats using `JeVois camera <http://www.jevois.org/>`__ (or similar)
-- Rover Autotune
-- Walking robot support
+- :ref:`Optical flow <common-optical-flow-sensor-setup>` calibration improvements
+- :ref:`Object avoidance <common-object-avoidance-landing-page>` support for `MYNT EYE depth camera <https://www.mynteye.com/pages/products>`__
+- Integrate with ROS for off-board path-planning
+- Rover AutoTune
 - 3D aerobatic support for fixed wing aircraft
-- Improve :ref:`Morse simulator <sitl-with-morse>` integration including setup to move camera with vehicles
+- Improve :ref:`Morse simulator <sitl-with-morse>` integration including setup to move the camera with vehicles
 - Create new vehicle models for the Morse simulator, including boats, planes and copters
-- Improve :ref:`Gazebo simulator <using-gazebo-simulator-with-sitl>` integration including json protocol, Gazebo9, and new sensors set
-- `MathWorks SimuLink <https://www.mathworks.com/products/simulink.html>`__ interface to ArduPilot SITL
+- Improve :ref:`Gazebo simulator <using-gazebo-simulator-with-sitl>` integration including JSON protocol, Gazebo9, and new sensors set
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
 - Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Better multivehicle support, performance improvement. Requires strong python skills.
-- Improve helicopter throttle handling for internal combustion engines for autonomous operations.
 - Swift Package for MAVLink communications.
 - Unified performance counter on ArduPilot
+- ROS2 MAVROS support for Ardupilot.
 
 See lower down on this page for more details for some of the projects listed above
 
 Timeline
 ========
 
-The timeline for `GSoC 2020 is here <https://summerofcode.withgoogle.com/how-it-works/#timeline>`__
+The timeline for `GSoC 2021 is here <https://summerofcode.withgoogle.com/how-it-works/#timeline>`__
 
 How to improve your chances of being accepted
 =============================================
@@ -39,60 +37,47 @@ When making the difficult decision about which students to accept, we look for:
 - Experience contributing to ArduPilot or other open source projects
 - Understanding of Git and/or GitHub
 
-Non-GPS navigation improvements using Intel RealSense cameras
--------------------------------------------------------------
+Optical Flow Calibration Improvements
+-------------------------------------
 
-Intel Realsense cameras can already be used with ArduPilot but there is still room for improvement including:
+:ref:`Optical Flow <common-optical-flow-sensors-landingpage>` can provide accurate non-GPS position estimation if the user correctly calibrates the sensor but `this calibration procedure <https://ardupilot.org/copter/docs/common-optical-flow-sensor-setup.html>`__ is difficult to get right.
 
-- Allow vehicles to move seamlessly between GPS environments and non-GPS environments.  This will likely require enhancements to ArduPilot's EKF.
-- Provide obstacle data from an Intel Realsense camera to ardupilot using the MAVLink `OBSTACLE_DISTANCE <https://mavlink.io/en/messages/common.html#OBSTACLE_DISTANCE>`__ message
-- Prepare `APSync <https://ardupilot.org/dev/docs/apsync-intro.html>`__ images to ease user setup
+This project involves adding an in-flight calibration procedure in which the user enables both GPS and optical flow.  The EKF should then be able to estimate the expected flow measurements, compare them with the actual flow measurements and then calculate the best scaling values.
 
-Object Avoidance improvements for Multicopters and/or Rovers
-------------------------------------------------------------
+See `Issue #16631 <https://github.com/ArduPilot/ardupilot/issues/16631>`__.
 
-ArduPilot supports three methods for object avoidance, `Bendy Ruler <https://ardupilot.org/copter/docs/common-oa-bendyruler.html>`__, `Dijkstra's <https://ardupilot.org/copter/docs/common-oa-dijkstras.html>`__ and `Simple avoidance <https://ardupilot.org/copter/docs/common-simple-object-avoidance.html>`__ but there is room for improvement in each of them:
-
-- BendyRuler should work in 3D (`issue <https://github.com/ArduPilot/ardupilot/issues/13215>`__)
-- BendyRuler can be hesitant about which direction to choose (`issue <https://github.com/ArduPilot/ardupilot/issues/11961>`__)
-- Rover's using BendyRuler may impact the fence after clearing obstacles (`issue <https://github.com/ArduPilot/ardupilot/issues/11565>`__)
-- Dijkstra's should work with Spline waypoints (`issue <https://github.com/ArduPilot/ardupilot/issues/12691>`__)
-- Simple avoidance should backaway from objects (`issue <https://github.com/ArduPilot/ardupilot/issues/7706>`__)
-
-Lane following or automatic docking for cars and boats
+Object Avoidance support for the MYNT EYE depth camera
 ------------------------------------------------------
 
-This project involves using machine vision to add lane following or automatic docking to to ArduPilot's Rover firmware
+ArduPilot already supports :ref:`object avoidance using the Intel RealSense 435 and 455 depth cameras <common-realsense-depth-camera>`. We should extend support to the `MYNT EYE depth cameras <https://www.mynteye.com/pages/products>`__.
 
-- Either a low-cost `JeVois camera <http://www.jevois.org/>`__ or a high powered `companion computer <https://ardupilot.org/dev/docs/companion-computers.html>`__ could be used
-- Recognise the road or docking target using machine vision or learning (for docking an AprilTag could be used)
-- Either create a new control mode to control the vehicle or send velocity commands (probably using the `SET_GLOBAL_POSITION_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__ or `SET_POSITION_TARGET_GLOBAL_INT <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT>`__ message) to move the vehicle in the correct direction
-- If a companion computer is used, add the solution to `APSync <https://ardupilot.org/dev/docs/apsync-intro.html>`__
-- Document the implementation
+This project involves:
+
+- Writing a python script (similar to `this script for the Intel T435 <https://github.com/thien94/vision_to_mavros/blob/master/scripts/d4xx_to_mavlink.py>`__) to pull the data from the depth camera and package them into OBSTACLE_DISTANCE and/or OBSTACLE_DISTANCE_3D mavlink messages which will then be consumed by ArduPilot's AP_Proximity library
+- Creating an :ref:`APSync <apsync-intro>` image for at least one companion computer (RPI4?) that can run the above script
+
+See `Issue #16632 <https://github.com/ArduPilot/ardupilot/issues/16632>`__.
+
+Integrate with ROS for off-board path-planning
+----------------------------------------------
+
+ArduPilot can be :ref:`integrated with ROS <ros>` in several ways including for Non-GPS position estimation and object avoidance.  This project aims to allow ROS's path planning routines to be used by ArduPilot while still leaving the mission input in ArduPilot.
+
+- `Randy's video using ROS for path planning around obstacles <https://www.youtube.com/watch?v=u99qwQSl9Z4>`__
+- `mavros PR to allow ROS to accept set-position-target-global-int messages <https://github.com/mavlink/mavros/pull/1184>`__ from ArduPilot to be fed into ROS's navigation algorithm
 
 Rover Autotune
 --------------
 
-This project would involve adding an autotune feature for rover and boat like for copter.
-The autotune should be able to learn and set most of the rover parameters for autonomous behavior.
-This will need a good understanding of control theory.
+This project involves adding an AutoTune mode to the Rover firmware similar to `Copter's AutoTune mode <https://ardupilot.org/copter/docs/autotune.html>`__ but simpler.  The focus should be on finding the best `turn rate <https://ardupilot.org/rover/docs/rover-tuning-steering-rate.html>`__ and `speed controller <https://ardupilot.org/rover/docs/rover-tuning-throttle-and-speed.html>`__ parameters.  The likely solution will be to provide turn rate or speed targets to the controllers for a short period, measure the response of the vehicle, adjust the gains and repeat until acceptable gains are found.
 
-Walking robot support
----------------------
-
-This project would involve adding basic support for four legged walking robots and could involve:
-
-- Identifying a reasonably priced four legged robot frame
-- Control system improvements to allow the frame to stand and walk
-- Documentation of the setup
-
-Expenses for purchasing the frame and autopilot will be covered by ArduPilot.
+This project probably requires a good understanding of PID objects and control.
 
 Improve fixed-wing 3D aerobatics support in ArduPilot
 -----------------------------------------------------
 
 With the addition of prop-hang in ArduPilot (`see here <https://discuss.ardupilot.org/t/ardupilot-flying-3d-aircraft-including-hovering/14837>`__) we now have the beginnings of a nice 3D aerobatics for fixed wing.
-This project involves taking that to the next level to add support for "trick" mode. In trick mode the user will have access to a a variety of common 3D maneuvers, including knife-edge, loops, harrier and rolling loops. Implementing this will involve some careful use of quaternion controllers, but a good UI design so the stick inputs to control these tricks are easy to learn.
+This project involves taking that to the next level to add support for "trick" mode. In trick mode, the user will have access to a variety of common 3D maneuvers, including knife-edge, loops, harrier and rolling loops. Implementing this will involve some careful use of quaternion controllers, but a good UI design so the stick inputs to control these tricks are easy to learn.
 Testing can be done in the FlightAxis simulator (as in the above video), allowing for development without risking real aircraft.
 
 Improve Morse simulator integration including supporting boats / ROVs
@@ -106,23 +91,23 @@ Improve ArduPilot's integration with :ref:`Morse simulator <sitl-with-morse>` so
 Unified performance counter on ArduPilot
 ----------------------------------------
 
-This project would involve adding unified support for performance accross our HAL.
-Currently, Linux board get the most performant performance counter, but we should be able to some on Chibios and SITL to allow better profiling of the code.
+This project would involve adding unified support for performance across our HAL.
+Currently, the Linux board gets the most performant performance counter, but we should be able to some on Chibios and SITL to allow better profiling of the code.
 
-MathWorks SimuLink
+MathWorks Simulink
 ------------------
 
-`MathWorks SimuLink <https://www.mathworks.com/products/simulink.html>`__ is a popular model based control algorithm design program.  The purpose of this project would be to allow SimuLink to create attitude control algorithm code (in C++) that can then be compiled into ArduPilot and flown in the simulator or on a real vehicle.
-
-Improve helicopter throttle handling for internal combustion engines for autonomous operations
-----------------------------------------------------------------------------------------------
-
-The helicopter code manages the throttle for all propulsion types through the rotor speed controller.  This controller provides very basic throttle control for internal combustion engines through rotor run-up and shutdown sequence.  It ramps the throttle from the idle setting to the bottom of the throttle curve.  It does not provide any warm up or cool down period for autonomous operations.  The goal of this project would be to incorporate an automated rotor startup sequence after engine start and rotor shutdown, engine cooldown and engine cut to support fully autonomous operations.  Similar work has been conducted in this area with an off-shoot of ardupilot but it relies on pilot interaction although it incorporates a torque limited rotor spool up which would be a great to incorporate in arducopter RSC.  Details of the rotor speed controller can be found in the `traditional helicopter RSC setup wiki <https://ardupilot.org/copter/docs/traditional-helicopter-rsc-setup.html>`__.  A heli with an internal combustion engine is not necessarily required to complete this project but would be helpful.  The RealFlight simulation linked with ardupilot SITL is required to do initial testing and proof of concept. This setup is described in the  `Using SITL with Realflight wiki <https://ardupilot.org/dev/docs/sitl-with-realflight.html>`__.
+`MathWorks Simulink <https://www.mathworks.com/products/simulink.html>`__ is a popular model based control algorithm design program.  The purpose of this project would be to allow Simulink to create attitude control algorithm code (in C++) that can then be compiled into ArduPilot and flown in the simulator or on a real vehicle.
 
 Swift Package for Mavlink
 -------------------------
 
-`Swift Packages <https://developer.apple.com/documentation/swift_packages>`__ are Apples solution for creating reusable components that can be used in iOS and Mac applications. MAVLink currently has several attempts to create a communications package for iOS, but they are currently not compatible with ArduPilot. The goal for this project would be to either create our own universal MAVLink package or adapt one of the existing ones (`MAVSDK Swift <https://github.com/mavlink/MAVSDK-Swift>`__, `pymavlink Swift Generator <https://github.com/ArduPilot/pymavlink/blob/master/generator/swift/MAVLink.swift>`__)to work with ArduPilot and be easily deployable as a Swift package so that any one who wants to use it to create their own iOS based app can integrate it.
+`Swift Packages <https://developer.apple.com/documentation/swift_packages>`__ are Apple's solution for creating reusable components that can be used in iOS and Mac applications. MAVLink currently has several attempts to create a communications package for iOS, but they are currently not compatible with ArduPilot. The goal for this project would be to either create our own universal MAVLink package or adopt one of the existing ones (`MAVSDK Swift <https://github.com/mavlink/MAVSDK-Swift>`__, `pymavlink Swift Generator <https://github.com/ArduPilot/pymavlink/blob/master/generator/swift/MAVLink.swift>`__)to work with ArduPilot and be easily deployable as a Swift package so that anyone who wants to use it to create their own iOS based app can integrate it.
+
+ROS2 MAVROS support for Ardupilot
+---------------------------------
+
+Currently, there is no MAVROS equivalent for ROS2, with `OSRF <https://www.openrobotics.org>`__ quickly moving to make ROS2 the standard version of ROS, supporting it has become a growing interest in our community. An initial port of the basic features of MAVROS would be a big step towards integrating Ardupilot and ROS2.
 
 Projects Completed in past years
 --------------------------------
@@ -141,9 +126,9 @@ In 2018, students successfully completed these projects:
 - RedTail integration with ArduPilot
 - Live video improvements for APSync
 
-In 2017, 3 student successfully completed these projects:
+In 2017, 3 students successfully completed these projects:
 
-- Smart Return-To-Launch which involves storing vehicle's current location and maintaining the shortest possible safe path back home
+- Smart Return-To-Launch which involves storing the vehicle's current location and maintaining the shortest possible safe path back home
 - Rework ArduRover architecture to allow more configurations and rover type (`see details here <https://github.com/khancyr/GSOC-2017>`__)
 - Add "sensor head" operation of ArduPilot, split between two CPUs
 

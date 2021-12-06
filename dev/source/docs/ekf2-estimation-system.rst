@@ -32,7 +32,7 @@ EKF2 Advantages
 -  It can handle larger gyro bias changes in flight
 -  It is able to recover faster from bad sensor data
 -  It provides a slightly smoother output.
--  It is sightly more accurate
+-  It is slightly more accurate
 -  It uses slightly less computing power
 -  It starts using GPS when checks pass rather than waiting for the
    vehicle motors to arm.
@@ -323,7 +323,7 @@ This controls the use of GPS measurements :
 
 This sets a lower limit on the speed accuracy reported by the GPS
 receiver that is used to set horizontal velocity observation noise. If
-the model of receiver used does not provide a speed accurcy estimate,
+the model of receiver used does not provide a speed accuracy estimate,
 then the parameter value will be used. Increasing it reduces the
 weighting of the GPS horizontal velocity measurements. It has units of
 metres/sec
@@ -332,7 +332,7 @@ metres/sec
 
 This sets a lower limit on the speed accuracy reported by the GPS
 receiver that is used to set verical velocity observation noise in. If
-the model of receiver used does not provide a speed accurcy estimate,
+the model of receiver used does not provide a speed accuracy estimate,
 then the parameter value will be used. Increasing it reduces the
 weighting of the GPS vertical velocity measurements. It has units of
 metres/sec.
@@ -341,7 +341,7 @@ metres/sec.
 
 This sets the number of standard deviations applied to the GPS velocity
 measurement innovation consistency check. Decreasing it makes it more
-likely that good measurements willbe rejected. Increasing it makes it
+likely that good measurements will be rejected. Increasing it makes it
 more likely that bad measurements will be accepted.
 
 **EK2_POSNE_NOISE**
@@ -376,7 +376,7 @@ the filter is 250 msec.
 **EK2_ALT_SOURCE**
 
 This parameter controls which height sensor is used by the EKF. If the
-selected optionn cannot be used, it will default to Baro as the primary
+selected option cannot be used, it will default to Baro as the primary
 height source. Setting 0 will use the baro altitude at all times.
 Setting 1 uses the range finder and is only available in combination
 with optical flow navigation (EK2_GPS_TYPE = 3). Setting 2 uses GPS.
@@ -492,14 +492,14 @@ flow averaging period and does not include the time delay due to the
 
 This control disturbance noise controls the growth of estimated error
 due to gyro measurement errors excluding bias. Increasing it makes the
-flter trust the gyro measurements less and other measurements more. It
+filter trust the gyro measurements less and other measurements more. It
 has units of rad/sec.
 
 **EK2_ACC_PNOISE**
 
 This control disturbance noise controls the growth of estimated error
 due to accelerometer measurement errors excluding bias. Increasing it
-makes the flter trust the accelerometer measurements less and other
+makes the filter trust the accelerometer measurements less and other
 measurements more. It has units of metres/sec/sec.
 
 **EK2_GBIAS_PNOISE**

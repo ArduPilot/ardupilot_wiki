@@ -30,6 +30,11 @@
 *.html
 *.pyc
 
+# static html pages
+!/frontend/*.html
+!/frontend/includes/*.html
+
+
 # Vagrant
 /.vagrant
 
@@ -56,6 +61,7 @@
 /plane/source/docs/parameters.rst
 /rover/source/docs/parameters.rst
 /antennatracker/source/docs/parameters.rst
+/dev/source/docs/AP_Periph-Parameters.rst
 
 # Log messages files
 /copter/source/docs/logmessages.rst
@@ -64,13 +70,17 @@
 /antennatracker/source/docs/logmessages.rst
 
 # Javascript files
-antennatracker/source/_static/useralerts.js
-copter/source/_static/useralerts.js
-dev/source/_static/useralerts.js
-plane/source/_static/useralerts.js
-rover/source/_static/useralerts.js
-ardupilot/source/_static/useralerts.js
-mavproxy/source/_static/useralerts.js
-planner/source/_static/useralerts.js
-planner2/source/_static/useralerts.js
+/antennatracker/source/_static/useralerts.js
+/copter/source/_static/useralerts.js
+/dev/source/_static/useralerts.js
+/plane/source/_static/useralerts.js
+/rover/source/_static/useralerts.js
+/ardupilot/source/_static/useralerts.js
+/mavproxy/source/_static/useralerts.js
+/planner/source/_static/useralerts.js
+/planner2/source/_static/useralerts.js
+
+# Website
+/frontend/blog_posts.json
+/frontend/news_posts.json
 

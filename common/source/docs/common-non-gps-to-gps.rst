@@ -4,12 +4,15 @@
 GPS / Non-GPS Transitions
 =========================
 
+..  youtube:: MbILnbbWqDg
+    :width: 100%
+
 ArduPilot 4.1 (and higher) support in-flight transitions between GPS and Non-GPS environments.
 
 Setup
 -----
 
-To enable transitions the EKF3 must be used.  Instructions for enabling EKF3 can be found on the :ref:`Extended Kalman Filter page <common-apm-navigation-extended-kalman-filter-overview>` but in short it requires setting the following parameters:
+To enable transitions the EKF3 must be used (the default estimator for 4.1 and higher).  Instructions for enabling EKF3 can be found on the :ref:`Extended Kalman Filter page <common-apm-navigation-extended-kalman-filter-overview>` but in short it requires setting the following parameters:
 
 - :ref:`EK3_ENABLE <EK3_ENABLE>` = 1
 - :ref:`EK2_ENABLE <EK2_ENABLE>` = 0
@@ -29,7 +32,7 @@ The secondary sensor source set should be configured for the non-GPS environment
 - :ref:`EK3_SRC2_VELXY <EK3_SRC2_VELXY>` = 6 (Secondary horizontal velocity from External Nav)
 - :ref:`EK3_SRC2_POSZ <EK3_SRC2_POSZ>` = 1 (Secondary vertical position from barometer)
 - :ref:`EK3_SRC2_VELZ <EK3_SRC2_VELZ>` = 6 (Secondary vertical velocity from External Nav)
-- :ref:`EK3_SRC2_YAW <EK3_SRC2_YAW>` = 2 (Secondary yaw/heading from External Nav)
+- :ref:`EK3_SRC2_YAW <EK3_SRC2_YAW>` = 6 (Secondary yaw/heading from External Nav)
 
 The fusing of all velocities should be disabled by unchecking the :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` parameter's "FuseAllVelocities" bit:
 
@@ -53,6 +56,17 @@ First perform a bench test, using the auxiliary switch to manually switch betwee
 Next perform a flight test in a safe environment, manually switching between sources.  Be prepared to re-take control in a manual mode such as Stabilize.
 
 If you plan to automatically switch sources, first walk the vehicle between the GPS and Non-GPS environments to confirm it is switching source sets.  Finally perform a flight test in which the vehicle is flown (or driven) at low speeds between the two environments.  As with previous tests be ready to re-take control in a manual mode such as Stabilize.
+
+Logging
+-------
+
+Events will be logged each time the active source is changed
+
+- Event 85 = Source1 active
+- Event 86 = Source2 active
+- Event 87 = Source3 active
+
+The XKFS message's SS field shows the active source for each core (0=primary, 1=secondary, 2=tertiary)
 
 Future Improvements
 -------------------

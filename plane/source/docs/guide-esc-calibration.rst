@@ -4,6 +4,8 @@
 ESC Calibration
 ===============
 
+First, make sure that the correct ESC protocol has been setup. Find your ESC(s) type under :ref:`common-escs-and-motors`, and follow its configuration information.
+
 Planes using a traditional PWM controlled ESC (electronic speed controller) for motor output
 will likely need to be calibrated.
 

@@ -31,10 +31,16 @@ Hardware Setup
     :width: 500px
 
 - Download the latest APSync Ubuntu image (`found here <https://firmware.ardupilot.org/Companion/apsync/apsync-rpi-ubuntu-t265-latest.img.xz>`__) to your PC and then flash it to the 16GB (or larger) SD card using a tool such as `Etcher <https://www.balena.io/etcher/>`__ or `Win32DiskImager <https://sourceforge.net/projects/win32diskimager/>`__ and then insert it into the RPI's SD Card slot
-- Mount the Intel RealSense T265 on the vehicle facing forward (see below for information other orientations) using thick double sided tape to better isolate the camera from vibrations
+- Mount the Intel RealSense T265 on the vehicle facing forward (see below for information other orientations) using thick double sided tape or `David Sastre's T265 mount <https://www.dropbox.com/s/e3ias30czsn2q4t/Intel_RealSense_Tracking_Camera_T265_holder.STL?dl=0>`__ to better isolate the camera from vibrations
 - Connect the Intel RealSense T265's USB cable to one of the RPI4's blue USB3 ports
 - Connect the PiConnectLite's power cable to the battery (7V to 30V)
 - Connect the PiConnectLite's serial cable to one of the autopilot's telemetry ports (i.e. Telem1, Telem2). The only signals used in this cable are TX, RX and GND. The other signals are NC.
+
+.. image:: ../../../images/t265-mount.png
+    :target: ../_images/t265-mount.png
+    :width: 500px
+
+`David Sastre's T265 mount <https://www.dropbox.com/s/e3ias30czsn2q4t/Intel_RealSense_Tracking_Camera_T265_holder.STL?dl=0>`__
 
 Configure ArduPilot
 -------------------
@@ -56,7 +62,7 @@ For ArduPilot-4.0 (and earlier):
 - :ref:`GPS_TYPE<GPS_TYPE>`  = 0 to disable the GPS
 - :ref:`COMPASS_USE<COMPASS_USE>` = 0,  :ref:`COMPASS_USE2<COMPASS_USE2>`  = 0, :ref:`COMPASS_USE3<COMPASS_USE3>`  = 0 to disable the EKF’s use of the compass and instead rely on the heading from external navigation data
 
-After the parameters are modified, reboot the autopilot.  After about 1 minute the vehicle should appear on the ground station map in central Africa.
+After the parameters are modified, reboot the autopilot.  Connect with the ground station and (if using Mission Planner) right-mouse-button-click on the map, select "Set Home Here", "Set EKF Origin Here" to tell ArduPilot where the vehicle is and it should instantly appear on the map.
 
 For ArduPilot-4.1 (and later):
 
@@ -73,7 +79,7 @@ For ArduPilot-4.1 (and later):
 If you wish to use the camera's heading:
 
 - :ref:`COMPASS_USE <COMPASS_USE>` = 0, :ref:`COMPASS_USE2 <COMPASS_USE2>` = 0, :ref:`COMPASS_USE3<COMPASS_USE3>` = 0 to disable all compasses
-- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 (External)
+- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 6 (ExternalNav)
 
 If you wish to use the autopilot's compass for heading:
 
@@ -82,6 +88,8 @@ If you wish to use the autopilot's compass for heading:
 - :ref:`RC7_OPTION <RC7_OPTION>` = 80 (Viso Align) to allow the pilot to re-align the camera's yaw with the AHRS/EKF yaw before flight with auxiliary switch 7.  Re-aligning yaw before takeoff is a good idea or loss of position control (aka "toilet bowling") may occur.
 
 After the parameters are modified, reboot the autopilot.  Connect with the ground station and (if using Mission Planner) right-mouse-button-click on the map, select "Set Home Here", "Set EKF Origin Here" to tell ArduPilot where the vehicle is and it should instantly appear on the map.
+
+Just before flying, pick up the vehicle to a height of 1m and then put it down again.  This allows the camera to calibrate its vertical scaling.
 
 If you wish to switch between GPS and T265 see the :ref:`GPS/Non-GPS Transitions <common-non-gps-to-gps>` wiki page
 
@@ -230,6 +238,7 @@ Verification before testing
   - To enable speech in Mission Planner: Tab Config/Tuning > Planner > Speech > tick on "Enable speech".
   - If there are some messages constantly displayed on the HUD, you might not be able to see / hear the confidence level notification.
   - If telemetry is slow, notification might be dropped. You can still see the latest message in MAVLink Inspector, message ``STATUSTEXT``.
+  - If telemetry is very slow, it may be flooded by VISION_POSITION_ESTIMATE messages. You can disable message forwarding by setting bit 10 in ``SERIALx_OPTIONS``. Be aware you will not receive VISION_POSITION_ESTIMATE in GCS anymore.
 
 
 Ground Test

@@ -25,14 +25,18 @@ Open hardware
     Hex/ProfiCNC Cube Purple <common-thecubepurple-overview>
     Hex/ProfiCNC Cube Yellow <common-thecubeyellow-overview>
     Hex/ProfiCNC Cube Green <https://docs.cubepilot.org/user-guides/autopilot/the-cube-module-overview>
+    Holybro Durandal H7 <common-durandal-overview>
     Holybro Pix32 v5 <common-holybro-pix32v5>
+    Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
     mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
-    mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/mro-x2.1rv2-mr.htm>
-    mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/mro-x2.1-777-mr.htm>
+    mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
+    mRo X2.1-777 <https://store.mrobotics.io/mRo-X2-1-777-p/m10022a.htm>
+    Obal Board (Linux) <common-obal-overview>
     OpenPilot Revolution <common-openpilot-revo-mini>
     PocketPilot* (Linux) <https://github.com/PocketPilot/PocketPilot>
     TauLabs Sparky2** <common-taulabs-sparky2>
+    
 
 \* these devices are sensor add-on boards for a Beagle Bone microcomputer. See board links for details 
 
@@ -47,18 +51,23 @@ Closed hardware
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
-    Holybro Durandal H7 <common-durandal-overview>
-    Holybro Kakute F4 <common-holybro-kakutef4>
+    Flywoo F745 AIO BL_32 <common-flywoo-f745>
+    Holybro Kakute F4* <common-holybro-kakutef4>
+    Holybro Kakute F4 Mini* <common-holybro-kakutef4-mini>
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
-    Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
-    Holybro Pixhawk 4 Mini <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/PH4-mini/README.md>
+    Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
+    Horizon31 PixC4-Jetson <common-horizon31-pixc4-jetson>
+    IFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
+    IFlight BeastH7 AIO <common-iflight-beasth7AIO>
+    Mamba F405 MK2* <common-mamba405-mk2>
     Mateksys F405-SE <common-matekf405-se>
     Mateksys F405-STD and variants* <common-matekf405>
     Mateksys F405-Wing* <common-matekf405-wing>
     Mateksys F765-Wing <common-matekf765-wing>
-    Mateksys H743-Wing <common-matekh743-wing>
-    mRo ControlZero F7 <https://store.mrobotics.io/mRo-Control-Zero-F7-p/mro-ctrl-zero-f7.htm>
+    Mateksys F765-WSE <common-matekf765-wse>
+    Mateksys H743-Wing/MINI/SLIM <common-matekh743-wing>
+    mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
     Omnibus F4 AIO/Pro* <common-omnibusf4pro>
@@ -69,6 +78,8 @@ Closed hardware
 [/site]
     Parrot C.H.U.C.K <common-CHUCK-overview>
     RadioLink MiniPix <common-radiolink-minipix>
+    QioTek Zealot F427 <common-qiotek-zealot>
+    Sky-Drones AIRLink <common-skydrones-airlink>
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>

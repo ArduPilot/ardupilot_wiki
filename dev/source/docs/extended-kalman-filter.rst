@@ -6,13 +6,13 @@ Extended Kalman Filter Navigation Overview and Tuning
 
 .. warning::
 
-   **IMPORTANT:** This article is about EKF1 which is deprecated
-   since 2016 as EKF3 is introduced. It's kept as a reference, as it
-   has been the basis for EKF2 and EKF3. EKF2 is now the default.
+   **IMPORTANT:** This article is about EKF1 which has been removed
+   from the codebase. It's kept as a reference, as it
+   has been the basis for EKF2 and EKF3. EKF3 is now the default.
 
 
 This article describes the Extended Kalman Filter (EKF) algorithm used
-by Copter and Plane to estimate vehicle position, velocity and angular
+to estimate vehicle position, velocity and angular
 orientation based on rate gyroscopes, accelerometer, compass
 (magnetometer), GPS, airspeed and barometric pressure measurements. It
 includes both an overview of the algorithm and information about the
@@ -28,27 +28,18 @@ An Extended Kalman Filter (EKF) algorithm has been developed that uses
 rate gyroscopes, accelerometer, compass, GPS, airspeed and barometric
 pressure measurements to estimate the position, velocity and angular
 orientation of the flight vehicle. This algorithm is implemented in the
-**AP_NavEKF** library and is based on initial work documented here:
+**AP_NavEKF2** and **AP_NavEKF3** libraries and is based on initial work documented here:
 https://github.com/priseborough/InertialNav
 
-PX4 and Pixhawk users can use this algorithm instead of the legacy
-complementary filters by setting ``AHRS_EKF_USE = 1``.
-
-.. warning::
-
-   **IMPORTANT:** Do not set ``AHRS_EKF_USE = 1`` unless you have
-   performed an Accel and compass calibration. Failure to do so may result
-   in an erratic flight path due to bad sensor data.
-
 The advantage of the EKF over the simpler complementary filter
-algorithms used by DCM and Copters Inertial Nav, is that by fusing all
+algorithms used by DCM and Copter's Inertial Nav, is that by fusing all
 available measurements it is better able to reject measurements with
 significant errors so that the vehicle becomes less susceptible to
 faults that affect a single sensor.
 
 Another feature of the EKF algorithm is that it is able to estimate
-offsets in the vehicles compass readings and also estimate the earth's
-magnetic field for both plane, copter and rover applications. This makes
+offsets in the vehicle's compass readings and also estimate the earth's
+magnetic field for both plane and copter as well as rover applications. This makes
 it less sensitive to compass calibration errors than current DCM and
 INAV algorithms.
 
@@ -73,7 +64,7 @@ how the filter works:
 #. Velocity is integrated to calculate the position
 
    This process from 1) to 4) is referred to as 'State Prediction'. A
-   'state' is a variables we are trying to estimate like roll,pitch yaw,
+   'state' is a variable we are trying to estimate like roll, pitch, yaw,
    height, wind speed, etc. The filter has other states besides
    position, velocity and angles that are assumed to change slowly.
    These include gyro biases, Z accelerometer bias, wind velocities,
@@ -166,7 +157,7 @@ EKF_ACC_PNOISE
 ----------------
 
 This noise controls the growth of estimated error due to accelerometer
-measurement errors excluding bias. Increasing it makes the flter trust
+measurement errors excluding bias. Increasing it makes the filter trust
 the accelerometer measurements less and other measurements more.
 
 .. _extended-kalman-filter_ekf_alt_noise:
@@ -216,7 +207,7 @@ measurement to be rejected.
 EKF_EAS_NOISE
 ---------------
 
-This is the RMS value of noise in compass measurements. Increasing it
+This is the RMS value of noise in airspeed measurements. Increasing it
 reduces the weighting on these measurements. See the section on
 interpreting EKF3 log data for more information on using log data to
 help set this parameter. See the section on interpreting EKF3 log data

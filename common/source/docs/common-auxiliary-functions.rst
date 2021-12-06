@@ -28,7 +28,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        0             | Do Nothing (Default)       |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
-|        2             | FLIP mode                  |    X     |         |         |
+|        2             | FLIP                       |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
 |        3             | SIMPLE mode (Copter)       |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
@@ -42,7 +42,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        10            | Rangefinder                |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
-|        11            | Fence                      |    X     |         |    X    |
+|        11            | Fence                      |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        12            | ResetToArmedYaw            |          |         |         |
 +----------------------+----------------------------+----------+---------+---------+
@@ -84,7 +84,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        32            | Motor Interlock            |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
-|        33            | BRAKE mode                 |    X     |         |         |
+|        33            | BRAKE                      |    X     |         |         |
 +----------------------+----------------------------+----------+---------+---------+
 |        34            | Relay 2 On/Off             |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
@@ -170,7 +170,55 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        77            | TAKEOFF mode               |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        78            | RunCam Control             |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        79            | RunCam OSD Control         |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        80            | Viso Align                 |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        81            | Disarm                     |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        82            | Q_Assist 3Pos Sw           |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        83            | ZIGZAG Auto                |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        84            | AIRMODE(not a flight mode) |    X     |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        85            | Generator                  |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        86            | Non Auto Terrain Follow    |          |    x    |         |
+|                      | Disable                    |          |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        87            | CROW Mode Switch           |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        88            | Soaring Enable             |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        89            | Force Flare                |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        90            | EKF Position Source        |     X    |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        91            | Airspeed Ratio Calibrate   |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        92            | FBWA Mode                  |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        94            | VTX Power                  |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        95            | FBWA_TAILDRAGGER           |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        96            | MODE_SWITCH_RESET          |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        97            | WindVane home dir offset   |          |         |    X    |
++----------------------+----------------------------+----------+---------+---------+
 |        102           | Camera Mode Toggle         |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        105           | GPS Disable Yaw            |    X     |    X    |    X    |
+|                      | (testing only!)            |          |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        106           | Disable Airspeed Use       |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        107           | Enable Autotuning          |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        108           | QRTL Mode                  |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 
 Intended as continuous PWM range control inputs:
@@ -178,9 +226,25 @@ Intended as continuous PWM range control inputs:
 +----------------------+----------------------------+----------+---------+---------+
 | **RCx_OPTION value** | **Feature Description**    |**Copter**|**Plane**|**Rover**|
 +----------------------+----------------------------+----------+---------+---------+
-|        207           | Mainsail (Sailboat)        |          |         |    X    |
+|        201           | ROLL Input                 |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
-|        208           | Flaps                      |          |    X    |         |
+|        202           | PTCH Input                 |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        203           | THROTTLE Input             |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        204           | YAW Input                  |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        207           | Mainsail                   |          |         |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        208           | Flap Control               |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        209           | Forward Throttle           |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        210           | Airbrakes                  |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        211           | Walking Robot Height       |          |         |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        300-307       | Scripting RC channels      |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 
 
@@ -232,6 +296,7 @@ In Rover,a high saves the current steering channel trim, see :ref:`Save Steering
 
    </td>
    </tr>
+   <tr>
    <td><strong>Save Waypoint</strong></td>
    <td>Save the current location (including altitude) as a waypoint in the
    mission. If in AUTO mode no waypoint will be saved, instead the vehicle will RTL
@@ -361,7 +426,7 @@ Move the :ref:`camera mount <common-cameras-and-gimbals>` to its retracted posit
    </td>
    </tr>
    <tr>
-   <td><strong>Relay On/Off</strong></td>
+   <td><strong>Relay 1 On/Off</strong></td>
    <td>
 
 Switch pulled low turns off the first :ref:`relay <common-relay>`, pulled high turns on the first relay.
@@ -634,6 +699,185 @@ This puts the autopilot control loops into a soft standby mode so that a paralle
    </td>
    </tr>
    <tr>
+   <td><strong>RunCam Control</strong></td>
+   <td>
+
+Allows starting and stopping video recording of compatible RunCam cameras. See :ref:`common-camera-runcam`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>RunCam OSD Control</strong></td>
+   <td>
+
+Enables control of RunCam cameras OSDs. See :ref:`common-camera-runcam`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>VISO Align</strong></td>
+   <td>
+
+Aligns external Visual Odometry with current autopilot AHRS
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Disarm</strong></td>
+   <td>
+
+Disarm vehicle unconditionally and immediately. Unlike Emergency Stop Motors, which waits for :ref:`DISARM_DELAY<DISARM_DELAY>` in Copter.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Q_Assist 3Pos SW</strong></td>
+   <td>
+
+Low: disable Q_Assist entirely, Middle: Normal Q_Assist operation, High: Q_Assist active at all times. See Assisted Fixed Wing Flight section of :ref:`quadplane-flying`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>ZigZag Mode Auto Enable</strong></td>
+   <td>
+
+Enable automatic zigzag and sprayer in ZIGZAG mode. See :ref:`zigzag-mode`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>AIRMODE (not a regular flight mode)</strong></td>
+   <td>
+
+Enables and disables AIRMODE feature. See :ref:`airmode`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Generator</strong></td>
+   <td>
+
+Mode control for Richenpower Hybrid Power Generator
+
+.. raw:: html
+
+   </td>
+   <tr>
+   <td><strong>Non Auto Terrain Follow Disable</strong></td>
+   <td>
+
+Disables Terrain Following in CRUISE and FBWB modes
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>CROW Mode Switch</strong></td>
+   <td>
+
+Selects between different CROW aileron operating modes
+
+.. raw:: html
+
+   </td>
+   </tr>
+      <tr>
+   <td><strong>Soaring Enable</strong></td>
+   <td>
+
+Enables Soaring function operating modes
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Force Flare</strong></td>
+   <td>
+
+Moves tilt motors to upright position and optionally sets pitch for flare when landing Tilt Rotor Quadplanes. Middle: Pilot retains pitch control during flare. High: Pitch set to :ref:`LAND_PITCH_CD<LAND_PITCH_CD>`.
+
+.. raw:: html
+
+   </td>
+   </tr>
+      <tr>
+   <td><strong>EKF Position Source</strong></td>
+   <td>
+
+Allows switching between up to three source sets manually for EKF3 (only). See :ref:`common-non-gps-to-gps`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Airspeed Ratio Calibrate</strong></td>
+   <td>
+
+Activates calibration of airspeed ratio in flight. Best results occur while executing course changes over 360 degrees over time, as in LOITER mode. See :ref:`calibrating-an-airspeed-sensor`.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>VTX Power</strong></td>
+   <td>
+
+Allows reading up to a 6 position switch for controlling Video Transmitter Power. See :ref:`common-vtx`.
+
+.. raw:: html
+
+   </td>
+   </tr>
+      <tr>
+   <td><strong>FBWA_TAILDRAGGER</strong></td>
+   <td>
+
+Enables FBWA taildragger takeoff mode holding elevator and tail on ground until airspeed is reached
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>MODE_SWITCH_RESET</strong></td>
+   <td>
+
+Forces mode switch to be re-read.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>WindVane home direction offset</strong></td>
+   <td>
+
+This is a continuous input channel providing a -45 to +45 degree offset the the initial wind direction when using :ref:`WNDVN_TYPE<WNDVN_TYPE>` = 2.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
    <td><strong>Camera Mode Toggle</strong></td>
    <td>
 
@@ -643,8 +887,79 @@ Toggle camera mode (Photo/Video/etc.). Ideally, should be momentary switch since
 
    </td>
    </tr>
+
    <tr>
-   <td><strong>Mainsail</strong></td>
+   <td><strong>GPS Disable Yaw</strong></td>
+   <td>
+   
+Disables yaw for testing (advanced users only!)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Disable Airspeed Use</strong></td>
+   <td>
+
+Forces Airspeed Use to be disabled for testing in the air.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Enable Autotuning</strong></td>
+   <td>
+
+Allows tuning without entering AUTOTUNE mode. ie place vehicle in LOITER/AUTO with stick mixing enabled, and can autotune while vehicle is loitering by using sticks.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>ROLL Input</strong></td>
+   <td>
+
+ROLL input channel. (replaces RCMAP)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>PITCH Input</strong></td>
+   <td>
+
+PITCH input channel. (replaces RCMAP)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>THROTTLE Input</strong></td>
+   <td>
+
+THROTTLE input channel. (replaces RCMAP)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>YAW Input</strong></td>
+   <td>
+
+YAW input channel. (replaces RCMAP)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Mainstail</strong></td>
    <td>
 
 This RC channel will drive the output of the MainSail output ( ``SERVOx_FUNCTION`` = 89) instead of being 
@@ -659,6 +974,46 @@ set from the Throttle Input channel (useful if it has an auxiliary motor using t
    <td>
 
 This RC channel provides manual control the amount of FLAP deflection and can also be used in conjunction with :ref:`automatic-flaps` and/or :ref:`flaperons<flaperons-on-plane>` . (Replaces the old FLAP_IN_CHANNEL parameter)
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Forward Throttle </strong></td>
+   <td>
+
+Manual forward motor throttle in QSTABILIZE, QACRO, and QHOVER modes
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Airbrakes </strong></td>
+   <td>
+
+Controls deployment of :ref:`Airbrakes<airbrakes-on-plane>`
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Walking Robot Height </strong></td>
+   <td>
+
+Input channel for Walking Robot Height. See :ref:`walking-robots`.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Scripting RC channels </strong></td>
+   <td>
+
+Allows reading a dedicated RC channel for script inputs
 
 .. raw:: html
 

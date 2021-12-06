@@ -26,7 +26,7 @@ test -n "$FORCEBUILD" || {
         changed=1
     }
 
-    PARAMSITES="ArduPlane ArduCopter AntennaTracker Rover"
+    PARAMSITES="ArduPlane ArduCopter AntennaTracker Rover AP_Periph"
     mkdir -p old_params new_params
     for site in $PARAMSITES; do
         wget "https://autotest.ardupilot.org/Parameters/$site/Parameters.rst" -O new_params/$site.rst 2> /dev/null
@@ -108,11 +108,13 @@ git fetch origin
 git submodule update
 git reset --hard origin/master
 git clean -f -f -x -d -d
-pip install --user -U .
+python -m pip install --user -U .
 popd
 
 cd ardupilot_wiki
 find -name "parameters*rst" -delete # Clean possible built and cached parameters files
+
+END_UPDATES=$(date +%s)
 
 echo "[Buildlog] Starting to build multiple parameters pages at $(date '+%Y-%m-%d-%H-%M-%S')"
 python3 build_parameters.py
@@ -121,7 +123,7 @@ MPARAMS_TIME=$(echo "($END_BUILD_MPARAMS - $END_UPDATES)" | bc)
 echo "[Buildlog] Time to run build_parameters.py: $MPARAMS_TIME seconds"
 
 echo "[Buildlog] Starting to build the wiki at $(date '+%Y-%m-%d-%H-%M-%S')"
-# python update.py --clean --parallel 4 # Build without versioning for parameters. It is better for editing wiki
+# python update.py --clean --parallel 4 # Build without versioning for parameters. It is better for editing wiki.
 python update.py --clean --paramversioning --parallel 4 --enablebackups # Enables parameters versioning and backups, should be used only on the wiki server
 
 

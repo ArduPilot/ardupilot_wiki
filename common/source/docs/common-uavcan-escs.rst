@@ -52,6 +52,16 @@ discussed below.
 
 Alternatively, the ESC can be configured via CAN bus using the `UAVCAN GUI Tool <https://uavcan.org/GUI_Tool/>`__.
 
+Autopilot Setup
+===============
+
+There are two parameters that determine which autopilot servo/motor channels are sent to the CAN escs:
+For the examples below, the values are shown for CAN driver #1.
+
+-  :ref:`CAN_D1_UC_NODE<CAN_D1_UC_NODE>` - which is the node ID of the autopilot sending the commands to the ESCs so that there can be differentiation between multiple sources on the CAN bus
+-  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the UAVCAN ESCs
+
+
 ESC setup using CLI
 ===================
 
@@ -105,8 +115,6 @@ UAVCAN ESCs provide information back to the autopilot which is recorded in the a
 - Power (as a percentage)
 
 The RCOU messages are also written to the onboard logs which hold the requested output level sent to the ESCs expressed as a number from 1000 (meaning stopped) to 2000 (meaning full output).
-
-Unlike other CAN ESCs, this information cannot be viewed in real-time through the ground station but this will likely be added in the future (`see this issue <https://github.com/ArduPilot/ardupilot/issues/13396>`__)
 
 Additional information
 ======================

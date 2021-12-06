@@ -36,24 +36,31 @@ Several options can be set using :ref:`OSD_OPTIONS<OSD_OPTIONS>` (bitmask select
 - bit1 = Invert wind direction indicator (to point to the direction its blowing from instead of toward)
 - bit2 = Invert horizon roll direction
      
-Several font sets are included and can be changed during runtime (and those who can build the software can customize or add additional font sets....see libraries/AP_OSD/fonts/README.md) - :ref:`OSD_FONT<OSD_FONT>`:
+Several font sets are included and can be changed during runtime (and those who can build the software can customize or add additional font sets....see libraries/AP_OSD/fonts/README.md)
+
+- :ref:`OSD_FONT<OSD_FONT>`:
 
 - ``0`` = Clarity (default). A clearly visible large font
 - ``1`` = Clarity Medium. Good visibility, less dominant than clarity default
 - ``2`` = Betaflight.  bf- / inav-osd default style
 - ``3`` = Bold. A bolder version of Betaflight
 - ``4`` = Digital. 80's LED clock radio style
- 
+
+.. note::    In firmware 4.1 and above, onboard font options might be limited on 1 MB boards to save memory for other features. However, font upload from SD card is supported. This allows the user to choose from up to 10 font files (named "font0.bin" - "font9.bin") placed in the root directory of your SD card. Additionally, this allows the user to easily add individualized and/or customized language charsets for the onboard OSD without the need to compile  individual firmware. Runtime font changing using the parameter :ref:`OSD_FONT<OSD_FONT>` is unaffected. 
+
+MAVftp might be a convenient option to upload files to your SD card without having to physically remove it from your flight controller. Font files, font editor, and utlities to convert to a .bin file from .mcm are `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts>`__. If downloading the editor or a font's .bin file from this site, be sure to use the ``Download` button, rather than selecting ``Raw``, and then right click saving, as you would the .mcm or .py files.
+
+
 .. _screen-switching:
 
 Screens and screen switching 
 ============================
 
-For multiple screen layouts, each parameter's "OSD" part is trailed by a number, starting with "1"
+For multiple screen layouts, each parameter's "OSD" part is trailed by a number, starting with "1" for the screen number for which the parameter applies.
 
-* ``OSD1_PARAMETER`` - This number addresses the respective screen layout number, allowing to set individual items active on one screen but have them switched off on another screen. OSD settings default to 4 screens optionally available.
+* ``OSDn_<ITEM>_<PARAMETER>`` - n represents the screen number, ITEM the displayed data item, and PARAMETER, the enable and positions parameters for this display item. OSD settings default to allowing up to 4 screens available, each optionally enabled. Displayed data items can be shown on one screen and not on others by setting its ENABLE parameter for that screen.
 
-* Set parameters ``OSDn_CHAN_MIN`` and ``OSDn_CHAN_MAX`` to adjust RC channel pwm limits to use for switching to a respective screen.
+* Set parameters ``OSDn_CHAN_MIN`` and ``OSDn_CHAN_MAX`` are used to adjust RC channel pwm limits to use for switching to a respective screen. Be careful not to have overlapping PWM ranges for two screens.
 
 There are different switch-method options to meet individual RC systems switch layout requirements. 
 These can be set by parameter: :ref:`OSD_SW_METHOD<OSD_SW_METHOD>`.
@@ -70,15 +77,22 @@ Panel items
 
 Each OSD panel item uses a set of three variables to be set: 
 
-- ``OSDn_ITEM_ENABLE`` - activates the respective item when set to 1.
-- ``OSDn_ITEM_X`` and ``OSDn_ITEM_Y`` set the horizontal and vertical position of the item, starting with ``X = 0`` and ``Y = 0`` in the upper left corner of your screen. 
+- ``OSDn_<ITEM>EN`` - activates the respective item when set to 1.
+- ``OSDn_<ITEM>_X`` and ``OSDn_<ITEM>_Y`` set the horizontal and vertical position of the item, starting with ``X = 0`` and ``Y = 0`` in the upper left corner of your screen. 
 
 .. note::
    
     The typical MAXChip based OSD screen has a visible matrix of 30 horizontal x 13 vertical chars in NTSC standard, while PAL standard has 16 vertical chars. The OSD code enables auto-detection of NTSC vs. PAL to match input signal properties.
-    
+
 .. note::    ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value as the airspeed item, if no sensor is present.
-    
+
+Callsign panel
+==============
+
+This panel allows to display your amateur radio callsign (or any other individual character string) on your onboard OSD screen. It will read the character string from a file named "callsign.txt" placed in the root of your SD card. Mind that the default ardupilot charsets require to use capital letters for correct display. Using MAVftp is a convenient option to upload the file to your SD card without having to physically remove it from your flightcontroller.
+
+.. note::    You will find this feature in firmware 4.1 and later
+
 User Programmable Warnings
 ============================
 Several user defined warnings can be set which will flash the respective osd panel item when warning level is reached or exceeded

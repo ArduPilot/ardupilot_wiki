@@ -89,11 +89,7 @@ triggered continuously until the vehicle is switched out of AUTO mode.
 vehicles returns home.
 
 **DO_SET_ROI** can be used to point the nose of the vehicle and gimbal
-at a specific point on the map.  Note: in AC3.1.2, as the vehicle passes
-a waypoint it will point to the next waypoint, this means that in order
-to point at a single point throughout the mission, the do-set-roi
-command must appear over and over again after each waypoint.  In AC3.2
-this behaviour has been modified so that this is not necessary.
+at a specific point on the map.
 
 .. image:: ../../../images/3dMapping_MPFlightPlanExample.jpg
     :target: ../_images/3dMapping_MPFlightPlanExample.jpg
@@ -114,7 +110,7 @@ orthopotos, etc
 
 `Pix4d <https://www.pix4d.com/>`__ : 6500 euros or 260 euros per month
 
-`OpenDroneMap <http://opendronemap.github.io/odm/>`__ : open source and
+`OpenDroneMap <https://opendronemap.org/>`__ : open source and
 free! (`user intro video <https://www.youtube.com/watch?v=e2qp3o8caPs>`__)
 
 All of these software packages work in generally the same way in that

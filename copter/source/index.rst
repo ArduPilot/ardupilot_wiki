@@ -182,6 +182,7 @@ Getting more info
    Mission Planning <docs/common-mission-planning>
    Logs <docs/common-logs>
    Peripheral Hardware <docs/common-optional-hardware>
+   OEM Customization <docs/common-oem-customizations>
    Traditional Helicopters <docs/traditional-helicopters>
    Tricopter <docs/tricopter>
    SingleCopter and CoaxCopter <docs/singlecopter-and-coaxcopter>

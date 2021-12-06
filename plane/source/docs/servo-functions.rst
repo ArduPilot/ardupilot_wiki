@@ -58,7 +58,12 @@ Controlling Servo Throw, Trim and Reversal
 ==========================================
 
 In addition to the function, each servo output also has parameters to
-control the servo throw, the trim and servo reversal.
+control the servo throw, the trim and servo reversal. Normally, no adustment is needed, but can be modified to match your
+servo's capabilities and range. While these values can be used to adjust throw and trim center of a flying surface, it is best to 
+do so mechanically. :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` can be used to fine adjust the TRIM value automatically in flight, instead of manually changing
+the mechanical trim. NEVER try to trim a plane with the transmitter trims as this will destroy the RC Calibration values (See :ref:`common-radio-control-calibration`).
+
+When using reversing ESCs, these values may be needed to be adjusted (See :ref:`reverse-thrust-setup` )
 
 The parameters are:
 
@@ -133,3 +138,4 @@ In addition, auxiliary control surfaces, such as flaps, spoilers and airbrakes c
     Flaperons <flaperons-on-plane>
     Automatic Flaps <automatic-flaps>
     Airbrakes <airbrakes-on-plane>
+    Rudder, Yaw, and Yaw Control <yaw-in-plane>

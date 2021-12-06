@@ -5,7 +5,7 @@ RadioLink MiniPix
 ========================================
 
 
-.. warning:: This autopilot is not recommended because the board is not compatible with the official ArduPilot software despite multiple efforts to work with the manufacturer to make it compatible. The manufacturer is also apparently not abiding by the GPLv3 license which requires releasing the modified source code to its customers. The information provided below is now outdated and current Ardupilot releases will not function on this flight controller.
+.. warning:: This autopilot is not recommended because some versions of the board are not compatible with the official ArduPilot software despite multiple efforts to work with the manufacturer to make them compatible. The manufacturer is also apparently not abiding by the GPLv3 license which requires releasing the modified source code to its customers.  "V1.0" and "V1.2" probably work, "V1.0 II" and "V1.1" definitely do not work.
 
 
 

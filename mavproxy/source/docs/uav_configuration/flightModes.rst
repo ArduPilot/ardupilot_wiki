@@ -3,7 +3,7 @@ Flight Modes
 ============
 
 Flight modes can be directly entered on the command line. This will send
-the appropriate command to the APM. Use ``mode n`` to change mode, where
+the appropriate command to the autopilot. Use ``mode n`` to change mode, where
 n is the desired mode. To get a list of available modes, enter ``mode``.
 
 mode auto
@@ -29,12 +29,12 @@ Enter manual mode. On Arducopter this is equivalent to STABILIZE mode
 mode fbwa
 =========
 
-Enter Fly By Wire A mode. Applicable on fixed wing APM's only.
+Enter Fly By Wire A mode. Applicable on fixed wing vehicles only.
 
 land
 ====
 
-Enter LAND mode. Note this is only applicable on fixed wing APM's.
+Enter LAND mode. Note this is only applicable on fixed wing vehicles.
 
 A specific mode is guided. By entering ``guided alt`` (where alt is the
 desired altitude), the user can the select a point on the map window and

@@ -137,7 +137,7 @@ f) Navigate to the FULL PARAMETER LIST under the main CONFIG/TUNING tab and loca
 .. image:: ../../../images/CTimage15.png
     :width: 450px
 
-g) Scroll down through the parameters until you get to :ref:`RELAY_PIN<RELAY_PIN>` (for the first relay pin...there can be up to 6) . Here you will want to set the :ref:`RELAY_PIN<RELAY_PIN>`  parameter to match the GPIO pin you have connected the shutter release cable to. Since we have connected the cable to AUX6 on a Pixhawk, we need to change the :ref:`RELAY_PIN<RELAY_PIN>`  parameter to “56” (56:Pixhawk AUXOUT6).
+g) Scroll down through the parameters until you get to :ref:`RELAY_PIN<RELAY_PIN>` (for the first relay pin...there can be up to 6) . Here you will want to set the :ref:`RELAY_PIN<RELAY_PIN>`  parameter to match the GPIO pin you have connected the shutter release cable to. Since we have connected the cable to AUX6 on a Pixhawk, we need to change the :ref:`RELAY_PIN<RELAY_PIN>`  parameter to “55” (55:Pixhawk AUXOUT6).
 
 .. image:: ../../../images/CTimage16.png
     :width: 450px

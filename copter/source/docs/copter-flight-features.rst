@@ -12,8 +12,7 @@ a full set of features see the :doc:`full parameter list <parameters>` and the `
 .. toctree::
     :maxdepth: 1
 
-    common-ac2_simple_geofence
-    common-polygon_fence
+    common-geofencing-landing-page
     common-object-avoidance-landing-page
     terrain-following
     terrain-following-manual-modes

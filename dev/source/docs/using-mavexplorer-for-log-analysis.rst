@@ -9,7 +9,7 @@ as mavgraph, but is interactive, and supports a community contribution
 model for pre-defined graphs.
 
 Installing MAVExplorer on Linux
--------------------------------
+===============================
 
 You will need the latest version of pymavlink and mavproxy installed. On
 Linux do this:
@@ -24,7 +24,7 @@ after running that you should have a new command "MAVExplorer.py" in
 your path.
 
 Installing MAVExplorer on Windows
----------------------------------
+=================================
 
 To install MAVExplorer on Windows download the pre-built MAVProxy package here:
 
@@ -41,7 +41,7 @@ Then create a link from
 onto your desktop. You can then start MAVExplorer by dragging a log file onto the MAVExplorer shortcut.
 
 Installing MAVExplorer on MacOS
--------------------------------
+===============================
 
 To install MAVExplorer on MacOS you will need to have "pip" installed. If you don't have pip, then use:
 ::
@@ -62,28 +62,28 @@ Then add $HOME/Library/Python/2.7/bin to your $PATH, like this:
 
 
 Starting MAVExplorer
---------------------
+====================
 
-To start MAVExplorer just run it with a filename as an argument:
+To start MAVExplorer just run it with a filename as an argument. It will also start without a filename, and log file loaded later via the MAVExplorer menu's "Open" item:
 
 ::
 
-    MAVExplorer.py mydata.bin
+    MAVExplorer.py ~/Desktop/ardupilot/00000013.bin
 
 it supports MAVLink telemetry logs, or DataFlash Logs. After starting it
 you will end up with two windows, like this:
 
-.. image:: http://uav.tridgell.net/MAVExplorer/images/mavexplorer-start.png
+.. image:: ../images/mavexplorer-start.png
     :target: ../_images/mavexplorer-start.png
 
-The top window is the "console" and has your menus and the status
-messages. The bottom window is your terminal, and has the "MAV>" prompt
-for typing commands.
+The bottom window is the "console" and has your menus and the status
+messages. The top window is your terminal, and has the "MAV>" prompt
+for typing commands. The result of typing "help" is shown listing the commands.
 
-Note: be careful with spaces in log filenames. Use quotes around the filename if needed.
+.. note:: be careful with spaces in log filenames. Use quotes around the filename if needed.
 
 Using pre-defined graphs
-------------------------
+========================
 
 MAVExplorer comes with an extensive set of pre-defined graphs. Those
 graphs appear in the Graphs menu in the console. Only graphs that are
@@ -92,11 +92,11 @@ relevent for the log you are viewing will appear in the menus.
 To display a graph just choose it in the Graphs menu. You can display
 several graphs at once if you want to.
 
-.. image:: http://uav.tridgell.net/MAVExplorer/images/attitude-control.png
+.. image:: ../images/attitude-control.png
     :target: ../_images/attitude-control.png
 
 Graphing Manually
------------------
+=================
 
 You can also graph any data from the log using the graph command in the
 terminal at the MAV> prompt. Just type graph followed by the expression.
@@ -113,7 +113,7 @@ graph <TAB><TAB>
 
 you would see something like this:
 
-.. image:: http://uav.tridgell.net/MAVExplorer/images/tab-tab.png
+.. image:: /images/tab-tab.png
     :target: ../_images/tab-tab.png
 
 the list of possible message names has been listed. If you type part of
@@ -122,7 +122,7 @@ the message name you want then you can use <TAB> to complete the name.
 After the message name you need to type a '.' followed by a field name.
 Again you can TAB complete, for example:
 
-.. image:: http://uav.tridgell.net/MAVExplorer/images/tab-field.png
+.. image:: ../images/tab-field.png
     :target: ../_images/tab-field.png
 
 You can do this for multiple fields in one graph, allowing you to
@@ -135,7 +135,7 @@ Some messages have ``Instance`` fields, for storing data of multiple instances o
     graph RFND[0].Dist
 
 Modifying pre-defined graphs
-----------------------------
+============================
 
 Whenever you use a pre-defined graph the graph expression gets added to
 your command line history. So you can just hit enter to refresh the
@@ -144,9 +144,9 @@ pre-defined graph you just displayed. You can then add new fields or
 editing existing fields and hit enter to display the new graph.
 
 You can also save any graph you have just displayed using the "Save
-Graph" menu item under the "MAVExplorer" menu:
+Graph" menu item under the "Display" menu:
 
-.. image:: http://uav.tridgell.net/MAVExplorer/images/save-graph.png
+.. image:: ../images/save-graph.png
     :target: ../_images/save-graph.png
 
 You can edit the name and description of the graph then press "Save" and
@@ -164,7 +164,7 @@ you have multiple lines for the expressions then they will be considered
 as alternative expressions (to cope with different types of logs).
 
 Graph Expressions
------------------
+=================
 
 Graph expressions are arbitrary python expressions. You can use any
 functions from the python maths library, plus any functions from the
@@ -180,23 +180,34 @@ variables in the log. For example:
 that will graph the total magnetic field strength (the length of the
 compass vector).
 
+Another very useful express is a low pass filter on the data:
+
+::
+
+     graph IMU[0].AccX lowpass(IMU[0].AccX,0,.99)
+
+syntax is lowpass(variable to filter,tag,alpha) where "tag" is an arbitrary reference number, and "alpha" is weighting of current filter output, 1-alpha is the weighting of the present variable's value this sample, and these are summed to provide the next filter output sample.
+
+.. image:: ../images/filter.png
+   :target: ../_images/filter.png
+
 Right and Left scales
----------------------
+=====================
 
 The default is that graphed values are shown on the left hand axis
 scale, all scaled together. To plane a field on the right hand scale
 just use ":2" on the end of the field name. For example:
 
-.. image:: http://uav.tridgell.net/MAVExplorer/images/right-axes.png
+.. image:: ../images/right-axes.png
     :target: ../_images/right-axes.png
 
 Selecting by Flight Mode
-------------------------
+========================
 
 It is often useful to select only a part of a flight based on the flight
 mode. To do that use the FlightMode menu:
 
-.. image:: http://uav.tridgell.net/MAVExplorer/images/flightmodes.png
+.. image:: ../images/flightmodes.png
     :target: ../_images/flightmodes.png
 
 The FlightMode menu will show all the flight mode changes in your
@@ -206,7 +217,7 @@ the appropriate flight menu items. If none are selected then the whole
 log is graphed.
 
 Adding Conditions
------------------
+=================
 
 You can restrict graphs based on conditions expressed as python
 expressions of the available log variables. For example, if you wanted
@@ -224,7 +235,7 @@ to clear the condition set it to the empty string
     condition ''
 
 Displaying a Map
-----------------
+================
 
 You can display a map showing your flight path using the map command:
 
@@ -232,9 +243,11 @@ You can display a map showing your flight path using the map command:
 
     map
 
+or selecting the MAP menu item from the Display menu.
+
 A map will pop up following the current condition, like this:
 
-.. image:: http://uav.tridgell.net/MAVExplorer/images/map.png
+.. image:: ../images/map.png
     :target: ../_images/map.png
 
 You can zoom in and out using the mouse and the scroll wheel or + and -
@@ -307,7 +320,7 @@ and works for copter, plane and rover. It also allows us to add new
 expressions to cope with changing field names as ArduPilot evolves.
 
 Reloading the graphs
---------------------
+====================
 
 When editing XML files to add graphs you don't need to exit and restart
 MAVExplorer to try out your new graphs. Just run the command "reload" or
@@ -315,7 +328,7 @@ use the "Reload Graphs" menu item and your new graphs will be loaded
 into the menus.
 
 Contributing Graphs
--------------------
+===================
 
 One of the main reasons for the XML files in MAVExplorer is to allow
 community members to contribute new graphs that are useful in log
@@ -326,3 +339,11 @@ to andrew-mavexplorer@tridgell.net or open a pull request against the
 For a pull request with graphs, please add the graphs to the
 `MAVProxy/tools/graphs <https://github.com/ArduPilot/MAVProxy/tree/master/MAVProxy/tools/graphs>`__
 directory
+
+Useful Commands
+===============
+
+- param <regular expression> : displays parameters from log, eg. to show TECS params: "param TECS_*" or "param" to show all
+- paramchange <regular expression>: displays changes of paramater(s) throughout the log
+- messages: displays GCS messages
+- dump <log message>: dumps all instances of that log message, eg. "dump IMU"

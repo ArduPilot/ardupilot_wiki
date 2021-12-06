@@ -8,12 +8,12 @@ Introduction
 ============
 
 Replay is a program that takes a dataflash log file and replays it
-through the latest master code allowing for state estimation issues to
-be analysed with new code.
+through any branch's code allowing for state estimation issues to
+be analyzed using that branch's code instead of the code used while generating the dataflash log.
 
-It is recommended that if a problem is reproducible that the log be
-generated with both the `LOG_REPLAY` and `LOG_DISARMED` parameters set
-to 1.
+.. note:: The log structure of the firmware used to create the log and the branch to be tested with it must be the same.
+
+.. note:: In order to use Replay the log must be generated with `LOG_REPLAY` set to 1. And it is preferred to also have `LOG_DISARMED` also set to 1, to obtain the most information in the log.
 
 .. image:: ../images/Replay_EKFVsINAV.png
     :target: ../_images/Replay_EKFVsINAV.png
@@ -21,14 +21,14 @@ to 1.
 Building Replay
 ===============
 
-On your Linux or Ubuntu machine, from the root directory of an ArduPilot repository:
+On your Linux or Ubuntu machine, from the root directory of an ArduPilot repository, using the branch you wish to replay the log through:
 
 .. code-block:: bash
 
-    ./waf configure --board=sitl --debug
+    ./waf configure --board=sitl --debug   //--debug is optional but allows using a debugger, if desired when analyzing issues
     ./waf replay
 
-This will create a file called ``build/sitl/tools/Replay``.
+This will create a file called ``build/sitl/tool/Replay``.
 
 Using Replay
 ============
@@ -37,17 +37,19 @@ Display the Replay help instructions:
 
 .. code-block:: bash
 
-    build/sitl/tools/Replay -h
+    build/sitl/tool/Replay -h
 
 Run a log through Replay to generate the plot and EKF data files:
 
 .. code-block:: bash
 
-    build/sitl/tools/Replay MyLogFile.BIN
+    build/sitl/tool/Replay MyLogFile.BIN
 
-This will produce an output file 1.BIN in the folder "./logs"
+This will produce an output file xxx.BIN in the folder "./logs", which will be the highest numbered log since it was just created.
 
-Use MAVExplorer to graph the data
+Use MAVExplorer to graph the data. Both the original and Replay generated EKF messages will be included in the log data. For example, instead of possible graphs for IMU0 and IMU1's EKF2- NKF2 message items:  "NKF2, NKF2[0], and NKF2[1]", there will also be "NKF2[100] adn NKF2][101]" graph groups for the replay generated log messages.
+
+.. note:: if using WSL, do not reference the log file via the external Windows WSL path since this will be extremely slow. Instead copy the log from the Windows file system directly into the WSL environment and execute Replay on it within that environment.
 
 Changing parameters
 ===================
@@ -118,3 +120,45 @@ When modifying the EKF code it can be useful to confirm your changes have no imp
     Processing log replay-00000001.BIN
     Processed 30166/30166 messages, 0 errors
     Passed
+
+
+Ensuring EKF changes have had no effect on its output
+=====================================================
+
+Often changes to the EKF are expected to have no functional change.  Refactoring, removing dead code, adding comments, rearranging parameters, changing function names and the like.
+
+If you are making such a change, ``Tools/Replay/check_replay_branch.py`` is provided to ensure your current branch does not change the EKF's output, as tested by the autotest suite's Replay tests.
+
+It:
+  - generates a Replayable log on the master branch
+  - compiles and runs Replay on your branch
+  - uses ``Tools/Replay/check_replay.py`` to ensure the EKF output has not changed
+
+e.g.
+
+.. code-block:: bash
+
+    pbarker@bluebottle:~/rc/ardupilot(pr/move-gsf-logging-ekf2)$ ./Tools/Replay/check_replay_branch.py
+    chdir (/home/pbarker/rc/ardupilot)
+    lckfile='/home/pbarker/rc/buildlogs/autotest.lck'
+    step=build.Copter
+    step=test.Copter.Replay
+    Running: ("git rev-parse HEAD") in (/home/pbarker/rc/ardupilot)
+    >>>> RUNNING STEP: build.Copter at Tue Dec  1 13:26:32 2020
+    Running: ("/bin/rm -f logs/*.BIN logs/LASTLOG.TXT") in (.)
+    'build' finished successfully (4m26.874s)
+    .
+    .
+    .
+    >>>> PASSED STEP: build.Copter at Tue Dec  1 13:31:03 2020
+    >>>> RUNNING STEP: test.Copter.Replay at Tue Dec  1 13:31:03 2020
+    Running: ("/bin/rm -f logs/*.BIN logs/LASTLOG.TXT") in (.)
+    step=test.Copter.Replay
+    .
+    .
+    .
+    AT-0298.3: Stopping SITL
+    >>>> PASSED STEP: test.Copter.Replay at Tue Dec  1 13:36:01 2020
+    Processing log logs/00000004.BIN
+    Processed 66495/66495 messages, 0 errors
+    pbarker@bluebottle:~/rc/ardupilot(pr/move-gsf-logging-ekf2)$ 

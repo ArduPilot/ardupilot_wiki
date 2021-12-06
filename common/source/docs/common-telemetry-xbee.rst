@@ -48,6 +48,45 @@ The
 application can be used to configure the XBee modules.  In particular
 they should be set to transmit at 57600 baud.
 
+The following parameters can be set in the XCTU application. In addition, it has a track record of use in XBee ZB（S2C）.
+Example of xbee setting parameters.(if. PC's MAC:0013A2004567EFGH , Pixhawk's xbee MAC:0013A2004567WXYZ)
+
++-------------------+--------------------------------------------+---------------------------------------------+
+|                   |                                   Setting Parameter                                      |
++                   +--------------------------------------------+---------------------------------------------+
+| Category          |        PC's xbee                           |     Pixhawk's xbee                          |
++===================+============================================+=============================================+
+| Networking        |ID=1234,SC=7FFF,SD=3,ZS=0,NJ=FF,NW=0,JV=[0],|ID=1234,SC=7FFF,SD=3,ZS=0,NJ=FF,NW=0,JV=[0], |
+|                   |JN=[0],CE=[1],DO=0,DC=0                     |JN=[0],CE=[0],DO=0,DC=0                      |
++-------------------+--------------------------------------------+---------------------------------------------+
+| Addressing        |DH=13A200,DL=4567WXYZ,NI=xbeepc,NH=30,BH=0, |DH=13A200,DL=4567EFGH,NI=xbeehawk,NH=30,BH=0,|
+|                   |AR=FF,DD=A0000,NT=3C,NO=0,CR=3              |AR=FF,DD=A0000,NT=3C,NO=0,CR=3               |
++-------------------+--------------------------------------------+---------------------------------------------+
+| ZigBee Addressing |SE=E8,DE=E8,CI=11,TO=0                      |SE=E8,DE=E8,CI=11,TO=0                       |
++-------------------+--------------------------------------------+---------------------------------------------+
+| RF Interfacing    |PL=Highest[4],PM=Boost Mode Enabled[1]      |PL=Highest[4],PM=Boost Mode Enabled[1]       |
++-------------------+--------------------------------------------+---------------------------------------------+
+| Security          |EE=[0],EO=0,KY=0,NK=0                       |EE=[0],EO=0,KY=0,NK=0                        |
++-------------------+--------------------------------------------+---------------------------------------------+
+| Serial Interfacing|BD=57600[6],NB=[0],SB[0],RO=3,D6=[0],       |BD=57600[6],NB=[0],SB[0],RO=3,D6=[0],        |
+|                   |D7=[0],AP=Transparent mode[0],AO=Native[0]  |D7=[0],AP=Transparent mode[0],AO=Native[0]   |
++-------------------+--------------------------------------------+---------------------------------------------+
+| AT Command Options|CT=64,GT=3E8,CC=2B                          |CT=64,GT=3E8,CC=2B                           |
++-------------------+--------------------------------------------+---------------------------------------------+
+| Sleep Modes       |SP=20,SN=1,SM=No Sleep(Router)[0],          |SP=20,SN=1,SM=No Sleep(Router)[0],           |
+|                   |ST=1388,SO=0,WH=0,PO=0                      |ST=1388,SO=0,WH=0,PO=0                       |
++-------------------+--------------------------------------------+---------------------------------------------+
+| I/O Setting       |D0=Commissioning Button[1],D1=[0],D2=[0],   |D0=Commissioning Button[1],D1=[0],D2=[0],    |
+|                   |D3=[0],D4=[0],D5=Associated indicator[1],   |D3=[0],D4=[0],D5=Associated indicator[1],    |
+|                   |D8=Sleep_Rq[1],D9=Awake/Asleep indicator[1],|D8=Sleep_Rq[1],D9=Awake/Asleep indicator[1], |
+|                   |P0=RSSI PWM Output[1],P1=[0],P2=[0],        |P0=RSSI PWM Output[1],P1=[0],P2=[0],         |
+|                   |P3=DOUT[1],P4=DIN[1],PR=1FBF,PD=1FFF,LT=0,  |P3=DOUT[1],P4=DIN[1],PR=1FBF,PD=1FFF,LT=0,   |
+|                   |RP=28                                       |RP=28                                        |
++-------------------+--------------------------------------------+---------------------------------------------+
+| I/O Sampling      |IR=0,IC=0,V+=0                              |IR=0,IC=0,V+=0                               |
++-------------------+--------------------------------------------+---------------------------------------------+
+
+
 Connecting to the Ground Station
 ================================
 

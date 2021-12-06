@@ -4,9 +4,9 @@
 Rangefinders (landing page)
 ===========================
 
-Copter/Plane/Rover support a number of different rangefinders including Lidars (which use lasers or infra-red beams for distance measurements) and Sonars (which use ultrasonic sound), and also includes Maxbotix Sonar and Pulsed Light LED range finders. These devices can be used for measuring distance near to  the ground for precision landings and altitude control, water depth, or object distance as proximity sensors for avoiding objects.
+Copter/Plane/Rover support a number of different rangefinders including Lidars (which use lasers or infra-red beams for distance measurements), 360 degree Lidars (which can detect obstacles in multiple directions) and Sonars (which use ultrasonic sound). This category also includes Maxbotix Sonar and Pulsed Light LED range finders. These devices can be used for measuring distance near to  the ground for precision landings and altitude control, water depth, or object distance as proximity sensors for :ref:`Object Avoidance<common-object-avoidance-landing-page>`. Vision systems (see :ref:`common-realsense-depth-camera`) can also be used for Object Avoidance.
 
-360 degree Lidars are typically used in object avoidance as proximity sensors. While multiple 1D (single dimensional) sensors can be used for proximity detection.
+A forward facing rangefinders can also be used for Obstacle Avoidance. See Rangefinder :ref:`Setup Overview <common-rangefinder-setup>` to know more.
 
 [site wiki="plane"]
 .. tip::
@@ -48,10 +48,19 @@ based upon your set-up.
     :maxdepth: 1
 
     Rangefinder Setup Overview <common-rangefinder-setup>
+[site wiki="copter,rover"]
 
+    Proximity Sensors <common-proximity-landingpage>
+    
+[/site]
 
+Unidirectional Rangefinders
+===========================
 
-    Aerotenna US-D1 Radar Altimeter <common-aerotenna-usd1>
+.. toctree::
+    :maxdepth: 1
+
+    Aistein US-D1 Radar Altimeter <common-aerotenna-usd1>
     Attollo Engineering Wasp200 <common-wasp200-lidar>
     Avionics Anonymous UAVCAN LIDAR Interface <common-avanon-laserint>
     Benewake TF02 / TF03 <common-benewake-tf02-lidar>
@@ -59,22 +68,38 @@ based upon your set-up.
     Garman Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
-[site wiki="copter,rover"]
-    Intel Realsense Depth Camera <common-realsense-depth-camera>
-[/site]
+    JSN-SR04T Sonar <common-jsn-sr04t>
     LeddarTech Leddar One <common-leddar-one-lidar>
     LeddarTech LeddarVu8 <common-leddartech-leddarvu8-lidar>
     LightWare SF10 / SF11 Lidar <common-lightware-sf10-lidar>
     LightWare SF20 / LW20 Lidar <common-lightware-lw20-lidar>
     Lightware SF02 Lidar <common-rangefinder-sf02>
-    Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
     Maxbotix I2C Sonar <common-rangefinder-maxbotixi2c>
     Maxbotix Analog Sonar <common-rangefinder-maxbotix-analog>
-    RPLidar A2 360 degree laser scanner <common-rplidar-a2>
     ST VL53L0X / VL53L1X Lidar <common-vl53l0x-lidar>
     TeraRanger One/EVO Rangefinders <common-teraranger-one-rangefinder>
-    TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
     Underwater Sonar <common-underwater-sonars-landingpage>
+
+Omnidirectional Proximity Rangefinders
+======================================
+
+.. toctree::
+    :maxdepth: 1
+
+    Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
+    Lightware SF45/B (350 degree) <common-lightware-sf45b>
+    RPLidar A2 360 degree laser scanner <common-rplidar-a2>
+    TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
+
+[site wiki="copter,rover"]
+Vision Based Sensors
+====================
+
+.. toctree::
+    :maxdepth: 1
+    
+    Intel Realsense Depth Camera <common-realsense-depth-camera>
+[/site]
 
 
 

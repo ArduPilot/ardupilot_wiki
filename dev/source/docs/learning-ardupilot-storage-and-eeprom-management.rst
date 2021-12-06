@@ -164,7 +164,7 @@ set of FMT messages which have a well known format and which describe
 the format of the messages that follow.
 
 Go and have a look at
-`libraries/DataFlash/examples/DataFlash_test/DataFlash_test.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/DataFlash/examples/DataFlash_test/DataFlash_test.cpp>`__.
+`libraries/AP_FlashStorage/examples/FlashTest/FlashTest.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_FlashStorage/examples/FlashTest/FlashTest.cpp>`__.
 You'll see a little table at the top that defines the log messages we
 will be writing, in this case a 'TEST' message which contains 4 unsigned
 16 bit integers and two signed 32 bit integers (that is what "HHHHii"

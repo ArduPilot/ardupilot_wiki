@@ -1,7 +1,7 @@
 .. _events:
     
 ===============
-Events for 2019
+Events for 2021
 ===============
 
 This is a list of events where ArduPilot developers and/or their `Partners <https://ardupilot.org/about/Partners>`__ can be found
@@ -9,11 +9,13 @@ This is a list of events where ArduPilot developers and/or their `Partners <http
 Planned Events
 --------------
 
-- Mar 27th ~ 29th 2020: Developer Un-conference in Canberra, Australia (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-march-2020/48633>`__)
+- Apr 8th ~ 10th 2022: Developer Un-conference in Canberra, Australia
 
 Past Events
 -----------
 
+- Apr 9th ~ 11th 2021: Developer Un-conference (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-2021/67561>`__)
+- Mar 27th ~ 29th 2020: Developer Un-conference in Canberra, Australia (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-march-2020/48633>`__)
 - Oct 20th & 21st: CubePilot conference in Xiamen, China (`blog <https://discuss.ardupilot.org/t/2019-cubepilot-conference/46848>`__)
 - Jun 20th to 22nd: SZUAVIA ArduPilot developer conference at Shenzhen UAV Expo in Shenzhen, China (`blog <https://discuss.ardupilot.org/t/ardupilot-developer-conference-shenzhen-china-21th-june-2019>`__)
 - Apr 29th to May 2nd 2019: `AUVSI Xponential <https://www.xponential.org/xponential2019/public/enter.aspx>`__ in Chicago.  Booth #4006 (`blog <https://discuss.ardupilot.org/t/ardupilot-and-partners-at-auvsi-xponential-2019/41428>`__)

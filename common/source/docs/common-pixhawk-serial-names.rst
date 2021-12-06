@@ -28,7 +28,7 @@ mapping between them.
 | USART6    |             |            |              | IOMCU Serial |                 |                |
 +-----------+-------------+------------+--------------+--------------+-----------------+----------------+
 
-.. note:
+.. note::
 
    SERIAL_CONTROL is used to talk from a GS directly to a serially-attached device.
 

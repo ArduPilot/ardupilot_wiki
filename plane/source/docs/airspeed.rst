@@ -9,157 +9,58 @@ conditions, slow flight and autonomous landings. It is not recommended
 for most new users, however, as it does require additional tuning and
 adds one more layer of control to set up.
 
-The following sections explain how to wire sensors to the autopilot. After you install an airspeed sensor don't forget to
+The following sections explain how to wire sensors to the autopilot and set them up. After you install an airspeed sensor don't forget to
 :ref:`calibrate it <calibrating-an-airspeed-sensor>`!
 
 .. image:: ../images/BR-0004-03-2T1.jpg
     :target: ../_images/BR-0004-03-2T1.jpg
 
 
-ARSPD USE
+ARSPD_USE
 =========
 
-:ref:`ARSPD_USE<ARSPD_USE>` enables airspeed use for automatic throttle modes instead of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` . The autopilot continues to display and log airspeed if set to 0, but only airspeed sensor readings for control if set to 1. It will only use airspeed sensor readings when throttle is idle, if set to 2 (useful for gliders with airspeed sensors behind propellers).
+:ref:`ARSPD_USE<ARSPD_USE>` enables airspeed use for automatic throttle modes instead of :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` as the target throttle setting (altered by :ref:`tecs-total-energy-control-system-for-speed-height-tuning-guide` as needed during altitude control) . The autopilot continues to display and log airspeed if set to 0, but only airspeed sensor readings are used for control if set to 1. It will only use airspeed sensor readings for control when throttle is idle, if set to 2 (useful for gliders with airspeed sensors behind propellers).
+
+If an airspeed sensor is used, the throttle stick will set the target airspeed in CRUISE and FBWB, while maintaining altitude target. In AUTO and GUIDED, it will use the :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` value unless :ref:`THROTTLE_NUDGE<THROTTLE_NUDGE>` is enabled and throttle stick is used to alter it, or a MAVLink command to change speed is sent to the vehicle.
 
 Airspeed Sensor Type
 ====================
 
-Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the autopilot, while digital sensors connect to the autopilot's external I2C bus using the SDA and SCL external digital I/O pins. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, and supported digital sensors by other numbers. If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value if no sensor is present.
+Airspeed sensors can be either analog or digital. The analog sensors connect to an A/D converter input pin on the autopilot, while digital sensors connect to the autopilot's external I2C bus using the SDA and SCL external digital I/O pins or via UAVCAN. The type is set by the :ref:`ARSPD_TYPE<ARSPD_TYPE>` parameter. Analog sensors are type 2, UAVCAN sensors as type 8, and supported I2C bus digital sensors by other numbers.
+
+If there is no sensor, be sure to set the :ref:`ARSPD_TYPE<ARSPD_TYPE>` to 0. ArduPilot calculates an sensor-less airspeed estimate that is used if no sensor is present or fails. :ref:`ARSPD_TYPE<ARSPD_TYPE>` must be set to zero in order to display this value if no sensor is present.
 
 .. warning:: Many airspeed sensors are sensitive to light. Unless you are certain that the particular sensor used is not light sensitive, in order to avoid measurement errors, the sensor should be shielded from light.
 
-Pixhawk Digital Airspeed Pin
-============================
+Autopilot Airspeed Connection
+=============================
 
-Pixhawk can use this `digital airspeed sensor <http://store.jdrones.com/digital_airspeed_sensor_p/senair02kit.htm>`__.
-Connect the airspeed sensor to Pixhawk's I2C port (or I2C splitter
-module). Using the rubber tubing, connect the longer extension on the
-pitot tube to the cone that protrudes from the top of the airspeed
-sensor board (off the off-white, square section protruding off the top
-of the board), and connect the shorter extension on the pitot tube to
-the cone protruding from the base of the board.
+A list of digital and UAVCAN airspeed sensors are listed :ref:`below<arspd-sensor-list>`.
+
+
+I2C
+---
+Connect the airspeed sensor to autopilots's I2C port (or I2C splitter
+module). 
 
 .. image:: ../images/airspeed_full_assembly_800px.jpg
     :target: ../_images/airspeed_full_assembly_800px.jpg
 
-Pixhawk can also use this `digital airspeed sensor with compass <http://store.jdrones.com/digital_airspeed_sensor_with_compass_p/senairmag03kit.htm>`__ 
-module.  This may allow you to incorporate an external compass well
-away from sources of ElectroMagnmetic Interference (EMI) without
-additional cabling.
+To enable the digital airspeed sensor, connect the autopilot to Mission
+Planner (or APM Planner for OS X), and select the Optional Hardware/Airspeed
+tab under the CONFIG menu. Using the drop-down box for Type, select your sensor's type. The Pin dropdown is not used and can be ignored. Check the "Use Airpeed" box to use it in control, or leave it unchecked during in-flight calibration discussed below to check its operation before use.
 
-To enable the digital airspeed sensor, connect Pixhawk to Mission
-Planner (or APM Planner for OS X), and select the **Advanced Parameter
-List** under the Configuration tab. Locate the
-:ref:`ARSPD_PIN <ARSPD_PIN>` parameter
-and set to **65**. Select **Write Params** to apply. Ensure that you
-have also enabled the airspeed sensor in the setup section (**Mission
-Planner \| Hardware \| Optional Hardware \| Airspeed**) as discussed
-below.
+UAVCAN
+------
+
+Attach the sensor to the AutoPilot's UAVCAN port and select UAVCAN in the above mentioned Type dropdown box and check the "Use Airspeed" box as appropriate. 
 
 Analog Airspeed sensor
-======================
+----------------------
 
-The way this `airspeed sensor <http://store.jdrones.com/AirSpeed_sensor_MPXV7002_p/senair01kit.htm>`__
-works is that the top tube is "active" (measures air pressure from the
-pitot tube that is open at the front and has air driven into it by
-airspeed) and the bottom one is "static" (measures ambient air pressure
-from tube with intakes on the side).
+Analog sensors are now largely discontinued. Digital sensors are much more accurate and consistent over temperature.
+Ardupilot still supports these analog sensors, but they are not preferred. See :ref:`Analog Airspeed Sensors<analog-airspeed-sensors>`.
 
-Connect the active sensor port using silicon tube to the straight tube
-exiting from the rear of the pitot tube. The angled tube is the static
-part connecting to the static port of the sensor (the port on the sensor
-closest to the PCB)
-
-PX4/Pixhawk Analog Airspeed Pin and Wiring
-------------------------------------------
-
-For the PX4
-
--  Hardware PIN 11 is available on the PX4 for airspeed use.
--  The "airspeed" pin 11 is located on a 3 pin DF13 connector on the
-   PX4IO board but is directly connected to the ADC on the PX4FMU.
--  This pin can take voltages up to 6.6V (it has an internal voltage
-   divider).
--  The FMU-Pres (air pressure) 3 pin connector is on the end of the
-   PX4IO board opposite the power in connector.
-
-   -  Wire the airspeed sensor's signal wire to pin 2 (the center pin)
-      of the FMU-PRES connector.
-   -  Wire pin 1 (towards the center of the board) to the sensors VCC (5
-      volts) input.
-   -  Wire pin 3 (nearest the edge of the board) to the airspeed
-      sensors ground.
-
--  Assign the airspeed sensor to an appropriate "PIN" in Mission Planner
-   - Configuration - Advanced Params - Adv Parameter List.
-
-   -  Set the :ref:`ARSPD_PIN <ARSPD_PIN>` parameter to 11 in the Advanced Parameter
-      List and select "Write Parameters".
-
-For the Pixhawk
-
--  The "airspeed" pin 15 is located on a 3 pin DF13 connector on the
-   Pixhawk board.
--  This pin can take voltages up to 6.6V (it has an internal voltage
-   divider).
--  The air pressure connector (labeled ADC 6.6V) is a 3 pin connector
-   on the top right of the Pixhawk.
-
-   -  Wire the airspeed sensor's signal wire to pin 2 (the center pin)
-      of the connector.
-   -  Wire pin 1 (towards the center of the board) to the sensor's VCC (5
-      volts) input.
-   -  Wire pin 3 (nearest the edge of the board) to the airspeed
-      sensor's ground.
-
--  Assign the airspeed sensor to an appropriate "PIN" in Mission Planner
-   - Configuration - Advanced Params - Adv Parameter List.
-
-   -  For Pixhawk v1, set the :ref:`ARSPD_PIN <ARSPD_PIN>` parameter to 15 in the Advanced Parameter
-      List and select "Write Parameters". 
-   -  For Pixhawk v4, set the :ref:`ARSPD_PIN <ARSPD_PIN>` parameter to 4 in the Advanced Parameter
-      List and select "Write Parameters". 
-
-For other  autopilots:
-
-- Many have an analog RSSI input pin that can serve as the analog airspeed sensor input.
-
-.. note:: Most analog sensors output a signal from 0 to 5V, but most RSSI inputs are 3.3V maximum. If you will never exceed ~60% of the sensor's maximum speed output (normally ~ 200mph for 5V), you will not exceed that rating. However, if you might or just want to be absolutely safe, you can use a 2:1 resistive voltage divider on the signal before applying to the autopilot RSSI input pin.
-
-APM 2
------
-
-Plug it into the pins on the "A0" port, as shown:
-
-.. image:: ../images/analog_airspeed_sensor_to_apm2x_connection.jpg
-    :target: ../_images/analog_airspeed_sensor_to_apm2x_connection.jpg
-
-Software configuration
-======================
-
-You need to enable the airspeed sensor in **Mission Planner \| Hardware
-\| Optional Hardware \| Airspeed**.
-
-.. note::
-
-   Oscillation between zero and small values (2-3) is normal. The
-   airspeed varies with the square root of the pressure, so for
-   differential pressures near zero it varies quite a bit with very small
-   pressure changes, while at flying speeds it takes much greater pressure
-   changes to produce a similar change in speed. If you see mostly 0, 1, 2,
-   with an occasional bounce to 3 or 4, consider it normal. You will not
-   see that sort of variability at flying speeds. As a check, you can take
-   the fleshy part of your fingertip and press it against the pitot tube to
-   raise the airspeed reading up to say 15 m/s. It is easy to see that
-   holding a significant constant differential pressure like this the
-   reading does not bounce around (if you keep constant pressure).
-
-Once you have the airspeed sensor connected, you can use it to control
-aircraft speed in auto modes. Change the "Cruise" setting in the Tuning
-screen of either APM Planner (shown) or Mission Planner:
-
-.. image:: ../images/APM_Planner_v2_0_9__chriss-air-3__192_168_1_24_.png
-    :target: ../_images/APM_Planner_v2_0_9__chriss-air-3__192_168_1_24_.png
 
 Installing the Pitot Tubes
 ==========================
@@ -187,7 +88,7 @@ Checking operation
 ==================
 
 You can check the airspeed reading with Mission Planner or another
-ground station. Just blow on the pitot tube and observe the response. In
+ground station. Just blow on the pitot tube or press your finger over it and observe the response. In
 still air oscillation between zero and small values (2-3) is normal. The
 airspeed varies with the square root of the pressure, so for
 differential pressures near zero it varies quite a bit with very small
@@ -199,13 +100,15 @@ see that sort of variability at flying speeds.
 Calibration
 ===========
 
-The airspeed sensor reading is automatically zeroed by the APM during
-initialisation, so it is good practice during windy conditions to place
+The airspeed sensor reading is automatically zeroed by the autopilot during
+initialization, so it is good practice during windy conditions to place
 a loose fitting cover over the pitot tube that shields the front hole
 and the four small side holes from the wind. This cover should be fitted
 prior to power on and removed before flight. If you forget to do this,
 you can always place the cover and repeat the airspeed auto-zero using
 the Mission Planner's PREFLIGHT CALIBRATE => Do Action.
+
+.. note:: the ``DLVR`` type airspeed sensors do not require calibration at initialization and allow :ref:`ARSPD_SKIP_CAL<ARSPD_SKIP_CAL>` to be set to "1", avoiding the need to cover the pitot during initialization.
 
 The airspeed reading scale factor is adjusted using the :ref:`ARSPD_RATIO<ARSPD_RATIO>`
 parameter. Plane has an automatic calibration function that will adjust
@@ -213,32 +116,66 @@ the value of :ref:`ARSPD_RATIO<ARSPD_RATIO>` automatically provided the plane is
 frequent direction changes. A normal model flying field circuit pattern
 or loiter will achieve the required direction changes, cross-country
 flying will not. To enable automatic airspeed sensor calibration, set
-the value of :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1.
+the value of :ref:`ARSPD_AUTOCAL<ARSPD_AUTOCAL>` to 1. See :ref:`calibrating-an-airspeed-sensor` for more details.
 
-Using a different pin for the airspeed sensor
-=============================================
+Miscalibration Safeguards
+=========================
 
--  To assign the airspeed sensor to a specific pin, hook up your autopilot to your PC via USB. Start Mission Planner and select the
-   **Connect** button on the upper right of the page.
--  Select the *Configuration* tab then **Advanced Params** and then the
-   **Adv Parameter List**. Scroll down the list to the :ref:`ARSPD_PIN <ARSPD_PIN>`
-   parameter and select the pin you wish to use.
+In order to help prevent Airspeed sensor use when its been miscalibrated either during ground static calibration during the power up sequence, or by accidental parameter changes to offset or ratio, three parameters are available. If the ground speed is consistently lower than the reported airspeed for a few seconds by :ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>`, i.e. the apparent wind speed is greater than that amount, the sensor can be disabled to avoid erroneous reporting. It can be allowed to re-enable if the apparent wind falls back below that value. These actions are controlled by :ref:`ARSPD_OPTIONs<ARSPD_OPTIONs>`.
 
-   -  Set this to 0..9 for the APM2 analog pins.
-   -  Set to 64 on an APM1 for the dedicated airspeed port on the end of
-      the board.
-   -  Set to 11 on PX4 for the analog airspeed port.
-   -  Set to 65 on the PX4 for an I2C airspeed sensor.
-   -  Set to the listed RSSI pin in other board's :ref:`documentation<common-autopilots>` ,often it is pin 0.
+You can also send a warning to the Ground Control Station if the apparent wind exceeds :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>`. This can be used instead of, or together with the above
 
-- After you have selected the pin, select the "Update Parameters" tab and
-      close *Mission Planner*.
+Failure
+=======
 
--  Additional information on setting the airspeed sensor pin can be
-   :ref:`found here <ARSPD_PIN>`.
+A failing airspeed sensor can lead to the aircraft stalling or over-speeding, this is something that is hard for ArduPilot to detect. Likewise, accidentally miscalibrating the offset during ground initialization can occur if the pitot tube is not covered to prevent wind upsetting the calibration, and can result in wildly inaccurate readings. The parameters below can be used to help detect these conditions and warn of, and/or disable, a failed sensor.
 
+:ref:`ARSPD_WIND_MAX<ARSPD_WIND_MAX>` can be used to set the maximum expected wind speed the vehicle should ever see. This is then be used
+in combination with the GPS ground speed to detect a airspeed sensor error. :ref:`ARSPD_WIND_WARN<ARSPD_WIND_WARN>` can be set to a lower speed to give 
+some warning to the operator before the airspeed sensor is disabled. :ref:`ARSPD_OPTIONS<ARSPD_OPTIONS>` can be set to allow sensors to be disabled
+based on this wind speed metric, a second option bit allows then to be re-enabled if the speed error is resolved.
+
+:ref:`AHRS_WIND_MAX<AHRS_WIND_MAX>` sets the maximum allowable airspeed and ground speed difference that will ever be used for navigation.
+
+By default, these functions are disabled.
+
+:ref:`EKF3 affinity and lane switching <common-ek3-affinity-lane-switching>` is another option for dealing with airspeed sensor failure.
+
+.. _arspd-sensor-list:
+
+Airspeed sensors available from ArduPilot Partners:
+===================================================
+
+I2C
+---
+
+- 4525DO 
+    - `CUAV <https://store.cuav.net/shop/airspeed-sensor/>`_
+    - `Holybro <https://shop.holybro.com/digital-air-speed-sensor_p1029.html>`_
+    - `Matek 4525DO <http://www.mateksys.com/?portfolio=aspd-4525>`_
+    - `mRobotics <https://store.mrobotics.io/mRo-I2C-Airspeed-Sensor-JST-GH-p/m10030a.htm>`_
+
+- 5033
+    - `Qiotek 5033 <https://www.qio-tek.com/ASP5033_I2C>`_
+
+- DLVR
+    - `Matek DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
+
+
+UAVCAN
+------
+
+- DLVR
+    - `Matek UAVCAN DLVR <http://www.mateksys.com/?portfolio=aspd-dlvr>`_
+
+- 5033 
+    - `Qiotek UAVCAN 5033 <https://www.qio-tek.com/index.php?route=product/product&product_id=309>`_
+
+Other Topics
+============
 .. toctree::
     :maxdepth: 1
 
     Calibrating an Airspeed Sensor <calibrating-an-airspeed-sensor>
     Mocking an Airspeed Sensor for Bench Testing <mocking-an-airspeed-sensor-for-bench-testing>
+    Analog Airspeed Sensors <analog-airspeed-sensors>

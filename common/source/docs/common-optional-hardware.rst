@@ -22,9 +22,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="plane"]
     Airspeed Sensor <airspeed>
 [/site]
-    Battery Monitors (aka Power Modules) <common-powermodule-landingpage>
     Barometer (external) <common-baro-external>
 [site wiki="copter,plane,rover"]
+    Button Inputs <common-buttons>
     Buzzer <common-buzzer>
 [/site]
     Cameras & Gimbals <common-cameras-and-gimbals>
@@ -37,10 +37,11 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Display (Onboard) <common-display-onboard>
     ESCs and Motors <common-escs-and-motors>
 [site wiki="plane"]
-     Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
+    Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
 [/site]
     First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
+    Generators <common-generators>
     GPS/Compass <common-positioning-landing-page>
     Grippers <common-gripper-landingpage>
     Joystick or Gamepad <common-joystick>
@@ -59,6 +60,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="copter"]
     Parachute <parachute>
 [/site]
+    Power Modules <common-powermodule-landingpage>
     Power Tether <common-power-tether>
     PPM Encoder <common-ppm-encoder>
 [site wiki="copter"]
@@ -71,6 +73,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     RPM Sensor <common-rpm>
     Safety Switch <common-safety-switch-pixhawk>
     Servos <common-servo-landingpage>
+    Smart Batteries <common-smart-battery-landingpage>
 [site wiki="rover"]
     Start/Stop Switch <startstop-switch>
 [/site]

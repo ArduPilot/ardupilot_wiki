@@ -6,7 +6,7 @@ DataFlash Logs
 
     module dataflash_logger
     
-This module allows dataflash logs to be downloaded from the APM.
+This module allows dataflash logs to be downloaded from the autopilot.
 
 The logs will be downloaded to the vehicle logging folder.
 

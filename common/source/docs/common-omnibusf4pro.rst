@@ -210,9 +210,9 @@ Then reboot.
 How to trigger a camera with relay pin
 ======================================
 
-All PWM could be use as relay. :ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` have to be set.
+All PWM could be use as relay. ``BRD_PWM_COUNT`` have to be set.
 
-:ref:`BRD_PWM_COUNT<BRD_PWM_COUNT>` = 2
+``BRD_PWM_COUNT`` = 2
 :ref:`RELAY_PIN<RELAY_PIN>` = 15 # for output PWM 5
 
 if we want to set PWM 6 as relay pin :

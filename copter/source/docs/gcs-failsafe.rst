@@ -5,7 +5,7 @@ GCS Failsafe
 ============
 Significant improvements have been made in Copter-4.0 and later for Ground Control Failsafe .
 
-The Ground Station Control (GCS) failsafe controls how Copter will behave if contact with the GCS is lost.  The GCS failsafe monitors the time since the last MAVLink heartbeat from the GCS.  If no heartbeat is received in over 5 seconds, the GCS failsafe event will trigger based on your parameter settings. Note that if no GCS is ever connected, the GCS failsafe will remain inactive regardless of parameter settings.
+The Ground Station Control (GCS) failsafe controls how Copter will behave if contact with the GCS is lost.  The GCS failsafe monitors the time since the last MAVLink heartbeat from the GCS.  If no heartbeat is received :ref:`FS_GCS_TIMEOUT<FS_GCS_TIMEOUT>` seconds (Default is 5 seconds), the GCS failsafe event will trigger based on your parameter settings. Note that if no GCS is ever connected, the GCS failsafe will remain inactive regardless of parameter settings.
 
 .. note::
 
@@ -14,7 +14,7 @@ The Ground Station Control (GCS) failsafe controls how Copter will behave if con
 When the failsafe will trigger
 ==============================
 
-The following situations can cause a loss of GCS MAVLink heartbeat, triggering a GCS failsafe event after 5 seconds:
+The following situations can cause a loss of GCS MAVLink heartbeat, triggering a GCS failsafe event after :ref:`FS_GCS_TIMEOUT<FS_GCS_TIMEOUT>` seconds:
 
 -  The operator turns off or otherwise disconnects the GCS
 -  The copter travels beyond the range of the  GCS telemetry radios

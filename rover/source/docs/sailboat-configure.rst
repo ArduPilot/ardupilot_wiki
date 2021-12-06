@@ -4,34 +4,11 @@
 Configuration and Setup
 =======================
 
-The vehicle steering output channel should be set to ``SERVOx_FUNCTION`` = 26 – Ground steering. The sail
-output channel should be set to ``SERVOx_FUNCTION`` = 89 - Main Sail. 
-
-All sailing parameters can be found by searching for the prefix  :ref:`SAIL <SAIL_ANGLE_MIN>`, the
+All sailing parameters can be found by searching for the prefix  :ref:`SAIL <SAIL_ENABLE>`, the
 sailing code relies heavily on getting correct information on the wind direction and strength from
 the :ref:`wind vane <wind-vane>`.
 
-Setting up sail range
----------------------
-This can be tested by arming in manual mode; the throttle will directly control the sail position.
-Throttle stick down (towards you) should result in the sail being sheeted in towards the centre line.
-If the sail is sheeted out the servo should be reversed. The servo min and max parameters can then be
-used to set up the range of travel. The min and max values should be set such that the boom is brought
-in towards the centre line of the boat but not pulled down tightly. The boom should be able to be let
-out until it reaches the shrouds; if no shrouds are fitted the boom shouldn’t go too far past 90 degrees
-to the boat centre line. 
-
-The sail angle :ref:`min <SAIL_ANGLE_MIN>` and :ref:`max <SAIL_ANGLE_MAX>` parameters should be set
-to the angle to boom is to the centre line at each extreme of its travel. This allows the angle of the
-boom to be calculated at any point between. 
-
-The :ref:`ideal sail angle to the wind <SAIL_ANGLE_IDEAL>` should then be set. This defines the angle
-between the boom and the wind direction as reported by the wind vane. An angle of zero here would result
-in the boom staying parallel to the wind vane. The boom will keep this angle to the wind until it reaches
-either its minimum or maximum limit. If the sails are too loose this number should be increased. This can
-be tested in ACRO mode. 
-
-Other usefull parameters
+Other useful parameters
 ------------------------
 :ref:`SAIL_NO_GO_ANGLE <SAIL_NO_GO_ANGLE>` defines the no go zone into witch the sailing vehicle cannot
 travel. In auto heading modes the vehicle will tack at this angle into the true wind If the desired heading
@@ -53,7 +30,7 @@ If the heel is larger than this angle the PID controller will target this angle 
 controller will not try and reach it. i.e. only sheet out, don't sheet in.
 
 Heel control PIDs values are set using ``ATC_SAIL_x`` parameters. The effect of changing the value
-can be seen in ACRO mode by manually heeling the vehicle. Most control should be do using the P (:ref:`ATC_SAIL_P<ATC_SAIL_P>`) and I(:ref:`ATC_SAIL_I<ATC_SAIL_I>`)terms. D gain (:ref:`ATC_SAIL_D<ATC_SAIL_D>`)
+can be seen in ACRO mode by manually heeling the vehicle. Most control should be done using the P (:ref:`ATC_SAIL_P<ATC_SAIL_P>`) and I(:ref:`ATC_SAIL_I<ATC_SAIL_I>`)terms. D gain (:ref:`ATC_SAIL_D<ATC_SAIL_D>`)
 is usually too quick for the relatively slow response of the sail winch servos so should be left at zero. The PID
 values can be sent via Mavlink using :ref:`GCS_PID_MASK <GCS_PID_MASK>`.
 
@@ -79,3 +56,8 @@ increased. Alternatively the heel angle (:ref:`SAIL_HEEL_MAX <SAIL_HEEL_MAX>`) c
 used to more aggressively let the sails out. In this case larger I and I max values should be used. Unlike
 the P and I terms the D term is always active however due to the slow response of typical sail winch servos
 it is unlikely to prove useful, vehicles with faster servos may benefit from a small amount of D gain.
+
+Fences
+------
+
+Sailboats behave in the same manner as other Rovers regarding fence operation and breach failsafe actions. However, unlike other Rovers, which slow as they approach a fence boundary, Sailboats will just attempt to tack away from the boundary since they have no speed controller, as such.

@@ -29,7 +29,7 @@ values needed).
    to get your aircraft flying before doing further tuning.
 
    If AUTOTUNE doesn't work with your plane, a fully manual approach is
-   described in the :ref:`Roll, Pitch and Yaw Controller Tuning Guide <roll-pitch-controller-tuning>`.
+   described in the :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-and-pitch-tuning>` or :ref:`here for firmaware versions before 4.1 <roll-pitch-controller-tuning>`.
 
 After tuning the Roll, Pitch (and optionally yaw) you should tune the
 height controller using the :ref:`TECS tuning guide <tecs-total-energy-control-system-for-speed-height-tuning-guide>`
@@ -40,6 +40,8 @@ Information on how to tune other aspects of Plane are linked from the
 
 Mission Planner configuration screens
 =====================================
+
+.. note:: this section applies only to firmware versions prior to 4.1. This section will be updated in the future for 4.1 and later releases. You can configure the new parameters (See :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-and-pitch-tuning>`) directly in the Mission Planner CONFIG->Full Parameter List tab.
 
 The *Mission Planner* provides access to all configuration and tuning
 parameters through the CONFIG/TUNING section. The column on the left
@@ -57,7 +59,7 @@ survive power cycling.
 
 The starting point for Plane tuning is via the Plane PIDs screen shown
 above. This is where you can tune the Servo Roll and Servo Pitch PID
-gains to enable flight in FBW-A mode, and also enable tuning of the L1
+gains to enable flight in FBWA mode, and also enable tuning of the L1
 Control for more accurate horizontal positioning.
 
 You can also load and save configuration files (to your PC) from the
@@ -76,7 +78,7 @@ The control of roll or pitch angle is adjusted using a
 `Proportional-Integral-Derivative (PID) Controller <https://en.wikipedia.org/wiki/PID_controller>`__.
 
 The final control applied to the plane's control surface, is a
-combination of the effects of three gain values:
+combination of the effects of four gain values:
 
 -  *Proportional gain (P)* is the simplest form of control, it is the
    "present" error. Autopilot wants 10 degrees of pitch, has 5 degrees,
@@ -94,14 +96,18 @@ combination of the effects of three gain values:
    gain is that it increases the amount of noise driving the servo and
    if turned up too high will cause rapid pitch or roll oscillation
    that can in some cases damage the aircraft.
+-  *FeedForward gain (FF)* is perhaps the most important since it directly drives
+   the control surfaces from the demanded rate input from the autopilot, much as the
+   pilot does in manual mode. The P,I, and D rate error-based contributions add to this
+   to correct any trim,CG, or external disturbance impacts.
 
-Tuning P, PI or PID values can improve how quickly an observed error
+Tuning FF, P, PI or PID values can improve how quickly an observed error
 between desired attitude (pitch, speed, bearing, whatever) and actual
-attitude can be cancelled out, without undue oscillation.
+attitude can be canceled out, without undue oscillation.
 
 .. tip::
 
    A simple configuration can just specify a P term (I and D is zero
-   and ``INT_MAX`` is not used when I is zero).
+   and ``INT_MAX`` is not used when I is zero) in firmware versions before 4.1. And FF/P term with I=FF for firmware versions 4.1 and later, with D=0.
 
-Refer to the :ref:`Roll, Pitch and Yaw controller tuning guide <roll-pitch-controller-tuning>` for more information
+Refer to :ref:`Manual Roll, Pitch and Yaw Controller Tuning Guide <new-roll-and-pitch-tuning>` or :ref:`here for firmaware versions before 4.1 <roll-pitch-controller-tuning>`. for more information

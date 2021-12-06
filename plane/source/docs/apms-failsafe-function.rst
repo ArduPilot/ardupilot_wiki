@@ -7,10 +7,9 @@ Plane Failsafe Function
 Plane has a limited failsafe function which is designed to do four
 things:
 
-#. Detect a complete loss of RC signal and initiate a defined response, such as returning to home. 
-Detection is either by lack of data/pulses from the receiver, the throttle channel PWM value falling below a certain point set by :ref:`THR_FS_VALUE<THR_FS_VALUE>`, or the receiver sets a FS bit in its data stream for those protocols supporting this. Detection of these must be enabled by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 1 or 2.
+#. Detect a complete loss of RC signal and initiate a defined response, such as returning to home. Detection is either by lack of data/pulses from the receiver, the throttle channel PWM value falling below a certain point set by :ref:`THR_FS_VALUE<THR_FS_VALUE>`, or the receiver sets a FS bit in its data stream for those protocols supporting this. Detection of these must be enabled by setting :ref:`THR_FAILSAFE<THR_FAILSAFE>` = 1 or 2.
 #. Optionally, detect loss of telemetry (GCS Failsafe) and take an programmable action, such as switching to return to launch (RTL) mode.
-#. Detect loss of GPS for more than 20 seconds and switch into Dead Reckoning mode until GPS signal is regained.
+#. Detect loss of GPS for more than 20 seconds and switch into Dead Reckoning mode until GPS signal is regained. See https://youtu.be/0VMx2u8MlUU for a demo.
 #. Optionally, detect low battery conditions (voltage/remaining capacity) and initiate a programmable response, such as returning to home. ArduPilot supports this on multiple batteries.
 
 Here's what the failsafe **will not do**:
@@ -122,7 +121,7 @@ GCS Failsafe
 **How it works.** When flying while using telemetry on the GCS, the
 autopilot can be programmed to trigger into failsafe mode if it loses
 telemetry. In the event that the autopilot stops receiving MAVlink
-(telemetry protocol) heartbeat messages. :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` apply just in the case of a Throttle Failsafe.
+(telemetry protocol) heartbeat messages. :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` applies just in the case of a long Throttle Failsafe.
 
 **Setup.**
 
@@ -198,7 +197,7 @@ Failsafe Parameters and their Meanings
 Short failsafe action (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` )
 ------------------------------------------------------------
 
-The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which :ref:`Q_OPTIONS<Q_OPTIONS>` is selected.
+The action to take on a short (:ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` seconds) failsafe event . A short failsafe event in plane stabilization modes can be set to change mode to CIRCLE or FBWA, or be disabled completely. In QuadPlane stabilization modes, it will change to QLAND or QRTL, dependent upon which :ref:`Q_OPTIONS<Q_OPTIONS>` is selected. Short failsafe only occurs on loss of RC, either RC loss or Throttle Failsafe.
 
 In AUTO, LOITER and GUIDED modes you can also choose for it continue with the mission and ignore the short failsafe. If :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` is 0 then it will continue with the mission, if it is 1 then it will enter CIRCLE mode.
 
@@ -263,13 +262,13 @@ If the aircraft was in an auto mode (such as AUTO or GUIDED) when the failsafe s
    </tbody>
    </table>
 
-In a QuadPlane, if in VTOL operation in modes others than AUTO or GUIDED, the action taken will be either a QRTL or QLAND, depending on the :ref:`Q_RTL_MODE<Q_RTL_MODE>` bit mask setting for bit 5. And if in fixed-wing operation, and the long or short failsafe action is a mode change to RTL, then the :ref:`Q_RTL_MODE<Q_RTL_MODE>` will determine behavior at the end of that RTL, just as in the case of a regular mode change to RTL.
+In a QuadPlane, if in VTOL operation in modes others than AUTO or GUIDED, the action taken will be either a QRTL or QLAND, depending on the :ref:`Q_OPTIONS<Q_OPTIONS>` bit mask setting for bit 5. And if in fixed-wing operation, and the long or short failsafe action is a mode change to RTL, then the :ref:`Q_RTL_MODE<Q_RTL_MODE>` will determine behavior at the end of that RTL, just as in the case of a regular mode change to RTL.
 
 GCS failsafe enable (:ref:`FS_GCS_ENABL<FS_GCS_ENABL>` )
 --------------------------------------------------------
 
 Enable ground control station telemetry failsafe. Failsafe will trigger
-after :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` and/or :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds of no MAVLink heartbeat or RC Override messages.
+after :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds of no MAVLink heartbeat or RC Override messages.
 
 .. warning:: Enabling this option opens up the possibility of your plane going into failsafe mode and running the motor on the ground if it loses contact with your ground station. While the code attempts to verify that the plane is indeed flying and not on the ground before entering this failsafe, it is safer if this option is enabled on an electric plane, to either use a separate motor arming switch or remove the propeller in any ground testing, if possible.
 
@@ -302,8 +301,100 @@ There are three possible enabled settings. Seeing :ref:`FS_GCS_ENABL<FS_GCS_ENAB
    </tbody>
    </table>
 
+Failsafe Diagnosis in Logs or GCS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GCSs will often display text indicating the type of failsafe encountered, such as "Failsafe Short event on: type=1/reason=3". Type and Reason can be determined using the table below:
+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>TYPE</th>
+   <th>MEANING</th>
+   </tr>
+   <tr>
+   <td>0</td>
+   <td>None</td>
+   </tr>
+   <tr>
+   <td>1</td>
+   <td>Short Failsafe</td>
+   </tr>
+   <tr>
+   <td>2</td>
+   <td>Long Failsafe</td>
+   </tr>
+   <tr>
+   <td>3</td>
+   <td>GCS Failsafe</td>
+   </tr>
+   </tbody>
+   </table>
+   
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>REASON</th>
+   <th>MEANING</th>
+   </tr>
+   <tr>
+   <td>0</td>
+   <td>Unknown</td>
+   </tr>
+   <tr>
+   <td>1</td>
+   <td>RC Command</td>
+   </tr>
+   <tr>
+   <td>2</td>
+   <td>GCS Command</td>
+   </tr>
+   <tr>
+   <td>3</td>
+   <td>Radio Failsafe</td>
+   </tr>
+   <tr>
+   <td>4</td>
+   <td>Battery Failsafe</td>
+   </tr>
+   <tr>
+   <td>5</td>
+   <td>GCS Failsafe</td>
+   </tr>
+   <tr>
+   <td>6</td>
+   <td>EKF Failsafe</td>
+   </tr>
+   <tr>
+   <td>7</td>
+   <td>GPS Glitch</td>
+   </tr>
+   <tr>
+   <td>10</td>
+   <td>Fence Breached</td>
+   </tr>
+   <tr>
+   <td>11</td>
+   <td>Terrain</td>
+   </tr>
+   <tr>
+   <td>19</td>
+   <td>Crash</td>
+   </tr>
+   <tr>
+   <td>25+</td>
+   <td>General unspecific</td>
+   </tr>
+   </tbody>
+   </table>
+
+
 Independent Watchdog
 --------------------
 
 See :ref:`common-watchdog` for details.
-

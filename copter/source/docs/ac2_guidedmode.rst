@@ -9,6 +9,8 @@ a target location wirelessly using a telemetry radio module and ground
 station application. This page provides instructions for using guided
 mode.
 
+.. note:: Guided Mode can also be used by LUA scripts and companion computers to command vehicle movement and navigation.
+
 Overview
 ========
 
@@ -65,6 +67,21 @@ Instructions
    On *Mission Planner* there is no need to set up one of your flight
    modes as "Guided". This may not be the case for other Ground Control
    Stations.
+
+Guided Mode Options
+===================
+
+The :ref:`GUID_OPTIONS<GUID_OPTIONS>` parameter allows several guided mode behavior changes:
+
+===    ==========
+Bit 	Meaning
+===    ==========
+0 	   Allow Arming from Transmitter
+2 	   Ignore pilot yaw input
+3 	   SetAttitudeTarget_ThrustAsThrust 
+===    ==========
+
+Bit 3 makes interpretation of SET_ATTITUDE_TARGET MAVLink command's ``thrust`` field as pure thrust from 0 to 1 , instead of a climb rate. See `Commands in Guided Mode <https://ardupilot.org/dev/docs/copter-commands-in-guided-mode.html>`__
 
 .. _guided_nogps:
 

@@ -6,10 +6,6 @@ EKF Failsafe
 
 The EKF failsafe monitors the health of EKF (the position and attitude estimation system) to catch problems with the vehicle's position estimate (often caused by GPS glitches or compass errors) and prevent "flyaways".
 
-.. note::
-
-   Starting in Copter 3.3 the EKF failsafe replaces the :ref:`GPS Failsafe <archived-gps-failsafe>`. 
-
 When will it trigger?
 =====================
 

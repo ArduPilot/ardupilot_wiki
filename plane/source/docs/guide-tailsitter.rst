@@ -22,24 +22,24 @@ Vectored and non-Vectored
 
 ArduPilot sub-divides tailsitters into two broad categories:
 
-- vectored tailsitters can tilt their rotors independently of the
+- Vectored tailsitters can tilt their rotors independently of the
   movement of the fuselage, giving them vectored thrust
-- non-vectored tailsitters have fixed rotor orientation relative to
-  the fuselage, and rely on large control surfaces for hover authority
+- Non-vectored tailsitters have fixed rotor orientation relative to
+  the fuselage, and rely on large control surfaces for hover authority (although dual motor versions can use differential thrust for body frame yaw control also)
 
-  - Within non-vectored are two sub-categories: Single/Dual Motor and CopterMotor. The first uses one or two motors and can employ only differential thrust , while the second uses three, four, or more motors and operates in a more copter-like fashion.
+  - Within Non-vectored are two sub-categories, Single/Dual Motor and CopterMotor:
 
-.. note:: Currently all CopterMotor style Quadplanes do not use any yaw torque control. Roll (with respect to plane body) is only controlled by the flying surface (ailerons or elevons). Future releases will add this.
+     - Single/Dual Motor uses one or two motors and can employ only differential thrust if dual motor. Single motor tailsitters are similar to normal 3D planes that can hover using large control surfaces exposed to the single motor prop wash for control, but with ArduPilot providing the control stability for hovering, loitering, and VTOL mission navigation. Dual Motor add differential thrust to assist in body frame yaw control, while copter motor tailsitters are almost the same as a multicopter when in VTOL stance with flying surfaces, if present, adding to the control.
+     -  CopterMotor uses three, four, or more motors and operates in a more copter-like fashion. These may or may not have control surfaces usable in fixed wing flight for control. CopterMotor tailsitters without them (ie. only have a lifting wing with no control surfaces) must use QASSIST (discussed below) to provide control while in fixed wing flight modes.
 
 Tailsitter Configuration
 ========================
 
-The key parameter to make a  single or dual motor QuadPlane a tailsitter is to set
-:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10. That tells the QuadPlane code to use the tailsitter
+The key to make a QuadPlane a tailsitter is to either set
+:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10 or :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` non-zero. That tells the QuadPlane code to use the tailsitter
 VTOL backend.
 
-The tailsitter backend is a bit unusual, as it is the only
-:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` setting that may not have any multicopter-style motors associated with it. If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero (the default), meaning no multicopter-like motors, it provides roll, pitch, yaw and thrust (Throttle, Throttle Left, Throttle Right) values to the fixed wing control code. These values then control your ailerons, elevons, elevators, rudder and forward motors.
+If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero (the default) and :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10, meaning no multicopter-like motors, it provides roll, pitch, yaw and thrust (Throttle, Throttle Left, Throttle Right) values to the fixed wing control code. These values then control your ailerons, elevons, elevators, rudder and forward motors.
 
 This has a nice benefit when setting up the tailsitter that you can
 follow the normal fixed wing setup guide in MANUAL and FBWA modes, and
@@ -56,133 +56,83 @@ QHOVER and QLOITER.
 
 However, it can also have copter-like motors, like a conventional QuadPlane if :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is non-zero. Then this parameter determines which motors remain active in normal forward flight (plane modes). If non-zero, then use the :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` parameter to configure the multicopter motor style, and the appropriate MOTORx outputs will be activated.
 
-.. note:: Currently, only the following combinations are supported for CopterMotor tailsitters:
+Motor Layout
+============
 
-+------------------------+------------------------------------+----------------------------------+
-| Motors                 |:ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` |:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` |
-+------------------------+------------------------------------+----------------------------------+
-|  Quad                  | 1                                  | 0, 1                             |
-+------------------------+------------------------------------+----------------------------------+
-|  Tri                   | 7                                  | ignored                          |
-+------------------------+------------------------------------+----------------------------------+
+Copter Tailsitters
+------------------
+All the copter motor layouts are supported as CopterMotor tailsitters if :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is non-zero . See :ref:`Copter's Motor Layout Section <copter:connect-escs-and-motors>`. If non-zero, then use the :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` parameter to configure the multicopter motor style, and the appropriate MOTORx outputs will be activated.
 
-Motor Rotation and Layout
-=========================
+.. note:: in firmware versions previous to 4.1, CopterMotor Tailsitters did not use any yaw torque control. Roll (with respect to plane body) is only controlled by the flying surface (ailerons or elevons). Now QUAD PLUS and X frames have yaw control via motors, and frame types 16 and 17 are added that have no torque yaw control, as previous versions of PLUS and X did.
+
+.. note:: it is possible to have a CopterMotor Tailsitter using no fixed wing control surfaces, ie basically a quadcopter with a wing. For that configuration, all Copter motors would be set to be active in fixed wing modes via :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` and :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask would have bit 7 (Force QASSIST) set to have QASSIST active in all modes.
+
+In addition, two Copter tailsitter specific configurations are available which provide No Yaw Torque (NYT) control to the copter style motors: :ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` = 15 (Plus) and =16 (X).
 
 (looking down on nose from above)
 
-Single/Dual Motor Tailsitter
-----------------------------
-
-Motors are controlled by the Throttle, Throttle Left, Throttle Right outputs:
-
-.. image:: ../images/tailsit-motors.jpg
-  :width: 450px
-
-QUAD PLUS Motor Tailsitter
---------------------------
+NYT QUAD PLUS Motor Tailsitter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Motors are controlled by the M1-M4 outputs:
 
 .. image:: ../images/plus-copter-quadplane.jpg
   :width: 450px
 
 
-QUAD X Motor Tailsitter
------------------------
+NYT QUAD X Motor Tailsitter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Motors are controlled by the M1-M4 outputs:
 
 .. image:: ../images/x-copter-quadplane.jpg
   :width: 450px
 
 
-Tricopter Tailsitter
---------------------
-Motors are controller by the M1/M2/M4 outputs:
+Single/Dual Motor Tailsitter
+----------------------------
+If :ref:`Q_TAILSIT_MOTMX<Q_TAILSIT_MOTMX>` is zero and :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` =10, then the Single/Dual Motor configuration is used. Motors may also be vectored using tilt servos, which gives much higher control authority. If not vectored, these frames rely on large control surfaces, exposed to the prop flow, in order to maintain control. The motor layouts are shown below:
 
-.. image:: ../images/tri-copter-quadplane.jpg
-    :width: 450px
+(looking down on nose from above)
+
+Motors are controlled by the Throttle, Throttle Left, Throttle Right outputs:
+
+.. image:: ../images/tailsit-motors.jpg
+  :width: 450px
 
 .. youtube:: cfqP9-2IWtQ
 
+Autopilot Orientation
+=====================
 
-
-The key differences between fixed wing flight and hovering for a
-tailsitter are:
-
-- when hovering the copter PID gains will be used (the ones starting
-  with Q_A_RAT_*)
-- when in fixed wing flight the fixed wing PID gains will be used (the
-  PTCH2SRV_* and RLL2SRV_* gains)
-- when hovering the nose of the aircraft will try to point up for
-  "level" flight
-- when in fixed wing flight the nose of the aircraft will try to point
-  forward for "level" flight
-  
-:ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` allows the roll limit angle limit to be set differently from
-:ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. If left at zero both pitch and roll are limited by :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. If :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` is nonzero roll angle will be limited and pitch max angle will still be :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`.
-This should be set if your tailsitter can achieve much larger pitch angle than 
-would be safe for roll (some airframes can't recover from high-speed knife-edge flight).
-
-:ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` specifies how far the nose must pitch up or down before a transition is complete:
-down for transition from VTOL mode to FW mode, and up for transition from FW to VTOL. 
-So a value of e.g. 60 degrees results in switching from copter to plane controller (forward transition) when the nose reaches 30 degrees above the horizon (60 degrees down from vertical). For the back transition, the plane controller would be used until the nose reaches 60 degrees above the horizon. So the larger the value of 
-:ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>`, the later the switch from one controller to the other.
-
-:ref:`Q_TRANSITION_MS<Q_TRANSITION_MS>` specifies a timeout for transition from VTOL to FW flight. Even if the angle specified by :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` has not been reached before this interval has elapsed, the transition will be considered complete. The timeout for back transitions (from FW to VTOL flight) is hardcoded to 2 seconds.
-
-PID gain scheduling
-===================
-
-PID gains can be scaled for fixed wing control surfaces while in VTOL flight modes for Tailsitters by setting :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`.
-
-- If greater than 1: defines the maximum boost that will be applied to the fixed wing control surfaces when throttle is below hover in VTOL modes, this should be reduced if oscillations are seen at low throttle. Default is 5, providing a lot of boost to control surfaces.
-
-- If less than 1: then instead of boosting control surface deflection below hover throttle, deflection is reduced at high airspeeds (if an airspeed sensor is available and enabled) or at high tilt angles and high throttle levels, such as when moving rapdily in QSTABILZE or QACRO mode . The maximum attenuation is currently hardwired to 0.2, so control surface deflection is reduced by a factor of 0.2 when airspeed exceeds :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>`, or if airspeed is not available, when tilt reaches 90 degrees from vertical or at max throttle.
-
-.. _4.1-gainscaling:
-
-In Plane 4.1 and later, the above parameter and gain scheduling is changed to 3 parameters controlling gain scaling via :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>`, which is a 3 bit mask allowing several options:
-    - Bit 0 enables gain boost with maximum set by parameter :ref:`Q_TAILSIT_THSCMX<Q_TAILSIT_THSCMX>`. This is the maximum boost that will be applied to the control surfaces when throttle is below hover, this should be reduced if oscillations are seen at low throttle.
-    - Bit 1 enables attitude/throttle based gain attenuation with minimum gain (maximum attenuation) set by parameter :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>`. With this option, control surface deflection is reduced at high tilt angles and high throttle levels to prevent oscillation at high airspeeds.
-    - Bit 2 is reserved for future enable of airspeed sensor based gain interpolation .
-
-Orientation
-===========
-
-The :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>`, the accelerometer calibration and AHRS trim
+The :ref:`AHRS_ORIENTATION<AHRS_ORIENTATION>`, the accelerometer calibration and Level trim
 should all be done for fixed wing flight. Fixed wing flight is
 considered "normal" orientation for a tailsitter.
 
-Pre-Arm Issues
+- when in VTOL flight the nose of the aircraft will try to point vertically for
+  "level" flight
+- when in fixed wing flight the nose of the aircraft will try to point
+  horizontally for "level" flight
+
+Key parameters
 ==============
 
-Due to a issue in DCM related to compass fusion for yaw when pointing straight up, sometimes the AHRS subsystems will disagree when powering up, nose up. Slight errors in compass calibration, while resulting in a successful calibration, may worsen this effect.
+The key differences between fixed wing flight and VTOL for a
+tailsitter are:
 
-The result is that some setups will give a pre-arm failure. Typically it is "Pre-Arm:DCM roll/pitch inconsistent by "x" degrees" or similar. If this happens consistently, then one of two solutions can be used:
-
-- Power up horizontally, and allow the autopilot to begin initialization in this position. After the IMUs tilt initialization is completed (usually in the first ten to fifteen seconds or so), the Tailsitter can be set vertically for the remainder of the initialization (ie after GPS lock and EKF is using the GPS) and then armed.
-- Or, if you get the Pre-Arm failure above, lay the Tailsitter down horizontally for 10-30 seconds to allow the various AHRS subsystems to synchronize. After that it can be raised and arming should proceed normally.
-
-Transitions
-===========
-
-Tailsitter transitions are a little different than other QuadPlane transitions. 
-
-Transition from VTOL (nose pointing up modes) to Fixed Wing (FW) normal plane modes begins by rotating the nose toward earth horizon and linearly ramping from nose up toward the :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` using the VTOL motors and control surfaces. The time is determined by :ref:`Q_TRANSITION_MS<Q_TRANSITION_MS>`  divided by 2. For example, if :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` =35, with :ref:`Q_TRANSITION_MS<Q_TRANSITION_MS>` = 5000 (5sec), then the VTOL pitch will change from nose up to -45 deg from vertical over 2.5 seconds. Once the nose has reached  :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` degrees from vertical , transition to FW is complete, the vehicle will switch from the VTOL controller to the FW controller and all motors will be on. The AHRS horizon will switch from VTOL reference (where approximately nose vertical is "level") to the FW reference (where "level" is usually close to the horizon).
-
-Transitioning back to VTOL from FW will immediately switch the active motors to VTOL hover throttle, and rotate the vehicle nose up toward :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` + 5  degrees (with 55 degrees nose up being the minimum target) from the horizon using the control surfaces while under fixed wing stabilization. Transition will be complete when this :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` is reached, or when 2 seconds has elapsed. The vehicle will then be in full VTOL mode with the AHRS horizon reference switched to approximately vertical, and all VTOL motors active.
-
-.. note:: During transitions, pilot input is disabled and vehicle attitude is controlled totally by the autopilot.
-
+- when in VTOL the copter style PID gains will be used (the ones starting
+  with ``Q_A_RAT_x``)
+- when in fixed wing flight the fixed wing PID gains will be used (the
+  ``RLL_RATE_x`` and ``PTCH_RATE_x`` gains)
+- :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` allows the roll limit angle limit to be set differently from :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. If left at zero, both pitch and roll are limited by :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. If :ref:`Q_TAILSIT_RLL_MX<Q_TAILSIT_RLL_MX>` is nonzero roll angle will be limited and pitch max angle will still be :ref:`Q_ANGLE_MAX<Q_ANGLE_MAX>`. This should be set if your tailsitter can achieve much larger pitch angle than would be safe for roll (some airframes can't recover from high-speed knife-edge flight using only yaw control).
+- :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` can be used to account for any offset in hovering pitch angle due to the thrust line not being through the CG, or to counter fixed wing AHRS trim used to set angle of attack in cruise, instead of using :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` for adjusting the trim since it is only in fixed modes and AHRS trim affects all modes. Set this such that the the vehicle does not drift forwards or backwards in QSTABILIZE or QHOVER with no pilot inputs.
 
 Vectored Thrust
 ===============
 
 If your tailsitter has vectored thrust then you should set the
-SERVOn_FUNCTION values for your two tilt servos for the left and right
+``SERVOn_FUNCTION`` values for your two tilt servos for the left and right
 motors and for the left and right motor throttles.
 
-.. note:: All tailsitters ignore the :ref:`Q_TILT_TYPE<Q_TILT_TYPE>` parameter, requiring continuous output servos, and will drive the tilt servos appropriately.
+.. note:: All tailsitters ignore the :ref:`Q_TILT_TYPE<Q_TILT_TYPE>` parameter, and require continuous output servos, and will drive the tilt servos appropriately.
 
 For example, if your left tilt servo is channel 5 and your right tilt
 servo is channel 6, then set:
@@ -195,12 +145,27 @@ and you need to assign left throttle to the left motor and right throttle to the
 - :ref:`SERVO7_FUNCTION<SERVO7_FUNCTION>` =73
 - :ref:`SERVO8_FUNCTION<SERVO8_FUNCTION>` =74
 
-you also need to set the right SERVOn_REVERSED values, and the right
-SERVOn_TRIM, SERVOn_MIN and SERVOn_MAX values, as appropriate.
+You also need to set the right ``SERVOn_REVERSED`` values, and the correct
+``SERVOn_TRIM``, ``SERVOn_MIN`` and ``SERVOn_MAX`` values, as appropriate.
 
 :ref:`Q_A_ANGLE_BOOST<Q_A_ANGLE_BOOST>` should be disabled for vectored thrust tailsitters. Failure to disable this will cause the throttle to decrease as the nose dips, making the nose dip even further and resulting in a crash. 
 
 .. caution:: When disarmed, switching to QHOVER or QLOITER will force the motors forward into fixed wing orientation. If armed in this position, a prop strike could occur for Belly Sitter configurations. Tilt will be raised to VTOL position when throttle is raised above idle, but the strike will have already occurred. The solution is to momentarily raise the throttle above idle, allowing the tilts to raise, return throttle stick to idle, then arm. This needs to be done also for AUTO mode takeoffs, which should be started from QSTABILIZE with motors raised, armed, and then change to AUTO for the takeoff.
+
+Tilt Rotor Movement Setup
+=========================
+See :ref:`Tilt Rotor Setup Tips<tilt-rotor-tips>` and :ref:`Tilt Rotor Servo Setup<tilt-rotor-setup>`
+
+TVBS (Thrust Vectored Belly Sitter)
+===================================
+
+TVBS are just dual motor vectored thrust tailsitters that don't sit on their tails, but rather their belly. Aside from making sure props clear (ie sufficient throw on tilt servos) when in the horizontal stance, nothing special is required to make it take off from a horizontal stance. 
+
+At least 45 degree throw, either side of neutral (fixed wing flight position) is required, with 60 degrees being most desireable. Otherwise, the vehicle will "skid" along the ground a bit when you raise the throttle to bring it vertical on takeoff. Takeoffs, required a decisive move of throttle to hover or above to reduce the "skid".
+
+.. youtube:: s2KLOAdS_HY
+
+For landing in fixed wing, manual throttle controlled modes, there is an ``RCx_OPTION`` (89) that will force the tilt servos upright at idle throttle, and optionally force the pitch to target :ref:`LAND_PITCH_CD<LAND_PITCH_CD>` for flaring to the normal fixed wing landing. This allows intentional or emergency fixed wing landings in MANUAL, ACRO, STABILIZE, and FBWA modes without the risk of a prop strike in configurations where this could occur otherwise.
 
 Vectored Gains
 ==============
@@ -212,7 +177,7 @@ of vectored thrust movement in forward flight.
 The :ref:`Q_TAILSIT_VHGAIN<Q_TAILSIT_VHGAIN>` parameter controls vectored thrust in hover. A
 typical value is around 0.8, which gives a lot of control to vectored
 thrust in hover. This control is combined with control from your
-elevon mixing gain (controlled by :ref:`MIXING_GAIN<MIXING_GAIN>` ).
+elevon mixing gain (controlled by :ref:`MIXING_GAIN<MIXING_GAIN>`).
 
 The :ref:`Q_TAILSIT_VFGAIN<Q_TAILSIT_VFGAIN>` parameter controls vectored thrust in forward
 flight. A typical value is around 0.2, which gives a small amount of
@@ -226,6 +191,71 @@ and thrust vectoring in each flight mode.
 .. youtube:: s2KLOAdS_HY
     :width: 100%
 
+CopterMotor PID Gain Scaling
+============================
+
+There are a number of options for scaling control surface movement versus speed. Control surface effectiveness is dependent on airspeed they see, in tailsitter configurations this is heavily driven by the motor layout and prop wash.
+A copter tailsitter with lots of control authority from thrust and small control surfaces will be much less sensitive to these gain scheduling parameters. For a vehicle with large control surfaces care must be taken to setup gain scaling to best suit the configuration.
+
+The gain scaling scheme is selected with :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>`, it is a bitmask, some options can be used in combination, others must be used in isolation.
+
+The maximum and minimum scaling that can be applied by any scheme is set by :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>` and :ref:`Q_TAILSIT_GSCMAX<Q_TAILSIT_GSCMAX>`. If a scheme is working well at all but the extremes these endpoints can be adjusted.
+
+.. tip:: Scaling is done relative the the hover throttle point, ensure this is set correctly before proceeding, see: :ref:`Flight Modes<quadplane-flight-modes>`, QHOVER mode.
+
+Disk theory gain scaling is the most advanced method available and should result in the best results, if setup correctly.
+
+Throttle scaling (Bit 0)
+------------------------
+
+Control surfaces will be scaled directly with throttle. High throttle will result in less control surface movement, low throttle will result in more. This method is always used for thrust vectoring scaling in non-CopterMotor tailsitters independent of :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK>`.
+
+Reduce gain at high throttle/tilt (Bit 1)
+-----------------------------------------
+
+Attitude/throttle based gain attenuation, with this option control surface deflection is reduced at high tilt angles and high throttle levels to prevent oscillation at high airspeeds. This can be used in combination with throttle scaling.
+
+Disk theory (Bit 2)
+--------------------
+Disk theory gain scaling attempts to calculate the airspeed seen on the control surfaces as a result of both prop wash and forward airspeed. In order for this calculation to be done :ref:`Q_TAILSIT_DSKLD<Q_TAILSIT_DSKLD>` must be set. This is the aircraft weight in KG divided by the total disk area of the propellers.
+The disk area for each propeller is calculated from the radius, the disk area of all propellers should then be summed. This allows ArduPilot to calculate the airspeed directly behind the propeller, however on a real vehicle 100% of the control surface is not in the direct prop wash.
+
+For example if half of the control surfaces are in the prop wash the calculated disk loading value should also be halved. Some tuning will be required for best performance, If oscillations are seen at high throttle :ref:`Q_TAILSIT_DSKLD<Q_TAILSIT_DSKLD>` should be reduced.
+
+For best results an airspeed sensor should be fitted.
+
+.. note: Disk theory scaling is only used if both Bit 0 and Bit 1 are disabled.
+
+Altitude correction (Bit 3)
+---------------------------
+
+Gain is scaled with altitude, this should be considered when operating over a wide range of altitudes, this method can be enabled in combination with any other method.
+
+Transitions
+===========
+
+Tailsitter transitions are a little different than other QuadPlane transitions. 
+
+:ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` specifies how far the nose must pitch down in a VTOL mode before transition to forward flight is complete. So a value of e.g. 60 degrees results in switching from copter to plane controller (forward transition) when the nose reaches 30 degrees above the horizon (60 degrees down from vertical).
+The pitch rate used when pitching down to forward flight is given by :ref:`Q_TAILSIT_RAT_FW<Q_TAILSIT_RAT_FW>`, this rate will be held until :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` is reached.
+
+
+For the back transition from forward flight to VTOL, the plane controller will be used until the nose reaches :ref:`Q_TAILSIT_ANG_VT<Q_TAILSIT_ANG_VT>` above the horizon. If :ref:`Q_TAILSIT_ANG_VT<Q_TAILSIT_ANG_VT>` is 0 :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` will be used for both forward and back transitions.
+The pitch rate used when pitching up to VTOL flight is given by :ref:`Q_TAILSIT_RAT_VT<Q_TAILSIT_RAT_VT>`, this rate will be held until :ref:`Q_TAILSIT_ANG_VT<Q_TAILSIT_ANG_VT>` is reached.
+
+.. note:: During transitions, pilot input is disabled and vehicle attitude and throttle is controlled totally by the autopilot.
+
+.. tip:: ArduPilot will send as message to the GCS when transition is complete, these can be found in the Mission Planner messages tab. If the transition does not complete normally the transition parameters and vehicle tune should be checked. A example message is ```Transition FW done, timeout```, the timeout time is one and a half times the expected transition time as calculated from the angle and rate parameters.
+
+Control Surfaces
+================
+
+Although usually not recommended, it is possible to fly a tailsitter aircraft with no control surfaces. Care should be taken to get the vehicle flying well in the hover modes first.
+
+- :ref:`Q_OPTIONS<Q_OPTIONS>` bit 7:Force Qassist will force the vehicle to use the copter controller in all flight modes.
+- :ref:`Q_OPTIONS<Q_OPTIONS>` bit 8:Mtrs_Only_Qassist allows use of the copter controller for the motors but leave any controls surfaces under plane control, this allows the control surfaces to act as 'trim tabs' for the motors.
+
+See :ref:`Assisted Fixed-Wing Flight<assisted_fixed_wing_flight>` for more details on how Qassist can be automatically enabled and disabled with airspeed, altitude, attitude, and/or by ``RCx_OPTION`` switch. 
 
 Tailsitter Input
 ================
@@ -257,19 +287,22 @@ interpreted using the :ref:`Q_TAILSIT_INPUT<Q_TAILSIT_INPUT>` parameter. The cho
 Tailsitter Input Mask
 =====================
 
-To support people flying 3D aircraft and wanting to learn how to
-prop-hang manually, you can set the :ref:`Q_TAILSIT_MASK<Q_TAILSIT_MASK>` to a mask of
-channels that will have full manual input control while hovering.
+.. note:: Use of this feature is not recommended since it will be removed in a later firmware revision
+
+
+To support people with experience flying 3D aircraft and wanting to learn how to
+prop-hang manually, you can set the ``Q_TAILSIT_MASK<Q_TAILSIT_MASK>`` to determine which
+channels will have full manual input control without attitude stabilization while hovering in QHOVER and QSTABILIZE.
 
 The mask of manual channels is enabled using a transmitter input
-channel, specified with the :ref:`Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>` parameter.
+channel, specified with the ``Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>`` parameter.
 
 For example, if you are learning how to fly 3D aircraft, and you want
 some assistance learning how to best control the rudder, then you can
 set:
 
-- :ref:`Q_TAILSIT_MASK<Q_TAILSIT_MASK>` =8 (for rudder)
-- :ref:`Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>` =7
+- ``Q_TAILSIT_MASK<Q_TAILSIT_MASK>`` =8 (for rudder)
+- ``Q_TAILSIT_MASKCH<Q_TAILSIT_MASKCH>`` =7
 
 then when channel 7 goes above 1700 the pilot will be given full
 manual control of rudder when hovering. This provides good 3D piloting
@@ -283,3 +316,13 @@ dimension. When hovering it is important that there is not too much
 weight in the belly of the plane or on its back, so that it leans
 forward or back. This is particularly important for non-vectored
 tailsitters.
+
+Pre-Arm Issues
+==============
+
+Due to an issue in DCM related to compass fusion for yaw when pointing straight up, sometimes the AHRS subsystems will disagree when powering up, nose up. Slight errors in compass calibration, while resulting in a successful calibration, may worsen this effect.
+
+The result is that some setups will give a pre-arm failure. Typically it is "Pre-Arm:DCM roll/pitch inconsistent by "x" degrees" or similar. If this happens consistently, then one of two solutions can be used:
+
+- Power up horizontally, and allow the autopilot to begin initialization in this position. After the IMUs tilt initialization is completed (usually in the first ten to fifteen seconds or so), the Tailsitter can be set vertically for the remainder of the initialization (ie after GPS lock and EKF is using the GPS) and then armed.
+- Or, if you get the Pre-Arm failure above, lay the Tailsitter down horizontally for 10-30 seconds to allow the various AHRS subsystems to synchronize. After that it can be raised and arming should proceed normally.

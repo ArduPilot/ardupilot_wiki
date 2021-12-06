@@ -30,7 +30,7 @@ Module File Structure
 At the base level, a MAVProxy module is an instance of the MPModule
 class, with hooks for initialisation and reading Mavlink packets:
 
-.. code:: python
+.. code::
 
     #!/usr/bin/env python
     '''module template'''
@@ -54,7 +54,7 @@ class, with hooks for initialisation and reading Mavlink packets:
 The initialisation section defines commands and module-wide variables.
 To add a command:
 
-.. code:: python
+.. code::
 
     self.add_command('bat', self.cmd_bat, "show some information")
 

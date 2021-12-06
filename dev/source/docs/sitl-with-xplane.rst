@@ -1,8 +1,8 @@
 .. _sitl-with-xplane:
 
-==========================
-Using SITL with X-Plane 10
-==========================
+=============================
+Using SITL with X-Plane 10/11
+=============================
 
 .. figure:: ../images/xplane-pt60.jpg
    :target: ../_images/xplane-pt60.jpg
@@ -16,7 +16,7 @@ ArduPilot :ref:`SITL <sitl-simulator-software-in-the-loop>`.
 Overview
 ========
 
-X-Plane 10 is a commercial flight simulator with a rich networking
+X-Plane 10/11 is a commercial flight simulator with a rich networking
 interface that allows it to be interfaced to other software. In this
 case we will be interfacing it to the ArduPilot SITL system, allowing
 ArduPilot to fly a wide variety of aircraft.
@@ -27,8 +27,8 @@ also be used to see how ArduPilot handles unusual aircraft and to
 develop support for aircraft features that may not be available in
 other simulator backends.
 
-Setup of X-Plane 10
-===================
+Setup of X-Plane 10/11
+======================
 
 Before starting SITL the only thing you need to setup on X-Plane is
 the network data to send the sensor data to the IP address of the
@@ -132,7 +132,7 @@ parameters.
 Using SITL with your own GCS
 ----------------------------
 
-The second approach to running X-Plane 10 with SITL is to build
+The second approach to running X-Plane 10/11 with SITL is to build
 ArduPilot SITL manually and then run it from the cygwin command
 line. You can then connect with your favourite GCS.
 
@@ -182,7 +182,7 @@ create a PT60 directory::
 Flying a Helicopter
 -------------------
 
-It is also possible to fly a helicopter with XPlane-10. The setup is
+It is also possible to fly a helicopter with XPlane-10/11. The setup is
 similar to a plane, with two additional requirements:
 
   - you need to setup your XPlane joystick to map the collective stick
@@ -214,7 +214,7 @@ switch
    :target: ../_images/xplane-heli-joystick2.jpg
 
 A full set of parameters for the Bell JetRanger Helicopter in X-Plane
-10 are available here http://uav.tridgell.net/XPlane/
+10/11 are available here http://uav.tridgell.net/XPlane/
 
 You also need to start SITL with the model set to "xplane-heli"
 instead of "xplane" to activate Helicopter controls.

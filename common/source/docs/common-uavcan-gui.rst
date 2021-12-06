@@ -7,7 +7,7 @@ UAVCAN GUI
 UAVCAN_GUI is a tool that allows viewing, configuration and software updates of nodes
 connected to the BUS.
 
-Download `UAVCAN_GUI <https://uavcan.org/GUI_Tool/Overview/>`_ and install.
+Download `UAVCAN_GUI <https://github.com/UAVCAN/gui_tool>`_ and install.
 
 Before the autopilot can be connected, SLCAN mode must be operational. See :ref:`common-slcan-f4` or :ref:`common-slcan-f7h7` for setup information.
 

@@ -16,6 +16,7 @@ These are the available options that allow a vehicle to estimate its position wi
 
     Intel RealSense T265 <common-vio-tracking-camera>
     MarvelMind Beacons <common-marvelmind>
+    Nooploop Beacons <common-nooploop>
 [site wiki="copter"]
 	Optical Flow <common-optical-flow-sensors-landingpage>
     OptiTrack motion capture system <common-optitrack>
@@ -32,3 +33,8 @@ These are the available options that allow a vehicle to estimate its position wi
 .. note::
 
    The low cost IMUs (accelerometers, gyros, compass) used in most autopilots drift too quickly to allow position estimation without an external velocity or position source.  In other words, low-cost IMUs on their own are not sufficient for estimating position
+   
+.. note::
+
+   A board with more than 1MB of flash is required to run non-GPS navigation. See :ref:`Firmware Limitations <common-limited_firmware>` for details
+   

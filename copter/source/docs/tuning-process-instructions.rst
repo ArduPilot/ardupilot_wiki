@@ -15,7 +15,7 @@ Parameters used to linearise your motor thrust curve.
 
 - :ref:`MOT_BAT_VOLT_MAX <MOT_BAT_VOLT_MAX>` : 4.2v x No. Cells
 - :ref:`MOT_BAT_VOLT_MIN <MOT_BAT_VOLT_MIN>` : 3.3v x No. Cells
-- :ref:`MOT_THST_EXPO <MOT_THST_EXPO>` : 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props. This parameter should be derived by thrust stand measurements for best results (don’t trust manufacturer data).
+- :ref:`MOT_THST_EXPO <MOT_THST_EXPO>` : 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props  (or larger). This parameter should be derived by thrust stand measurements for best results (don’t trust manufacturer data).
 
 .. image:: ../images/tuning-process-instructions-1.hires.png
     :target: ../_images/tuning-process-instructions-1.hires.png
@@ -33,8 +33,8 @@ Parameters used to define the output range sent to the ESC.
 
 PID Controller Initial Setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` :  10Hz to 20Hz
-- :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` : 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
+- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` :  10Hz
+- :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` : 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props (or larger)
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
 - :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` : 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
@@ -153,7 +153,7 @@ This test will allow to test the altitude controller and ensure the stability of
   - :ref:`PSC_ACCZ_I <PSC_ACCZ_I>` to 2 x :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
   - :ref:`PSC_ACCZ_P <PSC_ACCZ_P>` to :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
 
-AltHold starts to move up and down the position and velocity controllers may need to be reduced by 50%. These values are: :ref:`PSC_POSZ_P <PSC_POSZ_P>` and :ref:`PSC_VELZ_P <PSC_VELZ_P>`.
+AltHold starts to oscillate up and down the position and velocity controllers may need to be reduced by 50%. These values are: :ref:`PSC_POSZ_P <PSC_POSZ_P>` and :ref:`PSC_VELZ_P <PSC_VELZ_P>`.
 
 .. _evaluating-the-aircraft-tune:
 
@@ -239,7 +239,7 @@ Arducopter has a set of parameters that define the way the aircraft feels to fly
 
 The most important of these parameters is:
 
-- :ref:`ACRO_YAW_P <ACRO_YAW_P>` : yaw rate x 45 degrees/s
+- :ref:`ACRO_YAW_P <ACRO_YAW_P>` : desired maximum yaw rate / 45 degrees/s
 - :ref:`ANGLE_MAX <ANGLE_MAX>` :  maximum lean angle
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` : Pitch rate acceleration
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` : Roll rate acceleration

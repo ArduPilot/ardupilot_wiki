@@ -52,7 +52,7 @@ Tips for your first flights
 -  Make sure you are in a wind free environment
    (wind will play against you on in air auto trim).
 -  Make sure you have no trim on your Radio 
-   (the APM is what we want to trim, the radio should never get trimmed).
+   (the autopilot is what we want to trim, the radio should never get trimmed).
 -  Hold the copter still and level after connecting the battery to allow
    the gyroscopes to initialize.
 -  Get above ground effect, around 3-4 feet is enough on most models.
@@ -80,11 +80,11 @@ you know your battery consumption and use one of the following batteries
 monitoring methods to ensure that you always have enough power remaining
 to safely land your copter (and not ruin the battery).
 
--  ArduPilot support Battery voltage monitoring. For more information, visit the :ref:`3DR Power Module for Measuring Voltage and Current <common-3dr-power-module>` page.
+-  ArduPilot supports Battery voltage monitoring. For more information, visit the :ref:`3DR Power Module for Measuring Voltage and Current <common-3dr-power-module>` page.
 -  You may also program your ESCs to use a slow or no cutoff at low
    voltages.
--  For APM 2 or 2.5 without power module it is HIGHLY recommended you
-   install a `Battery Voltage Monitor <https://hobbyking.com/en_us/catalogsearch/result/?q=Battery+Voltage+Monitor>`__.
+-  For autopilots without power module it is HIGHLY recommended you
+   install a :ref:`Battery Voltage Monitor <common-powermodule-landingpage>`.
 
    -  For 3S LiPo batteries, the two wires can be soldered to the P-PCB
       directly, or you can connect to the balancing plug of your

@@ -77,7 +77,7 @@ Serial protocols can be adjusted to personal preferences.
 
 RC Input
 ========
-RC input is configured on the SBUS (UART2_RX) pin. It supports all RC protocols, however for FPort  :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` should be set to 1 and configured as described in :ref:`FPort<common-FPort-receivers>` section.
+RC input is configured on the SBUS (UART2_RX) pin. It supports all RC protocols, however for FPort  :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` should be set to 1 with SERIAL4_OPTIONS=15 as described in the :ref:`FPort<common-FPort-receivers>` section.   
 
 Configuration
 =============

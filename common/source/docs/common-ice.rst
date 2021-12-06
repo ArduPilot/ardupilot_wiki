@@ -26,21 +26,22 @@ The engine's ignition power switch and (optional) starter should be connected to
 
 [site wiki="plane"]
 - Set :ref:`ICE_ENABLE <ICE_ENABLE>` = 1 to enable the ICE feature (you may need to reload parameters after setting this in order to see below parameters)
-- Set :ref:`ICE_START_CHAN <ICE_START_CHAN>` to the channel number corresponding to a switch on the transmitter which will be used to start the engine
+- Set :ref:`ICE_START_CHAN <ICE_START_CHAN>` to the channel number corresponding to a switch on the transmitter which will be used to start the engine. This channel can start the engine or stop the engine via the ``Ignition`` and ``Starter`` outputs. Normally, the "kill" PWM value is anything below 1300us, but this can be changed using the :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` parameter.
 
 These parameters may also need to be adjusted:
 
-- Set :ref:`ICE_PWM_STRT_ON <ICE_PWM_STRT_ON>` is the PWM value sent to the starter to start the engine
-- Set :ref:`ICE_STARTER_TIME <ICE_STARTER_TIME>` is the time (in seconds) that the starter motor should run to start the engine
-- Set :ref:`ICE_PWM_IGN_ON <ICE_PWM_IGN_ON>` is the PWM value sent to the ignition power switch when the engine should be running
-- Set :ref:`ICE_PWM_IGN_OFF <ICE_PWM_IGN_OFF>` is the PWM value sent to the ignition power switch when the engine should be stopped
+- :ref:`ICE_PWM_STRT_ON <ICE_PWM_STRT_ON>` is the PWM value sent to the starter to start the engine
+- :ref:`ICE_STARTER_TIME <ICE_STARTER_TIME>` is the time (in seconds) that the starter motor should run to start the engine
+- :ref:`ICE_PWM_IGN_ON <ICE_PWM_IGN_ON>` is the PWM value sent to the ignition power switch when the engine should be running
+- :ref:`ICE_PWM_IGN_OFF <ICE_PWM_IGN_OFF>` is the PWM value sent to the ignition power switch when the engine should be stopped
+- :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` is the minimum PWM below which the start channel input will be ignored. This is a safety feature to prevent bad RC input from stopping the motor while the aircraft is beyond line of sight, if the RC protocol is incorrectly configured. Default is zero, meaning disabled.
 
-If using an on-board starter, it is important to configure an RPM sensor for the engine. This will allow the ArduPilot to detect an in-flight engine failure and attempt to restart the engine. ArduPilot supports generic pulse tachometers connected to GPIO pins (such as the Aux servo pins on a PixHawk or Cube). A tachometer may be made using a simple hall effect switch IC. Alternatively, some ignition modules support a tachometer output that can be connected directly to the GPIO pins. Desert Aircraft Electronic Ignition V2 modules support tachometer output on the signal pin of the power input connector. Note that when connecting an RPM sensor to an AUX pin, it is important to make sure that this pin is not configured to output a PWM value. On a PixHawk or Cube, Aux 5 and 6 are configured to not output PWM by default. If you need to use a different Aux pin you may need to adjust :ref:`BRD_PWM_COUNT <BRD_PWM_COUNT>`.
+If using an on-board starter, it is important to configure an RPM sensor for the engine. This will allow the ArduPilot to detect an in-flight engine failure and attempt to restart the engine. ArduPilot supports generic pulse tachometers connected to GPIO pins (such as the Aux servo pins on a PixHawk or Cube). A tachometer may be made using a simple hall effect switch IC. Alternatively, some ignition modules support a tachometer output that can be connected directly to the GPIO pins. Desert Aircraft Electronic Ignition V2 modules support tachometer output on the signal pin of the power input connector. Note that when connecting an RPM sensor to an AUX pin, it is important to make sure that this pin is not configured to output a PWM value. On a PixHawk or Cube, Aux 5 and 6 are configured to not output PWM by default. If you need to use a different Aux pin you may need to adjust ``BRD_PWM_COUNT``.
 
 In order to configure an RPM sensor, the following parameters must be set:
 
-- Set :ref:`RPM_TYPE <RPM_TYPE>` to 2 for a standard GPIO input pin. 
-- Set :ref:`RPM_PIN <RPM_PIN>` to the appropriate value for the auxiliary pin you are using.
+- Set :ref:`RPM1_TYPE <RPM1_TYPE>` to 2 for a standard GPIO input pin. 
+- Set :ref:`RPM1_PIN <RPM1_PIN>` to the appropriate value for the auxiliary pin you are using.
 - Set the remaining 'RPM_*' parameters as appropriate for your system.
 - Set :ref:`ICE_RPM_CHAN <ICE_RPM_CHAN>` to 1.
 

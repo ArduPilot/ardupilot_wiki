@@ -22,7 +22,7 @@ Installation steps
 
 .. tip::
 
-   Makes sure that Cygwin is in your PATH. As for troubleshooting, you may add a Windows environment variable called CYGWIN_HOME in your path pointing to your c:\cygwin\bin (if you installed at "C:"). You may check it by doing a Right-click on "My Computer" -> Properties -> Advanced -> Environment Variables.
+   Make sure that Cygwin is in your PATH. As for troubleshooting, you may add a Windows environment variable called CYGWIN_HOME in your path pointing to your c:\cygwin\bin (if you installed at "C:"). You may check it by doing a Right-click on "My Computer" -> Properties -> Advanced -> Environment Variables. In Windows Terminal using PowerShell use the command ``bash`` to access cygwin from PowerShell.
 
 Running SITL
 ============

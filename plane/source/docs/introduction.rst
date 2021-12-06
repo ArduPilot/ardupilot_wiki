@@ -37,7 +37,7 @@ the air.
 
 .. note::
 
-   *APM is designed to easily integrate with most standard RC
+   *ArduPilot supported autopilots and peripherals are designed to easily integrate with most standard RC
    aircraft, from simple high-wing trainers to high-speed swept wing
    fighters and flying wings, to quadplanes and tilt-rotors. If you
    have something out of the ordinary please assume that a bit more

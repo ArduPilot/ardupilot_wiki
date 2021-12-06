@@ -19,7 +19,7 @@ The supported companion computers are the :ref:`RPi3 <raspberry-pi-via-mavlink>`
 ..  youtube:: 3bVFEF4MPdU
     :width: 100%
 
-Please get involved by reporting issues in the `ArduPilot Forums <https://discuss.ardupilot.org/c/development-team>`__.  Developers can help improve APSync by submitting PRs to `ArduPilot/companion <https://github.com/ArduPilot/companion>`__ and/or discuss with others developers in `Gitter's ArduPilot/companion chat room <https://gitter.im/ArduPilot/companion>`__!
+Please get involved by reporting issues in the `ArduPilot Forums <https://discuss.ardupilot.org/c/development-team>`__.  Developers can help improve APSync by submitting PRs to `ArduPilot/companion <https://github.com/ArduPilot/companion>`__ and/or discuss with others developers in the companion computers channel of the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__!
 
 Wifi Access Point & DataFlash logging
 =====================================
@@ -85,7 +85,7 @@ You can connect to the companion computer with a terminal emulator such as `Putt
 How flight controller data is routed to various programs
 ========================================================
 
-By default APsync uses "mavlink-router" to allow multiple programs running on the companion computer to talk to the flight controller.  This programs configuration can is held in ~/start_mavlink-router/mavlink-router.conf and defines the following connections:
+By default APsync uses "mavlink-router" to allow multiple programs running on the companion computer to talk to the flight controller.  This programs configuration is held in ~/start_mavlink-router/mavlink-router.conf and defines the following connections:
 
 - /dev/ttyTHS1 at baud 1500000 to communicate with the flight controller (on TX1/TX2)
 - UDP 127.0.0.1:14655 for MavProxy running on the companion computer

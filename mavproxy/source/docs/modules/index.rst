@@ -87,6 +87,7 @@ List of Modules
     ppp
     rcsetup
     relay
+    sail
     sensors
     serial
     signing
@@ -97,4 +98,5 @@ List of Modules
     tuneopt
     ublox
     useralerts
+    vicon
 

@@ -37,9 +37,9 @@ model which is :ref:`appropriate for your country/region <common-telemetry-radio
 As the platform is open source, implementation can be purchased from
 many different sources, including ArduPilot Partners:
 
--  `jD-SiK Telemetry Set <http://store.jdrones.com/jD_SiK_Radio_Telemetry_radio_p/rfsik20set900.htm>`__ (jDrones)
--  `mRo SiK Telemetry Radio <https://store.mrobotics.io/ProductDetails.asp?ProductCode=mRo-sikv2>`__ (mRobotics)
--  `VirtualRobotix Telemetry Set <http://www.virtualrobotix.it/index.php/en/shop/telemetria>`__ (VirtualRobotix)
+-  Search EBay for `SiK Telemetry Radio <https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=SiK+telemetry+radio&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=3dr+telemetry+radio>`__ (be aware, many "clones" have incorrect analog modules and will interoperate fine with themselves, although with reduced range, but not with the original "3DR" design. OEM versions below do not have this issue)
+-  `mRo SiK Telemetry Radio <https://store.mrobotics.io/product-p/mro-sikv2airgnd-mr.htm>`__ (mRobotics)
+-  `Holybro SiK Telemetry Radio <https://shop.holybro.com/transceiver-telemetry-radio-v3_p1103.html>`__ (Holybro)
 
 .. tip::
 

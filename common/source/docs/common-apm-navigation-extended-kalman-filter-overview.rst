@@ -6,7 +6,7 @@ Extended Kalman Filter (EKF)
 
 .. image:: ../../../images/advanced-configuration-ekf.png
 
-Copter and Plane can use an Extended Kalman Filter (EKF) algorithm to
+An Extended Kalman Filter (EKF) algorithm is used to
 estimate vehicle position, velocity and angular orientation based on
 rate gyroscopes, accelerometer, compass, GPS, airspeed and barometric
 pressure measurements.
@@ -14,27 +14,22 @@ pressure measurements.
 The advantage of the EKF over the simpler complementary filter
 algorithms (i.e. "Inertial Nav"), is that by fusing all available measurements it is better
 able to reject measurements with significant errors. This makes the
-vehicle less susceptible to faults that affect a single sensor. EKF also
+vehicle less susceptible to faults that affect a single sensor. An EKF also
 enables measurements from optional sensors such as optical flow and
 laser range finders to be used to assist navigation.
 
-Current stable version of ArduPilot use the EKF2 as their primary attitude and position estimation source with DCM running quietly in the background.
+Current stable versions of ArduPilot use EKF3 as their primary attitude and position estimation source with DCM running quietly in the background.
 If the autopilot has two (or more) IMUs available, two EKF "cores" (i.e. two instances of the EKF) will run in parallel, each using a different IMU.
 At any one time, only the output from a single EKF core is ever used, that core being the one that reports the best health which is determined by the consistency of its sensor data.
 
-Most user should not need to modify any EKF parameters but the information below provides some information on those parameters that are most commonly changed.
+Most users should not need to modify any EKF parameters, but the information below provides some information on those parameters that are most commonly changed.
 More detailed information can be found on the :ref:`developer EKF wiki page <dev:extended-kalman-filter>`. 
 
 Should the EKF2 or EKF3 be used?
 --------------------------------
 
-In general we recommend users stick with the EKF2 but there are some cases where the EKF3 should be used.  Below is a list of advantages of each:
+In general, we recommend users stick with the EKF3, which is now the default. In addition, 1MB autopilots only have this option due to space limitations. EKF2 can still be used but does not have many of the enhancements of EKF3 such as newer sensor sources including Beacons, Wheel Encoders and Visual Odometry.
 
-- EKF2 is used by default for most users, has had the most testing and is considered the most stable
-- EKF2 can accept external position estimates from Vicon systems or ROS SLAM (HectorSLAM, Cartographer, etc).  EKF3 will get this feature once `this PR <https://github.com/ArduPilot/ardupilot/pull/8730>`__ is merged
-- EKF3 should be used on tailsitters or any other vehicle that spends a significant amount of time pointing directly up or down.  The reason is that the EKF2 only estimates accelerometer Z-axis offsets while EKF3 estimates for all 3 axis
-- EKF3 accepts some newer sensor sources including Beacons, Wheel Encoders and Visual Odometry
-- EKF2 estimates gyro scale factors but the EKF3 does not.  In general this is not important because gyro scale factors are nearly always very close to 1.0.  This may be important for vehicles that spin very rapidly
 
 Choosing the EKF and number of cores
 ------------------------------------
@@ -52,6 +47,8 @@ inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.
 -  2: starts a single EKF core using only the second IMU
 -  3: starts two separate EKF cores using the first and second IMUs respectively
 
+:ref:`EK3_PRIMARY<EK3_PRIMARY>`: selects which "core" or "lane" is used as the primary. A value of 0 selects the first IMU lane in the :ref:`EK3_IMU_MASK <EK3_IMU_MASK>`, 1 the second, etc. Be sure that the selected primary lane exists. See Affinity and Lane Switching below.
+
 .. note::
 
    Plane and Rover will fall back from EKF2 or EKF3 to DCM if the EKF becomes unhealthy or the EKF is not fusing GPS data despite the GPS having 3D Lock.
@@ -64,7 +61,12 @@ inertial nav (Copter-3.2.1) or ahrs dead reckoning (Plane) for position control.
 Affinity and Lane Switching
 ----------------------------
 
-EKF3 provides the feature of sensor affinity which allows the EKF cores to also use non-primary instances of sensors, specifically, Airspeed - Barometer - Compass (Magnetometer) - GPS. This allows the vehicle to better manage good quality sensors and be able to switch lanes accordingly to use the best-performing one for state estimation. For more details and configuration, refer :ref:`EKF3 Affinity and Lane Switching <dev:ek3-affinity-lane-switching>`.
+EKF3 provides the feature of sensor affinity which allows the EKF cores to also use non-primary instances of sensors, specifically, Airspeed, Barometer, Compass (Magnetometer) and GPS. This allows the vehicle to better manage good quality sensors and be able to switch lanes accordingly to use the best-performing one for state estimation. For more details and configuration, refer :ref:`EKF3 Affinity and Lane Switching <common-ek3-affinity-lane-switching>`.
+
+GPS / Non-GPS Transitions
+-------------------------
+
+EKF3 (in ArduPilot 4.1 and higher) supports in-flight switching of sensors which can be useful for transitioning between GPS and Non-GPS environments.  See :ref:`GPS / Non-GPS Transitions <common-non-gps-to-gps>` for more details.
 
 Commonly modified parameters
 ----------------------------

@@ -7,32 +7,38 @@ KOGGER Underwater Sonar
 
 The `KOGGER Sonar <https://kogger.tech/product/sonar-2d-enhanced>`__ is a compact and low-cost underwater echosounder module with UART interface, 5-14Volts Power Supply Voltage.
 
-.. image:: ../../../images/kogger-sonar.png
-    :target: ../_images/kogger-sonar.png
+.. image:: ../../../images/kogger-sonar.jpg
+    :target: ../_images/kogger-sonar.jpg
 
    
 Recommended Hardware
 --------------------
-- CP210x USB->UART converter and USB OTG cable to configure the module by Android smartphone.
+- CP210x USB->UART converter and Windows PC with `Kogger Application <https://github.com/koggertech/KoggerApp/releases/latest>`__ installed.
 
 Configuring the echosounder module
 ----------------------------------
-The module should be configured before it is connected to the ArduPilot. You need the Android device and GUI installed for configuring the KOGGER Sonar module.
-The GUI is opensource `Kogger Android <https://github.com/koggertech/Kogger-Android/>`__.
-The APK can be downloaded from here: `Kogger Android Releases <https://github.com/koggertech/Kogger-Android/releases/>`__.
+The module should be configured before it is connected to the ArduPilot. You need the KOGGER Sonar module connected to computer.
+The GUI is opensource `Kogger Application <https://github.com/koggertech/KoggerApp/>`__.
 
-- The setup looks like:
-
-.. image:: ../../../images/kogger-sonar-android.png
-    :target: ../_images/kogger-sonar-pixhawk.png
 
 - Make the following adjustment in the GUI:
 
-.. image:: ../../../images/kogger-sonar-android-nmea.png
-    :target: ../_images/kogger-sonar-pixhawk.png
+.. image:: ../../../images/kogger-application.png
+    :target: ../_images/kogger-aplication.png
 
-.. image:: ../../../images/kogger-sonar-android-flash.png
-    :target: ../_images/kogger-sonar-pixhawk.png
+- Select the assigned COM-port and press green RUN button
+- Set the following rangefinder parameters:
+    - Max distance = 50000
+    - Dead zone = 100
+    - Confidence = 0
+- Set the following transducer parameters:
+     - Pulse count = 10
+     - Frequency = 700kHz
+     - Booster = ON
+- Set the following dataset parameters:
+     - Period = 100ms
+     - Rangefinder = NMEA
+- Press "Flash settings"
 
 That’s it. The module is ready to use with autopilot.
 

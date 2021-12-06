@@ -87,14 +87,14 @@ Initial Assessment
    trim, autopilot level or radio calibration and you need to solve that
    first before proceeding further.
 #. If the model starts to wag its wings, then the
-   default :ref:`RLL2SRV_P<RLL2SRV_P>` value is too high for your model (this is
+   default ``RLL2SRV_P`` value is too high for your model (this is
    unlikely but could happen) and you need to switch back to manual
    immediately and ask your assistant to halve the
-   :ref:`RLL2SRV_P<RLL2SRV_P>` parameter before switching back into FBW-A
-#. If the model starts to porpoise, the default :ref:`PTCH2SRV_P<PTCH2SRV_P>` value is
+   ``RLL2SRV_P`` parameter before switching back into FBW-A
+#. If the model starts to porpoise, the default ``PTCH2SRV_P`` value is
    too high (this is unlikely but could happen) and you need to
    switch back to manual immediately and ask your assistant to halve
-   the :ref:`PTCH2SRV_P<PTCH2SRV_P>` parameter before switching back into FBW-A
+   the ``PTCH2SRV_P`` parameter before switching back into FBW-A
 
 Roll Control Tuning
 ===================
@@ -104,7 +104,7 @@ Method 1
 
 This method is the simplest, but won't give the best result. For those
 users familiar with tuning the old PID controllers, the
-:ref:`RLL2SRV_P<RLL2SRV_P>`, :ref:`RLL2SRV_I<RLL2SRV_I>` and :ref:`RLL2SRV_D<RLL2SRV_D>` gains have the same
+``RLL2SRV_P``, ``RLL2SRV_I`` and ``RLL2SRV_D`` gains have the same
 effect, but there are some additional values that can be set by more
 advanced users.
 
@@ -113,13 +113,13 @@ advanced users.
    seconds and then release. Do the same in the other direction. You
    want the model to roll quickly and smoothly to the new bank angle
    and back again without overshoot or any wing 'rocking'. If the
-   roll response is too slow, then progressively increase :ref:`RLL2SRV_P<RLL2SRV_P>` in
+   roll response is too slow, then progressively increase ``RLL2SRV_P`` in
    increments of 0.1 until you are happy with the response.
 #. If you get bank angle oscillation or overshoot, then you need to
-   reduce :ref:`RLL2SRV_P<RLL2SRV_P>`. If at this point you still don't have sufficient
+   reduce ``RLL2SRV_P``. If at this point you still don't have sufficient
    response then you need to follow Method 2.
 #. Once you are happy with the roll response you should now slowly
-   increase the :ref:`RLL2SRV_I<RLL2SRV_I>` to give the controller some "I gain" to allow
+   increase the ``RLL2SRV_I`` to give the controller some "I gain" to allow
    it to cope better with wind. A value of 0.05 will work for most
    models. If you see overshoot or oscillation when raising the I value
    then halve it.
@@ -135,15 +135,15 @@ aileron servo(s) if allowed to continue.
    it and release. Do the same in the other direction. You want the
    model to roll quickly and smoothly to the new bank angle and back
    again without overshoot or any wing 'waggle'. If the roll response is
-   too slow, then progressively increase the :ref:`RLL2SRV_P<RLL2SRV_P>` gain in
+   too slow, then progressively increase the ``RLL2SRV_P`` gain in
    increments of 0.1 until you are happy with the response or you start
    to get oscillation in bank angle or overshoot
-#. Increase :ref:`RLL2SRV_D<RLL2SRV_D>` in increments of 0.01 until it it starts
+#. Increase ``RLL2SRV_D`` in increments of 0.01 until it it starts
    to oscillate, then halve it. Do not go above 0.1 for
-   :ref:`RLL2SRV_D<RLL2SRV_D>` without checking the temperature of your servos when you
+   ``RLL2SRV_D`` without checking the temperature of your servos when you
    land as in extreme cases turning up this gain can cause rapid servo
    movement and overheat the servos leading to premature failure.
-#. Now start to increase the integrator gain :ref:`RLL2SRV_I<RLL2SRV_I>` in steps of 0.05
+#. Now start to increase the integrator gain ``RLL2SRV_I`` in steps of 0.05
    from its default value of zero until the bank angle starts to
    overshoot or oscillate, then halve it.
 
@@ -159,12 +159,12 @@ Tuning tips
    behaviour that isn't so obvious from the ground looking at the model.
 -  Check for any steady offset between nav_roll and roll. If you have
    followed the basic method you may see an offset which can be removed
-   by setting :ref:`RLL2SRV_I<RLL2SRV_I>` to a small value (say 0.01) which will
+   by setting ``RLL2SRV_I`` to a small value (say 0.01) which will
    allow the control loop to slowly trim the aileron demand to remove
    the steady error.
 -  Although the autopilot will prevent the integrator from increasing if
    the maximum aileron is exceeded, there is additional protection
-   provided by the :ref:`RLL2SRV_IMAX<RLL2SRV_IMAX>` parameter. This parameter sets the
+   provided by the ``RLL2SRV_IMAX`` parameter. This parameter sets the
    maximum amount of aileron (in centi-degrees) that the integrator can
    control. The default value of 1500 allows the integrator to trim up
    to 1/3 of the total aileron travel. This parameter should not need to
@@ -193,8 +193,8 @@ Tuning tips
    have :ref:`RLL2SRV_RMAX<RLL2SRV_RMAX>` set to 60, the maximum roll_speed when responding
    to a large bank angle demand (eg full bank one way to full bank the
    other) should be just above 1.0. A value of greater than 1.1
-   indicates that :ref:`RLL2SRV_P<RLL2SRV_P>` is too high and should be reduced,
-   whereas a value of less than 1 indicates that :ref:`RLL2SRV_P<RLL2SRV_P>` should
+   indicates that ``RLL2SRV_P`` is too high and should be reduced,
+   whereas a value of less than 1 indicates that ``RLL2SRV_P`` should
    be increased.
 
 Pitch Control Tuning
@@ -212,10 +212,10 @@ are some additional values that can be set by more advanced users.
    it and release. Do the same in the other direction. You want the
    model to pitch quickly and smoothly to the new pitch angle and back
    again without overshoot or any porpoising. If the pitch response is
-   too slow, then progressively increase :ref:`PTCH2SRV_P<PTCH2SRV_P>` in increments of
+   too slow, then progressively increase ``PTCH2SRV_P`` in increments of
    0.1 until you are happy with the response.
 #. If you get pitch angle oscillation or overshoot, then you need to
-   reduce :ref:`PTCH2SRV_P<PTCH2SRV_P>`. If at this point you still don't have sufficient
+   reduce ``PTCH2SRV_P``. If at this point you still don't have sufficient
    response then you need to check your radio calibration, the minimum
    and maximum pitch angles and potentially follow Method 2.
 #. Now roll the model to maximum bank in each direction. The nose should
@@ -242,12 +242,12 @@ because step 2) can produce a high frequency instability that unless
 reversion back to manual is done quickly, could overstress the plane.
 
 #. Perform the tuning steps from Method 1
-#. Increase :ref:`PTCH2SRV_D<PTCH2SRV_D>` in increments of 0.01 until it it starts
+#. Increase ``PTCH2SRV_D`` in increments of 0.01 until it it starts
    to oscillate, then halve it. Do not go above 0.1 for
-   :ref:`PTCH2SRV_D<PTCH2SRV_D>` without checking the temperature of your servos when you
+   ``PTCH2SRV_D`` without checking the temperature of your servos when you
    land as in extreme cases turning up this gain can cause rapid servo
    movement and overheat the servos leading to premature failure.
-#. Now start to increase the integrator gain :ref:`PTCH2SRV_I<PTCH2SRV_I>` in steps of
+#. Now start to increase the integrator gain ``PTCH2SRV_I`` in steps of
    0.05 from its default value of zero until the pitch angle starts to
    overshoot or oscillate, then halve it.
 
@@ -263,23 +263,23 @@ Tuning tips
    behaviour that isn't so obvious from the ground looking at the model.
 -  Check for any steady offset between nav_pitch-roll and pitch. If you
    have followed the basic method you may see an offset which can be
-   removed by setting :ref:`PTCH2SRV_I<PTCH2SRV_I>` to a small value (say 0.05)
+   removed by setting ``PTCH2SRV_I`` to a small value (say 0.05)
    which will allow the control loop to slowly trim the elevator demand
-   to remove the steady error. The value of :ref:`PTCH2SRV_I<PTCH2SRV_I>` can be
+   to remove the steady error. The value of ``PTCH2SRV_I`` can be
    increased in small increments of 0.05 until you are satisfied with
    the speed at which the control loop 're-trims'.
 -  Although the autopilot will prevent the integrator from increasing if
    the maximum elevator is exceeded, there is additional protection
-   provided by the :ref:`PTCH2SRV_IMAX<PTCH2SRV_IMAX>` parameter. This parameter sets the
+   provided by the ``PTCH2SRV_IMAX`` parameter. This parameter sets the
    maximum amount of elevator(in centi-degrees) that the integrator can
    control. The default value of 1500 allows the integrator to trim up
    to 1/3 of the total elevator travel. This should be enough to allow
    for the trim offset and variation in trim with speed for most models.
--  WARNING : If :ref:`PTCH2SRV_IMAX<PTCH2SRV_IMAX>` is set too high, then there is a
+-  WARNING : If ``PTCH2SRV_IMAX`` is set too high, then there is a
    danger that in FBW-A, if the model has been leveled so that zero
    pitch is too nose-up to glide at a safe speed, that the integrator
    will continue to keep increasing the elevator to maintain the
-   demanded pitch angle until the model stalls. :ref:`PTCH2SRV_IMAX<PTCH2SRV_IMAX>` should be
+   demanded pitch angle until the model stalls. ``PTCH2SRV_IMAX`` should be
    set to a value that is big enough to allow from trim changes, but
    small enough so that it cannot stall the plane. The default for Plane is 2/3 of total throw, which could
    produce this problem. Be sure that :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` is setup to add 
@@ -304,9 +304,10 @@ Tuning tips
    you had \ :ref:`PTCH2SRV_RMAX_DN<PTCH2SRV_RMAX_DN>`/UP set to 30, the maximum pitch_speed
    when responding to a large pitch angle demand (eg full pitch one way
    to full pitch the other way) should be just above 0.5. A value of
-   greater than 0.6 would indicate that :ref:`PTCH2SRV_P<PTCH2SRV_P>` is too high and
+   greater than 0.6 would indicate that ``PTCH2SRV_P`` is too high and
    should be reduced, whereas a value of less than 0.5 would indicate
-   that :ref:`RLL2SRV_P<RLL2SRV_P>` should be increased.
+   that ``RLL2SRV_P`` should be increased.
+   
 
 Yaw Controller Tuning
 =====================

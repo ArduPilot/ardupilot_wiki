@@ -46,7 +46,7 @@ Control and Status (Lower Left)
 The Control and Status area of the Flight Data screen is in the lower left hand portion of Mission Planner.  In this area you can select any of several different menu items. Some items provide information (status) and other items allow control of the vehicle using the telemety uplink. (Telemetry radio connection is required)
 
 -  Quick:  This allows a quick look at just a few telemetry values in large text.  Double click to add items.
--  Actions: Use this area to control your Auto Pilot either for testing (using USB and no motor battery) or for controlling your vehicle. You can modes,arm/disarm (while on the ground),enable an attached joystick,restart a mission in the air, control a camera mount, etc.
+-  Actions: Use this area to control your Auto Pilot either for testing (using USB and no motor battery) or for controlling your vehicle. You can switch modes,arm/disarm (while on the ground),enable an attached joystick,restart a mission in the air, control a camera mount, etc.
 -  Gauges: This shows four popular telemetry gauges. Double click the speed gauge to change the top speed.
 -  Status: Clicking the Status menu button will display all of the telemetry parameters
 -  Servos/Relay: This allows the setting of any relay pins or setting/overriding RC values for channels 5 thru 14. (Use servo settings with caution, you could change flight modes)

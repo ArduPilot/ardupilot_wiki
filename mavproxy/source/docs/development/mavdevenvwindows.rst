@@ -10,8 +10,9 @@ To install the required libraries:
 
 .. code:: bash
 
-    pip install pywin32 lxml pymavlink numpy matplotlib==3.2.2 pyserial opencv-python PyYAML Pygame Pillow wxpython prompt-toolkit
-    pip install pyinstaller setuptools packaging --no-use-pep517
+    pip install wheel
+    pip install pywin32 lxml pymavlink numpy matplotlib==3.2.2 pyserial opencv-python==4.5.3.56 PyYAML Pygame Pillow wxpython prompt-toolkit scipy
+    pip install pyinstaller==4.3 setuptools packaging 
     
 Download the MAVProxy `source <https://github.com/ArduPilot/MAVProxy>`_.
 

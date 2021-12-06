@@ -14,8 +14,8 @@ SF10/C (100m) and
 
 \ |SF10-B|
 
-Connecting to the Pixhawk
-=========================
+Connecting to the AutoPilot
+===========================
 
 The diagram below shows the sensor output pins and a conveniently colour-coded cable (normally included or `see spec here <http://documents.lightware.co.za/LW%20000_135%20-%20Main%20cable%20type%201%20assembly%20-%20Rev%200.pdf>`__) which is used to connect to the autopilot. :ref:`Serial <sf10-serial-connection>`, :ref:`I2C <sf10-i2c-connection>` and :ref:`Analog <sf10-analog-connection>` connections are possible but we recommended using :ref:`Serial <sf10-serial-connection>` if possible especially if using cables that are 30cm or longer.
 
@@ -70,10 +70,6 @@ Lightware lidars manufactured before May 2018 shipped with a default baud rate o
 
 I2C connection
 --------------
-
-.. warning::
-
-   I2C support is present in Plane 3.4 (and higher) and Rover 2.50 (and higher) and Copter 3.4 (and higher).
 
 Connect the SDA line of the Lidar to the SDA line of the I2C port on the Pixhawk, and the SCL line of the Lidar to the SCL line of the I2C port. Also connect the GND and 5V lines.
 

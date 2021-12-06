@@ -18,7 +18,7 @@ operations.
 
 *LTTng* is a Linux tool that can be used to trace either a userspace
 application, or the Linux kernel itself. It produces trace files that
-can be analyzed later, mostly off-board. Lttng's implementation in APM
+can be analyzed later, mostly off-board. Lttng's implementation in ArduPilot
 uses userspace tracing but you can at the same time monitor what's going
 on inside the kernel, provided the kernel has tracepoints enabled (in
 its config).
@@ -32,7 +32,7 @@ add tracing to your code by calling the performance utility methods in
 Monitoring APM with LTTng
 =========================
 
-In order to monitor APM with *LTTng*, the first thing to do is to install LTTng
+In order to monitor ArduPilot with *LTTng*, the first thing to do is to install LTTng
 on your board. The *LTTng* documentation explains how to install it on your Linux
 distribution `here <https://lttng.org/docs/#doc-installing-lttng>`__. If
 there is no official package for your Linux distribution, you can also

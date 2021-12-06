@@ -4,7 +4,7 @@
 Terrain Following
 =================
 
-As of Plane 3.0.4 you can use automatic terrain following for fixed wing
+You can use automatic terrain following for fixed wing
 aircraft if you have an autopilot board with local storage (such as the
 Pixhawk). This page explains how terrain following works, how to enable
 it and what its limitations are.
@@ -20,12 +20,14 @@ How it works
 Terrain following works by maintaining a terrain database on the microSD
 card on the autopilot which gives the terrain height in meters above sea
 level for a grid of geographic locations. On the autopilot this database
-is stored in the APM\TERRAIN directory on the microSD card.
+is stored in the APM/TERRAIN directory on the microSD card.
 
 The database is populated automatically by the autopilot requesting
 terrain data from the ground station over a MAVLink telemetry link. This
 can happen either during flight planning when the autopilot is connected
 over USB, or during flight when connected over a radio link.
+
+.. note:: One can directly download terrain data via PC to the SD card using the this `web utility <https://terrain.ardupilot.org/>`__. See below.
 
 .. note:: The data is only transferred if the autopilot has a GPS lock. So to make sure your missions have the terrain data prior to flight (in case the ground station is not connected during the flight and/or does not have internet connection to obtain the data), be sure that GPS lock is in effect when loading the mission to the autopilot.
 
@@ -60,8 +62,9 @@ In Plane terrain following is available in the following flight modes:
 
 Use of terrain following in RTL, LOITER, CRUISE, FBWB and GUIDED modes
 is controlled by the :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` parameter. That parameter defaults
-to off, so no terrain following will be used in those modes. Set
-:ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` to 1 to enable terrain following in those modes.
+to off, so no terrain following will be used in those modes. Setting the bitmask in :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` determines which altitude controlled modes terrain following is active. For example, setting it to "10" enables following in FBWB and AUTO.
+
+Terrain Following in CRUISE and FBWB modes can be disabled with an RC switch assigned ``RCx_OPTION`` = 86. When enabling (<1200us) or disabling (>1800us) terrain following with the switch, the present altitude will be the target set point either above terrain, or home, respectively. The target altitude can be changed as normal with elevator whether the altitude reference being used is above home or above terrain.
 
 Use of terrain following in AUTO missions is controlled on a waypoint by
 waypoint basis using the reference frame of the waypoint. Normal (non
@@ -71,6 +74,7 @@ waypoints have a "Terrain" reference frame, and altitudes are relative
 to the ground level given in the terrain database.
 
 See :ref:`common-understanding-altitude` for altitude definitions.
+
 
 Uses of Terrain Following
 =========================
@@ -108,9 +112,11 @@ You can download a set of terrain data tiles for any anticipated flight area usi
 
 It will create tiles for the specified radius around a geographic location. Then you can download them, unzip and write in the APM/TERRAIN folder of the SD card.
 
-You can also download .zip files for entire continents, or individual tiles from `here <https://terrain.ardupilot.org/data/>`__.
+You can also download .zip files for entire continents, or individual tiles from `here <https://terrain.ardupilot.org/data/>`__. Note that ArduPilot 4.0.x and 4.1.x have different tilesets. Use the "continents"/"tiles" folders for ArduPilot 4.0.x, or use the "continentsapm41"/"tilesapm41" folders for ArduPilot 4.1.x. 
 
 .. warning:: A long standing bug in the downloaded terrain data files, which occasionally caused terrain data to be missing, even though supposedly downloaded, was fixed in Plane 4.0.6, Copter 4.0.4, and Rover 4.1. It will automatically be re-downloaded when connected to a compatible GCS. However, if you are relying on SD terrain data for an area and don't plan on being connected to a GCS when flying over it, or it's not part of a mission, you should download the area data using the utility above, or linked tiles data repository and place on your SD card in the Terrain directory.
+
+.. warning:: ArduPilot 4.0.x and 4.1.x use different terrain tilesets. When upgrading from 4.0.x to 4.1.x, any tiles on the SD card will need to be re-downloaded. This will happen automatically when your GCS is connected to the Internet for areas covered by loaded missions and/or home location. Otherwise, you may set the :ref:`TERRAIN_MARGIN <TERRAIN_MARGIN>` to 50 to continue using the old tileset.
 
 Terrain Spacing
 ===============

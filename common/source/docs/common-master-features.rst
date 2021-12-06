@@ -6,43 +6,23 @@ Items in Master Branch Only
 
 This lists features or changes merged in master and build in the "latest" firmware, but not in a stable or beta release yet. They have passed all test suites and usually have already been flight tested. These items are considered in the broad flight testing stage and test users are encouraged. Eventually, they will released in a beta, then stable release.
 
+.. note:: Currently firmware is in the 4.1 beta stage so all features are in the wiki now. Once firmware is released as Stable, new items will start to accumulate on this page for a future release.
+
 
 .. toctree::
     :maxdepth: 1
-[site wiki="plane"]
-    Airbrakes <airbrakes-on-plane>
-    Airmode <airmode>
-[/site]
-[site wiki="copter,plane,rover"]
-    Compass-less Operation<common-compassless>
-    GPS/Non-GPS Transitions <common-non-gps-to-gps>
-[/site]
-[site wiki="copter,plane"]
-    In-Flight FTT and filter control <common-imu-fft>
-[/site]
-[site wiki="copter,plane,rover"]
-    Hott Telem (already in Plane release) <common-hott-telemetry>
-    Lightware SF45/B (350 degree) <common-lightware-sf45b>
-    MSP OSD <common-msp-osd-overview>
-    MSP (MultiWii Serial Protocol) <common-msp-overview>
-[/site]
-[site wiki="copter,rover"]
-    Nooploop Beacons <common-nooploop>
-[/site]
-[site wiki="copter,plane,rover"]
-    OSD Parameter Editor <common-paramosd>
-    RunCam Control <common-camera-runcam>
-    Velocity ESCs <common-velocity-can-escs>
-[/site]
-    
-    Other wiki changes <common-future-wiki-changes>
-    
-[site wiki="plane"]
-- :ref:`Change to PID scaling in QuadPlane Tailsitters <4.1-gainscaling>`
-[/site]
-- :ref:`Camera Trigger MAV Command change <mav_cmd_do_set_cam_trigg_dist>`
-   
 
+[site wiki="rover,dev"]
+    AIS for boats <common-ais>
+    Hondex Sonar <common-hondex-sonar>
+    Torqeedo motor <common-torqeedo>
+[/site]
+    Multiple Screen And Display Port Support for MultiWii/DJI OSD <common-msp-osd-overview-4.2>
+    MSP Telemetry Addition of Canvass Mode <common-msp-overview-4.2>
+    Serial ESCs <common-serial-escs>
+    Packet Digital MPPT Solar Controller <common-packetdigital-mppt>
+    Swan K-1 Copter Tailsitter <common-Swan-K1>
+    Other wiki changes <common-future-wiki-changes>
 
 
 [copywiki destination="plane,copter,rover,dev"]

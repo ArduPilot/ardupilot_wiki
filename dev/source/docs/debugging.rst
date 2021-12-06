@@ -54,7 +54,7 @@ printf(...) and friends
 
 Everybody's favourite go-to debugging tool.
 
-Availability and where the output of this command goes is dependendant on which hardware you are running on.
+Availability and where the output of this command goes is dependent on which hardware you are running on.
 
 In SITL you can see stderr and stdout output in the xterm Window running the ArduPilot binary - or, on Windows, in the log file created in place of that window.
 

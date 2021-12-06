@@ -210,10 +210,8 @@ Testing Ground Takeoff in FBWA mode
 ===================================
 
 It is sometimes useful to test the takeoff code using the FBWA flight
-mode. The way you do this is to set the :ref:`FBWA_TDRAG_CHAN <FBWA_TDRAG_CHAN>` parameter to
-an RC input channel on your transmitter for a switch (usually a
-momentary switch, such as the trainer switch). When this RC channel goes
-high while you are on the runway waiting for takeoff in FBWA mode the
+mode. The way you do this is to set the ``FBWA_TDRAG_CHAN`` parameter (versions prior to 4.1) or  to an RC input channel on your transmitter for a switch (usually a
+momentary switch, such as the trainer switch), or the channel's ``RCx_OPTION`` to 95 for versions 4.1 and later. When this RC channel goes high while you are on the runway waiting for takeoff in FBWA mode the
 autopilot will check if you have configured the :ref:`TKOFF_TDRAG_ELEV <TKOFF_TDRAG_ELEV>` and
 :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` parameters. If they have been set to non-zero
 values then the elevator will be controlled in FBWA in an identical
@@ -225,3 +223,8 @@ aircraft reaches a ground speed of :ref:`TKOFF_TDRAG_SPD1 <TKOFF_TDRAG_SPD1>` me
 This provides a convenient way to test auto takeoff in FBWA mode, and
 also is a nice way to get better ground steering in FBWA mode in
 general.
+
+Speed Scaling Issues with no Airspeed Sensor
+============================================
+
+Since control effectiveness varies with airspeed, ArduPilot automatically scales the control gains in stabilized modes with airspeed to allow stability at low speeds and to avoid oscillations at high airspeeds. However, when an airspeed sensor is not used, an estimated airspeed based on GPS speed, accelerometer inputs, and position changes is used. During takeoffs into strong head wind, this estimate can be wrong and the gains scaled up, resulting in oscillations during the climb into the wind. Setting :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 7 to 1, the speed scaling will be limited during the takeoff phase of automatic takeoffs to eliminate oscillations, particularly on tightly tuned vehicles.

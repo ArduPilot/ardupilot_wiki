@@ -60,4 +60,4 @@ if disable_non_local_image_warnings:
 ############ ENDPATH
 
 def setup(app):
-   app.add_stylesheet("common_theme_override.css")
+   app.add_css_file("common_theme_override.css")

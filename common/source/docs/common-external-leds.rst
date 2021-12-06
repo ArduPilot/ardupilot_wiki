@@ -7,12 +7,12 @@ External LEDs
 An external LED or LED Display can be added by connecting it to the autopilot's
 I2C port or, in 4.0 and later versions, if a serially programmed device, via an output using the SERVOx_FUNCTION for that output. UAVCAN LEDs on the CANBUS are also supported (See :ref:`UAVCAN Setup <common-uavcan-setup-advanced>` ).
 
-.. note:: Note that the same grouping restrictions which apply to setting outputs to different PWM rates and/or DShot, apply to LEDs also since the timer associated with each group of outputs cannot be used for different rates. See also  :ref:`common-dshot` 
+.. note:: Note that the same grouping restrictions which apply to setting outputs to different PWM rates and/or DShot, apply to LEDs also since the timer associated with each group of outputs cannot be used for different rates. See also  :ref:`Mixing ESC Protocols<mixing-escs>` 
 
 RGB LEDs/Displays with I2C Connection
 =====================================
 
-Two types of I2C devices are supported: IC2 connected RGB LEDS using an LED driver chip and OLED displays.
+Two types of I2C devices are supported: I2C connected RGB LEDS using an LED driver chip and OLED displays.
 
 RGB LEDs/drivers supported are:
 
@@ -38,7 +38,7 @@ Currently, Ardupilot supports Neopixel and ProfiLED RGB LED strings. They can be
 
 ..  youtube:: ytW538e_cQw
 
-Serial LEDs require a whole pwm group, more information about your flight controllers PWM groups can be found on it's :ref:`hardware page<common-autopilots>`. To check that the desired outputs have been setup correctly look for the PWM types message in your GCS's messages tab. See :ref:`common-gpios`
+Serial LEDs require a whole pwm group, more information about your flight controller's PWM groups can be found on it's :ref:`hardware page<common-autopilots>`. To check that the desired outputs have been setup correctly look for the PWM types message in your GCS's messages tab. See :ref:`common-gpios`
 
 .. toctree::
     :maxdepth: 1

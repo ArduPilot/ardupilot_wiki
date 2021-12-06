@@ -59,6 +59,7 @@ Silencing the buzzer
 
 Some autopilots (like the HobbyKing PixRacer) have built-in buzzers.  We recommend disabling the these buzzers by setting the following parameter:
 
-- set :ref:`NTF_BUZZ_ENABLE <NTF_BUZZ_ENABLE>` = 0 to disable the buzzer
+- :ref:`NTF_BUZZ_TYPES<NTF_BUZZ_TYPES>` controls which types of buzzers are enabled: Pin driven buzzers (built-in or external), and/or DShot based on ESCs.
+- Set ``NTF_BUZZ_ENABLE`` = 0 to disable the pin driven buzzer in firmware prior to 4.1. 
 
 In addition, :ref:`NTF_BUZZ_VOLUME<NTF_BUZZ_VOLUME>` can be used to control the volume.

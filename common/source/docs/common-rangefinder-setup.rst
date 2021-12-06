@@ -6,7 +6,7 @@ RangeFinders Setup Overview
 
 There are many different kinds of rangefinders: Lidar (using laser or infra-red light to measure distance), Sonar (using ultrasonic sound), and Radar (using microwave RF). Some are analog, producing  pulses whose timing represent the distance to an object, others are digital sending data streams over serial to UARTs, or I2C, or even via UAVCAN.
 
-:ref:`RangeFinders (Sonar or Lidar) <common-rangefinder-landingpage>` can be used for :ref:`Object Avoidance <common-object-avoidance-landing-page>` in Copter-3.5 (and higher) in Loiter and AltHold modes and in Rover-3.5 (and higher). As well as altitude sensors for precision landing in Plane and Copter
+:ref:`RangeFinders (Sonar or Lidar) <common-rangefinder-landingpage>` can be used for :ref:`Object Avoidance <common-object-avoidance-landing-page>` as well as altitude sensors for precision landing in Plane and Copter.
 
 ..  youtube:: y2Kk6nIily0
     :width: 100%
@@ -23,11 +23,12 @@ Connecting and Configuring the Rangefinder
 - Follow the instructions for each type of rangefinder described in its linked page on :ref:`common-rangefinder-landingpage`.
 - Set the RNGFNDx_ORIENT parameters (i.e. :ref:`RNGFND1_ORIENT <RNGFND1_ORIENT>`, :ref:`RNGFND2_ORIENT <RNGFND2_ORIENT>`, etc.) to specify the direction each range finder is pointing in. 
 
-..note:: Note that if the type of rangefinder is set or changed, a reboot will be required.
+.. note:: Note that if the type of rangefinder is set or changed, a reboot will be required.
+
 
 [site wiki="copter,rover"]
+  - Set the parameter :ref:`PRX_TYPE<PRX_TYPE>` = 4 to use horizontal rangefinders as Proximity Sensors (For obstacle avoidance).
   - For Copter and Rover, up to 8 rangefinders may placed around the vehicle to provide 360 degree coverage, or a single 360 degree Lidar. But only one forward facing rangefinder is required for :ref:`Object Avoidance <common-object-avoidance-landing-page>` .
-  - Exclusion zones are provided for 360 degree Lidars, since these may have obstructions in their field of view. Exclusion zones are set via the PRX_IGN_ANGx and PRX_IGN_WIDx parameters, specifying a direction and width the frame obstruction presents and will be ignored. Up to 6 exclusion sectors can be specified.
   - If a rangefinder is oriented facing up, then it will be used in the :ref:`common-simple-object-avoidance` operation as an upwards sensing proximity sensor in Copter LOITER, ALTHOLD, and POSHOLD modes.
 [/site]
 [site wiki="plane,copter"]

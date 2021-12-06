@@ -4,7 +4,7 @@
 FrSky Telemetry
 ===============
 
-FrSky telemetry allows you to display ArduPilot information such as flight modes, battery level, and error messages, as well as information from additional FrSky sensors on OpenTx compatible RC transmitters and even older X9R transmitters (although with more limited capability).
+FrSky telemetry allows you to display ArduPilot information such as flight modes, battery level, and error messages, as well as information from additional FrSky sensors on `OpenTx <https://www.open-tx.org/>`__ compatible RC transmitters and even older X9R transmitters (although with more limited capability).
 
 It is particularly useful:
  * for flying without a ground control station (no need for MAVLink telemetry radio),
@@ -20,7 +20,7 @@ Moreover, some RC transmitters such as the Taranis series, Horus, and T16, can b
 
     Common FrSky Telemetry Setup with OpenTX transmitter running :ref:`FlightDeck <common-frsky-flightdeck>` or :ref:`Yaapu Telemetry Script <common-frsky-yaapu>`.
 
-.. note:: before the addition of FrSky telemetry protocols to ArduPilot, it was necessary to use an external converter to convert normal MAVLink telemetry from the Autopilot into FrSky Sport compatible telemetry (See :ref:`common-frsky-mavlink`), but this is no longer required.
+.. note:: before the addition of FrSky telemetry protocols to ArduPilot, it was necessary to use an external converter to convert normal MAVLink telemetry from the Autopilot into FrSky Sport compatible telemetry (See :ref:`common-frsky-mavlink`), but this is no longer required. However, the `MAV2PT converter <https://www.rcgroups.com/forums/showthread.php?3089648-Mavlink-To-FrSky-Passthrough-Converter>`__ is especially useful for converting MAVLink telemetry output from many long-range RC systems for display on an OpenTX transmitter or forwarding via Bluetooth or WiFi to a smarphone or PC running a Ground Control Station.
 
 
 Setup
@@ -28,7 +28,7 @@ Setup
 
 In order to use FrSky telemetry, the following steps are required:
 
-- Connect an autopilot telemetry port to an FrSky reciever which has an SPort or Fport interface. 
+- Connect an autopilot telemetry port to an FrSky reciever which has an SPort or Fport interface. This may require a bi-directional inverter depending on which autopilot it being used. See :ref:`common-connecting-sport-fport`. 
 - Configure the autopilot.
 - Install a LUA script to display the full telemetry. (Although is it possible to display a subset of telemetry values using OpenTX's built in telemetry screens, it is very limited.)
 
@@ -41,7 +41,7 @@ See
     :maxdepth: 1
 
     Connecting to SPort and FPort <common-connecting-sport-fport>
-    
+
 for connection diagrams.
 
 

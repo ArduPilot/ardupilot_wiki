@@ -52,7 +52,7 @@ Barometer failures:
 unhealthy which is normally a sign of a hardware failure.
 
 **Alt disparity** : the barometer altitude disagrees with the inertial
-navigation (i.e. Baro + Accelerometer) altitude estimate by more than 2
+navigation (i.e. Baro + Accelerometer) altitude estimate by more than 1
 meters.  This message is normally short-lived and can occur when the
 autopilot is first plugged in or if it receives a hard jolt
 (i.e. dropped suddenly).  If it does not clear the :ref:`accelerometers may need to be calibrated <common-accelerometer-calibration>` or there may
@@ -210,7 +210,7 @@ System:
 
 **Param storage failed**: A check of reading the parameter storage area failed.
 
-**Internal errors (0xx)**: An internal error has occurred. Try rebooting.
+**Internal errors (0xx)**: An internal error has occurred. Report to ArduPilot development team `here <https://github.com/ArduPilot/ardupilot/issues/15916>`_
 
 **KDECAN Failed**: KDECAN system failure.
 
@@ -251,5 +251,4 @@ This can also be configured using Mission Planner:
 -  set the Arming Check drop-down to "Disabled" or one of the "Skip"
    options which more effectively skips the item causing the failure.
 -  Push the "Write Params" button
-
 

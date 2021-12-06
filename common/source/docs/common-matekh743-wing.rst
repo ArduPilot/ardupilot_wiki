@@ -1,8 +1,8 @@
 .. _common-matekh743-wing:
 
-==================
-Mateksys H743-Wing
-==================
+============================
+Mateksys H743-Wing/SLIM/MINI
+============================
 
 .. image:: ../../../images/matekh743-wing.png
      :target: ../_images/matekh743-wing.png
@@ -85,9 +85,29 @@ Default UART order
 - SERIAL6 = USER = UART4
 - SERIAL7 = USER = UART6 (TX only unless :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1, then RX available also)
 
-RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols, however for FPort the receiver should be connected to T6 and SERIAL7 configured as described in :ref:`FPort<common-FPort-receivers>` section.
-
 Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences.
+
+RC Input
+========
+
+he Rx6 pin, which by default is mapped to a timer input, can be used for all ArduPilot supported receiver protocols, except CRSF which requires a true UART connection. However, bi-directional protocols which include telemetry, such as SRXL2 and FPort, when connected in this manner, will only provide RC without telemetry. 
+
+To allow CRSF and embedded telemetry available in Fport, CRSF, and SRXL2 receivers, the Rx6 pin can also be configured to be used as true UART RX pin for use with bi-directional systems by setting the :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to “1” so it becomes the SERIAL7 port's RX input pin.
+
+With this option, :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` must be set to "23", and:
+
+- PPM is not supported.
+
+- SBUS/DSM/SRXL connects to the R6 pin, but SBUS requires that the :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` be set to "3".
+
+- FPort requires connection to Tx6 and :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` be set to "7".
+
+- CRSF also requires a Tx6 connection, in addition to Rx6, and automatically provides telemetry. Set :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` to "0".
+
+- SRXL2 requires a connection to Tx6 and automatically provides telemetry.  Set :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` to "4".
+
+Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
+
 
 Dshot capability
 ================
@@ -133,3 +153,15 @@ Then reboot.
 
 :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` 11.0
 
+Firmware
+========
+
+Firmware for these boards can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
+"MatekH743".
+
+Firmware that supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "MatekH743-bdshot".
+
+.. warning:: The bi-directional Dshot firmware redefines the Rx6 pin as a pure UART input, and cannot support PPM. It also requires that the :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` = 23 and that :ref:`SERIAL7_OPTIONS<SERIAL7_OPTIONS>` = 3 for use with SBUS to provide inversion. In addition, outputs 9-12 no longer support normal Dshot. Only outputs 1-4 are bi-directional Dshot capable.
+
+
+.. note:: If you experience issues with the device ceasing to initialize after power up, see :ref:`common-when-problems-arise` section for H7 based autopilots for a possible solution.

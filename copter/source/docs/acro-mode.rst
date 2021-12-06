@@ -10,6 +10,9 @@ current attitude and will not return to level (attitude hold). Acro mode is usef
 aerobatics such as flips or rolls, or FPV when smooth and fast control
 is desired.
 
+Pure rate mode stabilization, utilizing only the gyros with no attitude feedback from the accelerometers, can be forced by setting bit 1 of :ref:`ACRO_OPTIONS<ACRO_OPTIONS>` to one. Attitude will still have an open loop correction applied in this mode, similar to "heading hold" tail gyros, but attitude can drift over time.
+
+
 Overview
 ========
 
@@ -39,7 +42,7 @@ Overview
 .. youtube:: tC0mF-N5z0Q
     :width: 100%
 
-The above video was filmed with a Pixhawk running AC3.2 in ACRO mode
+The above video was filmed in ACRO mode
 using :ref:`FPV goggles <common-fpv-first-person-view>`.
 
 
