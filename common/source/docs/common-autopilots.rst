@@ -61,6 +61,7 @@ Closed hardware
     IFlight Beast F7 45A AIO <common-iflight-beastf7AIO>
     IFlight BeastH7 AIO <common-iflight-beasth7AIO>
     Mamba F405 MK2* <common-mamba405-mk2>
+    Mamba Basic F405 mk3 <common-mamba-basic-mk3>
     Mateksys F405-SE <common-matekf405-se>
     Mateksys F405-STD and variants* <common-matekf405>
     Mateksys F405-Wing* <common-matekf405-wing>
