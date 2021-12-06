@@ -66,12 +66,21 @@ The stderr and stdout file handles are not available on ChibiOS, so fprintf is n
 hal.console->printf(...);
 .........................
 
+
 This output appears on the console.  For ChibiOS-based boards this is the first-defined SERIAL device.
 
 Catching memory overruns
 ........................
 
 You can place guard regions around memory areas in the code to catch overruns by configuring the build using the ----enable-malloc-guard option on "waf configure" command prior to building the code for SITL
+
+GPIO Assert Debugging
+.....................
+
+It is possible to output debug assertions from ChibiOS (so the debug errors that you get if you build with --enable-asserts) using a GPIO pin. To do this you need to set "FAULT" in hwdef.dat to the GPIO pin you want to use and then connect a logic analyzer to the pin. You will also need to configure your logic analyzer to interpret the serial stream and print readable information but most modern logic analyzers are able to do this automatically.
+
+You can also use this pin defintion to output general debug messages using fault_printf(). This works in exactly the same way as printf() but outputs to the GPIO pin. Both of these methods are extremely useful for debugging situations where general IO is not available.
+
 
 .. toctree::
     :maxdepth: 1
