@@ -4,9 +4,13 @@
 Setting up SITL on Windows
 ==========================
 
-SITL was originally developed on Linux, but can also be built and run *natively* Windows. It can also be run on a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux.
+SITL was originally developed on Linux, but can also be built and run *natively* on Windows. It can also be run on a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux or by using the Windows Subsytem for Linux (WSL).
 
-This article shows how to build and run :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` *natively* on Windows using Cygwin. These commands were tested on Windows 10 with :ref:`MAVProxy <mavproxy:home>` and Copter-4.0.0-dev.
+Currently, the simplest way to run SITL on Windows is to use WSL: https://ardupilot.org/dev/docs/building-setup-windows10.html?highlight=wsl#using-sitl-with-wsl-and-xwindows
+
+To set up WSL follow these instructions: https://ardupilot.org/dev/docs/building-setup-windows10.html?highlight=wsl#setting-up-the-build-environment-on-windows10-using-wsl1-or-wsl2
+
+The remainder of this article shows how to build and run :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` *natively* on Windows using Cygwin. These commands were tested on Windows 10 with :ref:`MAVProxy <mavproxy:home>` and Copter-4.0.0-dev.
 
 .. figure:: ../images/MAVProxy_Map_GuidedCopter.jpg
    :target: ../_images/MAVProxy_Map_GuidedCopter.jpg
