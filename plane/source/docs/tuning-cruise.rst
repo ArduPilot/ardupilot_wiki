@@ -53,7 +53,7 @@ Without an airspeed sensor, both the pitch trim and the :ref:`TRIM_THROTTLE<TRIM
 
 - **(Preferred)** Add the desired degrees nose up(usually) or down to :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>`. 
 - Position vehicle with a few degrees nose up or down during the first, Level step of accelerometer calibration to match the cruising attitude.
-- Position vehicle with a few degrees nose up and use the  ``Calibrate Level`` button on the Mission Planner page.T his adjusts the AHRS_TRIM parameters. AHRS_TRIM parameters can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more is needed, (e.g. the autopilot is mounted slightly downward), then you can use :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to alter the AOA manually.
+- Position vehicle with a few degrees nose up and use the  ``Calibrate Level`` button on the Mission Planner page. This adjusts the AHRS_TRIM parameters. AHRS_TRIM parameters can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more is needed, (e.g. the autopilot is mounted slightly downward), then you can use :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to alter the AOA manually.
 
 .. tip:: You can examine ATT.Pitch in the logs when at cruise speed in FBWB or CRUISE to determine the average pitch trim required in these modes. Appropriately adjusting :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to lower this to zero when flying level in these modes.
 
