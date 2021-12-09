@@ -145,7 +145,7 @@ Python Packages Installation
     # Update the PYTHONPATH environment variable to add the path to the pyrealsense2 library
     export PYTHONPATH=$PYTHONPATH:/usr/local/lib
 
-    cd ~/librealsense/wrappers/python/example
+    cd ~/librealsense/wrappers/python/examples
 
     # You should see a stream of data coming from the T265.
     python3 t265_example.py
