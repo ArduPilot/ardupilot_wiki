@@ -27,4 +27,4 @@ ArduPilot Rover's reversing behaviour is just like a full sized car, regardless 
 - if moving forward with wheel turned right, vehicle turns in clockwise direction
 - if moving backwards with wheel turned right, vehicles turns in counter-clockwise direction
 
-Some users, especially users of skid-steering vehicles, may wish the vehicle's turning direction to be the same whether moving forward or reversing.  This can be accomplished by setting :ref:`PILOT_STEER_TYPE <PILOT_STEER_TYPE>` to "3"
+Some users, especially users of skid-steering vehicles and omni vehicles, may wish the vehicle's turning direction to be the same whether moving forward or reversing.  This can be accomplished by setting :ref:`PILOT_STEER_TYPE <PILOT_STEER_TYPE>` to "3"
