@@ -71,7 +71,7 @@ The SITL launch script also get some other feature already provided like launch 
 
 When gdb is launched you should be able to use it to debug ArduPilot like any other program. If you don't know how to
 use gdb from commandline, please look on the net for some tutorial, a simple one can be found `here <http://www.unknownroad.com/rtfm/gdbtut/gdbtoc.html>`__.
-Don't forget that you can crash you drone on SITL safely !
+Don't forget that you can crash your drone on SITL safely !
 
 With IDE
 ========
