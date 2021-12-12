@@ -32,6 +32,10 @@ Once SLCAN has been enabled, you can use :ref:`Mission Planner <common-mp-slcan>
 
 :ref:`UAVCAN GUI tool <common-uavcan-gui>` can also be used
 
+here is an example video of configuring a UAVCAN/DroneCAN power monitor device:
+
+.. youtbe:: 5bUyms6UPao
+
 
 Troubleshooting
 ===============
