@@ -1,7 +1,7 @@
 .. _common-can-pmu:
 
 ==============================
-CAN PMU Power detection module
+CUAV CAN/DroneCAN Power Module
 ==============================
 
 .. image:: ../../../images/can-pmu/can-pmu.jpg
@@ -10,7 +10,7 @@ CAN PMU Power detection module
 Overview
 ========
 
-CAN PMU is a drone power management module with built-in STM32F4 processor running CUAV's ITT compensation algorithm to accurately measure the voltage and current of the drone's battery. It supports 6~62V voltage input, and the POWER output port can output 5V/ 8A. It uses advanced CAN bus communication and supports the standard `UAVCAN <https://new.uavcan.org/>`__ protocol. Each PMU is factory calibrated to ensure good consistency and high accuracy.
+CUAV's CAN/DroneCAN PMU is a drone power management module with built-in STM32F4 processor running CUAV's ITT compensation algorithm to accurately measure the voltage and current of the drone's battery. It supports 6~62V voltage input, and the POWER output port can output 5V/ 8A. It uses advanced CAN bus communication and supports the standard `UAVCAN <https://new.uavcan.org/>`__ protocol. Each PMU is factory calibrated to ensure good consistency and high accuracy.
 
 Specifications
 ==============
