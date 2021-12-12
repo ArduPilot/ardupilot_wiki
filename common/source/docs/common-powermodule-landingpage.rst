@@ -8,23 +8,52 @@ Battery Monitors (aka Power Monitors/Modules)
 
 The links below have information about the most commonly used power monitors/modules
 
-.. note:: In firmware versions 4.0 and later, up to 10 batteries can be monitored. In addition, a new battery "type" = SUM, that consolidates all following (higher numbered) battery monitors into a single report, has been added to each monitor.
+Up to 10 batteries/power monitors can be monitored. Each monitor has its own group of configuration parameters, designated by ``BATTx_`` with x denoting each monitor in the system (first monitor "x" is null character, ie ``BATT_`` prefix). In addition, a ``BATT_MONITOR`` "type" = SUM is available, that consolidates all following (higher numbered) battery monitors into a single report.
 
 .. toctree::
     :maxdepth: 1
 
     Power Monitor Configuration <common-power-module-configuration-in-mission-planner>
+
+Power Monitors Connecting to AutoPilot Power Monitor Port
+=========================================================
+
+.. toctree::
+    :maxdepth: 1
+    
     Common Power Module <common-3dr-power-module>
     AirbotPower Power Module <common-airbotpower-power-module>
+    CUAV HV PM<common-hv-pm>
     Mauch Power Monitor <common-mauch-power-modules>
-    Fuel Monitors <common-fuel-sensors>
-    Can PMU<common-can-pmu>
-    HV PM<common-hv-pm>
-    Rotoye BatMon Smart Battery <common-smart-battery-rotoye.rst>
     SmartAP Power Distribution Board<common-smartap-pdb>
 
-Power modules provide these benefits:
+CAN/DroneCAN Power Monitor
+==========================
 
-- Provides a stable power supply to the autopilot and reduces the chance of a brown-out
+.. toctree::
+    :maxdepth: 1
+
+    CUAV CAN/DroneCAN PMU<common-can-pmu>
+    Pomegranate Systems<common-pomegranate-systems-pm>
+
+I2C Power Monitor
+=================
+
+.. toctree::
+    :maxdepth: 1
+
+    Rotoye BatMon Smart Battery <common-smart-battery-rotoye.rst>
+
+Liquid Fuel Monitors
+====================
+
+.. toctree::
+    :maxdepth: 1
+
+    Fuel Monitors <common-fuel-sensors>
+
+Power Monitors/Modules provide these benefits:
+
+- Most provide a stable power supply to the autopilot, in addition to monitoring, and therefore reduces the chance of a brown-out
 - Allows real-time monitoring of the battery’s voltage and current and triggering a low battery failsafe
 - Allows compensating for the interference on the compass from the motors using the COMPASS_MOT_x and COMPASS_PMOT_x parameters, see :ref:`common-compass-setup-advanced` .

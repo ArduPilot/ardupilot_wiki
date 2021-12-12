@@ -1,8 +1,8 @@
 .. _common-hv-pm:
 
-=================================
-HV PM (High voltage power module)
-=================================
+======================================
+CUAV HV PM (High voltage power module)
+======================================
 
 The CUAV HV PM module is a new high voltage voltage power module independently developed by CUAV with the following features:
 
