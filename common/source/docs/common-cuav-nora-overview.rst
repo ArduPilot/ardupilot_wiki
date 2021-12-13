@@ -18,7 +18,7 @@ Other characteristics
 - Supports High Speed USB (480mb/s), can download logs faster
 - Supports more DShot outputs
 - Supports IMU temperature control, making the sensor more consistent
-- Dedicated UAVCAN battery port
+- Dedicated DroneCAN battery port
 - 3 sets of IMU sensors
 
 Specifications
@@ -54,7 +54,7 @@ Specifications
    -  2 GPS ports(GPS and UART4 ports)
    -  4 I2C buses(Two I2C dedicated ports)
    -  2 CAN bus ports
-   -  2 Power ports(Power A is an ADC interface, Power C is a UAVCAN battery interface)
+   -  2 Power ports(Power A is an ADC interface, Power C is a DroneCAN battery interface)
    -  2 ADC input ports
    -  2 USB ports(Type C and JST-GH1.25)
  
@@ -88,7 +88,7 @@ All motor/servo outputs are DShot and PWM capable. However, mixing DShot and nor
 Battery Monitor
 ===============
 
-The autopilot includes a UAVCAN power module and battery monitor, :ref:`common-can-pmu` . Connect to one of the CAN ports and its already pre-configured for use.
+The autopilot includes a DroneCAN power module and battery monitor, :ref:`common-can-pmu` . Connect to one of the CAN ports and its already pre-configured for use.
 
 Where to Buy
 ============
