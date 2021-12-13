@@ -4,7 +4,7 @@
 RangeFinders Setup Overview
 ===========================
 
-There are many different kinds of rangefinders: Lidar (using laser or infra-red light to measure distance), Sonar (using ultrasonic sound), and Radar (using microwave RF). Some are analog, producing  pulses whose timing represent the distance to an object, others are digital sending data streams over serial to UARTs, or I2C, or even via UAVCAN.
+There are many different kinds of rangefinders: Lidar (using laser or infra-red light to measure distance), Sonar (using ultrasonic sound), and Radar (using microwave RF). Some are analog, producing  pulses whose timing represent the distance to an object, others are digital sending data streams over serial to UARTs, or I2C, or even via DroneCAN.
 
 :ref:`RangeFinders (Sonar or Lidar) <common-rangefinder-landingpage>` can be used for :ref:`Object Avoidance <common-object-avoidance-landing-page>` as well as altitude sensors for precision landing in Plane and Copter.
 
