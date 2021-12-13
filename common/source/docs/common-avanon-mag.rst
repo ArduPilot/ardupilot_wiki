@@ -6,7 +6,7 @@ Avionics Anonymous Magnetometer
 
 The `Avionics Anonymous Magnetometer <https://docs.avionicsanonymous.com/devices/minimag>`__ is a high-performance
 magnetometer for small unmanned vehicles. It includes a high-quality Memsic MMC5983MA magnetometer enabling 
-better than 1-degree heading accuracy. The device interfaces to your autopilot via a robust `UAVCAN <https://uavcan.org>`__ 
+better than 1-degree heading accuracy. The device interfaces to your autopilot via a robust `DroneCAN <https://dronecan.org>`__ 
 interface, which provides high reliability connections to peripherals over greater distances than I2C.
 
 .. figure:: ../../../images/AvAnon-MiniMag.png
