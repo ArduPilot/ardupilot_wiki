@@ -9,7 +9,9 @@ to accomplish the setup suitable for their specific needs.
 
 .. tip::
 
-   The :ref:`UAVCAN setup page is here <common-uavcan-setup-advanced>`. But the parameters below must be configured correctly in order to use the UAVCAN driver.
+   The :ref:`DroneCAN setup page is here <common-uavcan-setup-advanced>`. But the parameters below must be configured correctly in order to use the DroneCAN driver.
+
+.. note:: DroneCAN was formerly known as UAVCAN.
 
 Overview
 ========
@@ -34,7 +36,7 @@ software layer (ArduPilot) that communicates on CAN bus through these drivers.
 Each physical interface can be virtually connected to one of up to three drivers that
 represent the protocols to be used.
 For example, the most common scenario will be with all
-interfaces connected to a UAVCAN driver. Such setup will provide redundancy for devices with
+interfaces connected to a DroneCAN driver. Such setup will provide redundancy for devices with
 up to three CAN interfaces and full functionality for devices with one CAN interface.
 
 Configuration settings
@@ -51,7 +53,7 @@ port (interface).
 For example, the most common setup will have one driver and all interfaces will be connected
 to it.
 The :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` and :ref:`CAN_P2_DRIVER<CAN_P2_DRIVER>` parameters in this configuration should be set to 1 (first
-driver). And that driver ( :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>`) be set to 1 (UAVCAN).
+driver). And that driver ( :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>`) be set to 1 (DroneCAN).
 
 .. image:: ../../../images/can-driver-parameters.png
     :target: ../_images/can-driver-parameters.png
@@ -81,7 +83,7 @@ loaded with specified protocol.
 Configuration of CAN driver
 ---------------------------
 
-The driver should be set to use some protocol. Currently there is support for UAVCAN devices,
+The driver should be set to use some protocol. Currently there is support for DroneCAN devices,
 which is numbered 1, and numerous CAN ESCs.
 The parameter ``CAN_Px_PROTOCOL``, where x is the number of driver, should be filled
 with the number of protocol for this driver.
@@ -94,5 +96,5 @@ After the change to protocol the autopilot has to be rebooted for the changes to
 CAN ESCs
 ========
 
-Several types of CAN based ESCs are supported: UAVCAN, KDECAN, ToshibaCAN, and PiccoloCAN.
+Several types of CAN based ESCs are supported: DroneCAN, KDECAN, ToshibaCAN, UAVCAN, and PiccoloCAN.
 For these ESCs, each type use several parameters for configuration. See the ESC's individual description page :ref:`here<common-escs-and-motors>`.
