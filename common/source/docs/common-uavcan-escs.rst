@@ -1,10 +1,10 @@
 .. _common-uavcan-escs:
 
-===========
-UAVCAN ESCs
-===========
+=============
+DroneCAN ESCs
+=============
 
-Copter, Plane and Rover support `UAVCAN <https://uavcan.org>`__ Electronic Speed Controllers
+Copter, Plane and Rover support `DroneCAN <https://dronecan.org>`__ Electronic Speed Controllers
 (ESCs) that allow two-way communication with the autopilot
 enabling potentially easier setup and in-flight monitoring of ESC and
 motor health.
@@ -42,15 +42,15 @@ Connecting to the Flight Controller
     :target: ../_images/Pixhawk_UAVCAN_ESC.jpg
 
 One ESC (it does not matter which) should be connected to the flight controller's
-CAN port using a 4-pin DF13 to 4-pin UAVCAN adapter cable. Each
+CAN port using a 4-pin DF13 to 4-pin DroneCAN adapter cable. Each
 subsequent ESC should be connected to the previous using a 4-pin
-UAVCAN cable.  The final ESC should have a CAN bus terminator plugged
-into one of its 4-pin UAVCAN ports.
+DroneCAN cable.  The final ESC should have a CAN bus terminator plugged
+into one of its 4-pin DroneCAN ports.
 
 The FTDI Cable connection is only required for the one-time set-up
 discussed below.
 
-Alternatively, the ESC can be configured via CAN bus using the `UAVCAN GUI Tool <https://uavcan.org/GUI_Tool/>`__.
+Alternatively, the ESC can be configured via CAN bus using the `DroneCAN GUI Tool <common-uavcan-gui>`.
 
 Autopilot Setup
 ===============
@@ -59,14 +59,14 @@ There are two parameters that determine which autopilot servo/motor channels are
 For the examples below, the values are shown for CAN driver #1.
 
 -  :ref:`CAN_D1_UC_NODE<CAN_D1_UC_NODE>` - which is the node ID of the autopilot sending the commands to the ESCs so that there can be differentiation between multiple sources on the CAN bus
--  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the UAVCAN ESCs
+-  :ref:`CAN_D1_UC_ESC_BM<CAN_D1_UC_ESC_BM>` - bitmask that determines which autopilot servo/motor output signals are sent to the DroneCAN ESCs
 
 
 ESC setup using CLI
 ===================
 
 Each ESC must go through a one-time manual setup using an `FTDI cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__
-to define its UAVCAN Node Id and motor number.  In future versions of
+to define its DroneCAN Node Id and motor number.  In future versions of
 ArduPilot this will be replaced with a setup procedure using the mission
 planner (and other GCSs).
 
@@ -105,7 +105,7 @@ The steps required are:
 Logging and Reporting
 ---------------------
 
-UAVCAN ESCs provide information back to the autopilot which is recorded in the autopilot's onboard log's CESC messages and can be viewed in any :ref:`ArduPilot compatible log viewer <common-logs>`.  This information includes:
+DroneCAN ESCs provide information back to the autopilot which is recorded in the autopilot's onboard log's CESC messages and can be viewed in any :ref:`ArduPilot compatible log viewer <common-logs>`.  This information includes:
 
 - Error Count
 - Voltage
