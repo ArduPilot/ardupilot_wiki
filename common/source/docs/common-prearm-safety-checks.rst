@@ -214,7 +214,7 @@ System:
 
 **KDECAN Failed**: KDECAN system failure.
 
-**UAVCAN Failed**: UAVCAN system failure.
+**DroneCAN Failed**: DroneCAN system failure.
 
 Mission:
 --------
