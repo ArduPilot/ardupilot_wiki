@@ -1,10 +1,10 @@
 .. _common-matek-uavcan-dlvr:
 
-====================================
-Matek UAVCAN DLVR-10 Airspeed Sensor
-====================================
+======================================
+Matek DroneCAN DLVR-10 Airspeed Sensor
+======================================
 
-The Matek ASPD-DLVR is a DLVR-10 sensor with a CAN/UAVCAN or I2C interface. The DLVR airspeed sensors are the highest precision, lowest temperature drift sensors currently supported in ArduPilot. It can also be used to attach a GPS and/or Compass and present them to the autopilot as UAVCAN peripherals.
+The Matek ASPD-DLVR is a DLVR-10 sensor with a CAN/DroneCAN or I2C interface. The DLVR airspeed sensors are the highest precision, lowest temperature drift sensors currently supported in ArduPilot. It can also be used to attach a GPS and/or Compass and present them to the autopilot as DroneCAN peripherals.
 
 .. image:: ../../../images/matek-uavcan-dlvr.jpg
 
@@ -20,7 +20,7 @@ Features
 
 Interfaces:
 
-- CAN JST-GH connector,  UAVCAN Protocol
+- CAN JST-GH connector,  DroneCAN Protocol
 - I2C JST-GH connector,  for interfacing DLVR-L10D in I2C mode (I2C address 0x28)
 - Solder pads for UART1, Firmware update for non-CAN systems
 - Solder pads for UART2, Optional for external GPS
@@ -54,7 +54,7 @@ Pin        Signal Name     Voltage/Tolerance
 
 I2C Port to Autopilot for use in place of CAN (enabled by unsoldering two zero ohm resistors, see diagram below.)
 
-.. note:: Solder pad I2C bus on rear is for attaching an external compass when this port is NOT enabled, and it will be presented to the AutoPilot as a UAVCAN compass.
+.. note:: Solder pad I2C bus on rear is for attaching an external compass when this port is NOT enabled, and it will be presented to the AutoPilot as a DroneCAN compass.
 
 ========== =============== =================
 Pin        Signal Name     Voltage/Tolerance
@@ -79,12 +79,12 @@ Pin        Signal Name     Voltage/Tolerance
 UART2 (via solder pads on rear)
 ===============================
 
-Can be used to attach a GPS and present it to the autopilot as a UAVCAN device
+Can be used to attach a GPS and present it to the autopilot as a DroneCAN device
 
 UART1 (via solder pads on rear)
 ===============================
 
-For future firmware upgrades in systems not using CAN/UAVCAN
+For future firmware upgrades in systems not using CAN/DroneCAN
 
 Wiring Diagrams
 ===============
@@ -94,23 +94,23 @@ Wiring Diagrams
 Setup
 =====
 
-UAVCAN Mode
------------
+DroneCAN Mode
+-------------
 Verify the following parameters are set on your autopilot via your ground station.
 
 - :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (assuming its on the first CAN bus of the autopilot)
-- :ref:`ARSPD_TYPE<ARSPD_TYPE>` = 8 (UAVCAN)
+- :ref:`ARSPD_TYPE<ARSPD_TYPE>` = 8 (DroneCAN)
 
 if optional GPS is connected to UART2, then set
 
-- :ref:`GPS_TYPE<GPS_TYPE>` = 9 (UAVCAN) or if it will be the secondary GPS, set instead
-- :ref:`GPS_TYPE2<GPS_TYPE2>` = 9 (UAVCAN)
+- :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN) or if it will be the secondary GPS, set instead
+- :ref:`GPS_TYPE2<GPS_TYPE2>` = 9 (DroneCAN)
 
 
 
 - Reboot
 
-Make sure the UAVCAN compass driver is not disabled if an optional external Compass is connected to the rear I2C pads:. (:ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` bit 9 should not be set). 
+Make sure the DroneCAN compass driver is not disabled if an optional external Compass is connected to the rear I2C pads:. (:ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` bit 9 should not be set). 
 
 
 I2C Mode
@@ -124,7 +124,7 @@ I2C Mode
 Firmware Update
 ---------------
 
-Firmware may be updated in the future to include the option of MSP connectivity. See `here <http://www.mateksys.com/?portfolio=aspd-dlvr#tab-id-4>`_  for instructions for using the firmware update UART1 pads, or if using UAVCAN, see instructions :ref:`here <common-mp-slcan>`
+Firmware may be updated in the future to include the option of MSP connectivity. See `here <http://www.mateksys.com/?portfolio=aspd-dlvr#tab-id-4>`_  for instructions for using the firmware update UART1 pads, or if using DroneCAN, see instructions :ref:`here <common-mp-slcan>`
 
 Where to Buy
 ------------
