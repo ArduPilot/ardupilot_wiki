@@ -78,8 +78,8 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Start/Stop Switch <startstop-switch>
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
-    UAVCAN Adapter Node <common-uavcan-adapter-node>
-    UAVCAN Peripherals <common-uavcan-peripherals>
+    DroneCAN Adapter Node <common-uavcan-adapter-node>
+    DroneCAN Peripherals <common-uavcan-peripherals>
     Video (High Defintion) <common-video-landingpage>
 [site wiki="copter"]
     Winch <common-daiwa-winch>
