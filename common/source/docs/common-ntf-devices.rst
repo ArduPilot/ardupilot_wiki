@@ -29,7 +29,7 @@ In order to use any of these, they must be selected using the :ref:`NTF_LED_TYPE
 +-------+---------------------------------------+
 |  4	| Oreo LED (Solo specific)              |
 +-------+---------------------------------------+
-|  5	| UAVCAN                                |
+|  5	| DroneCAN                              |
 +-------+---------------------------------------+
 |  6	| NCP5623 External  I2C                 |
 +-------+---------------------------------------+
