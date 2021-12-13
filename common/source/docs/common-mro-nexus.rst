@@ -49,7 +49,7 @@ Specifications
 
 -  **Interfaces/Connectivity**
 
-   -  Dual CAN/UAVCAN ports
+   -  Dual CAN/DroneCAN ports
    -  MicroSD card reader
    -  Micro-C USB
    -  RGB LED
