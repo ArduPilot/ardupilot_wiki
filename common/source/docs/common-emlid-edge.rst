@@ -4,7 +4,7 @@
 Archived: Emlid Edge
 ====================
 
-The `Emlid Edge <https://emlid.com/edge/>`__ is an advanced autopilot with HDMI video input and 5.8 GHz data link which allows full HD video streaming and telemetry up to 2 km.  Dual temperature-controlled IMUs, external UAVCAN GNSS module and a wide range power module based on Hall sensor.
+The `Emlid Edge <https://emlid.com/edge/>`__ is an advanced autopilot with HDMI video input and 5.8 GHz data link which allows full HD video streaming and telemetry up to 2 km.  Dual temperature-controlled IMUs, external DroneCAN GNSS module and a wide range power module based on Hall sensor.
 
 ..  youtube:: Mx0m5U49tb4
     :width: 100%
