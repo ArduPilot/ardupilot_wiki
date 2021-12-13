@@ -4,7 +4,7 @@
 NEO V2 Pro GPS
 ==============
 
-NEO V2 pro is UAVCAN standard GPS developed by CUAV. It integrates industrial-grade compass, barometer, flight controller status light, buzzer, and safety switch all in one package. It has the characteristics of high safety and strong interference resistance.
+NEO V2 pro is DroneCAN standard GPS developed by CUAV. It integrates industrial-grade compass, barometer, flight controller status light, buzzer, and safety switch all in one package. It has the characteristics of high safety and strong interference resistance.
 
 .. image:: ../../../images/cuav-neo-v2-pro/neo-v2-pro.png
 	:target: ../_images/neo-v2-pro.png
@@ -92,7 +92,7 @@ Connect to CUAV v5+
 
     The connection to other flight controllers is similar.
 
-Enable CAN port, UAVCAN, and Configure for NEO-V2 Pro
+Enable CAN port, DroneCAN, and Configure for NEO-V2 Pro
 =====================================================
 
 See :ref:`common-canbus-setup-advanced` and :ref:`common-uavcan-setup-advanced` for more information.
@@ -149,16 +149,16 @@ Modify the following parameters in the Full Parameter tab of Mission Planner.
 NEO-V2 Internal Configuration
 =============================
 
-ArduPilot supports setting UAVCAN device internal settings through SLCAN, such as modifying node ID; enabling / disabling barometer, etc.
+ArduPilot supports setting DroneCAN device internal settings through SLCAN, such as modifying node ID; enabling / disabling barometer, etc.
 
 .. image:: ../../../images/cuav-neo-v2-pro/upgrade-firmware/slcan3.png
 	:target: ../_images/slcan3.png
 	
 #. Select the COMM port corresponding to SLCAN.
-#. Select the UAVCAN section under Initial Setup>Optional Hardware tab.
+#. Select the DroneCAN section under Initial Setup>Optional Hardware tab.
 #. Click "SLCAN NODE CAN1"  and
 #. Click "Inspector"
-#. Change configuration parameters for UAVCAN device
+#. Change configuration parameters for DroneCAN device
 
 **Enable barometer**
 
@@ -179,7 +179,7 @@ Firmware upgrade using Mission planner
 	:target: ../_images/slcan.png
 
 #. Select the COMM port corresponding to SLCAN.
-#. Click "SLCAN NODE CAN1" on the UAVCAN section under Initial Setup>Optional Hardware tab.
+#. Click "SLCAN NODE CAN1" on the DroneCAN section under Initial Setup>Optional Hardware tab.
 #. Click "Update"
 #. Select "NO" in the pop-up prompt box (Tes is to select online firmware; No selects local firmware).
 #. Select firmware file.
@@ -191,9 +191,9 @@ Firmware upgrade using Mission planner
 
 **Method Two：**
 
-Upgrade with UAVCAN GUI TOOL software
+Upgrade with DroneCAN GUI TOOL software
 
-`UAVCAN GUI TOOL download <https://github.com/UAVCAN/gui_tool/releases>`__.
+`DroneCAN GUI TOOL <https://github.com/DroneCAN/gui_tool>`__.
 
 - Select the device port corresponding to SLCAN and click "ok"
 
