@@ -9,7 +9,7 @@ richly-featured Air Data Computer (ADC) for small unmanned airplanes. It include
 pressure sensor for 10cm-resolution altitude, a Honeywell RSC-series differential pressure transducer 
 for extremely accurate airspeed, and a thermistor interface with high-resolution convertor for air 
 temperature measurement with better than 1 degree precision. The device interfaces to your autopilot 
-via a robust `UAVCAN <https://uavcan.org>`__ interface, which provides high reliability connections 
+via a robust `DroneCAN <https://dronecan.org>`__ interface, which provides high reliability connections 
 to peripherals over greater distances than I2C.
 
 .. figure:: ../../../images/AvAnon-MicroADC.png
