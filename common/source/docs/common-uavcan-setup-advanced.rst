@@ -26,7 +26,7 @@ Detailed description of protocol can be found at https://uavcan.org/
 
 
 DroneCAN Peripheral Types Supported
-=================================
+===================================
 
 Ardupilot currently supports the following types of DroneCAN peripherals:
 
@@ -50,12 +50,12 @@ DroneCAN device type is selected by:
 
 
 DroneCAN Adapter Node
-===================
+=====================
 
 These devices are general purpose DroneCAN nodes with I/O ports that allow the attachment of non-DroneCAN ArduPilot peripherals to the DroneCAN bus via UART ports, I2C, SPI, and/or GPIOs. See :ref:`DroneCAN Adapter Nodes<common-uavcan-adapter-node>` .
 
 DroneCAN ESC and Servo Configuration settings
-===========================================
+=============================================
 See :ref:`common-uavcan-escs` for information on DroneCAN ESCs.
 
 Each DroneCAN ESC or Servo will have an programmed ID or channel address corresponding to the autopilot's servo/motor output channel. These are set by switches on the ESC or via a setup/configuration program, depending on the ESC.
@@ -93,17 +93,17 @@ The ``TYPE`` parameter should be set to 9 for corresponding GPS receiver in auto
 
 
 DroneCAN LED configuration
-========================
+==========================
 
 DroneCAN LEDs are enabled by setting bit 5 in the :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bitmask.
 
 DroneCAN Rangefinder configuration
-================================
+==================================
 
 Set ``RNGFNDx_TYPE`` = 24 to enable DroneCAN rangefinder type. Rangefinder data received over DroneCAN will only be used if the received sensor_id matches the parameter ``RNGFNDx_ADDR``. For AP_Periph firmware based adaptor nodes, this value is 0, so ``RNGFNDx_ADDR`` must be set to 0. Other DroneCAN rangefinders may differ. See also :ref:`DroneCAN Adaptor Node<common-uavcan-adapter-node>` instructions.
 
 DroneCAN Node ID Conflicts
-========================
+==========================
 
 When a device is attached and recognized, it's node ID and hardware ID are entered into a database which is stored between power cycles. If multiple devices with the same node ID and different hardware IDs are used (swapping smart batteries, for example, with the same node ID), a conflict will arise in the database. This will require the use of the :ref:`CAN_D1_UC_OPTION<CAN_D1_UC_OPTION>` parameter to allow the database to be reset on the next boot, or conflicts in the database to be ignored.
 

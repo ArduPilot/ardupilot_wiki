@@ -102,7 +102,7 @@ Connect to CUAV v5+
     The connection to other flight controllers is similar.
 
 Enable CAN port, DroneCAN, and Configure for NEO-V2 Pro
-=====================================================
+=======================================================
 
 See :ref:`common-canbus-setup-advanced` and :ref:`common-uavcan-setup-advanced` for more information.
 
