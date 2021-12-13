@@ -17,7 +17,7 @@ The modular design allows the users to customize their own carrier board and is 
 - Supports High Speed USB (480mb/s), can download logs faster
 - Supports more DShot outputs
 - Supports IMU heating, making the sensor more consistent
-- Dedicated UAVCAN battery port
+- Dedicated DroneCAN battery port
 - 3 sets of IMU sensors
 
 Specifications
@@ -54,7 +54,7 @@ Specifications
    -  2 GPS ports(GPS and UART4 ports)
    -  4 I2C buses(Two external I2C ports)
    -  2 CAN bus ports
-   -  2 Power ports(Power A is an ADC interface, Power C is a UAVCAN battery interface)
+   -  2 Power ports(Power A is an ADC interface, Power C is a DroneCAN battery interface)
    -  2 ADC inputs
    -  1 High Speed (480mb/s)USB port
 
@@ -84,7 +84,7 @@ All motor/servo outputs are DShot and PWM capable. However, mixing DShot and nor
 Battery Monitor
 ===============
 
-The autopilot includes a UAVCAN power module and battery monitor, :ref:`common-can-pmu` . Connect to one of the CAN ports and its already pre-configured for use.
+The autopilot includes a DroneCAN power module and battery monitor, :ref:`common-can-pmu` . Connect to one of the CAN ports and its already pre-configured for use.
 
 Where to Buy
 ============
