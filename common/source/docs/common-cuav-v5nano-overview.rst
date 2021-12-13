@@ -96,7 +96,7 @@ Interfaces
     +------------------+--------------------------------------------------------------+
     | I2C2/I2C3/I2C4   | External I2C (Compass / rangefinder etc)                     |
     +------------------+--------------------------------------------------------------+
-    | CAN1/CAN2        | CANBUS (UAVCAN, KDECAN, ToshibaCAN)                          |
+    | CAN1/CAN2        | CANBUS (DroneCAN, KDECAN, ToshibaCAN)                        |
     +------------------+--------------------------------------------------------------+
     | GPS & SAFETY     | CUAV NEO v2 GPS with compass, safety switch, LED, buzzer     |
     +------------------+--------------------------------------------------------------+
