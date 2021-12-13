@@ -12,7 +12,7 @@ Option #1: Using the Mission Planner
 
 Mission Planner has a dedicated **Reset to Default** button. This will reset all parameters to the vehicle's defaults.
 
-.. note:: It will not reset the UAVCAN dynamic node address table. The other parameter reset methods listed below will also reset that table so that new devices can use previous addresses of devices that are being replaced.
+.. note:: It will not reset the DroneCAN dynamic node address table. The other parameter reset methods listed below will also reset that table so that new devices can use previous addresses of devices that are being replaced.
 
 - Connect the autopilot to *Mission Planner*, and on the **CONFIG \| Full Parameter List** or **Full Parameter Tree** page push the **Reset to Default** button.
 
