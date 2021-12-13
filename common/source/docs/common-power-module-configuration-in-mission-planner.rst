@@ -41,7 +41,7 @@ then you can select **Other**, enter its recommended values, or
 Other Types of Power Modules/Smart Batteries
 --------------------------------------------
 
-In addition to normal analog voltage and current sensing modules, ArduPilot supports a wide range of SMBus, UAVCAN/CAN power modules and Smart Batteries. (In the following, the first monitor's parameters are shown. Each of the other monitors have their own parameters.)
+In addition to normal analog voltage and current sensing modules, ArduPilot supports a wide range of SMBus, DroneCAN/CAN power modules and Smart Batteries. (In the following, the first monitor's parameters are shown. Each of the other monitors have their own parameters.)
 
 These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor. These can be set directly via the CONFIG/Parameter Tree tab for each battery monitor. Here are the monitor types supported:
 
@@ -54,7 +54,7 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 5 	                                    Solo
 6 	                                    Bebop
 7 	                                    :ref:`SMBus-Generic<common-smart-battery-landingpage>`
-8 	                                    UAVCAN-BatteryInfo
+8 	                                    DroneCAN-BatteryInfo
 9 	                                    :ref:`ESC<common-dshot-blheli32-telemetry>`
 10 	                                    SumOfFollowing
 11 	                                    :ref:`FuelFlow <common-fuel-sensors>`
@@ -71,7 +71,7 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 Other Parameters
 ----------------
 
-- :ref:`BATT_OPTIONS<BATT_OPTIONS>` bit 0, if set, will ignore the State Of Charge field in UAVCAN moniotrs, since some do not populate this field with meaningful data.
+- :ref:`BATT_OPTIONS<BATT_OPTIONS>` bit 0, if set, will ignore the State Of Charge field in DroneCAN moniotrs, since some do not populate this field with meaningful data.
 - :ref:`BATT_SUM_MASK<BATT_SUM_MASK>` is used if the monitor is type "10" (SumofFollowing) to select which of the higher numbered monitors values will be summed and displayed for this monitor.
 - :ref:`BATT_ARM_VOLT<BATT_ARM_VOLT>` is the minimum voltage reported from this monitor that will allow arming to occur.
 - :ref:`BATT_ARM_MAH<BATT_ARM_MAH>` is the minimum capacity remaining reported from this monitor that will allow arming to occur.
