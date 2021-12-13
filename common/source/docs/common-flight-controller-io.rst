@@ -148,7 +148,7 @@ Often these outputs are provided on 3 pin connector strips supplying or distribu
 CAN
 ---
 
-:ref:`CAN <common-canbus-setup-advanced>` bus is provided on many autopilots for use with :ref:`UAVCAN <common-uavcan-setup-advanced>` peripherals. ESCs, GPS/Compass, Rangefinders, and many other peripherals and sensors are being added to the list of available UAVCAN devices everyday. CAN provides a robust method of communicating with peripherals with data integrity, even with long leads.
+:ref:`CAN <common-canbus-setup-advanced>` bus is provided on many autopilots for use with :ref:`DroneCAN <common-uavcan-setup-advanced>` peripherals. ESCs, GPS/Compass, Rangefinders, and many other peripherals and sensors are being added to the list of available DroneCAN devices everyday. CAN provides a robust method of communicating with peripherals with data integrity, even with long leads.
 
 
 Signals
