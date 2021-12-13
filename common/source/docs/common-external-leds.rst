@@ -5,7 +5,7 @@ External LEDs
 =============
 
 An external LED or LED Display can be added by connecting it to the autopilot's
-I2C port or, in 4.0 and later versions, if a serially programmed device, via an output using the SERVOx_FUNCTION for that output. UAVCAN LEDs on the CANBUS are also supported (See :ref:`UAVCAN Setup <common-uavcan-setup-advanced>` ).
+I2C port or, in 4.0 and later versions, if a serially programmed device, via an output using the SERVOx_FUNCTION for that output. DroneCAN LEDs on the CANBUS are also supported (See :ref:`DroneCAN Setup <common-uavcan-setup-advanced>` ).
 
 .. note:: Note that the same grouping restrictions which apply to setting outputs to different PWM rates and/or DShot, apply to LEDs also since the timer associated with each group of outputs cannot be used for different rates. See also  :ref:`Mixing ESC Protocols<mixing-escs>` 
 
