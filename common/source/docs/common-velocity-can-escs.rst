@@ -16,7 +16,7 @@ Designed for driving extremely large motors for heavy-lift applications, the Vel
 - Fully isolated communication interface
 - Designed and manufactured in Australia
 
-The Velocity ESC provides a CAN communication interface for commands and telemetry. A traditional digital PWM interface is also supported. They can be obtained with either PiccoloCAN or UAVCAN protocol firmware.
+The Velocity ESC provides a CAN communication interface for commands and telemetry. A traditional digital PWM interface is also supported. They can be obtained with either PiccoloCAN or DroneCAN protocol firmware.
 
 Additionally, the Velocity ESC provides an optional hardware interlock for increased operator safety.
 
@@ -34,7 +34,7 @@ Connection and Configuration
 
 To enable communication with the Velocity ESCs using PiccoloCAN, the following parameters must be set.
 
-- Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 4 (PiccoloCAN) or = "1" (UAVCAN)
+- Set :ref:`CAN_D1_PROTOCOL <CAN_D1_PROTOCOL>` = 4 (PiccoloCAN) or = "1" (DroneCAN)
 - Set :ref:`CAN_P1_DRIVER <CAN_P1_DRIVER>` = 1 (First driver) to specify that the ESCs are connected to the CAN1 port
 [site wiki="copter,rover"]
 - Set :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` = 1000 and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` = 2000 so ArduPilot uses an output range that matches the ESCs input range
