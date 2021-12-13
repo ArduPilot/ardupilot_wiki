@@ -23,14 +23,14 @@ Click on SLCan Mode CAN1, and any attached DroneCAN nodes using Driver 1 will ap
 .. image:: ../../../images/can-slcan-mpc.png
 
 Making Changes to DroneCAN Devices
-================================
+==================================
 
 Once SLCAN has been enabled, you can use :ref:`Mission Planner <common-mp-slcan>`  to make changes immediately to device parameters or firmware update.
 
 :ref:`DroneCAN GUI tool <common-uavcan-gui>` can also be used, but requires a slightly different setup: 
 
 Enabling Use of DroneCAN GUI
-==========================
+============================
 
 Connect the flight autopilot to Mission Planner. Set the parameter :ref:`CAN_SLCAN_CPORT<CAN_SLCAN_CPORT>` = 1 , if not already set, and reboot.
 

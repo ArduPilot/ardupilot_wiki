@@ -28,7 +28,7 @@ The first generation was based on the f103 processor, while current generation u
 `Schematic <https://github.com/ArduPilot/Schematics/blob/master/mRobotics/mRo_CANnode_V1_R1.pdf>`__
 
 Features
-=========
+========
 
 The AP_Periph DroneCAN firmware can be configured to enable a wide range of
 DroneCAN sensor types. Support is included for:
@@ -113,6 +113,6 @@ Rangefinder
  	The RNGFNDx_ADDR Ardupilot parameter must be set above 0 and be equal to the number set on the DroneCAN adapter node.
 
 DroneCAN Adapter Nodes
-====================
+======================
 
 :ref:`mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>`
