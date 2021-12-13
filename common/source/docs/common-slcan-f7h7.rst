@@ -6,7 +6,7 @@ SLCAN Access on F7/H7 Based Autopilots
 
 Enabling SLCAN allows the autopilot to connect to CANBUS through USB on PC.
 It allows viewing, configuration and software updates of devices connected to the CANBUS.
-There are two different applications for using SLCAN to modify UAVCAN device parameters: UAVCAN GUI or Mission Planner. But first, the SLCAN interface must be enabled.
+There are two different applications for using SLCAN to modify DroneCAN device parameters: DroneCAN GUI or Mission Planner. But first, the SLCAN interface must be enabled.
 
 SLCAN Interface
 ===============
@@ -25,14 +25,14 @@ Configuring SLCAN SERIALx PORT
 Connect to Mission Planner. In the Full Parameters list set the highest numbered ``SERIALx_PROTOCOL`` to 22 and reboot. Now only the non SLCAN USB COM port will connect to Mission Planner and the SLCAN port will be ready for use.
 
 
-Making Changes to UAVCAN Devices
-================================
+Making Changes to DroneCAN Devices
+==================================
 
 Once SLCAN has been enabled, you can use :ref:`Mission Planner <common-mp-slcan>`  to make changes immediately to device parameters or firmware update.
 
-:ref:`UAVCAN GUI tool <common-uavcan-gui>` can also be used
+:ref:`DroneCAN GUI tool <common-uavcan-gui>` can also be used
 
-here is an example video of configuring a UAVCAN/DroneCAN power monitor device:
+here is an example video of configuring a DroneCAN power monitor device:
 
 .. youtube:: 5bUyms6UPao
 
