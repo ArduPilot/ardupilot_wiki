@@ -1,10 +1,10 @@
 .. _common-matek-m8q:
 
-=================================
-Matek M8Q UAVCAN/MSP GPS/MAG/BARO
-=================================
+===================================
+Matek M8Q DroneCAN/MSP GPS/MAG/BARO
+===================================
 
-Based on ArudPilots' AP_Pheriph firmware, the Matek M8Q is a GPS+COMPASS+BAROMETER peripheral with CAN/UAVCAN and MSP interfaces to the autopilot, plus an I2C expansion bus for additional peripherals, such as airspeed sensors. 
+Based on ArudPilots' AP_Pheriph firmware, the Matek M8Q is a GPS+COMPASS+BAROMETER peripheral with CAN/DroneCAN and MSP interfaces to the autopilot, plus an I2C expansion bus for additional peripherals, such as airspeed sensors. 
 
 .. image:: ../../../images/M8Q-CAN_2.jpg
 
@@ -22,7 +22,7 @@ ArduPilot AP_Periph F303 CAN node integrating:
       - Blinking(1Hz) when GPS has 3D fixed
   - Boot button
 Interfaces:
-  - CAN,/UAVCAN Connection to autopilot
+  - CAN,/DroneCAN Connection to autopilot
   - I2C JST-GH connector, external AirSpeed sensor
   - UART for alternate connection to autopilot via MSP
   - JST-GH connectors
@@ -44,19 +44,19 @@ Wiring
 Setup
 =====
 
-UAVCAN
-------
+DroneCAN
+--------
 - :ref:`CAN_D1_PROTOCOL<CAN_D1_PROTOCOL>`   = 1
 - :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>`       = 1
-- :ref:`GPS_TYPE<GPS_TYPE>`                 = 9 (UAVCAN)
-- :ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` = 0 (or make sure UAVCAN bit is not checked)
+- :ref:`GPS_TYPE<GPS_TYPE>`                 = 9 (DroneCAN)
+- :ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` = 0 (or make sure DroneCAN bit is not checked)
 
 if Airspeed sensor is connected to I2C port,
 
-- :ref:`ARSPD_TYPE<ARSPD_TYPE>`   = 	8 (UAVCAN)
+- :ref:`ARSPD_TYPE<ARSPD_TYPE>`   = 	8 (DroneCAN)
 - :ref:`ARSPD_USE<ARSPD_USE>`     = 	1
 
-The default airspeed sensor is expected to be a "DLVR-L10D" type , if not then you must use the SL-CAN interface to set and type in the internal firmware. In Mission Planner go to Setup > Optional Hardware > UAVCAN >  SLCan Mode CAN1  > Parameters
+The default airspeed sensor is expected to be a "DLVR-L10D" type , if not then you must use the SL-CAN interface to set and type in the internal firmware. In Mission Planner go to Setup > Optional Hardware > UAVCAN(DroneCAN) >  SLCan Mode CAN1  > Parameters
 
 if using an:
 
