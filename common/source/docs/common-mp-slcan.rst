@@ -9,7 +9,7 @@ connected to the CANBUS port of the flight controller.
 
 Before the autopilot can be connected to Mission Planner using SLCAN, parameters have to be configured. See :ref:`common-slcan-f4` or :ref:`common-slcan-f7h7` for setup information. If Mission Planner is in the disconnected state, make sure the SLCAN port is shown as the selected COM port in the drop down box in the upper right corner of Mission Planner.
 
-In Mission Planner, navigate to Initial Setup->Optional Hardware->DroneCAN
+In Mission Planner, navigate to Initial Setup->Optional Hardware->UAVCAN(DroneCAN)
 click on the highlighted red button. 
 
 .. image:: ../../../images/can-drivers-parameters-slcan-mp.png
