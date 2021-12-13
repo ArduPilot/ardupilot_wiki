@@ -19,17 +19,17 @@ GPS
     Avionics Anonymous GNSS + Compass<common-avanon-gnss-mag>
     Avionics Anonymous Compass<common-avanon-mag>
     Beitain BN-220 GPS / BN-880 GPS + Compass Module <common-beitian-gps>
-    CUAV Neo v2 Pro UAVCAN GPS <common-cuav-neo-v2-pro>
-    CUAV Neo 3 Pro UAVCAN GPS <common-cuav-neo-3-pro>
+    CUAV Neo v2 Pro DroneCAN GPS <common-cuav-neo-v2-pro>
+    CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
     CUAV Neo 3（M9N) GPS <common-cuav-neo-3>
-    Hex Here 2 UAVCAN GPS/Gyro/IMU/Baro <http://www.proficnc.com/all-products/152-gps-module.html>
+    Hex Here 2 DroneCAN GPS/Gyro/IMU/Baro <http://www.proficnc.com/all-products/152-gps-module.html>
     Holybro Micro M8N GPS Module <https://shop.holybro.com/micro-m8n-gps_p1009.html> 
     Holybro Nano Ublox M8 5883 GPS Module <https://shop.holybro.com/nano-ublox-m8-5883-gps-module_p1236.html> 
     Holybro M8N (Pixhawk 4) GPS Module <https://shop.holybro.com/pixhawk-4-gps-module_p1094.html>
     Holybro M9N GPS Module <http://www.holybro.com/product/holybro-m9n-gps/>
-    Matek M8Q-CAN/UAVCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
-    mRo GPS, GPS+Compass,RTK, and UAVCAN modules <https://store.mrobotics.io/category-s/109.htm>
-    mRo Locaton One UAVCAN GPS/Compass <common-mrobotics-location-one-gps>
+    Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
+    mRo GPS, GPS+Compass,RTK, and DroneCAN modules <https://store.mrobotics.io/category-s/109.htm>
+    mRo Locaton One DroneCAN GPS/Compass <common-mrobotics-location-one-gps>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
 
 RTK GPS
