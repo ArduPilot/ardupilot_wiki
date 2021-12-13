@@ -1,10 +1,10 @@
 .. _common-mro-kitcan:
 
-=====================================================
-mRobotics KitCAN CAN/UAVCAN Adapter Node+Compass+Baro
-=====================================================
+=======================================================
+mRobotics KitCAN CAN/DroneCAN Adapter Node+Compass+Baro
+=======================================================
 
-The next generation of integration from the mRo :ref:`CAN/UAVCAN Adapter Node <common-mro-uavcan-adapter-node>`, the KitCAN integrates an ultra high precision magnetometer and barometer, in addition to providing an easy means of interfacing conventional GPS and Airspeed Sensors to UAVCAN, using a single CAN bus connection to the autopilot. It also includes an RGB LED and Arm Switch/Button.
+The next generation of integration from the mRo :ref:`CAN/DroneCAN Adapter Node <common-mro-uavcan-adapter-node>`, the KitCAN integrates an ultra high precision magnetometer and barometer, in addition to providing an easy means of interfacing conventional GPS and Airspeed Sensors to DroneCAN, using a single CAN bus connection to the autopilot. It also includes an RGB LED and Arm Switch/Button.
 
 
 .. image:: ../../../images/mro-kitcan.png
@@ -12,9 +12,9 @@ The next generation of integration from the mRo :ref:`CAN/UAVCAN Adapter Node <c
 Features
 ========
 
-- UAVCAN to GPS (UART interface)
-- UAVCAN to I2C Airspeed Sensor (MS5525 default configuration) and/or MAGNETOMETER (autodetect)
-- UAVCAN integrated peripherals:
+- DroneCAN to GPS (UART interface)
+- DroneCAN to I2C Airspeed Sensor (MS5525 default configuration) and/or MAGNETOMETER (autodetect)
+- DroneCAN integrated peripherals:
    - RM3100 High Precision Magnetometer
    - DPS310 Barometer
    - RGB LED
@@ -77,25 +77,25 @@ Setup
 Verify the following parameters are set on your autopilot via your ground station.
 
 - :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 (assuming its on the first CAN bus of the autopilot)
-- :ref:`GPS_TYPE<GPS_TYPE>` = 9 (UAVCAN) or if it will be the secondary GPS, set instead
-- :ref:`GPS_TYPE2<GPS_TYPE2>` = 9 (UAVCAN)
+- :ref:`GPS_TYPE<GPS_TYPE>` = 9 (DroneCAN) or if it will be the secondary GPS, set instead
+- :ref:`GPS_TYPE2<GPS_TYPE2>` = 9 (DroneCAN)
 - Reboot
 
-Make sure the UAVCAN compass driver is not disabled. (:ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` bit 9 should not be set). 
+Make sure the DroneCAN compass driver is not disabled. (:ref:`COMPASS_TYPEMASK<COMPASS_TYPEMASK>` bit 9 should not be set). 
 
 If your controller has multiple compasses attached already, you may want to set the attached compass as a higher priority than others, if it has better precision or performance.
 
 To enable the integrated I2C RGB LED set:
 
-- :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bit 5 (UAVCAN) should be set in the autopilot. 
+- :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` bit 5 (DroneCAN) should be set in the autopilot. 
 
 The integrated safety switch is automatically used, if the autopilot has enabled the use of safety switches via :ref:`BRD_SAFETYENABLE<BRD_SAFETYENABLE>` is "1" (default).
 
 If you want to enable an attached I2C airspeed sensor, set:
 
-- :ref:`ARSPD_TYPE<ARSPD_TYPE>` = 8 (UAVCAN)
+- :ref:`ARSPD_TYPE<ARSPD_TYPE>` = 8 (DroneCAN)
 
-If the attached sensor is not an MS5525 type with I2C address 0x76, then you must access your KitCAN's CAN parameters to select Airspeed type being attached to the adapter. Using Mission Planner (or :ref:`common-uavcan-gui`), go to the menu SETUP/Optional Hardware/UAVCAN/SLCan Mode CAN1/Parameters. Once the CAN Adapters parameters appear, change the following (this changes them inside the UAVCAN adapter, NOT the autopilot, allowing the adapter to use the correct driver and convert the information to UAVCAN airspeed format):
+If the attached sensor is not an MS5525 type with I2C address 0x76, then you must access your KitCAN's CAN parameters to select Airspeed type being attached to the adapter. Using Mission Planner (or :ref:`common-uavcan-gui`), go to the menu SETUP/Optional Hardware/DroneCAN/SLCan Mode CAN1/Parameters. Once the CAN Adapters parameters appear, change the following (this changes them inside the DroneCAN adapter, NOT the autopilot, allowing the adapter to use the correct driver and convert the information to DroneCAN airspeed format):
 
 - :ref:`ARSPD_TYPE<ARSPD_TYPE>` = 4 (is default for an I2C-MS5525 with an 0x76 address which prevents conflict with the DSP310 integrated onboard with address 0x77). If another sensor is used, change the type to match that sensor.
 - :ref:`ARSPD_USE<ARSPD_USE>` =  1
@@ -106,7 +106,7 @@ Then reboot.
 Firmware
 ========
 
-This device uses the "f303-M100025" firmware located at https://firmware.ardupilot.org/AP_Periph. See the :ref:`SLCAN section of UAVCAN advanced setup<common-uavcan-setup-advanced>` for downloading instructions, if changes are desired or updates become available.
+This device uses the "f303-M100025" firmware located at https://firmware.ardupilot.org/AP_Periph. See the :ref:`SLCAN section of DroneCAN advanced setup<common-uavcan-setup-advanced>` for downloading instructions, if changes are desired or updates become available.
 
 Where to Buy
 ============
