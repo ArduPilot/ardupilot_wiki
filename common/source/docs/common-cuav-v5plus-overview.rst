@@ -99,7 +99,7 @@ Interfaces
     +------------------+--------------------------------------------------------------+
     | SBUS Out         | SBUS output for peripherals: gimbal / camera etc             |
     +------------------+--------------------------------------------------------------+
-    | CAN1/CAN2        | CANBUS (UAVCAN, KDECAN, ToshibaCAN)                          |
+    | CAN1/CAN2        | CANBUS (DroneCAN, KDECAN, ToshibaCAN)                        |
     +------------------+--------------------------------------------------------------+
     | GPS & SAFETY     | CUAV NEO v2 GPS with compass, safety switch, LED, buzzer     |
     +------------------+--------------------------------------------------------------+
