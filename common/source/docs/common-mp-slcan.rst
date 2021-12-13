@@ -9,13 +9,13 @@ connected to the CANBUS port of the flight controller.
 
 Before the autopilot can be connected to Mission Planner using SLCAN, parameters have to be configured. See :ref:`common-slcan-f4` or :ref:`common-slcan-f7h7` for setup information. If Mission Planner is in the disconnected state, make sure the SLCAN port is shown as the selected COM port in the drop down box in the upper right corner of Mission Planner.
 
-In Mission Planner, navigate to Initial Setup->Optional Hardware->UAVCAN
+In Mission Planner, navigate to Initial Setup->Optional Hardware->DroneCAN
 click on the highlighted red button. 
 
 .. image:: ../../../images/can-drivers-parameters-slcan-mp.png
 
 The autopilot will connect to Mission Planner using SLCAN, the window will populate with
-UAVCAN nodes connected.
+DroneCAN nodes connected.
 
 .. image:: ../../../images/can-slcan-mpc.png
 
@@ -35,7 +35,7 @@ The Window will show Firmware being uploaded and a pop up will show status.
 
 .. image:: ../../../images/can-slcan-mp-updw.png
 
-Once complete mode will change to ``OPERATIONAL``, press the ``Parameters`` button to access node settings. From here UAVCAN device parameters can be accessed or changed.
+Once complete mode will change to ``OPERATIONAL``, press the ``Parameters`` button to access node settings. From here DroneCAN device parameters can be accessed or changed.
 
 .. image:: ../../../images/can_slcan_mp_param.png
 
