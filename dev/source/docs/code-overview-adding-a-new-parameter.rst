@@ -264,11 +264,11 @@ From time to time parameters need to be altered or renamed. ArduPilot has capabi
 
 **Step #2:** In order to figure out the keys for conversion:
 
-    * Set the AP_PARAM_KEY_DUMP definition to "1" [here in AP_Param.h](https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Param/AP_Param.h#L36)
+    * Set the AP_PARAM_KEY_DUMP definition to "1" `here in AP_Param.h <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Param/AP_Param.h#L36>`__
 
     * Start the old code in SITL and all the parameter names and their magic numbers will be displayed
 
-    * Copy-paste from Copter's Parameters.cpp file's [existing parameter conversion tables like the ones done for the attitude controller's filters](https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L1219).
+    * Copy-paste from Copter's Parameters.cpp file's `existing parameter conversion tables like the ones done for the attitude controller gains <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/Parameters.cpp#L1247>`__.
 
 Parameter Conversion Expiration
 ===============================
