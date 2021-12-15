@@ -8,7 +8,7 @@ This article lists the MAVLink commands that Copter accepts.  Normally these com
 
 .. note::
 
-   The Copter code which processes these commands can be found `here in GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp#L676>`__
+   The Copter code which processes these commands can be found `here in GCS_Mavlink.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/GCS_Mavlink.cpp#L683>`__
 
 Movement commands
 =================
@@ -109,7 +109,7 @@ This section contains details of MAVLink commands to move the vehicle
 SET_POSITION_TARGET_LOCAL_NED
 -----------------------------
 
-Set the vehicle's target position, velocity, heading or turn rate.  The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__
+Set the vehicle's target position (as an offset in NED from the EKF origin), velocity, acceleration, heading or turn rate.  The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_LOCAL_NED>`__
 
 .. raw:: html
 
@@ -145,13 +145,13 @@ Bitmask to indicate which fields should be **ignored** by the vehicle (see POSIT
 
 bit1:PosX, bit2:PosY, bit3:PosZ, bit4:VelX, bit5:VelY, bit6:VelZ, bit7:AccX, bit8:AccY, bit9:AccZ, bit11:yaw, bit12:yaw rate
 
-When providing Pos or Vel all 3 axis must be provided
+When providing Pos, Vel or Accel all 3 axis must be provided
 
 - Use Position : 0b110111111000 / 0x0DF8 / 3576 (decimal)
 - Use Velocity : 0b110111000111 / 0x0DC7 / 3527 (decimal)
+- Use Acceleration : 0b110000111000 / 0x0C38 / 3128 (decimal)
 - Use Pos+Vel : 0b110111000000 / 0x0DC0 / 3520 (decimal)
-
-Acceleration not supported
+- Use Pos+Vel+Accel : 0b110000000000 / 0x0C00 / 3072 (decimal)
    
 .. raw:: html
    
@@ -181,17 +181,17 @@ Acceleration not supported
    <td><strong>vz</strong></td>
    <td>Z velocity in m/s (positive is down)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td>afx</td>
-   <td>X acceleration not supported</td>
+   <td>X acceleration in m/s/s (positive is forward or North)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td>afy</td>
-   <td>Y acceleration not supported</td>
+   <td>Y acceleration in m/s/s (positive is right or East)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td>afz</td>
-   <td>Z acceleration not supported</td>
+   <td>Z acceleration in m/s/s (positive is down)</td>
    </tr>
    <tr>
    <td><strong>yaw</strong></td>
@@ -219,7 +219,8 @@ The ``co-ordinate frame`` field takes the following values:
 |                                      | location when it first achieved a    |
 |                                      | good position estimate               |
 |                                      |                                      |
-|                                      | Velocity are in NED frame            |
+|                                      | Velocity and Acceleration are in     |
+|                                      | NED frame                            |
 +--------------------------------------+--------------------------------------+
 | ``MAV_FRAME_LOCAL_OFFSET_NED``       | Positions are relative to the        |
 |                                      | vehicle's current position           |
@@ -228,7 +229,8 @@ The ``co-ordinate frame`` field takes the following values:
 |                                      | 2m East and 3m below the current     |
 |                                      | position.                            |
 |                                      |                                      |
-|                                      | Velocity are in NED frame.           |
+|                                      | Velocity and Acceleration are in     |
+|                                      | NED frame                            |
 +--------------------------------------+--------------------------------------+
 | ``MAV_FRAME_BODY_OFFSET_NED``        | Positions are relative to the        |
 |                                      | vehicle's current position and       |
@@ -238,11 +240,11 @@ The ``co-ordinate frame`` field takes the following values:
 |                                      | 2m right and 3m Down from the current|
 |                                      | position                             |
 |                                      |                                      |
-|                                      | Velocities are relative to           |
-|                                      | the current vehicle heading. Use     |
-|                                      | this to specify the speed forward,   |
-|                                      | right and down (or the opposite if   |
-|                                      | you use negative values).            |
+|                                      | Velocity and Acceleration are        |
+|                                      | relative to the current vehicle      |
+|                                      | heading. Use this to specify the     |
+|                                      | speed forward, right and down (or the|
+|                                      | opposite if you use negative values).|
 +--------------------------------------+--------------------------------------+
 | ``MAV_FRAME_BODY_NED``               | Positions are relative to the        |
 |                                      | EKF Origin in NED frame              |
@@ -250,11 +252,11 @@ The ``co-ordinate frame`` field takes the following values:
 |                                      | I.e x=1,y=2,z=3 is 1m North, 2m East |
 |                                      | and 3m Down from the origin          |
 |                                      |                                      |
-|                                      | Velocities are relative to           |
-|                                      | the current vehicle heading. Use     |
-|                                      | this to specify the speed forward,   |
-|                                      | right and down (or the opposite if   |
-|                                      | you use negative values).            |
+|                                      | Velocity and Acceleration are        |
+|                                      | relative to the current vehicle      |
+|                                      | heading. Use this to specify the     |
+|                                      | speed forward, right and down (or the|
+|                                      | opposite if you use negative values).|
 +--------------------------------------+--------------------------------------+
 
 .. tip::
@@ -322,13 +324,13 @@ Bitmask to indicate which fields should be **ignored** by the vehicle (see POSIT
 
 bit1:PosX, bit2:PosY, bit3:PosZ, bit4:VelX, bit5:VelY, bit6:VelZ, bit7:AccX, bit8:AccY, bit9:AccZ, bit11:yaw, bit12:yaw rate
 
-When providing Pos or Vel all 3 axis must be provided
+When providing Pos, Vel or Accel all 3 axis must be provided
 
 - Use Position : 0b110111111000 / 0x0DF8 / 3576 (decimal)
 - Use Velocity : 0b110111000111 / 0x0DC7 / 3527 (decimal)
+- Use Acceleration : 0b110000111000 / 0x0C38 / 3128 (decimal)
 - Use Pos+Vel : 0b110111000000 / 0x0DC0 / 3520 (decimal)
-
-Acceleration not supported
+- Use Pos+Vel+Accel : 0b110000000000 / 0x0C00 / 3072 (decimal)
 
 .. raw:: html
 
@@ -358,22 +360,22 @@ Acceleration not supported
    <td><strong>vz</strong></td>
    <td>Z velocity in m/s (positive is down)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td>afx</td>
-   <td>X acceleration not supported
+   <td>X acceleration in m/s/s (positive is North)</td>
    </td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td>afy</td>
-   <td>Y acceleration not supported</td>
+   <td>Y acceleration in m/s/s (positive is East)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td>afz</td>
-   <td>Z acceleration not supported</td>
+   <td>Z acceleration in m/s/s (positive is Down)</td>
    </tr>
    <tr>
    <td><strong>yaw</strong></td>
-   <td>yaw or heading in radians (0 is forward or North)</td>
+   <td>yaw or heading in radians (0 is forward)</td>
    </tr>
    <tr>
    <td><strong>yaw_rate</strong></td>
