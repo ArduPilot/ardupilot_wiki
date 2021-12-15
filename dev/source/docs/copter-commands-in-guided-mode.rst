@@ -145,13 +145,15 @@ Bitmask to indicate which fields should be **ignored** by the vehicle (see POSIT
 
 bit1:PosX, bit2:PosY, bit3:PosZ, bit4:VelX, bit5:VelY, bit6:VelZ, bit7:AccX, bit8:AccY, bit9:AccZ, bit11:yaw, bit12:yaw rate
 
-When providing Pos, Vel or Accel all 3 axis must be provided
+When providing Pos, Vel and/or Accel all 3 axis must be provided.  At least one of Pos, Vel and Accel must be provided (e.g. providing Yaw or YawRate alone is not supported)
 
 - Use Position : 0b110111111000 / 0x0DF8 / 3576 (decimal)
 - Use Velocity : 0b110111000111 / 0x0DC7 / 3527 (decimal)
-- Use Acceleration : 0b110000111000 / 0x0C38 / 3128 (decimal)
+- Use Acceleration : 0b110000111111 / 0x0C3F / 3135 (decimal)
 - Use Pos+Vel : 0b110111000000 / 0x0DC0 / 3520 (decimal)
 - Use Pos+Vel+Accel : 0b110000000000 / 0x0C00 / 3072 (decimal)
+- Use Yaw : 0b100111111111 / 0x09FF / 2559 (decimal)
+- Use Yaw Rate : 0b010111111111 / 0x05FF / 1535 (decimal)
    
 .. raw:: html
    
@@ -182,15 +184,15 @@ When providing Pos, Vel or Accel all 3 axis must be provided
    <td>Z velocity in m/s (positive is down)</td>
    </tr>
    <tr>
-   <td>afx</td>
+   <td><strong>afx</strong></td>
    <td>X acceleration in m/s/s (positive is forward or North)</td>
    </tr>
    <tr>
-   <td>afy</td>
+   <td><strong>afy</strong></td>
    <td>Y acceleration in m/s/s (positive is right or East)</td>
    </tr>
    <tr>
-   <td>afz</td>
+   <td><strong>afz</strong></td>
    <td>Z acceleration in m/s/s (positive is down)</td>
    </tr>
    <tr>
@@ -204,12 +206,12 @@ When providing Pos, Vel or Accel all 3 axis must be provided
    </tbody>
    </table>
 
-The ``co-ordinate frame`` field takes the following values:
+The ``coordinate_frame`` field takes the following values:
 
 +--------------------------------------+--------------------------------------+
 | Frame                                | Description                          |
 +======================================+======================================+
-| ``MAV_FRAME_LOCAL_NED``              | Positions are relative to the        |
+| ``MAV_FRAME_LOCAL_NED`` (1)          | Positions are relative to the        |
 |                                      | vehicle's EKF Origin in NED frame    |
 |                                      |                                      |
 |                                      | I.e x=1,y=2,z=3 is 1m North, 2m East |
@@ -222,7 +224,7 @@ The ``co-ordinate frame`` field takes the following values:
 |                                      | Velocity and Acceleration are in     |
 |                                      | NED frame                            |
 +--------------------------------------+--------------------------------------+
-| ``MAV_FRAME_LOCAL_OFFSET_NED``       | Positions are relative to the        |
+| ``MAV_FRAME_LOCAL_OFFSET_NED`` (7)   | Positions are relative to the        |
 |                                      | vehicle's current position           |
 |                                      |                                      |
 |                                      | I.e. x=1,y=2,z=3 is 1m North,        |
@@ -232,13 +234,11 @@ The ``co-ordinate frame`` field takes the following values:
 |                                      | Velocity and Acceleration are in     |
 |                                      | NED frame                            |
 +--------------------------------------+--------------------------------------+
-| ``MAV_FRAME_BODY_OFFSET_NED``        | Positions are relative to the        |
-|                                      | vehicle's current position and       |
-|                                      | heading                              |
+| ``MAV_FRAME_BODY_NED`` (8)           | Positions are relative to the        |
+|                                      | EKF Origin in NED frame              |
 |                                      |                                      |
-|                                      | I.e x=1,y=2,z=3 is 1m forward,       |
-|                                      | 2m right and 3m Down from the current|
-|                                      | position                             |
+|                                      | I.e x=1,y=2,z=3 is 1m North, 2m East |
+|                                      | and 3m Down from the origin          |
 |                                      |                                      |
 |                                      | Velocity and Acceleration are        |
 |                                      | relative to the current vehicle      |
@@ -246,11 +246,13 @@ The ``co-ordinate frame`` field takes the following values:
 |                                      | speed forward, right and down (or the|
 |                                      | opposite if you use negative values).|
 +--------------------------------------+--------------------------------------+
-| ``MAV_FRAME_BODY_NED``               | Positions are relative to the        |
-|                                      | EKF Origin in NED frame              |
+| ``MAV_FRAME_BODY_OFFSET_NED`` (9)    | Positions are relative to the        |
+|                                      | vehicle's current position and       |
+|                                      | heading                              |
 |                                      |                                      |
-|                                      | I.e x=1,y=2,z=3 is 1m North, 2m East |
-|                                      | and 3m Down from the origin          |
+|                                      | I.e x=1,y=2,z=3 is 1m forward,       |
+|                                      | 2m right and 3m Down from the current|
+|                                      | position                             |
 |                                      |                                      |
 |                                      | Velocity and Acceleration are        |
 |                                      | relative to the current vehicle      |
@@ -265,8 +267,40 @@ The ``co-ordinate frame`` field takes the following values:
 
 .. note::
 
-   If sending velocity commands, they should be resent every second (the vehicle will stop after 3 seconds if no command is received)
-   
+   If sending velocity or acceleration commands, they should be re-sent every second (the vehicle will stop after 3 seconds if no command is received)
+
+**Examples**
+
+Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter the following
+
+- module load message
+- GUIDED
+- arm throttle
+- takeoff 10
+
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| Example MAVProxy/SITL Command                                                    | Description                                         |
++=================================================================================================+======================================+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 3576 100 0 -10 0 0 0 0 0 0 0 0`` | fly to 100m North and 10m *above* of the EKF origin |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 7 3576 10 0 0 0 0 0 0 0 0 0 0``    | fly 10m North of the current position               |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 3576 10 0 0 0 0 0 0 0 0 0 0``    | fly 10m forward of the current position             |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 3527 0 0 0 1 0 0 0 0 0 0 0``     | fly North at 1m/s                                   |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 3527 0 0 0 1 0 0 0 0 0 0 0``     | fly forward at 1m/s                                 |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 3135 0 0 0 0 0 0 1 0 0 0 0``     | accelerate North at 1m/s                            |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 3135 0 0 0 0 0 0 1 0 0 0 0``     | accelerate forward at 1m/s                          |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 2503 0 0 0 0 0 0 0 0 0 0.7854 0``| turn to North-East (Yaw target + velocity of zero)  | +----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 2503 0 0 0 0 0 0 0 0 0 0.7854 0``| turn 45deg to right (Yaw target + velocity of zero) |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 1479 0 0 0 0 0 0 0 0 0 0 0.174`` | rotate clock-wise at 10deg/sec (velocity of zero)   |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+
 .. _copter-commands-in-guided-mode_set_position_target_global_int:
 
 SET_POSITION_TARGET_GLOBAL_INT
@@ -306,11 +340,12 @@ The message definition can be found `here <https://mavlink.io/en/messages/common
 
 Valid options are:
 
-- MAV_FRAME_GLOBAL_INT : alt is meters above sea level
-- MAV_FRAME_GLOBAL_RELATIVE_ALT: alt is meters above home
-- MAV_FRAME_GLOBAL_RELATIVE_ALT_INT: alt is meters above home
-- MAV_FRAME_GLOBAL_RELATIVE_TERRAIN_ALT: alt is meters above terrain
-- MAV_FRAME_GLOBAL_RELATIVE_TERRAIN_ALT_INT: alt is meters above terrain
+- MAV_FRAME_GLOBAL (0): alt is meters above sea level
+- MAV_FRAME_GLOBAL_INT (5): alt is meters above sea level
+- MAV_FRAME_GLOBAL_RELATIVE_ALT (3): alt is meters above home
+- MAV_FRAME_GLOBAL_RELATIVE_ALT_INT (6): alt is meters above home
+- MAV_FRAME_GLOBAL_TERRAIN_ALT (10): alt is meters above terrain
+- MAV_FRAME_GLOBAL_TERRAIN_ALT_INT (11): alt is meters above terrain
 
 .. raw:: html
 
@@ -324,13 +359,15 @@ Bitmask to indicate which fields should be **ignored** by the vehicle (see POSIT
 
 bit1:PosX, bit2:PosY, bit3:PosZ, bit4:VelX, bit5:VelY, bit6:VelZ, bit7:AccX, bit8:AccY, bit9:AccZ, bit11:yaw, bit12:yaw rate
 
-When providing Pos, Vel or Accel all 3 axis must be provided
+When providing Pos, Vel and/or Accel all 3 axis must be provided.  At least one of Pos, Vel and Accel must be provided (e.g. providing Yaw or YawRate alone is not supported)
 
 - Use Position : 0b110111111000 / 0x0DF8 / 3576 (decimal)
 - Use Velocity : 0b110111000111 / 0x0DC7 / 3527 (decimal)
 - Use Acceleration : 0b110000111000 / 0x0C38 / 3128 (decimal)
 - Use Pos+Vel : 0b110111000000 / 0x0DC0 / 3520 (decimal)
 - Use Pos+Vel+Accel : 0b110000000000 / 0x0C00 / 3072 (decimal)
+- Use Yaw : 0b100111111111 / 0x09FF / 2559 (decimal)
+- Use Yaw Rate : 0b010111111111 / 0x05FF / 1535 (decimal)
 
 .. raw:: html
 
@@ -361,16 +398,16 @@ When providing Pos, Vel or Accel all 3 axis must be provided
    <td>Z velocity in m/s (positive is down)</td>
    </tr>
    <tr>
-   <td>afx</td>
+   <td><strong>afx</strong></td>
    <td>X acceleration in m/s/s (positive is North)</td>
    </td>
    </tr>
    <tr>
-   <td>afy</td>
+   <td><strong>afy</strong></td>
    <td>Y acceleration in m/s/s (positive is East)</td>
    </tr>
    <tr>
-   <td>afz</td>
+   <td><strong>afz</strong></td>
    <td>Z acceleration in m/s/s (positive is Down)</td>
    </tr>
    <tr>
@@ -386,14 +423,41 @@ When providing Pos, Vel or Accel all 3 axis must be provided
 
 .. note::
 
-   Velocity commands should be resent every second (the vehicle will stop after 3 seconds if no command is received)
+   If sending velocity or acceleration commands, they should be re-sent every second (the vehicle will stop after 3 seconds if no command is received)
+
+**Examples**
+
+Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter the following
+
+- module load message
+- GUIDED
+- arm throttle
+- takeoff 10
+
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| Example MAVProxy/SITL Command                                                                     | Description                                              |
++===================================================================================================+==========================================================+
+| ``message SET_POSITION_TARGET_GLOBAL_INT 0 0 0 6 3576 -353621474 1491651746 10 0 0 0 0 0 0 0 0``  | fly to lat,lon of -35.36,149.16 and 10m above home       |
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| ``message SET_POSITION_TARGET_GLOBAL_INT 0 0 0 5 3576 -353621474 1491651746 600 0 0 0 0 0 0 0 0`` | fly to lat,lon of -35.36,149.16 and 600m above sea level |
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| ``message SET_POSITION_TARGET_GLOBAL_INT 0 0 0 11 3576 -353621474 1491651746 10 0 0 0 0 0 0 0 0`` | fly to lat,lon of -35.36,149.16 and 10m above terrain    |
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| ``message SET_POSITION_TARGET_GLOBAL_INT 0 0 0 6 3527 0 0 0 1 0 0 0 0 0 0 0``                     | fly North at 1m/s                                        |
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| ``message SET_POSITION_TARGET_GLOBAL_INT 0 0 0 6 3135 0 0 0 0 0 0 1 0 0 0 0``                     | accelerate North at 1m/s                                 |
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| ``message SET_POSITION_TARGET_GLOBAL_INT 0 0 0 6 2503 0 0 0 0 0 0 0 0 0 0.7854 0``                | turn to North-East (Yaw target + velocity of zero)       |
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| ``message SET_POSITION_TARGET_GLOBAL_INT 0 0 0 6 1479 0 0 0 0 0 0 0 0 0 0 0.174``                 | rotate clock-wise at 10deg/sec (velocity of zero)        |
++---------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 .. _copter-commands-in-guided-mode_set_attitude_target:
 
 SET_ATTITUDE_TARGET
 -------------------
 
-Set the vehicle's target attitude and climb rate.  This message is accepted in :ref:`Guided <copter:ac2_guidedmode>` or Guided_NoGPS (this is the only message accepted by Guided_NoGPS).  The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__
+Set the vehicle's target attitude and climb rate or thrust.  This message is accepted in :ref:`Guided <copter:ac2_guidedmode>` or Guided_NoGPS (this is the only message accepted by Guided_NoGPS).  The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_ATTITUDE_TARGET>`__
 
 **Command parameters**
 
@@ -463,11 +527,45 @@ Should always be 0b00000111 / 0x07 / 7 (decimal)
    <tr>
    <td><strong>thrust</strong></td>
    <td>float</td>
-   <td>Climb rate where 0.5 = no climb, 0 = WPNAV_SPEED_DN, 1 = WPNAV_SPEED_UP
+   <td>
+
+If GUID_OPTIONS = 0: climb rate where 0.5=no climb, 0=descend at WPNAV_SPEED_DN, 1=climb at WPNAV_SPEED_UP
+If GUID_OPTIONS = 8: thrust from 0 to 1
+
+.. raw:: html
+
    </td>
    </tr>
    </tbody>
    </table>
+
+**Examples**
+
+Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter the following
+
+- GUIDED
+- arm throttle
+- takeoff 10
+
++------------------------------------------+-----------------------------------------------------------------+
+| Example MAVProxy/SITL Command            | Description                                                     |
++==========================================+=================================================================+
+| ``attitude 1 0 0 0 0.5``                 | hold level attitude with zero climb rate  (if GUID_OPTIONS = 0) |
+|                                          |  OR                                                             |
+|                                          | hold level attitude and 50% throttle (if GUID_OPTIONS = 8)      |
++------------------------------------------+-----------------------------------------------------------------+
+| ``attitude 1 0 0 0 1.0``                 | climb at WPNAV_SPEED_UP (if GUID_OPTIONS = 0)                   |
+|                                          |  OR                                                             |
+|                                          | climb at 100% throttle (if GUID_OPTIONS = 8)                    |
++------------------------------------------+-----------------------------------------------------------------+
+| ``attitude 1 0 0 0 0.0``                 | descend at WPNAV_SPEED_DN (if GUID_OPTIONS = 0)                 |
+|                                          |  OR                                                             |
+|                                          | descend at 0% throttle (if GUID_OPTIONS = 8)                    |
++------------------------------------------+-----------------------------------------------------------------+
+| ``attitude 0.9961947 0.0871557 0 0 0.5`` | roll at 10deg with zero climb rate (if GUID_OPTIONS = 0)        |
+|                                          |  OR                                                             |
+|                                          | roll at 10deg and 50% throttle (if GUID_OPTIONS = 8)            |
++------------------------------------------+-----------------------------------------------------------------+
 
 .. _copter-commands-in-guided-mode_set_home_position:
 
