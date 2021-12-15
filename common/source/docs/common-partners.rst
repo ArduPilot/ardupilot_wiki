@@ -418,36 +418,65 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target: https://www.modalai.com/
 
     *
+      - .. image:: ../../../images/supporters/supporters_ing_logo.png
+            :width: 250px
+            :align: center
+            :target: https://www.ingrobotic.com/
+
+
       -  .. image:: ../../../images/supporters/supporters_logo_SYNEREX.png
             :width: 250px
             :align: center
             :target: http://www.synerex.kr/
+
+    *
 
       -  .. image:: ../../../images/supporters/supporters_logo_Offshore_Aviation.png
             :width: 250px
             :align: center
             :target: https://www.Offshoreaviation.com
 
-    *
+
       -  .. image:: ../../../images/supporters/supporters_logo_currawong.png
             :width: 250px
             :align: center
             :target: https://www.currawongeng.com/
+
+    *
 
       -  .. image:: ../../../images/supporters/supporters_logo_skyways.png
             :width: 250px
             :align: center
             :target: https://skyways.com/
 
-    *
       -  .. image:: ../../../images/supporters/supporters_logo_Sky-Drones.png
             :width: 250px
             :align: center
             :target: https://sky-drones.com/
 
+    *
+
+      -  .. image:: ../../../images/supporters/supporters_tata_logo.png
+            :width: 250px
+            :align: center
+            :target: https://www.tataadvancedsystems.com/
+
       -  .. image:: ../../../images/supporters/supporters_logo_sparkletech.jpg
             :width: 250px
             :align: center
             :target: https://www.sparkleuav.com/
+
+    *
+
+      -  .. image:: ../../../images/supporters/supporters_vulcan_logo.jpg
+            :width: 250px
+            :align: center
+            :target: https://vulcanuav.com/
+
+      -  .. image:: ../../../images/supporters/supporters_fly_dragon_logo.png
+            :width: 250px
+            :align: center
+            :target: https://www.droneassemble.com/
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
