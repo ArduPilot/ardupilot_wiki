@@ -24,8 +24,6 @@ Sets the location that the vehicle will return to and land on when in RTL mode. 
 
 The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_HOME_POSITION>`__
 
-**Command parameters**
-
 .. raw:: html
 
    <table border="1" class="docutils">
@@ -125,8 +123,6 @@ Sets the location used by the EKF/AHRS for internal calculations.  This location
 
 The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_GPS_GLOBAL_ORIGIN>`__
 
-**Command parameters**
-
 .. raw:: html
 
    <table border="1" class="docutils">
@@ -173,8 +169,8 @@ The example command below can be copy-pasted into MAVProxy (aka SITL) to test th
 - param set EK3_SRC1_VELXY 0
 - param set EK3_SRC1_VELZ 0
 
-+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| Example MAVProxy/SITL Command                                   | Description                                                         |
-+=================================================================+=====================================================================+
-| ``message SET_GPS_GLOBAL_ORIGIN 0 -353621474 1491651746 600 0`` | set EKF origin to lat,lon of -35.36,149.16 and 600m above sea level |
-+-----------------------------------------------------------------+---------------------------------------------------------------------+
++--------------------------------------------------------------------+---------------------------------------------------------------------+
+| Example MAVProxy/SITL Command                                      | Description                                                         |
++====================================================================+=====================================================================+
+| ``message SET_GPS_GLOBAL_ORIGIN 0 -353621474 1491651746 600000 0`` | set EKF origin to lat,lon of -35.36,149.16 and 600m above sea level |
++--------------------------------------------------------------------+---------------------------------------------------------------------+
