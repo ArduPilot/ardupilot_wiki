@@ -295,7 +295,8 @@ Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) 
 +----------------------------------------------------------------------------------+-----------------------------------------------------+
 | ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 3135 0 0 0 0 0 0 1 0 0 0 0``     | accelerate forward at 1m/s                          |
 +----------------------------------------------------------------------------------+-----------------------------------------------------+
-| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 2503 0 0 0 0 0 0 0 0 0 0.7854 0``| turn to North-East (Yaw target + velocity of zero)  | +----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 2503 0 0 0 0 0 0 0 0 0 0.7854 0``| turn to North-East (Yaw target + velocity of zero)  |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
 | ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 2503 0 0 0 0 0 0 0 0 0 0.7854 0``| turn 45deg to right (Yaw target + velocity of zero) |
 +----------------------------------------------------------------------------------+-----------------------------------------------------+
 | ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 1479 0 0 0 0 0 0 0 0 0 0 0.174`` | rotate clock-wise at 10deg/sec (velocity of zero)   |
