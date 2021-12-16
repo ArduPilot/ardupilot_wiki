@@ -14,6 +14,7 @@ ArduPilot supports the MAVLink protocol for communication with Ground Stations a
     Get and Set Parameters <mavlink-get-set-params>
     Copter Commands (Guided Mode) <copter-commands-in-guided-mode>
     Plane Commands (Guided Mode) <plane-commands-in-guided-mode>
+    Rover Commands (Guided Mode) <mavlink-rover-commands>
     Get and Set Home and/or EKF origin <mavlink-get-set-home-and-origin>
     Arm and Disarm <mavlink-arming-and-disarming>
     Get and Set FlightMode <mavlink-get-set-flightmode>
