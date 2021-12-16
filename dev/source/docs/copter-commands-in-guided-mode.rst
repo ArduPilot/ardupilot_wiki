@@ -13,7 +13,7 @@ This article lists the MAVLink commands that Copter accepts.  Normally these com
 Movement commands
 =================
 
-These commands can be used to control the vehicle's position, velocity or attitude while in Guided Mode
+These commands can be used to control the vehicle's position, velocity or attitude while in :ref:`Guided Mode <copter:ac2_guidedmode>`
 
 - :ref:`SET_POSITION_TARGET_LOCAL_NED <copter-commands-in-guided-mode_set_position_target_local_ned>`
 - :ref:`SET_POSITION_TARGET_GLOBAL_INT <copter-commands-in-guided-mode_set_position_target_global_int>`
