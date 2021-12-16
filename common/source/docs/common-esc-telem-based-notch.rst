@@ -1,4 +1,5 @@
 .. _common-esc-telem-based-notch:
+[copywiki destination="copter,plane"]
 
 ========================================
 ESC Telemetry Based Harmonic Notch Setup

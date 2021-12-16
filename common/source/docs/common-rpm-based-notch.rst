@@ -1,4 +1,5 @@
 .. _common-rpm-based-notch:
+[copywiki destination="copter,plane"]
 
 ====================================
 RPM Sensor Based Dynamic Notch Setup

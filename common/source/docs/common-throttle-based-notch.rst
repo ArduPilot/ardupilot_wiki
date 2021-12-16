@@ -1,5 +1,6 @@
 .. _common-throttle-based-notch:
 
+[copywiki destination="copter,plane"]
 ==================================
 Throttle Based Dynamic Notch Setup
 ==================================

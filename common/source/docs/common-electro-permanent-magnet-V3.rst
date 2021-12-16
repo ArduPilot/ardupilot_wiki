@@ -51,7 +51,7 @@ Parameter setup
 ===============
 
    
-#. You need to enable the DroneCAN. The :ref:`DroneCAN setup page is here <common-uavcan-setup-advanced>`. You also may check the configurations of the parameters :ref:`GRIP_UAVCAN_ID <GRIP_UAVCAN_ID>` and :ref:`GRIP_TYPE <GRIP_TYPE>` to set gripper ID and type.
+#. You need to enable the DroneCAN. The :ref:`DroneCAN setup page is here <common-uavcan-setup-advanced>`. You also may check the configurations of the parameters :ref:`GRIP_CAN_ID <GRIP_CAN_ID>` and :ref:`GRIP_TYPE <GRIP_TYPE>` to set gripper ID and type.
 
 #. Save the configurations and restart the boards. After about 5 seconds the RED CAN LED on the EPM will start blinking. This indicates that CAN frames are being received.
     

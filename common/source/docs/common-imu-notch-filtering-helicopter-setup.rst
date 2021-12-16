@@ -1,4 +1,5 @@
 .. _common-imu-notch-filtering-helicopter-setup:
+[copywiki destination="copter,plane"]
 
 =========================================
 Traditional Helicopter Notch Filter Setup
