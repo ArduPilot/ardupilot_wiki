@@ -87,7 +87,7 @@ The main steps for building the docs are:
 Build the Wiki
 --------------
 
-As shown in the last step of the vagrant instructions above, use update.py to build some or all of the wiki. You may need to prefix the python commands below with "sudo", especially when rebuilding.
+As shown in the last step of the vagrant instructions above, use update.py to build some or all of the wiki.
 
    .. code-block:: bash
 
