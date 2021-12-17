@@ -117,11 +117,11 @@ ArduPilot Provided Rotor Speed Governor
 
 Parameters for internal rotor speed governor, if used.  Internal throttle curve will need to be set up to use this mode.
 
-- :ref:`H_RSC_GOV_DISGAG<H_RSC_GOV_DISGAG>`
+- ``H_RSC_GOV_DISGAG``
 - :ref:`H_RSC_GOV_DROOP<H_RSC_GOV_DROOP>`
 - :ref:`H_RSC_GOV_RANGE<H_RSC_GOV_RANGE>`
-- :ref:`H_RSC_GOV_SETPNT<H_RSC_GOV_SETPNT>`
-- :ref:`H_RSC_GOV_TCGAIN<H_RSC_GOV_TCGAIN>`
+- ``H_RSC_GOV_SETPNT``
+- ``H_RSC_GOV_TCGAIN``
 
 Tail Setup
 ==========
