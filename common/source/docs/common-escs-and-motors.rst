@@ -18,10 +18,12 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
     Booster motor <booster-motor>
 [/site]
     Currawong Velocity ESCs <common-velocity-can-escs>
+    DroneCAN ESCs <common-uavcan-escs>
     PWM,OneShot, and DShot ESC<common-brushless-escs>
     BLHeli/BLHeli32 Capable ESCs<common-blheli32-passthru>
     ICE (Internal Combustion Engines) <common-ice>
     KDE CAN ESCs <common-kde-can-escs>
+    Serial ESCs <common-serial-escs>
 [site wiki="rover"]
     Thrusters (for boats) <thrusters>
 [/site]
@@ -29,4 +31,4 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
 [site wiki="rover"]
     Trolling motors <trolling-motor>
 [/site]
-    DroneCAN ESCs <common-uavcan-escs>
+    
