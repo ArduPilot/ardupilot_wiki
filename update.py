@@ -39,6 +39,7 @@ import glob
 import hashlib
 import multiprocessing
 import os
+import platform
 import re
 import shutil
 import subprocess
@@ -50,7 +51,7 @@ from datetime import datetime
 # while flake8 says this is unused, distutils.dir_util.mkpath fails
 # without the following import on old versions of Python:
 from distutils import dir_util  # noqa
-
+ 
 DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover']
 ALL_WIKIS = [
     'copter',
@@ -68,64 +69,6 @@ COMMON_DIR = 'common'
 
 # GIT_REPO = ''
 
-# Set up option parsing to get connection string
-parser = argparse.ArgumentParser(
-    description='Copy Common Files as needed, stripping out non-relevant wiki content',   # noqa
-)
-parser.add_argument(
-    '--site',
-    help="If you just want to copy to one site, you can do this. Otherwise will be copied.",  # noqa
-)
-parser.add_argument(
-    '--clean',
-    action='store_true',
-    help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).",  # noqa
-)
-parser.add_argument(
-    '--cached-parameter-files',
-    action='store_true',
-    help="Do not re-download parameter files",
-)
-parser.add_argument(
-    '--parallel',
-    type=int,
-    help="limit parallel builds, -1 for unlimited",
-    default=1,
-)
-parser.add_argument(
-    '--destdir',
-    default="/var/sites/wiki/web",
-    help="Destination directory for compiled docs",
-)
-parser.add_argument(
-    '--enablebackups',
-    action='store_true',
-    default=False,
-    help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",  # noqa
-)
-parser.add_argument(
-    '--backupdestdir',
-    default="/var/sites/wiki-backup/web",
-    help="Destination directory for compiled docs",
-)
-parser.add_argument(
-    '--paramversioning',
-    action='store_true',
-    default=False,
-    help="Build multiple parameters pages for each vehicle based on its firmware repo.",  # noqa
-)
-parser.add_argument(
-    '--verbose',
-    dest='verbose',
-    action='store_false',
-    default=True,
-    help="show debugging output",
-)
-
-args = parser.parse_args()
-# print(args.site)
-# print(args.clean)
-
 PARAMETER_SITE = {
     'rover': 'APMrover2',
     'copter': 'ArduCopter',
@@ -142,10 +85,12 @@ LOGMESSAGE_SITE = {
 error_count = 0
 N_BACKUPS_RETAIN = 10
 
+VERBOSE = False
+
 
 def debug(str_to_print):
     """Debug output if verbose is set."""
-    if args.verbose:
+    if VERBOSE:
         print("[update.py] " + str_to_print)
 
 
@@ -164,7 +109,7 @@ def remove_if_exists(filepath):
             raise e
 
 
-def fetchparameters(site=args.site):
+def fetchparameters(site=None, cache=None):
     """Fetches the parameters for all the sites from the test server and
     copies them to the correct location.
 
@@ -180,17 +125,21 @@ def fetchparameters(site=args.site):
         targetfile = './%s/source/docs/parameters.rst' % key
         if key == 'AP_Periph':
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
-        if args.cached_parameter_files:
+        if cache:
             if not os.path.exists(targetfile):
                 raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))  # noqa
             continue
         if site == key or site is None:
-            subprocess.check_call(["wget", fetchurl])
+            if platform.system() == "Windows":
+                subprocess.check_call(["powershell.exe", "Start-BitsTransfer", "-Source", fetchurl])
+            else:
+                subprocess.check_call(["wget", fetchurl])
+
             # move in new file
-            os.rename('Parameters.rst', targetfile)
+            os.replace('Parameters.rst', targetfile)
 
 
-def fetchlogmessages(site=args.site):
+def fetchlogmessages(site=None, cache=None):
     """
     Fetches the parameters for all the sites from the autotest server and
     copies them to the correct location.
@@ -200,25 +149,33 @@ def fetchlogmessages(site=args.site):
     """
     for key, value in LOGMESSAGE_SITE.items():
         fetchurl = 'https://autotest.ardupilot.org/LogMessages/%s/LogMessages.rst' % value  # noqa
-        targetfile = './%s/source/docs/logmessages.rst' % key
-        if args.cached_parameter_files:
+        targetfile = './%s/source/docs/LogMessages.rst' % key
+        if cache:
             if not os.path.exists(targetfile):
                 raise(Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,)))  # noqa
             continue
         if site == key or site is None:
-            subprocess.check_call(["wget", fetchurl])
+            if platform.system() == "Windows":
+                subprocess.check_call(["powershell.exe", "Start-BitsTransfer", "-Source", fetchurl])
+            else:
+                subprocess.check_call(["wget", fetchurl])
             # move in new file
-            os.rename('LogMessages.rst', targetfile)
+            os.replace('LogMessages.rst', targetfile)
 
 
 def build_one(wiki):
     '''build one wiki'''
     print('make and clean: %s' % wiki)
-    subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
-    subprocess.check_call(["nice", "make", "html"], cwd=wiki)
+    if platform.system() == "Windows":
+        # This will fail if there's no folder to clean, so no check_call here
+        subprocess.run(["make.bat", "clean"], cwd=wiki, shell=True)
+        subprocess.check_call(["make.bat", "html"], cwd=wiki, shell=True)
+    else:
+        subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
+        subprocess.check_call(["nice", "make", "html"], cwd=wiki)
 
 
-def sphinx_make(site):
+def sphinx_make(site, parallel):
     """
     Calls 'make html' to build each site
     """
@@ -238,7 +195,7 @@ def sphinx_make(site):
         p = multiprocessing.Process(target=build_one, args=(wiki,))
         p.start()
         procs.append(p)
-        while args.parallel != -1 and len(procs) >= args.parallel:
+        while parallel != -1 and len(procs) >= parallel:
             for p in procs:
                 if p.exitcode is not None:
                     p.join()
@@ -256,7 +213,7 @@ def sphinx_make(site):
         time.sleep(0.1)
 
 
-def copy_build(site):
+def copy_build(site, destdir):
     """
     Copies each site into the target location
     """
@@ -268,13 +225,13 @@ def copy_build(site):
         if wiki == 'frontend':
             continue            
         print('copy: %s' % wiki)
-        targetdir = os.path.join(args.destdir, wiki)
+        targetdir = os.path.join(destdir, wiki)
         print("DEBUG: Creating backup")
-        olddir = os.path.join(args.destdir, 'old')
+        olddir = os.path.join(destdir, 'old')
         print('DEBUG: recreating %s' % olddir)
         if os.path.exists(olddir):
             shutil.rmtree(olddir)
-        os.mkdir(olddir)
+        os.makedirs(olddir)
         if os.path.exists(targetdir):
             print('DEBUG: moving %s into %s' % (targetdir, olddir))
             shutil.move(targetdir, olddir)
@@ -283,9 +240,9 @@ def copy_build(site):
         # sourcedir='./%s/build/html/*' % wiki
         sourcedir = './%s/build/html/' % wiki
         # print("DEBUG: sourcedir: %s" % sourcedir)
-        # print('DEBUG: mv %s %s' % (sourcedir, args.destdir) )
+        # print('DEBUG: mv %s %s' % (sourcedir, destdir) )
 
-        html_moved_dir = os.path.join(args.destdir, 'html')
+        html_moved_dir = os.path.join(destdir, 'html')
         try:
             shutil.move(sourcedir, html_moved_dir)
             # Rename move! (single move to html/* failed)
@@ -300,7 +257,7 @@ def copy_build(site):
         shutil.rmtree(olddir)
 
 
-def copy_and_keep_build(site):
+def copy_and_keep_build(site, destdir, backupdestdir):
     """
     Copies each site into target location and keep last "n" builds as backups
     """
@@ -312,12 +269,12 @@ def copy_and_keep_build(site):
         if wiki == 'frontend':
             continue             
         debug('copying: %s' % wiki)
-        targetdir = os.path.join(args.destdir, wiki)
+        targetdir = os.path.join(destdir, wiki)
         distutils.dir_util.mkpath(targetdir)
 
         if os.path.exists(targetdir):
             olddir = os.path.join(
-                args.backupdestdir,
+                backupdestdir,
                 str(building_time + '-wiki-bkp'),
                 str(wiki))
             debug('Checking %s' % olddir)
@@ -330,7 +287,7 @@ def copy_and_keep_build(site):
                 str(wiki),
                 'build',
                 'html')
-            html_moved_dir = os.path.join(args.destdir, 'html')
+            html_moved_dir = os.path.join(destdir, 'html')
             try:
                 shutil.move(sourcedir, html_moved_dir)
                 # Rename move! (single move to html/* failed)
@@ -553,7 +510,7 @@ def is_the_same_file(file1, file2):
     return(digests[0] == digests[1])
 
 
-def fetch_versioned_parameters(site=args.site):
+def fetch_versioned_parameters(site=None):
     """
     It relies on "build_parameters.py" be executed before the "update.py"
 
@@ -682,7 +639,7 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
           default_param_file[:-3])
 
 
-def cache_parameters_files(site=args.site):
+def cache_parameters_files(site=None):
     """
     For each vechile: put new_params_mversion/ content in
     old_params_mversion/ folders and .html built files as well.
@@ -724,7 +681,7 @@ def cache_parameters_files(site=args.site):
                 pass
 
 
-def put_cached_parameters_files_in_sites(site=args.site):
+def put_cached_parameters_files_in_sites(site=None):
     """
     For each vechile: put built .html files in site folder
 
@@ -754,13 +711,16 @@ def update_frotend_json():
     Frontend get posts from Forum server and insert it into JSON
     """
     debug('Running script to get last posts from forum server.')
-    try:    
-        subprocess.check_call(["python3", "./frontend/scripts/get_discourse_posts.py"])
+    try:
+        if platform.system() == "Windows":
+            subprocess.check_call(["python", "./frontend/scripts/get_discourse_posts.py"])
+        else:
+            subprocess.check_call(["python3", "./frontend/scripts/get_discourse_posts.py"])
     except Exception as e:
         error(e)
         pass
 
-def copy_static_html_sites(site):
+def copy_static_html_sites(site, destdir):
     """
     Copy pure HMTL folder the same way that Sphinx builds it
     """
@@ -771,7 +731,7 @@ def copy_static_html_sites(site):
         folder = 'frontend'
         try:    
             site_folder = os.getcwd() + "/" + folder
-            targetdir = os.path.join(args.destdir, folder)
+            targetdir = os.path.join(destdir, folder)
             shutil.rmtree(targetdir, ignore_errors=True)
             shutil.copytree(site_folder, targetdir)
         except Exception as e:
@@ -781,42 +741,106 @@ def copy_static_html_sites(site):
 
 #######################################################################
 
-now = datetime.now()
-building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
+if __name__ == "__main__":
+    if platform.system() == "Windows":
+        multiprocessing.freeze_support()
 
-if args.paramversioning:
-    # Parameters for all versions availble on firmware.ardupilot.org:
-    fetch_versioned_parameters(args.site)
-else:
-    # Single parameters file. Just present the latest parameters:
-    fetchparameters(args.site)
+    # Set up option parsing to get connection string
+    parser = argparse.ArgumentParser(
+        description='Copy Common Files as needed, stripping out non-relevant wiki content',   # noqa
+    )
+    parser.add_argument(
+        '--site',
+        help="If you just want to copy to one site, you can do this. Otherwise will be copied.",  # noqa
+    )
+    parser.add_argument(
+        '--clean',
+        action='store_true',
+        help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).",  # noqa
+    )
+    parser.add_argument(
+        '--cached-parameter-files',
+        action='store_true',
+        help="Do not re-download parameter files",
+    )
+    parser.add_argument(
+        '--parallel',
+        type=int,
+        help="limit parallel builds, -1 for unlimited",
+        default=1,
+    )
+    parser.add_argument(
+        '--destdir',
+        default="/var/sites/wiki/web" if platform.system() != "Windows" else os.path.join(os.path.dirname(__file__), "..", "wiki"),
+        help="Destination directory for compiled docs",
+    )
+    parser.add_argument(
+        '--enablebackups',
+        action='store_true',
+        default=False,
+        help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",  # noqa
+    )
+    parser.add_argument(
+        '--backupdestdir',
+        default="/var/sites/wiki-backup/web",
+        help="Destination directory for compiled docs",
+    )
+    parser.add_argument(
+        '--paramversioning',
+        action='store_true',
+        default=False,
+        help="Build multiple parameters pages for each vehicle based on its firmware repo.",  # noqa
+    )
+    parser.add_argument(
+        '--verbose',
+        dest='verbose',
+        action='store_false',
+        default=True,
+        help="show debugging output",
+    )
 
-# Fetch most recent LogMessage metadata from autotest:
-fetchlogmessages(args.site)
+    args = parser.parse_args()
+    # print(args.site)
+    # print(args.clean)
+    
+    VERBOSE = args.verbose
+
+    now = datetime.now()
+    building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
+
+    if args.paramversioning:
+        # Parameters for all versions availble on firmware.ardupilot.org:
+        fetch_versioned_parameters(args.site)
+    else:
+        # Single parameters file. Just present the latest parameters:
+        fetchparameters(args.site, args.cached_parameter_files)
+
+    # Fetch most recent LogMessage metadata from autotest:
+    fetchlogmessages(args.site, args.cached_parameter_files)
 
 
-copy_static_html_sites(args.site)
-generate_copy_dict()
-sphinx_make(args.site)
+    copy_static_html_sites(args.site, args.destdir)
+    generate_copy_dict()
+    sphinx_make(args.site, args.parallel)
 
-if args.paramversioning:
-    put_cached_parameters_files_in_sites(args.site)
-    cache_parameters_files(args.site)
+    if args.paramversioning:
+        put_cached_parameters_files_in_sites(args.site)
+        cache_parameters_files(args.site)
 
 
-if args.enablebackups:
-    copy_and_keep_build(args.site)
-    delete_old_wiki_backups(args.backupdestdir, N_BACKUPS_RETAIN)
-else:
-    copy_build(args.site)
+    if args.enablebackups:
+        copy_and_keep_build(args.site, args.destdir, args.backupdestdir)
+        delete_old_wiki_backups(args.backupdestdir, N_BACKUPS_RETAIN)
+    elif args.destdir:
+        copy_build(args.site, args.destdir)
 
-# To navigate locally and view versioning script for parameters
-# working is necessary run Chrome as "chrome
-# --allow-file-access-from-files". Otherwise it will appear empty
-# locally and working once is on the server.
+    # To navigate locally and view versioning script for parameters
+    # working is necessary run Chrome as "chrome
+    # --allow-file-access-from-files". Otherwise it will appear empty
+    # locally and working once is on the server.
 
-if error_count > 0:
-    print("%u errors during Wiki build" % (error_count,))
-    sys.exit(1)
+    if error_count > 0:
+        print("%u errors during Wiki build" % (error_count,))
+        sys.exit(1)
 
-sys.exit(0)
+    sys.exit(0)
