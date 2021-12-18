@@ -34,8 +34,8 @@ Features
  
  - ArduPilot currently supports all of the OSD panel items provided by the V1 and V2 DJI FPV Goggles, details are given in the table below.
  - Changing display units other than metric and imperial are not currently supported.
- - Multiple screens and remote switching of those screens is supported.
- - Displaying statistics on a dedicated screen is supported, see below for details.
+ - Multiple screens and remote switching of those screens is supported.(DJI OSD does not but will be in the future)
+ - Displaying statistics on a dedicated screen is supported, see below for details.(DJI OSD does not but will be in the future)
  - Warning levels for RSSI, Voltage, etc. currently not supported
 
 Configuration
