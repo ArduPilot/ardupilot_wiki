@@ -142,6 +142,8 @@ Then reboot.
 
 :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` 66.7 
 
+.. note:: this autopilot uses a high precision current sensor which is sensitive to ESC switching noise. Be sure to use the bypass capacitor provided. In some cases, the ESCs themselves will need additional 200-330uF low ESR capacitors on their power inputs, if they do not incorporate them already. See `Matek FAQs <http://www.mateksys.com/?p=5712#tab-id-12>`__ for more information.
+
 Firmware
 ========
 
