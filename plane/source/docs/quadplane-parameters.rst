@@ -51,6 +51,8 @@ In addition, the behavior of Quadplane can be modified by the setting of the :re
 
 Behavior can be modified as well as by the :ref:`Q_RTL_MODE<Q_RTL_MODE>` and :ref:`Q_GUIDED_MODE<Q_GUIDED_MODE>` parameters.
 
+.. warning:: If you set :ref:`INITIAL_MODE<INITIAL_MODE>` to a VTOL mode, then switch to a fixed wing (other than MANUAL/ACRO/TRAINING) before arming, you will effectively be in a VTOL transition and when armed, the motors will spin up, and move, if tilted, to vertical.
+
 .. note::
 
    The QuadPlane code requires GPS lock for proper operation. This is
