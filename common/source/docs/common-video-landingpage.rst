@@ -85,9 +85,7 @@ DJI Digital FPV System
 .. figure:: ../../../images/DJI_FPV.jpg
    :target: ../_images/DJI_FPV.jpg
    
-.. note:: This system is not directly compatible with Mavlink. However, there is an MSP to MAVLink Arduino converter maintained by D3NGIT that allows it to provide telemetry data via the custom OSD. See https://github.com/d3ngit/djihdfpv_mavlink_to_msp_V2.
-
-ukmook has put together a set of instructions on how to set this up here https://github.com/ukmook/qUark/tree/master/Mav-To-MSP#quark-flight-electronics
+See :ref:`common-msp-osd-overview` for setup instructions for OSD display on DJI goggles.
 
 Overview
 --------
