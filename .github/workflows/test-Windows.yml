@@ -1,4 +1,4 @@
-name: Test wiki Linux
+name: Test wiki Windows
 
 on: [push, pull_request]
 # paths:
@@ -10,7 +10,7 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: 'windows-latest'
     strategy:
       fail-fast: false  # don't cancel if a job from the matrix fails
       matrix:
@@ -22,13 +22,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Setting environement
+      - name: Setting environment
         run: |
-          mkdir /tmp/web
-          ./Sphinxsetup.sh
-      - name: Check image formats
-        run: |
-          find ./images/ -exec file {} + | grep RIFF -vzq
+          ./Sphinxsetup.bat
       - name: Test build
         run: |
-          ./update.py --parallel 4 --verbose --destdir=/tmp/web
+          ./update.py --parallel 4 --verbose --destdir=./web
