@@ -12,7 +12,7 @@ There are several methods to setup a local build environment:
 
 #. Use the `Vagrantfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Vagrantfile>`__ in the root of the repo to create a Linux virtual machine with all the necessary packages installed.  This is the preferred and supported method.
 #. Use the `Dockerfile <https://github.com/ArduPilot/ardupilot_wiki/blob/master/Dockerfile>`__ in the root of the repo to create a Linux container with all the necessary packages installed.
-#. Or simply install `Sphinx <http://www.sphinx-doc.org/en/stable/install.html>`__ on your local Linux machine, or under WSL in Windows (Win8 may need to add `this component <https://docs.microsoft.com/en-us/windows/wsl/install-manual>`_ ). 
+#. Or simply install the required libraries on your local Linux or Windows machine, using the instructions below. 
 
 Fork, Clone, and Update Your Copy of the Wiki
 ---------------------------------------------
@@ -41,14 +41,30 @@ Be sure to keep your fork of the repository updated, both locally, and on GitHub
        git rebase upstream/master
        git push -f origin master
        
-Setup in Linux or Windows WSL
------------------------------
+Setup in Linux
+--------------
 
 Run the following command from the ardupilot_wiki directory you cloned:
 
    .. code-block:: bash
 
       ./Sphinxsetup.sh
+
+Then jump down to "Build the wiki".
+
+Setup in Windows
+----------------
+
+Running in WSL or Cygwin is not required. The ArduPilot wiki can be built directly on Windows.
+
+Ensure that the latest version of `Python <https://www.python.org/downloads/>`__ is installed and the "Add Python 3.x to PATH"
+option is selected during installation.
+
+Run the following command from the ardupilot_wiki directory you cloned, ensuring that it is run as administrator (right click -> Run as Administrator):
+
+   .. code-block:: bash
+
+      ./Sphinxsetup.bat
 
 Then jump down to "Build the wiki".
 
@@ -98,6 +114,8 @@ As shown in the last step of the vagrant instructions above, use update.py to bu
        python update.py --site dev     (to build just this developer wiki)
 
 The update.py script will copy the common files into each wiki subdirectory and then build each wiki.
+
+After the build, the wiki files will be copied to ``--destdir``. By default, in Linux this is ``/var/sites/wiki/web`` and in Windows it is ``..\wiki``.
 
 .. note::
 
