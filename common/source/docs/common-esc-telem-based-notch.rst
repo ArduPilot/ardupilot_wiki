@@ -5,7 +5,6 @@
 ESC Telemetry Based Harmonic Notch Setup
 ========================================
 
-
 .. _esc-telemetry-based-dynamic-notch-filter:
 
 
@@ -17,6 +16,19 @@ Set the :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` parameter to 1, which will disable 
 - Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` = 1 to set the harmonic notch reference value to unscaled
 - Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` = below the hover frequency - you can easily determine this by performing a gentle hover and looking at the ESC telemetry data
 - Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` = half of INS_HNTCH_FREQ
+
+Center Frequency Slewing
+========================
+
+The rate at which the harmonic notch frequency is updated has a big impact on noise in the PID loops. Slower update rates mean that the frequency has larger step changes which result in what is called shot noise. Faster update rates reduce this and is the primary reason why using bi-directional dshot with ESC Telemetry reporting of RPM benefits the system overall.
+
+By default the update rate is 200Hz and where the source of frequency information is slower than that - for instance when using ESC telemetry where the maximum rate that can be sustained is about 100Hz - ArduPilot will slew the frequency changes at 200Hz to avoid large steps. The slewed rate is the rate that is reported by ESC telemetry, although the raw rate can be seen in the logs as well.
+
+On systems with faster CPUs (H7 based autopilots) it is possible to update the harmonic notch at the main loop rates used for VTOL aircraft (typically 300-400Hz set by :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`) by setting bit 3 of :ref:`INS_HNTCH_OPTS<INS_HNTCH_OPTS>`, i.e. 
+
+- :ref:`INS_HNTCH_OPTS<INS_HNTCH_OPTS>` = 4
+
+Slewing ensures that the step changes at each update tick are smooth, but for optimum system performance you can use bi-directional Dshot ESCs which can deliver frequency updates at 400Hz, using the above option, if possible .
 
 Checking Harmonic Notch Effectiveness
 =====================================
