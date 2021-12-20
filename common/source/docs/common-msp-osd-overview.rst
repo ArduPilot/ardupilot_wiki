@@ -3,7 +3,7 @@
 =======
 MSP OSD
 =======
-ArduPilot supports the MSP OSD protocol which allows displaying flight data on the DJI goggles, much like with external MAVLink OSDs or the internal integrated OSD in many flight controllers. It can also be used with external OSDs , such as the MWOSD, if its configured for MSP telemetry, as is used with iNav or Betaflight.
+ArduPilot supports the MSP OSD protocol which allows displaying flight data on the DJI goggles, much like with external MAVLink OSDs or the internal integrated analog OSD in many flight controllers. It can also be used with external OSDs , such as the MWOSD, if its configured for MSP telemetry, as is used with iNav or Betaflight.
 
 DJI V1 FPV Goggles
 
@@ -27,9 +27,9 @@ Features
 Configuration
 =============
 
-To enable MSP OSD, set the following parameters (using SERIAL port 2 as the port to attach to the DJI Air unit using both TX and RX lines):
+To enable MSP OSD, set the following parameters (example below is using SERIAL port 2 as the port to attach to the DJI Air unit using both TX and RX lines):
 
- - :ref:`OSD_TYPE<OSD_TYPE>` = 3
+ - :ref:`OSD_TYPE<OSD_TYPE>` = 3  (only required to obtain statistics information panels). Can be set to 1 if autopilot has integrated analog OSD to use that feature in addition to the MSP OSD feature for DJI goggles.
  - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 33
  - :ref:`MSP_OPTIONS<MSP_OPTIONS>` = 0 (polling mode)
 
