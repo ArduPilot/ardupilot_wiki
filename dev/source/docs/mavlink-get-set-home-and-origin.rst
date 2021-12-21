@@ -15,6 +15,8 @@ The "EKF origin" is the location that the EKF (aka AHRS) uses for internal calcu
 
 Whenever the Home or EKF origin is updated the vehicle will send a `HOME_POSITION <https://mavlink.io/en/messages/common.html#HOME_POSITION>`__ or `GPS_GLOBAL_ORIGIN <https://mavlink.io/en/messages/common.html#GPS_GLOBAL_ORIGIN>`__ message (respectively) on all active mavlink channels.
 
+The home will also be sent in response to a `MAV_CMD_GET_HOME_POSITION <https://mavlink.io/en/messages/common.html#MAV_CMD_GET_HOME_POSITION>`__ sent within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message.
+
 .. _mavlink-get-set-home-and-origin_set_home_position:
 
 SET_HOME_POSITION
