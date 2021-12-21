@@ -122,3 +122,7 @@ available if you're still working on those platforms:
    PX4FMU
    Qualcomm Snapdragon Flight Kit
 
+Schematics
+----------
+
+Schematics for some of the "Open hardware" autopilots `can be found here <https://github.com/ArduPilot/Schematics>`__
