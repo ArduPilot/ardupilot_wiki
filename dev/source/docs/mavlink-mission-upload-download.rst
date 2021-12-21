@@ -24,3 +24,4 @@ Mission Related Messages
 Also the following MAV_CMDs may be sent within a COMMAND_LONG
 
 - `MAV_CMD_MISSION_START <https://mavlink.io/en/messages/common.html#MAV_CMD_MISSION_START>`__
+- `MAV_CMD_DO_CHANGE_SPEED <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_CHANGE_SPEED>`__
