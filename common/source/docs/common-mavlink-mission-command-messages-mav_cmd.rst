@@ -166,75 +166,38 @@ Commands supported by Copter
 This list of commands was inferred from the command handler in
 `/ArduCopter/mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduCopter/mode_auto.cpp#L388>`__. 
 
-:ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
-
-:ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
-
-:ref:`MAV_CMD_NAV_TAKEOFF <mav_cmd_nav_takeoff>`
-
-:ref:`MAV_CMD_NAV_LAND <mav_cmd_nav_land>`
-
-:ref:`MAV_CMD_NAV_LOITER_UNLIM <mav_cmd_nav_loiter_unlim>`
-
-:ref:`MAV_CMD_NAV_LOITER_TURNS <mav_cmd_nav_loiter_turns>`
-
-:ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
-
-:ref:`MAV_CMD_NAV_SPLINE_WAYPOINT <mav_cmd_nav_spline_waypoint>`
-
-:ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>`
-(NAV_GUIDED only)
-
-:ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
-
-:ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
-
-:ref:`MAV_CMD_COMPONENT_ARM_DISARM <mav_cmd_component_arm_disarm>`
-
-:ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
-
-:ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
-
-:ref:`MAV_CMD_CONDITION_YAW <mav_cmd_condition_yaw>`
-
-:ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
-
-:ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
-
-:ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
-
-:ref:`MAV_CMD_DO_SET_RELAY <mav_cmd_do_set_relay>`
-
-:ref:`MAV_CMD_DO_REPEAT_SERVO <mav_cmd_do_repeat_servo>`
-
-:ref:`MAV_CMD_DO_REPEAT_RELAY <mav_cmd_do_repeat_relay>`
-
-:ref:`MAV_CMD_DO_DIGICAM_CONFIGURE <mav_cmd_do_digicam_configure>`
-(Camera enabled only)
-
-:ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera
-enabled only)
-
-:ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>`
-(Camera enabled only)
-
-:ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`
-
-:ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
-
-:ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
-
-:ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled
-only)
-
-:ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>` (EPM enabled only)
-
-:ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>`
-(NAV_GUIDED only)
-
-:ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
-
-:ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
+- :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
+- :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
+- :ref:`MAV_CMD_NAV_TAKEOFF <mav_cmd_nav_takeoff>`
+- :ref:`MAV_CMD_NAV_LAND <mav_cmd_nav_land>`
+- :ref:`MAV_CMD_NAV_LOITER_UNLIM <mav_cmd_nav_loiter_unlim>`
+- :ref:`MAV_CMD_NAV_LOITER_TURNS <mav_cmd_nav_loiter_turns>`
+- :ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
+- :ref:`MAV_CMD_NAV_SPLINE_WAYPOINT <mav_cmd_nav_spline_waypoint>`
+- :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
+- :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
+- :ref:`MAV_CMD_COMPONENT_ARM_DISARM <mav_cmd_component_arm_disarm>`
+- :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
+- :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
+- :ref:`MAV_CMD_CONDITION_YAW <mav_cmd_condition_yaw>`
+- :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
+- :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
+- :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
+- :ref:`MAV_CMD_DO_SET_RELAY <mav_cmd_do_set_relay>`
+- :ref:`MAV_CMD_DO_REPEAT_SERVO <mav_cmd_do_repeat_servo>`
+- :ref:`MAV_CMD_DO_REPEAT_RELAY <mav_cmd_do_repeat_relay>`
+- :ref:`MAV_CMD_DO_DIGICAM_CONFIGURE <mav_cmd_do_digicam_configure>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`
+- :ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
+- :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
+- :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
+- :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>` (EPM enabled only)
+- :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
+- :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 
 [/site]
 
@@ -245,80 +208,40 @@ Commands supported by Plane
 This list of commands was inferred from the command handler in
 `/ArduPlane/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/commands_logic.cpp#L33>`__. 
 
-:ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
-
-:ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
-
-:ref:`MAV_CMD_NAV_TAKEOFF <mav_cmd_nav_takeoff>`
-
-:ref:`MAV_CMD_NAV_LAND <mav_cmd_nav_land>`
-
-:ref:`MAV_CMD_NAV_LOITER_UNLIM <mav_cmd_nav_loiter_unlim>`
-
-:ref:`MAV_CMD_NAV_LOITER_TURNS <mav_cmd_nav_loiter_turns>`
-
-:ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
-
-:ref:`MAV_CMD_NAV_ALTITUDE_WAIT <mav_cmd_nav_altitude_wait>`
-
-:ref:`MAV_CMD_NAV_LOITER_TO_ALT <mav_cmd_nav_loiter_to_alt>`
-
-:ref:`MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>`
-
-:ref:`MAV_CMD_NAV_VTOL_TAKEOFF <mav_cmd_nav_vtol_takeoff>`
-
-:ref:`MAV_CMD_NAV_VTOL_LAND <mav_cmd_nav_vtol_land>`
-
-
-
-:ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
-
-:ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
-
-
-:ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
-
-:ref:`MAV_CMD_DO_ENGINE_CONTROL <mav_cmd_do_engine_control>`
-
-:ref:`MAV_CMD_DO_VTOL_TRANSITION <mav_cmd_do_vtol_transition>`
-
-:ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
-
-:ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
-
-:ref:`MAV_CMD_DO_SET_RELAY <mav_cmd_do_set_relay>`
-
-:ref:`MAV_CMD_DO_REPEAT_SERVO <mav_cmd_do_repeat_servo>`
-
-:ref:`MAV_CMD_DO_REPEAT_RELAY <mav_cmd_do_repeat_relay>`
-
-:ref:`MAV_CMD_DO_DIGICAM_CONFIGURE <mav_cmd_do_digicam_configure>`
-(Camera enabled only)
-
-:ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera
-enabled only)
-
-:ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>`
-(Camera enabled only)
-
-:ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled
-only)
-
-:ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
-
-:ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
-
-:ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
-
-:ref:`MAV_CMD_DO_INVERTED_FLIGHT <mav_cmd_do_inverted_flight>`
-
-:ref:`MAV_CMD_DO_LAND_START <mav_cmd_do_land_start>`
-
-:ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
-
-:ref:`MAV_CMD_DO_AUTOTUNE_ENABLE <mav_cmd_do_autotune_enable>`
-
-:ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
+- :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
+- :ref:`MAV_CMD_NAV_TAKEOFF <mav_cmd_nav_takeoff>`
+- :ref:`MAV_CMD_NAV_LAND <mav_cmd_nav_land>`
+- :ref:`MAV_CMD_NAV_LOITER_UNLIM <mav_cmd_nav_loiter_unlim>`
+- :ref:`MAV_CMD_NAV_LOITER_TURNS <mav_cmd_nav_loiter_turns>`
+- :ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
+- :ref:`MAV_CMD_NAV_ALTITUDE_WAIT <mav_cmd_nav_altitude_wait>`
+- :ref:`MAV_CMD_NAV_LOITER_TO_ALT <mav_cmd_nav_loiter_to_alt>`
+- :ref:`MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>`
+- :ref:`MAV_CMD_NAV_VTOL_TAKEOFF <mav_cmd_nav_vtol_takeoff>`
+- :ref:`MAV_CMD_NAV_VTOL_LAND <mav_cmd_nav_vtol_land>`
+- :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
+- :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
+- :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
+- :ref:`MAV_CMD_DO_ENGINE_CONTROL <mav_cmd_do_engine_control>`
+- :ref:`MAV_CMD_DO_VTOL_TRANSITION <mav_cmd_do_vtol_transition>`
+- :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
+- :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
+- :ref:`MAV_CMD_DO_SET_RELAY <mav_cmd_do_set_relay>`
+- :ref:`MAV_CMD_DO_REPEAT_SERVO <mav_cmd_do_repeat_servo>`
+- :ref:`MAV_CMD_DO_REPEAT_RELAY <mav_cmd_do_repeat_relay>`
+- :ref:`MAV_CMD_DO_DIGICAM_CONFIGURE <mav_cmd_do_digicam_configure>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
+- :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
+- :ref:`MAV_CMD_DO_INVERTED_FLIGHT <mav_cmd_do_inverted_flight>`
+- :ref:`MAV_CMD_DO_LAND_START <mav_cmd_do_land_start>`
+- :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
+- :ref:`MAV_CMD_DO_AUTOTUNE_ENABLE <mav_cmd_do_autotune_enable>`
+- :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
 
 [/site]
 
@@ -333,47 +256,25 @@ Commands supported by Rover
 This list of commands was inferred from the command handler in
 `/Rover/commands_logic.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/commands_logic.cpp#L25>`__. 
 
-:ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
-
-:ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
-
-:ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
-
-:ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
-
-:ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
-
-:ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
-
-:ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
-
-:ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
-
-:ref:`MAV_CMD_DO_SET_RELAY <mav_cmd_do_set_relay>`
-
-:ref:`MAV_CMD_DO_REPEAT_SERVO <mav_cmd_do_repeat_servo>`
-
-:ref:`MAV_CMD_DO_REPEAT_RELAY <mav_cmd_do_repeat_relay>`
-
-:ref:`MAV_CMD_DO_DIGICAM_CONFIGURE <mav_cmd_do_digicam_configure>`
-(Camera enabled only)
-
-:ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera
-enabled only)
-
-:ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
-
-:ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>`
-(Camera enabled only)
-
-:ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled
-only)
-
-:ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
-
-:ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
-
-:ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
+- :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
+- :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
+- :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
+- :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
+- :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
+- :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
+- :ref:`MAV_CMD_DO_SET_HOME <mav_cmd_do_set_home>`
+- :ref:`MAV_CMD_DO_SET_SERVO <mav_cmd_do_set_servo>`
+- :ref:`MAV_CMD_DO_SET_RELAY <mav_cmd_do_set_relay>`
+- :ref:`MAV_CMD_DO_REPEAT_SERVO <mav_cmd_do_repeat_servo>`
+- :ref:`MAV_CMD_DO_REPEAT_RELAY <mav_cmd_do_repeat_relay>`
+- :ref:`MAV_CMD_DO_DIGICAM_CONFIGURE <mav_cmd_do_digicam_configure>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
+- :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
+- :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
+- :ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
+- :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 
 [/site]
 
