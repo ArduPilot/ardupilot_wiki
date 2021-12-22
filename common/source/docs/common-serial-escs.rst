@@ -11,4 +11,4 @@ ArduPilot supports ESCs connected via a UART port that uses serial protocol. Som
 
     FETtec OneWire ESCs <common-fettec-onewire>
     
-    [copywiki destination="plane,copter,rover,dev"]
+    [copywiki destination="plane,copter,rover"]
