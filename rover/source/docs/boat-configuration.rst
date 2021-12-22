@@ -16,3 +16,4 @@ The special features for Boats include:
 - :ref:`Vectored Thrust <rover-vectored-thrust>` can be enabled to improve steering response on boats which use the steering servo to aim the motors (version 3.3.1 and higher)
 - :ref:`Loiter mode <loiter-mode>` for holding position
 - :ref:`Echosounders <common-underwater-sonars-landingpage>` for underwater mapping
+- :ref:`ReefMaster for bathymetry <reefmaster-for-bathymetry>`
