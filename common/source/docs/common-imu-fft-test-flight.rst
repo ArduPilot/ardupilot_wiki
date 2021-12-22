@@ -1,5 +1,7 @@
 .. _common-imu-fft-test-flight:
 
+[copywiki destination="copter,plane"]
+
 =======================================
 Initial Flight and Post-Flight Analysis
 =======================================

@@ -1,5 +1,7 @@
 .. _common-imu-fft-how-it-works:
 
+[copywiki destination="copter,plane"]
+
 ============
 How it works
 ============

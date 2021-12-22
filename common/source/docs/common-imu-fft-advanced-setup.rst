@@ -1,5 +1,7 @@
 .. _common-imu-fft-advanced-setup:
 
+[copywiki destination="copter,plane"]
+
 ============================
 Advanced In-Flight FFT Setup
 ============================
