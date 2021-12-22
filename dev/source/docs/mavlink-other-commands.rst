@@ -11,12 +11,16 @@ MAV_CMDs
 
 These MAV_CMDs should be packaged within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message.
 
+- :ref:`MAV_CMD_DO_AUTOTUNE_ENABLE <plane:mav_cmd_do_autotune_enable>` (Plane only)
 - :ref:`MAV_CMD_DO_DIGICAM_CONFIGURE <copter:mav_cmd_do_digicam_configure>`
 - :ref:`MAV_CMD_DO_DIGICAM_CONTROL <copter:mav_cmd_do_digicam_control>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <copter:mav_cmd_do_fence_enable>`
+- `MAV_CMD_DO_GO_AROUND <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_GO_AROUND>`__ (Plane only)
+- `MAV_CMD_DO_LAND_START <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_LAND_START>`__ (Plane only)
 - :ref:`MAV_CMD_DO_GRIPPER <copter:mav_cmd_do_gripper>`
 - `MAV_CMD_DO_MOTOR_TEST <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_MOTOR_TEST>`__
 - :ref:`MAV_CMD_DO_PARACHUTE <copter:mav_cmd_do_parachute>`
+- `MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN <https://mavlink.io/en/messages/common.html#MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN>`__
 - :ref:`MAV_CMD_DO_REPEAT_SERVO <copter:mav_cmd_do_repeat_servo>`
 - :ref:`MAV_CMD_DO_REPEAT_RELAY <copter:mav_cmd_do_repeat_relay>`
 - `MAV_CMD_DO_SEND_BANNER <https://mavlink.io/en/messages/ardupilotmega.html#MAV_CMD_DO_SEND_BANNER>`__
@@ -42,6 +46,8 @@ Below are other commands that will be handled by Copter
 - `ADSB_VEHICLE <https://mavlink.io/en/messages/common.html#ADSB_VEHICLE>`__
 - `AUTOPILOT_VERSION_REQUEST <https://mavlink.io/en/messages/ardupilotmega.html#AUTOPILOT_VERSION_REQUEST>`__
 - `COMMAND_ACK <https://mavlink.io/en/messages/common.html#COMMAND_ACK>`__
+- `FENCE_POINT <https://mavlink.io/en/messages/ardupilotmega.html#FENCE_POINT>`__
+- `FENCE_FETCH_POINT <https://mavlink.io/en/messages/ardupilotmega.html#FENCE_FETCH_POINT>`__
 - `GIMBAL_REPORT <https://mavlink.io/en/messages/ardupilotmega.html#GIMBAL_REPORT>`__
 - `GPS_INJECT_DATA <https://mavlink.io/en/messages/common.html#GPS_INJECT_DATA>`__
 - `HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__
