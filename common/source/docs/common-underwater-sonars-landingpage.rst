@@ -16,3 +16,14 @@ Follow the links below (or in the sidebar) for configuration information based u
     Kogger Sonar <common-kogger-sonar>
     Underwater Sonar (Analog) <common-underwater-sonar-analog>
     Triducer <common-underwater-triducer>
+
+[site wiki="rover"]
+Bathymetry Tools
+----------------
+
+.. toctree::
+    :maxdepth: 1
+
+    ReefMaster <reefmaster-for-bathymetry>
+
+[/site]
