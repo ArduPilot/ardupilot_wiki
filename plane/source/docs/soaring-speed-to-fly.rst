@@ -1,4 +1,4 @@
-.. _soaring-upcoming:
+.. _soaring-speed-to-fly:
 
 Speed to fly
 ============
