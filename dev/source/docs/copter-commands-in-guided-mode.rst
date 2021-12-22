@@ -24,7 +24,6 @@ MAV_CMDs
 
 These MAV_CMDs can be processed if packaged within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message.
 
-- :ref:`MAV_CMD_COMPONENT_ARM_DISARM <copter:mav_cmd_component_arm_disarm>`
 - :ref:`MAV_CMD_CONDITION_YAW <copter:mav_cmd_condition_yaw>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <copter:mav_cmd_do_change_speed>`
 - `MAV_CMD_DO_FLIGHTTERMINATION <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_FLIGHTTERMINATION>`__ - disarms motors immediately (Copter falls!).
@@ -35,6 +34,10 @@ These MAV_CMDs can be processed if packaged within a `COMMAND_LONG <https://mavl
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <copter:mav_cmd_nav_return_to_launch>`
 - :ref:`MAV_CMD_NAV_LAND <copter:mav_cmd_nav_land>`
 - `MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN <https://mavlink.io/en/messages/common.html#MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN>`__
+
+These MAV_CMDs can be processed if packaged within a `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ message
+
+- `MAV_CMD_DO_REPOSITION <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_REPOSITION>`__
 
 Movement Command Details
 ========================
