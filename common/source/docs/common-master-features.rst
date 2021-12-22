@@ -21,8 +21,8 @@ This lists features or changes merged in master and build in the "latest" firmwa
     MSP Telemetry Addition of Canvass Mode <common-msp-overview-4.2>
     Packet Digital MPPT Solar Controller <common-packetdigital-mppt>
     Swan K-1 Copter Tailsitter <common-Swan-K1>
-[site wiki="plane']
-    Soaring upcoming features <soaring-upcoming>
+[site wiki="plane"]
+    Soaring speed to fly <soaring-speed-to-fly>
 [/site]
     Other wiki changes <common-future-wiki-changes>
 
