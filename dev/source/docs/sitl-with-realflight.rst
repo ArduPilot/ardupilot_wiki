@@ -45,7 +45,7 @@ From within RealFlight, Reduce graphics options to improve performance:
   - Simulation, Settings, Graphics
   - Under "Quality" set all values to "No" or "Low" (i.e. set "Clouds" to "No", "Water Quality" to "Low", etc)
   - Under "Hardware" set "Resolution" to "800 x 600 Medium(16 bit) and select "Full Screen" mode
-  - Under physics settings, change the option for "Pause Sim When in Background" to No, and "Automatic Reset Delay(sec)" to 2.0
+  - Under "Physics" settings, change the option for "Pause Sim When in Background" to No, and "Automatic Reset Delay(sec)" to 2.0, and be sure RealFlight Link Enable is "Yes".
    
   .. image:: ../images/realflight-settings-graphics.png
     :target: ../_images/realflight-settings-graphics.png
