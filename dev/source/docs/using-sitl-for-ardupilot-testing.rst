@@ -177,6 +177,8 @@ You can re-load the parameters later if you choose, or revert to the
 default parameters by starting SITL (**sim_vehicle.py**) with the
 ``-w`` flag.
 
+.. note:: You may have to load them again, after typing ``param fetch``, in order to load parameters that require enabling before presenting their parameter set.  And, in some cases, you may even need to restart SITL in order for some new parameters, such as output function changes, to take effect. This can be avoided if you add the parameter file during the start of SITL with the "--add-param-file=*pathtofile* "....ie: sim_vehicle.py -f flightaxis:192.168.x.x - -map - -console --add-param-file=*pathtofile* -w. This adds the param file as a default and then wipes any previous param changes that may exist in the simulation directory. 
+
 Parameters can also be saved. For example, to save the parameters into
 the present working directory you might do:
 
