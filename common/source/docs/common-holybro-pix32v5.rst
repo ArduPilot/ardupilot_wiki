@@ -3,9 +3,9 @@
 .. role:: raw-html(raw)
    :format: html
 
-=================
+========
 Pix32 v5
-=================
+========
 
 .. image:: ../../../images/holybro-pix32v5/Pix32-v5-Family.jpg
     :target: ../_images/Pix32-v5-Family.jpg
@@ -68,6 +68,17 @@ Specifications
 -  **Mechanical Data**
      - Dimensions: 45mm x 45mm x 13.5mm
      - Weight: 33.0g
+
+UART Mapping
+============
+
+ - SERIAL0 -> USB
+ - SERIAL1 -> UART2 (Telem1)
+ - SERIAL2 -> UART3 (Telem2)
+ - SERIAL3 -> UART1 (GPS)
+ - SERIAL4 -> UART4 (GPS2, marked TEL4/GPS2)
+ - SERIAL5 -> UART6 (Telem3)
+ - SERIAL6 -> UART7 (spare, debug)
 
 Carrier board pin assignments
 =============================
