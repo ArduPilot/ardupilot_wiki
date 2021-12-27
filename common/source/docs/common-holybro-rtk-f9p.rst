@@ -41,6 +41,8 @@ For normal operation, ArduPilot's GPS parameter defaults will work for any seria
 
 .. note:: ArduPilot does not currently configure UBlox F9P GPS constellations. User must assure that the GPS is properly configured for his region and application. See :ref:`common-gps-ublox-firmware-update`
 
+If you are unable to preform a normal compass calibration ("compass dance") for any reason, then set parameter COMPASS_ORIENT=6 (Yaw270) for proper compass orientation.
+
 GPS Accessories
 ===============
 
