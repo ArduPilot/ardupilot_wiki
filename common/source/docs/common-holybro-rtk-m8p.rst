@@ -37,6 +37,8 @@ Configuration
 
 For normal operation, ArduPilot's GPS parameter defaults will work for any serial port configured for ``SERIALx_PROTOCOL`` = 5. 
 
+If you are unable to preform a normal compass calibration ("compass dance") for any reason, set parameter COMPASS_ORIENT=6 (Yaw270) for proper compass orientation.
+
 GPS Accessories
 ===============
 
