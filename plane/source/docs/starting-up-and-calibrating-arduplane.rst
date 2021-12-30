@@ -62,7 +62,7 @@ plane acquires its GPS lock. It is then continuously updated as long as
 the autopilot is disarmed.
 
 This means that if you execute an RTL, your plane will return to the
-location at which it was armed. If the plane you arm is not a good return
+location at which it was armed. If the place you arm is not a good return
 point then please setup a :ref:`rally point <common-rally-points>` instead. A rally point will be
 used in preference to the home location for RTL.
 
