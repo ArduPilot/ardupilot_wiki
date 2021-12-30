@@ -160,7 +160,7 @@ An example filename is ``message-intervals-chan0.txt``
 
 The format is simple but strict.  There are two columns, separated by a single space and both containing numbers.  The first number is a mavlink message ID.  The second is the message interval, in milliseconds.  Each line must be terminated by either carriage-return *or* a line-feed.
 
-.. code-block::
+::
 
    30 50
    28 100
@@ -170,7 +170,7 @@ This sample file content will stream `ATTITUDE <https://mavlink.io/en/messages/c
 
 Configuration files can be included in ROMFS (i.e. compiled into the image) by specifying their path in the relevant board's hwdef file:
 
-.. code-block::
+::
 
    ROMFS message-intervals-chan0.txt libraries/AP_HAL_ChibiOS/hwdef/CubeOrange/message-intervals-chan0.txt
 
