@@ -21,7 +21,7 @@ The sensor is available from various retailers incluing `Banggood.com <https://w
 These alternatives have also been shown to work:
 
 - `FPV RC Drone Optical Flow Module <https://www.aliexpress.com/item/1-3-2CM-FPV-RC-Drone-Optical-Flow-Module-Hovering-Altitude-Hold-Optical-Flow-Sensor-Balance/33002000486.html>`__
-- `ThoneFlow-3901U UART Serial Version PMW3901 Optical Flow Sensor <https://www.seeedstudio.com/ThoneFlow_3901U_UART_Serial_Version_PMW3901_Optical_Flow_Sensor-p-4040.html>`__
+- `ThoneFlow-3901U UART Serial Version PMW3901 Optical Flow Sensor <https://www.seeedstudio.com/ThoneFlow-3901U-UART-Serial-Version-PMW3901-Optical-Flow-Sensor-p-4040.html>`__
 
 These alternatives may work but this has not been confirmed:
 
