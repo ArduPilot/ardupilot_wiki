@@ -76,12 +76,11 @@ time. If you have questions, first look through the table of contents
 (upper left of every page) for a topic that may address your question.
 Next, try a search of the website.  If you still need help, then the
 community forums are the place to go. There you will find may friendly
-users, developers and often, even Michael will chime in.  There are two
-primary discussion areas located at diydrones.com 
-`here <https://diydrones.com>`__ and the Arduilot forum
-`here <https://discuss.ardupilot.org/>`__. The diydrones forum has existed
-for years and has a very large community and numerous general topics.
-The ArduPilot forum is more specific to ArduPilot and its vehicles.
+users, developers and often, even Michael will chime in. 
+
+The Arduilot forum `here <https://discuss.ardupilot.org/>`__ has existed
+for years and has a very large community and numerous general and vehicle specific topics.
+
 
 **Reporting Issues:**
 
@@ -91,7 +90,7 @@ issue. One of the developers will normally be glad to do so.
 
 If you see a need to change or enhance the documentation, please let us
 know - again using the forums.  We welcome your suggestions and there
-are dozens of qualified editors who can implement your suggestions.
+are qualified editors who can implement your suggestions.
 
 Navigating the Documentation
 ============================
