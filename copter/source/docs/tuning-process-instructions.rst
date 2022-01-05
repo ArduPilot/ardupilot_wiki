@@ -9,8 +9,9 @@ The tuning process consists of the following steps:
 1. :ref:`Setting up the parameters to prepare for the first tuning flights<setting-up-for-tuning>`
 2. :ref:`Initial tuning flight <initial-tuning-flight>` to obtain a stable, but not necessarily optimized, tune.
 3. :ref:`Evaluation of the initial stable tuning <evaluating-the-aircraft-tune>`.
-4. :ref:`Manually optimizing the tune<ac_rollpitchtuning>` or, preferably, running :ref:`AUTOTUNE<autotune>`.
-5. Setting the :ref:`Input Shaping<input-shaping>` parameters to obtain the desired "feel"
+4. :ref:`Manual tuning of Roll and Pitch<ac_rollpitchtuning>`.
+5. :ref:`AUTOTUNE<autotune>`.
+6. Setting the :ref:`Input Shaping<input-shaping>` parameters to obtain the desired "feel"
 
 
 The initial tune of the aircraft should be done **in the aircrafts most agile configuration**. This generally means that the aircraft will be at its minimum take off weight with fully charged batteries.
