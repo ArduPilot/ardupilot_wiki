@@ -77,13 +77,13 @@ To update an existing installation with the current release on Python 3 based sy
 
 .. code:: bash
 
-    pip3 install mavproxy --user --upgrade
+    pip3 install mavproxy pymavlink --user --upgrade
 
 or for Python 2 systems:
 
 .. code:: bash
 
-    pip install mavproxy --user --upgrade
+    pip install mavproxy pymavlink --user --upgrade
 
 To update an existing installation with the current development version (ie, from its master branch) for Python 3 systems:
 
