@@ -199,6 +199,9 @@ The ``coordinate_frame`` field takes the following values:
 |                                      | heading. Use this to specify the     |
 |                                      | speed forward, right and down (or the|
 |                                      | opposite if you use negative values).|
+|                                      |                                      |
+|                                      | Specify yaw rate of zero to stop     |
+|                                      | vehicle yaw from changing            |
 +--------------------------------------+--------------------------------------+
 
 .. tip::
@@ -231,9 +234,13 @@ Here are some example commands that can be copy-pasted into MAVProxy (aka SITL) 
 +----------------------------------------------------------------------------------+-----------------------------------------------------+
 | ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 3527 0 0 0 1 0 0 0 0 0 0 0``     | fly forward at 1m/s                                 |
 +----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 1479 0 0 0 0 1 0 0 0 0 0 0``     | fly right at 1m/s with yaw rate of zero             |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
 | ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 3135 0 0 0 0 0 0 1 0 0 0 0``     | accelerate North at 1m/s                            |
 +----------------------------------------------------------------------------------+-----------------------------------------------------+
 | ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 3135 0 0 0 0 0 0 1 0 0 0 0``     | accelerate forward at 1m/s                          |
++----------------------------------------------------------------------------------+-----------------------------------------------------+
+| ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 9 1087 0 0 0 0 0 0 0 1 0 0 0``     | accelerate right at 1m/s with yaw rate of zero      |
 +----------------------------------------------------------------------------------+-----------------------------------------------------+
 | ``message SET_POSITION_TARGET_LOCAL_NED 0 0 0 1 2503 0 0 0 0 0 0 0 0 0 0.7854 0``| turn to North-East (Yaw target + velocity of zero)  |
 +----------------------------------------------------------------------------------+-----------------------------------------------------+
