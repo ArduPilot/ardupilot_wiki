@@ -15,16 +15,16 @@ Topics related to logging and analysis
     Dataflash Logs <common-downloading-and-analyzing-data-logs-in-mission-planner>
 [/site]
 [site wiki="plane"]
-    Plane Log Messages <logmessages>
+    Plane Log Messages <LogMessages>
 [/site]
 [site wiki="copter"]
-    Copter Log Messages <logmessages>
+    Copter Log Messages <LogMessages>
 [/site]
 [site wiki="rover"]
-    Rover Log Messages <logmessages>
+    Rover Log Messages <LogMessages>
 [/site]
 [site wiki="antennatracker"]
-    Antenna Tracker Log Messages <logmessages>
+    Antenna Tracker Log Messages <LogMessages>
 [/site]
 [site wiki="plane"]
     Log Analysis Case Study: Fly-by-Wire <case-study-fly-by-wire>
