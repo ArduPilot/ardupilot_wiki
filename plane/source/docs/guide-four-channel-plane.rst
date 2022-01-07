@@ -26,7 +26,9 @@ After the RC inputs are configured, configure the outputs.
              
 Servo cables can be connected to any output of the autopilot,
 but using the default channels 1-4 listed below is recommended. 
-Set the SERVOn_FUNCTIONS to the appropriate values.
+Set the SERVOn_FUNCTION to the appropriate values.
+
+You can do this by setting the  parameter directly using Ground Station software such as Mission Planner or QGroundControl using either the full parameter lists or setup tab for outputs. In Mission Planner you can do this on the SETUP -> Mandatory Hardware -> Servo Output page. Each channel has a dropdown which can be used to select the function of the channel.
 
 .. raw:: html
 
@@ -78,6 +80,8 @@ If the any of the control surfaces do not respond correctly, reverse the
 output by changing the corresponding SERVOn_REVERSED setting (from 0 to 1, 
 or from 1 to 0).
 
+The output can be reversed in Mission Planner on the SETUP/Mandatory Hardware/Servo Output page, just check the box for the channel that needs to be reversed. This will set the output's SERVOn_REVERSED parameter.
+
 .. note:: :ref:`KFF_RDDRMIX<KFF_RDDRMIX>` mut not be set to 0 for rudder setup. If the 
           plane actually needs 0, then reset it after this setup.
 
@@ -88,7 +92,7 @@ or from 1 to 0).
 Confirm RC Transmitter Input
 ============================
 
-Keep the plane level in FBWA mode and command the following inputs:
+Keep the plane level in FBWA mode and command the following inputs by moving the sticks on your transmitter:
 
 .. raw:: html
          
@@ -103,9 +107,12 @@ Keep the plane level in FBWA mode and command the following inputs:
    </table>
 
 If the control surfaces do not respond correctly, change the RCn_reversed
-parameter (from 0 to 1, or from 1 to 0). Double check MANUAL mode for the
+parameter (from 0 to 1, or from 1 to 0). Do NOT reverse the output on your transmitter. It must be changed in the flight controller!
+Double check MANUAL mode for the
 same inputs. If everything is setup correctly, the plane should be almost
 ready to fly.
+
+If in MANUAL mode the surfaces move backward with stick movements now, the corresponding RC input should be reversed. To do this, in Mission Planner RCn_REVERSED can be easily set on the SETUP/Mandatory Hardware/Radio Calibration page. There is a check box "Reverse" next to each input bar. You can reverse the correct parameter by checking the box. However, if :ref:`common-radio-control-calibration' was followed correctly, changing RC input reversal will not be necessary.
 
 Servo Trim
 ==========
@@ -121,7 +128,7 @@ Servo Throw
 ===========
 
 Finally adjust the servo throws (range of
-movement for each of the servos).
+movement for each of the servos). This should also be done in MANUAL mode.
 
 Check any instructions that came with the plane for suggested throw
 values. These are often specified in millimeters or inches of movement
