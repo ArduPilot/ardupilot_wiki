@@ -46,7 +46,9 @@ developed by Michael Oborne for the open-source APM autopilot project.
 If you would like to donate to the ongoing development of Mission
 Planner, please refer to the following link.
 
-<https://ardupilot.org/planner/docs/common-donation.html>
+` Donate <https://ardupilot.org/planner/docs/common-donation.html>`__
+
+_mission-planner-overview_support:
 
 Support
 =======
