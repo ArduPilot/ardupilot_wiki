@@ -20,11 +20,11 @@ Open hardware
     CUAV X7/ X7 Pro <common-cuav-x7-overview>
     Drotek Pixhawk3 <https://drotek.gitbook.io/pixhawk-3-pro/>
     F4BY <common-f4by>
-    Hex/ProfiCNC Cube Black <common-thecube-overview>
-    Hex/ProfiCNC Cube Orange <common-thecubeorange-overview>
-    Hex/ProfiCNC Cube Purple <common-thecubepurple-overview>
-    Hex/ProfiCNC Cube Yellow <common-thecubeyellow-overview>
-    Hex/ProfiCNC Cube Green <https://docs.cubepilot.org/user-guides/autopilot/the-cube-module-overview>
+    CubePilot Cube Black <common-thecube-overview>
+    CubePilot Cube Orange <common-thecubeorange-overview>
+    CubePilot Cube Purple <common-thecubepurple-overview>
+    CubePilot Cube Yellow <common-thecubeyellow-overview>
+    CubePilot Cube Green <https://docs.cubepilot.org/user-guides/autopilot/the-cube-module-overview>
     Holybro Durandal H7 <common-durandal-overview>
     Holybro Pix32 v5 <common-holybro-pix32v5>
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
