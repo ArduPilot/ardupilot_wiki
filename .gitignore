@@ -64,10 +64,10 @@
 /dev/source/docs/AP_Periph-Parameters.rst
 
 # Log messages files
-/copter/source/docs/logmessages.rst
-/plane/source/docs/logmessages.rst
-/rover/source/docs/logmessages.rst
-/antennatracker/source/docs/logmessages.rst
+/copter/source/docs/LogMessages.rst
+/plane/source/docs/LogMessages.rst
+/rover/source/docs/LogMessages.rst
+/antennatracker/source/docs/LogMessages.rst
 
 # Javascript files
 /antennatracker/source/_static/useralerts.js
