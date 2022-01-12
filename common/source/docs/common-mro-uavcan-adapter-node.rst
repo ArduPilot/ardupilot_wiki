@@ -56,7 +56,7 @@ Then reboot.
 Where to buy
 ============
 
-`mRobotics <https://store.mrobotics.io/product-p/mro10042.htm>`_
+`mRobotics <https://store.mrobotics.io/product-p/mro10042a.htm>`_
 
 Schematics
 ==========
