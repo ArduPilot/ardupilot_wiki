@@ -70,7 +70,7 @@ Press on GitHub tab then you should see a prompt like the following. Press on th
     :target: ../_images/atom_github_token.png
 
 
-You can visit the official GitHub manual for Atom `here <https://flight-manual.atom.io/using-atom/sections/github-package/>`__ to to start managing your GitHub repositories from Atom.
+You can visit the official GitHub manual for Atom `here <https://flight-manual.atom.io/using-atom/sections/github-package/>`__ to start managing your GitHub repositories from Atom.
 
 Install Teletype package for real time collaboration
 ====================================================

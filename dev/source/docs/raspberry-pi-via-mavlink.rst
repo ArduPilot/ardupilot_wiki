@@ -113,7 +113,7 @@ The APSync image will have the serial port (UART) already enabled.
 MAVProxy
 --------
 
-MAVProxy can be used to to send commands to the flight controller from the Pi. 
+MAVProxy can be used to send commands to the flight controller from the Pi. 
 It can also be used to route telemetry to other network endpoints.
 
 This assumes you have a SSH connection to the Pi. If not, see see the 
