@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 '''
 Script to get last blog entries on Discourse (https://discuss.ardupilot.org/)
