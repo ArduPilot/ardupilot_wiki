@@ -130,7 +130,7 @@ The tests can be run under GDB to trace problems:
 Using with Valgrind
 ...................
 
-The tests can be run under Valgrind's memcheck too to to trace memory problems:
+The tests can be run under Valgrind's memcheck too to trace memory problems:
 
 ::
 

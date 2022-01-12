@@ -100,7 +100,7 @@ For Copter-3.6 (and earlier):
 Mission Planner Helper
 ======================
 
-A tab under SETUP/Mandatory Hardware/Initial Parameter Setup is provided in Mission Planner to to setup the above parameters easily.
+A tab under SETUP/Mandatory Hardware/Initial Parameter Setup is provided in Mission Planner to setup the above parameters easily.
 
 .. image:: ../../../images/mp-initial-copter-param-setup.png
     :target: ../_images/mp-initial-copter-param-setup.png

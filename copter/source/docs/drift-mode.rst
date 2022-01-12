@@ -71,6 +71,6 @@ Setting up Drift Mode
 =====================
 
 -  In the Mission Planner Configuration Section under flight modes
-   select Drift Mode to to apply to an appropriate switch setting.
+   select Drift Mode to apply to an appropriate switch setting.
 -  More information on tuning Drift mode is expected to be forthcoming
    shortly as are additional enhancements to Drift Mode itself.

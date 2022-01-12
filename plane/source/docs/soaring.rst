@@ -177,7 +177,7 @@ For best results the TECS needs to be set up to fly the aircraft at a consistent
 gliding.
 
 If your aircraft has trouble maintaining airspeed accurately you can tune it by confirming that 
-:ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` is set to to 2.0, :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and set
+:ref:`TECS_SPDWEIGHT<TECS_SPDWEIGHT>` is set to 2.0, :ref:`SOAR_ENABLE<SOAR_ENABLE>` to 1 and set
 :ref:`SOAR_VSPEED<SOAR_VSPEED>` to a large number, say 50.0, or use the :ref:`RC switch<soaring_rc-switch>`
 to inhibit mode changes. This means that the aircraft will
 glide but will never begin thermalling. Set :ref:`SOAR_ALT_CUTOFF<SOAR_ALT_CUTOFF>` to an altitude high enough to

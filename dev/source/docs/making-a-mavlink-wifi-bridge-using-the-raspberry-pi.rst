@@ -618,7 +618,7 @@ server. In order to set it up we will use a script and modify it to work
 with the RPi.
 
 #. Download the `mavgateway file <https://raw.githubusercontent.com/dronekit/dronekit-python/3222b2cdb71b8b4c5b924ee28fc5d3529be00e67/scripts/mavgateway>`__
-   (from Github) and then copy it over to to the RPi.
+   (from Github) and then copy it over to the RPi.
 #. We now have to edit the file and change some aspects of it to make it
    compatible. Lets edit the file:
 
