@@ -136,7 +136,9 @@ def fetchparameters(site=None, cache=None):
                 subprocess.check_call(["wget", fetchurl])
 
             # move in new file
-            os.replace('Parameters.rst', targetfile)
+            if os.path.exists(targetfile):
+                os.unlink(targetfile)
+            os.rename('Parameters.rst', targetfile)
 
 
 def fetchlogmessages(site=None, cache=None):
@@ -160,7 +162,9 @@ def fetchlogmessages(site=None, cache=None):
             else:
                 subprocess.check_call(["wget", fetchurl])
             # move in new file
-            os.replace('LogMessages.rst', targetfile)
+            if os.path.exists(targetfile):
+                os.unlink(targetfile)
+            os.rename('LogMessages.rst', targetfile)
 
 
 def build_one(wiki):
