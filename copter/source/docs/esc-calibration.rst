@@ -34,7 +34,7 @@ fails try the "Manual ESC-by-ESC" method.
    **Safety Check!**
 
    Before calibrating ESCs, please ensure that your copter has NO PROPS on
-   it and that the APM is NOT CONNECTED to your computer via USB and the
+   it and that the autopilot is NOT CONNECTED to your computer via USB and the
    Lipo battery is disconnected.
 
    .. image:: ../images/copter_disconnect_props_banner.png
@@ -152,9 +152,9 @@ your LiPo.  Remember: no propellers!
 Notes / Troubleshooting
 =======================
 
-The All-at-once ESC calibration mode simply causes the APM to pass
+The All-at-once ESC calibration mode simply causes the autopilot to pass
 through the pilot's throttle directly through to the ESCs. If you power
-up the APM while in this mode you’ll send the same PWM signal to all the
+up the autopilot while in this mode you’ll send the same PWM signal to all the
 ESCs. That's all it does.  Many ESCs use full throttle at startup to
 enter programming mode, full throttle postition is then saved as the
 upper end point and when you pull the throttle down to zero, that

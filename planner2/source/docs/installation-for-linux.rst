@@ -63,7 +63,7 @@ Or use the link create in your launcher
 Common problems
 ===============
 
-If you find the APM Planner 2 is unable to connect to the APM2/Pixhawk,
+If you find the APM Planner 2 is unable to connect to the autopilot,
 it may be because of the modemmanager package.  Uninstall this package
 by entering the following command into a terminal window:
 

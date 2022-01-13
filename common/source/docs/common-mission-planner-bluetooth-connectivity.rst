@@ -25,7 +25,7 @@ recommendation, Telem2 or even Serial 4/5 will work.
 
 Once you have connected the Bluetooth data link you can power up the
 board.  It is OK to use USB connected power while using the Bluetooth
-module connected to the APM or PixHawk as the USB connection can supply
+module connected to the autopilot as the USB connection can supply
 enough power BUT YOU MUST USE A WALL WART with Micro or Mini USB).
 
 Bluetooth data link's LEDs:
@@ -82,7 +82,7 @@ you can use a generic USB Bluetooth dongle (pic above) or use an
 additional Bluetooth data link
 connected via an `FTDI Cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__.
 
-After first making sure your Pixhawk/APM2 is powered on, and your PC's
+After first making sure your autopilot is powered on, and your PC's
 bluetooth dongle is plugged in and installed, click on the Windows task
 bar's little up triangle (aka "show hidden icons") which should be on
 the bottom right of the screen.

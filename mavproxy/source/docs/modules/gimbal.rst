@@ -6,7 +6,7 @@ Gimbal Management
 
     module load gimbal
     
-The gimbal module manages any gimbals attached to the APM via the RC
+The gimbal module manages any gimbals attached to the autopilot via the RC
 output ports.
 
 A gimbal menu is available on the GUI console.

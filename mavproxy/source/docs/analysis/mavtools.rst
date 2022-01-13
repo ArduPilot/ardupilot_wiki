@@ -32,7 +32,7 @@ by Google Earth.
 mavparms.py
 ===========
 
-Finds the APM parameters in a logfile and displays them on the console.
+Finds the ArduPilot parameters in a logfile and displays them on the console.
 
 .. code:: bash
 

@@ -3,9 +3,9 @@ Rally Points
 ============
 
 Rally points are a list of home points for the APM. On entering a
-failsafe mode (and the parameters are set to return home) the APM will
+failsafe mode (and the parameters are set to return home) the autopilot will
 fly the UAV to the nearest rally point. Note that a maximum of 5 rally
-points are supported per APM.
+points are supported per autopilot.
 
 This is useful during long range flights, where it would be safer for
 the UAV to return to a closer home point rather than flying all the way
@@ -16,7 +16,7 @@ A rally menu is available on the GUI console.
 rally list
 ==========
 
-View the currently loaded rally points on the APM.
+View the currently loaded rally points on the autopilot.
 
 rally load
 ==========
@@ -39,7 +39,7 @@ Save the set of current rally points to file.
 rally clear
 ===========
 
-Delete the rally points from the APM.
+Delete the rally points from the autopilot.
 
 rally move
 ==========
@@ -70,7 +70,7 @@ Remove a specific rally point.
 rally land
 ==========
 
-Command the APM to land from a rally point. See `this DIYDrones
+Command the autopilot to land from a rally point. See `this DIYDrones
 article <http://diydrones.com/profiles/blogs/landing-from-rally-points>`_
 for full details.
 

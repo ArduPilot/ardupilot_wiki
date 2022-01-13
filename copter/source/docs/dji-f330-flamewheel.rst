@@ -150,7 +150,7 @@ Reduced Vibration Installation of the Autopilot
    as much vibration from the autopilot as possible.
 
    -  This F330 FlameWheel has a special anti-vibration suspension
-      mounting of the APM autopilot.
+      mounting of the autopilot.
    -  It uses a folded over 1/16" O-ring at each corner of the autopilot around a screw sticking out of a small standoff.
    -  If you choose to use this method leave 1/10" to 1/8" clearance
       from each board corner for proper short coupled spacing.

@@ -133,7 +133,7 @@ Please follow these instructions:
    Loiter, RTL and AUTO performance.  If it is 31% ~ 60% then the
    interference is in the "grey zone" where it may be ok (some users are
    fine, some are not).  If it is higher than 60% you should try moving
-   your APM/PX further up and away from the sources of interference or
+   your autopilot further up and away from the sources of interference or
    consider purchasing an external compass (or 
    :ref:`GPS+compass module<common-positioning-landing-page>` (some of these)).
 

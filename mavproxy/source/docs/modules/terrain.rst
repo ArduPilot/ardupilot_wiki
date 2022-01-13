@@ -8,7 +8,7 @@ Terrain Reporting
     
 The terrain module passes downloads and manages DTEM (Digital Terrain
 Elevation Model) datasets and adds terrain height functionality to the
-map module. It also allows the APM to download terrain data of the
+map module. It also allows the autopilot to download terrain data of the
 surrounding area so that it has an approximate idea of its height above
 ground.
 
