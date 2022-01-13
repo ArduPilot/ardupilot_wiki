@@ -19,7 +19,7 @@ channel 6 tuning knob).
 The examples shown below use Copter screen shots, but work exactly the
 same for Plane and Rover.
 
-A camera's shutter can be triggered from the APM once connected with a
+A camera's shutter can be triggered from the autopilot once connected with a
 servo or "relay". The act of triggering the shutter can be controlled
 through your receiver's channel 7 switch or automatically during
 missions.

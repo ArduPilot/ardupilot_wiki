@@ -61,7 +61,7 @@ to be loaded.
 wp loop
 =======
 
-Closes the loop on a mission, allowing the APM to repeat a mission.
+Closes the loop on a mission, allowing the autopilot to repeat a mission.
 
 wp remove
 =========

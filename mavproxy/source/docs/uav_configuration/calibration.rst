@@ -44,7 +44,7 @@ ground
 ======
 
 Performs a full ground start. This includes gyro and pressure sensor
-calibration. It is automatically performed when the APM receives an
+calibration. It is automatically performed when the autopilot receives an
 arming command.
 
 magcal

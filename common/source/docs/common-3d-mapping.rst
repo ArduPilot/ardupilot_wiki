@@ -75,7 +75,7 @@ column.  Adding "1" to the "Delay" columns will cause the copter to
 momentarily stop at each waypoint.
 
 **DO_DIGICAM_CONTROL** will cause the camera shutter to be pushed once
-immediately if the APM/Pixhawk have been connected using CHDK or a
+immediately if the autopilot has been connected using CHDK or a
 servo.  This command takes no arguments and like other "do" commands it
 executes immediately after the preceding waypoint command begins.
 
