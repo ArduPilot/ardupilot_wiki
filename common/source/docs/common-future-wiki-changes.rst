@@ -161,3 +161,18 @@ Depending on the entry speed and time required to transition, the vehicle may ga
 -------------------------
 
 Add content from :ref:`soaring-speed-to-fly`
+
+Copter
+======
+
+:ref:`copter:connect-escs-and-motors` page:
+-------------------------------------------
+
+add:
+
+Y4
+--
+
+.. image:: ../../../images/motororder-Y4a-2d.jpg
+    :target: ../_images/motororder-Y4a-2d.jpg
+    :width: 35%
