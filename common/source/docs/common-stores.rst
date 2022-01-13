@@ -27,7 +27,6 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Holybro <https://shop.holybro.com/>`__
 * `JapanDrones <http://japandrones.com/>`__
 * `jDrones <http://store.jdrones.com/>`__
-* `Jester's Drones <http://www.jestersdrones.org/store/>`__ (Solo addons, MAUCH power modules)
 * `Lightware <https://lightware.co.za/>`__
 * `mRobotics <http://mrobotics.io/>`__
 * `Qiotek <http://www.qio-tek.com/>`__
