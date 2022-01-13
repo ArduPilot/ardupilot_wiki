@@ -151,7 +151,7 @@ def fetchlogmessages(site=None, cache=None):
     """
     for key, value in LOGMESSAGE_SITE.items():
         fetchurl = 'https://autotest.ardupilot.org/LogMessages/%s/LogMessages.rst' % value  # noqa
-        targetfile = './%s/source/docs/logmessages.rst' % key
+        targetfile = './%s/source/docs/LogMessages.rst' % key
         if cache:
             if not os.path.exists(targetfile):
                 raise(Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,)))  # noqa
