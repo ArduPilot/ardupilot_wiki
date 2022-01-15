@@ -82,6 +82,7 @@ Closed hardware
     Parrot C.H.U.C.K <common-CHUCK-overview>
     RadioLink MiniPix <common-radiolink-minipix>
     QioTek Zealot F427 <common-qiotek-zealot>
+    QioTek Zealot H743 <common-qiotek-zealoth7>
     Sky-Drones AIRLink <common-skydrones-airlink>
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
