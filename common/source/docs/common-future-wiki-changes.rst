@@ -266,12 +266,19 @@ Using :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to adjust cruise attitude will also ad
 
 Depending on the entry speed and time required to transition, the vehicle may gain altitude, sometimes significantly, since the throttle is set to the current :ref:`Q_M_THRST_HOVER<Q_M_THST_HOVER>` hover thrust value throughout the transition to VTOL. This can be overridden with a lower value by setting :ref:`Q_TAILSIT_THR_VT<Q_TAILSIT_THR_VT>`. With experimentation, changing the rates, angle, and this parameter for fixed wing to VTOL transitions, it is possible to obtain almost level altitude transitions. Especially with copter style tailsitters with no control surfaces using Q_TAILSIT_ENABLE = 2, keeping attitude control active even at low or zero throttle values.
 
-[copywiki destination="plane,copter,rover,dev"]
-
 :ref:`soaring-4_1` page:
 -------------------------
 
 Add content from :ref:`soaring-speed-to-fly`
+
+:ref:`guide-tilt-rotor` page:
+-----------------------------
+
+Under Setting Up a Tilt Rotor replace first sentence with:
+
+The first thing you need to do is enable QuadPlane support by setting
+:ref:`Q_ENABLE<Q_ENABLE>` to 1 and Tilt Rotor support by setting :ref:`Q_TILT_ENABLE<Q_TILT_ENABLE>` = "1", and then choose the right quadplane frame class and
+frame type.
 
 Copter
 ======
@@ -287,3 +294,5 @@ Y4
 .. image:: ../../../images/motororder-Y4a-2d.jpg
     :target: ../_images/motororder-Y4a-2d.jpg
     :width: 35%
+
+[copywiki destination="plane,copter,rover,dev"]
