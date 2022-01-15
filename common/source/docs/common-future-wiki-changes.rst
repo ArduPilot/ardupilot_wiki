@@ -35,8 +35,15 @@ add:
 - change 41 description to ARM/DISARM(4.1 and before)
 
 Add to descriptions:
+
 .. raw:: html
 
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Option</th>
+   <th>Description</th>
+   </tr>
    <tr>
    <td><strong>SIMPLE mode heading reset</strong></td>
    <td>
@@ -99,6 +106,9 @@ Forces mode change to FBWA in Long FS, overriding the :ref:`FS_LONG_ACTN<FS_LONG
 
    </td>
    </tr>
+   </tbody>
+   </table>
+
 
 :ref:`common-rpm` page
 ----------------------
@@ -159,6 +169,14 @@ Add to power monitors table:
 22 	                                    LTC2946
 23 	                                    Torqeedo
 =================================     =============================
+
+:ref:`common-frsky-telemetry` page
+----------------------------------
+
+add to end of Configuration Section:
+
+Set :ref:`FRSKY_OPTIONS<FRSKY_OPTIONS>` bit 0 to "1" to enable sending alternating airspeed and groundspeed data to the display script. The :ref:`Yaapu FrSky Telemetry Script for OpenTX <common-frsky-yaapu>` can use this but it may cause other display apps/scripts to alternate the speed value readout.
+
 
 Plane
 =====
