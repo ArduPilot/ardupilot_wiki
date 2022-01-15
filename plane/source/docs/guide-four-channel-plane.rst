@@ -112,7 +112,7 @@ Double check MANUAL mode for the
 same inputs. If everything is setup correctly, the plane should be almost
 ready to fly.
 
-If in MANUAL mode the surfaces move backward with stick movements now, the corresponding RC input should be reversed. To do this, in Mission Planner RCn_REVERSED can be easily set on the SETUP/Mandatory Hardware/Radio Calibration page. There is a check box "Reverse" next to each input bar. You can reverse the correct parameter by checking the box. However, if :ref:`common-radio-control-calibration' was followed correctly, changing RC input reversal will not be necessary.
+If in MANUAL mode the surfaces move backward with stick movements now, the corresponding RC input should be reversed. To do this, in Mission Planner RCn_REVERSED can be easily set on the SETUP/Mandatory Hardware/Radio Calibration page. There is a check box "Reverse" next to each input bar. You can reverse the correct parameter by checking the box. However, if :ref:`common-radio-control-calibration` was followed correctly, changing RC input reversal will not be necessary.
 
 Servo Trim
 ==========
