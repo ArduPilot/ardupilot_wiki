@@ -59,7 +59,7 @@ Alternatively, a commercial `SPort inverter <https://www.amazon.com/Telemetry-Co
 
 .. warning:: do not power the servo from the serial port's 5V, use the systems servo power bus!
 
-- Set the :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 15 ("SBUS servo out") if using Serial2 (normally TELEM2).  For other serial ports use the appropriate ``SERIALx_PROTCOL`` parameter.
+- Set the :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 15 ("SBUS servo out") if using Serial2 (normally TELEM2).  For other serial ports use the appropriate ``SERIALx_PROTOCOL`` parameter.
 - The port's baud rate parameter (in this case :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` ) will automatically be set to 100,000 
 - For F7/H7 processors an inverter is unnecessary, set :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` bit 1  to "1" (TX invert) if connecting to Serial port 2.
 
