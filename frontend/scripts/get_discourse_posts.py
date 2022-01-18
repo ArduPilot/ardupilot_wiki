@@ -12,8 +12,8 @@ import os
 import re
 from bs4 import BeautifulSoup # to find youtube links
 
-parser = argparse.ArgumentParser(description="python3 get_blog_posts.py [Number of posts to retrive]")
-parser.add_argument("--n_posts", dest='n_posts', default="8", help="Number of posts to retrive")
+parser = argparse.ArgumentParser(description="python3 get_blog_posts.py [Number of posts to retrieve]")
+parser.add_argument("--n_posts", dest='n_posts', default="8", help="Number of posts to retrieve")
 parser.add_argument('--verbose', dest='verbose', action='store_false', default=True, help="show debugging output")
 args = parser.parse_args()
 
