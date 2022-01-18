@@ -29,7 +29,7 @@ Frequencies available:
 -  868Mhz ISM for EU area
 -  900Mhz ISM for US area
 
-Users can either aquire a radio modem, antennas and
+Users can either acquire a radio modem, antennas and
 cables separately or by getting ready made telemetry set (as seen below).
 
 The radio and antennas as separate units are available:
@@ -60,9 +60,9 @@ Bask Aerospace offer the AeroLink range of products that are built to work with 
 They offer two different variants that meet the needs of the ground and airside radios.
 
 -  `AeroLink Base <https://baskaerospace.com.au/store/telemetry/aerolink-base/>`__
--  `AeroLink RFD Adapater Board <https://baskaerospace.com.au/store/telemetry/aerolink-rfd-adapter-board/>`__
+-  `AeroLink RFD Adapter Board <https://baskaerospace.com.au/store/telemetry/aerolink-rfd-adapter-board/>`__
 
-The AeroLink RFD Adapter Board makes it easy to power your RFD modem from a seperate 5V BEC as recommended above.
+The AeroLink RFD Adapter Board makes it easy to power your RFD modem from a separate 5V BEC as recommended above.
 
 ProfiCNC
 ++++++++
