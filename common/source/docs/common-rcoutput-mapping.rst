@@ -339,7 +339,7 @@ Motors 1 - 12
 
 
 
-These are the Copter and Quadplane VTOL motor outputs. For Multi-Copters, see :ref:`Motor Order Diagrams<connect-escs-and-motors>` . Or see :ref:`Tradtional Helicopter <traditional-helicopter-connecting-apm>`, or :ref:`singlecopter-and-coaxcopter`, or :ref:`heliquads`.
+These are the Copter and Quadplane VTOL motor outputs. For Multi-Copters, see :ref:`Motor Order Diagrams<connect-escs-and-motors>` . Or see :ref:`Traditional Helicopter <traditional-helicopter-connecting-apm>`, or :ref:`singlecopter-and-coaxcopter`, or :ref:`heliquads`.
 
 [site wiki="copter"]
 .. note::
@@ -550,7 +550,7 @@ MISCELLANEOUS FUNCTIONS
 Gripper
 +++++++
 
-This is an output for controlling a servo or electormagnetic gripper for holding items for delivery applications. See :ref:`common-gripper-landingpage` for more information.
+This is an output for controlling a servo or electromagnetic gripper for holding items for delivery applications. See :ref:`common-gripper-landingpage` for more information.
 
 Sprayer Pump/Mixer
 ++++++++++++++++++
