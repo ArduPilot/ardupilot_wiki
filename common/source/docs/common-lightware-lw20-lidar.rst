@@ -57,7 +57,7 @@ You then need to configure the rangefinder parameters as shown below
 (this cn be done suing the *Mission Planner* **Config/Tuning \| Full Parameter List** page):
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 7 (LightWareI2C)
--  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 102 (I2C Address of lidar in decimal).  *Note that this setting is in decimal. The default address is 0x66 hexademical which is 102 in decimal.*
+-  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 102 (I2C Address of lidar in decimal).  *Note that this setting is in decimal. The default address is 0x66 hexadecimal which is 102 in decimal.*
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 5
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **9500**.  *This is the distance in centimeters that the rangefinder can reliably read.*
