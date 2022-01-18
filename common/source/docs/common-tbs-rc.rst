@@ -14,7 +14,7 @@ CRSF Receivers
 If you wish to use telemetry then a TBS receiver can be connected to a UART utilizing the `CRSF <https://www.team-blacksheep.com/products/prod:crossfire_tx>`__ protocol.
 
 CRSF is a full-duplex protocol that supports integrated telemetry and a number of other features. Connect the RX pin of the UART to the CRSF TX pin of the CRSF device and vice versa.
-Currently a full-duplex UART connection is required. For best performance a UART with DMA capability on its RX port is desireable, but not required. A message will be displayed once on the GCS console, if connected to a UART without this capability.
+Currently a full-duplex UART connection is required. For best performance a UART with DMA capability on its RX port is desirable, but not required. A message will be displayed once on the GCS console, if connected to a UART without this capability.
 
 In the configuration of the serial port select the RCIN protocol. So for example for serial port 4:
 
