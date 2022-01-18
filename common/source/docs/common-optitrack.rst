@@ -6,7 +6,7 @@ Optitrack for Non-GPS Navigation
 
 [copywiki destination="copter"]
 
-This article explains how a `OptiTrack <https://optitrack.com/>`__ motion catpure system can be used as a short-range substitute for a GPS allowing position control modes like Loiter, Guided, RTL, and Auto indoors.
+This article explains how a `OptiTrack <https://optitrack.com/>`__ motion capture system can be used as a short-range substitute for a GPS allowing position control modes like Loiter, Guided, RTL, and Auto indoors.
 
 .. note::
 
