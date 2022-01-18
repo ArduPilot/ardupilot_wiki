@@ -7,7 +7,7 @@ Download and Installation
 The following instructions are for user that just want to run MAVProxy. Developers should look at the :ref:`Developer's Guide <mavproxy-development>` for setting up the development environment.
 
 MAVProxy is distributed as a Python package (see `PyPI <https://pypi.org/project/MAVProxy/>`__) and can run under Python 2 or 3.
-A number of pre-requisite packages are required to run MAVProxy, as detailed in the individiual sections below.
+A number of pre-requisite packages are required to run MAVProxy, as detailed in the individual sections below.
 
 .. _mavproxy-downloadinstallwindows:
 
