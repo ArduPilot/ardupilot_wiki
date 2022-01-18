@@ -102,7 +102,7 @@ You might be thinking "what about frequency hopping"? Your radio MIGHT
 try to go outside the "effective" bandwidth (frequency spread your
 antenna can use well) but if it does it notes the signal drop (aka
 `RSSI <https://en.wikipedia.org/wiki/Received_signal_strength_indication>`__,
-Recieved Signal Strength Indicator) and will compensate for it. Don't
+Received Signal Strength Indicator) and will compensate for it. Don't
 worry about this, just make sure your antenna is within the correct
 frequency range you will be using.
 
@@ -156,7 +156,7 @@ has two options currently, one for
 is to a SERVO CONTROLLER card and the ArduPilot is both a servo
 controller and a stripped down autopilot (it is actually the original
 APM being used as a servo controller card). To be more clear, in some
-articles the ArduPilot is refered to as the ArduTracker. The Maestro can
+articles the ArduPilot is referred to as the ArduTracker. The Maestro can
 run up to 6 servos with the input provided by the micro USB cable but
 you will only use 2 of them plus the power pins. The ArduPilot version
 uses one of the early versions of the APM called ArduPilot. It is
