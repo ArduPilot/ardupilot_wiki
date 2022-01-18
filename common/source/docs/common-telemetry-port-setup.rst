@@ -61,6 +61,6 @@ Due to CPU or bandwidth limitations, the actual rate of the data sent may be low
 
 .. note::
 
-   Most ground stations set the desired stream rate by sending the `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ MAVLink message to the vehicle instead of directly settting the parameters mentioned above.  If done this way, Copter **DOES NOT** save the rate changes to eeprom meaning they will not persist over a reboot.
+   Most ground stations set the desired stream rate by sending the `REQUEST_DATA_STREAM <https://mavlink.io/en/messages/common.html#REQUEST_DATA_STREAM>`__ MAVLink message to the vehicle instead of directly setting the parameters mentioned above.  If done this way, Copter **DOES NOT** save the rate changes to eeprom meaning they will not persist over a reboot.
 
    In practice users may notice that if the vehicle is rebooted but the telemetry connection is not disconnected and reconnected that the data from the vehicle may be much slower or missing.  I.e. the vehicle's position on the map may not update.  Normally disconnecting/reconnecting with the ground station will resolve this.
