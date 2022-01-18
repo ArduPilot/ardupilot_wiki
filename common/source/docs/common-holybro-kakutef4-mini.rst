@@ -77,7 +77,7 @@ RC input is configured on the R3 (UART3_RX) pin. It supports all RC protocols ex
 
 - CRSF also requires a T3 connection, in addition to R6, and automatically provides telemetry. 
 
-- SRXL2 requires a connecton to R3 and T3 and automatically provides telemetry.  Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "4".
+- SRXL2 requires a connection to R3 and T3 and automatically provides telemetry.  Set :ref:`SERIAL3_OPTIONS<SERIAL3_OPTIONS>` to "4".
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
