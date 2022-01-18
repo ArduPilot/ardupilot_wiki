@@ -3,7 +3,7 @@
 ProfiLED
 ========
 
-This feature is avalable in Copter 4.0 and later.
+This feature is available in Copter 4.0 and later.
 
 .. image:: ../../../images/ProfiLED.jpg
 
@@ -17,4 +17,4 @@ Any servo output wired to the clock of the LED's should be set to ``SERVOx_FUNCT
 
 .. image:: ../../../images/ProfiLED-wiring.jpg
 
-ProfiLEDs are avalable from CubePilot resellers, official retailers are listed `here  <http://www.proficnc.com/stores>`__.
+ProfiLEDs are available from CubePilot resellers, official retailers are listed `here  <http://www.proficnc.com/stores>`__.
