@@ -11,7 +11,7 @@ The pilot should be especially careful to ensure that :ref:`ATC_THR_MIX_MAN <ATC
 When oscillations start do not make large or sudden stick inputs. Reduce the throttle smoothly to land the aircraft while using very slow and small roll and pitch inputs to control the aircraft position.
 For each axis:
 
-If the vehicle alread oscillates in an axis, first lower the P, D, and I terms in 50% steps until stable, before starting manual tuning.
+If the vehicle already oscillates in an axis, first lower the P, D, and I terms in 50% steps until stable, before starting manual tuning.
 
 1. Increase the D term in steps of 50% until oscillation is observed
 2. Reduce the D term in steps of 10% until the oscillation disappears

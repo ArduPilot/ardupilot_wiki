@@ -44,7 +44,7 @@ In Mission Planner's  full parameter list or full parameter tree, set the :ref:`
 -  **Enabled SmartRTL or RTL** (Value 3) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to RTL Mode instead.  If the GPS position is not usable, the copter will change to Land Mode instead.
 -  **Enabled SmartRTL or Land** (Value 4) will switch the copter to SmartRTL mode. If SmartRTL is not available, the copter will switch to Land Mode instead.
 -  **Enabled Always Land** (Value 5) will switch the copter to Land Mode.
--  Any invaild value (Such as accidentally enter 99 as a parameter value) will will behave the same as **Enabled Always RTL**
+-  Any invalid value (Such as accidentally enter 99 as a parameter value) will will behave the same as **Enabled Always RTL**
 
 The :ref:`FS_OPTIONS<FS_OPTIONS>` parameter (Copter 4.0 and later) is a bitmask parameter to select one or more options that modify the standard actions of the radio, GCS, and battery failsafe. In the Mission Planner full parameter list or full parameter tree, the handy checkbox popup window is an easy what to set this (and any other bitmask) parameter. Be sure to go to Help > Check Beta Updates to pull the latest parameter definitions first while connected to the internet. The :ref:`FS_OPTIONS<FS_OPTIONS>` bits are as follows:
 

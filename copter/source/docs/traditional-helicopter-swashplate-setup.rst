@@ -154,7 +154,7 @@ At each position use the blade pitch gauge to set the desired blade pitch.  A ty
 blade pitch range is -2° to +12°. Fully aerobatic setups would use -12° to +12°. For initial tests and normal autonomous operation, the narrower range is recommended. See :ref:`traditional-helicopter-aerobatic-setup` for more information about aerobatic setup.
 
 Set :ref:`H_SV_MAN <H_SV_MAN>` to 2 to have swashplate move to maximum position.  Adjust :ref:`H_COL_MAX <H_COL_MAX>` until blade pitch 
-angle mesures the desired maximum collective blade pitch.
+angle measures the desired maximum collective blade pitch.
 
 Set :ref:`H_SV_MAN <H_SV_MAN>` to 4 to have swashplate move to minimum position.  Adjust :ref:`H_COL_MIN <H_COL_MIN>` until blade pitch
 angle measures the desired minimum collective blade pitch.
@@ -165,7 +165,7 @@ Zero Thrust Point
 The ``H_COL_MID`` parameter is used used as the lower collective pitch limit for modes that use altitude hold in the vertical axis.  This keeps the autopilot from driving collective to low resulting in ground resonance. The ``H_COL_MID`` parameter is set to zero 
 thrust point which is normally zero degrees for symmetrical blades. If you have non-symmetrical blades, then set it to the negative blade pitch that produces zero thrust.
 
-.. warning:: This setting is also used in position/altitude holding modes, like LOITER, to determine if a landing has occurred in order to disable inputs which might tip over the vehicle on the ground. If not set at the zero thrust point, updrafts and/or wind could cause false landing decisions. If the pitch range between the hover point and zero thrust is very small, as is some aggresive 3D aerobatic designs with high head speeds, this is more likely to happen. Setting ``H_COL_MID`` to a -1 deg pitch might provide some safety margin if the vehicle can tolerate operating on the ground at that pitch and full head speed, in those cases.
+.. warning:: This setting is also used in position/altitude holding modes, like LOITER, to determine if a landing has occurred in order to disable inputs which might tip over the vehicle on the ground. If not set at the zero thrust point, updrafts and/or wind could cause false landing decisions. If the pitch range between the hover point and zero thrust is very small, as is some aggressive 3D aerobatic designs with high head speeds, this is more likely to happen. Setting ``H_COL_MID`` to a -1 deg pitch might provide some safety margin if the vehicle can tolerate operating on the ground at that pitch and full head speed, in those cases.
 
 Set :ref:`H_SV_MAN <H_SV_MAN>` to 3 to have the swashplate move to the mid position.  Adjust ``H_COL_MID`` until the blade
 pitch angle measures the desired collective blade pitch that corresponds to zero thrust.

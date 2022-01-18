@@ -49,7 +49,7 @@ Note2: The :ref:`FLTMODE_CH<FLTMODE_CH>` defaults to RC Channel 5.
 
 Note3: The :ref:`RC8_OPTION<RC8_OPTION>` defaults to the Motor Interlock function.
 
-The output on most controllers for SERVO's 1 thru 8 are labled Main Out:
+The output on most controllers for SERVO's 1 thru 8 are labeled Main Out:
 
 .. image:: ../images/PH21_2.jpg
     :target: ../_images/PH21_2.jpg
