@@ -54,7 +54,7 @@ Specifications
    - 54mm x 36mm x 13mm
    - 26g
 
-See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f765-wing#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f765-wing#tab-id-4>`__ (ArduPilot connections may vary slightly due to different UART useage).
+See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f765-wing#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f765-wing#tab-id-4>`__ (ArduPilot connections may vary slightly due to different UART usage).
 
 Camera and Supply Switch
 ========================
