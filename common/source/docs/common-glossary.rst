@@ -43,7 +43,7 @@ is \ `here <http://www.arduino.cc/en/>`__.
 stabilized flight, position maintenance and automated mission (waypoint)
 path following.
 
-**ATC**: This could be the Atitude Control libray in Copter with params starting with "ATC\_" or it could mean Air Traffic Control. Usually located at an airport control tower but can also be an app or service such as \ `AirMap <http://www.airmap.com>`__ or \ `Altitude Angel <http://www.altitudeangel.com>`__.
+**ATC**: This could be the Atitude Control library in Copter with params starting with "ATC\_" or it could mean Air Traffic Control. Usually located at an airport control tower but can also be an app or service such as \ `AirMap <http://www.airmap.com>`__ or \ `Altitude Angel <http://www.altitudeangel.com>`__.
 
 **Copter**: Rotary-wing autopilot software variant of the ArduPilot
 project.
