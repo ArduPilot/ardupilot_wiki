@@ -284,7 +284,7 @@ With transmitter based tuning you can tune a single or multiple parameters in fl
 
 The :ref:`TUNE<TUNE>` parameter determines which parameter is being tuned.
 
-The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the parameter when the channel is at :ref:`RC6_MAX<RC6_MAX>`, while the :ref:`TUNE_MIN<TUNE_MIN>` parameter determines the value when RC channle 6 is at :ref:`RC6_MIN<RC6_MIN>`.
+The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the parameter when the channel is at :ref:`RC6_MAX<RC6_MAX>`, while the :ref:`TUNE_MIN<TUNE_MIN>` parameter determines the value when RC channel 6 is at :ref:`RC6_MIN<RC6_MIN>`.
 
 :ref:`TUNE<TUNE>` Values
 ========================
