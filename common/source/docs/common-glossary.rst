@@ -171,7 +171,7 @@ more.
 
 **LOS**: Line of Sight. See VLOS below.
 
-**LiPo**: Lithium Polymer battery, aka LiPoly. Varients include Lithium
+**LiPo**: Lithium Polymer battery, aka LiPoly. Variants include Lithium
 Ion (Li-Ion) battery. This battery chemistry offers more power and
 lighter weight than NiMh and NiCad batteries.
 
