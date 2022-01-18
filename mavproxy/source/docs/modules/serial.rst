@@ -15,5 +15,5 @@ To change to serial port settings use ``serial set [setting] [value]``,
 where setting can be port, baudrate or timeout. To send data, enter
 ``serial send [data]``.
 
-Any recieved serial data will be output to the console.
+Any received serial data will be output to the console.
 
