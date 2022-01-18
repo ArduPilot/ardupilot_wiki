@@ -48,7 +48,7 @@ Customization
 
 One of the benefits of using ArduPilot is that you can set transmitter functions easily.
 
-Some possibilities using :ref:`RC Auxillary Functions<common-auxiliary-functions>` :
+Some possibilities using :ref:`RC Auxiliary Functions<common-auxiliary-functions>` :
 
  - Set one of the switches as ARM/DISARM for quick disarming instead of the rudder/throttle combination.
  - Set other flight modes, such as CRUISE or QLAND, on one of the other switches or buttons 
