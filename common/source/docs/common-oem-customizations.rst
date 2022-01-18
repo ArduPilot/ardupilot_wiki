@@ -44,7 +44,7 @@ This assumes that the OEM has setup the build environment (:ref:`building-the-co
        SERVO5_FUNCTION 120
        NTF_LED_TYPES 256
 
-5. You can also embed LUA scripts in the ROM of the chip that will automatically be run. Since these currenly only run on autopilots with a lot of flash space, they are only restricted in total aggregate size to avilable free flash memory. Put the scripts in a sub-directory called ``scripts``, ie 
+5. You can also embed LUA scripts in the ROM of the chip that will automatically be run. Since these currently only run on autopilots with a lot of flash space, they are only restricted in total aggregate size to available free flash memory. Put the scripts in a sub-directory called ``scripts``, ie 
 .....AP_HAL_ChibiOS/hwdef/OEM_MatekF405-Wing/scripts. Files must end in ``.lua``. 
 
 .. warning:: the user may also run LUA scripts off the SD card, so care should be taken in naming the embedded script files to not conflict with potential user files common names. Notification  should be provided in the product documentation of the embedded script's names for the user.
