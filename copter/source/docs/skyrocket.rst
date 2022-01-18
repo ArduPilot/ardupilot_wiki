@@ -23,7 +23,7 @@ Of the 2017 models, only the V2450GPS Streaming drone (which will have a white s
 **2018 models**
 
 In August 2018, SkyRocket released three new ArduPilot powered drones, the Fury, Scout, and Journey. 
-The Fury and Scout utilize "SurfaceScan", built on ArduPilot's OpticalFlow feature, to allow for indoor flight stability and position holding, unprecendented in this price range. 
+The Fury and Scout utilize "SurfaceScan", built on ArduPilot's OpticalFlow feature, to allow for indoor flight stability and position holding, unprecedented in this price range. 
 The Journey, with GPS rather than OpticalFlow, takes lessons learned from the V2450GPS and builds on those for a solid re-release for the full GPS-enabled ArduPilot experience. The flight parameters and firmware for both the Scout and Journey can be easily modified as the user sees fit through the embedded wifi access point, powered by APWeb or using your favorite ground control software. 
 Much of the information on this page, which was written for the V2450GPS, will at least partially apply to these new models, with updates annotated as they are discovered.
 

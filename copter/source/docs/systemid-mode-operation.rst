@@ -58,7 +58,7 @@ used to generate the attitude prediction in the angle control loops.
 Parameters
 ==========
 
-:ref:`SID_AXIS<SID_AXIS>` : Controls which axis and controll loop injection point are being excited
+:ref:`SID_AXIS<SID_AXIS>` : Controls which axis and control loop injection point are being excited
 
 Values: 0:None (prevents entry into mode and display of other mode parameters), 1:Input Roll Angle, 2:Input Pitch Angle, 3:Input Yaw Angle, 4:Recovery Roll Angle,
 5:Recovery Pitch Angle, 6:Recovery Yaw Angle, 7:Rate Roll, 8:Rate Pitch, 9:Rate Yaw, 10:Mixer Roll,

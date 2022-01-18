@@ -11,7 +11,7 @@ If your vehicle is not suffering from the bounce on landing it's best to leave t
 Setup
 =====
 
-Connect to the flight contrller using your ground station (i.e. Mission Planner) and set the :ref:`GND_EFFECT_COMP <GND_EFFECT_COMP>` parameter to "1".
+Connect to the flight controller using your ground station (i.e. Mission Planner) and set the :ref:`GND_EFFECT_COMP <GND_EFFECT_COMP>` parameter to "1".
 
 Video
 =====

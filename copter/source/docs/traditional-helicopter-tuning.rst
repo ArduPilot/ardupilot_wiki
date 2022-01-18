@@ -219,7 +219,7 @@ offset.
 
 .. image:: ../images/TradHeli_tuning_example1_1.png
 
-**Note on Tuning Flybar Helicopers** - for flybar heads the flybar is a
+**Note on Tuning Flybar Helicopters** - for flybar heads the flybar is a
 mechanical version of the rate PID loop. So flybar is tuned using only FF in
 pitch and roll. The rate D and P gains mentioned in the next topic below are
 left set to zero for flybar. I-gain, IMAX, and ILMI are tuned just like FBL.

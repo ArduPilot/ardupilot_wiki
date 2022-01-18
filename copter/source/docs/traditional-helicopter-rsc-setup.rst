@@ -33,7 +33,7 @@ First, set the RSC Mode parameter (:ref:`H_RSC_MODE <H_RSC_MODE>`). The RSC mode
 
 
 - :ref:`H_RSC_MODE <H_RSC_MODE>` =2 will be the most commonly used mode for electric helis having an ESC with governor mode built in.
-- :ref:`H_RSC_MODE <H_RSC_MODE>` =3 can be used for open loop control of the heli motor, providing no constant head speed control, but is usually used to setup the feed-foward throttle curve baseline for the Governor mode below. Having a RSC governor is highly desirable in order to maintain a steady tune point for the stabilization parameters.
+- :ref:`H_RSC_MODE <H_RSC_MODE>` =3 can be used for open loop control of the heli motor, providing no constant head speed control, but is usually used to setup the feed-forward throttle curve baseline for the Governor mode below. Having a RSC governor is highly desirable in order to maintain a steady tune point for the stabilization parameters.
 - :ref:`H_RSC_MODE <H_RSC_MODE>` =4 will be used if no external RSC governor is present. Primarily for ICE and Turbine engines.
 
 Rotor Speed Ramp and Idle Settings
