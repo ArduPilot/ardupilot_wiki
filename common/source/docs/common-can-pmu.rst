@@ -33,7 +33,7 @@ Specifications
   - 8mm female bullet power connectors (XT-90 battery and ESC cables provided)
   - Autopilot Power: Molex 6 pin 1.5mm #5025850670 (CUAV V5 cable provided)
   - CAN: 4 pin JST-GH (cable provided)
-- **Physcial Dimensions:**
+- **Physical Dimensions:**
 
   - Size:46.5mm \* 38.5mm \* 22.5mm
   - Weight:76g
