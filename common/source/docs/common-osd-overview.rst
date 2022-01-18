@@ -48,7 +48,7 @@ Several font sets are included and can be changed during runtime (and those who 
 
 .. note::    In firmware 4.1 and above, onboard font options might be limited on 1 MB boards to save memory for other features. However, font upload from SD card is supported. This allows the user to choose from up to 10 font files (named "font0.bin" - "font9.bin") placed in the root directory of your SD card. Additionally, this allows the user to easily add individualized and/or customized language charsets for the onboard OSD without the need to compile  individual firmware. Runtime font changing using the parameter :ref:`OSD_FONT<OSD_FONT>` is unaffected. 
 
-MAVftp might be a convenient option to upload files to your SD card without having to physically remove it from your flight controller. Font files, font editor, and utlities to convert to a .bin file from .mcm are `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts>`__. If downloading the editor or a font's .bin file from this site, be sure to use the ``Download` button, rather than selecting ``Raw``, and then right click saving, as you would the .mcm or .py files.
+MAVftp might be a convenient option to upload files to your SD card without having to physically remove it from your flight controller. Font files, font editor, and utilities to convert to a .bin file from .mcm are `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_OSD/fonts>`__. If downloading the editor or a font's .bin file from this site, be sure to use the ``Download` button, rather than selecting ``Raw``, and then right click saving, as you would the .mcm or .py files.
 
 
 .. _screen-switching:
