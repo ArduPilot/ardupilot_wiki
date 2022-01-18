@@ -8,7 +8,7 @@ Some FrSky receivers have the ability to relay telemetry data from the vehicle t
 
 This was done initially via their SPort capability. And later, via an additional new protocol called :ref:`FPort<common-Fport-receivers>` which also includes the RC data to the autopilot.
 
-In order to connect to these ports on the FrSky reciever, any UART on the autopilot (normally a "TELEM" port) is used. However, both SPort and FPort are bi-directional protocols and require signal inversion in both directions in order to interface to the autopilot's UART.
+In order to connect to these ports on the FrSky receiver, any UART on the autopilot (normally a "TELEM" port) is used. However, both SPort and FPort are bi-directional protocols and require signal inversion in both directions in order to interface to the autopilot's UART.
 
 .. note:: if Sport is being used to send telemetry, then RC data must still be sent to the autopilot via its RCin pin as PPM or SBus from the FrSky receiver. See :ref:`common-flight-controller-wiring`.
 
@@ -37,7 +37,7 @@ ____________________________________________________________________
 - Fport: ``SERIALx_PROTOCOL`` = 23, ``SERIALx_OPTIONS`` = 4
 - Sport: ``SERIALx_PROTOCOL`` = 10 (but connect to RX pin instead of TX)
 
-.. warning:: getting an "un-inverted" SPort or FPort signal from some receivers by tapping an internal connection may not provide enought drive for reliable operation on some autopilots having protection resistors in series with their UART pins. Contact the autopilot OEM for possible workarounds or use an normal FPort signal and exteranl bi-directional inverter as shown above
+.. warning:: getting an "un-inverted" SPort or FPort signal from some receivers by tapping an internal connection may not provide enough drive for reliable operation on some autopilots having protection resistors in series with their UART pins. Contact the autopilot OEM for possible workarounds or use an normal FPort signal and exteranl bi-directional inverter as shown above
 
 ___________________________________________________________________
 
