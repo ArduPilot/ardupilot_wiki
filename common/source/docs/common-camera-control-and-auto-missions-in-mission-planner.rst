@@ -97,7 +97,7 @@ are captured at regular intervals in the vehicle's path.
    |surveyexample|
 
 -  *Mission Planner* will then display a configuration screen where you
-   can define the camera make/model and other parameters including teh
+   can define the camera make/model and other parameters including the
    overlap you want between pictures, lens size, etc.
    ``DO_SET_CAM_TRIGG_DIST`` is automatically calculated based on this
    information!
