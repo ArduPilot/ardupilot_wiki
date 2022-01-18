@@ -20,7 +20,7 @@ This article provides a brief overview of Piksi Multi multi-band multi-constella
 What is Piksi Multi?
 ====================
 
-Piksi Multi the first affordable multi-band multi-constellation RTK GPS unit. Not only does it provide centimeter-accurate positioning similar to other RTK GPS units, it additionally provides RTK lock times on the order of seconds. In comparison, single-frequency RTK GPS receivers require several minutes to aquire or reaquire an RTK FIX.
+Piksi Multi the first affordable multi-band multi-constellation RTK GPS unit. Not only does it provide centimeter-accurate positioning similar to other RTK GPS units, it additionally provides RTK lock times on the order of seconds. In comparison, single-frequency RTK GPS receivers require several minutes to acquire or reacquire an RTK FIX.
 
 What is RTK GPS and why does multi-frequency matter?
 ====================================================
