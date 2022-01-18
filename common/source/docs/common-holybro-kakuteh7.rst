@@ -62,7 +62,7 @@ receive pin for UARTn. The Tn pin is the transmit pin for UARTn.
    -  SERIAL3 -> UART3 (GPS)
    -  SERIAL4 -> UART4
    -  SERIAL5 -> not available
-   -  SERIAL6 -> UART6 (UART6 RX normally RCinput unless :re:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1)
+   -  SERIAL6 -> UART6 (UART6 RX normally RCinput unless :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1)
    -  SERIAL7 -> UART7 (RX7 only available, normally used for ESC telemetry)
 
 The SERIAL7 port (UART7) is normally for ESC telemetry, and has an R7 pin on
