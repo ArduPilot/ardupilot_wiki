@@ -4,7 +4,7 @@
 ArduPlane Records
 =================
 
-Faster, higher, longer.  These are the publically-disclosed records for ArduPlane flight.
+Faster, higher, longer.  These are the publicly-disclosed records for ArduPlane flight.
 
 If you believe you have beaten one of these records, please create a Pull
 Request updating this document.  Please consider the legality of your

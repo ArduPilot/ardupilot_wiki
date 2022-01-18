@@ -4,7 +4,7 @@
 Takeoff
 =======
 
-Taking the plane off can be accomplished in many ways: Rolling Takeoff, Hand Launch, Bungee, or VTOL (Verical Takeoff and Landing) if a :ref:`quadplane-support`. And it can be done manually or automatically.
+Taking the plane off can be accomplished in many ways: Rolling Takeoff, Hand Launch, Bungee, or VTOL (Vertical Takeoff and Landing) if a :ref:`quadplane-support`. And it can be done manually or automatically.
 
 Rolling Takeoff
 ===============

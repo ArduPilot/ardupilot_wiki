@@ -129,7 +129,7 @@ You should make sure that the limiting bank angle :ref:`LIM_ROLL_CD<LIM_ROLL_CD>
 Set limits
 ----------
 
-Because the soaring feature can follow rising air as required to gain altitude, it is important to set limits to avoid it leaving the original flight area completetly. This is especially important in windy conditions as the autopilot will try to follow thermals downwind.
+Because the soaring feature can follow rising air as required to gain altitude, it is important to set limits to avoid it leaving the original flight area completely. This is especially important in windy conditions as the autopilot will try to follow thermals downwind.
 
 Altitude limits
 ~~~~~~~~~~~~~~~

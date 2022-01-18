@@ -118,7 +118,7 @@ The output function numbers are:
 -  39: motor7
 -  40: motor8
 
-So to put your quad motors on outputs 9 to 12 (the auxillary channels on
+So to put your quad motors on outputs 9 to 12 (the auxiliary channels on
 a Pixhawk) you would use these settings in the advanced parameter list:
 
 -  :ref:`SERVO9_FUNCTION<SERVO9_FUNCTION>` = 33

@@ -33,7 +33,7 @@ RC Input Setup & Reversal
 Set up your :ref:`RC inputs <rc-throw-trim>` through the calibration
 process, and verify them for reversal. Reversals are critical to the
 process. Commanding pitch up and roll right must result in higher PWM
-values for RCn_in channnels. If the value does not respond correctly
+values for RCn_in channels. If the value does not respond correctly
 reverse the channel before continuing.
 
 You can connect your 3 servo cables to any output of your autopilot,
