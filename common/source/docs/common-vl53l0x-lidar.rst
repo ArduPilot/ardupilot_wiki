@@ -37,7 +37,7 @@ Connect the VCC, GND, SDA and SCL lines of the lidar to the I2C port on the auto
 Please set the rangefinder parameters as shown below (this can be done using the *Mission Planner* **Config/Tuning \| Full Parameter List** page):
 
 -  :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 16 (VL53L0X)
--  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 41 (I2C Address of lidar in decimal).  *The sensor's default I2C address is 0x29 hexademical which is 41 in decimal.*
+-  :ref:`RNGFND1_ADDR <RNGFND1_ADDR>` = 41 (I2C Address of lidar in decimal).  *The sensor's default I2C address is 0x29 hexadecimal which is 41 in decimal.*
 -  :ref:`RNGFND1_SCALING <RNGFND1_SCALING>` = 1
 -  :ref:`RNGFND1_MIN_CM <RNGFND1_MIN_CM>` = 5
 -  :ref:`RNGFND1_MAX_CM <RNGFND1_MAX_CM>` = **120** for the VL53L0X, **360** for the VL53L1X.  *This is the distance in cm that the rangefinder can reliably read.*
