@@ -153,7 +153,7 @@ This will build a docker image with all package setup to build the wiki and name
 
        docker run --rm -it -v "${PWD}:/ardupilot_wiki" -u "$(id -u):$(id -g)" ardupilot_wiki python3 update.py
 
-That will build the wiki with the ``update.py`` similary as in `Build the Wiki`_. The `-v` is used to share the content of the current directory, that hold all the documentation, to the container. The `-u` is used to make docker use the same permission as your current user. With those two command the resulting build is accessible as in `Check the Results`_
+That will build the wiki with the ``update.py`` similarly as in `Build the Wiki`_. The `-v` is used to share the content of the current directory, that hold all the documentation, to the container. The `-u` is used to make docker use the same permission as your current user. With those two command the resulting build is accessible as in `Check the Results`_
 
 RST editing/previewing
 ======================
