@@ -31,7 +31,7 @@ both a :ref:`SiK Radio <common-sik-telemetry-radio>` and the MinimOSD.
 Basic wiring Diagram
 ====================
 
-The orignal MinimOSD's power setup provides two stages to avoid noises
+The original MinimOSD's power setup provides two stages to avoid noises
 coming from servos attached to your ArduPilot boards. Those noises could
 introduce some glitches on video signal. The independent analog powering
 from a dedicated battery will heat the board considerably, but the video
@@ -154,7 +154,7 @@ To compile on Windows:
 #. If using git clone, also do a git submodule init and git submodule update. 
    If downloading the zip from Github, you also need SingleSerial because 
    Github does not include submodules into the download zip, so you will need to: https://github.com/night-ghost/SingleSerial
-#. Copy all the libraries from MiniumOSD to the Arduino libraries folder 
+#. Copy all the libraries from MinimOSD to the Arduino libraries folder 
    (+ SingleSerial if you downloaded the zip for it)
 #. If not using UAVTalk or MultiWii disable them in **Config.h**:
    
