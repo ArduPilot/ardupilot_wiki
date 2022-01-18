@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  # default to focal for bulding the Wiki:
+  # default to focal for building the Wiki:
   config.vm.box = "ubuntu/focal"
 
   # 18.04 LTS EOL April 2023

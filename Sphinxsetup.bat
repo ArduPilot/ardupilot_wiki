@@ -1,4 +1,4 @@
-rem remove any existing packages thay may cause conflicts
+rem remove any existing packages that may cause conflicts
 pip uninstall -y sphinx lxml sphinx-rtd-theme sphinxcontrib-youtube sphinxcontrib.vimeo beautifulsoup4
 
 rem Install sphinx

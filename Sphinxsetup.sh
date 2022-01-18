@@ -29,7 +29,7 @@ else
     fi
 fi
 
-# Get pip through the official website to get the lastest release
+# Get pip through the official website to get the latest release
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 rm -f get-pip.py
