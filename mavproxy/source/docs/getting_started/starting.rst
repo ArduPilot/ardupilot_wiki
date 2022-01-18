@@ -69,7 +69,7 @@ MAVlink usually uses port 14550 for IP-based packet forwarding, though
 other ports can be used if needed.
 
 If a serial port is given (for example a radio device connecting an
-airbourne MAVProxy instance with the GCS), a link-specific baud rate can
+airborne MAVProxy instance with the GCS), a link-specific baud rate can
 be given after the device, delimited by a comma. This overrides the
 global default baudrate specified by ``--baudrate``.
 
