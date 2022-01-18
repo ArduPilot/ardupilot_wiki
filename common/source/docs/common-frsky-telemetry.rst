@@ -28,7 +28,7 @@ Setup
 
 In order to use FrSky telemetry, the following steps are required:
 
-- Connect an autopilot telemetry port to an FrSky reciever which has an SPort or Fport interface. This may require a bi-directional inverter depending on which autopilot it being used. See :ref:`common-connecting-sport-fport`. 
+- Connect an autopilot telemetry port to an FrSky receiver which has an SPort or Fport interface. This may require a bi-directional inverter depending on which autopilot it being used. See :ref:`common-connecting-sport-fport`. 
 - Configure the autopilot.
 - Install a LUA script to display the full telemetry. (Although is it possible to display a subset of telemetry values using OpenTX's built in telemetry screens, it is very limited.)
 
