@@ -113,7 +113,7 @@ V6.x revision
 
 .. note::
 
-   This board revision has the fixed inverter moved to USART1 RX pin, so only TX1 pin can be used (output only). 2 full UARTS + I2C is available in :ref:`BRD_ALT_CONFIG <BRD_ALT_CONFIG>` = 1, using RX3 / TX3 pins as SERIAL4. In default :ref:`BRD_ALT_CONFIG <BRD_ALT_CONFIG>` = 0, RX3 and TX3 pins will default to I2C SDA and SCL respectively. RCInput is on WSL2812 pad. I2C and SERIAL3 for GPS / mag combo is on PPM (=SCL), PB9 (=SDA), RX6 and TX6 pads. Make sure to leave solder jumpers for inverter setup diconnected.
+   This board revision has the fixed inverter moved to USART1 RX pin, so only TX1 pin can be used (output only). 2 full UARTS + I2C is available in :ref:`BRD_ALT_CONFIG <BRD_ALT_CONFIG>` = 1, using RX3 / TX3 pins as SERIAL4. In default :ref:`BRD_ALT_CONFIG <BRD_ALT_CONFIG>` = 0, RX3 and TX3 pins will default to I2C SDA and SCL respectively. RCInput is on WSL2812 pad. I2C and SERIAL3 for GPS / mag combo is on PPM (=SCL), PB9 (=SDA), RX6 and TX6 pads. Make sure to leave solder jumpers for inverter setup disconnected.
 
 
 .. image:: ../../../images/OmnibusF4NanoV62_pinout.jpg
@@ -182,5 +182,5 @@ Follow the instructions `here <https://ardupilot.org/plane/docs/common-loading-f
 Compile ArduPilot
 -----------------
 
-To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
+To build your own firmware, see the instructions on setting up a build environment and compiling the source code:
 `Building the Code <https://ardupilot.org/dev/docs/building-the-code.html>`__
