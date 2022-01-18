@@ -45,7 +45,7 @@ Connecting and Configuring
 -  Additional servos should be connected to the first by daisy chaining them as shown above
 -  Set the following parameters on the autopilot
 
-  - :ref:`SERIAL4_PROCOTOL <SERIAL4_PROTOCOL>` = 19 ("RobotisServo")
+  - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 19 ("RobotisServo")
   - :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 57 (57600 baud)
   - :ref:`SERIAL4_OPTIONS <SERIAL4_OPTIONS>` = 4 to enable half-duplex mode
 
