@@ -24,5 +24,5 @@ Frequently Asked Questions and Issues
     
 #. How do I disable other GCS sub-clients (from ``--out``) from sending commands to the flight controller?
 
-    The ability to foward commands sent by other sub-clients is enabled by default. It can be disabled by typing ``set mavfwd false``
+    The ability to forward commands sent by other sub-clients is enabled by default. It can be disabled by typing ``set mavfwd false``
     
