@@ -138,7 +138,7 @@ For EKF3:
 #. Set :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 1 (Primary yaw/heading from compass)
 
 - Alternatively, GPS can work with OpticalFlow using EKF source switching.
-- See :ref:`GPS / Non-GPS Transitions <common-non-gps-to-gps>` for infomation on EKF source switching.
+- See :ref:`GPS / Non-GPS Transitions <common-non-gps-to-gps>` for information on EKF source switching.
 
 Example Video (Copter-3.4)
 ==========================
