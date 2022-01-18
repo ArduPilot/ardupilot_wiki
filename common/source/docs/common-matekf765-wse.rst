@@ -54,7 +54,7 @@ Specifications
    - 44mm x 29mm x 14.5mm
    - 22g
 
-See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f765-wse#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f765-wse#tab-id-4>`__ (ArduPilot connections may vary slightly due to different UART useage).
+See mateksys.com for more `detailed specifications <http://www.mateksys.com/?portfolio=f765-wse#tab-id-2>`__ and `wiring diagrams <http://www.mateksys.com/?portfolio=f765-wse#tab-id-4>`__ (ArduPilot connections may vary slightly due to different UART usage).
 
 ArduPilot Firmware: MatekF7656-SE
 
