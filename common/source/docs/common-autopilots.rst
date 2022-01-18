@@ -74,6 +74,7 @@ Closed hardware
     MakeFlyEasy PixSurveyA1 <common-makeflyeasy-PixSurveyA1>
     Mateksys F405 TE Family <common-matekf405-te>
     Mateksys H743-Wing/MINI/SLIM/WLITE <common-matekh743-wing>
+    ModalAI Flight core <https://www.modalai.com/products/flight-core>
     mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
