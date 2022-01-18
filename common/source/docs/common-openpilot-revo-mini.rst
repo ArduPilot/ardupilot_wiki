@@ -36,9 +36,9 @@ Specifications
    -  GPS (SERIAL3) on Flexi Port
    -  Telemetry (SERIAL1) on Mainport
    -  USB (SERIAL0) port
-   -  SWD Port for flashing and debugging, including 3.3V output for optional periphereals
+   -  SWD Port for flashing and debugging, including 3.3V output for optional peripherals
    -  MMCX antenna connector for integrated HopeRF RFM22B 100mW 433MHz (fullsize Revolution only)
-   -  OPLink port on RevoMini. OPLink hardware is not supported by ArduPilot, but this port exposes external SPI pins (SCK, CS, MOSI, MISO) that can be used for supported SPI periphereals like SD card adapters or SPI OSD breakout boards (requires additions to hardware definition file and compiling a custom firmware).
+   -  OPLink port on RevoMini. OPLink hardware is not supported by ArduPilot, but this port exposes external SPI pins (SCK, CS, MOSI, MISO) that can be used for supported SPI peripherals like SD card adapters or SPI OSD breakout boards (requires additions to hardware definition file and compiling a custom firmware).
    
 .. note::
     Per channel PWM-type RC inputs are not supported on this hardware. See reference for :ref:`supported RC systems <common-rc-systems>`
@@ -72,10 +72,10 @@ Optional connectivity
 **requires compiling custom firmware based on changes to hwdef**
 
 -  I2C on Flexi port
--  RevoMini's OPLink port can be used for external SPI periphereals connection
+-  RevoMini's OPLink port can be used for external SPI peripherals connection
 -  arbitrary pins can be used for various connections like 2nd GPS, additional PWM outputs etc. within certain restrictions
 
-The RevoMini likely is the smallest footprint autpilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, external I2C or SPI periphereals can be added with limited effort.
+The RevoMini likely is the smallest footprint autopilot hardware to support ArduPilot. It does not offer CAN bus connectivity or sufficient onboard memory for storage of relevant logging data. However, external I2C or SPI peripherals can be added with limited effort.
 
 .. image:: ../../../images/revominiSD.jpg
     :target: ../_images/revominiSD.jpg
@@ -107,10 +107,10 @@ On RevoMini they are located here:
 .. image:: ../../../images/revomini1.jpeg
     :target: ../_images/revomini1.jpeg
 
-You can short the pads in any particular way (either with a wire, solder joint, or something else). Detailed instructions are available on the `Revo Mini LibrePilot Wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/29622291/Recover+board+using+DFU>`__. A small wire is the easiest way to short the device. You can also power the device via USB first, and then short the pads if using a wire. Once you have the device in DFU mode and connected to your machine continue with the following steps to :ref:`load ArduPilot firmare onto ChibiOS boards <common-loading-firmware-onto-chibios-only-boards>`.
+You can short the pads in any particular way (either with a wire, solder joint, or something else). Detailed instructions are available on the `Revo Mini LibrePilot Wiki <https://librepilot.atlassian.net/wiki/spaces/LPDOC/pages/29622291/Recover+board+using+DFU>`__. A small wire is the easiest way to short the device. You can also power the device via USB first, and then short the pads if using a wire. Once you have the device in DFU mode and connected to your machine continue with the following steps to :ref:`load ArduPilot firmware onto ChibiOS boards <common-loading-firmware-onto-chibios-only-boards>`.
 
     
 Compile ArduPilot
 -----------------
-To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
+To build your own firmware, see the instructions on setting up a build environment and compiling the source code:
 `Building the Code <https://ardupilot.org/dev/docs/building-the-code.html>`__
