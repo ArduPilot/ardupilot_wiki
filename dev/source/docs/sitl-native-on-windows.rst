@@ -4,7 +4,7 @@
 Setting up SITL on Windows
 ==========================
 
-SITL was originally developed on Linux, but can also be built and run *natively* on Windows. It can also be run on a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux or by using the Windows Subsytem for Linux (WSL).
+SITL was originally developed on Linux, but can also be built and run *natively* on Windows. It can also be run on a virtual machine (Linux) hosted on Windows, Mac OSX, or Linux or by using the Windows Subsystem for Linux (WSL).
 
 Currently, the simplest way to run SITL on Windows is to build the code and simulate using WSL:  :ref:`dev:building-setup-windows10`
 

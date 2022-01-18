@@ -184,7 +184,7 @@ If all is working, vision position estimates should begin flowing in from ROS to
     EKF2 IMU0 initial pos NED = 0.0,0.0,0.0 (m)
     EKF2 IMU0 is using external nav data
 
-Using the Mission Planner (or similar) go to the Flight Data screen and right-mouse-button click on the map and select "Set Home Here" >> "Set EKF Origin".  The vehicle should appear immediatley on the map where you clicked.
+Using the Mission Planner (or similar) go to the Flight Data screen and right-mouse-button click on the map and select "Set Home Here" >> "Set EKF Origin".  The vehicle should appear immediately on the map where you clicked.
 
 Video
 -----

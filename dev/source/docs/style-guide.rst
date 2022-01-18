@@ -504,7 +504,7 @@ Multiplications typically take fewer cycles to compute than divisions.
 ArduPilot Design Decisions
 ==========================
 
-Several design decisions have been in the ArduPilot codebase to accomodate its embedded nature which may surprise some programmers.
+Several design decisions have been in the ArduPilot codebase to accommodate its embedded nature which may surprise some programmers.
 
 Implicit Zeroing of Memory
 --------------------------

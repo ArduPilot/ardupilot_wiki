@@ -51,7 +51,7 @@ Messages the gimbal should support
       `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__
       message which contains the value of the parameter specified by the
       "param_id" field (simply an enum, the gimbal can assign whatever
-      enum it wishes to each of its internal paramters)
+      enum it wishes to each of its internal parameters)
    -  `PARAM_REQUEST_LIST <https://mavlink.io/en/messages/common.html#PARAM_REQUEST_LIST>`__
       - respond to this message by sending a
       `PARAM_VALUE <https://mavlink.io/en/messages/common.html#PARAM_VALUE>`__

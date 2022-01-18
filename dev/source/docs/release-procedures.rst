@@ -36,13 +36,13 @@ Open a Git Bash terminal in the ardupilot repository.
 
 If this release involves a major or minor version increase (i.e. 3.5 to 3.6) create a new branch in your local ardupilot repository:
 
-- ``git checkout -b Copter-3.6`` ("Copter-3.6" should be replaced with the corrrect major and minor version numbers)
+- ``git checkout -b Copter-3.6`` ("Copter-3.6" should be replaced with the correct major and minor version numbers)
 - ``git push`` to create the new directory in the shared repo
 - click the `"New Project" button <https://github.com/ArduPilot/ardupilot/projects>`__ on the GitHub projects page to create the corresponding "Copter 3.x Backports" project.  This is used to track features to be included in future releases
 
 Alternatively if this release is built on an earlier release branch checkout the branch:
 
-- ``git checkout Copter-3.6`` to switch to the existing release branch ("Copter-3.6" should be replaced with the corrrect major and minor version numbers)
+- ``git checkout Copter-3.6`` to switch to the existing release branch ("Copter-3.6" should be replaced with the correct major and minor version numbers)
 
 Pull in changes from master
 ---------------------------

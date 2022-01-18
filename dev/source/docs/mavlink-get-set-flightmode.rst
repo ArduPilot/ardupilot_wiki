@@ -13,7 +13,7 @@ This page explains how MAVLink can be used by a ground station or companion comp
 Get the Flightmode with HEATBEAT
 --------------------------------
 
-The vehicle's current flight mode is sent once per second within the `HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ message's custom_mode field.  The flightmode number varies by vehicle type (e.g. Copter, Plane, Rover, etc) so please refer to the links above to convert the custom_mode number to a human readible flightmode name.
+The vehicle's current flight mode is sent once per second within the `HEARTBEAT <https://mavlink.io/en/messages/common.html#HEARTBEAT>`__ message's custom_mode field.  The flightmode number varies by vehicle type (e.g. Copter, Plane, Rover, etc) so please refer to the links above to convert the custom_mode number to a human readable flightmode name.
 
 Set the Flightmode with MAV_CMD_DO_SET_MODE
 --------------------------------------------

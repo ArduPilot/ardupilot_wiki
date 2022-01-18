@@ -79,7 +79,7 @@ Configure the Wifi
 
 If desired, the Raspberry Pi's Wifi can be configured to create a 
 Wifi access point. This will allow other clients to connect to
-the RPi and stream telemetry. See the `official RPi documention
+the RPi and stream telemetry. See the `official RPi documentation
 <https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md>`__
 for details.
 

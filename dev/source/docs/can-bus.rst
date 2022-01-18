@@ -28,7 +28,7 @@ As a guide for implementing CAN bus support for new hardware, following :ref:`ro
 UAVCAN protocol
 ===============
 
-The support for UAVCAN protocl is based on AP_UAVCAN class that is wrapping interaction
+The support for UAVCAN protocol is based on AP_UAVCAN class that is wrapping interaction
 with Libuavcan and provides access points for other libraries present in ArduPilot. It is
 responsible for sending the messages over CAN bus with UAVCAN protocol, receiving the messages,
 translation of messages to form that is acceptable to other libraries and provide cyclic
@@ -62,7 +62,7 @@ The following initialization is based on Pixhawk hardware and is provided as exa
 
 .. image:: ../images/can_init.png
 
-Depending on type of board and underlaying hardware, other actions may need to be taken
+Depending on type of board and underlying hardware, other actions may need to be taken
 for creation of CAN driver and UAVCAN interface class.
 
 .. toctree::

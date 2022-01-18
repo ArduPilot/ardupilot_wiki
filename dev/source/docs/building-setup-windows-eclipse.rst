@@ -48,7 +48,7 @@ Once Eclipse has been started import ArduPilot by doing the following:
     :width: 450px
 
 - Click the "Behavior" tab, select "Use custom build arguments" enter ``waf``. Additional arguments such as ``-j 16`` may be added here. The argument ``-j 16`` configures Cygwin to use 16 logical processors of the 8 core machine in this example. 
-- Setting "Workbench Build Behavior" will alllow the use of built-in buttons for clean and build all targets. Note if you prefer to only build for a single vehicle type using these buttons change "build" to "copter".
+- Setting "Workbench Build Behavior" will allow the use of built-in buttons for clean and build all targets. Note if you prefer to only build for a single vehicle type using these buttons change "build" to "copter".
 
 .. image:: ../images/eclipse-install3b.png
     :target: ../_images/eclipse-install3b.png

@@ -47,7 +47,7 @@ Run a log through Replay to generate the plot and EKF data files:
 
 This will produce an output file xxx.BIN in the folder "./logs", which will be the highest numbered log since it was just created.
 
-Use MAVExplorer to graph the data. Both the original and Replay generated EKF messages will be included in the log data. For example, instead of possible graphs for IMU0 and IMU1's EKF2- NKF2 message items:  "NKF2, NKF2[0], and NKF2[1]", there will also be "NKF2[100] adn NKF2][101]" graph groups for the replay generated log messages.
+Use MAVExplorer to graph the data. Both the original and Replay generated EKF messages will be included in the log data. For example, instead of possible graphs for IMU0 and IMU1's EKF2- NKF2 message items:  "NKF2, NKF2[0], and NKF2[1]", there will also be "NKF2[100] and NKF2][101]" graph groups for the replay generated log messages.
 
 .. note:: if using WSL, do not reference the log file via the external Windows WSL path since this will be extremely slow. Instead copy the log from the Windows file system directly into the WSL environment and execute Replay on it within that environment.
 

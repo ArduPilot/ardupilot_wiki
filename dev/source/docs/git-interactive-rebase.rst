@@ -43,7 +43,7 @@ Steps in an interactive rebase
      .. image:: ../images/git-interactive-rebase-squash.png
 
   - if a commit was marked with ``e`` for **edit**, the viewer will return to the regular command line.
-    Edit the files as you wish, commit the changes and then tye ``git rebase --continue`` to allow git to continue
+    Edit the files as you wish, commit the changes and then type ``git rebase --continue`` to allow git to continue
     processing the other changes.
 
 When things go wrong

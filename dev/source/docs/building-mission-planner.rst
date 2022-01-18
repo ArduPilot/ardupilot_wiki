@@ -64,9 +64,9 @@ Windows system.
 -  During the install Process, you will be prompted to install optional "workloads", at this stage, you must select: 
     - ".NET desktop development" 
     - "ASP.NET and web development" 
-    - "Universal Windows Platform developement" 
+    - "Universal Windows Platform development" 
     - "Mobile development with .NET" 
-    - ".NET Core cross-platform developement"
+    - ".NET Core cross-platform development"
 -  Reboot your PC
 -  Start Visual Studio from the Start Menu
 
@@ -74,7 +74,7 @@ Windows system.
 After your VS installation is complete: 
 =======================================
 
--   Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Summary ( right of screen) -> then tick the tickbox labeled ".NET desktop development" "ASP.NET and web development" "Universal Windows Platform developement" "Mobile development with .NET" ".NET Core cross-platofrm developement" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete.
+-   Navigate to "Tools" Menu -> "Get Tools and Features" -> (wait for page load) -> Workloads -> Summary ( right of screen) -> then tick the tickbox labeled ".NET desktop development" "ASP.NET and web development" "Universal Windows Platform development" "Mobile development with .NET" ".NET Core cross-platform development" ( leaving other tickboxes as-is) -> then click "Modify" button at bottom.  wait for download/install to complete.
 -  You might like to test your installation on a simple "Hello World" application, or the "SimpleExample" described below.
 -  TIP: By default it is installed here: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\"  
 
@@ -272,7 +272,7 @@ will get you started.
 -  At this point your local version of MP should be working. You should
    be able to connect to your APM, Flight Data including status should
    work, Configuration should bring up you APM parameters, Terminal
-   should work including saveing and browsing logs. Flight Planner
+   should work including saving and browsing logs. Flight Planner
    should also work. As mentioned before, use your modified version at
    your own risk.
 

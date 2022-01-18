@@ -6,7 +6,7 @@ Understanding SITL with RealFlight
 
 This document will explain how SITL communicates with RealFlight for graphical simulations. In order to do any simulation you need several elements:
 
-- A model of the vehicle, including its physical characterisitcs and their impacts on the physics model, control mechanisms, and a graphical data base of its appearance.
+- A model of the vehicle, including its physical characteristics and their impacts on the physics model, control mechanisms, and a graphical data base of its appearance.
 
 - Physics models that will predict vehicle dynamics (attitude, velocity, positions,etc.) based on control inputs into the vehicle model
 
@@ -25,7 +25,7 @@ This is illustrated below:
 
 The simulation controller outputs are mapped to "TX channels" by the RF controller editor to produce mapped RC outputs. For the InterLink controller these are fixed and read-only.
 
-They are input into the RealFlight vehicle model which is described by its .RFX file(archive actually). Most models have a "software radio" which take these "TX channels" and convert them into "RX channels", like a reciever. This "software radio" can also create dual rates, adjust trim, throw and reverses, etc. These received channels then drive motors, servos, or flight controller/mixers setup in the model files which drive the vehicle's actuators.
+They are input into the RealFlight vehicle model which is described by its .RFX file(archive actually). Most models have a "software radio" which take these "TX channels" and convert them into "RX channels", like a receiver. This "software radio" can also create dual rates, adjust trim, throw and reverses, etc. These received channels then drive motors, servos, or flight controller/mixers setup in the model files which drive the vehicle's actuators.
 
 The Physics models takes these inputs, including the vehicles described physical characteristics from the model's files and predicts the vehicle's motion which is then graphically displayed.
 

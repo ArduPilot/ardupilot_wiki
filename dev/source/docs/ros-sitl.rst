@@ -69,7 +69,7 @@ Open it with your favorite editor, mine is gedit.
         <arg name="gcs_url" default="" /> <!-- Retransmission to a GCS like Mavproxy does -->
         <arg name="tgt_system" default="1" /> <!-- MAVLink id of your drone, default is 1 -->
         <arg name="tgt_component" default="1" /> <!-- MAVLink component id of your drone, default is 1 -->
-        <arg name="log_output" default="screen" /> <!-- Where ROS will ouput its message, screen is your current terminal -->
+        <arg name="log_output" default="screen" /> <!-- Where ROS will output its message, screen is your current terminal -->
 
         <include file="$(find mavros)/launch/node.launch"> <!-- This launch file will launch another launch file -->
             <arg name="pluginlists_yaml" value="$(find mavros)/launch/apm_pluginlists.yaml" /> <!-- Mavros plugin configuration, we will modify that later -->

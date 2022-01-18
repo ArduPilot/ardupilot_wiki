@@ -42,7 +42,7 @@ Check the RPLidar's serial port
 Install more packages
 ---------------------
 
-- install the ROS dektop full:
+- install the ROS desktop full:
 
 ::
 

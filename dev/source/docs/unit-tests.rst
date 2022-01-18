@@ -26,7 +26,7 @@ function's correctness after a change.
 Running Unit Tests
 ==================
 
-The Unit Tests require an environment in which the ArduPilot executables can be compiled.  The easiest way to obtain this is to create a SITL testing environment.  Use the SITL instructions (:ref:`SITL <using-sitl-for-ardupilot-testing>`) to obtain a valid environment.  It is suggested the ArduPilot Vagrant virtual machine configuration files be used to obtain a working environement.
+The Unit Tests require an environment in which the ArduPilot executables can be compiled.  The easiest way to obtain this is to create a SITL testing environment.  Use the SITL instructions (:ref:`SITL <using-sitl-for-ardupilot-testing>`) to obtain a valid environment.  It is suggested the ArduPilot Vagrant virtual machine configuration files be used to obtain a working environment.
 
 Invocation
 ----------

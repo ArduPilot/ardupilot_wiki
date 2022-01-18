@@ -100,7 +100,7 @@ ArduPilot dev team.
 How the team works
 ==================
 
--  Our annual developers conference is held in Feb/March in Canberra Australia (`2018 annoucement <https://discuss.ardupilot.org/t/developer-meetup-in-canberra-february-2018>`__).
+-  Our annual developers conference is held in Feb/March in Canberra Australia (`2018 announcement <https://discuss.ardupilot.org/t/developer-meetup-in-canberra-february-2018>`__).
 -  The source code for ArduPilot is managed using git on https://github.com/ArduPilot/ardupilot
 -  Pre-compiled firmware for supported autopilot boards is available from https://firmware.ardupilot.org
 -  User support is available on the `forums <https://discuss.ardupilot.org/>`__.
