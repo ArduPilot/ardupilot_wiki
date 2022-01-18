@@ -91,7 +91,7 @@ throw from 1000 to 2000, and a trim of 1504.
 .. note:: The reversed parameter is different from the REV parameters
           in firmware versions 3.7 and earlier. In 3.7 the RC2_REV
           value was 1 for not reversed and -1 for reversed, which
-          means it was a multipler. In 3.8 the REVERSED parameter is a
+          means it was a multiplier. In 3.8 the REVERSED parameter is a
           boolean, where 1 means reversed, and 0 means not reversed.
 
 Multiple Outputs for One Type
