@@ -21,7 +21,7 @@ During a transition, depending on type of QuadPlane and various :ref:`Q_OPTIONS<
 Transition to Fixed Wing Mode from VTOL
 =======================================
 
--  If you transition to :ref:`MANUAL <manual-mode>` or :ref:`ACRO <acro-mode>`, then the VTOL motors will immediately stop. In the case of a tilt-rotor, the motors will also immediately rotate to foward flight orientation.
+-  If you transition to :ref:`MANUAL <manual-mode>` or :ref:`ACRO <acro-mode>`, then the VTOL motors will immediately stop. In the case of a tilt-rotor, the motors will also immediately rotate to forward flight orientation.
 
 .. warning:: If you do not have sufficient airspeed, an immediate stall will occur! Since MANUAL mode is often setup as a reflex driven "bail-out", some users move, or remove this mode, and substitute QSTABLIZE or QLOITER as an alternative "bail-out" for a QuadPlane
  

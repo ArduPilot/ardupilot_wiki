@@ -51,7 +51,7 @@ design. Brushless motors vary a lot in their power to weight ratio,
 and ensuring you choose motors that keep the weight down while
 supplying sufficient lifting power is important.
 
- .. Tip:: Due to their greater mass and surface area, most QuadPlanes do not have as robust YAW authority as compared to small quadcopters (unless vectored thrust is employed with tilt rotors). It is extremely important that the motors be very well aligned, as just a few degress offset can sometimes effectively eliminate the ability to yaw in one or both directions. In fact, this effect can be used to actually increase yaw authority by purposely tilting one or both pairs of adjacent rotating motors in the natural direction of their torque 1 or 2 degrees (inward for H frame, outward for X and + frames).
+ .. Tip:: Due to their greater mass and surface area, most QuadPlanes do not have as robust YAW authority as compared to small quadcopters (unless vectored thrust is employed with tilt rotors). It is extremely important that the motors be very well aligned, as just a few degrees offset can sometimes effectively eliminate the ability to yaw in one or both directions. In fact, this effect can be used to actually increase yaw authority by purposely tilting one or both pairs of adjacent rotating motors in the natural direction of their torque 1 or 2 degrees (inward for H frame, outward for X and + frames).
 
 QuadPlane Range
 ---------------

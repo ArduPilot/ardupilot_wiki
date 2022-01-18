@@ -161,7 +161,7 @@ TVBS (Thrust Vectored Belly Sitter)
 
 TVBS are just dual motor vectored thrust tailsitters that don't sit on their tails, but rather their belly. Aside from making sure props clear (ie sufficient throw on tilt servos) when in the horizontal stance, nothing special is required to make it take off from a horizontal stance. 
 
-At least 45 degree throw, either side of neutral (fixed wing flight position) is required, with 60 degrees being most desireable. Otherwise, the vehicle will "skid" along the ground a bit when you raise the throttle to bring it vertical on takeoff. Takeoffs, required a decisive move of throttle to hover or above to reduce the "skid".
+At least 45 degree throw, either side of neutral (fixed wing flight position) is required, with 60 degrees being most desirable. Otherwise, the vehicle will "skid" along the ground a bit when you raise the throttle to bring it vertical on takeoff. Takeoffs, required a decisive move of throttle to hover or above to reduce the "skid".
 
 .. youtube:: s2KLOAdS_HY
 

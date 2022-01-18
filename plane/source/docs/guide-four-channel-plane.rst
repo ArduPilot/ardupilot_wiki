@@ -140,7 +140,7 @@ when servos stall).
 To adjust the throw, change the SERVOn_MIN and SERVOn_MAX values. The
 defaults are 1100 to 1900. On many aircraft, more throw may be desired.
 Changing throws to 1000 to 2000 or beyond is normal. Make sure that 
-the servos are still moving when nearing the extrememe values.
+the servos are still moving when nearing the extreme values.
 
 Final Setup
 ===========

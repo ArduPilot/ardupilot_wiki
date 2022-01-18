@@ -103,7 +103,7 @@ Transmitter Setup
 
 The usual way to fly a Disco with ArduPilot is with a SBUS receiver
 and matching transmitter. You can also fly without a transmitter, but
-that is only recommanded for advanced users who are very familiar with
+that is only recommended for advanced users who are very familiar with
 automated flight control with ArduPilot. We hope to support the Disco
 WiFi based transmitter in ArduPilot in the future.
 

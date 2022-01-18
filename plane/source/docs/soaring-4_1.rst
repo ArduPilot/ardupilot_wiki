@@ -123,7 +123,7 @@ When climbing back to altitude under throttle, changing the switch position to L
 Set limits
 ----------
 
-Because the soaring feature can follow rising air as required to gain altitude, it is important to set limits to avoid it leaving the original flight area completetly. This is especially important in windy conditions as the autopilot will try to follow thermals downwind. There are three ways to set limits.
+Because the soaring feature can follow rising air as required to gain altitude, it is important to set limits to avoid it leaving the original flight area completely. This is especially important in windy conditions as the autopilot will try to follow thermals downwind. There are three ways to set limits.
 
 Altitude limits
 ~~~~~~~~~~~~~~~

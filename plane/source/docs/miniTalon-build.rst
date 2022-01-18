@@ -184,7 +184,7 @@ Options
 Airspeed Sensor
 ---------------
 
-With the additional of a digital airspeed sensor, precision airspeed control can be obtained during cruise portions of flight, and can be attached to the MatekF405-Wing autopilot's CL1/DA1 or CL2/DA2 pins. However, this is optional and ArduPlane flies extremely well without this addtion. See the :ref:`Airspeed sensor <airspeed>` section for more information.
+With the addition of a digital airspeed sensor, precision airspeed control can be obtained during cruise portions of flight, and can be attached to the MatekF405-Wing autopilot's CL1/DA1 or CL2/DA2 pins. However, this is optional and ArduPlane flies extremely well without this addition. See the :ref:`Airspeed sensor <airspeed>` section for more information.
 
 .. image:: ../images/MT-arspd1.jpg
     :target: ../_images/MT-arspd1.jpg

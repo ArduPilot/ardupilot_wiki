@@ -148,7 +148,7 @@ There are several things that the pilot can do to minimize the risk during the e
 7. Do tuning flights in low-wind condition and normal weather (no rain and between 15°C/59°F and 25°C/77°F).
 8. Practice QSTABILIZE flight in simulator or on a low-end drone first. You should be confident to be able to takeoff and land with your untuned aircraft.
 
-Tuning Processs
+Tuning Process
 ===============
 
 Step 5: First Flight

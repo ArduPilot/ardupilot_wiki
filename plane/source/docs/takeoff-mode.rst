@@ -34,7 +34,7 @@ will try to hold its heading during takeoff, with the initial heading
 set by the direction the plane is facing when the takeoff starts. It is
 highly recommended that a compass be enabled and properly configured for
 auto takeoff, as takeoff with a GPS heading can lead to poor initial heading
-control such that heading can different from the initial heading by tens of degrees during the climb. While this may not be an issue for hand launchs, runway takeoffs require a compass for adequate heading control during the takeoff rollout.
+control such that heading can different from the initial heading by tens of degrees during the climb. While this may not be an issue for hand launches, runway takeoffs require a compass for adequate heading control during the takeoff rollout.
 
 
 If you are using a wheeled aircraft then you should look at the

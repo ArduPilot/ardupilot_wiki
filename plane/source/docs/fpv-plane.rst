@@ -24,7 +24,7 @@ Hardware
 
 There are many choices and options for ArduPilot FCs, see `this list of currently supported boards <common-autopilots.html>`__. 
 Omnibus F4 Pro or Matek F405-Wing are good choices for a basic FPV plane
-configuration, since they integrate OSD and power module functions into one board. This guide will assume a compareable integrated peripheral setup containing onboard battery monitoring and OSD. Additionally, the following items are required:
+configuration, since they integrate OSD and power module functions into one board. This guide will assume a comparable integrated peripheral setup containing onboard battery monitoring and OSD. Additionally, the following items are required:
 
 -  GPS
 -  RX
@@ -106,7 +106,7 @@ Now setup your TX to provide the ability to output six different levels on Chann
 (the default flight mode channel can be adjusted by the :ref:`FLTMODE_CH<FLTMODE_CH>` param, it defaults to channel 8). 
 See setup instructions `for various transmitters <common-rc-transmitter-flight-mode-configuration.html>`__.
 Now that the TX can select 6 modes (usually using combining two three-position-switches), set your flight modes for each switch position.
-It is strongly recommended to initally use two positions for MANUAL mode, allowing you to "bailout" to MANUAL no matter what
+It is strongly recommended to initially use two positions for MANUAL mode, allowing you to "bailout" to MANUAL no matter what
 position the second switch is in. It's a lot easier to remember to just slam one switch down( or up)
 without worrying about the state of the other mode switch. Then set the TX switches to produce the following modes:
 
