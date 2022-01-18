@@ -35,7 +35,7 @@ The following pop up window will appear. Click on update firmware and select the
 
 .. image:: ../../../images/can_uavcan_gui_pop.png
 
-Once the firmware has finished uploading to node the main window will change to ``OPERATIONAL`` as per image below. Press the ``Fetch All`` button, and double click on the FLASH_BOOTLOADER parameter and enter 1 in the highlighted box. Presss ``Send`` and close the dialog. The address of the node can be changed in this window to avoid conflict with another node on the CANBUS, as well as any DroneCAN device specific parameters.
+Once the firmware has finished uploading to node the main window will change to ``OPERATIONAL`` as per image below. Press the ``Fetch All`` button, and double click on the FLASH_BOOTLOADER parameter and enter 1 in the highlighted box. Press ``Send`` and close the dialog. The address of the node can be changed in this window to avoid conflict with another node on the CANBUS, as well as any DroneCAN device specific parameters.
 
 .. image:: ../../../images/can_uavcan_gui_supd.png
 
