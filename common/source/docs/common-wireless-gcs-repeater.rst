@@ -10,7 +10,7 @@ This page illustrates how wireless connectivity between the Ground Control Stati
 Overview
 =========
 
-When using radio telemetry with ArduPilot, rather than attaching the telemetry receiver with a USB cable to the PC or Phone running the Ground Control Station (GCS) software, it is often more convenient to use a wireless repeater. This repeater will convert the telemetry radio receiver's output to either Bluetooh or WIFI for wireless connection to the GCS. In the case of a phone based GCS, it allows full freedom to move around while flying or driving the vehicle. And in the case where a directional receiving antenna is used, it allows the telemetry reciever to be placed high up, away from the GCS for optimum reception.
+When using radio telemetry with ArduPilot, rather than attaching the telemetry receiver with a USB cable to the PC or Phone running the Ground Control Station (GCS) software, it is often more convenient to use a wireless repeater. This repeater will convert the telemetry radio receiver's output to either Bluetooth or WIFI for wireless connection to the GCS. In the case of a phone based GCS, it allows full freedom to move around while flying or driving the vehicle. And in the case where a directional receiving antenna is used, it allows the telemetry receiver to be placed high up, away from the GCS for optimum reception.
 
 .. image:: ../../../images/wireless-gain-ant.jpg
    :target: ../_images/wireless-gain-ant.jpg
