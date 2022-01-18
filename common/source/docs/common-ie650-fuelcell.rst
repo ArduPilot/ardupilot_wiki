@@ -223,7 +223,7 @@ Failsafe Critical Action Error Code Group
 
    <tr>
    <td>0x10000</td>
-   <td>Fuel cell's internal saftey flags not set true</td>
+   <td>Fuel cell's internal safety flags not set true</td>
    </tr>
 
    <tr>
