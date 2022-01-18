@@ -33,7 +33,7 @@ PPM channels into a PPM-Sum type, which is supported by Erle-Brain.
 
 For more information see the
 `manual <http://www.hobbyking.com/hobbyking/store/uploads/1022671243X1465900X53.pdf>`__
-and the `offical documentation <http://erlerobotics.com/docs/Robots/Common_Parts/Radio_Control.html>`__.
+and the `official documentation <http://erlerobotics.com/docs/Robots/Common_Parts/Radio_Control.html>`__.
 
 Setting up connections
 ~~~~~~~~~~~~~~~~~~~~~~
