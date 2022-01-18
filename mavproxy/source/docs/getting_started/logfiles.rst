@@ -2,7 +2,7 @@
 Logfiles
 ========
 
-When connected to a vehicle, MAVProxy will automatically save any recieved telemetry to a logfile.
+When connected to a vehicle, MAVProxy will automatically save any received telemetry to a logfile.
 
 This logfile can be used for post-flight analysis or flight replay.
 
@@ -22,7 +22,7 @@ In the example:
     
 Will log the telemetry to ``mav.tlog`` and ``mav.tlog.raw`` in the ``C:\users\stephen\Documents\logs`` folder.
 
-Note that both the ``mav.tlog`` and the ``mav.tlog.raw`` files contain the same data (albiet in different formats). In most cases however the raw file is not used by the analysis or replay tools.
+Note that both the ``mav.tlog`` and the ``mav.tlog.raw`` files contain the same data (albeit in different formats). In most cases however the raw file is not used by the analysis or replay tools.
 
 MAVProxy can use the ``--aircraft=name`` (see :ref:`here <mavproxy-starting>`) argument to place the logfile in a specific name and date folder. This is useful for keeping logfiles sorted. See starting for further details.
 
