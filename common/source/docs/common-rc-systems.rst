@@ -161,7 +161,7 @@ Multi-Protocol:
 
 Recommendations:
 ----------------
-Its difficult to make a recommendations since there is such a wide spectrum of capabilites, features, and costs.
+Its difficult to make a recommendations since there is such a wide spectrum of capabilities, features, and costs.
 
 In Europe, Multiplex and Graupner are well established systems and comply with EU radiation recommendations (as do many other brands as an option).
 
