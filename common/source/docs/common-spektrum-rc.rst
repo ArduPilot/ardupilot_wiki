@@ -47,7 +47,7 @@ Spektrum SRXL2 Receivers
 
 All Spektrum receivers released since August 2019 only support the `SRXL2 <https://github.com/SpektrumRC/SRXL2>`__ protocol. SRXL2 is a single-wire, half-duplex protocol that supports integrated telemetry and a number of other features. 
 
-An `SRXL2 cable <https://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM4650>`__ has four wires, one of which is not connected. This new format is to distinguish them from older recievers supporting DSMX since DSMX and SRXL2 are incompatible.
+An `SRXL2 cable <https://www.spektrumrc.com/Products/Default.aspx?ProdID=SPM4650>`__ has four wires, one of which is not connected. This new format is to distinguish them from older receivers supporting DSMX since DSMX and SRXL2 are incompatible.
 
 SRXL2 receivers must be connected to a UART. SRXL2 receivers support a wide range of voltages, including the 5v available on a UART so connect GND to GND, VCC  to VCC and the signal wire to the TX pin of the UART.
 
