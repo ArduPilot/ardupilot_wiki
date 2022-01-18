@@ -36,7 +36,7 @@ Specifications
    -  1 x additional ADC for analog RSSI or analog airspeed
    -  SDIO microSD card slot
    -  micro USB connector
-   -  includes buzzer / saftey-switch, power module, I2C expansion board and TS100 GPS / mag combo depending on kit features 
+   -  includes buzzer / safety-switch, power module, I2C expansion board and TS100 GPS / mag combo depending on kit features 
    -  size 39 x 39 x 12 mm
    -  weight 12 g without wires
 
@@ -73,7 +73,7 @@ In case a bootloader re-installation is required, you can boot your board to DFU
 .. image:: ../../../images/minipix_dfu.jpg
     :target: ../_images/minipix_dfu.jpg
 
-Then follow the instructions on how to :ref:`load firmare onto ChibiOS boards <common-loading-firmware-onto-chibios-only-boards>`.
+Then follow the instructions on how to :ref:`load firmware onto ChibiOS boards <common-loading-firmware-onto-chibios-only-boards>`.
 
 
 .. warning::
