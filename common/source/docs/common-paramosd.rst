@@ -6,7 +6,7 @@ OSD based parameter menu
 
 This allows to set and adjust parameters using the ArduPilot onboard OSD and an RC transmitter's stick input. 
 There's two additional OSD screens available (OSD5 and OSD6), with 9 "slots" each to hold parameters. The screens 
-display a default set of paramaters to start with. Additionally, it is possible to change the parameter used in a 
+display a default set of parameters to start with. Additionally, it is possible to change the parameter used in a 
 respective slot directly (on-screen) using stick inputs, or using MAVProxy's osd-module command-line setup. 
 
 
@@ -67,12 +67,12 @@ Parameter slot scroll-selection
 ===============================
 
 Holding roll right for > 3 seconds on a parameter's value will highlight both the selected parameter and its value (blink). This allows 
-you to scroll through the full list of parameters and place another paramater into that respective slot using pitch up and down stick input. 
+you to scroll through the full list of parameters and place another parameter into that respective slot using pitch up and down stick input. 
 Move left to exit parameter selection and get back into standard screen navigation.
 
 .. note::
 
-   OSD based parameter adjustment is designed to allow basic adjustments without any aditional data link or GCS setup required. However, 
+   OSD based parameter adjustment is designed to allow basic adjustments without any additional data link or GCS setup required. However, 
    some parameters with exceptionally wide value ranges, as well as complex bitmap-type parameters might not be ideal for adjustment using parameter OSD.
 
 
