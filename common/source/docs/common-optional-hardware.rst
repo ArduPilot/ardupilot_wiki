@@ -80,7 +80,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Telemetry Radio <common-telemetry-landingpage>
     DroneCAN Adapter Node <common-uavcan-adapter-node>
     DroneCAN Peripherals <common-uavcan-peripherals>
-    Video (High Defintion) <common-video-landingpage>
+    Video (High Definition) <common-video-landingpage>
 [site wiki="copter"]
     Winch <common-daiwa-winch>
 [/site]
