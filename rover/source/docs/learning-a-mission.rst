@@ -25,7 +25,7 @@ Deprecated instructions for Ver 3.1 (and lower)
    
 If using version 3.1 (or lower):
 
-- setup :ref:`Learning <learning-mode>` as a mode on the  :ref:`RC Transmitter Mode Swithc <common-rc-transmitter-flight-mode-configuration>`
+- setup :ref:`Learning <learning-mode>` as a mode on the  :ref:`RC Transmitter Mode Switch <common-rc-transmitter-flight-mode-configuration>`
 - wait for a good position estimate (LED will become green)
 - drive the vehicle around in :ref:`Learning <learning-mode>` mode
 - when the vehicle is at a position that you would like to record as a waypoint, toggle the auxiliary function switch high (and then return to low)

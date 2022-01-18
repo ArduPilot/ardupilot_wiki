@@ -1,8 +1,8 @@
 .. _balance_bot-issues: 
 
-========================
-Commmon Issues and Fixes
-========================
+=======================
+Common Issues and Fixes
+=======================
 
 This page details some of the most common issues with Balance Bots and possible solutions.
 
