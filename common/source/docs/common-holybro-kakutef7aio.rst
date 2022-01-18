@@ -50,7 +50,7 @@ Specifications
 Pinout
 ======
 
-The KakuteF7 comes in two varients with the primary difference being the AIO (All-In-One) board employs current sensor and provides power distribution in each of the four corners.
+The KakuteF7 comes in two variants with the primary difference being the AIO (All-In-One) board employs current sensor and provides power distribution in each of the four corners.
 Both variants include a 5-volt regulator rated for 2 amps, OSD, vibration-isolated IMU, etc.
 
 **Kakute F7 AIO**
