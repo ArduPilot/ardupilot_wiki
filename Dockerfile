@@ -1,6 +1,6 @@
 FROM python:3.9-slim-buster
 
-# Say that we won't anwser question
+# Say that we won't answser question
 ENV DEBIAN_FRONTEND noninteractive
 
 # Make a working directory
