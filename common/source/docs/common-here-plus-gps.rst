@@ -37,7 +37,7 @@ Windows 10 users (and perhaps others) will need to download and install the `u-b
 
 If this link is broken you may find a newer version is available under the "Driver" section of `this ublox page <https://www.u-blox.com/en/product-resources?f[0]=property_file_product_filter%3A2779>`__.
 
-When first installed, the device may show up in the "sensors" catagory in device manager.  If this happens, please right click on it and "update driver" 
+When first installed, the device may show up in the "sensors" category in device manager.  If this happens, please right click on it and "update driver" 
 select 
 "Browse my computer for driver software"
 then select 
@@ -91,7 +91,7 @@ Click tools->u-blox 5 – 8 Flash Firmware Update, and click the settings as sho
 .. image:: ../../../images/HERE+_Firmware_update_settings.png
 	:target: ../_images/HERE+_Firmware_update_settings.png
 	
-In Firmware image, unzip and select the downloaded 1.30 Firmware. For base module, chose the firmware with title: UBX_M8_301_HPG_130_REFERENCE_NEOM8P2.59a07babb501ba6a89ff87cac2f 2765f.bin  For rover module, choose the firmware: UBX_M8_301_HPG_130_ROVER_NEOM8P0.3ee86a9e4775e3335e742b53527fa5 d0.bin 
+In Firmware image, unzip and select the downloaded 1.30 Firmware. For base module, chose the firmware with title: UBX_M8_301_HPG_130_REFERENCE_NEOM8P2.59a07babb501ba6a89ff87cac2f 2765f.bin  For rover module, choose the firmware: UBX_M8_301_HPG_130_ROVER_NEOM8P0.3ee86a9e4775e3335e742b53527fa5 d0.bin 
 
 .. image:: ../../../images/HERE+_Select_firmware.png
 	:target: ../_images/HERE+_Select_firmware.png
