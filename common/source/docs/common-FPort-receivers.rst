@@ -61,7 +61,7 @@ F7/H7 based autopilots can directly connect to the TX pin of any UART and use th
 -   ``RSSI_TYPE`` =3
 
 
-.. note:: Some F7/H7 autopilots have level/shifters on their UARTs that cause a delay in Half Duplex operation, like CubeOrange. If the above configuration does not, try setting :ref:`RC_OPTIONS<RC_OPTIONS>` = 8 which will add padding in the protocol to accomodate this. However, using this option when not required will break operation.
+.. note:: Some F7/H7 autopilots have level/shifters on their UARTs that cause a delay in Half Duplex operation, like CubeOrange. If the above configuration does not, try setting :ref:`RC_OPTIONS<RC_OPTIONS>` = 8 which will add padding in the protocol to accommodate this. However, using this option when not required will break operation.
 
 
 Enhanced Configurations
