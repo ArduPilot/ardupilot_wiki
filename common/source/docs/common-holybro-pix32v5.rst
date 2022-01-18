@@ -82,7 +82,7 @@ UART Mapping
 
 Carrier board pin assignments
 =============================
-This section details the pin assignments of the standard and mini carrier board. OEMs can design their own carrier board, as needed for specific requirements. Design schematics, module conenctor and pinout, 3D printer files, etc. are located `here <https://github.com/ArduPilot/Schematics/tree/master/Holybro/Pix32-V5>`__.
+This section details the pin assignments of the standard and mini carrier board. OEMs can design their own carrier board, as needed for specific requirements. Design schematics, module connector and pinout, 3D printer files, etc. are located `here <https://github.com/ArduPilot/Schematics/tree/master/Holybro/Pix32-V5>`__.
 
 .. note:: VDD_5V_RC is provided when either the USB or Power Module supply is attached. The power module will supply all 5V outputs except the VDD_SERVO which should be provided from a separate source, like an ESC or standalone BEC.
 
