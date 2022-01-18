@@ -131,7 +131,7 @@ signal pins:
 -  Pin 3 = Throttle
 -  Pin 1 = Steering
 
-The skid-steer parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The parameters are: SKID_STEER_OUT and SKID_STEER_IN. When enabled, autopilot's ouput RC1 is used for the left track control, and ouput RC3 is used for right track control.
+The skid-steer parameters are used to configure vehicles that have fixed wheels and steer like tank tracks (do not use servos to steer the wheels but rather use differential speed between the left and right wheels). The parameters are: SKID_STEER_OUT and SKID_STEER_IN. When enabled, autopilot's output RC1 is used for the left track control, and output RC3 is used for right track control.
 [/site]
 
 Connect other peripherals
