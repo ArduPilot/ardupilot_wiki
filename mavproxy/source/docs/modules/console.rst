@@ -12,7 +12,7 @@ right): Flight mode and arming state, GPS status, system voltage,
 telemetry radio link quality, inertial system availability, magnetometer
 availability, airspeed sensor availability, Sonar/Lidar availability,
 Attitude control system(AHRS and EKF) state, geofence status and terrain
-dataset availibility. The second row shows further details of the
+dataset availability. The second row shows further details of the
 telemetry link quality. The third and fourth rows show selected sensor
 readings.
 
