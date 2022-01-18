@@ -11,7 +11,7 @@ Holybro Kakute F7 Mini
 
 .. note::
 
-   Support for this board is available with ArduPilot-4.0 (and higher). Only the V1 adn V2 boards are supported. The V3 board changed microporcessor type and is no longer capable of running ArduPilot.
+   Support for this board is available with ArduPilot-4.0 (and higher). Only the V1 and V2 boards are supported. The V3 board changed microporcessor type and is no longer capable of running ArduPilot.
 
 .. note::
 
@@ -78,7 +78,7 @@ RC input is configured on the R6 (UART6_RX) pin. It supports all RC protocols ex
 
 - CRSF also requires a T6 connection, in addition to R6, and automatically provides telemetry. Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "0".
 
-- SRXL2 requires a connecton to T6 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
+- SRXL2 requires a connection to T6 and automatically provides telemetry.  Set :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` to "4".
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
  
