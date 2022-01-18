@@ -190,10 +190,10 @@ not started by the AP_HAL_PX4 Scheduler code. Specifically they are:
 -  px4io - handle the communication with the PX4IO co-processor
 -  hpwork - handle thread based PX4 drivers (mainly I2C drivers)
 -  lpwork - handle thread based low priority work (eg. IO)
--  fmuservo - handle talking to the auxillary PWM outputs on the FMU
+-  fmuservo - handle talking to the auxiliary PWM outputs on the FMU
 -  uavcan - handle the uavcan CANBUS protocol
 
-The startup of all of these tasks is controled by the PX4 specific
+The startup of all of these tasks is controlled by the PX4 specific
 `rc.APM script <https://github.com/ArduPilot/ardupilot/blob/master/mk/PX4/ROMFS/init.d/rc.APM>`__.
 That script is run when the PX4 boots, and is responsible for detecting
 what sort of PX4 board we are using then loading the right tasks and

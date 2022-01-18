@@ -294,7 +294,7 @@ rcS file.
    steps, at least for the GPS config, copying arducopter and modifying the
    init scripts. Regarding the need to upgrade to a custom version, it will
    depend on whether some options will or won't be available in the
-   following release. Informations to follow... 
+   following release. Information to follow... 
 
 .. _building-for-bebop-on-linux_recovery:
 

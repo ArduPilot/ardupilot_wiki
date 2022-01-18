@@ -87,7 +87,7 @@ Using pre-defined graphs
 
 MAVExplorer comes with an extensive set of pre-defined graphs. Those
 graphs appear in the Graphs menu in the console. Only graphs that are
-relevent for the log you are viewing will appear in the menus.
+relevant for the log you are viewing will appear in the menus.
 
 To display a graph just choose it in the Graphs menu. You can display
 several graphs at once if you want to.
@@ -255,7 +255,7 @@ keys. You can measure distances using two left clicks. Colours are used
 to indicate flight modes.
 
 You can optionally supply message types to use for the map. Any message
-type that has lattitude and longitude elements can be used. For example,
+type that has latitude and longitude elements can be used. For example,
 to show a map from both the GPS and POS messages in an ArduPilot log
 file you can do:
 
@@ -344,6 +344,6 @@ Useful Commands
 ===============
 
 - param <regular expression> : displays parameters from log, eg. to show TECS params: "param TECS_*" or "param" to show all
-- paramchange <regular expression>: displays changes of paramater(s) throughout the log
+- paramchange <regular expression>: displays changes of parameter(s) throughout the log
 - messages: displays GCS messages
 - dump <log message>: dumps all instances of that log message, eg. "dump IMU"

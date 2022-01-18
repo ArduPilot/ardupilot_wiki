@@ -127,7 +127,7 @@ You need the specific gcc-arm cross-compiler linked above. You need to unpack it
     tar -xjvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
 
 and then add the bin directory from the tarball to your $PATH by editing
-the $HOME/.bashrc file and adding a line like this to the end. TARGET_DIR is the location choose previouly where you unpack the toolchain:
+the $HOME/.bashrc file and adding a line like this to the end. TARGET_DIR is the location chosen previously where you unpacked the toolchain:
 
 ``export PATH=$PATH:TARGET_DIR/gcc-arm-none-eabi-10-2020-q4-major/bin``
 

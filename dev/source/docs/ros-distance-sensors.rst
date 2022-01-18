@@ -59,7 +59,7 @@ To do that, setup a MAVLink rangefinder on ArduPilot side and simply set a subsc
         orientation: PITCH_270  <== only that orientation are supported by Copter 3.4+
 
 Now, publish a sensor_msgs/Range message on /mavros/distance_sensor/rangefinder_sub.
-Using a GCS, you can see data in rangefinder mesurements.
+Using a GCS, you can see data in rangefinder measurements.
 
 Proximity
 =========

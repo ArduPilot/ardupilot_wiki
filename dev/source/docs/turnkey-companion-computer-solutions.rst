@@ -119,9 +119,9 @@ Alfonce Remote Gateway - Companion Computer
 
 Full list can be `found here <https://www.dronotique.fr/docs/alfonce-remote-gateway/gestion-des-appareils-photos-et-cameras/modeles-dappareils-photos-et-de-cameras-supportes/>`__ 
 
-You can also read the full `documentation <https://www.dronotique.fr/docs/alfonce-remote-gateway/>`__ to discover full functionnalities
+You can also read the full `documentation <https://www.dronotique.fr/docs/alfonce-remote-gateway/>`__ to discover full functionalities
 
-By defaut it installed on a OrangePi Zero 2 + H5, but it could be integrated on a lot of supported nano computers or servers!
+By default it installed on a OrangePi Zero 2 + H5, but it could be integrated on a lot of supported nano computers or servers!
 
 XBStation - Platform For Internet Drone Base On Real Time 4G/5G Connectivity
 ============================================================================

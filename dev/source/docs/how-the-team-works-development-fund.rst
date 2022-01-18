@@ -55,5 +55,5 @@ Getting Paid
 
 Payments from ArduPilot are made in one of two ways:
 
-- ArduPilot's SPI liason (the team member who has been elected to be the main point of contact with SPI) can make payments via PayPal
-- Through direct bank transfer.  Follow the `instructions here to create a Reimbursement Request <http://spi-inc.org/treasurer/reimbursement-form/>`__ and send to ArduPilot's SPI liason along with receipts
+- ArduPilot's SPI liaison (the team member who has been elected to be the main point of contact with SPI) can make payments via PayPal
+- Through direct bank transfer.  Follow the `instructions here to create a Reimbursement Request <http://spi-inc.org/treasurer/reimbursement-form/>`__ and send to ArduPilot's SPI liaison along with receipts

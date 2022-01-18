@@ -23,7 +23,7 @@ The messages `SET_GPS_GLOBAL_ORIGIN <https://mavlink.io/en/messages/common.html#
 
 - with the script `set_origin.py <https://github.com/anbello/aruco_gridboard/blob/master/script/set_origin.py>`__. 
 
-The Flight Controller and the Raspberry Pi 3 on the quadcopter are connected via serial port whereas the Rapsberry Pi 3 and the desktop PC are connected via WiFi. The desktop PC is used only for configuration and visualization purposes. `RViz <http://wiki.ros.org/rviz>`__ is used for visualization on PC in ROS.
+The Flight Controller and the Raspberry Pi 3 on the quadcopter are connected via serial port whereas the Raspberry Pi 3 and the desktop PC are connected via WiFi. The desktop PC is used only for configuration and visualization purposes. `RViz <http://wiki.ros.org/rviz>`__ is used for visualization on PC in ROS.
 
 Components of the system
 ========================

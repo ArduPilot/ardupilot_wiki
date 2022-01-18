@@ -97,7 +97,7 @@ Using VcXsrv
 
 Code Editing in WSL Using VSCode (Optional)
 -------------------------------------------
-VSCode can be installed on the Windows 10 machine to edit and compile files inside of WSL. VSCode automatically integrates upon installion with WSL.
+VSCode can be installed on the Windows 10 machine to edit and compile files inside of WSL. VSCode automatically integrates upon installation with WSL.
 
     * Do not install VSCode inside of WSL using for example apt-get.
     * Be sure that the folder you are working on is opened within the WSL remote. This can be achieved by clicking the green button in the bottom left corner.

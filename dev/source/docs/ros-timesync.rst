@@ -1,10 +1,10 @@
 .. _ros-timesync:
 
-=========================
-Clock/Time Syncronisation
-=========================
+==========================
+Clock/Time Synchronisation
+==========================
 
-The flight controller and companion computer clocks can be syncronised using MAVLink's `SYSTEM_TIME <https://mavlink.io/en/messages/common.html#SYSTEM_TIME>`__ and `TIMESYNC <https://mavlink.io/en/messages/common.html#TIMESYNC>`__ messages.  This is important so that each side can blend data from the other side into its EKF.
+The flight controller and companion computer clocks can be synchronised using MAVLink's `SYSTEM_TIME <https://mavlink.io/en/messages/common.html#SYSTEM_TIME>`__ and `TIMESYNC <https://mavlink.io/en/messages/common.html#TIMESYNC>`__ messages.  This is important so that each side can blend data from the other side into its EKF.
 
 - `mavros's sys_time plugin <https://github.com/mavlink/mavros/blob/master/mavros/src/plugins/sys_time.cpp>`__ implements the mavros/ROS side
 - ArduPilot's `AP_RTC <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_RTC>`__ library implements the ArduPilot side
@@ -43,7 +43,7 @@ After making this change you will need to compile rover and upload the new binar
 Testing
 -------
 
-A MAVLink inspector (available using QGC or MissionPlanner) can be used to check that the system times are syncronised.  If using Mission Planner, press Ctrl-F and push the "MAVLink Inspector" button.
+A MAVLink inspector (available using QGC or MissionPlanner) can be used to check that the system times are synchronised.  If using Mission Planner, press Ctrl-F and push the "MAVLink Inspector" button.
 
 .. image:: ../images/ros-time-sync-testing.png
     :target: ../_images/ros-time-sync-testing.png

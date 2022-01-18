@@ -19,7 +19,7 @@ Building / Compiling
 --------------------
 
 ArduPilot currently supports two build systems, `waf <https://waf.io/>`__ and **make** with waf being the recommended option because it allows building for all boards.
-In most cases the build dependencies described for **waf** and **make** are the same, the only part of the instructions that changes is the build commmand. 
+In most cases the build dependencies described for **waf** and **make** are the same, the only part of the instructions that changes is the build command. 
 
 **Linux / MacOSX users:**
 

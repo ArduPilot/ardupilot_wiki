@@ -66,7 +66,7 @@ The hal.rcin and hal.rcout objects discussed above are low level
 functions. The usual way of handling RC input and output in ArduPilot is
 via a higher level object called RC_Channel. That object has user
 configurable parameters for the min/max/trim of each channel, as well as
-support for auxillary channel function, scaling of inputs and outputs
+support for auxiliary channel function, scaling of inputs and outputs
 and many other features.
 
 Go and have a look at
