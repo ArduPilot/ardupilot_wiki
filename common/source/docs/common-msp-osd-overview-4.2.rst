@@ -10,7 +10,7 @@ Ardupilot supports 2 types of MSP OSDs:
  - DisplayPort (aka CANVAS MODE) based OSD's such as FatShark SharkByte (fw 09042021 and later) and MWOSD
 
 Telemetry based OSDs will render OSD panel items on screen with their own engine, so ArduPilot has no control of how the items look.
-Another limit of telemetry based OSDs is that there's no way for ArduPilot to add new panel items at will, it's the vendor's responsability to add new features by rolling out new firmware releases.
+Another limit of telemetry based OSDs is that there's no way for ArduPilot to add new panel items at will, it's the vendor's responsibility to add new features by rolling out new firmware releases.
 
 DisplayPort, on the contrary, is an MSP protocol extension that allows to remotely draw text on compatible external OSDs, DisplayPort is also known as CANVAS MODE.
 Basically it’s a remote text only frame buffer that uses local fonts (local to the rendering engine i.e. the OSD hardware) to render strings sent via MSP.
