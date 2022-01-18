@@ -69,6 +69,7 @@ Closed hardware
     Mateksys F765-Wing <common-matekf765-wing>
     Mateksys F765-WSE <common-matekf765-wse>
     Mateksys H743-Wing/MINI/SLIM <common-matekh743-wing>
+    ModalAI Flight core <https://www.modalai.com/products/flight-core>
     mRo ControlZero F7 <common-mro-control-zero-F7>
     mRo Pixracer Pro (H7) <common-pixracer-pro>
     mRo Nexus <common-mro-nexus>
