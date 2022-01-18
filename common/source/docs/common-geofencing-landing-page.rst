@@ -35,7 +35,7 @@ Inclusion and Exclusion Fences are defined easily in Mission Planner under the P
 |     - Parameters for radius, height   |                    |           |          |         |
 +---------------------------------------+--------------------+-----------+----------+---------+
 |  Inclusion/Exclusion Zones            |                    |           |          |         |
-|     - Abritrary Locations             |                    |           |          |         |
+|     - Arbitrary Locations             |                    |           |          |         |
 |     - Polygonal or Circular           |     2 "Polygonal"  |    X      |    X     |    X    |
 |     - Inclusion or Exclusion          |                    |           |          |         |
 |     - Defined by list, like missions  |                    |           |          |         |
