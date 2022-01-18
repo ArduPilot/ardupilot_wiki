@@ -148,9 +148,9 @@ Install dfu-util
 
   Rename it to `dfu-util.exe`
 
-  Append the path of the `dfu-util.exe` to the system environment variable `Path`: "My Computer" > "Properties" > "Advanced" > "Environment Variables" > "Path". Please note that paths in the variable `Path` are seperated by semicolon `;`. This will allow dfu-util to be executed globally in command prompt.
+  Append the path of the `dfu-util.exe` to the system environment variable `Path`: "My Computer" > "Properties" > "Advanced" > "Environment Variables" > "Path". Please note that paths in the variable `Path` are separated by semicolon `;`. This will allow dfu-util to be executed globally in command prompt.
 
-  Instead of using dfu-util, you could flash bootloader with betaflight. Instructions are detailled here : https://github.com/betaflight/betaflight/wiki/Installing-Betaflight
+  Instead of using dfu-util, you could flash bootloader with betaflight. Instructions are detailed here : https://github.com/betaflight/betaflight/wiki/Installing-Betaflight
   If you board is not recognize as a com port under windows, you have to download and install zadig : http://zadig.akeo.ie/
 
 
@@ -186,7 +186,7 @@ Congratulations! You're now running ArduPilot on your omnibusF4. You can use thi
 
 Compile ArduPilot
 -----------------
-To build your own firmware, see the instructions on setting up a build envrionment and compiling the source code:
+To build your own firmware, see the instructions on setting up a build environment and compiling the source code:
 `Building the Code <https://ardupilot.org/dev/docs/building-the-code.html>`__
 
 
