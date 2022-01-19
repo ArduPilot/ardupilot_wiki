@@ -9,6 +9,7 @@ Pixhawk 5X® is the latest update to the successful family of Pixhawk® flight c
 
 .. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_exploded_diagram.jpg
     :target: ../_images/pixhawk5x_exploded_diagram.jpg
+    :width: 450px
 
 Where To Buy
 ============
@@ -33,7 +34,7 @@ Features
     - Dedicated R/C input for PPM and S.Bus input
     - Dedicated analog / PWM RSSI input and S.Bus output
     - 4 general purpose serial ports
-        - 2 with full flow control
+        - 3 with full flow control
         - 1 with separate 1.5A current limit
         - 1 with I2C and additional GPIO line for external NFC reader
     - 2 GPS ports
@@ -50,7 +51,7 @@ Features
         - CAN Bus has individual silent controls or ESC RX-MUX control
     - 2 Power input ports with SMBus
     - 1 AD & IO port
-        - 2 additional analog input
+        - 2 additional analog input, one 3.3V and one 6.6V max input
         - 1 PWM/Capture input
         - 2 Dedicated debug and GPIO lines
 - **Voltage Ratings**
@@ -66,11 +67,13 @@ Features
 - **Other Characteristics**
         Operating & storage temperature: -40 ~ 85°c
 
-Layout and Dimensions
-=====================
+Typical Wiring Diagram
+======================
 
-.. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_dimensions_all.jpg
-    :target: ../_images/pixhawk5x_dimensions_all.jpg
+.. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_wiring_diagram.png
+    :target: ../_images/pixhawk5x_wiring_diagram.png
+
+.. note:: duplicated RC control and telemetry solutions are shown. Duplicate systems are not usually used.
 
 UART Mapping
 ============
@@ -80,7 +83,7 @@ UART Mapping
  - SERIAL2 -> UART5 (Telem2) RTS/CTS pins
  - SERIAL3 -> USART1 (GPS1)
  - SERIAL4 -> UART8 (GPS2)
- - SERIAL5 -> UART2 (USER)
+ - SERIAL5 -> UART2 (Telem3) RTS/CTS pins
  - SERIAL6 -> UART4 (USER)
  - SERIAL7 -> USART3 (Debug)
  - SERIAL9 -> USB (SLCAN)
@@ -162,14 +165,8 @@ Connectors
 
 Unless noted otherwise all connectors are JST GH
 
-.. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_pinout.jpg
-    :target: ../_images/pixhawk5x_pinout.jpg
-
-Wiring Diagram
-==============
-
-.. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_wiring_diagram.jpg
-    :target: ../_images/pixhawk5x_wiring_diagram.jpg
+.. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_pinout.png
+    :target: ../_images/pixhawk5x_pinout.png
 
 Loading Firmware
 ================
@@ -179,3 +176,9 @@ allowing the loading of xxxxxx.apj firmware files with any ArduPilot
 compatible ground station.
 
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled "Pixhawk5X".
+
+Layout and Dimensions
+=====================
+
+.. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_dimensions_all.jpg
+    :target: ../_images/pixhawk5x_dimensions_all.jpg
