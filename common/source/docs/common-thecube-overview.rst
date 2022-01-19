@@ -159,7 +159,7 @@ This section details the pin assignments of the standard carrier board of The Cu
    <td>GND</td>
    </tr>
    <tr>
-   <td> (blk)</td>
+   <td>8 (blk)</td>
    <td>GND</td>
    <td>GND</td>
    </tr>
