@@ -692,7 +692,7 @@ but the most common are:
 | HDop       | A measure of gps precision (1.5 is good, >2.0 is not so good)                                      |
 |            | https://en.wikipedia.org/wiki/Dilution_of_precision                                                |
 +------------+----------------------------------------------------------------------------------------------------+
-| Lat        | Latitude according to the GPS                                                                     |
+| Lat        | Latitude according to the GPS                                                                      |
 +------------+----------------------------------------------------------------------------------------------------+
 | Lng        | Longitude according to the GPS                                                                     |
 +------------+----------------------------------------------------------------------------------------------------+
