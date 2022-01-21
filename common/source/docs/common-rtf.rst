@@ -50,7 +50,7 @@ Planes from Partners
 VTOL/QuadPlanes from Partners
 =============================
 * `CUAV - Raefly <https://store.cuav.net/shop/raefly/>`__
-* `Event38 - E400 <https://event38.com/e400-vtol-drone/?v=0a10a0b3e53b>`__
+* `Event38 - E400 <https://event38.com/fixed-wing/e400-vtol-drone/>`__
 * :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
 * `MakeFLyEasy - Freeman 2300 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_3>`__
 * `MakeFLyEasy - Freeman 2100 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_2>`__
