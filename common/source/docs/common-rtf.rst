@@ -77,7 +77,6 @@ Subs from Partners
 Vehicles from Non-Partners
 ==========================
 
-* `Anaconda <http://kgaviation.com/store/p11/anaconda>`__, `Believer <http://kgaviation.com/store/p13/The_Believer_.html>`__, `Stratosurfer <http://kgaviation.com/store/p16/stratosurfer>`__ and `Skyhunter <http://kgaviation.com/store/p10/skyhunter>`__ fixed-wing from `KG aviation <http://kgaviation.com/index.html>`__ (`video <https://www.youtube.com/watch?v=Yx1k8VgpHlU>`__)
 * `Aton <https://traxxas.com/products/models/heli/Aton-Plus>`__ and `Aton-Plus from traxxas <https://traxxas.com/products/models/heli/Aton-Plus>`__ (firmware loaded using an SD Card)
 * DRONEE  Easy to Use Mapping Plane Drone `DRONEE PLANE <https://dronee.aero/pages/droneeplane>`__
 * `MotoDoro Farm Mapper (Plane) <https://motodoro.com/blog/detail/00005-farm-mapper-vtol.html>`__
