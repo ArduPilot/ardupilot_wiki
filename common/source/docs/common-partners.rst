@@ -478,5 +478,30 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: https://www.droneassemble.com/
 
+    *
+
+      -  .. image:: ../../../images/supporters/supporters_horizon31_logo.png
+            :width: 250px
+            :align: center
+            :target: https://www.horizon31.com/
+
+      -  .. image:: ../../../images/supporters/supporters_skylift_logo.png
+            :width: 250px
+            :align: center
+            :target: http://www.skylift.aero/
+
+    *
+
+      -  .. image:: ../../../images/supporters/supporters_logo_airvolute.png
+            :width: 250px
+            :align: center
+            :target: https://www.airvolute.com/
+
+      -  .. image:: ../../../images/supporters/supporters_hylio_logo.png
+            :width: 250px
+            :align: center
+            :target: https://www.hyl.io
+
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
