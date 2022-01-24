@@ -145,5 +145,24 @@ The approach described above has been tested for the pitch axis of the copter. T
 
 The next :ref:`figure<fig-io-signals>` shows the recorded input (mixer pitch) and output (measured pitch rate) signals over time. Below that, the power spectral densities of both signals are depicted, indicating how the power of the signal is distributed over the examined frequency range. Examining the first 50 seconds of the test flight, it can clearly be observed that there is not much of a response on the pitch axis, as it stays almost constant around 0 rad/s. It must be noted that the initial frequency of the sweep (0.05 Hz) is hold for 40 seconds at the beginning of the test flight in order to run two full cycles with a low frequency. With the increase of the frequency afterwards, the magnitude of the resulting pitch rate also rises.
 
-.. image:: PitchIdentificationIOSignals.png
+.. image:: ../images/PitchIdentificationIOSignals.png
 :name: fig-io-signals
+
+By estimating the :ref:`frequency-response<fig-freq-resp>` of the system and plotting the Bode diagram, the described behaviour becomes apparant. For lower frequencies, the system response reacts with low amplitudes. With increasing frequencies, the amplitudes of the pitch rate are also rising until the frequency response reaches a maximum and decreases again with growing frequencies.
+
+.. image:: ../images/BodeplotPitch.png
+:name: fig-freq-resp
+
+The plot at the bottom illustrated the coherence between the input and output signals. The coherence is the square of the so-called normed mean of the cross power spectral density. It can be used to estimate the power transfer between the input and the output of a linear system. A value of 1 means that the output y(t) is fully linear dependent on the input x(t). A value lower than 1 but greater than 0 can be caused by several reasons: nonlinearity in the relation between x(t) and y(t), noise entering the measurement and/or other inputs that influence the output y(t). According to literature (Bernard mettler; Mark B. Tischler; Takeo Kanade (2003): System Identification of Small-Size Unmanned Helicopter Dynamics.), linearity in the relation between input and output can be assumed for coherences greater than 0.6. This being said, the relation between mixer pitch input and pitch rate lacks linearity for frequencies lower than 4 rad/s (~0.64 Hz). Since the estimated frequency-response is a linear representation of the system, its course below 4 rad/s is associated with high uncertainties.
+
+Despite these uncertainties in the flight data, a discrete transfer-function model was estimated with the time-domain data for the pitch axis with the help of MATLAB's System Identification Toolbox. Based on model structures presented in the literature (Cho, Sung H.; Bhandari, Subodh; Sanders, Frank C.; Tischler, Mark B.; Cheung, Kenny: System Identification and Controller Optimization of Coaxial Quadrotor UAV in Hover), a model of third order, two zeros and a delay of two samples was selected. The model was then simulated with the original input signal from the test flight. The resulting model response is compared against the behaviour of the real system in the next :ref:`figure<fig-model-output>`.
+
+.. image:: ../images/PitchModelOutput.png
+:name: fig-model-output
+
+With around 27.5%, the fit of the generated model is barely satisfactory. It is noteworthy, that the differences are especially high in the regions of lower frequencies, as shown in the bottom plot of the figure. With increasing frequencies, the response of the model resembles more and more the real flight data. This supports the observation made above, that, based on the low coherence values for low frequencies, other effects influence the system's response.
+
+So what effects are those? One possible reason for the bad model fit at the low frequencies could be the nonlinear effect of the motor mixer. The motor mixer takes the outputs of all three angular rate controllers as well as the desired throttle thrust and calculates individual thrust demands for each motor in order to achieve the desired angular rates of each axis. If we look at the :ref:`rate controller outputs during<fig-rate-ctrl-outputs>` of the test flight, it is apparent that the control signals of the other axes have about the same magnitude as the pitch rate controller output (aka mixer pitch input). As soon as the amplitude of the pitch command rises and its magnitude exceeds that of the other two control signals, the magnitude of the system response, shown in the bottom plot, rises. The problem that arises is that the motor mixer superpose the thrust demands of the three rate controllers. If the demand for pitch is not significantly higher than the others, it may happen that the resulting motor thrust demands do not realize a clear pitch motion because of it is compensated by the demand of the other rate controllers.
+
+.. image:: ../images/RateControllerOutputs.png
+:name: fig-rate-ctrl-outputs
