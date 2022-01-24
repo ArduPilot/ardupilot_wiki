@@ -98,17 +98,17 @@ main loop frequency divided by a sub-sample factor.
 Identification of a Multicopter
 ===============================
 
-The Parameter :ref:`SID_AXIS<SID_AXIS>` of the system identification mode enables the user to feed in the frequency-sweep at different spots inside the control system of ArduPilot. The locations of these injection points are shown in the following :ref:'figure<fig-ctrl-sys-ardupilot>' as small chirp symbols. At each injection point, the sweep can be added to either the roll, pitch or yaw axis. 
+The Parameter :ref:`SID_AXIS<SID_AXIS>` of the system identification mode enables the user to feed in the frequency-sweep at different spots inside the control system of ArduPilot. The locations of these injection points are shown in the following :ref:`figure<fig-ctrl-sys-ardupilot>` as small chirp symbols. At each injection point, the sweep can be added to either the roll, pitch or yaw axis. 
 
 .. image:: ../images/ControlSystem.png
 :name: fig-ctrl-sys-ardupilot
 
-Now, for the purpose of obtaining a flight dynamic model of only the copter itself, it is necessary to construct a mathmatical connection between the control inputs of the copter and its measurable dynamic response. In this case, the angular rate controller outputs (:math:'p_{Thrust}', :math:'q_{Thrust}' and :math:'r_{Thrust}') represent the control inputs of the copter whereas the measured angular rates by the gyroscopes can be used as the dynamic system response. Since a common application of the created system model is the optimization of control parameters, the filtered gyroscope signals are used instead of the raw gyroscope data, representing the direct inputs to the angular rate controller. Thereby, the separate modeling of the filters becomes redundant, which makes it possible to directly connect a model of the angular rate controller to the plant model without any further effort.
+Now, for the purpose of obtaining a flight dynamic model of only the copter itself, it is necessary to construct a mathmatical connection between the control inputs of the copter and its measurable dynamic response. In this case, the angular rate controller outputs (:math:`p_{Thrust}`, :math:`q_{Thrust}` and :math:`r_{Thrust}`) represent the control inputs of the copter whereas the measured angular rates by the gyroscopes can be used as the dynamic system response. Since a common application of the created system model is the optimization of control parameters, the filtered gyroscope signals are used instead of the raw gyroscope data, representing the direct inputs to the angular rate controller. Thereby, the separate modeling of the filters becomes redundant, which makes it possible to directly connect a model of the angular rate controller to the plant model without any further effort.
 
 .. image:: ../images/RateControl.png
 :name: fig-rate-ctrl
 
-The identification process is conducted during hovering flight. Therefore, the three axes (namely roll, pitch and yaw) are considered as decoupled. According to the :ref:'figure<fig-rate-ctrl>' shown above, which illustrates the general structure of the rate control loop independent of any specific control axis, it is possible to construct a transfer function for each axis:
+The identification process is conducted during hovering flight. Therefore, the three axes (namely roll, pitch and yaw) are considered as decoupled. According to the :ref:`figure<fig-rate-ctrl>` shown above, which illustrates the general structure of the rate control loop independent of any specific control axis, it is possible to construct a transfer function for each axis:
 
 .. math::
 
