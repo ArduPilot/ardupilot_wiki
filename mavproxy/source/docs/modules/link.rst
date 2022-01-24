@@ -54,4 +54,11 @@ List the active communications links, their ID's and labels (if applicable).
 
     link list
 
+link dataratelogging
+====================
+
+Start or stop datarate statistic logging. If active, the statistics are saved
+in "dataratelog.csv" in the same folder as the tlog.
+
+The statistics are useful for profiling and testing low-bandwidth datalinks.
 
