@@ -92,6 +92,7 @@ List of Modules
     serial
     signing
     speech
+    swarm
     systemtime
     terrain
     tracker
