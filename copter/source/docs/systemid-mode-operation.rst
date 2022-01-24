@@ -97,6 +97,8 @@ main loop frequency divided by a sub-sample factor.
 
 Identification of a Multicopter
 ===============================
+Description of the Approach
+---------------------------
 
 The Parameter :ref:`SID_AXIS<SID_AXIS>` of the system identification mode enables the user to feed in the frequency-sweep at different spots inside the control system of ArduPilot. The locations of these injection points are shown in the following :ref:`figure<fig-ctrl-sys-ardupilot>` as small chirp symbols. At each injection point, the sweep can be added to either the roll, pitch or yaw axis. 
 
@@ -117,3 +119,31 @@ G_{Pitch}(s) &= \frac{Y(s)_{Pitch}}{U(s)_{Pitch}} = q_{Meas}/q_{Thrust} \\
 G_{Yaw}(s) &= \frac{Y(s)_{Yaw}}{U(s)_{Yaw}} = r_{Meas}/r_{Thrust} \\
 
 As the figure shows, the transfer function of each axis models the system consisting of the motor mixer, the motors, the airframe of the copter and the gyroscopes together with the filters. As the transfer function models the relation between mixer input (u(t)) and actual (filtered) angular rate (y(t)), the frequency-sweeps of :ref:`SID_AXIS<SID_AXIS>` 10-12 are initially used to inject the test signal at the input to the motor mixer, where it is added to the rate controller output. The next section discusses the results of the presented approach.
+
+Results for the Pitch Axis
+-----------------------------------------
+
+The approach described above has been tested for the pitch axis of the copter. The system identification flight was performed with the following settings:
+
++--------------------------------------+------------------+
+| Parameter                            | Value            |
++--------------------------------------+------------------+
+| :ref:`SID_AXIS<SID_AXIS>`            | 11               |
++--------------------------------------+------------------+
+|:ref:`SID_MAGNITUDE<SID_MAGNITUDE>`   | 0.4              |
++--------------------------------------+------------------+
+|:ref:`SID_F_START_HZ<SID_F_START_HZ>` | 0.05 Hz          |
++--------------------------------------+------------------+
+|:ref:`SID_F_START_HZ<SID_F_STOP_HZ>`  | 5 Hz             |
++--------------------------------------+------------------+
+|:ref:`SID_T_FADE_OUT<SID_T_FADE_OUT>` | 5 s              |
++--------------------------------------+------------------+
+|:ref:`SID_T_FADE_IN<SID_T_FADE_IN>`   | 5 s              |
++--------------------------------------+------------------+
+| :ref:`SID_T_REC<SID_T_REC>`          | 80 s             |
++--------------------------------------+------------------+
+
+The next :ref:`figure<fig-io-signals>` shows the recorded input (mixer pitch) and output (measured pitch rate) signals over time. Below that, the power spectral densities of both signals are depicted, indicating how the power of the signal is distributed over the examined frequency range. Examining the first 50 seconds of the test flight, it can clearly be observed that there is not much of a response on the pitch axis, as it stays almost constant around 0 rad/s. It must be noted that the initial frequency of the sweep (0.05 Hz) is hold for 40 seconds at the beginning of the test flight in order to run two full cycles with a low frequency. With the increase of the frequency afterwards, the magnitude of the resulting pitch rate also rises.
+
+.. image:: PitchIdentificationIOSignals.png
+:name: fig-io-signals
