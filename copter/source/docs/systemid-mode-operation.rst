@@ -116,4 +116,4 @@ G_{Roll}(s) &= \frac{Y(s)_{Roll}}{U(s)_{Roll}} = p_{Meas}/p_{Thrust} \\
 G_{Pitch}(s) &= \frac{Y(s)_{Pitch}}{U(s)_{Pitch}} = q_{Meas}/q_{Thrust} \\
 G_{Yaw}(s) &= \frac{Y(s)_{Yaw}}{U(s)_{Yaw}} = r_{Meas}/r_{Thrust} \\
 
-As the figure shows, the transfer function of each axis models the system consisting of the motor mixer, the motors, the airframe of the copter and the gyroscopes together with the filters.
+As the figure shows, the transfer function of each axis models the system consisting of the motor mixer, the motors, the airframe of the copter and the gyroscopes together with the filters. As the transfer function models the relation between mixer input (u(t)) and actual (filtered) angular rate (y(t)), the frequency-sweeps of :ref:`SID_AXIS<SID_AXIS>` 10-12 are initially used to inject the test signal at the input to the motor mixer, where it is added to the rate controller output. The next section discusses the results of the presented approach.
