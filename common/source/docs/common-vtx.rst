@@ -23,6 +23,9 @@ SmartAudio is a one-wire protocol so you will need to connect the SmartAudio pin
 - Set :ref:`SERIAL5_OPTIONS <SERIAL5_OPTIONS>` to 4 to enable half-duplex which SmartAudio requires. Depending on your video transmitter it might be required to enable the TX_PullDown option, so 68 would be the correct value.
 - Set :ref:`SERIAL5_BAUD <SERIAL5_BAUD>` to 4800 to set the SmartAudio baud rate
 
+.. image:: ../../../images/VTX-smartaudio.jpg
+    :target: ../_images/VTX-smartaudio.jpg
+
 CRSF (Crossfire)
 ----------------
 
@@ -31,6 +34,14 @@ CRSF is a bi-directional protocol that requires both TX and RX of a serial port 
 When using CRSF for both RC and VTX control it is important to disable "my VTX" support on Open TX transmitters. Follow your transmitters' instructions.
 
 Reboot your flight controller and power your video transmitter. At startup you should see a video message indicating the current video settings. All the video settings are stored in the ``VTX_x`` parameters and by default these will be changed to reflect the currently configured VTX settings. Once booted you can modify these settings and they will be reflected in the VTX configuration.
+
+
+.. image:: ../../../images/VTX-crsf.jpg
+    :target: ../_images/VTX-crsf.jpg
+
+
+.. image:: ../../../images/VTX-both.jpg
+    :target: ../_images/VTX-both.jpg
 
 Video transmitter settings
 --------------------------
