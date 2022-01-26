@@ -16,7 +16,9 @@ If the autopilot uses an F7 or H7 processor, then this can be done by appropriat
 
 .. note:: F4 autopilots with on-board inversion (Pixracer,MindPX V2) default to having the inversion on their ports designated for FRsky telem, only requiring that the TX and RX pins be tied together and connected to the Sport/Fport on the receiver and the appropriate ``SERIALx_PROTOCOL`` be set for that port. 
 
-In addition, some FrSky receivers provide an optional pad with the SPort or FPort already "inverted", so no external inversion is required if that is used. The various connection configurations are shown below (FPort is used in the diagrams, but just substitute SPort for the FPort labels in the images when using SPort connections):
+In addition, some FrSky receivers provide an optional pad with the SPort or FPort already "inverted", so no external inversion is required if that is used.
+
+.. note:: **The various connection configurations are shown below (FPort is used in the diagrams, but just substitute SPort for the FPort labels in the images when using SPort connections):**
 
 Connections
 ===========
@@ -34,10 +36,12 @@ ____________________________________________________________________
     :target: ../_images/FPort-wiring-b.jpg
 
 
-- Fport: ``SERIALx_PROTOCOL`` = 23, ``SERIALx_OPTIONS`` = 4
-- Sport: ``SERIALx_PROTOCOL`` = 10 (but connect to RX pin instead of TX)
+- Fport: ``SERIALx_PROTOCOL`` = 23, ``SERIALx_OPTIONS`` = 4 (Half Duplex)
+- Sport: ``SERIALx_PROTOCOL`` = 10, ``SERIALx_OPTIONS`` = 4 (Half Duplex)
 
-.. warning:: getting an "un-inverted" SPort or FPort signal from some receivers by tapping an internal connection may not provide enough drive for reliable operation on some autopilots having protection resistors in series with their UART pins. Contact the autopilot OEM for possible workarounds or use an normal FPort signal and exteranl bi-directional inverter as shown above
+.. note:: modifying the receiver to access the "un-inverted" signal may not have enough drive, and/or, require the setting of the UART TX pin's pull-up resistor. Try using ``SERIALx_OPTIONS`` = 132 in that case.
+
+.. warning:: getting an "un-inverted" SPort or FPort signal from some receivers by tapping an internal connection may not provide enough drive for reliable operation on some autopilots having protection resistors in series with their UART pins, even when enabling the pull-up resistor on the UART. Contact the autopilot OEM for possible workarounds or use an normal FPort signal and external bi-directional inverter as shown above.
 
 ___________________________________________________________________
 
@@ -46,11 +50,11 @@ ___________________________________________________________________
 
 
 - Fport: ``SERIALx_PROTOCOL`` = 23, ``SERIALx_OPTIONS`` = 7
-- Sport: ``SERIALx_PROTOCOL`` = 10, ``SERIALx_OPTIONS`` = 15
+- Sport: ``SERIALx_PROTOCOL`` = 10, ``SERIALx_OPTIONS`` = 15 (invert TX/RX, Half Duplex)
 
 ______________________________________________________________________
 
-.. note:: some boards can have the FPort connected to the UARTs RX pin instead of TX pin as shown above. See :ref:`common-Fport-receivers` for more information.
+.. note:: F7/H7 boards can have the FPort connected to the UARTs RX pin, instead of the TX pin as shown above, and use the UART's SWAP option. F4 boards do not have this SWAP capability See :ref:`common-Fport-receivers` for more information.
 
 .. _frsky_cables:
 

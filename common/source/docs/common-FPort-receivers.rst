@@ -10,7 +10,7 @@ FPort protocol combines SBus RC control information being sent to the autopilot 
 
 Many FRSky X series and R series receivers have this capability, either natively or with firmware upgrade.
 
-Connection to the autopilot and configuration varies from autopilot to autopilot since their UART capabilities vary. Most F4 cpu based autopilots do not have controllable inverters in front of the UART TX and RX, and require either an external bi-directional inverter, as SPort connections do or the use of the "uninverted FPort pad/pin" some receivers provide since the FPort protocol has opposite signaling levels than normal UART operation.
+Connection to the autopilot and configuration varies from autopilot to autopilot since their UART capabilities vary. Most F4 cpu based autopilots do not have controllable inverters in front of the UART TX and RX, and require either an external bi-directional inverter, as SPort connections do or the use of the "un-inverted FPort pad/pin" some receivers provide since the FPort protocol has opposite signaling levels than normal UART operation.
 Most F7 and H7 autopilots, on the other hand, have internal inverters, and can be directly connected from the receiver's FPort to their UARTs TX input line.
 
 .. note:: ArduPilot supports both 16 and 24 channels FPort2 but telemetry is enabled only for 16 channels mode.
@@ -35,23 +35,23 @@ Configuration depends on the autopilot and connection method.
 
 In general, F4 based autopilots using an external bi-directional inverter can use any UART with the following configuration:
 
--   ``SERIALx_PROTOCOL`` =23
--   ``SERIALx_OPTIONS`` =160 (enable pull-up/pull-downs on TX and RX pins for those external inverter circuits that may require it)
+-   ``SERIALx_PROTOCOL`` = 23
+-   ``SERIALx_OPTIONS`` = 160 (enable pull-up/pull-downs on TX and RX pins for those external inverter circuits that may require it, won't affect those that do not need it)
 -   ``RSSI_TYPE`` =3
 
-F4 based autopilots using an "inverted FPort" output from the receiver can connect it to any  UART's TX pin with the configuration:
+F4 based autopilots using an "un-inverted FPort" output from the receiver can connect it to any UART's TX pin with the configuration:
 
--   ``SERIALx_PROTOCOL`` =23
--   ``SERIALx_OPTIONS`` = 4 (Half Duplex) 
+-   ``SERIALx_PROTOCOL`` = 23
+-   ``SERIALx_OPTIONS`` = 4 (Half Duplex), or = 132 (Half Duplex, TX Pull-up) if receiver does not have sufficient drive on the "un-inverted" output
 -   ``RSSI_TYPE`` =3
 
-.. note:: F4 based autopilots cannot use the RX pin with an "inverted FPort" output since the SWAP capability is only available in F7/H7 based autopilots.
+.. note:: F4 based autopilots cannot use the RX pin with an "un-inverted FPort" output since the SWAP capability is only available in F7/H7 based autopilots and Half Duplex requires connection the UART TX pin.
 
 
 F7/H7 based autopilots can directly connect to the TX pin of any UART and use this configuration:
 
 -   ``SERIALx_PROTOCOL`` =23
--   ``SERIALx_OPTIONS`` =  7 (invert TX/RX,Half Duplex)
+-   ``SERIALx_OPTIONS`` =  7 (invert TX/RX, Half Duplex) if using "un-inverted" FPort signal, then = 4 since inversion is not required)
 -   ``RSSI_TYPE`` =3
 
     OR to the RX pin:
