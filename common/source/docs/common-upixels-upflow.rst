@@ -43,7 +43,7 @@ Additional Notes
 
 - As with the :ref:`PX4Flow sensor <common-px4flow-overview>` a range finder is required to use the sensor for autonomous modes including :ref:`Loiter <loiter-mode>` and :ref:`RTL <rtl-mode>`
 - :ref:`FlowHold <flowhold-mode>` does not require the use of a rangefinder
-- Uncheck the :ref:`ARMING_CHECK <ARMING_CHECK>` parameter's "Parameters" bit to remove the need to manually lift the vehicle to 1m once before takeoff (this pre-arm check is designed to ensure the range finder is working)
+- Performance can be improved by setting the :ref:`sensors position parameters <common-sensor-offset-compensation>`.  For example if the sensor is mounted 2cm forward and 5cm below the frame's center of rotation set :ref:`FLOW_POS_X <FLOW_POS_X>` to 0.02 and :ref:`FLOW_POS_Z <FLOW_POS_Z>` to 0.05.
 
 Testing and Setup
 -----------------
