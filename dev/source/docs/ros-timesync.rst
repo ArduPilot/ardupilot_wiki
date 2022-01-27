@@ -26,19 +26,9 @@ Mavros's `apm_config.yaml <https://github.com/mavlink/mavros/blob/master/mavros/
 ArduPilot Configuration
 -----------------------
 
-The flight controller's time is set from the GPS by default but can be set from one of three sources(GPS, MAVLINK, onboard HW clock) using the `BRD_RTC_TYPES <https://ardupilot.org/copter/docs/parameters.html?highlight=parameters#brd-rtc-types-allowed-sources-of-rtc-time>`__ parameter as a bit mask for the time syncronisation source. When using mavros set BRD_RTC_TYPES = 2 to only allow the "MAVLINK_SYSTEM_TIME" source which uses the `SYSTEM_TIME <https://mavlink.io/en/messages/common.html#SYSTEM_TIME>`__ MAVLINK message.
+The flight controller's time is set from the GPS by default but can be set from one of three sources(GPS, MAVLINK, onboard HW clock) using the :ref:`BRD_RTC_TYPES <BRD_RTC_TYPES>` parameter as a bit mask for the time syncronisation source. When using mavros set ``BRD_RTC_TYPES`` = 2 to only allow the "MAVLINK_SYSTEM_TIME" source which uses the `SYSTEM_TIME <https://mavlink.io/en/messages/common.html#SYSTEM_TIME>`__ MAVLINK message.
 
-For Rover or Plane, the SCHED_LOOP_RATE parameter should be increased to 200 because mavros ignores TIMESYNC messages if the round trip time is more than 10ms.  It may also be necessary to increase the update rate of the `gcs related tasks in the scheduler <https://github.com/ArduPilot/ardupilot/blob/master/Rover/Rover.cpp#L67>`__.
-
-For rover, open `Rover.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/Rover.cpp>`__ and within the scheduler_tasks[] array ensure the gcs entries have their update rate set to 200 like below:
-
-::
-
-    SCHED_TASK(gcs_retry_deferred,    200,    500),
-    SCHED_TASK(gcs_update,            200,    500),
-    SCHED_TASK(gcs_data_stream_send,  200,   1000),
-
-After making this change you will need to compile rover and upload the new binary to the flight controller.  Hopefully this will not be necessary in future versions of Plane or Rover.
+If the ``RTT too high for timesync`` message is shown in the Mavros console (most commonly when using ArduRover), the :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>` parameter should be increased. This is because Mavros ignores TIMESYNC messages if the round trip time is more than 10ms.
 
 Testing
 -------
