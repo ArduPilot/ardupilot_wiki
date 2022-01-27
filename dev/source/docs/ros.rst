@@ -37,8 +37,7 @@ Prerequisites
 =============
 
 - Learn on to use ArduPilot first by following the relevant wiki for `Rover <https://ardupilot.org/rover/index.html>`__, `Copter <https://ardupilot.org/copter/index.html>`__ or `Plane <https://ardupilot.org/plane/index.html>`__. In particular, make sure the vehicle works well in Manual and Autonomous modes like Guided and Auto before trying to use ROS.
-- Learn how to use ROS by reading the `beginner tutorials <http://wiki.ros.org/ROS/Tutorials>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error). You will find many other tutorials about ROS like `Emlid <https://docs.emlid.com/navio2/common/dev/ros/>`__.
-- Install ROS Kinetic Kame on Ubuntu Linux (16.04). Those are the default and LTS versions of both ROS and Ubuntu.  ROS does not yet officially support Windows nor MAC.
+- Learn how to use ROS by reading the `beginner tutorials <http://wiki.ros.org/ROS/Tutorials>`__.  In the case of a problem with ROS, it is best to ask on ROS community forums first (or google your error). You will find many other tutorials about ROS like `Emlid <https://docs.emlid.com/navio2/ros>`__.
 
     VR Robotics has successfully used Rover with ROS for SLAM as demonstrated below.
 

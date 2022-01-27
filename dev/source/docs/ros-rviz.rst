@@ -19,7 +19,7 @@ These instructions were tested on a :ref:`Nvidia TX2 <companion-computer-nvidia-
 Client PC Setup
 ---------------
 
-- Install ROS "Desktop-Full" on the client side PC (where rviz will run).  Ubuntu 16.04 users should `install ROS Kinetic <http://wiki.ros.org/kinetic/Installation>`__.  Ubuntu 18.x users should `install ROS melodic <http://wiki.ros.org/melodic/Installation/Ubuntu>`__.
+- Install ROS "Desktop-Full" on the client side PC (where rviz will run).
 - Connect to the vehicle's wifi access point (if using APSync the default username/password is ardupilot/ardupilot)
 - Open a command prompt and check that that you can "ping" the companion computer running ROS.  If using APSync, both of these commands should work
 
