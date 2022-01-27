@@ -9,7 +9,7 @@ Optical Flow Sensor Testing and Setup
 Testing the sensor
 ==================
 
-With the sensor connected to the autopilot, connect to the autopilot with the Mission Planner and open the Flight Data screen's Status tab.  If the sensor is operating you should see non-zero opt_m_x, opt_m_y and an opt_qua values.
+With the sensor connected to the autopilot, connect to the autopilot with the Mission Planner and open the Flight Data screen's Status tab.  If the sensor is operating you should see non-zero opt_m_x, opt_m_y and opt_qua values.
 
 .. image:: ../../../images/PX4Flow_CheckForData_MP.png
     :target: ../_images/PX4Flow_CheckForData_MP.png
@@ -145,3 +145,67 @@ Example Video (Copter-3.4)
 
 ..  youtube:: Bzgey8iR69Q
     :width: 100%
+
+---------------------------------
+
+Inflight Calibration
+====================
+
+Copter-4.2.0 includes an inflight calibration procedure:
+
+- Set :ref:`RCx_OPTION <RC8_OPTION>` = 158 (Optflow Calibration) to allow starting the calibration from an :ref:`auxiliary switch <common-auxiliary-functions>`
+- Setup the EKF3 to use GPS (the default)
+
+  - :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 3 (GPS)
+  - :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 1 (Baro)
+  - :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 3 (GPS)
+  - :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 3 (GPS)
+  - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 1 (Compass)
+  - :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` = 0 (Disable FuseAllVelocities)
+
+- Fly the vehicle in Loiter mode to at least 10m (higher is better but stay within the limits of the rangefinder)
+- Pull the auxiliary switch high to start the calibration
+- Use the roll and pitch sticks to rock the vehicle back and forth in both roll and pitch
+- Check the GCS "Messages" tab for output like below confirming the calibration is complete
+
+::
+
+   FlowCal: Started
+   FlowCal: x:0% y:0%
+   FlowCal: x:66% y:6%
+   FlowCal: x:100% y:74%
+   FlowCal: samples collected
+   FlowCal: scalarx:0.976 fit: 0.10   <-- lower "fit" values are better
+   FlowCal: scalary:0.858 fit: 0.04
+   FlowCal: FLOW_FXSCALER=30.00000, FLOW_FYSCALER=171.0000
+
+- Land the vehicle and setup the EKF3 to use OpticalFlow
+
+  - :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 0 (None)
+  - :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 5 (Optical Flow)
+  - :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 1 (Baro)
+  - :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 0 (None)
+  - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 1 (Compass)
+  - :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` = 0 (Disable FuseAllVelocities)
+
+- Fly the vehicle again to check performance
+
+An alternative method which avoids the need to land and change EKF3 parameters between calibration and testing is to setup :ref:`GPS/Non-GPS transitions <common-non-gps-to-gps>` so the pilot can manually change between GPS and Optical Flow inflight.  The full parameter list is below assuming the pilot will engage the calibration using RC input 8 (a 2-position switch) and switch between GPS and Optical flow using RC input 9 (a 3-position switch)
+
+  - :ref:`RC8_OPTION <RC8_OPTION>` = 158 (Optflow Calibration)
+  - :ref:`RC9_OPTION <RC9_OPTION>` = 90 (EKF Pos Source) low is GPS, middle is OpticalFlow, high is unused
+  - :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` = 3 (GPS)
+  - :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` = 1 (Baro)
+  - :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` = 3 (GPS)
+  - :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` = 3 (GPS)
+  - :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 1 (Compass)
+  - :ref:`EK3_SRC2_POSXY <EK3_SRC1_POSXY>` = 0 (None)
+  - :ref:`EK3_SRC2_VELXY <EK3_SRC1_VELXY>` = 5 (Optical Flow)
+  - :ref:`EK3_SRC2_POSZ <EK3_SRC1_POSZ>` = 1 (Baro)
+  - :ref:`EK3_SRC2_VELZ <EK3_SRC1_VELZ>` = 0 (None)
+  - :ref:`EK3_SRC2_YAW <EK3_SRC1_YAW>` = 1 (Compass)
+  - :ref:`EK3_SRC_OPTIONS <EK3_SRC_OPTIONS>` = 0 (Disable FuseAllVelocities)
+
+.. note::
+
+   To use the inflight calibration EKF3 must be enabled.  This is the default for ArduPilot 4.1 and higher
