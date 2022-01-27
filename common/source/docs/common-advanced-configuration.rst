@@ -92,7 +92,7 @@ tuning options for the vehicle.
 [/site]
     Object Avoidance <common-object-avoidance-landing-page>
 [site wiki="copter,plane"]
-    Optical Flow Sensor <common-optical-flow-sensor-setup>
+    Optical Flow Sensor <common-optical-flow-sensors-landingpage>
 [/site]
     OSD Parameter Editor <common-paramosd>
     Parameter List (Full) <parameters>
