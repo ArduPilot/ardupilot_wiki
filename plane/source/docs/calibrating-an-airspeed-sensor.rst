@@ -87,6 +87,8 @@ Automatic calibration
 
 .. note:: You do not have to have :ref:`ARSPD_USE<ARSPD_USE>` enabled to do automatic airspeed calibration. You can set :ref:`ARSPD_USE<ARSPD_USE>` = 0 if you would prefer not to use the sensor until it is calibrated.
 
+.. note:: WARNING: Do not leave ARSPD_AUTOCAL enabled for long stetches of level flight. The calibration requires regular turns to get a good estimate. If flown for long distances without a turn then a very poor airspeed ratio can develop.
+
 Manual calibration
 ==================
 
