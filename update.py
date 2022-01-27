@@ -600,7 +600,11 @@ def fetch_versioned_parameters(site=None):
                         new_file = (key +
                                     "/source/docs/" +
                                     filename[str(filename).rfind("/")+1:])
-                        if os.path.isfile(filename.replace("new_params_mversion","old_params_mversion")): # The cached file exists?  # noqa
+                        if not os.path.isfile(new_file):
+                            debug("Copying %s to %s (target file does not exist)" %
+                                (filename, new_file))
+                            shutil.copy2(filename, new_file)
+                        elif os.path.isfile(filename.replace("new_params_mversion","old_params_mversion")): # The cached file exists?  # noqa
 
                             # Temporary debug messages to help with cache tasks.
                             debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
