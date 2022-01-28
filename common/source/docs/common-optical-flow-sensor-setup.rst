@@ -209,3 +209,6 @@ An alternative method which avoids the need to land and change EKF3 parameters b
 .. note::
 
    To use the inflight calibration EKF3 must be enabled.  This is the default for ArduPilot 4.1 and higher
+
+..  youtube:: Crx97v1bwWo
+    :width: 100%
