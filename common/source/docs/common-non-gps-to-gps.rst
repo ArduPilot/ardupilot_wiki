@@ -42,7 +42,11 @@ The pilot can manually switch between the source sets using a 3-position :ref:`a
 
 - :ref:`RC8_OPTION <RC8_OPTION>` = 90 (EKF Pos Source)
 
-:ref:`Lua scripts <common-lua-scripts>` can be used to automatically switch between sources based on information from the sensors (i.e. GPS speed accuracy, rangefinder distance, etc) or "innovations" from the EKF ("innovations" are a measure of how close the sensor's latest sensor data matches the EKF's estimate).  As of Nov 2020, there is only one supported script, `ahrs-source.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/ahrs-source.lua>`__ which allows automatically switching between GPS, T265 and optical flow.
+:ref:`Lua scripts <common-lua-scripts>` can be used to automatically switch between sources based on information from the sensors (i.e. GPS speed accuracy, rangefinder distance, etc) or "innovations" from the EKF ("innovations" are a measure of how close the sensor's latest sensor data matches the EKF's estimate).
+
+- `ahrs-source.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/ahrs-source.lua>`__ switches between GPS, T265 and optical flow
+- `ahrs-source-gps-optflow.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/ahrs-source-gps-optflow.lua>`__ switches between GPS and optical flow (AP 4.2 and higher)
+- `ahrs-source-gps-wheelencoders.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/ahrs-source-gps-wheelencoders.lua>`__ switches between GPS and wheel encoders (AP 4.2 and higher)
 
 Testing
 -------
