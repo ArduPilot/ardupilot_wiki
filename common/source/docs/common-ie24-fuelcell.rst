@@ -54,7 +54,7 @@ Reboot the flight controller after setting the parameters for the settings to ta
 Normal battery monitor failsafes for battery capacity and battery voltage can be set on the monitor instance designated as 'Generator-Elec'.  However, keep in mind that the battery capacity on these units is small for the size of vehicle required to lift them.  Hence, if the battery voltage or capacity remaining failsafes are triggered there is not a lot of flight time left and you should land immediately.
 
 .. tip::
-    In this instance, ignore the units of the the fuel tank capacity parameter.  The tank capacity is only reported as a percentage.  As such values should be entered in the range from 1 to 100.
+    In this instance, ignore the units of the fuel tank capacity parameter.  The tank capacity is only reported as a percentage.  As such values should be entered in the range from 1 to 100.
 
 .. note::
     Voltage data is reported for the battery.  Because the fuel cell is constantly charging the battery, you will not see a significant change in battery voltage.  Only once the fuel cell has used all of its hydrogen and you are using the battery exclusively will you see large changes in voltage.
