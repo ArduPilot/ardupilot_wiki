@@ -112,9 +112,9 @@ Connect your flight controller, connect tp MAVProxy and load the OSD module by t
 
 Use the following syntax to set and show a parameter, its type, minimum, maximum and increments:
 
-:code:`param-set <screen> <index> <name> (<type> | <min> <max> <increment>)` 
+:code:` osd param-set <screen> <index> <name> (<type> | <min> <max> <increment>)` 
 
-:code:`param-show <screen> <index>` 
+:code:`osd param-show <screen> <index>` 
 
 where 
 
