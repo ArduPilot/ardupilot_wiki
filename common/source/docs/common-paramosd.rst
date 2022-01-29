@@ -49,6 +49,7 @@ When one of the parameter screens is selected, adjustments can be made in disarm
 selected inflight, the screen allows display only. This allows live monitoring of automatic parameter adjustments, 
 i.e. when performing autotune procedures or automatic servo trims.
 
+.. note:: For systems not using an actual OSD, as when using CRSF with no OSD or DJI OSD, and running OpenTX transmitters with CRSF configuration script, setting :ref:`OSD_TYPE<OSD_TYPE>` =3 (MSP), will allow the OpenTX CRSF script on the transmitter to change these parameters.
 
 Menu navigation
 ===============
