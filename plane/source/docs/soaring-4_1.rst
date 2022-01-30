@@ -135,7 +135,7 @@ Altitude limits
 Spatial limits
 ~~~~~~~~~~~~~~
 
-The parameter :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` can be used to limit how far (in metres) the aircraft can drift while in THERMAL mode. If the airfraft reaches this limit in THERMAL mode, it will revert to the original flight mode.
+The parameter :ref:`SOAR_MAX_DRIFT<SOAR_MAX_DRIFT>` can be used to limit how far (in metres) the aircraft can drift while in THERMAL mode. If the aircraft reaches this limit in THERMAL mode, it will revert to the original flight mode.
 
 If the original flight mode was FBWB or CRUISE mode, the drift distance is measured from the location THERMAL was entered.
 

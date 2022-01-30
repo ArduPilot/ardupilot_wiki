@@ -201,7 +201,7 @@ The gain scaling scheme is selected with :ref:`Q_TAILSIT_GSCMSK<Q_TAILSIT_GSCMSK
 
 The maximum and minimum scaling that can be applied by any scheme is set by :ref:`Q_TAILSIT_GSCMIN<Q_TAILSIT_GSCMIN>` and :ref:`Q_TAILSIT_GSCMAX<Q_TAILSIT_GSCMAX>`. If a scheme is working well at all but the extremes these endpoints can be adjusted.
 
-.. tip:: Scaling is done relative the the hover throttle point, ensure this is set correctly before proceeding, see: :ref:`Flight Modes<quadplane-flight-modes>`, QHOVER mode.
+.. tip:: Scaling is done relative the hover throttle point, ensure this is set correctly before proceeding, see: :ref:`Flight Modes<quadplane-flight-modes>`, QHOVER mode.
 
 Disk theory gain scaling is the most advanced method available and should result in the best results, if setup correctly.
 
@@ -269,7 +269,7 @@ interpreted using the :ref:`Q_TAILSIT_INPUT<Q_TAILSIT_INPUT>` parameter. The cho
   pilots who are used to flying multi-rotor aircraft.
 
 - :ref:`Q_TAILSIT_INPUT<Q_TAILSIT_INPUT>` =1 means that in hover the aircraft responds like a
-  3D aircaft, with the yaw stick controlling earth-frame roll, and roll
+  3D aircraft, with the yaw stick controlling earth-frame roll, and roll
   stick controlling earth-frame yaw. This is a good choice for pilots who
   are used to flying 3D aircraft in prop-hang, but is not very useful
   when flying around, due to the earth-frame multicopter control inputs.
