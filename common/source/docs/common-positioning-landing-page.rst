@@ -11,8 +11,8 @@ positioning technologies:
    :target: ../_images/gps-landing-page.jpg
 
 
-GPS
-===
+GPS/Compass
+===========
 .. toctree::
     :maxdepth: 1
     
@@ -30,6 +30,7 @@ GPS
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     mRo GPS, GPS+Compass,RTK, and DroneCAN modules <https://store.mrobotics.io/category-s/109.htm>
     mRo Locaton One DroneCAN GPS/Compass <common-mrobotics-location-one-gps>
+    Qiotek DroneCAN RM3100 Compass <http://www.qio-tek.com/RM3100_CAN>
     Zubax GNSS 2: GNSS + Compass + Barometer <common-zubax-gnss-positioning-module-gps-compass-and-barometer>
 
 RTK GPS
@@ -47,6 +48,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     Hex Here+ RTK Receiver <common-here-plus-gps>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
+    Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/RTK_F9P>
     Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
     Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
     Synerx MDU-2000 RTK + LTE GPS <common-synerex-mdu-2000>
