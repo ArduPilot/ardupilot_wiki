@@ -196,6 +196,7 @@ def sphinx_make(site, parallel):
             continue
         if site is not None and not site == wiki:
             continue
+        generate_common_partners_page('common/source/docs/common-partners.rst')
         p = multiprocessing.Process(target=build_one, args=(wiki,))
         p.start()
         procs.append(p)
@@ -415,6 +416,51 @@ def get_copy_targets(content):
         targetset = set(DEFAULT_COPY_WIKIS)
     return targetset
 
+def generate_common_partners_page(output_file):
+    import importlib.util
+    script_dir = os.path.dirname(__file__)
+    spec = importlib.util.spec_from_file_location("partner_list.py",os.path.join(script_dir,"partner_list.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    partners = mod.PARTNER_LIST
+    image_width = '250px'
+    image_align = 'center'
+    image_url_base = '../../../images/supporters/'
+    table_width = 2
+    cell_count = 0
+    output = []
+    output.append(""".. _common-partners:
+
+==================
+Corporate Partners
+==================
+
+The ArduPilot Project is greatly appreciative of our Corporate Partners.
+Details on the Partners Program and how to join can be found on the :doc:`Partners Program <common-partners-program>` page.
+
+.. list-table::
+    :class: partners-table\n""")
+        
+    for partner in partners:
+        cell_count += 1
+        if cell_count == 1:
+            output.append('    *')
+
+        output.append('     - .. image:: '+image_url_base+partner.image)
+        output.append('            :width: '+image_width)
+        output.append('            :align: '+image_align)
+        output.append('            :target: '+partner.link+'\n')
+        if cell_count == table_width:
+            cell_count = 0
+
+    while cell_count > 0 and cell_count < table_width:
+        output.append('     - .. ')
+        cell_count += 1
+
+    output.append('\n[copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]')
+    
+    with open(output_file, 'w') as out:
+        out.write('\n'.join(output))
 
 def strip_content(content, site):
     """
