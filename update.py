@@ -205,7 +205,7 @@ def sphinx_make(site, parallel):
                     p.join()
                     procs.remove(p)
                     if p.exitcode != 0:
-                        error('Erro making sphinx(1)')
+                        error('Error making sphinx(1)')
             time.sleep(0.1)
     while len(procs) > 0:
         for p in procs[:]:
@@ -213,7 +213,7 @@ def sphinx_make(site, parallel):
                 p.join()
                 procs.remove(p)
                 if p.exitcode != 0:
-                    error('Erro making sphinx(2)')
+                    error('Error making sphinx(2)')
         time.sleep(0.1)
 
 
