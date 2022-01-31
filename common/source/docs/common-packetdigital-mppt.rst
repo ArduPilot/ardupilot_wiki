@@ -71,4 +71,10 @@ To allow the autopilot to connect to all the MPPTs:
 - Use Mission Planner's SETUP >> Optional Hardware >> UAVCAN(DroneCAN) page's "Menu" button to manually configure the uavcan.node_id of each MPPT
 - set :ref:`BATTx_SERIAL_NUM <BATT_SERIAL_NUM>` to match the uavcan.node_ids set above
 
+Videos
+------
+
+..  youtube:: s4YxbC2ZW50
+    :width: 100%
+
 [copywiki destination="plane,copter,rover,dev"]
