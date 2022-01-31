@@ -65,6 +65,21 @@ Full featured and widely used GCS.
 -  `Issues List <https://github.com/ArduPilot/MissionPlanner/issues>`__
 -  `Source Code <https://github.com/ArduPilot/MissionPlanner>`__
 
+AeroGCS KEA 2.0
+---------------
+
+AeroGCS is drone management and mission planning software supporting various autopilots like Ardupilot and PX4. AeroGCS is the simplest mission planning software which helps to plan drone flights in few seconds using wizard flow. It has been so simplified that any user can learn it in few hours only. Pilot who are the actual users of drone always want simplest UI to manage it. AeroGCS main capability is its seamless integration with cloud, its unified system. Right from user registration to drone fleet tracking can be done on cloud platform. The below diagram shows overall process and capabilities. The Unified solution offers right from secure firmware to cloud business logics integration.
+
+- **Platform**: Windows, Linux, Android
+- **Licence**: Open source 
+  
+- :ref:`Wiki <AeroGCS:home>`
+- `Support Forum <https://docs.aerogcs.com/>`__
+- `Download Desktop <https://download.aeromegh.com/api/files/latest/AeroGCS-KEA/Desktop>`__
+- `Download Android <https://download.aeromegh.com/api/files/latest/AeroGCS-KEA/Desktop>`__
+- `Download Herelink <https://download.aeromegh.com/api/files/latest/AeroGCS-KEA/Herelink>`__
+- `Download Skydroid <https://download.aeromegh.com/api/files/latest/AeroGCS-KEA/Skydroid>`__
+
 APM Planner 2.0
 ---------------
 
