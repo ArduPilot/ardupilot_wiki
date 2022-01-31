@@ -576,7 +576,7 @@ The Durandal supports up to 16 PWM outputs. First first 8 outputs (labelled
 outputs support all PWM output formats, but not DShot.
 
 The remaining 8 outputs (labelled AUX1 to AUX8) are the "auxiliary"
-outputs. These are directly attached to the STM32F427 and support all
+outputs. These are directly attached to the STM32H743 and support all
 PWM protocols as well as DShot.
 
 All 13 back-side PWM outputs have GND on the top row, 5V on the middle row and
