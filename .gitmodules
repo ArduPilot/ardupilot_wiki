@@ -1,0 +1,3 @@
+[submodule "modules/sphinx-lua"]
+	path = modules/sphinx-lua
+	url = https://github.com/IamPete1/sphinx-lua.git

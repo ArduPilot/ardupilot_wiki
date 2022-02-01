@@ -22,9 +22,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Setting environement
+      - name: Setting environment
         run: |
           mkdir /tmp/web
+          git submodule update --init --recursive
           ./Sphinxsetup.sh
       - name: Check image formats
         run: |
@@ -32,3 +33,9 @@ jobs:
       - name: Test build
         run: |
           ./update.py --parallel 4 --verbose --destdir=/tmp/web
+      - name: Archive build output
+        uses: actions/upload-artifact@v2
+        with:
+           name: build
+           path: /tmp/web
+           retention-days: 5

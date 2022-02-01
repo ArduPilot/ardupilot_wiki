@@ -42,10 +42,15 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinxcontrib.youtube', #For youtube embedding
     'sphinxcontrib.vimeo', #For vimeo embedding
+    'sphinxcontrib.luadomain', # For lua scripting docs
+    'sphinx_lua'# For lua scripting docs
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+# For lua scripting docs
+lua_source_path = ["../docs.lua"]
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
