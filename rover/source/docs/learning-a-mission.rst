@@ -31,7 +31,7 @@ If using version 3.1 (or lower):
 - when the vehicle is at a position that you would like to record as a waypoint, toggle the auxiliary function switch high (and then return to low)
 - after recording all points, check the mission by connecting with a ground station and then download all waypoints.  If using the Mission Planner go to the Flight Plan screen and press the "Read WPs" button.
 
-To then drive the mission, switch the vehicle into ref:`Auto <auto-mode>`.
+To then drive the mission, switch the vehicle into :ref:`Auto <auto-mode>`.
 
 .. note::
 
