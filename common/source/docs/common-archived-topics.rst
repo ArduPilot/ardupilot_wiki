@@ -34,6 +34,7 @@ value to users with old hardware.
     Edge Quick Start <common-edge-quick-start>
 [/site]
 [site wiki="copter"]
+    Boat Mode <boat-mode>
     Using Xbee radios for telemetry with APM <xbee-radios>
     Quick Start for RTFs <quick-start-guide>
     HIL Quad Simulator <hil-quad>
