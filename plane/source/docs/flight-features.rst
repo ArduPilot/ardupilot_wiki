@@ -19,3 +19,4 @@ a full set of features see the :doc:`full parameter list <parameters>` and the `
     Geo-Fencing in Plane <common-geofencing-landing-page>
     Terrain Following <common-terrain-following>
     Soaring <soaring-4_1>
+    Automated Aerobatics <common-scripting-aerobatics>
