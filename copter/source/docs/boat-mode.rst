@@ -4,6 +4,8 @@
 Boat Mode
 =========
 
+.. note:: Archived: Superceded by the :ref:`common-moving-vehicle-initialization` page
+
 Copter includes "boat mode" which allows taking off from a moving platform including boats.  It is not really a "mode" but rather a change to how the gyros are calibrated.
 
 ..  youtube:: wNlnwqC-bx4
