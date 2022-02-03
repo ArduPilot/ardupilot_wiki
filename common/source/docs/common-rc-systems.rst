@@ -10,6 +10,8 @@ Radio Control Systems
 This article provides an overview of the RC Transmitter and Receiver
 Systems that can be used with ArduPilot autopilots.
 
+If you are planning on controlling a vehicle without an RC receiver attached, please read up on :ref:`running ArduPilot without RC input<common-running-without-rc>`
+
 Compatible RC Protocols
 =======================
 
