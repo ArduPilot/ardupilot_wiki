@@ -18,5 +18,5 @@ a full set of features see the :doc:`full parameter list <parameters>` and the `
     terrain-following-manual-modes
     motor-thrust-scaling
     Notch Filtering <common-imu-notch-filtering>
-    boat-mode
+    common-moving-vehicle-initialization
     common-non-gps-navigation-landing-page

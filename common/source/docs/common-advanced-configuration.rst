@@ -83,6 +83,7 @@ tuning options for the vehicle.
 [site wiki="copter"]
     Motor Thrust Scaling <motor-thrust-scaling>
 [/site]
+    Moving Vehicle Initialization <common-moving-vehicle-initialization>
 [site wiki="copter,rover"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
