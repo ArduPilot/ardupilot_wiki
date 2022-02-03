@@ -23,7 +23,7 @@ Manually trigger gyro calibration
 
 Note that even with automatic gyro calibration disabled, the gyros calibration can be triggered manually from the Mission Planner (and perhaps some other ground stations) using the Flight Data screen's Actions tab.  Select "PREFLIGHT_CALIBRATION" from the top-left drop-down and then press the "Do Action" button.
 
-.. image:: ../images/boat-mode-gyro-calibration.png
+.. image:: ../../../images/boat-mode-gyro-calibration.png
     :target: ../_images/boat-mode-gyro-calibration.png
 
 This is useful if for some reason a gyro calibration is required and the vehicle can be temporarily placed on a near non-moving platform.

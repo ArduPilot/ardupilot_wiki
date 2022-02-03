@@ -33,6 +33,7 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
     First Time Setup <docs/apmrover-setup>
     First Drive <docs/rover-first-drive>
     If A Problem Arises <docs/common-when-problems-arise>
+    Rover Features <docs/rover-features>
     Advanced Configuration <docs/common-advanced-configuration>
     Mission Planning <docs/common-mission-planning>
     Logs <docs/common-logs>
