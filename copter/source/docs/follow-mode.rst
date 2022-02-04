@@ -9,11 +9,9 @@ Follow Mode
 
 When switched into Follow, the vehicle will attempt to follow another vehicle (or anything publishing its position) at a specified offset.  The vehicle lead vehicle's position must be published to the vehicle in Follow mode using a telemetry system.
 
-.. note::
+The altitude is maintained with the altitude hold controller so the vehicle will attempt to hold its current altitude when the sticks are placed with 10% of mid-throttle. It will climb or descend at up to 2.5m/s (this speed is adjustable with the :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>` and :ref:`PILOT_SPEED_DN<PILOT_SPEED_DN>` parameters). The acceleration used to establish these speeds is set by :ref:`PILOT_ACCEL_Z<PILOT_ACCEL_Z>`.
 
-   Follow is available in Copter-3.6 and Rover-3.5 (and higher)
-
-The following parameters can be used to tune FlowHold's performance:
+The following parameters can be used to tune Follow Mode's performance:
 
 -  :ref:`FOLL_ENABLE <FOLL_ENABLE>` : set to 1 to enable follow mode and refresh parameters
 -  :ref:`FOLL_SYSID <FOLL_SYSID>` : MAVLink system id of lead vehicle ("0" means follow the first vehicle "seen")
