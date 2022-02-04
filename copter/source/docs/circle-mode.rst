@@ -47,8 +47,7 @@ Other Notes
 ===========
 
 The pilot does not have any control over the roll and pitch but can
-change the altitude with the throttle stick as in AltHold or Loiter
-mode.
+change the altitude with the throttle stick as in :ref:`altholdmode` or :ref:`loiter-mode`.
 
 The pilot can control the yaw of the copter, but the autopilot will not
 retake control of the yaw until circle mode is re-engaged.
