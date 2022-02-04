@@ -23,6 +23,8 @@ should hold that attitude. This applies upside down as well, so if you
 roll the plane upside down and let go of the sticks the plane will try
 to hold the inverted attitude until you move the sticks again.
 
+.. note:: the internal controllers will resist attitude changes, but drift due to turbulence or miss-trimming will result in gradual attitude changes. See ACRO MODE ATTITUDE LOCKING section below.
+
 When you apply aileron or elevator stick the plane will rotate about
 that axis (in body frame) at a rate proportional to the amount of stick
 movement. So if you apply half deflection on the aileron stick then the
@@ -72,3 +74,8 @@ It can be a lot of fun flying ACRO mode, but you can also easily stall
 and crash hard. Automatic stall detection and recovery in autopilots is
 an area of research, and is not yet implemented in Plane, so if you do
 stall then recovery is up to you. The best mode for recovery is MANUAL.
+
+ACRO MODE ATTITUDE LOCKING
+==========================
+
+By enabling the :ref:`ACRO_LOCKING<ACRO_LOCKING>` parameter, whatever attitude (roll and pitch angle) the pilot places the plane in, upon releasing the sticks, the autopilot will not only resist rate changes (caused by trim or turbulence), but also attempt to hold and correct back to that attitude. Note that his requires that the plane be properly tuned (see :ref:`Tuning<common-tuning>` ).
