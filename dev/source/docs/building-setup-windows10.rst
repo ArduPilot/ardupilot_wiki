@@ -89,11 +89,18 @@ When using SITL with default options or ``--console --map`` an installed XWindow
 
     [Errno 111] Connection refused sleeping
 
-Using VcXsrv
-++++++++++++
+Using VcXsrv to Create XWindows Displays
+++++++++++++++++++++++++++++++++++++++++
 #. Select display settings: "Multiple Windows" but it is your preference
 #. Select how to start clients: **Must** select **"Start no Client"**
 #. Extra settings: **Must** check **"Disable access control"**
+
+    .. note::
+
+        If you have an issue with display check the following firewall rules,
+            * Go to ``Windows Defender Firewall`` and click ``Advanced Settings`` (opens ``Windows Defender Firewall with Advanced Security``)
+            * Under ``Inbound Rules`` find ``VcXsrv windows xserver`` and ensure ``Allow Connection`` is enabled for your network type ``Private``, ``Public``, or both
+            * Check ``Outbound Rules`` as well
 
 Code Editing in WSL Using VSCode (Optional)
 -------------------------------------------
