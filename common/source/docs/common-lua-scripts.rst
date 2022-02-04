@@ -97,6 +97,14 @@ Script Crashes and Errors
 If scripts run out of memory (or panic for any reason) all currently running scripts are terminated, and the scripting engine will restart, and reload all scripts from the disk.
 This is allowed to happen at all flight stages, even while the vehicle is armed and flying.
 
+Scripting and Parameters
+========================
+
+.. toctree::
+   :maxdepth: 1
+   
+   Accessing/Adding Parameters via Scripts <common-scripting-parameters>
+
 API Documentation
 =================
 
