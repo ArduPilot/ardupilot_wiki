@@ -29,7 +29,7 @@ The table below shows for each flight mode whether it provides altitude or posit
    <tr><td>Alt Hold</td><td>s</td><td>+</td><td></td><td>Holds altitude and self-levels the roll & pitch</td></tr>
    <tr><td>Auto</td><td>A</td><td>A</td><td>Y</td><td>Executes pre-defined mission</td></tr>
    <tr><td>AutoTune</td><td>s</td><td>A</td><td>Y</td><td>Automated pitch and bank procedure to improve control loops</td></tr>
-   <tr><td>Brake</td><td>s</td><td>A</td><td>Y</td><td>Brings copter to an immediate stop</td></tr>
+   <tr><td>Brake</td><td>A</td><td>A</td><td>Y</td><td>Brings copter to an immediate stop</td></tr>
    <tr><td>Circle</td><td>s</td><td>A</td><td>Y</td><td>Automatically circles a point in front of the vehicle</td></tr>
    <tr><td>Drift</td><td>-</td><td>+</td><td>Y</td><td>Like stabilize, but coordinates yaw with roll like a plane</td></tr>
    <tr><td>Flip</td><td>A</td><td>A</td><td></td><td>Rises and completes an automated flip</td></tr>
