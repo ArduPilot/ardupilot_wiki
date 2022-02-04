@@ -92,6 +92,11 @@ AutoTune performs a weak position hold if invoked from Loiter or PosHold flight 
 
 - The vehicle will gently lean (up to 10 degrees) towards a "target point" which is initially set to the vehicle's location at the moment AutoTune was invoked.
 - The pilot can reposition the vehicle using the roll, pitch, yaw or throttle sticks.  The target position will be reset to the vehicle's location at the moment the pilot releases the roll and pitch sticks.
+-  The altitude is maintained with the altitude hold controller so the
+   vehicle will attempt to hold its current altitude when the sticks
+   are placed with 10% of mid-throttle. It will climb or descend at up
+   to 2.5m/s (this speed is adjustable with the :ref:`PILOT_SPEED_UP<PILOT_SPEED_UP>` and :ref:`PILOT_SPEED_DN<PILOT_SPEED_DN>`
+   parameters). The acceleration used to establish these speeds is set by :ref:`PILOT_ACCEL_Z<PILOT_ACCEL_Z>`.
 - In order to twitch perpendicular to the wind direction, the vehicle may suddenly rotate in either direction up to 90 degrees as it drifts 5m (or more) from the target location.
 - If there is little or no wind, the vehicle's gentle position control may mean it moves back and forth, ping ponging around the target point changing yaw each time it strays more than 5m from the target.  In these cases it may be more comfortable to revert the simpler AltHold based AutoTune. 
 
