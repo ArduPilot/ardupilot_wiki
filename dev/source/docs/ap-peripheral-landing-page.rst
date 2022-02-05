@@ -45,7 +45,7 @@ Some (but not all) product examples using AP-Periph:
 Firmware
 ========
 
-Firmware for existing device definitions are posted `here <https://firmware.ardupilot.org/AP_Periph/>`__. Their hardware definition files are in the ArudPilot Github repository, `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__
+Firmware for existing device definitions are posted `here <https://firmware.ardupilot.org/AP_Periph/>`__. Their hardware definition files are in the ArduPilot Github repository, `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__
 
 To create firmware for a new design, follow the same instructions as for porting to a new autopilot board, as explained in the Wiki section :ref:`porting` .
 

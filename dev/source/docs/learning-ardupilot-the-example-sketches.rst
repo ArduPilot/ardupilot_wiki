@@ -25,7 +25,7 @@ sketch on a Pixhawk:
 
 ::
 
-    cd $ARDUPILOT_HOME # the top-level of an AruPilot repository
+    cd $ARDUPILOT_HOME # the top-level of an ArduPilot repository
     ./waf configure --board=Pixhawk1
     ./waf build --target examples/INS_generic --upload
 
@@ -60,7 +60,7 @@ Certain sketches can also be run in SITL. For example to run the protocol decode
 
 ::
 
-    cd $ARDUPILOT_HOME # the top-level of an AruPilot repository
+    cd $ARDUPILOT_HOME # the top-level of an ArduPilot repository
     ./waf configure --board sitl
     ./waf build --target examples/RCProtocolDecoder
     

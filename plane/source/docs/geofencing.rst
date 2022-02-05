@@ -343,7 +343,7 @@ MAVLink support
 
 ArduPilot will report the fence status via the MAVLink GCS protocol. The
 key status packet is called FENCE_STATUS, and is defined in
-"ardpilotmega.xml". A typical FENCE_STATUSpacket looks like this:
+"ardupilotmega.xml". A typical FENCE_STATUSpacket looks like this:
 
 ::
 
