@@ -59,7 +59,7 @@ left at full throttle and fully to the right at zero throttle.
 .. figure:: ../images/xplane-joystick-setup.jpg
    :target: ../_images/xplane-joystick-setup.jpg
 
-Right now you can't use the joystick for other that basic axes
+Right now you can't use the joystick for other than basic axes
 controls, so you can't use it for flight mode changes. We may be able
 to add support for that in the future.
 
@@ -94,13 +94,13 @@ To start SITL directly from MissionPlanner you need to have a very
 recent version of MissionPlanner. Get the latest beta from the help
 screen.
 
-Then go the SIMULATION tab:
+Then go to the SIMULATION tab:
 
 .. figure:: ../images/xplane-missionplanner1.jpg
    :target: ../_images/xplane-missionplanner1.jpg
 
 In the SIMULATION tab select X-plane and Xplane 10. Then select
-Advanced IP Settings an click through the IP addresses, set them 
+Advanced IP Settings and click through the IP addresses, set them 
 to 127.0.0.1, with the default network ports.
 
 Press "Start SITL"
