@@ -146,10 +146,10 @@ can adjust your pitch links to make the swashplate level.
 .. image:: ../images/TradHeli_linear_servo_setup.png
     :target: ../_images/TradHeli_linear_servo_setup.png
 
-Setting Collective Pitch Range and Zero Thrust Point
-====================================================
+Collective Pitch Settings
+=========================
 
-Use the servo manual setting (:ref:`H_SV_MAN <H_SV_MAN>` ) to move the swashplate between min, mid and max positions.
+Use the servo manual setting (:ref:`H_SV_MAN <H_SV_MAN>` ) to move the swashplate between min and max positions.
 At each position use the blade pitch gauge to set the desired blade pitch.  A typical collective 
 blade pitch range is -2° to +12°. Fully aerobatic setups would use -12° to +12°. For initial tests and normal autonomous operation, the narrower range is recommended. See :ref:`traditional-helicopter-aerobatic-setup` for more information about aerobatic setup.
 
@@ -159,8 +159,27 @@ angle measures the desired maximum collective blade pitch.
 Set :ref:`H_SV_MAN <H_SV_MAN>` to 4 to have swashplate move to minimum position.  Adjust :ref:`H_COL_MIN <H_COL_MIN>` until blade pitch
 angle measures the desired minimum collective blade pitch.
 
+Version 4.2
+-----------
+Minimum and Maximum Collective Blade Pitch Angle
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+For :ref:`H_COL_ANG_MAX <H_COL_ANG_MAX>`, enter the maximum collective blade pitch angle in degrees that corresponds to :ref:`H_COL_MAX <H_COL_MAX>`.  For :ref:`H_COL_ANG_MIN <H_COL_ANG_MIN>`, enter the minimum collective blade pitch angle in degrees that corresponds to :ref:`H_COL_MIN <H_COL_MIN>`.
+
 Zero Thrust Point
------------------
++++++++++++++++++
+
+:ref:`H_COL_ZERO_THRST <H_COL_ZERO_THRST>` is the collective blade pitch angle in degrees for zero thrust.  The collective blade pitch that corresponds to zero thrust is used to set the mixing of collective to yaw.  This will be zero degrees collective blade pitch angle for symmetric blades. Set the servo manual setting :ref:`H_SV_MAN <H_SV_MAN>` to 3 to have swashplate move to zero thrust position and verify the collective blade pitch corresponds the pitch angle set for :ref:`H_COL_ZERO_THRST <H_COL_ZERO_THRST>`.
+
+Minimum Landed Collective
++++++++++++++++++++++++++
+
+The :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` parameter is used as the lower collective pitch limit in degrees for modes that use altitude hold in the vertical axis.  This keeps the autopilot from driving collective to low resulting in ground resonance. The default angle for :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` parameter is set to -2 degrees collective blade pitch angle.  If you have non-symmetrical blades, then set it to a blade pitch that is lower by the amount used as the zero thrust pitch angle.  For example, if the :ref:`H_COL_ZERO_THRST <H_COL_ZERO_THRST>` is determined to be -3 deg then :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` should be set to -5 degrees.
+
+Version 4.1 and earlier
+-----------------------
+Zero Thrust Point
++++++++++++++++++
 
 The ``H_COL_MID`` parameter is used used as the lower collective pitch limit for modes that use altitude hold in the vertical axis.  This keeps the autopilot from driving collective to low resulting in ground resonance. The ``H_COL_MID`` parameter is set to zero 
 thrust point which is normally zero degrees for symmetrical blades. If you have non-symmetrical blades, then set it to the negative blade pitch that produces zero thrust.
