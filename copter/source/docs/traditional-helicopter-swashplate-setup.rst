@@ -159,6 +159,8 @@ angle measures the desired maximum collective blade pitch.
 Set :ref:`H_SV_MAN <H_SV_MAN>` to 4 to have swashplate move to minimum position.  Adjust :ref:`H_COL_MIN <H_COL_MIN>` until blade pitch
 angle measures the desired minimum collective blade pitch.
 
+.. note:: Overall collective measurements must be made using the :ref:`H_SV_MAN <H_SV_MAN>` parameter since these would be impacted and inaccurate if the autopilot stabilization was active.
+
 Version 4.2
 -----------
 Minimum and Maximum Collective Blade Pitch Angle
@@ -174,7 +176,9 @@ Zero Thrust Point
 Minimum Landed Collective
 +++++++++++++++++++++++++
 
-The :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` parameter is used as the lower collective pitch limit in degrees for modes that use altitude hold in the vertical axis.  This keeps the autopilot from driving collective to low resulting in ground resonance. The default angle for :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` parameter is set to -2 degrees collective blade pitch angle.  If you have non-symmetrical blades, then set it to a blade pitch that is lower by the amount used as the zero thrust pitch angle.  For example, if the :ref:`H_COL_ZERO_THRST <H_COL_ZERO_THRST>` is determined to be -3 deg then :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` should be set to -5 degrees.
+The :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` parameter is used as the lower collective pitch limit in degrees for modes that use altitude hold in the vertical axis.  This keeps the autopilot from driving collective too low resulting in ground resonance and is also used to detect landing in these modes. The default angle for :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` parameter is set to -2 degrees collective blade pitch angle and would allow symmetrical blade equipped vehicles to descend at a reasonable rate, yet avoid being too negative on the ground.  If you have non-symmetrical blades, then set it to a blade pitch that is lower by the amount used as the zero thrust pitch angle.  For example, if the :ref:`H_COL_ZERO_THRST <H_COL_ZERO_THRST>` is determined to be -3 deg then :ref:`H_COL_LAND_MIN <H_COL_LAND_MIN>` should be set to -5 degrees.
+
+.. note:: The default value for this parameter should be low enough to protect most helicopters from in-flight disarm during autonomous flight due to false landing detections.  This most likely will occur in conditions where the aircraft experiences updrafts in hover or during landing phases of flight which causes the collective to decrease below this parameter value.  Acrobatic helicopter setups or heli's using non-symmetric blades should consider lowering this value.
 
 Version 4.1 and earlier
 -----------------------
@@ -188,8 +192,6 @@ thrust point which is normally zero degrees for symmetrical blades. If you have 
 
 Set :ref:`H_SV_MAN <H_SV_MAN>` to 3 to have the swashplate move to the mid position.  Adjust ``H_COL_MID`` until the blade
 pitch angle measures the desired collective blade pitch that corresponds to zero thrust.
-
-.. note:: Overall collective measurements must be made using the :ref:`H_SV_MAN <H_SV_MAN>` parameter since these would be impacted and inaccurate if the autopilot stabilization was active.
 
 STABILIZED Collective Curve
 ===========================
