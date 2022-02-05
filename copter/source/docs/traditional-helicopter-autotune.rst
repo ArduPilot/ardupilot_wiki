@@ -101,97 +101,14 @@ Specifies P gain for velocity feedback.  This aids the autotune in maintaining a
 
 Preparing for Autotune
 ======================
-Noisy Signals
--------------
 
-Prior to starting the autotune, make sure that the noise in the control signals is reduced as low as possible.  The best way to do this is to use the harmonic notch filter.  Follow the instructions in :ref:`Helicopter Dynamic Notch Filter Setup<common-imu-notch-filtering-helicopter-setup>`.  
-
-A good way to check the control signals is to set the LOG_BITMASK parameter so that the FAST ATTITUDE and PID messages are selected in addition to the default selections.  Use a GCS software like Mission Planner to view the PIDR.Act, PIDP.Act, and PIDY.Act.  The noise in these signals should be low.
-
-ADD figure showing example of low noise 
+Ensure you complete all of the items in the :ref:`Preparing for Tuning<traditional-helicopter-tuning-preparing>` wiki.
 
 Transmitter Setup
 -----------------
 
 Be sure to put the Autotune flight mode as one of the flight modes on your transmitter flight mode switch.  You don’t want to be reaching for the GCS to switch out of the autotune if your heli is not behaving properly.  You want to be able to switch modes instantly.
 
-Initial Setup Tuning Parameters
--------------------------------
-
-Below are the initial parameters values that should be used to start the tuning
-of your helicopter. The helicopter will be easily controllable with just the FF set to
-0.15 on pitch and roll in the event that you need to modify the tail settings
-from the defaults.
-
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_ACCEL_P_MAX<ATC_ACCEL_P_MAX>`                             | 110000|
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_ACCEL_R_MAX<ATC_ACCEL_R_MAX>`                             | 110000|
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>`                                 | 4.5   |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>`                                 | 4.5   |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Heli>`        | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_PIT_FLTD<ATC_RAT_PIT_FLTD__AC_AttitudeControl_Heli>`  | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_PIT_FLTE<ATC_RAT_PIT_FLTE__AC_AttitudeControl_Heli>`  | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_PIT_FLTT<ATC_RAT_PIT_FLTT__AC_AttitudeControl_Heli>`  | 20    |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>`        | 0.1   |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_PIT_ILMI<ATC_RAT_PIT_ILMI>`                           | 0.05  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_PIT_IMAX<ATC_RAT_PIT_IMAX__AC_AttitudeControl_Heli>`  | 0.40  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`        | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_PIT_VFF<ATC_RAT_PIT_VFF>`                             | 0.15  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Heli>`        | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_RLL_FLTD<ATC_RAT_RLL_FLTD__AC_AttitudeControl_Heli>`  | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_RLL_FLTE<ATC_RAT_RLL_FLTE__AC_AttitudeControl_Heli>`  | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_RLL_FLTT<ATC_RAT_RLL_FLTT__AC_AttitudeControl_Heli>`  | 20    |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>`        | 0.1   |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_RLL_ILMI<ATC_RAT_RLL_ILMI>`                           | 0.05  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_RLL_IMAX<ATC_RAT_RLL_IMAX__AC_AttitudeControl_Heli>`  | 0.40  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>`        | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF>`                             | 0.15  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_INPUT_TC<ATC_INPUT_TC>`                                   | 0.15  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_ACCEL_Y_MAX<ATC_ACCEL_Y_MAX>`                             | 80000 |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>`                                 | 4.5   |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_YAW_D<ATC_RAT_YAW_D__AC_AttitudeControl_Heli>`        | 0.003 |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_YAW_FLTD<ATC_RAT_YAW_FLTD__AC_AttitudeControl_Heli>`  | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_YAW_FLTE<ATC_RAT_YAW_FLTE__AC_AttitudeControl_Heli>`  | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_YAW_FLTT<ATC_RAT_YAW_FLTT__AC_AttitudeControl_Heli>`  | 20    |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_YAW_I<ATC_RAT_YAW_I__AC_AttitudeControl_Heli>`        | 0.12  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_YAW_ILMI<ATC_RAT_YAW_ILMI>`                           | 0     |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_YAW_IMAX<ATC_RAT_YAW_IMAX__AC_AttitudeControl_Heli>`  | 0.33  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>`        | 0.18  |
-+---------------------------------------------------------------------+-------+
-| :ref:`ATC_RAT_YAW_VFF<ATC_RAT_YAW_VFF>`                             | 0.0   |
-+---------------------------------------------------------------------+-------+
 
 Autotune Flights
 ================
@@ -250,9 +167,7 @@ When conducting an autotune flight, be sure to have at least at 50 meter by 50 m
 #. Switch into Autotune and center all sticks
 #. Autotune will start conducting the maneuvers
 
-.. note::
-
-   If you don’t see anything happening, then your sticks are not centered
+.. note::  If you don’t see anything happening, then your sticks are not centered
 
 #. After the tuning is complete, a message will appear in the GCS saying Autotune complete
 #. To test the settings, switch out of autotune and then back into autotune and you will be 
@@ -261,9 +176,7 @@ When conducting an autotune flight, be sure to have at least at 50 meter by 50 m
    engine will shutdown on its own.  At that point flip your motor interlock switch to disabled
    and disarm the aircraft.
 
-.. note::
-
-   Aircraft must be disarmed in the autotune flight mode to save the gain settings.
+.. note::  Aircraft must be disarmed in the autotune flight mode to save the gain settings.
 
 Tuning Maneuver Descriptions
 ----------------------------

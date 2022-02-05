@@ -1,13 +1,8 @@
-.. _traditional-helicopter-advanced-tuning:
+.. _traditional-helicopter-tuning-other-topics:
 
-
-======================================================================
-Advanced Tuning for Hover Trim, Loiter Flight Mode and Waypoint Flying
-======================================================================
-
-At this point you should have completed the :ref:`basic tuning<traditional-helicopter-tuning>` and have a helicopter that is responsive and yet stable. But we need to trim the helicopter so it hovers pretty much hands-off in
-Stabilize flight mode. And adjust the I-gains for Auto flight mode so it tracks
-attitude properly under full autopilot control.
+========================
+Additional Tuning Topics
+========================
 
 Hover Trim
 ==========
@@ -49,8 +44,7 @@ For a CW turning main rotor if it took 3.5 degrees of right roll to compensate,
 enter 350. Negative values are for a CCW turning main rotor that requires left
 roll to compensate.
 
-..warning:: **Important Note** - do not use the radio trims at all. Make sure they are
-at the same position as when the :ref:`common-accelerometer-calibration` was done. 
+..  warning:: Do not use the radio trims at all. Make sure they are at the same position as when the :ref:`common-radio-control-calibration` was done. 
 
 After setting the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` now hover the helicopter again. If it still
 drifts make small adjustments to the :ref:`SERVO1_TRIM<SERVO1_TRIM>` , :ref:`SERVO2_TRIM<SERVO2_TRIM>` and :ref:`SERVO3_TRIM<SERVO3_TRIM>` .
@@ -63,6 +57,54 @@ accurate.
 Your helicopter is now trimmed properly. This trimming procedure makes the
 difference between a helicopter that is difficult to handle vs one that flies
 with true scale quality and handling. 
+
+Tuning ACCEL MAX and Feel
+=========================
+
+The final setting for ``ATC_ACCEL_x_MAX`` parameters will depend on the size of the
+helicopter.  Large 800-900 class machines will typically be in the 36000-52000 
+range; smaller 450-500 class machines will typically be in the 90000-110000 
+range. You may want to experiment with the :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter as well to get
+the initial aircraft response the way you like it.  It is recommended to keep the
+:ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter between 0.15 and 0.25 (for ``RC_FEEL`` with AC 3.5 or earlier,
+the recommended range was 25 to 50).  Once this process is complete, the aircraft
+should have the desired feel in snappiness and rate.
+
+Below is a graph showing an example of Rate Roll Desired vs actual Rate Roll.
+The peak corresponds to a rapid stick input and the amplitude (height) of the
+peaks should be approximately the same with no more than 100 milliseconds 
+offset.
+
+.. image:: ../images/TradHeli_tuning_example1_1.png
+    :target: ../_images/TradHeli_tuning_example1_1.png
+
+Setting IMAX and ILMI
+=====================
+The IMAX value limits amount of integrator error that can be stored to counter large
+disturbances in attitude.  In the pitch axis this is set by the integrator error
+required to hold the aircraft attitude at high forward speeds.  The starting
+value is 0.4.  To check this set the value to IMAX = 1, fly the aircraft at the
+maximum desired speed.  Pull the log and look at what the maximum I value is in
+the PIDP message.  Set IMAX for 0.1 above the maximum value.  You could do the
+same for the roll axis but typically 0.4 should be sufficient.  ILMI is set for
+the maximum amount of integrator that you want to retain in a hover to help
+maintain attitude.  It is recommended that this value is no larger than 0.1
+
+Below is a graph of desired roll attitude vs actual roll attitude for a
+helicopter in high-speed autonomous flight with the ILMI parameters set to zero.
+The effect of the I-gain and IMAX parameters, properly set, will make the
+helicopter track the desired attitude very closely at speed exceeding 5m/s for
+more than 2 seconds (what we call “dynamic flight”). It should be within 1-2
+degrees of desired in dynamic flight. Towards the right side of the graph the
+helicopter came to a stop in hover and the pilot switched to Stabilize flight
+mode. You will notice a discrepancy between the actual and desired roll attitude
+at that point. This is the effect of having ILMI set to zero. The ILMI can be
+considered to be a sort of “auto trim” for hover that will reduce the
+discrepancy between desired and actual pitch and roll attitude when the
+helicopter is not in dynamic flight.
+
+.. image:: ../images/TradHeli_tuning_example2_1.png
+    :target: ../_images/TradHeli_tuning_example2_1.png
 
 Adjusting I-gains For High-Speed Autonomous Flight
 ==================================================
@@ -79,7 +121,7 @@ the same way. Make further adjustments to the I-gains and IMAX values as
 required. It is not clear what I-gain values will be required as no two
 helicopters are the same. But I-gain values from 0.25 - 0.38 are common in pitch
 and roll, and 0.18 - 0.30 in yaw. IMAX values of 0.40 - 0.45 are common, however
-refer to the 'Setting the I gain, IMAX, and ILMI' section on how to determine
+refer to the 'Setting IMAX, and ILMI' section on how to determine
 what the IMAX value should be.
 
 Preventing I term Build Up
