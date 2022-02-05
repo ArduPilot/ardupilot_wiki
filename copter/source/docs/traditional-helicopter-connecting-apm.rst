@@ -22,7 +22,7 @@ The RC input for many ardupilot compatible autopilots is either PPM SUM (8 chann
 The default receiver channel to ArduCopter RC input function mapping is as follows:
 
 +--------------+--------------------+
-| RC Receiver  | Ardupilot RC       |
+| RC Receiver  | ArduPilot RC       |
 | Channel      | Input Function     |
 +--------------+--------------------+
 | 1 (Aileron)  | Roll (note1)       |

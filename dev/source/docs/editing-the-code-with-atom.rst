@@ -8,7 +8,7 @@ Editing the code with Atom
     :target: ../_images/atom_editor.png
 
 Atom is a free and open-source editor available for Linux, MacOS and Windows developed by GitHub.
-With its minimalistic UI, Atom integrates GitHub which simplifies the work on open source projects like Ardupilot. It is a perfect complement to GitHub's primary mission of building better software by working together.
+With its minimalistic UI, Atom integrates GitHub which simplifies the work on open source projects like ArduPilot. It is a perfect complement to GitHub's primary mission of building better software by working together.
 
 With its Teletype package, Atom supports sharing workspaces for real time collaboration.
 

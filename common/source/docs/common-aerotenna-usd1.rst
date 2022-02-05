@@ -14,7 +14,7 @@ The user manual for this radar unit can be found `here <https://cdn.shopify.com/
 
 .. note::
 
-   Support for this sensor is available in Ardupilot firmware versions 4.0 and later
+   Support for this sensor is available in ArduPilot firmware versions 4.0 and later
 
 Where to Buy
 ------------

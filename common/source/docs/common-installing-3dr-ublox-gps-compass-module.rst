@@ -102,4 +102,4 @@ Advanced Configuration
 ======================
 
 Advanced configuration of the UBlox GPS's internal settings is
-documented in :ref:`UBlox GPS Configuration <common-ublox-gps>`. But this is never used by the average user. Ardupilot automatically configures the gps during initialization.
+documented in :ref:`UBlox GPS Configuration <common-ublox-gps>`. But this is never used by the average user. ArduPilot automatically configures the gps during initialization.

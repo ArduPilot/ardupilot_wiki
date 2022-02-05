@@ -39,7 +39,7 @@ Mandatory Hardware
 
 You will see this menu item If the auto pilot IS connected.  Click this
 menu item to see the items you must setup before you attempt to
-operate your vehicle.  Specifics are located in the Ardupilot.org documents which
+operate your vehicle.  Specifics are located in the ArduPilot.org documents which
 cover you specific vehicle (Copter, Plane, Rover).
 
 .. image:: ../../../images/MP-mandatory-hardware.png

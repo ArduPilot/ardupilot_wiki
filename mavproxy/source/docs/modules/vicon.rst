@@ -9,7 +9,7 @@ Vicon
     vicon start
 
 
-This module connects to a Vicon motion tracking system and sends position data to the UAV. For more information on how to integrate the Vicon system with Ardupilot, :ref:`see here <copter:common-vicon-for-nongps-navigation>`.
+This module connects to a Vicon motion tracking system and sends position data to the UAV. For more information on how to integrate the Vicon system with ArduPilot, :ref:`see here <copter:common-vicon-for-nongps-navigation>`.
 
 The module has the following settings, which via be set via ``vicon set``.
 

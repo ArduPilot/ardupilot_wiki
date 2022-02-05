@@ -16,7 +16,7 @@ Horizon31 - PixC4-Jetson
 .. figure:: https://horizon31.com/wp-content/uploads/2020/03/pixc4-jetson_transparent-600x452.png
    :target:  https://horizon31.com/product/pixc4-jetson/
 
-The `PixC4-Jetson <https://horizon31.com/product/pixc4-jetson/>`__ is a professional-quality NDAA Compliant Flight Management Unit (FMUv5) which supports Ardupilot and is tightly integrated with an Nvidia Jetson (Nano, Xavier NX or TX2 NX) SBC and peripheral support system (USB, MIPI, Ethernet, M.2 slot, etc.). The PixC4-Jetson is 83x59mm and features a board-to-board design for direct integration into user platforms or can be used with specialized "breakout" boards to support various vehicle types and wiring needs.
+The `PixC4-Jetson <https://horizon31.com/product/pixc4-jetson/>`__ is a professional-quality NDAA Compliant Flight Management Unit (FMUv5) which supports ArduPilot and is tightly integrated with an Nvidia Jetson (Nano, Xavier NX or TX2 NX) SBC and peripheral support system (USB, MIPI, Ethernet, M.2 slot, etc.). The PixC4-Jetson is 83x59mm and features a board-to-board design for direct integration into user platforms or can be used with specialized "breakout" boards to support various vehicle types and wiring needs.
 
 **Included turn-key software provides the following features:**
 
@@ -37,7 +37,7 @@ Horizon31 - PixC4-Pi
 .. figure:: https://horizon31.com/wp-content/uploads/2021/08/IMG_7517-600x534.jpg
    :target:  https://horizon31.com/product/pixc4-pi/
    
-The `PixC4-Pi <https://horizon31.com/product/pixc4-pi/>`__ is a professional-quality NDAA Compliant Flight Management Unit (FMUv5) which supports Ardupilot and is tightly integrated with a Raspberry Pi 4 compute module and peripheral support system (USB, MIPI, Ethernet, M.2 slot, etc.). The PixC4-Pi is about the size of a business card (84x42mm) and weighs 67g (with heatsink). The PixC4-Pi includes the same software stack as the PixC4-Jetson, with the primary difference being the PixC4-Pi does not support h.265 encoding, only h.264.
+The `PixC4-Pi <https://horizon31.com/product/pixc4-pi/>`__ is a professional-quality NDAA Compliant Flight Management Unit (FMUv5) which supports ArduPilot and is tightly integrated with a Raspberry Pi 4 compute module and peripheral support system (USB, MIPI, Ethernet, M.2 slot, etc.). The PixC4-Pi is about the size of a business card (84x42mm) and weighs 67g (with heatsink). The PixC4-Pi includes the same software stack as the PixC4-Jetson, with the primary difference being the PixC4-Pi does not support h.265 encoding, only h.264.
 
    
 UAVcast-Pro - Raspberry Pi software for LTE / WiFi Drones

@@ -1,5 +1,5 @@
 
-# Ardupilot Wiki Sources
+# ArduPilot Wiki Sources
 
 ## ArduPilot Wiki Editing Guide
 

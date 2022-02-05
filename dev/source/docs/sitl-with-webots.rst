@@ -54,7 +54,7 @@ Advantage of Webots
 #. Ability to add OpenStreetMap and run the simulator in environments very similar to reality. 
 
 
-How to Connect Your Own World with Ardupilot
+How to Connect Your Own World with ArduPilot
 ============================================
 
 WorldInfo

@@ -59,7 +59,7 @@ Analog Airspeed sensor
 ----------------------
 
 Analog sensors are now largely discontinued. Digital sensors are much more accurate and consistent over temperature.
-Ardupilot still supports these analog sensors, but they are not preferred. See :ref:`Analog Airspeed Sensors<analog-airspeed-sensors>`.
+ArduPilot still supports these analog sensors, but they are not preferred. See :ref:`Analog Airspeed Sensors<analog-airspeed-sensors>`.
 
 
 Installing the Pitot Tubes

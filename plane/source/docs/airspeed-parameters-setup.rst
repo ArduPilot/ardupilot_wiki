@@ -11,7 +11,7 @@ Speed Scaling
 
 Since the effect of flying surface control deflection increases and decreases with airspeed, the stabilization gains in the PID loops are automatically scaled with airspeed by ArduPilot to prevent oscillations at higher airspeeds and preserve stabilization effectiveness at low airspeeds, even if no airspeed sensor is used.
 
-This is accomplished by Ardupilot estimating airspeed from other sensor inputs like GPS velocity, position changes, and IMU accelerations. This estimate is also used in case an airspeed sensor is used and becomes unhealthy. In systems without an airspeed sensor this estimate is used for speed scaling of the PID loops.
+This is accomplished by ArduPilot estimating airspeed from other sensor inputs like GPS velocity, position changes, and IMU accelerations. This estimate is also used in case an airspeed sensor is used and becomes unhealthy. In systems without an airspeed sensor this estimate is used for speed scaling of the PID loops.
 
 So, even if an airspeed sensor is not present, some airspeed parameters are used. 
 

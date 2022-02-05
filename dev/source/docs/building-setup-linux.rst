@@ -52,7 +52,7 @@ Reload the path (log-out and log-in to make permanent):
 
 Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
-.. note:: At this point you have already installed the MAVProxy Ground Control Station (MAVProxy GCS) and are also ready to do Software In the Loop (SITL) simulations of the vehicle code. See :ref:`sitl-simulator-software-in-the-loop`  and :ref:`setting-up-sitl-on-linux` . You are ready to not only build the code, but run your build in the Ardupilot SITL simulator.
+.. note:: At this point you have already installed the MAVProxy Ground Control Station (MAVProxy GCS) and are also ready to do Software In the Loop (SITL) simulations of the vehicle code. See :ref:`sitl-simulator-software-in-the-loop`  and :ref:`setting-up-sitl-on-linux` . You are ready to not only build the code, but run your build in the ArduPilot SITL simulator.
 
 
 .. youtube:: 4B8BVskH0vc

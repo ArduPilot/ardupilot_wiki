@@ -28,7 +28,7 @@ Detailed description of protocol can be found at https://uavcan.org/
 DroneCAN Peripheral Types Supported
 ===================================
 
-Ardupilot currently supports the following types of DroneCAN peripherals:
+ArduPilot currently supports the following types of DroneCAN peripherals:
 
 +---------------------+--------------------+-------------------+
 |GPS                  |Compass             |Barometer          |
@@ -111,7 +111,7 @@ When a device is attached and recognized, it's node ID and hardware ID are enter
 SLCAN
 =====
 
-Ardupilot and DroneCAN provides a means to directly communicate with DroneCAN devices on the CAN BUS attached to the autopilot: SLCAN. Enabling SLCAN and communicating with the DroneCAN devices is dependent on the autopilot's processor. F7/H7 processors use one method and F4, a different method.
+ArduPilot and DroneCAN provides a means to directly communicate with DroneCAN devices on the CAN BUS attached to the autopilot: SLCAN. Enabling SLCAN and communicating with the DroneCAN devices is dependent on the autopilot's processor. F7/H7 processors use one method and F4, a different method.
 
 .. toctree::
     :maxdepth: 1
