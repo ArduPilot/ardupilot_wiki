@@ -23,7 +23,7 @@ In addition, ArduPilot produced yaw control can also occur:
 Other YAW mechanisms
 ====================
 
-If twin engines are used (THROTTLE LEFT and THROTTLE RIGHT output functions), then the pilot and ArudPilot can use differential thrust to produce yaw in Plane, or in Quadplanes when in fixed wing modes, if using twin/quad forward motors for fixed wing flight modes. This is enabled by setting :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>` to a non-zero value.
+If twin engines are used (THROTTLE LEFT and THROTTLE RIGHT output functions), then the pilot and ArduPilot can use differential thrust to produce yaw in Plane, or in Quadplanes when in fixed wing modes, if using twin/quad forward motors for fixed wing flight modes. This is enabled by setting :ref:`RUDD_DT_GAIN<RUDD_DT_GAIN>` to a non-zero value.
 
 Yaw Trim
 ========

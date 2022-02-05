@@ -80,7 +80,7 @@ Next, try a search of the website.  If you still need help, then the
 community forums are the place to go. There you will find may friendly
 users, developers and often, even Michael will chime in. 
 
-The Arduilot forum `here <https://discuss.ardupilot.org/>`__ has existed
+The Ardupilot forum `here <https://discuss.ardupilot.org/>`__ has existed
 for years and has a very large community and numerous general and vehicle specific topics.
 
 

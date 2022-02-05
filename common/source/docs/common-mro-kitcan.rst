@@ -60,7 +60,7 @@ Pin        Signal Name     Voltage/Tolerance
 4           GND             --
 ========== =============== =================
 
-.. note:: As delivered, the KitCAN will discover a MS5525 Airspeed sensor and/or any standard ArudPilot supported I2C Magnetometer that is connected to its I2C external bus
+.. note:: As delivered, the KitCAN will discover a MS5525 Airspeed sensor and/or any standard ArduPilot supported I2C Magnetometer that is connected to its I2C external bus
 
 Typical System
 ==============

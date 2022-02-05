@@ -46,7 +46,7 @@ In a similar fashion, normal output rotation direction can be reversed by settin
 BLHeli32 ESC Telemetry
 ----------------------
 
-Many brushless BLHeli ESCs offer telemetry reporting of important ESC data, such as RPM, Temperature, Current, etc. for use in OSDs or for controlling ArudPilot functions like variable center frequency noise filters. This can be via a serial connection to one of the autopilot's UART RX inputs, whose ``SERIALx_PROTOCOL`` has been set to "16" (ESC Telemetry), or directly over its control connection if it has Bi-Directional DShot capability (only available on certain BLHeli32 capable ESCs at present).
+Many brushless BLHeli ESCs offer telemetry reporting of important ESC data, such as RPM, Temperature, Current, etc. for use in OSDs or for controlling ArduPilot functions like variable center frequency noise filters. This can be via a serial connection to one of the autopilot's UART RX inputs, whose ``SERIALx_PROTOCOL`` has been set to "16" (ESC Telemetry), or directly over its control connection if it has Bi-Directional DShot capability (only available on certain BLHeli32 capable ESCs at present).
 
 .. image:: ../../../images/dshot-telemwire.png
     :target: https://shop.holybro.com/holybro-tekko32-esc35a_p1074.html
