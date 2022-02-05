@@ -30,7 +30,7 @@ Connection and Configuration
 
 .. note::
 
-    The Velocity ESC uses the PiccoloCAN protocol. Originally developed for the Piccolo autopilot, the protocol is now natively supported by Ardupilot 
+    The Velocity ESC uses the PiccoloCAN protocol. Originally developed for the Piccolo autopilot, the protocol is now natively supported by ArduPilot 
 
 To enable communication with the Velocity ESCs using PiccoloCAN, the following parameters must be set.
 

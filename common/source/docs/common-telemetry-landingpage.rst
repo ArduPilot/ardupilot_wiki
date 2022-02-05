@@ -9,7 +9,7 @@ transmitter) using telemetry. Follow the links below for configuration
 information based upon your set-up.
 
 .. note:: Some RC systems incorporate telemetry in addition to RC control
-.. note:: Ardupilot will automatically fall back to back to MAVLink1 if MAVLink 2 serial port protocol is selected and no MAVLink 2 data is received from the groundstation in response
+.. note:: ArduPilot will automatically fall back to back to MAVLink1 if MAVLink 2 serial port protocol is selected and no MAVLink 2 data is received from the groundstation in response
 .. image:: ../../../images/Telemetry_LandingImage.jpg
     :target: ../_images/Telemetry_LandingImage.jpg
 

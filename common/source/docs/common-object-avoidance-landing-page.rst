@@ -4,7 +4,7 @@
 Object Avoidance
 ================
 
-Ardupilot supports several kinds of object avoidance. Avoidance of Airborne Vehicles (ADSB) and Object Avoidance (Object/Ground/Ceiling).
+ArduPilot supports several kinds of object avoidance. Avoidance of Airborne Vehicles (ADSB) and Object Avoidance (Object/Ground/Ceiling).
 
 Supported types vary with vehicle (Plane only supports ADSB). Some kinds of avoidance require external hardware, such as ADSB receivers or  Rangefinders.
 

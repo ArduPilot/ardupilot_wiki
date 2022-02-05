@@ -4,7 +4,7 @@
 MSP OSD
 =======
 
-Ardupilot supports 2 types of MSP OSDs:
+ArduPilot supports 2 types of MSP OSDs:
 
  - Telemetry based OSDs such as DJI FPV Goggles V1/V2, DJI Goggles RE, FatShark ByteFrost, FatShark SharkByte, MWOSD, etc
  - DisplayPort (aka CANVAS MODE) based OSD's such as FatShark SharkByte (fw 09042021 and later) and MWOSD

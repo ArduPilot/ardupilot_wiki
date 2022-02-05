@@ -8,7 +8,7 @@ Camera Trigger Setup for Pixhawk
     :width: 450px
 
 This guide is intended to help you modify a remote shutter release cable
-for use with Ardupilot autopilots and setup the flight
+for use with ArduPilot autopilots and setup the flight
 controller for triggering the camera. This method eliminates the need
 (and costs) for 3\ :sup:`rd` party triggering devices. In this specific
 example, we will use a Sony Alpha 6000 (A6000) camera. This procedure

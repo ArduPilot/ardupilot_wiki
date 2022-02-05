@@ -101,7 +101,7 @@ The firmware can also be used for I2C peripherals.
 Rangefinder
 -----------
 
- To use rangefinders, follow the instructions at  :ref:`DroneCAN Setup Advanced<common-uavcan-setup-advanced>` to set up the Ardupilot parameters. Using MissionPlanner or DroneCAN Gui, set the parameters on the adaptor node following the instructions for the relevant rangefinder.
+ To use rangefinders, follow the instructions at  :ref:`DroneCAN Setup Advanced<common-uavcan-setup-advanced>` to set up the ArduPilot parameters. Using MissionPlanner or DroneCAN Gui, set the parameters on the adaptor node following the instructions for the relevant rangefinder.
 
  .. note::
 
@@ -110,7 +110,7 @@ Rangefinder
 
  .. note::
 
- 	The RNGFNDx_ADDR Ardupilot parameter must be set above 0 and be equal to the number set on the DroneCAN adapter node.
+ 	The RNGFNDx_ADDR ArduPilot parameter must be set above 0 and be equal to the number set on the DroneCAN adapter node.
 
 DroneCAN Adapter Nodes
 ======================

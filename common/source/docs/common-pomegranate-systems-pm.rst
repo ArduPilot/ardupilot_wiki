@@ -13,7 +13,7 @@ Intelligent power monitor, accurate fuel gauge, and efficient 5V/2A power supply
 -    High-resolution current and voltage monitoring with state of charge integration.
 -    Power monitoring for battery, 5V, and 3V rails.
 -    Supports 2-6S batteries (6-26V) and currents of up to 100A, when actively cooled.
--    CANbus interface using DroneCAN v0 protocol (PX4 / Ardupilot Compatible).
+-    CANbus interface using DroneCAN v0 protocol (PX4 / ArduPilot Compatible).
 -    Efficient 5V switching regulator provides up to 2A of low noise current.
 -    Daytime visible state of charge LED
 -    Electronic CANbus termination simplifies wiring.

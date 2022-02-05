@@ -18,7 +18,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2021 <htt
 - Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Better multivehicle support, performance improvement. Requires strong python skills.
 - Swift Package for MAVLink communications.
 - Unified performance counter on ArduPilot
-- ROS2 MAVROS support for Ardupilot.
+- ROS2 MAVROS support for ArduPilot.
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -104,17 +104,17 @@ Swift Package for Mavlink
 
 `Swift Packages <https://developer.apple.com/documentation/swift_packages>`__ are Apple's solution for creating reusable components that can be used in iOS and Mac applications. MAVLink currently has several attempts to create a communications package for iOS, but they are currently not compatible with ArduPilot. The goal for this project would be to either create our own universal MAVLink package or adopt one of the existing ones (`MAVSDK Swift <https://github.com/mavlink/MAVSDK-Swift>`__, `pymavlink Swift Generator <https://github.com/ArduPilot/pymavlink/blob/master/generator/swift/MAVLink.swift>`__)to work with ArduPilot and be easily deployable as a Swift package so that anyone who wants to use it to create their own iOS based app can integrate it.
 
-ROS2 MAVROS support for Ardupilot
+ROS2 MAVROS support for ArduPilot
 ---------------------------------
 
-Currently, there is no MAVROS equivalent for ROS2, with `OSRF <https://www.openrobotics.org>`__ quickly moving to make ROS2 the standard version of ROS, supporting it has become a growing interest in our community. An initial port of the basic features of MAVROS would be a big step towards integrating Ardupilot and ROS2.
+Currently, there is no MAVROS equivalent for ROS2, with `OSRF <https://www.openrobotics.org>`__ quickly moving to make ROS2 the standard version of ROS, supporting it has become a growing interest in our community. An initial port of the basic features of MAVROS would be a big step towards integrating ArduPilot and ROS2.
 
 Projects Completed in past years
 --------------------------------
 
 In 2019, students successfully completed these projects:
 
-- AirSim Simulator Support for Ardupilot SITL
+- AirSim Simulator Support for ArduPilot SITL
 - Development of Autonomous Autorotations for Traditional Helicopters
 - Further Development of Rover Sailboat Support
 - Integration of ArduPilot and VIO tracking camera for GPS-less localization and navigation

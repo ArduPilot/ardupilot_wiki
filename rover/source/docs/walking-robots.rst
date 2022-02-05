@@ -30,7 +30,7 @@ Frontal view
 .. image:: ../images/Walking_robot-front.JPG
   :width: 50%
 
-- It is critically important that the Ardupilot knows the orientation of each leg when the servos are centered. The code assumes that, when all the servos are centered, the coxa faces directly away from the body, the femur is level with the ground, and the tibia is at an angle of 90 degrees relative to the femur.
+- It is critically important that the ArduPilot knows the orientation of each leg when the servos are centered. The code assumes that, when all the servos are centered, the coxa faces directly away from the body, the femur is level with the ground, and the tibia is at an angle of 90 degrees relative to the femur.
 
 Images can be used for reference.
 

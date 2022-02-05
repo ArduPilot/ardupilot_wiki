@@ -32,7 +32,7 @@ All content on this wiki is licensed under the terms of the `Creative Commons At
 Translating wiki pages
 ======================
 
-Translation is currently not supported, but it is possible to view Ardupilot.org in other languages through services such as `Google Translate <https://translate.google.com/translate?hl=&sl=en&tl=es&u=https%3A%2F%2Fardupilot.org%2F>`__.
+Translation is currently not supported, but it is possible to view ArduPilot.org in other languages through services such as `Google Translate <https://translate.google.com/translate?hl=&sl=en&tl=es&u=https%3A%2F%2Fardupilot.org%2F>`__.
 
 
 FAQ - Why are my changes not published?

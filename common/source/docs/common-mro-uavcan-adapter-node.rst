@@ -5,16 +5,16 @@ mRobotics DroneCAN Adapter Node
 ===============================
 
 
-The mRo CAN Node is a collaborative project with Ardupilot. It began with a desire to make CAN peripherals more standard in the drone community. Compared to other boards that have open-source hardware but closed source code, mRo CAN node is completely open. The CAN Node F303 is the version 2 of mRobotics' CAN Node, featuring more flash space.
+The mRo CAN Node is a collaborative project with ArduPilot. It began with a desire to make CAN peripherals more standard in the drone community. Compared to other boards that have open-source hardware but closed source code, mRo CAN node is completely open. The CAN Node F303 is the version 2 of mRobotics' CAN Node, featuring more flash space.
 
-With this board, you can easily utilize the Ardupilot driver library to convert ArduPilot supported GPS, I2C, and GPIO based (ie Safety Switch) peripherals to DroneCAN bus peripherals.
+With this board, you can easily utilize the ArduPilot driver library to convert ArduPilot supported GPS, I2C, and GPIO based (ie Safety Switch) peripherals to DroneCAN bus peripherals.
 
 .. image:: ../../../images/mRo-can-node.jpg
 
 
-mRo CAN Node uses open-source code, which utilizes the existing and proven Ardupilot DroneCAN driver library (see :ref:`DroneCAN Adapter Nodes <common-uavcan-adapter-node>` for firmware versions and capabilities). It features a  bootloader for "over CAN" firmware updates and an RTOS running Chibios.
+mRo CAN Node uses open-source code, which utilizes the existing and proven ArduPilot DroneCAN driver library (see :ref:`DroneCAN Adapter Nodes <common-uavcan-adapter-node>` for firmware versions and capabilities). It features a  bootloader for "over CAN" firmware updates and an RTOS running Chibios.
 
-The adapter's CAN Node ID can be set manually or automatically (Not yet supported in stable Ardupilot). The hardware design is open source, so that anyone can contribute to the CAN peripheral world with a proven CAN / MCU interface.
+The adapter's CAN Node ID can be set manually or automatically (Not yet supported in stable ArduPilot). The hardware design is open source, so that anyone can contribute to the CAN peripheral world with a proven CAN / MCU interface.
 
 As delivered, it is setup to be plug-and-play as a DroneCAN GPS/Magnetometer/LED/Airspeed by simply plugging in the 6pin GH connector from any mRo or other GPS, and connecting I2C Compasses, RGB LEDs, and/or Airspeed sensors supported by ArduPilot, as desired. 
 

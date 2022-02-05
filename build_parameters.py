@@ -9,15 +9,15 @@
 
     * Before start:
         * Folder and file management tested only in linux;
-        * It is supposed to have the wiki repo in a same level of an Ardupilot repo and two other folders named new_params_mvesion/ and old_params_mversion/
+        * It is supposed to have the wiki repo in a same level of an ArduPilot repo and two other folders named new_params_mvesion/ and old_params_mversion/
 
     * First step is go to each vehicle on firmware.ardupilot.org and get all available versions namely as stable/beta/latest.
         * For each version it gets a board and get git_version.txt file;
         * It parsers that to get the version and commit hash;
         * It creates a dictionary with vehicles, versions and commit hashes.
     
-    * Second step is use the dict to navigates on a Ardupilot Repo, changing checkouts to desidered hashes.
-        * Relies on ArdupilotRepoFolder/Tools/autotest/param_metadata/param_parse.py to generate the parameters files;
+    * Second step is use the dict to navigates on a ArduPilot Repo, changing checkouts to desidered hashes.
+        * Relies on ArduPilotRepoFolder/Tools/autotest/param_metadata/param_parse.py to generate the parameters files;
         * It renames the anchors for all files, except for latest versions. 
 
     * Third step: create the json files and move all generated files.
@@ -506,7 +506,7 @@ def print_versions(commits_to_checkout_and_parse):
 
 
 # Step 1 - Select the versions for generate parameters
-setup()                                                             # Reset the Ardupilot folder/repo
+setup()                                                             # Reset the ArduPilot folder/repo
 feteched_releases = fetch_releases(BASEURL, VEHICLES)               # All folders/releases.
 commits_to_checkout_and_parse = get_commit_dict(feteched_releases)  # Parse names, and git hashes.
 print_versions(commits_to_checkout_and_parse)                       # Present work dict.

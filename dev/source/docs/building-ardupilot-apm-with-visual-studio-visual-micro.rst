@@ -240,19 +240,19 @@ Multiple installs of Arduino:  It is important to note that Arduino has
 only one location where the parameters are stored -
 in C:\\Users\\....\\AppData\\Roaming\\Arduino\\preferences.txt.  Any
 time you start any installation of Arduino - a standard version, the
-Ardupilot Arduino version or even changing settings in Visual Micro -
+ArduPilot Arduino version or even changing settings in Visual Micro -
 that file may get changed.  So, it is very important to check all the
 settings in the IDE you are using each time you change the IDE - to
 avoid having the preferences set to that of the last IDE you used.
 
 **Referencing a standard Arduino in Visual Micro:** 
 Normally, Visual Micro is setup to reference a standard installation of Arduino instead
-of the special Ardupilot Ardunio for the HAL versions of APM.  You can
+of the special ArduPilot Ardunio for the HAL versions of APM.  You can
 configure Visual Studio or Atmel Studio to reference a standard
 installation and it may build and upload the APM code but that upload
 will not work.  The build size is different and it does not connect to
 Mission Planner. It is strongly suggested you only reference the special
-Ardupilot Arduino installation when working with APM code.
+ArduPilot Arduino installation when working with APM code.
 
 **Using Arduino statements and libraries:**  
 This is better stated as
