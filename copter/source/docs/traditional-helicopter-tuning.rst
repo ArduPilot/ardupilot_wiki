@@ -31,12 +31,16 @@ from the defaults.
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Heli>`         | 0       |
 +----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_PIT_FLTD<ATC_RAT_PIT_FLTD__AC_AttitudeControl_Heli>`   | 0       |
++----------------------------------------------------------------------+---------+
 | ATC_RAT_PIT_FILT/                                                    | 20      |
 | :ref:`ATC_RAT_PIT_FLTE<ATC_RAT_PIT_FLTE__AC_AttitudeControl_Heli>` **|         |
 +----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_PIT_FLTT<ATC_RAT_PIT_FLTT__AC_AttitudeControl_Heli>`   | 20      |
++----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>`         | 0       |
 +----------------------------------------------------------------------+---------+
-| :ref:`ATC_RAT_PIT_ILMI<ATC_RAT_PIT_ILMI>`                            | 0.08    |
+| :ref:`ATC_RAT_PIT_ILMI<ATC_RAT_PIT_ILMI>`                            | 0.05    |
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_PIT_IMAX<ATC_RAT_PIT_IMAX__AC_AttitudeControl_Heli>`   | 0.40    |
 +----------------------------------------------------------------------+---------+
@@ -46,12 +50,16 @@ from the defaults.
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Heli>`         | 0       |
 +----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_RLL_FLTD<ATC_RAT_RLL_FLTD__AC_AttitudeControl_Heli>`   | 0       |
++----------------------------------------------------------------------+---------+
 | ATC_RAT_RLL_FILT/                                                    | 20      |
 | :ref:`ATC_RAT_RLL_FLTE<ATC_RAT_RLL_FLTE__AC_AttitudeControl_Heli>` **|         |
 +----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_RLL_FLTT<ATC_RAT_RLL_FLTT__AC_AttitudeControl_Heli>`   | 20      |
++----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>`         | 0       |
-++---------------------------------------------------------------------+---------+
-| :ref:`ATC_RAT_RLL_ILMI<ATC_RAT_RLL_ILMI>`                            | 0.08    |
++----------------------------------------------------------------------+---------+
+| :ref:`ATC_RAT_RLL_ILMI<ATC_RAT_RLL_ILMI>`                            | 0.05    |
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_RLL_IMAX<ATC_RAT_RLL_IMAX__AC_AttitudeControl_Heli>`   | 0.40    |
 +----------------------------------------------------------------------+---------+
@@ -76,32 +84,36 @@ with tuning pitch and roll.
 usually be running low headspeed and higher disc loading. With a mechanically
 driven tail this also means lower than normal tail speed and reduced tail
 authority. If your helicopter meets this description, it is recommended to set
-:ref:`ATC_RAT_YAW_VFF<ATC_RAT_YAW_VFF>` to 0.024 before the first test hover.
+:ref:`ATC_RAT_YAW_VFF<ATC_RAT_YAW_VFF>` to 0.05 before the first test hover.
 
 Below are the current default settings for yaw. 
 
-+---------------------------------------------------------------------+----------+
-| :ref:`ATC_ACCEL_Y_MAX<ATC_ACCEL_Y_MAX>`                             | 27000    |
-+---------------------------------------------------------------------+----------+
-| :ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>`                                 |  4.5     |
-+---------------------------------------------------------------------+----------+
-| :ref:`ATC_RAT_YAW_D<ATC_RAT_YAW_D__AC_AttitudeControl_Heli>`        | 0.003    |
-+---------------------------------------------------------------------+----------+
-| ATC_RAT_YAW_FILT/                                                   |  20      |
-| :ref:`ATC_RAT_YAW_FLTE<ATC_RAT_YAW_FLTE__AC_AttitudeControl_Heli>` *|          |
-+---------------------------------------------------------------------+----------+
-| :ref:`ATC_RAT_YAW_I<ATC_RAT_YAW_I__AC_AttitudeControl_Heli>`        | 0.12     |
-+---------------------------------------------------------------------+----------+
-| :ref:`ATC_RAT_YAW_ILMI<ATC_RAT_YAW_ILMI>`                           | 0.08     |
-+---------------------------------------------------------------------+----------+
-| :ref:`ATC_RAT_YAW_IMAX<ATC_RAT_YAW_IMAX__AC_AttitudeControl_Heli>`  | 0.33     |
-+---------------------------------------------------------------------+----------+
-| :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>`        | 0.18     |
-+---------------------------------------------------------------------+----------+
-| :ref:`ATC_RAT_YAW_VFF<ATC_RAT_YAW_VFF>`                             | 0.024    |
-+---------------------------------------------------------------------+----------+
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_ACCEL_Y_MAX<ATC_ACCEL_Y_MAX>`                              | 27000    |
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>`                                  | 4.5      |
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_D<ATC_RAT_YAW_D__AC_AttitudeControl_Heli>`         | 0.003    |
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_FLTD<ATC_RAT_YAW_FLTD__AC_AttitudeControl_Heli>`   | 0        |
++----------------------------------------------------------------------+----------+
+| ATC_RAT_PIT_FILT/                                                    | 20       |
+| :ref:`ATC_RAT_YAW_FLTE<ATC_RAT_YAW_FLTE__AC_AttitudeControl_Heli>` **|          |
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_FLTT<ATC_RAT_YAW_FLTT__AC_AttitudeControl_Heli>`   | 20       |
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_I<ATC_RAT_YAW_I__AC_AttitudeControl_Heli>`         | 0.12     |
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_ILMI<ATC_RAT_YAW_ILMI>`                            | 0.0      |
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_IMAX<ATC_RAT_YAW_IMAX__AC_AttitudeControl_Heli>`   | 0.33     |
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>`         | 0.18     |
++----------------------------------------------------------------------+----------+
+| :ref:`ATC_RAT_YAW_VFF<ATC_RAT_YAW_VFF>`                              | 0.024    |
++----------------------------------------------------------------------+----------+
 
-* This param name changed in ArduPilot 4.0 and later.
+** This param name changed in ArduPilot 4.0 and later.
 
 Spool up the heli and hover it
 no more than .25 meters above ground in Stabilize flight mode and test the
@@ -221,8 +233,8 @@ Adjust the tuning knob until the :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeC
 0.05. Lift into a hover and roll aggressively from side to side.  If it doesn't
 shake, increase the gain by 0.01 and try it again. At the value where you get
 the rapid shaking, cut that value in half and enter it as the final tuning value
-for :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`.  Test hover the heli and make some rapid
-stick movements in both pitch and roll to make sure it's stable.  
+for :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`.  
+Test hover the heli and make some rapid stick movements in both pitch and roll to make sure it's stable.  
 
 After tuning the P and D gain the aircraft should feel much smoother. Tune quality can be also checked by viewing the ATT.DesP vs ATT.P and ATT.DesR vs ATT.R log plots:
 
@@ -266,22 +278,26 @@ helicopter is not in dynamic flight.
 Tuning a Flybar Equipped Head
 =============================
 
+The setup of a helicopter with flybar equipped head does not require the 
+:ref:`H_FLYBAR_MODE<H_FLYBAR_MODE>` set to flybar mode.  This parameter only affects
+the ACRO flight mode.  Unless there is a reason passthrough provided by the flybar 
+setting in ACRO mode is needed, then it is recommended that :ref:`H_FLYBAR_MODE<H_FLYBAR_MODE>` is 
+left at its default of no flybar.  If you choose to use the flybar mode then the FF gain 
+is set as described below.  Otherwise the FF is tuned just like an flybarless head.
+
+.. Note:: For flybar heads, the flybar is a mechanical version of the rate PID loop. So flybar is tuned using only FF in pitch and roll. The rate D and P gains are left set to zero for flybar. I-gain, IMAX, and ILMI are tuned just like FBL. 
+
 With a flybar head, where the linkage rate is normally lower, it is recommended
 to start with 0.22 FF for both pitch and roll and you will likely have to go
 higher with FF. But for a flybarless head, FF shouldn't be more than 0.22 
 unless you have really really slow servos or slow linkage rate. With all 
 helicopters, the FF gain compensates for differences in servo and linkage
-speed. 
+speed.
 
-**Note on Tuning Flybar Helicopers** - for flybar heads the flybar is a
-mechanical version of the rate PID loop. So flybar is tuned using only FF in
-pitch and roll. The rate D and P gains mentioned in the next topic below are
-left set to zero for flybar. I-gain, IMAX, and ILMI are tuned just like FBL.
 Below is a plot of beginning a tune on a flybar helicopter using the starting
 setting of :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF>` = 0.22. The graph shows the aircraft's response to
 the rate request of the attitude controller is low, meaning the FF value must
-be increased to achieve proper rate response. For all flybar helicopters be sure
-to set :ref:`H_FLYBAR_MODE<H_FLYBAR_MODE>` = 1
+be increased to achieve proper rate response. 
 
 .. image:: ../images/TradHeli_tuning_example3_1.png
    :target: ../_images/TradHeli_tuning_example3_1.png
