@@ -105,12 +105,12 @@ The Parameter :ref:`SID_AXIS<SID_AXIS>` of the system identification mode enable
 .. image:: ../images/ControlSystem.png
 :name: fig-ctrl-sys-ardupilot
 
-Now, for the purpose of obtaining a flight dynamic model of only the copter itself, it is necessary to construct a mathmatical connection between the control inputs of the copter and its measurable dynamic response. In this case, the angular rate controller outputs (:math:`p_{Thrust}`, :math:`q_{Thrust}` and :math:`r_{Thrust}`) represent the control inputs of the copter whereas the measured angular rates by the gyroscopes can be used as the dynamic system response. Since a common application of the created system model is the optimization of control parameters, the filtered gyroscope signals are used instead of the raw gyroscope data, representing the direct inputs to the angular rate controller. Thereby, the separate modeling of the filters becomes redundant, which makes it possible to directly connect a model of the angular rate controller to the plant model without any further effort.
+Now, for the purpose of obtaining a dynamic model of only the copter itself, it is necessary to construct a mathmatical connection between the control inputs of the copter and its measurable dynamic response. In this case, the angular rate controller outputs (:math:`p_{Thrust}`, :math:`q_{Thrust}` and :math:`r_{Thrust}`) represent the control inputs of the copter whereas the measured angular rates by the gyroscopes can be used as the dynamic system response. Since a common application of the created system model is the optimization of control parameters, the filtered gyroscope signals are used instead of the raw gyroscope data, representing the direct inputs to the angular rate controller. Thereby, the separate modeling of the filters becomes redundant, which makes it possible to directly connect a model of the angular rate controller to the plant model without any further effort.
 
 .. image:: ../images/RateControl.png
 :name: fig-rate-ctrl
 
-The identification process is conducted during hovering flight. Therefore, the three axes (namely roll, pitch and yaw) are considered as decoupled. According to the :ref:`figure<fig-rate-ctrl>` shown above, which illustrates the general structure of the rate control loop independent of any specific control axis, it is possible to construct a transfer function for each axis:
+The generation of flight data for the system identification is conducted during hovering flight. Therefore, the three axes (namely roll, pitch and yaw) are considered as decoupled. According to the :ref:`figure<fig-rate-ctrl>` shown above, which illustrates the general structure of the rate control loop independent of any specific control axis, it is possible to construct a transfer function for each axis:
 
 .. math::
 
@@ -118,7 +118,7 @@ G_{Roll}(s) &= \frac{Y(s)_{Roll}}{U(s)_{Roll}} = p_{Meas}/p_{Thrust} \\
 G_{Pitch}(s) &= \frac{Y(s)_{Pitch}}{U(s)_{Pitch}} = q_{Meas}/q_{Thrust} \\
 G_{Yaw}(s) &= \frac{Y(s)_{Yaw}}{U(s)_{Yaw}} = r_{Meas}/r_{Thrust} \\
 
-As the figure shows, the transfer function of each axis models the system consisting of the motor mixer, the motors, the airframe of the copter and the gyroscopes together with the filters. As the transfer function models the relation between mixer input (u(t)) and actual (filtered) angular rate (y(t)), the frequency-sweeps of :ref:`SID_AXIS<SID_AXIS>` 10-12 are initially used to inject the test signal at the input to the motor mixer, where it is added to the rate controller output. The next section discusses the results of the presented approach.
+As the figure shows, the transfer function of each axis models the system consisting of the motor mixer, the motors, the airframe of the copter and the gyroscopes together with the filters. Initially, the frequency-sweeps of :ref:`SID_AXIS<SID_AXIS>` 7-9 are used to inject the test signal at the input of the angular rate controller. This enables the analysis of the closed-loop behaviour of the pitch axis as well as the identification of the pitch axis by using the PID controller output as exitation signal of the system. The next section discusses the results of the presented approach.
 
 Results for the Pitch Axis
 -----------------------------------------
@@ -128,41 +128,39 @@ The approach described above has been tested for the pitch axis of the copter. T
 +--------------------------------------+------------------+
 | Parameter                            | Value            |
 +--------------------------------------+------------------+
-| :ref:`SID_AXIS<SID_AXIS>`            | 11               |
+| :ref:`SID_AXIS<SID_AXIS>`            | 8                |
 +--------------------------------------+------------------+
-|:ref:`SID_MAGNITUDE<SID_MAGNITUDE>`   | 0.4              |
+|:ref:`SID_MAGNITUDE<SID_MAGNITUDE>`   | 130 (deg/s)      |
 +--------------------------------------+------------------+
 |:ref:`SID_F_START_HZ<SID_F_START_HZ>` | 0.05 Hz          |
 +--------------------------------------+------------------+
 |:ref:`SID_F_START_HZ<SID_F_STOP_HZ>`  | 5 Hz             |
 +--------------------------------------+------------------+
-|:ref:`SID_T_FADE_OUT<SID_T_FADE_OUT>` | 5 s              |
+|:ref:`SID_T_FADE_OUT<SID_T_FADE_OUT>` | 0 s              |
 +--------------------------------------+------------------+
 |:ref:`SID_T_FADE_IN<SID_T_FADE_IN>`   | 5 s              |
 +--------------------------------------+------------------+
-| :ref:`SID_T_REC<SID_T_REC>`          | 80 s             |
+| :ref:`SID_T_REC<SID_T_REC>`          | 70 s             |
 +--------------------------------------+------------------+
 
-The next :ref:`figure<fig-io-signals>` shows the recorded input (mixer pitch) and output (measured pitch rate) signals over time. Below that, the power spectral densities of both signals are depicted, indicating how the power of the signal is distributed over the examined frequency range. Examining the first 50 seconds of the test flight, it can clearly be observed that there is not much of a response on the pitch axis, as it stays almost constant around 0 rad/s. It must be noted that the initial frequency of the sweep (0.05 Hz) is hold for 40 seconds at the beginning of the test flight in order to run two full cycles with a low frequency. With the increase of the frequency afterwards, the magnitude of the resulting pitch rate also rises.
+The next :ref:`figure<fig-io-signals-axis8>` shows the recorded input (pitch rate target) and output (measured pitch rate) signals over time. Below that, the power spectral densities of both signals are depicted, indicating how the power of the signal is distributed over the examined frequency range. Examining the first 45 seconds of the test flight, it can clearly be observed that there is not much of a response on the pitch axis, as its rate stays almost constant around 0 rad/s. It must be noted that the initial frequency of the sweep (0.05 Hz) is hold for 40 seconds at the beginning of the test flight in order to run two full cycles with a low frequency. With the increase of the frequency afterwards, the magnitude of the resulting pitch rate also rises.
 
-.. image:: ../images/PitchIdentificationIOSignals.png
-:name: fig-io-signals
+.. image:: ../images/PitchRateAxis8IdentificationIOSignals.png
+:name: fig-io-signals-axis8
 
-By estimating the :ref:`frequency-response<fig-freq-resp>` of the system and plotting the Bode diagram, the described behaviour becomes apparant. For lower frequencies, the system response reacts with low amplitudes. With increasing frequencies, the amplitudes of the pitch rate are also rising until the frequency response reaches a maximum and decreases again with growing frequencies.
+By estimating the :ref:`frequency-response<fig-freq-resp>` of the system and plotting the Bode diagram, the described behaviour becomes apparant. For lower frequencies, the system response reacts with low amplitudes (magnitude decreases). Normally, one would expect a (nearly) constant gain around 1 (0 dB) of the closed-loop transfer function for low frequent exitations and a decreasing magnitude for high frequences (which does not show in the diagram because the highest frequency of the frequency-sweep was 5 Hz). There must be a systemic cause for this (actually undesirable) response of the closed-loop system, which could be a nonlinearity in the system or a high-pass filter that is applied to the gyro measurements and therefore attentuates pitch rates of low frequencies.
 
-.. image:: ../images/BodeplotPitch.png
-:name: fig-freq-resp
+.. image:: ../images/BodeplotPitchClosedLoop.png
+:name: fig-freq-resp-axis8
 
-The plot at the bottom illustrated the coherence between the input and output signals. The coherence is the square of the so-called normed mean of the cross power spectral density. It can be used to estimate the power transfer between the input and the output of a linear system. A value of 1 means that the output y(t) is fully linear dependent on the input x(t). A value lower than 1 but greater than 0 can be caused by several reasons: nonlinearity in the relation between x(t) and y(t), noise entering the measurement and/or other inputs that influence the output y(t). According to literature (Bernard mettler; Mark B. Tischler; Takeo Kanade (2003): System Identification of Small-Size Unmanned Helicopter Dynamics.), linearity in the relation between input and output can be assumed for coherences greater than 0.6. This being said, the relation between mixer pitch input and pitch rate lacks linearity for frequencies lower than 4 rad/s (~0.64 Hz). Since the estimated frequency-response is a linear representation of the system, its course below 4 rad/s is associated with high uncertainties.
+The next :ref:`figure<fig-io-signals-axis11>` shows the signals that were used for the system identification, which is the actual pitch rate as system output and the motor mixer input in the pitch axis (aka pitch rate pid output). It is again observable that the system is merely reacting to an exitation at low frequencies. Therefore, the supressing of low frequency response is not happening  in the pid controller, but in the system to be identified.
 
-Despite these uncertainties in the flight data, a discrete transfer-function model was estimated with the time-domain data for the pitch axis with the help of MATLAB's System Identification Toolbox. Based on model structures presented in the literature (Cho, Sung H.; Bhandari, Subodh; Sanders, Frank C.; Tischler, Mark B.; Cheung, Kenny: System Identification and Controller Optimization of Coaxial Quadrotor UAV in Hover), a model of third order, two zeros and a delay of two samples was selected. The model was then simulated with the original input signal from the test flight. The resulting model response is compared against the behaviour of the real system in the next :ref:`figure<fig-model-output>`.
+.. image:: ../images/PitchRateAxis11IdentificationIOSignals.png
+:name: fig-io-signals-axis11
+
+The actual identification was carried out in MATLAB with the help of the System Identification Toolbox. The generation of the mentioned linear transfer function model was conducted in the frequency-domain, meaning that the frequency-response of the model was fitted to an estimated frequency-response of the system generated from the real-flight. Afterwards, the generated transfer function was integrated in a Simulink model together with the PID controller of the pitch axis. The simulation result is shown below.
 
 .. image:: ../images/PitchModelOutput.png
-:name: fig-model-output
+:name: fig-comparison-model-realflight
 
-With around 27.5%, the fit of the generated model is barely satisfactory. It is noteworthy, that the differences are especially high in the regions of lower frequencies, as shown in the bottom plot of the figure. With increasing frequencies, the response of the model resembles more and more the real flight data. This supports the observation made above, that, based on the low coherence values for low frequencies, other effects influence the system's response.
-
-So what effects are those? One possible reason for the bad model fit at the low frequencies could be the nonlinear effect of the motor mixer. The motor mixer takes the outputs of all three angular rate controllers as well as the desired throttle thrust and calculates individual thrust demands for each motor in order to achieve the desired angular rates of each axis. If we look at the :ref:`rate controller outputs during<fig-rate-ctrl-outputs>` of the test flight, it is apparent that the control signals of the other axes have about the same magnitude as the pitch rate controller output (aka mixer pitch input). As soon as the amplitude of the pitch command rises and its magnitude exceeds that of the other two control signals, the magnitude of the system response, shown in the bottom plot, rises. The problem that arises is that the motor mixer superpose the thrust demands of the three rate controllers. If the demand for pitch is not significantly higher than the others, it may happen that the resulting motor thrust demands do not realize a clear pitch motion because of it is compensated by the demand of the other rate controllers.
-
-.. image:: ../images/RateControllerOutputs.png
-:name: fig-rate-ctrl-outputs
+Comparing the system response measured in the real flight and the output of the identified pitch axis model in :ref:`figure<fig-io-signals-axis11>` illustrates that the system behaviour can only be consistenly approximated at higher frequencies. The differences between t=55s and t=80s are mainly caused by shifted phases, the amplitude is nearly the same. At lower frequencies, the model output actually follows the target pitch rate shown :ref:`above´fig-io-signals-axis8>`, while the system response measured during the test flight does not alter in large amplitudes and mainly consists of noise. It is important to note that the input and output signals had to be truncated in order to generate a model that leads to acceptable results. To be precise, only the data from 55s till the end was used for the identification. Therefore, the system response at frequencies that appeared ealier is the extrapolation of the frequency-response that was identified with the used data. This also indicates that there is some component or effect in the system, that has to be considered in the identification process in order to generate a linear model that is capable to reproduce the behaviour of the real system.
