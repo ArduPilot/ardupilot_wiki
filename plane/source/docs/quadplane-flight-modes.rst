@@ -50,7 +50,7 @@ described :ref:`here <quadplane-flying>`.
 Flight modes to avoid
 ---------------------
 
-The linked nature of of the vertical lift and fixed wing control in quadplanes means the autopilot always needs to know what the pilot is trying to do in terms of speed and attitude. 
+The linked nature of the vertical lift and fixed wing control in quadplanes means the autopilot always needs to know what the pilot is trying to do in terms of speed and attitude. 
 For this reason you should avoid the following flight modes in a quadplane:
 
 -  ACRO
