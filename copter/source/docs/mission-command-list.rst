@@ -298,7 +298,7 @@ command.
 
 .. warning::
 
-   No more that fifteen (15) Do-Jump commands can be used in a mission.  Subsequent Do-Jumps will be ignored.
+   No more that one hundred (100) Do-Jump commands can be used in a mission. This value is further reduced to fifteen (15) Do-Jump commands for boards with less than 500kb of ram. Subsequent Do-Jumps will be ignored.
 
 Do-Change-Speed
 ~~~~~~~~~~~~~~~
