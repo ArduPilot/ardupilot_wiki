@@ -32,7 +32,8 @@ uses a PID control algorithm with a feed forward path to control the aircraft an
 achieve the demanded rate.
 
 The feed forward path uses the input rate and applies
-the :ref:`ATC_RAT_PIT_VFF<ATC_RAT_PIT_VFF>` gain for pitch and :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF>` gain for roll to
+the :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>` gain for pitch and 
+:ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` gain for roll to
 determine its portion of the swashplate command. The PID algorithm uses the
 error between the measured rate and input demanded rate to determine its portion of the
 swashplate command. These are summed and sent to the mixing unit where the servo
