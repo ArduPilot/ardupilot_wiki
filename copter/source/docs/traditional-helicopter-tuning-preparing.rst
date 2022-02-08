@@ -57,7 +57,7 @@ from the defaults.
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`         | 0       |
 +----------------------------------------------------------------------+---------+
-| :ref:`ATC_RAT_PIT_VFF<ATC_RAT_PIT_VFF>`                              | 0.15    |
+| :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>`       | 0.15    |
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Heli>`         | 0       |
 +----------------------------------------------------------------------+---------+
@@ -76,7 +76,7 @@ from the defaults.
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>`         | 0       |
 +----------------------------------------------------------------------+---------+
-| :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF>`                              | 0.15    |
+| :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>`       | 0.15    |
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_INPUT_TC<ATC_INPUT_TC>`                                    | 0.15    |
 +----------------------------------------------------------------------+---------+
@@ -89,7 +89,7 @@ Yaw Axis (Rudder)
 It is recommended to make sure the tail functions properly before proceeding
 with tuning pitch and roll. Below are the suggested settings for yaw. 
 
-.. Note::  UAV helicopters, as opposed to sport helicopters, will usually be running low headspeed and higher disc loading. With a mechanically driven tail this also means lower than normal tail speed and reduced tail authority. If your helicopter meets this description, it is recommended to set :ref:`ATC_RAT_YAW_VFF<ATC_RAT_YAW_VFF>` to 0.05 before the first test hover.
+.. Note::  UAV helicopters, as opposed to sport helicopters, will usually be running low headspeed and higher disc loading. With a mechanically driven tail this also means lower than normal tail speed and reduced tail authority. If your helicopter meets this description, it is recommended to set :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>` to 0.05 before the first test hover.
 
 +----------------------------------------------------------------------+----------+
 | :ref:`ATC_ACCEL_Y_MAX<ATC_ACCEL_Y_MAX>`                              | 80000    |
@@ -113,7 +113,7 @@ with tuning pitch and roll. Below are the suggested settings for yaw.
 +----------------------------------------------------------------------+----------+
 | :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>`         | 0.18     |
 +----------------------------------------------------------------------+----------+
-| :ref:`ATC_RAT_YAW_VFF<ATC_RAT_YAW_VFF>`                              | 0.0      |
+| :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>`       | 0.0      |
 +----------------------------------------------------------------------+----------+
 
 ** This param name changed in ArduPilot 4.0 and later.

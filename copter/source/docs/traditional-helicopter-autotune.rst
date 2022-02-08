@@ -3,7 +3,7 @@
 ===============================
 AutoTune
 ===============================
-The AutoTune for tradheli is completely different from multicopter AutoTune.  It can tune any combination of feedforward (ATC_RAT_XXX_VFF), the rate gains (ATC_RAT_XXX_P and ATC_RAT_XXX_D), or angle P gain (ATC_ANG_XXX_P).  The tuning for rate gains begins with finding the maximum allowable value for the rate gains and then tunes them.  Knowing the maximum value enables the AutoTune feature to keep from creating an instability.
+The AutoTune for tradheli is completely different from multicopter AutoTune.  It can tune any combination of feedforward (ATC_RAT_XXX_FF), the rate gains (ATC_RAT_XXX_P and ATC_RAT_XXX_D), or angle P gain (ATC_ANG_XXX_P).  The tuning for rate gains begins with finding the maximum allowable value for the rate gains and then tunes them.  Knowing the maximum value enables the AutoTune feature to keep from creating an instability.
 
 Before you start AutoTune, you must:
 
@@ -48,8 +48,8 @@ User can specify the tuning desired.  Individual gain tuning or combination of t
 
 Max gain determination is done before tuning Rate D and Rate P gains.
 
-:ref:`Axes Bitmask<AUTOTUNE_AXES>`
-----------------------------------
+:ref:`Axes Bitmask<AUTOTUNE_AXES__AC_AutoTune_Heli>`
+-----------------------------------------------------------
 
 Specifies one or more axes to be tuned.
 
@@ -117,43 +117,43 @@ Suggested Tuning Sequence
 
 In any axis, it is recommended to conduct the feedforward gain tuning first, then the Rate D and Rate P gain tuning, and lastly the Angle P tuning.  Don't try to tune every axis in one flight, it could take up to 10-15 min to tune one axis.  Here is a suggested flights and tuning sequence. Conventional helicopters do not need Yaw feedforward tuning, therefore the gain can be set to zero.  Dual helicopters may require Yaw feedforward tuning.
 
-+--------+-----------------------------------------+-----------------------+
-| Flight | Parameter                               | Value                 |
-+========+=========================================+=======================+
-|    1   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>`     | 3 (Roll and Pitch)    |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`       | 1 (feedforward)       |
-+--------+-----------------------------------------+-----------------------+
-|    2   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>`     | 2 (Pitch)             |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`       | 2 (Rate D and Rate P) |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>` | 1.8                   |
-+--------+-----------------------------------------+-----------------------+
-|    3   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>`     | 1 (Roll)              |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`       | 2 (Rate D and Rate P) |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>` | 1.8                   |
-+--------+-----------------------------------------+-----------------------+
-|    4   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>`     | 3 (Roll and Pitch)    |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`       | 4 (Angle P)           |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>` | 2.0                   |
-+--------+-----------------------------------------+-----------------------+
-|    5   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>`     | 4 (Yaw)               |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`       | 2 (Rate D and Rate P) |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>` | 1.0                   |
-+--------+-----------------------------------------+-----------------------+
-|    6   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES>`     | 4 (Yaw)               |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`       | 4 (Angle P)           |
-|        +-----------------------------------------+-----------------------+
-|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>` | 1.2                   |
-+--------+-----------------------------------------+-----------------------+
++--------+-------------------------------------------------------------+-----------------------+
+| Flight | Parameter                                                   | Value                 |
++========+=============================================================+=======================+
+|    1   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES__AC_AutoTune_Heli>`       | 3 (Roll and Pitch)    |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`                           | 1 (feedforward)       |
++--------+-------------------------------------------------------------+-----------------------+
+|    2   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES__AC_AutoTune_Heli>`       | 2 (Pitch)             |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`                           | 2 (Rate D and Rate P) |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`                     | 1.8                   |
++--------+-------------------------------------------------------------+-----------------------+
+|    3   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES__AC_AutoTune_Heli>`       | 1 (Roll)              |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`                           | 2 (Rate D and Rate P) |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`                     | 1.8                   |
++--------+-------------------------------------------------------------+-----------------------+
+|    4   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES__AC_AutoTune_Heli>`       | 3 (Roll and Pitch)    |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`                           | 4 (Angle P)           |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`                     | 2.0                   |
++--------+-------------------------------------------------------------+-----------------------+
+|    5   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES__AC_AutoTune_Heli>`       | 4 (Yaw)               |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`                           | 2 (Rate D and Rate P) |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`                     | 1.0                   |
++--------+-------------------------------------------------------------+-----------------------+
+|    6   | :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES__AC_AutoTune_Heli>`       | 4 (Yaw)               |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>`                           | 4 (Angle P)           |
+|        +-------------------------------------------------------------+-----------------------+
+|        | :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`                     | 1.2                   |
++--------+-------------------------------------------------------------+-----------------------+
 
 Tuning Flight Procedures
 ------------------------
@@ -168,6 +168,7 @@ When conducting an AutoTune flight, be sure to have at least at 50 meter by 50 m
 #. AutoTune will start conducting the maneuvers.
 
 .. note::  If you don’t see anything happening, verify your sticks are centered.
+
 #. After the tuning is complete, a message will appear in the GCS saying "AutoTune complete".
 #. To test the settings, switch out of AutoTune and then back to AutoTune and you will be 
    able to test the settings that were tuned.

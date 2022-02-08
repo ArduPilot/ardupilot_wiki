@@ -95,7 +95,7 @@ After tuning the P and D gain the aircraft should feel much smoother. Tune quali
 Setting the I gain
 ------------------
 
-It is recommended to set the :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_PIT_VFF<ATC_RAT_PIT_VFF>` gain and the :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF>` gain.  
+It is recommended to set the :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>` gain and the :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` gain.  
 
 Yaw Axis
 ========
@@ -146,7 +146,7 @@ helicopters, the FF gain compensates for differences in servo and linkage
 speed.
 
 Below is a plot of beginning a tune on a flybar helicopter using the starting
-setting of :ref:`ATC_RAT_RLL_VFF<ATC_RAT_RLL_VFF>` = 0.22. The graph shows the aircraft's response to
+setting of :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` = 0.22. The graph shows the aircraft's response to
 the rate request of the attitude controller is low, meaning the FF value must
 be increased to achieve proper rate response. 
 
