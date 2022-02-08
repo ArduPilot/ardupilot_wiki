@@ -7,7 +7,7 @@ Preparing for Tuning
 Reduce Noisy Control Signals
 ============================
 
-Prior to starting the autotune, make sure that the noise in the control signals is reduced as low as possible.  The best way to do this is to use the harmonic notch filter.  Follow the instructions in :ref:`Helicopter Dynamic Notch Filter Setup<common-imu-notch-filtering-helicopter-setup>`.  
+Prior to starting to manually tune or AutoTune, make sure that the noise in the control signals is reduced as low as possible.  The best way to do this is to use the harmonic notch filter.  Follow the instructions in :ref:`Helicopter Dynamic Notch Filter Setup<common-imu-notch-filtering-helicopter-setup>`.  
 
 A good way to check the control signals is to set the LOG_BITMASK parameter so that the FAST ATTITUDE and PID messages are selected in addition to the default selections.  Use a GCS software like Mission Planner to view the PIDR.Act, PIDP.Act, and PIDY.Act.  The noise in these signals should be low.
 
@@ -15,11 +15,11 @@ ADD figure showing example of low noise
 
 .. Note::  Before tuning, it is recommended to check that high frequency vibrations are not causing the "leans" (see :ref:`traditional-helicopter-tips`)
 
-Ensure Heli Maintains a Driftless Hover
-=======================================
+Ensure Helicopter does not drift in a Hover 
+===========================================
 
-Follow the procedures in the Hover Trim section of the :ref:`Additional Tuning Topics<traditional-helicopter-tuning-other-topics>` wiki to ensure the heli
-maintains a near driftless hover (< 1 m/s).
+Follow the procedures in the Hover Trim section of the :ref:`First Flight Tests<traditional-helicopter-first-flight-tests>` wiki page to ensure the heli maintains a near driftless hover (< 1 m/s).
+  
 
 Initial Setup of Parameters
 ===========================

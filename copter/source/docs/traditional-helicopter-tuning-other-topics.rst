@@ -4,60 +4,6 @@
 Additional Tuning Topics
 ========================
 
-Hover Trim
-==========
-
-Trimming the helicopter in pitch and roll axes is an important step to keep the
-aircraft from drifting in modes like Stabilize and Althold.  The trim attitude 
-in the roll axis is affected by the tail rotor thrust.  All conventional single-
-rotor helicopters with a torque-compensating tail rotor hover either right skid 
-low or left skid low, depending on which way the main rotor turns. The 
-ArduCopter software has a parameter, :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>`, to compensate for this phenomenon. Longitudinal CG location will affect the trim attitude in the pitch
-axis.  There is no parameter to tell the autopilot what pitch attitude 
-the aircraft hovers with no drift. It always targets zero deg pitch as measured
-by the autopilot. Therefore the actual pitch attitude the aircraft 
-hovers may be 5 deg nose high but the autopilot AHRS Trim value is set
-to make it think the attitude is zero deg. 
-
-In order to trim the aircraft, set the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` parameter to zero. 
-During the initial setup of the autopilot, the ``AHRS_TRIM_x`` values are set 
-during the accelerometer calibration on the last step that has you level the 
-aircraft. For that step you should have made certain that the shaft was 
-perfectly straight up in pitch and roll. For this trim procedure, it is 
-recommended that you check it and using the method below.
-
-Measure the actual frame angle (on a portion of the frame that is perpendicular
-to the mainshaft) in pitch and roll with your digital pitch gauge. Connected to
-your ground station software with MavLink, note the pitch and roll angle the
-autopilot is "seeing". Adjust the :ref:`AHRS_TRIM_X<AHRS_TRIM_X>` and :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` values so the autopilot "sees" the identical frame angle you measured with the digital pitch gauge. You can use the Level Horizon function in your ground station to level the horizon with the helicopter at actual level. That function will
-make the adjustments to the AHRS_TRIM's for you.
-
-The above is necessary so we can accurately measure the roll angle to set the
-:ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>`. The autopilot now "knows" when the mainshaft is
-perfectly vertical.
-
-Load the helicopter with its normal payload, and hover the helicopter
-in no-wind conditions in Stabilize flight mode. Land it and pull the log, noting
-the roll angle that you had to hold with the stick to keep the helicopter from
-drifting. Enter this value in the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` parameter in centidegrees.
-For a CW turning main rotor if it took 3.5 degrees of right roll to compensate,
-enter 350. Negative values are for a CCW turning main rotor that requires left
-roll to compensate.
-
-..  warning:: Do not use the radio trims at all. Make sure they are at the same position as when the :ref:`common-radio-control-calibration` was done. 
-
-After setting the :ref:`ATC_HOVR_ROL_TRM<ATC_HOVR_ROL_TRM>` now hover the helicopter again. If it still
-drifts make small adjustments to the :ref:`SERVO1_TRIM<SERVO1_TRIM>` , :ref:`SERVO2_TRIM<SERVO2_TRIM>` and :ref:`SERVO3_TRIM<SERVO3_TRIM>` .
-The chances of getting the swashplate perfectly level during bench setup is very
-low and this dynamic tuning is needed to trim the helicopter. If it requires
-large deviation from your original ``SERVOx_TRIM`` values it is likely you have a CG
-problem, or your initial setup when leveling the swashplate was not very
-accurate.
-
-Your helicopter is now trimmed properly. This trimming procedure makes the
-difference between a helicopter that is difficult to handle vs one that flies
-with true scale quality and handling. 
-
 Tuning ACCEL MAX and Feel
 =========================
 

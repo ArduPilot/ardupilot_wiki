@@ -17,7 +17,7 @@ log data for roll.
 With the FF gains set to 0.15, takeoff and establish a hover
 in Stabilize flight mode, then make some sharp stick inputs in both pitch and
 roll. Land and pull the log from the microSD card and look at the signals in
-your ground station software. If the actual rate is more than the desired rate
+a log reviewing software. If the actual rate is more than the desired rate
 then you'll want to decrease FF. If it is less, increase FF.
 
 **(to be added...FF calculation directly from log data)**
@@ -59,7 +59,7 @@ Adjust the tuning knob until the :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeC
 0.001. Lift into a hover and make some sharp stick inputs in roll.  Most
 helicopters will see roll oscillations before they see pitch oscillations.
 That is why roll inputs are suggested.  If it doesn't shake, increase the gain
-by 0.001 and try it again. At the value where you get the rapid shaking, cut
+by 0.001 and try it again. At the value where you get rapid shaking, cut
 that value in half and enter it as the final tuning value for :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Heli>` and
 :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Heli>`.  Test hover the heli and make some rapid stick movements in both
 pitch and roll to make sure it's stable.
@@ -82,8 +82,8 @@ Now tune the P gains.  Make the following tuning parameter changes:
 
 Adjust the tuning knob until the :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`  gains are
 0.05. Lift into a hover and roll aggressively from side to side.  If it doesn't
-shake, increase the gain by 0.01 and try it again. At the value where you get
-the rapid shaking, cut that value in half and enter it as the final tuning value
+shake, increase the gain by 0.01 and try it again. At the value where you get 
+rapid shaking, cut that value in half and enter it as the final tuning value
 for :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`.  
 Test hover the heli and make some rapid stick movements in both pitch and roll to make sure it's stable.  
 
