@@ -358,17 +358,18 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 +--------+-------------------------+----------------------------------------------------------------------+
 |51      |Rate Roll kD             | :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`        |
 +--------+-------------------------+----------------------------------------------------------------------+
-|52      |Rate Pitch FF            | :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF>` (heli only)                    |
+|52      |Rate Pitch FF            | :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>` **    |
 +--------+-------------------------+----------------------------------------------------------------------+
-|53      |Rate Roll FF             | :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF>` (heli only)                    |
+|53      |Rate Roll FF             | :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` **    |
 +--------+-------------------------+----------------------------------------------------------------------+
-|54      |Rate Yaw FF              | :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF>` (heli only)                    |
+|54      |Rate Yaw FF              | :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>` **    |
 +--------+-------------------------+----------------------------------------------------------------------+
 |57      |Winch                    | :ref:`WINCH_RATE_MAX<WINCH_RATE_MAX>`                                |
 +--------+-------------------------+----------------------------------------------------------------------+
 |58      |SysID Magnitude          | :ref:`SIDS_MAGNITUDE<SID_MAGNITUDE>`                                 |
 +--------+-------------------------+----------------------------------------------------------------------+
 
+** Traditional Heli Only
 
 These values can be either set manually or using Mission Planner
 
