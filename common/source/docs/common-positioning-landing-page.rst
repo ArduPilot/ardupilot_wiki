@@ -44,6 +44,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     ArduSimple RTK GPS <common-gps-ardusimple>
     Blicube RTK GPS <https://github.com/ThomasVon2021/ardupilot_rtk>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
+    CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
     Hex Here+ RTK Receiver <common-here-plus-gps>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
