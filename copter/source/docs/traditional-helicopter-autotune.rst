@@ -158,7 +158,9 @@ In any axis, it is recommended to conduct the feedforward gain tuning first, the
 Tuning Flight Procedures
 ------------------------
 
-When conducting an AutoTune flight, be sure to have at least at 50 meter by 50 meter area to fly.  During the feedforward test, the aircraft will travel 5-10 meters.  You may have to bring it back after each iteration of the tuning test.  Do not let the aircraft get too far away.
+When conducting an AutoTune flight, be sure to have at least at 50 meter by 50 meter area to fly. The aircraft will move during the autotuning process.  Do not let the aircraft get too far away.
+
+.. caution::  During the feedforward test, the aircraft will travel 5-10 meters and further with larger helicopters. You may have to bring it back after each iteration of the tuning test.  
 
 #. Power up the controller.
 #. Set the flight mode to either stabilize or AltHold (Althold recommended).
@@ -169,10 +171,10 @@ When conducting an AutoTune flight, be sure to have at least at 50 meter by 50 m
 
 .. note::  If you don’t see anything happening, verify your sticks are centered.
 
-#. After the tuning is complete, a message will appear in the GCS saying "AutoTune complete".
-#. To test the settings, switch out of AutoTune and then back to AutoTune and you will be 
+7. After the tuning is complete, a message will appear in the GCS saying "AutoTune complete".
+8. To test the settings, switch out of AutoTune and then back to AutoTune and you will be 
    able to test the settings that were tuned.
-#. Once you are finished testing, descend and land in AutoTune.  Once the aircraft has landed, the 
+9. Once you are finished testing, descend and land in AutoTune.  Once the aircraft has landed, the 
    engine will shutdown on its own.  At that point flip your motor interlock switch to disabled
    and disarm the aircraft.
 
