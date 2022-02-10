@@ -77,17 +77,13 @@ When will the parachute deploy?
 When the "Crash Check" feature determines that the vehicle has lost
 attitude control and has begun falling, the motors will be stopped and
 the parachute will deploy automatically.  The following must all be true
-for a full 2 seconds for the crash checker to trigger the parachute
+for a full 1 seconds for the crash checker to trigger the parachute
 release:
 
 -  The motors are armed
--  The vehicle is not "landed" (the vehicle will consider itself landed
-   if the output throttle is less than 25%, the motors have hit their
-   lower limit, the vehicle is not rotating by more than 20deg/sec and
-   the pilot is not requesting a climb.  All this must be true for 1
-   second for the vehicle to consider itself landed)
+-  The vehicle is not landed
 -  The vehicle is not in FLIP or ACRO flight mode
--  the roll and/or pitch angle of the vehicle is 20 degrees off from the
+-  the roll and/or pitch angle of the vehicle is 30 degrees off from the
    target lean angle
 -  the barometer shows the vehicle is not climbing
 -  the vehicle is above the :ref:`CHUTE_ALT_MIN <CHUTE_ALT_MIN>` altitude
@@ -120,10 +116,10 @@ To test the automatic deployment:
    altitude check
 -  Arm the vehicle in stabilize mode and raise the throttle above
    minimum
--  somehow tilt the vehicle over by at least 20 degrees
+-  somehow tilt the vehicle over by at least 30 degrees while lowering it (the barometer shows the vehicle is descending)
 
-After 2 seconds, the motors should stop, the parachute servo will move
-and if telemetry is attached, "Parachute: Released!" should appear on
+After 1 seconds, the motors should stop, the parachute servo will move
+and if telemetry is attached, "Parachute: Released" should appear on
 the Flight Data screen's HUD.
 
 After the test is complete, return the :ref:`CHUTE_ALT_MIN <CHUTE_ALT_MIN>` to the desired
