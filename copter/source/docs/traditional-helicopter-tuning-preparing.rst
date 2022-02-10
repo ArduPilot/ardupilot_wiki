@@ -9,9 +9,9 @@ Reduce Noisy Control Signals
 
 Prior to starting to manually tune or AutoTune, make sure that the noise in the control signals is reduced as low as possible.  The best way to do this is to use the harmonic notch filter.  Follow the instructions in :ref:`Helicopter Dynamic Notch Filter Setup<common-imu-notch-filtering-helicopter-setup>`.  
 
-A good way to check the control signals is to set the LOG_BITMASK parameter so that the FAST ATTITUDE and PID messages are selected in addition to the default selections.  Use a GCS software like Mission Planner to view the PIDR.Act, PIDP.Act, and PIDY.Act.  The noise in these signals should be low.
+A good way to check the control signals is to set the LOG_BITMASK parameter so that the FAST ATTITUDE and PID messages are selected in addition to the default selections.  Use a GCS software like Mission Planner to view the PIDR.Act, PIDP.Act, and PIDY.Act.  The noise in these signals should be low.  The example below shows the target roll rate (red) and actual roll rate (green).  The rates are given in rad/s.  Note the vibration (noise) in the actual roll rate with peaks reaching 0.2 to -0.2 rad/s. This would be a lot of noise and could cause the autotune to fail or cause a poor tune.  Ultimately, the deviation in the actual rates should be small (< 0.05 rad/s).  
 
-ADD figure showing example of low noise 
+ .. image:: ../images/tradheli-vibration-example.png
 
 .. Note::  Before tuning, it is recommended to check that high frequency vibrations are not causing the "leans" (see :ref:`traditional-helicopter-tips`)
 
