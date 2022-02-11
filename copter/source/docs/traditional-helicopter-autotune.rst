@@ -1,9 +1,10 @@
 .. _traditional-helicopter-autotune:
 
-===============================
+========
 AutoTune
-===============================
-The AutoTune for tradheli is completely different from multicopter AutoTune.  It can tune any combination of feedforward (ATC_RAT_XXX_FF), the rate gains (ATC_RAT_XXX_P and ATC_RAT_XXX_D), or angle P gain (ATC_ANG_XXX_P).  The tuning for rate gains begins with finding the maximum allowable value for the rate gains and then tunes them.  Knowing the maximum value enables the AutoTune feature to keep from creating an instability.
+========
+The AutoTune for tradheli is completely different from multicopter AutoTune.  It can tune any combination of feedforward (``ATC_RAT_XXX_FF``), 
+the rate gains (``ATC_RAT_XXX_P`` and ``ATC_RAT_XXX_D``), or angle P gain (``ATC_ANG_XXX_P``).  The tuning for rate gains begins with finding the maximum allowable value for the rate gains and then tunes them.  Knowing the maximum value enables the AutoTune feature to keep from creating an instability.
 
 Before you start AutoTune, you must:
 
@@ -17,7 +18,7 @@ Parameter Descriptions
 :ref:`Tune Sequence Bitmask<AUTOTUNE_SEQ>`
 ------------------------------------------
 
-User can specify the tuning desired.  Individual gain tuning or combination of tuning several gains can be specified using the bitmask.  Rate P and Rate D are conducted together and always preceeded with determining max gains allowable.
+User can specify the tuning desired using the :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>` parameter.  Individual gain tuning or combination of tuning several gains can be specified using the bitmask.  Rate P and Rate D are conducted together and always preceded with determining max gains allowable.
 
 +-----------------------------+------------------------------------+
 | Bits                        | Values                             |
@@ -51,7 +52,7 @@ Max gain determination is done before tuning Rate D and Rate P gains.
 :ref:`Axes Bitmask<AUTOTUNE_AXES__AC_AutoTune_Heli>`
 -----------------------------------------------------------
 
-Specifies one or more axes to be tuned.
+The :ref:`AUTOTUNE_AXES<AUTOTUNE_AXES__AC_AutoTune_Heli>` parameter specifies one or more axes to be tuned.
 
 +----------------------+---------------------------------+
 | Bits                 | Values                          |
@@ -78,25 +79,25 @@ Specifies one or more axes to be tuned.
 :ref:`Maximum Response Gain<AUTOTUNE_GN_MAX>`
 ---------------------------------------------
 
-Specifies the maximum response gain to be used to tune the Rate D, Rate P and Angle P gains.  The response gain is the output of the response divided by the input.  It is recommended that 1.8 to 2.0 be used for pitch and roll axes as these axes are typically more lightly damped.  It is recommended that 1.0 to 1.4 be used for the yaw axis.
+The :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>` parameter specifies the maximum response gain to be used to tune the Rate D, Rate P and Angle P gains.  The response gain is the output of the response divided by the input.  It is recommended that 1.8 to 2.0 be used for pitch and roll axes as these axes are typically more lightly damped.  It is recommended that 1.0 to 1.4 be used for the yaw axis.
 
 
 :ref:`Minimum Test Frequency<AUTOTUNE_FRQ_MIN>`
 -----------------------------------------------
 
-Specifies the minimum frequency in radians per second used during the dwell or frequency sweeps.  For frequency sweeps, this will be the starting frequency.
+The :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` parameter specifies the minimum frequency in radians per second used during the dwell or frequency sweeps.  For frequency sweeps, this will be the starting frequency.  The default value is good for helicopters with rotor diameters less than 1.4 meters.
 
 
 :ref:`Maximum Test Frequency<AUTOTUNE_FRQ_MAX>`
 -----------------------------------------------
 
-Specifies the maximum frequency in radians per second used during the dwell or frequency sweeps.  For frequency sweeps, this will be the ending frequency.
+The :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>` parameter specifies the maximum frequency in radians per second used during the dwell or frequency sweeps.  For frequency sweeps, this will be the ending frequency.  The default value is fine for helicopters with rotor diameters greater than 1.2 meters.  Consider raising to 100 radians/sec for helicopters with rotor diameters less then 1.2 meters.
 
 
 :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>`
 ----------------------------------------
 
-Specifies P gain for velocity feedback.  This aids the AutoTune in maintaining aircraft position during the frequency sweeps and dwells.  Keep this at 0.1 unless the aircraft is drifting more than 10 meters during the dwell and frequency sweeps.  It only affects position holding while the aircraft is oscillating during these tests.  In between the oscillations, it may drift.  This gain will not help with that.
+The :ref:`AUTOTUNE_VELXY_P<AUTOTUNE_VELXY_P>` parameter specifies P gain for velocity feedback.  This aids the AutoTune in maintaining aircraft position during the frequency sweeps and dwells.  Keep this at 0.1 unless the aircraft is drifting more than 10 meters during the dwell and frequency sweeps.  It only affects position holding while the aircraft is oscillating during these tests.  In between the oscillations, it may drift.  This gain will not help with that.
 
 
 Preparing for AutoTune
@@ -160,7 +161,7 @@ Tuning Flight Procedures
 
 When conducting an AutoTune flight, be sure to have at least at 50 meter by 50 meter area to fly. The aircraft will move during the autotuning process.  Do not let the aircraft get too far away.
 
-.. caution::  During the feedforward test, the aircraft will travel 5-10 meters and further with larger helicopters. You may have to bring it back after each iteration of the tuning test.  
+.. caution::  During the feedforward test, the aircraft may travel 5-10 meters, and perhaps even further with larger helicopters. You may have to bring it back after each iteration of the tuning test.  
 
 #. Power up the controller.
 #. Set the flight mode to either stabilize or AltHold (Althold recommended).
@@ -183,17 +184,18 @@ When conducting an AutoTune flight, be sure to have at least at 50 meter by 50 m
 Tuning Maneuver Descriptions
 ----------------------------
 
-VFF Tuning
-++++++++++
+``ATC_RAT_XXX_FF`` Tuning
++++++++++++++++++++++++++
 
-        During VFF tuning the aircraft may drift, reposition the aircraft as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.
+        During ``ATC_RAT_XXX_FF`` tuning the aircraft may drift, reposition the aircraft as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.
 
-Rate D and Rate P Tuning
+``ATC_RAT_XXX_D`` and ``ATC_RAT_XXX_P`` Tuning
+++++++++++++++++++++++++++++++++++++++++++++++
+
+        During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  
+
+``ATC_ANG_XXX_P`` Tuning
 ++++++++++++++++++++++++
 
-        During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The sweeps are 23 seconds.  
+        During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  
 
-Angle P Tuning
-++++++++++++++
-
-        During Angle P tuning, you may make small inputs in the pitch and roll axes only to keep the aircraft from drifting while it is oscillating.  Try to just bias the stick in one direction (slow inputs) to keep the aircraft from drifting.  Don’t make inputs to counter the oscillations.

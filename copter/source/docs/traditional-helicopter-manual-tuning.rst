@@ -1,24 +1,24 @@
 .. _traditional-helicopter-manual-tuning:
 
-===============================
+==========================
 Manual Tuning Instructions
-===============================
+==========================
 
 Pitch and Roll Axes
 ===================
-Setting _FF and ACCEL_x_MAX Parameters for Desired Pitch and Roll Response
---------------------------------------------------------------------------
+Setting ``ATC_RAT_XXX_FF`` and ``ATC_ACCEL_X_MAX`` Parameters for Desired Pitch and Roll Response
+-------------------------------------------------------------------------------------------------
 
-In both pitch and roll axes, the FF gain is set so that the actual aircraft
+In both pitch and roll axes, the ``ATC_RAT_XXX_FF`` gain is set so that the actual aircraft
 rate matches the desired rate. To do this, the RATE message in the log is
 required to compare the RATE.PDes and RATE.P log data for pitch and the RATE.RDes and RATE.R
 log data for roll.
 
-With the FF gains set to 0.15, takeoff and establish a hover
+With the ``ATC_RAT_XXX_FF`` gains set to 0.15, takeoff and establish a hover
 in Stabilize flight mode, then make some sharp stick inputs in both pitch and
 roll. Land and pull the log from the microSD card and look at the signals in
 a log reviewing software. If the actual rate is more than the desired rate
-then you'll want to decrease FF. If it is less, increase FF.
+then you'll want to decrease ``ATC_RAT_XXX_FF``. If it is less, increase ``ATC_RAT_XXX_FF``.
 
 **(to be added...FF calculation directly from log data)**
 
@@ -28,29 +28,26 @@ amplitude between desired and actual.  If you get the rates to match and they fe
 are too fast, then reduce the ``ATC_ACCEL_x_MAX`` parameter and repeat the process above to 
 match the desired and actual rates. 
 
-If while tuning the FF gain the aircraft starts to oscillate, reduce the 
-ATC_ANG_xxx_P gain for that axis until the oscillations stop.  However for most 
+If while tuning the ``ATC_RAT_XXX_FF`` gain the aircraft starts to oscillate, reduce the 
+``ATC_ANG_XXX_P`` gain for that axis until the oscillations stop.  However for most 
 helicopters the suggested values above should not cause this problem.
 
-Tuning the D and P gain
------------------------
+Tuning the ``ATC_RAT_XXX_D`` and ``ATC_RAT_XXX_P`` gain
+-------------------------------------------------------
 
-Once you have the heli responding nicely with the rate FF gain, now tune the
+Once you have the heli responding nicely with the ``ATC_RAT_XXX_FF`` gain, now tune the
 PID gains. The rate PID controller provides stability to reject disturbances and
-keep the actual aircraft following the software demanded rates.
+keep the actual aircraft following the software demanded rates.  
  
-Start with the D gain.  Use the :ref:`Transmitter based tuning<common-transmitter-tuning>` feature of ArduCopter.  Make the following parameter changes:
+Start with the ``ATC_RAT_XXX_D`` gain.  Use the :ref:`Transmitter based tuning<common-transmitter-tuning>` feature of ArduCopter.  
+Make the following parameter changes:
 
 +--------------------------------------------+---------+
 | :ref:`TUNE<TUNE>`                          | 21      |
 +--------------------------------------------+---------+
-| ``TUNE_LOW`` (prior to 4.0)                | 0       |
+| :ref:`TUNE_MIN<TUNE_MIN>`                  | 0       |
 +--------------------------------------------+---------+
-| :ref:`TUNE_MIN<TUNE_MIN>` (4.0 and later)  | 0       |
-+--------------------------------------------+---------+
-| ``TUNE_HIGH`` (prior to 4.0)               | 30      |
-+--------------------------------------------+---------+
-| :ref:`TUNE_MAX<TUNE_MAX>` (4.0 and later)  | 0.030*  |
+| :ref:`TUNE_MAX<TUNE_MAX>`                  | 0.030*  |
 +--------------------------------------------+---------+
 
 *for futaba radios this equates to one increment in the knob to 0.001*
@@ -64,18 +61,14 @@ that value in half and enter it as the final tuning value for :ref:`ATC_RAT_RLL_
 :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Heli>`.  Test hover the heli and make some rapid stick movements in both
 pitch and roll to make sure it's stable.
 
-Now tune the P gains.  Make the following tuning parameter changes:
+Now tune the ``ATC_RAT_XXX_P`` gains.  Make the following tuning parameter changes:
 
 +--------------------------------------------+---------+
 | :ref:`TUNE<TUNE>`                          | 4       |
 +--------------------------------------------+---------+
-| ``TUNE_LOW`` (prior to 4.0)                | 0       |
+| :ref:`TUNE_MIN<TUNE_MIN>`                  | 0       |
 +--------------------------------------------+---------+
-| :ref:`TUNE_MIN<TUNE_MIN>` (4.0 and later)  | 0       |
-+--------------------------------------------+---------+
-| ``TUNE_HIGH`` (prior to 4.0)               | 300     |
-+--------------------------------------------+---------+
-| :ref:`TUNE_MAX<TUNE_MAX>` (4.0 and later)  | 0.3*    |
+| :ref:`TUNE_MAX<TUNE_MAX>`                  | 0.3*    |
 +--------------------------------------------+---------+
 
 *for futaba radios this equates to one increment in the knob to 0.01*
@@ -87,26 +80,26 @@ rapid shaking, cut that value in half and enter it as the final tuning value
 for :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`.  
 Test hover the heli and make some rapid stick movements in both pitch and roll to make sure it's stable.  
 
-After tuning the P and D gain the aircraft should feel much smoother. Tune quality can be also checked by viewing the ATT.DesP vs ATT.P and ATT.DesR vs ATT.R log plots:
+After tuning the ``ATC_RAT_XXX_D`` and ``ATC_RAT_XXX_P`` gains the aircraft should feel much smoother. Tune quality can be also checked by viewing the ATT.DesP vs ATT.P and ATT.DesR vs ATT.R log plots:
 
 .. image:: ../../../images/roll_tune.jpg
     :target: ../_images/roll_tune.jpg
 
-Setting the I gain
-------------------
+Setting the :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>`
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 It is recommended to set the :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_PIT_FF<ATC_RAT_PIT_FF__AC_AttitudeControl_Heli>` gain and the :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Heli>` gain equal to the :ref:`ATC_RAT_RLL_FF<ATC_RAT_RLL_FF__AC_AttitudeControl_Heli>` gain.  
 
 Yaw Axis
 ========
 
-Setting _FF and ACCEL_Y_MAX
----------------------------
+Setting :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>`
+----------------------------------------------------------------------
 
 In most cases, the feedforward required for the yaw axis could be very small or even zero.  To check the feedforward required, hover the helicopter and perform a constant rate 90 deg turn.  Pull the log data and look at the RATE.Yout signal.  Determine the average RATE.Yout during the time the yaw rate (RATE.Y signal) was constant.  Feedforward gain is determined by dividing the average RATE.Yout by the average RATE.Y in rad/s.  
 
-Tuning Rate P and Rate D
-------------------------
+Tuning :ref:`ATC_RAT_YAW_D<ATC_RAT_YAW_D__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>`
+------------------------------------------------------------------------------------------------------------------------------------
 Spool up the heli and hover it no more than .25 meters above ground in Stabilize flight mode and test the
 starting tail settings. If the tail seems "loose" and doesn't want to hold
 increase the :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>`. If the tail slowly wags back and forth, the :ref:`ATC_RAT_YAW_P<ATC_RAT_YAW_P__AC_AttitudeControl_Heli>` may be too high. If the tail rapidly shakes side to side reduce the
