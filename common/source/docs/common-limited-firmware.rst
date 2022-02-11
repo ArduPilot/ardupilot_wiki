@@ -10,7 +10,7 @@ flash memory to store the full firmware.
 For the affected autopilots, a reduced firmware is generated. This firmware omits less-commonly used features
 in order to reduce the firmware size to less than 1 MB.
 
-The missing features are listed below.
+The missing features are listed below. If you require any of these features, you can try to create a build with them in it (at the expense of other non-needed features) using the `Custom Firmware Build Server <https://custom.ardupilot.org>`__.
 
 Common to all 1MB Boards
 ========================
