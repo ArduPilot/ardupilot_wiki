@@ -44,8 +44,7 @@ from the defaults.
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_PIT_FLTD<ATC_RAT_PIT_FLTD__AC_AttitudeControl_Heli>`   | 0       |
 +----------------------------------------------------------------------+---------+
-| ATC_RAT_PIT_FILT/                                                    | 20      |
-| :ref:`ATC_RAT_PIT_FLTE<ATC_RAT_PIT_FLTE__AC_AttitudeControl_Heli>` **|         |
+| :ref:`ATC_RAT_PIT_FLTE<ATC_RAT_PIT_FLTE__AC_AttitudeControl_Heli>`   | 20      |
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_PIT_FLTT<ATC_RAT_PIT_FLTT__AC_AttitudeControl_Heli>`   | 20      |
 +----------------------------------------------------------------------+---------+
@@ -63,8 +62,7 @@ from the defaults.
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_RLL_FLTD<ATC_RAT_RLL_FLTD__AC_AttitudeControl_Heli>`   | 0       |
 +----------------------------------------------------------------------+---------+
-| ATC_RAT_RLL_FILT/                                                    | 20      |
-| :ref:`ATC_RAT_RLL_FLTE<ATC_RAT_RLL_FLTE__AC_AttitudeControl_Heli>` **|         |
+| :ref:`ATC_RAT_RLL_FLTE<ATC_RAT_RLL_FLTE__AC_AttitudeControl_Heli>`   | 20      |
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_RAT_RLL_FLTT<ATC_RAT_RLL_FLTT__AC_AttitudeControl_Heli>`   | 20      |
 +----------------------------------------------------------------------+---------+
@@ -80,8 +78,6 @@ from the defaults.
 +----------------------------------------------------------------------+---------+
 | :ref:`ATC_INPUT_TC<ATC_INPUT_TC>`                                    | 0.15    |
 +----------------------------------------------------------------------+---------+
-
-** This param name changed in ArduPilot 4.0 and later.
 
 Yaw Axis (Rudder)
 -----------------
@@ -100,8 +96,7 @@ with tuning pitch and roll. Below are the suggested settings for yaw.
 +----------------------------------------------------------------------+----------+
 | :ref:`ATC_RAT_YAW_FLTD<ATC_RAT_YAW_FLTD__AC_AttitudeControl_Heli>`   | 0        |
 +----------------------------------------------------------------------+----------+
-| ATC_RAT_PIT_FILT/                                                    | 20       |
-| :ref:`ATC_RAT_YAW_FLTE<ATC_RAT_YAW_FLTE__AC_AttitudeControl_Heli>` **|          |
+| :ref:`ATC_RAT_YAW_FLTE<ATC_RAT_YAW_FLTE__AC_AttitudeControl_Heli>`   | 20       |
 +----------------------------------------------------------------------+----------+
 | :ref:`ATC_RAT_YAW_FLTT<ATC_RAT_YAW_FLTT__AC_AttitudeControl_Heli>`   | 20       |
 +----------------------------------------------------------------------+----------+
@@ -115,5 +110,3 @@ with tuning pitch and roll. Below are the suggested settings for yaw.
 +----------------------------------------------------------------------+----------+
 | :ref:`ATC_RAT_YAW_FF<ATC_RAT_YAW_FF__AC_AttitudeControl_Heli>`       | 0.0      |
 +----------------------------------------------------------------------+----------+
-
-** This param name changed in ArduPilot 4.0 and later.
