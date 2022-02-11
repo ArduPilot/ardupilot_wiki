@@ -28,6 +28,7 @@ Copter to fit on the APM2.x board.
     * `Companion Computers and associated example code <https://github.com/ArduPilot/companion>`__ 
     * `AP Peripherals <https://firmware.ardupilot.org/AP_Periph>`__ 
 
+.. note:: ArduPilot also provides a `Custom Firmware Build Server <https://custom.ardupilot.org>`__ that allows creating customized firmware builds including only the features desired. This is useful for 1MB autopilots which have their standard firmware builds limited in some features in order to fit the code into available flash space on these autopilots.
 
 Firmware
 ========
