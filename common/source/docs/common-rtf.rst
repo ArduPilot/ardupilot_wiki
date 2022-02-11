@@ -50,6 +50,7 @@ Planes from Partners
 VTOL/QuadPlanes from Partners
 =============================
 * `CUAV - Raefly <https://store.cuav.net/shop/raefly/>`__
+* `CUAV - Raefly VT260 <https://store.cuav.net/shop/raefly-vt260-vtol-uav/>`__
 * `Event38 - E400 <https://event38.com/fixed-wing/e400-vtol-drone/>`__
 * :ref:`MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>`
 * `MakeFLyEasy - Freeman 2300 <https://www.aliexpress.com/item/10000223137957.html?spm=a2g0o.store_home.productList_1076398524.pic_3>`__
@@ -90,13 +91,4 @@ Vehicles from Non-Partners
 
    If you are a manufacturer of a RTF vehicle based on ArduPilot and do not appear in this list, please get in touch through one of the methods listed on our :ref:`Contact Us page <common-contact-us>`.
 
-
-.. toctree::
-   :hidden:
-    
-   MakeFLyEasy - Fighter <common-makeflyeasy-fighter-hand-throw>
-   MakeFLyEasy - Striver Mini <common-makeflyeasy-striver-mini-hand-throw>
-   MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>
-   MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>
-   
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
