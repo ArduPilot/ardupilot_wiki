@@ -57,6 +57,7 @@ value to users with old hardware.
     Position mode <ac2_positionmode>
     Advanced Tuning <tuning>
     Basic Tuning <basic-tuning>
+    Auxiliary Function Switches (3.6 and earlier) <channel-7-and-8-options>
 [/site]
 [site wiki="rover"]
     Pre-4.0 Rover Avoidance <rover-object-avoidance>

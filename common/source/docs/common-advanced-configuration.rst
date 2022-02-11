@@ -14,7 +14,6 @@ tuning options for the vehicle.
     Autopilot Output Mapping <common-rcoutput-mapping>
     AutoTune <autotune>
     Auxiliary Function Switches <common-auxiliary-functions>
-    Auxiliary Function Switches (3.6 and earlier) <channel-7-and-8-options>
     Baro Temperature Compensation <common-baro-temp-comp>
     Boat mode <boat-mode>
     Bootloader Update <common-bootloader-update>
