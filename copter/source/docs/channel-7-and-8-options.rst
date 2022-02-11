@@ -4,6 +4,8 @@
 Auxiliary Function Switches (3.6 and earlier)
 =============================================
 
+.. note:: this article is deprecated and ARCHIVED
+
 This article shows how to set up which features are invoked from the transmitter's auxiliary function switches prior to Copter-4.0.
 
 Configuration
