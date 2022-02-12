@@ -12,8 +12,7 @@ helicopter.  Large 800-900 class machines will typically be in the 36000-52000
 range; smaller 450-500 class machines will typically be in the 90000-110000 
 range. You may want to experiment with the :ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter as well to get
 the initial aircraft response the way you like it.  It is recommended to keep the
-:ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter between 0.15 and 0.25 (for ``RC_FEEL`` with AC 3.5 or earlier,
-the recommended range was 25 to 50).  Once this process is complete, the aircraft
+:ref:`ATC_INPUT_TC<ATC_INPUT_TC>` parameter between 0.15 and 0.25.  Once this process is complete, the aircraft
 should have the desired feel in snappiness and rate.
 
 Below is a graph showing an example of Rate Roll Desired vs actual Rate Roll.

@@ -6,19 +6,19 @@ Manual Tuning Instructions
 
 Pitch and Roll Axes
 ===================
-Setting ``ATC_RAT_XXX_FF`` and ``ATC_ACCEL_X_MAX`` Parameters for Desired Pitch and Roll Response
+Setting ``ATC_RAT_xxx_FF`` and ``ATC_ACCEL_x_MAX`` Parameters for Desired Pitch and Roll Response
 -------------------------------------------------------------------------------------------------
 
-In both pitch and roll axes, the ``ATC_RAT_XXX_FF`` gain is set so that the actual aircraft
+In both pitch and roll axes, the ``ATC_RAT_xxx_FF`` gain is set so that the actual aircraft
 rate matches the desired rate. To do this, the RATE message in the log is
 required to compare the RATE.PDes and RATE.P log data for pitch and the RATE.RDes and RATE.R
 log data for roll.
 
-With the ``ATC_RAT_XXX_FF`` gains set to 0.15, takeoff and establish a hover
+With the ``ATC_RAT_xxx_FF`` gains set to 0.15, takeoff and establish a hover
 in Stabilize flight mode, then make some sharp stick inputs in both pitch and
 roll. Land and pull the log from the microSD card and look at the signals in
 a log reviewing software. If the actual rate is more than the desired rate
-then you'll want to decrease ``ATC_RAT_XXX_FF``. If it is less, increase ``ATC_RAT_XXX_FF``.
+then you'll want to decrease ``ATC_RAT_xxx_FF``. If it is less, increase ``ATC_RAT_xxx_FF``.
 
 **(to be added...FF calculation directly from log data)**
 
@@ -28,18 +28,18 @@ amplitude between desired and actual.  If you get the rates to match and they fe
 are too fast, then reduce the ``ATC_ACCEL_x_MAX`` parameter and repeat the process above to 
 match the desired and actual rates. 
 
-If while tuning the ``ATC_RAT_XXX_FF`` gain the aircraft starts to oscillate, reduce the 
-``ATC_ANG_XXX_P`` gain for that axis until the oscillations stop.  However for most 
+If while tuning the ``ATC_RAT_xxx_FF`` gain the aircraft starts to oscillate, reduce the 
+``ATC_ANG_xxx_P`` gain for that axis until the oscillations stop.  However for most 
 helicopters the suggested values above should not cause this problem.
 
-Tuning the ``ATC_RAT_XXX_D`` and ``ATC_RAT_XXX_P`` gain
+Tuning the ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gain
 -------------------------------------------------------
 
-Once you have the heli responding nicely with the ``ATC_RAT_XXX_FF`` gain, now tune the
+Once you have the heli responding nicely with the ``ATC_RAT_xxx_FF`` gain, now tune the
 PID gains. The rate PID controller provides stability to reject disturbances and
 keep the actual aircraft following the software demanded rates.  
  
-Start with the ``ATC_RAT_XXX_D`` gain.  Use the :ref:`Transmitter based tuning<common-transmitter-tuning>` feature of ArduCopter.  
+Start with the ``ATC_RAT_xxx_D`` gain.  Use the :ref:`Transmitter based tuning<common-transmitter-tuning>` feature of ArduCopter.  
 Make the following parameter changes:
 
 +--------------------------------------------+---------+
@@ -61,7 +61,7 @@ that value in half and enter it as the final tuning value for :ref:`ATC_RAT_RLL_
 :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Heli>`.  Test hover the heli and make some rapid stick movements in both
 pitch and roll to make sure it's stable.
 
-Now tune the ``ATC_RAT_XXX_P`` gains.  Make the following tuning parameter changes:
+Now tune the ``ATC_RAT_xxx_P`` gains.  Make the following tuning parameter changes:
 
 +--------------------------------------------+---------+
 | :ref:`TUNE<TUNE>`                          | 4       |
@@ -80,7 +80,7 @@ rapid shaking, cut that value in half and enter it as the final tuning value
 for :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Heli>` and :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Heli>`.  
 Test hover the heli and make some rapid stick movements in both pitch and roll to make sure it's stable.  
 
-After tuning the ``ATC_RAT_XXX_D`` and ``ATC_RAT_XXX_P`` gains the aircraft should feel much smoother. Tune quality can be also checked by viewing the ATT.DesP vs ATT.P and ATT.DesR vs ATT.R log plots:
+After tuning the ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gains the aircraft should feel much smoother. Tune quality can be also checked by viewing the ATT.DesP vs ATT.P and ATT.DesR vs ATT.R log plots:
 
 .. image:: ../../../images/roll_tune.jpg
     :target: ../_images/roll_tune.jpg
