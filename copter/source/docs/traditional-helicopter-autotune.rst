@@ -3,8 +3,8 @@
 ========
 AutoTune
 ========
-The AutoTune for tradheli is completely different from multicopter AutoTune.  It can tune any combination of feedforward (``ATC_RAT_XXX_FF``), 
-the rate gains (``ATC_RAT_XXX_P`` and ``ATC_RAT_XXX_D``), or angle P gain (``ATC_ANG_XXX_P``).  The tuning for rate gains begins with finding the maximum allowable value for the rate gains and then tunes them.  Knowing the maximum value enables the AutoTune feature to keep from creating an instability.
+The AutoTune for tradheli is completely different from multicopter AutoTune.  It can tune any combination of feedforward (``ATC_RAT_xxx_FF``), 
+the rate gains (``ATC_RAT_xxx_P`` and ``ATC_RAT_xxx_D``), or angle P gain (``ATC_ANG_xxx_P``).  The tuning for rate gains begins with finding the maximum allowable value for the rate gains and then tunes them.  Knowing the maximum value enables the AutoTune feature to keep from creating an instability.
 
 Before you start AutoTune, you must:
 
@@ -20,34 +20,34 @@ Parameter Descriptions
 
 User can specify the tuning desired using the :ref:`AUTOTUNE_SEQ<AUTOTUNE_SEQ>` parameter.  Individual gain tuning or combination of tuning several gains can be specified using the bitmask.  Rate P and Rate D are conducted together and always preceded with determining max gains allowable.
 
-+-----------------------------+------------------------------------+
-| Bits                        | Values                             |
-+=============================+====================================+
-| +-------+-----------------+ | +---------+----------------------+ |
-| | Bits  | Tune Type       | | | Values  | Tune Type            | |
-| +=======+=================+ | +=========+======================+ |
-| | 0     | Feedforward     | | | 1       | Feedforward          | |
-| +-------+-----------------+ | +---------+----------------------+ |
-| | 1     | Rate D & Rate P | | | 2       | Rate D* & Rate P     | |
-| +-------+-----------------+ | +---------+----------------------+ |
-| | 2     | Angle P         | | | 3       | Feedforward, Rate D*,| |
-| +-------+-----------------+ | |         | & Rate P             | |
-| | 3     | Max Gain        | | +---------+----------------------+ |
-| +-------+-----------------+ | | 4       | Angle P              | |
-|                             | +---------+----------------------+ |
-|                             | | 5       | Feedforward & Angle P| |
-|                             | +---------+----------------------+ |
-|                             | | 6       | Rate D*, Rate P,     | |
-|                             | |         | & Angle P            | |
-|                             | +---------+----------------------+ |
-|                             | | 7       | Feedforward, Rate D*,| |
-|                             | |         | Rate P, & Angle P    | |
-|                             | +---------+----------------------+ |
-|                             | | 8       | Max Gain             | |
-|                             | +---------+----------------------+ |
-+-----------------------------+------------------------------------+
++-----------------------------------------------------+-----------------------------------------------------+
+| Bits                                                | Values                                              |
++=====================================================+=====================================================+
+| +-------+------------------------------------------+| +---------+----------------------------------------+|
+| | Bits  | Tune Type                                || | Values  | Tune Type                              ||
+| +=======+==========================================+| +=========+========================================+|
+| | 0     | ``ATC_RAT_xxx_FF``                       || | 1       | ``ATC_RAT_xxx_FF``                     ||
+| +-------+------------------------------------------+| +---------+----------------------------------------+|
+| | 1     | ``ATC_RAT_xxx_D`` & ``ATC_RAT_xxx_P`` ** || | 2       | ``ATC_RAT_xxx_D`` & ``ATC_RAT_xxx_P``  ||
+| +-------+------------------------------------------+| +---------+----------------------------------------+|
+| | 2     | ``ATC_ANG_xxx_P``                        || | 3       | ``ATC_RAT_xxx_FF``, ``ATC_RAT_xxx_D``, ||
+| +-------+------------------------------------------+| |         |  & ``ATC_RAT_xxx_P``                   ||
+| | 3     | Max Gain Determination                   || +---------+----------------------------------------+|
+| +-------+------------------------------------------+| | 4       | ``ATC_ANG_xxx_P``                      ||
+|                                                     | +---------+----------------------------------------+|
+|                                                     | | 5       | ``ATC_RAT_xxx_FF`` & ``ATC_ANG_xxx_P`` ||
+|                                                     | +---------+----------------------------------------+|
+|                                                     | | 6       | ``ATC_RAT_xxx_D``, ``ATC_RAT_xxx_P``,  ||
+|                                                     | |         | & ``ATC_ANG_xxx_P``                    ||
+|                                                     | +---------+----------------------------------------+|
+|                                                     | | 7       | ``ATC_RAT_xxx_FF``, ``ATC_RAT_xxx_D``, ||
+|                                                     | |         | ``ATC_RAT_xxx_P``, & ``ATC_ANG_xxx_P`` ||
+|                                                     | +---------+----------------------------------------+|
+|                                                     | | 8       | Max Gain Determination                 ||
+|                                                     | +---------+----------------------------------------+|
++-----------------------------------------------------+-----------------------------------------------------+
 
-Max gain determination is done before tuning Rate D and Rate P gains.
+** Max gain determination is always done before tuning Rate D and Rate P gains. This test determines the maximum allow values of ``ATC_RAT_xxx_D`` & ``ATC_RAT_xxx_P`` so that the helicopter never experiences servere oscillations due to raising these gains too high.  Since the maximum allowable values of ``ATC_RAT_xxx_D`` & ``ATC_RAT_xxx_P`` are found, tuning is done by incrementing these gains by 5% of their maximum allowable value.
 
 :ref:`Axes Bitmask<AUTOTUNE_AXES__AC_AutoTune_Heli>`
 -----------------------------------------------------------
@@ -184,17 +184,17 @@ When conducting an AutoTune flight, be sure to have at least at 50 meter by 50 m
 Tuning Maneuver Descriptions
 ----------------------------
 
-``ATC_RAT_XXX_FF`` Tuning
+``ATC_RAT_xxx_FF`` Tuning
 +++++++++++++++++++++++++
 
-        During ``ATC_RAT_XXX_FF`` tuning the aircraft may drift, reposition the aircraft as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.
+        During ``ATC_RAT_xxx_FF`` tuning the aircraft may drift, reposition the aircraft as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.
 
-``ATC_RAT_XXX_D`` and ``ATC_RAT_XXX_P`` Tuning
+``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` Tuning
 ++++++++++++++++++++++++++++++++++++++++++++++
 
         During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  
 
-``ATC_ANG_XXX_P`` Tuning
+``ATC_ANG_xxx_P`` Tuning
 ++++++++++++++++++++++++
 
         During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  
