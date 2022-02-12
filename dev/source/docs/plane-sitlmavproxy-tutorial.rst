@@ -127,7 +127,7 @@ You can list all *enabled* checks using the command ``arm list``:
 
 You can enable and disable checks using ``arm check n`` and
 ``arm uncheck n`` respectively, where n is the name of the check. Use
-``n`` value of of ``all`` to enables/disable all checks.
+``n`` value of ``all`` to enables/disable all checks.
 
 Flying a mission
 ================
