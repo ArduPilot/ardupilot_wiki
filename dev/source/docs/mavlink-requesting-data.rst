@@ -12,7 +12,9 @@ The ground station or companion computer can request the data it wants (and the 
    - Send a `REQUEST_MESSAGE <https://mavlink.io/en/messages/common.html#MAV_CMD_REQUEST_MESSAGE>`__ command (within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message) to request a single instance of a message.  Note this is only supported on ArduPilot 4.0 and higher
    - create configuration files stored on SD card or in ROMFS specifying message stream rates on a per-channel basis
 
-More details of these methods can be found below.
+Note that the stream rates will temporarily be 4 or more times slower than requested while parameters and waypoints are being sent.
+
+More details on the above methods can be found below.
 
 Using SRx Parameters
 --------------------
