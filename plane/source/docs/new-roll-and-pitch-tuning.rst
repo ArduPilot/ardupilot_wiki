@@ -17,6 +17,8 @@ Except for very heavy, slow, or extremely nimble vehicles, Autotune should produ
 
 .. note:: If you upgrade to 4.1 or later firmware from a previous version, the existing PID values will be converted automatically to the new system. Re-autotuning is still recommended as the new AUTOTUNE system produces a better tune in most cases. If you wish to manually convert your old PID values to the new system's values, you can use this `web based converter <https://uav.tridgell.net/convert_pid.html>`__
 
+.. note:: as of firmware version 4.2, there is a new YAW controller which can be used in ACRO mode (previous versions had no YAW rate stabilization in ACRO mode). This controller can be AutoTuned just like roll and pitch during an AutoTuning session using AUTOTUNE mode or RCx_OPTION = 107 on a switch.
+
 
 Preconditions
 =============
@@ -138,6 +140,15 @@ Now vehicle can be flown again to start trimming P and D. Starting with D and P 
    movement and overheat the servos leading to premature failure.
 #. You can sometimes then go back and increase P gain a bit more.
 
+ACRO YAW Rate Controller Tuning
+===============================
+
+As of version 4.2, a full YAW rate controller for use in ACRO mode is also provided. ``YAW_RATE_x`` parameters exist and can be adjusted after :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` is set to 1. When enabled, the :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` parameter can be used to adjust maximum yaw rate demanded at rudder stick full deflections in ACRO mode.
+
+Manual tuning adjustment follows the same methodology as explained above for the pitch and roll axes. PID parameters can also be AutoTuned in the same manner as those for the pitch and roll axes.
+
+.. note:: this is different than the YAW damper/sideslip controller provided for stabilized flight modes. See :ref:`yaw-controller-tuning` below.
+
 Roll to Pitch Compensation
 ==========================
 
@@ -225,8 +236,8 @@ PID Controller Flow Diagram
 
 .. _yaw-controller-tuning:
 
-Yaw Controller Tuning
-=====================
+Yaw Damper/SideSlip Tuning
+==========================
 
 The yaw control loop can be configured either as a simple yaw damper
 (good for models with inadequate fin area) or as a combined yaw damper
