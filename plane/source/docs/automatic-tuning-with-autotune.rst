@@ -26,6 +26,8 @@ To setup your aircraft for AUTOTUNE you need to select AUTOTUNE mode as
 one of the flight modes selectable with the flight mode switch on your
 transmitter.
 
+.. note:: as of version 4.2, you can AutoTune in any stabilized flight mode, such as CRUISE or FBWA/B, LOITER, or even during an AUTO mission segment (if :ref:`STICK_MIXING<STICK_MIXING>` is enabled), via an ``RCx_OPTION`` switch set to 107.
+
 You also should choose a tuning level by setting the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`
 parameter in the advanced parameter screen of your ground station. The
 :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` parameter controls how aggressive you want the tune to
@@ -136,6 +138,17 @@ too early end up up with poor values that result in their aircraft not
 coping well with wind, or not holding altitude well. Keep flying in
 AUTOTUNE mode well past the point where you think the plane is flying
 well.
+
+ACRO Mode YAW Rate Controller
+=============================
+
+As of version 4.2, ArduPilot provides the option for utilization of a rate controller for YAW, which behaves in the same manner as the pitch and roll controllers, but for the YAW axis controlled by the Rudder stick, assuming the vehicle has a rudder control surface.
+
+To enable this functionality, set :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` to 1. When enabled, the :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` parameter can be used to adjust maximum yaw rate demanded at rudder stick full deflections in ACRO mode.
+
+This controller can be AutoTuned in the same manner as the pitch and roll axes, and in the same session using the Rudder control stick to produce the rapid yaw demands used by AUTOTUNE.
+
+.. note:: while AutoTuning with this controller enabled, it will resist any non-pilot commanded yaw changes, (ie like traditional helicopter "heading hold" gyros), just as in ACRO mode with the yaw rate controller active. Banking the aircraft will NOT result in a turn, or at least a poorly executed turn. Pilot rudder inputs in turns will be needed.
 
 Autotune Level 0
 ================
