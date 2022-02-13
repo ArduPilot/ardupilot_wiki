@@ -40,7 +40,7 @@ the aircraft turn into the roll more quickly. If the value is too high
 then you can get instability and oscillation in yaw.
 
 To cope with a small amount of trim in the aircraft there is an
-additional parameter :ref:`Q_WVANE_MINROLL <Q_WVANE_MINROLL>` which
+additional parameter ``Q_WVANE_MINROLL`` which
 controls the minimum roll level before weathervaning will be
 used. This defaults to one degree. If you find your aircraft starts
 yawing even in no wind then you may need to raise this value.
