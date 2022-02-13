@@ -79,3 +79,14 @@ ACRO MODE ATTITUDE LOCKING
 ==========================
 
 By enabling the :ref:`ACRO_LOCKING<ACRO_LOCKING>` parameter, whatever attitude (roll and pitch angle) the pilot places the plane in, upon releasing the sticks, the autopilot will not only resist rate changes (caused by trim or turbulence), but also attempt to hold and correct back to that attitude. Note that his requires that the plane be properly tuned (see :ref:`Tuning<common-tuning>` ).
+
+ACRO Mode YAW Rate Control
+==========================
+
+As of version 4.2, ArduPilot provides the option for utilization of a rate controller for YAW, which behaves in the same manner as the pitch and roll controllers, explained above, but for the YAW axis controlled by the Rudder stick, assuming the vehicle has a rudder control surface.
+
+To enable this functionality, set :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` to 1. When enabled, the :ref:`ACRO_YAW_RATE<ACRO_YAW_RATE>` parameter can be used to adjust maximum yaw rate demanded at rudder stick full deflections in ACRO mode.
+
+Before use, the controller should be tuned, either manually or using AutoTune. See :ref:`automatic-tuning-with-autotune` or the YAW tuning section of the :ref:`Manual Tuning page<new-roll-and-pitch-tuning>`.
+
+.. note:: using this controller will give the feel of a 'heading hold' yaw axis. While not exactly "heading" holding, it does resist any yaw rate change not commanded by the pilot. This means the the pilot will need to "fly the tail" in turns. Just banking will not generate a clean turn.
