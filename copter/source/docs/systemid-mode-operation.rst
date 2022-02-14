@@ -157,7 +157,7 @@ The system identification flight was performed with the following settings:
 The next :ref:`figure<fig-io-signals-axis8>` shows the recorded input (pitch rate target) and output (measured pitch rate) signals over time.
 Below that, the power spectral densities of both signals are depicted, indicating how the power of the signal is distributed over the tested frequency range.
 Examining the first 45 seconds of the test flight, it can clearly be observed that there is not much of a response on the pitch axis, as its rate stays almost constant around 0 rad/s.
-Note that the initial frequency of the sweep (0.05 Hz) is hold for 40 seconds at the beginning of the test flight in order to run two full cycles with a low frequency.
+Note that the initial frequency of the sweep (0.05 Hz) is held for 40 seconds at the beginning of the test flight in order to run two full cycles with a low frequency.
 With the increase of the frequency afterwards, the magnitude of the resulting pitch rate also rises.
 
 .. image:: ../images/PitchRateAxis8IdentificationIOSignals.png
