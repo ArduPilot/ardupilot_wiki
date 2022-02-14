@@ -20,7 +20,7 @@ Acro
 ----
 This is the recommended drive mode for Balance Bots.
 
-Acro Mode lets you control the speed by internally controlling the pitch angle. Separately, it also allows you to control the the turn rate.
+Acro Mode lets you control the speed by internally controlling the pitch angle. Separately, it also allows you to control the turn rate.
 
 .. image:: /images/balance_bot-acro.png
 
