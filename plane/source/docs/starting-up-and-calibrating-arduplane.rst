@@ -47,6 +47,8 @@ Calibrate and check the Airspeed sensor (if present)
 
 If the vehicle has an :ref:`airspeed sensor <airspeed>` then the :ref:`pre-flight checks described here <calibrating-an-airspeed-sensor>` should be performed before each flight.
 
+.. warning:: Be sure that the pitot ports are lightly covered during boot and/or forced pre-flight calibrations to prevent wind from causing a mis-calibration. And be sure to remove that cover before flight!
+
 .. image:: ../images/preflight.jpg
     :target: ../_images/preflight.jpg
     :width: 250px
@@ -124,7 +126,7 @@ test them in Auto mode.
 Level Adjustment
 ================
 
-You may find after flying your plane in FBWA that it does not hold level attitude with the transmitter sticks centered. If this happens, perform the following:
+You may find after flying your plane in FBWA at the desired cruise throttle setting, that it does not hold level attitude with the transmitter sticks centered. If this happens, perform the following:
 
 1) With your autopilot powered on the ground and connected to your
 mission planner, select FBWA on your transmitter, select the FLIGHT DATA
@@ -136,19 +138,10 @@ adjust your transmitter trims and repeat the FBWA flight test
 .. image:: ../images/CheckFBWADemands.jpg
     :target: ../_images/CheckFBWADemands.jpg
 
-If they are zero, then you need to adjust the ``AHRS_TRIM_X`` (roll) and
-``AHRS_TRIM_Y`` (pitch) for the difference in angle between the
-autopilot board and your planes attitude when flying straight and level.
-You can change these by going to **CONFIG/TUNING \| Full Parameter
-List** and adjusting the parameters as shown in the screenshot below.
+If they are zero, then you need to adjust the level trim for the difference in angle between the
+autopilot board and your planes attitude when flying straight and level, as explained below.
 
-.. image:: ../images/AdjustRollPitchTrims.png
-    :target: ../_images/AdjustRollPitchTrims.png
+For roll errors (ie heading keeps changing with sticks neutral), use the "LEVEL" accelerometer calibrate button in Mission Planner with the wings level using a spirit level and the nose to tail fuselage line of the aircraft also level. Unless the plane is warped this will assure that the wings are level in flight. If the aircraft still rotates in heading with sticks neutral, then you will need to trim the rudder, if equipped, also in flight.
 
-.. warning::
+If the plane is not generally holding altitude in FBWA at the desired cruise throttle position (ie speed), then you can adjust the cruising pitch attitude using the :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` parameter. Most planes required this to be a few degrees positive for best cruise trim in FBWA. This parameter is in centi-degrees, so 3 degs is 300 for its value.
 
-   These parameters are in radians (every 0.01 is about 0.6 of a
-   degree) so adjust in increments of 0.01 initially. If the plane turns to
-   the left, :ref:`AHRS_TRIM_X<AHRS_TRIM_X>` should be increased. If the nose of the plane is too low for a given throttle setting (ie flying too fast while holding altitude), :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` should be increased.
-
-.. note:: This can only change the difference between the autopilot's plane and "level" by 10 degrees maximum. If more up pitch is needed (in the case that the autopilot is mounted slightly downward, for example), then you can use :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to further increase the "level" pitch value of the plane. See :ref:`common-accelerometer-calibration` and :ref:`tuning-cruise` for more details.
