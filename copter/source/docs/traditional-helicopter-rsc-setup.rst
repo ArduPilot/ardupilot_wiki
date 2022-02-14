@@ -4,9 +4,9 @@
 Rotor Speed Control Setup
 =========================
 
-Unlike other vehicles, the throttle RC input channel does not directly control the throttle in what are usually called "non altitude controlled modes" or "non throttle controlled modes", like STABILIZE or ACRO. Instead it controls the Collective for the helicopter.
+Unlike other vehicles, more specifically multicopters, the throttle RC input channel does not directly control the throttle in what are usually called "non altitude controlled modes" or "non throttle controlled modes", like STABILIZE or ACRO. Instead it controls the Collective for the helicopter.
 
-This means that some method must be used to control the throttle or esc for maintaining constant rotor speed through out the flight envelop.
+This means that some method must be used to control the throttle or esc for maintaining constant rotor speed through out the flight envelope.
 
 The Rotor Speed Control (RSC) uses the heliRSC output (``SERVOx_FUNCTION`` = 31) to the engine throttle or speed control/governor to control rotor speed. This can be done in a few different ways:
 
@@ -39,11 +39,11 @@ First, set the RSC Mode parameter (:ref:`H_RSC_MODE <H_RSC_MODE>`). The RSC mode
 Rotor Speed Ramp and Idle Settings
 ==================================
 
-The rotor speed control features an idle setting and start up and shut down logic for throttle control. The Throttle Output at Idle parameter (:ref:`H_RSC_IDLE <H_RSC_IDLE>`) determines the output to heliRSC servo output after the aircraft is armed, but before the motor interlock is enabled. 
+The rotor speed control features an idle setting and start up and shut down logic for throttle control. The throttle output at :ref:`H_RSC_IDLE <H_RSC_IDLE>` parameter determines the output to heliRSC servo output after the aircraft is armed, but before the motor interlock is enabled. 
 
-When the motor interlock is enabled the rotor speed control will ramp  from the idle to flight setting based on the Throttle Ramp Time parameter (:ref:`H_RSC_RAMP_TIME <H_RSC_RAMP_TIME>`). The RSC will prevent take off in non-manual throttle modes and auto mode until the RSC Run Up Timer has completed. The run up time is specified by the Rotor Runup Time parameter (:ref:`H_RSC_RUNUP_TIME <H_RSC_RUNUP_TIME>`).  This parameter has to be equal to or greater than the Throttle Ramp Time parameter (:ref:`H_RSC_RAMP_TIME <H_RSC_RAMP_TIME>`). 
+When the motor interlock is enabled the rotor speed control will ramp the throttle from the idle setting (:ref:`H_RSC_IDLE <H_RSC_IDLE>`) to flight setting (this depends on the :ref:`H_RSC_MODE <H_RSC_MODE>` chosen) based on the :ref:`H_RSC_RAMP_TIME <H_RSC_RAMP_TIME>` parameter . The RSC will prevent take off in non-manual throttle modes and auto mode until the timer has reached :ref:`H_RSC_RUNUP_TIME <H_RSC_RUNUP_TIME>`. It is very important to set :ref:`H_RSC_RUNUP_TIME <H_RSC_RUNUP_TIME>` to the amount of time it takes for the rotor to spin up to the flight rotor speed.  This parameter has to be equal to or greater than the Throttle Ramp Time parameter (:ref:`H_RSC_RAMP_TIME <H_RSC_RAMP_TIME>`). 
 
-When the motor interlock is disabled, the rotor speed control will count down the same amount of time as specified by the RSC Run Up Timer. The RSC will declare rotor speed below critical based on the Critical Rotor Speed parameter (:ref:`H_RSC_CRITICAL <H_RSC_CRITICAL>`). It is best to set the Critical Rotor Speed parameter (:ref:`H_RSC_CRITICAL <H_RSC_CRITICAL>`) for a percentage of the runup timer that equates to about three seconds. For example if you had a 10 second runup timer, setting the Critical Rotor Speed parameter (:ref:`H_RSC_CRITICAL <H_RSC_CRITICAL>`) to 70% will cause the RSC to declare rotor speed below critical three seconds from when Motor interlock is disabled.
+When the motor interlock is disabled with the rotor at flight rotor speed, the rotor speed control will count down the same amount of time as specified by the :ref:`H_RSC_RUNUP_TIME <H_RSC_RUNUP_TIME>`. The RSC will declare rotor speed below critical based on the Critical Rotor Speed parameter (:ref:`H_RSC_CRITICAL <H_RSC_CRITICAL>`) and will reset the runup complete flag. It is best to set the Critical Rotor Speed parameter (:ref:`H_RSC_CRITICAL <H_RSC_CRITICAL>`) for a percentage of the runup timer that equates to about three seconds. For example if you had a 10 second runup timer, setting the Critical Rotor Speed parameter (:ref:`H_RSC_CRITICAL <H_RSC_CRITICAL>`) to 70% will cause the RSC to declare rotor speed below critical three seconds from when Motor interlock is disabled.  For versions 4.0 and earlier, the autopilot is able to disarm the aicraft during auto landings after the RSC declares the rotor speed below critical.  For versions 4.1 and later, the autopilot waits the length of time of the :ref:`H_RSC_RUNUP_TIME <H_RSC_RUNUP_TIME>` to disarm the aircraft during auto landings.
 
 ArduPilot Internal Governor Setup
 =================================
