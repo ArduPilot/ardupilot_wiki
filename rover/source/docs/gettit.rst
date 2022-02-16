@@ -30,7 +30,7 @@ towards `2WD <https://hobbyking.com/en_us/basher-bsr-bz-222-1-10-2wd-racing-bugg
 <https://hobbyking.com/en_us/turnigy-trooper-sct-4x4-1-10-brushless-short-course-truck-arr.html>`__
 as well just because we get slightly longer
 battery life (fewer mechanical losses) and the car is less
-complicated.  But if your looking to go on the dirt fast and corner hard then 4WD is the go.
+complicated.  But if you're looking to go on the dirt fast and corner hard then 4WD is the way to go.
 We also prefer vehicles with brushless motors and no RC - the RC units
 that come with most ready-to-run RC cars don't have the spare channel
 needed for autopilot mode control and learning.
