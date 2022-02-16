@@ -47,7 +47,7 @@ Tools for log analysis
     MAVExplorer <https://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html>
     MissionPLanner <https://ardupilot.org/planner/>
     QGroundControl <http://qgroundcontrol.com/>
-    Dronee Plotter <https://plot.dron.ee/>
+    Dronee Plotter <https://plot.dronee.aero/>
     UAV LogViewer <common-uavlogviewer>
 
 [copywiki destination="copter,plane,rover,dev,antennatracker,planner"]
