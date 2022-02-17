@@ -49,7 +49,6 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Landing Gear/ Retractable Camera Mount <common-landing-gear>
 [/site]
     LEDs (external) <common-external-leds>
-    Multiple Radio Control Receivers <common-multiple-rx>
 [site wiki="copter,rover"]
 	Non-GPS navigation <common-non-gps-navigation-landing-page>
 [/site]

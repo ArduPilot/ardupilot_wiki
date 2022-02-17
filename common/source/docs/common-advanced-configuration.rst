@@ -83,6 +83,7 @@ tuning options for the vehicle.
     Motor Thrust Scaling <motor-thrust-scaling>
 [/site]
     Moving Vehicle Initialization <common-moving-vehicle-initialization>
+    Multiple Radio Control Receivers <common-multiple-rx>
 [site wiki="copter,rover"]
     Non-GPS Navigation <common-non-gps-navigation-landing-page>
 [/site]
