@@ -19,7 +19,7 @@ Among hobbyists, the X-UAV MiniTalon has become one of the most popular FPV Plan
 
 It is capable a relatively high load capacity, allowing it to carry HD video cameras, on fully stabilized gimbles for long duration flights. And configured as a basic FPV plane it is also very manuerable and sporty.
 
-This guide illustrates some general building tips, as well as a basic Arduplane configuration for an FPV plane.
+This guide illustrates some general building tips, as well as a basic ArduPlane configuration for an FPV plane.
 
 Many of the photos and descriptions are borrowed from Mark QVale's `website <https://itsqv.com>`_. which shows many other configurations, tips, and 3D printed parts, including many gimbles, for the MiniTalon. An `RCG thread <https://www.rcgroups.com/forums/showthread.php?2043439-Talon-MINI-FPV-plane-official-thread>`_ also has extensive information on variations.
 

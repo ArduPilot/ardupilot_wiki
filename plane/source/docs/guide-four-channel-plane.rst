@@ -8,7 +8,7 @@ The most common type of fixed wing plane is a 4 channel plane. As the
 name implies, it has 4 output channels, and they control the roll, pitch, yaw,
 and throttle independently.
 
-These are the default outputs for Arduplane as it is such a common
+These are the default outputs for ArduPlane as it is such a common
 setup. It is commonly referred to as an AETR setup.
 
 .. warning:: Remove the propeller from your aircraft before

@@ -17,7 +17,7 @@ reached the target altitude specified in the mission. The mission will then exec
 TAKEOFF Flight Mode
 ===================
 
-In Arduplane 4.0 and later, Automatic Takeoff is also a mode itself. When entered, the plane will use maximum throttle as set by the :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` parameter, climbing with :ref:`TKOFF_LVL_PITCH<TKOFF_LVL_PITCH>` maximum to the :ref:`TKOFF_ALT<TKOFF_ALT>` altitude and proceeding at the initial launch heading until :ref:`TKOFF_DIST<TKOFF_DIST>` from the point where the mode is entered. It will then loiter, as in LOITER mode, at :ref:`TKOFF_ALT<TKOFF_ALT>` altitude until the mode is changed.
+In ArduPlane 4.0 and later, Automatic Takeoff is also a mode itself. When entered, the plane will use maximum throttle as set by the :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` parameter, climbing with :ref:`TKOFF_LVL_PITCH<TKOFF_LVL_PITCH>` maximum to the :ref:`TKOFF_ALT<TKOFF_ALT>` altitude and proceeding at the initial launch heading until :ref:`TKOFF_DIST<TKOFF_DIST>` from the point where the mode is entered. It will then loiter, as in LOITER mode, at :ref:`TKOFF_ALT<TKOFF_ALT>` altitude until the mode is changed.
 
 Once :ref:`TKOFF_LVL_ALT<TKOFF_LVL_ALT>` is reached, or the loiter point distance is reached, maximum throttle and takeoff roll limits (:ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>` ) are stopped and normal navigation begins to the loiter point and altitude.
 

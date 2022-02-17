@@ -44,7 +44,7 @@ overwrite the defaults in the SCRIMMAGE mission file such as the motion model, v
     cd ArduPlane
     ../Tools/autotest/sim_vehicle.py -f scrimmage-plane -A "--config visual_model=zephyr-red,motion_model=FixedWing6DOF"
 
-Valid Arduplane motion models include FixedWing6DOF and JSBSimControl. Valid visual models are zephyr-blue,
+Valid ArduPlane motion models include FixedWing6DOF and JSBSimControl. Valid visual models are zephyr-blue,
 zephyr-red, and zephyr-green. Currently the only valid copter motion model is Multirotor and the iris visual model.
 Additional visual and terrain models can be installed using the scrimmage apt repository added during installation.
 
