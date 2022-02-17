@@ -213,13 +213,13 @@ using the following formula:
 
 - Compass
 
-Tradition fixed wing Arduplane does not need a compass for good performance,  as opposed to Copter or
+Tradition fixed wing ArduPlane does not need a compass for good performance,  as opposed to Copter or
 Quadplane which require a compass for yaw alignment. Even if you have a compass, disable it until you have
 everything else working. Then you can expand to it. Uncheck "Use this compass" for every compass in Mission Planner's SETUP/Compass screen.
 
 - Airspeed
 
-Arduplane does not need an airspeed sensor for basic performance. A fairly accurate synthetic airspeed estimate is calculated and gives
+ArduPlane does not need an airspeed sensor for basic performance. A fairly accurate synthetic airspeed estimate is calculated and gives
 good basic performance. In order to display this in the OSD, you will need to set :ref:`ARSPD_TYPE<ARSPD_TYPE>` =0. Feel free to add/enable a pitot sensor later to improve cruise flight target airspeed precision, or automatic landing airspeed control.
 
 - Other Parameters

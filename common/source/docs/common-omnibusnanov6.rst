@@ -96,7 +96,7 @@ Original V6 version
     :target: ../_images/nanov6.jpg
     :width: 450px
     
-Typical Arduplane system
+Typical ArduPlane system
 
 GPS is attached to UART6
 
