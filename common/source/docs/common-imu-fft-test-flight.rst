@@ -9,7 +9,7 @@ Initial Flight and Post-Flight Analysis
 - Perform a hover flight of at least 30s in altitude hold and :ref:`download the dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>` without the harmonic notch being enabled.
 - Graph the log element FTN1.PkAvg which represents the FFT's energy-weighted estimate of the average noise frequency for roll and pitch.
 
-On the graph there should be a fairly consistent estimate of the noise peak that corresponds to the motor rotational frequency. On a smaller Copter this is likely to be around 200Hz and on a larger Copter/Quadplane 100Hz or so. Here is an example from a 5" quad running on a Pixracer. Once the pilot has throttled up there is a fairly consistent noise level at about 220Hz:
+On the graph there should be a fairly consistent estimate of the noise peak that corresponds to the motor rotational frequency. On a smaller Copter this is likely to be around 200Hz and on a larger Copter/QuadPlane 100Hz or so. Here is an example from a 5" quad running on a Pixracer. Once the pilot has throttled up there is a fairly consistent noise level at about 220Hz:
 
 .. image:: ../../../images/imu-in-flight-fft.png
     :target:  ../_images/imu-in-flight-fft.png

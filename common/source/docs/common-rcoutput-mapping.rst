@@ -259,7 +259,7 @@ See the separate page on :ref:`setting up ground steering <tuning-ground-steerin
 Boost Engine Throttle
 +++++++++++++++++++++
 
-This output is for throttle control of an auxiliary :ref:`booster-motor` to add an additional vertical thrust source in Multi-Copter and Quadplane applications.
+This output is for throttle control of an auxiliary :ref:`booster-motor` to add an additional vertical thrust source in Multi-Copter and QuadPlane applications.
 
 
 Motor Enable Switch
@@ -338,7 +338,7 @@ Motors 1 - 12
 
 
 
-These are the Copter and Quadplane VTOL motor outputs. For Multi-Copters, see :ref:`Motor Order Diagrams<connect-escs-and-motors>` . Or see :ref:`Traditional Helicopter <traditional-helicopter-connecting-apm>`, or :ref:`singlecopter-and-coaxcopter`, or :ref:`heliquads`.
+These are the Copter and QuadPlane VTOL motor outputs. For Multi-Copters, see :ref:`Motor Order Diagrams<connect-escs-and-motors>` . Or see :ref:`Traditional Helicopter <traditional-helicopter-connecting-apm>`, or :ref:`singlecopter-and-coaxcopter`, or :ref:`heliquads`.
 
 [site wiki="copter"]
 .. note::
@@ -347,7 +347,7 @@ These are the Copter and Quadplane VTOL motor outputs. For Multi-Copters, see :r
    Copter-3.5 (and earlier) do not support assigning the same function to multiple output channels but this feature will be present in Copter-3.6 (and higher).
 [/site]
 
-For Quadplanes, see :ref:`quadplane-frame-setup` for motor output configuration.
+For QuadPlanes, see :ref:`quadplane-frame-setup` for motor output configuration.
 
 Throttle Left/ Right
 ++++++++++++++++++++
@@ -363,7 +363,7 @@ These outputs control the tilt servos for :ref:`guide-tilt-rotor` in Plane and B
 Boost Engine Throttle
 +++++++++++++++++++++
 
-This output is for throttle control of an auxiliary :ref:`booster-motor` to add an additional vertical thrust source in Multi-Copter and Quadplane applications.
+This output is for throttle control of an auxiliary :ref:`booster-motor` to add an additional vertical thrust source in Multi-Copter and QuadPlane applications.
 
 Motor Enable Switch
 +++++++++++++++++++
@@ -605,9 +605,9 @@ Either upon loading the firmware or selecting the frame type, certain default va
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
 | Fixed Wing Plane / Tailsitter      |4  |19 |21 |70 |0  |0  |0  |0  |0  |0   |0   |0   |
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
-| Quadplane                          |4  |19 |21 |70 |33 |34 |35 |36 |0  |0   |0   |0   |
+| QuadPlane                          |4  |19 |21 |70 |33 |34 |35 |36 |0  |0   |0   |0   |
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
-| Quadplane Tricopter                |4  |19 |21 |70 |33 |34 |0  |36 |0  |0   |39  |0   |
+| QuadPlane Tricopter                |4  |19 |21 |70 |33 |34 |0  |36 |0  |0   |39  |0   |
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+
 | Rover                              |26 |0  |70 |0  |0  |0  |0  |0  |0  |0   |0   |0   |
 +------------------------------------+---+---+---+---+---+---+---+---+---+----+----+----+

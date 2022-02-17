@@ -121,7 +121,7 @@ setup your :ref:`RC inputs <rc-throw-trim>`.
     VTail Planes <guide-vtail-plane>
     Orinthopter <ornithopter>
 
-For Quadplanes, including Tailsitters and Tilt-Rotors, see these sections: :ref:`quadplane-support` , :ref:`guide-tailsitter` , :ref:`guide-tilt-rotor` 
+For QuadPlanes, including Tailsitters and Tilt-Rotors, see these sections: :ref:`quadplane-support` , :ref:`guide-tailsitter` , :ref:`guide-tilt-rotor` 
 
 .. note:: You can combine setups for more complex aircraft. So for example, you could setup a vtail tiltrotor quadplane by combining functions from the guides above.
 

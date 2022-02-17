@@ -94,7 +94,7 @@ A partial listing of frame types is show below. For a current list, just type:
 +                          + sailboat sailboat-motor+
 +--------------------------+------------------------+
 
-.. note:: It is important to select the proper frame type. This not only loads the correct parameter set, but also selects the correct physics model. In real life, for example, you can configure and setup the ArduPlane firmware for any Quadplane, but you cannot do that in SITL without having selected the exact QuadPlane frame type for the simulation to get the correct physics model.
+.. note:: It is important to select the proper frame type. This not only loads the correct parameter set, but also selects the correct physics model. In real life, for example, you can configure and setup the ArduPlane firmware for any QuadPlane, but you cannot do that in SITL without having selected the exact QuadPlane frame type for the simulation to get the correct physics model.
 
 
 Setting vehicle start location

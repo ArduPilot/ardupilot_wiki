@@ -4,7 +4,7 @@
 Plane Commands in Guided Mode
 =============================
 
-This article lists the MAVLink commands that affect the movement of a Plane or Quadplane.  Normally these commands are sent by a ground station or :ref:`Companion Computers <companion-computers>` often running `DroneKit <http://dronekit.io/>`__.
+This article lists the MAVLink commands that affect the movement of a Plane or QuadPlane.  Normally these commands are sent by a ground station or :ref:`Companion Computers <companion-computers>` often running `DroneKit <http://dronekit.io/>`__.
 
 .. note::
 

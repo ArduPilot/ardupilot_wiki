@@ -113,7 +113,7 @@ Complex Invocation
 
 ::
 
-   ./Tools/autotest/autotest.py --no-clean build.Copter test.Copter build.Rover test.Rover test.Balancebot build.Plane test.Plane test.Quadplane build.Sub test.Sub build.Helicopter test.Helicopter build.Tracker test.Tracker
+   ./Tools/autotest/autotest.py --no-clean build.Copter test.Copter build.Rover test.Rover test.Balancebot build.Plane test.Plane test.QuadPlane build.Sub test.Sub build.Helicopter test.Helicopter build.Tracker test.Tracker
 
 At the time of writing, these invoke all the vehicle tests.  Expect these to take about 40 minutes to run.
 
@@ -228,7 +228,7 @@ Tools/autotest/arduplane.py
 Tools/autotest/balancebot.py
     contains tests for Balance Bots/Self Balancing Robots 
 Tools/autotest/quadplane.py
-    contains tests for ArduPlane's Quadplane code
+    contains tests for ArduPlane's QuadPlane code
 Tools/autotest/pysim/util.py
     various utility functions used by AutoTest
 Tools/autotest/common.py

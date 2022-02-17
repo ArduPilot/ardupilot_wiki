@@ -32,4 +32,4 @@ Mechanical Setup
 
 .. note:: You can watch that both move exactly in sync by setting :ref:`Q_TILT_RATE_DN<Q_TILT_RATE_DN>` =0  and :ref:`Q_TILT_RATE_UP<Q_TILT_RATE_UP>`  =2 (degs/second) temporarily. But you must use FBA/FBWB/ or STABILIZE instead of MANUAL mode for the forward flight mode for this test since MANUAL mode forces the downward rate to be at least 90 degs/sec.
 
-- Finally, go to the ``SETUP``/Optional Hardware/Motors tab and click Motor A,B,and D (for a Tricopter Tilt Quadplane) in sequence to verify motor direction is correct (without props!)
+- Finally, go to the ``SETUP``/Optional Hardware/Motors tab and click Motor A,B,and D (for a Tricopter Tilt QuadPlane) in sequence to verify motor direction is correct (without props!)

@@ -19,7 +19,7 @@ You can start it like this, from any vehicle's subdirectory:
     
 If you have simulated other vehicles in the current directory, you may wish
 to add the - w option to the command line to reset the parameters back to
-QuadPlane defaults (normal Separate Lift Thrust (SLT) Quadplane in quad configuration).
+QuadPlane defaults (normal Separate Lift Thrust (SLT) QuadPlane in quad configuration).
 
 To visualise the aircraft you can use FlightGear in view-only mode. The
 simulation will output FlightGear compatible state on UDP port 5503.

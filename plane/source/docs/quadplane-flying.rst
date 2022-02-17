@@ -31,7 +31,7 @@ By setting an RC channel option (``RCx_OPTION``) to "209", that channel can prov
 Radio or Throttle Failsafe
 ==========================
 
-If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter settings (see Plane Failsafe Function). Quadplanes can be set such that instead of normal plane behaviour on Failsafe induced RTLs, to transition to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1. If :ref:`Q_RTL_MODE<Q_RTL_MODE>` =2, then a fixed wing approach followed by a loiter to alt and QRTL will be executed, similar to that described in the "AUTO VTOL Landing" section of :ref:`quadplane-auto-mode`.
+If flying in a plane mode or AUTO, behaviour is determined by the :ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter settings (see Plane Failsafe Function). QuadPlanes can be set such that instead of normal plane behaviour on Failsafe induced RTLs, to transition to QRTL and land once at the rally point or home, if  :ref:`Q_RTL_MODE<Q_RTL_MODE>` =1. If :ref:`Q_RTL_MODE<Q_RTL_MODE>` =2, then a fixed wing approach followed by a loiter to alt and QRTL will be executed, similar to that described in the "AUTO VTOL Landing" section of :ref:`quadplane-auto-mode`.
 
 If not flying a mission, and are flying in any copter mode (QHOVER,QSTAB,etc.), failsafe will evoke QLAND or QRTL, depending on how :ref:`Q_OPTIONS<Q_OPTIONS>`, bit 5, is set.
 

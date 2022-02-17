@@ -39,7 +39,7 @@ However, by intentionally inducing the appropriate motor tilt into each mount, Y
 
 For H mixing, simply tilt all the motors inward toward the plane by 2-3 degrees, either by shimming or intentional design of the motor mounts. This provides a rotational thrust boost in addition to the torque differential, as the diagonal motor pairs are sped up/slowed down. With additional YAW authority, small motor angle imperfections can be automatically overcome by the autopilot, as well as giving the pilot additional YAW authority.
 
-.. note:: Be aware that Quadplanes rarely have the same yaw authority as multicopters due to the greater mass and surface area to wind that a plane presents. Expect to be only able to face into the wind if it's not relatively calm.
+.. note:: Be aware that QuadPlanes rarely have the same yaw authority as multicopters due to the greater mass and surface area to wind that a plane presents. Expect to be only able to face into the wind if it's not relatively calm.
 
 "LEVEL" Trim
 ============

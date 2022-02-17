@@ -68,7 +68,7 @@ Notes
 The F-35 has ability to have the middle rail for M1/M2 to be independent of that of the S1-S6 slots, which are supplied by the internal 5V regulator, or to have it tied to them, via board jumper pads. The WingFC10 is isolated with no pad option. The internal regulators can only supply two or three standard servos (3A).
 It is generally recommended that servos be powered independent of on-board regulators to avoid noise injection issues. For both boards this means either cutting traces or externally powering the servos.
 
-Both boards have an onboard compass, however, since there is an on-board current sensor, if used, the compass cannot be accurately used and should be disabled in ArduPilot. For plane use, not having a compass is a non-issue, but compass is required for Copter/Quadplane. 
+Both boards have an onboard compass, however, since there is an on-board current sensor, if used, the compass cannot be accurately used and should be disabled in ArduPilot. For plane use, not having a compass is a non-issue, but compass is required for Copter/QuadPlane. 
 
 However, an external compass can be connected to the board's I2C1 after a small modification. To enable I2C on the Wing FC10 clone, you need to move from 'PRS' to 'I2C' position (on the bottom side of the board) and use the test pad as shown below. The test pad is I2C1/SDA and the AIR pin is I2C1/SCL after the jumper modification.
 
