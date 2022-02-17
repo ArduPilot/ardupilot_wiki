@@ -50,7 +50,6 @@ the output signal into the form expected by your particular camera:
 -  :ref:`Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>`
 -  :ref:`Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>`
 -  :ref:`Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>`
--  :ref:`Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>`
 -  :ref:`StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>`
 -  :ref:`Camera Triggering Directly from AUX Ports <common-pixhawk-camera-trigger-setup>`
 -  :ref:`Camera Triggering Configuration <common-camera-shutter-with-servo>`
@@ -76,7 +75,6 @@ Detail topics
     Seagull MAP2 Camera Trigger <common-camera-trigger-seagull-map2>
     Seagull MAP-X2 Camera Trigger and Logger <common-camera-trigger-seagull-mapx2>
     Seagull REC Camera Trigger <common-camera-trigger-seagull-rec>
-    Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>
     StratosnapperV2 Camera Trigger <common-camera-trigger-stratosnapperv2>
     Camera Trigger Directly from AUX Ports <common-pixhawk-camera-trigger-setup>
     Camera Triggering Configuration <common-camera-shutter-with-servo>

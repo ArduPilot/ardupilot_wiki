@@ -32,6 +32,7 @@ value to users with old hardware.
 [/site]
 [site wiki="copter,plane,rover"]
     Edge Quick Start <common-edge-quick-start>
+    Skysight Mono Camera Trigger <common-camera-trigger-skysight-mono>
 [/site]
 [site wiki="copter"]
     Boat Mode <boat-mode>
