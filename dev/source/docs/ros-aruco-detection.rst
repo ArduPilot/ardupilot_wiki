@@ -1,7 +1,7 @@
 .. _ros-aruco-detection:
 
 ========================================================================
-Indoor autonomous flight with Arducopter, ROS and Aruco Boards Detection
+Indoor autonomous flight with ArduCopter, ROS and Aruco Boards Detection
 ========================================================================
 
 ..  youtube:: dYhvNhqobVg
@@ -26,7 +26,7 @@ The Flight Controller and the Raspberry Pi 3 on the quadcopter are connected via
 Components of the system
 ========================
 
-- A little quadcopter (160mm) with Revolution Flight Controller with Arducopter 3.7-dev and the following relevant parameters:
+- A little quadcopter (160mm) with Revolution Flight Controller with ArduCopter 3.7-dev and the following relevant parameters:
 
 .. code-block:: none
 
@@ -177,7 +177,7 @@ You should see the quadcopter arm, takeoff, flight along the square and land as 
 Some Useful links
 =================
 
-- Blog post `Indoor autonomous flight with Arducopter, ROS and Aruco Boards Detection <https://discuss.ardupilot.org/t/indoor-autonomous-flight-with-arducopter-ros-and-aruco-boards-detection/34699>`__:
+- Blog post `Indoor autonomous flight with ArduCopter, ROS and Aruco Boards Detection <https://discuss.ardupilot.org/t/indoor-autonomous-flight-with-arducopter-ros-and-aruco-boards-detection/34699>`__:
   A similar system to the one described here but on the quadcopter there is a Raspberry Pi 0 (instead of Raspberry Pi 3), due to the limited computing resources the aruco_gridboard node run on desktop PC and the relevant data (mainly images and pose estimation) are exchanged with the quadcopter using ROS messages.
 
 - Blog post `Vision Positionning Experiments using SKYVIPER <https://discuss.ardupilot.org/t/vision-positionning-experiments-using-skyviper/38348>`__:

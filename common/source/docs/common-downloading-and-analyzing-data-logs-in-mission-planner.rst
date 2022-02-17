@@ -727,7 +727,7 @@ but the most common are:
 +------------+----------------------------------------------------------------------------------------------------+
 | Rsn        | Reason for mode change (TX command, failsafe, etc) . The meaning of code values can be found in    |
 |            | your vehicle's define.h file (under the mode_reason_t enum). For instance for ArduCopter the file  |
-|            | is Arducopter/define.h                                                                             |
+|            | is ArduCopter/define.h                                                                             |
 +------------+----------------------------------------------------------------------------------------------------+
 
 **NTUN (navigation information):**

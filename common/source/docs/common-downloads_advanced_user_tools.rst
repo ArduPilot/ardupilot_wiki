@@ -244,7 +244,7 @@ DATE POSTED	April 29, 2013
     Do not use with APM 2.x
     
 This version is dedicated to ArduPlane (or ArduRover / Arduboat) (CH8 radio passthrough mode).
-For Arducopter it is better to use the dedicated version so that CH8 can be fully used without risk to trig radio passthrough mode.
+For ArduCopter it is better to use the dedicated version so that CH8 can be fully used without risk to trig radio passthrough mode.
 
 Changes:
 ++++++++
