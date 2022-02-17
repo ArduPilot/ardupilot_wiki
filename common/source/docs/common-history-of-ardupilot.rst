@@ -86,7 +86,7 @@ Dec 2010 - First successful fork of ArduPilot code as `MegaPirates group extends
 April 2011 – First fully autonomous Copter mission flown by Jason at
 `Sparkfun AVC <https://diydrones.com/profiles/blogs/acm-at-the-avc>`__
 
-April 2011 - Laser Navigation made the first piece of 32 bit hardware capable of running the Arducopter software
+April 2011 - Laser Navigation made the first piece of 32 bit hardware capable of running the ArduCopter software
 
 2011 - APM2 released by 3D Robotics
 

@@ -184,7 +184,7 @@ Some Useful links
 
 - Original `blog post <https://discuss.ardupilot.org/t/indoor-non-gps-flight-using-apriltags-ros-based/42878>`__.
 
-- Indoor autonomous flight with Arducopter, ROS and Aruco Boards - :ref:`wiki page <ros-aruco-detection>` and `blog post <https://ardupilot.org/dev/docs/ros-aruco-detection.html>`__.
+- Indoor autonomous flight with ArduCopter, ROS and Aruco Boards - :ref:`wiki page <ros-aruco-detection>` and `blog post <https://ardupilot.org/dev/docs/ros-aruco-detection.html>`__.
 
 - Indoor Autonomous Flight with Cube, ROS and Aruco Board - `blog post <https://discuss.cubepilot.org/t/indoor-autonomous-flight-with-cube-ros-and-aruco-board-ongoing/351>`__.
 

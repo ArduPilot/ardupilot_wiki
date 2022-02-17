@@ -24,7 +24,7 @@ Enter Return to Launch mode.
 mode manual
 ===========
 
-Enter manual mode. On Arducopter this is equivalent to STABILIZE mode
+Enter manual mode. On ArduCopter this is equivalent to STABILIZE mode
 
 mode fbwa
 =========

@@ -70,7 +70,7 @@ Gel pads
 
       FlameWheel F330 with PX4FMU Mounted on Intermediate platform
 
-The blog `Testing simple anti-vibration solutions for GoPro on an Arducopter <https://diydrones.com/profiles/blogs/testing-simple-anti-vibration-solutions-for-gopro-on-an>`__
+The blog `Testing simple anti-vibration solutions for GoPro on an ArduCopter <https://diydrones.com/profiles/blogs/testing-simple-anti-vibration-solutions-for-gopro-on-an>`__
 has a video demonstrating vibration isolation using Moon Gel on a Go-Pro camera.
 
 3D Printed Anti-Vibration Platform

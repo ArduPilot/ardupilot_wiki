@@ -19,7 +19,7 @@ The initial tune of the aircraft should be done **in the aircrafts most agile co
 Advanced Tuning
 ---------------
 
-Arducopter has an extremely flexible controller design that can been used with great results on aircraft from 100g to 500 kg. There are a number of difficult control problems that provide a greater depth of understanding that can be provided here. Some of these issues include:
+ArduCopter has an extremely flexible controller design that can been used with great results on aircraft from 100g to 500 kg. There are a number of difficult control problems that provide a greater depth of understanding that can be provided here. Some of these issues include:
 
 - High gyro noise levels
 - Flexible airframes
