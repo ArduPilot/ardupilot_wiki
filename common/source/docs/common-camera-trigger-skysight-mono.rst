@@ -4,6 +4,8 @@
 Camera Triggering for Sony MultiPort Connectors using SkySight MONO
 ===================================================================
 
+.. note:: this device is no longer available and this article is ARCHIVED.
+
 This article shows how to setup the `SkySight MONO <http://skysight.eu/?product=skysight-mono>`__ to trigger pictures on cameras equipped with the Sony MultiPort™ connector
 
 .. figure:: ../../../images/SkySightMono.jpg
