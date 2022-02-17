@@ -50,7 +50,7 @@ A tutorial on building and using a bungee launcher is `here <https://www.rcgroup
 VTOL
 ====
 
-Perhaps the easiest of all takeoffs, it does require that the plane be a VTOL capable :ref:`Quadplane <quadplane-support>` 
+Perhaps the easiest of all takeoffs, it does require that the plane be a VTOL capable :ref:`QuadPlane <quadplane-support>` 
 
 .. tip:: While not necessary for a successful launch, enabling :ref:`SERVO_AUTO_TRIM<SERVO_AUTO_TRIM>` will automatically trim the plane during stabilized operations, such that switching to MANUAL or ACRO mode later will have an in-trim plane automatically.
 

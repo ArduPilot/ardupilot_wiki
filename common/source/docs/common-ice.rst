@@ -97,7 +97,7 @@ To stop the motor with RC control:
 - Lower the transmitter's starter switch
 - Disarm the vehicle
 
-Quadplanes can also automatically stop the engine once the final phase of a VTOL landing is entered by setting the :ref:`Q_LAND_ICE_CUT<Q_LAND_ICE_CUT>` parameter to 1.
+QuadPlanes can also automatically stop the engine once the final phase of a VTOL landing is entered by setting the :ref:`Q_LAND_ICE_CUT<Q_LAND_ICE_CUT>` parameter to 1.
 
 [/site]
 

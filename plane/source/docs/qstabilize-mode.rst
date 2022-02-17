@@ -22,7 +22,7 @@ the roll and pitch axis.
 
 .. warning::
 
-    Flying Quadplane backwards at speed or backwards into high wind is not recommended, since the Plane control surfaces will act backwards and could increase instability.
+    Flying QuadPlane backwards at speed or backwards into high wind is not recommended, since the Plane control surfaces will act backwards and could increase instability.
 
 
 Overview

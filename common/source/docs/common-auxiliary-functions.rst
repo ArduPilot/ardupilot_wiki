@@ -811,7 +811,7 @@ Enables Soaring function operating modes
    <td><strong>Force Flare</strong></td>
    <td>
 
-Moves tilt motors to upright position and optionally sets pitch for flare when landing Tilt Rotor Quadplanes. Middle: Pilot retains pitch control during flare. High: Pitch set to :ref:`LAND_PITCH_CD<LAND_PITCH_CD>`.
+Moves tilt motors to upright position and optionally sets pitch for flare when landing Tilt Rotor QuadPlanes. Middle: Pilot retains pitch control during flare. High: Pitch set to :ref:`LAND_PITCH_CD<LAND_PITCH_CD>`.
 
 .. raw:: html
 

@@ -27,7 +27,7 @@ Determination of Noise Frequencies
     :target:  ../_images/imu-batchsampling-fft-mp2.png
     :width: 450px
 
-On the graph it should be possible to identify a significant peak in noise that corresponds to the motor rotational frequency. On a smaller Copter this is likely to be around 200Hz and on a larger Copter/Quadplane 100Hz or so. Here is an example from a 5" quad:
+On the graph it should be possible to identify a significant peak in noise that corresponds to the motor rotational frequency. On a smaller Copter this is likely to be around 200Hz and on a larger Copter/QuadPlane 100Hz or so. Here is an example from a 5" quad:
 
 .. image:: ../../../images/pre-tune-fft.png
     :target:  ../_images/pre-tune-fft.png

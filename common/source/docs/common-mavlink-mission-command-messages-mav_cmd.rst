@@ -1553,7 +1553,7 @@ control the landing are provided in :ref:`LAND flight mode <plane:land-mode>`.
 MAV_CMD_NAV_VTOL_LAND
 ---------------------
 
-Supported by: Plane (not Copter or Rover). Specifically Quadplanes.
+Supported by: Plane (not Copter or Rover). Specifically QuadPlanes.
 
 Land the vehicle at the current or a specified location.
 
@@ -1602,7 +1602,7 @@ The motors will disarm on their own once landed
    <tr>
    <td><strong>param5</strong></td>
    <td>Lat</td>
-   <td>Target latitude. If zero, the Quadplane will land at the current latitude.</td>
+   <td>Target latitude. If zero, the QuadPlane will land at the current latitude.</td>
    </tr>
    <tr>
    <td><strong>param6</strong></td>
@@ -3234,7 +3234,7 @@ If ``RTL_AUTOLAND`` is set to 2, the plane will jump to the nearest
 MAV_CMD_DO_VTOL_TRANSITION
 --------------------------
 
-Supported by: Plane (not Copter or Rover).Specifically Quadplanes.
+Supported by: Plane (not Copter or Rover).Specifically QuadPlanes.
 
 QuadPlane
 ~~~~~~~~~
@@ -4253,7 +4253,7 @@ Stop or start internal combustion engine (ICE)
 Plane
 ~~~~~
 
-This command can be used to start or stop the ICE before a NAV_VTOL_LAND or after a NAV_VTOL_TAKEOFF command for a Quadplane to avoid potential prop strikes in the wind. It should be placed before either of those commands.
+This command can be used to start or stop the ICE before a NAV_VTOL_LAND or after a NAV_VTOL_TAKEOFF command for a QuadPlane to avoid potential prop strikes in the wind. It should be placed before either of those commands.
 
 **Command parameters**
 
