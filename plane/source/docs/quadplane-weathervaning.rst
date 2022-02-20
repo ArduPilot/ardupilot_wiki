@@ -22,26 +22,40 @@ the area of the wing exposed to the wind.
 Active Weathervaning
 --------------------
 
-Active weathervaning acts to turn the nose of the aircraft into the
+Active weathervaning acts to turn the aircraft into the
 wind when flying in position-controlled VTOL modes. You can enable
-active weathervaning by setting the :ref:`Q_WVANE_GAIN <Q_WVANE_GAIN>`
+active weathervaning by setting the :ref:`Q_WVANE_ENABLE <Q_WVANE_ENABLE>`
 parameter to a non-zero value. The default is not to use active
 weathervaning.
 
-The way it works is the autopilot looks at the roll attitude needed to
-control the desired position. The basic algorithm is "turn into the
-roll". If the aircraft needs to roll to the right in order to hold
-position then it will turn in that direction on the assumption that
-the right roll is needed in order to hold against the wind.
++---------------------------------------------+--------------------------+
++ :ref:`Q_WVANE_ENABLE<Q_WVANE_ENABLE>` Value | Weathervane Direction    +
++=============================================+==========================+
++         0                                   |  Disabled                +
++---------------------------------------------+--------------------------+
++         1                                   |  Nose Into Wind(default) +
++---------------------------------------------+--------------------------+
++         2                                   |  Nose OR Tail Into Wind  +
++---------------------------------------------+--------------------------+
++         3                                   |  Side Into Wind          +
++---------------------------------------------+--------------------------+
++         4                                   |  Tail Into Wind          +
++---------------------------------------------+--------------------------+
 
-How quickly the aircraft turns is given by the :ref:`Q_WVANE_GAIN<Q_WVANE_GAIN>`
-parameter. A good value to start with is 0.1. Higher values will make
+The way it works is the autopilot looks at the roll and/or pitch attitude needed to
+control the desired position. The basic algorithm is "yaw into the
+roll/pitch". If the aircraft needs hold roll to the right in order to hold
+position then it will turn in that direction on the assumption that
+the right roll is needed in order to hold against the wind (assuming nose into the wind). Similarly, for Side Into the Wind, it will use the pitch angle and yaw appropriately, trying to zero the pitch required to hold position.
+
+How quickly the aircraft yaws is determined by the :ref:`Q_WVANE_GAIN<Q_WVANE_GAIN>`
+parameter. It converts the lean angle into degs/sec of yaw. A good value to start with is 1 (1 degree roll = 1 deg/sec yaw). Higher values will make
 the aircraft turn into the roll more quickly. If the value is too high
 then you can get instability and oscillation in yaw.
 
 To cope with a small amount of trim in the aircraft there is an
-additional parameter ``Q_WVANE_MINROLL`` which
-controls the minimum roll level before weathervaning will be
+additional parameter :ref:`Q_WVANE_ANG_MIN<Q_WVANE_ANG_MIN>` which
+controls the minimum roll/pitch level before weathervaning will be
 used. This defaults to one degree. If you find your aircraft starts
 yawing even in no wind then you may need to raise this value.
 
@@ -49,6 +63,16 @@ Active weathervaning is only active in VTOL modes, and VTOL sections
 of AUTO modes (such as VTOL takeoff and VTOL landing). It is not
 active in QSTABILIZE and QHOVER modes as those are not position
 controlled modes. It is active is QLOITER, QLAND and QRTL modes.
+
+There are a number of additional parameters that can control when WeatherVaning is active (all are disabled by default):
+
+- :ref:`Q_WVANE_HGT_MIN<Q_WVANE_HGT_MIN>` :above this height weathervaning is permitted
+- :ref:`Q_WVANE_SPD_MAX<Q_WVANE_SPD_MAX>` :below this ground speed weathervaning is permitted
+- :ref:`Q_WVANE_VELZ_MAX<Q_WVANE_VELZ_MAX>` :maximum climb or descent speed at which the vehicle will still attempt to weathervane
+- :ref:`Q_WVANE_TAKEOFF<Q_WVANE_TAKEOFF>` :override weathervaning direction in auto takeoffs*
+- :ref:`Q_WVANE_LAND<Q_WVANE_LAND>`    :overide weathervaning directions in auto landings*
+
+* not QLOITER take-offs and landings
 
 Using the Forward Motor
 -----------------------
