@@ -1,24 +1,23 @@
 .. _gsoc-ideas-list:
     
 ========================================
-List of Suggested Projects for GSoC 2021
+List of Suggested Projects for GSoC 2022
 ========================================
 
-This is a list of projects suggested by ArduPilot developers for `GSoC 2021 <https://summerofcode.withgoogle.com/>`__. GSoC has changed the format of its 2021 edition to reduce the number of hours per project from 350hr down to 174hrs, the list below contains project suggestions that should meet these criteria depending also on the skill level of the participant. These are only suggestions, and if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2021.
+This is a list of projects suggested by ArduPilot developers for `GSoC 2022 <https://summerofcode.withgoogle.com/>`__. These are only suggestions so if you have your own ideas then please discuss them on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ or on the `discuss server here <https://discuss.ardupilot.org/c/google-summer-of-code>`__.  We have a lot of talented developers in the ArduPilot dev team who would love to mentor good students for GSoC 2021.
 
-- :ref:`Optical flow <common-optical-flow-sensor-setup>` calibration improvements
-- :ref:`Object avoidance <common-object-avoidance-landing-page>` support for `MYNT EYE depth camera <https://www.mynteye.com/pages/products>`__
-- Integrate with ROS for off-board path-planning
 - Rover AutoTune
-- 3D aerobatic support for fixed wing aircraft
-- Improve :ref:`Morse simulator <sitl-with-morse>` integration including setup to move the camera with vehicles
-- Create new vehicle models for the Morse simulator, including boats, planes and copters
+- Rover/Boat automatic docking
+- Rover/Boat object avoidance with Luxonis AI camera
+- Copter/Rover camera gimbal integration improvements
+- Update ROS integration for Non-GPS navigation and off-board path-planning
+- Create more ignition vehicle models, and improve physics of existing models in SITL (software-in-the-loop simulator)
+- Improve custom firmware server including adding branch support and improve dependency handling
 - Improve :ref:`Gazebo simulator <using-gazebo-simulator-with-sitl>` integration including JSON protocol, Gazebo9, and new sensors set
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
 - Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Better multivehicle support, performance improvement. Requires strong python skills.
-- Swift Package for MAVLink communications.
+- Swift Package for MAVLink communications
 - Unified performance counter on ArduPilot
-- ROS2 MAVROS support for ArduPilot.
 
 See lower down on this page for more details for some of the projects listed above
 
