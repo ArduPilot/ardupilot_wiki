@@ -61,10 +61,13 @@ Meaning that when flying, our throttle values will range between 1100 -
 -  When failsafe is entered, all RC inputs (except throttle in the case of throttle initiated failsafe), are ignored as the autopilot takes its failsafe actions.
 -  First, the autopilot will go into short failsafe (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` ),
    when it detects loss of signal for more than :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` sec. The default setting for short failsafe is Circle mode.
--  If the RC signal is regained during the short failsafe, the flight
-   will return to the previous mode.
+-  A message will be displayed on your Ground Control Station, or OSD, if its message panel is enabled, that a Short failsafe is active, and the flight controller has taken the :ref` FS_SHORT_ACTN<FS_SHORT_ACTN>`, if enabled.
+-  If the condition causing the short failsafe event is removed while in the short failsafe condition (RC signal loss, corruption, or throttle below the :ref:`THR_FS_VALUE<THR_FS_VALUE>` if :ref:`THR_FAILSAFE<THR_FAILSAFE>` is enabled), the flight will return to the previous mode, and a message will be displayed that Failsafe is OFF.
 -  If the loss of signal is longer than :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` sec the autopilot will go into long failsafe :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` .
 -  The default setting for long failsafe is RTL (Return to Launch).
+ when it detects loss of signal for more than :ref:`FS_SHORT_TIMEOUT<FS_SHORT_TIMEOUT>` sec. The default setting for short failsafe is Circle mode.
+-  A message will be displayed on your Ground Control Station or OSD that Failsafe is ON, the flight controller has entered a long failsafe and the failsafe mode triggered.
+-  If the RC signal is regained during the long failsafe, a message will be displayed that the failsafe is recovered, but the mode will not revert.
 
 .. note:: Once the long failsafe has been entered at the conclusion
    of the short failsafe the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`  mode will continue even if your RC
