@@ -31,6 +31,8 @@ Parts List
 
 The steering mechanism is a custom built servo and pulley system but we hope to eventually provide a 3D printable steering mechanism
 
+More details can be found in `this blog post <https://discuss.ardupilot.org/t/deset-mapping-boat-in-okinoshima-japan/78035>`__
+
 Parameters: `deset-mapping-boat.param <https://github.com/ArduPilot/ardupilot/blob/master/Tools/Frame_params/deset-mapping-boat.param>`__
 
 Firmware used: Rover-4.2.0
