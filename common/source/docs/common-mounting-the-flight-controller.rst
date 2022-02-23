@@ -20,7 +20,7 @@ horizontally and vertically).  Generally this means it should be placed
 within a few centimeters of the middle of the vehicle and level with the
 motors.  It is not critical that it is placed exactly at the middle but
 closer is better (there are no recorded cases of problems caused by the
-controller being far from the centre of gravity).
+controller being far from the centre of gravity).  If the autopilot cannot be placed at the center of the vehicle setting the :ref:`IMU position offset parameters <common-sensor-offset-compensation>` may improve performance slightly.
 
 [site wiki="rover"]
 .. image:: ../../../images/mounting-flight-controller-rover.png
