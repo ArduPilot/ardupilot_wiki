@@ -8,7 +8,7 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2022 <htt
 
 - Rover AutoTune
 - Rover/Boat automatic docking
-- Rover/Boat object avoidance with Luxonis AI camera
+- Boat object avoidance with Luxonis AI camera
 - Copter/Rover camera gimbal integration improvements
 - Update ROS integration for Non-GPS navigation and off-board path-planning
 - Create more ignition vehicle models, and improve physics of existing models in SITL (software-in-the-loop simulator)
@@ -24,7 +24,7 @@ See lower down on this page for more details for some of the projects listed abo
 Timeline
 ========
 
-The timeline for `GSoC 2021 is here <https://summerofcode.withgoogle.com/how-it-works/#timeline>`__
+The timeline for `GSoC 2022 is here <https://developers.google.com/open-source/gsoc/timeline>`__
 
 How to improve your chances of being accepted
 =============================================
@@ -36,41 +36,100 @@ When making the difficult decision about which students to accept, we look for:
 - Experience contributing to ArduPilot or other open source projects
 - Understanding of Git and/or GitHub
 
-Optical Flow Calibration Improvements
--------------------------------------
+Rover AutoTune
+--------------
 
-:ref:`Optical Flow <common-optical-flow-sensors-landingpage>` can provide accurate non-GPS position estimation if the user correctly calibrates the sensor but `this calibration procedure <https://ardupilot.org/copter/docs/common-optical-flow-sensor-setup.html>`__ is difficult to get right.
+- Skills required: C++
+- Mentor: Randy Mackay
+- Expected Size: 175h or 350h
+- Level of Difficulty: Hard
+- Expected Outcome: Autotune mode added that automatically calculates the frame limits, speed control gains and steering control gains for `Ackermann <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#separate-steering-and-throttle>`__ and `skid steering vehicles <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#skid-steering>`__.
 
-This project involves adding an in-flight calibration procedure in which the user enables both GPS and optical flow.  The EKF should then be able to estimate the expected flow measurements, compare them with the actual flow measurements and then calculate the best scaling values.
+This project involves `adding a new AutoTune mode to the Rover firmware <https://ardupilot.org/dev/docs/rover-adding-a-new-drive-mode.html>`__ to calculate the frame limits, speed control and steering control gains.  This is essentially an automated version of the manual tuning process documented in `this section of the Rover wiki <https://ardupilot.org/rover/docs/rover-first-drive.html>`__.
 
-See `Issue #16631 <https://github.com/ArduPilot/ardupilot/issues/16631>`__.
+Similar to `Copter's autotune mode <https://ardupilot.org/copter/docs/autotune.html>`__ this new mode should include a state machine that provides various throttle and steering outputs and then monitors the response by checking the AHRS/EKF outputs.
 
-Object Avoidance support for the MYNT EYE depth camera
-------------------------------------------------------
+The list of parameters that should be tuned includes:
 
-ArduPilot already supports :ref:`object avoidance using the Intel RealSense 435 and 455 depth cameras <common-realsense-depth-camera>`. We should extend support to the `MYNT EYE depth cameras <https://www.mynteye.com/pages/products>`__.
+- :ref:`ATC_ACCEL_MAX <rover:ATC_ACCEL_MAX>` and :ref:`ATC_DECEL_MAX <rover:ATC_DECEL_MAX>`
+- :ref:`ATC_STR_RAT_FF <rover:ATC_STR_RAT_FF>`
+- :ref:`ATC_STR_RAT_MAX <rover:ATC_STR_RAT_MAX>`
+- :ref:`ATC_TURN_MAX_G <rover:ATC_TURN_MAX_G>`
+- :ref:`CRUISE_SPEED <rover:CRUISE_SPEED>` and :ref:`CRUISE_THROTTLE <rover:CRUISE_THROTTLE>` (or :ref:`ATC_SPEED_FF <rover:ATC_SPEED_FF>`)
 
-This project involves:
+See `Issue #8851 <https://github.com/ArduPilot/ardupilot/issues/8851>`__
 
-- Writing a python script (similar to `this script for the Intel T435 <https://github.com/thien94/vision_to_mavros/blob/master/scripts/d4xx_to_mavlink.py>`__) to pull the data from the depth camera and package them into OBSTACLE_DISTANCE and/or OBSTACLE_DISTANCE_3D mavlink messages which will then be consumed by ArduPilot's AP_Proximity library
-- Creating an :ref:`APSync <apsync-intro>` image for at least one companion computer (RPI4?) that can run the above script
+Some of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` but funding will also be provided for the RC car frame and autopilot
 
-See `Issue #16632 <https://github.com/ArduPilot/ardupilot/issues/16632>`__.
+Rover/Boat automatic docking
+----------------------------
 
-Integrate with ROS for off-board path-planning
-----------------------------------------------
+- Skills required: C++
+- Mentor: Randy Mackay, Peter Barker
+- Expected Size: 350h
+- Level of Difficulty: Medium
+- Expected Outcome: control mode added that autonomously maneuvers a car or boat to stop directly infront of a visual target
 
-ArduPilot can be :ref:`integrated with ROS <ros>` in several ways including for Non-GPS position estimation and object avoidance.  This project aims to allow ROS's path planning routines to be used by ArduPilot while still leaving the mission input in ArduPilot.
+This project involves `adding a new control mode to the Rover firmware <https://ardupilot.org/dev/docs/rover-adding-a-new-drive-mode.html>`__ to maneuver a car or boat to within cm of a visual target.  In many ways this is similar to `Copter's precision landing <https://ardupilot.org/copter/docs/precision-landing-with-irlock.html>`__ feature and it is likely that the `AC_PrecLand library <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AC_PrecLand>`__ can be re-used to estimate where the target is.  The expected control outputs will be desired speed and turn rate.
+
+As a minimum we should add support for `Ackermann <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#separate-steering-and-throttle>`__ and `skid steering vehicles <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#skid-steering>`__ but better performance can probably be achieved using `omni vehicles <https://ardupilot.org/rover/docs/rover-motor-and-servo-connections.html#omni-vehicles>`__ which can move laterally.
+
+Most of the development can be completed using the :ref:`SITL simulator <sitl-simulator-software-in-the-loop>` but funding will also be provided for the required hardware which could include an IR-Lock system or `AI camera <https://shop.luxonis.com/products/oak-d-iot-75>`__, companion computer, autopilot and a car or boat frame.
+
+See `Issue #20158 <https://github.com/ArduPilot/ardupilot/issues/20158>`__.
+
+Boat object avoidance with Luxonis AI camera
+--------------------------------------------
+
+- Skills required: C++, mavlink, AI
+- Mentor: Randy Mackay, Peter Barker
+- Expected Size: 350h
+- Level of Difficulty: Medium
+- Expected Outcome: Autonomous boats is able to avoid other boats, rocks and floating debris using an Luxonis AI camera
+
+This project involves training and integrating a Luxonis AI camera to recognise rocks, floating debris and other boats and then send the estimated position of these obstacles to ArduPilot's existing :ref:`object avoidance features <rover:common-object-avoidance-landing-page>` (Simple avoidance, Bendy Ruler and Dijkstra's/A-Star) so that the vehicle can stop and/or path plan around them.
+
+Much of the development can be completed using one of the :ref:`ArduPilot supported simulators <simulation-2>` but funding will also be provided for the required hardware which will include a `Luxonis AI camera <https://shop.luxonis.com/products/oak-d-iot-75>`__, companion computer, autopilot and a car or boat frame.
+
+Copter/Rover camera gimbal integration improvements
+---------------------------------------------------
+
+- Skills required: C++, mavlink
+- Mentor: Randy Mackay, Peter Barker
+- Expected Size: 175h or 350h
+- Level of Difficulty: Medium
+- Expected Outcome: Improved support of gimbals in pilot controlled and fully autonomous modes (Auto, Guided)
+
+This project involves resolving numerous small issues with ArduPilot's camera gimbal support.  These include:
+
+- Auxiliary switch to allow pilot to control whether the gimbal maintains an attitude relative to the vehicle's heading or stays pointed in the same direction even as the vehicle turns (aka "earth frame")
+- Support for new mavlink ROI messages (see `issue #7658 <https://github.com/ArduPilot/ardupilot/issues/7658>`__)
+- Identify and resolve any issues with pilot controlling gimbal using rate or angle control
+- Support for pointing gimbal at :ref:`Circle center <copter:circle-mode>`
+- Support for pointing gimbal at another vehicle while in :ref:`Follow mode <copter:follow-mode>`
+- Support for pointing gimbal at specified waypoint
+- Resolve any specific issues with the Gremsy PixyU gimbal (see `issue #14448 <https://github.com/ArduPilot/ardupilot/issues/14448>`__)
+
+Funding will be provided for the required hardware which will likely include a camera gimbal, transmitter, autopilot and a multicopter or car frame.
+
+Update ROS integration for Non-GPS navigation and off-board path-planning
+-------------------------------------------------------------------------
+
+- Skills required: ROS, C++, python
+- Mentor: Randy Mackay, Jaime Machuca
+- Expected Size: 175h or 350h
+- Level of Difficulty: Medium
+
+ArduPilot can be `integrated with ROS <https://ardupilot.org/dev/docs/ros.html>`__ both for `Non-GPS position estimation <https://ardupilot.org/dev/docs/ros-cartographer-slam.html>`__ and `object avoidance <https://ardupilot.org/dev/docs/ros-object-avoidance.html>`__.  This project aims to verify and update the instructions for these two features.
+
+Once the above two items are complete, if time permits the next task would be to integrate the offboard object avoidance with ArduPilot Auto mode.  This involves ArduPilot maintaining the final target but then sending it at 1hz (or faster) to ROS's offboard path planning algorithm via mavros.  This will primarily require updating mavros.
 
 - `Randy's video using ROS for path planning around obstacles <https://www.youtube.com/watch?v=u99qwQSl9Z4>`__
 - `mavros PR to allow ROS to accept set-position-target-global-int messages <https://github.com/mavlink/mavros/pull/1184>`__ from ArduPilot to be fed into ROS's navigation algorithm
 
-Rover Autotune
---------------
+Funding will be provided for the required hardware which will likely include an autopilot, Nvidia or RPI4 companion computer, 360 lidar and multicopter or RC car frame
 
-This project involves adding an AutoTune mode to the Rover firmware similar to `Copter's AutoTune mode <https://ardupilot.org/copter/docs/autotune.html>`__ but simpler.  The focus should be on finding the best `turn rate <https://ardupilot.org/rover/docs/rover-tuning-steering-rate.html>`__ and `speed controller <https://ardupilot.org/rover/docs/rover-tuning-throttle-and-speed.html>`__ parameters.  The likely solution will be to provide turn rate or speed targets to the controllers for a short period, measure the response of the vehicle, adjust the gains and repeat until acceptable gains are found.
-
-This project probably requires a good understanding of PID objects and control.
+`Related issue #5608 <https://github.com/ArduPilot/ardupilot/issues/5608>`__
 
 Improve fixed-wing 3D aerobatics support in ArduPilot
 -----------------------------------------------------
@@ -79,13 +138,6 @@ With the addition of prop-hang in ArduPilot (`see here <https://discuss.ardupilo
 This project involves taking that to the next level to add support for "trick" mode. In trick mode, the user will have access to a variety of common 3D maneuvers, including knife-edge, loops, harrier and rolling loops. Implementing this will involve some careful use of quaternion controllers, but a good UI design so the stick inputs to control these tricks are easy to learn.
 Testing can be done in the FlightAxis simulator (as in the above video), allowing for development without risking real aircraft.
 
-Improve Morse simulator integration including supporting boats / ROVs
----------------------------------------------------------------------
-
-Improve ArduPilot's integration with :ref:`Morse simulator <sitl-with-morse>` software including
-
-- Adding support for boats and ROVs with simulated waves to test ArduPilot controls
-- Default camera view to follow the vehicle
 
 Unified performance counter on ArduPilot
 ----------------------------------------
