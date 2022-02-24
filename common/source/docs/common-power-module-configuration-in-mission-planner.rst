@@ -4,6 +4,9 @@
 Power Monitor/Module Configuration in Mission Planner
 =====================================================
 
+
+.. note:: Up to 10 battery monitors may be used in ArduPilot, with parameter groups named BATT\_ through BATT9\_. For this article all parameter name references will be shown for the first monitor, BATT\_
+
 A power monitor can be used to measure the battery voltage and current for use in the battery failsafe and a power module can also provide a stable power supply to the autopilot.
 
 ArduPilot is :ref:`compatible with a number of power modules/monitors <common-powermodule-landingpage>`.
@@ -56,7 +59,7 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 7 	                                    :ref:`SMBus-Generic<common-smart-battery-landingpage>`
 8 	                                    DroneCAN-BatteryInfo
 9 	                                    :ref:`ESC<common-dshot-blheli32-telemetry>`
-10 	                                    SumOfFollowing
+10 	                                    Sum Of Selected Monitors, see BATTx_SUM_MASK parameter
 11 	                                    :ref:`FuelFlow <common-fuel-sensors>`
 12 	                                    :ref:`FuelLevelPWM <common-fuel-sensors>`
 13 	                                    :ref:`SMBUS-SUI3<common-smart-battery-landingpage>`
@@ -68,13 +71,18 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 19 	                                    :ref:`Rotoye<common-smart-battery-rotoye>`
 =================================     =============================
 
+
+.. note:: Once a specific monitor type is selected, parameters associated with that type of monitor will be revealed once parameters are refreshed. Scales and offsets, bus addresses, etc. will be displayed, as appropriate, for that monitor.
+
 Other Parameters
 ----------------
 
-- :ref:`BATT_OPTIONS<BATT_OPTIONS>` bit 0, if set, will ignore the State Of Charge field in DroneCAN moniotrs, since some do not populate this field with meaningful data.
-- :ref:`BATT_SUM_MASK<BATT_SUM_MASK>` is used if the monitor is type "10" (SumofFollowing) to select which of the higher numbered monitors values will be summed and displayed for this monitor.
+- :ref:`BATT_OPTIONS<BATT_OPTIONS>` bit 0, if set, will ignore the State Of Charge field in DroneCAN monitors, since some do not populate this field with meaningful data. Also various options for MPPT type monitors are provided.
+- :ref:`BATT_SUM_MASK<BATT_SUM_MASK>` is used if the monitor is type "10" (Sum Of Selected Monitors) to select which monitors' reported voltages will be averaged, and current values will be summed, and reported for this monitor. Selecting this monitor's own instance number has no effect. If no bits are set, it will average all lower numbered instance's reports.
 - :ref:`BATT_ARM_VOLT<BATT_ARM_VOLT>` is the minimum voltage reported from this monitor that will allow arming to occur.
 - :ref:`BATT_ARM_MAH<BATT_ARM_MAH>` is the minimum capacity remaining reported from this monitor that will allow arming to occur.
+- :ref:`BATT_CURR_MULT<BATT_CURR_MULT>` allows adjusting the current scale for DroneCAN(UAVCAN) monitors which do not have a CAN parameter exposed for adjustment.
+
 
 Failsafe
 --------
