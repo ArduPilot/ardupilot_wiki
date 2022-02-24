@@ -18,7 +18,7 @@ MultiCopters are aerodynamically unstable and absolutely require an
 on-board computer (aka autopilot) for stable flight.  As a
 result, they are "Fly by Wire" systems and if the computer isn't
 working, you aren't flying.  The autopilot combines data from
-small on-board MEMs gyroscopes, accelerometers (the same as those found
+small on-board MEMs gyroscopes and accelerometers (the same as those found
 in smart phones) to maintain an accurate estimate of its orientation
 and position.
 
