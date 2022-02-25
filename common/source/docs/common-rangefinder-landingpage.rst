@@ -65,7 +65,7 @@ Unidirectional Rangefinders
     Avionics Anonymous DroneCAN LIDAR Interface <common-avanon-laserint>
     Benewake TF02 / TF03 <common-benewake-tf02-lidar>
     Benewake TFmini / TFmini Plus / TF-Luna <common-benewake-tfmini-lidar>
-    Garman Lidar-Lite <common-rangefinder-lidarlite>
+    Garmin Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     JSN-SR04T Sonar <common-jsn-sr04t>
