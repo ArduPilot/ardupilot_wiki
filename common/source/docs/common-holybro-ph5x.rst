@@ -125,6 +125,12 @@ Battery Monitoring
 The board has 2 dedicated power monitor ports with a 6 pin
 connector. They are intended for use with the I2C power monitor supplied with the autopilot.
 
+.. note:: do not try to use the Mission Planner SETUP->Optional Hardware->Battery Monitor tab to setup the power monitors. The parameters needed for their operation are already setup by default:
+
+- :ref:`BATT_MONITOR<BATT_MONITOR>` = 21
+- :ref:`BATT_I2C_BUS<BATT_I2C_BUS>` = 1
+- :ref:`BATT_I2C_ADDR<BATT_I2C_ADDR>` = 65
+
 Compass
 =======
 
