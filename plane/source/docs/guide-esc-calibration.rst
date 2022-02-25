@@ -82,4 +82,4 @@ Other ESC Protocols
 
 New ESC's using protocols other than PWM often do not require calibration. 
 Some examples include CAN, OneShot, and DShot. The digital signals replace 
-the need for PWM calibration.
+the need for PWM calibration and are usually pre-set to a range of 1000us to 2000us.
