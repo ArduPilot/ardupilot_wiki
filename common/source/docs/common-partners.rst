@@ -412,7 +412,7 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: https://www.modalai.com/
 
-      - .. image:: ../../../images/supporters/supporters_ing_logo.png
+      - .. image:: ../../../images/supporters/supporters_logo_ing.png
             :width: 250px
             :align: center
             :target: https://www.ingrobotic.com/
@@ -489,6 +489,30 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: https://www.hyl.io
 
+      -  .. image:: ../../../images/supporters/supporters_nordluft.png
+            :width: 250px
+            :align: center
+            :target: http://nordluft.se
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_speedbird.png
+            :width: 250px
+            :align: center
+            :target: https://www.speedbird.aero
+
+      -  .. image:: ../../../images/supporters/supporters_EA.png
+            :width: 250px
+            :align: center
+            :target: https://www.easyaerial.com/
+
+    *
+
+      -  .. image:: ../../../images/supporters/supporters_logo_austin.png
+            :width: 250px
+            :align: center
+            :target: https://www.austinaeronautics.com.au/
+
       -  ..
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
