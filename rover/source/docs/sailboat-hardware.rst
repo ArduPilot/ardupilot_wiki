@@ -72,7 +72,7 @@ If configured with both a motor and sail the vehicle will automatically switch b
 tacking to its destination if required. When the wind speed decrees below that threshold the vehicle will drive to its destination on a direct path as a normal Rover would. If the vehicle gets stuck while trying to tack it will
 also use its throttle to try and complete the tack. 
 
-`RCx_OPTION`  74 - Sailboat motoring 3pos allows the operator to control the motoring states. The the low position the motor is disabled, the vehicle will always try to sail. The middle position is the default automatic switching as explained above. 
+`RCx_OPTION`  74 - Sailboat motoring 3pos allows the operator to control the motoring states. The low position the motor is disabled, the vehicle will always try to sail. The middle position is the default automatic switching as explained above. 
 The switch high position is motoring only, the vehicle will always use the motor and never try to sail.
 
 .. note::
