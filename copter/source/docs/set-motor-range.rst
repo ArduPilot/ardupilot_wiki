@@ -28,7 +28,7 @@ Measuring the deadzone
 Setting Spin-Armed and Min Throttle
 ===================================
 
-By default, when the vehicle is armed but not flying, the motors will spin at a slightly slower than normal speed.  This speed can be configured using :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` paramter (For older versions check MOT_SPIN_ARMED).
+By default, when the vehicle is armed but not flying, the motors will spin at a slightly slower than normal speed.  This speed can be configured using :ref:`MOT_SPIN_ARM <MOT_SPIN_ARM>` parameter (For older versions check MOT_SPIN_ARMED).
 Once the vehicle is flying, we want to ensure that we never output a value that causes the motors to stop spinning, this lower limit can be configured with the :ref:`THR_MIN<THR_MIN>` or :ref:`MOT_SPIN_MIN<MOT_SPIN_MIN>` parameter (depending upon the version).
 
 If using Copter-3.3 (or earlier):
