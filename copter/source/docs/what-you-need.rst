@@ -33,9 +33,18 @@ Autopilot (Autopilot hardware)
 ==============================
 
 Copter's autopilot board determines its capabilities for autonomous
-flight. At time of writing (December 2015)
-:ref:`Pixhawk <common-pixhawk-overview>` is highly recommended for general
-use.
+flight. See the :ref:`ArduPilot compatible autopilot page<Common-autopilots>` for a list.
+An autopilot with the following features is recommended:
+
+- An SD card for logging, terrain data base, scripting (if desired)
+- Sufficient outputs for the number of motors and servos to be used
+- Sufficient number of UARTs for GPS, and telemetry radios, if desired
+- Vibration isolated IMU(s) is very desirable simplifying mounting considerations.
+- Be sure the autopilot includes a barometer
+- I2C for external compass
+
+.. note:: many autopilots have an internal compass, but in order to avoid motor interference, an external compass is sometimes desirable.
+
 
 Developers creating UAV vision applications should consider using a
 separate Companion Computer, or a Linux based autopilot board.
