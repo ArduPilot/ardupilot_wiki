@@ -4,7 +4,7 @@
 Mocking an Airspeed Sensor for Bench Testing
 ============================================
 
-This article explains how you can use a potentiometer with Pixhawk in
+This article explains how you can use a potentiometer with an autopilot in
 order to simulate the input from an Airspeed Sensor. This is very useful
 for ground testing.
 
@@ -13,10 +13,10 @@ Overview
 
 If your aerodynamic surfaces (i.e. auto flaps, ailerons, elevators,
 elevons, etc.) are geared or actuated with airspeed, it may be helpful
-to ground test them on your aircraft by sending Pixhawk a specific
+to ground test them on your aircraft by sending the autopilot a specific
 airspeed.
 
-On Pixhawk you can plug a potentiometer into ADC 6.6v (pin 15) or ADC
+To do this you must apply a voltage to an analog input pin designated as the analog airspeed input. On a Pixhawk you can plug a potentiometer into ADC 6.6v (pin 15) or ADC
 3.3v (pin 11). If you are using an I2C :ref:`airpseed <airspeed>` sensor
 you will temporarily configure your autopilot to use the analogue port.
 
@@ -56,6 +56,6 @@ initialization is complete. Adjust the pot to set your desired speed.
 
    If you are using an I2C airspeed sensor - *remember to re-enable it!*
    Set the ``ARSPD_PIN``
-   parameter to 65, and cycle the Pixhawk power to ensure the I2C airspeed
+   parameter to 65, and cycle the autopilot power to ensure the I2C airspeed
    properly initializes. Check you get the normal 1-3 m/s noise on the
    airspeed display.
