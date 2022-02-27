@@ -153,11 +153,11 @@ Diagnosing failure to arm
 It can be frustrating if your plane refuses to arm. To diagnose arming
 issues follow this guide
 
-Check it is ready to arm
-------------------------
+Check that it is ready to arm
+-----------------------------
 
 If your board has a "ready to arm" LED (the large LED in the middle of
-the board on a Pixhawk) then that LED should be flashing green when the
+the board on a Pixhawk, for example) then that LED should be flashing green when the
 board is ready to arm. If it is flashing yellow then that indicates that
 one of the arming checks is not passing.
 
@@ -209,8 +209,7 @@ autopilot can refuse to arm are (See the :ref:`common-prearm-safety-checks` topi
    materials.
 -  **EKF warmup**. This happens when the EKF is still warming up. Wait
    another 10 seconds and try again.
--  **AHRS not healthy**. This means the EKF is not healthy. If the error
-   persists then try rebooting your board.
+-  **AHRS not healthy**. This means the EKF is not healthy. Often this is due to large variations in GPS position and/or velocity reports, even if a solid 3D lock is reported by the GPS and HDOP is low. Be sure your GPS has a clear "view" of the sky with no obstructions. If the error persists then try rebooting your board.
 -  **3D accel cal needed**. This happens when you have not done a 3D
    accelerometer calibration.
 -  **Inconsistent accelerometers**. This happens when you have multiple
