@@ -341,6 +341,8 @@ GCS (gcs:)
 +---------------+-----------+
 |6              | Info      |
 +---------------+-----------+
+|7              | Debug     |
++---------------+-----------+
 
 
 - :code:`set_message_interval( serial_channel ,  message_type ,  rate )` - Sets the message_type's update rate on SERIAL(serial_channel). For example, gcs:set_message_interval(0, 30, 500000) sets SERIAL0 rate for ATTITUDE message stream (30) to 2.0 Hz (500,000 microseconds)
