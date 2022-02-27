@@ -81,7 +81,7 @@ failsafe code is still active, for example if you have a geofence
 enabled then the aircraft will fly back to the geofence return point.
 
 When enabled, the AFS termination system also sets up the secondary IO
-micro-controller on the Pixhawk autopilot to terminate the aircraft if
+micro-controller on the autopilot to terminate the aircraft if
 communication is interrupted between the main FMU micro-controller and
 the IO micro-controller, for example if the flight firmware crashes.
 
