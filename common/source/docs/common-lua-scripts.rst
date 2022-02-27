@@ -466,6 +466,12 @@ ESC Telemetry (esc_telem:)
 Parameters (param:)
 ~~~~~~~~~~~~~~~~~~~
 
+- :code:`add_table(table_key)` - allow for dynamically added parameter tables from scripts.
+
+- :code:`add_param(table_key)` - add a parameter to a dynamic table.
+
+- :code:`load_int32(table_key)` - Load an AP_Int32 variable from EEPROM using top level key and group element. Used to confirm a key in add_table().
+
 - :code:`get(parameter_name)` - Returns parameter value if available, or nil if not found.
 
 - :code:`set(parameter_name)` - Sets a parameter by name if available. Returns true if the parameter is found.
