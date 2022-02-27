@@ -354,7 +354,7 @@ columns are mislabeled in the Mission Planner (issue here).
 **First column is Relay number** : 0 = First Relay, 1 = Second Relay
 
 **Second column is On/Off** : 0 = Off (i.e. 0V), 1 = On (i.e. 3.3V on
-Pixhawk, 5V on APM)
+most autopilots)
 
 Do-Repeat-Relay
 ~~~~~~~~~~~~~~~
