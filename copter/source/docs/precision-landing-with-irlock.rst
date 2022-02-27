@@ -103,7 +103,7 @@ demo is shown below (using an older firmware).
 If the vehicle does behave appropriately, download the dataflash logs
 and examine the PL messages.
 
--  If the "Heal" (meaining health) field is not "1" then there may be a communication issue between the autopilot and IR-LOCK sensor.
+-  If the "Heal" (meaning health) field is not "1" then there may be a communication issue between the autopilot and IR-LOCK sensor.
 -  If the "TAcq" (meaning Target Acquired) field is not "1" then the sensor is not seeing the target.
 -  The pX, pY values show the horizontal distance to the target from the vehicle.
 -  The vX, vY values show the estimated velocity of the target relative to the vehicle.
