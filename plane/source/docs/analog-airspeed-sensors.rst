@@ -4,6 +4,8 @@
 Analog Airspeed Sensors
 =======================
 
+.. note:: Analog airspeed sensors are becoming hard to obtain, since digital sensors are now as inexpensive and much more accurate and stable. Use of a digital airspeed sensor, versus an analog sensor is highly recommended.
+
 The way this airspeed sensor works is that the top tube is “active” (measures air pressure from the pitot tube that is open at the front and has air driven into it by airspeed) and the bottom one is “static” (measures ambient air pressure from tube with intakes on the side).
 
 Connect the active sensor port using silicon tube to the straight tube exiting from the rear of the pitot tube. The angled tube is the static part connecting to the static port of the sensor (the port on the sensor closest to the PCB)
