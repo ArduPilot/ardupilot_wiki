@@ -10,7 +10,7 @@ Autopilot Info
 .. image:: ../images/pixhackv5.jpg
     :target: ../_images/pixhackv5.jpg
 
-A autopilot with internally damped IMU's is highly recommended for helicopters. Experience has shown the tuning, handling and stability performance of your helicopter will be greatly improved over the first generation Pixhawk.
+A autopilot with internally damped IMU's is highly recommended for helicopters. Experience has shown the tuning, handling and stability performance of your helicopter will be greatly improved over the first generation autopilots, like the Pixhawk.
 
 Before you begin connecting the system it is recommended to review the docs for the autopilot you select.
 

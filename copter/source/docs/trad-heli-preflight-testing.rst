@@ -11,8 +11,8 @@ Before your first flight, please follow these pre-flight checks:
    The drive should be disconnected on electric helicopters when they are
    being handled. An accidental startup can cause serious injury.
 
--  Ensure the USB connector is disconnected from the Pixhawk
--  Connect the battery to power the Pixhawk and servos
+-  Ensure the USB connector is disconnected from the autopilot
+-  Connect the battery to power the autopilot and servos
 
 Test leaning the helicopter in Stabilize mode
 =============================================

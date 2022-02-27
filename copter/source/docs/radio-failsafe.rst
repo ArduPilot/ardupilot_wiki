@@ -102,7 +102,7 @@ Testing
 =======
 
 You can check your failsafe by performing the following tests with the
-Pixhawk/APM connected to the Mission Planner either via a USB cable or
+autopilot connected to the Mission Planner either via a USB cable or
 telemetry link. You can complete these tests without plugging in your
 LiPo battery but if you do connect a battery you should first remove the
 propellers.
