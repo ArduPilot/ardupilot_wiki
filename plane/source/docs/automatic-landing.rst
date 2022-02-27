@@ -267,12 +267,12 @@ If a Lidar isn't fitted then there are a few things you can do to
 minimise barometric error problems with auto-land
 
 -  perform a barometer calibration after the electronics have warmed up.
-   The easiest way to do this with a Pixhawk is to disarm the plane with
+   The easiest way to do this is to disarm the plane with rudder-disarming, arm/disarm switch, or
    the safety switch. When the plane is disarmed it assumes it is on the
-   ground and will zero the barometer to the current pressure.
+   ground and will zero the barometer to the current pressure. It will also reset the HOME position and altitude.
 -  try to prevent direct airflow over the autopilot that could cause
    speed related pressure changes
--  fly shorter flights, allowing for less time for airpressure changes.
+-  fly shorter flights, allowing for less time for air pressure changes.
    Check your logs and see if the landing is happening at zero altitude
    consistently
 
