@@ -47,7 +47,8 @@ In addition, the behavior of QuadPlane can be modified by the setting of the :re
 -  bit 15, if set, will allow pilot to control descent during VTOL  auto LAND phases, similar to throttle stick action during QHOVER or QLOITER.
 -  bit 16, if set, will disable the fixed wing approach in QRTL mode and VTOL_LANDING mission items, see Hybrid RTL modes section of :ref:`quadplane-flying` for details of this hybrid landing approach.
 -  bit 17, if set, will enable pilot horizontal re-positioning during VTOL auto LAND phases, momentarily pausing the descent while doing so.
-
+-  bit 18, if set, will only allow arming in VTOL and AUTO modes. This can be used for tailsitters to prevent arming in a fixed wing mode when sitting in VTOl stance.
+-  bit 19, if set, will allow the forcing of VTOL to Fixed Wing transitions if :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` is not zero and exceeded, and if the airspeed is greater than 1/2 of :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`, then the transition to fixed wing will immediately complete, rather than taking the :ref:`Q_TRANS_FAIL_ACT<Q_TRANS_FAIL_ACT>` action. See :ref:`quadplane-transitions`.
 
 Behavior can be modified as well as by the :ref:`Q_RTL_MODE<Q_RTL_MODE>` and :ref:`Q_GUIDED_MODE<Q_GUIDED_MODE>` parameters.
 
