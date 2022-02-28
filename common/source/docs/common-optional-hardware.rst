@@ -56,8 +56,8 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="copter,plane"]
     Optical Flow Sensor <common-optical-flow-sensors-landingpage>
 [/site]
-[site wiki="copter"]
-    Parachute <parachute>
+[site wiki="copter, plane"]
+    Parachute <common-parachute>
 [/site]
     Power Modules <common-powermodule-landingpage>
     Power Tether <common-power-tether>
