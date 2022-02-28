@@ -20,5 +20,5 @@ The main failsafe topics are listed below.
     Vibration Failsafe <vibration-failsafe>
     Terrain Data Loss Failsafe (see section on loss of terrain data induced RTL) <terrain-following>
     Crash Check <crash_check>
-    Parachute <parachute>
+    Parachute <common-parachute>
     Independent Watchdog <common-watchdog>
