@@ -113,7 +113,7 @@ Plane provides an option to force the release servo or relay to remain active fo
 RC Disable/Enable of Parachute
 ------------------------------
 
-You can disable or enable the parachute AUTOMATIC release using an RC channel/switch: set an ``RCx_OPTION`` to 21. A high enables the automatic release function, low disables it. Manual release is unaffected. If set to 23 (Parachute 3Pos), the low position disables, middle position enables auto operation, a high will attempt to force release, as explained above, assuming the enabling conditions described below.
+You can disable or enable the parachute automatic release using an RC channel/switch: set an ``RCx_OPTION`` to 21. A high enables the automatic release function, low disables it. Manual release is unaffected. If set to 23 (Parachute 3Pos), the low position disables, middle position enables auto operation, a high will attempt to force release, as explained above, assuming the enabling conditions described below.
 
 When will the parachute deploy?
 ===============================
