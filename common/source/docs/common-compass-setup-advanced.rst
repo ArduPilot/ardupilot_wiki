@@ -156,6 +156,9 @@ In the 4.0 releases of ArduPilot, an automatic offset learning feature is availa
   1. set :ref:`COMPASS_LEARN<COMPASS_LEARN>` = 3. The message “CompassLearn: Initialised” will appear on the MP’s message tab (it does not appear in red letters on the HUD).
   2. “Bad Compass” will appear but this is nothing to be worried about. We will hopefully make this disappear before the final release.
   3. Arm and drive/fly the vehicle around in whatever mode you like, do some turns “CompassLearn: have earth field” should appear on MP’s message tab and then eventually “CompassLearn: finished”.
+
+.. note:: You MUST have a GPS lock and signal for this to be successful. Be sure the GPS has a clear "view" of the sky and there are no obstructions blocking the GPS signals.
+
   4. If you want you can check the :ref:`COMPASS_LEARN<COMPASS_LEARN>` parameter has been set back to zero (you may need to refresh parameters to see this) and the COMPASS_OFS_X/Y/Z values will have changed.
   5. This method can also be evoked using the RCxOPTION for "Compass Learn". It will activate when the channel goes above 1800uS and automatically complete and save.
 
