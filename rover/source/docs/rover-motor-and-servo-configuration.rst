@@ -80,7 +80,7 @@ The Mission Planner (and perhaps other GCSs) can be used to test the direction o
 - increase the "Throttle %" to 20
 - push the "Test motor" buttons to test the steering and motors.
 
-  - for rovers with separate steering and throttle, pushing the the "Test motor A" button should cause the wheels to turn forward, "Test motor B" should cause steering to turn right.
+  - for rovers with separate steering and throttle, pushing the "Test motor A" button should cause the wheels to turn forward, "Test motor B" should cause steering to turn right.
   - for rovers with skid steering, "Test motor C" should cause the left wheel to turn forward.  "Test motor D" should cause the right wheel to turn forward.
 - If the motors or steering do not move in the correct direction change the appropriate ``SERVOx_REVERSED`` value and try again.
 - if a "command rejected" message appears or the motors or steering do not respond to the test, the cause may be written in the Mission Planner's Flight Data >> Messages tab (see bottom left of window).  Common causes included the radio calibration has not been performed or the ``SERVOx_FUNCTION`` parameters have not been set correctly.
