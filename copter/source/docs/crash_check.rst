@@ -6,7 +6,7 @@ Crash Check
 
 Copter includes a crash check which disarms the motors in cases where the vehicle is likely out of control and has hit the ground.  This reduces damage to the vehicle and also reduces the chance of injury to people near the vehicle.
 
-The crash check is similar to the :ref:`parachute release <parachute>` logic except that the parachute will normally release as the vehicle falls, while the crash check should trigger once the vehicle has hit the ground.
+The crash check is similar to the :ref:`parachute release <common-parachute>` logic except that the parachute will normally release as the vehicle falls, while the crash check should trigger once the vehicle has hit the ground.
 
 When will the crash check disarm the motors?
 ============================================

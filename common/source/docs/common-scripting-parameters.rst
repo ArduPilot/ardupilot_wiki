@@ -81,3 +81,5 @@ LUA created parameters exist in the same manner as firmware created parameters. 
 This also means that parameters created by one script, which are modified by a user or script, are still in storage. If that script is removed, another script with different parameters is run, then removed, and the original script re-run, those changed parameters will re-appear in the GCS with their last values and can be accessed again by the script. Resetting all the parameters to defaults will erase those changes, just like the firmware created parameters.
 
 From LUA scripts you can access any parameter (created by firmware or by LUA script) by name. However, that is slow since the LUA interpreter must do a long string name search each time. Instead, using a Parameter() object and initializing it, gives the address pointers to that named parameter's location for direct accessing it quickly.
+
+[copywiki destination="copter,plane,rover,dev"]
