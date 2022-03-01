@@ -369,7 +369,7 @@ Operates the :ref:`gripper <common-gripper-landingpage>`.  Switch pulled low rel
    <td><strong>Parachute Enable</strong></td>
    <td>
 
-Enables the automatic release of the :ref:`parachute <parachute>` (this does not immediately trigger the release).
+Enables the automatic release of the :ref:`parachute <common-parachute>` (this does not immediately trigger the release).
 
 .. raw:: html
 
@@ -379,7 +379,7 @@ Enables the automatic release of the :ref:`parachute <parachute>` (this does not
    <td><strong>Parachute Release</strong></td>
    <td>
 
-Immediately triggers the release of the :ref:`parachute <parachute>` as long as the vehicle is not landed or too low.
+Immediately triggers the release of the :ref:`parachute <common-parachute>` as long as the vehicle is not landed or too low.
 
 .. raw:: html
 
@@ -389,7 +389,7 @@ Immediately triggers the release of the :ref:`parachute <parachute>` as long as 
    <td><strong>Parachute 3Pos</strong></td>
    <td>
 
-Switch pulled low disables the :ref:`parachute <parachute>`.  Switch in middle enables the parachute for automatic release.  Switch pulled high triggers release of the parachute as long as vehicle is not landed or too low.
+Switch pulled low disables the :ref:`parachute <common-parachute>`.  Switch in middle enables the parachute for automatic release.  Switch pulled high triggers release of the parachute as long as vehicle is not landed or too low.
 
 .. raw:: html
 
