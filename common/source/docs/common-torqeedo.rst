@@ -113,5 +113,5 @@ Introduction Videos
 .. youtube:: Wt7vfV4CcFc
     :width: 100%
 
-[copywiki destination="rover,dev"]
+[copywiki destination="rover"]
 
