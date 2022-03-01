@@ -77,4 +77,3 @@ Videos
 ..  youtube:: s4YxbC2ZW50
     :width: 100%
 
-[copywiki destination="plane,copter,rover,dev"]
