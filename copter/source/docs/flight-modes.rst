@@ -10,7 +10,7 @@ for Copter.
 Overview
 ========
 
-Copter has 25 flight built-in flight modes, 10 of which are regularly
+Copter has 23 flight built-in flight modes, 10 of which are regularly
 used. There are modes to support different levels/types of flight
 stabilization, a sophisticated autopilot, a follow-me system etc.
 
@@ -47,7 +47,6 @@ The table below shows for each flight mode whether it provides altitude or posit
    <tr><td>Stabilize</td><td>-</td><td>+</td><td></td><td>Self-levels the roll and pitch axis</td></tr>
    <tr><td>SysID</td><td>-</td><td>+</td><td></td><td>Special diagnostic/modeling mode</td></tr>
    <tr><td>Throw</td><td>A</td><td>A</td><td>Y</td><td>Holds position after a throwing takeoff</td></tr>
-   <tr><td>Turtle</td><td>-</td><td>-</td><td></td><td>Allows reversing and spinning up adjacent pairs of motors in order to flip a crashed, inverted vehicle back upright</td></tr>
    <tr><td>ZigZag</td><td>A</td><td>A</td><td>Y</td><td>Useful for crop spraying</td></tr>
    </table>
 
@@ -98,7 +97,6 @@ Additional flight modes:
 -  :ref:`Simple and Super Simple <simpleandsuper-simple-modes>`
 -  :ref:`Smart RTL (Return-to-Launch) <smartrtl-mode>`
 -  :ref:`SysID (System Identification) <systemid-mode>`
--  :ref:`Turtle <turtle-mode>`
 -  :ref:`ZigZag <zigzag-mode>`
 -  :ref:`Avoid_ADSB <common-ads-b-receiver>` for ADS-B based avoidance of manned aircraft.  Should not be set-up as a pilot selectable flight mode.
 
@@ -139,7 +137,6 @@ Do not require position information:
 -  :ref:`Stabilize <stabilize-mode>`
 -  :ref:`Sport <sport-mode>`
 -  :ref:`SysID <systemid-mode>`
--  :ref:`Turtle <turtle-mode>`
 -  :ref:`Land <land-mode>`
 
 Full list of flight modes
@@ -171,5 +168,4 @@ Full list of flight modes
     Stabilize <stabilize-mode>
     System Identification <systemid-mode>
     Throw <throw-mode>
-    Turtle <turtle-mode>
     ZigZag <zigzag-mode>
