@@ -67,6 +67,7 @@ Unidirectional Rangefinders
     Benewake TFmini / TFmini Plus / TF-Luna <common-benewake-tfmini-lidar>
     Garmin Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
+    Hondex Sonar<common-hondex-sonar>
     HC-SR04 Sonar <common-rangefinder-hcsr04>
     JSN-SR04T Sonar <common-jsn-sr04t>
     LeddarTech Leddar One <common-leddar-one-lidar>
