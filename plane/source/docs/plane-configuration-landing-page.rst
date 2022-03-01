@@ -14,7 +14,7 @@ components, including those required for the operation of the autopilot.
    airspeed sensor, optical flow, OSD, camera gimbal, antenna tracker
    etc.
    
-.. note:: Airspeed sensor defaults to MS4525. If you don't have an Airspeed sensor or don't have an MS4525 then it's probably a good idea to at least check the settings.
+.. note::  :ref:`ARSPD_TYPE<ARSPD_TYPE>`  defaults to MS4525. If you don't have an Airspeed sensor or don't have an MS4525 then you should change it and other airspeed related parameters, appropriately.
 
 .. toctree::
     :maxdepth: 1
