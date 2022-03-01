@@ -71,4 +71,4 @@ User Videos
 .. youtube:: pGluWMlIXho
     :width: 100%
 
-[copywiki destination="rover,dev"]
+[copywiki destination="rover"]
