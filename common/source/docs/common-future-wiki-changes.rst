@@ -315,19 +315,4 @@ add to mode TOC tree:
 
     :LOITER_TO_QLAND mode page
 
-Copter
-======
-
-:ref:`copter:connect-escs-and-motors` page:
--------------------------------------------
-
-add:
-
-Y4
---
-
-.. image:: ../../../images/motororder-Y4a-2d.jpg
-    :target: ../_images/motororder-Y4a-2d.jpg
-    :width: 35%
-
 [copywiki destination="plane,copter,rover,dev"]
