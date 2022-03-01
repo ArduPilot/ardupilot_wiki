@@ -34,6 +34,7 @@ CAN/DroneCAN Power Monitor
     :maxdepth: 1
 
     CUAV CAN/DroneCAN PMU<common-can-pmu>
+    Packet Digital MPPT Solar Controller <common-packetdigital-mppt>
     Pomegranate Systems<common-pomegranate-systems-pm>
 
 I2C Power Monitor

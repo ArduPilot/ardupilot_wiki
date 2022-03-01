@@ -14,7 +14,6 @@ This lists features or changes merged in master and build in the "latest" firmwa
 
     Multiple Screen And Display Port Support for MultiWii/DJI OSD <common-msp-osd-overview-4.2>
     MSP Telemetry Addition of Canvass Mode <common-msp-overview-4.2>
-    Packet Digital MPPT Solar Controller <common-packetdigital-mppt>
     Swan K-1 Copter Tailsitter <common-Swan-K1>
 [site wiki="plane"]
     LOITER_TO_QLAND flight mode <loiter-to-qland-mode>
