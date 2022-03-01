@@ -60,7 +60,6 @@ Connecting to Mission Planner's SITL
 - On Config/Tuning, Planner set the Layout drop-down to "Advanced"
 - On the top menu bar, select Simulation
 - From the "Model" drop-down, select "flightaxis" and push the Multirotor icon
-- on the Full Parameter List or Tree screens, on the right-side select realflight-quad and press load parameters
 
   .. image:: ../images/realflight-mp-sitl.jpg
     :target: ../_images/realflight-mp-sitl.jpg
@@ -76,7 +75,7 @@ If the vehicle's position is not reset, from within RealFlight:
   - press OK
   - after the vehicles position is reset, press the transmitter's "Reset" button or PC spacebar again
 
-At this point, load the parameter file for this "QuadCopterX-flightaxis" model via Mission Planner. You are now ready to arm and fly.
+At this point, load the parameter file upi downloaded for this "QuadCopterX-flightaxis" model via Mission Planner. Use the Full Parameter List or Tree screens, and on the right-side, select ``Load from file`` and select the parameter file. You are now ready to arm and fly.
 
 .. note:: as with a real vehicle, sometimes loading parameters "enables" other groups of parameters which will not be set during the first load. If you get a message when loading parameters that you have enabled others, reload the parameter file to change those newly revealed parameter groups.
 
