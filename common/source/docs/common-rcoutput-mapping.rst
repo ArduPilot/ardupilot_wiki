@@ -373,7 +373,7 @@ This provides an output that reflects the ARM/DISARM state of the vehicle to con
 Parachute Release
 +++++++++++++++++
 
-See :ref:`Parachute<copter:parachute>` section.
+See :ref:`Parachute<common-parachute>` section.
 
 Landing Gear
 ++++++++++++
