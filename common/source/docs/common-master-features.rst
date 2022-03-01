@@ -13,7 +13,6 @@ This lists features or changes merged in master and build in the "latest" firmwa
     :maxdepth: 1
 
 [site wiki="rover,dev"]
-    AIS for boats <common-ais>
     Hondex Sonar <common-hondex-sonar>
     Torqeedo motor <common-torqeedo>
 [/site]
