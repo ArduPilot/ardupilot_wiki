@@ -13,6 +13,8 @@ components, including those required for the operation of the autopilot.
    may also choose to :ref:`Configure Optional Hardware <common-optional-hardware>` including battery monitor, sonar,
    airspeed sensor, optical flow, OSD, camera gimbal, antenna tracker
    etc.
+   
+.. note:: Airspeed sensor defaults to MS4525. If you don't have an Airspeed sensor or don't have an MS4525 then it's probably a good idea to at least check the settings.
 
 .. toctree::
     :maxdepth: 1

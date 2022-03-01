@@ -4,7 +4,7 @@
 Airspeed Parameters Setup
 =========================
 
-.. note: ArduPlane does not require an airspeed sensor. However, some airspeed related parameters are used even if no airspeed sensor is present or being used, notably for the scaling of tuning parameters with speed.
+.. note: ArduPlane does not require an airspeed sensor. However, some airspeed related parameters are used even if no airspeed sensor is present or being used, notably for the scaling of tuning parameters with speed. If you are not using an airspeed sensor set ARSPD_TYPE to 0. 
 
 Speed Scaling
 =============
