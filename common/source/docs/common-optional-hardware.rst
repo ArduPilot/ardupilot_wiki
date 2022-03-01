@@ -80,6 +80,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Start/Stop Switch <startstop-switch>
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
+[site wiki="rover"]
+    Torqeedo Electric Motor <common-torqeedo>
+[/site]
     DroneCAN Adapter Node <common-uavcan-adapter-node>
     DroneCAN Peripherals <common-uavcan-peripherals>
     Video (High Definition) <common-video-landingpage>
