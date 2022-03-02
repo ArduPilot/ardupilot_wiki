@@ -48,7 +48,7 @@ Specifications
 
 -  **Sensors**
 
-   - Three redundant IMUs (Accelerometers and Gyroscopes), Two Barometer, One Magnetometer
+   - Three redundant IMUs (Accelerometers/Gyroscopes), Two Barometers, One Magnetometer
    -  ICM 20649 integrated accelerometer / gyro, MS5611 barometer on base board
    -  InvenSense ICM20602 IMU,ICM20948 IMU/MAG, MS5611 barometer on temperature controlled, vibration isolated board
    -  All sensors connected via SPI.
