@@ -100,7 +100,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        40            | Object Avoidance           |    X     |         |    X    |
 +----------------------+----------------------------+----------+---------+---------+
-|        41            | Arm Disarm                 |    X     |    X    |    X    |
+|        41            | Arm Disarm (4.1 and before)|    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
 |        42            | SMARTRTL mode              |    X     |         |    X    |
 +----------------------+----------------------------+----------+---------+---------+
@@ -219,6 +219,22 @@ Supported Features
 |        107           | Enable Autotuning          |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 |        108           | QRTL Mode                  |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        150           | CRUISE Mode                |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        151           | TURTLE Mode                |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        152           | SIMPLE mode heading reset  |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        153           | ARM/DISARM (4.2 and higher)|    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        154           | ARM/DISARM with AIRMODE on |    X     |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        155           | TRIM RC/SERVO Save         |          |    X    |   X     |
++----------------------+----------------------------+----------+---------+---------+
+|        156           | TORQEEDO Error Clear       |          |         |   X     |
++----------------------+----------------------------+----------+---------+---------+
+|        157           | Force FBWA Long FS Action  |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
 
 Intended as continuous PWM range control inputs:
@@ -559,7 +575,7 @@ When switch is high, avoid objects using :ref:`Lightware SF40c <common-lightware
    </td>
    </tr>
    <tr>
-   <td><strong>Arm/Disarm</strong></td>
+   <td><strong>Arm/Disarm(4.1 and earlier)</strong></td>
    <td>
 
 Arms the vehicle if the switch goes high (subject to arming checks).
@@ -913,6 +929,67 @@ Forces Airspeed Use to be disabled for testing in the air.
    <td>
 
 Allows tuning without entering AUTOTUNE mode. ie place vehicle in LOITER/AUTO with stick mixing enabled, and can autotune while vehicle is loitering by using sticks.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>SIMPLE mode heading reset</strong></td>
+   <td>
+
+Resets original heading reference to current heading for SIMPLE Mode.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>ARM/DISARM (4.2 and higher)</strong></td>
+   <td>
+
+Arms the vehicle if the switch goes high (subject to arming checks).
+Disarms the vehicle unconditionally if brought low.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>ARM/DISARM with AIRMODE on</strong></td>
+   <td>
+
+Arms the vehicle if the switch goes high (subject to arming checks) with AIRMODE active. Airmode rc option switch can subsequently enable or disable if it is configured. Disarms the vehicle unconditionally if brought low.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>TRIM RC/SERVO Save</strong></td>
+   <td>
+
+Saves current RC input trim and SERVO output trim for pitch. roll, and yaw in Plane and for Steering in Rover.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Torqeedo Error Clear</strong></td>
+   <td>
+
+Clears error condition in Torqeedo motor controller.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Force FBWA as Long FS Action</strong></td>
+   <td>
+
+Forces mode change to FBWA in Long FS, overriding the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` parameter value for emergency landings beyond RC control range to prevent normal failasfe action from occurring.
 
 .. raw:: html
 
