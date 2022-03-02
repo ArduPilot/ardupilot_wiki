@@ -43,6 +43,7 @@ In FBWB or CRUISE, the target airspeed can be directly controlled with the throt
 
 While cruising, the artificial horizon in the OSD or GCS may show an average positive or negative pitch above the level indicator (ie fuselage/autopilot level). This means that the "trim level" pitch or AOA is different than what was set during the accelerometer calibration step. This can be trimmed out so that non altitude controlled modes fly at the same speed and throttle. Do this by adjusting the pitch trim, adding the desired degrees nose up or down using :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>`. This also optimizes the speed control loop bias point and will allow non altitude controlled modes to fly level at the same throttle and speed. 
 
+Using :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` to adjust cruise attitude will also add an offset to the artificial horizon on a GCS or an OSD, but this can be disabled, if desired, using the :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bitmask bits 8 and/or 9, if the attitude of the flight controller in level flight is desired, rather than a leveled artificial horizon when flying level .
 
 Without an Airspeed Sensor
 --------------------------
