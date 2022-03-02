@@ -126,10 +126,6 @@ The following is a description of the actions that can be taken for battery fail
 +     |                  | otherwise do nothing                                                        +
 +-----+------------------+-----------------------------------------------------------------------------+
 
-:ref:`quadplane-flight-modes` page:
 
-add to mode TOC tree:
-
-    :LOITER_TO_QLAND mode page
 
 [copywiki destination="plane,copter,rover,dev"]

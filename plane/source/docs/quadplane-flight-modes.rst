@@ -16,6 +16,7 @@ extra modes. Most are identical to equivalent Copter modes:
     QRTL      (Mode 21) <qrtl-mode>
     QAUTOTUNE (Mode 22) <qautotune-mode>
     QACRO     (Mode 23) <qacro-mode>
+    LOITER to QLAND (mode 25) <loiter-to-qland-mode>
     AIRMODE** <airmode>
 
 ** not actually a flight mode, but rather a feature of QACRO and QSTABILIZE
