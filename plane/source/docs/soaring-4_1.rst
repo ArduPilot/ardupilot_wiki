@@ -215,6 +215,14 @@ and then begin a gliding descent. Watch the telemetry graphs or look at the Data
 by increasing ``PTCH2SRV_IMAX`` and :ref:`TECS_INTEG_GAIN<TECS_INTEG_GAIN>` to achieve good airspeed
 tracking in gliding flight.
 
+Speed to Fly Feature
+====================
+
+.. toctree::
+    :maxdepth: 1
+
+    Soaring speed to fly <soaring-speed-to-fly>
+
 Notes
 =====
 
