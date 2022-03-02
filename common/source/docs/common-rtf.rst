@@ -59,6 +59,7 @@ VTOL/QuadPlanes from Partners
 * `SpektreWorks - Cobalt 55 E-VTOL <https://www.spektreworks.com/cobalt>`__
 * `SpektreWorks - Cobalt 55 G-VTOL <https://www.spektreworks.com/cobalt>`__
 * `SpektreWorks - Cobalt 110 G-VTOL <https://www.spektreworks.com/cobalt>`__  
+*  :ref:`Swan-K1 <common-Swan-K1>`
 
 Rovers from Partners
 ====================

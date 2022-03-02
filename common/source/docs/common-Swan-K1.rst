@@ -93,4 +93,3 @@ Where to Buy
 
 `Holybro <https://shop.holybro.com/swan-k1_p1246.html>`__
 
-[copywiki destination="plane,copter,rover,dev"]

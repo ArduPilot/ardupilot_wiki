@@ -12,8 +12,6 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
-    Swan K-1 Copter Tailsitter <common-Swan-K1>
-
     Other wiki changes <common-future-wiki-changes>
 
 

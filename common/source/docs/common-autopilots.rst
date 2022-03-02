@@ -84,6 +84,7 @@ Closed hardware
     QioTek Zealot F427 <common-qiotek-zealot>
     QioTek Zealot H743 <common-qiotek-zealoth7>
     Sky-Drones AIRLink <common-skydrones-airlink>
+    Swan-K1 <common-Swan-K1>
     SpeedyBee F4 (this board currently is non-verified) <common-speedybeef4>
     VR Brain 5 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrain5-detail>
     VR uBrain 5.1 <http://www.virtualrobotix.it/index.php/en/shop/autopilot/vrbrainmicro51-detail>
