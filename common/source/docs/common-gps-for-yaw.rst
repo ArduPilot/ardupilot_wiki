@@ -33,14 +33,14 @@ Hardware Setup
 - The 2nd GPS should be connected to a serial/telem port on the
   autopilot.  These instructions assume Serial4/Telem4 is used but any
   serial port should work
-- both GPS modules must be connected to ArduPilot via their UART1 connectors
+- Serial GPS modules must be connected to ArduPilot via their UART1 connectors, DroneCAN modules via CAN, or interconnected per their manufacturer instructions.
 
 Configuration
 -------------
 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5 ("GPS") assuming the 2nd GPS is connected to serial port 4
-- :ref:`GPS_TYPE <GPS_TYPE>` = 17 ("UBlox moving baseline base")
-- :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover")
+- :ref:`GPS_TYPE <GPS_TYPE>` = 17 ("UBlox moving baseline base") or 22 (DroneCAN-MovingBaseline-Base), as appropriate.
+- :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover") or 23 (DroneCAN-MovingBaseline-Rover), as appropriate.
 - Set the :ref:`GPS_POS1_X <GPS_POS1_X>`/Y/Z and :ref:`GPS_POS2_X <GPS_POS2_X>`/Y/Z parameters for the GPSs (see :ref:`Sensor Position Offset are here <common-sensor-offset-compensation>`)
 - :ref:`GPS_AUTO_SWITCH <GPS_AUTO_SWITCH>` = 1
 - :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` = 3 (to use EKF3)
