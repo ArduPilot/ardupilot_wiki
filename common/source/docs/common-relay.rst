@@ -1,5 +1,9 @@
 .. _common-relay:
 
+.. note:
+
+   ArduPilot 4.2 now requires servo/relay pin functions (SERVOn_FUNCTION) to be set to -1 for those pins to be used as relay pins.
+
 ============
 Relay Switch
 ============
