@@ -56,6 +56,8 @@ ______________________________________________________________________
 
 .. note:: F7/H7 boards can have the FPort connected to the UARTs RX pin, instead of the TX pin as shown above, and use the UART's SWAP option. F4 boards do not have this SWAP capability See :ref:`common-Fport-receivers` for more information.
 
+.. note::  some autopilots, like the Cube Orange flight controller, have level shifters on their UART pins used on their Telemetry ports. This requires a 10K pulldown resistor externally on the receiver's SPort signal to work properly. 
+
 .. _frsky_cables:
 
 Bi-Directional Inverter cables
