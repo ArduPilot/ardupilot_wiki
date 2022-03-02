@@ -26,6 +26,7 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
     Serial ESCs <common-serial-escs>
 [site wiki="rover"]
     Thrusters (for boats) <thrusters>
+    Torqeedo Electric Motor (for boats) <common-torqeedo>
 [/site]
     Toshiba CAN ESCs <common-toshiba-can-escs>
 [site wiki="rover"]
