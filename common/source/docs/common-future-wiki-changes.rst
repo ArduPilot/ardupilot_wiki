@@ -7,19 +7,6 @@ Future Wiki Changes (in Master branch now)
 Common
 ======
 
-:ref:`common-gps-for-yaw` page
-------------------------------
-
-under Hardware Setup change last bullet to read:
-
-- Serial GPS modules must be connected to ArduPilot via their UART1 connectors, DroneCAN modules via CAN, or interconnected per their manufacturer instructions.
-
-under Configuration change GPS type param bullets to read:
-
-- :ref:`GPS_TYPE <GPS_TYPE>` = 17 ("UBlox moving baseline base") or 22 (DroneCAN-MovingBaseline-Base), as appropriate.
-- :ref:`GPS_TYPE2 <GPS_TYPE2>` = 18 ("UBlox moving baseline rover") or 23 (DroneCAN-MovingBaseline-Rover), as appropriate.
-
-
 :ref:`common-power-module-configuration-in-mission-planner` page
 ----------------------------------------------------------------
 
