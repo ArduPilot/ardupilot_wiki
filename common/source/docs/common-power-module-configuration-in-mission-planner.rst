@@ -69,6 +69,10 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 17 	                                    :ref:`Generator-Elec<common-ie650-fuelcell>`
 18 	                                    :ref:`Generator-Fuel<common-ie650-fuelcell>`
 19 	                                    :ref:`Rotoye<common-smart-battery-rotoye>`
+20 	                                    MPPT
+21 	                                    INA2XX
+22 	                                    LTC2946
+23 	                                    Torqeedo Motor Controller
 =================================     =============================
 
 
