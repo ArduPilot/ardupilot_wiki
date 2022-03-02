@@ -42,6 +42,7 @@ of functionality available.
    <tr><td>Q(Copter Modes)</td><td>s</td><td>s</td><td>A</td><td>Y</td><td>Y</td><td>Varies depending on mode. See quadplane documentation</td></tr>
    <tr><td>AUTO</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Follows Mission</td></tr>
    <tr><td>LOITER</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Circles point where mode switched</td></tr>
+   <tr><td>LOITER to QLAND</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Loiter down to :ref:`Q_RTL_ALT<Q_RTL_ALT>` and QLAND</td></tr>
    <tr><td>CIRCLE</td><td>A</td><td>A</td><td>A</td><td></td><td></td><td>Gently turns aircraft</td></tr>
    <tr><td>GUIDED</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Circles user defined point from GCS</td></tr>
    <tr><td>Return To Launch (RTL)</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Returns to and circles home or rally point</td></tr>
@@ -94,6 +95,7 @@ Flight Mode List
     GUIDED Mode <guided-mode>
     LAND Mode <land-mode>
     LOITER Mode <loiter-mode>
+    LOITER to QLAND Mode <loiter-to-qland-mode>
     MANUAL Mode <manual-mode>
     RTL Mode (Return To Launch) <rtl-mode>
     STABILIZE Mode <stabilize-mode>
