@@ -46,8 +46,7 @@ Setting Up A Tilt-Rotor
 =======================
 
 The first thing you need to do is enable QuadPlane support by setting
-:ref:`Q_ENABLE<Q_ENABLE>` to 1, and then choose the right quadplane frame class and
-frame type.
+:ref:`Q_ENABLE<Q_ENABLE>` to 1 and Tilt Rotor support by setting :ref:`Q_TILT_ENABLE<Q_TILT_ENABLE>` = "1", and then choose the right quadplane frame class and frame type.
 
 The quadplane frame class is in :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` . The frame class is
 chosen based on your vehicles rotor configuration while

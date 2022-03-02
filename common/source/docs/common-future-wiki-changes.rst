@@ -8,20 +8,6 @@ Future Wiki Changes (in Master branch now)
 Plane
 =====
 
-:ref:`soaring-4_1` page:
--------------------------
-
-Add content from :ref:`soaring-speed-to-fly`
-
-:ref:`guide-tilt-rotor` page:
------------------------------
-
-Under Setting Up a Tilt Rotor replace first sentence with:
-
-The first thing you need to do is enable QuadPlane support by setting
-:ref:`Q_ENABLE<Q_ENABLE>` to 1 and Tilt Rotor support by setting :ref:`Q_TILT_ENABLE<Q_TILT_ENABLE>` = "1", and then choose the right quadplane frame class and
-frame type.
-
 :ref:`apms-failsafe-function` page:
 -----------------------------------
 
