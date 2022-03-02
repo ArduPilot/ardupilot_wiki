@@ -39,6 +39,3 @@ There are 3 MSP backends selected by serial protocol:
 When :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 33 is selected the protocol decoder can work in polling mode (default) or in "telemetry push" mode. When working in polling mode, both TX and RX must be connected to the MSP telemetry transceiver. While in push mode only the TX line is used. To enable push mode, simply set :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 0 to "1"; to disable set it to "0" (default).
 
 MSP sensors such as the Matek 3901-L0X are supported by both protocols.
-
-
-[copywiki destination="plane,copter,rover,dev"]

@@ -15,5 +15,7 @@ Some autopilot board have an OSD integrated, OSD can be via an external MAVLink 
 
     Onboard OSD for FPV and simulation <common-osd-overview>
     Minim OSD <common-minim-osd-quick-installation-guide>
-    MSP OSD <common-msp-osd-overview>
+    MSP OSD (version 4.1) <common-msp-osd-overview>
+    MultiWii/DJI OSD (version 4.2) <common-msp-osd-overview-4.2>
+    MSP Telemetry Addition of Canvass Mode <common-msp-overview-4.2>
     OSD Parameter Editor <common-paramosd>

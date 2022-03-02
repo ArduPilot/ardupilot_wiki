@@ -26,7 +26,8 @@ Short Range (<10KM)
     FrSky telemetry <common-frsky-telemetry>
     Yaapu Bi-Directional Telemetry GCS <common-yaapu-gcs>
     HOTT telemetry <common-hott-telemetry>
-    MSP (MultiWii Serial Protocol) <common-msp-overview>
+    MSP (MultiWii Serial Protocol)(version 4.1) <common-msp-overview>
+    MSP (version 4.2) <common-msp-overview-4.2>
     SiK Radio v1 <common-3dr-radio-v1>
     SiK Radio v2 <common-sik-telemetry-radio>
     SiK Radio configuration <common-configuring-a-telemetry-radio-using-mission-planner>
