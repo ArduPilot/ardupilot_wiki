@@ -7,20 +7,6 @@ Future Wiki Changes (in Master branch now)
 Common
 ======
 
-:ref:`common-power-module-configuration-in-mission-planner` page
-----------------------------------------------------------------
-
-Add to power monitors table:
-
-=================================     =============================
-:Ref:`BATT_MONITOR<BATT_MONITOR>`       TYPE
-=================================     =============================
-20 	                                    MPPT
-21 	                                    INA2XX
-22 	                                    LTC2946
-23 	                                    Torqeedo
-=================================     =============================
-
 :ref:`common-frsky-telemetry` page
 ----------------------------------
 
