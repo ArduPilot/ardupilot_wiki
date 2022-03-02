@@ -11,6 +11,7 @@ RPM sensors are mandatory for those who wish to use the closed-loop throttle gov
 Common types of RPM sensor that can be used in ArduPilot:
 
 - Hall effect
+- ESC Telemetry
 - Electrical commutation
 - Optical
 
@@ -107,6 +108,13 @@ Initially, it is recommended to leave the parameters :ref:`RPM2_MIN<RPM2_MIN>` ,
 
 Finally, to test that everything is working, you can use the rpm1/rpm2 live feeds in the quick tab in mission planner or the live tuning window.  Alternatively the 
 RPM history can be reviewed in the logs.
+
+ESC Telemetry - Average Motor RPM
+=================================
+
+The RPM library can also be used to setup an 'RPM sensor' that computes and logs the average RPM for selected motors on the vehicle that are controlled by BLHeli_32 or BLHeli_S capable ESCs.  First the ESC telemetry will need to be setup.  See :ref:`BLHeli Telemetry<common-dshot-blheli32-telemetry>` for details on how to do this.  Once complete set ``RPMx_TYPE`` to 5 and write the parameters to ArduPilot.  Then refresh/fetch the parameters.  You will find a number of additional parameters are now available for that instance.  Find and set ``RPMx_ESC_MASK`` to add which ESC channels you want to be included in the average. For example for the second RPM instance:
+
+:ref:`RPM2_ESC_MASK<RPM2_ESC_MASK>` is a bitmask, with each bit corresponding to a channel. If you wanted the average RPM for motors 1 to 4 you would set :ref:`RPM2_ESC_MASK<RPM2_ESC_MASK>` = 1 + 2 + 4 + 8 = 15.
 
 Electrical Commutation Sensors
 ==============================
