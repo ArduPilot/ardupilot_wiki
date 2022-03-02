@@ -4,16 +4,6 @@
 Future Wiki Changes (in Master branch now)
 ==========================================
 
-Common
-======
-
-:ref:`common-frsky-telemetry` page
-----------------------------------
-
-add to end of Configuration Section:
-
-Set :ref:`FRSKY_OPTIONS<FRSKY_OPTIONS>` bit 0 to "1" to enable sending alternating airspeed and groundspeed data to the display script. The :ref:`Yaapu FrSky Telemetry Script for OpenTX <common-frsky-yaapu>` can use this but it may cause other display apps/scripts to alternate the speed value readout.
-
 
 Plane
 =====

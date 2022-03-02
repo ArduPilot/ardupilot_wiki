@@ -85,6 +85,8 @@ F7/H7 based autopilots can directly connect to the TX pin of any UART and use th
 
 .. note:: Some F7/H7 autopilots have level/shifters on their UARTs that cause a delay in Half Duplex operation, like CubeOrange. If the above configuration does not, try setting :ref:`RC_OPTIONS<RC_OPTIONS>` = 8 which will add padding in the protocol to accommodate this. However, using this option when not required will break operation.
 
+Set :ref:`FRSKY_OPTIONS<FRSKY_OPTIONS>` bit 0 to "1" to enable sending alternating airspeed and groundspeed data to the display script. The :ref:`Yaapu FrSky Telemetry Script for OpenTX <common-frsky-yaapu>` can use this but it may cause other display apps/scripts to alternate the speed value readout.
+
 Display Scripts
 ---------------
 
