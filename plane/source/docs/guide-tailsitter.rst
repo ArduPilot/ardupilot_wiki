@@ -271,9 +271,10 @@ Tailsitter transitions are a little different than other QuadPlane transitions.
 :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` specifies how far the nose must pitch down in a VTOL mode before transition to forward flight is complete. So a value of e.g. 60 degrees results in switching from copter to plane controller (forward transition) when the nose reaches 30 degrees above the horizon (60 degrees down from vertical).
 The pitch rate used when pitching down to forward flight is given by :ref:`Q_TAILSIT_RAT_FW<Q_TAILSIT_RAT_FW>`, this rate will be held until :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` is reached.
 
-
 For the back transition from forward flight to VTOL, the plane controller will be used until the nose reaches :ref:`Q_TAILSIT_ANG_VT<Q_TAILSIT_ANG_VT>` above the horizon. If :ref:`Q_TAILSIT_ANG_VT<Q_TAILSIT_ANG_VT>` is 0 :ref:`Q_TAILSIT_ANGLE<Q_TAILSIT_ANGLE>` will be used for both forward and back transitions.
 The pitch rate used when pitching up to VTOL flight is given by :ref:`Q_TAILSIT_RAT_VT<Q_TAILSIT_RAT_VT>`, this rate will be held until :ref:`Q_TAILSIT_ANG_VT<Q_TAILSIT_ANG_VT>` is reached.
+
+Depending on the entry speed and time required to transition, the vehicle may gain altitude, sometimes significantly, since the throttle is set to the current :ref:`Q_M_THRST_HOVER<Q_M_THST_HOVER>` hover thrust value throughout the transition to VTOL. This can be overridden with a lower value by setting :ref:`Q_TAILSIT_THR_VT<Q_TAILSIT_THR_VT>`. With experimentation, changing the rates, angle, and this parameter for fixed wing to VTOL transitions, it is possible to obtain almost level altitude transitions. Especially with copter style tailsitters with no control surfaces using Q_TAILSIT_ENABLE = 2, keeping attitude control active even at low or zero throttle values.
 
 .. note:: During transitions, pilot input is disabled and vehicle attitude and throttle is controlled totally by the autopilot.
 
