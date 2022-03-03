@@ -19,6 +19,8 @@ Connection to the autopilot
 
 Two :ref:`GPIOs <common-gpios>` are required for the Trigger pin (starts the sonar pulse) and Echo pin (indicates reception of the echo). These can be a PWM output if the ``BRD_PWM_COUNT`` is set such that two are available, or if the autopilot has dedicated GPIO outputs (see the autopilot's :ref:`description <common-autopilots>` or datasheet).
 
+.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
+
 To setup as the first rangefinder. Reboot after setting parameters:
 
 -  :ref:`RNGFND1_MAX_CM<RNGFND1_MAX_CM>` = "200" (i.e. 2m max range)
