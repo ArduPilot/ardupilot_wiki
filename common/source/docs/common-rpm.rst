@@ -77,13 +77,13 @@ For a reliable RPM signal the hall effect pick-up should be mounted very close t
 
 The three wires should then be plugged into the autopilot.  This is commonly done using a standard servo plug.  Ground to Gnd, Vcc to 5V, and the signal line 
 needs to be attached to a GPIO pin.  On most smaller boards this will be any one of the PWM pins on the servo rail.  On a Pixhawk this must be one of the AUX ports.  
-For reasons explained later it is recommended to use the highest number pin first.  E.g. AUX 6 on a Pixhawk/Cube or PWM 9 on an F405-Wing.
+For reasons explained later it is recommended to use the highest number pin first.  E.g. AUX 6 on a Pixhawk/Cube or PWM 9 on a MatekF405-Wing.
 
 **Parameter Setup**
 
-First the board needs to be configured to allow PWM pins to be set for GPIO.  This is done using the parameter ``BRD_PWM_COUNT`` .  Reduce the PWM count to free up a pin to 
-be used for GPIO.  On non-Pixhawk boards the PWM count will include all PWM outputs.  On Pixhawk boards this parameter only affects AUX pins.  Write the parameter 
-and reboot the autopilot.
+First the board needs to be configured to allow PWM pins to be set for GPIO.  This is done using the parameter ``BRD_PWM_COUNT`` .  Reduce the PWM count to free up a pin to be used for GPIO.  On non-Pixhawk boards the PWM count will include all PWM outputs.  On Pixhawk boards this parameter only affects AUX pins.  Write the parameter and reboot the autopilot.
+
+.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
 Now the RPM library must be enabled. In the following sections, we will use the second instance of RPM sensor for parameter examples.
 
