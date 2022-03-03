@@ -13,6 +13,10 @@ Before you start AutoTune, you must:
 
 This will greatly improve your chances at a successful AutoTune.
 
+The following video covers the steps described in this wiki page.
+
+..  youtube:: 5960K8EV13A
+
 Parameter Descriptions
 ======================
 :ref:`Tune Sequence Bitmask<AUTOTUNE_SEQ>`
@@ -187,15 +191,21 @@ Tuning Maneuver Descriptions
 ``ATC_RAT_xxx_FF`` Tuning
 +++++++++++++++++++++++++
 
-        During ``ATC_RAT_xxx_FF`` tuning the aircraft may drift, reposition the aircraft as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.
+        The ``ATC_RAT_xxx_FF`` tuning is accomplished by achieving a constant angular rate of 50 deg/s and determining the steady state command required to maintain the 50 deg/s.  The maneuver to achieve the constant angular rate consists of changing attitude by 15 deg in one direction then reversing direction to achieve a constant rate of 50 deg/s before reaching 15 deg in the opposite direction.  Finally it returns to the starting attitude.   During ``ATC_RAT_xxx_FF`` tuning the aircraft may drift, reposition the aircraft as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.  The following video demonstrates the ``ATC_RAT_xxx_FF`` tuning.
+
+..  youtube:: 2XLBIycPiq0
 
 ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` Tuning
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-        During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  
+        ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` tuning starts with determining the maximum ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gains that can be safely tuned.  A frequency sweep is conducted from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency required for calculating the maximum allowable gains.  A series of dwells (oscillations at one frequency) are completed to more accurately determine the data required to calculate the maximum allowable ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gains. Next another frequency sweep is conducted to approximate the frequency for tuning ``ATC_RAT_xxx_D`` gain.  Then the ``ATC_RAT_xxx_D`` gain is raised until the response gain stops decreasing. Next the ``ATC_RAT_xxx_P`` gain is increased until the response gain exceeds the :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`.  During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  The following video demonstrates the ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` tuning.
+
+..  youtube:: IOOIG_z1Cwc
 
 ``ATC_ANG_xxx_P`` Tuning
 ++++++++++++++++++++++++
 
-        During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  
+        ``ATC_ANG_xxx_P`` tuning starts with conducting a frequency sweep from from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency for the maximum response gain.  Then dwells (oscillations at one frequency) are conducted to tune the ``ATC_ANG_xxx_P`` gain. The gain is raised or lowered to determine the ``ATC_ANG_xxx_P`` gain that corresponds to a response gain (output angle/input angle request) that matches :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`. During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  
+
+..  youtube:: aI-uJuQAh-0
 
