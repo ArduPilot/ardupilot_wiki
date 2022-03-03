@@ -4,6 +4,10 @@
 Preparing for Tuning
 ====================
 
+It is important to conduct the steps in this wiki to prepare for manual or autotune.  The following video covers the steps described on this wiki page.
+
+..  youtube:: 3O5Y5L3damU
+
 Reduce Noisy Control Signals
 ============================
 
