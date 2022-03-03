@@ -4,7 +4,7 @@
 GPIOs
 =====
 
-.. note:: in firmware versions later than 4.1, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active.
+.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
 General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:`relays<common-relay>` , actuators, LEDs, :ref:`camera triggers<common-camera-shutter-with-servo>` , :ref:`Start Button<startstop-switch>` etc. These are provided by re-configuring the PWM outputs. The parameter ``BRD_PWM_COUNT`` determines how many of the PWM outputs are used for controlling motors/servos, and how many can be re-purposed and used as GPIO-style outputs.
 
@@ -32,6 +32,7 @@ You can verify an output's GPIO pin number assignment easily. First, find its hw
 
 .. image:: ../../../images/GPIO_numbers.png
 
-In the above case, you could set the ``BRD_PWM_COUNT`` down to 8, freeing PWM9 and PWM10 and use their GPIO numbers for GPIO functions.
+In the above case, you could set the ``BRD_PWM_COUNT`` down to 8, freeing PWM9 and PWM10 (which correspond to the AUX1 and AUX2) and use their GPIO numbers for GPIO functions. (this also forces all higher numbered outputs, AUX3-6, to be GPIOs)
 
 .. note:: Usually, changing any feature or function's GPIO pin assignment will require a reboot for it to take effect.
+
