@@ -148,6 +148,23 @@ Your Bluetooth device should now be ready and you can connect to the
 proper port at the proper baud rate of 57600 (red LED steady on and not
 flashing)
 
+Connecting With Linux
+=====================
+After first making sure your autopilot is powered, and your PC's
+bluetooth dongle is plugged in.
+
+Open the Bluetooth Panel
+Find the device, mine shows as HC-06
+Click on the device and pair, default code for me was 1234
+The connection will not stay connected
+Click on the device and record the address shown xx:xx:xx:xx:xx:xx
+Close Bluetooth panel, it will not be used further
+In a terminal run sudo rfcomm bind hci0 xx:xx:xx:xx:xx:xx
+this will create a serial device /dev/rfcomm0 or rfcomm1 etc, depending on how many devices you bind
+At this point the led will be blinking rapidly on the HC-06.
+Once an application ( MavProxy or Mission Planner or QGC ) connects to the /dev/rfcomm0 port, after a few seconds the led on the HC-06 will go solid
+Operation at this point will be similar to other telemetry methods.
+
 Connecting From your Android ground station
 ===========================================
 
