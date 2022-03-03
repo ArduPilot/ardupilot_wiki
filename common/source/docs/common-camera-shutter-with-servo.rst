@@ -19,8 +19,8 @@ This article explains what settings you need to configure for both servos and re
    settings are linked from the section 
    :ref:`Setting values for different cameras <common-camera-shutter-with-servo_setting_values_for_different_cameras>`. 
 
-Shutter configuration with Pixhawk
-==================================
+Shutter configuration with Pixhawk or IOMCU Equipped Autopilots
+===============================================================
 
 Pixhawk has 6 AUX Ports (AUX1-AUX6, referred to as RC9-RC14 in *Mission
 Planner*) that can be configured as :ref:`servos <common-servo>`,
@@ -90,7 +90,7 @@ Enhanced camera trigger logging
 
 ArduPilot logs TRIG messages when it *triggers* the camera.  You can additionally set up ArduPilot to log CAM messages when the camera has actually fired, by connecting a :ref:`digital input pin <common-pixhawk-overview_pixhawk_digital_outputs_and_inputs_virtual_pins_50-55>` on the autopilot to the camera's hot shoe (consider using `Seagulls SYNC2 Shoe Horn Adapter <https://www.seagulluav.com/product/seagull-sync2/>`__).  This more accurately logs the exact time that pictures are recorded.
 
-You will need to configure one of the AUX pins as a digital
+You will need to configure one of the AUX pins as a digital GPIO
 output/input, and connect it to the camera flash hotshoe (a universal
 camera hot shoe is required). The pin should be held for at least 2
 milliseconds for reliable trigger detection.
@@ -99,9 +99,8 @@ The main steps are:
 
 #. Open *Mission Planner* and then click on **CONFIG/TUNING \| Full
    Parameters List**
-#. Set at least two of the AUX pins as digital output/inputs using the
-   ``BRD_PWM_COUNT`` parameter, as described in 
-   :ref:`digital outputs <common-pixhawk-overview_pixhawk_digital_outputs_and_inputs_virtual_pins_50-55>`.
+#. Set at least two of the AUX pins as digital GPIO output/inputs as described in 
+   :ref:`GPIOs <common-gpios>`.
 #. Set :ref:`CAM_FEEDBACK_PIN <CAM_FEEDBACK_PIN>`
    to the pin number connected to the hotshoe.
 #. Set :ref:`CAM_FEEDBACK_POL <CAM_FEEDBACK_POL>`
