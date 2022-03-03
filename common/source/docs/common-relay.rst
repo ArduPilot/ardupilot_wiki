@@ -16,7 +16,9 @@ For example, the Pixhawk default defines set up AUX OUT 5 (pin 54) and AUX OUT 6
 .. image:: ../../../images/Relay_Pixhawk.jpg
     :target: ../_images/Relay_Pixhawk.jpg
 
-The number of available Relays can be increased to a maximum of 6 by reducing the number of AUX pins used as :ref:`Servo <common-servo>` outputs.  This can be accomplished by reducing the ``BRD_PWM_COUNT`` from 4 to 2 or 0.
+The number of available Relays can be increased to a maximum of 6 by reducing the number of AUX pins used as :ref:`Servo <common-servo>` outputs.  This can be accomplished by reducing the ``BRD_PWM_COUNT`` from 4 to 2 or even 0.
+
+.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
 Likewise, on other controllers which have only PWM outputs and no IOMCU, setting ``BRD_PWM_COUNT`` to a lower number will free up their higher numbered outputs for use as GPIOs for controlling relays.
 
