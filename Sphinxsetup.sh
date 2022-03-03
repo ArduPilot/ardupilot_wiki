@@ -60,9 +60,6 @@ python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinx_
 # and a youtube plugin:
 python3 -m pip install --user --upgrade git+https://github.com/sphinx-contrib/youtube.git
 
-# and a vimeo plugin:
-python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinxcontrib.vimeo.git
-
 # and a parser to use getting posts from Discourse (forum) and insert in FrontEnd
 python3 -m pip install --user --upgrade beautifulsoup4
 

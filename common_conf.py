@@ -2,7 +2,42 @@
 #
 # This contains common configuration information for the ardupilot wikis.
 # This information is imported by the conf.py files in each of the sub wikis
-#
+
+import warnings
+from packaging import version
+import pkg_resources
+
+# Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones.
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.imgmath',
+    'sphinx.ext.ifconfig',
+    'sphinxcontrib.youtube',  # For youtube embedding
+]
+
+
+def custom_formatwarning(msg, *args, **kwargs):
+    # ignore everything except the message
+    return str(msg) + '\n'
+
+
+warnings.formatwarning = custom_formatwarning
+
+# Check if sphinxcontrib.youtube version is high enough to handle vimeo and older python versions
+if version.parse(pkg_resources.get_distribution('sphinxcontrib-youtube').version) < version.parse('1.0.1'):
+    warnings.warn('\033[93mModule sphinxcontrib-youtube is outdated. PDF documentation cannot be built. ' +
+                  'Please run "python3 -m pip install --upgrade sphinxcontrib-youtube"')
+    try:
+        # Check if sphinxcontrib.vimeo extension is present, fallback to using that to handle vimeo
+        import sphinxcontrib.vimeo  # noqa: F401
+        extensions.append('sphinxcontrib.vimeo')  # For vimeo embedding
+    except ImportError:  # change to ModuleNotFoundError when only python >=3.6 is supported
+        warnings.warn('\033[93mModule sphinxcontrib-youtube is old and sphinxcontrib-vimeo is not installed.' +
+                      'Please run the wiki build setup script.')
 
 # Set False to re-enable warnings for non-local images.
 disable_non_local_image_warnings = True
