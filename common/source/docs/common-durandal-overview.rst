@@ -257,9 +257,9 @@ SBUS Out port
 
 The SBUS out port is a port attached to the IO processor which can be
 used to output all servo channels via SBUS. It is enabled by setting
-the BRD_SBUS_OUT parameter.
+the :ref:`BRD_SBUS_OUT<BRD_SBUS_OUT>` parameter.
 
-When SBUS output is disabled (by setting BRD_SBUS_OUT to 0) you can
+When SBUS output is disabled (by setting :ref:`BRD_SBUS_OUT<BRD_SBUS_OUT>` to 0, you can
 use the pin for analog RSSI input from receivers. To enable for RSSI
 input you need to set:
 
@@ -618,6 +618,8 @@ use them you need to limit the number of these pins that is used for
 PWM by setting the ``BRD_PWM_COUNT`` to a number less than 8. For example
 if you set it to 6 then PWM7 and PWM8 will be available for
 use as GPIOs.
+
+.. note:: in firmware versions 4.2 and later, the method for setting a PWM/SERVO/MOTOR outputs to be a GPIO function is changed. Instead of ``BRD_PWM_COUNT`` being used, the individual ``SERVOx_FUNCTION`` parameter is merely set to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
 The numbering of the GPIOs for PIN variables in ArduPilot is:
 
