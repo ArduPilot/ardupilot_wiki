@@ -7,12 +7,7 @@ This page lists the hardware options that can meet all of the Balance Bot specif
 
 Autopilot Board
 ===============
-Autopilot Boards than can be used with Balance Bot are limited by the number of PWM and aux pins that are available. Currently supported boards are:
-
-#. **Pixhawk:**  All full sized versions
-#. **Pixracer:**  When using pixracer, only :ref:`RC PWM controlled<common-brushed-motors>` or :ref:`Brushed BiPolar<common-brushed-motors>` motor drivers can be used. Four pins on the pixracer will be used for wheel encoders leaving only two for driving motors.
-
-.. warning:: Miniature versions of Pixhawk, like pixhawk mini, pixfalcon and Openpilot/Betaflight boards cannot interface wheel encoders
+Autopilot Boards than can be used with Balance Bot are required to have sufficient PWM outputs for driving the motors (2 or more), and outputs which can be tasked as GPIOs (4 or more)(see :ref:`common-gpios`) for interfacing the the wheel encoder pulse outputs. Some miniature versions of autopilots using an IOMCU will only have outputs that cannot be re-tasked as GPIOs and are therefore unsuitable.
 
 Balance Bot Frame
 =================
@@ -22,7 +17,7 @@ For a 3d printable frame, check out :ref:`Arduroller<reference-frames-arduroller
 
 Motors with encoders
 ====================
-Brushed Motors with quadrature encoders(two pin output) are recommended for Balance Bots. There is no restriction on using brushless motors, additional quadrature encoders will have to be added to run any mode other than Hold and Manual. Stepper Motors and motors that use UART/I2C interface are not currently supported.
+Brushed Motors with quadrature encoders(two pin output) are recommended for Balance Bots. There is no restriction on using brushless motors, but additional quadrature encoders will have to be added to run any mode other than Hold and Manual. Stepper Motors and motors that use UART/I2C interface are not currently supported.
 
 Gear backlash is a problem with many geared dc motors and this can badly affect stability of Balance Bots. It is recommended to use motors that are specified to be zero-backlash or have very less backlash.
 

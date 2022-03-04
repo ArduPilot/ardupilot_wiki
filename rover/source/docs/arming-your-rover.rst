@@ -121,5 +121,5 @@ The PWM value output to the servos and motors while the vehicle is disarmed can 
 -  if :ref:`MOT_SAFE_DISARM <MOT_SAFE_DISARM>` is 1 no PWM pulses will be sent while disarmed.
    Note that some ESCs beep to complain that they are powered on without a control signal
 
-Note that if the autopilot is a Pixhawk and a safety switch is enabled,
+Note that if the autopilot has a safety switch which is enabled,
 no PWM output will be sent until the safety switch is put in the ON position.
