@@ -71,6 +71,7 @@ List of Modules
     devop
     DGPS
     firmware
+    fakegps
     followtest
     gasheli
     gimbal
