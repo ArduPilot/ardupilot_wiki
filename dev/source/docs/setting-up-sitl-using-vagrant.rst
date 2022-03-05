@@ -102,6 +102,14 @@ Set up the Vagrant and the virtual machine
        time complete. The command needs to fetch a Vagrant base VM and
        configure it with the development environment.
 
+    .. note::
+
+       On older Ubuntu versions the CA cetificate store shipped with Vagrant may be out of date.  You may need to set an environment variable before running vagrant:
+
+       ::
+
+	  export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+
 #. Initialise git submodules
 
    - The ArduPilot source tree references other repositories as
