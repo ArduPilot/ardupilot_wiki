@@ -13,15 +13,14 @@ Overview
 
 Copter, Plane or Rover can stabilize a gimbal with up to three axis of
 motion using any of the free output channels. Combining stabilization
-with input from the pilot is also possible (normally using receiver's
-channel 6 tuning knob).
+with input from the pilot is also possible using additional RC channels for manual control of the axes.
 
 The examples shown below use Copter screen shots, but work exactly the
 same for Plane and Rover.
 
-A camera's shutter can be triggered from the autopilot once connected with a
+A camera's shutter can also be triggered from the autopilot once connected with a
 servo or "relay". The act of triggering the shutter can be controlled
-through your receiver's channel 7 switch or automatically during
+through receiver channel or automatically during
 missions.
 
 For best performance, ensure that after you add the extra weight of the
@@ -45,29 +44,26 @@ and to some extent this depends on the airframe. That said, using velcro
 and rubber bands (for extra security) is quick to set up and can give
 reasonable results.
 
-Connecting the servos to a Pixhawk
-==================================
+Connecting the servos to an Autopilot
+=====================================
 
-Connect the gimbal to Pixhawk's auxiliary output pins. Connect tilt
-(pitch) to aux out signal (s) pin 1, roll to aux out signal (s) pin 2,
-and ground to an aux out ground (-) pin.
+Connect the gimbal's roll, pitch(tilt), and/or yaw stabilization motor control inputs to the autopilot's output pins, as shown below for a Pixhawk.
 
 .. image:: ../../../images/pixhawk_to_gimbal_connection.jpg
     :target: ../_images/pixhawk_to_gimbal_connection.jpg
 
-Gimbal configuration through the mission planner
-================================================
+Gimbal configuration through Mission Planner
+============================================
 
-Under the configuration Menu, Hardware Options you will find a Camera
-Gimbal set-up screen. (see image below)
+Under the SETUP/Optional Hardware Menu, you will find a ``Camera
+Gimbal`` set-up screen. (see image below)
 
-For each servo/axis of your camera gimbal select the appropriate servo
-channel and ensure the **"Stabilise"** checkbox is checked.
+The **Type** box should be set to the type of gimbal. "Servo" for either non-stabilized manual control, or ArduPilot stabilization, or use of an external gimbal stabilizer. The autopilot will need to be rebooted in order for this to take effect and allow changes to the options below.
 
-.. note::
+For each axis (**TILT, ROLL, PAN**) of your camera gimbal select the appropriate output
+channel that you connected above and ensure the appropriate **"Stabilise"** checkbox is checked.
 
-   Modern brushless gimbals (like the :ref:`SToRM32 <common-storm32-gimbal>`) usually come with their own controllers that handle gimbal *stabilisation*. 
-   For those controllers the **Stabilise** checkbox must not be checked. 
+.. note:: if only directional control is desired without correcting for vehicle attitude, then leave the **"Stabilise"** checkbox unchecked.
 
 The **Servo Limits** should be adjusted to ensure the gimbal servos
 don't bind.
@@ -79,23 +75,21 @@ undercorrecting as you tilt the copter), adjust the angle limits up or
 down slightly.
 
 (These are not really 'angle' limits but how much the servo is commanded
-to move within the limits of the 60° most servos can move.
+to move within the limits set by the Min/Max parameters set in **Servo Limits**.
 
-eg If set to -60/+60 the servo will reach -30°/+30° (its limit) when the
-'copter reaches -60°/+60°
-
-If set to -15/+15 the servo will reach -30°/+30° (its limit) when the
+eg. If set to -60/+60 the output will reach Min/Max (its limit) when the
+'copter reaches -60°/+60°. If set to -15/+15 the servo will reach Min/Max (its limit) when the
 'copter reaches -15°/+15°)
 
-**"Retract Angles"** refer to the position of the gimbal when the
+**Retract Angles** refer to the position of the gimbal when the
 mount's mode is "retracted" (i.e. MNT_MODE=0). "Retracted" normally
 means when the gimbal is pulled into the body of the aircraft which is
 generally not relevant for multicopters.
 
-**"Neutral Angles"** refer to the position of the gimbal when the mount
+**Neutral Angles** refer to the position of the gimbal when the mount
 is first initialised. This is normally facing straight forward.
 
-**"Control Angles"** are parameters to allow control of the gimbal from
+**Control Angles** are parameters to allow control of the gimbal from
 a ground station perhaps using a joystick. These values are overwritten
 by the ground station so there's no point in updating them on the MP
 screen.
@@ -109,15 +103,9 @@ If you find your gimbal is moving in the wrong direction, check the
    Mission Planner: Camera andGimbal Setup Screen
 
 If you wish to adjust the gimbal tilt, roll or pan while flying, you can
-set the input channel to "RC6" which normally corresponds to your
-transmitters tuning knob.
+set the :ref:`MNT_RC_IN_PAN<MNT_RC_IN_PAN>`, :ref:`MNT_RC_IN_ROLL<MNT_RC_IN_ROLL>`, and/or :ref:`MNT_RC_IN_TILT<MNT_RC_IN_TILT>` to the RC channel to be used for this. Be sure that those channels do not have any ``RCx_OPTION`` also assigned.
 
-.. note::
-
-   If you do this you need to set your CH6 Opt to ``CH6_NONE`` in the
-   Mission Planner **Standard Parameters \| Configuration** screen.
-
-   |MPCamSetupSetCH6|
+.. tip:: if only a manual pan, and or tilt is desired using servos, you can use this setup without stabilizaton. In addition, by extending the ``SERVO LIMITS`` you can sometimes obtain almost 180 degree servo rotation, on some servos. Increase them slowly, testing as you do, and do not over extend the PWM values. Stop when motion stops increasing.
 
 Aligning Min and Max PWM values with full throw of gimbal
 ---------------------------------------------------------
@@ -170,10 +158,8 @@ below:
    -  Exceptions: the Sony video camera balanced steady shot system is
       very effective even at maximum 30 power zoom.
 
--  If you have jerky camera movement adjust the RC_Feel parameter to a
-   lower number such as 50 or 25.
 -  For better and smoother Yaw, use Expo control on your RC and lower
-   the Acro_Yaw_P gain in APM.
+   the Acro_Yaw_P gain in the autopilot.
 
 It is important to remember that even with a perfect setup, photography
 is an art as well as a science. Using the camera pointing straight to
@@ -186,9 +172,30 @@ scenic photos. ArduPilot will stabilise the gimbal to whatever position you set.
 Shutter configuration
 =====================
 
-See :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter-with-servo>` for information on how to
-integrate shutter triggering with ArduPilot. Several (camera-specific)
-mechanisms for getting the trigger signal to the camera are :ref:`discussed here <common-cameras-and-gimbals_camera_shutter_triggering>`.
+See :ref:`Camera Shutter Configuration in Mission Planner <common-camera-shutter-with-servo>` for information on how to integrate shutter triggering with ArduPilot.
 
-.. |MPCamSetupSetCH6| image:: ../../../images/MPCamSetupSetCH61.jpg
-    :target: ../_images/MPCamSetupSetCH61.jpg
+Camera Mount Mode/Targeting
+===========================
+
+The camera/gimbal direction can be controlled by the pilot using RC control(RC Targeting) if RC channels for control have been assigned (default on startup unless changed), by the autopilot during missions using the DO_SET_ROI or DO_MNT_CONTROL commands (GPS and MAVLink Targeting), not at all (just stabilizing and set to a given angle on the axes, called NEUTRAL), or when RETRACTED if a retractable mount is used to rotate the camera as it retracts for clearance.
+
+If a retractable mount is employed, the overall mount may be deployed or retracted using an output assigned with ``SERVOx_FUNCTION`` set to "MountOpen". This will be automatically controlled by the autopilot as if it were landing gear (see :ref:`common-landing-gear`), or by pilot using an rc channel whose ``RCx_OPTION`` is set to "Landing Gear".
+
+The default targeting mode for the camera/gimbal is set by the :ref:`MNT_DEFLT_MODE<MNT_DEFLT_MODE>` parameter.
+
+The direction the axes are set for the NEUTRAL and RETRACTED modes are set by:
+
+- :ref:`MNT_NEUTRAL_X<MNT_NEUTRAL_X>`
+- :ref:`MNT_NEUTRAL_Y<MNT_NEUTRAL_Y>`
+- :ref:`MNT_NEUTRAL_Z<MNT_NEUTRAL_Z>`
+- :ref:`MNT_RETRACT_X<MNT_RETRACT_X>`
+- :ref:`MNT_RETRACT_Y<MNT_RETRACT_Y>`
+- :ref:`MNT_RETRACT_Z<MNT_RETRACT_Z>`
+
+Other Parameters
+================
+
+Since servos in the gimbal may react slower to position/angle changes in the vehicle's roll and pitch as the vehicle moves about a target, the camera shot may have some visible lag in it. This can be reduced by using these parameters to have the gimbal outputs move a bit ahead of the movements of the vehicle.
+
+- :ref:`MNT_LEAD_RLL<MNT_LEAD_RLL>`
+- :ref:`MNT_LEAD_PTCH<MNT_LEAD_PTCH>`
