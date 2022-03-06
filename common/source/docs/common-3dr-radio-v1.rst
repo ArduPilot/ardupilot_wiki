@@ -19,7 +19,7 @@ Overview
 The *3DR Radio* is the easiest way to setup a telemetry connection
 between your autopilot and a ground station.
 
-There are two versions of the 3DR Radio (version 2 is more recent). The
+There are two versions of the 3DR Radio (version 2 is more recent, see link above). The
 radios have slightly different form factors and connections (v2 comes
 with a built-in FTDI cable) but otherwise their behaviour is very
 similar.
@@ -48,34 +48,28 @@ Connecting the radio
    directly connected to your Autopilot's telemetry port as shown
    in the following sections.
 
-Connecting to Pixhawk
----------------------
 
-The Pixhawk 1 telemetry ports use a *DF13 6 pin connector cable (15cm)*
-instead of the 5 pins used on the APM2. This allows flow control but
-unfortunately means that you will need to hack a cable to get a Version1
-radio to a Pixhawk. The connections required are shown below.
+Connecting to the AutoPilot
+---------------------------
+
+The aircraft module will be need to be connected to an autopilot's serial port, sometimes marked as TELEM1 or TELEM2. The TX and RX pins of the radio to the RX and TX signals of the Serial port. If the port has CTS and RTS pins, then connecting them will provide flow control and increased reliability at longer ranges. The ``SERIALx_PROTOCOL`` for the UART port to which the module is connected should be set to "2" (MAVLink2).Be sure that the radio is programmed with the latest firmware in order to work properly with MAVLink2 protocol. See the section below for programming.
 
 .. image:: ../../../images/3drRadioV1_pixhawk1.jpg
     :target: ../_images/3drRadioV1_pixhawk1.jpg
 
-Connecting to APM 2.5
+Changing Configuration of the Radio
+-----------------------------------
+
+This is not usually required, but if desired see: :ref:`common-configuring-a-telemetry-radio-using-mission-planner`
+
+.. _sik-firmware-update:
+
+Updating the Firmware
 ---------------------
 
-Use the included cable and plug it into the telemetry port on APM 2.5
-and on the 3DR radio side, plug the connector with the red cable on the
-+5v pin and the black cable on the end on GND as shown:
+Using Mission Planner, with the module connected to the flight controller for power and the base USB unit plugged into the computer:
 
-.. note::
-
-   You cannot connect via the radios when your APM 2.x is also
-   connected via USB (they share the same port) so make sure you disconnect
-   your USB cable from the autopilot before attempting a wireless
-   connection.
-
-.. image:: ../../../images/APM2_telemcable.jpg
-    :target: ../_images/APM2_telemcable.jpg
-
-.. image:: ../../../images/3dr_radio_v1_to_apm2.x_connection.jpg
-    :target: ../_images/3dr_radio_v1_to_apm2.x_connection.jpg
-
+- determine the USB COMM port the base radio is using and enter that into the port selection box of Mission Planner along with the baud rate (57600 is defualt for the radios).
+- WITHOUT connecting anything in Mission Planner, use the SETUP/Optional Hardware/Sik Radio utility tab to "Upload Firmware (local)" which will download the latest firmware and write it to the radios.
+- You may now CONNECT to the base radio COMM port with Mission Planner over MAVLink using the radio links.
+- If you have any problems, be sure that the autopilot's SERIAL port connected to the radio is set to the baud rate (57600 default) and the protocol is MAVLink2 ("2") 
