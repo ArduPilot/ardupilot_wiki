@@ -27,7 +27,7 @@ For a serial connection you can use any spare Serial/UART port.  The diagram bel
 
 .. image:: ../../../images/benewake-tfmini-pixhawk.png
 
-If the SERIAL4/5 port on a Pixhawk is being used then the following parameters should be set for the first rangefinder:
+If the SERIAL4 port on an autopilot is being used then the following parameters should be set for the first rangefinder:
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 9 (Lidar)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` = 115 (115200 baud)
