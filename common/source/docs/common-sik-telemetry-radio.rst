@@ -115,16 +115,6 @@ default recommendation is "Telem1").
 .. image:: ../../../images/Telemetry_3DR_Radio_Pixhawk.jpg
     :target: ../_images/Telemetry_3DR_Radio_Pixhawk.jpg
 
-Connecting to APM2.x
---------------------
-
-Use the 6-to-5 pin DF13 connector to connect the radio to your APM2's Telem port
-Because of the limited number of serial ports on the APM2.x, the telemetry radio cannot
-be used while the board is also plugged in with the micro USB port.
-
-.. image:: ../../../images/Telemetry_3DR_Radio_APM2.jpg
-    :target: ../_images/Telemetry_3DR_Radio_APM2.jpg
-
 Connecting to a PC
 ------------------
 
@@ -169,6 +159,11 @@ will need to specify different radio channels (Net ID).
 
 Mission Planner supports configuring your radios using a simple GUI
 interface. For more information see :ref:`Configuring a Telemetry Radio using Mission Planner <common-configuring-a-telemetry-radio-using-mission-planner>`.
+
+Updating the Firmware
+=====================
+
+You can check the firmware version (latest version is `here<https://firmware.ardupilot.org/SiK/stable/>`__ ) using the GUI tool mentioned in the previous section and update if necessary with  :ref:`these instructions<sik-firmware-update>`
 
 Expected range
 ==============
