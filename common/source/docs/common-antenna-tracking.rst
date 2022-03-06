@@ -17,8 +17,8 @@ of any particular GCS.
 
 :ref:`AntennaTracker <antennatracker:home>`
 
--  The AntennaTracker firmware turns an ArduPilot-supported board
-   (Pixhawk, APM2, etc) into the controller for an antenna tracker.
+-  The AntennaTracker firmware turns an ArduPilot-supported board (:ref:`common-autopilots` )
+   into the controller for an antenna tracker.
 -  The board calculates the required antenna direction and can drive the
    antenna's servos directly.
 -  Mission Planner (or any other GCS) may be used, but is not required.
