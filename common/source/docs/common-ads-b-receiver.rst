@@ -38,7 +38,7 @@ Connecting to the autopilot
     :target: ../_images/adsb_and_pixhawk.png
 
 The ADSB receiver comes with a DF13 serial cable that can be plugged
-directly into a Pixhawk serial port.
+directly into a Pixhawk serial port. Other autopilots will require a cable to be constructed appropriatley.
 The Ping sensor should be mounted so that the antenna is oriented
 vertically.
 
@@ -50,8 +50,7 @@ Set the :ref:`ADSB_TYPE <ADSB_TYPE>` parameter to "1" to enable receiving data f
 If you are using one of the UARTs on your board which defaults to MAVLink (i.e. Telem1, Telem2 on a Pixhawk) then the default settings will work fine for the PingRx. Alternatively you
 can connect the Ping to one of the other UARTs, such as the GPS UART (if it is unused) or the serial4/5 UART. In that case you will need to configure the UART as MAVLink at a baudrate of 57600.
 
-For example, if you plugged the Ping into "serial4/5" on a
-Pixhawk you would set:
+For example, if you plugged the Ping into a UART designated as SERIAL4 on the autopilot, you would set:
 
 -  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` to 1 (meaning MAVLink)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` 57 (meaning 57600)
