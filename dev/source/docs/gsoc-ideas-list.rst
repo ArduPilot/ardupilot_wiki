@@ -17,7 +17,6 @@ This is a list of projects suggested by ArduPilot developers for `GSoC 2022 <htt
 - Build system improvements, specifically fixing dependency handling and speeding up the waf build
 - Improvements to the `MAVProxy GCS <https://github.com/ArduPilot/MAVProxy>`__. Better multivehicle support, performance improvement. Requires strong python skills.
 - Swift Package for MAVLink communications
-- Unified performance counter on ArduPilot
 
 See lower down on this page for more details for some of the projects listed above
 
@@ -131,19 +130,43 @@ Funding will be provided for the required hardware which will likely include an 
 
 `Related issue #5608 <https://github.com/ArduPilot/ardupilot/issues/5608>`__
 
-Improve fixed-wing 3D aerobatics support in ArduPilot
------------------------------------------------------
+Ignition Modelling
+------------------
 
-With the addition of prop-hang in ArduPilot (`see here <https://discuss.ardupilot.org/t/ardupilot-flying-3d-aircraft-including-hovering/14837>`__) we now have the beginnings of a nice 3D aerobatics for fixed wing.
-This project involves taking that to the next level to add support for "trick" mode. In trick mode, the user will have access to a variety of common 3D maneuvers, including knife-edge, loops, harrier and rolling loops. Implementing this will involve some careful use of quaternion controllers, but a good UI design so the stick inputs to control these tricks are easy to learn.
-Testing can be done in the FlightAxis simulator (as in the above video), allowing for development without risking real aircraft.
+The new Gazebo Ignition simulation system offers a rich simulation
+environment where the vehicle can interact with world objects and
+other vehicles. We would like to expand the number of vehicle models
+that are available, and improve the physics fidelity of the existing
+vehicles. You can see the vehicle models we have now here
+`https://github.com/ArduPilot/SITL_Models/tree/master/Ignition
+<https://github.com/ArduPilot/SITL_Models/tree/master/Ignition>`__
+
+The successful applicatant will need strong C++ skills, as well as an
+understanding of aerodynamics for the creation of vehicle physics
+models. Experience with Gazebo or Ignition would be a significant help.
 
 
-Unified performance counter on ArduPilot
-----------------------------------------
+Custom Firmware Server
+----------------------
 
-This project would involve adding unified support for performance across our HAL.
-Currently, the Linux board gets the most performant performance counter, but we should be able to some on Chibios and SITL to allow better profiling of the code.
+The ArduPilot custom firmware server (see
+`https://custom.ardupilot.org <https://custom.ardupilot.org>`__ ) was
+developed during GSoC 2021, and has been extremely useful. We would
+like to extend the functionalty to multiple branches and add automatic
+dependency handling, as well as support for enabling Lua scripts and
+setting default parameters.
+
+The successful student will need strong python and web development skills.
+
+Build System Improvements
+-------------------------
+
+The build system that ArduPilot uses is based on the python waf
+system. It works well, but we would like some improvements to reduce
+the CPU overhead and improve dependency handling.
+
+The successful student will need strong python skills and
+understanding of build system structures.
 
 MathWorks Simulink
 ------------------
