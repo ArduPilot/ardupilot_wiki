@@ -474,6 +474,9 @@ Enable Precision Landing, and set the precision landing backend type to SITL:
    param set PLND_ENABLED 1
    param fetch
    param set PLND_TYPE 4
+   param set SIM_PLD_ENABLE 1
+   param set SIM_PLD_LAT -35.3632
+   param set SIM_PLD_LON 149.1652
 
 A rangefinder is currently required for precision landing.  Enable a simulated rangefinder:
 
