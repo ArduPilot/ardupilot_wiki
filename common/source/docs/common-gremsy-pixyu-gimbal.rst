@@ -6,8 +6,7 @@ Gremsy Pixy U 3-Axis Gimbal
 
 The Gremsy Pixy U is a 3-axis gimbal that can communicate with the flight controller using the MAVLink protocol, weighs 465g, and is compatible with a range of cameras for real-time video or mapping purposes.  More specifications can be found `here on the Gremsy website <https://gremsy.com/pixy-u-spec/>`__.  The user manual is `here <https://gremsy.com/pixy-u-manual/>`__.
 
-.. image:: ../../../images/gremsy-pixyu-gimbal.png
-    :target: https://store.gremsy.com/product/pixy-u/
+.. image:: ../../../images/airvolute_droneCore.Suite_9233.jpg
 
 Where to Buy
 ============
