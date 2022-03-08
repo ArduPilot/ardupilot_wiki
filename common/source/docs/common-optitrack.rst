@@ -10,7 +10,7 @@ This article explains how a `OptiTrack <https://optitrack.com/>`__ motion captur
 
 .. note::
 
-   This is an new feature released in Copter-3.6 and currently only supported in EKF2.
+   You will need a recent version of ArduPilot on your copter (Copter-4.0 or above).
 
 .. youtube:: IocykCXJmhw
    :width: 100%
@@ -40,8 +40,7 @@ Required softwares
 ==================
 
 * `Motive:Tracker <https://optitrack.com/products/motive/tracker/>`__
-* `NatNet SDK <https://optitrack.com/products/natnet-sdk/>`__
-* `Mission Planner source <https://github.com/ArduPilot/MissionPlanner>`__
+* `MAVProxy <https://github.com/ArduPilot/MAVProxy>`__
 
 
 Prepare the drone
@@ -74,58 +73,40 @@ Select all markers in Motive and create a rigid body from them. Please refer to 
 Configuration the drone
 =======================
 
-- set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 2 and :ref:`EK2_ENABLE <EK2_ENABLE>` to 1. Currently, external navigation is only supported in EKF2
-- set :ref:`COMPASS_USE <COMPASS_USE>`, :ref:`COMPASS_USE2 <COMPASS_USE2>`, :ref:`COMPASS_USE3 <COMPASS_USE3>` to 0. It makes ardupilot use orientation from motion capture system rather than compass, because there are many source casue electromagnetic interference in indoor enviorment
-- set :ref:`EK2_GPS_TYPE <EK2_GPS_TYPE>` to 3 and :ref:`GPS_TYPE <GPS_TYPE>` to 0 to disable the GPS
-- set :ref:`EK2_POSNE_M_NSE <EK2_POSNE_M_NSE>` to 0.1 or lower to increase the weighting of position measurements from motion capture system.
+- set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 3 , :ref:`EK3_ENABLE <EK3_ENABLE>` to 1 and :ref:`EK2_ENABLE <EK2_ENABLE>` to 0
+- set :ref:`COMPASS_USE <COMPASS_USE>`, :ref:`COMPASS_USE2 <COMPASS_USE2>`, :ref:`COMPASS_USE3 <COMPASS_USE3>` to 0. It prvents ardupilot from using compass, because there are many source casue electromagnetic interference in indoor enviorment.
+- set :ref:`VISO_TYPE <VISO_TYPE>` to 1
+- set :ref:`VISO_POS_M_NSE <VISO_POS_M_NSE>` to 0.3 or lower to increase the weighting of position measurements from motion capture system.
+- set :ref:`VISO_YAW_M_NSE <VISO_YAW_M_NSE>` to 0.2 or lower
+- set :ref:`EK3_SRC1_POSXY <EK3_SRC1_POSXY>` to 6
+- set :ref:`EK3_SRC1_POSZ <EK3_SRC1_POSZ>` to 6
+- set :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` to 6
+- set :ref:`EK3_SRC1_VELXY <EK3_SRC1_VELXY>` to 0
+- set :ref:`EK3_SRC1_VELZ <EK3_SRC1_VELZ>` to 0
+
 
 Send data to the drone
 ======================
 
-.. figure:: ../../../images/optitrack_example_system.jpg
-   :target: ../_images/optitrack_example_system.jpg
+Start MAVProxy and connect to your copter. Inside MAVProxy load optitrack module with:
 
-   Example system block diagram
+.. code:: bash
 
-We need to modify NatNet SDK sample code and use it to read and send position data to the drone. Open Samples/NatNetSamples.sln, add all .cs files in MissionPlanner/ExtLibs/Mavlink/ (Mavlink.cs, MavlinkMessage.cs, MavlinkCRC.cs, etc) to the project called SampleClientML. You may need to change target framework to 4.6.1 and select "allow unsafe code" in project properties. 
+    module load optitrack
+    
+You need to set tracking rigid body id to match your setting in Motive:
 
-In SampleClientML.cs, modify or add following code
+.. code:: bash
 
-.. code-block:: c#
+    optitrack set obj_id RIGID_BODY_STREAMING_ID
 
-   using System.Diagnostics;
-   using System.Net;
-   using System.Net.Sockets;
+If you set Motive data streaming local interface to other than loopback , it is required to configuare optitrack module with:
 
-   public class SampleClientML {
-       private static IPEndPoint drone_ep = new IPEndPoint(IPAddress.Parse("192.168.99.1"), 14550); //assume your drone is connected to PC running SampleClientML through wifi and its ip is 192.168.99.1
-       private static Socket mavSock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-       private static MAVLink.MavlinkParse mavlinkParse = new MAVLink.MavlinkParse()
-       private static Stopwatch stopwatch;
-       static void Main() {
-           stopwatch = new Stopwatch();
-           stopwatch.Start();
+.. code:: bash
 
-inside function ``static void fetchFrameData(NatNetML.FrameOfMocapData data, NatNetML.NatNetClientML client)``
+    optitrack set server SERVER_IP_ADDRESS
+    optitrack set client CLIENT_IP_ADDRESS
 
-.. code-block:: c#
-
-    if(data.iFrame % 4 == 0) //camera 120 fps, but ardupilot limit data rate to 70ms. I found 30hz is enough (in case some packet lost)
-
-inside function ``static void processFrameData(NatNetML.FrameOfMocapData data)``
-
-.. code-block:: c#
-
-    if (rbData.Tracked == true) {
-        long cur_ms = stopwatch.ElapsedMilliseconds;
-        MAVLink.mavlink_att_pos_mocap_t att_pos = new MAVLink.mavlink_att_pos_mocap_t();
-        att_pos.time_usec = (ulong)(cur_ms * 1000);
-        att_pos.x = rbData.x; //north
-        att_pos.y = rbData.z; //east
-        att_pos.z = -rbData.y; //down
-        att_pos.q = new float[4] { rbData.qw, rbData.qx, rbData.qz, -rbData.qy };
-        byte[] pkt = mavlinkParse.GenerateMAVLinkPacket20(MAVLink.MAVLINK_MSG_ID.ATT_POS_MOCAP, att_pos);
-        mavSock.SendTo(pkt, drone_ep);
 
 .. note::
 
@@ -137,7 +118,7 @@ Ground testing
 ==============
 
 - Connect the drone to a ground station
-- Start Motive and make sure `data streaming <https://v20.wiki.optitrack.com/index.php?title=Data_Streaming>`__ is turned on, then start SampleClientML.exe we just build.
+- Start Motive and make sure `data streaming <https://v20.wiki.optitrack.com/index.php?title=Data_Streaming>`__ is turned on.
 - If you see following message in ground station console (initial pos may vary), then the drone should be ready for flight test
 
 *EKF2 IMU0 is using external nav data
