@@ -87,7 +87,7 @@ fail (see "BAD" device driver screen shot below).
    -  Download the latest driver from
       `here <http://www.radionav.it/virtualrobotix/fwtools/maple_usb_serial_win.zip>`__
       and unzip it to somewhere convenient on your computer
-   -  In the device manager, right-mouse-button-click on the the Maple
+   -  In the device manager, right-mouse-button-click on the Maple
       driver and select "Update Driver Software", then "Browse my
       computer for driver software" and select the folder where you
       unzipped the driver.  Windows 8 machines may complain because the

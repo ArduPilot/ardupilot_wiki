@@ -220,7 +220,7 @@ JTAG config starting. Found a device: JTAGICEmkII Serial number:
 ID: 0x9703 atmega1280 JTAG config complete. Waiting for connection on
 port 4242.
 
-Note that AVaRICE will exit every time the the debugger disconnects, so
+Note that AVaRICE will exit every time the debugger disconnects, so
 be prepared to restart it regularly if your debugger doesn't manage it
 already. Once the "Waiting for connection" message is displayed, you are
 ready to connect with your debugger.

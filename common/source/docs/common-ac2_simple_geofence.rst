@@ -47,7 +47,7 @@ In other modes, it will execute the :ref:`FENCE_ACTION<FENCE_ACTION>` below if t
 
 At the moment the fence is breached a backup fence is erected 20m
 further out (or up).  If the vehicle breaches this backup fence (for
-example if the the vehicle is not set up correctly or the operator takes
+example if the vehicle is not set up correctly or the operator takes
 control but is unable to bring the copter back towards home), the vehicle
 will execute the :ref:`FENCE_ACTION<FENCE_ACTION>` again (and another backup fence an additional
 20m further out will be created if this is breached again).

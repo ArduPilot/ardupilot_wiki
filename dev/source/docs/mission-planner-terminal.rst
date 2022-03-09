@@ -42,7 +42,7 @@ function of each:
     Caution, previous connection will be lost.
 -  Connect PX4:  Reboot the PX4 in CLI mode and enable this screen.
     Caution, previous connection will be lost.
--  Show Settings: This simply lists all the the parameters in your auto
+-  Show Settings: This simply lists all the parameters in your auto
    pilot.  Better to use the Configuration Tuning section of Mission
    Planner
 -  Setup Radio: Goes to the setup section, radio and allows you to set

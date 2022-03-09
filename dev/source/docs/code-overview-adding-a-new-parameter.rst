@@ -280,7 +280,7 @@ Therefore we don't keep the conversion code forever more. To make it easier to f
 
     // PARAMETER_CONVERSION - Added: Aug-2021
 
-Please use the date format shown above to avoid ambiguity.  Please also keep the date on the same line as the key word "PARAMETER_CONVERSION" so that the date can be seen in the return, when grep-ing/searching the code.  When adding to an already existing AP_Param::ConversionInfo table, please add the conversions as a new block with the the conversion comment above the new block.  For example:
+Please use the date format shown above to avoid ambiguity.  Please also keep the date on the same line as the key word "PARAMETER_CONVERSION" so that the date can be seen in the return, when grep-ing/searching the code.  When adding to an already existing AP_Param::ConversionInfo table, please add the conversions as a new block with the conversion comment above the new block.  For example:
 
 .. code-block:: cpp
 

@@ -191,7 +191,7 @@ Check the following:
 #. Check your cables! The signal wire should be at the top, and ground
    at the bottom.
 #. Finally, if all else fails, try to narrow down the problem. First,
-   check that the the receiver is working right by plugging a servo into
+   check that the receiver is working right by plugging a servo into
    the output you're testing and making sure that it's outputting a good
    signal. Then plug one known-good RC channel into the APM input
    channels, from 1-7, one at a time and see if any are read. If some

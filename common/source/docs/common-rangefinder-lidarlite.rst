@@ -44,7 +44,7 @@ Although bench testing has reproduced the result we have not yet managed to capt
 Sensor Lock-up on I2C (Black-Label Lidar)
 -----------------------------------------
 
-The first issue (Lock-ups on I2C with black-label lidars) is solved by either using the new blue-label Lidars or by using the PWM output method, preferably with a reset pin. The issue is not common, but it is relatively easy to reproduce in bench tests by covering the Lidars lenses. It appears to be more likely to happen when the Lidar is reading short distances. There are two manifestations of the issue - one is where the lock-up is solved by sending a I2C reset command, the the other does not respond to an I2C reset.
+The first issue (Lock-ups on I2C with black-label lidars) is solved by either using the new blue-label Lidars or by using the PWM output method, preferably with a reset pin. The issue is not common, but it is relatively easy to reproduce in bench tests by covering the Lidars lenses. It appears to be more likely to happen when the Lidar is reading short distances. There are two manifestations of the issue - one is where the lock-up is solved by sending a I2C reset command, the other does not respond to an I2C reset.
 
 GPS Interference (Black-Label Lidars)
 -------------------------------------

@@ -7,7 +7,7 @@ This page lists the hardware options that can meet all of the Balance Bot specif
 
 Autopilot Board
 ===============
-Autopilot Boards than can be used with Balance Bot are required to have sufficient PWM outputs for driving the motors (2 or more), and outputs which can be tasked as GPIOs (4 or more)(see :ref:`common-gpios`) for interfacing the the wheel encoder pulse outputs. Some miniature versions of autopilots using an IOMCU will only have outputs that cannot be re-tasked as GPIOs and are therefore unsuitable.
+Autopilot Boards than can be used with Balance Bot are required to have sufficient PWM outputs for driving the motors (2 or more), and outputs which can be tasked as GPIOs (4 or more)(see :ref:`common-gpios`) for interfacing the wheel encoder pulse outputs. Some miniature versions of autopilots using an IOMCU will only have outputs that cannot be re-tasked as GPIOs and are therefore unsuitable.
 
 Balance Bot Frame
 =================

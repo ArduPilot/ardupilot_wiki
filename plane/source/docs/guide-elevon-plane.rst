@@ -94,7 +94,7 @@ Verify RC Inputs
 Now that the elevons are configured correctly, verify your RC inputs.
 In FBWA with the airplane level, command pitch-up from your transmitter
 and confirm that the elevons both rise. Command a roll to the right
-from your transmitter and confirm that the the right elevon rises and
+from your transmitter and confirm that the right elevon rises and
 the left elevon lowers. If this is incorrect, read the :ref:`RC inputs <rc-throw-trim>` 
 page to fix your rc
 

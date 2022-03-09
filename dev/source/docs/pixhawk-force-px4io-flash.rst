@@ -28,7 +28,7 @@ You will need to have :ref:`nsh console access <interfacing-with-pixhawk-using-t
 
 .. note::
 
-   On px4v1 you should disconnect the telemetry radio before attempting an update the the IO firmware
+   On px4v1 you should disconnect the telemetry radio before attempting an update the IO firmware
 
 At the nsh console:
 

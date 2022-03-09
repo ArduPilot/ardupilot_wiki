@@ -887,7 +887,7 @@ Forces mode switch to be re-read.
    <td><strong>WindVane home direction offset</strong></td>
    <td>
 
-This is a continuous input channel providing a -45 to +45 degree offset the the initial wind direction when using :ref:`WNDVN_TYPE<WNDVN_TYPE>` = 2.
+This is a continuous input channel providing a -45 to +45 degree offset the initial wind direction when using :ref:`WNDVN_TYPE<WNDVN_TYPE>` = 2.
 
 .. raw:: html
 

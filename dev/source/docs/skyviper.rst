@@ -19,7 +19,7 @@ This page provides information for developers working with the SkyRocket SkyVipe
 
 .. note::
 
-   These instructions relate specifically to developing and updating the the Open Source code present on the drone.  For general help and information on the SkyViper, please visit SkyRocket's website: http://sky-viper.com/
+   These instructions relate specifically to developing and updating the Open Source code present on the drone.  For general help and information on the SkyViper, please visit SkyRocket's website: http://sky-viper.com/
 
 .. warning::
 
