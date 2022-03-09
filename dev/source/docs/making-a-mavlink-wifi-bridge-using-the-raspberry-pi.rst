@@ -73,7 +73,7 @@ in order to achieve this.
 Setting up the Raspberry Pi as an access point
 ==============================================
 
-Now we need to setup the the software that will allow the RPi to act as
+Now we need to setup the software that will allow the RPi to act as
 an access point. For the following steps make sure you have access to
 the internet from Raspberry Pi, this is needed in order to download the
 software packages. The easiest way to achieve this is to connect the RPi

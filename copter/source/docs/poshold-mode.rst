@@ -26,7 +26,7 @@ Controls
 The pilot can control the copter's location horizontally and vertically
 with the control sticks.
 
--  Horizontal location can be adjusted with the the Roll and Pitch
+-  Horizontal location can be adjusted with the Roll and Pitch
    control sticks with the default maximum lean angle being 45 degrees
    (angle can be adjusted with the :ref:`ANGLE_MAX<ANGLE_MAX>` parameter). When the pilot
    releases the sticks the copter will lean back to bring the vehicle to

@@ -28,7 +28,7 @@ Horus/T16 Example
 Overview
 ========
 
-In order to use this ability, you will need to setup the Yaapu LUAGCS script on your OpenTX transmitter.  The Yaapu Telemetry script,if you are using that also, will be paused when running this script. However, status messages and telemetry info will still be displayed on Horus style transmitters, but only battery voltage is shown on the the Taranis class transmitters.
+In order to use this ability, you will need to setup the Yaapu LUAGCS script on your OpenTX transmitter.  The Yaapu Telemetry script,if you are using that also, will be paused when running this script. However, status messages and telemetry info will still be displayed on Horus style transmitters, but only battery voltage is shown on the Taranis class transmitters.
 
 Once the Yaapu LUACGS script is exited, then other scripts, like the Yaapu Telemetry script will restart.
 

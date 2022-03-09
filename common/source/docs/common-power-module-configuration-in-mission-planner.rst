@@ -98,7 +98,7 @@ Failsafes can be implemented for low battery/fuel conditions. For Plane see :ref
 Analog Monitor Calibration
 --------------------------
 
-The bottom section of the the *Battery Monitor* screen allows you to
+The bottom section of the *Battery Monitor* screen allows you to
 calibrate the voltage/current measurement in order to verify that the
 measured voltage of the battery is correct. You can also set the
 **Sensor** selection list to **Other** and use the calibration process

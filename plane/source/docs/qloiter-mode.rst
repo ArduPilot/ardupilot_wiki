@@ -16,7 +16,7 @@ Controls
 
 The pilot can control the QuadPlane's position with the control sticks.
 
--  Horizontal location can be adjusted with the the Roll and Pitch
+-  Horizontal location can be adjusted with the Roll and Pitch
    control sticks with the default maximum horizontal speed being 5m/s
    (see Tuning section below on how to adjust this).  When the pilot
    releases the sticks the QuadPlane will slow to a stop.

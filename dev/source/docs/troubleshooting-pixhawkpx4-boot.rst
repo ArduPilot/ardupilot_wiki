@@ -13,7 +13,7 @@ The following tests can help you determine if boot has failed, and possible caus
    :ref:`Sounds <copter:common-sounds-pixhawkpx4>`
    as these can immediately confirm a successful boot. If boot fails,
    these can broadly indicate the point of failure.
--  Check that the the board has appropriate ArduPilot firmware installed.
+-  Check that the board has appropriate ArduPilot firmware installed.
 -  Ensure the memory card is fully inserted into the Pixhawk/controller card socket.
 -  **Check the boot log:**
 

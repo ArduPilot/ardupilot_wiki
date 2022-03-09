@@ -75,7 +75,7 @@ Remove a specific waypoint from the mission.
 wp set
 ======
 
-The the specified waypoint as the current waypoint. The mission will be
+The specified waypoint as the current waypoint. The mission will be
 run from this waypoint onwards. If the autopilot is running in AUTO mode, it
 will go to this waypoint immediately.
 

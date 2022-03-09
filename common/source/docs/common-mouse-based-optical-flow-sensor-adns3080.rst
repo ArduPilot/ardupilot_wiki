@@ -101,7 +101,7 @@ In order to check that you have the lens properly focused you can capture an ima
 Note 1: After capturing images, you will need to reset the sensor (i.e.
 plug/unplug it) to restore it to the normal motion capture mode.
 
-Note 2: you should see the the AP_OpticalFlow_ADNS3080's menu and any
+Note 2: you should see the AP_OpticalFlow_ADNS3080's menu and any
 errors appear in the Python Shell.
 
 How it works

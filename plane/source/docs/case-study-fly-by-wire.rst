@@ -52,7 +52,7 @@ I term to that (increase PTCH2SRV_I to 0.1), and also increase
 PTCH2SRV_IMAX to around 1000.
 
 That isn't the cause of the navigation problems though. Let's look more
-carefully at the the key nav parameters you have:
+carefully at the key nav parameters you have:
 
 -  WP_RADIUS: 8
 -  NAVL1_PERIOD: 18

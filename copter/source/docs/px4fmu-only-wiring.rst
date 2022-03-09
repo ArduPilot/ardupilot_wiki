@@ -75,7 +75,7 @@ Wiring the PX4FMU Board to Your QuadCopter
    battery input leads.**
 -  
 
-   -  Connect the the BEC Ground output to the PX4's Ground (Multi
+   -  Connect the BEC Ground output to the PX4's Ground (Multi
       connector pin 15).
    -  Connect the BEC Power output to the PX4's power In (Multi
       connector pin 1).

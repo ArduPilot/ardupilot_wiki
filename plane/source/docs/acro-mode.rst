@@ -89,4 +89,4 @@ To enable this functionality, set :ref:`YAW_RATE_ENABLE<YAW_RATE_ENABLE>` to 1. 
 
 Before use, the controller should be tuned, either manually or using AutoTune. See :ref:`automatic-tuning-with-autotune` or the YAW tuning section of the :ref:`Manual Tuning page<new-roll-and-pitch-tuning>`.
 
-.. note:: using this controller will give the feel of a 'heading hold' yaw axis. While not exactly "heading" holding, it does resist any yaw rate change not commanded by the pilot. This means the the pilot will need to "fly the tail" in turns. Just banking will not generate a clean turn.
+.. note:: using this controller will give the feel of a 'heading hold' yaw axis. While not exactly "heading" holding, it does resist any yaw rate change not commanded by the pilot. This means the pilot will need to "fly the tail" in turns. Just banking will not generate a clean turn.

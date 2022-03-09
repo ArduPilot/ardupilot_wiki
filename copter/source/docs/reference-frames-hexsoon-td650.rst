@@ -30,7 +30,7 @@ Connection and Setup
 --------------------
 
 - Connect the four ESC wires to the back of the autopilot as shown in the :ref:`QuadX configuration <connect-escs-and-motors>`
-- Mount the GPS/compass unit on the the frame slightly elevated if possible to increase the distance between the ESC wires
+- Mount the GPS/compass unit on the frame slightly elevated if possible to increase the distance between the ESC wires
 
 Firmware used: Copter-4.1
 

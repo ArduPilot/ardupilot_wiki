@@ -86,7 +86,7 @@ Let's look at a smaller copter. This is a 3" quad in a stable hover:
     :target:  ../_images/fft-small-copter-hover.png
     :width: 450px
 
-This time you can see that the the signal-to-noise ratio is right around the 25dB mark and if :ref:`FFT_SNR_REF <FFT_SNR_REF>` was set to 25dB then the detected peak would be treated as noise a significant amount of the time. So for this copter I have set :ref:`FFT_SNR_REF <FFT_SNR_REF>` to 15dB in order to detect the peak correctly. Mechanically it's easy to see why this is necessary - the same MEMS gyros are used in pretty much all flight controllers, but the difference in vibrational energy of 10" props versus 3" props is enormous. Thus it is likely that for smaller builds it will be necessary to reduce :ref:`FFT_SNR_REF <FFT_SNR_REF>`.
+This time you can see that the signal-to-noise ratio is right around the 25dB mark and if :ref:`FFT_SNR_REF <FFT_SNR_REF>` was set to 25dB then the detected peak would be treated as noise a significant amount of the time. So for this copter I have set :ref:`FFT_SNR_REF <FFT_SNR_REF>` to 15dB in order to detect the peak correctly. Mechanically it's easy to see why this is necessary - the same MEMS gyros are used in pretty much all flight controllers, but the difference in vibrational energy of 10" props versus 3" props is enormous. Thus it is likely that for smaller builds it will be necessary to reduce :ref:`FFT_SNR_REF <FFT_SNR_REF>`.
 
 
 Tuning Large MultiCopters
