@@ -34,25 +34,31 @@ MAVProxy starts with several modules by default. They are:
 
 .. code:: bash
 
-    log
-    signing
-    wp
-    rally
-    fence
-    param
-    relay
-    tuneopt
-    arm
-    mode
-    calibration
-    rc
-    auxopt
-    misc
-    cmdlong
-    battery
-    terrain
-    output
-    adsb
+    adsb: ADS-B data support
+    arm: arm/disarm handling
+    auxopt: auxopt command handling
+    battery: battery commands
+    calibration: calibration handling
+    cmdlong: cmdlong handling
+    fence: geo-fence management
+    ftp: ftp handling
+    graph: graph control
+    layout: window layout handling
+    link: link control
+    log: log transfer
+    misc: misc commands
+    mode: mode handling
+    msg: 
+    output: output control
+    param: parameter handling
+    rally: rally point control
+    rc: rc command handling
+    relay: relay handling
+    signing: signing control
+    terrain: terrain handling
+    tuneopt: tuneopt command handling
+    wp: waypoint handling
+
 
 List of Modules
 ===============
@@ -73,6 +79,7 @@ List of Modules
     firmware
     fakegps
     followtest
+    ftp
     gasheli
     gimbal
     GPSInput
