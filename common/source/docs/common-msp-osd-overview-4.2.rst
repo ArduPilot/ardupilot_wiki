@@ -43,7 +43,7 @@ Configuration
 
 To enable MSP OSD, set the following parameters ( example using SERIAL port 2 as the port to attach to the DJI Air unit using both TX and RX lines):
 
- - :ref:`OSD_TYPE<OSD_TYPE>` = 3
+ - :ref:`OSD_TYPE<OSD_TYPE>` = 3 if no integrated OSD is being used in order to activate the OSD code. If an integrated OSD is present and the user wishes to have both OSDs , then :ref:`OSD_TYPE<OSD_TYPE>` = 1 will activate the on-board OSD as well as providing screens for the MSP OSD function. For example, on vehicles using the DJI goggles/air system for medium range, but still running a long range VTX using the internal OSD for when the vehicle exceeds the range of the HD DJI Goggles. This configuration could use one OSD screen optimized for DJI Goggles, and another for the integrated OSD and the user can switch between them depending on which video system is being viewed.
  - :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` = 33
  - :ref:`MSP_OPTIONS<MSP_OPTIONS>` = 0 (polling mode)
 
