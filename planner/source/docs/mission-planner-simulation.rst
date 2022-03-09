@@ -31,3 +31,5 @@ The Simulation uses the same SITL models as those used in the Linux ``sim_vehicl
 
 
 .. note:: Although not shown in the above video, current version of Mission Plannner will ask if you want to simulate using the Development(master aka "latest") or Stable version of the vehicle firmware when you click the vehicle to download the model and parameters and begin the simulation.
+
+In addition, if you are code developer, you can run SITL using your custom code branch using Mission Planner, either with, or without, the physics and visualizations of RealFlight. See the "Using Your Code Branch with Mission Planner SITL and RealFlight" section of :ref:`dev:sitl-with-realflight`
