@@ -49,6 +49,7 @@ Closed hardware
     :maxdepth: 1
 
     Aerotenna Ocpoc-Zynq <https://aerotenna.com/shop/ocpoc-zynq-mini/>
+    Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
     Flywoo F745 AIO BL_32 <common-flywoo-f745>
