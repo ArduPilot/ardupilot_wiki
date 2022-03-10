@@ -74,7 +74,7 @@ Configuration the drone
 =======================
 
 - set :ref:`AHRS_EKF_TYPE <AHRS_EKF_TYPE>` to 3 , :ref:`EK3_ENABLE <EK3_ENABLE>` to 1 and :ref:`EK2_ENABLE <EK2_ENABLE>` to 0
-- set :ref:`COMPASS_USE <COMPASS_USE>`, :ref:`COMPASS_USE2 <COMPASS_USE2>`, :ref:`COMPASS_USE3 <COMPASS_USE3>` to 0. It prvents ardupilot from using compass, because there are many source casue electromagnetic interference in indoor enviorment.
+- set :ref:`COMPASS_USE <COMPASS_USE>`, :ref:`COMPASS_USE2 <COMPASS_USE2>`, :ref:`COMPASS_USE3 <COMPASS_USE3>` to 0. It prevents ArduPilot from using compass, because there are many sources causing electromagnetic interference in indoor environment.
 - set :ref:`VISO_TYPE <VISO_TYPE>` to 1
 - set :ref:`VISO_POS_M_NSE <VISO_POS_M_NSE>` to 0.3 or lower to increase the weighting of position measurements from motion capture system.
 - set :ref:`VISO_YAW_M_NSE <VISO_YAW_M_NSE>` to 0.2 or lower
