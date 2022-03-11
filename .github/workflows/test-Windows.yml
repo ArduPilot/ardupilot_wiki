@@ -27,4 +27,4 @@ jobs:
           ./Sphinxsetup.bat
       - name: Test build
         run: |
-          ./update.py --parallel 4 --verbose --destdir=./web
+          python ./update.py --parallel 4 --verbose --destdir=./web
