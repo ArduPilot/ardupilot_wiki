@@ -57,6 +57,7 @@ Closed hardware
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
     Holybro Kakute F7 Mini* (only V1 and V2 are compatible) <common-holybro-kakutef7mini>
     Holybro Kakute H7-BT <common-holybro-kakuteh7.rst>
+    Holybro Kakute H7 Mini <common-holybro-kakuteh7mini.rst>
     Holybro Pixhawk 4 Mini <common-holybro-ph4mini>
     Holybro Pixhawk5X <common-holybro-ph5x>
     Horizon31 PixC4-Jetson <common-horizon31-pixc4-jetson>
