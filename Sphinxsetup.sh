@@ -30,7 +30,14 @@ else
 fi
 
 # Get pip through the official website to get the latest release
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+GET_PIP_URL="https://bootstrap.pypa.io/get-pip.py"
+
+# accomodate default Python on bionic:
+if [ "$(python --version)" == "Python 3.6.9" ]; then
+    GET_PIP_URL="https://bootstrap.pypa.io/pip/3.6/get-pip.py"
+fi
+
+curl "$GET_PIP_URL" -o get-pip.py
 python3 get-pip.py
 rm -f get-pip.py
 
