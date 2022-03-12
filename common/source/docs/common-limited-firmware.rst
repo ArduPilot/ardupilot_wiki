@@ -20,12 +20,17 @@ Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older v
 - ADSB
 - EFI Controller Support
 - External AHRS
+- FETtec ESCs
+- INA2XX Battery Monitors
+- Plane Deep Stall Landing
+- Torqeedo Motor Control
+- MAVLink frame rate control from SD file
 - INS Temperature Calibration
 - SOLO Gimbal Support
 - Visual Odometry
 - Airspeed Drag Compensation
 - Plus Code Location Support
-- Object Avoidance and Proximity Sensors
+- Object Avoidance using Proximity Sensors
 - CRSF Text Display (Telemetry is included)
 - Bootloader inclusion in main code base
 - EKF2 (EKF3 only)
