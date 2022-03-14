@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 for f in args.files:
     print("Processing %s" % f)
-    txt = open(f,'r').read()
+    txt = open(f, 'r').read()
     matches = re.findall(r'[,.\s][A-Z][A-Z0-9]+_[A-Z_]+[,.\s]', txt)
     matches = re.findall(r'[,.\s][A-Z]+_[A-Z_]+[,.\s]', txt)
     changed = False
@@ -29,5 +29,4 @@ for f in args.files:
         else:
             print("Found [%s]" % s)
     if changed:
-        open(f,'w').write(txt)
-
+        open(f, 'w').write(txt)

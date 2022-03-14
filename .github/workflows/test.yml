@@ -29,6 +29,10 @@ jobs:
       - name: Check image formats
         run: |
           find ./images/ -exec file {} + | grep RIFF -vzq
+      - name: Check python flake8 formating
+        run : |
+          set -eux -o pipefail
+          flake8 .
       - name: Test build
         run: |
           ./update.py --parallel 4 --verbose --destdir=/tmp/web

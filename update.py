@@ -50,8 +50,8 @@ from codecs import open
 from datetime import datetime
 # while flake8 says this is unused, distutils.dir_util.mkpath fails
 # without the following import on old versions of Python:
-from distutils import dir_util  # noqa
- 
+from distutils import dir_util  # noqa: F401
+
 DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover']
 ALL_WIKIS = [
     'copter',
@@ -124,13 +124,13 @@ def fetchparameters(site=None, cache=None):
     remove_if_exists('Parameters.rst')
 
     for key, value in PARAMETER_SITE.items():
-        fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value  # noqa
+        fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
         targetfile = './%s/source/docs/parameters.rst' % key
         if key == 'AP_Periph':
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
         if cache:
             if not os.path.exists(targetfile):
-                raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))  # noqa
+                raise Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,))
             continue
         if site == key or site is None:
             if platform.system() == "Windows":
@@ -153,11 +153,11 @@ def fetchlogmessages(site=None, cache=None):
     logmessages have changed.)
     """
     for key, value in LOGMESSAGE_SITE.items():
-        fetchurl = 'https://autotest.ardupilot.org/LogMessages/%s/LogMessages.rst' % value  # noqa
+        fetchurl = 'https://autotest.ardupilot.org/LogMessages/%s/LogMessages.rst' % value
         targetfile = './%s/source/docs/logmessages.rst' % key
         if cache:
             if not os.path.exists(targetfile):
-                raise(Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,)))  # noqa
+                raise(Exception("Asked to use cached parameter files, but (%s) does not exist" % (targetfile,)))
             continue
         if site == key or site is None:
             if platform.system() == "Windows":
@@ -230,7 +230,7 @@ def copy_build(site, destdir):
         if site is not None and not site == wiki:
             continue
         if wiki == 'frontend':
-            continue            
+            continue
         print('copy: %s' % wiki)
         targetdir = os.path.join(destdir, wiki)
         print("DEBUG: Creating backup")
@@ -274,7 +274,7 @@ def copy_and_keep_build(site, destdir, backupdestdir):
         if site is not None and site != wiki:
             continue
         if wiki == 'frontend':
-            continue             
+            continue
         debug('copying: %s' % wiki)
         targetdir = os.path.join(destdir, wiki)
         distutils.dir_util.mkpath(targetdir)
@@ -323,7 +323,7 @@ def delete_old_wiki_backups(folder, n_to_keep):
                     debug('Deleting folder %s' % str(backup_folders[i]))
                     shutil.rmtree(str(backup_folders[i]))
                 else:
-                    debug('Ignoring folder %s because it does not look like a auto generated wiki backup folder' %  # noqa
+                    debug('Ignoring folder %s because it does not look like a auto generated wiki backup folder' %
                           str(backup_folders[i]))
         else:
             debug('No old backups to delete in %s' % folder)
@@ -528,12 +528,12 @@ def fetch_versioned_parameters(site=None):
     for key, value in PARAMETER_SITE.items():
 
         if key == 'AP_Periph': # workaround until create a versioning for AP_Periph in firmware server
-            fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value  # noqa
+            fetchurl = 'https://autotest.ardupilot.org/Parameters/%s/Parameters.rst' % value
             subprocess.check_call(["wget", fetchurl])
             targetfile = './dev/source/docs/AP_Periph-Parameters.rst'
             os.rename('Parameters.rst', targetfile)
 
-        else: #regular versining 
+        else: # regular versining
 
             if site == key or site is None:
                 # Remove old param single file
@@ -542,14 +542,14 @@ def fetch_versioned_parameters(site=None):
                 remove_if_exists(single_param_file)
 
                 # Remove old versioned param files
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
+                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
                     old_parameters_mask = (os.getcwd() +
-                                        '/%s/source/docs/parameters-%s-' %
-                                        ("AntennaTracker", "AntennaTracker"))
+                                           '/%s/source/docs/parameters-%s-' %
+                                           ("AntennaTracker", "AntennaTracker"))
                 else:
                     old_parameters_mask = (os.getcwd() +
-                                        '/%s/source/docs/parameters-%s-' %
-                                        (key, key.title()))
+                                           '/%s/source/docs/parameters-%s-' %
+                                           (key, key.title()))
                 try:
                     old_parameters_files = [
                         f for f in glob.glob(old_parameters_mask + "*.rst")]
@@ -561,7 +561,7 @@ def fetch_versioned_parameters(site=None):
                     pass
 
                 # Remove old json file
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
+                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
                     target_json_file = ('./%s/source/_static/parameters-%s.json' %
                                         ("AntennaTracker", "AntennaTracker"))
                 else:
@@ -571,10 +571,10 @@ def fetch_versioned_parameters(site=None):
                 remove_if_exists(target_json_file)
 
                 # Moves the updated JSON file
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker", "AntennaTracker")  # noqa
+                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
+                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % ("AntennaTracker", "AntennaTracker")  # noqa: E501
                 else:
-                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value,key.title())  # noqa
+                    vehicle_json_file = os.getcwd() + '/../new_params_mversion/%s/parameters-%s.json' % (value, key.title())
                 new_file = (
                     key +
                     "/source/_static/" +
@@ -590,7 +590,7 @@ def fetch_versioned_parameters(site=None):
                 # Copy all parameter files to vehicle folder IFF it is new
                 try:
                     new_parameters_folder = (os.getcwd() +
-                                            '/../new_params_mversion/%s/' % value)
+                                             '/../new_params_mversion/%s/' % value)
                     new_parameters_files = [
                         f for f in glob.glob(new_parameters_folder + "*.rst")
                     ]
@@ -604,26 +604,22 @@ def fetch_versioned_parameters(site=None):
                                     "/source/docs/" +
                                     filename[str(filename).rfind("/")+1:])
                         if not os.path.isfile(new_file):
-                            debug("Copying %s to %s (target file does not exist)" %
-                                (filename, new_file))
+                            debug("Copying %s to %s (target file does not exist)" % (filename, new_file))
                             shutil.copy2(filename, new_file)
-                        elif os.path.isfile(filename.replace("new_params_mversion","old_params_mversion")): # The cached file exists?  # noqa
+                        elif os.path.isfile(filename.replace("new_params_mversion", "old_params_mversion")): # The cached file exists?  # noqa: E501
 
                             # Temporary debug messages to help with cache tasks.
-                            debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
-                            debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
-                            debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion","old_params_mversion")))  # noqa
+                            debug("Check cache: %s against %s" % (filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
+                            debug("Check cache with filecmp.cmp: %s" % filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
+                            debug("Check cache with sha256: %s" % is_the_same_file(filename, filename.replace("new_params_mversion", "old_params_mversion")))  # noqa: E501
 
-                            if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion","old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa
-                                debug("Overwriting %s to %s" %
-                                    (filename, new_file))
+                            if ("parameters.rst" in filename) or (not filecmp.cmp(filename, filename.replace("new_params_mversion", "old_params_mversion"))):    # It is different?  OR is this one the latest. | Latest file must be built everytime in order to enable Sphinx create the correct references across the wiki.  # noqa: E501
+                                debug("Overwriting %s to %s" % (filename, new_file))
                                 shutil.copy2(filename, new_file)
                             else:
-                                debug("It will reuse the last build of " +
-                                    new_file)
+                                debug("It will reuse the last build of " + new_file)
                         else:   # If not cached, copy it anyway.
-                            debug("Copying %s to %s" %
-                                (filename, new_file))
+                            debug("Copying %s to %s" % (filename, new_file))
                             shutil.copy2(filename, new_file)
 
                     except Exception as e:
@@ -637,9 +633,9 @@ def create_latest_parameter_redirect(default_param_file, vehicle):
     redirects to the latest parameters file.(Create to maintaim retro
     compatibility.)
     """
-    out_line = "======================\nParameters List (Full)(\n======================\n"  # noqa
+    out_line = "======================\nParameters List (Full)(\n======================\n"
     out_line += "\n.. raw:: html\n\n"
-    out_line += "   <script>location.replace(\"" + default_param_file[:-3] + "html" + "\")</script>"  # noqa
+    out_line += "   <script>location.replace(\"" + default_param_file[:-3] + "html" + "\")</script>"
     out_line += "\n\n"
 
     filename = vehicle + "/source/docs/parameters.rst"
@@ -656,7 +652,7 @@ def cache_parameters_files(site=None):
     old_params_mversion/ folders and .html built files as well.
     """
     for key, value in PARAMETER_SITE.items():
-        if (site == key or site is None) and (key != 'AP_Periph'):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
+        if (site == key or site is None) and (key != 'AP_Periph'):  # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
             try:
                 old_parameters_folder = (os.getcwd() +
                                          '/../old_params_mversion/%s/' % value)
@@ -698,7 +694,7 @@ def put_cached_parameters_files_in_sites(site=None):
 
     """
     for key, value in PARAMETER_SITE.items():
-        if (site == key or site is None) and (key != 'AP_Periph'): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server
+        if (site == key or site is None) and (key != 'AP_Periph'): # and (key != 'AP_Periph') workaround until create a versioning for AP_Periph in firmware server # noqa: E501
             try:
                 built_folder = (os.getcwd() +
                                 '/../old_params_mversion/%s/' % value)
@@ -709,13 +705,14 @@ def put_cached_parameters_files_in_sites(site=None):
                 debug("Site %s getting previously built files from %s" %
                       (site, built_folder))
                 for built in built_parameters_files:
-                    if ("latest" not in built):  # latest parameters files must be built every time  # noqa
+                    if ("latest" not in built):  # latest parameters files must be built every time
                         debug("Reusing built %s in %s " %
                               (built, vehicle_folder))
                         shutil.copy(built, vehicle_folder)
             except Exception as e:
                 error(e)
                 pass
+
 
 def update_frotend_json():
     """
@@ -731,6 +728,7 @@ def update_frotend_json():
         error(e)
         pass
 
+
 def copy_static_html_sites(site, destdir):
     """
     Copy pure HMTL folder the same way that Sphinx builds it
@@ -740,7 +738,7 @@ def copy_static_html_sites(site, destdir):
     if (site == 'frontend') or (site is None):
         update_frotend_json()
         folder = 'frontend'
-        try:    
+        try:
             site_folder = os.getcwd() + "/" + folder
             targetdir = os.path.join(destdir, folder)
             shutil.rmtree(targetdir, ignore_errors=True)
@@ -758,16 +756,16 @@ if __name__ == "__main__":
 
     # Set up option parsing to get connection string
     parser = argparse.ArgumentParser(
-        description='Copy Common Files as needed, stripping out non-relevant wiki content',   # noqa
+        description='Copy Common Files as needed, stripping out non-relevant wiki content',
     )
     parser.add_argument(
         '--site',
-        help="If you just want to copy to one site, you can do this. Otherwise will be copied.",  # noqa
+        help="If you just want to copy to one site, you can do this. Otherwise will be copied.",
     )
     parser.add_argument(
         '--clean',
         action='store_true',
-        help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).",  # noqa
+        help="Does a very clean build - resets git to master head (and TBD cleans up any duplicates in the output).",
     )
     parser.add_argument(
         '--cached-parameter-files',
@@ -782,14 +780,14 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         '--destdir',
-        default="/var/sites/wiki/web" if platform.system() != "Windows" else os.path.join(os.path.dirname(__file__), "..", "wiki"),
+        default="/var/sites/wiki/web" if platform.system() != "Windows" else os.path.join(os.path.dirname(__file__), "..", "wiki"),  # noqa: E501
         help="Destination directory for compiled docs",
     )
     parser.add_argument(
         '--enablebackups',
         action='store_true',
         default=False,
-        help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",  # noqa
+        help="Enable several backups up to const N_BACKUPS_RETAIN in --backupdestdir folder",
     )
     parser.add_argument(
         '--backupdestdir',
@@ -800,7 +798,7 @@ if __name__ == "__main__":
         '--paramversioning',
         action='store_true',
         default=False,
-        help="Build multiple parameters pages for each vehicle based on its firmware repo.",  # noqa
+        help="Build multiple parameters pages for each vehicle based on its firmware repo.",
     )
     parser.add_argument(
         '--verbose',
@@ -813,7 +811,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     # print(args.site)
     # print(args.clean)
-    
+
     VERBOSE = args.verbose
 
     now = datetime.now()
@@ -829,7 +827,6 @@ if __name__ == "__main__":
     # Fetch most recent LogMessage metadata from autotest:
     fetchlogmessages(args.site, args.cached_parameter_files)
 
-
     copy_static_html_sites(args.site, args.destdir)
     generate_copy_dict()
     sphinx_make(args.site, args.parallel)
@@ -837,7 +834,6 @@ if __name__ == "__main__":
     if args.paramversioning:
         put_cached_parameters_files_in_sites(args.site)
         cache_parameters_files(args.site)
-
 
     if args.enablebackups:
         copy_and_keep_build(args.site, args.destdir, args.backupdestdir)
