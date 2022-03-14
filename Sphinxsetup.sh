@@ -66,6 +66,9 @@ python3 -m pip install --user --upgrade git+https://github.com/ArduPilot/sphinxc
 # and a parser to use getting posts from Discourse (forum) and insert in FrontEnd
 python3 -m pip install --user --upgrade beautifulsoup4
 
+# Install flake8
+python3 -m pip install --user --upgrade flake8==3.7.9
+
 # Reset the value of DISPLAY
 if grep -qi -E '(Microsoft|WSL)' /proc/version; then
   echo "Returning DISPLAY to the previous value in WSL"
