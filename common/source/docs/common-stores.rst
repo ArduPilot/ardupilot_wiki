@@ -26,7 +26,6 @@ recommended for use with ArduPilot (in alphabetical order).  You may also want t
 * `Harris Aerial <https://www.harrisaerial.com/shop/>`__
 * `Holybro <https://shop.holybro.com/>`__
 * `JapanDrones <http://japandrones.com/>`__
-* `jDrones <http://store.jdrones.com/>`__
 * `Lightware <https://lightware.co.za/>`__
 * `mRobotics <http://mrobotics.io/>`__
 * `Qiotek <http://www.qio-tek.com/>`__
