@@ -19,88 +19,6 @@ The home will also be sent in response to a `MAV_CMD_GET_HOME_POSITION <https://
 
 .. _mavlink-get-set-home-and-origin_set_home_position:
 
-MAV_CMD_DO_SET_HOME within COMMAND_LONG
----------------------------------------
-
-Set the home location by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and parameter fields set as specified for the `MAV_CMD_DO_SET_HOME <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_HOME>`__ command.
-
-.. raw:: html
-
-   <table border="1" class="docutils">
-   <tbody>
-   <tr>
-   <th>Command Field</th>
-   <th>Type</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td><strong>target_system</strong></td>
-   <td>uint8_t</td>
-   <td>System ID</td>
-   </tr>
-   <tr>
-   <td><strong>target_component</strong></td>
-   <td>uint8_t</td>
-   <td>Component ID of flight controller or just 0</td>
-   </tr>
-   <tr>
-   <td><strong>command</strong></td>
-   <td>uint16_t</td>
-   <td>MAV_CMD_DO_SET_HOME=179</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td><strong>confirmation</strong></td>
-   <td>uint8_t</td>
-   <td>0</td>
-   </tr>
-   <tr>
-   <td><strong>param1</strong></td>
-   <td>float</td>
-   <td>1=use current location, 0=use specified location</td>
-   </tr>
-   <tr>
-   <tr style="color: #c0c0c0">
-   <td><strong>param2</strong></td>
-   <td>float</td>
-   <td>not used</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td><strong>param3</strong></td>
-   <td>float</td>
-   <td>not used</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td><strong>param4</strong></td>
-   <td>float</td>
-   <td>not used</td>
-   </tr>
-   <td><strong>param5</strong></td>
-   <td>float</td>
-   <td>Latitude in degrees</td>
-   </tr>
-   <td><strong>param6</strong></td>
-   <td>float</td>
-   <td>Longitude in degrees</td>
-   </tr>
-   <td><strong>param7</strong></td>
-   <td>float</td>
-   <td>Altitude in meters</td>
-   </tr>
-   </tbody>
-   </table>
-
-**Examples**
-
-The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter, "module load message"
-
-+-----------------------------------------------------------------------+--------------------------------------------+
-| Example MAVProxy/SITL Command                                         | Description                                |
-+=======================================================================+============================================+
-| ``message COMMAND_LONG 0 0 179 0 1 0 0 0 0 0 0``                      | set home to the vehicle's current location |
-+-----------------------------------------------------------------------+--------------------------------------------+
-| ``message COMMAND_LONG 0 0 179 0 0 0 0 0 -35.363 149.165 575``        | set home to the specified location         |
-+-----------------------------------------------------------------------+--------------------------------------------+
-
 MAV_CMD_DO_SET_HOME within COMMAND_INT
 --------------------------------------
 
@@ -193,6 +111,88 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 | ``message COMMAND_INT 0 0 0 179 0 0 0 0 0 0 -353630000 1491650000 575`` | set home to the specified location         |
 +-------------------------------------------------------------------------+--------------------------------------------+
 
+MAV_CMD_DO_SET_HOME within COMMAND_LONG
+---------------------------------------
+
+Set the home location by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and parameter fields set as specified for the `MAV_CMD_DO_SET_HOME <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_HOME>`__ command.  Note that this method sets the home position with less accuracy than the COMMAND_INT method from above.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>command</strong></td>
+   <td>uint16_t</td>
+   <td>MAV_CMD_DO_SET_HOME=179</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>confirmation</strong></td>
+   <td>uint8_t</td>
+   <td>0</td>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>float</td>
+   <td>1=use current location, 0=use specified location</td>
+   </tr>
+   <tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param2</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param3</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param4</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <td><strong>param5</strong></td>
+   <td>float</td>
+   <td>Latitude in degrees</td>
+   </tr>
+   <td><strong>param6</strong></td>
+   <td>float</td>
+   <td>Longitude in degrees</td>
+   </tr>
+   <td><strong>param7</strong></td>
+   <td>float</td>
+   <td>Altitude in meters</td>
+   </tr>
+   </tbody>
+   </table>
+
+**Examples**
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter, "module load message"
+
++-----------------------------------------------------------------------+--------------------------------------------+
+| Example MAVProxy/SITL Command                                         | Description                                |
++=======================================================================+============================================+
+| ``message COMMAND_LONG 0 0 179 0 1 0 0 0 0 0 0``                      | set home to the vehicle's current location |
++-----------------------------------------------------------------------+--------------------------------------------+
+| ``message COMMAND_LONG 0 0 179 0 0 0 0 0 -35.363 149.165 575``        | set home to the specified location         |
++-----------------------------------------------------------------------+--------------------------------------------+
+
 .. _mavlink-get-set-home-and-origin_set_gps_global_origin:
 
 SET_GPS_GLOBAL_ORIGIN
@@ -241,8 +241,9 @@ The message definition can be found `here <https://mavlink.io/en/messages/common
 
 **Example**
 
-The example command below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter, "module load message"
+The example command below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter the following
 
+- module load message
 - param set EK3_SRC1_POSXY 0
 - param set EK3_SRC1_VELXY 0
 - param set EK3_SRC1_VELZ 0
