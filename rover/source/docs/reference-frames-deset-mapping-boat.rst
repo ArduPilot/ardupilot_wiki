@@ -7,12 +7,13 @@ DeSET mapping boat
 ..  youtube:: V8N3lA-20fs
     :width: 100%
 
-The DeSET mapping boat is a relatively small but agile electric mapping boat designed by `JapanDrones <http://japandrones.com/>`__ and `AttracLab <http://attraclab.com/>`__ with input from `Shimane University <https://www.shimane-u.ac.jp/en/>`__ and `Lighthouse <https://isana.lighthouse-frontier.tech/>`__.
+The DeSET mapping boat is a relatively small but agile electric mapping boat designed by `JapanDrones <http://japandrones.com/>`__ and `AttracLab <http://attraclab.com/>`__ with input from `Shimane University <https://www.shimane-u.ac.jp/en/>`__ and `Lighthouse <https://isana.lighthouse-frontier.tech/>`__.  The development of this boat was sponsored by `DeSET <https://deset-en.lne.st/>`__
 
 Parts List
 ----------
 
-- :ref:`Torqeedo 1003c electric motor <common-torqeedo>`, `motor extension cable <https://www.torqeedo.com/en/products/accessories/cables-and-steering/motor-cable-extension-travel---ultralight/1920-00.html>`__ and RS485-to-serial interface board
+- :ref:`Torqeedo 1003c electric motor <common-torqeedo>`
+- `motor extension cable <https://www.torqeedo.com/en/products/accessories/cables-and-steering/motor-cable-extension-travel---ultralight/1920-00.html>`__ and RS485-to-serial interface board
 - 6x `Panasonic  NKY580B02 16Ah ebike batteries <https://www.amazon.co.jp/-/en/Panasonic-NKY580B02-25-2V-Lithium-Battery/dp/B07B533K72>`__, `adapters <https://www.amazon.co.jp/-/en/dp/B086JQVFZ5/ref=sr_1_1?keywords=NKU001>`__ and `charger <https://www.amazon.co.jp/-/en/Panasonic-NKJ074Z-Stand-Charger-Small/dp/B07VLG6F8X>`__
 - `Ideal diodes <https://discuss.ardupilot.org/t/ideal-diodes-when-using-multiple-batteries/75487>`__ to allow safely connecting multiple batteries
 
