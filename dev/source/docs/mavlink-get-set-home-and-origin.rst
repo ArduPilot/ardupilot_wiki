@@ -15,16 +15,14 @@ The "EKF origin" is the location that the EKF (aka AHRS) uses for internal calcu
 
 Whenever the Home or EKF origin is updated the vehicle will send a `HOME_POSITION <https://mavlink.io/en/messages/common.html#HOME_POSITION>`__ or `GPS_GLOBAL_ORIGIN <https://mavlink.io/en/messages/common.html#GPS_GLOBAL_ORIGIN>`__ message (respectively) on all active mavlink channels.
 
-The home will also be sent in response to a `MAV_CMD_GET_HOME_POSITION <https://mavlink.io/en/messages/common.html#MAV_CMD_GET_HOME_POSITION>`__ sent within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ message.
+The home will also be sent in response to a `MAV_CMD_GET_HOME_POSITION <https://mavlink.io/en/messages/common.html#MAV_CMD_GET_HOME_POSITION>`__ sent within a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ or `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ message.
 
 .. _mavlink-get-set-home-and-origin_set_home_position:
 
-SET_HOME_POSITION
------------------
+MAV_CMD_DO_SET_HOME within COMMAND_LONG
+---------------------------------------
 
-Sets the location that the vehicle will return to and land on when in RTL mode. The location is normally set automatically each time the vehicle is armed if it has not already been explicitly set by the operator.
-
-The message definition can be found `here <https://mavlink.io/en/messages/common.html#SET_HOME_POSITION>`__
+Set the home location by sending a `COMMAND_LONG <https://mavlink.io/en/messages/common.html#COMMAND_LONG>`__ with the command and parameter fields set as specified for the `MAV_CMD_DO_SET_HOME <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_HOME>`__ command.
 
 .. raw:: html
 
@@ -41,80 +39,159 @@ The message definition can be found `here <https://mavlink.io/en/messages/common
    <td>System ID</td>
    </tr>
    <tr>
-   <td><strong>latitude</strong></td>
-   <td>int32_t</td>
-   <td>Latitude * 1e7</td>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
    </tr>
    <tr>
-   <td><strong>longitude</strong></td>
-   <td>int32_t</td>
-   <td>Longitude * 1e7</td>
+   <td><strong>command</strong></td>
+   <td>uint16_t</td>
+   <td>MAV_CMD_DO_SET_HOME=179</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>confirmation</strong></td>
+   <td>uint8_t</td>
+   <td>0</td>
    </tr>
    <tr>
-   <td><strong>altitude</strong></td>
-   <td>int32_t</td>
-   <td>Altitude above sea level in millimeters (i.e. meters * 1000)</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td><strong>x</strong></td>
+   <td><strong>param1</strong></td>
    <td>float</td>
-   <td>Local X position of this position in the local coordinate frame.</td>
+   <td>1=use current location, 0=use specified location</td>
    </tr>
+   <tr>
    <tr style="color: #c0c0c0">
-   <td><strong>y</strong></td>
+   <td><strong>param2</strong></td>
    <td>float</td>
-   <td>Local Y position of this position in the local coordinate frame</td>
+   <td>not used</td>
    </tr>
    <tr style="color: #c0c0c0">
-   <td><strong>z</strong></td>
+   <td><strong>param3</strong></td>
    <td>float</td>
-   <td>Local Z position of this position in the local coordinate frame</td>
+   <td>not used</td>
    </tr>
    <tr style="color: #c0c0c0">
-   <td><strong>q</strong></td>
-   <td>float[4]</td>
-   <td>World to surface normal and heading transformation of the takeoff
-   position. Used to indicate the heading and slope of the ground.
-   </td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td><strong>approach_x</strong></td>
+   <td><strong>param4</strong></td>
    <td>float</td>
-   <td>
-   Local X position of the end of the approach vector. Multicopters should
-   set this position based on their takeoff path. Grass-landing fixed wing
-   aircraft should set it the same way as multicopters. Runway-landing
-   fixed wing aircraft should set it to the opposite direction of the
-   takeoff, assuming the takeoff happened from the threshold / touchdown
-   zone.
-   </td>
+   <td>not used</td>
    </tr>
-   <tr style="color: #c0c0c0">
-   <td><strong>approach_y</strong></td>
+   <td><strong>param5</strong></td>
    <td>float</td>
-   <td>
-   Local Y position of the end of the approach vector. Multicopters should
-   set this position based on their takeoff path. Grass-landing fixed wing
-   aircraft should set it the same way as multicopters. Runway-landing
-   fixed wing aircraft should set it to the opposite direction of the
-   takeoff, assuming the takeoff happened from the threshold / touchdown
-   zone.
-
-   </td>
+   <td>Latitude in degrees</td>
    </tr>
-   <tr style="color: #c0c0c0">
-   <td><strong>approach_z</strong></td>
+   <td><strong>param6</strong></td>
    <td>float</td>
-   <td>
-   Local Z position of the end of the approach vector. Multicopters should
-   set this position based on their takeoff path. Grass-landing fixed wing
-   aircraft should set it the same way as multicopters. Runway-landing
-   fixed wing aircraft should set it to the opposite direction of the
-   takeoff, assuming the takeoff happened from the threshold / touchdown zone.
-   </td>
+   <td>Longitude in degrees</td>
+   </tr>
+   <td><strong>param7</strong></td>
+   <td>float</td>
+   <td>Altitude in meters</td>
    </tr>
    </tbody>
    </table>
+
+**Examples**
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter, "module load message"
+
++-----------------------------------------------------------------------+--------------------------------------------+
+| Example MAVProxy/SITL Command                                         | Description                                |
++=======================================================================+============================================+
+| ``message COMMAND_LONG 0 0 179 0 1 0 0 0 0 0 0``                      | set home to the vehicle's current location |
++-----------------------------------------------------------------------+--------------------------------------------+
+| ``message COMMAND_LONG 0 0 179 0 0 0 0 0 -35.363 149.165 575``        | set home to the specified location         |
++-----------------------------------------------------------------------+--------------------------------------------+
+
+MAV_CMD_DO_SET_HOME within COMMAND_INT
+--------------------------------------
+
+Set the home location by sending a `COMMAND_INT <https://mavlink.io/en/messages/common.html#COMMAND_INT>`__ with the command and parameter fields set as specified for the `MAV_CMD_DO_SET_HOME <https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_HOME>`__ command.
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Type</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>target_system</strong></td>
+   <td>uint8_t</td>
+   <td>System ID</td>
+   </tr>
+   <tr>
+   <td><strong>target_component</strong></td>
+   <td>uint8_t</td>
+   <td>Component ID of flight controller or just 0</td>
+   </tr>
+   <tr>
+   <td><strong>frame</strong></td>
+   <td>uint8_t</td>
+   <td>MAV_FRAME_GLOBAL=0</td>
+   </tr>
+   <tr>
+   <td><strong>command</strong></td>
+   <td>uint16_t</td>
+   <td>MAV_CMD_DO_SET_HOME=179</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>current</strong></td>
+   <td>uint8_t</td>
+   <td>0 (not used)</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>autocontinue</strong></td>
+   <td>uint8_t</td>
+   <td>0 (not used)</td>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>float</td>
+   <td>1=use current location, 0=use specified location</td>
+   </tr>
+   <tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param2</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param3</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param4</strong></td>
+   <td>float</td>
+   <td>not used</td>
+   </tr>
+   <td><strong>param5</strong></td>
+   <td>int32_t</td>
+   <td>Latitude in degrees * 10^7</td>
+   </tr>
+   <td><strong>param6</strong></td>
+   <td>int32_t</td>
+   <td>Longitude in degrees * 10^7</td>
+   </tr>
+   <td><strong>param7</strong></td>
+   <td>float</td>
+   <td>Altitude in meters</td>
+   </tr>
+   </tbody>
+   </table>
+
+**Examples**
+
+The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter, "module load message"
+
++-------------------------------------------------------------------------+--------------------------------------------+
+| Example MAVProxy/SITL Command                                           | Description                                |
++=========================================================================+============================================+
+| ``message COMMAND_INT 0 0 0 179 0 0 1 0 0 0 0 0 0``                     | set home to the vehicle's current location |
++-------------------------------------------------------------------------+--------------------------------------------+
+| ``message COMMAND_INT 0 0 0 179 0 0 0 0 0 0 -353630000 1491650000 575`` | set home to the specified location         |
++-------------------------------------------------------------------------+--------------------------------------------+
 
 .. _mavlink-get-set-home-and-origin_set_gps_global_origin:
 
@@ -166,7 +243,6 @@ The message definition can be found `here <https://mavlink.io/en/messages/common
 
 The example command below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter, "module load message"
 
-- module load message
 - param set EK3_SRC1_POSXY 0
 - param set EK3_SRC1_VELXY 0
 - param set EK3_SRC1_VELZ 0
