@@ -13,6 +13,8 @@ information based upon your set-up.
 .. image:: ../../../images/Telemetry_LandingImage.jpg
     :target: ../_images/Telemetry_LandingImage.jpg
 
+.. note:: High value systems using RC control over a telemetry link should consider :ref:`common-redundant-telemetry`
+
 Short Range (<10KM)
 ===================
 
