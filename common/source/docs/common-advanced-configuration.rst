@@ -100,6 +100,7 @@ tuning options for the vehicle.
     Parameter Reset <common-parameter-reset>
     RC Input Channel Mapping (RCMAP) <common-rcmap>
     RC Options <common-rc-options>
+    Redundant Telemetry <common-redundant-telemetry>
 [site wiki="plane"]
     Reverse Thrust Setup<reverse-thrust-setup>
 [/site]
