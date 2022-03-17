@@ -512,7 +512,28 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target: https://www.austinaeronautics.com.au/
 
-      -  ..
+      -  .. image:: ../../../images/supporters/supporters_hoveruav_logo.png
+            :width: 250px
+            :align: center
+            :target: https://www.hoveruav.com.au/
 
+    *
+      -  .. image:: ../../../images/supporters/supporters_fdrones_logo.png
+            :width: 250px
+            :align: center
+            :target: https://www.f-drones.com/
+
+      -  .. image:: ../../../images/supporters/supporters__NWblue_Logo.png
+            :width: 250px
+            :align: center
+            :target: http://www.nwblue.com/
+
+    *
+      -  .. image:: ../../../images/supporters/supporters_fsops_logo.png
+            :width: 250px
+            :align: center
+            :target: https://www.freespaceoperations.com.au/
+
+      -  ..
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
