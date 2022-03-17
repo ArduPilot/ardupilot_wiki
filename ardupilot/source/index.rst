@@ -221,6 +221,7 @@ Features
    Plane <https://ardupilot.org/plane/index.html>
    Rover <https://ardupilot.org/rover/index.html>
    Sub <http://ardusub.com/>
+   Blimp <https://ardupilot.org/blimp/index.html>
    AntennaTracker <https://ardupilot.org/antennatracker/index.html>
    Mission Planner <https://ardupilot.org/planner/index.html>
    APM Planner 2 <https://ardupilot.org/planner2/index.html>

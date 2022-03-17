@@ -30,6 +30,7 @@ Getting more info
    
    Getting Started <docs/getting-started>
    AutoPilot Hardware Options <docs/common-autopilots>
+   Building a Blimp <docs/building-a-blimp>
    First Time Setup <docs/initial-setup>
    Flight Modes <docs/flight-modes>
    Complete parameter list <docs/parameters>
