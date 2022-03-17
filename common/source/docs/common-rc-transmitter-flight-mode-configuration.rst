@@ -256,4 +256,4 @@ Modes setup to monitor the Current PWM for these adjustments.
       262 us = 1553 us = mode 4)
 
       
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,planner,blimp"]
