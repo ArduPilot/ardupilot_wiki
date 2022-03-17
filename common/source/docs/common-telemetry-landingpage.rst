@@ -4,7 +4,7 @@
 Telemetry (landing page)
 ========================
 
-Copter/Plane/Rover support sharing information with a ground station (or
+Copter/Plane/Rover/Blimp support sharing information with a ground station (or
 transmitter) using telemetry. Follow the links below for configuration
 information based upon your set-up.
 
