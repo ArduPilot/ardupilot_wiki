@@ -4,7 +4,7 @@
 Accelerometer Calibration
 =========================
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,planner,blimp"]
 
 This article shows how to perform basic accelerometer calibration (using
 *Mission Planner*).
