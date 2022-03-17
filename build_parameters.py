@@ -38,7 +38,7 @@ parser = argparse.ArgumentParser(description="python3 build_parameters.py [optio
 parser.add_argument("--verbose", dest='verbose', action='store_false', default=True, help="show debugging output")
 parser.add_argument("--ardupilotRepoFolder", dest='gitFolder', default="../ardupilot", help="Ardupilot git folder. ")
 parser.add_argument("--destination", dest='destFolder', default="../../../../new_params_mversion", help="Parameters*.rst destination folder.")
-parser.add_argument('--vehicle', dest='single_vehicle', help="If you just want to copy to one vehicle, you can do this. Otherwise it will work for all vehicles (Copter, Plane, Rover, AntennaTracker, Sub)")
+parser.add_argument('--vehicle', dest='single_vehicle', help="If you just want to copy to one vehicle, you can do this. Otherwise it will work for all vehicles (Copter, Plane, Rover, AntennaTracker, Sub, Blimp)")
 args = parser.parse_args()
 
 error_count = 0
@@ -48,7 +48,7 @@ error_count = 0
 ## Parameters
 COMMITFILE = "git-version.txt"
 BASEURL = "https://firmware.ardupilot.org/"
-ALLVEHICLES =  ["AntennaTracker", "Copter" ,  "Plane", "Rover"] 
+ALLVEHICLES =  ["AntennaTracker", "Copter" ,  "Plane", "Rover", "Blimp"] 
 VEHICLES = ALLVEHICLES
 
 BASEPATH = ""
@@ -60,6 +60,7 @@ vehicle_new_to_old_name = { # Used because "param_parse.py" args expect old name
     "Copter":"ArduCopter",
     "Plane":"ArduPlane",
     "AntennaTracker":"AntennaTracker",  # firmware server calls Tracker as AntennaTracker
+    "Blimp":"Blimp",
 }
 
 vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with old names
@@ -69,6 +70,7 @@ vehicle_old_to_new_name = { # Used because git-version.txt use APMVersion with o
     "ArduCopter":"Copter",
     "ArduPlane":"Plane",
     "AntennaTracker":"AntennaTracker",  # firmware server calls Tracker/atennatracker as AntennaTracker
+    "Blimp":"Blimp",
 }
 
 
@@ -276,6 +278,10 @@ def get_commit_dict(releases_parsed):
                 elif re.search('racker', vehicle, re.IGNORECASE):
                     vehicle = "Tracker"
                     debug("Bad vehicle name auto fixed to TRACKER on:\t" + fetch_link)
+
+                elif re.search('blimp', vehicle, re.IGNORECASE):
+                    vehicle = "Blimp"
+                    debug("Bad vehicle name auto fixed to BLIMP on:\t" + fetch_link)
                     
                 else:
                     error("Nomenclature exception found in a vehicle name:\t" + vehicle + "\tLink with the exception:\t" + fetch_link)

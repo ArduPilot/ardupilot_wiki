@@ -52,7 +52,7 @@ from datetime import datetime
 # without the following import on old versions of Python:
 from distutils import dir_util  # noqa
  
-DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover']
+DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover', 'blimp']
 ALL_WIKIS = [
     'copter',
     'plane',
@@ -64,6 +64,7 @@ ALL_WIKIS = [
     'ardupilot',
     'mavproxy',
     'frontend',
+    'blimp',
 ]
 COMMON_DIR = 'common'
 
@@ -75,12 +76,14 @@ PARAMETER_SITE = {
     'plane': 'ArduPlane',
     'antennatracker': 'AntennaTracker',
     'AP_Periph': 'AP_Periph',
+    'blimp': 'Blimp',
 }
 LOGMESSAGE_SITE = {
     'rover': 'Rover',
     'copter': 'Copter',
     'plane': 'Plane',
     'antennatracker': 'Tracker',
+    'blimp': 'Blimp',
 }
 error_count = 0
 N_BACKUPS_RETAIN = 10

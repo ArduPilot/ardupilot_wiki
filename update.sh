@@ -26,7 +26,7 @@ test -n "$FORCEBUILD" || {
         changed=1
     }
 
-    PARAMSITES="ArduPlane ArduCopter AntennaTracker Rover AP_Periph"
+    PARAMSITES="ArduPlane ArduCopter AntennaTracker Rover AP_Periph Blimp"
     mkdir -p old_params new_params
     for site in $PARAMSITES; do
         wget "https://autotest.ardupilot.org/Parameters/$site/Parameters.rst" -O new_params/$site.rst 2> /dev/null
@@ -40,7 +40,7 @@ test -n "$FORCEBUILD" || {
         fi
     done
     
-    LOGMESSAGESITES="Plane Copter Tracker Rover"
+    LOGMESSAGESITES="Plane Copter Tracker Rover Blimp"
     mkdir -p old_logmessages new_logmessages
     for site in $LOGMESSAGESITES; do
         wget "https://autotest.ardupilot.org/LogMessages/$site/LogMessages.rst" -O new_logmessages/$site.rst 2> /dev/null
