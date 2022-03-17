@@ -5,7 +5,7 @@ Getting Started
 ====================================
 
 This article provides an overview of the main components you will need
-when building and using an Ardupilot-based blimp.
+when building and using an ArduPilot-based blimp.
 
 ArduPilot-capable blimp
 =======================================================
@@ -16,7 +16,7 @@ available, you will need to :ref:`build your own <building-a-blimp>`.
 6+ channel RC transmitter and receiver
 ======================================
 
-You'll need a radio control transmitter to manually control your BLimp
+You'll need a radio control transmitter to manually control your blimp
 and to activate its flight modes. You can use any RC
 transmitter/receiver system with at least six channels. Some of the
 options are discussed in the topic :ref:`Compatible RC Transmitter and Receiver Systems <common-rc-systems>`.
@@ -24,14 +24,14 @@ options are discussed in the topic :ref:`Compatible RC Transmitter and Receiver 
 .. image:: ../../../images/spektrum-dx8.jpg
     :target: ../_images/spektrum-dx8.jpg
 
-Autopilot (Autopilot hardware)
-==============================
+Autopilot (hardware)
+====================
 
 Blimp's autopilot board determines its capabilities for autonomous
 flight. 
 
-If building an indoor blimp, weight will usually be the main consiteration,
-thus the "FPV quadcopter" flight controllers such as the Matek F405-STD are recommended.
+If building an indoor blimp, weight will usually be the main consideration,
+thus the "single board" type of flight controllers are likely to be most suitable.
 
 For more options, see the topic :ref:`Choosing an Autopilot <common-choosing-a-flight-controller>`.
 
@@ -51,9 +51,6 @@ For indoor use, please see :ref:`the non-GPS options. <common-non-gps-navigation
 LiPo batteries and charger
 ==========================
 
-.. image:: ../images/lipo_battery.jpg
-    :target: ../_images/lipo_battery.jpg
-
 Blimp requires a rechargeable lithium polymer (LiPo) battery. Blimps have much
 lower power requirements than most UAVs but also lower payload capacity for their size.
 Since blimps must always be neutrally buoyant (i.e. any extra payload capacity will need
@@ -72,7 +69,7 @@ Ground Control Station (GCS)
 
 The (free and open source) :ref:`Mission Planner <planner:home>` is recommended if you're going
 to be loading new versions of Blimp onto the autopilot, and for
-first-flight tuning and calibration. It runs on a PC.
+first-flight tuning and calibration.
 
 .. image:: ../../../images/groundstation-with-MP.jpg
     :target: ../_images/groundstation-with-MP.jpg
