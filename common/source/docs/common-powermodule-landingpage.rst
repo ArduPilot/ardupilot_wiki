@@ -45,6 +45,11 @@ I2C Power Monitor
 
     Rotoye BatMon Smart Battery <common-smart-battery-rotoye.rst>
 
+Power Monitoring Via Telemetry Equipped BLHeli32/S ESCs
+=======================================================
+
+See :ref:`this section<esc-telemetry-based-battery-monitor>` of the :ref:`common-dshot-blheli32-telemetry` page
+
 Liquid Fuel Monitors
 ====================
 
