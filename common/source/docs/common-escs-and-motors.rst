@@ -19,8 +19,9 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
 [/site]
     Currawong Velocity ESCs <common-velocity-can-escs>
     DroneCAN ESCs <common-uavcan-escs>
-    PWM,OneShot, and DShot ESC<common-brushless-escs>
-    BLHeli/BLHeli32 Capable ESCs<common-blheli32-passthru>
+    PWM, OneShot and OneShot125 ESCs <common-brushless-escs>
+    DShot ESCs <common-dshot-escs>
+    BLHeli/BLHeli32 Capable ESCs <common-blheli32-passthru>
     ICE (Internal Combustion Engines) <common-ice>
     KDE CAN ESCs <common-kde-can-escs>
     Serial ESCs <common-serial-escs>

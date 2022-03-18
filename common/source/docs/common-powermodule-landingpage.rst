@@ -48,7 +48,7 @@ I2C Power Monitor
 Power Monitoring Via Telemetry Equipped BLHeli32/S ESCs
 =======================================================
 
-See :ref:`this section<esc-telemetry-based-battery-monitor>` of the :ref:`common-dshot-blheli32-telemetry` page
+- See :ref:`this section<esc-telemetry-based-battery-monitor>` of the :ref:`blheli32-esc-telemetry` page
 
 Liquid Fuel Monitors
 ====================
