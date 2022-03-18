@@ -47,10 +47,10 @@ Optional setup for critical cooling conditions
 (Hardware V0.1 and 1.0 only)
 
 The second stage regulator from the MinimOSD boards earlier than V1.1
-gets too hot on 12V video setups. If your frame has not a good air flow
+gets too hot on 12V video setups. If your frame does not have good air flow
 for cooling the OSD board you may want to feed the OSD entirely from
 the autopilot. Probably it will add some noises from servos, but you'll be more
-safe by this way:
+safe this way:
 
 .. image:: ../../../images/DiagramaMinimOSD_OP.jpg
     :target: ../_images/DiagramaMinimOSD_OP.jpg
