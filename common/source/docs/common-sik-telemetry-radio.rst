@@ -163,7 +163,7 @@ interface. For more information see :ref:`Configuring a Telemetry Radio using Mi
 Updating the Firmware
 =====================
 
-You can check the firmware version (latest version is `here<https://firmware.ardupilot.org/SiK/stable/>`__ ) using the GUI tool mentioned in the previous section and update if necessary with  :ref:`these instructions<sik-firmware-update>`
+You can check the firmware version (latest version is `here <https://firmware.ardupilot.org/SiK/stable/>`__ ) using the GUI tool mentioned in the previous section and update if necessary with  :ref:`these instructions<sik-firmware-update>`
 
 Expected range
 ==============
