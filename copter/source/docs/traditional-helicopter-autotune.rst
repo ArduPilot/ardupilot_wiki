@@ -101,7 +101,7 @@ The :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>` parameter specifies the maximum fr
 :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>`
 ----------------------------------------
 
-The :ref:`AUTOTUNE_VELXY_P<AUTOTUNE_VELXY_P>` parameter specifies P gain for velocity feedback.  This aids the AutoTune in maintaining aircraft position during the frequency sweeps and dwells.  Keep this at 0.1 unless the aircraft is drifting more than 10 meters during the dwell and frequency sweeps.  It only affects position holding while the aircraft is oscillating during these tests.  In between the oscillations, it may drift.  This gain will not help with that.
+The :ref:`AUTOTUNE_VELXY_P<AUTOTUNE_VELXY_P>` parameter specifies P gain for velocity feedback.  This aids the AutoTune in maintaining aircraft position during the frequency sweeps and dwells.  It does not apply to ``ATC_RAT_xxx_FF`` tuning.  Keep this at 0.1 unless the aircraft is drifting more than 10 meters during the dwell and frequency sweeps.  It only affects position holding while the aircraft is oscillating during these tests.  If it does drift more than 10 meters during the dwell adn frequency sweep tests then increase this parameter but don't increase much beyond 0.2. In between the oscillations, it may drift if the aircraft wasn't properly trimmed for hover.  This gain will not help with that.  
 
 
 Preparing for AutoTune
@@ -191,21 +191,64 @@ Tuning Maneuver Descriptions
 ``ATC_RAT_xxx_FF`` Tuning
 +++++++++++++++++++++++++
 
-        The ``ATC_RAT_xxx_FF`` tuning is accomplished by achieving a constant angular rate of 50 deg/s and determining the steady state command required to maintain the 50 deg/s.  The maneuver to achieve the constant angular rate consists of changing attitude by 15 deg in one direction then reversing direction to achieve a constant rate of 50 deg/s before reaching 15 deg in the opposite direction.  Finally it returns to the starting attitude.   During ``ATC_RAT_xxx_FF`` tuning the aircraft may drift, reposition the aircraft as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.  The following video demonstrates the ``ATC_RAT_xxx_FF`` tuning.
+        The ``ATC_RAT_xxx_FF`` tuning is accomplished by achieving a constant angular rate of 50 deg/s and determining the steady state command required to maintain the 50 deg/s.  The maneuver to achieve the constant angular rate consists of changing attitude by 15 deg in one direction then reversing direction to achieve a constant rate of 50 deg/s before reaching 15 deg in the opposite direction.  Finally it returns to the starting attitude.   During ``ATC_RAT_xxx_FF`` tuning there is no position holding logic and the aircraft may drift, reposition the aircraft between maneuvers as needed to keep it from drifting.  Making any inputs during this test will stop the tuning and won’t begin again unless the sticks are centered.  The following video demonstrates the ``ATC_RAT_xxx_FF`` tuning.
 
 ..  youtube:: 2XLBIycPiq0
 
 ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` Tuning
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-        ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` tuning starts with determining the maximum ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gains that can be safely tuned.  A frequency sweep is conducted from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency required for calculating the maximum allowable gains.  A series of dwells (oscillations at one frequency) are completed to more accurately determine the data required to calculate the maximum allowable ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gains. Next another frequency sweep is conducted to approximate the frequency for tuning ``ATC_RAT_xxx_D`` gain.  Then the ``ATC_RAT_xxx_D`` gain is raised until the response gain stops decreasing. Next the ``ATC_RAT_xxx_P`` gain is increased until the response gain exceeds the :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`.  During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  The following video demonstrates the ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` tuning.
+        ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` tuning starts with determining the maximum ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gains that can be safely tuned.  A frequency sweep is conducted from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency required for calculating the maximum allowable gains.  A series of dwells (oscillations at one frequency) are completed to more accurately determine the data required to calculate the maximum allowable ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` gains. Next another frequency sweep is conducted to approximate the frequency for tuning ``ATC_RAT_xxx_D`` gain.  Then the ``ATC_RAT_xxx_D`` gain is raised until the response gain stops decreasing. Next the ``ATC_RAT_xxx_P`` gain is increased until the response gain exceeds the :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`.  During this tuning, you can’t make any inputs to hold position during the tuning however the logic includes position holding during the test maneuver but not between manuevers.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift very little during the maneuver.  If it is drifting more than 10 meters during the maneuver then the :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` can be increased to minimize drifting.  In between the oscillation maneuvers, it may drift if the aircraft wasn't properly trimmed for hover.  The  :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` gain will not help with that. The tuning sweeps are 23 seconds in duration.  The following video demonstrates the ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` tuning.
 
 ..  youtube:: IOOIG_z1Cwc
 
 ``ATC_ANG_xxx_P`` Tuning
 ++++++++++++++++++++++++
 
-        ``ATC_ANG_xxx_P`` tuning starts with conducting a frequency sweep from from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency for the maximum response gain.  Then dwells (oscillations at one frequency) are conducted to tune the ``ATC_ANG_xxx_P`` gain. The gain is raised or lowered to determine the ``ATC_ANG_xxx_P`` gain that corresponds to a response gain (output angle/input angle request) that matches :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`. During this tuning, you can’t make any inputs to hold position during the tuning.  If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again.  The aircraft will drift some but shouldn’t drift too far (< 50 m).  The tuning sweeps are 23 seconds in duration.  
+        ``ATC_ANG_xxx_P`` tuning starts with conducting a frequency sweep from from the :ref:`AUTOTUNE_FRQ_MIN<AUTOTUNE_FRQ_MIN>` to :ref:`AUTOTUNE_FRQ_MAX<AUTOTUNE_FRQ_MAX>`.  This determines the approximate frequency for the maximum response gain.  Then dwells (oscillations at one frequency) are conducted to tune the ``ATC_ANG_xxx_P`` gain. The gain is raised or lowered to determine the ``ATC_ANG_xxx_P`` gain that corresponds to a response gain (output angle/input angle request) that matches :ref:`AUTOTUNE_GN_MAX<AUTOTUNE_GN_MAX>`. During this tuning, you can’t make any inputs to hold position during the tuning however the logic includes position holding during the test maneuver but not between manuevers.   If you make any inputs, then it will stop the tuning and wait until you center the sticks before it begins again. If it is drifting more than 10 meters during the maneuver then the :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` can be increased to minimize drifting. In between the oscillation maneuvers, it may drift if the aircraft wasn't properly trimmed for hover. The  :ref:`Velocity P Gain<AUTOTUNE_VELXY_P>` gain will not help with that. The tuning sweeps are 23 seconds in duration.  
 
 ..  youtube:: aI-uJuQAh-0
 
+Log Analysis
+============
+
+``ATC_RAT_xxx_FF`` Tuning
+-------------------------
+After completing the ``ATC_RAT_xxx_FF`` tuning, the log should be reviewed to ensure the code determined the value of ``ATC_RAT_xxx_FF`` gain correctly.  Unless head speed is very low, this gain should not be above 0.3. The graph below shows a time history of the target and actual rates for a FF tuning test.
+
+.. image:: ../images/Tradheli_FF_log_example.png
+   :target: ../_images/Tradheli_FF_log_example.png
+
+In the time history, an example of a good capture of the FF gain is shown the pitch up part of the tuning.  The actual rate is slightly below the target as it reaches the steady state.  Next the pitch down FF tuning is conducted and it can be seen that the rate appears to drop off before achieving steady state.  The FF gain is increased but it can be seen that the actual rate exceeds the target which results in the FF gain being too high.  If you see behavior like this, it is best to take the FF gain found where the rate is slightly below the target rate and manually enter it for the ``ATC_RAT_xxx_FF`` gain.
+
+  The video discusses what to look for in the log.
+
+.. youtube:: qtmEm1rs1Y0
+
+
+``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` Tuning
+----------------------------------------------
+After completing the ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` tuning, the log should be reviewed to ensure the gains were determined correctly.  If the ``ATC_RAT_xxx_D`` gain is zero after tuning, it can be adjusted manually by finding the max allowable gain provided in the GCS messages found in the bin log file.  Use 10% of the gain provided as rate_d given at the end of the max gain test. The messages look like this
+
+ AutoTune: Max rate P freq=23.62473 gain=6.239318
+ AutoTune: ph=161.0000 rate_p=0.121300
+ AutoTune: Max Rate D freq=41.98507 gain=1.493140
+ AutoTune: ph=251.0000 rate_d=0.012072
+
+Therefore in this case, a value for ``ATC_RAT_xxx_D`` of 0.0012 could be manually entered and also manually change ``ATC_RAT_xxx_P`` to zero.  Then run the autotune test again.  If ``ATC_RAT_xxx_D`` gain has not changed from the value manually entered accept the tuned values and move on to ``ATC_ANG_xxx_P`` tuning.
+
+The most common problem that may be experienced with the ``ATC_RAT_xxx_P`` tuning is the :ref:`Maximum Response Gain<AUTOTUNE_GN_MAX>` may be set too low.  It may require viewing the log to determine the highest response gain.  Then set the :ref:`Maximum Response Gain<AUTOTUNE_GN_MAX>` higher but don't exceed 2.2 as the response could have larger overshoots when capturing an attitude.
+
+  The video discusses what to look for in the log.
+
+.. youtube:: YytbRB-KzSE
+
+
+``ATC_ANG_xxx_P`` Tuning
+------------------------
+After completing the ``ATC_ANG_xxx_P`` tuning, the log should be reviewed to ensure the gains were determined correctly. Be sure to set the :ref:`Maximum Response Gain<AUTOTUNE_GN_MAX>` slightly higher than the value used for the ``ATC_RAT_xxx_D`` and ``ATC_RAT_xxx_P`` tuning, maybe 10% higher.  In this tuning, the frequency where the max response gain occurs is determined in the frequency response.  Then the  ``ATC_ANG_xxx_P`` gain is raised or lowered to achieve the desired response gain at the frequency where the maximum response gain occurs.  Below is an example of the frequency sweep from the ``ATC_ANG_xxx_P`` tuning.
+
+.. image:: ../images/Tradheli_angle_P_tuning_log_example.png
+   :target: ../_images/Tradheli_angle_P_tuning_log_example.png
+
+In this example, the response gain (ATSH.gain) has a peak shown in the graph.  The table below shows the dwells completed after the frequency sweep where the ``ATC_ANG_xxx_P`` was raised until the response gain met the :ref:`Maximum Response Gain<AUTOTUNE_GN_MAX>` value which was 2.0 in this case.  It is important to ensure that the correct frequency was found.  In cases like tuning the yaw axis, the response gain may not have a peak and a low frequency may be chosen which will not result in a proper tuning of the gain.  In this case, the ``ATC_ANG_xxx_P`` gain may be manually set higher by 1. So if the starting value was 4.5 then manually set it to 5.5 and run the ``ATC_ANG_xxx_P`` tuning again.
