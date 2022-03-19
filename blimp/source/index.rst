@@ -35,16 +35,4 @@ Getting more info
    Flight Modes <docs/flight-modes>
    Complete parameter list <docs/parameters>
    Complete log message list <docs/logmessages>
-
-
-..
-   If A Problem Arises <docs/common-when-problems-arise>
-   Advanced Configuration <docs/common-advanced-configuration>
-   Logs <docs/common-logs>
-   Peripheral Hardware <docs/common-optional-hardware>
-   OEM Customization <docs/common-oem-customizations>
-   Simulation <docs/common-simulation>
-   Upcoming Features <docs/common-master-features>
-   User Alerts <docs/common-user-alerts>
-   Appendix <docs/common-appendix>
    Full Table of Contents <docs/common-table-of-contents>
