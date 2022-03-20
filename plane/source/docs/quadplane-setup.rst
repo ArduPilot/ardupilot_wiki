@@ -12,3 +12,4 @@ QuadPlane Setup
     Tailsitters <guide-tailsitter>
     ESC Calibration <quadplane-esc-calibration>
     Parameter Setup <quadplane-parameters>
+    Flight Modes <quadplane-flight-modes>
