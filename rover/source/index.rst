@@ -4,6 +4,13 @@
 Rover Home
 ==========
 
+..  raw:: html
+
+    <h1 style="text-align:center;">ArduPilot</h1>
+    
+    <p style="text-align:center;color:red;"><strong>
+    Success with ArduPilot requires that the 'First Time Setup' and 'First Flight/Drive and Tuning' sections of this documentation be read and followed!</strong>
+    
 .. tip::
 
    Keep up with the latest ArduPilot related blogs on `ArduPilot.org! <https://ardupilot.org/>`__
@@ -31,7 +38,7 @@ automation in our :ref:`Video Demos <rover-video-demonstrations>`).
     Introduction <docs/gettit>
     Autopilot Hardware Options <docs/common-autopilots>
     First Time Setup <docs/apmrover-setup>
-    First Drive <docs/rover-first-drive>
+    First Drive and Tuning <docs/rover-first-drive>
     If A Problem Arises <docs/common-when-problems-arise>
     Rover Features <docs/rover-features>
     Advanced Configuration <docs/common-advanced-configuration>

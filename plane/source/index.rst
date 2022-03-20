@@ -7,6 +7,12 @@ Plane Home
 .. image:: /images/home_plane.jpg
     :target: _images/home_plane.jpg
 
+..  raw:: html
+
+    <h1 style="text-align:center;">ArduPilot</h1>
+    
+    <p style="text-align:center;color:red;"><strong>
+    Success with ArduPilot requires that the 'First Time Setup' and 'First Flight/Drive and Tuning' sections of this documentation be read and followed!</strong>
 
 The free Plane firmware running on a compatible controller board gives
 any fixed-wing aircraft full autonomous capability. VTOL fixed-wing aircraft that 
@@ -102,11 +108,11 @@ Monitor https://discuss.ardupilot.org/c/arduplane for plane-related announcement
     Introduction <docs/introduction>
     AutoPilot Hardware <docs/common-autopilots>
     First Time Setup <docs/arduplane-setup>
-    First Flight <docs/first-flight-landing-page>
+    First Flight and Tuning <docs/first-flight-landing-page>
+    QuadPlane Setup and Operation <docs/quadplane-support>
     If A Problem Arises <docs/common-when-problems-arise> 
     Flight Features <docs/flight-features>
     Advanced Configuration <docs/common-advanced-configuration>
-    QuadPlane Support <docs/quadplane-support>
     Mission Planning <docs/common-mission-planning>
     Logs <docs/common-logs>
     Peripheral Hardware <docs/common-optional-hardware>
