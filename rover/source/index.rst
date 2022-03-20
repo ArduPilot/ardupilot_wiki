@@ -9,7 +9,7 @@ Rover Home
     <h1 style="text-align:center;">ArduPilot</h1>
     
     <p style="text-align:center;color:red;"><strong>
-    Success with ArduPilot requires that the 'First Time Setup' and 'First Flight/Drive and Tuning' sections of this documentation be read and followed!</strong>
+    Success with ArduPilot requires that the 'First Time Setup' and 'First Drive and Tuning' sections of this documentation be read and followed!</strong>
     
 .. tip::
 
