@@ -9,7 +9,6 @@ This section covers items required for your first drive including basic tuning r
 .. toctree::
     :maxdepth: 1
 
-    Control Modes <rover-control-modes>
     Pre-Arm Safety Checks <common-prearm-safety-checks>
     Arming / Disarming <arming-your-rover>
     Steering Trim <savetrim>

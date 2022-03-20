@@ -24,4 +24,5 @@ In addition to mandatory calibration, you may also choose to :ref:`Configure Opt
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
     Motor and Servo configuration <rover-motor-and-servo-configuration>
     Failsafes <rover-failsafes>
+    Control Modes <rover-control-modes>
 
