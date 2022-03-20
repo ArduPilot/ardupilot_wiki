@@ -19,7 +19,6 @@ Please follow each of the links below.
 .. toctree::
     :maxdepth: 1
 
-    Flight Modes <flight-modes>
     Pre-arm Safety Check <common-prearm-safety-checks>
     Arming and Disarming <arming_the_motors>
     Pre-Flight Checklist <checklist>
