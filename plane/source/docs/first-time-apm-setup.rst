@@ -22,3 +22,4 @@ transmitter/receiver, compass, and accelerometer and failsafes using
     RC Transmitter Flight Mode Configuration <common-rc-transmitter-flight-mode-configuration>
     Compass Calibration <common-compass-calibration-in-mission-planner>
     Failsafe Function <apms-failsafe-function>
+    Flight Modes <flight-modes>
