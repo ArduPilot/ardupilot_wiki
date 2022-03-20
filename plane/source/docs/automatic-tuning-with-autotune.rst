@@ -139,6 +139,19 @@ coping well with wind, or not holding altitude well. Keep flying in
 AUTOTUNE mode well past the point where you think the plane is flying
 well.
 
+If you have an OSD or Ground Control Station, then messages for D and P tuning phases for the axis, as well as a "Tuning Completed" message will be displayed. Once tuning is completed, it is saved.
+
+Tuning light, agile aircraft
+----------------------------
+
+Very light, agile aircraft may fail to complete the tune, or result in a tune that has small oscillations, often in the pitch axis since it has low inertia. In these cases, it may be beneficial to do the following and re-attempt the Autotune:
+
+- Increase the main loop rate, :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>` to "200" (Hz) and set the :ref:`ONESHOT_MASK<ONESHOT_MASK>` to those outputs controlling flight surface control servos (if they are capable of doing 200Hz updates...most digital servos are capable of this...check to see that they are not overheating as you move them). This increases the control update rate and decreases delay, increasing phase margin to attempt to eliminate small oscillations and increase accuracy.
+
+- Set the :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` to "40" (Hz) cutoff and increase the :ref:`PTCH_RATE_FLTT<PTCH_RATE_FLTT>` and :ref:`RLL_RATE_FLTT<RLL_RATE_FLTT>` to "20" (Hz) to reduce delay and increase phase margin.
+
+.. note:: increasing the gyro filter cutof may allow more system noise into the control loops and setting up a :ref:`dynamic throttle notch filter<common-throttle-based-notch>` or :ref:`in-flight FFT<common-imu-fft>` is recommended (if your autopilot firmware includes this feature.. see: :ref:`Firmware Limitations<common-limited_firmware>` ).
+
 ACRO Mode YAW Rate Controller
 =============================
 
