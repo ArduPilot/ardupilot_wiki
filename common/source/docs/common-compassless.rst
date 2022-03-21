@@ -21,7 +21,7 @@ GSF
 
 ArduPilot 4.1 (and higher) supports a Gaussian Sum Filter (GSF) which takes IMU and GPS inputs to compute a probable heading, if a yaw source (like a compass) is unavailable, or unhealthy.
 
-.. note:: In testing so far, the accuracy is quite acceptable, but this is still considered experimental and more experience and test flights by the community are required.
+.. note:: In testing so far, the accuracy is quite acceptable, but this is still considered experimental and more experience and test flights by the community are required. Also, currently, it does not function well for QuadPlane VTOL tailsitters, since their nose is pointed vertically in VTOL flight. Compasses are still recommended for Tailsitters.
 
 .. note:: GSF depends on good velocity reports from the GPS. Do not attempt with older generation GPS, use at least UBlox M8 or equivalent performance GPS. Also, be sure GPS view of the sky is unobstructed throughout the flight. Otherwise, poor heading estimation will result.
 
