@@ -28,4 +28,3 @@ camera gimbal, antenna tracker etc.
     Configure Motor Range (optional) <set-motor-range>
     Failsafe Mechanisms <failsafe-landing-page>
     Flight Modes <flight-modes>
-    Control Modes <rover-control-modes>
