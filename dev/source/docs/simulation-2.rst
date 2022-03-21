@@ -30,6 +30,7 @@ In addition, the ArduPilot firmware simulator element can also be interfaced to 
 The most commonly used simulators are:
 
 -  :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` is the simulator most commonly used by developers. It is a simple simulator that is built within all SITL builds of ArduPilot. It is used by the :ref:`autotester <the-ardupilot-autotest-framework>` and other simulators below are actually built on top of SITL
+-  :ref:`Mission Planner <planner:mission-planner-simulation>` can be used in Windows to simulate with Mission Planner as GCS.
 -  :ref:`Gazebo <using-gazebo-simulator-with-sitl>` is the official DARPA virtual robotics simulator
 -  :ref:`XPlane-10 <sitl-with-xplane>` a commercial flight simulator with a rich 3D interface   
 -  :ref:`XPlane-10 Soaring<soaring-sitl-with-xplane>` soaring on XPlane-10
@@ -56,6 +57,7 @@ List of simulators (so they can appear in the menu):
     :maxdepth: 1
 
     SITL Simulator <sitl-simulator-software-in-the-loop>
+    Mission Planner Simulation <mission-planner-sim>
     Gazebo <using-gazebo-simulator-with-sitl>
     XPlane-10 <sitl-with-xplane>
     XPlane-10 Soaring<soaring-sitl-with-xplane>
