@@ -51,7 +51,10 @@ Reversible DShot ESCs
 
 Currently, only BLHeli32 and BLHeli_S capable reversible DShot ESCs are supported. In order to use one, the output which drives it must be designated with the appropriate bit in the :ref:`SERVO_BLH_3DMASK<SERVO_BLH_3DMASK>` bitmask parameter. This will map the outputs 1000-1500-2000 values to the correct digital values for the ESC to provide FullReverse-Idle-FullForward range operation, respectively.
 
-If the craft has been setup for DShot commands then ArduPilot will supply the correct command at startup in order to set the ESCs in reversible mode.
+If :ref:`DShot commands <dshot-commands>` have been enabled then ArduPilot will automatically configure the ESCs to reversible mode at startup.  If DShot commands have not been configured you must manually configure the ESCs' "Motor Direction" to "Bidirectional 3D" as shown below.
+
+  .. image:: ../../../images/blheli-reversible-dshot.png
+    :target: ../_images/blheli-reversible-dshot.png
 
 In a similar fashion, normal output rotation direction can be reversed by setting :ref:`SERVO_BLH_RVMASK<SERVO_BLH_RVMASK>` without any changes needing to be made through ESC configuration software (e.g. BLHeliSuite). This can also be used on ESCs with forward and reversed active operation, ie reversible ESCs, to set the "forward" direction's rotation.
 
