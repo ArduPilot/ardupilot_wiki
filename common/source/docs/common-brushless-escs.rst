@@ -16,12 +16,18 @@ These are the most common ESCs for non-copter applications and were historically
 
 PWM ESCs use a periodic input pulse of width typically between 1000uS and 2000uS for zero to full power, respectively.
 
-[site wiki="copter, rover"]
+[site wiki="copter"]
 - Set :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` to 0/Normal (the default) and reboot the autopilot
+- :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` specify the PWM range sent to motors (e.g. where :ref:`SERVOx_FUNCTION <SERVO1_FUNCTION>` = "Motor1", "Motor2", etc).  See :ref:`ESC Calibration <esc-calibration>` for info on aligning the autopilot's output range with the ESC's input range.
+[/site]
+[site wiki="rover"]
+- Set :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` to 0/Normal (the default) and reboot the autopilot
+- The PWM range for each channel is specified by the corresponding :ref:`SERVOx_MIN <SERVO3_MIN>` and :ref:`SERVOx_MAX <SERVO3_MAX>` parameters.
 [/site]
 [site wiki="plane"]
-- Forward motors will use normal PWM unless OneShot (see below) or :ref:`DShot <common-dshot-escs>` has been enabled
-- VTOl motors will use normal PWM when :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE> is 0/Normal (the default)
+- Forward motors will use normal PWM unless OneShot (see below) or :ref:`DShot <common-dshot-escs>` has been enabled.  The PWM range for each channel is specified by the corresponding :ref:`SERVOx_MIN <SERVO3_MIN>` and :ref:`SERVOx_MAX <SERVO3_MAX>` parameters.
+- VTOL motors will use normal PWM when :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` is 0/Normal (the default).  The PWM range is specified by the :ref:`Q_M_PWM_MIN <Q_M_PWM_MIN>` and :ref:`Q_M_PWM_MAX <Q_M_PWM_MAX>` parameters
+- See :ref:`ESC Calibration <guide-esc-calibration>` for info on aligning the autopilot's output range with the ESC's input range.
 
 .. note:: The autopilot should be re-booted after changing the protocol type.
 [/site]
@@ -29,14 +35,14 @@ PWM ESCs use a periodic input pulse of width typically between 1000uS and 2000uS
 The frame rate of these pulses is usually between 50Hz to 490Hz. The faster frame rates allow quicker control reactions to be sent to the motor, if the ESC has capability for those frame rates.
 
 [site wiki="copter"]
-- Set :ref:`RC_SPEED <RC_SPEED>` to change the frame rate (default is 490hz)
+- Set :ref:`RC_SPEED <RC_SPEED>` to change the frame rate (default is 490Hz)
 [/site]
 [site wiki="rover"]
-- Set :ref:`SERVO_RATE <SERVO_RATE>` to change the frame rate (default is 50hz)
+- Set :ref:`SERVO_RATE <SERVO_RATE>` to change the frame rate (default is 50Hz)
 [/site]
 [site wiki="plane"]
 - Set :ref:`SERVO_RATE <SERVO_RATE>` to change the frame rate for forward motors (default is 50hz)
-- Set :ref:`Q_RC_SPEED <Q_RC_SPEED>` to change the frame rate for the VTOL esc/motors (default is 490hz)
+- Set :ref:`Q_RC_SPEED <Q_RC_SPEED>` to change the frame rate for the VTOL esc/motors (default is 490Hz)
 [/site]
 
 .. note:: be sure of the capabilities of your ESC before selecting a higher frame rate to avoid damage to the ESC.
@@ -50,9 +56,9 @@ OneShot (not to be confused with "OneShot125") is an older protocol that uses th
 - Set :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` to 1 (OneShot) and reboot the autopilot
 [/site]
 [site wiki="plane"]
-Oneshot (not Oneshot125) loop synchronization can be added to any motor running an normal PWM ESC using the :ref:`ONESHOT_MASK <ONESHOT_MASK>` bitmask. It will trigger pulses at the :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>`, but no lower than at 250Hz. Be sure the ESCs can handle this rate.
+Oneshot (not Oneshot125) loop synchronization can be added to any motor running an normal PWM ESC or servo using the :ref:`ONESHOT_MASK <ONESHOT_MASK>` bitmask. It will trigger pulses at the :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>`, but no lower than at 250Hz. Be sure the ESCs can handle this rate.
 
-VTOl motors will use OneShot if :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` is 1 (OneShot)
+VTOL motors will use OneShot if :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` is 1 (OneShot)
 [/site]
 
 OneShot 125
@@ -65,7 +71,7 @@ The OneShot125 (sometimes confusingly shortened to just OneShot) protocol is sim
 [/site]
 [site wiki="plane"]
 - Forward motors will use normal PWM unless OneShot or DShot has been enabled (see below) 
-- VTOl motors will use OneShot125 if :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` is 2 (OneShot125)
+- VTOL motors will use OneShot125 if :ref:`Q_M_PWM_TYPE <Q_M_PWM_TYPE>` is 2 (OneShot125)
 [/site]
 
 If using an autopilot with an IOMCU (e.g. Pixhawk, CubeOrange) the ESCs should be connected to the AUX outputs and the corresponding :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` values should be set to "Motor1", etc.  This can be most easily done using Mission Planner's "Servo Output" page
