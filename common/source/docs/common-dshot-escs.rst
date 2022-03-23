@@ -12,7 +12,7 @@ DShot is a digital ESC protocol which allows fast, high resolution digital commu
 - Clock differences between the ESC and autopilot don't affect flight performance
 - ESC calibration is not required
 
-DShot is the underlying protocol used by :ref:`BLHeli <common-blheli32-passthru>` which offers even more features including :ref:`ESC telemetry <blheli32-esc-telemetry>`, :ref:`passthrough <common-blheli32-passthru>` and :ref:`Bi-directional dshot <bidir-dshot>`.  If choosing a DShot enabled ESC we recommend using one that also support BLHeli or BLHeli_S.
+DShot is the underlying protocol used by :ref:`BLHeli <common-blheli32-passthru>` which offers even more features including :ref:`ESC telemetry <blheli32-esc-telemetry>`, :ref:`passthrough <common-blheli32-passthru>` and :ref:`Bi-directional dshot <bidir-dshot>`.  If choosing a DShot enabled ESC we recommend using one that also supports BLHeli or BLHeli_S.
 
 .. note::
    Only try DShot on ESCs that are known to support it or you will get unpredictable results.
@@ -20,10 +20,12 @@ DShot is the underlying protocol used by :ref:`BLHeli <common-blheli32-passthru>
 .. note::
    Recently there is a growing number of proprietary and non-proprietary 16 / 32 bit ESCs with firmware that support DShot and other digital ESC protocols, but not BLHeli32 specific features like passthrough and telemetry. See your ESC's manual for further detail on supported features.
 
+.. note:: most DShot ESCs normally will also operate as normal :ref:PWM ESCs<common-brushless-escs>`.
+
 Connecting the ESCs
 ===================
 
-For autopilots with an IOMCU (e.g. Pixhawk, CubeOrange) the DShot ESCs should be connected to the AUX outputs.
+For autopilots with an IOMCU (e.g. Pixhawk, CubeOrange) the DShot ESCs should be connected to the AUX outputs.  On CubeOrange AUX1 cannot be used for DShot meaning only AUX2 to AUX6 can be used (`see issue <https://github.com/ArduPilot/ardupilot/issues/20362>`__).
 
 For :ref:`Pixracer <common-pixracer-overview>` and :ref:`other boards <common-autopilots>` without a separate IOMCU coprocessor, any servo/motor outputs can be used.
 
@@ -50,7 +52,7 @@ For smaller craft, DShot600 is by far the most widely used and can therefore be 
 
 Higher rates (e.g. DShot600 and DShot1200) are more susceptible to noise but have the advantage that they tie up the allocated DMA channel for less time which can be beneficial on flight controllers with a lot of DMA sharing.
 
-If :ref:`Bi-directional DShot <bidir-dshot>` will be used DShot300 and DShot600 are preferred because this feature requires a longer pulse width as it has to wait for the response from the ESC before it can send another pulse.  Bi-directional DShot does not share DMA channels and so there is no impact on other peripherals.  Bi-directional DShot is only supported on BLHeli32 ESCs
+If :ref:`Bi-directional DShot <bidir-dshot>` will be used, DShot300 and DShot600 are preferred, because this feature requires a longer pulse width as it has to wait for the response from the ESC before it can send another pulse.  Bi-directional DShot does not share DMA channels and so there is no impact on other peripherals.  Bi-directional DShot is only supported on BLHeli32 ESCs
 
 Configure the Servo Functions
 =============================
@@ -62,7 +64,7 @@ As mentioned above, if using an autopilot with an IOMCU (e.g. Pixhawk, CubeOrang
 .. note:: When an output is configured for DShot, the ``SERVOx_MIN/MAX/TRIM`` parameters for that output will always be ignored since DShot does not use these parameters. The trim  value used will be  1500 if it's a reversible output, or 1000 if normal output setup in DShot, and the output range always be 1000-2000. No ESC calibration step is required.
 
 [site wiki="plane"]
-On Plane, all other motors use Normal (PWM) protocol. However, in Plane, any motor, like the traditional fixed wing's main motor or Dual Motor Tailsitters (SERVOn_FUNCTION = 70 throttle, 73 throttle left and / or 74 throttle right), can be changed to a protocol other than PWM using the :ref:`SERVO_BLH_MASK<SERVO_BLH_MASK>` parameter to specify the output number of the motor together with the :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` parameter to select the protocol of these motors independently of that selected for the copter function motors.
+On Plane, all other motors use Normal (PWM) protocol. However, in Plane, any motor, like the traditional fixed wing's main motor or Dual Motor Tailsitters (SERVOx_FUNCTION = 70 throttle, 73 throttle left and / or 74 throttle right), can be changed to a protocol other than PWM using the :ref:`SERVO_BLH_MASK<SERVO_BLH_MASK>` parameter to specify the output number of the motor together with the :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` parameter to select the protocol of these motors independently of that selected for the copter function motors.
 [/site]
 
 .. note:: All mask-based configuration can only be changed at a PWM group level, please consult the documentation for your flight controller to ascertain which outputs are on different groups. See :ref:`Mixing ESC Protocols <dshot-mixing-escs>` section below.
@@ -95,8 +97,8 @@ The current commands supported are:
 
 -    Dshot LEDs on/off
 -    Dshot Buzzer on/off
--    Reverse motor direction
--    Enable 3D operation
+-    Reverse motor direction (see :ref:`SERVO_BLH_RVMASK <SERVO_BLH_RVMASK>` parameter)
+-    Reversible DShot (aka 3D mode) (see :ref:`Reversible DShot ESCs <blheli32-reversible-dshot>`)
 
 .. warning:: Currently, ArduPilot supports the command set (:ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` =1) that is commonly used, however, others are appearing and may not be compatible, resulting in undefined operation. Use caution (remove blades!) until correct operation using type=1 is verified for your ESC
 
@@ -105,7 +107,7 @@ The current commands supported are:
 Mixing ESC Protocols
 ====================
 
-While all the servo/motor outputs of an ArduPilot autopilot are capable of Normal PWM operation at 50Hz frame rates, not all are capable of other ESC protocol configurations. And, usually, these configurations must apply to pre-designated groups of outputs, even if they are not all driving an ESC. So the following cautions apply:
+While all the servo/motor outputs of an ArduPilot autopilot are capable of Normal PWM operation at 50Hz and higher frame rates, not all are capable of other ESC protocol configurations. And, usually, these configurations must apply to pre-designated groups of outputs, even if they are not all driving an ESC. So the following cautions apply:
 
 #. The 8 "MAIN" outputs of autopilots using an IOMCU (like PixHawk and Cube), cannot be used for DShot. On these autopilots, only the additional "AUX" outputs support DShot. If you attempt to set a "MAIN" output to DShot, then normal PWM output will occur, even though it has been set to a DShot protocol.
 
