@@ -27,7 +27,7 @@ Use Cases
 .. image:: ../../../images/case-cmu-nrec-drone.png
 
 
-..  youtube:: 0QlaItqLTPc
+..  youtube:: k6jKkpmj4-k
     :width: 640
     :height: 480
 
