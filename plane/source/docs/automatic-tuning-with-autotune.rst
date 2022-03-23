@@ -26,7 +26,7 @@ To setup your aircraft for AUTOTUNE you need to select AUTOTUNE mode as
 one of the flight modes selectable with the flight mode switch on your
 transmitter.
 
-.. note:: as of version 4.2, you can AutoTune in any stabilized flight mode, such as CRUISE or FBWA/B, LOITER, or even during an AUTO mission segment (if :ref:`STICK_MIXING<STICK_MIXING>` is enabled), via an ``RCx_OPTION`` switch set to 107.
+.. note:: as of version 4.1.3, you can AutoTune in any stabilized flight mode, such as CRUISE or FBWA/B, LOITER, or even during an AUTO mission segment (if :ref:`STICK_MIXING<STICK_MIXING>` is enabled), via an ``RCx_OPTION`` switch set to 107.
 
 You also should choose a tuning level by setting the :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>`
 parameter in the advanced parameter screen of your ground station. The
