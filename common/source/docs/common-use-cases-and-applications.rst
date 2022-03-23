@@ -22,7 +22,7 @@ Use Cases
 .. image:: ../../../images/case-tractor.jpg
 
 
-- `Safe flights by agile collision avoidance <https://discuss.ardupilot.org/t/cmu-nrec-falco-drone-safe-flights-by-agile-collision-avoidance/83300>`__
+- `Collision Avoidance <https://discuss.ardupilot.org/t/cmu-nrec-falco-drone-safe-flights-by-agile-collision-avoidance/83300>`__
 
 .. image:: ../../../images/case-cmu-nrec-drone.png
 
