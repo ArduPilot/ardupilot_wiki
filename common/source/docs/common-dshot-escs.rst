@@ -12,7 +12,7 @@ DShot is a digital ESC protocol which allows fast, high resolution digital commu
 - Clock differences between the ESC and autopilot don't affect flight performance
 - ESC calibration is not required
 
-DShot is the underlying protocol used by :ref:`BLHeli <common-blheli32-passthru>` which offers even more features including :ref:`ESC telemetry <blheli32-esc-telemetry>`, :ref:`passthrough <common-blheli32-passthru>` and :ref:`Bi-directional dshot <bidir-dshot>`.  If choosing a DShot enabled ESC we recommend using one that also supports BLHeli or BLHeli_S.
+DShot is the underlying ESC control protocol used by :ref:`BLHeli <common-blheli32-passthru>` ESCs.  Many BLHeli ESC versions offer even more features such as ESC configuration, :ref:`ESC telemetry <blheli32-esc-telemetry>`, LED control and/or :ref:`Bi-directional dshot <bidir-dshot>`.  If choosing a DShot enabled ESC we recommend using one that also supports BLHeli32 or BLHeli_S.
 
 .. note::
    Only try DShot on ESCs that are known to support it or you will get unpredictable results.
