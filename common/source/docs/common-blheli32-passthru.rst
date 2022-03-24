@@ -9,7 +9,7 @@ This page includes setup instructions for the following features
 
 - Pass-Through support allows the BLHeli application to be used to configure the ESCs while remaining connected to the autopilot
 - :ref:`Reversible DShot <blheli32-reversible-dshot>` (aka 3D mode) allows the motor to be spun in either direction
-- :ref:`Bi-directional Dshot <bidir-dshot>` allows the ESCs to send RPM back to the autopilot without the need for an additional telemetry connection
+- :ref:`Bi-directional DShot <bidir-dshot>` allows the ESCs to send RPM back to the autopilot without the need for an additional telemetry connection
 - :ref:`ESC Telemetry <blheli32-esc-telemetry>` allows the ESCs to send RPM, voltage and current information back to the autopilot so that it can be logged, viewed in real-time or even allow the removal of a :ref:`battery monitor <esc-telemetry-based-battery-monitor>`
 
 "BLHeli" covers covers multiple (sometimes competing) projects providing ESCs firmware and accompanying configuration software
@@ -125,7 +125,7 @@ By setting a battery monitor instance to BLHeli32 ESC type (for example :ref:`BA
 
 .. _bidir-dshot:
 
-Bi-directional Dshot
+Bi-directional DShot
 ====================
 
 [site wiki="rover"]
@@ -134,7 +134,7 @@ Bi-directional Dshot
    Bi-directional DShot does not work with Rover (`see issue here <https://github.com/ArduPilot/ardupilot/issues/20372>`__)
 [/site]
 
-Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) support returning motor RPM values over the Dshot signal line. Supporting bi-directional Dshot requires exclusive use of one or more DMA channels and thus not all versions of ArduPilot support it. Versions that support bi-directional Dshot natively are listed below.  For other autopilots please load the ArduPilot firmware version ending in "-bdshot".
+Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) support returning motor RPM values over the DShot signal line. Supporting bi-directional DShot requires exclusive use of one or more DMA channels and thus not all versions of ArduPilot support it. Versions that support bi-directional DShot natively are listed below.  For other autopilots please load the ArduPilot firmware version ending in "-bdshot".
 
 - BeastF7, BeastF7v2, BeastH7, BeastH7v2
 - FlywooF745, FlywooF745Nano
@@ -145,14 +145,14 @@ Only the lowest 4 DShot capable servo outputs can be used.  For autopilots with 
 Setup
 -----
 
-First ensure that you have an appropriate version of BLHeli32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli32 supports bi-directional Dshot. Official versions of BLHeli_S do not support bi-directional Dshot, you will need to either buy a version from `BLHeli_S JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use `BLHeli_S BlueJay <https://github.com/mathiasvr/bluejay>`__. If you try and enable bi-directional Dshot with the wrong firmware version then unpredictable motor operation can occur.
+First ensure that you have an appropriate version of BLHeli32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli32 supports bi-directional DShot. Official versions of BLHeli_S do not support bi-directional DShot, you will need to either buy a version from `BLHeli_S JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use `BLHeli_S BlueJay <https://github.com/mathiasvr/bluejay>`__. If you try and enable bi-directional DShot with the wrong firmware version then unpredictable motor operation can occur.
 
 .. image:: ../../../images/blheli-version-check.png
     :target: ../_images/blheli-version-check.png
     :width: 450px
 
-Set the following parameters to enable BLHeli32 and BLHeli_S bi-directional Dshot:
+Set the following parameters to enable BLHeli32 and BLHeli_S bi-directional DShot:
 
-- :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>` : a bitmap used to enable BLHeli32 or BLHeli_S bi-directional Dshot support. On flight controllers without IOMCU this would normally be set to 15 to indicate four active channels. On flight controllers with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional Dshot will only work on the AUX outputs).
+- :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>` : a bitmap used to enable BLHeli32 or BLHeli_S bi-directional DShot support. On flight controllers without IOMCU this would normally be set to 15 to indicate four active channels. On flight controllers with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional DShot will only work on the AUX outputs).
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed. Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM (small motors might have 12 poles).
