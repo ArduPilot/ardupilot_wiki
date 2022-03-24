@@ -219,7 +219,7 @@ Features
    Home <https://ardupilot.org>
    Copter <https://ardupilot.org/copter/index.html>
    Plane <https://ardupilot.org/plane/index.html>
-   Rover <https://ardupilot.org/rover/index.html></font>
+   Rover <https://ardupilot.org/rover/index.html>
    Sub <http://ardusub.com/>
    AntennaTracker <https://ardupilot.org/antennatracker/index.html>
    Mission Planner <https://ardupilot.org/planner/index.html>
