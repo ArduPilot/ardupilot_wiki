@@ -4,7 +4,7 @@
 PWM, OneShot and OneShot125 ESCs
 ================================
 
-Most ArduPilot vehicles use brushless motors controlled by brushless motor ESCs. The most common protocols used by these ESCs are PWM, OneShot, OneShot125, :ref:`DShot <common-dshot-escs>` and :ref:`BLHeli <common-blheli32-passthru>`. This page describes the first three (PWM, OneShot and OneShot125).
+Most ArduPilot vehicles use brushless motors controlled by brushless motor ESCs. The most common protocols used by these ESCs are PWM, OneShot, OneShot125, and :ref:`DShot <common-dshot-escs>`. This page describes the first three (PWM, OneShot and OneShot125).
 
 .. warning:: Be sure your ESC can support the configuration you select for it. Damage can occur otherwise. This includes frame rates discussed below. Also be careful when switching between protocols without rebooting or re-calibrating ESCs as this can lead to uncommanded motor output.
 
