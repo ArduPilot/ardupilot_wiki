@@ -132,7 +132,9 @@ Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) sup
 - BeastF7, BeastF7v2, BeastH7, BeastH7v2
 - FlywooF745, FlywooF745Nano
 - KakuteF4Mini, KakuteF7Mini, KakuteH7Mini
- 
+
+Only the lowest 4 DShot capable servo outputs can be used.  For autopilots with an IOMCU (e.g. Pixhawk, CubeOrange) this means AUX1 to AUX4 can be used.  For Pixracer and other autopilots without a separate IOMCU coprocessor this means outputs 1 to 4 can be used.
+
 Setup
 -----
 
