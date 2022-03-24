@@ -45,3 +45,16 @@ table.partners-table td {
     padding-top: 40px;
     margin-top: -40px;
 }
+
+/* make certain toc sidebar items red */
+.wy-menu .toctree-l1 a[href*="arduplane-setup.html"],
+.wy-menu .toctree-l1 a[href*="first-flight-landing-page.html"],
+.wy-menu .toctree-l1 a[href*="initial-setup.html"],
+.wy-menu .toctree-l1 a[href*="flying-arducopter.html"],
+.wy-menu .toctree-l1 a[href*="apmrover-setup.html"],
+.wy-menu .toctree-l1 a[href*="rover-first-drive.html"],
+.wy-menu .toctree-l1 a[href*="quadplane-setup.html"],
+.wy-menu .toctree-l1 a[href*="quadplane-first-flight.html"] {
+    color: red;
+    font-weight: bold;
+}
