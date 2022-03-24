@@ -10,12 +10,13 @@ This page includes setup instructions for the following features
 - Pass-Through support allows the BLHeli application to be used to configure the ESCs while remaining connected to the autopilot
 - :ref:`Reversible DShot <blheli32-reversible-dshot>` (aka 3D mode) allows the motor to be spun in either direction
 - :ref:`Bi-directional Dshot <bidir-dshot>` allows the ESCs to send RPM back to the autopilot without the need for an additional telemetry connection
-- :ref:`ESC Telemetry <blheli32-esc-telemetry>` allowing the ESCs to send RPM, voltage and current information back to the autopilot so that it can be logged, viewed in real-time or even allow the removal of a :ref:`battery monitor <esc-telemetry-based-battery-monitor>`
+- :ref:`ESC Telemetry <blheli32-esc-telemetry>` allows the ESCs to send RPM, voltage and current information back to the autopilot so that it can be logged, viewed in real-time or even allow the removal of a :ref:`battery monitor <esc-telemetry-based-battery-monitor>`
 
 "BLHeli" covers covers multiple (sometimes competing) projects providing ESCs firmware and accompanying configuration software
 
 - BLHeli was the original open source software that is no longer maintained and is not available on modern ESCs
 - `BLHeli32 <https://github.com/bitdump/BLHeli>`__ is closed source and based on 32bit ARM MCUs.  All modern BLHeli ESCs use BLHeli32
+- `BLHeli_S <https://github.com/bitdump/BLHeli>`__ is closed source and based on 32bit ARM MCUs.  This is no longer actively maintained but the last published version, 16.7, is installed by default on "BLHeli_S" ESCs when shipped from the factory
 - `BLHeli_S JESC <https://jflight.net>`__ is paid, closed source software and 16bit allowing it to run on lower end hardware
 - `BLHeli_S BlueJay <https://github.com/mathiasvr/bluejay>`__ is free, open source software and 16bit
 
@@ -30,7 +31,7 @@ The Pass-Through feature allows BLHeli32 and BLHeli_S ESCs to be upgraded and co
 - If your PC is connected to the autopilot using a telemetry radio (instead of using USB cable as recommended above) set :ref:`SERVO_BLH_PORT <SERVO_BLH_PORT>` to the autopilot port connected to the telemetry radio.  Beware that this is does NOT specify the port used for :ref:`ESC telemetry <blheli32-esc-telemetry>` feedback to your autopilot!
 - If using a safety switch ensure it is pushed (or disabled by setting :ref:`BRD_SAFETYENABLE <BRD_SAFETYENABLE>` = 0)
 - Disconnect the ground station (but leave the USB cable connected)
-- Start the ESC configuration software and connect to the autopilot's COM port by selecting "BLHeli32 Bootloader (Betaflight/Cleanflight)" from the interfaces menu.  You should be able to upgrade and configure all connected ESCs
+- Start the ESC configuration software and connect to the autopilot's COM port by selecting "BLHeli32 Bootloader (Betaflight/Cleanflight)" from the interfaces menu.  Press "Connect" and "Read Setup".  You should be able to upgrade and configure all connected ESCs
 
   .. image:: ../../../images/blhelisuite32.jpg
     :target: ../_images/blhelisuite32.jpg
@@ -85,18 +86,12 @@ Set the following parameters to enable BLHeli32 telemetry feedback to the autopi
 
 - :ref:`SERIALx_PROTOCOL <SERIAL5_PROTOCOL>` 16 (= ESC telemetry) where "x" is the autopilot serial port number connected to the ESCs telemetry wire.  The mapping between serial port numbering and UART physical ports for you autopilot should be documented in its description page linked :ref:`here <common-autopilots>`.
 
-- Set :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` to 1 to automatically enable pass-through on all outputs configured as motors (e.g. :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` = "Motor1", "Motor2", etc) for multicopters and quadplanes or throttle (e.g. those with :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` set to 70 ("throttle"), 73 ("throttle left") or 74 ("throttle right")) on rovers.  For most multicopters, quadplanes and rovers this will do the right thing but for planes, you will need to further specify the used outputs as follows:
-
-  - :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` : a bitmap used to enable BLHeli32 pass-through and telemetry support on non-multirotor motors and / or exactly specify which servo outputs you want to enable pass-through and telemetry on (if available in ESC).
-
-  - :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` : This needs to be set to the protocol being used for the DShot protocol being used on those additional outputs if not the same as the normal copter style motor outputs.
-
-- :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>` defaults to 10 and normally does not need to be changed. this enables telemetry at a 10Hz update rate from the ESC.
+- :ref:`SERVO_BLH_TRATE <SERVO_BLH_TRATE>` defaults to 10 and normally does not need to be changed. this enables telemetry at a 10Hz update rate from the ESC.  If using the :ref:`harmonic notch feature <common-imu-notch-filtering>` this can be raised to 100.
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed.  Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM.
 
-ESC Telemtry Logging and Reporting
-----------------------------------
+ESC Telemetry Logging and Reporting
+-----------------------------------
 
 The autopilot requests status information from one ESC at a time, cycling between them. This information is logged to the onboard log's ESCn messages and can be viewed in any :ref:`ArduPilot compatible log viewer <common-logs>`.
 
@@ -125,19 +120,23 @@ In addition, some telemetry values can be displayed on the integrated :ref:`on-b
 Use as Battery Monitor
 ======================
 
-By setting a battery monitor instance to BLHeli32 ESC  type (for example :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 9), all connected BLHeli32 ESCs with connected telemetry wiring to the configured autopilot serial port, will be aggregated as a single source. The voltages reported will be averaged, the currents totaled, and the consumed current accumulated.
+By setting a battery monitor instance to BLHeli32 ESC type (for example :ref:`BATT2_MONITOR<BATT2_MONITOR>` = 9), all connected BLHeli32 ESCs with connected telemetry wiring to the configured autopilot serial port, will be aggregated as a single source. The voltages reported will be averaged, the currents totaled, and the consumed current accumulated.
 
 .. _bidir-dshot:
 
 Bi-directional Dshot
 ====================
 
-Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) support returning motor RPM values over the Dshot signal line. Supporting bi-directional Dshot requires exclusive use of one or more DMA channels and thus not all versions of ArduPilot support it. Versions that support bi-directional Dshot natively are `BeastH7`, `BeastF7` and `KakuteF7Mini`, other firmware versions end in "-bdshot" to indicate support for bi-directional Dshot.
+Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) support returning motor RPM values over the Dshot signal line. Supporting bi-directional Dshot requires exclusive use of one or more DMA channels and thus not all versions of ArduPilot support it. Versions that support bi-directional Dshot natively are listed below.  For other autopilots please load the ArduPilot firmware version ending in "-bdshot".
 
+- BeastF7, BeastF7v2, BeastH7, BeastH7v2
+- FlywooF745, FlywooF745Nano
+- KakuteF4Mini, KakuteF7Mini, KakuteH7Mini
+ 
 Setup
 -----
 
-First ensure that you have an appropriate version of BLHeli32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli32 supports bi-directional Dshot. Official versions of BLHeli_S do not support bi-directional Dshot, you will need to either buy a version from `JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use the unofficial version from `JazzMaverick <https://github.com/JazzMaverick/BLHeli/tree/JazzMaverick-patch-1/BLHeli_S%20SiLabs/Hex%20files%20%2016.73>`__. If you try and enable bi-directional Dshot with the wrong firmware version then unpredictable motor operation can occur.
+First ensure that you have an appropriate version of BLHeli32 or BLHeli_S installed on your ESCs. The majority of ESCs do not come pre-installed with these versions. The official 32.7 version of BLHeli32 supports bi-directional Dshot. Official versions of BLHeli_S do not support bi-directional Dshot, you will need to either buy a version from `BLHeli_S JESC <https://jflight.net/index.php?route=common/home&language=en-gb>`__ or use `BLHeli_S BlueJay <https://github.com/mathiasvr/bluejay>`__. If you try and enable bi-directional Dshot with the wrong firmware version then unpredictable motor operation can occur.
 
 .. image:: ../../../images/blheli-version-check.png
     :target: ../_images/blheli-version-check.png
@@ -145,14 +144,6 @@ First ensure that you have an appropriate version of BLHeli32 or BLHeli_S instal
 
 Set the following parameters to enable BLHeli32 and BLHeli_S bi-directional Dshot:
 
-- Set :ref:`SERVO_BLH_AUTO <SERVO_BLH_AUTO>` to 1 to automatically enable pass-through on all outputs configured as motors (e.g. :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` = "Motor1", "Motor2", etc) for multicopters and quadplanes or throttle (e.g. those with :ref:`SERVOx_FUNCTION <SERVO9_FUNCTION>` set to 70 ("throttle"), 73 ("throttle left") or 74 ("throttle right")) on rovers.  For most multicopters, quadplanes and rovers this will do the right thing but for planes, you will need to further specify the used outputs as follows:
-
-  - :ref:`SERVO_BLH_MASK <SERVO_BLH_MASK>` : a bitmap used to enable BLHeli32 pass-through and telemetry support on non-multirotor motors and / or exactly specify which servo outputs you want to enable pass-through and telemetry on (if available in ESC).
-
-  - :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` : This needs to be set to the protocol being used for the DShot protocol being used on those additional outputs if not the same as the normal copter style motor outputs.
-
-- :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>` : a bitmap used to enable BLHeli32 or BLHeli_S bi-directional Dshot support. On flight controllers without IOMCU this would normally be set to 15 to indicate four active channels. On flight controllers with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional Dshot will only work on the AUX outputs). The BeastH7 only supports channels 1 and 4 for bi-directional dshot (mask set to 9).
-
-- :ref:`SERVO_BLH_OTYPE<SERVO_BLH_OTYPE>` : This needs to be set to the protocol being used for the DShot protocol being used on those additional outputs if not the same as the normal copter style motor outputs.
+- :ref:`SERVO_BLH_BDMASK <SERVO_BLH_BDMASK>` : a bitmap used to enable BLHeli32 or BLHeli_S bi-directional Dshot support. On flight controllers without IOMCU this would normally be set to 15 to indicate four active channels. On flight controllers with an IOMCU this can be set to 3840 to indicate four active AUX channels (bi-directional Dshot will only work on the AUX outputs).
 
 - :ref:`SERVO_BLH_POLES <SERVO_BLH_POLES>` defaults to 14 which applies to the majority of brushless motors and normally does not need to be changed. Adjust as required if you're using motors with a pole count other than 14 to calculate true motor shaft RPM from ESC's e-field RPM (small motors might have 12 poles).
