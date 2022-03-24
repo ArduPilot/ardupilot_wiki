@@ -27,7 +27,7 @@ parameters. The following topics shown you how.
 -----
 
 .. image:: ../../../images/banner-freespace.png
-   :target: https://freespace.solutions/
+   :target: https://freespacesolutions.com.au/
 
 
 [/site]
