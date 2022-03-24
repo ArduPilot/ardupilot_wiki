@@ -128,6 +128,12 @@ By setting a battery monitor instance to BLHeli32 ESC type (for example :ref:`BA
 Bi-directional Dshot
 ====================
 
+[site wiki="rover"]
+.. warning::
+
+   Bi-directional DShot does not work with Rover (`see issue here <https://github.com/ArduPilot/ardupilot/issues/20372>`__)
+[/site]
+
 Newer versions of BLHeli32 (32.7 and higher) and BLHeli_S (16.73 and higher) support returning motor RPM values over the Dshot signal line. Supporting bi-directional Dshot requires exclusive use of one or more DMA channels and thus not all versions of ArduPilot support it. Versions that support bi-directional Dshot natively are listed below.  For other autopilots please load the ArduPilot firmware version ending in "-bdshot".
 
 - BeastF7, BeastF7v2, BeastH7, BeastH7v2
