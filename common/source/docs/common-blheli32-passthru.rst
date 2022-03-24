@@ -35,6 +35,7 @@ The Pass-Through feature allows BLHeli32 and BLHeli_S ESCs to be upgraded and co
 
   .. image:: ../../../images/blhelisuite32.jpg
     :target: ../_images/blhelisuite32.jpg
+    :width: 450px
 
 .. note::
    ArduPilot firmware supports the pass-through protocol with up-to-date BLHeli32 firmware and BLHeliSuite32, or BLHeli_S firmware and BLHeliSuite only.
