@@ -16,7 +16,7 @@ This page includes setup instructions for the following features
 
 - BLHeli was the original open source software that is no longer maintained and is not available on modern ESCs
 - `BLHeli32 <https://github.com/bitdump/BLHeli>`__ is closed source and based on 32bit ARM MCUs.  All modern BLHeli ESCs use BLHeli32
-- `BLHeli_S <https://github.com/bitdump/BLHeli>`__ is closed source and based on 32bit ARM MCUs.  This is no longer actively maintained but the last published version, 16.7, is installed by default on "BLHeli_S" ESCs when shipped from the factory
+- `BLHeli_S <https://github.com/bitdump/BLHeli>`__ is open source and 16bit.  This is no longer actively maintained but the last published version, 16.7, is installed by default on "BLHeli_S" ESCs when shipped from the factory
 - `BLHeli_S JESC <https://jflight.net>`__ is paid, closed source software and 16bit allowing it to run on lower end hardware
 - `BLHeli_S BlueJay <https://github.com/mathiasvr/bluejay>`__ is free, open source software and 16bit
 
