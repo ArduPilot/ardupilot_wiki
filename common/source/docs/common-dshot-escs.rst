@@ -95,8 +95,8 @@ On certain ESCs DShot commands are supported. These allow functions such as ESC 
 
 The current commands supported are:
 
--    Dshot LEDs on/off
--    Dshot Buzzer on/off
+-    DShot LEDs on/off
+-    DShot Buzzer on/off
 -    Reverse motor direction (see :ref:`SERVO_BLH_RVMASK <SERVO_BLH_RVMASK>` parameter)
 -    Reversible DShot (aka 3D mode) (see :ref:`Reversible DShot ESCs <blheli32-reversible-dshot>`)
 
