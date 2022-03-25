@@ -58,7 +58,7 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 6 	                                    Bebop
 7 	                                    :ref:`SMBus-Generic<common-smart-battery-landingpage>`
 8 	                                    DroneCAN-BatteryInfo
-9 	                                    :ref:`ESC<common-dshot-blheli32-telemetry>`
+9 	                                    :ref:`ESC<blheli32-esc-telemetry>`
 10 	                                    Sum Of Selected Monitors, see BATTx_SUM_MASK parameter
 11 	                                    :ref:`FuelFlow <common-fuel-sensors>`
 12 	                                    :ref:`FuelLevelPWM <common-fuel-sensors>`
