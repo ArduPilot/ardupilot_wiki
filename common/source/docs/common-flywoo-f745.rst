@@ -63,7 +63,7 @@ Default UART order
 - SERIAL4 = USER = USART4
 - SERIAL5 = USER = UART5
 - SERIAL6 = GPS = USART6
-- SERIAL7 = ESC Telem = UART7 (RX tied to ESC telemetry) See :ref:`common-dshot-blheli32-telemetry`
+- SERIAL7 = ESC Telem = UART7 (RX tied to ESC telemetry) See :ref:`blheli32-esc-telemetry`
 
 UART3 supports RX and TX DMA. UART1, UART2, UART4, and UART6 supports TX DMA. UART5 and UART7 do not support DMA. Serial port protocols (Telem, GPS, etc.) can be adjusted to personal preferences.
 

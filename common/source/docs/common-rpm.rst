@@ -112,7 +112,7 @@ RPM history can be reviewed in the logs.
 ESC Telemetry - Average Motor RPM
 =================================
 
-The RPM library can also be used to setup an 'RPM sensor' that computes and logs the average RPM for selected motors on the vehicle that are controlled by BLHeli_32 or BLHeli_S capable ESCs.  First the ESC telemetry will need to be setup.  See :ref:`BLHeli Telemetry<common-dshot-blheli32-telemetry>` for details on how to do this.  Once complete set ``RPMx_TYPE`` to 5 and write the parameters to ArduPilot.  Then refresh/fetch the parameters.  You will find a number of additional parameters are now available for that instance.  Find and set ``RPMx_ESC_MASK`` to add which ESC channels you want to be included in the average. For example for the second RPM instance:
+The RPM library can also be used to setup an 'RPM sensor' that computes and logs the average RPM for selected motors on the vehicle that are controlled by BLHeli_32 or BLHeli_S capable ESCs.  First the ESC telemetry will need to be setup.  See :ref:`BLHeli Telemetry<blheli32-esc-telemetry>` for details on how to do this.  Once complete set ``RPMx_TYPE`` to 5 and write the parameters to ArduPilot.  Then refresh/fetch the parameters.  You will find a number of additional parameters are now available for that instance.  Find and set ``RPMx_ESC_MASK`` to add which ESC channels you want to be included in the average. For example for the second RPM instance:
 
 :ref:`RPM2_ESC_MASK<RPM2_ESC_MASK>` is a bitmask, with each bit corresponding to a channel. If you wanted the average RPM for motors 1 to 4 you would set :ref:`RPM2_ESC_MASK<RPM2_ESC_MASK>` = 1 + 2 + 4 + 8 = 15.
 
@@ -123,8 +123,7 @@ Electrical commutation RPM sensors can be added retrospectively using something 
 series, that have an auxiliary output, can be configured to output a pulse per commutation.
 
 For clarification, this is not the same as the RPM that can be passed 
-via serial telemetry with ESCs.  For information on how to set up RPM reporting with capable ESCs, see the :ref:`ESC Telemetry<esc-telemetry>`.
-For information on how to set up RPM logging with BL Heli see the :ref:`BLHeli Telemetry<common-dshot-blheli32-telemetry>`.
+via serial telemetry with ESCs.  For information on how to set up RPM reporting with capable ESCs, see the :ref:`ESC Telemetry<blheli32-esc-telemetry>`.
 
 The setup for electrical commutation RPM sensors is much the same as hall effect sensors, so the steps above are applicable.  The only difference is the scaling value 
 to be entered in the :ref:`RP2_SCALING<RPM2_SCALING>` parameter.  Now, the scaling value is a function of the number of poles in the motor and should be the reciprocal of the number of 

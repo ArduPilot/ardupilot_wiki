@@ -29,7 +29,7 @@ Setup Instructions
 
 First you must select the mechanism used for controlling the harmonic notch frequency. By default (:ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 1) this mechanism is :ref:`throttle-based<common-imu-notch-filtering-throttle-based-setup>` since that will work on all Copters/QuadPlanes. However, a flight log analysis will be required to correlate the hover throttle position to the noise source's frequency.
 
-However, for Copters with an rpm sensor, :ref:`BLHeli ESC telemetry support<common-dshot-blheli32-telemetry>`, or is capable of using In-Flight FFT control of center frequency, setup can be radically simpler by using direct RPM or center frequency sensing, which will not require log analysis to determine center frequency:
+However, for Copters with an rpm sensor, :ref:`BLHeli ESC telemetry support<blheli32-esc-telemetry>`, or is capable of using In-Flight FFT control of center frequency, setup can be radically simpler by using direct RPM or center frequency sensing, which will not require log analysis to determine center frequency:
 
 - Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 2 to use an RPM sensor to set the harmonic notch frequency. This is primarily used in :ref:`Helicopters<common-imu-notch-filtering-helicopter-setup>`
 - Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 3 to use BLHeli ESC telemetry support to set the harmonic notch frequency. This requires that your ESCs are configured correctly to support BLHeli telemetry via :ref:`a serial port<common-dshot-blheli32-telemetry>`
