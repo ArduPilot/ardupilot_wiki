@@ -20,7 +20,7 @@ DShot is the underlying ESC control protocol used by :ref:`BLHeli <common-blheli
 .. note::
    Recently there is a growing number of proprietary and non-proprietary 16 / 32 bit ESCs with firmware that support DShot and other digital ESC protocols, but not BLHeli32 specific features like passthrough and telemetry. See your ESC's manual for further detail on supported features.
 
-.. note:: most DShot ESCs normally will also operate as normal :ref:PWM ESCs<common-brushless-escs>`.
+.. note:: most DShot ESCs normally will also operate as normal :ref:`PWM ESCs <common-brushless-escs>`.
 
 Connecting the ESCs
 ===================
