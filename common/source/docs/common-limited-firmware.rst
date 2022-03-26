@@ -65,6 +65,7 @@ Additional Exclusions for: Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini and old
       -  MSP Rangefinders
       -  Camera Mount Control
       -  OSD Parameter Editor
+      -  OSD Scrolling Sidebars
       -  Button
       -  OAPathPlanner
        
