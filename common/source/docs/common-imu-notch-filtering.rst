@@ -32,7 +32,7 @@ First you must select the mechanism used for controlling the harmonic notch freq
 However, for Copters with an rpm sensor, :ref:`BLHeli ESC telemetry support<blheli32-esc-telemetry>`, or is capable of using In-Flight FFT control of center frequency, setup can be radically simpler by using direct RPM or center frequency sensing, which will not require log analysis to determine center frequency:
 
 - Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 2 to use an RPM sensor to set the harmonic notch frequency. This is primarily used in :ref:`Helicopters<common-imu-notch-filtering-helicopter-setup>`
-- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 3 to use BLHeli ESC telemetry support to set the harmonic notch frequency. This requires that your ESCs are configured correctly to support BLHeli telemetry via :ref:`a serial port<common-dshot-blheli32-telemetry>`
+- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 3 to use BLHeli ESC telemetry support to set the harmonic notch frequency. This requires that your ESCs are configured correctly to support BLHeli telemetry via :ref:`a serial port<blheli32-esc-telemetry>`
 - If your autopilot supports it (ie. has more than 2MB of flash, see :ref:`common-limited_firmware`), set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 4 to use In-Flight FFT to set the harmonic notch frequency. See :ref:`common-imu-fft` for additional information.
 - Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` = 1 to set the harmonic notch reference value, which means no scaling
 

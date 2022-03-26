@@ -187,7 +187,7 @@ SITL simulation
 The ESCs can be simulated in SITL by adding ``--uartF=sim:fetteconewireesc`` to the SITL command line and setting the following additional parameters:
 
 - :ref:`SERIAL5_PROTOCOL<SERIAL5_PROTOCOL>` = 38
-- :ref:`SIM_FTOWESC_ENA <SIM_FTOWESC_ENA>` = 1
+- ``SIM_FTOWESC_ENA`` = 1
 
 This assumes you use SERIAL5 for simulation.
 If you want to use another one you need to adjust both the SITL command line argument and the `SERIAL*_PROTOCOL` parameter.
