@@ -189,3 +189,5 @@ Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in
 Firmware for this board which supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "KakuteF7-bdshot". 
 
 .. note:: Output 5 is disabled in this firmware and Output 6 only supports normal Dshot and PWM.
+
+[copywiki destination="plane,copter,rover,blimp"]

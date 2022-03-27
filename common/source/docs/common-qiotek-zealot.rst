@@ -529,3 +529,5 @@ Where to Buy
 
 `QIOTEK <http://www.Qio-Tek.com>`_
 `Banggood <https://www.banggood.com/Qiotek-Zealot-F427-PIXHAWK-Autopilot-Ardupilot-Firmware-Flight-Controller-for-VTOL-Drone-Airplane-Multirotor-p-1828905.html?cur_warehouse=CN&rmmds=search>`_
+
+[copywiki destination="plane,copter,rover,blimp"]

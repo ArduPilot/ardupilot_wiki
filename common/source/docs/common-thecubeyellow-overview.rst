@@ -100,3 +100,4 @@ Where to Buy
 
 Official retailers are listed `here  <http://www.proficnc.com/stores>`__.
 
+[copywiki destination="plane,copter,rover,blimp"]

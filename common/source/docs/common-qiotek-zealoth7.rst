@@ -538,3 +538,5 @@ Where to Buy
 ============
 
 `QIOTEK <http://www.Qio-Tek.com>`_
+
+[copywiki destination="plane,copter,rover,blimp"]

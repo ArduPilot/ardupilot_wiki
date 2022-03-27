@@ -60,3 +60,4 @@ Where to Buy
 
 - Available from `MicroHobby.ru <https://microhobby.ru/polyotnyy-kontroller-f4by>`__
 
+[copywiki destination="plane,copter,rover,blimp"]

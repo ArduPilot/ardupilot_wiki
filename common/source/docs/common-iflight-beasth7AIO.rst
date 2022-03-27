@@ -106,3 +106,5 @@ Flashing Firmware
 =================
 
 Usually these boards are sold pre-flashed with Betaflight firmware and require both firmware and bootloader to be updated if you want to use ArduPilot. See :ref:`common-loading-firmware-onto-chibios-only-boards`.
+
+[copywiki destination="plane,copter,rover,blimp"]

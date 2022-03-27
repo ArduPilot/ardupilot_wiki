@@ -190,3 +190,5 @@ More Images
 .. image:: ../../../images/cuav_autopilot/v5-nano/v5-nano_02.png
     :target: ../_images/cuav_autopilot/v5-nano/v5-nano_02.png
     :width: 360px
+    
+[copywiki destination="plane,copter,rover,blimp"]

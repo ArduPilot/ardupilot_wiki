@@ -48,4 +48,4 @@ Specifications
    -  Weight: 30g (without heatsink, 60g (with heatsink)
    -  Size: 88mm x 63mm x 20mm (including heatsink)
 
-
+[copywiki destination="plane,copter,rover,blimp"]

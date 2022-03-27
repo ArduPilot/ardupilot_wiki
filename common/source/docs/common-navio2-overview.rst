@@ -67,3 +67,4 @@ For more details and purchase
 - `Navio2 documentation <http://docs.emlid.com/navio2/>`__
 - `Purchase page <https://store.emlid.com/product/navio2/>`__
 
+[copywiki destination="plane,copter,rover,blimp"]

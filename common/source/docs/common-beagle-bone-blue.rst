@@ -64,3 +64,5 @@ More Links
 
 - `Blog post announcing support <https://discuss.ardupilot.org/t/beaglebone-blue-released-linux-enabled-autopilot-for-80/15772>`__
 - `BeagleBone recommended accessories page <https://github.com/beagleboard/beaglebone-blue/wiki/Accessories>`__
+
+[copywiki destination="plane,copter,rover,blimp"]
