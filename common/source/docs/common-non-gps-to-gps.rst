@@ -1,5 +1,5 @@
 .. _common-non-gps-to-gps:
-
+[copywiki destination="plane,copter,rover,blimp"]
 =========================
 GPS / Non-GPS Transitions
 =========================

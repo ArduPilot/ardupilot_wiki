@@ -1,5 +1,5 @@
 .. _common-frsky-flightdeck:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ============================
 FlightDeck FrSky Taranis App
 ============================

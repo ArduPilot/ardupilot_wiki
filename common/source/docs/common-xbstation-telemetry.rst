@@ -1,5 +1,5 @@
 .. _common-xbstation-telemetry:
-
+[copywiki destination="plane,copter,rover,blimp"]
 
 XBStation 4G LTE BVLOS Kit
 ==========================

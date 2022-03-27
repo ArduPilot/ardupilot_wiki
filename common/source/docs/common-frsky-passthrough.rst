@@ -1,5 +1,5 @@
 .. _common-frsky-passthrough:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ====================================
 Passthrough FrSky Telemetry Protocol
 ====================================

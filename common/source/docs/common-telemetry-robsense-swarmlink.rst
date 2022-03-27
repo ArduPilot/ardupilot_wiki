@@ -1,5 +1,5 @@
 .. _common-telemetry-robsense-swarmlink:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ==================
 Robsense SwarmLink
 ==================

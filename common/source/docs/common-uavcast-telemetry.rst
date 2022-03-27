@@ -1,5 +1,5 @@
 .. _common-UAVcast-telemetry:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ================================
 UAVcast 3G/4G Cellular Telemetry
 ================================

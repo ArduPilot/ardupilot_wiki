@@ -1,5 +1,5 @@
 .. _common-ltm-telemetry:
-
+[copywiki destination="plane,copter,rover,blimp"]
 =============
 LTM Telemetry
 =============

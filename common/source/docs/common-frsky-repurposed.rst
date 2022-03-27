@@ -1,5 +1,5 @@
 .. _common-frsky-repurposed:
-
+[copywiki destination="plane,copter,rover,blimp"]
 =========================================
 FrSky Telemetry Using Repurposed Messages
 =========================================

@@ -1,5 +1,5 @@
 .. _common-frsky-rc:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ================
 FRSky RC Systems
 ================

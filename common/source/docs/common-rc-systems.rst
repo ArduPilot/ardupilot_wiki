@@ -206,4 +206,9 @@ There is addition information :ref:`about connecting and configuring the encoder
    to hook up your flight battery to the autopilot because the USB port
    alone can't supply enough power.
 
+.. toctree::
+   :hidden:
 
+   common-FPort-receivers
+
+[copywiki destination="plane,copter,rover,blimp"]

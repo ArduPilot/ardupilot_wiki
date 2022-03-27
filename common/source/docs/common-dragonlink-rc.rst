@@ -1,5 +1,5 @@
 .. _common-dragonlink-rc:
-
+[copywiki destination="plane,copter,rover,blimp"]
 =====================
 DragonLink RC Systems
 =====================

@@ -1,5 +1,5 @@
 .. _common-hott-telemetry:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ==============
 HOTT Telemetry
 ==============

@@ -1,5 +1,5 @@
 .. _common-esp8266-telemetry:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ======================
 ESP8266 wifi telemetry
 ======================

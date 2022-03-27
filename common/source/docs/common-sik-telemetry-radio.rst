@@ -1,5 +1,5 @@
 .. _common-sik-telemetry-radio:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ===================
 SiK Telemetry Radio
 ===================

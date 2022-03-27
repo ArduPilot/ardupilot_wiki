@@ -1,6 +1,6 @@
 .. _common-non-gps-navigation-landing-page:
 
-[copywiki destination="copter,rover"]
+[copywiki destination="copter,rover,blimp"]
 
 ==================
 Non-GPS Navigation

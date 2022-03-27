@@ -4,7 +4,7 @@
 Pozyx for Non-GPS Navigation
 ============================
 
-[copywiki destination="copter,rover"]
+[copywiki destination="copter,rover,blimp"]
 
 This article explains how a `Pozyx <https://www.pozyx.io/>`__ system based on the `DWM1000 <http://www.decawave.com/products/dwm1000-module>`__ can be used as a short-range substitute for a GPS allowing position control modes like Loiter, PosHold, RTL, Auto indoors.
 

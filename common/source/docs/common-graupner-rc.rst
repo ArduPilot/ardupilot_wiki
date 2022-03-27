@@ -1,5 +1,5 @@
 .. _common-graupner-rc:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ===================
 Graupner RC Systems
 ===================
