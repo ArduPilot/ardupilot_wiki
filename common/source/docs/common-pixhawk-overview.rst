@@ -770,3 +770,5 @@ See also
     Mounting the Autopilot <common-mounting-the-flight-controller>
     Compatible RC Transmitter and Receiver Systems <common-rc-systems>
 [/site]
+
+[copywiki destination="plane,copter,rover,blimp"]

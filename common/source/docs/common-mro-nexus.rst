@@ -143,4 +143,4 @@ Where to Buy
 - `mRobotics <https://store.mrobotics.io/>`__
 
 
-
+[copywiki destination="plane,copter,rover,blimp"]

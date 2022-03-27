@@ -83,3 +83,5 @@ Then follow the instructions on how to :ref:`load firmware onto ChibiOS boards <
 .. note::
     MiniPix voltage and current sensing pins use Pixhawk standard ( :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN>` = 2, :ref:`BATT_CURR_PIN<BATT_CURR_PIN>` = 3).
     The additional ADC pin can be used for either RSSI or analog airspeed. Set required option to PIN = 11.
+
+[copywiki destination="plane,copter,rover,blimp"]

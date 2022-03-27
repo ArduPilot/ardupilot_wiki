@@ -106,3 +106,5 @@ Where to Buy
 ============
 
 - available from multiple retailers including `myairbot.com <https://store.myairbot.com/flight-controller/omnibus-f7/omninxtf7.html>`__
+
+[copywiki destination="plane,copter,rover,blimp"]

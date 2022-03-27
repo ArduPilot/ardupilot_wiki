@@ -443,3 +443,5 @@ More Images
 .. image:: ../../../images/thecube/pixhawk2-overhead.jpg
     :target: ../_images/pixhawk2-overhead.jpg
     :width: 360px
+
+[copywiki destination="plane,copter,rover,blimp"]

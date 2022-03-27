@@ -357,3 +357,5 @@ More information about Erle-Brain is available in `its official documentation <h
 
 .. |Captura de pantalla 2015-04-03 a las 11.39.07| image:: ../../../images/Captura-de-pantalla-2015-04-03-a-las-11.39.07.jpg
     :target: ../_images/Captura-de-pantalla-2015-04-03-a-las-11.39.07.jpg
+
+[copywiki destination="plane,copter,rover,blimp"]

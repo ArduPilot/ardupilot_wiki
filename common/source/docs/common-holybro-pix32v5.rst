@@ -139,5 +139,5 @@ Where to Buy
 
 
 
-
+[copywiki destination="plane,copter,rover,blimp"]
 

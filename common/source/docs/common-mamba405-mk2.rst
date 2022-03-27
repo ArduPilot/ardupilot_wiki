@@ -102,3 +102,5 @@ Flashing Firmware
 Usually these boards are sold pre-flashed with betaflight / INav firwares and require both firmware and bootloader to be updated if you want to use ArduPilot, as an ArduPilot-compatible bootloader is required for subsequent ArduPilot firmware-upgrade handling.
 
 See :ref:`common-loading-firmware-onto-chibios-only-boards`
+
+[copywiki destination="plane,copter,rover,blimp"]

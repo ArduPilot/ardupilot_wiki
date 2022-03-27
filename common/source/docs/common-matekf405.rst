@@ -125,3 +125,4 @@ Wiring Diagram
 .. image:: ../../../images/MatekF405-STD.jpg
     :target: ../../_images/MatekF405-STD.jpg
     
+[copywiki destination="plane,copter,rover,blimp"]

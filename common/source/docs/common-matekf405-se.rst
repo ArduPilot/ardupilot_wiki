@@ -153,3 +153,4 @@ Firmware
 Firmware for this board can be found `here <https://firmware.ardupilot.org>`_ in  sub-folders labeled
 "MatekF405-Wing".
 
+[copywiki destination="plane,copter,rover,blimp"]

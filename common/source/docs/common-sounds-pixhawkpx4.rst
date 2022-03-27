@@ -21,3 +21,5 @@ descriptions below to download and listen to the associated tune.
 * `Barometer Glitch <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/BaroGlitch.wav>`__
 * `Parachute Release <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/parachute_release.wav>`__
 * `Lost Copter Alarm <https://download.ardupilot.org/downloads/wiki/pixhawk_sound_files/LostCopter.wav>`__
+
+[copywiki destination="plane,copter,rover,blimp"]

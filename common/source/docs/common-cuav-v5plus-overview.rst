@@ -131,3 +131,5 @@ More Images
 ===========
 
 Image gallery can be found `here <https://github.com/ArduPilot/ardupilot_wiki/tree/master/images/cuav_autopilot/v5plus>`__
+
+[copywiki destination="plane,copter,rover,blimp"]

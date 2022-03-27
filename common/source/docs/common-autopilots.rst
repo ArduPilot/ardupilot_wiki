@@ -131,3 +131,6 @@ Schematics
 ----------
 
 Schematics for some of the "Open hardware" autopilots `can be found here <https://github.com/ArduPilot/Schematics>`__
+
+
+[copywiki destination="plane,copter,rover,blimp"]

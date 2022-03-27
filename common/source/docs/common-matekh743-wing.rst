@@ -167,3 +167,5 @@ Firmware that supports :ref:`bi-directional Dshot <bidir-dshot>` is labeled "Mat
 
 
 .. note:: If you experience issues with the device ceasing to initialize after power up, see :ref:`common-when-problems-arise` section for H7 based autopilots for a possible solution.
+
+[copywiki destination="plane,copter,rover,blimp"]

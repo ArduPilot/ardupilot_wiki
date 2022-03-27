@@ -188,3 +188,5 @@ Layout and Dimensions
 
 .. image:: ../../../images/holybro-pixhawk5x/pixhawk5x_dimensions_all.jpg
     :target: ../_images/pixhawk5x_dimensions_all.jpg
+
+[copywiki destination="plane,copter,rover,blimp"]

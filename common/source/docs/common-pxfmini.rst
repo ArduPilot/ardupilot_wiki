@@ -31,3 +31,4 @@ Quick start
 All the documentation related to this product (specs, software,
 schematics,...) can be found in the Erle Robotics `documentation site <http://erlerobotics.com/docs/>`__.
 
+[copywiki destination="plane,copter,rover,blimp"]

@@ -92,3 +92,5 @@ arduplane auto mission using the Wing FC10:
 .. vimeo:: 301399536
    :width: 400
    :height: 400
+
+[copywiki destination="plane,copter,rover,blimp"]

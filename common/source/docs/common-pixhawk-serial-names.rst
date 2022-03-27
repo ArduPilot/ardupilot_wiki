@@ -33,3 +33,5 @@ mapping between them.
    SERIAL_CONTROL is used to talk from a GS directly to a serially-attached device.
 
    On MAVProxy one can use ``module load nsh`` followied by ``nsh port 0`` to talk to a Hayes modem connected to TELEM1
+
+[copywiki destination="plane,copter,rover,blimp"]

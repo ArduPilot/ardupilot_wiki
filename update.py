@@ -52,7 +52,7 @@ from datetime import datetime
 # without the following import on old versions of Python:
 from distutils import dir_util  # noqa
  
-DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover', 'blimp']
+DEFAULT_COPY_WIKIS = ['copter', 'plane', 'rover']
 ALL_WIKIS = [
     'copter',
     'plane',

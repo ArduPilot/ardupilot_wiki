@@ -71,3 +71,5 @@ Videos
     :width: 100%
 
 * 2nd flight using PosHold, RTL*
+
+[copywiki destination="plane,copter,rover,blimp"]

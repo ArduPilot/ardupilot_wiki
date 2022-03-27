@@ -64,3 +64,4 @@ More details can be found from the `Obal github <https://github.com/HefnySco/OBA
 
 ..  youtube:: q7PciOGgZ34
     :width: 100%
+[copywiki destination="plane,copter,rover,blimp"]

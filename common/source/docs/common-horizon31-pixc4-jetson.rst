@@ -89,3 +89,5 @@ Where to Buy
 
 `Horizon31 <https://horizon31.com/>`_  
 Made in the USA  
+
+[copywiki destination="plane,copter,rover,blimp"]

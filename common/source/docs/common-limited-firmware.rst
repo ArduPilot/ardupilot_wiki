@@ -137,3 +137,5 @@ If this occurs, several possible options are available to allow temporary use of
 - Reduce the size of :ref:`LOG_FILE_BUFSIZE<LOG_FILE_BUFSIZE>` . However, lowering below 16KB can introduce small gaps in the log. This may be used temporarily to download terrain or calibrate compass.
 - Disable Terrain Following temporarily by setting :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` to 0.
 - Disable SmartRTL on Copter by setting :ref:`SRTL_POINTS<SRTL_POINTS>` = 0.
+
+[copywiki destination="plane,copter,rover,blimp"]

@@ -116,3 +116,5 @@ More Images
 .. image:: ../../../images/Cube_orange_module.jpg
     :target: ../_images/Cube_orange_module.jpg
     :width: 360px
+
+[copywiki destination="plane,copter,rover,blimp"]

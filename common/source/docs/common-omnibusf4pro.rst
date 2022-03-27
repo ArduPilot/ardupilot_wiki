@@ -218,3 +218,5 @@ if we want to set PWM 6 as relay pin :
 :ref:`RELAY_PIN<RELAY_PIN>` = 41 # for output PWM 6
 
 Hardware definition is available `here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/omnibusf4pro/hwdef.dat>`__.
+
+[copywiki destination="plane,copter,rover,blimp"]

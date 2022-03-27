@@ -451,3 +451,5 @@ See also
    `mRobotics shop <https://store.mrobotics.io/mRo-PixRacer-R14-Official-p/auav-pxrcr-r14-mr.htm>`__
 
 `Schematics <https://github.com/ArduPilot/Schematics/tree/master/mRobotics>`__
+
+[copywiki destination="plane,copter,rover,blimp"]
