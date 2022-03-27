@@ -87,11 +87,22 @@ station from the air using the MAVLink protocol. This allows you to
 interact with Blimp in real time and receive streaming data from
 your blimps.
 
-We recommend the telemetry radio solutions linked from the 
-:ref:`Telemetry Landing Page <common-telemetry-landingpage>`. Remember that if using
-the :ref:`SIK Radio <common-sik-telemetry-radio>` you will need the version
+We recommend the telemetry radio solutions linked from the :ref:`Telemetry Landing Page <common-telemetry-landingpage>` . Remember that if using the :ref:`SIK Radio <common-sik-telemetry-radio>` you will need the version
 at the permitted frequency for your country - 915 MHz (Americas) and 433
 MHz (Europe).
 
 .. image:: ../../../images/Telemetry_store.jpg
     :target: ../_images/Telemetry_store.jpg
+
+
+.. toctree::
+    :hidden:
+
+    common-choosing-a-flight-controller
+    common-autopilots
+    common-choosing-a-ground-station
+    common-installing-3dr-ublox-gps-compass-module
+    common-non-gps-navigation-landing-page
+    common-rc-systems
+    common-telemetry-landingpage
+

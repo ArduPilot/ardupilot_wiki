@@ -1,5 +1,5 @@
 .. _common-telemetry-landingpage:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ========================
 Telemetry (landing page)
 ========================

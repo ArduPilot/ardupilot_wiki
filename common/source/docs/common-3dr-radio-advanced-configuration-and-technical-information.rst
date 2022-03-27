@@ -1,5 +1,5 @@
 .. _common-3dr-radio-advanced-configuration-and-technical-information:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ==================================
 SiK Radio — Advanced Configuration
 ==================================

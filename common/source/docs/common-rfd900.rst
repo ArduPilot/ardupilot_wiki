@@ -1,5 +1,5 @@
 .. _common-rfd900:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ==================
 RFD900 Radio Modem
 ==================

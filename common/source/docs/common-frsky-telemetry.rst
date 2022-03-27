@@ -1,5 +1,5 @@
 .. _common-frsky-telemetry:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ===============
 FrSky Telemetry
 ===============

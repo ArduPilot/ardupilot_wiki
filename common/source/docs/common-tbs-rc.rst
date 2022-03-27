@@ -1,5 +1,5 @@
 .. _common-tbs-rc:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ===========================
 Team Black Sheep RC Systems
 ===========================

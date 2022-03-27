@@ -1,5 +1,5 @@
 .. _common-MAVLink2-signing:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ================
 MAVLink2 Signing
 ================

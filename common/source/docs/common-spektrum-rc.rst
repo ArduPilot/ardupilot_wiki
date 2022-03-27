@@ -1,5 +1,5 @@
 .. _common-spektrum-rc:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ===================
 Spektrum RC Systems
 ===================

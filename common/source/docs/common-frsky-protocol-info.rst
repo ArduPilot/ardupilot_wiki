@@ -1,5 +1,5 @@
 .. _common-frsky-protocol-info:
-
+[copywiki destination="plane,copter,rover,blimp"]
 =========================
 FrSky Telemetry Protocols
 =========================

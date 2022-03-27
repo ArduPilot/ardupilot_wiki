@@ -1,5 +1,5 @@
 .. _common-choosing-a-flight-controller:
-
+[copywiki destination="plane,copter,rover,blimp"]
 =====================
 Choosing an Autopilot
 =====================
