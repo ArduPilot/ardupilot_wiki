@@ -1,12 +1,11 @@
 .. _building-a-blimp:
 
-====================================
+================
 Building a Blimp
-====================================
+================
 
-Building an indoor finned blimp
-=========================================================
-
+Building an Indoor finned Blimp
+===============================
 This type of blimp has four flapping fins driven by servos, which combine to provide X, Y, Z and Yaw control, while pendulum stability keeps roll and pitch close to zero.
 
 These instructions are specifically for building a ~50cm diameter spherical blimp, although the sizes of parts can be adapted to build bigger blimps of the same type. This size of balloon will give about 50g of lift (excluding the lift required to lift the envelope itself).
@@ -66,7 +65,7 @@ See the photos below for the orientation of each servo:
     <td width="48%">
 
 .. image:: /images/fin_servo_back.png
-    :target: _images/fin_servo_back.png
+    :target: ../_images/fin_servo_back.png
 
 Back fin servo
 
@@ -78,7 +77,7 @@ Back fin servo
     <td width="48%">
 
 .. image:: /images/fin_servo_front.png
-    :target: _images/fin_servo_front.png
+    :target: ../_images/fin_servo_front.png
 
 Front fin servo
 
@@ -88,7 +87,7 @@ Front fin servo
     <td width="48%">
 
 .. image:: /images/fin_servo_left.png
-    :target: _images/fin_servo_left.png
+    :target: ../_images/fin_servo_left.png
 
 Left fin servo
 
@@ -100,7 +99,7 @@ Left fin servo
     <td width="48%">
 
 .. image:: /images/fin_servo_right.png
-    :target: _images/fin_servo_right.png
+    :target: ../_images/fin_servo_right.png
 
 Right fin servo
 
