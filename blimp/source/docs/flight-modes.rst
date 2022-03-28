@@ -45,7 +45,7 @@ Test whether centering the sticks results in a standstill and no oscillation. Al
 
 After this stage, you can switch into LOITER mode and check its performance. Generally the position controller should need less tuning (using the POS* parameters), but some tuning may still be needed.
 
-LAND mode is used as the failsafe mode, so that if Blimp loses RC or other critical connections, it will stop moving. It can also be used as a pilot selected mode to save battery if the blimp needs to wait. Note that since the blimp is still floating, it is likely to drift with the wind, though it is recommended to have the blimp slightly negatively buoyant so that the blimp will also go down and "land" when in this mode.
+LAND mode stops all servo outputs so that the Blimp will stop moving. It can also be used as a pilot selected mode to save battery if the blimp needs to wait. Note that since the blimp is still floating, it is likely to drift with the wind, though it is recommended to have the blimp slightly negatively buoyant so that the blimp will also go down and "land" when in this mode.
 
 Most transmitters can be setup to provide a 3 position switch that can be set up to quickly switch between the most-used flight modes but you can find instructions :ref:`here for setting up a 6-position flight mode switch <common-rc-transmitter-flight-mode-configuration>`.
 
