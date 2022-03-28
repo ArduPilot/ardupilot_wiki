@@ -34,4 +34,5 @@ Getting more info
    Flight Modes <docs/flight-modes>
    Complete parameter list <docs/parameters>
    Complete log message list <docs/logmessages>
+   Simulation<docs/simulation>
    Full Table of Contents <docs/common-table-of-contents>

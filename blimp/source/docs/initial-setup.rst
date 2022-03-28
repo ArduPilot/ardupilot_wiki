@@ -29,3 +29,4 @@ within the sections) see the topics below:
     Flight Modes<flight-modes>
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
     Servo Assignment and Arming Switch<servo-rc-setup>
+    Failsafes<failsafe>
