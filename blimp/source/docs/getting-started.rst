@@ -34,7 +34,7 @@ Autopilot
 Blimp requires an autopilot for control and autonomous flight.
 
 Building an indoor blimp such as this, weight will usually be the primary consideration,
-thus the "single board" type of flight controllers are likely to be most suitable, especially the "mini" (200x20mm or 16x16mm) versions.
+thus the "single board" type of flight controllers are likely to be most suitable, especially the "mini" (20x20mm or 16x16mm) versions.
 
 For more options, see the topic :ref:`common-choosing-a-flight-controller` and :ref:`common-autopilots`.
 
@@ -47,7 +47,7 @@ In order to use any of the position-controlled flight modes, ie any mode other t
 
 For outdoor use, the simplest option is a :ref:`GPS module <common-installing-3dr-ublox-gps-compass-module>` generally with a compass. 
 
-A compass is also required, because the velocities and speeds of the vehicle are not large enough to assure that ArduPilot's algorithmic yaw estimator cor compasless operation would ever converge.
+A compass is also required, because the velocities and speeds of the vehicle are not large enough to assure that ArduPilot's algorithmic yaw estimator for compass-less operation would ever converge.
 
 For indoor use, please see :ref:`the non-GPS options. <common-non-gps-navigation-landing-page>`
 
@@ -97,7 +97,7 @@ your blimps.
 We recommend the telemetry radio solutions linked from the 
 :ref:`Telemetry Landing Page <common-telemetry-landingpage>`.
 
-A :ref:`Bluetooth<common-mission-planner-bluetooth-connectivity>` or :ref:`WIFI adapter<common-esp32-telemetry>` is lightweight and has enough range for indoor operation.
+A :ref:`Bluetooth<common-mission-planner-bluetooth-connectivity>` , or WIFI adapters, such as :ref:`common-esp32-telemetry` and :ref:`common-esp8266-telemetry`, are lightweight and have enough range for indoor operation.
 
 Remember that if using an RF radio such as, the :ref:`SIK Radio <common-sik-telemetry-radio>` , you will need the version at the permitted frequency for your country - 915 MHz (Americas) and 433
 MHz (Europe).
@@ -105,7 +105,8 @@ MHz (Europe).
 .. image:: ../../../images/Telemetry_store.jpg
     :target: ../_images/Telemetry_store.jpg
 
-=========
+.. note:: Also note that many RC systems have the capability built-in of providing telemetry back to the RC transmitter for display and even limited GCS-like control and parameter editing, notably :ref:`FRSky SPort, FPort<common-frsky-telemetry>`, and :ref:`CRSF<common-crsf-telemetry>` systems,which also have micro sized receivers suitable for this application.
+
 Actuators
 =========
 

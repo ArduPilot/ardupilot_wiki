@@ -40,14 +40,14 @@ Recommended Flight Modes
 
 It is best to start with manual mode to ensure the the actuators and rc controller have been set up correctly (i.e. pushing the pitch stick forward does make the blimp move forward).
 
-Once this is confirmed, you can switch into Velocity mode. This uses only the velocity PID controller, thus allowing tuning this controller using the VEL* parameters. 
+Once this is confirmed, you can switch into VELOCITY mode. This uses only the velocity PID controller, thus allowing tuning this controller using the VEL* parameters. 
 Test whether centering the sticks results in a standstill and no oscillation. Also test that the blimp reaches a set velocity reasonably quickly. 
 
-After this stage, you can switch into Loiter mode and check its performance. Generally the position controller should need less tuning (using the POS* parameters), but some tuning may still be needed.
+After this stage, you can switch into LOITER mode and check its performance. Generally the position controller should need less tuning (using the POS* parameters), but some tuning may still be needed.
 
-Hold mode is the failsafe mode, so that if Blimp loses RC or other critical connections, it will stop moving. It can also be used to save battery if the blimp needs to wait. Note that since the blimp is still floating, it is likely to drift with the wind, though it is recommended to have the blimp slightly negatively buoyant so that the blimp will also go down and "land" when in this mode.
+LAND mode is used as the failsafe mode, so that if Blimp loses RC or other critical connections, it will stop moving. It can also be used as a pilot selected mode to save battery if the blimp needs to wait. Note that since the blimp is still floating, it is likely to drift with the wind, though it is recommended to have the blimp slightly negatively buoyant so that the blimp will also go down and "land" when in this mode.
 
-Most transmitters provide a 3 position switch that can be set up to quickly switch between the most-used flight modes but you can find instructions :ref:`here for setting up a 6-position flight mode switch <common-rc-transmitter-flight-mode-configuration>`.
+Most transmitters can be setup to provide a 3 position switch that can be set up to quickly switch between the most-used flight modes but you can find instructions :ref:`here for setting up a 6-position flight mode switch <common-rc-transmitter-flight-mode-configuration>`.
 
 GNSS Receiver ("GPS") Dependency
 ================================
@@ -61,11 +61,33 @@ position sensors, such as 3D cameras or beacons, may be used and would need to p
 
 Requires valid position prior to takeoff:
 
--  Velocity
--  Loiter
+-  VELOCITY
+-  LOITER
 
 Do not require position information:
 
--  Manual
--  Land
+-  MANUAL
+-  LAND
+
+Pilot Control
+=============
+
+Pilot control in each mode (Except LAND in which there is no pilot control and all servo outputs are stopped) , if the default ``RC_MAP_xxxx`` parameters are used, is as follows:
+
+==================    =================
+TRANSMITTER STICK     CONTROL EFFECT
+==================    =================
+ROLL                  MANUAL: Lateral movement,
+                      VELOCITY: Full throw attempts to obtain :ref:`MAX_VEL_XY<MAX_VEL_XY>` m/s laterally,
+                      LOITER: Full throw attempts to obtain :ref:`MAX_POS_XY<MAX_POS_XY>` m/s laterally
+PITCH                 MANUAL: Fore/Aft movement,
+                      VELOCITY: Full throw attempts to obtain :ref:`MAX_VEL_XY<MAX_VEL_XY>` m/s  fore/aft,
+                      LOITER: Full throw attempts to obtain :ref:`MAX_POS_XY<MAX_POS_XY>` m/s  fore/aft
+YAW                   MANUAL: Yaw,
+                      VELOCITY: Full throw attempts to increase/decrease heading :ref:`MAX_VEL_YAW<MAX_VEL_YAW>` radians/s  fore/aft,
+                      LOITER: Full throw attempts to increase/decrease heading :ref:`MAX_POS_YAW<MAX_POS_XY>` radians/s  fore/aft
+THROTTLE              MANUAL: Ascend/Descend,
+                      VELOCITY: Full throw attempts to increase/decrease altitude :ref:`MAX_VEL_Z<MAX_VEL_Z>` m/s,
+                      LOITER: Full throw attempts to increase/decrease heading :ref:`MAX_POS_Z<MAX_POS_Z>` m/s 
+==================    =================
 

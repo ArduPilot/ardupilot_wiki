@@ -25,4 +25,7 @@ within the sections) see the topics below:
     Connect Mission Planner to AutoPilot <common-connect-mission-planner-autopilot>
     Radio Control Calibration <common-radio-control-calibration>
     Accelerometer Calibration <common-accelerometer-calibration>
+    Compass Calibration<common-compass-calibration-in-mission-planner>
+    Flight Modes<flight-modes>
     RC Transmitter Mode Setup <common-rc-transmitter-flight-mode-configuration>
+    Servo Assignment and Arming Switch<servo-rc-setup>

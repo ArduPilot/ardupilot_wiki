@@ -113,4 +113,4 @@ Video demonstrations of compass calibration.
 ..  youtube:: DmsueBS0J3E
     :width: 100%
 
-[copywiki destination="copter,plane,rover,planner"]
+[copywiki destination="copter,plane,rover,blimp,planner"]
