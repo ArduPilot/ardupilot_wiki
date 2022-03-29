@@ -27,6 +27,8 @@ The autopilot will use the first active receiver it finds, beginning with the no
 
 Note that the previously calibrated ``RCx_MAX`` , ``RCx_MIN``, ``RCx_REVERSED``, ``RCx_DZ`` and ``RCx_TRIM`` parameters for each channel will be used by the active receiver and could vary between receivers, especially if different types are mixed. It is recommended that all receivers be of the same manufacture and type.
 
+.. note:: lowering throttle to below :ref:`FS_THR_VALUE<FS_THR_VALUE>` will not force a changeover, but rather force a normal radio failsafe. Only loss of RC will cause a changeover.
+
 If all receivers become inactive (no pulses), then the normal radio failsafe handling will begin.
 
 .. warning:: It is important that all receivers be configured for no pulses for radio loss failsafe for the changeovers to work properly.
