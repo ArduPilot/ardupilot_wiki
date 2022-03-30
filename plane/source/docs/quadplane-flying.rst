@@ -104,6 +104,10 @@ I switch into QRTL close to HOME
 
 If closer than 1.5X the larger of either :ref:`RTL_RADIUS<RTL_RADIUS>` or :ref:`WP_LOITER_RAD<RTL_RADIUS>`, then the vehicle will proceed toward home in VTOL mode and land. If greater, it will transition to fixed wing, climbing toward :ref:`ALT_HOLD_RTL<ALT_HOLD_RTL>` and executing a normal QRTL. Depending on how far from home, the vehicle may only briefly climb and then switch back to approach or airbrake phases. The further away, the higher the climb as it flies back toward home. If the approach behavior has ben disabled with :ref:`Q_OPTIONS<Q_OPTIONS>` bit 16, then it will just switch to VTOL (if not already in that mode, navigate to home and land).
 
+I have an EKF Failsafe
+----------------------
+
+ArduPilot provides a failsafe mechanism to protect VTOL operation in case the EKF becomes unhealthy. In normal fixed wing operation, ArduPilot "falls back" to another inertial guidance filter, DCM, if the EKF becomes unhealthy. However, if operating in AUTO mode in a VTOL mode when an EKF failure occurs, QuadPlanes will switch modes to QLAND, and to QHOVER in all other position control VTOL modes (QLOITER, QRTL, QLAND, QAUTOTUNE).
 
 Typical Flight
 ==============
