@@ -279,6 +279,7 @@ Connect to the flight controller with a ground station (i.e. Mission Planner) an
 -  :ref:`EK2_ENABLE <copter:EK2_ENABLE>` = 1 (the default)
 -  :ref:`EK3_ENABLE <copter:EK3_ENABLE>` = 0 (the default)
 -  :ref:`GPS_TYPE <copter:GPS_TYPE>` = 0 to disable the GPS
+-  :ref:`VISO_TYPE <copter:VISO_TYPE>` = 1 to enable visual odometry
 -  :ref:`EK2_GPS_TYPE <copter:EK2_GPS_TYPE>` = 3 to disable the EKF's use of the GPS
 -  :ref:`COMPASS_ENABLE<copter:COMPASS_ENABLE>` = 0, :ref:`COMPASS_USE <copter:COMPASS_USE>` = 0, :ref:`COMPASS_USE2 <copter:COMPASS_USE2>` = 0, :ref:`COMPASS_USE3 <copter:COMPASS_USE3>` = 0 to disable the EKF's use of the compass and instead rely on the heading from ROS and Hector SLAM
 
