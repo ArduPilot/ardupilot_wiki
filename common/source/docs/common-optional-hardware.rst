@@ -22,6 +22,9 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="plane"]
     Airspeed Sensor <airspeed>
 [/site]
+[site wiki="rover, copter"]
+    Airspeed Sensor <common-airspeed-sensor>
+[/site]
 [site wiki="rover"]
     AIS for Boats <common-ais>
 [/site]
