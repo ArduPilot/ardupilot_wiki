@@ -44,11 +44,18 @@ Building the Fins
 #. Glue the plastic to the the wood frames. The hypoteneuse edge will be left loose. Try to keep the plastic pulled flat while you glue, but without warping the wood frame.
 #. Glue the 90 deg attachment points to the corner of the triangle where you glued the two strips together.
 
+See the photo below for an example:
+
+.. image:: /images/fin_construction.jpg
+    :width: 400
+    :target: ../_images/fin_construction.jpg
+
 Putting it all together
 -----------------------
 
-- The servos need to be attached in a specific orientation in order for the flapping with offset to work correctly.
-- These are as follows, orientation is looking directly at the servo and balloon from 90 degrees.
+The servos need to be attached in a specific orientation in order for the flapping with offset to work correctly.
+These are as follows, orientation is looking directly at the servo and balloon from 90 degrees:
+
 - The front and back servos are oriented sideways so that the fin will flap up and down when the servo moves.
 - Front servo: output gear at the top left of the servo body.
 - Back servo: output gear at the top right of the servo body.
@@ -110,4 +117,9 @@ Right fin servo
     </table>
 
 Now the servo horns can be glued onto the fins to allow for attaching to the servos.
-Take care when gluing them so that there is enough clearance between the fin and the servo's body to allow for its full range of motion.
+Take care when gluing them so that there is enough clearance between the fin and the servo's body to allow for its full range of motion. 
+With the fins and servos in the photos, it was best to glue the servo horns such that when attached to the servo, the wood of the fin is on the side of the servo where the output gear is closer to the edge.
+
+.. image:: /images/fin_attachment.jpg
+    :width: 400
+    :target: ../_images/fin_attachment.jpg
