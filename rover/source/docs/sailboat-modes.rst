@@ -38,4 +38,4 @@ AUTO
 
 The vehicle will tack upwind to reach the next waypoint if required. Note that if the vehicle has to tack it will
 not stay on the line between waypoints. While traveling upwind a tack can be triggered from an aux switch or by a
-maximum cross track error defined by :ref:`WP_OVERSHOOT <WP_OVERSHOOT>`.
+maximum cross track error defined by ``WP_OVERSHOOT <WP_OVERSHOOT>``.
