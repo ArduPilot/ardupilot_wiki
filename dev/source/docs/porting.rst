@@ -14,7 +14,7 @@ Consider joining the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ 
 Step 1 - getting started
 ------------------------
 
-- determine which microcontroller the new flight controllers uses.  if it is a CPU we already support (STM32F42x, STM32F40x STM32F41x, STM32F745, STM32F765 or STM32F777 where “x” can be any number), then the port should be relatively straight forward.  If it is another CPU, ping us on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ for advice on how to proceed.
+- determine which microcontroller the new flight controllers uses.  if it is a CPU we already support (STM32F42x, STM32F40x STM32F41x, STM32F745, STM32F765, STM32F777 or STM32H743 where “x” can be any number), then the port should be relatively straight forward.  If it is another CPU, ping us on the `ArduPilot Discord Chat <https://ardupilot.org/discord>`__ for advice on how to proceed.
 - determine the crystal frequency (normally 8Mhz or 24Mhz).  refer to the schematic or read the writing on the crystal which is normally a small silver square.
 
 Step 2 - create a hwdef.dat file for the board
