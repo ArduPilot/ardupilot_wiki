@@ -326,7 +326,7 @@ The script can be run automatically at boot time.
 
     [Unit]
     Description=Realsense T265 Service
-    After==multi-user.target
+    After=multi-user.target
     StartLimitIntervalSec=0
     Conflicts=
 
