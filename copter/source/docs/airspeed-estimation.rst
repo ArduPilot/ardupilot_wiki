@@ -76,6 +76,15 @@ Once enabled, the estimated wind speed is sent to the ground station in real-tim
     :target: ../_images/windspeed-mp.png
     :width: 450px
 
+Viewing Windspeed recorded in the Onboard Logs
+----------------------------------------------
+
+The EKF's wind speed estimate is recorded in the onboard log XKF2 message's VWN and VWE fields
+
+.. image:: ../images/windspeed-log.png
+    :target: ../_images/windspeed-log.png
+    :width: 450px
+
 Barometer Position Error Compensation
 -------------------------------------
 
