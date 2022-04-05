@@ -31,11 +31,6 @@ It consists of a control part called **DroneCore.Pilot** and power part called *
 -  SMBUS
 -  LED Driver for 4 x WS2812B strips
 
-Where to Buy
-============
-
-`Where to buy <https://www.airvolute.com/contact/>`__
-
 
 DroneCore.Suite comes with both Cube and Xavier NX pre-configured and communicating together and able to control a Multicopter. Developers no longer need to solve basic communication and compatibility issues coming from connecting two different IT worlds. It They can start to concentrate on their application needs from the beginning.
 
@@ -122,3 +117,7 @@ Useful links
 
 `Documentation <https://docs.airvolute.com/airvolute-dronecore.suite>`__
 
+Where to Buy
+============
+
+`Where to buy <https://www.airvolute.com/contact/>`__
