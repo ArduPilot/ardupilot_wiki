@@ -1,5 +1,5 @@
 .. _common-cuav-p9:
-
+[copywiki destination="copter,plane,rover,blimp"]
 =============
 CUAV P9 Radio
 =============
