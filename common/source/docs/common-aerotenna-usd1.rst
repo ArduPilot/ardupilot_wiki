@@ -4,11 +4,11 @@
 Ainstein US-D1 Radar Altimeter
 ==============================
 
-The `Ainstein US-D1 Radar Altimeter <https://ainstein.ai/drone-makers-drone-service-providers/us-d1/>`__ has a range of 50m, an update rate of 82hz and weighs only 110g.
+The `Ainstein US-D1 Radar Altimeter <https://ainstein.ai/drone-makers-drone-service-providers/us-d1/>`__ has a range of 50m, an update rate of 100hz and weighs only 110g.
 
 .. warning:: currently the manufacturer warns that operation indoors can be problematic due to multi-path reflections...caution is advised
 
-The user manual for this radar unit can be found `here <https://cdn.shopify.com/s/files/1/0113/0414/0900/files/User_Manual_US-D1.pdf?16288212927919010227>`__
+The user manual for this radar unit can be found `here. <https://ainstein.ai/wp-content/uploads/2022/04/US-D1-Technical-User-Manual.pdf>`__
 
 .. image:: ../../../images/aerotenna-usd1.png
 
@@ -19,7 +19,7 @@ The user manual for this radar unit can be found `here <https://cdn.shopify.com/
 Where to Buy
 ------------
 
-Units can be purchased thru `Ainstein <https://ainstein.ai/>`__
+Units can be purchased through `Ainstein's website. <https://ainstein.ai/>`__
 
 Connecting to the Autopilot
 -----------------------------------
