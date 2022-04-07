@@ -16,10 +16,8 @@ GPSs from ArduPilot Partners that are known to work include:
 - :ref:`Holybro H-RTK F9P GNSS <common-holybro-rtk-f9p>`
 - `mRobotics ZED-F9 GPS <https://store.mrobotics.io/category-s/109.htm>`__
 - :ref:`common-synerex-mdu-2000`
-
-
-    Swift Navigation's Piksi Multi RTK GPS Receiver <common-piksi-multi-rtk-receiver>
-    Septentrio AsteRx-mUAS RTK GPS <common-gps-septentrio>
+- :ref:`common-piksi-multi-rtk-receiver`
+- :ref:`common-gps-septentrio`
 
 .. note::
 
