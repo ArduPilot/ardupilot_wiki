@@ -16,6 +16,7 @@ This section includes details on tested frames to speed up DIY builds of rovers 
     DeSET mapping boat <reference-frames-deset-mapping-boat>
     HobbyKing Hydrotek <reference-frames-hydrotek>
     HobbyKing Hydropro Inception <reference-frames-hydropro-inception>
+    Maker Boat Boogie Board Boat <https://squirm.tech/maker-boat-basic-quick-start/>
     Thunder Tiger Toyota Hilux <reference-frames-tt-toyotahilux>
     Traxxas Stampede 4WD Truck <reference-frame-traxxas-stampede>
     Vac-U-Tug Tugboat <reference-frames-vacutug>
