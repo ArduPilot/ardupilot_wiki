@@ -106,6 +106,21 @@ With this option, :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` must be set to "23",
 
 Any UART can be used for RC system connections in ArduPilot also, and is compatible with all protocols except PPM. See :ref:`common-rc-systems` for details.
 
+If using the Fport with a Frsky receiver you should consider having it on te version 2.1.0 FCC, the newest 2.1.1 seems to have telemtry issues
+
+Parameters:
+
+Use RX6 pin to connect your FPort pin. The configuration should be:
+
+BRD_ALT_CONFIG =1
+SERIAL7_PROTOCOL =23
+SERIAL7_OPTIONS =15
+RC_OPTIONS =8 (depending on receiver and its firmware rev, this may not be necessary)
+RSSI_TYPE =3
+
+Useful link:
+https://ardupilot.org/copter/docs/common-FPort-receivers.html
+
 Dshot capability
 ================
 
