@@ -212,8 +212,8 @@ Identification Process
 -----------------------------------------
 
 To gather identification data, separate sysid test flights were conducted for the pitch, roll and yaw axis. Default parameters were used for the angle and rate 
-controller. To prevent the rate controllers from compensating too much of the frequency-sweep signal, the integrator gain of each axis was set to zero. The 
-following table contains the settings of the system identification mode for each axis:
+controller. To prevent the rate controllers from compensating too much of the frequency-sweep signal, the integrator gain of each axis was set to zero. Apart from
+that, the feedforward of the angle controller is disabled. The following table contains the settings of the system identification mode for each axis:
 
 +--------------------------------------+--------------------------------------------------------+
 | Parameter                            | Value                                                  |
