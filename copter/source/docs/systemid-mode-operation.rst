@@ -136,7 +136,7 @@ of the copter within the earth-frame. Thrust and reaction torque can be calculat
 with :math:`\omega_i` being the propellers angular velocity and :math:`k_T` as well as :math:`k_Q` standing for constants dependant on the propeller geometry. 
 Based on these two quantities, the created forces and torques by the propulsion system acting on the Copter's airframe for a X-configuration can be written as
 
-.. image:: ../images/EquationsForceTorqueProp.png
+.. image:: ../images/EquationsForceTorqueProp.PNG
 :name: fig-eq-force-torque-prop
 
 where :math:`d` represents the arm length between the respecetive propeller and the airframe's center of gravity, while :math:`\varphi_i` stands for the angle of 
