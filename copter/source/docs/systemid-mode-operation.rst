@@ -111,7 +111,7 @@ directly influenced by the controllers compared to the other chirp inputs, there
 Model Structure
 ------------------------------
 
-.. image:: ../images/BodyDiagram.png
+.. image:: ../images/bodyDiagramQuadcopter.PNG
 :name: fig-body-diagram
 
 The Quadcopter model is based on its equations of motion. Looking at the Quadcopter as a rigid body, it has 6 degrees of freedom, consisting of three translational 
