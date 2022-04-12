@@ -134,7 +134,7 @@ of the copter within the earth-frame. Thrust and reaction torque can be calculat
 :name: fig-eq-thrust-torque
 
 with :math:`\omega_i` being the propellers angular velocity and :math:`k_T` as well as :math:`k_Q` standing for constants dependant on the propeller geometry. 
-Based on these two quantities, the created forces and torques by the propulsion system acting on the Copter's airframe for a X-configuration can be written as
+Based on these two quantities, the created forces and torques by the propulsion system acting on the copter's airframe for a X-configuration can be written as
 
 .. image:: ../images/EquationsForceTorqueProp.PNG
 :name: fig-eq-force-torque-prop
@@ -177,14 +177,14 @@ to model the motors, thereby describing the transfer from controller outputs to 
 the controller outputs are converted to thrust demands for each motor. The motors are not able to instantly realize this demand. Instead, they have their
 own dynamic which need to be modelled. For this purpose, it is assumed that the relation between thrust demand and provided voltage to the motors by the ESC is 
 proportional. The transfer from motor voltage to angular motor speed is modelled by a first-order system. Apart from that, it is necessary to model the relation 
-between voltage and motor torque that equals the reaction torque of the propulsion unit :math:`Q_i`. The equation for :math:`Q_i` in :ref:`<fig-eq-thrust-torque>` 
-only shows the stationary reaction torque of the propeller. The acceleration or deceleration of the motor leads to an additional, dynamic reaction torque due to the 
-inertia of the motor. The transfer function can then be written as 
+between voltage and motor torque that equals the reaction torque of the propulsion unit :math:`Q_i`. The equation for :math:`Q_i` in this :ref:`equation<fig-eq-
+thrust-torque>` only shows the stationary reaction torque of the propeller. The acceleration or deceleration of the motor leads to an additional, dynamic reaction 
+torque due to the inertia of the motor. The transfer function can then be written as 
 
 .. image:: ../images/motorModel.PNG
 :name: fig-eq-motor-model
 
-Next, it is assumed that the thrust demands of the motors are calculated from the controller outputs by inverting the allocation matrix in :ref:`<fig-eq-force-
+Next, it is assumed that the thrust demands of the motors are calculated from the controller outputs by inverting the :ref:`allocation matrix<fig-eq-force-
 torque-prop>`
 
 .. image:: ../images/ctrlOutputsToThrstCmds.PNG
