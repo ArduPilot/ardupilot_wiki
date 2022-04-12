@@ -146,6 +146,8 @@ Copy-paste the contents below into the file
                 type="cartographer_node"
                 args="-configuration_directory $(find cartographer_ros)/configuration_files -configuration_basename cartographer.lua"
                 output="screen">
+                <remap from=”odom” to “/mavros/local_position/odom” />
+                <remap from=”imu” to “/mavros/imu/data” />
           </node>
           <node name="cartographer_occupancy_grid_node"
                 pkg="cartographer_ros"
