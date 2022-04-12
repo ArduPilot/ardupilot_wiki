@@ -136,11 +136,11 @@ of the copter within the earth-frame. Thrust and reaction torque can be calculat
 with :math:`\omega_i` being the propellers angular velocity and :math:`k_T` as well as :math:`k_Q` standing for constants dependant on the propeller geometry. 
 Based on these two quantities, the created forces and torques by the propulsion system acting on the copter's airframe for a X-configuration can be written as
 
-.. image:: ../images/EquationsForceTorqueProp.PNG
+.. image:: ../images/EquationForceTorqueAllocation.PNG
 :name: fig-eq-force-torque-prop
 
 where :math:`d` represents the arm length between the respecetive propeller and the airframe's center of gravity, while :math:`\varphi_i` stands for the angle of 
-the propeller's arm in regard to the :math:`b_x` axis of the copter.
+the propeller's arm in regard to the :math:`b_x` axis of the copter. :math:`\Gamma` is called the allocation matrix.
 The other forces :math:`F_{e}` and torques :math:`M_{e}` represent external effects on the airframe which is mainly drag due to translational flight. Estimating 
 their influence on the states of the system poses a highly relevant target for the identification.
 
@@ -190,7 +190,7 @@ torque-prop>`
 .. image:: ../images/ctrlOutputsToThrstCmds.PNG
 :name: fig-eq-ctrlout-thrstCmds
 
-As a conseqence, the inverted matrix above and the allocation matrix in this :ref:`equation<fig-eq-force-torque-prop>` cancel each other out, 
+As a conseqence, the inverted matrix above and the :ref:`allocation matrix<fig-eq-force-torque-prop>` cancel each other out, 
 thereby leaving the following four separated control paths: heave, roll, pitch and yaw. The motor dynamics are incorporated in these models by using the 
 :ref:`transfer functions<fig-eq-motor-model>` as a relation between the controller outputs and the generated force or torque acting on 
 the respective axis. To model this in a state-space representation, this adds the control forces and torques to the states of the systems. The state-sapce models 
