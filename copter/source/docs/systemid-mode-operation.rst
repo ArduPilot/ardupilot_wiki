@@ -111,7 +111,7 @@ directly influenced by the controllers compared to the other chirp inputs, there
 Model Structure
 ------------------------------
 
-.. image:: ../images/bodyDiagramQuadcopter.PNG
+.. image:: ../images/bodyDiagramQuad.PNG
 :name: fig-body-diagram
 
 The Quadcopter model is based on its equations of motion. Looking at the Quadcopter as a rigid body, it has 6 degrees of freedom, consisting of three translational 
@@ -234,3 +234,6 @@ that, the feedforward of the angle controller is disabled. The following table c
 +--------------------------------------+------------------+------------------+------------------+
 | :ref:`SID_T_REC<SID_T_REC>`          | 130 s            | 130 s            | 130 s            |
 +--------------------------------------+------------------+------------------+------------------+
+
+Dataflash logs are used to obtain the fligth data. For the rate controller outputs the signals :ref:`RATE.ROut<RATE.ROut>`, :ref:`RATE.POut<RATE.POut>` and 
+:ref:`RATE.YOut<RATE.YOut>` are used. The signals :ref:`SIDD.Gx<SIDD.Gx>`, :ref:`SIDD.Gy<SIDD.Gy>` and :ref:`SIDD.Gz<SIDD.Gz>` correspond to the measured angular rates of the copter.
