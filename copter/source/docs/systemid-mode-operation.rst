@@ -105,7 +105,7 @@ motors and ESCs as well as the airframe of the copter, the gyroscopes and their 
 The frequency sweep inputs 10-12 are used for the identification, since they provide a direct input to the regarded system. Because of this, the input signal is not 
 directly influenced by the controllers compared to the other chirp inputs, thereby making it independent from the parameterization of the controller.
 
-.. image:: ../images/ControlSystem.png
+.. image:: ../images/ControlSystemDiagram.png
 :name: fig-ctrl-sys-ardupilot
 
 Model Structure
