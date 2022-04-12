@@ -115,7 +115,7 @@ Model Structure
 :name: fig-body-diagram
 
 The Quadcopter model is based on its equations of motion. Looking at the Quadcopter as a rigid body, it has 6 degrees of freedom, consisting of three translational 
-and three rotational motion. Figure :ref:`figure<fig-body-diagram>` shows
+and three rotational motion. The :ref:`figure<fig-body-diagram>` above shows
 a sketched Quadcopter during flight within the inertial, earth-fixed coordinate frame made up of the vectors (:math:`e_{x}`, :math:`e_{y}`, :math:`e_{z}`). The 
 Quadcopter has its own coordinate system attached to its center of gravity, 
 which is called body-fixed coordinate frame. Its axes are represented by the vectors (:math:`b_{x}`, :math:`b_{y}`, :math:`b_{z}`). The equations of motion within 
@@ -172,9 +172,9 @@ small perturbations is left out.
 .. image:: ../images/equationsOfMotionLinPerturbation.PNG
 :name: fig-eq-motion-lin
 
-The actual control inputs of the system are the rate controller outputs as shown in figure :ref:`figure<fig-ctrl-sys-ardupilot>`. Therefore, it is necessary to 
-model the motors, thereby describing the transfer from controller outputs to control forces and torques that are acting on the airframe. Due to the motor mixer, the 
-controller outputs are converted to thrust demands for each motor. The motors are not able to instantly realize this demand. Instead, they have their
+The actual control inputs of the system are the rate controller outputs as shown in the :ref:`control diagram<fig-ctrl-sys-ardupilot>`. Therefore, it is necessary 
+to model the motors, thereby describing the transfer from controller outputs to control forces and torques that are acting on the airframe. Due to the motor mixer, 
+the controller outputs are converted to thrust demands for each motor. The motors are not able to instantly realize this demand. Instead, they have their
 own dynamic which need to be modelled. For this purpose, it is assumed that the relation between thrust demand and provided voltage to the motors by the ESC is 
 proportional. The transfer from motor voltage to angular motor speed is modelled by a first-order system. Apart from that, it is necessary to model the relation 
 between voltage and motor torque that equals the reaction torque of the propulsion unit :math:`Q_i`. The equation for :math:`Q_i` in :ref:`<fig-eq-thrust-torque>` 
@@ -190,9 +190,9 @@ torque-prop>`
 .. image:: ../images/ctrlOutputsToThrstCmds.PNG
 :name: fig-eq-ctrlout-thrstCmds
 
-As a conseqence, the inverted matrix in :ref:`<fig-eq-ctrlout-thrstCmds>` and the allocation matrix in :ref:`<fig-eq-force-torque-prop>` cancel each other out, 
-thereby leaving the following four separated control paths: heave, roll, pitch and yaw. The motor dynamics are incorporated in these models by using the transfer 
-functions in :ref:`<fig-eq-motor-model>` as a relation between the controller outputs and the generated force or torque acting on 
+As a conseqence, the inverted matrix above and the allocation matrix in this :ref:`equation<fig-eq-force-torque-prop>` cancel each other out, 
+thereby leaving the following four separated control paths: heave, roll, pitch and yaw. The motor dynamics are incorporated in these models by using the 
+:ref:`transfer functions<fig-eq-motor-model>` as a relation between the controller outputs and the generated force or torque acting on 
 the respective axis. To model this in a state-space representation, this adds the control forces and torques to the states of the systems. The state-sapce models 
 for the roll, pitch and yaw axis can be formulated as
 
