@@ -20,3 +20,4 @@ a full set of features see the :doc:`full parameter list <parameters>` and the `
     Terrain Following <common-terrain-following>
     Soaring <soaring-4_1>
     Automated Aerobatics <common-scripting-aerobatics>
+    Moving Vehicle/Ship Takeoff/Landing <common-ship-landing>

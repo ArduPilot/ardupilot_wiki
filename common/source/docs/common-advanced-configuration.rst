@@ -108,6 +108,9 @@ tuning options for the vehicle.
     Sensor Testing <common-sensor-testing>
     Serial Port to Port Passthrough <common-serial-passthrough>
     Serial Port Configuration <common-serial-options>
+[site wiki="plane"]
+    Ship(Moving Vehicle) Takeoff/Landing <common-ship-landing>
+[/site]
 [site wiki="copter"]
     Surface Tracking  <terrain-following-manual-modes>
 [/site]
