@@ -167,14 +167,33 @@ You could also switch to a fixed wing mode just before reaching the takeoff alti
 
 Simulation
 ==========
-To simulation ship landing you should set:
 
--   ``SIM_SHIP_ENABLE`` = 1
--   ``SIM_SHIP_SPEED`` = 5,speed of ship in m/s
--   ``SIM_SHIP_DSIZE`` = 50, size of the simulated deck of the ship
--   ``SIM_SHIP_PSIZE`` = 2000,radius of the circular path the ship follows in meters
--   ``SIM_SHIP_OFS_X`` = 5, distance of the beacon in front of the aircraft at startup
--   ``SIM_SHIP_OFS_Y`` = 0, distance of the beacon to the right of the aircraft at startup
+To simulate a QuadPlane ship landing:
+
+#. Copy the plane_ship_landing.lua LUA script, into the /scripts directory where you will run the simulation
+#. Run the following commands for Linux SITL:
+
+.. code-block:: bash
+
+    sim_vehicle.py -v plane -f quadplane --console --map -w  /start SITL with default params
+    param set sim_ship_enable 1                              /Enable ship sim
+    param set scr_enable 1                                   /Enable scripting on QuadPlane
+    param ftp                                                /Refresh params to see SCR_ params
+    param set scr_heap_size 100000                           /Set memory large enough to run script
+    reboot                                                   /Reboot and start running script
+    param set ship_enable 1                                  /Enable script action
+
+3. Then setup a mission item: VTOL_TAKEOFF to the desired altitude
+#. Enter:
+
+.. code-block:: bash
+
+   mode auto
+   arm throttle                                              /Takeoff will begin
+   rc 3 1500                                                 /Raise throttle to allow hold-off loiter
+
+The QuadPlane will takeoff and then execute an RTL to the hold-off point and wait until the throttle is lowered (rc 3 1000) to start the landing.
+
 
 Credit:
 
