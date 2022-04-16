@@ -62,10 +62,10 @@ Static Single Frequency Notch
 
 In addition to the dynamic harmonic notch filter it is also possible to configure an additional, independent static notch filter. You might want to do this where you have significant frame or propeller resonance at a particular throttle value. Analysis is identical to that for the :ref:`harmonic notch<common-imu-notch-filtering-flight-and-post-flight-analysis>`, but this time do the analysis after configuring the harmonic notch so that you can see any residual vibration.
 
-- Set :ref:`INS_NOTCH_ENABLE <INS_NOTCH_ENABLE>` = 1 to enable the static notch
-- Set :ref:`INS_NOTCH_FREQ <INS_NOTCH_FREQ>` = resonant peak in Hz to set the notch center frequency
-- Set :ref:`INS_NOTCH_BW <INS_NOTCH_BW>` = the notch bandwidth, a reasonable default is half of the center frequency
-- Set :ref:`INS_NOTCH_ATT <INS_NOTCH_ATT>` = the notch attenuation, higher attenuation will make the notch deeper and narrower
+- Set :ref:`INS_HNTC2_ENABLE <INS_HNTC2_ENABLE>` = 1 to enable the static notch
+- Set :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = resonant peak in Hz to set the notch center frequency
+- Set :ref:`INS_HNTC2_BW <INS_HNTC2_BW>` = the notch bandwidth, a reasonable default is half of the center frequency
+- Set :ref:`INS_HNTC2_ATT <INS_HNTC2_ATT>` = the notch attenuation, higher attenuation will make the notch deeper and narrower
 
 .. toctree::
     :hidden:
