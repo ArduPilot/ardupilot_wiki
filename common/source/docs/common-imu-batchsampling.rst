@@ -36,7 +36,7 @@ Flight and Post-Flight Analysis
     :width: 450px
 
 - Accelerometer data appears in the top left window with the vertical axis showing the amplitude and horizontal axis showing the frequency.  The amplitude is not scaled to a useful value meaning the graph is useful for determining the frequency of the vibration but not whether the levels are too high or not.  Vibration at frequencies above 300Hz may lead to attitude or position control problems.
-- The default configuration shows raw accelerometer and gyro data before it has been filtered. Filtering is a key part of preventing noise reaching the PID loops and motors and thus it is important to be able look at the data after it has been filtered as well. In addition, when configuring advanced filtering using a notch (see :ref:`INS_NOTCH_ENABLE <INS_NOTCH_ENABLE>`) it is hard to do this effectively without seeing the output. In order to see post-filter output set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 2.
+- The default configuration shows raw accelerometer and gyro data before it has been filtered. Filtering is a key part of preventing noise reaching the PID loops and motors and thus it is important to be able look at the data after it has been filtered as well. In addition, when configuring advanced filtering using a notch (see :ref:`common-imu-notch-filtering`) it is hard to do this effectively without seeing the output. In order to see post-filter output set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 2.
 - For small copters in manual flight modes it is important to let as much signal through below about 100Hz and as little as possible above this. Configuring post-filter output will allow you to see this.
 
 .. image:: ../../../images/imu-batchsampling-fft-mp.png
