@@ -191,7 +191,6 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>`
-- :ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
 - :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>` (EPM enabled only)
@@ -234,7 +233,6 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_DIGICAM_CONTROL <mav_cmd_do_digicam_control>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
-- :ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_INVERTED_FLIGHT <mav_cmd_do_inverted_flight>`
@@ -272,7 +270,6 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
-- :ref:`MAV_CMD_DO_SET_MODE <mav_cmd_do_set_mode>`
 - :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 
@@ -2526,66 +2523,7 @@ The "DO" or "Now" commands are executed once to perform some action. All
 the DO commands associated with a waypoint are executed immediately.
 
 
-.. _mav_cmd_do_set_mode:
 
-MAV_CMD_DO_SET_MODE
--------------------
-
-Supported by: Copter, Plane, Rover.
-
-Set system mode (preflight, armed, disarmed etc.)
-
-
-**Command parameters**
-
-.. raw:: html
-
-   <table border="1" class="docutils">
-   <tbody>
-   <tr>
-   <th>Command Field</th>
-   <th>Mission Planner Field</th>
-   <th>Description</th>
-   </tr>
-   <tr>
-   <td><strong>param1</strong></td>
-   <td></td>
-   <td>Mode, as defined by `MAV_MODE <https://mavlink.io/en/messages/common.html#MAV_MODE>`__</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td><strong>param2</strong></td>
-   <td></td>
-   <td>Custom mode - this is system specific, please refer to the individual autopilot specifications for details.</td>
-   </tr>
-   <tr>
-   <td>param3</td>
-   <td></td>
-   <td>Empty</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td>param4</td>
-   <td></td>
-   <td>Empty</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td>param5</td>
-   <td></td>
-   <td>Empty</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td>param6</td>
-   <td></td>
-   <td>Empty</td>
-   </tr>
-   <tr style="color: #c0c0c0">
-   <td>param7</td>
-   <td></td>
-   <td>Empty</td>
-   </tr>
-   </tbody>
-   </table>
-
-   
 .. _mav_cmd_do_change_speed:
 
 MAV_CMD_DO_CHANGE_SPEED
@@ -4183,7 +4121,7 @@ MAV_CMD_DO_AUTOTUNE_ENABLE
 Supported by: Plane (not Copter or Rover).
 
 Enable/disable autotune.
-(not included in Mission Planner, use MAV_CMD_DO_SET_MODE)
+(not included in Mission Planner,included in MAVProxy and QGC)
 
 Plane
 ~~~~~
