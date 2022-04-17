@@ -36,14 +36,24 @@ Below is an image of this where the X value is adjusted until the two curves are
 .. image:: ../../../images/FF-calculation.png
    :target: ../_images/FF-calculation.png
 
-- Set :ref:`Q_A_RAT_PIT_SMAX<Q_A_RAT_PIT_SMAX>` and :ref:`Q_A_RAT_YAW_SMAX<Q_A_RAT_YAW_SMAX>`, **temporarily**, to "0" to avoid the oscillation protection from masking when oscillation occurs.
 - Now you can hover again, and begin increasing the :ref:`Q_A_RAT_PIT_D<Q_A_RAT_PIT_D>` term, either iteratively, or using :ref:`common-transmitter-tuning`, until it oscillates and then reduce it to 1/2 to 1/3 that value.
 - Then increase the :ref:`Q_A_RAT_PIT_P<Q_A_RAT_PIT_P>` term,, until it oscillates and then reduce it  1/2 to 1/3 that value.
 - Do the same for the YAW axis.
-- Now return :ref:`Q_A_RAT_PIT_SMAX<Q_A_RAT_PIT_SMAX>` and :ref:`Q_A_RAT_YAW_SMAX<Q_A_RAT_YAW_SMAX>` to appropriate values. These are usually set to no more than 25% of the actuators maximum slew rate, ie for a 60 deg/0.1s tilt servo, 150 or less would be used.
 
 Roll Tuning
 ===========
 
 This should allow you to get a reasonable tune for Pitch and Yaw. Roll is tuned like STEP 10 for Roll in :ref:`QuadPlane<quadplane-vtol-tuning>`. Roll axis can even be AutoTuned using QAUTOTUNE, if restricted to only the roll axis using :ref:`Q_AUTOTUNE_AXES<Q_AUTOTUNE_AXES>`.
 
+VTOL Gain Scaling for Redundant Actuators
+=========================================
+
+Some tailsitters have redundant actuators for a given axis. Vectored thrust tailsitters may have both tilting motors for yaw as well as elevons. Copter tailsitters may have fixed wing control surfaces that produce pitch or yaw in addition to the copter style motors. In some cases, it would be desired to have those fixed wing control surfaces provide more attitude control in VTOL than the motors, reducing the thrust/throttle levels needed for that control.
+
+The following parameters allow the adjustment of how much control is produced the fixed wing control surfaces for each axis. Larger values apply more gain to the control surfaces, this will give the overall system more gain so the ``Q_A_RAT_`` pitch and yaw PID gains may have to be reduced. To reduce the response of the motors, one would for example, half the PID P/D/I/FF rate gains and use a control surface scale factor of two. This would result in the control surfaces responding as before but with the motor outputs halved.
+
+Default value is 1, which results in no behavior change from the past. These gains are only active in VTOL modes or under Q assist.
+
+- :ref:`Q_TAILSIT_VT_P_P<Q_TAILSIT_VT_P_P>` Scales from Pitch PID output to control surfaces
+- :ref:`Q_TAILSIT_VT_R_P<Q_TAILSIT_VT_R_P>` Scales from Roll PID output to control surfaces
+- :ref:`Q_TAILSIT_VT_Y_P<Q_TAILSIT_VT_Y_P>` Scales from Yaw PID output to control surfaces
