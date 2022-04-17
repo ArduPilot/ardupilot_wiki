@@ -37,7 +37,7 @@ Specifications
 -  **Interfaces**
 
    -  5x UARTS
-   -  6x PWM outputs
+   -  6x PWM outputs (7 on -STD)
    -  1x RC input PWM/PPM, SBUS
    -  I2C port for external compass and airspeed sensor (STD, CTR and AIO)
    -  USB port
@@ -101,7 +101,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 Dshot capability
 ================
 
-All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output groups that must be the same (PWM rate or Dshot, when configured as a normal servo/motor output) are: 1, 2/3/4, 5, and 6.
+All motor/servo outputs are Dshot and PWM capable. However, mixing Dshot and normal PWM operation for outputs is restricted into groups, ie. enabling Dshot for an output in a group requires that ALL outputs in that group be configured and used as Dshot, rather than PWM outputs. The output groups that must be the same (PWM rate or Dshot, when configured as a normal servo/motor output) are: 1, 2/3/4, 5, 6, and 7 (-STD only).
 
 Where to Buy
 ============
