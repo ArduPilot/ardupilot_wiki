@@ -144,6 +144,13 @@ Then reboot.
 
 .. note:: this autopilot uses a high precision current sensor which is sensitive to ESC switching noise. Be sure to use the bypass capacitor provided. In some cases, the ESCs themselves will need additional 200-330uF low ESR capacitors on their power inputs, if they do not incorporate them already. See `Matek FAQs <http://www.mateksys.com/?p=5712#tab-id-12>`__ for more information.
 
+Alternate Configurations
+========================
+
+- set :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "1" to enable RX6 pin as true UART input (see RC Input section above)
+- set :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "2" to change RTS7 and CTS7 pins to GPIO 1 and 2, respectively.
+- set :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` to "3" to enable both of the above.
+
 Firmware
 ========
 
