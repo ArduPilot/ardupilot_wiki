@@ -46,6 +46,11 @@ sure the "port that we send from" is not 49001. In the example below
 .. figure:: ../images/xplane-network-data.jpg
    :target: ../_images/xplane-network-data.jpg
 
+You will also need to output data from X-Plane. Click on *Settings*, then *Data Input & Output*. Copy at least 1 setting from the screenshot below. ArudPilot will then send commands to X-Plane that will enable all of the output data fields that it needs to operate.
+
+.. figure:: ../images/mavlinkhil1.jpg
+   :target: ../_images/mavlinkhil1.jpg
+
 If you have a joystick then you can configure the joystick for
 X-Plane. A joystick controlled by X-Plane will be available as R/C
 input when ArduPilot is in control of X-Plane, allowing you to fly the
@@ -75,8 +80,7 @@ what you are wanting to do.
 
 The first approach is good if you just want to test ArduPilot with
 SITL but you don't want to make changes to the code. MissionPlanner
-will download a build of ArduPilot SITL for Windows that is built each
-night from git master.
+will download a build of ArduPilot SITL for Windows that is either the current stable release version or a nightly build of the latest ArduPilot code that is under development.
 
 The second approach is good if you want to do ArduPilot development
 and try out code changes and you want to use a ground station of your
@@ -90,31 +94,17 @@ development.
 Using SITL from MissionPlanner
 ------------------------------
 
-To start SITL directly from MissionPlanner you need to have a very
-recent version of MissionPlanner. Get the latest beta from the help
-screen.
-
-Then go to the SIMULATION tab:
-
-.. figure:: ../images/xplane-missionplanner1.jpg
-   :target: ../_images/xplane-missionplanner1.jpg
-
-In the SIMULATION tab select X-plane and Xplane 10. Then select
-Advanced IP Settings and click through the IP addresses, set them 
-to 127.0.0.1, with the default network ports.
-
-Press "Start SITL"
+To start SITL directly from MissionPlanner go to the Simulation tab:
 
 .. figure:: ../images/xplane-missionplanner2.jpg
    :target: ../_images/xplane-missionplanner2.jpg
 
-In the SITL screen you need to select Model "xplane" and then select
+In the Simulation screen you need to select Model "xplane" and then select
 "Plane". At the moment we only support fixed wing and helicopter
 aircraft in X-Plane with SITL. In the future we may support other
 aircraft types. See below for more information on flying a helicopter.
 
-When you select "Plane" MissionPlanner will download a nightly build
-of ArduPilot SITL and will then launch SITL.
+When you select "Plane" MissionPlanner will present a selection for downloading the current stable release or a nightly build of ArduPilot. 
 
 .. figure:: ../images/xplane-missionplanner3.jpg
    :target: ../_images/xplane-missionplanner3.jpg
@@ -221,12 +211,12 @@ instead of "xplane" to activate Helicopter controls.
 
 The startup procedure for a helicopter is:
 
-  - set interlock on (so RC input channel 8 is low)
-  - set zero collective (so RC input channel 3 is low)
-  - arm the helicopter
-  - set interlock off (so RC input channel 8 is high)
-  - wait for the head to reach full speed
-  - takeoff
+   #. set interlock on (so RC input channel 8 is low)
+   #. set zero collective (so RC input channel 3 is low)
+   #. arm the helicopter
+   #. set interlock off (so RC input channel 8 is high)
+   #. wait for the head to reach full speed
+   #. takeoff
 
 .. youtube:: JNNSoMrAFn4
     :width: 100%
