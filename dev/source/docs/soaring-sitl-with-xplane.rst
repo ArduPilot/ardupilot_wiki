@@ -101,13 +101,13 @@ Setting up ArduPlane SITL
 
    |br|
 
-#. **Install and configure Cygwin.**
+#. **Optional: Install and configure Cygwin.**
 
    The process is described in `a section of the Setting Up SITL on Windows wiki <https://ardupilot.org/dev/docs/sitl-native-on-windows.html#install-cygwin>`_. For the purposes of the soaring SITL, you don’t need to perform the steps in the *Set up directories/paths in Cygwin* and *Install Required Python Packages* sections of that wiki, but doing them won’t hurt.
 
    |br|
 
-#.	**Get ArduPilot and build ArduPlane for SITL.**
+#.	**Optional: Get ArduPilot and build ArduPlane for SITL.**
 
     a) Open a Cygwin terminal (or reopen it if you have one already open). 
 
@@ -143,6 +143,8 @@ Running soaring SITL with X-Plane
    ::
     
        build/sitl/bin/arduplane --model xplane
+   
+   Or by launching SITL from MissionPlanner's Simulation screen.
 
    |br|
    
