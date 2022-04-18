@@ -10,6 +10,8 @@ This page explains how MAVLink can be used by a ground station or companion comp
 - :ref:`Plane flight modes <plane:flight-modes>`, see :ref:`FLTMODE1 <plane:FLTMODE1>` for flightmode numbers
 - :ref:`Rover flight modes <rover:rover-control-modes>`, see :ref:`MODE1 <rover:MODE1>` for flightmode numbers
 
+The MAVLink enums for flight modes can be found `here <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml#L1007>`__
+
 Get the Flightmode with HEATBEAT
 --------------------------------
 
@@ -52,12 +54,12 @@ Attempt to set the vehicle's flightmode by sending a `COMMAND_LONG <https://mavl
    <tr>
    <td><strong>param1</strong></td>
    <td>float</td>
-   <td>MAV_MODE_FLAG_CUSTOM_MODE_ENABLED=1(</td>
+   <td>MAV_MODE_FLAG_CUSTOM_MODE_ENABLED=1</td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
    <td>float</td>
-   <td>flightmode number</td>
+   <td>flightmode number (see FLTMODE1 links above)</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param3</strong></td>
