@@ -197,7 +197,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
-
+- :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 [/site]
 
 [site wiki="plane"]
@@ -240,6 +240,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 - :ref:`MAV_CMD_DO_AUTOTUNE_ENABLE <mav_cmd_do_autotune_enable>`
 - :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 
 [/site]
 
@@ -272,6 +273,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
 - :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
+- :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 
 [/site]
 
@@ -4271,6 +4273,64 @@ Set the distance that the mission will be rewound when resuming after an interup
    <td>param2</td>
    <td></td>
    <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+.. _mav_cmd_storage_format:
+
+MAV_CMD_STORAGE_FORMAT
+----------------------
+
+Supported by: Plane, Copter & Rover.
+
+Format SD Card. Useful for vehicles where SD card is inaccessible. Param1 and Param2 must be set to 1.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>?</td>
+   <td>Must be 1</td>
+   </tr>
+   <tr>
+   <td><strong>param2</strong></td>
+   <td>?</td>
+   <td>Must be 1</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
