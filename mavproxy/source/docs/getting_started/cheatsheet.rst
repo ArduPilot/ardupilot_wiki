@@ -7,9 +7,10 @@ MAVProxy Cheatsheet
 The following table is intended as a printable quick reference to
 commonly used MAVProxy commands.
 
-=======================  ======================================================
+=======================  ===================================================================
 Command                  Description                                           
-=======================  ======================================================
+=======================  ===================================================================
+rc N PWM                 set RC channel N override to PWM (PMW =0 disables override)
 link list                List all links
 link set N               Set link N to primary
 link add X               Add new link
@@ -35,7 +36,8 @@ mode guided LAT LON ALT  Engage guided mode and move to specified location
 relay set N [0|1]        Set relay N to open or closed
 servo set N PWM          Override servo N to PWM value
 terrain check LAT LON    Get terrain height at specified location
-=======================  ======================================================
+formatsdcard             Formats SD card
+=======================  ===================================================================
 
 
 
