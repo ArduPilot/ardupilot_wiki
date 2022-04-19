@@ -1,5 +1,6 @@
 .. _quadplane-parameters:
 
+=========================
 QuadPlane Parameter setup
 =========================
 
@@ -8,7 +9,8 @@ parameters are very similar to the equivalent Copter parameters so if
 you are familiar with those you should find setting up a QuadPlane is
 easy.
 
-Key parameters are:
+Key Parameters
+==============
 
 -  To enable QuadPlane functionality you need to set the :ref:`Q_ENABLE<Q_ENABLE>`
    parameter to 1 and then refresh the parameter list
@@ -27,6 +29,8 @@ Key parameters are:
    quad motors). Please be careful not to use hard left rudder and zero
    throttle while flying or you risk disarming your motors.
 
+Q_OPTIONS
+=========
 In addition, the behavior of QuadPlane can be modified by the setting of the :ref:`Q_OPTIONS<Q_OPTIONS>` bitmask parameter (no bits are set, by default):
 
 - bit 0, if set, will force the transition from VTOL to Plane mode to keep the wings level and not begin climbing with the VTOL motors (as in a mission to a higher waypoint after VTOL takeoff) during the transition.
@@ -47,7 +51,7 @@ In addition, the behavior of QuadPlane can be modified by the setting of the :re
 -  bit 15, if set, will allow pilot to control descent during VTOL AUTO-LAND phases, similar to throttle stick action during QHOVER or QLOITER. However, this will not become active until the throttle stick is raised above 70% during the descent at least once.
 -  bit 16, if set, will disable the fixed wing approach in QRTL mode and VTOL_LANDING mission items, see Hybrid RTL modes section of :ref:`quadplane-flying` for details of this hybrid landing approach.
 -  bit 17, if set, will enable pilot horizontal re-positioning during VTOL auto LAND phases, momentarily pausing the descent while doing so.
--  bit 18, if set, will only allow arming in VTOL and AUTO modes. This can be used for tailsitters to prevent arming in a fixed wing mode when sitting in VTOL stance to prevent tip-overs.
+-  bit 18, if set, will only allow arming in VTOL and AUTO modes. This can be used for tailsitters to prevent arming in a fixed wing mode when sitting in VTOL stance to prevent tip-overs. For AUTO mode, WP must be a VTOL takeoff in order to arm with this option.
 -  bit 19, if set, will allow the forcing of VTOL to Fixed Wing transitions if :ref:`Q_TRANS_FAIL<Q_TRANS_FAIL>` is not zero and exceeded, and if the airspeed is greater than 1/2 of :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`, then the transition to fixed wing will immediately complete, rather than taking the :ref:`Q_TRANS_FAIL_ACT<Q_TRANS_FAIL_ACT>` action. See :ref:`quadplane-transitions`.
 
 Behavior can be modified as well as by the :ref:`Q_RTL_MODE<Q_RTL_MODE>` and :ref:`Q_GUIDED_MODE<Q_GUIDED_MODE>` parameters.
