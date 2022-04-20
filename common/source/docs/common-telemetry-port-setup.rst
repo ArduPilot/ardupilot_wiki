@@ -46,7 +46,7 @@ For telemetry ports used for MAVLink communication you may select to use MAVLink
 
 MAVLink2 supports "signing" of packets which improves security and flexible length messages so it should be used when possible but some older telemetry radios do not understand MAVLink2 so the default is MAVLink1.
 
-.. note:: MAVLink2 is required to upload and download complex fences in Copter and Rover from the Ground Control Station.
+.. note:: MAVLink2 is required to upload and download complex fences from the Ground Control Station.
 
 As mentioned on the :ref:`Telemetry Logs page <common-mission-planner-telemetry-logs>` the rate messages are sent from the vehicle can be controlled using the ``SRx_*`` parameters (i.e. :ref:`SR1_POSITION <SR1_POSITION>`).
 
