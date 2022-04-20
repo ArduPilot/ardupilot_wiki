@@ -91,7 +91,11 @@ The frequency at which DShot pulses are sent can be configured through :ref:`SER
 DShot Commands
 --------------
 
-On certain ESCs DShot commands are supported. These allow functions such as ESC LEDs, beeps and motor direction to be manipulated by the flight controller. In order to use DShot commands :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` must be set to the type of ESC that is in use. Notify functions (e.g. LEDs :ref:`NTF_LED_TYPES<NTF_LED_TYPES>` and Buzzer :ref:`NTF_BUZZ_TYPES<NTF_BUZZ_TYPES>`) can then be configured to include DShot as an output type.
+On certain ESCs DShot commands are supported. These allow functions such as ESC LEDs, beeps and motor direction to be manipulated by the flight controller. In order to use DShot commands:
+
+- set :ref:`SERVO_DSHOT_ESC<SERVO_DSHOT_ESC>` = 1 (BLHeli32/BLHeli_S/Kiss)
+- set :ref:`NTF_LED_TYPES<NTF_LED_TYPES>`'s "DShot" checkbox to enable controlling the ESCs LEDs
+- set :ref:`NTF_BUZZ_TYPES<NTF_BUZZ_TYPES>`'s "DShot" checkbox to enable usingthe motors as buzzers
 
 The current commands supported are:
 
