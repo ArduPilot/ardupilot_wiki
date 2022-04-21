@@ -14,11 +14,15 @@ If using version 3.2 (or higher) this can be accomplished by doing the following
 
 - set the :ref:`Auxiliary Function Switch <common-auxiliary-functions>` to "Save Waypoint" by setting and RCx_OPTION for a channel to 1. (Prior to version 4.0, CH7_OPTION was used)
 - wait for a good position estimate (i.e. LED will turn green)
-- drive the vehicle around in any mode except Auto.
+- arm and drive the vehicle around in any mode except Auto.
 - when the vehicle is at a position that you would like to record as a waypoint, toggle the auxiliary function switch high (and then return to low)
 - after recording all points, check the mission by connecting with a ground station and then download all waypoints.  If using the Mission Planner go to the Flight Plan screen and press the "Read WPs" button.
 
 To then drive the mission, switch the vehicle into :ref:`Auto <auto-mode>`.
+
+.. note::
+   To clear the current mission's waypoints, disarm the vehicle, and toggle the auxiliary function switch high (and then return to low).
+
 
 Deprecated instructions for Ver 3.1 (and lower)
 -----------------------------------------------
