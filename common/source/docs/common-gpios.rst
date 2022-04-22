@@ -8,7 +8,7 @@ GPIOs
 
 .. warning:: When upgrading to 4.2 or later from pre 4.2 firmware, be aware that previously defined GPIOs MAY have to be re-designated using the SERVOx_FUNCTION or, alternatively, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter and that after upgrade any GPIO dependent release mechanisms (parachute, sprayers, etc.) may actuate until this re-definition is done.
 
-General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:`relays<common-relay>` , actuators, LEDs, :ref:`camera triggers<common-camera-shutter-with-servo>` , :ref:`Start Button<startstop-switch>` etc. These are provided by re-configuring the PWM outputs. The parameter ``BRD_PWM_COUNT`` determines how many of the PWM outputs are used for controlling motors/servos, and how many can be re-purposed and used as GPIO-style outputs.
+General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:`relays<common-relay>` , actuators, LEDs, :ref:`camera triggers<common-camera-shutter-with-servo>` , :ref:`Start Button<startstop-switch>` etc. Some autopilots provide dedicated GPIO pins (sometimes labeled "CAPTURE" pins). In addition, GPIOs can be obtained by re-configuring the PWM outputs. The parameter ``BRD_PWM_COUNT`` determines how many of the PWM outputs are used for controlling motors/servos, and how many can be re-purposed and used as GPIO-style outputs.
 
 If a autopilot has **X** outputs, then the number of available outputs that can be assigned via the ``SERVOx_FUNCTION`` parameter to be a relay, LED, etc. output is ( **X** - ``BRD_PWM_COUNT`` ). These GPIO outputs begin at the highest output number and proceed downward. So, for example, if the total outputs is 6 and ``BRD_PWM_COUNT`` = 4, then output 5/6 can be used for GPIO type functions.
 
