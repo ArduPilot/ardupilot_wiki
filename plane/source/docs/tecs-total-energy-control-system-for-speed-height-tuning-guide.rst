@@ -42,6 +42,8 @@ to servo loop, then the throttle, pitch angle, airspeed and vertical
 speed limits limits are the final keys to getting the TECS algorithm to
 perform well.
 
+.. note:: if you are not using an airspeed sensor, then skip down to the :ref:`Section below for setting initial parameters without an airspeed sensor<no-airspeed-sensor>`.
+
 The following instructions are based around taking a series of
 measurements, whilst the plane is being flown at the speed set by :ref:`TRIM_ARSPD_CM <TRIM_ARSPD_CM>`
 which represents the speed that you are most likely going to be flying
@@ -101,6 +103,21 @@ can dial the numbers in over a number of flights, using the log data.
    over-speed on descent. This should be set to a value that can be
    achieved without exceeding the lower pitch angle limit and without
    exceeding :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` .
+
+.. _no-airspeed-sensor:
+
+Set initial parameters - when no airspeed sensor is used
+========================================================
+
+Using a GCS and assistant, or flight logs:
+
+#. Setup the desired cruising speed and throttle in FBWA. This can be adjusted using the :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` parameter to get level flight at the desired throttle level. If cruising speed is too great, lower throttle and increase :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` until altitude is constant, or vice-a-versa. Set the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` to that throttle value.
+#. In FBWA, do a full throttle full back stick climb (you can also lower this throttle value with :ref:`THR_MAX<THR_MAX>` if full throttle seems excessive). Set :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>` such that you maintain close to the cruising speed, or at least not less than a safe flying speed.  Note the steady state climb rate, and set :ref:`TECS_CLMB_MAX<TECS_CLMB_MAX>` to 80% of that value for margin at low battery. You can set lower pilot demanded climb rates with :ref:`FBWB_CLIMB_RATE<FBWB_CLIMB_RATE>`, but you want TECS to have the maximum capability of you aircraft for sudden altitude demand changes, like switching to RTL, to maximize its climbing ability in order to get out of bad situations.
+#. Set :ref:`TECS_PITCH_MAX<TECS_PITCH_MAX>` to :ref:`LIM_PITCH_MAX<LIM_PITCH_MAX>`.
+#. Now idle the throttle while sticks are centered and establish the  descent rate. Set :ref:`TECS_SINK_MIN<TECS_SINK_MIN>` to that rate.
+#. Using idle throttle, push full down elevator and establish this new sink rate. If the aircraft overspeeds, set the  :ref:`LIM_PITCH_MIN<LIM_PITCH_MIN>` to a higher value. Set :ref:`TECS_SINK_MAX<TECS_SINK_MAX>` to that maximum sink rate.
+
+.. note:: :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>`, :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>`, and :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` are not used when no airspeed sensor is present (unless :ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>` is enabled, which is usually not recommended since the synthetic airspeed estimate can be very wrong on occasion. However, :ref:`ARSPD_FBW_MIN<ARSPD_FBW_MIN>` and :ref:`ARSPD_FBW_MAX<ARSPD_FBW_MAX>` should be set to the normal minimum and maximum flying speeds in order for :ref:`AUTOTUNE <automatic-tuning-with-autotune>` and :ref:`STALL PREVENTION <stall-prevention>` features to work properly.
 
 Flight Testing
 ==============
