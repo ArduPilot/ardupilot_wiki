@@ -222,8 +222,8 @@ More information can be found in section `Connect BBBlue to a Ground Station Sof
 Appendix
 ========
 
-_`Connect BBBlue to the internet`
-------------------------------
+`Connect BBBlue to the internet`
+-------------------------------
 
 Via Wifi
 ~~~~~~~~
@@ -267,8 +267,8 @@ Via shared internet connection
 Refer to `Quick Start`_
 
 
-_`Cross compiling ArduPilot from source`
--------------------------------------
+`Cross compiling ArduPilot from source`
+---------------------------------------
 
 Generally you can compile ArduPilot on the BBBlue itself. But this takes a lot of time (several hours) and a lot of space (you need to maximize/grow the partition on the SD card to fit) and is therefore not recommended.
 
@@ -404,8 +404,8 @@ Boot from microSD (boot button pressed):
     00400338
 
 
-_`Connect BBBlue to a Ground Station Software`
--------------------------------------------
+`Connect BBBlue to a Ground Station Software`
+---------------------------------------------
 
 Via built-in Bluetooth
 ~~~~~~~~~~~~~~~~~~~~~~
