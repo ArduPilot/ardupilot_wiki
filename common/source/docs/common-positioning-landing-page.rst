@@ -42,12 +42,15 @@ These GPS can incorporate real time kinematic data, either internally generated 
     :maxdepth: 1
     
     ArduSimple RTK GPS <common-gps-ardusimple>
+    Ark RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>
     Blicube RTK GPS <https://github.com/ThomasVon2021/ardupilot_rtk>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
+    Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
     Hex Here+ RTK Receiver <common-here-plus-gps>
+    Hitec PositionPro GNSS <https://www.hiteccs.com/drones/peripheral-details/positionpro-gnss-receiver/>
     Holybro RTK M8P Family <common-holybro-rtk-m8p>
     Holybro RTK F9P Family <common-holybro-rtk-f9p>
     Qiotek DroneCAN RTK-F9P GPS <https://www.qio-tek.com/RTK_F9P>
