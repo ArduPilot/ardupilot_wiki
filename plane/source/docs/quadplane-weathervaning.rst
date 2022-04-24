@@ -72,7 +72,9 @@ There are a number of additional parameters that can control when WeatherVaning 
 - :ref:`Q_WVANE_TAKEOFF<Q_WVANE_TAKEOFF>` :override weathervaning direction in auto takeoffs*
 - :ref:`Q_WVANE_LAND<Q_WVANE_LAND>`    :overide weathervaning directions in auto landings*
 
-* not QLOITER take-offs and landings
+note:* not QLOITER take-offs and landings
+
+.. note:: Weathervaning can be disabled or enabled by an :ref:`RC Aux Function Switch<common-auxiliary-functions>`, option "160"
 
 Using the Forward Motor
 -----------------------
