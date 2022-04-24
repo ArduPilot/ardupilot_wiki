@@ -236,6 +236,14 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+
 |        157           | Force FBWA Long FS Action  |          |    X    |         |
 +----------------------+----------------------------+----------+---------+---------+
+|        158           | Optflow Calibration        |    X     |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        159           | Force Flying State         |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
+|        160           | WeatherVane Enable         |          |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        161           | Turbine Start (Heli)       |    X     |         |         |
++----------------------+----------------------------+----------+---------+---------+
 
 Intended as continuous PWM range control inputs:
 
@@ -996,6 +1004,46 @@ Forces mode change to FBWA in Long FS, overriding the :ref:`FS_LONG_ACTN<FS_LONG
    </td>
    </tr>
    <tr>
+   <td><strong>Optflow Calibration</strong></td>
+   <td>
+
+Enables calibration of optical flow parameters.
+
+.. raw:: html
+
+   </td>
+   </tr> 
+   <tr>
+   <tr>
+   <td><strong>Force Flying</strong></td>
+   <td>
+
+Disables the landing detection heuristic to prevent false landing detections during a mission or manual flight if sudden Z changes can occur due to wind gusts, etc.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>WeatherVane Enable</strong></td>
+   <td>
+
+Enables or disables weathervaning in Quadplane VTOL modes.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Turbine Start (Heli)</strong></td>
+   <td>
+
+When armed and RSC is idle, the high position signals the helicopter rotor speed governor to ramp the throttle to full and back to idle, which signals the turbine engine ECU to initiate the start sequence. The switch must be set back low and  aircraft has to be disarmed to re-enable this feature.
+
+.. raw:: html
+
+   </td>
+   </tr>
    <td><strong>ROLL Input</strong></td>
    <td>
 
