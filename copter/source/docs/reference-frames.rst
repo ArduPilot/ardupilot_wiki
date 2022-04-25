@@ -15,6 +15,7 @@ This section includes details on tested frames to speed up DIY builds of multico
     Hexsoon TD650 <reference-frames-hexsoon-td650>
 	Holybro S500 <reference-frames-holybro-s500>
     AmovLab P200 <reference-frames-amovlab-p200>
+    iFlight Chimera 7 <reference-frames-iflight-chimera7>
 
 .. note::
 
