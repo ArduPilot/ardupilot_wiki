@@ -285,7 +285,12 @@ Tilt Rotor Movement Setup
 Also:
     :ref:`Tilt Rotor Servo Setup<tilt-rotor-setup>`
 
+Tilt Wing Flap Emulation
+========================
 
+Tilt Wing Tilt Rotors are where the entire wing rotates, instead of the motors. These frames use the "TiltMotorsFront" ``SERVOx_FUNCTION`` (41) to tilt the entire wing for fixed-wing or VTOL operation.
+
+You can  also set up the wing to tilt just like (or in addition to) normal manually controlled or :ref:`automaticflaps <automatic-flaps>`, and the wing will tilt in fixed wing modes just as a flap would activate. The amount of wing tilt when flaps are fully extended is set by the :ref:`Q_TILT_WING_FLAP<Q_TILT_WING_FLAP>` parameter to tilt the wing up to 15 degrees when full flaps are activated.
 
 Pre Flight Checks
 =================
