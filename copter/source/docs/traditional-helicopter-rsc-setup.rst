@@ -52,3 +52,8 @@ ArduPilot provides an internal rotor speed control primarily for use with ICE or
 ``H_RSC_THRCRV_x`` parameters be set such that the helicopter can be flown in :ref:`H_RSC_MODE <H_RSC_MODE>` =3 safely, since they are used as the baseline control curve for the RSC governor, providing the feed-forward portion of the control loop.
 
 See :ref:`traditional-helicopter-internal-rsc-governor` for setup details.
+
+Turbine Engine Start
+====================
+
+A special RC Auxiliary Function ("159") is implemented to provide the start signal RC switch for turbine engines. When armed and RSC is idle, the high position signals the helicopter rotor speed governor to ramp the throttle to full and back to idle, which signals the turbine engine ECU to initiate the start sequence. The switch must be set back low and aircraft has to be disarmed to re-enable this feature.
