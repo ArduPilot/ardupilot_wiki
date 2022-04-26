@@ -185,17 +185,17 @@ Getting more info
    First Flight and Tuning <docs/flying-arducopter>
    If A Problem Arises <docs/common-when-problems-arise>
    Flight Features <docs/copter-flight-features>
-   Advanced Configuration <docs/common-advanced-configuration>
-   Mission Planning <docs/common-mission-planning>
-   Logs <docs/common-logs>
-   Peripheral Hardware <docs/common-optional-hardware>
-   OEM Customization <docs/common-oem-customizations>
    Traditional Helicopters <docs/traditional-helicopters>
    Tricopter <docs/tricopter>
    SingleCopter and CoaxCopter <docs/singlecopter-and-coaxcopter>
    Dual Helicopters <docs/dual-helicopter>
    HeliQuads <docs/heliquads>
    SkyRocket <docs/skyrocket>
+   Advanced Configuration <docs/common-advanced-configuration>
+   Mission Planning <docs/common-mission-planning>
+   Logs <docs/common-logs>
+   Peripheral Hardware <docs/common-optional-hardware>
+   OEM Customization <docs/common-oem-customizations>
    Solo <docs/solo_arducopter_upgrade>
    Reference Frames <docs/reference-frames>
    Use-Cases and Applications <docs/common-use-cases-and-applications>
