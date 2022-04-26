@@ -54,6 +54,18 @@ However, there is a better way for non-tailsitter QuadPlanes. If mechanically po
 
 .. note:: Fixed wing pitch "level" trim is set by the AHRS "level" done during accelerometer calibration, which adjusts the :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` values, PLUS any :ref:`TRIM_PITCH_CD<TRIM_PITCH_CD>` (in centidegrees). See :ref:`common-accelerometer-calibration` and :ref:`tuning-cruise` for more details.
 
+Trimming VTOL "Level" thru Accelerometer LeveL only Calibration
+---------------------------------------------------------------
+
+There is another, slightly more complex, way to set the VTOL stance pitch trim without using :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>`:
+
+- Do the normal fixed wing accelerometer calibration. But read and save the :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` value after the calibration.
+- Place the vehicle in VTOL stance and set the mode to QSTABILIZE. Be sure that  :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` = "0" or the next step will fail.
+- Do a "LEVEL only" accelerometer calibration. In Mission Planner there is a button for this under the Accelerometer calibration. In MAVProxy, its the "ahrstrim" command.
+- Restore the previously noted and saved :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` value to restore the fixed wing attitude pitch trim.
+
+In some cases, :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` may still need to be adjusted if the calibration stance used is not the true hovering attitude.
+
 Copter Motors vs Servos
 =======================
 
