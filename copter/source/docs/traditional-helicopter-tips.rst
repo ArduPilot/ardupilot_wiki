@@ -31,3 +31,7 @@ Setup for ground test:
 
 Be sure to also eliminate the possibility of lower frequency vibrations from the main or tail rotors causing the issue. Unlike vibrations near the sampling rate and its harmonics, which cannot be eliminated by software filtering, rotor vibrations can be improved using ArduPilot's notch filtering feature. See :ref:`common-measuring-vibration` and :ref:`Helicopter Dynamic Notch Filter Setup<common-imu-notch-filtering-helicopter-setup>`.
 
+Possible False Landing Detections
+=================================
+
+Under extreme circumstances (flying in extremely turbulent conditions, for example), it is possible for the firmware, to falsely detect a landing condition, although still flying. This can lead to lack of control in position control modes and even possible disarming. An RC Auxiliary Function ("159") is provided to allow an RC to enable (needed when actually landing) or disable (to prevent false detects during missions) the landing detection algorithm under pilot control.
