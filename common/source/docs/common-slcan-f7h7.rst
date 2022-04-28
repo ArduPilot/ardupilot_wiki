@@ -22,6 +22,8 @@ If both COM ports connect to Mission Planner, then the SLCAN protocol has not be
 Configuring SLCAN SERIALx PORT
 ==============================
 
+Set CAN_SLCAN_CPORT = 1, if not already set or = 2 if you want to examine devices on a second CAN bus, if the autopilot provides it.
+
 Connect to Mission Planner. In the Full Parameters list set the highest numbered ``SERIALx_PROTOCOL`` to 22 and reboot. Now only the non SLCAN USB COM port will connect to Mission Planner and the SLCAN port will be ready for use.
 
 
