@@ -13,7 +13,7 @@ Enabling SLCAN
 
 Connect the autopilot to Mission Planner.
 
-Set :ref:`CAN_SLCAN_CPORT<CAN_SLCAN_CPORT>` = 1, if not already set, and reboot.
+Set :ref:`CAN_SLCAN_CPORT<CAN_SLCAN_CPORT>` = 1, if not already set, or =2 if its desired to examine the second CAN bus, if the autopilot provides it, and reboot.
 
 .. image:: ../../../images/can-slcan-cport.png
 
