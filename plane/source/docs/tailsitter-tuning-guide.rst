@@ -4,7 +4,7 @@
 Tailsitter VTOL Tuning
 ======================
 
-Tuning a tailsitter is different than tuning a normal STL (Separate Thrust for Lift) or Tilt-Rotor Quadplane. Those QuadPlanes tune very similarly to a Multirotor since the attitude in VTOL is controlled by motor speed/thrust in all axes (the exception being YAW in vectored yaw tilt rotor QuadPlanes).
+Tuning a tailsitter is different than tuning a normal SLT (Separate Lift Thrust) or Tilt-Rotor Quadplane. Those QuadPlanes tune very similarly to a Multirotor since the attitude in VTOL is controlled by motor speed/thrust in all axes (the exception being YAW in vectored yaw tilt rotor QuadPlanes).
 
 In most tailsitters, VTOL attitude is usually controlled by some combination of fixed wing control surfaces and, in some configuratons, motor tilt for pitch and yaw. Roll is usually controlled by motor/speed thrust and can be tuned, and even AutoTuned, like a multicopter and follows the normal :ref:`QuadPlane<quadplane-vtol-tuning>` tuning for that axis.
 
