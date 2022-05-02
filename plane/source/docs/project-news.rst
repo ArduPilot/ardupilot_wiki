@@ -4,7 +4,7 @@
 Release Notes
 =============
 
-`Current Releases <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/ReleaseNotes.txt>`__
+`Link to Current Release Notes <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/ReleaseNotes.txt>`__
 -----------------------------------------------------------------------------------------------------
 
 Older Releases
