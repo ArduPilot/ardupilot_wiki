@@ -170,7 +170,7 @@ Features
 DisplayPort OSDs can render all the panel items supported by the ArduPilot's onboard OSD.
 Features such as multiple screen switching, multiple units and statistics are supported as well, please refer to the :ref:`onboard OSD documentation <common-osd-overview>`  for more info.
 
-By setting :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 3 to 1 one can force ArduPilot to impersonate betaflight and use a betaflight compatible font table on the remote OSD system.
+By setting :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 2 to 1 one can force ArduPilot to impersonate betaflight and use a betaflight compatible font table on the remote OSD system.
 This is required if the remote OSD system does not have an ArduPilot compatible fonts table. MWOSD already supports custom fonts and therefore does not require this hack while FatShark's SharkByte will support custom fonts in a future release.
 Default behaviour is to use the ArduPilot fonts table.
 
