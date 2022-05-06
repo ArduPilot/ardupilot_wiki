@@ -22,7 +22,7 @@ The firmware is loaded on the autopilot and a GCS attached. The GPS initial loca
 Limitations
 ===========
 
--  Actuator outputs (motor and servo) are not supported in the firmware as posted on the :ref:`firmware server <https://firmware.ardupilot.org>` without recompilation.  This is currently considered a safety feature.
+-  Actuator outputs (motor and servo) are not supported in the firmware as posted on the `firmware server <https://firmware.ardupilot.org>`__ without recompilation.  This is currently considered a safety feature.
 
 -  Parameter space is shared between the real aircraft and the simulated aircraft.  This leads to problems with sensor calibration as the sensor suite differs between the real and virtual aircraft.  Thus parameters must be wiped and rewritten to the vehicle when moving between real and simulation firmware.
 - While it is possible to run on flash-constrained (1MB) boards, many other features will need to be compiled out to allow it to fit.
@@ -32,7 +32,7 @@ Limitations
 Firmware
 ========
 
-We provide a pre-compiled binary for Cube Orange at :ref:`our firmware server <https://firmware.ardupilot.org>`. It is available only in :ref:`Copter <https://firmware.ardupilot.org/Copter/latest/CubeOrange-SimOnHardWare/>` version, currently.
+We provide a pre-compiled binary for Cube Orange at `our firmware server <https://firmware.ardupilot.org>`__. It is available only in `Copter <https://firmware.ardupilot.org/Copter/latest/CubeOrange-SimOnHardWare/>`__ version, currently.
 
 Compiling your own Firmware
 ============================

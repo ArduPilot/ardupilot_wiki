@@ -67,6 +67,7 @@ port numbers depending on your environment.
     :maxdepth: 1
 
     Setting Up SITL <SITL-setup-landingpage>
+    Running SITL on the Autopilot Itself<sim-on-hardware>
     Using SITL <using-sitl-for-ardupilot-testing>
     Examples of using SITL by Vehicle <sitl-examples>
     SITL Serial Ports <learning-ardupilot-uarts-and-the-console>
