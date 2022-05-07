@@ -38,7 +38,6 @@ Where to Buy
 .. toctree::
    :hidden:
     
-   MakeFLyEasy - Fighter <common-makeflyeasy-fighter-hand-throw>
    MakeFLyEasy - Striver Mini <common-makeflyeasy-striver-mini-hand-throw>
    MakeFLyEasy - Fighter VTOL <common-makeflyeasy-fighter-vtol>
    MakeFLyEasy - Striver Mini VTOL <common-makeflyeasy-striver-mini-vtol>
