@@ -195,7 +195,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_PARACHUTE <mav_cmd_do_parachute>` (Parachute enabled only)
 - :ref:`MAV_CMD_DO_GRIPPER <mav_cmd_do_gripper>` (EPM enabled only)
 - :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>` (NAV_GUIDED only)
-- :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 [/site]
@@ -239,7 +239,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_LAND_START <mav_cmd_do_land_start>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 - :ref:`MAV_CMD_DO_AUTOTUNE_ENABLE <mav_cmd_do_autotune_enable>`
-- :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 
 [/site]
@@ -271,7 +271,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_DO_MOUNT_CONTROL <mav_cmd_do_mount_control>`
 - :ref:`MAV_CMD_DO_SET_CAM_TRIGG_DIST <mav_cmd_do_set_cam_trigg_dist>` (Camera enabled only)
 - :ref:`MAV_CMD_DO_SET_ROI <mav_cmd_do_set_roi>` (Gimbal/mount enabled only)
-- :ref:`MAV_CMD_DO_SET_RESUME_DIST <mav_cmd_do_set_resume_dist>`
+- :ref:`MAV_CMD_DO_SET_RESUME_REPEAT_DIST <mav_cmd_do_set_resume_repeat_dist>`
 - :ref:`MAV_CMD_DO_FENCE_ENABLE <mav_cmd_do_fence_enable>`
 - :ref:`MAV_CMD_STORAGE_FORMAT <mav_cmd_storage_format>`
 
@@ -4244,9 +4244,9 @@ This command can be used to start or stop the ICE before a NAV_VTOL_LAND or afte
 
 [/site]
 
-.. _mav_cmd_do_set_resume_dist:
+.. _mav_cmd_do_set_resume_repeat_dist:
 
-MAV_CMD_DO_SET_RESUME_DIST
+MAV_CMD_DO_SET_RESUME_REPEAT_DIST
 --------------------------
 
 Supported by: Plane, Copter & Rover.
