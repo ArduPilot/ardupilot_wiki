@@ -417,7 +417,7 @@ The terrain library provides access to checking heights against a terrain databa
 Relay (relay:)
 ~~~~~~~~~~~~~~
 
-The relay library proivdes access to controlling relay outputs.
+The relay library provides access to controlling relay outputs.
 
 - :code:`on(relay_num)` - Turns the requested relay on.
 
