@@ -92,7 +92,7 @@ Instead of using the Stable or Master code branch for simulation, you can use an
 - Start RealFlight with the desired Realflight vehicle that has been modified for use with flightaxis.
 - In your GITHUB repository (not local) push your branch to it
 - Under ACTIONS in your web GITHUB repo, select Cygwin Build, and the select branch you pushed that you want the sim to use
-- Download and unzip its build aritfacts and select the ARduXXX.elf.exe file for the vehicle type and rename it, eliminating the .elf portion to a plain .exe file and place in your Documents/Mission Planner/sitl folder in place of the existing file, if present.
+- Download and unzip its build aritfacts and select the ArduXXX.elf.exe file for the vehicle type and rename it, eliminating the .elf portion to a plain .exe file and place in your Documents/Mission Planner/sitl folder in place of the existing file, if present.
 - Start the Mission Planner vehicle sim for the appropriate vehicle with the "do not download" checkbox ticked and flightaxis selected as above.
 
 The simulation will begin using your code branch. Be sure to have the parameters set/updated for the RealFlight vehicle.
