@@ -53,9 +53,7 @@ Links to current build pages
 
     Setup the Build Environment on Linux/Ubuntu <building-setup-linux>
     Setup the Build Environment on Windows <building-setup-windows>
-    Setup the waf Build Environment on Windows10 using WSL <building-setup-windows10>
-    Setup the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>
-    Setup Eclipse on Windows for building with waf <building-setup-windows-eclipse>
+    Setup the Build Environment on Windows 10 using WSL <building-setup-windows10>
     Setup the Build Environment on MacOSX <building-setup-mac>
     Building for NAVIO2 on RPi3 <building-for-navio2-on-rpi3>
     Building for Erle-Brain 2 <building-for-erle-brain-2>

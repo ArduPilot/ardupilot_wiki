@@ -1,5 +1,7 @@
 .. _building-setup-windows-eclipse:
 
+**ARCHIVED: Use WSL2 for building code in Windows**
+
 ========================
 Setup Eclipse on Windows
 ========================

@@ -91,6 +91,8 @@ value to users with old hardware.
     Building for APM2.x with Make (Win, Mac, Linux) <building_with_make>
     APM2.x on MacOS with Arduino <building-the-code-on-mac>
     APM2.x on Linux with Make <building-the-code-onlinux>
+    Setting up the waf Build Environment on Windows using Cygwin <building-setup-windows-cygwin>
+    Setting up the waf Build Environment on Windows using Eclipse <building-setup-windows-eclipse>
     Building for Flymaple on Linux <building-apm-for-flymaple>
     Building for Pixhawk on Windows or Linux with QtCreator <building-px4-with-qtcreator>
     Building for Qualcomm Snapdragon <building-for-qualcomm-snapdragon-flight-kit>

@@ -1,6 +1,8 @@
 
 .. _building-setup-windows-cygwin:
 
+**ARCHIVED: Use WSL2 for building code in Windows**
+
 ============================================================
 Setting up the waf Build Environment on Windows using Cygwin
 ============================================================
