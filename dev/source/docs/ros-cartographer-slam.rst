@@ -106,10 +106,6 @@ Install proto3 and deb dependencies
     rosdep update
     rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 
-.. note::
-
-   Cartographer installs a version of protobuf that overrides the system defaults and can only be removed with "make uninstall"
-
 Clone the `Robot Pose Publisher <http://wiki.ros.org/robot_pose_publisher>`__ package into the workspace
 
 ::
