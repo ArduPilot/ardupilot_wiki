@@ -65,7 +65,7 @@ The :ref:`EK3_DRAG_MCOEF <EK3_DRAG_MCOEF>` should be calculated after performing
 11. Repeat step 8 but with the vehicle's right side facing into the wind (pilot should apply full right roll to accelerate into the wind)
 12. Download the :ref:`onboard logs <common-downloading-and-analyzing-data-logs-in-mission-planner>` for analysis as described in the video
 
-The final value for :ref:`EK3_DRAG_MCOEF <EK3_DRAG_MCOEF>` is normally between 1.1 and 2.0.
+The final value for :ref:`EK3_DRAG_MCOEF <EK3_DRAG_MCOEF>` is normally between 0.1 and 1.0.
 
 Viewing Windspeed and Direction in Real-Time
 --------------------------------------------
