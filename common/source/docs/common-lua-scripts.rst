@@ -446,7 +446,7 @@ RC Channels (rc:)
 Serial/UART (serial:)
 ~~~~~~~~~~~~~~~~~~~~~
 
-- :code:`find_serial(port_number)` - Returns the UART instance that allows connections from scripts (those with :code:`SERIALx_PROTOCOL = 28`). For :code:`port_number = 0`, returns first such UART, second for :code:`port_number = 1`, and so on. If the instance is not found, returns :code:`nil`.
+- :code:`find_serial(instance)` - Returns the UART instance that allows connections from scripts (those with :code:`SERIALx_PROTOCOL = 28`). For :code:`instance = 0`, returns first such UART, second for :code:`instance = 1`, and so on. If such an instance is not found, returns :code:`nil`.
 
 	- :code:`UART:begin(baud)` - Start serial connection at given baud rate.
 	- :code:`UART:read()` - Returns a sequence of bytes from UART instance.
