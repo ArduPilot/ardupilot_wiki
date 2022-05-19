@@ -109,12 +109,9 @@ Loiter_Turns
 The mission equivalent of the :ref:`Circle flight mode <circle-mode>`.  The vehicle will fly a circle around the
 specified lat, lon, and altitude (in meters).  The radius of the circle
 is controlled by the :ref:`CIRCLE_RADIUS<CIRCLE_RADIUS>` parameter (i.e. cannot be set as
-part of the mission).
+part of the mission).  The direction can be changed to counter-clockwise by setting :ref:`CIRCLE_RATE<CIRCLE_RATE>` to a negative number.
 
 **Turn** - the number of full rotations to complete around the point.
-
-**Dir 1=CW** - the direction to turn around the point. -1 = counter
-clockwise, +1 = clockwise.
 
 **Lat, Lon** - the latitude and longitude targets.  If left as zero it
 will circle around the current location.
