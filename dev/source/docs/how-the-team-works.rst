@@ -15,7 +15,7 @@ These pages are less about the software directly and more about the procedures a
     Developer Code of Conduct <developer-code-of-conduct>
     Funding Committee <how-the-team-works-development-fund>
     Job Openings <job-openings>
-    Roadmap <roadmap>
+    Roadmap <https://github.com/orgs/ArduPilot/projects/2>
     Top Contributors <common-team>
     Voting <how-the-team-works-voting>
     Weekly meetings on Discord <ardupilot-discord-server>
