@@ -92,6 +92,8 @@ List of Modules
     magical
     map
     misseditor
+    movinghome
+    park
     ppp
     rcsetup
     relay
