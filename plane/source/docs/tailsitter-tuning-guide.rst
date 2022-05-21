@@ -6,7 +6,7 @@ Tailsitter VTOL Tuning
 
 Tuning a tailsitter is different than tuning a normal SLT (Separate Lift Thrust) or Tilt-Rotor Quadplane. Those QuadPlanes tune very similarly to a Multirotor since the attitude in VTOL is controlled by motor speed/thrust in all axes (the exception being YAW in vectored yaw tilt rotor QuadPlanes).
 
-In most tailsitters, VTOL attitude is usually controlled by some combination of fixed wing control surfaces and, in some configuratons, motor tilt for pitch and yaw. Roll is usually controlled by motor/speed thrust and can be tuned, and even AutoTuned, like a multicopter and follows the normal :ref:`QuadPlane<quadplane-vtol-tuning>` tuning for that axis.
+In most tailsitters, VTOL attitude is usually controlled by some combination of fixed wing control surfaces and, in some configuratons, motor tilt for pitch and yaw. Roll is usually controlled by motor/speed thrust and can be tuned, and even AutoTuned, like a multicopter and follows the normal :ref:`QuadPlane<quadplane-vtol-tuning>` tuning for that axis. Most of the instructions for tuning setup and phases are the same for Tailsitters, except as described below:
 
 Pitch and Yaw Tuning
 ====================
@@ -44,6 +44,15 @@ Roll Tuning
 ===========
 
 This should allow you to get a reasonable tune for Pitch and Yaw. Roll is tuned like STEP 10 for Roll in :ref:`QuadPlane<quadplane-vtol-tuning>`. Roll axis can even be AutoTuned using QAUTOTUNE, if restricted to only the roll axis using :ref:`Q_AUTOTUNE_AXES<Q_AUTOTUNE_AXES>`.
+
+Using the Quick Tune LUA Applet
+===============================
+
+For systems using an autopilot with sufficient memory to run :ref:`LUA scripts <common-lua-scripts>`, such as F7 and H7 based controllers, this process has been automated via a LUA Applet for non-Tailsitter class QuadPlanes, which do not use FF PID terms in their tuning. However, it still can be used for Tailsitters on those types of axes.
+
+See the `Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__.
+
+For each FF dominated axis, proceed as above to determine the FF term and set the I term equal to it. Then the applet can be run since it will not change the I term during the process if the FF term is non-zero.
 
 VTOL Gain Scaling for Redundant Actuators
 =========================================
