@@ -206,6 +206,8 @@ This test will allow to test the altitude controller and ensure the stability of
 
 1. Check :ref:`Q_M_HOVER_LEARN <Q_M_HOVER_LEARN>` is set to 2. This will allow the controller to learn by itself the correct hover value when flying.
 
+.. note:: the Hover throttle value is only "learned" when the attitude is not being commanded by the pilot, or autopilot (ie QLOITER,etc.), to exceed 5 degrees from neutral for two seconds.
+
 2. Take off in QSTABILIZE and increase altitude to 5m. Switch to QHOVER and be ready to switch back to QSTABILIZE. If the aircraft is hovering at a very low hover throttle value you may hear a reasonably fast oscillation in the motors. Ensure the aircraft has spent at least 30 seconds in hover to let the hover throttle parameter converge to the correct value. Land and disarm the aircraft.
 
 3. Set these parameters on ground and preferably disarm  (A confident pilot could set them in flight with GCS):
@@ -321,6 +323,13 @@ structure of quadplanes sometimes means that oscillations may not be
 externally visible. You should use the RATE, PIQR and PIQP messages to
 look for oscillations.
 
+Using the Quick Tune LUA Applet to Automate the Manual Tune
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For systems using an autopilot with sufficient memory to run :ref:`LUA scripts <common-lua-scripts>`, such as F7 and H7 based controllers, this process has been automated via a LUA Applet.
+
+See the `Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__.
+
 Step 11: Evaluating the aircraft tune
 -------------------------------------
 
@@ -354,7 +363,7 @@ Step 12: QAUTOTUNE
 
 If the aircraft appears stable enough to attempt QAUTOTUNE and you
 have sufficient battery to last through a QAUTOTUNE then you can
-follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page.
+follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page. Often, after a good manaul tune or using the`Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__ , this will not be necessary.
 
 You should use QAUTOTUNE on one axis at a time (setting
 :ref:`Q_AUTOTUNE_AXES <Q_AUTOTUNE_AXES>` for the axis you want to

@@ -18,6 +18,8 @@ mode then move onto tuning altitude hold in QHOVER mode, then QLOITER
 (which often needs no tuning) and finally the waypoint navigation
 performance in Auto mode.
 
+.. note:: for Tailsitter QuadPlanes, some axes need a slightly different PID tuning approach depending on the exact frame configuration used. Be sure to also read :ref:`TailSitter Tuning <tailsitter-tuning-guide>`.
+
 Filter tuning
 =============
 
