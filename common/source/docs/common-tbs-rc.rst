@@ -6,7 +6,7 @@ Team Black Sheep RC Systems
 
 Any Crossfire compatible receiver can be used with ArduPilot. 
 
-.. note::  ELRS (ExpressLRS) RC systems use the Crossfire protocol and are connected in a similar manner. However, ERLS telemetry is limited primarily to only signal strength and link quality. And does not provide bi-directional telemetry like Crossfire.
+.. note::  ELRS (ExpressLRS) RC systems use the Crossfire protocol and are connected in a similar manner. However, ERLS telemetry does not provide bi-directional telemetry like Crossfire.
 
 If you do not wish to use telemetry then a **TBS Crossfire** receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`. You must configure the Receiver to output SBUS, of course.
 
