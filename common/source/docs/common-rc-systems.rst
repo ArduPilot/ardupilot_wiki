@@ -138,7 +138,7 @@ Note 2: See :ref:`common-frsky-yaapu`. Future firmware versions will offer the a
 
 Note 3: ArduPilot provides a means to send its telemetry data via CRSF such that it can be displayed on `OpenTX <https://www.open-tx.org/>`__ transmitters using the :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`.
 
-Note 4: ELRS (EpressLRS) is a system that uses the CRSF (TBS Crossfire) RC protocol with several minimizations to simplify the system. It has reduced features but it connected to ArduPilot just like CRSF when it uses CRSF instead of SBUS to communicate to ArduPilot. See `ExpressLRS site <https://www.expresslrs.org/2.0/>` for more information.
+Note 4: ELRS (EpressLRS) is a system that uses the CRSF (TBS Crossfire) RC protocol with several minimizations to simplify the system. It has reduced features but it connects to ArduPilot just like CRSF, when CRSF RXs are attached using a full UART, instead of SBUS protocol to communicate to ArduPilot. See `ExpressLRS site <https://www.expresslrs.org/2.0/>` for more information.
 
 Links to Radio Control Systems
 ==============================
