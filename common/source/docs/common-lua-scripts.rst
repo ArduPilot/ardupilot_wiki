@@ -423,7 +423,7 @@ The relay library provides access to controlling relay outputs.
 
 - :code:`off(relay_num)` - Turns the requested relay off.
 
-- :code:`enabled(relay_num)` - Returns true if the requested relay is currently turned on.
+- :code:`enabled(relay_num)` - Returns true if the requested relay is enabled.
 
 - :code:`toggle(relay_num)` - Toggles the requested relay on or off.
 

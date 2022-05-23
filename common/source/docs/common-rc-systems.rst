@@ -21,7 +21,7 @@ ArduPilot autopilots are compatible with the following receiver output protocols
     #. :ref:`common-FPort-receivers`
     #. :ref:`Spektrum SRXL2,DSM, DSM2, and DSM-X Satellite receivers<common-spektrum-rc>`
     #. :ref:`Multiplex SRXL version 1 and version 2 receivers<common-srxl-receivers>`
-    #. :ref:`CRSF receivers <common-tbs-rc>`
+    #. :ref:`CRSF receivers <common-tbs-rc>` (including ExpressLRS systems)
     #. :ref:`Graupner SUM-D<common-graupner-rc>`
     #. Parallel PWM outputs encoded to PPM-Sum using an external encoder (see below)
 
@@ -62,8 +62,8 @@ FPort/FPort2
 FPort is a bi-directional protocol, using SBus RC in one direction, and serial telemetry in the other. The RC portion can be decoded when attached to an autopilot as if it were SBus, but the embedded telemetry would be lost. See the :ref:`FPort setup documentation<common-FPort-receivers>` for details on connection to one of the autopilots Serial Ports.
 
 
-SRXL2/CRSF
------------
+SRXL2/CRSF/ELRS
+---------------
 
 These bi-directional protocols require the use of a Serial Port. See links below for setup and connections.
 
@@ -72,6 +72,9 @@ RC input to Serial Port
 -----------------------
 
 .. note:: ArduPilot firmware releases 4.0 and later, any UART RX input will auto-detect all the protocols (except PPM), if the serial port protocol is set to 23 (for example :ref:`SERIAL2_PROTOCOL<SERIAL2_PROTOCOL>` for the TELEM2 UART is used).
+
+.. note:: The serial port baudrate is automatically set and controlled by the firmware when any serial RC protocol is detected.
+
 
 Radio System Selection
 ======================
@@ -104,13 +107,19 @@ Below is a table with some commonly  available systems showing these elements. N
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Original Manufacturer  |Range | Telemetry| Telem Speed| TX Display| RC Protocol  |  Notes |
 +=======================+======+==========+============+===========+==============+========+
-|DragonLink             |Long  |  Bi-dir  |     56K    |    na     | PPM_SUM/SBUS |    1   |
+|DragonLink             |Long  |  Bi-dir  |     56K    |via MTP/LUA|PPM_SUM/SBUS  |    1   |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|CRSF                   |Long  |  Bi-Dir  |   Variable |via LUA    |SBUS/CRSF     |    3   |
++-----------------------+------+----------+------------+-----------+--------------+--------+
+|ELRS                   |Long  |  Limited |     -      |   -       |CRSF          |    4   |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |FLYSKY                 |Short |    No    |     -      |   -       |  IBus        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|FRSky  X series        |Short |  Bi-dir  |    Medium  |   yes     | PPM-SUM/SBUS |    2   |
+|FrSky  X series        |Short |  Bi-dir  |    Medium  |   yes     | PPM-SUM/SBUS/|    2   |
+|                       |      |          |            |           | FPort        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
-|FRSky  R9 series       |Medium|  Bi-dir  |    Medium  |   yes     | PPM-SUM/SBUS |    2   |
+|FrSky  R9 series       |Medium|  Bi-dir  |    Medium  |   yes     | PPM-SUM/SBUS/|    2   |
+|                       |      |          |            |           | FPort        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 |Futaba                 |Short |    No    |     -      |   -       |  SBus        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
@@ -123,9 +132,13 @@ Below is a table with some commonly  available systems showing these elements. N
 |                       |      |          |            |           |  SRXL        |        |
 +-----------------------+------+----------+------------+-----------+--------------+--------+
 
-Note 1: DragonLink provides a 56Kbaud transparent link for telemetry, allowing full MAVLink telemetry to/from the vehicle from the transmitter module. Dragonlink is an add-on module to the transmitter, such as an FRSky Taranis or RadioMaster T16. See :ref:`common-dragonlink-rc`
+Note 1: DragonLink provides a 56Kbaud transparent link for telemetry, allowing full MAVLink telemetry to/from the vehicle from the transmitter module. Dragonlink is an add-on module to the transmitter, such as an FRSky Taranis or RadioMaster T16. See :ref:`common-dragonlink-rc`. `MTP (Mavlink to Passthru) converters <https://www.rcgroups.com/forums/showthread.php?3089648-Mavlink-To-FrSky-Passthrough-Converter>`__ are available to allow direct display of MAVLink Telemetry data on OpenTX transmitters using :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`.
 
 Note 2: See :ref:`common-frsky-yaapu`. Future firmware versions will offer the ability to change parameters over FRSky telemetry from an Open TX compatible transmitter in addition to displaying the telemetry data. Most FRSky compatible transmitters use `OpenTX <https://www.open-tx.org/>`__. Note that R9 systems are not quite Long Range, but much further range than normal FRSky systems, themselves at the very high end of the Short Range category at 1.6-2km range.
+
+Note 3: ArduPilot provides a means to send its telemetry data via CRSF such that it can be displayed on `OpenTX <https://www.open-tx.org/>`__ transmitters using the :ref:`Yaapu Telemetry LUA Script<common-frsky-yaapu>`.
+
+Note 4: ELRS (EpressLRS) is a system that uses the CRSF (TBS Crossfire) RC protocol with several minimizations to simplify the system. It has reduced features but it connected to ArduPilot just like CRSF when it uses CRSF instead of SBUS to communicate to ArduPilot. See `ExpressLRS site <https://www.expresslrs.org/2.0/>` for more information.
 
 Links to Radio Control Systems
 ==============================

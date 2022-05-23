@@ -6,6 +6,8 @@ Team Black Sheep RC Systems
 
 Any Crossfire compatible receiver can be used with ArduPilot. 
 
+.. note::  ELRS (ExpressLRS) RC systems use the Crossfire protocol and are connected in a similar manner. However, ERLS telemetry is limited primarily to only signal strength and link quality. And does not provide bi-directional telemetry like Crossfire.
+
 If you do not wish to use telemetry then a **TBS Crossfire** receiver can be connected to the **RCIN** port using :ref:`SBUS <common-rc-systems>`. You must configure the Receiver to output SBUS, of course.
 
 CRSF Receivers 
@@ -20,6 +22,8 @@ In the configuration of the serial port select the RCIN protocol. So for example
 
 - Set :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 23
 - Set :ref:`RSSI_TYPE <RSSI_TYPE>` = 3
+
+.. note:: The serial port baudrate is automatically set and controlled by the firmware when any serial RC protocol, such as CRSF, is detected.
 
 With the receiver connected and configured correctly proceed with RC calibration as normal.
 
