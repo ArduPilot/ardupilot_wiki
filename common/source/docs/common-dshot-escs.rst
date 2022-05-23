@@ -25,7 +25,8 @@ DShot is the underlying ESC control protocol used by :ref:`BLHeli <common-blheli
 Connecting the ESCs
 ===================
 
-For autopilots with an IOMCU (e.g. Pixhawk, CubeOrange) the DShot ESCs should be connected to the AUX outputs.  On CubeOrange AUX1 cannot be used for DShot meaning only AUX2 to AUX6 can be used (`see issue <https://github.com/ArduPilot/ardupilot/issues/20362>`__).
+For autopilots with an IOMCU (e.g. Pixhawk, CubeOrange) the Bi-Directional DShot ESCs should be connected to the AUX outputs. 
+On CubeOrange Normal DShot works on all channels.  AUX1 cannot be used for Bi-Directional DShot meaning only AUX2 to AUX6 can be used for Bi_directional.  (`see issue <https://github.com/ArduPilot/ardupilot/issues/20362>`__).
 
 For :ref:`Pixracer <common-pixracer-overview>` and :ref:`other boards <common-autopilots>` without a separate IOMCU coprocessor, any servo/motor outputs can be used.
 
