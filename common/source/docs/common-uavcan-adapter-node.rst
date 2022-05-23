@@ -56,7 +56,7 @@ And AP_Periph DroneCAN firmware supports these DroneCAN features:
 Firmware
 ========
 
-`Firmware <https://firmware.ardupilot.org/AP_Periph/>`__ is provided in the AP_Periph folder for several DroneCAN devices based on this concept. Currently, the following firmware is pre-built, but the code allows for easy customization for any given peripheral or adapter based on the F103/303 processors.
+`Firmware <https://firmware.ardupilot.org/AP_Periph/>`__ is provided in the AP_Periph folder for several DroneCAN devices based on this concept. Currently, the following firmware is pre-built, but the code allows for easy customization for any given peripheral or adapter based on the F103/303 processors. Firmware can be installed using either :ref:`DroneCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN.<common-mp-slcan>` when the device is attaced to a DroneCAN port on an autopilot and the autopilot has enabled that port, see :ref:`common-uavcan-setup-advanced`.
 
 
 F103 Based
@@ -73,15 +73,28 @@ F303 Based
 - f303-M10025      :Serial GPS, SPI RM3100 Compass, SPI DPS310 Baro, I2C RGB LED, I2C Airspeed, Safety Switch
 - f303-Universal   :Serial GPS/Rangefinder/ADS-B, I2C Compass, I2C Baro, I2C RGB LED, I2C Airspeed
 
+L431 Based
+----------
 
-F303-Universal Firmware Setup
-=============================
+- MatekL431-Periph      :Serial GPS, I2C QMC5883L Compass, I2C SPL06 Baro, I2C RGB LED, I2C Airspeed (MS4525 default), Passive Buzzer, Battery Monitor, MSP, 5 PWM outputs(not recommended for use, use MatekL431-DShot for those applications)
+- MatekL431-Airspeed    :I2C Airspeed, DLVR 10" default type
+- MatekL431-DShot       :5 Bi-Directional DShot(default)/PWM outputs starting at SERVO5 by default, ESC telem on UART1 RX ( see `setup instructions here <https://discuss.ardupilot.org/t/using-matekl431-adapters-for-pwm-and-dshot>`__ )
+- MatekL431-Rangefinder :Serial Rangefinders
+
+
+ArduPilot Firmware DroneCAN Setup
+=================================
 
 .. note:: Be sure to enable the autopilot's CAN port and set it up for DroneCAN protocol. See : :ref:`common-uavcan-setup-advanced`
 
-The f303-Universal firmware has the ability to be used for several serial devices but only one can be enabled to use the single UART. Once Firmware is uploaded the default device connected to the UART port is set to GPS, to use another device such as Rangefinder the GPS has to be turned off and Rangefinder or other device enabled.
+DroneCAN Adapters can support various devices and configurations. Often, its configuration parameters will need to be altered. To achieve this, either use :ref:`DroneCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN.<common-mp-slcan>` to change the device's parameters.
 
-To achieve this, either use :ref:`DroneCAN GUI<common-uavcan-gui>` or :ref:`MissionPlanner SLCAN.<common-mp-slcan>` Once connected, set the appropriate params, i.e. for TFmini_S/Plus rangefinder you would set GPS_TYPE=0 and RNGFND1_TYPE=20, this allows the single serial port to connect to the rangefinder.
+For example, when using the MatekL431-Airspeed, you may need to change the ARSPD_TYPE parameter in the device to match the actual I2C airpseed sensor you are using.
+
+f303-Universal Setup
+--------------------
+
+The f303-Universal firmware has the ability to be used for several serial devices but only one can be enabled to use the single UART. Once Firmware is uploaded, the default device connected to the UART port is set to GPS, to use another device such as Rangefinder, the GPS has to be turned off and Rangefinder or other device enabled.
 
 Options for serial devices are:
 
@@ -98,8 +111,8 @@ The firmware can also be used for I2C peripherals.
  - AIRSPEED SENSOR
  - NCP5623 LED
 
-Rangefinder
------------
+Rangefinder Setup
+=================
 
  To use rangefinders, follow the instructions at  :ref:`DroneCAN Setup Advanced<common-uavcan-setup-advanced>` to set up the ArduPilot parameters. Using MissionPlanner or DroneCAN Gui, set the parameters on the adaptor node following the instructions for the relevant rangefinder.
 
@@ -116,3 +129,4 @@ DroneCAN Adapter Nodes
 ======================
 
 :ref:`mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>`
+`MatekL431 DroneCAN Adapter Node <http://www.mateksys.com/?portfolio=can-l431>`__
