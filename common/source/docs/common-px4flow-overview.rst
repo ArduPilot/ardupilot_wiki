@@ -98,7 +98,7 @@ On the back of the sensor you should see the axis printed, the X axis should poi
 The :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` parameter can be used to account for other yaw orientations.
 
 It is important that the flow sensor be mounted where it does not experience
-angular angular vibration that could blur the image.
+angular vibration that could blur the image.
 
 .. note::
 
