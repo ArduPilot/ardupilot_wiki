@@ -13,6 +13,7 @@ The special features for Boats include:
 
 - Boats appear as boats on the ground station
 - In :ref:`Auto <auto-mode>`, :ref:`Guided <guided-mode>`, :ref:`RTL <rtl-mode>` and :ref:`SmartRTL <smartrtl-mode>` modes the vehicle will attempt to maintain its position even after it reaches its destination
+- :ref:`Thrusters <thrusters>`
 - :ref:`Echosounders <common-underwater-sonars-landingpage>` for underwater mapping
 - :ref:`Loiter mode <loiter-mode>` for holding position
 - :ref:`ReefMaster for bathymetry <reefmaster-for-bathymetry>`
