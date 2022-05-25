@@ -72,7 +72,7 @@ or :ref:`FlightDeck <common-frsky-flightdeck>` telemetry user interface.
 FrSky D/X/R Receivers
 ---------------------
 
-FrSky has many compatible receivers. Some ouput PPM, some SBus. Almost all offer telemetry in some form. Any receiver with S.Port offers bi-directional telemetry. For more information about FrSky receiver telemetry, refer to the :ref:` FrSky telemetry page <common-frsky-telemetry>`.
+FrSky has many compatible receivers. Some ouput PPM, some SBus. Almost all offer telemetry in some form. Any receiver with S.Port offers bi-directional telemetry. For more information about FrSky receiver telemetry, refer to the :ref:`FrSky telemetry page <common-frsky-telemetry>`.
 
 .. figure:: ../../../images/FrSky_x8r.jpg
     :scale: 20 %
