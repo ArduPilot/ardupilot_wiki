@@ -112,4 +112,4 @@ QSTABILIZE or QHOVER flight modes. It is available in QLOITER, QRTL,
 QLAND and in AUTO mode when executing VTOL flight commands.
 
 .. note::
- Tilt-Rotor QuadPlanes do not have this capability, since there is no separate forward motor.
+ Continuous tilt-rotor QuadPlanes will tilt motors up to :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` times :ref:`Q_TILT_MAX<Q_TILT_MAX>` to maintain position.
