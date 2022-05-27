@@ -12,8 +12,8 @@ load.
 To reduce the impact of wind when flying in VTOL modes the ArduPilot
 QuadPlane code supports two features:
 
--  Active weathervaning
--  Position hold using forward motor
+-  Active yaw axis weathervaning
+-  Position hold assistance using forward or tilt rotor motors instead of only using VTOL stance tilting
 
 Together these two features can greatly reduce the impact of wind on
 VTOL flight by keeping the aircraft pointed into the wind and reducing
@@ -76,13 +76,15 @@ note:* not QLOITER take-offs and landings
 
 .. note:: Weathervaning can be disabled or enabled by an :ref:`RC Aux Function Switch<common-auxiliary-functions>`, option "160"
 
-Using the Forward Motor
------------------------
+Using the Forward or Tilt Motors to Help Position Holding
+---------------------------------------------------------
 
 In addition to active weathervaning, the QuadPlane code supports using
 the forward motor to hold the pitch level in VTOL flight modes. To
-enable use of the forward motor for position hold you need to set the
+enable use of the forward motor(s) for position hold you need to set the
 :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` parameter to a non-zero value.
+
+.. note:: Tailsitters do not have this option and :ref:`Q_VFWD_GAIN <Q_VFWD_GAIN>` should be kept at the default value of 0.
 
 The way it works is to look at two factors:
 
@@ -110,6 +112,8 @@ As with active weathervaning, using the forward motor is only enabled
 in position controlled VTOL modes. This means it is not enabled in
 QSTABILIZE or QHOVER flight modes. It is available in QLOITER, QRTL,
 QLAND and in AUTO mode when executing VTOL flight commands.
+
+:ref:`Q_VFWD_ALT<Q_VFWD_ALT>`: when below this relative to home altitude, forward motor assist is disabled. This can be useful to keep the motor propeller from hitting the ground. Rangefinder height data is used when available.
 
 .. note::
  Continuous tilt-rotor QuadPlanes will tilt motors up to :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` times :ref:`Q_TILT_MAX<Q_TILT_MAX>` to maintain position.
