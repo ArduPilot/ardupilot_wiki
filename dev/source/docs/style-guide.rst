@@ -364,6 +364,7 @@ Functions that return a single physical value or variables that represent a phys
 **Right:**
 
 ::
+
     uint16 get_angle_rad() { ... };
     float distance_m;
 
@@ -379,6 +380,7 @@ Functions or variables that represent a value relative to a frame should be suff
 **Right:**
 
 ::
+
     uint16 get_distance_ned_cm() { ... };
     uint16 get_distance_enu_m() { ... };
     float position_neu_mm;
