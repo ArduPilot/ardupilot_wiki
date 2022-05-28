@@ -940,7 +940,7 @@ This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mo
    <tr>
    <td><strong>param3</strong></td>
    <td>Radius</td>
-   <td>Empty</td>
+   <td>Loiter radius around waypoint. Units are in meters. Values over 255 will be in units of 10 meters. and values greater than 2550 will be 2550.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
