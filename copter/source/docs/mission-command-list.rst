@@ -113,6 +113,15 @@ part of the mission).  The direction can be changed to counter-clockwise by sett
 
 **Turn** - the number of full rotations to complete around the point.
 
+**Radius** - Loiter radius around waypoint. Units are in meters.
+
+-  0-255 is 0-255 meters.
+-  256-259 is 250 meters. Note: The radius will be smaller than the set value.
+-  260-269 is 260 meters.
+-  270-279 is 270 meters.
+-  :
+-  2550 and above, 2550 meters.
+
 **Lat, Lon** - the latitude and longitude targets.  If left as zero it
 will circle around the current location.
 
