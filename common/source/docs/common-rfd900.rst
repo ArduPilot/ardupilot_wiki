@@ -41,19 +41,6 @@ The radio and antennas as separate units are available:
 Ready made Sets
 ---------------
 
-JDrones
-+++++++
-
-.. image:: ../../../images/jDrones_RF900PlusSET_NoLogo.jpg
-    :target: ../_images/jDrones_RF900PlusSET_NoLogo.jpg
-
-Ready made set includes antennas, connecting cables for Pixhawk and APM
-2.x autopilots, usb cable for ground unit. FTDI adapter, power
-filtering, adapter PCBs and strong protective casing
-
--  `jDrones Store, RF900Mhz Set <http://store.jdrones.com/jD_RD900Plus_Telemetry_Bundle_p/rf900set02.htm>`__
--  `jDrones Store, RF868Mhz Set <http://store.jdrones.com/jD_RD868Plus_Telemetry_Bundle_p/rf868set02.htm>`__
-
 Bask Aerospace
 ++++++++++++++
 Bask Aerospace offer the AeroLink range of products that are built to work with all RFDesign modems.
