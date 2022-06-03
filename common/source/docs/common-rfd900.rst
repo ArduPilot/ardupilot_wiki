@@ -130,4 +130,4 @@ see
 Discussion Forum
 ================
 
-The best place to discuss these radios including set-up issues is on ArduPilot's hardware discussion forums <https://discuss.ardupilot.org/c/hardware-discussion/radios-hardware/101>`__.
+The best place to discuss these radios including set-up issues is on `ArduPilot's hardware discussion forums <https://discuss.ardupilot.org/c/hardware-discussion/radios-hardware/101>`__.
