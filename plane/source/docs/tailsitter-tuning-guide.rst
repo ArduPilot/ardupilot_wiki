@@ -20,7 +20,7 @@ For pitch and yaw, control is provided by the fixed wing control surfaces, somet
 
 .. code:: bash
 
-   PIQP.P+PIQP.P+PIQP.D 
+   PIQP.FF+PIQP.P+PIQP.D 
    X * (PIQP.Act) , where X is 0.2 to start
 
 - Next adjust the X value above until the magnitudes of both plots are about equal. This will now be value for the :ref:`Q_A_RAT_PIT_FF<Q_A_RAT_PIT_FF>` term. Set the :ref:`Q_A_RAT_PIT_I<Q_A_RAT_PIT_I>` term to equal this.
@@ -28,7 +28,7 @@ For pitch and yaw, control is provided by the fixed wing control surfaces, somet
 
 .. code:: bash
 
-   PIQY.P+PIQY.P+PIQY.D   
+   PIQY.FF+PIQY.P+PIQY.D   
    X * (PIQP.Act) , where X is 0.2 to start
 
 Below is an image of this where the X value is adjusted until the two curves are the same amplitude, with a value of x = 0.1. This is then set as the :ref:`Q_A_RAT_YAW_FF<Q_A_RAT_YAW_FF>` and :ref:`Q_A_RAT_YAW_I<Q_A_RAT_YAW_I>` values.
