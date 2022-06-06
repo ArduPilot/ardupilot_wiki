@@ -41,6 +41,7 @@ tuning options for the vehicle.
 [site wiki="plane"]
     Crash Detection <crash-detect>
 [/site]
+    DroneCAN Setup <common-uavcan-setup-advanced>
     EKF (Extended Kalman Filter) <common-apm-navigation-extended-kalman-filter-overview>
     EKF Affinity & Lane Switching <common-ek3-affinity-lane-switching>
     EKF Sources and Selection <common-ekf-sources>
@@ -126,7 +127,7 @@ tuning options for the vehicle.
     Terrain Following <common-terrain-following>
     Transmitter Based Tuning <common-transmitter-tuning>
 [/site]
-    DroneCAN Setup <common-uavcan-setup-advanced>
+    Video Stabilization (Gyroflow) <common-gyroflow>
     Video Transmitter Control <common-vtx>
 [site wiki="copter,plane,rover,planner"]
     UBlox GPS Configuration <common-ublox-gps>
