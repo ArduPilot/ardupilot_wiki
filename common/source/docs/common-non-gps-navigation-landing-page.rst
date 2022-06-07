@@ -18,7 +18,7 @@ These are the available options that allow a vehicle to estimate its position wi
     MarvelMind Beacons <common-marvelmind>
     Nooploop Beacons <common-nooploop>
 [site wiki="copter"]
-    Nokov Indoor Oprtical Tracking <https://discuss.ardupilot.org/t/nokov-indoor-optical-tracking-system>
+    Nokov Indoor Optical Tracking <https://discuss.ardupilot.org/t/nokov-indoor-optical-tracking-system>
     Optical Flow <common-optical-flow-sensors-landingpage>
     OptiTrack motion capture system <common-optitrack>
 [/site]
