@@ -19,6 +19,8 @@ The following parameters are required:
 
 Optional: for ease of use, set :ref:`LOG_FILE_DSRMROT<LOG_FILE_DSRMROT>` = 1 to stop logging when disarmed. This allows multiple logs to be generated for multiple flights during a session and makes syncing the logs to the videos easier. Otherwise you would have one big log for multiple flights and videos while powered up.
 
+Be sure to start the video and arm to start logging at very close to the same time, otherwise you will need to determine the time offset between them and use it for the synchronization dialog's "Rough gryo offset" value in Gyroflow.
+
 Gyroflow Use
 ============
 
