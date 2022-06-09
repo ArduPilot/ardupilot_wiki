@@ -99,7 +99,7 @@ The vehicle will actively attempt to maintain distance (margin) from obstacles. 
 
 
 
-..  youtube:: /oPI0SUQVDRQ
+..  youtube:: oPI0SUQVDRQ
     :width: 100%
 
 
