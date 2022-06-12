@@ -26,6 +26,7 @@ fails try the "Manual ESC-by-ESC" method.
 
 -  Refer to :ref:`common-brushless-escs` for setup of the ESC protocol (:ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>`) according to your type of ESC.
 -  Some ESCs like the DJI Opto ESCs do not require and do not support calibration, so skip this page completely.
+-  If you are using a digital esc protocol like DShot or are using CAN ESCs then you also don't need to calibrate them, so skip this page. The section at the end on ESC settings is still applicable, however.
 -  Some brands of ESC do not allow calibration and will not arm unless you adjust your radio's throttle end-points so that the minimum throttle is around 1000 PWM and maximum is around 2000.  Note that if you change the end-points on your TX you must re-do the :ref:`Radio Calibration <common-radio-control-calibration>`.  Alternatively, you may manually set the :ref:`MOT_PWM_MIN <MOT_PWM_MIN>` to 1000 and :ref:`MOT_PWM_MAX <MOT_PWM_MAX>` to 2000.
 -  Begin this procedure only after you have completed the :ref:`radio control calibration <common-radio-control-calibration>` and :ref:`Connect ESCs and motors <connect-escs-and-motors>` part of the :ref:`Autopilot System Assembly Instructions <autopilot-assembly-instructions>`.  Next follow these steps:
 
@@ -174,11 +175,14 @@ the APM the way it is now. This is an unfortunately necessary but true
 disclaimer.
 
 Recommended ESC settings as follows:
+====================================
 
-#. Brake: OFF
-#. Battery Type: Ni-xx(NiMH or NiCd)  (even if you're using Li-po
-   batteries this setting reduces the likelihood that the ESC's low
-   voltage detection will turn off the motors)
+#. Brake on stop: OFF
+#. Active braking/"Damped light": ON (Also known as "Non Damped mode" set to OFF)
+#. Low voltage protection: OFF (alternatively, you can set battery type 
+   to Ni-xx(NiMH or NiCd) (even if you're using Li-po batteries because
+   this setting reduces the likelihood that the ESC's low voltage detection 
+   will turn off the motors)
 #. CutOff Mode: Soft-Cut (Default)
 #. CutOff Threshold: Low
 #. Start Mode: Normal (Default)
