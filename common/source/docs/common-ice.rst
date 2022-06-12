@@ -36,7 +36,7 @@ These parameters may also need to be adjusted:
 - :ref:`ICE_PWM_IGN_OFF <ICE_PWM_IGN_OFF>` is the PWM value sent to the ignition power switch when the engine should be stopped
 - :ref:`ICE_STARTCHN_MIN<ICE_STARTCHN_MIN>` is the minimum PWM below which the start channel input will be ignored. This is a safety feature to prevent bad RC input from stopping the motor while the aircraft is beyond line of sight, if the RC protocol is incorrectly configured. Default is zero, meaning disabled.
 
-If using an on-board starter, it is important to configure an RPM sensor for the engine. This will allow the ArduPilot to detect an in-flight engine failure and attempt to restart the engine. ArduPilot supports generic pulse tachometers connected to GPIO pins (such as the Aux servo pins on a PixHawk or Cube). A tachometer may be made using a simple hall effect switch IC. Alternatively, some ignition modules support a tachometer output that can be connected directly to the GPIO pins. Desert Aircraft Electronic Ignition V2 modules support tachometer output on the signal pin of the power input connector. Note that when connecting an RPM sensor to an AUX pin, it is important to make sure that this pin is not configured to output a PWM value and, instead, be a GPIO pin. See :ref:`common-gpios`.
+If using an onboard starter, it is important to configure an RPM sensor for the engine. This will allow the ArduPilot to detect an in-flight engine failure and attempt to restart the engine. ArduPilot supports generic pulse tachometers connected to GPIO pins (such as the Aux servo pins on a PixHawk or Cube). A tachometer may be made using a simple hall effect switch IC. Alternatively, some ignition modules support a tachometer output that can be connected directly to the GPIO pins. Desert Aircraft Electronic Ignition V2 modules support tachometer output on the signal pin of the power input connector. Note that when connecting an RPM sensor to an AUX pin, it is important to make sure that this pin is not configured to output a PWM value and, instead, be a GPIO pin. See :ref:`common-gpios`.
 
 In order to configure an RPM sensor, the following parameters must be set:
 
@@ -45,7 +45,7 @@ In order to configure an RPM sensor, the following parameters must be set:
 - Set the remaining 'RPM_*' parameters as appropriate for your system.
 - Set :ref:`ICE_RPM_CHAN <ICE_RPM_CHAN>` to 1.
 
-Throttle control for an ICE engine is similar to controlling a standard brushless ESC. The throttle servo can be connected to any servo output with a ``SERVOx_FUNCTION`` set to 70 (Channel 3 is configured this way by default). It is important to set the Min and Max PWM values on this servo output to be within the mechanical limits of your throttle assembly (using ``SERVOx_MIN`` and ``SERVOx_MAX``). While doing this, also verify that the servo moves in the correct direction with respect to a manual throttle input. Note that the throttle servo will not move unless the vehicle is armed. It is recommended to arm the vehicle with ignition power disconnected in order to test the throttle servo.
+Throttle control for an ICE engine is similar to controlling a standard brushless ESC. The throttle servo can be connected to any servo output with a ``SERVOx_FUNCTION`` set to 70 (Channel 3 is configured this way by default). It is important to set the Min and Max PWM values on this servo output to be within the mechanical limits of your throttle assembly (using ``SERVOx_MIN`` and ``SERVOx_MAX``). While doing this, also verify that the servo moves in the correct direction with respect to manual throttle input. Note that the throttle servo will not move unless the vehicle is armed. It is recommended to arm the vehicle with ignition power disconnected in order to test the throttle servo.
 
 After configuring the limits of your throttle servo, the following parameters must be set:
 
@@ -66,13 +66,11 @@ A variety of parameters are available for configuring the engine start routine. 
 
 
 [/site]
-[site wiki="copter,rover"]
-To allow the pilot to directly control the ignition and (optional) starter from the transmitter, RC pass through should be set-up:
+To allow the pilot to directly control the ignition and (optional) starter from the transmitter, RC pass-through should be set up:
 
 - Set ``SERVOx_FUNCTION`` (where "x" is the autopilot's output channel connected to the ignition or starter) to ``RCINy`` (where "y" is the transmitter channel).  For example set :ref:`SERVO8_FUNCTION <SERVO8_FUNCTION>` = 59/"RCIN9" to allow the transmitter's channel 9 to control the autopilot Output 8
 
 Be sure to check the engine's behavior when the transmitter is turned off to simulate what will happen during an RC failsafe.
-[/site]
 
 [site wiki="plane"]
 Starting and Stopping the Motor
@@ -123,4 +121,4 @@ The redline governor will slowly reduce the throttle if the RPM remains above th
 Vibration isolation
 -------------------
 
-The high vibration from internal combustion engines means that :ref:`vibration dampening <common-vibration-damping>` is critical.  It is often necessary to mount the autopilot on an plate with `self adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.
+The high vibration from internal combustion engines means that :ref:`vibration dampening <common-vibration-damping>` is critical.  It is often necessary to mount the autopilot on a plate with `self-adhesive lead weights <https://www.amazon.com/Great-Planes-Segmented-Weights-6-Ounce/dp/B0015KLJE0>`__ added to increase its mass.
