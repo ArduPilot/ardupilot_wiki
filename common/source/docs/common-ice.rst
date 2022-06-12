@@ -103,6 +103,23 @@ QuadPlanes can also automatically stop the engine once the final phase of a VTOL
 
 .. note:: The engine can be started and stopped in autonomous missions by using the ``DO_ENGINE_CONTROL`` mission command. This useful preceding NAV_VTOL_TAKEOFF or NAV_VTOL_LAND to start or stop the engine to prevent prop strikes while landing in wind with a low clearance prop. See :ref:`common-mavlink-mission-command-messages-mav_cmd` section. 
 
+Idle and redline governors
+--------------------------
+
+These features rely on having a source for engine RPM. See :ref:`common-rpm` for more information.
+
+The idle governor allows the autopilot to adjust the throttle to maintain an RPM value when the commanded throttle is low. This can be useful when the engine is waiting for takeoff and reduces the workload on the pilot during that time. Increasing the throttle command will give the expected throttle response.
+
+- :ref:`ICE_IDLE_PCT<ICE_IDLE_PCT>`
+- :ref:`ICE_IDLE_RPM<ICE_IDLE_RPM>`
+- :ref:`ICE_IDLE_DB<ICE_IDLE_DB>`
+- :ref:`ICE_IDLE_SLEW<ICE_IDLE_SLEW>`
+
+The redline governor will slowly reduce the throttle if the RPM remains above the given RPM value. Generally, this RPM value is provided by the manufacturer of the engine. If the commanded throttle drops faster or lower than the point the governor started, then the governor will be released and normal control of the throttle will return to normal throttle response. A warning message will appear on the GCS. There is an :ref:`ICE_OPTIONS<ICE_OPTIONS>` bit do disable the throttle action of the redline governor, but the GCS message will remain.
+
+- :ref:`ICE_REDLINE_RPM<ICE_REDLINE_RPM>`
+
+
 Vibration isolation
 -------------------
 
