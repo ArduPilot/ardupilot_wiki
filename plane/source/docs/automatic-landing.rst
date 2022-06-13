@@ -261,7 +261,7 @@ The ideal setup for good automatic landing is to have a
 :ref:`Lidar <common-rangefinder-landingpage>`. A Lidar can measure
 the distance to the ground very accurately, and doesn't suffer from
 drift. If you have a Lidar installed you can enable its use for landing
-with ``RNGFND_LANDING=1``.
+with :ref:`RNGFND_LANDING<RNGFND_LANDING>` = 1.
 
 If a Lidar isn't fitted then there are a few things you can do to
 minimise barometric error problems with auto-land
@@ -277,7 +277,7 @@ minimise barometric error problems with auto-land
    consistently
 
 With planes that belly land it can also work well to setup the landing
-with a shallow pitch (in ``LAND_PITCH_CD``) and set a slightly higher
+with a shallow pitch (in :ref:`LAND_PITCH_CD<LAND_PITCH_CD>`) and set a slightly higher
 altitude to flare at. That will only work if your stall speed is low
 enough that gliding for a while will work reliably.
 
@@ -302,13 +302,13 @@ If one is found then the plane will automatically enter AUTO mode and
 land, starting at the part of the mission just after the
 ``DO_LAND_START`` marker.
 
-The exact behaviour depends on the ``RTL_AUTOLAND`` value:
+The exact behaviour depends on the :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` value:
 
--  If ``RTL_AUTOLAND=1`` then the plane will first RTL as normal, then
+-  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` then the plane will first RTL as normal, then
    when it starts circling the return point (home or a rally point) it
    will then switch to the AUTO mission after the ``DO_LAND_START`` and
    land
--  If ``RTL_AUTOLAND=2`` then the plane will bypass the RTL completely
+-  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` then the plane will bypass the RTL completely
    and go straight to the landing sequence.
 
 You can optionally include more than one ``DO_LAND_START`` mission item
@@ -317,6 +317,8 @@ in your mission. If that is done then the latitude/longitude of the
 to use. The ``DO_LAND_START`` closest to the current location is used.
 This can be useful if you have multiple landing sequences for different
 wind conditions or different areas.
+
+.. note:: ArduPilot checks to see if there is a ``DO_LAND_START`` mission items before arming but :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 0. If so, a pre-arm failure condition will prevent arming. If it is desired to use a ``DO_LAND_START`` only for aborted autolandings, then set :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 3, to allow arming, and its use as explained below for an aborted autolanding.
 
 How to abort an auto-landing
 ============================
@@ -486,5 +488,5 @@ Determining actual stall speed of your aircraft
 Unless you really know what you're doing, stall speed can be hard to estimate. 
 Traditionally, to determine this true value you would need to slowly decrease your airspeed until you stall but that comes with the pesky problem that now you have a stalled aircraft falling out of the sky.
 
-With ``LAND_PF_ALT`` and ``LAND_PF_ARSPD`` you can check your stall speed much lower to the ground. 
+With :ref:`LAND_PF_ALT<LAND_PF_ALT>` and :ref:`LAND_PF_ARSPD<LAND_PF_ARSPD>` you can check your stall speed much lower to the ground. 
 To know the airspeed at the exact moment it stalls, check your dataflash logs (``*.bin`` on SD card) for the airspeed (ARSP.Airspeed) when your wing loses lift and drops by comparing actual roll (CTUN.Roll) and desired roll (CTUN.NavPitch) diverge.
