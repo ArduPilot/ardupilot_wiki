@@ -186,7 +186,7 @@ This is a video made during the development of this feature.  Note in the video 
 ..  youtube:: 9VK3yjIyCSo
     :width: 100%
 
-Package Place
+Payload Place
 ~~~~~~~~~~~~~
 
 .. image:: ../../../images/MissionList_packageplace.png
