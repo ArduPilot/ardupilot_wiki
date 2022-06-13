@@ -175,8 +175,6 @@ Delay
 .. image:: ../../../images/MissionList_NavDelay.png
     :target: ../_images/MissionList_NavDelay.png
 
-Support for the Delay command was added in Copter-3.4.
-
 The vehicle will remain at its current location until the specified number of seconds has passed or the absolute time is reached.
 The first column ("Seconds") holds the number of seconds to delay.  Set to -1 if this field should be ignored.
 The "hour UTC", "minute UTC" and "second UTC" fields can be used to specify an absolute time (`UTC <https://en.wikipedia.org/wiki/Coordinated_Universal_Time>`__).  The example above will cause the vehicle to take-off at 1:30pm UTC.  Note that the hour and/or minute field can also be ignored by setting them to -1.
@@ -191,8 +189,6 @@ Payload Place
 
 .. image:: ../../../images/MissionList_packageplace.png
     :target: ../_images/MissionList_packageplace.png
-
-Support for Package Place was added in Copter-3.5.
 
 The vehicle flies to the specified location and descends until it senses (using motor output) that the package has reached the ground.  The gripper is then released to unload the package.
 The first column ("Max Desc") holds the maximum descent (in meters) that the vehicle should descend.  If the package has still not reached the ground despite this descent, the package will not be released and the vehicle will advance to the next mission command.
