@@ -75,9 +75,7 @@ All at once calibration
     :width: 400px
     
 #. For Autopilots with a safety switch, push it until the LED displays solid red
-#. The autopilot is now in ESC calibration mode. (On an APM you may
-   notice the red and blue LEDs blinking alternatively on and off like a
-   police car).
+#. The autopilot is now in ESC calibration mode.
 #. Wait for your ESCs to emit the musical tone, the regular number of
    beeps indicating your battery's cell count (i.e. 3 for 3S, 4 for 4S)
    and then an additional two beeps to indicate that the maximum
@@ -120,7 +118,7 @@ Manual ESC-by-ESC Calibration
 #. If you are still having trouble after trying these methods (for
    example, ESCs still beep continuously) try lowering your throttle
    trim 50%.
-#. You can also try powering your APM board via the USB first to boot it
+#. You can also try powering your ArduPilot board via the USB first to boot it
    up before plugging in the LiPo.
 
 Semi Automatic ESC-by-ESC Calibration
@@ -171,7 +169,7 @@ you will also need to do an additional final automatic calibration).
 Finally, there are a huge number of brands and types of ESCs available
 and some of them do not adhere to the normal programming conventions
 (sometimes even though they claim to) and they may simply not work with
-the APM the way it is now. This is an unfortunately necessary but true
+ArduPilot the way it is now. This is an unfortunately necessary but true
 disclaimer.
 
 Recommended ESC settings as follows:
