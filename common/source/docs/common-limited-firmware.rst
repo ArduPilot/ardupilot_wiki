@@ -40,7 +40,7 @@ Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older v
 Additional Exclusions
 =====================
 
-Additional Exclusions for: Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)
+Additional Exclusions for: Sparky2, OMNIBUSF7V2, KakuteF7, and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)
 
    -  **Common to all vehicles**
 
