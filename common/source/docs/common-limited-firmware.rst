@@ -12,8 +12,8 @@ in order to reduce the firmware size to less than 1 MB.
 
 The missing features are listed below. If you require any of these features, you can try to create a build with them in it (at the expense of other non-needed features) using the `Custom Firmware Build Server <https://custom.ardupilot.org>`__.
 
-Common to all 1MB Boards
-========================
+Limitations Common to all 1MB Boards
+====================================
 
 Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip), BeastF4, F35Lightning, F4BY, MambaF405v2, MazzyStarDrone, OmnibusNanoV6, VRBrain-v51, VRBrain-v52, VRCore-v10, VRUBrain-v51, airbotf4, crazyflie2, mini-pix, revo-mini, skyviper, speedybeef4.
 
@@ -37,10 +37,10 @@ Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older v
 - LUA scripting support
 - In-Flight FFT control of Harmonic Notch
 
-Additional Exclusions
-=====================
+Additional Limitations for Certain 1MB and Other Boards
+=======================================================
 
-Additional Exclusions for: Sparky2, OMNIBUSF7V2, KakuteF7, and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)
+Additional Feature Exclusions for: Sparky2, OMNIBUSF7V2, KakuteF7, and older versions of the Pixhawk (with the RevA, RevY and Rev1 of the STM32F427 chip)
 
    -  **Common to all vehicles**
 
