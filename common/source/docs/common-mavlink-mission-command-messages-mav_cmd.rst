@@ -2447,7 +2447,7 @@ The parameters are all ignored.
 .. _mav_cmd_component_arm_disarm:
 
 MAV_CMD_COMPONENT_ARM_DISARM
---------------------------------
+----------------------------
 
 Supported by: Copter
 
@@ -2810,7 +2810,7 @@ specified in the command.For SITL work, altitude input here needs to be with ref
 .. _mav_cmd_do_set_relay:
 
 MAV_CMD_DO_SET_RELAY
-------------------------
+--------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -2882,7 +2882,7 @@ Set a `Relay <common-relay>`__ pin's voltage high (on) or low (off).
 .. _mav_cmd_do_repeat_relay:
 
 MAV_CMD_DO_REPEAT_RELAY
----------------------------
+-----------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -3615,7 +3615,7 @@ In general if a command field is set to 0 it is ignored.
 .. _mav_cmd_do_mount_control:
 
 MAV_CMD_DO_MOUNT_CONTROL
-----------------------------
+------------------------
 
 Supported by: Copter, Plane, Rover.
 
@@ -4247,7 +4247,7 @@ This command can be used to start or stop the ICE before a NAV_VTOL_LAND or afte
 .. _mav_cmd_do_set_resume_repeat_dist:
 
 MAV_CMD_DO_SET_RESUME_REPEAT_DIST
---------------------------
+---------------------------------
 
 Supported by: Plane, Copter & Rover.
 
