@@ -8,7 +8,7 @@ Copter has a set of parameters that define the way the aircraft feels to fly. Th
 
 The most important of these parameters is:
 
-- :ref:`ACRO_YAW_P <ACRO_YAW_P>` : desired maximum yaw rate / 45 degrees/s
+- :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` : desired maximum yaw rate / 45 degrees/s
 - :ref:`ANGLE_MAX <ANGLE_MAX>` :  maximum lean angle
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` : Pitch rate acceleration
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` : Roll rate acceleration
@@ -23,7 +23,7 @@ For aircraft designed to carry large directly mounted payloads, the maximum valu
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`  x (min_TOW / max_TOW)
 - :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`  x (min_TOW / max_TOW)
 
-:ref:`ACRO_YAW_P <ACRO_YAW_P>` should be set to be approximately 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500 to ensure that the aircraft can achieve full yaw rate in approximately half a second.
+:ref:`ACRO_Y_RATE<ACRO_Y_RATE>` should be set to be approximately 0.5 x :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` / 4500 to ensure that the aircraft can achieve full yaw rate in approximately half a second.
 
 :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>` may be increased to provide a very smooth feeling on the sticks at the expense of a slower reaction time.
 
@@ -32,22 +32,22 @@ Aerobatic aircraft should keep the :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :re
 - :ref:`ACRO_BAL_PITCH <ACRO_BAL_PITCH>`
 - :ref:`ACRO_BAL_ROLL <ACRO_BAL_ROLL>`
 - :ref:`ACRO_RP_EXPO <ACRO_RP_EXPO>`
-- :ref:`ACRO_RP_P <ACRO_RP_P>`
+- :ref:`ACRO_RP_RATE <ACRO_RP_RATE>`
 - :ref:`ACRO_THR_MID <ACRO_THR_MID>`
 - :ref:`ACRO_TRAINER <ACRO_TRAINER>`
 - :ref:`ACRO_Y_EXPO <ACRO_Y_EXPO>`
-- :ref:`ACRO_YAW_P <ACRO_YAW_P>`
+- :ref:`ACRO_Y_RATE<ACRO_Y_RATE>`
 
 The full list of input shaping parameters are:
 
 - :ref:`ACRO_BAL_PITCH <ACRO_BAL_PITCH>`
 - :ref:`ACRO_BAL_ROLL <ACRO_BAL_ROLL>`
 - :ref:`ACRO_RP_EXPO <ACRO_RP_EXPO>`
-- :ref:`ACRO_RP_P <ACRO_RP_P>`
+- :ref:`ACRO_RP_RATE <ACRO_RP_RATE>`
 - :ref:`ACRO_THR_MID <ACRO_THR_MID>`
 - :ref:`ACRO_TRAINER <ACRO_TRAINER>`
 - :ref:`ACRO_Y_EXPO <ACRO_Y_EXPO>`
-- :ref:`ACRO_YAW_P <ACRO_YAW_P>`
+- :ref:`ACRO_Y_RATE<ACRO_Y_RATE>`
 - :ref:`ANGLE_MAX <ANGLE_MAX>`
 - :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`
 - :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`

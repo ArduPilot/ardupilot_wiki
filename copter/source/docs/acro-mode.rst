@@ -95,10 +95,10 @@ Values for :ref:`ACRO_BAL_ROLL<ACRO_BAL_ROLL>` and :ref:`ACRO_BAL_PITCH<ACRO_BAL
 Tuning Parameters
 =================
 
--  :ref:`ACRO_RP_P <ACRO_RP_P>` controls the rotation rate for the roll and pitch axis. The default,
+-  :ref:`ACRO_RP_RATE<ACRO_RP_RATE>` controls the rotation rate for the roll and pitch axis. The default,
    4.5, will command a 200deg/sec rotation rate. Higher values lead to
    higher rotation rates, lower to slower rotation rates.
--  :ref:`ACRO_YAW_P <ACRO_YAW_P>` controls the rotation rate for the yaw axis. The default, 4.5, like
+-  :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` controls the rotation rate for the yaw axis. The default, 4.5, like
    roll and pitch, will command a 200deg/sec rotation rate.
 -  :ref:`ACRO_RP_EXPO <ACRO_RP_EXPO>` and :ref:`ACRO_Y_EXPO <ACRO_Y_EXPO>` are
    an amount of Exponential to apply to the pilots stick inputs that
@@ -124,7 +124,7 @@ modes, not just ACRO.
    :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`: Maximum
    acceleration in roll/pitch axis measured in Centi-degres/sec/sec.
    Let's say you have a highly nimble quadcopter and you have your
-   :ref:`ACRO_RP_P<ACRO_RP_P>` parameter set to 9, which translates to a roll request of
+   :ref:`ACRO_RP_RATE<ACRO_RP_RATE>` parameter set to 9, which translates to a roll request of
    ~400deg/sec. The copter is not physically capable of going from
    0deg/sec to 400deg/sec without a brief moment of acceleration. During
    that time, error is building up in the controller in order to get you
@@ -137,7 +137,7 @@ modes, not just ACRO.
    tuned.
 -  :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`: Maximum acceleration in Yaw axis measured in 
    Centi-degress/sec/sec. Same principle as ``ATC_ACCEL_R_MAX`` and :ref:`ATC_ACCEL_P_MAX` 
-   but on the YAW axis based on the `ACRO_YAW_P <ACRO_YAW_P>` parameter value 
+   but on the YAW axis based on the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` parameter value 
    (likely a much lower, more attainable value.)
 
 User Videos
