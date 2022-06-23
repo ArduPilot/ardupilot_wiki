@@ -130,3 +130,4 @@ DroneCAN Adapter Nodes
 
 :ref:`mRo DroneCAN Adapter Node <common-mro-uavcan-adapter-node>`
 `MatekL431 DroneCAN Adapter Node <http://www.mateksys.com/?portfolio=can-l431>`__
+`ARK CANnode <https://arkelectron.com/product/ark-cannode/>`__
