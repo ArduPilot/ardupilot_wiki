@@ -535,7 +535,7 @@ Then reboot.
 
 DroneCAN capability
 ===================
-There are 2 CAN ports which allow connecting two independant CAN bus outputs. Each of these can have multiple CAN peripheral devices connected. A CAN splitter board is included with the flight controller. The CAN drivers are disabled by default and need to be enabled by setting :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` = 1 for the CAN port on the back of the board, or :ref:`CAN_P2_DRIVER<CAN_P2_DRIVER>` = for the CAN2 port on the side of the board. The board should be rebooted after changing either of these values.
+There are 2 CAN ports which allow connecting two independant CAN bus outputs. Each of these can have multiple CAN peripheral devices connected. A CAN splitter board is included with the flight controller. Please refer to the :ref:`CAN Bus Setup <common-canbus-setup-advanced>`. 
 
 Where to Buy
 ============
