@@ -87,6 +87,7 @@ Advanced Uses
 .. toctree::
     :maxdepth: 1
 
+    Fixed Baseline RTK GPS Correction <common-rtk-correction>
     GPS Blending (aka Dual GPS) <common-gps-blending>
     GPS for Yaw (aka Moving Baseline) <common-gps-for-yaw>
     GPS – How it Works <common-gps-how-it-works>
