@@ -130,13 +130,17 @@ There may be insufficient RAM available in some flight controllers to support al
 - Compass Calibration will not start
 - Logging will not start
 - Terrain downloading from GCS will not start
+- Interfaces will not initialize, such as CAN: "Failed to initialise CAN Interface xx"
 
-If this occurs, several possible options are available to allow temporary use of MAVFTP, download terrain tiles, and/or Compass Calibration. All require a reboot to take effect:
+If this occurs, several possible options are available to allow temporary use of MAVFTP, download terrain tiles, allow a driver to be loaded, and/or Compass Calibration. All require a reboot to take effect:
 
 - Make sure IMU Batch Sampling (used for FFT analysis) is not running by setting :ref:`INS_LOG_BAT_MASK<INS_LOG_BAT_MASK>` = 0.
 - Try temporarily disabling logging by setting :ref:`LOG_BACKEND_TYPE<LOG_BACKEND_TYPE>` to 0, then returning to 1 (default) after calibrating.
 - Reduce the size of :ref:`LOG_FILE_BUFSIZE<LOG_FILE_BUFSIZE>` . However, lowering below 16KB can introduce small gaps in the log. This may be used temporarily to download terrain or calibrate compass.
 - Disable Terrain Following temporarily by setting :ref:`TERRAIN_ENABLE<TERRAIN_ENABLE>` to 0.
 - Disable SmartRTL on Copter by setting :ref:`SRTL_POINTS<SRTL_POINTS>` = 0.
+- If using DroneCAN, try reducing the memory allocation from the default of 16KB (for two nodes) using the ``CAN_Dx_UC_POOL`` parameters.
+
+.. note:: in Mission Planner's STATUS tab, you can monitor the "freemem" status for current free RAM. Be aware, that its a total of unallocated memory and that everything that requires a memory allocation needs it to be one, contiguous block. But the status will give an indication of what is available. For example, MAVftp needs ~ 12K contiguous block to start.
 
 [copywiki destination="plane,copter,rover,blimp"]

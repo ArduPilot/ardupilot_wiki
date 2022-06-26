@@ -52,6 +52,11 @@ Copter Common Problems
 
 [/site]
 
+Free RAM issues
+===============
+
+During initialization, it is possible for some features/subsystems to fail to get enough RAM allocated. Sometimes this will be announced such as in the case of insufficient memory to start a LUA script: "Scripting requires a larger minimum stack size", or for terrain: "Terrain: Allocation failed", etc. Also, insufficient free memory can result in compass calibration failing or MAVftp not initializing. See  :ref:`RAM Limitations <ram_limitations>` for more information.
+
 H7 AutoPilot Will Not Initialize
 ================================
 
