@@ -50,6 +50,8 @@ parameter ``CAN_Px_DRIVER``, where x is the number of the CAN port.
 The value of this parameter is the id of driver that will be associated with this
 port (interface).
 
+Each enabled bus/driver will use a block of RAM memory (not Flash) depending on the type of driver and if CANFD is enabled. For example, DroneCAN will allocate 12KB for its driver (24K if CANFD) by default, but can vary from board to board depending on its defaults, if set by its hardware definition file. The ``CAN_Dx_UC_POOL`` parameter can be used to change the pool size. Required pool size depends on bus traffic required by the attached DroneCAN peripheral and can sometimes be reduced for peripherals such as GPS or Compass, whereas peripherals such as ESCs require more bus traffic and therefore a larger pool size.
+
 For example, the most common setup will have one driver and all interfaces will be connected
 to it.
 The :ref:`CAN_P1_DRIVER<CAN_P1_DRIVER>` and :ref:`CAN_P2_DRIVER<CAN_P2_DRIVER>` parameters in this configuration should be set to 1 (first
