@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ArduPilot Build Wiki (All)",
+            "type": "shell",
+            "command": "./update.py",
+            "args": ["--parallel", "-1"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
