@@ -48,9 +48,9 @@ In addition to normal analog voltage and current sensing modules, ArduPilot supp
 
 These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor. These can be set directly via the CONFIG/Parameter Tree tab for each battery monitor. Here are the monitor types supported:
 
-=================================     =============================
+=================================     ========================================================
 :Ref:`BATT_MONITOR<BATT_MONITOR>`       TYPE
-=================================     =============================
+=================================     ========================================================
 0 	                                    Disabled
 3 	                                    Analog Voltage Only
 4 	                                    Analog Voltage and Current
@@ -59,21 +59,22 @@ These are selected via the ``BATTx_MONITOR`` parameter for each battery monitor.
 7 	                                    :ref:`SMBus-Generic<common-smart-battery-landingpage>`
 8 	                                    DroneCAN-BatteryInfo
 9 	                                    :ref:`ESC<blheli32-esc-telemetry>`
-10 	                                    Sum Of Selected Monitors, see BATTx_SUM_MASK parameter
-11 	                                    :ref:`FuelFlow <common-fuel-sensors>`
-12 	                                    :ref:`FuelLevelPWM <common-fuel-sensors>`
-13 	                                    :ref:`SMBUS-SUI3<common-smart-battery-landingpage>`
-14 	                                    :ref:`SMBUS-SUI6<common-smart-battery-landingpage>`
-15              	                    NeoDesign
-16              	                    SMBus-Maxell
-17 	                                    :ref:`Generator-Elec<common-ie650-fuelcell>`
-18 	                                    :ref:`Generator-Fuel<common-ie650-fuelcell>`
-19 	                                    :ref:`Rotoye<common-smart-battery-rotoye>`
-20 	                                    MPPT
-21 	                                    INA2XX
-22 	                                    LTC2946
-23 	                                    Torqeedo Motor Controller
-=================================     =============================
+10 	                                 Sum Of Selected Monitors, see BATTx_SUM_MASK parameter
+11 	                                 :ref:`FuelFlow <common-fuel-sensors>`
+12 	                                 :ref:`FuelLevelPWM <common-fuel-sensors>`
+13 	                                 :ref:`SMBUS-SUI3<common-smart-battery-landingpage>`
+14 	                                 :ref:`SMBUS-SUI6<common-smart-battery-landingpage>`
+15              	                     NeoDesign
+16              	                     SMBus-Maxell
+17 	                                 :ref:`Generator-Elec<common-ie650-fuelcell>`
+18 	                                 :ref:`Generator-Fuel<common-ie650-fuelcell>`
+19 	                                 :ref:`Rotoye<common-smart-battery-rotoye>`
+20 	                                 MPPT
+21 	                                 INA2XX
+22 	                                 LTC2946
+23 	                                 Torqeedo Motor Controller
+24 	                                 :ref:`FuelLevelAnalog <common-fuel-sensors>`
+=================================     ========================================================
 
 
 .. note:: Once a specific monitor type is selected, parameters associated with that type of monitor will be revealed once parameters are refreshed. Scales and offsets, bus addresses, etc. will be displayed, as appropriate, for that monitor.

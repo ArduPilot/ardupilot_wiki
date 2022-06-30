@@ -22,6 +22,7 @@ Exclusions for: KakuteF4, Sparky2, OMNIBUSF7V2, KakuteF7, KakuteF7 Mini, older v
 - External AHRS
 - FETtec ESCs
 - INA2XX Battery Monitors
+- Fuel Level and Fuel Flow Battery Monitors
 - Plane Deep Stall Landing
 - Torqeedo Motor Control
 - MAVLink frame rate control from SD file
