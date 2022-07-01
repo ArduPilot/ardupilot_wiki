@@ -45,6 +45,8 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="plane"]
     Drive Calculator Motor/Propeller Analyzer <drivecalculator-guide>
 [/site]
+    DroneCAN Adapter Node <common-uavcan-adapter-node>
+    DroneCAN Peripherals <common-uavcan-peripherals>
     First Person View Video <common-fpv-first-person-view>
     Fuel Flow and Level Sensors <common-fuel-sensors>
     Generators <common-generators>
@@ -83,8 +85,6 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Start/Stop Switch <startstop-switch>
 [/site]
     Telemetry Radio <common-telemetry-landingpage>
-    DroneCAN Adapter Node <common-uavcan-adapter-node>
-    DroneCAN Peripherals <common-uavcan-peripherals>
     Video (High Definition) <common-video-landingpage>
 [site wiki="copter"]
     Winch <common-daiwa-winch>
