@@ -77,6 +77,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
     Rangefinders (Sonar, Lidar, Depth Cameras) <common-rangefinder-landingpage>
     Received Signal Strength Indication (RSSI) <common-rssi-received-signal-strength-indication>
     Relay Switch <common-relay>
+    Remote Id (aka Drone Id) <common-remoteid>
     RPM Sensor <common-rpm>
     Safety Switch <common-safety-switch-pixhawk>
     Servos <common-servo-landingpage>
