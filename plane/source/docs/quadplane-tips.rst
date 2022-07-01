@@ -57,10 +57,10 @@ However, there is a better way for non-tailsitter QuadPlanes. If mechanically po
 Trimming VTOL "Level" thru Accelerometer LeveL only Calibration
 ---------------------------------------------------------------
 
-There is another, slightly more complex, way to set the VTOL stance pitch trim without using :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>`:
+There is another, slightly more complex, way to set the VTOL stance pitch trim without using :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>`, in tailsitters only:
 
 - Do the normal fixed wing accelerometer calibration. But read and save the :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` value after the calibration.
-- Place the vehicle in VTOL stance and set the mode to QSTABILIZE. Be sure that  :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` = "0" or the next step will fail.
+- Place the vehicle in VTOL stance (nose pointing veritically) and set the mode to QSTABILIZE. Be sure that  :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` = "0" or the next step will fail.
 - Do a "LEVEL only" accelerometer calibration. In Mission Planner there is a button for this under the Accelerometer calibration. In MAVProxy, its the "ahrstrim" command.
 - Restore the previously noted and saved :ref:`AHRS_TRIM_Y<AHRS_TRIM_Y>` value to restore the fixed wing attitude pitch trim.
 
