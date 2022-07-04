@@ -10,10 +10,13 @@ Setup Guide for MakeFlyEasy Believer
 
 The `MakeFlyEasy Believer <http://www.makeflyeasy.com/>`__ is a relatively low-cost dual motor plane which makes it easy to launch and/or carry a significant payload.
 
-This page provides details on how to assemble and configure this vehicle or you may choose to buy a ready-to-fly Believer from `KG aviation <http://kgaviation.com/store/p13/The_Believer_.html>`__
+Where to Buy
+============
 
-Parts List
-==========
+`AliExpress <https://www.aliexpress.com/item/30000002380639.html?pdp_npi=2%40dis%21USD%21US%20%24254.00%21US%20%24254.00%21%21%21%21%21%402132f35616569161726256357e2890%2120000000154362020%21sh&spm=a2g0o.store_pc_home.productList_2002152534576.subject_6&gatewayAdapt=4itemAdapt>`__
+
+Recommended Parts List
+======================
 
 The manufacturer recommended parts can be found by clicking the bottom left icon on the `MakeFlyEasy <http://www.makeflyeasy.com/>`__ home page but this list is also expanded upon below.
 
