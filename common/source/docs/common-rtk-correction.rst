@@ -90,7 +90,8 @@ This requires configuration of the Base RTK GPS with the UBlox configuration too
 
 Setup
 -----
- Experiments underway as of 7/2022 to determine data rate requirements of link.
+
+See `blog post on setup <https://discuss.ardupilot.org/t/simple-portable-rtk-base-station>`__
 
 Acknowledgment
 ==============
