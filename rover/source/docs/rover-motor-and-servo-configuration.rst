@@ -5,12 +5,12 @@ Motor and Servo Configuration
 =============================
 
 This page describes the few parameters that should be set in order to support the steering and throttle method being used.
-This page is closely related to the :ref:`Motor and Servo Connections <rover-motor-and-servo-connections>` page which describes the physical connections between the autopilot, motors and servos.
+This page is closely related to the :ref:`Motor and Servo Connections <rover-motor-and-servo-connections>` page which describes the physical connections between the autopilot, motors, and servos.
 
 Separate Steering and Throttle
 ------------------------------
 
-For separate steering and throttle vehicles these parameters values should be set (they should actually be set by default):
+For separate steering and throttle vehicles these parameters values should be set (they should already be set by default):
 
 - :ref:`SERVO1_FUNCTION <SERVO1_FUNCTION>` = 26 (GroundSteering)
 - :ref:`SERVO3_FUNCTION <SERVO3_FUNCTION>` = 70 (Throttle)
@@ -50,8 +50,8 @@ Motor Driver Types
 At least three different Motor Driver (aka ESC) types are supported which allows using ArduPilot with most motor drivers.  The :ref:`MOT_PWM_TYPE <MOT_PWM_TYPE>` parameter should be used to ensure the output from the autopilot board matches the input required by the motor driver.
 
 - "Normal" is the most common and involves sending PWM values normally between 1000 and 2000 (1ms ~ 2ms)
-- ":ref:`Brushed With Relay <common-brushed-motors>`" is for brushed motor drivers that use a :ref:`relay pin <common-relay>` to indicate whether it should rotate forwards or backwards.
-- "Brushed BiPolar" is for brushed motor drivers that, a bit like "Normal" pwm interpret a low PWM values for reverse, a high PWM value for forward
+- ":ref:`Brushed With Relay <common-brushed-motors>`" is for brushed motor drivers that use a :ref:`relay pin <common-relay>` to indicate whether it should rotate forward or backward.
+- "Brushed BiPolar" is for brushed motor drivers that, a bit like "Normal" PWM. These devices interpret a low PWM value for reverse, a high PWM value for forward.
 
 ESC Configuration
 -----------------
@@ -62,7 +62,7 @@ Some ESCs support three "Running Models":
 #. Forward and reverse with brake
 #. Forward and Reverse
 
-For Rover to have full and straight forward control of the throttle it is best to set the "Running Model" to the 3rd option, "Forward and Reverse".  An ESC programming card compatible with the ESC can normally be used to change the ESC's configuration.
+For Rover to have full and straightforward control of the throttle it is best to set the "Running Model" to the 3rd option, "Forward and Reverse".  An ESC programming card compatible with the ESC can normally be used to change the ESC's configuration.
 
 .. _rover-motor-and-servo-configuration-testing:
 
@@ -83,7 +83,7 @@ The Mission Planner (and perhaps other GCSs) can be used to test the direction o
   - for rovers with separate steering and throttle, pushing the "Test motor A" button should cause the wheels to turn forward, "Test motor B" should cause steering to turn right.
   - for rovers with skid steering, "Test motor C" should cause the left wheel to turn forward.  "Test motor D" should cause the right wheel to turn forward.
 - If the motors or steering do not move in the correct direction change the appropriate ``SERVOx_REVERSED`` value and try again.
-- if a "command rejected" message appears or the motors or steering do not respond to the test, the cause may be written in the Mission Planner's Flight Data >> Messages tab (see bottom left of window).  Common causes included the radio calibration has not been performed or the ``SERVOx_FUNCTION`` parameters have not been set correctly.
+- if a "command rejected" message appears or the motors or steering do not respond to the test, the cause may be written in the Mission Planner's Flight Data >> Messages tab (see bottom left of the window).  Common causes include the radio calibration having not been performed or the ``SERVOx_FUNCTION`` parameters having not been set correctly.
 
 .. _rover-motor-and-servo-min-throttle:
 
@@ -97,3 +97,10 @@ To fix the dead zone, open the motor test window in Mission Planner, as mentione
 
 ..  youtube:: 5ySmzuqE_bg
     :width: 100%
+
+Steering Speed scaling
+----------------------
+
+The amount of steering that a vehicle can apply without tipping due to lateral acceleration can be adjusted by changing :ref:`MOT_SPD_SCA_BASE<MOT_SPD_SCA_BASE>`. Speeds below this value will have the full steering angle. Speeds above will have the maximum steering angle reduced by the fraction :ref:`MOT_SPD_SCA_BASE<MOT_SPD_SCA_BASE>` / GroundSpeed.
+
+This scaling is used at all times in Acro, Hold, Steering, Auto, RTL, Smart RTL, and Follow. In Guided mode, it is used except when direct steering and throttle are provided as input commands. In Manual mode, the use of this scaling is enabled by the first bit of :ref:`MANUAL_OPTIONS<MANUAL_OPTIONS>`.
