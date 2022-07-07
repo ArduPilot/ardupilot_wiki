@@ -23,6 +23,9 @@ Stand-alone devices:
 - `Aerobits idME+ <https://www.aerobits.pl/product/idme-remoteid/>`__
 - `EAMS Robotics remote id (Japan) <http://www.eams-robo.co.jp/remoteid.html>`__
 
-The `OpenDroneID OSM <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__ android app can be used to check the Remote Id is working (`source code is here <https://github.com/opendroneid/receiver-android>`__)
+Other references:
+
+- The `OpenDroneID OSM <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__ android app can be used to check the Remote Id is working (`source code is here <https://github.com/opendroneid/receiver-android>`__)
+- `OpenDroneID list of remote id devices for the US and EU <https://github.com/opendroneid/receiver-android/blob/master/transmitter-devices.md>`__
 
 If you know if other available devices please `add a comment in this issue <https://github.com/ArduPilot/ardupilot_wiki/issues/4414>`__
