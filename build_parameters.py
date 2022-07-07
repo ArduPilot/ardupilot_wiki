@@ -177,7 +177,7 @@ def fetch_releases(firmware_url, vehicles):
             return links
     ######################################################################################
 
-    debug("Cleanning fetched links for wanted folders")
+    debug("Cleaning fetched links for wanted folders")
     stableFirmwares = []
     for f in vehicles:
         page_links = fetch_vehicle_subfolders(firmware_url + f)

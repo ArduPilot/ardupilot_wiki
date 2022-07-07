@@ -984,7 +984,7 @@ DShot capabiltiy can be used on the first four AUX pins.
 More Information
 ================
 
-For more information and instructions on setting up and using the AIRLink system see  `AIRLink Documentaion  <https://docs.sky-drones.com/airlink/>`__
+For more information and instructions on setting up and using the AIRLink system see  `AIRLink Documentation  <https://docs.sky-drones.com/airlink/>`__
 
 For technical help, support and customization please get in touch at `Sky-Drones contact page  <https://sky-drones.com/contact-us>`__
 

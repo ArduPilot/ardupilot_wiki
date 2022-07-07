@@ -22,14 +22,14 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Setting environement
+      - name: Setting environment
         run: |
           mkdir /tmp/web
           ./Sphinxsetup.sh
       - name: Check image formats
         run: |
           find ./images/ -exec file {} + | grep RIFF -vzq
-      - name: Check python flake8 formating
+      - name: Check python flake8 formatting
         run : |
           set -eux -o pipefail
           flake8 .

@@ -87,7 +87,7 @@ The following parameters are used to configure ADS-B out:
 -  :ref:`ADSB_ICAO_ID <ADSB_ICAO_ID>` : ICAO_ID unique vehicle identification number of this aircraft. This is a integer limited to 24bits. If set to 0 then one will be randomly generated. If set to -1 then static information is not sent, transceiver is assumed pre-programmed.
 -  :ref:`ADSB_EMIT_TYPE <ADSB_EMIT_TYPE>` : ADSB classification for the type of vehicle emitting the transponder signal. Default value is 14 (UAV).
 -  :ref:`ADSB_LEN_WIDTH <ADSB_LEN_WIDTH>` : Aircraft length and width dimension options in Length and Width in meters. In most cases, use a value of 1 for smallest size.
--  :ref:`ADSB_OFFSET_LAT <ADSB_OFFSET_LAT>` : GPS antenna lateral offset. This describes the physical location offest from center of the GPS antenna on the aircraft.
+-  :ref:`ADSB_OFFSET_LAT <ADSB_OFFSET_LAT>` : GPS antenna lateral offset. This describes the physical location offset from center of the GPS antenna on the aircraft.
 -  :ref:`ADSB_OFFSET_LON <ADSB_OFFSET_LON>` : GPS antenna longitudinal offset. This is usually set to 1, Applied By Sensor
 -  :ref:`ADSB_RF_SELECT <ADSB_RF_SELECT>` : Transceiver RF selection for Rx enable and/or Tx enable. This only effects devices that can Tx and/or Rx. Rx-only devices override this to always be Rx-only.
 -  :ref:`ADSB_SQUAWK <ADSB_SQUAWK>` : Squawk/Transponder (Mode 3/A) code that is braodcasted to ATC that is usually assigned by your ATC for a given flight. In the USA/Canada the default squawk code is for VFR which is 1200. Most parts of Europe and Australia use 7000. If an invalid octal number is set then it will be reset to 1200.
