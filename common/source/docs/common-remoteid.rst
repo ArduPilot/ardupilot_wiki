@@ -16,11 +16,11 @@ MAVLink enabled devices that connect to the autopilot:
 
 - `Aerobits idME <https://www.aerobits.pl/product/idme/>`__
 - `BlueMark DroneBeacon MAVLink (EU, US, Japan) <https://dronescout.co/dronebeacon-mavlink-remote-id-transponder/>`__ (support expected to be added in ArduPilot-4.3.0)
+- `Dronetag Mini <https://dronetag.cz/en/products/mini/>`__
 
 Stand-alone devices:
 
 - `Aerobits idME+ <https://www.aerobits.pl/product/idme-remoteid/>`__
-- `Dronetag Mini <https://dronetag.cz/en/products/mini/>`__
 - `EAMS Robotics remote id (Japan) <http://www.eams-robo.co.jp/remoteid.html>`__
 
 The `OpenDroneID OSM <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__ android app can be used to check the Remote Id is working (`source code is here <https://github.com/opendroneid/receiver-android>`__)
