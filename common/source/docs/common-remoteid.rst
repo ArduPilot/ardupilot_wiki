@@ -15,7 +15,7 @@ Remote IDs are becoming a legal requirement in some countries.  Below is a list 
 MAVLink enabled devices that connect to the autopilot:
 
 - `Aerobits idME <https://www.aerobits.pl/product/idme/>`__
-- `BlueMark DroneBeacon MAVLink (EU, US, Japan) <https://dronescout.co/dronebeacon-mavlink-remote-id-transponder/>`__ (support expected to be added in ArduPilot-4.3.0)
+- `BlueMark DroneBeacon MAVLink (EU, US) <https://dronescout.co/dronebeacon-mavlink-remote-id-transponder/>`__ (support expected to be added in ArduPilot-4.3.0)
 - `Dronetag Mini <https://dronetag.cz/en/products/mini/>`__
 
 Stand-alone devices:
