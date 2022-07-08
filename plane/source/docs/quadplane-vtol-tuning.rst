@@ -9,7 +9,7 @@ This section provides an overview of how to tune various QuadPlane VTOL paramete
 Overview
 ========
 
-The default parameters controlling the VTOL motors PID loops should allow most frames to initially hover ucontrollably, if the motors' mechanics are setup and aligned correctly and escs calibrated. 
+The default parameters controlling the VTOL motors PID loops should allow most frames to initially hover controllably, if the motors' mechanics are setup and aligned correctly and escs calibrated. 
 
 The most important parameters controlling stability are the Roll/Pitch/Yaw PIDS. For altitude control, the vertical position controller's parameters and Motor Thrust Scaling parameters, and for navigation/loiter the Loiter controllers's parameters
 
