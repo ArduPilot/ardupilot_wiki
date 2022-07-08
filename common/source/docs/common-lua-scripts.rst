@@ -38,6 +38,8 @@ Getting Started
 
 - **Applets** which are scripts that require no user editing before use, can be found `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`_ . Each of these has a .md file of the same name detailing its capabilities, use, and setup. For example, there is a script to allow a user to change a SmartAudio capable video transmitter's output power level from a transmitter channel and set its power-up value via parameter.
 
+.. note:: To download from the github locations, first click the script name, then select "raw" in upper right corner, then right mouse click to "Save Page as" a text file with the ".lua" file extension
+
 - Up to 8 RC channels can be assigned as scripting inputs/controls using the``RCX_OPTION`` = "300-307" options. In addition, four dedicated script parameters are available: :ref:`SCR_USER1<SCR_USER1>` thru :ref:`SCR_USER4<SCR_USER4>` and are accessed with the same method as any other parameter, but these are reserved for script use.
 - When the autopilot is powered on it will load and start all scripts.
 - Messages and errors are sent to the ground station and, if using Mission Planner, can be viewed in the Data screen's "Messages" tab.
