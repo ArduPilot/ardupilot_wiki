@@ -328,6 +328,8 @@ Using the Quick Tune LUA Applet to Automate the Manual Tune
 
 For systems using an autopilot with sufficient memory to run :ref:`LUA scripts <common-lua-scripts>`, such as F7 and H7 based controllers, this process has been automated via a LUA Applet.
 
+Be sure that scripting has been setup and sufficient memory has been allocated, as explained in :ref:`LUA scripts <common-lua-scripts>`.
+
 See the `Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__.
 
 Step 11: Evaluating the aircraft tune
