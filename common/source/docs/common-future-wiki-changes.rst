@@ -25,3 +25,17 @@ The idle governor allows the autopilot to adjust the throttle to maintain an RPM
 The redline governor will slowly reduce the throttle if the RPM remains above the given RPM value. Generally, this RPM value is provided by the manufacturer of the engine. If the commanded throttle drops faster or lower than the point the governor started, then the governor will be released and normal control of the throttle will return to normal throttle response. A warning message will appear on the GCS. Setting :ref:`ICE_OPTIONS<ICE_OPTIONS>` bit 1 allows disabling the throttle actions of the redline governor, but still displays the GCS warning message.
 
 - :ref:`ICE_REDLINE_RPM<ICE_REDLINE_RPM>` Maximum RPM for the engine provided by the manufacturer. A value of 0 disables this feature.
+
+Add analog fuel level sensor
+============================
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/4413
+
+[site wiki="rover"]
+
+Add info about steering speed scaling option
+============================================
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/4423
+
+[/site]
