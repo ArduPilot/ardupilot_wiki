@@ -7,7 +7,7 @@ Accelerometer Calibration
 [copywiki destination="copter,plane,rover,planner,blimp"]
 
 This article shows how to perform basic accelerometer calibration (using
-*Mission Planner*).
+*Mission Planner*). The accelerometers in the autopilot must be calibrated to correct for their bias offsets in all three axes, as well as any off axis variations.
 
 .. attention::
 
@@ -29,7 +29,7 @@ Calibration steps
 
       Mission Planner: Calibrate Acceleration
 
-- Click **Calibrate Accel** to start the calibration.
+- Click **Calibrate Accel** to start the full 3-axis calibration.
 
    *Mission Planner* will prompt you to place the vehicle each
    calibration position. Press any key to indicate that the autopilot is
@@ -46,9 +46,11 @@ Calibration steps
    It is important that the vehicle is kept still immediately after pressing the key for each step. This is more important than getting the angle exactly right, ie. left being 90deg to horizontal, etc. Except for the first "LEVEL", the positions can be within 20 degs of being exact. **Being still in each position as you press the key is much more important.**
    
    -  You should calibrate the board mounted in the vehicle if possible. 
-   -  You may need to calibrate the board before it is mounted if the size/shape of the vehicle makes this difficult.
+   -  However, you may need to calibrate the board before it is mounted if the size/shape of the vehicle makes this difficult.
    -  The level position is the most important to get right as this will be the attitude that your controller considers level while flying.
-   -  You can recalibrate LEVEL using Mission Planner, after you have installed the flight controller and are ready to fly.
+   -  You can recalibrate this Level position using Mission Planner, after you have installed the flight controller and are ready to fly. Use the **Calibrate Level** button to do this, holding the vehicle in its level flying attitude.
+
+.. note:: this **Calibrate Level** operation can only correct up to a 10 degree difference between the initial calibration and the final position in the vehicle, and only corrects pitch and roll differences, not yaw.
 
 [site wiki="plane"]
    .. tip:: For planes, the "level" angle for pitch is important for steady altitude flight. See :ref:`tuning-cruise` for more details.
@@ -70,6 +72,12 @@ Calibration steps
 
 .. note:: If your autopilot has a built-in IMU heater, then it is recommended that the :ref:`common-imutempcal` also be done. Some autopilots have this calibration done at the factory in which case, this calibration need not be done.
 
+Simple Calibration
+==================
+
+Sometimes, for very large vehicles, its not easy to do the full 3-axis calibration. In this case, the **Simple Accel Cal** can be done with the vehicle held still and in level attitude. This only calibrates the main offsets of the accelerometers, not the minor off axis variations, so its not ideal in terms of optimal performance, but is sometimes an acceptable compromise.
+
+.. note:: this is **NOT** the same as the **Calibrate Level** function. In order to use that function, either a full 3 axis, or simple calibration, must be done first!
 
 Video demonstration (Copter)
 ============================
