@@ -533,6 +533,43 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :align: center
             :target:  https://www.freespaceoperations.com.au/
 
-      -  ..
+      - .. image:: ../../../images/supporters/supporters_RevolutionAerospace.png
+            :width: 250px
+            :align: center
+            :target:  www.revn.aero
+
+    *
+      - .. image:: ../../../images/supporters/supporters_Bralca.png
+            :width: 250px
+            :align: center
+            :target:  www.bralca.com
+
+      - .. image:: ../../../images/supporters/supporters_Zhongke.jpg
+            :width: 250px
+            :align: center
+            :target:  https://www.hnwdhk.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_AVCRM.png
+            :width: 250px
+            :align: center
+            :target:  avcrm.net
+
+      - .. image:: ../../../images/supporters/supporters_MMC.jpg
+            :width: 250px
+            :align: center
+            :target:  www.mmcuav.com/
+
+    *
+      - .. image:: ../../../images/supporters/supporters_soleon.jpg
+            :width: 250px
+            :align: center
+            :target:  www.soleon.it
+
+      - .. image:: ../../../images/supporters/supporters_dronelogbook.png
+            :width: 250px
+            :align: center
+            :target:  https://www.dronelogbook.com/
+
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
