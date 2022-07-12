@@ -7,7 +7,7 @@ Accelerometer Calibration
 [copywiki destination="copter,plane,rover,planner,blimp"]
 
 This article shows how to perform basic accelerometer calibration (using
-*Mission Planner*). The accelerometers in the autopilot must be calibrated to correct for their bias offsets in all three axes, as well as any off axis variations.
+*Mission Planner*). The accelerometers in the autopilot must be calibrated to correct for their bias offsets in all three axes, as well as any off-axis variations.
 
 .. attention::
 
@@ -15,7 +15,7 @@ This article shows how to perform basic accelerometer calibration (using
 
 .. important::
 
-   Accelerometer calibration cannot be performed while vehicle is armed. 
+   Accelerometer calibration cannot be performed while the vehicle is armed. 
 
 Calibration steps
 =================
@@ -31,24 +31,21 @@ Calibration steps
 
 - Click **Calibrate Accel** to start the full 3-axis calibration.
 
-   *Mission Planner* will prompt you to place the vehicle each
-   calibration position. Press any key to indicate that the autopilot is
-   in position and then proceed to the next orientation.
+   *Mission Planner* will prompt you to place the vehicle on each axis during the calibration. Press any key to indicate that the autopilot is in position and then proceed to the next orientation.
 
-   The calibration positions are: level, on right side, left side, nose
-   down, nose up and on its back.
+   The calibration positions are: level, right side, left side, nose down, nose up, and on its back.
 
    .. figure:: ../../../images/accel-calib-positions-e1376083327116.jpg
       :target: ../_images/accel-calib-positions-e1376083327116.jpg
 
       Accelerometer Calibration Positions (Copter)
 
-   It is important that the vehicle is kept still immediately after pressing the key for each step. This is more important than getting the angle exactly right, ie. left being 90deg to horizontal, etc. Except for the first "LEVEL", the positions can be within 20 degs of being exact. **Being still in each position as you press the key is much more important.**
+   The vehicle must be kept still immediately after pressing the key for each step. This is more important than getting the angle exactly right, ie. left being 90deg to horizontal, etc. Except for the first "LEVEL", the positions can be within 20 degrees of being exact. **Being still in each position as you press the key is much more important.**
    
    -  You should calibrate the board mounted in the vehicle if possible. 
    -  However, you may need to calibrate the board before it is mounted if the size/shape of the vehicle makes this difficult.
    -  The level position is the most important to get right as this will be the attitude that your controller considers level while flying.
-   -  You can recalibrate this Level position using Mission Planner, after you have installed the flight controller and are ready to fly. Use the **Calibrate Level** button to do this, holding the vehicle in its level flying attitude.
+   -  You can recalibrate this Level position using Mission Planner after you have installed the flight controller and are ready to fly. Place the vehicle in its level flying attitude and use the **Calibrate Level** button.
 
 .. note:: this **Calibrate Level** operation can only correct up to a 10 degree difference between the initial calibration and the final position in the vehicle, and only corrects pitch and roll differences, not yaw.
 
@@ -75,9 +72,9 @@ Calibration steps
 Simple Calibration
 ==================
 
-Sometimes, for very large vehicles, its not easy to do the full 3-axis calibration. In this case, the **Simple Accel Cal** can be done with the vehicle held still and in level attitude. This only calibrates the main offsets of the accelerometers, not the minor off axis variations, so its not ideal in terms of optimal performance, but is sometimes an acceptable compromise.
+Sometimes, for very large vehicles, it's not easy to do the full 3-axis calibration. In this case, the **Simple Accel Cal** can be done with the vehicle held still and in a level attitude. This only calibrates the main offsets of the accelerometers, not the minor off-axis variations, so it's not ideal in terms of optimal performance, but is sometimes an acceptable compromise.
 
-.. note:: this is **NOT** the same as the **Calibrate Level** function. In order to use that function, either a full 3 axis, or simple calibration, must be done first!
+.. note:: This is **NOT** the same as the **Calibrate Level** function. To use that function, either a full 3-axis or simple calibration must be done first!
 
 Video demonstration (Copter)
 ============================
