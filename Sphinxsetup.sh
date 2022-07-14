@@ -16,7 +16,7 @@ if [ ${DISTRIBUTION_ID} = 'Ubuntu' ]; then
 fi
 
 sudo apt-get -y update
-sudo apt-get install -y unzip git imagemagick curl wget make python3
+sudo apt-get install -y unzip git imagemagick curl wget make python3 texlive-latex-recommended texlive-fonts-recommended tex-gyre texlive-latex-extra latexmk fonts-freefont-otf
 
 # Install packages release specific
 if [ ${DISTRIBUTION_CODENAME} = 'bionic' ]; then
