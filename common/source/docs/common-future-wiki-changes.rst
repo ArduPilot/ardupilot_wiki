@@ -26,11 +26,6 @@ The redline governor will slowly reduce the throttle if the RPM remains above th
 
 - :ref:`ICE_REDLINE_RPM<ICE_REDLINE_RPM>` Maximum RPM for the engine provided by the manufacturer. A value of 0 disables this feature.
 
-Add analog fuel level sensor
-============================
-
-see https://github.com/ArduPilot/ardupilot_wiki/pull/4413
-
 [site wiki="rover"]
 
 Add info about steering speed scaling option
