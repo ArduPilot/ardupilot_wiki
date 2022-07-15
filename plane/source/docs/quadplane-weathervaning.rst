@@ -48,6 +48,8 @@ roll/pitch". If the aircraft needs hold roll to the right in order to hold
 position then it will turn in that direction on the assumption that
 the right roll is needed in order to hold against the wind (assuming nose into the wind). Similarly, for Side Into the Wind, it will use the pitch angle and yaw appropriately, trying to zero the pitch required to hold position.
 
+.. note:: by default, weathervaning does not use pitch, only roll. This is to prevent unwanted continuous yawing if the hover attitude has not been trimmed with :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` to hover, in place, with no wind. If this **has** been done, then pitch driven weathervaning can be enabled by setting :ref:`Q_WVANE_OPTIONS<Q_WVANE_OPTIONS>` bit 0 to "1". This will speed weathervaning if positioned with the wind blowing from behind (ie mostly being held in position with pitch, not roll). This does not affect Side Into Wind, it always uses pitch, and :ref:`Q_TRIM_PITCH<Q_TRIM_PITCH>` must be properly set for good operation.
+
 How quickly the aircraft yaws is determined by the :ref:`Q_WVANE_GAIN<Q_WVANE_GAIN>`
 parameter. It converts the lean angle into degs/sec of yaw. A good value to start with is 1 (1 degree roll = 1 deg/sec yaw). Higher values will make
 the aircraft turn into the roll more quickly. If the value is too high
