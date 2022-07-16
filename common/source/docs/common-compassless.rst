@@ -14,16 +14,16 @@ Operation without a compass has been possible for Plane for a long time. However
 Align Yaw to GPS (Plane only)
 =============================
 
-On Plane, a steady GPS heading is used after takeoff to align the /attitude/velocity/position/heading estimation filters (EKFs) for yaw. This usually occurs a few seconds after takeoff on Planes without compass. However, this approach cannot be used for VTOL navigation, since it needs to be accurate very shortly after takeoffs with no GPS velocity or heading inputs.
+On Plane, a steady GPS heading is used after takeoff to align the /attitude/velocity/position/heading estimation filters (EKFs) for yaw. This usually occurs a few seconds after takeoff on Planes without compass. However, this approach cannot be used for Quadplane's VTOL navigation, since it needs to be accurate very shortly after takeoffs with no GPS velocity or heading inputs.
 
 GSF
 ===
 
 ArduPilot 4.1 (and higher) supports a Gaussian Sum Filter (GSF) which takes IMU and GPS inputs to compute a probable heading, if a yaw source (like a compass) is unavailable, or unhealthy.
 
-.. note:: In testing so far, the accuracy is quite acceptable, but this is still considered experimental and more experience and test flights by the community are required. Also, currently, it does not function well for QuadPlane VTOL tailsitters, since their nose is pointed vertically in VTOL flight. Compasses are still recommended for Tailsitters.
+.. note:: Currently, it does not function well for QuadPlane VTOL tailsitters, since their nose is pointed vertically in VTOL flight. Compasses are still recommended for Tailsitters.
 
-.. note:: GSF depends on good velocity reports from the GPS. Do not attempt with older generation GPS, use at least UBlox M8 or equivalent performance GPS. Also, be sure GPS view of the sky is unobstructed throughout the flight. Otherwise, poor heading estimation will result.
+.. note:: GSF depends on good velocity reports from the GPS. Do not attempt with older generation GPSes, and use at least UBlox M8 or equivalent performance GPSes. Also, be sure GPS view of the sky is unobstructed throughout the flight. Otherwise, poor heading estimation will result. On Plane, if the GPS accuracy is impaired by interference from other nearby vehicle devices (like cameras, etc.), GSF can result in poorer performance than relying solely on Align Yaw to GPS heading, above. In those cases, it may be better to disable GSF use by setting the :ref:`EK3_GSF_USE_MASK<EK3_GSF_USE_MASK>` = 0.
 
 Setup
 -----
