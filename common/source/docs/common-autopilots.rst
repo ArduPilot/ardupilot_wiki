@@ -68,6 +68,7 @@ Closed hardware
     Mamba Basic F405 mk3 <common-mamba-basic-mk3>
     Mateksys F405-SE <common-matekf405-se>
     Mateksys F405-STD and variants* <common-matekf405>
+    Mateksys F405 TE Family <common-matekf405-te>
     Mateksys F405-Wing* <common-matekf405-wing>
     Mateksys F765-Wing <common-matekf765-wing>
     Mateksys F765-WSE <common-matekf765-wse>
