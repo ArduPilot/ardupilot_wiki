@@ -12,6 +12,8 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
+    Holybro Pixhawk6X <common-holybro-pixhawk6X>
+    Holybro Pixhawk6C <common-holybro-pixhawk6C>
     Other wiki changes <common-future-wiki-changes>
 
 
