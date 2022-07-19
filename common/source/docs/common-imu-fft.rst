@@ -16,9 +16,9 @@ ArduPilot comes pre-configured with appropriate defaults for all FFT settings. T
 
 - With FFT enabled it is best to first perform a test flight to check that your aircraft's particular noise frequencies are being captured and to monitor CPU load. See :ref:`Initial Analysis Flight <common-imu-fft-test-flight>`. Normally, results from this will show clear noise recognition and acceptable cpu loading, and  then you can use the FFT to drive the :ref:`harmonic notch<common-imu-notch-filtering>` by setting these parameters:
 
-- Set :ref:`INS_HNTCH_ENABLE <INS_HNTCH_ENABLE>` = 1 to enable the harmonic notch
-- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 4 to use the FFT detected frequency for controlling the harmonic notch frequency.
-- Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` = 1 to set the harmonic notch reference value, which for FFT analysis generally means no scaling
+- Set :ref:`INS_HNTCH_ENABLE <INS_HNTCH_ENABLE>` and/or :ref:`INS_HNTC2_ENABLE <INS_HNTC2_ENABLE>` = 1 to enable the harmonic notch = 1 to enable the harmonic notch
+- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` and/or :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` = 4 to use the FFT detected frequency for controlling the harmonic notch frequency.
+- Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = 1 to set the harmonic notch reference value, which for FFT analysis generally means no scaling
 
 For most uses with other FFT related advanced parameters at their default, this is all that is required. The user can do optimization of the filtering setup by analyzing the test flight logs and adjusting notch bandwidth, if desired, by following the :ref:`In-flight FFT Advanced Setup <common-imu-fft-advanced-setup>` instructions.
 

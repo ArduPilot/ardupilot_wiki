@@ -17,7 +17,7 @@ A component of the harmonic notch is the bandwidth of the notch and the in-fligh
 
 You can see that the bandwidth estimate is roughly 125Hz. Use this as follows:
 
-- Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` = *bandwidth estimate*
+- Set :ref:`INS_HNTCH_BW <INS_HNTCH_BW>` and/or :ref:`INS_HNTC2_BW <INS_HNTC2_BW>` = *bandwidth estimate*
 
 Post Configuration Flight and Post-Flight Analysis
 ==================================================
@@ -32,24 +32,24 @@ Other points to check:
 Harmonic Notch Throttle Configuration Using Data from an In-Flight FFT Test Flight
 ==================================================================================
 
-It is also possible to use the in-flight FFT in a test flight to generate a precise estimates for :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>`. Then the In-Flight FFT would be disabled and the data used to setup a throttle-based center frequency for driving the dynamic harmonic notch. This has very low CPU cost with minimal latency and can be a good option for certain applications. To setup the harmonic notch this way:
+It is also possible to use the in-flight FFT in a test flight to generate a precise:ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>`:ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>`. Then the In-Flight FFT would be disabled and the data used to setup a throttle-based center frequency for driving the dynamic harmonic notch. This has very low CPU cost with minimal latency and can be a good option for certain applications. To setup the harmonic notch this way:
 
 - Set :ref:`FFT_MINHZ <FFT_MINHZ>` to the lowest value that you want the harmonic notch frequency to be set to. Typically this should be above about 50Hz to stay clear of your copter's control bandwidth.
 - Set :ref:`FFT_ENABLE <FFT_ENABLE>` = 1 to enable the FFT engine.
 - Perform a stable lengthy hover as you might do for learning the hover throttle with the .
-- Land and disarm. The learned value for :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` at hover will be in :ref:`FFT_FREQ_HOVER <FFT_FREQ_HOVER>` and the learned value for :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` to scale :ref:`FFT_MINHZ <FFT_MINHZ>` to the learned hover frequency will be in :ref:`FFT_THR_REF <FFT_THR_REF>`. The values are not transferred automatically to the harmonic notch so you should set them based on the learned values.
+- Land and disarm. The learned value for :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` at hover will be in :ref:`FFT_FREQ_HOVER <FFT_FREQ_HOVER>` and the learned value for :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` to scale :ref:`FFT_MINHZ <FFT_MINHZ>` to the learned hover frequency will be in :ref:`FFT_THR_REF <FFT_THR_REF>`. The values are not transferred automatically to the harmonic notch so you should set them based on the learned values.
 
 - Set :ref:`FFT_ENABLE <FFT_ENABLE>` = 0 to disable the FFT engine.
-- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 1 to use the throttle-based dynamic harmonic notch.
-- Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` = :ref:`FFT_MINHZ <FFT_MINHZ>`
-- Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` = :ref:`FFT_THR_REF <FFT_THR_REF>`
+- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` and/or :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` = 1 to use the throttle-based dynamic harmonic notch.
+- Set ::ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = :ref:`FFT_MINHZ <FFT_MINHZ>`
+- Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = :ref:`FFT_THR_REF <FFT_THR_REF>`
 
 Alternatively, if you wish the hover frequency to be the lowest value for the harmonic notch:
 
 - Set :ref:`FFT_ENABLE <FFT_ENABLE>` = 0 to disable the FFT engine.
-- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 1 to use the throttle-based dynamic harmonic notch.
-- Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` = :ref:`FFT_FREQ_HOVER <FFT_FREQ_HOVER>`
-- Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` = :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
+- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` and/or :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` = 1 to use the throttle-based dynamic harmonic notch.
+- Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = :ref:`FFT_FREQ_HOVER <FFT_FREQ_HOVER>`
+- Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`
 
 
 Tuning
@@ -110,7 +110,7 @@ As you can see roll is tracking quite nicely, pitch is flipping a little between
 
 In order to address this problem it is possible to set :ref:`FFT_HMNC_PEAK <FFT_HMNC_PEAK>` to 4 to track the roll-axis only or 5 to track the pitch-axis only.
 
-Finally, it is possible - as is clearly the case here - that the noisiest peaks are not necessarily harmonics of one another. In this case it is possible to configure the harmonic notch to track the frequency peaks directly by setting bit two of :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` - so to 2 if no other options are configured. This results in very accurate frequency tracking and lower noise. Here is the log from a Solo with :ref:`INS_HNTCH_OPTS <INS_HNTCH_OPTS>` set to 3 - dynamic harmonics and double notch:
+Finally, it is possible - as is clearly the case here - that the noisiest peaks are not necessarily harmonics of one another. In this case it is possible to configure the harmonic notch to track the frequency peaks directly by setting bit two of :ref:`INS_HNTCH_OPTS<INS_HNTCH_OPTS>` and/or :ref:`INS_HNTC2_OPTS<INS_HNTC2_OPTS>` - so to 2 if no other options are configured. This results in very accurate frequency tracking and lower noise. Here is the log from a Solo with :ref:`INS_HNTCH_OPTS<INS_HNTCH_OPTS>` and/or :ref:`INS_HNTC2_OPTS<INS_HNTC2_OPTS>` set to 3 - dynamic harmonics and double notch:
 
 .. image:: ../../../images/fft-large-copter-solo.png
     :target:  ../_images/fft-large-copter-solo.png
