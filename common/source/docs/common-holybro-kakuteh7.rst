@@ -107,7 +107,7 @@ Any UART can be used for RC system connections in ArduPilot also, and is compati
 FrSky Telemetry
 ===============
 
-FrSky Telemetry is supported using the Tx pin of any UART including SERIAL6/UART6 . You need to set the following parameters to enable support for FrSky S.PORT (example shows SERIAL6). Note this assumes the RC input is using default (ALT_BRD_CONFIG =0). Obviously, if using ALT_BRD_CONFIG = 1 for full duplex RC prtocols, you must a different UART for FrSky Telemetry.
+FrSky Telemetry is supported using the Tx pin of any UART including SERIAL6/UART6 . You need to set the following parameters to enable support for FrSky S.PORT (example shows SERIAL6). Note this assumes the RC input is using default (:ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 0). Obviously, if using :ref:`BRD_ALT_CONFIG<BRD_ALT_CONFIG>` = 1 for full duplex RC prtocols, you must a different UART for FrSky Telemetry.
  
   - :ref:`SERIAL6_PROTOCOL<SERIAL6_PROTOCOL>` 10
   - :ref:`SERIAL6_OPTIONS<SERIAL6_OPTIONS>` 7
