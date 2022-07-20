@@ -14,6 +14,8 @@ This lists features or changes merged in master and build in the "latest" firmwa
 
     Holybro Pixhawk6X <common-holybro-pixhawk6X>
     Holybro Pixhawk6C <common-holybro-pixhawk6C>
+    MakeFlyEasy PixSurveyA1 <common-makeflyeasy-PixSurveyA1>
+
     Other wiki changes <common-future-wiki-changes>
 
 
