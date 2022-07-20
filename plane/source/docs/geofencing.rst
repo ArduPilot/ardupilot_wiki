@@ -112,9 +112,9 @@ geo-fencing behaviour:
    breach to the GCS but take no other action.  Set to 3 to have the
    plane head to the return point on breach, but the pilot will maintain
    manual throttle control in this case.
-#. ``FENCE_MINALT`` - the minimum altitude in meters. If this is zero then
+#. :ref:`FENCE_ALT_MIN<FENCE_ALT_MIN>` - the minimum altitude in meters. If this is zero then
    you will not have a minimum altitude.
-#. ``FENCE_MAXALT`` - the maximum altitude in meters. If this is zero then
+#. :ref:`FENCE_ALT_MAX<FENCE_ALT_MAX>` - the maximum altitude in meters. If this is zero then
    you will not have a maximum altitude.
 #. ``FENCE_CHANNEL<FENCE_CHANNEL>`` (revs previous to 4.1), ``RCx_OPTION`` = 11 - the RC input channel to watch for enabling the
    geo-fence. This defaults to zero, which disables geo-fencing. You
