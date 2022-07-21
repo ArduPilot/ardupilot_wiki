@@ -126,6 +126,7 @@ Using VcXsrv to Create XWindows Displays
         * Under ``Inbound Rules`` find ``VcXsrv windows xserver`` and ensure ``Allow Connection`` is enabled for your network type ``Private``, ``Public``, or both
         * Check ``Outbound Rules`` as well
 
+.. note:: this step is not required in Win11 since it already itegrates the grahical interface into its WSL2 environment.
 
 Code Editing in WSL Using VSCode (Optional)
 -------------------------------------------
