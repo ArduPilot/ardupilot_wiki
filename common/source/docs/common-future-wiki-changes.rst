@@ -40,3 +40,5 @@ Add info on altitude control in LOITER mode
 ===========================================
 
 see https://github.com/ArduPilot/ardupilot_wiki/pull/4457
+
+[/site]
