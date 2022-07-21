@@ -19,7 +19,7 @@ Setup for building with waf using Cygwin
 
 .. note::
 
-    Cygwin is not recommended for new developers. However, building using Cygwin is necessary if you need to compile SITL binaries for Windows.
+    Cygwin is not recommended for new developers. However, building using Cygwin is sometimes usefull if you need to compile SITL binaries for Windows. However, you can create Windows SITL executables without using Cygwin, following the instructions given :ref:`here <mp-sitl-custom-code>`.
 
 #. :ref:`Install Cygwin as described here <building-setup-windows-cygwin>`
 #. :ref:`Setup Eclipse as described here <building-setup-windows-eclipse>` (optional)
