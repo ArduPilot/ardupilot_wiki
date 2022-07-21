@@ -175,6 +175,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
 - :ref:`MAV_CMD_NAV_SPLINE_WAYPOINT <mav_cmd_nav_spline_waypoint>`
 - :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
+- :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
 - :ref:`MAV_CMD_MISSION_START <mav_cmd_mission_start>`
 - :ref:`MAV_CMD_COMPONENT_ARM_DISARM <mav_cmd_component_arm_disarm>`
@@ -257,6 +258,7 @@ This list of commands was inferred from the command handler in
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
+- :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_DO_JUMP <mav_cmd_do_jump>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
@@ -302,8 +304,6 @@ Supported by: Copter, Plane, Rover.
 Navigate to the specified position.
 
 [site wiki="copter" heading="off"]
-Copter
-~~~~~~
 
 The Copter will fly a straight line to the specified latitude, longitude
 and altitude. It will then wait at the point for a specified delay time
@@ -323,29 +323,27 @@ and then proceed to the next waypoint.
    <tr>
    <td><strong>param1</strong></td>
    <td>Delay</td>
-   <td>Hold time at mission waypoint in decimal seconds - MAX 65535 seconds. (Copter/Rover only)
+   <td>Hold time at mission waypoint in integer seconds - MAX 65535 seconds.
    </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td>
    </td>
-   <td>Acceptance radius in meters (when plain inside the sphere of this radius, the waypoint is considered reached) (Plane only).
+   <td>
    </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td>
    </td>
-   <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
-   Positive value for clockwise orbit, negative value for counter-clockwise
-   orbit. Allows trajectory control.
+   <td>
    </td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
    <td></td>
-   <td>Desired yaw angle at waypoint target.(rotary wing)</td>
+   <td></td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -365,36 +363,16 @@ and then proceed to the next waypoint.
    </tbody>
    </table>
 
-Parameters 2-4 are not supported on Copter:
-
--  **Hit Rad** - is supposed to hold the distance (in meters) from the
-   target point that will qualify the waypoint as complete. This command
-   is not supported. Instead the
-   :ref:`WPNAV_RADIUS <copter:WPNAV_RADIUS>`
-   parameter should be used (see "WP Radius" field in screen shot or
-   adjust through the Standard Parameters List).  Even the WPNAV_RADIUS
-   is only used when the waypoint has a Delay. With no delay specified
-   the waypoint will be considered complete when the virtual point that
-   the vehicle is chasing reaches the waypoint. This can be 10m (or
-   more) ahead of the vehicle meaning that the vehicle will turn towards
-   the following waypoint long before it actually reaches the current
-   waypoint
--  **Yaw Ang** - is supposed to hold the resulting yaw angle in degrees
-   (0=north, 90 = east). Instead use a
-   :ref:`MAV_CMD_CONDITION_YAW <mav_cmd_condition_yaw>` command.
 
 **Mission Planner screenshots**
 
 .. figure:: ../../../images/WayPoint.jpg
    :target: ../_images/WayPoint.jpg
 
-   Copter: Mission Planner Settings forWAYPOINT command
+   Copter: Mission Planner Settings for WAYPOINT command
 [/site]
 
 [site wiki="plane" heading="off"]
-
-Plane
-~~~~~
 
 The vehicle will fly to the specified latitude, longitude and altitude.
 The waypoint is considered "complete" when Plane is within the specified
@@ -420,16 +398,15 @@ These parameters are not support by Copter.
    <td><strong>param1</strong></td>
    <td>
    </td>
-   <td>Hold time at mission waypoint in decimal seconds (Copter/Rover only).</td>
+   <td></td>
    </tr>
    <tr>
    <td><strong>param2</strong></td>
-   <td></td>
-   <td>Acceptance radius in meters (waypoint is complete when the plane is this close to the waypoint location (Plane only).</td>
+   <td>Acc radius</td>
+   <td>Acceptance radius in meters (waypoint is complete when the plane is this close to the waypoint location</td>
    </tr>
-   <tr style="color: #c0c0c0">
-   <td>param3</td>
-   <td></td>
+   <td><strong>param3</strong></td>
+   <td>Pass by</td>
    <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
    Positive value for clockwise orbit, negative value for counter-clockwise
    orbit. Allows trajectory control.</td>
@@ -437,7 +414,7 @@ These parameters are not support by Copter.
    <tr style="color: #c0c0c0">
    <td>param4</td>
    <td></td>
-   <td>Desired yaw angle at waypoint target (rotary wing).</td>
+   <td></td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -460,10 +437,6 @@ These parameters are not support by Copter.
 
 [site wiki="rover" heading="off"]
 
-Rover
-~~~~~
-
-Change the target horizontal speed and/or the vehicle's throttle.
 
 **Command parameters**
 
@@ -479,25 +452,22 @@ Change the target horizontal speed and/or the vehicle's throttle.
    <tr>
    <td><strong>param1</strong></td>
    <td>Delay</td>
-   <td>Hold time at mission waypoint in decimal seconds - MAX 65535 seconds. (Copter/Rover only)</td>
+   <td>Hold time at mission waypoint in integer seconds - MAX 65535 seconds.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
    <td></td>
-   <td>Acceptance radius in meters (when plain inside the sphere of this radius, the waypoint is considered reached) (Plane only).</td>
+   <td></td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param3</td>
    <td></td>
-   <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
-   Positive value for clockwise orbit, negative value for counter-clockwise
-   orbit. Allows trajectory control.
-   </td>
+   <td></td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
    <td></td>
-   <td>Desired yaw angle at waypoint target.(rotary wing)</td>
+   <td></td>
    </tr>
    <tr>
    <td><strong>param5</strong></td>
@@ -2001,6 +1971,67 @@ will not leave the loiter until heading toward the next waypoint.
 
 [/site]
 
+.. _mav_cmd_nav_delay:
+
+[site wiki="copter,rover"]
+MAV_CMD_NAV_DELAY
+-----------------------
+
+Supported by: Copter, Rover.
+
+After reaching this waypoint, delay the execution of the next mission command
+until either the time in seconds has elapsed or the time entered(in the future) is reached. Execution of the next mission item
+then occurs. For Copters, they will loiter until then, Rovers hold position.
+
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Time (sec)</td>
+   <td>Delay in seconds (decimal).</td>
+   </tr>
+   <td>param2</strong></td>
+   <td>Time in hours(1-24)</td>
+   <td>Delay until this hour</td>
+   </tr>
+   <td>param3</strong></td>
+   <td>Time in minutes(0-59)</td>
+   <td>Delay until this minute</td>
+   </tr>
+   <td>param4</strong></td>
+   <td>Time in seconds (0-59)</td>
+   <td>Delay until this second</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+[/site]
+
 .. _mav_cmd_do_jump:
 
 MAV_CMD_DO_JUMP
@@ -2450,11 +2481,6 @@ MAV_CMD_COMPONENT_ARM_DISARM
 ----------------------------
 
 Supported by: Copter
-
-Disarm the motors.
-
-Copter
-~~~~~~
 
 Disarm the motors.
 
