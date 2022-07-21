@@ -51,4 +51,9 @@ Add new mission command, NAV_DELAY
 
 see https://github.com/ArduPilot/ardupilot_wiki/pull/4465
 
+- On :ref:`quadplane-auto-mode` page under "AUTO VTOL Takeoff" add to end of section:
+
+In order to prevent the landing gear from dragging due to GPS noise at the beginning of the takeoff, you can set :ref:`Q_NAVALT_MIN<Q_NAVALT_MIN>` to a non zero value which will force the roll and pitch to be zero until that altitude is reached. At which point, navigation (ie loiter in position during the takeoff climb) will become active.
+
 [/site]
+
