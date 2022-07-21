@@ -33,4 +33,7 @@ ArduPilot supports a wide variety of ESCs and motors.  The pages below provide s
 [site wiki="rover"]
     Trolling motors <trolling-motor>
 [/site]
-    
+
+
+    ESC Grounding and Wiring Considerations<common-esc-grounding>
+
