@@ -34,3 +34,9 @@ Add info about steering speed scaling option
 see https://github.com/ArduPilot/ardupilot_wiki/pull/4423
 
 [/site]
+[site wiki="plane"]
+
+Add info on altitude control in LOITER mode
+===========================================
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/4457
