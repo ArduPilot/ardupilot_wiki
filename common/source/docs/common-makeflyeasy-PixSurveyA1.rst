@@ -6,7 +6,7 @@ makeflyeasy PixSurveyA1
 
 .. figure:: ../../../images/PixSurveyA1.jpg
    :target: ../_images/PixSurveyA1.jpg
-   :width: 400px
+   :width: 1568px
 
 
    Specifications
