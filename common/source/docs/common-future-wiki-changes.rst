@@ -41,4 +41,8 @@ Add info on altitude control in LOITER mode
 
 see https://github.com/ArduPilot/ardupilot_wiki/pull/4457
 
+Add new tuning options for :ref:`common-transmitter-tuning`
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/4458
+
 [/site]
