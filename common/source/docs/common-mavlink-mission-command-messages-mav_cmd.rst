@@ -1672,6 +1672,7 @@ Move to the next command when the desired altitude is reached.
 
 .. _mav_cmd_nav_spline_waypoint:
 [site wiki="copter"]
+
 MAV_CMD_NAV_SPLINE_WAYPOINT
 ---------------------------
 
@@ -1704,12 +1705,12 @@ shown in the screenshot below.
    <th>Description</th>
    </tr>
    <tr>
-   <td>param1</td>
+   <td><strong>param1</strong></td>
    <td>Delay</td>
    <td>Hold time at target, in decimal seconds.</td>
    </tr>
    <tr style="color: #c0c0c0">
-   <td>param2</td>
+   <td><strong>param2</strong></td>
    <td></td>
    <td>Empty</td>
    </tr>
@@ -1724,17 +1725,17 @@ shown in the screenshot below.
    <td>Empty</td>
    </tr>
    <tr>
-   <td>param5</td>
+   <td><strong>param5</strong></td>
    <td>Lat</td>
    <td>Latitude/X of goal</td>
    </tr>
    <tr>
-   <td>param6</td>
+   <td><strong>param6</strong></td>
    <td>Long</td>
    <td>Longitude/Y of goal</td>
    </tr>
    <tr>
-   <td>param7</td>
+   <td><strong>param7</strong></td>
    <td>Alt</td>
    <td>Altitude/Z of goal</td>
    </tr>
@@ -1974,8 +1975,9 @@ will not leave the loiter until heading toward the next waypoint.
 .. _mav_cmd_nav_delay:
 
 [site wiki="copter,rover"]
+
 MAV_CMD_NAV_DELAY
------------------------
+-----------------
 
 Supported by: Copter, Rover.
 
@@ -1998,25 +2000,30 @@ then occurs. For Copters, they will loiter until then, Rovers hold position.
    <tr>
    <td><strong>param1</strong></td>
    <td>Time (sec)</td>
-   <td>Delay in seconds (decimal).</td>
+   <td>Delay in seconds (integer)</td>
    </tr>
-   <td>param2</strong></td>
+   <tr>
+   <td><strong>param2</strong></td>
    <td>Time in hours(1-24)</td>
    <td>Delay until this hour</td>
    </tr>
-   <td>param3</strong></td>
+   <tr>
+   <td><strong>param3</strong></td>
    <td>Time in minutes(0-59)</td>
    <td>Delay until this minute</td>
    </tr>
-   <td>param4</strong></td>
+   <tr>
+   <td><strong>param4</strong></td>
    <td>Time in seconds (0-59)</td>
    <td>Delay until this second</td>
    </tr>
+   <tr>
    <tr style="color: #c0c0c0">
    <td>param5</td>
    <td></td>
    <td>Empty</td>
    </tr>
+   <tr>
    <tr style="color: #c0c0c0">
    <td>param6</td>
    <td></td>
