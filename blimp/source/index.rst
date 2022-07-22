@@ -35,4 +35,5 @@ Getting more info
    Complete parameter list <docs/parameters>
    Complete log message list <docs/logmessages>
    Simulation<docs/simulation>
+   Upcoming Features <docs/common-master-features>
    Full Table of Contents <docs/common-table-of-contents>
