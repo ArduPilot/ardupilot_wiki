@@ -220,6 +220,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT <mav_cmd_nav_continue_and_change_alt>`
 - :ref:`MAV_CMD_NAV_VTOL_TAKEOFF <mav_cmd_nav_vtol_takeoff>`
 - :ref:`MAV_CMD_NAV_VTOL_LAND <mav_cmd_nav_vtol_land>`
+- :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_CONDITION_DELAY <mav_cmd_condition_delay>`
 - :ref:`MAV_CMD_CONDITION_DISTANCE <mav_cmd_condition_distance>`
 - :ref:`MAV_CMD_DO_CHANGE_SPEED <mav_cmd_do_change_speed>`
@@ -1898,12 +1899,12 @@ will not leave the loiter until heading toward the next waypoint.
 
 .. _mav_cmd_nav_delay:
 
-[site wiki="copter,rover"]
-
 MAV_CMD_NAV_DELAY
 -----------------
 
-Supported by: Copter, Rover.
+Supported by: Copter, Rover, Plane.
+
+[site wiki="copter,rover"]
 
 After reaching this waypoint, delay the execution of the next mission command
 until either the time in seconds has elapsed or the time entered(in the future) is reached. Execution of the next mission item
@@ -1942,6 +1943,62 @@ then occurs. For Copters, they will loiter until then, Rovers hold position.
    <td>Delay until this second</td>
    </tr>
    <tr>
+   <tr style="color: #c0c0c0">
+   <td>param5</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param6</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param7</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   </tbody>
+   </table>
+
+[/site]
+[site wiki="plane"]
+
+After reaching this waypoint, if disarmed, delay the execution of the next mission command
+until the time in seconds has elapsed. This is used in a mission to allow a vehicle to land, disarm for a period (for a payload change for example), and then re-arm, and takeoff to resume the mission. If not disarmed, this mission item is skipped.
+
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Time (sec)</td>
+   <td>Delay in seconds (decimal).</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param2</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
    <tr style="color: #c0c0c0">
    <td>param5</td>
    <td></td>
