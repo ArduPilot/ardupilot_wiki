@@ -503,9 +503,6 @@ command of nearly all Plane and Copter missions.
 
 [site wiki="copter" heading="off"]
 
-Copter
-~~~~~~
-
 The vehicle will climb straight up from it’s current location to the
 specified altitude. If the mission is begun while the copter is already
 flying, the vehicle will climb straight up to the specified altitude, if
@@ -573,9 +570,6 @@ and the mission will move onto the next command immediately.
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 The plane climbs to the specified altitude (at the specified pitch/climb
 angle) before proceeding to the next waypoint.
 
@@ -596,7 +590,7 @@ using an airspeed sensor.
    <tr>
    <td><strong>param1</strong></td>
    <td>Pitch Angle</td>
-   <td>Pitch/climb angle in degrees (Plane only).</td>
+   <td>Pitch/climb angle in degrees</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param2</td>
@@ -640,10 +634,6 @@ MAV_CMD_NAV_VTOL_TAKEOFF
 Supported by:  Plane  (not Copter or Rover). Specifically QuadPlanes.
 
 Takeoff while in VTOL mode.
-
-
-QuadPlane
-~~~~~~~~~
 
 The vehicle will climb straight up at it’s current location to the
 specified altitude as a delta above its current altitude. 
@@ -718,9 +708,6 @@ Loiter at the specified location for an unlimited amount of time.
 
 [site wiki="copter" heading="off"]
 
-Copter
-~~~~~~
-
 Fly to the specified location and then loiter there indefinitely — where
 loiter means "wait in place" (rather than "circle"). If zero is
 specified for a latitude/longitude/altitude parameter then the current
@@ -792,9 +779,6 @@ will restart).
 [/site]
 
 [site wiki="plane" heading="off"]
-
-Plane
-~~~~~
 
 Fly to the specified location and then loiter there indefinitely — where
 loiter means "circle the waypoint". If zero is specified for a
@@ -868,12 +852,8 @@ MAV_CMD_NAV_LOITER_TURNS
 
 Supported by: Copter, Plane (not Rover).
 
-Loiter (circle) the specified location for a specified number of turns.
 [/site]
 [site wiki="copter" heading="off"]
-
-Copter
-~~~~~~
 
 Loiter (circle) the specified location for a specified number of turns,
 and then proceed to the next command. If zero is specified for a
@@ -946,9 +926,6 @@ This is the command equivalent of the :ref:`Circle flight mode <copter:circle-mo
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 Loiter (circle) the specified location for a specified number of turns
 at the given radius, and then proceed to the next command. If zero is
 specified for a latitude/longitude/altitude parameter then the current
@@ -1013,22 +990,16 @@ MAV_CMD_NAV_LOITER_TIME
 -----------------------
 
 Supported by: Copter, Plane, Rover.
+[site wiki="copter,rover" heading="off"]
 
-Loiter at the specified location for a set time (in seconds).
-
-[site wiki="copter" heading="off"]
-
-Copter
-~~~~~~
-
-Fly to the specified location and then loiter there for the specified
+Fly/Drive to the specified location and then loiter there for the specified
 number of seconds — where loiter means "wait in place" (rather than
 "circle"). The timer starts when the waypoint is reached; when it
 expires the waypoint is complete. If zero is specified for a
 latitude/longitude/altitude parameter then the current location value
 for the parameter will be used.
 
-This is the mission equivalent of the :ref:`Loiter flight mode <copter:loiter-mode>`.
+This is the mission equivalent of the :ref:`Loiter flight mode <copter:loiter-mode>` or :ref:`Hold mode <rover:hold-mode>`.
 
 **Command parameters**
 
@@ -1089,9 +1060,6 @@ This is the mission equivalent of the :ref:`Loiter flight mode <copter:loiter-mo
 [/site]
 
 [site wiki="plane" heading="off"]
-
-Plane
-~~~~~
 
 Fly to the specified location and then loiter there for the specified
 number of seconds — where loiter means "circle the waypoint". The timer
@@ -1245,9 +1213,6 @@ command in the mission.
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 Return to the *home location* (or the nearest :ref:`Rally Point <common-rally-points>` if closer) and then "Loiter" (circle the
 point). The home location is where the vehicle was last armed (or when
 it first gets GPS lock after arming if the vehicle configuration allows
@@ -1317,13 +1282,11 @@ command in the mission.
 
 [site wiki="rover" heading="off"]
 
-Rover
-~~~~~
-
-Return to the *home location* (Rally Points are not supported on Rover).
+Return to the *home location* and HOLD (non-boat) or LOITER (boat).
 
 This command takes no parameters and generally should be the last
-command in the mission.
+command in the mission. Without using this command, end of mission behavior
+is set by the :ref:`MIS_DONE_BEHAVE<MIS_DONE_BEHAVE>` parameter.
 
 **Command parameters**
 
@@ -1385,13 +1348,8 @@ MAV_CMD_NAV_LAND
 ----------------
 
 Supported by: Copter, Plane (not Rover).
-
-Land the vehicle at the current or a specified location.
 [/site]
 [site wiki="copter"]
-
-Copter
-~~~~~~
 
 The copter will land at its current location or proceed at current altitude to the lat/lon
 coordinates provided (if non-zero) and land.  This is the mission equivalent of
@@ -1461,9 +1419,6 @@ the engines.
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 The plane will land at its current location or proceed to the (non-zero)
 lat/lon coordinates provided beginning with current altitude.  Information on the parameters used to
 control the landing are provided in :ref:`LAND flight mode <plane:land-mode>`.
@@ -1525,9 +1480,6 @@ MAV_CMD_NAV_VTOL_LAND
 Supported by: Plane (not Copter or Rover). Specifically QuadPlanes.
 
 Land the vehicle at the current or a specified location.
-
-QuadPlane
-~~~~~~~~~
 
 If the :ref:`Q_OPTIONS<Q_OPTIONS>` bit 4 is not set (default),the vehicle will land at its current location or proceed at current altitude to the lat/lon
 coordinates provided (if non-zero) and land. The ALT parameter is used to determine final landing phase initiation rather than :ref:`Q_LAND_FINAL_ALT<Q_LAND_FINAL_ALT>` . This is the mission equivalent of the :ref:`QLAND flight mode <plane:qland-mode>`.
@@ -1601,13 +1553,6 @@ Supported by: Plane (not Copter, Rover).
 Continue on the current course and climb/descend to specified altitude.
 Move to the next command when the desired altitude is reached.
 
-
-Plane
-~~~~~
-
-Continue on the current course and climb/descend to specified altitude.
-Move to the next command when the desired altitude is reached.
-
 .. note::
 
    The ``param1`` value sets how close the
@@ -1677,12 +1622,6 @@ MAV_CMD_NAV_SPLINE_WAYPOINT
 ---------------------------
 
 Supported by: Copter (not Plane or Rover).
-
-Navigate to the target location using a spline path.
-
-
-Copter
-~~~~~~
 
 Fly to the target location using a `Spline path <https://en.wikipedia.org/wiki/Spline_%28mathematics%29>`__, then
 wait (hover) for specified time before proceeding to the next command.
@@ -1765,17 +1704,11 @@ MAV_CMD_NAV_GUIDED_ENABLE
 
 Supported by: Copter (not Plane or Rover).
 
-Enable ``GUIDED`` mode to hand over control to an external controller/:ref:`common-companion-computers`. The :ref:`common-companion-computers`  would then send MAVLink commands to control the vehicle.
+Enable ``GUIDED`` mode to hand over control to an external controller/:ref:`common-companion-computers`. ee :ref:`Guided Mode <copter:ac2_guidedmode>` for more information. The :ref:`common-companion-computers`  would then send MAVLink commands to control the vehicle.
 
 See also :ref:`MAV_CMD_DO_GUIDED_LIMITS <mav_cmd_do_guided_limits>`
 for information on how to apply time, altitude and distance limits on
 the external control.
-
-Copter
-~~~~~~
-
-Enable ``GUIDED`` mode to hand over control to an external controller. See :ref:`Guided Mode <copter:ac2_guidedmode>` for more information.
-
 
 **Command parameters**
 
@@ -1841,12 +1774,6 @@ MAV_CMD_NAV_ALTITUDE_WAIT
 Supported by: Plane (not Copter or Rover).
 
 Mission command to wait for an altitude or downwards vertical speed.
-
-
-Plane
-~~~~~
-
-Mission command to wait for an altitude or downwards vertical speed.
 This is meant for high altitude balloon launches, allowing the aircraft
 to be idle until either an altitude is reached or a negative vertical
 speed is reached (indicating early balloon burst). The wiggle time is
@@ -1909,9 +1836,6 @@ MAV_CMD_NAV_LOITER_TO_ALT
 -------------------------
 
 Supported by: Plane (not Copter or Rover).
-
-Plane
-~~~~~
 
 Loiter while climbing/descending to an altitude.
 
@@ -2302,12 +2226,6 @@ Supported by: Copter (not Plane or Rover).
 
 Point (yaw) the nose of the vehicle towards a specified heading.
 
-
-Copter
-~~~~~~
-
-Point (yaw) the nose of the vehicle towards a specified heading.
-
 The parameters allow you to specify whether the target direction is
 absolute or relative to the current yaw direction. If the direction is
 relative you can also (separately) specify whether the value is added or
@@ -2395,16 +2313,11 @@ MAV_CMD_MISSION_START
 
 Supported by: Copter
 
-Start running the current mission. This allows a GCS/companion computer
-to start a mission in AUTO without raising the throttle.
-
-Copter
-~~~~~~
-
 This command can be used to start a mission when the Copter is on the
 ground in AUTO mode. If the vehicle is already in the air then the
 mission will start as soon as you switch into AUTO mode (so this command
-is not needed/ignored).
+is not needed/ignored). This allows a GCS/companion computer
+to start a mission in AUTO without raising the throttle.
 
 .. note::
 
@@ -2566,14 +2479,7 @@ MAV_CMD_DO_CHANGE_SPEED
 
 Supported by: Copter, Plane, Rover.
 
-Change the target horizontal speed and/or throttle of the vehicle. In most cases, the
-changes will be used until they are explicitly changed again or the
-device is rebooted.
-
 [site wiki="copter" heading="off"]
-
-Copter
-~~~~~~
 
 Sets the desired maximum speed in meters/second (only). Both the
 speed-type and throttle settings are ignored.
@@ -2638,9 +2544,6 @@ speed-type and throttle settings are ignored.
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 Change the target horizontal speed (airspeed or groundspeed) and/or the
 vehicle's throttle. If airspeed, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM>` parameter during the flight until reboot or mode is changed to CRUISE or FBWB. If groundspeed option is used, then :ref:`MIN_GNDSPD<MIN_GNDSPD_CM>` parameter is changed to this value until rebooted or changed by this command again. If the throttle field is non-zero and equal to or below 100, then the :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` parameter is changed  until reboot or changed by this command again.
 
@@ -2699,9 +2602,6 @@ vehicle's throttle. If airspeed, this changes the :ref:`TRIM_ARSPD<TRIM_ARSPD_CM
 [/site]
 
 [site wiki="rover" heading="off"]
-
-Rover
-~~~~~
 
 Change the target horizontal speed and/or the vehicle's throttle.
 
@@ -3209,9 +3109,6 @@ MAV_CMD_DO_VTOL_TRANSITION
 
 Supported by: Plane (not Copter or Rover).Specifically QuadPlanes.
 
-QuadPlane
-~~~~~~~~~
-
 Mission command to change to/from VTOL and fixed wing mode of flight. The mode is changed based on the first parameter: 3 = change to VTOL flight, 4 = change to fixed wing flight.
 
 **Command parameters**
@@ -3272,16 +3169,7 @@ MAV_CMD_DO_SET_ROI
 ------------------
 
 Supported by: Copter, Plane, Rover.
-
-Sets the region of interest (ROI) for a sensor set or the vehicle
-itself. This can then be used by the vehicles control system to control
-the vehicle attitude and the attitude of various sensors such as
-cameras.
-
 [site wiki="copter" heading="off"]
-
-Copter
-~~~~~~
 
 Points the :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region
 of interest", and also rotates the nose of the vehicle if the
@@ -3360,9 +3248,6 @@ marker.
 
 [site wiki="plane" heading="off"]
 
-Plane
-~~~~~
-
 Points the :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region
 of interest".
 
@@ -3426,9 +3311,6 @@ command with all zero for ``param5``-``param7`` (Lat, Lon and Alt).
 [/site]
 
 [site wiki="rover" heading="off"]
-
-Rover
-~~~~~
 
 Points the :ref:`camera gimbal <common-cameras-and-gimbals>` at the "region
 of interest".
@@ -3860,11 +3742,6 @@ Supported by: Copter (not Plane or Rover).
 
 Mission command to trigger a parachute (if enabled).
 
-Copter
-~~~~~~
-
-Mission command to trigger a parachute.
-
 **Command parameters**
 
 .. raw:: html
@@ -3925,12 +3802,6 @@ MAV_CMD_DO_INVERTED_FLIGHT
 --------------------------
 
 Supported by: Plane (not Copter or Rover).
-
-Change to/from inverted flight.
-
-
-Plane
-~~~~~
 
 Change between normal and :ref:`inverted flight <plane:inverted-flight>`.
 
@@ -4000,13 +3871,6 @@ Supported by: Copter (not Plane or Rover).
 
 Mission command to operate EPM gripper.
 
-
-
-Copter
-~~~~~~
-
-Mission command to operate EPM gripper.
-
 .. note::
 
    The :ref:`instructions for integrating Copter with gripper <common-electro-permanent-magnet-gripper>` are out
@@ -4071,12 +3935,6 @@ MAV_CMD_DO_GUIDED_LIMITS
 ------------------------
 
 Supported by: Copter (not Plane or Rover).
-
-Set limits for external control.
-
-
-Copter
-~~~~~~
 
 This command sets time, altitude, and distance limits for external
 control (GUIDED mode). When these limits are exceeded, control will
@@ -4155,14 +4013,7 @@ MAV_CMD_DO_AUTOTUNE_ENABLE
 
 Supported by: Plane (not Copter or Rover).
 
-Enable/disable autotune.
-(not included in Mission Planner,included in MAVProxy and QGC)
-
-Plane
-~~~~~
-
-This command sets the Plane to
-:ref:`AUTOTUNE <plane:autotune-mode>` mode.
+Enable/disable :ref:`AUTOTUNE <plane:autotune-mode>` mode.
 
 **Command parameters**
 
@@ -4221,10 +4072,6 @@ MAV_CMD_DO_ENGINE_CONTROL
 Supported by: Plane (not Copter or Rover).
 
 Stop or start internal combustion engine (ICE)
-
-
-Plane
-~~~~~
 
 This command can be used to start or stop the ICE before a NAV_VTOL_LAND or after a NAV_VTOL_TAKEOFF command for a QuadPlane to avoid potential prop strikes in the wind. It should be placed before either of those commands.
 
