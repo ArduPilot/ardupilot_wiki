@@ -42,7 +42,13 @@ Add info on altitude control in LOITER mode
 see https://github.com/ArduPilot/ardupilot_wiki/pull/4457
 
 Add new tuning options for :ref:`common-transmitter-tuning`
+===========================================================
 
 see https://github.com/ArduPilot/ardupilot_wiki/pull/4458
+
+Add new mission command, NAV_DELAY
+==================================
+
+see https://github.com/ArduPilot/ardupilot_wiki/pull/4465
 
 [/site]
