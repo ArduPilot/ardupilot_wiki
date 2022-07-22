@@ -38,7 +38,7 @@ thus the "single board" type of flight controllers are likely to be most suitabl
 
 For more options, see the topic :ref:`common-choosing-a-flight-controller` and :ref:`common-autopilots`.
 
-Four outputs are required for the actuators. Autpilot inputs for RC, telemetery, GPS or Position Sensor, and Compass are also required. Main battery voltage, and perhaps current sensing, are very useful also.
+Four outputs are required for the actuators. Autopilot inputs for RC, telemetry, GPS or Position Sensor, and Compass are also required. Main battery voltage, and perhaps current sensing, are very useful also.
 
 Position and Yaw Sensors
 ========================

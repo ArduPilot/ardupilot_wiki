@@ -17,4 +17,4 @@ This lists features or changes merged in master and build in the "latest" firmwa
     Other wiki changes <common-future-wiki-changes>
 
 
-[copywiki destination="plane,copter,rover,dev"]
+[copywiki destination="plane,copter,rover,blimp,dev"]
