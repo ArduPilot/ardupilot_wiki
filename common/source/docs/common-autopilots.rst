@@ -52,7 +52,7 @@ Closed hardware
     Airvolute DroneCore <common-airvolute-DroneCore-Suite>
     Emlid NAVIO2 (Linux) <common-navio2-overview>
     Furious FPV F-35 Lightning and Wing FC-10 <common-furiousfpv-f35>
-    Flywoo F745 AIO BL_32 <common-flywoo-f745>
+    Flywoo F745 AIO BL_32/ Nano <common-flywoo-f745>
     Holybro Kakute F4* <common-holybro-kakutef4>
     Holybro Kakute F4 Mini* <common-holybro-kakutef4-mini>
     Holybro Kakute F7 AIO* <common-holybro-kakutef7aio>
