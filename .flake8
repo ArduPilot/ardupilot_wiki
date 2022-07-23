@@ -17,4 +17,4 @@ ignore =
 
 max-line-length = 127
 
-exclude = .git,__pycache__,conf.py,old,build,dist
+exclude = .git,__pycache__,old,build,dist
