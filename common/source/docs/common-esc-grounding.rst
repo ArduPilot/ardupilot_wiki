@@ -42,4 +42,4 @@ So what does all that mean from a practical standpoint…
 - If possible, use 5V signalling when long runs are present.
 - Avoid routing next to noisy components like other ESC’s, ESC wiring, and radios.
 - Where possible add additional ground connections between the autopilot and system ground.
-- Ensure all connections, solder joints, bullets, plugs ect are clean and make good contact.
+- Ensure all connections, solder joints, bullets, plugs etc are clean and make good contact.

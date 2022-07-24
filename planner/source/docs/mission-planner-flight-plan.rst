@@ -66,7 +66,7 @@ Once drawn, many different surveys,fences, or waypoint grids can be generated wi
      - Area:Displays area of polygon
      - Text:(in development)
      - Create Circle Survey: Creates a circular survey. A survey is a set of spaced waypoints designed to allow a camera to take overlapping photos of the survey area. This does not require a drawn polygon.
-     - Survey (Grid): Creats a survey mission based on drawn polygon.
+     - Survey (Grid): Creates a survey mission based on drawn polygon.
      - Face Map: (in development)
      - Survey(Gridv2): Creates a box survey mission with a different user interface. No pre-drawn polygon required.
      - Simple Grid: Creates a simple grid of waypoints within the drawn polygon.

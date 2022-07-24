@@ -25,7 +25,7 @@ html {
 }
 
 /*
-// This code bellow if uncomment makes the dropdown "automatic". It means, it is not necessary to click it, just pass the mouse over.
+// This code below if uncomment makes the dropdown "automatic". It means, it is not necessary to click it, just pass the mouse over.
 */
 .navbar-nav li:hover .dropdown-menu {
     display: block;
