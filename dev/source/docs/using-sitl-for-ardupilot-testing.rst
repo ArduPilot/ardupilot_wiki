@@ -589,13 +589,14 @@ Other SITL vicon settings are hel in SIM_VICON_xx parameters:
 Accessing log files
 ===================
 
-SITL supports both blogs and DF logs (same as other types of ArduPilot
-ports). The DF logs are stored in a "logs" subdirectory in the directory
-where you start SITL. You can also access the DF logs via MAVLink using
-a GCS, but directly accessing them in the logs/ directory is usually
+SITL supports both Block Logging and SD card storage DataFlash logs (same as other types of ArduPilot
+ports). The SD card logs are stored in a "logs" subdirectory in the directory
+where you start SITL. The Block Flash logs are stored in the blackbox.bin file.
+You can also access the logs via MAVLink using
+a GCS, but directly accessing SD card emulated logs in the logs/ directory is usually
 more convenient.
 
-To keep your blogs organised it is recommended you start SITL using the
+To keep your logs organised it is recommended you start SITL using the
 "--aircraft NAME" option. That will create a subdirectory called NAME
 which will have flight logs organised by date. Each flight will get its
 own directory, and will include the parameters for the flight plus any
