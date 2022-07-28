@@ -130,10 +130,48 @@ press "Cancel" to clear the filter.
 Setting what data you want recorded
 ===================================
 
-The :ref:`LOG_BITMASK <LOG_BITMASK>` parameter controls what messages are recorded in the dataflash
+The :ref:`LOG_BITMASK <LOG_BITMASK>` parameter controls what messages are recorded in the logs. The bits differ between vehicles. The image above is for Copter.
 
 .. image:: ../../../images/mp_dataflash_log_bitmask.png
     :target: ../_images/mp_dataflash_log_bitmask.png
+
+[site wiki="plane"]
+
+Bitmask Table (Plane)
+---------------------
+
+====   =====================      ==============================================================
+Bit     BitMask Name                 What is logged if bit is set
+====   =====================      ==============================================================
+0       ATTITUDE_FAST               Attitude @ 25Hz
+1       ATTITUDE_MED                Attitude @ 10Hz
+2       GPS                         GPS
+3       PM                          Performance monitoring
+4       CTUN                        Control Data
+6       NTUN                        Navigation Data
+7       MODE                        no longer used, Mode info logged as events
+8       IMU                         IMU (ACC/Gyro) Data
+9       CMD                         Mission/GCS Commands
+10      BATT_MON                    Battery Monitors data
+11      COMPASS                     Compasses Data
+12      TECS                        Speed/Height Controller Data
+13      CAMERA                      Camera Data (if present)
+14      RC                          RC input/output data
+15      RANGEFINDER                 Rangefinder Data (if present)
+16      ARM_DISARM                  no longer used, ARM state is logged as status and events
+17          na     
+18          na
+19          na
+20      IMU_RAW                     Raw IMU data, unprocessed
+21      ATTITUDE_FULLRATE           ATTITUDE @ 400Hz
+22      VIDEO_STABILISATION         GyroFlow Data logs
+====   =====================      ==============================================================
+
+ATTITUDE logging will occur at highest rate of the selections. 
+
+.. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
+
+[/site]
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_message_details_copter_specific:
 
