@@ -189,4 +189,4 @@ Layout and Dimensions
 =====================
 
 See `Pixhawk6X dimensions <https://docs.holybro.com/autopilot/pixhawk-6x/dimensions>`__ 
-[copywiki destination="plane,copter,rover,blimp"]
+[copywiki destination="plane,copter,rover,blimp,dev"]
