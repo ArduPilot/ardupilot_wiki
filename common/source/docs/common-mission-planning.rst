@@ -40,6 +40,7 @@ This section contains articles about creating missions that will run when the ve
 [/site]
 
     Rewind-on-resume <common-mission-rewind>
+    Relocate a Mission <common-relocate-mission>
     Continue Mission After Landing <common-continue-mission>
 
 
