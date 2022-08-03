@@ -6,7 +6,6 @@ Mission Planner Simulation
 
 The Simulation tab provides a SITL (Software in the Loop) simulation capability. Many typical frame types for each Vehicle type have been created. This allows you to see the expected behavior for vehicles in missions, or with a joystick attached, actually be able to fly/drive the vehicle simulation as if with RC. This allows you to see potential effects of parameter changes on vehicle behavior or explore mission generation, without risking your vehicle first.
 
-
 Demonstration Video
 
 ..  youtube:: XY2mnqYl9a0
@@ -32,4 +31,4 @@ The Simulation uses the same SITL models as those used in the Linux ``sim_vehicl
 
 .. note:: Although not shown in the above video, current version of Mission Plannner will ask if you want to simulate using the Development(master aka "latest") or Stable version of the vehicle firmware when you click the vehicle to download the model and parameters and begin the simulation.
 
-In addition, if you are code developer, you can run SITL using your custom code branch using Mission Planner, either with, or without, the physics and visualizations of RealFlight. See the "Using Your Code Branch with Mission Planner SITL and RealFlight" section of :ref:`dev:sitl-with-realflight`
+In addition, if you are code developer, you can run SITL using your custom code branch using Mission Planner, either with or without, the physics and visualizations of RealFlight. See the "Using Your Code Branch with Mission Planner SITL and RealFlight" section of :ref:`dev:sitl-with-realflight`

@@ -14,14 +14,15 @@ the menu:
    by checking a box at the bottom of the Mission Planner help screen.
 -  Shortcut Keys:
 
-   -  F12 - disconnect or connect from/to USB or Telemetry
+   -  F12 or CTL-T - disconnect or connect from/to USB or Telemetry
    -  F5 - Refresh parameters
    -  F2 - change to Flight Data tab
    -  F3 - change to Flight Planner tab
    -  F4 - change to Configuration tab
    -  F5 - Refresh parameter list
-   -  CTL-G Nmea Output
+   -  CTL-G NMEA Output
    -  CTL-W Wizard config interface
+   -  CTL-P Plugin enable and disable
 
 -  You can display video from your aircraft on the Mission Planner's HUD
    if you are digitizing it with the same laptop (with a video capture
