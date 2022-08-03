@@ -70,6 +70,19 @@ The "Stats..." hotlink beneath the port selection box, if clicked, will give inf
 .. image:: ../../../images/MP-stats.png
    :target: ../_images/MP-stats.png
 
+Connecting to multiple vehicles
+-------------------------------
+Additional connections can be made by right-clicking the connect button and selecting Connection Options.
+
+.. image:: ../../../images/MP-connect-rightclick-menu.png
+   :target: ../_images/MP-connect-rightclick-menu.png
+
+A pre-written list of connections can be loaded with the Connection List option. This is an example format of the file::
+
+   tcp://127.0.0.1:5670
+   udp://127.0.0.1:14550
+   udpcl://192.168.1.255:14550
+   serial:com4:115200
 
 Troubleshooting
 ===============
