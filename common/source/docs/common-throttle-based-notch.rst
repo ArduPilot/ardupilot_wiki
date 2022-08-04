@@ -40,6 +40,7 @@ On the graph it should be possible to identify a significant peak in noise that 
 Harmonic Notch Configuration for Throttle Based Mode
 ====================================================
 
+- Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` = 1.
 - Set :ref:`INS_HNTCH_ENABLE <INS_HNTCH_ENABLE>` and/or :ref:`INS_HNTC2_ENABLE <INS_HNTC2_ENABLE>` = 1 to enable the harmonic notch
 - Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = *hover_thrust* to set the harmonic notch reference value
 - Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = *hover_freq* to set the harmonic notch reference frequency
