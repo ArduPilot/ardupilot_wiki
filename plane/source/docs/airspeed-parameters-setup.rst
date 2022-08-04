@@ -34,7 +34,7 @@ The above parameters determine the speed scaling characteristics.
 And, if you use an airspeed sensor:
 
 - :ref:`ARSPD_TYPE<ARSPD_TYPE>` : This determines the type of sensor used. Set to "0" if no sensor is present. (see :ref:`airspeed`). If non-zero and the sensor is healthy, the system will use the sensor's measurements instead of the estimated speed calculation for speed scaling and speed controlled modes.
-- :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` : This determines the nominal cruising speed in speed controlled modes when using an airspeed sensor. (see :ref:`tuning-cruise` ). Also see :ref:`tuning-cruise` section if not using an airspeed sensor for the impact of the parameter - :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` on cruising speed in speed controlled modes like CRUISE.
+- :ref:`TRIM_ARSPD_CM<TRIM_ARSPD_CM>` : This determines the nominal cruising speed in AUTO/GUIDED speed controlled modes when using an airspeed sensor. (see :ref:`tuning-cruise` ). Also see :ref:`tuning-cruise` section if not using an airspeed sensor for the impact of the parameter - :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` on cruising speed in speed controlled modes like CRUISE.
 
 ARSPD_USE
 ---------
