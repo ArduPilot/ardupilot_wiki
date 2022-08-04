@@ -32,11 +32,11 @@ Other points to check:
 Harmonic Notch Throttle Configuration Using Data from an In-Flight FFT Test Flight
 ==================================================================================
 
-It is also possible to use the in-flight FFT in a test flight to generate a precise:ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>`:ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>`. Then the In-Flight FFT would be disabled and the data used to setup a throttle-based center frequency for driving the dynamic harmonic notch. This has very low CPU cost with minimal latency and can be a good option for certain applications. To setup the harmonic notch this way:
+It is also possible to use the in-flight FFT in a test flight to generate a precise :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>`:ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>`. Then the In-Flight FFT would be disabled and the data used to setup a throttle-based center frequency for driving the dynamic harmonic notch. This has very low CPU cost with minimal latency and can be a good option for certain applications. To setup the harmonic notch this way:
 
 - Set :ref:`FFT_MINHZ <FFT_MINHZ>` to the lowest value that you want the harmonic notch frequency to be set to. Typically this should be above about 50Hz to stay clear of your copter's control bandwidth.
 - Set :ref:`FFT_ENABLE <FFT_ENABLE>` = 1 to enable the FFT engine.
-- Perform a stable lengthy hover as you might do for learning the hover throttle with the .
+- Perform a stable lengthy hover as you might do for learning the hover throttle with the sticks on the transmitter not being moved while in a hover or loiter. Moving the sticks while in hover or letting the vehicle loiter in wind (ie the autopilot is moving the sticks to hold position) stops hover learning until the vehicle attitude is returned to neutral VTOL stance.
 - Land and disarm. The learned value for :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` at hover will be in :ref:`FFT_FREQ_HOVER <FFT_FREQ_HOVER>` and the learned value for :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` to scale :ref:`FFT_MINHZ <FFT_MINHZ>` to the learned hover frequency will be in :ref:`FFT_THR_REF <FFT_THR_REF>`. The values are not transferred automatically to the harmonic notch so you should set them based on the learned values.
 
 - Set :ref:`FFT_ENABLE <FFT_ENABLE>` = 0 to disable the FFT engine.
