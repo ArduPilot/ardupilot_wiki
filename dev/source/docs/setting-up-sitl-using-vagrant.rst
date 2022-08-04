@@ -83,10 +83,7 @@ Set up the Vagrant and the virtual machine
 
 #. Start a vagrant instance
 
-   -  Open a command prompt and navigate to any directory in the
-      `/ArduPilot/ardupilot/Tools/vagrant/ <https://github.com/ArduPilot/ardupilot/blob/master/Tools/vagrant/>`__
-      source tree.
-   -  Run the command:
+   -  Inside the ardupilot folder, run the command:
 
       ::
 
