@@ -14,8 +14,8 @@ Where to Buy
 
 The Pixy and Mio gimbals can be purchased from the `Gremsy store <https://gremsy.com/online-store>`__
 
-Connecting to the Autopilot
-===========================
+Connecting to the Autopilot (4.2 or earlier)
+============================================
 
 .. image:: ../../../images/gremsy-pixyu-autopilot.png
     :target: ../_images/gremsy-pixyu-autopilot.png
@@ -86,3 +86,60 @@ The ROI feature points the vehicle and/or camera to point at a target.  This can
     :target: ../_images/Tarot_BenchTestROI.jpg
 
 Pilot control of the gimbal can be restored by setting up an :ref:`auxiliary function switch <common-auxiliary-functions>` to "Retract Mount" (i.e. RCx_OPTION = 27) and then move the switch to the lower position
+
+Connecting to the Autopilot (4.3 or higher)
+===========================================
+
+If using ArduPilot 4.3 (or higher) please follow these setup instructions
+
+.. image:: ../../../images/gremsy-pixyu-autopilot.png
+    :target: ../_images/gremsy-pixyu-autopilot.png
+    :width: 450px
+
+Connecting the Gimbals's COM2 port to one of the autopilot's Serial/Telemetry ports like Telem2 as shown above.
+
+Connect with a ground station and set the following parameters:
+
+- :ref:`MNT_TYPE <MNT_TYPE>` to "6" for "Gremsy" and reboot the autopilot
+- :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
+- :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
+
+Configuring the Gimbal
+----------------------
+
+- Download and install `gTune Desktop <https://github.com/Gremsy/gTuneDesktop/releases>`__
+- Connect the gimbal to your Desktop PC using a USB cable and power on the gimbal
+- Use gTune Desktop to check the gimbal firmware version
+
+  - Open gTune Desktop application, "Found your device" should be displayed
+  - Select "CONNECT"
+  - Select "INFO" and confirm the gimbal is running Firmware "7.7.2" or higher
+
+  .. image:: ../../../images/gremsy-firmware-version-check.png
+      :target: ../_images/gremsy-firmware-version-check.png
+      :width: 450px
+
+  - If the gimbal firmware is older than 7.7.2 download the latest .hex for `Pixy SM <https://github.com/Gremsy/PixySM-Firmware/releases>`__, `Pixy W <https://github.com/Gremsy/PixyW-Firmware/releases>`__, `Pixy U <https://github.com/Gremsy/PixyU-Firmware/releases>`__, `Pixy F <https://github.com/Gremsy/PixyF-Firmware/releases>`__ or `Mio <https://github.com/Gremsy/Mio-Firmware/releases>`__
+  - Select "UPGRADE", "BROWSE" and select the file downloaded above
+  - Momentarily unplug and plug in the USB cable to put the gimbal into bootloader mode
+  - The upgrade should complete within 30 seconds
+
+  .. image:: ../../../images/gremsy-settings-upgrade.png
+      :target: ../_images/gremsy-settings-upgrade.png
+      :width: 450px
+
+- Use gTune Desktop to configure the gimbal
+
+  - Select "SETTINGS", "CONTROLS" and ensure "SYNC" is selected so the gimbal communicates with the autopilot using MAVLink
+
+  .. image:: ../../../images/gremsy-settings-sync.png
+      :target: ../_images/gremsy-settings-sync.png
+      :width: 450px
+
+  - Select "Settings", "REDUCE DIRFT by DRONE"
+
+  .. image:: ../../../images/gremsy-settings-reduce-drift-by-drone.png
+      :target: ../_images/gremsy-settings-reduce-drift-by-drone.png
+      :width: 450px
+
+- Select the "STIFFNESS" tab and adjust the Tilt, Roll and Pan gains so that the gimbal holds the camera in position without shaking
