@@ -1,18 +1,18 @@
 .. _common-gremsy-pixyu-gimbal:
 
-===========================
-Gremsy Pixy U 3-Axis Gimbal
-===========================
+==================================
+Gremsy Pixy and Mio 3-Axis Gimbals
+==================================
 
-The Gremsy Pixy U is a 3-axis gimbal that can communicate with the flight controller using the MAVLink protocol, weighs 465g, and is compatible with a range of cameras for real-time video or mapping purposes.  More specifications can be found `here on the Gremsy website <https://gremsy.com/pixy-u-spec/>`__.  The user manual is `here <https://gremsy.com/pixy-u-manual/>`__.
+Gremsy `Pixy SM <https://gremsy.com/products/pixy-sm>`__, `Pixy WP <https://gremsy.com/products/pixy-wp>`__, `Pixy U <https://gremsy.com/products/pixy-u>`__, `Pixy F <https://gremsy.com/products/pixy-f>`__ and `Mio <https://gremsy.com/products/mio>`__ 3-axis gimbals can communicate with the flight controller using the MAVLink protocol and are compatible with a range of cameras for real-time video or mapping purposes.
 
 .. image:: ../../../images/gremsy-pixyu-gimbal.png
-    :target: https://store.gremsy.com/product/pixy-u/
+    :target: https://gremsy.com/products/pixy-u
 
 Where to Buy
 ============
 
-The Pixy U can be purchased from the `Gremsy store <https://store.gremsy.com/product/pixy-u/>`__
+The Pixy and Mio gimbals can be purchased from the `Gremsy store <https://gremsy.com/online-store>`__
 
 Connecting to the Autopilot
 ===========================
