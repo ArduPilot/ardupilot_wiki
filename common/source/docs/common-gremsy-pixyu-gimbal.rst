@@ -25,7 +25,7 @@ We recommend connecting the Gimbals's COM2 port to one of the autopilot's Serial
 
 Connect with a ground station and set the following parameters:
 
-- :ref:`MNT_TYPE <MNT_TYPE>` to "4" for "SToRM32 MavLink"
+- :ref:`MNT_TYPE <MNT_TYPE>` to "4" for "SToRM32 MavLink" and reboot the autopilot
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SR2_EXTRA1 <SR2_EXTRA1>` to 10
