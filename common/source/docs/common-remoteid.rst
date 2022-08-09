@@ -23,6 +23,20 @@ Stand-alone devices:
 - `Aerobits idME+ <https://www.aerobits.pl/product/idme-remoteid/>`__
 - `EAMS Robotics remote id (Japan) <http://www.eams-robo.co.jp/remoteid.html>`__
 
+OpenDroneID
+===========
+
+ArduPilot provides support for OpenDroneID in firmware versions 4.2 and later via MAVLink to an OpenDroneID compatible module attached to either a serial port or DroneCAN port on the autopilot.
+
+In order to provide tamper protection, a special autopilot firmware must be built and loaded on the autopilot which: enables this feature, prevents loading non-compliant firmware via GCS or normal uploaders, and provides further tamper-proofing.
+
+An example of the required modifications for an OpenDroneID firmware version for an autopilot is shown for the `Cube Orange here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CubeOrange-ODID>`__
+
+ArduPilot also has developed firmware for an ESP32-S3-M development board for an OpenDroneID compatible ID module for attachment by serial MAVLink connection to the autopilot. A binary for flashing the board is `available here <https://github.com/ArduPilot/ArduRemoteID>`__ .
+
+.. image:: ../../../images/ESP32-S3.jpg
+    :target: ../../_images/ESP32-S3.jpg
+
 Other references:
 
 - The `OpenDroneID OSM <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__ android app can be used to check the Remote Id is working (`source code is here <https://github.com/opendroneid/receiver-android>`__)
