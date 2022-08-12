@@ -7,6 +7,11 @@ Future Wiki Changes (in Master branch now)
 
 [copywiki destination="plane,copter,rover,blimp,dev"]
 
+On :ref:`common-rangefinder-landingpage`
+========================================
+
+Add link to :ref:`common-teraranger-neo`
+
 On :ref:`common-ice` page add section:
 ======================================
 
