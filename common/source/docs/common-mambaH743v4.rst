@@ -1,5 +1,5 @@
 .. _common-mambaH743v4:
-
+[copywiki destination="plane,copter,rover,blimp"]
 ============
 Mamba H743v4
 ============
