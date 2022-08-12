@@ -37,6 +37,16 @@ ArduPilot also has developed firmware for an ESP32-S3-M development board for an
 .. image:: ../../../images/ESP32-S3.jpg
     :target: ../../_images/ESP32-S3.jpg
 
+Testing
+-------
+
+See :ref:`OpenDroneID <dev:opendroneid>` for information on how to build firmware for OpenDroneID and to run the code on an autopilot to experiment with parameters,etc.
+
+Android Application
+-------------------
+
+There is an `android phone application <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__ in the Google Play Store that allows one to display RemoteID  Bluetooth and/or WIFI transmissions and vehicle data. 
+
 Other references:
 
 - `ArduPilot presentation on its OpenDroneID implementation <https://docs.google.com/presentation/d/1JgnqcIDn7rGCc8nl46AutO0p0ABODdCgBHFfxmKuUw4/edit#slide=id.p>`__
