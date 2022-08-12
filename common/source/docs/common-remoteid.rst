@@ -33,10 +33,22 @@ In order to provide tamper protection, a special autopilot firmware must be buil
 
 An example of the required modifications for an OpenDroneID firmware version for an autopilot is shown for the `Cube Orange here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CubeOrange-ODID>`__
 
-ArduPilot also has developed firmware for an ESP32-S3-M development board for an OpenDroneID compatible ID module for attachment by serial MAVLink connection to the autopilot. A binary for flashing the board, along with instructions, is `available here <https://github.com/ArduPilot/ArduRemoteID>`__ .
+ArduPilot also has developed firmware for  ESP32-S3 and C3 development boards for an OpenDroneID compatible ID module for attachment by serial MAVLink connection to the autopilot. A binary for flashing the board, along with instructions, is `available here <https://github.com/ArduPilot/ArduRemoteID>`__ .
+
+This device can be attached to the autopilot by USB, or serial, or DroneCAN (if external CAN transceiver is attached)
 
 .. image:: ../../../images/ESP32-S3.jpg
     :target: ../../_images/ESP32-S3.jpg
+
+Testing
+-------
+
+See :ref:`OpenDroneID <dev:opendroneid>` for information on how to build firmware for OpenDroneID and to run the code on an autopilot to experiment with parameters,etc.
+
+Android Application
+-------------------
+
+There is an `android phone application <https://play.google.com/store/apps/details?id=org.opendroneid.android_osm>`__ in the Google Play Store that allows one to display RemoteID  Bluetooth and/or WIFI transmissions and vehicle data. 
 
 Other references:
 
