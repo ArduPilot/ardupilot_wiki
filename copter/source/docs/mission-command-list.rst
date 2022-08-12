@@ -196,6 +196,22 @@ The first column ("Max Desc") holds the maximum descent (in meters) that the veh
 ..  youtube:: m4GK4ALqluc
     :width: 100%
 
+Attitude Time
+~~~~~~~~~~~~~
+
+.. image:: ../../../images/MissionList_AttitudeTime.png
+    :target: ../_images/MissionList_AttitudeTime.png
+
+Vehicle maintains the specified roll, pitch, yaw angle and climb rate for the specified time.  GPS is not required while this command is being executed
+
+- **Roll**: positive is lean right, negative is lean left
+- **Pitch**: positive is lean back, negative is lean forward
+- **Yaw**: 0 is North, 90 is East, 180 is South, 270 is West
+- **ClimbRate**: in m/s but most ground stations incorrectly scale this parameter so it is best to leave at 0m/s
+
+..  youtube:: cli1zmPoz3U
+    :width: 100%
+
 Script Time
 ~~~~~~~~~~~
 
