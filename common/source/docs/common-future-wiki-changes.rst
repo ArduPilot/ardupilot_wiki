@@ -26,6 +26,76 @@ The redline governor will slowly reduce the throttle if the RPM remains above th
 
 - :ref:`ICE_REDLINE_RPM<ICE_REDLINE_RPM>` Maximum RPM for the engine provided by the manufacturer. A value of 0 disables this feature.
 
+On :ref:`common-auxiliary-functions` page
+=========================================
+
+Add
+
++----------------------+----------------------------+----------+---------+---------+
+| **RCx_OPTION value** | **Feature Description**    |**Copter**|**Plane**|**Rover**|
++----------------------+----------------------------+----------+---------+---------+
+|        162           | In-Flight FFT AutoSetup    |    X     |    X    |         |
++----------------------+----------------------------+----------+---------+---------+
+|        163           | Mount Lock                 |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+|        164           | Pause Streaming Logging    |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Option</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>In-Flight FFT AutoSetup</strong></td>
+   <td>
+
+Allows automatic setup of in-flight FFT notch parameters. Set :ref:`FFT_ENABLE<FFT_ENABLE>` =1, takeoff with switch low, hover 30 seconds with switch high,switch low, and land and notch parameters will have been configured.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Mount Lock</strong></td>
+   <td>
+
+If high, locks the heading of the mount to earth-frame, otherwise, yaw is heading locked to vehicle heading. If pilot controlled positioning is active, the pilot's inputs changes the heading target appropriately in whatever frame is selected. Without this switch, its vehicle heading.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>Pause Streaming Logging</strong></td>
+   <td>
+
+If high, will not log streaming type log messages (sensors,attitudes,ekf,etc.) to allow logging only when desired for autopilots with limited logging capabilites (ie no SD card). Events, mode changes, etc. are still logged. Logging is unaffected if switch is low.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   </table>
+
+In :ref:`common-imu-fft`
+========================
+
+add:
+
+.. note:: Setting up the FFT parameters can be done automatically using the ``RCx_OPTION`` auxiliary function "162" on a transmitter switch. Set the function to a switch on the transmitter. Hover the vehicel, switch it on (high) for 30 seconds, switch back low and land. The parameters will have been setup and switch function removed.
+
+In :ref:`common-downloading-and-analyzing-data-logs-in-mission-planner`
+=======================================================================
+
+add:
+
+
+.. note:: Logging of the continuously streaming log messages, such as attitude, sensors, etc. can be paused by using the ``RCx_OPTION`` auxiliary function "164" on a transmitter channel. Switching this channel high will pause these messages, but not events, mode changes, warnings, etc. This allows autopilots with limited logging capabilites (ie using Block logging to chip memory and no SD card) to log only when desired during the flight, as during tuning phases or determination of TECs parameters, etc.
+
 [site wiki="rover"]
 
 Add info about steering speed scaling option
