@@ -196,6 +196,18 @@ The first column ("Max Desc") holds the maximum descent (in meters) that the veh
 ..  youtube:: m4GK4ALqluc
     :width: 100%
 
+Script Time
+~~~~~~~~~~~
+
+.. image:: ../../../images/MissionList_ScriptTime.png
+    :target: ../_images/MissionList_ScriptTime.png
+
+Lua script runs for the specified time after which it will move onto the next command.  "command", "arg1" and "arg2" arguments are interpreted by the script.
+The demonstration below used this SCRIPT_TIME command to execute the "fast descent" script from within Auto mode.
+
+..  youtube:: YD50BxeQm84
+    :width: 100%
+
 .. _mission-command-list_do-set-roi:
 
 Do-Set-ROI
