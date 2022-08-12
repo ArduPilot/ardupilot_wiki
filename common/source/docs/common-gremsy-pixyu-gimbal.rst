@@ -103,6 +103,7 @@ Connect with a ground station and set the following parameters:
 - :ref:`MNT_TYPE <MNT_TYPE>` to "6" for "Gremsy" and reboot the autopilot
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
+- :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` to 1024 for "Don't forward mavlink to/from"
 
 Configuring the Gimbal
 ----------------------
@@ -113,16 +114,15 @@ Configuring the Gimbal
 
   - Open gTune Desktop application, "Found your device" should be displayed
   - Select "CONNECT"
-  - Select "INFO" and confirm the gimbal is running Firmware "7.7.2" or higher
+  - Select "INFO" and confirm the gimbal is running Firmware "7.7.1" or higher
 
   .. image:: ../../../images/gremsy-firmware-version-check.png
       :target: ../_images/gremsy-firmware-version-check.png
       :width: 450px
 
-  - If the gimbal firmware is older than 7.7.2 download the latest .hex for `Pixy SM <https://github.com/Gremsy/PixySM-Firmware/releases>`__, `Pixy W <https://github.com/Gremsy/PixyW-Firmware/releases>`__, `Pixy U <https://github.com/Gremsy/PixyU-Firmware/releases>`__, `Pixy F <https://github.com/Gremsy/PixyF-Firmware/releases>`__ or `Mio <https://github.com/Gremsy/Mio-Firmware/releases>`__
+  - If the gimbal firmware is older than 7.7.1 download the latest .hex for `Pixy SM <https://github.com/Gremsy/PixySM-Firmware/releases>`__, `Pixy W <https://github.com/Gremsy/PixyW-Firmware/releases>`__, `Pixy U <https://github.com/Gremsy/PixyU-Firmware/releases>`__, `Pixy F <https://github.com/Gremsy/PixyF-Firmware/releases>`__ or `Mio <https://github.com/Gremsy/Mio-Firmware/releases>`__
   - Select "UPGRADE", "BROWSE" and select the file downloaded above
-  - Momentarily unplug and plug in the USB cable to put the gimbal into bootloader mode
-  - The upgrade should complete within 30 seconds
+  - Press the other "UPGRADE" button and the upgrade should complete within 30 seconds
 
   .. image:: ../../../images/gremsy-settings-upgrade.png
       :target: ../_images/gremsy-settings-upgrade.png
