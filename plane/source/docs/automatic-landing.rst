@@ -222,7 +222,8 @@ Using a rangefinder
 If you have :ref:`fitted a rangefinder <common-rangefinder-landingpage>`
 to your aircraft then you can use it for much more accurate landing
 control. To allow the rangefinder to be used for landing you need to set
-the :ref:`RNGFND_LANDING <RNGFND_LANDING>` parameter to 1.
+the :ref:`RNGFND_LANDING <RNGFND_LANDING>` parameter to 1. The first rangefinder
+with "down" orientation found, will be used.
 
 When using a rangefinder for landing the altitude given by the
 rangefinder is used only in the landing approach and to determine the
