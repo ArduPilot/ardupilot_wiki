@@ -20,7 +20,7 @@ ADS-B (aka `Automatic Dependent Surveillance Broadcast <https://en.wikipedia.org
 Required Hardware
 =================
 
-The uAvionix Ping sensor can be purchased directly from `uAvionix <https://uavionix.com/products/>`__ or from the following vendors:
+The sensors can be purchased directly from `uAvionix <https://uavionix.com/products/>`__ or `Sagetech <https://sagetech.com/>`__ or from the following distributors:
 
    -  USA: `Unmanned Systems Source <https://www.unmannedsystemssource.com/shop/atc-devices/pingrx-ads-b-receiver/>`__
    -       `R Cubed Engineering <http://www.rcubedengineering.com/ecommerce/>`__
@@ -28,37 +28,42 @@ The uAvionix Ping sensor can be purchased directly from `uAvionix <https://uavio
    -  Germany: `UAV Store <http://www.uav-store.de/ads-b-receivers/>`__
    -  Asia: `jDrones pingRX <http://store.jdrones.com/ping_ads_b_receiver_p/adsbping01.htm>`__
 
-The full reseller list can be found at `uAvionix <https://uavionix.com/resellers/>`__
-
-
 Connecting to the autopilot
-===================================
+===========================
 
 .. image:: ../../../images/adsb_and_pixhawk.png
     :target: ../_images/adsb_and_pixhawk.png
 
-The ADSB receiver comes with a DF13 serial cable that can be plugged
-directly into a Pixhawk serial port. Other autopilots will require a cable to be constructed appropriatley.
-The Ping sensor should be mounted so that the antenna is oriented
+The ADSB receivers should be connected to an autopilot's serial port. The receiver should be mounted so that the antenna is oriented
 vertically.
 
-Setup through the ground station
-================================
+Setup
+=====
 
-Set the :ref:`ADSB_TYPE <ADSB_TYPE>` parameter to "1" to enable receiving data from the Uavonix ADSB sensor.
+Set the :ref:`ADSB_TYPE <ADSB_TYPE>` parameter to match the receiver's serial communication protocol. 
 
-If you are using one of the UARTs on your board which defaults to MAVLink (i.e. Telem1, Telem2 on a Pixhawk) then the default settings will work fine for the PingRx. Alternatively you
-can connect the Ping to one of the other UARTs, such as the GPS UART (if it is unused) or the serial4/5 UART. In that case you will need to configure the UART as MAVLink at a baudrate of 57600.
+The serial port to which the receiver is connected should be configured to also match the ADSB receiver's protocol:
 
-For example, if you plugged the Ping into a UART designated as SERIAL4 on the autopilot, you would set:
++----------------+-----------------------------+---------------------------------+----------------+
+|ADSB Protocol   |:ref:`ADSB_TYPE <ADSB_TYPE>` |``SERIALx_PROTOCOL``             |``SERIALx_BAUD``|
++================+=============================+=================================+================+
+|MAVLINK         |              1              | MAVLink1 (1) or MAVLink2 (2)    |   57600        |
+|                |                             | depending on unit               |                |
++----------------+-----------------------------+---------------------------------+----------------+
+|Sagetech        |              2              |     ADSB (28)                   |    115200      |
++----------------+-----------------------------+                                 +                +
+|UCP             |              3              |                                 |                |
++----------------+-----------------------------+                                 +                +
+|Sagetech MX     |              4              |                                 |                |
++----------------+-----------------------------+---------------------------------+----------------+
 
--  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` to 1 (meaning MAVLink)
+
+For example, if you plugged a uAvionix Ping2020i into a UART designated as SERIAL4 on the autopilot, you would set:
+
+-  :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` to 2 (meaning MAVLink2)
 -  :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` 57 (meaning 57600)
 
-
-For the Ping2020 you'll need to set the _PROTOCOL value to 2. For example, when connected to Telem2 you would set:
-
--  :ref:`SERIAL2_PROTOCOL <SERIAL4_PROTOCOL>` to 2 (meaning MAVLink v2.0)
+.. note:: the specifications for the ADSB receiver may only state MAVLink as the protocol. In that case try MAVLink2, first, and if that does not succeed, use MAVLink as the serial port protocol.
 
 You will need to reboot your board after making those changes.
 
@@ -90,9 +95,11 @@ The following parameters are used to configure ADS-B out:
 -  :ref:`ADSB_OFFSET_LAT <ADSB_OFFSET_LAT>` : GPS antenna lateral offset. This describes the physical location offset from center of the GPS antenna on the aircraft.
 -  :ref:`ADSB_OFFSET_LON <ADSB_OFFSET_LON>` : GPS antenna longitudinal offset. This is usually set to 1, Applied By Sensor
 -  :ref:`ADSB_RF_SELECT <ADSB_RF_SELECT>` : Transceiver RF selection for Rx enable and/or Tx enable. This only effects devices that can Tx and/or Rx. Rx-only devices override this to always be Rx-only.
--  :ref:`ADSB_SQUAWK <ADSB_SQUAWK>` : Squawk/Transponder (Mode 3/A) code that is braodcasted to ATC that is usually assigned by your ATC for a given flight. In the USA/Canada the default squawk code is for VFR which is 1200. Most parts of Europe and Australia use 7000. If an invalid octal number is set then it will be reset to 1200.
+-  :ref:`ADSB_SQUAWK <ADSB_SQUAWK>` : Squawk/Transponder (Mode 3/A) code that is broadcasted to ATC that is usually assigned by your ATC for a given flight. In the USA/Canada the default squawk code is for VFR which is 1200. Most parts of Europe and Australia use 7000. If an invalid octal number is set then it will be reset to 1200.
+-  :ref:`ADSB_OPTIONS <ADSB_OPTIONS>` : Allows enabling certain device specific capabilities and to allow "Squawking" emergency codes on certain vehicle failsafes.
 
-In many cases the defaults are OK and you don't need to change any of these except `ADSB_RF_SELECT <ADSB_RF_SELECT>` which is needed to turn on the transmitter. The ADSB_RF_SELECT transmit bit is cleared on boot to ensure you're only trsnamitting when intentionally enabled.
+In many cases the defaults are OK and you don't need to change any of these except :ref:`ADSB_RF_SELECT <ADSB_RF_SELECT>` which is needed to turn on the transmitter. The :ref:`ADSB_RF_SELECT<ADSB_RF_SELECT>` transmit bit is cleared on boot to ensure you're only trsnamitting when intentionally enabled.
+
 There are additional MAVLink messages for ADSB in uavionix.xml to allow a GCS to set all of these options. Namely, msg UAVIONIX_ADSB_OUT_CFG and UAVIONIX_ADSB_OUT_DYNAMIC where the _cfg is the only place where you can assign a custom callsign.
 
 Enabling Manned Vehicle Avoidance
@@ -113,9 +120,6 @@ Note: there are equivalent "Warn" parameters (i.e. AVD_W_DIST_XY) that can be us
 
 In ArduPilot firmware versions 4.0 and later, the entry into this mode can be enabled or disabled via an RC channel switch by setting the channel's RCx_OPTION = 38 (ADSB Avoidance En). If the RC PWM is >1800us, then entry into this mode is enabled if a threat presents.
 
-.. warning::
-
-   The avoidance features are still under development and should be used with caution.  They may not yet be useful for real-life manned vehicle avoidance.
 
    ..  youtube:: quomxCIPP74
     :width: 100%
