@@ -25,9 +25,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [site wiki="rover, copter"]
     Airspeed Sensor <common-airspeed-sensor>
 [/site]
-[site wiki="rover"]
-    AIS for Boats <common-ais>
-[/site]
+    AIS (Automatic Identification System) <common-ais>
     Barometer (external) <common-baro-external>
 [site wiki="copter,plane,rover"]
     Button Inputs <common-buttons>
