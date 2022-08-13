@@ -162,7 +162,6 @@ Full Table of Contents
     Wiki Editing Guide <docs/common-wiki_editing_guide>
     USB IDs <docs/USB-IDs>
     User Alerts <docs/user-alerts-developer>
-    Upcoming Features <docs/common-master-features>
     Academic Works Involving ArduPilot <docs/acadamic-works>
     Appendix <docs/common-appendix>
     Full Table of Contents <docs/common-table-of-contents>
