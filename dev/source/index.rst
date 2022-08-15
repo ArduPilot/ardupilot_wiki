@@ -133,7 +133,7 @@ Full Table of Contents
 
 .. toctree::
    :titlesonly:
-
+   
     License (GPLv3) <docs/license-gplv3>
     AP_Peripheral Devices <docs/ap-peripheral-landing-page>
     Downloading the code / Using Git <docs/where-to-get-the-code>
@@ -150,7 +150,6 @@ Full Table of Contents
     Lua Scripts <docs/common-lua-scripts>
     Porting to a new Flight Controller <docs/porting>
     OEM Customization <docs/common-oem-customizations>
-    RemoteID <docs/opendroneid>
     Advanced Hardware Info <docs/pixhawk-advanced-hardware-info>
     MAVProxy Developer GCS <docs/mavproxy-developer-gcs>
     Resources for GCS Developers <docs/gcs-resources>
