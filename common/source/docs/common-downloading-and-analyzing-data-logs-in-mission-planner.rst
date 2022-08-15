@@ -143,28 +143,23 @@ Bitmask Table (Plane)
 ====   =====================      ==============================================================
 Bit     BitMask Name                 What is logged if bit is set
 ====   =====================      ==============================================================
-0       ATTITUDE_FAST               Attitude @ 25Hz
-1       ATTITUDE_MED                Attitude @ 10Hz
+0       Fast Attitude               Attitude @ 25Hz
+1       Medium Attitude             Attitude @ 10Hz
 2       GPS                         GPS
-3       PM                          Performance monitoring
-4       CTUN                        Control Data
-6       NTUN                        Navigation Data
-7       MODE                        no longer used, Mode info logged as events
-8       IMU                         IMU (ACC/Gyro) Data
-9       CMD                         Mission/GCS Commands
-10      BATT_MON                    Battery Monitors data
-11      COMPASS                     Compasses Data
-12      TECS                        Speed/Height Controller Data
-13      CAMERA                      Camera Data (if present)
-14      RC                          RC input/output data
-15      RANGEFINDER                 Rangefinder Data (if present)
-16      ARM_DISARM                  no longer used, ARM state is logged as status and events
-17          na     
-18          na
-19          na
-20      IMU_RAW                     Raw IMU data, unprocessed
-21      ATTITUDE_FULLRATE           ATTITUDE @ 400Hz
-22      VIDEO_STABILISATION         GyroFlow Data logs
+3       System Performance          CPU,etc. Performance monitoring
+4       Control Tuning              Control Data
+5       Navigation Tuning           Navigation Data
+7       IMU                         IMU (ACC/Gyro) Data
+8       Mission Commands            Mission/GCS Commands
+9       Battery Monitor             Battery Monitors data
+10      Compass                     Compasses Data
+11      TECS                        Speed/Height Controller Data
+12      Camera                      Camera Data (if present)
+13      RC Input & Output           RC input/Servo output data
+14      Rangefinder                 Rangefinder Data (if present)
+19      Raw IMU                     Raw IMU data, unprocessed
+20      Full Rate Attitude          Attitude at :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`
+21      Video Stabilization         GyroFlow Data logs
 ====   =====================      ==============================================================
 
 ATTITUDE logging will occur at highest rate of the selections. 
@@ -172,6 +167,70 @@ ATTITUDE logging will occur at highest rate of the selections.
 .. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
 
 [/site]
+[site wiki="copter"]
+
+Bitmask Table (Copter)
+----------------------
+
+====   =====================      ==============================================================
+Bit     BitMask Name                 What is logged if bit is set
+====   =====================      ==============================================================
+0       Fast Attitude               Attitude @ :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`
+1       Medium Attitude             Attitude @ 10Hz
+2       GPS                         GPS
+3       System Performance          CPU,etc. Performance monitoring
+4       Control Tuning              Control Data
+5       Navigation Tuning           Navigation Data
+6       RC Input                    RC Input data
+7       IMU                         IMU (ACC/Gyro) Data
+8       Mission Commands            Mission/GCS Commands
+9       Battery Monitor             Battery Monitors Data
+10      RC Output                   Servo Output
+11      Optical Flow                Optical Flow Data
+12      PID                         PID controllers Data
+13      Compass                     Compass Data
+15      Camera                      Camera Data
+17      Motors                      Motor Data
+19      Raw IMU                     Raw IMU data, unprocessed
+20      Video Stabilization         Attitude at :ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`
+21      Fast harmonic notch         Fast harmonic notch
+====   =====================      ==============================================================
+
+ATTITUDE logging will occur at highest rate of the selections. 
+
+.. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
+
+[/site]
+[site wiki="rover"]
+Bitmask Table (Rover)
+---------------------
+
+====   =====================      ==============================================================
+Bit     BitMask Name                 What is logged if bit is set
+====   =====================      ==============================================================
+0       Fast Attitude               Attitude @ 400Hz
+1       Medium Attitude             Attitude @ 10Hz
+2       GPS                         GPS
+3       System Performance          CPU,etc. Performance monitoring
+4       Throttle                    Throttle/Speed Control Data
+5       Navigation Tuning           Navigation Data
+7       IMU                         IMU (ACC/Gyro) Data
+8       Mission Commands            Mission/GCS Commands
+9       Battery Monitor             Battery Monitors Data
+10      Rangefinder                 Rangefinder Data (if present)
+11      Compass                     Compasses Data
+12      Camera                      Camera Data (if present)
+13      Steering                    Steering rates and targets
+14      RC Input & Output           RC input/Servo output data
+19      Raw IMU                     Raw IMU data, unprocessed
+20      Video Stabilization         GyroFlow Data logs
+====   =====================      ==============================================================
+
+ATTITUDE logging will occur at highest rate of the selections. 
+
+.. note:: the logging of EKF3 data is controlled by the :ref:`EK3_LOG_LEVEL<EK3_LOG_LEVEL>` parameter.
+[/site]
+
 
 .. _common-downloading-and-analyzing-data-logs-in-mission-planner_message_details_copter_specific:
 
