@@ -161,6 +161,8 @@ PLANE FUNCTIONS (Also applies to QuadPlanes)
 +--------------------------------+----+---------------------------------------+
 |      Landing Gear              | 29 |    Copter, Plane                      |
 +--------------------------------+----+---------------------------------------+
+|      AirBrakes                 |110 |    Plane                              |
++--------------------------------+----+---------------------------------------+
 
 Aileron
 +++++++
@@ -271,6 +273,11 @@ Landing Gear
 ++++++++++++
 
 This output controls the landing gear servo(s) in Copter and Plane. See :ref:`landing-gear` for more information.
+
+Airbrakes
++++++++++
+
+This output is for air brake control. Manual input control is via ``RCx_OPTIONS`` = 210. For more information see :ref:`airbrakes-on-plane`.
 
 COPTER / QUADPLANE FUNCTIONS
 ----------------------------
