@@ -305,11 +305,11 @@ land, starting at the part of the mission just after the
 
 The exact behaviour depends on the :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` value:
 
--  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` then the plane will first RTL as normal, then
+-  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 1, then the plane will first RTL as normal, then
    when it starts circling the return point (home or a rally point) it
    will then switch to the AUTO mission after the ``DO_LAND_START`` and
    land
--  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` then the plane will bypass the RTL completely
+-  If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` = 2, then the plane will bypass the RTL completely
    and go straight to the landing sequence.
 
 You can optionally include more than one ``DO_LAND_START`` mission item
