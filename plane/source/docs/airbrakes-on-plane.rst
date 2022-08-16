@@ -31,7 +31,7 @@ Assign a spare RC channel on your transmitter to a dial, slider or 3 position sw
 Automatic Airbrake Setup
 ========================
 
-You can have airbrakes automatically used in an automated landing or in conjunction with Reverse Thrust operation during certain throttled controlled modes or automatic landings and throttle-controlled descents, such as CRUISE mode while soaring. If manual control has been enabled using the ``RCX_OPTION`` (64), then the airbrake deployment will be the greater of either the automatic demand or manual control.
+You can have airbrakes automatically used in an automated landing or in conjunction with :ref:`Reverse Thrust<reverse-thrust-setup>` operation during certain throttled controlled modes or automatic landings and throttle-controlled descents, such as CRUISE mode while soaring. If manual control of reverse thrust has been enabled using the ``RCX_OPTION`` (64) or airbraking while in final flare in automatic landing using reverse thrust, then the airbrake deployment will be the greater of either the automatic demand or manual control.
 
 Use With Reverse Thrust on Motor
 --------------------------------
