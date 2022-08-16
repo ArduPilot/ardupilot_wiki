@@ -93,6 +93,8 @@ Setup
 
 See `blog post on setup <https://discuss.ardupilot.org/t/simple-portable-rtk-base-station>`__
 
+.. note:: some RTK GPSes are available already configured for dedicated BASE operation with automatic "survey-in" being done every power up. The base model of the `BliCube GRTK <https://www.blicube.com/grtk/>`__ system is an example.
+
 Acknowledgment
 ==============
 

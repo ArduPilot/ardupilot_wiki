@@ -17,7 +17,7 @@ GPSs from ArduPilot Partners that are known to work are shown on the :ref:`commo
 
 
 Hardware Setup
---------------
+==============
 
 - Two Ublox F9 GPSs should be place on the vehicle at least 30cm apart (horizontally)
 - The 1st GPS and 2nd GPS should be connected to a serial/telem ports on the
@@ -26,7 +26,7 @@ Hardware Setup
 - Serial GPS modules must be connected to ArduPilot via their UART1 connectors, DroneCAN modules via CAN, or interconnected per their manufacturer instructions.
 
 Configuration
--------------
+=============
 
 - :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the 1st GPS is connected to SERIAL3.
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = 5 ("GPS") assuming the 2nd GPS is connected to serial port 4
@@ -56,8 +56,20 @@ For either Serial or DroneCAN GPS also set:
 
 .. note:: should be possible to mix and match a Serial GPS and a DroneCAN GPS, but this configuration has not been tested as yet.
 
+Internal Moving Baseline Systems
+================================
+
+Some vehicle GPS provide GPS for Yaw utilizing a completely internal dual gps unit and managing the inter gps communication totally internally, rather than having ArduPilot pass data between the GPSes. An example of this system is the `BliCube GRTK <https://www.blicube.com/grtk/>`__.
+
+This only requires that the GPS be attached to a SERIALx port using ``SERIALx_PROTOCOL`` = 5 (GPS)
+ and setting only:
+
+- :ref:`GPS_TYPE<GPS_TYPE>` = 5 (NMEA)
+- :ref:`EK3_SRC1_YAW <EK3_SRC1_YAW>` = 2 ("GPS") or 3 ("GPS with Compass Fallback") if a compass(es) is also in the system.
+
+
 Testing
--------
+=======
 
 In a location with good GPS reception point the vehicle at a landmark
 some distance away and then check the heading on the ground station
