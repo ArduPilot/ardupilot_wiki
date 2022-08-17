@@ -7,6 +7,11 @@ Future Wiki Changes (in Master branch now)
 
 [copywiki destination="plane,copter,rover,blimp"]
 
+Add Analog Fuel Level Sensors
+=============================
+
+See https://github.com/ArduPilot/ardupilot_wiki/pull/4413
+
 On :ref:`common-rangefinder-landingpage`
 ========================================
 
