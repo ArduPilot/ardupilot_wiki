@@ -1,10 +1,10 @@
 .. _common-gremsy-pixyu-gimbal:
 
-==================================
-Gremsy Pixy and Mio 3-Axis Gimbals
-==================================
+==========================================
+Gremsy T3, T7, Pixy and Mio 3-Axis Gimbals
+==========================================
 
-Gremsy `Pixy SM <https://gremsy.com/products/pixy-sm>`__, `Pixy WP <https://gremsy.com/products/pixy-wp>`__, `Pixy U <https://gremsy.com/products/pixy-u>`__, `Pixy F <https://gremsy.com/products/pixy-f>`__ and `Mio <https://gremsy.com/products/mio>`__ 3-axis gimbals can communicate with the flight controller using the MAVLink protocol and are compatible with a range of cameras for real-time video or mapping purposes.
+Gremsy `T3 <https://gremsy.com/products/gremsy-t3v3>`__, `T7 <https://gremsy.com/products/gremsy-t7>`__, `Pixy WP <https://gremsy.com/products/pixy-wp>`__, `Pixy U <https://gremsy.com/products/pixy-u>`__, `Pixy F <https://gremsy.com/products/pixy-f>`__ and `Mio <https://gremsy.com/products/mio>`__ 3-axis gimbals can communicate with the flight controller using the MAVLink protocol and are compatible with a range of cameras for real-time video or mapping purposes.
 
 .. image:: ../../../images/gremsy-pixyu-gimbal.png
     :target: https://gremsy.com/products/pixy-u
@@ -120,7 +120,7 @@ Configuring the Gimbal
       :target: ../_images/gremsy-firmware-version-check.png
       :width: 450px
 
-  - If the gimbal firmware is older than 7.7.1 download the latest .hex for `Pixy SM <https://github.com/Gremsy/PixySM-Firmware/releases>`__, `Pixy W <https://github.com/Gremsy/PixyW-Firmware/releases>`__, `Pixy U <https://github.com/Gremsy/PixyU-Firmware/releases>`__, `Pixy F <https://github.com/Gremsy/PixyF-Firmware/releases>`__ or `Mio <https://github.com/Gremsy/Mio-Firmware/releases>`__
+  - If the gimbal firmware is older than 7.7.1 download the latest .hex for `T3 <https://github.com/Gremsy/T3V3-Firmware/releases>`__, `T7 <https://github.com/Gremsy/T7-Firmware/releases>`__, `Pixy W <https://github.com/Gremsy/PixyW-Firmware/releases>`__, `Pixy U <https://github.com/Gremsy/PixyU-Firmware/releases>`__, `Pixy F <https://github.com/Gremsy/PixyF-Firmware/releases>`__ or `Mio <https://github.com/Gremsy/Mio-Firmware/releases>`__
   - Select "UPGRADE", "BROWSE" and select the file downloaded above
   - Press the other "UPGRADE" button and the upgrade should complete within 30 seconds
 
