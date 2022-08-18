@@ -104,6 +104,7 @@ Connect with a ground station and set the following parameters:
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps.  "SERIAL2" can be replaced with another serial port (i.e. SERIAL1) depending upon the physical connection
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 2 for "MAVLink2"
 - :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` to 1024 for "Don't forward mavlink to/from"
+- Optionally set :ref:`RC9_OPTION <RC9_OPTION>` to 163 for "Mount Lock" to allow the pilot to switch between "lock" and "follow" modes during "RC Targetting".  Note "RC9" can be replaced with any RC input channel
 
 Configuring the Gimbal
 ----------------------
