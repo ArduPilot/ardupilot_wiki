@@ -151,7 +151,7 @@ The SPRacing series of boards come pre-installed with a proprietary bootloader o
 - Download the latest ArduPilot external flash binary, for instance https://firmware.ardupilot.org/Copter/latest/SPRacingH7/arducopter.bin
 - Use dd to pad the binary to 2MB:
 
-.. code-block::
+.. code-block:: none
 
    dd if=/dev/zero ibs=1k count=2048 of=AP_2MB.bin
    dd conv=notrunc if=arducopter.bin of=AP_2MB.bin
@@ -159,13 +159,13 @@ The SPRacing series of boards come pre-installed with a proprietary bootloader o
 - Put the board into SSBL dfu mode - power off, hold BIND (not BOOT), power on - LED flashes fast, release BIND, LED flashed slow - DFU mode enabled
 - Flash the binary using
 
-.. code-block::
+.. code-block:: none
 
    dfu-util -D AP_2MB.bin -s 0x90100000:0x200000
 
 - Verify the flash. The dfu-util command below copies the contents of the flash back to the computer, the diff command will tell you if the contents are identical or different. Do not attempt to fly if diff doesn't say the files are identical - retry.
 
-.. code-block::
+.. code-block:: none
 
    dfu-util -U AP_2MB-VERIFY.bin -s 0x90100000:0x200000
    diff -sb AP_2MB.bin AP_2MB-VERIFY.bin
@@ -189,7 +189,7 @@ Installing the ArduPilot bootloader
 - Download the ArduPilot bootloader, e.g. https://github.com/ArduPilot/ardupilot/blob/master/Tools/bootloaders/SPRacingH7_bl.bin
 - Install the bootloader via dfu:
 
-.. code-block::
+.. code-block:: none
 
    dfu-util -a 0 --dfuse-address 0x08000000 -D SPRacingH7_bl.bin
 
