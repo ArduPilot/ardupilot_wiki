@@ -59,7 +59,7 @@ For either Serial or DroneCAN GPS also set:
 Internal Moving Baseline Systems
 ================================
 
-Some vehicle GPS provide GPS for Yaw utilizing a completely internal dual gps unit and managing the inter gps communication totally internally, rather than having ArduPilot pass data between the GPSes. An example of this system is the `Blicube GRTK <https://www.blicube.com/grtk/>`__.
+Some vehicle GPS provide GPS for Yaw utilizing a completely internal dual gps unit and managing the inter gps communication totally internally, rather than having ArduPilot pass data between the GPSes. An example of this system is the `Blicube GRTK <https://wiki.blicube.com/grtk/>`__.
 
 This only requires that the GPS be attached to a SERIALx port using ``SERIALx_PROTOCOL`` = 5 (GPS)
  and setting only:
