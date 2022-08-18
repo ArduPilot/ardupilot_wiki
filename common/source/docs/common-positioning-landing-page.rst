@@ -43,7 +43,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     
     ArduSimple RTK GPS <common-gps-ardusimple>
     Ark RTK GPS <https://arkelectron.com/product/ark-rtk-gps/>
-    Blicube RTK GPS <https://www.blicube.com/grtk/>
+    Blicube RTK GPS <https://wiki.blicube.com/grtk/>
     CUAV C-RTK 9P RTK Receiver <common-cuav-c-rtk-9p-gps>
     CUAV C-RTK 9Ps RTK Receiver <https://store.cuav.net/shop/c-rtk-9ps/>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
