@@ -22,6 +22,7 @@ Stand-alone devices:
 
 - `Aerobits idME+ <https://www.aerobits.pl/product/idme-remoteid/>`__
 - `EAMS Robotics remote id (Japan) <http://www.eams-robo.co.jp/remoteid.html>`__
+- `TEAD remote id (Japan) <https://www.tead.co.jp/product/remote-id/>`__
 
 OpenDroneID
 ===========
