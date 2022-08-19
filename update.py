@@ -170,19 +170,21 @@ def fetchlogmessages(site=None, cache=None):
             os.rename('LogMessages.rst', targetfile)
 
 
-def build_one(wiki):
+def build_one(wiki, fast):
     '''build one wiki'''
-    print('make and clean: %s' % wiki)
+    print('Using make for sphinx: %s' % wiki)
     if platform.system() == "Windows":
         # This will fail if there's no folder to clean, so no check_call here
-        subprocess.run(["make.bat", "clean"], cwd=wiki, shell=True)
+        if not fast:
+            subprocess.run(["make.bat", "clean"], cwd=wiki, shell=True)
         subprocess.check_call(["make.bat", "html"], cwd=wiki, shell=True)
     else:
-        subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
+        if not fast:
+            subprocess.check_call(["nice", "make", "clean"], cwd=wiki)
         subprocess.check_call(["nice", "make", "html"], cwd=wiki)
 
 
-def sphinx_make(site, parallel):
+def sphinx_make(site, parallel, fast):
     """
     Calls 'make html' to build each site
     """
@@ -199,7 +201,7 @@ def sphinx_make(site, parallel):
             continue
         if site is not None and not site == wiki:
             continue
-        p = multiprocessing.Process(target=build_one, args=(wiki,))
+        p = multiprocessing.Process(target=build_one, args=(wiki, fast))
         p.start()
         procs.append(p)
         while parallel != -1 and len(procs) >= parallel:
@@ -807,6 +809,14 @@ if __name__ == "__main__":
         default=True,
         help="show debugging output",
     )
+    parser.add_argument(
+        '--fast',
+        dest='fast',
+        action='store_true',
+        default=False,
+        help=("Incremental build using already downloaded parameters, log messages, and video thumbnails rather than cleaning "
+              "before build."),
+    )
 
     args = parser.parse_args()
     # print(args.site)
@@ -817,19 +827,20 @@ if __name__ == "__main__":
     now = datetime.now()
     building_time = now.strftime("%Y-%m-%d-%H-%M-%S")
 
-    if args.paramversioning:
-        # Parameters for all versions availble on firmware.ardupilot.org:
-        fetch_versioned_parameters(args.site)
-    else:
-        # Single parameters file. Just present the latest parameters:
-        fetchparameters(args.site, args.cached_parameter_files)
+    if not args.fast:
+        if args.paramversioning:
+            # Parameters for all versions availble on firmware.ardupilot.org:
+            fetch_versioned_parameters(args.site)
+        else:
+            # Single parameters file. Just present the latest parameters:
+            fetchparameters(args.site, args.cached_parameter_files)
 
-    # Fetch most recent LogMessage metadata from autotest:
-    fetchlogmessages(args.site, args.cached_parameter_files)
+        # Fetch most recent LogMessage metadata from autotest:
+        fetchlogmessages(args.site, args.cached_parameter_files)
 
     copy_static_html_sites(args.site, args.destdir)
     generate_copy_dict()
-    sphinx_make(args.site, args.parallel)
+    sphinx_make(args.site, args.parallel, args.fast)
 
     if args.paramversioning:
         put_cached_parameters_files_in_sites(args.site)
@@ -838,8 +849,8 @@ if __name__ == "__main__":
     if args.enablebackups:
         copy_and_keep_build(args.site, args.destdir, args.backupdestdir)
         delete_old_wiki_backups(args.backupdestdir, N_BACKUPS_RETAIN)
-    elif args.destdir:
-        copy_build(args.site, args.destdir)
+        if args.destdir:
+            copy_build(args.site, args.destdir)
 
     # To navigate locally and view versioning script for parameters
     # working is necessary run Chrome as "chrome
