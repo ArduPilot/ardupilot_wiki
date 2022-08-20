@@ -4,49 +4,35 @@
 STorM32 Gimbal Controller
 =========================
 
-The *STorM32-BGC* is a relatively low-cost 3-axis brushless gimbal
+The STorM32-BGC is a relatively low-cost 3-axis brushless gimbal
 controller that can communicate with ArduPilot (Copter, Plane and Rover)
-using MAVLink.
+using MAVLink or a proprietary serial protocol.
 
-With 3-axis control and MAVLink interface, the STorM32 offers more
-capabilities and than the Tarot Gimbal.  MAVLink is a richer
-communications format that PWM and may be used in the future to provide
-additional information to the gimbal including centrefugal force
-corrections leading to better performance during aggressive maneuvers.
+- SToRM32 gimbals with I2C setups and firmware v0.96 should use the SToRM32 Serial driver
+- SToRM32 NT gimbals running firmware above v0.96 should use the SToRM32 MAVLink driver
 
-Please refer to the `STorM32-BGC wiki pages <http://www.olliw.eu/storm32bgc-wiki/Main_Page>`__ for more
-detailed information including where the gimbals can be purchased.  This
-gimbal has been tested with a `DYS 3-axis brushless gimbal <https://hobbyking.com/en_us/dys-smart3-3-axis-gopro-gimbal-with-alexmos-control-board-basecam.html?___store=en_us>`__.
+Where to buy
+============
 
-.. note::
+Please refer to the `STorM32-BGC wiki pages <http://www.olliw.eu/storm32bgc-wiki/Main_Page>`__ for more detailed information including where the gimbals can be purchased.
 
-   Support for this gimbal is included for
-   gimbals running
-   `v067e <http://www.olliw.eu/storm32bgc-wiki/Downloads>`__ (or higher). 
+.. warning::
 
-Be aware that some v1.3x boards has been found to cause significant RF interference on the 433mhz and 915mhz band.
-Use with caution, if you are using either 433/915mhz control or telemetry.
+    Some v1.3x boards has been found to cause significant RF interference on the 433mhz and 915mhz band.
+    Use with caution, if you are using either 433/915mhz control or telemetry.
 
-Connecting the gimbal to the Pixhawk
-====================================
+Connecting the gimbal to the autopilot
+======================================
 
 .. image:: ../../../images/pixhawk_SToRM32_connections.jpg
     :target: ../_images/pixhawk_SToRM32_connections.jpg
 
-You will need to solder 3-pins of a `DF13 6-pin cable <http://store.jdrones.com/cable_df13_6pin_25cm_p/cbldf13p6c25.htm>`__
-to the gimbal controller board as shown above and then plug the other
-end into one of the Pixhawk's Telemetry ports (Telem1, Telem2, Serial4).
-
-.. note::
-
-   The remaining 3 pins (VCC, RTS, CTS) of the cable should not be
-   connected.
-
+Connect one of the  autopilot's serial port's TX, RX and GND pins to the gimbal's UART port as shown above.  The autopilot's serial port's VCC, RTS and CTS pins should not be connected
 
 .. _common-storm32-gimbal_configuring_the_gimbal:
 
-Configuring the gimbal
-======================
+Setup if using MAVLink protocol
+===============================
 
 In addition to the regular gimbal configuration described on the
 `STorM32-BGC wiki <http://www.olliw.eu/storm32bgc-wiki/Getting_Started>`__, the
@@ -56,63 +42,38 @@ MAVlink heartbeats should be enabled through OlliW's o323BGCTool's
 .. image:: ../../../images/SToRM32_enableMavlink.png
     :target: ../_images/SToRM32_enableMavlink.png
 
-Set-up through the Mission Planner (MAVLink protocol)
-=====================================================
+Using a ground station (e.g. Mission Planner) set the following parameters.  These setting assume Autopilot's serial2 is being used.  If another serial port is being used replace the "2" in the parameter name with the appropriate serial port number.
 
-Through your GCS (i.e. MP's Full Param List or Tree) set the following
-parameters
-
-If using Telem1:
-
--  ``SERIAL1_BAUD = "115"``\ 
--  ``SERIAL1_PROTOCOL = "1"``\ 
--  ``BRD_SER1_RTSCTS = "0"``\ 
-
-If using Telem2:
-
--  ``SERIAL2_BAUD = "115"``\ 
--  ``SERIAL2_PROTOCOL = "1"``\ 
--  ``BRD_SER2_RTSCTS = "0"``\ 
-
-If using Serial4:
-
--  ``SERIAL4_BAUD = "115"``\ 
--  ``SERIAL4_PROTOCOL = "1"``\ 
+-  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 bps).
+-  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 1 (MAVLink1) or 2 (MAVLink2)
+-  Optionally set :ref:`BRD_SER2_RTSCTS <BRD_SER2_RTSCTS>` = 0 to disable serial flow control
 
 .. image:: ../../../images/SToRM32_MP_Serial2Baud_new.png
     :target: ../_images/SToRM32_MP_Serial2Baud_new.png
 
-Set ``MNT_TYPE`` to "4" to enable the STorM32 gimbal driver (the Pixhawk
-must be rebooted for this change to take effect).
+- :ref:`MNT_TYPE <MNT_TYPE>` = 4 (SToRM32 MAVLink) and reboot the autopilot
+- set :ref:`MNT_ANGMIN_PAN <MNT_ANGMIN_PAN>`, :ref:`MNT_ANGMAX_PAN <MNT_ANGMAX_PAN>`, :ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>`, :ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>`, :ref:`MNT_ANGMIN_ROL <MNT_ANGMIN_ROL>`, :ref:`MNT_ANGMAX_ROL <MNT_ANGMAX_ROL>` to match your gimbal's range.
+- Optionally set :ref:`MNT_RC_IN_TILT <MNT_RC_IN_TILT>` = 6 to control the gimbal's tilt from the transmitter's ch6 tuning knob
 
-Set ``MNT_RC_IN_TILT`` to "6" if you wish to control the gimbal's tilt
-(aka pitch angle) with your transmitters ch6 tuning knob.
+The screenshot below shows a setup in which the gimbal has:
 
-Set the ``MNT_ANGMAX_PAN``, ``MNT_ANGMIN_TIL``, ``MNT_ANGMIN_ROL`` and
-``MNT_ANGMIN_PAN``, ``MNT_ANGMIN_TIL``, ``MNT_ANGMIN_ROL`` to match the
-range of your gimbal. For example, the screenshot below shows a setup in
-which the gimbal has:
-
--  360 of yaw rotation (``MNT_ANGMIN_PAN`` = -18000, ``MNT_ANGMAX_PAN``
-   = 17999)
--  60 degrees of roll (``MNT_ANGMIN_ROL`` = -6000, ``MNT_ANGMAX_ROL`` =
-   +6000)
--  Can point straight down (``MNT_ANG_MIN_TIL`` = -9000)
--  Can point straight up (``MNT_ANG_MAX_TIL`` = +9000)
+- 360 of yaw rotation (:ref:`MNT_ANGMIN_PAN <MNT_ANGMIN_PAN>` = -18000, :ref:`MNT_ANGMAX_PAN <MNT_ANGMAX_PAN>`  = 17999)
+- 60 degrees (both left and right) of roll (:ref:`MNT_ANGMIN_ROL <MNT_ANGMIN_ROL>` = -6000, :ref:`MNT_ANGMAX_ROL <MNT_ANGMAX_ROL>`  = +6000)
+- Can point straight down (:ref:`MNT_ANGMIN_TIL <MNT_ANGMIN_TIL>` = -9000)
+- Can point straight up (:ref:`MNT_ANGMAX_TIL <MNT_ANGMAX_TIL>` = +9000)
+- Gimbal's tilt is controlled by transmitter's channel 6 tuning knob
 
 .. image:: ../../../images/SToRM32_MP_MountParams.png
     :target: ../_images/SToRM32_MP_MountParams.png
 
-Set-up through the Mission Planner (STorM32 serial protocol)
-============================================================
+Setup if using SToRM32 Serial protocol
+======================================
 
-The custom STorM32 protocol was added as an alternative to the MAVLink
-protocol and has the same features. To use the serial protocol use all
-the same settings as above except:
+To use the serial protocol use all the same settings as above except:
 
--  Set ``SERIALX_PROTOCOL`` to "8" (where "X" is "1", "2" or "4" depending upon which Pixhawk serial port the gimbal is connected to)
--  Set ``MNT_TYPE`` to "5"
 -  When :ref:`Configuring the Gimbal <common-storm32-gimbal_configuring_the_gimbal>` controller set the "MAVLink configuration" parameter to "no heartbeat"
+-  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 8 (SToRM32 Gimbal Serial).  If another serial port is connected to the gimbal replace "2" with the serial port number
+-  :ref:`MNT_TYPE <MNT_TYPE>` = 5 (SToRM32 Serial)
 
 Testing the gimbal
 ==================
