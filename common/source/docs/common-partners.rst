@@ -550,17 +550,6 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :target:  https://www.hnwdhk.com/
 
     *
-      - .. image:: ../../../images/supporters/supporters_bluedrones.png
-            :width: 250px
-            :align: center
-            :target:  nan
-
-      - .. image:: ../../../images/supporters/supporters_engemap.png
-            :width: 250px
-            :align: center
-            :target:  www.engemap.com.br
-
-    *
       - .. image:: ../../../images/supporters/supporters_AVCRM.png
             :width: 250px
             :align: center
@@ -581,23 +570,6 @@ Details on the Partners Program and how to join can be found on the :doc:`Partne
             :width: 250px
             :align: center
             :target:  https://www.dronelogbook.com/
-
-    *
-      - .. image:: ../../../images/supporters/supporters_3dronemapping.jpg
-            :width: 250px
-            :align: center
-            :target:  https://www.3dronemapping.com/
-
-      - .. image:: ../../../images/supporters/supporters_airseed.png
-            :width: 250px
-            :align: center
-            :target:  https://airseedtech.com/
-
-    *
-      - .. image:: ../../../images/supporters/supporters_vision_aerial.png
-            :width: 250px
-            :align: center
-            :target:  https://visionaerial.com/
 
 
 [copywiki destination="copter,plane,rover,planner,planner2,antennatracker,dev,ardupilot,mavproxy"]
