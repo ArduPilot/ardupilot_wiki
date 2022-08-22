@@ -43,6 +43,7 @@ Long Range
     :maxdepth: 1
 
     Blicube RLINK P900 <common-blicube-rlink>
+    ClearSky Airlink 4G LTE Telemetry <common-airlink-telemetry>
     CRSF Telemetry <common-crsf-telemetry>
     CUAV P8 Radio <common-cuav-p8>
     CUAV P9 Radio <common-cuav-p9>
