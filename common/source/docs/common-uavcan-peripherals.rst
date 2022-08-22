@@ -19,6 +19,8 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     CUAV DroneCAN Power Module <common-can-pmu>
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     Matek DroneCAN DLVR-10 Airspeed Sensor <common-matek-uavcan-dlvr>
+    Matek DroneCAN Adapter Node <https://www.mateksys.com/?portfolio=can-l431>
+    Matek DroneCAN PWM <https://www.mateksys.com/?portfolio=can-l4-pwm>
     mRo GPS, GPS+Compass,RTK, and DroneCAN modules <https://store.mrobotics.io/category-s/109.htm>
     mRo KitCAN CAN/DroneCAN Adapter Node+Compass+Baro <common-mro-kitcan>
     mRo Location One GPS GPS+Compass+LED+Safety Switch <common-mrobotics-location-one-gps>

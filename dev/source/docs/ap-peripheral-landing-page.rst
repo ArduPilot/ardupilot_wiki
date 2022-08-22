@@ -15,9 +15,9 @@ The Peripheral device supports a wide range of STM32 processors,
 including F103, F303, F4xx, F7xx, G4xx and H7. Both sensors (distance
 sensor, GNSS, IMU, Barometer, battery, etc.) and output ports (I2C,
 SPI, PWM, UART, ESC, LED, etc.) can be used to build new peripherals,
-as well as providing bus expansion for CAN, MSP, I2C,SPI, etc.
+as well as providing bus expansion for CAN, MSP, I2C, SPI, etc.
 
-The software uses the same build system as ArduPilot for autopilot boards. All the firmware build configuration for an AP_Periph board done using a single configuration file (hwdef.dat) defines the inputs / outputs of the device and what device drivers will be included, in the same manner as an autopilot board. This makes it possible, for example, to define a AP_Periph device for UAVCAN with only a micro-controller of the STM32F103 type and 128 KB of flash memory, although processors with larger memory will be required depending on the number of drivers.
+The software uses the same build system as ArduPilot for autopilot boards. All the firmware build configuration for an AP_Periph board done using a single configuration file (hwdef.dat) defines the inputs/outputs of the device and what device drivers will be included, in the same manner as an autopilot board. This makes it possible, for example, to define an AP_Periph device for UAVCAN with only a micro-controller of the STM32F103 type and 128 KB of flash memory, although processors with larger memory will be required depending on the number of drivers.
 
 
 .. images/ap-periph-block-diagram.png
@@ -32,6 +32,13 @@ Capabilities
 - Self-diagnostic and security: watchdog, CRC, autotest, etc.
 - Updates with MissionPlanner or UAVCAN tools like :ref:`common-uavcan-gui`
 
+Examples of using generic AP_Periph nodes are shown here:
+
+.. toctree::
+   :maxdepth: 1
+
+   AP_Periph Usage Examples <ap-periph-usage-examples>
+
 Existing Products
 =================
 
@@ -40,7 +47,7 @@ Some (but not all) product examples using AP-Periph:
 - :ref:`Mateksys M8Q<common-matek-m8q>`
 - Hitec GNSS (`Septentrio Mosaic <https://hitecnology.com/drone-peripherals/hcs-positionpro-gnss-receiver>`__ )
 - :ref:`mRo UAVCAN Adapter node<common-mro-uavcan-adapter-node>`
-- :ref:`Orange Cube<common-thecubeorange-overview>` ( it's a flight controller,but it can also be used in AP_Periph..many others to follow)
+- :ref:`Orange Cube<common-thecubeorange-overview>` (It is a flight controller, but it can also be used in AP_Periph. Similar node types to follow.)
 
 Firmware
 ========
@@ -63,7 +70,7 @@ With the exception of the following parameters, AP_Periph parameters are simply 
 - :ref:`DEBUG<DEBUG>`
 - :ref:`BRD_SERIAL_NUM<BRD_SERIAL_NUM>`
 
-And, depending on driver library included, several parameters needed in addition to those included normally in those libraries:
+And, depending on the driver library included, several parameters are needed in addition to those included normally in those libraries:
 
 - :ref:`BUZZER_VOLUME<BUZZER_VOLUME>`
 - :ref:`BARO_ENABLE<BARO_ENABLE>`
