@@ -9,6 +9,10 @@ and :ref:`MAVProxy <mavproxy-developer-gcs>` can be used to change the environme
 simulate failure modes, and configure the vehicle with optional components.
 It also explains how to :ref:`connect to different GCSs <using-sitl-for-ardupilot-testing_connecting_otheradditional_ground_stations>`.
 
+.. note::
+
+   This page assumes you have already cloned the repository and set up the build environment - see :ref:`Building the code <building-the-code>`
+
 .. tip::
 
    If you're just getting started with MAVProxy and SITL you may wish
