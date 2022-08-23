@@ -68,7 +68,7 @@ RC Failsafe Operation
 -  If the condition causing the Short Failsafe persists longer than :ref:`FS_LONG_TIMEOUT<FS_LONG_TIMEOUT>` seconds the autopilot will go into Long Failsafe, send a message to the GCS that it has been entered, and execute the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` action, if enabled. The default setting for Long Failsafe action to take is RTL (Return to Launch).
 -  If the RC Failsafe condition is later exited, a message will be displayed that the Long Failsafe is cleared, but the flight mode will not revert. If it was a Throttle Failsafe that caused the RC Failsafe, and throttle was increased in order to exit, then an additional message will be sent stating that the Throttle Failsafe is OFF.
 
-.. note:: Mode set by Long Failsafe will continue even if your RC signal is reacquired. Once reacquired, the mode can only be exited via a mode change. In addition, other failsafes, such as battery failsafe, can also change the mode, if they occur subsequently.
+.. note:: The action set by :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` will continue even if your RC signal is reacquired, if the flight mode is the same as it was before the failsafe action began. Once RC signal is reacquired, the :ref:`FS_LONG_ACTN<FS_LONG_ACTN>` can be exited via a mode change on the :ref:`FLTMODE_CH<FLTMODE_CH>`. If the mode on the RC transmitter was changed during the failsafe period, then this changed mode is entered after the RC signal is restored. In addition, other failsafes, such as battery failsafe, can also change the mode, if they occur subsequently to the RC signal loss.
 
 Bench Testing RC Failsafe
 ~~~~~~~~~~~~~~~~~~~~~~~~~
