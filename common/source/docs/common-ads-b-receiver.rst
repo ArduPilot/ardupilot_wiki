@@ -26,7 +26,6 @@ The sensors can be purchased directly from `uAvionix <https://uavionix.com/produ
    -       `R Cubed Engineering <http://www.rcubedengineering.com/ecommerce/>`__
    -  U.K.: `Unmanned Tech <http://www.unmannedtech.co.uk/>`__
    -  Germany: `UAV Store <http://www.uav-store.de/ads-b-receivers/>`__
-   -  Asia: `jDrones pingRX <http://store.jdrones.com/ping_ads_b_receiver_p/adsbping01.htm>`__
 
 Connecting to the autopilot
 ===========================
@@ -47,8 +46,7 @@ The serial port to which the receiver is connected should be configured to also 
 +----------------+-----------------------------+---------------------------------+----------------+
 |ADSB Protocol   |:ref:`ADSB_TYPE <ADSB_TYPE>` |``SERIALx_PROTOCOL``             |``SERIALx_BAUD``|
 +================+=============================+=================================+================+
-|MAVLINK         |              1              | MAVLink1 (1) or MAVLink2 (2)    |   57600        |
-|                |                             | depending on unit               |                |
+|MAVLINK         |              1              |     MAVLink2 (2)                |   57600        |
 +----------------+-----------------------------+---------------------------------+----------------+
 |Sagetech        |              2              |     ADSB (28)                   |    115200      |
 +----------------+-----------------------------+                                 +                +
