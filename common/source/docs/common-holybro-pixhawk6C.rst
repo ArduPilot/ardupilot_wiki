@@ -8,7 +8,7 @@ Pixhawk6C is the latest update to the successful family of Pixhawk® flight cont
 
 .. image:: ../../../images/holybro-pixhawk6/Pixhawk6C.png
     :target: ../_images/Pixhawk6C.png
-    :width: 450px
+    :width: 320px
 
 Where To Buy
 ============
@@ -19,7 +19,7 @@ Features of Pixhawk6 Series
 ===========================
 
 +---------------------+-----------------------------+-----------------+----------------------+
-|                     |Pixhawk 6X                   |Pixhawk 6C       |Pix32 v6 (Coming Soon)|
+|                     |Pixhawk 6X                   |Pixhawk 6C       |Pix32 v6              |
 +=====================+=============================+=================+======================+
 |Key Design Point     |Additional Redundancy        |Low profile      |Cost effective        |
 |                     +-----------------------------+-----------------+----------------------+
@@ -118,8 +118,8 @@ connector. The Pixhawk6C uses analog power monitors on these ports.
 - :ref:`BATT_VOLT_MULT<BATT_VOLT_MULT>` = 18.182
 - :ref:`BATT_AMP_PERVLT<BATT_AMP_PERVLT>` = 36.364
 
-- :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` = 8
-- :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` = 4
+- :ref:`BATT2_VOLT_PIN<BATT2_VOLT_PIN>` = 5
+- :ref:`BATT2_CURR_PIN<BATT2_CURR_PIN>` = 14
 - :ref:`BATT2_VOLT_MULT<BATT2_VOLT_MULT>` = 18.182
 - :ref:`BATT2_AMP_PERVLT<BATT2_AMP_PERVLT>` = 36.364
 
