@@ -571,7 +571,7 @@ Continuously outputs the parameter value set for that output. Used in button det
 GENERAL PURPOSE LUA SCRIPTING OUTPUTS
 -------------------------------------
 
-:ref:`Lua Scripts <common-lua-scripts>` can also directly control autopilot outputs. Using ``Function IDs 94-106`` provides the ability to configure up to 16 of these outputs, if the autopilot is capable. This is available in all vehicles.
+:ref:`Lua Scripts <common-lua-scripts>` can also directly control autopilot outputs. Using ``Function IDs 94-109`` provides the ability to configure up to 16 of these outputs, if the autopilot is capable. This is available in all vehicles.
 
 INTERNAL CONTROLLER ACCESS
 --------------------------
