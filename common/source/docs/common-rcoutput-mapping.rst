@@ -523,7 +523,7 @@ For control of an internal combustion engine's spark plug/igniter, starter motor
 NEOPIXEL LED STRINGS
 --------------------
 
-:ref:`Neopixel LEDs/Strings<common-serial-led-neopixel>` can be controlled using ``Function IDs 120-124``, thereby supporting up to four strings independently controlled. These may be used for ArduPilot notifications and warnings (See :ref:`common-ntf-devices` ) or controlled via LUA scripting (See :ref:`common-lua-scripts`.
+:ref:`Neopixel LEDs/Strings<common-serial-led-neopixel>` can be controlled using ``Function IDs 120-123``, thereby supporting up to four strings independently controlled. These may be used for ArduPilot notifications and warnings (See :ref:`common-ntf-devices` ) or controlled via LUA scripting (See :ref:`common-lua-scripts`.
 This is available in all vehicles.
 
 ProfiLEDs
