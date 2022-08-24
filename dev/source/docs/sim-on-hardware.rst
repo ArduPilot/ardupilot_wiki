@@ -22,17 +22,16 @@ The firmware is loaded on the autopilot and a GCS attached. The GPS initial loca
 Limitations
 ===========
 
--  Actuator outputs (motor and servo) are not supported in the firmware as posted on the `firmware server <https://firmware.ardupilot.org>`__ without recompilation.  This is currently considered a safety feature.
-
 -  Parameter space is shared between the real aircraft and the simulated aircraft.  This leads to problems with sensor calibration as the sensor suite differs between the real and virtual aircraft.  Thus parameters must be wiped and rewritten to the vehicle when moving between real and simulation firmware.
 - While it is possible to run on flash-constrained (1MB) boards, many other features will need to be compiled out to allow it to fit.
 - Currently only firmware for Cube Orange QuadCopter autopilots is available pre-compiled on the firmware server.
-
 
 Firmware
 ========
 
 We provide a pre-compiled binary for Cube Orange at `our firmware server <https://firmware.ardupilot.org>`__. It is available only in `Copter <https://firmware.ardupilot.org/Copter/latest/CubeOrange-SimOnHardWare/>`__ version, currently.
+
+Note that several features have been removed from this firmware, including mount support.
 
 Compiling your own Firmware
 ============================
@@ -80,8 +79,4 @@ Allowing actuators to move
 
    Remove/disable all props or other dangerous actuators before continuing.  Be prepared to cut power to actuators should it become evident control surfaces are straining.  Keep clear of entrapment or other hazards.
 
-.. note::
-
-   This section is deliberately vague to encourage thoughtful enabling of physical actuators.
-
-Actuators can be permitted to... actuate.... by removing the `return;` from the block of code protected by `#if AP_SIM_ENABLED` in `libraries/AP_HAL_ChibiOS/RCOutput.cpp`.
+Actuators can be permitted to... actuate.... by setting the `SIM_OH_MASK` parameter.  The bits correspond to the servo output channels, so to allow the first 4 channels to move set `SIM_OH_MASK` to 15.
