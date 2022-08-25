@@ -797,11 +797,11 @@ Multi-Aircraft SITL with MAVProxy
 
 Multiple aircraft can be simulated in SITL with MAVProxy. This feature owes much to prior work here: https://ardupilot.org/mavproxy/docs/getting_started/multi.html 
 
-To access this feature use both the number (-n) or count (--count) as well as the auto-sysid (--auto-syid) features of sim_vehicle.py like so:
+To access this feature use both the number (-n) or count (--count) as well as the auto-sysid (--auto-sysid) and multi-cast (--mcast) features of sim_vehicle.py like so:
 
 ::
 
-    sim_vehicle.py -v ArduPlane -n3 --auto-sysid
+    sim_vehicle.py -v ArduPlane -n3 --auto-sysid --mcast
 
 Now MAVProxy will receive messages on the console from all aircraft. Verifying a connection to multiple vehicles is as simple as checking the MAVProxy console -- https://ardupilot.org/mavproxy/docs/modules/console.html. The following is an image of the console when connected to vehicle 2:
 
@@ -823,7 +823,7 @@ It is possible to specify the desired instance numbers (-i) to the sim_vehicle.p
 
 ::
 
-    sim_vehicle.py -v ArduPlane -n3 --auto-sysid -i "1 2 3"
+    sim_vehicle.py -v ArduPlane -n3 --auto-sysid -i "1 2 3" --mcast
 
 Be sure to verify the MAVProxy map and missions before takeoff. An example map at the default airfield before we takeoff looks like this:
 
