@@ -24,12 +24,12 @@ The official instructions are `here <https://docs.microsoft.com/en-us/windows/ws
     .. image:: ../images/build-on-windows10-wsl-install.png
         :target: ../_images/build-on-windows10-wsl-install.png
 
-#. From a web browser open `https://aka.ms/wslstore <https://aka.ms/wslstore>`_ which should open the Microsoft store to allow installing Ubuntu. Then Launch Ubuntu and fill in a username and login
+#. From a web browser open `https://aka.ms/wslstore <https://aka.ms/wslstore>`_ which should open the Microsoft store to allow installing and launching Ubuntu 22.04.  If the launch fails it may be necessary to open a command prompt (as administrator) and run "wsl --update" and "wsl --shutdown" before launching Ubuntu 22.04 again and then following the setup steps.
 
     .. image:: ../images/build-on-windows10-wsl-install-part2.png
         :target: ../_images/build-on-windows10-wsl-install-part2.png
 
-#. From the Start menu, start the "Ubuntu" application and then follow the :ref:`Ubuntu instructions to install ArduPilot development environment <building-setup-linux>`
+#. From the Start menu, start the "Ubuntu 22.04" application and then follow the :ref:`Ubuntu instructions to install ArduPilot development environment <building-setup-linux>`
 
     .. note::
 
