@@ -37,6 +37,7 @@ Please use the sidebar menus for instructions and more information.
    docs/common-connect-mission-planner-autopilot
    docs/common-mission-planning
    docs/mission-planner-features
+   docs/opendroneid
    docs/mission-planner-building
    docs/common-appendix
    docs/common-table-of-contents

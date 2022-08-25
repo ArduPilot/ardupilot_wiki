@@ -1,4 +1,4 @@
-.. _opendroneid:
+.. _common-opendroneid:
 
 ===========
 OpenDroneID
@@ -19,12 +19,16 @@ Future enhancements are planned.
 
 For an example see the hwdef and param files for an `ODID version of CubeOrange <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CubeOrange-ODID>`__ with a CAN OpenDroneID module integrated on the carrier board.
 
+.. note:: that the board ID has been changed different from normal firmware, to prevent loading it on a remoteid equipped system by a GCS. And the DID params have been set to read-only to prevent users from changing them and defeating the system.
+
 Building Firmware for Bench Testing and Experimentation
 =======================================================
 
 An experimental firmware version can be built for any autopilot by:
 
-- Adding the line "define AP_OPENDRONEID_ENABLED 1" to its hwdef.dat file
+- Adding the line "define AP_OPENDRONEID_ENABLED 1" to its hwdef.dat file, or simply building with the  waf build option, ``--enable-opendroneid``
+- Adding the waf build option, ``--enable-firmware-checking``, will add another tamper proofing check. If enabled, a bootloader will not run firmware with a different board ID. This extends the protection already afforded by using a unique
+
 
 Testing
 =======
@@ -49,10 +53,10 @@ Testing
     opendroneid set description_type 1
     opendroneid set operator_id "TestPilot1"
     opendroneid set operator_id_type 1
-    opendroneid set operator_location_type 0      #note that a value of 1 is usually required in actual operation. This allows using a GCS with its own GPS for testing.
+    opendroneid set operator_location_type 0      #note that a value of 1 is usually required in actual operation. This requires using a GCS with its own GPS for testing.
     opendroneid set rate_hz 1
 
-This sets up the required parameters a user would normally have to enter into the RemoteID system from a GCS.
+This sets up the required parameters a user would normally have to enter into the Remote ID system from a GCS.
 
 - Attach autopilot with an OpenDroneID compatible Remote ID module , `like this <https://github.com/ArduPilot/ArduRemoteID>`__ , attached to one of its serial ports to PC and start MAVProxy with the console and map with the option to set the operator location to the vehicle arming location:
 
@@ -62,7 +66,7 @@ This sets up the required parameters a user would normally have to enter into th
 
 .. note:: this may not be legal in some jurisdictions in actual use, but the OpenDroneID module firmware will reject this assignment with a suitable build option set in its firmware for those jurisdictions. This allows testing on PCs without a GPS attached to determine operator location.
 
-- Make sure the autopilot serial port that the module is attached is setup for 57.6K and MAVLink2 
+- Make sure the autopilot serial port that the module is attached is setup for 57.6K and MAVLink2 if using serial interconnect. If using DroneCAN, then make sure the CAN parameters are enabled appropriately.
 - Run the 'script remoteid.scr' command to load the script...you should see it announce that it has loaded the OpenDroneID module and other commands in the console
 - Set the following params:
 
@@ -108,6 +112,11 @@ Start SITL using the following,  and if you will be using the SERIAL1 interface 
    sim_vehicle.py --console --map -A --serial1=uart:<path>
 
 Follow the rest of the instructions above for loading the remoteid.scr script and setup once MAVProxy starts. You should see the plane on your phone app. You can now create and fly missions and monitor them on the phone app.
+
+Using Mission Planner as the GCS
+================================
+
+Mission Planner has a special Drone ID tab in its DATA view for use with OpenDroneID modules attached to the autopilot which allows monitoring status, attaching the required GPS for operator location of the GCS, and UAS and Operator ID string setup. See :ref:`planner:opendroneid`.
 
 
 

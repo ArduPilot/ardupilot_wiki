@@ -26,18 +26,24 @@ Stand-alone devices:
 OpenDroneID
 ===========
 
-ArduPilot provides support for OpenDroneID in firmware versions 4.2 and later via MAVLink to an OpenDroneID compatible module attached to either a serial port or DroneCAN port on the autopilot.
+.. image:: ../../../images/remoteid.jpg
+    :target: ../../_images/remoteid.jpg
+
+
+ArduPilot provides support for OpenDroneID in firmware versions 4.2 and later via MAVLink to an OpenDroneID compatible RemoteID module attached to either a serial port or DroneCAN port on the autopilot.
 
 In order to provide tamper protection, a special autopilot firmware must be built and loaded on the autopilot which: enables this feature, prevents loading non-compliant firmware via GCS or normal uploaders, and provides further tamper-proofing.
 
-An example of the required modifications for an OpenDroneID firmware version for an autopilot is shown for the `Cube Orange here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/CubeOrange-ODID>`__
+For details on building firmware with OpenDroneID feature, see :ref:`dev:opendroneid` for details.
 
-ArduPilot also has developed firmware for  ESP32-S3 and C3 development boards for an OpenDroneID compatible ID module for attachment by serial MAVLink connection to the autopilot. A binary for flashing the board, along with instructions, is `available here <https://github.com/ArduPilot/ArduRemoteID>`__ .
-
-This device can be attached to the autopilot by USB, or serial, or DroneCAN (if external CAN transceiver is attached)
+ArduPilot also has developed firmware for  ESP32-S3 and C3 development boards for an OpenDroneID compatible Remote ID module for attachment by serial MAVLink connection or DroneCAN to the autopilot. A binary for flashing the board, along with instructions, is `available here <https://github.com/ArduPilot/ArduRemoteID>`__ . Note, this firmware is rapidly evolving, so check for updates frequently. This device can be attached to the autopilot by USB, or serial, or DroneCAN (if external CAN transceiver is attached)
 
 .. image:: ../../../images/ESP32-S3.jpg
     :target: ../../_images/ESP32-S3.jpg
+
+Mission Planner (must be the latest beta version) has a tab in its DATA view for Drone ID which allows connection of the required external serial GPS to obtain operation location, and setup tabs for UAS and Operator IDs, if required by your local jurisdiction. It also shows Remote ID status.
+The ground station will also have status and pre-arm failure messages displayed if there are problems.
+
 
 Testing
 -------
