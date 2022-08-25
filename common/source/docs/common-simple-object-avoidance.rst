@@ -59,10 +59,10 @@ SAFETY FIRST!
 
 Configuring Simple Avoidance for Copter in Loiter Mode
 ======================================================
-
+Example setup below shown for first proximity sensor:
 
 - set :ref:`AVOID_ENABLE <AVOID_ENABLE>` = 7 ("All") to use all sources of barrier information including "Proximity" sensors
-- set :ref:`PRX_TYPE <PRX_TYPE>` to a 360 deg Lidar type being used or = 4, to enable using range finders as "proximity sensors"
+- set :ref:`PRX1_TYPE <PRX1_TYPE>` to a 360 deg Lidar type being used or = 4, to enable using a range finders as a "proximity sensor"
 - in :ref:`Loiter <loiter-mode>`
 
   - :ref:`AVOID_MARGIN <AVOID_MARGIN>` controls how many meters from the barrier the vehicle will attempt to stop or try to slide along it
@@ -70,9 +70,10 @@ Configuring Simple Avoidance for Copter in Loiter Mode
 
 Configuring Simple Avoidance for Rover
 ======================================
+Example setup below shown for first proximity sensor:
 
 - set :ref:`AVOID_ENABLE <AVOID_ENABLE>` = 7 ("All") to use all sources of barrier information including "Proximity" sensors.
-- set :ref:`PRX_TYPE <PRX_TYPE>` = "4" to enable using range finders as "proximity sensors"
+- set :ref:`PRX1_TYPE <PRX1_TYPE>` = "4" to enable using first range finder as a "proximity sensor"
 - Rover attempts to stop the vehicle before it hits objects in all modes except MANUAL.
 
 "Stop" Avoidance

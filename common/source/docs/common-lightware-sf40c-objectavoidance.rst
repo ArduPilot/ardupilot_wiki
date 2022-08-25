@@ -32,12 +32,13 @@ The diagram above shows how the SF40c can be connected to the autopilot's serial
 
 Configuration through the Ground Station
 ----------------------------------------
+Example setup below shown for first proximity sensor:
 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = "11" ("Lidar360") if using Serial4.
 - :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` =  "921" if using Serial4.
-- :ref:`PRX_TYPE <PRX_TYPE>` = "7" (LightwareSF40c) or "1" (LightwareSF40C-legacy) if using a very old version of the sensor
-- :ref:`PRX_ORIENT <PRX_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
-- :ref:`PRX_YAW_CORR <PRX_YAW_CORR>` allows adjusting the forward direction of the SF40c.  One way to determine this angle is to use the Mission Planner's Setup >> Advanced, Proximity viewer and then walk around the vehicle and ensure that the sector distances shorten appropriately.
-- :ref:`PRX_IGN_ANG1 <PRX_IGN_ANG1>` and :ref:`PRX_IGN_WID1 <PRX_IGN_WID1>` parameters allow defining zones around the vehicle that should be ignored.  For example to avoid a 20deg area behind the vehicle, set :ref:`PRX_IGN_ANG1 <PRX_IGN_ANG1>` to 180 and :ref:`PRX_IGN_WID1 <PRX_IGN_WID1>` to 20.
+- :ref:`PRX1_TYPE <PRX1_TYPE>` = "7" (LightwareSF40c) or "1" (LightwareSF40C-legacy) if using a very old version of the sensor
+- :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
+- :ref:`PRX1_YAW_CORR <PRX1_YAW_CORR>` allows adjusting the forward direction of the SF40c.  One way to determine this angle is to use the Mission Planner's Setup >> Advanced, Proximity viewer and then walk around the vehicle and ensure that the sector distances shorten appropriately.
+- :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` parameters allow defining zones around the vehicle that should be ignored.  For example to avoid a 20deg area behind the vehicle, set :ref:`PRX1_IGN_ANG1 <PRX1_IGN_ANG1>` to 180 and :ref:`PRX1_IGN_WID1 <PRX1_IGN_WID1>` to 20.
 
 More details on using this sensor for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.

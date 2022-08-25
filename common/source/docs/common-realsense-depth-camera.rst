@@ -87,7 +87,9 @@ Connect to the autopilot with a ground station (i.e. Mission Planner) and check 
 
 Enable any of the :ref:`obstacle avoidance <common-object-avoidance-landing-page>` of your own choosing. :ref:`Simple avoidance behavior <common-simple-object-avoidance>` (Stop/Slide) will be used as the example for this wiki:
 
-- :ref:`PRX_TYPE <PRX_TYPE>` = 2: for MAVLink
+Example setup below shown for first proximity sensor:
+
+- :ref:`PRX1_TYPE <PRX1_TYPE>` = 2: for MAVLink
 - :ref:`AVOID_ENABLE <AVOID_ENABLE>` = 7: “All” to use all sources of barrier information including “Proximity” sensors
 
 Example of specifics for ``Loiter`` and ``AltHold`` mode:

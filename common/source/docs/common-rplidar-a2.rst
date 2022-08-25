@@ -39,10 +39,12 @@ Ensure the sensor's view is not obstructed by any portion of the vehicle includi
 The lidar can be connected to the autopilot's serial input as shown above.
 If using a Pixhawk/Pixhawk2 Telem1 (aka Serial1) should be used because it is more capable of providing the required 1.5A.
 
+Example setup below shown for first proximity sensor:
+
 - :ref:`SERIAL1_PROTOCOL <SERIAL4_PROTOCOL>` = "11" ("Lidar360") if using Serial1
 - :ref:`SERIAL1_BAUD <SERIAL1_BAUD>` =  "115" if using Serial1
-- :ref:`PRX_TYPE <PRX_TYPE>` = "5"
-- :ref:`PRX_ORIENT <PRX_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
+- :ref:`PRX1_TYPE <PRX1_TYPE>` = "5"
+- :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" if mounted on the top of the vehicle, "1" if mounted upside-down on the bottom of the vehicle.
 
 It may be necessary to turn off flow control if using Telem1 (aka Serial1) or Telem2 (aka Serial2)
 
