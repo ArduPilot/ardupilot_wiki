@@ -47,6 +47,8 @@ If instead the Telem2 port was used then the serial parameters listed above shou
 -  :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` = 9
 -  :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115
 
+.. note:: the TF03 can be programmed to use a DroneCAN interface instead of a serial interface. In this case the :ref:`RNGFND1_TYPE <RNGFND1_TYPE>` = 34, and follow the 'DroneCAN setup instructions <common-uavcan-setup-advanced>`.
+
 Testing the sensor
 ==================
 
