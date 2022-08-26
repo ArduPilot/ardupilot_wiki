@@ -41,7 +41,7 @@ This form of avoidance attempts to stop the vehicle before hitting objects.
 
 
    - set ``RNGFNDx_ORIENT`` (for example :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` ) to "0" for forward facing lidar and "4" for backwards facing lidar
-   - set :ref:`PRX_TYPE <PRX_TYPE>` = "4" to enable using range finders as "proximity sensors"
+   - set ``PRX_TYPE`` = "4" to enable using range finders as "proximity sensors"
    - set :ref:`AVOID_ENABLE <AVOID_ENABLE>` to "7" to enable avoidance using proximity sensors (and fences)
 
 
