@@ -24,7 +24,7 @@ Example setup below shown for first proximity sensor:
 
 - :ref:`SERIAL4_PROTOCOL <SERIAL4_PROTOCOL>` = "11" ("Lidar360") if using Serial4.
 - :ref:`SERIAL4_BAUD <SERIAL4_BAUD>` =  "921" if using Serial4.
-- :ref:`PRX1_TYPE <PRX1_TYPE>` = "3" to enable the TeraRanger Tower/ Tower EVO (or 0 to disable).
+- :ref:`PRX1_TYPE <PRX1_TYPE>` = "3" to enable the TeraRanger Tower, = "6" for Tower EVO (or 0 to disable).
 - :ref:`PRX1_ORIENT <PRX1_ORIENT>` = "0" Default.
 
 More details on using sensors for object avoidance on Copter can be found :ref:`here <common-object-avoidance-landing-page>`.
