@@ -87,7 +87,7 @@ Configuration of CAN driver
 
 The driver should be set to use some protocol. Currently there is support for DroneCAN devices,
 which is numbered 1, and numerous CAN ESCs.
-The parameter ``CAN_Px_PROTOCOL``, where x is the number of driver, should be filled
+The parameter ``CAN_Dx_PROTOCOL``, where x is the number of driver, should be filled
 with the number of protocol for this driver.
 
 .. image:: ../../../images/can-driver-parameters-protocol.png
