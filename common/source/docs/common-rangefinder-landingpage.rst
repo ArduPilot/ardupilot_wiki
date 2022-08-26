@@ -90,7 +90,7 @@ Omnidirectional Proximity Rangefinders
     Lightware SF40/C (360 degree) <common-lightware-sf40c-objectavoidance>
     Lightware SF45/B (350 degree) <common-lightware-sf45b>
     RPLidar A2 360 degree laser scanner <common-rplidar-a2>
-    TerraRanger Tower (360 degree) <common-teraranger-tower-objectavoidance>
+    TerraRanger Tower/ Tower EVO (360 degree) <common-teraranger-tower-objectavoidance>
 
 [site wiki="copter,rover"]
 Vision Based Sensors
