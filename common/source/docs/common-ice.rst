@@ -1,5 +1,5 @@
 .. _common-ice:
-
+[copywiki destination="plane"]
 =================================
 Internal Combustion Engines (ICE)
 =================================
@@ -20,8 +20,6 @@ What to Buy
 
 Connection and Configuration
 ----------------------------
-
-
 The engine's ignition power switch and (optional) starter should be connected to the autopilot's servo outputs, ``Ignition`` and ``Starter`` (see ICE section in :ref:`common-rcoutput-mapping`).
 
 [site wiki="plane"]
@@ -64,15 +62,12 @@ A variety of parameters are available for configuring the engine start routine. 
 - :ref:`ICE_START_DELAY <ICE_START_DELAY>` sets a delay between start attempts. This can be useful when your starter has a limited duty cycle.
 - :ref:`ICE_RPM_THRESH <ICE_RPM_THRESH>` sets the minimum RPM reading for the engine to be considered running. This should be set to a value below your idle RPM.
 
-
-[/site]
 To allow the pilot to directly control the ignition and (optional) starter from the transmitter, RC pass-through should be set up:
 
 - Set ``SERVOx_FUNCTION`` (where "x" is the autopilot's output channel connected to the ignition or starter) to ``RCINy`` (where "y" is the transmitter channel).  For example set :ref:`SERVO8_FUNCTION <SERVO8_FUNCTION>` = 59/"RCIN9" to allow the transmitter's channel 9 to control the autopilot Output 8
 
 Be sure to check the engine's behavior when the transmitter is turned off to simulate what will happen during an RC failsafe.
 
-[site wiki="plane"]
 Starting and Stopping the Motor
 -------------------------------
 
@@ -97,8 +92,6 @@ To stop the motor with RC control:
 
 QuadPlanes can also automatically stop the engine once the final phase of a VTOL landing is entered by setting the :ref:`Q_LAND_ICE_CUT<Q_LAND_ICE_CUT>` parameter to 1.
 
-[/site]
-
 .. note:: The engine can be started and stopped in autonomous missions by using the ``DO_ENGINE_CONTROL`` mission command. This useful preceding NAV_VTOL_TAKEOFF or NAV_VTOL_LAND to start or stop the engine to prevent prop strikes while landing in wind with a low clearance prop. See :ref:`common-mavlink-mission-command-messages-mav_cmd` section. 
 
 Idle and redline governors
@@ -117,6 +110,18 @@ The redline governor will slowly reduce the throttle if the RPM remains above th
 
 - :ref:`ICE_REDLINE_RPM<ICE_REDLINE_RPM>` Maximum RPM for the engine provided by the manufacturer. A value of 0 disables this feature.
 
+Options
+-------
+
+Several options are provided using the :ref:`ICE_OPTIONS<ICE_OPTIONS>` bitmask parameter:
+
+===================     ========
+Bit (Set to enable)     Function
+===================     ========
+0                       Set ignition output to :ref:`ICE_PWM_IGN_OFF <ICE_PWM_IGN_OFF>` during any RC failsafe
+1                       Disable the Redline Governor feature (but still display GCS warnings)
+2                       Allows throttle servo output while disarmed in MANUAL mode
+===================     ========
 
 Vibration isolation
 -------------------
