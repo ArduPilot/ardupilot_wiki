@@ -107,7 +107,7 @@ this will return a rather lengthy path in a similar form to:
 
 Start SITL using the following,  and if you will be using the SERIAL1 interface in the code (ie ::ref:`DID_MAVPORT<DID_MAVPORT>` = 1) and the <path> discovered above:
 
-.. code-block::
+.. code::
 
    sim_vehicle.py --console --map -A --serial1=uart:<path>
 
