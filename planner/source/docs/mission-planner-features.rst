@@ -40,7 +40,7 @@ window.
    
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
 
    Flight DATA Screen Overview<mission-planner-ground-control-station>
