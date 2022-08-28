@@ -4,11 +4,6 @@
 Flight Data Screen Overview
 ===========================
 
-.. toctree::
-   :hidden:
-   
-   Flight Data Screen Details <mission-planner-flight-data>
-
 Overview
 ========
 
@@ -52,7 +47,14 @@ Tips for using the Flight Data screen
 - If you enable the Tuning checkbox at the bottom of the map, and then double-click the tuning window that appears, you can graph any data that is available in the Status tab under the HUD. This means you can have alt, attitude, or many other options shown in real-time.
 - You can use custom imagery instead of Google Maps. Press control-F. This allows you to upload your own orthophotos. This will require Globalmapper, as this is currently one of the key steps in exporting in the required format for use in the planner.
 
+Flight Data Screen Details
+==========================
 For more details about the Flight Data Screen, see:
+
+.. toctree::
+   :maxdepth: 1
+
+   Flight Data Screen Details <mission-planner-flight-data>
 
 Guided Mode
 ===========

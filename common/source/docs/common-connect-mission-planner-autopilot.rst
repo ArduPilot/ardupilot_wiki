@@ -52,10 +52,10 @@ show in the drop-down menu (the actual number does not matter). The
 appropriate data rate for the connection is also set (typically the USB
 connection data rate is 115200 and the radio connection rate is 57600).
 
-Select the desired port and data rate and then press the **Connect**
+Select the desired port and data rate and then press the **CONNECT**
 button to connect to the autopilot. After connecting **Mission Planner**
 will download parameters from the autopilot and the button will change
-to **Disconnect** as shown:
+to **DISCONNECT** as shown:
 
 .. image:: ../../../images/MisionPlanner_DisconnectButton.png
     :target: ../_images/MisionPlanner_DisconnectButton.png
@@ -72,12 +72,14 @@ The "Stats..." hotlink beneath the port selection box, if clicked, will give inf
 
 Connecting to multiple vehicles
 -------------------------------
-Additional connections can be made by right-clicking the connect button and selecting Connection Options.
+Additional connections can be made by right-clicking the **CONNECT** button and selecting **Connection Options** from the drop-down list.
 
 .. image:: ../../../images/MP-connect-rightclick-menu.png
    :target: ../_images/MP-connect-rightclick-menu.png
 
-A pre-written list of connections can be loaded with the Connection List option. This is an example format of the file::
+A file with a pre-written list of connections can be loaded with the **Connection List** drop-down option. This is an example format of the file:
+
+.. code::
 
    tcp://127.0.0.1:5670
    udp://127.0.0.1:14550
