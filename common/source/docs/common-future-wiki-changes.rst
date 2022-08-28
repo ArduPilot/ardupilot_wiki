@@ -31,6 +31,8 @@ Add
 +----------------------+----------------------------+----------+---------+---------+
 |        164           | Pause Streaming Logging    |    X     |    X    |    X    |
 +----------------------+----------------------------+----------+---------+---------+
+|        165           | ARM/Motor Emergency Stop   |    X     |    X    |    X    |
++----------------------+----------------------------+----------+---------+---------+
 
 .. raw:: html
 
@@ -65,6 +67,16 @@ If high, locks the heading of the mount to earth-frame, otherwise, yaw is headin
    <td>
 
 If high, will not log streaming type log messages (sensors,attitudes,ekf,etc.) to allow logging only when desired for autopilots with limited logging capabilites (ie no SD card). Events, mode changes, etc. are still logged. Logging is unaffected if switch is low.
+
+.. raw:: html
+
+   </td>
+   </tr>
+   <tr>
+   <td><strong>ARM/Motor Emergency Stop</strong></td>
+   <td>
+
+Three position switch. If high, will request arming. If switched to low position, will emergency stop any rotating motor output like the Motor Emergency Stop switch. If switched to middle position, will de-activate the Motor Emergency Stop, but not request an arm condition. This is a safer alternative to ARM/DISARM in that accidental switching to low position will not disarm, and will allow recovery in the air if switched back to middle or high quickly.
 
 .. raw:: html
 
