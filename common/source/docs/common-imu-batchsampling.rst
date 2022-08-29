@@ -22,26 +22,52 @@ In firmware versions 4.1 and later, the backend rate has been made configurable 
 Pre-Flight Setup
 ================
 
+- Set :ref:`INS_LOG_BAT_OPT<INS_LOG_BAT_OPT>` = 0 to do pre-filter 1KHz sampling
 - Set :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` = 1 to collect data from the first IMU
 - :ref:`LOG_BITMASK <copter:LOG_BITMASK>`'s IMU_RAW bit must **not** be checked.  The default :ref:`LOG_BITMASK<LOG_BITMASK>` value is fine. If it is checked the results can be confusing as you will get no samples if using post-filter or regular logging, you will however get samples if using sensor rate logging and your SD card is able to cope.
 
 Flight and Post-Flight Analysis
 ===============================
 
-- Perform a regular flight (not just a gentle hover) of at least a few minutes and :ref:`download the dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>`
+- Perform a regular flight (not just a gentle hover) of at least 30 seconds and :ref:`download the dataflash logs <common-downloading-and-analyzing-data-logs-in-mission-planner>`
 - Open Mission Planner, press Ctrl-F, press the FFT button, press "new DF log" and select the .bin log file downloaded above
 
 .. image:: ../../../images/imu-batchsampling-fft-mp2.png
     :target:  ../_images/imu-batchsampling-fft-mp2.png
     :width: 450px
 
-- Accelerometer data appears in the top left window with the vertical axis showing the amplitude and horizontal axis showing the frequency.  The amplitude is not scaled to a useful value meaning the graph is useful for determining the frequency of the vibration but not whether the levels are too high or not.  Vibration at frequencies above 300Hz may lead to attitude or position control problems.
-- The default configuration shows raw accelerometer and gyro data before it has been filtered. Filtering is a key part of preventing noise reaching the PID loops and motors and thus it is important to be able look at the data after it has been filtered as well. In addition, when configuring advanced filtering using a notch (see :ref:`common-imu-notch-filtering`) it is hard to do this effectively without seeing the output. In order to see post-filter output set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 2.
-- For small copters in manual flight modes it is important to let as much signal through below about 100Hz and as little as possible above this. Configuring post-filter output will allow you to see this.
+On the graph it should be possible to identify a significant peak in noise that corresponds to the motor rotational frequency. On a smaller Copter this is likely to be around 200Hz and on a larger Copter/QuadPlane 100Hz or so. There will usually be harmonics of the motor rotational frequency (2x,3x that frequency) also.Here is an example from a 5" quad:
 
-.. image:: ../../../images/imu-batchsampling-fft-mp.png
-    :target:  ../_images/imu-batchsampling-fft-mp.png
+.. image:: ../../../images/pre-tune-fft.png
+    :target:  ../_images/pre-tune-fft.png
     :width: 450px
+
+- Accelerometer data appears in the top left window with the vertical axis showing the amplitude and horizontal axis showing the frequency.  The amplitude is not scaled to a useful value, meaning the graph is useful for determining the frequency of the vibration, but not whether the levels are too high or not.  Vibration at frequencies above 300Hz may lead to attitude or position control problems.
+
+Harmonic Notch Filter Setup
+===========================
+
+It is possible to filter some of this noise to increase performance and allow better tuning by activating the harmonic notch filter(s). See :ref:`common-imu-notch-filtering` for details. But you will need some additional information from the logs if using a :ref:`common-throttle-based-notch`:
+
+- With the same log, open it in the regular way in mission planner and graph the throttle value. From this identify an average hover throttle value.
+- It's also possible to use :ref:`MOT_HOVER_LEARN <MOT_HOVER_LEARN>` = 2 in Copter and read off the value of :ref:`MOT_THST_HOVER <MOT_THST_HOVER>`, or :ref:`Q_M_HOVER_LEARN <Q_M_HOVER_LEARN>` = 2 in QuadPlane and read off the value of :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`
+- This gives you a hover motor frequency *hover_freq* and thrust value *hover_thrust* . Note that learning of hover thrust only occurs while in an altitude controlled mode with no pitch or roll angle. Therefore, it should be done in calm wind conditions with no pilot stick input for at least 10 seconds.
+
+Post Configuration Confirmation Flight and Post-Flight Analysis
+===============================================================
+
+- With :ref:`INS_LOG_BAT_MASK <INS_LOG_BAT_MASK>` still set to = 1 to collect data from the first IMU:
+- Set :ref:`INS_LOG_BAT_OPT <INS_LOG_BAT_OPT>` = 2 to capture post-filter gyro data 
+
+Perform a similar hover flight and analyze the dataflash logs in the same way. This time you should see significantly less noise and, more significantly, attenuation of the motor noise peak. If the peak does not seem well attenuated then you can experiment with increasing the bandwidth and attenuation of the notch. However, the wider the notch the more delay it will introduce into the control of the aircraft so doing this can be counter-productive.
+
+Here is an example from the same 5" quad with the harmonic notch configured:
+
+.. image:: ../../../images/post-tune-fft.png
+    :target:  ../_images/post-tune-fft.png
+    :width: 450px
+
+.. note:: be sure to reset the :ref:`INS_LOG_BAT_MASK<INS_LOG_BAT_MASK>` to "0" when finished with analysis flights to free up the RAM consumed by this feature. In some autopilots, you cannot do other memory intensive tasks like Compass Calibration or MAVftp if this batch logging is enabled.
 
 Advanced Configuration and Analysis
 -----------------------------------
@@ -74,7 +100,7 @@ Analysis with pymavlink
 
    pbarker@bluebottle:~/rc/ardupilot(fastest-sampling)$ ~/rc/pymavlink/tools/mavfft_isb.py /tmp/000003.BIN
    Processing log /tmp/000003.BIN
-   .Skipping ISBD outside ISBH (fftnum=0)
+   Skipping ISBD outside ISBH (fftnum=0)
 
    Skipping ISBD outside ISBH (fftnum=0)
 
