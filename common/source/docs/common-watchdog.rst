@@ -32,7 +32,7 @@ A WDOG log message should also appear with the following columns that may be use
 - MavCmd : MAVLink COMMAND_LONG or COMMAND_LONG_INT message's command field from last processed message
 - SemLine : Source code line number if program is waiting for a semaphore or 0 if not waiting
 - FL : Fault Line, the source code line number where the fault occurred.  Note this does not specify the filename but it can still be useful
-- FT : Fault Type (see `FaultType enum in AP_HAL_ChibiOS/system.cpp <https://github.com/ardupilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/system.cpp#L39>`__)
+- FT : Fault Type (see `FaultType enum in AP_HAL_ChibiOS/system.cpp <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/common/stm32_util.h#L144-L151>`__)
 
    - 1 = Reset
    - 2 = Non-Maskable Interrupt (aka NMI)
