@@ -44,7 +44,7 @@ Concepts
 The two key controls for transmitter based tuning are:
 
 - A "tuning knob", setup on your transmitter to a convenient knob or
-  slider and linked to a RC channel that your board receives
+  slider and linked to an RC channel that your board receives
 
 - An optional "selector switch" for controlling advanced features of
   the tune. This should be linked to a two position switch mapped to
@@ -139,7 +139,7 @@ tuning knob around the current value. Toggle the selector switch
 briefly high then low and the center-value will change to whatever the
 tubing knob is set to. When you re-center the tuning knob will
 de-activate again until you move it to the mid-point position. This
-prevents you getting a jump in the tuning value when you re-center.
+prevents you from getting a jump in the tuning value when you re-center.
 
 Tuning multiple parameters
 ==========================
@@ -168,8 +168,8 @@ Holding the selector switch for more than 2 seconds will switch you to
 the next parameter and will also change the tuning knob back to its
 "wait for mid-point" state on the new parameter. The buzzer on the
 board will give a loud BEEP sequence to indicate which parameter in
-the set you have changed to. For the first parameter in the set you
-will get one loud BEEP. For the second parameter you will get two loud
+the set you have changed to. For the first parameter in the set, you
+will get one loud BEEP. For the second parameter, you will get two loud
 BEEPs and so on.
 
 When you have cycled through all of the parameters in the tuning set
@@ -244,7 +244,7 @@ The first parameter you will be tuning will be RateRollD. To tune that
 parameter (and the other parameters in the rate roll/pitch set) you
 should follow this process:
 
-- move the tuning knob to the mid-point to active the knob. You will
+- move the tuning knob to the mid-point to activate the knob. You will
   hear a rapid bup-bip from the board to indicate the tuning knob is
   activated.
 - start raising the tuning knob slowly, stopping immediately if the
@@ -277,16 +277,16 @@ holding the selector switch for more than five seconds. You will know
 the 5 seconds is up when you hear the distinctive rapid
 bup-bip-bup-bip sound from the buzzer.
 
-At that point you can land the vehicle, or just enjoy flying it.
+At that point, you can land the vehicle, or just enjoy flying it.
 
 The first time you do a full tune in this way it will probably take
-about five minutes of flight time to do a tune. With some practice you
+about five minutes of flight time to do a tune. With some practice, you
 can do a full tune in a bit over a minute.
 
 [/site]
 [site wiki="copter"]
 
-With transmitter based tuning you can tune a single or multiple parameters in flight using Channel 6 of the transmitter.
+With transmitter based tuning you can tune single or multiple parameters in flight using Channel 6 of the transmitter.
 
 The :ref:`TUNE<TUNE>` parameter determines which parameter is being tuned.
 
@@ -398,7 +398,7 @@ Rate Roll P and Rate Pitch P will be used in the following example procedure
 #. Turn your transmitter's CH6 tuning knob to the minimum position,
    press the "Refresh Params" button and ensure that the Rate Roll P and
    Rate Pitch P values become 0.08 (or something very close)
-#. Turn the CH6 knob to it's maximum position, press "Refresh Params"
+#. Turn the CH6 knob to its maximum position, press "Refresh Params"
    and ensure the Rate Roll P moves to 0.20
 #. Move the CH6 knob back to the middle
 #. Arm and fly your copter in Stabilize mode adjusting the ch6 knob
@@ -407,19 +407,16 @@ Rate Roll P and Rate Pitch P will be used in the following example procedure
 #. With the CH6 knob in the position that gave the best performance,
    return to the Copter Pids screen and push the "Refresh Params" button
 #. In the Rate Roll P and Rate Pitch P fields re-type the value that you
-   see but just slightly modified so that the mission planner recongises
+   see but just slightly modified so that the mission planner recognizes
    that it's changed and resends to the autopilot (Note: if you re-type
    exactly the same number as what appears in Rate Roll P it won't be
-   updated).  So for example if the Rate Roll P appears as "0.1213" make
+   updated).  So for example, if the Rate Roll P appears as "0.1213" make
    it "0.1200"
 #. Set Ch6 Opt back to "None" and push "Write Params"
 #. Push the Disconnect button on the top right, and the Connect
 #. Ensure that the Rate Roll P value is the value that you retyped in
    step #12
 
-Note: while you are moving the tuning knob the values update at 3 times
-per second.  The need to press the Refresh button in the mission planner
-in steps #6 and #7 above is just because the Copter is not sending the
-updates to the mission planner in real-time.
+.. note:: While you are moving the tuning knob the values update at 3 times per second.  The need to press the Refresh button in the mission planner in steps #6 and #7 above is just because the Copter is not sending the updates to the mission planner in real-time.
 
 [/site]

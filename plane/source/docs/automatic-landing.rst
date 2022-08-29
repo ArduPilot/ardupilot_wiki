@@ -411,7 +411,7 @@ If an RC channel's ``RCx_OPTION`` auxiliary function has been set to "64", then 
 ESC (Electronic Speed Controller)
 ---------------------------------
 
-Most important is to set the ::ref:`SERVO3_TRIM <SERVO3_TRIM>` (assuming the esc/motor is attached to output 3)to the point that the ESC is idle, usually around mid-range (1500us) to create an output curve that has :ref:`SERVO3_MAX<SERVO3_MAX>` for full forward thrust, and :ref:`SERVO3_MIN<SERVO3_MIN>` for full reverse thrust. This should be done AFTER the RC Calibrations setup step. 
+Most important is to set the :ref:`SERVO3_TRIM <SERVO3_TRIM>` (assuming the esc/motor is attached to output 3)to the point that the ESC is idle, usually around mid-range (1500us) to create an output curve that has :ref:`SERVO3_MAX<SERVO3_MAX>` for full forward thrust, and :ref:`SERVO3_MIN<SERVO3_MIN>` for full reverse thrust. This should be done AFTER the RC Calibrations setup step. 
 
 Hardware selection and programming
 ++++++++++++++++++++++++++++++++++

@@ -7,7 +7,7 @@ Mission Planner Flight Data Screen
 
 This section covers the information you will need to use the features in
 the Mission Planner Flight DATA screen - selected in the Top menu of Mission
-Planner.:ref:`An Introduction <mission-planner-ground-control-station>` privodes a brief overview with pointers to the various areas of information.
+Planner. :ref:`An Introduction <mission-planner-ground-control-station>` provides a brief overview with pointers to the various areas of information.
 
 Heads Up Area  (HUD)
 ====================
