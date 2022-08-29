@@ -8,7 +8,7 @@ env:
   TEST: "1"
 jobs:
 
-  build:
+  build-windows:
 
     runs-on: 'windows-latest'
     strategy:
