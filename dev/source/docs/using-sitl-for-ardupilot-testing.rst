@@ -708,9 +708,11 @@ Changing the speed of the simulation
 ====================================
 
 Most of the simulator backends support changing the speed while
-running. Just set the SIM_SPEEDUP parameter as needed. A value of 1
+running. Just set the ``SIM_SPEEDUP`` parameter as needed. A value of 1
 means normal wall-clock time. A value of 5 means 5x realtime. A value
 of 0.1 means 1/10th of real time.
+
+Running with high-levels of speedup can result in enough network traffic that MAVProxy can’t keep up. An error such as “Set RC override timeout” or the vehicle entering GCS failsafe are typical of these failures. Reducing the ``SIM_SPEEDUP`` factor is typically sufficient to avoid this problem. Also, using the ``--udp`` options will use UDP instead of the slower TCP communication protocol and can help avoid this issue at higher speedups.
 
 Testing Compass Calibration
 ===========================
