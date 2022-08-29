@@ -12,9 +12,6 @@ This lists features or changes merged in master and build in the "latest" firmwa
 .. toctree::
     :maxdepth: 1
 
-    Holybro Pixhawk6X <common-holybro-pixhawk6X>
-    Holybro Pixhawk6C <common-holybro-pixhawk6C>
-    MakeFlyEasy PixSurveyA1 <common-makeflyeasy-PixSurveyA1>
 [site wiki="plane,copter,rover"]
     TeraRanger NEO <common-teraranger-neo>
 [/site]
