@@ -12,7 +12,7 @@ Scripts are stored on the SD card and run in parallel with the flight code.
 
 This page describes how to setup scripts on your autopilot, the scripting API, scripting applets,and some examples to help get started.
 
-While scripting normally requires at least some LUA programming and editing, there are some **Applets** available which require no user editing and are ready to use. See links below.
+While scripting normally requires at least some LUA programming and editing, there are some `Applets <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/applets>`__  available which require no user editing and are ready to use. See links below.
 
 .. note::
 
