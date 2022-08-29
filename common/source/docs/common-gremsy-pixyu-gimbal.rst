@@ -106,6 +106,8 @@ Connect with a ground station and set the following parameters:
 - :ref:`SERIAL2_OPTIONS <SERIAL2_OPTIONS>` to 1024 for "Don't forward mavlink to/from"
 - Optionally set :ref:`RC9_OPTION <RC9_OPTION>` to 163 for "Mount Lock" to allow the pilot to switch between "lock" and "follow" modes during "RC Targetting".  Note "RC9" can be replaced with any RC input channel
 
+When the autopilot has successfully connected to the gimbal, "Mount: GREMSY PixyU fw:7.7.1.0" (or similar) will be sent to the ground station.  Looking for this message may be useful in determining if the autopilot and gimbal are communicating successfully.
+
 Configuring the Gimbal
 ----------------------
 
