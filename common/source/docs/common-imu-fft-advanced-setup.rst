@@ -41,7 +41,7 @@ It is also possible to use the in-flight FFT in a test flight to generate a prec
 
 - Set :ref:`FFT_ENABLE <FFT_ENABLE>` = 0 to disable the FFT engine.
 - Set :ref:`INS_HNTCH_MODE <INS_HNTCH_MODE>` and/or :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` = 1 to use the throttle-based dynamic harmonic notch.
-- Set ::ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = :ref:`FFT_MINHZ <FFT_MINHZ>`
+- Set :ref:`INS_HNTCH_FREQ <INS_HNTCH_FREQ>` and/or :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>` = :ref:`FFT_MINHZ <FFT_MINHZ>`
 - Set :ref:`INS_HNTCH_REF <INS_HNTCH_REF>` and/or :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` = :ref:`FFT_THR_REF <FFT_THR_REF>`
 
 Alternatively, if you wish the hover frequency to be the lowest value for the harmonic notch:

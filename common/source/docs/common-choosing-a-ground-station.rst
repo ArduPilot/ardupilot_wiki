@@ -260,9 +260,9 @@ iOS
 
 For iOS devices, you will need:
 
--  iOS Based device such as an iPad or iPhone. If running iPad, the cellular version is recommended for better GPS support.
+-  iOS Based devices such as an iPad or iPhone. If running iPad, the cellular version is recommended for better GPS support.
 -  Wifi or Bluetooth LE link to the Drone
--  Bridge Connection to a:ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` via Wifi or Bluetooth LE
+-  Bridge Connection to a :ref:`SiK Telemetry Radio System <common-sik-telemetry-radio>` via Wifi or Bluetooth LE
 
   See iOS App Vendors for more details.
 

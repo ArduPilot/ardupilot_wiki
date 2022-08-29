@@ -168,7 +168,7 @@ change current waypoint to the waypoint number specified in :ref:`AFS_WP_GPS_LOS
 will perform whatever actions you want on GPS loss. For example, you
 could have a set of waypoints starting at number 10 which first loiter
 on the spot for 30 seconds, and then proceed back to the airfield. You
-would then set ::ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` to 10 to enable that part of the
+would then set :ref:`AFS_WP_GPS_LOSS<AFS_WP_GPS_LOSS>` to 10 to enable that part of the
 mission on loss of GPS lock.
 
 When setting up mission items for GPS lock it is sometimes useful to

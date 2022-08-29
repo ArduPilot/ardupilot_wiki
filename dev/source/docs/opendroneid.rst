@@ -105,7 +105,7 @@ this will return a rather lengthy path in a similar form to:
 **/dev/serial/by-id/usb-Silicon_Labs_CP2102N_USB_to_UART_Bridge_Controller_4e7564343210ec11a33426947a109228-if00-port0**
 
 
-Start SITL using the following,  and if you will be using the SERIAL1 interface in the code (ie ::ref:`DID_MAVPORT<DID_MAVPORT>` = 1) and the <path> discovered above:
+Start SITL using the following,  and if you will be using the SERIAL1 interface in the code (ie :ref:`DID_MAVPORT<DID_MAVPORT>` = 1) and the <path> discovered above:
 
 .. code::
 
