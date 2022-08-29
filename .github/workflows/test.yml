@@ -8,7 +8,7 @@ env:
   TEST: "1"
 jobs:
 
-  build:
+  build-linux:
 
     runs-on: ubuntu-20.04
     strategy:
@@ -33,6 +33,11 @@ jobs:
         shell: bash {0}
         run: |
           grep --include=\*.rst -Rn -E '(:ref:`.*?`[_]{0,2}) ([\.,:])' .
+          test $? -eq 1
+      - name: Check for bad characters before ref directives
+        shell: bash {0}
+        run: |
+          grep --include=\*.rst -Rn -E '[a-zA-Z0-9_:]:ref:' .
           test $? -eq 1
       - name: Check python flake8 formatting
         run : |
