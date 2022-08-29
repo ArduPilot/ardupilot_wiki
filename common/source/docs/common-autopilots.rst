@@ -28,6 +28,8 @@ Open hardware
     Holybro Durandal H7 <common-durandal-overview>
     Holybro Pix32 v5 <common-holybro-pix32v5>
     Holybro Pixhawk 4 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/Pixhawk4/README.md>
+    Holybro Pixhawk6X <common-holybro-pixhawk6X>
+    Holybro Pixhawk6C <common-holybro-pixhawk6C>
     mRo Pixhawk <common-pixhawk-overview>
     mRo Pixracer <common-pixracer-overview>
     mRo X2.1 <https://store.mrobotics.io/mRo-X2-1-Rev-2-p/m10021a.htm>
@@ -67,6 +69,7 @@ Closed hardware
     Mamba F405 MK2* <common-mamba405-mk2>
     Mamba Basic F405 mk3 <common-mamba-basic-mk3>
     Mamba H743 v4 <common-mambaH743v4>
+    MakeFlyEasy PixSurveyA1 <common-makeflyeasy-PixSurveyA1>
     Mateksys F405-SE <common-matekf405-se>
     Mateksys F405-STD and variants* <common-matekf405>
     Mateksys F405 TE Family <common-matekf405-te>
