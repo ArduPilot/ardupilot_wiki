@@ -3,8 +3,8 @@
 =========================
 Bluetooth Telemetry radio
 =========================
-
-A `Bluetooth Data Link <http://store.jdrones.com/Bluetooth_telemetry_modem_p/tlmbt01.htm>`__ can
+`
+A Bluetooth Data Link , such as an `HC-06 module <https://www.amazon.com/s?k=hc-06>`__ can
 be used to connect your Pixhawk (or other controller) to your Bluetooth enabled PC or
 Android Ground station at distances up to 50m.
 
@@ -80,7 +80,7 @@ Detailed connecting with Mission Planner
 Many PCs and Laptops have bluetooth adapters built in but if not then
 you can use a generic USB Bluetooth dongle (pic above) or use an
 additional Bluetooth data link
-connected via an `FTDI Cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__.
+connected via an `FTDI Cable <https://www.amazon.com/ftdi-adapter/s?k=ftdi+adapter>`__.
 
 After first making sure your autopilot is powered on, and your PC's
 bluetooth dongle is plugged in and installed, click on the Windows task
