@@ -270,9 +270,6 @@ Additional Vibration Reduction Considerations
       minimized.
    -  If you put too much glue on it can be removed with an X-acto knife.
 
-#. Vibration damping motor mounts like
-   `this <http://store.jdrones.com/Anti_Vibration_MultiMount_for_Multicopters_p/mmset02.htm>`__
-   may or may not reduce vibration.
 #. Camera Mounts also need to be effectively isolated and damped from
    vibration, but they already have a number of "soft" mounting
    solutions.
