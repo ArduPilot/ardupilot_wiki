@@ -278,7 +278,7 @@ items
 Drone API
 ~~~~~~~~~
 
-To install the latest :ref:`Drone API <droneapi-tutorial>` , run the
+To install the latest :ref:`Drone API <droneapi-tutorial>`, run the
 following:
 
 ::

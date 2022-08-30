@@ -61,7 +61,7 @@ shown for the first DroneCAN driver, second driver has identical parameters
 DroneCAN Adapter Node
 =====================
 
-These devices are general purpose DroneCAN nodes with I/O ports that allow the attachment of non-DroneCAN ArduPilot peripherals to the DroneCAN bus via UART ports, I2C, SPI, and/or GPIOs. See :ref:`DroneCAN Adapter Nodes<common-uavcan-adapter-node>` .
+These devices are general purpose DroneCAN nodes with I/O ports that allow the attachment of non-DroneCAN ArduPilot peripherals to the DroneCAN bus via UART ports, I2C, SPI, and/or GPIOs. See :ref:`DroneCAN Adapter Nodes<common-uavcan-adapter-node>`.
 
 DroneCAN ESC and Servo Configuration settings
 =============================================

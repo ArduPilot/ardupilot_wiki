@@ -8,7 +8,7 @@ GPIOs
 
 .. warning:: When upgrading to 4.2 or later from pre 4.2 firmware, be aware that previously defined GPIOs MAY have to be re-designated using the SERVOx_FUNCTION or, alternatively, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter and that after upgrade any GPIO dependent release mechanisms (parachute, sprayers, etc.) may actuate until this re-definition is done.
 
-General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:`relays<common-relay>` , actuators, LEDs, :ref:`camera triggers<common-camera-shutter-with-servo>` , :ref:`Start Button<startstop-switch>` etc. Some functions also use a GPIO pin as an input, like :ref:`common-rpm`. Some autopilots provide dedicated GPIO pins (sometimes labeled "CAPTURE" pins). In addition, GPIOs can be obtained by re-configuring the PWM outputs.
+General Purpose Input/Outputs (GPIOs) are used in ArduPilot for control of :ref:`relays<common-relay>`, actuators, LEDs, :ref:`camera triggers<common-camera-shutter-with-servo>`, :ref:`Start Button<startstop-switch>` etc. Some functions also use a GPIO pin as an input, like :ref:`common-rpm`. Some autopilots provide dedicated GPIO pins (sometimes labeled "CAPTURE" pins). In addition, GPIOs can be obtained by re-configuring the PWM outputs.
 
 Configuring GPIOS
 =================

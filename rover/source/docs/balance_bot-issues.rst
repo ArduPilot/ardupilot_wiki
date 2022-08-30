@@ -63,7 +63,7 @@ This happens when GPS lock occurs while the vehicle is indoors. The best solutio
 
 The vehicle topples at higher speeds
 ------------------------------------
-The motors may not have sufficient torque to balance the vehicle at these speeds. Lower the maximum speed of the vehicle by bringing down the :ref:`CRUISE_SPEED <CRUISE_SPEED>` parameter. Another option to consider is to reduce :ref:`BAL_PITCH_MAX<BAL_PITCH_MAX>` , which is the maximum pitch angle in degrees.
+The motors may not have sufficient torque to balance the vehicle at these speeds. Lower the maximum speed of the vehicle by bringing down the :ref:`CRUISE_SPEED <CRUISE_SPEED>` parameter. Another option to consider is to reduce :ref:`BAL_PITCH_MAX<BAL_PITCH_MAX>`, which is the maximum pitch angle in degrees.
 
 Vehicle tends to drift or yaw over time, without input
 ------------------------------------------------------

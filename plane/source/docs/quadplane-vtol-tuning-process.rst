@@ -28,9 +28,9 @@ There are 3 common causes of a non-linear thrust curve.
 
 Start with setting up the voltage range to cope with voltage sag.
 
-- :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>` : index of the battery to use for voltage measurements on VTOL power system. Zero is the first battery, one for 2nd battery etc
-- :ref:`Q_M_BAT_VOLT_MAX <Q_M_BAT_VOLT_MAX>` : 4.2v x No. Cells for LiPo
-- :ref:`Q_M_BAT_VOLT_MIN <Q_M_BAT_VOLT_MIN>` : 3.3v x No. Cells for LiPo
+- :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>`: index of the battery to use for voltage measurements on VTOL power system. Zero is the first battery, one for 2nd battery etc
+- :ref:`Q_M_BAT_VOLT_MAX <Q_M_BAT_VOLT_MAX>`: 4.2v x No. Cells for LiPo
+- :ref:`Q_M_BAT_VOLT_MIN <Q_M_BAT_VOLT_MIN>`: 3.3v x No. Cells for LiPo
 
 Note that :ref:`Q_M_BAT_IDX <Q_M_BAT_IDX>` needs to be for the correct
 battery for your VTOL motors. If you have a separate battery for
@@ -47,7 +47,7 @@ details on thrust scaling.
 If you are setting up a hobby grade vehicle then you can use the
 graph below to estimate the correct :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` value for your aircraft.
 
-- :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>` : 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props.
+- :ref:`Q_M_THST_EXPO <Q_M_THST_EXPO>`: 0.55 for 5 inch props, 0.65 for 10 inch props, 0.75 for 20 inch props.
 
 .. image:: ../images/tuning-process-instructions-1.hires.png
     :target: ../_images/tuning-process-instructions-1.hires.png
@@ -75,19 +75,19 @@ RPM. You should be able to tell at what PWM the motors stop producing
 more thrust by listening to the sound made at different PWM values, or
 you can use a tachometer.
 
-The :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>` :ref:`Q_M_SPIN_MAX
+The :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>`:ref:`Q_M_SPIN_MAX
 <Q_M_SPIN_MAX>` values are used to select a sub-range of the outputs
 to your motors which is linear. For hobby users the defaults are
 usually good, but for professional vehicles you should use the thrust
 stand data to determine the right range to produce linear thrust after
 the expo is applied.
 
-- :ref:`Q_M_PWM_MAX <Q_M_PWM_MAX>` : Check ESC manual for fixed range or 2000us
-- :ref:`Q_M_PWM_MIN <Q_M_PWM_MIN>` : Check ESC manual for fixed range or 1000us
-- :ref:`Q_M_SPIN_ARM <Q_M_SPIN_ARM>` : use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
-- :ref:`Q_M_SPIN_MAX <Q_M_SPIN_MAX>` : 0.95
-- :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>` : use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
-- :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>` : 0.25, or below the expected hover thrust percentage (low is safe)
+- :ref:`Q_M_PWM_MAX <Q_M_PWM_MAX>`: Check ESC manual for fixed range or 2000us
+- :ref:`Q_M_PWM_MIN <Q_M_PWM_MIN>`: Check ESC manual for fixed range or 1000us
+- :ref:`Q_M_SPIN_ARM <Q_M_SPIN_ARM>`: use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
+- :ref:`Q_M_SPIN_MAX <Q_M_SPIN_MAX>`: 0.95
+- :ref:`Q_M_SPIN_MIN <Q_M_SPIN_MIN>`: use the :ref:`motor test feature <connect-escs-and-motors_testing_motor_spin_directions>`
+- :ref:`Q_M_THST_HOVER <Q_M_THST_HOVER>`: 0.25, or below the expected hover thrust percentage (low is safe)
 
 Step 3: PID Controller Initial Setup
 ------------------------------------
@@ -96,20 +96,20 @@ The settings below are meant to get your PID controller acceleration
 and filter settings into the right approximate range for your
 vehicle. These parameters are critical to the tuning process.
 
-- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>` :  10Hz to 20Hz
-- :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` : 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
-- :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
-- :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` : 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
-- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` : 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
-- :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` : 0.5 x :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` / 4500
+- :ref:`INS_ACCEL_FILTER <INS_ACCEL_FILTER>`:  10Hz to 20Hz
+- :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>`: 80Hz for 5 inch props, 40Hz for 10 inch props, 20Hz for 20 inch props
+- :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`: 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
+- :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>`: 110000 for 10 inch props, 50000 for 20 inch props, 20000 for 30 inch props
+- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`: 27000 for 10 inch props, 18000 for 20 inch props, 9000 for 30 inch props
+- :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`: 0.5 x :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` / 4500
 
 
-- :ref:`Q_A_RAT_PIT_FLTD <Q_A_RAT_PIT_FLTD>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`Q_A_RAT_PIT_FLTT <Q_A_RAT_PIT_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`Q_A_RAT_RLL_FLTD <Q_A_RAT_RLL_FLTD>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`Q_A_RAT_RLL_FLTT <Q_A_RAT_RLL_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
-- :ref:`Q_A_RAT_YAW_FLTE <Q_A_RAT_YAW_FLTE>` : 2
-- :ref:`Q_A_RAT_YAW_FLTT <Q_A_RAT_YAW_FLTT>` : :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_PIT_FLTD <Q_A_RAT_PIT_FLTD>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_PIT_FLTT <Q_A_RAT_PIT_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_RLL_FLTD <Q_A_RAT_RLL_FLTD>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_RLL_FLTT <Q_A_RAT_RLL_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
+- :ref:`Q_A_RAT_YAW_FLTE <Q_A_RAT_YAW_FLTE>`: 2
+- :ref:`Q_A_RAT_YAW_FLTT <Q_A_RAT_YAW_FLTT>`: :ref:`INS_GYRO_FILTER <INS_GYRO_FILTER>` / 2
 
 
 
@@ -365,7 +365,7 @@ Step 12: QAUTOTUNE
 
 If the aircraft appears stable enough to attempt QAUTOTUNE and you
 have sufficient battery to last through a QAUTOTUNE then you can
-follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page. Often, after a good manaul tune or using the`Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__ , this will not be necessary.
+follow the instructions in the :ref:`QAUTOTUNE<qautotune-mode>` page. Often, after a good manaul tune or using the`Quick VTOL Tune LUA script <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/VTOL-quicktune.md>`__, this will not be necessary.
 
 You should use QAUTOTUNE on one axis at a time (setting
 :ref:`Q_AUTOTUNE_AXES <Q_AUTOTUNE_AXES>` for the axis you want to
@@ -398,7 +398,7 @@ QAUTOTUNE will attempt to tune each axis as tight as the aircraft can tolerate. 
 - :ref:`Q_A_ANG_RLL_P <Q_A_ANG_RLL_P>` should be reduced from 10 to 6
 - :ref:`Q_A_ANG_YAW_P <Q_A_ANG_YAW_P>` should be reduced from 10 to 6
 - :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` should be reduced from 1 to 0.5
-- :ref:`Q_A_RAT_YAW_I <Q_A_RAT_YAW_I>` : :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` x 0.1
+- :ref:`Q_A_RAT_YAW_I <Q_A_RAT_YAW_I>`: :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` x 0.1
 
 These values should only be changed if QAUTOTUNE produces higher values. Small aerobatic aircraft may prefer to keep these values as high as possible.
 
@@ -409,12 +409,12 @@ QuadPlane has a set of parameters that define the way the aircraft feels to fly.
 
 The most important of these parameters is:
 
-- :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>` : yaw rate x 45 degrees/s
-- :ref:`Q_ANGLE_MAX <Q_ANGLE_MAX>` :  maximum lean angle
-- :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>` : Pitch rate acceleration
-- :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` : Roll rate acceleration
-- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` : Yaw rate acceleration
-- :ref:`Q_A_ANG_LIM_TC <Q_A_ANG_LIM_TC>` : Aircraft smoothing time
+- :ref:`Q_A_RAT_YAW_P <Q_A_RAT_YAW_P>`: yaw rate x 45 degrees/s
+- :ref:`Q_ANGLE_MAX <Q_ANGLE_MAX>`:  maximum lean angle
+- :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`: Pitch rate acceleration
+- :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>`: Roll rate acceleration
+- :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>`: Yaw rate acceleration
+- :ref:`Q_A_ANG_LIM_TC <Q_A_ANG_LIM_TC>`: Aircraft smoothing time
 
 QAUTOTUNE will set the :ref:`Q_A_ACCEL_P_MAX <Q_A_ACCEL_P_MAX>`, :ref:`Q_A_ACCEL_R_MAX <Q_A_ACCEL_R_MAX>` and :ref:`Q_A_ACCEL_Y_MAX <Q_A_ACCEL_Y_MAX>` parameters to their maximum based on measurements done during the QAUTOTUNE tests. These values should not be increased beyond what QAUTOTUNE suggests without careful testing. In most cases pilots will want to reduce these values significantly.
 

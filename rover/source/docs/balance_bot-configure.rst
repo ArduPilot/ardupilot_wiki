@@ -65,7 +65,7 @@ The vehicle must be armed for the wheels to start moving. Check the :ref:`rover 
 
 #. Connect the battery. Connect the autopilot board to GCS via USB or telemetry.
 
-#. Keep the vehicle upright and then arm it. If arming is not successful check the error message on the GCS and identify the problem from the :ref:`rover arming page<arming-your-rover>` .
+#. Keep the vehicle upright and then arm it. If arming is not successful check the error message on the GCS and identify the problem from the :ref:`rover arming page<arming-your-rover>`.
 
 #. After the vehicle arms, pitch it forward and back manually(Use hands, not the RC transmitter). The motors must turn in the direction of pitch. 
 

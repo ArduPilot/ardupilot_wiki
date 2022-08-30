@@ -8,11 +8,11 @@ Tuning Manual/Hold Mode
 =======================
 Manual and Hold Modes use a PID controller to control pitch angle. This section describes the tuning process for the Pitch Controller. The parameters involved in tuning Manual/Hold Modes are:
 
-- :ref:`BAL_PITCH_MAX<BAL_PITCH_MAX>` : Maximum pitch angle limit
-- :ref:`BAL_PITCH_TRIM <BAL_PITCH_TRIM>` : Pitch trim to offset tilt of center of mass
-- :ref:`ATC_BAL_P <ATC_BAL_P>` : P Gain
-- :ref:`ATC_BAL_I <ATC_BAL_I>` : I Gain
-- :ref:`ATC_BAL_D <ATC_BAL_D>` : D Gain
+- :ref:`BAL_PITCH_MAX<BAL_PITCH_MAX>`: Maximum pitch angle limit
+- :ref:`BAL_PITCH_TRIM <BAL_PITCH_TRIM>`: Pitch trim to offset tilt of center of mass
+- :ref:`ATC_BAL_P <ATC_BAL_P>`: P Gain
+- :ref:`ATC_BAL_I <ATC_BAL_I>`: I Gain
+- :ref:`ATC_BAL_D <ATC_BAL_D>`: D Gain
 
 **1) Configure PID tuning plot** :
 The tuning process will be easier when viewing the PID tuning plot. To select the Pitch Control PID for plotting, set:
@@ -42,7 +42,7 @@ Tuning Acro Mode
 The following parameters must be set as specified below:
 
 - :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` = 0 (This parameter can cause conflicts otherwise, in Balance Bots)
-- :ref:`CRUISE_SPEED <CRUISE_SPEED>` : Maximum speed limit for Speed Controller. To be set by trial and error
+- :ref:`CRUISE_SPEED <CRUISE_SPEED>`: Maximum speed limit for Speed Controller. To be set by trial and error
 
 
 With the above parameters set, follow the tuning guides for :ref:`Speed <rover-tuning-throttle-and-speed>` and :ref:`Steering<rover-tuning-steering-rate>`. Another important thing to note is that the feed-forward term described in these pages does not make any positive contribution in a balance bot and is best, set to zero.

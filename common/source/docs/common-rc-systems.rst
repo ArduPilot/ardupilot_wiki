@@ -45,7 +45,7 @@ To connect a PPM-Sum receiver or an SBus receiver to a Pixhawk, for example, plu
 .. tip::
 
    The parameter to enable the SBus output from the PixHawk style autopilots is
-   :ref:`BRD_SBUS_OUT<BRD_SBUS_OUT>` . This is only to pass SBus externally to other devices, like servos. Not to connect a receiver to RCin or SBus In.
+   :ref:`BRD_SBUS_OUT<BRD_SBUS_OUT>`. This is only to pass SBus externally to other devices, like servos. Not to connect a receiver to RCin or SBus In.
 
 
 DSM/DSM2/DSM-X/SRXL/SUM-D

@@ -62,4 +62,4 @@ Power Monitors/Modules provide these benefits:
 
 - Most provide a stable power supply to the autopilot, in addition to monitoring, and therefore reduces the chance of a brown-out
 - Allows real-time monitoring of the battery’s voltage and current and triggering a low battery failsafe
-- Allows compensating for the interference on the compass from the motors using the COMPASS_MOT_x and COMPASS_PMOT_x parameters, see :ref:`common-compass-setup-advanced` .
+- Allows compensating for the interference on the compass from the motors using the COMPASS_MOT_x and COMPASS_PMOT_x parameters, see :ref:`common-compass-setup-advanced`.

@@ -90,7 +90,7 @@ Using a different pin for the airspeed sensor
       the board.
    -  Set to 11 on PX4 for the analog airspeed port.
    -  Set to 65 on the PX4 for an I2C airspeed sensor.
-   -  Set to the listed RSSI pin in other board's :ref:`documentation<common-autopilots>` ,often it is pin 0.
+   -  Set to the listed RSSI pin in other board's :ref:`documentation<common-autopilots>`,often it is pin 0.
 
 - After you have selected the pin, select the "Update Parameters" tab and
       close *Mission Planner*.

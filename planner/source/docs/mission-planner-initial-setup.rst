@@ -24,7 +24,7 @@ resides in you autopilot, you must install (upload) the
 :ref:`firmware <common-glossary>` into it.
 
 The firmware is located at `firmware.ardupilot.org <https://firmware.ardupilot.org>`__ .
-If the autopilot has ArduPilot firmware already installed, you can use this page to upload firmware for different vehicles or version. See this :ref:`Loading firmware <common-loading-firmware-onto-pixhawk>` page. Otherwise, you must use other methods than Mission Planner for getting ArduPilot installed for the first time, see this :ref:`section<common-loading-firmware-onto-chibios-only-boards>` . 
+If the autopilot has ArduPilot firmware already installed, you can use this page to upload firmware for different vehicles or version. See this :ref:`Loading firmware <common-loading-firmware-onto-pixhawk>` page. Otherwise, you must use other methods than Mission Planner for getting ArduPilot installed for the first time, see this :ref:`section<common-loading-firmware-onto-chibios-only-boards>`. 
 
 From this screen you can also select "All Options" allowing you to select and load any variation of the firmware, or "Load custom firmware", most often used when a developer has trial code to load.
 

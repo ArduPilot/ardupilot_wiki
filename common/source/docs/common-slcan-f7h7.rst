@@ -42,7 +42,7 @@ here is an example video of configuring a DroneCAN power monitor device:
 Troubleshooting
 ===============
 
-Occasionally, Windows will only present one COM port in Mission Planner. In that case, you may still be able to connect to Mission Planner and change the parameters, if the COM port Windows has chosen to display is the autopilot port with MAVLink protocol selected.  However, you will most likely need to load the composite USB driver in order to obtain both COM ports, as shown in :ref:`these instructions<loading-composite-USB>` , once the SLCAN port protocol has been enabled.
+Occasionally, Windows will only present one COM port in Mission Planner. In that case, you may still be able to connect to Mission Planner and change the parameters, if the COM port Windows has chosen to display is the autopilot port with MAVLink protocol selected.  However, you will most likely need to load the composite USB driver in order to obtain both COM ports, as shown in :ref:`these instructions<loading-composite-USB>`, once the SLCAN port protocol has been enabled.
 
 If you reboot the autopilot, the composite Windows USB driver may be unloaded and the process repeated upon re-attachment.
 

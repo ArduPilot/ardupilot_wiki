@@ -97,9 +97,9 @@ your blimps.
 We recommend the telemetry radio solutions linked from the 
 :ref:`Telemetry Landing Page <common-telemetry-landingpage>`.
 
-A :ref:`Bluetooth<common-mission-planner-bluetooth-connectivity>` , or WIFI adapters, such as :ref:`common-esp32-telemetry` and :ref:`common-esp8266-telemetry`, are lightweight and have enough range for indoor operation.
+A :ref:`Bluetooth<common-mission-planner-bluetooth-connectivity>`, or WIFI adapters, such as :ref:`common-esp32-telemetry` and :ref:`common-esp8266-telemetry`, are lightweight and have enough range for indoor operation.
 
-Remember that if using an RF radio such as, the :ref:`SIK Radio <common-sik-telemetry-radio>` , you will need the version at the permitted frequency for your country - 915 MHz (Americas) and 433
+Remember that if using an RF radio such as, the :ref:`SIK Radio <common-sik-telemetry-radio>`, you will need the version at the permitted frequency for your country - 915 MHz (Americas) and 433
 MHz (Europe).
 
 .. image:: ../../../images/Telemetry_store.jpg

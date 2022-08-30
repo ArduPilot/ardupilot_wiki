@@ -14,7 +14,7 @@ single and double sonar setups.
 
    This article is out of date. Sonars are now more generically
    represented by "Rangefinders" - Rover can support 4. The relevant
-   parameters have morphed from "SONAR" to "RNGFND" . See the ``RNGFNDx_y`` parameters, such as :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` .
+   parameters have morphed from "SONAR" to "RNGFND" . See the ``RNGFNDx_y`` parameters, such as :ref:`RNGFND1_TYPE<RNGFND1_TYPE>`.
 
 What you'll need
 ================

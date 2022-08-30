@@ -86,7 +86,7 @@ releases/milestones.
    altitude limits and geofencing. More details
    `here <https://diydrones.com/profiles/blogs/arducopter-2-7-released>`__
    ; details on geofencing
-   :ref:`here <common-ac2_simple_geofence>` .
+   :ref:`here <common-ac2_simple_geofence>`.
 
 -  June 14, 2012: Copter 2.6 released. Includes performance
    enhancements, MAVLink 1.0 support, dataflash erase speedups

@@ -57,7 +57,7 @@ With this option, :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` must be set to "23",
 
 - SBUS/DSM/SRXL connects to the PPM pin, but SBUS is not supported without an external inverter.
 
-- FPort requires connection to T1 and PPM(R1) via a bi-directional inverter. See :ref:`common-FPort-receivers` .
+- FPort requires connection to T1 and PPM(R1) via a bi-directional inverter. See :ref:`common-FPort-receivers`.
 
 - CRSF also requires a T1 connection, in addition to PPM (R1), and automatically provides telemetry.
 

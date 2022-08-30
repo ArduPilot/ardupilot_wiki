@@ -57,7 +57,7 @@ Rover also includes a two-layer battery failsafe.  This allows setting up a foll
 
 - :ref:`BATT_CRT_VOLT <BATT_CRT_VOLT>` - holds the secondary (lower) voltage threshold.  Set to zero to disable. Default is zero.
 - :ref:`BATT_CRT_MAH <BATT_CRT_MAH>` - holds the secondary (lower) capacity threshold.  Set to zero to disable. Default is zero.
-- :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` - holds the secondary action to take. It has the same options and default as :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>` .
+- :ref:`BATT_FS_CRT_ACT <BATT_FS_CRT_ACT>` - holds the secondary action to take. It has the same options and default as :ref:`BATT_FS_LOW_ACT <BATT_FS_LOW_ACT>`.
 
 Advanced Battery Failsafe Settings
 ----------------------------------

@@ -17,7 +17,7 @@ A better way is to use one or more of the power limiting parameters:
 
 The :ref:`BATT_WATT_MAX<BATT_WATT_MAX>` parameter (``BATTx_WATT_MAX``, for any additional batteries) to limit the total instantaneous power that can be drawn from the battery(s) by the forward motors. This will help issues during QuadPlane transitions.
 
-If battery wattage (voltage * current) exceeds this value then the system will reduce max throttle (:ref:`THR_MAX<THR_MAX>` , :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` and :ref:`THR_MIN<THR_MIN>` for reverse thrust) to be below :ref:`BATT_WATT_MAX<BATT_WATT_MAX>`. If power demand is reduced, the max throttle will slowly grow back to :ref:`THR_MAX<THR_MAX>` (or :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` ) and/or :ref:`THR_MIN<THR_MIN>` , even if demanding the current max but as long as power remains under the watt max. Use 0 (default) to disable this feature.
+If battery wattage (voltage * current) exceeds this value then the system will reduce max throttle (:ref:`THR_MAX<THR_MAX>`, :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` and :ref:`THR_MIN<THR_MIN>` for reverse thrust) to be below :ref:`BATT_WATT_MAX<BATT_WATT_MAX>`. If power demand is reduced, the max throttle will slowly grow back to :ref:`THR_MAX<THR_MAX>` (or :ref:`TKOFF_THR_MAX<TKOFF_THR_MAX>` ) and/or :ref:`THR_MIN<THR_MIN>`, even if demanding the current max but as long as power remains under the watt max. Use 0 (default) to disable this feature.
 
 Since this limit is applied to the throttle slowly (~10%/second), it may not react fast enough in some situations to prevent battery sag at the beginning of transition. Setting the :ref:`THR_SLEWRATE<THR_SLEWRATE>` to 50% or less per second to prevent rapid application of maximum forward throttle at the beginning of transition, will help prevent this.
 
@@ -33,7 +33,7 @@ This has two effects if non-zero. First, it sets the lower limit for thrust scal
 
 .. note:: the battery used for monitoring and the battery resistance estimate is determined by  :ref:`Q_M_BAT_IDX<Q_M_BAT_IDX>`
 
-.. tip:: Setting :ref:`Q_M_BAT_CURR_MAX<Q_M_BAT_CURR_MAX>` to 150% of hover current is a good starting point, while 3.3V * number of cells is a good value for :ref:`Q_M_BAT_VOLT_MIN<Q_M_BAT_VOLT_MIN>` .
+.. tip:: Setting :ref:`Q_M_BAT_CURR_MAX<Q_M_BAT_CURR_MAX>` to 150% of hover current is a good starting point, while 3.3V * number of cells is a good value for :ref:`Q_M_BAT_VOLT_MIN<Q_M_BAT_VOLT_MIN>`.
 
 How to Set Max Watts
 --------------------

@@ -67,14 +67,14 @@ Setting up for tuning
 To setup your vehicle for tuning you need to set the following
 parameters:
 
-- :ref:`TUNE_CHAN<TUNE_CHAN>` : the RC input channel associated with your chosen tuning
+- :ref:`TUNE_CHAN<TUNE_CHAN>`: the RC input channel associated with your chosen tuning
   knob
-- :ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>` : the minimum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
-- :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>` : the maximum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
-- :ref:`TUNE_PARAM<TUNE_PARAM>` : the parameter or set of parameters you will be tuning
-- :ref:`TUNE_SELECTOR<TUNE_SELECTOR>` : the RC input channel associated with your chosen
+- :ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>`: the minimum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
+- :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>`: the maximum PWM values produced on :ref:`TUNE_CHAN<TUNE_CHAN>`
+- :ref:`TUNE_PARAM<TUNE_PARAM>`: the parameter or set of parameters you will be tuning
+- :ref:`TUNE_SELECTOR<TUNE_SELECTOR>`: the RC input channel associated with your chosen
   selector switch (optional)
-- :ref:`TUNE_RANGE<TUNE_RANGE>` : the scaling range which the tuning knob covers
+- :ref:`TUNE_RANGE<TUNE_RANGE>`: the scaling range which the tuning knob covers
 
 The :ref:`TUNE_PARAM<TUNE_PARAM>` parameter selects the parameter or set of parameters you
 will be tuning. Values of :ref:`TUNE_PARAM<TUNE_PARAM>` less than 100 correspond to
@@ -85,7 +85,7 @@ the other in a flight.
 .. note:: Most of the tuneable parameters apply to the VTOL operation of QuadPlanes. Only :ref:`TUNE_PARAM<TUNE_PARAM>` values in the 50-57 range are for fixed wing operation.
 
 Use your ground stations parameter interface to see see the full list
-of tunable parameters and parameter sets available for :ref:`TUNE_PARAM<TUNE_PARAM>` . For
+of tunable parameters and parameter sets available for :ref:`TUNE_PARAM<TUNE_PARAM>`. For
 Plane most of the parameters are associated with tuning the
 QuadPlane VTOL motors as those are the most difficult to tune. You can
 also tune some fixed wing parameters, although most people find the
@@ -101,9 +101,9 @@ Using the tuning knob
 
 The basic operation of the tuning knob is very simple. If the tuning
 knob is at the bottom of its range then the parameter being tuned is
-set to the initial value divided by the :ref:`TUNE_RANGE<TUNE_RANGE>` . If the tuning knob
+set to the initial value divided by the :ref:`TUNE_RANGE<TUNE_RANGE>`. If the tuning knob
 is at the top of its range then the parameter being tuned will be set
-to the initial value multiplied by :ref:`TUNE_RANGE<TUNE_RANGE>` .
+to the initial value multiplied by :ref:`TUNE_RANGE<TUNE_RANGE>`.
 
 So with a default value for :ref:`TUNE_RANGE<TUNE_RANGE>` of 2 you will be able to change
 the parameter in a range from half its initial value to 2x the initial
@@ -115,7 +115,7 @@ Activating the tuning knob
 When you first start tuning a parameter you will find the tuning knob
 is not yet active. This is because the knob does not activate until it
 passes the "mid-point value", defined as half way between
-:ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>` and :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>` . Activating the tuning knob in this
+:ref:`TUNE_CHAN_MIN<TUNE_CHAN_MIN>` and :ref:`TUNE_CHAN_MAX<TUNE_CHAN_MAX>`. Activating the tuning knob in this
 way ensures that you don't accidentally take off with a large change
 in tuning value. You are guaranteed to start the tune with a value
 very close to your current value for the parameter.
@@ -300,16 +300,16 @@ The :ref:`TUNE_MAX<TUNE_MAX>` parameter determines the maximum value of the para
 +========+=========================+======================================================================+
 |0       |         None            |                                                                      |
 +--------+-------------------------+----------------------------------------------------------------------+
-|1       |Stab Roll/Pitch kP       |  :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>` ,                               |
+|1       |Stab Roll/Pitch kP       |  :ref:`ATC_ANG_RLL_P<ATC_ANG_RLL_P>`,                                |
 |        |                         |  :ref:`ATC_ANG_PIT_P<ATC_ANG_PIT_P>`                                 |
 +--------+-------------------------+----------------------------------------------------------------------+
-|4       |Rate Roll/Pitch kP       |  :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Multi>` ,     |
+|4       |Rate Roll/Pitch kP       |  :ref:`ATC_RAT_RLL_P<ATC_RAT_RLL_P__AC_AttitudeControl_Multi>`,      |
 |        |                         |  :ref:`ATC_RAT_PIT_P<ATC_RAT_PIT_P__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|5       |Rate Roll/Pitch kI       |  :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Multi>` ,     |
+|5       |Rate Roll/Pitch kI       |  :ref:`ATC_RAT_RLL_I<ATC_RAT_RLL_I__AC_AttitudeControl_Multi>`,      |
 |        |                         |  :ref:`ATC_RAT_PIT_I<ATC_RAT_PIT_I__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
-|21      |Rate Roll/Pitch kD       |  :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>` ,     |
+|21      |Rate Roll/Pitch kD       |  :ref:`ATC_RAT_RLL_D<ATC_RAT_RLL_D__AC_AttitudeControl_Multi>`,      |
 |        |                         |  :ref:`ATC_RAT_PIT_D<ATC_RAT_PIT_D__AC_AttitudeControl_Multi>`       |
 +--------+-------------------------+----------------------------------------------------------------------+
 |3       |Stab Yaw kP              |  :ref:`ATC_ANG_YAW_P<ATC_ANG_YAW_P>`                                 |
