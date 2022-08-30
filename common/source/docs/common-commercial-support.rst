@@ -72,18 +72,6 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
             </div>
         </td>
     </tr>
-    <tr class="row-even">
-        <td><center><a class="first last reference external image-reference" href="http://jdrones.com/"><img alt="../_images/jdrones.png" src="../_images/jdrones.png" style="width: 90px;" /></a><br/><br/>Thailand</center></td>
-        <td><div class="first last line-block">
-            <div class="line">Jani Hirvinen, <a href="mailto:jani@jdrones.com?Subject=ArduPilot%20commercial%20support" target="_top">jani@jdrones.com</a>, +66 (0)2 726 8540</div>
-            <div class="line"><br/></div>
-            <div class="line">jDrones is a leading integrator of ArduPilot into small UAVs</div>
-            <div class="line">Autopilot/Airframe/Electronics design and manufacturing</div>
-            <div class="line">Accessory customization, Mechanical engineering/consulting</div>
-            <div class="line">Software engineering, Training services, Maintenace, GCS design</div>
-            </div>
-        </td>
-    </tr>
     <tr class="row-odd">
         <td><center><a class="first last reference external image-reference" href="http://www.virtualrobotix.it"><img alt="../_images/virtualrobotix.png" src="../_images/virtualrobotix.png" style="width: 90px;" /></a><br/><br/>Italy</center></td>
         <td><div class="first last line-block">
@@ -273,9 +261,6 @@ listed here will be active participants in the community.
     :scale: 0%
 
 .. image:: ../../../images/logos/communistech.png
-    :scale: 0%
-
-.. image:: ../../../images/logos/jdrones.png
     :scale: 0%
 
 .. image:: ../../../images/logos/gmorph.jpeg
