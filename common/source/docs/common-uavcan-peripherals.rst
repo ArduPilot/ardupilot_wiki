@@ -17,8 +17,6 @@ DroneCAN was created to continue the development of the widely used UAVCAN v0 pr
     CUAV Neo 3 Pro DroneCAN GPS <common-cuav-neo-3-pro>
     CUAV C-RTK2 PPK and RTK receiver<common-cuav-c-rtk2>
     CUAV DroneCAN Power Module <common-can-pmu>
-    jDrones DroneCAN Starter kit <https://store.jdrones.com/uc4g_slcan_v11_p/uc4hcmb01.htm>
-    jDrones DroneCAN General Node <https://store.jdrones.com/uc4g_geneneral_node_v21_p/uc4hgnode21.htm>
     Matek M8Q-CAN/DroneCAN GPS+Compass+Baro+Airspeed I2C port <common-matek-m8q>
     Matek DroneCAN DLVR-10 Airspeed Sensor <common-matek-uavcan-dlvr>
     mRo GPS, GPS+Compass,RTK, and DroneCAN modules <https://store.mrobotics.io/category-s/109.htm>

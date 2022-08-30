@@ -65,7 +65,7 @@ For the examples below, the values are shown for CAN driver #1.
 ESC setup using CLI
 ===================
 
-Each ESC must go through a one-time manual setup using an `FTDI cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__
+Each ESC must go through a one-time manual setup using an `FTDI cable <https://www.amazon.com/ftdi-adapter/s?k=ftdi+adapter>`__
 to define its DroneCAN Node Id and motor number.  In future versions of
 ArduPilot this will be replaced with a setup procedure using the mission
 planner (and other GCSs).
