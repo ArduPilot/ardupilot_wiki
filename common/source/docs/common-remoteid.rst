@@ -37,7 +37,7 @@ In order to provide tamper protection, a special autopilot firmware must be buil
 
 For details on building firmware with OpenDroneID feature, see :ref:`dev:opendroneid` for details.
 
-ArduPilot also has developed firmware for  ESP32-S3 and C3 development boards for an OpenDroneID compatible Remote ID module for attachment by serial MAVLink connection or DroneCAN to the autopilot. A binary for flashing the board, along with instructions, is `available here <https://github.com/ArduPilot/ArduRemoteID>`__ . Note, this firmware is rapidly evolving, so check for updates frequently. This device can be attached to the autopilot by USB, or serial, or DroneCAN (if external CAN transceiver is attached)
+ArduPilot also has developed firmware for  ESP32-S3 and C3 development boards for an OpenDroneID compatible Remote ID module for attachment by serial MAVLink connection or DroneCAN to the autopilot. A binary for flashing the board, along with instructions, is `available here <https://github.com/ArduPilot/ArduRemoteID>`__ .  Note, this firmware is rapidly evolving, so check for updates frequently. This device can be attached to the autopilot by USB, or serial, or DroneCAN (if external CAN transceiver is attached)
 
 .. image:: ../../../images/ESP32-S3.jpg
     :target: ../../_images/ESP32-S3.jpg
