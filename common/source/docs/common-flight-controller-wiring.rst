@@ -12,7 +12,7 @@ This topic covers the wiring/connection of basic/mandatory peripherals to the au
 GPS/Compass
 -----------
 
-GPS is usually mandatory in all vehicles, except when some other position determining :ref:`sensor or system is used <common-non-gps-navigation-landing-page>` . Compass is also usually required for Copter and Rover and QuadPlane types of Plane (see :ref:`common-compassless` for compass alternatives), but not for Conventional Planes, however it is recommended.
+GPS is usually mandatory in all vehicles, except when some other position determining :ref:`sensor or system is used <common-non-gps-navigation-landing-page>`. Compass is also usually required for Copter and Rover and QuadPlane types of Plane (see :ref:`common-compassless` for compass alternatives), but not for Conventional Planes, however it is recommended.
 
 .. note:: Some Copter and Rover modes can operate without GPS and Compass (see vehicle documentation for its flight modes).
 
@@ -34,7 +34,7 @@ RC input
 --------
 
 Radio Control Receivers are normally used for pilot control. While exclusive pilot control via ground stations using telemetry is possible, it is not recommended.
-(However, it is possible to control the vehicle via ground station software using a joystick. See :ref:`Joysticks <common-joystick>` .
+(However, it is possible to control the vehicle via ground station software using a joystick. See :ref:`Joysticks <common-joystick>`.
 
 .. image:: ../../../images/rx-connection.jpg
   :width: 450px

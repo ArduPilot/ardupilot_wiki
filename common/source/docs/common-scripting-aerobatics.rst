@@ -95,7 +95,7 @@ This consists of a small control script to read the RC channels for trick select
 
 In order to create new tricks, a user needs to have some LUA script creation knowledge, but the task is simplified since they can use existing tricks as templates for the creation of new tricks.
 
-As above, using SITL, especially in conjunction with :ref:`RealFlight<dev:sitl-with-realflight>` and a RealFlight model like the `AddictionX <https://github.com/ArduPilot/SITL_Models/tree/master/RealFlight/Released_Models/Planes/Addiction_3D>`__ , makes development and debugging much easier without risking a real vehicle.
+As above, using SITL, especially in conjunction with :ref:`RealFlight<dev:sitl-with-realflight>` and a RealFlight model like the `AddictionX <https://github.com/ArduPilot/SITL_Models/tree/master/RealFlight/Released_Models/Planes/Addiction_3D>`__, makes development and debugging much easier without risking a real vehicle.
 
 Below is an introductory video to "Trick on a Switch":
 
@@ -114,7 +114,7 @@ Setup Instructions for Example Tricks on a Switch Scripts
 - Copy the https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/examples/Aerobatics/Via_Switch scripts into your SD card APM/scripts directory. Use the RAW view and copy to files on the SD card using the same names.
 - Assign an RC channel to ``RCx_OPTION`` = 300 for the trick activation switch (low=disable,mid=show trick number selected, high= do it) and one for 301 which is trick selection. You can use a three position for 0/5/10 trick id selection setup to ``RCx_OPTION`` = 301. 0 is disable, 5 is the knife edge, 10 is the loop/immelman example using the above scripts.
 - Upon boot you should see messages that show the trick 5(knife-edge) and 10(loop/immelman) are loaded. Setting the activation switch to mid position will identify the trick number selected by the selection channel on the ground station or TX, if running :ref:`Yaapu <common-frsky-yaapu>` telemetry.
-- In the Ground Control Station's parameter lists, you should see a set of "AERO" params....the ``AERO_TRICK_RAT`` sets the loop pitch rate, try 90deg/s, ``AERO_RPT_COUNT`` sets the number of loops or if 0, an immelman. ``AERO_TRICK_ANG`` set the knife-edge trick angle 0 to 180 or -180 deg that will be executed as long as you have the activation switch high. Using the GCS or :ref:`Yaapu GCS<common-yaapu-gcs>` or :ref:`CRSF parameter editor<common-crsf-telemetry>` , you can change these in air to vary the trick characteristics, if you wish
+- In the Ground Control Station's parameter lists, you should see a set of "AERO" params....the ``AERO_TRICK_RAT`` sets the loop pitch rate, try 90deg/s, ``AERO_RPT_COUNT`` sets the number of loops or if 0, an immelman. ``AERO_TRICK_ANG`` set the knife-edge trick angle 0 to 180 or -180 deg that will be executed as long as you have the activation switch high. Using the GCS or :ref:`Yaapu GCS<common-yaapu-gcs>` or :ref:`CRSF parameter editor<common-crsf-telemetry>`, you can change these in air to vary the trick characteristics, if you wish
 - You can bail out of the trick by putting activation switch low, change modes, or set selector to 0
 
 Remember: ALTITUDE IS YOUR FRIEND! dont attempt your first one below 200feet! and FPV is a good way to try it out first, if you have trouble with seeing the vehicle at that altitude.

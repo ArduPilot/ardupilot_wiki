@@ -45,7 +45,7 @@ The module must be set for 57600 baud to work with the telemetry radio. How to c
 ESP8266 WIFI Module
 -------------------
 
-Setting up the WIFI module is detailed :ref:`here<common-esp8266-telemetry>` .
+Setting up the WIFI module is detailed :ref:`here<common-esp8266-telemetry>`.
 
 
 

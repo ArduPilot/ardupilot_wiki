@@ -73,7 +73,7 @@ RC input is configured on the R3 (UART3_RX) pin. It supports all RC protocols ex
 
 - SBUS/DSM/SRXL connects to the R6 pin.
 
-- SBUS FPort requires connection to T3 and an external bi-directional inverter, see :ref:`common-FPort-receivers` .
+- SBUS FPort requires connection to T3 and an external bi-directional inverter, see :ref:`common-FPort-receivers`.
 
 - CRSF also requires a T3 connection, in addition to R6, and automatically provides telemetry. 
 
@@ -107,7 +107,7 @@ PWM Output
 
 The KakuteF4 supports up to 5 PWM outputs. The pads for motor output
 M1 to M6 on the above diagram are for the 5 outputs. M1-4 outputs
-support DShot and :ref:`Bi-Directional DShot<bidir-dshot>` , as well as all PWM types. The M5 is defaulted to support serial LEDs instead of PWM but can be changed by changing its default function using :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` and supports Dshot.
+support DShot and :ref:`Bi-Directional DShot<bidir-dshot>`, as well as all PWM types. The M5 is defaulted to support serial LEDs instead of PWM but can be changed by changing its default function using :ref:`SERVO5_FUNCTION<SERVO5_FUNCTION>` and supports Dshot.
 
 The PWM is in 2 groups:
 

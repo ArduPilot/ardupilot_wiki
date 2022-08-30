@@ -87,14 +87,14 @@ ADSB-out configuration
    
 The following parameters are used to configure ADS-B out:
 
--  :ref:`ADSB_ICAO_ID <ADSB_ICAO_ID>` : ICAO_ID unique vehicle identification number of this aircraft. This is a integer limited to 24bits. If set to 0 then one will be randomly generated. If set to -1 then static information is not sent, transceiver is assumed pre-programmed.
--  :ref:`ADSB_EMIT_TYPE <ADSB_EMIT_TYPE>` : ADSB classification for the type of vehicle emitting the transponder signal. Default value is 14 (UAV).
--  :ref:`ADSB_LEN_WIDTH <ADSB_LEN_WIDTH>` : Aircraft length and width dimension options in Length and Width in meters. In most cases, use a value of 1 for smallest size.
--  :ref:`ADSB_OFFSET_LAT <ADSB_OFFSET_LAT>` : GPS antenna lateral offset. This describes the physical location offset from center of the GPS antenna on the aircraft.
--  :ref:`ADSB_OFFSET_LON <ADSB_OFFSET_LON>` : GPS antenna longitudinal offset. This is usually set to 1, Applied By Sensor
--  :ref:`ADSB_RF_SELECT <ADSB_RF_SELECT>` : Transceiver RF selection for Rx enable and/or Tx enable. This only effects devices that can Tx and/or Rx. Rx-only devices override this to always be Rx-only.
--  :ref:`ADSB_SQUAWK <ADSB_SQUAWK>` : Squawk/Transponder (Mode 3/A) code that is broadcasted to ATC that is usually assigned by your ATC for a given flight. In the USA/Canada the default squawk code is for VFR which is 1200. Most parts of Europe and Australia use 7000. If an invalid octal number is set then it will be reset to 1200.
--  :ref:`ADSB_OPTIONS <ADSB_OPTIONS>` : Allows enabling certain device specific capabilities and to allow "Squawking" emergency codes on certain vehicle failsafes.
+-  :ref:`ADSB_ICAO_ID <ADSB_ICAO_ID>`: ICAO_ID unique vehicle identification number of this aircraft. This is a integer limited to 24bits. If set to 0 then one will be randomly generated. If set to -1 then static information is not sent, transceiver is assumed pre-programmed.
+-  :ref:`ADSB_EMIT_TYPE <ADSB_EMIT_TYPE>`: ADSB classification for the type of vehicle emitting the transponder signal. Default value is 14 (UAV).
+-  :ref:`ADSB_LEN_WIDTH <ADSB_LEN_WIDTH>`: Aircraft length and width dimension options in Length and Width in meters. In most cases, use a value of 1 for smallest size.
+-  :ref:`ADSB_OFFSET_LAT <ADSB_OFFSET_LAT>`: GPS antenna lateral offset. This describes the physical location offset from center of the GPS antenna on the aircraft.
+-  :ref:`ADSB_OFFSET_LON <ADSB_OFFSET_LON>`: GPS antenna longitudinal offset. This is usually set to 1, Applied By Sensor
+-  :ref:`ADSB_RF_SELECT <ADSB_RF_SELECT>`: Transceiver RF selection for Rx enable and/or Tx enable. This only effects devices that can Tx and/or Rx. Rx-only devices override this to always be Rx-only.
+-  :ref:`ADSB_SQUAWK <ADSB_SQUAWK>`: Squawk/Transponder (Mode 3/A) code that is broadcasted to ATC that is usually assigned by your ATC for a given flight. In the USA/Canada the default squawk code is for VFR which is 1200. Most parts of Europe and Australia use 7000. If an invalid octal number is set then it will be reset to 1200.
+-  :ref:`ADSB_OPTIONS <ADSB_OPTIONS>`: Allows enabling certain device specific capabilities and to allow "Squawking" emergency codes on certain vehicle failsafes.
 
 In many cases the defaults are OK and you don't need to change any of these except :ref:`ADSB_RF_SELECT <ADSB_RF_SELECT>` which is needed to turn on the transmitter. The :ref:`ADSB_RF_SELECT<ADSB_RF_SELECT>` transmit bit is cleared on boot to ensure you're only trsnamitting when intentionally enabled.
 
@@ -107,12 +107,12 @@ ArduPilot includes a flight mode, AVOID_ADSB, that attempts to avoid manned vehi
 
 To enable this feature connect with a Ground Station and set the following parameters:
 
--  :ref:`AVD_ENABLE <AVD_ENABLE>` : set to "1" to enable ADS-B based avoidance (param refresh may be necessary after setting this)
--  :ref:`AVD_F_DIST_XY <AVD_F_DIST_XY>` : the horizontal distance in meters that should be considered a near-miss
--  :ref:`AVD_F_DIST_Z <AVD_F_DIST_Z>` : the vertical distance in meters above or below the vehicle that should be considered a near-miss
--  :ref:`AVD_F_TIME <AVD_F_TIME>` : how many seconds in advance of a projected near-miss (based on the vehicle's current position and velocity) the vehicle should begin the ``AVD_F_ACTION``.
--  :ref:`AVD_F_ACTION <AVD_F_ACTION>` : controls how the vehicle should respond to a projected near-miss (i.e. 2:Climb Or Descend, 3:Move Horizontally, 4:Move Perpendicularly in 3D, 5:RTL or 6:Hover)
--  :ref:`AVD_F_RCVRY <AVD_F_RCVRY>` : sets how the vehicle will behave after the vehicle has cleared the near-miss area (i.e. 1 = resume previous flight mode)
+-  :ref:`AVD_ENABLE <AVD_ENABLE>`: set to "1" to enable ADS-B based avoidance (param refresh may be necessary after setting this)
+-  :ref:`AVD_F_DIST_XY <AVD_F_DIST_XY>`: the horizontal distance in meters that should be considered a near-miss
+-  :ref:`AVD_F_DIST_Z <AVD_F_DIST_Z>`: the vertical distance in meters above or below the vehicle that should be considered a near-miss
+-  :ref:`AVD_F_TIME <AVD_F_TIME>`: how many seconds in advance of a projected near-miss (based on the vehicle's current position and velocity) the vehicle should begin the ``AVD_F_ACTION``.
+-  :ref:`AVD_F_ACTION <AVD_F_ACTION>`: controls how the vehicle should respond to a projected near-miss (i.e. 2:Climb Or Descend, 3:Move Horizontally, 4:Move Perpendicularly in 3D, 5:RTL or 6:Hover)
+-  :ref:`AVD_F_RCVRY <AVD_F_RCVRY>`: sets how the vehicle will behave after the vehicle has cleared the near-miss area (i.e. 1 = resume previous flight mode)
 
 Note: there are equivalent "Warn" parameters (i.e. AVD_W_DIST_XY) that can be used to adjust when warnings to the pilot will appear on the ground station.
 

@@ -133,7 +133,7 @@ Supported Features
 
 - Connect the battery. Connect the autopilot board to GCS via USB or telemetry.
 
-- Keep the robot on its belly and then arm it. If arming is not successful check the error message on the GCS and identify the problem from the :ref:`rover arming page<arming-your-rover>` .
+- Keep the robot on its belly and then arm it. If arming is not successful check the error message on the GCS and identify the problem from the :ref:`rover arming page<arming-your-rover>`.
 
 - After the autopilot board arms, the robot should stand up on it's own
 

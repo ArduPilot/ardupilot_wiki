@@ -304,7 +304,7 @@ Other functions are:
    <td><strong>Flip</strong></td>
    <td>
 
-The vehicle will flip on its roll or pitch axis depending upon the pilot's roll and pitch stick position. See :ref:`Flip Mode<flip-mode>` .
+The vehicle will flip on its roll or pitch axis depending upon the pilot's roll and pitch stick position. See :ref:`Flip Mode<flip-mode>`.
 
 .. raw:: html
 
@@ -314,7 +314,7 @@ The vehicle will flip on its roll or pitch axis depending upon the pilot's roll 
    <td><strong>Save Trim</strong></td>
    <td>
 
-In Rover, a high saves the current steering channel trim, see :ref:`Save Steering Trim <savetrim>`. In Copter, it adjusts the vehicle level position using the current roll and pitch stick inputs. See details :ref:`here <auto-trim>` .
+In Rover, a high saves the current steering channel trim, see :ref:`Save Steering Trim <savetrim>`. In Copter, it adjusts the vehicle level position using the current roll and pitch stick inputs. See details :ref:`here <auto-trim>`.
 
 .. raw:: html
 
@@ -616,7 +616,7 @@ This is a 3-position switch that enables (high) or disables (low) the use of RC 
    <td><strong>Learn Cruise</strong></td>
    <td>
 
-This starts the cruise speed and the throttle learning sequence on Rover when switched to high. See :ref:`rover-tuning-throttle-and-speed` .
+This starts the cruise speed and the throttle learning sequence on Rover when switched to high. See :ref:`rover-tuning-throttle-and-speed`.
 
 .. raw:: html
 
@@ -635,7 +635,7 @@ Clears currently loaded mission waypoints.
    <td><strong>Compass Learn</strong></td>
    <td>
 
-Inflight compass offset learning. See Automatic Offset Calibration section of :ref:`common-compass-setup-advanced` .
+Inflight compass offset learning. See Automatic Offset Calibration section of :ref:`common-compass-setup-advanced`.
 
 .. raw:: html
 
@@ -645,7 +645,7 @@ Inflight compass offset learning. See Automatic Offset Calibration section of :r
    <td><strong>Sailboat Tack</strong></td>
    <td>
 
-Any high to low, or low to high change on this channel will start a tack in the opposite direction to the last tack. See Sailboat :ref:`sailboat-configure` .
+Any high to low, or low to high change on this channel will start a tack in the opposite direction to the last tack. See Sailboat :ref:`sailboat-configure`.
 
 .. raw:: html
 

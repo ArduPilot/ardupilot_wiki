@@ -29,9 +29,9 @@ After the motors start this flight mode will first try to control it's attitude 
 
 Settings
 ========
-- :ref:`THROW_TYPE <THROW_TYPE>` : set to 0 if throwing the vehicle up, 1 if dropping the vehicle.  If dropping, drop from a height of at least 10m.
-- :ref:`THROW_MOT_START <THROW_MOT_START>` : controls whether the motors will spin slowly or not at all while waiting for the throw (0 = stopped, 1 = spinning slowly).  The default is 0 (will not spin after arming).
-- :ref:`THROW_NEXTMODE <THROW_NEXTMODE>` : the vehicle will switch into this flight mode after stopping (Auto, Guided, RTL, Land and Brake are support).  Set to "Throw" (the default) to simply remain in Throw mode and wait for the pilot to switch modes manually
+- :ref:`THROW_TYPE <THROW_TYPE>`: set to 0 if throwing the vehicle up, 1 if dropping the vehicle.  If dropping, drop from a height of at least 10m.
+- :ref:`THROW_MOT_START <THROW_MOT_START>`: controls whether the motors will spin slowly or not at all while waiting for the throw (0 = stopped, 1 = spinning slowly).  The default is 0 (will not spin after arming).
+- :ref:`THROW_NEXTMODE <THROW_NEXTMODE>`: the vehicle will switch into this flight mode after stopping (Auto, Guided, RTL, Land and Brake are support).  Set to "Throw" (the default) to simply remain in Throw mode and wait for the pilot to switch modes manually
 
 ..  youtube:: ZnEFcJx1qko
     :width: 100%

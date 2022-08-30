@@ -90,7 +90,7 @@ With this option, :ref:`SERIAL7_PROTOCOL<SERIAL7_PROTOCOL>` must be set to "23",
 
 - DSM/SRXL connects to the R2  pin, but SBUS would still be connected to SBUS.
 
-- FPort requires connection to T2 and R2 via a bi-directional inverter. See :ref:`common-FPort-receivers` .
+- FPort requires connection to T2 and R2 via a bi-directional inverter. See :ref:`common-FPort-receivers`.
 
 - CRSF also requires a T2 connection, in addition to R2, and automatically provides telemetry.
 

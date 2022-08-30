@@ -5,7 +5,7 @@ Assisted Fixed-Wing Flight
 ==========================
 
 The QuadPlane code can also be configured to provide assistance to the
-fixed wing code in any flight mode except :ref:`MANUAL <manual-mode>` or :ref:`ACRO <acro-mode>`. VTOL motor assistance is enabled if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>` , or :ref:`Q_ASSIST_ANGLE<Q_ASSIST_ANGLE>` are non-zero.
+fixed wing code in any flight mode except :ref:`MANUAL <manual-mode>` or :ref:`ACRO <acro-mode>`. VTOL motor assistance is enabled if :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>`, or :ref:`Q_ASSIST_ANGLE<Q_ASSIST_ANGLE>` are non-zero.
 
 When :ref:`Q_ASSIST_SPEED <Q_ASSIST_SPEED>` is non-zero then the quad motors will assist with
 both stability and lift whenever the airspeed drops below that
@@ -27,7 +27,7 @@ non-zero then this parameter gives an attitude error in degrees above
 which assistance will be enabled even if the airspeed is above
 :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`. 
 
-And as of Plane-4.0 and later, a third trigger to provide assistance is :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>` . This is the altitude below which QuadPlane assistance will be triggered. This acts the same way as :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` and :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, but triggers if the aircraft drops below the given altitude while the VTOL motors are not running. A value of zero disables this feature. The altutude is calculated as being above ground level. The height above ground is given from a Lidar used if available and :ref:`RNGFND_LANDING<RNGFND_LANDING>` =1 or from terrain data if :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` =1, or comes from height above home otherwise.
+And as of Plane-4.0 and later, a third trigger to provide assistance is :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>`. This is the altitude below which QuadPlane assistance will be triggered. This acts the same way as :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` and :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>`, but triggers if the aircraft drops below the given altitude while the VTOL motors are not running. A value of zero disables this feature. The altutude is calculated as being above ground level. The height above ground is given from a Lidar used if available and :ref:`RNGFND_LANDING<RNGFND_LANDING>` =1 or from terrain data if :ref:`TERRAIN_FOLLOW<TERRAIN_FOLLOW>` =1, or comes from height above home otherwise.
 
 Assistance will be activated :ref:`Q_ASSIST_DELAY<Q_ASSIST_DELAY>` after any of the above enabling thresholds are reached.
 
@@ -42,7 +42,7 @@ flight mode. If you are flying in an autonomous or semi-autonomous
 mode then the quad motors will try to assist with whatever climb rate
 and turn rate the autonomous flight mode wants when assistance is
 enabled (ie. airspeed is below :ref:`Q_ASSIST_SPEED<Q_ASSIST_SPEED>` or attitude error is
-above :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>` , or altitude is below :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>` ). In a manually navigated mode the quad will try
+above :ref:`Q_ASSIST_ANGLE <Q_ASSIST_ANGLE>`, or altitude is below :ref:`Q_ASSIST_ALT<Q_ASSIST_ALT>` ). In a manually navigated mode the quad will try
 to provide assistance that fits with the pilot inputs.
 
 The specific handling is:

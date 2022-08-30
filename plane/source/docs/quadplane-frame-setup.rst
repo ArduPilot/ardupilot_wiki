@@ -22,7 +22,7 @@ Frame Types and Classes
 -----------------------
 
 To use a different frame type you can set :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` and
-:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>` . :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` can be:
+:ref:`Q_FRAME_TYPE<Q_FRAME_TYPE>`. :ref:`Q_FRAME_CLASS<Q_FRAME_CLASS>` can be:
 
 -  1 for quad
 -  2 for hexa

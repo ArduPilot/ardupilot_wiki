@@ -17,7 +17,7 @@ It is also possible to use only the GCS itself, if only autonomous missions or g
 Failsafes
 =========
 
-It is highly recommended that the GCS failsafe be setup for the vehicle, since GCS connectivity is being relied upon exclusively for vehicle control. See :ref:`apms-failsafe-function` , :ref:`Copter Failsafe <failsafe-landing-page>` , or :ref:`Rover Failsafes <rover-failsafes>`, as appropriate.
+It is highly recommended that the GCS failsafe be setup for the vehicle, since GCS connectivity is being relied upon exclusively for vehicle control. See :ref:`apms-failsafe-function`, :ref:`Copter Failsafe <failsafe-landing-page>`, or :ref:`Rover Failsafes <rover-failsafes>`, as appropriate.
 
 Of course, other failsafes can be setup and utilized as desired in addition to the GCS failsafe.
 

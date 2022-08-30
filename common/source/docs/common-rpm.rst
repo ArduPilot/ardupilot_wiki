@@ -99,7 +99,7 @@ for example, if we have set AUX port 5 to a GPIO and its GPIO numbering correspo
 The parameter :ref:`RPM2SCALING<RPM2_SCALING>` will correspond to the number magnets used.  Most commonly only one magnet is used and this parameter is set to 1.  Some installations use 
 2 magnets, 180 degrees out of phase.  In this case this parameter should be set to 0.5.
 
-Initially, it is recommended to leave the parameters :ref:`RPM2_MIN<RPM2_MIN>` , :ref:`RPM2_MAX<RPM2_MAX>` , and :ref:`RPM2_MIN_QUAL<RPM2_MIN_QUAL>` as their defaults.  If an RPM signal exceeds any of these limits then the value reported in the ground station and the logs is zero.  Therefore, only adjust these values once you have confirmed that your RPM sensor is working as expected, otherwise it can make it more difficult to debug if nothing is getting reported.
+Initially, it is recommended to leave the parameters :ref:`RPM2_MIN<RPM2_MIN>`, :ref:`RPM2_MAX<RPM2_MAX>`, and :ref:`RPM2_MIN_QUAL<RPM2_MIN_QUAL>` as their defaults.  If an RPM signal exceeds any of these limits then the value reported in the ground station and the logs is zero.  Therefore, only adjust these values once you have confirmed that your RPM sensor is working as expected, otherwise it can make it more difficult to debug if nothing is getting reported.
 
 .. note::
 

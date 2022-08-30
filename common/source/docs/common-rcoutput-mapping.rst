@@ -236,12 +236,12 @@ component of the output.
 Elevon Left/ Right
 ++++++++++++++++++
 
-Provides outputs for :ref:`Elevons <guide-elevon-plane>` .
+Provides outputs for :ref:`Elevons <guide-elevon-plane>`.
 
 V-tail Left/ Right
 ++++++++++++++++++
 
-Provides outputs for :ref:`guide-vtail-plane` .
+Provides outputs for :ref:`guide-vtail-plane`.
 
 Differential Spoilers Left/Right
 ++++++++++++++++++++++++++++++++
@@ -345,7 +345,7 @@ Motors 1 - 12
 
 
 
-These are the Copter and QuadPlane VTOL motor outputs. For Multi-Copters, see :ref:`Motor Order Diagrams<connect-escs-and-motors>` . Or see :ref:`Traditional Helicopter <traditional-helicopter-connecting-apm>`, or :ref:`singlecopter-and-coaxcopter`, or :ref:`heliquads`.
+These are the Copter and QuadPlane VTOL motor outputs. For Multi-Copters, see :ref:`Motor Order Diagrams<connect-escs-and-motors>`. Or see :ref:`Traditional Helicopter <traditional-helicopter-connecting-apm>`, or :ref:`singlecopter-and-coaxcopter`, or :ref:`heliquads`.
 
 [site wiki="copter"]
 .. note::
@@ -518,7 +518,7 @@ INTERNAL COMBUSTION ENGINE FUNCTIONS
 Ignition/Starter/Choke
 ++++++++++++++++++++++
 
-For control of an internal combustion engine's spark plug/igniter, starter motor, and choke. See :ref:`common-ice` .
+For control of an internal combustion engine's spark plug/igniter, starter motor, and choke. See :ref:`common-ice`.
 
 NEOPIXEL LED STRINGS
 --------------------
@@ -561,7 +561,7 @@ This is an output for controlling a servo or electromagnetic gripper for holding
 Sprayer Pump/Mixer
 ++++++++++++++++++
 
-These outputs are controlling a :ref:`sprayer` .
+These outputs are controlling a :ref:`sprayer`.
 
 Output SERVOn MAX/MIN/TRIM
 ++++++++++++++++++++++++++

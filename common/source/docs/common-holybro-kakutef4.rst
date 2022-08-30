@@ -69,7 +69,7 @@ The R3 pin, which by default is mapped to a timer input, can be used for all Ard
 - PPM/SBUS/DSM/SRXL attach to R3 pin.
 - FPort must use UART6 or UART4. See :ref:`common-FPort-receivers`.
 - CRSF must use UART6 or UART4 for RC and Telemetry. See :ref:`common-tbs-rc`.
-- SRXL2 must use UART6 or UART4 for both RC and Telemetry. See :ref:`common-spektrum-rc` .
+- SRXL2 must use UART6 or UART4 for both RC and Telemetry. See :ref:`common-spektrum-rc`.
 
 FrSky Telemetry
 ===============

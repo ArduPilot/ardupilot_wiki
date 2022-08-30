@@ -8,12 +8,12 @@ Copter has a set of parameters that define the way the aircraft feels to fly. Th
 
 The most important of these parameters is:
 
-- :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` : desired maximum yaw rate / 45 degrees/s
-- :ref:`ANGLE_MAX <ANGLE_MAX>` :  maximum lean angle
-- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>` : Pitch rate acceleration
-- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` : Roll rate acceleration
-- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` : Yaw rate acceleration
-- :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>` : Aircraft smoothing time
+- :ref:`ACRO_Y_RATE<ACRO_Y_RATE>`: desired maximum yaw rate / 45 degrees/s
+- :ref:`ANGLE_MAX <ANGLE_MAX>`:  maximum lean angle
+- :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`: Pitch rate acceleration
+- :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>`: Roll rate acceleration
+- :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>`: Yaw rate acceleration
+- :ref:`ATC_ANG_LIM_TC <ATC_ANG_LIM_TC>`: Aircraft smoothing time
 
 Autotune will set the :ref:`ATC_ACCEL_P_MAX <ATC_ACCEL_P_MAX>`, :ref:`ATC_ACCEL_R_MAX <ATC_ACCEL_R_MAX>` and :ref:`ATC_ACCEL_Y_MAX <ATC_ACCEL_Y_MAX>` parameters to their maximum based on measurements done during the Autotune tests. These values should not be increased beyond what Autotune suggests without careful testing. In most cases pilots will want to reduce these values significantly.
 

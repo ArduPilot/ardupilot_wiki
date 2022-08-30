@@ -21,7 +21,7 @@ For testing, make sure your vehicle is connected to the GCS via telemetry radio.
 
 #. Once the vehicle can balance itself, try moving it around. Move up the throttle slightly and see how it goes.
 
-#. If you find it too difficult to drive, try adjusting :ref:`BAL_PITCH_MAX<BAL_PITCH_MAX>` . It's the pitch angle at 100% throttle. If you increase it, the vehicle will accelerate faster but will become more likely to topple. Reducing it will make it more stable, but sluggish.
+#. If you find it too difficult to drive, try adjusting :ref:`BAL_PITCH_MAX<BAL_PITCH_MAX>`. It's the pitch angle at 100% throttle. If you increase it, the vehicle will accelerate faster but will become more likely to topple. Reducing it will make it more stable, but sluggish.
 
 .. tip::
 

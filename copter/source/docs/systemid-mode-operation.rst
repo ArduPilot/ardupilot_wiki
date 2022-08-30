@@ -58,29 +58,29 @@ used to generate the attitude prediction in the angle control loops.
 Parameters
 ==========
 
-:ref:`SID_AXIS<SID_AXIS>` : Controls which axis and control loop injection point are being excited
+:ref:`SID_AXIS<SID_AXIS>`: Controls which axis and control loop injection point are being excited
 
 Values: 0:None (prevents entry into mode and display of other mode parameters), 1:Input Roll Angle, 2:Input Pitch Angle, 3:Input Yaw Angle, 4:Recovery Roll Angle,
 5:Recovery Pitch Angle, 6:Recovery Yaw Angle, 7:Rate Roll, 8:Rate Pitch, 9:Rate Yaw, 10:Mixer Roll,
 11:Mixer Pitch, 12:Mixer Yaw, 13:Mixer Thrust
 
-:ref:`SID_MAGNITUDE<SID_MAGNITUDE>` : System identification Chirp Magnitude. Depending on injection point, units will be in either deg, deg/s ,or 0-1 for mixer outputs. The magnitude can be changed in flight easily using the :ref:`tuning knob<TUNE>` using the 58 option.
+:ref:`SID_MAGNITUDE<SID_MAGNITUDE>`: System identification Chirp Magnitude. Depending on injection point, units will be in either deg, deg/s ,or 0-1 for mixer outputs. The magnitude can be changed in flight easily using the :ref:`tuning knob<TUNE>` using the 58 option.
 
-:ref:`SID_F_START_HZ<SID_F_START_HZ>` : System identification Start Frequency. Range: 0.01-100 Hz
+:ref:`SID_F_START_HZ<SID_F_START_HZ>`: System identification Start Frequency. Range: 0.01-100 Hz
 
-:ref:`SID_F_STOP_HZ<SID_F_STOP_HZ>` : Frequency at the end of the sweep. Range: 0.01-100 Hz
+:ref:`SID_F_STOP_HZ<SID_F_STOP_HZ>`: Frequency at the end of the sweep. Range: 0.01-100 Hz
 
-:ref:`SID_T_FADE_IN<SID_T_FADE_IN>` : Time to reach maximum amplitude of sweep. Range: 0-20 s
+:ref:`SID_T_FADE_IN<SID_T_FADE_IN>`: Time to reach maximum amplitude of sweep. Range: 0-20 s
 
-:ref:`SID_T_REC<SID_T_REC>` : System identification total sweep length. Range: 0-255 s
+:ref:`SID_T_REC<SID_T_REC>`: System identification total sweep length. Range: 0-255 s
 
-:ref:`SID_T_FADE_OUT<SID_T_FADE_OUT>` : Time to reach zero amplitude at the end of the sweep. Range: 0 to 5 s
+:ref:`SID_T_FADE_OUT<SID_T_FADE_OUT>`: Time to reach zero amplitude at the end of the sweep. Range: 0 to 5 s
 
 
 .. image:: ../images/chirp.jpg
 
 
-The logging rate is set by the ATTITUDE_FAST and ATTITUDE_MEDIUM bits in the :ref:`LOG_BITMASK<LOG_BITMASK>` . The rate of the logging is the
+The logging rate is set by the ATTITUDE_FAST and ATTITUDE_MEDIUM bits in the :ref:`LOG_BITMASK<LOG_BITMASK>`. The rate of the logging is the
 main loop frequency divided by a sub-sample factor.
 
 +--------------+--------------+---------------+

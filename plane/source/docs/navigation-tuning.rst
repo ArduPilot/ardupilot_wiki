@@ -13,7 +13,7 @@ flight paths both for waypoints and loiter than the previous crosstrack
 and PID controller.
 
 Tuning the navigation controller usually involves adjusting one key
-parameter, called :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` . The default is 20, which results in
+parameter, called :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`. The default is 20, which results in
 reasonable turns for most R/C airframes. A smaller value for
 :ref:`NAVL1_PERIOD<NAVL1_PERIOD>` will lead to more aggressive navigation (sharper corners).
 A larger value will lead to gentler navigation. You can additionally
@@ -58,7 +58,7 @@ parameter. If you want Plane to fly through the waypoint then set the
 turn before the waypoint so that it lines up with the next leg of the
 mission then set :ref:`WP_RADIUS<WP_RADIUS>` to a larger number. A good starting value is
 to set it equal to the turn radius your aircraft can easily achieve.
-This will normally be the same as your loiter radius :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` .
+This will normally be the same as your loiter radius :ref:`WP_LOITER_RAD<WP_LOITER_RAD>`.
 
 L1 Controller Background & Description
 ======================================
@@ -102,7 +102,7 @@ following changes:
 -  The distance from the next waypoint to start the turn onto the next
    track segment was modified to use the L1 length dynamically
    calculated by the algorithm, but constrained to be no greater than
-   :ref:`WP_RADIUS<WP_RADIUS>` . This enabled the user to select whether they would rather
+   :ref:`WP_RADIUS<WP_RADIUS>`. This enabled the user to select whether they would rather
    fly through the waypoint and then turn, or turn early and smoothly
    intercept the next track.
 

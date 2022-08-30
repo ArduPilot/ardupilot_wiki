@@ -40,7 +40,7 @@ Details on how to setup and use a 2nd GPS can be found on the :ref:`GPS Blending
 
 .. note::
 
-   ArduPilot supports many attached compasses, but only up to 3 compasses can be used during operation. See :ref:`common-compass-setup-advanced` .
+   ArduPilot supports many attached compasses, but only up to 3 compasses can be used during operation. See :ref:`common-compass-setup-advanced`.
 
 
 Mounting the GPS Module
