@@ -98,8 +98,8 @@ camera and wireless connection to the ground allow a pilot on the ground
 with video goggles to fly with a cockpit view.
 
 **FTDI**: A standard to convert USB to serial communications. Available
-as a chip for boards that have a USB connector, or in
-a \ `cable <http://store.jdrones.com/cable_ftdi_6pin_5v_p/cblftdi5v6p.htm>`__ to
+as a chip for boards that have a USB connector, or as
+an \ `adapter <https://www.amazon.com/ftdi-adapter/s?k=ftdi+adapter>`__ to
 connected to breakout pins. FTDI stands for Future Technology Devices
 International, which is the name of the company that makes the chips.
 
