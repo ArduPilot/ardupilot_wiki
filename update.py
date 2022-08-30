@@ -849,8 +849,8 @@ if __name__ == "__main__":
     if args.enablebackups:
         copy_and_keep_build(args.site, args.destdir, args.backupdestdir)
         delete_old_wiki_backups(args.backupdestdir, N_BACKUPS_RETAIN)
-        if args.destdir:
-            copy_build(args.site, args.destdir)
+    if args.destdir:
+        copy_build(args.site, args.destdir)
 
     # To navigate locally and view versioning script for parameters
     # working is necessary run Chrome as "chrome
