@@ -188,9 +188,8 @@ The Jumper T16 and RadioMaster T16 are FRSky Horus-like OpenTX based transmitter
 PPM encoders
 ============
 
-A `PPM Encoder <http://store.jdrones.com/pixhawk_px4_paparazzi_ppm_encoder_v2_p/eleppmenc20.htm>`__ will
-allow you to use any older style RC receiver with only PWM outputs for each channel. Both the new and previous versions of the *3DR PPM-Sum encoder* (the linked encoder is compatible) are shown
-below:
+A `PPM Encoder <https://www.amazon.com/s?k=ppm+encoder>`__ will
+allow you to use any older style RC receiver with only PWM outputs for each channel. Several versions of the *3DR PPM-Sum encoder* are shown below:
 
 .. figure:: ../../../images/PPM_cables_-_Copy.jpg
    :target: ../_images/PPM_cables_-_Copy.jpg
@@ -207,10 +206,7 @@ There are some downsides of using this encoder:
 -  The PPM Encoder does require quite a bit of additional wiring to the receiver.
 -  It uses quite a bit of power making it likely you will need to plug
    in your battery while doing radio setup with USB cable in Mission Planner.
--  The encoder also costs as much or more than several of the
-   available PPM-Sum receivers including the FrSky Delta 8 below.
-
-There is addition information :ref:`about connecting and configuring the encoder here <common-ppm-encoder>`.
+-  The encoder also costs as much or more than modern receivers
 
 .. note::
 
