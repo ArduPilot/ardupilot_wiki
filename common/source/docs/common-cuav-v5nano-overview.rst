@@ -67,7 +67,8 @@ Unboxing and Review Video
 Where to Buy
 ============
 
-Order from `here <https://store.cuav.net/index.php>`__. or from `here <https://store.jdrones.com/>`__
+Order from `here <https://store.cuav.net/index.php>`__.
+
 Official retailers are listed `here  <https://leixun.aliexpress.com/>`__.
 
 Quick Start
