@@ -67,7 +67,7 @@ information related to Autopilot selection see :ref:`Autopilot Hardware Options 
 [/site]
     Power Modules <common-powermodule-landingpage>
     Power Tether <common-power-tether>
-    PPM Encoder <common-ppm-encoder>
+    PPM Encoder <common-ppm-encoders-new>
 [site wiki="copter"]
     Precision Landing and Loiter (IRLock) <precision-landing-with-irlock>
 [/site]
